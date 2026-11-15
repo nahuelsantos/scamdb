@@ -1,0 +1,101 @@
+{
+  "id": "ar/voz-clonada",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu nieto” (audio)"
+  },
+  "name": {
+    "es": "La voz de tu nieto, pero hecha con inteligencia artificial"
+  },
+  "how": {
+    "es": "Con unos segundos de audio de redes sociales, hoy se puede imitar la voz de una persona. Puede pasar que te llegue un audio o una llamada con la voz de tu hijo o tu nieto, llorando, pidiendo plata urgente y que no le digas a nadie. Todavía no hay casos argentinos documentados, pero los especialistas avisan que es una modalidad que crece."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un audio o una llamada con la voz de tu hijo o tu nieto."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Llora y dice que tiene una emergencia."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide plata urgente."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te pide que no le digas a nadie."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "(Audio) Abu, soy yo, tuve un problema y necesito plata ya. No le digas a mamá, por favor. Te paso un alias."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "voz de mi nieto",
+      "voz de mi hijo",
+      "audio igual a mi hijo",
+      "voz clonada",
+      "inteligencia artificial",
+      "lloraba y me pedia plata",
+      "no le digas a nadie",
+      "me escucha bien"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "es": [
+      "Una voz conocida, una emergencia y un pedido de plata, todo junto.",
+      "“No le digas a nadie”.",
+      "No puede contestarte una pregunta personal."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá y llamalo vos al número que ya tenés.",
+      "Acuerden una palabra clave en la familia: si no la sabe, es chamuyo (lo recomienda ESET, una empresa de seguridad informática)."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci",
+    "ar/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Palabra de seguridad: la forma más simple de detectar estafas con voces deepfake",
+      "publisher": "WeLiveSecurity (ESET)",
+      "url": "https://www.welivesecurity.com/es/seguridad-digital/palabra-seguridad-evitar-estafas-voces-deepfake/",
+      "date": "2026-09-09"
+    },
+    {
+      "title": "Esta es la pregunta que se debe hacer en una llamada para evitar estafas con voces clonadas",
+      "publisher": "Infobae",
+      "url": "https://www.infobae.com/tecno/2025/04/07/esta-es-la-pregunta-que-se-debe-hacer-en-una-llamada-para-evitar-estafas-con-voces-clonadas/",
+      "date": "2025-04-07"
+    }
+  ],
+  "updated": "2026-11-13"
+}

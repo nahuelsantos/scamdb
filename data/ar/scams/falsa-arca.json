@@ -1,0 +1,98 @@
+{
+  "id": "ar/falsa-arca",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "online"
+  ],
+  "sender": {
+    "es": "“ARCA”"
+  },
+  "name": {
+    "es": "Mail de la “AFIP” o “ARCA” con una multa"
+  },
+  "how": {
+    "es": "Te llega un mail que empieza “Estimado Contribuyente” y dice que tenés una multa o una deuda, con un monto y una fecha. Te pide que descargues un informe o que pagues por un link. ARCA (la ex AFIP) no manda mails pidiendo pagos, datos ni descargas: avisa solo por el Domicilio Fiscal Electrónico."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mail “Estimado Contribuyente” que parece de ARCA."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tenés una multa o una deuda con fecha de vencimiento."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide descargar un informe o pagar por un link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "El archivo o el link es para robarte datos o plata."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Estimado Contribuyente: se generó un nuevo documento fiscal que resultó en una multa. Descargue el informe aquí antes del vencimiento: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "afip",
+      "arca",
+      "multa",
+      "deuda",
+      "estimado contribuyente",
+      "descargue el informe",
+      "documento fiscal",
+      "clave fiscal"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "es": [
+      "Una multa o deuda que te avisan por mail.",
+      "Un archivo para descargar.",
+      "Un link para pagar."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el link ni el archivo.",
+      "Si tenés dudas, entrá vos a tu Domicilio Fiscal Electrónico.",
+      "Nunca compartas tu Clave Fiscal."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "No, ARCA no está enviando mails con presuntas multas a contribuyentes",
+      "publisher": "Chequeado",
+      "url": "https://chequeado.com/nota/no-arca-no-esta-enviando-mails-con-presuntas-multas-a-contribuyentes-se-trata-de-una-modalidad-de-estafa-conocida-como-phishing",
+      "date": "2025-06-19"
+    },
+    {
+      "title": "ARCA alertó sobre estafas en compras en el exterior",
+      "publisher": "BAE Negocios",
+      "url": "https://www.baenegocios.com/economia/arca-alerto-sobre-estafa-en-compras-en-el-exterior-shein-y-temu/",
+      "date": "2026-02-20"
+    }
+  ],
+  "updated": "2026-11-13"
+}

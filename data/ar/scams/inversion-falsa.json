@@ -1,0 +1,104 @@
+{
+  "id": "ar/inversion-falsa",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu asesor financiero”"
+  },
+  "name": {
+    "es": "Inversiones milagrosas con famosos falsos"
+  },
+  "how": {
+    "es": "Ves una publicidad con un video de un famoso (en 2026 usaron a Antonio Laje y a Messi) recomendando una plataforma para ganar plata. Los videos están hechos con inteligencia artificial. Dejás tus datos, te llama un “asesor” y te hace depositar. En la pantalla parece que ganás, pero para retirar te piden “impuestos” o “comisiones”."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves una publicidad con un famoso recomendando una plataforma."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Promete ganancias garantizadas o por día."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te llama un “asesor” y te hace depositar."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Para retirar lo que “ganaste” te piden impuestos o comisiones."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, soy su asesor financiero de la plataforma. Con un primer depósito de $100.000 puede ganar un 3% por día, garantizado. ¿Lo ayudo a empezar?"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "inversion",
+      "plataforma de inversion",
+      "asesor financiero",
+      "ganancias garantizadas",
+      "por dia",
+      "cripto",
+      "bot de trading",
+      "video de messi",
+      "laje",
+      "no puedo sacar la plata",
+      "impuestos para retirar"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un famoso recomendando una inversión en una publicidad.",
+      "Ganancias garantizadas o “por día”.",
+      "Te piden pagar para poder retirar."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Ninguna inversión de verdad garantiza ganancias.",
+      "No decidas apurado, y no pongas más plata para “destrabar” lo que ganaste.",
+      "Denuncialo en el Ministerio Público Fiscal."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "Estafa con IA usa la cara de Antonio Laje y Lionel Messi: cómo no caer",
+      "publisher": "iProUP",
+      "url": "https://www.iproup.com/economia-digital/69577-estafa-con-ia-usa-la-cara-de-antonio-laje-y-lionel-messi-como-no-caer-en-la-trampa",
+      "date": "2026-07-06"
+    },
+    {
+      "title": "La CNV alerta por nuevas estafas virtuales en redes sociales",
+      "publisher": "iProUP",
+      "url": "https://www.iproup.com/finanzas/62790-estafas-virtuales-cnv-alerta-redes-sociales-fraudes-financieros",
+      "date": "2025-12-10"
+    }
+  ],
+  "updated": "2026-11-13"
+}

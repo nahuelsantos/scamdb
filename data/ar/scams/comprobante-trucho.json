@@ -1,0 +1,103 @@
+{
+  "id": "ar/comprobante-trucho",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "es": "“El comprador”"
+  },
+  "name": {
+    "es": "Comprobante trucho: “ya te transferí” (pero no)"
+  },
+  "how": {
+    "es": "Vendés algo por Marketplace o Mercado Libre y el “comprador” te manda una captura o un comprobante falso. Te apura para llevarse la cosa antes de que veas la plata. A veces dice que “te transfiere el hermano” desde otra cuenta, o te manda un comprobante por más plata y te pide que le devuelvas la diferencia."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Vendés algo y el “comprador” te manda una captura o un comprobante."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apura para llevarse la cosa antes de que veas la plata."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "A veces paga “el hermano” o te pide devolver una diferencia."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "La plata nunca llega a tu cuenta."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Ya te transferí, mirá el comprobante. Mi hermano tiene la plata, te la pasa él. Paso en 10 minutos a buscarlo, que la transferencia tarda un poco."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "comprobante trucho",
+      "comprobante falso",
+      "captura del pago",
+      "mi hermano te transfiere",
+      "te transferi de mas",
+      "devolver la diferencia",
+      "marketplace",
+      "vendi",
+      "nunca me entro la plata"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te mandan una captura en vez de que veas la plata en tu cuenta.",
+      "Paga otra persona: “mi hermano”, “mi jefe”.",
+      "Te apuran para llevarse la cosa ya.",
+      "“Te pagué de más, devolveme la diferencia”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Entregá solo cuando veas la plata en tu app, en “Actividad”.",
+      "Una captura no es un pago.",
+      "Si paga otra persona, no aceptes.",
+      "Encontrate en lugares públicos."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "La señal que revela que un comprobante de Mercado Pago es falso",
+      "publisher": "El Cronista",
+      "url": "https://www.cronista.com/informacion-gral/la-senal-que-revela-que-un-comprobante-de-mercado-pago-es-falso-y-casi-nadie-revisa/",
+      "date": "2026-08-05"
+    },
+    {
+      "title": "Cómo funciona la estafa del comprobante falso",
+      "publisher": "iProUP",
+      "url": "https://www.iproup.com/finanzas/71542-comprobante-falso-4-millones-puso-alerta-usuarios-billeteras-digitales",
+      "date": "2026-09-21"
+    }
+  ],
+  "updated": "2026-11-13"
+}

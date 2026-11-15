@@ -1,0 +1,115 @@
+{
+  "id": "ar/cuento-del-tio",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "es": "“Tu hijo”"
+  },
+  "name": {
+    "es": "Cuento del tío: alguien viene a tu casa a buscar la plata"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser tu hija, tu sobrina, “de ANSES” o un “contador”. Te asusta con un accidente, un secuestro o con que los dólares viejos ya no sirven. Te tiene horas en el teléfono para que no llames a nadie. Después manda a alguien a buscar la plata, los dólares o las joyas, o te pide que los dejes en la puerta."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama alguien que dice ser tu hija, tu sobrina, de ANSES o un contador."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asusta con un accidente, un secuestro o con que los dólares viejos ya no sirven."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te tiene horas en el teléfono y te pide que no le cuentes a nadie."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Manda a alguien a tu casa a buscar la plata, los dólares o las joyas."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Mamá, soy yo, estoy en problemas, no le digas a nadie. Ahora te llama un señor que me está ayudando. No cortes."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "cuento del tio",
+      "me llamo mi hija llorando",
+      "secuestro",
+      "la tenian secuestrada",
+      "vino un señor a buscar la plata",
+      "dejar la plata en la puerta",
+      "dolares cara chica",
+      "dolares viejos",
+      "cambio de billetes",
+      "me pidieron las joyas",
+      "no cortes",
+      "accidente",
+      "contador"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Mandan a alguien a tu casa a buscar plata o joyas.",
+      "Te dicen que los billetes viejos o “cara chica” hay que cambiarlos.",
+      "Una voz llorando que no terminás de reconocer.",
+      "No te dejan cortar ni llamar a nadie."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá y llamá a tu familiar al número de siempre.",
+      "No le abras la puerta a nadie que venga a buscar plata.",
+      "Los bancos y el Estado no mandan gente a tu casa.",
+      "Llamá al 911."
+    ]
+  },
+  "reportTo": [
+    "ar/emergencias",
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "Una jubilada fue víctima del cuento del tío: se hicieron pasar por empleados de ANSES",
+      "publisher": "Diario de Cuyo",
+      "url": "https://www.diariodecuyo.com.ar/argentina/una-jubilada-fue-victima-del-cuento-del-tio-se-hicieron-pasar-por-empleados-de-anses-y-le-robaron-90-000-dolares-1824881.html",
+      "date": "2026-01-27"
+    },
+    {
+      "title": "Le robaron los ahorros a una jubilada con un secuestro falso y terminaron presos",
+      "publisher": "Crónica",
+      "url": "https://www.cronica.com.ar/policiales/le-robaron-los-ahorros-a-una-jubilada-con-un-secuestro-falso-y-terminaron-presos/",
+      "date": "2026-02-06"
+    },
+    {
+      "title": "“Cuento del tío” a una jubilada: le robaron 15 mil dólares y fueron detenidos en Flores",
+      "publisher": "Minuto Uno",
+      "url": "https://www.minutouno.com/sociedad/cuento-del-tio-una-jubilada-le-robaron-15-mil-dolares-y-fueron-detenidos-flores-n6270400",
+      "date": "2026-04-24"
+    }
+  ],
+  "updated": "2026-11-13"
+}

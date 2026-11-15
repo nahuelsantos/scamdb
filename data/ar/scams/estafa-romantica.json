@@ -1,0 +1,92 @@
+{
+  "id": "ar/estafa-romantica",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "online"
+  ],
+  "sender": {
+    "es": "“Mi amor”"
+  },
+  "name": {
+    "es": "Estafa del amor: alguien que te enamora por internet"
+  },
+  "how": {
+    "es": "Alguien te escribe por redes, a veces haciéndose pasar por un famoso. Te enamora durante semanas, te propone una vida juntos y después te pide plata: para un viaje, un trámite o hasta que vendas tu casa. En 2026, una jubilada le transfirió más de 3,6 millones de pesos a un falso Kevin Costner."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien que no conocés en persona te escribe por redes."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te enamora durante semanas y te pide pasar a otra app."
+      }
+    },
+    {
+      "text": {
+        "es": "Te pide plata para un viaje o un trámite, o que vendas tu casa."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te pide que no se lo cuentes a tu familia."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Mi amor, ya falta poco para conocernos. Me retuvieron en la aduana y necesito que me ayudes con el pago. Te lo devuelvo apenas llegue."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me enamore",
+      "conoci a alguien",
+      "tiktok",
+      "famoso",
+      "me pidio plata para venir",
+      "vender la casa",
+      "mi amor",
+      "aduana",
+      "falso famoso"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "es": [
+      "Alguien que no conocés en persona te pide plata.",
+      "Te pide pasar a una app rara para hablar.",
+      "Te pide vender cosas o tu casa."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca mandes plata a alguien que no conociste en persona.",
+      "Contale a tu familia antes de transferir."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "Una jubilada le transfirió $3,6 millones a un falso Kevin Costner",
+      "publisher": "Los Andes",
+      "url": "https://www.losandes.com.ar/policiales/una-jubilada-le-transfirio-36-millones-un-falso-kevin-costner-una-estafa-sentimental-n5999376",
+      "date": "2026-07-21"
+    }
+  ],
+  "updated": "2026-11-13"
+}

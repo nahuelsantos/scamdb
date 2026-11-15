@@ -1,0 +1,105 @@
+{
+  "id": "ar/transferencia-por-error",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "Número desconocido"
+  },
+  "name": {
+    "es": "“Te transferí por error, devolvémelo”"
+  },
+  "how": {
+    "es": "Te cae plata que no esperabas. Enseguida te escribe alguien, a veces llorando, diciendo que se equivocó y que se la devuelvas a otra cuenta. Esa plata puede ser robada o un préstamo que sacaron a tu nombre con tus datos: si la devolvés, la deuda te queda a vos."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te cae plata que no esperabas."
+      }
+    },
+    {
+      "text": {
+        "es": "Alguien te escribe enseguida, a veces llorando, diciendo que se equivocó."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide que la devuelvas a otra cuenta."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Esa plata era robada o un préstamo a tu nombre: la deuda te queda a vos."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, perdón, te transferí $80.000 por error, me equivoqué de alias. ¿Me los podés devolver a esta otra cuenta? Es la plata del alquiler, por favor."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "transferi por error",
+      "te transferi por error",
+      "me cayo plata",
+      "plata que no era mia",
+      "se equivoco de alias",
+      "devolver a otra cuenta",
+      "otro cbu",
+      "devolvemelo"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una transferencia que no esperabas.",
+      "Te escriben enseguida, con apuro o llorando.",
+      "Te piden devolverla a otra cuenta."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No muevas esa plata.",
+      "Avisá a tu banco y pedí que lo revierta por la vía formal.",
+      "No contestes por WhatsApp ni redes."
+    ]
+  },
+  "reportTo": [
+    "ar/tu-banco",
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "Estafa de transferencia por error: cómo identificarla",
+      "publisher": "La Gaceta",
+      "url": "https://www.lagaceta.com.ar/nota/1134227/sociedad/estafa-transferencia-error-como-identificarla-hacer-para-no-caer.html",
+      "date": "2026-04-26"
+    },
+    {
+      "title": "Alerta por la estafa triangular de la transferencia por error",
+      "publisher": "La Nación",
+      "url": "https://www.lanacion.com.ar/tecnologia/alerta-por-la-estafa-triangular-de-la-transferencia-por-error-piden-que-la-devuelvas-y-pueden-nid30042026/",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "Estafa con Mercado Pago: qué hacer si te transfieren plata de la nada",
+      "publisher": "iProfesional",
+      "url": "https://www.iprofesional.com/tecnologia/432617-estafa-mercado-pago-por-que-pueden-transferirte-plata-sin-motivo",
+      "date": "2025-07-09"
+    }
+  ],
+  "updated": "2026-11-13"
+}

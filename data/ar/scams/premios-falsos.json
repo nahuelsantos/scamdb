@@ -1,0 +1,97 @@
+{
+  "id": "ar/premios-falsos",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "“Sorteo de Navidad”"
+  },
+  "name": {
+    "es": "“¡Ganaste un premio!”: sorteos y regalos falsos"
+  },
+  "how": {
+    "es": "Te llega por WhatsApp o Facebook un link que promete un premio o un descuento increíble de una marca conocida, después de contestar unas preguntitas. Te piden compartirlo con tus contactos “para activar el premio” y después te piden datos o la tarjeta “para el envío”. Pasó en 2025 con Coca-Cola y con Frávega."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un link que promete un premio de una marca conocida."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Contestás unas preguntitas y te piden compartirlo para “activarlo”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden datos o la tarjeta para pagar el envío del premio."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicitaciones! Fuiste elegido para recibir un premio de Navidad. Contestá 3 preguntas y compartilo con 5 grupos para activarlo: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "gane un premio",
+      "ganaste un premio",
+      "sorteo",
+      "regalo de navidad",
+      "premio gratis",
+      "99% de descuento",
+      "compartir con 5 grupos",
+      "preguntitas",
+      "coca cola",
+      "fravega"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un premio de algo en lo que no participaste.",
+      "Te piden compartirlo para “activarlo”.",
+      "Te piden la tarjeta para pagar el envío del premio."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras links de premios que te llegan sin pedirlos.",
+      "Las marcas hacen sus promociones en su página oficial.",
+      "Si pusiste datos, cambiá tus claves y llamá al banco."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci",
+    "ar/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "No, Coca-Cola no está ofreciendo premios por la Navidad: el enlace que circula es una estafa",
+      "publisher": "Chequeado",
+      "url": "https://chequeado.com/nota/no-coca-cola-no-esta-ofreciendo-premios-por-la-navidad-el-enlace-que-circula-es-una-estafa",
+      "date": "2025-12-23"
+    },
+    {
+      "title": "Es falso que Frávega esté regalando laptops “con un 99% de descuento”",
+      "publisher": "Chequeado",
+      "url": "https://chequeado.com/ultimas-noticias/es-falso-que-fravega-este-regalando-laptops-con-un-99-de-descuento/",
+      "date": "2025-02-18"
+    }
+  ],
+  "updated": "2026-11-13"
+}

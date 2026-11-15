@@ -1,0 +1,97 @@
+{
+  "id": "ar/tiendas-clonadas",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Ofertas Black Friday”"
+  },
+  "name": {
+    "es": "Páginas truchas de ofertas (Black Friday)"
+  },
+  "how": {
+    "es": "En fechas de ofertas aparecen copias de tiendas conocidas con precios bajísimos. El link te llega por mail, WhatsApp o hasta en el buscador. Pagás, pero la compra no existe: la página solo guardaba los datos de tu tarjeta. En el Black Friday 2025 detectaron una copia de Frávega."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "En fechas de ofertas aparece una copia de una tienda conocida."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Los precios son bajísimos."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El link te llega por mail, WhatsApp o el buscador."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Pagás, pero la página solo guardaba los datos de tu tarjeta."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "BLACK FRIDAY: Smart TV 50” a $89.999 solo por hoy. Últimas unidades, comprá acá: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "pagina trucha",
+      "black friday",
+      "cyber monday",
+      "hot sale",
+      "oferta",
+      "tienda falsa",
+      "compre y nunca llego",
+      "precio muy bajo",
+      "ultimas unidades"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precios demasiado buenos.",
+      "Direcciones con letras de más.",
+      "Mezcla de idiomas o logos distintos."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Escribí vos la dirección de la tienda, no entres por links.",
+      "Si pusiste la tarjeta, llamá al banco para bloquearla."
+    ]
+  },
+  "reportTo": [
+    "ar/tu-banco",
+    "ar/ufeci",
+    "ar/defensa-consumidor"
+  ],
+  "sources": [
+    {
+      "title": "ESET detecta sitio fraudulento que suplanta a Frávega con ofertas falsas por Black Friday",
+      "publisher": "Revista Mercado",
+      "url": "https://mercado.com.ar/tecnologia/eset-detecta-sitio-fraudulento-que-suplanta-a-fravega-con-ofertas-falsas-por-black-friday",
+      "date": "2025-12-03"
+    }
+  ],
+  "updated": "2026-11-13"
+}
