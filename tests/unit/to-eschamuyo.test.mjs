@@ -9,7 +9,7 @@ const entries = loadRepo(new URL('../../', import.meta.url).pathname).entries;
 const overlay = fx('overlay.json');
 
 test('round trip: scamdb data gives back eschamuyo scams.json exactly', () =>
-  assert.deepEqual(toEschamuyo(entries, overlay, '2026-11-13'), fx('scams.json')));
+  assert.deepEqual(toEschamuyo(entries, overlay, '2026-11-15'), fx('scams.json')));
 
 test('a new entry not in the overlay goes last, not new', () => {
   const extra = { ...structuredClone(entries[0]), id: 'ar/zz-nueva' };
