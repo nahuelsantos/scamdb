@@ -3,6 +3,7 @@
   "country": "ar",
   "status": "active",
   "channels": [
+    "phone",
     "whatsapp",
     "online"
   ],
@@ -13,7 +14,7 @@
     "es": "“¡Ganaste un premio!”: sorteos y regalos falsos"
   },
   "how": {
-    "es": "Te llega por WhatsApp o Facebook un link que promete un premio o un descuento increíble de una marca conocida, después de contestar unas preguntitas. Te piden compartirlo con tus contactos “para activar el premio” y después te piden datos o la tarjeta “para el envío”. Pasó en 2025 con Coca-Cola y con Frávega."
+    "es": "Te llega por WhatsApp o Facebook un link que promete un premio o un descuento increíble de una marca conocida, después de contestar unas preguntitas. Te piden compartirlo con tus contactos “para activar el premio” y después te piden datos o la tarjeta “para el envío”. Pasó en 2025 con Coca-Cola y con Frávega. También llega por teléfono: te dicen que ganaste un premio y después te llaman supuestos directores de empresa, abogados y hasta alguien que dice ser juez de la Corte para que pagues “gastos”, impuestos o envíos que nunca terminan. Así, una banda de presos de una cárcel de Jujuy le sacó casi 10 millones de pesos a un hombre."
   },
   "steps": [
     {
@@ -33,6 +34,12 @@
         "es": "Te piden datos o la tarjeta para pagar el envío del premio."
       },
       "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "También por teléfono: te llaman supuestos abogados, directores o jueces para que pagues “gastos” que nunca terminan."
+      },
+      "signal": "impersonation"
     }
   ],
   "examples": [
@@ -53,26 +60,39 @@
       "compartir con 5 grupos",
       "preguntitas",
       "coca cola",
-      "fravega"
+      "fravega",
+      "felicitaciones",
+      "fuiste elegido",
+      "recibir un premio",
+      "premio de navidad",
+      "contesta 3 preguntas",
+      "gastos del premio",
+      "pagar los gastos",
+      "cobrar el premio",
+      "retirar el premio",
+      "telefonia satelital"
     ]
   },
   "signals": [
     "too_good_to_be_true",
     "unknown_link",
-    "money_request"
+    "money_request",
+    "impersonation"
   ],
   "redFlags": {
     "es": [
       "Un premio de algo en lo que no participaste.",
       "Te piden compartirlo para “activarlo”.",
-      "Te piden la tarjeta para pagar el envío del premio."
+      "Te piden pagar “gastos”, impuestos o el envío para recibir el premio.",
+      "Te llaman “abogados”, “directores” o “jueces” para apurarte o asustarte."
     ]
   },
   "whatToDo": {
     "es": [
+      "Un premio de verdad no se paga: si te piden plata para cobrarlo, cortá.",
       "No abras links de premios que te llegan sin pedirlos.",
       "Las marcas hacen sus promociones en su página oficial.",
-      "Si pusiste datos, cambiá tus claves y llamá al banco."
+      "Si pusiste datos o pagaste, llamá al banco y hacé la denuncia."
     ]
   },
   "reportTo": [
@@ -80,6 +100,12 @@
     "ar/tu-banco"
   ],
   "sources": [
+    {
+      "title": "Le hicieron creer que había ganado un premio y perdió 10 millones: la estafa de una banda de presos desde una cárcel de Jujuy",
+      "publisher": "Infobae",
+      "url": "https://www.infobae.com/sociedad/policiales/2026/11/15/le-hicieron-creer-que-habia-ganado-un-premio-y-perdio-10-millones-la-estafa-de-una-banda-de-presos-desde-una-carcel-de-jujuy/",
+      "date": "2026-11-15"
+    },
     {
       "title": "No, Coca-Cola no está ofreciendo premios por la Navidad: el enlace que circula es una estafa",
       "publisher": "Chequeado",
@@ -93,5 +119,5 @@
       "date": "2025-02-18"
     }
   ],
-  "updated": "2026-11-13"
+  "updated": "2026-11-15"
 }
