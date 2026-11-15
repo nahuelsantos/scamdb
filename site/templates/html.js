@@ -17,6 +17,5 @@ export function LI(list, lang = 'es') {
   return (pick(list, lang) ?? []).map((s) => `<li lang="${esc(l)}">${esc(s)}</li>`).join('');
 }
 
-export const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-export const monthYear = (iso) => `${MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
-export const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+/** 'Nov 2026' / 'nov 2026' using the interface's month names. */
+export const monthYear = (iso, months) => `${months[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;

@@ -281,3 +281,13 @@ Free tier limits as agreed: catalogue unlimited (it is static); 50 `/isitascam` 
 - Which Workers AI models to use for OCR and speech-to-text.
 - Exact page layouts beyond the home mockup, within the approved look.
 - How `packages/matcher` is shared with eschamuyo (vendored copy or published package), as long as eschamuyo keeps no build step.
+
+## Addendum (2026-11-15): drawings and languages — approved by the owner
+
+**Approaches considered.** (1) Keep the SVG displacement filter on hand-written shapes: rejected, the owner found it doesn't read as hand-drawn. (2) Draw every shape with a sketching library (rough.js) in the browser: rejected, adds a runtime script. (3) **Chosen:** draw with rough.js **at build time** and ship static SVG paths: hand-drawn look, nothing extra loaded, identical output on every build (fixed seeds).
+
+**Drawings.** Every drawing on scamdb.dev (hero phone, note arrows, stamp, step circles and icons, the dotted script line, catalogue icons, logo, the underline under "scams.") uses one style, the owner's pick from the options page: **pen** (thin line traced twice: roughness ≈ 1.1, bowing ≈ 1, stroke ≈ 1.8) **with hatched shading** on one side (from option C). Colours come from CSS tokens so light and dark both work. The old `#rough` displacement filter is removed.
+
+**Script steps.** The label sits as far from the circle as from the text below it. Every step gets a label: a warning-sign step shows that sign's label (pink); a step without a sign shows "What happens" / "Qué pasa" (grey, dashed).
+
+**Languages.** The site interface is in English at `/…` (default) and Spanish at `/es/…`, with an EN / ES switch in the header and `hreflang` alternates. **Scam content is never translated:** entries always show in their original language on both versions (`lang` set on the element); only interface strings and signal labels (already in `en`/`es` in `data/signals.json`) change. The API is unchanged. Not for now: translating entries, more interface languages.

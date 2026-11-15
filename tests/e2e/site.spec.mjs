@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const PAGES = ['/', '/catalogue/', '/catalogue/ar/whatsapp-codigo/', '/docs/', '/contribute/'];
+const EN = ['/', '/catalogue/', '/catalogue/ar/whatsapp-codigo/', '/docs/', '/contribute/'];
+const PAGES = [...EN, ...EN.map((p) => `/es${p}`)];
 
 test('home loads with no console errors', async ({ page }) => {
   const errors = [];
@@ -50,4 +51,22 @@ test('the API is served as JSON', async ({ request }) => {
   const res = await request.get('/v1/ar/scams.json');
   expect(res.status()).toBe(200);
   expect((await res.json()).data.length).toBe(20);
+});
+
+test('the Spanish playground answers in Spanish', async ({ page }) => {
+  await page.goto('/es/');
+  await expect(page.locator('#pg-out .stamp')).toHaveText('estafa');
+  await page.getByRole('button', { name: 'Turno con la dentista' }).click();
+  await expect(page.locator('#pg-out .stamp')).toHaveText('no lo reconocemos');
+  await page.locator('#pg-text').fill('Tenés una encomienda, seguí el envío: [enlace]');
+  await expect(page.locator('#pg-out .stamp')).toHaveText('sospechoso');
+  await page.getByRole('button', { name: 'Código de PAMI' }).click();
+  await expect(page.locator('#pg-out .match a').first()).toHaveAttribute('href', '/es/catalogue/ar/whatsapp-codigo/');
+});
+
+test('the language switch goes to the same page', async ({ page }) => {
+  await page.goto('/docs/');
+  await page.getByRole('link', { name: 'ES', exact: true }).click();
+  await expect(page).toHaveURL(/\/es\/docs\/$/);
+  await expect(page.locator('h1')).toHaveText('Documentación');
 });
