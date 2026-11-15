@@ -59,7 +59,11 @@ The build writes the API and the site to `dist/`.
 
 ## Licenses
 
-- Data (`data/` and everything under `/v1/`): [CC BY 4.0](LICENSE-DATA).
+- Data (`data/` and everything under `/v1/`): [CC BY 4.0](LICENSE-DATA) (full legal text). You may copy, share
+  and adapt it for any purpose, including commercially, as long as you give credit, link to the license and
+  say if you changed it. Credit it as: **scamdb.dev · CC BY 4.0**.
+- Sources and media linked from each entry belong to their owners; scamdb links to them and does not
+  relicense them.
 - Code: [MIT](LICENSE).
 
 ## Deploy (owner steps, once)
