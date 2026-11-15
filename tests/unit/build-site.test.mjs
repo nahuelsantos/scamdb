@@ -27,8 +27,9 @@ test('esc escapes HTML', () => assert.equal(esc(`<a href="x">'&'</a>`), '&lt;a h
 test('writes every page and the playground assets', () => {
   const { dir, out, written } = build();
   const pages = written.filter((p) => p.endsWith('.html')).sort();
-  assert.deepEqual(pages, ['404.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
-    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'index.html']);
+  const en = ['catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
+    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'index.html'];
+  assert.deepEqual(pages, ['404.html', ...en, ...en.map((p) => `es/${p}`)].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
     'assets/lib/text.js', 'assets/entries-ar.json']) assert.ok(existsSync(join(out, a)), a);
   rmSync(dir, { recursive: true });
@@ -113,3 +114,64 @@ test('the home page stays under 250 kB', () => {
 test('icons are pen-drawn', () => assert.match(ICONS.bank, /class="sk/));
 test('the stylesheet no longer uses the displacement filter', () =>
   assert.doesNotMatch(readFileSync(new URL('../../site/assets/styles.css', import.meta.url), 'utf8'), /url\(#rough\)/));
+
+// ---- Languages ----
+const htmlPages = (written) => written.filter((p) => p.endsWith('.html'));
+test('every page exists in English and in Spanish', () => {
+  const { dir, written } = build();
+  const en = htmlPages(written).filter((p) => !p.startsWith('es/') && p !== '404.html');
+  for (const p of en) assert.ok(written.includes(`es/${p}`), `es/${p}`);
+  rmSync(dir, { recursive: true });
+});
+test('Spanish pages say so and have a Spanish menu', () => {
+  const { dir, page } = build();
+  const html = page('es/index.html');
+  assert.match(html, /<html lang="es">/);
+  for (const w of ['Catálogo', 'Documentación', 'Contribuir']) assert.ok(html.includes(w), w);
+  rmSync(dir, { recursive: true });
+});
+test('internal links on Spanish pages stay in Spanish', () => {
+  const { dir, written, page } = build();
+  for (const p of htmlPages(written).filter((p) => p.startsWith('es/'))) {
+    for (const [tag, href] of page(p).matchAll(/<(?:a|link) [^>]*href="(\/[^"]*)"[^>]*>/g)) {
+      if (/^\/(v1|assets)\//.test(href)) continue;
+      if (/hreflang=/.test(tag)) continue; // the language switch and alternates point at the other language on purpose
+      assert.ok(href.startsWith('/es/') || href === '/es', `${p}: ${href}`);
+    }
+  }
+  rmSync(dir, { recursive: true });
+});
+test('scam content is the same in both languages and keeps its own lang', () => {
+  const { dir, page } = build();
+  const pick = (h) => h.match(/<h1><span lang="es">([^<]+)<\/span><\/h1>/)?.[1];
+  const en = page('catalogue/ar/ejemplo/index.html'), es = page('es/catalogue/ar/ejemplo/index.html');
+  assert.equal(pick(en), 'Robo de WhatsApp con el código');
+  assert.equal(pick(es), pick(en));
+  rmSync(dir, { recursive: true });
+});
+test('hreflang alternates point at each other', () => {
+  const { dir, page } = build();
+  const en = page('docs/index.html'), es = page('es/docs/index.html');
+  for (const h of [en, es]) {
+    assert.ok(h.includes('<link rel="alternate" hreflang="en" href="https://scamdb.dev/docs/">'));
+    assert.ok(h.includes('<link rel="alternate" hreflang="es" href="https://scamdb.dev/es/docs/">'));
+    assert.ok(h.includes('<link rel="alternate" hreflang="x-default" href="https://scamdb.dev/docs/">'));
+  }
+  rmSync(dir, { recursive: true });
+});
+test('the language switch on an entry page points at the same entry', () => {
+  const { dir, page } = build();
+  assert.ok(page('catalogue/ar/ejemplo/index.html').includes('href="/es/catalogue/ar/ejemplo/" hreflang="es"'));
+  assert.ok(page('es/catalogue/ar/ejemplo/index.html').includes('href="/catalogue/ar/ejemplo/" hreflang="en"'));
+  rmSync(dir, { recursive: true });
+});
+test('signal labels follow the interface language', () => {
+  const { dir, page } = build();
+  assert.ok(page('es/catalogue/ar/ejemplo/index.html').includes('>Te pide un código<'));
+  assert.ok(page('catalogue/ar/ejemplo/index.html').includes('>Asks for a code<'));
+  rmSync(dir, { recursive: true });
+});
+test('both languages have every interface string', async () => {
+  const { UI } = await import('../../site/i18n.js');
+  assert.deepEqual(Object.keys(UI.es).sort(), Object.keys(UI.en).sort());
+});

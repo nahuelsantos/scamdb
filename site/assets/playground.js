@@ -9,7 +9,9 @@ const TEXTS = [
   'Mamá, soy yo, estoy en problemas, no le digas a nadie. Ahora te llama un señor que me está ayudando. No cortes.',
   'Hola Marta, te recuerdo el turno con la Dra. López mañana a las 10:30. Si no podés venir avisanos. Saludos!',
 ];
-const VERDICT = { scam: 'scam', suspicious: 'suspicious', not_recognised: 'not recognised' };
+// Interface strings come from the page (English or Spanish), so one script serves both.
+const S = JSON.parse(out.dataset.strings || '{}');
+const LANG = out.dataset.lang || 'en';
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const first = (t) => (t ? (t.es ?? Object.values(t)[0]) : '');
 
@@ -20,14 +22,14 @@ async function load() {
 }
 
 function render(r) {
-  const labels = new Map(data.signals.map((s) => [s.id, s.label.en]));
+  const labels = new Map(data.signals.map((s) => [s.id, s.label[LANG] ?? s.label.en]));
   const byId = new Map(data.entries.map((e) => [e.id, e]));
   const sigs = r.signals.map((s) => `<li><code>${esc(s.id)}</code><span>${esc(labels.get(s.id) ?? s.id)}: <q lang="es">${esc(s.evidence)}</q></span></li>`).join('')
-    || '<li><code>no_signals</code><span>No codes, money, links or pressure</span></li>';
+    || `<li><code>no_signals</code><span>${esc(S.noSignals)}</span></li>`;
   const m = r.matches[0] && byId.get(r.matches[0].id);
-  const match = m ? `Matches <a href="/catalogue/${esc(m.id)}/">${esc(m.id)}</a>, <span lang="es">${esc(first(m.name))}</span>`
-    : 'No known scam. If it still feels off, don’t answer and ask someone you trust.';
-  out.innerHTML = `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(VERDICT[r.verdict])}</span><span class="noscore">score: null · catalogue match only</span></div>
+  const match = m ? `${esc(S.matches)} <a href="${S.prefix}/catalogue/${esc(m.id)}/">${esc(m.id)}</a>, <span lang="es">${esc(first(m.name))}</span>`
+    : esc(S.noMatch);
+  out.innerHTML = `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(S[r.verdict])}</span><span class="noscore">${esc(S.noScore)}</span></div>
 <ul class="why">${sigs}</ul><p class="match">${match}</p>`;
 }
 

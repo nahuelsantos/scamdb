@@ -8,6 +8,7 @@ import { entry } from '../site/templates/entry.js';
 import { docs } from '../site/templates/docs.js';
 import { contribute } from '../site/templates/contribute.js';
 import { notfound } from '../site/templates/notfound.js';
+import { LANGS } from '../site/i18n.js';
 
 export { esc } from '../site/templates/html.js';
 
@@ -36,11 +37,15 @@ export function buildSite(repo, outDir, meta, root) {
   };
   const ctx = { repo, meta, matchMessage, root };
 
-  put('index.html', home(ctx));
-  put('catalogue/index.html', catalogue(ctx));
-  for (const e of repo.entries) put(`catalogue/${e.id}/index.html`, entry({ ...ctx, entry: e }));
-  put('docs/index.html', docs(ctx));
-  put('contribute/index.html', contribute(ctx));
+  for (const lang of LANGS) {
+    const at = lang === 'en' ? '' : `${lang}/`;
+    const c = { ...ctx, lang };
+    put(`${at}index.html`, home(c));
+    put(`${at}catalogue/index.html`, catalogue(c));
+    for (const e of repo.entries) put(`${at}catalogue/${e.id}/index.html`, entry({ ...c, entry: e }));
+    put(`${at}docs/index.html`, docs(c));
+    put(`${at}contribute/index.html`, contribute(c));
+  }
   put('404.html', notfound(ctx));
 
   for (const f of readdirSync(join(CODE, 'site/assets'))) copy(join(CODE, 'site/assets', f), `assets/${f}`);
