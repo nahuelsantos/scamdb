@@ -29,7 +29,7 @@ export function card(e, lang = 'es', ui = 'en') {
   <div class="sp-top"><a class="id" href="${url}">${esc(e.id)}</a>${iconFor(e)}</div>
   <h3><a href="${url}">${L(e.name, lang)}</a></h3>
   ${ex ? `<blockquote>${L(ex, lang)}</blockquote>` : ''}
-  <div class="chips">${e.channels.map((c) => `<span>${esc(c)}</span>`).join('')}</div>
+  <div class="chips">${e.channels.map((c) => `<span>${esc(t(ui, 'channels')[c] ?? c)}</span>`).join('')}</div>
   <div class="count">${esc(t(ui, 'cardCount', e.signals.length, e.sources.length, monthYear(e.updated, t(ui, 'months'))))}</div>
 </article>`;
 }

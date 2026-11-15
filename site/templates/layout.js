@@ -10,14 +10,14 @@ const LS = sketch(801);
 const LOGO = `<svg viewBox="0 0 30 30" aria-hidden="true" focusable="false">${LS.circle(13, 13, 17)}${LS.path('M19.5 19.5 L26 26')}${LS.path('M9.5 13.2 l2.4 2.4 4.4-5', { kind: 'acc' })}</svg>`;
 
 /** `path` is the language-neutral path ('/docs/'); the page lives at prefix(lang) + path. */
-export function layout({ title, description, body, path, meta, lang = 'en', scripts = '', alternates = true }) {
+export function layout({ title, description, body, path, meta, lang = 'en', scripts = '', alternates = true, switchPath = path }) {
   const P = prefix(lang);
   const here = `${P}${path}`;
   const nav = [['/docs/', t(lang, 'navDocs')], ['/catalogue/', t(lang, 'navCatalogue')], ['/contribute/', t(lang, 'navContribute')]]
     .map(([href, label]) => `<a href="${P}${href}"${path.startsWith(href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
   const sw = ['en', 'es'].map((l) => (l === lang
     ? `<span aria-current="true" lang="${l}">${l.toUpperCase()}</span>`
-    : `<a href="${prefix(l)}${path}" hreflang="${l}" lang="${l}">${l.toUpperCase()}</a>`)).join('<span aria-hidden="true">/</span>');
+    : `<a href="${prefix(l)}${switchPath}" hreflang="${l}" lang="${l}">${l.toUpperCase()}</a>`)).join('<span aria-hidden="true">/</span>');
   const alt = alternates ? `<link rel="alternate" hreflang="en" href="${SITE}${esc(path)}">
 <link rel="alternate" hreflang="es" href="${SITE}/es${esc(path)}">
 <link rel="alternate" hreflang="x-default" href="${SITE}${esc(path)}">

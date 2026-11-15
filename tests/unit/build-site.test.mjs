@@ -175,3 +175,25 @@ test('both languages have every interface string', async () => {
   const { UI } = await import('../../site/i18n.js');
   assert.deepEqual(Object.keys(UI.es).sort(), Object.keys(UI.en).sort());
 });
+
+test('the 404 language switch goes to the Spanish home, not a missing page', () => {
+  const { dir, page } = build();
+  const html = page('404.html');
+  assert.ok(html.includes('href="/es/" hreflang="es"'));
+  assert.ok(!html.includes('/es/404.html'));
+  rmSync(dir, { recursive: true });
+});
+test('channel names are translated on Spanish pages, ids stay in the API', () => {
+  const { dir, page } = build();
+  const es = page('es/catalogue/ar/ejemplo/index.html');
+  assert.ok(!es.includes('por phone'));
+  assert.ok(es.includes('por teléfono'));
+  assert.ok(page('es/catalogue/index.html').includes('<span>teléfono</span>'));
+  assert.ok(page('catalogue/ar/ejemplo/index.html').includes('via phone'));
+  rmSync(dir, { recursive: true });
+});
+test('Spanish source line agrees in gender: revisada el', () => {
+  const { dir, page } = build();
+  assert.ok(page('es/catalogue/ar/ejemplo/index.html').includes('revisada el'));
+  rmSync(dir, { recursive: true });
+});

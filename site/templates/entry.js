@@ -18,7 +18,7 @@ export function entry({ repo, meta, entry: e, lang: ui = 'en' }) {
 <header class="entry-head">
   <div><p class="eyebrow"><a href="${P}/catalogue/">${esc(t(ui, 'navCatalogue'))}</a> · ${esc(pick(country?.name, ui) ?? e.country)} · <span class="mono">${esc(e.id)}</span></p>
   <h1>${L(e.name, lang)}</h1>
-  <p class="sender">${esc(t(ui, 'claims'))} ${L(e.sender, lang, 'b')} · ${esc(t(ui, 'via'))} ${e.channels.map(esc).join(', ')}</p></div>
+  <p class="sender">${esc(t(ui, 'claims'))} ${L(e.sender, lang, 'b')} · ${esc(t(ui, 'via'))} ${e.channels.map((c) => esc(t(ui, 'channels')[c] ?? c)).join(', ')}</p></div>
   ${iconFor(e)}
 </header>
 ${L(e.how, lang, 'p', 'lede')}
