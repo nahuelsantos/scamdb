@@ -1,0 +1,385 @@
+<title>scamdb.dev mockups</title>
+<script>document.documentElement.setAttribute("data-look","chosen")</script>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Patrick+Hand&family=Syne:wght@700;800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&family=Reenie+Beanie&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Nanum+Pen+Script&family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&family=Shadows+Into+Light&display=swap">
+<style>
+/* Layout: a field guide. Paper page, ink line drawings with handwritten notes, one ink panel (the playground), specimen cards for the catalogue. */
+:root{
+  --paper:#f3f4ef; --card:#ffffff; --ink:#1b1e22; --dim:#5e636b; --line:#d3d6cd;
+  --accent:#e2522a; --hl:rgba(255,214,64,.55); --link:#2f5bd3;
+  --panel:#1b1e22; --panel-ink:#eeede6; --panel-dim:#969aa2; --panel-line:#30343a; --ok:#3a9d63;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Instrument Sans",system-ui,sans-serif;
+  --mono:"DM Mono",ui-monospace,monospace; --hand:"Caveat","Comic Sans MS",cursive;
+  --hand-size:22px; --dw:800; --dtrack:-.045em;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#15171a; --card:#1d2024; --ink:#ebeae3; --dim:#9da1a8; --line:#2e3238;
+  --accent:#ff7448; --hl:rgba(255,214,64,.28); --link:#8fa8ff;
+  --panel:#0e0f11; --panel-ink:#ebeae3; --panel-dim:#8b8f97; --panel-line:#2a2d33; --ok:#6fcf95; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#15171a; --card:#1d2024; --ink:#ebeae3; --dim:#9da1a8; --line:#2e3238;
+  --accent:#ff7448; --hl:rgba(255,214,64,.28); --link:#8fa8ff;
+  --panel:#0e0f11; --panel-ink:#ebeae3; --panel-dim:#8b8f97; --panel-line:#2a2d33; --ok:#6fcf95; color-scheme:dark}
+:root[data-look="notebook"]{--display:"Space Grotesk",sans-serif;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;--hand:"Patrick Hand",cursive;--hand-size:21px;--dw:700;--dtrack:-.04em;--paper:#eef1f6;--card:#ffffff;--ink:#142033;--dim:#56617a;--line:#cfd6e2;--accent:#2f5bff;--hl:rgba(70,215,165,.45);--link:#2f5bff;--panel:#142033;--panel-ink:#eef1f6;--panel-dim:#8e9ab3;--panel-line:#26344d;--ok:#1f9e74}
+@media (prefers-color-scheme: dark){:root[data-look="notebook"]:not([data-theme="light"]){--display:"Space Grotesk",sans-serif;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;--hand:"Patrick Hand",cursive;--hand-size:21px;--dw:700;--dtrack:-.04em;--paper:#0f1522;--card:#18202f;--ink:#e6ebf4;--dim:#98a3ba;--line:#283247;--accent:#7d9bff;--hl:rgba(70,215,165,.25);--link:#9db2ff;--panel:#090d16;--panel-ink:#e6ebf4;--panel-dim:#8390a8;--panel-line:#222c40;--ok:#5fd3a8;color-scheme:dark}}
+:root[data-look="notebook"][data-theme="dark"]{--display:"Space Grotesk",sans-serif;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;--hand:"Patrick Hand",cursive;--hand-size:21px;--dw:700;--dtrack:-.04em;--paper:#0f1522;--card:#18202f;--ink:#e6ebf4;--dim:#98a3ba;--line:#283247;--accent:#7d9bff;--hl:rgba(70,215,165,.25);--link:#9db2ff;--panel:#090d16;--panel-ink:#e6ebf4;--panel-dim:#8390a8;--panel-line:#222c40;--ok:#5fd3a8;color-scheme:dark}
+:root[data-look="evidence"]{--display:"Syne",sans-serif;--body:"Manrope",sans-serif;--mono:"Space Mono",monospace;--hand:"Reenie Beanie",cursive;--hand-size:27px;--dw:800;--dtrack:-.035em;--paper:#e9e9e6;--card:#f7f7f5;--ink:#111111;--dim:#555555;--line:#cbcbc6;--accent:#de2a1f;--hl:rgba(255,226,0,.6);--link:#111111;--panel:#111111;--panel-ink:#f2f2ef;--panel-dim:#8f8f8a;--panel-line:#2a2a2a;--ok:#2f9b4f}
+@media (prefers-color-scheme: dark){:root[data-look="evidence"]:not([data-theme="light"]){--display:"Syne",sans-serif;--body:"Manrope",sans-serif;--mono:"Space Mono",monospace;--hand:"Reenie Beanie",cursive;--hand-size:27px;--dw:800;--dtrack:-.035em;--paper:#141414;--card:#1d1d1d;--ink:#efefea;--dim:#9b9b95;--line:#2f2f2f;--accent:#ff4b3e;--hl:rgba(255,226,0,.3);--link:#efefea;--panel:#000000;--panel-ink:#efefea;--panel-dim:#8a8a85;--panel-line:#262626;--ok:#5fcf7f;color-scheme:dark}}
+:root[data-look="evidence"][data-theme="dark"]{--display:"Syne",sans-serif;--body:"Manrope",sans-serif;--mono:"Space Mono",monospace;--hand:"Reenie Beanie",cursive;--hand-size:27px;--dw:800;--dtrack:-.035em;--paper:#141414;--card:#1d1d1d;--ink:#efefea;--dim:#9b9b95;--line:#2f2f2f;--accent:#ff4b3e;--hl:rgba(255,226,0,.3);--link:#efefea;--panel:#000000;--panel-ink:#efefea;--panel-dim:#8a8a85;--panel-line:#262626;--ok:#5fcf7f;color-scheme:dark}
+:root[data-look="herbarium"]{--display:"Fraunces",serif;--body:"Work Sans",sans-serif;--mono:"JetBrains Mono",monospace;--hand:"Nanum Pen Script",cursive;--hand-size:26px;--dw:700;--dtrack:-.03em;--paper:#eceee4;--card:#fafbf6;--ink:#1d2a20;--dim:#5a6658;--line:#cfd4c4;--accent:#d63d74;--hl:rgba(190,230,80,.55);--link:#1d6b46;--panel:#1d2a20;--panel-ink:#eef0e6;--panel-dim:#94a092;--panel-line:#2f3e33;--ok:#3d9a5c}
+@media (prefers-color-scheme: dark){:root[data-look="herbarium"]:not([data-theme="light"]){--display:"Fraunces",serif;--body:"Work Sans",sans-serif;--mono:"JetBrains Mono",monospace;--hand:"Nanum Pen Script",cursive;--hand-size:26px;--dw:700;--dtrack:-.03em;--paper:#131a15;--card:#1b241d;--ink:#e7ebde;--dim:#9aa596;--line:#2a362d;--accent:#ff6f9f;--hl:rgba(190,230,80,.25);--link:#8fd6ac;--panel:#0b100c;--panel-ink:#e7ebde;--panel-dim:#88947f;--panel-line:#26312a;--ok:#76cf92;color-scheme:dark}}
+:root[data-look="herbarium"][data-theme="dark"]{--display:"Fraunces",serif;--body:"Work Sans",sans-serif;--mono:"JetBrains Mono",monospace;--hand:"Nanum Pen Script",cursive;--hand-size:26px;--dw:700;--dtrack:-.03em;--paper:#131a15;--card:#1b241d;--ink:#e7ebde;--dim:#9aa596;--line:#2a362d;--accent:#ff6f9f;--hl:rgba(190,230,80,.25);--link:#8fd6ac;--panel:#0b100c;--panel-ink:#e7ebde;--panel-dim:#88947f;--panel-line:#26312a;--ok:#76cf92;color-scheme:dark}
+:root[data-look="night"]{--display:"Sora",sans-serif;--body:"Inter",sans-serif;--mono:"Fira Code",monospace;--hand:"Shadows Into Light",cursive;--hand-size:21px;--dw:800;--dtrack:-.05em;--paper:#10141c;--card:#171c26;--ink:#e7eaf0;--dim:#9299a8;--line:#262d3a;--accent:#ffb23f;--hl:rgba(60,210,200,.28);--link:#7fe0d8;--panel:#0a0d13;--panel-ink:#e7eaf0;--panel-dim:#7f8696;--panel-line:#222937;--ok:#4fd6c4;color-scheme:dark}
+@media (prefers-color-scheme: dark){:root[data-look="night"]:not([data-theme="light"]){--display:"Sora",sans-serif;--body:"Inter",sans-serif;--mono:"Fira Code",monospace;--hand:"Shadows Into Light",cursive;--hand-size:21px;--dw:800;--dtrack:-.05em;--paper:#10141c;--card:#171c26;--ink:#e7eaf0;--dim:#9299a8;--line:#262d3a;--accent:#ffb23f;--hl:rgba(60,210,200,.28);--link:#7fe0d8;--panel:#0a0d13;--panel-ink:#e7eaf0;--panel-dim:#7f8696;--panel-line:#222937;--ok:#4fd6c4;color-scheme:dark;color-scheme:dark}}
+:root[data-look="night"][data-theme="dark"]{--display:"Sora",sans-serif;--body:"Inter",sans-serif;--mono:"Fira Code",monospace;--hand:"Shadows Into Light",cursive;--hand-size:21px;--dw:800;--dtrack:-.05em;--paper:#10141c;--card:#171c26;--ink:#e7eaf0;--dim:#9299a8;--line:#262d3a;--accent:#ffb23f;--hl:rgba(60,210,200,.28);--link:#7fe0d8;--panel:#0a0d13;--panel-ink:#e7eaf0;--panel-dim:#7f8696;--panel-line:#222937;--ok:#4fd6c4;color-scheme:dark;color-scheme:dark}
+:root[data-look="chosen"]{--display:"Space Grotesk",sans-serif;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;--hand:"Patrick Hand",cursive;--hand-size:21px;--dw:700;--dtrack:-.04em;--paper:#eceee4;--card:#fafbf6;--ink:#1d2a20;--dim:#5a6658;--line:#cfd4c4;--accent:#d63d74;--hl:rgba(190,230,80,.55);--link:#1d6b46;--panel:#1d2a20;--panel-ink:#eef0e6;--panel-dim:#94a092;--panel-line:#2f3e33;--ok:#3d9a5c}
+@media (prefers-color-scheme: dark){:root[data-look="chosen"]:not([data-theme="light"]){--display:"Space Grotesk",sans-serif;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;--hand:"Patrick Hand",cursive;--hand-size:21px;--dw:700;--dtrack:-.04em;--paper:#131a15;--card:#1b241d;--ink:#e7ebde;--dim:#9aa596;--line:#2a362d;--accent:#ff6f9f;--hl:rgba(190,230,80,.25);--link:#8fd6ac;--panel:#0b100c;--panel-ink:#e7ebde;--panel-dim:#88947f;--panel-line:#26312a;--ok:#76cf92;color-scheme:dark}}
+:root[data-look="chosen"][data-theme="dark"]{--display:"Space Grotesk",sans-serif;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;--hand:"Patrick Hand",cursive;--hand-size:21px;--dw:700;--dtrack:-.04em;--paper:#131a15;--card:#1b241d;--ink:#e7ebde;--dim:#9aa596;--line:#2a362d;--accent:#ff6f9f;--hl:rgba(190,230,80,.25);--link:#8fd6ac;--panel:#0b100c;--panel-ink:#e7ebde;--panel-dim:#88947f;--panel-line:#26312a;--ok:#76cf92;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.note{background:var(--card);border-bottom:1px solid var(--line);font-size:14px;color:var(--dim)}
+.note .wrap{padding-block:10px}
+.note b{color:var(--ink)}
+
+/* drawing primitives */
+.d{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.d-thin{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.d-acc{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.f-card{fill:var(--card)} .f-paper{fill:var(--paper)} .f-hl{fill:var(--hl)} .f-ink{fill:var(--ink)} .f-acc{fill:var(--accent)}
+.t-hand{font-family:var(--hand);fill:var(--ink);font-size:var(--hand-size)}
+.t-hand-acc{font-family:var(--hand);fill:var(--accent);font-size:var(--hand-size)}
+.t-ui{font-family:var(--body);fill:var(--ink);font-size:13px}
+.t-mono{font-family:var(--mono);fill:var(--dim);font-size:11px}
+.d,.d-thin,.d-acc{filter:url(#rough)}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:var(--dw);font-size:20px;letter-spacing:-.02em;text-decoration:none}
+.logo svg{width:30px;height:30px}
+.links{display:flex;gap:24px;font-size:15px;color:var(--dim);align-items:center}
+.links a{text-decoration:none}
+.links .gh{border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;padding:4px 12px;font-family:var(--mono);font-size:13px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;padding-block:20px 36px}
+.eyebrow{font-family:var(--mono);font-size:13px;color:var(--dim);display:inline-flex;gap:8px;align-items:center;margin:0 0 18px}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+h1{font-family:var(--display);font-weight:var(--dw);font-size:clamp(44px,6.6vw,88px);line-height:.94;letter-spacing:var(--dtrack);margin:0 0 22px;text-wrap:balance}
+h1 .mark{position:relative;white-space:nowrap}
+h1 .mark svg{position:absolute;left:-2%;bottom:-.16em;width:104%;height:.32em;overflow:visible}
+.lede{font-size:18px;color:var(--dim);max-width:46ch;margin:0 0 26px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font-family:var(--body);font-weight:600;font-size:15px;border-radius:10px;padding:12px 18px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.hero-art svg{width:100%;height:auto;display:block;max-width:560px;margin-left:auto}
+
+/* playground */
+.panel{background:var(--panel);color:var(--panel-ink);border-radius:22px;display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr);margin-block:8px 64px;overflow:hidden}
+.pcol{padding:28px;min-width:0}
+.plab{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--panel-dim);margin:0 0 14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.samples{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.samples button{font-family:var(--mono);font-size:12px;background:transparent;color:var(--panel-dim);border:1px solid var(--panel-line);border-radius:999px;padding:4px 11px;cursor:pointer}
+.samples button[aria-pressed="true"]{color:var(--panel-ink);border-color:var(--panel-ink)}
+.bubble{background:color-mix(in srgb,var(--panel-ink) 8%,transparent);border-radius:16px 16px 16px 4px;padding:14px 16px;margin:0 0 16px;font-size:16px;line-height:1.5}
+.curl{font-family:var(--mono);font-size:12px;color:var(--panel-dim);margin:0;white-space:pre-wrap;word-break:break-word}
+.curl b{font-weight:500;color:var(--panel-ink)}
+.arrow{display:grid;place-items:center}
+.arrow svg{width:56px;height:80px}
+.arrow .d{stroke:var(--panel-dim)}
+.verdict{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 16px}
+.score{font-family:var(--display);font-size:60px;font-weight:var(--dw);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.stamp{font-family:var(--mono);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;border:2px solid currentColor;border-radius:5px;padding:2px 9px;transform:rotate(-4deg)}
+.why{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px;font-size:15px}
+.why li{display:grid;grid-template-columns:132px minmax(0,1fr);gap:12px;padding-top:8px;border-top:1px solid var(--panel-line)}
+.why code{font-family:var(--mono);font-size:12px;color:var(--panel-dim);padding-top:2px}
+.match{margin:0;font-size:14px;color:var(--panel-dim)}
+.match a{color:var(--panel-ink)}
+
+/* section heads */
+.sh{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin:0 0 24px}
+h2{font-family:var(--display);font-weight:var(--dw);font-size:clamp(28px,3.6vw,42px);letter-spacing:-.035em;line-height:1;margin:0;text-wrap:balance}
+.sh p{margin:0;color:var(--dim);max-width:48ch}
+
+/* route */
+.route{position:relative;margin-bottom:72px}
+.route-line{position:absolute;left:4%;top:8px;height:60px;width:92%;z-index:0}
+.steps-wrap{position:relative}
+.steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0}
+.step{display:grid;gap:8px;justify-items:start}
+.step .ic{width:76px;height:76px;background:var(--paper);border-radius:50%}
+.step .ic svg{width:76px;height:76px}
+.step h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.02em;margin:6px 0 0;line-height:1.15}
+.step p{margin:0;color:var(--dim);font-size:15px}
+.flag{font-family:var(--mono);font-size:12px;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:1px 9px}
+.step.last .ic{background:var(--hl)}
+
+/* specimens */
+.specimens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:72px}
+.sp{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:10px;align-content:start}
+.sp-top{display:flex;justify-content:space-between;align-items:start;gap:10px}
+.sp svg{width:64px;height:64px;flex:none}
+.sp .id{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.sp h3{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.02em;line-height:1.15;margin:0}
+.sp q{color:var(--dim);font-size:15px;quotes:"“" "”"}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips span{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--dim)}
+.sp .count{font-size:13px;color:var(--dim);border-top:1px dashed var(--line);padding-top:10px}
+
+/* endpoints */
+.eps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1.5px solid var(--ink);margin-bottom:40px}
+.ep{padding:20px 18px 8px 0;display:grid;gap:6px;align-content:start}
+.ep code{font-family:var(--mono);font-size:13px;font-weight:500}
+.ep p{margin:0;color:var(--dim);font-size:14px}
+.ep .tier{font-family:var(--hand);font-size:calc(var(--hand-size) - 2px);color:var(--accent);line-height:1}
+footer{border-top:1px solid var(--line);padding-block:20px 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--dim)}
+footer span{font-family:var(--mono);font-size:12px}
+
+@media (max-width:880px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero-art svg{margin:0 auto}
+  .panel{grid-template-columns:minmax(0,1fr)}
+  .arrow{padding:0;height:40px}.arrow svg{transform:rotate(90deg);height:56px}
+  .steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:32px}
+  .route-line{display:none}
+  .specimens{grid-template-columns:minmax(0,1fr)}
+  .eps{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .links a:not(.gh){display:none}
+}
+@media (max-width:480px){.why li{grid-template-columns:minmax(0,1fr);gap:2px}}
+button:focus-visible,a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+
+.switch{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--card)}
+.switch .wrap{display:flex;gap:8px;align-items:center;padding-block:10px;overflow-x:auto;scrollbar-width:none}
+.switch .lbl{font-family:var(--mono);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;flex:none;margin-right:4px}
+.switch button{flex:none;display:grid;gap:1px;text-align:left;font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink);background:transparent;border:1.5px solid var(--line);border-radius:10px;padding:6px 11px;cursor:pointer}
+.switch button small{font-weight:400;font-size:11px;color:var(--dim);font-family:var(--mono)}
+.switch button[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
+@media (min-width:900px){.switch .wrap{flex-wrap:wrap;overflow:visible}}
+.switch .sep{flex:none;width:1px;align-self:stretch;background:var(--line);margin-inline:6px}
+.switch .theme button{padding:6px 10px}
+.swatch{display:inline-flex;gap:3px;margin-top:3px}.swatch i{width:10px;height:10px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.15)}
+</style>
+
+<!-- shared filter that makes every line look hand-drawn -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="switch" aria-label="Try other fonts and colours"><div class="wrap">
+  <span class="lbl">Look</span>
+  <button type="button" data-look="chosen" aria-pressed="true">★ Your pick<small>Notebook fonts · Herbarium colours</small><span class="swatch"><i style="background:#eceee4"></i><i style="background:#1d2a20"></i><i style="background:#d63d74"></i></span></button>
+  <button type="button" data-look="" aria-pressed="false">1 · Field guide<small>Bricolage · Instrument · orange</small><span class="swatch"><i style="background:#f3f4ef"></i><i style="background:#1b1e22"></i><i style="background:#e2522a"></i></span></button>
+  <button type="button" data-look="notebook" aria-pressed="false">2 · Notebook<small>Space Grotesk · Plex · cobalt</small><span class="swatch"><i style="background:#eef1f6"></i><i style="background:#142033"></i><i style="background:#2f5bff"></i></span></button>
+  <button type="button" data-look="evidence" aria-pressed="false">3 · Evidence<small>Syne · Manrope · red</small><span class="swatch"><i style="background:#e9e9e6"></i><i style="background:#111111"></i><i style="background:#de2a1f"></i></span></button>
+  <button type="button" data-look="herbarium" aria-pressed="false">4 · Herbarium<small>Fraunces · Work Sans · pink</small><span class="swatch"><i style="background:#eceee4"></i><i style="background:#1d2a20"></i><i style="background:#d63d74"></i></span></button>
+  <button type="button" data-look="night" aria-pressed="false">5 · Night lab<small>Sora · Inter · amber, dark only</small><span class="swatch"><i style="background:#10141c"></i><i style="background:#e7eaf0"></i><i style="background:#ffb23f"></i></span></button>
+  <span class="sep"></span>
+  <span class="theme" role="group" aria-label="Theme" style="display:flex;gap:6px"><button type="button" data-theme="light" aria-pressed="false">Light</button><button type="button" data-theme="dark" aria-pressed="false">Dark</button><button type="button" data-theme="" aria-pressed="true">Auto</button></span>
+</div></div>
+<div class="note"><div class="wrap"><b>Mockup v4: your pick.</b> Notebook fonts (Space Grotesk, IBM Plex, Patrick Hand) with Herbarium colours (sage, deep green, pink). The other pairings stay in the bar for comparison.</div></div>
+
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><g><circle class="d" cx="13" cy="13" r="8.5"/><path class="d" d="M19.5 19.5 L26 26"/><path class="d-acc" d="M9.5 13.2 l2.4 2.4 4.4-5"/></g></svg>
+      scamdb
+    </a>
+    <div class="links"><a href="#">Docs</a><a href="#">Catalogue</a><a href="#">Pricing</a><a href="#">Report a scam</a><a class="gh" href="#">GitHub</a></div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">20 scams · Argentina · open data</p>
+      <h1>A field guide to <span class="mark">scams.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path class="d-acc" d="M3 12 C 50 4, 120 4, 197 10 M20 16 C 70 11, 130 12, 180 15" stroke-width="3.2"/></svg></span></h1>
+      <p class="lede">How each scam works, the words it uses, the warning signs and who to call, country by country. Free to download, free to build on, and an API that tells you whether a message is one.</p>
+      <div class="btns"><button class="btn solid" type="button">Get a free key</button><button class="btn" type="button">Browse the catalogue</button></div>
+    </div>
+
+    <div class="hero-art">
+      <svg viewBox="0 0 540 460" role="img" aria-labelledby="hero-t">
+        <title id="hero-t">A drawn phone showing the PAMI code scam message, with handwritten notes pointing at each warning sign</title>
+        <g>
+          <!-- phone -->
+          <rect class="d f-card" x="165" y="30" width="210" height="390" rx="30"/>
+          <path class="d-thin" d="M245 52 h50"/>
+          <circle class="d-thin" cx="270" cy="400" r="9"/>
+          <!-- header -->
+          <circle class="d-thin" cx="200" cy="88" r="13"/>
+          <text class="t-ui" x="222" y="85" font-weight="600">“PAMI”</text>
+          <text class="t-mono" x="222" y="100">+54 11 ···· 2231</text>
+          <path class="d-thin" d="M182 116 h176"/>
+          <!-- message bubble -->
+          
+          <path class="d f-paper" d="M186 130 h150 a12 12 0 0 1 12 12 v86 a12 12 0 0 1 -12 12 h-138 l-12 10 v-108 a12 12 0 0 1 0 -12 z"/>
+          <text class="t-ui" x="198" y="156">Le hablo de PAMI.</text>
+          <text class="t-ui" x="198" y="176">Le va a llegar un</text>
+          <rect class="f-hl" x="196" y="186" width="46" height="17" rx="3"/>
+          <text class="t-ui" x="198" y="198">código, ¿me lo lee</text>
+          <text class="t-ui" x="198" y="218">así confirmamos?</text>
+          <text class="t-ui" x="198" y="234" font-weight="600" font-size="12">Es para hoy.</text>
+          <!-- sms code -->
+          <rect class="d-thin f-paper" x="214" y="268" width="134" height="44" rx="10"/>
+          <text class="t-mono" x="226" y="285">SMS · WhatsApp</text>
+          <text class="t-ui" x="226" y="303" font-weight="600" letter-spacing="2">482-913</text>
+          <!-- stamp -->
+          <g transform="rotate(-9 270 352)">
+            <rect class="d-acc" x="206" y="332" width="128" height="40" rx="6" stroke-width="3"/>
+            <text x="270" y="359" text-anchor="middle" style="font-family:var(--mono)" font-weight="500" font-size="17" letter-spacing="3" class="f-acc">SCAM 0.94</text>
+          </g>
+          <!-- notes left -->
+          <text class="t-hand" x="20" y="92">fake agency</text>
+          <path class="d-thin" d="M118 96 C 145 104, 160 94, 186 88"/><path class="d-thin" d="M178 82 l9 6 -9 5"/>
+          <text class="t-hand" x="34" y="232">rushes you</text>
+          <path class="d-thin" d="M124 228 C 150 236, 165 236, 190 232"/><path class="d-thin" d="M182 226 l9 6 -9 6"/>
+          <!-- notes right -->
+          <text class="t-hand-acc" x="392" y="182">asks for</text>
+          <text class="t-hand-acc" x="392" y="204">a code!</text>
+          <path class="d-acc" d="M388 194 C 375 200, 365 202, 352 199"/><path class="d-acc" d="M361 193 l-10 6 10 6"/>
+          <text class="t-hand" x="392" y="300">never read it</text>
+          <text class="t-hand" x="392" y="322">to anyone</text>
+          <path class="d-thin" d="M390 302 C 375 298, 362 294, 352 292"/><path class="d-thin" d="M360 286 l-9 6 9 5"/>
+          <text class="t-mono" x="392" y="420">ar/whatsapp-codigo</text>
+          <path class="d-thin" d="M388 414 C 370 410, 382 404, 378 398"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Try the isitascam endpoint">
+    <div class="pcol">
+      <p class="plab"><span>Paste a message</span><span>POST /v1/isitascam</span></p>
+      <div class="samples" role="group" aria-label="Sample messages">
+        <button type="button" data-s="0" aria-pressed="true">PAMI code</button>
+        <button type="button" data-s="1" aria-pressed="false">"Mamá, soy yo"</button>
+        <button type="button" data-s="2" aria-pressed="false">Dentist reminder</button>
+      </div>
+      <p class="bubble" id="msg"></p>
+      <p class="curl">curl -X POST <b>scamdb.dev/v1/isitascam</b> \<br>  -H "Authorization: Bearer sk_…" -d @message.json</p>
+    </div>
+    <div class="arrow" aria-hidden="true"><svg viewBox="0 0 56 80"><g><path class="d" d="M6 40 C 20 30, 34 48, 48 38"/><path class="d" d="M40 31 l9 7 -9 8"/></g></svg></div>
+    <div class="pcol">
+      <p class="plab"><span>Response</span><span id="ms"></span></p>
+      <div class="verdict"><span class="score" id="score"></span><span class="stamp" id="word"></span></div>
+      <ul class="why" id="why"></ul>
+      <p class="match" id="match"></p>
+    </div>
+  </section>
+
+  <section class="route" aria-labelledby="route-h">
+    <div class="sh"><h2 id="route-h">Every scam follows a script</h2><p>Numbers and links change every week; the script stays the same for years. Each entry breaks it down step by step, with the warning sign at each stop.</p></div>
+    <div class="steps-wrap">
+    <svg class="route-line" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true"><path class="d" d="M0 30 C 80 6, 170 54, 250 30 S 420 6, 500 30 S 670 54, 750 30 S 920 8, 1000 30" stroke-dasharray="2 9" stroke-width="2.6"/></svg>
+    <ol class="steps">
+      <li class="step">
+        <div class="ic"><svg viewBox="0 0 76 76" aria-hidden="true"><g><circle class="d f-card" cx="38" cy="38" r="34"/><path class="d" d="M27 24 c-4 2-5 8-1 15 s11 13 16 13 c3 0 5-2 6-4 l-6-5 c-2 1-3 2-5 1 s-6-6-7-8 c0-2 1-3 2-4 z"/><path class="d-thin" d="M46 22 c4 1 7 4 8 8 M45 28 c2 .5 3 2 3.5 3.5"/></g></svg></div>
+        <span class="flag">fake agency</span>
+        <h3>“Le hablo de PAMI”</h3><p>A call or message from someone claiming to be an agency or your bank.</p>
+      </li>
+      <li class="step">
+        <div class="ic"><svg viewBox="0 0 76 76" aria-hidden="true"><g><circle class="d f-card" cx="38" cy="38" r="34"/><rect class="d" x="22" y="27" width="32" height="23" rx="3"/><path class="d" d="M22 29 l16 12 16-12"/><text x="57" y="26" style="font-family:var(--mono)" font-size="11" class="f-acc">6</text></g></svg></div>
+        <span class="flag">code arrives</span>
+        <h3>A 6-digit code arrives</h3><p>WhatsApp sends it because the scammer is signing in with your number.</p>
+      </li>
+      <li class="step">
+        <div class="ic"><svg viewBox="0 0 76 76" aria-hidden="true"><g><circle class="d f-card" cx="38" cy="38" r="34"/><circle class="d" cx="38" cy="40" r="15"/><path class="d" d="M38 32 v9 l6 4"/><path class="d-thin" d="M33 20 h10 M38 20 v5"/></g></svg></div>
+        <span class="flag">urgency</span>
+        <h3>“¿Me lo lee? Es para hoy”</h3><p>They rush you so you read it out before you think.</p>
+      </li>
+      <li class="step last">
+        <div class="ic"><svg viewBox="0 0 76 76" aria-hidden="true"><g><circle class="d" cx="38" cy="38" r="34"/><rect class="d" x="25" y="36" width="26" height="20" rx="3"/><path class="d" d="M31 36 v-6 a8 8 0 0 1 15 -3"/><circle class="f-ink" cx="38" cy="46" r="2.4"/></g></svg></div>
+        <span class="flag">account lost</span>
+        <h3>Your WhatsApp is theirs</h3><p>They message your contacts asking for money in your name.</p>
+      </li>
+    </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="cat-h">
+    <div class="sh"><h2 id="cat-h">The catalogue</h2><p>One file per scam on GitHub, reviewed before it goes live. Each one is also a JSON file you can fetch.</p></div>
+    <div class="specimens">
+      <article class="sp">
+        <div class="sp-top"><div><div class="id">ar/cuento-del-tio</div></div>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><g><path class="d" d="M10 30 L32 12 54 30"/><path class="d f-card" d="M16 26 v26 h32 v-26"/><rect class="d" x="27" y="36" width="10" height="16"/><circle class="f-ink" cx="35" cy="44" r="1.3"/><path class="d-acc" d="M44 8 v8 M44 20 v.5"/></g></svg></div>
+        <h3>Cuento del tío</h3>
+        <q>Mamá, soy yo, estoy en problemas, no le digas a nadie.</q>
+        <div class="chips"><span>phone</span><span>in-person</span></div>
+        <div class="count">5 warning signs · 4 sources · updated Nov 2026</div>
+      </article>
+      <article class="sp">
+        <div class="sp-top"><div><div class="id">ar/falso-banco</div></div>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><g><path class="d" d="M8 24 L32 10 56 24 z"/><path class="d" d="M14 28 v20 M24 28 v20 M40 28 v20 M50 28 v20"/><path class="d" d="M8 52 h48"/><circle class="d-acc" cx="32" cy="38" r="5"/><path class="d-acc" d="M32 35.5 v3 M32 40.5 v.3"/></g></svg></div>
+        <h3>“Le hablo del banco”</h3>
+        <q>Detectamos un movimiento raro. Vaya al cajero y yo le voy diciendo qué tocar.</q>
+        <div class="chips"><span>phone</span><span>whatsapp</span></div>
+        <div class="count">4 warning signs · 3 sources · updated Nov 2026</div>
+      </article>
+      <article class="sp">
+        <div class="sp-top"><div><div class="id">ar/acceso-remoto</div></div>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><g><rect class="d f-card" x="10" y="14" width="44" height="30" rx="3"/><path class="d" d="M24 52 h16 M32 44 v8"/><path class="d-acc" d="M26 26 l6 6 -6 6 M34 38 h6"/></g></svg></div>
+        <h3>“Instale esta aplicación”</h3>
+        <q>Descargue esta aplicación así le configuramos todo.</q>
+        <div class="chips"><span>phone</span><span>online</span></div>
+        <div class="count">4 warning signs · 3 sources · updated Nov 2026</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="eps" aria-label="Endpoints">
+    <div class="ep"><code>GET /v1/ar/scams.json</code><p>Every scam for a country.</p><span class="tier">free, no key</span></div>
+    <div class="ep"><code>GET /v1/scams/{id}.json</code><p>One scam: examples, signs, what to do.</p><span class="tier">free, no key</span></div>
+    <div class="ep"><code>POST /v1/isitascam</code><p>Text, screenshot or voice note in, verdict and reasons out.</p><span class="tier">50 a day free</span></div>
+    <div class="ep"><code>POST /v1/reports</code><p>Tell us what you've seen. Private, reviewed by a person.</p><span class="tier">free</span></div>
+  </section>
+
+  <footer><div>Made by the people behind <a href="#">eschamuyo.com</a></div><span>data CC BY 4.0 · code MIT</span></footer>
+</div>
+
+<script>
+(function(){
+  var S=[
+    {msg:"Buenas tardes, le hablo de PAMI. ¿Usted tiene un trámite iniciado? Le va a llegar un código por mensaje, ¿me lo lee así lo confirmamos? Es para hoy.",
+     score:"0.94",word:"scam",ms:"200 OK · 38 ms",bad:true,
+     why:[["asks_for_code","Asks you to read out a code you received"],["urgency","“Es para hoy”"],["impersonation","Claims to be PAMI"]],
+     match:'Matches <a href="#">ar/whatsapp-codigo</a>, Robo de WhatsApp con el código de 6 números'},
+    {msg:"Mamá, soy yo, estoy en problemas, no le digas a nadie. Ahora te llama un señor que me está ayudando. No cortes.",
+     score:"0.89",word:"scam",ms:"200 OK · 41 ms",bad:true,
+     why:[["family_in_trouble","Someone claims to be your child"],["secrecy","“No le digas a nadie”"],["keep_on_line","“No cortes”"]],
+     match:'Matches <a href="#">ar/cuento-del-tio</a>, Cuento del tío'},
+    {msg:"Hola Marta, te recuerdo el turno con la Dra. López mañana a las 10:30. Si no podés venir avisanos. Saludos!",
+     score:"0.06",word:"not recognised",ms:"200 OK · 35 ms",bad:false,
+     why:[["no_signals","No codes, money, links or pressure"]],
+     match:"No known scam. If it still feels off, send it as a report."}
+  ];
+  var $=function(id){return document.getElementById(id)};
+  function show(i){
+    var s=S[i], c=s.bad?"var(--accent)":"var(--ok)";
+    $("msg").textContent=s.msg; $("score").textContent=s.score; $("word").textContent=s.word; $("ms").textContent=s.ms;
+    $("score").style.color=c; $("word").style.color=c;
+    $("why").innerHTML=s.why.map(function(w){return "<li><code>"+w[0]+"</code><span>"+w[1]+"</span></li>"}).join("");
+    $("match").innerHTML=s.match;
+    document.querySelectorAll(".samples button").forEach(function(b){b.setAttribute("aria-pressed",String(+b.dataset.s===i))});
+  }
+  document.querySelectorAll(".samples button").forEach(function(b){b.addEventListener("click",function(){show(+b.dataset.s)})});
+  show(0);
+
+  var root=document.documentElement;
+  setLook("chosen");
+  function setLook(v){
+    if(v)root.setAttribute("data-look",v);else root.removeAttribute("data-look");
+    document.querySelectorAll(".switch button[data-look]").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.look===v))});
+    try{localStorage.setItem("look",v)}catch(e){}
+  }
+  document.querySelectorAll(".switch button[data-look]").forEach(function(b){b.addEventListener("click",function(){setLook(b.dataset.look)})});
+  document.querySelectorAll(".switch button[data-theme]").forEach(function(b){b.addEventListener("click",function(){
+    var v=b.dataset.theme; if(v)root.setAttribute("data-theme",v);else root.removeAttribute("data-theme");
+    document.querySelectorAll(".switch button[data-theme]").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});
+  })});
+})();
+</script>
