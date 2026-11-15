@@ -2,18 +2,22 @@
 import { esc, L, monthYear, plural } from './html.js';
 import { iconFor, STEP_ICONS } from './icons.js';
 import { pick } from '../../lib/text.js';
+import { sketch } from '../../lib/sketch.js';
+
+const ROUTE_LINE = sketch(501).path('M0 30 C 80 6, 170 54, 250 30 S 420 6, 500 30 S 670 54, 750 30 S 920 8, 1000 30', { dash: [2, 10] });
 
 export const entryUrl = (e) => `/catalogue/${e.id}/`;
 
 /** The script of a scam as drawn steps joined by a dotted line. */
-export function steps(entry, signalsById, lang = 'es') {
+export function steps(entry, signalsById, lang = 'es', ui = { whatHappens: 'What happens', labelLang: 'en' }) {
   const items = entry.steps.map((s, i) => {
     const last = i === entry.steps.length - 1;
     const icon = STEP_ICONS[s.signal] ?? STEP_ICONS[last ? 'end' : 'plain'];
     const label = s.signal ? signalsById.get(s.signal)?.label : null;
-    return `<li class="step${last && !s.signal ? ' last' : ''}"><div class="sic">${icon}</div>${label ? `<span class="flag">${esc(pick(label, 'en'))}</span>` : ''}${L(s.text, lang, 'p')}</li>`;
+    const flag = label ? `<span class="flag">${esc(pick(label, ui.labelLang))}</span>` : `<span class="flag out">${esc(ui.whatHappens)}</span>`;
+    return `<li class="step${last && !s.signal ? ' last' : ''}"><div class="sic">${icon}</div>${flag}${L(s.text, lang, 'p')}</li>`;
   }).join('');
-  return `<div class="steps-wrap"><svg class="route-line" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="d" d="M0 30 C 80 6, 170 54, 250 30 S 420 6, 500 30 S 670 54, 750 30 S 920 8, 1000 30" stroke-dasharray="2 9"/></svg><ol class="steps" style="--n:${entry.steps.length}">${items}</ol></div>`;
+  return `<div class="steps-wrap"><svg class="route-line" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">${ROUTE_LINE}</svg><ol class="steps" style="--n:${entry.steps.length}">${items}</ol></div>`;
 }
 
 /** A catalogue card. */

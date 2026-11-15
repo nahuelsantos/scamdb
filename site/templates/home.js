@@ -2,6 +2,7 @@ import { esc, L } from './html.js';
 import { layout } from './layout.js';
 import { steps, card, entryUrl } from './parts.js';
 import { pick } from '../../lib/text.js';
+import { sketch, roundRect } from '../../lib/sketch.js';
 
 export const FEATURED = ['ar/cuento-del-tio', 'ar/falso-banco', 'ar/acceso-remoto'];
 export const ROUTE = 'ar/whatsapp-codigo';
@@ -12,19 +13,35 @@ export const SAMPLES = [
 ];
 const VERDICT_TEXT = { scam: 'scam', suspicious: 'suspicious', not_recognised: 'not recognised' };
 
-const HERO_ART = `<svg viewBox="0 0 540 460" role="img" aria-labelledby="hero-t"><title id="hero-t">A drawn phone showing the PAMI code scam, with handwritten notes pointing at each warning sign</title>
-<rect class="d f-card" x="165" y="30" width="210" height="390" rx="30"/><path class="d-thin" d="M245 52 h50"/><circle class="d-thin" cx="270" cy="400" r="9"/>
-<circle class="d-thin" cx="200" cy="88" r="13"/><text class="t-ui" x="222" y="85" font-weight="600">“PAMI”</text><text class="t-mono" x="222" y="100">+54 11 ···· 2231</text><path class="d-thin" d="M182 116 h176"/>
-<path class="d f-paper" d="M186 130 h150 a12 12 0 0 1 12 12 v86 a12 12 0 0 1 -12 12 h-138 l-12 10 v-108 a12 12 0 0 1 0 -12 z"/>
-<rect class="f-hl" x="196" y="186" width="46" height="17" rx="3"/>
-<text class="t-ui" x="198" y="156">Le hablo de PAMI.</text><text class="t-ui" x="198" y="176">Le va a llegar un</text><text class="t-ui" x="198" y="198">código, ¿me lo lee</text><text class="t-ui" x="198" y="218">así confirmamos?</text><text class="t-ui" x="198" y="234" font-weight="600" font-size="12">Es para hoy.</text>
-<rect class="d-thin f-paper" x="214" y="268" width="134" height="44" rx="10"/><text class="t-mono" x="226" y="285">SMS · WhatsApp</text><text class="t-ui" x="226" y="303" font-weight="600" letter-spacing="2">482-913</text>
-<g transform="rotate(-9 270 352)"><rect class="d-acc" x="206" y="332" width="128" height="40" rx="6"/><text x="270" y="359" text-anchor="middle" class="t-stamp">SCAM</text></g>
-<text class="t-hand" x="20" y="92">fake agency</text><path class="d-thin" d="M118 96 C 145 104, 160 94, 186 88"/><path class="d-thin" d="M178 82 l9 6 -9 5"/>
-<text class="t-hand" x="34" y="232">rushes you</text><path class="d-thin" d="M124 228 C 150 236, 165 236, 190 232"/><path class="d-thin" d="M182 226 l9 6 -9 6"/>
-<text class="t-hand-acc" x="392" y="182">asks for</text><text class="t-hand-acc" x="392" y="204">a code!</text><path class="d-acc" d="M388 194 C 375 200, 365 202, 352 199"/><path class="d-acc" d="M361 193 l-10 6 10 6"/>
-<text class="t-hand" x="392" y="300">never read it</text><text class="t-hand" x="392" y="322">to anyone</text><path class="d-thin" d="M390 302 C 375 298, 362 294, 352 292"/><path class="d-thin" d="M360 286 l-9 6 9 5"/>
-<text class="t-mono" x="392" y="420">ar/whatsapp-codigo</text></svg>`;
+const HERO_ART = (() => {
+  const k = sketch(601);
+  const bx = 174, bw = 162, tx = bx + 24;
+  const notes = sketch(651);
+  const arrow = (d, head, kind = 'thin') => notes.path(d, { kind }) + notes.path(head, { kind });
+  return `<svg viewBox="0 0 540 460" role="img" aria-labelledby="hero-t"><title id="hero-t">${'${title}'}</title>
+${k.path(roundRect(165, 30, 210, 390, 30), { fill: 'card', shade: true })}
+${k.line(245, 52, 295, 52, { kind: 'thin' })}${k.circle(270, 400, 18)}${k.circle(200, 88, 26)}
+<text class="t-ui" x="222" y="85" font-weight="600">“PAMI”</text><text class="t-mono" x="222" y="100">+54 11 ···· 2231</text>
+${k.line(182, 116, 358, 116, { kind: 'thin' })}
+${k.path(`M${bx + 12} 130 h${bw - 12} a12 12 0 0 1 12 12 v86 a12 12 0 0 1 -12 12 h-${bw - 24} l-12 12 v-110 a12 12 0 0 1 12 -12 z`, { fill: 'paper', shade: true })}
+<rect class="f-hl" x="${tx - 2}" y="186" width="46" height="17" rx="3"/>
+<text class="t-ui" x="${tx}" y="156">Le hablo de PAMI.</text><text class="t-ui" x="${tx}" y="176">Le va a llegar un</text><text class="t-ui" x="${tx}" y="198">código, ¿me lo lee</text><text class="t-ui" x="${tx}" y="218">así confirmamos?</text><text class="t-ui" x="${tx}" y="234" font-weight="600" font-size="12">Es para hoy.</text>
+${k.rect(214, 268, 134, 44, { kind: 'thin' })}
+<text class="t-mono" x="226" y="285">SMS · WhatsApp</text><text class="t-ui" x="226" y="303" font-weight="600" letter-spacing="2">482-913</text>
+<g transform="rotate(-9 270 352)">${k.rect(206, 332, 128, 40, { kind: 'acc' })}<text x="270" y="359" text-anchor="middle" class="t-stamp">${'${stamp}'}</text></g>
+<text class="t-hand" x="20" y="92">${'${n1}'}</text>${arrow('M118 96 C 145 104, 160 94, 184 88', 'M176 82 L186 88 L176 94')}
+<text class="t-hand" x="30" y="232">${'${n2}'}</text>${arrow(`M120 228 C 140 236, 150 236, ${tx - 6} 232`, `M${tx - 14} 226 L${tx - 4} 232 L${tx - 14} 238`)}
+<text class="t-hand-acc" x="400" y="182">${'${n3a}'}</text><text class="t-hand-acc" x="400" y="204">${'${n3b}'}</text>${arrow('M396 194 C 380 200, 368 202, 352 199', 'M362 192 L351 199 L362 206', 'acc')}
+<text class="t-hand" x="400" y="300">${'${n4a}'}</text><text class="t-hand" x="400" y="322">${'${n4b}'}</text>${arrow('M396 302 C 380 298, 366 294, 352 292', 'M361 285 L351 292 L361 298')}
+<text class="t-mono" x="392" y="440">ar/whatsapp-codigo</text></svg>`;
+})();
+const MARK = sketch(701).path('M3 12 C 50 4, 120 4, 197 10 M20 16 C 70 11, 130 12, 180 15', { kind: 'acc' });
+
+/** The hero drawing with its notes in the interface language. */
+export const heroArt = (w) => HERO_ART.replace('${title}', w.title).replace('${stamp}', w.stamp)
+  .replace('${n1}', w.n1).replace('${n2}', w.n2).replace('${n3a}', w.n3a).replace('${n3b}', w.n3b).replace('${n4a}', w.n4a).replace('${n4b}', w.n4b);
+const HERO_EN = { title: 'A drawn phone showing the PAMI code scam, with handwritten notes pointing at each warning sign', stamp: 'SCAM',
+  n1: 'fake agency', n2: 'rushes you', n3a: 'asks for', n3b: 'a code!', n4a: 'never read it', n4b: 'to anyone' };
 
 /** The response panel as HTML (used at build time for the no-JS state; playground.js renders the same markup). */
 export function resultHtml(r, entriesById, signalsById) {
@@ -46,11 +63,11 @@ export function home({ repo, meta, matchMessage }) {
 <section class="hero">
   <div>
     <p class="eyebrow">${repo.entries.length} scams · ${esc(countries.join(', '))} · open data</p>
-    <h1>A field guide to <span class="mark">scams.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="d-acc" d="M3 12 C 50 4, 120 4, 197 10 M20 16 C 70 11, 130 12, 180 15"/></svg></span></h1>
+    <h1>A field guide to <span class="mark">scams.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true" focusable="false">${MARK}</svg></span></h1>
     <p class="lede">How each scam works, the words it uses, the warning signs and who to call, country by country. Free to download and free to build on.</p>
     <div class="btns"><a class="btn solid" href="/catalogue/">Browse the catalogue</a><a class="btn" href="/docs/">Read the docs</a></div>
   </div>
-  <div class="hero-art">${HERO_ART}</div>
+  <div class="hero-art">${heroArt(HERO_EN)}</div>
 </section>
 
 <section class="panel" aria-labelledby="pg-h">

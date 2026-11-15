@@ -85,3 +85,31 @@ test('iconFor picks a drawing by scam', () => {
   assert.equal(iconFor({ id: 'ar/whatsapp-codigo', channels: ['whatsapp'] }), ICONS.sms);
   assert.equal(iconFor({ id: 'xx/otra', channels: ['phone'] }), ICONS.phone);
 });
+
+test('no page uses the old displacement filter', () => {
+  const { dir, written, page } = build();
+  for (const p of written.filter((p) => p.endsWith('.html'))) assert.doesNotMatch(page(p), /id="rough"|#rough|filter:url/, p);
+  rmSync(dir, { recursive: true });
+});
+test('every script step has a label; a step without a sign says What happens', () => {
+  const { dir, page } = build();
+  const html = page('catalogue/ar/ejemplo/index.html');
+  const steps = (html.match(/<li class="step/g) ?? []).length;
+  assert.equal((html.match(/class="flag/g) ?? []).length, steps);
+  rmSync(dir, { recursive: true });
+});
+test('a step without a warning sign is labelled What happens, grey', async () => {
+  const { steps } = await import('../../site/templates/parts.js');
+  const html = steps({ steps: [{ text: { es: 'uno' }, signal: 'urgency' }, { text: { es: 'dos' } }] },
+    new Map([['urgency', { label: { en: 'Rushes you', es: 'Te apura' } }]]), 'es');
+  assert.match(html, /<span class="flag out">What happens<\/span>/);
+  assert.match(html, /<span class="flag">Rushes you<\/span>/);
+});
+test('the home page stays under 250 kB', () => {
+  const { dir, page } = build();
+  assert.ok(Buffer.byteLength(page('index.html')) < 250_000);
+  rmSync(dir, { recursive: true });
+});
+test('icons are pen-drawn', () => assert.match(ICONS.bank, /class="sk/));
+test('the stylesheet no longer uses the displacement filter', () =>
+  assert.doesNotMatch(readFileSync(new URL('../../site/assets/styles.css', import.meta.url), 'utf8'), /url\(#rough\)/));

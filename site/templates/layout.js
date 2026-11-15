@@ -1,10 +1,12 @@
 // The page shell: head, nav, footer and the hidden SVG filter that makes lines look hand-drawn.
 import { esc } from './html.js';
+import { sketch } from '../../lib/sketch.js';
 
 export const SITE = 'https://scamdb.dev';
 export const REPO = 'https://github.com/nahuelsantos/scamdb';
 
-const LOGO = '<svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><circle class="d" cx="13" cy="13" r="8.5"/><path class="d" d="M19.5 19.5 L26 26"/><path class="d-acc" d="M9.5 13.2 l2.4 2.4 4.4-5"/></svg>';
+const LS = sketch(801);
+const LOGO = `<svg viewBox="0 0 30 30" aria-hidden="true" focusable="false">${LS.circle(13, 13, 17)}${LS.path('M19.5 19.5 L26 26')}${LS.path('M9.5 13.2 l2.4 2.4 4.4-5', { kind: 'acc' })}</svg>`;
 
 export function layout({ title, description, body, path, meta, scripts = '' }) {
   const nav = [['/docs/', 'Docs'], ['/catalogue/', 'Catalogue'], ['/contribute/', 'Contribute']]
@@ -26,7 +28,6 @@ export function layout({ title, description, body, path, meta, scripts = '' }) {
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
 <a class="skip" href="#main">Skip to content</a>
 <header class="wrap top">
   <a class="logo" href="/">${LOGO}<span>scamdb</span></a>
