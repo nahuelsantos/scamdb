@@ -1,0 +1,100 @@
+{
+  "id": "ar/fuera-de-mercado-libre",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Logística”"
+  },
+  "name": {
+    "es": "“Hubo un problema con el envío”: te sacan de Mercado Libre"
+  },
+  "how": {
+    "es": "Hiciste una compra real en Mercado Libre y el vendedor te escribe por un “problema con la etiqueta” o con el correo. Te pasa a WhatsApp, donde gente de “logística” te pide pagar un monto chico por QR o por un link. Ese QR autoriza transferencias y te vacían la cuenta en minutos. También pasa con celulares muy baratos que te piden pagar por fuera de Mercado Pago."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "El vendedor de tu compra te escribe por un “problema con la etiqueta”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pide seguir la charla por WhatsApp."
+      }
+    },
+    {
+      "text": {
+        "es": "Gente de “logística” te pide pagar un monto chico por QR o por un link."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Ese QR autoriza transferencias y te vacían la cuenta."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, soy de logística. El sistema no me deja enviarte el comprobante. Para resolver más rápido aboná $1.500 escaneando este QR y despachamos hoy."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "problema con el envio",
+      "problema con la etiqueta",
+      "pagar por qr",
+      "escanee un qr",
+      "logistica",
+      "me escribio el vendedor por whatsapp",
+      "celular barato",
+      "sobrantes de aduana",
+      "pagar por fuera"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden seguir la charla por WhatsApp.",
+      "Un QR o link para “arreglar” el envío.",
+      "Un precio muy por debajo del normal.",
+      "Te piden pagar por fuera de Mercado Pago."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Terminá todo dentro de Mercado Libre, nunca por WhatsApp.",
+      "Nunca escanees un QR que te mandan por chat."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci",
+    "ar/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Así funciona la nueva estafa en Mercado Libre vía WhatsApp",
+      "publisher": "iProUP",
+      "url": "https://www.iproup.com/finanzas/66740-asi-funciona-la-nueva-estafa-en-mercado-libre-via-whatsapp",
+      "date": "2026-04-13"
+    },
+    {
+      "title": "Cuidado con celulares baratos que venden por Mercado Libre",
+      "publisher": "iProfesional",
+      "url": "https://www.iprofesional.com/tecnologia/447216-cuidado-con-celulares-baratos-que-venden-por-mercado-libre-como-detectar-si-es-estafa",
+      "date": "2026-01-31"
+    }
+  ],
+  "updated": "2026-11-13"
+}

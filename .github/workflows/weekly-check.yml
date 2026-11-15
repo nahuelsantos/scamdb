@@ -1,0 +1,56 @@
+# Every Monday: re-check every source link and every phone number / email on its official page.
+# If something broke, open (or update) one GitHub issue so it gets fixed before someone dials a dead number.
+name: Weekly check (links and contacts)
+on:
+  schedule:
+    - cron: '17 12 * * 1'   # Mondays 12:17 UTC = 09:17 in Argentina
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Check links
+        id: links
+        continue-on-error: true
+        shell: bash   # -eo pipefail: keep the checker's exit code through tee
+        run: node tools/check-links.mjs | tee links.txt
+      - name: Check contacts on their official pages
+        id: contacts
+        continue-on-error: true
+        shell: bash   # -eo pipefail: keep the checker's exit code through tee
+        run: node tools/check-contacts.mjs | tee contacts.txt
+      - name: Open or update an issue if something failed
+        if: steps.links.outcome == 'failure' || steps.contacts.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const read = (f) => fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : '(no output)';
+            const bad = (txt, re) => txt.split('\n').filter((l) => re.test(l)).join('\n') || '(none)';
+            const links = read('links.txt'), contacts = read('contacts.txt');
+            const title = 'Weekly check: a link or a contact needs attention';
+            const body = [
+              `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              '', '### Contacts not found on their official page', '```', bad(contacts, /^MISS/), '```',
+              'If a number is gone from the official page, remove it from `data/ar/contacts.json` until it is confirmed again (owner rule: flag, don\'t publish).',
+              '', '### Broken links', '```', bad(links, /^BROKEN/), '```',
+              'Some government sites block cloud servers; open the link in a browser before changing anything.',
+            ].join('\n');
+            const { data: open } = await github.rest.issues.listForRepo({ ...context.repo, state: 'open', labels: 'weekly-check' });
+            if (open.length) await github.rest.issues.createComment({ ...context.repo, issue_number: open[0].number, body });
+            else await github.rest.issues.create({ ...context.repo, title, body, labels: ['weekly-check'] });
+      - name: Summary
+        if: always()
+        run: |
+          { echo '### Links'; tail -1 links.txt || true; echo; echo '### Contacts'; tail -1 contacts.txt || true; } >> "$GITHUB_STEP_SUMMARY"

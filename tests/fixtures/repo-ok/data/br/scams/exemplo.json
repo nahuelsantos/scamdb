@@ -1,0 +1,21 @@
+{
+  "id": "br/exemplo",
+  "country": "br",
+  "status": "active",
+  "channels": ["whatsapp"],
+  "sender": { "pt": "“Seu filho”" },
+  "name": { "pt": "Golpe do filho com número novo" },
+  "how": { "pt": "Alguém diz que é seu filho com um número novo e pede dinheiro." },
+  "steps": [
+    { "text": { "pt": "Mensagem de um número novo dizendo que é seu filho." }, "signal": "impersonation" },
+    { "text": { "pt": "Pede um Pix urgente." }, "signal": "urgency" }
+  ],
+  "examples": [ { "text": { "pt": "Oi mãe, troquei de número. Pode me fazer um Pix agora?" } } ],
+  "phrases": { "pt": ["troquei de numero", "numero novo", "pix urgente", "oi mae", "golpe do filho"] },
+  "signals": ["impersonation", "urgency"],
+  "redFlags": { "pt": ["Número novo pedindo dinheiro."] },
+  "whatToDo": { "pt": ["Ligue para o número antigo."] },
+  "reportTo": ["br/policia"],
+  "sources": [ { "title": "Golpe", "publisher": "G1", "url": "https://g1.globo.com/nota", "date": "2025-01-10" } ],
+  "updated": "2026-11-13"
+}

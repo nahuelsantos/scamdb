@@ -1,0 +1,124 @@
+{
+  "id": "ar/falso-anses-pami",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "“ANSES informa”"
+  },
+  "name": {
+    "es": "Falsa ANSES y falso PAMI: bonos, “fe de vida” y créditos"
+  },
+  "how": {
+    "es": "Te llega un WhatsApp con el logo de ANSES o de PAMI desde un celular común. Te ofrecen un bono (como el falso “Bono Navideño” de $70.000), remedios gratis o un crédito, o te dicen que tenés que hacer la “fe de vida” para seguir cobrando. El link o el llamado es para sacarte datos, claves o fotos del DNI. La fe de vida dejó de ser obligatoria en 2023, y ANSES hoy no da préstamos personales a jubilados."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un celular común con el logo de ANSES o PAMI de foto."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece un bono, remedios gratis o un crédito, o te pide la “fe de vida”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te manda un link para cobrar o “actualizar datos”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te pide CUIT, claves, códigos o fotos del DNI."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "ANSES informa: tenés pendiente el cobro del Bono Navideño de $70.000. Para no perderlo, actualizá tus datos hoy: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "anses",
+      "bono",
+      "bono navideño",
+      "jubilacion",
+      "me cortaban la jubilacion",
+      "fe de vida",
+      "aguinaldo",
+      "credito anses",
+      "medicamentos gratis",
+      "remedios gratis",
+      "credencial",
+      "actualizar datos",
+      "whatsapp de anses",
+      "logo de anses",
+      "pami"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un celular común con el logo de ANSES o PAMI de foto.",
+      "Un link para cobrar un bono o “actualizar datos”.",
+      "Te piden CUIT, claves, códigos o fotos del DNI.",
+      "Un bono o crédito que no salió en las noticias ni en la página oficial."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el link ni pases datos.",
+      "Los bonos de verdad salen en la página oficial de ANSES y en las noticias.",
+      "PAMI nunca te pide contraseñas, claves ni códigos por teléfono o mensaje.",
+      "Bloqueá el número y guardá una captura."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "Alerta por estafa: advierten por falso bono navideño de ANSES",
+      "publisher": "Elonce",
+      "url": "https://www.elonce.com/uid-860438",
+      "date": "2025-12-17"
+    },
+    {
+      "title": "ANSES alertó por una delicada estafa a jubilados y pensionados",
+      "publisher": "Canal 26",
+      "url": "https://www.canal26.com/general/2025/09/05/anses-alerto-por-una-delicada-estafa-a-jubilados-y-pensionados-mienten-sobre-un-tramite-clave/",
+      "date": "2025-09-05"
+    },
+    {
+      "title": "Alerta por falsos créditos de ANSES: cómo identificar las estafas",
+      "publisher": "Ámbito",
+      "url": "https://www.ambito.com/informacion-general/alerta-falsos-creditos-anses-como-identificar-las-estafas-telefonicas-y-redes-n6305766",
+      "date": "2026-08-02"
+    },
+    {
+      "title": "PAMI alertó por nuevas estafas virtuales: cómo proteger tus datos",
+      "publisher": "Ámbito",
+      "url": "https://www.ambito.com/informacion-general/pami-alerto-nuevas-estafas-virtuales-como-proteger-tus-datos-n6305319",
+      "date": "2026-08-02"
+    }
+  ],
+  "updated": "2026-11-13"
+}

@@ -1,0 +1,111 @@
+{
+  "id": "ar/acceso-remoto",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "es": "“Técnico de PAMI”"
+  },
+  "name": {
+    "es": "“Instale esta aplicación”: te manejan el celu o la compu"
+  },
+  "how": {
+    "es": "Alguien te llama para “ayudarte”: del banco, de soporte técnico o del PAMI con una “computadora gratis”. Te pide que instales una aplicación como TeamViewer o Supremo. Con esa app ven y manejan tu pantalla, y desde ahí sacan préstamos y transfieren tu plata. A veces también piden fotos de tu DNI y una selfie."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien te llama para “ayudarte”: del banco, de soporte técnico o del PAMI."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece un regalo o una solución que no pediste."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pide que instales una app como TeamViewer o Supremo, o fotos del DNI y una selfie."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Con esa app manejan tu pantalla, sacan préstamos y transfieren tu plata."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Para darle la computadora gratis del PAMI necesitamos que descargue esta aplicación así le configuramos todo. Mándeme también una foto del DNI y una selfie: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "instalar una aplicacion",
+      "descargue esta aplicacion",
+      "me hicieron bajar una aplicacion",
+      "teamviewer",
+      "anydesk",
+      "supremo",
+      "ver mi pantalla",
+      "soporte tecnico",
+      "arreglar la computadora",
+      "computadora gratis",
+      "foto del dni",
+      "selfie",
+      "acceso remoto"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden instalar una app o compartir tu pantalla.",
+      "Te piden foto del DNI y una selfie.",
+      "Un regalo del PAMI o del banco que no pediste."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca instales una app que te pide alguien por teléfono.",
+      "Si ya la instalaste, apagá el celu o la compu y llamá a tu banco para bloquear todo.",
+      "Hacé la denuncia rápido: en un caso de San Juan anularon el préstamo y le devolvieron la plata."
+    ]
+  },
+  "reportTo": [
+    "ar/tu-banco",
+    "ar/ufeci",
+    "ar/bcra-reclamo"
+  ],
+  "story": {
+    "es": "A una señora la llamaron para “arreglarle” la computadora y le hicieron instalar TeamViewer. Se dio cuenta de que era chamuyo cuando le pidieron que comprara tarjetas de regalo de Amazon."
+  },
+  "sources": [
+    {
+      "title": "Engañaron a una jubilada con la promesa de una computadora y le sacaron un préstamo por 2,2 millones",
+      "publisher": "Diario de Cuyo",
+      "url": "https://www.diariodecuyo.com.ar/policiales/enganaron-a-una-jubilada-con-la-promesa-de-una-computadora-y-le-sacaron-un-prestamo-por-22-millones-1735275.html",
+      "date": "2025-05-29"
+    },
+    {
+      "title": "La nueva estafa digital: llamados de falsos agentes de ciberseguridad para desvalijar cuentas",
+      "publisher": "La Nación",
+      "url": "https://www.lanacion.com.ar/seguridad/la-nueva-estafa-digital-llamados-de-falsos-agentes-de-ciberseguridad-para-desvalijar-cuentas-nid28062025/",
+      "date": "2025-06-28"
+    }
+  ],
+  "updated": "2026-11-13"
+}

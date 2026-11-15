@@ -1,0 +1,99 @@
+{
+  "id": "ar/falso-mercado-pago",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Alerta de seguridad”"
+  },
+  "name": {
+    "es": "Falsa alerta de Mercado Libre o Mercado Pago: “No fui yo”"
+  },
+  "how": {
+    "es": "Te llega un mail que parece de Mercado Libre: alguien entró a tu cuenta desde un lugar raro, y abajo hay un botón “No fui yo”. El botón lleva a una copia de la página, y lo que escribís ahí les abre tu cuenta, incluida la de Mercado Pago. Después a veces te llaman para pedirte códigos."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mail que parece de Mercado Libre: alguien entró a tu cuenta."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Abajo hay un botón “No fui yo”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "El botón lleva a una copia de la página y lo que escribís les abre tu cuenta."
+      }
+    },
+    {
+      "text": {
+        "es": "Después te llaman para pedirte códigos."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Alerta de seguridad: detectamos un ingreso a tu cuenta desde otro dispositivo. Si no fuiste vos, tocá “No fui yo” para proteger tu cuenta: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mercado libre",
+      "mercado pago",
+      "no fui yo",
+      "alerta de seguridad",
+      "alguien entro a mi cuenta",
+      "ingreso a tu cuenta",
+      "otro dispositivo"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Una alerta de seguridad con un botón.",
+      "Después te llaman pidiendo un código."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el botón. Abrí vos la app de Mercado Libre y fijate ahí.",
+      "Mercado Pago nunca te pide contraseñas, códigos ni el número de tu tarjeta."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci",
+    "ar/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Estafa que usa a Mercado Libre como carnada",
+      "publisher": "Gobierno de la Ciudad de Buenos Aires",
+      "url": "https://buenosaires.gob.ar/gcaba_historico/noticias/estafa-que-usa-mercado-libre-como-carnada",
+      "date": "2025-02-26"
+    },
+    {
+      "title": "Alerta: se hacen pasar por Mercado Libre y te roban por mail",
+      "publisher": "iProfesional",
+      "url": "https://www.iprofesional.com/actualidad/423400-alerta-simulan-ser-mercado-libre-te-roban-por-email",
+      "date": "2025-02-26"
+    }
+  ],
+  "updated": "2026-11-13"
+}

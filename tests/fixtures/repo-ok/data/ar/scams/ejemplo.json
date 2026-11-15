@@ -1,0 +1,21 @@
+{
+  "id": "ar/ejemplo",
+  "country": "ar",
+  "status": "active",
+  "channels": ["phone", "whatsapp"],
+  "sender": { "es": "“PAMI”" },
+  "name": { "es": "Robo de WhatsApp con el código" },
+  "how": { "es": "Te llaman diciendo que son de PAMI y te piden un código." },
+  "steps": [
+    { "text": { "es": "Te llaman diciendo que son de PAMI." }, "signal": "impersonation" },
+    { "text": { "es": "Te piden el código que te llegó." }, "signal": "asks_for_code" }
+  ],
+  "examples": [ { "text": { "es": "Le hablo de PAMI, ¿me lee el código? Es para hoy." }, "channel": "phone" } ],
+  "phrases": { "es": ["me pidieron un código", "codigo de whatsapp", "llamaron de pami", "me robaron el whatsapp", "codigo por sms"] },
+  "signals": ["asks_for_code", "urgency", "impersonation"],
+  "redFlags": { "es": ["Te piden un código."] },
+  "whatToDo": { "es": ["No leas el código a nadie."] },
+  "reportTo": ["ar/ufeci"],
+  "sources": [ { "title": "Nota", "publisher": "Chequeado", "url": "https://chequeado.com/nota", "date": "2025-06-02" } ],
+  "updated": "2026-11-13"
+}

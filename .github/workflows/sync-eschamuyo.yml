@@ -1,0 +1,60 @@
+# When Argentine data changes on main, open (or update) a pull request on eschamuyo with the regenerated
+# site/data/scams.json. eschamuyo's own CI then tests the exact data that will ship, and the owner merges it.
+name: Sync to eschamuyo
+on:
+  push:
+    branches: [main]
+    paths: ['data/ar/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check the token
+        id: token
+        env:
+          TOKEN: ${{ secrets.ESCHAMUYO_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "ESCHAMUYO_TOKEN is not set: skipping. See README → Sync to eschamuyo." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.token.outputs.ok == 'true'
+        with:
+          path: scamdb
+      - uses: actions/checkout@v4
+        if: steps.token.outputs.ok == 'true'
+        with:
+          repository: nahuelsantos/eschamuyo
+          token: ${{ secrets.ESCHAMUYO_TOKEN }}
+          path: eschamuyo
+      - uses: actions/setup-node@v4
+        if: steps.token.outputs.ok == 'true'
+        with:
+          node-version: 22
+      - name: Regenerate eschamuyo's scams.json
+        if: steps.token.outputs.ok == 'true'
+        run: |
+          cd scamdb && npm ci --omit=dev --ignore-scripts
+          node tools/to-eschamuyo.mjs ../eschamuyo
+          echo "VERSION=$(git log -1 --format=%cs.%h)" >> "$GITHUB_ENV"
+      - name: Open or update the pull request
+        if: steps.token.outputs.ok == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          path: eschamuyo
+          token: ${{ secrets.ESCHAMUYO_TOKEN }}
+          branch: scamdb-sync
+          title: Update scams from scamdb ${{ env.VERSION }}
+          commit-message: Update scams from scamdb ${{ env.VERSION }}
+          body: |
+            Regenerated `site/data/scams.json` from scamdb ${{ env.VERSION }}.
+            Changes: https://github.com/nahuelsantos/scamdb/commits/main/data/ar
+            Review the diff, let CI run, then merge.
+          add-paths: site/data/scams.json

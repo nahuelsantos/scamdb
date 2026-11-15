@@ -1,0 +1,112 @@
+{
+  "id": "ar/falso-banco",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu banco”"
+  },
+  "name": {
+    "es": "“Le hablo del banco”: el falso empleado"
+  },
+  "how": {
+    "es": "Te llaman “del banco”, de una “mesa de ayuda” o de un “área de ciberdelito” y te dicen que te están atacando la cuenta. Para “protegerla”, te piden que muevas la plata a una “cuenta segura”, que leas códigos, que vayas al cajero o que aceptes un préstamo. Todo eso es para robarte. A veces escriben por WhatsApp con el logo del banco de foto."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman del banco, de una mesa de ayuda o de un área de ciberdelito."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que te están atacando la cuenta y que hay que actuar ya."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden que leas códigos, vayas al cajero o muevas la plata a una “cuenta segura”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "La plata termina en la cuenta del estafador, a veces con un préstamo a tu nombre."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señor, lo llamamos del área de seguridad de su banco. Detectamos un movimiento raro en su cuenta. Para frenarlo, vaya al cajero y yo le voy diciendo qué tocar."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "le hablo del banco",
+      "me llamaron del banco",
+      "area de seguridad",
+      "area de fraudes",
+      "ciberdelito",
+      "mesa de ayuda",
+      "movimiento raro",
+      "me estaban hackeando la cuenta",
+      "vaya al cajero",
+      "cuenta segura",
+      "homebanking",
+      "token",
+      "prestamo a mi nombre",
+      "me hicieron sacar un prestamo",
+      "prestamo preaprobado"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El banco te llama a vos por un “fraude”.",
+      "Te piden mover la plata, leer códigos o ir al cajero mientras hablan.",
+      "Te ofrecen un préstamo que nunca pediste.",
+      "Un contacto que se llama “Mesa de ayuda” con el logo del banco."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá y llamá vos al número que está atrás de tu tarjeta.",
+      "Nunca uses el cajero ni el homebanking mientras hablás por teléfono con alguien.",
+      "El banco nunca te pide códigos: ni por teléfono, ni por mensaje.",
+      "Si ya pasó, llamá al banco ya y hacé la denuncia."
+    ]
+  },
+  "reportTo": [
+    "ar/tu-banco",
+    "ar/ufeci",
+    "ar/bcra-reclamo"
+  ],
+  "sources": [
+    {
+      "title": "Recomendaciones del BCRA para evitar estafas virtuales",
+      "publisher": "Banco Central (BCRA)",
+      "url": "https://www.bcra.gob.ar/noticias/recomendaciones-del-bcra-para-evitar-estafas-virtuales/",
+      "date": "2025-08-06"
+    },
+    {
+      "title": "La nueva estafa digital: llamados de falsos agentes de ciberseguridad para desvalijar cuentas",
+      "publisher": "La Nación",
+      "url": "https://www.lanacion.com.ar/seguridad/la-nueva-estafa-digital-llamados-de-falsos-agentes-de-ciberseguridad-para-desvalijar-cuentas-nid28062025/",
+      "date": "2025-06-28"
+    }
+  ],
+  "updated": "2026-11-13"
+}

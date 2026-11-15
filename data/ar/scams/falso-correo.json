@@ -1,0 +1,114 @@
+{
+  "id": "ar/falso-correo",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "es": "“CORREO”"
+  },
+  "name": {
+    "es": "“Tu paquete está retenido”: el falso Correo"
+  },
+  "how": {
+    "es": "Te llega un SMS, un mail o hasta un anuncio en Gmail que dice que tenés un paquete retenido, que no se pudo entregar o que la dirección está mal. El link lleva a una página igualita a la del Correo Argentino o Andreani que te pide los datos de la tarjeta o un pago chico para “liberarlo”. Es más creíble si justo estás esperando una compra."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS o un mail: tu paquete está retenido o no se pudo entregar."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dan un plazo corto: “dentro de las 24 horas”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El link lleva a una copia de la página del Correo o de Andreani."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden los datos de la tarjeta o un pago chico para “liberarlo”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "CORREO: Su paquete no pudo ser entregado por dirección incorrecta. Para evitar la devolución, confirme sus datos dentro de las 24 horas: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "paquete retenido",
+      "mi paquete",
+      "no pudo ser entregado",
+      "direccion incorrecta",
+      "pagar el envio",
+      "liberar el paquete",
+      "envio pendiente",
+      "encomienda",
+      "encomiendas pendientes",
+      "correo argentino",
+      "andreani",
+      "aduana",
+      "argentina post"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden pagar para liberar un paquete.",
+      "“Dentro de las 24 horas”.",
+      "El mensaje viene de un celular común o de “Argentina Post”.",
+      "No dice qué compraste ni quién te lo manda."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el link. El Correo no te pide plata ni datos por mensaje.",
+      "Si esperás algo, buscá el seguimiento escribiendo vos la página oficial.",
+      "Si pusiste los datos de la tarjeta, llamá al banco para bloquearla."
+    ]
+  },
+  "reportTo": [
+    "ar/tu-banco",
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "Cuidado con los mensajes que aseguran que un paquete del correo “no pudo ser entregado”",
+      "publisher": "Chequeado",
+      "url": "https://chequeado.com/ultimas-noticias/cuidado-con-los-mensajes-que-aseguran-que-un-paquete-del-correo-no-pudo-ser-entregado-o-esta-retenido-en-la-aduana-como-reconocer-y-evitar-caer-en-este-tipo-de-est/",
+      "date": "2025-06-02"
+    },
+    {
+      "title": "Suplantan al Correo Argentino en anuncios patrocinados de Gmail para robar datos",
+      "publisher": "WeLiveSecurity (ESET)",
+      "url": "https://www.welivesecurity.com/es/estafas-enganos/correos-falsos-correo-argentino-anuncios-gmail/",
+      "date": "2026-03-31"
+    },
+    {
+      "title": "Alerta estafas: cómo identificar mensajes falsos de Correo Argentino",
+      "publisher": "El Cronista",
+      "url": "https://www.cronista.com/informacion-gral/alerta-estafas-como-identificar-mensajes-falsos-de-correo-argentino-y-por-donde-llegan-realmente-los-avisos-de-las-compras-y-envios/",
+      "date": "2026-05-14"
+    }
+  ],
+  "updated": "2026-11-13"
+}

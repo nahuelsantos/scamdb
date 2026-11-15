@@ -1,0 +1,17 @@
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/v1/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+  X-Scamdb-License: CC BY 4.0
+
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

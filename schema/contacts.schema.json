@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scamdb.dev/schema/contacts.schema.json",
+  "type": "object", "required": ["country", "updated", "contacts"], "additionalProperties": false,
+  "properties": {
+    "country": { "type": "string", "pattern": "^[a-z]{2}$" },
+    "updated": { "$ref": "text.schema.json#/$defs/date" },
+    "contacts": { "type": "array", "minItems": 1, "items": {
+      "type": "object", "required": ["id", "name", "when", "ways", "jurisdiction", "source", "checked"], "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z]{2}/[a-z0-9-]+$" },
+        "name": { "$ref": "text.schema.json#/$defs/text" },
+        "when": { "$ref": "text.schema.json#/$defs/text" },
+        "ways": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "required": ["type", "value"], "additionalProperties": false,
+          "properties": { "type": { "enum": ["phone", "email", "web", "whatsapp"] }, "value": { "type": "string", "minLength": 1 },
+            "label": { "$ref": "text.schema.json#/$defs/text" } },
+          "if": { "properties": { "type": { "const": "web" } } },
+          "then": { "properties": { "value": { "$ref": "text.schema.json#/$defs/https" } } } } },
+        "jurisdiction": { "type": "string", "minLength": 1 },
+        "hours": { "$ref": "text.schema.json#/$defs/text" },
+        "source": { "$ref": "text.schema.json#/$defs/https" },
+        "checked": { "$ref": "text.schema.json#/$defs/date" } } } }
+  }
+}

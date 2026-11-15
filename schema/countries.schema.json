@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scamdb.dev/schema/countries.schema.json",
+  "type": "object", "required": ["countries"], "additionalProperties": false,
+  "properties": { "countries": { "type": "array", "minItems": 1, "items": {
+    "type": "object", "required": ["code", "name", "languages", "emergency"], "additionalProperties": false,
+    "properties": {
+      "code": { "type": "string", "pattern": "^[a-z]{2}$" },
+      "name": { "$ref": "text.schema.json#/$defs/text" },
+      "languages": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[a-z]{2}$" } },
+      "emergency": { "type": "string", "minLength": 1 } } } } }
+}

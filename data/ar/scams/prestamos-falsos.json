@@ -1,0 +1,100 @@
+{
+  "id": "ar/prestamos-falsos",
+  "country": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Préstamo preaprobado”"
+  },
+  "name": {
+    "es": "Préstamos “preaprobados” que te piden pagar antes"
+  },
+  "how": {
+    "es": "Te ofrecen un préstamo rápido, sin requisitos, por mensaje, WhatsApp o una publicidad. Para “liberarlo” te piden pagar antes una garantía o una comisión. Después no hay préstamo. Un préstamo de verdad nunca te pide plata por adelantado."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen un préstamo rápido, sin requisitos."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "A veces te piden bajar una app desde un link."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Para “liberarlo” te piden pagar antes una garantía o una comisión."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Después no hay préstamo."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicitaciones! Tenés un préstamo preaprobado de $500.000 sin requisitos. Para acreditarlo, aboná la garantía de $15.000: [enlace]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "prestamo preaprobado",
+      "credito rapido",
+      "app de prestamos",
+      "sin requisitos",
+      "pagar un adelanto",
+      "garantia",
+      "comision para liberar",
+      "liberar el credito"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden plata antes de darte el préstamo.",
+      "Demasiado fácil para ser verdad.",
+      "Te piden bajar una app desde un link."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca pagues para recibir un préstamo.",
+      "No mandes fotos del DNI ni claves."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci"
+  ],
+  "sources": [
+    {
+      "title": "Alerta por apps de préstamos fraudulentas: cómo cuidarse de las estafas",
+      "publisher": "iProfesional",
+      "url": "https://www.iprofesional.com/tecnologia/438817-alerta-por-apps-prestamos-fraudulentas-como-cuidarse-estafas",
+      "date": "2025-10-12"
+    },
+    {
+      "title": "Alerta por falsos créditos de ANSES",
+      "publisher": "Ámbito",
+      "url": "https://www.ambito.com/informacion-general/alerta-falsos-creditos-anses-como-identificar-las-estafas-telefonicas-y-redes-n6305766",
+      "date": "2026-08-02"
+    }
+  ],
+  "updated": "2026-11-13"
+}
