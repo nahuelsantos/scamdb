@@ -1,0 +1,22 @@
+{
+  "name": "scamdb",
+  "private": true,
+  "type": "module",
+  "description": "scamdb: an open database of scam patterns, country by country. Data CC BY 4.0, code MIT.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "validate": "node tools/validate.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
+    "build": "node tools/build.mjs",
+    "e2e": "playwright test --trace off",
+    "serve": "npx wrangler dev"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.63.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "playwright": "1.63.0",
+    "wrangler": "^4"
+  }
+}
