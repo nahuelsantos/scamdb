@@ -83,3 +83,16 @@ The build writes the API and the site to `dist/`.
 - **Weekly check** (`.github/workflows/weekly-check.yml`): every Monday it re-checks every link and
   confirms every phone number and email is still printed on its official page. If something broke
   it opens an issue labelled `weekly-check`. Run it by hand from the Actions tab too.
+
+## Sync to eschamuyo (owner step, once)
+
+When Argentine data changes on `main`, `.github/workflows/sync-eschamuyo.yml` opens or updates a
+pull request on `nahuelsantos/eschamuyo` with the regenerated `site/data/scams.json`. It needs a token:
+
+1. GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token.
+   Repository access: only `nahuelsantos/eschamuyo`. Permissions: **Contents** and **Pull requests**,
+   read and write.
+2. In this repo: Settings → Secrets and variables → Actions → New repository secret,
+   name `ESCHAMUYO_TOKEN`, paste the token.
+
+Without the secret the workflow skips itself and says so in its summary.
