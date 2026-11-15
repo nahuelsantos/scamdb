@@ -1,0 +1,14 @@
+// Cloudflare Workers, static assets only (no Worker code in phase 1, so reads never count against the free quota).
+// `npm run build && npx wrangler deploy` publishes dist/.
+{
+  "name": "scamdb",
+  "compatibility_date": "2026-11-01",
+  "routes": [
+    { "pattern": "scamdb.dev", "custom_domain": true },
+    { "pattern": "www.scamdb.dev", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

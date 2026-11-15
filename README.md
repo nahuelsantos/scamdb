@@ -61,3 +61,25 @@ The build writes the API and the site to `dist/`.
 
 - Data (`data/` and everything under `/v1/`): [CC BY 4.0](LICENSE-DATA).
 - Code: [MIT](LICENSE).
+
+## Deploy (owner steps, once)
+
+1. **Cloudflare → Workers & Pages → Create → Import a repository** → `nahuelsantos/scamdb`.
+   Build command `npm ci && npm run build`, deploy command `npx wrangler deploy`. Every push to
+   `main` then publishes.
+2. The custom domains `scamdb.dev` and `www.scamdb.dev` in `wrangler.jsonc` attach on the first
+   deploy (the zone is already in your Cloudflare account).
+3. **scamdb.io → scamdb.dev:** in the `scamdb.io` zone, Rules → Redirect Rules → Create rule →
+   Single redirect. When hostname equals `scamdb.io` or `www.scamdb.io`, redirect dynamically to
+   `concat("https://scamdb.dev", http.request.uri.path)` with status 301 and "Preserve query string"
+   on. (Free plan.) The zone needs a proxied DNS record for the rule to run: add an `AAAA` record
+   for `@` and `www` pointing to `100::`, proxied.
+4. Check `https://scamdb.dev/v1/index.json` and `https://scamdb.io/docs/`.
+
+## Automatic checks
+
+- **CI** (`.github/workflows/ci.yml`): every push and pull request validates the data, runs the
+  unit tests, builds, and runs the browser tests (playground, accessibility, phone width).
+- **Weekly check** (`.github/workflows/weekly-check.yml`): every Monday it re-checks every link and
+  confirms every phone number and email is still printed on its official page. If something broke
+  it opens an issue labelled `weekly-check`. Run it by hand from the Actions tab too.
