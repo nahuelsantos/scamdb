@@ -35,7 +35,7 @@ ${e.story ? `<section aria-labelledby="st-h"><h2 id="st-h">A real case</h2>${L(e
 
 <section aria-labelledby="c-h"><h2 id="c-h">Who to report it to</h2><div class="contacts">${contacts.map((k) => `<div class="contact"><h3>${L(k.name, lang)}</h3>${L(k.when, lang, 'p', 'small')}
 <ul>${k.ways.map((w) => `<li><span class="mono small">${WAY[w.type]}</span> ${w.label ? `${L(w.label, lang)}: ` : ''}${w.type === 'web' ? `<a href="${esc(w.value)}">${esc(w.value)}</a>` : `<span class="sel">${esc(w.value)}</span>`}</li>`).join('')}</ul>
-${k.hours ? L(k.hours, lang, 'p', 'small') : ''}<p class="small">Source: <a href="${esc(k.source)}">${esc(new URL(k.source).hostname)}</a>, checked ${esc(k.checked)}</p></div>`).join('')}</div></section>
+${k.hours ? L(k.hours, lang, 'p', 'small') : ''}<p class="small">Source: <a href="${esc(k.source)}">${esc(k.source.replace(/^https:\/\/([^/]+).*$/, '$1'))}</a>, checked ${esc(k.checked)}</p></div>`).join('')}</div></section>
 
 ${e.media?.length ? `<section aria-labelledby="m-h"><h2 id="m-h">Media</h2><ul class="list">${e.media.map((m) => `<li><span class="mono small">${esc(m.type)}</span> <a href="${esc(m.url)}">${esc(m.title)}</a>, ${esc(m.publisher)}, ${esc(m.date)}</li>`).join('')}</ul></section>` : ''}
 

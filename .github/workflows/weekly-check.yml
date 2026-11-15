@@ -23,10 +23,12 @@ jobs:
       - name: Check links
         id: links
         continue-on-error: true
+        shell: bash   # -eo pipefail: keep the checker's exit code through tee
         run: node tools/check-links.mjs | tee links.txt
       - name: Check contacts on their official pages
         id: contacts
         continue-on-error: true
+        shell: bash   # -eo pipefail: keep the checker's exit code through tee
         run: node tools/check-contacts.mjs | tee contacts.txt
       - name: Open or update an issue if something failed
         if: steps.links.outcome == 'failure' || steps.contacts.outcome == 'failure'

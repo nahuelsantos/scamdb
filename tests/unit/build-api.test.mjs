@@ -65,3 +65,18 @@ test('without git, the version is marked local', () => {
   assert.match(datasetMeta(dir).version, /^\d{4}-\d{2}-\d{2}\.local$/);
   rmSync(dir, { recursive: true });
 });
+
+test('a shallow clone falls back to updated dates instead of calling everything "added"', async () => {
+  const { execFileSync } = await import('node:child_process');
+  const src = mkdtempSync(join(tmpdir(), 'scamdb-full-'));
+  cpSync(OK, src, { recursive: true });
+  const g = (cwd, ...a) => execFileSync('git', ['-C', cwd, '-c', 'user.name=t', '-c', 'user.email=t@t', ...a], { stdio: 'ignore' });
+  g(src, 'init', '-q'); g(src, 'add', '.'); g(src, 'commit', '-q', '-m', 'one');
+  g(src, 'commit', '-q', '--allow-empty', '-m', 'two');
+  const shallow = mkdtempSync(join(tmpdir(), 'scamdb-shallow-'));
+  rmSync(shallow, { recursive: true });
+  execFileSync('git', ['clone', '-q', '--depth', '1', `file://${src}`, shallow], { stdio: 'ignore' });
+  const rows = changesFromGit(shallow, loadRepo(shallow).entries);
+  assert.deepEqual(rows.map((r) => r.change), ['edited', 'edited']);
+  rmSync(src, { recursive: true }); rmSync(shallow, { recursive: true });
+});

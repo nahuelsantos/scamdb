@@ -24,6 +24,8 @@ export function changesFromGit(root, entries) {
   const ids = new Set(entries.map((e) => e.id));
   const rows = [];
   try {
+    // A shallow clone shows its oldest commit as adding every file: its history can't be trusted.
+    if (git(root, ['rev-parse', '--is-shallow-repository']) === 'true') throw new Error('shallow');
     const log = git(root, ['log', '--name-status', '--format=@@%cs', '--', 'data/']);
     let date = '';
     const seen = new Set();

@@ -58,3 +58,30 @@ test('rejects a phrase that shrinks to a common word', () =>
   assert.match(errorsWith('stop-phrase.json', (e) => ({ phrases: { es: [...e.phrases.es, 'que por'] } })), /phrase "que por"/));
 test('rejects an unknown related id', () =>
   assert.match(errorsWith('bad-related.json', () => ({ related: ['ar/fantasma'] })), /unknown related "ar\/fantasma"/));
+test('rejects a cheap-TLD scam domain', () =>
+  assert.match(errorsWith('cheap-tld.json', () => ({ examples: [{ text: { es: 'Reclamá en mercadopago-reclamos.xyz ahora' } }] })), /real link/));
+test('rejects wa.link and a path on an unknown TLD', () => {
+  assert.match(errorsWith('walink.json', () => ({ examples: [{ text: { es: 'escribime wa.link/abc' } }] })), /real link/);
+  assert.match(errorsWith('top.json', () => ({ examples: [{ text: { es: 'entrá a cuenta.top/x' } }] })), /real link/);
+});
+test('rejects a dotted phone number', () =>
+  assert.match(errorsWith('dotted.json', () => ({ examples: [{ text: { es: 'llamá al 11.5555.1234' } }] })), /real phone/));
+test('checks the story too', () =>
+  assert.match(errorsWith('story.json', () => ({ story: { es: 'Le escribieron desde banco-galicia.online y cayó.' } })), /story\.es has a real link/));
+test('checks steps and red flags too', () =>
+  assert.match(errorsWith('steps.json', (e) => ({ steps: [e.steps[0], { text: { es: 'Te manda premios.shop' } }] })), /steps\[1\]\.text\.es has a real link/));
+test('does not flag a missing space after a period, or money amounts', () => {
+  const errs = errorsWith('ok-text.json', () => ({ story: { es: 'El Sr. Pérez.Me dijo que transfirió $3.600.000 y después 70.000.' } }));
+  assert.doesNotMatch(errs, /real link|real phone/);
+});
+test('rejects a contact web way that is not https', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'scamdb-'));
+  cpSync(OK, dir, { recursive: true });
+  const p = join(dir, 'data/ar/contacts.json');
+  const c = JSON.parse(readFileSync(p));
+  c.contacts[0].ways.push({ type: 'web', value: 'javascript:alert(1)' });
+  writeFileSync(p, JSON.stringify(c));
+  const errs = validateRepo(dir).join('\n');
+  rmSync(dir, { recursive: true });
+  assert.match(errs, /ways\[2\]\.value must start with https:\/\//);
+});

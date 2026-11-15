@@ -8,8 +8,11 @@ import { tokens } from '../lib/text.js';
 
 const SCHEMA_DIR = new URL('../schema/', import.meta.url);
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const LINK = /https?:|www\.|\b[a-z0-9-]+\.(com|ar|ly|me|net|org|io|gl|co)\b|wa\.me|t\.me/i;
-const PHONE = /\+?\d[\d\s-]{7,}\d/;
+// Links: a scheme, www., known shorteners, or a lowercase domain (case-sensitive, so "Pérez.Me dijo" is not a link).
+const LINK = /https?:|www\.|\b(wa\.me|wa\.link|t\.me|bit\.ly|goo\.gl|tinyurl\.com)\b/i;
+const DOMAIN = /\b[a-z0-9][a-z0-9-]*\.(com|ar|ly|me|net|org|io|gl|co|xyz|top|shop|online|site|info|link|club|store|app|live|click|icu|vip|fun|pro|biz|cc|ru|cn)\b|\b[a-z0-9][a-z0-9-]*\.[a-z]{2,}\/\S/;
+// Phones: 8+ digits with spaces or hyphens, or dotted groups like 11.5555.1234 (money like $3.600.000 is not a phone).
+const PHONE = /\+?\d[\d\s-]{7,}\d|\b\d{2,4}\.\d{3,4}\.\d{4}\b/;
 
 let compiled;
 function schemas() {
@@ -100,9 +103,13 @@ export function validateRepo(root) {
       if (list.length < 5) errors.push(`${path}: phrases.${lang} needs at least 5 phrases (has ${list.length})`);
       for (const p of list) if (!tokens(p).length) errors.push(`${path}: phrase "${p}" has no meaningful words (it shrinks to filler)`);
     }
-    const checked = [...(s.examples ?? []).flatMap((x, i) => strings(x.text, `examples[${i}].text`)), ...strings(s.phrases, 'phrases')];
+    const checked = [
+      ...['sender', 'name', 'how', 'phrases', 'redFlags', 'whatToDo', 'story'].flatMap((k) => strings(s[k], k)),
+      ...(s.steps ?? []).flatMap((x, i) => strings(x.text, `steps[${i}].text`)),
+      ...(s.examples ?? []).flatMap((x, i) => strings(x.text, `examples[${i}].text`)),
+    ];
     for (const { at, s: text } of checked) {
-      if (LINK.test(text)) errors.push(`${path}: ${at} has a real link; write [enlace]`);
+      if (LINK.test(text) || DOMAIN.test(text)) errors.push(`${path}: ${at} has a real link; write [enlace]`);
       else if (PHONE.test(text)) errors.push(`${path}: ${at} has a real phone number; leave it out`);
     }
   }
