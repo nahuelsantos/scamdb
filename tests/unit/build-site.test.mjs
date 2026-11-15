@@ -1,0 +1,87 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { cpSync, mkdtempSync, readFileSync, writeFileSync, existsSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { buildSite, esc } from '../../tools/build-site.mjs';
+import { ICONS, iconFor } from '../../site/templates/icons.js';
+import { loadRepo } from '../../lib/load.js';
+
+const OK = new URL('../fixtures/repo-ok/', import.meta.url).pathname;
+const meta = { version: '2026-11-15.abc1234', builtAt: '2026-11-15T12:00:00Z' };
+const XSS = '<script>alert(1)</script><img src=x onerror=alert(1)>';
+
+function build() {
+  const dir = mkdtempSync(join(tmpdir(), 'scamdb-site-'));
+  cpSync(OK, dir, { recursive: true });
+  const e = JSON.parse(readFileSync(join(dir, 'data/ar/scams/ejemplo.json')));
+  writeFileSync(join(dir, 'data/ar/scams/xss.json'), JSON.stringify({ ...e, id: 'ar/xss', how: { es: XSS }, name: { es: `Nombre ${XSS}` } }));
+  const out = join(dir, 'dist');
+  const written = buildSite(loadRepo(dir), out, meta, dir);
+  const page = (p) => readFileSync(join(out, p), 'utf8');
+  return { dir, out, written, page };
+}
+
+test('esc escapes HTML', () => assert.equal(esc(`<a href="x">'&'</a>`), '&lt;a href=&quot;x&quot;&gt;&#39;&amp;&#39;&lt;/a&gt;'));
+
+test('writes every page and the playground assets', () => {
+  const { dir, out, written } = build();
+  const pages = written.filter((p) => p.endsWith('.html')).sort();
+  assert.deepEqual(pages, ['404.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
+    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'index.html']);
+  for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
+    'assets/lib/text.js', 'assets/entries-ar.json']) assert.ok(existsSync(join(out, a)), a);
+  rmSync(dir, { recursive: true });
+});
+
+test('contributor HTML is shown as text, never run', () => {
+  const { dir, written, page } = build();
+  const html = page('catalogue/ar/xss/index.html');
+  assert.ok(html.includes('&lt;script&gt;alert(1)&lt;/script&gt;'));
+  for (const p of written.filter((p) => p.endsWith('.html'))) {
+    assert.equal(page(p).includes('<script>alert'), false, p);
+    assert.equal(page(p).includes('<img src=x'), false, p);
+  }
+  rmSync(dir, { recursive: true });
+});
+
+test('a Portuguese-only entry renders its own text with lang="pt"', () => {
+  const { dir, page } = build();
+  const html = page('catalogue/br/exemplo/index.html');
+  assert.ok(html.includes('Golpe do filho com número novo'));
+  assert.match(html, /lang="pt"/);
+  rmSync(dir, { recursive: true });
+});
+
+test('every page has one h1, a title and a canonical link', () => {
+  const { dir, written, page } = build();
+  for (const p of written.filter((p) => p.endsWith('.html'))) {
+    const html = page(p);
+    assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1, `${p} h1`);
+    assert.match(html, /<title>[^<]+<\/title>/, `${p} title`);
+    assert.match(html, /<link rel="canonical" href="https:\/\/scamdb\.dev\//, `${p} canonical`);
+  }
+  rmSync(dir, { recursive: true });
+});
+
+test('the entry page links to its JSON and to GitHub', () => {
+  const { dir, page } = build();
+  const html = page('catalogue/ar/ejemplo/index.html');
+  assert.ok(html.includes('href="/v1/scams/ar/ejemplo.json"'));
+  assert.ok(html.includes('href="https://github.com/nahuelsantos/scamdb/edit/main/data/ar/scams/ejemplo.json"'));
+  assert.ok(html.includes('denunciasufeci@mpf.gov.ar'));
+  rmSync(dir, { recursive: true });
+});
+
+test('the home page works without JavaScript: the sample result is pre-rendered', () => {
+  const { dir, page } = build();
+  assert.match(page('index.html'), /data-verdict="scam"/);
+  rmSync(dir, { recursive: true });
+});
+
+test('iconFor picks a drawing by scam', () => {
+  assert.equal(iconFor({ id: 'ar/falso-banco', channels: ['phone'] }), ICONS.bank);
+  assert.equal(iconFor({ id: 'ar/cuento-del-tio', channels: ['phone'] }), ICONS.house);
+  assert.equal(iconFor({ id: 'ar/whatsapp-codigo', channels: ['whatsapp'] }), ICONS.sms);
+  assert.equal(iconFor({ id: 'xx/otra', channels: ['phone'] }), ICONS.phone);
+});
