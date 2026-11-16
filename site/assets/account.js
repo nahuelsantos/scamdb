@@ -1,75 +1,94 @@
-// Account page: shows the GitHub login, the key prefix and today's usage; creates, replaces and deletes the key.
-// Every server value is inserted with textContent, never as HTML.
+// Account page: GitHub login, the API key (masked like a password, with show/hide and copy), usage, replace, delete,
+// sign out. Every server value is inserted with textContent or as an input value, never as HTML.
 const root = document.getElementById('acc');
 const S = JSON.parse(root.dataset.strings || '{}');
+const ICONS = JSON.parse(root.dataset.icons || '{}');
 const $ = (id) => document.getElementById(id);
 const HEADERS = { 'x-requested-with': 'scamdb' };
+const api = (path, init = {}) => fetch(path, { credentials: 'same-origin', ...init }).catch(() => null);
+
+let me = null;
+let plain = null; // the revealed key, kept only in memory while the page is open
 
 const fail = (msg = S.accFail) => { $('acc-err').textContent = msg; $('acc-err').hidden = false; };
 const errParam = new URLSearchParams(location.search).get('error');
 if (errParam === 'github') fail(S.accGithubError);
 if (errParam === 'setup') fail(S.accSetup);
 
-function show(me) {
+function mask() {
+  const input = $('acc-key');
+  input.type = 'password';
+  input.value = me?.prefix ? me.prefix.replace('…', '') + '•'.repeat(36) : '';
+  const eye = $('acc-eye');
+  eye.innerHTML = ICONS.eye; eye.setAttribute('aria-label', S.accShow); eye.title = S.accShow; eye.setAttribute('aria-pressed', 'false');
+}
+function unmask() {
+  const input = $('acc-key');
+  input.type = 'text'; input.value = plain;
+  const eye = $('acc-eye');
+  eye.innerHTML = ICONS.eyeOff; eye.setAttribute('aria-label', S.accHide); eye.title = S.accHide; eye.setAttribute('aria-pressed', 'true');
+}
+
+function show() {
   $('acc-out').hidden = true;
   $('acc-in').hidden = false;
   if (!errParam) $('acc-err').hidden = true;
   $('acc-login').textContent = me.login;
-  $('acc-key').textContent = me.hasKey ? `${S.accHasKey} ${me.prefix}` : S.accNoKey;
+  $('acc-keyrow').hidden = !me.hasKey;
+  $('acc-nokey').hidden = me.hasKey;
   $('acc-usage').textContent = `${S.accUsage}: ${me.usageToday.reports} / ${me.limits.reports}`;
-  $('acc-create').textContent = me.hasKey ? S.accReplace : S.accCreate;
-  $('acc-delete').hidden = !me.hasKey;
+  $('acc-hint').textContent = '';
+  if (me.hasKey) { if (plain && $('acc-key').type === 'text') unmask(); else mask(); }
 }
 
 async function load() {
-  try {
-    const r = await fetch('/v1/keys/me', { credentials: 'same-origin' });
-    if (r.status === 401) { $('acc-in').hidden = true; $('acc-out').hidden = false; return; } // signed out
-    if (r.status === 503) { if (errParam !== 'setup') fail(S.accSetup); return; }
-    if (!r.ok) throw new Error(String(r.status));
-    show(await r.json());
-  } catch { fail(); }
+  const r = await api('/v1/keys/me');
+  if (!r) return fail();
+  if (r.status === 401) { me = null; plain = null; $('acc-in').hidden = true; $('acc-out').hidden = false; return; }
+  if (r.status === 503) { if (errParam !== 'setup') fail(S.accSetup); return; }
+  if (!r.ok) return fail();
+  me = await r.json();
+  show();
 }
 
-$('acc-create').addEventListener('click', async () => {
-  if ($('acc-delete').hidden === false && !confirm(S.accReplaceConfirm)) return;
-  const r = await fetch('/v1/keys', { method: 'POST', headers: HEADERS, credentials: 'same-origin' }).catch(() => null);
-  if (!r?.ok) { fail(r?.status === 503 ? S.accSetup : S.accFail); return; }
-  const { key } = await r.json();
-  $('acc-new-key').textContent = key;
-  $('acc-new').hidden = false;
-  await $('acc-signout').addEventListener('click', async () => {
-  const r = await fetch('/auth/logout', { method: 'POST', headers: HEADERS, credentials: 'same-origin' }).catch(() => null);
-  if (!r?.ok) { fail(); return; }
-  $('acc-new').hidden = true;
-  await load();
-});
+/** Fetches the key once per page view; returns null (with a hint) when it can't be revealed. */
+async function getPlain() {
+  if (plain) return plain;
+  const r = await api('/v1/keys/me/reveal', { headers: HEADERS });
+  if (r?.status === 404) { $('acc-hint').textContent = S.accNotViewable; return null; }
+  if (!r?.ok) { fail(); return null; }
+  plain = (await r.json()).key;
+  return plain;
+}
 
-load();
-});
-$('acc-delete').addEventListener('click', async () => {
-  if (!confirm(S.accDeleteConfirm)) return;
-  const r = await fetch('/v1/keys/me', { method: 'DELETE', headers: HEADERS, credentials: 'same-origin' }).catch(() => null);
-  if (!r?.ok) { fail(); return; }
-  $('acc-new').hidden = true;
-  await $('acc-signout').addEventListener('click', async () => {
-  const r = await fetch('/auth/logout', { method: 'POST', headers: HEADERS, credentials: 'same-origin' }).catch(() => null);
-  if (!r?.ok) { fail(); return; }
-  $('acc-new').hidden = true;
-  await load();
-});
-
-load();
+$('acc-eye').addEventListener('click', async () => {
+  if ($('acc-key').type === 'text') return mask();
+  if (await getPlain()) unmask();
 });
 $('acc-copy').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText($('acc-new-key').textContent); $('acc-copy').textContent = S.accCopied; }
-  catch { getSelection().selectAllChildren($('acc-new-key')); }
+  const key = await getPlain();
+  if (!key) return;
+  try { await navigator.clipboard.writeText(key); $('acc-hint').textContent = S.accCopied; }
+  catch { unmask(); $('acc-key').select(); }
 });
-
+async function create() {
+  const r = await api('/v1/keys', { method: 'POST', headers: HEADERS });
+  if (!r?.ok) return fail(r?.status === 503 ? S.accSetup : S.accFail);
+  plain = (await r.json()).key;
+  await load();
+}
+$('acc-create').addEventListener('click', create);
+$('acc-replace').addEventListener('click', () => { if (confirm(S.accReplaceConfirm)) create(); });
+$('acc-delete').addEventListener('click', async () => {
+  if (!confirm(S.accDeleteConfirm)) return;
+  const r = await api('/v1/keys/me', { method: 'DELETE', headers: HEADERS });
+  if (!r?.ok) return fail();
+  plain = null;
+  await load();
+});
 $('acc-signout').addEventListener('click', async () => {
-  const r = await fetch('/auth/logout', { method: 'POST', headers: HEADERS, credentials: 'same-origin' }).catch(() => null);
-  if (!r?.ok) { fail(); return; }
-  $('acc-new').hidden = true;
+  const r = await api('/auth/logout', { method: 'POST', headers: HEADERS });
+  if (!r?.ok) return fail();
   await load();
 });
 

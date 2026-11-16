@@ -17,6 +17,7 @@ const ROUTES = [
   ['OPTIONS', /^\/v1\/reports$/, () => cors(new Response(null, { status: 204 }))],
   ['POST', /^\/v1\/reports$/, handleReport, 'reports'],
   ['GET', /^\/v1\/keys\/me$/, handleKeys, 'account'],
+  ['GET', /^\/v1\/keys\/me\/reveal$/, handleKeys, 'account'],
   ['POST', /^\/v1\/keys$/, handleKeys, 'account'],
   ['DELETE', /^\/v1\/keys\/me$/, handleKeys, 'account'],
   ['GET', /^\/auth\/github$/, authStart, 'account'],

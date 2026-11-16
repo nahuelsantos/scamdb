@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-export const SCHEMA = readFileSync(join(ROOT, 'migrations/0001_init.sql'), 'utf8');
+export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
 
 /** Default outbound stub: Turnstile token "ok" passes; GitHub answers a fixed user. */
 export async function defaultFetch(request) {
