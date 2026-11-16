@@ -1,0 +1,118 @@
+{
+  "id": "ca/government-arrest-bitcoin-atm",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Government of Canada”, “Crown Attorney”, “RCMP”, “CRA” or “Service Canada”"
+  },
+  "name": {
+    "en": "Fake government call: “your identity was used in a crime, pay at a Bitcoin ATM”"
+  },
+  "how": {
+    "en": "A caller says they are from the Government of Canada, the CRA, Service Canada, the RCMP or a “Crown Attorney Office”. They claim your identity was used for a crime, that you owe money, or that there is a warrant, and threaten arrest, charges or jail. To “clear your name” they tell you to withdraw cash and put it into a Bitcoin ATM, often by scanning a QR code they send on WhatsApp. They may also send emails on fake government letterhead."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are a government official or police and that you are facing arrest or charges."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They demand immediate action and tell you to keep it secret from family and your bank."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "They keep you on the phone while you go to the bank and withdraw cash."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "en": "They send a QR code on WhatsApp and tell you to deposit the cash at a Bitcoin ATM."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Government of Canada – Office of the Crown Attorney. Your Social Insurance Number has been linked to criminal activity. A warrant will be issued for your arrest unless you verify your identity today. Stay on the line with the officer and do not inform your bank."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "told to put cash in a bitcoin atm",
+      "government official said i would be arrested",
+      "my sin was used in a crime",
+      "crown attorney called me",
+      "scan a qr code at a bitcoin machine",
+      "cra said there is a warrant for my arrest",
+      "verify my identity with blockchain"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Threats of arrest, charges, jail or deportation on the phone or by message.",
+      "Being told to pay by Bitcoin ATM, crypto, gift cards or prepaid cards.",
+      "A QR code sent by a stranger for a payment.",
+      "Being told to stay on the line or keep it from your family or bank."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. The government and police never demand payment by crypto, Bitcoin ATM or gift cards, and never threaten arrest by phone.",
+      "Don’t scan QR codes from strangers.",
+      "Check by calling the agency on a number from its official website.",
+      "If you paid, call your bank, then report it to your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/local-police",
+    "ca/cafc",
+    "ca/cra",
+    "ca/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Lloydminster RCMP warns public of Bitcoin ATM fraud involving people impersonating government officials",
+      "publisher": "RCMP (Alberta)",
+      "url": "https://rcmp.ca/en/alberta/news/2026/09/4356898",
+      "date": "2026-09-11"
+    },
+    {
+      "title": "B.C. police issue warning about cryptocurrency scam",
+      "publisher": "CTV News (CP24)",
+      "url": "https://www.cp24.com/news/canada/2026/04/11/fraudsters-posing-as-government-of-canada-officials-in-cryptocurrency-scam-bc-police-warn/",
+      "date": "2026-04-11"
+    },
+    {
+      "title": "Recognize a scam",
+      "publisher": "Canada Revenue Agency",
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/scams-fraud/recognize-scam.html",
+      "date": "2026-11-13"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "ca/cra-refund-text",
+    "ca/chinese-police-extortion"
+  ]
+}

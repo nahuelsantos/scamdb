@@ -1,0 +1,105 @@
+{
+  "id": "ca/rental-deposit",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "en": "A “landlord” on Facebook Marketplace or a classifieds site"
+  },
+  "name": {
+    "en": "Fake rental: “send the deposit by e-Transfer to hold it”"
+  },
+  "how": {
+    "en": "A rental listing on social media or a classifieds site looks real, sometimes with photos copied from a real listing, a lease and land title documents. The “landlord” says they can’t show it yet, that many people are interested, and asks for a deposit or first month’s rent by e-Transfer to hold it. Once paid, they stop answering, and the place is not for rent or doesn’t exist."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You find a rental at a good price on Facebook Marketplace or a classifieds site."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The “landlord” is out of town or can’t show the place before you pay."
+      }
+    },
+    {
+      "text": {
+        "en": "They say many people want it and you must send a deposit now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "You send a deposit or rent by e-Transfer and they disappear."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi, the apartment is still available but I have many people interested. I am working out of town so I can’t show it this week. Send the $1,200 deposit by e-Transfer today to hold it and I will send you the lease and keys."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "landlord asked for deposit before viewing",
+      "fake rental on facebook marketplace",
+      "sent first month's rent by e-transfer",
+      "landlord is out of town",
+      "apartment wasn't really for rent",
+      "rental listing was a scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "You can’t see the unit before paying.",
+      "Rent well below market value.",
+      "A landlord who is out of town or can’t meet.",
+      "Pressure: “first come, first served”, “send a deposit to hold it”.",
+      "Payment only by e-Transfer."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never send money before viewing the place in person.",
+      "Search the address and photos online for duplicate listings, and confirm who owns the property.",
+      "If you sent an e-Transfer, call your bank right away: it may be stopped if not yet accepted.",
+      "Report it to your local police and the Canadian Anti-Fraud Centre, with screenshots of the ad and messages."
+    ]
+  },
+  "reportTo": [
+    "ca/your-bank",
+    "ca/local-police",
+    "ca/cafc"
+  ],
+  "sources": [
+    {
+      "title": "Police issue warning over rental scam",
+      "publisher": "RCMP (Nanaimo detachment)",
+      "url": "https://rcmp.ca/en/bc/nanaimo/news/2026/11/4358486",
+      "date": "2026-11-03"
+    },
+    {
+      "title": "Codiac Regional RCMP is warning the public about rental-deposit scam",
+      "publisher": "RCMP (New Brunswick)",
+      "url": "https://rcmp.ca/en/nb/news/2026/02/4350506",
+      "date": "2026-02-20"
+    }
+  ],
+  "updated": "2026-11-16"
+}

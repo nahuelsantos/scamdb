@@ -1,0 +1,123 @@
+{
+  "id": "ca/bank-investigator-courier",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Your bank’s fraud department”, “Visa/Mastercard security” or “police”"
+  },
+  "name": {
+    "en": "Fake bank investigator: “we’ll send a courier for your cards”"
+  },
+  "how": {
+    "en": "A caller says they are from your bank’s fraud or security department, a card company or the police, and the number on your screen may look real. They say there is suspicious activity on your account and ask you to help with an “investigation”. They ask for your PIN or banking details, tell you to move money to a “safe” account, or send a courier to pick up your bank cards in an envelope. They then use the cards or the money, and tell you to keep it secret, even from bank staff."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call that looks like it comes from your bank says there are suspicious transactions on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask you to help catch a dishonest employee or a criminal, and to tell no one, not even bank staff."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "They ask you to confirm your PIN, card numbers or one-time code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They send a “courier” to collect your cards, or tell you to move your money to a “safe” account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is the fraud department at your bank. We have detected two suspicious purchases on your debit card. Please do not hang up. For your protection we will send a courier to collect your cards today. Place them in an envelope and do not discuss this with branch staff."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "call from my bank fraud department",
+      "courier came to pick up my bank card",
+      "they asked for my pin number",
+      "bank investigator asked me to help",
+      "move my money to a safe account",
+      "put my cards in an envelope",
+      "told not to tell bank staff"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A caller asks for your PIN, password or a verification code.",
+      "Someone offers to send a courier to pick up your bank or credit cards.",
+      "You are asked to move money to a “safe” account or help with an investigation.",
+      "You are told to keep it secret, even from your family or bank staff.",
+      "Caller ID shows your bank’s number: caller ID can be faked."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Call your bank yourself using the number on the back of your card.",
+      "Never hand your cards to anyone or share your PIN. Banks and police never send couriers for cards.",
+      "If a “courier” is at your door, don’t open it and call 911.",
+      "If you already gave cards or money, call your bank right away, then your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/your-bank",
+    "ca/local-police",
+    "ca/cafc",
+    "ca/emergency"
+  ],
+  "sources": [
+    {
+      "title": "Waterloo Regional Police Warn Residents About Bank Investigator and Courier Scam",
+      "publisher": "Waterloo Regional Police Service",
+      "url": "https://wrps.ca/node/39250",
+      "date": "2026-05-08"
+    },
+    {
+      "title": "Canadian Anti-Fraud Centre Impersonation",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/07/impersonation-arnaqueurs-eng.htm",
+      "date": "2026-07-02"
+    },
+    {
+      "title": "World Elder Abuse Awareness Day",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/06/awareness-day-journee-sensibilisation-eng.htm",
+      "date": "2026-06-11"
+    },
+    {
+      "title": "Fraud Trends – First 6 Months of 2026",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/08/fraud-trends-tendances-matiere-fraude-eng.htm",
+      "date": "2026-08-25"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "ca/cafc-recovery-fraud"
+  ]
+}

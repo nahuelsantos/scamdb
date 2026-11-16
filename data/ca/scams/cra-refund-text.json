@@ -1,0 +1,115 @@
+{
+  "id": "ca/cra-refund-text",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“CRA”, “Canada Revenue Agency” or “Government of Canada”"
+  },
+  "name": {
+    "en": "Fake CRA text: “you have a refund waiting, claim it here”"
+  },
+  "how": {
+    "en": "A text, email or chat message says it is from the Canada Revenue Agency. It offers a tax refund by Interac e-Transfer, a GST/HST credit, a Grocery Rebate or another benefit, or says you must update your account or download a notice of assessment. The link leads to a fake CRA or bank sign-in page that steals your login, banking details or SIN. The CRA does not send refunds by e-Transfer or text."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or email from the “CRA” says you have a refund, credit or benefit to claim."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you must act quickly or lose the money."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A link takes you to a fake CRA or bank sign-in page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You are asked for your SIN, banking details or login."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "CRA: You have received a tax refund of $468.32 by Interac e-Transfer. Please deposit your funds within 24 hours at: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Canada Revenue Agency: You are eligible for the new Grocery Rebate. Confirm your details to receive your payment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text from cra about a refund",
+      "cra refund by e-transfer",
+      "grocery rebate text message",
+      "gst credit link in a text",
+      "fake cra login page",
+      "cra email to update my account",
+      "text says i'm eligible for a rebate",
+      "canada revenue agency text message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "A refund or benefit offered by text, or by Interac e-Transfer.",
+      "A link to sign in or “deposit” your refund.",
+      "Requests for your SIN, banking details or passport number.",
+      "A web address that isn’t on canada.ca, or pressure to act fast."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Sign in to CRA My Account by typing the address yourself.",
+      "The CRA never sends refunds by e-Transfer or text, and never asks for personal information by email or voicemail.",
+      "If unsure, call the CRA using the number on its official website.",
+      "If you entered your details, call your bank and the CRA, and report it to the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/cra",
+    "ca/cafc",
+    "ca/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Recognize a scam",
+      "publisher": "Canada Revenue Agency",
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/scams-fraud/recognize-scam.html",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "OPP warns residents of increasing CRA-themed scams during tax season",
+      "publisher": "Canoe FM",
+      "url": "https://canoefm.com/2026/02/opp-warns-residents-of-cra-themed-scams/",
+      "date": "2026-02-27"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "ca/government-arrest-bitcoin-atm"
+  ]
+}

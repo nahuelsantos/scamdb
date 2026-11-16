@@ -1,0 +1,102 @@
+{
+  "id": "ca/marketplace-overpayment",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "en": "A “buyer” on an online marketplace or classifieds site"
+  },
+  "name": {
+    "en": "Marketplace buyer: overpayment or fake payment confirmation"
+  },
+  "how": {
+    "en": "When you sell something online, a “buyer”, often overseas, wants it without seeing it. They send more than the price and ask you to refund the difference, but their payment later bounces or is reversed. Or they send a fake email or text that looks like a payment notification, so you ship the item though no money arrived. You lose the item and any money you sent back."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A buyer agrees to buy without seeing the item, often from out of the country."
+      }
+    },
+    {
+      "text": {
+        "en": "They “pay” too much, or send an email or text showing a payment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask you to refund the extra or to ship the item right away."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "The payment bounces or never existed."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi, I want to buy the item for my son, I can’t come see it. I sent you $850 instead of $650 by mistake, please refund the $200 extra by e-Transfer and my mover will pick it up tomorrow."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "buyer sent me too much money",
+      "refund the difference to the buyer",
+      "fake payment confirmation email",
+      "buyer wants it without seeing it",
+      "payment bounced after i shipped",
+      "overseas buyer on marketplace",
+      "buyer paid more by mistake",
+      "refund the extra by e-transfer",
+      "mover will pick it up"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A buyer who doesn’t want to see the item first.",
+      "They send more than the price and ask for the difference back.",
+      "A payment “confirmation” by email or text, but no money in your account.",
+      "Pressure to ship quickly."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check your bank or payment account yourself before shipping or refunding.",
+      "Never refund an overpayment: cancel the sale instead.",
+      "Whenever possible, meet in person and get paid in person.",
+      "Report it to the marketplace, your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/your-bank",
+    "ca/cafc",
+    "ca/local-police"
+  ],
+  "sources": [
+    {
+      "title": "Check twice, pay once: starting new habits to avoid merchandise fraud",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2025/10/avoid-merchandise-evitez-eng.htm",
+      "date": "2025-10-20"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "ca/fake-online-store"
+  ]
+}

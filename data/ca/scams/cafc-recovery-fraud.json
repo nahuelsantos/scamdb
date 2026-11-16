@@ -1,0 +1,115 @@
+{
+  "id": "ca/cafc-recovery-fraud",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "en": "“Canadian Anti-Fraud Centre”, “RCMP”, a lawyer or a “recovery” firm"
+  },
+  "name": {
+    "en": "Recovery fraud: “we found the money you lost, pay the fees”"
+  },
+  "how": {
+    "en": "If you already lost money to a scam, someone may contact you again saying they can get it back. They pretend to be the Canadian Anti-Fraud Centre, the RCMP, an investment regulator, a lawyer or a recovery company, and may send fake letters with official logos. To release your money they ask you to pay fees, taxes, deposits or crypto transfer costs, or to give them remote access to your device. No money is ever returned and more is stolen."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You get a call, email or message saying your lost money has been found."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They send official-looking letters with the CAFC, RCMP or a regulator’s logo."
+      }
+    },
+    {
+      "text": {
+        "en": "They ask you to install an app so they can “trace” the funds."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "To release the money you must first pay fees, taxes or a deposit, often in crypto."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Canadian Anti-Fraud Centre – Case Recovery Unit. Our investigators have located $48,000 in cryptocurrency linked to your previous complaint. To release the funds to you, an administrative and tax fee of $2,350 must be paid within 48 hours. Reply to this email to begin."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "they can recover my lost money",
+      "anti-fraud centre found my money",
+      "pay a fee to get my money back",
+      "rcmp letter about my crypto",
+      "recovery company asked for taxes",
+      "lawyer says he found my crypto",
+      "scammed again after the first scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Someone contacts you out of the blue about money you lost to a scam.",
+      "They use the name or logo of the CAFC, the RCMP, a regulator or a law firm.",
+      "You must pay fees, taxes or a deposit before you can get your money.",
+      "They ask for remote access to your computer or phone."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "The CAFC and police never ask you to pay money or to give remote access to recover funds.",
+      "Never pay anyone upfront to get back money you lost.",
+      "Contact the CAFC or police yourself using contact details from the official Government of Canada website, not the ones in the message.",
+      "Report it to your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/cafc",
+    "ca/local-police",
+    "ca/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Canadian Anti-Fraud Centre Impersonation",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/07/impersonation-arnaqueurs-eng.htm",
+      "date": "2026-07-02"
+    },
+    {
+      "title": "Fraud Trends – First 6 Months of 2026",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/08/fraud-trends-tendances-matiere-fraude-eng.htm",
+      "date": "2026-08-25"
+    },
+    {
+      "title": "Recovery scams on the rise",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/news-nouvelles/2024/2024-09-25-eng.htm",
+      "date": "2024-09-25"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "ca/bank-investigator-courier",
+    "ca/crypto-romance-investment"
+  ]
+}
