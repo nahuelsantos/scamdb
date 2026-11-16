@@ -15,3 +15,7 @@
   Cache-Control: public, max-age=3600, must-revalidate
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+# UAT previews (<branch>-scamdb.<account>.workers.dev) stay out of search engines.
+https://:preview.:account.workers.dev/*
+  X-Robots-Tag: noindex
