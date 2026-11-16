@@ -2,6 +2,7 @@
 // Everything else is a static asset and never reaches this code.
 import { HttpError, error, cors } from './http.js';
 import { handleReport } from './reports.js';
+import { cleanup } from './cleanup.js';
 
 const ROUTES = [
   ['OPTIONS', /^\/v1\/reports$/, () => cors(new Response(null, { status: 204 }))],
@@ -24,5 +25,5 @@ export async function handle(request, env, ctx) {
 
 export default {
   fetch: (request, env, ctx) => handle(request, env, ctx),
-  async scheduled() {},
+  scheduled: (event, env, ctx) => ctx.waitUntil(cleanup(env.DB, new Date(event.scheduledTime))),
 };
