@@ -1,0 +1,131 @@
+{
+  "id": "es/sextortion-email",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "es": "Un “hacker”, a veces desde tu propio correo",
+    "en": "A “hacker”, sometimes appearing to be your own email address"
+  },
+  "name": {
+    "es": "“Te he grabado con la cámara”: el chantaje por correo",
+    "en": "“I recorded you with your webcam”: the blackmail email"
+  },
+  "how": {
+    "es": "Te llega un correo que dice que han infectado tu dispositivo, que te han grabado con la cámara en un momento íntimo y que mandarán el vídeo a tus contactos. Piden un pago en bitcoin, unos cientos de euros, en 48 horas. A veces parece enviado desde tu propio correo o usa el logo del Banco de España. No tienen ningún vídeo: es un texto masivo con datos de filtraciones antiguas.",
+    "en": "You get an email saying your device was infected, that you were filmed by your webcam at an intimate moment and that the video will be sent to your contacts. They ask for a bitcoin payment of a few hundred euros within 48 hours. Sometimes it seems to come from your own email address or uses the Banco de España logo. They have no video: it’s a mass email using data from old leaks."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un correo: te han hackeado y grabado con la cámara.",
+        "en": "You get an email: you’ve been hacked and filmed with your webcam."
+      }
+    },
+    {
+      "text": {
+        "es": "Amenazan con mandar el vídeo a tus contactos y te dicen que denunciar no sirve.",
+        "en": "They threaten to send the video to your contacts and say reporting it is useless."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te dan 48 horas.",
+        "en": "They give you 48 hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Piden un pago en bitcoin a una cartera o un código QR.",
+        "en": "They ask for a bitcoin payment to a wallet or QR code."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "He infectado tu dispositivo con un software espía y te he grabado a través de la cámara. Si en 48 horas no recibo 850 USD en bitcoin, enviaré el vídeo a todos tus contactos. No sirve de nada denunciar.",
+        "en": "I infected your device with spyware and recorded you through your webcam. If I don’t receive 850 USD in bitcoin within 48 hours, I’ll send the video to all your contacts. Reporting it won’t help."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me han grabado con la camara",
+      "chantaje por correo",
+      "piden bitcoin por un video",
+      "video intimo a mis contactos",
+      "correo enviado desde mi propia cuenta",
+      "me han hackeado el ordenador"
+    ],
+    "en": [
+      "recorded with my webcam",
+      "blackmail email bitcoin",
+      "intimate video to my contacts",
+      "email from my own address",
+      "sextortion email",
+      "recorded you through your webcam",
+      "infected your device with spyware"
+    ]
+  },
+  "signals": [
+    "secrecy",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Piden bitcoin y dan un plazo corto.",
+      "No muestran ninguna prueba del supuesto vídeo.",
+      "Dicen que denunciar no sirve."
+    ],
+    "en": [
+      "They ask for bitcoin and give a short deadline.",
+      "They show no proof of the supposed video.",
+      "They say reporting is pointless."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues ni respondas: no tienen nada.",
+      "Repórtalo a INCIBE, bloquea al remitente y bórralo. Cambia la contraseña si ves una tuya antigua.",
+      "Si ya pagaste, guarda las pruebas y denúncialo."
+    ],
+    "en": [
+      "Don’t pay or reply: they have nothing.",
+      "Report it to INCIBE, block the sender and delete it. Change your password if you see an old one of yours.",
+      "If you already paid, keep the evidence and report it."
+    ]
+  },
+  "reportTo": [
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional",
+    "es/guardia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Chantajes de sextorsión a través de correos electrónicos",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/chantajes-de-sextorsion-traves-de-correos-electronicos",
+      "date": "2026-03-10"
+    },
+    {
+      "title": "El Banco de España no está enviando correos para chantajearte con difundir un vídeo de contenido sexual",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/el-banco-de-espana-no-esta-enviando-correos-para-chantajearte-con-difundir-un",
+      "date": "2025-12-02"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "es/fake-police-summons"
+  ]
+}

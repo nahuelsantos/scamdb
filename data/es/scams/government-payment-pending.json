@@ -1,0 +1,142 @@
+{
+  "id": "es/government-payment-pending",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Seguridad Social” o “Mi Carpeta Ciudadana”",
+    "en": "“Seguridad Social” (social security) or “Mi Carpeta Ciudadana” (government portal)"
+  },
+  "name": {
+    "es": "“Tienes un ingreso pendiente”: la falsa Seguridad Social o Carpeta Ciudadana",
+    "en": "“You have a payment waiting”: the fake social security or government portal"
+  },
+  "how": {
+    "es": "Te llega un SMS de la “Seguridad Social” o un correo de “Mi Carpeta Ciudadana” que dice que tienes una prestación o un ingreso pendiente, por ejemplo de 552,97 €. El enlace lleva a una copia de la web oficial que te pide el DNI, tus datos, el IBAN, la tarjeta o hasta la clave de la banca online. También circulan por grupos de WhatsApp falsas cartas sobre una subida de la pensión que piden una foto del DNI. Los trámites oficiales se hacen con DNI electrónico, certificado digital o Cl@ve, nunca desde un enlace de un SMS.",
+    "en": "You get a text from the “Seguridad Social” or an email from “Mi Carpeta Ciudadana” saying a benefit or a payment is waiting for you, for example €552.97. The link goes to a copy of the official site that asks for your ID number, your details, your IBAN, your card or even your online banking password. Fake letters about a pension rise asking for a photo of your ID also go round WhatsApp groups. Official procedures use an electronic ID, a digital certificate or Cl@ve, never a link in a text."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS o correo del Gobierno: tienes una prestación o un ingreso pendiente.",
+        "en": "You get a text or email from the government: you have a benefit or a payment waiting."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una copia de la web de la Seguridad Social o de Carpeta Ciudadana.",
+        "en": "The link goes to a copy of the Social Security or Carpeta Ciudadana site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden el DNI, el IBAN y la tarjeta, o la clave de tu banca online, para “cobrar”.",
+        "en": "They ask for your ID number, IBAN and card, or your online banking password, to “get paid”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Seguridad Social: Tiene una prestacion economica pendiente de cobro. Revise su tramite aqui: [enlace]",
+        "en": "Social Security: You have a benefit payment waiting to be collected. Check your case here: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "es": "Notificación de ingreso disponible – Importe 552,97€. Acceda ahora para recibir el ingreso: [enlace]",
+        "en": "Notice of available payment – Amount €552.97. Log in now to receive the payment: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "sms de la seguridad social",
+      "prestacion pendiente de cobro",
+      "ingreso pendiente de la carpeta ciudadana",
+      "mi carpeta ciudadana",
+      "ingreso de 552 euros",
+      "subida de la pension",
+      "me piden el iban para cobrar",
+      "notificacion de ingreso disponible"
+    ],
+    "en": [
+      "social security text",
+      "benefit payment waiting",
+      "government payment email",
+      "pension rise letter",
+      "asked for my iban to get paid",
+      "notice of available payment",
+      "log in to receive the payment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te ofrecen dinero del Gobierno por SMS o correo.",
+      "Te piden la tarjeta o la clave del banco para darte un ingreso.",
+      "La web no pide DNI electrónico, certificado digital ni Cl@ve."
+    ],
+    "en": [
+      "You’re offered government money by text or email.",
+      "They ask for your card or bank password to pay you.",
+      "The site doesn’t ask for an electronic ID, digital certificate or Cl@ve."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el enlace. Entra tú en la sede electrónica de la Seguridad Social o en Carpeta Ciudadana.",
+      "Si diste los datos de la tarjeta, llama ya a tu banco para bloquearla y revisa los movimientos.",
+      "Si lo viste en un grupo de WhatsApp, avisa de que es falso y no lo reenvíes."
+    ],
+    "en": [
+      "Don’t tap the link. Go to the official Social Security site or Carpeta Ciudadana yourself.",
+      "If you entered your card details, call your bank now to block the card and check your transactions.",
+      "If you saw it in a WhatsApp group, warn that it is fake and don’t forward it."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional"
+  ],
+  "sources": [
+    {
+      "title": "Campaña de smishing suplantando a la Seguridad Social",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/campana-de-smishing-suplantando-la-seguridad-social",
+      "date": "2026-08-19"
+    },
+    {
+      "title": "Mi Carpeta Ciudadana no está enviando notificaciones a los ciudadanos para recibir un ingreso de 552,97€",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/mi-carpeta-ciudadana-no-esta-enviando-notificaciones-los-ciudadanos-para-recibir",
+      "date": "2026-03-04"
+    },
+    {
+      "title": "El bulo del aumento de la pensión en WhatsApp estafa a seniors",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/el-bulo-del-aumento-de-la-pension-en-whatsapp-estafa-seniors",
+      "date": "2026-03-31"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "es/tax-agency-refund"
+  ]
+}

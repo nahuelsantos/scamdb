@@ -1,0 +1,133 @@
+{
+  "id": "es/parcel-missing-house-number",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“Correos”, “DHL”, “GLS” u otra empresa de paquetería",
+    "en": "“Correos” (post office), “DHL”, “GLS” or another courier"
+  },
+  "name": {
+    "es": "“Falta el número de tu casa”: el falso aviso de paquetería",
+    "en": "“Your house number is missing”: the fake courier notice"
+  },
+  "how": {
+    "es": "Te llega un SMS o un correo de una empresa de paquetería: no pudieron entregar tu paquete porque falta el número de la casa, o te lo devuelven y hay que pagar el envío. El enlace lleva a una web falsa donde eliges una hora de entrega, pones tus datos y luego la tarjeta para pagar un importe pequeño. Al final sale un error, pero ya tienen tus datos. Es más creíble si estás esperando un pedido.",
+    "en": "You get a text or an email from a courier: they couldn’t deliver your parcel because the house number is missing, or it’s being returned and you have to pay the shipping. The link goes to a fake site where you pick a delivery time, enter your details and then your card to pay a small amount. In the end you see an error, but they already have your details. It’s more convincing if you’re expecting an order."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS de una empresa de paquetería: tu paquete no se pudo entregar.",
+        "en": "You get a text from a courier: your parcel couldn’t be delivered."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "El enlace te lleva a elegir una nueva hora de entrega y a poner tus datos.",
+        "en": "The link takes you to pick a new delivery time and enter your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden la tarjeta para pagar el reenvío o una tasa pequeña.",
+        "en": "They ask for your card to pay for redelivery or a small fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Su paquete no pudo ser entregado porque falta el numero de casa. Actualice su direccion y elija franja de entrega: [enlace]",
+        "en": "Your parcel couldn’t be delivered because the house number is missing. Update your address and pick a delivery slot: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "es": "DHL: Su paquete ha sido devuelto. Para un nuevo envío debe abonar 1,99 € de gastos: [enlace]",
+        "en": "DHL: Your parcel has been returned. For a new delivery you must pay €1.99 in fees: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "falta el numero de casa",
+      "no se pudo entregar el paquete",
+      "sms de correos",
+      "pagar el reenvio del paquete",
+      "elegir franja de entrega",
+      "paquete devuelto dhl",
+      "actualizar la direccion de entrega",
+      "sms de paqueteria",
+      "su paquete ha sido devuelto",
+      "abonar el nuevo envio"
+    ],
+    "en": [
+      "house number missing",
+      "parcel could not be delivered",
+      "pay for redelivery",
+      "courier text with a link",
+      "parcel returned fee",
+      "update your address and delivery slot"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "No dice qué compraste ni quién te lo envía.",
+      "Te piden pagar un importe pequeño con tarjeta para recibirlo.",
+      "El enlace no es la web oficial de la empresa."
+    ],
+    "en": [
+      "It doesn’t say what you bought or who sent it.",
+      "They ask you to pay a small amount by card to get it.",
+      "The link isn’t the courier’s official website."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el enlace. Mira el estado del pedido en la web o la app oficial de la tienda o de la empresa de envíos.",
+      "Si diste los datos de la tarjeta, llama ya a tu banco para bloquearla y revisa los movimientos.",
+      "Reporta el mensaje a INCIBE y bloquea el número."
+    ],
+    "en": [
+      "Don’t tap the link. Check the order in the shop’s or courier’s official website or app.",
+      "If you entered your card details, call your bank now to block the card and check your transactions.",
+      "Report the message to INCIBE and block the number."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional"
+  ],
+  "sources": [
+    {
+      "title": "Campaña de smishing que suplanta a empresas de paquetería con la excusa de que falta el número de casa",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/campana-de-smishing-que-suplanta-empresas-de-paqueteria-con-la-excusa-de-que",
+      "date": "2025-12-19"
+    },
+    {
+      "title": "DHL no está avisando por correo de que un paquete ha sido devuelto y que se cobrará una tarifa de envío",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/dhl-no-esta-avisando-por-correo-de-que-un-paquete-ha-sido-devuelto-y-que-se",
+      "date": "2025-07-29"
+    }
+  ],
+  "updated": "2026-11-16"
+}

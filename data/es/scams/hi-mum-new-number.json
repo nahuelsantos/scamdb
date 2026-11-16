@@ -1,0 +1,146 @@
+{
+  "id": "es/hi-mum-new-number",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu hijo” o “tu hija”, desde un número nuevo",
+    "en": "“Your son” or “your daughter”, from a new number"
+  },
+  "name": {
+    "es": "“Hola mamá, se me ha roto el móvil”: el hijo en apuros",
+    "en": "“Hi Mum, my phone broke”: the child in trouble"
+  },
+  "how": {
+    "es": "Te llega un SMS o un WhatsApp de un número desconocido: es “tu hijo” o “tu hija”, se le ha roto el móvil y este es su número nuevo. Te pide que le escribas por WhatsApp y enseguida necesita dinero urgente por Bizum o transferencia para pagar algo. Evita las llamadas y los mensajes a veces tienen faltas o parecen traducidos. La Policía Nacional desarticuló en 2026 una red con unas 500 víctimas en toda España.",
+    "en": "You get a text or WhatsApp from an unknown number: it’s “your son” or “your daughter”, their phone broke and this is their new number. They ask you to message them on WhatsApp and soon need money urgently by Bizum or bank transfer to pay for something. They avoid calls and the messages sometimes have mistakes or seem translated. In 2026 Spain’s National Police broke up a network with about 500 victims across the country."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un número desconocido diciendo que es tu hijo o tu hija.",
+        "en": "An unknown number writes saying it’s your son or daughter."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que se le ha roto el móvil y que este es su número nuevo.",
+        "en": "They say their phone broke and this is their new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "es": "Necesita dinero urgente y no puede hablar por teléfono.",
+        "en": "They need money urgently and can’t talk on the phone."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide un Bizum o una transferencia a una cuenta que no es suya.",
+        "en": "They ask for a Bizum or a transfer to an account that isn’t theirs."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola Mama, mi telefono se ha roto, este es mi nuevo número, enviame un mensaje por WhatsApp en cuanto puedas.",
+        "en": "Hi Mum, my phone is broken, this is my new number, send me a WhatsApp message as soon as you can."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "es": "Mama tengo que pagar una factura hoy y desde este movil no me deja la app del banco, me haces un Bizum y te lo devuelvo mañana?",
+        "en": "Mum I have to pay a bill today and my banking app won’t work on this phone, can you send me a Bizum and I’ll pay you back tomorrow?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "hola mama se me ha roto el movil",
+      "mi hijo con un numero nuevo",
+      "este es mi nuevo numero",
+      "hijo en apuros",
+      "me pide un bizum urgente",
+      "no puede hablar por telefono",
+      "mensaje de mi hija desde otro numero",
+      "hola mama",
+      "se me ha roto el movil",
+      "mi numero nuevo",
+      "escribeme por whatsapp"
+    ],
+    "en": [
+      "hi mum my phone broke",
+      "son with a new number",
+      "child asking for money by whatsapp",
+      "new number asking for a bizum",
+      "daughter texting from another number",
+      "banking app won't work on this phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "new_number",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un familiar escribe desde un número nuevo y pide dinero.",
+      "No quiere o no puede hablar por teléfono.",
+      "Mucha prisa y una cuenta a nombre de otra persona."
+    ],
+    "en": [
+      "A relative writes from a new number and asks for money.",
+      "They won’t or can’t talk on the phone.",
+      "A big rush and an account in someone else’s name."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues. Llama a tu hijo a su número de siempre o hazle una pregunta que solo él sepa.",
+      "Si ya pagaste, llama a tu banco enseguida para intentar parar el Bizum o la transferencia.",
+      "Guarda capturas y denúncialo a la Policía Nacional o a la Guardia Civil."
+    ],
+    "en": [
+      "Don’t pay. Call your child on their usual number or ask a question only they would know.",
+      "If you already paid, call your bank straight away to try to stop the Bizum or transfer.",
+      "Keep screenshots and report it to the Policía Nacional or the Guardia Civil."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/policia-nacional",
+    "es/guardia-civil",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "¿Has recibido un mensaje desde un número desconocido que dice ser tu hijo?",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/has-recibido-un-mensaje-desde-un-numero-desconocido-que-dice-ser-tu-hijo",
+      "date": "2025-05-08"
+    },
+    {
+      "title": "Desarticulada en España una red que estafó 3 millones de euros con el método del 'hijo en apuros'",
+      "publisher": "Euronews",
+      "url": "https://es.euronews.com/my-europe/2026/06/25/desarticulada-red-estafo-3-millones-metodo-hijo-en-apuros",
+      "date": "2026-06-25"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "es/ai-voice-relative-emergency",
+    "es/whatsapp-friend-asks-money"
+  ]
+}

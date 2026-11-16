@@ -1,0 +1,130 @@
+{
+  "id": "es/fake-police-summons",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "es": "“Policía Nacional”, “Guardia Civil”, “UDEF” o “INCIBE”",
+    "en": "“Policía Nacional”, “Guardia Civil”, “UDEF” or “INCIBE”"
+  },
+  "name": {
+    "es": "“Citación judicial por pornografía”: el falso correo de la policía",
+    "en": "“Court summons for pornography”: the fake police email"
+  },
+  "how": {
+    "es": "Te llega un correo con logos de la Policía Nacional, la Guardia Civil, la UDEF o INCIBE. Te acusa de delitos relacionados con pornografía, incluso infantil, y dice que te detendrán o lo publicarán en los medios si no respondes en 48 o 72 horas. Si contestas, te piden datos personales y dinero como si fuera una “multa”. La policía no manda citaciones así por correo.",
+    "en": "You get an email with logos of the Policía Nacional, Guardia Civil, UDEF or INCIBE. It accuses you of crimes involving pornography, even child abuse material, and says you’ll be arrested or named in the media if you don’t reply within 48 or 72 hours. If you answer, they ask for personal details and money as if it were a “fine”. The police don’t send summonses like this by email."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un correo con logos de la policía o de INCIBE: una citación o una investigación.",
+        "en": "You get an email with police or INCIBE logos: a summons or an investigation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te acusan de delitos de pornografía y amenazan con detenerte o publicarlo.",
+        "en": "They accuse you of pornography crimes and threaten arrest or publicity."
+      }
+    },
+    {
+      "text": {
+        "es": "Te dan 48 o 72 horas para responder.",
+        "en": "They give you 48 or 72 hours to reply."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Si respondes, te piden datos y el pago de una “multa”.",
+        "en": "If you reply, they ask for details and payment of a “fine”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Confirmación de recepción de convocatoria. Por orden del Fiscal General, se le cita en relación con delitos de pornografía infantil. Responda a este correo en un plazo de 48 horas o se emitirá una orden de detención.",
+        "en": "Confirmation of receipt of summons. By order of the Attorney General, you are summoned regarding child pornography offences. Reply to this email within 48 hours or an arrest warrant will be issued."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo de la policia por pornografia",
+      "citacion judicial por correo",
+      "orden de detencion por email",
+      "me acusan de pornografia infantil",
+      "correo de la udef",
+      "responder en 48 horas",
+      "multa de la policia por correo"
+    ],
+    "en": [
+      "police email about pornography",
+      "court summons by email",
+      "arrest warrant email",
+      "accused of child pornography",
+      "pay a fine to the police"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una citación policial por correo con prisa y amenazas.",
+      "Logos de varios organismos mezclados y un saludo genérico.",
+      "Te piden que respondas con tus datos o que pagues una multa."
+    ],
+    "en": [
+      "A police summons by email with a deadline and threats.",
+      "Logos from several agencies mixed together and a generic greeting.",
+      "They ask you to reply with your details or pay a fine."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No respondas ni abras los adjuntos. Nadie te va a investigar por ese correo.",
+      "Repórtalo a INCIBE y bórralo.",
+      "Si ya contestaste o pagaste, deja de responder, guarda todo y denúncialo."
+    ],
+    "en": [
+      "Don’t reply or open attachments. Nobody is investigating you because of that email.",
+      "Report it to INCIBE and delete it.",
+      "If you already replied or paid, stop answering, keep everything and report it."
+    ]
+  },
+  "reportTo": [
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional",
+    "es/guardia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Suplantan a la Policía Nacional, a la Guardia Civil y a INCIBE a través de notificaciones falsas por consumir contenido pornográfico",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/suplantan-la-policia-nacional-la-guardia-civil-y-incibe-traves-de-notificaciones",
+      "date": "2026-07-10"
+    },
+    {
+      "title": "Desconfía si recibes una notificación de la UDEF o la Policía Nacional, puede ser un fraude",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/desconfia-si-recibes-una-notificacion-de-la-udef-o-la-policia-nacional-puede-ser",
+      "date": "2025-06-13"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "es/sextortion-email"
+  ]
+}

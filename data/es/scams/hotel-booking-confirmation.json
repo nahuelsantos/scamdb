@@ -1,0 +1,124 @@
+{
+  "id": "es/hotel-booking-confirmation",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Tu hotel” o el alojamiento que has reservado",
+    "en": "“Your hotel” or the place you booked"
+  },
+  "name": {
+    "es": "“Confirma tu reserva o se cancelará”: el falso hotel",
+    "en": "“Confirm your booking or it will be cancelled”: the fake hotel"
+  },
+  "how": {
+    "es": "Tienes una reserva y te escribe por WhatsApp o correo “el hotel”. Sabe el nombre del alojamiento, las fechas, tu nombre o el número de reserva. Te dice que hay que confirmar o validar la reserva hoy o se cancelará, y te manda un enlace que te pide los datos de la tarjeta. Que los datos sean correctos no significa que el mensaje sea real.",
+    "en": "You have a booking and “the hotel” writes to you on WhatsApp or by email. It knows the property name, the dates, your name or the booking number. It says you must confirm or validate the booking today or it will be cancelled, and sends a link that asks for your card details. Correct details don’t mean the message is real."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe “el hotel” con datos reales de tu reserva.",
+        "en": "“The hotel” writes to you with real details of your booking."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Hay que confirmar la reserva ya o se cancelará.",
+        "en": "You must confirm the booking now or it will be cancelled."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te manda un enlace para “validarla”.",
+        "en": "They send a link to “validate” it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La web te pide los datos de la tarjeta.",
+        "en": "The site asks for your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, le escribimos del hotel. Para mantener su reserva del 14 al 17 de agosto debe confirmar su tarjeta en las próximas horas, si no se cancelará: [enlace]",
+        "en": "Hello, this is the hotel. To keep your booking from 14 to 17 August you must confirm your card in the next few hours, otherwise it will be cancelled: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "confirmar la reserva del hotel",
+      "el hotel me escribio por whatsapp",
+      "validar la reserva",
+      "se cancelara la reserva",
+      "confirmar la tarjeta para la reserva",
+      "mensaje del alojamiento con un enlace"
+    ],
+    "en": [
+      "hotel asked me to confirm my booking",
+      "hotel whatsapp message",
+      "booking will be cancelled",
+      "confirm my card for the booking",
+      "validate the reservation link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El hotel te escribe por WhatsApp con un enlace para pagar o confirmar.",
+      "Amenazan con cancelar la reserva si no actúas ya.",
+      "El número no coincide con el de la web oficial del hotel."
+    ],
+    "en": [
+      "The hotel writes on WhatsApp with a link to pay or confirm.",
+      "They threaten to cancel the booking if you don’t act now.",
+      "The number doesn’t match the one on the hotel’s official website."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Mira tu reserva en la web o la app donde la hiciste.",
+      "Si dudas, llama al hotel al teléfono de su web oficial, no al del mensaje.",
+      "Si diste los datos de la tarjeta, llama ya a tu banco para bloquearla y revisa los movimientos."
+    ],
+    "en": [
+      "Don’t open the link. Check your booking on the website or app you booked with.",
+      "If in doubt, call the hotel on the number from its official website, not the one in the message.",
+      "If you entered your card details, call your bank now to block the card and check your transactions."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional"
+  ],
+  "sources": [
+    {
+      "title": "Suplantan a hoteles a través de WhatsApp y otros medios para solicitar la confirmación de reservas mediante enlaces fraudulentos",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/suplantan-hoteles-traves-de-whatsapp-y-otros-medios-para-solicitar-la",
+      "date": "2026-07-31"
+    }
+  ],
+  "updated": "2026-11-16"
+}

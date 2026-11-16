@@ -1,0 +1,131 @@
+{
+  "id": "es/task-job-telegram",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "es": "Una “empresa” que ofrece trabajo desde casa",
+    "en": "A “company” offering work from home"
+  },
+  "name": {
+    "es": "Trabajo desde casa con tareas por Telegram que acaba pidiendo pagos",
+    "en": "Work from home with tasks on Telegram that ends up demanding payments"
+  },
+  "how": {
+    "es": "Ves una oferta de trabajo muy atractiva en Instagram u otra red. Las tareas se hacen por Telegram, por ejemplo fotografiar o valorar productos, y al principio te pagan pequeñas cantidades por Bizum para ganarse tu confianza. Luego te piden pagar para acceder a tareas mejor pagadas, te bloquean el saldo por un “error” y te piden más dinero para desbloquearlo.",
+    "en": "You see a very attractive job offer on Instagram or another social network. The tasks are done on Telegram, such as photographing or rating products, and at first they pay you small amounts by Bizum to win your trust. Then they ask you to pay to unlock better-paid tasks, freeze your balance because of an “error” and ask for more money to unlock it."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves una oferta de trabajo desde casa muy fácil y bien pagada.",
+        "en": "You see a very easy, well-paid work-from-home offer."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Las tareas se hacen por Telegram y al principio te pagan algo por Bizum.",
+        "en": "The tasks are on Telegram and at first they pay you a little by Bizum."
+      }
+    },
+    {
+      "text": {
+        "es": "Te piden pagar para acceder a tareas mejores.",
+        "en": "They ask you to pay to access better tasks."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Tu saldo queda “bloqueado” y te piden más dinero para recuperarlo.",
+        "en": "Your balance gets “frozen” and they ask for more money to get it back."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Trabaja desde casa! Solo tienes que hacer fotos de productos y ganas por cada tarea. Te pagamos al momento por Bizum. Escríbenos por Telegram para empezar.",
+        "en": "Work from home! You just take photos of products and earn for every task. We pay you instantly by Bizum. Message us on Telegram to start."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "trabajo desde casa por telegram",
+      "tareas pagadas por bizum",
+      "pagar para desbloquear tareas",
+      "me bloquearon el saldo",
+      "oferta de trabajo en instagram",
+      "pagar para cobrar lo ganado",
+      "trabaja desde casa",
+      "fotos de productos",
+      "ganas por cada tarea"
+    ],
+    "en": [
+      "work from home on telegram",
+      "tasks paid by bizum",
+      "pay to unlock tasks",
+      "my balance was frozen",
+      "job offer on instagram",
+      "take photos of products",
+      "earn for every task"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Te pagan al principio para que confíes.",
+      "Tienes que pagar para trabajar o para cobrar.",
+      "Todo se hace por Telegram, sin contrato."
+    ],
+    "en": [
+      "They pay you at first so you trust them.",
+      "You have to pay to work or to get paid.",
+      "Everything happens on Telegram, with no contract."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Ningún trabajo real te pide pagar. Corta la comunicación y no hagas más pagos.",
+      "Reporta los perfiles de Telegram y el anuncio.",
+      "Denúncialo y lleva la denuncia a tu banco; si no te da solución, reclama al Banco de España."
+    ],
+    "en": [
+      "No real job asks you to pay. Cut contact and make no more payments.",
+      "Report the Telegram profiles and the ad.",
+      "Report it to the police and take the report to your bank; if it doesn’t help, complain to the Banco de España."
+    ]
+  },
+  "reportTo": [
+    "es/policia-nacional",
+    "es/guardia-civil",
+    "es/tu-banco",
+    "es/banco-de-espana",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "Falsa oferta de empleo en Telegram con tareas online exige pagos por Bizum",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/falsa-oferta-de-empleo-en-telegram-con-tareas-online-exige-pagos-por-bizum",
+      "date": "2026-10-27"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "es": "Una usuaria encontró una oferta de trabajo en Instagram. Las tareas, fotografiar productos, se gestionaban por Telegram y al principio le pagaron por Bizum. Luego le pidieron 120 € y 300 € para tareas mejor pagadas, le dijeron que un error había bloqueado su cuenta y le pidieron 600 € y después 1.300 € más. No pagó lo último y llamó al 017 de INCIBE.",
+    "en": "A user found a job offer on Instagram. The tasks, photographing products, were run on Telegram and at first she was paid by Bizum. Then she was asked for €120 and €300 for better-paid tasks, told an error had frozen her account, and asked for €600 and then €1,300 more. She didn’t pay the last amount and called INCIBE’s 017 helpline."
+  }
+}

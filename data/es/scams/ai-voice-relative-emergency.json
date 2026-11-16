@@ -1,0 +1,127 @@
+{
+  "id": "es/ai-voice-relative-emergency",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "es": "Un “médico” y la voz de tu hija o tu hijo",
+    "en": "A “doctor” and the voice of your daughter or son"
+  },
+  "name": {
+    "es": "“Su hija necesita una operación urgente”: la voz clonada con IA",
+    "en": "“Your daughter needs urgent surgery”: the AI-cloned voice"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser personal sanitario: tu hija o tu hijo está grave y necesita una operación urgente que tienes que pagar. Luego te pasan con “tu hija”, que llora y grita con una voz idéntica a la suya, hecha con inteligencia artificial. Todo es para que pagues sin pensar.",
+    "en": "Someone calls saying they’re medical staff: your daughter or son is seriously ill and needs urgent surgery that you must pay for. Then they put “your daughter” on, crying and screaming in a voice identical to hers, made with artificial intelligence. It’s all to make you pay without thinking."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un supuesto médico: tu hija o tu hijo está grave.",
+        "en": "A supposed doctor calls: your daughter or son is seriously ill."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pasan con su voz, llorando, que suena igual que la real.",
+        "en": "They put on their voice, crying, sounding just like the real one."
+      }
+    },
+    {
+      "text": {
+        "es": "Necesita una operación urgente y tienes que pagarla ya.",
+        "en": "They need urgent surgery and you must pay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden el dinero antes de que puedas comprobar nada.",
+        "en": "They ask for the money before you can check anything."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Le llamo del hospital. Su hija ha tenido un problema grave y hay que operarla de urgencia. Necesitamos que haga el pago ahora, le paso con ella.",
+        "en": "I’m calling from the hospital. Your daughter has a serious problem and needs emergency surgery. We need you to make the payment now, I’ll put her on."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "la voz de mi hija llorando",
+      "operacion urgente que tengo que pagar",
+      "me llamo un medico por mi hija",
+      "voz clonada con inteligencia artificial",
+      "mi hijo esta grave y piden dinero",
+      "urgencia hospitalaria"
+    ],
+    "en": [
+      "my daughter's voice crying",
+      "urgent surgery i have to pay for",
+      "a doctor called about my daughter",
+      "ai cloned voice",
+      "son seriously ill asking for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una llamada de urgencia médica que pide dinero.",
+      "La voz llora y grita, y no deja hablar con calma.",
+      "Prisa para pagar antes de comprobar."
+    ],
+    "en": [
+      "A medical emergency call asking for money.",
+      "The voice cries and screams and won’t let you talk calmly.",
+      "A rush to pay before you can check."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama a tu familiar a su número de siempre.",
+      "Acordad una palabra clave familiar para estas situaciones.",
+      "Bloquea el número y avisa a la policía."
+    ],
+    "en": [
+      "Hang up and call your relative on their usual number.",
+      "Agree a family password for situations like this.",
+      "Block the number and tell the police."
+    ]
+  },
+  "reportTo": [
+    "es/policia-nacional",
+    "es/guardia-civil",
+    "es/tu-banco",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "Clonan la voz de su hija con IA para intentar estafar a una usuaria senior",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/clonan-la-voz-de-su-hija-con-ia-para-intentar-estafar-una-usuaria-senior",
+      "date": "2026-02-17"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "es": "Una usuaria mayor recibió la llamada de alguien que decía ser personal sanitario: su hija estaba grave y necesitaba una operación que ella debía pagar. Después oyó una voz idéntica a la de su hija, llorando y gritando. Antes de pagar llamó a su hija a su número real, que le confirmó que todo era falso, y luego contactó con el 017 de INCIBE.",
+    "en": "An older user got a call from someone claiming to be medical staff: her daughter was seriously ill and needed surgery she had to pay for. Then she heard a voice identical to her daughter’s, crying and screaming. Before paying she called her daughter’s real number, who confirmed it was all false, and then she contacted INCIBE’s 017 helpline."
+  },
+  "related": [
+    "es/hi-mum-new-number"
+  ]
+}
