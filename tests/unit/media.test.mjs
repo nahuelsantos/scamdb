@@ -53,3 +53,9 @@ test('extractText also reads the chat-completions answer shape', async () => {
   const t = await extractText(ai(() => ({ choices: [{ message: { content: 'Hi Mum, new number' } }] })), { kind: 'image', bytes: new Uint8Array(4), type: 'image/png' });
   assert.equal(t, 'Hi Mum, new number');
 });
+test('reading a screenshot turns gemma-4 thinking off', async () => {
+  let input;
+  const fake = { run: async (model, i) => { input = i; return { response: 'Your parcel is on hold' }; } };
+  assert.equal(await extractText(fake, { kind: 'image', bytes: new Uint8Array(4), type: 'image/png' }), 'Your parcel is on hold');
+  assert.deepEqual(input.chat_template_kwargs, { enable_thinking: false });
+});

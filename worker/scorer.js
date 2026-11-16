@@ -46,8 +46,12 @@ function prompt(text, catalogue, hints) {
   ];
 }
 
-/** The model's text: Workers AI `response` (object or string) or the OpenAI chat-completions shape. */
-const answerOf = (out) => out?.response ?? out?.choices?.[0]?.message?.content ?? null;
+/** The model's text: Workers AI `response` (object or string) or the OpenAI chat-completions shape. An empty string
+ * counts as no answer, so the other shape is tried. */
+const filled = (v) => v !== null && v !== undefined && !(typeof v === 'string' && !v.trim());
+export const answerOf = (out) => [out?.response, out?.choices?.[0]?.message?.content].find(filled) ?? null;
+/** gemma-4 thinks before answering by default; the thinking eats the token budget and leaves the answer empty. */
+export const NO_THINKING = { chat_template_kwargs: { enable_thinking: false } };
 
 function parse(answer, catalogue) {
   let a = answer;
@@ -76,13 +80,15 @@ export async function scoreWithWorkersAI(ai, { text, catalogue, country = null, 
       const countryOf = new Map(catalogue.entries.map((e) => [e.id, e.country]));
       const [nearAll, out] = await Promise.all([
         step('embed', similar(ai, text, catalogue)),
-        step('chat', ai.run(MODELS.chat, { messages: prompt(text, catalogue, hints), max_tokens: MAX_TOKENS })),
+        step('chat', ai.run(MODELS.chat, { messages: prompt(text, catalogue, hints), max_tokens: MAX_TOKENS, ...NO_THINKING })),
       ]);
       const near = nearAll.filter((n) => !country || countryOf.get(n.id) === country);
       const answer = answerOf(out);
       const parsed = parse(answer, catalogue);
       if (!parsed) {
-        Object.assign(diag, { reason: 'answer', detail: clip(typeof answer === 'string' ? answer : JSON.stringify(answer ?? out)) });
+        const finish = out?.choices?.[0]?.finish_reason;
+        const detail = answer === null ? `empty answer${finish ? ` (finish_reason: ${finish})` : ''}` : typeof answer === 'string' ? answer : JSON.stringify(answer);
+        Object.assign(diag, { reason: 'answer', detail: clip(detail) });
         return null;
       }
       return { ...parsed, matches: near.filter((n) => n.similarity >= SIMILAR).slice(0, 3) };
