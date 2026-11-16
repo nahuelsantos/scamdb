@@ -163,3 +163,10 @@ test('probe detection stores a fingerprint, never the text', async () => {
   assert.ok(!JSON.stringify(rows).includes('privado'));
   assert.ok(rows.every((r) => !r.subject.includes('192.0.2')), 'the IP is hashed');
 });
+test('probe detection counts keyed checks per GitHub account, whatever the IP', async () => {
+  const base = 'Your Netflix payment failed, update your card within 24 hours or your account will be closed';
+  for (let i = 0; i < 5; i++) assert.equal((await check({ text: `${base} ${'!'.repeat(i)}` }, { key, from: `198.51.100.${i + 20}` })).status, 200, `check ${i + 1}`);
+  const r = await check({ text: `${base} now` }, { key, from: '198.51.100.99' });
+  assert.equal(r.status, 429);
+  assert.equal((await r.json()).error, 'too_many_similar');
+});
