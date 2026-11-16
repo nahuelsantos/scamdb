@@ -30,8 +30,16 @@ Base URL `https://scamdb.dev/v1/`. Static JSON, no key, no limit, CORS open.
 Every file is wrapped as `{ "license", "attribution", "version", "data" }`. Credit us as
 `scamdb.dev · CC BY 4.0`.
 
-Coming next: private reports, free API keys, and `POST /v1/isitascam` (send a message, get a
-verdict and the reasons).
+Dynamic endpoints (a small Worker):
+
+- `POST /v1/isitascam` `{ "text", "country"?, "lang"?, "report"? }`: verdict, warning signs with the
+  words that triggered them, the closest catalogue scams, what to do and where to report. Without a key:
+  10 a day per IP, catalogue matching only. With a free key: 50 a day, plus a score from a free Workers AI
+  model (falls back to the matcher). The score is not a probability yet.
+- `POST /v1/reports`: send a scam privately (Turnstile token or key).
+- Free keys: sign in with GitHub on [scamdb.dev/account](https://scamdb.dev/account/).
+
+Full reference: [scamdb.dev/docs](https://scamdb.dev/docs/).
 
 ## Contribute
 

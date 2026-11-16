@@ -102,6 +102,10 @@ main section { margin-bottom: 56px; }
 .panel textarea { width: 100%; resize: vertical; background: color-mix(in srgb, var(--panel-ink) 8%, transparent); color: var(--panel-ink); border: 1px solid var(--panel-line); border-radius: 16px 16px 16px 4px; padding: 14px 16px; font: 16px/1.5 var(--body); margin: 0 0 14px; }
 .curl { font-family: var(--mono); font-size: 12px; color: var(--panel-dim); margin: 0; }
 .curl b { font-weight: 500; color: var(--panel-ink); }
+.curl { display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; }
+.api-btn { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; background: transparent; color: var(--panel-ink); border: 1.5px solid var(--panel-line); border-radius: 10px; cursor: pointer; }
+.api-btn:hover, .api-btn:focus-visible { border-color: var(--panel-ink); }
+.api-out { margin: var(--s4) 0 0; max-height: 280px; overflow: auto; font-family: var(--mono); font-size: 12px; color: var(--panel-ink); background: rgba(255,255,255,.04); border: 1px solid var(--panel-line); border-radius: 10px; padding: var(--s3); white-space: pre-wrap; overflow-wrap: anywhere; }
 .verdict { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 16px; }
 .stamp { font-family: var(--mono); font-size: 22px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; border: 2.5px solid currentColor; border-radius: 6px; padding: 2px 12px; transform: rotate(-3deg); }
 .verdict[data-verdict="scam"] .stamp { color: var(--bad-panel); }

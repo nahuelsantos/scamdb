@@ -44,3 +44,18 @@ SAMPLES.forEach((b) => b.addEventListener('click', () => {
   SAMPLES.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
   check();
 }));
+
+// "Check with the API": the same message sent to POST /v1/isitascam (a real call, so it counts against the keyless limit).
+const apiBtn = document.getElementById('pg-api');
+const apiOut = document.querySelector('.api-out');
+apiBtn?.addEventListener('click', async () => {
+  apiOut.hidden = false;
+  apiOut.textContent = '…';
+  try {
+    const r = await fetch('/v1/isitascam', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text: box.value, lang: 'en' }) });
+    const body = await r.json();
+    apiOut.textContent = r.ok ? JSON.stringify(body, null, 2) : `${r.status} ${body.message ?? body.error ?? ''}`;
+  } catch {
+    apiOut.textContent = 'The API could not be reached.';
+  }
+});

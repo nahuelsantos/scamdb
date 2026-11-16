@@ -250,3 +250,18 @@ test('a fading scam says so on its page and card; an active one does not', () =>
   assert.match(page('catalogue/index.html'), /data-status="fading"/);
   rmSync(dir, { recursive: true });
 });
+test('docs show POST /v1/isitascam, its limits and that the score is not a probability', () => {
+  const { dir, page } = build();
+  const html = page('docs/index.html');
+  for (const s of ['POST /v1/isitascam', '10 per IP', '50', 'not a probability', 'report']) assert.ok(html.includes(s), s);
+  assert.ok(!html.includes('currently ar'));
+  rmSync(dir, { recursive: true });
+});
+test('home no longer says isitascam is coming soon and has the API button', () => {
+  const { dir, page } = build();
+  const html = page('index.html');
+  assert.ok(!/coming soon/i.test(html));
+  assert.match(html, /<button[^>]+id="pg-api"[^>]+aria-label="Check with the API"/);
+  assert.match(html, /<pre class="api-out"[^>]*hidden/);
+  rmSync(dir, { recursive: true });
+});
