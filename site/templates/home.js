@@ -14,6 +14,9 @@ export const SAMPLES = [
 ];
 const VERDICT_KEY = { scam: 'vScam', suspicious: 'vSuspicious', not_recognised: 'vNone' };
 
+/** A wavy pen line `w` wide: stands in for text in drawings. */
+const wave = (x, y, w) => { let d = `M${x} ${y}`; for (let i = 0; i < w; i += 12) d += ' q3 -4 6 0 t6 0'; return d; };
+
 const HERO_ART = (() => {
   const k = sketch(601);
   const bx = 174, bw = 162, tx = bx + 24;
@@ -25,13 +28,15 @@ ${k.line(245, 52, 295, 52, { kind: 'thin' })}${k.circle(270, 400, 18)}${k.circle
 <text class="t-ui" x="222" y="85" font-weight="600">“PAMI”</text><text class="t-mono" x="222" y="100">+54 11 ···· 2231</text>
 ${k.line(182, 116, 358, 116, { kind: 'thin' })}
 ${k.path(`M${bx + 12} 130 h${bw - 12} a12 12 0 0 1 12 12 v86 a12 12 0 0 1 -12 12 h-${bw - 24} l-12 12 v-110 a12 12 0 0 1 12 -12 z`, { fill: 'paper', shade: true })}
-<rect class="f-hl" x="${tx - 2}" y="186" width="46" height="17" rx="3"/>
-<text class="t-ui" x="${tx}" y="156">Le hablo de PAMI.</text><text class="t-ui" x="${tx}" y="176">Le va a llegar un</text><text class="t-ui" x="${tx}" y="198">código, ¿me lo lee</text><text class="t-ui" x="${tx}" y="218">así confirmamos?</text><text class="t-ui" x="${tx}" y="234" font-weight="600" font-size="12">Es para hoy.</text>
+${k.path(wave(tx - 2, 152, 108), { kind: 'thin' })}
+<rect class="f-hl" x="${tx - 2}" y="166" width="118" height="38" rx="6"/>${k.rect(tx - 2, 166, 118, 38)}
+<text class="t-code-big" x="${tx + 12}" y="194">482 913</text>
+${k.path(wave(tx - 2, 218, 84), { kind: 'thin' })}${k.path(wave(tx - 2, 232, 48))}
 ${k.rect(214, 268, 134, 44, { kind: 'thin' })}
 <text class="t-mono" x="226" y="285">SMS · WhatsApp</text><text class="t-ui" x="226" y="303" font-weight="600" letter-spacing="2">482-913</text>
 <g transform="rotate(-9 270 352)">${k.rect(206, 332, 128, 40, { kind: 'acc' })}<text x="270" y="359" text-anchor="middle" class="t-stamp">${'${stamp}'}</text></g>
 <text class="t-hand" x="20" y="92">${'${n1}'}</text>${arrow('M118 96 C 145 104, 160 94, 184 88', 'M176 82 L186 88 L176 94')}
-<text class="t-hand" x="30" y="232">${'${n2}'}</text>${arrow(`M120 228 C 140 236, 150 236, ${tx - 6} 232`, `M${tx - 14} 226 L${tx - 4} 232 L${tx - 14} 238`)}
+<text class="t-hand" x="30" y="232">${'${n2}'}</text>${arrow(`M120 228 C 140 236, 150 236, ${tx - 6} 230`, `M${tx - 14} 224 L${tx - 4} 230 L${tx - 14} 236`)}
 <text class="t-hand-acc" x="400" y="182">${'${n3a}'}</text><text class="t-hand-acc" x="400" y="204">${'${n3b}'}</text>${arrow('M396 194 C 380 200, 368 202, 352 199', 'M362 192 L351 199 L362 206', 'acc')}
 <text class="t-hand" x="400" y="300">${'${n4a}'}</text><text class="t-hand" x="400" y="322">${'${n4b}'}</text>${arrow('M396 302 C 380 298, 366 294, 352 292', 'M361 285 L351 292 L361 298')}
 <text class="t-mono" x="392" y="440">ar/whatsapp-codigo</text></svg>`;

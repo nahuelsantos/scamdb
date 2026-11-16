@@ -249,3 +249,13 @@ test('contribute points to the eschamuyo report form', () => {
   assert.ok(page('contribute/index.html').includes('href="https://eschamuyo.com/#/avisar"'));
   rmSync(dir, { recursive: true });
 });
+
+test('the hero bubble is a scribble with a big code, no Spanish sentence', () => {
+  const { dir, page } = build();
+  for (const p of ['index.html', 'es/index.html']) {
+    const html = page(p);
+    assert.ok(!html.includes('Le hablo de PAMI.'), p);
+    assert.match(html, /class="t-code-big"[^>]*>482 913</, p);
+  }
+  rmSync(dir, { recursive: true });
+});
