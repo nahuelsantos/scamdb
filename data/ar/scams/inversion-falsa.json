@@ -1,6 +1,7 @@
 {
   "id": "ar/inversion-falsa",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "online",
@@ -8,36 +9,43 @@
     "whatsapp"
   ],
   "sender": {
-    "es": "“Tu asesor financiero”"
+    "es": "“Tu asesor financiero”",
+    "en": "“Your financial adviser”"
   },
   "name": {
-    "es": "Inversiones milagrosas con famosos falsos"
+    "es": "Inversiones milagrosas con famosos falsos",
+    "en": "Miracle investments with fake celebrities"
   },
   "how": {
-    "es": "Ves una publicidad con un video de un famoso (en 2026 usaron a Antonio Laje y a Messi) recomendando una plataforma para ganar plata. Los videos están hechos con inteligencia artificial. Dejás tus datos, te llama un “asesor” y te hace depositar. En la pantalla parece que ganás, pero para retirar te piden “impuestos” o “comisiones”."
+    "es": "Ves una publicidad con un video de un famoso (en 2026 usaron a Antonio Laje y a Messi) recomendando una plataforma para ganar plata. Los videos están hechos con inteligencia artificial. Dejás tus datos, te llama un “asesor” y te hace depositar. En la pantalla parece que ganás, pero para retirar te piden “impuestos” o “comisiones”.",
+    "en": "You see an ad with a video of a celebrity (in 2026 they used Antonio Laje and Messi) recommending a platform to make money. The videos are made with artificial intelligence. You leave your details, an “adviser” calls and gets you to deposit. On screen you seem to be earning, but to withdraw they ask for “taxes” or “fees”."
   },
   "steps": [
     {
       "text": {
-        "es": "Ves una publicidad con un famoso recomendando una plataforma."
+        "es": "Ves una publicidad con un famoso recomendando una plataforma.",
+        "en": "You see an ad with a celebrity recommending a platform."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Promete ganancias garantizadas o por día."
+        "es": "Promete ganancias garantizadas o por día.",
+        "en": "It promises guaranteed or daily profits."
       },
       "signal": "too_good_to_be_true"
     },
     {
       "text": {
-        "es": "Te llama un “asesor” y te hace depositar."
+        "es": "Te llama un “asesor” y te hace depositar.",
+        "en": "An “adviser” calls and gets you to deposit."
       },
       "signal": "money_request"
     },
     {
       "text": {
-        "es": "Para retirar lo que “ganaste” te piden impuestos o comisiones."
+        "es": "Para retirar lo que “ganaste” te piden impuestos o comisiones.",
+        "en": "To withdraw what you “earned” they ask for taxes or fees."
       },
       "signal": "money_request"
     }
@@ -45,7 +53,8 @@
   "examples": [
     {
       "text": {
-        "es": "Hola, soy su asesor financiero de la plataforma. Con un primer depósito de $100.000 puede ganar un 3% por día, garantizado. ¿Lo ayudo a empezar?"
+        "es": "Hola, soy su asesor financiero de la plataforma. Con un primer depósito de $100.000 puede ganar un 3% por día, garantizado. ¿Lo ayudo a empezar?",
+        "en": "Hello, I’m your financial adviser on the platform. With a first deposit of $100,000 you can earn 3% a day, guaranteed. Shall I help you start?"
       }
     }
   ],
@@ -62,6 +71,15 @@
       "laje",
       "no puedo sacar la plata",
       "impuestos para retirar"
+    ],
+    "en": [
+      "investment platform",
+      "financial adviser",
+      "guaranteed profits",
+      "profit per day",
+      "trading bot",
+      "can't withdraw my money",
+      "taxes to withdraw"
     ]
   },
   "signals": [
@@ -74,6 +92,11 @@
       "Un famoso recomendando una inversión en una publicidad.",
       "Ganancias garantizadas o “por día”.",
       "Te piden pagar para poder retirar."
+    ],
+    "en": [
+      "A celebrity recommending an investment in an ad.",
+      "Guaranteed or “daily” profits.",
+      "They ask you to pay before you can withdraw."
     ]
   },
   "whatToDo": {
@@ -81,6 +104,11 @@
       "Ninguna inversión de verdad garantiza ganancias.",
       "No decidas apurado, y no pongas más plata para “destrabar” lo que ganaste.",
       "Denuncialo en el Ministerio Público Fiscal."
+    ],
+    "en": [
+      "No real investment guarantees profits.",
+      "Don’t decide in a hurry, and don’t put in more money to “unlock” what you earned.",
+      "Report it to the Public Prosecutor’s Office."
     ]
   },
   "reportTo": [

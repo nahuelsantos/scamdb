@@ -1,6 +1,7 @@
 {
   "id": "ar/falso-mercado-pago",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "online",
@@ -9,35 +10,42 @@
     "phone"
   ],
   "sender": {
-    "es": "“Alerta de seguridad”"
+    "es": "“Alerta de seguridad”",
+    "en": "“Security alert”"
   },
   "name": {
-    "es": "Falsa alerta de Mercado Libre o Mercado Pago: “No fui yo”"
+    "es": "Falsa alerta de Mercado Libre o Mercado Pago: “No fui yo”",
+    "en": "Fake Mercado Libre or Mercado Pago alert: “It wasn’t me”"
   },
   "how": {
-    "es": "Te llega un mail que parece de Mercado Libre: alguien entró a tu cuenta desde un lugar raro, y abajo hay un botón “No fui yo”. El botón lleva a una copia de la página, y lo que escribís ahí les abre tu cuenta, incluida la de Mercado Pago. Después a veces te llaman para pedirte códigos."
+    "es": "Te llega un mail que parece de Mercado Libre: alguien entró a tu cuenta desde un lugar raro, y abajo hay un botón “No fui yo”. El botón lleva a una copia de la página, y lo que escribís ahí les abre tu cuenta, incluida la de Mercado Pago. Después a veces te llaman para pedirte códigos.",
+    "en": "You get an email that looks like it’s from Mercado Libre: someone signed in to your account from a strange place, and below there’s an “It wasn’t me” button. The button leads to a copy of the site, and whatever you type there gives them your account, including Mercado Pago. Afterwards they sometimes call asking for codes."
   },
   "steps": [
     {
       "text": {
-        "es": "Te llega un mail que parece de Mercado Libre: alguien entró a tu cuenta."
+        "es": "Te llega un mail que parece de Mercado Libre: alguien entró a tu cuenta.",
+        "en": "You get an email that looks like it’s from Mercado Libre: someone signed in to your account."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Abajo hay un botón “No fui yo”."
+        "es": "Abajo hay un botón “No fui yo”.",
+        "en": "Below there’s an “It wasn’t me” button."
       },
       "signal": "unknown_link"
     },
     {
       "text": {
-        "es": "El botón lleva a una copia de la página y lo que escribís les abre tu cuenta."
+        "es": "El botón lleva a una copia de la página y lo que escribís les abre tu cuenta.",
+        "en": "The button leads to a copy of the site and what you type gives them your account."
       }
     },
     {
       "text": {
-        "es": "Después te llaman para pedirte códigos."
+        "es": "Después te llaman para pedirte códigos.",
+        "en": "Then they call you asking for codes."
       },
       "signal": "asks_for_code"
     }
@@ -45,7 +53,8 @@
   "examples": [
     {
       "text": {
-        "es": "Alerta de seguridad: detectamos un ingreso a tu cuenta desde otro dispositivo. Si no fuiste vos, tocá “No fui yo” para proteger tu cuenta: [enlace]"
+        "es": "Alerta de seguridad: detectamos un ingreso a tu cuenta desde otro dispositivo. Si no fuiste vos, tocá “No fui yo” para proteger tu cuenta: [enlace]",
+        "en": "Security alert: we detected a sign-in to your account from another device. If it wasn’t you, tap “It wasn’t me” to protect your account: [link]"
       }
     }
   ],
@@ -58,6 +67,13 @@
       "alguien entro a mi cuenta",
       "ingreso a tu cuenta",
       "otro dispositivo"
+    ],
+    "en": [
+      "it wasn't me",
+      "security alert",
+      "someone signed in to my account",
+      "sign-in from another device",
+      "mercado pago code"
     ]
   },
   "signals": [
@@ -69,12 +85,20 @@
     "es": [
       "Una alerta de seguridad con un botón.",
       "Después te llaman pidiendo un código."
+    ],
+    "en": [
+      "A security alert with a button.",
+      "Afterwards they call asking for a code."
     ]
   },
   "whatToDo": {
     "es": [
       "No toques el botón. Abrí vos la app de Mercado Libre y fijate ahí.",
       "Mercado Pago nunca te pide contraseñas, códigos ni el número de tu tarjeta."
+    ],
+    "en": [
+      "Don’t tap the button. Open the Mercado Libre app yourself and check there.",
+      "Mercado Pago never asks for passwords, codes or your card number."
     ]
   },
   "reportTo": [

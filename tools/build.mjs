@@ -21,4 +21,5 @@ if (existsSync(join(root, 'tools/build-site.mjs'))) {
   site = buildSite(repo, out, meta, root);
 }
 copyFileSync(join(root, 'site/_headers'), join(out, '_headers'));
+copyFileSync(join(root, 'site/_redirects'), join(out, '_redirects'));
 console.log(`built ${meta.version}: ${api.length} API files, ${site.length} site files`);

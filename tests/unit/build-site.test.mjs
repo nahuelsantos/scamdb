@@ -29,9 +29,9 @@ test('writes every page and the playground assets', () => {
   const pages = written.filter((p) => p.endsWith('.html')).sort();
   const en = ['account/index.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
     'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'index.html'];
-  assert.deepEqual(pages, ['404.html', ...en, ...en.map((p) => `es/${p}`)].sort());
+  assert.deepEqual(pages, ['404.html', ...en].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
-    'assets/lib/text.js', 'assets/entries-ar.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
+    'assets/lib/text.js', 'assets/entries.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
   rmSync(dir, { recursive: true });
 });
 
@@ -46,9 +46,10 @@ test('contributor HTML is shown as text, never run', () => {
   rmSync(dir, { recursive: true });
 });
 
-test('a Portuguese-only entry renders its own text with lang="pt"', () => {
+test('a Portuguese entry is explained in English and keeps its Portuguese original', () => {
   const { dir, page } = build();
   const html = page('catalogue/br/exemplo/index.html');
+  assert.ok(html.includes('The son with a new number'));
   assert.ok(html.includes('Golpe do filho com número novo'));
   assert.match(html, /lang="pt"/);
   rmSync(dir, { recursive: true });
@@ -117,92 +118,66 @@ test('the stylesheet no longer uses the displacement filter', () =>
 
 // ---- Languages ----
 const htmlPages = (written) => written.filter((p) => p.endsWith('.html'));
-test('every page exists in English and in Spanish', () => {
+test('no /es/ pages are built', () => {
   const { dir, written } = build();
-  const en = htmlPages(written).filter((p) => !p.startsWith('es/') && p !== '404.html');
-  for (const p of en) assert.ok(written.includes(`es/${p}`), `es/${p}`);
+  assert.deepEqual(htmlPages(written).filter((p) => p.startsWith('es/')), []);
   rmSync(dir, { recursive: true });
 });
-test('Spanish pages say so and have a Spanish menu', () => {
-  const { dir, page } = build();
-  const html = page('es/index.html');
-  assert.match(html, /<html lang="es">/);
-  for (const w of ['Catálogo', 'Documentación', 'Contribuir']) assert.ok(html.includes(w), w);
-  rmSync(dir, { recursive: true });
+test('_redirects sends old /es/ links to the same English page with 301', () => {
+  const r = readFileSync(new URL('../../site/_redirects', import.meta.url), 'utf8');
+  assert.match(r, /^\/es \/ 301$/m);
+  assert.match(r, /^\/es\/\* \/:splat 301$/m);
 });
-test('internal links on Spanish pages stay in Spanish', () => {
+test('every page is English, with no language switch or Spanish alternates', () => {
   const { dir, written, page } = build();
-  for (const p of htmlPages(written).filter((p) => p.startsWith('es/'))) {
-    for (const [tag, href] of page(p).matchAll(/<(?:a|link) [^>]*href="(\/[^"]*)"[^>]*>/g)) {
-      if (/^\/(v1|assets|auth)\//.test(href)) continue; // API, files and sign-in endpoints have no language
-      if (/hreflang=/.test(tag)) continue; // the language switch and alternates point at the other language on purpose
-      assert.ok(href.startsWith('/es/') || href === '/es', `${p}: ${href}`);
-    }
+  for (const p of htmlPages(written)) {
+    const html = page(p);
+    assert.match(html, /<html lang="en">/, p);
+    assert.ok(!html.includes('hreflang="es"'), p);
+    assert.ok(!html.includes('aria-label="Español"'), p);
+    assert.ok(!/href="\/es[/"]/.test(html), p);
   }
   rmSync(dir, { recursive: true });
 });
-test('scam content is the same in both languages and keeps its own lang', () => {
+test('entry page explains in English and shows the sample message as it arrives with its translation', () => {
   const { dir, page } = build();
-  const pick = (h) => h.match(/<h1><span lang="es">([^<]+)<\/span><\/h1>/)?.[1];
-  const en = page('catalogue/ar/ejemplo/index.html'), es = page('es/catalogue/ar/ejemplo/index.html');
-  assert.equal(pick(en), 'Robo de WhatsApp con el código');
-  assert.equal(pick(es), pick(en));
+  const html = page('catalogue/ar/ejemplo/index.html');
+  assert.ok(html.includes('<h1><span lang="en">WhatsApp theft with the code</span></h1>'));
+  assert.ok(html.includes('<p lang="en" class="lede">They call saying they are from PAMI and ask you for a code.</p>'));
+  assert.ok(html.includes('<blockquote class="bubble"><span lang="es">Le hablo de PAMI, ¿me lee el código? Es para hoy.</span></blockquote>'));
+  assert.ok(html.includes('<p class="translation"><span lang="en">This is PAMI, can you read me the code? It has to be today.</span></p>'));
+  assert.ok(html.includes('>Asks for a code<'));
   rmSync(dir, { recursive: true });
 });
-test('hreflang alternates point at each other', () => {
+test('entry page keeps the whole original behind a Show original control', () => {
   const { dir, page } = build();
-  const en = page('docs/index.html'), es = page('es/docs/index.html');
-  for (const h of [en, es]) {
-    assert.ok(h.includes('<link rel="alternate" hreflang="en" href="https://scamdb.dev/docs/">'));
-    assert.ok(h.includes('<link rel="alternate" hreflang="es" href="https://scamdb.dev/es/docs/">'));
-    assert.ok(h.includes('<link rel="alternate" hreflang="x-default" href="https://scamdb.dev/docs/">'));
-  }
+  const html = page('catalogue/ar/ejemplo/index.html');
+  const orig = html.match(/<details class="original">([\s\S]*?)<\/details>/)?.[1];
+  assert.ok(orig, 'original block');
+  assert.match(orig, /<summary>.*Original \(Spanish\)/);
+  assert.match(orig, /<div lang="es"><h2>Robo de WhatsApp con el código<\/h2><p>Te llaman diciendo que son de PAMI y te piden un código.<\/p>/);
   rmSync(dir, { recursive: true });
 });
-test('the language switch on an entry page points at the same entry', () => {
-  const { dir, page } = build();
-  assert.ok(page('catalogue/ar/ejemplo/index.html').includes('href="/es/catalogue/ar/ejemplo/" hreflang="es"'));
-  assert.ok(page('es/catalogue/ar/ejemplo/index.html').includes('href="/catalogue/ar/ejemplo/" hreflang="en"'));
+test('an English-original entry has no original block and no duplicate translation', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'scamdb-site-'));
+  cpSync(OK, dir, { recursive: true });
+  const e = JSON.parse(readFileSync(join(dir, 'data/ar/scams/ejemplo.json')));
+  const enOnly = (o) => (o && typeof o === 'object' && !Array.isArray(o) && 'en' in o ? { en: o.en } : o);
+  const walk = (v) => (Array.isArray(v) ? v.map(walk) : v && typeof v === 'object' ? enOnly(Object.fromEntries(Object.entries(v).map(([k, x]) => [k, walk(x)]))) : v);
+  writeFileSync(join(dir, 'data/ar/scams/ingles.json'), JSON.stringify({ ...walk(e), id: 'ar/ingles', lang: 'en' }));
+  buildSite(loadRepo(dir), join(dir, 'dist'), meta, dir);
+  const html = readFileSync(join(dir, 'dist/catalogue/ar/ingles/index.html'), 'utf8');
+  assert.ok(!html.includes('class="original"'));
+  assert.ok(!html.includes('class="translation"'));
+  assert.ok(html.includes('<blockquote class="bubble"><span lang="en">This is PAMI, can you read me the code? It has to be today.</span></blockquote>'));
   rmSync(dir, { recursive: true });
 });
-test('signal labels follow the interface language', () => {
+test('catalogue cards show the English name and the message as it arrives', () => {
   const { dir, page } = build();
-  assert.ok(page('es/catalogue/ar/ejemplo/index.html').includes('>Te pide un código<'));
-  assert.ok(page('catalogue/ar/ejemplo/index.html').includes('>Asks for a code<'));
-  rmSync(dir, { recursive: true });
-});
-test('both languages have every interface string', async () => {
-  const { UI } = await import('../../site/i18n.js');
-  assert.deepEqual(Object.keys(UI.es).sort(), Object.keys(UI.en).sort());
-});
-
-test('the 404 language switch goes to the Spanish home, not a missing page', () => {
-  const { dir, page } = build();
-  const html = page('404.html');
-  assert.ok(html.includes('href="/es/" hreflang="es"'));
-  assert.ok(!html.includes('/es/404.html'));
-  rmSync(dir, { recursive: true });
-});
-test('channel names are translated on Spanish pages, ids stay in the API', () => {
-  const { dir, page } = build();
-  const es = page('es/catalogue/ar/ejemplo/index.html');
-  assert.ok(!es.includes('por phone'));
-  assert.ok(es.includes('por teléfono'));
-  assert.ok(page('es/catalogue/index.html').includes('<span>teléfono</span>'));
-  assert.ok(page('catalogue/ar/ejemplo/index.html').includes('via phone'));
-  rmSync(dir, { recursive: true });
-});
-test('Spanish source line agrees in gender: revisada el', () => {
-  const { dir, page } = build();
-  assert.ok(page('es/catalogue/ar/ejemplo/index.html').includes('revisada el'));
-  rmSync(dir, { recursive: true });
-});
-
-test('the language switch is announced by name', () => {
-  const { dir, page } = build();
-  const html = page('index.html');
-  assert.ok(html.includes('aria-label="Español"'));
-  assert.ok(html.includes('aria-label="English"'));
+  const html = page('catalogue/index.html');
+  assert.ok(html.includes('<span lang="en">WhatsApp theft with the code</span>'));
+  assert.ok(html.includes('<blockquote><span lang="es">Le hablo de PAMI'));
+  assert.ok(html.includes('<blockquote><span lang="pt">'));
   rmSync(dir, { recursive: true });
 });
 test('the 404 page takes its link words from the string table', async () => {
@@ -213,16 +188,15 @@ test('the 404 page takes its link words from the string table', async () => {
   assert.ok(html.includes(`>${UI.en.nfDocs}</a>`));
   rmSync(dir, { recursive: true });
 });
-test('Spanish wording: descargar, están bajo', async () => {
+test('the interface has only English strings', async () => {
   const { UI } = await import('../../site/i18n.js');
-  assert.match(UI.es.catP, /podés descargar/);
-  assert.equal(UI.es.dLicenseP1, 'Los datos están bajo');
+  assert.deepEqual(Object.keys(UI), ['en']);
 });
 
 // ---- Phase 2 pages ----
-test('the account page exists in both languages with one h1 and the GitHub sign-in link', () => {
+test('the account page has one h1 and the GitHub sign-in link', () => {
   const { dir, page } = build();
-  for (const p of ['account/index.html', 'es/account/index.html']) {
+  for (const p of ['account/index.html']) {
     const html = page(p);
     assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1, p);
     assert.ok(html.includes('href="/auth/github"'), p);
@@ -230,17 +204,15 @@ test('the account page exists in both languages with one h1 and the GitHub sign-
   }
   rmSync(dir, { recursive: true });
 });
-test('the docs describe reports and keys, in both languages', () => {
+test('the docs describe reports and keys', () => {
   const { dir, page } = build();
   assert.ok(page('docs/index.html').includes('POST /v1/reports'));
   assert.ok(page('docs/index.html').includes('Authorization: Bearer sk_'));
-  assert.ok(page('es/docs/index.html').includes('POST /v1/reports'));
   rmSync(dir, { recursive: true });
 });
 test('the home page offers a free key and lists the reports endpoint', () => {
   const { dir, page } = build();
   assert.ok(page('index.html').includes('href="/account/"'));
-  assert.ok(page('es/index.html').includes('href="/es/account/"'));
   assert.ok(page('index.html').includes('POST /v1/reports'));
   rmSync(dir, { recursive: true });
 });
@@ -252,10 +224,17 @@ test('contribute points to the eschamuyo report form', () => {
 
 test('the hero bubble is a scribble with a big code, no Spanish sentence', () => {
   const { dir, page } = build();
-  for (const p of ['index.html', 'es/index.html']) {
+  for (const p of ['index.html']) {
     const html = page(p);
     assert.ok(!html.includes('Le hablo de PAMI.'), p);
     assert.match(html, /class="t-code-big"[^>]*>482 913</, p);
   }
+  rmSync(dir, { recursive: true });
+});
+test('the playground gets one entries.json with every country', () => {
+  const { dir, page } = build();
+  const j = JSON.parse(page('assets/entries.json'));
+  assert.deepEqual([...new Set(j.entries.map((e) => e.country))].sort(), ['ar', 'br']);
+  assert.ok(j.entries[0].phrases.en);
   rmSync(dir, { recursive: true });
 });

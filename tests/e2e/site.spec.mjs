@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const EN = ['/', '/catalogue/', '/catalogue/ar/whatsapp-codigo/', '/docs/', '/contribute/'];
-const PAGES = [...EN, ...EN.map((p) => `/es${p}`)];
+const PAGES = EN;
 
 test('home loads with no console errors', async ({ page }) => {
   const errors = [];
@@ -47,26 +47,34 @@ test('no horizontal scroll at phone width', async ({ page }) => {
   }
 });
 
+test('pasting an English scam gets English signs and a match', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#pg-text').fill("Hi, this is your bank's fraud department. They will send you a 6-digit code, read it to me. Don't hang up.");
+  await expect(page.locator('#pg-out .stamp')).toHaveText('scam');
+  await expect(page.locator('#pg-out .why code').first()).toHaveText('asks_for_code');
+  await page.locator('#pg-text').fill('they asked me for a WhatsApp code');
+  await expect(page.locator('#pg-out .match a').first()).toHaveText('ar/whatsapp-codigo');
+});
+
 test('the API is served as JSON', async ({ request }) => {
   const res = await request.get('/v1/ar/scams.json');
   expect(res.status()).toBe(200);
   expect((await res.json()).data.length).toBe(20);
 });
 
-test('the Spanish playground answers in Spanish', async ({ page }) => {
-  await page.goto('/es/');
-  await expect(page.locator('#pg-out .stamp')).toHaveText('estafa');
-  await page.getByRole('button', { name: 'Turno con la dentista' }).click();
-  await expect(page.locator('#pg-out .stamp')).toHaveText('no lo reconocemos');
-  await page.locator('#pg-text').fill('Tenés una encomienda, seguí el envío: [enlace]');
-  await expect(page.locator('#pg-out .stamp')).toHaveText('sospechoso');
-  await page.getByRole('button', { name: 'Código de PAMI' }).click();
-  await expect(page.locator('#pg-out .match a').first()).toHaveAttribute('href', '/es/catalogue/ar/whatsapp-codigo/');
+test('the original version of a scam opens and passes axe at phone width', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  await page.goto('/catalogue/ar/whatsapp-codigo/');
+  await expect(page.locator('.translation').first()).toBeVisible();
+  await page.locator('.original summary').click();
+  await expect(page.locator('.original > div[lang="es"] h2')).toHaveText('Robo de WhatsApp con el código de 6 números');
+  const [sw, cw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+  expect(sw).toBeLessThanOrEqual(cw);
+  const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
+  expect(r.violations.filter((v) => ['serious', 'critical'].includes(v.impact)).map((v) => v.id)).toEqual([]);
 });
 
-test('the language switch goes to the same page', async ({ page }) => {
+test('there is no language switch', async ({ page }) => {
   await page.goto('/docs/');
-  await page.getByRole('link', { name: 'Español', exact: true }).click();
-  await expect(page).toHaveURL(/\/es\/docs\/$/);
-  await expect(page.locator('h1')).toHaveText('Documentación');
+  await expect(page.getByRole('link', { name: 'Español' })).toHaveCount(0);
 });

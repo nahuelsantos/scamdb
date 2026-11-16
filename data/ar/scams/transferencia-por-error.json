@@ -1,6 +1,7 @@
 {
   "id": "ar/transferencia-por-error",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "whatsapp",
@@ -8,42 +9,50 @@
     "phone"
   ],
   "sender": {
-    "es": "Número desconocido"
+    "es": "Número desconocido",
+    "en": "Unknown number"
   },
   "name": {
-    "es": "“Te transferí por error, devolvémelo”"
+    "es": "“Te transferí por error, devolvémelo”",
+    "en": "“I sent you money by mistake, send it back”"
   },
   "how": {
-    "es": "Te cae plata que no esperabas. Enseguida te escribe alguien, a veces llorando, diciendo que se equivocó y que se la devuelvas a otra cuenta. Esa plata puede ser robada o un préstamo que sacaron a tu nombre con tus datos: si la devolvés, la deuda te queda a vos."
+    "es": "Te cae plata que no esperabas. Enseguida te escribe alguien, a veces llorando, diciendo que se equivocó y que se la devuelvas a otra cuenta. Esa plata puede ser robada o un préstamo que sacaron a tu nombre con tus datos: si la devolvés, la deuda te queda a vos.",
+    "en": "Money you weren’t expecting lands in your account. Right away someone writes, sometimes crying, saying they made a mistake and asking you to send it back to another account. That money may be stolen, or a loan taken out in your name with your data: if you send it, the debt stays with you."
   },
   "steps": [
     {
       "text": {
-        "es": "Te cae plata que no esperabas."
+        "es": "Te cae plata que no esperabas.",
+        "en": "Money you weren’t expecting lands in your account."
       }
     },
     {
       "text": {
-        "es": "Alguien te escribe enseguida, a veces llorando, diciendo que se equivocó."
+        "es": "Alguien te escribe enseguida, a veces llorando, diciendo que se equivocó.",
+        "en": "Someone writes right away, sometimes crying, saying they made a mistake."
       },
       "signal": "urgency"
     },
     {
       "text": {
-        "es": "Te pide que la devuelvas a otra cuenta."
+        "es": "Te pide que la devuelvas a otra cuenta.",
+        "en": "They ask you to send it back to another account."
       },
       "signal": "money_request"
     },
     {
       "text": {
-        "es": "Esa plata era robada o un préstamo a tu nombre: la deuda te queda a vos."
+        "es": "Esa plata era robada o un préstamo a tu nombre: la deuda te queda a vos.",
+        "en": "The money was stolen or a loan in your name: the debt stays with you."
       }
     }
   ],
   "examples": [
     {
       "text": {
-        "es": "Hola, perdón, te transferí $80.000 por error, me equivoqué de alias. ¿Me los podés devolver a esta otra cuenta? Es la plata del alquiler, por favor."
+        "es": "Hola, perdón, te transferí $80.000 por error, me equivoqué de alias. ¿Me los podés devolver a esta otra cuenta? Es la plata del alquiler, por favor.",
+        "en": "Hi, sorry, I sent you $80,000 by mistake, I got the alias wrong. Can you send it back to this other account? It’s the rent money, please."
       }
     }
   ],
@@ -57,6 +66,13 @@
       "devolver a otra cuenta",
       "otro cbu",
       "devolvemelo"
+    ],
+    "en": [
+      "sent by mistake",
+      "money i wasn't expecting",
+      "wrong alias",
+      "send it back to another account",
+      "money that wasn't mine"
     ]
   },
   "signals": [
@@ -68,6 +84,11 @@
       "Una transferencia que no esperabas.",
       "Te escriben enseguida, con apuro o llorando.",
       "Te piden devolverla a otra cuenta."
+    ],
+    "en": [
+      "A transfer you weren’t expecting.",
+      "They write right away, in a hurry or crying.",
+      "They ask you to return it to another account."
     ]
   },
   "whatToDo": {
@@ -75,6 +96,11 @@
       "No muevas esa plata.",
       "Avisá a tu banco y pedí que lo revierta por la vía formal.",
       "No contestes por WhatsApp ni redes."
+    ],
+    "en": [
+      "Don’t move that money.",
+      "Tell your bank and ask them to reverse it through the formal process.",
+      "Don’t reply on WhatsApp or social media."
     ]
   },
   "reportTo": [

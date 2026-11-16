@@ -72,3 +72,30 @@ test('empty, emoji-only and huge input are not recognised and fast', () => {
     assert.ok(performance.now() - t0 < 200, 'took too long');
   }
 });
+
+// English (every language an entry has is matched; warning signs read English too)
+test('an English code request reads asks_for_code', () =>
+  assert.ok(readSigns("They'll send you a 6-digit code, read it to me").includes('asks_for_code')));
+test('English urgency', () => assert.ok(readSigns('Your account will be suspended today, act immediately').includes('urgency')));
+test('English money request', () => assert.ok(readSigns('Pay the fee with a gift card').includes('money_request')));
+test('English link', () => assert.ok(readSigns('Click here to track your parcel: [link]').includes('unknown_link')));
+test('English secrecy and keep on line', () => assert.deepEqual(readSigns("Don't tell anyone and don't hang up"), ['secrecy', 'keep_on_line']));
+test('English too good to be true', () => assert.ok(readSigns('Congratulations, you won a prize!').includes('too_good_to_be_true')));
+test('English remote access', () => assert.ok(readSigns('Download this app so I can see your screen').includes('remote_access')));
+test('English new number', () => assert.ok(readSigns('Hi mum, this is my new number').includes('new_number')));
+test('English impersonation', () => assert.ok(readSigns('Hello, this is the fraud department of your bank').includes('impersonation')));
+test('an ordinary English message has no signs', () => assert.deepEqual(readSigns('Hi, are we still on for dinner on Sunday?'), []));
+test('matches an English phrase of an Argentine entry', () => assert.equal(top('they asked me for a WhatsApp code'), 'ar/whatsapp-codigo'));
+test('an English bank call matches the fake bank employee', () => assert.equal(top('the bank called me, security department, go to the ATM'), 'ar/falso-banco'));
+test('ordinary English chat matches nothing', () => assert.deepEqual(m('hey, how are you doing, see you on sunday').matches, []));
+test('ordinary English messages are never called a scam', () => {
+  for (const t of ['The wifi password is on the fridge', 'Use code SUMMER10 at checkout', "What's your zip code?",
+    "Hi Mum, I'll pay you back for dinner tomorrow", "I'm downloading the photos now", 'Can you share your screen in the meeting?',
+    'Congratulations on the new job!', "I'll be at the bank"])
+    assert.notEqual(m(t).verdict, 'scam', t);
+});
+test('ordinary English messages match no scam entry', () => {
+  for (const t of ['Look at this photo of the dog', 'Mum, can you scan the school form?', 'Mum, are you coming to the school fair?'])
+    assert.deepEqual(m(t).matches, [], t);
+});
+test('apostrophes typed by people still match English phrases', () => assert.equal(top("I can't get into my WhatsApp"), 'ar/whatsapp-codigo'));

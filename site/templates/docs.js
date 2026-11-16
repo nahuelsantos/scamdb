@@ -5,15 +5,15 @@ import { t } from '../i18n.js';
 const PATHS = ['/v1/index.json', '/v1/countries.json', '/v1/signals.json', '/v1/{country}/scams.json', '/v1/{country}/contacts.json',
   '/v1/scams/{country}/{slug}.json', '/v1/scams.json', '/v1/scamdb.zip', '/v1/changes.json'];
 const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 'source', 'turnstileToken'];
-const FIELDS = ['id', 'country', 'status', 'channels', 'sender', 'name', 'how', 'steps[]', 'examples[]', 'phrases', 'signals[]', 'redFlags',
+const FIELDS = ['id', 'country', 'lang', 'status', 'channels', 'sender', 'name', 'how', 'steps[]', 'examples[]', 'phrases', 'signals[]', 'redFlags',
   'whatToDo', 'reportTo[]', 'sources[]', 'media[]', 'story', 'related[]', 'firstSeen', 'updated'];
 
 export function docs({ repo, meta, lang = 'en' }) {
   const rows = t(lang, 'endpointRows'), fields = t(lang, 'fieldRows');
   const sample = repo.entries.find((e) => e.id === 'ar/whatsapp-codigo') ?? repo.entries[0];
   const short = sample && JSON.stringify({ license: 'CC BY 4.0', attribution: 'scamdb.dev · CC BY 4.0', version: meta.version,
-    data: { id: sample.id, country: sample.country, name: sample.name, signals: sample.signals, '…': '…' } }, null, 2);
-  const body = `<section class="page-head"><h1>${esc(t(lang, 'navDocs'))}</h1><p class="lede">${esc(t(lang, 'docsLede'))} <code>{"es": "…"}</code>.</p></section>
+    data: { id: sample.id, country: sample.country, lang: sample.lang, name: sample.name, signals: sample.signals, '…': '…' } }, null, 2);
+  const body = `<section class="page-head"><h1>${esc(t(lang, 'navDocs'))}</h1><p class="lede">${esc(t(lang, 'docsLede'))} <code>{"es": "…", "en": "…"}</code>.</p></section>
 <section aria-labelledby="q-h"><h2 id="q-h">${esc(t(lang, 'dQuick'))}</h2><pre class="code"><code>curl https://scamdb.dev/v1/ar/scams.json</code></pre>
 <pre class="code"><code>const res = await fetch('https://scamdb.dev/v1/ar/scams.json');
 const { data, version } = await res.json();

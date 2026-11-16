@@ -1,48 +1,57 @@
 {
   "id": "ar/falsa-arca",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "online"
   ],
   "sender": {
-    "es": "“ARCA”"
+    "es": "“ARCA”",
+    "en": "“ARCA”"
   },
   "name": {
-    "es": "Mail de la “AFIP” o “ARCA” con una multa"
+    "es": "Mail de la “AFIP” o “ARCA” con una multa",
+    "en": "Email from “AFIP” or “ARCA” with a fine"
   },
   "how": {
-    "es": "Te llega un mail que empieza “Estimado Contribuyente” y dice que tenés una multa o una deuda, con un monto y una fecha. Te pide que descargues un informe o que pagues por un link. ARCA (la ex AFIP) no manda mails pidiendo pagos, datos ni descargas: avisa solo por el Domicilio Fiscal Electrónico."
+    "es": "Te llega un mail que empieza “Estimado Contribuyente” y dice que tenés una multa o una deuda, con un monto y una fecha. Te pide que descargues un informe o que pagues por un link. ARCA (la ex AFIP) no manda mails pidiendo pagos, datos ni descargas: avisa solo por el Domicilio Fiscal Electrónico.",
+    "en": "You get an email starting “Dear Taxpayer” saying you have a fine or a debt, with an amount and a date. It asks you to download a report or pay through a link. ARCA (formerly AFIP) doesn’t email asking for payments, data or downloads: it only notifies through the Electronic Tax Address."
   },
   "steps": [
     {
       "text": {
-        "es": "Te llega un mail “Estimado Contribuyente” que parece de ARCA."
+        "es": "Te llega un mail “Estimado Contribuyente” que parece de ARCA.",
+        "en": "You get a “Dear Taxpayer” email that looks like it’s from ARCA."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Dice que tenés una multa o una deuda con fecha de vencimiento."
+        "es": "Dice que tenés una multa o una deuda con fecha de vencimiento.",
+        "en": "It says you have a fine or a debt with a due date."
       },
       "signal": "urgency"
     },
     {
       "text": {
-        "es": "Te pide descargar un informe o pagar por un link."
+        "es": "Te pide descargar un informe o pagar por un link.",
+        "en": "It asks you to download a report or pay through a link."
       },
       "signal": "unknown_link"
     },
     {
       "text": {
-        "es": "El archivo o el link es para robarte datos o plata."
+        "es": "El archivo o el link es para robarte datos o plata.",
+        "en": "The file or the link is there to steal your data or your money."
       }
     }
   ],
   "examples": [
     {
       "text": {
-        "es": "Estimado Contribuyente: se generó un nuevo documento fiscal que resultó en una multa. Descargue el informe aquí antes del vencimiento: [enlace]"
+        "es": "Estimado Contribuyente: se generó un nuevo documento fiscal que resultó en una multa. Descargue el informe aquí antes del vencimiento: [enlace]",
+        "en": "Dear Taxpayer: a new tax document was generated resulting in a fine. Download the report here before the due date: [link]"
       }
     }
   ],
@@ -56,6 +65,14 @@
       "descargue el informe",
       "documento fiscal",
       "clave fiscal"
+    ],
+    "en": [
+      "tax fine",
+      "tax debt",
+      "dear taxpayer",
+      "download the report",
+      "tax document",
+      "tax password"
     ]
   },
   "signals": [
@@ -68,6 +85,11 @@
       "Una multa o deuda que te avisan por mail.",
       "Un archivo para descargar.",
       "Un link para pagar."
+    ],
+    "en": [
+      "A fine or debt announced by email.",
+      "A file to download.",
+      "A link to pay."
     ]
   },
   "whatToDo": {
@@ -75,6 +97,11 @@
       "No abras el link ni el archivo.",
       "Si tenés dudas, entrá vos a tu Domicilio Fiscal Electrónico.",
       "Nunca compartas tu Clave Fiscal."
+    ],
+    "en": [
+      "Don’t open the link or the file.",
+      "If in doubt, go yourself to your Electronic Tax Address.",
+      "Never share your tax password."
     ]
   },
   "reportTo": [

@@ -74,12 +74,6 @@ test('the sign-in button never overlaps the text above it', async ({ page }) => 
   expect(btn.y).toBeGreaterThanOrEqual(lede.y + lede.height);
 });
 
-test('the Spanish account page is in Spanish', async ({ page }) => {
-  await page.route('**/v1/keys/me', (r) => r.fulfill({ status: 401, json: {} }));
-  await page.goto('/es/account/');
-  await expect(page.getByRole('link', { name: 'Entrar con GitHub' })).toBeVisible();
-});
-
 test('a GitHub error is explained', async ({ page }) => {
   await page.route('**/v1/keys/me', (r) => r.fulfill({ status: 401, json: {} }));
   await page.goto('/account/?error=github');

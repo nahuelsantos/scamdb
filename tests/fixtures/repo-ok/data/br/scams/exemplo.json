@@ -1,21 +1,93 @@
 {
   "id": "br/exemplo",
   "country": "br",
+  "lang": "pt",
   "status": "active",
-  "channels": ["whatsapp"],
-  "sender": { "pt": "“Seu filho”" },
-  "name": { "pt": "Golpe do filho com número novo" },
-  "how": { "pt": "Alguém diz que é seu filho com um número novo e pede dinheiro." },
-  "steps": [
-    { "text": { "pt": "Mensagem de um número novo dizendo que é seu filho." }, "signal": "impersonation" },
-    { "text": { "pt": "Pede um Pix urgente." }, "signal": "urgency" }
+  "channels": [
+    "whatsapp"
   ],
-  "examples": [ { "text": { "pt": "Oi mãe, troquei de número. Pode me fazer um Pix agora?" } } ],
-  "phrases": { "pt": ["troquei de numero", "numero novo", "pix urgente", "oi mae", "golpe do filho"] },
-  "signals": ["impersonation", "urgency"],
-  "redFlags": { "pt": ["Número novo pedindo dinheiro."] },
-  "whatToDo": { "pt": ["Ligue para o número antigo."] },
-  "reportTo": ["br/policia"],
-  "sources": [ { "title": "Golpe", "publisher": "G1", "url": "https://g1.globo.com/nota", "date": "2025-01-10" } ],
+  "sender": {
+    "pt": "“Seu filho”",
+    "en": "“Your son”"
+  },
+  "name": {
+    "pt": "Golpe do filho com número novo",
+    "en": "The son with a new number"
+  },
+  "how": {
+    "pt": "Alguém diz que é seu filho com um número novo e pede dinheiro.",
+    "en": "Someone says they are your son with a new number and asks for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Mensagem de um número novo dizendo que é seu filho.",
+        "en": "A message from a new number saying it is your son."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Pede um Pix urgente.",
+        "en": "He asks for an urgent Pix."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Oi mãe, troquei de número. Pode me fazer um Pix agora?",
+        "en": "Hi mum, I changed my number. Can you send me a Pix now?"
+      }
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "troquei de numero",
+      "numero novo",
+      "pix urgente",
+      "oi mae",
+      "golpe do filho"
+    ],
+    "en": [
+      "changed my number",
+      "new number",
+      "urgent pix",
+      "hi mum",
+      "son scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "pt": [
+      "Número novo pedindo dinheiro."
+    ],
+    "en": [
+      "A new number asking for money."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Ligue para o número antigo."
+    ],
+    "en": [
+      "Call the old number."
+    ]
+  },
+  "reportTo": [
+    "br/policia"
+  ],
+  "sources": [
+    {
+      "title": "Golpe",
+      "publisher": "G1",
+      "url": "https://g1.globo.com/nota",
+      "date": "2025-01-10"
+    }
+  ],
   "updated": "2026-11-13"
 }

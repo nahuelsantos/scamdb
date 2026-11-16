@@ -1,42 +1,50 @@
 {
   "id": "ar/cuento-del-tio",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "phone",
     "in-person"
   ],
   "sender": {
-    "es": "“Tu hijo”"
+    "es": "“Tu hijo”",
+    "en": "“Your son”"
   },
   "name": {
-    "es": "Cuento del tío: alguien viene a tu casa a buscar la plata"
+    "es": "Cuento del tío: alguien viene a tu casa a buscar la plata",
+    "en": "The “uncle’s tale”: someone comes to your home to collect the money"
   },
   "how": {
-    "es": "Te llama alguien que dice ser tu hija, tu sobrina, “de ANSES” o un “contador”. Te asusta con un accidente, un secuestro o con que los dólares viejos ya no sirven. Te tiene horas en el teléfono para que no llames a nadie. Después manda a alguien a buscar la plata, los dólares o las joyas, o te pide que los dejes en la puerta."
+    "es": "Te llama alguien que dice ser tu hija, tu sobrina, “de ANSES” o un “contador”. Te asusta con un accidente, un secuestro o con que los dólares viejos ya no sirven. Te tiene horas en el teléfono para que no llames a nadie. Después manda a alguien a buscar la plata, los dólares o las joyas, o te pide que los dejes en la puerta.",
+    "en": "Someone calls saying they are your daughter, your niece, “from ANSES” or an “accountant”. They scare you with an accident, a kidnapping or by saying your old dollars are no longer valid. They keep you on the phone for hours so you don’t call anyone. Then they send someone to collect the money, the dollars or the jewellery, or ask you to leave them at the door."
   },
   "steps": [
     {
       "text": {
-        "es": "Te llama alguien que dice ser tu hija, tu sobrina, de ANSES o un contador."
+        "es": "Te llama alguien que dice ser tu hija, tu sobrina, de ANSES o un contador.",
+        "en": "Someone calls saying they are your daughter, your niece, from ANSES or an accountant."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Te asusta con un accidente, un secuestro o con que los dólares viejos ya no sirven."
+        "es": "Te asusta con un accidente, un secuestro o con que los dólares viejos ya no sirven.",
+        "en": "They scare you with an accident, a kidnapping or by saying old dollars are no longer valid."
       },
       "signal": "urgency"
     },
     {
       "text": {
-        "es": "Te tiene horas en el teléfono para que no llames a nadie."
+        "es": "Te tiene horas en el teléfono para que no llames a nadie.",
+        "en": "They keep you on the phone for hours so you don’t call anyone."
       },
       "signal": "keep_on_line"
     },
     {
       "text": {
-        "es": "Manda a alguien a tu casa a buscar la plata, los dólares o las joyas."
+        "es": "Manda a alguien a tu casa a buscar la plata, los dólares o las joyas.",
+        "en": "They send someone to your home to collect the money, the dollars or the jewellery."
       },
       "signal": "money_request"
     }
@@ -44,7 +52,8 @@
   "examples": [
     {
       "text": {
-        "es": "Mamá, soy yo, estoy en problemas, no le digas a nadie. Ahora te llama un señor que me está ayudando. No cortes."
+        "es": "Mamá, soy yo, estoy en problemas, no le digas a nadie. Ahora te llama un señor que me está ayudando. No cortes.",
+        "en": "Mum, it’s me, I’m in trouble, don’t tell anyone. A man who is helping me will call you now. Don’t hang up."
       }
     }
   ],
@@ -67,6 +76,17 @@
       "estoy en problemas",
       "te llama un senor",
       "me esta ayudando"
+    ],
+    "en": [
+      "my daughter called crying",
+      "they kidnapped your son",
+      "a man came to collect the money",
+      "leave the money at the door",
+      "old dollars",
+      "they asked for my jewellery",
+      "don't hang up",
+      "mum it's me, don't tell anyone",
+      "i'm in trouble, help me"
     ]
   },
   "signals": [
@@ -82,6 +102,12 @@
       "Te dicen que los billetes viejos o “cara chica” hay que cambiarlos.",
       "Una voz llorando que no terminás de reconocer.",
       "No te dejan cortar ni llamar a nadie."
+    ],
+    "en": [
+      "They send someone to your home to collect money or jewellery.",
+      "They say old or “small face” dollar bills must be exchanged.",
+      "A crying voice you can’t quite recognise.",
+      "They won’t let you hang up or call anyone."
     ]
   },
   "whatToDo": {
@@ -90,6 +116,12 @@
       "No le abras la puerta a nadie que venga a buscar plata.",
       "Los bancos y el Estado no mandan gente a tu casa.",
       "Llamá al 911."
+    ],
+    "en": [
+      "Hang up and call your relative on their usual number.",
+      "Don’t open the door to anyone who comes for money.",
+      "Banks and the government don’t send people to your home.",
+      "Call 911."
     ]
   },
   "reportTo": [
