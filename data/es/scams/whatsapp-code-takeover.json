@@ -1,0 +1,148 @@
+{
+  "id": "es/whatsapp-code-takeover",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "es": "Un contacto tuyo, o un “repartidor”",
+    "en": "One of your contacts, or a “delivery driver”"
+  },
+  "name": {
+    "es": "“Vota por la niña” o “dime el código”: te roban el WhatsApp",
+    "en": "“Vote for the girl” or “tell me the code”: they steal your WhatsApp"
+  },
+  "how": {
+    "es": "Un conocido te pide por WhatsApp que votes en un concurso de baile. La web de votación te pide tu número y te muestra un código para meterlo en WhatsApp, pero ese código vincula tu cuenta a un dispositivo de los estafadores. Otra versión: un falso repartidor te llama por un paquete urgente y te pide el código que te llega por SMS. Con tu cuenta piden dinero a tus contactos o les mandan el mismo engaño.",
+    "en": "Someone you know asks you on WhatsApp to vote in a dance contest. The voting site asks for your number and shows a code to enter in WhatsApp, but that code links your account to the scammers’ device. Another version: a fake delivery driver calls about an urgent parcel and asks for the code you get by text. With your account they ask your contacts for money or send them the same trick."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un contacto te pide que votes en un concurso, o un repartidor te llama por un paquete.",
+        "en": "A contact asks you to vote in a contest, or a delivery driver calls about a parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te mandan a una web o te dicen que te llegará un código.",
+        "en": "They send you to a website or tell you a code is coming."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden meter el código en WhatsApp o decírselo.",
+        "en": "They ask you to enter the code in WhatsApp or tell it to them."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Pierdes el WhatsApp o lo usan a escondidas para pedir dinero a tus contactos.",
+        "en": "You lose your WhatsApp or they secretly use it to ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola!! Me ayudas votando a Sofía, la hija de unos amigos? Está en la final del concurso de baile y gana una beca. Solo es un clic: [enlace]",
+        "en": "Hi!! Can you help by voting for Sofía, our friends’ daughter? She’s in the dance contest final and could win a scholarship. It’s just one click: [link]"
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "es": "Buenas, soy el repartidor, tengo un paquete urgente para usted. Le va a llegar un código por SMS, dígamelo para confirmar la entrega.",
+        "en": "Hello, I’m the delivery driver, I have an urgent parcel for you. You’ll get a code by text, read it to me to confirm the delivery."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "votar en un concurso de baile",
+      "votar a la hija de unos amigos",
+      "me pidieron el codigo de whatsapp",
+      "vincular un dispositivo",
+      "me han robado el whatsapp",
+      "repartidor me pidio un codigo",
+      "codigo por sms para confirmar la entrega",
+      "mi whatsapp esta en otro dispositivo"
+    ],
+    "en": [
+      "vote in a dance contest",
+      "they asked for my whatsapp code",
+      "link a device code",
+      "my whatsapp was stolen",
+      "delivery driver asked for a code",
+      "you'll get a code by text",
+      "read the code to confirm the delivery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden un código que te ha llegado a ti o que metas un código en WhatsApp.",
+      "Una votación que pide tu número de teléfono.",
+      "Un mensaje de un conocido con un enlace raro, aunque venga de su número de siempre."
+    ],
+    "en": [
+      "They ask for a code you received, or ask you to enter a code in WhatsApp.",
+      "A vote that asks for your phone number.",
+      "A message from someone you know with an odd link, even from their usual number."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca des ni metas códigos de WhatsApp que no hayas pedido tú.",
+      "Revisa en WhatsApp los dispositivos vinculados, cierra los que no conozcas y activa la verificación en dos pasos.",
+      "Avisa a tus contactos por otra vía para que no paguen nada."
+    ],
+    "en": [
+      "Never give or enter WhatsApp codes you didn’t request yourself.",
+      "Check linked devices in WhatsApp, log out any you don’t recognise and turn on two-step verification.",
+      "Warn your contacts another way so they don’t pay anything."
+    ]
+  },
+  "reportTo": [
+    "es/incibe-017",
+    "es/incibe-reporte",
+    "es/policia-nacional",
+    "es/guardia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Un falso concurso de baile permite a los ciberdelincuentes utilizar tu cuenta de WhatsApp",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/un-falso-concurso-de-baile-permite-los-ciberdelincuentes-utilizar-tu-cuenta-de",
+      "date": "2026-10-21"
+    },
+    {
+      "title": "Así te roban WhatsApp con la excusa de un paquete urgente",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/asi-te-roban-whatsapp-con-la-excusa-de-un-paquete-urgente",
+      "date": "2026-03-10"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "es": "Una mujer recibió la llamada de un supuesto repartidor con un paquete urgente. Le dijo que le mandaría un código para confirmar la entrega; ella se lo leyó y al momento perdió el acceso a su WhatsApp, con el aviso de que la cuenta se estaba registrando en otro dispositivo (caso atendido por el 017 de INCIBE).",
+    "en": "A woman got a call from a supposed delivery driver with an urgent parcel. He said he would send a code to confirm the delivery; she read it out and immediately lost access to her WhatsApp, with a notice that the account was being registered on another device (case handled by INCIBE’s 017 helpline)."
+  },
+  "related": [
+    "es/whatsapp-friend-asks-money"
+  ]
+}

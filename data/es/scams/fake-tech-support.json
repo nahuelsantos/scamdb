@@ -1,0 +1,129 @@
+{
+  "id": "es/fake-tech-support",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Microsoft” o un “servicio técnico”",
+    "en": "“Microsoft” or a “technical support” team"
+  },
+  "name": {
+    "es": "“Tu ordenador está bloqueado, llama a Microsoft”: el falso técnico",
+    "en": "“Your computer is locked, call Microsoft”: the fake technician"
+  },
+  "how": {
+    "es": "Mientras navegas aparece un aviso que bloquea la pantalla: dice ser de Microsoft, que tu equipo tiene un problema o incluso que te pueden detener, y te da un teléfono. Al llamar, un falso técnico te pide instalar AnyDesk u otro programa y darle el código que sale en pantalla. Con eso controla tu ordenador y al final te cobra por el “arreglo” o busca tus datos. Microsoft no te pide llamar desde un aviso en el navegador.",
+    "en": "While browsing, a warning locks your screen: it claims to be Microsoft, says your computer has a problem or even that you could be arrested, and gives a phone number. When you call, a fake technician asks you to install AnyDesk or another program and give them the code on screen. That lets them control your computer, and in the end they charge you for the “fix” or look for your data. Microsoft doesn’t ask you to call from a browser warning."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un aviso bloquea la pantalla y te da un teléfono de “Microsoft”.",
+        "en": "A warning locks the screen and gives you a “Microsoft” phone number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asustan: virus, bloqueo o hasta una detención.",
+        "en": "They scare you: a virus, a lock or even an arrest."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El técnico te pide instalar AnyDesk y darle el código de la pantalla.",
+        "en": "The technician asks you to install AnyDesk and give the code on screen."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Te cobra por el “arreglo” o intenta llegar a tu banco.",
+        "en": "They charge you for the “fix” or try to get into your bank."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "ALERTA DE SEGURIDAD DE MICROSOFT: Su equipo ha sido bloqueado por actividad ilegal. No apague el ordenador. Llame al soporte técnico de Microsoft para desbloquearlo.",
+        "en": "MICROSOFT SECURITY ALERT: Your computer has been locked for illegal activity. Do not turn off the computer. Call Microsoft technical support to unlock it."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "aviso de microsoft en la pantalla",
+      "ordenador bloqueado llamar a microsoft",
+      "tecnico de microsoft me pidio instalar anydesk",
+      "me pidieron el codigo de anydesk",
+      "falso soporte tecnico",
+      "me cobraron por arreglar el ordenador"
+    ],
+    "en": [
+      "microsoft warning on screen",
+      "computer locked call microsoft",
+      "technician asked me to install anydesk",
+      "fake tech support call",
+      "charged to fix my computer",
+      "computer has been locked",
+      "microsoft security alert"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un aviso con un teléfono para llamar que no te deja usar el ordenador.",
+      "Te piden instalar un programa de control remoto.",
+      "Te cobran por un arreglo que no pediste."
+    ],
+    "en": [
+      "A warning with a phone number that won’t let you use the computer.",
+      "They ask you to install a remote control program.",
+      "They charge you for a fix you didn’t ask for."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No llames al número. Cierra el navegador o reinicia el equipo.",
+      "Si diste acceso: desconecta el equipo de internet, desinstala el programa, pasa un antivirus y cambia tus contraseñas.",
+      "Si tenías datos del banco o fotos del DNI en el equipo, avisa a tu banco y denúncialo."
+    ],
+    "en": [
+      "Don’t call the number. Close the browser or restart the computer.",
+      "If you gave access: disconnect from the internet, uninstall the program, run an antivirus and change your passwords.",
+      "If you had bank details or ID photos on the computer, tell your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "es/incibe-017",
+    "es/tu-banco",
+    "es/policia-nacional",
+    "es/guardia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Falso soporte técnico en publicidad maliciosa acusa posesión de contenido sexual",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/falso-soporte-tecnico-en-publicidad-maliciosa-acusa-posesion-de-contenido-sexual",
+      "date": "2025-11-25"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "es": "Una mujer navegaba por internet cuando apareció un falso aviso de Microsoft que bloqueaba la pantalla y decía que podían detenerla. Llamó al número, le hicieron instalar AnyDesk y darles el código, y a los 30 minutos le pidieron 1.000 € por los “servicios”. No pagó, colgó y llamó al 017 de INCIBE.",
+    "en": "A woman was browsing when a fake Microsoft warning locked her screen and said she could be arrested. She called the number, they had her install AnyDesk and give them the code, and after 30 minutes they asked for €1,000 for the “services”. She didn’t pay, hung up and called INCIBE’s 017 helpline."
+  }
+}

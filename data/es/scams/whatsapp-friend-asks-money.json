@@ -1,0 +1,118 @@
+{
+  "id": "es/whatsapp-friend-asks-money",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un amigo o familiar, desde su WhatsApp de siempre",
+    "en": "A friend or relative, from their usual WhatsApp"
+  },
+  "name": {
+    "es": "“Préstame dinero, te lo devuelvo mañana”: el WhatsApp de un amigo pide dinero",
+    "en": "“Lend me some money, I’ll pay you back tomorrow”: a friend’s WhatsApp asks for money"
+  },
+  "how": {
+    "es": "Un amigo o familiar te escribe desde su número de WhatsApp de siempre: necesita dinero urgente, por ejemplo unos 980 €, y promete devolverlo al día siguiente. Te da una cuenta y te pide el justificante. En realidad los estafadores están usando su cuenta a escondidas, y él no ve esos mensajes. El nombre, la foto y el número conocidos no garantizan quién escribe.",
+    "en": "A friend or relative writes from their usual WhatsApp number: they urgently need money, for example around €980, and promise to pay it back the next day. They give you an account number and ask for the receipt. In fact scammers are secretly using their account, and they can’t see those messages. A familiar name, photo and number don’t guarantee who is writing."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un contacto de confianza te escribe por WhatsApp desde su número de siempre.",
+        "en": "A trusted contact writes on WhatsApp from their usual number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Necesita dinero hoy y promete devolverlo mañana.",
+        "en": "They need money today and promise to pay it back tomorrow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te da una cuenta para la transferencia y te pide el justificante.",
+        "en": "They give you an account for the transfer and ask for the receipt."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Oye, me puedes hacer un favor? Necesito 980 euros urgente, he superado el límite de transferencias del día. Te lo devuelvo mañana sin falta. Te paso la cuenta y me mandas el justificante.",
+        "en": "Hey, can you do me a favour? I urgently need 980 euros, I’ve gone over my daily transfer limit. I’ll pay you back tomorrow for sure. I’ll send you the account and you send me the receipt."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mi amigo me pide dinero por whatsapp",
+      "te lo devuelvo manana",
+      "me pide el justificante de la transferencia",
+      "limite de transferencias",
+      "whatsapp de un familiar pidiendo dinero",
+      "me escribio desde su numero de siempre"
+    ],
+    "en": [
+      "friend asks for money on whatsapp",
+      "i'll pay you back tomorrow",
+      "send me the transfer receipt",
+      "daily transfer limit",
+      "relative's whatsapp asking for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden dinero urgente por WhatsApp, aunque sea un contacto de siempre.",
+      "Una cuenta bancaria que no es de esa persona.",
+      "Piden el justificante enseguida."
+    ],
+    "en": [
+      "Urgent money requests on WhatsApp, even from a usual contact.",
+      "A bank account that isn’t that person’s.",
+      "They want the receipt straight away."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de pagar, llama a esa persona o contáctala por otra vía, no por el mismo chat.",
+      "Si ya pagaste, llama enseguida a tu banco. Guarda los mensajes y el justificante y denúncialo.",
+      "Si es tu cuenta la que usan: actualiza el móvil y WhatsApp, revisa los dispositivos vinculados y avisa a tus contactos."
+    ],
+    "en": [
+      "Before paying, call that person or contact them another way, not in the same chat.",
+      "If you already paid, call your bank straight away. Keep the messages and receipt and report it.",
+      "If it’s your account being used: update your phone and WhatsApp, check linked devices and warn your contacts."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-017",
+    "es/policia-nacional",
+    "es/guardia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Los ciberdelincuentes están utilizando cuentas de WhatsApp en iPhone sin actualizar para pedir dinero a sus contactos",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/los-ciberdelincuentes-estan-utilizando-cuentas-de-whatsapp-en-iphone-sin",
+      "date": "2026-10-14"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "es/whatsapp-code-takeover",
+    "es/hi-mum-new-number"
+  ]
+}

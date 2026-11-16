@@ -1,0 +1,146 @@
+{
+  "id": "es/bank-sms-safe-account",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Tu banco”",
+    "en": "“Your bank”"
+  },
+  "name": {
+    "es": "“Llámanos si no reconoces esta transferencia”: el falso banco",
+    "en": "“Call us if you don’t recognise this transfer”: the fake bank"
+  },
+  "how": {
+    "es": "Te llega un SMS, a veces en el mismo hilo que los mensajes reales de tu banco, sobre una transferencia o un cargo que no has hecho, con un teléfono para llamar. Quien contesta dice ser del departamento de seguridad y te guía para “proteger” tu dinero pasándolo a una “cuenta de seguridad”. En otra variante te hacen instalar una app y acercar la tarjeta al móvil, y luego sacan dinero en cajeros. Tu banco nunca te pedirá mover tu dinero a otra cuenta ni acercar la tarjeta al móvil.",
+    "en": "You get a text, sometimes in the same thread as your bank’s real messages, about a transfer or a charge you didn’t make, with a number to call. The person who answers says they’re from the security department and guides you to “protect” your money by moving it to a “safety account”. In another version they get you to install an app and hold your card to the phone, then take cash from ATMs. Your bank will never ask you to move your money to another account or hold your card to your phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS del banco por una transferencia o un cargo que no reconoces.",
+        "en": "You get a text from the bank about a transfer or charge you don’t recognise."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que llames ya a un número para cancelarlo.",
+        "en": "They tell you to call a number right away to cancel it."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Al teléfono, un falso agente te pide instalar una app o acercar la tarjeta al móvil.",
+        "en": "On the phone, a fake agent asks you to install an app or hold your card to the phone."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Te piden pasar tu dinero a una “cuenta de seguridad” que es de los estafadores.",
+        "en": "They ask you to move your money to a “safety account” that belongs to the scammers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "BANCO: Se va a realizar una transferencia de 2.450,00 EUR a otra cuenta. Si no reconoce la operacion llame urgentemente al numero indicado.",
+        "en": "BANK: A transfer of EUR 2,450.00 to another account is about to be made. If you don’t recognise it, call the number shown urgently."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "es": "Le llamo del departamento de seguridad de su banco. Para proteger su dinero, vamos a pasarlo a una cuenta de respaldo de seguridad desde su propia app.",
+        "en": "I’m calling from your bank’s security department. To protect your money, we’ll move it to a safety backup account from your own app."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "transferencia que no reconozco",
+      "sms del banco con un telefono",
+      "llame urgentemente al banco",
+      "cuenta de seguridad",
+      "cuenta de respaldo",
+      "departamento de seguridad del banco",
+      "acercar la tarjeta al movil",
+      "me llamaron del banco",
+      "proteger su dinero"
+    ],
+    "en": [
+      "transfer i don't recognise",
+      "bank text with a phone number",
+      "safety account",
+      "bank security department called",
+      "hold my card to the phone",
+      "safety backup account",
+      "move my money to protect it"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un SMS con un teléfono para llamar, aunque salga en el hilo de tu banco.",
+      "Te piden mover tu dinero a otra cuenta para “protegerlo”.",
+      "Te piden instalar una app o acercar la tarjeta al móvil."
+    ],
+    "en": [
+      "A text with a number to call, even if it appears in your bank’s thread.",
+      "They ask you to move your money to another account to “protect” it.",
+      "They ask you to install an app or hold your card to the phone."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No llames al número del SMS. Cuelga y llama tú al teléfono de tu tarjeta o de la app oficial.",
+      "Si ya transferiste o te sacaron dinero, avisa a tu banco enseguida y reclama la operación.",
+      "Con la denuncia, reclama a tu banco; si no te da solución, reclama al Banco de España."
+    ],
+    "en": [
+      "Don’t call the number in the text. Hang up and call the number on your card or in the official app yourself.",
+      "If you already transferred money or it was taken, tell your bank straight away and dispute it.",
+      "With your police report, claim from your bank; if it doesn’t help, complain to the Banco de España."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/policia-nacional",
+    "es/guardia-civil",
+    "es/banco-de-espana",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "Campaña de smishing que suplanta a entidades bancarias solicitando que les llames",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/campana-de-smishing-que-suplanta-entidades-bancarias-solicitando-que-les-llames",
+      "date": "2025-09-30"
+    },
+    {
+      "title": "Nuevo tipo de fraude Relay Attack tras un SMS bancario aparentemente real",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/nuevo-tipo-de-fraude-relay-attack-tras-un-sms-bancario-aparentemente-real",
+      "date": "2026-06-23"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "es": "Una persona recibió un SMS desde el mismo número que su banco sobre movimientos sospechosos y llamó al teléfono que aparecía. Un falso agente le mandó por WhatsApp una app para instalar y le pidió acercar la tarjeta al móvil. Después vio varias retiradas de dinero en cajeros (caso atendido por el 017 de INCIBE).",
+    "en": "A person got a text from the same number as their bank about suspicious activity and called the number in it. A fake agent sent them an app to install over WhatsApp and asked them to hold their card to the phone. Later they found several cash withdrawals at ATMs (case handled by INCIBE’s 017 helpline)."
+  }
+}

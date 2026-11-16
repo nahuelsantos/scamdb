@@ -1,0 +1,135 @@
+{
+  "id": "es/celebrity-investment-ads",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un famoso, el Rey o un periódico conocido",
+    "en": "A celebrity, the King or a well-known newspaper"
+  },
+  "name": {
+    "es": "Inversiones milagrosas con famosos: la falsa entrevista",
+    "en": "Miracle investments with celebrities: the fake interview"
+  },
+  "how": {
+    "es": "Ves en redes sociales un anuncio con una falsa noticia o entrevista: un famoso, o hasta el Rey, recomienda una plataforma para hacerse rico rápido. Por ejemplo, invertir 250 € y ganar hasta 2.000 € al día. Te registras, te llaman “asesores” y te piden más dinero; a veces usan vídeos falsos hechos con IA. La plataforma no está autorizada y el dinero no se recupera.",
+    "en": "You see an ad on social media with a fake news story or interview: a celebrity, or even the King, recommends a platform to get rich fast. For example, invest €250 and earn up to €2,000 a day. You sign up, “advisers” call you and ask for more money; sometimes they use fake AI videos. The platform isn’t authorised and the money isn’t recovered."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio con una noticia falsa: un famoso recomienda una plataforma.",
+        "en": "You see an ad with a fake news story: a celebrity recommends a platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Prometen ganancias enormes y rápidas con poco dinero.",
+        "en": "They promise huge, quick profits from a small amount."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te registras y te llaman “asesores” que te piden invertir más.",
+        "en": "You sign up and “advisers” call asking you to invest more."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "A veces te hacen instalar una app o un programa para “ayudarte”.",
+        "en": "Sometimes they get you to install an app or program to “help” you."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Los españoles ya pueden pagar todas sus deudas en solo un mes! Con 250 € puedes ganar hasta 2.000 € al día con esta plataforma. Regístrate: [enlace]",
+        "en": "Spaniards can now pay off all their debts in just one month! With €250 you can earn up to €2,000 a day with this platform. Sign up: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "anuncio de un famoso para invertir",
+      "entrevista falsa del rey",
+      "invertir 250 euros",
+      "ganar 2000 euros al dia",
+      "plataforma de inversion en redes",
+      "chiringuito financiero",
+      "video falso de un famoso"
+    ],
+    "en": [
+      "celebrity investment ad",
+      "fake interview with the king",
+      "invest 250 euros",
+      "earn 2000 a day",
+      "unauthorised investment platform"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganancias garantizadas y enormes en poco tiempo.",
+      "Un famoso o un medio que “recomienda” invertir en un anuncio.",
+      "La empresa no figura en los registros de la CNMV."
+    ],
+    "en": [
+      "Guaranteed, huge profits in a short time.",
+      "A celebrity or newspaper “recommending” an investment in an ad.",
+      "The firm isn’t on the CNMV registers."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de invertir, comprueba en la CNMV si la empresa está autorizada o tiene advertencias.",
+      "Si ya invertiste, avisa a tu banco para intentar parar los pagos y guarda todas las pruebas.",
+      "Denúncialo y reporta el anuncio en la red social."
+    ],
+    "en": [
+      "Before investing, check with the CNMV whether the firm is authorised or has warnings.",
+      "If you already invested, tell your bank to try to stop the payments and keep all the evidence.",
+      "Report it to the police and report the ad on the social network."
+    ]
+  },
+  "reportTo": [
+    "es/cnmv",
+    "es/tu-banco",
+    "es/policia-nacional",
+    "es/guardia-civil",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "Detectada campaña fraudulenta que usa la imagen del Rey de España para que inviertas en distintas plataformas de inversión",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/detectada-campana-fraudulenta-que-usa-la-imagen-del-rey-de-espana",
+      "date": "2025-05-19"
+    },
+    {
+      "title": "Cómo protegerse de los chiringuitos financieros",
+      "publisher": "OCU",
+      "url": "https://www.ocu.org/inversiones/fiscalidad-y-derechos/el-fraude-y-sus-derechos/analisis/2025/08/como-protegerse-de-los-chiringuitos-financieros",
+      "date": "2025-08-05"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "es/investment-recovery-scam"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "id": "es/dgt-fake-fine",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“DGT”",
+    "en": "“DGT” (traffic authority)"
+  },
+  "name": {
+    "es": "“Tienes una multa pendiente”: la falsa DGT",
+    "en": "“You have an unpaid fine”: the fake DGT (traffic authority)"
+  },
+  "how": {
+    "es": "Te llega un SMS o un correo de la “DGT” que dice que tienes una multa sin pagar o un expediente pendiente. Te meten prisa con un recargo o con un descuento que acaba hoy. El enlace lleva a una copia de la web de la DGT que te pide la matrícula, tus datos y la tarjeta para pagar. La DGT no notifica multas por SMS ni por correo: lo hace por carta o por la Dirección Electrónica Vial (DEV).",
+    "en": "You get a text or an email from the “DGT” saying you have an unpaid fine or a pending case. They rush you with a surcharge or a discount that ends today. The link goes to a copy of the DGT website that asks for your number plate, your details and your card to pay. The DGT doesn’t send fines by text or email: it uses post or its official electronic mailbox (DEV)."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS o correo de la DGT por una multa o un expediente pendiente.",
+        "en": "You get a text or email from the DGT about a fine or a pending case."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que la multa sube con un recargo, o que el descuento acaba hoy.",
+        "en": "They say the fine will rise with a surcharge, or that the discount ends today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una web que imita a la DGT y te pide la matrícula y tus datos.",
+        "en": "The link goes to a site that copies the DGT and asks for your number plate and details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Al final te piden la tarjeta, el CVV y a veces el PIN para “pagar la multa”.",
+        "en": "Finally they ask for your card, the CVV and sometimes the PIN to “pay the fine”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "DGT: Tiene una sancion pendiente de pago. Evite el recargo abonando hoy con un 50% de descuento: [enlace]",
+        "en": "DGT: You have an unpaid fine. Avoid the surcharge by paying today with a 50% discount: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "es": "Ultimo recordatorio antes del recargo de su multa. Revise su expediente aqui: [enlace]",
+        "en": "Last reminder before the surcharge on your fine. Check your case here: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "multa de la dgt",
+      "sms de la dgt",
+      "multa pendiente de pago",
+      "multa de trafico por sms",
+      "me llego una multa al movil",
+      "recargo de la multa",
+      "pagar la multa con descuento",
+      "expediente de trafico pendiente",
+      "ultimo recordatorio de la multa"
+    ],
+    "en": [
+      "dgt fine text",
+      "unpaid traffic fine",
+      "fine surcharge warning",
+      "pay the fine with a discount",
+      "traffic fine by email",
+      "last reminder before the surcharge",
+      "check your traffic case"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una multa por SMS o correo: la DGT no las notifica así.",
+      "Prisa: “último recordatorio”, recargo o descuento que acaba hoy.",
+      "La web no es de la DGT y te pide la tarjeta."
+    ],
+    "en": [
+      "A fine by text or email: the DGT doesn’t send them that way.",
+      "Rush: “last reminder”, a surcharge or a discount ending today.",
+      "The website isn’t the DGT’s and asks for your card."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el enlace. Consulta tus multas tú mismo en la app oficial de la DGT o en su sede electrónica.",
+      "Si diste los datos de la tarjeta, llama ya a tu banco para bloquearla y revisa los movimientos.",
+      "Reporta el mensaje a INCIBE, bloquea el número y bórralo."
+    ],
+    "en": [
+      "Don’t tap the link. Check your fines yourself in the official DGT app or its official website.",
+      "If you entered your card details, call your bank now to block the card and check your transactions.",
+      "Report the message to INCIBE, block the number and delete it."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional"
+  ],
+  "sources": [
+    {
+      "title": "Correos y SMS suplantan a la DGT para robar tus datos con falsas multas",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/correos-y-sms-suplantan-la-dgt-para-robar-tus-datos-con-falsas-multas",
+      "date": "2026-09-28"
+    },
+    {
+      "title": "La DGT no está enviando correos ni SMS para notificar multas de tráfico",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/la-dgt-no-esta-enviando-correos-ni-sms-para-notificar-multas-de-trafico",
+      "date": "2025-09-16"
+    }
+  ],
+  "updated": "2026-11-16"
+}

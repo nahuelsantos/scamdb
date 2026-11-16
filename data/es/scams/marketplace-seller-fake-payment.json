@@ -1,0 +1,146 @@
+{
+  "id": "es/marketplace-seller-fake-payment",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "es": "Un “comprador” de Wallapop, Vinted o Milanuncios",
+    "en": "A “buyer” on Wallapop, Vinted or Milanuncios"
+  },
+  "name": {
+    "es": "“Ya te he pagado, cobra aquí”: el falso comprador de Wallapop o Vinted",
+    "en": "“I’ve paid, collect it here”: the fake buyer on Wallapop or Vinted"
+  },
+  "how": {
+    "es": "Pones algo a la venta y enseguida te escribe un “comprador”. Te pide seguir por WhatsApp o correo, dice que ya ha pagado y te manda un enlace que imita a la plataforma para que pongas tu tarjeta y “recibas” el dinero. Otras veces te manda una solicitud de Bizum que, si aceptas, pagas tú, o un aviso falso de que la venta la “supervisa” la Guardia Civil. Para cobrar una venta nunca hace falta poner tu tarjeta ni aceptar un Bizum.",
+    "en": "You list something for sale and a “buyer” writes straight away. They ask to continue on WhatsApp or email, say they’ve already paid and send a link copying the platform so you enter your card to “receive” the money. Other times they send a Bizum request that, if you accept, means you pay them, or a fake notice that the sale is “supervised” by the Guardia Civil. You never need to enter your card or accept a Bizum to get paid for a sale."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un comprador te escribe enseguida y quiere seguir por WhatsApp o correo.",
+        "en": "A buyer writes straight away and wants to continue on WhatsApp or email."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que ya ha pagado y te manda un enlace para cobrar.",
+        "en": "They say they’ve paid and send you a link to collect the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "El enlace te pide la tarjeta, o te llega una solicitud de Bizum para aceptar.",
+        "en": "The link asks for your card, or a Bizum request arrives for you to accept."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te hacen cargos en la tarjeta o pagas tú el Bizum, y el comprador desaparece.",
+        "en": "Charges hit your card or you pay the Bizum, and the buyer disappears."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, ya he realizado el pago por la plataforma. Para recibir el dinero solo tienes que confirmar los datos de tu tarjeta aquí: [enlace]",
+        "en": "Hi, I’ve already paid through the platform. To receive the money you just need to confirm your card details here: [link]"
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "es": "Te acabo de mandar el Bizum, acéptalo en la app del banco y me envías el paquete.",
+        "en": "I’ve just sent you the Bizum, accept it in your banking app and send me the parcel."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "vendiendo en wallapop",
+      "comprador de vinted por whatsapp",
+      "enlace para cobrar la venta",
+      "poner la tarjeta para recibir el dinero",
+      "solicitud de bizum",
+      "acepte un bizum y me cobraron",
+      "la guardia civil supervisa la venta",
+      "comprador me saco de la app",
+      "te acabo de mandar el bizum",
+      "aceptalo en la app del banco"
+    ],
+    "en": [
+      "selling on wallapop",
+      "vinted buyer on whatsapp",
+      "link to receive payment",
+      "card details to get paid",
+      "accepted a bizum request",
+      "accept the bizum in my banking app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El comprador quiere salir de la app.",
+      "Te piden la tarjeta o aceptar un Bizum para cobrar.",
+      "Cuenta recién creada, sin valoraciones, o paga de más."
+    ],
+    "en": [
+      "The buyer wants to leave the app.",
+      "You’re asked for your card or to accept a Bizum to get paid.",
+      "A brand-new account with no reviews, or offering to overpay."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Habla y cobra solo dentro de la app, con su sistema de envíos.",
+      "Lee bien antes de aceptar: una solicitud de Bizum es dinero que pagas tú.",
+      "Si pusiste la tarjeta, llama a tu banco para bloquearla. Denuncia el perfil en la app y a la policía."
+    ],
+    "en": [
+      "Talk and get paid only inside the app, using its shipping system.",
+      "Read carefully before accepting: a Bizum request is money you pay.",
+      "If you entered your card, call your bank to block it. Report the profile in the app and to the police."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/guardia-civil",
+    "es/policia-nacional",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "La Guardia Civil alerta sobre nueva estafa a través de Wallapop",
+      "publisher": "El Independiente",
+      "url": "https://www.elindependiente.com/tendencias/2025/03/27/guardia-civil-alerta-sobre-nueva-estafa-a-traves-de-wallapop/",
+      "date": "2025-03-27"
+    },
+    {
+      "title": "Detectado nuevo método de fraude en tiendas de compraventa como Wallapop y Vinted",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/detectado-nuevo-metodo-de-fraude-en-tiendas-de-compraventa-como-wallapop-y",
+      "date": "2022-09-06"
+    },
+    {
+      "title": "Detectada nueva estrategia de estafa a través de Bizum solicitando dinero en vez de enviarlo",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/detectada-nueva-estrategia-de-estafa-traves-de-bizum-solicitando-dinero-en",
+      "date": "2021-12-02"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,125 @@
+{
+  "id": "es/fake-shop-ads",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Una tienda conocida, como “LIDL”",
+    "en": "A well-known shop, such as “LIDL”"
+  },
+  "name": {
+    "es": "Chollos de una tienda conocida que no es la real",
+    "en": "Bargains from a well-known shop that isn’t the real one"
+  },
+  "how": {
+    "es": "Ves un anuncio patrocinado en el buscador, o te llega por WhatsApp, de una tienda conocida como LIDL con productos muy por debajo de su precio. La web copia la tienda, dice que quedan pocas unidades y que mucha gente lo ha comprado. Pagas con tu tarjeta y no recibes nada; además se quedan con tus datos.",
+    "en": "You see a sponsored search ad, or get one on WhatsApp, from a well-known shop such as LIDL with products far below their normal price. The site copies the shop, says there are few units left and many people have bought it. You pay by card and get nothing; they also keep your details."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio o te llega un enlace de una tienda conocida con precios muy bajos.",
+        "en": "You see an ad or get a link from a well-known shop with very low prices."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "La web parece la de la tienda, pero la dirección no es la oficial.",
+        "en": "The site looks like the shop’s, but the address isn’t the official one."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te meten prisa: quedan pocas unidades o la oferta se acaba.",
+        "en": "They rush you: few units left or the offer is ending."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Pagas con tarjeta y el pedido nunca llega.",
+        "en": "You pay by card and the order never arrives."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "LIDL liquida stock: aspiradora sin cables por solo 19,99 €. ¡Quedan 7 unidades! Compra aquí: [enlace]",
+        "en": "LIDL stock clearance: cordless vacuum for only €19.99. 7 units left! Buy here: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "tienda falsa de lidl",
+      "anuncio patrocinado con precio muy bajo",
+      "compre y nunca llego",
+      "web que copia una tienda",
+      "quedan pocas unidades",
+      "oferta demasiado barata"
+    ],
+    "en": [
+      "fake lidl shop",
+      "sponsored ad very low price",
+      "bought it and it never arrived",
+      "copycat shop website",
+      "only a few units left"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precios muy por debajo de lo normal.",
+      "La dirección web no es la oficial de la marca.",
+      "Mucha prisa para comprar."
+    ],
+    "en": [
+      "Prices far below normal.",
+      "The web address isn’t the brand’s official one.",
+      "A lot of pressure to buy now."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Entra en la tienda escribiendo tú su dirección oficial, no desde el anuncio.",
+      "Si ya pagaste, avisa a tu banco para que inicie el procedimiento de fraude y cambia tus contraseñas si las pusiste.",
+      "Guarda capturas y denúncialo a la Policía Nacional o a la Guardia Civil."
+    ],
+    "en": [
+      "Go to the shop by typing its official address yourself, not from the ad.",
+      "If you already paid, tell your bank so it can start its fraud process, and change your passwords if you entered them.",
+      "Keep screenshots and report it to the Policía Nacional or the Guardia Civil."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional",
+    "es/guardia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Suplantan al LIDL a través de tiendas online fraudulentas",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/suplantan-al-lidl-traves-de-tiendas-online-fraudulentas",
+      "date": "2026-05-06"
+    }
+  ],
+  "updated": "2026-11-16"
+}

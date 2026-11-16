@@ -1,0 +1,140 @@
+{
+  "id": "es/investment-recovery-scam",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "es": "“FBI”, “CNMV”, un abogado o una empresa de recuperación",
+    "en": "“FBI”, “CNMV”, a lawyer or a recovery company"
+  },
+  "name": {
+    "es": "“Te ayudamos a recuperar lo que perdiste”: la segunda estafa",
+    "en": "“We’ll help you get back what you lost”: the second scam"
+  },
+  "how": {
+    "es": "Si ya perdiste dinero en una inversión falsa o con criptomonedas, te contacta alguien que dice ser del FBI, de la CNMV, un abogado o una empresa de “recuperación”. Te dice que han atrapado a los estafadores y que puedes recuperar tu dinero, pero antes tienes que pagar unos honorarios, impuestos o un porcentaje. A veces también te piden una copia del DNI. La CNMV nunca contacta con afectados ni autoriza a nadie a recuperar pérdidas en su nombre.",
+    "en": "If you already lost money in a fake investment or with crypto, someone contacts you claiming to be from the FBI, the CNMV, a law firm or a “recovery” company. They say the scammers were caught and you can get your money back, but first you must pay fees, taxes or a percentage. Sometimes they also ask for a copy of your ID. The CNMV never contacts victims or authorises anyone to recover losses on its behalf."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contacta alguien que sabe que ya fuiste víctima de una estafa.",
+        "en": "Someone contacts you who knows you were already scammed."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te promete recuperar el dinero perdido.",
+        "en": "They promise to recover the money you lost."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pide una copia del DNI para “comprobar tus datos”.",
+        "en": "They ask for a copy of your ID to “check your details”."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Antes de devolverte nada, te pide pagar honorarios, impuestos o un porcentaje.",
+        "en": "Before returning anything, they ask you to pay fees, taxes or a percentage."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenos días, le escribimos del FBI. Hemos desarticulado la red que le estafó con criptomonedas. Para liberar sus fondos debe abonar un 10% de intereses a la autoridad fiscal.",
+        "en": "Good morning, this is the FBI. We have broken up the network that scammed you with crypto. To release your funds you must pay 10% interest to the tax authority."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "recuperar el dinero perdido",
+      "empresa de recuperacion de fondos",
+      "me escribio el fbi",
+      "pagar para recuperar mi inversion",
+      "recovery room",
+      "abogado para recuperar lo estafado",
+      "me contactaron de la cnmv"
+    ],
+    "en": [
+      "recover my lost money",
+      "fund recovery company",
+      "fbi contacted me on whatsapp",
+      "pay to get my investment back",
+      "recovery room scam",
+      "broke up the network that scammed you",
+      "release your funds"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Saben que ya te estafaron y te ofrecen recuperarlo.",
+      "Te piden pagar antes de devolverte nada.",
+      "Dicen ser de la policía extranjera o de la CNMV."
+    ],
+    "en": [
+      "They know you were scammed and offer to get it back.",
+      "They ask you to pay before giving anything back.",
+      "They claim to be foreign police or the CNMV."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues nada por adelantado para recuperar una inversión.",
+      "Corta el contacto y bloquea el número. Si mandaste el DNI, consulta la CIRBE del Banco de España por si piden préstamos a tu nombre.",
+      "Consulta a la CNMV y denúncialo a la policía."
+    ],
+    "en": [
+      "Don’t pay anything up front to recover an investment.",
+      "Cut contact and block the number. If you sent your ID, check the Banco de España’s credit register (CIRBE) for loans in your name.",
+      "Check with the CNMV and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "es/cnmv",
+    "es/policia-nacional",
+    "es/guardia-civil",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "Suplantación del FBI en WhatsApp para estafar a una víctima de criptomonedas",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/linea-de-ayuda-en-ciberseguridad/casos-reales/suplantacion-del-fbi-en-whatsapp-para-estafar-una-victima-de-criptomonedas",
+      "date": "2026-10-06"
+    },
+    {
+      "title": "Guía de la CNMV: Estafas y fraudes",
+      "publisher": "CNMV",
+      "url": "https://www.cnmv.es/DocPortal/Publicaciones/Guias/Guia_Estafas_y_fraudes.pdf",
+      "date": "2023-01-18"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "es": "Un usuario que ya había sido víctima de un fraude recibió un WhatsApp de un número de Estados Unidos que decía ser del FBI: habían desarticulado la banda y él era una de las víctimas. Le pidieron una copia del DNI, que envió, y luego un 10% de “intereses” para recuperar el dinero. Sospechó, no pagó y llamó al 017 de INCIBE.",
+    "en": "A user who had already been scammed got a WhatsApp from a US number claiming to be the FBI: they had broken up the gang and he was one of the victims. They asked for a copy of his ID, which he sent, and then 10% “interest” to recover the money. He became suspicious, didn’t pay and called INCIBE’s 017 helpline."
+  },
+  "related": [
+    "es/celebrity-investment-ads"
+  ]
+}
