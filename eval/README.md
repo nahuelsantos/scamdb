@@ -24,3 +24,19 @@ placeholder `proxy-injected`: add `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/roo
   number; never lower one to make a change pass.
 - **Rules for messages:** they are invented. Write `[link]` and `[number]` instead of real links and numbers, and
   don't copy an entry's `examples` or `phrases`, because the matcher scores against them.
+
+## The fused score
+
+Keyed checks combine the matcher and the Workers AI scorer with a small logistic regression (`lib/fusion.js`, weights
+in `worker/fusion-weights.js`). To refit it after the set or the engines change:
+
+```bash
+node tools/eval.mjs --ai --cache /tmp/ai.json
+```
+
+```bash
+node tools/fit-fusion.mjs /tmp/ai.json
+```
+
+The second command prints held-out results (each country scored by weights fitted on the other eight). Add `--write`
+to save the new weights. `report-ai-fusion.md` has the latest numbers.

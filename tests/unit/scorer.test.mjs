@@ -72,14 +72,14 @@ test('combine drops invented evidence', () => {
 });
 test('combine floors the verdict when the hard rules fire', () => {
   const c = combine(matcher, { verdict: 'not_recognised', score: 0.1, signals: [], matches: [] }, 'please transfer, your bank');
-  assert.equal(c.verdict, 'suspicious');
-  assert.equal(c.score, 0.1);
+  assert.equal(c.verdict, 'suspicious'); // money + impersonation: never below suspicious
+  assert.ok(c.score < 0.4, `the fused score stays honest: ${c.score}`);
 });
 test('combine keeps matcher evidence for the same id and merges matches', () => {
   const c = combine(matcher, { verdict: 'scam', score: 0.9, signals: [{ id: 'money_request', evidence: 'TRANSFER' }], matches: [{ id: 'ar/whatsapp-codigo', similarity: 0.8 }, { id: 'au/parcel', similarity: 0.7 }] }, 'please transfer, your bank');
   assert.equal(c.signals.find((s) => s.id === 'money_request').evidence, 'transfer');
   assert.deepEqual(c.matches.map((m) => m.id), ['au/parcel', 'ar/whatsapp-codigo']);
-  assert.equal(c.verdict, 'scam');
+  assert.notEqual(c.verdict, 'not_recognised');
 });
 test('country limits the matches but keeps the cache whole', async () => {
   _resetCache();
@@ -106,9 +106,17 @@ test('the chat-completions answer shape is read', async () => {
   const ai = { run: async (model, input) => (model === MODELS.embed ? { data: input.text.map(() => [1, 0]) } : { choices: [{ message: { content: '```json\n{"verdict":"suspicious","score":0.4,"signals":[]}\n```' } }] }) };
   assert.equal((await scoreWithWorkersAI(ai, { text: TEXT, catalogue })).verdict, 'suspicious');
 });
-test('combine never says not_recognised when the catalogue matched', () => {
-  const c = combine({ verdict: 'suspicious', score: null, signals: [], matches: [{ id: 'au/parcel' }] }, { verdict: 'not_recognised', score: 0.05, signals: [], matches: [] }, 'parcel');
-  assert.equal(c.verdict, 'suspicious');
+test('a message the formula clears loses its weak keyword matches', () => {
+  const c = combine({ verdict: 'suspicious', score: null, signals: [], matches: [{ id: 'au/parcel', score: 2 }] }, { verdict: 'not_recognised', score: 0.02, signals: [], matches: [], nearest: 0.3 }, 'your parcel was delivered');
+  assert.equal(c.verdict, 'not_recognised');
+  assert.deepEqual(c.matches, []);
+});
+test('a confident AI scam plus a keyword match is "scam" with a high score', () => {
+  const c = combine({ verdict: 'scam', score: null, signals: [{ id: 'asks_for_code', evidence: 'code' }], matches: [{ id: 'ar/whatsapp-codigo', score: 6 }] },
+    { verdict: 'scam', score: 0.95, signals: [], matches: [], nearest: 0.7 }, 'send me the code');
+  assert.equal(c.verdict, 'scam');
+  assert.ok(c.score >= 0.9);
+  assert.equal(c.matches[0].id, 'ar/whatsapp-codigo');
 });
 test('the chat model is a current one, not the retired llama-3.1-8b', () => assert.notEqual(MODELS.chat, '@cf/meta/llama-3.1-8b-instruct'));
 

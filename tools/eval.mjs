@@ -7,7 +7,9 @@
 //                                        "Workers AI: Read" permission)
 //   node tools/eval.mjs --country au     one country
 //   node tools/eval.mjs --out eval/results.md   also write the report to a file
-import { writeFileSync } from 'node:fs';
+//   node tools/eval.mjs --ai --cache /tmp/ai.json   keep the AI's answers and reuse them (to tune the combine rules for free)
+import { writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { loadRepo } from '../lib/load.js';
 import { loadMessages, checkMessages, evaluate, report } from '../lib/eval.js';
 import { matchMessage } from '../packages/matcher/index.js';
@@ -55,14 +57,22 @@ if (flag('--ai')) {
   const ai = restAI(id, token);
   const catalogue = { version: 'eval', signals: new Map(repo.signals.map((s) => [s.id, s])), entries: repo.entries };
   const failures = {};
+  const cachePath = value('--cache');
+  const cache = new Map(cachePath && existsSync(cachePath) ? Object.entries(JSON.parse(readFileSync(cachePath, 'utf8'))) : []);
   const engine = async (m) => {
     const matcher = matchMessage(m.text, repo.entries, { country: m.country });
     const diag = {};
-    const scored = await scoreWithWorkersAI(ai, { text: m.text, catalogue, country: m.country, hints: matcher.matches.map((x) => x.id) }, { diag, timeoutMs: 20000 });
+    const key = `${m.id}:${createHash('sha256').update(m.text).digest('hex').slice(0, 12)}`;
+    let scored = cache.get(key);
+    if (scored === undefined) {
+      scored = await scoreWithWorkersAI(ai, { text: m.text, catalogue, country: m.country, hints: matcher.matches.map((x) => x.id) }, { diag, timeoutMs: 20000 });
+      if (scored) cache.set(key, scored);
+    }
     if (!scored) { failures[diag.reason] ??= { count: 0, example: diag.detail }; failures[diag.reason].count++; return matcher; }
     return combine(matcher, scored, m.text);
   };
   out += '\n' + report('Matcher + Workers AI (as the API answers keyed checks)', await evaluate(messages, engine, { concurrency: 3 }));
+  if (cachePath) writeFileSync(cachePath, JSON.stringify(Object.fromEntries(cache)));
   if (Object.keys(failures).length) out += `\nThe AI step failed on some messages and the matcher answered: ${JSON.stringify(failures)}\n`;
 }
 
