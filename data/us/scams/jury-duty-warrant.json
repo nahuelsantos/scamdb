@@ -1,0 +1,93 @@
+{
+  "id": "us/jury-duty-warrant",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "“Sheriff’s office” or “the court”"
+  },
+  "name": {
+    "en": "“You missed jury duty and there’s a warrant”: pay the fine now"
+  },
+  "how": {
+    "en": "A caller says you didn’t report for jury duty or missed a court date and that there is a warrant for your arrest unless you pay a fine straight away. A variant says your passport, driver’s license or professional license is expiring and must be paid for. They push for prepaid cards, crypto or a courier. The FBI counted 6,833 jury-duty and warrant complaints from January 2025 to July 2026, with nearly $36 million lost."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are from the court or sheriff’s office."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say you missed jury duty or court and there is a warrant."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They say paying a fine now will cancel the warrant."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "They keep you on the phone until you pay."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is Deputy Harris from the county sheriff’s office. You failed to appear for jury duty and a bench warrant has been issued. You can resolve this today by paying the fine. Stay on the line while I connect you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "missed jury duty warrant",
+      "sheriff called about jury duty",
+      "pay a fine to cancel the warrant",
+      "missed court date call",
+      "license expiring pay renewal call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "en": [
+      "A call demanding a fine for missed jury duty or court.",
+      "A warrant that disappears if you pay now.",
+      "Payment by prepaid card, crypto or courier."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up and call your local court using the number on its official website.",
+      "Courts don’t take fines over the phone by gift card or crypto."
+    ]
+  },
+  "reportTo": [
+    "us/ic3",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Scammers Impersonating Law Enforcement and Government Officials in Fraud Schemes",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2026/PSA260917",
+      "date": "2026-09-17"
+    }
+  ],
+  "updated": "2026-11-16"
+}

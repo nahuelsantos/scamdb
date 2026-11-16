@@ -1,0 +1,105 @@
+{
+  "id": "us/fake-police-government",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“Police”, “FBI” or “FTC official”"
+  },
+  "name": {
+    "en": "Fake police or government official: “you’re linked to a crime, pay to clear it”"
+  },
+  "how": {
+    "en": "A caller says they are police, the FBI or another agency, often with a spoofed real number and a badge ID. They say you are connected to a crime (for example, a phone registered in your name used for scams abroad) and threaten arrest or prosecution unless you pay or “help the investigation”. They may pass you to a fake police officer, keep you on the phone for hours and tell you not to tell anyone, even your bank. They ask for payment by gift cards, couriers, wires, crypto or cash put into a crypto kiosk. The FBI received nearly 61,000 complaints of these scams from January 2025 to July 2026, with losses over $1.6 billion."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller claims to be police or a government agency, with a real-looking number and badge ID."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say you are linked to a crime and threaten arrest."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They keep you on the line and tell you not to tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "They demand payment by gift card, courier, wire, crypto or a crypto kiosk."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is Officer Daniels with the Federal Trade Commission. A phone registered in your name is being used for fraud overseas. If you don’t cooperate, your number will be deactivated today and a warrant may be issued. Do not discuss this with anyone."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "police said i am linked to a crime",
+      "ftc official called about my phone number",
+      "threatened to deactivate my phone",
+      "pay to clear the charges",
+      "fbi agent asked for gift cards",
+      "told not to tell my bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Police or a government agency calling or texting to demand money. They never do.",
+      "Payment by gift cards, crypto, a courier or a crypto kiosk.",
+      "Being told to keep it secret, even from your bank or family.",
+      "A caller who won’t let you hang up."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Look up the agency’s official number yourself and call to check.",
+      "Never pay with gift cards, crypto or cash handed to a courier.",
+      "If you paid, contact your bank right away and report it to the FBI’s IC3."
+    ]
+  },
+  "reportTo": [
+    "us/ic3",
+    "us/ftc",
+    "us/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Scammers Impersonating Law Enforcement and Government Officials in Fraud Schemes",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2026/PSA260917",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "The FTC is not calling to deactivate your phone number",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/10/ftc-not-calling-deactivate-your-phone-number",
+      "date": "2026-10-22"
+    }
+  ],
+  "updated": "2026-11-16"
+}
