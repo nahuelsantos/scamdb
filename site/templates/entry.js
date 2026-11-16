@@ -55,7 +55,7 @@ ${original(e, orig, ui)}
 <section aria-labelledby="w-h"><h2 id="w-h">${esc(t(ui, 'sDo'))}</h2><ul class="list do">${LI(e.whatToDo, lang)}</ul></section>
 ${e.story ? `<section aria-labelledby="st-h"><h2 id="st-h">${esc(t(ui, 'sStory'))}</h2>${L(e.story, lang, 'p')}</section>` : ''}
 
-<section aria-labelledby="c-h"><h2 id="c-h">${esc(t(ui, 'sReport'))}</h2><div class="contacts">${contacts.map((k) => `<div class="contact"><h3>${L(k.name, lang)}</h3>${L(k.when, lang, 'p', 'small')}
+<section aria-labelledby="c-h"><h2 id="c-h">${esc(t(ui, 'sReport'))}</h2><p><a class="btn" href="/report/?country=${esc(e.country)}">${esc(t(ui, 'reportLike'))}</a></p><div class="contacts">${contacts.map((k) => `<div class="contact"><h3>${L(k.name, lang)}</h3>${L(k.when, lang, 'p', 'small')}
 <ul>${k.ways.map((w) => `<li><span class="mono small">${esc(ways[w.type])}</span> ${w.label ? `${L(w.label, lang)}: ` : ''}${w.type === 'web' ? `<a href="${esc(w.value)}">${esc(w.value)}</a>` : `<span class="sel">${esc(w.value)}</span>`}</li>`).join('')}</ul>
 ${k.hours ? L(k.hours, lang, 'p', 'small') : ''}<p class="small">${esc(t(ui, 'source'))}: <a href="${esc(k.source)}">${esc(k.source.replace(/^https:\/\/([^/]+).*$/, '$1'))}</a>, ${esc(t(ui, 'checked'))} ${esc(k.checked)}</p></div>`).join('')}</div></section>
 

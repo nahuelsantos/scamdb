@@ -227,3 +227,13 @@ th { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--d
 .btn.solid .sk-fill-card { fill: var(--ink); }
 button.btn { cursor: pointer; font-family: var(--body); background: transparent; }
 button.btn.solid { background: var(--ink); color: var(--paper); }
+/* Report form */
+.report form { display: grid; gap: var(--s5); max-width: 640px; }
+.report .field { display: grid; gap: var(--s2); }
+.report label { font-weight: 600; display: inline-flex; align-items: center; gap: var(--s2); }
+.report select, .report input[type="text"], .report input:not([type]), .report textarea { font: 16px/1.5 var(--body); color: var(--ink); background: var(--paper); border: 1.5px solid var(--ink); border-radius: 10px; padding: 10px 12px; width: 100%; }
+.report textarea { resize: vertical; }
+.report .hint { font-size: 14px; color: var(--muted, var(--ink)); margin: 0; }
+.report .privacy { border-left: 3px solid var(--accent, var(--ink)); padding-left: var(--s3); }
+.report button[disabled] { opacity: .6; cursor: wait; }
+.pg-report { margin: var(--s4) 0 0; }

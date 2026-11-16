@@ -70,3 +70,8 @@ apiBtn?.addEventListener('click', async () => {
     apiOut.textContent = 'The API could not be reached.';
   }
 });
+
+// "Report this message": hand the message to the report form through sessionStorage (never the URL), then go there.
+document.getElementById('pg-report')?.addEventListener('click', () => {
+  try { sessionStorage.setItem('scamdb:report', JSON.stringify({ text: box.value })); } catch { /* blocked: the form starts empty */ }
+});
