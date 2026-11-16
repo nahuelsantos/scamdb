@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { makeWorker } from './harness.mjs';
 import { sign } from '../../worker/session.js';
 import { utcDay } from '../../worker/limits.js';
+import { VERSION } from '../../packages/matcher/index.js';
 
 const w = await makeWorker();
 after(() => w.dispose());
@@ -27,7 +28,7 @@ test('keyless: a code request is a scam, matched, score null, scorer matcher', a
   assert.equal(b.matches[0].page, 'https://scamdb.dev/catalogue/ar/whatsapp-codigo/');
   assert.deepEqual(b.whatToDo, ['Never read out the code']);
   assert.equal(b.reportTo, 'https://scamdb.dev/v1/ar/contacts.json');
-  assert.deepEqual(b.engine, { matcher: '1.0.0', scorer: 'matcher' });
+  assert.deepEqual(b.engine, { matcher: VERSION, scorer: 'matcher' });
   assert.equal(b.datasetVersion, 't.1');
   const sig = b.signals.find((s) => s.id === 'asks_for_code');
   assert.equal(sig.label, 'Asks for a code');

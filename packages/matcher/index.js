@@ -4,10 +4,19 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence } from './signs.js';
-export const VERSION = '1.0.0';
+export const VERSION = '1.1.0';
 export const MATCH_THRESHOLD = 2;
+// A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
+export const MATCH_RELATIVE = 0.6;
 export const MAX_INPUT = 5000;
-const SCAM_SIGNS = new Set(['asks_for_code', 'remote_access', 'money_request']);
+// Asking for money is only "scam" with a second sign that it isn't who it seems or isn't what it seems: a relative
+// asking from their usual number, or a shop confirming a payment, stays "suspicious" at most.
+const MONEY_PLUS = ['impersonation', 'new_number', 'secrecy', 'too_good_to_be_true', 'keep_on_line', 'unknown_link'];
+// Pressure plus an action (pay, click, stay on the call) is the shape of a scam; ordinary urgent messages carry one alone.
+const PRESSED = ['money_request', 'unknown_link', 'keep_on_line'];
+const isScam = (ids) => ids.includes('asks_for_code') || ids.includes('remote_access')
+  || (ids.includes('money_request') && MONEY_PLUS.some((id) => ids.includes(id)))
+  || (ids.includes('urgency') && PRESSED.some((id) => ids.includes(id)));
 
 /** The spec's hard rules: a code request, remote access, or money plus impersonation. A scorer can't go below suspicious. */
 export function hardRules(ids) {
@@ -53,9 +62,10 @@ export function matchMessage(input, entries, { country, limit = 3 } = {}) {
   const matches = !text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, text, words), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)
     .sort((a, b) => b.score - a.score || a.i - b.i)
+    .filter((r, _, all) => r.score >= MATCH_RELATIVE * all[0].score)
     .slice(0, limit).map(({ id, score }) => ({ id, score }));
   const signals = readSignsWithEvidence(raw);
-  const verdict = signals.some((s) => SCAM_SIGNS.has(s.id)) ? 'scam'
+  const verdict = isScam(signals.map((s) => s.id)) ? 'scam'
     : signals.length || matches.length ? 'suspicious' : 'not_recognised';
   return { verdict, score: null, signals, matches };
 }

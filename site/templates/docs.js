@@ -8,7 +8,7 @@ const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 
 const CHECK_FIELDS = ['text', 'country', 'lang', 'report', 'image', 'audio'];
 const CHECK_EXAMPLE = JSON.stringify({ verdict: 'scam', score: null, signals: [{ id: 'asks_for_code', label: 'Asks for a code', evidence: 'read me the 6-digit code' }],
   matches: [{ id: 'nz/bank-fraud-team-call', name: 'Fake bank fraud team', url: 'https://scamdb.dev/v1/scams/nz/bank-fraud-team-call.json', page: 'https://scamdb.dev/catalogue/nz/bank-fraud-team-call/' }],
-  whatToDo: ['Hang up and call your bank on the number on your card.'], reportTo: 'https://scamdb.dev/v1/nz/contacts.json', engine: { matcher: '1.0.0', scorer: 'matcher' }, datasetVersion: '…' }, null, 2);
+  whatToDo: ['Hang up and call your bank on the number on your card.'], reportTo: 'https://scamdb.dev/v1/nz/contacts.json', engine: { matcher: '1.1.0', scorer: 'matcher' }, datasetVersion: '…' }, null, 2);
 const FIELDS = ['id', 'country', 'lang', 'status', 'channels', 'sender', 'name', 'how', 'steps[]', 'examples[]', 'phrases', 'signals[]', 'redFlags',
   'whatToDo', 'reportTo[]', 'sources[]', 'media[]', 'story', 'related[]', 'firstSeen', 'updated'];
 
