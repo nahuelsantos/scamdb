@@ -1,6 +1,8 @@
 // The free Workers AI scorer behind one interface: embeddings find the closest catalogue entries, a small instruct
 // model gives a verdict, a score and the warning signs with quotes. Any failure returns null and the matcher answers.
 import { hardRules } from '../packages/matcher/index.js';
+import { features, probability } from '../lib/fusion.js';
+import { WEIGHTS, THRESHOLDS } from './fusion-weights.js';
 
 // llama-3.1-8b-instruct was retired on 2026-05-30; gemma-4 is Cloudflare's recommended small replacement (also reads images).
 export const MODELS = { embed: '@cf/baai/bge-m3', chat: '@cf/google/gemma-4-26b-a4b-it' };
@@ -100,7 +102,7 @@ export async function scoreWithWorkersAI(ai, { text, catalogue, country = null, 
         Object.assign(diag, { reason: 'answer', detail: clip(detail) });
         return null;
       }
-      return { ...parsed, matches: near.filter((n) => n.similarity >= SIMILAR).slice(0, 3) };
+      return { ...parsed, matches: near.filter((n) => n.similarity >= SIMILAR).slice(0, 3), nearest: near[0]?.similarity ?? 0 };
     })(), timeoutMs);
   } catch (e) {
     const timedOut = e?.message === 'timeout';
@@ -113,14 +115,21 @@ export async function scoreWithWorkersAI(ai, { text, catalogue, country = null, 
 }
 const clip = (s) => String(s).replace(/\s+/g, ' ').slice(0, 160);
 
-/** Merges the matcher's result with the scorer's (see the plan: evidence must be quoted, verdict floor). */
+/**
+ * Merges the matcher's result with the scorer's. The verdict and score come from the fused probability
+ * (lib/fusion.js, weights in fusion-weights.js); the scorer's evidence must be quoted from the text; the hard rules
+ * keep the verdict at "suspicious" or above. A message the formula clears gets no catalogue matches, so a weak
+ * keyword match on one shared word doesn't make a safe message look like a known scam.
+ */
 export function combine(matcher, scorer, text) {
   const lower = text.toLowerCase();
   const signals = [...matcher.signals];
   for (const s of scorer.signals) if (s.evidence && lower.includes(s.evidence.toLowerCase()) && !signals.some((m) => m.id === s.id)) signals.push(s);
+  const p = probability(WEIGHTS, features(matcher, scorer));
+  let verdict = p >= THRESHOLDS.scam ? 'scam' : p >= THRESHOLDS.suspicious ? 'suspicious' : 'not_recognised';
+  if (verdict === 'not_recognised' && hardRules(signals.map((s) => s.id))) verdict = 'suspicious';
   const seen = new Set();
-  const matches = [...matcher.matches, ...scorer.matches].filter((m) => !seen.has(m.id) && seen.add(m.id)).slice(0, 3);
-  // Floor: never not_recognised when the hard rules fire or the catalogue matched.
-  const verdict = scorer.verdict === 'not_recognised' && (hardRules(signals.map((s) => s.id)) || matches.length) ? 'suspicious' : scorer.verdict;
-  return { verdict, score: scorer.score, signals, matches };
+  const matches = verdict === 'not_recognised' ? []
+    : [...matcher.matches, ...scorer.matches].filter((m) => !seen.has(m.id) && seen.add(m.id)).slice(0, 3);
+  return { verdict, score: Math.round(p * 100) / 100, signals, matches };
 }
