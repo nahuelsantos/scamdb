@@ -9,6 +9,7 @@ import { docs } from '../site/templates/docs.js';
 import { contribute } from '../site/templates/contribute.js';
 import { notfound } from '../site/templates/notfound.js';
 import { account } from '../site/templates/account.js';
+import { feed } from '../site/templates/feed.js';
 
 export { esc } from '../site/templates/html.js';
 
@@ -44,6 +45,7 @@ export function buildSite(repo, outDir, meta, root) {
   put('docs/index.html', docs(c));
   put('contribute/index.html', contribute(c));
   put('account/index.html', account(c));
+  put('feed/index.html', feed(c));
   put('404.html', notfound(ctx));
 
   for (const f of readdirSync(join(CODE, 'site/assets'))) copy(join(CODE, 'site/assets', f), `assets/${f}`);

@@ -6,6 +6,8 @@ import { cleanup } from './cleanup.js';
 import { authStart, authCallback, logout } from './github.js';
 import { handleKeys } from './keys.js';
 import { handleIsItAScam } from './isitascam.js';
+import { feedTrends, feedBrands } from './feed.js';
+import { authKey } from './keys.js';
 
 // Secrets each group of routes needs. Missing or too-short secrets close the route (503) instead of running insecurely.
 const NEEDS = {
@@ -20,6 +22,8 @@ const ROUTES = [
   ['POST', /^\/v1\/reports$/, handleReport, 'reports'],
   ['OPTIONS', /^\/v1\/isitascam$/, () => cors(new Response(null, { status: 204 }))],
   ['POST', /^\/v1\/isitascam$/, handleIsItAScam, 'isitascam'],
+  ['GET', /^\/v1\/feed\/trends$/, (r, env) => feedTrends(r, env, authKey)],
+  ['GET', /^\/v1\/feed\/brands$/, (r, env) => feedBrands(r, env, authKey)],
   ['GET', /^\/v1\/keys\/me$/, handleKeys, 'account'],
   ['GET', /^\/v1\/keys\/me\/reveal$/, handleKeys, 'account'],
   ['POST', /^\/v1\/keys$/, handleKeys, 'account'],
