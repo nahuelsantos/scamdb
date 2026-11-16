@@ -1,6 +1,7 @@
 // Screenshots and voice notes for /v1/isitascam: read the multipart body and turn the file into text with Workers AI.
 // Files are processed in memory and never stored.
 import { HttpError } from './http.js';
+import { answerOf, NO_THINKING } from './scorer.js';
 
 // Both current on Workers AI (Nov 2026). gemma-4 reads images; whisper-large-v3-turbo transcribes many languages.
 export const MEDIA_MODELS = { image: '@cf/google/gemma-4-26b-a4b-it', audio: '@cf/openai/whisper-large-v3-turbo' };
@@ -44,8 +45,8 @@ export async function extractText(ai, file, { timeoutMs = 15000 } = {}) {
       const out = await ai.run(MEDIA_MODELS.image, { messages: [{ role: 'user', content: [
         { type: 'text', text: PROMPT },
         { type: 'image_url', image_url: { url: `data:${file.type};base64,${base64(file.bytes)}` } },
-      ] }], max_tokens: 1024 });
-      return out?.response ?? out?.choices?.[0]?.message?.content;
+      ] }], max_tokens: 1024, ...NO_THINKING });
+      return answerOf(out);
     }
     return (await ai.run(MEDIA_MODELS.audio, { audio: base64(file.bytes) }))?.text;
   };

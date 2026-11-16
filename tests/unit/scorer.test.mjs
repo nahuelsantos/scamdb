@@ -158,3 +158,21 @@ test('embeddings and the chat run at the same time, and the chat gets the keywor
   assert.match(chatInput.messages[0].content, /Parcel text/);
   assert.ok(chatInput.max_tokens <= 300);
 });
+
+test('the chat call turns gemma-4 thinking off', async () => {
+  _resetCache();
+  let chatInput;
+  const ai = { run: async (model, input) => { if (model === MODELS.embed) return { data: input.text.map(() => [1, 0]) }; chatInput = input; return { response: { verdict: 'scam', score: 0.9, signals: [] } }; } };
+  await scoreWithWorkersAI(ai, { text: TEXT, catalogue });
+  assert.deepEqual(chatInput.chat_template_kwargs, { enable_thinking: false });
+});
+test('an empty response falls back to the chat-completions content; both empty says so', async () => {
+  _resetCache();
+  const ok = { run: async (model, input) => (model === MODELS.embed ? { data: input.text.map(() => [1, 0]) } : { response: '', choices: [{ message: { content: '{"verdict":"scam","score":0.8,"signals":[]}' } }] }) };
+  assert.equal((await scoreWithWorkersAI(ok, { text: TEXT, catalogue })).verdict, 'scam');
+  _resetCache();
+  const diag = {};
+  const empty = { run: async (model, input) => (model === MODELS.embed ? { data: input.text.map(() => [1, 0]) } : { choices: [{ message: { content: '' }, finish_reason: 'length' }] }) };
+  assert.equal(await scoreWithWorkersAI(empty, { text: TEXT, catalogue }, { diag }), null);
+  assert.deepEqual(diag, { reason: 'answer', detail: 'empty answer (finish_reason: length)' });
+});
