@@ -99,3 +99,14 @@ test('ordinary English messages match no scam entry', () => {
     assert.deepEqual(m(t).matches, [], t);
 });
 test('apostrophes typed by people still match English phrases', () => assert.equal(top("I can't get into my WhatsApp"), 'ar/whatsapp-codigo'));
+
+// Portuguese (Brazil)
+test('Portuguese code request', () => assert.ok(readSigns('Vai chegar um código por SMS, me passa o código por favor').includes('asks_for_code')));
+test('Portuguese money request (Pix)', () => assert.ok(readSigns('Faz um Pix de 800 reais pra mim agora').includes('money_request')));
+test('Portuguese urgency', () => assert.ok(readSigns('Sua conta será bloqueada hoje, é urgente').includes('urgency')));
+test('Portuguese new number', () => assert.ok(readSigns('Oi mãe, troquei de número, salva esse').includes('new_number')));
+test('Portuguese impersonation', () => assert.ok(readSigns('Aqui é da central de atendimento do seu banco').includes('impersonation')));
+test('Portuguese secrecy and keep on line', () => assert.deepEqual(readSigns('Não conta pra ninguém e não desliga'), ['secrecy', 'keep_on_line']));
+test('Portuguese remote access', () => assert.ok(readSigns('Baixe este aplicativo para eu ver sua tela').includes('remote_access')));
+test('Portuguese too good to be true', () => assert.ok(readSigns('Parabéns, você ganhou um prêmio').includes('too_good_to_be_true')));
+test('an ordinary Portuguese message has no signs', () => assert.deepEqual(readSigns('Oi, tudo bem? Vamos almoçar no domingo?'), []));
