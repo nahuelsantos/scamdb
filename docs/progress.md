@@ -2,9 +2,41 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
-## 2026-11-16: report attachments, redaction and the organisation feed (in progress)
+## 2026-11-16: report attachments, redaction and the organisation feed
 
 Plan: `docs/superpowers/plans/2026-11-16-reports-feed.md`.
+
+### PR 3: the organisation feed
+
+**Built:**
+- `GET /v1/feed/trends?country=&weeks=`: weekly report counts per catalogue scam and per channel, plus rising
+  scams (at least 3 and at least twice the previous 4 weeks' average).
+- `GET /v1/feed/brands?brand=&country=&weeks=`: weekly counts of reports naming the brand, the scams that use it,
+  and up to 5 redacted example texts.
+- **Safety rules:**
+  - Counts under 3 are withheld (`kMin` in the answer).
+  - Examples come only from scams with 3 or more look-alike reports.
+  - `contact` and `whatHappened` are never read.
+  - Rejected reports are left out.
+- **Access:** approved keys only (`keys.feed`). The owner approves with `node tools/orgs.mjs approve <login>
+  "<Organisation>"`. 500 feed calls per key per day.
+- **Public page** `/feed/`: what the feed contains, what it never contains, how to get access, and the terms. The
+  docs link to it.
+- Migration 0006, applied to production and UAT.
+
+**Findings:**
+- **Production has 0 reports today.** The feed works and is tested, but it will return empty weeks until reports
+  arrive. Getting reports flowing comes first: eschamuyo's form, the API, screenshot reports.
+- **Tagging only covers new reports.** `scam_id` and `brands` are filled from now on. Older reports (none yet)
+  would need a backfill.
+- **Withholding small counts matters.** With only a few reports per week, most cells will be withheld at first.
+  That's intended: early on, the feed is honest about having little data.
+
+**Next:**
+- Get reports flowing.
+- Talk to 2 or 3 possible users (a CERT, a consumer agency, a bank's fraud team) before adding the indicator list
+  or paid tiers.
+- Have someone qualified review the privacy policy and terms before charging anyone.
 
 ### PR 2: private indicators and tagging
 

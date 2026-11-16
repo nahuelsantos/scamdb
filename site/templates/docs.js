@@ -48,6 +48,7 @@ ${CHECK_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lan
 <div class="scroll"><table><thead><tr><th>POST /v1/reports</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
 ${REPORT_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lang, 'dReportsRows')[i])}</td></tr>`).join('')}</tbody></table></div>
 <p>${esc(t(lang, 'dReportsKeyless'))}</p></section>
+<section aria-labelledby="feed-h"><h2 id="feed-h">${esc(t(lang, 'feedH'))}</h2><p>${esc(t(lang, 'dFeedP'))} <a href="/feed/">/feed/</a></p></section>
 <section aria-labelledby="k-h"><h2 id="k-h">${esc(t(lang, 'dKeys'))}</h2><p>${esc(t(lang, 'dKeysP'))}</p></section>
 <section aria-labelledby="l-h"><h2 id="l-h">${esc(t(lang, 'dLicense'))}</h2><p>${esc(t(lang, 'dLicenseP1'))} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${esc(t(lang, 'dLicenseP2'))} <b>scamdb.dev · CC BY 4.0</b> ${esc(t(lang, 'dLicenseP3'))}</p></section>
 <section aria-labelledby="p-h"><h2 id="p-h">${esc(t(lang, 'dLimits'))}</h2><p>${esc(t(lang, 'dLimitsP'))}</p></section>

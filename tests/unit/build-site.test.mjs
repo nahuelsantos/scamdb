@@ -28,7 +28,7 @@ test('writes every page and the playground assets', () => {
   const { dir, out, written } = build();
   const pages = written.filter((p) => p.endsWith('.html')).sort();
   const en = ['account/index.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
-    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'index.html'];
+    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'feed/index.html', 'index.html'];
   assert.deepEqual(pages, ['404.html', ...en].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
     'assets/lib/text.js', 'assets/entries.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
@@ -263,5 +263,12 @@ test('home no longer says isitascam is coming soon and has the API button', () =
   assert.ok(!/coming soon/i.test(html));
   assert.match(html, /<button[^>]+id="pg-api"[^>]+aria-label="Check with the API"/);
   assert.match(html, /<pre class="api-out"[^>]*hidden/);
+  rmSync(dir, { recursive: true });
+});
+test('the feed page explains what it never contains and the terms, and the docs link to it', () => {
+  const { dir, page } = build();
+  const html = page('feed/index.html');
+  for (const s of ['Feed for organisations', 'never contains', 'Counts under 3 are withheld', '/v1/feed/trends', 'Don’t publicly name', 'scamdb.dev']) assert.ok(html.includes(s), s);
+  assert.ok(page('docs/index.html').includes('href="/feed/"'));
   rmSync(dir, { recursive: true });
 });
