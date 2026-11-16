@@ -47,6 +47,15 @@ test('no horizontal scroll at phone width', async ({ page }) => {
   }
 });
 
+test('pasting an English scam gets English signs and a match', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#pg-text').fill("Hi, this is your bank's fraud department. They will send you a 6-digit code, read it to me. Don't hang up.");
+  await expect(page.locator('#pg-out .stamp')).toHaveText('scam');
+  await expect(page.locator('#pg-out .why code').first()).toHaveText('asks_for_code');
+  await page.locator('#pg-text').fill('they asked me for a WhatsApp code');
+  await expect(page.locator('#pg-out .match a').first()).toHaveText('ar/whatsapp-codigo');
+});
+
 test('the API is served as JSON', async ({ request }) => {
   const res = await request.get('/v1/ar/scams.json');
   expect(res.status()).toBe(200);

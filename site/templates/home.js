@@ -48,7 +48,7 @@ export const heroArt = (w) => HERO_ART.replace('${title}', w.title).replace('${s
   .replace('${n1}', w.n1).replace('${n2}', w.n2).replace('${n3a}', w.n3a).replace('${n3b}', w.n3b).replace('${n4a}', w.n4a).replace('${n4b}', w.n4b);
 /** The response panel as HTML (build time, for the no-JS state; playground.js renders the same markup). */
 export function resultHtml(r, entriesById, signalsById, ui = 'en') {
-  const sigs = r.signals.map((s) => `<li><code>${esc(s.id)}</code><span>${esc(pick(signalsById.get(s.id)?.label, ui) ?? s.id)}: <q lang="es">${esc(s.evidence)}</q></span></li>`).join('');
+  const sigs = r.signals.map((s) => `<li><code>${esc(s.id)}</code><span>${esc(pick(signalsById.get(s.id)?.label, ui) ?? s.id)}: <q>${esc(s.evidence)}</q></span></li>`).join('');
   const m = r.matches[0] && entriesById.get(r.matches[0].id);
   const match = m ? `${t(ui, 'matches')} <a href="${entryUrl(m)}">${esc(m.id)}</a>, ${L(m.name, 'en')}` : esc(t(ui, 'noMatch'));
   return `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(t(ui, VERDICT_KEY[r.verdict]))}</span><span class="noscore">${esc(t(ui, 'noScore'))}</span></div>
@@ -62,10 +62,10 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
   const route = byId.get(ROUTE) ?? repo.entries.find((e) => e.steps?.length);
   const featured = [...FEATURED.map((id) => byId.get(id)).filter(Boolean), ...repo.entries.filter((e) => !FEATURED.includes(e.id))].slice(0, 3);
   const countries = repo.countries.filter((c) => repo.entries.some((e) => e.country === c.code)).map((c) => pick(c.name, lang));
-  const sample = matchMessage(SAMPLES[0].text, repo.entries, { country: 'ar' });
+  const sample = matchMessage(SAMPLES[0].text, repo.entries);
   const labels = t(lang, 'pgSampleLabels');
   const strings = { scam: t(lang, 'vScam'), suspicious: t(lang, 'vSuspicious'), not_recognised: t(lang, 'vNone'), noScore: t(lang, 'noScore'),
-    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch'), prefix: P };
+    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch') };
   const body = `
 <section class="hero">
   <div>
@@ -82,7 +82,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <h2 id="pg-h" class="plab"><span>${esc(t(lang, 'pgTitle'))}</span><span>${esc(t(lang, 'pgPrivate'))}</span></h2>
     <div class="samples" role="group" aria-label="${esc(t(lang, 'pgSamples'))}">${SAMPLES.map((s, i) => `<button type="button" data-sample="${i}" aria-pressed="${i === 0}">${esc(labels[i])}</button>`).join('')}</div>
     <label class="sr" for="pg-text">${esc(t(lang, 'pgMessage'))}</label>
-    <textarea id="pg-text" rows="5" lang="es" maxlength="5000">${esc(SAMPLES[0].text)}</textarea>
+    <textarea id="pg-text" rows="5" maxlength="5000">${esc(SAMPLES[0].text)}</textarea>
     <p class="curl">${esc(t(lang, 'pgSoon'))} <b>POST scamdb.dev/v1/isitascam</b></p>
   </div>
   <div class="pcol" aria-live="polite" id="pg-out" data-strings="${esc(JSON.stringify(strings))}" data-lang="${lang}">${resultHtml(sample, byId, signalsById, lang)}</div>

@@ -31,7 +31,7 @@ test('writes every page and the playground assets', () => {
     'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'index.html'];
   assert.deepEqual(pages, ['404.html', ...en].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
-    'assets/lib/text.js', 'assets/entries-ar.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
+    'assets/lib/text.js', 'assets/entries.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
   rmSync(dir, { recursive: true });
 });
 
@@ -229,5 +229,12 @@ test('the hero bubble is a scribble with a big code, no Spanish sentence', () =>
     assert.ok(!html.includes('Le hablo de PAMI.'), p);
     assert.match(html, /class="t-code-big"[^>]*>482 913</, p);
   }
+  rmSync(dir, { recursive: true });
+});
+test('the playground gets one entries.json with every country', () => {
+  const { dir, page } = build();
+  const j = JSON.parse(page('assets/entries.json'));
+  assert.deepEqual([...new Set(j.entries.map((e) => e.country))].sort(), ['ar', 'br']);
+  assert.ok(j.entries[0].phrases.en);
   rmSync(dir, { recursive: true });
 });

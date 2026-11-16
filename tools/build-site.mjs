@@ -53,11 +53,8 @@ export function buildSite(repo, outDir, meta, root) {
   for (const f of FONTS) copy(join(CODE, 'node_modules/@fontsource', f), `assets/fonts/${f.split('/').pop()}`);
 
   const signals = repo.signals.map(({ id, label }) => ({ id, label }));
-  for (const c of repo.countries) {
-    const list = repo.entries.filter((e) => e.country === c.code);
-    if (!list.length) continue;
-    put(`assets/entries-${c.code}.json`, JSON.stringify({ version: meta.version, signals,
-      entries: list.map(({ id, country, name, phrases, signals: s }) => ({ id, country, name, phrases, signals: s })) }));
-  }
+  // Every country's entries for the playground, which matches phrases in every language.
+  put('assets/entries.json', JSON.stringify({ version: meta.version, signals,
+    entries: repo.entries.map(({ id, country, name, phrases, signals: s }) => ({ id, country, name, phrases, signals: s })) }));
   return written;
 }
