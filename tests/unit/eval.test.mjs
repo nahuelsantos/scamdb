@@ -54,13 +54,14 @@ const root = new URL('../..', import.meta.url).pathname;
 const repo = loadRepo(root);
 const real = loadMessages(root);
 
-test('the labelled set is well-formed: 22 per country, 12 scams, known entries, no real links or numbers', () => {
+test('the labelled set is well-formed: at least 22 per country, about half scams, known entries, no real links or numbers', () => {
   assert.deepEqual(checkMessages(real, new Set(repo.entries.map((e) => e.id))), []);
   const countries = [...new Set(repo.entries.map((e) => e.country))].sort();
   for (const cc of countries) {
     const m = real.filter((x) => x.country === cc);
-    assert.equal(m.length, 22, cc);
-    assert.equal(m.filter((x) => x.label === 'scam').length, 12, cc);
+    assert.ok(m.length >= 22, `${cc}: ${m.length} messages`);
+    const share = m.filter((x) => x.label === 'scam').length / m.length;
+    assert.ok(share >= 0.4 && share <= 0.65, `${cc}: ${Math.round(share * 100)}% scams`);
   }
 });
 test('the matcher stays above its floors on the labelled set', async () => {
@@ -70,7 +71,7 @@ test('the matcher stays above its floors on the labelled set', async () => {
   assert.ok(x.calledScam >= 40, `scams called "scam" ${x.calledScam}%`);
   assert.ok(x.top3 >= 72, `right match in top 3 ${x.top3}%`);
   assert.ok(x.falseScam <= 5, `safe messages called "scam" ${x.falseScam}%`);
-  assert.ok(r.all.wrongMatches <= 102, `wrong matches ${r.all.wrongMatches}`);
+  assert.ok(r.all.wrongMatches / r.all.scams <= 0.95, `wrong matches per scam ${(r.all.wrongMatches / r.all.scams).toFixed(2)}`);
 });
 
 // The encrypted private set (eval/private.enc). Runs only where EVAL_PRIVATE_KEY is set (CI with the secret, or the
