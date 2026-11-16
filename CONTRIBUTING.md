@@ -50,7 +50,7 @@ in each language). Contacts and countries follow the same rule.
 ## The rules
 
 - **No source, no scam.** Every source has a title, publisher, an `https://` link and a date.
-- **Examples are invented**, written the way scammers write. Links are written `[enlace]`. Never a
+- **Examples are invented**, written the way scammers write. Links are written `[enlace]` (Spanish) or `[link]`. Never a
   real link or phone number.
 - **No personal data.** No real names, numbers or screenshots of real people.
 - **Media is linked, never copied.** Credit the publisher.

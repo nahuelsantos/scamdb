@@ -128,7 +128,7 @@ export function validateRepo(root) {
       ...(s.examples ?? []).flatMap((x, i) => strings(x.text, `examples[${i}].text`)),
     ];
     for (const { at, s: text } of checked) {
-      if (LINK.test(text) || DOMAIN.test(text)) errors.push(`${path}: ${at} has a real link; write [enlace]`);
+      if (LINK.test(text) || DOMAIN.test(text)) errors.push(`${path}: ${at} has a real link; write [enlace] or [link]`);
       else if (PHONE.test(text)) errors.push(`${path}: ${at} has a real phone number; leave it out`);
     }
   }

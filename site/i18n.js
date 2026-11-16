@@ -50,7 +50,7 @@ export const UI = {
     contribLede: 'Every scam is one file on GitHub. Anyone can add one or fix one; a maintainer reviews every change before it goes live.',
     cAddH: 'Add or fix a scam', cAdd1a: 'Read', cAdd1b: ': the fields and the rules.', cAdd2a: 'Create or edit', cAdd2b: '. Copy an existing entry to start.',
     cAdd3a: 'Run', cAdd3b: ', then open a pull request.',
-    cRules: 'The rules that matter most: every scam has dated https:// sources; examples are invented and links are written [enlace]; no personal data; media is linked, never copied.',
+    cRules: 'The rules that matter most: every scam has dated https:// sources; examples are invented and links are written [link] or [enlace]; no personal data; media is linked, never copied.',
     cLicense: 'By opening a pull request you agree that your contribution is published under CC BY 4.0 (data) or MIT (code).',
     cReportH: 'Report a scam you received', cReportA: 'Use the private form on', cReportLink: 'eschamuyo.com',
     cReportB: '(in Spanish), or send it from your app with', cReportBold: 'POST /v1/reports', cReportC: '. Reports are private and never published. If neither is open yet, open an issue without any personal data.',

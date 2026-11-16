@@ -58,6 +58,20 @@ npm run build
 The build writes the API and the site to `dist/`. The site is in English at `/` and Spanish at `/es/`; interface strings live in
 `site/i18n.js`. Scams always show in their own language. Drawings are generated at build time by `lib/sketch.js`.
 
+## Importing scams
+
+New countries and new scams come from the `import-scams` Claude Code skill (`.claude/skills/import-scams/SKILL.md`).
+One run researches one country from official warnings (`importer/sources.json`) and recent news, drafts up to 10
+entries in the original language plus English, validates them and opens one pull request labelled `import`. Nothing
+merges without the owner.
+
+- Run by hand in any Claude Code session in this repo: `/import-scams next` or `/import-scams au`.
+- A weekly scheduled run does the same with `next`.
+- `node tools/importer.mjs status` shows entries per country; `node tools/importer.mjs next` shows which comes next
+  (Australia, the US, the UK, Canada, Spain, Mexico, Brazil, then the country whose newest entry is oldest).
+- Close an import PR, or delete a scam from it, to reject it: the next run adds it to `importer/rejected.json` and
+  never proposes it again. Delete a line there to allow it back.
+
 ## Licenses
 
 - Data (`data/` and everything under `/v1/`): [CC BY 4.0](LICENSE-DATA) (full legal text). You may copy, share
