@@ -3,10 +3,14 @@
 import { HttpError, error, cors } from './http.js';
 import { handleReport } from './reports.js';
 import { cleanup } from './cleanup.js';
+import { authStart, authCallback, logout } from './github.js';
 
 const ROUTES = [
   ['OPTIONS', /^\/v1\/reports$/, () => cors(new Response(null, { status: 204 }))],
   ['POST', /^\/v1\/reports$/, handleReport],
+  ['GET', /^\/auth\/github$/, authStart],
+  ['GET', /^\/auth\/github\/callback$/, authCallback],
+  ['POST', /^\/auth\/logout$/, logout],
 ];
 
 /** Routes a request; anything unknown goes to the static assets. Exported for tests. */
