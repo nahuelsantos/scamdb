@@ -1,0 +1,104 @@
+{
+  "id": "gb/money-mule-job",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“An employer” advertising on social media"
+  },
+  "name": {
+    "en": "Fake “quick cash” job: an upfront fee, then money through your account"
+  },
+  "how": {
+    "en": "Fake job adverts on social media and WhatsApp offer flexible hours and quick earnings, often to young people. You are asked early on for ID documents and bank details, and sometimes an upfront fee for “office” or “IT equipment”. The job doesn’t exist. Your details may then be used to make you a money mule, moving other people’s money through your account, or to forward parcels of stolen goods."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A job ad on social media or WhatsApp promises flexible hours and quick cash."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They ask for your ID documents and bank details straight away."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They ask for a fee for equipment before you can start."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "They ask you to receive money into your account and send it on, or forward parcels."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hiring now! Work from home, flexible hours, earn £500 a week. No experience needed. Message me on WhatsApp to start today."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "job asked me to pay for equipment",
+      "money paid into my account to send on",
+      "quick cash job on instagram",
+      "receive and forward parcels job",
+      "job wanted my bank details and passport",
+      "keep a cut of the money transfer"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Jobs advertised only on social media that promise easy money.",
+      "Asking for ID and bank details before any interview.",
+      "Paying a fee to start, or moving money through your account."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Research the company and check it has a real UK presence.",
+      "Never accept money into your account to send on for someone else.",
+      "If you shared bank details or received money, tell your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "gb/your-bank",
+    "gb/report-fraud",
+    "gb/citizens-advice"
+  ],
+  "sources": [
+    {
+      "title": "Warning as Easter Recruitment Scams Target Young Jobseekers",
+      "publisher": "Chartered Trading Standards Institute",
+      "url": "https://www.tradingstandards.uk/news-policy-campaigns/news-room/2026/warning-as-easter-recruitment-scams-target-young-jobseekers/",
+      "date": "2026-03-05"
+    },
+    {
+      "title": "Latest fake job texts exposed as Virgin Media O2’s Scam Index shows recruitment scams on the rise",
+      "publisher": "Virgin Media O2",
+      "url": "https://news.virginmediao2.co.uk/?p=11704",
+      "date": "2026-10-15"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "gb/task-job-text"
+  ]
+}

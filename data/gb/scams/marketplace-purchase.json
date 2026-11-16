@@ -1,0 +1,104 @@
+{
+  "id": "gb/marketplace-purchase",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "“A seller on Facebook Marketplace, Gumtree or another marketplace”"
+  },
+  "name": {
+    "en": "Marketplace bargain that never arrives"
+  },
+  "how": {
+    "en": "A seller on a second-hand marketplace lists a phone, games console or other item at a very low price. They give excuses for why you can’t see it, push you to buy fast and ask you to pay by bank transfer or PayPal Friends and Family, which have no buyer protection. Sometimes they move the chat to another app. After you pay you get nothing, or something that doesn’t match the ad."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An item is listed for much less than it is worth, often by a new seller."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The seller says you can’t view it and pushes you to buy quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you to pay by bank transfer or PayPal Friends and Family."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "The item never arrives, or is not what was described."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Still available! Brand new console, sealed, £150. Can't meet as I've moved away but can post today. Bank transfer only please, lots of people asking."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "paid for an item on facebook marketplace never arrived",
+      "seller wanted bank transfer only",
+      "paypal friends and family seller",
+      "cheap phone on gumtree scam",
+      "couldn't view the item before paying",
+      "seller stopped replying after payment"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A price far below what the item usually costs.",
+      "No chance to see the item, and pressure to pay now.",
+      "Bank transfer or Friends and Family payment only."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "See the item in person before paying, or use a site with buyer protection.",
+      "Pay by card or a protected payment method, never by bank transfer to a stranger.",
+      "If you paid, call your bank straight away and report it to Report Fraud."
+    ]
+  },
+  "reportTo": [
+    "gb/your-bank",
+    "gb/report-fraud",
+    "gb/citizens-advice"
+  ],
+  "sources": [
+    {
+      "title": "It's a steal: how we listed fake 'bargains' on marketplace websites",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/its-a-steal-how-we-listed-fake-bargains-on-marketplace-websites-aQDLs8m1bFWa",
+      "date": "2024-12-12"
+    },
+    {
+      "title": "Online shopping warning: Santander customers lost £7.3m to purchase scams",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/online-shopping-warning-santander-customers-lost-7.3m-to-purchase-scams-avnTl0c05fgy",
+      "date": "2024-04-10"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "gb/ticket-scam-social"
+  ]
+}

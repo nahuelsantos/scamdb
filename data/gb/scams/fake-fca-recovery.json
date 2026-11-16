@@ -1,0 +1,102 @@
+{
+  "id": "gb/fake-fca-recovery",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“The Financial Conduct Authority (FCA)”"
+  },
+  "name": {
+    "en": "Fake FCA: “we’ve recovered your lost money, just pay a fee”"
+  },
+  "how": {
+    "en": "Scammers pretend to be the FCA. Some say the FCA has recovered money from a crypto wallet opened in your name. Others target people who already lost money to a loan or investment scam and offer to get it back, or send emails saying you owe money after a court judgment. Each time, you are asked to pay or share sensitive details such as PINs and passwords. The FCA never asks you to transfer money to it."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You are contacted by phone, text, email or WhatsApp by someone saying they are from the FCA."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say they have recovered money you lost, or that you owe money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They ask for a fee or a payment to release the money or settle the debt."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "They ask for your bank PINs or passwords."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Financial Conduct Authority: We have recovered funds from a cryptocurrency wallet registered in your name. To release the balance to you, a verification fee must be paid. Contact your case officer today."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "fca called to recover my money",
+      "pay a fee to get lost money back",
+      "recovered funds from crypto wallet",
+      "fake fca email county court judgment",
+      "company offered to recover my scam losses",
+      "fca asked for my bank pin"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone offering to recover money you lost, for a fee.",
+      "The FCA, or anyone, asking you to transfer money to them.",
+      "Requests for PINs or passwords."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t pay. The FCA never asks you to transfer money or for PINs and passwords.",
+      "If unsure, contact the FCA using details on its official website.",
+      "If you paid, call your bank and report it to Report Fraud."
+    ]
+  },
+  "reportTo": [
+    "gb/fca",
+    "gb/report-fraud",
+    "gb/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Almost 5,000 fake FCA scams reported in first 6 months of 2025",
+      "publisher": "Financial Conduct Authority",
+      "url": "https://www.fca.org.uk/news/press-releases/fake-fca-scams-reported-6-months-2025",
+      "date": "2025-08-27"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "gb/deepfake-investment-ad"
+  ]
+}
