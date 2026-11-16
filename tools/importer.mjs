@@ -7,7 +7,7 @@ import { loadRepo } from '../lib/load.js';
 import { normalize } from '../lib/text.js';
 
 /** Countries the importer covers, in the order it starts them. */
-export const TARGETS = ['au', 'us', 'gb', 'ca', 'es', 'mx', 'br'];
+export const TARGETS = ['au', 'nz', 'us', 'gb', 'ca', 'es', 'mx', 'br'];
 
 /** Newest `updated` date per country code ('' when it has no entries). */
 function newest(repo) {

@@ -6,9 +6,9 @@ import { TARGETS, pickNext, isDuplicate, isRejected } from '../../tools/importer
 const entry = (id, updated, extra = {}) => ({ id, country: id.split('/')[0], updated, name: { en: id }, phrases: { en: [] }, ...extra });
 const repo = (entries) => ({ countries: [...new Set(entries.map((e) => e.country))].map((code) => ({ code })), entries });
 
-test('targets start with Australia', () => assert.deepEqual(TARGETS, ['au', 'us', 'gb', 'ca', 'es', 'mx', 'br']));
+test('targets start with Australia', () => assert.deepEqual(TARGETS, ['au', 'nz', 'us', 'gb', 'ca', 'es', 'mx', 'br']));
 test('pickNext prefers a target with no entries', () => assert.equal(pickNext(repo([entry('ar/a', '2026-11-01')]), { pending: [] }), 'au'));
-test('pickNext skips pending', () => assert.equal(pickNext(repo([entry('ar/a', '2026-11-01')]), { pending: ['au'] }), 'us'));
+test('pickNext skips pending', () => assert.equal(pickNext(repo([entry('ar/a', '2026-11-01')]), { pending: ['au'] }), 'nz'));
 test('pickNext falls back to the country whose newest entry is oldest', () => {
   const all = TARGETS.map((cc) => entry(`${cc}/x`, '2026-10-01'));
   all.push(entry('ar/a', '2026-01-01'), entry('gb/y', '2025-01-01'));
@@ -47,7 +47,7 @@ test('sources.json lists official https sources for every target', () => {
 test('rejected.json is a list', () => assert.ok(Array.isArray(JSON.parse(readFileSync(new URL('../../importer/rejected.json', import.meta.url))))));
 test('a target tried recently with nothing merged is not picked again before the others', () => {
   const r = repo([entry('ar/a', '2026-11-01')]);
-  assert.equal(pickNext(r, { pending: [], tried: { au: '2026-11-16' } }), 'us');
+  assert.equal(pickNext(r, { pending: [], tried: { au: '2026-11-16' } }), 'nz');
 });
 test('the fallback ranks by the later of newest entry and last try', () => {
   const all = TARGETS.map((cc) => entry(`${cc}/x`, '2026-10-01'));

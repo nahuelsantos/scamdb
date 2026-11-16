@@ -9,7 +9,7 @@ One run = one country = at most one pull request with at most 10 new entries. No
 reviews every import. Read `CONTRIBUTING.md` (fields and rules) and
 `docs/superpowers/specs/2026-11-16-worldwide-import-design.md` (why it works this way) before drafting.
 
-Argument: `next` (default) or a country code (`au`, `us`, `gb`, `ca`, `es`, `mx`, `br`, or any code in
+Argument: `next` (default) or a country code (`au`, `nz`, `us`, `gb`, `ca`, `es`, `mx`, `br`, or any code in
 `data/countries.json`).
 
 ## 0. One import at a time
@@ -55,6 +55,11 @@ Start with the country's entries in `importer/sources.json`, then reputable nati
 - `isRejected` finds it in `importer/rejected.json`;
 - it has no dated `https://` source you actually read.
 
+Some official pages (for example New Zealand's Consumer Protection and Police scam pages) have no date. Use them to
+find which scams to look for and for advice, but every entry still needs at least one dated source from the last 24
+months (an alert, a news release, a case study or reputable news); an undated page can be an extra source, never the
+only one.
+
 If a host is blocked or refuses automated access, note it for the PR summary and use other sources; never invent what
 a page says.
 
@@ -63,7 +68,7 @@ a page says.
 Prefer the most widespread and most harmful scams. For each, write `data/<cc>/scams/<slug>.json` following
 `CONTRIBUTING.md`:
 
-- `lang`: the language the scam arrives in (`en` for au/us/gb/ca, `es` for es/mx, `pt` for br). English-original
+- `lang`: the language the scam arrives in (`en` for au/nz/us/gb/ca, `es` for es/mx, `pt` for br). English-original
   entries need only `en`; others need the original **and** `en` in every text field.
 - `examples`: invented, written the way scammers write in that country and language; links as `[enlace]` (Spanish) or
   `[link]` (English, Portuguese); no real numbers, links or names.
