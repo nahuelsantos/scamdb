@@ -1,0 +1,105 @@
+{
+  "id": "us/tech-support-popup",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "en": "“Microsoft”, “Apple” or “Geek Squad”"
+  },
+  "name": {
+    "en": "Tech support pop-up: “your computer is infected, call this number”"
+  },
+  "how": {
+    "en": "A pop-up appears on your computer saying it has a virus or a security problem, and uses the name of a company like Microsoft, Apple or Geek Squad. It tells you to call a phone number right away. The person who answers says your device is infected, asks to get into your computer, and sells you a fake fix or support plan. Real tech companies’ security warnings never ask you to call a phone number. Tech support scams were one of the costliest scams reported to the FBI in 2025, with over $2.1 billion in losses."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A pop-up or warning screen says your computer is infected or hacked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It tells you to call a number now and not to turn off your computer."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "The “technician” asks you to install a program so they can see your screen."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They charge you for a fake repair or support plan, or ask for card or bank details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "WINDOWS SECURITY ALERT: Your computer has been blocked due to suspicious activity. Your personal data is at risk. Do not close this window or restart your computer. Call Microsoft Support immediately."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "pop-up said my computer was infected",
+      "call microsoft support pop-up",
+      "computer locked call this number",
+      "technician took control of my computer",
+      "paid for fake virus removal",
+      "screen said don't turn off computer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A pop-up with a phone number to call about a virus.",
+      "Warnings not to close the window or restart your computer.",
+      "A stranger asking for remote access to your computer.",
+      "A fee for a repair or support plan you didn’t ask for."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t call the number or click links in the pop-up. Close the browser, or restart the computer.",
+      "Update your security software and run a scan yourself.",
+      "If you need help, contact a company you trust using the details on its official website, or a store you know.",
+      "If you let someone in, run a security scan, change your passwords and call your bank or card issuer."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/ftc",
+    "us/ic3"
+  ],
+  "sources": [
+    {
+      "title": "Seemingly urgent security messages could lead to tech support scams",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2025/04/seemingly-urgent-security-messages-could-lead-tech-support-scams",
+      "date": "2025-04-14"
+    },
+    {
+      "title": "2025 IC3 Annual Report",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf",
+      "date": "2026-04-16"
+    }
+  ],
+  "updated": "2026-11-16"
+}
