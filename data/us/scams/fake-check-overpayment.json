@@ -1,0 +1,98 @@
+{
+  "id": "us/fake-check-overpayment",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "online",
+    "social"
+  ],
+  "sender": {
+    "en": "A new client, employer or buyer, often a “parent moving from overseas”"
+  },
+  "name": {
+    "en": "Fake check: “I sent too much, please send back the difference”"
+  },
+  "how": {
+    "en": "Someone hires you or buys from you, for example a parent who says they are moving to your area from overseas and needs childcare right away. They send a check for more than the agreed amount, then say it was a mistake and ask you to send back the extra by wire transfer, a payment app, gift cards or crypto. The check may seem to clear and the money shows in your account, but days later it bounces and you must repay the bank."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A new client contacts you and needs your service urgently, often from overseas."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They send a check for more than the agreed price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They say it was a mistake and ask you to send back the difference by wire, payment app or gift cards."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "The check bounces and the bank takes the money back from you."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi! We are relocating to your area from London next week and need a nanny for our two kids right away. I will mail you a check in advance. My assistant sent it for $2,450 instead of $450 by mistake, please send the extra back by Zelle today."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "check for more than i charge",
+      "send back the extra money",
+      "parent moving from overseas needs babysitter",
+      "overpaid me by check",
+      "check bounced after i sent money",
+      "nanny job paid with check"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A check for more than the agreed amount.",
+      "A request to send back the difference by wire, payment app, gift cards or crypto.",
+      "A new client who is urgent, abroad, or never meets you.",
+      "Being paid before you have done any work."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t accept a check for more than you charge.",
+      "Never send money back to someone who says they overpaid you by check.",
+      "Money showing in your account doesn’t mean the check is good. Ask your bank and wait.",
+      "If you sent money, contact the company you used right away."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Fake check scam targets childcare providers",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/05/fake-check-scam-targets-childcare-providers",
+      "date": "2026-06-04"
+    }
+  ],
+  "updated": "2026-11-16"
+}

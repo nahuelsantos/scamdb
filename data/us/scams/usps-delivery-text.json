@@ -1,0 +1,107 @@
+{
+  "id": "us/usps-delivery-text",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“USPS”"
+  },
+  "name": {
+    "en": "Fake USPS text: “your package can’t be delivered, update your address”"
+  },
+  "how": {
+    "en": "A text says it is from USPS and that your package is waiting, couldn’t be delivered, has unpaid postage or needs an address fix. It asks you to tap a link to “fix the problem”. The link opens a look-alike USPS website that asks for your name, address and card number, often for a small fee. USPS only sends tracking texts if you asked for them with a tracking number, and those texts don’t contain links."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text claims to be from USPS about a package."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says delivery failed, postage is unpaid or your address is incomplete."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It asks you to tap a link to fix the problem."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The fake site asks for your personal details and card number, often for a small fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "USPS: Your package could not be delivered due to an incomplete address. Please update your information within 24 hours or the package will be returned: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "usps text about my package",
+      "package could not be delivered text",
+      "update my address usps link",
+      "unpaid postage text message",
+      "redelivery fee text",
+      "fake usps tracking text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A delivery text you didn’t sign up for, with a link.",
+      "A failed delivery, unpaid postage or a missing address detail.",
+      "A deadline before the package is “returned”.",
+      "A request for card details or a small fee."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t tap the link. Check tracking by typing the USPS address into your browser, or with the store you ordered from.",
+      "Forward the text to 7726 (SPAM), then delete it.",
+      "If you tapped the link or entered details, contact your bank or card issuer.",
+      "Report USPS texts to the Postal Inspection Service."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/uspis",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Think that text message is from USPS? It could be a scam",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2025/04/think-text-message-usps-it-could-be-scam",
+      "date": "2025-04-23"
+    },
+    {
+      "title": "Smishing: Package Tracking Text Scams",
+      "publisher": "U.S. Postal Inspection Service",
+      "url": "https://www.uspis.gov/news/scam-article/smishing-package-tracking-text-scams",
+      "date": "2025-05-19"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "us/brushing-package"
+  ]
+}
