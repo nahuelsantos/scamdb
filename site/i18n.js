@@ -24,6 +24,7 @@ export const UI = {
     cardCount: (signs, sources, month) => `${plural(signs, 'warning sign', 'warning signs')} · ${plural(sources, 'source', 'sources')} · updated ${month}`,
     catalogueTitle: 'Catalogue · scamdb', catalogueDesc: (n) => `All ${n} scams in scamdb, by country.`,
     catalogueLede: (n) => `${n} scams, each with its script, sample messages, warning signs, what to do and sources. Every entry is also JSON at`,
+    statusNote: { fading: (m) => `Seen less now · newest source ${m}`, archived: (m) => `Archived · newest source ${m}` },
     claims: 'Claims to be', via: 'via', sScript: 'The script', sLooks: 'What it looks like', sLooksNote: 'Examples are invented, written the way scammers write, in the language they arrive in.',
     showOriginal: 'Original', langNames: { es: 'Spanish', pt: 'Portuguese', fr: 'French', de: 'German', it: 'Italian', en: 'English' },
     sSigns: 'Warning signs', sDo: 'What to do', sStory: 'A real case', sReport: 'Who to report it to', sMedia: 'Media', sSources: 'Sources',

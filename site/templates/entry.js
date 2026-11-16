@@ -1,6 +1,6 @@
 import { esc, L, LI, monthYear } from './html.js';
 import { layout, REPO } from './layout.js';
-import { steps } from './parts.js';
+import { steps, statusNote } from './parts.js';
 import { iconFor, UI_ICONS } from './icons.js';
 import { pick } from '../../lib/text.js';
 import { t } from '../i18n.js';
@@ -37,7 +37,7 @@ export function entry({ repo, meta, entry: e, lang: ui = 'en' }) {
 <header class="entry-head">
   <div><p class="eyebrow"><a href="${P}/catalogue/">${esc(t(ui, 'navCatalogue'))}</a> · ${esc(pick(country?.name, ui) ?? e.country)} · <span class="mono">${esc(e.id)}</span></p>
   <h1>${L(e.name, lang)}</h1>
-  <p class="sender">${esc(t(ui, 'claims'))} ${L(e.sender, lang, 'b')} · ${esc(t(ui, 'via'))} ${e.channels.map((c) => esc(t(ui, 'channels')[c] ?? c)).join(', ')}</p></div>
+  <p class="sender">${esc(t(ui, 'claims'))} ${L(e.sender, lang, 'b')} · ${esc(t(ui, 'via'))} ${e.channels.map((c) => esc(t(ui, 'channels')[c] ?? c)).join(', ')}</p>${statusNote(e, ui)}</div>
   ${iconFor(e)}
 </header>
 ${L(e.how, lang, 'p', 'lede')}

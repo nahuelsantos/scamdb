@@ -21,6 +21,14 @@ export function steps(entry, signalsById, lang = 'en', ui = 'en') {
   return `<div class="steps-wrap"><svg class="route-line" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">${ROUTE_LINE}</svg><ol class="steps" style="--n:${entry.steps.length}">${items}</ol></div>`;
 }
 
+/** A note for scams that are not current (fading or archived), with the newest source's month; '' when active. */
+export function statusNote(e, ui = 'en', tag = 'p') {
+  const f = t(ui, 'statusNote')[e.status];
+  if (!f) return '';
+  const newest = e.sources.map((s) => s.date).sort().at(-1);
+  return `<${tag} class="status-note" data-status="${esc(e.status)}">${esc(f(monthYear(newest, t(ui, 'months'))))}</${tag}>`;
+}
+
 /** A catalogue card: English name, the sample message as it arrives (original language). */
 export function card(e, ui = 'en') {
   const ex = e.examples[0]?.text;
@@ -30,6 +38,7 @@ export function card(e, ui = 'en') {
   <h3><a href="${url}">${L(e.name, 'en')}</a></h3>
   ${ex ? `<blockquote>${L(ex, e.lang)}</blockquote>` : ''}
   <div class="chips">${e.channels.map((c) => `<span>${esc(t(ui, 'channels')[c] ?? c)}</span>`).join('')}</div>
+  ${statusNote(e, ui)}
   <div class="count">${esc(t(ui, 'cardCount', e.signals.length, e.sources.length, monthYear(e.updated, t(ui, 'months'))))}</div>
 </article>`;
 }

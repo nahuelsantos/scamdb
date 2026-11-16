@@ -238,3 +238,15 @@ test('the playground gets one entries.json with every country', () => {
   assert.ok(j.entries[0].phrases.en);
   rmSync(dir, { recursive: true });
 });
+test('a fading scam says so on its page and card; an active one does not', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'scamdb-site-'));
+  cpSync(OK, dir, { recursive: true });
+  const e = JSON.parse(readFileSync(join(dir, 'data/ar/scams/ejemplo.json')));
+  writeFileSync(join(dir, 'data/ar/scams/vieja.json'), JSON.stringify({ ...e, id: 'ar/vieja', status: 'fading', sources: [{ ...e.sources[0], date: '2023-08-08' }] }));
+  buildSite(loadRepo(dir), join(dir, 'dist'), meta, dir);
+  const page = (p) => readFileSync(join(dir, 'dist', p), 'utf8');
+  assert.ok(page('catalogue/ar/vieja/index.html').includes('Seen less now · newest source Aug 2023'));
+  assert.ok(!page('catalogue/ar/ejemplo/index.html').includes('status-note'));
+  assert.match(page('catalogue/index.html'), /data-status="fading"/);
+  rmSync(dir, { recursive: true });
+});
