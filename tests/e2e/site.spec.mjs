@@ -56,6 +56,21 @@ test('pasting an English scam gets English signs and a match', async ({ page }) 
   await expect(page.locator('#pg-out .match a').first()).toHaveText('ar/whatsapp-codigo');
 });
 
+test('the API button shows the endpoint JSON', async ({ page }) => {
+  await page.route('**/v1/isitascam', (r) => r.fulfill({ json: { verdict: 'scam', score: null, signals: [], matches: [], engine: { matcher: '1.0.0', scorer: 'matcher' } } }));
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Check with the API' }).click();
+  await expect(page.locator('.api-out')).toBeVisible();
+  await expect(page.locator('.api-out')).toContainText('"verdict": "scam"');
+});
+
+test('a 429 from the API shows its message', async ({ page }) => {
+  await page.route('**/v1/isitascam', (r) => r.fulfill({ status: 429, json: { error: 'too_many_checks', message: 'Daily limit reached (10 checks).' } }));
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Check with the API' }).click();
+  await expect(page.locator('.api-out')).toContainText('Daily limit reached');
+});
+
 test('the API is served as JSON', async ({ request }) => {
   const res = await request.get('/v1/ar/scams.json');
   expect(res.status()).toBe(200);

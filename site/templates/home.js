@@ -2,6 +2,7 @@ import { esc, L } from './html.js';
 import { layout } from './layout.js';
 import { t } from '../i18n.js';
 import { steps, card, entryUrl } from './parts.js';
+import { UI_ICONS } from './icons.js';
 import { pick } from '../../lib/text.js';
 import { sketch, roundRect } from '../../lib/sketch.js';
 
@@ -83,7 +84,8 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <div class="samples" role="group" aria-label="${esc(t(lang, 'pgSamples'))}">${SAMPLES.map((s, i) => `<button type="button" data-sample="${i}" data-text="${esc(s.text)}" aria-pressed="${i === 0}">${esc(labels[i])}</button>`).join('')}</div>
     <label class="sr" for="pg-text">${esc(t(lang, 'pgMessage'))}</label>
     <textarea id="pg-text" rows="5" maxlength="5000">${esc(SAMPLES[0].text)}</textarea>
-    <p class="curl">${esc(t(lang, 'pgSoon'))} <b>POST scamdb.dev/v1/isitascam</b></p>
+    <p class="curl">${esc(t(lang, 'pgSoon'))} <b>POST scamdb.dev/v1/isitascam</b> <button type="button" class="icon-btn api-btn" id="pg-api" aria-label="${esc(t(lang, 'pgApi'))}" title="${esc(t(lang, 'pgApi'))}">${UI_ICONS.send}</button></p>
+    <pre class="api-out" aria-live="polite" hidden></pre>
   </div>
   <div class="pcol" aria-live="polite" id="pg-out" data-strings="${esc(JSON.stringify(strings))}" data-lang="${lang}">${resultHtml(sample, byId, signalsById, lang)}</div>
 </section>
@@ -103,7 +105,7 @@ ${route ? `<section class="route" aria-labelledby="route-h">
   <div class="ep"><code>GET /v1/ar/scams.json</code><p>${esc(t(lang, 'epCountry'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
   <div class="ep"><code>GET /v1/scams/{id}.json</code><p>${esc(t(lang, 'epOne'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
   <div class="ep"><code>POST /v1/reports</code><p>${esc(t(lang, 'epReport'))}</p><span class="tier">${esc(t(lang, 'tierPrivate'))}</span></div>
-  <div class="ep"><code>POST /v1/isitascam</code><p>${esc(t(lang, 'epCheck'))}</p><span class="tier">${esc(t(lang, 'tierSoon'))}</span></div>
+  <div class="ep"><code>POST /v1/isitascam</code><p>${esc(t(lang, 'epCheck'))}</p><span class="tier">${esc(t(lang, 'tierCheck'))}</span></div>
 </section>`;
   return layout({ title: t(lang, 'homeTitle'), description: t(lang, 'homeDesc'), body, path: '/', meta, lang,
     scripts: '<script type="module" src="/assets/playground.js"></script>' });
