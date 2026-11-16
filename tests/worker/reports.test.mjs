@@ -113,3 +113,22 @@ test('a keyed screenshot report without the AI binding is 503; audio is 400', as
   const a = await sendForm(await imageForm({ country: 'ar' }, new File([new Uint8Array(8)], 'a.ogg', { type: 'audio/ogg' })), auth);
   assert.equal(a.status, 400);
 });
+
+test('a report is tagged with its catalogue match and the brands it names; indicators are domains and hashes only', async () => {
+  const r = await post({ ...ok, text: 'Hola, te escribo de ANSES. Te va a llegar un código de WhatsApp, me lo pasás? Llamá al +54 9 11 4567-8901 o entrá a anses-tramite.top/pago' });
+  const { id } = await r.json();
+  const row = await w.db.prepare('SELECT scam_id, brands FROM reports WHERE id = ?').bind(id).first();
+  assert.equal(row.scam_id, 'ar/whatsapp-codigo');
+  assert.equal(row.brands, 'anses,whatsapp');
+  const ind = (await w.db.prepare('SELECT kind, value FROM report_indicators WHERE report_id = ? ORDER BY kind').bind(id).all()).results;
+  assert.deepEqual(ind.map((i) => i.kind), ['domain', 'phone']);
+  assert.equal(ind[0].value, 'anses-tramite.top');
+  assert.match(ind[1].value, /^[0-9a-f]{32}$/);
+  assert.ok(!JSON.stringify(ind).includes('4567'), 'the phone number is never stored');
+});
+test('the same phone number in two reports gives the same hash', async () => {
+  const send = async () => (await (await post({ ...ok, text: `Me llamaron del 011 4567-8901 pidiendo el código ${Math.random()}` })).json()).id;
+  const [a, b] = [await send(), await send()];
+  const v = async (id) => (await w.db.prepare("SELECT value FROM report_indicators WHERE report_id = ? AND kind = 'phone'").bind(id).first()).value;
+  assert.equal(await v(a), await v(b));
+});
