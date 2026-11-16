@@ -1,0 +1,118 @@
+{
+  "id": "nz/deepfake-investment-ad",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“A well-known New Zealander” in an ad or a news story"
+  },
+  "name": {
+    "en": "Fake celebrity investment ad: a deepfake video or “news story” about easy money"
+  },
+  "how": {
+    "en": "An ad on Facebook or Instagram shows a deepfake video or a fake news article in which a well-known New Zealander, such as a politician, journalist, bank CEO or business commentator, seems to recommend an investment. The fake article may carry the logo of a New Zealand news site. You are asked to register, join a WhatsApp “investment advice” group or take a call from a “broker”, who helps you open an account on a trading platform that shows fake profits. Sometimes they ask you to install software that gives them access to your device, and when you try to withdraw you are told to pay fees, but no money comes back."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad or “news story” on social media shows a famous New Zealander praising an investment platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It promises easy money and asks you to register or join a WhatsApp group with a “mentor”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "A “broker” or “mentor” helps you set up an account and may ask you to install software on your device."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "You deposit money and see profits, but to withdraw you are told to pay fees first."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "EXCLUSIVE: Why this well-known Kiwi says every New Zealander should try this new platform before the banks shut it down. Read the full interview: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "en": "Hi, I am your personal account manager. To activate your trading account please deposit 250 USD today and install the support app so I can guide you: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "deepfake video of a politician investing",
+      "famous kiwi recommending a trading platform",
+      "fake news article about investing",
+      "broker called after i registered",
+      "pay fees before i can withdraw",
+      "facebook ad investment whatsapp group"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A famous person seems to recommend an investment in an ad or a “news article”.",
+      "Promises of easy money or guaranteed returns.",
+      "You are moved to WhatsApp or get a call from a “broker” or “mentor”.",
+      "You are asked to install software on your phone or computer.",
+      "You must pay fees or taxes before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link, register or give your details.",
+      "Don’t download apps or install software for someone you met through an ad.",
+      "Report the ad to the social media platform.",
+      "If you paid, stop all contact, contact your bank straight away and ask if the payment can be reversed.",
+      "If you installed remote access software, have the device checked and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/ncsc",
+    "nz/police-105"
+  ],
+  "sources": [
+    {
+      "title": "Surge Of Impersonator Social Media Investment Scams Prompts FMA Warning (Financial Markets Authority press release)",
+      "publisher": "Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU2508/S00362/surge-of-impersonator-social-media-investment-scams-prompts-fma-warning.htm",
+      "date": "2025-08-22"
+    },
+    {
+      "title": "110 scam ads in 24 hours",
+      "publisher": "B2B News",
+      "url": "https://b2bnews.co.nz/?p=81922",
+      "date": "2026-06-12"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "nz/whatsapp-investment-group"
+  ]
+}

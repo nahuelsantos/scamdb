@@ -1,0 +1,117 @@
+{
+  "id": "nz/whatsapp-investment-group",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "en": "“A bank or investment firm” inviting you to a WhatsApp group"
+  },
+  "name": {
+    "en": "WhatsApp investment group: “join our trading class” and install the app"
+  },
+  "how": {
+    "en": "A bulk message invites you to a WhatsApp group about investing, often from someone claiming to work for a New Zealand bank or investment firm. The group looks busy, but most members are bots, and a “professor” and an assistant promise very high returns. You are told to buy crypto and move it into a trading app that comes from a link, QR code or file instead of the official app store, and that needs you to allow “unknown apps”. Small early withdrawals build trust, but large withdrawals need a “fee”, and the app can give the scammers full access to your phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message invites you to a free investment or education group on WhatsApp, Viber or a similar app."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "A “professor” and an assistant share tips and promise big returns, and you get rewards for inviting friends and family."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are asked to change your phone settings to allow unknown apps and install a trading app from a link, QR code or file."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "You buy crypto and move it into the app; when you try to take your money out you are told to pay a fee first."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hello! I am an assistant at a leading NZ investment firm. Our professor is running a FREE trading class on WhatsApp this week. Members are seeing strong daily returns. Join here: [link]"
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "en": "Dear members, please download the trading app from the file pinned above. If your phone blocks it, go to Settings and turn on Install unknown apps. Invite your family to receive bonus rewards!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "invited to a whatsapp investment group",
+      "professor and his assistant",
+      "turn on install unknown apps",
+      "trading app from a link",
+      "pay a fee to withdraw",
+      "rewards for inviting family to invest"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A stranger invites you to an investment group on WhatsApp or Viber.",
+      "Promises of guaranteed or very high returns.",
+      "You get rewards for recruiting friends or family.",
+      "You are asked to allow “unknown apps” or install an app that is not from Google Play or the App Store.",
+      "You must pay a fee before you can withdraw your money."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t install apps from links, QR codes or files shared in a chat, and don’t turn on “install unknown apps”.",
+      "Leave and report the group in WhatsApp, and block the contacts.",
+      "Don’t invest, and don’t share the group with your family or community.",
+      "If you installed the app, back up important files, factory reset the phone, change your passwords from a safe device and turn on two-factor authentication.",
+      "If you sent money, contact your bank straight away and report it to the NCSC."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/ncsc",
+    "nz/police-105"
+  ],
+  "sources": [
+    {
+      "title": "Investment scam linked to remote access",
+      "publisher": "Own Your Online (National Cyber Security Centre)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/investment-scam-gives-scammers-full-access-to-your-phones/",
+      "date": "2025-08-15"
+    },
+    {
+      "title": "High-Risk Scam Hits Tonga, New Zealand Communities (FMA and National Reserve Bank of Tonga release)",
+      "publisher": "Mirage News",
+      "url": "https://www.miragenews.com/high-risk-scam-hits-tonga-new-zealand-1615802/",
+      "date": "2026-02-09"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "nz/deepfake-investment-ad"
+  ]
+}

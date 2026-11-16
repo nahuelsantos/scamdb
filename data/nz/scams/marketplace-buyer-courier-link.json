@@ -1,0 +1,105 @@
+{
+  "id": "nz/marketplace-buyer-courier-link",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "A buyer on Facebook Marketplace or Trade Me"
+  },
+  "name": {
+    "en": "Fake buyer on Marketplace: “I’ll arrange the courier, just click this link”"
+  },
+  "how": {
+    "en": "You list something for sale on Facebook Marketplace or Trade Me. A “buyer” is in a hurry, says they will arrange the courier and sends a link to a site that looks like NZ Post or a courier company. The site asks for your personal and banking details and a code sent to your phone, and the scammers use them to take money from your account. Other fake buyers send a fake screenshot of a bank transfer so you send the item."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A buyer wants your item quickly and offers to arrange the courier or pay through a delivery service."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They send a link to a site that looks like NZ Post or a courier company."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site asks for your card or bank details and a code sent to your phone."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Money is taken from your account, or they send a fake payment screenshot and you lose the item."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi is this still available? I will take it for the asking price. I have already paid for NZ Post courier, just click here to confirm your details and receive the payment: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "buyer sent me a courier link",
+      "nz post link to receive payment",
+      "buyer asked for a code from my bank",
+      "fake payment screenshot from buyer",
+      "marketplace buyer arranged courier"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A buyer who doesn’t ask questions and wants to arrange the courier themselves.",
+      "A link to “receive payment” or “confirm delivery”.",
+      "A site that asks for your bank details or a code sent to your phone.",
+      "A new profile with few friends or details.",
+      "A screenshot of a payment that hasn’t reached your account."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click links from buyers or sellers, and never enter bank details or codes on them.",
+      "Ask for cash on pickup, and don’t send the item until money is in your account.",
+      "Never give a code from your bank to anyone.",
+      "If you entered details, contact your bank straight away and report the profile to the platform."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Stay alert to common scams this holiday season",
+      "publisher": "Own Your Online (National Cyber Security Centre)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/stay-alert-to-common-scams-this-holiday-season/",
+      "date": "2024-11-25"
+    },
+    {
+      "title": "Police warn of scammers posing as buyers targeting online sales platforms",
+      "publisher": "RNZ",
+      "url": "https://www.rnz.co.nz/news/national/536138/police-warn-of-scammers-posing-as-buyers-targeting-online-sales-platforms",
+      "date": "2024-12-09"
+    }
+  ],
+  "updated": "2026-11-16"
+}
