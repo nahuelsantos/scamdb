@@ -20,6 +20,16 @@ export async function authKey(request, env) {
   return { id: row.id, githubId: row.github_id, githubLogin: row.github_login };
 }
 
+/** On scamdb.dev's own pages (X-Requested-With: scamdb, which cross-site requests can't send under our CORS rules, and a
+ * SameSite=Lax cookie), a signed-in person's checks use their key: same limits, same AI score. Null otherwise. */
+export async function sessionKey(request, env) {
+  if (request.headers.get('x-requested-with') !== 'scamdb' || typeof env.SESSION_SECRET !== 'string' || env.SESSION_SECRET.length < 32) return null;
+  const user = await sessionFrom(request, env);
+  if (!user) return null;
+  const row = await env.DB.prepare('SELECT id, github_id, github_login FROM keys WHERE github_id = ?').bind(user.githubId).first();
+  return row ? { id: row.id, githubId: row.github_id, githubLogin: row.github_login } : null;
+}
+
 /** Counts one call of `endpoint` for a key today. */
 export async function recordUsage(db, keyId, endpoint, now = new Date()) {
   await db.prepare('INSERT INTO usage (key_id, day, endpoint, count) VALUES (?, ?, ?, 1) ON CONFLICT (key_id, day, endpoint) DO UPDATE SET count = count + 1')

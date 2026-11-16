@@ -66,7 +66,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
   const sample = matchMessage(SAMPLES[0].text, repo.entries);
   const labels = t(lang, 'pgSampleLabels');
   const strings = { scam: t(lang, 'vScam'), suspicious: t(lang, 'vSuspicious'), not_recognised: t(lang, 'vNone'), noScore: t(lang, 'noScore'),
-    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch') };
+    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch'), apiScore: t(lang, 'apiScore'), apiNoKey: t(lang, 'apiNoKey') };
   const body = `
 <section class="hero">
   <div>
@@ -85,6 +85,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <label class="sr" for="pg-text">${esc(t(lang, 'pgMessage'))}</label>
     <textarea id="pg-text" rows="5" maxlength="5000">${esc(SAMPLES[0].text)}</textarea>
     <p class="curl">${esc(t(lang, 'pgSoon'))} <b>POST scamdb.dev/v1/isitascam</b> <button type="button" class="icon-btn api-btn" id="pg-api" aria-label="${esc(t(lang, 'pgApi'))}" title="${esc(t(lang, 'pgApi'))}">${UI_ICONS.send}</button></p>
+    <p class="api-sum" id="pg-api-sum" aria-live="polite" hidden></p>
     <pre class="api-out" aria-live="polite" hidden></pre>
   </div>
   <div class="pcol" aria-live="polite" id="pg-out" data-strings="${esc(JSON.stringify(strings))}" data-lang="${lang}">${resultHtml(sample, byId, signalsById, lang)}</div>

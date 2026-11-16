@@ -62,6 +62,16 @@ test('the API button shows the endpoint JSON', async ({ page }) => {
   await page.getByRole('button', { name: 'Check with the API' }).click();
   await expect(page.locator('.api-out')).toBeVisible();
   await expect(page.locator('.api-out')).toContainText('"verdict": "scam"');
+  await expect(page.locator('#pg-api-sum')).toContainText('Sign in and create a free key');
+});
+
+test('signed in with a key, the API button sends the site header and shows the AI score', async ({ page }) => {
+  let header;
+  await page.route('**/v1/isitascam', (r) => { header = r.request().headers()['x-requested-with']; return r.fulfill({ json: { verdict: 'scam', score: 0.93, signals: [], matches: [], engine: { matcher: '1.1.0', scorer: 'workers-ai' } } }); });
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Check with the API' }).click();
+  await expect(page.locator('#pg-api-sum')).toContainText('scam probability 93%');
+  expect(header).toBe('scamdb');
 });
 
 test('a 429 from the API shows its message', async ({ page }) => {

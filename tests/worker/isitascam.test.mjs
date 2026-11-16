@@ -170,3 +170,19 @@ test('probe detection counts keyed checks per GitHub account, whatever the IP', 
   assert.equal(r.status, 429);
   assert.equal((await r.json()).error, 'too_many_similar');
 });
+test('on the site, a signed-in visitor with a key is counted as keyed; without the header the cookie is ignored', async () => {
+  const headers = (extra) => ({ 'content-type': 'application/json', cookie: session, 'cf-connecting-ip': '203.0.113.200', ...extra });
+  const send = (extra) => w.fetch('/v1/isitascam', { method: 'POST', headers: headers(extra), body: JSON.stringify({ text: 'una prueba de sesión distinta ' + Math.random() }) });
+  const before = (await w.db.prepare("SELECT COALESCE(SUM(count), 0) AS n FROM usage WHERE endpoint = 'isitascam'").first()).n;
+  assert.equal((await send({ 'x-requested-with': 'scamdb' })).status, 200);
+  const mid = (await w.db.prepare("SELECT COALESCE(SUM(count), 0) AS n FROM usage WHERE endpoint = 'isitascam'").first()).n;
+  assert.equal(mid, before + 1, 'counted against the key');
+  assert.equal((await send({})).status, 200);
+  const after = (await w.db.prepare("SELECT COALESCE(SUM(count), 0) AS n FROM usage WHERE endpoint = 'isitascam'").first()).n;
+  assert.equal(after, mid, 'without X-Requested-With the cookie is not used');
+});
+test('CORS never lets another site send X-Requested-With', async () => {
+  const r = await w.fetch('/v1/isitascam', { method: 'OPTIONS' });
+  assert.ok(!/x-requested-with/i.test(r.headers.get('access-control-allow-headers') ?? ''));
+  assert.notEqual(r.headers.get('access-control-allow-credentials'), 'true');
+});
