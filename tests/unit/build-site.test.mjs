@@ -253,7 +253,7 @@ test('a fading scam says so on its page and card; an active one does not', () =>
 test('docs show POST /v1/isitascam, its limits and that the score is not a probability', () => {
   const { dir, page } = build();
   const html = page('docs/index.html');
-  for (const s of ['POST /v1/isitascam', '10 per IP', '50', 'not a probability', 'report']) assert.ok(html.includes(s), s);
+  for (const s of ['POST /v1/isitascam', '10 per IP', '50', 'not a probability', 'report', 'image=@screenshot.png', 'never stored']) assert.ok(html.includes(s), s);
   assert.ok(!html.includes('currently ar'));
   rmSync(dir, { recursive: true });
 });

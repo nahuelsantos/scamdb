@@ -5,7 +5,7 @@ import { t } from '../i18n.js';
 const PATHS = ['/v1/index.json', '/v1/countries.json', '/v1/signals.json', '/v1/{country}/scams.json', '/v1/{country}/contacts.json',
   '/v1/scams/{country}/{slug}.json', '/v1/scams.json', '/v1/scamdb.zip', '/v1/changes.json'];
 const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 'source', 'turnstileToken'];
-const CHECK_FIELDS = ['text', 'country', 'lang', 'report'];
+const CHECK_FIELDS = ['text', 'country', 'lang', 'report', 'image', 'audio'];
 const CHECK_EXAMPLE = JSON.stringify({ verdict: 'scam', score: null, signals: [{ id: 'asks_for_code', label: 'Asks for a code', evidence: 'read me the 6-digit code' }],
   matches: [{ id: 'nz/bank-fraud-team-call', name: 'Fake bank fraud team', url: 'https://scamdb.dev/v1/scams/nz/bank-fraud-team-call.json', page: 'https://scamdb.dev/catalogue/nz/bank-fraud-team-call/' }],
   whatToDo: ['Hang up and call your bank on the number on your card.'], reportTo: 'https://scamdb.dev/v1/nz/contacts.json', engine: { matcher: '1.0.0', scorer: 'matcher' }, datasetVersion: '…' }, null, 2);
@@ -33,6 +33,9 @@ ${FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(fields[i])}
 <pre class="code"><code>curl -X POST https://scamdb.dev/v1/isitascam \\
   -H "Content-Type: application/json" \\
   -d '{"text": "This is the fraud team of your bank, read me the 6-digit code", "lang": "en"}'</code></pre>
+<pre class="code"><code>curl -X POST https://scamdb.dev/v1/isitascam \\
+  -H "Authorization: Bearer sk_…" \\
+  -F image=@screenshot.png -F lang=en</code></pre>
 <div class="scroll"><table><thead><tr><th>POST /v1/isitascam</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
 ${CHECK_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lang, 'dCheckRows')[i])}</td></tr>`).join('')}</tbody></table></div>
 <pre class="code"><code>${esc(CHECK_EXAMPLE)}</code></pre>
