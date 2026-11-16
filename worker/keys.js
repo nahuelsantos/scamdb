@@ -11,3 +11,9 @@ export async function authKey(request, env) {
   const row = await env.DB.prepare('SELECT id, github_login FROM keys WHERE key_hash = ?').bind(await hashKey(m[1])).first();
   return row ? { id: row.id, githubLogin: row.github_login } : null;
 }
+
+/** Counts one call of `endpoint` for a key today. */
+export async function recordUsage(db, keyId, endpoint, now = new Date()) {
+  await db.prepare('INSERT INTO usage (key_id, day, endpoint, count) VALUES (?, ?, ?, 1) ON CONFLICT (key_id, day, endpoint) DO UPDATE SET count = count + 1')
+    .bind(keyId, now.toISOString().slice(0, 10), endpoint).run();
+}
