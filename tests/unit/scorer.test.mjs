@@ -176,3 +176,19 @@ test('an empty response falls back to the chat-completions content; both empty s
   assert.equal(await scoreWithWorkersAI(empty, { text: TEXT, catalogue }, { diag }), null);
   assert.deepEqual(diag, { reason: 'answer', detail: 'empty answer (finish_reason: length)' });
 });
+
+test('concurrent checks share one catalogue embedding, and a failed one is retried next time', async () => {
+  _resetCache();
+  let catalogueCalls = 0, fail = true;
+  const ai = { run: async (model, input) => {
+    if (model !== MODELS.embed) return { response: { verdict: 'scam', score: 0.9, signals: [] } };
+    if (input.text.length > 1) { catalogueCalls++; await new Promise((r) => setTimeout(r, 20)); if (fail) throw new Error('429'); }
+    return { data: input.text.map(() => [1, 0]) };
+  } };
+  const first = await Promise.all([1, 2, 3].map(() => scoreWithWorkersAI(ai, { text: TEXT, catalogue })));
+  assert.deepEqual(first, [null, null, null]);
+  assert.equal(catalogueCalls, 1);
+  fail = false;
+  assert.equal((await scoreWithWorkersAI(ai, { text: TEXT, catalogue })).verdict, 'scam');
+  assert.equal(catalogueCalls, 2);
+});
