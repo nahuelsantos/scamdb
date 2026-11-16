@@ -10,8 +10,8 @@ export async function hashKey(key) {
 export async function authKey(request, env) {
   const m = (request.headers.get('authorization') ?? '').match(/^Bearer (sk_[A-Za-z0-9_-]{43})$/);
   if (!m) return null;
-  const row = await env.DB.prepare('SELECT id, github_login FROM keys WHERE key_hash = ?').bind(await hashKey(m[1])).first();
-  return row ? { id: row.id, githubLogin: row.github_login } : null;
+  const row = await env.DB.prepare('SELECT id, github_id, github_login FROM keys WHERE key_hash = ?').bind(await hashKey(m[1])).first();
+  return row ? { id: row.id, githubId: row.github_id, githubLogin: row.github_login } : null;
 }
 
 /** Counts one call of `endpoint` for a key today. */

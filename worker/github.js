@@ -43,4 +43,8 @@ export async function authCallback(request, env) {
   }
 }
 
-export const logout = () => redirect('/account/', [setCookie('scamdb_session', '', 0)]);
+/** POST /auth/logout from the account page's script (the site CSP blocks plain form posts). */
+export function logout(request) {
+  if (request.headers.get('x-requested-with') !== 'scamdb') return error(403, 'csrf', 'Missing X-Requested-With: scamdb.');
+  return new Response(null, { status: 204, headers: { 'set-cookie': setCookie('scamdb_session', '', 0) } });
+}

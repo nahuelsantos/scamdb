@@ -60,8 +60,16 @@ test('a GitHub failure sends you back to the account page with an error', async 
   assert.equal(r.status, 302);
   assert.equal(r.headers.get('location'), '/account/?error=github');
 });
-test('logout clears the session', async () => {
-  const r = await w.fetch('/auth/logout', { method: 'POST' });
-  assert.equal(r.status, 302);
+
+
+test('logout needs the X-Requested-With header (no cross-site sign-out)', async () => {
+  assert.equal((await w.fetch('/auth/logout', { method: 'POST' })).status, 403);
+  const r = await w.fetch('/auth/logout', { method: 'POST', headers: { 'x-requested-with': 'scamdb' } });
+  assert.equal(r.status, 204);
   assert.match(cookieOf(r, 'scamdb_session'), /Max-Age=0/);
+});
+test('sign-in on www moves to the main domain first', async () => {
+  const r = await w.mf.dispatchFetch('https://www.scamdb.dev/auth/github', { redirect: 'manual' });
+  assert.equal(r.status, 301);
+  assert.equal(r.headers.get('location'), 'https://scamdb.dev/auth/github');
 });

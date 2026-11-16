@@ -42,11 +42,13 @@ export async function handleReport(request, env) {
 
   const now = new Date();
   const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
-  if (!(await hit(env.DB, 'reports:global', LIMITS.global, now)).ok)
-    throw new HttpError(503, 'reports_paused', 'We are receiving too many reports today. Please try again tomorrow.', retry);
-  const bucket = key ? `reports:key:${key.id}` : `reports:ip:${await ipHash(ip, env.IP_SALT, utcDay(now))}`;
+  // Per-sender limit first, so refused requests never use up the shared daily cap. Keyed senders are counted
+  // per GitHub account, so deleting and recreating a key does not reset the limit.
+  const bucket = key ? `reports:gh:${key.githubId}` : `reports:ip:${await ipHash(ip, env.IP_SALT, utcDay(now))}`;
   if (!(await hit(env.DB, bucket, key ? LIMITS.keyed : LIMITS.keyless, now)).ok)
     throw new HttpError(429, 'too_many_reports', 'Daily report limit reached. Thank you, and try again tomorrow.', retry);
+  if (!(await hit(env.DB, 'reports:global', LIMITS.global, now)).ok)
+    throw new HttpError(503, 'reports_paused', 'We are receiving too many reports today. Please try again tomorrow.', retry);
 
   const id = crypto.randomUUID();
   await env.DB.prepare('INSERT INTO reports (id, created_at, country, channel, text, what_happened, contact, source, key_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')

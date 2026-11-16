@@ -49,7 +49,7 @@ test('a keyed report needs no Turnstile, counts in usage and is limited at 200 a
   assert.equal(me.limits.reports, 200);
   const keyRow = await w.db.prepare('SELECT id FROM keys WHERE github_id = 7').first();
   const day = new Date().toISOString().slice(0, 10);
-  await w.db.prepare('INSERT INTO hits (bucket, day, count) VALUES (?, ?, 200) ON CONFLICT (bucket, day) DO UPDATE SET count = 200').bind(`reports:key:${keyRow.id}`, day).run();
+  await w.db.prepare('INSERT INTO hits (bucket, day, count) VALUES (?, ?, 200) ON CONFLICT (bucket, day) DO UPDATE SET count = 200').bind('reports:gh:7', day).run();
   assert.equal((await report(key)).status, 429);
 });
 test('DELETE removes the key', async () => {
@@ -58,4 +58,23 @@ test('DELETE removes the key', async () => {
   const me = await (await w.fetch('/v1/keys/me', { headers: { cookie: session } })).json();
   assert.equal(me.hasKey, false);
   assert.equal(me.prefix, null);
+});
+test('refused keyed reports do not use up the global daily cap', async () => {
+  const { key } = await create();
+  const day = new Date().toISOString().slice(0, 10);
+  await w.db.prepare('INSERT INTO hits (bucket, day, count) VALUES (?, ?, 200) ON CONFLICT (bucket, day) DO UPDATE SET count = 200').bind('reports:gh:7', day).run();
+  const before = (await w.db.prepare("SELECT count FROM hits WHERE bucket = 'reports:global' AND day = ?").bind(day).first())?.count ?? 0;
+  for (let i = 0; i < 5; i++) assert.equal((await report(key)).status, 429);
+  const afterCount = (await w.db.prepare("SELECT count FROM hits WHERE bucket = 'reports:global' AND day = ?").bind(day).first())?.count ?? 0;
+  assert.equal(afterCount, before);
+});
+test('deleting and recreating a key does not reset the daily limit', async () => {
+  await create();
+  await w.fetch('/v1/keys/me', { method: 'DELETE', headers: auth() });
+  const { key } = await create();
+  assert.equal((await report(key)).status, 429); // still over 200 for this GitHub account today
+});
+test('a tampered session cookie on /v1/keys/me is 401', async () => {
+  const r = await w.fetch('/v1/keys/me', { headers: { cookie: session.slice(0, -2) + 'xx' } });
+  assert.equal(r.status, 401);
 });

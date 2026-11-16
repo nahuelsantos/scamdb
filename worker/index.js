@@ -29,9 +29,15 @@ export async function handle(request, env, ctx) {
   const { pathname } = new URL(request.url);
   const route = ROUTES.find(([method, re]) => method === request.method && re.test(pathname));
   const isReports = pathname === '/v1/reports';
+  const url = new URL(request.url);
   try {
     if (!route) return env.ASSETS.fetch(request);
-    if (route[3] && !configured(env, route[3])) throw new HttpError(503, 'not_configured', 'This part of scamdb is not switched on yet.');
+    // Sign-in cookies live on scamdb.dev only, so sign-in and keys always happen there (www would lose the state cookie).
+    if (url.hostname === 'www.scamdb.dev' && pathname.startsWith('/auth/')) return Response.redirect(`https://scamdb.dev${pathname}${url.search}`, 301);
+    if (route[3] && !configured(env, route[3])) {
+      if (pathname.startsWith('/auth/github')) return new Response(null, { status: 302, headers: { location: '/account/?error=setup' } });
+      throw new HttpError(503, 'not_configured', 'This part of scamdb is not switched on yet.');
+    }
     return await route[2](request, env, ctx);
   } catch (e) {
     const r = e instanceof HttpError ? error(e.status, e.code, e.message, e.headers) : error(500, 'internal', 'Something went wrong on our side.');

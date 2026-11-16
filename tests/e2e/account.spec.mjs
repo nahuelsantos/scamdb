@@ -50,3 +50,38 @@ for (const scheme of ['light', 'dark']) {
     expect(r.violations.filter((v) => ['serious', 'critical'].includes(v.impact)).map((v) => v.id)).toEqual([]);
   });
 }
+
+test('sign out posts with the CSRF header and goes back to signed out', async ({ page }) => {
+  let signedIn = true, header;
+  await page.route('**/v1/keys/me', (r) => r.fulfill(signedIn ? { json: me() } : { status: 401, json: {} }));
+  await page.route('**/auth/logout', (r) => { header = r.request().headers()['x-requested-with']; signedIn = false; return r.fulfill({ status: 204 }); });
+  await page.goto('/account/');
+  await page.getByRole('button', { name: 'Sign out' }).click();
+  await expect(page.getByRole('link', { name: 'Sign in with GitHub' })).toBeVisible();
+  expect(header).toBe('scamdb');
+});
+
+test('replacing a key asks first, and cancelling does nothing', async ({ page }) => {
+  let posted = false;
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me({ hasKey: true, prefix: 'sk_abcd…' }) }));
+  await page.route('**/v1/keys', (r) => { posted = true; return r.fulfill({ status: 201, json: { key: 'sk_x', prefix: 'sk_x…' } }); });
+  await page.goto('/account/');
+  page.once('dialog', (d) => d.dismiss());
+  await page.getByRole('button', { name: 'Replace key' }).click();
+  await page.waitForTimeout(300);
+  expect(posted).toBe(false);
+});
+
+test('an error while signed in is shown', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me() }));
+  await page.route('**/v1/keys', (r) => r.fulfill({ status: 503, json: { error: 'not_configured' } }));
+  await page.goto('/account/');
+  await page.getByRole('button', { name: 'Create key' }).click();
+  await expect(page.locator('#acc-err')).toBeVisible();
+});
+
+test('sign-in not switched on yet is explained', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ status: 503, json: { error: 'not_configured' } }));
+  await page.goto('/account/?error=setup');
+  await expect(page.locator('#acc-err')).toContainText('not switched on yet');
+});
