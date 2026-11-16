@@ -1,0 +1,124 @@
+{
+  "id": "mx/fake-rental-listing",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “arrendador” en redes sociales",
+    "en": "A “landlord” on social media"
+  },
+  "name": {
+    "es": "Renta falsa en redes: “deposite para apartar el depa”",
+    "en": "Fake rental on social media: “pay a deposit to hold the apartment”"
+  },
+  "how": {
+    "es": "En redes sociales ves una casa o departamento en renta a un precio muy bajo, con buenas fotos. Cuando preguntas, te pasan a WhatsApp, te mandan una identificación y un contrato falsos y te piden un anticipo para apartarlo antes de verlo o firmar. Puede ser poco o varios meses de renta. Cuando pagas, borran el anuncio y no vuelven a contestar.",
+    "en": "On social media you see a house or apartment for rent at a very low price, with nice photos. When you ask, they move you to WhatsApp, send you a fake ID and contract and ask for a deposit to hold it before you see it or sign. It can be a small amount or several months’ rent. Once you pay, they delete the ad and stop answering."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un depa o casa en renta muy barato en redes sociales.",
+        "en": "You see a very cheap apartment or house for rent on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pasan a WhatsApp y te mandan identificación y contrato.",
+        "en": "They move you to WhatsApp and send you an ID and a contract."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apuran: “hay más interesados”.",
+        "en": "They rush you: “other people are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden un anticipo para apartarlo antes de verlo.",
+        "en": "They ask for a deposit to hold it before you see it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, sí sigue disponible 😊 Hay varias personas interesadas, si me depositas $6,000 de anticipo hoy te lo aparto y el fin de semana firmamos. Te paso mi INE para que tengas confianza.",
+        "en": "Hi, yes it’s still available 😊 Several people are interested, if you deposit $6,000 today I’ll hold it for you and we sign at the weekend. I’ll send you my ID so you can trust me."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "deposito para apartar el departamento",
+      "renta en facebook muy barata",
+      "anticipo para rentar sin verlo",
+      "el arrendador ya no contesta",
+      "departamento en renta fraude"
+    ],
+    "en": [
+      "deposit to hold the apartment",
+      "very cheap rental on facebook",
+      "advance payment before seeing the place",
+      "the landlord stopped answering",
+      "fake apartment for rent"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy por debajo de lo normal en la zona.",
+      "Te piden pagar antes de ver el lugar o firmar.",
+      "“Hay más interesados, decide hoy”.",
+      "No pueden mostrarte el lugar en persona ni en videollamada en vivo."
+    ],
+    "en": [
+      "Price far below normal for the area.",
+      "They ask for payment before you see the place or sign.",
+      "“Others are interested, decide today”.",
+      "They can’t show you the place in person or on a live video call."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Visita el lugar o pide una videollamada en vivo antes de pagar.",
+      "Pide identificación y comprueba que la propiedad esté a nombre de quien renta.",
+      "No des anticipos sin contrato firmado; paga solo a cuentas a nombre del arrendador.",
+      "Si ya pagaste, guarda pruebas, llama a tu banco y denuncia ante la Policía Cibernética."
+    ],
+    "en": [
+      "Visit the place or ask for a live video call before paying.",
+      "Ask for ID and check the property is in the name of the person renting it.",
+      "Don’t pay deposits without a signed contract; pay only into accounts in the landlord’s name.",
+      "If you already paid, keep evidence, call your bank and report to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "La SSPC emite recomendaciones para evitar estafas de anuncios en renta de inmuebles en redes sociales",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/la-sspc-emite-recomendaciones-para-evitar-estafas-de-anuncios-en-renta-de-inmuebles-en-redes-sociales?idiom=es",
+      "date": "2025-12-26"
+    }
+  ],
+  "updated": "2026-11-16"
+}

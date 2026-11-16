@@ -1,0 +1,140 @@
+{
+  "id": "mx/fake-investment-platform",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Una plataforma de inversión, a veces con video de un funcionario",
+    "en": "An investment platform, sometimes with a video of an official"
+  },
+  "name": {
+    "es": "Plataforma de inversión falsa: “ganancias altas y sin riesgo”",
+    "en": "Fake investment platform: “high returns, no risk”"
+  },
+  "how": {
+    "es": "Ves anuncios, páginas o apps que prometen ganancias rápidas, altas y sin riesgo. Algunas usan videos hechos con inteligencia artificial donde un funcionario o una persona famosa invita a invertir. Al principio te muestran ganancias o te dejan retirar poco para que confíes y metas más dinero. Después bloquean tu cuenta o te piden pagos extra para retirar, y pierdes todo.",
+    "en": "You see ads, websites or apps promising fast, high, risk-free returns. Some use AI-made videos in which a public official or a celebrity invites you to invest. At first they show gains or let you withdraw a little so you trust them and put in more money. Then they block your account or ask for extra payments to withdraw, and you lose everything."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio o un video que promete ganancias altas y sin riesgo.",
+        "en": "You see an ad or video promising high, risk-free returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "A veces el video usa la cara y la voz de un funcionario, hechas con IA.",
+        "en": "Sometimes the video uses an official’s face and voice, made with AI."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te muestran ganancias o te dejan retirar poco para que metas más.",
+        "en": "They show gains or let you withdraw a little so you invest more."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Cuando quieres sacar tu dinero, bloquean la cuenta o piden más pagos.",
+        "en": "When you want your money out, they block the account or ask for more payments."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Invierte desde $4,000 y recibe ganancias diarias garantizadas 📈 Programa respaldado por el gobierno. Cupo limitado, regístrate hoy: [enlace]",
+        "en": "Invest from $4,000 and get guaranteed daily profits 📈 Government-backed program. Limited places, sign up today: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "plataforma de inversion falsa",
+      "ganancias garantizadas",
+      "invertir por un anuncio en redes",
+      "no me dejan retirar mi dinero",
+      "video de un funcionario invitando a invertir",
+      "me piden pagar para retirar",
+      "plataforma de inversion",
+      "ganancias garantizadas diarias",
+      "inversion respaldada por el gobierno",
+      "invierte desde poco dinero"
+    ],
+    "en": [
+      "fake investment platform",
+      "guaranteed returns",
+      "they won't let me withdraw",
+      "video of an official promoting an investment",
+      "pay a fee to withdraw my money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganancias altas, fijas o “sin riesgo”.",
+      "Videos de funcionarios o famosos recomendando invertir.",
+      "Te dejan retirar poco al principio.",
+      "Te piden pagar comisiones o impuestos para sacar tu dinero."
+    ],
+    "en": [
+      "High, fixed or “risk-free” returns.",
+      "Videos of officials or celebrities recommending the investment.",
+      "They let you withdraw a little at first.",
+      "They ask you to pay fees or taxes to get your money out."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Verifica que la empresa esté registrada y supervisada (CNBV y CONDUSEF).",
+      "No inviertas por recomendaciones en redes, grupos o videos.",
+      "No pagues nada para “liberar” tus ganancias.",
+      "Si ya invertiste, guarda pruebas, llama a tu banco y denuncia ante la Policía Cibernética."
+    ],
+    "en": [
+      "Check that the company is registered and supervised (CNBV and CONDUSEF).",
+      "Don’t invest because of recommendations on social media, groups or videos.",
+      "Don’t pay anything to “release” your profits.",
+      "If you already invested, keep evidence, call your bank and report to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/condusef",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "SSPC emite recomendaciones para prevenir fraudes en inversiones y plataformas financieras irregulares",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/sspc-emite-recomendaciones-para-prevenir-fraudes-en-inversiones-y-plataformas-financieras-irregulares?idiom=es",
+      "date": "2026-06-18"
+    },
+    {
+      "title": "SSPC emite recomendaciones para evitar fraudes relacionados con videos hechos con inteligencia artificial",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/sspc-emite-recomendaciones-para-evitar-fraudes-relacionados-con-videos-hechos-con-inteligencia-artificial?idiom=es",
+      "date": "2025-09-05"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/money-recovery-scam"
+  ]
+}

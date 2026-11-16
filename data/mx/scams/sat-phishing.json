@@ -1,0 +1,141 @@
+{
+  "id": "mx/sat-phishing",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "es": "“SAT” o “Buzón Tributario”",
+    "en": "“SAT” or “Buzón Tributario” (tax mailbox)"
+  },
+  "name": {
+    "es": "Correo falso del SAT: “tiene un adeudo” o “tiene una devolución pendiente”",
+    "en": "Fake SAT email: “you owe tax” or “you have a refund pending”"
+  },
+  "how": {
+    "es": "Te llega un correo o un SMS con el logo del SAT que dice que tienes un adeudo fiscal, una devolución de impuestos pendiente o una notificación que debes revisar. El enlace lleva a una página que copia la del SAT y te pide tu RFC, CURP, contraseña o datos bancarios. Con eso roban tu identidad o tu dinero. Suelen llegar en temporada de declaraciones.",
+    "en": "You get an email or text with the SAT logo saying you owe tax, have a tax refund pending, or have a notice you must check. The link goes to a page that copies the SAT site and asks for your RFC, CURP, password or bank details. With that they steal your identity or your money. They often arrive during tax-return season."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un correo o SMS “del SAT” sobre un adeudo, una devolución o una notificación.",
+        "en": "You get an email or text “from the SAT” about a debt, a refund or a notice."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dan poco tiempo para atenderlo o te amenazan con multas.",
+        "en": "They give you little time to deal with it or threaten fines."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una copia de la página del SAT.",
+        "en": "The link goes to a copy of the SAT website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden RFC, contraseña, CURP o los datos de tu tarjeta.",
+        "en": "They ask for your RFC, password, CURP or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "SAT: Usted tiene una devolución de impuestos pendiente por $6,820.00. Para recibirla, valide sus datos bancarios antes de 48 horas en: [enlace]",
+        "en": "SAT: You have a pending tax refund of $6,820.00. To receive it, confirm your bank details within 48 hours at: [link]"
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "es": "SAT informa: presenta un adeudo fiscal. Evite recargos y regularice su situación hoy: [enlace]",
+        "en": "SAT notice: you have a tax debt. Avoid surcharges and settle it today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo del sat",
+      "devolucion de impuestos pendiente",
+      "tengo un adeudo con el sat",
+      "pagina falsa del sat",
+      "me pidieron mi rfc y contraseña",
+      "notificacion del buzon tributario"
+    ],
+    "en": [
+      "email from the sat",
+      "pending tax refund",
+      "i owe money to the sat",
+      "fake sat website",
+      "they asked for my rfc and password"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El SAT no manda enlaces por correo para trámites o validaciones.",
+      "Faltas de ortografía o una dirección de correo rara.",
+      "Una página que no es la oficial del SAT.",
+      "Prisa: “antes de 48 horas”, “hoy mismo”."
+    ],
+    "en": [
+      "The SAT doesn’t send links by email for procedures or validations.",
+      "Spelling mistakes or an odd email address.",
+      "A website that isn’t the official SAT one.",
+      "Rush: “within 48 hours”, “today”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace ni los archivos adjuntos.",
+      "Revisa tus pendientes entrando tú a la página oficial del SAT o a tu Buzón Tributario.",
+      "Si pusiste tu contraseña, cámbiala; si diste datos de tu tarjeta, llama a tu banco.",
+      "Reporta la página falsa a la Policía Cibernética."
+    ],
+    "en": [
+      "Don’t open the link or attachments.",
+      "Check anything pending by going to the official SAT site or your Buzón Tributario yourself.",
+      "If you entered your password, change it; if you gave card details, call your bank.",
+      "Report the fake page to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "El SAT pide usar canales oficiales para evitar fraudes",
+      "publisher": "Expansión",
+      "url": "https://expansion.mx/economia/2026/04/04/el-sat-pide-usar-canales-oficiales-para-evitar-fraudes",
+      "date": "2026-04-04"
+    },
+    {
+      "title": "Condusef advierte sobre el envío masivo de mensajes falsos de multas y paquetes",
+      "publisher": "El Imparcial",
+      "url": "https://www.elimparcial.com/dinero/2026/08/24/condusef-advierte-sobre-el-envio-masivo-de-mensajes-falsos-de-multas-y-paquetes-disenado-para-defraudar-a-trabajadores-de-30-a-50-anos/",
+      "date": "2026-08-24"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/sat-deposit-call"
+  ]
+}

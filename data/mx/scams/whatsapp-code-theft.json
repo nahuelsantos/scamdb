@@ -1,0 +1,156 @@
+{
+  "id": "mx/whatsapp-code-theft",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Soporte técnico” o “la paquetería”",
+    "en": "“Tech support” or “the delivery company”"
+  },
+  "name": {
+    "es": "Robo de WhatsApp con el código de 6 dígitos",
+    "en": "WhatsApp theft with the 6-digit code"
+  },
+  "how": {
+    "es": "Te contactan haciéndose pasar por soporte técnico o por una paquetería que dice tener un paquete para ti. Te avisan que te va a llegar un código por SMS “para confirmar la entrega” o “verificar tu cuenta” y te piden que se lo dictes. Ese código es el de tu WhatsApp: con él abren tu cuenta en otro celular. Después escriben a tus contactos haciéndose pasar por ti para pedirles dinero.",
+    "en": "Someone contacts you pretending to be tech support or a delivery company that says it has a parcel for you. They say a code will arrive by text “to confirm delivery” or “verify your account” and ask you to read it out. That code is your WhatsApp code: with it they open your account on another phone. Then they message your contacts pretending to be you and ask them for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contacta “soporte técnico” o una paquetería con un supuesto paquete.",
+        "en": "“Tech support” or a delivery company contacts you about a supposed parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que te llegará un código por SMS y te piden que se lo dictes.",
+        "en": "They say a code will arrive by text and ask you to read it to them."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Te apuran para que no revises qué es ese código.",
+        "en": "They rush you so you don’t check what the code is."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Con el código se quedan con tu WhatsApp en otro celular.",
+        "en": "With the code they take over your WhatsApp on another phone."
+      }
+    },
+    {
+      "text": {
+        "es": "Desde tu cuenta piden dinero a tus contactos.",
+        "en": "From your account they ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le hablo de la paquetería. Tenemos un paquete a su nombre. Le acaba de llegar un código por mensaje para confirmar la entrega, ¿me lo puede dictar, por favor?",
+        "en": "Good afternoon, I’m calling from the delivery company. We have a parcel in your name. You just got a code by text to confirm delivery, can you read it to me, please?"
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "es": "Hola, somos soporte de WhatsApp. Detectamos actividad inusual en tu cuenta. Para no suspenderla envíanos el código de 6 dígitos que te llegó.",
+        "en": "Hi, this is WhatsApp support. We detected unusual activity on your account. To avoid suspension, send us the 6-digit code you received."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo de whatsapp",
+      "codigo de 6 digitos",
+      "me robaron el whatsapp",
+      "me hackearon el whatsapp",
+      "llamada de paqueteria pidiendo un codigo",
+      "soporte tecnico de whatsapp",
+      "piden dinero desde mi whatsapp",
+      "le hablo de la paqueteria",
+      "tenemos un paquete a su nombre",
+      "me pidieron que les dictara un codigo"
+    ],
+    "en": [
+      "they asked for my whatsapp code",
+      "6 digit code",
+      "my whatsapp was stolen",
+      "my whatsapp got hacked",
+      "delivery company asked for a code",
+      "whatsapp support asked for my code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie legítimo te pide el código que te llega por SMS.",
+      "Una paquetería o “soporte” que necesita un código para entregar.",
+      "Prisa y presión para que lo dictes ya.",
+      "Un contacto te pide algo raro, como dinero urgente."
+    ],
+    "en": [
+      "No legitimate company asks for the code you get by text.",
+      "A delivery company or “support” that needs a code to deliver.",
+      "Rush and pressure to read it out now.",
+      "A contact asks for something unusual, like urgent money."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca compartas el código de 6 dígitos con nadie.",
+      "Activa la verificación en dos pasos en WhatsApp.",
+      "Si un contacto te pide dinero, confírmalo con una llamada por otro medio.",
+      "Si te robaron la cuenta, avisa a tus contactos y sigue los pasos de recuperación de WhatsApp."
+    ],
+    "en": [
+      "Never share the 6-digit code with anyone.",
+      "Turn on two-step verification in WhatsApp.",
+      "If a contact asks for money, confirm with a call by another channel.",
+      "If your account was stolen, warn your contacts and follow WhatsApp’s recovery steps."
+    ]
+  },
+  "reportTo": [
+    "mx/whatsapp-ayuda",
+    "mx/policia-cibernetica"
+  ],
+  "sources": [
+    {
+      "title": "La Policía Cibernética alerta a los usuarios de WhatsApp para evitar estafas: no compartas tu código de verificación",
+      "publisher": "ADN40",
+      "url": "https://www.adn40.mx/es-tendencia/2026-09-07/la-policia-cibernetica-alerta-a-los-usuarios-de-whatsapp-para-evitar-estafas-no-compartas-tu-codigo-de-verificacion/",
+      "date": "2026-09-07"
+    },
+    {
+      "title": "La SSPC emite recomendaciones para evitar fraudes en aplicaciones de mensajería instantánea en el marco del Mundial",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/la-sspc-emite-recomendaciones-para-evitar-fraudes-en-aplicaciones-de-mensajeria-instantanea-en-el-marco-del-mundial?idiom=es",
+      "date": "2026-06-10"
+    },
+    {
+      "title": "Estafadores se hacen pasar por paquetería para robar líneas de WhatsApp: así operan",
+      "publisher": "Luz Noticias",
+      "url": "https://www.luznoticias.mx/2026-05-28/mexico/estafadores-se-hacen-pasar-por-paqueteria-para-robar-lineas-de-whatsapp-asi-operan--video/291028",
+      "date": "2026-05-28"
+    }
+  ],
+  "updated": "2026-11-16"
+}

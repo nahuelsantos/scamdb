@@ -1,0 +1,128 @@
+{
+  "id": "mx/advance-fee-loan",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Una financiera con nombre real",
+    "en": "A lender using a real company’s name"
+  },
+  "name": {
+    "es": "Préstamo con anticipo: “deposite para liberar su crédito”",
+    "en": "Advance-fee loan: “make a deposit to release your loan”"
+  },
+  "how": {
+    "es": "Una supuesta financiera te ofrece un crédito por redes sociales, una página o una app. Usa el nombre, el logo y hasta los datos de una financiera real registrada, para que confíes. Te aprueban rápido, pero antes de darte el dinero te piden un depósito a una cuenta personal para “liberar”, “gestionar” o “activar” el crédito, o para un seguro. Pagas y el préstamo nunca llega.",
+    "en": "A so-called lender offers you a loan on social media, a website or an app. It uses the name, logo and even the details of a real, registered lender so you trust it. You’re approved quickly, but before they give you the money they ask for a deposit to a personal account to “release”, “process” or “activate” the loan, or for insurance. You pay and the loan never arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen un crédito usando el nombre y el logo de una financiera real.",
+        "en": "They offer you a loan using the name and logo of a real lender."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te lo aprueban rápido y sin revisar casi nada.",
+        "en": "You’re approved quickly with hardly any checks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Antes de darte el dinero piden un depósito para “liberar” o “activar” el crédito.",
+        "en": "Before giving you the money they ask for a deposit to “release” or “activate” the loan."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "El depósito es a una cuenta personal y después dejan de contestar.",
+        "en": "The deposit goes to a personal account and then they stop answering."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicidades! Su crédito por $35,000 fue APROBADO. Para liberarlo solo falta cubrir el pago de apertura y seguro de $1,500. Envíe su comprobante por este medio.",
+        "en": "Congratulations! Your $35,000 loan was APPROVED. To release it you only need to pay the $1,500 opening and insurance fee. Send your receipt here."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "deposito para liberar el credito",
+      "pago por adelantado para un prestamo",
+      "me pidieron un anticipo para el prestamo",
+      "credito aprobado pero piden pagar",
+      "financiera falsa",
+      "comision de apertura antes del prestamo"
+    ],
+    "en": [
+      "deposit to release the loan",
+      "upfront fee for a loan",
+      "they asked for an advance payment",
+      "loan approved but they want a fee first",
+      "fake lender"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden pagar antes de recibir el préstamo.",
+      "El depósito es a una cuenta de una persona, no de la empresa.",
+      "Aprobación inmediata sin revisar tu historial.",
+      "Todo se hace por WhatsApp o redes, sin contrato formal."
+    ],
+    "en": [
+      "They ask you to pay before you get the loan.",
+      "The deposit goes to a person’s account, not the company’s.",
+      "Instant approval without checking your history.",
+      "Everything happens on WhatsApp or social media, with no formal contract."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Verifica en el SIPRES de la CONDUSEF que la financiera exista y que sus datos coincidan.",
+      "Confirma la oferta llamando a la financiera por los canales registrados en el SIPRES.",
+      "No deposites dinero antes de firmar un contrato formal.",
+      "Si ya pagaste, llama a tu banco y denuncia."
+    ],
+    "en": [
+      "Check in CONDUSEF’s SIPRES register that the lender exists and its details match.",
+      "Confirm the offer by calling the lender through the channels listed in SIPRES.",
+      "Don’t deposit money before signing a formal contract.",
+      "If you already paid, call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "mx/condusef",
+    "mx/tu-banco",
+    "mx/policia-cibernetica"
+  ],
+  "sources": [
+    {
+      "title": "La CONDUSEF informa que 15 Instituciones Financieras fueron afectadas por suplantación",
+      "publisher": "CONDUSEF",
+      "url": "https://www.gob.mx/condusef/prensa/la-condusef-informa-que-15-instituciones-financieras-fueron-afectadas-por-suplantacion?idiom=es",
+      "date": "2026-11-10"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/loan-shark-apps"
+  ]
+}

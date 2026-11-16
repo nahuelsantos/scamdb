@@ -1,0 +1,129 @@
+{
+  "id": "mx/money-recovery-scam",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "es": "“Fiscalía digital” o “despacho de recuperación”",
+    "en": "“Digital prosecutor’s office” or “recovery firm”"
+  },
+  "name": {
+    "es": "“Recuperamos el dinero que te robaron”: la falsa fiscalía digital",
+    "en": "“We’ll get back the money you lost”: the fake digital prosecutor"
+  },
+  "how": {
+    "es": "Si ya fuiste víctima de un fraude, te contacta alguien que dice ser de una fiscalía especializada en delitos digitales, de tu banco o de una empresa de ciberseguridad. Usa logos oficiales, credenciales y documentos falsos. Te garantiza recuperar tu dinero si pagas antes honorarios, impuestos o comisiones, o si le das tus claves o acceso a tu celular. Es un segundo fraude.",
+    "en": "If you were already scammed, someone contacts you claiming to be from a prosecutor’s office for digital crimes, your bank or a cybersecurity firm. They use official logos, fake IDs and fake documents. They guarantee to recover your money if you first pay fees, taxes or commissions, or give them your passwords or access to your phone. It’s a second scam."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Después de un fraude, te contacta una “fiscalía digital” o un despacho.",
+        "en": "After a scam, a “digital prosecutor’s office” or a firm contacts you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te garantizan recuperar todo tu dinero.",
+        "en": "They guarantee to recover all your money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te piden pagar por adelantado honorarios, impuestos o trámites.",
+        "en": "They ask you to pay fees, taxes or processing costs upfront."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te presionan para pagar ya y te piden no contarle a nadie.",
+        "en": "They pressure you to pay now and ask you not to tell anyone."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Le escribimos de la Fiscalía Especializada en Delitos Digitales. Localizamos los fondos que le robaron. Para iniciar la devolución debe cubrir hoy el pago de trámite por $3,200. Este proceso es confidencial.",
+        "en": "This is the Specialized Prosecutor’s Office for Digital Crimes. We located the funds stolen from you. To start the refund you must pay the $3,200 processing fee today. This process is confidential."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "recuperar el dinero del fraude",
+      "fiscalia digital",
+      "me cobran para devolverme mi dinero",
+      "despacho que recupera dinero",
+      "pago por adelantado para recuperar fondos"
+    ],
+    "en": [
+      "recover money i lost in a scam",
+      "digital prosecutor's office",
+      "they charge me to get my money back",
+      "fund recovery service",
+      "upfront fee to recover my money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "es": [
+      "Te contactan sin que lo pidas justo después de un fraude.",
+      "Te garantizan recuperar todo.",
+      "Piden pagos por adelantado o tus claves.",
+      "Te piden secreto y prisa."
+    ],
+    "en": [
+      "They contact you unprompted right after a scam.",
+      "They guarantee to recover everything.",
+      "They ask for upfront payments or your passwords.",
+      "They ask for secrecy and speed."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues nada para “recuperar” dinero.",
+      "Verifica a quien te contacta por canales oficiales.",
+      "No des claves, NIP, códigos ni acceso a tu celular.",
+      "Guarda las pruebas y denuncia ante la Policía Cibernética y tu banco."
+    ],
+    "en": [
+      "Don’t pay anything to “recover” money.",
+      "Verify who contacts you through official channels.",
+      "Don’t give passwords, PINs, codes or access to your phone.",
+      "Keep the evidence and report to the Cyber Police and your bank."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "SSPC emite recomendaciones para prevenir fraudes por falsas ofertas de recuperación de dinero y supuestas fiscalías digitales",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/sspc-emite-recomendaciones-para-prevenir-fraudes-por-falsas-ofertas-de-recuperacion-de-dinero-y-supuestas-fiscalias-digitales?idiom=es",
+      "date": "2026-08-10"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/fake-investment-platform"
+  ]
+}

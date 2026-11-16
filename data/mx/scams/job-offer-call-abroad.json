@@ -1,0 +1,127 @@
+{
+  "id": "mx/job-offer-call-abroad",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “reclutador” con lada +1 o +44",
+    "en": "A “recruiter” with a +1 or +44 number"
+  },
+  "name": {
+    "es": "Oferta de trabajo por llamada del extranjero",
+    "en": "Job offer by call from abroad"
+  },
+  "how": {
+    "es": "Te llaman o te escriben desde números de Estados Unidos (+1) o Reino Unido (+44) ofreciéndote un empleo atractivo que no solicitaste. Usan datos filtrados y números enmascarados para parecer creíbles. Buscan tus datos personales, cobrarte por supuestos trámites administrativos o migratorios, o que instales un programa malicioso.",
+    "en": "You get calls or messages from US (+1) or UK (+44) numbers offering an attractive job you didn’t apply for. They use leaked data and masked numbers to seem believable. They want your personal details, to charge you for supposed administrative or immigration paperwork, or to get you to install malware."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman de un número +1 o +44 con una oferta de trabajo que no pediste.",
+        "en": "A +1 or +44 number calls you with a job offer you didn’t ask for."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "El trabajo suena muy bien: buen sueldo, desde casa o en el extranjero.",
+        "en": "The job sounds great: good pay, from home or abroad."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te piden datos personales o que descargues un archivo o app.",
+        "en": "They ask for personal details or for you to download a file or app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Te cobran por trámites administrativos o migratorios.",
+        "en": "They charge you for administrative or immigration paperwork."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, te contactamos de recursos humanos. Tu perfil fue seleccionado para un empleo remoto con sueldo en dólares. ¿Te interesa? Te mando el formulario para tus datos: [enlace]",
+        "en": "Hi, we’re contacting you from human resources. Your profile was selected for a remote job paid in dollars. Interested? I’ll send you the form for your details: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "llamada del extranjero ofreciendo trabajo",
+      "numero con lada +1",
+      "oferta de empleo que no pedi",
+      "me cobran por tramites para un trabajo",
+      "reclutador de estados unidos"
+    ],
+    "en": [
+      "job offer call from abroad",
+      "call from a +1 number",
+      "job offer i never applied for",
+      "they charge fees for a job",
+      "recruiter from the united states"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una oferta que no solicitaste, desde un número internacional.",
+      "Te piden pagar trámites para contratarte.",
+      "Te mandan archivos o enlaces para “registrarte”.",
+      "Te piden datos personales desde el inicio."
+    ],
+    "en": [
+      "An offer you didn’t apply for, from an international number.",
+      "They ask you to pay paperwork fees to hire you.",
+      "They send files or links to “register”.",
+      "They ask for personal details from the start."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No regreses llamadas de números internacionales que no conoces.",
+      "No des datos ni pagues sin verificar la empresa por canales oficiales.",
+      "No abras enlaces ni descargues archivos que te manden.",
+      "Si ya pagaste, llama a tu banco y denuncia ante la Policía Cibernética."
+    ],
+    "en": [
+      "Don’t call back international numbers you don’t know.",
+      "Don’t give details or pay without checking the company through official channels.",
+      "Don’t open links or download files they send.",
+      "If you already paid, call your bank and report to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "SSPC alerta sobre fraudes con llamadas telefónicas desde el extranjero con promesa de un empleo",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/sspc-alerta-sobre-fraudes-con-llamadas-telefonicas-desde-el-extranjero-con-promesa-de-un-empleo?idiom=es",
+      "date": "2025-10-01"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/likes-task-job"
+  ]
+}
