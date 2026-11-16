@@ -1,0 +1,107 @@
+{
+  "id": "au/remote-access-support",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "“Your internet provider”, “your phone company”, a software company or your bank"
+  },
+  "name": {
+    "en": "“There’s a problem with your internet”: remote access scam"
+  },
+  "how": {
+    "en": "Someone calls out of the blue saying there is a problem with your internet, phone, computer or bank account. They claim to be from a well-known phone, internet, software or security company, or your bank, and sound professional. They ask you to download screen-sharing software such as AnyDesk or TeamViewer so they can “fix” it. Once in control, they ask for banking passwords or codes and take your money. Scamwatch says people over 65 lose the most."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An unexpected call says there is a problem with your internet, computer or account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They tell you to download a screen-sharing app so they can fix it."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They ask you to log in to your bank or read out a code to “check” or “refund”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They keep you on the phone while money is taken from your accounts."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hello, I’m calling from your internet provider. We’ve detected hackers using your connection and your service will be cut off today. I need you to download AnyDesk so our technician can secure your computer."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "internet provider said my computer was hacked",
+      "told to download anydesk",
+      "technician wanted to fix my computer",
+      "call about my internet being cut off",
+      "let them control my computer",
+      "teamviewer on a call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "en": [
+      "An unexpected call about a problem with your computer, internet or account.",
+      "Being asked to download an app or software so they can see or control your device.",
+      "Being asked to log in to your bank while they watch."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up on anyone who asks you to download software over the phone.",
+      "Call the company back on a number you find yourself.",
+      "If they had access, turn off the device, contact your bank straight away and get the device checked."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Hang up on remote access scammers",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-hang-up-on-remote-access-scammers",
+      "date": "2024-05-28"
+    },
+    {
+      "title": "Banks don’t rush, scammers do: the callous impersonation scams robbing everyday Australians",
+      "publisher": "Australian Federal Police",
+      "url": "https://afp.gov.au/news-centre/media-release/banks-dont-rush-scammers-do-callous-impersonation-scams-robbing-everyday",
+      "date": "2026-03-31"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "au/fake-purchase-callback",
+    "au/bank-safe-account"
+  ]
+}

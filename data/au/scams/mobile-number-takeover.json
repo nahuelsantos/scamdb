@@ -1,0 +1,94 @@
+{
+  "id": "au/mobile-number-takeover",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "en": "Your phone company (the change is made without you)"
+  },
+  "name": {
+    "en": "Mobile number takeover: your phone suddenly shows “SOS only”"
+  },
+  "how": {
+    "en": "Criminals take control of your mobile number or make changes to your phone account, often using ID documents or passwords stolen in phishing or data breaches, or a hacked email account. Once they have your number they receive your verification codes, reset passwords and get into your bank, myGov and other accounts. The first sign is often alerts about account changes you didn’t make, codes you didn’t ask for, or your phone losing signal."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You get alerts about changes to your phone account, or codes and password resets you didn’t request."
+      }
+    },
+    {
+      "text": {
+        "en": "Your phone suddenly has no signal or shows “SOS only”."
+      }
+    },
+    {
+      "text": {
+        "en": "The criminals use your number to receive security codes and get into your bank, myGov and other accounts."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Your request to transfer your mobile number to a new provider is being processed. If you did not request this, reply NO within 30 minutes."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Your verification code is 482193. Don’t share this code with anyone."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "my phone says sos only",
+      "phone suddenly lost signal",
+      "codes i didn't request",
+      "someone moved my mobile number",
+      "password reset emails i didn't ask for",
+      "changes to my phone account"
+    ]
+  },
+  "signals": [
+    "impersonation"
+  ],
+  "redFlags": {
+    "en": [
+      "Unexpected alerts about changes to your mobile account.",
+      "Verification codes or password resets you didn’t ask for.",
+      "Your phone stops working or shows “SOS only” for no reason."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "If your phone suddenly stops working, contact your bank straight away, then your phone company using the number on a bill or its official app.",
+      "Change your passwords and turn on multi-factor authentication.",
+      "Delete old emails with ID documents attached, and contact IDCARE if a scammer has your details."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/idcare",
+    "au/scamwatch",
+    "au/reportcyber"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Watch out for mobile fraud",
+      "publisher": "Scamwatch (ACCC) and ACMA",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-watch-out-for-mobile-fraud",
+      "date": "2026-04-07"
+    }
+  ],
+  "updated": "2026-11-16"
+}

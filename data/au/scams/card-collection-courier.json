@@ -1,0 +1,108 @@
+{
+  "id": "au/card-collection-courier",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Your bank”, “your phone company” or “IT support”"
+  },
+  "name": {
+    "en": "“Leave your card in the letterbox”: card and cash collection"
+  },
+  "how": {
+    "en": "A caller says they are from your bank, phone company or an IT company and that your account or computer is not safe. They ask for your PIN and tell you to leave your bank card in the letterbox so it can be “cancelled and replaced”, or to withdraw cash for a courier to collect. The call can show a real bank number. With your card and PIN they take as much money as they can. Scamwatch says older people who live alone are being targeted."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are from your bank, phone company or IT company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say your money or computer isn’t safe and you need to act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for your card PIN."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They tell you to leave your card in the letterbox, or withdraw cash, for someone to collect."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is the bank’s security team. Your card has been compromised. Please confirm your PIN, then place the card in an envelope in your letterbox. Our courier will collect it today and a new card will be posted to you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "leave my card in the letterbox",
+      "courier to collect my bank card",
+      "they asked for my card pin",
+      "withdraw cash for a courier",
+      "bank said my card was compromised",
+      "someone came to pick up my card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone asking for your PIN.",
+      "Being told to leave your card out or hand it to a courier.",
+      "Being asked to withdraw cash and hand it over.",
+      "A caller who makes you scared for your money."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never tell anyone your PIN or give your card or cash to someone you don’t know.",
+      "Hang up and call your bank on the number on the back of your card.",
+      "If your card or cash was taken, call your bank to stop transactions and call the police."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/emergency",
+    "au/scamwatch",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Card collection scam",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-card-collection-scam",
+      "date": "2024-11-20"
+    },
+    {
+      "title": "Banks don’t rush, scammers do: the callous impersonation scams robbing everyday Australians",
+      "publisher": "Australian Federal Police",
+      "url": "https://afp.gov.au/news-centre/media-release/banks-dont-rush-scammers-do-callous-impersonation-scams-robbing-everyday",
+      "date": "2026-03-31"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "au/bank-safe-account"
+  ]
+}
