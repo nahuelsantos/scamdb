@@ -4,11 +4,6 @@ import { matchMessage } from './packages/matcher/index.js';
 const SAMPLES = [...document.querySelectorAll('[data-sample]')];
 const box = document.getElementById('pg-text');
 const out = document.getElementById('pg-out');
-const TEXTS = [
-  'Buenas tardes, le hablo de PAMI. ¿Usted tiene un trámite iniciado? Le va a llegar un código por mensaje, ¿me lo lee así lo confirmamos? Es para hoy.',
-  'Mamá, soy yo, estoy en problemas, no le digas a nadie. Ahora te llama un señor que me está ayudando. No cortes.',
-  'Hola Marta, te recuerdo el turno con la Dra. López mañana a las 10:30. Si no podés venir avisanos. Saludos!',
-];
 // Interface strings come from the page.
 const S = JSON.parse(out.dataset.strings || '{}');
 const LANG = out.dataset.lang || 'en';
@@ -45,7 +40,7 @@ box.addEventListener('input', () => {
   timer = setTimeout(check, 150);
 });
 SAMPLES.forEach((b) => b.addEventListener('click', () => {
-  box.value = TEXTS[Number(b.dataset.sample)];
+  box.value = b.dataset.text;
   SAMPLES.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
   check();
 }));

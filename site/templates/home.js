@@ -8,9 +8,9 @@ import { sketch, roundRect } from '../../lib/sketch.js';
 export const FEATURED = ['ar/cuento-del-tio', 'ar/falso-banco', 'ar/acceso-remoto'];
 export const ROUTE = 'ar/whatsapp-codigo';
 export const SAMPLES = [
-  { text: 'Buenas tardes, le hablo de PAMI. ¿Usted tiene un trámite iniciado? Le va a llegar un código por mensaje, ¿me lo lee así lo confirmamos? Es para hoy.' },
-  { text: 'Mamá, soy yo, estoy en problemas, no le digas a nadie. Ahora te llama un señor que me está ayudando. No cortes.' },
-  { text: 'Hola Marta, te recuerdo el turno con la Dra. López mañana a las 10:30. Si no podés venir avisanos. Saludos!' },
+  { text: "This is your bank's fraud team. We've stopped a suspicious payment of $1,480. To protect your money, read me the 6-digit code we just sent you. Please don't hang up." },
+  { text: "Hi Mum, I dropped my phone, this is my new number. Can you transfer $950 for the hotel tonight? I'll pay you back x" },
+  { text: "Hi Sarah, a reminder of your appointment with Dr Lee tomorrow at 10:30. Let us know if you can't make it. Thanks!" },
 ];
 const VERDICT_KEY = { scam: 'vScam', suspicious: 'vSuspicious', not_recognised: 'vNone' };
 
@@ -80,7 +80,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
 <section class="panel" aria-labelledby="pg-h">
   <div class="pcol">
     <h2 id="pg-h" class="plab"><span>${esc(t(lang, 'pgTitle'))}</span><span>${esc(t(lang, 'pgPrivate'))}</span></h2>
-    <div class="samples" role="group" aria-label="${esc(t(lang, 'pgSamples'))}">${SAMPLES.map((s, i) => `<button type="button" data-sample="${i}" aria-pressed="${i === 0}">${esc(labels[i])}</button>`).join('')}</div>
+    <div class="samples" role="group" aria-label="${esc(t(lang, 'pgSamples'))}">${SAMPLES.map((s, i) => `<button type="button" data-sample="${i}" data-text="${esc(s.text)}" aria-pressed="${i === 0}">${esc(labels[i])}</button>`).join('')}</div>
     <label class="sr" for="pg-text">${esc(t(lang, 'pgMessage'))}</label>
     <textarea id="pg-text" rows="5" maxlength="5000">${esc(SAMPLES[0].text)}</textarea>
     <p class="curl">${esc(t(lang, 'pgSoon'))} <b>POST scamdb.dev/v1/isitascam</b></p>
