@@ -1,0 +1,97 @@
+{
+  "id": "nz/ird-tax-refund",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "en": "“Inland Revenue”"
+  },
+  "name": {
+    "en": "Fake Inland Revenue message: “claim your tax refund”"
+  },
+  "how": {
+    "en": "Around the end of the tax year, emails, texts and fake social media accounts pretend to be Inland Revenue. They mention a refund amount or a tax bill and ask you to click a link to myIR, open an attachment or call a number. The goal is your myIR login, personal details or money. Inland Revenue never puts links to myIR or refund amounts in emails or texts."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message or social post looks like it is from Inland Revenue."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It mentions a refund amount or a bill to pay."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It asks you to log in to myIR through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The fake page takes your myIR login, details or card."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Inland Revenue: You are eligible for a tax refund of $512.80. Log in to myIR to confirm your bank account before 30 June: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "ird tax refund text",
+      "myir login link",
+      "inland revenue refund amount",
+      "fake ird facebook page",
+      "tax refund email link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "A refund amount in an email or text.",
+      "A link to myIR.",
+      "A text from a normal mobile or overseas number.",
+      "An email that doesn’t end in ird.govt.nz."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never use a link to log in to myIR: type ird.govt.nz yourself.",
+      "Refunds go straight to the bank account Inland Revenue already has.",
+      "If you shared details, contact Inland Revenue and your bank."
+    ]
+  },
+  "reportTo": [
+    "nz/ird",
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Be alert to scammers this 2026 tax season",
+      "publisher": "Own Your Online (NCSC)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/be-alert-to-scammers-this-2026-tax-season/",
+      "date": "2026-03-27"
+    }
+  ],
+  "updated": "2026-11-16"
+}

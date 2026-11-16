@@ -1,0 +1,95 @@
+{
+  "id": "nz/fake-police-cash-courier",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Police officer”"
+  },
+  "name": {
+    "en": "Fake police “undercover operation”: withdraw cash for a courier"
+  },
+  "how": {
+    "en": "Someone calls from an unknown number claiming to be a police officer and gives details to “prove” it. They say they are running an undercover operation into fake bank notes and ask you to withdraw money as evidence, with a script for answering the bank’s questions. They ask for serial numbers, give you a fake number for an insurance claim, and send a courier to your home to collect the cash. Older people are being targeted."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller claims to be a police officer and gives details to prove it."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say there is an undercover operation into fake bank notes."
+      }
+    },
+    {
+      "text": {
+        "en": "They ask you to withdraw cash and give you a script for the bank."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "A courier comes to your home to collect the money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Good afternoon, this is Constable Reid. We are running an undercover operation into counterfeit notes coming from your bank. We need you to withdraw $8,000 for evidence. If the teller asks, just say it is for home renovations."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "police asked me to withdraw cash",
+      "undercover operation fake bank notes",
+      "courier collecting money for police",
+      "police gave me a script for the bank",
+      "bank note serial numbers",
+      "officer called from unknown number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A police officer asking you to withdraw or hand over money. Police never do this.",
+      "A script for what to tell the bank.",
+      "A courier coming to collect cash."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. To check an officer, ask for their full details and call 105.",
+      "Tell your bank if anyone asks you to withdraw cash for an investigation.",
+      "Warn older family and friends about this scam."
+    ]
+  },
+  "reportTo": [
+    "nz/police-105",
+    "nz/emergency",
+    "nz/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Police impersonator scammers targeting members of the Western Bay of Plenty community",
+      "publisher": "New Zealand Police",
+      "url": "https://www.police.govt.nz/news/release/police-impersonator-scammers-targeting-members-western-bay-plenty-community",
+      "date": "2026-04-17"
+    }
+  ],
+  "updated": "2026-11-16"
+}
