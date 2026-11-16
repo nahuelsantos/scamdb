@@ -1,0 +1,96 @@
+{
+  "id": "nz/parking-meter-qr",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "online"
+  ],
+  "sender": {
+    "en": "A QR code sticker on a parking meter"
+  },
+  "name": {
+    "en": "Fake QR code sticker on a parking meter: “scan to pay”"
+  },
+  "how": {
+    "en": "Scammers stick fake QR codes on parking meters and machines, sometimes over a real code or after damaging the screen so it can’t be used. Scanning the code opens a fake payment website that takes your card details. Stickers have been found in Christchurch, Wellington and Auckland in 2026. The same trick appears on flyers, in emails and on other public signs."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A parking meter has a QR code sticker telling you to scan to pay; the screen may be damaged or covered."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The code opens a website that looks like a parking payment page."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You enter your card details to pay for parking, and the scammers use the card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "SCAN TO PAY FOR PARKING – Fast and easy. Machine out of order? Pay here with your card."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "qr code on the parking meter",
+      "scanned a code to pay for parking",
+      "parking machine sticker scam",
+      "entered my card on a parking website",
+      "parking meter screen was covered"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A sticker with a QR code on a meter, especially stuck over another code or label.",
+      "A damaged or covered meter screen that pushes you to scan.",
+      "The web address after scanning doesn’t match the council or parking company, or is a shortened link."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Pay at the machine with your card or in the official parking app.",
+      "Check the web address before entering anything after you scan a QR code.",
+      "Report stickers to the council or parking operator.",
+      "If you entered card details on a suspicious site, contact your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Take care with QR codes",
+      "publisher": "Own Your Online (National Cyber Security Centre)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/take-care-with-qr-codes/",
+      "date": "2024-12-04"
+    },
+    {
+      "title": "Aucklanders warned about scam parking meter QR codes",
+      "publisher": "Auckland Transport",
+      "url": "https://at.govt.nz/about-us/news-events/media-centre/2026-media-releases/aucklanders-warned-about-scam-parking-meter-qr-codes",
+      "date": "2026-09-08"
+    }
+  ],
+  "updated": "2026-11-16"
+}
