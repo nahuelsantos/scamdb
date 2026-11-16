@@ -1,0 +1,91 @@
+{
+  "id": "us/hospice-medicare",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "phone"
+  ],
+  "sender": {
+    "en": "Hospice recruiter"
+  },
+  "name": {
+    "en": "Hospice sign-up for Medicare patients who aren’t dying"
+  },
+  "how": {
+    "en": "Scammers enroll Medicare recipients in hospice care they don’t need, or without their knowledge, and bill Medicare for services never provided. Some go door to door offering free house cleaning or meal delivery if you sign up with a certain hospice, or pay bonuses for enrolling people. Being wrongly placed in hospice can affect your real medical care."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone comes to your door or calls offering free home help."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The free help depends on signing up with a specific hospice."
+      }
+    },
+    {
+      "text": {
+        "en": "They ask for your Medicare information."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They bill Medicare for hospice care you don’t need or don’t get."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi, we’re offering free house cleaning and meal delivery for seniors in your area. All we need is your Medicare card to sign you up with our care partner today."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "free house cleaning for medicare card",
+      "signed up for hospice without knowing",
+      "hospice recruiter at my door",
+      "medicare summary shows hospice",
+      "free meals if i join hospice"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation"
+  ],
+  "redFlags": {
+    "en": [
+      "Free services offered if you sign up with a specific hospice.",
+      "Requests for your Medicare information from someone who isn’t your doctor.",
+      "Unknown providers on your Medicare Summary Notice."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never give your Medicare number to anyone but your doctor or insurer.",
+      "Check your Medicare Summary Notices for services you didn’t get.",
+      "Call Medicare if something looks wrong, and report it to IC3."
+    ]
+  },
+  "reportTo": [
+    "us/medicare",
+    "us/ic3"
+  ],
+  "sources": [
+    {
+      "title": "Emerging Hospice Fraud Targeting Medicare Recipients",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2026/PSA260603",
+      "date": "2026-06-03"
+    }
+  ],
+  "updated": "2026-11-16"
+}

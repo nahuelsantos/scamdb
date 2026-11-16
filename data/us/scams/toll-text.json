@@ -1,0 +1,95 @@
+{
+  "id": "us/toll-text",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“E-ZPass”, “SunPass” or “FasTrak”"
+  },
+  "name": {
+    "en": "Fake toll text: “pay your overdue toll now”"
+  },
+  "how": {
+    "en": "A text says you owe an overdue toll and copies a real toll program such as E-ZPass, SunPass, FasTrak or TxTag. It threatens late fees or suspension of your vehicle registration if you don’t pay right away, and links to a fake payment page that takes your card details. The FTC says these messages helped push reports of government imposter scams up 40% in 2025."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text claims to be from a toll program you know."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you have an unpaid toll and threatens fees or a suspended registration."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It links to a page to pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page takes your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "E-ZPass: Our records show an unpaid toll of $6.85 on your account. Pay by tomorrow to avoid a $50 late fee and registration hold: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "unpaid toll text",
+      "overdue toll message",
+      "e-zpass text link",
+      "sunpass unpaid toll",
+      "toll late fee text",
+      "registration suspended unpaid toll"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A text about a toll with a link to pay.",
+      "Threats of late fees or a suspended registration if you don’t pay now.",
+      "A small amount meant to make you pay without checking."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t tap the link. Contact your state’s toll agency using a number or website you know is real.",
+      "If you entered card details, call your card issuer."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/ftc",
+    "us/ic3"
+  ],
+  "sources": [
+    {
+      "title": "New trends in reports of imposter scams",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/05/new-trends-reports-imposter-scams",
+      "date": "2026-05-07"
+    }
+  ],
+  "updated": "2026-11-16"
+}

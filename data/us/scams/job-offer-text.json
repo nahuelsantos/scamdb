@@ -1,0 +1,94 @@
+{
+  "id": "us/job-offer-text",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "Recruiter for a well-known company"
+  },
+  "name": {
+    "en": "Job offer text: “reply YES for a remote job”"
+  },
+  "how": {
+    "en": "A fake recruiter texts you about a work-from-home job such as “online assessor”, often quoting daily or weekly pay without saying what the work is, and asks you to reply YES or INTERESTED. Then they invent reasons you must send money: a fake check you deposit and partly send back, or a task scam where you rate products for pay and then have to deposit your own money to continue."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An unexpected text offers a remote job with daily pay."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It asks you to reply YES or INTERESTED."
+      }
+    },
+    {
+      "text": {
+        "en": "They send a check to deposit, or give you rating tasks."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask you to send money back or deposit your own money to keep earning."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi, I’m Sarah, a recruiter with a major online retailer. We have a remote online assessor role, $250–$480 per day, flexible hours. Reply YES to learn more."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "job offer text reply yes",
+      "remote online assessor job",
+      "rate products for money",
+      "deposit a check and send money back",
+      "pay to keep doing tasks"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "An unexpected job offer by text, WhatsApp or Telegram.",
+      "Pay quoted without any job description.",
+      "Being paid to post ratings or likes.",
+      "Any request to pay to get paid."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Ignore unexpected job texts: real employers don’t recruit that way.",
+      "Never pay to get a job or to get paid.",
+      "Report it at ReportFraud.ftc.gov."
+    ]
+  },
+  "reportTo": [
+    "us/ftc",
+    "us/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "That job offer text is probably a scam",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/04/job-offer-text-probably-scam",
+      "date": "2026-04-30"
+    }
+  ],
+  "updated": "2026-11-16"
+}

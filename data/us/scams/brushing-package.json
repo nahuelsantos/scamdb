@@ -1,0 +1,92 @@
+{
+  "id": "us/brushing-package",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "online"
+  ],
+  "sender": {
+    "en": "Unknown sender or online marketplace"
+  },
+  "name": {
+    "en": "A package you didn’t order, with a QR code to scan"
+  },
+  "how": {
+    "en": "You receive a package you didn’t order, often cheap items like baby wipes, toothpaste or seeds, sometimes appearing to come from Amazon. The seller uses the “delivery” to post fake reviews in your name. It can also mean someone has your personal information. Some packages include a note with a QR code to “see who sent it” or “start a return” that leads to a phishing site for card numbers or passwords."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A package you didn’t order arrives in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "A note invites you to scan a QR code to see the sender or return it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The QR code opens a page asking for card details or passwords."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Fake reviews may be posted under your name."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Thank you for your order! Scan the code below to see who sent you this gift or to arrange a free return."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "package i did not order",
+      "unordered package with qr code",
+      "brushing scam package",
+      "scan to see who sent it",
+      "free item from amazon i didnt buy"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A package you didn’t order.",
+      "A QR code to find the sender or start a return.",
+      "A page asking for card details or login after scanning."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t scan the QR code. You can keep unordered items and don’t have to pay.",
+      "Change your shopping passwords and report the seller to the marketplace.",
+      "Check your free credit reports for signs of identity theft."
+    ]
+  },
+  "reportTo": [
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "That unexpected package you got could be a brushing scam",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/08/unexpected-package-you-got-could-be-brushing-scam",
+      "date": "2026-08-20"
+    }
+  ],
+  "updated": "2026-11-16"
+}

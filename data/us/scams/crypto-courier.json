@@ -1,0 +1,102 @@
+{
+  "id": "us/crypto-courier",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "sms",
+    "in-person"
+  ],
+  "sender": {
+    "en": "Online friend or crypto “expert”"
+  },
+  "name": {
+    "en": "Crypto investment with a cash courier at your door"
+  },
+  "how": {
+    "en": "Someone met through social media, a wrong-number text or a romance gets you to invest in crypto on an app that shows fake profits. When your bank questions the transfers, or the platform says your account is “flagged”, they ask for cash instead and send a courier to your home or a public place. The courier proves who they are with a dollar bill serial number or a password. When you try to withdraw, they ask for “taxes” and “penalties”, collected by courier again. Victims are usually older people; crypto kiosks are also used, with $388 million reported lost through kiosks in 2025."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A new online friend or “expert” gets you investing in crypto on an app."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The app shows growing profits, so you invest more."
+      }
+    },
+    {
+      "text": {
+        "en": "They say you must pay in cash and send a courier, who shows a serial number or password."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "To withdraw, you must pay taxes and penalties, again by courier or crypto kiosk."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Your account has been flagged by the exchange, so wires won’t go through. To keep your position, have the $25,000 in cash ready. Our courier will come at 3pm and show you a bill ending in 4471."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "courier picked up cash for crypto",
+      "crypto account flagged pay cash",
+      "investment app shows profits",
+      "pay taxes to withdraw crypto",
+      "crypto kiosk deposit instructions",
+      "dollar bill serial number courier"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone sending a courier to collect cash for an investment.",
+      "Fees, taxes or penalties before you can withdraw.",
+      "Instructions to put cash into a crypto kiosk.",
+      "An online friend who quickly turns to investing."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never hand cash to a courier or meet strangers to deliver money.",
+      "Stop sending money; it won’t unlock your profits.",
+      "Report it to the FBI’s IC3 and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "us/ic3",
+    "us/your-bank",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Scammers Use Couriers to Collect Cash in Cryptocurrency Investment Scams",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2026/PSA260615",
+      "date": "2026-06-15"
+    },
+    {
+      "title": "IC3 Cryptocurrency Kiosk Complaint Data By State",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2026/PSA260515-2",
+      "date": "2026-05-15"
+    }
+  ],
+  "updated": "2026-11-16"
+}
