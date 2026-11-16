@@ -1,0 +1,97 @@
+{
+  "id": "au/fake-police-crypto",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "en": "“Australian Federal Police” and then your “crypto exchange”"
+  },
+  "name": {
+    "en": "Fake AFP call: “a cybercrime report was made in your name”, move your crypto"
+  },
+  "how": {
+    "en": "Scammers pretending to be the AFP or state police call crypto owners and say they were caught up in a data breach. They have already filed a fake ReportCyber report with your stolen details, so you get a real-looking email and reference number. They ask you to confirm a one-time PIN. A second scammer then calls as your crypto exchange, quotes the same reference and asks for your seed phrase or tells you to move your crypto to a “cold storage” account."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are from the AFP or police and that you were in a crypto data breach."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say a ReportCyber report was lodged in your name and ask you to confirm the one-time PIN in your email."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "A second caller says they are from your crypto exchange and gives the same reference number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask for your seed phrase or tell you to move your crypto to a “cold storage” wallet."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is the Australian Federal Police cybercrime unit. Your details were found in a data breach involving your cryptocurrency account. A report has been lodged for you through ReportCyber. Please read me the one-time PIN we just emailed you to confirm it."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "afp called about my crypto",
+      "reportcyber email i didn't lodge",
+      "asked for my seed phrase",
+      "move my crypto to cold storage",
+      "police said i was in a data breach",
+      "crypto exchange called with a reference number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A call from “police” about your crypto or a data breach.",
+      "Emails from ReportCyber about a report you didn’t make.",
+      "Being asked to read out a one-time PIN.",
+      "Being asked for your seed phrase or to move crypto to keep it safe."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Police won’t ask you to move crypto or share codes.",
+      "Never share your seed phrase or one-time PIN with anyone.",
+      "If you lost crypto, contact your exchange straight away and report to police through ReportCyber, giving the fake reference number."
+    ]
+  },
+  "reportTo": [
+    "au/reportcyber",
+    "au/scamwatch",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Police and digital currency exchange impersonation scam",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-police-and-digital-currency-exchange-impersonation-scam",
+      "date": "2025-12-10"
+    }
+  ],
+  "updated": "2026-11-16"
+}
