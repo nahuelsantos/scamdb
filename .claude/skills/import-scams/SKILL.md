@@ -19,15 +19,21 @@ for review: <PR link>" and do nothing else. Never open a second import PR.
 
 ## 1. Remember rejections
 
-Look at import PRs (label `import`) closed since the newest `date` in `importer/rejected.json`. For each scam drafted
-in such a PR that is not in `main` now (PR closed unmerged, or the file was removed during review), add
-`{ "country", "slug", "name", "date" }` to `importer/rejected.json` (`name` in English, `date` = today). These
-additions go in this run's PR. Never re-propose anything listed there.
+Look at the closed import PRs (label `import`). For each scam drafted in one that is not in `main` now (PR closed
+unmerged, or the file was removed during review) and is not already in `importer/rejected.json` (same country and
+slug), add `{ "country", "slug", "name", "date" }` (`name` in English, `date` = the PR's close date). These
+additions go in this run's PR; if the run opens no PR they are simply worked out again next time. Never re-propose
+anything listed there.
 
 ## 2. Pick the country
 
-- `next`: run `node tools/importer.mjs next` and use the code it prints.
+- `next`: run `node tools/importer.mjs next` and use the code it prints. It reads `importer/runs.json`, so a country
+  tried recently waits its turn.
 - A code: use it.
+
+Set `importer/runs.json` → `{ "<cc>": "<today>" }` for the country you try (keep the other keys). If research finds
+nothing new for it, record that too and move on in the same run: `node tools/importer.mjs next --pending <tried codes>`,
+at most 3 countries per run.
 
 `node tools/importer.mjs status` shows entries and newest dates per country.
 
@@ -72,7 +78,8 @@ Run `npm run validate` and `npm test`. Fix or drop entries that fail. Do not tou
 
 ## 7. Open the pull request
 
-Branch `import/<cc>-<YYYY-MM-DD>` from `main`, commit, push, and open a PR titled `Import: <Country> (<n> scams)` with
+Use the branch the session was given if it has one; otherwise `import/<cc>-<YYYY-MM-DD>` from `main`. Commit
+(the entries, `importer/runs.json`, any `importer/rejected.json` additions), push, and open a PR titled `Import: <Country> (<n> scams)` with
 the label `import` (create the label if missing). The body follows `.github/pull_request_template.md` and adds a
 review summary:
 
@@ -82,4 +89,4 @@ review summary:
 - hosts that were blocked;
 - any non-official sources used.
 
-If nothing new was found, open nothing and report that. Do not merge, approve or enable auto-merge.
+If no country had anything new, open nothing and report which countries you tried and why. Do not merge, approve or enable auto-merge.

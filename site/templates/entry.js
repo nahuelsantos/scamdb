@@ -8,7 +8,8 @@ import { t } from '../i18n.js';
 /** The original-language version of the explanation, folded away (works without JS). Empty for English originals. */
 function original(e, orig, ui) {
   if (orig === 'en' || !e.how?.[orig]) return '';
-  return `<details class="original"><summary title="${esc(t(ui, 'showOriginal'))}">${UI_ICONS.globe}<span>${esc(t(ui, 'original'))} · <span lang="${esc(orig)}">${esc(orig.toUpperCase())}</span></span></summary>
+  const name = t(ui, 'langNames')[orig] ?? orig.toUpperCase();
+  return `<details class="original"><summary>${UI_ICONS.globe}<span>${esc(t(ui, 'showOriginal'))} (${esc(name)})</span><span class="chev" aria-hidden="true"></span></summary>
 <div lang="${esc(orig)}"><h2>${esc(pick(e.name, orig))}</h2><p>${esc(pick(e.how, orig))}</p>
 <h3 lang="en">${esc(t(ui, 'sScript'))}</h3><ol class="list">${e.steps.map((st) => `<li>${esc(pick(st.text, orig))}</li>`).join('')}</ol>
 <h3 lang="en">${esc(t(ui, 'sSigns'))}</h3><ul class="list">${LI(e.redFlags, orig)}</ul>

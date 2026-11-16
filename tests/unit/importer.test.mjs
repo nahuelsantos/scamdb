@@ -45,3 +45,17 @@ test('sources.json lists official https sources for every target', () => {
   }
 });
 test('rejected.json is a list', () => assert.ok(Array.isArray(JSON.parse(readFileSync(new URL('../../importer/rejected.json', import.meta.url))))));
+test('a target tried recently with nothing merged is not picked again before the others', () => {
+  const r = repo([entry('ar/a', '2026-11-01')]);
+  assert.equal(pickNext(r, { pending: [], tried: { au: '2026-11-16' } }), 'us');
+});
+test('the fallback ranks by the later of newest entry and last try', () => {
+  const all = TARGETS.map((cc) => entry(`${cc}/x`, '2026-10-01'));
+  all.push(entry('ar/a', '2026-01-01'));
+  assert.equal(pickNext(repo(all), { pending: [], tried: { ar: '2026-11-16' } }), 'au');
+});
+test('when every target was tried, the one tried longest ago comes back', () => {
+  const tried = Object.fromEntries(TARGETS.map((cc, i) => [cc, `2026-11-${String(10 + i).padStart(2, '0')}`]));
+  assert.equal(pickNext(repo([entry('ar/a', '2026-11-15')]), { pending: [], tried }), 'au');
+});
+test('runs.json is an object', () => assert.equal(typeof JSON.parse(readFileSync(new URL('../../importer/runs.json', import.meta.url))), 'object'));

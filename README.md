@@ -55,8 +55,8 @@ npm test
 npm run build
 ```
 
-The build writes the API and the site to `dist/`. The site is in English at `/` and Spanish at `/es/`; interface strings live in
-`site/i18n.js`. Scams always show in their own language. Drawings are generated at build time by `lib/sketch.js`.
+The build writes the API and the site to `dist/`. The site is in English (old `/es/` links redirect); interface strings live in
+`site/i18n.js`. Scams are explained in English and also shown in their original language. Drawings are generated at build time by `lib/sketch.js`.
 
 ## Importing scams
 

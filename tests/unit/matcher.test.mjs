@@ -88,3 +88,14 @@ test('an ordinary English message has no signs', () => assert.deepEqual(readSign
 test('matches an English phrase of an Argentine entry', () => assert.equal(top('they asked me for a WhatsApp code'), 'ar/whatsapp-codigo'));
 test('an English bank call matches the fake bank employee', () => assert.equal(top('the bank called me, security department, go to the ATM'), 'ar/falso-banco'));
 test('ordinary English chat matches nothing', () => assert.deepEqual(m('hey, how are you doing, see you on sunday').matches, []));
+test('ordinary English messages are never called a scam', () => {
+  for (const t of ['The wifi password is on the fridge', 'Use code SUMMER10 at checkout', "What's your zip code?",
+    "Hi Mum, I'll pay you back for dinner tomorrow", "I'm downloading the photos now", 'Can you share your screen in the meeting?',
+    'Congratulations on the new job!', "I'll be at the bank"])
+    assert.notEqual(m(t).verdict, 'scam', t);
+});
+test('ordinary English messages match no scam entry', () => {
+  for (const t of ['Look at this photo of the dog', 'Mum, can you scan the school form?', 'Mum, are you coming to the school fair?'])
+    assert.deepEqual(m(t).matches, [], t);
+});
+test('apostrophes typed by people still match English phrases', () => assert.equal(top("I can't get into my WhatsApp"), 'ar/whatsapp-codigo'));

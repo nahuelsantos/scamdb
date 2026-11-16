@@ -154,7 +154,7 @@ test('entry page keeps the whole original behind a Show original control', () =>
   const html = page('catalogue/ar/ejemplo/index.html');
   const orig = html.match(/<details class="original">([\s\S]*?)<\/details>/)?.[1];
   assert.ok(orig, 'original block');
-  assert.match(orig, /title="Show the original"/);
+  assert.match(orig, /<summary>.*Original \(Spanish\)/);
   assert.match(orig, /<div lang="es"><h2>Robo de WhatsApp con el código<\/h2><p>Te llaman diciendo que son de PAMI y te piden un código.<\/p>/);
   rmSync(dir, { recursive: true });
 });

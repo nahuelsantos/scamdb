@@ -5,7 +5,7 @@ import { serve } from './serve.mjs';
 const server = await serve('dist', 0);
 const base = `http://127.0.0.1:${server.address().port}`;
 const b = await chromium.launch();
-const shots = [['home-desktop-light', '/', 1280, 900, 'light'], ['home-phone-dark', '/', 390, 844, 'dark'], ['home-es-desktop-dark', '/es/', 1280, 900, 'dark'],
+const shots = [['home-desktop-light', '/', 1280, 900, 'light'], ['home-phone-dark', '/', 390, 844, 'dark'], ['entry-desktop-dark', '/catalogue/ar/whatsapp-codigo/', 1280, 900, 'dark'],
   ['entry-desktop-light', '/catalogue/ar/whatsapp-codigo/', 1280, 900, 'light']];
 for (const [name, path, width, height, colorScheme] of shots) {
   const p = await b.newPage({ viewport: { width, height }, deviceScaleFactor: 2, colorScheme });

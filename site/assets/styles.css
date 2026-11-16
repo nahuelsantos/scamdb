@@ -166,6 +166,9 @@ main section { margin-bottom: 56px; }
 .original summary::-webkit-details-marker { display: none; }
 .original summary .uic { width: 22px; height: 22px; }
 .original[open] summary { margin-bottom: var(--s4); }
+.original .chev { width: 8px; height: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform .15s; margin-left: var(--s1); }
+.original[open] .chev { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .original .chev { transition: none; } }
 .original > div { border-left: 3px solid var(--line); padding-left: var(--s4); max-width: 72ch; }
 .original h3 { font-size: 14px; font-family: var(--mono); color: var(--dim); font-weight: 500; margin: var(--s5) 0 var(--s2); }
 .original h2 { font-size: 22px; }
