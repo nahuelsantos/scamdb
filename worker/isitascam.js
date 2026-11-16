@@ -1,10 +1,11 @@
 // POST /v1/isitascam: is this message a scam? The matcher always answers (free, no AI); keyed requests may also get a
-// Workers AI score (Task 2). Nothing is stored unless report: true, which needs a key.
+// Workers AI score; keyless requests never reach it. Nothing is stored unless report: true, which needs a key.
 import { readJson, json, cors, HttpError } from './http.js';
 import { authKey, recordUsage } from './keys.js';
 import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
+import { scoreWithWorkersAI, combine } from './scorer.js';
 
 const ORIGIN = 'https://scamdb.dev';
 export const LIMITS = { keyless: 10, keyed: 50, global: 20000, ai: 1000 };
@@ -40,6 +41,9 @@ export function buildAnswer({ result, catalogue, top, lang, country, scorer }) {
   };
 }
 
+/** Only keyed requests reach Workers AI; keyless checks are matcher-only by design. */
+export const usesScorer = (key, env) => Boolean(key && env.AI);
+
 async function checkLimits(env, key, ip, now) {
   const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
   const bucket = key ? `isitascam:gh:${key.githubId}` : `isitascam:ip:${await ipHash(ip, env.IP_SALT, utcDay(now))}`;
@@ -59,9 +63,15 @@ export async function handleIsItAScam(request, env) {
   const now = new Date();
   await checkLimits(env, key, request.headers.get('cf-connecting-ip') ?? '', now);
 
-  const result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined });
+  let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined });
+  let scorer = 'matcher';
+  // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.
+  if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
+    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country });
+    if (scored) { result = combine(result, scored, check.text); scorer = 'workers-ai'; }
+  }
   const top = result.matches[0] ? await loadEntry(env, result.matches[0].id) : null;
-  const answer = buildAnswer({ result, catalogue, top, lang: check.lang, country: check.country, scorer: 'matcher' });
+  const answer = buildAnswer({ result, catalogue, top, lang: check.lang, country: check.country, scorer });
 
   if (key) await recordUsage(env.DB, key.id, 'isitascam', now);
   if (check.report) {
