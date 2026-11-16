@@ -1,0 +1,122 @@
+{
+  "id": "br/fake-lawyer",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "pt": "“Seu advogado”, “escritório” ou “tribunal”",
+    "en": "“Your lawyer”, “law firm” or “court”"
+  },
+  "name": {
+    "pt": "Golpe do falso advogado: “você ganhou a ação, pague as custas”",
+    "en": "Fake lawyer scam: “you won the case, pay the fees”"
+  },
+  "how": {
+    "pt": "Golpistas pegam dados públicos do seu processo e escrevem de um número novo com a foto e o nome do seu advogado, ou dizendo ser do escritório ou do tribunal. Contam que você ganhou a ação e tem dinheiro a receber. Para liberar, pedem uma taxa, custas ou imposto por Pix, com pressa. Podem mandar documentos falsos e até fazer chamada de vídeo.",
+    "en": "Scammers take public details of your court case and write from a new number with your lawyer’s photo and name, or claim to be from the law firm or the court. They say you won the case and have money to receive. To release it, they ask for a fee, court costs or tax by Pix, in a hurry. They may send fake documents and even make a video call."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Uma mensagem com nome e foto do seu advogado chega de um número desconhecido.",
+        "en": "A message with your lawyer’s name and photo comes from an unknown number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Dizem que você ganhou o processo e tem um valor para receber.",
+        "en": "They say you won the case and have money to receive."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Pedem uma taxa, custas ou imposto por Pix para liberar.",
+        "en": "They ask for a fee, court costs or tax by Pix to release it."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "Pressionam para pagar hoje, senão o valor “volta”.",
+        "en": "They pressure you to pay today or the money “goes back”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Boa tarde, sou do escritório do seu advogado. Saiu a decisão do seu processo e o senhor tem R$ 38.000 a receber. Para o alvará ser liberado hoje, precisa pagar as custas pelo Pix.",
+        "en": "Good afternoon, I’m from your lawyer’s office. The decision in your case is out and you have R$ 38,000 to receive. For the release order to come out today, you need to pay the court costs by Pix."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "falso advogado",
+      "ganhei o processo",
+      "pagar as custas",
+      "taxa para liberar o processo",
+      "advogado com numero novo",
+      "valor do processo para receber",
+      "alvara liberado"
+    ],
+    "en": [
+      "fake lawyer",
+      "won my court case",
+      "pay the court fees",
+      "fee to release the settlement",
+      "lawyer with a new number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "pt": [
+      "Pedem pagamento para liberar dinheiro de um processo. A Justiça não cobra isso.",
+      "O advogado escreve de um número diferente do de sempre.",
+      "Saber detalhes reais do processo não prova nada: são públicos."
+    ],
+    "en": [
+      "They ask for payment to release money from a court case. The courts don’t charge that.",
+      "The lawyer writes from a number different from the usual one.",
+      "Knowing real details of the case proves nothing: they’re public."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não pague. Ligue para o advogado no número que você já tem, ou vá ao escritório.",
+      "Não confirme nada pelo mesmo número que te procurou.",
+      "Guarde prints, a chave Pix e o número, e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Don’t pay. Call your lawyer on the number you already have, or go to the office.",
+      "Don’t check anything through the same number that contacted you.",
+      "Keep screenshots, the Pix key and the number, and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/policia-civil",
+    "br/seu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Saiba quais são as abordagens usadas por criminosos no golpe do falso advogado e como se proteger",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4512/pt-br/",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-16"
+}

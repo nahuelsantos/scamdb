@@ -1,0 +1,131 @@
+{
+  "id": "br/fake-vehicle-auction",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "“Leiloeiro”, “pátio” ou “Detran”",
+    "en": "“Auctioneer”, “impound yard” or “Detran”"
+  },
+  "name": {
+    "pt": "Falso leilão de veículos",
+    "en": "Fake vehicle auction"
+  },
+  "how": {
+    "pt": "Sites falsos copiam leiloeiros verdadeiros ou usam o nome do Detran e aparecem em buscas e redes sociais. Carros e motos saem por preços muito baixos. Depois do lance, o atendimento passa para o WhatsApp e pede pagamento por Pix para a conta de uma empresa ou pessoa. O veículo nunca é entregue.",
+    "en": "Fake websites copy real auctioneers or use the Detran’s name and show up in searches and on social media. Cars and motorcycles go for very low prices. After your bid, the conversation moves to WhatsApp and you are asked to pay by Pix to a company’s or person’s account. The vehicle is never delivered."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Você acha um leilão online com carros muito baratos.",
+        "en": "You find an online auction with very cheap cars."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "O site usa nome e marca de leiloeiro ou do Detran.",
+        "en": "The site uses the name and logo of an auctioneer or the Detran."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Depois do lance, o contato vai para o WhatsApp.",
+        "en": "After your bid, the contact moves to WhatsApp."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Pedem pagamento por Pix para outra empresa ou pessoa.",
+        "en": "They ask for payment by Pix to another company or person."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Parabéns, seu lance foi o vencedor! Para garantir o veículo, faça o pagamento via Pix em até 2 horas. Após a confirmação enviamos a nota de arrematação.",
+        "en": "Congratulations, your bid won! To secure the vehicle, pay by Pix within 2 hours. After confirmation we’ll send the auction receipt."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "leilao falso",
+      "falso leilao de veiculos",
+      "arrematei um carro",
+      "leilao do detran",
+      "paguei o lance no pix",
+      "carro de leilao barato"
+    ],
+    "en": [
+      "fake auction",
+      "fake car auction",
+      "won a car at auction",
+      "detran auction site",
+      "paid my bid by pix"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Preço muito abaixo do mercado.",
+      "Atendimento só por WhatsApp.",
+      "Pix para uma conta que não é do leiloeiro.",
+      "Sem edital oficial publicado."
+    ],
+    "en": [
+      "A price far below market value.",
+      "Service only by WhatsApp.",
+      "A Pix to an account that isn’t the auctioneer’s.",
+      "No official auction notice published."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Confira o leiloeiro e o edital no site oficial do Detran do seu estado.",
+      "Não pague por Pix antes de confirmar quem recebe.",
+      "Se pagou, avise o banco na hora e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Check the auctioneer and the notice on your state Detran’s official site.",
+      "Don’t pay by Pix before confirming who receives it.",
+      "If you paid, tell the bank at once and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil",
+    "br/procon"
+  ],
+  "sources": [
+    {
+      "title": "Polícia Civil realiza operação contra falso de leilão de veículos",
+      "publisher": "Radioagência Nacional (EBC)",
+      "url": "https://agenciabrasil.ebc.com.br/radioagencia-nacional/geral/audio/2026-03/policia-civil-realiza-operacao-contra-falso-de-leilao-de-veiculos",
+      "date": "2026-03-27"
+    },
+    {
+      "title": "Detran-PR alerta sobre golpe de falsos leilões de veículos",
+      "publisher": "Agência Estadual de Notícias do Paraná",
+      "url": "https://www.parana.pr.gov.br/aen/Noticia/Detran-PR-alerta-sobre-golpe-de-falsos-leiloes-de-veiculos-0",
+      "date": "2024-12-05"
+    }
+  ],
+  "updated": "2026-11-16"
+}

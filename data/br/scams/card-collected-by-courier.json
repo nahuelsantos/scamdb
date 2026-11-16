@@ -1,0 +1,138 @@
+{
+  "id": "br/card-collected-by-courier",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "pt": "“Banco” e depois um “motoboy do banco”",
+    "en": "“Your bank”, then a “bank courier”"
+  },
+  "name": {
+    "pt": "Golpe do motoboy: o banco manda buscar seu cartão",
+    "en": "Courier scam: the bank sends someone for your card"
+  },
+  "how": {
+    "pt": "Um falso funcionário do banco liga falando de gastos estranhos no seu cartão. Depois diz que um motoboy da empresa vai buscar o cartão para análise ou troca, às vezes pedindo também a senha. Quem aparece na porta é da quadrilha. Com o cartão nas mãos, fazem saques e compras.",
+    "en": "A fake bank employee calls about strange charges on your card. Then they say a company courier will pick up the card for analysis or replacement, sometimes asking for the PIN too. The person who comes to your door is part of the gang. With the card in hand, they make withdrawals and purchases."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Ligam dizendo que há gastos suspeitos no seu cartão.",
+        "en": "They call saying there are suspicious charges on your card."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Dizem que é urgente bloquear e trocar o cartão.",
+        "en": "They say the card must be blocked and replaced urgently."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Avisam que um motoboy do banco vai buscar o cartão na sua casa.",
+        "en": "They say a bank courier will pick up the card at your home."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "Pedem a senha “para o cancelamento”.",
+        "en": "They ask for the PIN “to cancel it”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Dona Maria, já bloqueamos o cartão. Por segurança um portador do banco vai passar aí em 30 minutos para recolher. Deixe o cartão num envelope, por favor.",
+        "en": "Mrs. Maria, we’ve already blocked the card. For security, a bank courier will come by in 30 minutes to collect it. Please leave the card in an envelope."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "golpe do motoboy",
+      "motoboy buscar o cartao",
+      "vieram buscar meu cartao",
+      "banco mandou buscar o cartao",
+      "entreguei meu cartao",
+      "recolher o cartao"
+    ],
+    "en": [
+      "courier picked up my card",
+      "bank sent someone for my card",
+      "they came to collect my card",
+      "handed over my card",
+      "courier from the bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "pt": [
+      "Banco nenhum manda buscar cartão em casa.",
+      "Pedem a senha do cartão.",
+      "Pedem para cortar o cartão mas deixar o chip inteiro, ou colocar num envelope."
+    ],
+    "en": [
+      "No bank sends someone to pick up your card at home.",
+      "They ask for your card PIN.",
+      "They ask you to cut the card but keep the chip, or put it in an envelope."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Desligue e ligue você para o número atrás do cartão.",
+      "Não entregue o cartão a ninguém. Se alguém estiver vindo, ligue 190.",
+      "Se já entregou, peça o bloqueio ao banco e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Hang up and call the number on the back of the card yourself.",
+      "Don’t hand the card to anyone. If someone is on the way, call 190.",
+      "If you already handed it over, ask the bank to block it and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/emergencia",
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "PCPR prende homem suspeito de aplicar golpe do falso motoboy contra idosa em Congonhinhas",
+      "publisher": "Polícia Civil do Paraná",
+      "url": "https://www.policiacivil.pr.gov.br/Noticia/PCPR-prende-homem-suspeito-de-aplicar-golpe-do-falso-motoboy-contra-idosa-em-Congonhinhas",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "Associação criminosa responsável por aplicar golpe do motoboy é alvo de nova operação da PCPR",
+      "publisher": "Secretaria da Segurança Pública do Paraná",
+      "url": "https://www.seguranca.pr.gov.br/Noticia/Associacao-criminosa-responsavel-por-aplicar-golpe-do-motoboy-e-alvo-de-nova-operacao-da",
+      "date": "2022-11-09"
+    },
+    {
+      "title": "Golpe da falsa central: conheça as várias versões de um mesmo crime",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4471/pt-br/",
+      "date": "2026-07-01"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "pt": "Em setembro de 2026, no Paraná, um homem foi à casa de uma idosa, disse ser funcionário de um banco e levou o cartão dela. Depois fez saques e compras. A Polícia Civil o prendeu em outubro.",
+    "en": "In September 2026, in Paraná, a man went to an elderly woman’s home, said he worked for a bank and took her card. He then made withdrawals and purchases. The Civil Police arrested him in October."
+  }
+}

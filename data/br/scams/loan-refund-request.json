@@ -1,0 +1,126 @@
+{
+  "id": "br/loan-refund-request",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "“Banco” ou “financeira”",
+    "en": "“Bank” or “lender”"
+  },
+  "name": {
+    "pt": "Golpe da devolução do empréstimo",
+    "en": "Loan refund scam"
+  },
+  "how": {
+    "pt": "Com seus dados, o golpista contrata um empréstimo em seu nome, com o dinheiro caindo na sua própria conta. Depois liga ou manda mensagem fingindo ser do banco: diz que foi um erro e pede que você “devolva” o valor por Pix ou boleto. O dinheiro vai para a quadrilha e a dívida do empréstimo fica com você.",
+    "en": "Using your details, the scammer takes out a loan in your name, paid into your own account. Then they call or message pretending to be the bank: they say it was a mistake and ask you to “return” the money by Pix or boleto. The money goes to the gang and the loan debt stays with you."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Aparece na sua conta um dinheiro de empréstimo que você não pediu.",
+        "en": "Loan money you didn’t ask for appears in your account."
+      }
+    },
+    {
+      "text": {
+        "pt": "Alguém fingindo ser do banco entra em contato sobre esse “erro”.",
+        "en": "Someone pretending to be the bank contacts you about this “mistake”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Pede para você devolver por Pix ou boleto, rápido, para “cancelar”.",
+        "en": "They ask you to return it quickly by Pix or boleto to “cancel” it."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "Dizem que se não devolver hoje, vai pagar juros.",
+        "en": "They say that if you don’t return it today you’ll pay interest."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Olá, somos do setor de crédito. Um empréstimo foi liberado na sua conta por engano. Para cancelar sem juros, devolva o valor hoje pela chave Pix abaixo.",
+        "en": "Hello, this is the credit department. A loan was released into your account by mistake. To cancel it with no interest, return the amount today using the Pix key below."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "devolver o emprestimo",
+      "emprestimo que nao pedi",
+      "caiu um emprestimo na minha conta",
+      "pediram para devolver o dinheiro",
+      "cancelar o emprestimo",
+      "emprestimo por engano"
+    ],
+    "en": [
+      "return the loan",
+      "loan i didn't ask for",
+      "loan money appeared in my account",
+      "asked me to send the money back",
+      "cancel the loan"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "pt": [
+      "Um empréstimo que você não pediu aparece na conta.",
+      "Pedem devolução para uma chave Pix ou boleto de terceiros.",
+      "O contato vem por telefone ou WhatsApp, não pelo app do banco."
+    ],
+    "en": [
+      "A loan you didn’t ask for appears in your account.",
+      "They ask for the refund to a third party’s Pix key or boleto.",
+      "The contact comes by phone or WhatsApp, not through the bank’s app."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não devolva nada para chaves ou boletos enviados por alguém.",
+      "Ligue para o seu banco pelos canais oficiais. Se for preciso cancelar, é o banco que faz.",
+      "Faça um boletim de ocorrência: alguém usou seus dados."
+    ],
+    "en": [
+      "Don’t return anything to keys or boletos someone sends you.",
+      "Call your bank on its official channels. If it needs cancelling, the bank does it.",
+      "File a police report: someone used your details."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil",
+    "br/banco-central"
+  ],
+  "sources": [
+    {
+      "title": "Saiba quais foram os 10 golpes mais aplicados contra clientes bancários em 2024",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4279/pt-br/",
+      "date": "2025-04-14"
+    },
+    {
+      "title": "Golpe da Falsa Venda é o mais aplicado contra clientes bancários no 1º semestre do ano",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4381/pt-br/",
+      "date": "2025-11-11"
+    }
+  ],
+  "updated": "2026-11-16"
+}
