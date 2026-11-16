@@ -62,3 +62,17 @@ test('a catalogue page offers to report one like it, with the country chosen', a
   await page.getByRole('link', { name: /Report it/ }).click();
   await expect(page.locator('#rep-country')).toHaveValue('es');
 });
+
+test('trends: counts with names and bars, or an honest empty state', async ({ page }) => {
+  await page.route('**/v1/trends?country=ar', (r) => r.fulfill({ json: { country: 'ar', weeks: 12, kMin: 5, reports: 14, scams: { '2026-11-09': { 'ar/whatsapp-codigo': 9, 'ar/falso-banco': 5 } }, withheld: 3 } }));
+  await page.route('**/v1/trends?country=au', (r) => r.fulfill({ json: { country: 'au', weeks: 12, kMin: 5, reports: null, scams: {}, withheld: 0 } }));
+  await page.goto('/trends/');
+  await page.locator('#tr-country').selectOption('ar');
+  await expect(page.locator('#tr-list li')).toHaveCount(2);
+  await expect(page.locator('#tr-list li').first()).toContainText('9');
+  await expect(page.locator('#tr-status')).toContainText('14 reports');
+  await page.locator('#tr-country').selectOption('au');
+  await expect(page.locator('#tr-status')).toContainText('Not enough reports yet');
+  const r = await new AxeBuilder({ page }).analyze();
+  expect(r.violations).toEqual([]);
+});

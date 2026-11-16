@@ -28,7 +28,7 @@ test('writes every page and the playground assets', () => {
   const { dir, out, written } = build();
   const pages = written.filter((p) => p.endsWith('.html')).sort();
   const en = ['account/index.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
-    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'feed/index.html', 'index.html', 'report/index.html'];
+    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'feed/index.html', 'index.html', 'report/index.html', 'trends/index.html'];
   assert.deepEqual(pages, ['404.html', ...en].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
     'assets/lib/text.js', 'assets/entries.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
