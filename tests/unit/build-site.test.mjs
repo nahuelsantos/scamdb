@@ -27,11 +27,11 @@ test('esc escapes HTML', () => assert.equal(esc(`<a href="x">'&'</a>`), '&lt;a h
 test('writes every page and the playground assets', () => {
   const { dir, out, written } = build();
   const pages = written.filter((p) => p.endsWith('.html')).sort();
-  const en = ['catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
+  const en = ['account/index.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
     'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'index.html'];
   assert.deepEqual(pages, ['404.html', ...en, ...en.map((p) => `es/${p}`)].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
-    'assets/lib/text.js', 'assets/entries-ar.json']) assert.ok(existsSync(join(out, a)), a);
+    'assets/lib/text.js', 'assets/entries-ar.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
   rmSync(dir, { recursive: true });
 });
 
@@ -134,7 +134,7 @@ test('internal links on Spanish pages stay in Spanish', () => {
   const { dir, written, page } = build();
   for (const p of htmlPages(written).filter((p) => p.startsWith('es/'))) {
     for (const [tag, href] of page(p).matchAll(/<(?:a|link) [^>]*href="(\/[^"]*)"[^>]*>/g)) {
-      if (/^\/(v1|assets)\//.test(href)) continue;
+      if (/^\/(v1|assets|auth)\//.test(href)) continue; // API, files and sign-in endpoints have no language
       if (/hreflang=/.test(tag)) continue; // the language switch and alternates point at the other language on purpose
       assert.ok(href.startsWith('/es/') || href === '/es', `${p}: ${href}`);
     }
@@ -217,4 +217,35 @@ test('Spanish wording: descargar, están bajo', async () => {
   const { UI } = await import('../../site/i18n.js');
   assert.match(UI.es.catP, /podés descargar/);
   assert.equal(UI.es.dLicenseP1, 'Los datos están bajo');
+});
+
+// ---- Phase 2 pages ----
+test('the account page exists in both languages with one h1 and the GitHub sign-in link', () => {
+  const { dir, page } = build();
+  for (const p of ['account/index.html', 'es/account/index.html']) {
+    const html = page(p);
+    assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1, p);
+    assert.ok(html.includes('href="/auth/github"'), p);
+    assert.ok(html.includes('src="/assets/account.js"'), p);
+  }
+  rmSync(dir, { recursive: true });
+});
+test('the docs describe reports and keys, in both languages', () => {
+  const { dir, page } = build();
+  assert.ok(page('docs/index.html').includes('POST /v1/reports'));
+  assert.ok(page('docs/index.html').includes('Authorization: Bearer sk_'));
+  assert.ok(page('es/docs/index.html').includes('POST /v1/reports'));
+  rmSync(dir, { recursive: true });
+});
+test('the home page offers a free key and lists the reports endpoint', () => {
+  const { dir, page } = build();
+  assert.ok(page('index.html').includes('href="/account/"'));
+  assert.ok(page('es/index.html').includes('href="/es/account/"'));
+  assert.ok(page('index.html').includes('POST /v1/reports'));
+  rmSync(dir, { recursive: true });
+});
+test('contribute points to the eschamuyo report form', () => {
+  const { dir, page } = build();
+  assert.ok(page('contribute/index.html').includes('href="https://eschamuyo.com/#/avisar"'));
+  rmSync(dir, { recursive: true });
 });

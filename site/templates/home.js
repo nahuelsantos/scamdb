@@ -67,7 +67,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <p class="eyebrow">${esc(t(lang, 'eyebrow', repo.entries.length, countries.join(', ')))}</p>
     <h1>${esc(t(lang, 'h1a'))} <span class="mark">${esc(t(lang, 'h1b'))}<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true" focusable="false">${MARK}</svg></span></h1>
     <p class="lede">${esc(t(lang, 'lede'))}</p>
-    <div class="btns"><a class="btn solid" href="${P}/catalogue/">${esc(t(lang, 'btnCatalogue'))}</a><a class="btn" href="${P}/docs/">${esc(t(lang, 'btnDocs'))}</a></div>
+    <div class="btns"><a class="btn solid" href="${P}/catalogue/">${esc(t(lang, 'btnCatalogue'))}</a><a class="btn" href="${P}/docs/">${esc(t(lang, 'btnDocs'))}</a><a class="btn" href="${P}/account/">${esc(t(lang, 'btnKey'))}</a></div>
   </div>
   <div class="hero-art">${heroArt(t(lang, 'hero'))}</div>
 </section>
@@ -97,7 +97,7 @@ ${route ? `<section class="route" aria-labelledby="route-h">
   <h2 id="ep-h" class="sr">${esc(t(lang, 'epH'))}</h2>
   <div class="ep"><code>GET /v1/ar/scams.json</code><p>${esc(t(lang, 'epCountry'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
   <div class="ep"><code>GET /v1/scams/{id}.json</code><p>${esc(t(lang, 'epOne'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
-  <div class="ep"><code>GET /v1/scamdb.zip</code><p>${esc(t(lang, 'epZip'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
+  <div class="ep"><code>POST /v1/reports</code><p>${esc(t(lang, 'epReport'))}</p><span class="tier">${esc(t(lang, 'tierPrivate'))}</span></div>
   <div class="ep"><code>POST /v1/isitascam</code><p>${esc(t(lang, 'epCheck'))}</p><span class="tier">${esc(t(lang, 'tierSoon'))}</span></div>
 </section>`;
   return layout({ title: t(lang, 'homeTitle'), description: t(lang, 'homeDesc'), body, path: '/', meta, lang,

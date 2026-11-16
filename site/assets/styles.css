@@ -184,3 +184,13 @@ th { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--d
 }
 @media (max-width: 480px) { .why li { grid-template-columns: minmax(0, 1fr); gap: 2px; } .top nav { gap: 14px; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+
+/* account */
+.account { display: grid; gap: 14px; max-width: 60ch; }
+.account p { margin: 0; }
+.field-error { color: var(--accent-ink); font-weight: 600; }
+.newkey { background: var(--card); border: 1.5px dashed var(--accent); border-radius: 12px; padding: 14px; display: grid; gap: 8px; }
+.newkey code { font-size: 14px; overflow-wrap: anywhere; }
+.account form { margin: 0; }
+button.btn { cursor: pointer; font-family: var(--body); background: transparent; }
+button.btn.solid { background: var(--ink); color: var(--paper); }
