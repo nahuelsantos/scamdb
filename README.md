@@ -68,7 +68,7 @@ merges without the owner.
 - Run by hand in any Claude Code session in this repo: `/import-scams next` or `/import-scams au`.
 - A weekly scheduled run does the same with `next`.
 - `node tools/importer.mjs status` shows entries per country; `node tools/importer.mjs next` shows which comes next
-  (Australia, the US, the UK, Canada, Spain, Mexico, Brazil, then the country whose newest entry is oldest).
+  (Australia, New Zealand, the US, the UK, Canada, Spain, Mexico, Brazil, then the country whose newest entry is oldest).
 - Close an import PR, or delete a scam from it, to reject it: the next run adds it to `importer/rejected.json` and
   never proposes it again. Delete a line there to allow it back.
 
