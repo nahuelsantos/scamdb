@@ -1,0 +1,100 @@
+{
+  "id": "nz/job-ad-malicious-app",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "Recruiter on Facebook"
+  },
+  "name": {
+    "en": "Fake job ad: “download our app to apply”"
+  },
+  "how": {
+    "en": "You answer a job ad or recruitment post on Facebook or another social network. The “recruiter” moves the chat to WhatsApp or Telegram, sends a link and asks you to install an app as part of the application. The app may be a fake Android job app that shows a fake Google Play update and asks for Accessibility access. Once installed, the phone may freeze or show a fake system update while scammers take passwords, banking details and money. Some people have had to replace their phones."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You respond to a job ad or recruitment post on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The recruiter moves the chat to WhatsApp or Telegram."
+      }
+    },
+    {
+      "text": {
+        "en": "They send a link and ask you to install an app to apply, then to allow Accessibility access."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "The app gives scammers your passwords and bank access."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Thanks for applying! The next step is our onboarding app. Please install it from this link and allow the permissions so HR can verify you: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "job ad asked me to download an app",
+      "recruiter moved to whatsapp",
+      "install app to apply for job",
+      "phone froze after installing app",
+      "fake google play update",
+      "job app asked for accessibility"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access"
+  ],
+  "redFlags": {
+    "en": [
+      "Being asked to install an app before a proper conversation with an employer.",
+      "A link to an app outside the App Store or Google Play.",
+      "A request to allow Accessibility or install from unknown sources.",
+      "A quick move to WhatsApp or Telegram."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Only install apps from the Apple App Store or Google Play.",
+      "If you installed one, disconnect the phone, call your bank and get the phone checked or reset.",
+      "Check the employer independently before going further."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Rise in fake job and recruitment scams on social media",
+      "publisher": "Own Your Online (NCSC)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/rise-in-fake-job-and-recruitment-scams-on-social-media/",
+      "date": "2026-06-29"
+    },
+    {
+      "title": "Fake job app installs malware on Android phones",
+      "publisher": "Own Your Online (NCSC)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/fake-job-app-installs-malware-on-android-phones/",
+      "date": "2026-11-04"
+    }
+  ],
+  "updated": "2026-11-16"
+}

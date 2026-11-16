@@ -1,0 +1,94 @@
+{
+  "id": "nz/bank-card-letterbox",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Fraud investigator”"
+  },
+  "name": {
+    "en": "“Leave your bank card in the letterbox” for investigation"
+  },
+  "how": {
+    "en": "Offenders phone pretending to investigate fraud on your bank card. They convince you that your account has been compromised and tell you to put your bank card in your letterbox so it can be “collected for investigation”. They come later, take the cards and use them to withdraw cash or buy things. Police in south Auckland say older people are being targeted."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are investigating fraud on your bank card."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say your account is compromised and you must act."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They tell you to leave your card in the letterbox and may ask for your PIN."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They collect the card and use it to take cash or buy things."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "We have detected fraudulent use of your bank card. Please place the card in an envelope in your letterbox today so our investigator can collect it, and do not use it in the meantime."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "leave my bank card in the letterbox",
+      "card collected for investigation",
+      "caller said my account was compromised",
+      "investigator collecting my card",
+      "asked for my pin over the phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Being told to leave a bank card or personal details in your letterbox or outside your home.",
+      "A caller asking for your PIN, password or banking details.",
+      "A “fraud investigation” you didn’t start."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never leave cards or details in your letterbox for anyone.",
+      "Hang up and call your bank on the number on the back of your card.",
+      "If someone says they are police, check by calling 105."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/emergency"
+  ],
+  "sources": [
+    {
+      "title": "Police issue warning to not leave bank cards in letterboxes",
+      "publisher": "New Zealand Police",
+      "url": "https://www.police.govt.nz/news/release/police-issue-warning-not-leave-bank-cards-letterboxes",
+      "date": "2026-06-16"
+    }
+  ],
+  "updated": "2026-11-16"
+}

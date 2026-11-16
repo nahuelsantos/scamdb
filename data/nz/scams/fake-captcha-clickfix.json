@@ -1,0 +1,89 @@
+{
+  "id": "nz/fake-captcha-clickfix",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online"
+  ],
+  "sender": {
+    "en": "“Verify you are human” page"
+  },
+  "name": {
+    "en": "Fake “I’m not a robot” check that tells you to paste a command"
+  },
+  "how": {
+    "en": "An infected website shows what looks like a CloudFlare, CAPTCHA or reCAPTCHA check. Instead of a checkbox or puzzle, it tells you to press keyboard shortcuts or copy and paste something. Following the instructions installs malware on your device. Real checks never ask you to use keyboard commands, paste content or enter passwords."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A website shows a “verify you are human” check, often as a pop-up."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It tells you to press keyboard shortcuts or copy and paste text."
+      }
+    },
+    {
+      "text": {
+        "en": "Following it runs a command that installs malware."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "The malware can steal passwords and other information."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Verify you are human: press Windows + R, paste the code with Ctrl + V and press Enter to complete verification."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "captcha asked me to paste a command",
+      "press windows r to verify",
+      "fake cloudflare check",
+      "not a robot keyboard shortcut",
+      "verification popup copy and paste"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access"
+  ],
+  "redFlags": {
+    "en": [
+      "A human check that asks for keyboard commands or copy and paste.",
+      "A check that asks for passwords or personal information.",
+      "A verification that appears as a sudden pop-up."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Close the tab or browser without following the steps.",
+      "If you followed them, disconnect from the internet and get the device checked.",
+      "Change passwords from a different device."
+    ]
+  },
+  "reportTo": [
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Social engineering scam ClickFix using websites to spread malware",
+      "publisher": "Own Your Online (NCSC)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/social-engineering-scam-clickfix-using-websites-to-spread-malware/",
+      "date": "2026-09-02"
+    }
+  ],
+  "updated": "2026-11-16"
+}

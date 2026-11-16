@@ -1,0 +1,94 @@
+{
+  "id": "nz/nzta-toll-text",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“NZTA”"
+  },
+  "name": {
+    "en": "Fake NZTA text: “you have an unpaid road toll”"
+  },
+  "how": {
+    "en": "A text says you have an unpaid or overdue road toll and gives a link. The link goes to a site that looks like NZTA’s and asks for your card details to pay a small fee. Criminals then use the card to buy phones and gift cards. In one case sentenced in Auckland in June 2026, a 63-year-old lost $16,690."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text claims to be from NZTA about an unpaid road toll."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says the toll is overdue and you must pay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It links to a copy of the NZTA website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site takes your card details and criminals spend on your card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "NZTA: Your vehicle has an unpaid road toll of $4.20. Pay today to avoid a $65 penalty: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "nzta unpaid toll text",
+      "overdue road toll message",
+      "toll payment link",
+      "entered card details on nzta site",
+      "road toll penalty text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A text about a toll with a link to pay.",
+      "A small amount with a bigger penalty if you don’t pay today.",
+      "A website asking for card details to pay a toll."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t tap the link. Check tolls by typing the official NZTA address yourself.",
+      "If you entered card details, call your bank to block the card."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Qingle Liu jailed for role in $89k fake NZTA road toll text message scam",
+      "publisher": "NZ Herald",
+      "url": "https://www.nzherald.co.nz/nz/qingle-liu-jailed-for-role-in-89k-fake-nzta-road-toll-text-message-scam/HQXVUGU6TREXBMIQSEWLYMPK7Y/",
+      "date": "2026-06-12"
+    }
+  ],
+  "updated": "2026-11-16"
+}

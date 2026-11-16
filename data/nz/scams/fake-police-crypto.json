@@ -1,0 +1,101 @@
+{
+  "id": "nz/fake-police-crypto",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "en": "“Detective” from NZ Police"
+  },
+  "name": {
+    "en": "Fake police detective: “your crypto wallet is at risk”"
+  },
+  "how": {
+    "en": "A caller says they are a police detective and that your details or ID were found on someone who was arrested. They ask whether and how you hold cryptocurrency, then pass you to a fake “representative” of your crypto company. That person gets you to hand over your passwords or seed phrase, often on a fake page that looks like the real app. Police say victims have lost millions, and scammers can spoof real police phone numbers and emails."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A “detective” calls, saying your details were found on someone arrested."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask whether you hold cryptocurrency and where."
+      }
+    },
+    {
+      "text": {
+        "en": "A fake representative of your crypto company contacts you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They get your password or seed phrase, often on a fake page, and empty the wallet."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is Detective Sergeant Morgan from NZ Police. Your driver licence was found on a man we arrested this morning and we believe your crypto account is at risk. Someone from your exchange will call you shortly to secure it."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "police detective called about crypto",
+      "my id found on someone arrested",
+      "crypto wallet at risk",
+      "asked for my seed phrase",
+      "fake crypto exchange representative",
+      "police investigation into my crypto"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Police asking about crypto wallets, bank cards, PINs, seed phrases or passwords. They never do on a call.",
+      "A second caller “from your exchange” right after the police call.",
+      "A web page asking for your seed phrase.",
+      "A caller ID that looks like a real police number (it can be spoofed)."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never share your seed phrase or passwords, and never type your seed phrase into a website.",
+      "Ask for the officer’s details, hang up and call 105 to check.",
+      "If you shared anything, contact your crypto exchange straight away."
+    ]
+  },
+  "reportTo": [
+    "nz/police-105",
+    "nz/ncsc",
+    "nz/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Police warn of scammers impersonating NZ Police targeting cryptocurrency wallet holders",
+      "publisher": "New Zealand Police",
+      "url": "https://www.police.govt.nz/news/release/police-warn-scammers-impersonating-nz-police-targeting-cryptocurrency-wallet-holders",
+      "date": "2026-07-21"
+    },
+    {
+      "title": "Scammers impersonating police to target victims for cryptocurrency theft",
+      "publisher": "National Cyber Security Centre",
+      "url": "https://www.ncsc.govt.nz/alerts/scammers-impersonating-police-to-target-victims-for-cryptocurrency-theft/",
+      "date": "2026-07-17"
+    }
+  ],
+  "updated": "2026-11-16"
+}

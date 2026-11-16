@@ -1,0 +1,92 @@
+{
+  "id": "nz/whatsapp-ghost-pairing",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A friend or family member"
+  },
+  "name": {
+    "en": "“Vote for my child” on WhatsApp: your account gets linked to a scammer"
+  },
+  "how": {
+    "en": "A message from someone you know asks you to vote for a child in a competition, or says they found a photo of you. The link goes to a page that looks genuine and asks for your phone number or shows a code with routine-looking instructions. Following them links the criminal’s device to your WhatsApp account (“GhostPairing”). The scammer can then read your chats and photos and message your contacts as you."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A friend or relative sends a link: vote for a child, or see a photo of you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The page asks for your phone number or shows a code to enter."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Following the steps links the scammer’s device to your WhatsApp."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They read your chats and message your contacts as you."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi! My niece is in a photo competition, could you vote for her? It only takes a second, just confirm with your number: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "vote for my child whatsapp",
+      "someone found a photo of you",
+      "whatsapp linked device i did not add",
+      "friend sent a voting link",
+      "whatsapp code on a website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "en": [
+      "A link from a contact asking you to vote or view a photo.",
+      "A website asking for your phone number or showing a code for WhatsApp.",
+      "Instructions to link a device."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t enter your number or codes on websites from links.",
+      "In WhatsApp, check Linked devices and remove any you don’t recognise.",
+      "Turn on two-step verification and warn your contacts."
+    ]
+  },
+  "reportTo": [
+    "nz/ncsc",
+    "nz/police-105"
+  ],
+  "sources": [
+    {
+      "title": "New WhatsApp scams trick users into giving scammers access to their accounts",
+      "publisher": "Own Your Online (NCSC)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/new-whatsapp-scams-trick-users-into-giving-scammers-access-to-their-accounts/",
+      "date": "2026-11-11"
+    }
+  ],
+  "updated": "2026-11-16"
+}
