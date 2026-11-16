@@ -6,12 +6,14 @@
 //                                        about 200 checks; needs CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN with
 //                                        "Workers AI: Read" permission)
 //   node tools/eval.mjs --country au     one country
+//   node tools/eval.mjs --private        the encrypted private set instead (needs EVAL_PRIVATE_KEY; never commit its report)
 //   node tools/eval.mjs --out eval/results.md   also write the report to a file
 //   node tools/eval.mjs --ai --cache /tmp/ai.json   keep the AI's answers and reuse them (to tune the combine rules for free)
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { loadRepo } from '../lib/load.js';
 import { loadMessages, checkMessages, evaluate, report } from '../lib/eval.js';
+import { loadPrivateMessages } from '../lib/private-eval.js';
 import { matchMessage } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from '../worker/scorer.js';
 
@@ -22,7 +24,9 @@ const value = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : nu
 const root = new URL('..', import.meta.url).pathname;
 const repo = loadRepo(root);
 const country = value('--country');
-const messages = loadMessages(root).filter((m) => !country || m.country === country);
+const priv = flag('--private');
+if (priv && !process.env.EVAL_PRIVATE_KEY) { console.error('--private needs EVAL_PRIVATE_KEY.'); process.exit(1); }
+const messages = (priv ? loadPrivateMessages(root) ?? [] : loadMessages(root)).filter((m) => !country || m.country === country);
 const problems = checkMessages(messages, new Set(repo.entries.map((e) => e.id)));
 if (problems.length) {
   console.error(`The test set has problems:\n${problems.map((p) => `  ${p}`).join('\n')}`);
@@ -48,7 +52,7 @@ function restAI(accountId, token) {
 }
 
 const started = Date.now();
-let out = `# scamdb engine report\n\n${messages.length} labelled messages (${messages.filter((m) => m.label === 'scam').length} scams, ${messages.filter((m) => m.label === 'safe').length} safe)${country ? ` for ${country}` : ''}.\n\n`;
+let out = `# scamdb engine report${priv ? ' (private set: do not commit)' : ''}\n\n${messages.length} labelled messages (${messages.filter((m) => m.label === 'scam').length} scams, ${messages.filter((m) => m.label === 'safe').length} safe)${country ? ` for ${country}` : ''}.\n\n`;
 out += report('Keyword matcher', await evaluate(messages, matcherEngine(repo.entries)));
 
 if (flag('--ai')) {

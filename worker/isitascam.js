@@ -6,6 +6,7 @@ import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from './scorer.js';
+import { checkProbe } from './probes.js';
 import { readForm, extractText } from './media.js';
 import { LIMITS as REPORT_LIMITS } from './reports.js';
 
@@ -47,9 +48,12 @@ export function buildAnswer({ result, catalogue, top, lang, country, scorer, sco
 /** Only keyed requests reach Workers AI; keyless checks are matcher-only by design. */
 export const usesScorer = (key, env) => Boolean(key && env.AI);
 
-async function checkLimits(env, key, ip, now) {
+/** Who a check counts against: the key's GitHub account, or a salted daily hash of the IP. */
+const subjectOf = async (env, key, ip, now) => (key ? `gh:${key.githubId}` : `ip:${await ipHash(ip, env.IP_SALT, utcDay(now))}`);
+
+async function checkLimits(env, key, subject, now) {
   const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
-  const bucket = key ? `isitascam:gh:${key.githubId}` : `isitascam:ip:${await ipHash(ip, env.IP_SALT, utcDay(now))}`;
+  const bucket = `isitascam:${subject}`;
   if (!(await hit(env.DB, bucket, key ? LIMITS.keyed : LIMITS.keyless, now)).ok)
     throw new HttpError(429, 'too_many_checks', `Daily limit reached (${key ? LIMITS.keyed : LIMITS.keyless} checks). Try again tomorrow${key ? '' : ', or get a free key for more'}.`, retry);
   if (!(await hit(env.DB, 'isitascam:global', LIMITS.global, now)).ok)
@@ -67,7 +71,8 @@ export async function handleIsItAScam(request, env) {
   if (check.report && !key) throw invalid('report', 'saving a report needs an API key; without one, use POST /v1/reports');
 
   const now = new Date();
-  await checkLimits(env, key, request.headers.get('cf-connecting-ip') ?? '', now);
+  const subject = await subjectOf(env, key, request.headers.get('cf-connecting-ip') ?? '', now);
+  await checkLimits(env, key, subject, now);
 
   if (file) {
     if (!env.AI) throw new HttpError(503, 'not_available', 'Reading screenshots and voice notes is not switched on yet.');
@@ -77,6 +82,7 @@ export async function handleIsItAScam(request, env) {
     check.text = read.slice(0, MAX_TEXT);
   }
 
+  await checkProbe(env.DB, subject, check.text, now); // many near-identical checks look like tuning a scam against us
   let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined });
   if (check.report && !check.country && !result.matches.length) throw invalid('country', 'needed to save a report when no catalogue scam matches');
   let scorer = 'matcher', scorerError = null; // keyed callers see why the AI step was skipped

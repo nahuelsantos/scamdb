@@ -72,3 +72,22 @@ test('the matcher stays above its floors on the labelled set', async () => {
   assert.ok(x.falseScam <= 5, `safe messages called "scam" ${x.falseScam}%`);
   assert.ok(r.all.wrongMatches <= 102, `wrong matches ${r.all.wrongMatches}`);
 });
+
+// The encrypted private set (eval/private.enc). Runs only where EVAL_PRIVATE_KEY is set (CI with the secret, or the
+// owner's machine); prints nothing about the messages themselves.
+import { loadPrivateMessages, seal, open, newKey } from '../../lib/private-eval.js';
+test('sealing round-trips and a wrong key fails', () => {
+  const k = newKey();
+  const s = seal('{"messages":[]}', k);
+  assert.equal(open(s, k), '{"messages":[]}');
+  assert.throws(() => open(s, newKey()));
+  assert.throws(() => seal('x', 'short'), /32 bytes/);
+});
+const priv = loadPrivateMessages(root);
+test('the private set is well-formed and the matcher stays above its floors on it', { skip: priv ? false : 'no EVAL_PRIVATE_KEY' }, async () => {
+  assert.deepEqual(checkMessages(priv, new Set(repo.entries.map((e) => e.id))), []);
+  const r = await evaluate(priv, (m) => matchMessage(m.text, repo.entries, { country: m.country }));
+  const x = rates(r.all);
+  assert.ok(x.caught >= 85, `private: scams caught ${x.caught}%`);
+  assert.ok(x.falseScam <= 20, `private: safe called "scam" ${x.falseScam}%`);
+});

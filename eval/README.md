@@ -40,3 +40,26 @@ node tools/fit-fusion.mjs /tmp/ai.json
 
 The second command prints held-out results (each country scored by weights fitted on the other eight). Add `--write`
 to save the new weights. `report-ai-fusion.md` has the latest numbers.
+
+## The private set
+
+`private.enc` holds extra labelled messages, encrypted (AES-256-GCM), so nobody can tune a scam against them and the
+numbers stay honest. Only the owner and CI have the key, in the `EVAL_PRIVATE_KEY` GitHub secret.
+
+```bash
+EVAL_PRIVATE_KEY=… node tools/private-eval.mjs open
+```
+
+That writes `eval/private/messages.json`, which is gitignored. Edit it, then encrypt it again:
+
+```bash
+EVAL_PRIVATE_KEY=… node tools/private-eval.mjs seal
+```
+
+To score the private set:
+
+```bash
+EVAL_PRIVATE_KEY=… node tools/eval.mjs --private
+```
+
+Add `--ai` to include the AI scorer. Never commit a report of the private set.
