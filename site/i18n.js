@@ -56,7 +56,7 @@ export const UI = {
     cLicense: 'By opening a pull request you agree that your contribution is published under CC BY 4.0 (data) or MIT (code).',
     cReportH: 'Report a scam you received', cReportA: 'A private report form is coming soon. Until then,', cReportLink: 'open an issue',
     cReportB: 'describing it', cReportBold: 'without any personal data', cReportC: ': no names, numbers or screenshots of real people.',
-    nfTitle: 'Not found · scamdb', nfDesc: 'Page not found.', nfH: 'Not found', nfA: 'That page doesn’t exist. Try the', nfOr: 'or the', nfEs: 'En español',
+    nfTitle: 'Not found · scamdb', nfDesc: 'Page not found.', nfH: 'Not found', nfA: 'That page doesn’t exist. Try the', nfOr: 'or the', nfEs: 'En español', nfCatalogue: 'catalogue', nfDocs: 'docs',
   },
   es: {
     skip: 'Ir al contenido', navDocs: 'Documentación', navCatalogue: 'Catálogo', navContribute: 'Contribuir', mainNav: 'Principal',
@@ -74,7 +74,7 @@ export const UI = {
     noSignals: 'Sin códigos, plata, links ni apuro', matches: 'Coincide con', noMatch: 'No es una estafa conocida. Si igual te da mala espina, no contestes y consultá con alguien de confianza.',
     scriptH: 'Toda estafa sigue un guion', scriptP: 'Los números y los links cambian cada semana; el guion sigue igual durante años. Cada ficha lo desarma paso a paso, con la señal de alerta en cada parada. Este es',
     whatHappens: 'Qué pasa',
-    catH: 'El catálogo', catP: 'Un archivo por estafa en GitHub, revisado antes de publicarse. Cada uno es también un archivo JSON que podés pedir.', seeAll: (n) => `Ver las ${n}`,
+    catH: 'El catálogo', catP: 'Un archivo por estafa en GitHub, revisado antes de publicarse. Cada uno es también un archivo JSON que podés descargar.', seeAll: (n) => `Ver las ${n}`,
     epH: 'Endpoints', epCountry: 'Todas las estafas de un país.', epOne: 'Una estafa: ejemplos, señales, qué hacer.', epZip: 'Toda la base, CC BY 4.0.',
     epCheck: 'Entra un texto, una captura o un audio; sale el veredicto y por qué.', tierFree: 'gratis, sin clave', tierSoon: 'muy pronto',
     cardCount: (signs, sources, month) => `${plural(signs, 'señal de alerta', 'señales de alerta')} · ${plural(sources, 'fuente', 'fuentes')} · actualizada ${month}`,
@@ -90,7 +90,7 @@ export const UI = {
     dQuick: 'Para empezar', dEndpoints: 'Endpoints', dWhat: 'Qué trae', dResponse: 'La respuesta',
     dResponseP: 'Todos los archivos JSON vienen en el mismo sobre. version es la fecha y el commit de la base; cambia con cada edición.',
     dEntry: 'Una ficha', dField: 'Campo', dSchemas: 'Los JSON Schemas están en el repo, en', dLicense: 'Licencia y atribución',
-    dLicenseP1: 'Los datos son', dLicenseP2: ': usalos para lo que quieras, también comercialmente, siempre que des crédito a', dLicenseP3: 'y enlaces la licencia. Las fuentes y los medios enlazados son de sus dueños.',
+    dLicenseP1: 'Los datos están bajo', dLicenseP2: ': usalos para lo que quieras, también comercialmente, siempre que des crédito a', dLicenseP3: 'y enlaces la licencia. Las fuentes y los medios enlazados son de sus dueños.',
     dLimits: 'Límites y privacidad', dLimitsP: 'Los endpoints estáticos no tienen clave ni límite. Se guardan en caché 5 minutos. No guardamos registros de quién lee los datos, más allá de lo que guarda nuestro proveedor para servirlos.',
     dNext: 'Lo que viene', dNext1: 'Avisos privados: contanos de una estafa que te llegó.', dNext2: 'Claves de API gratis.',
     dNext3: 'mandá un mensaje, una captura o un audio y recibí el veredicto, las señales de alerta y la estafa que coincide.',
@@ -109,7 +109,7 @@ export const UI = {
     cLicense: 'Al abrir un pull request aceptás que tu aporte se publique con licencia CC BY 4.0 (datos) o MIT (código).',
     cReportH: 'Avisar de una estafa que te llegó', cReportA: 'Muy pronto vas a tener un formulario privado. Mientras tanto,', cReportLink: 'abrí un issue',
     cReportB: 'contándola', cReportBold: 'sin ningún dato personal', cReportC: ': nada de nombres, números ni capturas de personas reales.',
-    nfTitle: 'No encontrada · scamdb', nfDesc: 'Página no encontrada.', nfH: 'No encontrada', nfA: 'Esa página no existe. Probá el', nfOr: 'o la', nfEs: 'English',
+    nfTitle: 'No encontrada · scamdb', nfDesc: 'Página no encontrada.', nfH: 'No encontrada', nfA: 'Esa página no existe. Probá el', nfOr: 'o la', nfEs: 'English', nfCatalogue: 'catálogo', nfDocs: 'documentación',
   },
 };
 
