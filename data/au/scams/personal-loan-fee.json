@@ -1,0 +1,98 @@
+{
+  "id": "au/personal-loan-fee",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "en": "A “lender” or “loan broker”"
+  },
+  "name": {
+    "en": "Fake personal loan: “pay the insurance fee before we release the money”"
+  },
+  "how": {
+    "en": "Scammers set up fake loan websites and social media ads, sometimes copying a real licensed lender’s name, ABN and ASIC licence number. After you apply, they “approve” the loan and ask for photo ID, payslips, bank statements and even your bank and myGov logins. Then they ask for an upfront “payment protection insurance” or “establishment” fee, paid in full to a personal account, and say it will be refunded after 3 months. The loan never arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You find a loan offer through an ad or website and apply."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They approve you quickly and ask for ID, payslips and your bank and myGov logins."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They say you must pay an insurance or establishment fee first, to a personal account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "They promise the fee will be refunded after 3 months, but the loan never comes."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Congratulations, your personal loan of $15,000 has been approved. To release the funds, payment protection insurance of $950 must be paid upfront. This amount is fully refundable after 3 months."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "loan approved but pay a fee first",
+      "upfront insurance fee for a loan",
+      "loan never arrived after paying",
+      "they asked for my mygov login for a loan",
+      "personal loan ad on facebook",
+      "refundable fee after 3 months"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A fee you must pay before the loan is released.",
+      "Payment to a personal bank account.",
+      "Requests for your bank or myGov login.",
+      "A lender not on ASIC’s registers, or on Moneysmart’s investor alert list."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never pay a fee upfront to get a loan, and never share your bank or myGov logins.",
+      "Check the lender on ASIC’s professional registers and Moneysmart’s investor alert list, then contact it on a number you find yourself.",
+      "If you paid or shared documents, contact your bank and IDCARE straight away."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/idcare",
+    "au/scamwatch",
+    "au/afca"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Personal loan scams",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-personal-loan-scams",
+      "date": "2026-03-19"
+    }
+  ],
+  "updated": "2026-11-16"
+}

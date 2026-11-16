@@ -1,0 +1,155 @@
+{
+  "id": "mx/virtual-kidnapping",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“El cártel”, una “autoridad” o “tu familiar”",
+    "en": "“The cartel”, an “official” or “your relative”"
+  },
+  "name": {
+    "es": "Secuestro virtual y “llamada cruzada”: “tenemos a tu hijo”",
+    "en": "Virtual kidnapping and the “crossed call”: “we have your son”"
+  },
+  "how": {
+    "es": "Los extorsionadores llaman a una persona haciéndose pasar por autoridades, empleados de una empresa o integrantes de un cártel. La amenazan a ella y a su familia y la convencen de salir de casa, esconderse y no contestar a nadie. Mientras está aislada, llaman a sus familiares, les dicen que la tienen secuestrada y exigen miles de pesos o bienes. Nadie está secuestrado: es miedo y engaño.",
+    "en": "Extortionists call a person pretending to be officials, company employees or cartel members. They threaten that person and their family and convince them to leave home, hide and not answer anyone. While the person is isolated, they call the relatives, say they have kidnapped them and demand thousands of pesos or goods. Nobody has been kidnapped: it’s fear and deception."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Llaman a una persona diciendo ser de un cártel, de una autoridad o de una empresa.",
+        "en": "Someone calls a person claiming to be from a cartel, an authority or a company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "La amenazan y la convencen de salir de casa, esconderse y no hablar con nadie.",
+        "en": "They threaten the person and convince them to leave home, hide and talk to nobody."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Le piden no colgar para que su familia no pueda localizarla.",
+        "en": "They tell the person not to hang up so the family can’t reach them."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Llaman a la familia: “la tenemos secuestrada” y exigen dinero ya.",
+        "en": "They call the family: “we have kidnapped her” and demand money now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Piden depósitos, transferencias o hasta un coche a cambio de “liberarla”.",
+        "en": "They ask for deposits, transfers or even a car to “release” her."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señora, tenemos a su hijo. No cuelgue y no le diga a nadie o le va a ir mal. Si quiere volver a verlo, deposite 50 mil pesos en la próxima hora.",
+        "en": "Ma’am, we have your son. Don’t hang up and don’t tell anyone or it will go badly for him. If you want to see him again, deposit 50 thousand pesos within the next hour."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "es": "Somos del cártel y sabemos dónde vives. Sal de tu casa ahorita, vete a un hotel y apaga el celular para todos menos para nosotros. No le avises a tu familia.",
+        "en": "We’re from the cartel and we know where you live. Leave your house right now, go to a hotel and turn your phone off for everyone except us. Don’t tell your family."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "secuestro virtual",
+      "llamada cruzada",
+      "me dijeron que tenian a mi hijo",
+      "dicen que son del cartel",
+      "me pidieron que me fuera a un hotel",
+      "no cuelgue o le va a ir mal",
+      "exigen dinero por un secuestro"
+    ],
+    "en": [
+      "virtual kidnapping",
+      "they said they had my son",
+      "they say they are from the cartel",
+      "they told me to go to a hotel",
+      "don't hang up or else",
+      "ransom call for my daughter"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden no colgar y no avisar a nadie.",
+      "Te ordenan salir de casa, ir a un hotel o apagar el celular.",
+      "Exigen dinero en minutos, sin dejarte hablar con tu familiar.",
+      "Usan datos que publicaste en redes sociales para parecer creíbles."
+    ],
+    "en": [
+      "They tell you not to hang up and not to tell anyone.",
+      "They order you to leave home, go to a hotel or switch off your phone.",
+      "They demand money within minutes, without letting you talk to your relative.",
+      "They use things you posted on social media to seem believable."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama tú directamente a tu familiar o a alguien que esté con él.",
+      "Acuerden en familia una palabra clave para estas situaciones.",
+      "No deposites. Llama al 089 para orientación y denuncia anónima, o al 911 si hay un peligro real.",
+      "Cuida lo que publicas en redes y quién puede verlo."
+    ],
+    "en": [
+      "Hang up and call your relative, or someone with them, directly yourself.",
+      "Agree on a family code word for these situations.",
+      "Don’t pay. Call 089 for advice and an anonymous report, or 911 if there is real danger.",
+      "Be careful what you post on social media and who can see it."
+    ]
+  },
+  "reportTo": [
+    "mx/denuncia-089",
+    "mx/emergencias",
+    "mx/policia-cibernetica"
+  ],
+  "sources": [
+    {
+      "title": "¿Cómo es la extorsión por “llamadas cruzadas”? Alertó la Policía Cibernética CDMX",
+      "publisher": "ADN40",
+      "url": "https://www.adn40.mx/seguridad/2025-10-23/como-es-extorsion-llamadas-cruzadas-alerto-policia-cibernetica-cdmx/",
+      "date": "2025-10-23"
+    },
+    {
+      "title": "Caen seis por secuestro virtual en CDMX: así operaba la célula de extorsionadores",
+      "publisher": "Publimetro",
+      "url": "https://www.publimetro.com.mx/noticias/2026/03/24/caen-seis-por-secuestro-virtual-en-cdmx-asi-operaba-la-celula-de-extorsionadores/",
+      "date": "2026-03-24"
+    },
+    {
+      "title": "Gobierno de México lanza Estrategia Nacional contra la Extorsión",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/gobierno-de-mexico-lanza-estrategia-nacional-contra-la-extorsion?idiom=es",
+      "date": "2025-07-06"
+    }
+  ],
+  "updated": "2026-11-16"
+}

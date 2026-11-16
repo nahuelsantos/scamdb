@@ -1,15 +1,34 @@
 import { esc, L, LI, monthYear } from './html.js';
 import { layout, REPO } from './layout.js';
-import { steps } from './parts.js';
-import { iconFor } from './icons.js';
+import { steps, statusNote } from './parts.js';
+import { iconFor, UI_ICONS } from './icons.js';
 import { pick } from '../../lib/text.js';
-import { t, prefix } from '../i18n.js';
+import { t } from '../i18n.js';
 
-/** One scam. Its content stays in the entry's own language (`lang` attributes); only labels follow `ui`. */
+/** The original-language version of the explanation, folded away (works without JS). Empty for English originals. */
+function original(e, orig, ui) {
+  if (orig === 'en' || !e.how?.[orig]) return '';
+  const name = t(ui, 'langNames')[orig] ?? orig.toUpperCase();
+  return `<details class="original"><summary>${UI_ICONS.globe}<span>${esc(t(ui, 'showOriginal'))} (${esc(name)})</span><span class="chev" aria-hidden="true"></span></summary>
+<div lang="${esc(orig)}"><h2>${esc(pick(e.name, orig))}</h2><p>${esc(pick(e.how, orig))}</p>
+<h3 lang="en">${esc(t(ui, 'sScript'))}</h3><ol class="list">${e.steps.map((st) => `<li>${esc(pick(st.text, orig))}</li>`).join('')}</ol>
+<h3 lang="en">${esc(t(ui, 'sSigns'))}</h3><ul class="list">${LI(e.redFlags, orig)}</ul>
+<h3 lang="en">${esc(t(ui, 'sDo'))}</h3><ul class="list do">${LI(e.whatToDo, orig)}</ul>
+${e.story ? `<h3 lang="en">${esc(t(ui, 'sStory'))}</h3><p>${esc(pick(e.story, orig))}</p>` : ''}</div></details>`;
+}
+
+/** A sample message as it arrives (original language) with the English underneath. */
+function example(x, orig) {
+  const both = orig !== 'en' && x.text[orig] !== undefined && x.text.en !== undefined;
+  return `<blockquote class="bubble">${L(x.text, orig)}</blockquote>${both ? `<p class="translation">${L(x.text, 'en')}</p>` : ''}`;
+}
+
+/** One scam: explained in English, sample messages in the original language with English, the original on demand. */
 export function entry({ repo, meta, entry: e, lang: ui = 'en' }) {
   const country = repo.countries.find((c) => c.code === e.country);
-  const lang = country?.languages[0] ?? 'es';
-  const P = prefix(ui);
+  const orig = e.lang ?? country?.languages[0] ?? 'en';
+  const lang = 'en';
+  const P = '';
   const signalsById = new Map(repo.signals.map((s) => [s.id, s]));
   const contacts = (repo.contacts.get(e.country) ?? []).filter((k) => e.reportTo.includes(k.id));
   const [cc, slug] = e.id.split('/');
@@ -18,15 +37,16 @@ export function entry({ repo, meta, entry: e, lang: ui = 'en' }) {
 <header class="entry-head">
   <div><p class="eyebrow"><a href="${P}/catalogue/">${esc(t(ui, 'navCatalogue'))}</a> · ${esc(pick(country?.name, ui) ?? e.country)} · <span class="mono">${esc(e.id)}</span></p>
   <h1>${L(e.name, lang)}</h1>
-  <p class="sender">${esc(t(ui, 'claims'))} ${L(e.sender, lang, 'b')} · ${esc(t(ui, 'via'))} ${e.channels.map((c) => esc(t(ui, 'channels')[c] ?? c)).join(', ')}</p></div>
+  <p class="sender">${esc(t(ui, 'claims'))} ${L(e.sender, lang, 'b')} · ${esc(t(ui, 'via'))} ${e.channels.map((c) => esc(t(ui, 'channels')[c] ?? c)).join(', ')}</p>${statusNote(e, ui)}</div>
   ${iconFor(e)}
 </header>
 ${L(e.how, lang, 'p', 'lede')}
+${original(e, orig, ui)}
 
 <section aria-labelledby="s-h"><h2 id="s-h">${esc(t(ui, 'sScript'))}</h2>${steps(e, signalsById, lang, ui)}</section>
 
 <div class="two">
-<section aria-labelledby="x-h"><h2 id="x-h">${esc(t(ui, 'sLooks'))}</h2>${e.examples.map((x) => `<p class="bubble">${L(x.text, lang)}</p>`).join('')}
+<section aria-labelledby="x-h"><h2 id="x-h">${esc(t(ui, 'sLooks'))}</h2>${e.examples.map((x) => example(x, orig)).join('')}
 <p class="small">${esc(t(ui, 'sLooksNote'))}</p></section>
 <section aria-labelledby="r-h"><h2 id="r-h">${esc(t(ui, 'sSigns'))}</h2><ul class="list">${LI(e.redFlags, lang)}</ul>
 <div class="chips">${e.signals.map((s) => `<span>${esc(pick(signalsById.get(s)?.label, ui) ?? s)}</span>`).join('')}</div></section>

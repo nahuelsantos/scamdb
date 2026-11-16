@@ -1,0 +1,111 @@
+{
+  "id": "gb/winter-fuel-payment-text",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "en": "“DWP”, “GOV.UK” or “HMRC”"
+  },
+  "name": {
+    "en": "Winter Fuel Payment text: “apply now” or “repay your payment”"
+  },
+  "how": {
+    "en": "Pensioners get texts, emails or calls about the Winter Fuel Payment. Some invite you to “apply” for the payment and ask for bank details. Others use the repayment of the payment as a hook and ask you to pay money back. The payment is made automatically, and any repayment is collected through your tax code or tax return, so the government never asks for bank details or repayment by text or email."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text says it is from the government about your Winter Fuel Payment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you must apply or act quickly to get it, or to pay it back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to a form."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The form asks for your bank or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "DWP: You are eligible for the Winter Fuel Payment of £300. Apply before 30 November to receive your payment: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "HMRC: Your Winter Fuel Payment must be repaid. Pay now to avoid a penalty: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text about winter fuel payment",
+      "apply for winter fuel payment link",
+      "winter fuel payment bank details",
+      "repay my winter fuel payment text",
+      "dwp text asking for bank details",
+      "pension heating payment message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A text asking you to apply: the payment is automatic.",
+      "A text or email asking you to repay it or give bank details.",
+      "A link and a deadline."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link or reply. Forward the text free to 7726 and delete it.",
+      "Check whether a payment will be reclaimed with HMRC’s tool on GOV.UK.",
+      "If you gave bank details, call your bank straight away (you can dial 159)."
+    ]
+  },
+  "reportTo": [
+    "gb/7726",
+    "gb/hmrc-phishing",
+    "gb/your-bank",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "Pensioners warned to stay alert as winter fuel payment scams surge by over 150%",
+      "publisher": "Department for Work and Pensions (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/pensioners-warned-to-stay-alert-as-winter-fuel-payment-scams-surge-by-over-150",
+      "date": "2025-10-15"
+    },
+    {
+      "title": "Pensioners urged to be alert to Winter Fuel Payment scams",
+      "publisher": "HM Revenue and Customs (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/pensioners-urged-to-be-alert-to-winter-fuel-payment-scams",
+      "date": "2026-04-14"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,126 @@
+{
+  "id": "br/inss-fake-refund",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "pt": "“INSS”, “Previdência” ou “associação”",
+    "en": "“INSS”, “Social Security” or an “association”"
+  },
+  "name": {
+    "pt": "Falsa devolução dos descontos do INSS",
+    "en": "Fake INSS deduction refund"
+  },
+  "how": {
+    "pt": "Depois do escândalo dos descontos indevidos de associações nos benefícios, golpistas passaram a procurar aposentados oferecendo “agilizar” a devolução. Mandam links por e-mail ou WhatsApp sobre “ressarcimento de mensalidades associativas” que pedem dados ou cobram taxa. O INSS não manda esses links: a consulta é feita no Meu INSS.",
+    "en": "After the scandal of improper association deductions from benefits, scammers began approaching retirees offering to “speed up” the refund. They send links by email or WhatsApp about “refunds of association fees” that ask for data or charge a fee. The INSS doesn’t send these links: you check in Meu INSS."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Você recebe uma mensagem sobre devolução de descontos no seu benefício.",
+        "en": "You get a message about a refund of deductions from your benefit."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Prometem agilizar o pagamento dos atrasados.",
+        "en": "They promise to speed up payment of the money owed."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Mandam um link para consultar ou pedir o ressarcimento.",
+        "en": "They send a link to check or request the refund."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Pedem dados pessoais, senha ou uma taxa.",
+        "en": "They ask for personal details, a password or a fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Aposentado(a), você tem direito ao RESSARCIMENTO dos descontos de mensalidade associativa. Consulte seu valor e agilize o recebimento: [link]",
+        "en": "Retiree, you are entitled to a REFUND of association fee deductions. Check your amount and speed up payment: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "devolucao dos descontos do inss",
+      "ressarcimento de mensalidade associativa",
+      "desconto indevido no beneficio",
+      "agilizar a devolucao",
+      "receber os atrasados do inss"
+    ],
+    "en": [
+      "refund of inss deductions",
+      "association fee refund",
+      "improper deduction from my benefit",
+      "speed up the refund",
+      "money owed by inss"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Oferecem agilizar a devolução por um link ou por taxa.",
+      "O INSS não manda e-mail nem WhatsApp sobre isso."
+    ],
+    "en": [
+      "They offer to speed up the refund through a link or for a fee.",
+      "The INSS doesn’t send emails or WhatsApp messages about this."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não clique. Consulte descontos e pedidos só no Meu INSS ou pelo 135.",
+      "Não pague nada para receber devolução.",
+      "Se passou dados, troque a senha do gov.br e avise o banco."
+    ],
+    "en": [
+      "Don’t tap it. Check deductions and requests only in Meu INSS or on 135.",
+      "Don’t pay anything to get a refund.",
+      "If you gave details, change your gov.br password and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "br/inss",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Golpistas estão abordando aposentados e pensionistas com a oferta de agilizar devolução de mensalidade descontada",
+      "publisher": "INSS / Ministério da Previdência Social (gov.br)",
+      "url": "https://www.gov.br/inss/pt-br/noticias/golpistas-estao-abordando-aposentados-e-pensionistas-com-a-oferta-de-agilizar-devolucao-de-mensalidade-descontada-1",
+      "date": "2025-04-25"
+    },
+    {
+      "title": "Cuidado: golpistas abordam aposentados prometendo devolução de descontos",
+      "publisher": "Secretaria de Comunicação Social (gov.br)",
+      "url": "https://www.gov.br/secom/pt-br/fatos/brasil-contra-fake/noticias/2025/04/cuidado-golpistas-abordam-aposentados-prometendo-devolucao-de-descontos",
+      "date": "2025-04-25"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,136 @@
+{
+  "id": "br/fake-online-store",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "pt": "“Loja” em rede social ou site de promoção",
+    "en": "A “store” on social media or a deals site"
+  },
+  "name": {
+    "pt": "Golpe da falsa venda: loja e promoção que não existem",
+    "en": "Fake sale scam: stores and deals that don’t exist"
+  },
+  "how": {
+    "pt": "Criminosos criam sites que imitam lojas, perfis falsos em redes sociais e mandam promoções por SMS, e-mail e WhatsApp. O preço é muito abaixo do normal e pressionam para comprar logo. Você paga, geralmente por Pix, e o produto nunca chega. Segundo a Febraban, foi o golpe mais relatado pelos clientes no 1º semestre de 2025.",
+    "en": "Criminals create websites that copy real stores, fake social media profiles, and send deals by text, email and WhatsApp. The price is far below normal and they push you to buy quickly. You pay, usually by Pix, and the product never arrives. According to Febraban, it was the scam customers reported most in the first half of 2025."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Você vê uma promoção num perfil novo, num anúncio ou numa mensagem.",
+        "en": "You see a deal on a new profile, in an ad or in a message."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "O preço é muito mais baixo do que nas lojas.",
+        "en": "The price is much lower than in stores."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Dizem que o estoque está acabando e pedem para fechar logo.",
+        "en": "They say stock is running out and push you to close the deal."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Só aceitam Pix ou poucas formas de pagamento.",
+        "en": "They only accept Pix or few payment methods."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "SÓ HOJE: air fryer de R$ 699 por R$ 149! Últimas unidades, pagamento no Pix com 10% off. Compre aqui: [link]",
+        "en": "TODAY ONLY: R$ 699 air fryer for R$ 149! Last units, 10% off paying by Pix. Buy here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "comprei e nao chegou",
+      "loja falsa",
+      "site falso",
+      "promocao boa demais",
+      "paguei no pix e nao recebi",
+      "perfil de loja no instagram",
+      "falsa venda",
+      "ultimas unidades",
+      "pagamento no pix com desconto"
+    ],
+    "en": [
+      "bought it and it never arrived",
+      "fake store",
+      "fake website",
+      "deal too good to be true",
+      "paid by pix and got nothing"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Preço muito abaixo do mercado.",
+      "Loja ou perfil criado há pouco tempo.",
+      "Pressa: “últimas unidades”, “só hoje”.",
+      "Só aceita Pix."
+    ],
+    "en": [
+      "A price far below the market.",
+      "A store or profile created recently.",
+      "Pressure: “last units”, “today only”.",
+      "Pix only."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Compre em lojas conhecidas, digitando você mesmo o endereço do site.",
+      "Desconfie de links que chegam por mensagem ou anúncio.",
+      "Se pagou, avise seu banco na hora para pedir a devolução do Pix e reclame no Procon."
+    ],
+    "en": [
+      "Buy from known stores, typing the website address yourself.",
+      "Be wary of links that arrive by message or ad.",
+      "If you paid, tell your bank at once to request a Pix refund, and complain to Procon."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/procon",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Golpe da Falsa Venda é o mais aplicado contra clientes bancários no 1º semestre do ano",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4381/pt-br/",
+      "date": "2025-11-11"
+    },
+    {
+      "title": "Saiba quais foram os 10 golpes mais aplicados contra clientes bancários em 2024",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4279/pt-br/",
+      "date": "2025-04-14"
+    }
+  ],
+  "updated": "2026-11-16"
+}

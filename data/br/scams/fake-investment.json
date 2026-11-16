@@ -1,0 +1,136 @@
+{
+  "id": "br/fake-investment",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "pt": "“Corretora”, “especialista em investimentos” ou grupo de WhatsApp",
+    "en": "“Broker”, “investment expert” or a WhatsApp group"
+  },
+  "name": {
+    "pt": "Golpe do falso investimento",
+    "en": "Fake investment scam"
+  },
+  "how": {
+    "pt": "Grupos falsos criam sites de empresas de fachada e perfis nas redes sociais prometendo ganhos altos e rápidos. Colocam você em grupos com depoimentos falsos. No começo pedem pouco e até pagam algum rendimento. Depois pressionam para investir mais e, quando o valor é alto, bloqueiam você e somem.",
+    "en": "Fake groups create front-company websites and social media profiles promising high, fast returns. They add you to groups with fake testimonials. At first they ask for little and even pay some returns. Then they push you to invest more and, once the amount is large, they block you and disappear."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Você vê um anúncio ou é chamado para um grupo de investimentos.",
+        "en": "You see an ad or get invited to an investment group."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Prometem rendimentos muito acima do mercado.",
+        "en": "They promise returns far above the market."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Pagam um pouco no início e pedem para investir mais.",
+        "en": "They pay a little at first and ask you to invest more."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "Pressionam para não perder a “oportunidade”.",
+        "en": "They push you not to miss the “opportunity”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Entre no nosso grupo VIP e veja os resultados: alunos com lucro de 30% por semana! Comece com apenas R$ 200. Vagas limitadas: [link]",
+        "en": "Join our VIP group and see the results: students making 30% a week! Start with just R$ 200. Limited spots: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "falso investimento",
+      "grupo de investimento no whatsapp",
+      "rendimento muito alto",
+      "lucro garantido",
+      "investi e nao consigo sacar",
+      "piramide financeira"
+    ],
+    "en": [
+      "fake investment",
+      "investment group on whatsapp",
+      "returns too high",
+      "guaranteed profit",
+      "invested and can't withdraw"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "pt": [
+      "Ganhos muito acima do mercado ou “garantidos”.",
+      "Depoimentos de pessoas que ficaram ricas rápido.",
+      "Pressa para investir mais.",
+      "Ganhos por indicar novas pessoas."
+    ],
+    "en": [
+      "Returns far above the market or “guaranteed”.",
+      "Testimonials of people who got rich quickly.",
+      "Pressure to invest more.",
+      "Earnings for bringing in new people."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Desconfie de rendimentos muito acima do mercado.",
+      "Verifique se a empresa é autorizada a funcionar antes de investir.",
+      "Se caiu, avise o banco o quanto antes e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Be wary of returns far above the market.",
+      "Check that the company is authorized to operate before investing.",
+      "If you fell for it, tell your bank as soon as possible and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Golpe da Falsa Venda é o mais aplicado contra clientes bancários no 1º semestre do ano",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4381/pt-br/",
+      "date": "2025-11-11"
+    },
+    {
+      "title": "Saiba quais foram os 10 golpes mais aplicados contra clientes bancários em 2024",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4279/pt-br/",
+      "date": "2025-04-14"
+    },
+    {
+      "title": "Febraban dá dicas para que cliente se proteja do golpe do falso investimento",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4068/pt-br/",
+      "date": "2024-02-28"
+    }
+  ],
+  "updated": "2026-11-16"
+}

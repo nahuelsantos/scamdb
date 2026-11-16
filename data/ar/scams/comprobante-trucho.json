@@ -1,6 +1,7 @@
 {
   "id": "ar/comprobante-trucho",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "online",
@@ -8,42 +9,50 @@
     "in-person"
   ],
   "sender": {
-    "es": "“El comprador”"
+    "es": "“El comprador”",
+    "en": "“The buyer”"
   },
   "name": {
-    "es": "Comprobante trucho: “ya te transferí” (pero no)"
+    "es": "Comprobante trucho: “ya te transferí” (pero no)",
+    "en": "Fake receipt: “I already paid you” (but they didn’t)"
   },
   "how": {
-    "es": "Vendés algo por Marketplace o Mercado Libre y el “comprador” te manda una captura o un comprobante falso. Te apura para llevarse la cosa antes de que veas la plata. A veces dice que “te transfiere el hermano” desde otra cuenta, o te manda un comprobante por más plata y te pide que le devuelvas la diferencia."
+    "es": "Vendés algo por Marketplace o Mercado Libre y el “comprador” te manda una captura o un comprobante falso. Te apura para llevarse la cosa antes de que veas la plata. A veces dice que “te transfiere el hermano” desde otra cuenta, o te manda un comprobante por más plata y te pide que le devuelvas la diferencia.",
+    "en": "You sell something on Marketplace or Mercado Libre and the “buyer” sends you a screenshot or a fake receipt. They rush to take the item before you see the money. Sometimes they say “my brother is paying” from another account, or send a receipt for more money and ask you to return the difference."
   },
   "steps": [
     {
       "text": {
-        "es": "Vendés algo y el “comprador” te manda una captura o un comprobante."
+        "es": "Vendés algo y el “comprador” te manda una captura o un comprobante.",
+        "en": "You sell something and the “buyer” sends you a screenshot or a receipt."
       }
     },
     {
       "text": {
-        "es": "Te apura para llevarse la cosa antes de que veas la plata."
+        "es": "Te apura para llevarse la cosa antes de que veas la plata.",
+        "en": "They rush to take the item before you see the money."
       },
       "signal": "urgency"
     },
     {
       "text": {
-        "es": "A veces paga “el hermano” o te pide devolver una diferencia."
+        "es": "A veces paga “el hermano” o te pide devolver una diferencia.",
+        "en": "Sometimes “the brother” pays, or they ask you to return a difference."
       },
       "signal": "money_request"
     },
     {
       "text": {
-        "es": "La plata nunca llega a tu cuenta."
+        "es": "La plata nunca llega a tu cuenta.",
+        "en": "The money never reaches your account."
       }
     }
   ],
   "examples": [
     {
       "text": {
-        "es": "Ya te transferí, mirá el comprobante. Mi hermano tiene la plata, te la pasa él. Paso en 10 minutos a buscarlo, que la transferencia tarda un poco."
+        "es": "Ya te transferí, mirá el comprobante. Mi hermano tiene la plata, te la pasa él. Paso en 10 minutos a buscarlo, que la transferencia tarda un poco.",
+        "en": "I already transferred it, look at the receipt. My brother has the money, he’ll send it. I’ll come by in 10 minutes to pick it up, the transfer takes a while."
       }
     }
   ],
@@ -58,6 +67,14 @@
       "marketplace",
       "vendi",
       "nunca me entro la plata"
+    ],
+    "en": [
+      "fake receipt",
+      "payment screenshot",
+      "my brother will transfer",
+      "i paid you too much",
+      "return the difference",
+      "money never arrived"
     ]
   },
   "signals": [
@@ -70,6 +87,12 @@
       "Paga otra persona: “mi hermano”, “mi jefe”.",
       "Te apuran para llevarse la cosa ya.",
       "“Te pagué de más, devolveme la diferencia”."
+    ],
+    "en": [
+      "They send a screenshot instead of you seeing the money in your account.",
+      "Someone else pays: “my brother”, “my boss”.",
+      "They rush to take the item now.",
+      "“I paid you too much, give me back the difference.”"
     ]
   },
   "whatToDo": {
@@ -78,6 +101,12 @@
       "Una captura no es un pago.",
       "Si paga otra persona, no aceptes.",
       "Encontrate en lugares públicos."
+    ],
+    "en": [
+      "Hand over the item only when you see the money in your app, under “Activity”.",
+      "A screenshot is not a payment.",
+      "If someone else pays, don’t accept.",
+      "Meet in public places."
     ]
   },
   "reportTo": [

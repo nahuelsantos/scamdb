@@ -1,0 +1,125 @@
+{
+  "id": "mx/streaming-account-phishing",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu plataforma de streaming”",
+    "en": "“Your streaming service”"
+  },
+  "name": {
+    "es": "“Su pago fue rechazado”: el falso aviso de tu plataforma de streaming",
+    "en": "“Your payment was declined”: the fake streaming service notice"
+  },
+  "how": {
+    "es": "Te llega un correo o mensaje con el logo y los colores de una plataforma de películas, series o música. Dice que tu pago fue rechazado, que tu cuenta se va a suspender o que tienes una promoción exclusiva. El enlace lleva a una página falsa que te pide tu contraseña y los datos de tu tarjeta. Con eso entran a tus cuentas y hacen cargos.",
+    "en": "You get an email or message with the logo and colors of a movie, series or music platform. It says your payment was declined, your account will be suspended, or you have an exclusive offer. The link goes to a fake page that asks for your password and card details. With that they get into your accounts and make charges."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un aviso con el logo de tu plataforma de streaming.",
+        "en": "You get a notice with your streaming service’s logo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tu pago fue rechazado o que tu cuenta se suspende.",
+        "en": "It says your payment was declined or your account is being suspended."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una página falsa para “actualizar tu pago”.",
+        "en": "The link goes to a fake page to “update your payment”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden contraseña y datos de tu tarjeta.",
+        "en": "They ask for your password and card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Tu membresía está en pausa. No pudimos procesar tu último pago. Actualiza tu método de pago en las próximas 24 horas para no perder tu cuenta: [enlace]",
+        "en": "Your membership is on hold. We couldn’t process your last payment. Update your payment method within 24 hours so you don’t lose your account: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "pago rechazado de mi suscripcion",
+      "correo falso de mi plataforma de series",
+      "actualizar metodo de pago",
+      "me van a suspender la cuenta de streaming",
+      "membresia en pausa"
+    ],
+    "en": [
+      "subscription payment declined",
+      "fake streaming service email",
+      "update my payment method",
+      "streaming account will be suspended",
+      "membership on hold"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Prisa: “en las próximas 24 horas”.",
+      "Un enlace para pagar o iniciar sesión.",
+      "Una dirección web que no es la oficial.",
+      "Promociones exclusivas que piden tu tarjeta."
+    ],
+    "en": [
+      "Rush: “within the next 24 hours”.",
+      "A link to pay or sign in.",
+      "A web address that isn’t the official one.",
+      "Exclusive offers that ask for your card."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Entra tú a la app o página oficial para revisar tu cuenta.",
+      "Usa contraseñas distintas para cada servicio y activa la verificación en dos pasos.",
+      "Si pusiste datos de tu tarjeta, llama a tu banco.",
+      "Si pusiste tu contraseña, cámbiala de inmediato."
+    ],
+    "en": [
+      "Don’t open the link. Go to the official app or website yourself to check your account.",
+      "Use a different password for each service and turn on two-step verification.",
+      "If you entered card details, call your bank.",
+      "If you entered your password, change it right away."
+    ]
+  },
+  "reportTo": [
+    "mx/tu-banco",
+    "mx/policia-cibernetica"
+  ],
+  "sources": [
+    {
+      "title": "SSPC emite recomendaciones para prevenir fraudes por suplantación de plataformas digitales de entretenimiento",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/sspc-emite-recomendaciones-para-prevenir-fraudes-por-suplantacion-de-plataformas-digitales-de-entretenimiento?idiom=es",
+      "date": "2026-09-05"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "us/fake-event-tickets-site",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online"
+  ],
+  "sender": {
+    "en": "Website copying FIFA"
+  },
+  "name": {
+    "en": "Fake World Cup site selling tickets and hospitality"
+  },
+  "how": {
+    "en": "Before the 2026 World Cup, criminals built websites copying FIFA’s, with small changes to the address such as different spellings or another domain ending. They sell fake tickets and hospitality packages and collect names, addresses, phone numbers, emails and banking details. The same trick is used for other big events."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You search for tickets and land on a site that looks like the official one."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The address is slightly different from the real site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "It sells tickets or hospitality packages."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "Your payment and personal details go to criminals."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Final release: World Cup hospitality packages now available. Limited seats, book today on the official ticket portal: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "fake world cup tickets site",
+      "fifa tickets website not official",
+      "hospitality package scam",
+      "ticket site slightly different address",
+      "bought tickets from fake site"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A web address that differs slightly from the official one.",
+      "Tickets sold outside the official seller.",
+      "Pressure from “final release” or “limited seats”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Buy only from the official site, typed yourself.",
+      "Check the address carefully before paying.",
+      "If you paid, call your card issuer and report it to IC3."
+    ]
+  },
+  "reportTo": [
+    "us/ic3",
+    "us/your-bank",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Threat Actors Spoofing FIFA Websites in Advance of the 2026 World Cup",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2026/PSA260527",
+      "date": "2026-05-27"
+    }
+  ],
+  "updated": "2026-11-16"
+}

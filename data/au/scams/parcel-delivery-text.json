@@ -1,0 +1,97 @@
+{
+  "id": "au/parcel-delivery-text",
+  "country": "au",
+  "lang": "en",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“AusPost” or a courier"
+  },
+  "name": {
+    "en": "Parcel delivery text: “update your address to get your parcel”"
+  },
+  "how": {
+    "en": "A text or email that looks like it is from Australia Post or another courier says your parcel couldn’t be delivered or your address needs updating. It has a link to a fake website that asks for personal details or a small payment. Scammers use the details for identity theft and fraud. Australia Post never calls, texts or emails to ask for payment or personal or financial details."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or email says it is from Australia Post or a courier."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says your parcel couldn’t be delivered or your address must be updated quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It has a link to a site that looks official."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site asks for your details or a small fee to redeliver."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "AusPost: Your parcel could not be delivered due to an incomplete address. Please update your details within 24 hrs: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "auspost text about my parcel",
+      "update my address for delivery",
+      "parcel could not be delivered text",
+      "redelivery fee link",
+      "courier text with a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A delivery message with a link.",
+      "Being asked to pay a small fee or update details.",
+      "A short deadline."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Check your delivery in the official Australia Post app or website, or the courier’s own site.",
+      "If you entered card details, contact your bank straight away.",
+      "If you gave ID details such as a licence or passport, contact IDCARE."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/idcare",
+    "au/scamwatch",
+    "au/reportcyber"
+  ],
+  "sources": [
+    {
+      "title": "Expecting a delivery during the holiday sales? Stop and think, don’t click the link",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/expecting-a-delivery-during-the-holiday-sales-stop-and-think-don%E2%80%99t-click-the-link",
+      "date": "2023-12-21"
+    }
+  ],
+  "updated": "2026-11-16"
+}

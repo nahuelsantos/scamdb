@@ -1,0 +1,122 @@
+{
+  "id": "br/correios-parcel-fee",
+  "country": "br",
+  "lang": "pt",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "“Correios”",
+    "en": "“Correios” (Brazilian post office)"
+  },
+  "name": {
+    "pt": "“Sua encomenda está retida”: a falsa taxa dos Correios",
+    "en": "“Your parcel is on hold”: the fake post office fee"
+  },
+  "how": {
+    "pt": "Chega um SMS, e-mail ou WhatsApp dizendo que sua encomenda foi taxada, está retida ou que o endereço precisa ser atualizado. O link leva a uma página falsa com a marca dos Correios, que cobra uma taxa ou pede seus dados. É mais convincente quando você está esperando uma compra.",
+    "en": "A text, email or WhatsApp says your parcel was taxed, is on hold or that your address must be updated. The link goes to a fake page with the Correios logo that charges a fee or asks for your details. It is more convincing when you are waiting for a purchase."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Uma mensagem em nome dos Correios diz que sua encomenda está retida.",
+        "en": "A message in the name of the Correios says your parcel is on hold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Dão um prazo curto para pagar ou a encomenda volta.",
+        "en": "They give a short deadline to pay or the parcel goes back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "O link leva a uma página falsa dos Correios.",
+        "en": "The link leads to a fake Correios page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Cobram uma taxa por Pix ou cartão.",
+        "en": "They charge a fee by Pix or card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "CORREIOS: Sua encomenda foi taxada e esta retida. Pague a taxa de liberacao em ate 24h para evitar a devolucao: [link]",
+        "en": "CORREIOS: Your parcel was taxed and is on hold. Pay the release fee within 24h to avoid its return: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "encomenda retida",
+      "encomenda taxada",
+      "taxa dos correios",
+      "taxa de liberacao",
+      "atualizar o endereco da entrega",
+      "mensagem dos correios"
+    ],
+    "en": [
+      "parcel on hold",
+      "parcel was taxed",
+      "post office fee",
+      "release fee",
+      "update the delivery address"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Cobram taxa por link enviado por mensagem.",
+      "Prazo curto para pagar.",
+      "Os Correios não cobram tributos por links em SMS ou e-mail."
+    ],
+    "en": [
+      "They charge a fee through a link sent by message.",
+      "A short deadline to pay.",
+      "The Correios don’t charge taxes through links in texts or emails."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não clique. Confira o rastreamento no site ou app oficial dos Correios.",
+      "Impostos de importação só se pagam no “Minhas Importações”, no site ou app dos Correios.",
+      "Se pôs dados do cartão, ligue para o banco e bloqueie."
+    ],
+    "en": [
+      "Don’t tap it. Check tracking on the official Correios site or app.",
+      "Import taxes are only paid in “Minhas Importações”, on the Correios site or app.",
+      "If you entered card details, call the bank and block the card."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Correios alertam sobre golpe cobrando taxa para retirar encomenda",
+      "publisher": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2024-08/correios-alertam-sobre-golpe-cobrando-taxa-para-retirar-encomenda",
+      "date": "2024-08-14"
+    }
+  ],
+  "updated": "2026-11-16"
+}

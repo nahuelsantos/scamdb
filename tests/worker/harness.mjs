@@ -1,8 +1,8 @@
 // Test harness: the Worker in Miniflare with an in-memory D1 and stub static assets.
 import { Miniflare } from 'miniflare';
-import { mkdtempSync, writeFileSync, readFileSync } from 'node:fs';
+import { mkdtempSync, writeFileSync, readFileSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, dirname } from 'node:path';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
 export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
@@ -23,6 +23,15 @@ export async function makeWorker({ fetchMock = defaultFetch, bindings = {} } = {
   const assets = mkdtempSync(join(tmpdir(), 'scamdb-assets-'));
   writeFileSync(join(assets, 'index.html'), '<p>STATIC</p>');
   writeFileSync(join(assets, '404.html'), '<p>STATIC 404</p>');
+  // A tiny catalogue for /v1/isitascam, in the shape the build writes.
+  const put = (path, data) => { mkdirSync(dirname(join(assets, path)), { recursive: true }); writeFileSync(join(assets, path), JSON.stringify(data)); };
+  put('v1/index.json', { version: 't.1', data: {} });
+  put('assets/entries.json', { version: 't.1', signals: [{ id: 'asks_for_code', label: { en: 'Asks for a code', es: 'Te pide un código' } }, { id: 'urgency', label: { en: 'Rushes you' } }],
+    entries: [
+      { id: 'ar/whatsapp-codigo', country: 'ar', name: { es: 'Robo de WhatsApp con el código', en: 'WhatsApp theft with the code' }, phrases: { es: ['codigo de whatsapp', 'me pidieron un codigo', 'robo de whatsapp', 'codigo por mensaje', 'te llega un codigo'], en: ['whatsapp code', 'they asked me for a code', 'whatsapp theft', 'code by text', 'read me the code'] }, signals: ['asks_for_code'] },
+      { id: 'au/parcel', country: 'au', name: { en: 'Parcel delivery text' }, phrases: { en: ['parcel delivery text', 'redelivery fee link', 'update my address', 'parcel on hold', 'courier text link'] }, signals: [] },
+    ] });
+  put('v1/scams/ar/whatsapp-codigo.json', { version: 't.1', data: { id: 'ar/whatsapp-codigo', country: 'ar', whatToDo: { es: ['No leas el código'], en: ['Never read out the code'] } } });
   const mf = new Miniflare({
     modules: true,
     modulesRoot: ROOT,

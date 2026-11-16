@@ -1,0 +1,96 @@
+{
+  "id": "nz/sms-blaster-bank-text",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "Your bank, or a short code like your telco’s"
+  },
+  "name": {
+    "en": "Fake bank text from an “SMS blaster”: “your account is being checked”"
+  },
+  "how": {
+    "en": "A device in a car pretends to be a cell tower and makes nearby phones connect to it. It then sends texts that look like they come from your bank or a short code your bank or telco uses, so they can appear next to real messages. The text says your account is being checked for fraud and asks you to verify through a link. The fake website asks for passwords and card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text appears to come from your bank or a familiar short code."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says your account is being checked for fraud and you must verify now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It has a link to a fake website that asks for your login or card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Your account is being reviewed for fraudulent funds. To avoid suspension please verify your details today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text from my bank with a link",
+      "account being checked for fraud text",
+      "verify my account link sms",
+      "bank text came from a short code",
+      "phone showed 2g when the text came"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "A text from your “bank” with a link: New Zealand banks generally don’t send links by text.",
+      "It asks you to verify your account or details.",
+      "Your phone is on 2G when the text arrives."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Open your bank’s app or type its website yourself.",
+      "Forward the text free to 7726 (Department of Internal Affairs).",
+      "If you entered details, contact your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Teen arrested for smishing scam using technology never before seen in New Zealand",
+      "publisher": "RNZ",
+      "url": "https://www.rnz.co.nz/news/national/529737/teen-arrested-for-smishing-scam-using-technology-never-before-seen-in-new-zealand",
+      "date": "2024-10-03"
+    },
+    {
+      "title": "Fake cellphone tower scams Aucklanders",
+      "publisher": "Telecommunications Forum (TCF)",
+      "url": "https://www.tcf.org.nz/news/fake-cellphone-tower-scams-aucklanders",
+      "date": "2025-10-09"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "nz/bank-fraud-team-call"
+  ]
+}

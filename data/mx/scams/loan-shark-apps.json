@@ -1,0 +1,144 @@
+{
+  "id": "mx/loan-shark-apps",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Apps de “préstamo rápido sin buró”",
+    "en": "“Fast loan, no credit check” apps"
+  },
+  "name": {
+    "es": "Montadeudas: la app de préstamo fácil que luego te amenaza",
+    "en": "“Montadeudas”: the easy-loan app that later threatens you"
+  },
+  "how": {
+    "es": "En redes sociales, buscadores o mensajes se anuncian préstamos inmediatos, sin requisitos y sin revisar buró de crédito. La app pide acceso a tus contactos, fotos, archivos y ubicación. Te prestan poco, o te depositan sin que lo pidas, con intereses enormes y plazos de días. Luego empiezan las amenazas y el acoso a ti y a tus contactos, con mensajes, fotos alteradas y hasta logos falsos de la policía, para cobrarte mucho más de lo que pediste.",
+    "en": "Instant loans with no requirements and no credit-bureau check are advertised on social media, search engines or messages. The app asks for access to your contacts, photos, files and location. They lend you a little, or deposit money you didn’t ask for, with huge interest and terms of a few days. Then the threats and harassment start, against you and your contacts, with messages, altered photos and even fake police logos, to make you pay far more than you borrowed."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio: préstamo inmediato, sin requisitos, sin buró.",
+        "en": "You see an ad: instant loan, no requirements, no credit check."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "La app pide acceso a tus contactos, fotos y ubicación.",
+        "en": "The app asks for access to your contacts, photos and location."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Te depositan poco, o sin que lo pidas, y a los días exigen mucho más.",
+        "en": "They deposit a small amount, or one you didn’t ask for, and days later demand much more."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Si no pagas, amenazan y escriben a tu familia y contactos.",
+        "en": "If you don’t pay, they threaten you and message your family and contacts."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "PRÉSTAMO EN 5 MINUTOS 💸 Sin buró, sin aval, solo con tu INE. Descarga la app y recibe hasta $10,000 hoy mismo: [enlace]",
+        "en": "LOAN IN 5 MINUTES 💸 No credit check, no guarantor, just your ID. Download the app and get up to $10,000 today: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "es": "Tu plazo venció HOY. Si no pagas $4,800 en 2 horas vamos a mandar tu foto a todos tus contactos como deudor y fraude.",
+        "en": "Your payment was due TODAY. If you don’t pay $4,800 in 2 hours we’ll send your photo to all your contacts as a debtor and a fraud."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "montadeudas",
+      "app de prestamos sin buro",
+      "me depositaron un prestamo que no pedi",
+      "amenazan a mis contactos",
+      "me estan cobrando un prestamo",
+      "prestamo rapido por app",
+      "mandaron mi foto a mis contactos"
+    ],
+    "en": [
+      "loan app threatening me",
+      "loan with no credit check",
+      "they deposited a loan i didn't ask for",
+      "they are threatening my contacts",
+      "instant loan app harassment"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "“Sin buró, sin requisitos, al instante”.",
+      "La app pide tus contactos, fotos o ubicación.",
+      "Intereses enormes y plazos de pocos días.",
+      "Te depositan dinero que no pediste."
+    ],
+    "en": [
+      "“No credit check, no requirements, instant”.",
+      "The app asks for your contacts, photos or location.",
+      "Huge interest and terms of a few days.",
+      "They deposit money you didn’t ask for."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de pedir un préstamo, revisa en la CONDUSEF que la financiera esté registrada.",
+      "No instales apps que pidan tus contactos o fotos.",
+      "Si te amenazan, no hagas más pagos: guarda los mensajes y denuncia ante la Policía Cibernética.",
+      "Avisa a tus contactos que no hagan caso de esos mensajes."
+    ],
+    "en": [
+      "Before taking a loan, check with CONDUSEF that the lender is registered.",
+      "Don’t install apps that ask for your contacts or photos.",
+      "If they threaten you, make no more payments: keep the messages and report to the Cyber Police.",
+      "Warn your contacts to ignore those messages."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/condusef",
+    "mx/denuncia-089"
+  ],
+  "sources": [
+    {
+      "title": "SSPC emite recomendaciones para evitar fraudes por montadeudas durante la cuesta de enero",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/sspc-emite-recomendaciones-para-evitar-fraudes-por-montadeudas-durante-la-cuesta-de-enero?idiom=es",
+      "date": "2026-01-14"
+    },
+    {
+      "title": "Montadeudas y otros delitos cibernéticos crecen “como espuma” en CDMX",
+      "publisher": "Excélsior",
+      "url": "https://www.excelsior.com.mx/ciudad-de-mexico/montadeudas-y-delitos-ciberneticos-crecen-como-espuma-cdmx",
+      "date": "2026-02-24"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/advance-fee-loan"
+  ]
+}

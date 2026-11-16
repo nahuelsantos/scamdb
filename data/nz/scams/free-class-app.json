@@ -1,0 +1,96 @@
+{
+  "id": "nz/free-class-app",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Free” tai chi or dance class group"
+  },
+  "name": {
+    "en": "“Free” tai chi or dance classes that need an app"
+  },
+  "how": {
+    "en": "Facebook groups and ads offer free local classes: tai chi, walking clubs, social dancing. They look real, often with AI-generated content. After you register interest you are contacted on WhatsApp and asked to download an app to book. The app contains malware that gives scammers access to your bank accounts. Some groups also ask for a sign-up fee on a site that steals card details. Police say several victims lost large sums."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A Facebook ad or group offers free local classes."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "After you register, someone contacts you on WhatsApp."
+      }
+    },
+    {
+      "text": {
+        "en": "They ask you to download an app to book the class."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "The app lets scammers into your bank accounts, or a sign-up fee steals your card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi! Thanks for registering for free tai chi in the park. All bookings are through our class app, please download it here and we’ll send you the times: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "free tai chi classes facebook",
+      "download an app to book a class",
+      "free dance classes app",
+      "walking club asked me to install app",
+      "class sign up fee website",
+      "facebook class group whatsapp"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "New pages with few followers or all posts uploaded at once.",
+      "Being asked to install an app before getting basic details like time and place.",
+      "AI-generated or overseas images in a local group.",
+      "A “free” class that asks for a sign-up fee."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t install apps from links; use the official app store.",
+      "Don’t pay sign-up fees on unknown websites.",
+      "If you installed the app, contact your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Scammers target Facebook users with ‘free’ tai chi and social dancing classes",
+      "publisher": "Own Your Online (NCSC)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/scammers-target-facebook-users-with-free-tai-chi-and-social-dancing-classes/",
+      "date": "2026-05-20"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "ca/utility-disconnection",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Hydro One”, “Hydro Ottawa”, “Alectra” or your local hydro company"
+  },
+  "name": {
+    "en": "Fake hydro call: “pay now or your power is cut today”"
+  },
+  "how": {
+    "en": "Someone calls, texts, emails or comes to the door claiming to be from your electricity company. They say you have an unpaid balance and your power will be cut off the same day unless you pay right away, often with prepaid cards, gift cards or Bitcoin. Others offer a fake refund by link to get your account or card details. Utilities never demand immediate payment or threaten same-day disconnection."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller or visitor says they are from your hydro company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say your bill is overdue and power will be cut off today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for payment right now by prepaid card, gift card or Bitcoin."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Or a text offers a refund or account update through a link."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hydro Disconnection Notice: Your account is past due. A technician will disconnect your service in 45 minutes unless payment is made. Call back immediately to avoid disconnection."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "hydro said they'd cut my power today",
+      "pay hydro bill with bitcoin",
+      "hydro disconnection call",
+      "prepaid card to pay hydro",
+      "hydro refund text link",
+      "man at the door from hydro",
+      "technician will disconnect my hydro"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "Threats to cut your power the same day.",
+      "Demands for payment by prepaid card, gift card or Bitcoin.",
+      "A refund or account update offered by a link in a text or email.",
+      "An amount that doesn’t match your latest bill."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up and call your utility using the number on your bill.",
+      "Only pay charges shown on your latest bill, through your usual payment method.",
+      "Don’t share account or personal details with unexpected callers or visitors. If you feel threatened, call the police.",
+      "Report it to your utility and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/cafc",
+    "ca/local-police"
+  ],
+  "sources": [
+    {
+      "title": "Don’t let fraud catch you off guard: Ontario utilities unite to raise awareness during Fraud Prevention Month",
+      "publisher": "Alectra Utilities, Elexicon Energy, Hydro One and Hydro Ottawa",
+      "url": "https://www.alectra.com/news/dont-let-fraud-catch-you-guard-ontario-utilities-unite-raise-awareness-during-fraud-prevention",
+      "date": "2025-03-10"
+    },
+    {
+      "title": "Extortion",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/scams-fraudes/extortion-extorsion-eng.htm",
+      "date": "2026-07-21"
+    }
+  ],
+  "updated": "2026-11-16"
+}

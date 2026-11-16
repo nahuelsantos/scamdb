@@ -30,8 +30,17 @@ Base URL `https://scamdb.dev/v1/`. Static JSON, no key, no limit, CORS open.
 Every file is wrapped as `{ "license", "attribution", "version", "data" }`. Credit us as
 `scamdb.dev · CC BY 4.0`.
 
-Coming next: private reports, free API keys, and `POST /v1/isitascam` (send a message, get a
-verdict and the reasons).
+Dynamic endpoints (a small Worker):
+
+- `POST /v1/isitascam` `{ "text", "country"?, "lang"?, "report"? }`: verdict, warning signs with the
+  words that triggered them, the closest catalogue scams, what to do and where to report. Without a key:
+  10 a day per IP, catalogue matching only. With a free key: 50 a day, plus a score from a free Workers AI
+  model (falls back to the matcher), and screenshots (`-F image=@shot.png`) or voice notes
+  (`-F audio=@note.ogg`) as multipart, read by Workers AI and never stored. The score is not a probability yet.
+- `POST /v1/reports`: send a scam privately (Turnstile token or key).
+- Free keys: sign in with GitHub on [scamdb.dev/account](https://scamdb.dev/account/).
+
+Full reference: [scamdb.dev/docs](https://scamdb.dev/docs/).
 
 ## Contribute
 
@@ -55,8 +64,22 @@ npm test
 npm run build
 ```
 
-The build writes the API and the site to `dist/`. The site is in English at `/` and Spanish at `/es/`; interface strings live in
-`site/i18n.js`. Scams always show in their own language. Drawings are generated at build time by `lib/sketch.js`.
+The build writes the API and the site to `dist/`. The site is in English (old `/es/` links redirect); interface strings live in
+`site/i18n.js`. Scams are explained in English and also shown in their original language. Drawings are generated at build time by `lib/sketch.js`.
+
+## Importing scams
+
+New countries and new scams come from the `import-scams` Claude Code skill (`.claude/skills/import-scams/SKILL.md`).
+One run researches one country from official warnings (`importer/sources.json`) and recent news, drafts up to 20
+entries in the original language plus English, validates them and opens one pull request labelled `import`. Nothing
+merges without the owner.
+
+- Run by hand in any Claude Code session in this repo: `/import-scams next` or `/import-scams au`.
+- A weekly scheduled run does the same with `next`.
+- `node tools/importer.mjs status` shows entries per country; `node tools/importer.mjs next` shows which comes next
+  (Australia, New Zealand, the US, the UK, Canada, Spain, Mexico, Brazil, then the country whose newest entry is oldest).
+- Close an import PR, or delete a scam from it, to reject it: the next run adds it to `importer/rejected.json` and
+  never proposes it again. Delete a line there to allow it back.
 
 ## Licenses
 
@@ -150,6 +173,8 @@ npx wrangler secret put IP_SALT
 ```
 
 Secrets can also be added in the dashboard: Workers & Pages → scamdb → Settings → Variables and Secrets.
+
+The test site (a Preview for every branch, with its own database) is described in [docs/uat.md](docs/uat.md).
 
 ## Reading reports
 

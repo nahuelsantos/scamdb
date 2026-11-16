@@ -1,0 +1,99 @@
+{
+  "id": "au/airline-booking-update",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Qantas” or your airline"
+  },
+  "name": {
+    "en": "Fake airline message: flight changed or points expiring"
+  },
+  "how": {
+    "en": "Scammers pretend to be airlines, airports, travel agents or accommodation providers. A message says your flight was cancelled or your booking changed, that your reward points are about to expire, or offers a free gift. It pushes you to click a link, call a number or pay urgently. The link goes to a fake login or payment page that steals your account or card details. Fake “customer support” accounts on WhatsApp do the same."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message claims to be from your airline, an airport or a booking site."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says your flight changed or your points will expire soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It asks you to click a link or call a number to sort it out."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The fake page asks for your login or card details, or an urgent payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Qantas Frequent Flyer: 18,400 points expire on 30 Nov. Redeem them now for a free gift before they are lost: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "flight cancelled text",
+      "frequent flyer points expiring",
+      "airline customer support whatsapp",
+      "update my booking details",
+      "qantas account update email",
+      "free gift from the airline"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "An unexpected message asking you to click or call about a booking.",
+      "Points that are “about to expire” and a free gift.",
+      "Urgent requests to pay or share passport or card details."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Use the airline’s app or official website, or a number you find yourself.",
+      "Don’t use links or contact details from the message.",
+      "If you entered card details, contact your bank."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Scammers don’t take holidays - but they can ruin yours",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-scammers-dont-take-holidays-but-they-can-ruin-yours",
+      "date": "2026-11-16"
+    }
+  ],
+  "updated": "2026-11-16"
+}

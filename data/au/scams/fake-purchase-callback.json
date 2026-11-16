@@ -1,0 +1,100 @@
+{
+  "id": "au/fake-purchase-callback",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“PayPal”, “Norton” or “Microsoft”"
+  },
+  "name": {
+    "en": "Fake purchase: “call us to cancel this payment”"
+  },
+  "how": {
+    "en": "A message says you bought something you didn’t, often for $300 to $2,000: a phone, security software, tickets or crypto. It looks like a PayPal invoice, a software renewal or an app receipt, may include your real name or address, and shows a phone number to call before the money is taken. The person who answers asks for your bank or card details “for a refund”, says they refunded too much, gets you to install software to control your device, or asks you to buy gift cards."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You get a receipt or invoice for something you didn’t buy, from a brand you know."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says the money will be taken soon unless you call the number in the message."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "On the call they ask you to install software so they can “process the refund”."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They ask for your card details, say they refunded too much, or ask for gift cards."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "PayPal: Your payment of $1,489.99 AUD to Apple Store has been approved. If you did not make this purchase, call our support team within 24 hours to cancel."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "purchase i didn't make",
+      "call to cancel the payment",
+      "fake paypal invoice",
+      "norton renewal email",
+      "they refunded me too much",
+      "install software for a refund",
+      "buy gift cards to catch the scammers"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A purchase or payment you don’t recognise.",
+      "A phone number shown clearly with instructions to call.",
+      "A high amount, often $300 or more, to make you worry.",
+      "Being asked to install software, buy gift cards or send money back."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t call the number in the message.",
+      "Check the payment yourself in the official app or website.",
+      "Never install software or share one-time codes or gift card numbers on a call."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Fake purchase callback scams",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-fake-purchase-callback-scams",
+      "date": "2026-07-14"
+    }
+  ],
+  "updated": "2026-11-16"
+}

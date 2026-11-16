@@ -1,0 +1,117 @@
+{
+  "id": "ca/deepfake-public-figure-investment",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "en": "A video or ad with the Prime Minister, a politician or a celebrity"
+  },
+  "name": {
+    "en": "Deepfake ad: “the Prime Minister recommends this investment”"
+  },
+  "how": {
+    "en": "An ad or video on Facebook, YouTube or another platform shows the Prime Minister, a politician or a well-known person promoting an investment, often crypto, saying it is safe or backed by the government. The video is AI-generated. After you sign up with a small amount, a “broker” calls you, shows fake profits on a website or app, and pushes you to invest more. When you try to withdraw, you are told to pay fees first, and the money is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You see an ad or video of a famous person or politician promoting an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It promises big, safe returns from a small first deposit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "A “broker” calls and shows your money growing on a trading website or app."
+      }
+    },
+    {
+      "text": {
+        "en": "You are pushed to invest more, and asked for fees before you can withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "BREAKING: Prime Minister reveals new platform that lets Canadians turn $350 into thousands every month. Government-backed and risk-free. Spots are limited, register today: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "prime minister video about investing",
+      "deepfake video of a politician",
+      "ad backed by the bank of canada",
+      "invested $350 after a facebook ad",
+      "broker called after i signed up",
+      "can't withdraw my money without fees",
+      "celebrity crypto ad on youtube"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A public figure promotes an investment in an ad or video, or says it is government-backed.",
+      "Promises of high, guaranteed or risk-free returns.",
+      "Lip movement, voice or lighting that seems unnatural.",
+      "You must pay fees or taxes before withdrawing your money."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Assume investment videos of politicians and celebrities are fake.",
+      "Check that the company is registered with your provincial securities regulator before investing.",
+      "Never give a “broker” remote access to your device.",
+      "If you paid, call your bank, then report it to your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/your-bank",
+    "ca/local-police",
+    "ca/cafc"
+  ],
+  "sources": [
+    {
+      "title": "Watch out for AI-generated government impersonators",
+      "publisher": "Competition Bureau Canada",
+      "url": "https://www.canada.ca/en/competition-bureau/news/2026/03/watch-out-for-ai-generated-government-impersonators.html",
+      "date": "2026-03-09"
+    },
+    {
+      "title": "The sophistication of fraud",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/03/sophistication-fraud-fraude-eng.htm",
+      "date": "2026-03-10"
+    },
+    {
+      "title": "Ontario senior bilked out of $900K after falling victim to crypto scam that used AI deepfake of PM Carney",
+      "publisher": "CTV News (CP24)",
+      "url": "https://www.cp24.com/local/toronto/2026/06/26/ontario-senior-loses-900000-to-crypto-platform-scam-that-used-ai-deepfake-of-pm-carney/",
+      "date": "2026-06-26"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "en": "In 2025 an 86-year-old woman in Ontario saw a Facebook ad of the Prime Minister saying a $350 investment would be backed by the Bank of Canada. After she signed up, a caller said it had already tripled. Over the next months she put in everything she had, including a mortgage on her condo. Her account seemed to grow, but about $900,000 was gone, and the contact stopped after her last payment."
+  },
+  "related": [
+    "ca/crypto-romance-investment"
+  ]
+}

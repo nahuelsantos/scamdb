@@ -35,7 +35,7 @@ its **original language** alongside English.
 
 - **Drafting scams that aren't real or aren't current.** Every entry needs at least one dated `https://` source; the
   importer must prefer official sources and must not invent cases, quotes or numbers.
-- **Flooding the owner.** A run never opens more than one pull request or adds more than 10 entries [call]; a run that
+- **Flooding the owner.** A run never opens more than one pull request or adds more than 20 entries (owner, 2026-11-16; was 10); a run that
   finds nothing new opens nothing.
 - **Duplicates.** The same scam pattern in two countries is two entries (different language, contacts, examples), but
   the importer must not add a scam that already exists for that country.
@@ -74,13 +74,14 @@ The owner chose 2 ("automate it, with the option of running it manually").
    languages, emergency number) and write `data/<cc>/contacts.json` from official sources (police cybercrime unit,
    consumer agency, banking regulator, national reporting line).
 3. **Research.** Read the country's official warning sources (`importer/sources.json`, see below) and reputable news
-   from the last 24 months [call]; list candidate scams; drop ones already in `data/<cc>/scams/` and ones listed in
+   from the last 5 years (owner, 2026-11-16; was 24 months), marking scams whose newest source is over 2 years old as
+   `fading`; list candidate scams; drop ones already in `data/<cc>/scams/` and ones listed in
    `importer/rejected.json` [call].
    - **Rejections are remembered** [call]: at the start of each run, the importer looks at import PRs closed since the
      last run; any drafted scam that didn't reach `main` (PR closed, or the scam removed during review) is added to
      `importer/rejected.json` (country, slug, name, date) so it isn't proposed again. The owner can delete a line to
      allow it back.
-4. **Draft** up to 10 entries following CONTRIBUTING.md: original language + English for every text field, steps,
+4. **Draft** up to 20 entries following CONTRIBUTING.md: original language + English for every text field, steps,
    signals, red flags, what to do, `reportTo` (the new contacts), sources with dates.
 5. **Validate** with `npm run validate` and `npm test`; fix or drop entries that fail.
 6. **Open one pull request** titled `Import: <Country> (<n> scams)` with a review summary: one line per scam, its

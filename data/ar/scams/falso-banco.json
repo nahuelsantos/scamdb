@@ -1,42 +1,50 @@
 {
   "id": "ar/falso-banco",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "phone",
     "whatsapp"
   ],
   "sender": {
-    "es": "“Tu banco”"
+    "es": "“Tu banco”",
+    "en": "“Your bank”"
   },
   "name": {
-    "es": "“Le hablo del banco”: el falso empleado"
+    "es": "“Le hablo del banco”: el falso empleado",
+    "en": "“This is your bank calling”: the fake bank employee"
   },
   "how": {
-    "es": "Te llaman “del banco”, de una “mesa de ayuda” o de un “área de ciberdelito” y te dicen que te están atacando la cuenta. Para “protegerla”, te piden que muevas la plata a una “cuenta segura”, que leas códigos, que vayas al cajero o que aceptes un préstamo. Todo eso es para robarte. A veces escriben por WhatsApp con el logo del banco de foto."
+    "es": "Te llaman “del banco”, de una “mesa de ayuda” o de un “área de ciberdelito” y te dicen que te están atacando la cuenta. Para “protegerla”, te piden que muevas la plata a una “cuenta segura”, que leas códigos, que vayas al cajero o que aceptes un préstamo. Todo eso es para robarte. A veces escriben por WhatsApp con el logo del banco de foto.",
+    "en": "They call “from the bank”, a “help desk” or a “cybercrime department” and say your account is under attack. To “protect” it, they ask you to move your money to a “safe account”, read out codes, go to the ATM or accept a loan. All of it is to rob you. Sometimes they write on WhatsApp with the bank’s logo as the picture."
   },
   "steps": [
     {
       "text": {
-        "es": "Te llaman del banco, de una mesa de ayuda o de un área de ciberdelito."
+        "es": "Te llaman del banco, de una mesa de ayuda o de un área de ciberdelito.",
+        "en": "They call from the bank, a help desk or a cybercrime department."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Te dicen que te están atacando la cuenta y que hay que actuar ya."
+        "es": "Te dicen que te están atacando la cuenta y que hay que actuar ya.",
+        "en": "They say your account is under attack and you must act now."
       },
       "signal": "urgency"
     },
     {
       "text": {
-        "es": "Te piden que leas códigos, vayas al cajero o muevas la plata a una “cuenta segura”."
+        "es": "Te piden que leas códigos, vayas al cajero o muevas la plata a una “cuenta segura”.",
+        "en": "They ask you to read out codes, go to the ATM or move your money to a “safe account”."
       },
       "signal": "asks_for_code"
     },
     {
       "text": {
-        "es": "La plata termina en la cuenta del estafador, a veces con un préstamo a tu nombre."
+        "es": "La plata termina en la cuenta del estafador, a veces con un préstamo a tu nombre.",
+        "en": "The money ends up in the scammer’s account, sometimes with a loan in your name."
       },
       "signal": "money_request"
     }
@@ -44,7 +52,8 @@
   "examples": [
     {
       "text": {
-        "es": "Señor, lo llamamos del área de seguridad de su banco. Detectamos un movimiento raro en su cuenta. Para frenarlo, vaya al cajero y yo le voy diciendo qué tocar."
+        "es": "Señor, lo llamamos del área de seguridad de su banco. Detectamos un movimiento raro en su cuenta. Para frenarlo, vaya al cajero y yo le voy diciendo qué tocar.",
+        "en": "Sir, we are calling from your bank’s security department. We detected unusual activity on your account. To stop it, go to the ATM and I’ll tell you what to press."
       }
     }
   ],
@@ -65,6 +74,16 @@
       "prestamo a mi nombre",
       "me hicieron sacar un prestamo",
       "prestamo preaprobado"
+    ],
+    "en": [
+      "the bank called me",
+      "security department",
+      "fraud department",
+      "unusual activity",
+      "told me to go to the atm",
+      "safe account",
+      "loan in my name",
+      "pre-approved loan"
     ]
   },
   "signals": [
@@ -79,6 +98,12 @@
       "Te piden mover la plata, leer códigos o ir al cajero mientras hablan.",
       "Te ofrecen un préstamo que nunca pediste.",
       "Un contacto que se llama “Mesa de ayuda” con el logo del banco."
+    ],
+    "en": [
+      "The bank calls you about a “fraud”.",
+      "They ask you to move money, read out codes or go to the ATM while on the call.",
+      "They offer a loan you never asked for.",
+      "A contact called “Help desk” with the bank’s logo."
     ]
   },
   "whatToDo": {
@@ -87,6 +112,12 @@
       "Nunca uses el cajero ni el homebanking mientras hablás por teléfono con alguien.",
       "El banco nunca te pide códigos: ni por teléfono, ni por mensaje.",
       "Si ya pasó, llamá al banco ya y hacé la denuncia."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card yourself.",
+      "Never use the ATM or online banking while on the phone with someone.",
+      "The bank never asks for codes: not by phone, not by message.",
+      "If it already happened, call the bank now and report it."
     ]
   },
   "reportTo": [

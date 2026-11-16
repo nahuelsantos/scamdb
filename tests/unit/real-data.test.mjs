@@ -6,7 +6,7 @@ import { loadRepo } from '../../lib/load.js';
 const ROOT = new URL('../../', import.meta.url).pathname;
 
 test('the real data is valid', () => assert.deepEqual(validateRepo(ROOT), []));
-test('there are exactly 20 Argentine entries', () => assert.equal(loadRepo(ROOT).entries.length, 20));
+test('there are exactly 20 Argentine entries', () => assert.equal(loadRepo(ROOT).entries.filter((e) => e.country === 'ar').length, 20));
 test('every entry has its script, signals and who to report to', () => {
   for (const e of loadRepo(ROOT).entries) {
     assert.ok(e.steps.length >= 2, `${e.id} steps`);

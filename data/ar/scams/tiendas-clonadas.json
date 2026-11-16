@@ -1,42 +1,50 @@
 {
   "id": "ar/tiendas-clonadas",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "online",
     "whatsapp"
   ],
   "sender": {
-    "es": "“Ofertas Black Friday”"
+    "es": "“Ofertas Black Friday”",
+    "en": "“Black Friday deals”"
   },
   "name": {
-    "es": "Páginas truchas de ofertas (Black Friday)"
+    "es": "Páginas truchas de ofertas (Black Friday)",
+    "en": "Fake deal sites (Black Friday)"
   },
   "how": {
-    "es": "En fechas de ofertas aparecen copias de tiendas conocidas con precios bajísimos. El link te llega por mail, WhatsApp o hasta en el buscador. Pagás, pero la compra no existe: la página solo guardaba los datos de tu tarjeta. En el Black Friday 2025 detectaron una copia de Frávega."
+    "es": "En fechas de ofertas aparecen copias de tiendas conocidas con precios bajísimos. El link te llega por mail, WhatsApp o hasta en el buscador. Pagás, pero la compra no existe: la página solo guardaba los datos de tu tarjeta. En el Black Friday 2025 detectaron una copia de Frávega.",
+    "en": "On sale dates, copies of well-known shops appear with rock-bottom prices. The link reaches you by email, WhatsApp or even in search results. You pay, but the purchase doesn’t exist: the page only saved your card details. During Black Friday 2025 a copy of Frávega was found."
   },
   "steps": [
     {
       "text": {
-        "es": "En fechas de ofertas aparece una copia de una tienda conocida."
+        "es": "En fechas de ofertas aparece una copia de una tienda conocida.",
+        "en": "On sale dates a copy of a well-known shop appears."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Los precios son bajísimos."
+        "es": "Los precios son bajísimos.",
+        "en": "The prices are rock-bottom."
       },
       "signal": "too_good_to_be_true"
     },
     {
       "text": {
-        "es": "El link te llega por mail, WhatsApp o el buscador."
+        "es": "El link te llega por mail, WhatsApp o el buscador.",
+        "en": "The link reaches you by email, WhatsApp or search."
       },
       "signal": "unknown_link"
     },
     {
       "text": {
-        "es": "Pagás, pero la página solo guardaba los datos de tu tarjeta."
+        "es": "Pagás, pero la página solo guardaba los datos de tu tarjeta.",
+        "en": "You pay, but the page only saved your card details."
       },
       "signal": "money_request"
     }
@@ -44,7 +52,8 @@
   "examples": [
     {
       "text": {
-        "es": "BLACK FRIDAY: Smart TV 50” a $89.999 solo por hoy. Últimas unidades, comprá acá: [enlace]"
+        "es": "BLACK FRIDAY: Smart TV 50” a $89.999 solo por hoy. Últimas unidades, comprá acá: [enlace]",
+        "en": "BLACK FRIDAY: 50” Smart TV for $89,999 today only. Last units, buy here: [link]"
       }
     }
   ],
@@ -59,6 +68,14 @@
       "compre y nunca llego",
       "precio muy bajo",
       "ultimas unidades"
+    ],
+    "en": [
+      "fake shop",
+      "black friday deal",
+      "bought and it never arrived",
+      "price too low",
+      "last units",
+      "copy of a shop"
     ]
   },
   "signals": [
@@ -72,12 +89,21 @@
       "Precios demasiado buenos.",
       "Direcciones con letras de más.",
       "Mezcla de idiomas o logos distintos."
+    ],
+    "en": [
+      "Prices that are too good.",
+      "Addresses with extra letters.",
+      "Mixed languages or different logos."
     ]
   },
   "whatToDo": {
     "es": [
       "Escribí vos la dirección de la tienda, no entres por links.",
       "Si pusiste la tarjeta, llamá al banco para bloquearla."
+    ],
+    "en": [
+      "Type the shop’s address yourself; don’t go in through links.",
+      "If you entered your card, call the bank to block it."
     ]
   },
   "reportTo": [

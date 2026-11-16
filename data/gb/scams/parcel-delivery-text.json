@@ -1,0 +1,110 @@
+{
+  "id": "gb/parcel-delivery-text",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“Evri”, “Royal Mail”, “UPS” or another courier"
+  },
+  "name": {
+    "en": "Fake parcel delivery text: “we couldn’t deliver your parcel”"
+  },
+  "how": {
+    "en": "A text or email says a courier such as Evri tried to deliver a parcel but couldn’t, for example because your address was incomplete. It asks you to follow a link within 24 hours to update your address or reschedule. The link leads to a fake site that asks for personal and payment details, or to a QR code that can install malware."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or email says it is from a delivery company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says a parcel couldn’t be delivered and you must act within 24 hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to update your address or reschedule."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site asks for your personal and card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Evri: Our driver attempted to deliver your parcel today but your address information is incomplete. Update your details within 24 hours: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Royal Mail: Your parcel is being held at our depot. Reschedule your delivery here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "evri text missed delivery",
+      "parcel could not be delivered text",
+      "update my address for delivery",
+      "royal mail text reschedule delivery",
+      "parcel held at depot link",
+      "delivery text asking for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A delivery message you weren’t expecting, with a link.",
+      "A 24-hour deadline.",
+      "Being asked for card details or a fee to receive a parcel."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Track parcels only on the courier’s official website or app.",
+      "Forward the text free to 7726, and emails to the NCSC.",
+      "If you gave card details, call your bank straight away (you can dial 159)."
+    ]
+  },
+  "reportTo": [
+    "gb/7726",
+    "gb/ncsc",
+    "gb/your-bank",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "Five text message scams to watch out for",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/five-text-message-scams-to-watch-out-for-aCGIh9K6Bjjg",
+      "date": "2026-07-30"
+    },
+    {
+      "title": "Scam alert: the latest delivery scams to watch out for",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/scam-alert-the-latest-delivery-scams-to-watch-out-for-a5pjA7i3M52o",
+      "date": "2024-08-20"
+    }
+  ],
+  "updated": "2026-11-16"
+}

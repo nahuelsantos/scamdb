@@ -1,0 +1,109 @@
+{
+  "id": "ca/fake-online-store",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "en": "A brand or online store advertised on Facebook or Instagram"
+  },
+  "name": {
+    "en": "Fake online store: huge discounts, goods never arrive or are counterfeit"
+  },
+  "how": {
+    "en": "Ads on social media lead to websites that copy real brands and offer huge discounts, such as 80% off, with phrases like “Today only”. Fraudsters also sell items or event tickets on marketplaces that never arrive. You pay and get nothing, or get a poor counterfeit that may even be unsafe. Big events like the FIFA World Cup bring fake tickets, travel packages and look-alike stores."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You see an ad with a huge discount from a store or brand."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It says the sale is “today only” or stock is limited."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "The link goes to a look-alike website or a recently created seller profile."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You pay, and the goods never arrive or are fake."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "CLOSING SALE – everything 80% OFF today only! Premium boots now $39.99. Free shipping across Canada. Shop now before stock runs out: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "store ad with 80 percent off",
+      "ordered online and never received it",
+      "got a counterfeit product",
+      "fake store on facebook ad",
+      "tickets never arrived",
+      "website copied a real brand",
+      "closing sale 80% off ad",
+      "free shipping across canada ad"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Very large discounts, like 80% off.",
+      "“Today only” or “limited time” pressure.",
+      "Spelling mistakes, or the product called “the item”.",
+      "Sellers with new social media profiles or no reviews outside the site."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Know the normal price and look for reviews on other sites.",
+      "Pay by credit card, which offers fraud protection.",
+      "Buy event tickets only from the official seller.",
+      "If you paid, contact your card provider, then report it to the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/your-bank",
+    "ca/cafc"
+  ],
+  "sources": [
+    {
+      "title": "Check twice, pay once: starting new habits to avoid merchandise fraud",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2025/10/avoid-merchandise-evitez-eng.htm",
+      "date": "2025-10-20"
+    },
+    {
+      "title": "Warning on FIFA World Cup™ themed frauds",
+      "publisher": "RCMP National Headquarters",
+      "url": "https://rcmp.ca/en/news/2026/03/4351625",
+      "date": "2026-03-30"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "ca/marketplace-overpayment"
+  ]
+}

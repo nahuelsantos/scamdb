@@ -1,0 +1,101 @@
+{
+  "id": "gb/courier-fraud",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Police officer from the Met or Scotland Yard” or “your bank”"
+  },
+  "name": {
+    "en": "Courier fraud: a fake officer sends a courier for your cash or card"
+  },
+  "how": {
+    "en": "A caller pretends to be a police officer or bank official and says your bank account has been compromised. They ask you to help with an “undercover operation”: withdraw cash, exchange it for foreign currency or buy items such as gold or watches. A courier then comes to your home to collect the money, your bank card or your PIN. They tell you not to tell family or friends, and may keep the line open when you try to call your bank."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are a police officer or from your bank and that your account has been compromised."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask you to help an undercover operation and not to tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "They keep the line open when you hang up to call your bank, so you reach them again."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "en": "They ask you to withdraw cash or buy gold or watches, and send a courier to collect it with your card and PIN."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is Detective Constable Harris from Scotland Yard. Your bank account has been compromised by staff at your branch. We need your help with an undercover operation. Please don't discuss this with anyone, including your family."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "police asked me to withdraw cash",
+      "undercover operation at my bank",
+      "courier came to collect my card",
+      "detective from scotland yard called",
+      "asked to buy gold for the police",
+      "hand my pin to a courier"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Police or bank staff asking for money, cards, PINs or valuables.",
+      "Being asked to keep it secret from family.",
+      "A courier sent to your home to collect anything."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Police and banks never ask you to withdraw money, hand over cards or join an undercover operation.",
+      "Call back using another phone, or wait a few minutes, and call 101 or 159.",
+      "If someone is coming to your home now, call 999."
+    ]
+  },
+  "reportTo": [
+    "gb/emergency",
+    "gb/police-101",
+    "gb/159",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "Northamptonshire Police warn community about courier fraud targeting elderly",
+      "publisher": "Hits Radio (Northamptonshire)",
+      "url": "https://www.hellorayo.co.uk/hits-radio/northamptonshire/news/northamptonshire-police-warn-community-about-courier-fraud-targeting-elderly",
+      "date": "2026-02-03"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "gb/bank-safe-account"
+  ]
+}

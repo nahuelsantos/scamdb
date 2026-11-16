@@ -13,10 +13,11 @@ export function toEschamuyo(entries, overlay, updated) {
     const ra = rank.get(slug(a)) ?? Infinity, rb = rank.get(slug(b)) ?? Infinity;
     return ra - rb || (slug(a) < slug(b) ? -1 : 1);
   });
+  const es = (o) => ({ es: o.es }); // eschamuyo is Spanish only
   const scams = list.map((e) => {
-    const s = { id: slug(e), isNew: overlay.isNew[slug(e)] ?? false, channels: e.channels, name: e.name, sender: e.sender,
-      how: e.how, example: e.examples[0].text, phrases: e.phrases, redFlags: e.redFlags, whatToDo: e.whatToDo };
-    if (e.story) s.story = e.story;
+    const s = { id: slug(e), isNew: overlay.isNew[slug(e)] ?? false, channels: e.channels, name: es(e.name), sender: es(e.sender),
+      how: es(e.how), example: es(e.examples[0].text), phrases: es(e.phrases), redFlags: es(e.redFlags), whatToDo: es(e.whatToDo) };
+    if (e.story) s.story = es(e.story);
     s.sources = e.sources;
     return s;
   });

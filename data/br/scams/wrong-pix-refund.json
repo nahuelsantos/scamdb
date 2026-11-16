@@ -1,0 +1,115 @@
+{
+  "id": "br/wrong-pix-refund",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "Desconhecido que “mandou um Pix errado”",
+    "en": "A stranger who “sent a Pix by mistake”"
+  },
+  "name": {
+    "pt": "Golpe do Pix errado",
+    "en": "Wrong Pix scam"
+  },
+  "how": {
+    "pt": "Um desconhecido manda um Pix para você e depois liga ou escreve dizendo que foi engano. Pede que você devolva, mas para outra chave Pix. Ao mesmo tempo, aciona o MED, o mecanismo de devolução do Banco Central, dizendo que foi golpe. O banco tira o valor original da sua conta e você perde o dinheiro duas vezes.",
+    "en": "A stranger sends you a Pix and then calls or messages saying it was a mistake. They ask you to return it, but to a different Pix key. At the same time, they open a MED claim, the Central Bank’s refund mechanism, saying it was fraud. The bank takes the original amount back from your account and you lose the money twice."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Cai um Pix de um desconhecido na sua conta.",
+        "en": "A Pix from a stranger lands in your account."
+      }
+    },
+    {
+      "text": {
+        "pt": "A pessoa diz que foi engano e pede para devolver rápido.",
+        "en": "The person says it was a mistake and asks you to return it quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Pede a devolução para outra chave Pix, não para a conta de origem.",
+        "en": "They ask for the refund to a different Pix key, not the original account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Moço, fiz um Pix errado pra você de R$ 800, era pro meu irmão. Por favor devolve nessa chave aqui que é a da minha esposa, preciso pagar o aluguel hoje.",
+        "en": "Sir, I sent you a Pix of R$ 800 by mistake, it was for my brother. Please send it back to this key, it’s my wife’s, I need to pay the rent today."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "pix errado",
+      "mandaram um pix errado",
+      "devolver o pix",
+      "devolver para outra chave",
+      "pix por engano",
+      "pediram estorno do pix"
+    ],
+    "en": [
+      "wrong pix",
+      "sent me a pix by mistake",
+      "return the pix",
+      "send it back to another key",
+      "pix refund request"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Pedem devolução para uma chave diferente da que mandou o dinheiro.",
+      "Pressa e história comovente."
+    ],
+    "en": [
+      "They ask for the refund to a key different from the one that sent the money.",
+      "Pressure and a sad story."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Devolva só pelo botão “Devolver” do Pix no app do banco, que manda o dinheiro para a conta de origem.",
+      "Nunca faça um Pix novo para outra chave.",
+      "Na dúvida, ligue para o seu banco."
+    ],
+    "en": [
+      "Only return it with the Pix “Return” button in your bank app, which sends the money back to the original account.",
+      "Never make a new Pix to another key.",
+      "If in doubt, call your bank."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/banco-central"
+  ],
+  "sources": [
+    {
+      "title": "Nova regra do Pix amplia prazo para contestar golpe",
+      "publisher": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/nova-regra-do-pix-amplia-prazo-para-contestar-golpe",
+      "date": "2026-09-01"
+    },
+    {
+      "title": "Febraban faz alerta sobre o golpe do Pix errado",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4165/pt-br/",
+      "date": "2024-08-13"
+    }
+  ],
+  "updated": "2026-11-16"
+}

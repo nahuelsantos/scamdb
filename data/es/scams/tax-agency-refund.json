@@ -1,0 +1,133 @@
+{
+  "id": "es/tax-agency-refund",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“AEAT” o “Agencia Tributaria”",
+    "en": "“AEAT” or “Agencia Tributaria” (tax agency)"
+  },
+  "name": {
+    "es": "“Hacienda te devuelve dinero”: la falsa Agencia Tributaria",
+    "en": "“The tax office owes you money”: the fake Agencia Tributaria"
+  },
+  "how": {
+    "es": "Te llega un SMS o un correo de la “AEAT” sobre un reembolso de impuestos, una notificación o una deuda. El SMS puede aparecer en el mismo hilo que los mensajes reales de Hacienda. El enlace lleva a una copia de la web de la Agencia Tributaria que te pide tus datos, la tarjeta y a veces una foto del DNI. Hacienda nunca pide la tarjeta por SMS o correo ni manda enlaces para cobrar una devolución.",
+    "en": "You get a text or an email from the “AEAT” about a tax refund, a notification or a debt. The text can appear in the same thread as real messages from the tax office. The link goes to a copy of the Agencia Tributaria website that asks for your details, your card and sometimes a photo of your ID. The tax office never asks for your card by text or email or sends links to collect a refund."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS o correo de la AEAT: tienes una notificación, un reembolso o una deuda.",
+        "en": "You get a text or email from the AEAT: you have a notification, a refund or a debt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden entrar en un enlace para “consultar” la comunicación.",
+        "en": "They ask you to open a link to “check” the notice."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La web falsa te pide tus datos, la tarjeta y a veces una foto del DNI.",
+        "en": "The fake site asks for your details, your card and sometimes a photo of your ID."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "AEAT: Tiene una notificacion pendiente dirigida a usted , consulte la comunicacion en: [enlace]",
+        "en": "AEAT: You have a pending notice addressed to you , check the notice at: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "es": "[AEAT] Notificación Oficial: Reembolso de Impuestos Aprobado. Acceda para recibir su devolución: [enlace]",
+        "en": "[AEAT] Official Notice: Tax Refund Approved. Log in to receive your refund: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "sms de hacienda",
+      "mensaje de la agencia tributaria",
+      "devolucion de hacienda",
+      "reembolso de impuestos",
+      "notificacion de la aeat",
+      "hacienda me pide la tarjeta",
+      "deuda con hacienda",
+      "notificacion pendiente de la aeat",
+      "consulte la comunicacion",
+      "dirigida a usted"
+    ],
+    "en": [
+      "tax office text",
+      "tax refund message",
+      "agencia tributaria notice",
+      "tax office asks for my card",
+      "fake tax refund link",
+      "pending notice addressed to you"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Hacienda no te manda enlaces para cobrar una devolución.",
+      "Te piden la tarjeta o una foto del DNI.",
+      "La web no termina en .gob.es o en la dirección oficial de la Agencia Tributaria."
+    ],
+    "en": [
+      "The tax office doesn’t send links to collect a refund.",
+      "They ask for your card or a photo of your ID.",
+      "The website isn’t on .gob.es or the tax agency’s official address."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el enlace. Entra tú en la sede electrónica de la Agencia Tributaria para ver si tienes algo pendiente.",
+      "Si diste los datos de la tarjeta, llama ya a tu banco para bloquearla y revisa los movimientos.",
+      "Si mandaste una foto del DNI, renuévalo y avisa a la policía."
+    ],
+    "en": [
+      "Don’t tap the link. Go to the tax agency’s official website yourself to see if anything is pending.",
+      "If you entered your card details, call your bank now to block the card and check your transactions.",
+      "If you sent a photo of your ID, renew it and tell the police."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-reporte",
+    "es/incibe-017",
+    "es/policia-nacional"
+  ],
+  "sources": [
+    {
+      "title": "La Agencia Tributaria NO ha emitido ninguna comunicación dirigida a usted",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/la-agencia-tributaria-no-ha-emitido-ninguna-comunicacion-dirigida-usted",
+      "date": "2026-05-26"
+    },
+    {
+      "title": "Múltiples campañas de phishing y smishing suplantando a la Agencia Estatal de Administración Tributaria (AEAT)",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/multiples-campanas-de-phishing-y-smishing-suplantando-la-agencia-estatal-de",
+      "date": "2025-09-19"
+    }
+  ],
+  "updated": "2026-11-16"
+}

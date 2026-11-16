@@ -4,7 +4,7 @@ import { authKey, recordUsage } from './keys.js';
 import { verifyTurnstile } from './turnstile.js';
 import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 
-export const COUNTRIES = ['ar'];
+export const COUNTRIES = ['ar', 'au', 'nz', 'us', 'ca', 'gb', 'mx', 'es', 'br'];
 export const CHANNELS = ['whatsapp', 'sms', 'phone', 'online', 'in-person', 'email', 'social'];
 export const LIMITS = { keyless: 10, keyed: 200, global: 2000 };
 

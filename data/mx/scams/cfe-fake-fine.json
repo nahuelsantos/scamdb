@@ -1,0 +1,123 @@
+{
+  "id": "mx/cfe-fake-fine",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "phone"
+  ],
+  "sender": {
+    "es": "“CFE”",
+    "en": "“CFE” (electricity company)"
+  },
+  "name": {
+    "es": "Falsa multa de la CFE pegada en tu puerta: “pague o le cortamos la luz”",
+    "en": "Fake CFE fine on your door: “pay or we cut your power”"
+  },
+  "how": {
+    "es": "Dejan una hoja en tu puerta o en el medidor que dice que tu medidor tiene irregularidades, como sellos faltantes, y que debes pagar una “multa” de miles de pesos en pocas horas. Traen un número de un supuesto “jefe de área” que te ofrece rebajarla si pagas rápido, con depósito a una cuenta personal. También llegan personas con uniformes parecidos a los de la CFE a pedir efectivo. Amenazan con cortarte la luz todo el fin de semana.",
+    "en": "A notice is left on your door or meter saying your meter has irregularities, such as missing seals, and that you must pay a “fine” of thousands of pesos within hours. It gives the number of a supposed “area manager” who offers a discount if you pay quickly, by deposit to a personal account. People in uniforms that look like CFE’s also come asking for cash. They threaten to cut your power for the whole weekend."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Encuentras una hoja de la “CFE” en tu puerta o en el medidor, o llega un supuesto trabajador.",
+        "en": "You find a “CFE” notice on your door or meter, or a supposed worker shows up."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tu medidor tiene irregularidades y debes pagar una multa en pocas horas.",
+        "en": "It says your meter has irregularities and you must pay a fine within hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Un “jefe de área” te ofrece rebajar la multa si pagas rápido.",
+        "en": "An “area manager” offers to reduce the fine if you pay quickly."
+      }
+    },
+    {
+      "text": {
+        "es": "Piden depósito a una cuenta personal o efectivo en el momento.",
+        "en": "They ask for a deposit to a personal account or cash on the spot."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "CFE AVISO DE IRREGULARIDAD: Su medidor no cuenta con sellos de seguridad. Tiene 12 horas para cubrir la multa o se procederá al corte del suministro. Comuníquese con el Jefe de Área al número indicado.",
+        "en": "CFE IRREGULARITY NOTICE: Your meter has no security seals. You have 12 hours to pay the fine or your supply will be cut off. Contact the Area Manager at the number shown."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "multa de la cfe en mi puerta",
+      "aviso de corte de luz",
+      "me cobran por el medidor",
+      "jefe de area de la cfe",
+      "falso trabajador de la cfe",
+      "sellos del medidor"
+    ],
+    "en": [
+      "cfe fine on my door",
+      "power cut notice",
+      "they want money for my meter",
+      "fake cfe worker",
+      "meter seals fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La CFE no cobra en efectivo en tu casa.",
+      "Te piden depositar a una cuenta de una persona.",
+      "Plazo de pocas horas y amenaza de corte el fin de semana.",
+      "Un “jefe de área” ofrece descuento si pagas rápido."
+    ],
+    "en": [
+      "CFE doesn’t collect cash at your home.",
+      "They ask you to deposit into a person’s account.",
+      "A deadline of a few hours and a threat of a weekend cut-off.",
+      "An “area manager” offers a discount if you pay fast."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No deposites ni entregues dinero.",
+      "Llama al 071 de la CFE para confirmar si hay una orden de trabajo real.",
+      "Pide la credencial oficial del trabajador y tómale foto.",
+      "Paga solo en los canales oficiales de la CFE y denuncia ante la fiscalía."
+    ],
+    "en": [
+      "Don’t deposit or hand over money.",
+      "Call CFE on 071 to confirm whether there is a real work order.",
+      "Ask for the worker’s official ID and take a photo of it.",
+      "Pay only through CFE’s official channels and report it to the prosecutor’s office."
+    ]
+  },
+  "reportTo": [
+    "mx/emergencias",
+    "mx/denuncia-089"
+  ],
+  "sources": [
+    {
+      "title": "La CFE emite alerta nacional por fraudes de hasta 20 mil pesos mediante notificaciones falsas de multas",
+      "publisher": "El Imparcial",
+      "url": "https://www.elimparcial.com/dinero/2026/04/03/la-cfe-emite-alerta-nacional-por-fraudes-de-hasta-20-mil-pesos-mediante-notificaciones-falsas-de-multas-que-exigen-pagos-inmediatos-en-cuentas-personales/",
+      "date": "2026-04-03"
+    }
+  ],
+  "updated": "2026-11-16"
+}

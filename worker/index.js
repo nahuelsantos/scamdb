@@ -5,10 +5,12 @@ import { handleReport } from './reports.js';
 import { cleanup } from './cleanup.js';
 import { authStart, authCallback, logout } from './github.js';
 import { handleKeys } from './keys.js';
+import { handleIsItAScam } from './isitascam.js';
 
 // Secrets each group of routes needs. Missing or too-short secrets close the route (503) instead of running insecurely.
 const NEEDS = {
   reports: [['IP_SALT', 16], ['TURNSTILE_SECRET', 1]],
+  isitascam: [['IP_SALT', 16]],
   account: [['SESSION_SECRET', 32], ['GITHUB_CLIENT_ID', 1], ['GITHUB_CLIENT_SECRET', 1]],
 };
 const configured = (env, group) => (NEEDS[group] ?? []).every(([name, min]) => typeof env[name] === 'string' && env[name].length >= min);
@@ -16,6 +18,8 @@ const configured = (env, group) => (NEEDS[group] ?? []).every(([name, min]) => t
 const ROUTES = [
   ['OPTIONS', /^\/v1\/reports$/, () => cors(new Response(null, { status: 204 }))],
   ['POST', /^\/v1\/reports$/, handleReport, 'reports'],
+  ['OPTIONS', /^\/v1\/isitascam$/, () => cors(new Response(null, { status: 204 }))],
+  ['POST', /^\/v1\/isitascam$/, handleIsItAScam, 'isitascam'],
   ['GET', /^\/v1\/keys\/me$/, handleKeys, 'account'],
   ['GET', /^\/v1\/keys\/me\/reveal$/, handleKeys, 'account'],
   ['POST', /^\/v1\/keys$/, handleKeys, 'account'],
@@ -29,7 +33,7 @@ const ROUTES = [
 export async function handle(request, env, ctx) {
   const { pathname } = new URL(request.url);
   const route = ROUTES.find(([method, re]) => method === request.method && re.test(pathname));
-  const isReports = pathname === '/v1/reports';
+  const isReports = pathname === '/v1/reports' || pathname === '/v1/isitascam'; // open CORS, errors included
   const url = new URL(request.url);
   try {
     if (!route) return env.ASSETS.fetch(request);

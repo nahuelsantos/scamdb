@@ -1,0 +1,109 @@
+{
+  "id": "us/utility-shutoff",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Your electric, gas or water company”"
+  },
+  "name": {
+    "en": "Utility shut-off threat: “pay now or your power goes off today”"
+  },
+  "how": {
+    "en": "Someone calls, texts, emails or comes to your door saying they are from your electric, gas or water company. They say your bill is overdue and your service will be shut off today unless you pay right away. They ask for payment by Zelle or another payment app, wire transfer, crypto, gift cards, or a barcode to pay at a store. Real utilities don’t demand immediate payment to avoid same-day shut-off and send written notice first."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone says they are from your utility company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say your bill is overdue and service will be cut off today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They tell you to stay on the line while you pay."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "en": "They want payment by payment app, wire, crypto, gift cards or a store barcode."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "FINAL NOTICE: Your electric account is past due. Service will be disconnected within 2 hours. A technician has been dispatched. To avoid disconnection, pay now: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "power will be shut off today",
+      "utility company demanded payment",
+      "electric company asked for zelle",
+      "pay gas bill with gift cards",
+      "barcode to pay utility at walgreens",
+      "disconnection notice text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A threat to cut off service today or within hours.",
+      "Payment only by payment app, wire, crypto, gift cards or a store barcode.",
+      "A caller who won’t let you hang up and check.",
+      "A bill you know you already paid."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up, and call your utility on the number printed on your bill or its official website.",
+      "Never pay a utility with gift cards, crypto, wire transfers or a barcode someone texts you.",
+      "Don’t let anyone pressure their way into your home.",
+      "If you paid, tell the company you used to pay that it was fraud and ask them to reverse it."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Attorney General James Sues Company Behind Zelle for Enabling Widespread Fraud",
+      "publisher": "New York State Attorney General",
+      "url": "https://ag.ny.gov/press-release/2025/attorney-general-james-sues-company-behind-zelle-enabling-widespread-fraud",
+      "date": "2025-08-13"
+    },
+    {
+      "title": "Got a barcode from your utility company to make a payment? That’s a scam",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2024/07/got-barcode-your-utility-company-make-payment-thats-scam",
+      "date": "2024-08-13"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "en": "A New Yorker got a call from someone posing as a Con Edison employee who said his bill was overdue and his electricity would be shut off that day unless he paid through Zelle. He sent $1,476.89 to a Zelle account named “Coned Billing”. When he realized it was a scam, his bank told him it couldn’t get the money back."
+  }
+}

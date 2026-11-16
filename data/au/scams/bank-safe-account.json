@@ -1,0 +1,127 @@
+{
+  "id": "au/bank-safe-account",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“Your bank’s fraud team”"
+  },
+  "name": {
+    "en": "Fake bank fraud team: “move your money to a safe account”"
+  },
+  "how": {
+    "en": "A call, text or email that looks like it comes from your bank says there is suspicious activity, a new payee or a locked account. Scammers can make the call show the bank’s real number, and texts can land in the same thread as real bank messages. They may already know your name, date of birth or balance from data breaches. Then they ask for one-time codes or passwords, ask you to approve transactions in the app, install software, or move your money to a “safe account” that is really theirs."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call or text appears to come from your bank’s real number or message thread."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say there is a suspicious payment or your account has been accessed or locked, and you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you to read out a one-time code, give your password or approve a request in your banking app."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They tell you to move your money to a new “safe account” to protect it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "CommBank: A payment of $2,480.00 to a new payee is pending on your account. If this was not you, call our fraud team now on the number below to stop it."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "This is the fraud department from your bank. We’ve detected someone trying to access your account. To protect your savings I’ll set up a secure account and you’ll transfer the funds there while we investigate. Please don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank fraud team called me",
+      "move my money to a safe account",
+      "text in my bank's message thread",
+      "suspicious transaction call from bank",
+      "they asked for my one-time code",
+      "approve a request in my banking app",
+      "call came from the bank's number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A bank call or text you didn’t expect, about a payment or a locked account.",
+      "Pressure to act right now.",
+      "Being asked for a code, password or PIN, or to approve something in your app.",
+      "Being asked to move money to another account “to keep it safe”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Call your bank back on the number on your card or in its official app, not a number from the call or message.",
+      "Never share one-time codes, passwords or PINs, and never move money because a caller asks.",
+      "If you already sent money or shared details, contact your bank straight away, then report to Scamwatch."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/idcare",
+    "au/afca"
+  ],
+  "sources": [
+    {
+      "title": "Banks don’t rush, scammers do: the callous impersonation scams robbing everyday Australians",
+      "publisher": "Australian Federal Police",
+      "url": "https://afp.gov.au/news-centre/media-release/banks-dont-rush-scammers-do-callous-impersonation-scams-robbing-everyday",
+      "date": "2026-03-31"
+    },
+    {
+      "title": "The devastating impact behind bank impersonation scams",
+      "publisher": "ASIC",
+      "url": "https://www.asic.gov.au/about-asic/news-centre/news-items/the-devastating-impact-behind-bank-impersonation-scams/",
+      "date": "2026-08-24"
+    },
+    {
+      "title": "Scam alert: Scammers impersonating banks in text messages, phone calls and emails",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-scammers-impersonating-banks-in-text-messages-phone-calls-and-emails",
+      "date": "2024-10-18"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "en": "A woman got an automated call about a card payment for train tickets and pressed a number to reject it. The person on the line said they would set up special accounts to keep her money safe. She transferred $156,000 into fake accounts and also let them onto her computer."
+  },
+  "related": [
+    "au/card-collection-courier",
+    "au/remote-access-support"
+  ]
+}

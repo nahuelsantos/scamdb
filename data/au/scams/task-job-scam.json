@@ -1,0 +1,100 @@
+{
+  "id": "au/task-job-scam",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Amazon” or “YouTube” recruiter"
+  },
+  "name": {
+    "en": "Task job scam: get paid to rate products, then “top up”"
+  },
+  "how": {
+    "en": "A text from a “recruiter” for Amazon or YouTube offers well-paid, flexible work from home rating products or optimising listings, with “only 20 positions left”. You are moved to WhatsApp, set up a crypto account and do sets of tasks, and may be paid a small amount to build trust. Then you are told to “top up” your account with your own money to unlock the next tasks and your commission. That money never comes back."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from a recruiter for a well-known company offers easy, well-paid work from home."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say there are only a few positions left."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They move you to WhatsApp, pay a little at first and set you up with a crypto account."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "To unlock more tasks and your commission you must top up with your own money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi! I’m Emma from Amazon HR. We’re hiring e-commerce assistants, work from home, 60–90 min a day, $300–$800 daily. Only 20 positions left. Reply YES to learn more on WhatsApp."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "amazon job text",
+      "youtube recruiter whatsapp",
+      "rate products for money",
+      "optimise product listings job",
+      "top up to unlock tasks",
+      "pay to get my commission",
+      "work from home tasks"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A recruiter contacts you by text or WhatsApp out of the blue.",
+      "High pay for little effort and no experience.",
+      "Vague tasks about rating products or optimising listings.",
+      "Being told to pay your own money to earn more."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never pay money to start or continue a job.",
+      "Check job offers on real recruitment sites and with the company directly.",
+      "If you already paid, stop paying and contact your bank."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Job recruitment scams",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-job-recruitment-scams",
+      "date": "2026-05-20"
+    }
+  ],
+  "updated": "2026-11-16"
+}

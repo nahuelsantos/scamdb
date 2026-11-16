@@ -1,0 +1,107 @@
+{
+  "id": "us/family-emergency-call",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "en": "“Your grandson”, “your daughter” or their “lawyer”"
+  },
+  "name": {
+    "en": "Grandparent scam: “I’m in trouble, please don’t tell Mom”"
+  },
+  "how": {
+    "en": "A caller says they are your grandchild or another relative, or a lawyer, police officer or doctor helping them. They say there was an arrest, a crash or another emergency, that it is urgent, that you are the only one who can help, and that you must keep it secret. Some scammers use AI to clone a relative’s voice from a short clip posted online. They ask for money by wire transfer, crypto, a payment app or gift cards."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call or message from someone who sounds like your grandchild or another relative, or from their “lawyer”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say there was an arrest, a crash or a hospital stay and they need money right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They beg you not to tell their parents or anyone else."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "They ask for bail or fees by wire transfer, crypto, a payment app or gift card numbers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Grandma it’s me. I’m in trouble, I had an accident and the police are holding me. Please don’t tell Mom and Dad. My lawyer is going to call you about the bail, I need it today."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "grandson called from jail",
+      "grandchild needs bail money",
+      "please don't tell mom",
+      "lawyer called about bail",
+      "it sounded exactly like my granddaughter",
+      "voice clone of my son",
+      "family emergency asked for gift cards"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A relative in trouble who needs money right away.",
+      "They ask you to keep it secret, even from their parents.",
+      "A “lawyer” or “officer” takes over the call.",
+      "Payment by wire transfer, crypto, payment app or gift cards.",
+      "The voice sounds right but the story is new to you."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up, or say you will call back. Then call your relative on a number you know is theirs.",
+      "If you can’t reach them, call another family member or a friend, even if you were told to keep it secret.",
+      "Ask a question only the real person would know, or agree a family secret word ahead of time.",
+      "If you already paid, contact the company you used to send the money right away."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/ftc",
+    "us/ic3"
+  ],
+  "sources": [
+    {
+      "title": "Criminals Use Generative Artificial Intelligence to Facilitate Financial Fraud",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2024/PSA241203",
+      "date": "2024-12-03"
+    },
+    {
+      "title": "Scammers use AI to enhance their family emergency schemes",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes",
+      "date": "2023-03-20"
+    }
+  ],
+  "updated": "2026-11-16"
+}

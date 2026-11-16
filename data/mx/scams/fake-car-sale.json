@@ -1,0 +1,124 @@
+{
+  "id": "mx/fake-car-sale",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un vendedor o “remate de flotilla” en redes",
+    "en": "A seller or “fleet auction” on social media"
+  },
+  "name": {
+    "es": "Auto en remate en redes: “deposita para apartarlo”",
+    "en": "Car “auction” on social media: “pay a deposit to hold it”"
+  },
+  "how": {
+    "es": "En redes sociales anuncian autos muy baratos, a veces como “remate de flotillas” de empresas o instituciones. Las fotos están manipuladas y los perfiles son falsos; el auto no existe, es clonado o es robado. Te presionan diciendo que hay otros compradores para que deposites un apartado, y cuando pagas desaparecen.",
+    "en": "Very cheap cars are advertised on social media, sometimes as company or government “fleet auctions”. The photos are doctored and the profiles fake; the car doesn’t exist, is cloned or is stolen. They pressure you by saying there are other buyers so you pay a holding deposit, and once you pay they disappear."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un auto muy barato o un “remate de flotilla” en redes.",
+        "en": "You see a very cheap car or a “fleet auction” on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El perfil dice ser de una empresa o institución, pero es falso.",
+        "en": "The profile claims to be a company or institution, but it’s fake."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que hay otros compradores interesados.",
+        "en": "They say other buyers are interested."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden un depósito para apartarlo antes de verlo.",
+        "en": "They ask for a deposit to hold it before you see it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "REMATE DE FLOTILLA 🚗 Unidades 2022 desde $85,000, facturadas y al corriente. Solo apartado con $5,000, hay muchos interesados. Informes por WhatsApp.",
+        "en": "FLEET AUCTION 🚗 2022 vehicles from $85,000, with invoice and up to date. Hold one with just $5,000, lots of interest. Details on WhatsApp."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "remate de flotilla",
+      "auto muy barato en marketplace",
+      "deposito para apartar el carro",
+      "vendedor de autos desaparecio",
+      "compre un carro por facebook y no existia"
+    ],
+    "en": [
+      "fleet auction cars",
+      "very cheap car on marketplace",
+      "deposit to hold the car",
+      "car seller disappeared",
+      "bought a car on facebook that didn't exist"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy por debajo del mercado.",
+      "“Remate de flotillas” de empresas o del gobierno.",
+      "Te piden apartado antes de ver el auto.",
+      "Perfiles nuevos o con poca actividad."
+    ],
+    "en": [
+      "Price far below market.",
+      "“Fleet auctions” from companies or the government.",
+      "They ask for a deposit before you see the car.",
+      "New profiles or ones with little activity."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No transfieras nada antes de ver el auto en persona y confirmar quién lo vende.",
+      "Revisa el estatus del vehículo en el REPUVE y la documentación.",
+      "Véanse en un lugar público y vigilado, y lleva a un mecánico de confianza.",
+      "Firma un contrato antes de pagar."
+    ],
+    "en": [
+      "Don’t transfer anything before seeing the car in person and confirming who is selling it.",
+      "Check the vehicle’s status in REPUVE and its documents.",
+      "Meet in a public, monitored place and bring a mechanic you trust.",
+      "Sign a contract before paying."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Alerta SSPC sobre fraudes por venta de vehículos en redes sociales",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/alerta-sspc-sobre-fraudes-por-venta-de-vehiculos-en-redes-sociales?idiom=es",
+      "date": "2025-08-19"
+    }
+  ],
+  "updated": "2026-11-16"
+}

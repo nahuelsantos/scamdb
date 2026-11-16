@@ -1,0 +1,129 @@
+{
+  "id": "mx/likes-task-job",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "Un grupo de “trabajo desde casa”",
+    "en": "A “work from home” group"
+  },
+  "name": {
+    "es": "Trabajo de dar “me gusta”: te pagan poco y luego te piden depositar",
+    "en": "“Like” job: they pay a little, then ask you to deposit"
+  },
+  "how": {
+    "es": "Te escriben por WhatsApp o redes ofreciendo dinero por dar “me gusta” a publicaciones de marcas, con supuestas ganancias de más de mil 800 pesos al día. Al principio te pagan cantidades pequeñas para que confíes. Luego te piden depositar una suma mayor para “desbloquear” tus ganancias acumuladas, y ahí se quedan con tu dinero y tus datos bancarios.",
+    "en": "Someone messages you on WhatsApp or social media offering money for “liking” brands’ posts, with supposed earnings of over 1,800 pesos a day. At first they pay you small amounts so you trust them. Then they ask you to deposit a larger sum to “unlock” your accumulated earnings, and that’s when they keep your money and your bank details."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen dinero por dar “me gusta” a publicaciones.",
+        "en": "They offer you money for “liking” posts."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pagan poquito al principio para que confíes.",
+        "en": "They pay you a little at first so you trust them."
+      }
+    },
+    {
+      "text": {
+        "es": "Te piden depositar para “desbloquear” tus ganancias.",
+        "en": "They ask you to deposit to “unlock” your earnings."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te presionan: si no depositas, pierdes lo que llevas.",
+        "en": "They pressure you: if you don’t deposit, you lose what you’ve earned."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Hola! Buscamos personas para trabajar desde casa dando likes a videos. Ganas $50 por cada tarea y hasta $1,800 al día. ¿Te interesa? Te agrego al grupo.",
+        "en": "Hi! We’re looking for people to work from home liking videos. You earn $50 per task and up to $1,800 a day. Interested? I’ll add you to the group."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "trabajo de dar likes",
+      "me pagan por dar me gusta",
+      "depositar para desbloquear ganancias",
+      "trabajo desde casa por whatsapp",
+      "tareas por mensaje para ganar dinero",
+      "trabajar desde casa dando likes",
+      "dando likes",
+      "ganar dinero desde casa",
+      "agregaron a un grupo de trabajo"
+    ],
+    "en": [
+      "paid to like posts",
+      "deposit to unlock my earnings",
+      "work from home liking videos",
+      "task job on whatsapp",
+      "tasks by message to earn money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Mucho dinero por una tarea muy simple.",
+      "Te agregan a grupos desconocidos.",
+      "Te piden depositar para seguir o cobrar.",
+      "Te piden foto de tu INE o datos bancarios."
+    ],
+    "en": [
+      "A lot of money for a very simple task.",
+      "They add you to unknown groups.",
+      "They ask you to deposit to continue or get paid.",
+      "They ask for a photo of your ID or bank details."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Ninguna empresa legítima te pide dinero para trabajar o para pagarte.",
+      "Sal del grupo y bloquea el número.",
+      "No compartas tu CURP, INE ni datos bancarios.",
+      "Si ya depositaste, llama a tu banco y denuncia."
+    ],
+    "en": [
+      "No legitimate company asks you for money to work or to pay you.",
+      "Leave the group and block the number.",
+      "Don’t share your CURP, ID or bank details.",
+      "If you already deposited, call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "mx/policia-cibernetica",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "SSPC alerta sobre fraudes por recompensas falsas en redes sociales",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/sspc-alerta-sobre-fraudes-por-recompensas-falsas-en-redes-sociales?idiom=es",
+      "date": "2025-07-29"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/job-offer-call-abroad"
+  ]
+}

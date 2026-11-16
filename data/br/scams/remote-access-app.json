@@ -1,0 +1,137 @@
+{
+  "id": "br/remote-access-app",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "“Funcionário do banco”",
+    "en": "“Bank employee”"
+  },
+  "name": {
+    "pt": "Golpe da mão fantasma: “instale este app para resolver”",
+    "en": "Ghost hand scam: “install this app to fix it”"
+  },
+  "how": {
+    "pt": "Um falso funcionário do banco diz que sua conta foi invadida, clonada ou tem movimentações estranhas. Para “resolver”, pede que você instale um aplicativo ou clique num link. Muitas vezes é um app verdadeiro de acesso remoto. Com ele, o golpista controla seu celular ou computador, procura senhas guardadas e mexe na sua conta.",
+    "en": "A fake bank employee says your account was hacked, cloned or has strange activity. To “fix” it, they ask you to install an app or tap a link. Often it is a real remote-access app. With it, the scammer controls your phone or computer, looks for saved passwords and moves money from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Um falso funcionário do banco liga dizendo que sua conta foi invadida.",
+        "en": "A fake bank employee calls saying your account was hacked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Pede para você instalar um aplicativo ou abrir um link para “resolver”.",
+        "en": "They ask you to install an app or open a link to “fix it”."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "pt": "Pede para você não desligar enquanto ele “verifica” a conta.",
+        "en": "They ask you to stay on the line while they “check” the account."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "pt": "Com o acesso, o golpista faz transferências e compras.",
+        "en": "With the access, the scammer makes transfers and purchases."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Senhor, sua conta teve movimentações suspeitas. Vou te mandar um link para instalar a ferramenta de segurança e eu resolvo daqui. Não desligue.",
+        "en": "Sir, your account had suspicious activity. I’ll send you a link to install the security tool and I’ll fix it from here. Don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "mao fantasma",
+      "pediram para instalar um aplicativo",
+      "instalei um app",
+      "acesso remoto",
+      "mexeram no meu celular sozinho",
+      "controlaram meu celular",
+      "ferramenta de seguranca"
+    ],
+    "en": [
+      "ghost hand",
+      "asked me to install an app",
+      "remote access",
+      "they controlled my phone",
+      "my phone moved by itself",
+      "security tool app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "O banco pede para instalar um app ou ferramenta.",
+      "Pedem para compartilhar a tela ou dar permissões.",
+      "Não deixam você desligar.",
+      "O link chega por mensagem, fora da loja oficial."
+    ],
+    "en": [
+      "The bank asks you to install an app or tool.",
+      "They ask you to share your screen or grant permissions.",
+      "They won’t let you hang up.",
+      "The link comes by message, outside the official app store."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Desligue e ligue para o número atrás do cartão.",
+      "Nunca instale aplicativos pedidos por telefone. Apps de banco só vêm das lojas oficiais.",
+      "Se instalou, desligue a internet do celular, avise o banco e troque as senhas de outro aparelho."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card.",
+      "Never install apps someone asks for on the phone. Bank apps only come from the official stores.",
+      "If you installed one, turn off the phone’s internet, tell your bank and change your passwords from another device."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Golpe da mão fantasma: bancos nunca pedem que clientes instalem app para resolver problemas na conta",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4318/pt-br/",
+      "date": "2025-07-02"
+    },
+    {
+      "title": "Saiba quais foram os 10 golpes mais aplicados contra clientes bancários em 2024",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4279/pt-br/",
+      "date": "2025-04-14"
+    },
+    {
+      "title": "Golpe da falsa central: conheça as várias versões de um mesmo crime",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4471/pt-br/",
+      "date": "2026-07-01"
+    }
+  ],
+  "updated": "2026-11-16"
+}

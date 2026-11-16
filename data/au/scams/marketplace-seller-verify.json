@@ -1,0 +1,98 @@
+{
+  "id": "au/marketplace-seller-verify",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "email"
+  ],
+  "sender": {
+    "en": "“Vinted” or the marketplace"
+  },
+  "name": {
+    "en": "Selling online: “your item sold, verify to get paid”"
+  },
+  "how": {
+    "en": "You list something on a marketplace like Vinted and get a message saying it has sold. To receive the payment you are told to “verify” your account through a link. The pages copy the marketplace, payment services and even your bank, with chat prompts that seem real. What looks like the last step of the sale steals your banking login, security codes or ID. One seller lost $1,800; another was asked to enter more than one bank account."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You list an item and get a message saying it has sold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "To get paid you must verify your account through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The fake pages ask for your banking login, security codes or ID."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Money is taken from your account, and you may be asked for another account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Vinted: Congratulations! Your item “Nike Air Max 90” has been purchased. To receive $85.00, confirm your payout details here: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "vinted item sold verify",
+      "verify to receive payment",
+      "confirm my payout details",
+      "marketplace payment link",
+      "seller asked for bank login",
+      "sold item fake payment page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A link to “receive payment” outside the app.",
+      "A page asking for your bank login or security codes to get paid.",
+      "Being asked to add more than one bank account."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Only deal inside the marketplace’s app or website.",
+      "You never need your bank login or codes to receive money.",
+      "If you entered bank details, call your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Media update: When the shopfront is a scam",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/media-update-when-the-shopfront-is-a-scam",
+      "date": "2026-11-03"
+    }
+  ],
+  "updated": "2026-11-16"
+}

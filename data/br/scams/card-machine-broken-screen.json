@@ -1,0 +1,124 @@
+{
+  "id": "br/card-machine-broken-screen",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "phone"
+  ],
+  "sender": {
+    "pt": "“Entregador”, “presente de aniversário” ou “taxista”",
+    "en": "“Delivery person”, “birthday gift” or “taxi driver”"
+  },
+  "name": {
+    "pt": "Golpe da maquininha com visor quebrado",
+    "en": "Card machine with a broken screen"
+  },
+  "how": {
+    "pt": "Alguém liga dizendo que tem um presente, brinde ou entrega para você e insiste em entregar pessoalmente. Na porta, cobra uma pequena “taxa de entrega” que só pode ser paga com cartão. A maquininha tem o visor quebrado ou fica escondida, e o valor digitado é muito maior. Às vezes trocam o seu cartão por outro depois de ver a senha. O mesmo acontece com falsos taxistas.",
+    "en": "Someone calls saying they have a gift, freebie or delivery for you and insists on handing it over in person. At the door, they charge a small “delivery fee” that can only be paid by card. The card machine has a broken screen or is kept out of sight, and the amount typed in is much higher. Sometimes they swap your card for another after seeing your PIN. The same happens with fake taxi drivers."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Avisam que há um presente ou entrega para você e querem entregar em mãos.",
+        "en": "They say there is a gift or delivery for you and want to hand it over in person."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Cobram uma taxa e só aceitam cartão físico, não Pix nem aproximação.",
+        "en": "They charge a fee and only accept a physical card, not Pix or tap."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "A maquininha tem o visor quebrado ou você não vê o valor.",
+        "en": "The machine’s screen is broken or you can’t see the amount."
+      }
+    },
+    {
+      "text": {
+        "pt": "Pegam o cartão da sua mão e devolvem outro.",
+        "en": "They take the card from your hand and give back a different one."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Boa tarde! Tenho uma cesta de presente pra senhora, mandada por um amigo. Só falta pagar a taxa de entrega de R$ 5,90 no cartão.",
+        "en": "Good afternoon! I have a gift basket for you, sent by a friend. You just need to pay the R$ 5.90 delivery fee by card."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "maquininha com visor quebrado",
+      "taxa de entrega no cartao",
+      "presente de aniversario",
+      "cobraram a mais na maquininha",
+      "trocaram meu cartao",
+      "so aceita cartao"
+    ],
+    "en": [
+      "card machine with a broken screen",
+      "delivery fee by card",
+      "surprise gift delivery",
+      "charged more on the card machine",
+      "they swapped my card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Presente ou brinde que você não esperava, com taxa.",
+      "Só aceita cartão físico.",
+      "Tela da maquininha quebrada ou escondida."
+    ],
+    "en": [
+      "A gift or freebie you didn’t expect, with a fee.",
+      "Physical card only.",
+      "The machine’s screen is broken or hidden."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Recuse presentes e entregas que você não esperava.",
+      "Não pague em maquininha com tela que você não consegue ler. Passe você mesmo o cartão.",
+      "Confira se o cartão devolvido é o seu. Se não for, ligue para o banco e bloqueie."
+    ],
+    "en": [
+      "Refuse gifts and deliveries you didn’t expect.",
+      "Don’t pay on a machine whose screen you can’t read. Handle the card yourself.",
+      "Check the card you get back is yours. If not, call the bank and block it."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/emergencia",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Febraban alerta para golpes com maquininhas de cartão",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4338/pt-br/",
+      "date": "2025-08-28"
+    },
+    {
+      "title": "Veja os 10 golpes mais comuns aplicados contra idosos e saiba como evitá-los",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4177/pt-br/",
+      "date": "2024-09-04"
+    }
+  ],
+  "updated": "2026-11-16"
+}

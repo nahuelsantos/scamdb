@@ -1,15 +1,28 @@
 // "Is this a scam?": reads the warning signs in a message and finds the catalogue entries it looks like.
 // Ported from eschamuyo (site/js/matcher.js, analyze.js, checker.js). Runs in Node and in the browser.
-import { normalize, tokens, editDistance, pick } from '../../lib/text.js';
+import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence } from './signs.js';
+export const VERSION = '1.0.0';
 export const MATCH_THRESHOLD = 2;
 export const MAX_INPUT = 5000;
 const SCAM_SIGNS = new Set(['asks_for_code', 'remote_access', 'money_request']);
 
-function scoreEntry(entry, text, words, lang) {
-  const phrases = [...(pick(entry.phrases, lang) ?? []), pick(entry.name, lang) ?? ''].map(normalize).filter(Boolean);
+/** The spec's hard rules: a code request, remote access, or money plus impersonation. A scorer can't go below suspicious. */
+export function hardRules(ids) {
+  const has = (id) => ids.includes(id);
+  return has('asks_for_code') || has('remote_access') || (has('money_request') && has('impersonation'));
+}
+
+/** The best score over every language the entry has (its phrases plus its name in that language). */
+function scoreEntry(entry, text, words) {
+  const langs = Object.keys(entry.phrases ?? {});
+  return Math.max(0, ...langs.map((l) => scoreLang([...(entry.phrases[l] ?? []), entry.name?.[l] ?? ''], text, words)));
+}
+
+function scoreLang(list, text, words) {
+  const phrases = list.map(normalize).filter(Boolean);
   const counted = new Set();
   let score = 0;
   for (const p of phrases) {
@@ -19,8 +32,8 @@ function scoreEntry(entry, text, words, lang) {
     const single = pw.length === 1;
     for (const w of pw) {
       if (counted.has(w)) continue;
-      if (words.includes(w)) { score += single ? 2 : 1; counted.add(w); }
-      else if (w.length >= 5 && words.some((t) => t.length >= 4 && editDistance(t, w, 1) <= 1)) { score += single ? 1 : 0.5; counted.add(w); }
+      if (words.set.has(w)) { score += single ? 2 : 1; counted.add(w); }
+      else if (w.length >= 5 && words.fuzzy.some((t) => editDistance(t, w, 1) <= 1)) { score += single ? 1 : 0.5; counted.add(w); }
     }
   }
   return score;
@@ -30,12 +43,14 @@ function scoreEntry(entry, text, words, lang) {
  * @returns {{ verdict: 'scam'|'suspicious'|'not_recognised', score: null,
  *             signals: {id: string, evidence: string}[], matches: {id: string, score: number}[] }}
  */
-export function matchMessage(input, entries, { lang = 'es', country, limit = 3 } = {}) {
+export function matchMessage(input, entries, { country, limit = 3 } = {}) {
   const raw = String(input ?? '').slice(0, MAX_INPUT);
   const text = normalize(raw);
-  const words = tokens(text);
+  // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
+  const set = new Set(tokens(text));
+  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4) };
   const pool = country ? entries.filter((e) => e.country === country) : entries;
-  const matches = !text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, text, words, lang), i }))
+  const matches = !text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, text, words), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)
     .sort((a, b) => b.score - a.score || a.i - b.i)
     .slice(0, limit).map(({ id, score }) => ({ id, score }));

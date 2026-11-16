@@ -1,0 +1,154 @@
+{
+  "id": "br/fake-bank-call-center",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "“Central de segurança do banco” ou “seu gerente”",
+    "en": "“Bank security center” or “your bank manager”"
+  },
+  "name": {
+    "pt": "Falsa central do banco e falso gerente",
+    "en": "Fake bank call center and fake bank manager"
+  },
+  "how": {
+    "pt": "Alguém liga dizendo ser da central do banco ou o seu gerente. Fala de uma compra alta que você não fez, de um cartão clonado, de descontos indevidos ou de um celular novo conectado à sua conta. O número pode aparecer como se fosse do banco, e a ligação passa por “setores” com música de espera igual à verdadeira. No fim, pedem senha, token ou código, ou mandam você transferir o dinheiro para uma “conta segura”.",
+    "en": "Someone calls saying they are from your bank’s call center or your account manager. They talk about a large purchase you didn’t make, a cloned card, wrong charges or a new phone linked to your account. The number can look like the bank’s, and the call is passed between “departments” with the same hold music as the real bank. In the end they ask for your password, token or code, or tell you to move your money to a “safe account”."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Você recebe uma ligação, SMS ou WhatsApp que parece ser do seu banco.",
+        "en": "You get a call, text or WhatsApp that seems to come from your bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Dizem que há uma compra suspeita, cartão clonado ou que sua agência está sob investigação.",
+        "en": "They say there is a suspicious purchase, a cloned card or that your branch is under investigation."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Pedem sua senha, o token ou um código para “cancelar” a operação.",
+        "en": "They ask for your password, token or a code to “cancel” the transaction."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "pt": "Mandam você fazer um Pix ou transferência para uma “conta segura”.",
+        "en": "They tell you to send a Pix or transfer to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Central de Seguranca: identificamos uma compra de R$ 4.879,00 no seu cartao. Se nao reconhece, ligue imediatamente para a central para cancelar.",
+        "en": "Security Center: we detected a purchase of R$ 4,879.00 on your card. If you don’t recognize it, call the center immediately to cancel."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "pt": "Aqui é do setor de segurança do seu banco. Um novo celular foi conectado à sua conta. Para bloquear, preciso que o senhor confirme o código que vai chegar agora.",
+        "en": "This is your bank’s security department. A new phone was linked to your account. To block it, I need you to confirm the code you’re about to receive."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "ligaram do banco",
+      "falsa central",
+      "falso gerente",
+      "compra suspeita no cartao",
+      "pediram minha senha",
+      "pediram o token",
+      "conta segura",
+      "agencia sob investigacao",
+      "cartao clonado",
+      "transferir para conta segura",
+      "novo celular conectado na conta",
+      "setor de seguranca do banco"
+    ],
+    "en": [
+      "call from the bank",
+      "fake bank call center",
+      "fake bank manager",
+      "suspicious purchase on my card",
+      "asked for my password",
+      "asked for my token",
+      "safe account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "O banco pede senha, token ou código por telefone ou mensagem.",
+      "Pedem para transferir dinheiro para “proteger” a conta.",
+      "Dizem que seu gerente ou sua agência está sob investigação.",
+      "Pressa: “agora”, “antes que bloqueie”.",
+      "O número parecer do banco não prova nada."
+    ],
+    "en": [
+      "The bank asks for your password, token or code by phone or message.",
+      "They ask you to transfer money to “protect” the account.",
+      "They say your manager or branch is under investigation.",
+      "Pressure: “now”, “before it gets blocked”.",
+      "A number that looks like the bank’s proves nothing."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Desligue. Ligue você para o número que está atrás do cartão, de outro telefone se puder.",
+      "Nunca diga senha, token ou código para ninguém. O banco não pede.",
+      "Se passou dados ou fez um Pix, avise o banco na hora e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Hang up. Call the number on the back of your card yourself, from another phone if you can.",
+      "Never give your password, token or code to anyone. The bank doesn’t ask for them.",
+      "If you gave details or sent a Pix, tell your bank at once and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil",
+    "br/banco-central"
+  ],
+  "sources": [
+    {
+      "title": "Golpe da falsa central: conheça as várias versões de um mesmo crime",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4471/pt-br/",
+      "date": "2026-07-01"
+    },
+    {
+      "title": "Febraban faz alerta sobre o golpe do falso gerente",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4431/pt-br/",
+      "date": "2026-03-06"
+    },
+    {
+      "title": "Golpe da Falsa Venda é o mais aplicado contra clientes bancários no 1º semestre do ano",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4381/pt-br/",
+      "date": "2025-11-11"
+    }
+  ],
+  "updated": "2026-11-16"
+}

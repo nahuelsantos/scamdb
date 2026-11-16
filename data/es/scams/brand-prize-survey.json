@@ -1,0 +1,127 @@
+{
+  "id": "es/brand-prize-survey",
+  "country": "es",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "es": "Una marca conocida: “SHEIN”, “Leroy Merlin”, “Parkside”, “Carrefour”…",
+    "en": "A well-known brand: “SHEIN”, “Leroy Merlin”, “Parkside”, “Carrefour”…"
+  },
+  "name": {
+    "es": "“Has sido seleccionado para un regalo”: encuesta con premio falso",
+    "en": "“You’ve been selected for a gift”: a fake prize survey"
+  },
+  "how": {
+    "es": "Te llega un correo de una marca conocida: has sido seleccionado para un regalo o una caja misteriosa. Contestas una encuesta y al final solo tienes que pagar unos gastos de envío de alrededor de 1 €. La web falsa te pide tu correo y contraseña y luego la tarjeta. Después dice que la tarjeta fue rechazada, pero ya tienen tus datos.",
+    "en": "You get an email from a well-known brand: you’ve been selected for a gift or a mystery box. You answer a survey and at the end you only have to pay shipping of about €1. The fake site asks for your email and password and then your card. Then it says your card was declined, but they already have your details."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un correo de una marca: has sido seleccionado para un regalo.",
+        "en": "You get an email from a brand: you’ve been selected for a gift."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te meten prisa: tiempo limitado, quedan pocas unidades.",
+        "en": "They rush you: limited time, few units left."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Contestas una encuesta en una web que copia a la marca.",
+        "en": "You answer a survey on a site that copies the brand."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden pagar un envío de unos 1 € con tarjeta.",
+        "en": "They ask you to pay about €1 shipping by card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Has sido seleccionado por SHEIN para recibir una Caja Misteriosa. Tiempo limitado: completa la encuesta y paga solo los gastos de envío: [enlace]",
+        "en": "You’ve been selected by SHEIN to receive a Mystery Box. Limited time: complete the survey and just pay the shipping: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "has sido seleccionado para un regalo",
+      "caja misteriosa",
+      "encuesta con premio",
+      "pagar solo los gastos de envio",
+      "regalo de leroy merlin",
+      "premio de una marca por correo"
+    ],
+    "en": [
+      "selected for a free gift",
+      "mystery box email",
+      "survey with a prize",
+      "just pay the shipping",
+      "brand prize email"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un regalo que no has pedido y solo hay que pagar el envío.",
+      "El remitente no es la dirección oficial de la marca.",
+      "Palabras como “gratis”, “seleccionado” o “quedan pocas unidades”."
+    ],
+    "en": [
+      "A gift you didn’t ask for where you only pay shipping.",
+      "The sender isn’t the brand’s official address.",
+      "Words like “free”, “selected” or “few units left”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entres en el enlace. Si dudas, consulta en la web oficial de la marca.",
+      "Si diste los datos de la tarjeta, llama ya a tu banco para bloquearla y revisa los movimientos.",
+      "Marca el correo como spam y repórtalo a INCIBE."
+    ],
+    "en": [
+      "Don’t open the link. If in doubt, check on the brand’s official website.",
+      "If you entered your card details, call your bank now to block the card and check your transactions.",
+      "Mark the email as spam and report it to INCIBE."
+    ]
+  },
+  "reportTo": [
+    "es/tu-banco",
+    "es/incibe-reporte",
+    "es/incibe-017"
+  ],
+  "sources": [
+    {
+      "title": "Detectadas campañas que suplantan marcas conocidas para robar tus datos prometiendo premios",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/detectadas-campanas-que-suplantan-marcas-conocidas-para-robar-tus-datos",
+      "date": "2025-06-18"
+    },
+    {
+      "title": "Leroy Merlin no te ha seleccionado para que recibas un artículo gratuito",
+      "publisher": "INCIBE",
+      "url": "https://www.incibe.es/ciudadania/avisos/leroy-merlin-no-te-ha-seleccionado-para-que-recibas-un-articulo-gratuito",
+      "date": "2024-12-05"
+    }
+  ],
+  "updated": "2026-11-16"
+}

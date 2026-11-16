@@ -1,0 +1,133 @@
+{
+  "id": "mx/fake-bank-app-link",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu banco”",
+    "en": "“Your bank”"
+  },
+  "name": {
+    "es": "“Descarga la nueva app de tu banco”: la aplicación falsa que roba tus claves",
+    "en": "“Download your bank’s new app”: the fake app that steals your passwords"
+  },
+  "how": {
+    "es": "Te llega un SMS, un correo o un WhatsApp que parece de tu banco y te pide descargar o actualizar su aplicación desde un enlace. La app es falsa o trae un programa malicioso que captura tus claves, lee los códigos de verificación que te llegan o toma el control del celular. Desde tu propio teléfono hacen transferencias que no autorizaste. A veces el mensaje viene con una llamada que te guía para instalarla.",
+    "en": "You get a text, email or WhatsApp that looks like it’s from your bank and asks you to download or update its app from a link. The app is fake or carries malware that captures your passwords, reads the verification codes you receive or takes control of your phone. From your own phone they make transfers you didn’t authorize. Sometimes the message comes with a call that walks you through installing it."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mensaje “de tu banco” con un enlace para descargar o actualizar la app.",
+        "en": "You get a message “from your bank” with a link to download or update the app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te dicen que si no la actualizas hoy tu cuenta se bloquea.",
+        "en": "They say your account will be blocked if you don’t update it today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "La app se instala fuera de la tienda oficial y pide permisos o control del celular.",
+        "en": "The app installs from outside the official store and asks for permissions or control of the phone."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Con tus claves y códigos hacen transferencias desde tu propio celular.",
+        "en": "With your passwords and codes they make transfers from your own phone."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Estimado cliente, su banca movil sera suspendida. Descargue la nueva version de la aplicacion antes de las 23:59 hrs para conservar su acceso: [enlace]",
+        "en": "Dear customer, your mobile banking will be suspended. Download the new version of the app before 11:59 pm to keep your access: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "descargar la app del banco desde un enlace",
+      "nueva version de la aplicacion del banco",
+      "me mandaron un link para actualizar la app",
+      "instale una app que me mandaron",
+      "se metieron a mi celular",
+      "transferencias que yo no hice"
+    ],
+    "en": [
+      "download the bank app from a link",
+      "new version of the bank app",
+      "they sent me a link to update the app",
+      "i installed an app they sent me",
+      "transfers i didn't make"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un enlace para descargar la app de tu banco: las apps se bajan solo de la tienda oficial.",
+      "Te amenazan con suspender tu banca en línea hoy mismo.",
+      "La app pide permisos raros o controlar la pantalla.",
+      "El celular empieza a funcionar raro después de instalarla."
+    ],
+    "en": [
+      "A link to download your bank’s app: apps only come from the official store.",
+      "They threaten to suspend your online banking today.",
+      "The app asks for odd permissions or to control the screen.",
+      "Your phone starts acting strangely after installing it."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Descarga apps solo desde Google Play o App Store y revisa que sea la oficial.",
+      "Si ya la instalaste, desconecta el celular de internet y llama al número al reverso de tu tarjeta.",
+      "Cambia tus contraseñas desde otro dispositivo seguro.",
+      "Activa las alertas de movimientos en la app oficial."
+    ],
+    "en": [
+      "Don’t open the link. Download apps only from Google Play or the App Store and check it’s the official one.",
+      "If you already installed it, disconnect the phone from the internet and call the number on the back of your card.",
+      "Change your passwords from another, safe device.",
+      "Turn on transaction alerts in the official app."
+    ]
+  },
+  "reportTo": [
+    "mx/tu-banco",
+    "mx/condusef",
+    "mx/policia-cibernetica"
+  ],
+  "sources": [
+    {
+      "title": "¡ALERTA! No descargues aplicaciones desde enlaces que recibas por mensajes SMS o correos electrónicos",
+      "publisher": "CONDUSEF",
+      "url": "https://www.gob.mx/condusef/prensa/alerta-no-descargues-aplicaciones-desde-enlaces-que-recibas-por-mensajes-sms-o-correos-electronicos?idiom=es",
+      "date": "2026-09-08"
+    },
+    {
+      "title": "ALERTA PREVENTIVA sobre descargas de programas maliciosos (MALWARE)",
+      "publisher": "CONDUSEF y Asociación de Bancos de México",
+      "url": "https://www.gob.mx/condusef/prensa/alerta-preventiva-sobre-descargas-de-programas-maliciosos-malware-conocimiento-y-prevencion-la-mejor-defensa-del-usuario?idiom=es",
+      "date": "2026-09-10"
+    }
+  ],
+  "updated": "2026-11-16"
+}

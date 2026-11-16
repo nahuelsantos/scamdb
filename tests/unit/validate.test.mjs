@@ -85,3 +85,18 @@ test('rejects a contact web way that is not https', () => {
   rmSync(dir, { recursive: true });
   assert.match(errs, /ways\[2\]\.value must start with https:\/\//);
 });
+
+// Source age: active needs a source from the 2 years before `updated`; anything not archived, from the 5 years before.
+const withSource = (date, status, updated = '2026-11-16') => (e) => ({ status, updated, sources: [{ ...e.sources[0], date }] });
+test('an active scam with a source from the last 2 years is fine', () =>
+  assert.doesNotMatch(errorsWith('recent.json', withSource('2025-01-10', 'active')), /source/));
+test('an active scam whose newest source is over 2 years old must be fading', () =>
+  assert.match(errorsWith('old-active.json', withSource('2024-06-01', 'active')), /active scam needs a source from the 2 years before updated/));
+test('a fading scam can have sources up to 5 years old', () =>
+  assert.doesNotMatch(errorsWith('fading.json', withSource('2022-01-01', 'fading')), /years before updated/));
+test('a scam whose newest source is over 5 years old must be archived', () =>
+  assert.match(errorsWith('too-old.json', withSource('2021-01-01', 'fading')), /needs a source from the 5 years before updated/));
+test('an archived scam can be older than 5 years', () =>
+  assert.doesNotMatch(errorsWith('archived.json', withSource('2019-01-01', 'archived')), /years before updated/));
+test('rejects a contact listed twice in reportTo', () =>
+  assert.match(errorsWith('dup-report.json', (e) => ({ reportTo: [e.reportTo[0], e.reportTo[0]] })), /reportTo lists "[^"]+" more than once/));

@@ -1,6 +1,7 @@
 {
   "id": "ar/fuera-de-mercado-libre",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "online",
@@ -8,42 +9,50 @@
     "phone"
   ],
   "sender": {
-    "es": "“Logística”"
+    "es": "“Logística”",
+    "en": "“Logistics”"
   },
   "name": {
-    "es": "“Hubo un problema con el envío”: te sacan de Mercado Libre"
+    "es": "“Hubo un problema con el envío”: te sacan de Mercado Libre",
+    "en": "“There was a problem with the shipment”: they take you off Mercado Libre"
   },
   "how": {
-    "es": "Hiciste una compra real en Mercado Libre y el vendedor te escribe por un “problema con la etiqueta” o con el correo. Te pasa a WhatsApp, donde gente de “logística” te pide pagar un monto chico por QR o por un link. Ese QR autoriza transferencias y te vacían la cuenta en minutos. También pasa con celulares muy baratos que te piden pagar por fuera de Mercado Pago."
+    "es": "Hiciste una compra real en Mercado Libre y el vendedor te escribe por un “problema con la etiqueta” o con el correo. Te pasa a WhatsApp, donde gente de “logística” te pide pagar un monto chico por QR o por un link. Ese QR autoriza transferencias y te vacían la cuenta en minutos. También pasa con celulares muy baratos que te piden pagar por fuera de Mercado Pago.",
+    "en": "You made a real purchase on Mercado Libre and the seller writes about a “label problem” or a shipping issue. They move you to WhatsApp, where “logistics” people ask you to pay a small amount by QR code or link. That QR authorises transfers and they empty your account in minutes. It also happens with very cheap phones they ask you to pay for outside Mercado Pago."
   },
   "steps": [
     {
       "text": {
-        "es": "El vendedor de tu compra te escribe por un “problema con la etiqueta”."
+        "es": "El vendedor de tu compra te escribe por un “problema con la etiqueta”.",
+        "en": "The seller of your purchase writes about a “label problem”."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Te pide seguir la charla por WhatsApp."
+        "es": "Te pide seguir la charla por WhatsApp.",
+        "en": "They ask to continue the chat on WhatsApp."
       }
     },
     {
       "text": {
-        "es": "Gente de “logística” te pide pagar un monto chico por QR o por un link."
+        "es": "Gente de “logística” te pide pagar un monto chico por QR o por un link.",
+        "en": "“Logistics” people ask you to pay a small amount by QR code or link."
       },
       "signal": "money_request"
     },
     {
       "text": {
-        "es": "Ese QR autoriza transferencias y te vacían la cuenta."
+        "es": "Ese QR autoriza transferencias y te vacían la cuenta.",
+        "en": "That QR authorises transfers and they empty your account."
       }
     }
   ],
   "examples": [
     {
       "text": {
-        "es": "Hola, soy de logística. El sistema no me deja enviarte el comprobante. Para resolver más rápido aboná $1.500 escaneando este QR y despachamos hoy."
+        "es": "Hola, soy de logística. El sistema no me deja enviarte el comprobante. Para resolver más rápido aboná $1.500 escaneando este QR y despachamos hoy.",
+        "en": "Hi, I’m from logistics. The system won’t let me send you the receipt. To sort it out faster, pay $1,500 by scanning this QR and we ship today."
       }
     }
   ],
@@ -58,6 +67,14 @@
       "celular barato",
       "sobrantes de aduana",
       "pagar por fuera"
+    ],
+    "en": [
+      "problem with the shipment",
+      "label problem",
+      "pay with a qr code",
+      "scan the qr code they sent",
+      "the seller wrote on whatsapp",
+      "pay outside mercado pago"
     ]
   },
   "signals": [
@@ -70,12 +87,22 @@
       "Un QR o link para “arreglar” el envío.",
       "Un precio muy por debajo del normal.",
       "Te piden pagar por fuera de Mercado Pago."
+    ],
+    "en": [
+      "They ask to continue the chat on WhatsApp.",
+      "A QR code or link to “fix” the shipment.",
+      "A price far below normal.",
+      "They ask you to pay outside Mercado Pago."
     ]
   },
   "whatToDo": {
     "es": [
       "Terminá todo dentro de Mercado Libre, nunca por WhatsApp.",
       "Nunca escanees un QR que te mandan por chat."
+    ],
+    "en": [
+      "Finish everything inside Mercado Libre, never on WhatsApp.",
+      "Never scan a QR code someone sends you in a chat."
     ]
   },
   "reportTo": [

@@ -1,0 +1,122 @@
+{
+  "id": "br/fake-job-offer",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "pt": "“Recrutador” ou “agência de empregos”",
+    "en": "“Recruiter” or “job agency”"
+  },
+  "name": {
+    "pt": "Golpe do falso emprego",
+    "en": "Fake job offer"
+  },
+  "how": {
+    "pt": "Falsos recrutadores mandam vagas imperdíveis por WhatsApp, e-mail ou redes sociais, com salário alto e quase nenhuma exigência. Depois pedem dinheiro para um curso “obrigatório” ou exame médico, ou pedem fotos de documentos, dados bancários e até assinatura digital. O dinheiro some e os dados são usados em outros crimes.",
+    "en": "Fake recruiters send amazing job offers by WhatsApp, email or social media, with a high salary and almost no requirements. Then they ask for money for a “mandatory” course or medical exam, or ask for photos of your documents, bank details and even a digital signature. The money disappears and your details are used in other crimes."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Você recebe uma vaga com salário alto e poucas exigências.",
+        "en": "You get a job offer with a high salary and few requirements."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "O “recrutador” diz ser de uma empresa ou agência.",
+        "en": "The “recruiter” claims to be from a company or agency."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Pede pagamento de curso, exame ou taxa para a contratação.",
+        "en": "They ask you to pay for a course, exam or hiring fee."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "Pede fotos de documentos, dados do banco ou assinatura digital.",
+        "en": "They ask for photos of documents, bank details or a digital signature."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Olá! Seu currículo foi selecionado para vaga de auxiliar administrativo, salário R$ 4.500, home office. Para garantir a vaga, faça o curso obrigatório (R$ 97): [link]",
+        "en": "Hi! Your résumé was selected for an office assistant job, R$ 4,500 salary, work from home. To secure the job, take the mandatory course (R$ 97): [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "falso emprego",
+      "vaga de emprego falsa",
+      "pagar curso para a vaga",
+      "taxa para exame admissional",
+      "recrutador no whatsapp",
+      "pediram meus documentos para a vaga"
+    ],
+    "en": [
+      "fake job",
+      "fake job offer",
+      "pay for a course to get the job",
+      "fee for a medical exam",
+      "recruiter on whatsapp"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "pt": [
+      "Pedem dinheiro para você ser contratado.",
+      "Salário alto demais para pouca exigência.",
+      "Pedem documentos ou assinatura digital antes de qualquer entrevista."
+    ],
+    "en": [
+      "They ask for money to hire you.",
+      "A salary too high for so few requirements.",
+      "They ask for documents or a digital signature before any interview."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Empresa séria não cobra para participar de seleção, exame ou curso.",
+      "Procure a vaga no site oficial da empresa ou na página dela no LinkedIn.",
+      "Não mande documentos nem dados do banco antes de ter certeza."
+    ],
+    "en": [
+      "Real companies don’t charge for interviews, exams or courses.",
+      "Look for the job on the company’s official site or its LinkedIn page.",
+      "Don’t send documents or bank details until you’re sure."
+    ]
+  },
+  "reportTo": [
+    "br/policia-civil",
+    "br/seu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Febraban alerta para o golpe do falso emprego",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4449/pt-br/",
+      "date": "2026-05-12"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,132 @@
+{
+  "id": "br/loan-upfront-fee",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "pt": "“Financeira”, “correspondente bancário” ou até “Febraban”",
+    "en": "“Lender”, “bank agent” or even “Febraban”"
+  },
+  "name": {
+    "pt": "Falso empréstimo: pague uma taxa para liberar o crédito",
+    "en": "Fake loan: pay a fee to release the credit"
+  },
+  "how": {
+    "pt": "Páginas, perfis e ligações oferecem empréstimo ou consignado fácil, com juros baixos e até para negativados. Depois do cadastro, mandam um “contrato” e dizem que, para liberar o dinheiro, você precisa pagar antes uma taxa, imposto, seguro ou a primeira parcela. Você paga e o empréstimo nunca chega.",
+    "en": "Pages, profiles and calls offer easy loans or payroll loans, with low interest, even for people with bad credit. After you sign up, they send a “contract” and say that to release the money you must first pay a fee, tax, insurance or the first installment. You pay and the loan never arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Você vê um anúncio ou recebe uma oferta de empréstimo fácil, até para negativado.",
+        "en": "You see an ad or get an offer of an easy loan, even with bad credit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Dizem ser de um banco ou da Febraban e mandam um contrato.",
+        "en": "They claim to be from a bank or Febraban and send a contract."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Pedem um pagamento antecipado: taxa, IOF, seguro ou primeira parcela.",
+        "en": "They ask for an upfront payment: a fee, IOF tax, insurance or the first installment."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "Pressionam: a oferta “vence hoje”.",
+        "en": "They pressure you: the offer “expires today”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Parabéns! Seu crédito de R$ 15.000 foi APROVADO, mesmo com nome sujo. Para liberar hoje, pague a taxa de cadastro de R$ 390 pelo Pix. Contrato: [link]",
+        "en": "Congratulations! Your R$ 15,000 credit was APPROVED, even with bad credit. To release it today, pay the R$ 390 registration fee by Pix. Contract: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "taxa para liberar o emprestimo",
+      "paguei uma taxa e o emprestimo nao caiu",
+      "emprestimo para negativado",
+      "pagar antes para liberar o credito",
+      "credito aprovado",
+      "taxa de cadastro",
+      "falso consignado"
+    ],
+    "en": [
+      "fee to release the loan",
+      "paid a fee and never got the loan",
+      "loan for bad credit",
+      "pay first to get the loan",
+      "credit approved",
+      "registration fee"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "pt": [
+      "Pedem qualquer pagamento antes de liberar o dinheiro.",
+      "Crédito fácil demais, até para quem tem nome sujo.",
+      "Dizem que a cobrança é exigência da Febraban. A Febraban não empresta nem cobra."
+    ],
+    "en": [
+      "They ask for any payment before releasing the money.",
+      "Credit that is too easy, even for people with bad credit.",
+      "They say the fee is required by Febraban. Febraban doesn’t lend or charge anything."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não pague nada antes de receber um empréstimo. Empréstimo de verdade não cobra adiantado.",
+      "Peça crédito só no app ou na agência do seu banco.",
+      "Se pagou, avise seu banco para tentar a devolução do Pix e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Don’t pay anything before getting a loan. Real loans don’t charge upfront.",
+      "Only apply for credit in your bank’s app or branch.",
+      "If you paid, tell your bank to try to recover the Pix and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil",
+    "br/procon"
+  ],
+  "sources": [
+    {
+      "title": "Bandidos estão usando nome da Febraban para aplicar golpes na população",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4506/pt-br/",
+      "date": "2026-10-09"
+    },
+    {
+      "title": "Veja os 10 golpes mais comuns aplicados contra idosos e saiba como evitá-los",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4177/pt-br/",
+      "date": "2024-09-04"
+    }
+  ],
+  "updated": "2026-11-16"
+}

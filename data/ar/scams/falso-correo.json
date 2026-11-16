@@ -1,42 +1,50 @@
 {
   "id": "ar/falso-correo",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "sms",
     "online"
   ],
   "sender": {
-    "es": "“CORREO”"
+    "es": "“CORREO”",
+    "en": "“CORREO”"
   },
   "name": {
-    "es": "“Tu paquete está retenido”: el falso Correo"
+    "es": "“Tu paquete está retenido”: el falso Correo",
+    "en": "“Your parcel is on hold”: the fake post office"
   },
   "how": {
-    "es": "Te llega un SMS, un mail o hasta un anuncio en Gmail que dice que tenés un paquete retenido, que no se pudo entregar o que la dirección está mal. El link lleva a una página igualita a la del Correo Argentino o Andreani que te pide los datos de la tarjeta o un pago chico para “liberarlo”. Es más creíble si justo estás esperando una compra."
+    "es": "Te llega un SMS, un mail o hasta un anuncio en Gmail que dice que tenés un paquete retenido, que no se pudo entregar o que la dirección está mal. El link lleva a una página igualita a la del Correo Argentino o Andreani que te pide los datos de la tarjeta o un pago chico para “liberarlo”. Es más creíble si justo estás esperando una compra.",
+    "en": "You get a text, an email or even a Gmail ad saying a parcel is on hold, couldn’t be delivered or has a wrong address. The link goes to a page that looks just like Correo Argentino or Andreani and asks for your card details or a small payment to “release” it. It’s more convincing if you’re waiting for a purchase."
   },
   "steps": [
     {
       "text": {
-        "es": "Te llega un SMS o un mail: tu paquete está retenido o no se pudo entregar."
+        "es": "Te llega un SMS o un mail: tu paquete está retenido o no se pudo entregar.",
+        "en": "You get a text or an email: your parcel is on hold or couldn’t be delivered."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Te dan un plazo corto: “dentro de las 24 horas”."
+        "es": "Te dan un plazo corto: “dentro de las 24 horas”.",
+        "en": "They give you a short deadline: “within 24 hours”."
       },
       "signal": "urgency"
     },
     {
       "text": {
-        "es": "El link lleva a una copia de la página del Correo o de Andreani."
+        "es": "El link lleva a una copia de la página del Correo o de Andreani.",
+        "en": "The link goes to a copy of the post office or Andreani page."
       },
       "signal": "unknown_link"
     },
     {
       "text": {
-        "es": "Te piden los datos de la tarjeta o un pago chico para “liberarlo”."
+        "es": "Te piden los datos de la tarjeta o un pago chico para “liberarlo”.",
+        "en": "They ask for your card details or a small payment to “release” it."
       },
       "signal": "money_request"
     }
@@ -44,7 +52,8 @@
   "examples": [
     {
       "text": {
-        "es": "CORREO: Su paquete no pudo ser entregado por dirección incorrecta. Para evitar la devolución, confirme sus datos dentro de las 24 horas: [enlace]"
+        "es": "CORREO: Su paquete no pudo ser entregado por dirección incorrecta. Para evitar la devolución, confirme sus datos dentro de las 24 horas: [enlace]",
+        "en": "POST: Your parcel could not be delivered due to an incorrect address. To avoid its return, confirm your details within 24 hours: [link]"
       }
     }
   ],
@@ -63,6 +72,15 @@
       "andreani",
       "aduana",
       "argentina post"
+    ],
+    "en": [
+      "parcel on hold",
+      "my parcel is on hold",
+      "could not be delivered",
+      "incorrect address",
+      "pay the shipping",
+      "release the parcel",
+      "pending delivery"
     ]
   },
   "signals": [
@@ -77,6 +95,12 @@
       "“Dentro de las 24 horas”.",
       "El mensaje viene de un celular común o de “Argentina Post”.",
       "No dice qué compraste ni quién te lo manda."
+    ],
+    "en": [
+      "They ask you to pay to release a parcel.",
+      "“Within 24 hours”.",
+      "The message comes from an ordinary phone or from “Argentina Post”.",
+      "It doesn’t say what you bought or who sent it."
     ]
   },
   "whatToDo": {
@@ -84,6 +108,11 @@
       "No toques el link. El Correo no te pide plata ni datos por mensaje.",
       "Si esperás algo, buscá el seguimiento escribiendo vos la página oficial.",
       "Si pusiste los datos de la tarjeta, llamá al banco para bloquearla."
+    ],
+    "en": [
+      "Don’t tap the link. The post office doesn’t ask for money or data by message.",
+      "If you’re expecting something, track it by typing the official site yourself.",
+      "If you entered your card details, call the bank to block the card."
     ]
   },
   "reportTo": [

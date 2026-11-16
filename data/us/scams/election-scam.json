@@ -1,0 +1,96 @@
+{
+  "id": "us/election-scam",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "en": "Campaign, PAC or “election office”"
+  },
+  "name": {
+    "en": "Election scams: fake PACs, “investment pools” and voter-registration texts"
+  },
+  "how": {
+    "en": "Around elections, scammers use candidates’ names, images and slogans, sometimes with AI-generated voices. They ask for donations to fake political action committees, sell campaign merchandise that never ships, or promise a guaranteed return on a “campaign pool” that pays out if the candidate wins. Others text or email that you are not registered to vote, with a link to a fake registration page that steals your personal information."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message uses a candidate’s name, image or slogan."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It asks for a donation, sells merchandise, or offers a guaranteed return on a campaign pool."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "Or it says you aren’t registered to vote and links to a page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Your money or personal details go to the scammers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "ALERT: Our records show you are NOT registered to vote in your state. Confirm your registration before the deadline: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "not registered to vote text",
+      "campaign donation pool guaranteed return",
+      "fake pac donation",
+      "campaign merchandise never arrived",
+      "candidate voice asked for donation"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A text saying you aren’t registered to vote, with a link.",
+      "Campaign donations described as an investment with returns.",
+      "Pressure to donate or recruit others."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check your registration on your state’s official election website, typed yourself.",
+      "Campaign donations are never an investment.",
+      "Check committees on the Federal Election Commission website before giving."
+    ]
+  },
+  "reportTo": [
+    "us/ic3",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Scammers Exploit 2026 U.S. Midterm Election to Perpetrate Multiple Fraud Schemes",
+      "publisher": "FBI Internet Crime Complaint Center (IC3)",
+      "url": "https://www.ic3.gov/PSA/2026/PSA261015-3",
+      "date": "2026-10-15"
+    }
+  ],
+  "updated": "2026-11-16"
+}

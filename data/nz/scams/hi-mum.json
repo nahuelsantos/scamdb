@@ -1,0 +1,95 @@
+{
+  "id": "nz/hi-mum",
+  "country": "nz",
+  "lang": "en",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Your son” or “your daughter”"
+  },
+  "name": {
+    "en": "“Mum, I dropped my phone”: a new number asking for money"
+  },
+  "how": {
+    "en": "A text claims to be from your child or another family member. It says their phone was damaged and asks you to contact them on a new mobile number. If you reply, the scammer asks for bank account or credit card details, for example to buy a new phone. Just receiving the text does not put you at risk; replying does."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from an unknown number says it is your child or another relative."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say their phone was damaged and give you a new number to use."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "en": "Once you reply, they ask for your bank account or card details to buy a new phone."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "The money or card details go to the scammer."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi Mum, I dropped my phone and the screen is smashed. This is my temporary number, can you text me here? Need a favour x"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "mum i dropped my phone",
+      "text from my son new number",
+      "temporary number asking for money",
+      "phone is broken new number",
+      "card details for a new phone",
+      "family member new mobile number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "new_number",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A relative writes from a new number saying their phone broke.",
+      "They ask for bank or card details, or money for a new phone.",
+      "They avoid a call on their usual number."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t reply. Contact your relative on their regular number, or a close friend of theirs.",
+      "Forward the text free to 7726 (Department of Internal Affairs).",
+      "If you already paid, contact your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/ncsc",
+    "nz/police-105"
+  ],
+  "sources": [
+    {
+      "title": "“Mum I dropped my phone” SMS scam targeting New Zealanders",
+      "publisher": "National Cyber Security Centre",
+      "url": "https://www.ncsc.govt.nz/alerts/mum-i-dropped-my-phone-sms-scam-targeting-new-zealanders/",
+      "date": "2023-08-08"
+    }
+  ],
+  "updated": "2026-11-16"
+}
