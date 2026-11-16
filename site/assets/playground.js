@@ -45,16 +45,27 @@ SAMPLES.forEach((b) => b.addEventListener('click', () => {
   check();
 }));
 
-// "Check with the API": the same message sent to POST /v1/isitascam (a real call, so it counts against the keyless limit).
+// "Check with the API": the same message sent to POST /v1/isitascam (a real call). Signed in with a key, the page's own
+// request uses that key (X-Requested-With: scamdb + the session cookie), so the answer includes the AI score.
 const apiBtn = document.getElementById('pg-api');
 const apiOut = document.querySelector('.api-out');
+const apiSum = document.getElementById('pg-api-sum');
 apiBtn?.addEventListener('click', async () => {
   apiOut.hidden = false;
   apiOut.textContent = '…';
+  if (apiSum) apiSum.hidden = true;
   try {
-    const r = await fetch('/v1/isitascam', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text: box.value, lang: 'en' }) });
+    const r = await fetch('/v1/isitascam', { method: 'POST', credentials: 'same-origin',
+      headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: JSON.stringify({ text: box.value, lang: 'en' }) });
     const body = await r.json();
     apiOut.textContent = r.ok ? JSON.stringify(body, null, 2) : `${r.status} ${body.message ?? body.error ?? ''}`;
+    if (r.ok && apiSum) {
+      const scored = typeof body.score === 'number';
+      apiSum.textContent = scored
+        ? `${S[body.verdict] ?? body.verdict} · ${S.apiScore} ${Math.round(body.score * 100)}%`
+        : `${S[body.verdict] ?? body.verdict} · ${S.apiNoKey}`;
+      apiSum.hidden = false;
+    }
   } catch {
     apiOut.textContent = 'The API could not be reached.';
   }

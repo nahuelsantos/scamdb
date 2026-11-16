@@ -2,7 +2,7 @@
 // Workers AI score; keyless requests never reach it. The message text is never stored unless report: true, which needs a key
 // (probe detection keeps only a fingerprint).
 import { readJson, json, cors, HttpError } from './http.js';
-import { authKey, recordUsage } from './keys.js';
+import { authKey, sessionKey, recordUsage } from './keys.js';
 import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
@@ -68,7 +68,7 @@ export async function handleIsItAScam(request, env) {
   const { body, file } = multipart ? await readForm(request) : { body: await readJson(request, 32000), file: null };
   const catalogue = await loadCatalogue(env);
   const check = validateCheck(file ? { ...body, text: '-' } : body, catalogue.countries);
-  const key = await authKey(request, env);
+  const key = (await authKey(request, env)) ?? (await sessionKey(request, env));
   if (file && !key) throw new HttpError(401, 'key_required', 'Screenshots and voice notes need a free API key (scamdb.dev/account). Text checks work without one.');
   if (check.report && !key) throw invalid('report', 'saving a report needs an API key; without one, use POST /v1/reports');
 
