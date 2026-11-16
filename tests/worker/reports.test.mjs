@@ -140,3 +140,19 @@ test('on the site, a signed-in visitor with a key reports without Turnstile; oth
   assert.equal((await post(body, { headers: { cookie, 'x-requested-with': 'scamdb' } })).status, 201);
   assert.equal((await post(body, { headers: { cookie } })).status, 403, 'without the site header the cookie is ignored');
 });
+
+test('scamdb.dev reports are checked with TURNSTILE_SECRET_SITE; other forms keep TURNSTILE_SECRET', async () => {
+  const used = [];
+  const fetchMock = async (request) => {
+    const form = await request.formData();
+    used.push(form.get('secret'));
+    return Response.json({ success: form.get('response') === 'ok' });
+  };
+  const w2 = await makeWorker({ fetchMock, bindings: { TURNSTILE_SECRET: 'eschamuyo-secret', TURNSTILE_SECRET_SITE: 'site-secret' } });
+  try {
+    const send = (source) => w2.fetch('/v1/reports', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': '203.0.113.9' }, body: JSON.stringify({ text: 'x code', country: 'ar', source, turnstileToken: 'ok' }) });
+    assert.equal((await send('scamdb.dev')).status, 201);
+    assert.equal((await send('eschamuyo')).status, 201);
+    assert.deepEqual(used, ['site-secret', 'eschamuyo-secret']);
+  } finally { await w2.dispose(); }
+});

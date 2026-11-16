@@ -50,7 +50,9 @@ export async function handleReport(request, env) {
   const ip = request.headers.get('cf-connecting-ip') ?? '';
   const key = (await authKey(request, env)) ?? (await sessionKey(request, env));
   if (file && !key) throw new HttpError(401, 'key_required', 'Screenshots need a free API key (scamdb.dev/account). Text reports work without one.');
-  if (!key && !(await verifyTurnstile(body.turnstileToken, ip, env.TURNSTILE_SECRET)))
+  // scamdb.dev's own form has its own Turnstile widget (TURNSTILE_SECRET_SITE); other forms (eschamuyo) use TURNSTILE_SECRET.
+  const secret = report.source === 'scamdb.dev' && env.TURNSTILE_SECRET_SITE ? env.TURNSTILE_SECRET_SITE : env.TURNSTILE_SECRET;
+  if (!key && !(await verifyTurnstile(body.turnstileToken, ip, secret)))
     throw new HttpError(403, 'turnstile_failed', 'Requests without an API key need a valid Turnstile token.');
 
   const now = new Date();

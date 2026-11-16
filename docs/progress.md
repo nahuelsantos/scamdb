@@ -17,8 +17,12 @@ A running record of what was built, what was measured and what we learned. Newes
 - **Worker:** `/v1/reports` accepts the signed-in session from our own pages (`X-Requested-With: scamdb`, like
   `/v1/isitascam`).
 
+**Update:** the owner created a separate Turnstile widget for scamdb.dev (site key `0x4AAAAAAGEPmIAcW1_PP5dE`). The
+Worker checks tokens from the scamdb.dev form (`source: "scamdb.dev"`) with the new secret `TURNSTILE_SECRET_SITE`.
+eschamuyo's form keeps `TURNSTILE_SECRET`.
+
 **Findings:**
-- **Turnstile site key:** the form reuses eschamuyo's widget. The owner must add `scamdb.dev` and `www.scamdb.dev`
+- **Turnstile site key (superseded by the update above):** the form first reused eschamuyo's widget. The owner must add `scamdb.dev` and `www.scamdb.dev`
   to its hostnames in the Cloudflare dashboard (Turnstile → widget → Hostnames). Until then, anonymous reports
   from scamdb.dev fail the check; signed-in reports work.
 - **Competitors** (`docs/research/competitors-2026-11-16.md`):

@@ -151,6 +151,13 @@ npx wrangler d1 migrations apply scamdb --remote
 npx wrangler secret put TURNSTILE_SECRET
 ```
 
+   scamdb.dev's own report form uses a second widget (hostnames `scamdb.dev`, `www.scamdb.dev`). Its site key is in
+   `site/templates/report.js`, and its secret goes in:
+
+```bash
+npx wrangler secret put TURNSTILE_SECRET_SITE
+```
+
 4. **GitHub sign-in**: GitHub → Settings → Developer settings → OAuth Apps → New OAuth App. Homepage
    `https://scamdb.dev`, callback `https://scamdb.dev/auth/github/callback`. Then save both values:
 
