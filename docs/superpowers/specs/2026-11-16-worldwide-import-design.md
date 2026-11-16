@@ -66,13 +66,20 @@ The owner chose 2 ("automate it, with the option of running it manually").
 `.claude/skills/import-scams/SKILL.md` in the scamdb repo, invoked as `/import-scams <country>` or
 `/import-scams next`.
 
+0. **One import at a time** [call]: if an import pull request (label `import`) is still open, the run stops and
+   reports that it is waiting for review. It never opens a second, overlapping PR.
 1. **Pick the country.** `next` picks the target country (from the list above, then any country in
    `data/countries.json`) whose newest entry is oldest; a new country with no entries goes first [call].
 2. **Country setup** (first run for a country only): add it to `data/countries.json` (code, English and local name,
    languages, emergency number) and write `data/<cc>/contacts.json` from official sources (police cybercrime unit,
    consumer agency, banking regulator, national reporting line).
 3. **Research.** Read the country's official warning sources (`importer/sources.json`, see below) and reputable news
-   from the last 24 months [call]; list candidate scams; drop ones already in `data/<cc>/scams/`.
+   from the last 24 months [call]; list candidate scams; drop ones already in `data/<cc>/scams/` and ones listed in
+   `importer/rejected.json` [call].
+   - **Rejections are remembered** [call]: at the start of each run, the importer looks at import PRs closed since the
+     last run; any drafted scam that didn't reach `main` (PR closed, or the scam removed during review) is added to
+     `importer/rejected.json` (country, slug, name, date) so it isn't proposed again. The owner can delete a line to
+     allow it back.
 4. **Draft** up to 10 entries following CONTRIBUTING.md: original language + English for every text field, steps,
    signals, red flags, what to do, `reportTo` (the new contacts), sources with dates.
 5. **Validate** with `npm run validate` and `npm test`; fix or drop entries that fail.
@@ -110,6 +117,10 @@ blocked, the PR summary says which). Running by hand is the same command in any 
 - `phrases` keep the original-language phrases (they power matching) plus English phrases.
 - The Argentine entries get `lang: "es"` and English versions of every field, drafted by Claude and reviewed by the
   owner in their own PR.
+- **Contacts and countries too** [call]: every text field in `contacts.json` and `countries.json` must also have the
+  original language and `en` (so the English site never shows untranslated "who to call" text). The Argentine contacts
+  get English in the same PR; the importer writes new countries' contacts in both.
+- The eschamuyo sync keeps sending only the Spanish (`es`) text, so eschamuyo's data is unchanged.
 
 ### The site (English only)
 
@@ -118,7 +129,10 @@ blocked, the PR summary says which). Running by hand is the same command in any 
 - **Entry pages** show the explanation, steps, warning signs and what to do in **English**, and each **sample message in
   its original language** with the English translation underneath. A "Show original" control reveals the whole entry
   in its original language [call].
-- The playground keeps matching pasted text in any language the catalogue covers.
+- **Matching** [call]: the playground loads every country's entries and matches phrases in every language they
+  have. Warning-sign rules are added in **English** in this piece (the site is English and the first new countries
+  are English-speaking); **Portuguese** sign rules come with Brazil's import. The Spanish rules stay as they are.
+  eschamuyo keeps its own matcher, so its verdicts don't change.
 - eschamuyo is unaffected: its sync uses the Spanish (`es`) fields of Argentine entries.
 
 ## Rollout order [call]
