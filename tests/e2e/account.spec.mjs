@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const me = (over = {}) => ({ login: 'ana', hasKey: false, prefix: null, createdAt: null, usageToday: { reports: 0 }, limits: { reports: 200 }, ...over });
+const me = (over = {}) => ({ login: 'ana', hasKey: false, viewable: over.hasKey ?? false, prefix: null, createdAt: null, usageToday: { reports: 0 }, limits: { reports: 200 }, ...over });
 
 test('signed out shows the GitHub sign-in link', async ({ page }) => {
   await page.route('**/v1/keys/me', (r) => r.fulfill({ status: 401, json: { error: 'not_signed_in' } }));
@@ -37,11 +37,22 @@ test('the key is masked like a password; the eye shows it and the copy button co
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(KEY);
 });
 
-test('a key made before viewing was possible explains how to see it', async ({ page }) => {
+test('a key that cannot be shown again has no show or copy buttons, just how to fix it', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me({ hasKey: true, viewable: false, prefix: 'sk_old…' }) }));
+  await page.goto('/account/');
+  await expect(page.locator('#acc-key')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Show key' })).toBeHidden();
+  await expect(page.getByRole('button', { name: 'Copy' })).toBeHidden();
+  await expect(page.locator('#acc-hint')).toContainText('Replace it');
+});
+
+test('if showing the key fails, the show and copy buttons go away', async ({ page }) => {
   await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me({ hasKey: true, prefix: 'sk_old…' }) }));
   await page.route('**/v1/keys/me/reveal', (r) => r.fulfill({ status: 404, json: { error: 'key_not_viewable' } }));
   await page.goto('/account/');
   await page.getByRole('button', { name: 'Show key' }).click();
+  await expect(page.getByRole('button', { name: 'Show key' })).toBeHidden();
+  await expect(page.getByRole('button', { name: 'Copy' })).toBeHidden();
   await expect(page.locator('#acc-hint')).toContainText('Replace it');
 });
 

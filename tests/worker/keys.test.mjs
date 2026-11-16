@@ -94,9 +94,20 @@ test('revealing needs a session and the X-Requested-With header', async () => {
   assert.equal((await reveal({})).status, 401);
   assert.equal((await reveal({ cookie: session })).status, 403);
 });
-test('a key created before encryption cannot be revealed: replace it', async () => {
+const meNow = async () => (await w.fetch('/v1/keys/me', { headers: { cookie: session } })).json();
+test('a key created before encryption cannot be revealed, and /me says so', async () => {
   await create();
+  assert.equal((await meNow()).viewable, true);
   await w.db.prepare('UPDATE keys SET key_enc = NULL WHERE github_id = 7').run();
+  assert.equal((await meNow()).viewable, false);
+  const r = await reveal();
+  assert.equal(r.status, 404);
+  assert.equal((await r.json()).error, 'key_not_viewable');
+});
+test('a stored copy that no longer decrypts is key_not_viewable, not a 500', async () => {
+  await create();
+  await w.db.prepare("UPDATE keys SET key_enc = 'AAAAAAAAAAAAAAAA.AAAAAAAAAAAAAAAAAAAAAA==' WHERE github_id = 7").run();
+  assert.equal((await meNow()).viewable, false);
   const r = await reveal();
   assert.equal(r.status, 404);
   assert.equal((await r.json()).error, 'key_not_viewable');

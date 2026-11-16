@@ -63,20 +63,32 @@ function parse(answer, catalogue) {
 
 /** { score, verdict, signals, matches } or null on any error, timeout or invalid answer. */
 /** `country` limits the matches (the catalogue is always embedded whole, so the cache stays valid). */
-export async function scoreWithWorkersAI(ai, { text, catalogue, country = null }, { timeoutMs = TIMEOUT_MS } = {}) {
+/** On null, `diag.reason` says why ('timeout', 'embed', 'chat' or 'answer') and `diag.detail` gives a short hint. */
+export async function scoreWithWorkersAI(ai, { text, catalogue, country = null }, { timeoutMs = TIMEOUT_MS, diag = {} } = {}) {
+  let stage = 'embed';
+  const started = Date.now();
   try {
     return await withTimeout((async () => {
       const countryOf = new Map(catalogue.entries.map((e) => [e.id, e.country]));
       const near = (await similar(ai, text, catalogue)).filter((n) => !country || countryOf.get(n.id) === country);
+      stage = 'chat';
       const out = await ai.run(MODELS.chat, { messages: prompt(text, catalogue, near), max_tokens: 1024 });
-      const parsed = parse(answerOf(out), catalogue);
-      if (!parsed) return null;
+      stage = 'answer';
+      const answer = answerOf(out);
+      const parsed = parse(answer, catalogue);
+      if (!parsed) {
+        Object.assign(diag, { reason: 'answer', detail: clip(typeof answer === 'string' ? answer : JSON.stringify(answer ?? out)) });
+        return null;
+      }
       return { ...parsed, matches: near.filter((n) => n.similarity >= SIMILAR).slice(0, 3) };
     })(), timeoutMs);
-  } catch {
+  } catch (e) {
+    const timedOut = e?.message === 'timeout';
+    Object.assign(diag, { reason: timedOut ? 'timeout' : stage, detail: timedOut ? `${stage} after ${Date.now() - started} ms` : clip(String(e?.message ?? e)) });
     return null;
   }
 }
+const clip = (s) => String(s).replace(/\s+/g, ' ').slice(0, 160);
 
 /** Merges the matcher's result with the scorer's (see the plan: evidence must be quoted, verdict floor). */
 export function combine(matcher, scorer, text) {

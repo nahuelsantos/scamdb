@@ -29,7 +29,7 @@ export function validateCheck(b, countries) {
 }
 
 /** The response body (pure). `result` is { verdict, score, signals: [{id, evidence}], matches: [{id}] }. */
-export function buildAnswer({ result, catalogue, top, lang, country, scorer }) {
+export function buildAnswer({ result, catalogue, top, lang, country, scorer, scorerError }) {
   const byId = new Map(catalogue.entries.map((e) => [e.id, e]));
   const reportCountry = top?.country ?? (result.matches[0] ? byId.get(result.matches[0].id)?.country : null) ?? country;
   return {
@@ -39,7 +39,7 @@ export function buildAnswer({ result, catalogue, top, lang, country, scorer }) {
     matches: result.matches.map(({ id }) => ({ id, name: pickText(byId.get(id)?.name, lang) ?? id, url: `${ORIGIN}/v1/scams/${id}.json`, page: `${ORIGIN}/catalogue/${id}/` })),
     whatToDo: pickText(top?.whatToDo, lang) ?? [],
     reportTo: reportCountry ? `${ORIGIN}/v1/${reportCountry}/contacts.json` : null,
-    engine: { matcher: VERSION, scorer },
+    engine: { matcher: VERSION, scorer, ...(scorerError ? { scorerError } : {}) },
     datasetVersion: catalogue.version,
   };
 }
@@ -79,14 +79,15 @@ export async function handleIsItAScam(request, env) {
 
   let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined });
   if (check.report && !check.country && !result.matches.length) throw invalid('country', 'needed to save a report when no catalogue scam matches');
-  let scorer = 'matcher';
+  let scorer = 'matcher', scorerError = null; // keyed callers see why the AI step was skipped
   // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.
   if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
-    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country });
-    if (scored) { result = combine(result, scored, check.text); scorer = 'workers-ai'; }
+    const diag = {};
+    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country }, { diag });
+    if (scored) { result = combine(result, scored, check.text); scorer = 'workers-ai'; } else scorerError = diag;
   }
   const top = result.matches[0] ? await loadEntry(env, result.matches[0].id) : null;
-  const answer = buildAnswer({ result, catalogue, top, lang: check.lang, country: check.country, scorer });
+  const answer = buildAnswer({ result, catalogue, top, lang: check.lang, country: check.country, scorer, scorerError });
   if (file) answer.input = { type: file.kind, text: check.text };
 
   if (key) await recordUsage(env.DB, key.id, 'isitascam', now);
