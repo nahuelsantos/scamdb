@@ -1,0 +1,283 @@
+# scamdb engine report
+
+450 labelled messages (252 scams, 198 safe).
+
+## Keyword matcher
+
+| | scams caught | called "scam" | right match first | right match in top 3 | wrong matches | safe called "scam" | safe flagged | safe with a match |
+|---|---|---|---|---|---|---|---|---|
+| **all** | 96.8% (244/252) | 42.5% | 64.3% | 77% | 212 | 7.1% (14/198) | 84.8% | 62.6% |
+| ar | 96.4% (27/28) | 50% | 50% | 57.1% | 21 | 13.6% (3/22) | 86.4% | 63.6% |
+| au | 100% (28/28) | 46.4% | 60.7% | 82.1% | 26 | 4.5% (1/22) | 95.5% | 72.7% |
+| br | 100% (28/28) | 46.4% | 53.6% | 67.9% | 33 | 4.5% (1/22) | 77.3% | 63.6% |
+| ca | 92.9% (26/28) | 42.9% | 67.9% | 82.1% | 22 | 4.5% (1/22) | 81.8% | 54.5% |
+| es | 100% (28/28) | 46.4% | 53.6% | 67.9% | 22 | 4.5% (1/22) | 86.4% | 72.7% |
+| gb | 100% (28/28) | 25% | 71.4% | 89.3% | 35 | 9.1% (2/22) | 90.9% | 72.7% |
+| mx | 96.4% (27/28) | 53.6% | 53.6% | 67.9% | 14 | 18.2% (4/22) | 72.7% | 40.9% |
+| nz | 89.3% (25/28) | 42.9% | 78.6% | 89.3% | 23 | 4.5% (1/22) | 81.8% | 54.5% |
+| us | 96.4% (27/28) | 28.6% | 89.3% | 89.3% | 16 | 0% (0/22) | 90.9% | 68.2% |
+
+<details><summary>258 messages to look at</summary>
+
+- `ar-07` (scam, expected ar/transferencia-por-error): scam
+- `ar-08` (scam, expected ar/comprobante-trucho): suspicious, matched ar/falso-banco, ar/falso-mercado-pago, ar/transferencia-por-error
+- `ar-09` (scam, expected ar/fuera-de-mercado-libre): scam, matched ar/falso-correo
+- `ar-10` (scam, expected ar/prestamos-falsos): suspicious, matched ar/falso-banco, ar/falso-mercado-pago, ar/falso-anses-pami
+- `ar-13` (safe): suspicious, matched ar/whatsapp-codigo
+- `ar-14` (safe): suspicious, matched ar/falso-mercado-pago, ar/falso-correo, ar/fuera-de-mercado-libre
+- `ar-15` (safe): suspicious
+- `ar-16` (safe): suspicious, matched ar/falsa-arca
+- `ar-17` (safe): suspicious
+- `ar-18` (safe): suspicious
+- `ar-19` (safe): scam, matched ar/falso-mercado-pago, ar/whatsapp-codigo
+- `ar-21` (safe): suspicious, matched ar/whatsapp-codigo
+- `ar-22` (safe): suspicious, matched ar/cuento-del-tio
+- `ar-23` (scam, expected ar/acceso-remoto): scam, matched ar/falso-banco
+- `ar-24` (scam, expected ar/entradas-truchas): suspicious, matched ar/transferencia-por-error, ar/inversion-falsa, ar/whatsapp-codigo
+- `ar-25` (scam, expected ar/estafa-romantica): scam, matched ar/inversion-falsa
+- `ar-27` (scam, expected ar/inversion-falsa): suspicious, matched ar/cuento-del-tio
+- `ar-28` (scam, expected ar/premios-falsos): scam
+- `ar-30` (scam, expected ar/voz-clonada): scam, matched ar/alquiler-falso, ar/transferencia-por-error, ar/voz-clonada
+- `ar-31` (scam, expected ar/falso-banco): suspicious
+- `ar-32` (scam, expected ar/whatsapp-codigo): not_recognised
+- `ar-36` (scam, expected ar/alquiler-falso): suspicious, matched ar/prestamos-falsos, ar/whatsapp-codigo
+- `ar-37` (scam, expected ar/prestamos-falsos): suspicious, matched ar/falso-banco, ar/prestamos-falsos, ar/falso-anses-pami
+- `ar-39` (safe): suspicious, matched ar/whatsapp-codigo
+- `ar-40` (safe): suspicious, matched ar/whatsapp-codigo, ar/falso-correo
+- `ar-41` (safe): scam, matched ar/inversion-falsa
+- `ar-42` (safe): suspicious, matched ar/premios-falsos, ar/trabajo-likes
+- `ar-44` (safe): suspicious, matched ar/falso-mercado-pago
+- `ar-45` (safe): suspicious, matched ar/alquiler-falso, ar/inversion-falsa
+- `ar-46` (safe): suspicious, matched ar/whatsapp-codigo
+- `ar-48` (safe): scam, matched ar/falso-anses-pami, ar/whatsapp-codigo
+- `ar-49` (safe): suspicious
+- `ar-50` (safe): suspicious
+- `au-01` (scam, expected au/family-in-trouble): scam, matched au/bank-safe-account
+- `au-03` (scam, expected au/parcel-delivery-text): scam, matched au/family-in-trouble, au/marketplace-seller-verify, au/parcel-delivery-text
+- `au-05` (scam, expected au/task-job-scam): suspicious, matched au/bank-safe-account, au/airline-booking-update, au/family-in-trouble
+- `au-06` (scam, expected au/remote-access-support): suspicious, matched au/parcel-delivery-text, au/remote-access-support, au/romance-scam
+- `au-07` (scam, expected au/romance-scam): suspicious, matched au/remote-access-support, au/romance-scam
+- `au-09` (scam, expected au/marketplace-seller-verify): scam, matched au/ato-mygov, au/sextortion-email, au/mobile-number-takeover
+- `au-13` (safe): suspicious, matched au/bank-safe-account, au/romance-scam, au/mobile-number-takeover
+- `au-14` (safe): suspicious, matched au/parcel-delivery-text, au/bank-safe-account
+- `au-15` (safe): suspicious, matched au/family-in-trouble, au/personal-loan-fee, au/romance-scam
+- `au-16` (safe): suspicious, matched au/ato-mygov, au/romance-scam, au/marketplace-seller-verify
+- `au-17` (safe): suspicious
+- `au-18` (safe): suspicious
+- `au-19` (safe): suspicious, matched au/fake-police-crypto
+- `au-21` (safe): suspicious, matched au/bank-safe-account, au/family-in-trouble
+- `au-22` (safe): suspicious, matched au/card-collection-courier, au/family-in-trouble
+- `au-26` (scam, expected au/fake-trading-group): suspicious, matched au/family-in-trouble
+- `au-27` (scam, expected au/mobile-number-takeover): suspicious
+- `au-33` (scam, expected au/parcel-delivery-text): scam, matched au/personal-loan-fee, au/parcel-delivery-text
+- `au-36` (scam, expected au/romance-scam): suspicious, matched au/fake-car-sale-site, au/romance-scam, au/sextortion-email
+- `au-38` (scam, expected au/remote-access-support): scam, matched au/bank-safe-account, au/remote-access-support
+- `au-39` (safe): suspicious, matched au/romance-scam, au/bank-safe-account, au/mobile-number-takeover
+- `au-40` (safe): suspicious, matched au/bank-safe-account, au/parcel-delivery-text
+- `au-41` (safe): suspicious
+- `au-42` (safe): scam, matched au/fake-car-sale-site, au/marketplace-seller-verify
+- `au-43` (safe): suspicious
+- `au-44` (safe): suspicious, matched au/mobile-number-takeover, au/bank-safe-account, au/personal-loan-fee
+- `au-45` (safe): suspicious, matched au/mobile-number-takeover
+- `au-46` (safe): suspicious, matched au/family-in-trouble
+- `au-47` (safe): suspicious, matched au/card-collection-courier
+- `au-48` (safe): suspicious, matched au/ato-mygov, au/romance-scam
+- `au-49` (safe): suspicious
+- `au-50` (safe): suspicious, matched au/airline-booking-update, au/bank-safe-account
+- `br-02` (scam, expected br/correios-parcel-fee): scam
+- `br-03` (scam, expected br/fake-bank-call-center): suspicious, matched br/whatsapp-code-clone, br/receita-cpf-charge
+- `br-04` (scam, expected br/whatsapp-code-clone): suspicious, matched br/fake-online-store, br/fake-lawyer, br/receita-cpf-charge
+- `br-05` (scam, expected br/wrong-pix-refund): scam, matched br/fake-bank-call-center, br/loan-refund-request, br/wrong-pix-refund
+- `br-07` (scam, expected br/inss-proof-of-life): scam, matched br/fake-online-store, br/receita-cpf-charge, br/whatsapp-code-clone
+- `br-08` (scam, expected br/fake-online-store): scam
+- `br-09` (scam, expected br/fake-job-offer): suspicious, matched br/fake-lawyer, br/fake-online-store
+- `br-10` (scam, expected br/loan-upfront-fee): suspicious, matched br/loan-refund-request
+- `br-11` (scam, expected br/traffic-fine-cnh-text): scam, matched br/fake-boleto, br/fake-online-store, br/fake-lawyer
+- `br-13` (safe): suspicious, matched br/family-new-number, br/fake-lawyer, br/fake-online-store
+- `br-14` (safe): suspicious, matched br/correios-parcel-fee
+- `br-15` (safe): suspicious, matched br/family-new-number, br/loan-upfront-fee
+- `br-16` (safe): suspicious, matched br/remote-access-app, br/card-machine-broken-screen, br/correios-parcel-fee
+- `br-17` (safe): suspicious, matched br/traffic-fine-cnh-text
+- `br-18` (safe): suspicious
+- `br-19` (safe): suspicious
+- `br-21` (safe): suspicious, matched br/family-new-number, br/fake-lawyer
+- `br-23` (scam, expected br/card-collected-by-courier): suspicious, matched br/fake-bank-call-center, br/card-collected-by-courier
+- `br-25` (scam, expected br/fake-boleto): scam, matched br/traffic-fine-cnh-text, br/fake-boleto
+- `br-26` (scam, expected br/fake-investment): scam, matched br/card-machine-broken-screen
+- `br-35` (scam, expected br/wrong-pix-refund): suspicious, matched br/loan-refund-request, br/family-new-number, br/wrong-pix-refund
+- `br-39` (safe): scam, matched br/fake-bank-call-center
+- `br-40` (safe): suspicious, matched br/card-machine-broken-screen, br/correios-parcel-fee, br/fake-lawyer
+- `br-41` (safe): suspicious, matched br/family-new-number
+- `br-42` (safe): suspicious, matched br/fake-online-store
+- `br-44` (safe): suspicious
+- `br-45` (safe): suspicious, matched br/fake-online-store, br/family-new-number, br/wrong-pix-refund
+- `br-46` (safe): suspicious, matched br/family-new-number
+- `br-47` (safe): suspicious, matched br/fake-lawyer, br/fake-online-store
+- `br-48` (safe): suspicious, matched br/fake-online-store, br/receita-cpf-charge, br/fake-boleto
+- `ca-04` (scam, expected ca/one-time-code-takeover): suspicious, matched ca/crypto-romance-investment, ca/bank-investigator-courier
+- `ca-07` (scam, expected ca/task-job-crypto): suspicious, matched ca/fake-online-store, ca/marketplace-overpayment
+- `ca-08` (scam, expected ca/crypto-romance-investment): not_recognised
+- `ca-10` (scam, expected ca/government-arrest-bitcoin-atm): scam, matched ca/task-job-crypto, ca/government-arrest-bitcoin-atm, ca/rental-deposit
+- `ca-13` (safe): suspicious, matched ca/bank-investigator-courier, ca/crypto-romance-investment, ca/government-arrest-bitcoin-atm
+- `ca-15` (safe): suspicious
+- `ca-16` (safe): suspicious, matched ca/cra-refund-text
+- `ca-17` (safe): suspicious
+- `ca-18` (safe): suspicious
+- `ca-19` (safe): suspicious
+- `ca-21` (safe): suspicious, matched ca/crypto-romance-investment
+- `ca-24` (scam, expected ca/chinese-police-extortion): suspicious, matched ca/bank-investigator-courier, ca/chinese-police-extortion
+- `ca-25` (scam, expected ca/deepfake-public-figure-investment): scam, matched ca/cra-refund-text, ca/crypto-romance-investment, ca/deepfake-public-figure-investment
+- `ca-27` (scam, expected ca/youth-sextortion): not_recognised
+- `ca-31` (scam, expected ca/one-time-code-takeover): scam, matched ca/rental-deposit, ca/government-arrest-bitcoin-atm
+- `ca-37` (scam, expected ca/government-arrest-bitcoin-atm): suspicious, matched ca/cra-refund-text, ca/government-arrest-bitcoin-atm
+- `ca-39` (safe): suspicious, matched ca/bank-investigator-courier
+- `ca-40` (safe): suspicious
+- `ca-41` (safe): suspicious, matched ca/cra-refund-text, ca/marketplace-overpayment
+- `ca-42` (safe): suspicious, matched ca/marketplace-overpayment
+- `ca-43` (safe): suspicious, matched ca/marketplace-overpayment
+- `ca-45` (safe): suspicious
+- `ca-46` (safe): suspicious, matched ca/crypto-romance-investment
+- `ca-47` (safe): suspicious, matched ca/government-arrest-bitcoin-atm
+- `ca-48` (safe): scam, matched ca/cra-refund-text, ca/crypto-romance-investment, ca/fake-online-store
+- `ca-49` (safe): suspicious, matched ca/task-job-crypto
+- `ca-50` (safe): suspicious, matched ca/utility-disconnection
+- `es-02` (scam, expected es/whatsapp-friend-asks-money): scam, matched es/bank-sms-safe-account, es/whatsapp-friend-asks-money
+- `es-04` (scam, expected es/dgt-fake-fine): scam, matched es/parcel-missing-house-number, es/dgt-fake-fine, es/tax-agency-refund
+- `es-07` (scam, expected es/government-payment-pending): scam
+- `es-09` (scam, expected es/whatsapp-code-takeover): scam
+- `es-13` (safe): suspicious, matched es/hi-mum-new-number, es/whatsapp-code-takeover
+- `es-15` (safe): suspicious, matched es/marketplace-seller-fake-payment
+- `es-16` (safe): suspicious, matched es/tax-agency-refund, es/hi-mum-new-number
+- `es-17` (safe): suspicious
+- `es-18` (safe): suspicious, matched es/government-payment-pending, es/parcel-missing-house-number
+- `es-19` (safe): suspicious, matched es/sextortion-email
+- `es-20` (safe): suspicious, matched es/hi-mum-new-number
+- `es-21` (safe): suspicious, matched es/hi-mum-new-number
+- `es-23` (scam, expected es/ai-voice-relative-emergency): scam, matched es/hi-mum-new-number
+- `es-24` (scam, expected es/brand-prize-survey): scam, matched es/parcel-missing-house-number, es/brand-prize-survey
+- `es-25` (scam, expected es/celebrity-investment-ads): suspicious
+- `es-27` (scam, expected es/fake-shop-ads): suspicious, matched es/brand-prize-survey, es/fake-shop-ads
+- `es-30` (scam, expected es/romance-scam): suspicious
+- `es-32` (scam, expected es/whatsapp-friend-asks-money): scam, matched es/marketplace-seller-fake-payment, es/parcel-missing-house-number, es/ai-voice-relative-emergency
+- `es-33` (scam, expected es/bank-sms-safe-account): suspicious, matched es/parcel-missing-house-number, es/hi-mum-new-number
+- `es-35` (scam, expected es/parcel-missing-house-number): scam
+- `es-37` (scam, expected es/government-payment-pending): scam
+- `es-39` (safe): suspicious, matched es/bank-sms-safe-account, es/fake-tech-support
+- `es-40` (safe): suspicious, matched es/parcel-missing-house-number
+- `es-41` (safe): suspicious, matched es/hi-mum-new-number, es/parcel-missing-house-number, es/task-job-telegram
+- `es-42` (safe): suspicious, matched es/fake-shop-ads
+- `es-43` (safe): suspicious, matched es/parcel-missing-house-number
+- `es-45` (safe): suspicious, matched es/whatsapp-friend-asks-money
+- `es-46` (safe): suspicious, matched es/hi-mum-new-number
+- `es-47` (safe): suspicious
+- `es-48` (safe): suspicious, matched es/government-payment-pending, es/hi-mum-new-number, es/sextortion-email
+- `es-49` (safe): scam, matched es/hi-mum-new-number, es/romance-scam
+- `es-50` (safe): suspicious
+- `gb-07` (scam, expected gb/whatsapp-group-code): suspicious, matched gb/task-job-text
+- `gb-09` (scam, expected gb/marketplace-purchase): suspicious, matched gb/money-mule-job, gb/marketplace-purchase, gb/romance-scam
+- `gb-10` (scam, expected gb/hmrc-threat-call): scam, matched gb/dvla-text, gb/hmrc-tax-refund, gb/hmrc-threat-call
+- `gb-11` (scam, expected gb/student-finance-phishing): scam, matched gb/parcel-delivery-text, gb/dvla-text, gb/hmrc-tax-refund
+- `gb-13` (safe): suspicious, matched gb/hi-mum-text, gb/whatsapp-group-code
+- `gb-14` (safe): suspicious, matched gb/parcel-delivery-text
+- `gb-15` (safe): suspicious, matched gb/hi-mum-text, gb/fake-fca-recovery, gb/money-mule-job
+- `gb-16` (safe): suspicious, matched gb/hmrc-tax-refund, gb/dvla-text, gb/student-finance-phishing
+- `gb-17` (safe): suspicious
+- `gb-18` (safe): suspicious
+- `gb-19` (safe): suspicious, matched gb/marketplace-purchase, gb/money-mule-job, gb/student-finance-phishing
+- `gb-21` (safe): suspicious, matched gb/hi-mum-text
+- `gb-22` (safe): suspicious, matched gb/money-mule-job
+- `gb-24` (scam, expected gb/deepfake-investment-ad): suspicious, matched gb/money-mule-job, gb/whatsapp-group-code, gb/winter-fuel-payment-text
+- `gb-28` (scam, expected gb/romance-scam): suspicious, matched gb/rogue-roofer, gb/romance-scam
+- `gb-29` (scam, expected gb/ticket-scam-social): suspicious, matched gb/marketplace-purchase, gb/ticket-scam-social
+- `gb-35` (scam, expected gb/task-job-text): suspicious, matched gb/rogue-roofer, gb/money-mule-job, gb/task-job-text
+- `gb-39` (safe): scam, matched gb/bank-safe-account, gb/fake-fca-recovery, gb/marketplace-purchase
+- `gb-40` (safe): suspicious, matched gb/parcel-delivery-text
+- `gb-41` (safe): suspicious, matched gb/money-mule-job, gb/whatsapp-group-code
+- `gb-42` (safe): scam, matched gb/courier-fraud, gb/parcel-delivery-text
+- `gb-43` (safe): suspicious
+- `gb-44` (safe): suspicious, matched gb/hi-mum-text, gb/whatsapp-group-code
+- `gb-46` (safe): suspicious, matched gb/hi-mum-text
+- `gb-47` (safe): suspicious, matched gb/money-mule-job, gb/rogue-roofer
+- `gb-48` (safe): suspicious, matched gb/dvla-text, gb/romance-scam, gb/winter-fuel-payment-text
+- `gb-49` (safe): suspicious
+- `gb-50` (safe): suspicious, matched gb/money-mule-job, gb/student-finance-phishing
+- `mx-03` (scam, expected mx/fake-bank-call): scam, matched mx/whatsapp-code-theft
+- `mx-05` (scam, expected mx/whatsapp-code-theft): not_recognised
+- `mx-06` (scam, expected mx/virtual-kidnapping): suspicious
+- `mx-09` (scam, expected mx/loan-shark-apps): scam, matched mx/fake-bank-app-link, mx/loan-shark-apps
+- `mx-10` (scam, expected mx/likes-task-job): suspicious, matched mx/whatsapp-code-theft
+- `mx-11` (scam, expected mx/fake-rental-listing): suspicious
+- `mx-12` (scam, expected mx/streaming-account-phishing): scam, matched mx/fake-bank-app-link, mx/streaming-account-phishing
+- `mx-13` (safe): suspicious, matched mx/fake-bank-call
+- `mx-14` (safe): suspicious, matched mx/advance-fee-loan, mx/fake-travel-package, mx/traffic-fine-sms
+- `mx-15` (safe): suspicious
+- `mx-16` (safe): scam, matched mx/sat-phishing, mx/sat-deposit-call
+- `mx-17` (safe): suspicious
+- `mx-19` (safe): suspicious, matched mx/streaming-account-phishing
+- `mx-21` (safe): suspicious
+- `mx-25` (scam, expected mx/fake-investment-platform): scam, matched mx/advance-fee-loan, mx/sat-deposit-call
+- `mx-28` (scam, expected mx/money-recovery-scam): suspicious, matched mx/fake-investment-platform, mx/money-recovery-scam
+- `mx-30` (scam, expected mx/fake-bank-call): suspicious, matched mx/likes-task-job
+- `mx-33` (scam, expected mx/virtual-kidnapping): suspicious, matched mx/likes-task-job
+- `mx-35` (scam, expected mx/advance-fee-loan): scam, matched mx/loan-shark-apps
+- `mx-36` (scam, expected mx/loan-shark-apps): scam, matched mx/fake-bank-app-link, mx/loan-shark-apps
+- `mx-39` (safe): scam, matched mx/fake-bank-call
+- `mx-40` (safe): suspicious, matched mx/streaming-account-phishing, mx/traffic-fine-sms
+- `mx-41` (safe): scam, matched mx/fake-bank-call
+- `mx-42` (safe): scam
+- `mx-43` (safe): suspicious
+- `mx-45` (safe): suspicious, matched mx/fake-rental-listing
+- `mx-46` (safe): suspicious
+- `mx-49` (safe): suspicious
+- `mx-50` (safe): suspicious, matched mx/fake-bank-call, mx/sat-phishing, mx/streaming-account-phishing
+- `nz-08` (scam, expected nz/romance-scam): not_recognised
+- `nz-09` (scam, expected nz/fake-police-crypto): scam, matched nz/bank-fraud-team-call, nz/fake-police-crypto
+- `nz-11` (scam, expected nz/job-ad-malicious-app): not_recognised
+- `nz-13` (safe): suspicious, matched nz/bank-fraud-team-call, nz/marketplace-buyer-courier-link, nz/whatsapp-ghost-pairing
+- `nz-14` (safe): suspicious, matched nz/bank-fraud-team-call
+- `nz-15` (safe): suspicious
+- `nz-16` (safe): suspicious, matched nz/ird-tax-refund
+- `nz-17` (safe): suspicious
+- `nz-18` (safe): suspicious
+- `nz-19` (safe): suspicious
+- `nz-21` (safe): suspicious, matched nz/hi-mum
+- `nz-25` (scam, expected nz/fake-police-cash-courier): suspicious, matched nz/bank-fraud-team-call, nz/fake-police-cash-courier, nz/fake-police-crypto
+- `nz-29` (scam, expected nz/sextortion): not_recognised
+- `nz-35` (scam, expected nz/whatsapp-investment-group): suspicious, matched nz/free-class-app, nz/whatsapp-investment-group, nz/deepfake-investment-ad
+- `nz-39` (safe): suspicious, matched nz/bank-card-letterbox, nz/hi-mum, nz/nzta-toll-text
+- `nz-40` (safe): suspicious, matched nz/bank-card-letterbox, nz/travelling-tradesmen-deposit
+- `nz-41` (safe): suspicious, matched nz/romance-scam
+- `nz-42` (safe): scam
+- `nz-44` (safe): suspicious, matched nz/bank-fraud-team-call, nz/whatsapp-ghost-pairing
+- `nz-45` (safe): suspicious, matched nz/bank-card-letterbox, nz/sms-blaster-bank-text, nz/bank-fraud-team-call
+- `nz-46` (safe): suspicious, matched nz/hi-mum
+- `nz-48` (safe): suspicious, matched nz/ird-tax-refund
+- `nz-49` (safe): suspicious
+- `nz-50` (safe): suspicious, matched nz/whatsapp-ghost-pairing, nz/hi-mum, nz/bank-fraud-team-call
+- `us-03` (scam, expected us/fake-irs-ssa-message): suspicious
+- `us-13` (safe): suspicious, matched us/prize-sweepstakes, us/tech-support-popup, us/bank-fraud-alert-zelle
+- `us-14` (safe): suspicious, matched us/usps-delivery-text
+- `us-15` (safe): suspicious, matched us/tech-support-popup, us/utility-shutoff
+- `us-16` (safe): suspicious, matched us/fake-irs-ssa-message, us/prize-sweepstakes
+- `us-17` (safe): suspicious, matched us/toll-text, us/election-scam, us/fake-ic3-recovery
+- `us-19` (safe): suspicious
+- `us-20` (safe): suspicious, matched us/family-emergency-call, us/hospice-medicare
+- `us-21` (safe): suspicious, matched us/fake-police-government
+- `us-22` (safe): suspicious, matched us/crypto-courier
+- `us-30` (scam, expected us/sextortion): not_recognised
+- `us-36` (scam, expected us/fake-police-government): scam, matched us/family-emergency-call, us/fake-irs-ssa-message, us/prize-sweepstakes
+- `us-39` (safe): suspicious, matched us/tech-support-popup, us/prize-sweepstakes, us/family-emergency-call
+- `us-40` (safe): suspicious, matched us/crypto-courier, us/usps-delivery-text
+- `us-41` (safe): suspicious
+- `us-42` (safe): suspicious
+- `us-44` (safe): suspicious, matched us/prize-sweepstakes, us/tech-support-popup, us/brushing-package
+- `us-45` (safe): suspicious
+- `us-46` (safe): suspicious
+- `us-47` (safe): suspicious, matched us/crypto-courier, us/job-offer-text
+- `us-48` (safe): suspicious, matched us/fake-irs-ssa-message
+- `us-49` (safe): suspicious, matched us/utility-shutoff
+- `us-50` (safe): suspicious, matched us/fake-irs-ssa-message, us/bank-fraud-alert-zelle, us/crypto-courier
+
+</details>
+
+_1.8 s_

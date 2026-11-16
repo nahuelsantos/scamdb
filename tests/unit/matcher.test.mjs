@@ -117,3 +117,20 @@ test('money evidence quotes the whole amount', async () => {
   assert.equal(readSignsWithEvidence('We stopped a payment of $1,480 today').find((s) => s.id === 'money_request').evidence, '$1,480');
   assert.equal(readSignsWithEvidence('Transferime $50.000 al alias').find((s) => s.id === 'money_request').evidence, 'Transferime');
 });
+
+import { readSigns as signsOf } from '../../packages/matcher/index.js';
+test('1.2.0: "we will never ask you to tell us your PIN" is not a code request; asking for it still is', () => {
+  assert.ok(!signsOf('Card blocked. Check the alert in your app. We will never ask you to tell us your PIN.').includes('asks_for_code'));
+  assert.ok(!signsOf('Banco: bloqueamos tu tarjeta. Nunca te vamos a pedir claves por teléfono.').includes('asks_for_code'));
+  assert.ok(signsOf('This is the bank, please tell us your PIN to unblock the card').includes('asks_for_code'));
+});
+test('1.2.0: "log in with your password" is an instruction, not a code request', () => {
+  assert.ok(!signsOf('Recordatorio: vence la declaración. Ingresá con tu clave fiscal desde el sitio oficial.').includes('asks_for_code'));
+  assert.ok(!signsOf('Your tax return is due. Sign in with your password on the official app.').includes('asks_for_code'));
+  assert.ok(signsOf('Pasame la clave que te llegó').includes('asks_for_code'));
+});
+test('1.2.0: "nothing to pay" cancels the money sign', () => {
+  assert.ok(!signsOf('Correo Argentino: tu paquete llega mañana. No tenés nada que pagar.').includes('money_request'));
+  assert.ok(!signsOf('Your parcel arrives tomorrow, nothing to pay on delivery.').includes('money_request'));
+  assert.ok(signsOf('Pay the redelivery fee today').includes('money_request'));
+});

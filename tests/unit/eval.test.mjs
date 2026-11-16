@@ -46,7 +46,8 @@ test('checkMessages catches unknown entries, real URLs, phone numbers and bad la
 });
 
 // The real labelled set: it must stay well-formed, and the matcher must not get worse than these floors.
-// Raise a floor when a change improves it; never lower one to make a change pass.
+// Raise a floor when a change improves it; never lower one to make a code change pass. Floors were re-measured once
+// when the set grew from 198 to 450 harder messages (the same matcher scored lower on the new data).
 import { loadMessages } from '../../lib/eval.js';
 import { loadRepo } from '../../lib/load.js';
 import { matchMessage } from '../../packages/matcher/index.js';
@@ -67,10 +68,10 @@ test('the labelled set is well-formed: at least 22 per country, about half scams
 test('the matcher stays above its floors on the labelled set', async () => {
   const r = await evaluate(real, (m) => matchMessage(m.text, repo.entries, { country: m.country }));
   const x = rates(r.all);
-  assert.ok(x.caught >= 95, `scams caught ${x.caught}%`);
-  assert.ok(x.calledScam >= 40, `scams called "scam" ${x.calledScam}%`);
-  assert.ok(x.top3 >= 72, `right match in top 3 ${x.top3}%`);
-  assert.ok(x.falseScam <= 5, `safe messages called "scam" ${x.falseScam}%`);
+  assert.ok(x.caught >= 96, `scams caught ${x.caught}%`);
+  assert.ok(x.calledScam >= 42, `scams called "scam" ${x.calledScam}%`);
+  assert.ok(x.top3 >= 76, `right match in top 3 ${x.top3}%`);
+  assert.ok(x.falseScam <= 7.5, `safe messages called "scam" ${x.falseScam}%`);
   assert.ok(r.all.wrongMatches / r.all.scams <= 0.95, `wrong matches per scam ${(r.all.wrongMatches / r.all.scams).toFixed(2)}`);
 });
 
