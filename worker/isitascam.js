@@ -1,5 +1,6 @@
 // POST /v1/isitascam: is this message a scam? The matcher always answers (free, no AI); keyed requests may also get a
-// Workers AI score; keyless requests never reach it. Nothing is stored unless report: true, which needs a key.
+// Workers AI score; keyless requests never reach it. The message text is never stored unless report: true, which needs a key
+// (probe detection keeps only a fingerprint).
 import { readJson, json, cors, HttpError } from './http.js';
 import { authKey, recordUsage } from './keys.js';
 import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
@@ -7,6 +8,7 @@ import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from './scorer.js';
 import { checkProbe } from './probes.js';
+import { d1VectorStore } from './vectorstore.js';
 import { readForm, extractText } from './media.js';
 import { LIMITS as REPORT_LIMITS } from './reports.js';
 
@@ -89,7 +91,7 @@ export async function handleIsItAScam(request, env) {
   // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.
   if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
     const diag = {};
-    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country, hints: result.matches.map((m) => m.id) }, { diag });
+    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country, hints: result.matches.map((m) => m.id) }, { diag, store: d1VectorStore(env.DB) });
     if (scored) { result = combine(result, scored, check.text); scorer = 'workers-ai'; } else scorerError = diag;
   }
   const top = result.matches[0] ? await loadEntry(env, result.matches[0].id) : null;
