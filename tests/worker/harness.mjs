@@ -30,8 +30,8 @@ export async function makeWorker({ fetchMock = defaultFetch, bindings = {} } = {
     modulesRules: [{ type: 'ESModule', include: ['**/*.js'] }],
     compatibilityDate: '2026-08-01', // newest date this Miniflare's runtime supports; production uses wrangler.jsonc's
     d1Databases: ['DB'],
-    bindings: { IP_SALT: 'salt', SESSION_SECRET: 'x'.repeat(32), GITHUB_CLIENT_ID: 'cid', GITHUB_CLIENT_SECRET: 'csecret',
-      TURNSTILE_SECRET: '1x0000000000000000000000000000000AA', ...bindings },
+    bindings: Object.fromEntries(Object.entries({ IP_SALT: 'salt-salt-salt-salt', SESSION_SECRET: 'x'.repeat(32), GITHUB_CLIENT_ID: 'cid', GITHUB_CLIENT_SECRET: 'csecret',
+      TURNSTILE_SECRET: '1x0000000000000000000000000000000AA', ...bindings }).filter(([, v]) => v !== undefined)),
     assets: { directory: assets, binding: 'ASSETS', routerConfig: { has_user_worker: true }, assetConfig: { not_found_handling: '404-page' } },
     outboundService: fetchMock,
   });

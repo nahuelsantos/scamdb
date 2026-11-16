@@ -25,7 +25,7 @@ test('OPTIONS /v1/reports answers CORS', async () => {
   assert.match(r.headers.get('access-control-allow-methods'), /POST/);
 });
 test('an unexpected failure returns a JSON 500 without details', async () => {
-  const env = { DB: { prepare() { throw new Error('boom'); } }, IP_SALT: 's', TURNSTILE_SECRET: 'x' };
+  const env = { DB: { prepare() { throw new Error('boom'); } }, IP_SALT: 'salt-salt-salt-salt', TURNSTILE_SECRET: 'x' };
   const r = await handle(new Request('https://scamdb.dev/v1/reports', { method: 'POST', headers: { 'content-type': 'application/json',
     authorization: 'Bearer sk_' + 'a'.repeat(43) }, body: JSON.stringify({ text: 'hola', country: 'ar' }) }), env);
   assert.equal(r.status, 500);
