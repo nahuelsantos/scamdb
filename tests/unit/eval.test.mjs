@@ -44,3 +44,31 @@ test('checkMessages catches unknown entries, real URLs, phone numbers and bad la
   for (const want of ['au-01: scam "au/nope"', 'au-02: write links', 'au-03: looks like a real phone', 'au-04: label', 'au-04: unknown channel']) assert.ok(p.includes(want), want);
   assert.deepEqual(checkMessages([msgs[0]].map((m) => ({ ...m, scam: 'au/a' })), ids), []);
 });
+
+// The real labelled set: it must stay well-formed, and the matcher must not get worse than these floors.
+// Raise a floor when a change improves it; never lower one to make a change pass.
+import { loadMessages } from '../../lib/eval.js';
+import { loadRepo } from '../../lib/load.js';
+import { matchMessage } from '../../packages/matcher/index.js';
+const root = new URL('../..', import.meta.url).pathname;
+const repo = loadRepo(root);
+const real = loadMessages(root);
+
+test('the labelled set is well-formed: 22 per country, 12 scams, known entries, no real links or numbers', () => {
+  assert.deepEqual(checkMessages(real, new Set(repo.entries.map((e) => e.id))), []);
+  const countries = [...new Set(repo.entries.map((e) => e.country))].sort();
+  for (const cc of countries) {
+    const m = real.filter((x) => x.country === cc);
+    assert.equal(m.length, 22, cc);
+    assert.equal(m.filter((x) => x.label === 'scam').length, 12, cc);
+  }
+});
+test('the matcher stays above its floors on the labelled set', async () => {
+  const r = await evaluate(real, (m) => matchMessage(m.text, repo.entries, { country: m.country }));
+  const x = rates(r.all);
+  assert.ok(x.caught >= 95, `scams caught ${x.caught}%`);
+  assert.ok(x.calledScam >= 40, `scams called "scam" ${x.calledScam}%`);
+  assert.ok(x.top3 >= 72, `right match in top 3 ${x.top3}%`);
+  assert.ok(x.falseScam <= 5, `safe messages called "scam" ${x.falseScam}%`);
+  assert.ok(r.all.wrongMatches <= 102, `wrong matches ${r.all.wrongMatches}`);
+});

@@ -21,6 +21,17 @@ export const SIGNS = {
   too_good_to_be_true: /ganaste|ganador|premio|sorteo|gratis|rendimiento|ganancia|duplic|congratulations,? you|you (ve |have )?won|winner|\bprize|lottery|guaranteed (return|profit|income|earning)|double your/,
 };
 
+// A genuine one-time-code text warns you not to share the code ("no lo compartas", "never share", "we will never ask").
+// That warning cancels asks_for_code unless the message also asks you to hand the code over.
+const CODE_WARNING = /no (lo|la|los|las) compartas|no compartas|nunca (te|le|se) (lo|la) (va a |vamos a |van a )?(pedir|pedira|solicit)|nunca te (pedira|pediremos|solicitara)|nao (compartilhe|passe|informe)|nunca (pede|solicita|pedimos)|(don t|do not|never) share|will never (call|text|ask|message)|never ask(s)? (you )?for|nor (lo|la) (compartas|des)/;
+const CODE_HANDOVER = new RegExp(String.raw`(pasa|manda|envia|dicta|deci|reenvia|da|comparti)(me|nos)\b( \w+){0,3} (el |la |ese |esa )?(codigo|clave|pin)|me (pasas|mandas|envias|dictas|decis|das|reenvias|compartis) (el |la |ese |esa )?(codigo|clave|pin)|(me |nos )?(manda|passa|envia|informa)( \w+){0,2} (o |esse |este )?codigo|(send|read|tell|give|forward|text)( \w+){0,4} (code|passcode|password|pin)\b|\b(code|passcode|pin) (we|i|they) (sent|texted)`);
+
+/** The sign ids that apply, after context rules (the genuine-code warning). */
+function applyContext(t, ids) {
+  if (ids.includes('asks_for_code') && CODE_WARNING.test(t) && !CODE_HANDOVER.test(t)) return ids.filter((id) => id !== 'asks_for_code');
+  return ids;
+}
+
 /** normalize(text) plus, for each of its characters, the index of the original character it came from. */
 export function normalizeWithMap(text) {
   const src = String(text ?? '');
@@ -44,7 +55,7 @@ export function normalizeWithMap(text) {
 /** Signal ids found in the text, in SIGNS order. */
 export function readSigns(text) {
   const t = normalize(text);
-  return Object.keys(SIGNS).filter((k) => SIGNS[k].test(t));
+  return applyContext(t, Object.keys(SIGNS).filter((k) => SIGNS[k].test(t)));
 }
 
 /** Like readSigns, with the words that triggered each sign (from the original text, up to 60 characters). */
@@ -62,5 +73,6 @@ export function readSignsWithEvidence(text) {
     const from = map[a], to = map[b - 1] + 1;
     out.push({ id, evidence: src.slice(from, to).slice(0, 60) });
   }
-  return out;
+  const keep = applyContext(t, out.map((s) => s.id));
+  return out.filter((s) => keep.includes(s.id));
 }
