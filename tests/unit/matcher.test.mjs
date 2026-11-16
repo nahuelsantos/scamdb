@@ -134,3 +134,7 @@ test('1.2.0: "nothing to pay" cancels the money sign', () => {
   assert.ok(!signsOf('Your parcel arrives tomorrow, nothing to pay on delivery.').includes('money_request'));
   assert.ok(signsOf('Pay the redelivery fee today').includes('money_request'));
 });
+test('Argentine "new number" phrasing: agendame, número alternativo, se me cayó el cel', () => {
+  for (const t of ['Hola pa soy yo, agendame este número', 'este es un número alternativo', 'se me cayó el cel y quedó pantalla negra', 'se me rompió el celular']) assert.ok(signsOf(t).includes('new_number'), t);
+  assert.ok(!signsOf('mañana te paso el número del plomero').includes('new_number'));
+});
