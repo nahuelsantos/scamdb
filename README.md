@@ -61,7 +61,7 @@ The build writes the API and the site to `dist/`. The site is in English (old `/
 ## Importing scams
 
 New countries and new scams come from the `import-scams` Claude Code skill (`.claude/skills/import-scams/SKILL.md`).
-One run researches one country from official warnings (`importer/sources.json`) and recent news, drafts up to 10
+One run researches one country from official warnings (`importer/sources.json`) and recent news, drafts up to 20
 entries in the original language plus English, validates them and opens one pull request labelled `import`. Nothing
 merges without the owner.
 
