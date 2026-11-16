@@ -4,10 +4,14 @@ import { HttpError, error, cors } from './http.js';
 import { handleReport } from './reports.js';
 import { cleanup } from './cleanup.js';
 import { authStart, authCallback, logout } from './github.js';
+import { handleKeys } from './keys.js';
 
 const ROUTES = [
   ['OPTIONS', /^\/v1\/reports$/, () => cors(new Response(null, { status: 204 }))],
   ['POST', /^\/v1\/reports$/, handleReport],
+  ['GET', /^\/v1\/keys\/me$/, handleKeys],
+  ['POST', /^\/v1\/keys$/, handleKeys],
+  ['DELETE', /^\/v1\/keys\/me$/, handleKeys],
   ['GET', /^\/auth\/github$/, authStart],
   ['GET', /^\/auth\/github\/callback$/, authCallback],
   ['POST', /^\/auth\/logout$/, logout],

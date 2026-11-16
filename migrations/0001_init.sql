@@ -15,6 +15,7 @@ CREATE INDEX IF NOT EXISTS reports_status_created ON reports (status, created_at
 CREATE TABLE IF NOT EXISTS keys (
   id TEXT PRIMARY KEY,
   key_hash TEXT UNIQUE NOT NULL,
+  prefix TEXT NOT NULL,
   github_id INTEGER UNIQUE NOT NULL,
   github_login TEXT NOT NULL,
   created_at TEXT NOT NULL
