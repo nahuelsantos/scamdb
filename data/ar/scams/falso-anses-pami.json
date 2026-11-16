@@ -1,6 +1,7 @@
 {
   "id": "ar/falso-anses-pami",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "whatsapp",
@@ -9,36 +10,43 @@
     "phone"
   ],
   "sender": {
-    "es": "“ANSES informa”"
+    "es": "“ANSES informa”",
+    "en": "“ANSES informs”"
   },
   "name": {
-    "es": "Falsa ANSES y falso PAMI: bonos, “fe de vida” y créditos"
+    "es": "Falsa ANSES y falso PAMI: bonos, “fe de vida” y créditos",
+    "en": "Fake ANSES and fake PAMI: bonuses, “proof of life” and loans"
   },
   "how": {
-    "es": "Te llega un WhatsApp con el logo de ANSES o de PAMI desde un celular común. Te ofrecen un bono (como el falso “Bono Navideño” de $70.000), remedios gratis o un crédito, o te dicen que tenés que hacer la “fe de vida” para seguir cobrando. El link o el llamado es para sacarte datos, claves o fotos del DNI. La fe de vida dejó de ser obligatoria en 2023, y ANSES hoy no da préstamos personales a jubilados."
+    "es": "Te llega un WhatsApp con el logo de ANSES o de PAMI desde un celular común. Te ofrecen un bono (como el falso “Bono Navideño” de $70.000), remedios gratis o un crédito, o te dicen que tenés que hacer la “fe de vida” para seguir cobrando. El link o el llamado es para sacarte datos, claves o fotos del DNI. La fe de vida dejó de ser obligatoria en 2023, y ANSES hoy no da préstamos personales a jubilados.",
+    "en": "You get a WhatsApp from an ordinary phone with the ANSES or PAMI logo as its picture. They offer a bonus (like the fake $70,000 “Christmas Bonus”), free medicines or a loan, or say you must do the “proof of life” to keep getting paid. The link or the call is to get your data, passwords or ID photos. The proof of life stopped being mandatory in 2023, and ANSES no longer gives personal loans to retirees."
   },
   "steps": [
     {
       "text": {
-        "es": "Te escribe un celular común con el logo de ANSES o PAMI de foto."
+        "es": "Te escribe un celular común con el logo de ANSES o PAMI de foto.",
+        "en": "An ordinary phone with the ANSES or PAMI logo as its picture writes to you."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Te ofrece un bono, remedios gratis o un crédito, o te pide la “fe de vida”."
+        "es": "Te ofrece un bono, remedios gratis o un crédito, o te pide la “fe de vida”.",
+        "en": "It offers a bonus, free medicines or a loan, or asks for the “proof of life”."
       },
       "signal": "too_good_to_be_true"
     },
     {
       "text": {
-        "es": "Te manda un link para cobrar o “actualizar datos”."
+        "es": "Te manda un link para cobrar o “actualizar datos”.",
+        "en": "It sends you a link to collect or to “update your data”."
       },
       "signal": "unknown_link"
     },
     {
       "text": {
-        "es": "Te pide CUIT, claves, códigos o fotos del DNI."
+        "es": "Te pide CUIT, claves, códigos o fotos del DNI.",
+        "en": "It asks for your tax ID, passwords, codes or ID photos."
       },
       "signal": "asks_for_code"
     }
@@ -46,7 +54,8 @@
   "examples": [
     {
       "text": {
-        "es": "ANSES informa: tenés pendiente el cobro del Bono Navideño de $70.000. Para no perderlo, actualizá tus datos hoy: [enlace]"
+        "es": "ANSES informa: tenés pendiente el cobro del Bono Navideño de $70.000. Para no perderlo, actualizá tus datos hoy: [enlace]",
+        "en": "ANSES informs: you have a pending $70,000 Christmas Bonus. To avoid losing it, update your data today: [enlace]"
       }
     }
   ],
@@ -67,6 +76,15 @@
       "whatsapp de anses",
       "logo de anses",
       "pami"
+    ],
+    "en": [
+      "pension bonus",
+      "christmas bonus",
+      "proof of life",
+      "free medicines",
+      "update my data",
+      "pension cut off",
+      "whatsapp from anses"
     ]
   },
   "signals": [
@@ -81,6 +99,12 @@
       "Un link para cobrar un bono o “actualizar datos”.",
       "Te piden CUIT, claves, códigos o fotos del DNI.",
       "Un bono o crédito que no salió en las noticias ni en la página oficial."
+    ],
+    "en": [
+      "An ordinary phone with the ANSES or PAMI logo as its picture.",
+      "A link to collect a bonus or “update data”.",
+      "They ask for your tax ID, passwords, codes or ID photos.",
+      "A bonus or loan that isn’t in the news or on the official site."
     ]
   },
   "whatToDo": {
@@ -89,6 +113,12 @@
       "Los bonos de verdad salen en la página oficial de ANSES y en las noticias.",
       "PAMI nunca te pide contraseñas, claves ni códigos por teléfono o mensaje.",
       "Bloqueá el número y guardá una captura."
+    ],
+    "en": [
+      "Don’t tap the link or share any data.",
+      "Real bonuses are announced on the official ANSES site and in the news.",
+      "PAMI never asks for passwords, PINs or codes by phone or message.",
+      "Block the number and keep a screenshot."
     ]
   },
   "reportTo": [

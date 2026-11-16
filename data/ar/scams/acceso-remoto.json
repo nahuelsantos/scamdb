@@ -1,42 +1,50 @@
 {
   "id": "ar/acceso-remoto",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "phone",
     "online"
   ],
   "sender": {
-    "es": "“Técnico de PAMI”"
+    "es": "“Técnico de PAMI”",
+    "en": "“PAMI technician”"
   },
   "name": {
-    "es": "“Instale esta aplicación”: te manejan el celu o la compu"
+    "es": "“Instale esta aplicación”: te manejan el celu o la compu",
+    "en": "“Install this app”: they take over your phone or computer"
   },
   "how": {
-    "es": "Alguien te llama para “ayudarte”: del banco, de soporte técnico o del PAMI con una “computadora gratis”. Te pide que instales una aplicación como TeamViewer o Supremo. Con esa app ven y manejan tu pantalla, y desde ahí sacan préstamos y transfieren tu plata. A veces también piden fotos de tu DNI y una selfie."
+    "es": "Alguien te llama para “ayudarte”: del banco, de soporte técnico o del PAMI con una “computadora gratis”. Te pide que instales una aplicación como TeamViewer o Supremo. Con esa app ven y manejan tu pantalla, y desde ahí sacan préstamos y transfieren tu plata. A veces también piden fotos de tu DNI y una selfie.",
+    "en": "Someone calls to “help” you: from the bank, tech support or PAMI with a “free computer”. They ask you to install an app such as TeamViewer or Supremo. With that app they see and control your screen, take out loans and transfer your money. Sometimes they also ask for photos of your ID and a selfie."
   },
   "steps": [
     {
       "text": {
-        "es": "Alguien te llama para “ayudarte”: del banco, de soporte técnico o del PAMI."
+        "es": "Alguien te llama para “ayudarte”: del banco, de soporte técnico o del PAMI.",
+        "en": "Someone calls to “help” you: from the bank, tech support or PAMI."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Te ofrece un regalo o una solución que no pediste."
+        "es": "Te ofrece un regalo o una solución que no pediste.",
+        "en": "They offer a gift or a fix you never asked for."
       },
       "signal": "too_good_to_be_true"
     },
     {
       "text": {
-        "es": "Te pide que instales una app como TeamViewer o Supremo, o fotos del DNI y una selfie."
+        "es": "Te pide que instales una app como TeamViewer o Supremo, o fotos del DNI y una selfie.",
+        "en": "They ask you to install an app such as TeamViewer or Supremo, or for photos of your ID and a selfie."
       },
       "signal": "remote_access"
     },
     {
       "text": {
-        "es": "Con esa app manejan tu pantalla, sacan préstamos y transfieren tu plata."
+        "es": "Con esa app manejan tu pantalla, sacan préstamos y transfieren tu plata.",
+        "en": "With that app they control your screen, take out loans and transfer your money."
       },
       "signal": "money_request"
     }
@@ -44,7 +52,8 @@
   "examples": [
     {
       "text": {
-        "es": "Para darle la computadora gratis del PAMI necesitamos que descargue esta aplicación así le configuramos todo. Mándeme también una foto del DNI y una selfie: [enlace]"
+        "es": "Para darle la computadora gratis del PAMI necesitamos que descargue esta aplicación así le configuramos todo. Mándeme también una foto del DNI y una selfie: [enlace]",
+        "en": "To give you the free PAMI computer we need you to download this app so we can set everything up. Also send me a photo of your ID and a selfie: [enlace]"
       }
     }
   ],
@@ -63,6 +72,16 @@
       "foto del dni",
       "selfie",
       "acceso remoto"
+    ],
+    "en": [
+      "install an app",
+      "download this app",
+      "they made me download an app",
+      "see my screen",
+      "remote access",
+      "tech support",
+      "free computer",
+      "photo of my id"
     ]
   },
   "signals": [
@@ -76,6 +95,11 @@
       "Te piden instalar una app o compartir tu pantalla.",
       "Te piden foto del DNI y una selfie.",
       "Un regalo del PAMI o del banco que no pediste."
+    ],
+    "en": [
+      "They ask you to install an app or share your screen.",
+      "They ask for a photo of your ID and a selfie.",
+      "A gift from PAMI or the bank you never asked for."
     ]
   },
   "whatToDo": {
@@ -83,6 +107,11 @@
       "Nunca instales una app que te pide alguien por teléfono.",
       "Si ya la instalaste, apagá el celu o la compu y llamá a tu banco para bloquear todo.",
       "Hacé la denuncia rápido: en un caso de San Juan anularon el préstamo y le devolvieron la plata."
+    ],
+    "en": [
+      "Never install an app someone asks you to over the phone.",
+      "If you already installed it, turn off the phone or computer and call your bank to block everything.",
+      "Report it quickly: in a case in San Juan the loan was cancelled and the money returned."
     ]
   },
   "reportTo": [
@@ -91,7 +120,8 @@
     "ar/bcra-reclamo"
   ],
   "story": {
-    "es": "A una señora la llamaron para “arreglarle” la computadora y le hicieron instalar TeamViewer. Se dio cuenta de que era chamuyo cuando le pidieron que comprara tarjetas de regalo de Amazon."
+    "es": "A una señora la llamaron para “arreglarle” la computadora y le hicieron instalar TeamViewer. Se dio cuenta de que era chamuyo cuando le pidieron que comprara tarjetas de regalo de Amazon.",
+    "en": "A woman got a call to “fix” her computer and was told to install TeamViewer. She realised it was a scam when they asked her to buy Amazon gift cards."
   },
   "sources": [
     {

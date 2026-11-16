@@ -1,6 +1,7 @@
 {
   "id": "ar/premios-falsos",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "phone",
@@ -8,36 +9,43 @@
     "online"
   ],
   "sender": {
-    "es": "“Sorteo de Navidad”"
+    "es": "“Sorteo de Navidad”",
+    "en": "“Christmas giveaway”"
   },
   "name": {
-    "es": "“¡Ganaste un premio!”: sorteos y regalos falsos"
+    "es": "“¡Ganaste un premio!”: sorteos y regalos falsos",
+    "en": "“You won a prize!”: fake giveaways and gifts"
   },
   "how": {
-    "es": "Te llega por WhatsApp o Facebook un link que promete un premio o un descuento increíble de una marca conocida, después de contestar unas preguntitas. Te piden compartirlo con tus contactos “para activar el premio” y después te piden datos o la tarjeta “para el envío”. Pasó en 2025 con Coca-Cola y con Frávega. También llega por teléfono: te dicen que ganaste un premio y después te llaman supuestos directores de empresa, abogados y hasta alguien que dice ser juez de la Corte para que pagues “gastos”, impuestos o envíos que nunca terminan. Así, una banda de presos de una cárcel de Jujuy le sacó casi 10 millones de pesos a un hombre."
+    "es": "Te llega por WhatsApp o Facebook un link que promete un premio o un descuento increíble de una marca conocida, después de contestar unas preguntitas. Te piden compartirlo con tus contactos “para activar el premio” y después te piden datos o la tarjeta “para el envío”. Pasó en 2025 con Coca-Cola y con Frávega. También llega por teléfono: te dicen que ganaste un premio y después te llaman supuestos directores de empresa, abogados y hasta alguien que dice ser juez de la Corte para que pagues “gastos”, impuestos o envíos que nunca terminan. Así, una banda de presos de una cárcel de Jujuy le sacó casi 10 millones de pesos a un hombre.",
+    "en": "You get a link on WhatsApp or Facebook promising a prize or an amazing discount from a well-known brand, after answering a few questions. They ask you to share it with your contacts “to activate the prize” and then ask for your data or card “for shipping”. It happened in 2025 with Coca-Cola and Frávega. It also comes by phone: they say you won a prize and then supposed company directors, lawyers and even someone claiming to be a Supreme Court judge call so you pay “expenses”, taxes or shipping that never end. That way a gang of prisoners in a Jujuy jail took almost 10 million pesos from a man."
   },
   "steps": [
     {
       "text": {
-        "es": "Te llega un link que promete un premio de una marca conocida."
+        "es": "Te llega un link que promete un premio de una marca conocida.",
+        "en": "You get a link promising a prize from a well-known brand."
       },
       "signal": "too_good_to_be_true"
     },
     {
       "text": {
-        "es": "Contestás unas preguntitas y te piden compartirlo para “activarlo”."
+        "es": "Contestás unas preguntitas y te piden compartirlo para “activarlo”.",
+        "en": "You answer a few questions and they ask you to share it to “activate” it."
       },
       "signal": "unknown_link"
     },
     {
       "text": {
-        "es": "Te piden datos o la tarjeta para pagar el envío del premio."
+        "es": "Te piden datos o la tarjeta para pagar el envío del premio.",
+        "en": "They ask for your data or card to pay for shipping the prize."
       },
       "signal": "money_request"
     },
     {
       "text": {
-        "es": "También por teléfono: te llaman supuestos abogados, directores o jueces para que pagues “gastos” que nunca terminan."
+        "es": "También por teléfono: te llaman supuestos abogados, directores o jueces para que pagues “gastos” que nunca terminan.",
+        "en": "Also by phone: supposed lawyers, directors or judges call so you pay “expenses” that never end."
       },
       "signal": "impersonation"
     }
@@ -45,7 +53,8 @@
   "examples": [
     {
       "text": {
-        "es": "¡Felicitaciones! Fuiste elegido para recibir un premio de Navidad. Contestá 3 preguntas y compartilo con 5 grupos para activarlo: [enlace]"
+        "es": "¡Felicitaciones! Fuiste elegido para recibir un premio de Navidad. Contestá 3 preguntas y compartilo con 5 grupos para activarlo: [enlace]",
+        "en": "Congratulations! You were chosen to receive a Christmas prize. Answer 3 questions and share it with 5 groups to activate it: [enlace]"
       }
     }
   ],
@@ -71,6 +80,15 @@
       "cobrar el premio",
       "retirar el premio",
       "telefonia satelital"
+    ],
+    "en": [
+      "i won a prize",
+      "you won a prize",
+      "giveaway",
+      "christmas gift",
+      "share with 5 groups",
+      "pay the prize expenses",
+      "claim the prize"
     ]
   },
   "signals": [
@@ -85,6 +103,12 @@
       "Te piden compartirlo para “activarlo”.",
       "Te piden pagar “gastos”, impuestos o el envío para recibir el premio.",
       "Te llaman “abogados”, “directores” o “jueces” para apurarte o asustarte."
+    ],
+    "en": [
+      "A prize for something you never entered.",
+      "They ask you to share it to “activate” it.",
+      "They ask you to pay “expenses”, taxes or shipping to receive the prize.",
+      "“Lawyers”, “directors” or “judges” call to rush or scare you."
     ]
   },
   "whatToDo": {
@@ -93,6 +117,12 @@
       "No abras links de premios que te llegan sin pedirlos.",
       "Las marcas hacen sus promociones en su página oficial.",
       "Si pusiste datos o pagaste, llamá al banco y hacé la denuncia."
+    ],
+    "en": [
+      "A real prize costs nothing: if they ask for money to collect it, hang up.",
+      "Don’t open prize links you didn’t ask for.",
+      "Brands run their promotions on their official site.",
+      "If you entered data or paid, call the bank and report it."
     ]
   },
   "reportTo": [

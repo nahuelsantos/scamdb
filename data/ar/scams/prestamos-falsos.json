@@ -1,6 +1,7 @@
 {
   "id": "ar/prestamos-falsos",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "sms",
@@ -9,43 +10,51 @@
     "phone"
   ],
   "sender": {
-    "es": "“Préstamo preaprobado”"
+    "es": "“Préstamo preaprobado”",
+    "en": "“Pre-approved loan”"
   },
   "name": {
-    "es": "Préstamos “preaprobados” que te piden pagar antes"
+    "es": "Préstamos “preaprobados” que te piden pagar antes",
+    "en": "“Pre-approved” loans that ask you to pay first"
   },
   "how": {
-    "es": "Te ofrecen un préstamo rápido, sin requisitos, por mensaje, WhatsApp o una publicidad. Para “liberarlo” te piden pagar antes una garantía o una comisión. Después no hay préstamo. Un préstamo de verdad nunca te pide plata por adelantado."
+    "es": "Te ofrecen un préstamo rápido, sin requisitos, por mensaje, WhatsApp o una publicidad. Para “liberarlo” te piden pagar antes una garantía o una comisión. Después no hay préstamo. Un préstamo de verdad nunca te pide plata por adelantado.",
+    "en": "They offer you a quick loan with no requirements, by text, WhatsApp or an ad. To “release” it they ask you to pay a guarantee or a fee first. Then there is no loan. A real loan never asks you for money in advance."
   },
   "steps": [
     {
       "text": {
-        "es": "Te ofrecen un préstamo rápido, sin requisitos."
+        "es": "Te ofrecen un préstamo rápido, sin requisitos.",
+        "en": "They offer you a quick loan with no requirements."
       },
       "signal": "too_good_to_be_true"
     },
     {
       "text": {
-        "es": "A veces te piden bajar una app desde un link."
+        "es": "A veces te piden bajar una app desde un link.",
+        "en": "Sometimes they ask you to download an app from a link."
       },
       "signal": "remote_access"
     },
     {
       "text": {
-        "es": "Para “liberarlo” te piden pagar antes una garantía o una comisión."
+        "es": "Para “liberarlo” te piden pagar antes una garantía o una comisión.",
+        "en": "To “release” it they ask you to pay a guarantee or a fee first."
       },
       "signal": "money_request"
     },
     {
       "text": {
-        "es": "Después no hay préstamo."
+        "es": "Después no hay préstamo.",
+        "en": "Then there is no loan."
       }
     }
   ],
   "examples": [
     {
       "text": {
-        "es": "¡Felicitaciones! Tenés un préstamo preaprobado de $500.000 sin requisitos. Para acreditarlo, aboná la garantía de $15.000: [enlace]"
+        "es": "¡Felicitaciones! Tenés un préstamo preaprobado de $500.000 sin requisitos. Para acreditarlo, aboná la garantía de $15.000: [enlace]",
+        "en": "Congratulations! You have a pre-approved loan of $500,000 with no requirements. To receive it, pay the $15,000 guarantee: [enlace]"
       }
     }
   ],
@@ -59,6 +68,14 @@
       "garantia",
       "comision para liberar",
       "liberar el credito"
+    ],
+    "en": [
+      "pre-approved loan",
+      "quick loan",
+      "loan app",
+      "no requirements",
+      "pay an advance",
+      "fee to release the loan"
     ]
   },
   "signals": [
@@ -71,12 +88,21 @@
       "Te piden plata antes de darte el préstamo.",
       "Demasiado fácil para ser verdad.",
       "Te piden bajar una app desde un link."
+    ],
+    "en": [
+      "They ask for money before giving you the loan.",
+      "Too easy to be true.",
+      "They ask you to download an app from a link."
     ]
   },
   "whatToDo": {
     "es": [
       "Nunca pagues para recibir un préstamo.",
       "No mandes fotos del DNI ni claves."
+    ],
+    "en": [
+      "Never pay to receive a loan.",
+      "Don’t send ID photos or passwords."
     ]
   },
   "reportTo": [

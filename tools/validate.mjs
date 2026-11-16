@@ -46,6 +46,15 @@ function schemaErrors(validate, json, path) {
   return [...out];
 }
 
+/** A text field must carry English and the original language. */
+function langErrors(path, field, obj, orig) {
+  if (!obj || typeof obj !== 'object') return [];
+  const out = [];
+  if (!('en' in obj)) out.push(`${path}: ${field} needs an English version (en)`);
+  if (orig && orig !== 'en' && !(orig in obj)) out.push(`${path}: ${field} needs the original language (${orig})`);
+  return out;
+}
+
 /** Every localized string in a text or textList object, with its field name. */
 function strings(obj, name) {
   const out = [];
@@ -64,6 +73,8 @@ export function validateRepo(root) {
   if (f.signals.json) errors.push(...schemaErrors(S.signals, f.signals.json, f.signals.path));
 
   const countryCodes = new Set((f.countries.json?.countries ?? []).map((c) => c.code));
+  const countryLang = new Map((f.countries.json?.countries ?? []).map((c) => [c.code, c.languages?.[0]]));
+  for (const c of f.countries.json?.countries ?? []) errors.push(...langErrors(f.countries.path, `countries.${c.code}.name`, c.name, c.languages?.[0]));
   const signalIds = new Set((f.signals.json?.signals ?? []).map((s) => s.id));
   const contactIds = new Set();
   for (const c of f.contacts) {
@@ -71,6 +82,9 @@ export function validateRepo(root) {
     errors.push(...schemaErrors(S.contacts, c.json, c.path));
     if (c.json.country !== c.country) errors.push(`${c.path}: country must be "${c.country}" (its folder)`);
     for (const k of c.json.contacts ?? []) {
+      const orig = countryLang.get(c.country);
+      for (const [field, v] of [['name', k.name], ['when', k.when], ['hours', k.hours], ...(k.ways ?? []).map((w, i) => [`ways[${i}].label`, w.label])])
+        if (v) errors.push(...langErrors(c.path, `${k.id} ${field}`, v, orig));
       if (contactIds.has(k.id)) errors.push(`${c.path}: duplicate contact id "${k.id}"`);
       if (!String(k.id).startsWith(`${c.country}/`)) errors.push(`${c.path}: contact id "${k.id}" must start with ${c.country}/`);
       contactIds.add(k.id);
@@ -92,6 +106,11 @@ export function validateRepo(root) {
     if (s.country !== e.country) errors.push(`${path}: country must be "${e.country}" (its folder)`);
     if (!countryCodes.has(e.country)) errors.push(`${path}: country "${e.country}" is not in data/countries.json`);
     errors.push(...schemaErrors(S.entry, s, path));
+    if (s.lang) {
+      for (const k of ['sender', 'name', 'how', 'story', 'phrases', 'redFlags', 'whatToDo']) if (s[k]) errors.push(...langErrors(path, k, s[k], s.lang));
+      for (const [i, st] of (s.steps ?? []).entries()) errors.push(...langErrors(path, `steps[${i}].text`, st.text, s.lang));
+      for (const [i, x] of (s.examples ?? []).entries()) errors.push(...langErrors(path, `examples[${i}].text`, x.text, s.lang));
+    }
 
     for (const sig of s.signals ?? []) if (!signalIds.has(sig)) errors.push(`${path}: unknown signal "${sig}"`);
     for (const [i, st] of (s.steps ?? []).entries()) if (st.signal && !signalIds.has(st.signal)) errors.push(`${path}: steps[${i}]: unknown signal "${st.signal}"`);

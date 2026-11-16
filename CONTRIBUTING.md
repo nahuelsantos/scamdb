@@ -18,13 +18,16 @@ before its first scam.
 
 ## The fields
 
-Text fields are objects keyed by language: `{"es": "…"}`. Add other languages next to it
-(`{"es": "…", "en": "…"}`).
+Text fields are objects keyed by language. Every text field needs the scam's **original language**
+(the entry's `lang`) **and English**: `{"es": "…", "en": "…"}`. A scam that arrives in English needs
+only `en`. Sample messages and phrases keep the original wording; phrases also get English (5 or more
+in each language). Contacts and countries follow the same rule.
 
 | Field | Required | What it is |
 |---|---|---|
 | `id` | yes | `<country>/<slug>`, same as the file path |
 | `country` | yes | ISO code, same as the folder (`ar`) |
+| `lang` | yes | the language the scam arrives in (`es`, `en`, `pt`…) |
 | `status` | yes | `active`, `fading` or `archived` |
 | `channels` | yes | some of `whatsapp`, `sms`, `phone`, `online`, `in-person`, `email`, `social` |
 | `sender` | yes | who the message claims to be, as shown on the phone (`“PAMI”`) |

@@ -1,6 +1,7 @@
 {
   "id": "ar/whatsapp-codigo",
   "country": "ar",
+  "lang": "es",
   "status": "active",
   "channels": [
     "phone",
@@ -8,41 +9,49 @@
     "sms"
   ],
   "sender": {
-    "es": "“PAMI”"
+    "es": "“PAMI”",
+    "en": "“PAMI”"
   },
   "name": {
-    "es": "Robo de WhatsApp con el código de 6 números"
+    "es": "Robo de WhatsApp con el código de 6 números",
+    "en": "WhatsApp theft with the 6-digit code"
   },
   "how": {
-    "es": "Te llaman “de PAMI”, “del Correo” o “del turno médico” y te avisan que te va a llegar un código para confirmar algo. Ese código es el de tu WhatsApp: el estafador está abriendo tu cuenta en su celu. Si se lo pasás, se queda con tu WhatsApp, le pone su propia clave y le pide plata a tus contactos haciéndose pasar por vos. También pasa al revés: te escribe un familiar desde su WhatsApp de siempre pidiendo plata, porque a él ya se lo robaron."
+    "es": "Te llaman “de PAMI”, “del Correo” o “del turno médico” y te avisan que te va a llegar un código para confirmar algo. Ese código es el de tu WhatsApp: el estafador está abriendo tu cuenta en su celu. Si se lo pasás, se queda con tu WhatsApp, le pone su propia clave y le pide plata a tus contactos haciéndose pasar por vos. También pasa al revés: te escribe un familiar desde su WhatsApp de siempre pidiendo plata, porque a él ya se lo robaron.",
+    "en": "They call “from PAMI”, “the post office” or “your doctor’s appointment” and tell you a code is coming to confirm something. That code is your WhatsApp’s: the scammer is opening your account on their phone. If you give it to them, they keep your WhatsApp, set their own PIN and ask your contacts for money pretending to be you. It also happens the other way round: a relative writes from their usual WhatsApp asking for money, because theirs was already stolen."
   },
   "steps": [
     {
       "text": {
-        "es": "Te llaman diciendo que son de PAMI, del Correo o del turno médico."
+        "es": "Te llaman diciendo que son de PAMI, del Correo o del turno médico.",
+        "en": "They call saying they are from PAMI, the post office or your doctor’s office."
       },
       "signal": "impersonation"
     },
     {
       "text": {
-        "es": "Te avisan que te va a llegar un código para confirmar algo."
+        "es": "Te avisan que te va a llegar un código para confirmar algo.",
+        "en": "They tell you a code is coming to confirm something."
       },
       "signal": "asks_for_code"
     },
     {
       "text": {
-        "es": "Te apuran para que se lo leas: “es para hoy”."
+        "es": "Te apuran para que se lo leas: “es para hoy”.",
+        "en": "They rush you to read it out: “it has to be today”."
       },
       "signal": "urgency"
     },
     {
       "text": {
-        "es": "Ese código era el de tu WhatsApp: el estafador se queda con tu cuenta."
+        "es": "Ese código era el de tu WhatsApp: el estafador se queda con tu cuenta.",
+        "en": "That code was your WhatsApp’s: the scammer now has your account."
       }
     },
     {
       "text": {
-        "es": "Desde tu WhatsApp le pide plata a tus contactos haciéndose pasar por vos."
+        "es": "Desde tu WhatsApp le pide plata a tus contactos haciéndose pasar por vos.",
+        "en": "From your WhatsApp they ask your contacts for money, pretending to be you."
       },
       "signal": "money_request"
     }
@@ -50,7 +59,8 @@
   "examples": [
     {
       "text": {
-        "es": "Buenas tardes, le hablo de PAMI. ¿Usted tiene un trámite iniciado? Le va a llegar un código por mensaje, ¿me lo lee así lo confirmamos? Es para hoy."
+        "es": "Buenas tardes, le hablo de PAMI. ¿Usted tiene un trámite iniciado? Le va a llegar un código por mensaje, ¿me lo lee así lo confirmamos? Es para hoy.",
+        "en": "Good afternoon, this is PAMI. Do you have an application in progress? You will receive a code by message, can you read it to me so we can confirm it? It has to be today."
       }
     }
   ],
@@ -76,6 +86,17 @@
       "mis contactos dicen que les pedi plata",
       "agendalo",
       "agenda este numero"
+    ],
+    "en": [
+      "they asked me for a code",
+      "6-digit code",
+      "whatsapp code",
+      "code by message",
+      "i received a code",
+      "they stole my whatsapp",
+      "cant get into my whatsapp",
+      "new number",
+      "my contacts say i asked for money"
     ]
   },
   "signals": [
@@ -90,6 +111,12 @@
       "Te apuran: “inmediatamente”, “es para hoy”.",
       "PAMI o tu obra social te llama para “agilizar” un trámite.",
       "Un familiar te pide plata y no quiere hablar por audio ni por videollamada."
+    ],
+    "en": [
+      "They ask for a code you received by text or WhatsApp.",
+      "They rush you: “right away”, “it has to be today”.",
+      "PAMI or your health insurer calls to “speed up” a procedure.",
+      "A relative asks for money and won’t talk by voice note or video call."
     ]
   },
   "whatToDo": {
@@ -99,6 +126,13 @@
       "Activá la verificación en dos pasos (te explicamos cómo más abajo).",
       "Antes de mandarle plata a un familiar, llamalo al número que ya tenías agendado.",
       "Si ya te sacaron la cuenta, mirá “Ya caí, ¿qué hago?”."
+    ],
+    "en": [
+      "Don’t give the code. Not even to your family, as WhatsApp itself says.",
+      "Hang up and call the official number yourself.",
+      "Turn on two-step verification.",
+      "Before sending money to a relative, call them on the number you already had saved.",
+      "If they already took your account, see “I fell for it, what do I do?”."
     ]
   },
   "reportTo": [
@@ -106,7 +140,8 @@
     "ar/whatsapp-ayuda"
   ],
   "story": {
-    "es": "A un papá lo llamaron por un paquete y le pidieron el código que le iba a llegar. Estaba apurado, lo leyó, y perdió su WhatsApp para siempre: tuvo que cambiar de número."
+    "es": "A un papá lo llamaron por un paquete y le pidieron el código que le iba a llegar. Estaba apurado, lo leyó, y perdió su WhatsApp para siempre: tuvo que cambiar de número.",
+    "en": "A father got a call about a parcel and was asked for the code that was about to arrive. He was in a hurry, read it out, and lost his WhatsApp for good: he had to change his number."
   },
   "sources": [
     {
