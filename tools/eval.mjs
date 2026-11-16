@@ -6,6 +6,7 @@
 //                                        about 200 checks; needs CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN with
 //                                        "Workers AI: Read" permission)
 //   node tools/eval.mjs --country au     one country
+//   node tools/eval.mjs --ai --chat-model @cf/…   try another Workers AI chat model
 //   node tools/eval.mjs --private        the encrypted private set instead (needs EVAL_PRIVATE_KEY; never commit its report)
 //   node tools/eval.mjs --out eval/results.md   also write the report to a file
 //   node tools/eval.mjs --ai --cache /tmp/ai.json   keep the AI's answers and reuse them (to tune the combine rules for free)
@@ -66,10 +67,10 @@ if (flag('--ai')) {
   const engine = async (m) => {
     const matcher = matchMessage(m.text, repo.entries, { country: m.country });
     const diag = {};
-    const key = `${m.id}:${createHash('sha256').update(m.text).digest('hex').slice(0, 12)}`;
+    const key = `${value('--chat-model') ?? ''}${m.id}:${createHash('sha256').update(m.text).digest('hex').slice(0, 12)}`;
     let scored = cache.get(key);
     if (scored === undefined) {
-      scored = await scoreWithWorkersAI(ai, { text: m.text, catalogue, country: m.country, hints: matcher.matches.map((x) => x.id) }, { diag, timeoutMs: 20000 });
+      scored = await scoreWithWorkersAI(ai, { text: m.text, catalogue, country: m.country, hints: matcher.matches.map((x) => x.id) }, { diag, timeoutMs: 20000, chatModel: value('--chat-model') ?? undefined });
       if (scored) cache.set(key, scored);
     }
     if (!scored) { failures[diag.reason] ??= { count: 0, example: diag.detail }; failures[diag.reason].count++; return matcher; }

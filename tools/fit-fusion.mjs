@@ -15,12 +15,14 @@ import { matchMessage } from '../packages/matcher/index.js';
 import { THRESHOLDS } from '../worker/fusion-weights.js';
 
 const root = new URL('..', import.meta.url).pathname;
-const [cachePath] = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+const args = process.argv.slice(2);
+const chatModel = args.includes('--chat-model') ? args[args.indexOf('--chat-model') + 1] : '';
+const [cachePath] = args.filter((a, i) => !a.startsWith('--') && args[i - 1] !== '--chat-model');
 if (!cachePath) { console.error('Usage: node tools/fit-fusion.mjs <cache.json> [--write]'); process.exit(1); }
 const cache = JSON.parse(readFileSync(cachePath, 'utf8'));
 const repo = loadRepo(root);
 const rows = loadMessages(root).flatMap((m) => {
-  const scorer = cache[`${m.id}:${createHash('sha256').update(m.text).digest('hex').slice(0, 12)}`];
+  const scorer = cache[`${chatModel}${m.id}:${createHash('sha256').update(m.text).digest('hex').slice(0, 12)}`];
   if (!scorer) return [];
   return [{ m, x: features(matchMessage(m.text, repo.entries, { country: m.country }), scorer), y: m.label === 'scam' ? 1 : 0 }];
 });

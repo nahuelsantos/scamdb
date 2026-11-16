@@ -142,23 +142,24 @@
 
 | | scams caught | called "scam" | right match first | right match in top 3 | wrong matches | safe called "scam" | safe flagged | safe with a match |
 |---|---|---|---|---|---|---|---|---|
-| **all** | 97.2% (105/108) | 94.4% | 64.8% | 76.9% | 103 | 0% (0/90) | 20% | 11.1% |
-| ar | 91.7% (11/12) | 91.7% | 75% | 75% | 5 | 0% (0/10) | 30% | 30% |
+| **all** | 98.1% (106/108) | 92.6% | 64.8% | 76.9% | 103 | 0% (0/90) | 21.1% | 11.1% |
+| ar | 91.7% (11/12) | 91.7% | 75% | 75% | 5 | 0% (0/10) | 40% | 30% |
 | au | 100% (12/12) | 91.7% | 50% | 75% | 15 | 0% (0/10) | 10% | 0% |
-| br | 100% (12/12) | 100% | 33.3% | 41.7% | 20 | 0% (0/10) | 20% | 20% |
-| ca | 91.7% (11/12) | 91.7% | 66.7% | 83.3% | 13 | 0% (0/10) | 20% | 10% |
+| br | 100% (12/12) | 91.7% | 33.3% | 41.7% | 20 | 0% (0/10) | 30% | 30% |
+| ca | 91.7% (11/12) | 83.3% | 66.7% | 83.3% | 13 | 0% (0/10) | 20% | 10% |
 | es | 100% (12/12) | 100% | 75% | 91.7% | 11 | 0% (0/10) | 10% | 0% |
 | gb | 100% (12/12) | 100% | 66.7% | 83.3% | 16 | 0% (0/10) | 20% | 10% |
 | mx | 100% (12/12) | 100% | 41.7% | 58.3% | 4 | 0% (0/10) | 40% | 10% |
-| nz | 91.7% (11/12) | 83.3% | 75% | 83.3% | 11 | 0% (0/10) | 30% | 20% |
+| nz | 100% (12/12) | 83.3% | 75% | 83.3% | 11 | 0% (0/10) | 20% | 10% |
 | us | 100% (12/12) | 91.7% | 100% | 100% | 8 | 0% (0/10) | 0% | 0% |
 
-<details><summary>56 messages to look at</summary>
+<details><summary>57 messages to look at</summary>
 
 - `ar-08` (scam, expected ar/comprobante-trucho): not_recognised
 - `ar-09` (scam, expected ar/fuera-de-mercado-libre): scam, matched ar/falso-correo
 - `ar-10` (scam, expected ar/prestamos-falsos): scam, matched ar/falso-banco, ar/falso-mercado-pago, ar/falso-anses-pami
 - `ar-16` (safe): suspicious, matched ar/falsa-arca
+- `ar-17` (safe): suspicious
 - `ar-19` (safe): suspicious, matched ar/falso-mercado-pago, ar/whatsapp-codigo
 - `ar-21` (safe): suspicious, matched ar/whatsapp-codigo
 - `au-01` (scam, expected au/family-in-trouble): scam, matched au/bank-safe-account
@@ -176,6 +177,7 @@
 - `br-09` (scam, expected br/fake-job-offer): scam, matched br/fake-lawyer, br/fake-online-store
 - `br-10` (scam, expected br/loan-upfront-fee): scam, matched br/loan-refund-request
 - `br-11` (scam, expected br/traffic-fine-cnh-text): scam, matched br/fake-boleto, br/fake-online-store, br/fake-lawyer
+- `br-15` (safe): suspicious, matched br/family-new-number, br/loan-upfront-fee
 - `br-17` (safe): suspicious, matched br/traffic-fine-cnh-text
 - `br-21` (safe): suspicious, matched br/family-new-number, br/fake-lawyer
 - `ca-04` (scam, expected ca/one-time-code-takeover): scam, matched ca/crypto-romance-investment, ca/bank-investigator-courier, ca/one-time-code-takeover
@@ -205,27 +207,36 @@
 - `mx-16` (safe): suspicious, matched mx/sat-phishing, mx/sat-deposit-call
 - `mx-17` (safe): suspicious
 - `mx-21` (safe): suspicious
-- `nz-08` (scam, expected nz/romance-scam): not_recognised
+- `nz-08` (scam, expected nz/romance-scam): suspicious
 - `nz-09` (scam, expected nz/fake-police-crypto): scam, matched nz/bank-fraud-team-call, nz/fake-police-crypto
 - `nz-11` (scam, expected nz/job-ad-malicious-app): suspicious
 - `nz-14` (safe): suspicious, matched nz/bank-fraud-team-call
 - `nz-17` (safe): suspicious
-- `nz-21` (safe): suspicious, matched nz/hi-mum
 
 </details>
 
-_1.5 s_
+The AI step failed on some messages and the matcher answered: {"chat":{"count":1,"example":"404 [{\"code\":7003,\"message\":\"Could not route to /client/v4/accounts/x/ai/run/@cf/google/gemma-4-26b-a4b-it, perhaps your object identifier is invalid?\"}]"}}
+
+_1.7 s_
 
 ## Held out, one country at a time
 
 ```
 Held-out (thresholds scam >= 0.7, suspicious >= 0.4):
-  scams caught      105/108
-  scams called scam 102/108
+  scams caught      104/107
+  scams called scam 100/107
   safe called scam  1/90
-  safe flagged      15/90
-  hardest: ar-08 0.10, ar-16 0.42, ar-21 0.70, au-17 0.43, br-17 0.60, br-21 0.65, ca-08 0.07, ca-17 0.60, es-17 0.62, gb-15 0.63, gb-17 0.52, mx-15 0.54, mx-17 0.67, mx-21 0.45, nz-08 0.10, nz-14 0.69, nz-17 0.51, nz-21 0.51
+  safe flagged      16/90
+  hardest: ar-08 0.09, ar-16 0.41, ar-17 0.40, ar-21 0.70, au-17 0.51, br-15 0.60, br-17 0.60, br-21 0.65, ca-08 0.06, ca-17 0.49, es-17 0.61, gb-15 0.63, gb-17 0.51, mx-15 0.43, mx-17 0.66, mx-21 0.43, nz-08 0.40, nz-14 0.68, nz-17 0.50
 
 ```
 
-The "Matcher + Workers AI" table above uses weights fitted on all 198 messages; the held-out numbers here score each country with weights fitted on the other eight.
+The "Matcher + Workers AI" table above uses weights fitted on all messages; the held-out numbers score each country with weights fitted on the other eight.
+
+## Speed (chat model, about 6 messages each, through the REST API)
+
+| model | time per check | held-out scams caught | safe flagged |
+|---|---|---|---|
+| gemma-4-26b (kept) | 1.8–5.8 s, about 25% less with the short answer | 104/107 | 16/90 |
+| qwen3-30b-a3b | 0.6–1.5 s | 99/108 | 9/90 |
+| llama-3.2-3b | 0.8–1.9 s | 87/98 | 22/88 |
