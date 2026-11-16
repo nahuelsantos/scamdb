@@ -2,6 +2,19 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-16 (night): open data, feeds, corrections
+
+From the competitor review (`docs/research/competitors-2026-11-16.md`), approved by the owner:
+- **Homepage message:** "Scam patterns, not people… in the language it arrives in". That's the gap no competitor
+  fills.
+- **Downloads:** the existing `/v1/scamdb.zip` and JSON, plus **`/v1/scams.csv`** (one row per scam, with a UTF-8
+  BOM so spreadsheets read accents right) and **`/v1/changes.atom`** (new and updated scams for feed readers,
+  linked from every page's `<head>`).
+- **Docs:** a "Download and reuse" section with the licence and the credit line "Source: scamdb.dev (CC BY 4.0)".
+- **Corrections channel:** a GitHub issue form (`.github/ISSUE_TEMPLATE/correction.yml`) for anyone, including
+  brands and agencies named in an entry, plus a "Request a correction" link on every catalogue page.
+- **Next:** a public trends page (aggregated, k-anonymous) in its own PR. It stays empty until reports arrive.
+
 ## 2026-11-16 (evening): reporting on scamdb.dev, competitor research
 
 **Built:**
