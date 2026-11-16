@@ -1,0 +1,126 @@
+{
+  "id": "mx/sat-deposit-call",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "es": "“SAT”",
+    "en": "“SAT” (tax authority)"
+  },
+  "name": {
+    "es": "“Le hablamos del SAT: detectamos depósitos sospechosos y vamos a bloquear su cuenta”",
+    "en": "“This is the SAT: we found suspicious deposits and will block your account”"
+  },
+  "how": {
+    "es": "Recibes una llamada, a veces una grabación, que dice ser del SAT. Te dicen que detectaron depósitos de más de 50 mil pesos o movimientos bancarios sospechosos y que van a bloquear tus cuentas si no lo aclaras ya. Te piden marcar una tecla para hablar con un “ejecutivo fiscal”, que te pide datos personales, claves bancarias o una transferencia para evitar el bloqueo.",
+    "en": "You get a call, sometimes a recording, claiming to be from the SAT (Mexico’s tax authority). They say they found deposits of over 50,000 pesos or suspicious bank activity and will block your accounts unless you sort it out now. They ask you to press a key to talk to a “tax officer”, who asks for personal details, bank passwords or a transfer to avoid the block."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama una grabación o una persona que dice ser del SAT.",
+        "en": "A recording or a person calls, claiming to be from the SAT."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que detectaron depósitos de 50 mil pesos o movimientos sospechosos.",
+        "en": "They say they found deposits of 50,000 pesos or suspicious activity."
+      }
+    },
+    {
+      "text": {
+        "es": "Te amenazan con bloquear tus cuentas si no lo resuelves ahorita.",
+        "en": "They threaten to block your accounts unless you fix it right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Un “ejecutivo fiscal” te pide datos, NIP, códigos o una transferencia.",
+        "en": "A “tax officer” asks for your details, PIN, codes or a transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Le informamos que el Servicio de Administración Tributaria detectó depósitos bancarios irregulares a su nombre. Sus cuentas serán bloqueadas hoy. Para hablar con un ejecutivo fiscal, marque 1.",
+        "en": "We inform you that the Tax Administration Service detected irregular bank deposits in your name. Your accounts will be blocked today. To speak to a tax officer, press 1."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "llamada del sat",
+      "depositos de 50 mil pesos",
+      "me van a bloquear la cuenta",
+      "movimientos bancarios sospechosos",
+      "ejecutivo fiscal",
+      "grabacion que dice ser del sat"
+    ],
+    "en": [
+      "call from the sat",
+      "deposits of 50 thousand pesos",
+      "they will block my bank account",
+      "suspicious bank activity",
+      "tax officer called me"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El SAT no te pide claves, NIP ni transferencias por teléfono.",
+      "Te amenazan con bloquear tus cuentas hoy mismo.",
+      "Una grabación te pide marcar una tecla.",
+      "Recibir un depósito de 50 mil pesos no significa en automático un problema fiscal."
+    ],
+    "en": [
+      "The SAT doesn’t ask for passwords, PINs or transfers by phone.",
+      "They threaten to block your accounts today.",
+      "A recording asks you to press a key.",
+      "Getting a 50,000-peso deposit doesn’t automatically mean a tax problem."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga. No marques ninguna tecla ni sigas instrucciones de la grabación.",
+      "No des datos personales, NIP ni códigos, y no hagas pagos para “evitar el bloqueo”.",
+      "Revisa cualquier aviso solo en los canales oficiales del SAT.",
+      "Si ya diste datos bancarios o pagaste, llama a tu banco de inmediato."
+    ],
+    "en": [
+      "Hang up. Don’t press any key or follow the recording’s instructions.",
+      "Don’t give personal details, your PIN or codes, and don’t pay to “avoid the block”.",
+      "Check any notice only through the SAT’s official channels.",
+      "If you already gave bank details or paid, call your bank right away."
+    ]
+  },
+  "reportTo": [
+    "mx/tu-banco",
+    "mx/condusef",
+    "mx/policia-cibernetica"
+  ],
+  "sources": [
+    {
+      "title": "Condusef alerta por fraude con llamadas del SAT sobre depósitos de 50 mil pesos",
+      "publisher": "UnoTV",
+      "url": "https://www.unotv.com/nacional/condusef-alerta-fraude-llamadas-sat-depositos-50-mil-pesos/",
+      "date": "2026-10-25"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "mx/sat-phishing"
+  ]
+}

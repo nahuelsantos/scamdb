@@ -1,0 +1,124 @@
+{
+  "id": "mx/fake-travel-package",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Una agencia de viajes en redes",
+    "en": "A travel agency on social media"
+  },
+  "name": {
+    "es": "Paquete de viaje falso: “últimos lugares, reserva hoy”",
+    "en": "Fake holiday package: “last places, book today”"
+  },
+  "how": {
+    "es": "En redes sociales, anuncios o mensajes ves paquetes de viaje o reservaciones muy baratos, con frases como “últimos lugares” o “precio exclusivo”. La agencia no existe: su página, reseñas y fotos pueden estar hechas con inteligencia artificial. Te piden transferir a una cuenta personal para apartar la promoción y, al llegar la fecha, no hay hotel, vuelo ni reservación.",
+    "en": "On social media, ads or messages you see very cheap holiday packages or bookings, with phrases like “last places” or “exclusive price”. The agency doesn’t exist: its website, reviews and photos may be made with AI. They ask you to transfer to a personal account to secure the deal and, when the date comes, there is no hotel, flight or booking."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un paquete de viaje muy barato en redes o por mensaje.",
+        "en": "You see a very cheap holiday package on social media or by message."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te apuran: “últimos lugares”, “reserva hoy”.",
+        "en": "They rush you: “last places”, “book today”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden transferir a una cuenta personal para apartar.",
+        "en": "They ask you to transfer to a personal account to hold it."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "La reservación no existe cuando la confirmas o al llegar.",
+        "en": "The booking doesn’t exist when you check or arrive."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "✈️ Cancún 4 días/3 noches todo incluido con vuelo por $3,999 por persona. ¡Últimos lugares! Aparta hoy con $1,000 por transferencia. Precio exclusivo por WhatsApp.",
+        "en": "✈️ Cancún 4 days/3 nights all-inclusive with flight for $3,999 per person. Last places! Hold it today with $1,000 by transfer. Exclusive price on WhatsApp."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "paquete de viaje falso",
+      "agencia de viajes fraude",
+      "aparte un viaje por transferencia",
+      "la reservacion no existe",
+      "ultimos lugares viaje barato"
+    ],
+    "en": [
+      "fake holiday package",
+      "travel agency scam",
+      "paid a deposit for a trip by transfer",
+      "the booking doesn't exist",
+      "cheap trip last places"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy por debajo del normal.",
+      "“Últimos lugares”, “solo hoy”.",
+      "Transferencia a una cuenta personal.",
+      "Te piden seguir la compra fuera de la plataforma oficial."
+    ],
+    "en": [
+      "Price far below normal.",
+      "“Last places”, “today only”.",
+      "Transfer to a personal account.",
+      "They ask you to continue the purchase outside the official platform."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Verifica que la agencia exista y consulta referencias en Profeco.",
+      "Entra tú a las páginas oficiales; no reserves desde enlaces de mensajes.",
+      "Confirma la reservación directamente con el hotel o la aerolínea.",
+      "No transfieras a cuentas personales para apartar."
+    ],
+    "en": [
+      "Check the agency exists and look up references with Profeco.",
+      "Go to official websites yourself; don’t book from links in messages.",
+      "Confirm the booking directly with the hotel or airline.",
+      "Don’t transfer to personal accounts to hold a deal."
+    ]
+  },
+  "reportTo": [
+    "mx/profeco",
+    "mx/policia-cibernetica",
+    "mx/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "La SSPC emite recomendaciones para prevenir fraudes por paquetes turísticos",
+      "publisher": "Secretaría de Seguridad y Protección Ciudadana (SSPC)",
+      "url": "https://www.gob.mx/sspc/prensa/la-sspc-emite-recomendaciones-para-prevenir-fraudes-por-paquetes-turisticos?idiom=es",
+      "date": "2026-08-21"
+    }
+  ],
+  "updated": "2026-11-16"
+}

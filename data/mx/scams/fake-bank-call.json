@@ -1,0 +1,156 @@
+{
+  "id": "mx/fake-bank-call",
+  "country": "mx",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Área de seguridad” de tu banco",
+    "en": "Your bank’s “security department”"
+  },
+  "name": {
+    "es": "“Le hablamos de su banco: detectamos cargos no reconocidos”",
+    "en": "“This is your bank: we found charges you don’t recognize”"
+  },
+  "how": {
+    "es": "Te llaman diciendo que son del área de seguridad o de fraudes de tu banco. A veces en la pantalla aparece el nombre del banco aunque la llamada no venga de ahí. Te dicen que hay cargos que no reconoces o que tu tarjeta fue clonada y que, para “cancelarlos” o “proteger tu cuenta”, necesitan tu NIP, tu token, un código que te llegó por mensaje o que instales una aplicación. Con eso vacían tu cuenta o hacen compras.",
+    "en": "Someone calls saying they are from your bank’s security or fraud department. Sometimes the bank’s name even shows on the screen, though the call isn’t from the bank. They say there are charges you don’t recognize or your card was cloned and, to “cancel” them or “protect your account”, they need your PIN, your token, a code you got by text, or for you to install an app. With that they empty your account or make purchases."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman “del área de seguridad” de tu banco; puede salir el nombre del banco en la pantalla.",
+        "en": "They call “from the security department” of your bank; the bank’s name may show on the screen."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que detectaron cargos que no reconoces o que tu tarjeta fue clonada.",
+        "en": "They say they found charges you don’t recognize or that your card was cloned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden el NIP, el token o el código que te acaba de llegar para “cancelar” los cargos.",
+        "en": "They ask for your PIN, token or the code you just received to “cancel” the charges."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "O te piden instalar una app o mover tu dinero a otra cuenta “segura”.",
+        "en": "Or they ask you to install an app or move your money to another “safe” account."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Con esos datos sacan tu dinero o hacen compras.",
+        "en": "With those details they take your money or make purchases."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Le hablamos del área de seguridad de su banco. Detectamos un cargo por $8,450 que usted no reconoce. Para cancelarlo le va a llegar un código por mensaje, ¿me lo puede confirmar? No cuelgue, por favor.",
+        "en": "This is your bank’s security department. We detected a charge of $8,450 that you don’t recognize. To cancel it you will get a code by text, can you confirm it for me? Please don’t hang up."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "es": "BANCO: Se detecto un cargo no reconocido en su tarjeta con terminacion 4821. Si usted no lo realizo comuniquese de inmediato al numero que aparece en este mensaje.",
+        "en": "BANK: An unrecognized charge was detected on your card ending 4821. If you did not make it, call the number in this message immediately."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me hablaron del banco",
+      "cargos no reconocidos",
+      "dicen que clonaron mi tarjeta",
+      "me pidieron mi nip",
+      "me pidieron el token",
+      "area de seguridad del banco",
+      "llamada del banco para cancelar un cargo",
+      "me vaciaron la cuenta"
+    ],
+    "en": [
+      "call from my bank",
+      "charges i don't recognize",
+      "they say my card was cloned",
+      "they asked for my pin",
+      "bank security department called",
+      "cancel a charge over the phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Los bancos no piden NIP, token, contraseñas ni códigos por teléfono.",
+      "Te apuran: “si no lo cancela ahorita, se cobra”.",
+      "Te piden no colgar o instalar una aplicación.",
+      "El nombre del banco en la pantalla no prueba que sea el banco."
+    ],
+    "en": [
+      "Banks don’t ask for your PIN, token, passwords or codes by phone.",
+      "They rush you: “if you don’t cancel it right now, it will be charged”.",
+      "They ask you not to hang up, or to install an app.",
+      "The bank’s name on the screen doesn’t prove it’s the bank."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga. Llama tú al número que viene al reverso de tu tarjeta.",
+      "No compartas NIP, token, CVV ni códigos, ni instales nada que te pidan en la llamada.",
+      "Si ya diste datos, llama a tu banco para bloquear la tarjeta y cambia tus contraseñas.",
+      "Puedes consultar y reportar el número en la herramienta de la CONDUSEF."
+    ],
+    "en": [
+      "Hang up. Call the number on the back of your card yourself.",
+      "Don’t share your PIN, token, CVV or codes, or install anything they ask for on the call.",
+      "If you already gave details, call your bank to block the card and change your passwords.",
+      "You can look up and report the number with CONDUSEF’s tool."
+    ]
+  },
+  "reportTo": [
+    "mx/tu-banco",
+    "mx/condusef",
+    "mx/policia-cibernetica"
+  ],
+  "sources": [
+    {
+      "title": "¿Te llamaron de un número sospechoso? Ahora puedes consultar antes de caer en un fraude",
+      "publisher": "CONDUSEF",
+      "url": "https://www.gob.mx/condusef/prensa/te-llamaron-de-un-numero-sospechoso-ahora-puedes-consultar-antes-de-caer-en-un-fraude?idiom=es",
+      "date": "2026-06-08"
+    },
+    {
+      "title": "ALERTA PREVENTIVA sobre descargas de programas maliciosos (MALWARE)",
+      "publisher": "CONDUSEF y Asociación de Bancos de México",
+      "url": "https://www.gob.mx/condusef/prensa/alerta-preventiva-sobre-descargas-de-programas-maliciosos-malware-conocimiento-y-prevencion-la-mejor-defensa-del-usuario?idiom=es",
+      "date": "2026-09-10"
+    },
+    {
+      "title": "Una llamada falsa puede vaciar una cuenta en México: las víctimas pierden hasta 50,000 pesos en promedio",
+      "publisher": "Xataka México",
+      "url": "https://www.xataka.com.mx/banca-digital/llamada-falsa-puede-vaciar-cuenta-mexico-victimas-pierden-50-000-pesos-promedio",
+      "date": "2026-07-18"
+    }
+  ],
+  "updated": "2026-11-16"
+}
