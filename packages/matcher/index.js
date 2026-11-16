@@ -25,8 +25,8 @@ function scoreLang(list, text, words) {
     const single = pw.length === 1;
     for (const w of pw) {
       if (counted.has(w)) continue;
-      if (words.includes(w)) { score += single ? 2 : 1; counted.add(w); }
-      else if (w.length >= 5 && words.some((t) => t.length >= 4 && editDistance(t, w, 1) <= 1)) { score += single ? 1 : 0.5; counted.add(w); }
+      if (words.set.has(w)) { score += single ? 2 : 1; counted.add(w); }
+      else if (w.length >= 5 && words.fuzzy.some((t) => editDistance(t, w, 1) <= 1)) { score += single ? 1 : 0.5; counted.add(w); }
     }
   }
   return score;
@@ -39,7 +39,9 @@ function scoreLang(list, text, words) {
 export function matchMessage(input, entries, { country, limit = 3 } = {}) {
   const raw = String(input ?? '').slice(0, MAX_INPUT);
   const text = normalize(raw);
-  const words = tokens(text);
+  // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
+  const set = new Set(tokens(text));
+  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4) };
   const pool = country ? entries.filter((e) => e.country === country) : entries;
   const matches = !text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, text, words), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)
