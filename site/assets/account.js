@@ -38,6 +38,12 @@ function show() {
   $('acc-nokey').hidden = me.hasKey;
   $('acc-usage').textContent = `${S.accUsage}: ${me.usageToday.reports} / ${me.limits.reports}`;
   $('acc-hint').textContent = '';
+  // A key that can't be shown again (no stored copy) gets no show or copy buttons, just the hint, unless it was
+  // created on this page view and is still in memory.
+  const canView = me.viewable || !!plain;
+  $('acc-eye').hidden = !canView;
+  $('acc-copy').hidden = !canView;
+  if (me.hasKey && !canView) $('acc-hint').textContent = S.accNotViewable;
   if (me.hasKey) { if (plain && $('acc-key').type === 'text') unmask(); else mask(); }
 }
 
@@ -55,7 +61,7 @@ async function load() {
 async function getPlain() {
   if (plain) return plain;
   const r = await api('/v1/keys/me/reveal', { headers: HEADERS });
-  if (r?.status === 404) { $('acc-hint').textContent = S.accNotViewable; return null; }
+  if (r?.status === 404) { me.viewable = false; show(); return null; }
   if (!r?.ok) { fail(); return null; }
   plain = (await r.json()).key;
   return plain;

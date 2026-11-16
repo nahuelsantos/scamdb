@@ -53,6 +53,9 @@ export async function openKey(sealed, env) {
   return new TextDecoder().decode(pt);
 }
 const LIMITS = { reports: 200 };
+const NOT_VIEWABLE = () => error(404, 'key_not_viewable', 'This key can\'t be shown again. Replace it to get one you can view any time.');
+/** The plain key, or null when there is no stored copy or it no longer decrypts (for example SESSION_SECRET changed). */
+const tryOpen = async (sealed, env) => { if (!sealed) return null; try { return await openKey(sealed, env); } catch { return null; } };
 
 /** GET /v1/keys/me, POST /v1/keys, DELETE /v1/keys/me — all need a signed-in session; changes need X-Requested-With: scamdb. */
 export async function handleKeys(request, env) {
@@ -63,21 +66,23 @@ export async function handleKeys(request, env) {
   if (changing && request.headers.get('x-requested-with') !== 'scamdb') return error(403, 'csrf', 'Missing X-Requested-With: scamdb.');
 
   if (request.method === 'GET' && pathname === '/v1/keys/me') {
-    const row = await env.DB.prepare('SELECT id, prefix, created_at FROM keys WHERE github_id = ?').bind(user.githubId).first();
+    const row = await env.DB.prepare('SELECT id, prefix, created_at, key_enc FROM keys WHERE github_id = ?').bind(user.githubId).first();
     let usage = 0;
     if (row) {
       const u = await env.DB.prepare("SELECT count FROM usage WHERE key_id = ? AND day = ? AND endpoint = 'reports'").bind(row.id, new Date().toISOString().slice(0, 10)).first();
       usage = u?.count ?? 0;
     }
-    return json({ login: user.login, hasKey: !!row, prefix: row?.prefix ?? null, createdAt: row?.created_at ?? null, usageToday: { reports: usage }, limits: LIMITS },
+    const viewable = row ? (await tryOpen(row.key_enc, env)) !== null : false;
+    return json({ login: user.login, hasKey: !!row, viewable, prefix: row?.prefix ?? null, createdAt: row?.created_at ?? null, usageToday: { reports: usage }, limits: LIMITS },
       200, { 'cache-control': 'no-store' });
   }
   if (request.method === 'GET' && pathname === '/v1/keys/me/reveal') {
     if (request.headers.get('x-requested-with') !== 'scamdb') return error(403, 'csrf', 'Missing X-Requested-With: scamdb.');
     const row = await env.DB.prepare('SELECT key_enc FROM keys WHERE github_id = ?').bind(user.githubId).first();
     if (!row) return error(404, 'no_key', 'You have no key yet.');
-    if (!row.key_enc) return error(404, 'key_not_viewable', 'This key was created before keys could be viewed again. Replace it to see the new one any time.');
-    return json({ key: await openKey(row.key_enc, env) }, 200, { 'cache-control': 'no-store' });
+    const key = await tryOpen(row.key_enc, env);
+    if (!key) return NOT_VIEWABLE();
+    return json({ key }, 200, { 'cache-control': 'no-store' });
   }
   if (request.method === 'POST' && pathname === '/v1/keys') {
     const key = newKey();
