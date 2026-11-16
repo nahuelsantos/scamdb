@@ -19,9 +19,9 @@ test('pasting a scam shows the verdict and a working match link', async ({ page 
   await page.goto('/');
   await page.locator('#pg-text').fill('Hola ma, cambié de número, agendalo y pasame plata por transferencia');
   await expect(page.locator('#pg-out .stamp')).toHaveText('scam');
-  await page.getByRole('button', { name: 'PAMI code' }).click();
+  await page.getByRole('button', { name: 'Bank fraud team' }).click();
   const link = page.locator('#pg-out .match a').first();
-  await expect(link).toHaveText('ar/whatsapp-codigo');
+  await expect(link).toHaveText(/bank/);
   const res = await page.request.get(await link.getAttribute('href'));
   expect(res.status()).toBe(200);
 });

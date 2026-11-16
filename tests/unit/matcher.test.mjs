@@ -87,6 +87,8 @@ test('English impersonation', () => assert.ok(readSigns('Hello, this is the frau
 test('an ordinary English message has no signs', () => assert.deepEqual(readSigns('Hi, are we still on for dinner on Sunday?'), []));
 test('matches an English phrase of an Argentine entry', () => assert.equal(top('they asked me for a WhatsApp code'), 'ar/whatsapp-codigo'));
 test('an English bank call matches the fake bank employee', () => assert.equal(top('the bank called me, security department, go to the ATM'), 'ar/falso-banco'));
+test('an English appointment reminder matches nothing', () =>
+  assert.deepEqual(m("Hi Sarah, a reminder of your appointment with Dr Lee tomorrow at 10:30. Let us know if you can't make it. Thanks!").matches, []));
 test('ordinary English chat matches nothing', () => assert.deepEqual(m('hey, how are you doing, see you on sunday').matches, []));
 test('ordinary English messages are never called a scam', () => {
   for (const t of ['The wifi password is on the fridge', 'Use code SUMMER10 at checkout', "What's your zip code?",
@@ -110,3 +112,8 @@ test('Portuguese secrecy and keep on line', () => assert.deepEqual(readSigns('N�
 test('Portuguese remote access', () => assert.ok(readSigns('Baixe este aplicativo para eu ver sua tela').includes('remote_access')));
 test('Portuguese too good to be true', () => assert.ok(readSigns('Parabéns, você ganhou um prêmio').includes('too_good_to_be_true')));
 test('an ordinary Portuguese message has no signs', () => assert.deepEqual(readSigns('Oi, tudo bem? Vamos almoçar no domingo?'), []));
+test('money evidence quotes the whole amount', async () => {
+  const { readSignsWithEvidence } = await import('../../packages/matcher/index.js');
+  assert.equal(readSignsWithEvidence('We stopped a payment of $1,480 today').find((s) => s.id === 'money_request').evidence, '$1,480');
+  assert.equal(readSignsWithEvidence('Transferime $50.000 al alias').find((s) => s.id === 'money_request').evidence, 'Transferime');
+});

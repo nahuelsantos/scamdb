@@ -27,6 +27,8 @@ export function normalizeWithMap(text) {
   let out = '';
   const map = [];
   for (let i = 0; i < src.length; i++) {
+    // Keep thousands separators inside numbers ("$1,480", "$50.000") so evidence quotes the whole amount.
+    if ((src[i] === ',' || src[i] === '.') && /\d/.test(src[i - 1] ?? '') && /\d/.test(src[i + 1] ?? '')) continue;
     const c = src[i].toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/[^a-z0-9$ñ\s]/g, ' ');
     for (const ch of c) {
       const ws = /\s/.test(ch);
