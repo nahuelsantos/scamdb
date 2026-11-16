@@ -4,9 +4,16 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence } from './signs.js';
+export const VERSION = '1.0.0';
 export const MATCH_THRESHOLD = 2;
 export const MAX_INPUT = 5000;
 const SCAM_SIGNS = new Set(['asks_for_code', 'remote_access', 'money_request']);
+
+/** The spec's hard rules: a code request, remote access, or money plus impersonation. A scorer can't go below suspicious. */
+export function hardRules(ids) {
+  const has = (id) => ids.includes(id);
+  return has('asks_for_code') || has('remote_access') || (has('money_request') && has('impersonation'));
+}
 
 /** The best score over every language the entry has (its phrases plus its name in that language). */
 function scoreEntry(entry, text, words) {

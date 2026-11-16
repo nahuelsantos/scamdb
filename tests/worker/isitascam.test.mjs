@@ -1,0 +1,104 @@
+import { test, after } from 'node:test';
+import assert from 'node:assert/strict';
+import { makeWorker } from './harness.mjs';
+import { sign } from '../../worker/session.js';
+import { utcDay } from '../../worker/limits.js';
+
+const w = await makeWorker();
+after(() => w.dispose());
+let n = 0;
+const ip = () => `203.0.113.${++n}`;
+const check = (body, { from = ip(), key, raw, type = 'application/json' } = {}) => w.fetch('/v1/isitascam', { method: 'POST',
+  headers: { 'content-type': type, 'cf-connecting-ip': from, ...(key ? { authorization: `Bearer ${key}` } : {}) }, body: raw ?? JSON.stringify(body) });
+const session = `scamdb_session=${await sign({ githubId: 7, login: 'ana', exp: Date.now() + 3600000 }, 'x'.repeat(32))}`;
+const key = (await (await w.fetch('/v1/keys', { method: 'POST', headers: { cookie: session, 'x-requested-with': 'scamdb' } })).json()).key;
+const CODE = 'Te va a llegar un código de WhatsApp, me lo pasás?';
+
+test('keyless: a code request is a scam, matched, score null, scorer matcher', async () => {
+  const r = await check({ text: CODE, lang: 'en' });
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get('access-control-allow-origin'), '*');
+  const b = await r.json();
+  assert.equal(b.verdict, 'scam');
+  assert.equal(b.score, null);
+  assert.equal(b.matches[0].id, 'ar/whatsapp-codigo');
+  assert.equal(b.matches[0].name, 'WhatsApp theft with the code');
+  assert.equal(b.matches[0].url, 'https://scamdb.dev/v1/scams/ar/whatsapp-codigo.json');
+  assert.equal(b.matches[0].page, 'https://scamdb.dev/catalogue/ar/whatsapp-codigo/');
+  assert.deepEqual(b.whatToDo, ['Never read out the code']);
+  assert.equal(b.reportTo, 'https://scamdb.dev/v1/ar/contacts.json');
+  assert.deepEqual(b.engine, { matcher: '1.0.0', scorer: 'matcher' });
+  assert.equal(b.datasetVersion, 't.1');
+  const sig = b.signals.find((s) => s.id === 'asks_for_code');
+  assert.equal(sig.label, 'Asks for a code');
+  assert.ok(sig.evidence.length > 0);
+});
+test('labels and whatToDo follow lang, falling back to English', async () => {
+  const b = await (await check({ text: CODE, lang: 'es' })).json();
+  assert.deepEqual(b.whatToDo, ['No leas el código']);
+  assert.equal(b.signals.find((s) => s.id === 'asks_for_code').label, 'Te pide un código');
+  const pt = await (await check({ text: CODE, lang: 'pt' })).json();
+  assert.deepEqual(pt.whatToDo, ['Never read out the code']);
+});
+test('ordinary text is not_recognised with no matches', async () => {
+  const b = await (await check({ text: 'Hola, ¿venís el domingo?' })).json();
+  assert.equal(b.verdict, 'not_recognised');
+  assert.deepEqual(b.matches, []);
+  assert.deepEqual(b.whatToDo, []);
+  assert.equal(b.reportTo, null);
+});
+test('country filters matches', async () => {
+  const b = await (await check({ text: CODE, country: 'au' })).json();
+  assert.ok(!b.matches.some((m) => m.id.startsWith('ar/')));
+  assert.equal(b.reportTo, 'https://scamdb.dev/v1/au/contacts.json');
+});
+for (const [name, body, field] of [
+  ['missing text', {}, 'text'], ['blank text', { text: '   ' }, 'text'], ['text as a number', { text: 123 }, 'text'],
+  ['text too long', { text: 'a'.repeat(5001) }, 'text'], ['unknown country', { text: 'x', country: 'zz' }, 'country'],
+  ['lang not text', { text: 'x', lang: 5 }, 'lang'], ['report not boolean', { text: 'x', report: 'yes' }, 'report'],
+]) {
+  test(`400 for ${name}`, async () => {
+    const r = await check(body);
+    assert.equal(r.status, 400);
+    const b = await r.json();
+    assert.equal(b.error, 'invalid_check');
+    assert.match(b.message, new RegExp(`^${field}`));
+  });
+}
+test('non-JSON is 415', async () => assert.equal((await check(null, { raw: 'hi', type: 'text/plain' })).status, 415));
+test('report without a key is refused', async () => {
+  const r = await check({ text: CODE, report: true });
+  assert.equal(r.status, 400);
+  assert.match((await r.json()).message, /POST \/v1\/reports/);
+});
+test('report with a key stores one report; without report nothing is stored', async () => {
+  const before = (await w.db.prepare("SELECT COUNT(*) AS c FROM reports WHERE source = 'isitascam'").first()).c;
+  assert.equal((await check({ text: CODE }, { key })).status, 200);
+  assert.equal((await w.db.prepare("SELECT COUNT(*) AS c FROM reports WHERE source = 'isitascam'").first()).c, before);
+  assert.equal((await check({ text: CODE, report: true }, { key })).status, 200);
+  const row = await w.db.prepare("SELECT * FROM reports WHERE source = 'isitascam' ORDER BY created_at DESC").first();
+  assert.equal(row.text, CODE);
+  assert.equal(row.country, 'ar');
+});
+test('keyed without the AI binding answers with the matcher', async () => {
+  const b = await (await check({ text: CODE }, { key })).json();
+  assert.equal(b.engine.scorer, 'matcher');
+  assert.equal(b.score, null);
+});
+test('keyless limit is 10 a day per IP', async () => {
+  const from = '192.0.2.77';
+  for (let i = 0; i < 10; i++) assert.equal((await check({ text: 'hola' }, { from })).status, 200, `call ${i + 1}`);
+  const r = await check({ text: 'hola' }, { from });
+  assert.equal(r.status, 429);
+  assert.equal((await r.json()).error, 'too_many_checks');
+  assert.ok(Number(r.headers.get('retry-after')) > 0);
+});
+test('keyed limit is 50 a day per account', async () => {
+  await w.db.prepare('INSERT INTO hits (bucket, day, count) VALUES (?, ?, 50) ON CONFLICT (bucket, day) DO UPDATE SET count = 50').bind('isitascam:gh:7', utcDay()).run();
+  assert.equal((await check({ text: 'hola' }, { key })).status, 429);
+});
+test('OPTIONS returns CORS 204', async () => {
+  const r = await w.fetch('/v1/isitascam', { method: 'OPTIONS' });
+  assert.equal(r.status, 204);
+  assert.equal(r.headers.get('access-control-allow-origin'), '*');
+});

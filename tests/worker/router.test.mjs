@@ -9,7 +9,7 @@ after(() => w.dispose());
 
 test('wrangler.jsonc runs the Worker only on the dynamic paths', () => {
   const cfg = JSON.parse(readFileSync(new URL('../../wrangler.jsonc', import.meta.url), 'utf8').replace(/^\s*\/\/.*$/gm, ''));
-  assert.deepEqual(cfg.assets.run_worker_first, ['/v1/reports', '/v1/keys*', '/auth/*']);
+  assert.deepEqual(cfg.assets.run_worker_first, ['/v1/reports', '/v1/isitascam', '/v1/keys*', '/auth/*']);
   assert.equal(cfg.main, 'worker/index.js');
   assert.equal(cfg.d1_databases[0].binding, 'DB');
   assert.deepEqual(cfg.triggers.crons, ['17 4 * * *']);
