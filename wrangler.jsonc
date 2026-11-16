@@ -1,7 +1,9 @@
-// Cloudflare Workers, static assets only (no Worker code in phase 1, so reads never count against the free quota).
-// `npm run build && npx wrangler deploy` publishes dist/.
+// Cloudflare Workers: static assets for everything, plus a small Worker that runs ONLY on the dynamic paths in
+// assets.run_worker_first (reports, keys, sign-in). Static reads never wake it, so they never count against the free quota.
+// `npm run build && npx wrangler deploy` publishes dist/ and worker/.
 {
   "name": "scamdb",
+  "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
   "routes": [
     { "pattern": "scamdb.dev", "custom_domain": true },
@@ -11,6 +13,12 @@
   "previews": {},
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
-  }
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/v1/reports", "/v1/keys*", "/auth/*"]
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "scamdb", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }
+  ],
+  "triggers": { "crons": ["17 4 * * *"] }
 }
