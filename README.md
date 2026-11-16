@@ -35,7 +35,8 @@ Dynamic endpoints (a small Worker):
 - `POST /v1/isitascam` `{ "text", "country"?, "lang"?, "report"? }`: verdict, warning signs with the
   words that triggered them, the closest catalogue scams, what to do and where to report. Without a key:
   10 a day per IP, catalogue matching only. With a free key: 50 a day, plus a score from a free Workers AI
-  model (falls back to the matcher). The score is not a probability yet.
+  model (falls back to the matcher), and screenshots (`-F image=@shot.png`) or voice notes
+  (`-F audio=@note.ogg`) as multipart, read by Workers AI and never stored. The score is not a probability yet.
 - `POST /v1/reports`: send a scam privately (Turnstile token or key).
 - Free keys: sign in with GitHub on [scamdb.dev/account](https://scamdb.dev/account/).
 

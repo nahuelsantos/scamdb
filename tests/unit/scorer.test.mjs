@@ -44,8 +44,7 @@ test('returns null when the answer is not an object', async () => {
   _resetCache();
   assert.equal(await scoreWithWorkersAI(fakeAI({ chat: 'not json' }), { text: TEXT, catalogue }), null);
 });
-for (const [name, chat] of [['an unknown verdict', { verdict: 'maybe', score: 0.5, signals: [] }], ['a score above 1', { verdict: 'scam', score: 7, signals: [] }],
-  ['an unknown signal id', { verdict: 'scam', score: 0.5, signals: [{ id: 'nope', evidence: 'x' }] }]]) {
+for (const [name, chat] of [['an unknown verdict', { verdict: 'maybe', score: 0.5, signals: [] }], ['a score above 1', { verdict: 'scam', score: 7, signals: [] }]]) {
   test(`returns null for ${name}`, async () => {
     _resetCache();
     assert.equal(await scoreWithWorkersAI(fakeAI({ chat }), { text: TEXT, catalogue }), null);
@@ -95,3 +94,20 @@ test('keyless requests never use the scorer, even with the AI binding', async ()
   assert.equal(usesScorer({ id: 'k' }, {}), false);
   assert.equal(usesScorer({ id: 'k' }, { AI: {} }), true);
 });
+
+test('an unknown signal id is dropped, the verdict kept', async () => {
+  _resetCache();
+  const r = await scoreWithWorkersAI(fakeAI({ chat: { verdict: 'scam', score: 0.5, signals: [{ id: 'nope', evidence: 'x' }, { id: 'asks_for_code', evidence: 'código' }] } }), { text: TEXT, catalogue });
+  assert.equal(r.verdict, 'scam');
+  assert.deepEqual(r.signals.map((s) => s.id), ['asks_for_code']);
+});
+test('the chat-completions answer shape is read', async () => {
+  _resetCache();
+  const ai = { run: async (model, input) => (model === MODELS.embed ? { data: input.text.map(() => [1, 0]) } : { choices: [{ message: { content: '```json\n{"verdict":"suspicious","score":0.4,"signals":[]}\n```' } }] }) };
+  assert.equal((await scoreWithWorkersAI(ai, { text: TEXT, catalogue })).verdict, 'suspicious');
+});
+test('combine never says not_recognised when the catalogue matched', () => {
+  const c = combine({ verdict: 'suspicious', score: null, signals: [], matches: [{ id: 'au/parcel' }] }, { verdict: 'not_recognised', score: 0.05, signals: [], matches: [] }, 'parcel');
+  assert.equal(c.verdict, 'suspicious');
+});
+test('the chat model is a current one, not the retired llama-3.1-8b', () => assert.notEqual(MODELS.chat, '@cf/meta/llama-3.1-8b-instruct'));

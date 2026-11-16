@@ -102,3 +102,35 @@ test('OPTIONS returns CORS 204', async () => {
   assert.equal(r.status, 204);
   assert.equal(r.headers.get('access-control-allow-origin'), '*');
 });
+/** A multipart body with its content-type header (Miniflare doesn't set it from FormData). */
+async function imageForm(extra = {}) {
+  const f = new FormData();
+  f.append('image', new File([new Uint8Array(8)], 'a.png', { type: 'image/png' }));
+  for (const [k, v] of Object.entries(extra)) f.append(k, v);
+  const req = new Request('https://x/', { method: 'POST', body: f });
+  return { type: req.headers.get('content-type'), body: await req.arrayBuffer() };
+}
+test('a screenshot without a key is refused with 401 before any AI', async () => {
+  const form = await imageForm();
+  const r = await w.fetch('/v1/isitascam', { method: 'POST', headers: { 'content-type': form.type, 'cf-connecting-ip': ip() }, body: form.body });
+  assert.equal(r.status, 401);
+  assert.equal((await r.json()).error, 'key_required');
+});
+test('a keyed screenshot without the AI binding is 503 not_available', async () => {
+  await w.db.prepare('DELETE FROM hits WHERE bucket = ?').bind('isitascam:gh:7').run();
+  const form = await imageForm();
+  const r = await w.fetch('/v1/isitascam', { method: 'POST', headers: { 'content-type': form.type, 'cf-connecting-ip': ip(), authorization: `Bearer ${key}` }, body: form.body });
+  assert.equal(r.status, 503);
+  assert.equal((await r.json()).error, 'not_available');
+});
+test('report with a key counts against the reports limit', async () => {
+  await w.db.prepare('DELETE FROM hits WHERE bucket = ?').bind('isitascam:gh:7').run();
+  await w.db.prepare('INSERT INTO hits (bucket, day, count) VALUES (?, ?, 200) ON CONFLICT (bucket, day) DO UPDATE SET count = 200').bind('reports:gh:7', utcDay()).run();
+  const r = await check({ text: CODE, report: true }, { key });
+  assert.equal(r.status, 429);
+  assert.equal((await r.json()).error, 'too_many_reports');
+});
+test('a 5,000-character message sent as escapes is accepted', async () => {
+  const raw = JSON.stringify({ text: 'é'.repeat(5000) }).replace(/é/g, '\\u00e9');
+  assert.equal((await check(null, { raw })).status, 200);
+});

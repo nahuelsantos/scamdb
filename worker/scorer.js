@@ -2,8 +2,9 @@
 // model gives a verdict, a score and the warning signs with quotes. Any failure returns null and the matcher answers.
 import { hardRules } from '../packages/matcher/index.js';
 
-export const MODELS = { embed: '@cf/baai/bge-m3', chat: '@cf/meta/llama-3.1-8b-instruct' };
-export const TIMEOUT_MS = 4000;
+// llama-3.1-8b-instruct was retired on 2026-05-30; gemma-4 is Cloudflare's recommended small replacement (also reads images).
+export const MODELS = { embed: '@cf/baai/bge-m3', chat: '@cf/google/gemma-4-26b-a4b-it' };
+export const TIMEOUT_MS = 8000;
 const SIMILAR = 0.6;
 const BATCH = 50;
 const VERDICTS = ['scam', 'suspicious', 'not_recognised'];
@@ -13,9 +14,9 @@ export const _resetCache = () => { vectors = null; };
 
 const entryText = (e) => [...Object.values(e.name ?? {}), ...Object.values(e.phrases ?? {}).flat()].join(' · ');
 const embedAll = async (ai, texts) => {
-  const out = [];
-  for (let i = 0; i < texts.length; i += BATCH) out.push(...(await ai.run(MODELS.embed, { text: texts.slice(i, i + BATCH) })).data);
-  return out;
+  const batches = [];
+  for (let i = 0; i < texts.length; i += BATCH) batches.push(ai.run(MODELS.embed, { text: texts.slice(i, i + BATCH) }));
+  return (await Promise.all(batches)).flatMap((r) => r.data); // parallel: a cold isolate embeds the catalogue in one round
 };
 function cosine(a, b) {
   let dot = 0, na = 0, nb = 0;
@@ -33,13 +34,6 @@ async function similar(ai, text, catalogue) {
   return vectors.list.map(({ id, v }) => ({ id, similarity: cosine(q, v) })).sort((a, b) => b.similarity - a.similarity);
 }
 
-const SCHEMA = {
-  type: 'object', required: ['verdict', 'score', 'signals'],
-  properties: {
-    verdict: { type: 'string', enum: VERDICTS }, score: { type: 'number' },
-    signals: { type: 'array', items: { type: 'object', required: ['id', 'evidence'], properties: { id: { type: 'string' }, evidence: { type: 'string' } } } },
-  },
-};
 
 function prompt(text, catalogue, near) {
   const signs = [...catalogue.signals.entries()].map(([id, s]) => `- ${id}: ${s.label?.en ?? id}`).join('\n');
@@ -51,6 +45,9 @@ function prompt(text, catalogue, near) {
   ];
 }
 
+/** The model's text: Workers AI `response` (object or string) or the OpenAI chat-completions shape. */
+const answerOf = (out) => out?.response ?? out?.choices?.[0]?.message?.content ?? null;
+
 function parse(answer, catalogue) {
   let a = answer;
   if (typeof a === 'string') {
@@ -59,8 +56,9 @@ function parse(answer, catalogue) {
   }
   if (!a || typeof a !== 'object') return null;
   if (!VERDICTS.includes(a.verdict) || typeof a.score !== 'number' || a.score < 0 || a.score > 1 || !Array.isArray(a.signals)) return null;
-  if (a.signals.some((s) => !s || !catalogue.signals.has(s.id) || typeof s.evidence !== 'string')) return null;
-  return { verdict: a.verdict, score: a.score, signals: a.signals.map(({ id, evidence }) => ({ id, evidence })) };
+  // Unknown sign ids or quotes are dropped, not fatal: the verdict and score still stand.
+  const signals = a.signals.filter((s) => s && catalogue.signals.has(s.id) && typeof s.evidence === 'string').map(({ id, evidence }) => ({ id, evidence }));
+  return { verdict: a.verdict, score: a.score, signals };
 }
 
 /** { score, verdict, signals, matches } or null on any error, timeout or invalid answer. */
@@ -70,8 +68,8 @@ export async function scoreWithWorkersAI(ai, { text, catalogue, country = null }
     return await withTimeout((async () => {
       const countryOf = new Map(catalogue.entries.map((e) => [e.id, e.country]));
       const near = (await similar(ai, text, catalogue)).filter((n) => !country || countryOf.get(n.id) === country);
-      const out = await ai.run(MODELS.chat, { messages: prompt(text, catalogue, near), response_format: { type: 'json_schema', json_schema: SCHEMA } });
-      const parsed = parse(out?.response, catalogue);
+      const out = await ai.run(MODELS.chat, { messages: prompt(text, catalogue, near), max_tokens: 1024 });
+      const parsed = parse(answerOf(out), catalogue);
       if (!parsed) return null;
       return { ...parsed, matches: near.filter((n) => n.similarity >= SIMILAR).slice(0, 3) };
     })(), timeoutMs);
@@ -87,6 +85,7 @@ export function combine(matcher, scorer, text) {
   for (const s of scorer.signals) if (s.evidence && lower.includes(s.evidence.toLowerCase()) && !signals.some((m) => m.id === s.id)) signals.push(s);
   const seen = new Set();
   const matches = [...matcher.matches, ...scorer.matches].filter((m) => !seen.has(m.id) && seen.add(m.id)).slice(0, 3);
-  const verdict = scorer.verdict === 'not_recognised' && hardRules(signals.map((s) => s.id)) ? 'suspicious' : scorer.verdict;
+  // Floor: never not_recognised when the hard rules fire or the catalogue matched.
+  const verdict = scorer.verdict === 'not_recognised' && (hardRules(signals.map((s) => s.id)) || matches.length) ? 'suspicious' : scorer.verdict;
   return { verdict, score: scorer.score, signals, matches };
 }

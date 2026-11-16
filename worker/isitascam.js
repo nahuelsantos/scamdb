@@ -6,9 +6,12 @@ import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from './scorer.js';
+import { readForm, extractText } from './media.js';
+import { LIMITS as REPORT_LIMITS } from './reports.js';
 
 const ORIGIN = 'https://scamdb.dev';
-export const LIMITS = { keyless: 10, keyed: 50, global: 20000, ai: 1000 };
+// ai: shared daily cap on Workers AI calls (scores and file reading), sized to stay inside the free allowance.
+export const LIMITS = { keyless: 10, keyed: 50, global: 20000, ai: 300 };
 const MAX_TEXT = 5000;
 
 const invalid = (field, why) => new HttpError(400, 'invalid_check', `${field}: ${why}`);
@@ -54,16 +57,28 @@ async function checkLimits(env, key, ip, now) {
 }
 
 export async function handleIsItAScam(request, env) {
-  const body = await readJson(request);
+  const multipart = /^multipart\/form-data/i.test(request.headers.get('content-type') ?? '');
+  // 32 KB: 5,000 characters fit even when every one is sent as a \uXXXX escape.
+  const { body, file } = multipart ? await readForm(request) : { body: await readJson(request, 32000), file: null };
   const catalogue = await loadCatalogue(env);
-  const check = validateCheck(body, catalogue.countries);
+  const check = validateCheck(file ? { ...body, text: '-' } : body, catalogue.countries);
   const key = await authKey(request, env);
+  if (file && !key) throw new HttpError(401, 'key_required', 'Screenshots and voice notes need a free API key (scamdb.dev/account). Text checks work without one.');
   if (check.report && !key) throw invalid('report', 'saving a report needs an API key; without one, use POST /v1/reports');
 
   const now = new Date();
   await checkLimits(env, key, request.headers.get('cf-connecting-ip') ?? '', now);
 
+  if (file) {
+    if (!env.AI) throw new HttpError(503, 'not_available', 'Reading screenshots and voice notes is not switched on yet.');
+    if (!(await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) throw new HttpError(503, 'ai_paused', 'We have used today\'s free AI allowance. Send the message as text, or try again tomorrow.', { 'retry-after': String(secondsToUtcMidnight(now)) });
+    const read = await extractText(env.AI, file);
+    if (!read) throw new HttpError(422, 'unreadable', `We could not ${file.kind === 'image' ? 'read any text in the screenshot' : 'hear any words in the voice note'}. Try again, or send the message as text.`);
+    check.text = read.slice(0, MAX_TEXT);
+  }
+
   let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined });
+  if (check.report && !check.country && !result.matches.length) throw invalid('country', 'needed to save a report when no catalogue scam matches');
   let scorer = 'matcher';
   // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.
   if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
@@ -72,13 +87,19 @@ export async function handleIsItAScam(request, env) {
   }
   const top = result.matches[0] ? await loadEntry(env, result.matches[0].id) : null;
   const answer = buildAnswer({ result, catalogue, top, lang: check.lang, country: check.country, scorer });
+  if (file) answer.input = { type: file.kind, text: check.text };
 
   if (key) await recordUsage(env.DB, key.id, 'isitascam', now);
   if (check.report) {
-    const reportCountry = top?.country ?? check.country;
-    if (!reportCountry) throw invalid('country', 'needed to save a report when no catalogue scam matches');
+    // Saved reports share the reports limits, so this route can't be used to get around them.
+    const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
+    if (!(await hit(env.DB, `reports:gh:${key.githubId}`, REPORT_LIMITS.keyed, now)).ok) throw new HttpError(429, 'too_many_reports', 'Daily report limit reached. Thank you, and try again tomorrow.', retry);
+    if (!(await hit(env.DB, 'reports:global', REPORT_LIMITS.global, now)).ok) throw new HttpError(503, 'reports_paused', 'We are receiving too many reports today. Please try again tomorrow.', retry);
+    const byId = new Map(catalogue.entries.map((e) => [e.id, e]));
+    const reportCountry = check.country ?? byId.get(result.matches[0]?.id)?.country;
     await env.DB.prepare('INSERT INTO reports (id, created_at, country, channel, text, what_happened, contact, source, key_id) VALUES (?, ?, ?, NULL, ?, NULL, NULL, ?, ?)')
       .bind(crypto.randomUUID(), now.toISOString(), reportCountry, check.text, 'isitascam', key.id).run();
+    await recordUsage(env.DB, key.id, 'reports', now);
   }
   return cors(json(answer));
 }
