@@ -1,0 +1,128 @@
+{
+  "id": "br/traffic-fine-cnh-text",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "pt": "“Detran”, “PRF” ou “Senatran”",
+    "en": "“Detran”, “PRF” (highway police) or “Senatran”"
+  },
+  "name": {
+    "pt": "Falsa multa ou suspensão da CNH por mensagem",
+    "en": "Fake traffic fine or license suspension text"
+  },
+  "how": {
+    "pt": "Golpistas mandam SMS, WhatsApp ou e-mail imitando o Detran ou a PRF: há uma multa para pagar ou sua CNH está em processo de suspensão. A mensagem pode ter seu nome e número da CNH. O link leva a uma página que imita o gov.br, mostra infrações falsas e cobra para “regularizar”. Multas oficiais chegam pelos Correios ou pelo app Carteira Digital de Trânsito.",
+    "en": "Scammers send texts, WhatsApp messages or emails copying the Detran or the PRF: there is a fine to pay or your driver’s license is being suspended. The message may include your name and license number. The link goes to a page copying gov.br that shows fake violations and charges you to “settle”. Official fines arrive by mail or in the Carteira Digital de Trânsito app."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Chega uma mensagem do “Detran” ou da “PRF” sobre multa ou suspensão da CNH.",
+        "en": "A message from the “Detran” or “PRF” arrives about a fine or license suspension."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Ameaçam suspender ou cassar sua habilitação.",
+        "en": "They threaten to suspend or revoke your license."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "O link leva a uma página parecida com o gov.br.",
+        "en": "The link goes to a page that looks like gov.br."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Cobram a multa por Pix ou boleto.",
+        "en": "They charge the fine by Pix or boleto."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "DETRAN: Sua CNH esta em processo de SUSPENSAO por multas em aberto. Evite o bloqueio e regularize hoje: [link]",
+        "en": "DETRAN: Your license is being SUSPENDED for unpaid fines. Avoid the block and settle today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "multa de transito",
+      "cnh suspensa",
+      "suspensao da cnh",
+      "multa em aberto",
+      "mensagem do detran",
+      "pagar multa pelo link"
+    ],
+    "en": [
+      "traffic fine text",
+      "license suspended",
+      "license suspension message",
+      "unpaid fine",
+      "message from detran"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Multa ou suspensão avisada por SMS ou WhatsApp com link.",
+      "Cobrança por Pix ou boleto pela mensagem.",
+      "O site não termina em gov.br."
+    ],
+    "en": [
+      "A fine or suspension notice by text or WhatsApp with a link.",
+      "A charge by Pix or boleto through the message.",
+      "The website doesn’t end in gov.br."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não pague. Consulte multas no app Carteira Digital de Trânsito ou no site oficial do Detran.",
+      "A PRF não manda boleto por e-mail, SMS ou WhatsApp.",
+      "Se pagou, avise o banco e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Don’t pay. Check fines in the Carteira Digital de Trânsito app or the official Detran site.",
+      "The PRF doesn’t send boletos by email, text or WhatsApp.",
+      "If you paid, tell your bank and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Alerta: Golpes com Boletos Falsos e Suspensão de CNH em Nome da PRF",
+      "publisher": "Polícia Rodoviária Federal (gov.br)",
+      "url": "https://www.gov.br/prf/pt-br/noticias/estaduais/piaui/2025/fevereiro/alerta-golpes-com-boletos-falsos-e-suspensao-de-cnh-em-nome-da-prf",
+      "date": "2025-02-19"
+    },
+    {
+      "title": "Detran-PR alerta para golpe com mensagens falsas referentes à suspensão da CNH",
+      "publisher": "Detran-PR",
+      "url": "https://www.detran.pr.gov.br/Noticia/Detran-PR-alerta-para-golpe-com-mensagens-falsas-referentes-suspensao-da-CNH",
+      "date": "2024-11-19"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "br/receita-cpf-charge",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email",
+    "online"
+  ],
+  "sender": {
+    "pt": "“Receita Federal” ou “gov.br”",
+    "en": "“Receita Federal” (tax office) or “gov.br”"
+  },
+  "name": {
+    "pt": "Falsa cobrança da Receita Federal com seu CPF",
+    "en": "Fake tax office charge using your CPF"
+  },
+  "how": {
+    "pt": "Uma mensagem leva a uma página que imita o gov.br e mostra seu nome e CPF verdadeiros, às vezes até seu endereço. Diz que há uma dívida ou pendência e que o CPF ou as contas serão bloqueados em poucos minutos, oferecendo “desconto” para pagar já, por Pix ou boleto. A Receita não cobra por mensagem: pendências reais aparecem só no e-CAC.",
+    "en": "A message leads to a page that copies gov.br and shows your real name and CPF, sometimes even your address. It says there is a debt or problem and that your CPF or accounts will be blocked in minutes, offering a “discount” to pay now by Pix or boleto. The Receita doesn’t charge by message: real issues only show up in e-CAC."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Uma página parecida com o gov.br mostra seu nome e CPF.",
+        "en": "A page that looks like gov.br shows your name and CPF."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Diz que seu CPF ou contas serão bloqueados em minutos.",
+        "en": "It says your CPF or accounts will be blocked in minutes."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Oferece desconto para pagar agora por Pix ou boleto.",
+        "en": "It offers a discount to pay now by Pix or boleto."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "RECEITA FEDERAL: Constam pendencias no seu CPF. Evite o bloqueio do CPF e de suas contas. Regularize agora com desconto: [link]",
+        "en": "RECEITA FEDERAL: There are issues with your CPF. Avoid having your CPF and accounts blocked. Settle now with a discount: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "pendencia no cpf",
+      "cpf vai ser bloqueado",
+      "cobranca da receita federal",
+      "regularizar o cpf",
+      "divida na receita",
+      "bloqueio do cpf"
+    ],
+    "en": [
+      "problem with my cpf",
+      "cpf will be blocked",
+      "charge from the tax office",
+      "settle my cpf",
+      "tax debt message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Prazo de minutos e ameaça de bloqueio.",
+      "Mostrar seu nome e CPF não prova que é a Receita.",
+      "O endereço do site não termina em gov.br."
+    ],
+    "en": [
+      "A deadline of minutes and a threat of blocking.",
+      "Showing your name and CPF doesn’t prove it’s the Receita.",
+      "The website address doesn’t end in gov.br."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não pague. Digite você mesmo o endereço da Receita e confira no e-CAC.",
+      "A Receita não cobra por aplicativo de mensagem nem por link.",
+      "Se pagou, avise o banco e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Don’t pay. Type the Receita’s address yourself and check in e-CAC.",
+      "The Receita doesn’t charge through messaging apps or links.",
+      "If you paid, tell your bank and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Golpes usam nome e CPF do contribuinte para simular cobranças da Receita Federal",
+      "publisher": "Receita Federal (gov.br)",
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/golpes-usam-nome-e-cpf-do-contribuinte-para-simular-cobrancas-da-receita-federal",
+      "date": "2025-12-01"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,123 @@
+{
+  "id": "br/inss-proof-of-life",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "“INSS” ou “Central 135”",
+    "en": "“INSS” or “Central 135”"
+  },
+  "name": {
+    "pt": "Falsa prova de vida do INSS",
+    "en": "Fake INSS proof-of-life message"
+  },
+  "how": {
+    "pt": "Aposentados e pensionistas recebem mensagens dizendo que precisam atualizar a prova de vida ou o cadastro, senão o benefício será cortado. O link leva a uma página que pede dados pessoais, senhas ou fotos de documentos. Hoje a prova de vida é feita automaticamente pelo INSS, por cruzamento de dados.",
+    "en": "Retirees and pensioners get messages saying they must update their proof of life or registration or their benefit will be cut. The link leads to a page that asks for personal details, passwords or photos of documents. Today the INSS does proof of life automatically by cross-checking data."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Chega uma mensagem em nome do INSS sobre a prova de vida.",
+        "en": "A message in the name of the INSS arrives about proof of life."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Ameaçam cortar o benefício se você não atualizar logo.",
+        "en": "They threaten to cut your benefit if you don’t update right away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Mandam um link para “atualizar o cadastro”.",
+        "en": "They send a link to “update your registration”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Pedem senha, dados do banco ou fotos de documentos.",
+        "en": "They ask for passwords, bank details or photos of documents."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "INSS: Seu beneficio sera SUSPENSO por falta de prova de vida. Regularize em ate 24h pelo link: [link]",
+        "en": "INSS: Your benefit will be SUSPENDED for missing proof of life. Fix it within 24h at the link: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "prova de vida",
+      "atualizar a prova de vida",
+      "beneficio vai ser cortado",
+      "mensagem do inss",
+      "beneficio suspenso",
+      "atualizar cadastro do inss"
+    ],
+    "en": [
+      "proof of life",
+      "update my proof of life",
+      "benefit will be cut",
+      "message from inss",
+      "benefit suspended"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "pt": [
+      "O INSS não manda link por SMS para prova de vida.",
+      "Ameaça de corte do benefício.",
+      "Pedem senha, dados do banco ou documentos."
+    ],
+    "en": [
+      "The INSS doesn’t send proof-of-life links by text.",
+      "A threat to cut your benefit.",
+      "They ask for passwords, bank details or documents."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não clique. Confira no Meu INSS ou ligue 135.",
+      "O INSS não manda servidor em casa e não pede senha nem transferência.",
+      "Se passou dados, avise o banco e troque a senha do gov.br."
+    ],
+    "en": [
+      "Don’t tap it. Check in Meu INSS or call 135.",
+      "The INSS doesn’t send staff to your home and doesn’t ask for passwords or transfers.",
+      "If you gave details, tell your bank and change your gov.br password."
+    ]
+  },
+  "reportTo": [
+    "br/inss",
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "INSS alerta! Aposentados são vítimas de golpe envolvendo falsa Prova de Vida",
+      "publisher": "INSS (gov.br)",
+      "url": "https://www.gov.br/inss/pt-br/assuntos/noticias/inss-alerta-aposentados-sao-vitimas-de-golpe-envolvendo-falsa-prova-de-vida",
+      "date": "2026-09-14"
+    }
+  ],
+  "updated": "2026-11-16"
+}

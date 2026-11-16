@@ -1,0 +1,125 @@
+{
+  "id": "br/family-new-number",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "“Seu filho”, “sua filha” ou outro parente",
+    "en": "“Your son”, “your daughter” or another relative"
+  },
+  "name": {
+    "pt": "Golpe do filho com número novo",
+    "en": "The child with a new number"
+  },
+  "how": {
+    "pt": "Chega uma mensagem de um número desconhecido, com a foto de um filho, sobrinho ou outro parente: “troquei de número”. Logo vem uma emergência, como um carro quebrado ou uma conta bloqueada, e o pedido de um Pix urgente, muitas vezes para a conta de outra pessoa. A conversa fica só por texto, sem ligação.",
+    "en": "A message arrives from an unknown number, with the photo of a son, nephew or other relative: “I changed my number”. Soon comes an emergency, like a broken-down car or a blocked account, and a request for an urgent Pix, often to someone else’s account. The conversation stays text-only, with no calls."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Um número desconhecido diz que é seu parente com número novo.",
+        "en": "An unknown number says it’s your relative with a new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "pt": "Conta uma emergência: carro quebrado, conta bloqueada, boleto vencendo.",
+        "en": "They describe an emergency: a broken-down car, a blocked account, a bill due."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Pede um Pix urgente, às vezes para a conta de outra pessoa.",
+        "en": "They ask for an urgent Pix, sometimes to someone else’s account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pt": "Evita ligação: diz que o celular está com problema.",
+        "en": "They avoid calls: they say the phone has a problem."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Oi mãe, esse é meu número novo, salva aí. To enrolado, minha conta travou e preciso pagar um boleto hoje. Consegue fazer um Pix pra mim? Te devolvo amanhã",
+        "en": "Hi mom, this is my new number, save it. I’m in a bind, my account is locked and I need to pay a bill today. Can you send me a Pix? I’ll pay you back tomorrow"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "troquei de numero",
+      "meu numero novo",
+      "salva esse numero",
+      "oi mae numero novo",
+      "golpe do numero novo",
+      "filho pedindo pix",
+      "falso familiar"
+    ],
+    "en": [
+      "changed my number",
+      "my new number",
+      "save this number",
+      "son asking for a pix",
+      "fake relative"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Número novo e já um pedido de dinheiro.",
+      "Não quer ou não pode atender ligação.",
+      "Pede Pix para a conta de outra pessoa."
+    ],
+    "en": [
+      "A new number and a money request right away.",
+      "They won’t or can’t take a call.",
+      "They ask for a Pix to someone else’s account."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Ligue para o número antigo do seu parente, ou para outra pessoa da família, antes de pagar.",
+      "Faça uma pergunta que só ele saberia.",
+      "Se pagou, avise o banco na hora e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Call your relative’s old number, or another family member, before paying.",
+      "Ask a question only they would know.",
+      "If you paid, tell the bank at once and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Operação Máscara combate “golpe do falso familiar” ou “golpe do novo número”",
+      "publisher": "Polícia Civil do Rio Grande do Sul",
+      "url": "https://www.pc.rs.gov.br/operacao-mascara-combate-golpe-do-falso-familiar-ou-golpe-do-novo-numero",
+      "date": "2025-12-10"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "pt": "No Rio Grande do Sul, um homem perdeu R$ 10.135,00 acreditando que estava ajudando o filho. O caso deu início a uma investigação da Polícia Civil que, em dezembro de 2025, levou a prisões em Goiás.",
+    "en": "In Rio Grande do Sul, a man lost R$ 10,135.00 believing he was helping his son. The case started a Civil Police investigation that led to arrests in Goiás in December 2025."
+  }
+}

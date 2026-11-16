@@ -1,0 +1,121 @@
+{
+  "id": "br/fake-boleto",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "email",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "pt": "“Empresa”, “loja” ou “cobrança”",
+    "en": "“Company”, “store” or “billing”"
+  },
+  "name": {
+    "pt": "Boleto falso",
+    "en": "Fake boleto (payment slip)"
+  },
+  "how": {
+    "pt": "Golpistas falsificam boletos de contas, compras ou mensalidades e colocam os dados deles como quem recebe. O boleto pode chegar por e-mail ou mensagem, ou ser alterado num site. Parece igual ao verdadeiro, mas o dinheiro vai para a quadrilha.",
+    "en": "Scammers fake boletos for bills, purchases or monthly fees and put their own details as the payee. The boleto can arrive by email or message, or be altered on a website. It looks just like the real one, but the money goes to the gang."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Chega um boleto por e-mail ou mensagem, às vezes com “desconto”.",
+        "en": "A boleto arrives by email or message, sometimes with a “discount”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Dizem que vence hoje ou que o serviço será cortado.",
+        "en": "They say it is due today or the service will be cut."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Na hora de pagar, o nome de quem recebe não é o da empresa.",
+        "en": "When you pay, the payee’s name is not the company’s."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Prezado cliente, segue a 2ª via da sua fatura com 20% de desconto para pagamento até hoje. Baixe o boleto: [link]",
+        "en": "Dear customer, here is a copy of your bill with 20% off if paid by today. Download the boleto: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "boleto falso",
+      "paguei um boleto falso",
+      "segunda via do boleto",
+      "boleto com desconto",
+      "beneficiario diferente",
+      "boleto adulterado"
+    ],
+    "en": [
+      "fake boleto",
+      "paid a fake boleto",
+      "copy of my bill",
+      "payment slip with a discount",
+      "different payee name"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "O nome ou CNPJ de quem recebe não bate com a empresa.",
+      "Desconto ou pressa fora do normal.",
+      "Boleto que chegou por mensagem sem você pedir."
+    ],
+    "en": [
+      "The payee’s name or CNPJ doesn’t match the company.",
+      "An unusual discount or rush.",
+      "A boleto that came by message without you asking."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Antes de confirmar, confira no app do banco o nome do beneficiário, o valor e o vencimento.",
+      "Tire a 2ª via no site ou app oficial da empresa.",
+      "Se pagou errado, avise o banco e a empresa e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Before confirming, check the payee name, amount and due date in your bank app.",
+      "Get copies of bills from the company’s official site or app.",
+      "If you paid the wrong one, tell the bank and the company and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/seu-banco",
+    "br/procon",
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Golpe da Falsa Venda é o mais aplicado contra clientes bancários no 1º semestre do ano",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4381/pt-br/",
+      "date": "2025-11-11"
+    },
+    {
+      "title": "Saiba quais foram os 10 golpes mais aplicados contra clientes bancários em 2024",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4279/pt-br/",
+      "date": "2025-04-14"
+    }
+  ],
+  "updated": "2026-11-16"
+}

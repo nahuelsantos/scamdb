@@ -20,7 +20,7 @@ test('at most 3 matches, best first', () => {
   assert.ok(r.length <= 3);
   for (let i = 1; i < r.length; i++) assert.ok(r[i - 1].score >= r[i].score);
 });
-test('country filters the catalogue', () => assert.deepEqual(m('me pidieron un codigo de whatsapp', { country: 'br' }).matches, []));
+test('country filters the catalogue', () => assert.deepEqual(m('me pidieron un codigo de whatsapp', { country: 'gb' }).matches, []));
 
 // Signs (ported from eschamuyo verdict.test.mjs)
 test('signs come in a fixed order', () => assert.deepEqual(Object.keys(SIGNS),

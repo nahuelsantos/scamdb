@@ -1,0 +1,127 @@
+{
+  "id": "br/whatsapp-code-clone",
+  "country": "br",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "pt": "“Atendimento” de loja, site de vendas ou empresa",
+    "en": "“Customer service” of a store, sales site or company"
+  },
+  "name": {
+    "pt": "Clonagem do WhatsApp: “me passa o código que chegou”",
+    "en": "WhatsApp cloning: “send me the code you got”"
+  },
+  "how": {
+    "pt": "O golpista tenta instalar o seu WhatsApp no aparelho dele. Para isso precisa do código que o app manda por SMS. Ele escreve fingindo ser do atendimento de um site de vendas ou de uma empresa onde você tem cadastro e pede o código como “confirmação de cadastro” ou “protocolo”. Com o código, fica com sua conta e pede dinheiro aos seus contatos.",
+    "en": "The scammer tries to set up your WhatsApp on their own phone. For that they need the code the app sends by text. They write pretending to be customer service of a sales site or a company you have an account with, and ask for the code as “registration confirmation” or a “protocol number”. With the code, they take over your account and ask your contacts for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Alguém se passa pelo atendimento de uma loja ou empresa.",
+        "en": "Someone poses as customer service for a store or company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Você recebe um SMS com um código do WhatsApp.",
+        "en": "You get a text with a WhatsApp code."
+      }
+    },
+    {
+      "text": {
+        "pt": "Pedem para você enviar esse código como “confirmação”.",
+        "en": "They ask you to send that code as “confirmation”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "pt": "Com sua conta, pedem dinheiro aos seus contatos.",
+        "en": "Using your account, they ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Olá! Aqui é do atendimento. Para confirmar seu cadastro e liberar sua compra, informe o código de 6 dígitos que enviamos por SMS.",
+        "en": "Hi! This is customer service. To confirm your registration and release your purchase, tell us the 6-digit code we sent by text."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "clonaram meu zap",
+      "pediram o codigo",
+      "codigo de seis digitos",
+      "passei o codigo",
+      "confirmar cadastro com codigo",
+      "perdi acesso ao zap",
+      "conta clonada",
+      "clonaram meu whatsapp",
+      "pediram o codigo do whatsapp"
+    ],
+    "en": [
+      "my whatsapp was cloned",
+      "asked for my whatsapp code",
+      "six digit code",
+      "gave them the code",
+      "lost access to my whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Alguém pede o código que chegou por SMS.",
+      "Dizem que é para “confirmar cadastro” ou “protocolo”.",
+      "Nenhuma empresa precisa do seu código do WhatsApp."
+    ],
+    "en": [
+      "Someone asks for the code you got by text.",
+      "They say it’s to “confirm registration” or for a “protocol”.",
+      "No company needs your WhatsApp code."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Nunca passe o código para ninguém.",
+      "Ative a verificação em duas etapas no WhatsApp.",
+      "Se perdeu a conta, avise seus contatos por outro meio e faça um boletim de ocorrência."
+    ],
+    "en": [
+      "Never share the code with anyone.",
+      "Turn on two-step verification in WhatsApp.",
+      "If you lost the account, warn your contacts another way and file a police report."
+    ]
+  },
+  "reportTo": [
+    "br/policia-civil"
+  ],
+  "sources": [
+    {
+      "title": "Golpe da Falsa Venda é o mais aplicado contra clientes bancários no 1º semestre do ano",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4381/pt-br/",
+      "date": "2025-11-11"
+    },
+    {
+      "title": "Saiba quais foram os 10 golpes mais aplicados contra clientes bancários em 2024",
+      "publisher": "Febraban",
+      "url": "https://portal.febraban.org.br/noticia/4279/pt-br/",
+      "date": "2025-04-14"
+    }
+  ],
+  "updated": "2026-11-16"
+}
