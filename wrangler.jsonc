@@ -23,7 +23,7 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/v1/reports", "/v1/isitascam", "/v1/feed/*", "/v1/keys*", "/auth/*"]
+    "run_worker_first": ["/v1/reports", "/v1/isitascam", "/v1/feed/*", "/v1/trends", "/v1/keys*", "/auth/*"]
   },
   // Workers AI (free daily allowance) scores keyed /v1/isitascam checks; keyless checks never use it.
   "ai": { "binding": "AI" },

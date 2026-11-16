@@ -106,3 +106,28 @@ export async function feedBrands(request, env, authKey) {
     examples,
   }, 200, { 'cache-control': 'private, max-age=300' });
 }
+
+export const K_PUBLIC = 5;
+/** GET /v1/trends?country=: the public view. Keyless, cached for an hour, scam counts only (no examples, no brands), and
+ * counts under K_PUBLIC withheld. Built from the same private reports as the organisation feed. */
+export async function publicTrends(request, env, ctx) {
+  const url = new URL(request.url);
+  const country = url.searchParams.get('country');
+  if (!COUNTRIES.includes(country)) throw new HttpError(400, 'invalid_trends', `country: one of ${COUNTRIES.join(', ')}`);
+  const cacheKey = new Request(`https://scamdb.dev/v1/trends?country=${country}`);
+  const cache = globalThis.caches?.default;
+  const hit = cache ? await cache.match(cacheKey) : null;
+  if (hit) return hit;
+  const weeks = 12, now = new Date();
+  const rows = await reportsSince(env, country, weeks, now);
+  const counts = {};
+  for (const r of rows) { if (!r.scam_id) continue; ((counts[r.week] ??= {})[r.scam_id] ??= 0); counts[r.week][r.scam_id]++; }
+  let withheld = 0;
+  for (const w of Object.values(counts)) for (const [k, n] of Object.entries(w)) if (n < K_PUBLIC) { withheld += n; delete w[k]; }
+  const totals = {};
+  for (const [w, c] of Object.entries(counts)) { const n = Object.values(c).reduce((a, b) => a + b, 0); if (n) totals[w] = n; }
+  const res = json({ country, weeks, kMin: K_PUBLIC, generatedAt: now.toISOString(), reports: rows.length >= K_PUBLIC ? rows.length : null, scams: counts, totals, withheld },
+    200, { 'cache-control': 'public, max-age=3600', 'access-control-allow-origin': '*' });
+  if (cache) ctx?.waitUntil?.(cache.put(cacheKey, res.clone()));
+  return res;
+}

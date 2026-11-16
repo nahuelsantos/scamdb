@@ -237,3 +237,11 @@ button.btn.solid { background: var(--ink); color: var(--paper); }
 .report .privacy { border-left: 3px solid var(--accent, var(--ink)); padding-left: var(--s3); }
 .report button[disabled] { opacity: .6; cursor: wait; }
 .pg-report { margin: var(--s4) 0 0; }
+/* Trends */
+.trends .field { display: grid; gap: var(--s2); max-width: 320px; margin-bottom: var(--s5); }
+.trends select { font: 16px/1.5 var(--body); border: 1.5px solid var(--ink); border-radius: 10px; padding: 10px 12px; background: var(--paper); color: var(--ink); }
+.tr-list { list-style: none; padding: 0; display: grid; gap: var(--s4); max-width: 720px; }
+.tr-list li { display: grid; grid-template-columns: 1fr auto; gap: var(--s2) var(--s3); align-items: center; }
+.tr-list a { grid-column: 1 / -1; font-weight: 600; }
+.tr-bar { display: block; height: 10px; border-radius: 6px; background: var(--ink); }
+.tr-n { font-family: var(--mono); }

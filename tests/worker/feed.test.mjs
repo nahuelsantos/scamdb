@@ -58,3 +58,18 @@ test('feed answers never include contacts or what happened', async () => {
     assert.ok(!t.includes('secret@contact.com') && !t.includes('private story'), p);
   }
 });
+
+test('public trends: no key, scam counts only, counts under 5 withheld, no texts or brands', async () => {
+  for (let i = 0; i < 2; i++) await report('ar/falso-anses-pami', 'anses', 8); // 6 in that week now
+  const r = await w.fetch('/v1/trends?country=ar');
+  assert.equal(r.status, 200);
+  const b = await r.json();
+  const week = Object.keys(b.scams)[0];
+  assert.equal(b.scams[week]['ar/falso-anses-pami'], 6);
+  assert.equal(b.scams[week]['ar/whatsapp-codigo'], undefined);
+  assert.equal(b.kMin, 5);
+  const text = JSON.stringify(b);
+  assert.ok(!text.includes('[name]') && !text.includes('anses,') && !text.includes('brands'), 'no texts or brands');
+  assert.equal(r.headers.get('access-control-allow-origin'), '*');
+  assert.equal((await w.fetch('/v1/trends?country=zz')).status, 400);
+});

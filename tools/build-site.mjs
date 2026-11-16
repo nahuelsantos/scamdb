@@ -11,6 +11,7 @@ import { notfound } from '../site/templates/notfound.js';
 import { account } from '../site/templates/account.js';
 import { feed } from '../site/templates/feed.js';
 import { report } from '../site/templates/report.js';
+import { trends } from '../site/templates/trends.js';
 
 export { esc } from '../site/templates/html.js';
 
@@ -48,6 +49,7 @@ export function buildSite(repo, outDir, meta, root) {
   put('account/index.html', account(c));
   put('feed/index.html', feed(c));
   put('report/index.html', report(c));
+  put('trends/index.html', trends(c));
   put('404.html', notfound(ctx));
 
   for (const f of readdirSync(join(CODE, 'site/assets'))) copy(join(CODE, 'site/assets', f), `assets/${f}`);

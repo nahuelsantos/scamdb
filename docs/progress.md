@@ -13,7 +13,10 @@ From the competitor review (`docs/research/competitors-2026-11-16.md`), approved
 - **Docs:** a "Download and reuse" section with the licence and the credit line "Source: scamdb.dev (CC BY 4.0)".
 - **Corrections channel:** a GitHub issue form (`.github/ISSUE_TEMPLATE/correction.yml`) for anyone, including
   brands and agencies named in an entry, plus a "Request a correction" link on every catalogue page.
-- **Next:** a public trends page (aggregated, k-anonymous) in its own PR. It stays empty until reports arrive.
+- **Public trends:** `GET /v1/trends?country=` needs no key and is cached for an hour. It gives 12 weeks of
+  scam counts only: no examples, no brands, and counts under **5** withheld (stricter than the feed's 3). The
+  `/trends/` page (in the nav) shows the top 10 per country, with an honest empty state while there are no
+  reports.
 
 ## 2026-11-16 (evening): reporting on scamdb.dev, competitor research
 
