@@ -134,3 +134,10 @@ test('a 5,000-character message sent as escapes is accepted', async () => {
   const raw = JSON.stringify({ text: 'é'.repeat(5000) }).replace(/é/g, '\\u00e9');
   assert.equal((await check(null, { raw })).status, 200);
 });
+test('a wrong key is 401 invalid_key, not a silent keyless check', async () => {
+  for (const bad of ['Bearer sk_' + 'x'.repeat(43), 'Bearer nope', 'Basic abc']) {
+    const r = await w.fetch('/v1/isitascam', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip(), authorization: bad }, body: JSON.stringify({ text: 'hola' }) });
+    assert.equal(r.status, 401, bad);
+    assert.equal((await r.json()).error, 'invalid_key');
+  }
+});

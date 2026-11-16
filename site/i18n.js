@@ -76,7 +76,7 @@ export const UI = {
       'The score is not a probability yet: it will be checked against 200 labelled messages per country first.',
       'Screenshots and voice notes are read by Workers AI and never stored; the answer includes input.text, what was read. If nothing can be read you get 422 unreadable.',
       'Nothing you send is stored unless report is true (then only the text, never the file).'],
-    dKeys: 'Keys and limits', dKeysP: 'Get a free key on your account page by signing in with GitHub. Send it as Authorization: Bearer sk_…. Limits per UTC day: checks without a key, 10 per IP; with a key, 50. Reports without a key, 10 per IP; with a key, 200. Over the limit you get 429 with Retry-After.',
+    dKeys: 'Keys and limits', dKeysP: 'Get a free key on your account page by signing in with GitHub. Send it as Authorization: Bearer sk_…. Limits per UTC day: checks without a key, 10 per IP; with a key, 50. Reports without a key, 10 per IP; with a key, 200. Over the limit you get 429 with Retry-After. A wrong or deleted key gets 401 invalid_key (it is never treated as no key).',
     nfTitle: 'Not found · scamdb', nfDesc: 'Page not found.', nfH: 'Not found', nfA: 'That page doesn’t exist. Try the', nfOr: 'or the', nfCatalogue: 'catalogue', nfDocs: 'docs',
   },
 };

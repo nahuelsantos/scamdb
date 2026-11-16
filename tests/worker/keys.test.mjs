@@ -36,7 +36,7 @@ test('POST again replaces the key and the old one stops working', async () => {
   const { key: first } = await create();
   const { key: second } = await create();
   assert.notEqual(first, second);
-  assert.equal((await report(first)).status, 403); // no key and no Turnstile token
+  assert.equal((await report(first)).status, 401); // the old key is now invalid_key
   assert.equal((await report(second)).status, 201);
 });
 test('a keyed report needs no Turnstile, counts in usage and is limited at 200 a day', async () => {

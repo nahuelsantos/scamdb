@@ -74,3 +74,8 @@ test('no raw IP is stored anywhere', async () => {
   const reports = await w.db.prepare('SELECT * FROM reports').all();
   assert.ok(!JSON.stringify(reports.results).includes('192.0.2.77'));
 });
+test('a report with a wrong key is 401 invalid_key', async () => {
+  const r = await post({ ...ok }, { headers: { authorization: 'Bearer sk_' + 'y'.repeat(43) } });
+  assert.equal(r.status, 401);
+  assert.equal((await r.json()).error, 'invalid_key');
+});
