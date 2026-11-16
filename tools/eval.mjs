@@ -59,7 +59,7 @@ if (flag('--ai')) {
     const matcher = matchMessage(m.text, repo.entries, { country: m.country });
     const diag = {};
     const scored = await scoreWithWorkersAI(ai, { text: m.text, catalogue, country: m.country, hints: matcher.matches.map((x) => x.id) }, { diag, timeoutMs: 20000 });
-    if (!scored) { failures[diag.reason] = (failures[diag.reason] ?? 0) + 1; return matcher; }
+    if (!scored) { failures[diag.reason] ??= { count: 0, example: diag.detail }; failures[diag.reason].count++; return matcher; }
     return combine(matcher, scored, m.text);
   };
   out += '\n' + report('Matcher + Workers AI (as the API answers keyed checks)', await evaluate(messages, engine, { concurrency: 3 }));

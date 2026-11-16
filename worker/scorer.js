@@ -10,7 +10,7 @@ const SIMILAR = 0.6;
 const BATCH = 50;
 const VERDICTS = ['scam', 'suspicious', 'not_recognised'];
 
-let vectors = null; // { version, list: [{ id, v }] }
+let vectors = null; // { version, list: Promise<[{ id, v }]> }
 export const _resetCache = () => { vectors = null; };
 
 const entryText = (e) => [...Object.values(e.name ?? {}), ...Object.values(e.phrases ?? {}).flat()].join(' · ');
@@ -26,13 +26,22 @@ function cosine(a, b) {
 }
 const withTimeout = (p, ms) => Promise.race([p, new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), ms))]);
 
-async function similar(ai, text, catalogue) {
+/** The catalogue's vectors. Concurrent checks share one in-flight computation; a failed one is not kept. */
+function catalogueVectors(ai, catalogue) {
   if (vectors?.version !== catalogue.version) {
-    const list = await embedAll(ai, catalogue.entries.map(entryText));
-    vectors = { version: catalogue.version, list: catalogue.entries.map((e, i) => ({ id: e.id, v: list[i] })) };
+    const version = catalogue.version;
+    const list = embedAll(ai, catalogue.entries.map(entryText))
+      .then((l) => catalogue.entries.map((e, i) => ({ id: e.id, v: l[i] })));
+    const entry = { version, list, done: false };
+    vectors = entry;
+    list.then(() => { entry.done = true; }, () => { if (vectors === entry) vectors = null; });
   }
-  const [q] = await embedAll(ai, [text]);
-  return vectors.list.map(({ id, v }) => ({ id, similarity: cosine(q, v) })).sort((a, b) => b.similarity - a.similarity);
+  return vectors.list;
+}
+
+async function similar(ai, text, catalogue) {
+  const [list, [q]] = await Promise.all([catalogueVectors(ai, catalogue), embedAll(ai, [text])]);
+  return list.map(({ id, v }) => ({ id, similarity: cosine(q, v) })).sort((a, b) => b.similarity - a.similarity);
 }
 
 
@@ -95,6 +104,7 @@ export async function scoreWithWorkersAI(ai, { text, catalogue, country = null, 
     })(), timeoutMs);
   } catch (e) {
     const timedOut = e?.message === 'timeout';
+    if (timedOut && vectors && !vectors.done) vectors = null; // a stuck catalogue computation must not block later checks
     Object.assign(diag, timedOut
       ? { reason: 'timeout', detail: `${[...pending].join(' and ')} still running after ${Date.now() - started} ms` }
       : { reason: e?.stage ?? 'chat', detail: clip(e?.message ?? e) });

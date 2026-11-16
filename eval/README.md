@@ -16,6 +16,9 @@ command below. It uses about 200 checks of the daily free Workers AI allowance a
 CLOUDFLARE_ACCOUNT_ID=… CLOUDFLARE_API_TOKEN=… node tools/eval.mjs --ai
 ```
 
+In a cloud session where a network proxy adds the token, give Node the proxy and its certificate and use the token
+placeholder `proxy-injected`: add `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` before the command.
+
 - **Reports:** `report-matcher-<version>.md` keeps the results per matcher version.
 - **Floors:** `tests/unit/eval.test.mjs` holds floors that CI enforces. Raise a floor when a change improves its
   number; never lower one to make a change pass.
