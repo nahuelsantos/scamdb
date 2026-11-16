@@ -1,0 +1,108 @@
+{
+  "id": "ca/task-job-crypto",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "en": "A “recruiter” using the name of a real company"
+  },
+  "name": {
+    "en": "Task job scam: “boost products online, pay to unlock your earnings”"
+  },
+  "how": {
+    "en": "A message offers an easy work-from-home job you didn’t apply for: rating or “boosting” products, apps or videos, processing orders on an online store, or doing surveys. You install their app or platform and see commissions add up, and may even get a small payout. Then you are told to deposit money, usually in crypto, to “upgrade”, “fix order errors” or unlock higher commissions. The balance can never be withdrawn."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or WhatsApp message offers flexible online work for good pay, using a real company’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You sign up on their platform and complete simple tasks; a small payment makes it look real."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "To continue or unlock your earnings you must deposit money, often in crypto."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Your balance grows but you can’t withdraw it, and they ask for more."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hello! I am a recruiter from a digital marketing company. We have flexible online work, 30–60 minutes a day, earn $200–$500 daily. No experience needed. Interested? Reply YES and I will add you to our WhatsApp group."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "job offer i didn't apply for",
+      "online job boosting products",
+      "had to deposit crypto to unlock earnings",
+      "task job asked me to pay",
+      "recruiter on whatsapp offered work from home",
+      "can't withdraw my commission",
+      "pay to upgrade my account level"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A job offer you didn’t apply for, by text, WhatsApp or social media.",
+      "High pay for simple tasks like rating products or boosting apps.",
+      "You must pay deposits, “upgrade fees” or “unlock payments”.",
+      "You see a balance but can’t withdraw it.",
+      "You are asked to receive and forward money through your bank account."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never pay to get or keep a job.",
+      "Check the company on its official website and call its official number.",
+      "Don’t download apps or software from an unknown recruiter.",
+      "Never move money for someone else through your account: you could be used as a money mule.",
+      "Report it to your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/cafc",
+    "ca/local-police",
+    "ca/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Job",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/scams-fraudes/job-emploi-eng.htm",
+      "date": "2026-01-16"
+    },
+    {
+      "title": "The sophistication of fraud",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/03/sophistication-fraud-fraude-eng.htm",
+      "date": "2026-03-10"
+    }
+  ],
+  "updated": "2026-11-16"
+}

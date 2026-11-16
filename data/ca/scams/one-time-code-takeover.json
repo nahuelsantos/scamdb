@@ -1,0 +1,105 @@
+{
+  "id": "ca/one-time-code-takeover",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "en": "A “service provider”, “security team” or a friend"
+  },
+  "name": {
+    "en": "“I sent you a code by mistake”: account takeover with your one-time code"
+  },
+  "how": {
+    "en": "A fraudster who knows your phone number or email starts logging in to your account: WhatsApp, Facebook, email, banking or your phone account. This sends you a real one-time code. They then contact you pretending to be the company, a security team or someone you know, and ask you to share the code, sometimes saying it was sent to you by mistake. With the code they take over the account, lock you out and use it to scam your contacts."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You get a one-time code you didn’t ask for."
+      }
+    },
+    {
+      "text": {
+        "en": "A message or call from a “company” or a friend says the code was sent by mistake or is needed to secure your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask you to send them the code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "You are locked out, and your contacts start getting messages asking for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hey sorry! I accidentally sent my verification code to your number. Can you forward it to me? It’s urgent, I’m locked out of my account."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "sent me a code by mistake",
+      "asked me to forward a verification code",
+      "they asked for my one time passcode",
+      "locked out of my whatsapp account",
+      "friend asked for the code i got",
+      "hacked after sharing a code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A one-time code or password reset you didn’t request.",
+      "Anyone asking for a code that was sent to you, even a friend or a “company”.",
+      "Being locked out of an account unexpectedly.",
+      "Friends getting unusual messages from your account."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never share a one-time code with anyone, not even family or the company itself.",
+      "Turn on two-step verification and use a different password for each account.",
+      "If a friend asks for a code, call them on their usual number to check.",
+      "If you lost an account, recover it through the official app and warn your contacts. Report it to the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/cafc",
+    "ca/cyber-centre",
+    "ca/local-police"
+  ],
+  "sources": [
+    {
+      "title": "Securing your online accounts – protect your one-time passcodes",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/04/one-time-passcodes-codes-usage-unique-eng.htm",
+      "date": "2026-04-20"
+    },
+    {
+      "title": "Keeping fraudsters out of your accounts",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/features-vedette/2026/10/out-accounts-pas-prendre-compte-eng.htm",
+      "date": "2026-10-06"
+    }
+  ],
+  "updated": "2026-11-16"
+}

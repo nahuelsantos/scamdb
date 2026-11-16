@@ -98,3 +98,5 @@ test('a scam whose newest source is over 5 years old must be archived', () =>
   assert.match(errorsWith('too-old.json', withSource('2021-01-01', 'fading')), /needs a source from the 5 years before updated/));
 test('an archived scam can be older than 5 years', () =>
   assert.doesNotMatch(errorsWith('archived.json', withSource('2019-01-01', 'archived')), /years before updated/));
+test('rejects a contact listed twice in reportTo', () =>
+  assert.match(errorsWith('dup-report.json', (e) => ({ reportTo: [e.reportTo[0], e.reportTo[0]] })), /reportTo lists "[^"]+" more than once/));

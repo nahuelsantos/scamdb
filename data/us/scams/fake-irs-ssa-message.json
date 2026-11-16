@@ -1,0 +1,120 @@
+{
+  "id": "us/fake-irs-ssa-message",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "en": "“IRS” or “Social Security Administration”"
+  },
+  "name": {
+    "en": "Fake IRS or Social Security message: “your refund” or “your statement is ready”"
+  },
+  "how": {
+    "en": "An email or text looks like it comes from the IRS or the Social Security Administration, with official logos and colors. It says your tax refund is waiting, your bank details need updating, or your Social Security statement is ready to download, and gives a link, attachment or QR code. The link leads to a fake government site that steals your personal and bank details or installs malware. The IRS doesn’t ask for bank details by email, text or phone, and Social Security doesn’t send download links you didn’t ask for."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email or text uses the IRS or Social Security name and logo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says a refund, a payment or your statement is waiting for you."
+      }
+    },
+    {
+      "text": {
+        "en": "It gives a link, attachment or QR code to “verify” your account or download a document."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The fake site asks for your Social Security number, bank details or card number."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "IRS Notice: You are eligible for a tax refund of $1,284.50. Your direct deposit information is missing. Verify your bank account within 48 hours to receive your refund: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Social Security Administration: Your 2026 Social Security Statement is now available. Download your statement here: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "irs text about my refund",
+      "update bank details for tax refund",
+      "social security statement email",
+      "download my social security statement",
+      "irs email with qr code",
+      "verify my irs account link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A text or email from the IRS or Social Security you didn’t expect.",
+      "A link, attachment or QR code to get a refund or a statement.",
+      "Requests for your bank details, card number or Social Security number.",
+      "Pressure to act within hours.",
+      "A sender address that doesn’t end in .gov."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click links, scan QR codes or open attachments. Delete the message.",
+      "Check your refund or statement yourself: type the IRS or Social Security website address into your browser and sign in to your online account.",
+      "Report fake IRS emails and texts to the IRS, and fake Social Security messages to the SSA Inspector General.",
+      "If you entered bank or card details, contact your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/irs-phishing",
+    "us/ssa-oig",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Dirty Dozen tax scams for 2026: IRS reminds taxpayers to watch out for dangerous threats",
+      "publisher": "Internal Revenue Service",
+      "url": "https://www.irs.gov/newsroom/dirty-dozen-tax-scams-for-2026-irs-reminds-taxpayers-to-watch-out-for-dangerous-threats",
+      "date": "2026-03-05"
+    },
+    {
+      "title": "Is that CP53E notice from the IRS a scam?",
+      "publisher": "Taxpayer Advocate Service (IRS)",
+      "url": "https://www.taxpayeradvocate.irs.gov/news/tax-tips/is-that-cp53e-notice-from-the-irs-a-scam/2026/05/",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "SSA Office of the Inspector General Warns Public of Surge in Fraudulent Social Security Statement Emails",
+      "publisher": "Social Security Administration Office of the Inspector General",
+      "url": "https://oig.ssa.gov/scam-alerts/2026-02-20-ssa-office-of-the-inspector-general-warns-public-of-surge-in-fraudulent-social-security-statement-emails/",
+      "date": "2026-02-19"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "us/fake-police-government"
+  ]
+}

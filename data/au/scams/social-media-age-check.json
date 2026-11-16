@@ -1,0 +1,112 @@
+{
+  "id": "au/social-media-age-check",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "en": "“Instagram”, “TikTok”, an “age verification service” or “eSafety”"
+  },
+  "name": {
+    "en": "Social media ban: “verify your age or lose your account”"
+  },
+  "how": {
+    "en": "Since 10 December 2025 some social media platforms must stop people under 16 having accounts. Scamwatch warns scammers may pretend to be a platform or an age verification company and ask you to verify your age or lose your account. Others pretend to be government or police, say you broke the new law and threaten a fine. Some sell fake IDs or “age-verified” accounts, or text parents as their teenager needing help to verify their age. No real platform asks for payment for these laws."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message says it is from a social media platform, an age check company or the government."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you must verify your age now or lose your account, or pay a fine for breaking the law."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It sends you to a link to upload your ID or a selfie."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "It asks for a payment, or for your ID, to keep the account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Instagram: Under new Australian law your account must be age verified within 24 hours or it will be permanently deleted. Verify now: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "eSafety notice: Your account has breached the social media minimum age law. Pay the $180 penalty today to avoid further action: [link]"
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "en": "Hi Mum it’s me, I need your licence photo to verify my age on TikTok or they’ll delete my account, can you send it?"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "verify my age or lose my account",
+      "social media age verification text",
+      "fine for breaking the social media ban",
+      "upload my id to keep my account",
+      "fake id for social media",
+      "under 16 social media law message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Pressure to verify your age quickly by link.",
+      "Any request to pay because of the new age laws.",
+      "Threats of a fine from “government” or “police”.",
+      "A child asking you for your ID through a new number or app."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Check how the platform is really checking ages inside its own app.",
+      "Don’t pay anything: no real platform charges for these laws.",
+      "If you shared ID or paid, contact your bank and IDCARE and report to Scamwatch."
+    ]
+  },
+  "reportTo": [
+    "au/scamwatch",
+    "au/idcare",
+    "au/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: social media minimum age scams",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-social-media-minimum-age-scams",
+      "date": "2025-12-03"
+    }
+  ],
+  "updated": "2026-11-16"
+}

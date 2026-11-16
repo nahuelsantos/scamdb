@@ -1,0 +1,102 @@
+{
+  "id": "ca/tech-support-popup",
+  "country": "ca",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "en": "“Microsoft” or “UltraViewer” security alert"
+  },
+  "name": {
+    "en": "Fake virus pop-up: “your computer is hacked, call this number”"
+  },
+  "how": {
+    "en": "A pop-up on your computer, claiming to be from Microsoft or UltraViewer, says your system has been hacked or infected and tells you to call a number. The person who answers asks to connect to your computer and convinces you to pay hundreds or thousands of dollars to remove viruses that don’t exist, sometimes in crypto or gift cards."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A pop-up says your computer is hacked or infected."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It tells you to call a number right away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "The “technician” asks to connect to your computer."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They ask you to pay to remove the virus, sometimes in crypto or gift cards."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "MICROSOFT SECURITY ALERT: Your computer has been infected with spyware. Your banking information is at risk. Do not restart your computer. Call Microsoft Support immediately."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "pop up said my computer was hacked",
+      "called the number on the screen",
+      "microsoft support asked to connect to my computer",
+      "paid to remove a virus",
+      "computer locked with a warning",
+      "technician wanted remote access",
+      "microsoft security alert pop up",
+      "call microsoft support number",
+      "spyware warning on my computer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A pop-up with a phone number to call.",
+      "Warnings that your computer is hacked or your bank details are at risk.",
+      "Someone asking to connect to your computer.",
+      "Payment by crypto or gift cards for “support”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t call the number or click links in the pop-up. Close the browser or restart the computer.",
+      "Microsoft doesn’t put phone numbers in error messages or make unsolicited calls.",
+      "If someone connected to your computer, take it to a trusted local repair shop and call your bank.",
+      "Report it to your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/your-bank",
+    "ca/local-police",
+    "ca/cafc"
+  ],
+  "sources": [
+    {
+      "title": "Police report an increase in online frauds",
+      "publisher": "Hunters Bay Radio",
+      "url": "https://www.muskokaradio.com/news/local/police-report-an-increase-in-online-frauds/",
+      "date": "2025-11-06"
+    }
+  ],
+  "updated": "2026-11-16"
+}

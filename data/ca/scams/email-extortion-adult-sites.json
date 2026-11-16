@@ -1,0 +1,94 @@
+{
+  "id": "ca/email-extortion-adult-sites",
+  "country": "ca",
+  "lang": "en",
+  "status": "fading",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "en": "An anonymous “hacker”"
+  },
+  "name": {
+    "en": "Extortion email: “I recorded you on adult websites, pay in Bitcoin”"
+  },
+  "how": {
+    "en": "An email includes your full name, phone number, home address and sometimes a picture of your house from a map site. It claims your device was hacked and that you were recorded visiting explicit websites, and threatens to send the video to your contacts unless you pay in cryptocurrency, sometimes by QR code. Some cite a real old password from a data breach. There is no video."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email shows your name, address or an old password to make it look real."
+      }
+    },
+    {
+      "text": {
+        "en": "It claims you were recorded on adult websites."
+      }
+    },
+    {
+      "text": {
+        "en": "It threatens to send the video to your contacts within a deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It demands payment in Bitcoin, sometimes with a QR code."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "I know your address and I have access to your device. I recorded you while you were watching adult websites. Send $1,500 in Bitcoin to the wallet below within 48 hours or the video goes to all your contacts."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "email says they recorded me on adult sites",
+      "extortion email with my address",
+      "pay bitcoin or they send the video",
+      "email with a picture of my house",
+      "hacker email with my old password"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Threats to share a video unless you pay.",
+      "Payment demanded in Bitcoin or by QR code.",
+      "Your personal details or an old password, to make it look real."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t reply and don’t pay.",
+      "Change any password mentioned in the email and turn on two-step verification.",
+      "Report it to your local police and the Canadian Anti-Fraud Centre."
+    ]
+  },
+  "reportTo": [
+    "ca/cafc",
+    "ca/local-police",
+    "ca/cyber-centre"
+  ],
+  "sources": [
+    {
+      "title": "Extortion",
+      "publisher": "Canadian Anti-Fraud Centre",
+      "url": "https://antifraudcentre-centreantifraude.ca/scams-fraudes/extortion-extorsion-eng.htm",
+      "date": "2024-10-02"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "ca/youth-sextortion"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "id": "nz/recovery-scam",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "en": "“Police”, “your bank’s fraud team” or a “recovery agency”"
+  },
+  "name": {
+    "en": "Recovery scam: “we can get back the money you lost to scammers”"
+  },
+  "how": {
+    "en": "After you lose money to a scam, especially if you posted about it online, someone contacts you offering to get it back. They claim to be police, your bank’s fraud team or a recovery company, or a fake profile says a recovery “expert” helped them. They ask for a fee, or send you to a website to “sign up” for the refund that asks for your bank login. They then take more of your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone contacts you after you lost money to a scam, sometimes after you posted about it online."
+      }
+    },
+    {
+      "text": {
+        "en": "They say they are police, your bank or a recovery company, and that your money has been found."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask for a fee, or send you a link to a site that asks for your bank username and password."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "They push you to act fast, then take more money."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Good news. Our recovery team has traced the funds you lost in the investment scam. To release your refund, register on our secure portal with your banking login: [link]"
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "en": "I saw your post about getting scammed. The same thing happened to me, and this recovery expert got all my money back. Message them today, they only take a few cases."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "someone offered to recover my lost money",
+      "recovery agency contacted me after the scam",
+      "funds recovered pay a fee",
+      "refund portal asked for my bank login",
+      "saw my post about being scammed"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A stranger offers to get back money you lost to a scam.",
+      "They ask for a fee, tax or charge before the refund.",
+      "A refund website asks for your bank login.",
+      "They say they found you from your post about being scammed.",
+      "Pressure to act fast."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t pay anyone who says they can recover lost money.",
+      "Never give your bank login on a website from a call, email or message.",
+      "Check by calling your bank or Police yourself on official numbers.",
+      "If you gave details, contact your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Lost money in a scam? Don’t fall for this common tactic",
+      "publisher": "Own Your Online (National Cyber Security Centre)",
+      "url": "https://www.ownyouronline.govt.nz/news-and-alerts/lost-money-in-a-scam-dont-fall-for-this-common-tactic/",
+      "date": "2024-09-10"
+    },
+    {
+      "title": "FMA warns of ‘recovery scams’ hitting already-scammed Kiwis",
+      "publisher": "NZ Adviser (MPA)",
+      "url": "https://www.mpamag.com/nz/news/general/fma-warns-of-recovery-scams-hitting-alreadyscammed-kiwis/563369",
+      "date": "2026-01-28"
+    }
+  ],
+  "updated": "2026-11-16"
+}

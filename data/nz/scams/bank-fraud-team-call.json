@@ -1,0 +1,128 @@
+{
+  "id": "nz/bank-fraud-team-call",
+  "country": "nz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Your bank’s fraud team”"
+  },
+  "name": {
+    "en": "Fake bank fraud team: “there are suspicious transactions on your account”"
+  },
+  "how": {
+    "en": "Someone calls, texts or emails claiming to be from your bank’s fraud team and says there is suspicious activity on your account. The caller may already know some of your details, and the number shown may look identical to the bank’s real number. They ask for passwords, PINs or the codes the bank sends you, ask you to move money to a “safe” account or install remote access software, or ask you to key in a number sequence “to stop scam calls” that secretly forwards your calls to them. With this they can get into your banking and take your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call, text or email says it is your bank’s fraud team and that your account is at risk."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They know some of your details and say you must act now to protect your money."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for your password, PIN or the code just sent to your phone, or to key in a number sequence on your phone."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They may ask you to install remote access software or log in to your banking while they watch."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They ask you to move your money to a “safe” account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is the fraud team from your bank. We have detected suspicious transactions on your account. To protect your funds I will send you a code now, please read it back to me to verify your identity."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "en": "Your account has been temporarily restricted due to unusual activity. Verify your identity now to avoid suspension: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank fraud team called me",
+      "suspicious transactions on my account",
+      "asked me to read out the code",
+      "move my money to a safe account",
+      "dial a number sequence to stop scam calls",
+      "caller knew my details",
+      "bank asked for remote access"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "An unexpected call or message from your “bank” says your account is at risk.",
+      "They ask for passwords, PINs, verification codes or card details.",
+      "They ask you to move money to a “safe” account.",
+      "They ask you to install software or give them remote access.",
+      "They ask you to key in a long number sequence on your phone.",
+      "The caller ID shows your bank’s number: this can be faked."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up or delete the message. A real bank won’t mind you checking.",
+      "Call your bank yourself on the number on your card or its official website.",
+      "Never share passwords, PINs or codes, and never let anyone access your device.",
+      "Don’t click links in unexpected texts or emails.",
+      "If you shared details or moved money, contact your bank straight away and report it."
+    ]
+  },
+  "reportTo": [
+    "nz/your-bank",
+    "nz/police-105",
+    "nz/netsafe"
+  ],
+  "sources": [
+    {
+      "title": "Scammers switch tactics as bank impersonation scams surge",
+      "publisher": "Netsafe",
+      "url": "https://resource.netsafe.org.nz/Netsafe-scams-update-August-2026.pdf",
+      "date": "2026-09-01"
+    },
+    {
+      "title": "ASB warns customers as bank impersonation scams rise in New Zealand",
+      "publisher": "NZ Adviser (MPA)",
+      "url": "https://www.mpamag.com/nz/news/general/asb-warns-customers-as-bank-impersonation-scams-rise-in-new-zealand/594702",
+      "date": "2026-10-23"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "nz/bank-card-letterbox",
+    "nz/sms-blaster-bank-text"
+  ]
+}

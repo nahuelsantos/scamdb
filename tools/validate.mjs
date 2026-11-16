@@ -124,6 +124,7 @@ export function validateRepo(root) {
     for (const [i, st] of (s.steps ?? []).entries()) if (st.signal && !signalIds.has(st.signal)) errors.push(`${path}: steps[${i}]: unknown signal "${st.signal}"`);
     for (const r of s.related ?? []) if (!entryIds.has(r)) errors.push(`${path}: unknown related "${r}"`);
     for (const r of s.reportTo ?? []) if (!contactIds.has(r)) errors.push(`${path}: unknown contact "${r}"`);
+    for (const r of new Set((s.reportTo ?? []).filter((r, i, a) => a.indexOf(r) !== i))) errors.push(`${path}: reportTo lists "${r}" more than once`);
 
     for (const [lang, list] of Object.entries(s.phrases ?? {})) {
       if (!Array.isArray(list)) continue;

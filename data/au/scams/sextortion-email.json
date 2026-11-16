@@ -1,0 +1,93 @@
+{
+  "id": "au/sextortion-email",
+  "country": "au",
+  "lang": "en",
+  "status": "fading",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "en": "An anonymous “hacker”"
+  },
+  "name": {
+    "en": "“I hacked your webcam”: sextortion email asking for crypto"
+  },
+  "how": {
+    "en": "An email claims the sender hacked your computer or webcam and recorded sexual images or videos of you. It threatens to send them to your contacts unless you pay in cryptocurrency, usually within a short time. To seem real it includes your name, birth date and sometimes your mobile number or address, most likely from old data breaches. Scamwatch says there is no evidence these senders have access to your webcam or computer."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email says your computer or webcam was hacked and you were recorded."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It includes your name, birth date or address to scare you."
+      }
+    },
+    {
+      "text": {
+        "en": "It demands cryptocurrency to a wallet address, with a deadline."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "It threatens to send the video to your contacts if you don’t pay."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "I know your date of birth and where you live. I hacked your device and recorded you through your webcam. Send $1,500 in Bitcoin to the wallet below within 48 hours or the video goes to all your contacts."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "email says they hacked my webcam",
+      "threatening to send a video to my contacts",
+      "pay in bitcoin or they release it",
+      "email with my date of birth and address",
+      "blackmail email asking for crypto"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A threatening email you didn’t expect.",
+      "Your personal details used to scare you.",
+      "A demand for cryptocurrency with a deadline."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t reply and don’t pay. Delete the email.",
+      "Change the password shown in the email if it is one you use, and turn on multi-factor authentication.",
+      "If you’re worried about your device, get it checked. If you feel distressed, talk to someone you trust."
+    ]
+  },
+  "reportTo": [
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Bulk email extortion scam",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-bulk-email-extortion-scam",
+      "date": "2024-10-24"
+    }
+  ],
+  "updated": "2026-11-16"
+}

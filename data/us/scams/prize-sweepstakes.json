@@ -1,0 +1,100 @@
+{
+  "id": "us/prize-sweepstakes",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "en": "“A well-known sweepstakes” or a charity you support"
+  },
+  "name": {
+    "en": "Fake prize: “you won, just pay the fees to claim it”"
+  },
+  "how": {
+    "en": "A call, message or social media ad says you won a sweepstakes or a big prize, sometimes tied to a charity you have given to. Caller ID may show a real company or agency. To claim the prize they ask you to pay taxes or fees, or to give your Social Security number or bank details. Real prizes are free, and it is illegal to ask you to pay to enter or to win."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call or message says you won a sweepstakes or prize."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It uses the name of a well-known sweepstakes, company or charity."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You must claim it quickly or lose it."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for fees, taxes or your Social Security number to release the prize."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Congratulations! You have been selected as our grand prize winner of $2,500,000 and a new car. To release your winnings, a one-time processing and tax fee of $499 is required. Call your claims agent today."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "won a sweepstakes i never entered",
+      "pay fees to claim my prize",
+      "prize winner call asked for money",
+      "taxes before i get my winnings",
+      "they asked my social security number for prize",
+      "charity sweepstakes call"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "You “won” something you never entered.",
+      "Fees, taxes or a gift card payment to get the prize.",
+      "Requests for your Social Security number or bank details.",
+      "Caller ID showing a known company or agency."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never pay to claim a prize. Real prizes are free.",
+      "Don’t give your Social Security number or bank details.",
+      "Look up the sweepstakes or charity yourself, with words like “scam” or “complaint”, and scroll past paid ads.",
+      "Don’t trust caller ID."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/ftc"
+  ],
+  "sources": [
+    {
+      "title": "Spot scammers impersonating well-known charities and sweepstakes",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2026/10/spot-scammers-impersonating-well-known-charities-and-sweepstakes",
+      "date": "2026-10-26"
+    }
+  ],
+  "updated": "2026-11-16"
+}

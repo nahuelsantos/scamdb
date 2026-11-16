@@ -1,0 +1,117 @@
+{
+  "id": "us/bank-fraud-alert-zelle",
+  "country": "us",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "en": "“Your bank’s fraud department”"
+  },
+  "name": {
+    "en": "Fake bank fraud alert: “move your money to a safe account with Zelle”"
+  },
+  "how": {
+    "en": "A text or call looks like a fraud alert from your bank about a suspicious charge. When you reply or call back, a fake fraud department says your account is at risk. To “protect” your money they ask for the verification code your bank sends you, or walk you through moving money with Zelle or a transfer to a new account they say is in your name, but it belongs to the scammer. Bank transfers have fewer protections than credit cards, so the money is often gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or call says there is a suspicious charge or fraud on your bank account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "A fake fraud department says your money is at risk and you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you to read out the code your bank just texted you."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They walk you through sending money with Zelle or a transfer to a “safe” account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Bank Fraud Alert: Did you attempt a Zelle payment of $750.00? Reply YES or NO. If you did not authorize this, a fraud specialist will contact you."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank fraud alert text",
+      "fraud department told me to use zelle",
+      "move my money to a safe account",
+      "they asked for my bank code",
+      "sent zelle to protect my account",
+      "suspicious charge text from bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A “fraud department” asks you to move or send money.",
+      "Being asked to read out a verification code.",
+      "A Zelle payment or transfer to an account they give you, even one “in your name”.",
+      "Pressure to act before you can hang up and check."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never move money to “protect it”. Your bank will never ask you to.",
+      "Never share a verification code with anyone who calls or texts you.",
+      "Hang up and call your bank on the number on the back of your card or your statement.",
+      "If you sent money, tell your bank straight away and ask them to reverse the payment."
+    ]
+  },
+  "reportTo": [
+    "us/your-bank",
+    "us/ftc",
+    "us/ic3"
+  ],
+  "sources": [
+    {
+      "title": "Is that unexpected text a scam?",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2025/04/unexpected-text-scam",
+      "date": "2025-04-16"
+    },
+    {
+      "title": "Got a call about fraud activity on your bank account? It could be a scammer",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2024/06/got-call-about-fraud-activity-your-bank-account-it-could-be-scammer",
+      "date": "2024-07-08"
+    },
+    {
+      "title": "Do you use payment apps like Venmo, Cash App, or Zelle? Read this",
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/08/do-you-use-payment-apps-venmo-cashapp-or-zelle-read",
+      "date": "2023-08-14"
+    },
+    {
+      "title": "Attorney General James Sues Company Behind Zelle for Enabling Widespread Fraud",
+      "publisher": "New York State Attorney General",
+      "url": "https://ag.ny.gov/press-release/2025/attorney-general-james-sues-company-behind-zelle-enabling-widespread-fraud",
+      "date": "2025-08-13"
+    }
+  ],
+  "updated": "2026-11-16"
+}
