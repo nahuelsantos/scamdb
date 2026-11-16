@@ -23,13 +23,26 @@ export const SIGNS = {
 
 // A genuine one-time-code text warns you not to share the code ("no lo compartas", "never share", "we will never ask").
 // That warning cancels asks_for_code unless the message also asks you to hand the code over.
-const CODE_WARNING = /no (lo|la|los|las) compartas|no compartas|nunca (te|le|se) (lo|la) (va a |vamos a |van a )?(pedir|pedira|solicit)|nunca te (pedira|pediremos|solicitara)|nao (compartilhe|passe|informe)|nunca (pede|solicita|pedimos)|(don t|do not|never) share|will never (call|text|ask|message)|never ask(s)? (you )?for|nor (lo|la) (compartas|des)/;
+const CODE_WARNING = /no (lo|la|los|las) compartas|no compartas|nunca (te|le|se) (lo|la) (va a |vamos a |van a )?(pedir|pedira|solicit)|nunca te (pedira|pediremos|solicitara)|nao (compartilhe|passe|informe)|nunca (pede|solicita|pedimos)|(don t|do not|never) share|will never (call|text|ask|message)|never ask(s)? (you )?for|nunca (te |le )?(vamos a |va a |van a )?(pedir|pediremos|pedira|solicitaremos)|nao pedimos|nunca pedimos|nor (lo|la) (compartas|des)/;
 const CODE_HANDOVER = new RegExp(String.raw`(pasa|manda|envia|dicta|deci|reenvia|da|comparti)(me|nos)\b( \w+){0,3} (el |la |ese |esa )?(codigo|clave|pin)|me (pasas|mandas|envias|dictas|decis|das|reenvias|compartis) (el |la |ese |esa )?(codigo|clave|pin)|(me |nos )?(manda|passa|envia|informa)( \w+){0,2} (o |esse |este )?codigo|(send|read|tell|give|forward|text)( \w+){0,4} (code|passcode|password|pin)\b|\b(code|passcode|pin) (we|i|they) (sent|texted)`);
 
-/** The sign ids that apply, after context rules (the genuine-code warning). */
+// Words that cancel the code warning's exception: a request is still a request when it sits next to "don't share".
+// Negated clauses ("we'll never ask you to tell us your PIN") are removed before looking for a handover request.
+const NEGATED = /\b(never|nunca|nao|no|don t|do not|won t|will not)( \w+){0,7} (code|codes|pin|password|passcode|clave|claves|codigo|codigos|contrasena|senha)\b/g;
+// "Ingresá con tu clave fiscal", "sign in with your password": where to log in, not a request to hand it over.
+const LOGIN_WITH = /\b(ingresa|ingresando|entra|entrando|accede|accediendo|inicia sesion|inicie sesion|log in|login|sign in|acesse|entre)( \w+){0,4} (con|with|com|using|usando) (tu|su|your|sua|seu) (clave|contrasena|password|senha|usuario)/;
+// "No tenés nada que pagar", "nothing to pay": the message says there is no payment.
+const NO_PAYMENT = /nada que pagar|nothing to pay|no (payment|fee|charge)s? (is |are )?(needed|required|due)|nao (precisa|e preciso|tem que) pagar|sin (costo|cargo)( alguno)?|free of charge|you don t need to pay|no hace falta pagar/;
+
+/** The sign ids that apply, after context rules (genuine-code warnings, login instructions, "nothing to pay"). */
 function applyContext(t, ids) {
-  if (ids.includes('asks_for_code') && CODE_WARNING.test(t) && !CODE_HANDOVER.test(t)) return ids.filter((id) => id !== 'asks_for_code');
-  return ids;
+  let out = ids;
+  if (out.includes('asks_for_code')) {
+    const handover = CODE_HANDOVER.test(t.replace(NEGATED, ' '));
+    if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t))) out = out.filter((id) => id !== 'asks_for_code');
+  }
+  if (out.includes('money_request') && NO_PAYMENT.test(t)) out = out.filter((id) => id !== 'money_request');
+  return out;
 }
 
 /** normalize(text) plus, for each of its characters, the index of the original character it came from. */
