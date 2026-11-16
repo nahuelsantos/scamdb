@@ -291,3 +291,11 @@ Free tier limits as agreed: catalogue unlimited (it is static); 50 `/isitascam` 
 **Script steps.** The label sits as far from the circle as from the text below it. Every step gets a label: a warning-sign step shows that sign's label (pink); a step without a sign shows "What happens" / "Qué pasa" (grey, dashed).
 
 **Languages.** The site interface is in English at `/…` (default) and Spanish at `/es/…`, with an EN / ES switch in the header and `hreflang` alternates. **Scam content is never translated:** entries always show in their original language on both versions (`lang` set on the element); only interface strings and signal labels (already in `en`/`es` in `data/signals.json`) change. The API is unchanged. Not for now: translating entries, more interface languages.
+
+## Addendum (2026-11-16): API keys can be viewed again — owner request
+
+The owner asked for keys to behave like a password: masked, with a show/hide eye and a copy button, viewable again when
+signed in. Keys are still looked up by SHA-256 hash; they are now **also stored encrypted** (AES-GCM, key derived from
+`SESSION_SECRET` with HKDF) in `keys.key_enc`, decrypted only for the signed-in owner via `GET /v1/keys/me/reveal`
+(same-origin, `X-Requested-With` required, `no-store`). Rotating `SESSION_SECRET` makes stored keys unviewable (owners
+replace them). Keys created before this change can't be revealed and say so. Supersedes "shown once".

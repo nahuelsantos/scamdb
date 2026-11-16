@@ -78,3 +78,26 @@ test('a tampered session cookie on /v1/keys/me is 401', async () => {
   const r = await w.fetch('/v1/keys/me', { headers: { cookie: session.slice(0, -2) + 'xx' } });
   assert.equal(r.status, 401);
 });
+
+const reveal = (headers = auth()) => w.fetch('/v1/keys/me/reveal', { headers });
+test('the signed-in owner can see their key again; it is stored encrypted, never in plain text', async () => {
+  const { key } = await create();
+  const r = await reveal();
+  assert.equal(r.status, 200);
+  assert.equal((await r.json()).key, key);
+  assert.equal(r.headers.get('cache-control'), 'no-store');
+  const row = await w.db.prepare('SELECT * FROM keys WHERE github_id = 7').first();
+  assert.ok(row.key_enc && !row.key_enc.includes(key));
+  assert.ok(!JSON.stringify(row).includes(key));
+});
+test('revealing needs a session and the X-Requested-With header', async () => {
+  assert.equal((await reveal({})).status, 401);
+  assert.equal((await reveal({ cookie: session })).status, 403);
+});
+test('a key created before encryption cannot be revealed: replace it', async () => {
+  await create();
+  await w.db.prepare('UPDATE keys SET key_enc = NULL WHERE github_id = 7').run();
+  const r = await reveal();
+  assert.equal(r.status, 404);
+  assert.equal((await r.json()).error, 'key_not_viewable');
+});

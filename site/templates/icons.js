@@ -110,3 +110,19 @@ export const STEP_ICONS = {
   plain: step(401, [['path', 'M24 40 h24'], ['path', 'M42 33 l8 7 -8 7']]),
   end: step(411, [['rect', 25, 36, 26, 20], ['path', 'M31 36 v-6 a8 8 0 0 1 15 -3'], ['circle', 38, 46, 4]]),
 };
+
+/** Small hand-drawn UI icons (24×24) for icon buttons. Each button also carries aria-label and title. */
+const ui = (seed, parts) => {
+  const s = sketch(seed);
+  return `<svg class="uic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${parts.map(([shape, ...args]) => s[shape](...args)).join('')}</svg>`;
+};
+export const UI_ICONS = {
+  eye: ui(901, [['path', 'M2 12 C 6 5, 18 5, 22 12 C 18 19, 6 19, 2 12 Z'], ['circle', 12, 12, 7]]),
+  eyeOff: ui(911, [['path', 'M2 12 C 6 5, 18 5, 22 12 C 18 19, 6 19, 2 12 Z'], ['path', 'M4 20 L20 4', { kind: 'acc' }]]),
+  copy: ui(921, [['rect', 8, 8, 12, 13, { fill: 'card' }], ['path', 'M5 16 V4 h11']]),
+  replace: ui(931, [['path', 'M19 9 A8 8 0 1 0 20 14'], ['path', 'M20 4 v5 h-5']]),
+  trash: ui(941, [['path', 'M4 6 h16 M9 6 V3 h6 v3'], ['path', 'M6 6 l1 15 h10 l1 -15']]),
+  signOut: ui(951, [['path', 'M14 4 H5 v16 h9'], ['path', 'M10 12 h11 M17 8 l4 4 -4 4']]),
+  github: ui(961, [['circle', 12, 12, 19], ['path', 'M9 19 c0-3 1-4 1-4 c-3-1-5-2-5-6 c0-2 1-3 1-3 c0 0 1 0 3 1 c1-1 5-1 6 0 c2-1 3-1 3-1 c0 0 1 1 1 3 c0 4-2 5-5 6 c0 0 1 1 1 4']]),
+  key: ui(971, [['circle', 7, 12, 8], ['path', 'M11 12 h11 M18 12 v4 M21 12 v3']]),
+};

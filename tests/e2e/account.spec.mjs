@@ -17,15 +17,61 @@ test('signed in shows the login as text even when it contains HTML', async ({ pa
   await expect(page.locator('#acc-login img')).toHaveCount(0);
 });
 
-test('creating a key shows it once', async ({ page }) => {
+test('the key is masked like a password; the eye shows it and the copy button copies it', async ({ page, context }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  const KEY = 'sk_' + 'b'.repeat(43);
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me({ hasKey: true, prefix: 'sk_bbbb…' }) }));
+  let revealHeader;
+  await page.route('**/v1/keys/me/reveal', (r) => { revealHeader = r.request().headers()['x-requested-with']; return r.fulfill({ json: { key: KEY } }); });
+  await page.goto('/account/');
+  const input = page.locator('#acc-key');
+  await expect(input).toHaveAttribute('type', 'password');
+  await expect(input).not.toHaveValue(KEY);
+  await page.getByRole('button', { name: 'Show key' }).click();
+  await expect(input).toHaveAttribute('type', 'text');
+  await expect(input).toHaveValue(KEY);
+  expect(revealHeader).toBe('scamdb');
+  await page.getByRole('button', { name: 'Hide key' }).click();
+  await expect(input).toHaveAttribute('type', 'password');
+  await page.getByRole('button', { name: 'Copy' }).click();
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(KEY);
+});
+
+test('a key made before viewing was possible explains how to see it', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me({ hasKey: true, prefix: 'sk_old…' }) }));
+  await page.route('**/v1/keys/me/reveal', (r) => r.fulfill({ status: 404, json: { error: 'key_not_viewable' } }));
+  await page.goto('/account/');
+  await page.getByRole('button', { name: 'Show key' }).click();
+  await expect(page.locator('#acc-hint')).toContainText('Replace it');
+});
+
+test('creating a key keeps it masked until you choose to see it', async ({ page }) => {
   let created = false;
-  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: created ? me({ hasKey: true, prefix: 'sk_abcd…' }) : me() }));
-  await page.route('**/v1/keys', (r) => { created = true; return r.fulfill({ status: 201, json: { key: 'sk_' + 'a'.repeat(43), prefix: 'sk_abcd…' } }); });
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: created ? me({ hasKey: true, prefix: 'sk_aaaa…' }) : me() }));
+  await page.route('**/v1/keys', (r) => { created = true; return r.fulfill({ status: 201, json: { key: 'sk_' + 'a'.repeat(43), prefix: 'sk_aaaa…' } }); });
   await page.goto('/account/');
   await page.getByRole('button', { name: 'Create key' }).click();
-  await expect(page.locator('#acc-new-key')).toHaveText('sk_' + 'a'.repeat(43));
-  await expect(page.locator('#acc-key')).toContainText('sk_abcd…');
-  await expect(page.getByRole('button', { name: 'Replace key' })).toBeVisible();
+  await expect(page.locator('#acc-key')).toHaveAttribute('type', 'password');
+  await page.getByRole('button', { name: 'Show key' }).click();
+  await expect(page.locator('#acc-key')).toHaveValue('sk_' + 'a'.repeat(43));
+});
+
+test('controls never touch: at least 16 px between the key row, the actions and sign out', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me({ hasKey: true, prefix: 'sk_aaaa…' }) }));
+  await page.goto('/account/');
+  const box = async (sel) => page.locator(sel).boundingBox();
+  const secret = await box('.secret'), actions = await box('.actions'), signout = await box('#acc-signout');
+  expect(actions.y - (secret.y + secret.height)).toBeGreaterThanOrEqual(16);
+  expect(signout.y - (actions.y + actions.height)).toBeGreaterThanOrEqual(16);
+});
+
+test('the sign-in button never overlaps the text above it', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ status: 401, json: {} }));
+  await page.setViewportSize({ width: 900, height: 800 });
+  await page.goto('/account/');
+  const lede = await page.locator('#acc-out .lede').boundingBox();
+  const btn = await page.getByRole('link', { name: 'Sign in with GitHub' }).boundingBox();
+  expect(btn.y).toBeGreaterThanOrEqual(lede.y + lede.height);
 });
 
 test('the Spanish account page is in Spanish', async ({ page }) => {
@@ -84,4 +130,17 @@ test('sign-in not switched on yet is explained', async ({ page }) => {
   await page.route('**/v1/keys/me', (r) => r.fulfill({ status: 503, json: { error: 'not_configured' } }));
   await page.goto('/account/?error=setup');
   await expect(page.locator('#acc-err')).toContainText('not switched on yet');
+});
+
+test('only one view shows at a time: signed out or signed in', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ status: 401, json: {} }));
+  await page.goto('/account/');
+  await expect(page.locator('#acc-out')).toBeVisible();
+  await expect(page.locator('#acc-in')).toBeHidden();
+  await page.unroute('**/v1/keys/me');
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: me({ hasKey: false }) }));
+  await page.reload();
+  await expect(page.locator('#acc-in')).toBeVisible();
+  await expect(page.locator('#acc-out')).toBeHidden();
+  await expect(page.locator('#acc-keyrow')).toBeHidden();
 });
