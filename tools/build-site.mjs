@@ -8,6 +8,7 @@ import { entry } from '../site/templates/entry.js';
 import { docs } from '../site/templates/docs.js';
 import { contribute } from '../site/templates/contribute.js';
 import { notfound } from '../site/templates/notfound.js';
+import { account } from '../site/templates/account.js';
 import { LANGS } from '../site/i18n.js';
 
 export { esc } from '../site/templates/html.js';
@@ -45,6 +46,7 @@ export function buildSite(repo, outDir, meta, root) {
     for (const e of repo.entries) put(`${at}catalogue/${e.id}/index.html`, entry({ ...c, entry: e }));
     put(`${at}docs/index.html`, docs(c));
     put(`${at}contribute/index.html`, contribute(c));
+    put(`${at}account/index.html`, account(c));
   }
   put('404.html', notfound(ctx));
 

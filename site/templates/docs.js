@@ -4,6 +4,7 @@ import { t } from '../i18n.js';
 
 const PATHS = ['/v1/index.json', '/v1/countries.json', '/v1/signals.json', '/v1/{country}/scams.json', '/v1/{country}/contacts.json',
   '/v1/scams/{country}/{slug}.json', '/v1/scams.json', '/v1/scamdb.zip', '/v1/changes.json'];
+const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 'source', 'turnstileToken'];
 const FIELDS = ['id', 'country', 'status', 'channels', 'sender', 'name', 'how', 'steps[]', 'examples[]', 'phrases', 'signals[]', 'redFlags',
   'whatToDo', 'reportTo[]', 'sources[]', 'media[]', 'story', 'related[]', 'firstSeen', 'updated'];
 
@@ -24,6 +25,15 @@ ${PATHS.map((p, i) => `<tr><td><code>${esc(p)}</code></td><td>${esc(rows[i])}</t
 <section aria-labelledby="f-h"><h2 id="f-h">${esc(t(lang, 'dEntry'))}</h2><div class="scroll"><table><thead><tr><th>${esc(t(lang, 'dField'))}</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
 ${FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(fields[i])}</td></tr>`).join('')}</tbody></table></div>
 <p>${esc(t(lang, 'dSchemas'))} <a href="${REPO}/tree/main/schema">schema/</a>.</p></section>
+<section aria-labelledby="rep-h"><h2 id="rep-h">${esc(t(lang, 'dReports'))}</h2><p>${esc(t(lang, 'dReportsP'))}</p>
+<pre class="code"><code>curl -X POST https://scamdb.dev/v1/reports \\
+  -H "Authorization: Bearer sk_…" -H "Content-Type: application/json" \\
+  -d '{"text": "Le hablo de PAMI…", "country": "ar", "channel": "phone", "source": "my-app"}'
+# → 201 {"id": "…", "received": true}</code></pre>
+<div class="scroll"><table><thead><tr><th>POST /v1/reports</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
+${REPORT_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lang, 'dReportsRows')[i])}</td></tr>`).join('')}</tbody></table></div>
+<p>${esc(t(lang, 'dReportsKeyless'))}</p></section>
+<section aria-labelledby="k-h"><h2 id="k-h">${esc(t(lang, 'dKeys'))}</h2><p>${esc(t(lang, 'dKeysP'))}</p></section>
 <section aria-labelledby="l-h"><h2 id="l-h">${esc(t(lang, 'dLicense'))}</h2><p>${esc(t(lang, 'dLicenseP1'))} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${esc(t(lang, 'dLicenseP2'))} <b>scamdb.dev · CC BY 4.0</b> ${esc(t(lang, 'dLicenseP3'))}</p></section>
 <section aria-labelledby="p-h"><h2 id="p-h">${esc(t(lang, 'dLimits'))}</h2><p>${esc(t(lang, 'dLimitsP'))}</p></section>
 <section aria-labelledby="n-h"><h2 id="n-h">${esc(t(lang, 'dNext'))}</h2><ul class="list"><li>${esc(t(lang, 'dNext1'))}</li><li>${esc(t(lang, 'dNext2'))}</li><li><code>POST /v1/isitascam</code>: ${esc(t(lang, 'dNext3'))}</li></ul></section>`;

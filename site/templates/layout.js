@@ -13,7 +13,7 @@ const LOGO = `<svg viewBox="0 0 30 30" aria-hidden="true" focusable="false">${LS
 export function layout({ title, description, body, path, meta, lang = 'en', scripts = '', alternates = true, switchPath = path }) {
   const P = prefix(lang);
   const here = `${P}${path}`;
-  const nav = [['/docs/', t(lang, 'navDocs')], ['/catalogue/', t(lang, 'navCatalogue')], ['/contribute/', t(lang, 'navContribute')]]
+  const nav = [['/docs/', t(lang, 'navDocs')], ['/catalogue/', t(lang, 'navCatalogue')], ['/contribute/', t(lang, 'navContribute')], ['/account/', t(lang, 'navAccount')]]
     .map(([href, label]) => `<a href="${P}${href}"${path.startsWith(href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
   const NAMES = { en: 'English', es: 'Español' };
   const sw = ['en', 'es'].map((l) => (l === lang
