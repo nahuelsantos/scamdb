@@ -10,8 +10,8 @@ const IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/webp'];
 const invalid = (field, why) => new HttpError(400, 'invalid_check', `${field}: ${why}`);
 const isFile = (v) => v && typeof v === 'object' && typeof v.arrayBuffer === 'function';
 
-/** { body: { text?, country?, lang?, report? }, file: { kind, bytes, type } | null } */
-export async function readForm(request) {
+/** { body: { <fields>…, report? }, file: { kind, bytes, type } | null }. `fields` are the text fields to read. */
+export async function readForm(request, { fields = ['text', 'country', 'lang'] } = {}) {
   if (Number(request.headers.get('content-length') ?? 0) > MAX_FILE + 64 * 1024) throw new HttpError(413, 'too_large', 'Files can be at most 5 MB.');
   let form;
   try { form = await request.formData(); } catch { throw new HttpError(400, 'bad_form', 'The body is not valid multipart/form-data.'); }
@@ -19,7 +19,7 @@ export async function readForm(request) {
   if (isFile(image) && isFile(audio)) throw invalid('image', 'send an image or an audio file, not both');
   const part = isFile(image) ? ['image', image] : isFile(audio) ? ['audio', audio] : null;
   const body = {};
-  for (const k of ['text', 'country', 'lang']) if (typeof form.get(k) === 'string') body[k] = form.get(k);
+  for (const k of fields) if (typeof form.get(k) === 'string') body[k] = form.get(k);
   if (form.get('report') !== null) body.report = form.get('report') === 'true';
   if (!part) return { body, file: null };
   if (body.text !== undefined) throw invalid('text', 'send the message as text or as a file, not both');
