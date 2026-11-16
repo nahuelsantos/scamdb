@@ -101,3 +101,72 @@ pull request on `nahuelsantos/eschamuyo` with the regenerated `site/data/scams.j
    name `ESCHAMUYO_TOKEN`, paste the token.
 
 Without the secret the workflow skips itself and says so in its summary.
+
+## Phase 2 setup (owner, once)
+
+Reports, keys and sign-in run in a small Worker with a D1 database. Do these once, in order.
+
+1. Create the database (skip if `wrangler.jsonc` already has a real `database_id`):
+
+```bash
+npx wrangler d1 create scamdb
+```
+
+   Paste the `database_id` it prints into `wrangler.jsonc`.
+
+2. Create the tables:
+
+```bash
+npx wrangler d1 migrations apply scamdb --remote
+```
+
+3. **Turnstile** (the anti-bot check on eschamuyo's report form): Cloudflare dashboard → Turnstile → Add widget,
+   hostnames `eschamuyo.com` and `www.eschamuyo.com`, mode Managed. Put the **site key** in eschamuyo's
+   `site/js/report.js` (`TURNSTILE_SITE_KEY`) and save the **secret**:
+
+```bash
+npx wrangler secret put TURNSTILE_SECRET
+```
+
+4. **GitHub sign-in**: GitHub → Settings → Developer settings → OAuth Apps → New OAuth App. Homepage
+   `https://scamdb.dev`, callback `https://scamdb.dev/auth/github/callback`. Then save both values:
+
+```bash
+npx wrangler secret put GITHUB_CLIENT_ID
+```
+
+```bash
+npx wrangler secret put GITHUB_CLIENT_SECRET
+```
+
+5. Two random secrets (paste the output of `openssl rand -base64 32` for each):
+
+```bash
+npx wrangler secret put SESSION_SECRET
+```
+
+```bash
+npx wrangler secret put IP_SALT
+```
+
+Secrets can also be added in the dashboard: Workers & Pages → scamdb → Settings → Variables and Secrets.
+
+## Reading reports
+
+Reports are private: they live only in D1, are deleted after 180 days unless promoted, and never reach this repo.
+
+1. Open a Claude session on this repo and run:
+
+```bash
+npm run reports list
+```
+
+   It writes `reports/inbox-<date>.json` (gitignored). Contacts are left out unless you add `--with-contact`.
+2. Ask Claude to cluster the reports, strip personal data, and draft new entries or new examples as pull requests.
+3. Mark what you handled:
+
+```bash
+npm run reports mark reviewed <id> <id>
+```
+
+   Use `promoted` for reports that became an entry (they are then kept), `rejected` for noise.
