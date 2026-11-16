@@ -27,6 +27,9 @@ jobs:
         run: npm run validate
       - name: Unit tests
         run: npm test
+        env:
+          # Decrypts eval/private.enc so the matcher is also checked against the private labelled set (skipped if unset).
+          EVAL_PRIVATE_KEY: ${{ secrets.EVAL_PRIVATE_KEY }}
       - name: Build
         if: hashFiles('tools/build.mjs') != ''
         run: npm run build

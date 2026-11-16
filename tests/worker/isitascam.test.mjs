@@ -88,8 +88,9 @@ test('keyed without the AI binding answers with the matcher', async () => {
 });
 test('keyless limit is 10 a day per IP', async () => {
   const from = '192.0.2.77';
-  for (let i = 0; i < 10; i++) assert.equal((await check({ text: 'hola' }, { from })).status, 200, `call ${i + 1}`);
-  const r = await check({ text: 'hola' }, { from });
+  const texts = ['hola', 'tu paquete llega mañana', 'reunión a las 10', 'ya pagué la luz', 'feliz cumple', 'nos vemos el sábado', 'traé pan', 'llegué bien', 'el turno es el lunes', 'gracias por todo', 'última'];
+  for (let i = 0; i < 10; i++) assert.equal((await check({ text: texts[i] }, { from })).status, 200, `call ${i + 1}`);
+  const r = await check({ text: texts[10] }, { from });
   assert.equal(r.status, 429);
   assert.equal((await r.json()).error, 'too_many_checks');
   assert.ok(Number(r.headers.get('retry-after')) > 0);
@@ -141,4 +142,24 @@ test('a wrong key is 401 invalid_key, not a silent keyless check', async () => {
     assert.equal(r.status, 401, bad);
     assert.equal((await r.json()).error, 'invalid_key');
   }
+});
+
+test('probe detection: the 6th near-identical check in a day is refused; other messages still work', async () => {
+  const from = '192.0.2.150';
+  const base = 'Hola ma, se me rompió el celu, este es mi número nuevo. Me pasás plata para pagar una deuda hoy?';
+  const variants = [base, base.replace('Hola ma', 'Hola mami'), base.replace('hoy', 'ahora'), base.replace('plata', 'guita'), base + ' porfa'];
+  for (const [i, t] of variants.entries()) assert.equal((await check({ text: t }, { from })).status, 200, `variant ${i + 1}`);
+  const r = await check({ text: base.replace('deuda', 'cuenta') }, { from });
+  assert.equal(r.status, 429);
+  assert.equal((await r.json()).error, 'too_many_similar');
+  assert.ok(Number(r.headers.get('retry-after')) > 0);
+  assert.equal((await check({ text: 'el turno del médico es el jueves a las 9' }, { from })).status, 200);
+});
+test('probe detection stores a fingerprint, never the text', async () => {
+  await check({ text: 'mensaje muy privado sobre mi cuenta del banco' }, { from: '192.0.2.151' });
+  const rows = (await w.db.prepare('SELECT * FROM check_prints').all()).results;
+  assert.ok(rows.length > 0);
+  assert.ok(rows.every((r) => /^[0-9a-f]{16}$/.test(r.print)));
+  assert.ok(!JSON.stringify(rows).includes('privado'));
+  assert.ok(rows.every((r) => !r.subject.includes('192.0.2')), 'the IP is hashed');
 });

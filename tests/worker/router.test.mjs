@@ -33,7 +33,7 @@ test('an unexpected failure returns a JSON 500 without details', async () => {
   assert.equal(body.error, 'internal');
   assert.doesNotMatch(JSON.stringify(body), /boom/);
 });
-test('the migration creates the four tables', async () => {
+test('the migrations create the five tables', async () => {
   const { results } = await w.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE '\\_%' ESCAPE '\\' AND name NOT LIKE 'sqlite%' ORDER BY name").all();
-  assert.deepEqual(results.map((r) => r.name), ['hits', 'keys', 'reports', 'usage']);
+  assert.deepEqual(results.map((r) => r.name), ['check_prints', 'hits', 'keys', 'reports', 'usage']);
 });
