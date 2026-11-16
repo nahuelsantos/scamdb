@@ -1,0 +1,111 @@
+{
+  "id": "gb/dvla-text",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "online"
+  ],
+  "sender": {
+    "en": "“DVLA”"
+  },
+  "name": {
+    "en": "Fake DVLA message: “update your details” or “claim your vehicle tax refund”"
+  },
+  "how": {
+    "en": "A text or email says it is from the DVLA. It may say your details must be updated or your driving licence could be affected, or that you are due a vehicle tax refund. A link leads to a copycat site that steals personal and payment details. The DVLA never asks for bank details or to confirm payment details, and vehicle tax refunds are paid automatically."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or email says it is from the DVLA."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says your licence could be affected, or that you are owed a refund."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to update your details or claim the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site asks for your bank or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "DVLA: Your driving licence information is out of date. Update your details today to avoid your licence being suspended: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "DVLA: You are entitled to a vehicle tax refund of £84.50. Confirm your payment details to receive it: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "dvla text update my details",
+      "vehicle tax refund email",
+      "driving licence will be suspended text",
+      "dvla asked for bank details",
+      "fake dvla website",
+      "car tax refund link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A vehicle tax refund offered by email or text: refunds are automatic.",
+      "A threat to your driving licence with a link.",
+      "Any site other than GOV.UK for DVLA services."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Use only GOV.UK for DVLA services.",
+      "Report the email or text to the NCSC (forward texts to 7726) and delete it.",
+      "If you paid or gave card details, call your bank straight away (you can dial 159)."
+    ]
+  },
+  "reportTo": [
+    "gb/ncsc",
+    "gb/7726",
+    "gb/your-bank",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "DVLA’s top tips for avoiding scams",
+      "publisher": "DVLA (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/dvlas-top-tips-for-avoiding-scams",
+      "date": "2025-12-12"
+    },
+    {
+      "title": "Five text message scams to watch out for",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/five-text-message-scams-to-watch-out-for-aCGIh9K6Bjjg",
+      "date": "2026-07-30"
+    }
+  ],
+  "updated": "2026-11-16"
+}

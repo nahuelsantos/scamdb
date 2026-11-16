@@ -1,0 +1,112 @@
+{
+  "id": "gb/task-job-text",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“A recruiter” or a well-known recruitment platform"
+  },
+  "name": {
+    "en": "Job text: “earn £100–£300 a day doing simple tasks online”"
+  },
+  "how": {
+    "en": "A text you didn’t ask for says a recruiter found your profile and offers flexible work from home. It promises easy money for simple online tasks, such as rating products, and moves you to WhatsApp. Later you are asked to pay money in to unlock more tasks or release your earnings. You don’t get that money back."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from a “recruiter” says you have been recommended for a job you didn’t apply for."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It promises £100 to £300 a day for an hour or two of simple tasks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They ask you to message them on WhatsApp or download an app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You are asked to pay in money to unlock tasks or get your earnings."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hello, this is Emma from a recruitment platform. We have reviewed your profile and a part-time job may fit you. Work 60-90 minutes a day and earn £100-£300. Reply YES for details."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Hi! You've been recommended by several online recruitment platforms for a remote job. Simple online tasks, paid daily. Contact our manager on WhatsApp: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "job text i didn't apply for",
+      "earn 300 a day simple tasks",
+      "recruiter text reply yes",
+      "rate products online for money",
+      "pay to unlock more tasks",
+      "recruiter moved me to whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A job offer you never applied for, by text or WhatsApp.",
+      "High pay for little work.",
+      "Being asked to pay to work or to get your earnings."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t reply. Check the job directly with the company using contact details you find yourself.",
+      "Never pay money to get a job or to withdraw earnings.",
+      "Forward the text free to 7726. If you paid, call your bank."
+    ]
+  },
+  "reportTo": [
+    "gb/7726",
+    "gb/your-bank",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "Five text message scams to watch out for",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/five-text-message-scams-to-watch-out-for-aCGIh9K6Bjjg",
+      "date": "2026-07-30"
+    },
+    {
+      "title": "Latest fake job texts exposed as Virgin Media O2’s Scam Index shows recruitment scams on the rise",
+      "publisher": "Virgin Media O2",
+      "url": "https://news.virginmediao2.co.uk/?p=11704",
+      "date": "2026-10-15"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "gb/money-mule-job"
+  ]
+}

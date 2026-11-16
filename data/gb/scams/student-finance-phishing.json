@@ -1,0 +1,99 @@
+{
+  "id": "gb/student-finance-phishing",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "en": "“Student Finance” or “SLC”"
+  },
+  "name": {
+    "en": "Fake Student Finance message: “there’s a problem with your payment”"
+  },
+  "how": {
+    "en": "Around the times maintenance loans are paid, students get texts, emails and calls that look like they come from the Student Loans Company. They say there is a problem with a payment that needs urgent action, and ask you to follow a link and confirm personal or bank details. Bulk messages often start “Dear Student”. The Student Loans Company never asks you to confirm personal or bank details by text or email."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message says it is from Student Finance, often starting “Dear Student”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says there is a problem with your payment and your account will be closed if you don’t act."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to sign in or confirm your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for your bank details or login."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Dear Student, your maintenance loan payment has been suspended due to incorrect information. Failure to respond in 24 hours will result in your account being closed. Verify your details: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "student finance email payment problem",
+      "dear student email loan suspended",
+      "slc text confirm bank details",
+      "maintenance loan payment text",
+      "student loan account will be closed",
+      "student finance asked for my bank details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "“Dear Student” instead of your name.",
+      "A 24-hour deadline or threat to close your account.",
+      "A link asking for your bank or login details."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Sign in to your student finance account directly to check.",
+      "Forward scam emails to the NCSC and texts to 7726.",
+      "If you gave bank details, call your bank straight away (you can dial 159)."
+    ]
+  },
+  "reportTo": [
+    "gb/ncsc",
+    "gb/7726",
+    "gb/your-bank",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "Students urged to stay alert for scams as January student finance payments approaches",
+      "publisher": "Student Loans Company (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/students-urged-to-stay-alert-for-scams-as-january-student-finance-payments-approaches",
+      "date": "2025-12-29"
+    }
+  ],
+  "updated": "2026-11-16"
+}

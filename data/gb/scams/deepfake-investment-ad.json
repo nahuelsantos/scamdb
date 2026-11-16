@@ -1,0 +1,103 @@
+{
+  "id": "gb/deepfake-investment-ad",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "en": "“A famous politician, presenter or businessperson” in a video advert"
+  },
+  "name": {
+    "en": "Deepfake celebrity video selling an investment"
+  },
+  "how": {
+    "en": "A video on social media seems to show a well-known person saying the public can make money with an investment. It is an AI deepfake. When you call the number or sign up, a “broker” persuades you to invest, says the firm is regulated and warns that your bank may try to stop you. After you pay, the money can’t be withdrawn and the calls asking for more keep coming."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A social media video shows a famous person promoting an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It promises big returns and urges you to act quickly."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "A “broker” calls you, says the firm is regulated and warns that your bank might tell you not to invest."
+      }
+    },
+    {
+      "text": {
+        "en": "They ask for bigger and bigger payments that you can’t get back."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "BREAKING: Popular presenter reveals how ordinary Britons are earning thousands a month from home. The banks don't want you to know. Register now before places run out: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "celebrity video investment advert",
+      "deepfake video of a politician investment",
+      "broker said my bank would try to stop me",
+      "invest in crypto from facebook advert",
+      "can't withdraw my investment",
+      "trading platform keeps calling me"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A famous person promoting an investment in an advert.",
+      "A “firm” not on the FCA register, or an excuse for why it isn’t.",
+      "Being told not to trust your bank."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check any firm on the FCA Firm Checker and Warning List before investing.",
+      "Hang up on unexpected investment calls.",
+      "If you paid, call your bank straight away and report it to Report Fraud and the FCA."
+    ]
+  },
+  "reportTo": [
+    "gb/your-bank",
+    "gb/report-fraud",
+    "gb/fca",
+    "gb/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Investment scams surge: how deepfakes and dodgy finfluencers put your money at risk",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/investment-scams-surge-how-deepfakes-and-dodgy-finfluencers-put-your-money-at-risk-aaAKh0B7SkOM",
+      "date": "2026-08-27"
+    }
+  ],
+  "updated": "2026-11-16",
+  "story": {
+    "en": "A retiree saw a deepfake video of a politician on Instagram and called the number in it. A “broker” got her to invest £200 by credit card, said the firm was regulated and warned that her bank might say she shouldn’t do it. When she tried to send £17,000 more, doubts crept in and her bank stopped the payments. The £200 was not returned and the calls kept coming."
+  },
+  "related": [
+    "gb/fake-fca-recovery"
+  ]
+}

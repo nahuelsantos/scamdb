@@ -1,0 +1,111 @@
+{
+  "id": "gb/hmrc-tax-refund",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“HMRC” or “GOV.UK”"
+  },
+  "name": {
+    "en": "Fake HMRC tax refund: “claim your rebate now”"
+  },
+  "how": {
+    "en": "A text or email that looks like it is from HMRC says you are due a tax refund or rebate. It gives a link to “claim” it before a deadline. The link goes to a fake site that asks for your personal and bank or card details. HMRC never tells you about a refund, or asks you to claim one, by text, email or phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or email says it is from HMRC and that you are owed a tax refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you must claim it soon or you will lose it."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to a page that looks like GOV.UK."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for your bank or card details “to pay the refund”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "HMRC: You are eligible for a tax refund of £326.40. Claim before midnight or it will be cancelled: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Dear Customer, after the last annual calculation of your fiscal activity we have determined that you are eligible to receive a tax rebate. Please submit your claim within 48 hours: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text from hmrc about a tax refund",
+      "hmrc tax rebate email",
+      "claim my tax refund link",
+      "hmrc asked for my bank details",
+      "eligible for a tax refund text",
+      "fake hmrc refund message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "HMRC writing by text or email to offer a refund or rebate.",
+      "A link and a short deadline to claim.",
+      "A page asking for card or bank details to “receive” money."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link or reply.",
+      "Check what you are owed in your HMRC online account or the official HMRC app.",
+      "Forward suspicious texts to 60599 and emails to HMRC’s phishing address.",
+      "If you gave bank or card details, call your bank straight away (you can dial 159)."
+    ]
+  },
+  "reportTo": [
+    "gb/hmrc-phishing",
+    "gb/your-bank",
+    "gb/159",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "4,800 Self Assessment scams reported",
+      "publisher": "HM Revenue and Customs (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/4800-self-assessment-scams-reported",
+      "date": "2025-12-17"
+    },
+    {
+      "title": "Identify tax scams by phone, text, email or social media",
+      "publisher": "HM Revenue and Customs (GOV.UK)",
+      "url": "https://www.gov.uk/guidance/identify-hmrc-related-scam-phone-calls-emails-and-text-messages",
+      "date": "2026-10-06"
+    }
+  ],
+  "updated": "2026-11-16"
+}

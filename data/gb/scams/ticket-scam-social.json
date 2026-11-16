@@ -1,0 +1,105 @@
+{
+  "id": "gb/ticket-scam-social",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "en": "“A fan selling a spare ticket”"
+  },
+  "name": {
+    "en": "Spare tickets on social media: pay by bank transfer, get nothing"
+  },
+  "how": {
+    "en": "Someone on social media, often Facebook or Instagram, offers spare tickets for a sold-out gig, festival or football match. They move the chat to WhatsApp and insist on a bank transfer. Once the money is sent, they block you and the tickets never arrive or turn out to be fake. Fake ticket websites work the same way."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A post or message offers tickets for a sold-out event."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The seller moves the chat to WhatsApp."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "They push you to pay quickly by bank transfer."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "After you pay, they block you and no tickets arrive."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Can't go anymore so selling my 2 tickets for Saturday at face value. Lots of interest so first to pay gets them. DM me or message me on WhatsApp."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bought tickets on facebook never arrived",
+      "spare tickets seller on instagram",
+      "seller asked for bank transfer for tickets",
+      "football tickets scam whatsapp",
+      "fake festival tickets",
+      "seller blocked me after paying for tickets"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Tickets for a sold-out event from a stranger online.",
+      "A move to WhatsApp and a request for a bank transfer.",
+      "Pressure that others want the tickets."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Buy only from the venue’s box office, an official ticket site or its official resale service.",
+      "Don’t leave the platform’s payment system to pay by bank transfer.",
+      "If you paid, call your bank straight away and report it to Report Fraud."
+    ]
+  },
+  "reportTo": [
+    "gb/your-bank",
+    "gb/report-fraud",
+    "gb/159"
+  ],
+  "sources": [
+    {
+      "title": "Football fans urged to show fraudsters the red card ahead of World Cup",
+      "publisher": "Home Office (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/football-fans-urged-to-show-fraudsters-the-red-card-ahead-of-world-cup",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "Gig goers urged to Stop! Think Fraud before buying tickets",
+      "publisher": "Home Office (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/gig-goers-urged-to-stop-think-fraud-before-buying-tickets",
+      "date": "2026-08-10"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "gb/marketplace-purchase"
+  ]
+}

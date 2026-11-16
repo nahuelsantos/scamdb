@@ -1,0 +1,109 @@
+{
+  "id": "gb/parking-fine-text",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“RingGo”, “Parkingeye”, “DfT” or “GOV.UK”"
+  },
+  "name": {
+    "en": "Fake parking or traffic fine text: “pay now to avoid extra charges”"
+  },
+  "how": {
+    "en": "A text says you have an unpaid parking fine, an unfinished parking session or an outstanding traffic ticket. It may use the name of a parking company such as RingGo or Parkingeye, or the Department for Transport. A link leads to a fake payment page that takes your card and personal details. The companies and the department say these texts are scams."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text says it is from a parking company or the Department for Transport."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you have an unpaid fine and extra charges will be added if you don’t pay soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to “view” or “pay” the fine."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "RingGo: You have an unpaid parking session. Please settle your balance today to avoid an additional penalty charge: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "DfT: Our records show an outstanding traffic violation ticket. Pay now to avoid further action: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text about an unpaid parking fine",
+      "ringgo text unpaid parking",
+      "parkingeye text pay now",
+      "dft text traffic fine",
+      "outstanding traffic ticket text",
+      "parking charge link text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A fine you didn’t know about, sent by text with a link.",
+      "A threat of extra charges if you don’t pay today.",
+      "A sender number or address that has nothing to do with the company."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Check for unpaid sessions in the official RingGo app or website, or on the paperwork you received.",
+      "Forward the text free to 7726.",
+      "If you paid, call your bank straight away (you can dial 159)."
+    ]
+  },
+  "reportTo": [
+    "gb/7726",
+    "gb/ncsc",
+    "gb/your-bank",
+    "gb/report-fraud"
+  ],
+  "sources": [
+    {
+      "title": "DfT issues warning about scam text messages asking people to pay fines",
+      "publisher": "Department for Transport (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/dft-issues-warning-about-scam-text-messages-asking-people-to-pay-fines",
+      "date": "2025-07-08"
+    },
+    {
+      "title": "Five text message scams to watch out for",
+      "publisher": "Which?",
+      "url": "https://www.which.co.uk/news/article/five-text-message-scams-to-watch-out-for-aCGIh9K6Bjjg",
+      "date": "2026-07-30"
+    }
+  ],
+  "updated": "2026-11-16"
+}

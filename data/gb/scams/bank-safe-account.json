@@ -1,0 +1,104 @@
+{
+  "id": "gb/bank-safe-account",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“Your bank’s fraud team”"
+  },
+  "name": {
+    "en": "Fake bank call: “move your money to a safe account”"
+  },
+  "how": {
+    "en": "Someone calls or texts claiming to be your bank. The caller ID may show your bank’s name, and they may know your name, date of birth or recent payments. They say your account is at risk and ask you to move your money to a “safe account”, share a one-time passcode, or tell your bank a cover story if a payment is questioned. There is no such thing as a safe account: the money goes to the scammer."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call or text says it is from your bank, and the name on your phone may look right."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They know details about you or your recent payments and say your account is at risk."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you to read out a one-time passcode."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They tell you to move your money to a “safe account” and what to say if your bank asks why."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hello, I'm calling from your bank's fraud department. We've seen suspicious payments on your account. To protect your money we need to move it to a safe account. If the bank asks, say the payment is to a family member."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank fraud department",
+      "move your money to a safe account",
+      "caller knew my recent payments",
+      "bank asked me to read a passcode",
+      "told me what to say to my bank",
+      "call from the bank fraud department",
+      "they said my account is at risk",
+      "account is at risk"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Being told to move money to protect it.",
+      "Being told what to say to your bank about a payment.",
+      "Being asked for a one-time passcode."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Call 159 or the number on the back of your card.",
+      "Never move money because a caller tells you to.",
+      "If you sent money, tell your bank straight away and report it to Report Fraud."
+    ]
+  },
+  "reportTo": [
+    "gb/159",
+    "gb/your-bank",
+    "gb/report-fraud",
+    "gb/7726"
+  ],
+  "sources": [
+    {
+      "title": "Brits targeted multiple times a week as one in five tricked into sharing personal information with scammers",
+      "publisher": "Nationwide Building Society",
+      "url": "https://www.nationwide.co.uk/media/news/brits-targeted-multiple-times-a-week-as-one-in-five-tricked-into-sharing-personal-information-with-scammers",
+      "date": "2026-09-25"
+    }
+  ],
+  "updated": "2026-11-16",
+  "related": [
+    "gb/courier-fraud"
+  ]
+}

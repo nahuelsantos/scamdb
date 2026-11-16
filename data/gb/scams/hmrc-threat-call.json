@@ -1,0 +1,97 @@
+{
+  "id": "gb/hmrc-threat-call",
+  "country": "gb",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "“HMRC” (a call or recorded voicemail)"
+  },
+  "name": {
+    "en": "Fake HMRC call: “pay your tax bill now or face arrest”"
+  },
+  "how": {
+    "en": "A call or voicemail says it is from HMRC and that you owe tax. It threatens legal action or arrest unless you pay straight away. You may be told to pay by bank transfer or with gift or payment vouchers. HMRC never leaves voicemails threatening legal action, never threatens arrest and never asks for payment with vouchers."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You get a call or voicemail from someone saying they are from HMRC."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say you owe tax and will face legal action or arrest if you don’t act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you to pay at once, by bank transfer or with gift or payment vouchers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is HM Revenue and Customs. A lawsuit has been filed against you for unpaid tax. To avoid arrest, press 1 now to speak to an officer."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "hmrc voicemail threatening arrest",
+      "call saying i owe tax to hmrc",
+      "hmrc said police will arrest me",
+      "pay tax with gift vouchers",
+      "hmrc lawsuit filed against me",
+      "fake tax officer phone call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A threat of arrest or court action over tax.",
+      "Pressure to pay during the call.",
+      "Being asked to pay with gift cards or vouchers."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Don’t press any keys or call back the number given.",
+      "Check what you owe in your HMRC online account, or contact HMRC using details on GOV.UK.",
+      "Report the call to HMRC on GOV.UK.",
+      "If you paid, contact your bank and report it to Report Fraud (Police Scotland on 101 in Scotland)."
+    ]
+  },
+  "reportTo": [
+    "gb/hmrc-phishing",
+    "gb/your-bank",
+    "gb/report-fraud",
+    "gb/police-101"
+  ],
+  "sources": [
+    {
+      "title": "4,800 Self Assessment scams reported",
+      "publisher": "HM Revenue and Customs (GOV.UK)",
+      "url": "https://www.gov.uk/government/news/4800-self-assessment-scams-reported",
+      "date": "2025-12-17"
+    },
+    {
+      "title": "Identify tax scams by phone, text, email or social media",
+      "publisher": "HM Revenue and Customs (GOV.UK)",
+      "url": "https://www.gov.uk/guidance/identify-hmrc-related-scam-phone-calls-emails-and-text-messages",
+      "date": "2026-10-06"
+    }
+  ],
+  "updated": "2026-11-16"
+}

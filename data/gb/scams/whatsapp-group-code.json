@@ -1,0 +1,94 @@
+{
+  "id": "gb/whatsapp-group-code",
+  "country": "gb",
+  "lang": "en",
+  "status": "fading",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“A member of your WhatsApp group”"
+  },
+  "name": {
+    "en": "WhatsApp group “video call code”: your account is taken over"
+  },
+  "how": {
+    "en": "You get a WhatsApp audio call from someone pretending to be a member of a group you are in, often with a copied name or photo. They say they are sending a one-time code so you can join a group video call, and ask you to share it. The code is really the registration code for your account. Once they have it, they lock you out with two-step verification and message your contacts asking for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A WhatsApp audio call comes from someone who seems to be in one of your groups."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say they are sending you a code to join a group video call and ask you to read it out."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They take over your account and lock you out."
+      }
+    },
+    {
+      "text": {
+        "en": "Your friends and family get messages from “you” asking for money urgently."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi, it's Sue from the group. We're doing a video call for members later. I've just sent you a 6 digit code to register you, can you send it back to me?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "whatsapp group video call code",
+      "asked me to share a six digit code",
+      "locked out of my whatsapp",
+      "group member called me on whatsapp",
+      "my whatsapp was hacked and asked friends for money",
+      "code to join the video call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone asking for a code that WhatsApp sent you.",
+      "A group member calling out of the blue about a video call.",
+      "Friends asking for money urgently over WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never share a WhatsApp code with anyone, even someone you know.",
+      "Turn on two-step verification in WhatsApp settings.",
+      "Report and block the sender in WhatsApp. If money was sent, call your bank."
+    ]
+  },
+  "reportTo": [
+    "gb/report-fraud",
+    "gb/your-bank",
+    "gb/police-101"
+  ],
+  "sources": [
+    {
+      "title": "Action Fraud issue warning as WhatsApp group chats are targeted by fraudsters",
+      "publisher": "Action Fraud (via WiredGov)",
+      "url": "https://wired-gov.net/wg/news.nsf/articles/Action+Fraud+issue+warning+as+WhatsApp+group+chats+are+targeted+by+fraudsters+03052024132000",
+      "date": "2024-05-03"
+    }
+  ],
+  "updated": "2026-11-16"
+}
