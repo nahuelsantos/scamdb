@@ -5,7 +5,7 @@ description: Research one country's current scams from official warnings and rep
 
 # Import scams
 
-One run = one country = at most one pull request with at most 10 new entries. Nothing is merged by you: the owner
+One run = one country = at most one pull request with at most 20 new entries. Nothing is merged by you: the owner
 reviews every import. Read `CONTRIBUTING.md` (fields and rules) and
 `docs/superpowers/specs/2026-11-16-worldwide-import-design.md` (why it works this way) before drafting.
 
@@ -64,7 +64,7 @@ only one.
 If a host is blocked or refuses automated access, note it for the PR summary and use other sources; never invent what
 a page says.
 
-## 5. Draft (at most 10)
+## 5. Draft (at most 20)
 
 Prefer the most widespread and most harmful scams. For each, write `data/<cc>/scams/<slug>.json` following
 `CONTRIBUTING.md`:
