@@ -1,18 +1,23 @@
 // Free API keys tied to a GitHub account. Looked up by SHA-256 hash; also stored encrypted so the signed-in owner
 // can view it again. The plain key is never stored.
-import { json, error } from './http.js';
+import { json, error, HttpError } from './http.js';
 import { sessionFrom } from './session.js';
 export async function hashKey(key) {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key));
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
-/** The key row for `Authorization: Bearer sk_…`, or null. */
+/** The key row for `Authorization: Bearer sk_…`; null without the header. A header with a wrong, malformed or
+ * deleted key is a 401, so a typo never silently becomes a keyless request with lower limits. */
 export async function authKey(request, env) {
-  const m = (request.headers.get('authorization') ?? '').match(/^Bearer (sk_[A-Za-z0-9_-]{43})$/);
-  if (!m) return null;
+  const header = request.headers.get('authorization');
+  if (!header) return null;
+  const bad = new HttpError(401, 'invalid_key', 'This API key is not valid. Check it on scamdb.dev/account, or send the request without an Authorization header.');
+  const m = header.match(/^Bearer (sk_[A-Za-z0-9_-]{43})$/);
+  if (!m) throw bad;
   const row = await env.DB.prepare('SELECT id, github_id, github_login FROM keys WHERE key_hash = ?').bind(await hashKey(m[1])).first();
-  return row ? { id: row.id, githubId: row.github_id, githubLogin: row.github_login } : null;
+  if (!row) throw bad;
+  return { id: row.id, githubId: row.github_id, githubLogin: row.github_login };
 }
 
 /** Counts one call of `endpoint` for a key today. */
