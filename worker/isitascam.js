@@ -83,7 +83,7 @@ export async function handleIsItAScam(request, env) {
   // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.
   if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
     const diag = {};
-    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country }, { diag });
+    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country, hints: result.matches.map((m) => m.id) }, { diag });
     if (scored) { result = combine(result, scored, check.text); scorer = 'workers-ai'; } else scorerError = diag;
   }
   const top = result.matches[0] ? await loadEntry(env, result.matches[0].id) : null;

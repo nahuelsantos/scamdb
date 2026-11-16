@@ -122,11 +122,12 @@ test('a failure says why: the chat model throwing names the chat stage and its m
 test('a failure says why: an embedding error, a timeout and an unreadable answer', async () => {
   _resetCache();
   const d1 = {}, d2 = {}, d3 = {};
-  await scoreWithWorkersAI(fakeAI({ throws: true }), { text: TEXT, catalogue }, { diag: d1 });
-  assert.equal(d1.reason, 'embed');
+  const embedFails = { run: async (model) => { if (model === MODELS.embed) throw new Error('3040: capacity'); return new Promise(() => {}); } };
+  await scoreWithWorkersAI(embedFails, { text: TEXT, catalogue }, { diag: d1 });
+  assert.deepEqual(d1, { reason: 'embed', detail: '3040: capacity' });
   await scoreWithWorkersAI(fakeAI({ hang: true }), { text: TEXT, catalogue }, { timeoutMs: 20, diag: d2 });
   assert.equal(d2.reason, 'timeout');
-  assert.match(d2.detail, /^embed after \d+ ms$/);
+  assert.match(d2.detail, /^embed and chat still running after \d+ ms$/);
   await scoreWithWorkersAI(fakeAI({ chat: 'I think this is a scam.' }), { text: TEXT, catalogue }, { diag: d3 });
   assert.deepEqual(d3, { reason: 'answer', detail: 'I think this is a scam.' });
 });
@@ -137,4 +138,23 @@ test('the answer shows why the AI step was skipped, and nothing extra when it ra
   assert.deepEqual(skipped.engine.scorerError, { reason: 'chat', detail: 'boom' });
   const ran = buildAnswer({ result, catalogue, top: null, lang: 'en', country: 'au', scorer: 'workers-ai', scorerError: null });
   assert.equal('scorerError' in ran.engine, false);
+});
+
+test('embeddings and the chat run at the same time, and the chat gets the keyword hints', async () => {
+  _resetCache();
+  const order = [];
+  let chatInput;
+  const ai = { run: async (model, input) => {
+    order.push(`start ${model === MODELS.embed ? 'embed' : 'chat'}`);
+    await new Promise((r) => setTimeout(r, 30));
+    order.push('end');
+    if (model === MODELS.embed) return { data: input.text.map(() => [1, 0]) };
+    chatInput = input;
+    return { response: { verdict: 'scam', score: 0.9, signals: [] } };
+  } };
+  const r = await scoreWithWorkersAI(ai, { text: TEXT, catalogue, hints: ['au/parcel'] });
+  assert.equal(r.verdict, 'scam');
+  assert.ok(order.indexOf('start chat') < order.indexOf('end'), `chat waited for embeddings: ${order}`);
+  assert.match(chatInput.messages[0].content, /Parcel text/);
+  assert.ok(chatInput.max_tokens <= 300);
 });
