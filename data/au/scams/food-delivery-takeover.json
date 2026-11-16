@@ -1,0 +1,103 @@
+{
+  "id": "au/food-delivery-takeover",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "en": "“DoorDash”, “Uber Eats” or a restaurant"
+  },
+  "name": {
+    "en": "Food delivery account takeover: “send us the code”"
+  },
+  "how": {
+    "en": "Scammers pretend to be DoorDash, Uber Eats, a restaurant or a customer and contact you about an order, refund, cancellation or account problem. They ask for a one-time code, login details or bank information, then take over the account, change the payment settings or redirect money. Delivery workers get messages saying an order was cancelled as “fraudulent” or a “double order” and are asked for their details to be compensated."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone claims to be the delivery app, a restaurant or a customer."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They contact you about a refund, cancellation or problem with your account."
+      }
+    },
+    {
+      "text": {
+        "en": "They ask for the one-time code sent to your phone, or your login or bank details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They take over the account and redirect payments or earnings."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi, this is Uber Eats support. Your order was flagged as a double order. To process your refund, reply with the 6-digit code we just sent you."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "uber eats code",
+      "doordash support asked for a code",
+      "food delivery refund",
+      "double order message",
+      "delivery account taken over",
+      "order cancelled as fraudulent"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Unexpected messages about an order, refund or account problem.",
+      "Requests for one-time codes, passwords or bank details.",
+      "Password reset emails or login alerts you didn’t ask for.",
+      "Pressure to act because something is “fraudulent”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never share a one-time code: the app will never ask for it.",
+      "Check in the official app or website, not through the message.",
+      "If your account was taken, reset your password and contact the platform."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Food delivery scams",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-food-delivery-scams",
+      "date": "2026-06-12"
+    }
+  ],
+  "updated": "2026-11-16"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "au/ticket-transfer-fee",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "Fan selling tickets"
+  },
+  "name": {
+    "en": "Concert tickets: “pay the transfer fee first”"
+  },
+  "how": {
+    "en": "You find someone selling tickets to a sold-out concert on Facebook or TikTok, and the chat moves to WhatsApp. They mention well-known ticketing outlets, take your payment and then ask for more money for a “transfer”, “authorisation” or “name-change” fee. No tickets arrive."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone offers tickets to a popular concert on Facebook or TikTok."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The chat moves to WhatsApp."
+      }
+    },
+    {
+      "text": {
+        "en": "They mention real ticketing outlets to seem genuine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "After you pay, they ask for transfer, authorisation or name-change fees."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Payment received thanks! Ticketek just needs a $120 name-change fee before I can transfer the tickets to you. Can you send it now so they don’t cancel them?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "concert tickets on facebook",
+      "ticket transfer fee",
+      "name change fee for tickets",
+      "tickets never arrived",
+      "seller moved to whatsapp",
+      "tiktok ticket seller"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Tickets sold through social media or private chats.",
+      "The chat moves to WhatsApp.",
+      "Extra fees after you already paid."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Buy only from the official seller or its authorised resale.",
+      "Don’t pay extra fees to “release” tickets.",
+      "If you paid, contact your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Media update: When the shopfront is a scam",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/media-update-when-the-shopfront-is-a-scam",
+      "date": "2026-11-03"
+    }
+  ],
+  "updated": "2026-11-16"
+}

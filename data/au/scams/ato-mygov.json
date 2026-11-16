@@ -1,0 +1,100 @@
+{
+  "id": "au/ato-mygov",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "en": "“ATO” or “myGov”"
+  },
+  "name": {
+    "en": "Fake ATO or myGov message: “sign in to fix your tax”"
+  },
+  "how": {
+    "en": "Around tax time you get a text, email or call that looks like it is from the Australian Taxation Office or myGov, with official logos. It says something is urgent and asks you to sign in through a link, open an attachment or call a number. The link goes to a fake myGov page that steals your sign-in details, which scammers then use to commit fraud in your name. The ATO never sends a link asking you to sign in."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text, email or call claims to be from the ATO or myGov, with official logos."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you must act now about a refund, a debt or your account."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It asks you to sign in to myGov through a link or call a number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The fake page takes your sign-in details and scammers use them to commit fraud in your name."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "myGov: Your tax refund of $746.20 is on hold. Verify your details within 24 hours to release it: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "ato refund text",
+      "mygov sign in link",
+      "tax refund on hold",
+      "message from the ato",
+      "verify my mygov account",
+      "ato says i owe a debt",
+      "fake mygov page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "An unexpected message from the ATO with a link. The ATO never does this.",
+      "A link that asks you to sign in to myGov.",
+      "The sender’s address does not end in .gov.au.",
+      "Pressure to act quickly about a refund or a debt."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Sign in to myGov by typing the address yourself or using the official app.",
+      "Check with the ATO using its official app, website or phone number.",
+      "If you shared your details, contact the ATO quickly to protect your accounts."
+    ]
+  },
+  "reportTo": [
+    "au/ato",
+    "au/your-bank",
+    "au/reportcyber",
+    "au/scamwatch",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Australian Taxation Office (ATO) and ‘myGov’ impersonation scams",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/australian-taxation-office-ato-and-mygov-impersonation-scams",
+      "date": "2026-06-26"
+    }
+  ],
+  "updated": "2026-11-16"
+}

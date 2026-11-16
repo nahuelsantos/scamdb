@@ -1,0 +1,107 @@
+{
+  "id": "au/family-in-trouble",
+  "country": "au",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "en": "“Your son” or “your daughter”"
+  },
+  "name": {
+    "en": "“Hi Mum, I’m stuck overseas”: family in trouble"
+  },
+  "how": {
+    "en": "Someone pretends to be a family member or friend, often travelling, and writes from a new number or WhatsApp account. They say they are in trouble (a lost phone, a missed flight, a bill to pay) and ask you to send money quickly. Scamwatch warns these messages rise in the holiday season."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message arrives from an unknown number claiming to be your child or a friend."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "en": "They say they are overseas or travelling and in trouble."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask for money urgently, often to someone else’s account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "They avoid calls and push you to pay now."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi Mum, it’s me, I dropped my phone at the airport so this is my new number. My card isn’t working and I need to pay for the hotel tonight, can you transfer $950? I’ll pay you back when I’m home x"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "hi mum new number",
+      "stuck overseas need money",
+      "lost my phone at the airport",
+      "my son's new number",
+      "family member asking for money",
+      "pay for the hotel tonight"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A relative writes from a new number and asks for money.",
+      "An emergency while travelling that needs money now.",
+      "Paying into an account in someone else’s name.",
+      "They won’t talk on a call or video."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Call the person on the number you already have for them.",
+      "Ask a personal question a scammer couldn’t answer.",
+      "Don’t use the contact details in the message."
+    ]
+  },
+  "reportTo": [
+    "au/your-bank",
+    "au/scamwatch",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/reportcyber",
+    "au/idcare"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert: Scammers don’t take holidays - but they can ruin yours",
+      "publisher": "Scamwatch (ACCC)",
+      "url": "https://www.scamwatch.gov.au/about-us/news-and-alerts/scam-alert-scammers-dont-take-holidays-but-they-can-ruin-yours",
+      "date": "2026-11-16"
+    }
+  ],
+  "updated": "2026-11-16"
+}
