@@ -11,6 +11,7 @@
   ],
   // UAT: every non-production branch gets a Preview (Workers Builds runs `npx wrangler preview`). Previews use their own
   // test database, never production's. No routes or crons here: those only target production. See docs/uat.md.
+  "preview_urls": true,
   "previews": {
     "vars": { "ENVIRONMENT": "uat" },
     "ai": { "binding": "AI" },

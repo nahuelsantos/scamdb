@@ -21,6 +21,7 @@ test('previews use their own database, never production', () => {
   assert.notEqual(uat.database_name, prod.database_name);
 });
 test('previews say they are UAT, keep the AI binding, and carry no routes or crons', () => {
+  assert.equal(cfg.preview_urls, true, 'without it Previews get no URL');
   assert.equal(cfg.previews.vars.ENVIRONMENT, 'uat');
   assert.equal(cfg.previews.ai.binding, 'AI');
   assert.equal(cfg.previews.routes, undefined);
