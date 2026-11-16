@@ -174,6 +174,8 @@ npx wrangler secret put IP_SALT
 
 Secrets can also be added in the dashboard: Workers & Pages → scamdb → Settings → Variables and Secrets.
 
+The test site (a Preview for every branch, with its own database) is described in [docs/uat.md](docs/uat.md).
+
 ## Reading reports
 
 Reports are private: they live only in D1, are deleted after 180 days unless promoted, and never reach this repo.

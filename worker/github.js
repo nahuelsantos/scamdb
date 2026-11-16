@@ -2,7 +2,10 @@
 import { error } from './http.js';
 import { sign, readCookie, setCookie } from './session.js';
 
-const CALLBACK = 'https://scamdb.dev/auth/github/callback';
+// Production signs in on scamdb.dev only. A UAT preview (ENVIRONMENT=uat) signs in on its own URL, with its own GitHub
+// OAuth app whose callback is that preview's URL.
+export const callbackFor = (request, env) =>
+  `${env.ENVIRONMENT === 'uat' ? new URL(request.url).origin : 'https://scamdb.dev'}/auth/github/callback`;
 const SESSION_DAYS = 30;
 const redirect = (location, cookies = []) => {
   const h = new Headers({ location });
@@ -14,7 +17,7 @@ export function authStart(request, env) {
   const state = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(16)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   const url = new URL('https://github.com/login/oauth/authorize');
   url.searchParams.set('client_id', env.GITHUB_CLIENT_ID);
-  url.searchParams.set('redirect_uri', CALLBACK);
+  url.searchParams.set('redirect_uri', callbackFor(request, env));
   url.searchParams.set('scope', '');
   url.searchParams.set('state', state);
   return redirect(url.toString(), [setCookie('scamdb_state', state, 600)]);
@@ -28,7 +31,7 @@ export async function authCallback(request, env) {
   try {
     const tok = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json' },
-      body: JSON.stringify({ client_id: env.GITHUB_CLIENT_ID, client_secret: env.GITHUB_CLIENT_SECRET, code: url.searchParams.get('code'), redirect_uri: CALLBACK }),
+      body: JSON.stringify({ client_id: env.GITHUB_CLIENT_ID, client_secret: env.GITHUB_CLIENT_SECRET, code: url.searchParams.get('code'), redirect_uri: callbackFor(request, env) }),
     });
     const { access_token } = await tok.json();
     if (!access_token) throw new Error('no token');

@@ -9,8 +9,15 @@
     { "pattern": "scamdb.dev", "custom_domain": true },
     { "pattern": "www.scamdb.dev", "custom_domain": true }
   ],
-  // Branch previews (Workers Builds runs `npx wrangler preview` on non-production branches) need this block, even empty.
-  "previews": {},
+  // UAT: every non-production branch gets a Preview (Workers Builds runs `npx wrangler preview`). Previews use their own
+  // test database, never production's. No routes or crons here: those only target production. See docs/uat.md.
+  "previews": {
+    "vars": { "ENVIRONMENT": "uat" },
+    "ai": { "binding": "AI" },
+    "d1_databases": [
+      { "binding": "DB", "database_name": "scamdb-uat", "database_id": "a609b476-6dde-4909-b1e2-f29d9783c12f", "migrations_dir": "migrations" }
+    ]
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
