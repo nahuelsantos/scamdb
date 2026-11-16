@@ -197,3 +197,24 @@ test('Spanish source line agrees in gender: revisada el', () => {
   assert.ok(page('es/catalogue/ar/ejemplo/index.html').includes('revisada el'));
   rmSync(dir, { recursive: true });
 });
+
+test('the language switch is announced by name', () => {
+  const { dir, page } = build();
+  const html = page('index.html');
+  assert.ok(html.includes('aria-label="Español"'));
+  assert.ok(html.includes('aria-label="English"'));
+  rmSync(dir, { recursive: true });
+});
+test('the 404 page takes its link words from the string table', async () => {
+  const { UI } = await import('../../site/i18n.js');
+  const { dir, page } = build();
+  const html = page('404.html');
+  assert.ok(html.includes(`>${UI.en.nfCatalogue}</a>`));
+  assert.ok(html.includes(`>${UI.en.nfDocs}</a>`));
+  rmSync(dir, { recursive: true });
+});
+test('Spanish wording: descargar, están bajo', async () => {
+  const { UI } = await import('../../site/i18n.js');
+  assert.match(UI.es.catP, /podés descargar/);
+  assert.equal(UI.es.dLicenseP1, 'Los datos están bajo');
+});

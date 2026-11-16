@@ -66,7 +66,7 @@ test('the Spanish playground answers in Spanish', async ({ page }) => {
 
 test('the language switch goes to the same page', async ({ page }) => {
   await page.goto('/docs/');
-  await page.getByRole('link', { name: 'ES', exact: true }).click();
+  await page.getByRole('link', { name: 'Español', exact: true }).click();
   await expect(page).toHaveURL(/\/es\/docs\/$/);
   await expect(page.locator('h1')).toHaveText('Documentación');
 });
