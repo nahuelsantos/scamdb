@@ -132,3 +132,11 @@ test('the same phone number in two reports gives the same hash', async () => {
   const v = async (id) => (await w.db.prepare("SELECT value FROM report_indicators WHERE report_id = ? AND kind = 'phone'").bind(id).first()).value;
   assert.equal(await v(a), await v(b));
 });
+test('on the site, a signed-in visitor with a key reports without Turnstile; other sites cannot', async () => {
+  const { sign } = await import('../../worker/session.js');
+  const cookie = `scamdb_session=${await sign({ githubId: 88, login: 'sol', exp: Date.now() + 3600000 }, 'x'.repeat(32))}`;
+  await w.fetch('/v1/keys', { method: 'POST', headers: { cookie, 'x-requested-with': 'scamdb' } });
+  const body = { text: 'Correos: pague 1,99 € [link]', country: 'es' };
+  assert.equal((await post(body, { headers: { cookie, 'x-requested-with': 'scamdb' } })).status, 201);
+  assert.equal((await post(body, { headers: { cookie } })).status, 403, 'without the site header the cookie is ignored');
+});

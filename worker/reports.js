@@ -7,7 +7,7 @@ import { readForm, extractText } from './media.js';
 import { loadCatalogue, loadBrands } from './catalogue.js';
 import { brandsIn } from '../lib/brands.js';
 import { matchMessage } from '../packages/matcher/index.js';
-import { authKey, recordUsage } from './keys.js';
+import { authKey, sessionKey, recordUsage } from './keys.js';
 import { verifyTurnstile } from './turnstile.js';
 import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 
@@ -48,7 +48,7 @@ export async function handleReport(request, env) {
   if (file && file.kind !== 'image') throw invalid('audio', 'reports take a screenshot (image), not audio');
   const report = validateReport(file ? { ...body, text: body.text ?? '-' } : body);
   const ip = request.headers.get('cf-connecting-ip') ?? '';
-  const key = await authKey(request, env);
+  const key = (await authKey(request, env)) ?? (await sessionKey(request, env));
   if (file && !key) throw new HttpError(401, 'key_required', 'Screenshots need a free API key (scamdb.dev/account). Text reports work without one.');
   if (!key && !(await verifyTurnstile(body.turnstileToken, ip, env.TURNSTILE_SECRET)))
     throw new HttpError(403, 'turnstile_failed', 'Requests without an API key need a valid Turnstile token.');

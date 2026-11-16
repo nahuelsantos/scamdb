@@ -89,6 +89,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <pre class="api-out" aria-live="polite" hidden></pre>
   </div>
   <div class="pcol" aria-live="polite" id="pg-out" data-strings="${esc(JSON.stringify(strings))}" data-lang="${lang}">${resultHtml(sample, byId, signalsById, lang)}</div>
+  <p class="pg-report"><a class="btn" id="pg-report" href="/report/">${UI_ICONS.send}<span>${esc(t(lang, 'reportThis'))}</span></a></p>
 </section>
 
 ${route ? `<section class="route" aria-labelledby="route-h">

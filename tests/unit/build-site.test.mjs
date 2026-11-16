@@ -28,7 +28,7 @@ test('writes every page and the playground assets', () => {
   const { dir, out, written } = build();
   const pages = written.filter((p) => p.endsWith('.html')).sort();
   const en = ['account/index.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
-    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'feed/index.html', 'index.html'];
+    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'feed/index.html', 'index.html', 'report/index.html'];
   assert.deepEqual(pages, ['404.html', ...en].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
     'assets/lib/text.js', 'assets/entries.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
@@ -216,9 +216,10 @@ test('the home page offers a free key and lists the reports endpoint', () => {
   assert.ok(page('index.html').includes('POST /v1/reports'));
   rmSync(dir, { recursive: true });
 });
-test('contribute points to the eschamuyo report form', () => {
+test('contribute points to our own report form, not a redirect', () => {
   const { dir, page } = build();
-  assert.ok(page('contribute/index.html').includes('href="https://eschamuyo.com/#/avisar"'));
+  assert.ok(page('contribute/index.html').includes('href="/report/"'));
+  assert.ok(!page('contribute/index.html').includes('eschamuyo.com/#/avisar'));
   rmSync(dir, { recursive: true });
 });
 
@@ -270,5 +271,15 @@ test('the feed page explains what it never contains and the terms, and the docs 
   const html = page('feed/index.html');
   for (const s of ['Feed for organisations', 'never contains', 'Counts under 3 are withheld', '/v1/feed/trends', 'Don’t publicly name', 'scamdb.dev']) assert.ok(html.includes(s), s);
   assert.ok(page('docs/index.html').includes('href="/feed/"'));
+  rmSync(dir, { recursive: true });
+});
+
+test('the report page has the form, the privacy note, Turnstile and its own CSP', () => {
+  const { dir, page } = build();
+  const html = page('report/index.html');
+  for (const s of ['id="rep-form"', 'name="country"', 'name="text"', 'name="image"', 'Phone numbers, emails', 'data-sitekey="0x4', '/assets/report.js']) assert.ok(html.includes(s), s);
+  assert.ok(page('index.html').includes('href="/report/"'), 'the nav links to the report page');
+  const headers = readFileSync(new URL('../../site/_headers', import.meta.url), 'utf8');
+  assert.match(headers, /\/report\/\*\n\s+! Content-Security-Policy\n\s+Content-Security-Policy: [^\n]*script-src 'self' https:\/\/challenges\.cloudflare\.com[^\n]*frame-src https:\/\/challenges\.cloudflare\.com/);
   rmSync(dir, { recursive: true });
 });

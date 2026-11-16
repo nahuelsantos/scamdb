@@ -10,6 +10,6 @@ export function contribute({ meta, lang = 'en' }) {
 <li>${esc(t(lang, 'cAdd3a'))} <code>npm run validate</code>${esc(t(lang, 'cAdd3b'))}</li></ol>
 <p>${esc(t(lang, 'cRules'))}</p>
 <p>${esc(t(lang, 'cLicense'))}</p></section>
-<section aria-labelledby="r-h"><h2 id="r-h">${esc(t(lang, 'cReportH'))}</h2><p>${esc(t(lang, 'cReportA'))} <a href="https://eschamuyo.com/#/avisar">${esc(t(lang, 'cReportLink'))}</a> ${esc(t(lang, 'cReportB'))} <code>${esc(t(lang, 'cReportBold'))}</code>${esc(t(lang, 'cReportC'))}</p></section>`;
+<section aria-labelledby="r-h"><h2 id="r-h">${esc(t(lang, 'cReportH'))}</h2><p>${esc(t(lang, 'cReportA'))} <a href="/report/">${esc(t(lang, 'cReportLink'))}</a> ${esc(t(lang, 'cReportB'))} <code>${esc(t(lang, 'cReportBold'))}</code>${esc(t(lang, 'cReportC'))}</p></section>`;
   return layout({ title: t(lang, 'contribTitle'), description: t(lang, 'contribDesc'), body, path: '/contribute/', meta, lang });
 }

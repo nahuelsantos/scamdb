@@ -13,7 +13,7 @@ const LOGO = `<svg viewBox="0 0 30 30" aria-hidden="true" focusable="false">${LS
 export function layout({ title, description, body, path, meta, lang = 'en', scripts = '' }) {
   const P = '';
   const here = path;
-  const nav = [['/docs/', t(lang, 'navDocs')], ['/catalogue/', t(lang, 'navCatalogue')], ['/contribute/', t(lang, 'navContribute')], ['/account/', t(lang, 'navAccount')]]
+  const nav = [['/catalogue/', t(lang, 'navCatalogue')], ['/report/', t(lang, 'navReport')], ['/docs/', t(lang, 'navDocs')], ['/contribute/', t(lang, 'navContribute')], ['/account/', t(lang, 'navAccount')]]
     .map(([href, label]) => `<a href="${P}${href}"${path.startsWith(href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
   return `<!doctype html>
 <html lang="${lang}">

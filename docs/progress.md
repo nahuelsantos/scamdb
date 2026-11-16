@@ -2,6 +2,32 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-16 (evening): reporting on scamdb.dev, competitor research
+
+**Built:**
+- **`/report/` on scamdb.dev:** a short form, no longer a redirect to eschamuyo. It's in the main nav.
+  - Required: country and the message (or a screenshot, or "what happened"). Optional: channel, what happened,
+    contact.
+  - Signed in with a key, there's no anti-bot check and a screenshot can be attached. Signed out, a Cloudflare
+    Turnstile check runs. That page has its own CSP allowing `challenges.cloudflare.com`.
+  - Personal data is redacted before storage, as before.
+- **"Report this message"** after a check on the home page. The message is handed over in `sessionStorage`, never
+  in the URL.
+- **"Did you get one like this? Report it"** on every catalogue entry, with the country preselected.
+- **Worker:** `/v1/reports` accepts the signed-in session from our own pages (`X-Requested-With: scamdb`, like
+  `/v1/isitascam`).
+
+**Findings:**
+- **Turnstile site key:** the form reuses eschamuyo's widget. The owner must add `scamdb.dev` and `www.scamdb.dev`
+  to its hostnames in the Cloudflare dashboard (Turnstile → widget → Hostnames). Until then, anonymous reports
+  from scamdb.dev fail the check; signed-in reports work.
+- **Competitors** (`docs/research/competitors-2026-11-16.md`):
+  - All five reviewed sites are lookups of people and entities, English-only, and none catalogues patterns by
+    country.
+  - None of their data can be imported without permission. GACS claims CC BY 4.0, but its terms conflict, so we'd
+    have to ask first.
+  - Ideas worth taking: an open-data download, a public trends view, keyless feeds and RSS, an appeals channel.
+
 ## 2026-11-16: report attachments, redaction and the organisation feed
 
 Plan: `docs/superpowers/plans/2026-11-16-reports-feed.md`.
