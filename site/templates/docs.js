@@ -3,7 +3,7 @@ import { layout, REPO } from './layout.js';
 import { t } from '../i18n.js';
 
 const PATHS = ['/v1/index.json', '/v1/countries.json', '/v1/signals.json', '/v1/{country}/scams.json', '/v1/{country}/contacts.json',
-  '/v1/scams/{country}/{slug}.json', '/v1/scams.json', '/v1/scamdb.zip', '/v1/changes.json'];
+  '/v1/scams/{country}/{slug}.json', '/v1/scams.json', '/v1/scamdb.zip', '/v1/scams.csv', '/v1/changes.json', '/v1/changes.atom', '/v1/brands.json'];
 const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 'source', 'turnstileToken'];
 const CHECK_FIELDS = ['text', 'country', 'lang', 'report', 'image', 'audio'];
 const CHECK_EXAMPLE = JSON.stringify({ verdict: 'scam', score: null, signals: [{ id: 'asks_for_code', label: 'Asks for a code', evidence: 'read me the 6-digit code' }],
@@ -48,6 +48,7 @@ ${CHECK_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lan
 <div class="scroll"><table><thead><tr><th>POST /v1/reports</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
 ${REPORT_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lang, 'dReportsRows')[i])}</td></tr>`).join('')}</tbody></table></div>
 <p>${esc(t(lang, 'dReportsKeyless'))}</p></section>
+<section aria-labelledby="dl-h"><h2 id="dl-h">${esc(t(lang, 'dDownloadH'))}</h2><p>${esc(t(lang, 'dDownloadP'))}</p><ul class="list">${t(lang, 'dDownloadRows').map((r) => { const [path, ...rest] = r.split(': '); return `<li><a href="${esc(path)}"><code>${esc(path)}</code></a>: ${esc(rest.join(': '))}</li>`; }).join('')}</ul></section>
 <section aria-labelledby="feed-h"><h2 id="feed-h">${esc(t(lang, 'feedH'))}</h2><p>${esc(t(lang, 'dFeedP'))} <a href="/feed/">/feed/</a></p></section>
 <section aria-labelledby="k-h"><h2 id="k-h">${esc(t(lang, 'dKeys'))}</h2><p>${esc(t(lang, 'dKeysP'))}</p></section>
 <section aria-labelledby="l-h"><h2 id="l-h">${esc(t(lang, 'dLicense'))}</h2><p>${esc(t(lang, 'dLicenseP1'))} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${esc(t(lang, 'dLicenseP2'))} <b>scamdb.dev · CC BY 4.0</b> ${esc(t(lang, 'dLicenseP3'))}</p></section>

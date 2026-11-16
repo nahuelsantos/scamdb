@@ -23,6 +23,7 @@ export function layout({ title, description, body, path, meta, lang = 'en', scri
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${SITE}${esc(here)}">
+<link rel="alternate" type="application/atom+xml" title="scamdb: new and updated scams" href="/v1/changes.atom">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${SITE}${esc(here)}">

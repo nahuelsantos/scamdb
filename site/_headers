@@ -6,6 +6,13 @@
   Cross-Origin-Opener-Policy: same-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
+/v1/scams.csv
+  Content-Type: text/csv; charset=utf-8
+  Content-Disposition: attachment; filename="scamdb-scams.csv"
+
+/v1/changes.atom
+  Content-Type: application/atom+xml; charset=utf-8
+
 /v1/*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300

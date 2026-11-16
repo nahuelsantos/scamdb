@@ -19,8 +19,8 @@ test('writes exactly the static endpoint files', () => {
   const { out, written } = build();
   assert.deepEqual([...written].sort(), [
     'v1/ar/contacts.json', 'v1/ar/scams.json', 'v1/br/contacts.json', 'v1/br/scams.json',
-    'v1/changes.json', 'v1/countries.json', 'v1/index.json', 'v1/scamdb.zip',
-    'v1/scams.json', 'v1/scams/ar/ejemplo.json', 'v1/scams/br/exemplo.json', 'v1/signals.json',
+    'v1/changes.atom', 'v1/changes.json', 'v1/countries.json', 'v1/index.json', 'v1/scamdb.zip',
+    'v1/scams.csv', 'v1/scams.json', 'v1/scams/ar/ejemplo.json', 'v1/scams/br/exemplo.json', 'v1/signals.json',
   ]);
   for (const p of written) assert.ok(existsSync(join(out, p)), p);
   rmSync(out, { recursive: true });

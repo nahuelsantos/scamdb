@@ -1,0 +1,37 @@
+name: Correction request
+description: Something in a scam entry is wrong or out of date (also for brands and organisations named in an entry).
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep scamdb accurate. Please don't include personal data (yours or anyone else's). We usually answer within a week.
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry?
+      description: The page address or id, for example https://scamdb.dev/catalogue/es/dgt-fake-fine/
+    validations:
+      required: true
+  - type: dropdown
+    id: who
+    attributes:
+      label: You are
+      options:
+        - Someone who spotted a mistake
+        - The brand, company or agency named in the entry
+        - A government or law-enforcement body
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong, and what should it say?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: A source we can check (optional)
+      description: An official page or statement that supports the correction.

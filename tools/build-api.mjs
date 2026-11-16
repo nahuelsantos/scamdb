@@ -3,6 +3,7 @@ import { mkdirSync, writeFileSync, readFileSync, readdirSync, statSync, existsSy
 import { join, dirname, relative } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { makeZip } from '../lib/zip.js';
+import { toCsv, toAtom } from '../lib/exports.js';
 
 export const LICENSE = 'CC BY 4.0';
 export const ATTRIBUTION = 'scamdb.dev · CC BY 4.0';
@@ -77,7 +78,12 @@ export function buildApi(repo, outDir, meta, root) {
   }
   for (const e of repo.entries) put(`v1/scams/${e.id}.json`, e);
   put('v1/scams.json', repo.entries);
-  put('v1/changes.json', changesFromGit(root, repo.entries));
+  const changes = changesFromGit(root, repo.entries);
+  put('v1/changes.json', changes);
+  // Plain exports: a spreadsheet-friendly CSV and an Atom feed readers can subscribe to.
+  const raw = (path, content) => { const full = join(outDir, path); mkdirSync(dirname(full), { recursive: true }); writeFileSync(full, content); written.push(path); };
+  raw('v1/scams.csv', toCsv(repo.entries));
+  raw('v1/changes.atom', toAtom(changes, repo.entries));
 
   const zipFiles = [...filesUnder(join(root, 'data'), root), 'LICENSE-DATA']
     .map((name) => { try { return { name, data: readFileSync(join(root, name)) }; } catch { return null; } }).filter(Boolean);

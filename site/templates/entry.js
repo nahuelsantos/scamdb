@@ -58,6 +58,7 @@ ${e.story ? `<section aria-labelledby="st-h"><h2 id="st-h">${esc(t(ui, 'sStory')
 <section aria-labelledby="c-h"><h2 id="c-h">${esc(t(ui, 'sReport'))}</h2><p><a class="btn" href="/report/?country=${esc(e.country)}">${esc(t(ui, 'reportLike'))}</a></p><div class="contacts">${contacts.map((k) => `<div class="contact"><h3>${L(k.name, lang)}</h3>${L(k.when, lang, 'p', 'small')}
 <ul>${k.ways.map((w) => `<li><span class="mono small">${esc(ways[w.type])}</span> ${w.label ? `${L(w.label, lang)}: ` : ''}${w.type === 'web' ? `<a href="${esc(w.value)}">${esc(w.value)}</a>` : `<span class="sel">${esc(w.value)}</span>`}</li>`).join('')}</ul>
 ${k.hours ? L(k.hours, lang, 'p', 'small') : ''}<p class="small">${esc(t(ui, 'source'))}: <a href="${esc(k.source)}">${esc(k.source.replace(/^https:\/\/([^/]+).*$/, '$1'))}</a>, ${esc(t(ui, 'checked'))} ${esc(k.checked)}</p></div>`).join('')}</div></section>
+<p class="small correction"><a href="${REPO}/issues/new?template=correction.yml&amp;title=${encodeURIComponent(`Correction: ${e.id}`)}">${esc(t(ui, 'correctionLink'))}</a></p>
 
 ${e.media?.length ? `<section aria-labelledby="m-h"><h2 id="m-h">${esc(t(ui, 'sMedia'))}</h2><ul class="list">${e.media.map((m) => `<li><span class="mono small">${esc(m.type)}</span> <a href="${esc(m.url)}">${esc(m.title)}</a>, ${esc(m.publisher)}, ${esc(m.date)}</li>`).join('')}</ul></section>` : ''}
 
