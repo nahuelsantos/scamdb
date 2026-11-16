@@ -47,8 +47,9 @@ original language; every contact has a `source` URL and `checked` date (today).
 
 ## 4. Research
 
-Start with the country's entries in `importer/sources.json`, then reputable national news. Only use material from the
-**last 24 months**. List candidate scams with their sources. Drop a candidate when:
+Start with the country's entries in `importer/sources.json`, then reputable national news. Use material from the
+**last 5 years**, newest first: prefer scams with sources from the last 2 years. List candidate scams with their
+sources. Drop a candidate when:
 
 - `isDuplicate` (in `tools/importer.mjs`) finds it among the country's existing entries (same name or 3+ shared
   phrases): check with a quick script, or by reading `data/<cc>/scams/`;
@@ -56,8 +57,8 @@ Start with the country's entries in `importer/sources.json`, then reputable nati
 - it has no dated `https://` source you actually read.
 
 Some official pages (for example New Zealand's Consumer Protection and Police scam pages) have no date. Use them to
-find which scams to look for and for advice, but every entry still needs at least one dated source from the last 24
-months (an alert, a news release, a case study or reputable news); an undated page can be an extra source, never the
+find which scams to look for and for advice, but every entry still needs at least one dated source from the last 5
+years (an alert, a news release, a case study or reputable news); an undated page can be an extra source, never the
 only one.
 
 If a host is blocked or refuses automated access, note it for the PR summary and use other sources; never invent what
@@ -74,7 +75,8 @@ Prefer the most widespread and most harmful scams. For each, write `data/<cc>/sc
   `[link]` (English, Portuguese); no real numbers, links or names.
 - `phrases`: 5+ everyday phrases per language, the way a victim would describe it.
 - `steps` with `signal` ids from `data/signals.json`, `signals`, `redFlags`, `whatToDo`, `reportTo` (contact ids),
-  `sources` (title, publisher, `https://` url, date), `updated` (today), `status: "active"`.
+  `sources` (title, publisher, `https://` url, date), `updated` (today), and `status`: `"active"` when its newest source is from the last 2 years, `"fading"` when it is
+  2 to 5 years old (the validator enforces this).
 - Never invent cases, quotes, statistics or numbers. `story` only when a source describes a real case.
 
 ## 6. Validate

@@ -112,6 +112,14 @@ export function validateRepo(root) {
       for (const [i, x] of (s.examples ?? []).entries()) errors.push(...langErrors(path, `examples[${i}].text`, x.text, s.lang));
     }
 
+    // Source age: an active scam needs a source from the 2 years before `updated`; anything not archived, from the 5.
+    const newest = (s.sources ?? []).map((x) => x.date).filter(Boolean).sort().at(-1);
+    if (newest && s.updated) {
+      const years = (Date.parse(s.updated) - Date.parse(newest)) / (365.25 * 864e5);
+      if (s.status !== 'archived' && years > 5) errors.push(`${path}: needs a source from the 5 years before updated (newest is ${newest}); add one or mark it archived`);
+      else if (s.status === 'active' && years > 2) errors.push(`${path}: an active scam needs a source from the 2 years before updated (newest is ${newest}); add one or mark it fading`);
+    }
+
     for (const sig of s.signals ?? []) if (!signalIds.has(sig)) errors.push(`${path}: unknown signal "${sig}"`);
     for (const [i, st] of (s.steps ?? []).entries()) if (st.signal && !signalIds.has(st.signal)) errors.push(`${path}: steps[${i}]: unknown signal "${st.signal}"`);
     for (const r of s.related ?? []) if (!entryIds.has(r)) errors.push(`${path}: unknown related "${r}"`);

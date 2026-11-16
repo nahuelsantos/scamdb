@@ -74,7 +74,8 @@ The owner chose 2 ("automate it, with the option of running it manually").
    languages, emergency number) and write `data/<cc>/contacts.json` from official sources (police cybercrime unit,
    consumer agency, banking regulator, national reporting line).
 3. **Research.** Read the country's official warning sources (`importer/sources.json`, see below) and reputable news
-   from the last 24 months [call]; list candidate scams; drop ones already in `data/<cc>/scams/` and ones listed in
+   from the last 5 years (owner, 2026-11-16; was 24 months), marking scams whose newest source is over 2 years old as
+   `fading`; list candidate scams; drop ones already in `data/<cc>/scams/` and ones listed in
    `importer/rejected.json` [call].
    - **Rejections are remembered** [call]: at the start of each run, the importer looks at import PRs closed since the
      last run; any drafted scam that didn't reach `main` (PR closed, or the scam removed during review) is added to
