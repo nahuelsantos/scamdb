@@ -15,7 +15,7 @@ test('cleanup deletes old reports, counters, usage and check fingerprints, and k
   await w.db.prepare("INSERT INTO hits (bucket, day, count) VALUES ('a', ?, 1), ('b', ?, 1)").bind(daysAgo(3).toISOString().slice(0, 10), daysAgo(0).toISOString().slice(0, 10)).run();
   await w.db.prepare("INSERT INTO usage (key_id, day, endpoint, count) VALUES ('k', ?, 'reports', 1), ('k', ?, 'reports', 1)").bind(daysAgo(401).toISOString().slice(0, 10), daysAgo(0).toISOString().slice(0, 10)).run();
   await w.db.prepare("INSERT INTO check_prints (subject, day, print, created_at) VALUES ('gh:1', ?, 'ab', 'x'), ('gh:1', ?, 'cd', 'x')").bind(daysAgo(3).toISOString().slice(0, 10), daysAgo(0).toISOString().slice(0, 10)).run();
-  assert.deepEqual(await cleanup(w.db, NOW), { reports: 1, hits: 1, usage: 1, prints: 1 });
+  assert.deepEqual(await cleanup(w.db, NOW), { reports: 1, hits: 1, usage: 1, prints: 1, indicators: 0 });
   const ids = (await w.db.prepare('SELECT id FROM reports ORDER BY id').all()).results.map((r) => r.id);
   assert.deepEqual(ids, ['kept-promoted', 'recent']);
 });
@@ -24,4 +24,11 @@ test('the daily cron runs the cleanup', async () => {
   const worker = await w.mf.getWorker();
   await worker.scheduled({ scheduledTime: new Date(), cron: '17 4 * * *' });
   assert.equal(await w.db.prepare("SELECT id FROM reports WHERE id = 'cron-old'").first(), null);
+});
+test('indicators go with their report', async () => {
+  await report('ind-old', 200);
+  await w.db.prepare("INSERT INTO report_indicators (report_id, kind, value, created_at) VALUES ('ind-old', 'domain', 'x.top', 'x'), ('gone', 'domain', 'y.top', 'x')").run();
+  const out = await cleanup(w.db, NOW);
+  assert.equal(out.indicators, 2);
+  assert.equal((await w.db.prepare('SELECT COUNT(*) AS n FROM report_indicators').first()).n, 0);
 });

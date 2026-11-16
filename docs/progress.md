@@ -6,6 +6,27 @@ A running record of what was built, what was measured and what we learned. Newes
 
 Plan: `docs/superpowers/plans/2026-11-16-reports-feed.md`.
 
+### PR 2: private indicators and tagging
+
+**Built:**
+- Each report stores its top catalogue match (`scam_id`, from the matcher on the redacted text) and the brands it
+  names (`brands`).
+- Brands come from a curated `data/brands.json`: 77 brands and agencies across the 9 countries, also published as
+  `/v1/brands.json`.
+- **Private indicators** (`report_indicators`) hold link domains and phone numbers as an HMAC-SHA256 with
+  `IP_SALT`. The same number always gives the same value, so repeats can be counted, but the number can't be read
+  back.
+- At most 10 of each per report. They're deleted together with the report by the daily clean-up (180 days).
+
+**Findings:**
+- **150 of the 450 labelled messages (33%) name a listed brand.** Most named: WhatsApp, Interac, Mercado Pago,
+  ATO, Correios, Bizum, BBVA, IRD and Zelle. That's enough for brand alerts to mean something.
+- **Short brand names collide with ordinary words.** "SAT" (Mexico) and "ATO" are matched as whole words only, and
+  only for their country. The tests check that "satellite" doesn't count as SAT, and that HMRC isn't counted in
+  Australia.
+- **Phone hashes depend on `IP_SALT`.** Changing that secret means old and new hashes no longer match. Keep the
+  salt stable.
+
 ### PR 1: redaction and screenshot reports
 
 **Built:**

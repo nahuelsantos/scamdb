@@ -1,5 +1,5 @@
 // Writes the static API (dist/v1/...) from the loaded repo. Every JSON file is wrapped in the license envelope.
-import { mkdirSync, writeFileSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { makeZip } from '../lib/zip.js';
@@ -69,6 +69,8 @@ export function buildApi(repo, outDir, meta, root) {
   });
   put('v1/countries.json', repo.countries);
   put('v1/signals.json', repo.signals);
+  // Brands and agencies scammers impersonate (used to count reports per brand for the organisation feed).
+  if (root && existsSync(join(root, 'data/brands.json'))) put('v1/brands.json', JSON.parse(readFileSync(join(root, 'data/brands.json'), 'utf8')).brands);
   for (const c of repo.countries) {
     put(`v1/${c.code}/scams.json`, byCountry.get(c.code));
     put(`v1/${c.code}/contacts.json`, repo.contacts.get(c.code) ?? []);

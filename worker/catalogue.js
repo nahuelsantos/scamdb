@@ -35,3 +35,11 @@ export async function loadEntry(env, id) {
     return null;
   }
 }
+
+let brandsCache = null;
+/** data/brands.json's list, from the static /v1/brands.json (empty if missing; a failed load is retried next time). */
+export async function loadBrands(env) {
+  if (brandsCache) return brandsCache;
+  try { brandsCache = (await asset(env, '/v1/brands.json')).data ?? []; } catch { return []; }
+  return brandsCache;
+}

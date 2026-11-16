@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
+export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql', '0005_report_tags.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
 
 /** Default outbound stub: Turnstile token "ok" passes; GitHub answers a fixed user. */
 export async function defaultFetch(request) {
@@ -31,6 +31,7 @@ export async function makeWorker({ fetchMock = defaultFetch, bindings = {} } = {
       { id: 'ar/whatsapp-codigo', country: 'ar', name: { es: 'Robo de WhatsApp con el código', en: 'WhatsApp theft with the code' }, phrases: { es: ['codigo de whatsapp', 'me pidieron un codigo', 'robo de whatsapp', 'codigo por mensaje', 'te llega un codigo'], en: ['whatsapp code', 'they asked me for a code', 'whatsapp theft', 'code by text', 'read me the code'] }, signals: ['asks_for_code'] },
       { id: 'au/parcel', country: 'au', name: { en: 'Parcel delivery text' }, phrases: { en: ['parcel delivery text', 'redelivery fee link', 'update my address', 'parcel on hold', 'courier text link'] }, signals: [] },
     ] });
+  put('v1/brands.json', { version: 't.1', data: [{ id: 'anses', name: 'ANSES', countries: ['ar'], aliases: ['anses'] }, { id: 'whatsapp', name: 'WhatsApp', countries: ['ar', 'au'], aliases: ['whatsapp'] }] });
   put('v1/scams/ar/whatsapp-codigo.json', { version: 't.1', data: { id: 'ar/whatsapp-codigo', country: 'ar', whatToDo: { es: ['No leas el código'], en: ['Never read out the code'] } } });
   const mf = new Miniflare({
     modules: true,

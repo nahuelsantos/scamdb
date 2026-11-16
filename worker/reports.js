@@ -4,6 +4,9 @@
 import { readJson, json, cors, HttpError } from './http.js';
 import { redact } from '../lib/redact.js';
 import { readForm, extractText } from './media.js';
+import { loadCatalogue, loadBrands } from './catalogue.js';
+import { brandsIn } from '../lib/brands.js';
+import { matchMessage } from '../packages/matcher/index.js';
 import { authKey, recordUsage } from './keys.js';
 import { verifyTurnstile } from './turnstile.js';
 import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
@@ -69,12 +72,46 @@ export async function handleReport(request, env) {
     if (report.source === 'api') report.source = 'screenshot';
   }
   // Nothing personal is stored: placeholders replace phone numbers, emails, cards, accounts and greeting names.
-  const text = report.text ? redact(report.text).text : null;
-  const whatHappened = report.whatHappened ? redact(report.whatHappened).text : null;
+  const r1 = redact(report.text ?? ''), r2 = redact(report.whatHappened ?? '');
+  const text = report.text ? r1.text : null;
+  const whatHappened = report.whatHappened ? r2.text : null;
+  const tags = await tagReport(env, `${text ?? ''}\n${whatHappened ?? ''}`, report.country);
 
   const id = crypto.randomUUID();
-  await env.DB.prepare('INSERT INTO reports (id, created_at, country, channel, text, what_happened, contact, source, key_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
-    .bind(id, now.toISOString(), report.country, report.channel, text, whatHappened, report.contact, report.source, key?.id ?? null).run();
+  const at = now.toISOString();
+  const indicators = await indicatorRows(env, id, at, [r1.found, r2.found]);
+  await env.DB.batch([
+    env.DB.prepare('INSERT INTO reports (id, created_at, country, channel, text, what_happened, contact, source, key_id, scam_id, brands) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+      .bind(id, at, report.country, report.channel, text, whatHappened, report.contact, report.source, key?.id ?? null, tags.scamId, tags.brands),
+    ...indicators,
+  ]);
   if (key) await recordUsage(env.DB, key.id, 'reports', now);
   return cors(json({ id, received: true }, 201));
+}
+
+/** The matcher's top catalogue match and the brands the (redacted) text names. Failures just leave them empty. */
+async function tagReport(env, text, country) {
+  try {
+    const [catalogue, brands] = await Promise.all([loadCatalogue(env), loadBrands(env)]);
+    const scamId = matchMessage(text, catalogue.entries, { country }).matches[0]?.id ?? null;
+    const named = brandsIn(text, brands, country);
+    return { scamId, brands: named.length ? named.join(',') : null };
+  } catch {
+    return { scamId: null, brands: null };
+  }
+}
+
+/** HMAC-SHA256 of the phone digits with IP_SALT: the same number always gives the same value, which can't be read back. */
+export async function phoneHash(digits, salt) {
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(salt), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(`phone:${digits}`));
+  return [...new Uint8Array(sig)].slice(0, 16).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+/** INSERT statements for the private indicators: link domains and hashed phone numbers (at most 10 of each). */
+async function indicatorRows(env, id, at, founds) {
+  const domains = [...new Set(founds.flatMap((f) => f.domains))].slice(0, 10);
+  const phones = [...new Set(founds.flatMap((f) => f.phones))].slice(0, 10);
+  const ins = (kind, value) => env.DB.prepare('INSERT INTO report_indicators (report_id, kind, value, created_at) VALUES (?, ?, ?, ?)').bind(id, kind, value, at);
+  return [...domains.map((d) => ins('domain', d)), ...(await Promise.all(phones.map(async (p) => ins('phone', await phoneHash(p, env.IP_SALT)))))];
 }

@@ -15,7 +15,7 @@ export function buildQuery(cmd, args) {
     const limit = Number(opt('--limit', '200'));
     if (!STATUSES.includes(status)) throw new Error(`status must be one of ${STATUSES.join(', ')}`);
     if (!Number.isInteger(limit) || limit < 1 || limit > 1000) throw new Error('limit must be an integer from 1 to 1000');
-    const cols = ['id', 'created_at', 'country', 'channel', 'text', 'what_happened', 'source', ...(args.includes('--with-contact') ? ['contact'] : [])];
+    const cols = ['id', 'created_at', 'country', 'channel', 'scam_id', 'brands', 'text', 'what_happened', 'source', ...(args.includes('--with-contact') ? ['contact'] : [])];
     return `SELECT ${cols.join(', ')} FROM reports WHERE status = '${status}' ORDER BY created_at LIMIT ${limit}`;
   }
   if (cmd === 'mark') {
