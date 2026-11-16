@@ -1,4 +1,4 @@
-// Cloudflare Turnstile check for keyless reports (they come from forms such as eschamuyo's).
+// Cloudflare Turnstile check for keyless reports (scamdb.dev's report form and eschamuyo's, each with its own widget).
 export async function verifyTurnstile(token, ip, secret) {
   if (typeof token !== 'string' || !token || token.length > 2048) return false;
   const form = new FormData();

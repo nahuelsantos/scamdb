@@ -5,7 +5,7 @@ import { layout } from './layout.js';
 import { UI_ICONS } from './icons.js';
 import { t } from '../i18n.js';
 
-export const TURNSTILE_SITE_KEY = '0x4AAAAAAGDLu7AgNxGk9rUm'; // public site key (the widget's hostnames include scamdb.dev)
+export const TURNSTILE_SITE_KEY = '0x4AAAAAAGEPmIAcW1_PP5dE'; // scamdb.dev's own widget (public site key; its secret is TURNSTILE_SECRET_SITE)
 const CHANNELS = ['whatsapp', 'sms', 'phone', 'email', 'social', 'online', 'in-person'];
 const KEYS = ['repSending', 'repThanks', 'repThanksP', 'repAnother', 'repFail', 'repNeedText', 'repNeedCountry', 'repTurnstile', 'repTooMany',
   'repShotSignedOut', 'repUnreadable', 'repSignedIn', 'repCheckFirst'];
