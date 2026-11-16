@@ -28,7 +28,7 @@ in each language). Contacts and countries follow the same rule.
 | `id` | yes | `<country>/<slug>`, same as the file path |
 | `country` | yes | ISO code, same as the folder (`ar`) |
 | `lang` | yes | the language the scam arrives in (`es`, `en`, `pt`…) |
-| `status` | yes | `active`, `fading` or `archived` |
+| `status` | yes | `active` (a source from the last 2 years), `fading` (newest source 2–5 years old) or `archived` (older, or no longer seen) |
 | `channels` | yes | some of `whatsapp`, `sms`, `phone`, `online`, `in-person`, `email`, `social` |
 | `sender` | yes | who the message claims to be, as shown on the phone (`“PAMI”`) |
 | `name` | yes | short name people would recognise |
