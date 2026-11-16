@@ -9,7 +9,6 @@ import { docs } from '../site/templates/docs.js';
 import { contribute } from '../site/templates/contribute.js';
 import { notfound } from '../site/templates/notfound.js';
 import { account } from '../site/templates/account.js';
-import { LANGS } from '../site/i18n.js';
 
 export { esc } from '../site/templates/html.js';
 
@@ -38,16 +37,13 @@ export function buildSite(repo, outDir, meta, root) {
   };
   const ctx = { repo, meta, matchMessage, root };
 
-  for (const lang of LANGS) {
-    const at = lang === 'en' ? '' : `${lang}/`;
-    const c = { ...ctx, lang };
-    put(`${at}index.html`, home(c));
-    put(`${at}catalogue/index.html`, catalogue(c));
-    for (const e of repo.entries) put(`${at}catalogue/${e.id}/index.html`, entry({ ...c, entry: e }));
-    put(`${at}docs/index.html`, docs(c));
-    put(`${at}contribute/index.html`, contribute(c));
-    put(`${at}account/index.html`, account(c));
-  }
+  const c = { ...ctx, lang: 'en' };
+  put('index.html', home(c));
+  put('catalogue/index.html', catalogue(c));
+  for (const e of repo.entries) put(`catalogue/${e.id}/index.html`, entry({ ...c, entry: e }));
+  put('docs/index.html', docs(c));
+  put('contribute/index.html', contribute(c));
+  put('account/index.html', account(c));
   put('404.html', notfound(ctx));
 
   for (const f of readdirSync(join(CODE, 'site/assets'))) copy(join(CODE, 'site/assets', f), `assets/${f}`);

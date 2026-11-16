@@ -1,6 +1,6 @@
 import { esc, L } from './html.js';
 import { layout } from './layout.js';
-import { t, prefix } from '../i18n.js';
+import { t } from '../i18n.js';
 import { steps, card, entryUrl } from './parts.js';
 import { pick } from '../../lib/text.js';
 import { sketch, roundRect } from '../../lib/sketch.js';
@@ -50,13 +50,13 @@ export const heroArt = (w) => HERO_ART.replace('${title}', w.title).replace('${s
 export function resultHtml(r, entriesById, signalsById, ui = 'en') {
   const sigs = r.signals.map((s) => `<li><code>${esc(s.id)}</code><span>${esc(pick(signalsById.get(s.id)?.label, ui) ?? s.id)}: <q lang="es">${esc(s.evidence)}</q></span></li>`).join('');
   const m = r.matches[0] && entriesById.get(r.matches[0].id);
-  const match = m ? `${t(ui, 'matches')} <a href="${entryUrl(m, ui)}">${esc(m.id)}</a>, ${L(m.name)}` : esc(t(ui, 'noMatch'));
+  const match = m ? `${t(ui, 'matches')} <a href="${entryUrl(m)}">${esc(m.id)}</a>, ${L(m.name, 'en')}` : esc(t(ui, 'noMatch'));
   return `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(t(ui, VERDICT_KEY[r.verdict]))}</span><span class="noscore">${esc(t(ui, 'noScore'))}</span></div>
 <ul class="why">${sigs || `<li><code>no_signals</code><span>${esc(t(ui, 'noSignals'))}</span></li>`}</ul><p class="match">${match}</p>`;
 }
 
 export function home({ repo, meta, matchMessage, lang = 'en' }) {
-  const P = prefix(lang);
+  const P = '';
   const byId = new Map(repo.entries.map((e) => [e.id, e]));
   const signalsById = new Map(repo.signals.map((s) => [s.id, s]));
   const route = byId.get(ROUTE) ?? repo.entries.find((e) => e.steps?.length);
@@ -89,13 +89,13 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
 </section>
 
 ${route ? `<section class="route" aria-labelledby="route-h">
-  <div class="sh"><h2 id="route-h">${esc(t(lang, 'scriptH'))}</h2><p>${esc(t(lang, 'scriptP'))} <a href="${entryUrl(route, lang)}">${esc(route.id)}</a>.</p></div>
-  ${steps(route, signalsById, 'es', lang)}
+  <div class="sh"><h2 id="route-h">${esc(t(lang, 'scriptH'))}</h2><p>${esc(t(lang, 'scriptP'))} <a href="${entryUrl(route)}">${esc(route.id)}</a>.</p></div>
+  ${steps(route, signalsById, 'en', lang)}
 </section>` : ''}
 
 <section aria-labelledby="cat-h">
   <div class="sh"><h2 id="cat-h">${esc(t(lang, 'catH'))}</h2><p>${esc(t(lang, 'catP'))} <a href="${P}/catalogue/">${esc(t(lang, 'seeAll', repo.entries.length))}</a>.</p></div>
-  <div class="specimens">${featured.map((e) => card(e, 'es', lang)).join('')}</div>
+  <div class="specimens">${featured.map((e) => card(e, lang)).join('')}</div>
 </section>
 
 <section class="eps" aria-labelledby="ep-h">

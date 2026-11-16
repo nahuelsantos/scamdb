@@ -160,6 +160,15 @@ main section { margin-bottom: 56px; }
 .sender { color: var(--dim); margin: 0 0 20px; }
 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
 .bubble { background: var(--card); border: 1.5px solid var(--line); border-radius: 16px 16px 16px 4px; padding: 14px 16px; margin: 0 0 10px; }
+.translation { color: var(--dim); font-size: 15px; margin: -2px 0 var(--s4) 16px; }
+.original { margin: 0 0 var(--s6); }
+.original summary { display: inline-flex; align-items: center; gap: var(--s2); min-height: 44px; padding: 0 14px; border: 1.5px solid var(--line); border-radius: 10px; cursor: pointer; list-style: none; font-size: 15px; }
+.original summary::-webkit-details-marker { display: none; }
+.original summary .uic { width: 22px; height: 22px; }
+.original[open] summary { margin-bottom: var(--s4); }
+.original > div { border-left: 3px solid var(--line); padding-left: var(--s4); max-width: 72ch; }
+.original h3 { font-size: 14px; font-family: var(--mono); color: var(--dim); font-weight: 500; margin: var(--s5) 0 var(--s2); }
+.original h2 { font-size: 22px; }
 .list { padding-left: 1.2em; margin: 0 0 12px; display: grid; gap: 6px; }
 .contacts { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
 .contact { background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 6px; align-content: start; }
