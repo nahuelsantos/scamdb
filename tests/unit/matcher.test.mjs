@@ -329,3 +329,14 @@ test('1.10.0: Slovenian and Slovak signs from labelled messages, and their genui
   assert.ok(!has('Zásielku vám dnes doručí kuriér, dobierka 34,90 € sa platí pri prevzatí.', 'money_request'));
   assert.ok(!has('Tento e-mail neobsahuje odkazy.', 'unknown_link'));
 });
+test('1.10.0: Czech and Croatian signs, and their genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Dobrý den, oddělení bezpečnosti České spořitelny, peníze je nutné vybrat', 'impersonation'));
+  assert.ok(has('Omylem jsem ti poslal šestimístný kód, můžeš mi ho přeposlat?', 'asks_for_code'));
+  assert.ok(has('Zovem iz policijske uprave, imate li kod kuće ušteđevinu ili zlato?', 'money_request'));
+  assert.ok(has('Bok tata, ovo je privremeni broj jer mi je stari mob pao u more', 'new_number'));
+  assert.ok(!has('Kód nikomu nesdělujte, pracovníci banky jej po vás nikdy nebudou chtít.', 'asks_for_code'));
+  assert.ok(!has('Jednokratni kod je 583 214. Kod nikome ne dajte.', 'asks_for_code'));
+  assert.ok(!has('PIN ćete vidjeti u mobilnoj aplikaciji. Djelatnici banke nikad ne traže PIN ni CVV.', 'asks_for_code'));
+  assert.ok(!has('Porezna uprava ne šalje poveznice za prijavu niti traži podatke kartice.', 'money_request'));
+});
