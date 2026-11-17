@@ -213,3 +213,8 @@ test('1.5.1: "keine Zahlung erforderlich" cancels the money sign', () => {
   assert.ok(!signsOf('Uw pakket komt vandaag, geen betaling nodig.').includes('money_request'));
   assert.ok(signsOf('Zahlung erforderlich: bitte heute 2,99 € Zollgebühr bezahlen').includes('money_request'));
 });
+test('1.5.1: "the PIN comes in a separate letter" is not a code request', () => {
+  assert.ok(!signsOf('Ihre neue Karte kommt per Post. Die PIN erhalten Sie in einem separaten Brief.').includes('asks_for_code'));
+  assert.ok(!signsOf('Your new card is on its way; the PIN will be sent separately by post.').includes('asks_for_code'));
+  assert.ok(signsOf('Nennen Sie mir die PIN Ihrer Karte').includes('asks_for_code'));
+});
