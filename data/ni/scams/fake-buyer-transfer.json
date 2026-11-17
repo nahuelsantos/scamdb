@@ -1,0 +1,126 @@
+{
+  "id": "ni/fake-buyer-transfer",
+  "country": "ni",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "social",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Cliente” que compra en línea y paga por transferencia",
+    "en": "“Customer” who buys online and pays by transfer"
+  },
+  "name": {
+    "es": "“Ya te transferí, mandá el pedido con mi mensajero”",
+    "en": "“I’ve sent the transfer, send the order with my courier”"
+  },
+  "how": {
+    "es": "Un supuesto cliente le compra a tu negocio por redes sociales o WhatsApp y paga con una transferencia desde la cuenta de otra persona (a veces pide facturar a nombre de un familiar). El dinero sí aparece en tu cuenta, así que entregás o enviás la mercadería con su mensajero. Horas después el dueño real de la cuenta reclama la transferencia como no autorizada, el banco congela tu cuenta y te quedás sin producto y sin dinero.",
+    "en": "A supposed customer buys from your business on social media or WhatsApp and pays with a transfer from another person’s account (sometimes asking to invoice a relative). The money does appear in your account, so you hand over or ship the goods with their courier. Hours later the real account holder reports the transfer as unauthorized, the bank freezes your account and you end up with neither the product nor the money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un cliente nuevo hace un pedido grande por redes o WhatsApp.",
+        "en": "A new customer places a large order on social media or WhatsApp."
+      }
+    },
+    {
+      "text": {
+        "es": "Paga por transferencia desde una cuenta que no es suya y te manda el comprobante.",
+        "en": "They pay by transfer from an account that isn’t theirs and send you the receipt."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apura para que entregués ya a un mensajero o lo enviés a otro departamento.",
+        "en": "They rush you to hand it to a courier now or ship it to another department."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "La transferencia se revierte y el banco te bloquea la cuenta.",
+        "en": "The transfer is reversed and the bank blocks your account."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, ya le hice la transferencia de las dos laptops, la cuenta es de mi cuñado porque la mía está en mantenimiento. Facture a nombre de mi esposa, ahorita le paso la cédula. El mensajero ya va para allá, porfa entrégueselo rápido que sale para Matagalpa.",
+        "en": "Hi, I already sent the transfer for the two laptops, the account is my brother-in-law’s because mine is under maintenance. Invoice it to my wife, I’ll send her ID now. The courier is on his way, please hand it over quickly because he’s leaving for Jinotega."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "cliente pago con transferencia de otra persona",
+      "me revirtieron la transferencia",
+      "el banco me congelo los fondos de una venta",
+      "mande la mercaderia y el pago se cayo",
+      "comprador manda mensajero a recoger",
+      "pidio facturar a un tercero"
+    ],
+    "en": [
+      "customer paid with someone else's transfer",
+      "the transfer was reversed",
+      "bank froze my account after a sale",
+      "shipped the goods and the payment fell through",
+      "buyer sends a courier to pick up",
+      "invoice in another person's name"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "El dinero viene de una cuenta que no es del comprador.",
+      "Los datos no cuadran: nombre, cédula y destino de distintos lugares.",
+      "Prisa por llevarse la mercadería, sobre todo fines de semana o feriados."
+    ],
+    "en": [
+      "The money comes from an account that isn’t the buyer’s.",
+      "The details don’t match: name, ID and destination from different places.",
+      "A rush to take the goods, especially on weekends or holidays."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No aceptés transferencias de cuentas que no sean del comprador.",
+      "Esperá a que el banco confirme el pago o pedí efectivo o retiro sin tarjeta.",
+      "Si te pasó, reclamá en tu banco con número de reclamo y denunciá en la Policía."
+    ],
+    "en": [
+      "Don’t accept transfers from accounts that aren’t the buyer’s.",
+      "Wait for the bank to confirm the payment, or ask for cash or a cardless withdrawal.",
+      "If it happened to you, complain to your bank with a complaint number and report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "ni/tu-banco",
+    "ni/policia-118",
+    "ni/siboif"
+  ],
+  "sources": [
+    {
+      "title": "Nueva modalidad de estafa: negocios son víctimas a través de transferencias bancarias",
+      "publisher": "Vos TV",
+      "url": "https://www.vostv.com.ni/nacionales/26038-nueva-modalidad-de-estafa-negocios-son-victimas-a/",
+      "date": "2022-10-04"
+    },
+    {
+      "title": "¡Le dieron vuelta! Mega estafa a negocio de celulares en Managua",
+      "publisher": "TN8",
+      "url": "https://www.tn8.tv/sucesos/le-dieron-vuelta-mega-estafa-a-negocio-de-celulares-en-managua/",
+      "date": "2022-10-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

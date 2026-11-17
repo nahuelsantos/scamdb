@@ -1,0 +1,131 @@
+{
+  "id": "cr/sinpe-enviado-por-error",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un desconocido que dice haberle hecho un SINPE por error",
+    "en": "A stranger who says they sent you a SINPE by mistake"
+  },
+  "name": {
+    "es": "“Disculpe, le hice un SINPE por error, ¿me lo puede devolver?”",
+    "en": "“Sorry, I sent you a SINPE by mistake, can you send it back?”"
+  },
+  "how": {
+    "es": "Le escribe o lo llama alguien diciendo que le mandó plata por SINPE Móvil por equivocación y le pide que se la devuelva. A veces le mandan un comprobante falso y la plata nunca entró; otras veces sí depositan un monto pequeño para ganarse su confianza y sacar sus datos. En algunos casos, el “devuelto” termina en que alguien que se hace pasar por el banco le pide el PIN o un código para “reversar” la transacción.",
+    "en": "Someone texts or calls saying they sent you money through SINPE Móvil by mistake and asks you to send it back. Sometimes they send a fake receipt and the money never arrived; other times they do deposit a small amount to win your trust and get your details. In some cases the “refund” ends with someone posing as the bank asking for your PIN or a code to “reverse” the transaction."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un desconocido le dice que le mandó un SINPE por error.",
+        "en": "A stranger says they sent you a SINPE by mistake."
+      }
+    },
+    {
+      "text": {
+        "es": "Le manda un comprobante o le insiste en que revise y le devuelva rápido.",
+        "en": "They send a receipt or insist you check and send it back quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le pide que devuelva la plata a otro número o cuenta.",
+        "en": "They ask you to send the money back to another number or account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "O alguien “del banco” le pide un código o el PIN para reversarlo.",
+        "en": "Or someone “from the bank” asks for a code or your PIN to reverse it."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, perdone la molestia. Le hice un SINPE de ₡45.000 sin querer, era para mi hermana y me equivoqué en un número. ¿Me hace el favor de devolvérmelo a este otro número? Es que es la plata del alquiler 🙏",
+        "en": "Hi, sorry to bother you. I sent you a SINPE of ₡45,000 by accident, it was for my sister and I got one digit wrong. Could you please send it back to this other number? It's my rent money 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me escribieron que me hicieron un sinpe por error",
+      "me piden devolver un sinpe",
+      "dice que se equivoco de numero",
+      "devolver plata que me depositaron",
+      "reversar una transferencia",
+      "me depositaron y quieren que devuelva"
+    ],
+    "en": [
+      "they say they sent me a sinpe by mistake",
+      "asked to send back a sinpe",
+      "says they got the number wrong",
+      "return money deposited by mistake",
+      "reverse a transfer",
+      "stranger wants their money back"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Le piden devolver la plata a un número distinto del que se la mandó.",
+      "Le mandan un comprobante en vez de dejar que usted revise su cuenta.",
+      "Le apuran con una historia triste.",
+      "Alguien le pide un código o el PIN para “reversar”."
+    ],
+    "en": [
+      "They ask you to return the money to a different number from the one that sent it.",
+      "They send a receipt instead of letting you check your account.",
+      "They rush you with a sad story.",
+      "Someone asks for a code or your PIN to “reverse” it."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revise en su app del banco si de verdad entró algo.",
+      "No devuelva nada a otro número: si entró plata que no es suya, llame a su banco y que ellos lo gestionen.",
+      "Nunca dé códigos ni el PIN.",
+      "Si perdió plata, avise a su banco y denuncie en el OIJ."
+    ],
+    "en": [
+      "Check in your bank app whether anything really came in.",
+      "Don't send anything to another number: if money that isn't yours arrived, call your bank and let them handle it.",
+      "Never give codes or your PIN.",
+      "If you lost money, tell your bank and report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "No caiga en la trampa: Así funcionan las estafas por Sinpe Móvil",
+      "publisher": "CRHoy",
+      "url": "https://crhoy.com/nacionales/no-caiga-en-la-trampa-asi-funcionan-las-estafas-por-sinpe-movil/",
+      "date": "2026-08-01"
+    },
+    {
+      "title": "“Estafadores de Facebook”: Fiscalía identifica 3 trampas en que caen vendedores y compradores en Marketplace",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/estafadores-de-facebook-fiscalia-identifica-3-trampas-en-que-caen-vendedores-y-compradores-en-marketplace/",
+      "date": "2024-08-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

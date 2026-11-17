@@ -1,0 +1,140 @@
+{
+  "id": "cr/falso-funcionario-municipal",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Funcionario” de la municipalidad",
+    "en": "A municipal “official”"
+  },
+  "name": {
+    "es": "“Le llamamos de la municipalidad: tiene una exoneración o un trámite pendiente”",
+    "en": "“We're calling from the municipality: you have an exemption or a pending procedure”"
+  },
+  "how": {
+    "es": "Lo llaman o le escriben diciendo que son de la municipalidad. Ya saben su cédula y qué propiedades tiene, porque lo consultan en el Registro. Le ofrecen una exoneración del impuesto de bienes inmuebles, una devolución, o le dicen que tiene que actualizar la declaración o pagar un trámite. Le piden usuario, clave y códigos de la banca en línea, le mandan un enlace, o le dicen que un “mensajero autorizado” pasará a recoger su tarjeta. Las víctimas suelen ser personas adultas mayores.",
+    "en": "Someone calls or messages you saying they're from the municipality. They already know your ID number and which properties you own, because they look it up in the property Registry. They offer an exemption from property tax or a refund, or say you need to update your property declaration or pay for a procedure. They ask for your online banking username, password and codes, send you a link, or say an “authorized courier” will come to collect your card. Victims are often older people."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Lo llaman “de la municipalidad” y ya saben su cédula y sus propiedades.",
+        "en": "They call “from the municipality” and already know your ID and properties."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le ofrecen una exoneración o una devolución, o le cobran un trámite.",
+        "en": "They offer an exemption or a refund, or charge you for a procedure."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le piden usuario, clave o códigos del banco para “depositarle” o “cobrar”.",
+        "en": "They ask for bank username, password or codes to “deposit” or “charge”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "O le dicen que un mensajero pasará a recoger su tarjeta.",
+        "en": "Or they say a courier will come to collect your card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenos días, doña Rosa, le hablamos del Departamento de Bienes Inmuebles. Por su edad usted tiene derecho a una exoneración y le corresponde un reintegro de ₡186.000. Para depositárselo hoy ocupo que me confirme su usuario del banco y el código que le va a llegar al celular.",
+        "en": "Good morning, Doña Rosa, we're calling from the Property Tax Department. Because of your age you're entitled to an exemption and a refund of ₡186,000. To deposit it today I need you to confirm your bank username and the code that will arrive on your phone."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron de la municipalidad",
+      "exoneracion de bienes inmuebles por telefono",
+      "falso funcionario municipal",
+      "me pidieron la clave del banco para un tramite municipal",
+      "un mensajero iba a recoger mi tarjeta",
+      "declaracion de bienes inmuebles por enlace",
+      "estafa a mi mama adulta mayor"
+    ],
+    "en": [
+      "call from the municipality",
+      "property tax exemption over the phone",
+      "fake municipal official",
+      "asked for my bank password for a council procedure",
+      "a courier was coming to collect my card",
+      "property declaration through a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ninguna municipalidad pide claves, códigos ni la tarjeta.",
+      "Le ofrecen plata o exoneraciones que usted no pidió.",
+      "Le mandan a alguien a recoger la tarjeta.",
+      "Que sepan su cédula y propiedades no prueba nada: es información pública."
+    ],
+    "en": [
+      "No municipality asks for passwords, codes or your card.",
+      "They offer money or exemptions you didn't ask for.",
+      "They send someone to collect your card.",
+      "Knowing your ID number and properties proves nothing: it's public information."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelgue y llame usted a su municipalidad al número oficial.",
+      "No entregue la tarjeta ni dicte códigos.",
+      "Si ya dio datos, llame a su banco para bloquear la tarjeta y la banca en línea.",
+      "Denuncie en el OIJ. Hable de esta estafa con sus familiares mayores."
+    ],
+    "en": [
+      "Hang up and call your municipality on its official number yourself.",
+      "Don't hand over your card or read out codes.",
+      "If you already gave details, call your bank to block the card and online banking.",
+      "Report it to the OIJ. Talk about this scam with older relatives."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Adultos mayores, principales víctimas de presunta red que estafó más de ¢26 millones con timo del falso empleado municipal",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/adultos-mayores-principales-victimas-de-presunta-red-que-estafo-mas-de-26-millones-con-timo-del-falso-empleado-municipal/",
+      "date": "2026-06-10"
+    },
+    {
+      "title": "Oficina del Consumidor Financiero advierte sobre principales modalidades de estafa y llama a extremar precauciones",
+      "publisher": "Delfino.cr",
+      "url": "https://delfino.cr/2026/08/oficina-del-consumidor-financiero-advierte-sobre-principales-modalidades-de-estafa-y-llama-a-extremar-precauciones",
+      "date": "2026-08-10"
+    },
+    {
+      "title": "OIJ identifica las 6 modalidades más utilizadas para estafas informáticas; 2025 cerraría con hasta 30.000 denuncias",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/oij-identifica-las-6-modalidades-mas-utilizadas-para-estafas-informaticas-2025-cerraria-con-hasta-30-000-denuncias/",
+      "date": "2025-07-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

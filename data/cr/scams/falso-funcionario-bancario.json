@@ -1,0 +1,159 @@
+{
+  "id": "cr/falso-funcionario-bancario",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Departamento de seguridad” o “de fraudes” de su banco",
+    "en": "Your bank's “security” or “fraud department”"
+  },
+  "name": {
+    "es": "“Le llamamos del banco: hay un movimiento sospechoso en su cuenta”",
+    "en": "“We're calling from the bank: there's a suspicious transaction on your account”"
+  },
+  "how": {
+    "es": "Lo llaman diciendo que son funcionarios de su banco. A veces la llamada muestra el número real del banco. Le dicen que detectaron un movimiento sospechoso, un intento de fraude, que su cuenta será bloqueada o que el SINPE Móvil se va a deshabilitar, y que para “protegerla” necesitan su clave, el PIN, el token o el código que le acaba de llegar por mensaje. A veces le mandan un enlace a una página igualita a la del banco, o le piden pasar la plata a otra cuenta “segura”. Con eso entran a su cuenta y la vacían.",
+    "en": "Someone calls saying they work for your bank. Sometimes the call even shows the bank's real number. They say they found a suspicious transaction, a fraud attempt, that your account will be blocked or that SINPE Móvil will be switched off, and that to “protect” it they need your password, PIN, token or the code you just got by text. Sometimes they send a link to a page that looks just like the bank's, or ask you to move the money to another “safe” account. With that they get into your account and empty it."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Lo llaman “del banco”; en la pantalla puede salir el número real del banco.",
+        "en": "They call “from the bank”; the bank's real number may show on screen."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dicen que hay un movimiento sospechoso, un bloqueo o que se le va a deshabilitar el SINPE Móvil.",
+        "en": "They say there's a suspicious transaction, a block, or that your SINPE Móvil will be switched off."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le piden la clave, el PIN, el token o el código que le llegó por mensaje.",
+        "en": "They ask for your password, PIN, token or the code you got by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "O le mandan un enlace a una página que imita la del banco.",
+        "en": "Or they send a link to a page that imitates the bank's."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden no colgar mientras “arreglan” el problema.",
+        "en": "They ask you not to hang up while they “fix” the problem."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Con los datos entran a su cuenta y sacan la plata.",
+        "en": "With the details they get into your account and take the money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, don Mario, le habla Kevin del área de prevención de fraude. Vemos un intento de compra en dólares en su tarjeta y por seguridad le vamos a bloquear el SINPE Móvil. Para revertirlo le acaba de entrar un código de seis dígitos, me lo dicta por favor y no cuelgue.",
+        "en": "Good afternoon, Don Mario, this is Kevin from fraud prevention. We see an attempted purchase in dollars on your card and for security we're going to block your SINPE Móvil. To reverse it you just got a six-digit code, please read it to me and don't hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco",
+      "movimiento sospechoso en mi cuenta",
+      "me pidieron la clave del token",
+      "me iban a bloquear el sinpe movil",
+      "funcionario del banco me pidio un codigo",
+      "salio el numero del banco en la llamada",
+      "me vaciaron la cuenta por telefono",
+      "clave dinamica",
+      "llamada antifraude",
+      "compras que no hice en mi tarjeta"
+    ],
+    "en": [
+      "call from my bank",
+      "suspicious transaction on my account",
+      "they asked for my token code",
+      "they said my sinpe movil would be blocked",
+      "bank official asked for a code",
+      "the bank's number showed on the call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "unknown_link",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ningún banco pide claves, PIN, token ni códigos por llamada, mensaje o chat.",
+      "El número del banco en la pantalla no prueba que sea el banco.",
+      "Le meten prisa con bloqueos o con que le van a quitar el SINPE Móvil.",
+      "Le piden no colgar o abrir un enlace mientras habla con usted."
+    ],
+    "en": [
+      "No bank asks for passwords, PINs, tokens or codes by call, text or chat.",
+      "The bank's number on screen doesn't prove it's the bank.",
+      "They rush you with blocks or with losing SINPE Móvil.",
+      "They ask you not to hang up, or to open a link while they talk to you."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelgue y llame usted al número al reverso de su tarjeta o al de la app oficial.",
+      "No dicte códigos ni claves, ni abra enlaces que le manden en la llamada.",
+      "Si ya dio datos, llame de inmediato al banco para bloquear la tarjeta y la banca en línea, y cambie sus claves.",
+      "Ponga la denuncia en el OIJ."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card or in the official app yourself.",
+      "Don't read out codes or passwords, or open links they send during the call.",
+      "If you already gave details, call the bank straight away to block the card and online banking, and change your passwords.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Oficina del Consumidor Financiero advierte sobre principales modalidades de estafa y llama a extremar precauciones",
+      "publisher": "Delfino.cr",
+      "url": "https://delfino.cr/2026/08/oficina-del-consumidor-financiero-advierte-sobre-principales-modalidades-de-estafa-y-llama-a-extremar-precauciones",
+      "date": "2026-08-10"
+    },
+    {
+      "title": "No caiga en la trampa: Así funcionan las estafas por Sinpe Móvil",
+      "publisher": "CRHoy",
+      "url": "https://crhoy.com/nacionales/no-caiga-en-la-trampa-asi-funcionan-las-estafas-por-sinpe-movil/",
+      "date": "2026-08-01"
+    },
+    {
+      "title": "OIJ identifica las 6 modalidades más utilizadas para estafas informáticas; 2025 cerraría con hasta 30.000 denuncias",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/oij-identifica-las-6-modalidades-mas-utilizadas-para-estafas-informaticas-2025-cerraria-con-hasta-30-000-denuncias/",
+      "date": "2025-07-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

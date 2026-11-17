@@ -1,0 +1,124 @@
+{
+  "id": "cr/hacienda-falso-cobro",
+  "country": "cr",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "es": "“Ministerio de Hacienda” por WhatsApp o correo",
+    "en": "The “Ministry of Finance” by WhatsApp or email"
+  },
+  "name": {
+    "es": "“Hacienda: tiene un impuesto, multa o mercancía importada pendiente de pago”",
+    "en": "“Ministry of Finance: you have a tax, fine or imported goods payment outstanding”"
+  },
+  "how": {
+    "es": "Le llega un WhatsApp o un correo que se hace pasar por el Ministerio de Hacienda. Le dice que tiene impuestos pendientes, una multa o sanción, o que debe pagar por una mercancía importada, y le pide pagar por un enlace o a una cuenta. El Ministerio pide reportar estos mensajes al OIJ.",
+    "en": "You get a WhatsApp message or an email pretending to be the Ministry of Finance (Hacienda). It says you owe taxes, have a fine or penalty, or must pay for imported goods, and asks you to pay through a link or into an account. The Ministry asks people to report these messages to the OIJ."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le escriben “de Hacienda” por WhatsApp o correo.",
+        "en": "They write “from Hacienda” by WhatsApp or email."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dicen que tiene una multa, impuestos o mercancía pendiente.",
+        "en": "They say you have a fine, taxes or goods payment outstanding."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le mandan un enlace o una cuenta para pagar.",
+        "en": "They send a link or an account to pay into."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden pagar ya para evitar una sanción.",
+        "en": "They ask you to pay now to avoid a penalty."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "MINISTERIO DE HACIENDA – Notificación de cobro. Su mercancía importada registra un saldo de ₡38.600 por impuestos no cancelados. Evite la sanción y la retención del bien pagando en las próximas 24 horas: [enlace]",
+        "en": "MINISTRY OF FINANCE – Collection notice. Your imported goods show a balance of ₡38,600 in unpaid taxes. Avoid the penalty and the seizure of the goods by paying within the next 24 hours: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de hacienda para pagar una multa",
+      "hacienda por whatsapp",
+      "cobro de impuestos por un enlace",
+      "pagar impuestos de mercancia importada",
+      "correo falso del ministerio de hacienda",
+      "sancion de hacienda en 24 horas"
+    ],
+    "en": [
+      "message from hacienda to pay a fine",
+      "ministry of finance on whatsapp",
+      "tax collection through a link",
+      "pay tax on imported goods",
+      "fake ministry of finance email",
+      "tax penalty within 24 hours"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Hacienda no cobra por WhatsApp.",
+      "El mensaje llega por WhatsApp o desde un correo que no es de Hacienda.",
+      "Le dan horas para pagar o le amenazan con sanciones.",
+      "El pago va a un enlace o a una cuenta que no es la oficial."
+    ],
+    "en": [
+      "Hacienda doesn't collect payments over WhatsApp.",
+      "The message arrives by WhatsApp or from an email address that isn't Hacienda's.",
+      "They give you hours to pay or threaten penalties.",
+      "The payment goes to a link or account that isn't the official one."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pague por enlaces. Revise su situación entrando usted a la plataforma oficial de Hacienda.",
+      "Si ya pagó o dio datos, llame a su banco.",
+      "Reporte el mensaje al OIJ."
+    ],
+    "en": [
+      "Don't pay through links. Check your status by logging into Hacienda's official platform yourself.",
+      "If you already paid or gave details, call your bank.",
+      "Report the message to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/oij",
+    "cr/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Cuidado con los engaños: Hacienda, Banco Nacional y Banco Central alertan sobre falsos mensajes y posibles engaños",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/cuidado-con-los-enganos-hacienda-banco-nacional-y-banco-central-alertan-sobre-falsos-mensajes-y-posibles-enganos/",
+      "date": "2024-03-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

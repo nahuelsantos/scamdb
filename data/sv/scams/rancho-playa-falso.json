@@ -1,0 +1,134 @@
+{
+  "id": "sv/rancho-playa-falso",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Una página o perfil que alquila ranchos de playa",
+    "en": "A page or profile renting beach houses"
+  },
+  "name": {
+    "es": "Alquiler falso de rancho de playa: pagas la reserva y el rancho no existe",
+    "en": "Fake beach-house rental: you pay the booking and the house doesn’t exist"
+  },
+  "how": {
+    "es": "En Facebook u otras redes ves un rancho de playa en La Libertad, La Paz u otra costa, con buenas fotos y buen precio. El “dueño” o la “inmobiliaria” te atiende por WhatsApp, te manda más fotos y te pide un anticipo para reservar o el pago completo con descuento, a veces también una foto de tu DUI. Cuando llegas, el rancho no existe o es de otras personas. Hay casos juzgados en San Salvador y Santa Tecla con varias víctimas.",
+    "en": "On Facebook or other social media you see a beach house in La Libertad, La Paz or elsewhere on the coast, with nice photos and a good price. The “owner” or “agency” talks to you on WhatsApp, sends more photos and asks for a deposit to book or full payment with a discount, sometimes also a photo of your ID. When you arrive, the house doesn’t exist or belongs to other people. There have been court cases in San Salvador and Santa Tecla with several victims."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un rancho con buenas fotos y buen precio en redes.",
+        "en": "You see a beach house with nice photos and a good price on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te piden un anticipo o el pago total para reservar.",
+        "en": "You’re asked for a deposit or full payment to book."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te ofrecen descuento si pagas todo ya.",
+        "en": "You’re offered a discount if you pay everything now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Al llegar, el rancho no existe o es de otra persona.",
+        "en": "When you arrive, the house doesn’t exist or belongs to someone else."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, sí está libre ese fin de semana el rancho, tiene piscina y salida directa a la playa. Para separarlo le pido $120 de reserva y el resto al entregarle las llaves. Si me cancela todo de una vez le hago 15% de descuento. Le paso la cuenta.",
+        "en": "Hi, yes, the beach house is free that weekend, it has a pool and direct beach access. To hold it I need a $120 booking deposit and the rest when I hand over the keys. If you pay it all at once I’ll give you a 15% discount. I’ll send you the account."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "rancho de playa que no existia",
+      "pague reserva de un rancho por facebook",
+      "alquiler de rancho falso",
+      "anticipo para separar el rancho",
+      "llegamos a la playa y no habia rancho",
+      "me pidieron el dui para alquilar",
+      "rancho",
+      "reservar rancho con anticipo",
+      "casa de playa con piscina por transferencia",
+      "alquiler de rancho para vacaciones"
+    ],
+    "en": [
+      "beach house that didn’t exist",
+      "paid a booking for a beach house on facebook",
+      "fake beach house rental",
+      "deposit to hold the beach house",
+      "arrived and there was no house"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Solo te atienden por WhatsApp y no puedes ver el lugar antes.",
+      "Te piden pagar a la cuenta de una persona.",
+      "Descuento por pagar todo de una vez.",
+      "Las fotos aparecen en otros anuncios."
+    ],
+    "en": [
+      "They only talk to you on WhatsApp and you can’t see the place first.",
+      "You’re asked to pay into an individual’s account.",
+      "A discount for paying everything at once.",
+      "The photos appear in other listings."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Busca las fotos en internet y verifica que la dirección exista.",
+      "Prefiere plataformas con pago protegido o conoce el lugar antes de pagar.",
+      "No mandes foto de tu DUI.",
+      "Si ya pagaste, denuncia en la Fiscalía y avisa a tu banco."
+    ],
+    "en": [
+      "Search for the photos online and check that the address exists.",
+      "Use platforms with protected payment or visit the place before paying.",
+      "Don’t send a photo of your ID.",
+      "If you already paid, report it to the Attorney General’s Office and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "sv/fiscalia",
+    "sv/denuncia-estafas",
+    "sv/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Envían a juicio a hombre acusado de estafar a personas con alquiler de rancho de playa que no existía",
+      "publisher": "El Diario de Hoy",
+      "url": "https://www.eldiariodehoy.com/noticias/envian-a-juicio-a-hombre-acusado-de-estafar-a-personas-con-alquiler-de-rancho-de-playa-que-no-existia/49199/2025/",
+      "date": "2025-11-27"
+    },
+    {
+      "title": "Red estafa con renta de ranchos de playa y usan identidad de víctimas",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/red-estafa-con-renta-de-ranchos-de-playa-y-usan-identidad-de-victimas",
+      "date": "2022-07-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

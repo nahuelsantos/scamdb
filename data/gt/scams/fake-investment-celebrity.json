@@ -1,0 +1,135 @@
+{
+  "id": "gt/fake-investment-celebrity",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "“Plataforma de inversión” con la cara de un empresario o del presidente",
+    "en": "“Investment platform” using a businessman’s or the president’s face"
+  },
+  "name": {
+    "es": "Inversiones falsas con videos de IA de famosos y funcionarios",
+    "en": "Fake investments with AI videos of celebrities and officials"
+  },
+  "how": {
+    "es": "En redes sociales circulan videos y fotos hechos con inteligencia artificial donde un empresario conocido o el presidente “recomiendan” una plataforma para invertir poco dinero y ganar mucho rápido. Te dicen que quedan pocos cupos y que si depositás hoy te dan un bono. También ofrecen por Telegram duplicar tu dinero en pocos días. Depositás y el dinero desaparece.",
+    "en": "AI-made videos and photos circulate on social media in which a well-known businessman or the president “recommends” a platform to invest a little and earn a lot quickly. They say there are few places left and that depositing today gets you a bonus. Others offer on Telegram to double your money in a few days. You deposit and the money disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un video de un famoso o funcionario recomendando una inversión.",
+        "en": "You see a video of a celebrity or official recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Prometen ganancias rápidas o duplicar tu dinero.",
+        "en": "They promise quick profits or to double your money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te dicen que quedan pocos cupos y que depositar hoy da un bono extra.",
+        "en": "They say there are few places left and that depositing today earns a bonus."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden un depósito inicial para abrir tu cuenta.",
+        "en": "They ask for an initial deposit to open your account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Últimos cupos! Con solo Q1,500 empezás a recibir ganancias diarias en la plataforma que respalda el empresario más reconocido del país 🇬🇹. Mirá el video de la entrevista y registrate hoy para recibir tu bono de bienvenida: [enlace]",
+        "en": "Last places! With just Q1,500 you start getting daily earnings on the platform backed by the country’s best-known businessman 🇬🇹. Watch the interview video and sign up today to get your welcome bonus: [enlace]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "video del presidente recomendando una inversion",
+      "plataforma para invertir poco y ganar diario",
+      "me ofrecieron duplicar mi dinero por telegram",
+      "video con inteligencia artificial de un empresario famoso",
+      "quedan pocos cupos para invertir",
+      "deposite para invertir y ya no me devolvieron nada"
+    ],
+    "en": [
+      "video of the president recommending an investment",
+      "platform to invest a little and earn daily",
+      "they offered to double my money on telegram",
+      "ai video of a famous businessman",
+      "only a few places left to invest",
+      "i deposited to invest and got nothing back"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un famoso o el presidente “recomendando” invertir en un video de redes sociales.",
+      "Ganancias garantizadas o “duplicar” el dinero.",
+      "Presión de pocos cupos o bonos por depositar ya."
+    ],
+    "en": [
+      "A celebrity or the president “recommending” an investment in a social media video.",
+      "Guaranteed returns or “doubling” your money.",
+      "Pressure about few places left or bonuses for depositing now."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No depositar. El Banco de Guatemala y el gobierno no recomiendan inversiones en redes.",
+      "Desconfiá de videos de famosos que te piden dinero; pueden ser hechos con IA.",
+      "Si ya depositaste, llamá a tu banco y denunciá en el Ministerio Público."
+    ],
+    "en": [
+      "Don’t deposit. The Bank of Guatemala and the government don’t recommend investments on social media.",
+      "Distrust celebrity videos asking for money; they may be made with AI.",
+      "If you already deposited, call your bank and report it to the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/mp-denuncia",
+    "gt/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Alertan sobre uso de imágenes creadas con IA para estafar a guatemaltecos mediante inversiones",
+      "publisher": "Emisoras Unidas",
+      "url": "https://emisorasunidas.com/nacional/2026/10/08/alertan-sobre-uso-de-ia-para-estafar-a-guatemaltecos/",
+      "date": "2026-10-08"
+    },
+    {
+      "title": "Sacatepéquez: Segundo detenido por presunta estafa mediante falsas inversiones",
+      "publisher": "Emisoras Unidas",
+      "url": "https://emisorasunidas.com/nacional/2026/06/01/sacatepequez-capturado-estafa-falsas-inversiones/",
+      "date": "2026-06-01"
+    },
+    {
+      "title": "Banco de Guatemala advierte sobre programas de inversión fraudulentos",
+      "publisher": "Agencia Guatemalteca de Noticias (AGN)",
+      "url": "https://agn.gt/banco-de-guatemala-desmiente-sobre-programas-de-inversion-fraudulentos",
+      "date": "2024-06-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

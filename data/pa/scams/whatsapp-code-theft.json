@@ -1,0 +1,157 @@
+{
+  "id": "pa/whatsapp-code-theft",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Soporte de WhatsApp” o “la compañía telefónica”",
+    "en": "“WhatsApp support” or “the phone company”"
+  },
+  "name": {
+    "es": "Robo de WhatsApp con el código de verificación",
+    "en": "WhatsApp takeover with the verification code"
+  },
+  "how": {
+    "es": "Te llaman o te escriben diciendo que son de soporte de WhatsApp o de tu compañía de celular. Te dicen que tu cuenta tiene un problema y que te va a llegar un código de seis dígitos que debes darles. Ese código es el que abre tu WhatsApp en otro teléfono. Cuando se lo das, pierdes la cuenta y ellos escriben a tus familiares y amigos haciéndose pasar por ti para pedirles plata por transferencia o Yappy.",
+    "en": "Someone calls or messages you claiming to be WhatsApp support or your mobile company. They say your account has a problem and that a six-digit code will arrive that you must give them. That code opens your WhatsApp on another phone. Once you give it, you lose the account and they message your family and friends pretending to be you, asking for money by bank transfer or Yappy."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contacta un supuesto soporte de WhatsApp o de la compañía telefónica.",
+        "en": "Supposed WhatsApp or phone-company support contacts you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te avisan que te llegará un código de seis dígitos y te piden que se lo pases.",
+        "en": "They warn a six-digit code is coming and ask you to pass it on."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Te apuran diciendo que si no, te bloquean la cuenta.",
+        "en": "They rush you, saying otherwise your account will be blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Con el código abren tu WhatsApp en otro celular y tú quedas fuera.",
+        "en": "With the code they open your WhatsApp on another phone and lock you out."
+      }
+    },
+    {
+      "text": {
+        "es": "Desde tu cuenta piden dinero a tus contactos, con una cuenta o un Yappy ajeno.",
+        "en": "From your account they ask your contacts for money, giving someone else’s account or Yappy."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, le habla el departamento de verificación de WhatsApp. Su línea presenta un reporte y la cuenta será desactivada hoy. Le acaba de entrar un mensaje con seis números, por favor léamelos para dejarla activa.",
+        "en": "Hello, this is the WhatsApp verification department. Your line has a report against it and the account will be deactivated today. You just received a message with six numbers, please read them to me to keep it active."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo de seis digitos",
+      "me robaron la cuenta de whatsapp",
+      "me hackearon el whatsapp",
+      "soporte de whatsapp me llamo",
+      "desde mi whatsapp estan pidiendo plata",
+      "perdi acceso a mi whatsapp",
+      "codigo de verificacion que me llego por mensaje",
+      "tecnico de la compañia telefonica pidio el codigo",
+      "dijeron que suspenderian mi linea",
+      "le dicte los numeros que me llegaron por sms"
+    ],
+    "en": [
+      "they asked for my six-digit code",
+      "my whatsapp account was stolen",
+      "my whatsapp got hacked",
+      "whatsapp support called me",
+      "someone is asking for money from my whatsapp",
+      "i lost access to my whatsapp",
+      "verification code that came by text",
+      "phone company technician asked for the code",
+      "they said my line would be suspended",
+      "i read out the numbers i got by sms"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie de WhatsApp ni de tu compañía de celular te llama para pedir un código.",
+      "Te piden un código que llegó por SMS o llamada.",
+      "Te presionan con que la cuenta se cierra hoy.",
+      "Un contacto te pide plata por WhatsApp a una cuenta o Yappy de otra persona."
+    ],
+    "en": [
+      "Nobody from WhatsApp or your phone company calls you to ask for a code.",
+      "They ask for a code that arrived by text or call.",
+      "They pressure you saying the account closes today.",
+      "A contact asks you for money on WhatsApp to someone else’s account or Yappy."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No compartas nunca el código de seis dígitos, aunque te lo pida alguien conocido.",
+      "Activa la verificación en dos pasos en Ajustes de WhatsApp.",
+      "Si un contacto te pide plata, llámalo a su número o pregúntale algo que solo él sepa.",
+      "Si te robaron la cuenta, avisa a tus contactos por otro medio, pide ayuda a WhatsApp y denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Never share the six-digit code, even if someone you know asks for it.",
+      "Turn on two-step verification in WhatsApp Settings.",
+      "If a contact asks for money, call their usual number or ask something only they would know.",
+      "If your account was stolen, warn your contacts another way, ask WhatsApp for help and report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/whatsapp-ayuda",
+    "pa/ministerio-publico",
+    "pa/policia-104"
+  ],
+  "sources": [
+    {
+      "title": "DIJ lanza alerta: este error puede dejar tu cuenta de WhatsApp en manos de estafadores",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/dij-lanza-alerta-este-error-puede-dejar-tu-cuenta-de-whatsapp-en-manos-de-estafadores-NA24069532",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Hackean cuenta de WhatsApp para pedir dinero: capturan a cuatro sospechosos en Panamá y Colón",
+      "publisher": "Telemetro",
+      "url": "https://www.telemetro.com/hackean-cuenta-whatsapp-pedir-dinero-capturan-cuatro-sospechosos-panama-y-colon-n6081898",
+      "date": "2026-06-11"
+    },
+    {
+      "title": "Mediante la Operación W Plus, una mujer es aprehendida por delito de estafa",
+      "publisher": "Ministerio Público de Panamá",
+      "url": "https://ministeriopublico.gob.pa/notas-de-prensa/mediante-la-operacion-w-plus-una-mujer-es-aprehendida-por-delito-de-estafa/",
+      "date": "2025-06-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/family-emergency-call"
+  ]
+}

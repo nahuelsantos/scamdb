@@ -1,0 +1,148 @@
+{
+  "id": "ni/fake-bank-call",
+  "country": "ni",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Falso “gerente” o “ejecutivo de seguridad” de tu banco",
+    "en": "Fake “manager” or “security officer” from your bank"
+  },
+  "name": {
+    "es": "“Le hablamos del banco: hicieron transferencias desde su cuenta”",
+    "en": "“This is your bank: transfers were made from your account”"
+  },
+  "how": {
+    "es": "Te llaman por teléfono o por WhatsApp (a veces con el logo de Banpro, BAC, Lafise u otro banco de foto de perfil) diciendo que son gerentes de riesgo o de seguridad. Te dicen que hay movimientos raros o transferencias desde tu cuenta y que, para “protegerla” o “anularlas”, tenés que darles datos, entrar a un enlace de “seguridad bancaria” o pasarles un código. Con eso entran a tu banca en línea, cambian tu contraseña y se llevan el dinero.",
+    "en": "They call by phone or WhatsApp (sometimes with the logo of Banpro, BAC, Lafise or another bank as the profile picture) claiming to be risk or security managers. They say there is unusual activity or transfers from your account and that, to “protect” or “cancel” it, you must give them details, open a “bank security” link or pass them a code. With that they get into your online banking, change your password and take the money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama alguien que dice ser gerente de riesgo o de seguridad de tu banco, a menudo por WhatsApp.",
+        "en": "Someone calls saying they are a risk or security manager at your bank, often on WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dice que salieron transferencias o compras de tu cuenta y que hay que actuar ya.",
+        "en": "They say transfers or purchases went out of your account and you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te manda un enlace de “seguridad bancaria” para llenar tus datos o te pide la clave o el código que te llegó.",
+        "en": "They send a “bank security” link to fill in your details, or ask for your password or the code you received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Te pide no colgar mientras “bloquea” los movimientos.",
+        "en": "They ask you not to hang up while they “block” the transactions."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Entran a tu banca en línea, te cambian la contraseña y transfieren tu dinero.",
+        "en": "They get into your online banking, change your password and transfer your money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le saluda el licenciado Ramírez, gerente de riesgo del banco. Vemos dos transferencias saliendo de su cuenta en dólares. Para anularlas le voy a mandar un formulario de seguridad por este chat, lo llena con su cédula y su usuario, y me confirma el código que le va a llegar. No cuelgue, por favor.",
+        "en": "Good afternoon, this is Mr. Ramírez, the bank’s risk manager. We see two transfers leaving your dollar account. To cancel them I’ll send you a security form in this chat; fill it in with your ID and username and confirm the code you’re about to get. Please don’t hang up."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco por whatsapp",
+      "dijo que era gerente de riesgo del banco",
+      "me dijeron que salieron transferencias de mi cuenta",
+      "me mandaron un enlace de seguridad bancaria",
+      "me pidieron el codigo que me llego",
+      "llamada con el logo del banco",
+      "falso ejecutivo de seguridad del banco"
+    ],
+    "en": [
+      "bank called me on whatsapp",
+      "said he was the bank's risk manager",
+      "they said transfers left my account",
+      "they sent me a bank security link",
+      "they asked for the code i received",
+      "fake bank security officer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Los bancos no llaman por WhatsApp para pedir o confirmar datos confidenciales.",
+      "El logo del banco en la foto de perfil no prueba nada.",
+      "Te piden códigos, claves o llenar datos en un enlace.",
+      "Te apuran para que no tengás tiempo de llamar al banco."
+    ],
+    "en": [
+      "Banks don’t call on WhatsApp to ask for or confirm confidential details.",
+      "The bank’s logo as a profile picture proves nothing.",
+      "They ask for codes, passwords or to fill in details on a link.",
+      "They rush you so you don’t have time to call the bank."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Colgá y llamá vos al número del reverso de tu tarjeta o de la app oficial.",
+      "No compartás claves, PIN, CVV ni códigos que te lleguen por mensaje.",
+      "Si ya diste datos, pedí al banco el bloqueo inmediato de tus productos y un número de reclamo.",
+      "Denunciá en la Policía con capturas y comprobantes; si el banco no responde, reclamá ante la SIBOIF."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card or in the official app yourself.",
+      "Don’t share passwords, PIN, CVV or codes you receive by message.",
+      "If you already gave details, ask the bank to block your products immediately and give you a complaint number.",
+      "Report it to the Police with screenshots and receipts; if the bank doesn’t respond, complain to SIBOIF."
+    ]
+  },
+  "reportTo": [
+    "ni/tu-banco",
+    "ni/policia-118",
+    "ni/siboif"
+  ],
+  "sources": [
+    {
+      "title": "Así logró estafar 5 mil dólares el joven que se hizo pasar por gerente de Banpro",
+      "publisher": "Nicaragua Investiga",
+      "url": "https://nicaraguainvestiga.com/nacion/157701-asi-logro-estafar-dolares-joven-hizo-pasar-gerente-banpro/",
+      "date": "2024-12-11"
+    },
+    {
+      "title": "Así operan los estafadores con los usuarios de bancos",
+      "publisher": "Vos TV",
+      "url": "https://www.vostv.com.ni/nacionales/22242-conozca-como-operan-los-estafadores-haciendose-pas/",
+      "date": "2022-02-10"
+    },
+    {
+      "title": "Recomendaciones para evitar ser víctima de fraudes",
+      "publisher": "SIBOIF",
+      "url": "https://www.siboif.gob.ni/alertas/recomendaciones-para-evitar-ser-v%C3%ADctima-de-fraudes",
+      "date": "2022-06-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

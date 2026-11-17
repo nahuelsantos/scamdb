@@ -1,0 +1,147 @@
+{
+  "id": "pa/marketplace-fake-seller",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un vendedor en Marketplace o Instagram",
+    "en": "A seller on Marketplace or Instagram"
+  },
+  "name": {
+    "es": "Vendedor falso en Marketplace o Instagram: pagas y no hay nada",
+    "en": "Fake seller on Marketplace or Instagram: you pay and there’s nothing"
+  },
+  "how": {
+    "es": "Un perfil en Facebook Marketplace o Instagram vende celulares, consolas, electrodomésticos, mascotas o hasta un carro usado a buen precio. Te pide un adelanto o el pago completo por transferencia o Yappy “para apartarlo” o para el envío. Cuando vas al encuentro o esperas la entrega, el vendedor, el artículo o la tienda no existen. En los casos más graves te citan con efectivo en un lugar solo y te asaltan.",
+    "en": "A profile on Facebook Marketplace or Instagram sells phones, consoles, appliances, pets or even a used car at a good price. They ask for a deposit or full payment by transfer or Yappy “to hold it” or for delivery. When you go to meet or wait for delivery, the seller, the item or the shop don’t exist. In the worst cases they set a meeting with cash in a lonely place and rob you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un artículo o carro a buen precio en Marketplace o Instagram.",
+        "en": "You see an item or car at a good price on Marketplace or Instagram."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor te apura porque “hay otros interesados”.",
+        "en": "The seller rushes you because “others are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide un adelanto por transferencia o Yappy antes de ver el artículo.",
+        "en": "They ask for a deposit by transfer or Yappy before you see the item."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Después de pagar, no hay entrega o el vendedor desaparece.",
+        "en": "After you pay, nothing is delivered or the seller disappears."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, sí, el PS5 está nuevo en caja, $320. Tengo tres personas preguntando, si me haces un Yappy de $100 te lo aparto y mañana te lo llevo a Albrook. Sin adelanto no puedo guardarlo.",
+        "en": "Hi, yes, the PS5 is new in the box, $320. I have three people asking, if you send me a $100 Yappy I’ll hold it and bring it to Albrook tomorrow. Without a deposit I can’t keep it."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "pague por marketplace y nunca me entregaron",
+      "vendedor falso en instagram",
+      "me pidieron un adelanto por yappy para apartar",
+      "el vendedor me bloqueo despues de pagar",
+      "carro usado que no existia",
+      "compra en facebook que resulto estafa",
+      "celular nuevo muy barato en marketplace",
+      "apartar el articulo con un adelanto",
+      "entrega en un centro comercial despues de pagar",
+      "producto sellado en caja a precio de oferta",
+      "vendedor que aparta con deposito por yappy",
+      "hace entregas solo si le pagas antes"
+    ],
+    "en": [
+      "i paid on marketplace and never got the item",
+      "fake seller on instagram",
+      "they asked for a yappy deposit to hold it",
+      "the seller blocked me after i paid",
+      "used car that didn’t exist",
+      "facebook purchase that turned out to be a scam",
+      "new phone very cheap on marketplace",
+      "hold the item with a deposit",
+      "handover at a mall after paying",
+      "sealed boxed product at a bargain price",
+      "seller holds it only with a yappy deposit",
+      "delivers only if you pay first"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy por debajo de lo normal.",
+      "Te piden pagar antes de ver el artículo.",
+      "Perfil nuevo, sin reseñas o con comentarios cerrados.",
+      "Te citan en un lugar poco concurrido o con mucho efectivo."
+    ],
+    "en": [
+      "Price far below normal.",
+      "They ask you to pay before you see the item.",
+      "New profile with no reviews or with comments turned off.",
+      "They set a meeting in a lonely place or ask you to bring lots of cash."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Paga solo cuando tengas el artículo en la mano y lo hayas revisado.",
+      "Haz la entrega en un lugar público y concurrido, de día.",
+      "Revisa el perfil del vendedor y busca fotos repetidas.",
+      "Si ya pagaste, llama a tu banco y denuncia en el Ministerio Público con las capturas del chat."
+    ],
+    "en": [
+      "Pay only when you have the item in hand and have checked it.",
+      "Meet in a busy public place, in daylight.",
+      "Check the seller’s profile and look for reused photos.",
+      "If you already paid, call your bank and report it to the Ministerio Público with screenshots of the chat."
+    ]
+  },
+  "reportTo": [
+    "pa/ministerio-publico",
+    "pa/policia-104",
+    "pa/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Estafas en línea se disparan en Panamá durante la temporada de compras, advierte la Policía",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/estafas-linea-disparan-panama-durante-compras-tecnologia_1_2219737.html",
+      "date": "2025-12-23"
+    },
+    {
+      "title": "Ministerio Público: Unos 50 panameños son estafados cada día",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/ministerio-publico-unos-50-panamenos-son-estafados-cada-dia-EH22433304",
+      "date": "2026-05-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/fake-holiday-rental"
+  ]
+}

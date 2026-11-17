@@ -1,0 +1,124 @@
+{
+  "id": "ni/friend-package-customs",
+  "country": "ni",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Perfil falso de un amigo o familiar que viaja o te manda un regalo",
+    "en": "Fake profile of a friend or relative who is travelling or sending you a gift"
+  },
+  "name": {
+    "es": "“Te mandé un paquete, solo pagá la aduana para sacarlo”",
+    "en": "“I sent you a package, just pay customs to get it out”"
+  },
+  "how": {
+    "es": "Alguien copia el perfil de Facebook de una amiga o un familiar (a veces con un fotomontaje en un aeropuerto) y te escribe. Te cuenta que te mandó un regalo por paquetería o que su maleta quedó retenida, y que hay que pagar “aduana” o “impuestos” para liberarla. Te da una cuenta a nombre de otra persona. Cuando hablás con tu amiga de verdad, ella nunca te escribió.",
+    "en": "Someone copies the Facebook profile of a friend or relative (sometimes with a photo montage at an airport) and messages you. They say they sent you a gift by courier or that their suitcase was held, and that “customs” or “taxes” must be paid to release it. They give you an account in someone else’s name. When you talk to your real friend, she never wrote to you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un amigo o familiar desde un perfil nuevo o copiado.",
+        "en": "A friend or relative writes to you from a new or copied profile."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te cuenta que te mandó un paquete o que su maleta quedó retenida en aduana.",
+        "en": "They say they sent you a package or that their suitcase is held at customs."
+      }
+    },
+    {
+      "text": {
+        "es": "Te pide pagar la aduana o impuestos a una cuenta de otra persona.",
+        "en": "They ask you to pay customs or taxes into another person’s account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apura para que no se “devuelva” el envío.",
+        "en": "They rush you so the shipment isn’t “sent back”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola mi amor, ¿cómo estás? Te mandé una cajita desde Houston con unas cositas para vos y los niños, pero me dicen que la retuvieron en aduana y hay que pagar los impuestos hoy o la regresan. ¿Me hacés el favor de depositar a esta cuenta de la agencia? Yo te lo repongo cuando llegue.",
+        "en": "Hi darling, how are you? I sent you a little box from Houston with some things for you and the kids, but they say it was held at customs and the taxes must be paid today or they send it back. Could you deposit to this agency account for me? I’ll pay you back when I arrive."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "amiga me pidio pagar aduana de un paquete",
+      "dice que su maleta quedo retenida en el aeropuerto",
+      "perfil falso de mi amiga en facebook",
+      "deposite para sacar un regalo de aduana",
+      "me escribio un familiar desde otro perfil"
+    ],
+    "en": [
+      "friend asked me to pay customs on a package",
+      "says her suitcase was held at the airport",
+      "fake profile of my friend on facebook",
+      "i paid to get a gift out of customs",
+      "a relative wrote to me from another profile"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Perfil nuevo o duplicado de alguien que ya tenés agregado.",
+      "Te piden pagar aduana o impuestos de un regalo.",
+      "La cuenta está a nombre de un desconocido."
+    ],
+    "en": [
+      "A new or duplicate profile of someone you already have as a friend.",
+      "They ask you to pay customs or taxes on a gift.",
+      "The account is in a stranger’s name."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llamá a tu amiga o familiar a su número de siempre antes de pagar nada.",
+      "Reportá el perfil falso en Facebook y avisá a tus contactos.",
+      "Si ya depositaste, avisá a tu banco y denunciá en la Policía."
+    ],
+    "en": [
+      "Call your friend or relative on their usual number before paying anything.",
+      "Report the fake profile on Facebook and warn your contacts.",
+      "If you already deposited, tell your bank and report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "ni/policia-118",
+    "ni/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Se hace pasar como su amiga y le estafa 3 mil dólares",
+      "publisher": "Nicaragua Investiga",
+      "url": "https://nicaraguainvestiga.com/nacion/106649-se-hace-pasar-como-su-amiga-y-le-estafa-3-mil-dolares/",
+      "date": "2023-01-28"
+    },
+    {
+      "title": "Las estafas en Nicaragua: un delito cada vez más común",
+      "publisher": "Divergentes",
+      "url": "https://www.divergentes.com/las-estafas-en-nicaragua-un-delito-cada-vez-mas-comun/",
+      "date": "2023-01-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

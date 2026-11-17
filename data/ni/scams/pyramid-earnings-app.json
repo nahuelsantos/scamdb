@@ -1,0 +1,131 @@
+{
+  "id": "ni/pyramid-earnings-app",
+  "country": "ni",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "es": "App de “ganancias diarias” que te recomienda un conocido",
+    "en": "“Daily earnings” app recommended by someone you know"
+  },
+  "name": {
+    "es": "“Comprá un paquete en la app y ganá todos los días”",
+    "en": "“Buy a package in the app and earn every day”"
+  },
+  "how": {
+    "es": "Un conocido, vecino o grupo de WhatsApp te invita a una app donde comprás un “paquete” o “máquinas” virtuales pagando a una cuenta de banco. La app promete ganancias diarias por tareas sencillas y bonos por cada persona que invités, con niveles cada vez más caros. Al principio algunos retiran, pero un día la app cambia las reglas, cobra una “comisión” o una “verificación” para retirar y luego cierra.",
+    "en": "An acquaintance, neighbour or WhatsApp group invites you to an app where you buy a virtual “package” or “machines” by paying into a bank account. The app promises daily earnings for simple tasks and bonuses for each person you invite, with ever more expensive levels. At first some people withdraw, but one day the app changes the rules, charges a “fee” or a “verification” to withdraw, and then shuts down."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te invitan a una app que paga ganancias diarias por tareas sencillas.",
+        "en": "You are invited to an app that pays daily earnings for simple tasks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Para entrar comprás un paquete o nivel depositando a una cuenta de banco.",
+        "en": "To join you buy a package or level by depositing into a bank account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Ganás más si metés a otras personas y subís de nivel.",
+        "en": "You earn more if you bring in other people and move up levels."
+      }
+    },
+    {
+      "text": {
+        "es": "Cuando querés retirar, te piden pagar una comisión o una “verificación de identidad”.",
+        "en": "When you want to withdraw, they ask you to pay a fee or an “identity verification”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "La app se bloquea y la oficina cierra.",
+        "en": "The app locks and the office closes."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hermano, metete a esta plataforma, yo ya llevo tres meses. Comprás el nivel básico de 45 dólares y te cae tu ganancia todos los días solo por revisar las máquinas en la app. Si metés a dos personas más subís de nivel. Te paso el link y el número de cuenta para que depositás.",
+        "en": "Bro, join this platform, I’ve been in for three months. You buy the basic level for 45 dollars and your earnings land every day just for checking the machines in the app. If you bring in two more people you move up a level. I’ll send you the link and the account number to deposit."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "app que paga ganancias diarias",
+      "compre un paquete en la aplicacion",
+      "me piden pagar para retirar mi dinero",
+      "ganas mas si metes a otras personas",
+      "la app cerro y no puedo retirar",
+      "maquinas virtuales en una app"
+    ],
+    "en": [
+      "app that pays daily earnings",
+      "i bought a package in the app",
+      "they ask me to pay to withdraw my money",
+      "you earn more if you recruit people",
+      "the app shut down and i can't withdraw",
+      "virtual machines in an app"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganancias diarias seguras sin riesgo no existen.",
+      "Si ganás por meter gente, es una pirámide.",
+      "Pagar para poder retirar tu propio dinero es señal de estafa.",
+      "La empresa no está autorizada por la SIBOIF."
+    ],
+    "en": [
+      "Guaranteed risk-free daily earnings don’t exist.",
+      "If you earn by recruiting people, it’s a pyramid.",
+      "Paying to withdraw your own money is a sign of a scam.",
+      "The company isn’t authorized by SIBOIF."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de meter dinero, revisá en la lista de la SIBOIF si la entidad está autorizada.",
+      "No pagués comisiones ni “verificaciones” para retirar.",
+      "No invités a familiares ni amigos.",
+      "Guardá comprobantes y chats y denunciá en la Policía."
+    ],
+    "en": [
+      "Before putting in money, check SIBOIF’s list to see if the company is authorized.",
+      "Don’t pay fees or “verifications” to withdraw.",
+      "Don’t invite family or friends.",
+      "Keep receipts and chats and report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "ni/policia-118",
+    "ni/siboif",
+    "ni/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Así operaba la estafa piramidal ADV Advertising en Nicaragua",
+      "publisher": "Confidencial",
+      "url": "https://confidencial.digital/noticias/asi-operaba-la-estafa-piramidal-adv-advertising-en-nicaragua/",
+      "date": "2026-08-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

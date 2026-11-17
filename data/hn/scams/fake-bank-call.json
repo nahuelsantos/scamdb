@@ -1,0 +1,144 @@
+{
+  "id": "hn/fake-bank-call",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Ejecutivo de cuenta” o “asesor de seguridad” de tu banco",
+    "en": "Your bank’s “account executive” or “security adviser”"
+  },
+  "name": {
+    "es": "“Le llamamos del banco: hay una transacción en proceso”",
+    "en": "“This is your bank calling: there’s a transaction in progress”"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser ejecutivo de cuenta o asesor de seguridad financiera de tu banco. A veces el número se parece al que usa el banco para mandarte avisos. Te pregunta si estás haciendo una transacción o te dice que tu banca en línea quedó bloqueada, y para “cancelarla” o “desbloquearla” te pide el código que te acaba de llegar por mensaje, tu usuario, el token o tus datos personales. Con eso entran a tu banca en línea y en minutos transfieren tu dinero a cuentas de terceros.",
+    "en": "Someone calls saying they are an account executive or financial security adviser at your bank. Sometimes the number looks like the one the bank uses for its alerts. They ask whether you are making a transaction, or say your online banking has been blocked, and to “cancel” or “unblock” it they ask for the code you just got by text, your username, your token or your personal details. With that they get into your online banking and within minutes transfer your money to other people’s accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman “del banco”; el número puede parecer el oficial.",
+        "en": "They call “from the bank”; the number may look official."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que hay una transacción en proceso o que tu banca en línea está bloqueada.",
+        "en": "They say there is a transaction in progress or your online banking is blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden el código que te llegó por mensaje, el token o tu usuario para “cancelar” o “desbloquear”.",
+        "en": "They ask for the code you got by text, your token or username to “cancel” or “unblock”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "No te dejan colgar mientras “lo resuelven”.",
+        "en": "They don’t let you hang up while they “sort it out”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Vacían la cuenta con transferencias rápidas a cuentas de terceros.",
+        "en": "They empty the account with quick transfers to third-party accounts."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, le habla el licenciado Mejía, ejecutivo de cuenta del banco. Estamos viendo una transferencia de L 18,000 saliendo de su cuenta ahorita mismo. Si usted no la hizo, ya le mandé un código para frenarla, léamelo rápido antes de que se procese.",
+        "en": "Hello, this is Mr. Mejía, account executive at the bank. We are seeing a transfer of L 18,000 leaving your account right now. If you didn’t make it, I’ve just sent you a code to stop it, read it to me quickly before it goes through."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco",
+      "ejecutivo de cuenta me pidio el codigo",
+      "asesor de seguridad del banco",
+      "transaccion en proceso que no hice",
+      "me pidieron el token",
+      "dicen que mi banca en linea esta bloqueada",
+      "me pidieron el usuario de la banca en linea",
+      "me vaciaron la cuenta en minutos"
+    ],
+    "en": [
+      "call from my bank",
+      "account executive asked for the code",
+      "bank security adviser called",
+      "transaction in progress i didn't make",
+      "they asked for my token",
+      "online banking blocked",
+      "they emptied my account in minutes"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ningún banco te llama para pedir contraseñas, PIN, token ni códigos de mensaje.",
+      "El número en pantalla puede imitar al del banco: no lo prueba.",
+      "Te apuran para que no pensés ni llamés vos al banco.",
+      "Si “bloquearon” tu banca en línea y justo te llaman para desbloquearla, desconfiá."
+    ],
+    "en": [
+      "No bank calls you to ask for passwords, PIN, token or text codes.",
+      "The number on screen can imitate the bank’s: it proves nothing.",
+      "They rush you so you don’t think or call the bank yourself.",
+      "If your online banking was “blocked” and someone calls right away to unblock it, be suspicious."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Colgá y llamá vos al número que viene al reverso de tu tarjeta o en tu estado de cuenta.",
+      "No digás códigos, token, PIN ni usuario a nadie por teléfono.",
+      "Si ya los diste, bloqueá la tarjeta desde la app y avisá al banco de inmediato.",
+      "Denunciá en la DPI con capturas y comprobantes."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card or on your statement yourself.",
+      "Don’t give codes, token, PIN or username to anyone by phone.",
+      "If you already did, block the card in the app and tell the bank immediately.",
+      "Report it to the DPI with screenshots and receipts."
+    ]
+  },
+  "reportTo": [
+    "hn/tu-banco",
+    "hn/policia-dpi",
+    "hn/cnbs"
+  ],
+  "sources": [
+    {
+      "title": "Policía Nacional alerta sobre estafas telefónicas en San Pedro Sula; así operan",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/policia-nacional-alerta-sobre-estafas-telefonicas-en-san-pedro-sula-asi-operan-2026-01-16",
+      "date": "2026-01-16"
+    },
+    {
+      "title": "Robaron L586 mil en 41 minutos: así operaba red que entraba a bancas en línea y hacía transferencias",
+      "publisher": "El Heraldo (Honduras)",
+      "url": "https://www.elheraldo.hn/fotogalerias/robaron-586-mil-asi-operaba-red-entraba-bancas-en-linea-hacia-transferencias-phishing-CP31940750",
+      "date": "2026-09-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

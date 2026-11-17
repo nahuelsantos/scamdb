@@ -1,0 +1,134 @@
+{
+  "id": "gt/relative-in-trouble-call",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “sobrino”, “hijo” o familiar en apuros",
+    "en": "A “nephew”, “son” or relative in trouble"
+  },
+  "name": {
+    "es": "“Tía, tuve un accidente”: familiar en apuros que pide un depósito urgente",
+    "en": "“Auntie, I had an accident”: relative in trouble who needs an urgent deposit"
+  },
+  "how": {
+    "es": "Te llama alguien que se hace pasar por un sobrino, un hijo o un familiar. Cuenta una emergencia: que atropelló a alguien con una moto prestada y necesita pagar el hospital para no ir preso, o que acaba de llegar del extranjero y lo detuvieron en el aeropuerto o en Migración por una multa. Te pide un depósito urgente a una cuenta bancaria y que no le contés a nadie.",
+    "en": "Someone calls pretending to be a nephew, son or relative. They describe an emergency: they hit someone with a borrowed motorbike and must pay the hospital to avoid jail, or they just arrived from abroad and were held at the airport or by immigration over a fine. They ask for an urgent deposit to a bank account and not to tell anyone."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un “familiar” con voz rara o que no dice su nombre primero.",
+        "en": "A “relative” calls with an odd voice or without saying their name first."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Cuenta un accidente o que lo detuvieron en el aeropuerto o Migración.",
+        "en": "They describe an accident or being held at the airport or by immigration."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide que no le digás a nadie de la familia.",
+        "en": "They ask you not to tell anyone in the family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te pide depositar ya en una cuenta bancaria a nombre de otra persona.",
+        "en": "They ask you to deposit now into a bank account in someone else’s name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Tía, soy yo, ¿sí me reconoce? Fíjese que me prestaron una moto y choqué a una señora, está grave en el hospital y si no pago me llevan preso. Ya junté la mitad, ¿me puede depositar Q3,000 a una cuenta que le paso? Por favor no le diga a mi mamá.",
+        "en": "Auntie, it’s me, do you recognise me? Listen, I borrowed a motorbike and hit a lady, she’s in hospital in a bad way and if I don’t pay they’ll take me to jail. I already have half, can you deposit Q3,000 to an account I’ll give you? Please don’t tell my mum."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamo mi sobrino que tuvo un accidente y necesita dinero",
+      "familiar detenido en el aeropuerto pide deposito",
+      "atropello a alguien y si no paga lo llevan preso",
+      "me pidio que no le dijera a nadie",
+      "llego de estados unidos y lo detuvo migracion",
+      "deposito urgente para sacar a mi hijo",
+      "familiar choco el carro y lo detuvo la policia",
+      "supuesto sobrino pide dinero para no ir a la carcel"
+    ],
+    "en": [
+      "my nephew called saying he had an accident and needs money",
+      "relative held at the airport asks for a deposit",
+      "he hit someone and will go to jail if he doesnt pay",
+      "asked me not to tell anyone",
+      "arrived from the us and immigration held him",
+      "urgent deposit to get my son out",
+      "relative crashed the car and police held him",
+      "fake nephew wants money to stay out of jail"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La llamada viene de un número que no tenés guardado.",
+      "Te piden dinero urgente y que no le contés a nadie.",
+      "La cuenta para depositar es de una persona que no conocés."
+    ],
+    "en": [
+      "The call comes from a number you don’t have saved.",
+      "They want money urgently and ask you not to tell anyone.",
+      "The account to deposit into belongs to someone you don’t know."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Mantené la calma y colgá.",
+      "Llamá a tu familiar o a otro pariente al número de siempre.",
+      "No depositar sin confirmar la historia.",
+      "Denunciá a la PNC o al Ministerio Público."
+    ],
+    "en": [
+      "Stay calm and hang up.",
+      "Call your relative or another family member on their usual number.",
+      "Don’t deposit anything until the story is confirmed.",
+      "Report it to the PNC or the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/pnc-110",
+    "gt/mp-denuncia"
+  ],
+  "sources": [
+    {
+      "title": "La nueva llamada que usan extorsionistas para estafar a guatemaltecos",
+      "publisher": "Publinews Guatemala",
+      "url": "https://www.publinews.gt/noticias/2026/07/25/la-nueva-llamada-que-usan-extorsionistas-para-estafar-guatemaltecos/",
+      "date": "2026-07-25"
+    },
+    {
+      "title": "MP reporta aumento de denuncias por estafas: ¡Tome precauciones!",
+      "publisher": "Emisoras Unidas",
+      "url": "https://emisorasunidas.com/nacional/2025/09/06/ministerio-publico-denuncias-estafas-guatemala/",
+      "date": "2025-09-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

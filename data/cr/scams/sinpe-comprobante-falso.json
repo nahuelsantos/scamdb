@@ -1,0 +1,135 @@
+{
+  "id": "cr/sinpe-comprobante-falso",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “comprador” en Marketplace, Instagram o WhatsApp",
+    "en": "A “buyer” on Marketplace, Instagram or WhatsApp"
+  },
+  "name": {
+    "es": "“Ya le hice el SINPE, aquí está el comprobante; ya va el mensajero”",
+    "en": "“I already sent the SINPE, here's the receipt; the courier is on the way”"
+  },
+  "how": {
+    "es": "Usted vende algo en redes. Un comprador acepta el precio rápido, le manda una captura de un comprobante de SINPE o de transferencia y le dice que ya va un mensajero, taxi o Uber a recoger el artículo. El comprobante es falso: la plata nunca entró. Si usted entrega el producto sin revisar su cuenta, lo pierde. A veces, si duda, lo presionan o lo amenazan.",
+    "en": "You're selling something online. A buyer agrees to the price quickly, sends you a screenshot of a SINPE or bank transfer receipt and says a courier, taxi or Uber is already on the way to pick up the item. The receipt is fake: the money never arrived. If you hand over the item without checking your account, you lose it. Sometimes, if you hesitate, they pressure or threaten you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un comprador acepta el precio sin regatear ni ver el producto.",
+        "en": "A buyer agrees to the price without haggling or seeing the item."
+      }
+    },
+    {
+      "text": {
+        "es": "Le manda una captura de un comprobante de SINPE o de transferencia.",
+        "en": "They send a screenshot of a SINPE or transfer receipt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dice que ya va un mensajero o un taxi a recoger y que no lo haga esperar.",
+        "en": "They say a courier or taxi is already coming and not to keep them waiting."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "La plata nunca aparece en su cuenta y el artículo ya se fue.",
+        "en": "The money never shows up in your account and the item is already gone."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Listo mae, ya le pasé los ₡185.000 por SINPE, ahí le va la foto del comprobante. Ya le mandé un Uber para que le recojan la consola, llega en 10 minutos. Si no le aparece todavía es que el banco dura un toque en reflejarlo.",
+        "en": "Done, man, I already sent you the ₡185,000 by SINPE, here's the photo of the receipt. I've sent an Uber to pick up the console, it gets there in 10 minutes. If it doesn't show yet it's because the bank takes a bit to reflect it."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me mandaron un comprobante falso",
+      "comprador de marketplace mando un uber a recoger",
+      "el sinpe nunca me entro",
+      "entregue el producto y no me pagaron",
+      "captura de transferencia falsa",
+      "vendi algo y la plata no llego",
+      "comprobante de transferencia",
+      "mandaron un motorizado a recoger",
+      "no me cayo la plata del sinpe",
+      "me mando la captura del pago",
+      "mensajero de didi o uber",
+      "dice que su banco esta lento"
+    ],
+    "en": [
+      "they sent me a fake receipt",
+      "marketplace buyer sent an uber to pick it up",
+      "the sinpe never arrived",
+      "handed over the item and wasn't paid",
+      "fake transfer screenshot",
+      "sold something and the money never came"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una captura de pantalla no es plata en su cuenta.",
+      "Le apuran con un mensajero que ya viene en camino.",
+      "El comprador no quiere ver el producto ni hablar por llamada.",
+      "Le dicen que el banco “dura en reflejar” un SINPE."
+    ],
+    "en": [
+      "A screenshot is not money in your account.",
+      "They rush you with a courier who is already on the way.",
+      "The buyer doesn't want to see the item or talk on the phone.",
+      "They tell you the bank “takes a while to show” a SINPE."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entregue nada hasta ver el depósito en su app del banco.",
+      "Si el mensajero llega antes, que espere o que se devuelva.",
+      "Guarde los chats y el comprobante falso y denuncie en el OIJ.",
+      "Si lo amenazan, corte la comunicación y denúncielo."
+    ],
+    "en": [
+      "Don't hand over anything until you see the deposit in your bank app.",
+      "If the courier arrives first, they can wait or go back.",
+      "Keep the chats and the fake receipt and report it to the OIJ.",
+      "If they threaten you, cut contact and report it."
+    ]
+  },
+  "reportTo": [
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "No caiga en la trampa: Así funcionan las estafas por Sinpe Móvil",
+      "publisher": "CRHoy",
+      "url": "https://crhoy.com/nacionales/no-caiga-en-la-trampa-asi-funcionan-las-estafas-por-sinpe-movil/",
+      "date": "2026-08-01"
+    },
+    {
+      "title": "“Estafadores de Facebook”: Fiscalía identifica 3 trampas en que caen vendedores y compradores en Marketplace",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/estafadores-de-facebook-fiscalia-identifica-3-trampas-en-que-caen-vendedores-y-compradores-en-marketplace/",
+      "date": "2024-08-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

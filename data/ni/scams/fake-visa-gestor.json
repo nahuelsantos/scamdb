@@ -1,0 +1,136 @@
+{
+  "id": "ni/fake-visa-gestor",
+  "country": "ni",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "in-person",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Gestor” o agencia que dice tramitar visas",
+    "en": "“Fixer” or agency that claims to process visas"
+  },
+  "name": {
+    "es": "“Te garantizo la visa americana, solo pagá el trámite”",
+    "en": "“I guarantee you the US visa, just pay the fee”"
+  },
+  "how": {
+    "es": "Por redes sociales, en cibercafés o agencias de viaje, alguien te ofrece garantizar una visa de Estados Unidos, una visa de trabajo, mejorar tus chances en la lotería de visas o pagar la fianza de visa por vos. Te cobra por adelantado, a veces dice que tus papeles ya están listos y solo falta el boleto. La visa nunca llega. La embajada dice que los gestores no tienen ninguna función y que la fianza no se paga antes de la entrevista.",
+    "en": "On social media, in internet cafés or travel agencies, someone offers to guarantee you a US visa or a work visa, improve your odds in the visa lottery, or pay the visa bond for you. They charge in advance, sometimes saying your papers are ready and only the plane ticket is missing. The visa never arrives. The embassy says fixers have no role and that the bond is not paid before the interview."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien te ofrece garantizar la visa o un trabajo en el extranjero.",
+        "en": "Someone offers to guarantee you a visa or a job abroad."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dice tener contactos en la embajada o que tus papeles ya están listos.",
+        "en": "They say they have contacts at the embassy or that your papers are ready."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te cobra el trámite, la fianza o “gastos” por adelantado.",
+        "en": "They charge the fee, the bond or “expenses” in advance."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apura porque “se acaban los cupos”.",
+        "en": "They rush you because “places are running out”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Trámites migratorios garantizados 100%. Visa de turista y de trabajo para Estados Unidos sin entrevista complicada, tenemos contacto directo en el consulado. Pagás la mitad hoy y la otra mitad cuando te entreguemos el pasaporte. Cupos limitados, escribí al privado.",
+        "en": "100% guaranteed immigration procedures. Tourist and work visas for the United States without a complicated interview, we have a direct contact at the consulate. Pay half today and the other half when we hand you the passport. Limited places, message us privately."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "gestor que garantiza la visa americana",
+      "pague por un tramite de visa y no llego",
+      "me cobraron la fianza de la visa antes de la entrevista",
+      "visa de trabajo para estados unidos por facebook",
+      "dijo que tenia contacto en la embajada",
+      "me cobraron por la loteria de visas"
+    ],
+    "en": [
+      "fixer guarantees the us visa",
+      "paid for a visa procedure that never came",
+      "charged the visa bond before the interview",
+      "us work visa offered on facebook",
+      "said he had a contact at the embassy",
+      "charged me for the visa lottery"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie puede garantizar una visa: solo la entrevista con el oficial consular decide.",
+      "La embajada no tiene empleados ofreciendo servicios fuera de sus instalaciones.",
+      "La lotería de visas es gratis.",
+      "La fianza de visa no se paga por adelantado ni por medio de terceros."
+    ],
+    "en": [
+      "No one can guarantee a visa: only the interview with the consular officer decides.",
+      "The embassy has no staff offering services outside its premises.",
+      "The visa lottery is free.",
+      "The visa bond isn’t paid in advance or through third parties."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Hacé el trámite solo por los sitios oficiales de la embajada.",
+      "No pagués a gestores, agencias ni páginas que ofrezcan visas o trabajos garantizados.",
+      "Si ya pagaste, guardá recibos y chats y denunciá en la Policía."
+    ],
+    "en": [
+      "Do the procedure only through the embassy’s official websites.",
+      "Don’t pay fixers, agencies or pages offering guaranteed visas or jobs.",
+      "If you already paid, keep receipts and chats and report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "ni/policia-118"
+  ],
+  "sources": [
+    {
+      "title": "Lo que necesita saber sobre las fianzas para solicitantes de visa estadounidense en Nicaragua",
+      "publisher": "Nicaragua Investiga",
+      "url": "https://nicaraguainvestiga.com/nacion/169921-lo-que-necesita-saber-sobre-las-fianzas-para-solicitantes-de-visa-estadounidense-en-nicaragua/",
+      "date": "2026-04-07"
+    },
+    {
+      "title": "Embajada de Estados Unidos advierte sobre estafas para trámites de visado",
+      "publisher": "Nicaragua Investiga",
+      "url": "https://nicaraguainvestiga.com/nacion/155009-embajada-de-estados-unidos-advierte-sobre-estafas-para-tramites-de-visado/",
+      "date": "2024-10-10"
+    },
+    {
+      "title": "La Embajada de EEUU emite alerta para evitar estafas de visas en Nicaragua",
+      "publisher": "Despacho 505",
+      "url": "https://www.despacho505.com/nacionales/23068-embajada-eeuu-alerta-estafas-visa-nicaragua/",
+      "date": "2024-10-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

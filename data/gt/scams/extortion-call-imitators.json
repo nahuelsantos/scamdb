@@ -1,0 +1,131 @@
+{
+  "id": "gt/extortion-call-imitators",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Alguien que dice ser “de la mara” o de una pandilla",
+    "en": "Someone claiming to be “from the mara” or a gang"
+  },
+  "name": {
+    "es": "Llamadas de extorsión desde la cárcel: “somos de la mara, pague o le pasa algo”",
+    "en": "Extortion calls from prison: “we’re the gang, pay or something will happen”"
+  },
+  "how": {
+    "es": "Te llaman a la casa o al celular y amenazan con hacerle daño a tu familia si no pagás. Dicen ser pandilleros, pero según la PNC la mayoría de estas llamadas son de imitadores, muchos desde las cárceles, que escogen números al azar o usan datos sacados de redes sociales para parecer que te conocen. Piden depósitos que van de unos cientos a miles de quetzales.",
+    "en": "They call your home or mobile and threaten to hurt your family if you don’t pay. They claim to be gang members, but according to the PNC most of these calls come from imitators, many from prisons, who pick numbers at random or use details taken from social media to seem as if they know you. They ask for deposits from a few hundred to thousands of quetzales."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama alguien que dice ser de una pandilla o “la mara”.",
+        "en": "Someone calls claiming to be from a gang or “the mara”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te menciona datos tuyos o de tu familia para asustarte.",
+        "en": "They mention details about you or your family to scare you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te prohíbe avisar a la policía o a tu familia.",
+        "en": "They forbid you to tell the police or your family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te exige un depósito o un pago en un plazo corto.",
+        "en": "They demand a deposit or payment within a short time."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Mire, aquí le habla el palabrero de la clica. Ya sabemos dónde vive y a qué hora salen sus patojos para la escuela. Si quiere que no les pase nada, para mañana tiene listos Q5,000. Si llama a la chontada, ya sabe.",
+        "en": "Listen, this is the gang’s spokesman. We know where you live and what time your kids leave for school. If you don’t want anything to happen to them, have Q5,000 ready by tomorrow. If you call the cops, you know what happens."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron para extorsionarme",
+      "dicen que son de la mara y piden dinero",
+      "me amenazaron con hacerle daño a mi familia",
+      "llamada de extorsion desde la carcel",
+      "me exigen un deposito para no hacernos nada",
+      "me pidieron que no llamara a la policia"
+    ],
+    "en": [
+      "someone called to extort me",
+      "they say they are from the gang and want money",
+      "they threatened to hurt my family",
+      "extortion call from prison",
+      "they demand a deposit so nothing happens to us",
+      "they told me not to call the police"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La mayoría de estas llamadas son de imitadores, no de pandilleros que te estén vigilando.",
+      "Los datos que mencionan pueden salir de tus redes sociales.",
+      "Te prohíben avisar a la policía."
+    ],
+    "en": [
+      "Most of these calls come from imitators, not gang members watching you.",
+      "The details they mention may come from your social media.",
+      "They forbid you to tell the police."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagués y no des más datos. Colgá.",
+      "Llamá al 1574 (antiextorsiones de la PNC) o al 110.",
+      "Anotá el número y la hora, y guardá los mensajes.",
+      "Revisá qué información de tu familia publicás en redes."
+    ],
+    "en": [
+      "Don’t pay and don’t give more details. Hang up.",
+      "Call 1574 (PNC anti-extortion) or 110.",
+      "Write down the number and time, and keep the messages.",
+      "Check what information about your family you post online."
+    ]
+  },
+  "reportTo": [
+    "gt/pnc-antiextorsion",
+    "gt/pnc-110",
+    "gt/mp-denuncia"
+  ],
+  "sources": [
+    {
+      "title": "PNC reporta Q287.3 millones exigidos a la población como extorsión desde las cárceles",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/nacionales/kmonzon/2026/11/14/pnc-reporta-q287-3-millones-exigidos-a-la-poblacion-como-extorsion-desde-las-carceles/",
+      "date": "2026-11-14"
+    },
+    {
+      "title": "Extorsiones a viviendas se duplican en los últimos cinco años",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/extorsiones-a-viviendas-se-duplican-en-los-ultimos-cinco-anos/",
+      "date": "2024-10-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

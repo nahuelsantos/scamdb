@@ -1,0 +1,127 @@
+{
+  "id": "hn/cheap-dollars-whatsapp",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un conocido o proveedor desde su WhatsApp (robado)",
+    "en": "An acquaintance or supplier from their (stolen) WhatsApp"
+  },
+  "name": {
+    "es": "“Vendo dólares más baratos que en el banco”",
+    "en": "“I’m selling dollars cheaper than the bank”"
+  },
+  "how": {
+    "es": "Desde la cuenta de WhatsApp robada de un conocido, o desde un número que se hace pasar por un proveedor, te ofrecen dólares por debajo del precio del Banco Central: “a 23” o “a 24 lempiras”. Como creés que hablás con alguien de confianza, transferís los lempiras a la cuenta que te dan, que suele ser de una “mula”. Los dólares nunca llegan y el dinero se mueve a otras cuentas en minutos.",
+    "en": "From an acquaintance’s stolen WhatsApp account, or a number posing as a supplier, they offer you dollars below the Central Bank rate: “at 23” or “at 24 lempiras”. Thinking you are talking to someone you trust, you transfer the lempiras to the account they give, usually a “mule”. The dollars never arrive and the money is moved to other accounts within minutes."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un conocido o proveedor, a veces desde un número extranjero.",
+        "en": "An acquaintance or supplier messages you, sometimes from a foreign number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece dólares más baratos que en el banco o el Banco Central.",
+        "en": "They offer dollars cheaper than at the bank or the Central Bank."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te apura: “solo me quedan unos cuantos, decime ya”.",
+        "en": "They rush you: “I only have a few left, tell me now”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pasa una cuenta a nombre de otra persona para que transfirás los lempiras.",
+        "en": "They give an account in someone else’s name for you to transfer the lempiras."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Qué onda, fijate que me sobraron unos dólares del viaje y los estoy dando a 23.50, más barato que en el banco. ¿Querés unos 500? Te paso la cuenta de mi cuñado porque la mía la tengo bloqueada, depositame hoy y mañana te los llevo.",
+        "en": "Hey, I’ve got some dollars left over from my trip and I’m selling them at 23.50, cheaper than the bank. Want about 500? I’ll send you my brother-in-law’s account because mine is blocked, deposit today and I’ll bring them tomorrow."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me ofrecieron dolares baratos",
+      "venta de dolares por whatsapp",
+      "dolares mas baratos que el banco central",
+      "dolares a 23 lempiras",
+      "deposite para comprar dolares y no llegaron",
+      "me paso la cuenta de otra persona para los dolares"
+    ],
+    "en": [
+      "offered cheap dollars",
+      "selling dollars on whatsapp",
+      "dollars cheaper than the central bank",
+      "dollars at 23 lempiras",
+      "paid for dollars that never arrived",
+      "gave me someone else's account for the dollars"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie vende dólares bajo el precio del mercado sin una trampa.",
+      "La cuenta para depositar está a nombre de otra persona.",
+      "Escribe desde un número nuevo o extranjero, o con una forma de hablar un poco distinta."
+    ],
+    "en": [
+      "Nobody sells dollars below market rate without a catch.",
+      "The account to pay into is in someone else’s name.",
+      "They write from a new or foreign number, or sound slightly different."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llamá a tu conocido a su número de siempre o preguntale en persona antes de depositar.",
+      "Comprá dólares solo en bancos o casas de cambio autorizadas.",
+      "Si ya transferiste, llamá a tu banco para intentar frenar la transferencia y denunciá en la DPI."
+    ],
+    "en": [
+      "Call your acquaintance on their usual number or ask in person before paying.",
+      "Buy dollars only at banks or authorised exchange houses.",
+      "If you already transferred, call your bank to try to stop it and report it to the DPI."
+    ]
+  },
+  "reportTo": [
+    "hn/tu-banco",
+    "hn/policia-dpi"
+  ],
+  "sources": [
+    {
+      "title": "Ofrecían dólares a 23 lempiras: capturan a tres por una estafa de más de L200 mil",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/ofrecian-dolares-a-23-lempiras-capturan-a-tres-por-una-estafa-de-mas-de-l200-mil-2026-09-26",
+      "date": "2026-09-26"
+    },
+    {
+      "title": "Cae en Yoro hacker de WhatsApp que usaba lista de contactos para ofrecer dólares",
+      "publisher": "El Heraldo (Honduras)",
+      "url": "https://www.elheraldo.hn/sucesos/cae-yoro-hacker-whatsapp-contactos-ofrecer-dolares-IA29382648",
+      "date": "2026-02-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

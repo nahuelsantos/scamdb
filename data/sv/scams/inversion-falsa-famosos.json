@@ -1,0 +1,134 @@
+{
+  "id": "sv/inversion-falsa-famosos",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un anuncio con un funcionario o famoso (a veces hecho con IA)",
+    "en": "An ad featuring an official or celebrity (sometimes made with AI)"
+  },
+  "name": {
+    "es": "Inversión falsa con videos de funcionarios o “Ciudad Bitcoin”",
+    "en": "Fake investment with videos of officials or “Bitcoin City”"
+  },
+  "how": {
+    "es": "Ves en YouTube, Facebook o TikTok un video donde parece hablar una ministra, la primera dama u otra figura conocida, a veces con voz hecha con inteligencia artificial, promoviendo un “programa especial” o una plataforma. Prometen multiplicar tu dinero, por ejemplo convertir $250 en $2,000, o hablan de un falso programa de “Ciudad Bitcoin”. Te mandan a un formulario donde piden tus datos y luego un “asesor” te pide depositar. La SSF dice que operan sin regulación, piden depósitos y desaparecen.",
+    "en": "On YouTube, Facebook or TikTok you see a video where a minister, the first lady or another well-known figure appears to speak, sometimes with an AI-generated voice, promoting a “special programme” or a platform. They promise to multiply your money, for example turning $250 into $2,000, or talk about a fake “Bitcoin City” programme. You’re sent to a form that asks for your details, and then an “adviser” asks you to deposit. The Superintendency says these operate without regulation, ask for deposits and disappear."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un video usa la cara o la voz de una figura pública.",
+        "en": "A video uses a public figure’s face or voice."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Promete ganancias rápidas y seguras.",
+        "en": "It promises fast, guaranteed returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te lleva a un formulario o enlace para registrarte.",
+        "en": "It takes you to a form or link to sign up."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Un asesor te pide un primer depósito.",
+        "en": "An adviser asks for a first deposit."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le saluda Daniel, su asesor del programa de inversión. Vimos que se registró en el formulario. Con un primer aporte de $250 en la plataforma, en 30 días puede retirar hasta $2,000. Los cupos se cierran hoy, ¿le paso los datos para depositar?",
+        "en": "Good afternoon, this is Daniel, your adviser for the investment programme. We saw you signed up on the form. With a first contribution of $250 on the platform, in 30 days you can withdraw up to $2,000. Places close today, shall I send you the deposit details?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "video de la ministra promoviendo inversion",
+      "programa ciudad bitcoin falso",
+      "invertir 250 y ganar 2000",
+      "asesor de inversiones me pide depositar",
+      "video con inteligencia artificial de un funcionario",
+      "plataforma que multiplica el dinero"
+    ],
+    "en": [
+      "video of a minister promoting an investment",
+      "fake bitcoin city programme",
+      "invest 250 and get 2000",
+      "investment adviser asking for a deposit",
+      "ai video of an official"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganancias garantizadas y muy altas en poco tiempo.",
+      "Un funcionario o famoso “recomienda” la inversión en un anuncio.",
+      "La empresa no está supervisada por la SSF.",
+      "Te apuran porque “se acaban los cupos”."
+    ],
+    "en": [
+      "Guaranteed, very high returns in a short time.",
+      "An official or celebrity “recommends” the investment in an ad.",
+      "The company is not supervised by the Superintendency.",
+      "They rush you because “places are running out”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No llenes formularios de estos anuncios ni deposites.",
+      "Verifica en las cuentas oficiales de la institución si el programa existe.",
+      "Si ya pagaste, avisa a tu banco y guarda los comprobantes.",
+      "Reporta el anuncio y denuncia en la línea de estafas o la Fiscalía."
+    ],
+    "en": [
+      "Don’t fill in forms from these ads or deposit money.",
+      "Check the institution’s official accounts to see whether the programme exists.",
+      "If you already paid, tell your bank and keep the receipts.",
+      "Report the ad and file a report with the scam line or the Attorney General’s Office."
+    ]
+  },
+  "reportTo": [
+    "sv/denuncia-estafas",
+    "sv/fiscalia",
+    "sv/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Las estafas digitales que más circulan en El Salvador",
+      "publisher": "El Diario de Hoy (elsalvador.com), con información de la SSF",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/finanzas-personales/estafas-el-salvador-delitos/1258084/2026/",
+      "date": "2026-01-13"
+    },
+    {
+      "title": "Minec denuncia suplantación de identidad de ministra de Economía para estafa de programas de inversión",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/economia/minec-denuncia-suplantacion-de-identidad-de-ministra-de-economia-para-estafa-de-programas-de-inversion",
+      "date": "2025-06-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

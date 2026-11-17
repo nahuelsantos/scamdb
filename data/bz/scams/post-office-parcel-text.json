@@ -1,0 +1,90 @@
+{
+  "id": "bz/post-office-parcel-text",
+  "country": "bz",
+  "lang": "en",
+  "status": "fading",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“Belize Post Office”"
+  },
+  "name": {
+    "en": "Fake Post Office text about a parcel with an incomplete address"
+  },
+  "how": {
+    "en": "A text from an unknown number says a package addressed to you is waiting at the Post Office but could not be delivered because the address is incomplete. It links to a page where you are asked to update your address and personal details. The Belize Postal Service says it did not send the message."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text says it is from the Post Office about your package."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says delivery failed because your address is incomplete."
+      }
+    },
+    {
+      "text": {
+        "en": "A link takes you to a page asking for your address and personal details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The information goes to criminals."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Belize Post: Your parcel is being held at our office after 2 failed delivery attempts. Address information incomplete. Update your details within 24 hours to avoid return to sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "post office text about a package waiting",
+      "parcel held at post office address incomplete",
+      "text asking me to update my address for a package",
+      "failed delivery attempts post office link",
+      "belize post package text from unknown number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "You weren’t expecting a parcel, or the text has no tracking details.",
+      "It comes from an ordinary mobile number with a link.",
+      "It asks for personal or card details to deliver a package."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link or give any details.",
+      "If you are expecting a parcel, contact the Post Office directly.",
+      "If you entered card details, call your bank to block the card."
+    ]
+  },
+  "reportTo": [
+    "bz/your-bank",
+    "bz/police"
+  ],
+  "sources": [
+    {
+      "title": "Beware!! Post Office scam circulates online",
+      "publisher": "Amandala",
+      "url": "https://amandala.com.bz/news/beware-post-office-scam-circulates-online/",
+      "date": "2024-07-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

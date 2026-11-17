@@ -1,0 +1,137 @@
+{
+  "id": "sv/multa-transito-sms",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tránsito”, “VMT” o “Sertracen”, desde un número desconocido",
+    "en": "“Traffic police”, “VMT” or “Sertracen”, from an unknown number"
+  },
+  "name": {
+    "es": "Falsa multa de tránsito por SMS con descuento por pronto pago",
+    "en": "Fake traffic fine by text with an early-payment discount"
+  },
+  "how": {
+    "es": "Te llega un SMS o WhatsApp, a veces desde un número extranjero o un correo, diciendo que tienes una esquela de tránsito pendiente, por ejemplo de $50, con descuento si pagas en uno o dos días y amenaza de suspender tu licencia o cobrar recargos. El enlace lleva a una página que imita al gobierno y pide tu tarjeta, contraseñas o códigos. El Gobierno, el MOPT, el VMT y la banca (ABANSA) han alertado: las multas solo se consultan y pagan en el sitio oficial de Sertracen, que no manda enlaces por mensaje.",
+    "en": "You get a text or WhatsApp, sometimes from a foreign number or an email address, saying you have an unpaid traffic ticket, for example $50, with a discount if you pay within one or two days and a threat to suspend your licence or add charges. The link leads to a page that imitates the government and asks for your card, passwords or codes. The Government, the Public Works Ministry, the Transport Vice-Ministry and the banks (ABANSA) have warned: fines can only be checked and paid on Sertracen’s official site, which does not send links by message."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan de una multa que no conocías.",
+        "en": "You’re told about a fine you didn’t know about."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrecen descuento si pagas ya y amenazan con la licencia o recargos.",
+        "en": "They offer a discount if you pay now and threaten your licence or extra charges."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te mandan un enlace para pagar.",
+        "en": "They send a link to pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página pide la tarjeta, la clave o un código del banco.",
+        "en": "The page asks for your card, password or a bank code."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "AVISO VMT: Registramos una infraccion de transito a su nombre por $50.00. Cancele antes de 48 horas y obtenga 50% de rebaja, caso contrario se suspendera su licencia. Pague en: [enlace]",
+        "en": "VMT NOTICE: We have recorded a traffic violation in your name for $50.00. Pay within 48 hours and get 50% off, otherwise your licence will be suspended. Pay at: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de multa de transito con enlace",
+      "esquela de transito por mensaje",
+      "descuento si pago la multa hoy",
+      "me van a suspender la licencia",
+      "multa de sertracen falsa",
+      "pague una multa en un enlace"
+    ],
+    "en": [
+      "traffic fine text with a link",
+      "traffic ticket by text message",
+      "discount if I pay the fine today",
+      "they will suspend my licence",
+      "fake sertracen fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La multa llega por SMS o WhatsApp con un enlace.",
+      "Descuento grande si pagas en horas o días.",
+      "Amenaza de suspender la licencia.",
+      "El número es extranjero o es un correo, no una institución."
+    ],
+    "en": [
+      "The fine arrives by text or WhatsApp with a link.",
+      "A big discount if you pay within hours or days.",
+      "A threat to suspend your licence.",
+      "The number is foreign or it’s an email address, not an institution."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace ni respondas.",
+      "Consulta tus multas tú mismo en el sitio oficial de Sertracen, escribiendo la dirección.",
+      "Si pusiste datos de tu tarjeta, llama a tu banco ya.",
+      "Reporta el mensaje a la línea de denuncia de estafas y bórralo."
+    ],
+    "en": [
+      "Don’t open the link or reply.",
+      "Check your fines yourself on Sertracen’s official site, typing the address.",
+      "If you entered card details, call your bank right away.",
+      "Report the message to the scam reporting line and delete it."
+    ]
+  },
+  "reportTo": [
+    "sv/denuncia-estafas",
+    "sv/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "MOPT advierte sobre enlace engañoso para robar datos bancarios",
+      "publisher": "El Diario de Hoy",
+      "url": "https://www.eldiariodehoy.com/noticias/nacionales/mopt-advierte-sobre-enlace-enganoso-para-robar-datos-bancarios/89776/2026/",
+      "date": "2026-08-16"
+    },
+    {
+      "title": "Bancos de El Salvador alertan por fraude digital en mensajes",
+      "publisher": "El Diario de Hoy",
+      "url": "https://www.eldiariodehoy.com/noticias/nacionales/bancos-de-el-salvador-alertan-por-fraude-digital-en-mensajes/85044/2026/",
+      "date": "2026-07-11"
+    },
+    {
+      "title": "Gobierno advierte sobre estafas con falsas notificaciones de multas de tránsito",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/gobierno-advierte-sobre-estafas-con-falsas-notificaciones-de-multas-de-transito",
+      "date": "2026-04-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

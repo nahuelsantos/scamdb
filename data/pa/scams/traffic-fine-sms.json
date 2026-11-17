@@ -1,0 +1,131 @@
+{
+  "id": "pa/traffic-fine-sms",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "La “ATTT” (Autoridad de Tránsito)",
+    "en": "The “ATTT” (Transit Authority)"
+  },
+  "name": {
+    "es": "SMS falso de multa de tránsito de la ATTT",
+    "en": "Fake ATTT traffic fine text"
+  },
+  "how": {
+    "es": "Te llega un mensaje de texto o correo a nombre de la Autoridad de Tránsito y Transporte Terrestre diciendo que tienes una multa o infracción pendiente. Te pide entrar a un enlace para ver o pagar la boleta, a veces con descuento si pagas hoy. La página te pide datos personales y de tu tarjeta. La ATTT no cobra multas con enlaces por SMS.",
+    "en": "You get a text or email in the name of the Autoridad de Tránsito y Transporte Terrestre (land transport authority) saying you have an outstanding fine or offence. It asks you to open a link to see or pay the ticket, sometimes with a discount if you pay today. The page asks for your personal and card details. The ATTT does not collect fines through links sent by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Recibes un SMS o correo con el nombre de la ATTT.",
+        "en": "You get a text or email with the ATTT’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tienes una multa pendiente y que pagues pronto.",
+        "en": "It says you have an outstanding fine and should pay soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace para consultar o pagar.",
+        "en": "It has a link to check or pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página pide tus datos y los de tu tarjeta.",
+        "en": "The page asks for your details and card information."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "ATTT Panama: Su vehiculo registra una infraccion pendiente de pago. Evite recargos y la retencion de su revisado cancelando hoy: [enlace]",
+        "en": "ATTT Panama: Your vehicle has an unpaid offence. Avoid surcharges and having your inspection withheld by paying today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de la attt por una multa",
+      "sms de multa de transito con enlace",
+      "boleta de transito falsa",
+      "me llego una infraccion por mensaje",
+      "pagar multa de la attt por un link",
+      "correo de multa de transito pidiendo datos"
+    ],
+    "en": [
+      "message from the attt about a fine",
+      "traffic fine text with a link",
+      "fake traffic ticket",
+      "i got an offence notice by text",
+      "pay attt fine through a link",
+      "traffic fine email asking for details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "es": [
+      "La ATTT no pide pagos por enlaces enviados por SMS.",
+      "Te apuran con recargos o con perder el revisado.",
+      "Saludo genérico, sin tu nombre ni la placa completa.",
+      "La página pide datos de la tarjeta."
+    ],
+    "en": [
+      "The ATTT doesn’t ask for payments through links sent by text.",
+      "They rush you with surcharges or losing your inspection sticker.",
+      "Generic greeting, without your name or full plate number.",
+      "The page asks for card details."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace.",
+      "Consulta tus multas solo en los canales oficiales de la ATTT.",
+      "Si pusiste datos de tu tarjeta, llama a tu banco para bloquearla.",
+      "Denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Don’t open the link.",
+      "Check your fines only through the ATTT’s official channels.",
+      "If you entered card details, call your bank to block it.",
+      "Report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/tu-banco",
+    "pa/ministerio-publico"
+  ],
+  "sources": [
+    {
+      "title": "Autoridad del Tránsito alerta sobre SMS falsos de multas para estafar conductores",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/autoridad-del-transito-alerta-sobre-sms-falsos-de-multas-para-estafar-conductores-GP21955157",
+      "date": "2026-04-28"
+    },
+    {
+      "title": "¡No caiga! Estas son las estafas más denunciadas en Panamá durante 2026",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/no-caiga-estas-son-las-estafas-mas-denunciadas-en-panama-durante-2026-NK22395976",
+      "date": "2026-05-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

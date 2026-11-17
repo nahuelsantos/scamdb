@@ -1,0 +1,137 @@
+{
+  "id": "gt/whatsapp-account-theft",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un amigo o familiar (con la cuenta robada) o “soporte de WhatsApp”",
+    "en": "A friend or relative (hijacked account) or “WhatsApp support”"
+  },
+  "name": {
+    "es": "“Te llegó un código, ¿me lo pasás?”: robo de cuentas de WhatsApp",
+    "en": "“A code came to you, can you send it?”: WhatsApp account theft"
+  },
+  "how": {
+    "es": "Te escribe un contacto conocido, pero su cuenta ya está en manos de estafadores. Te sacan plática y te piden el código de seis números que te llega al teléfono, o te llama un supuesto “soporte de WhatsApp” para “ayudarte” y te pide abrir un enlace. Con eso registran tu WhatsApp en otro teléfono, te dejan fuera y les escriben a todos tus contactos pidiendo dinero o vendiendo cosas.",
+    "en": "A known contact writes to you, but their account is already in scammers’ hands. They chat with you and ask for the six-digit code that arrives on your phone, or a fake “WhatsApp support” calls to “help” and asks you to open a link. With that they register your WhatsApp on another phone, lock you out and message all your contacts asking for money or selling things."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un contacto de confianza (o alguien que dice ser de WhatsApp).",
+        "en": "A trusted contact (or someone claiming to be WhatsApp) writes to you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dice que por error te llegó un código o que te lo tienen que mandar para algo.",
+        "en": "They say a code was sent to you by mistake or that they need to send you one."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide que le reenvíes el código de seis números o que abrás un enlace.",
+        "en": "They ask you to forward the six-digit code or open a link."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Pierden tu cuenta y usan tu nombre para pedirles dinero a tus contactos.",
+        "en": "You lose your account and they use your name to ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Holaa, ¿cómo estás? Fijate que estoy armando un grupo para la refacción del sábado y sin querer puse tu número. Te va a caer un código por mensaje, ¿me lo mandás porfa? Es para que me deje terminar 🙏",
+        "en": "Hiii, how are you? I’m setting up a group for Saturday’s snack and put your number by accident. A code will come to you by text, can you send it to me please? It’s so it lets me finish 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me robaron el whatsapp",
+      "me pidieron el codigo de seis digitos",
+      "un amigo me pidio un codigo que me llego",
+      "me hackearon la cuenta de whatsapp",
+      "estan pidiendo dinero con mi whatsapp",
+      "me llamo soporte de whatsapp para recuperar mi cuenta"
+    ],
+    "en": [
+      "my whatsapp was stolen",
+      "they asked for the six digit code",
+      "a friend asked me for a code that arrived",
+      "my whatsapp account was hacked",
+      "someone is asking for money from my whatsapp",
+      "whatsapp support called to recover my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie que te conozca necesita tu código de WhatsApp.",
+      "WhatsApp no te llama por teléfono para recuperar tu cuenta.",
+      "Un contacto que de repente pide dinero o vende dólares por chat puede tener la cuenta robada."
+    ],
+    "en": [
+      "No one who knows you needs your WhatsApp code.",
+      "WhatsApp doesn’t phone you to recover your account.",
+      "A contact who suddenly asks for money or sells dollars by chat may have a stolen account."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No compartás el código con nadie.",
+      "Activá la verificación en dos pasos en WhatsApp.",
+      "Si te robaron la cuenta, volvé a registrar tu número, avisá a tus contactos y escribile a WhatsApp.",
+      "Si alguien pidió dinero en tu nombre, denuncialo."
+    ],
+    "en": [
+      "Don’t share the code with anyone.",
+      "Turn on two-step verification in WhatsApp.",
+      "If your account was stolen, register your number again, warn your contacts and write to WhatsApp.",
+      "If someone asked for money in your name, report it."
+    ]
+  },
+  "reportTo": [
+    "gt/whatsapp-ayuda",
+    "gt/mp-denuncia",
+    "gt/pnc-110"
+  ],
+  "sources": [
+    {
+      "title": "El error que permite a los estafadores quedarse con tu cuenta de WhatsApp en minutos",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/lh-economia/jveliz/2026/06/22/el-error-que-permite-a-los-estafadores-quedarse-con-tu-cuenta-de-whatsapp-en-minutos-now/",
+      "date": "2026-06-22"
+    },
+    {
+      "title": "PNC fortalece acciones de prevención ante alertas por estafas digitales",
+      "publisher": "Agencia Guatemalteca de Noticias (AGN)",
+      "url": "https://agn.gt/pnc-fortalece-acciones-de-prevencion-ante-alertas-por-estafas-digitales/",
+      "date": "2026-08-10"
+    },
+    {
+      "title": "Guatemaltecos en alerta por estafas digitales y robo de datos por WhatsApp y Facebook",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/guatemala-no-se-detiene/guatemaltecos-en-alerta-por-estafas-digitales-y-robo-de-datos-por-whatsapp-y-facebook/",
+      "date": "2026-04-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

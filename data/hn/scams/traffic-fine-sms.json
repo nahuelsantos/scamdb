@@ -1,0 +1,122 @@
+{
+  "id": "hn/traffic-fine-sms",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Policía de Tránsito” o “DNVT”",
+    "en": "“Traffic Police” or “DNVT”"
+  },
+  "name": {
+    "es": "“Tiene una infracción de tránsito pendiente: pague aquí”",
+    "en": "“You have a pending traffic fine: pay here”"
+  },
+  "how": {
+    "es": "Te llega un mensaje, muchas veces desde un número extranjero, que usa el nombre de la Policía de Tránsito o de la DNVT y dice que tu vehículo tiene una multa. Trae un enlace para “consultar y pagar” que no es de un sitio del Gobierno. Ahí te piden datos personales y de tu tarjeta. La DNVT no notifica multas por mensaje ni por enlaces: las boletas se ponen en persona.",
+    "en": "You get a message, often from a foreign number, using the name of the Traffic Police or the DNVT and saying your vehicle has a fine. It has a link to “check and pay” that isn’t a Government site. There they ask for your personal and card details. The DNVT doesn’t notify fines by text or links: tickets are issued in person."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "El mensaje dice ser de Tránsito o la DNVT, a veces desde un número extranjero.",
+        "en": "The message claims to be from Traffic or the DNVT, sometimes from a foreign number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tenés una multa y que se puede complicar si no pagás pronto.",
+        "en": "It says you have a fine that will get worse if you don’t pay soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace para pagar que no es un sitio oficial.",
+        "en": "It has a payment link that isn’t an official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "En la página te piden los datos de la tarjeta.",
+        "en": "The page asks for your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "DNVT HONDURAS: Su vehiculo registra una infraccion sin cancelar. Evite recargos y retencion de su licencia, consulte y pague en linea antes de 48 horas: [enlace]",
+        "en": "DNVT HONDURAS: Your vehicle has an unpaid offence. Avoid surcharges and licence withholding, check and pay online within 48 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de multa de transito",
+      "me llego una multa por mensaje",
+      "infraccion de transito con enlace",
+      "pagar multa en linea dnvt",
+      "mensaje de la policia de transito con link",
+      "multa desde un numero extranjero"
+    ],
+    "en": [
+      "traffic fine text message",
+      "got a fine by text",
+      "traffic offence with a link",
+      "pay dnvt fine online",
+      "traffic police message with a link",
+      "fine from a foreign number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Tránsito no manda multas por mensaje ni enlaces: la boleta se pone en persona.",
+      "El enlace no termina en un dominio oficial del Gobierno de Honduras.",
+      "Viene de un número extranjero y te apura con recargos."
+    ],
+    "en": [
+      "Traffic doesn’t send fines by text or links: tickets are issued in person.",
+      "The link isn’t on an official Honduran Government domain.",
+      "It comes from a foreign number and rushes you with surcharges."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abrás el enlace ni metás datos de tu tarjeta.",
+      "Si tenés dudas, consultá en una ventanilla de la DNVT o en un banco autorizado con tu identidad.",
+      "Si ya pusiste la tarjeta, bloqueala con tu banco y denunciá."
+    ],
+    "en": [
+      "Don’t open the link or enter your card details.",
+      "If in doubt, check at a DNVT window or an authorised bank with your ID.",
+      "If you already entered your card, block it with your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "hn/tu-banco",
+    "hn/policia-dpi"
+  ],
+  "sources": [
+    {
+      "title": "DNVT alerta por mensajes falsos sobre multas de tránsito",
+      "publisher": "La Prensa (Honduras)",
+      "url": "https://www.laprensa.hn/sanpedro/dnvt-alerta-por-mensajes-falsos-sobre-multas-de-transito-GD31543489",
+      "date": "2026-07-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

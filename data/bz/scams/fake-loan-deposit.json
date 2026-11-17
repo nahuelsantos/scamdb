@@ -1,0 +1,104 @@
+{
+  "id": "bz/fake-loan-deposit",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "A loan company page on social media"
+  },
+  "name": {
+    "en": "Instant loan offered online, but only after you send a deposit"
+  },
+  "how": {
+    "en": "A social media page offers quick loans, sometimes copying the name of a real Belizean lender. To release the loan you must first transfer a deposit or fee into an account. Once you pay, the loan never comes and the page asks for more or disappears. The Central Bank of Belize regularly warns about lenders that are not licensed to do moneylending business in Belize."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A social media page or message offers a fast loan with easy approval."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The page uses the name of a real Belizean business or looks like a licensed lender."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "Before the loan is released, you are told to send a deposit or processing fee to an account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "After you pay, there is no loan, only new fees or silence."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "QUICK CASH BZ ✅ Loans BZ$1,000 to BZ$15,000 approved same day, no job letter needed. Just send the $100 security deposit to the account we give you and the funds go to your account in 2 hrs. Inbox us now!"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "loan page asked me to send a deposit first",
+      "instant loan on facebook asking for upfront fee",
+      "pay a fee before they release my loan",
+      "loan approved but i must transfer a security deposit",
+      "fake loan company belize social media",
+      "is this moneylender licensed by the central bank",
+      "lender wants a processing fee before releasing the loan",
+      "quick loan with bad credit accepted but fee upfront"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "You must pay money before receiving a loan.",
+      "The lender only deals through social media messages and online transfers.",
+      "The business is not on the Central Bank of Belize list of licensed moneylenders."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never send a deposit or fee to get a loan.",
+      "Check the lender on the Central Bank of Belize list of licensed moneylenders, and visit the business in person.",
+      "If you already paid, contact your bank at once and report it to the police.",
+      "Report unlicensed lenders to the Central Bank of Belize."
+    ]
+  },
+  "reportTo": [
+    "bz/central-bank",
+    "bz/your-bank",
+    "bz/police"
+  ],
+  "sources": [
+    {
+      "title": "Don't Send the Money: Doony's Warns Customers About Loan Scam",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/dont-send-the-money-doonys-warns-customers-about-loan-scam/",
+      "date": "2026-07-28"
+    },
+    {
+      "title": "Warning Notice - Easy Credit Belize",
+      "publisher": "Central Bank of Belize",
+      "url": "https://www.centralbank.org.bz/detail-pages/news/2026/02/16/warning-notice---easy-credit-belize",
+      "date": "2026-02-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

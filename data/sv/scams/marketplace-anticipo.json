@@ -1,0 +1,130 @@
+{
+  "id": "sv/marketplace-anticipo",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un vendedor en Facebook Marketplace",
+    "en": "A seller on Facebook Marketplace"
+  },
+  "name": {
+    "es": "Venta falsa en Marketplace: pagas el anticipo y te bloquean",
+    "en": "Fake Marketplace sale: you pay the deposit and get blocked"
+  },
+  "how": {
+    "es": "Ves en Marketplace un celular, una consola, un electrodoméstico o un carro a un precio muy por debajo de lo normal. El vendedor tiene un perfil nuevo, dice que hay otros interesados y te pasa a WhatsApp. Para “apartar” el producto te pide un anticipo o el pago completo por transferencia. Cuando pagas, te bloquea en Facebook y WhatsApp y desaparece. La Defensoría del Consumidor ha advertido de estas señales.",
+    "en": "You see a phone, a console, an appliance or a car on Marketplace at a price well below normal. The seller has a new profile, says other people are interested and moves you to WhatsApp. To “reserve” the item they ask for a deposit or full payment by transfer. Once you pay, they block you on Facebook and WhatsApp and disappear. The Consumer Protection Office has warned about these signs."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "El precio es mucho más bajo que el real.",
+        "en": "The price is much lower than the real value."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dice que hay otros interesados y que decidas ya.",
+        "en": "They say others are interested and you must decide now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pasa a WhatsApp, fuera de Marketplace.",
+        "en": "They move you to WhatsApp, off Marketplace."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te pide un anticipo para apartar y después te bloquea.",
+        "en": "They ask for a deposit to reserve and then block you."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Sí, todavía lo tengo, pero ya me escribieron otras tres personas. Si te interesa mándame $60 de adelanto para apartártelo y el lunes te lo llevo a Metrocentro, ahí me das el resto. Te paso la cuenta por WhatsApp.",
+        "en": "Yes, I still have it, but three other people have already messaged me. If you’re interested send me $60 upfront to hold it for you and on Monday I’ll bring it to Metrocentro, you can give me the rest there. I’ll send you the account on WhatsApp."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "pague anticipo en marketplace y me bloquearon",
+      "apartar el producto con un adelanto",
+      "vendedor de facebook desaparecio",
+      "precio demasiado barato en marketplace",
+      "me pidio adelanto antes de entregar",
+      "perfil nuevo vendiendo barato",
+      "marketplace",
+      "apartar",
+      "deposite por transferencia antes de recibir",
+      "vendedor dice que hay varios interesados",
+      "celular nuevo demasiado barato"
+    ],
+    "en": [
+      "paid a deposit on marketplace and got blocked",
+      "deposit to reserve an item",
+      "facebook seller disappeared",
+      "price too cheap on marketplace",
+      "asked for money before delivery"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy bajo comparado con otros anuncios.",
+      "Perfil recién creado o sin historial.",
+      "Prisa porque “hay otros interesados”.",
+      "Te piden pagar antes de ver el producto."
+    ],
+    "en": [
+      "A very low price compared with other listings.",
+      "A newly created profile with no history.",
+      "Pressure because “others are interested”.",
+      "They ask you to pay before you see the item."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues anticipos: queda en un lugar público y paga al recibir y revisar el producto.",
+      "Revisa el perfil del vendedor y compara precios.",
+      "Mantén la conversación dentro de Marketplace.",
+      "Si ya pagaste, avisa a tu banco y denuncia en la línea de estafas o la Fiscalía."
+    ],
+    "en": [
+      "Don’t pay deposits: meet in a public place and pay when you receive and check the item.",
+      "Check the seller’s profile and compare prices.",
+      "Keep the conversation inside Marketplace.",
+      "If you already paid, tell your bank and report it to the scam line or the Attorney General’s Office."
+    ]
+  },
+  "reportTo": [
+    "sv/denuncia-estafas",
+    "sv/fiscalia",
+    "sv/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "¿Compras en Marketplace? Señales que debes revisar antes de enviar dinero",
+      "publisher": "El Diario de Hoy (elsalvador.com), con información de la Defensoría del Consumidor",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/estafas-fraudes-defensoria-del-consumidor-consultas-de-los-consumidores/1273764/2026/",
+      "date": "2026-05-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

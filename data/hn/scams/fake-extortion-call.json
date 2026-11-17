@@ -1,0 +1,130 @@
+{
+  "id": "hn/fake-extortion-call",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un supuesto “marero” o “pandillero”",
+    "en": "A supposed “gang member”"
+  },
+  "name": {
+    "es": "“Somos de la pandilla: sabemos dónde vivís”",
+    "en": "“We’re from the gang: we know where you live”"
+  },
+  "how": {
+    "es": "Te llaman o escriben diciendo que son de una mara o pandilla, usan tu nombre, tu trabajo o el de un familiar (sacados de tus redes sociales) y te exigen un depósito inmediato para “no hacerte daño”. La DAET dice que la mayoría de estas “extorsiones” son estafadores que no pertenecen a ninguna pandilla y solo buscan que pagués por miedo antes de verificar.",
+    "en": "Someone calls or messages saying they belong to a gang, uses your name, your job or a relative’s (taken from your social media) and demands an immediate deposit so they “don’t hurt you”. The DAET says most of these “extortions” are scammers who belong to no gang and just want you to pay out of fear before you check."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Dicen ser de una mara o pandilla.",
+        "en": "They claim to be from a gang."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Nombran a tu familia, tu casa o tu trabajo para asustarte.",
+        "en": "They name your family, home or job to scare you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te prohíben contarle a nadie o llamar a la Policía.",
+        "en": "They forbid you to tell anyone or call the Police."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Exigen un depósito o transferencia de inmediato.",
+        "en": "They demand a deposit or transfer immediately."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Mirá, aquí te habla la clica que controla tu colonia. Sabemos que trabajás en la farmacia y a qué hora sale tu hija del colegio. Hoy mismo depositás L 5,000 a la cuenta que te voy a mandar o ya sabés. Y nada de andar con la jura.",
+        "en": "Listen, this is the crew that runs your neighbourhood. We know you work at the pharmacy and what time your daughter leaves school. Today you deposit L 5,000 to the account I’ll send you or you know what happens. And don’t go to the cops."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "llamada de extorsion",
+      "me amenazaron de la pandilla",
+      "me piden deposito para no hacerme dano",
+      "dicen que son mareros",
+      "saben donde trabajo y me piden dinero",
+      "amenaza por whatsapp pidiendo pisto"
+    ],
+    "en": [
+      "extortion call",
+      "gang threatened me",
+      "they want a deposit or they'll hurt me",
+      "they say they are gang members",
+      "they know where i work and want money",
+      "threat on whatsapp asking for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te exigen pagar ya, antes de que podás verificar.",
+      "Los datos que dan suelen estar en tus redes sociales.",
+      "Te prohíben denunciar."
+    ],
+    "en": [
+      "They demand payment now, before you can check.",
+      "The details they give are usually on your social media.",
+      "They forbid you to report it."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá la llamada y no pagués.",
+      "Verificá que tu familia esté bien llamándoles directamente.",
+      "Llamá a la DAET al 143 o al 911 para que te orienten.",
+      "Revisá qué información personal tenés pública en tus redes."
+    ],
+    "en": [
+      "Hang up and don’t pay.",
+      "Check your family is fine by calling them directly.",
+      "Call the DAET on 143 or 911 for advice.",
+      "Review what personal information you have public on social media."
+    ]
+  },
+  "reportTo": [
+    "hn/daet-143",
+    "hn/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Ocho de cada diez denuncias por extorsión esconden una estafa",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/ocho-de-cada-diez-denuncias-por-extorsion-esconden-una-estafa-2026-06-26",
+      "date": "2026-06-26"
+    },
+    {
+      "title": "90% de las denuncias recibidas por extorsión son falsas: DAET",
+      "publisher": "La Prensa (Honduras)",
+      "url": "https://www.laprensa.hn/honduras/denuncias-informe-daet-extorsion-pais-IL31180967",
+      "date": "2026-06-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

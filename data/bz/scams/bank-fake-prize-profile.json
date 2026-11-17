@@ -1,0 +1,99 @@
+{
+  "id": "bz/bank-fake-prize-profile",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social"
+  ],
+  "sender": {
+    "en": "“Belize Bank” social media profile"
+  },
+  "name": {
+    "en": "Fake bank profile on social media promising a prize or deposit"
+  },
+  "how": {
+    "en": "Fake social media profiles that look like Belize Bank say you have won a prize or will receive a deposit into your savings account. To claim it, you are asked to click a link or send a secure message through online banking, which hands over your login details or card information. Belize Bank says it never asks for card details, PINs, usernames or passwords through links or social media."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A social media profile with the bank’s name and logo contacts you or posts a giveaway."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you have won a prize or will get money in your account."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are asked to click a link or log in to “claim” it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Your banking login or card details are captured and used to take money."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "🎉 Congratulations! Your account was selected in our Customer Appreciation draw and BZ$500 will be deposited to your savings. To claim, verify your online banking here within 24 hours [link] - Belize Bank Rewards"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "belize bank page on facebook says i won a prize",
+      "bank giveaway asking me to log in to claim",
+      "fake bank profile promising a deposit to my savings",
+      "social media bank reward link asking for my login",
+      "bank prize message asking for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "A bank “wins” you a prize through social media.",
+      "The link asks for your banking login, card number or PIN.",
+      "The profile is new or not the bank’s verified page."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link or log in.",
+      "Check with the bank through its app’s secure messages or the number on your card.",
+      "If you entered details, call your bank at once to block access.",
+      "Report the profile."
+    ]
+  },
+  "reportTo": [
+    "bz/your-bank",
+    "bz/police"
+  ],
+  "sources": [
+    {
+      "title": "Belize Bank Warns Customers of Online Scam",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/?p=36230",
+      "date": "2025-02-18"
+    },
+    {
+      "title": "Belize Bank issues scam alert to customers",
+      "publisher": "Belize Live News",
+      "url": "https://belizelivenews.com/2024/08/24/belize-bank-issues-scam-alert-to-customers/",
+      "date": "2024-08-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

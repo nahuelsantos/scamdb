@@ -1,0 +1,91 @@
+{
+  "id": "bz/zoom-code-whatsapp-takeover",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "en": "A stranger inviting you to a meeting"
+  },
+  "name": {
+    "en": "Meeting invitation that asks for a six-digit code and steals your WhatsApp"
+  },
+  "how": {
+    "en": "You get an invitation to a Zoom or online meeting, for example presented as support for your group or association. To “confirm your identity” you are asked to give a six-digit code that arrives on your phone and your email address. The code is really what lets the scammer take over your WhatsApp account, and the association warned it may also be a way into your phone or bank account. Belizean cane farmers lost their WhatsApp accounts this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A stranger invites you to a meeting that claims to help your group or association."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You are asked for a six-digit code sent to your phone, to confirm who you are."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Giving the code lets them take over your WhatsApp account."
+      }
+    },
+    {
+      "text": {
+        "en": "The scammer now controls your account and can write to your contacts as you."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Good evening farmer, my name is Rose. You are invited to tonight’s 8pm Zoom on support for cane growers. Before we start, please confirm your identity: send me the 6 digit code that just came to your phone and your email address 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "asked for the six digit code to join a zoom meeting",
+      "zoom invitation asked me to confirm identity with a code",
+      "lost access to my whatsapp after a meeting invite",
+      "stranger asked me to send the code that came to my phone",
+      "meeting for farmers asking for verification code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A meeting organiser asks for a code sent to your phone.",
+      "The invitation comes from someone you don’t know, using your group’s name.",
+      "They also ask for your email address."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never share codes that arrive on your phone.",
+      "Turn on two-step verification in WhatsApp.",
+      "If you lost access, re-register WhatsApp with your number and warn your contacts.",
+      "Check with your association through its usual channels."
+    ]
+  },
+  "reportTo": [
+    "bz/police"
+  ],
+  "sources": [
+    {
+      "title": "BSCFA Warns: Don’t Give “Rose” Your 6-Digit Code",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/?p=49845",
+      "date": "2025-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,136 @@
+{
+  "id": "ni/bank-phishing-link",
+  "country": "ni",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "es": "Mensaje que se hace pasar por tu banco",
+    "en": "Message pretending to be your bank"
+  },
+  "name": {
+    "es": "“Su cuenta tiene problemas: confirme sus datos en este enlace”",
+    "en": "“Your account has a problem: confirm your details at this link”"
+  },
+  "how": {
+    "es": "Te llega un SMS, un WhatsApp con el logo del banco o un correo diciendo que tu cuenta fue suspendida, que hay que reactivarla o que debés “confirmar consumos” de tu tarjeta. Te piden entrar a un enlace o mandar tu nombre, cédula, número de tarjeta y el código del reverso. Con esos datos vacían la cuenta o compran con tu tarjeta.",
+    "en": "You get a text, a WhatsApp with the bank’s logo or an email saying your account was suspended, must be reactivated, or that you must “confirm purchases” on your card. They ask you to open a link or send your name, ID number, card number and the code on the back. With those details they empty the account or use your card."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mensaje con el nombre o el logo de tu banco desde un número o correo desconocido.",
+        "en": "A message arrives with your bank’s name or logo from an unknown number or email."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tu cuenta está suspendida o que hay un consumo que debés confirmar ya.",
+        "en": "It says your account is suspended or there is a purchase you must confirm right away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace para “reactivar” o “validar” la cuenta.",
+        "en": "It has a link to “reactivate” or “validate” the account."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te pide el número completo de la tarjeta, la fecha de vencimiento y el código del reverso.",
+        "en": "It asks for the full card number, expiry date and the code on the back."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Estimado cliente, su tarjeta presenta un bloqueo preventivo por un consumo no confirmado. Para evitar la cancelación definitiva valide sus datos hoy en el siguiente enlace: [enlace]",
+        "en": "Dear customer, your card has a preventive block for an unconfirmed purchase. To avoid permanent cancellation, validate your details today at the following link: [enlace]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje del banco con un enlace",
+      "me piden confirmar consumos de mi tarjeta",
+      "dicen que mi cuenta esta suspendida",
+      "me pidieron el codigo de atras de la tarjeta",
+      "whatsapp con el logo del banco",
+      "entre al link y me vaciaron la cuenta"
+    ],
+    "en": [
+      "text from my bank with a link",
+      "they ask me to confirm card purchases",
+      "they say my account is suspended",
+      "they asked for the code on the back of my card",
+      "whatsapp with the bank logo",
+      "clicked the link and my account was emptied"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Tu banco no te pide por mensaje el número de tarjeta, el código del reverso ni tus claves.",
+      "Los bancos han aclarado que no escriben a sus clientes por redes sociales ni por WhatsApp para pedir datos.",
+      "Amenazan con bloquear o cancelar si no actuás hoy."
+    ],
+    "en": [
+      "Your bank doesn’t ask by message for your card number, the code on the back or your passwords.",
+      "Banks have said they don’t write to customers on social media or WhatsApp to ask for details.",
+      "They threaten a block or cancellation if you don’t act today."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abrás el enlace. Entrá vos a la app o a la página del banco escribiendo la dirección.",
+      "Si ya pusiste datos, llamá al banco al número de tu tarjeta para bloquearla y cambiá tus claves.",
+      "Guardá capturas y denunciá en la Policía."
+    ],
+    "en": [
+      "Don’t open the link. Go into the bank’s app or website yourself by typing the address.",
+      "If you already entered details, call the bank on the number on your card to block it and change your passwords.",
+      "Keep screenshots and report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "ni/tu-banco",
+    "ni/policia-118",
+    "ni/siboif"
+  ],
+  "sources": [
+    {
+      "title": "Cuidado con este mensaje que usurpa a Lafise Bancentro y que puede vaciar sus cuentas bancarias",
+      "publisher": "Despacho 505",
+      "url": "https://www.despacho505.com/gato-encerrado/falso/9431-cuidado-con-este-mensaje-que-usurpa-al-banco-lafis/",
+      "date": "2022-03-22"
+    },
+    {
+      "title": "Alertan incremento de estafas a usuarios de servicios bancarios",
+      "publisher": "Vos TV",
+      "url": "https://www.vostv.com.ni/nacionales/22902-alertan-incremento-de-estafas-a-usuarios-de-servic/",
+      "date": "2022-03-23"
+    },
+    {
+      "title": "Recomendaciones para evitar ser víctima de fraudes",
+      "publisher": "SIBOIF",
+      "url": "https://www.siboif.gob.ni/alertas/recomendaciones-para-evitar-ser-v%C3%ADctima-de-fraudes",
+      "date": "2022-06-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,148 @@
+{
+  "id": "pa/family-emergency-call",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Alguien que dice que un familiar está grave",
+    "en": "Someone saying a relative is seriously ill"
+  },
+  "name": {
+    "es": "Llamada de emergencia: “tu familiar está grave en el hospital”",
+    "en": "Emergency call: “your relative is seriously ill in hospital”"
+  },
+  "how": {
+    "es": "Te llaman, muchas veces de madrugada, diciendo que tu nieto, sobrina u otro familiar tuvo un accidente o está grave en el hospital y necesita una transferencia urgente para una operación o un medicamento. A veces imitan la voz de tu familiar con inteligencia artificial. Te ponen nervioso para que pagues sin confirmar. Tu familiar en realidad está bien.",
+    "en": "They call you, often in the early hours, saying your grandson, niece or another relative had an accident or is seriously ill in hospital and needs an urgent transfer for an operation or medicine. Sometimes they imitate your relative’s voice with artificial intelligence. They make you panic so you pay without checking. Your relative is actually fine."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman diciendo que un familiar está grave o tuvo un accidente.",
+        "en": "They call saying a relative is seriously ill or had an accident."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ponen nervioso y dicen que no hay tiempo.",
+        "en": "They make you panic and say there’s no time."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden una transferencia urgente para la operación o el medicamento.",
+        "en": "They ask for an urgent transfer for the operation or medicine."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te piden no colgar ni llamar a nadie más.",
+        "en": "They ask you not to hang up or call anyone else."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señora, le hablo del cuarto de urgencias. Su nieto entró hace una hora en un accidente y lo tienen que operar ya, pero el hospital no lo atiende sin el depósito de $1,500. Él me dio su número. No cuelgue que le paso la cuenta.",
+        "en": "Ma’am, I’m calling from the emergency room. Your grandson came in an hour ago after an accident and needs surgery now, but the hospital won’t treat him without a $1,500 deposit. He gave me your number. Don’t hang up, I’ll give you the account."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron diciendo que mi nieto estaba en el hospital",
+      "familiar grave necesita plata urgente",
+      "llamada de madrugada pidiendo deposito para una operacion",
+      "imitaron la voz de mi hijo",
+      "dijeron que mi sobrina tuvo un accidente",
+      "me pidieron transferir para un medicamento urgente",
+      "mi nieto llorando dijo que tuvo un accidente",
+      "pagar al hospital para que lo operen",
+      "me pidio que no le dijera a nadie de la familia"
+    ],
+    "en": [
+      "they called saying my grandson was in hospital",
+      "relative seriously ill needs money urgently",
+      "early-morning call asking for a deposit for surgery",
+      "they imitated my son’s voice",
+      "they said my niece had an accident",
+      "they asked me to transfer money for urgent medicine",
+      "my grandson was crying and said he had an accident",
+      "pay the hospital so they operate",
+      "he asked me not to tell anyone in the family"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "es": [
+      "Llamada inesperada, muchas veces de madrugada.",
+      "Te piden plata ya, sin dejarte confirmar.",
+      "No quieren que cuelgues ni que llames a tu familiar.",
+      "El depósito va a una cuenta personal, no al hospital."
+    ],
+    "en": [
+      "Unexpected call, often in the early hours.",
+      "They want money now, without letting you check.",
+      "They don’t want you to hang up or call your relative.",
+      "The deposit goes to a personal account, not the hospital."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama a tu familiar a su número de siempre, o a alguien que esté con él.",
+      "Pregunta algo que solo tu familiar sabría.",
+      "No transfieras dinero sin confirmar.",
+      "Denuncia la llamada a la Policía o al Ministerio Público."
+    ],
+    "en": [
+      "Hang up and call your relative on their usual number, or someone who is with them.",
+      "Ask something only your relative would know.",
+      "Don’t transfer money without checking.",
+      "Report the call to the Police or the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/policia-104",
+    "pa/ministerio-publico"
+  ],
+  "sources": [
+    {
+      "title": "Ministerio Público: Unos 50 panameños son estafados cada día",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/ministerio-publico-unos-50-panamenos-son-estafados-cada-dia-EH22433304",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Ministerio Público alerta sobre aumento de estafas y nuevas modalidades de engaño",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/ministerio-publico-estafas-en-panama-aumentan-2026_1_2240909.html",
+      "date": "2026-05-14"
+    },
+    {
+      "title": "DIJ alerta aumento de estafas en línea con IA y hackeo de WhatsApp",
+      "publisher": "Telemetro",
+      "url": "https://www.telemetro.com/tecnologia/actualidad/dij-alerta-aumento-estafas-linea-ia-y-hackeo-whatsapp-n6062648",
+      "date": "2025-12-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/virtual-kidnapping",
+    "pa/whatsapp-code-theft"
+  ]
+}

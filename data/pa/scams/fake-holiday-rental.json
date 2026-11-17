@@ -1,0 +1,141 @@
+{
+  "id": "pa/fake-holiday-rental",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Un supuesto dueño de casa de playa o cabaña",
+    "en": "A supposed owner of a beach house or cabin"
+  },
+  "name": {
+    "es": "Alquiler falso de casa de playa, cabaña o paquete vacacional",
+    "en": "Fake beach house, cabin or holiday package rental"
+  },
+  "how": {
+    "es": "Para carnavales, Semana Santa o fin de año aparecen en redes anuncios de casas de playa, villas, cabañas o paquetes vacacionales a buen precio. El “dueño” usa fotos copiadas de otras páginas o de casas que no se alquilan. Te apura diciendo que hay mucha demanda y te pide un abono por transferencia o Yappy para reservar. Después de pagar, deja de contestar y la casa no existe o es de otra persona.",
+    "en": "Around carnival, Easter or year-end, social media fills with ads for beach houses, villas, cabins or holiday packages at good prices. The “owner” uses photos copied from other sites or of houses that aren’t for rent. They rush you, saying demand is high, and ask for a deposit by transfer or Yappy to book. After you pay they stop answering and the house doesn’t exist or belongs to someone else."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio de casa de playa, cabaña o paquete vacacional a buen precio.",
+        "en": "You see an ad for a beach house, cabin or holiday package at a good price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El “dueño” dice que hay mucha gente interesada y que hay que apartar ya.",
+        "en": "The “owner” says many people are interested and you must book now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide un abono por transferencia o Yappy para reservar.",
+        "en": "They ask for a deposit by transfer or Yappy to book."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Después de pagar, deja de responder y la casa no existe.",
+        "en": "After you pay they stop replying and the house doesn’t exist."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Sí, la casa en Coronado está libre para carnavales, con piscina y para 12 personas, $180 la noche. Ya me han escrito varias familias, así que la aparto con el 50% por Yappy y el resto lo pagas al llegar. Yo estoy fuera del país, pero el cuidador te entrega la llave.",
+        "en": "Yes, the house in Coronado is free for carnival, with a pool and for 12 people, $180 a night. Several families have already written, so I’ll hold it with 50% by Yappy and you pay the rest on arrival. I’m out of the country, but the caretaker will hand you the key."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "casa de playa para carnavales que no existia",
+      "pague el abono y el dueño desaparecio",
+      "alquiler falso en facebook",
+      "cabaña que me alquilaron por redes",
+      "paquete vacacional falso",
+      "me pidieron el adelanto por yappy para reservar"
+    ],
+    "en": [
+      "carnival beach house that didn’t exist",
+      "i paid the deposit and the owner vanished",
+      "fake rental on facebook",
+      "cabin rented to me on social media",
+      "fake holiday package",
+      "they asked for the deposit by yappy to book"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio bajo para la temporada y mucha prisa por apartar.",
+      "El dueño “está fuera del país” y no puedes ver la propiedad.",
+      "Te piden el abono a una cuenta personal o Yappy, sin contrato.",
+      "Las fotos aparecen en otras páginas."
+    ],
+    "en": [
+      "Low price for the season and a big rush to book.",
+      "The owner is “out of the country” and you can’t see the property.",
+      "They ask for the deposit to a personal account or Yappy, with no contract.",
+      "The photos appear on other websites."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Busca las fotos en internet para ver si son copiadas.",
+      "Pide ver la propiedad o habla con alguien que la conozca antes de pagar.",
+      "Firma un contrato y usa medios de pago seguros.",
+      "Si ya pagaste, llama a tu banco y denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Search the photos online to see if they’re copied.",
+      "Ask to see the property or talk to someone who knows it before paying.",
+      "Sign a contract and use safe payment methods.",
+      "If you already paid, call your bank and report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/ministerio-publico",
+    "pa/policia-104",
+    "pa/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "DIJ alerta sobre estafas en redes sociales durante los carnavales: Precauciones al alquilar propiedades",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/carnavales-2025-dij-alerta-estafas-redes-sociales_1_2172038.html",
+      "date": "2025-01-08"
+    },
+    {
+      "title": "DIJ alerta aumento de estafas en línea con IA y hackeo de WhatsApp",
+      "publisher": "Telemetro",
+      "url": "https://www.telemetro.com/tecnologia/actualidad/dij-alerta-aumento-estafas-linea-ia-y-hackeo-whatsapp-n6062648",
+      "date": "2025-12-03"
+    },
+    {
+      "title": "Estafas en línea se disparan en Panamá durante la temporada de compras, advierte la Policía",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/estafas-linea-disparan-panama-durante-compras-tecnologia_1_2219737.html",
+      "date": "2025-12-23"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/marketplace-fake-seller"
+  ]
+}

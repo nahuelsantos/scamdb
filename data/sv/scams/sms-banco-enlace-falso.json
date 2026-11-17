@@ -1,0 +1,139 @@
+{
+  "id": "sv/sms-banco-enlace-falso",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Tu banco, por SMS, WhatsApp o un anuncio en el buscador",
+    "en": "Your bank, by text, WhatsApp or a search-engine ad"
+  },
+  "name": {
+    "es": "Banca en línea falsa: SMS de “movimiento sospechoso” o página clonada del banco",
+    "en": "Fake online banking: “suspicious activity” text or cloned bank page"
+  },
+  "how": {
+    "es": "Te llega un SMS o WhatsApp que parece de tu banco avisando un movimiento sospechoso o un bloqueo, con un enlace para “verificar”. O buscas tu banco en internet y entras a un anuncio que lleva a una copia de la banca en línea. Cuando escribes usuario y contraseña, los delincuentes los capturan en ese momento y vacían tu cuenta. En 2026 la Fiscalía y la PNC capturaron a un grupo que usaba páginas falsas de banca; una víctima perdió $20,000.",
+    "en": "You get a text or WhatsApp that looks like it’s from your bank warning of suspicious activity or a block, with a link to “verify”. Or you search for your bank online and click an ad that leads to a copy of the online banking site. When you type your username and password, the criminals capture them on the spot and empty your account. In 2026 the Attorney General’s Office and the police arrested a group that used fake banking pages; one victim lost $20,000."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan de un movimiento raro o un bloqueo en tu cuenta.",
+        "en": "You’re warned of unusual activity or a block on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que actúes ya o perderás el acceso.",
+        "en": "You’re told to act now or lose access."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace o el anuncio lleva a una copia de la página del banco.",
+        "en": "The link or ad leads to a copy of the bank’s page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te pide usuario, contraseña y el código de seguridad.",
+        "en": "It asks for your username, password and security code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Alerta de seguridad: se detecto un ingreso no reconocido a su Banca en Linea desde otro dispositivo. Si no fue usted, verifique su identidad de inmediato para evitar el bloqueo de sus fondos: [enlace]",
+        "en": "Security alert: an unrecognised login to your Online Banking from another device was detected. If it wasn’t you, verify your identity immediately to avoid your funds being blocked: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje del banco con enlace para verificar",
+      "pagina falsa de banca en linea",
+      "movimiento sospechoso en mi cuenta por sms",
+      "entre a mi banco desde un anuncio",
+      "ingreso no reconocido a la banca en linea",
+      "me vaciaron la cuenta despues de un enlace"
+    ],
+    "en": [
+      "bank text with a link to verify",
+      "fake online banking page",
+      "suspicious activity text from my bank",
+      "logged into my bank from an ad",
+      "account emptied after clicking a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "El mensaje trae un enlace para entrar a tu banca.",
+      "Te asustan con un bloqueo o un acceso extraño.",
+      "La dirección de la página no es exactamente la de tu banco.",
+      "Llegaste a la página desde un anuncio patrocinado."
+    ],
+    "en": [
+      "The message has a link to log in to your bank.",
+      "They scare you with a block or a strange login.",
+      "The page address isn’t exactly your bank’s.",
+      "You reached the page through a sponsored ad."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entres a tu banca desde enlaces de mensajes ni anuncios: usa la app oficial o escribe tú la dirección y guárdala.",
+      "Si tienes dudas, llama al número detrás de tu tarjeta.",
+      "Si pusiste tus claves, cámbialas y pide al banco que bloquee la cuenta.",
+      "Denuncia en la Fiscalía o la línea de denuncia de estafas."
+    ],
+    "en": [
+      "Don’t log in to your bank from message links or ads: use the official app or type the address yourself and save it.",
+      "If in doubt, call the number on the back of your card.",
+      "If you entered your passwords, change them and ask the bank to block the account.",
+      "Report it to the Attorney General’s Office or the scam reporting line."
+    ]
+  },
+  "reportTo": [
+    "sv/tu-banco",
+    "sv/fiscalia",
+    "sv/denuncia-estafas"
+  ],
+  "sources": [
+    {
+      "title": "Desarticulan estructura acusada de hurtar dinero con sitios web falsos de banca",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/desarticulan-estructura-acusada-de-hurtar-dinero-con-sitios-web-falsos-de-banca",
+      "date": "2026-03-25"
+    },
+    {
+      "title": "Las estafas digitales que más circulan en El Salvador",
+      "publisher": "El Diario de Hoy (elsalvador.com), con información de la SSF",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/finanzas-personales/estafas-el-salvador-delitos/1258084/2026/",
+      "date": "2026-01-13"
+    },
+    {
+      "title": "Bancos previenen a los salvadoreños de estafas digitales, ¿qué modalidades se han identificado?",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/economia/bancos-previenen-a-los-salvadorenos-de-estafas-digitales-que-modalidades-se-han-identificado",
+      "date": "2025-06-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,140 @@
+{
+  "id": "sv/whatsapp-robado-pide-prestado",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un amigo o familiar desde su propio WhatsApp (robado)",
+    "en": "A friend or relative from their own (stolen) WhatsApp"
+  },
+  "name": {
+    "es": "Le roban el WhatsApp a un conocido y te piden dinero prestado",
+    "en": "A contact’s WhatsApp is stolen and you’re asked to lend money"
+  },
+  "how": {
+    "es": "Primero roban la cuenta: alguien llama o escribe con un pretexto y pide el código de seis números que WhatsApp manda por SMS. Con ese código se quedan con la cuenta y escriben a todos los contactos haciéndose pasar por el dueño. Cuentan una urgencia y piden una transferencia, por ejemplo de unos cientos de dólares, a la cuenta de otra persona; dicen que tienen el dinero pero no pueden usarlo ahora. Las cuentas que reciben el dinero suelen ser de “mulas” que prestan su cuenta. La Fiscalía y la PNC han desarticulado redes con este método.",
+    "en": "First they steal the account: someone calls or writes with a pretext and asks for the six-digit code WhatsApp sends by SMS. With that code they take over the account and write to all the contacts pretending to be the owner. They describe an emergency and ask for a transfer, for example a few hundred dollars, to someone else’s account; they say they have the money but can’t use it right now. The receiving accounts usually belong to “mules” who lend their account. The Attorney General’s Office and the police have broken up networks using this method."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te piden el código de seis números que te llegó por SMS.",
+        "en": "You’re asked for the six-digit code you got by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Un contacto conocido te escribe con una urgencia de dinero.",
+        "en": "A known contact writes to you with an urgent money problem."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pide que transfieras ya, a la cuenta de otra persona.",
+        "en": "They ask you to transfer right away, to someone else’s account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Evita las llamadas o videollamadas y te apura.",
+        "en": "They avoid calls or video calls and rush you."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, ¿cómo estás? Fíjate que estoy en un apuro, necesito pagar algo hoy y mi banca en línea no me deja transferir. ¿Me podés hacer el favor de mandar $380 a la cuenta de un compañero? Mañana te los devuelvo sin falta, es que ahorita no puedo hablar.",
+        "en": "Hi, how are you? Look, I’m in a bind, I need to pay something today and my online banking won’t let me transfer. Could you do me the favour of sending $380 to a colleague’s account? I’ll pay you back tomorrow for sure, I just can’t talk right now."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidio dinero prestado por whatsapp",
+      "le robaron el whatsapp a mi amigo",
+      "me pidieron el codigo de seis digitos",
+      "transferir a la cuenta de un companero",
+      "dice que mañana me devuelve",
+      "no puede hablar solo escribe",
+      "hackearon la cuenta de mi familiar",
+      "un amigo me pidio que le preste pisto",
+      "me pide depositar a la cuenta de un tercero",
+      "dice que su banca no le funciona",
+      "me lo repone en la noche"
+    ],
+    "en": [
+      "asked to borrow money on whatsapp",
+      "my friend’s whatsapp was stolen",
+      "they asked for the six digit code",
+      "transfer to a colleague’s account",
+      "they can’t talk, only text"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden un código que llegó a tu teléfono.",
+      "Un conocido pide dinero con prisa y no quiere hablar por teléfono.",
+      "La cuenta para depositar es de otra persona.",
+      "Expresiones que tu conocido no usa."
+    ],
+    "en": [
+      "You’re asked for a code that arrived on your phone.",
+      "Someone you know asks for money in a hurry and won’t talk on the phone.",
+      "The account to deposit into belongs to someone else.",
+      "Expressions your contact doesn’t use."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca compartas el código de WhatsApp con nadie.",
+      "Antes de mandar dinero, llama a tu conocido a su número de siempre o haz una videollamada.",
+      "Activa la verificación en dos pasos en WhatsApp.",
+      "Si te robaron la cuenta, vuelve a registrarla con tu número y avisa a tus contactos.",
+      "Denuncia con capturas y comprobantes en la PNC o la Fiscalía."
+    ],
+    "en": [
+      "Never share your WhatsApp code with anyone.",
+      "Before sending money, call your contact on their usual number or make a video call.",
+      "Turn on two-step verification in WhatsApp.",
+      "If your account was stolen, register it again with your number and warn your contacts.",
+      "Report it with screenshots and receipts to the police or the Attorney General’s Office."
+    ]
+  },
+  "reportTo": [
+    "sv/whatsapp-ayuda",
+    "sv/fiscalia",
+    "sv/denuncia-estafas",
+    "sv/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "¿Te piden prestado dinero por WhatsApp? Cuidado, puede ser una estafa",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/te-piden-prestado-dinero-por-whatsapp-cuidado-puede-ser-una-estafa",
+      "date": "2026-08-30"
+    },
+    {
+      "title": "Bancos previenen a los salvadoreños de estafas digitales, ¿qué modalidades se han identificado?",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/economia/bancos-previenen-a-los-salvadorenos-de-estafas-digitales-que-modalidades-se-han-identificado",
+      "date": "2025-06-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

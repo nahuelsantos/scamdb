@@ -1,0 +1,126 @@
+{
+  "id": "cr/correos-paquete-retenido",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“Correos de Costa Rica” por mensaje o correo",
+    "en": "“Correos de Costa Rica” by text or email"
+  },
+  "name": {
+    "es": "“Su paquete está retenido por un pago pendiente de envío”",
+    "en": "“Your package is held because of an unpaid shipping fee”"
+  },
+  "how": {
+    "es": "Le llega un mensaje de texto o un correo que usa el nombre de Correos de Costa Rica: su paquete está retenido, falta pagar el envío o hay un pago pendiente, y tiene que entrar a un enlace. La página copia la de Correos y le pide datos personales y de la tarjeta para pagar el supuesto cobro. Con esos datos hacen cargos o vacían la cuenta. Correos dice que sus comunicaciones oficiales usan su propio dominio.",
+    "en": "You get a text or an email using the name of Correos de Costa Rica (the national post office): your package is held, the shipping hasn't been paid or there's a pending payment, and you have to open a link. The page copies the Correos site and asks for personal and card details to pay the supposed fee. With those details they make charges or empty the account. Correos says its official messages use its own domain."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le llega un mensaje “de Correos” sobre un paquete retenido.",
+        "en": "You get a message “from Correos” about a held package."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dicen que falta pagar el envío y que el paquete se devuelve si no paga ya.",
+        "en": "They say the shipping hasn't been paid and the package goes back if you don't pay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace no es la dirección oficial de Correos.",
+        "en": "The link isn't Correos' official address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página le pide los datos de la tarjeta para pagar.",
+        "en": "The page asks for your card details to pay."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "CORREOS CR: Su envio N° CR48213 se encuentra retenido en aduana por falta de pago de ₡1.250. Regularice hoy o sera devuelto al remitente: [enlace]",
+        "en": "CORREOS CR: Your shipment No. CR48213 is held at customs for non-payment of ₡1,250. Settle it today or it will be returned to the sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de correos de costa rica con un enlace",
+      "paquete retenido por pago pendiente",
+      "me piden pagar el envio de un paquete",
+      "correos dice que mi paquete se devuelve",
+      "pagar aduana por mensaje de texto",
+      "meti la tarjeta en la pagina de correos"
+    ],
+    "en": [
+      "text from correos de costa rica with a link",
+      "package held for unpaid fee",
+      "asked to pay shipping for a package",
+      "correos says my package will be returned",
+      "pay customs by text message",
+      "entered my card on the correos page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El enlace no lleva a la dirección oficial de Correos de Costa Rica.",
+      "Le cobran un supuesto saldo de envío “para liberar” el paquete.",
+      "Le amenazan con devolver el paquete hoy mismo.",
+      "Le piden datos de la tarjeta por un enlace en un mensaje."
+    ],
+    "en": [
+      "The link doesn't go to Correos de Costa Rica's official address.",
+      "They charge a supposed shipping balance “to release” the package.",
+      "They threaten to send the package back today.",
+      "They ask for card details through a link in a message."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra el enlace. Revise el envío escribiendo usted la dirección oficial de Correos o en su sucursal.",
+      "Los pagos de Correos se hacen en sus sucursales o en su sucursal virtual oficial.",
+      "Si ya metió la tarjeta, llame a su banco para bloquearla.",
+      "Denuncie en el OIJ."
+    ],
+    "en": [
+      "Don't open the link. Track the shipment by typing Correos' official address yourself or at a branch.",
+      "Correos payments are made at its branches or its official virtual branch.",
+      "If you already entered your card, call your bank to block it.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Correos de Costa Rica alerta por estafa de falsos paquetes: 12 segundos pueden evitar que caiga",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/correos-de-costa-rica-alerta-por-estafa-de-falsos-paquetes-12-segundos-pueden-evitar-que-caiga/",
+      "date": "2026-09-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

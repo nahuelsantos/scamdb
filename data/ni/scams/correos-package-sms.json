@@ -1,0 +1,124 @@
+{
+  "id": "ni/correos-package-sms",
+  "country": "ni",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "es": "SMS que se hace pasar por Correos de Nicaragua",
+    "en": "Text message pretending to be Correos de Nicaragua"
+  },
+  "name": {
+    "es": "“Su paquete está en el almacén: confirme su dirección”",
+    "en": "“Your package is at the warehouse: confirm your address”"
+  },
+  "how": {
+    "es": "Te llega un SMS diciendo que tenés un paquete en Correos de Nicaragua que no se puede entregar porque la dirección está incompleta, y que confirmés tus datos o pagués en línea en un enlace. La página roba tus datos personales y de tu tarjeta. Correos de Nicaragua ha dicho que no pide información sensible por mensaje de texto. También circularon falsas promociones y encuestas con su logo.",
+    "en": "You get a text saying you have a package at Correos de Nicaragua that can’t be delivered because the address is incomplete, and that you should confirm your details or pay online at a link. The page steals your personal and card details. Correos de Nicaragua has said it doesn’t ask for sensitive information by text message. Fake promotions and surveys using its logo have also circulated."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS a nombre de Correos de Nicaragua sobre un paquete.",
+        "en": "A text arrives in Correos de Nicaragua’s name about a package."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que no se puede entregar por dirección incompleta.",
+        "en": "It says it can’t be delivered because of an incomplete address."
+      }
+    },
+    {
+      "text": {
+        "es": "Te manda a un enlace para confirmar datos o pagar.",
+        "en": "It sends you to a link to confirm details or pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden datos de tu tarjeta para un pago pequeño.",
+        "en": "They ask for your card details for a small payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "CORREOS NIC: Su envio no pudo ser entregado por datos de direccion incompletos. Actualice su informacion y cancele el cargo de reenvio en las proximas 24 horas: [enlace]",
+        "en": "CORREOS NIC: Your shipment could not be delivered due to incomplete address details. Update your information and pay the redelivery fee within the next 24 hours: [enlace]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de correos de nicaragua con un enlace",
+      "paquete retenido por direccion incompleta",
+      "me piden pagar para entregar un paquete",
+      "sms de paquete en el almacen",
+      "confirmar mi direccion en un link"
+    ],
+    "en": [
+      "text from correos de nicaragua with a link",
+      "package held due to incomplete address",
+      "they ask me to pay to deliver a package",
+      "text about a package at the warehouse",
+      "confirm my address on a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "No esperabas ningún paquete.",
+      "Correos de Nicaragua no pide información sensible por SMS.",
+      "Te piden pagar en un enlace con plazo corto."
+    ],
+    "en": [
+      "You weren’t expecting any package.",
+      "Correos de Nicaragua doesn’t ask for sensitive information by text.",
+      "They ask you to pay at a link with a short deadline."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abrás el enlace. Consultá por los canales oficiales de Correos o en una sucursal.",
+      "Si pusiste datos de tu tarjeta, llamá a tu banco para bloquearla.",
+      "Borrá el mensaje."
+    ],
+    "en": [
+      "Don’t open the link. Check through Correos’ official channels or at a branch.",
+      "If you entered card details, call your bank to block it.",
+      "Delete the message."
+    ]
+  },
+  "reportTo": [
+    "ni/tu-banco",
+    "ni/policia-118"
+  ],
+  "sources": [
+    {
+      "title": "Correos de Nicaragua denuncia suplantación de identidad",
+      "publisher": "Vos TV",
+      "url": "https://www.vostv.com.ni/nacionales/36259-correos-de-nicaragua-denuncia-suplantacion-de-iden/",
+      "date": "2024-06-11"
+    },
+    {
+      "title": "Correos de Nicaragua advierte a tener cuidado de estafa en redes sociales",
+      "publisher": "Nicaragua Investiga",
+      "url": "https://nicaraguainvestiga.com/nacion/96047-correos-nicaragua-advierte-cuidado-estafa-redes-sociales/",
+      "date": "2022-09-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

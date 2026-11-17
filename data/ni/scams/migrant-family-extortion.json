@@ -1,0 +1,145 @@
+{
+  "id": "ni/migrant-family-extortion",
+  "country": "ni",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "Falso “funcionario” o supuestos captores que contactan a la familia de un migrante",
+    "en": "Fake “official” or supposed kidnappers who contact a migrant’s family"
+  },
+  "name": {
+    "es": "“Tenemos a su familiar” / “Hay que pagar para la repatriación”",
+    "en": "“We have your relative” / “You must pay for the repatriation”"
+  },
+  "how": {
+    "es": "Cuando una familia nicaragüense pierde contacto con un pariente que migró, o este fallece en el extranjero, aparecen personas que se aprovechan. Unos dicen que lo tienen secuestrado y mandan fotos editadas, sin dejarte hablar con él, para que depositás rápido. Otros se hacen pasar por funcionarios y piden dinero para trámites de repatriación o del acta de defunción que ya están cubiertos. A menudo sacan los datos de publicaciones en redes sociales.",
+    "en": "When a Nicaraguan family loses contact with a relative who migrated, or that relative dies abroad, people show up to exploit it. Some say they have kidnapped the person and send edited photos, without letting you speak to them, so you deposit quickly. Others pose as officials and ask for money for repatriation or death-certificate paperwork that is already covered. They often get the details from social media posts."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Publicás en redes que perdiste contacto con tu familiar migrante, o este fallece.",
+        "en": "You post on social media that you lost contact with your migrant relative, or they die."
+      }
+    },
+    {
+      "text": {
+        "es": "Te contacta alguien que dice tenerlo secuestrado o ser funcionario.",
+        "en": "Someone contacts you claiming to have kidnapped them or to be an official."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te mandan una foto que luego borran y no te dejan hablar con tu familiar.",
+        "en": "They send a photo they then delete, and won’t let you speak to your relative."
+      }
+    },
+    {
+      "text": {
+        "es": "Te dan un plazo corto y amenazan.",
+        "en": "They give you a short deadline and threaten you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Piden un depósito o envío de dinero para liberarlo o para “trámites”.",
+        "en": "They ask for a deposit or money transfer to release them or for “paperwork”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señora, su hijo está con nosotros en la frontera. Si quiere volver a verlo deposite 2,500 dólares antes de mañana a la cuenta que le voy a pasar. No llame a la policía ni publique nada o se arrepiente. Ya le mandé la foto, véala rápido.",
+        "en": "Ma’am, your son is with us at the border. If you want to see him again deposit 2,500 dollars before tomorrow to the account I’ll send you. Don’t call the police or post anything or you’ll regret it. I already sent you the photo, look at it quickly."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "dicen que tienen secuestrado a mi familiar migrante",
+      "me piden dinero para liberar a mi hijo en mexico",
+      "me mandaron una foto y la borraron",
+      "funcionario pide dinero para la repatriacion",
+      "me cobran por el acta de defuncion",
+      "perdimos contacto con mi familiar que migro",
+      "dicen que tienen a mi hijo y piden rescate",
+      "no me dejaron hablar con mi familiar",
+      "amenazan si aviso a la policia"
+    ],
+    "en": [
+      "they say they kidnapped my migrant relative",
+      "they ask money to release my son in mexico",
+      "they sent a photo and deleted it",
+      "official asks money for the repatriation",
+      "they charge me for the death certificate",
+      "we lost contact with my relative who migrated",
+      "they say they have my son and want ransom",
+      "they wouldn't let me talk to my relative"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "No te dejan hablar con tu familiar ni dan prueba de vida.",
+      "Mandan fotos que desaparecen enseguida.",
+      "Un funcionario de verdad no pide depósitos a cuentas personales por teléfono.",
+      "Te piden pagar algo que la funeraria o el consulado ya cubren."
+    ],
+    "en": [
+      "They won’t let you talk to your relative or give proof of life.",
+      "They send photos that disappear right away.",
+      "A real official doesn’t ask for deposits to personal accounts by phone.",
+      "They ask you to pay for something the funeral home or consulate already covers."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No depositás de inmediato: tratá de ubicar a tu familiar por otras vías y consultá con el consulado.",
+      "Evitá publicar en redes datos y teléfonos de la familia cuando un migrante desaparece.",
+      "Grabá o guardá las llamadas y mensajes y denunciá en la Policía."
+    ],
+    "en": [
+      "Don’t deposit right away: try to locate your relative through other means and check with the consulate.",
+      "Avoid posting family details and phone numbers on social media when a migrant goes missing.",
+      "Record or keep the calls and messages and report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "ni/policia-118"
+  ],
+  "sources": [
+    {
+      "title": "TNC alerta sobre estafas en repatriaciones de nicaragüenses",
+      "publisher": "Vos TV",
+      "url": "https://www.vostv.com.ni/nacionales/42284-tnc-alerta-sobre-estafas-en-repatriaciones-de-nica/",
+      "date": "2025-04-27"
+    },
+    {
+      "title": "Alertan sobre estafas con secuestros y falsos secuestros de migrantes nicas en México",
+      "publisher": "Confidencial",
+      "url": "https://confidencial.digital/migrantes/noticias/alertan-sobre-estafas-con-secuestros-y-falsos-secuestros-de-migrantes-nicas-en-mexico/",
+      "date": "2022-10-04"
+    },
+    {
+      "title": "Las estafas en Nicaragua: un delito cada vez más común",
+      "publisher": "Divergentes",
+      "url": "https://www.divergentes.com/las-estafas-en-nicaragua-un-delito-cada-vez-mas-comun/",
+      "date": "2023-01-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

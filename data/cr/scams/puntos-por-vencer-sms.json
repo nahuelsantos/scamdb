@@ -1,0 +1,132 @@
+{
+  "id": "cr/puntos-por-vencer-sms",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Su “banco” o una tienda, por mensaje de texto",
+    "en": "Your “bank” or a store, by text"
+  },
+  "name": {
+    "es": "“Sus puntos están por caducar: canjéelos hoy”",
+    "en": "“Your points are about to expire: redeem them today”"
+  },
+  "how": {
+    "es": "Le llega un SMS que usa el nombre de su banco (se ha visto con el Banco Nacional) o de un programa de lealtad: tiene puntos por vencer o ganó un premio y hoy es el último día para canjearlos. El enlace lleva a una tienda falsa con regalos. Para “canjear” le piden datos personales y de la tarjeta, y los usan para meter su tarjeta en billeteras digitales y hacer compras.",
+    "en": "You get a text using your bank's name (it has been seen with Banco Nacional) or a loyalty programme: you have points about to expire or you won a prize and today is the last day to redeem them. The link goes to a fake shop with gifts. To “redeem” them they ask for personal and card details, and use them to add your card to digital wallets and make purchases."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le llega un mensaje de que sus puntos están por vencer.",
+        "en": "You get a message that your points are about to expire."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dicen que es el último día.",
+        "en": "They say it's the last day."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una tienda falsa de regalos.",
+        "en": "The link goes to a fake gift shop."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden los datos de la tarjeta para “canjear”.",
+        "en": "They ask for your card details to “redeem”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "BNCR: Estimado cliente, sus 18.540 puntos venceran HOY. Canjealos por una freidora de aire o una smart TV antes de las 23:59: [enlace]",
+        "en": "BNCR: Dear customer, your 18,540 points expire TODAY. Redeem them for an air fryer or a smart TV before 23:59: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de puntos por vencer",
+      "mis puntos del banco caducan hoy",
+      "canjear puntos por regalos en un enlace",
+      "me pidieron la tarjeta para canjear puntos",
+      "mensaje del banco nacional de puntos",
+      "premio por puntos acumulados"
+    ],
+    "en": [
+      "message about points expiring",
+      "my bank points expire today",
+      "redeem points for gifts through a link",
+      "they asked for my card to redeem points",
+      "banco nacional points text",
+      "prize for accumulated points"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "El mensaje viene de un número desconocido y con faltas de ortografía.",
+      "Le dan solo unas horas para canjear.",
+      "El enlace no es el sitio ni la app oficial del banco.",
+      "Le piden los datos completos de la tarjeta."
+    ],
+    "en": [
+      "The message comes from an unknown number with spelling mistakes.",
+      "They give you only hours to redeem.",
+      "The link isn't the bank's official site or app.",
+      "They ask for your full card details."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra el enlace. Revise sus puntos en la app oficial o escribiendo usted la dirección del banco.",
+      "Si ya metió la tarjeta, llame a su banco para bloquearla.",
+      "Revise si su tarjeta quedó agregada en alguna billetera digital.",
+      "Denuncie en el OIJ."
+    ],
+    "en": [
+      "Don't open the link. Check your points in the official app or by typing the bank's address yourself.",
+      "If you already entered your card, call your bank to block it.",
+      "Check whether your card was added to a digital wallet.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "¿Recibió un mensaje del Banco Nacional sobre puntos por caducar?, Ojo es estafa",
+      "publisher": "Semanario Universidad",
+      "url": "https://semanariouniversidad.com/pais/recibio-un-mensaje-del-banco-nacional-sobre-puntos-por-caducar-ojo-es-estafa/",
+      "date": "2026-02-12"
+    },
+    {
+      "title": "UNED alerta sobre aumento en intentos de fraudes y estafas digitales con la modalidad de “puntos por vencer”",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/uned-alerta-sobre-aumento-en-intentos-de-fraudes-y-estafas-digitales-con-la-modalidad-de-puntos-por-vencer/",
+      "date": "2026-05-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

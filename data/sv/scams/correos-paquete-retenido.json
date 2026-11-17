@@ -1,0 +1,139 @@
+{
+  "id": "sv/correos-paquete-retenido",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Correos de El Salvador” o una empresa de envíos",
+    "en": "“Correos de El Salvador” or a delivery company"
+  },
+  "name": {
+    "es": "Paquete retenido: “su envío no se pudo entregar, pague o actualice la dirección”",
+    "en": "Held parcel: “your parcel couldn’t be delivered, pay or update the address”"
+  },
+  "how": {
+    "es": "Te llega un SMS o un WhatsApp a nombre de Correos de El Salvador o de una paquetería: tu paquete está en bodega y no se puede entregar porque falta la dirección, y tienes pocas horas para confirmarla. El enlace lleva a una página falsa que pide tus datos y la tarjeta para pagar una tarifa de centavos. Con esos datos hacen compras grandes con tu tarjeta. Correos dice que no manda enlaces por mensaje para cambiar la dirección y que los pagos con tarjeta se hacen en sus oficinas.",
+    "en": "You get a text or WhatsApp in the name of Correos de El Salvador or a courier: your parcel is in the warehouse and can’t be delivered because the address is missing, and you have a few hours to confirm it. The link leads to a fake page that asks for your details and card to pay a fee of a few cents. With those details they make large purchases on your card. Correos says it does not send links by message to change the address and that card payments are made at its offices."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan de un paquete que no esperabas o que no se pudo entregar.",
+        "en": "You’re told about a parcel you weren’t expecting or that couldn’t be delivered."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dan pocas horas para confirmar o el paquete se devuelve.",
+        "en": "You’re given a few hours to confirm or the parcel goes back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El mensaje trae un enlace que no es del sitio oficial.",
+        "en": "The message has a link that isn’t the official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden la tarjeta para pagar una tarifa pequeña y después aparecen cargos grandes.",
+        "en": "They ask for your card to pay a small fee and then large charges appear."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Correos SV: Su encomienda N.º [número] permanece en bodega por datos de domicilio incompletos. Confirme en un plazo de 12 horas y cancele $0.45 de reenvío aquí: [enlace]",
+        "en": "Correos SV: Your parcel No. [number] remains in the warehouse due to incomplete address details. Confirm within 12 hours and pay $0.45 for redelivery here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de correos de el salvador con enlace",
+      "paquete retenido en bodega",
+      "direccion incompleta del paquete",
+      "me cobraron centavos por un envio",
+      "pagar tarifa para liberar encomienda",
+      "sms de paqueteria falso",
+      "puse la tarjeta para recibir un paquete"
+    ],
+    "en": [
+      "correos el salvador text with a link",
+      "parcel held in the warehouse",
+      "incomplete address for my parcel",
+      "small fee to release a parcel",
+      "fake delivery text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "No esperabas ningún paquete o no te dicen qué es ni quién lo manda.",
+      "Un plazo de horas para confirmar.",
+      "Te piden tarjeta por una tarifa de centavos.",
+      "El enlace no es la página oficial de Correos ni de la paquetería."
+    ],
+    "en": [
+      "You weren’t expecting a parcel, or they don’t say what it is or who sent it.",
+      "A deadline of a few hours to confirm.",
+      "They ask for your card for a fee of a few cents.",
+      "The link is not the official Correos or courier page."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace ni pongas datos de tarjeta.",
+      "Si esperas un envío, revísalo en la app o página oficial de la tienda o de la paquetería, escribiendo tú la dirección.",
+      "Si ya pusiste la tarjeta, llama a tu banco para bloquearla.",
+      "Reporta el mensaje a la línea de denuncia de estafas."
+    ],
+    "en": [
+      "Don’t open the link or enter card details.",
+      "If you’re expecting a delivery, check it in the shop’s or courier’s official app or site, typing the address yourself.",
+      "If you already entered your card, call your bank to block it.",
+      "Report the message to the scam reporting line."
+    ]
+  },
+  "reportTo": [
+    "sv/tu-banco",
+    "sv/denuncia-estafas",
+    "sv/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Las estafas digitales que más circulan en El Salvador",
+      "publisher": "El Diario de Hoy (elsalvador.com), con información de la SSF",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/finanzas-personales/estafas-el-salvador-delitos/1258084/2026/",
+      "date": "2026-01-13"
+    },
+    {
+      "title": "Fiscalía sin estadísticas sobre estafas digitales, pese al auge de casos",
+      "publisher": "El Diario de Hoy (elsalvador.com)",
+      "url": "https://www.elsalvador.com/noticias/nacional/fiscalia-sin-estadisticas-sobre-estafas-digitales/1235240/2025/",
+      "date": "2025-08-08"
+    },
+    {
+      "title": "Correos de El Salvador alerta por intentos de estafa a nombre de la institución",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/correos-de-el-salvador-alerta-por-intentos-de-estafa-a-nombre-de-la-institucion",
+      "date": "2025-03-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

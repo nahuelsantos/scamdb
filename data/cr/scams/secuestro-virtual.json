@@ -1,0 +1,142 @@
+{
+  "id": "cr/secuestro-virtual",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Supuestos grupos armados o secuestradores",
+    "en": "Supposed armed groups or kidnappers"
+  },
+  "name": {
+    "es": "“Tenemos a su familiar: deposite ya o no lo vuelve a ver”",
+    "en": "“We have your relative: pay now or you'll never see them again”"
+  },
+  "how": {
+    "es": "Los delincuentes engañan a una persona con una oferta de trabajo o de negocio (a veces a choferes de plataforma) para que vaya a un lugar aislado, con poca señal. Por llamada o videollamada de WhatsApp la convencen de que está vigilada y la amenazan para que no cuelgue ni hable con nadie. Al mismo tiempo llaman a su familia, con datos sacados de redes sociales, y dicen que la tienen secuestrada: exigen transferencias inmediatas, a veces millonarias o por plataformas internacionales. No hay secuestro real.",
+    "en": "Criminals lure someone with a job or business offer (sometimes ride-hailing drivers) to an isolated place with poor signal. By call or WhatsApp video call they convince the person they're being watched and threaten them so they don't hang up or talk to anyone. At the same time they call the family, using details taken from social media, and say they've kidnapped the person: they demand immediate transfers, sometimes millions of colones or via international platforms. There is no real kidnapping."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "A la persona la citan a un lugar aislado con una oferta de trabajo o negocio.",
+        "en": "The person is summoned to an isolated place with a job or business offer."
+      }
+    },
+    {
+      "text": {
+        "es": "La amenazan por videollamada para que no cuelgue ni hable con nadie.",
+        "en": "They threaten them on a video call so they don't hang up or talk to anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Llaman a la familia diciendo que la tienen secuestrada.",
+        "en": "They call the family saying they've kidnapped the person."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Exigen plata ya y que no avisen a la policía.",
+        "en": "They demand money now and tell them not to contact the police."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Piden transferencias inmediatas.",
+        "en": "They demand immediate transfers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Escúcheme bien, señora. Su hijo Esteban está con nosotros, lo tenemos amarrado en una finca. Si cuelga o llama a la policía, no lo vuelve a ver. Ocupamos ₡8 millones en una hora, le voy a pasar la cuenta. Ni se le ocurra llamarlo, él no le va a contestar.",
+        "en": "Listen to me carefully, ma'am. Your son Esteban is with us, we have him tied up on a farm. If you hang up or call the police, you'll never see him again. We need ₡8 million within an hour, I'll give you the account. Don't even think about calling him, he won't answer."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me dijeron que tenian secuestrado a mi hijo",
+      "secuestro virtual por videollamada",
+      "lo citaron para un trabajo y lo amenazaron",
+      "exigian transferencia para liberarlo",
+      "no me dejaban colgar la llamada",
+      "amenazas de un grupo armado por whatsapp",
+      "tienen a mi hija",
+      "no llame a la policia",
+      "entrevista de trabajo falsa",
+      "secuestrada"
+    ],
+    "en": [
+      "they said they had kidnapped my son",
+      "virtual kidnapping by video call",
+      "he was lured to a job and threatened",
+      "they demanded a transfer to release him",
+      "they wouldn't let me hang up",
+      "threats from an armed group on whatsapp"
+    ]
+  },
+  "signals": [
+    "keep_on_line",
+    "impersonation",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Le exigen plata de inmediato y que no cuelgue.",
+      "Le prohíben llamar a su familiar o a la policía.",
+      "Su familiar no contesta porque lo tienen en otra llamada.",
+      "Saben datos que se encuentran en redes sociales."
+    ],
+    "en": [
+      "They demand money immediately and that you don't hang up.",
+      "They forbid you to call your relative or the police.",
+      "Your relative doesn't answer because they're kept on another call.",
+      "They know details found on social media."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelgue y llame a su familiar y a gente cercana por otro teléfono.",
+      "Llame al 911 y no deposite nada.",
+      "Desconfíe de ofertas de trabajo que lo citan en lugares aislados.",
+      "Denuncie en el OIJ."
+    ],
+    "en": [
+      "Hang up and call your relative and people close to them from another phone.",
+      "Call 911 and don't pay anything.",
+      "Be wary of job offers that summon you to isolated places.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/emergencias",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Secuestros virtuales se disparan y OIJ alerta aumento de estafas con videollamadas",
+      "publisher": "CRHoy",
+      "url": "https://crhoy.com/nacionales/secuestros-virtuales-se-disparan-y-oij-alerta-aumento-de-estafas-con-videollamadas/",
+      "date": "2026-06-01"
+    },
+    {
+      "title": "OIJ alerta por aumento de “secuestros virtuales” entre engaños y extorsiones: se tramitan 41 casos desde enero 2026",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/oij-alerta-por-aumento-de-secuestros-virtuales-entre-enganos-y-extorsiones-se-tramitan-41-casos-desde-enero-2026/",
+      "date": "2026-05-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

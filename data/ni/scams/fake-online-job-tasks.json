@@ -1,0 +1,137 @@
+{
+  "id": "ni/fake-online-job-tasks",
+  "country": "ni",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Falsa empresa de “empleo virtual” o “autoempleo” (a veces con logos de Amazon u otras marcas)",
+    "en": "Fake “online job” or “self-employment” company (sometimes with Amazon or other brand logos)"
+  },
+  "name": {
+    "es": "“Trabajo desde casa bien pagado: solo completá las tareas”",
+    "en": "“Well-paid work from home: just complete the tasks”"
+  },
+  "how": {
+    "es": "Ves en Facebook una oferta de trabajo en línea con buen sueldo y logos de marcas conocidas. Al aplicar te pasan a un WhatsApp, te abren una “cuenta laboral” y te ponen “tareas” que consisten en comprar productos virtuales. Primero piden depósitos chiquitos y el saldo en pantalla sube rápido; luego aparecen “bloqueos” o “alertas de riesgo” que solo se quitan depositando más. Nunca te dejan retirar.",
+    "en": "You see an online job ad on Facebook with a good salary and well-known brand logos. When you apply they move you to WhatsApp, open a “work account” for you and give you “tasks” that consist of buying virtual products. First they ask for small deposits and the on-screen balance grows fast; then “blocks” or “risk alerts” appear that can only be cleared by depositing more. They never let you withdraw."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Una página de Facebook ofrece empleo virtual muy bien pagado con logos de marcas conocidas.",
+        "en": "A Facebook page offers very well-paid online work with well-known brand logos."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pasan a WhatsApp, te piden tus datos y te abren una “cuenta laboral”.",
+        "en": "They move you to WhatsApp, ask for your details and open a “work account” for you."
+      }
+    },
+    {
+      "text": {
+        "es": "Para cada “tarea” o etapa tenés que hacer un depósito, primero de poco dinero.",
+        "en": "Each “task” or level requires a deposit, small at first."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "El saldo en la plataforma crece y te prometen ganancias fáciles.",
+        "en": "The balance on the platform grows and they promise easy earnings."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Aparece un “bloqueo” y te exigen más dinero, rápido, para liberar lo ganado.",
+        "en": "A “block” appears and they demand more money, fast, to release what you earned."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicidades, quedaste seleccionada! Tu cuenta laboral ya está activa. Para recibir tu primera tarea haz un depósito de activación de C$150, que se te devuelve con tu comisión al terminar el día. Las plazas son limitadas, confírmame hoy.",
+        "en": "Congratulations, you were selected! Your work account is now active. To get your first task make an activation deposit of C$150, which is returned with your commission at the end of the day. Places are limited, confirm with me today."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "oferta de trabajo virtual en facebook",
+      "me piden depositar para hacer las tareas",
+      "cuenta laboral para trabajar desde casa",
+      "no me dejan retirar mis ganancias",
+      "me dicen que mi cuenta esta bloqueada y debo depositar mas",
+      "trabajo de comprar productos virtuales"
+    ],
+    "en": [
+      "online job offer on facebook",
+      "they ask me to deposit to do the tasks",
+      "work account to work from home",
+      "they won't let me withdraw my earnings",
+      "they say my account is blocked and i must deposit more",
+      "job buying virtual products"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "too_good_to_be_true",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Ningún empleo real te cobra para trabajar.",
+      "Las ganancias que solo ves en una pantalla no son dinero.",
+      "Cada vez que pagás aparece un nuevo “bloqueo”.",
+      "Usan logos de empresas conocidas que no tienen nada que ver."
+    ],
+    "en": [
+      "No real job charges you to work.",
+      "Earnings you only see on a screen are not money.",
+      "Every time you pay, a new “block” appears.",
+      "They use logos of well-known companies that have nothing to do with it."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No hagás más depósitos, aunque te digan que vas a perder lo acumulado.",
+      "Avisá a tu banco cuanto antes para intentar frenar las transferencias y pedí número de reclamo.",
+      "Guardá chats y comprobantes y denunciá en la Policía; si el banco no responde, reclamá ante la SIBOIF."
+    ],
+    "en": [
+      "Don’t make any more deposits, even if they say you’ll lose what you’ve built up.",
+      "Tell your bank as soon as possible to try to stop the transfers, and ask for a complaint number.",
+      "Keep chats and receipts and report it to the Police; if the bank doesn’t respond, complain to SIBOIF."
+    ]
+  },
+  "reportTo": [
+    "ni/tu-banco",
+    "ni/policia-118",
+    "ni/siboif"
+  ],
+  "sources": [
+    {
+      "title": "Estafa de empleo remoto en Facebook vacía ahorros de familia nicaragüense: esperan reembolso de 20.766 córdobas",
+      "publisher": "Nicaragua Investiga",
+      "url": "https://nicaraguainvestiga.com/nacion/173028-estafa-de-empleo-remoto-en-facebook-vacia-ahorros-de-familia-nicaraguense-esperan-reembolso-de-20-766-cordobas/",
+      "date": "2026-07-30"
+    },
+    {
+      "title": "Estafa de empleos roba ahorros a una familia en Nicaragua",
+      "publisher": "Confidencial",
+      "url": "https://confidencial.digital/noticias/estafa-empleos-virtuales-roba-ahorros-a-familia-nicaragua/",
+      "date": "2026-07-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

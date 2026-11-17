@@ -1,0 +1,138 @@
+{
+  "id": "pa/fake-bank-call",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un supuesto funcionario de tu banco",
+    "en": "A supposed officer from your bank"
+  },
+  "name": {
+    "es": "Falso funcionario del banco: “dame la clave para validar”",
+    "en": "Fake bank officer: “give me the code to validate”"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser del banco, a veces sabiendo tu nombre o tu cédula. Te habla de un problema con tu cuenta, de un movimiento raro o de un beneficio que hay que “activar” o “validar”, como un pago del gobierno o un crédito. Para eso te pide datos personales, tu PIN, tu contraseña o la clave que te llega por mensaje, o que hagas un pago o una transferencia. Con eso entran a tu banca en línea o se llevan tu plata.",
+    "en": "Someone calls claiming to be from the bank, sometimes knowing your name or ID number. They mention a problem with your account, an odd transaction, or a benefit that needs to be “activated” or “validated”, such as a government payment or a loan. For that they ask for personal details, your PIN, your password or the code you get by text, or for you to make a payment or transfer. With that they get into your online banking or take your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama alguien que dice ser del banco y conoce algunos de tus datos.",
+        "en": "Someone claiming to be from the bank calls and knows some of your details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te habla de un problema en tu cuenta o de un beneficio que hay que activar.",
+        "en": "They talk about a problem with your account or a benefit that must be activated."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide el PIN, la contraseña o la clave que te llegó por mensaje.",
+        "en": "They ask for your PIN, password or the code you got by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "O te pide un pago o una transferencia “para gestionar” el trámite.",
+        "en": "Or they ask for a payment or transfer “to process” it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenos días, le llamo del departamento de seguridad del banco. Vemos un intento de compra con su tarjeta en el extranjero. Para bloquearlo necesito que me confirme la clave que le va a llegar por mensaje en este momento.",
+        "en": "Good morning, I’m calling from the bank’s security department. We see an attempted purchase abroad with your card. To block it I need you to confirm the code that will reach you by text right now."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco pidiendo la clave",
+      "falso funcionario bancario",
+      "me pidieron el pin por telefono",
+      "dijeron que habia un problema con mi cuenta",
+      "llamada para activar un beneficio del banco",
+      "me pidieron la clave que llego por mensaje",
+      "un ejecutivo del banco me pidio transferir"
+    ],
+    "en": [
+      "the bank called asking for my code",
+      "fake bank officer",
+      "they asked for my pin on the phone",
+      "they said there was a problem with my account",
+      "call to activate a bank benefit",
+      "they asked for the code from the text",
+      "a bank officer asked me to transfer money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El banco no te pide por teléfono tu PIN, contraseña ni claves de mensaje de texto.",
+      "Te llaman para “activar” o “validar” un beneficio o un pago.",
+      "Te piden un pago o una comisión por teléfono.",
+      "Que sepan tu nombre o tu cédula no prueba que sean del banco."
+    ],
+    "en": [
+      "Your bank does not ask for your PIN, password or text-message codes by phone.",
+      "They call to “activate” or “validate” a benefit or payment.",
+      "They ask for a payment or fee over the phone.",
+      "Knowing your name or ID number doesn’t prove they’re from the bank."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama tú al número que está al reverso de tu tarjeta o en la app oficial.",
+      "No des datos, claves ni códigos a nadie que te llame.",
+      "Si ya los diste, llama de inmediato al banco para bloquear la tarjeta y la banca en línea.",
+      "Denuncia en el Ministerio Público y, si el banco no responde, presenta tu reclamo en la Superintendencia de Bancos."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card or in the official app yourself.",
+      "Don’t give details, passwords or codes to anyone who calls you.",
+      "If you already did, call the bank immediately to block the card and online banking.",
+      "Report it to the Ministerio Público and, if the bank doesn’t help, file a complaint with the Superintendencia de Bancos."
+    ]
+  },
+  "reportTo": [
+    "pa/tu-banco",
+    "pa/ministerio-publico",
+    "pa/superbancos"
+  ],
+  "sources": [
+    {
+      "title": "Caja de Ahorros alerta por llamadas fraudulentas a beneficiarios de PUNCH: no dé su PIN",
+      "publisher": "Telemetro",
+      "url": "https://www.telemetro.com/c6097764",
+      "date": "2026-11-07"
+    },
+    {
+      "title": "Ministerio Público: Unos 50 panameños son estafados cada día",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/ministerio-publico-unos-50-panamenos-son-estafados-cada-dia-EH22433304",
+      "date": "2026-05-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/bank-sms-phishing"
+  ]
+}

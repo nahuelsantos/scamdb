@@ -1,0 +1,129 @@
+{
+  "id": "hn/whatsapp-code-theft",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "Un contacto, un “soporte” o un desconocido que pide un código",
+    "en": "A contact, “support” or a stranger asking for a code"
+  },
+  "name": {
+    "es": "“Te llegó un código por error, ¿me lo pasás?”",
+    "en": "“A code reached you by mistake, can you send it to me?”"
+  },
+  "how": {
+    "es": "Te escriben o te llaman con un pretexto para que les pasés el código de verificación de WhatsApp que te llega por mensaje: que te lo mandaron por error, que es para verificar algo o para “actualizar” tu cuenta. Con ese código se quedan con tu WhatsApp, leen tus conversaciones, copian cómo escribís y les piden dinero, préstamos urgentes o más códigos a tus contactos haciéndose pasar por vos.",
+    "en": "Someone messages or calls with an excuse so you send them the WhatsApp verification code you get by text: it was sent to you by mistake, it’s to verify something or to “update” your account. With that code they take over your WhatsApp, read your chats, copy how you write and ask your contacts for money, urgent loans or more codes while pretending to be you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escriben o llaman con una excusa; a veces desde la cuenta de alguien conocido.",
+        "en": "They message or call with an excuse; sometimes from someone you know’s account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te llega un código de seis dígitos que no pediste.",
+        "en": "You get a six-digit code you didn’t ask for."
+      }
+    },
+    {
+      "text": {
+        "es": "Te piden que se lo reenviés o se lo leás “rápido”.",
+        "en": "They ask you to forward or read it out “quickly”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Pierden tu WhatsApp y piden dinero o códigos a tus contactos en tu nombre.",
+        "en": "You lose your WhatsApp and they ask your contacts for money or codes in your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola amiga, perdón la molestia, te mandé un código de 6 números sin querer porque estaba registrando mi cel nuevo y puse tu número. ¿Me lo reenviás porfa? Es urgente que ya no me deja entrar.",
+        "en": "Hi friend, sorry to bother you, I sent you a 6-digit code by accident because I was registering my new phone and put your number. Can you forward it please? It’s urgent, it won’t let me in."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo de whatsapp",
+      "me hackearon el whatsapp",
+      "me robaron la cuenta de whatsapp",
+      "codigo de seis digitos que no pedi",
+      "me clonaron el whatsapp",
+      "pasame el codigo que te llego",
+      "estan pidiendo dinero desde mi whatsapp"
+    ],
+    "en": [
+      "they asked for my whatsapp code",
+      "my whatsapp was hacked",
+      "someone took over my whatsapp",
+      "six digit code i didn't request",
+      "forward me the code you got",
+      "asking for money from my whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El código de WhatsApp es solo tuyo: nadie lo necesita, ni un amigo ni el “soporte”.",
+      "Que te lo pida un contacto no lo hace seguro: su cuenta pudo ser robada.",
+      "Te apuran para que no leás el aviso de que no lo compartás."
+    ],
+    "en": [
+      "Your WhatsApp code is yours alone: nobody needs it, not a friend or “support”.",
+      "A contact asking doesn’t make it safe: their account may be stolen.",
+      "They rush you so you don’t read the warning not to share it."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No compartás nunca el código de verificación.",
+      "Activá la verificación en dos pasos (PIN) en WhatsApp.",
+      "Si ya lo diste, registrá de nuevo tu número en WhatsApp y avisá a tus contactos por otra vía que no manden dinero.",
+      "Pedí ayuda a WhatsApp y denunciá en la DPI."
+    ],
+    "en": [
+      "Never share the verification code.",
+      "Turn on two-step verification (PIN) in WhatsApp.",
+      "If you already gave it, register your number in WhatsApp again and warn your contacts another way not to send money.",
+      "Ask WhatsApp for help and report it to the DPI."
+    ]
+  },
+  "reportTo": [
+    "hn/whatsapp-ayuda",
+    "hn/policia-dpi"
+  ],
+  "sources": [
+    {
+      "title": "Tu WhatsApp como carnada: la estafa que revive con fuerza en Honduras",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/tu-whatsapp-como-carnada-la-estafa-que-revive-con-fuerza-en-honduras-2026-03-23",
+      "date": "2026-03-23"
+    },
+    {
+      "title": "Clonaban WhatsApp y robaban: nuevo ladrón ya no toca puertas",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/clonaban-whatsapp-y-robaban-nuevo-ladron-ya-no-toca-puertas-2026-06-08",
+      "date": "2026-06-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

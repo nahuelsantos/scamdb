@@ -1,0 +1,138 @@
+{
+  "id": "gt/package-from-relative-abroad",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "es": "Un “familiar” en Estados Unidos o una “empresa de envíos” o “aduana”",
+    "en": "A “relative” in the United States or a “shipping company” or “customs”"
+  },
+  "name": {
+    "es": "Encomienda o maleta retenida en aduana que te mandó un familiar de Estados Unidos",
+    "en": "A parcel or suitcase from a relative in the US held at customs"
+  },
+  "how": {
+    "es": "Te contactan por redes sociales, haciéndose pasar por un familiar o amigo que vive en Estados Unidos, y te dicen que te mandó una encomienda o una maleta con regalos o dinero. Luego te llama o te escribe una supuesta empresa de envíos o la aduana: el paquete está retenido y tenés que depositar un impuesto o multa en una cuenta de un particular. Te van pidiendo más y más; hay víctimas en Guatemala que perdieron hasta Q75 mil.",
+    "en": "They contact you on social media pretending to be a relative or friend living in the United States and say they sent you a parcel or suitcase with gifts or money. Then a fake shipping company or customs office calls or writes: the parcel is held and you must deposit a tax or fine into a private person’s account. They keep asking for more; some victims in Guatemala lost up to Q75,000."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un “familiar” o amigo del extranjero te escribe por Facebook o WhatsApp.",
+        "en": "A “relative” or friend abroad writes to you on Facebook or WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te cuenta que te mandó una caja o maleta con regalos, ropa o dólares.",
+        "en": "They tell you they sent you a box or suitcase with gifts, clothes or dollars."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Una “empresa de envíos” o la “aduana” dice que está retenida y hay que pagar un impuesto o multa.",
+        "en": "A “shipping company” or “customs” says it is held and a tax or fine must be paid."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden depositar en la cuenta de una persona, y después piden más.",
+        "en": "They ask you to deposit into a private person’s account, then ask for more."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le escribimos de la agencia de envíos. Tenemos a su nombre una caja que le manda su sobrino desde Houston, pero en aduana salió con sobrepeso y dólares sin declarar. Para liberarla debe depositar Q4,300 de impuesto hoy, si no, se decomisa. Le paso el número de cuenta.",
+        "en": "Good afternoon, this is the shipping agency. We have a box in your name sent by your nephew from Houston, but at customs it came out overweight with undeclared dollars. To release it you must deposit Q4,300 in tax today, or it will be seized. I’ll send you the account number."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me mandaron una encomienda de estados unidos y piden pagar aduana",
+      "paquete retenido en aduana que hay que pagar",
+      "una maleta con regalos de un familiar",
+      "me piden depositar un impuesto para liberar la caja",
+      "mi primo de estados unidos me mando un paquete",
+      "deposito a una cuenta para sacar la encomienda"
+    ],
+    "en": [
+      "parcel from the united states and they want customs paid",
+      "package held at customs that must be paid",
+      "suitcase with gifts from a relative",
+      "they ask me to deposit a tax to release the box",
+      "my cousin in the us sent me a package",
+      "deposit to an account to get the parcel out"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un familiar te avisa de un paquete por redes, a veces desde una cuenta nueva.",
+      "La aduana o la empresa de envíos no cobra multas en cuentas de particulares.",
+      "Cada pago trae un nuevo cobro."
+    ],
+    "en": [
+      "A relative tells you about a parcel on social media, sometimes from a new account.",
+      "Customs or the shipping company doesn’t collect fines into private accounts.",
+      "Every payment brings a new charge."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llamá a tu familiar al número de siempre antes de pagar nada.",
+      "Pedí el número de guía y verificalo vos con la empresa de envíos.",
+      "No depositar a cuentas de particulares.",
+      "Denunciá en el Ministerio Público o a la PNC."
+    ],
+    "en": [
+      "Call your relative on their usual number before paying anything.",
+      "Ask for the tracking number and check it yourself with the shipping company.",
+      "Don’t deposit into private accounts.",
+      "Report it to the Public Prosecutor’s Office or the PNC."
+    ]
+  },
+  "reportTo": [
+    "gt/mp-denuncia",
+    "gt/pnc-110"
+  ],
+  "sources": [
+    {
+      "title": "PNC captura a presuntos responsables de estafas con encomiendas falsas",
+      "publisher": "Agencia Guatemalteca de Noticias (AGN)",
+      "url": "https://agn.gt/pnc-captura-a-presuntos-responsables-de-estafas-con-encomiendas-falsas/",
+      "date": "2026-04-15"
+    },
+    {
+      "title": "PNC fortalece acciones de prevención ante alertas por estafas digitales",
+      "publisher": "Agencia Guatemalteca de Noticias (AGN)",
+      "url": "https://agn.gt/pnc-fortalece-acciones-de-prevencion-ante-alertas-por-estafas-digitales/",
+      "date": "2026-08-10"
+    },
+    {
+      "title": "¿Por qué los estafadores exigen fotografías del DPI a sus víctimas?",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/justicia/por-que-los-estafadores-exigen-fotografias-del-dpi-a-sus-victimas/",
+      "date": "2025-11-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

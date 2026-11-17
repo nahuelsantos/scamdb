@@ -1,0 +1,139 @@
+{
+  "id": "gt/fake-phone-company-sim-swap",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Representante” de tu compañía telefónica",
+    "en": "Your phone company’s “representative”"
+  },
+  "name": {
+    "es": "“Su línea será suspendida”: falsa telefónica que se queda con tu número",
+    "en": "“Your line will be suspended”: fake phone company that takes over your number"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser de tu compañía de teléfono y te dice que tu línea se va a suspender por falta de uso o por un problema. Para “evitarlo” te pide un proceso de verificación y te manda un mensaje con un enlace. Al abrirlo o dar los datos, le pasan tu número a otro chip: tu teléfono se queda sin señal y los códigos del banco le llegan al estafador, que entra a tus cuentas y hace transferencias en pocas horas.",
+    "en": "Someone calls saying they are from your phone company and that your line will be suspended for lack of use or a problem. To “avoid it” they ask for a verification process and send you a text with a link. Once you open it or give the details, your number is moved to another SIM: your phone loses signal and your bank’s codes go to the scammer, who gets into your accounts and makes transfers within hours."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman “de la telefónica” y te dicen que tu línea se va a suspender.",
+        "en": "They call “from the phone company” and say your line will be suspended."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que tenés que verificar tus datos hoy para no perder el número.",
+        "en": "They say you must verify your details today so you don’t lose the number."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te mandan un SMS con un enlace “de verificación” y te piden abrirlo o leerles un código.",
+        "en": "They send a text with a “verification” link and ask you to open it or read them a code."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Tu teléfono se queda sin servicio: alguien sacó un chip nuevo con tu número.",
+        "en": "Your phone loses service: someone got a new SIM with your number."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Con los códigos que llegan a tu número entran a tu banca y sacan tu dinero.",
+        "en": "With the codes sent to your number they get into your banking and take your money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Muy buenos días, le hablamos del centro de atención de su compañía telefónica. Su línea aparece sin uso y mañana se da de baja. Para conservar el número le enviamos un SMS de verificación, solo ábralo y confirme sus datos mientras yo espero en línea.",
+        "en": "Good morning, this is your phone company’s customer centre. Your line shows no use and will be cancelled tomorrow. To keep the number we are sending you a verification text, just open it and confirm your details while I wait on the line."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron de la telefonica que me iban a suspender la linea",
+      "mi telefono se quedo sin señal y luego me sacaron dinero",
+      "cambiaron mi chip sin que yo lo pidiera",
+      "me mandaron un enlace para verificar mi linea",
+      "clonaron mi numero de telefono",
+      "me desactivaron la linea y entraron a mi banco"
+    ],
+    "en": [
+      "phone company called saying my line would be suspended",
+      "my phone lost signal and then money was taken",
+      "my sim was swapped without asking",
+      "they sent a link to verify my line",
+      "they took over my phone number",
+      "line deactivated then they got into my bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La telefónica no te llama para pedirte que abrás enlaces o dictés códigos.",
+      "Te amenazan con quitarte el número hoy mismo.",
+      "Si tu teléfono se queda sin señal de repente, puede que alguien haya sacado un chip con tu número."
+    ],
+    "en": [
+      "The phone company doesn’t call to ask you to open links or read out codes.",
+      "They threaten to take your number away today.",
+      "If your phone suddenly loses signal, someone may have got a SIM with your number."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Colgá y comunicate vos con tu compañía por sus canales oficiales.",
+      "No abrás enlaces de mensajes que no pediste.",
+      "Si te quedaste sin señal, andá a una agencia de tu telefónica y llamá a tu banco para bloquear tus cuentas.",
+      "Denunciá en el Ministerio Público."
+    ],
+    "en": [
+      "Hang up and contact your phone company yourself through its official channels.",
+      "Don’t open links in messages you didn’t ask for.",
+      "If you lost signal, go to a branch of your phone company and call your bank to block your accounts.",
+      "Report it to the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/tu-banco",
+    "gt/mp-denuncia",
+    "gt/pnc-110"
+  ],
+  "sources": [
+    {
+      "title": "Así desactivaba las líneas telefónicas de las víctimas para realizar transacciones bancarias",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/comunitario/asi-desactivaba-las-lineas-telefonicas-de-las-victimas-para-realizar-transacciones-bancarias/",
+      "date": "2026-04-21"
+    },
+    {
+      "title": "Capturado por fraude con tarjetas tras engaño telefónico",
+      "publisher": "Publinews Guatemala",
+      "url": "https://www.publinews.gt/noticias/2026/04/20/capturado-por-fraude-con-tarjetas-tras-engano-telefonico/",
+      "date": "2026-04-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}
