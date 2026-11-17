@@ -1,0 +1,146 @@
+{
+  "id": "xk/bank-sms-account-blocked",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sq": "“Banka juaj” (NLB, TEB, Raiffeisen ose një bankë tjetër)",
+    "en": "“Your bank” (NLB, TEB, Raiffeisen or another bank)"
+  },
+  "name": {
+    "sq": "SMS e rreme nga banka: “llogaria do të bllokohet” ose “aktivitet i dyshimtë”",
+    "en": "Fake bank text: “your account will be blocked” or “suspicious activity”"
+  },
+  "how": {
+    "sq": "Vjen një SMS që duket si njoftim zyrtar nga banka juaj: llogaria do t’ju bllokohet nëse nuk veproni menjëherë, ose është vërejtur “aktivitet i dyshimtë” dhe duhet ta verifikoni. Linku hap një faqe që i ngjan bankës dhe ju kërkon të dhënat personale, të kartelës dhe kodet. Sapo t’i shkruani, mashtruesit hyjnë në llogari dhe e zbrazin. Vetëm në rajonin e Prishtinës, prokuroria numëroi rreth 150 viktima të një rrjeti të tillë.",
+    "en": "A text that looks like an official notice from your bank says your account will be blocked unless you act now, or that “suspicious activity” was found and you must verify it. The link opens a page that looks like the bank and asks for your personal details, card details and codes. As soon as you type them in, the scammers get into the account and empty it. In the Prishtina region alone, prosecutors counted about 150 victims of one such network."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Vjen një SMS në emër të bankës suaj, me ton urgjent.",
+        "en": "A text arrives in your bank’s name, with an urgent tone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Thotë se llogaria do të bllokohet ose se ka aktivitet të dyshimtë, dhe duhet të veproni menjëherë.",
+        "en": "It says your account will be blocked or that there is suspicious activity, and you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Përmban një link “për verifikim”, që hap një faqe të ngjashme me bankën.",
+        "en": "It contains a link “to verify”, which opens a page that looks like the bank."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon të dhënat e kartelës, fjalëkalimin dhe kodin që ju vjen me SMS.",
+        "en": "The page asks for your card details, password and the code sent to you by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sq": "Pas pak minutash, paratë tërhiqen nga llogaria.",
+        "en": "Within minutes, money is taken from your account."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "BANKA: Kemi vërejtur hyrje të paautorizuar në llogarinë tuaj. Për të shmangur pezullimin e kartelës, konfirmoni identitetin brenda 12 orëve këtu: [link]",
+        "en": "BANK: We noticed unauthorised access to your account. To avoid your card being suspended, confirm your identity within 12 hours here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "më erdhi sms se do më bllokohet llogaria",
+      "mesazh nga banka me link për verifikim",
+      "aktivitet i dyshimtë në llogarinë time",
+      "shkrova të dhënat e kartelës në link",
+      "më zbrazën xhirollogarinë",
+      "banka më kërkon të konfirmoj të dhënat"
+    ],
+    "en": [
+      "got a text saying my account will be blocked",
+      "message from the bank with a link to verify",
+      "suspicious activity on my account",
+      "typed my card details into the link",
+      "they emptied my bank account",
+      "bank asking me to confirm my details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "Bankat nuk kërkojnë kurrë fjalëkalim, PIN, kode verifikimi apo të dhëna të kartelës me SMS, email ose rrjete sociale.",
+      "Kërcënim me bllokim të llogarisë dhe afat i shkurtër.",
+      "Link në SMS që të çon në një faqe ku duhet të hysh në llogari."
+    ],
+    "en": [
+      "Banks never ask for passwords, PINs, verification codes or card details by text, email or social media.",
+      "A threat that your account will be blocked, with a short deadline.",
+      "A link in a text that takes you to a page where you have to log in."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos e hapni linkun. Hyni vetë në aplikacionin e bankës ose telefononi numrin në kartelë.",
+      "Nëse keni shkruar të dhëna, telefononi menjëherë bankën që ta bllokojë kartelën dhe llogarinë.",
+      "Raportojeni në Policinë e Kosovës dhe dërgojeni mesazhin te KOS-CERT."
+    ],
+    "en": [
+      "Don’t open the link. Open your bank’s app yourself or call the number on your card.",
+      "If you typed in any details, call your bank at once so it can block your card and account.",
+      "Report it to the Kosovo Police and send the message to KOS-CERT."
+    ]
+  },
+  "reportTo": [
+    "xk/your-bank",
+    "xk/police",
+    "xk/kos-cert"
+  ],
+  "sources": [
+    {
+      "title": "Goditet rrjeti i mashtrimeve kibernetike në Prishtinë, ndalohen dy persona - dy të tjerë në arrati",
+      "publisher": "Telegrafi",
+      "url": "https://telegrafi.com/goditet-rrjeti-i-mashtrimeve-kibernetike-ne-prishtine-ndalohen-dy-persona-dy-te-tjere-ne-arrati/",
+      "date": "2026-06-08"
+    },
+    {
+      "title": "Apel për kujdes nga SMS-të mashtrues në emër të bankave",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/apel-per-kujdes-nga-sms-te-mashtrues-ne-emer-te-bankave/",
+      "date": "2026-05-22"
+    },
+    {
+      "title": "Rriten rastet e mashtrimeve përmes SMS-ve, bankat aktivizojnë kanale emergjente raportimi 24/7",
+      "publisher": "Telegrafi",
+      "url": "https://telegrafi.com/rriten-rastet-e-mashtrimeve-permes-sms-ve-bankat-aktivizojne-kanale-emergjente-raportimi-24-7/",
+      "date": "2026-01-14"
+    },
+    {
+      "title": "Njoftim për mesazhe mashtruese (SMS/iMessage)",
+      "publisher": "KOS-CERT",
+      "url": "https://kos-cert.org/lajme-njoftime/njoftim-per-mesazhe-mashtruese-smsimessage",
+      "date": "2026-05-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

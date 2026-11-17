@@ -1,0 +1,113 @@
+{
+  "id": "xk/electricity-bill-sms",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sq": "“KEDS” ose “furnizuesi i energjisë elektrike”",
+    "en": "“KEDS” or “your electricity supplier”"
+  },
+  "name": {
+    "sq": "SMS e rreme për faturë të rrymës: “paguani ose ju ndërpritet”",
+    "en": "Fake electricity bill text: “pay or we cut you off”"
+  },
+  "how": {
+    "sq": "Një SMS thotë se keni faturë të papaguar të energjisë elektrike dhe se rryma do t’ju ndërpritet nëse nuk paguani menjëherë. Linku të çon në një faqe mashtruese që vjedh të dhënat personale dhe bankare. KEDS nuk dërgon kërkesa për pagesë me SMS; njoftimet dhe pagesat bëhen vetëm në aplikacionin e tij zyrtar.",
+    "en": "A text says you have an unpaid electricity bill and your power will be cut off unless you pay right away. The link leads to a phishing page that steals your personal and bank details. KEDS does not send payment requests by text; notices and payments are only in its official app."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Vjen një SMS për një faturë të papaguar të rrymës.",
+        "en": "A text arrives about an unpaid electricity bill."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Kërcënon se rryma do të ndërpritet sot ose nesër.",
+        "en": "It threatens that the power will be cut off today or tomorrow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkon të paguani përmes një linku, ku duhet të shkruani kartelën.",
+        "en": "It asks you to pay through a link where you must enter your card."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "KEDS: Fatura juaj e muajit të kaluar (38,70€) është ende e papaguar. Furnizimi me energji do të ndërpritet nesër në ora 10:00. Shmangeni ndërprerjen duke paguar këtu: [link]",
+        "en": "KEDS: Your bill for last month (€38.70) is still unpaid. Your power supply will be cut off tomorrow at 10:00. Avoid the cut-off by paying here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "sms se do më ndërpritet rryma",
+      "fatura e papaguar e rrymës me link",
+      "kërkesë për pagesë urgjente të energjisë",
+      "mesazh nga keds për pagesë",
+      "paguaj faturën e rrymës online përmes linkut"
+    ],
+    "en": [
+      "text saying my power will be cut off",
+      "unpaid electricity bill with a link",
+      "urgent request to pay for electricity",
+      "message from keds asking for payment",
+      "pay the power bill online through a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sq": [
+      "KEDS nuk kërkon pagesa me SMS.",
+      "Kërcënim me ndërprerje të rrymës brenda një dite.",
+      "Link për pagesë në vend të aplikacionit zyrtar."
+    ],
+    "en": [
+      "KEDS does not ask for payments by text.",
+      "A threat to cut off your power within a day.",
+      "A payment link instead of the official app."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos klikoni. Kontrolloni faturën në aplikacionin zyrtar të KEDS ose në faturën e letrës.",
+      "Nëse keni shkruar kartelën, telefononi bankën që ta bllokojë.",
+      "Dërgoni një foto të ekranit te KOS-CERT dhe fshijeni mesazhin."
+    ],
+    "en": [
+      "Don’t click. Check your bill in the official KEDS app or on your paper bill.",
+      "If you entered your card, call your bank to block it.",
+      "Send a screenshot to KOS-CERT and delete the message."
+    ]
+  },
+  "reportTo": [
+    "xk/kos-cert",
+    "xk/your-bank",
+    "xk/police"
+  ],
+  "sources": [
+    {
+      "title": "Njoftim për kujdes nga sms-ët mashtruesë për energjinë elektrike",
+      "publisher": "KOS-CERT",
+      "url": "https://kos-cert.org/lajme-njoftime/njoftim-per-kujdes-nga-sms-et-mashtruese-per-energjine-elektrike",
+      "date": "2026-01-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,131 @@
+{
+  "id": "rs/posta-srbije-sms-posiljka",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sr": "„Pošta Srbije”, „Post Express” ili strani broj",
+    "en": "“Pošta Srbije”, “Post Express” or a foreign number"
+  },
+  "name": {
+    "sr": "Lažni SMS Pošte Srbije: pošiljka zadržana, potvrdite adresu ili platite carinu",
+    "en": "Fake Pošta Srbije text: parcel held, confirm your address or pay customs"
+  },
+  "how": {
+    "sr": "Stiže SMS da je paket u magacinu i ne može da se isporuči jer adresa nije potpuna, ili da je zadržan dok ne platite malu carinu ili troškove. Link vodi na lažnu stranicu sa logom Pošte, gde unosite adresu i podatke kartice. Sa kartice zatim skidaju novac. Pošta Srbije ne traži unos podataka ni plaćanje preko linka.",
+    "en": "A text says a parcel is in the warehouse and can’t be delivered because the address is incomplete, or that it’s held until you pay a small customs or handling fee. The link opens a fake page with the Post logo where you enter your address and card details. Money is then taken from the card. Pošta Srbije never asks for data or payment through a link."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka u ime Pošte Srbije o zadržanoj pošiljci.",
+        "en": "A message in the name of Pošta Srbije about a held parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Link ka stranici koja nije posta.rs.",
+        "en": "A link to a page that isn’t posta.rs."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Mali iznos za carinu ili ponovnu dostavu, karticom.",
+        "en": "A small fee for customs or redelivery, by card."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "Rok: pošiljka se vraća pošiljaocu.",
+        "en": "A deadline: the parcel goes back to the sender."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Posta Srbije: Vasa posiljka je stigla u nas magacin, ali ne moze biti isporucena zbog nepotpune adrese. Azurirajte podatke u roku od 24h kako bi posiljka bila isporucena: [link]",
+        "en": "Posta Srbije: Your parcel has reached our warehouse but cannot be delivered because the address is incomplete. Update your details within 24h so the parcel can be delivered: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "sms pošta srbije paket nepotpuna adresa link",
+      "poruka pošiljka zadržana platiti carinu 150 dinara",
+      "post express sms ažurirati adresu kartica",
+      "lažna pošta link plaćanje dostave",
+      "paket u magacinu ne može biti isporučen poruka",
+      "пошта србије порука пошиљка линк"
+    ],
+    "en": [
+      "post office text parcel incomplete address link",
+      "message parcel held pay customs fee",
+      "post express sms update address card",
+      "fake postal link delivery payment",
+      "parcel in warehouse cannot be delivered message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sr": [
+      "Pošta Srbije ne traži unos ličnih podataka ni plaćanje preko linka.",
+      "Link koji nije na adresi posta.rs.",
+      "Loš jezik, bez kvačica, i nepotpuni podaci o firmi.",
+      "Niste ništa naručili ili ne čekate pošiljku."
+    ],
+    "en": [
+      "Pošta Srbije doesn’t ask for personal data or payment through a link.",
+      "A link that isn’t on posta.rs.",
+      "Poor language, no diacritics and incomplete company details.",
+      "You haven’t ordered anything or aren’t expecting a parcel."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link. Pošiljku proverite na posta.rs ili u kontakt centru Pošte.",
+      "Ako ste uneli karticu, odmah je blokirajte u banci.",
+      "Poruku prijavite CERT-u ili na Sajber straži, pa je obrišite."
+    ],
+    "en": [
+      "Don’t open the link. Check the parcel on posta.rs or with the Post contact centre.",
+      "If you entered your card, block it with your bank at once.",
+      "Report the message to CERT or on Sajber straža, then delete it."
+    ]
+  },
+  "reportTo": [
+    "rs/posta-srbije-kontakt",
+    "rs/your-bank",
+    "rs/cert-prijava",
+    "rs/sajber-straza"
+  ],
+  "sources": [
+    {
+      "title": "SMS prevara sa linkovima za pljačku, Pošta Srbije poslala upozorenje",
+      "publisher": "Kurir",
+      "url": "https://www.kurir.rs/vesti/drustvo/9745986/sms-prevara-sa-linkovima-za-pljacku-posta-srbije-poslala-upozorenje",
+      "date": "2025-08-10"
+    },
+    {
+      "title": "Smišing i razvoj SMS prevara: savremeni rizici i mere zaštite",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/files/shares/Smising%20i%20razvoj%20SMS%20prevara%20lat.pdf",
+      "date": "2025-12-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

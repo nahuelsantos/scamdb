@@ -1,0 +1,121 @@
+{
+  "id": "xk/whatsapp-account-takeover",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "sq": "Një mik në WhatsApp ose një “mbështetje” e panjohur",
+    "en": "A friend on WhatsApp or an unknown “support” account"
+  },
+  "name": {
+    "sq": "Llogaria e WhatsApp-it merret me kodin prej 6 shifrash",
+    "en": "WhatsApp account taken over with the 6-digit code"
+  },
+  "how": {
+    "sq": "Ju vjen papritur kodi i regjistrimit të WhatsApp-it me SMS, dhe dikush ju shkruan, shpesh nga numri i një miku, ose përmes një linku “për verifikim”, që t’ia dërgoni kodin. Me atë kod, mashtruesit e regjistrojnë numrin tuaj në një telefon tjetër ose shtojnë një pajisje të lidhur, e pastaj u shkruajnë kontakteve tuaja në emrin tuaj për t’u kërkuar kode apo para. Në shtator 2026 KOS-CERT tha se po trajtonte raste të llogarive të komprometuara në Kosovë.",
+    "en": "You unexpectedly get a WhatsApp registration code by text, and someone messages you, often from a friend’s number, or through a “verification” link, asking you to send them the code. With that code the scammers register your number on another phone or add a linked device, then message your contacts in your name to ask for codes or money. In September 2026 KOS-CERT said it was handling cases of compromised accounts in Kosovo."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Ju vjen një kod i WhatsApp-it që nuk e keni kërkuar.",
+        "en": "A WhatsApp code arrives that you didn’t ask for."
+      }
+    },
+    {
+      "text": {
+        "sq": "Një mik ose një “mbështetje” ju shkruan se kodi u erdh gabimisht dhe jua kërkon.",
+        "en": "A friend or “support” writes that the code was sent to you by mistake and asks for it."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Ose ju vjen një link ku duhet të shkruani kodin “për verifikim”.",
+        "en": "Or you get a link where you must enter the code “to verify”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Pas kodit humbni llogarinë, dhe kontaktet tuaja marrin mesazhe në emrin tuaj.",
+        "en": "After the code you lose the account, and your contacts get messages in your name."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Ckemi, të lutem ma dërgo kodin me 6 shifra që të erdhi tani me sms, e kam shkru numrin tënd gabimisht te aplikacioni. Shpejt se po më skadon 🙏",
+        "en": "Hey, please send me the 6-digit code you just got by text, I typed your number by mistake in the app. Quick, it’s about to expire 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "më kërkoi kodin e whatsapp-it",
+      "më erdhi kod me sms pa e kërkuar",
+      "ma morën llogarinë e whatsapp",
+      "një shok më kërkoi kodin me 6 shifra",
+      "dikush po shkruan në emrin tim në whatsapp",
+      "link për verifikim të llogarisë së whatsapp"
+    ],
+    "en": [
+      "asked me for my whatsapp code",
+      "got a code by text I didn't ask for",
+      "my whatsapp account was taken",
+      "a friend asked for my 6-digit code",
+      "someone is messaging in my name on whatsapp",
+      "link to verify my whatsapp account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "sq": [
+      "Askush nuk ka nevojë për kodin tuaj të regjistrimit, as miqtë, as “mbështetja”.",
+      "Kod që vjen pa e kërkuar, menjëherë pas një mesazhi që e kërkon.",
+      "Link që kërkon kodin, PIN-in ose të dhëna personale “për verifikim”."
+    ],
+    "en": [
+      "Nobody needs your registration code, not friends, not “support”.",
+      "A code that arrives unasked, right after a message asking for it.",
+      "A link that asks for your code, PIN or personal details “to verify”."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos e jepni kodin askujt. Aktivizoni verifikimin me dy hapa dhe kontrolloni pajisjet e lidhura.",
+      "Nëse e keni humbur llogarinë, regjistrohuni sërish me numrin tuaj në aplikacion dhe paralajmëroni kontaktet.",
+      "Raportojeni te KOS-CERT me numrin, orën kur humbët qasjen dhe njoftimet e pazakonta."
+    ],
+    "en": [
+      "Don’t give the code to anyone. Turn on two-step verification and check linked devices.",
+      "If you lost the account, register again with your number in the app and warn your contacts.",
+      "Report it to KOS-CERT with the number, the time you lost access and any unusual notices."
+    ]
+  },
+  "reportTo": [
+    "xk/kos-cert",
+    "xk/police"
+  ],
+  "sources": [
+    {
+      "title": "Llogari WhatsApp po komprometohen në Kosovë: KOS-CERT heton rastet",
+      "publisher": "QUASA",
+      "url": "https://quasa.io/sq/media/llogari-whatsapp-po-komprometohen-ne-kosove-kos-cert-heton-rastet",
+      "date": "2026-09-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "xk/fake-aid-request-transfer",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "sq": "Persona të panjohur në Viber/WhatsApp, me numra të huaj",
+    "en": "Strangers on Viber/WhatsApp, with foreign numbers"
+  },
+  "name": {
+    "sq": "Kërkesë për “ndihmë financiare” për dikë tjetër, me Western Union",
+    "en": "Request for “financial help” for someone else, via Western Union"
+  },
+  "how": {
+    "sq": "Persona të panjohur u telefonojnë qytetarëve dhe bizneseve përmes Viber-it ose WhatsApp-it, nga numra të Bosnjës dhe Hercegovinës ose të Malit të Zi, dhe kërkojnë ndihmë financiare për një person të tretë që gjoja ka nevojë. Kërkojnë që paratë të dërgohen në një filial të Western Union, MoneyGram ose të ngjashëm. Më vonë del se paratë nuk shkuan për ndihmë, por për vetë mashtruesit.",
+    "en": "Strangers contact people and businesses over Viber or WhatsApp, from Bosnian or Montenegrin numbers, asking for financial help for a third person who is supposedly in need. They ask for the money to be sent through Western Union, MoneyGram or similar agents. Later it turns out the money went to the scammers themselves, not to any help."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Ju kontakton një numër i huaj në Viber ose WhatsApp.",
+        "en": "A foreign number contacts you on Viber or WhatsApp."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Tregon për një person në nevojë, që nuk mund ta takoni apo kontrolloni.",
+        "en": "They tell you about someone in need whom you can’t meet or check."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Kërkon që paratë t’i dërgoni me Western Union ose MoneyGram, jo në një llogari bankare.",
+        "en": "They ask you to send money by Western Union or MoneyGram, not to a bank account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Mirëdita, ju lutem na ndihmoni. Një nënë me tre fëmijë ka mbetur pa shtëpi pas zjarrit dhe po mbledhim para për të. Çdo ndihmë vlen, edhe 50 ose 100 euro. Mund t’i dërgoni me MoneyGram në emër të motrës së saj, ju shkruaj të dhënat këtu.",
+        "en": "Good afternoon, please help us. A mother of three has been left homeless after a fire and we are collecting money for her. Any help counts, even 50 or 100 euros. You can send it by MoneyGram in her sister’s name, I’ll write the details here."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "më kërkuan ndihmë financiare në viber",
+      "dërgo para me moneygram për një familje në nevojë",
+      "numër i huaj kërkon para për një të sëmurë",
+      "ndihmë për persona të tretë me western union",
+      "biznesi ynë mori thirrje për donacion"
+    ],
+    "en": [
+      "asked for financial help on viber",
+      "send money by moneygram for a family in need",
+      "foreign number asking money for a sick person",
+      "help for a third person through western union",
+      "our business got a call asking for a donation"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "sq": [
+      "Numër i panjohur nga jashtë që kërkon ndihmë për dikë tjetër.",
+      "Paratë kërkohen me transfer parash, në emër të një personi tjetër.",
+      "Nuk ka asnjë organizatë të njohur apo mënyrë për të verifikuar rastin."
+    ],
+    "en": [
+      "An unknown foreign number asking for help for someone else.",
+      "The money is wanted by money transfer, in another person’s name.",
+      "There is no known organisation and no way to check the case."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos dërgoni para te njerëz që nuk i njihni. Nëse doni të ndihmoni, përdorni një organizatë të njohur.",
+      "Nëse keni dërguar para, lajmëroni shërbimin e transferit dhe policinë sa më shpejt.",
+      "Raportojeni në Policinë e Kosovës në 192 ose në aplikacionin “Lajmëro Policinë”."
+    ],
+    "en": [
+      "Don’t send money to people you don’t know. If you want to help, use a known organisation.",
+      "If you sent money, tell the transfer service and the police as soon as possible.",
+      "Report it to the Kosovo Police on 192 or in the “Lajmëro Policinë” app."
+    ]
+  },
+  "reportTo": [
+    "xk/police"
+  ],
+  "sources": [
+    {
+      "title": "Mashtrime në emër të ndihmës: Policia paralajmëron qytetarët",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/mashtrime-ne-emer-te-ndihmes-policia-paralajmeron-qytetaret/",
+      "date": "2025-09-05"
+    },
+    {
+      "title": "Deceptions on behalf of aide police warn citizens: Beware of Such Demands",
+      "publisher": "Periskopi",
+      "url": "https://periskopi.com/en/2025/9/deceptions-behalf-aide-police-warn-citizens-beware-demands",
+      "date": "2025-09-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

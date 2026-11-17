@@ -1,0 +1,129 @@
+{
+  "id": "me/viber-whatsapp-podrska-kod",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "sr": "„Viber podrška“ ili „WhatsApp podrška“, sa nepoznatog stranog broja",
+    "en": "“Viber support” or “WhatsApp support”, from an unknown foreign number"
+  },
+  "name": {
+    "sr": "Lažna „Viber/WhatsApp podrška“ traži verifikacioni kod i preuzima nalog",
+    "en": "Fake “Viber/WhatsApp support” asks for the verification code and takes over the account"
+  },
+  "how": {
+    "sr": "Javlja se navodna podrška Vibera ili WhatsAppa: vaš broj je aktivan na dva uređaja i treba potvrditi da je vaš, inače ostaje na drugom uređaju. Traže da im pošaljete kod koji vam je upravo stigao. Taj kod aplikacija šalje jer prevarant upravo registruje vaš broj na svom telefonu. Kad ga pošaljete, ostajete bez naloga, a prevarant piše vašim kontaktima u vaše ime i traži novac ili nove kodove.",
+    "en": "Supposed Viber or WhatsApp support gets in touch: your number is active on two devices and you need to confirm it’s yours, otherwise it stays on the other device. They ask you to send them the code you just received. The app sends that code because the scammer is registering your number on their own phone right now. Once you send it, you lose the account, and the scammer messages your contacts in your name asking for money or more codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka „podrške“ sa stranog broja: broj vam je aktivan na drugom uređaju.",
+        "en": "A “support” message from a foreign number: your number is active on another device."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Rok od 24 sata da „potvrdite“ nalog.",
+        "en": "A 24-hour deadline to “confirm” the account."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Traže da pošaljete šestocifreni kod koji vam je stigao.",
+        "en": "They ask you to send the six-digit code you received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sr": "Sa preuzetog naloga traže novac od vaših kontakata.",
+        "en": "From the hijacked account they ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Viber podrska: Detektovali smo da se Vas broj koristi na dva uredjaja u Crnoj Gori. Da biste zadrzali nalog, posaljite nam kod koji ste upravo dobili SMS-om. U suprotnom nalog ostaje aktivan na drugom uredjaju narednih 24h.",
+        "en": "Viber support: We detected that your number is being used on two devices in Montenegro. To keep your account, send us the code you just received by text. Otherwise the account stays active on the other device for the next 24h."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "viber podrška traži kod",
+      "poslao sam verifikacioni kod i izgubio nalog",
+      "whatsapp podrška broj aktivan na dva uređaja",
+      "neko mi preuzeo viber",
+      "pošaljite šestocifreni kod iz sms",
+      "hakovan whatsapp traži novac od kontakata",
+      "viber kod za registraciju na drugom uređaju",
+      "neko se prijavljuje na moj viber traže kod"
+    ],
+    "en": [
+      "viber support asked for my code",
+      "sent the verification code and lost my account",
+      "whatsapp support says my number is on two devices",
+      "someone took over my viber",
+      "send the six-digit code from the text",
+      "someone tried to log in to my whatsapp send the code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Podrška Vibera i WhatsAppa nikad ne traži verifikacioni kod porukom.",
+      "Kod nije dokaz da je broj vaš: to je ključ vašeg naloga.",
+      "Poruka sa stranog broja i rok od 24 sata su znak prevare."
+    ],
+    "en": [
+      "Viber and WhatsApp support never ask for a verification code by message.",
+      "The code isn’t proof the number is yours: it is the key to your account.",
+      "A message from a foreign number and a 24-hour deadline are signs of fraud."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Kod ne šaljite nikome, ni „podršci“, kolegi ni članu porodice.",
+      "Uključite verifikaciju u dva koraka i uklonite nepoznate povezane uređaje.",
+      "Ako ste poslali kod, odmah ponovo registrujte broj i upozorite kontakte da ignorišu poruke sa vašeg naloga.",
+      "Prijavite slučaj policiji na 122."
+    ],
+    "en": [
+      "Don’t send the code to anyone, not “support”, a colleague or a family member.",
+      "Turn on two-step verification and remove unknown linked devices.",
+      "If you sent the code, re-register your number straight away and warn your contacts to ignore messages from your account.",
+      "Report it to the police on 122."
+    ]
+  },
+  "reportTo": [
+    "me/policija-122",
+    "me/cirt"
+  ],
+  "sources": [
+    {
+      "title": "Uprava policije upozorava: Ne dijelite verifikacione kodove, prevaranti preuzimaju WhatsApp i Viber naloge",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/uprava-policije-upozorava-ne-dijelite-verifikacione-kodove-prevaranti-preuzimaju-whatsapp-i-viber-naloge",
+      "date": "2026-11-04"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "me/whatsapp-glasanje-stipendija"
+  ]
+}

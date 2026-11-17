@@ -1,0 +1,136 @@
+{
+  "id": "rs/saobracajna-kazna-sms",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sr": "„Uprava saobraćajne policije”, „Putevi Srbije” ili strani broj / iMessage",
+    "en": "“Traffic Police Administration”, “Putevi Srbije” (Roads of Serbia) or a foreign number / iMessage"
+  },
+  "name": {
+    "sr": "Lažna saobraćajna kazna ili neplaćena putarina: platite preko linka uz „popust”",
+    "en": "Fake traffic fine or unpaid toll: pay through a link with a “discount”"
+  },
+  "how": {
+    "sr": "Stiže SMS, iMessage ili mejl da imate saobraćajni prekršaj, prekoračenje brzine ili neplaćenu putarinu, uz link da „pogledate dokaz” i platite kaznu, često sa popustom ako platite odmah. Lažna stranica liči na sajt MUP-a ili Puteva Srbije i traži broj telefona i podatke kartice. MUP prekršaje ne šalje SMS-om, već poštom ili preko eUprave i eSandučeta.",
+    "en": "A text, iMessage or email says you have a traffic offence, a speeding ticket or an unpaid toll, with a link to “view the evidence” and pay, often with a discount if you pay now. The fake page looks like the police or Roads of Serbia site and asks for your phone number and card details. The police never send offences by text: they come by post or through eUprava and its eSanduče mailbox."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka u ime saobraćajne policije ili Puteva Srbije.",
+        "en": "A message in the name of the traffic police or Roads of Serbia."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Popust ako platite odmah, ili uvećanje kazne.",
+        "en": "A discount if you pay now, or a higher fine."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Link za „dokaz” i plaćanje karticom.",
+        "en": "A link to the “evidence” and card payment."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Traže podatke kartice.",
+        "en": "They ask for card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "MUP RS – Uprava saobracajne policije: Evidentiran je prekrsaj prekoracenja brzine vaseg vozila. Uvid u dokaz i placanje kazne sa popustom od 50% moguce je do ponoci: [link]",
+        "en": "MUP RS – Traffic Police Administration: A speeding offence by your vehicle has been recorded. You can view the evidence and pay the fine at a 50% discount until midnight: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "sms saobraćajna kazna link popust plaćanje",
+      "poruka neplaćena putarina putevi srbije",
+      "prekoračenje brzine poruka pogledajte dokaz",
+      "imessage kazna saobraćajna policija strani broj",
+      "kazna sa popustom platiti karticom link",
+      "саобраћајна казна смс линк"
+    ],
+    "en": [
+      "text traffic fine link discount payment",
+      "message unpaid toll roads of serbia",
+      "speeding text view the evidence",
+      "imessage fine traffic police foreign number",
+      "fine with discount pay by card link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "MUP ne šalje obaveštenja o prekršajima SMS-om ni iMessage-om.",
+      "Strani broj ili nepoznat pošiljalac.",
+      "Popust ili pretnja ako ne platite odmah.",
+      "Domen koji nije zvanični (putevi-srbije.rs, mup.gov.rs)."
+    ],
+    "en": [
+      "The police don’t send offence notices by text or iMessage.",
+      "A foreign number or unknown sender.",
+      "A discount or threat if you don’t pay at once.",
+      "A domain that isn’t the official one (putevi-srbije.rs, mup.gov.rs)."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link i ne unosite podatke. Obrišite poruku.",
+      "Proverite prekršaje prijavom na eUpravu (eSanduče) ili u policiji.",
+      "Ako ste uneli karticu, blokirajte je i prijavite poruku na Sajber straži."
+    ],
+    "en": [
+      "Don’t open the link or enter anything. Delete the message.",
+      "Check offences by logging in to eUprava (eSanduče) or with the police.",
+      "If you entered your card, block it and report the message on Sajber straža."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/sajber-straza",
+    "rs/cert-prijava"
+  ],
+  "sources": [
+    {
+      "title": "MUP se hitno oglasio: Kruži opasna prevara – ne otvarajte ove SMS poruke",
+      "publisher": "B92",
+      "url": "https://www.b92.net/info/drustvo/241006/mup-se-hitno-oglasio-kruzi-opasna-prevara-ne-otvarajte-ove-sms-poruke-foto/vest",
+      "date": "2026-06-11"
+    },
+    {
+      "title": "Aktuelna fišing kampanja u kojoj se građanima šalju lažne poruke kao zvanična prepiska državnih organa",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/en/obavestenje/1545-Aktuelna-fi%C5%A1ing-kampanja-u-kojoj-se-gra%C4%91anima-%C5%A1alju-la%C5%BEne-poruke-kao-zvani%C4%8Dna-prepiska-dr%C5%BEavnih-organa.html",
+      "date": "2026-04-22"
+    },
+    {
+      "title": "Ponovo aktuelna fišing kampanja koja zloupotrebljava ime JP „Putevi Srbije”",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/en/obavestenje/1519-Ponovo-aktuelna-fi%C5%A1ing-kampanja-koja-zloupotrebljava-ime-JP-%E2%80%9EPutevi-Srbije%E2%80%9C.html",
+      "date": "2026-03-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

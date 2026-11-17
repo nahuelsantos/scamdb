@@ -1,0 +1,116 @@
+{
+  "id": "me/lazni-poklon-institucija-link",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "sr": "„Centralna banka Crne Gore“, „Western Union“ ili druga poznata institucija",
+    "en": "“Central Bank of Montenegro”, “Western Union” or another well-known institution"
+  },
+  "name": {
+    "sr": "Lažni poklon od institucije: „svaki građanin dobija 50 eura, preuzmite preko linka“",
+    "en": "Fake gift from an institution: “every citizen gets 50 euros, claim it through the link”"
+  },
+  "how": {
+    "sr": "Preko aplikacija za poruke i društvenih mreža kruži poruka da Centralna banka, zajedno sa poznatom firmom, svakom punoljetnom građaninu daje jednokratni poklon od 50 eura. Za preuzimanje treba otvoriti link i popuniti podatke. Link vodi na fišing stranicu koja krade lične i bankovne podatke. Poruku obično prosljeđuju poznanici koji su joj povjerovali.",
+    "en": "A message circulates on messaging apps and social media saying the Central Bank, together with a well-known company, is giving every adult citizen a one-off gift of 50 euros. To claim it you open a link and fill in your details. The link leads to a phishing page that steals personal and banking details. The message is usually forwarded by acquaintances who believed it."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka da institucija dijeli novac svim građanima.",
+        "en": "A message saying an institution is handing out money to all citizens."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Besplatan novac bez ikakvog uslova.",
+        "en": "Free money with no conditions."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Link za preuzimanje i forma za podatke kartice.",
+        "en": "A claim link and a form for card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "CBCG i Western Union: Svaki punoljetni gradjanin Crne Gore ima pravo na jednokratnu pomoc od 50 EUR. Isplata traje jos samo danas. Preuzmite svoj iznos ovdje: [link] Proslijedite porodici i prijateljima!",
+        "en": "CBCG and Western Union: Every adult citizen of Montenegro is entitled to a one-off payment of 50 EUR. The payout only runs today. Claim your amount here: [link] Forward to family and friends!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "centralna banka poklon 50 eura",
+      "svaki građanin dobija novac link",
+      "jednokratna pomoć preuzmite preko linka",
+      "western union isplata svim građanima",
+      "proslijedi porodici besplatnih 50 eura",
+      "država isplaćuje pomoć svakom građaninu",
+      "upiši podatke lične karte za isplatu"
+    ],
+    "en": [
+      "central bank 50 euro gift",
+      "every citizen gets money link",
+      "one-off payment claim through a link",
+      "western union payout to all citizens",
+      "forward to family free 50 euros",
+      "state pays every citizen a one-off sum"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "sr": [
+      "Centralna banka ne dijeli poklone i ne traži da kliknete link ili popunite formu.",
+      "Institucije ne prave zajedničke akcije sa privatnim firmama preko poruka.",
+      "Molba da proslijedite poruku služi da se prevara brže širi."
+    ],
+    "en": [
+      "The Central Bank doesn’t give gifts or ask you to click a link or fill in a form.",
+      "Institutions don’t run joint promotions with private companies via messages.",
+      "The request to forward the message is there to spread the scam faster."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link i ne prosljeđujte poruku.",
+      "Odmah se javite svojoj banci na broj sa kartice ili iz aplikacije i tražite blokadu kartice ako ste upisali njene podatke.",
+      "Lažnu poruku i link prijavite Nacionalnom CIRT-u, a ako ste izgubili novac, i policiji na 122."
+    ],
+    "en": [
+      "Don’t open the link and don’t forward the message.",
+      "Call your bank straight away on the number on your card or in the app and ask for the card to be blocked if you entered its details.",
+      "Report the fake message and link to the National CIRT and, if you lost money, to the police on 122."
+    ]
+  },
+  "reportTo": [
+    "me/cirt",
+    "me/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "CBCG upozorava na prevaru: Građanima stižu lažne poruke o isplati 50 eura",
+      "publisher": "Standard",
+      "url": "https://standard.co.me/drustvo/cbcg-upozorava-na-prevaru-gradjanima-stizu-lazne-poruke-o-isplati-50-eura",
+      "date": "2026-07-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

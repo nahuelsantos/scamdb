@@ -1,0 +1,135 @@
+{
+  "id": "al/oferte-kupon-marke-e-rreme",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "sq": "Një markë ose dyqan i njohur, në SMS, reklamë në rrjete sociale ose faqe që imiton markën",
+    "en": "A well-known brand or shop, by text, social media ad or a site imitating the brand"
+  },
+  "name": {
+    "sq": "Kupon, dhuratë ose ofertë e rreme në emër të një marke të njohur",
+    "en": "Fake coupon, giveaway or offer in a well-known brand's name"
+  },
+  "how": {
+    "sq": "Vjen një SMS ose shihni një reklamë në rrjete sociale: një markë e njohur ose një dyqan ju ofron një kupon, një dhuratë falas ose ulje të mëdha \"vetëm për sot\". Faqja imiton dizajnin e markës ose të një portali lajmesh dhe ju kërkon të paguani vetëm transportin ose një shumë simbolike me kartë. Në të vërtetë ju marrin të dhënat e kartës, PIN-in dhe kodet, dhe pagesa shkon në llogari të mashtruesve. Shoqata Shqiptare e Bankave paralajmëron për oferta me emra markash të njohura dhe kupona dyqanesh.",
+    "en": "A text arrives or you see a social media ad: a well-known brand or shop offers you a coupon, a free gift or huge discounts \"today only\". The page imitates the brand's design or a news portal and asks you to pay only for shipping or a token amount by card. In reality they take your card details, PIN and codes, and the payment goes to the scammers' accounts. The Albanian Association of Banks warns about offers using well-known brand names and shop coupons."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një markë e njohur ju \"dhuron\" një kupon ose produkt falas.",
+        "en": "A well-known brand \"gives\" you a coupon or free product."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sq": "Oferta skadon sot ose ka vetëm pak copë.",
+        "en": "The offer expires today or only a few are left."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Linku hap një faqe që imiton markën, me adresë të çuditshme.",
+        "en": "The link opens a page imitating the brand, at an odd address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Paguani vetëm transportin me kartë, dhe ju kërkojnë kodin e konfirmimit.",
+        "en": "You pay only shipping by card, and they ask for the confirmation code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Urime! Jeni zgjedhur per nje kupon 200 EUR per dyqanet tona me rastin e pervjetorit. Kuponi skadon sot ne ora 23:59. Merreni ketu: [link]",
+        "en": "Congratulations! You have been chosen for a 200 EUR voucher for our stores to mark our anniversary. The voucher expires today at 23:59. Claim it here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "kupon falas markë njohur sms",
+      "dhuratë falas paguaj transportin",
+      "ofertë pervjetori kupon link",
+      "fitove kupon dyqani mesazh",
+      "faqe false markës kërkoi kartën",
+      "kartë dhuratë falas mesazh",
+      "fitova dhuratë supermarket link"
+    ],
+    "en": [
+      "free voucher from famous brand text",
+      "free gift just pay shipping",
+      "anniversary giveaway voucher link",
+      "won a shop coupon message",
+      "fake brand site asked for card",
+      "free gift card text message"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "Dhurata ose kuponi vjen pa marrë pjesë në asnjë lojë.",
+      "Ju kërkojnë të paguani \"vetëm transportin\" me kartë.",
+      "Adresa e faqes nuk është e markës.",
+      "Afati shumë i shkurtër."
+    ],
+    "en": [
+      "The gift or voucher arrives without entering any contest.",
+      "You are asked to pay \"just shipping\" by card.",
+      "The page address is not the brand's.",
+      "A very short deadline."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Kontrolloni ofertën në faqen zyrtare ose aplikacionin e markës, jo përmes linkut.",
+      "Mos shkruani të dhënat e kartës; nëse i keni shkruar, telefononi bankën.",
+      "Raportoni reklamën në rrjetin social dhe faqen te AKSK.",
+      "Fshijeni mesazhin."
+    ],
+    "en": [
+      "Check the offer on the brand's official site or app, not through the link.",
+      "Don't type card details; if you did, call your bank.",
+      "Report the ad on the social network and the site to AKSK.",
+      "Delete the message."
+    ]
+  },
+  "reportTo": [
+    "al/your-bank",
+    "al/aksk",
+    "al/krimi-kibernetik"
+  ],
+  "sources": [
+    {
+      "title": "Mashtrues pas telefonit po vjedhin llogaritë e qytetarëve, Shoqata e Bankave: Kujdes, mos jepni të dhënat",
+      "publisher": "Shqiptarja.com",
+      "url": "https://shqiptarja.com/lajm/mashtrues-pas-telefonit-po-vjedhin-llogarite-e-qytetareve-shoqata-e-bankave-kujdes-mos-jepni-te-dhenat",
+      "date": "2025-01-16"
+    },
+    {
+      "title": "Disinformation Report: Albania in 2025",
+      "publisher": "SEE Check (Faktoje)",
+      "url": "https://seecheck.org/?p=12479",
+      "date": "2026-03-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

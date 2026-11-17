@@ -1,0 +1,135 @@
+{
+  "id": "mk/celebrity-fake-interview-investment",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "mk": "Спонзорирана објава на Фејсбук или Инстаграм со лажно „интервју“ на позната личност",
+    "en": "A sponsored Facebook or Instagram post with a fake \"interview\" of a well-known person"
+  },
+  "name": {
+    "mk": "Лажно интервју со позната личност: „тајната апликација“ за брза заработка од крипто",
+    "en": "Fake celebrity interview: the \"secret app\" for fast crypto earnings"
+  },
+  "how": {
+    "mk": "На социјалните мрежи гледате објава со лого на позната телевизија и фотографија или видео од министер, новинар или водител, со наслов дека интервјуто „е прекинато“ или е „последно“. Линкот води до лажна вест каде личноста наводно открива платформа за тргување со криптовалути, од која со влог од околу 15.000 денари може да се збогатите. По регистрацијата ве повикува „финансиски советник“ од странски број и ве води да уплаќате сè повеќе.",
+    "en": "On social media you see a post with a well-known TV station's logo and a photo or video of a minister, journalist or presenter, with a headline saying the interview was \"cut off\" or is their \"last\". The link goes to a fake news article where the person supposedly reveals a crypto trading platform that can make you rich from a deposit of about 15,000 denars. After you register, a \"financial adviser\" calls from a foreign number and leads you to pay more and more."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Објава со позната личност и лого на ТВ: „интервјуто е прекинато“.",
+        "en": "A post with a famous person and a TV logo: \"the interview was cut off\"."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Лажна вест со платформа што „гарантира“ богатство.",
+        "en": "A fake news article with a platform that \"guarantees\" wealth."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "mk": "Почетен влог од околу 15.000 денари преку линк.",
+        "en": "A starting deposit of about 15,000 denars through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mk": "„Советник“ од странски број бара уште уплати или пристап до телефонот.",
+        "en": "An \"adviser\" from a foreign number asks for more deposits or access to your phone."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "СКАНДАЛ ВО СТУДИО: Познатиот водител откри како заработува по 300.000 денари месечно, но емисијата беше прекината! Платформата е сè уште отворена за граѓаните на Македонија, потребен е само почетен влог. Прочитајте пред да ја избришат: [линк]",
+        "en": "STUDIO SCANDAL: the well-known presenter revealed how he earns 300,000 denars a month, but the show was cut off! The platform is still open to people in Macedonia; only a starting deposit is needed. Read before they delete it: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "лажно интервју позната личност крипто",
+      "министерот открива апликација за заработка",
+      "реклама на фејсбук прекинато интервју",
+      "вложи 15000 денари стани богат",
+      "советник ме вика од странски број инвестиција",
+      "водител реклама платформа криптовалути"
+    ],
+    "en": [
+      "fake celebrity interview crypto",
+      "minister reveals money making app",
+      "facebook ad interview was cut off",
+      "invest small deposit get rich",
+      "adviser calls from foreign number investment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "mk": [
+      "Познати личности не рекламираат „тајни“ апликации за богатење.",
+      "Лого на телевизија, а линкот води на непозната страница.",
+      "Повик од странски број по оставање телефон на форма."
+    ],
+    "en": [
+      "Public figures don't promote \"secret\" apps to get rich.",
+      "A TV station's logo, but the link leads to an unknown site.",
+      "A call from a foreign number after leaving your phone number on a form."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не оставајте телефон и податоци на таква страница.",
+      "Не инсталирајте апликации за далечински пристап на барање на „советникот“.",
+      "Ако сте уплатиле, јавете се во банката и пријавете во МВР."
+    ],
+    "en": [
+      "Don't leave your number or details on such a page.",
+      "Don't install remote access apps when the \"adviser\" asks.",
+      "If you paid, call your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "mk/your-bank",
+    "mk/mvr-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Измамничка објава за вртоглава заработувачка промовирана со лажно интервју со Орхан Муртезани",
+      "publisher": "Вистиномер",
+      "url": "https://vistinomer.mk/izmamnichka-objava-za-vrtoglava-zarabotuvachka-promovirana-so-lazhno-intervju-so-orhan-murtezani/",
+      "date": "2025-07-07"
+    },
+    {
+      "title": "Измама: Измислено интервју со Минчев лови жртви на социјалните мрежи",
+      "publisher": "Вистиномер",
+      "url": "https://vistinomer.mk/izmama-izmisleno-intervju-so-minchev-lovi-zhrtvi-na-socijalnite-mrezhi/",
+      "date": "2025-06-20"
+    },
+    {
+      "title": "Наместо „крипто-богатство“ - испразнета сметка",
+      "publisher": "Радио Слободна Европа",
+      "url": "https://www.slobodnaevropa.mk/a/kripto-bogatstvoto-na-zaev-i-mizo/33033731.html",
+      "date": "2024-07-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

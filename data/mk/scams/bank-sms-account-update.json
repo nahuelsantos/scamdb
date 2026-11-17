@@ -1,0 +1,133 @@
+{
+  "id": "mk/bank-sms-account-update",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "mk": "СМС што се претставува како ваша банка (на пример НЛБ, Стопанска, Комерцијална, Халк)",
+    "en": "A text posing as your bank (for example NLB, Stopanska, Komercijalna, Halk)"
+  },
+  "name": {
+    "mk": "Лажна порака од банка: „ажурирајте ја сметката или ќе биде блокирана“",
+    "en": "Fake bank text: \"update your account or it will be blocked\""
+  },
+  "how": {
+    "mk": "Добивате СМС во име на вашата банка дека сметката или картичката ќе биде блокирана ако итно не ги ажурирате податоците, или дека треба да активирате нова услуга за мобилно плаќање. Линкот води до лажна страница што изгледа како е-банкарството, каде внесувате корисничко име, лозинка, број на картичка и кодот што ќе ви стигне. Со тие податоци измамниците влегуваат во сметката и ги префрлаат парите.",
+    "en": "You get a text in your bank's name saying your account or card will be blocked unless you urgently update your details, or that you must activate a new mobile payment service. The link goes to a fake page that looks like online banking, where you enter your username, password, card number and the code you then receive. With those details the scammers get into the account and move the money."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "СМС од „банката“ со закана за блокирана сметка или картичка.",
+        "en": "A text from \"the bank\" threatening a blocked account or card."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Итност: „ажурирајте денес“, „во рок од 24 часа“.",
+        "en": "Urgency: \"update today\", \"within 24 hours\"."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mk": "Линк до лажна страница за е-банкарство.",
+        "en": "A link to a fake online banking page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mk": "Се бараат лозинка, ПИН или кодот од СМС.",
+        "en": "It asks for a password, PIN or the code from a text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Почитуван клиенте, поради безбедносно ажурирање Вашата платежна картичка е привремено ограничена. За да избегнете трајно блокирање, потврдете ги податоците во рок од 24 часа: [линк]",
+        "en": "Dear customer, because of a security update your payment card is temporarily restricted. To avoid a permanent block, confirm your details within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "порака од банка картичката е блокирана",
+      "ажурирање на сметката преку линк",
+      "банка бара лозинка преку смс",
+      "сметката ќе биде блокирана смс",
+      "активирај мобилно плаќање линк банка",
+      "лажна страница е-банкарство"
+    ],
+    "en": [
+      "bank text card blocked",
+      "update your account link",
+      "bank sms asks for password",
+      "account will be blocked text",
+      "activate mobile payment link bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "mk": [
+      "Банките не бараат лозинка, ПИН или код преку СМС-линк.",
+      "Закана со блокирање за да реагирате веднаш.",
+      "Адресата на страницата не е официјалната адреса на банката."
+    ],
+    "en": [
+      "Banks don't ask for a password, PIN or code through a text link.",
+      "A threat of blocking so you act immediately.",
+      "The page address isn't the bank's official address."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не отворајте го линкот; влезете во апликацијата на банката сами.",
+      "Ако сте внеле податоци, веднаш јавете се на бројот од задната страна на картичката и сменете ја лозинката.",
+      "Пријавете ја пораката во МВР и во MKD-CIRT."
+    ],
+    "en": [
+      "Don't open the link; open your bank's app yourself.",
+      "If you entered details, call the number on the back of your card straight away and change your password.",
+      "Report the message to the police and to MKD-CIRT."
+    ]
+  },
+  "reportTo": [
+    "mk/your-bank",
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt"
+  ],
+  "sources": [
+    {
+      "title": "НЛБ БАНКА ПРЕДУПРЕДУВА НА НОВА ФИШИНГ-ИЗМАМА: Лажни СМС-пораки бараат „ажурирање на сметката“ и внесување лични податоци",
+      "publisher": "Радио Лидер",
+      "url": "https://lider.mk/nlb-banka-predupreduva-na-nova-fishing-izmama-lazhni-sms-poraki-baraat-azhurirane-na-smetkata-i-vnesuvane-lichni-podatotsi/",
+      "date": "2026-08-08"
+    },
+    {
+      "title": "НЛБ предупредува на лажни СМС пораки: Не кликајте на непознати линкови",
+      "publisher": "Скопје1.мк",
+      "url": "https://skopje1.mk/nlb-predupreduva-na-lazhni-sms-poraki-ne-klikajte-na-nepoznati-linkovi",
+      "date": "2026-08-14"
+    },
+    {
+      "title": "Внимавајте: Измамници се претставуваат како да се од Банка, за да ви извлечат пари",
+      "publisher": "Скопје1.мк",
+      "url": "https://skopje1.mk/vnimavajte-izmamnici-se-pretstavuvaat-kako-da-se-od-banka",
+      "date": "2026-04-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

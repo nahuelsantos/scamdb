@@ -1,0 +1,125 @@
+{
+  "id": "ba/lazni-email-fup-istraga",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "bs": "„Federalna uprava policije“, njen direktor ili „Odjel za borbu protiv računarskog kriminala“",
+    "en": "“Federal Police Administration” (FUP), its director or the “computer crime unit”"
+  },
+  "name": {
+    "bs": "Lažni e-mail FUP-a: „protiv vas se vodi istraga, odgovorite u 24 sata“",
+    "en": "Fake FUP email: “you are under investigation, reply within 24 hours”"
+  },
+  "how": {
+    "bs": "Stiže e-mail navodno od direktora FUP-a ili inspektora za računarski kriminal. Tvrdi da ste povezani s teškim krivičnim djelima, često protiv djece, i traži pisanu izjavu u roku od 24 sata, uz prijetnju hitnim sudskim postupkom. Cilj je da u strahu pošaljete lične i bankovne podatke ili novac. FUP građane tako ne kontaktira.",
+    "en": "An email arrives supposedly from the FUP director or computer-crime inspectors. It claims you are linked to serious crimes, often against children, and demands a written statement within 24 hours, threatening urgent court proceedings. The aim is that, frightened, you send personal and bank details or money. FUP doesn’t contact citizens this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "E-mail „FUP-a“ s pečatom i potpisom direktora.",
+        "en": "An email from “FUP” with a stamp and the director’s signature."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Optužba za teško krivično djelo i rok od 24 sata.",
+        "en": "An accusation of a serious crime and a 24-hour deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bs": "Prilog ili link koji treba otvoriti.",
+        "en": "An attachment or link to open."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bs": "Traže podatke ili uplatu da se postupak „zaustavi“.",
+        "en": "They ask for details or a payment to “stop” the case."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "Poštovani, Odjel za borbu protiv računarskog kriminala utvrdio je da je s vaše IP adrese pristupano nezakonitom sadržaju. Protiv vas je pokrenut postupak. Vaše očitovanje dostavite u roku od 24 sata u odgovoru na ovaj e-mail, u suprotnom predmet se proslijeđuje tužilaštvu. Prilog: [link]",
+        "en": "Dear Sir/Madam, the Computer Crime Unit has established that illegal content was accessed from your IP address. Proceedings have been opened against you. Submit your statement within 24 hours by replying to this email, otherwise the case will be forwarded to the prosecutor. Attachment: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "e-mail fup istraga protiv mene",
+      "mail od direktora policije odgovor u 24 sata",
+      "lažni policijski e-mail optužba",
+      "mail računarski kriminal traže izjavu",
+      "prijete sudom putem maila policija"
+    ],
+    "en": [
+      "email saying fup is investigating me",
+      "email from the police director reply within 24 hours",
+      "fake police email accusation",
+      "computer crime email asking for a statement",
+      "police email threatening court"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "bs": [
+      "Policija ne vodi postupke i ne traži izjave, novac ni bankovne podatke e-mailom.",
+      "Rok od 24 sata i teške optužbe služe da vas uplaše.",
+      "Stvarna adresa pošiljaoca nije službena adresa policije."
+    ],
+    "en": [
+      "The police don’t run cases or ask for statements, money or bank details by email.",
+      "A 24-hour deadline and serious accusations are meant to frighten you.",
+      "The sender’s real address isn’t an official police address."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Ne odgovarajte, ne otvarajte priloge ni linkove i ne plaćajte ništa.",
+      "Sačuvajte e-mail kao dokaz i prijavite ga policiji.",
+      "Ako ste poslali podatke ili novac, odmah javite policiji i banci."
+    ],
+    "en": [
+      "Don’t reply, don’t open attachments or links and don’t pay anything.",
+      "Keep the email as evidence and report it to the police.",
+      "If you sent details or money, tell the police and your bank at once."
+    ]
+  },
+  "reportTo": [
+    "ba/policija-122",
+    "ba/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Stigao vam je mail da ste pod istragom FUP-a? Riječ je o prevari, nikako ne odgovarajte",
+      "publisher": "Klix.ba (Federalna uprava policije)",
+      "url": "https://www.klix.ba/vijesti/bih/stigao-vam-je-mail-da-ste-pod-istragom-fup-a-rijec-je-o-prevari-nikako-ne-odgovarajte/261028241",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "FUP izdao hitno upozorenje građanima: \"Zlonamjerne kampanje ne jenjavaju\"",
+      "publisher": "Vijesti.ba (Federalna uprava policije)",
+      "url": "https://www.vijesti.ba/clanak/784821/fup-izdao-hitno-upozorenje-gradjanima-zlonamjerne-kampanje-ne-jenjavaju",
+      "date": "2026-11-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "al/e-albania-sms-gjobe",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sq": "\"e-Albania\" ose një institucion shtetëror, nga një numër i panjohur",
+    "en": "\"e-Albania\" or a state institution, from an unknown number"
+  },
+  "name": {
+    "sq": "SMS i rremë \"e-Albania\": gjobë e papaguar për automjetin",
+    "en": "Fake \"e-Albania\" text: unpaid vehicle fine"
+  },
+  "how": {
+    "sq": "Vjen një SMS që duket si njoftim zyrtar nga e-Albania: keni një gjobë të papaguar për automjetin (p.sh. për shpejtësi) dhe duhet ta paguani menjëherë që të shmangni kamatëvonesat. Linku çon në një kopje të platformës e-Albania që kërkon të dhënat personale, kredencialet dhe të dhënat e kartës. AKSK dhe Policia e Shtetit kanë njoftuar se këto mesazhe nuk kanë lidhje me e-Albania; AKSK ka kërkuar bllokimin e domeneve të përdorura.",
+    "en": "A text that looks like an official e-Albania notice says you have an unpaid vehicle fine (for example for speeding) and must pay it now to avoid penalties. The link leads to a copy of the e-Albania platform that asks for personal details, login credentials and card details. AKSK and the State Police have said these messages have nothing to do with e-Albania; AKSK has had the domains used blocked."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një SMS \"nga e-Albania\" thotë se keni një gjobë automjeti të papaguar.",
+        "en": "A text \"from e-Albania\" says you have an unpaid vehicle fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Duhet të paguani sot, përndryshe gjoba rritet.",
+        "en": "You must pay today or the fine goes up."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Linku hap një faqe që kopjon e-Albania, me adresë tjetër.",
+        "en": "The link opens a page copying e-Albania, at a different address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon fjalëkalimin e e-Albania dhe të dhënat e kartës.",
+        "en": "The page asks for your e-Albania password and card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "e-Albania: Automjeti juaj ka nje gjobe te papaguar per tejkalim shpejtesie. Shlyejeni brenda sotme per te shmangur dyfishimin e saj: [link]",
+        "en": "e-Albania: Your vehicle has an unpaid speeding fine. Settle it today to avoid it doubling: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "sms e-albania gjobë papaguar",
+      "gjobë shpejtësie mesazh link",
+      "gjobë automjeti sms pagesë",
+      "faqe false e-albania kartë",
+      "njoftim gjobe kamatëvonesë link"
+    ],
+    "en": [
+      "text from e-albania about unpaid fine",
+      "speeding fine message with link",
+      "vehicle fine payment text",
+      "fake e-albania page asked for card",
+      "fine will double if not paid today"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "e-Albania nuk dërgon linke pagese me SMS nga numra të panjohur.",
+      "Gjobat i shihni vetë duke hyrë në e-Albania, jo përmes një linku.",
+      "Kërcënimi me dyfishim ose kamatëvonesë është për t'ju nxituar.",
+      "Faqja kërkon të dhënat e plota të kartës."
+    ],
+    "en": [
+      "e-Albania does not send payment links by text from unknown numbers.",
+      "You check fines yourself by logging in to e-Albania, not through a link.",
+      "The threat of doubling or penalties is there to rush you.",
+      "The page asks for your full card details."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos klikoni linkun: hyni vetë në e-Albania duke shkruar adresën zyrtare për të parë nëse keni gjoba.",
+      "Nëse keni dhënë të dhënat e kartës, telefononi bankën; nëse keni dhënë fjalëkalimin, ndryshojeni.",
+      "Denoncojeni te Policia e Shtetit dhe te AKSK.",
+      "Fshijeni mesazhin."
+    ],
+    "en": [
+      "Do not click the link: log in to e-Albania yourself by typing the official address to see whether you have any fines.",
+      "If you gave card details, call your bank; if you gave your password, change it.",
+      "Report it to the State Police and to AKSK.",
+      "Delete the message."
+    ]
+  },
+  "reportTo": [
+    "al/your-bank",
+    "al/krimi-kibernetik",
+    "al/aksk"
+  ],
+  "sources": [
+    {
+      "title": "Mesazhe mashtruese në emër të e-Albania për gjoba/ Autoriteti për Sigurinë Kibernetike paralajmëron qytetarët",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/en/mesazhe-mashtruese-ne-emer-te-e-albania-per-gjoba-autoriteti-per-sigurine-kibernetike-paralajmeron-qytetaret-kujdes-marrin-te-dhenat/",
+      "date": "2026-06-07"
+    },
+    {
+      "title": "Zbulohet skema e re me mesazhet mashtruese! Policia lajmëron qytetarët: Paraqiten si njoftime zyrtare nga e-Albania!",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/zbulohet-skema-e-re-me-mesazhet-mashtruese-policia-lajmeron-qytetaret-paraqiten-si-njoftime-zyrtare-nga-e-albania-ja-si-te-ruheni/",
+      "date": "2026-04-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "al/policia-gjobe-faqe-e-rreme",
+    "al/posta-shqiptare-sms-pako"
+  ]
+}

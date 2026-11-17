@@ -1,0 +1,141 @@
+{
+  "id": "ba/olx-lazni-kupac-link",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "bs": "„Kupac“ sa OLX.ba koji se javlja na Viber ili WhatsApp",
+    "en": "A “buyer” from OLX.ba who gets in touch on Viber or WhatsApp"
+  },
+  "name": {
+    "bs": "Lažni kupac na OLX.ba: „već sam platio, preuzmite novac na linku“",
+    "en": "Fake OLX.ba buyer: “I’ve already paid, collect the money at the link”"
+  },
+  "how": {
+    "bs": "Prodajete nešto na OLX.ba i javlja se „kupac“, pa razgovor brzo prebacuje na Viber, WhatsApp ili SMS. Tvrdi da je artikal već platio preko kurira ili pošte i šalje link da „preuzmete uplatu“. Stranica liči na OLX.ba, BH Poštu ili kurirsku službu i traži sve podatke kartice, uključujući CVC. Umjesto da primite novac, prevaranti ga skinu sa vašeg računa.",
+    "en": "You are selling something on OLX.ba and a “buyer” gets in touch, then quickly moves the chat to Viber, WhatsApp or text. They say they’ve already paid through a courier or the post and send a link so you can “collect the payment”. The page looks like OLX.ba, BH Pošta or a courier and asks for all your card details, including the CVC. Instead of receiving money, the scammers take it from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "„Kupac“ odmah želi razgovarati van OLX-a, na Viberu ili WhatsAppu.",
+        "en": "The “buyer” immediately wants to talk off OLX, on Viber or WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Kaže da je već platio preko kurira i šalje link.",
+        "en": "They say they’ve already paid through a courier and send a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bs": "Stranica traži broj kartice, datum i CVC „za primanje novca“.",
+        "en": "The page asks for your card number, expiry date and CVC “to receive the money”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "bs": "Požuruje: kurir samo čeka vašu potvrdu.",
+        "en": "They hurry you: the courier is only waiting for your confirmation."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "Pozdrav, uzimam artikal bez pregovaranja. Platio sam odmah preko brze dostave, kurir dolazi po paket sutra. Da vam se novac prebaci na karticu, samo potvrdite podatke ovdje: [link]",
+        "en": "Hi, I’ll take the item without haggling. I paid right away through express delivery, the courier will collect the parcel tomorrow. To get the money moved to your card, just confirm your details here: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "olx kupac poslao link za uplatu",
+      "kupac kaže da je već platio preko kurira",
+      "traže cvc da primim novac",
+      "prodavao na olx skinuli mi novac",
+      "kupac prebacio razgovor na viber",
+      "lažna stranica brze pošte za preuzimanje novca"
+    ],
+    "en": [
+      "olx buyer sent a payment link",
+      "buyer says they already paid through a courier",
+      "asked for my cvc to receive money",
+      "sold on olx and money was taken from my account",
+      "buyer moved the chat to viber",
+      "fake delivery page to collect the money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "bs": [
+      "Za primanje novca dovoljan je broj računa (IBAN); CVC služi samo za plaćanje.",
+      "OLX.ba ne traži podatke kartice ni plaćanje unaprijed.",
+      "Prebacivanje razgovora sa OLX-a na Viber ili WhatsApp.",
+      "Stranica sa čudnim prijevodom ili mješavinom jezika."
+    ],
+    "en": [
+      "To receive money an account number (IBAN) is enough; the CVC is only for paying.",
+      "OLX.ba doesn’t ask for card details or payment in advance.",
+      "Moving the chat from OLX to Viber or WhatsApp.",
+      "A page with odd translation or mixed languages."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Ne otvarajte link i ne upisujte podatke kartice.",
+      "Dopisujte se samo kroz OLX poruke i prijavite korisnika OLX podršci.",
+      "Ako ste unijeli podatke, odmah zovite banku radi blokade i prijavite policiji (122)."
+    ],
+    "en": [
+      "Don’t open the link or enter card details.",
+      "Only chat through OLX messages and report the user to OLX support.",
+      "If you entered details, call your bank at once to block the card and report it to the police (122)."
+    ]
+  },
+  "reportTo": [
+    "ba/your-bank",
+    "ba/olx-podrska",
+    "ba/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "Drastičan porast online prevara u BiH, napadači koriste vještačku inteligenciju da vam otmu novac",
+      "publisher": "Klix.ba (Federalna uprava policije)",
+      "url": "https://www.klix.ba/vijesti/bih/drastican-porast-online-prevara-u-bih-napadaci-koriste-vjestacku-inteligenciju-da-vam-otmu-novac/260519074",
+      "date": "2026-05-19"
+    },
+    {
+      "title": "Kako ostati siguran prilikom kupoprodaje",
+      "publisher": "OLX.ba (PIK Blog)",
+      "url": "https://olx.ba/blog/kako-ostati-siguran-prilikom-kupoprodaje",
+      "date": "2026-01-09"
+    },
+    {
+      "title": "Prevara putem Vibera",
+      "publisher": "OLX.ba (PIK Blog)",
+      "url": "https://olx.ba/blog/prevara-putem-vibera",
+      "date": "2026-01-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ba/olx-lazna-podrska-viber"
+  ]
+}

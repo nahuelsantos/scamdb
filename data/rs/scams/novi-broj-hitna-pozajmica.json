@@ -1,0 +1,130 @@
+{
+  "id": "rs/novi-broj-hitna-pozajmica",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "sr": "Nepoznat broj („novi broj”) ili hakovan nalog nekoga koga poznajete",
+    "en": "An unknown number (“new number”) or the hijacked account of someone you know"
+  },
+  "name": {
+    "sr": "„Ćao mama, ovo je moj novi broj”: dete ili prijatelj traži hitnu uplatu",
+    "en": "“Hi mum, this is my new number”: a child or friend asks for an urgent payment"
+  },
+  "how": {
+    "sr": "Stiže poruka „Ćao mama/tata, pišem sa novog broja” ili poruka sa naloga prijatelja koji je preuzet. Ubrzo sledi molba: hitan račun, dopuna kredita ili pozajmica na tuđi račun, uz izgovor da ne mogu da pričaju telefonom (pokvaren mikrofon, loš signal). Novac odlazi prevarantima.",
+    "en": "A message arrives: “Hi mum/dad, I’m writing from a new number”, or one from a friend’s hijacked account. Soon comes the request: an urgent bill, a phone top-up or a loan paid into someone else’s account, with an excuse for not talking on the phone (broken microphone, bad signal). The money goes to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "„Novi broj” ili neobična poruka sa poznatog naloga.",
+        "en": "A “new number” or an odd message from a known account."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "sr": "Hitna uplata na tuđi račun ili dopuna.",
+        "en": "An urgent payment to someone else’s account or a top-up."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "Ne mogu da se jave, samo poruke.",
+        "en": "They can’t talk, only text."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "„Nemoj nikome da govoriš.”",
+        "en": "“Don’t tell anyone.”"
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Ćao tata, ja sam, telefon mi se pokvario pa pišem sa ovog broja dok ne sredim. Imam jedan račun koji moram danas da platim, a ne mogu da uđem u aplikaciju. Možeš li da uplatiš 46.000 dinara na račun drugarice? Sutra ti vraćam. Ne mogu sad da pričam, mikrofon ne radi.",
+        "en": "Hi dad, it’s me, my phone broke so I’m writing from this number until I sort it out. I have a bill I must pay today and I can’t get into my app. Can you pay 46,000 dinars into my friend’s account? I’ll pay you back tomorrow. I can’t talk now, the microphone doesn’t work."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "ćerka piše sa novog broja traži novac",
+      "poruka mama novi broj hitno uplati",
+      "drug na vajberu traži pozajmicu na tuđi račun",
+      "sin ne može da priča mikrofon traži pare",
+      "dopuna kredita za novi broj prevara",
+      "нови број мама порука новац"
+    ],
+    "en": [
+      "daughter texting from new number asking for money",
+      "message mum new number pay urgently",
+      "friend on viber asks for loan to someone else’s account",
+      "son can’t talk microphone broken asks for money",
+      "top up credit for new number scam"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "money_request",
+    "urgency",
+    "secrecy"
+  ],
+  "redFlags": {
+    "sr": [
+      "Nepoznat broj koji tvrdi da je vaše dete ili prijatelj.",
+      "Uplata na račun treće osobe.",
+      "Izbegavaju poziv ili video poziv.",
+      "Hitnost i ton koji ne liči na tu osobu."
+    ],
+    "en": [
+      "An unknown number claiming to be your child or friend.",
+      "Payment to a third person’s account.",
+      "They avoid a call or video call.",
+      "Urgency and a tone that doesn’t sound like them."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Pozovite osobu na stari broj koji već imate ili video pozivom.",
+      "Ne šaljite novac na osnovu jedne poruke, ni sa poznatog broja.",
+      "Ako ste uplatili, odmah zovite banku zbog moguće blokade transakcije."
+    ],
+    "en": [
+      "Call the person on the old number you already have, or by video call.",
+      "Don’t send money based on one message, even from a known number.",
+      "If you paid, call your bank at once about stopping the transaction."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/sajber-straza",
+    "rs/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "Masovna WhatsApp prevara u Srbiji, banke navode da su se mnogi „upecali”",
+      "publisher": "Biznis.rs",
+      "url": "https://biznis.rs/vesti/srbija/masovna-whatsapp-prevara-u-srbiji-banke-navode-da-su-se-mnogi-upecali/",
+      "date": "2026-02-13"
+    },
+    {
+      "title": "Smišing i razvoj SMS prevara: savremeni rizici i mere zaštite",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/files/shares/Smising%20i%20razvoj%20SMS%20prevara%20lat.pdf",
+      "date": "2025-12-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

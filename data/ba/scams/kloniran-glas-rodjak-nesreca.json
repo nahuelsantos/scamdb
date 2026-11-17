@@ -1,0 +1,130 @@
+{
+  "id": "ba/kloniran-glas-rodjak-nesreca",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "bs": "„Sin“, „kćerka“, „unuk“ ili šef, glasom kloniranim vještačkom inteligencijom",
+    "en": "A “son”, “daughter”, “grandchild” or boss, with a voice cloned by AI"
+  },
+  "name": {
+    "bs": "Kloniran glas rođaka: „imao sam nesreću, hitno trebam novac“",
+    "en": "A relative’s cloned voice: “I’ve had an accident, I need money urgently”"
+  },
+  "how": {
+    "bs": "Stiže poziv ili glasovna poruka od nekog bliskog, i glas zvuči potpuno isto. Kaže da je imao saobraćajnu nesreću, da je priveden u policiju ili da ima hitan posao, i traži novac odmah. Glas je napravljen vještačkom inteligencijom od snimaka sa društvenih mreža. Panika je cilj: da platite prije nego provjerite.",
+    "en": "A call or voice message arrives from someone close, and the voice sounds exactly the same. They say they had a car accident, were taken in by the police or have an urgent business deal, and ask for money at once. The voice was made with AI from recordings on social media. Panic is the goal: that you pay before you check."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "Poziv ili glasovna poruka „rođaka“ s nepoznatog broja.",
+        "en": "A call or voice message from a “relative” on an unknown number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "bs": "Nesreća ili hapšenje, novac treba odmah.",
+        "en": "An accident or arrest, the money is needed now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bs": "Uplata ili predaja gotovine nekome ko dođe.",
+        "en": "A transfer or cash handed to someone who comes by."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "bs": "Ne govori nikome, ne zovi nikoga.",
+        "en": "Don’t tell anyone, don’t call anyone."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "Mama, ja sam, slušaj me, nemam vremena. Udario sam čovjeka autom, policija me drži. Advokat kaže da treba 6.000 KM odmah da me puste. Ne zovi tatu, molim te, poslaću ti broj računa. Brzo, mama.",
+        "en": "Mum, it’s me, listen, I don’t have time. I hit a man with the car, the police are holding me. The lawyer says 6,000 KM is needed right away to get me out. Don’t call dad, please, I’ll send you the account number. Quick, mum."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "zvao sin glasom imao nesreću traži novac",
+      "glasovna poruka rođaka hitno treba novac",
+      "kloniran glas vještačka inteligencija prevara",
+      "unuk u policiji treba novac za advokata",
+      "glas isti kao kćerkin tražila uplatu"
+    ],
+    "en": [
+      "son called with his voice saying he had an accident and needs money",
+      "voice message from a relative needing money urgently",
+      "cloned voice ai scam",
+      "grandson held by police needs money for a lawyer",
+      "voice just like my daughter’s asked for a transfer"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "bs": [
+      "Hitna molba za novac, čak i ako glas zvuči poznato.",
+      "Novi broj i zabrana da zovete ostale.",
+      "Policija i bolnice ne traže novac telefonom."
+    ],
+    "en": [
+      "An urgent request for money, even if the voice sounds familiar.",
+      "A new number and being told not to call others.",
+      "Police and hospitals don’t ask for money by phone."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Prekinite i nazovite osobu na broj koji već imate, ili nekog iz porodice.",
+      "Dogovorite s porodicom tajnu riječ za hitne slučajeve.",
+      "Ako neko dolazi po novac, zovite policiju na 122."
+    ],
+    "en": [
+      "Hang up and call the person on the number you already have, or another family member.",
+      "Agree a secret word with your family for emergencies.",
+      "If someone is coming to collect money, call the police on 122."
+    ]
+  },
+  "reportTo": [
+    "ba/policija-122",
+    "ba/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Drastičan porast online prevara u BiH, napadači koriste vještačku inteligenciju da vam otmu novac",
+      "publisher": "Klix.ba (Federalna uprava policije)",
+      "url": "https://www.klix.ba/vijesti/bih/drastican-porast-online-prevara-u-bih-napadaci-koriste-vjestacku-inteligenciju-da-vam-otmu-novac/260519074",
+      "date": "2026-05-19"
+    },
+    {
+      "title": "FUP upozorava na drastičan rast prevara u BiH: Jedan klik može vas skupo koštati",
+      "publisher": "Depo Portal (FENA, Federalna uprava policije)",
+      "url": "https://depo.ba/clanak/284958/fup-upozorava-na-drastican-rast-prevara-u-bih-jedan-klik-moze-vas-skupo-kostati",
+      "date": "2026-05-19"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ba/viber-lazni-profil-trazi-novac"
+  ]
+}

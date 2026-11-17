@@ -1,0 +1,145 @@
+{
+  "id": "mk/relative-accident-call",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "mk": "Непознат повик: „полицаец“, „инспектор“, „адвокат“ или „лекар“, понекогаш прво глас што плаче како вашето дете или внук",
+    "en": "An unknown call: a \"police officer\", \"inspector\", \"lawyer\" or \"doctor\", sometimes first a crying voice like your child or grandchild"
+  },
+  "name": {
+    "mk": "Лажна сообраќајка или повреда: „вашиот внук прегазил дете, платете за да не оди во затвор“",
+    "en": "Fake accident or injury: \"your grandson hit a child, pay so he doesn't go to prison\""
+  },
+  "how": {
+    "mk": "Најчесто на повозрасни луѓе им се јавува некој што се претставува како полициски службеник, инспектор во странство, адвокат или лекар. Им кажува дека ќерката, синот или внукот предизвикал сообраќајна несреќа во која загинало или е повредено дете, или дека паднал во странство и му треба итна операција. За да не оди во затвор или за операцијата треба да се платат илјадници евра веднаш, во готово. Не смеете да прекинете ниту да се јавите некому, а по парите доаѓа „колега“ пред вашата куќа или ги оставате на договорено место.",
+    "en": "Usually an older person gets a call from someone posing as a police officer, an inspector abroad, a lawyer or a doctor. They say the daughter, son or grandchild caused a road accident in which a child died or was injured, or fell abroad and needs urgent surgery. To keep them out of prison, or for the surgery, thousands of euros must be paid at once, in cash. You mustn't hang up or call anyone, and a \"colleague\" comes to your house for the money or you leave it at an agreed place."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Повик: „вашиот внук предизвика сообраќајка, загина дете“ или „ќерка ви е повредена во странство“.",
+        "en": "A call: \"your grandson caused an accident, a child died\" or \"your daughter is injured abroad\"."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Итно треба пари за да не оди во затвор или за операција.",
+        "en": "Money is needed urgently to keep them out of prison or for surgery."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mk": "Не прекинувајте и не кажувајте никому.",
+        "en": "Don't hang up and don't tell anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "mk": "Готовина или накит, ги зема непознат човек пред куќата.",
+        "en": "Cash or jewellery, collected by a stranger outside your home."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Ало, госпоѓо, ве бара инспектор Стојанов. Вашиот внук возеше брзо и удри девојче на пешачки, детето е во болница во тешка состојба. Ако до попладне се соберат 15.000 евра, ќе се заврши без притвор. Не викајте никого, ќе ви дојде наш човек по парите, а јас ќе бидам на телефон цело време.",
+        "en": "Hello, madam, this is inspector Stojanov. Your grandson was speeding and hit a girl on a crossing; the child is in hospital in a serious condition. If 15,000 euros are gathered by the afternoon it will end without detention. Don't call anyone; our man will come for the money and I'll stay on the phone the whole time."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "се јави полицаец внукот направил сообраќајка",
+      "бараат пари за да не оди во затвор",
+      "ќерка ми прегазила дете бараат пари",
+      "лекар од странство бара пари за операција",
+      "човек дојде пред куќа да ги земе парите",
+      "инспектор бара евра за ќерка ми",
+      "внука ми плачеше на телефон бараат пари"
+    ],
+    "en": [
+      "police called saying grandson caused accident",
+      "money so he doesn't go to prison",
+      "doctor abroad asks money for surgery",
+      "man came to my door to collect the money",
+      "caller said my daughter hit a child"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "mk": [
+      "Полицијата никогаш не бара пари за да некој не оди во затвор.",
+      "Барање готовина да се даде на непознат човек пред куќата.",
+      "Притисок да не го прекинете разговорот и да не се јавите на семејството."
+    ],
+    "en": [
+      "Police never ask for money to keep someone out of prison.",
+      "A demand to hand cash to a stranger outside your home.",
+      "Pressure not to hang up or call your family."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Прекинете и сами јавете се на детето или внукот на бројот што го знаете.",
+      "Јавете се на 192 или 112; не давајте пари никому.",
+      "Предупредете ги повозрасните роднини и соседи за оваа измама."
+    ],
+    "en": [
+      "Hang up and call your child or grandchild yourself on the number you know.",
+      "Call 192 or 112; don't hand money to anyone.",
+      "Warn older relatives and neighbours about this scam."
+    ]
+  },
+  "reportTo": [
+    "mk/police-112-192",
+    "mk/your-bank"
+  ],
+  "story": {
+    "mk": "Во декември 2025 година 82-годишна жена од Скопје пријавила дека ѝ се јавил „полициски службеник“ и ѝ рекол дека нејзината внука предизвикала сообраќајна несреќа во која починало дете. Таа излегла на улица и му дала околу 170.000 денари на непознат маж, а подоцна сфатила дека внуката не учествувала во никаква несреќа.",
+    "en": "In December 2025 an 82-year-old woman from Skopje reported that a \"police officer\" called and told her that her granddaughter had caused a road accident in which a child died. She went out to the street and handed about 170,000 denars to an unknown man, and later realised her granddaughter had not been in any accident."
+  },
+  "sources": [
+    {
+      "title": "Лишен од слобода скопјанец во Крива Паланка, се обидел да измами повозрасна жена за сума од 35.000 евра, следува пријава",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/lisen-od-sloboda-skopjanec-vo-kriva-palanka-se-obidel-da-izmami-povozrasna-zen-za-suma-od-35000-evra-sleduva-prijava",
+      "date": "2026-06-25"
+    },
+    {
+      "title": "Расчистен случај со лажна сообраќајка, лишен од слобода скопјанец, одреден му е притвор",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/rascisten-slucaj-so-lazna-soobrakjajka-lisen-od-sloboda-skopjanec-odreden-mu-e-pritvor",
+      "date": "2026-03-17"
+    },
+    {
+      "title": "Уште една измама со лажна сообраќајка, 82-годишна скопјанка измамена за 170.000 денари",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/uste-edna-izmama-so-lazna-soobrakjajka-82-godisna-skopjanka-izmamena-za-170000-denari",
+      "date": "2025-12-07"
+    },
+    {
+      "title": "Со измами за лажни сообраќајки изнудуваат илјадници евра",
+      "publisher": "Радио Слободна Европа",
+      "url": "https://www.slobodnaevropa.mk/a/izmama-soobrakajka-zrtva-policija-/33312681.html",
+      "date": "2025-02-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

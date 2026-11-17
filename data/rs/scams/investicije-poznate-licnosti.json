@@ -1,0 +1,133 @@
+{
+  "id": "rs/investicije-poznate-licnosti",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "sr": "Sponzorisana reklama ili lažni portal sa poznatom ličnošću, zatim „savetnik” telefonom",
+    "en": "A sponsored ad or fake news site with a celebrity, then an “adviser” on the phone"
+  },
+  "name": {
+    "sr": "Lažna investicija koju „preporučuje” političar, novinar ili poznata ličnost",
+    "en": "Fake investment “endorsed” by a politician, journalist or celebrity"
+  },
+  "how": {
+    "sr": "Na društvenim mrežama ili u lažnom članku koji liči na poznati portal, poznati političar ili novinar „otkriva” platformu za sigurnu i brzu zaradu, ponekad u dipfejk videu. Ostavite broj telefona, javlja se „menadžer naloga”, traži prvu uplatu i pokazuje lažnu zaradu na ekranu. Zatim traži sve veće uplate, „porez” ili „proviziju” za isplatu. Novac se ne vraća.",
+    "en": "On social media or in a fake article that looks like a well-known news site, a famous politician or journalist “reveals” a platform for safe, quick profits, sometimes in a deepfake video. You leave your phone number, an “account manager” calls, asks for a first deposit and shows fake profits on screen. Then they ask for ever larger deposits, or “tax” or a “fee” to withdraw. The money never comes back."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Reklama ili video sa poznatom ličnošću koja preporučuje ulaganje.",
+        "en": "An ad or video with a celebrity recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Obećanje sigurne i velike zarade.",
+        "en": "A promise of safe, large returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Link ka platformi i formular za broj telefona.",
+        "en": "A link to a platform and a form for your phone number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Uplate, pa „porez” ili „provizija” za isplatu.",
+        "en": "Deposits, then “tax” or a “fee” to withdraw."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "„Savetnik” traži da instalirate aplikaciju za pomoć na daljinu.",
+        "en": "The “adviser” asks you to install a remote-help app."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "EKSKLUZIVNO: Poznati voditelj otkrio u emisiji kako od 250 evra pravi 1.500 nedeljno. Banke pokušavaju da ovo zabrane! Registrujte se danas, broj mesta za građane Srbije je ograničen: [link]",
+        "en": "EXCLUSIVE: Famous TV host revealed on air how he turns 250 euros into 1,500 a week. The banks are trying to ban this! Register today, places for Serbian citizens are limited: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "poznata ličnost reklama ulaganje platforma zarada",
+      "video političar preporučuje investiciju kripto",
+      "lažni članak novinar brza zarada 250 evra",
+      "menadžer naloga traži uplatu za isplatu profita",
+      "deepfake reklama investicija facebook",
+      "улагање реклама позната личност"
+    ],
+    "en": [
+      "celebrity ad investment platform profits",
+      "video of politician recommending crypto investment",
+      "fake article journalist quick money 250 euros",
+      "account manager wants payment to release profits",
+      "deepfake investment ad on facebook"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "sr": [
+      "Poznate ličnosti ne reklamiraju investicione platforme u sponzorisanim oglasima.",
+      "Garantovana visoka zarada bez rizika.",
+      "Za isplatu „dobiti” morate prvo da platite.",
+      "Zahtev da instalirate aplikaciju za daljinski pristup."
+    ],
+    "en": [
+      "Celebrities don’t advertise investment platforms in sponsored ads.",
+      "Guaranteed high returns with no risk.",
+      "You must pay first to withdraw your “profit”.",
+      "A request to install a remote-access app."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne ostavljajte broj i ne uplaćujte. Ne instalirajte aplikacije koje „savetnik” traži.",
+      "Ako ste uplatili, odmah javite banci i prijavite na Sajber straži i policiji.",
+      "Čuvajte se onih koji kasnije nude „povraćaj” izgubljenog novca uz naknadu."
+    ],
+    "en": [
+      "Don’t leave your number and don’t pay. Don’t install apps the “adviser” asks for.",
+      "If you paid, tell your bank at once and report it on Sajber straža and to the police.",
+      "Beware of anyone who later offers to “recover” your lost money for a fee."
+    ]
+  },
+  "reportTo": [
+    "rs/sajber-straza",
+    "rs/your-bank",
+    "rs/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "MUP upozorava na internet prevare: Zloupotrebljavaju se javne ličnosti kao promoteri lažnih investicija",
+      "publisher": "021.rs",
+      "url": "https://www.021.rs/info/srbija/433777/mup-upozorava-na-internet-prevare-zloupotrebljavaju-se-javne-licnosti-kao-promoteri-laznih-investicija",
+      "date": "2026-01-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

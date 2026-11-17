@@ -1,0 +1,138 @@
+{
+  "id": "rs/sms-banka-nalog-blokiran",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sr": "Ime vaše banke kao pošiljalac SMS-a ili mejla",
+    "en": "Your bank’s name as the text or email sender"
+  },
+  "name": {
+    "sr": "Lažna poruka banke: nalog ili kartica blokirani, ažurirajte podatke preko linka",
+    "en": "Fake bank message: account or card blocked, update your details through a link"
+  },
+  "how": {
+    "sr": "SMS ili mejl sa imenom vaše banke javlja da je nalog privremeno blokiran ili suspendovan, da je banka „unapredila bezbednost” ili da hitno morate da ažurirate podatke kartice i računa. Link vodi na lažnu stranicu za prijavu u e-bankarstvo, a prilog može da instalira zlonamerni program. Banke nikada ne traže potvrdu naloga ili podatke kartice preko poruke i ne prete blokadom.",
+    "en": "A text or email with your bank’s name says your account is temporarily blocked or suspended, that the bank has “improved security”, or that you must urgently update your card and account details. The link opens a fake e-banking login page and an attachment can install malware. Banks never ask you to confirm your account or card details by message and don’t threaten to block you."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka sa imenom banke kao pošiljaocem.",
+        "en": "A message with the bank’s name as sender."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Nalog blokiran, hitno ažurirajte.",
+        "en": "Account blocked, update urgently."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Link ka stranici za prijavu u e-bankarstvo.",
+        "en": "A link to an e-banking login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Traže korisničko ime, lozinku ili kod.",
+        "en": "They ask for your username, password or code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Banka: Zbog neazuriranih podataka pristup mobilnom bankarstvu je privremeno ogranicen. Kako biste izbegli trajnu blokadu, potvrdite identitet danas: [link]",
+        "en": "Bank: Because your details are out of date, access to mobile banking has been temporarily restricted. To avoid a permanent block, confirm your identity today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "sms banka nalog privremeno blokiran link",
+      "mejl banka ažurirajte podatke kartice hitno",
+      "poruka banke potvrdite identitet e-bankarstvo",
+      "mobilno bankarstvo ograničeno sms link",
+      "banka preti blokadom računa poruka",
+      "банка порука налог блокиран",
+      "aplikacija banke deaktivirana bezbednosna provera prijava",
+      "mbanking pristup suspendovan prijavite se ponovo"
+    ],
+    "en": [
+      "bank text account temporarily blocked link",
+      "bank email update card details urgently",
+      "bank message confirm identity online banking",
+      "mobile banking restricted text link",
+      "bank threatens to block account message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sr": [
+      "Banka ne traži ažuriranje podataka ni potvrdu naloga preko SMS-a ili mejla.",
+      "Pretnja blokadom ako odmah ne reagujete.",
+      "Link ili prilog u poruci „banke”.",
+      "Adresa sajta koja nije zvanična adresa banke."
+    ],
+    "en": [
+      "Banks don’t ask you to update details or confirm your account by text or email.",
+      "A threat of blocking if you don’t act at once.",
+      "A link or attachment in a “bank” message.",
+      "A website address that isn’t the bank’s official one."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link ni prilog. Uđite u aplikaciju banke sami.",
+      "Ako ste upisali podatke, odmah zovite banku sa broja sa poleđine kartice i blokirajte pristup.",
+      "Poruku prijavite CERT-u."
+    ],
+    "en": [
+      "Don’t open the link or attachment. Open your bank’s app yourself.",
+      "If you entered your details, call the bank on the number on the back of your card at once and block access.",
+      "Report the message to CERT."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/cert-prijava",
+    "rs/sajber-straza"
+  ],
+  "sources": [
+    {
+      "title": "Smišing i razvoj SMS prevara: savremeni rizici i mere zaštite",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/files/shares/Smising%20i%20razvoj%20SMS%20prevara%20lat.pdf",
+      "date": "2025-12-29"
+    },
+    {
+      "title": "Upozorenje na prevaru: Građani da ne odgovaraju na poruke „svojih banaka”",
+      "publisher": "N1",
+      "url": "https://n1info.rs/biznis/upozorenje-na-prevaru-gradjani-da-ne-odgovaraju-na-poruke-svojih-banaka/",
+      "date": "2024-06-17"
+    },
+    {
+      "title": "Nova fišing kampanja usmerena na klijente banaka u Republici Srbiji",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/en/obavestenje/1282-Nova-fi%C5%A1ing-kampanja-usmerena-na-klijente-banaka-u-Republici-Srbiji.html",
+      "date": "2024-09-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

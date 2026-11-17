@@ -1,0 +1,120 @@
+{
+  "id": "me/whatsapp-glasanje-stipendija",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "sr": "Poznanik ili rođak iz imenika, sa već preuzetog WhatsApp naloga",
+    "en": "An acquaintance or relative from your contacts, on an already hijacked WhatsApp account"
+  },
+  "name": {
+    "sr": "„Glasaj za dijete prijatelja za stipendiju“: link koji krade WhatsApp nalog",
+    "en": "“Vote for a friend’s child for a scholarship”: a link that steals your WhatsApp account"
+  },
+  "how": {
+    "sr": "Poznata osoba vam piše na WhatsAppu i moli da glasate za dijete njenog prijatelja na takmičenju za stipendiju. Link vodi na lažnu stranicu koja za „glasanje“ traži broj telefona i kod koji vam stigne SMS-om ili u aplikaciji. Kad upišete kod, prevaranti preuzimaju vaš nalog i istu poruku šalju svim vašim kontaktima. Nalog te osobe je već bio preuzet na isti način.",
+    "en": "Someone you know writes to you on WhatsApp asking you to vote for their friend’s child in a scholarship contest. The link leads to a fake page that, to “vote”, asks for your phone number and the code you get by text or in the app. Once you enter the code, the scammers take over your account and send the same message to all your contacts. That person’s account was hijacked the same way."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka od poznate osobe: molba da glasate za dijete.",
+        "en": "A message from someone you know: please vote for a child."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Link ka stranici za „glasanje“.",
+        "en": "A link to a “voting” page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Za glas traže broj telefona i kod koji vam stigne.",
+        "en": "To vote they ask for your phone number and the code you receive."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Zdravo, izvini sto smaram 🙏 Cerka moje drugarice je u finalu takmicenja za stipendiju, mozes li da joj das glas? Treba samo par sekundi: [link] Hvala ti puno!",
+        "en": "Hi, sorry to bother you 🙏 My friend’s daughter is in the final of a scholarship contest, could you give her a vote? It only takes a few seconds: [link] Thanks a lot!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "glasaj za dijete za stipendiju link",
+      "drugarica traži glas na whatsappu",
+      "za glas traži kod iz sms-a",
+      "nakon glasanja izgubio whatsapp",
+      "poruka od poznanika da glasam na takmičenju"
+    ],
+    "en": [
+      "vote for a child for a scholarship link",
+      "friend asked me to vote on whatsapp",
+      "voting page asked for the sms code",
+      "lost my whatsapp after voting",
+      "acquaintance asked me to vote in a contest"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sr": [
+      "Za glasanje nikad ne treba verifikacioni kod.",
+      "Poruka od poznate osobe ne znači da je piše ta osoba: nalog može biti preuzet.",
+      "Iste riječi stižu svima iz imenika."
+    ],
+    "en": [
+      "Voting never needs a verification code.",
+      "A message from someone you know doesn’t mean they wrote it: the account may be hijacked.",
+      "The same words go to everyone in the contact list."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link. Provjerite sa tom osobom pozivom ili drugim kanalom.",
+      "Uključite verifikaciju u dva koraka u WhatsAppu.",
+      "Ako ste upisali kod, ponovo registrujte nalog i upozorite kontakte; ako ste izgubili novac, prijavite policiji."
+    ],
+    "en": [
+      "Don’t open the link. Check with that person by calling or another channel.",
+      "Turn on two-step verification in WhatsApp.",
+      "If you entered the code, re-register the account and warn your contacts; if you lost money, report it to the police."
+    ]
+  },
+  "reportTo": [
+    "me/policija-122",
+    "me/cirt"
+  ],
+  "sources": [
+    {
+      "title": "Policija upozorava na prevare: Ne otvarajte linkove koji vam stižu na WhatsApp",
+      "publisher": "RTCG",
+      "url": "https://rtcg.me/hronika/866348/policija-upozorava-na-prevare-ne-otvarajte-linkove-koji-vam-stizu-na-whatsapp-.html",
+      "date": "2026-07-21"
+    },
+    {
+      "title": "Ako dobijete ovu poruku - ne radite ništa od onoga što pošiljalac traži od vas",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/ako-dobijete-ovu-poruku-ne-radite-nista-od-onoga-sto-posiljalac-trazi-od-vas",
+      "date": "2026-07-21"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "me/viber-whatsapp-podrska-kod"
+  ]
+}

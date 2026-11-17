@@ -1,0 +1,137 @@
+{
+  "id": "rs/lazna-nesreca-clana-porodice",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "sr": "Nepoznat ili lažiran broj: „lekar”, „policajac” ili „vaše dete” u suzama",
+    "en": "An unknown or spoofed number: a “doctor”, a “police officer” or “your child” in tears"
+  },
+  "name": {
+    "sr": "Lažni poziv: član porodice je u nesreći, hitno treba novac ili zlato za lečenje",
+    "en": "Fake call: a relative has had an accident and money or gold is needed at once for treatment"
+  },
+  "how": {
+    "sr": "Zove vas neko ko se predstavlja kao lekar, policajac ili službeno lice, ponekad sa glasom koji liči na vaše dete ili unuka. Kaže da je član porodice doživeo saobraćajnu nesreću ili drugu nezgodu i da hitno treba platiti lečenje ili operaciju. Traži gotovinu, zlato ili druge vrednosti, koje dolazi da preuzme „kolega” ili kurir, ili uplatu odmah. Broj na ekranu može biti lažiran, a glas napravljen veštačkom inteligencijom. Igra se na strah, da ne stignete da proverite.",
+    "en": "Someone calls claiming to be a doctor, police officer or official, sometimes with a voice that sounds like your child or grandchild. They say a relative has had a traffic accident or another mishap and that treatment or surgery must be paid for at once. They want cash, gold or other valuables, picked up by a “colleague” or courier, or an immediate transfer. The number on screen can be spoofed and the voice made with AI. It plays on fear so you don’t have time to check."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poziv „lekara” ili „policije”: vaš bližnji je povređen.",
+        "en": "A call from a “doctor” or the “police”: your loved one is hurt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Operacija ili lečenje moraju odmah da se plate.",
+        "en": "Surgery or treatment must be paid for right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Traže gotovinu, zlato ili uplatu; po novac dolazi neko drugi.",
+        "en": "They want cash, gold or a transfer; someone else comes to collect."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "Ne prekidajte vezu i ne zovite nikoga drugog.",
+        "en": "Don’t hang up and don’t call anyone else."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Halo, gospođo, ovde dežurni hirurg iz Urgentnog centra. Vaša ćerka je doživela tešku saobraćajnu nesreću, sad je spremamo za salu. Ugradni materijal nije pokriven osiguranjem, treba platiti 7.000 evra pre zahvata. Imate li kod kuće novca ili zlata? Naš tehničar može da svrati za pola sata. Ostanite na vezi, molim vas.",
+        "en": "Hello, madam, this is the duty surgeon at the Emergency Centre. Your daughter has been in a serious traffic accident and we are preparing her for theatre. The implant material is not covered by insurance; 7,000 euros must be paid before the operation. Do you have any cash or gold at home? Our technician can come by in half an hour. Please stay on the line."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "zvao lekar sin nesreća treba novac za operaciju",
+      "unuk saobraćajna nesreća hitno plaćanje lečenja",
+      "policajac traži zlato da bi pomogao detetu",
+      "kurir dolazi po novac za bolnicu",
+      "glas kao moja ćerka plače traži pare",
+      "лажни лекар позив операција новац",
+      "унук у невољи полиција тражи злато",
+      "позив унук саобраћајна несрећа полиција готовина",
+      "lažni inspektor zove unuk napravio udes traži pare"
+    ],
+    "en": [
+      "doctor called son accident needs money for surgery",
+      "grandchild car crash urgent payment for treatment",
+      "police officer asks for gold to help my child",
+      "courier coming to collect money for the hospital",
+      "voice like my daughter crying asking for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "sr": [
+      "Bolnice i policija nikada ne traže gotovinu ili zlato telefonom i ne šalju nikoga po novac.",
+      "Pritisak da odmah platite i da ne prekidate vezu.",
+      "Broj i glas mogu biti lažirani.",
+      "Nepoznata osoba dolazi na vašu adresu po novac."
+    ],
+    "en": [
+      "Hospitals and police never ask for cash or gold over the phone and never send anyone to collect money.",
+      "Pressure to pay at once and to stay on the line.",
+      "The number and the voice can be faked.",
+      "A stranger coming to your address for money."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Prekinite vezu i pozovite člana porodice na broj koji već imate, ili zdravstvenu ustanovu i policiju.",
+      "Nikome ne predajte novac, zlato ni karticu.",
+      "Ako neko dolazi po novac, pozovite 112 ili 192."
+    ],
+    "en": [
+      "Hang up and call your relative on the number you already have, or the hospital and the police.",
+      "Don’t hand over cash, gold or a card to anyone.",
+      "If someone is coming for the money, call 112 or 192."
+    ]
+  },
+  "reportTo": [
+    "rs/emergency-112",
+    "rs/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "KRUŽI NOVA PREVARA: MUP uputio važan apel građanima Srbije",
+      "publisher": "Večernje novosti",
+      "url": "https://www.novosti.rs/drustvo/vesti/1639650/kruzi-nova-prevara-mup-uputio-vazan-apel-gradjanima-srbije",
+      "date": "2026-08-20"
+    },
+    {
+      "title": "MUP IZDAO HITNO UPOZORENJE GRAĐANIMA! Nova opasna prevara hara Srbijom",
+      "publisher": "Večernje novosti",
+      "url": "https://www.novosti.rs/drustvo/vesti/1636897/mup-izdao-hitno-upozorenje-gradjanima-nova-opasna-prevara-hara-srbijom",
+      "date": "2026-08-12"
+    },
+    {
+      "title": "Lažiraju broj i imitiraju glas naših najbližih! IT stručnjak za Kurir TV otkrio kako funkcioniše nova telefonska prevara",
+      "publisher": "Kurir",
+      "url": "https://biznis.kurir.rs/amp/10075213/nova-telefonska-prevara-hara-srbijom-kako-prevaranti-imituju-glasove",
+      "date": "2026-08-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

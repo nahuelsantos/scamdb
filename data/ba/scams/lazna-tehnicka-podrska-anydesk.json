@@ -1,0 +1,125 @@
+{
+  "id": "ba/lazna-tehnicka-podrska-anydesk",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "bs": "„Microsoftova tehnička podrška“ ili „istražitelj“",
+    "en": "“Microsoft technical support” or an “investigator”"
+  },
+  "name": {
+    "bs": "Lažna tehnička podrška: „instalirajte AnyDesk da riješimo problem“",
+    "en": "Fake tech support: “install AnyDesk so we can fix the problem”"
+  },
+  "how": {
+    "bs": "Zove osoba koja se predstavlja kao Microsoftova tehnička podrška ili kao istražitelj. Kaže da je računar zaražen, da je račun hakovan ili da se vodi istraga, i traži da instalirate AnyDesk ili TeamViewer. Kad dobije daljinski pristup, preuzima kontrolu nad računarom i internet bankarstvom.",
+    "en": "Someone calls posing as Microsoft technical support or as an investigator. They say your computer is infected, your account has been hacked or there is an investigation, and ask you to install AnyDesk or TeamViewer. Once they have remote access, they take control of your computer and online banking."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "Poziv „Microsofta“ ili „istražitelja“.",
+        "en": "A call from “Microsoft” or an “investigator”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Računar je zaražen ili je račun napadnut.",
+        "en": "Your computer is infected or your account is under attack."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bs": "Instalirajte AnyDesk ili TeamViewer.",
+        "en": "Install AnyDesk or TeamViewer."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "bs": "Prijavite se u banku dok su „spojeni“.",
+        "en": "Log in to your bank while they’re “connected”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "Hello, ovdje tehnička podrška Microsoft. Vaš računar šalje nam poruke o virusu i vaši podaci su u opasnosti. Molim vas, otvorite preglednik i preuzmite program AnyDesk, pa mi pročitajte broj koji se pojavi, da očistimo računar.",
+        "en": "Hello, this is Microsoft technical support. Your computer is sending us virus alerts and your data is at risk. Please open your browser and download the AnyDesk program, then read me the number that appears so we can clean your computer."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "zvali iz microsofta virus na računaru",
+      "traže da instaliram anydesk",
+      "tehnička podrška preuzela kontrolu nad računarom",
+      "teamviewer na zahtjev nepoznatog",
+      "lažni istražitelj traži daljinski pristup"
+    ],
+    "en": [
+      "microsoft called about a virus on my computer",
+      "asked me to install anydesk",
+      "tech support took control of my computer",
+      "teamviewer at a stranger’s request",
+      "fake investigator asking for remote access"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "bs": [
+      "Microsoft i policija ne zovu nenajavljeno zbog virusa.",
+      "Traženje da instalirate program za daljinski pristup.",
+      "Traže da se prijavite u banku dok su povezani."
+    ],
+    "en": [
+      "Microsoft and the police don’t cold-call about viruses.",
+      "Being asked to install a remote-access program.",
+      "Asking you to log in to your bank while they’re connected."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Prekinite poziv i ne instalirajte ništa.",
+      "Ako ste dali pristup, isključite računar s interneta, deinstalirajte program i zovite banku.",
+      "Prijavite slučaj policiji."
+    ],
+    "en": [
+      "Hang up and don’t install anything.",
+      "If you gave access, disconnect the computer from the internet, uninstall the program and call your bank.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ba/your-bank",
+    "ba/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "Drastičan porast online prevara u BiH, napadači koriste vještačku inteligenciju da vam otmu novac",
+      "publisher": "Klix.ba (Federalna uprava policije)",
+      "url": "https://www.klix.ba/vijesti/bih/drastican-porast-online-prevara-u-bih-napadaci-koriste-vjestacku-inteligenciju-da-vam-otmu-novac/260519074",
+      "date": "2026-05-19"
+    },
+    {
+      "title": "FUP upozorava na drastičan rast prevara u BiH: Jedan klik može vas skupo koštati",
+      "publisher": "Depo Portal (FENA, Federalna uprava policije)",
+      "url": "https://depo.ba/clanak/284958/fup-upozorava-na-drastican-rast-prevara-u-bih-jedan-klik-moze-vas-skupo-kostati",
+      "date": "2026-05-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

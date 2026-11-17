@@ -1,0 +1,125 @@
+{
+  "id": "me/lazna-online-prodavnica",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "sr": "Internet prodavnica reklamirana na Facebooku ili Instagramu",
+    "en": "An online shop advertised on Facebook or Instagram"
+  },
+  "name": {
+    "sr": "Lažna internet prodavnica: „-50 % samo danas“, a roba nikad ne stigne",
+    "en": "Fake online shop: “50% off today only”, and the goods never arrive"
+  },
+  "how": {
+    "sr": "Preko reklama na društvenim mrežama stižete na sajt sa jednim proizvodom ili cijelom prodavnicom po vrlo niskim cijenama, uz odbrojavanje i pritisak da kupite odmah. Platite karticom, ali roba ne stiže ili stigne nešto bezvrijedno, a sajt nestane. Neki sajtovi pri plaćanju kradu i podatke kartice, pa kasnije slijede nova skidanja novca.",
+    "en": "Through ads on social media you land on a site with a single product or a whole shop at very low prices, with a countdown and pressure to buy now. You pay by card, but the goods don’t arrive or something worthless does, and the site disappears. Some sites also steal card details at checkout, so new charges follow later."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Reklama sa velikim popustom i robom ispod realne cijene.",
+        "en": "An ad with a big discount and goods below the real price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Odbrojavanje i „još samo par komada“.",
+        "en": "A countdown and “only a few left”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Plaćanje karticom na nepoznatom sajtu.",
+        "en": "Payment by card on an unknown site."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "🔥 ZATVARANJE PRODAVNICE 🔥 Sve patike i jakne -70%! Akcija traje jos 2 sata, dostava na teritoriji Crne Gore besplatna. Narucite dok ima zaliha: [link]",
+        "en": "🔥 SHOP CLOSING DOWN 🔥 All trainers and jackets -70%! The sale lasts 2 more hours, free delivery across Montenegro. Order while stocks last: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "platio sam a roba nije stigla",
+      "sajt sa popustom 70 posto nestao",
+      "lažna internet prodavnica reklama na facebooku",
+      "akcija traje još dva sata link",
+      "kupio preko instagram oglasa prevara",
+      "nakon kupovine skinut novac sa kartice",
+      "rasprodaja originalni proizvodi jeftino",
+      "cijena manja od pola ograničene zalihe",
+      "plaćanje karticom na sajtu prodavnice"
+    ],
+    "en": [
+      "paid but the goods never arrived",
+      "site with 70 percent discount disappeared",
+      "fake online shop advertised on facebook",
+      "sale ends in two hours link",
+      "bought through an instagram ad scam",
+      "clearance sale original products cheap",
+      "price less than half limited stock"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Cijene daleko ispod tržišnih su mamac.",
+      "Odbrojavanje i loš jezik na sajtu su znak lažne prodavnice.",
+      "Nema adrese, PIB-a ni podataka o firmi."
+    ],
+    "en": [
+      "Prices far below market are bait.",
+      "A countdown and poor language on the site are signs of a fake shop.",
+      "There’s no address, tax number or company details."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Prije kupovine provjerite ko stoji iza sajta i potražite iskustva drugih kupaca.",
+      "Ako ste platili, odmah pozovite banku, blokirajte karticu i pitajte za povraćaj.",
+      "Sačuvajte potvrde i prijavite slučaj policiji."
+    ],
+    "en": [
+      "Before buying, check who runs the site and look for other buyers’ experiences.",
+      "If you paid, call your bank at once, block the card and ask about a refund.",
+      "Keep the receipts and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "me/your-bank",
+    "me/policija-122",
+    "me/cirt"
+  ],
+  "sources": [
+    {
+      "title": "Sve više žrtava online prevara u Crnoj Gori, stotine eura gubitka zbog pogrešnog klika",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/sve-vise-zrtava-online-prevara-u-crnoj-gori-stotine-eura-gubitka-zbog-pogresnog-klika",
+      "date": "2025-11-24"
+    },
+    {
+      "title": "Internet prevare uzimaju maha: Pogrešni klikovi građane koštali 300.000 eura",
+      "publisher": "Raskrinkavanje",
+      "url": "https://www.raskrinkavanje.me/istrazeno/internet-prevare-uzimaju-maha-pogresni-klikovi-gradane-kostali-300-000-eura/",
+      "date": "2025-11-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

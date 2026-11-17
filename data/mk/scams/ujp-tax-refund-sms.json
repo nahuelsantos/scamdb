@@ -1,0 +1,127 @@
+{
+  "id": "mk/ujp-tax-refund-sms",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "mk": "Непознат број или е-адреса што се претставува како Управа за јавни приходи (УЈП)",
+    "en": "An unknown number or email address posing as the Public Revenue Office (UJP)"
+  },
+  "name": {
+    "mk": "Лажен поврат од УЈП: „даночниот поврат е подготвен“ со линк",
+    "en": "Fake UJP refund: \"your tax refund is ready\" with a link"
+  },
+  "how": {
+    "mk": "Стигнува СМС во име на УЈП дека ви следува поврат на данок или ДДВ и дека парите ќе ги добиете откако преку линкот ќе ги потврдите банкарските податоци. Страницата личи на државна, но ги собира податоците од картичката и кодовите од банката. УЈП порачува информациите да се проверуваат само преку нејзината официјална страница и е-услуги.",
+    "en": "A text in the name of UJP says you're owed a tax or VAT refund and will get the money once you confirm your bank details through the link. The page looks official but collects your card details and bank codes. UJP says information should only be checked through its official website and e-services."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Неочекувана вест за поврат на данок или ДДВ.",
+        "en": "Unexpected news of a tax or VAT refund."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "mk": "Порака во име на УЈП од обичен број или чудна адреса.",
+        "en": "A message in UJP's name from an ordinary number or odd address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Линк за „потврда на банкарските податоци“.",
+        "en": "A link to \"confirm your bank details\"."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mk": "Се бараат картичка и кодот од СМС за да „се исплати“ повратот.",
+        "en": "It asks for your card and the text code to \"pay out\" the refund."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "УЈП: По пресметката на годишниот данок утврден е поврат од 4.380 ден. во Ваша корист. За исплата внесете ги податоците од платежната картичка до 30.11: [линк]",
+        "en": "UJP: after the annual tax calculation a refund of 4,380 denars in your favour was found. To receive it, enter your payment card details by 30.11: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "ујп поврат данок смс линк",
+      "даночниот поврат е подготвен",
+      "поврат ддв порака картичка",
+      "управа за јавни приходи бара податоци картичка",
+      "добив порака поврат пари ујп"
+    ],
+    "en": [
+      "tax refund text from revenue office",
+      "your tax refund is ready link",
+      "vat refund message card details",
+      "revenue office asks for card details",
+      "refund text from tax office"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "mk": [
+      "За поврат не треба да внесувате број на картичка преку линк.",
+      "УЈП не праќа линкови за исплата преку СМС.",
+      "Краток рок за „подигнување“ на повратот."
+    ],
+    "en": [
+      "A refund never needs your card number entered through a link.",
+      "UJP doesn't send payout links by text.",
+      "A short deadline to \"claim\" the refund."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не отворајте го линкот; проверете преку е-услугите на УЈП, во кои се најавувате сами.",
+      "Ако сте внеле податоци, јавете се веднаш во банката.",
+      "Пријавете ја пораката во МВР или MKD-CIRT."
+    ],
+    "en": [
+      "Don't open the link; check through UJP's e-services, logging in yourself.",
+      "If you entered details, call your bank straight away.",
+      "Report the message to the police or MKD-CIRT."
+    ]
+  },
+  "reportTo": [
+    "mk/your-bank",
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt"
+  ],
+  "sources": [
+    {
+      "title": "ДОКОЛКУ ЈА ДОБИЕТЕ ОВАА ПОРАКА, НЕ ГО ОТВОРАЈТЕ ЛИНКОТ: УЈП со предупредување за лажни СМС пораки",
+      "publisher": "Радио Лидер",
+      "url": "https://lider.mk/dokolku-ja-dobiete-ovaa-poraka-ne-go-otvorajte-linkot-ujp-so-predupreduvane-za-lazhni-sms-poraki/",
+      "date": "2026-08-26"
+    },
+    {
+      "title": "УЈП предупредува за лажни SMS пораки за „поврат на данок“ – не кликајте на линковите!",
+      "publisher": "Бизнис Инфо",
+      "url": "https://biznisinfo.mk/ujp-predupreduva-za-lazhni-sms-poraki-za-povrat-na-danok-ne-klikajte-na-linkovite/",
+      "date": "2026-08-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

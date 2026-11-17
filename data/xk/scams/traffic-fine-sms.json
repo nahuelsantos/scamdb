@@ -1,0 +1,140 @@
+{
+  "id": "xk/traffic-fine-sms",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sq": "“Policia e Kosovës” ose “Autoritetet e trafikut”",
+    "en": "“Kosovo Police” or “traffic authorities”"
+  },
+  "name": {
+    "sq": "SMS e rreme për gjobë trafiku me link pagese",
+    "en": "Fake traffic fine text with a payment link"
+  },
+  "how": {
+    "sq": "Një SMS në emër të Policisë së Kosovës ose të institucioneve thotë se keni një gjobë trafiku të papaguar, ndonjëherë për një rrugë të caktuar si autostrada, dhe ju kërcënon me masa shtesë nëse nuk paguani. Linku hap një faqe që i ngjan një faqeje shtetërore dhe kërkon të dhënat personale dhe të kartelës. Policia ka thënë disa herë gjatë vitit 2026 se nuk dërgon mesazhe të tilla me link. Gjobat e vërteta i shihni në e-Kosova.",
+    "en": "A text in the name of the Kosovo Police or other institutions says you have an unpaid traffic fine, sometimes for a specific road such as a motorway, and threatens further measures if you don’t pay. The link opens a page made to look like a government site that asks for your personal and card details. The police said several times in 2026 that they do not send such messages with links. Real fines can be checked on e-Kosova."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Vjen një SMS në emër të policisë ose “autoriteteve të trafikut”.",
+        "en": "A text arrives in the name of the police or the “traffic authorities”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Thotë se keni gjobë të papaguar dhe se do të ketë masa ligjore ose gjoba më të larta.",
+        "en": "It says you have an unpaid fine and that legal measures or higher fines will follow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkon të paguani përmes një linku që duket si faqe zyrtare.",
+        "en": "It asks you to pay through a link that looks like an official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon emrin, adresën dhe të dhënat e kartelës.",
+        "en": "The page asks for your name, address and card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Njoftim: Automjeti juaj ka një kundërvajtje të papaguar në trafik (shpejtësi e tepërt). Paguani 40€ deri sot në 23:59 për të shmangur dyfishimin e gjobës dhe pezullimin e patentë shoferit: [link]",
+        "en": "Notice: Your vehicle has an unpaid traffic offence (speeding). Pay €40 by 23:59 today to avoid the fine doubling and your driving licence being suspended: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "sms për gjobë trafiku me link",
+      "më erdhi mesazh se kam gjobë të papaguar",
+      "policia më kërkon të paguaj gjobën online",
+      "gjobë për tejkalim shpejtësie në autostradë",
+      "paguaj gjobën përmes linkut",
+      "kërcënim se do më merret patentë shoferi"
+    ],
+    "en": [
+      "text about a traffic fine with a link",
+      "got a message saying I have an unpaid fine",
+      "police asking me to pay the fine online",
+      "speeding fine on the motorway",
+      "pay the fine through the link",
+      "threat that my driving licence will be taken"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sq": [
+      "Policia nuk dërgon SMS me link për të paguar gjobat.",
+      "Afat shumë i shkurtër dhe kërcënim me dyfishim të gjobës ose me gjykatë.",
+      "Faqja nuk është faqe zyrtare, edhe pse përdor fjalë si “gov” ose “policia”."
+    ],
+    "en": [
+      "The police do not send texts with links to pay fines.",
+      "A very short deadline and threats of a doubled fine or court.",
+      "The page is not an official site, even if it uses words like “gov” or “police”."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos klikoni linkun dhe mos paguani. Kontrolloni gjobat vetë në e-Kosova.",
+      "Nëse keni dhënë të dhënat e kartelës, telefononi bankën që ta bllokojë.",
+      "Raportojeni në polici përmes aplikacionit “Lajmëro Policinë” ose në 192, pastaj fshijeni mesazhin."
+    ],
+    "en": [
+      "Don’t click the link and don’t pay. Check your fines yourself on e-Kosova.",
+      "If you entered card details, call your bank to block the card.",
+      "Report it to the police through the “Lajmëro Policinë” app or on 192, then delete the message."
+    ]
+  },
+  "reportTo": [
+    "xk/police",
+    "xk/your-bank",
+    "xk/kos-cert"
+  ],
+  "sources": [
+    {
+      "title": "KËTO MESAZHE NUK JANË ZYRTARE DHE JANË PJESË E TENTATIVAVE PËR MASHTRIM",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/keto-mesazhe-nuk-jane-zyrtare-dhe-jane-pjese-e-tentativave-per-mashtrim/",
+      "date": "2026-08-07"
+    },
+    {
+      "title": "Informacion zyrtar nga Policia e Kosovës",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/informacion-zyrtar-nga-policia-e-kosoves/",
+      "date": "2026-06-25"
+    },
+    {
+      "title": "False messages returned to Kosovo, police appeal for caution",
+      "publisher": "Periskopi",
+      "url": "https://periskopi.com/en/2026/6/false-messages-returned-kosovo-police-appeal-caution",
+      "date": "2026-06-22"
+    },
+    {
+      "title": "Kosovo Citizens Targeted by Fake Traffic Fine Messages",
+      "publisher": "Prishtina Insight",
+      "url": "https://prishtinainsight.com/?p=33412",
+      "date": "2026-01-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

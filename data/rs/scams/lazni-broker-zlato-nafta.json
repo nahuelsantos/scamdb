@@ -1,0 +1,132 @@
+{
+  "id": "rs/lazni-broker-zlato-nafta",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "sr": "Nepoznat broj: „finansijski asistent”, „lični broker” ili predstavnik „berze”",
+    "en": "An unknown number: a “financial assistant”, “personal broker” or “stock exchange” representative"
+  },
+  "name": {
+    "sr": "Lažni broker zove i nudi trgovanje zlatom, naftom ili kriptovalutama",
+    "en": "Fake broker calls offering gold, oil or crypto trading"
+  },
+  "how": {
+    "sr": "Zove vas „lični broker”, „asistent” ili navodni predstavnik Beogradske berze ili firme povezane sa njom i nudi trgovanje zlatom, naftom, akcijama ili kriptovalutama preko platforme. Ponekad sve počinje reklamom na mrežama u kojoj ostavite broj. Traži da uplatite novac na privatni račun ili račun treće osobe, da pošaljete fotografiju lične karte ili da otvorite link. Na platformi „rastete”, ali isplata nikada ne stiže.",
+    "en": "A “personal broker”, “assistant” or alleged representative of the Belgrade Stock Exchange or a firm linked to it calls and offers trading in gold, oil, shares or crypto through a platform. Sometimes it starts with a social media ad where you leave your number. They ask you to pay into a private or third-party account, to send a photo of your ID or to open a link. Your balance “grows” on the platform, but no withdrawal ever arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Neočekivan poziv „brokera” ili „berze”.",
+        "en": "An unexpected call from a “broker” or the “stock exchange”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Trgovanje zlatom ili naftom uz brzu zaradu.",
+        "en": "Trading gold or oil for quick profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Uplata na privatni račun ili račun „asistenta”.",
+        "en": "Payment to a private account or an “assistant’s” account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "Link za registraciju i slanje lične karte.",
+        "en": "A sign-up link and a request for your ID."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Dobar dan, Marko ovde, finansijski asistent iz naše kancelarije u Beogradu. Javljam se povodom vaše prijave za trgovanje zlatom. Ovog meseca klijenti su imali prinos od 18 odsto. Za aktivaciju naloga dovoljno je 300 evra, uplatu radite na račun našeg partnera, a ja vas vodim kroz sve. Pošaljite mi samo sliku lične karte na Viber.",
+        "en": "Good afternoon, this is Marko, a financial assistant from our Belgrade office. I’m calling about your sign-up for gold trading. This month clients earned 18 percent. 300 euros is enough to activate your account; you pay into our partner’s account and I guide you through everything. Just send me a photo of your ID on Viber."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "broker zove trgovanje zlatom nafta platforma",
+      "predstavnik beogradske berze nudi ulaganje",
+      "finansijski asistent traži uplatu na privatni račun",
+      "lični savetnik kripto trgovanje profit",
+      "traže sliku lične karte za otvaranje naloga",
+      "инвестициона кућа зове трговање нафтом златом",
+      "брокер позив почетни улог зарада посто",
+      "zove investiciona kuća posle prijave sa fejsbuka"
+    ],
+    "en": [
+      "broker calls about gold and oil trading platform",
+      "belgrade stock exchange representative offers investment",
+      "financial assistant wants payment to private account",
+      "personal adviser crypto trading profit",
+      "they want a photo of my id to open an account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "sr": [
+      "Berza ne nudi „platforme” ni „lične savetnike” i ne traži uplate za trgovanje.",
+      "Uplata na privatni račun ili račun treće osobe.",
+      "Obećan visok prinos bez rizika.",
+      "Traže fotografiju dokumenta na Viber ili WhatsApp."
+    ],
+    "en": [
+      "The stock exchange doesn’t offer “platforms” or “personal advisers” and doesn’t ask for trading payments.",
+      "Payment to a private or third-party account.",
+      "High returns promised with no risk.",
+      "They want a photo of your ID on Viber or WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Prekinite razgovor. Ne uplaćujte i ne šaljite dokumente.",
+      "Proverite firmu kod nadležnih institucija pre bilo kakvog ulaganja.",
+      "Ako ste uplatili ili poslali podatke, javite banci i prijavite na Sajber straži."
+    ],
+    "en": [
+      "End the call. Don’t pay and don’t send documents.",
+      "Check the firm with the competent authorities before investing anything.",
+      "If you paid or sent details, tell your bank and report it on Sajber straža."
+    ]
+  },
+  "reportTo": [
+    "rs/sajber-straza",
+    "rs/your-bank",
+    "rs/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "UPOZORENJE ZA SRBIJU! Pokušaji telefonskih i internet prevara, osobe se lažno predstavljaju",
+      "publisher": "Večernje novosti (Tanjug)",
+      "url": "https://www.novosti.rs/drustvo/vesti/1614677/upozorenje-srbiju-pokusaji-telefonskih-internet-prevara-osobe-lazno-predstavljaju",
+      "date": "2026-06-04"
+    },
+    {
+      "title": "Novi talas piramidalnih prevara preko platforme OKEGreen",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/en/obavestenje/1458-Novi-talas-piramidalnih-prevara-preko-platforme-OKEGreen.html",
+      "date": "2025-10-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

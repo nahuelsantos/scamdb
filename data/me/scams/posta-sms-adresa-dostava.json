@@ -1,0 +1,130 @@
+{
+  "id": "me/posta-sms-adresa-dostava",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "sr": "„Pošta Crne Gore“ ili kurirska služba, preko SMS-a ili Vibera",
+    "en": "“Pošta Crne Gore” (Montenegro Post) or a courier, by text or Viber"
+  },
+  "name": {
+    "sr": "Lažna poruka Pošte: „pošiljka ne može biti uručena, potvrdite adresu“",
+    "en": "Fake Post text: “your parcel can’t be delivered, confirm your address”"
+  },
+  "how": {
+    "sr": "Stiže SMS ili Viber poruka u ime Pošte Crne Gore da vaša pošiljka ne može biti uručena jer je adresa nepotpuna, ili da treba platiti malu naknadu za dostavu. Link vodi na lažnu stranicu gdje upisujete lične podatke i podatke kartice. Prevaranti zatim te podatke koriste za plaćanja sa vaše kartice. Pošta Crne Gore ne traži podatke na ovaj način.",
+    "en": "A text or Viber message arrives in the name of Pošta Crne Gore saying your parcel can’t be delivered because the address is incomplete, or that a small delivery fee has to be paid. The link leads to a fake page where you enter personal and card details. The scammers then use them to make payments with your card. Pošta Crne Gore doesn’t ask for details this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka „Pošte“ o pošiljci koju niste čekali, često sa stranog broja.",
+        "en": "A message from the “Post” about a parcel you weren’t expecting, often from a foreign number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Adresa je nepotpuna ili treba platiti malu naknadu.",
+        "en": "The address is incomplete or a small fee is due."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "Link za potvrdu adrese ili plaćanje.",
+        "en": "A link to confirm the address or pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Rok: pošiljka se vraća ako ne reagujete danas.",
+        "en": "A deadline: the parcel goes back if you don’t act today."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Posta CG: Vasa posiljka je zadrzana u sortirnom centru jer adresa nije potpuna. Molimo potvrdite podatke i platite 1,20 EUR za ponovnu dostavu u roku od 12 sati: [link]",
+        "en": "Posta CG: Your parcel is being held at the sorting centre because the address is incomplete. Please confirm your details and pay 1.20 EUR for redelivery within 12 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "poruka pošte pošiljka ne može biti uručena",
+      "potvrdite adresu za dostavu paketa",
+      "platiti malu naknadu za dostavu link",
+      "viber poruka pošta crne gore",
+      "paket zadržan nepotpuna adresa",
+      "sms o pošiljci koju nisam naručio"
+    ],
+    "en": [
+      "post office text parcel can’t be delivered",
+      "confirm address for parcel delivery",
+      "pay a small delivery fee through a link",
+      "viber message from montenegro post",
+      "parcel held because address incomplete"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "sr": [
+      "Pošta Crne Gore ne traži lične podatke ni podatke kartice preko linkova u porukama.",
+      "Poruka sa stranog broja u ime domaće pošte je znak prevare.",
+      "Mali iznos služi da upišete karticu; kasnije skidaju mnogo više."
+    ],
+    "en": [
+      "Pošta Crne Gore doesn’t ask for personal or card details through links in messages.",
+      "A message from a foreign number in the name of the local post is a sign of fraud.",
+      "The small amount is there to get you to enter your card; later they take much more."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link i ne odgovarajte. Blokirajte broj i obrišite poruku.",
+      "Pošiljku provjerite sami u Call centru Pošte Crne Gore.",
+      "Odmah se javite svojoj banci na broj sa kartice ili iz aplikacije i tražite blokadu kartice ako ste upisali njene podatke.",
+      "Lažnu poruku i link prijavite Nacionalnom CIRT-u, a ako ste izgubili novac, i policiji na 122."
+    ],
+    "en": [
+      "Don’t open the link or reply. Block the number and delete the message.",
+      "Check the parcel yourself with the Pošta Crne Gore call centre.",
+      "Call your bank straight away on the number on your card or in the app and ask for the card to be blocked if you entered its details.",
+      "Report the fake message and link to the National CIRT and, if you lost money, to the police on 122."
+    ]
+  },
+  "reportTo": [
+    "me/posta-crne-gore",
+    "me/your-bank",
+    "me/cirt"
+  ],
+  "sources": [
+    {
+      "title": "Policija upozorila na prevare na Vajberu: Pošiljaoci se predstavljaju kao crnogorska pošta ili banka",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/policija-upozorila-na-prevare-na-vajberu-posiljaoci-se-predstavljaju-kao-crnogorska-posta-ili-banka",
+      "date": "2025-12-23"
+    },
+    {
+      "title": "Upozorenje policije: Ne otvarajte poruke iz inostranstva koje se predstavljaju u ime Pošte",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/upozorenje-policije-ne-otvarajte-poruke-iz-inostranstva-koje-se-predstavljaju-ime-poste",
+      "date": "2024-04-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

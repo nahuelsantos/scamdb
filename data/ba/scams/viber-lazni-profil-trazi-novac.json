@@ -1,0 +1,130 @@
+{
+  "id": "ba/viber-lazni-profil-trazi-novac",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "bs": "Prijatelj, rođak ili poznanik, s lažnog ili preuzetog Viber ili Facebook profila",
+    "en": "A friend, relative or acquaintance, on a fake or hijacked Viber or Facebook profile"
+  },
+  "name": {
+    "bs": "Lažni profil poznanika na Viberu: „hitno mi treba novac“",
+    "en": "A friend’s fake Viber profile: “I need money urgently”"
+  },
+  "how": {
+    "bs": "Prevaranti uzmu slike i ime neke osobe sa društvenih mreža i naprave lažni Viber profil, ili preuzmu njen Facebook nalog. Zatim pišu njenim bliskim ljudima: hitan zdravstveni problem, problem s bankovnim računom, treba uplatiti novac ili kupiti bonove. Izbjegavaju poziv i požuruju vas.",
+    "en": "Scammers take a person’s photos and name from social media and create a fake Viber profile, or hijack their Facebook account. Then they write to that person’s close contacts: an urgent health problem, a problem with a bank account, money needs to be paid or vouchers bought. They avoid calls and hurry you."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "Poruka „poznanika“ s nepoznatog broja ili profila.",
+        "en": "A message from an “acquaintance” on an unknown number or profile."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "bs": "Hitno: bolnica, blokiran račun, nešto se mora platiti danas.",
+        "en": "Urgent: a hospital, a blocked account, something must be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bs": "Traži uplatu na račun ili kodove bonova.",
+        "en": "Asks for a transfer to an account or voucher codes."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "bs": "Ne može se javiti na poziv.",
+        "en": "Can’t take a call."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "Ćao, pišem ti s drugog broja, stari mi je telefon u servisu. Imam jedan problem, kartica mi je blokirana a moram danas platiti račun. Možeš li mi uplatiti 450 KM, vraćam ti sutra čim mi deblokiraju? Ne mogu sad pričati, poslaću ti broj računa.",
+        "en": "Hi, I’m writing from another number, my old phone is being repaired. I have a problem, my card is blocked and I must pay a bill today. Could you send me 450 KM, I’ll pay you back tomorrow as soon as they unblock it? I can’t talk now, I’ll send you the account number."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "poznanik na viberu traži hitno novac",
+      "lažni viber profil sa slikom prijatelja",
+      "piše s drugog broja treba pozajmica",
+      "traži da kupim bonove i pošaljem kod",
+      "neko se predstavlja kao rođak na viberu",
+      "hakovan facebook traži novac od prijatelja"
+    ],
+    "en": [
+      "acquaintance on viber asking for money urgently",
+      "fake viber profile with a friend’s photo",
+      "writing from another number needs a loan",
+      "asked me to buy vouchers and send the code",
+      "someone pretending to be a relative on viber",
+      "hacked facebook asking friends for money"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "bs": [
+      "Novi broj ili profil i odmah molba za novac.",
+      "Izbjegava razgovor telefonom ili video poziv.",
+      "Hitnost i iznos koji se traži danas.",
+      "Molba za bonove ili uplatu na tuđi račun."
+    ],
+    "en": [
+      "A new number or profile and an immediate request for money.",
+      "Avoids a phone or video call.",
+      "Urgency and an amount needed today.",
+      "A request for vouchers or a transfer to someone else’s account."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Ne plaćajte ništa dok osobu ne nazovete na broj koji već imate.",
+      "Ograničite ko vidi vaše slike i podatke na društvenim mrežama.",
+      "Prijavite policiji, uz broj s kojeg je poruka stigla i podatke o uplati."
+    ],
+    "en": [
+      "Pay nothing until you call the person on the number you already have.",
+      "Limit who can see your photos and details on social media.",
+      "Report it to the police with the number the message came from and any payment details."
+    ]
+  },
+  "reportTo": [
+    "ba/policija-122",
+    "ba/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "FUP upozorio građane na prevaru putem Vibera: \"Ako dobijete ovu poruku odmah zovite policiju\"",
+      "publisher": "Radio Sarajevo (Federalna uprava policije)",
+      "url": "https://radiosarajevo.ba/vijesti/bosna-i-hercegovina/fup-upozorio-gradjane-na-prevaru-putem-vibera/629879",
+      "date": "2026-03-18"
+    },
+    {
+      "title": "SMS prevare i dalje vrebaju građane u BiH: Ne unosite bankovne podatke i ne vjerujte čak ni \"prijateljima\"",
+      "publisher": "Klix.ba",
+      "url": "https://www.klix.ba/vijesti/bih/sms-prevare-i-dalje-vrebaju-gradane-u-bih-ne-unosite-bankovne-podatke-i-ne-vjerujte-cak-ni-prijateljima/260507095",
+      "date": "2026-05-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

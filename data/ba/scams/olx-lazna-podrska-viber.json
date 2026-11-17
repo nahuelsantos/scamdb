@@ -1,0 +1,123 @@
+{
+  "id": "ba/olx-lazna-podrska-viber",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "bs": "„OLX podrška“ ili „PIK korisnička podrška“ na Viberu",
+    "en": "“OLX support” or “PIK customer support” on Viber"
+  },
+  "name": {
+    "bs": "Lažna OLX podrška na Viberu",
+    "en": "Fake OLX support on Viber"
+  },
+  "how": {
+    "bs": "Na Viber vam piše neko ko se predstavlja kao korisnička podrška OLX.ba. Javlja problem sa vašim oglasom, nalogom ili uplatom kupca i traži da otvorite link, potvrdite karticu ili pošaljete podatke. Prava OLX podrška ne javlja se na Viber: kontaktira se samo telefonom ili kontakt formom.",
+    "en": "Someone writes to you on Viber claiming to be OLX.ba customer support. They report a problem with your listing, account or a buyer’s payment and ask you to open a link, confirm your card or send your details. Real OLX support doesn’t contact you on Viber: it is reached only by phone or the contact form."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "Viber poruka od „OLX podrške“ s nepoznatog broja.",
+        "en": "A Viber message from “OLX support” from an unknown number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Problem s oglasom ili „uplatom koja čeka“.",
+        "en": "A problem with your listing or a “pending payment”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bs": "Link za „verifikaciju“ ili potvrdu kartice.",
+        "en": "A link for “verification” or card confirmation."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bs": "Traže podatke kartice ili kod.",
+        "en": "They ask for card details or a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "OLX podrska: Kupac je uplatio iznos za vas artikal, ali isplata je zaustavljena jer vas profil nije verifikovan. Verifikujte karticu u roku od 2 sata kako sredstva ne bi bila vracena: [link]",
+        "en": "OLX support: A buyer has paid for your item, but the payout is on hold because your profile isn’t verified. Verify your card within 2 hours so the funds aren’t returned: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "olx podrška piše na viber",
+      "viber poruka verifikujte olx profil",
+      "lažna olx podrška traži karticu",
+      "isplata za oglas zaustavljena verifikacija",
+      "pik podrška viber link"
+    ],
+    "en": [
+      "olx support messaged me on viber",
+      "viber message to verify my olx profile",
+      "fake olx support asking for my card",
+      "payout for my listing on hold verification",
+      "pik support viber link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "bs": [
+      "OLX podrška ne piše na Viber.",
+      "Za registraciju i prodaju na OLX.ba ne trebaju podaci kartice.",
+      "Rok od par sati i prijetnja da će novac biti vraćen."
+    ],
+    "en": [
+      "OLX support doesn’t write on Viber.",
+      "You don’t need card details to register or sell on OLX.ba.",
+      "A deadline of a few hours and a threat that the money will be returned."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Ne odgovarajte i ne otvarajte link; provjerite broj s kojeg je poruka stigla.",
+      "Ako niste sigurni, javite se OLX podršci sami, telefonom ili kontakt formom.",
+      "Ako ste dali podatke kartice, odmah zovite banku i prijavite policiji (122)."
+    ],
+    "en": [
+      "Don’t reply or open the link; check the number the message came from.",
+      "If unsure, contact OLX support yourself, by phone or the contact form.",
+      "If you gave card details, call your bank at once and report it to the police (122)."
+    ]
+  },
+  "reportTo": [
+    "ba/olx-podrska",
+    "ba/your-bank",
+    "ba/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "Prevara putem Vibera",
+      "publisher": "OLX.ba (PIK Blog)",
+      "url": "https://olx.ba/blog/prevara-putem-vibera",
+      "date": "2026-01-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ba/olx-lazni-kupac-link"
+  ]
+}
