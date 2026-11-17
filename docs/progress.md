@@ -2,6 +2,25 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Source re-check of single-source entries
+
+**Done:** every entry resting on one source (273) plus five flagged multi-source entries were re-read page by
+page: does the page describe this scam, and show it targets people in this country, on the cited date?
+270 hold, 0 fail, 0 unverifiable, 6 generic (the scam is real but nothing ties it to the country).
+
+**Removed (generic):** rs/oglas-lazni-kupac-link (Croatian police cases only), mk/mamo-new-number (general AI
+voice-cloning article), tr/hello-mom-new-number (translated ESET explainer), gr/whatsapp-code-hijack (unnamed
+experts only), it/falso-supporto-tecnico (translated Malwarebytes post pointing to the US FTC). Their four
+labelled messages were replaced by new ones for existing entries.
+**Kept (borderline):** pt/romance-scam: RTP, Portugal's public broadcaster, says the scam is among the most
+lucrative in Portugal.
+**Fixed:** me/lazni-smjestaj-booking keeps only its Raskrinkavanje source (it quotes the Montenegrin police);
+ge/parcel-sms-link points to imedi.ge (the old domain redirects).
+
+**Learned:**
+- Research agents sometimes accept a local outlet's translated global explainer as a local source; the import
+  prompt should ask for a local authority, company or case, not just a local outlet.
+
 ## 2026-11-17: Europe wave 10 (Russia, Belarus, Georgia, Armenia, Azerbaijan)
 
 **Built:**
