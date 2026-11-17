@@ -1,0 +1,118 @@
+{
+  "id": "bg/electricity-invoice-phishing",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "bg": "„Електрохолд“ или друг доставчик на ток в имейл с прикачена „фактура“",
+    "en": "“Electrohold” or another electricity supplier in an email with an attached “invoice”"
+  },
+  "name": {
+    "bg": "Фалшива фактура за ток по имейл: прикачен файл или линк за плащане",
+    "en": "Fake electricity invoice by email: an attachment or a payment link"
+  },
+  "how": {
+    "bg": "Получавате имейл, уж от доставчика на ток, с нова фактура: прикачен файл или линк към „сайт за плащане“. Файлът може да е архив или програма, маскирана като PDF (например фактура.pdf.exe), която заразява устройството. Линкът води към фалшив сайт или ПОС терминал, който иска данни от карта и пароли. Имейли получават и хора, и фирми, които не са клиенти; адресът на подателя често се различава с една буква.",
+    "en": "You get an email, supposedly from your electricity supplier, with a new invoice: an attachment or a link to a “payment site”. The file may be an archive or a program disguised as a PDF (for example invoice.pdf.exe) that infects the device. The link leads to a fake site or card-payment page asking for card details and passwords. People and companies who aren't customers get the emails too; the sender's address often differs by one letter."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Имейл с „нова фактура за електроенергия“ в неочаквано време.",
+        "en": "An email with a “new electricity invoice” at an unexpected time."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Прикачен архив или файл с двойно разширение.",
+        "en": "An attached archive or a file with a double extension."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Линк към сайт за плащане, който не е официалният.",
+        "en": "A link to a payment site that isn't the official one."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Заплаха за спиране на тока или такса за забава.",
+        "en": "A threat of disconnection or a late fee."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Уважаеми клиенти, Вашата фактура за електроенергия за октомври е издадена. Сума за плащане: 96,34 EUR. При неплащане до 3 дни ще бъде начислена неустойка и подаден сигнал за прекъсване на захранването. Фактурата е в прикачения архив Faktura_10.zip.",
+        "en": "Dear customer, your electricity invoice for October has been issued. Amount due: 96.34 EUR. If not paid within 3 days a penalty will be charged and disconnection will be requested. The invoice is in the attached archive Faktura_10.zip."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "фалшива фактура за ток имейл",
+      "електрохолд имейл прикачен файл",
+      "фактура за електроенергия архив zip",
+      "линк за плащане на сметка за ток",
+      "спиране на тока ако не платите имейл"
+    ],
+    "en": [
+      "fake electricity bill email",
+      "electricity invoice attachment zip",
+      "power company email with payment link",
+      "disconnection threat email electricity",
+      "invoice pdf exe attachment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "bg": [
+      "Истинските фактури идват като PDF, от официалния адрес и около обичайната дата.",
+      "Файл .zip, .exe, .html или с двойно разширение е опасен.",
+      "Името на дружеството в подателя не гарантира, че писмото е истинско."
+    ],
+    "en": [
+      "Real invoices come as PDF, from the official address and around the usual date.",
+      "A .zip, .exe, .html or double-extension file is dangerous.",
+      "The company's name in the sender line doesn't guarantee the email is real."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не отваряйте прикачени файлове и линкове; проверете фактурата в официалния си профил при доставчика.",
+      "Ако сте въвели данни от карта, обадете се на банката да я блокира.",
+      "Ако сте отворили файла, сканирайте устройството и сменете паролите от друго устройство; докладвайте на CERT България."
+    ],
+    "en": [
+      "Don't open attachments or links; check the invoice in your official account with the supplier.",
+      "If you entered card details, call your bank to block it.",
+      "If you opened the file, scan the device and change passwords from another device; report it to CERT Bulgaria."
+    ]
+  },
+  "reportTo": [
+    "bg/cert-bulgaria",
+    "bg/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Разпространяват се фалшиви фактури от името на Електрохолд Продажби",
+      "publisher": "Електрохолд",
+      "url": "https://electrohold.bg/bg/mediya-centr-group/novini/razprostranyavat-se-falshivi-fakturi-ot-imeto-na-elektrohold-prodazhbi/",
+      "date": "2026-07-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

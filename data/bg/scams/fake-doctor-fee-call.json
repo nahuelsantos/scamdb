@@ -1,0 +1,114 @@
+{
+  "id": "bg/fake-doctor-fee-call",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "bg": "Мним личен лекар или детска градина, обаждане с подменен номер, който изглежда като на лекаря",
+    "en": "A fake family doctor or kindergarten, calling from a spoofed number that looks like the doctor's"
+  },
+  "name": {
+    "bg": "Мним личен лекар звъни: „неплатени такси за прегледи“, платете онлайн веднага",
+    "en": "Fake family doctor calls: “unpaid check-up fees”, pay online right away"
+  },
+  "how": {
+    "bg": "Обаждането изглежда, че идва от номера на личния ви лекар или на детето ви. Непознат глас казва, че имате неплатени такси за прегледи и трябва да преведете пари веднага. Знае имената и ЕГН на децата ви, което звучи достоверно. Ако откажете, заплашва, че ще трябва да си търсите друг лекар, или дори с вреда за детето. Данните вероятно са откраднати от медицински софтуер, а номерът е подменен.",
+    "en": "The call seems to come from your or your child's family doctor's number. An unknown voice says you have unpaid check-up fees and must transfer money immediately. They know your children's names and personal ID numbers, which makes it sound genuine. If you refuse they threaten that you'll have to find another doctor, or even harm to the child. The data was probably stolen from medical software and the number is spoofed."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Обаждане от номера на личния лекар, но гласът е непознат.",
+        "en": "A call from the family doctor's number, but the voice is unfamiliar."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Неплатени такси, които трябва да се платят онлайн сега.",
+        "en": "Unpaid fees that must be paid online now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bg": "Искат превод по сметка.",
+        "en": "They ask for a bank transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Добър ден, звъня от кабинета на д-р Петрова. По досието на дъщеря ви Мария има неплатени такси за два профилактични прегледа, общо 85 евро. Трябва да се преведат днес, иначе ще бъдете отписани от практиката. Ще ви изпратя сметката с SMS.",
+        "en": "Good afternoon, I'm calling from Dr Petrova's surgery. Your daughter Maria's record shows unpaid fees for two check-ups, 85 euros in total. They have to be paid today or you'll be removed from the practice. I'll text you the account."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "личният лекар звъни за неплатени такси",
+      "такси за прегледи плащане онлайн",
+      "обаждане от номера на педиатъра",
+      "знаеха егн на детето ми и искаха пари",
+      "ще ви отпишем от практиката ако не платите"
+    ],
+    "en": [
+      "family doctor called about unpaid fees",
+      "pay for check-ups online call",
+      "call from the pediatrician's number asking for money",
+      "they knew my child's id number and wanted payment",
+      "doctor's office threatened to remove us"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "bg": [
+      "Личните лекари нямат обявени банкови сметки за такси по телефона.",
+      "Номерът на дисплея може да е подменен; лични данни на децата не доказват, че обаждането е истинско.",
+      "Заплахи при отказ да платите веднага са знак за измама."
+    ],
+    "en": [
+      "Family doctors don't have bank accounts for fees announced over the phone.",
+      "The number on screen can be spoofed; your children's data doesn't prove the call is real.",
+      "Threats when you refuse to pay at once are a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Затворете и се обадете сами на лекаря на номера, който знаете.",
+      "Не превеждайте пари по сметка, получена по телефона или с SMS.",
+      "Подайте сигнал на 112 или в полицията, ако са ви заплашвали."
+    ],
+    "en": [
+      "Hang up and call the doctor yourself on the number you know.",
+      "Don't transfer money to an account given by phone or text.",
+      "Report it on 112 or to the police if you were threatened."
+    ]
+  },
+  "reportTo": [
+    "bg/emergency-112",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Нова телефонна измама: \"Лични лекари\" искат плащания на несъществуващи такси",
+      "publisher": "БНТ",
+      "url": "https://bntnews.bg/news/nova-telefonna-izmama-lichni-lekari-iskat-plashtaniya-na-nesashtestvuvashti-taksi-1398671news.html",
+      "date": "2026-06-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/relative-accident-call"
+  ]
+}

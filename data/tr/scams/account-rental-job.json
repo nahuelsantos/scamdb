@@ -1,0 +1,124 @@
+{
+  "id": "tr/account-rental-job",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "tr": "İş başvurusu yaptığınız ilanla ilgili WhatsApp’tan yazan bir “şirket yetkilisi”",
+    "en": "A “company representative” writing on WhatsApp about a job ad you applied to"
+  },
+  "name": {
+    "tr": "Hesap kiralama iş ilanı: “KDV kesilmesin diye müşteri ödemeleri senin hesabına gelsin”",
+    "en": "Account-rental job ad: “so no VAT is charged, customer payments will come into your account”"
+  },
+  "how": {
+    "tr": "İş ilanına başvuranlara WhatsApp’tan yüksek komisyon, günlük ödeme ve yol-yemek ücreti vaat eden mesajlar gelir. Asıl iş, şirket ödemelerinin “KDV ve gelir vergisi çıkmasın” diye kişisel banka hesabınıza alınması ve başka hesaplara aktarılmasıdır. Size gelen tutardan yüzde on gibi bir pay verileceği söylenir. Aslında hesabınız dolandırıcılık paralarının aklanmasında kullanılır ve hakkınızda ağır soruşturma açılabilir.",
+    "en": "Job applicants get WhatsApp messages promising high commission, daily pay and travel and meal allowances. The real job is to receive company payments into your personal bank account “so no VAT or income tax is due” and pass them on to other accounts. You are told you’ll keep a share, such as ten percent. In fact your account is used to launder fraud money and you can face a serious criminal investigation."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Başvurduğunuz iş için WhatsApp’tan yazılır, yüksek kazanç vaat edilir.",
+        "en": "You are contacted on WhatsApp about a job and promised high earnings."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tr": "Kişisel banka hesabınızın ödemeler için kullanılması istenir.",
+        "en": "You are asked to let your personal bank account receive payments."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tr": "Bahane: “Şirket hesabına gelirse KDV kesilir.”",
+        "en": "The excuse: “if it goes to the company account, VAT is charged”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Gelen parayı hemen başka hesaplara aktarmanız ve kimseye söylememeniz istenir.",
+        "en": "You must forward the money to other accounts at once and tell no one."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "tr": "Merhaba, başvurunuz için teşekkürler. Pozisyonumuz evden ödeme takip asistanlığı. Müşterilerimizin ödemeleri vergi çıkmaması için sizin hesabınıza gelecek, siz de bunu bizim belirttiğimiz hesaplara aktaracaksınız. Her işlemden yüzde 10 komisyon alırsınız, günlük ödeme yapıyoruz. Üzerinizde icra veya banka blokesi yoksa hemen başlayabilirsiniz.",
+        "en": "Hello, thanks for your application. The position is a payment-tracking assistant from home. So no tax arises, our customers’ payments will come into your account and you’ll forward them to accounts we specify. You get 10 percent commission on every transaction and we pay daily. If you have no enforcement file or bank block, you can start right away."
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "hesabını kiralama iş ilanı",
+      "kdv kesilmesin diye hesabına para gelecek",
+      "müşteri ödemeleri kişisel hesabına aktar",
+      "gelen paradan yüzde komisyon iş teklifi",
+      "iş başvurusu sonrası whatsapp ödeme asistanı",
+      "banka hesabını kullandırma dolandırıcılık",
+      "hesabıma gelen parayı başka hesaba aktar"
+    ],
+    "en": [
+      "job offer to receive payments in my account",
+      "they want to use my bank account to avoid vat",
+      "commission for forwarding money job",
+      "money mule job ad on whatsapp",
+      "account rental scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "impersonation",
+    "secrecy"
+  ],
+  "redFlags": {
+    "tr": [
+      "Gerçek bir şirket müşteri ödemelerini çalışanının kişisel hesabına almaz.",
+      "Vergi kaçırmak için hesap istenmesi kendi başına suçtur.",
+      "Hesabını başkasına kullandıran kişi dolandırıcılık soruşturmasıyla karşılaşabilir.",
+      "İcra veya bloke sorulması, temiz bir hesap arandığını gösterir."
+    ],
+    "en": [
+      "A real company never takes customer payments into an employee’s personal account.",
+      "Using your account to dodge tax is itself a crime.",
+      "People who let others use their account can face fraud investigations.",
+      "Asking about enforcement files or blocks shows they want a clean account."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Hesap bilgilerinizi, kartınızı veya internet bankacılığı şifrenizi kimseye vermeyin.",
+      "Hesabınıza tanımadığınız para geldiyse aktarmayın, hemen bankanızı arayın.",
+      "Teklifi polise veya savcılığa bildirin; mesajları saklayın."
+    ],
+    "en": [
+      "Never give anyone your account details, card or online banking password.",
+      "If unknown money arrives in your account, don’t forward it; call your bank at once.",
+      "Report the offer to the police or prosecutor; keep the messages."
+    ]
+  },
+  "reportTo": [
+    "tr/police-prosecutor",
+    "tr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "İş arayan yurttaşlara tuzak kuruyorlar, 'KDV kesilmesin' diyerek banka hesaplarını istiyorlar: İş ilanı değil, tuzak",
+      "publisher": "Cumhuriyet",
+      "url": "https://www.cumhuriyet.com.tr/turkiye/is-arayan-yurttaslara-tuzak-kuruyorlar-kdv-kesilmesin-diyerek-banka-hesaplarini-istiyorlar-is-ilani-degil-tuzak-2511969",
+      "date": "2026-06-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

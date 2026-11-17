@@ -1,0 +1,120 @@
+{
+  "id": "ua/dzvinok-politsiia-rodych-u-bidi",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "uk": "Дзвінок нібито від поліцейського, слідчого або від самого родича",
+    "en": "A call supposedly from a police officer, an investigator or the relative themselves"
+  },
+  "name": {
+    "uk": "«Ваш родич потрапив у ДТП»: гроші, щоб «вирішити питання»",
+    "en": "'Your relative caused an accident': money to 'sort it out'"
+  },
+  "how": {
+    "uk": "Телефонують люди, що називають себе поліцейськими, і кажуть, що близька людина спричинила ДТП, побилася чи скоїла інший злочин. Щоб уникнути кримінальної справи, пропонують «вирішити питання» грошима: переказати на рахунок або передати готівку кур’єру чи таксисту. Для довіри називають ім’я родича, адресу, назву відділку, і частина цих даних може бути правдивою. Іноді погрожують справою самій людині.",
+    "en": "Callers claiming to be police officers say a loved one caused a road accident, got into a fight or committed another crime. To avoid a criminal case they offer to 'sort it out' with money: a transfer to an account or cash handed to a courier or taxi driver. To gain trust they name the relative, the address and the police station, and some of this may be true. Sometimes they threaten the person they are calling with a case."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Ваш син потрапив у ДТП, з вами говорить слідчий.",
+        "en": "Your son was in an accident, this is the investigator speaking."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Справу можна закрити, якщо заплатити зараз.",
+        "en": "The case can be closed if you pay now."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "uk": "Не кладіть слухавку й нікому не дзвоніть.",
+        "en": "Don't hang up and don't call anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "uk": "За грошима приїде наш працівник.",
+        "en": "Our employee will come for the money."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "uk": "Галино Іванівно? Старший слідчий поліції. Ваш онук Денис щойно збив жінку на переході, вона в лікарні у важкому стані. Щоб його не взяли під варту, потрібно відшкодувати лікування, і тоді заяву заберуть. Пакуйте гроші, за пів години під’їде наш водій. Тільки нікому не телефонуйте, щоб не нашкодити онукові.",
+        "en": "Halyna Ivanivna? Senior police investigator. Your grandson Denys has just hit a woman at a crossing; she's in hospital in a serious condition. To keep him out of custody you need to pay for her treatment, and then the complaint will be withdrawn. Pack the money, our driver will be there in half an hour. Just don't call anyone, so you don't harm your grandson."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "подзвонили з поліції син потрапив у дтп",
+      "слідчий каже онук збив людину треба гроші",
+      "просять передати гроші таксисту щоб закрити справу",
+      "кажуть родича затримали і можна домовитись",
+      "не дають покласти слухавку і вимагають готівку"
+    ],
+    "en": [
+      "police called saying my son was in an accident",
+      "an investigator says my grandson hit someone and money is needed",
+      "they ask me to give money to a taxi driver to close the case",
+      "they say my relative was detained and it can be settled",
+      "they won't let me hang up and demand cash"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "keep_on_line",
+    "urgency",
+    "secrecy"
+  ],
+  "redFlags": {
+    "uk": [
+      "Поліція пропонує «вирішити» справу грошима.",
+      "Гроші треба передати кур’єру, таксисту чи незнайомцю.",
+      "Вам не дають завершити розмову чи перевірити."
+    ],
+    "en": [
+      "The police offer to 'settle' a case for money.",
+      "Money must be handed to a courier, taxi driver or stranger.",
+      "You are not allowed to end the call or check."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Покладіть слухавку й самі зателефонуйте родичу або іншим близьким.",
+      "Справжня поліція не бере грошей за закриття справи.",
+      "Повідомте про дзвінок за номером 102."
+    ],
+    "en": [
+      "Hang up and call your relative or other family yourself.",
+      "Real police never take money to close a case.",
+      "Report the call on 102."
+    ]
+  },
+  "reportTo": [
+    "ua/police",
+    "ua/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Родич у біді: у поліції попередили українців про підступну схему шахраїв",
+      "publisher": "Вікна-новини (vikna.tv)",
+      "url": "https://vikna.tv/dlia-tebe/bezpeka/shahrayi-telefonuyut-vid-imeni-politsiyi-yak-pratsyuye-shema/",
+      "date": "2026-10-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

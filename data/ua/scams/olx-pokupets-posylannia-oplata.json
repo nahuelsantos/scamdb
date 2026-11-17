@@ -1,0 +1,125 @@
+{
+  "id": "ua/olx-pokupets-posylannia-oplata",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "uk": "«Покупець» з OLX, який пише продавцю у Viber, Telegram чи WhatsApp",
+    "en": "An OLX 'buyer' who writes to the seller on Viber, Telegram or WhatsApp"
+  },
+  "name": {
+    "uk": "Фальшивий покупець з OLX: «я вже оплатив, отримайте гроші за посиланням»",
+    "en": "Fake OLX buyer: 'I've already paid, get the money through this link'"
+  },
+  "how": {
+    "uk": "Ви продаєте річ на OLX, і «покупець» пише вам у месенджер, а не в чат платформи. Він каже, що вже оплатив товар через «безпечну угоду» чи доставку, і надсилає посилання, щоб ви «отримали кошти». Сторінка підроблена під OLX чи банк і просить номер картки, CVV, баланс або код із SMS. Так шахраї списують гроші з картки або захоплюють ваш акаунт.",
+    "en": "You are selling something on OLX and a 'buyer' writes to you in a messenger rather than in the platform's chat. They say they have already paid through 'safe deal' or delivery and send a link so you can 'receive the money'. The page is a fake of OLX or a bank and asks for the card number, CVV, balance or an SMS code. That is how scammers take money from the card or seize your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Покупець просить перейти в месенджер.",
+        "en": "The buyer asks to move to a messenger."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Я вже оплатив, гроші чекають на вас.",
+        "en": "I've already paid, the money is waiting for you."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "uk": "Перейдіть за посиланням, щоб отримати оплату.",
+        "en": "Open the link to receive the payment."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "uk": "Введіть картку й код для зарахування.",
+        "en": "Enter your card and code to get credited."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "uk": "Вітаю, я щодо дитячого велосипеда з OLX. Беру без торгу, оплатив через OLX доставку, кур’єр забере сам. Вам лише треба підтвердити отримання коштів на свою картку тут: [посилання]. Напишіть, як зробите, бо замовлення скасується за годину.",
+        "en": "Hello, it's about the kid's bike on OLX. I'll take it without haggling, I've paid through OLX delivery and the courier will collect it. You just need to confirm receipt of the money to your card here: [link]. Let me know when you've done it, as the order cancels in an hour."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "покупець з олх надіслав посилання щоб отримати гроші",
+      "на олх пишуть у вайбер що вже оплатили",
+      "продаю на olx просять ввести картку для оплати",
+      "посилання на безпечну угоду не з сайту олх",
+      "покупець просить код з смс щоб підтвердити оплату"
+    ],
+    "en": [
+      "an olx buyer sent a link to receive the money",
+      "olx buyer writes on viber saying they already paid",
+      "selling on olx and they ask me to enter my card for payment",
+      "a safe deal link that is not from the olx site",
+      "the buyer asks for the sms code to confirm payment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "uk": [
+      "Покупець одразу кличе в Viber, Telegram чи WhatsApp.",
+      "Щоб отримати гроші, вас просять ввести дані картки чи код.",
+      "Адреса сторінки не olx.ua, хоч виглядає схоже."
+    ],
+    "en": [
+      "The buyer immediately pulls you into Viber, Telegram or WhatsApp.",
+      "To receive money you are asked to enter card details or a code.",
+      "The page address is not olx.ua, even if it looks similar."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Спілкуйтеся та приймайте оплату лише в чаті й застосунку OLX.",
+      "Щоб отримати переказ, достатньо номера картки: CVV, PIN і коди не потрібні.",
+      "Ввели дані? Заблокуйте картку в банку й повідомте кіберполіцію та підтримку OLX."
+    ],
+    "en": [
+      "Talk and take payment only in the OLX chat and app.",
+      "To receive a transfer only a card number is needed: no CVV, PIN or codes.",
+      "Entered details? Block the card with your bank and report it to the cyber police and OLX support."
+    ]
+  },
+  "reportTo": [
+    "ua/your-bank",
+    "ua/cyberpolice"
+  ],
+  "sources": [
+    {
+      "title": "У Rakuten Viber розповіли про нову шахрайську схему, де зловмисники прикидаються покупцями з OLX",
+      "publisher": "dev.ua",
+      "url": "https://dev.ua/news/novyi-skam-u-viber-1751272004",
+      "date": "2025-06-30"
+    },
+    {
+      "title": "Кіберполіція застерігає українців від шахрайств у популярному месенджері",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/kiberpolicziya-zasterigaye-ukrayincziv-vid-shaxrajstv-u-populyarnomu-mesendzheri-2018/",
+      "date": "2024-09-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

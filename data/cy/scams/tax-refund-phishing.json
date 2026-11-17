@@ -1,0 +1,130 @@
+{
+  "id": "cy/tax-refund-phishing",
+  "country": "cy",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "el": "Email ή SMS «από το Τμήμα Φορολογίας»",
+    "en": "An email or text “from the Tax Department”"
+  },
+  "name": {
+    "el": "Ψεύτικη επιστροφή φόρου από το «Τμήμα Φορολογίας»",
+    "en": "Fake tax refund from the “Tax Department”"
+  },
+  "how": {
+    "el": "Ένα email ή SMS λέει ότι δικαιούστε επιστροφή φόρου, συχνά με ακριβές ποσό, και ότι πρέπει να επιβεβαιώσετε τα στοιχεία σας μέσω συνδέσμου. Η σελίδα αντιγράφει την επίσημη του Τμήματος Φορολογίας και ζητά στοιχεία κάρτας και μετά τους κωδικούς μιας χρήσης που στέλνει η τράπεζα. Με αυτούς οι απατεώνες κάνουν χρεώσεις. Εμφανίζεται συχνά την περίοδο υποβολής φορολογικών δηλώσεων.",
+    "en": "An email or text says you are due a tax refund, often with an exact amount, and must confirm your details through a link. The page copies the Tax Department’s official site and asks for card details and then the one-time codes your bank sends. The scammers use them to make charges. It often appears during the tax return period."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Μήνυμα «από το Τμήμα Φορολογίας» για επιστροφή φόρου.",
+        "en": "A message “from the Tax Department” about a tax refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας λέει να επιβεβαιώσετε τα στοιχεία σας μέσω συνδέσμου.",
+        "en": "It tells you to confirm your details through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά στοιχεία κάρτας για να «λάβετε» τα χρήματα.",
+        "en": "The page asks for card details to “receive” the money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "el": "Μετά ζητά τον κωδικό μιας χρήσης από την τράπεζα.",
+        "en": "Then it asks for the one-time code from your bank."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Τμήμα Φορολογίας: Μετά τον έλεγχο της δήλωσής σας, δικαιούστε επιστροφή €412,60. Για να πιστωθεί το ποσό, επιβεβαιώστε τα στοιχεία της κάρτας σας εδώ: [σύνδεσμος]",
+        "en": "Tax Department: After reviewing your return, you are entitled to a refund of €412.60. To have it credited, confirm your card details here: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "el": [
+      "email για επιστροφή φόρου",
+      "μήνυμα από τμήμα φορολογίας με σύνδεσμο",
+      "επιβεβαίωση στοιχείων για επιστροφή φόρου",
+      "ζητούν κάρτα για να πάρω επιστροφή φόρου",
+      "έβαλα κωδικό otp για επιστροφή φόρου",
+      "tax for all επιστροφή μέσω συνδέσμου"
+    ],
+    "en": [
+      "email about a tax refund",
+      "tax department text with a link",
+      "confirm details to get a tax refund",
+      "card details needed to receive a refund",
+      "entered the bank code for a tax refund",
+      "tax refund link in cyprus"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "el": [
+      "Η Φορολογία δεν ζητά ποτέ κωδικούς ή στοιχεία κάρτας με email ή SMS.",
+      "Για να πάρετε χρήματα δεν χρειάζεται ποτέ κωδικός μιας χρήσης.",
+      "Διεύθυνση αποστολέα που δεν είναι κρατική."
+    ],
+    "en": [
+      "The Tax Department never asks for codes or card details by email or text.",
+      "You never need a one-time code to receive money.",
+      "A sender address that is not a government one."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην ανοίξετε τον σύνδεσμο. Διαγράψτε το μήνυμα.",
+      "Δείτε αν έχετε επιστροφή μόνο στην επίσημη πύλη της Φορολογίας, γράφοντας εσείς τη διεύθυνση.",
+      "Αν δώσατε κάρτα ή κωδικό, καλέστε αμέσως την τράπεζά σας.",
+      "Κάντε καταγγελία στην Αστυνομία."
+    ],
+    "en": [
+      "Don’t open the link. Delete the message.",
+      "Check for a refund only on the Tax Department’s official portal, typing the address yourself.",
+      "If you gave a card or code, call your bank at once.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Νέα καταγγελία απάτης για μήνυμα δήθεν από το Τμήμα Φορολογίας διερευνά στη Λευκωσία η Αστυνομία",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/nea-kataggelia-apatis-gia-minuma-dithen-apo-to-tmima-forologias-diereuna-sti-leukwsia-i-astunomia/",
+      "date": "2026-05-27"
+    },
+    {
+      "title": "Police warn of tax refund scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2025/07/09/police-warn-of-tax-refund-scam",
+      "date": "2025-07-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

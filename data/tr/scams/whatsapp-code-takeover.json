@@ -1,0 +1,140 @@
+{
+  "id": "tr/whatsapp-code-takeover",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "tr": "Rehberinizdeki bir arkadaş veya akraba (hesabı ele geçirilmiş), ya da “WhatsApp destek”",
+    "en": "A friend or relative in your contacts (whose account was hijacked), or “WhatsApp support”"
+  },
+  "name": {
+    "tr": "WhatsApp kod tuzağı: “Yanlışlıkla sana kod gitti, gönderir misin?” ve ele geçirilen hesaptan para isteme",
+    "en": "WhatsApp code trap: “a code went to you by mistake, can you send it?” and money requests from the hijacked account"
+  },
+  "how": {
+    "tr": "Tanıdık bir kişiden veya “WhatsApp destek” adına mesaj gelir: yanlışlıkla size bir kod gittiğini ya da bir oylama veya hesabı doğrulamak için kod gerektiğini söyler. Gönderdiğiniz altı haneli kodla dolandırıcı hesabınızı kendi telefonuna kurar, sizi dışarıda bırakır. Ardından sizin adınıza rehberinizdeki kişilere yazıp acil para veya yeni kodlar ister.",
+    "en": "A message arrives from someone you know or “WhatsApp support”: a code was sent to you by mistake, or a code is needed for a vote or to verify an account. With the six-digit code you send, the scammer sets up your account on their phone and locks you out. Then they message your contacts in your name asking for urgent money or more codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Tanıdık birinden veya destek adına mesaj gelir.",
+        "en": "A message from someone you know or from “support”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Telefonunuza gelen altı haneli kodu göndermeniz istenir.",
+        "en": "You are asked to send the six-digit code you received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "tr": "Acele ettirilir: “Hemen lazım, süresi doluyor.”",
+        "en": "You are rushed: “I need it now, it’s expiring.”"
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Ele geçirilen hesaptan rehberdekilerden para istenir.",
+        "en": "The hijacked account asks your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "tr": "Canım kusura bakma, kendi numaramı yeni telefona geçiriyordum, kodu yanlışlıkla senin numarana göndermişim. Sana SMS ile 6 haneli bir kod gelmiş olmalı, bana atar mısın? Acil lazım, birkaç dakika içinde geçersiz olacak.",
+        "en": "Sorry dear, I was moving my number to a new phone and accidentally sent the code to your number. You should have got a 6-digit code by SMS, can you send it to me? I need it urgently, it’ll expire in a few minutes."
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "yanlışlıkla sana kod gitti gönderir misin",
+      "whatsapp 6 haneli kod istedi",
+      "arkadaşımın hesabından para istendi",
+      "whatsapp hesabım çalındı kod verdim",
+      "oylama için gelen kodu gönder",
+      "whatsapp destek kod istiyor",
+      "oylama yarışması için numaramı girip kodu gönderdim",
+      "oy vermek için gelen onay kodunu istedi",
+      "ele geçirilen hesaptan herkesten para istediler",
+      "bağlı cihazlarda bilmediğim cihaz"
+    ],
+    "en": [
+      "friend asked me to send whatsapp code sent by mistake",
+      "whatsapp account hijacked after sharing code",
+      "contacts asked for money from my account",
+      "six digit code request scam",
+      "fake whatsapp support asked for code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "tr": [
+      "WhatsApp doğrulama kodu yalnızca sizindir; kimseye, arkadaşınıza bile gönderilmez.",
+      "Bir başkasının kodu yanlışlıkla size gelmez.",
+      "Tanıdık bir hesaptan gelen mesaj o kişi tarafından gönderilmemiş olabilir.",
+      "WhatsApp destek size mesajla kod sormaz."
+    ],
+    "en": [
+      "A WhatsApp verification code is yours alone; never send it to anyone, not even a friend.",
+      "Someone else’s code does not arrive on your phone by mistake.",
+      "A message from a familiar account may not have been sent by that person.",
+      "WhatsApp support never asks you for a code by message."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Kodu kimseyle paylaşmayın ve iki adımlı doğrulamayı açın.",
+      "Para isteyen tanıdığınızı bildiğiniz numarasından arayarak teyit edin.",
+      "Hesabınız ele geçirildiyse numaranızla yeniden kurun, Bağlı Cihazlar’ı kontrol edin ve çevrenizi uyarın."
+    ],
+    "en": [
+      "Share the code with no one and turn on two-step verification.",
+      "Confirm any money request by calling the person on the number you know.",
+      "If your account was taken, set it up again with your number, check Linked Devices and warn your contacts."
+    ]
+  },
+  "reportTo": [
+    "tr/police-prosecutor",
+    "tr/usom",
+    "tr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Whatsapp'ta tehlikeli 6 haneli kod tuzağı: Masum görünen mesajlara dikkat",
+      "publisher": "Milli Gazete",
+      "url": "https://www.milligazete.com.tr/whatsappta-tehlikeli-6-haneli-kod-tuzagi-masum-gorunen-mesajlara-dikkat",
+      "date": "2026-09-26"
+    },
+    {
+      "title": "WhatsApp'ta yeni kabus! Yazışmalarınızı kopyalayıp sevdiklerinizi hedef alıyorlar",
+      "publisher": "Yeni Asır",
+      "url": "https://www.yeniasir.com.tr/yasam/2026/11/10/whatsappta-yeni-kabus-yazismalarinizi-kopyalayip-sevdiklerinizi-hedef-aliyorlar-bu-hatalari-sakin-yapmayin",
+      "date": "2026-11-10"
+    },
+    {
+      "title": "Siber Güvenlik Başkanlığı: WhatsApp hesapları çalınıyor",
+      "publisher": "Diken",
+      "url": "https://www.diken.com.tr/siber-guvenlik-baskanligi-whatsapp-hesaplari-caliniyor/",
+      "date": "2026-11-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

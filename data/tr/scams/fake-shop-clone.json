@@ -1,0 +1,128 @@
+{
+  "id": "tr/fake-shop-clone",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "tr": "Bilinen bir alışveriş sitesine benzeyen site veya “süper indirim” reklamı",
+    "en": "A site that looks like a well-known shop, or a “super discount” ad"
+  },
+  "name": {
+    "tr": "Sahte alışveriş sitesi: Taklit adres, “sadece bugün” indirimi, kart bilgisi çalınıyor",
+    "en": "Fake shopping site: copycat address, “today only” discount, card details stolen"
+  },
+  "how": {
+    "tr": "Özellikle indirim dönemlerinde, bilinen e-ticaret sitelerinin birebir kopyası olan sayfalar reklam veya mesajla yayılır. Adres bir iki harf farklıdır, fiyatlar inanılmaz düşüktür ve “sadece bugün geçerli” gibi baskılar vardır. Ödeme sayfası kart bilgilerinizi ve SMS onay kodunu alır; ürün hiç gelmez veya kartınızdan başka harcamalar yapılır.",
+    "en": "Especially in sale periods, exact copies of well-known e-commerce sites spread through ads or messages. The address differs by a letter or two, prices are unbelievably low and there is pressure like “valid today only”. The payment page takes your card details and SMS confirmation code; the product never arrives or other purchases are made on your card."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Reklam veya mesajla çok ucuz bir ürün.",
+        "en": "A very cheap product in an ad or message."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tr": "Bilinen siteye benzeyen ama adresi farklı bir sayfa.",
+        "en": "A page that looks like a known shop but has a different address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tr": "“Sadece bugün”, “son 3 ürün” baskısı.",
+        "en": "“Today only”, “last 3 items” pressure."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Kart bilgisi ve SMS kodu istenir, ya da havale istenir.",
+        "en": "Card details and SMS code, or a bank transfer, are requested."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "tr": "EFSANE İNDİRİM! Son model akıllı telefon 64.999 TL yerine sadece 8.999 TL. Stoklar sınırlı, kampanya bu gece 00:00’da bitiyor. Kapıda ödeme yok, kartla ödeyenlere ücretsiz kargo. Hemen sipariş ver: [link]",
+        "en": "LEGENDARY DISCOUNT! Latest smartphone only 8,999 TL instead of 64,999 TL. Limited stock, the campaign ends tonight at 00:00. No cash on delivery; free shipping for card payments. Order now: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "sahte alışveriş sitesi kart bilgilerim çalındı",
+      "çok ucuz telefon reklamı sipariş verdim gelmedi",
+      "site adresi bir harf farklı",
+      "sadece bugün geçerli indirim sahte",
+      "taklit e ticaret sitesi",
+      "efsane cuma sahte kampanya",
+      "sipariş verdim ürün gelmedi site kapandı"
+    ],
+    "en": [
+      "fake online shop copied famous store",
+      "ordered cheap phone never arrived",
+      "website address one letter different",
+      "today only discount site was fake",
+      "card details stolen on shopping site"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "tr": [
+      "Piyasanın çok altında fiyat dolandırıcılık işaretidir.",
+      "Adresteki küçük yazım farklarına dikkat edin.",
+      "Yalnızca havale veya kartla ödeme kabul edilmesi şüphelidir.",
+      "“Sadece bugün” baskısı düşünmenizi engellemek içindir."
+    ],
+    "en": [
+      "A price far below market is a sign of fraud.",
+      "Watch for small spelling differences in the address.",
+      "Accepting only bank transfer or card payment is suspicious.",
+      "“Today only” pressure is meant to stop you thinking."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Mağazanın adresini kendiniz yazın veya resmi uygulamasını kullanın.",
+      "Kart bilgisi girdiyseniz bankanızı arayıp kartı kapattırın ve itiraz edin.",
+      "Sahte siteyi ve reklamı bildirin; tüketici şikayetleri için Alo 175’i arayabilirsiniz."
+    ],
+    "en": [
+      "Type the shop’s address yourself or use its official app.",
+      "If you entered card details, call your bank to block the card and dispute the charge.",
+      "Report the fake site and ad; for consumer complaints you can call Alo 175."
+    ]
+  },
+  "reportTo": [
+    "tr/your-bank",
+    "tr/alo-175",
+    "tr/usom",
+    "tr/police-prosecutor"
+  ],
+  "sources": [
+    {
+      "title": "Efsane Cuma indirimlerinde sahte kampanya alarmı",
+      "publisher": "İstiklal",
+      "url": "https://www.istiklal.com.tr/foto-galeri/efsane-cuma-indirimlerinde-sahte-kampanya-alarmi-1072598h",
+      "date": "2025-11-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

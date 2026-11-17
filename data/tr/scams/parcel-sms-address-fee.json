@@ -1,0 +1,126 @@
+{
+  "id": "tr/parcel-sms-address-fee",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "tr": "“PTT”, “Yurtiçi Kargo”, “Aras Kargo” veya başka bir kargo şirketi adıyla SMS",
+    "en": "An SMS in the name of “PTT”, “Yurtiçi Kargo”, “Aras Kargo” or another courier"
+  },
+  "name": {
+    "tr": "Sahte kargo SMS’i: “Adresiniz hatalı, paketiniz teslim edilemedi”, küçük ücret isteniyor",
+    "en": "Fake parcel SMS: “wrong address, your parcel could not be delivered”, small fee demanded"
+  },
+  "how": {
+    "tr": "PTT veya bilinen bir kargo şirketi adına, paketinizin adres hatası nedeniyle teslim edilemediğini söyleyen bir SMS ya da e-posta gelir. Paketi kaybetmemek için linke tıklayıp adresinizi güncellemeniz ve küçük bir yeniden gönderim, adres düzeltme veya gümrük ücreti ödemeniz istenir. Sahte ödeme sayfası kart bilgilerinizi ve SMS onay kodunu ele geçirir.",
+    "en": "An SMS or email in the name of PTT or a known courier says your parcel could not be delivered because of an address error. To avoid losing it you are told to tap a link, update your address and pay a small redelivery, address-correction or customs fee. The fake payment page steals your card details and the SMS confirmation code."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Kargo şirketi adıyla SMS: “Paketiniz teslim edilemedi.”",
+        "en": "An SMS in a courier’s name: “your parcel could not be delivered”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Adresi güncellemek için link verilir.",
+        "en": "A link is given to update the address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tr": "Paket iade edilmeden önce kısa süre verilir.",
+        "en": "A short deadline before the parcel is returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Küçük bir ücret için kart bilgisi istenir.",
+        "en": "Card details are asked for a small fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "tr": "PTT Kargo: Gonderiniz eksik adres bilgisi nedeniyle dagitim merkezinde bekletilmektedir. 24 saat icinde adresinizi guncellemeyip 14,90 TL yeniden gonderim bedelini odemezseniz gonderi iade edilecektir: [link]",
+        "en": "PTT Kargo: Your shipment is held at the distribution centre due to incomplete address details. If you don’t update your address and pay the 14.90 TL redelivery fee within 24 hours, it will be returned: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "kargo teslim edilemedi sms link",
+      "adresiniz hatalı paketiniz bekliyor",
+      "ptt adına sahte mesaj ödeme",
+      "yeniden gönderim ücreti istendi",
+      "kargo adres güncelleme linki",
+      "gümrük ücreti ödeyin kargo sms",
+      "yurtiçi kargo sahte sms",
+      "aras kargo dolandırıcı mesaj"
+    ],
+    "en": [
+      "fake parcel delivery text",
+      "sms said wrong address for my package",
+      "asked to pay small redelivery fee",
+      "fake ptt message with payment link",
+      "courier text asked for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "tr": [
+      "Kargo şirketleri adres düzeltmek için SMS’le ödeme istemez.",
+      "Beklemediğiniz bir paket için gelen link şüphelidir.",
+      "Linkin adresi şirketin resmi adresi değil.",
+      "Küçük tutar, kart bilgilerinizi almak için bir bahanedir."
+    ],
+    "en": [
+      "Couriers don’t ask for payment by SMS to fix an address.",
+      "A link about a parcel you weren’t expecting is suspicious.",
+      "The link’s address is not the company’s official one.",
+      "The small amount is a pretext to get your card details."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Linke tıklamayın; takip numarasını şirketin resmi uygulamasından veya sitesinden kendiniz sorgulayın.",
+      "Kart bilgisi girdiyseniz bankanızı arayıp kartı geçici olarak kapattırın ve şifrelerinizi değiştirin.",
+      "Dolandırıldıysanız belgelerle Cumhuriyet Başsavcılığına başvurun."
+    ],
+    "en": [
+      "Don’t tap the link; look up the tracking number yourself in the company’s official app or site.",
+      "If you entered card details, call your bank to block the card temporarily and change your passwords.",
+      "If you lost money, apply to the public prosecutor with the documents."
+    ]
+  },
+  "reportTo": [
+    "tr/your-bank",
+    "tr/usom",
+    "tr/police-prosecutor"
+  ],
+  "sources": [
+    {
+      "title": "'Adresiniz hatalı' ve 'Paketiniz teslim edilemedi' mesajlarına dikkat! 'PTT' ve büyük kargo şirketlerinin adını kullanıyorlar!",
+      "publisher": "Cumhuriyet",
+      "url": "https://www.cumhuriyet.com.tr/turkiye/adresiniz-hatali-ve-paketiniz-teslim-edilemedi-mesajlarina-dikkat-ptt-ve-buyuk-kargo-sirketlerinin-adini-kullaniyorlar-2474980",
+      "date": "2026-02-01"
+    }
+  ],
+  "updated": "2026-11-17"
+}

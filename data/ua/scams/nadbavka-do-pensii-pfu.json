@@ -1,0 +1,123 @@
+{
+  "id": "ua/nadbavka-do-pensii-pfu",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "uk": "Допис або повідомлення з логотипом Пенсійного фонду України",
+    "en": "A post or message with the Pension Fund of Ukraine logo"
+  },
+  "name": {
+    "uk": "Фейкова «надбавка до пенсії» від Пенсійного фонду",
+    "en": "Fake 'pension top-up' from the Pension Fund"
+  },
+  "how": {
+    "uk": "У соцмережах і месенджерах поширюють повідомлення з назвою та символікою Пенсійного фонду про нову допомогу пенсіонерам, суму якої нібито визначають регіон і стаж. Щоб отримати гроші, треба натиснути кнопку й «підтвердити область проживання», а термін обмежений. Посилання веде на фішинговий сайт, де виманюють дані картки чи доступ до банкінгу. Кіберполіція та ПФУ заявили, що такої виплати немає.",
+    "en": "Posts in social media and messengers use the Pension Fund's name and logo to announce new aid for pensioners, with an amount supposedly set by region and years of work. To get the money you must press a button and 'confirm your region', and time is limited. The link leads to a phishing site that harvests card details or online banking access. The cyber police and the Pension Fund said no such payment exists."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Пенсійний фонд нібито нараховує нову надбавку.",
+        "en": "The Pension Fund is supposedly paying a new top-up."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Сума залежить від області та стажу.",
+        "en": "The amount depends on your region and years of work."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "uk": "Натисніть кнопку й підтвердьте область.",
+        "en": "Press the button and confirm your region."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "uk": "Встигніть до кінця тижня.",
+        "en": "Make it before the end of the week."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "uk": "Пенсійний фонд України: з цього місяця пенсіонерам доступна додаткова виплата від 3 400 до 5 600 грн залежно від стажу. Перевірте свою суму та підтвердіть область проживання до 30 числа: [посилання]. Після цієї дати заявки не приймаються.",
+        "en": "Pension Fund of Ukraine: from this month pensioners can get an extra payment of 3,400 to 5,600 hryvnias depending on years of work. Check your amount and confirm your region by the 30th: [link]. Applications are not accepted after that date."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "мамі прийшло повідомлення про надбавку до пенсії",
+      "пенсійний фонд просить підтвердити область",
+      "нова допомога пенсіонерам за посиланням",
+      "надбавка залежно від стажу треба натиснути кнопку",
+      "пенсіонерці пообіцяли доплату і попросили картку"
+    ],
+    "en": [
+      "my mum got a message about a pension top-up",
+      "the pension fund asks to confirm my region",
+      "new aid for pensioners through a link",
+      "top-up depending on years of work, press the button",
+      "a pensioner was promised extra money and asked for her card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "uk": [
+      "Про нові пенсійні виплати повідомляють офіційні сайти, а не пересилання в месенджерах.",
+      "Пенсію не треба «активувати» кнопкою чи вибором області.",
+      "Терміни на кшталт «лише до кінця місяця» тиснуть, щоб ви не встигли перевірити."
+    ],
+    "en": [
+      "New pension payments are announced on official websites, not in forwarded messages.",
+      "A pension never needs 'activating' with a button or by choosing a region.",
+      "Deadlines like 'only until the end of the month' push you so you don't check."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Перевіряйте новини про пенсії на сайті Пенсійного фонду або на вебпорталі ПФУ.",
+      "Попередьте літніх рідних: не переходити за такими посиланнями й не вводити дані картки.",
+      "Якщо дані вже введені, заблокуйте картку через банк і повідомте кіберполіцію."
+    ],
+    "en": [
+      "Check pension news on the Pension Fund's website or its web portal.",
+      "Warn older relatives not to open such links or enter card details.",
+      "If details were entered, block the card through the bank and report it to the cyber police."
+    ]
+  },
+  "reportTo": [
+    "ua/your-bank",
+    "ua/cyberpolice"
+  ],
+  "sources": [
+    {
+      "title": "Фейкові «надбавки до пенсії»: закликаємо українців не переходити за підозрілими посиланнями",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/fejkovi-nadbavky-do-pensiyi-zaklykayemo-ukrayincziv-ne-perexodyty-za-pidozrilymy-posylannyamy-6743/",
+      "date": "2026-05-25"
+    }
+  ],
+  "related": [
+    "ua/diia-yepidtrymka-feikova-vyplata"
+  ],
+  "updated": "2026-11-17"
+}

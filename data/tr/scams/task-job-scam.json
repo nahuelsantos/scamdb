@@ -1,0 +1,126 @@
+{
+  "id": "tr/task-job-scam",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "tr": "Telegram veya WhatsApp’ta bir “işe alım uzmanı”; bazen bilinen bir e-ticaret sitesinin adını kullanır",
+    "en": "A “recruiter” on Telegram or WhatsApp; sometimes using a well-known e-commerce site’s name"
+  },
+  "name": {
+    "tr": "“Görev yap kazan”: Beğeni ve yorum işi, sonra para yatırmadan çekim yapılamıyor",
+    "en": "“Do tasks, earn”: likes and reviews job, then you can’t withdraw without paying in"
+  },
+  "how": {
+    "tr": "Telegram veya WhatsApp’tan evden kolay para kazanma teklifi gelir: ürün yorumu, video beğenisi, ekran görüntüsü gönderme gibi basit görevler. İlk görevlerde küçük ödemeler yapılarak güven kazanılır. Sonra bir uygulamaya veya siteye yönlendirilir, “sipariş görevi” için kendi paranızı yatırmanız istenir. Ekranda bakiye büyür ama çekmek istediğinizde önce vergi veya komisyon ödemeniz gerektiği söylenir.",
+    "en": "An offer to earn easy money from home arrives on Telegram or WhatsApp: simple tasks like product reviews, liking videos or sending screenshots. Small payments for the first tasks build trust. You are then sent to an app or site and asked to deposit your own money for “order tasks”. The balance on screen grows, but when you try to withdraw you are told to pay tax or commission first."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Evden kolay kazanç teklifi: beğeni, yorum, ekran görüntüsü.",
+        "en": "An offer of easy money from home: likes, reviews, screenshots."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tr": "İlk görevlerde küçük ödemeler gelir.",
+        "en": "Small payments arrive for the first tasks."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tr": "Daha büyük görevler için kendi paranızı yatırmanız istenir.",
+        "en": "You must deposit your own money for bigger tasks."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tr": "Çekim için önce vergi veya komisyon istenir, acele ettirilir.",
+        "en": "To withdraw you must first pay tax or commission, and you are rushed."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "tr": "Merhaba, CV’nizi inceledik. Evden günde 1-2 saat ayırarak ürünlere beğeni ve yorum yaparak günlük 1.500-3.000 TL kazanabilirsiniz. Her görev için 75 TL ödüyoruz, deneme görevini şimdi yapabilirsiniz. Devam etmek için Telegram’daki ekip yöneticimize yazın: [link]",
+        "en": "Hello, we reviewed your CV. By spending 1–2 hours a day at home liking and reviewing products you can earn 1,500–3,000 TL a day. We pay 75 TL per task; you can do the trial task now. To continue, message our team manager on Telegram: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "görev yap kazan telegram",
+      "beğeni yorum yaparak para kazan",
+      "evden ürün yorumu işi para yatırdım",
+      "çekim için vergi ödemem istendi görev",
+      "sipariş görevi için para yatır",
+      "telegram iş teklifi günlük kazanç",
+      "ekran görüntüsü gönder ödeme al"
+    ],
+    "en": [
+      "task scam on telegram liking videos",
+      "paid to review products then asked to deposit",
+      "cannot withdraw earnings need to pay tax",
+      "work from home task job scam",
+      "order tasks required my own money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "tr": [
+      "Gerçek bir iş için sizden para yatırmanız istenmez.",
+      "Beğeni veya yorum için yüksek ücret vaadi gerçekçi değildir.",
+      "Kazancı çekmek için önce ödeme istenmesi dolandırıcılıktır.",
+      "Şirket bilgileri sorulduğunda net cevap verilmez."
+    ],
+    "en": [
+      "A real job never asks you to deposit money.",
+      "High pay for likes or reviews is not realistic.",
+      "Being asked to pay before withdrawing earnings is fraud.",
+      "No clear answer when you ask for company details."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Para yatırmayı hemen bırakın; “son ödeme” diye bir şey yoktur.",
+      "Yazışmaları, linkleri ve IBAN bilgilerini saklayın, bankanıza haber verin.",
+      "Savcılığa veya polisin siber suçlar birimine suç duyurusunda bulunun."
+    ],
+    "en": [
+      "Stop paying in at once; there is no “last payment”.",
+      "Keep the chats, links and IBANs, and tell your bank.",
+      "File a complaint with the prosecutor or the police cybercrime unit."
+    ]
+  },
+  "reportTo": [
+    "tr/police-prosecutor",
+    "tr/your-bank",
+    "tr/cimer"
+  ],
+  "sources": [
+    {
+      "title": "Telegram'da yeni tuzak: \"Görev yap kazan\" ile 160 bin TL kayıp",
+      "publisher": "A Haber",
+      "url": "https://www.ahaber.com.tr/gundem/2026/04/18/telegramda-yeni-tuzak-gorev-yap-kazan-ile-160-bin-tl-kayip",
+      "date": "2026-04-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "cy/fake-cybercrime-officer-call",
+  "country": "cy",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "el": "Κλήση από κυπριακό σταθερό «από το Ηλεκτρονικό Έγκλημα της Αστυνομίας»",
+    "en": "A call from a Cypriot landline “from the Police Cybercrime unit”"
+  },
+  "name": {
+    "el": "Ψεύτικοι αστυνομικοί του Ηλεκτρονικού Εγκλήματος: «πέσατε θύμα απάτης»",
+    "en": "Fake cybercrime officers: “you have been a victim of fraud”"
+  },
+  "how": {
+    "el": "Κάποιος καλεί σε άπταιστα ελληνικά, λέει ότι είναι από την Υποδιεύθυνση Ηλεκτρονικού Εγκλήματος και ότι πέσατε θύμα διαδικτυακής απάτης. Για να «διερευνήσει την υπόθεση» ζητά προσωπικά στοιχεία και τραπεζικά στοιχεία. Ο αριθμός φαίνεται κυπριακός σταθερός, αλλά μπορεί να είναι πλαστός και η κλήση να γίνεται από το εξωτερικό. Η Αστυνομία δεν επικοινωνεί ποτέ με πολίτες με αυτόν τον τρόπο.",
+    "en": "Someone calls in fluent Greek, says they are from the Cybercrime Sub-Directorate and that you have been a victim of online fraud. To “investigate the case” they ask for personal and bank details. The number looks like a Cypriot landline, but it may be spoofed and the call may come from abroad. The police never contact people this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ο καλών λέει ότι είναι αστυνομικός του Ηλεκτρονικού Εγκλήματος.",
+        "en": "The caller says they are a cybercrime police officer."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας λέει ότι πέσατε θύμα απάτης και η υπόθεση είναι επείγουσα.",
+        "en": "They say you have been a victim of fraud and the case is urgent."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ζητά τραπεζικά στοιχεία ή κωδικούς «για την έρευνα».",
+        "en": "They ask for bank details or codes “for the investigation”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "el": "Σας κρατά στη γραμμή και λέει να μην το πείτε στην τράπεζα.",
+        "en": "They keep you on the line and tell you not to tell the bank."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Καλών: Καλησπέρα, είμαι ο λοχίας Ανδρέου από την Υποδιεύθυνση Ηλεκτρονικού Εγκλήματος. Έχουμε καταγγελία ότι ο λογαριασμός σας χρησιμοποιήθηκε σε απάτη. Για να τον προστατέψουμε χρειάζομαι να μου επιβεβαιώσετε την τράπεζα, τον αριθμό της κάρτας και τον κωδικό που θα σας έρθει τώρα.",
+        "en": "Caller: Good evening, I’m Sergeant Andreou from the Cybercrime Sub-Directorate. We have a report that your account was used in a fraud. To protect it I need you to confirm your bank, your card number and the code you’ll receive now."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "el": [
+      "τηλεφώνημα από δήθεν ηλεκτρονικό έγκλημα",
+      "αστυνομικός λέει ότι έπεσα θύμα απάτης",
+      "ζητούν τραπεζικά στοιχεία για έρευνα",
+      "κλήση από σταθερό της αστυνομίας για τον λογαριασμό μου",
+      "αστυνομία ζητά αριθμό κάρτας στο τηλέφωνο",
+      "δήθεν αστυνομικός θέλει τον κωδικό της τράπεζας"
+    ],
+    "en": [
+      "call from the cybercrime unit about fraud",
+      "police officer says I was scammed",
+      "police asking for bank details on the phone",
+      "landline call from police about my account",
+      "fake officer wants my card number",
+      "cybercrime officer asks for my bank code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "el": [
+      "Η Αστυνομία δεν ζητά ποτέ τραπεζικά στοιχεία στο τηλέφωνο.",
+      "Ένας αριθμός που φαίνεται κυπριακός δεν αποδεικνύει τίποτα.",
+      "Πίεση να μιλήσετε τώρα και να μην κλείσετε."
+    ],
+    "en": [
+      "The police never ask for bank details on the phone.",
+      "A number that looks Cypriot proves nothing.",
+      "Pressure to talk now and not hang up."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Κλείστε το τηλέφωνο. Μη δώσετε κανένα στοιχείο.",
+      "Για να ελέγξετε, καλέστε εσείς τη Γραμμή του Πολίτη 1460.",
+      "Αν δώσατε τραπεζικά στοιχεία, καλέστε αμέσως την τράπεζά σας.",
+      "Καταγγείλετε την κλήση στην Υποδιεύθυνση Ηλεκτρονικού Εγκλήματος."
+    ],
+    "en": [
+      "Hang up. Give no details.",
+      "To check, call the Citizens’ Line 1460 yourself.",
+      "If you gave bank details, call your bank at once.",
+      "Report the call to the Cybercrime Sub-Directorate."
+    ]
+  },
+  "reportTo": [
+    "cy/citizens-line",
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Δράστες Απάτης Παριστάνουν την Αστυνομία με Σκοπό την Κλοπή Χρημάτων από Τραπεζικούς Λογαριασμούς",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/drastes-apatis-paristanoun-tin-astunomia-me-skopo-tin-klopi-xrimatwn-apo-trapezikous-logariasmous_638/",
+      "date": "2026-09-14"
+    },
+    {
+      "title": "Police warn of new phone scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/09/10/police-warn-of-new-phone-scam",
+      "date": "2026-09-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

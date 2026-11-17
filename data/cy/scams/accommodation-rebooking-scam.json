@@ -1,0 +1,131 @@
+{
+  "id": "cy/accommodation-rebooking-scam",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "el": "Μήνυμα από τον «οικοδεσπότη» μετά από κράτηση, ή αγγελία ενοικίασης",
+    "en": "A message from the “host” after a booking, or a rental listing"
+  },
+  "name": {
+    "el": "Ψεύτικος οικοδεσπότης ζητά νέα κράτηση ή προκαταβολή εκτός πλατφόρμας",
+    "en": "Fake host asks you to rebook or pay a deposit off the platform"
+  },
+  "how": {
+    "el": "Αφού κλείσετε κατάλυμα σε πλατφόρμα κρατήσεων, κάποιος σας γράφει ως ο οικοδεσπότης και λέει ότι πρέπει να ακυρώσετε και να κάνετε ξανά κράτηση μέσω συνδέσμου ή να πληρώσετε με τραπεζική μεταφορά. Δεν έρχεται ποτέ επιβεβαίωση. Σε μια παραλλαγή, μια αγγελία ενοικίασης για διαμέρισμα που δεν υπάρχει ζητά προκαταβολή ενοικίου πριν το δείτε.",
+    "en": "After you book a place on a booking platform, someone writes as the host and says you must cancel and rebook through a link or pay by bank transfer. No confirmation ever arrives. In a variant, a rental listing for a flat that doesn’t exist asks for rent up front before you see it."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ο «οικοδεσπότης» σας γράφει λίγο μετά την κράτηση.",
+        "en": "The “host” messages you soon after the booking."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας ζητά να ξανακάνετε κράτηση μέσω συνδέσμου.",
+        "en": "They ask you to rebook through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Ζητά πληρωμή με τραπεζική μεταφορά, εκτός πλατφόρμας.",
+        "en": "They ask for payment by bank transfer, off the platform."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "el": "Λέει ότι αλλιώς θα χάσετε την κράτηση.",
+        "en": "They say otherwise you will lose the booking."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Καλησπέρα, είμαι ο ιδιοκτήτης του διαμερίσματος στη Λάρνακα. Υπήρξε πρόβλημα με το σύστημα κρατήσεων και η κράτησή σας θα ακυρωθεί. Κάντε την ξανά από αυτόν τον σύνδεσμο ή στείλτε μου το ποσό με μεταφορά για να την κρατήσω: [σύνδεσμος]",
+        "en": "Good evening, I’m the owner of the flat in Larnaca. There was a problem with the booking system and your reservation will be cancelled. Please rebook through this link or send me the amount by transfer so I can hold it: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "host asked me to cancel and rebook through a link",
+      "accommodation owner wants a bank transfer",
+      "booking problem message from the host",
+      "paid for a holiday flat and got no confirmation",
+      "rent deposit for a flat I have not seen",
+      "apartment listing turned out not to exist"
+    ],
+    "el": [
+      "ο οικοδεσπότης μου ζήτησε νέα κράτηση μέσω συνδέσμου",
+      "ιδιοκτήτης καταλύματος θέλει τραπεζική μεταφορά",
+      "μήνυμα για πρόβλημα με την κράτηση",
+      "πλήρωσα διαμέρισμα και δεν ήρθε επιβεβαίωση",
+      "προκαταβολή ενοικίου για διαμέρισμα που δεν είδα",
+      "η αγγελία διαμερίσματος ήταν ψεύτικη"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A request to pay or rebook outside the booking platform.",
+      "A bank transfer instead of the platform’s payment.",
+      "Rent asked for a place you haven’t seen."
+    ],
+    "el": [
+      "Αίτημα να πληρώσετε ή να κάνετε κράτηση εκτός πλατφόρμας.",
+      "Τραπεζική μεταφορά αντί για πληρωμή μέσω πλατφόρμας.",
+      "Ζητούν ενοίκιο για χώρο που δεν έχετε δει."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Keep all messages and payments inside the booking platform.",
+      "Contact the host or hotel using details you checked yourself.",
+      "If you paid by card through a link, call your bank and cancel the card.",
+      "Report it to the platform and to the police."
+    ],
+    "el": [
+      "Κρατήστε όλα τα μηνύματα και τις πληρωμές μέσα στην πλατφόρμα κρατήσεων.",
+      "Επικοινωνήστε με τον οικοδεσπότη ή το ξενοδοχείο με στοιχεία που ελέγξατε εσείς.",
+      "Αν πληρώσατε με κάρτα μέσω συνδέσμου, καλέστε την τράπεζα και ακυρώστε την κάρτα.",
+      "Αναφέρετε το στην πλατφόρμα και στην Αστυνομία."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Woman loses more than €2,200 in online accommodation scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/08/12/woman-loses-more-than-e2200-in-online-accommodation-scam",
+      "date": "2026-08-12"
+    },
+    {
+      "title": "Women scammed out of thousands",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2025/09/25/women-scammed-out-of-thousands",
+      "date": "2025-09-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

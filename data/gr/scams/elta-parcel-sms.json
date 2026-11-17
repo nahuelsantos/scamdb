@@ -1,0 +1,121 @@
+{
+  "id": "gr/elta-parcel-sms",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "el": "«ΕΛΤΑ» ή άλλη εταιρεία courier, συχνά από ξένο αριθμό",
+    "en": "“ELTA” (Hellenic Post) or another courier, often from a foreign number"
+  },
+  "name": {
+    "el": "SMS «ΕΛΤΑ»: αποτυχημένη παράδοση δέματος, επιλέξτε νέα παράδοση",
+    "en": "Text from “ELTA”: failed parcel delivery, choose a new delivery"
+  },
+  "how": {
+    "el": "Έρχεται SMS «Ειδοποίηση παράδοσης δέματος» με το όνομα των ΕΛΤΑ: η παράδοση απέτυχε επειδή χρειαζόταν υπογραφή και πρέπει μέχρι μια ημερομηνία να επιλέξετε επαναπρογραμματισμό, παραλαβή από κατάστημα ή «διαχείριση παράδοσης» μέσω συνδέσμου, αλλιώς το δέμα επιστρέφεται στον αποστολέα. Αν ο σύνδεσμος δεν ανοίγει, σας λέει να απαντήσετε «Ναι» ή να τον αντιγράψετε στον browser. Η σελίδα ζητά μικρό ποσό ή «τέλη» και στοιχεία κάρτας, κωδικούς ή PIN.",
+    "en": "A text “Parcel delivery notice” arrives in ELTA’s name: delivery failed because a signature was needed, and by a set date you must reschedule, collect it from a branch or “manage delivery” through a link, or the parcel goes back to the sender. If the link won’t open, it tells you to reply “Yes” or copy it into your browser. The page asks for a small amount or “fees” and card details, passwords or PIN."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "SMS με το όνομα των ΕΛΤΑ για δέμα που δεν παραδόθηκε.",
+        "en": "A text in ELTA’s name about an undelivered parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Προθεσμία: αλλιώς το δέμα επιστρέφεται.",
+        "en": "A deadline: otherwise the parcel is returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ένας σύνδεσμος για «διαχείριση παράδοσης», ή απαντήστε «Ναι» για να ανοίξει.",
+        "en": "A link to “manage delivery”, or reply “Yes” to make it open."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά μικρή πληρωμή και στοιχεία κάρτας.",
+        "en": "The page asks for a small payment and card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "el": "ΕΛΤΑ: Το δέμα σας δεν παραδόθηκε σήμερα λόγω ελλιπούς διεύθυνσης. Ενημερώστε τη διεύθυνσή σας και επιλέξτε νέα ημερομηνία έως αύριο, αλλιώς θα επιστραφεί: [σύνδεσμος] (Αν ο σύνδεσμος δεν ανοίγει, απαντήστε Ν και ανοίξτε ξανά το μήνυμα.)",
+        "en": "ELTA: Your parcel was not delivered today due to an incomplete address. Update your address and choose a new date by tomorrow, or it will be returned: [link] (If the link doesn’t open, reply Y and open the message again.)"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "sms ελτα δέμα δεν παραδόθηκε σύνδεσμος",
+      "ειδοποίηση παράδοσης πακέτου απαιτείται υπογραφή",
+      "μήνυμα courier επαναπρογραμματισμός παράδοσης link",
+      "το δέμα θα επιστραφεί στον αποστολέα sms",
+      "πληρωμή τελών παράδοσης δέματος κάρτα",
+      "sms acs δέμα πληρωμή μικρό ποσό"
+    ],
+    "en": [
+      "elta text parcel not delivered link",
+      "greek post sms reschedule delivery",
+      "courier text asking for small fee",
+      "parcel will be returned to sender text",
+      "fake delivery sms greece"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Τα ΕΛΤΑ δεν στέλνουν SMS ή email που ζητούν στοιχεία κάρτας ή λογαριασμού για να παραδώσουν δέμα.",
+      "Προθεσμία και απειλή επιστροφής, για δέμα που δεν περιμένατε.",
+      "Αποστολέας από ξένο αριθμό και οδηγία να απαντήσετε για να «ανοίξει» ο σύνδεσμος."
+    ],
+    "en": [
+      "ELTA doesn’t send texts or emails asking for card or account details to deliver a parcel.",
+      "A deadline and a threat of return, for a parcel you weren’t expecting.",
+      "A foreign sender number and an instruction to reply so the link will “open”."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην απαντάτε και μην πατάτε τον σύνδεσμο. Ελέγξτε την αποστολή μόνο στην επίσημη σελίδα ή εφαρμογή του courier, με τον αριθμό από τον πωλητή.",
+      "Βάλατε στοιχεία κάρτας; Καλέστε αμέσως την τράπεζα.",
+      "Καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Don’t reply or tap the link. Check the shipment only on the courier’s official site or app, using the tracking number from the seller.",
+      "Entered card details? Call your bank straight away.",
+      "Report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Αυτά τα SMS είναι δήθεν από τα ΕΛΤΑ και είναι απάτη",
+      "publisher": "iefimerida.gr",
+      "url": "https://www.iefimerida.gr/ellada/ta-sms-apati-einai-dithen-apo-elta",
+      "date": "2026-02-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

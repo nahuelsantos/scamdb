@@ -1,0 +1,133 @@
+{
+  "id": "tr/edevlet-payment-sms",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "tr": "“e-Devlet”, “SGK” veya “T.C.” adını taşıyan bir SMS",
+    "en": "An SMS bearing the name “e-Devlet”, “SGK” or “T.C.”"
+  },
+  "name": {
+    "tr": "Sahte e-Devlet SMS’i: “Bayram ikramiyesi farkınız yattı”, link ile kimlik ve banka bilgisi isteniyor",
+    "en": "Fake e-Devlet SMS: “your holiday bonus difference has been paid”, a link asks for ID and bank details"
+  },
+  "how": {
+    "tr": "Emeklilere ve diğer vatandaşlara, bayram ikramiyesi farkı, ek zam, destek ödemesi ya da iade yattığını söyleyen SMS’ler gelir. Parayı almak için e-Devlet’e benzeyen bir linke tıklamanız istenir. Sahte sayfa T.C. kimlik numaranızı, e-Devlet şifrenizi ve kart bilgilerinizi ister; bu bilgilerle hesabınızdan para çekilir veya adınıza kredi çekilir.",
+    "en": "Retirees and others get texts saying a holiday-bonus difference, extra raise, support payment or refund has been paid. To collect it you must tap a link that looks like e-Devlet. The fake page asks for your national ID number, e-Devlet password and card details; with these, money is taken from your account or loans are taken out in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "e-Devlet adıyla gelen SMS: “Ödemeniz hesabınıza yatırıldı.”",
+        "en": "An SMS in e-Devlet’s name: “your payment has been deposited”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Parayı almak için linke tıklamanız istenir.",
+        "en": "You are told to tap a link to collect the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tr": "Süre kısıtı: “Bugün başvurmazsanız iptal edilir.”",
+        "en": "A deadline: “cancelled if you don’t apply today”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Sahte sayfa kimlik, şifre ve kart bilgisi ister.",
+        "en": "The fake page asks for ID, password and card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "tr": "T.C. e-Devlet: Emekli bayram ikramiyesi fark ödemeniz olan 3.000 TL hesabınıza aktarılmak üzere onay bekliyor. Bugün 23:59’a kadar onaylamayan vatandaşların hakkı iptal edilecektir. Onay için: [link]",
+        "en": "T.C. e-Devlet: Your retiree holiday bonus difference payment of 3,000 TL is awaiting approval to be transferred to your account. Citizens who don’t approve by 23:59 today will lose the entitlement. To approve: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "bayram ikramiyesi farkı yattı mesajı",
+      "e devlet linkine tıklayın ödeme alın",
+      "emekliye ek zam farkı sms link",
+      "e devlet şifremi sahte siteye girdim",
+      "devlet desteği yattı sms tıklayın",
+      "tc kimlik numarası ve kart bilgisi istendi",
+      "sahte e devlet sitesi",
+      "ikramiye onayı için link gönderdiler"
+    ],
+    "en": [
+      "fake e-devlet text about holiday bonus",
+      "sms said my pension bonus was paid click link",
+      "entered my e-devlet password on a fake site",
+      "government payment text asked for card details",
+      "retiree extra payment sms scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "tr": [
+      "Bayram ikramiyesi gibi ödemeler başvuru gerekmeden kendiliğinden yatar.",
+      "Devlet kurumları SMS ile link gönderip kart bilgisi veya şifre istemez.",
+      "Adres turkiye.gov.tr değilse sayfa sahtedir.",
+      "“Bugün onaylamazsanız iptal” gibi baskılar dolandırıcılık işaretidir."
+    ],
+    "en": [
+      "Payments like the holiday bonus arrive automatically, without applying.",
+      "Government bodies do not text links asking for card details or passwords.",
+      "If the address is not turkiye.gov.tr, the page is fake.",
+      "Pressure like “cancelled if not approved today” is a scam sign."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Linke tıklamayın; e-Devlet’e adresi kendiniz yazarak veya resmi uygulamadan girin.",
+      "Bilgi girdiyseniz e-Devlet şifrenizi değiştirin ve bankanızı hemen arayın.",
+      "Mesajı silmeyin; ekran görüntüsüyle birlikte bildirin."
+    ],
+    "en": [
+      "Don’t tap the link; go to e-Devlet by typing the address yourself or through the official app.",
+      "If you entered details, change your e-Devlet password and call your bank immediately.",
+      "Don’t delete the text; report it with a screenshot."
+    ]
+  },
+  "reportTo": [
+    "tr/your-bank",
+    "tr/usom",
+    "tr/police-prosecutor",
+    "tr/alo-175"
+  ],
+  "sources": [
+    {
+      "title": "Ticaret Bakanlığı olarak bayram öncesinde artan dijital ve finansal dolandırıcılık girişimlerine karşı vatandaşlarımızı dikkatli olmaya ve güvenli işlem yöntemlerini tercih etmeye davet ediyoruz",
+      "publisher": "T.C. Ticaret Bakanlığı",
+      "url": "https://ticaret.gov.tr/haberler/ticaret-bakanligi-olarak-bayram-oncesinde-artan-dijital-ve-finansal-dolandiricilik-girisimlerine-karsi-vatandaslarimizi-dikkatli-olmaya-ve-guvenli-islem-yontemlerini-tercih-etmeye-davet-ediyoruz",
+      "date": "2026-05-20"
+    },
+    {
+      "title": "Emekliye bayram ikramiyesi dolandırıcılığı: Sahte E-Devlet linki atıyorlar",
+      "publisher": "Evrensel",
+      "url": "https://www.evrensel.net/haber/5982130/emekliye-bayram-ikramiyesi-dolandiriciligi-sahte-e-devlet-linki-atiyorlar",
+      "date": "2026-05-01"
+    }
+  ],
+  "updated": "2026-11-17"
+}

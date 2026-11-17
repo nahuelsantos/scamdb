@@ -1,0 +1,129 @@
+{
+  "id": "bg/fake-shop",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "bg": "Онлайн магазин, реклама в социалните мрежи или копие на сайт на известен търговец",
+    "en": "An online shop, a social media ad or a copy of a well-known retailer's site"
+  },
+  "name": {
+    "bg": "Фалшив онлайн магазин: намаления до 95%, таймер и стока, която не пристига",
+    "en": "Fake online shop: discounts of up to 95%, a countdown timer and goods that never arrive"
+  },
+  "how": {
+    "bg": "Реклама в социалните мрежи води към магазин с огромни намаления, особено около Черния петък и празниците: продукт за 20 евро, който иначе струва 200. Сайтът копира известен магазин, но адресът е малко различен; има таймери, „последна бройка“ и снимки, правени с изкуствен интелект. Плащате с карта предварително; стоката не идва или е съвсем друга. Подобно е и при фалшиви обяви за вили, билети и концерти с капаро.",
+    "en": "A social media ad leads to a shop with huge discounts, especially around Black Friday and the holidays: a product for 20 euros that otherwise costs 200. The site copies a well-known shop but the address is slightly different; there are countdown timers, “last item” notices and AI-made pictures. You pay by card in advance; the goods never come or are something else entirely. Fake listings for holiday homes, tickets and concerts asking for a deposit work the same way."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Реклама с невероятни намаления.",
+        "en": "An ad with unbelievable discounts."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "bg": "Таймер и „само днес“ ви карат да бързате.",
+        "en": "A timer and “today only” push you to hurry."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bg": "Адресът на сайта се различава от официалния, няма адрес и телефон.",
+        "en": "The site address differs from the official one; there's no address or phone number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Плащане с карта или превод предварително.",
+        "en": "Payment by card or transfer in advance."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "ЧЕРЕН ПЕТЪК! Разпродажба поради затваряне на склада – маркови якета от 189 € само за 19,90 €. Остават 3 бройки, офертата изтича след 00:14:52. Безплатна доставка само днес: [линк]",
+        "en": "BLACK FRIDAY! Warehouse closing sale – branded jackets from 189 € for only 19.90 €. 3 left, the offer ends in 00:14:52. Free delivery today only: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "намаления до 95 процента сайт",
+      "поръчах от сайт и не получих нищо",
+      "фалшив онлайн магазин черен петък",
+      "реклама във фейсбук евтини маркови",
+      "разпродажба поради затваряне склад",
+      "таймер оферта изтича",
+      "капаро за вила по обява"
+    ],
+    "en": [
+      "ordered online and never received it",
+      "fake shop with huge discounts",
+      "black friday ad too cheap",
+      "countdown timer sale site",
+      "paid a deposit for a holiday rental that doesn't exist"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "bg": [
+      "Цена в пъти под пазарната е най-сигурният знак.",
+      "Няма фирма, адрес и телефон; сайтът е регистриран наскоро.",
+      "Натиск с таймер и „последна бройка“."
+    ],
+    "en": [
+      "A price many times below market is the surest sign.",
+      "No company, address or phone number; the site was registered recently.",
+      "Pressure with a timer and “last item”."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Проверете адреса на сайта и кога е регистриран, потърсете отзиви извън сайта.",
+      "Плащайте с наложен платеж или карта, която може да се оспори.",
+      "Ако сте платили, обадете се на банката да блокира картата и да оспори плащането; подайте сигнал в КЗП и ГДБОП."
+    ],
+    "en": [
+      "Check the site's address and when it was registered; look for reviews outside the site.",
+      "Pay cash on delivery or by a card you can dispute.",
+      "If you paid, call your bank to block the card and dispute the payment; report it to the CPC and GDBOP."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/kzp",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "ГДБОП: Фалшиви сайтове с намаления до 95%",
+      "publisher": "Fakti.bg",
+      "url": "https://fakti.bg/life/1098096-izmamnici-predlagat-namalenia-do-95-predi-chernia-petak",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Euro Scams Hit Bulgaria: Fake Online Shops Exploit New Currency",
+      "publisher": "Novinite",
+      "url": "https://m.novinite.com/view_news.php?id=236290",
+      "date": "2026-01-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

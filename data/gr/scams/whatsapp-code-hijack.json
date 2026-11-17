@@ -1,0 +1,123 @@
+{
+  "id": "gr/whatsapp-code-hijack",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "el": "Μια γνωστή επαφή ή μια δήθεν «ειδοποίηση ασφαλείας»",
+    "en": "A known contact or a supposed “security alert”"
+  },
+  "name": {
+    "el": "«Στείλε μου τον κωδικό που σου ήρθε»: κλοπή λογαριασμού WhatsApp",
+    "en": "“Send me the code you just got”: WhatsApp account takeover"
+  },
+  "how": {
+    "el": "Σας έρχεται απρόσμενα SMS με κωδικό επαλήθευσης WhatsApp και αμέσως μετά μήνυμα από μια γνωστή επαφή ή από «την ομάδα ασφαλείας»: ο κωδικός στάλθηκε κατά λάθος σε εσάς, ή πρέπει να τον δώσετε για να μην κλειδώσει ο λογαριασμός. Αν τον στείλετε, ο απατεώνας συνδέει τη δική του συσκευή στον λογαριασμό σας, διαβάζει τα μηνύματα και γράφει στις επαφές σας ως εσείς, συνήθως για να ζητήσει χρήματα. Συχνά εσείς δεν αποσυνδέεστε, οπότε δεν το καταλαβαίνετε.",
+    "en": "You unexpectedly get a text with a WhatsApp verification code, and right after it a message from a known contact or from “the security team”: the code was sent to you by mistake, or you must give it so the account isn’t locked. If you send it, the scammer links their own device to your account, reads your messages and writes to your contacts as you, usually to ask for money. Often you are not logged out, so you don’t notice."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ένας κωδικός επαλήθευσης έρχεται χωρίς να τον ζητήσετε.",
+        "en": "A verification code arrives without you asking for it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Μήνυμα από «φίλο» ή «υποστήριξη» που λέει ότι ο κωδικός είναι δικός του.",
+        "en": "A message from a “friend” or “support” saying the code is theirs."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Βιασύνη: «γρήγορα, λήγει σε λίγα λεπτά».",
+        "en": "Rush: “quick, it expires in a few minutes”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Σας ζητούν να στείλετε τον κωδικό.",
+        "en": "You are asked to send the code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "el": "Γεια σου! Συγγνώμη για την ενόχληση, πήγα να συνδεθώ από το καινούργιο laptop και ο εξαψήφιος κωδικός ήρθε κατά λάθος στο δικό σου κινητό. Μπορείς να μου τον στείλεις γρήγορα; Λήγει σε 5 λεπτά 🙏",
+        "en": "Hi! Sorry to bother you, I tried to log in from my new laptop and the six-digit code went to your phone by mistake. Can you send it to me quickly? It expires in 5 minutes 🙏"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "φίλος ζητά κωδικό whatsapp ήρθε σε μένα",
+      "εξαψήφιος κωδικός ήρθε κατά λάθος",
+      "στείλε μου τον κωδικό από το sms",
+      "δήθεν ψηφοφορία ζητά κωδικό επαλήθευσης",
+      "έκλεψαν τον λογαριασμό whatsapp",
+      "άγνωστη συνδεδεμένη συσκευή whatsapp",
+      "ομάδα υποστήριξης whatsapp ζητά κωδικό ασφαλείας"
+    ],
+    "en": [
+      "friend asks for whatsapp code sent to me",
+      "six digit code sent to me by mistake",
+      "someone took over my whatsapp account",
+      "unknown linked device on whatsapp",
+      "whatsapp support asked for verification code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "el": [
+      "Το WhatsApp δεν ζητά ποτέ τον κωδικό επαλήθευσης με μήνυμα.",
+      "Κανείς δεν χρειάζεται τον κωδικό που ήρθε στο δικό σας κινητό.",
+      "Ένας κωδικός που δεν ζητήσατε σημαίνει ότι κάποιος προσπαθεί να μπει στον λογαριασμό σας."
+    ],
+    "en": [
+      "WhatsApp never asks for your verification code in a message.",
+      "Nobody needs the code that came to your phone.",
+      "A code you didn’t ask for means someone is trying to get into your account."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην στέλνετε τον κωδικό. Καλέστε τον φίλο σας στο τηλέφωνο για να ελέγξετε.",
+      "Ενεργοποιήστε την επαλήθευση σε δύο βήματα και ελέγχετε τακτικά τις «Συνδεδεμένες συσκευές».",
+      "Χάσατε τον λογαριασμό; Ειδοποιήστε τις επαφές σας να μη στείλουν χρήματα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Don’t send the code. Phone your friend to check.",
+      "Turn on two-step verification and check “Linked devices” regularly.",
+      "Lost the account? Warn your contacts not to send money and report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "WhatsApp: Νέα επικίνδυνη απάτη που «κλέβει» λογαριασμούς",
+      "publisher": "alfavita.gr",
+      "url": "https://www.alfavita.gr/koinonia/502974_whatsapp-nea-epikindyni-apati-poy-klebei-logariasmoys",
+      "date": "2026-01-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/hacked-friend-account-money"
+  ]
+}

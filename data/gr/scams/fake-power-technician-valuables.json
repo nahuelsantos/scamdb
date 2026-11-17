@@ -1,0 +1,148 @@
+{
+  "id": "gr/fake-power-technician-valuables",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "el": "«Τεχνικός» του ΔΕΔΔΗΕ, της ΔΕΗ ή εταιρείας τηλεφωνίας",
+    "en": "A “technician” from HEDNO (ΔΕΔΔΗΕ, power grid), the power company or a phone company"
+  },
+  "name": {
+    "el": "Ψεύτικος τεχνικός ρεύματος: «διαρροή ρεύματος», αφήστε χρήματα και κοσμήματα έξω",
+    "en": "Fake power technician: “electricity leak”, leave cash and jewellery outside"
+  },
+  "how": {
+    "el": "Σας τηλεφωνεί κάποιος που λέει ότι είναι από τον ΔΕΔΔΗΕ ή τη ΔΕΗ: υπάρχει διαρροή ρεύματος ή βλάβη στο σπίτι σας και κίνδυνος ατυχήματος. Για να «προστατευτούν», σας λέει να τυλίξετε μετρητά και κοσμήματα σε αλουμινόχαρτο, να τα αφήσετε σε ένα σημείο έξω από το σπίτι ή να αφήσετε την πόρτα ανοιχτή. Ένας συνεργός, συχνά με μηχανή, τα παίρνει. Σε νεότερες εκδοχές, όταν διστάζετε, ακούτε στο τηλέφωνο τη «φωνή» ενός συγγενή που σας λέει να κάνετε ό,τι σας λένε: είναι φωνή φτιαγμένη με τεχνητή νοημοσύνη.",
+    "en": "Someone calls saying they are from HEDNO (ΔΕΔΔΗΕ) or the power company: there is an electricity leak or fault at your home and a risk of accident. To “protect” your cash and jewellery, you are told to wrap them in aluminium foil, leave them somewhere outside the house, or leave the door open. An accomplice, often on a motorbike, takes them. In newer versions, when you hesitate, you hear the “voice” of a relative on the phone telling you to do as you’re told: it is a voice made with artificial intelligence."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Τηλεφώνημα από «τεχνικό» του ρεύματος για διαρροή ή βλάβη.",
+        "en": "A call from a power “technician” about a leak or fault."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Κίνδυνος ατυχήματος: πρέπει να ενεργήσετε αμέσως.",
+        "en": "Risk of an accident: you must act at once."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Σας κρατούν στη γραμμή και σας δίνουν οδηγίες βήμα βήμα.",
+        "en": "You are kept on the line and given step-by-step instructions."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "el": "Να βάλετε χρήματα και κοσμήματα έξω από το σπίτι ή να αφήσετε την πόρτα ανοιχτή.",
+        "en": "Put cash and jewellery outside the house or leave the door open."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "el": "Κυρία μου, σας παίρνω από τη βλάβη του δικτύου ρεύματος. Έχουμε ένδειξη διαρροής στην παροχή σας και υπάρχει κίνδυνος να πάρει φωτιά. Τα χρυσαφικά και τα χρήματα που έχετε στο σπίτι μαγνητίζονται, τυλίξτε τα σε αλουμινόχαρτο και αφήστε τα στο σκαλάκι της αυλής μέχρι να περάσει ο συνεργάτης μας. Μην κλείσετε, θα σας καθοδηγώ.",
+        "en": "Madam, I’m calling from the power network fault service. We have a leak showing on your supply and there is a risk of fire. The gold and money you keep at home are getting magnetised, wrap them in foil and leave them on the step in the yard until our colleague comes by. Don’t hang up, I’ll guide you."
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "τηλεφώνησαν από δεδδηε διαρροή ρεύματος",
+      "είπαν να τυλίξω κοσμήματα σε αλουμινόχαρτο",
+      "τεχνικός ρεύματος είπε να αφήσω χρυσαφικά έξω από το σπίτι",
+      "βλάβη ρεύματος κίνδυνος φωτιάς τηλεφώνημα",
+      "άκουσα τη φωνή του γιου μου στο τηλέφωνο τεχνικός",
+      "υπάλληλος δεη τηλεφώνημα αφήστε πόρτα ανοιχτή",
+      "συνεργός με μηχανή πήρε τα τιμαλφή",
+      "υπάλληλος δικτύου διανομής ρεύματος ζήτησε να βγάλω μετρητά και κοσμήματα"
+    ],
+    "en": [
+      "power company caller said electricity leak",
+      "told to wrap jewellery in aluminium foil",
+      "technician asked me to leave money outside",
+      "heard my son voice on the call ai",
+      "fake hedno employee phone call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Καμία εταιρεία ρεύματος δεν ζητά να βγάλετε χρήματα ή κοσμήματα από το σπίτι.",
+      "Σας κρατούν στο τηλέφωνο για να μη μιλήσετε με κανέναν.",
+      "Μια γνώριμη φωνή στο τηλέφωνο δεν αποδεικνύει ότι είναι ο συγγενής σας."
+    ],
+    "en": [
+      "No power company asks you to take cash or jewellery out of your home.",
+      "They keep you on the phone so you can’t talk to anyone.",
+      "A familiar voice on the phone doesn’t prove it is your relative."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Κλείστε αμέσως και καλέστε το 100. Μην ανοίγετε την πόρτα σε αγνώστους.",
+      "Καλέστε τον συγγενή σας στον αριθμό που έχετε αποθηκευμένο. Συμφωνήστε μια οικογενειακή λέξη ασφαλείας.",
+      "Για πραγματική βλάβη, καλέστε εσείς τον επίσημο αριθμό του παρόχου."
+    ],
+    "en": [
+      "Hang up straight away and call 100. Don’t open the door to strangers.",
+      "Call your relative on the number saved in your phone. Agree a family safety word.",
+      "For a real fault, call the provider’s official number yourself."
+    ]
+  },
+  "story": {
+    "el": "Τον Φεβρουάριο του 2026 στο Ηράκλειο, δύο ηλικιωμένοι παρέδωσαν κοσμήματα αξίας τουλάχιστον 20.000 ευρώ ο καθένας, αφού ένας «υπάλληλος του ΔΕΔΔΗΕ» τους έπεισε στο τηλέφωνο ότι υπήρχε διαρροή ρεύματος και να αφήσουν τα τιμαλφή έξω από το σπίτι. Η Αστυνομία συνέλαβε αργότερα δύο άνδρες στην Αττική.",
+    "en": "In February 2026 in Heraklion, two elderly people handed over jewellery worth at least 20,000 euros each after a “HEDNO employee” convinced them on the phone that there was an electricity leak and they should leave their valuables outside. Police later arrested two men in Attica."
+  },
+  "reportTo": [
+    "gr/police-100"
+  ],
+  "sources": [
+    {
+      "title": "Gang Used AI to Clone Relatives’ Voices in Scams",
+      "publisher": "To Βήμα (tovima.com)",
+      "url": "https://www.tovima.com/society/greek-gang-used-ai-to-clone-relatives-voices-in-scams/amp/",
+      "date": "2026-09-18"
+    },
+    {
+      "title": "ΕΛ.ΑΣ.: Προσοχή σε τηλεφωνικές απάτες με ΑΙ και μίμηση φωνής",
+      "publisher": "aftodioikisi.gr",
+      "url": "https://www.aftodioikisi.gr/koinonia/el-as-prosochi-se-tilefonikes-apates-me-ai-kai-mimisi-fonis/",
+      "date": "2026-08-14"
+    },
+    {
+      "title": "Κατερίνη: Εξιχνιάστηκε υπόθεση τηλεφωνικής απάτης με λεία 79.000 ευρώ",
+      "publisher": "Ναυτεμπορική",
+      "url": "https://www.naftemporiki.gr/society/2087927/katerini-exichniastike-ypothesi-tilefonikis-apatis-me-leia-79-000-eyro/",
+      "date": "2026-03-19"
+    },
+    {
+      "title": "Από την Αττική στην Κρήτη για απάτες σε βάρος ηλικιωμένων: Η μεθοδολογία του κυκλώματος που εξάρθρωσε η ΕΛ.ΑΣ.",
+      "publisher": "iefimerida.gr",
+      "url": "https://www.iefimerida.gr/ellada/apo-attiki-kriti-apates-ilikiomenon-methodologia-kyklomatos",
+      "date": "2026-02-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/relative-accident-doctor-call",
+    "gr/fake-accountant-call"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "ua/kompensatsiia-palne-zastosunok",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "uk": "Реклама в соцмережах від імені відомої мережі АЗС чи державної програми",
+    "en": "A social media ad in the name of a well-known petrol station chain or state programme"
+  },
+  "name": {
+    "uk": "«Компенсація за пальне» чи «державний кешбек»: встановіть застосунок",
+    "en": "'Fuel compensation' or 'state cashback': install this app"
+  },
+  "how": {
+    "uk": "У соцмережах з’являється реклама «державного кешбеку», «компенсації за пальне» чи великої знижки нібито від відомої компанії. Посилання веде на сайт, схожий на офіційний, де пропонують завантажити застосунок. Після встановлення він просить доступ до SMS, сповіщень, екрана й інших функцій, і тоді зловмисники можуть керувати телефоном віддалено: перехоплювати коди, бачити банківський застосунок і переказувати гроші. Зі зламаних акаунтів вони ще й просять знайомих позичити гроші.",
+    "en": "Ads appear on social media for 'state cashback', 'fuel compensation' or a big discount supposedly from a well-known company. The link leads to a site that looks official, which offers an app to download. Once installed it asks for access to texts, notifications, the screen and other functions, and then criminals can control the phone remotely: intercept codes, see the banking app and move money. From hijacked accounts they also ask your contacts to lend money."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Отримайте компенсацію за пальне від АЗС.",
+        "en": "Get fuel compensation from the petrol station."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "uk": "Завантажте застосунок із сайту.",
+        "en": "Download the app from the website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "uk": "Дозвольте доступ до SMS і екрана.",
+        "en": "Allow access to texts and the screen."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "uk": "⛽ Держпрограма «Пальне для своїх»: кожен водій отримує 1 500 грн компенсації на рахунок! Встановіть офіційний застосунок мережі АЗС, зареєструйтесь за номером телефону і отримайте виплату за 5 хвилин. Завантажити: [посилання]",
+        "en": "⛽ State programme 'Fuel for our people': every driver gets 1,500 hryvnias of compensation to their account! Install the petrol chain's official app, sign up with your phone number and get the payment in 5 minutes. Download: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "реклама про компенсацію за пальне просить встановити застосунок",
+      "державний кешбек від азс у фейсбуці",
+      "застосунок просить доступ до смс і екрана",
+      "після встановлення програми зникли гроші з картки",
+      "завантажив apk зі знижкою на бензин"
+    ],
+    "en": [
+      "an ad about fuel compensation asks me to install an app",
+      "state cashback from a petrol station on facebook",
+      "the app asks for access to my texts and screen",
+      "money vanished from my card after installing the app",
+      "downloaded an apk with a petrol discount"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "remote_access",
+    "impersonation"
+  ],
+  "redFlags": {
+    "uk": [
+      "Застосунок пропонують завантажити з сайту, а не з Google Play чи App Store.",
+      "Програма для знижки вимагає доступ до SMS, сповіщень і екрана.",
+      "Обіцяна сума надто щедра й «від держави»."
+    ],
+    "en": [
+      "The app is offered from a website, not Google Play or the App Store.",
+      "A discount app demands access to texts, notifications and the screen.",
+      "The amount promised is too generous and 'from the state'."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Встановлюйте застосунки лише з офіційних магазинів і перевіряйте розробника.",
+      "Інформацію про кешбек і компенсації перевіряйте на офіційних сайтах компаній і держави.",
+      "Якщо встановили такий застосунок, вимкніть інтернет, зателефонуйте в банк і повідомте кіберполіцію."
+    ],
+    "en": [
+      "Install apps only from official stores and check the developer.",
+      "Check cashback and compensation offers on the official websites of companies and the state.",
+      "If you installed such an app, turn off the internet, call your bank and report it to the cyber police."
+    ]
+  },
+  "reportTo": [
+    "ua/your-bank",
+    "ua/cyberpolice"
+  ],
+  "sources": [
+    {
+      "title": "Компенсація за пальне від імені АЗС: як шахраї виманюють гроші",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/kompensacziya-za-palne-vid-imeni-azs-yak-shaxrayi-vymanyuyut-groshi-2649/",
+      "date": "2026-10-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

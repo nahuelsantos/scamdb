@@ -1,0 +1,137 @@
+{
+  "id": "bg/mamo-new-number",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "bg": "Непознат номер, който се представя за ваше дете или близък (WhatsApp, Viber, SMS)",
+    "en": "An unknown number posing as your child or a relative (WhatsApp, Viber, text)"
+  },
+  "name": {
+    "bg": "„Мамо, това е новият ми номер“: мнимо дете пише от нов номер и иска спешен превод",
+    "en": "“Mum, this is my new number”: a fake child writes from a new number and asks for an urgent transfer"
+  },
+  "how": {
+    "bg": "Получавате съобщение от непознат номер: „Мамо“ или „Тате, телефонът ми се развали, това е новият ми номер“. Мнимото дете ви моли да изтриете стария номер, а после споделя, че има спешно плащане (наем, сметка, нов телефон) и не може да влезе в банката си. Пита дали можете да преведете сумата по сметка на друг човек и обещава да върне парите. Понякога има и гласово съобщение с клониран глас.",
+    "en": "You get a message from an unknown number: “Mum” or “Dad, my phone broke, this is my new number”. The fake child asks you to delete the old number, then says there's an urgent payment (rent, a bill, a new phone) and they can't get into their bank. They ask whether you can transfer the amount to someone else's account and promise to pay it back. Sometimes there's even a voice note with a cloned voice."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Непознат номер: „телефонът ми е повреден, това е новият ми номер“.",
+        "en": "An unknown number: “my phone is broken, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "bg": "Молба да изтриете стария номер и да пишете само на новия.",
+        "en": "A request to delete the old number and only write to the new one."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Спешно плащане днес по сметка на друг човек.",
+        "en": "An urgent payment today to someone else's account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "bg": "Не може да говори по телефона, само пише.",
+        "en": "They can't talk on the phone, only text."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Здрасти мамо, аз съм. Изпуснах телефона и екранът е за смяна, затова пиша от този номер, запиши си го. Имам един проблем, днес е последният ден да платя вноската за курса, а не мога да вляза в банката от новия телефон. Можеш ли да преведеш 680 евро? Ще ти пратя сметката, утре ти ги връщам.",
+        "en": "Hi mum, it's me. I dropped my phone and the screen needs replacing, so I'm writing from this number, save it. I've got a problem: today is the last day to pay for the course and I can't log in to the bank from the new phone. Could you transfer 680 euros? I'll send you the account; I'll pay you back tomorrow."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "мамо това е новият ми номер",
+      "дъщеря ми пише от непознат номер",
+      "синът ми смени телефона и иска пари",
+      "счупих телефона пиша от друг номер",
+      "преведи ми пари по чужда сметка",
+      "изтрий стария ми номер",
+      "гласово съобщение с гласа на детето ми иска пари",
+      "пиша от телефона на приятелка",
+      "помогни ми спешно с наема",
+      "тате пише от нов номер иска пари",
+      "изпрати пари на сметка на хазяйката"
+    ],
+    "en": [
+      "mum this is my new number",
+      "my daughter texted from a new number asking for money",
+      "son changed phone and needs a transfer",
+      "delete my old number message",
+      "voice message sounded like my child asking for money",
+      "child writing from a friend's phone"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "bg": [
+      "Нов номер, спешна нужда от пари и сметка на чужд човек заедно са класическа измама.",
+      "Детето „не може“ да говори, а само пише.",
+      "Гласът може да е клониран с изкуствен интелект."
+    ],
+    "en": [
+      "A new number, an urgent need for money and someone else's account together are a classic scam.",
+      "The “child” can't talk, only text.",
+      "The voice can be cloned with AI."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Обадете се на детето си на стария номер или чрез друг член на семейството, преди да платите.",
+      "Задайте въпрос, на който само истинският човек знае отговора.",
+      "Ако сте превели пари, уведомете банката веднага и подайте сигнал в полицията."
+    ],
+    "en": [
+      "Call your child on the old number or through another family member before paying.",
+      "Ask a question only the real person knows the answer to.",
+      "If you sent money, tell your bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/emergency-112",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Русенка стана жертва на измама с фалшиво съобщение от дъщеря си в мобилно приложение",
+      "publisher": "БТА",
+      "url": "https://www.bta.bg/bg/news/bulgaria/1246282-rusenka-stana-zhertva-na-izmama-s-falshivo-saobshtenie-ot-dashterya-si-v-mobilno",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Клониране на телефони и глас: Как да се предпазим от новите измами?",
+      "publisher": "БНТ",
+      "url": "https://bntnews.bg/news/klonirane-na-telefoni-i-glas-kak-da-se-predpazim-ot-novite-izmami-1408477news.html",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/chat-account-takeover"
+  ]
+}

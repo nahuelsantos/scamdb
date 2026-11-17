@@ -1,0 +1,136 @@
+{
+  "id": "gr/investment-deepfake-ads",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "el": "Διαφήμιση με γνωστό πρόσωπο και, μετά, ένας «επενδυτικός σύμβουλος»",
+    "en": "An ad with a famous face, then an “investment adviser”"
+  },
+  "name": {
+    "el": "Ψεύτικες επενδύσεις με διάσημους σε deepfake βίντεο",
+    "en": "Fake investments promoted with deepfake videos of famous people"
+  },
+  "how": {
+    "el": "Στα social media ή σε σελίδες που μοιάζουν με γνωστές εφημερίδες βλέπετε διαφήμιση ή βίντεο όπου ένας υπουργός, ένας επιχειρηματίας ή ένας καλλιτέχνης λέει ότι κέρδισε πολλά με μια πλατφόρμα για κρυπτονομίσματα, χρυσό ή πετρέλαιο. Αφήνετε το τηλέφωνό σας και σας καλεί ένας «σύμβουλος», συχνά από τηλεφωνικό κέντρο στο εξωτερικό που μιλά ελληνικά. Ξεκινάτε με μικρό ποσό, βλέπετε «κέρδη» στην οθόνη και σας πιέζουν να βάλετε περισσότερα, συχνά με εφαρμογή απομακρυσμένης πρόσβασης στον υπολογιστή σας. Όταν ζητήσετε τα χρήματα, ζητούν «τέλη» ή εξαφανίζονται. Αργότερα μπορεί να σας καλέσουν για δήθεν ανάκτηση των χαμένων.",
+    "en": "On social media or on pages made to look like well-known newspapers you see an ad or video where a minister, businessman or artist says they made a lot on a platform for crypto, gold or oil. You leave your number and an “adviser” calls, often from a call centre abroad that speaks Greek. You start small, see “profits” on screen and are pushed to put in more, often with a remote-access app on your computer. When you ask for your money, they demand “fees” or disappear. Later you may be called with an offer to recover what you lost."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Διαφήμιση ή βίντεο με γνωστό πρόσωπο που υπόσχεται μεγάλα κέρδη.",
+        "en": "An ad or video with a famous person promising big profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Ένας «σύμβουλος» σας καλεί και παριστάνει τον ειδικό.",
+        "en": "An “adviser” calls you and acts the expert."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας ζητά να εγκαταστήσετε εφαρμογή για να σας «βοηθήσει».",
+        "en": "They ask you to install an app so they can “help”."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "el": "Όλο και μεγαλύτερες καταθέσεις, μετά «τέλη» για ανάληψη.",
+        "en": "Ever-larger deposits, then “fees” to withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "el": "ΑΠΟΚΛΕΙΣΤΙΚΟ: Ο γνωστός επιχειρηματίας αποκάλυψε στον αέρα την πλατφόρμα που του αποφέρει 8.000 € τον μήνα. Με κατάθεση μόλις 250 € ξεκινάτε σήμερα, οι θέσεις για Έλληνες επενδυτές είναι περιορισμένες. Κάντε εγγραφή και ένας σύμβουλος θα σας καλέσει: [σύνδεσμος]",
+        "en": "EXCLUSIVE: The well-known businessman revealed on air the platform that earns him €8,000 a month. With a deposit of just €250 you start today; places for Greek investors are limited. Sign up and an adviser will call you: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "διαφήμιση με υπουργό για επενδύσεις κρυπτονομίσματα",
+      "deepfake βίντεο διάσημος πλατφόρμα κέρδη",
+      "σύμβουλος επενδύσεων τηλεφωνεί κατάθεση 250 ευρώ",
+      "μου ζήτησαν να εγκαταστήσω anydesk για επένδυση",
+      "δεν μπορώ να κάνω ανάληψη ζητούν τέλη",
+      "επένδυση σε χρυσό πετρέλαιο μεγάλες αποδόσεις facebook",
+      "ανάκτηση χαμένων χρημάτων από επένδυση"
+    ],
+    "en": [
+      "deepfake video celebrity crypto investment greece",
+      "investment adviser called after facebook ad",
+      "asked to install remote app to invest",
+      "cannot withdraw profits they want fees",
+      "minister ad promising high returns"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Γνωστά πρόσωπα δεν διαφημίζουν «σίγουρα» κέρδη· τα βίντεο είναι συχνά πλαστά.",
+      "Υψηλές και σίγουρες αποδόσεις και πίεση να βάλετε κι άλλα.",
+      "Σας ζητούν εφαρμογή απομακρυσμένης πρόσβασης ή «τέλη» για να πάρετε τα χρήματά σας."
+    ],
+    "en": [
+      "Famous people don’t advertise “guaranteed” profits; the videos are often fake.",
+      "High, certain returns and pressure to put in more.",
+      "They ask for a remote-access app or “fees” before you can have your money."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Πριν επενδύσετε, ελέγξτε αν η εταιρεία έχει άδεια από την Επιτροπή Κεφαλαιαγοράς ή την Τράπεζα της Ελλάδος και δείτε τις προειδοποιήσεις της Επιτροπής.",
+      "Μην εγκαθιστάτε εφαρμογές που σας ζητούν και μην πληρώνετε «τέλη» για ανάληψη ή για ανάκτηση χρημάτων.",
+      "Χάσατε χρήματα; Καλέστε την τράπεζα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Before investing, check that the firm is licensed by the Capital Market Commission or the Bank of Greece and look at the Commission’s warnings.",
+      "Don’t install apps they ask for and don’t pay “fees” to withdraw or to recover money.",
+      "Lost money? Call your bank and report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/hcmc",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Online Albanian investment scam ring with Greek victims busted",
+      "publisher": "Millet News",
+      "url": "https://www.milletnews.com/balkans/online-albanian-investment-scam-ring-with-greek-victims-busted",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "Greek Finance Minister Sues Facebook Page Over Deepfake Investment Scam",
+      "publisher": "Greek City Times",
+      "url": "https://greekcitytimes.com/2025/11/15/greek-minister-deepfake-lawsuit-facebook/",
+      "date": "2025-11-14"
+    },
+    {
+      "title": "ΕΛ.ΑΣ.: Προσοχή στα deepfake βίντεο -Προσπάθεια εξαπάτησης των πολιτών μέσω απατηλών διαφημίσεων",
+      "publisher": "iefimerida.gr",
+      "url": "https://www.iefimerida.gr/ellada/elas-prosohi-sta-deepfake-binteo",
+      "date": "2024-02-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,145 @@
+{
+  "id": "bg/fake-traffic-fine-sms",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "bg": "„МВР-КАТ“, „Пътна полиция“, „Агенция Пътна инфраструктура“ или „Център за дигитален контрол на трафика“, често от чуждестранен номер",
+    "en": "“MVR-KAT”, “Traffic Police”, a road agency or a “digital traffic monitoring centre”, often from a foreign number"
+  },
+  "name": {
+    "bg": "Фалшиво SMS за неплатена глоба или електронен фиш от МВР/КАТ с линк за плащане",
+    "en": "Fake text about an unpaid traffic fine or electronic ticket from the Interior Ministry/traffic police with a payment link"
+  },
+  "how": {
+    "bg": "Идва SMS, Viber съобщение или имейл, уж от МВР, КАТ или Пътна полиция: имате неплатен електронен фиш за превишена скорост или друг акт. Предлагат отстъпка, ако платите до кратък срок, и заплашват с лихви, допълнителни санкции или отнемане на автомобила. Линкът води към сайт, който прилича на портала на МВР, но не е той. Там искат имена, адрес, регистрационен номер и данни от банкова карта. После картата се добавя в дигитален портфейл и сметката се източва.",
+    "en": "A text, Viber message or email arrives, supposedly from the Interior Ministry, KAT or the Traffic Police: you have an unpaid electronic speeding ticket or other penalty. They offer a discount if you pay by a short deadline and threaten interest, extra penalties or removal of the car. The link leads to a site that looks like the Ministry's portal but isn't. It asks for your name, address, registration number and card details. The card is then added to a digital wallet and the account drained."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Съобщение от чуждестранен номер: имате неплатена глоба или електронен фиш.",
+        "en": "A message from a foreign number: you have an unpaid fine or electronic ticket."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Отстъпка при бързо плащане и заплаха с лихви или отнемане на колата.",
+        "en": "A discount for paying quickly and threats of interest or the car being removed."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bg": "Линк към сайт, който прилича на портала на МВР.",
+        "en": "A link to a site that looks like the Ministry's portal."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Искат данни от банкова карта и код от SMS.",
+        "en": "They ask for your card details and a code from a text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "MVR-KAT: Имате неплатен електронен фиш за превишена скорост. Платете до 23:59 днес и ползвайте 30% отстъпка. След срока се начисляват лихви и МПС подлежи на принудително задържане. Плащане: [линк]",
+        "en": "MVR-KAT: You have an unpaid electronic ticket for speeding. Pay by 23:59 today and get a 30% discount. After the deadline interest is added and the vehicle may be impounded. Payment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "sms за неплатена глоба от кат",
+      "електронен фиш превишена скорост линк",
+      "мвр съобщение отстъпка ако платя днес",
+      "пътна полиция пише неплатени актове",
+      "глоба от чуждестранен номер",
+      "въведох картата за да платя глоба",
+      "фалшив портал за електронни фишове",
+      "заплаха за отнемане на колата съобщение"
+    ],
+    "en": [
+      "text about an unpaid traffic fine",
+      "speeding ticket message with a payment link",
+      "discount if I pay the fine today",
+      "traffic police message from a foreign number",
+      "entered my card to pay a fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "bg": [
+      "МВР не изпраща съобщения за глоби от мобилни номера в чужбина.",
+      "Глоби и фишове се проверяват само в официалния портал за електронни услуги на МВР, не през линк от съобщение.",
+      "Таймер, отстъпка „само днес“ и заплахи са типични за измамата.",
+      "Имената на институциите, изписани на латиница, и странен адрес са признак на фалшификат."
+    ],
+    "en": [
+      "The Interior Ministry doesn't send fine notices from foreign mobile numbers.",
+      "Fines and tickets are checked only on the Ministry's official e-services portal, not through a link in a message.",
+      "A countdown, a discount “today only” and threats are typical of the scam.",
+      "Institution names written in Latin letters and an odd web address are signs of a fake."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не отваряйте линка и не въвеждайте лични данни или данни от карта.",
+      "Проверете дали имате глоби сами, като отворите официалния портал на МВР през търсачка или приложение.",
+      "Ако сте въвели картата, обадете се веднага на банката да я блокира и следете за непознати плащания.",
+      "Докладвайте съобщението на CERT България или ГДБОП."
+    ],
+    "en": [
+      "Don't open the link and don't enter personal or card details.",
+      "Check whether you have fines yourself by opening the Ministry's official portal through a search engine or app.",
+      "If you entered your card, call your bank straight away to block it and watch for unknown payments.",
+      "Report the message to CERT Bulgaria or GDBOP."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/cert-bulgaria",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Фишинг кампания, представяща се за държавни институции",
+      "publisher": "CERT България",
+      "url": "https://www.govcert.bg/warnings/phishing-november-2026/",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "Предупрежават за измамни съобщения, изпращани от името на \"Пътна полиция\"",
+      "publisher": "БНТ",
+      "url": "https://bntnews.bg/news/preduprezhavat-za-izmamni-saobshteniya-izprashtani-ot-imeto-na-patna-policiya-1404566news.html",
+      "date": "2026-07-23"
+    },
+    {
+      "title": "Asian Hacker Platform and AI-generated Guidance Behind Phishing Scam That Defrauded Hundreds",
+      "publisher": "BNT",
+      "url": "https://bntnews.bg/news/asian-hacker-platform-and-ai-generated-guidance-behind-phishing-scam-that-defrauded-hundreds-1392799news.html",
+      "date": "2026-05-11"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/nap-refund-phishing",
+    "bg/courier-sms-fee"
+  ]
+}

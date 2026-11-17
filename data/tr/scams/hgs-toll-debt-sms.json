@@ -1,0 +1,138 @@
+{
+  "id": "tr/hgs-toll-debt-sms",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "tr": "“HGS”, “KGM”, “PTT” veya bir “avukatlık bürosu” adıyla SMS",
+    "en": "An SMS in the name of “HGS”, “KGM” (Highways), “PTT” or a “law firm”"
+  },
+  "name": {
+    "tr": "Sahte HGS cezası: “Geçiş ücreti ödenmedi, cezalı tutar uygulanacak”",
+    "en": "Fake HGS toll fine: “toll not paid, a penalty will be applied”"
+  },
+  "how": {
+    "tr": "HGS geçiş ücretinizin ödenmediğini, hız ihlali veya trafik cezanız olduğunu söyleyen bir SMS gelir. Bazen bir avukat adına icra takibi başlatılacağı yazar. Linkteki sayfa resmi siteye çok benzer ama adresi birkaç harf farklıdır; ödeme yapmak için girdiğiniz kart bilgileri dolandırıcılara gider.",
+    "en": "A text says your HGS toll was not paid, or that you have a speeding or traffic fine. Sometimes it claims a lawyer will start enforcement proceedings. The linked page looks very like the official site but the address differs by a few characters; the card details you enter to pay go to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "HGS veya KGM adıyla SMS: “Ödenmemiş geçiş ücretiniz var.”",
+        "en": "An SMS in HGS or KGM’s name: “you have an unpaid toll”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Ceza katlanacağı veya icra başlatılacağı tehdidi.",
+        "en": "A threat that the fine will multiply or enforcement will start."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Ödeme için resmi siteye benzeyen bir link.",
+        "en": "A link to a page that looks like the official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tr": "Kart bilgileri ve SMS kodu istenir.",
+        "en": "Card details and the SMS code are requested."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "tr": "HGS: 12.11.2026 tarihli otoyol gecisinize ait 96,50 TL ucret odenmemistir. Bugun odenmemesi halinde 10 kati cezali tutar tahsil edilecektir. Hemen odeyin: [link]",
+        "en": "HGS: The 96.50 TL fee for your motorway crossing on 12.11.2026 has not been paid. If not paid today, a penalty of 10 times the amount will be charged. Pay now: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "hgs borcu sms geldi link",
+      "geçiş ücreti ödenmedi mesajı",
+      "otoyol cezası sahte sms",
+      "hgs ihlal cezası ödeme linki",
+      "avukattan hgs icra mesajı",
+      "hız ihlali cezası sms tıklayın",
+      "kgm adına sahte mesaj",
+      "ogs geçiş borcu dolandırıcılık"
+    ],
+    "en": [
+      "fake hgs toll fine text",
+      "sms says unpaid motorway toll",
+      "toll penalty payment link scam",
+      "lawyer text about unpaid toll debt",
+      "speeding fine sms with link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "tr": [
+      "Karayolları Genel Müdürlüğü SMS ile ödeme bildirimi veya borç uyarısı göndermez.",
+      "Linkin adresi resmi adrese benzer ama farklıdır.",
+      "Aracınız veya HGS’niz olmasa bile bu mesajlar gelebilir.",
+      "“Bugün ödemezseniz 10 katı” gibi tehditler baskı içindir."
+    ],
+    "en": [
+      "The General Directorate of Highways does not send payment or debt notices by SMS.",
+      "The link’s address looks like the official one but is different.",
+      "These texts arrive even if you have no car or HGS tag.",
+      "Threats like “10 times if not paid today” are pressure."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Linke tıklamayın ve ödeme yapmayın.",
+      "Geçiş borcunuzu yalnızca e-Devlet’e veya resmi HGS kanallarına kendiniz girerek kontrol edin.",
+      "Kart bilgisi girdiyseniz bankanızı hemen arayın; SMS’i ve dekontları saklayın."
+    ],
+    "en": [
+      "Don’t tap the link and don’t pay.",
+      "Check toll debts only by logging in to e-Devlet or official HGS channels yourself.",
+      "If you entered card details, call your bank at once; keep the SMS and receipts."
+    ]
+  },
+  "reportTo": [
+    "tr/your-bank",
+    "tr/usom",
+    "tr/police-prosecutor",
+    "tr/alo-175"
+  ],
+  "sources": [
+    {
+      "title": "Ticaret Bakanlığı olarak bayram öncesinde artan dijital ve finansal dolandırıcılık girişimlerine karşı vatandaşlarımızı dikkatli olmaya ve güvenli işlem yöntemlerini tercih etmeye davet ediyoruz",
+      "publisher": "T.C. Ticaret Bakanlığı",
+      "url": "https://ticaret.gov.tr/haberler/ticaret-bakanligi-olarak-bayram-oncesinde-artan-dijital-ve-finansal-dolandiricilik-girisimlerine-karsi-vatandaslarimizi-dikkatli-olmaya-ve-guvenli-islem-yontemlerini-tercih-etmeye-davet-ediyoruz",
+      "date": "2026-05-20"
+    },
+    {
+      "title": "Karayolları Genel Müdürlüğü'nden SMS dolandırıcılarına karşı uyarı",
+      "publisher": "İşçi Haber",
+      "url": "https://www.iscihaber.net/gundem/karayollari-genel-mudurlugunden-sms-dolandiricilarina-karsi-uyari/225969",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "Sahte SMS ile HGS dolandırıcılığına dikkat: \"Bir geçiş ücreti ödenmedi\" mesajıyla kandırıyorlar",
+      "publisher": "NTV",
+      "url": "https://www.ntv.com.tr/turkiye/galeri-sahte-sms-ile-hgs-dolandiriciligina-dikkat-bir-gecis-ucreti-odenmedi-mesajiyla-kandiriyorlar,R5BPcSJhbUOR8QAAMH7g-g",
+      "date": "2025-08-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

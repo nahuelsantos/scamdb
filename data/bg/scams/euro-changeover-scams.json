@@ -1,0 +1,143 @@
+{
+  "id": "bg/euro-changeover-scams",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "in-person",
+    "email"
+  ],
+  "sender": {
+    "bg": "„Служител“ на Revolut, банка, БНБ, пощата или човек на вратата, който предлага смяна на левове",
+    "en": "A “Revolut”, bank, central bank or post office “employee”, or someone at the door offering to exchange leva"
+  },
+  "name": {
+    "bg": "Измами с прехода към еврото: „служебна сметка“, смяна на левове по домовете",
+    "en": "Euro changeover scams: an “official account”, door-to-door leva exchange"
+  },
+  "how": {
+    "bg": "С въвеждането на еврото измамници използват темата. Обаждат се или пишат „служители“ на Revolut или на банка: заради прехода към еврото парите ви трябвало спешно да се преведат на „служебна сметка“ или да обновите приложението през линк, иначе ще загубите достъп и наличността. Други обикалят домовете, предлагат по-изгоден курс за смяна на левове в евро или „съхранение“ на спестяванията и могат да дадат фалшиви банкноти. Обмяната се прави само в БНБ, търговските банки и Български пощи.",
+    "en": "With the euro's arrival scammers use the topic. “Employees” of Revolut or a bank call or write: because of the switch to the euro your money supposedly has to be moved urgently to an “official account”, or you must update the app through a link, or you'll lose access and your balance. Others go door to door offering a better rate to swap leva for euros or to “store” savings, and may hand over counterfeit notes. Exchange is done only at the central bank, commercial banks and Bulgarian Posts."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Съобщение или обаждане: заради еврото парите ви трябва да се преместят.",
+        "en": "A message or call: because of the euro your money has to be moved."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Спешно, иначе ще загубите сметката или парите.",
+        "en": "Urgent, or you'll lose the account or the money."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bg": "Превод по „служебна сметка“ или линк за „обновяване“.",
+        "en": "A transfer to an “official account” or a link to “update”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "bg": "Непознат на вратата предлага изгоден курс за левовете ви.",
+        "en": "A stranger at the door offers a good rate for your leva."
+      },
+      "signal": "too_good_to_be_true"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Здравейте, пише ви екипът по сигурността на Revolut. Във връзка с преминаването на България към еврото вашата сметка трябва да бъде превалутирана до края на деня. За да не загубите наличността си, прехвърлете средствата по временна служебна сметка, ще ви ги върнем в евро до 24 часа.",
+        "en": "Hello, this is the Revolut security team. Due to Bulgaria's move to the euro your account must be converted by the end of the day. So you don't lose your balance, transfer the funds to a temporary official account; we'll return them in euros within 24 hours."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "revolut служебна сметка заради еврото",
+      "спешно превалутиране на сметката",
+      "смяна на левове в евро по домовете",
+      "изгоден курс за левове от непознат",
+      "превод заради преминаването към еврото",
+      "фалшиви евро банкноти при смяна",
+      "ще загубите достъп до приложението евро"
+    ],
+    "en": [
+      "revolut told me to move money because of the euro",
+      "official account euro conversion",
+      "someone offered to exchange my leva at home",
+      "urgent currency conversion message",
+      "fake euro notes after exchange"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "bg": [
+      "Преминаването към еврото става автоматично: никоя банка не иска да местите парите си на друга сметка.",
+      "Левове се сменят само в БНБ, търговските банки и Български пощи, не по домовете.",
+      "Никоя институция не предлага платено „съхранение“ на спестявания."
+    ],
+    "en": [
+      "The switch to the euro happens automatically: no bank asks you to move your money to another account.",
+      "Leva are exchanged only at the central bank, commercial banks and Bulgarian Posts, not door to door.",
+      "No institution offers paid “storage” of savings."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не превеждайте пари по сметка, която ви диктуват по телефона или в чат.",
+      "Обадете се сами на банката си през номера в приложението или на картата.",
+      "Не пускайте непознати в дома си; ако някой настоява, наберете 112.",
+      "Ако сте превели пари, уведомете банката веднага и подайте сигнал в ГДБОП."
+    ],
+    "en": [
+      "Don't transfer money to an account dictated to you by phone or in a chat.",
+      "Call your bank yourself through the number in the app or on the card.",
+      "Don't let strangers into your home; if someone insists, dial 112.",
+      "If you sent money, tell your bank straight away and report it to GDBOP."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/gdbop-cybercrime",
+    "bg/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "България е под нова атака с измами от името на МВР и банки",
+      "publisher": "Сега",
+      "url": "https://www.segabg.com/hot/category-bulgaria/bulgariya-e-pod-nova-ataka-izmami-imeto-na-mvr-i-banki",
+      "date": "2026-07-22"
+    },
+    {
+      "title": "Bulgaria: Authorities Caution Against Fraud Risks Ahead of Euro Adoption",
+      "publisher": "Novinite",
+      "url": "https://www.novinite.com/articles/236156/Bulgaria%3A+Authorities+Caution+Against+Fraud+Risks+Ahead+of+Euro+Adoption",
+      "date": "2025-12-29"
+    },
+    {
+      "title": "Directorate for Combating Organised Crime Reports First Euro-Related Cyber Fraud Attempt in Bulgaria",
+      "publisher": "BNT",
+      "url": "https://bntnews.bg/news/directorate-for-combating-organised-crime-reports-first-euro-related-cyber-fraud-attempt-in-bulgaria-1352659news.html",
+      "date": "2025-08-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/fake-police-bank-safe-account",
+    "bg/bank-phishing-messages"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "tr/listing-deposit-payment-request",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "tr": "sahibinden veya başka bir ilan sitesinde “alıcı”; bazen kendini noter, savcı ya da şehir dışından alıcı olarak tanıtır",
+    "en": "A “buyer” on sahibinden or another listings site; sometimes posing as a notary, prosecutor or out-of-town buyer"
+  },
+  "name": {
+    "tr": "Kapora tuzağı: Alıcı “kapora göndereceğim” der, bankanın “Ödeme İste” bildirimi onaylatılır",
+    "en": "Deposit trap: the buyer says “I’ll send a deposit” and gets you to approve a bank “Request Payment” notice"
+  },
+  "how": {
+    "tr": "Araç veya ev ilanı veren kişiye bir alıcı ulaşır, güven kazanır ve hemen kapora göndermek istediğini söyler. Para göndermek yerine mobil bankacılıktaki “Ödeme İste” özelliğiyle sizin adınıza bir ödeme talebi oluşturur. Kapora bekleyen ilan sahibi bildirimi okumadan onaylar ve para kendi hesabından dolandırıcıya gider. Bazı alıcılar ilan sitesinin güvenli ödeme sistemini dışarıda bırakmak ister.",
+    "en": "A buyer contacts someone selling a car or home, builds trust and says they want to send a deposit right away. Instead of sending money, they create a payment request to you with the mobile banking “Request Payment” feature. Expecting a deposit, the seller approves the notification without reading it and money leaves their own account for the scammer. Some buyers also want to bypass the site’s secure payment system."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "İlanınıza hemen kapora vermek isteyen bir alıcı yazar.",
+        "en": "A buyer messages wanting to pay a deposit straight away."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tr": "Kendini noter, savcı veya şehir dışından alıcı olarak tanıtır.",
+        "en": "They present themselves as a notary, prosecutor or out-of-town buyer."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "“Kaporayı almak için telefonuna gelen bildirimi onayla” der.",
+        "en": "“Approve the notification on your phone to receive the deposit.”"
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tr": "Acele ettirir, bildirimi okumanıza fırsat vermez.",
+        "en": "They rush you and give you no time to read the notification."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "tr": "Merhaba, ilandaki aracınızla çok ilgileniyorum, ben şu an Antalya’dayım ama hafta sonu gelip alacağım. Başkasına satmayın diye 45.000 TL kapora göndermek istiyorum. Bankadan size bir bildirim gelecek, onu onaylarsanız para hesabınıza geçer. Hemen onaylayın lütfen, bankanın işlem süresi doluyor.",
+        "en": "Hello, I’m very interested in your car from the listing. I’m in Antalya right now but will come and buy it at the weekend. So you don’t sell it to anyone else I want to send a 45,000 TL deposit. You’ll get a notification from the bank; if you approve it the money goes into your account. Please approve it quickly, the bank’s processing time is running out."
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "kapora göndereceğim bildirimi onayla",
+      "ödeme iste bildirimi onayladım para gitti",
+      "sahibinden alıcı kapora dolandırıcılığı",
+      "ilan sahibine kapora tuzağı",
+      "araç ilanı kapora bildirim onay",
+      "noter olduğunu söyleyen alıcı kapora",
+      "kapora beklerken hesabımdan para çıktı",
+      "güvenli ödeme dışında kapora"
+    ],
+    "en": [
+      "buyer said approve notification to receive deposit",
+      "approved a payment request and lost money",
+      "sahibinden deposit scam",
+      "fake buyer sent request payment notice",
+      "car listing deposit scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "tr": [
+      "Para almak için hiçbir şeyi onaylamanız gerekmez; onay her zaman para çıkışıdır.",
+      "Görmeden kapora vermek isteyen alıcı şüphelidir.",
+      "Noter, savcı veya hakim olduğunu söyleyip onay isteyen kişi dolandırıcıdır.",
+      "İlan sitesinin güvenli ödeme sistemini dışarıda bırakmak isteyen alıcıya güvenmeyin."
+    ],
+    "en": [
+      "You never need to approve anything to receive money; an approval always sends money out.",
+      "A buyer who wants to pay a deposit sight unseen is suspicious.",
+      "Someone claiming to be a notary, prosecutor or judge who asks for an approval is a scammer.",
+      "Don’t trust a buyer who wants to bypass the site’s secure payment."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Banka bildirimlerini işlem türünü ve paranın yönünü okumadan asla onaylamayın.",
+      "Para çıktıysa hemen bankanızı arayıp işlemi şüpheli olarak bildirin ve iptal isteyin.",
+      "Mesajları, IBAN’ı ve ilanı saklayıp savcılığa suç duyurusunda bulunun."
+    ],
+    "en": [
+      "Never approve a bank notification without reading the transaction type and which way the money goes.",
+      "If money left, call your bank at once, report it as suspicious and ask for cancellation.",
+      "Keep the messages, IBAN and listing, and file a complaint with the prosecutor."
+    ]
+  },
+  "reportTo": [
+    "tr/your-bank",
+    "tr/police-prosecutor",
+    "tr/cimer"
+  ],
+  "sources": [
+    {
+      "title": "Bankaların 'Ödeme İste' özelliğinde yeni tuzak: Kapora beklerken hesabınızdaki para gidebilir",
+      "publisher": "GZT",
+      "url": "https://www.gzt.com/gundem/mobil-bankacilik-odeme-iste-dolandiriciligi-nedir-nasil-korunulur-4250845",
+      "date": "2026-08-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

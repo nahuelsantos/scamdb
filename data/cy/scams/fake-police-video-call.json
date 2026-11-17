@@ -1,0 +1,137 @@
+{
+  "id": "cy/fake-police-video-call",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "el": "Βιντεοκλήση σε WhatsApp ή Viber από «την Αστυνομία Κύπρου»",
+    "en": "A WhatsApp or Viber video call from “Cyprus Police”"
+  },
+  "name": {
+    "el": "Ψεύτικοι αστυνομικοί σε βιντεοκλήση ζητούν ταυτότητα και κάρτα",
+    "en": "Fake police on a video call ask for your ID and card"
+  },
+  "how": {
+    "el": "Κάποιος καλεί σε WhatsApp ή Viber, συχνά στα αγγλικά, με τη φωτογραφία του Αρχηγού της Αστυνομίας ή το έμβλημα της Αστυνομίας. Σε βιντεοκλήση μπορεί να φορά στολή και να δείχνει ψεύτικη αστυνομική ταυτότητα. Λέει ότι κάνει «επίσημο έλεγχο» ή ότι καλεί για λογαριασμό του Τμήματος Μετανάστευσης και ζητά διαβατήριο, ταυτότητα, άδεια διαμονής και στοιχεία κάρτας. Μετά αδειάζουν τον λογαριασμό.",
+    "en": "Someone calls on WhatsApp or Viber, often in English, with the Police Chief’s photo or the police emblem. On a video call they may wear a uniform and show a fake police ID. They say it is an “official check” or that they call for the Migration Department, and ask for your passport, ID card, residence permit and card details. Then they empty the account."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Βιντεοκλήση από «αστυνομικό» με στολή ή τη φωτογραφία του Αρχηγού.",
+        "en": "A video call from an “officer” in uniform or with the Chief’s photo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Λέει ότι υπάρχει επείγουσα διαδικασία με τη Μετανάστευση ή έλεγχος.",
+        "en": "They say there is an urgent Migration procedure or a check."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ζητά φωτογραφία διαβατηρίου, ταυτότητας ή άδειας διαμονής.",
+        "en": "They ask for a photo of your passport, ID card or residence permit."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "el": "Ζητά στοιχεία κάρτας, κωδικούς ή μια μεταφορά χρημάτων.",
+        "en": "They ask for card details, codes or a money transfer."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Καλών (βιντεοκλήση WhatsApp): Γεια σας, Cyprus Police, Τμήμα Μετανάστευσης. Η άδεια διαμονής σας έχει πρόβλημα και πρέπει να επαληθευτεί σήμερα. Κρατήστε το διαβατήριο και την τραπεζική σας κάρτα μπροστά στην κάμερα.",
+        "en": "Caller (WhatsApp video): Hello, Cyprus Police, Migration Department. There is a problem with your residence permit and it must be verified today. Please hold your passport and your bank card up to the camera."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "whatsapp video call from cyprus police",
+      "police chief photo on whatsapp asking for details",
+      "viber call from police about my residence permit",
+      "officer shows police id on video call",
+      "migration department call asks for bank card",
+      "police on whatsapp want my passport photo"
+    ],
+    "el": [
+      "βιντεοκλήση whatsapp από αστυνομία κύπρου",
+      "φωτογραφία αρχηγού αστυνομίας στο whatsapp",
+      "κλήση viber από αστυνομία για άδεια διαμονής",
+      "αστυνομικός δείχνει ταυτότητα σε βιντεοκλήση",
+      "μετανάστευση ζητά τραπεζική κάρτα στο τηλέφωνο",
+      "αστυνομία στο whatsapp θέλει το διαβατήριο μου"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "The police never call on WhatsApp or Viber to ask for documents or bank details.",
+      "A uniform or ID shown on camera proves nothing.",
+      "A number that changes from call to call."
+    ],
+    "el": [
+      "Η Αστυνομία δεν καλεί ποτέ σε WhatsApp ή Viber για έγγραφα ή τραπεζικά στοιχεία.",
+      "Στολή ή ταυτότητα στην κάμερα δεν αποδεικνύουν τίποτα.",
+      "Ο αριθμός αλλάζει από κλήση σε κλήση."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Don’t show documents or cards to the camera.",
+      "To check, call the Citizens’ Line 1460 yourself.",
+      "If you shared bank details, call your bank at once.",
+      "Report it through the police online complaint form."
+    ],
+    "el": [
+      "Κλείστε. Μη δείξετε έγγραφα ή κάρτες στην κάμερα.",
+      "Για να ελέγξετε, καλέστε εσείς τη Γραμμή του Πολίτη 1460.",
+      "Αν δώσατε τραπεζικά στοιχεία, καλέστε αμέσως την τράπεζά σας.",
+      "Καταγγείλετε το μέσω της ηλεκτρονικής φόρμας της Αστυνομίας."
+    ]
+  },
+  "reportTo": [
+    "cy/citizens-line",
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Police Warn of WhatsApp Scam Using Chief’s Photo to Steal Bank Details",
+      "publisher": "Politis",
+      "url": "https://en.politis.com.cy/news/1018526/police-warn-of-whatsapp-scam-using-chiefs-photo-to-steal-bank-details",
+      "date": "2026-07-11"
+    },
+    {
+      "title": "Προσοχή! Επιτήδειοί παριστάνουν ψευδώς μέλη της Αστυνομίας με σκοπό να αποσπάσουν χρήματα από ανυποψίαστους πολίτες",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/prosoxi-epitideioi-paristanoun-pseudws-meli-tis-astunomias-me-skopo-na-apospasoun-xrimata-apo-anupopsiastous-polites/",
+      "date": "2026-05-25"
+    },
+    {
+      "title": "Police warn of scammers posing as officers",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2025/12/09/police-warn-of-scammers-posing-as-officers",
+      "date": "2025-12-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

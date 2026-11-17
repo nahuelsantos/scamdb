@@ -1,0 +1,131 @@
+{
+  "id": "gr/aade-tax-refund-phishing",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "el": "«ΑΑΔΕ», «myAADE», «Εφορία» ή «gov.gr»",
+    "en": "“AADE”, “myAADE”, “the tax office” or “gov.gr”"
+  },
+  "name": {
+    "el": "Ψεύτικη επιστροφή φόρου από την «ΑΑΔΕ»",
+    "en": "Fake tax refund from “AADE” (Greek tax authority)"
+  },
+  "how": {
+    "el": "Έρχεται SMS ή email με το όνομα της ΑΑΔΕ, του myAADE ή του gov.gr, μερικές φορές με το εθνόσημο: η Εφορία έλεγξε τα στοιχεία σας και δικαιούστε επιστροφή φόρου ή επιδότηση, που θα πιστωθεί σε 24 ώρες αν επιβεβαιώσετε τα στοιχεία σας. Ο σύνδεσμος οδηγεί σε ψεύτικη σελίδα που ζητά ΑΦΜ, κωδικούς Taxisnet, στοιχεία κάρτας ή τραπεζικού λογαριασμού. Συχνά τα ελληνικά είναι αδέξια, σαν μηχανική μετάφραση.",
+    "en": "A text or email arrives in the name of AADE, myAADE or gov.gr, sometimes with the national emblem: the tax office has checked your details and you are owed a tax refund or subsidy, credited within 24 hours if you confirm your details. The link leads to a fake page asking for your tax number (AFM), Taxisnet passwords, card or bank account details. The Greek is often clumsy, like machine translation."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Μήνυμα «από την ΑΑΔΕ»: δικαιούστε επιστροφή φόρου.",
+        "en": "A message “from AADE”: you are owed a tax refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Τα χρήματα θα πιστωθούν γρήγορα, αρκεί να επιβεβαιώσετε τα στοιχεία σας.",
+        "en": "The money will be credited quickly if you just confirm your details."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Ένας σύνδεσμος οδηγεί σε σελίδα που μοιάζει με το myAADE.",
+        "en": "A link leads to a page that looks like myAADE."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά κωδικούς Taxisnet, κάρτα ή IBAN.",
+        "en": "The page asks for Taxisnet passwords, card or IBAN."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "el": "Θέμα: Έχετε νέα επιστροφή φόρου. Αγαπητέ φορολογούμενε, μετά τον έλεγχο της δήλωσής σας προκύπτει ποσό επιστροφής 386,40 €. Για να γίνει η πίστωση στον λογαριασμό σας εντός 24 ωρών, επαληθεύστε τα στοιχεία σας εδώ: [σύνδεσμος]. Ανεξάρτητη Αρχή Δημοσίων Εσόδων",
+        "en": "Subject: You have a new tax refund. Dear taxpayer, after checking your return, a refund of €386.40 is due. To have it credited to your account within 24 hours, verify your details here: [link]. Independent Authority for Public Revenue"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "μήνυμα ααδε επιστροφή φόρου σύνδεσμος",
+      "email εφορία δικαιούστε επιστροφή",
+      "sms myaade επιδότηση επιβεβαίωση στοιχείων",
+      "ζητάει κωδικούς taxisnet από email",
+      "επιστροφή φόρου πίστωση 24 ώρες",
+      "ψεύτικο μήνυμα ααδε στοιχεία κάρτας"
+    ],
+    "en": [
+      "tax refund text from aade",
+      "email says i am owed a tax refund greece",
+      "fake myaade message asking for card details",
+      "taxisnet password requested by email",
+      "refund credited in 24 hours if i confirm"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "el": [
+      "Η ΑΑΔΕ δεν ζητά ποτέ προσωπικά στοιχεία, κωδικούς ή στοιχεία λογαριασμού με SMS ή email.",
+      "Οι πραγματικές επιστροφές πληρώνονται στο IBAN που έχετε δηλώσει στο myAADE, όχι μέσω συνδέσμου.",
+      "Αδέξια ελληνικά και διεύθυνση αποστολέα που δεν είναι της ΑΑΔΕ."
+    ],
+    "en": [
+      "AADE never asks for personal details, passwords or account details by text or email.",
+      "Real refunds are paid to the IBAN you registered in myAADE, not through a link.",
+      "Clumsy Greek and a sender address that isn’t AADE’s."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην πατάτε τον σύνδεσμο. Μπείτε μόνοι σας στο myAADE πληκτρολογώντας τη διεύθυνση ή από την επίσημη εφαρμογή.",
+      "Δώσατε κωδικούς Taxisnet; Αλλάξτε τους αμέσως. Δώσατε κάρτα; Καλέστε την τράπεζα.",
+      "Καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος και σβήστε το μήνυμα."
+    ],
+    "en": [
+      "Don’t tap the link. Log in to myAADE yourself by typing the address or using the official app.",
+      "Gave your Taxisnet passwords? Change them now. Gave your card? Call your bank.",
+      "Report it to the Cybercrime Directorate and delete the message."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Νέα απάτη για την επιστροφή φόρου: Τι να προσέξετε",
+      "publisher": "alfavita.gr",
+      "url": "https://www.alfavita.gr/koinonia/467254_nea-apati-gia-tin-epistrofi-foroy-ti-na-prosexete",
+      "date": "2025-01-19"
+    },
+    {
+      "title": "Προσοχή σε αυτά τα SMS! Απάτη με το δέμα και την επιστροφή φόρου",
+      "publisher": "alfavita.gr",
+      "url": "https://www.alfavita.gr/koinonia/461663_prosohi-se-ayta-ta-sms-apati-me-dema-kai-tin-epistrofi-foroy",
+      "date": "2024-11-07"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/traffic-fine-sms",
+    "gr/benefit-refund-sms"
+  ]
+}
