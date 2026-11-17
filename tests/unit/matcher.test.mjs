@@ -414,3 +414,38 @@ test('1.13.0: Finnish "varat" (funds) is a whole word, not part of other languag
   assert.ok(!has('Nemojte otvarati link iz poruke.', 'money_request'));
   assert.ok(has('Siirrä varat turvatilille heti', 'money_request'));
 });
+test('1.14.0: Russian wording from Russia, Belarus and Armenia, and genuine Russian notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Нужно срочно переместить ваши средства на защищённый счёт', 'money_request'));
+  assert.ok(has('Сейчас придёт сообщение с кодом записи, продиктуйте его', 'asks_for_code'));
+  assert.ok(has('Это тайна следствия, в банке никому ничего не говорите', 'secrecy'));
+  assert.ok(has('Выручи, переведи по номеру, завтра верну', 'money_request'));
+  assert.ok(!has('Почта России: посылка прибыла. Для получения назовите код из приложения или предъявите паспорт.', 'asks_for_code'));
+  assert.ok(!has('Код для входа в Telegram: 58204. Не давайте код никому!', 'asks_for_code'));
+});
+test('1.14.0: Armenian signs (script and Latin transliteration), and genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Ձեր հեռախոսին թվեր կգան, կարդացեք ինձ', 'asks_for_code'));
+  assert.ok(has('Խնդրում եմ մի անջատեք', 'keep_on_line'));
+  assert.ok(has('Mtir hxumov, gri hamard u hastati ekac kodov', 'asks_for_code'));
+  assert.ok(!has('Կոդը ոչ մեկին մի հայտնեք, այդ թվում՝ բանկի աշխատակցին:', 'asks_for_code'));
+  assert.ok(!has('PIN կոդը կստանաք բանկի հավելվածում:', 'asks_for_code'));
+  assert.ok(!has('Լրացուցիչ վճար չի պահանջվում:', 'money_request'));
+});
+test('1.14.0: Georgian signs, and genuine Georgian notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('ტელეფონზე მოსულ შეტყობინებას რომ წაიკითხავთ, ის კარნახით უთხარით', 'asks_for_code'));
+  assert.ok(has('ოპერატორის თანდასწრებით გაგვიზიარეთ ეკრანი', 'remote_access'));
+  assert.ok(has('ჩემს მეზობელს ჩაურიცხე, საღამოს დაგიბრუნებ', 'money_request'));
+  assert.ok(!has('TBC: თქვენი ერთჯერადი კოდია 482913. კოდი არავის გაუზიაროთ.', 'asks_for_code'));
+  assert.ok(!has('საქართველოს ფოსტა: გთხოვთ, მიბრძანდეთ 10 დღის განმავლობაში.', 'urgency'));
+});
+test('1.14.0: Azerbaijani signs (ə or e), and genuine Azerbaijani notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Telefonunuza göndərdiyimiz təsdiq kodunu deyin', 'asks_for_code'));
+  assert.ok(has('Telefonunuza gelen kodu bura yazin', 'asks_for_code'));
+  assert.ok(has('Bu nömrəyə köçür, sabah qaytararam', 'money_request'));
+  assert.ok(!has('Tesdiq kodu: 518 362. Bu kodu hec kime demeyin.', 'asks_for_code'));
+  assert.ok(!has('PIN kodu mobil tetbiqde ozunuz teyin edin.', 'asks_for_code'));
+  assert.ok(!has('Hech bir odenis teleb olunmur.', 'money_request'));
+});
