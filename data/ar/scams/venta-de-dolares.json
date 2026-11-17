@@ -1,0 +1,165 @@
+{
+  "id": "ar/venta-de-dolares",
+  "country": "ar",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "Un conocido (con el WhatsApp robado) o un número desconocido",
+    "en": "Someone you know (whose WhatsApp was stolen) or an unknown number"
+  },
+  "name": {
+    "es": "Venta falsa de dólares por WhatsApp: “tengo dólares para vender, pasame los pesos”",
+    "en": "Fake dollar sale on WhatsApp: “I have dollars to sell, send me the pesos”"
+  },
+  "how": {
+    "es": "Te escribe un contacto, o alguien con su nombre y su foto, y te ofrece dólares a un precio un poco mejor que el del mercado: “tengo 5.000 dólares para vender, por si te interesa o sabés de alguien”. Al otro día insiste: “¿alguna novedad?”. Si aceptás, te pide los pesos primero por transferencia, muchas veces a una cuenta o alias que no es de esa persona, y promete llevarte los dólares después. Los dólares nunca llegan. Casi siempre la cuenta de WhatsApp del contacto fue robada (por eso aparece “cambió tu código de seguridad”), o el estafador usa un número nuevo con la foto y el nombre de tu conocido.",
+    "en": "A contact, or someone using their name and photo, offers you dollars at a slightly better rate than the market: “I have 5,000 dollars to sell, in case you or someone you know is interested”. The next day they follow up: “any news?”. If you accept, they ask for the pesos first by bank transfer, often to an account or alias that isn’t that person’s, and promise to bring the dollars later. The dollars never arrive. Usually the contact’s WhatsApp account was stolen (which is why you may see “security code changed”), or the scammer uses a new number with your contact’s name and photo."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un conocido, o un número nuevo con su nombre y foto.",
+        "en": "Someone you know writes to you, or a new number with their name and photo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece dólares a un precio mejor que el del mercado.",
+        "en": "They offer dollars at a better rate than the market."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Insiste al día siguiente: “¿alguna novedad?”.",
+        "en": "They follow up the next day: “any news?”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide los pesos primero, por transferencia, a veces a la cuenta de otra persona.",
+        "en": "They ask for the pesos first, by transfer, sometimes to someone else’s account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Los dólares nunca llegan y te bloquean.",
+        "en": "The dollars never arrive and they block you."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, ¿cómo andás? Te cuento que tengo unos dólares para vender, te los dejo un poco más baratos que el blue. Eso sí, necesito los pesos por transferencia antes. ¿Te interesa o conocés a alguien?",
+        "en": "Hi, how are you? I have some dollars to sell, I’ll let you have them a bit below the blue rate. I do need the pesos by transfer first. Are you interested, or do you know someone who is?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "tengo dolares para vender",
+      "necesito vender dolares",
+      "vendo dolares",
+      "dolares para vender",
+      "te los dejo en",
+      "los dejo en",
+      "mas barato que el blue",
+      "dolar barato",
+      "dolares cara grande",
+      "necesito los pesos",
+      "los pesos por transferencia",
+      "alguna novedad",
+      "por si te interesa o sabes de alguien",
+      "me ofrecieron dolares por whatsapp",
+      "venta de dolares por whatsapp",
+      "cambio de dolares",
+      "transferi los pesos y no me dieron los dolares"
+    ],
+    "en": [
+      "dollars for sale",
+      "i have dollars to sell",
+      "cheap dollars",
+      "send the pesos first",
+      "they offered me dollars on whatsapp",
+      "fake dollar sale"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un conocido te ofrece dólares de la nada, por mensaje, a un precio mejor que el del mercado.",
+      "Te piden los pesos primero y los dólares “después”.",
+      "La cuenta para transferir no está a nombre de la persona que te escribe.",
+      "Aparece “cambió tu código de seguridad” o es un número que no tenías agendado.",
+      "No quiere hablar por llamada ni por videollamada."
+    ],
+    "en": [
+      "Someone you know offers you dollars out of nowhere, by message, at a better rate than the market.",
+      "They want the pesos first and the dollars “later”.",
+      "The account to transfer to isn’t in the name of the person writing to you.",
+      "You see “security code changed”, or it’s a number you didn’t have saved.",
+      "They won’t talk by phone or video call."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No transfieras. Llamá a tu conocido al número que ya tenías agendado y preguntale si de verdad te escribió.",
+      "Desconfiá de cualquier compra de dólares por mensaje en la que tengas que pagar antes de recibir.",
+      "Nunca transfieras a una cuenta que no está a nombre de la persona con la que estás hablando.",
+      "Avisale a tu conocido: probablemente le robaron el WhatsApp y les escribe a todos sus contactos.",
+      "Si ya transferiste, llamá enseguida a tu banco o billetera para pedir que retengan el dinero y hacé la denuncia."
+    ],
+    "en": [
+      "Don’t transfer. Call your contact on the number you already had saved and ask whether they really wrote to you.",
+      "Distrust any dollar purchase by message where you have to pay before you receive.",
+      "Never transfer to an account that isn’t in the name of the person you’re talking to.",
+      "Warn your contact: their WhatsApp was probably stolen and they are writing to everyone they know.",
+      "If you already transferred, call your bank or wallet at once to ask them to hold the money, and report it."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci",
+    "ar/whatsapp-ayuda"
+  ],
+  "sources": [
+    {
+      "title": "Estafadores suplantan identidad de usuarios legítimos por WhatsApp para ofrecer dólares para vender",
+      "publisher": "ESET WeLiveSecurity",
+      "url": "https://www.welivesecurity.com/la-es/2022/02/22/suplantan-identidad-usuarios-legitimos-whatsapp-ofrecer-dolares-vender/",
+      "date": "2022-02-22"
+    },
+    {
+      "title": "Estafa por WhatsApp: perdió más de 4 millones de pesos al comprar dólares falsos",
+      "publisher": "El Sol de San Juan",
+      "url": "https://elsoldesanjuan.com.ar/policiales/02/06/2026/estafa-por-whatsapp-perdio-mas-de-4-millones-de-pesos-al-comprar-dolares-falsos/",
+      "date": "2026-06-02"
+    },
+    {
+      "title": "Un WhatsApp robado, una falsa venta de dólares y una estafa por $18 millones",
+      "publisher": "0264Noticias",
+      "url": "https://www.0264noticias.com.ar/noticias/2026/07/07/100972-un-whatsapp-robado-una-falsa-venta-de-dolares-y-una-estafa-por-18-millones",
+      "date": "2026-07-07"
+    },
+    {
+      "title": "Le hackearon el WhatsApp a su socio y perdió $5,8 millones en una falsa operación cambiaria",
+      "publisher": "La Super Digital",
+      "url": "https://lasuperdigital.com.ar/2026/11/16/le-hackearon-el-whatsapp-a-su-socio-y-perdio-58-millones-en-una-falsa-operacion-cambiaria/",
+      "date": "2026-11-16"
+    }
+  ],
+  "updated": "2026-11-16"
+}
