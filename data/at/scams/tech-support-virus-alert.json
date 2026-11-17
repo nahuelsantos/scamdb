@@ -1,0 +1,128 @@
+{
+  "id": "at/tech-support-virus-alert",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "de": "„Microsoft“, „Windows-Support“ oder eine Warnmeldung am Bildschirm",
+    "en": "“Microsoft”, “Windows support” or a warning on screen"
+  },
+  "name": {
+    "de": "Falscher Virenalarm und Microsoft-Support: Fernzugriff und TAN-Codes",
+    "en": "Fake virus alert and Microsoft support: remote access and TAN codes"
+  },
+  "how": {
+    "de": "Am Computer erscheint plötzlich eine laute Warnung: Virus gefunden, PC gesperrt, rufen Sie sofort diese Hotline an. Oder ein „Microsoft-Mitarbeiter“ ruft selbst an. Der falsche Techniker lässt sich per Fernwartung Zugriff geben, „repariert“ stundenlang und verlangt, dass Sie sich ins Online-Banking einloggen oder TAN-Codes vorlesen. Dabei werden Überweisungen ins Ausland gemacht.",
+    "en": "A loud warning suddenly appears on your computer: virus found, PC locked, call this hotline at once. Or a “Microsoft employee” calls you directly. The fake technician gets remote access, “repairs” for hours and asks you to log in to online banking or read out TAN codes. Meanwhile transfers are made abroad."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Warnfenster mit Ton: Virus, PC gesperrt, Hotline anrufen.",
+        "en": "A warning window with sound: virus, PC locked, call the hotline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Am Telefon meldet sich ein angeblicher Microsoft-Support.",
+        "en": "A supposed Microsoft support answers the phone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Sie sollen ein Programm für den Fernzugriff installieren.",
+        "en": "You are told to install a program for remote access."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "de": "Sie sollen sich ins Banking einloggen und TAN-Codes vorlesen.",
+        "en": "You are asked to log in to banking and read out TAN codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "WARNUNG! Ihr Computer wurde wegen verdächtiger Aktivitäten gesperrt. Ihre Bankdaten sind gefährdet. Schalten Sie den PC nicht aus und rufen Sie sofort den Microsoft Support an: [Nummer]",
+        "en": "WARNING! Your computer has been locked because of suspicious activity. Your bank details are at risk. Do not switch off the PC and call Microsoft Support immediately: [Number]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "virenwarnung pc hotline angerufen",
+      "microsoft mitarbeiter fernzugriff",
+      "pc gesperrt warnung anrufen",
+      "techniker tan codes vorgelesen",
+      "anydesk installiert support",
+      "falscher virenalarm online banking"
+    ],
+    "en": [
+      "virus warning called hotline",
+      "microsoft support remote access",
+      "computer locked call number",
+      "tech support asked for tan codes",
+      "installed anydesk for support"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Microsoft ruft nie an und zeigt keine Warnungen mit Telefonnummer.",
+      "Echter Support verlangt keinen Fernzugriff auf Ihr Banking und keine TAN.",
+      "Laute Warnung, die Sie nicht schließen sollen."
+    ],
+    "en": [
+      "Microsoft never calls and never shows warnings with a phone number.",
+      "Real support never asks for remote access to your banking or a TAN.",
+      "A loud warning you are told not to close."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nicht anrufen; Browser schließen oder den PC neu starten.",
+      "Fernzugriff gegeben? Internet trennen, die Bank anrufen und sperren lassen, Passwörter von einem anderen Gerät ändern.",
+      "Anzeige erstatten."
+    ],
+    "en": [
+      "Don’t call; close the browser or restart the PC.",
+      "Gave remote access? Disconnect from the internet, call the bank and have it blocked, change passwords from another device.",
+      "File a complaint."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/police-report",
+    "at/bka-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Betrug mit falschem Virenalarm",
+      "publisher": "ORF Kärnten",
+      "url": "https://kaernten.orf.at/stories/3342282/",
+      "date": "2026-02-17"
+    },
+    {
+      "title": "Cybercrimereport 2025",
+      "publisher": "Bundeskriminalamt",
+      "url": "https://www.bundeskriminalamt.at/306/files/307-2026-ccr-2025-a4-v20260812-bf.pdf",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

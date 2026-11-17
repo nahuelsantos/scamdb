@@ -1,0 +1,150 @@
+{
+  "id": "at/finanzonline-phishing",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "de": "FinanzOnline, Finanzamt Österreich, BMF oder Zollamt",
+    "en": "FinanzOnline, Austrian tax office (Finanzamt), Finance Ministry (BMF) or customs office"
+  },
+  "name": {
+    "de": "Falsche FinanzOnline-Nachricht: Rückerstattung, ablaufende Zugangsdaten, Familienbeihilfe oder Klimabonus",
+    "en": "Fake FinanzOnline message: refund, expiring login, family allowance or climate bonus"
+  },
+  "how": {
+    "de": "Eine SMS oder E-Mail im Namen von FinanzOnline oder dem Finanzamt: Eine Steuerrückzahlung warte auf Sie, Ihre FinanzOnline-Zugangsdaten laufen ab, die Familienbeihilfe oder der Klimabonus müsse bestätigt werden, oder es drohe eine Pfändung. Der Link führt zu einer nachgebauten FinanzOnline-Seite, die zuerst persönliche Daten abfragt und dann eine Bank auswählen lässt, um Ihre Online-Banking-Daten zu stehlen. Oft folgt ein Anruf eines „Bankmitarbeiters“, der Sie eine Freigabe in der App bestätigen lässt.",
+    "en": "A text or email in the name of FinanzOnline or the tax office: a tax refund is waiting for you, your FinanzOnline login is expiring, the family allowance or climate bonus must be confirmed, or seizure is threatened. The link leads to a copied FinanzOnline page that first asks for personal details and then lets you pick a bank, to steal your online banking login. Often a call from a “bank employee” follows, who gets you to confirm an approval in the app."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "SMS oder E-Mail „vom Finanzamt“ oder „FinanzOnline“.",
+        "en": "Text or email “from the tax office” or “FinanzOnline”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Eine Rückerstattung, ablaufende Zugangsdaten oder eine drohende Pfändung, mit Frist.",
+        "en": "A refund, an expiring login or a threatened seizure, with a deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link zu einer Seite, die wie FinanzOnline aussieht.",
+        "en": "A link to a page that looks like FinanzOnline."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Dort sollen Sie Ihre Bank auswählen und sich mit Ihren Banking-Daten anmelden.",
+        "en": "There you are asked to choose your bank and log in with your banking details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "de": "Später ruft ein falscher Bankmitarbeiter an und lässt Sie eine Freigabe bestätigen.",
+        "en": "Later a fake bank employee calls and has you confirm an approval."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "FinanzOnline: Für Sie liegt eine Steuergutschrift von 486,20 EUR bereit. Ihr Zugang läuft in 2 Tagen ab. Bestätigen Sie jetzt Ihre Bankverbindung, damit die Auszahlung erfolgen kann: [Link]",
+        "en": "FinanzOnline: a tax credit of 486.20 EUR is ready for you. Your access expires in 2 days. Confirm your bank details now so the payout can be made: [Link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "finanzonline sms rückerstattung",
+      "finanzamt steuerrückzahlung link",
+      "finanzonline zugang läuft ab",
+      "familienbeihilfe daten bestätigen",
+      "klimabonus antrag sms",
+      "bmf pfändung link",
+      "finanzonline seite bank auswählen"
+    ],
+    "en": [
+      "finanzonline text tax refund",
+      "tax office refund link",
+      "finanzonline login expires",
+      "family allowance confirm details email",
+      "climate bonus text",
+      "fake finanzonline site choose bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "de": [
+      "Das Finanzministerium fragt nie nach Passwörtern, Kartendaten oder Kontodaten.",
+      "Echte Bescheide kommen per Post oder in die FinanzOnline-Databox, nicht per SMS-Link.",
+      "Eine „Rückerstattung“, für die Sie sich bei Ihrer Bank anmelden sollen."
+    ],
+    "en": [
+      "The Finance Ministry never asks for passwords, card details or account details.",
+      "Real notices come by post or in the FinanzOnline Databox, not as a text link.",
+      "A “refund” for which you have to log in to your bank."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nicht auf den Link tippen; FinanzOnline selbst aufrufen, indem Sie die Adresse eintippen, und in der Databox nachsehen.",
+      "Banking-Daten eingegeben? Sofort die Bank anrufen und sperren lassen.",
+      "Die Nachricht bei der Watchlist Internet melden; bei Schaden Anzeige erstatten."
+    ],
+    "en": [
+      "Don’t tap the link; open FinanzOnline yourself by typing the address and check the Databox.",
+      "Entered banking details? Call the bank at once and have it blocked.",
+      "Report the message to Watchlist Internet; if you lost money, file a complaint."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/police-report",
+    "at/watchlist-internet",
+    "at/bka-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "BMF warnt vor betrügerischen Nachrichten, Fake-Anrufen und gefälschten Webseiten",
+      "publisher": "Bundesministerium für Finanzen",
+      "url": "https://www.bmf.gv.at/presse/pressemeldungen/2026/oktober-2026/phishing.html",
+      "date": "2026-10-18"
+    },
+    {
+      "title": "BMF warnt vor betrügerischen E-Mail-Nachrichten zur Familienbeihilfe",
+      "publisher": "Bundesministerium für Finanzen",
+      "url": "https://www.bmf.gv.at/presse/pressemeldungen/2026/august-2026/phishing.html",
+      "date": "2026-08-21"
+    },
+    {
+      "title": "Steirer verlor über gefälschte FinanzOnline-Site hohen Euro-Betrag",
+      "publisher": "help.ORF.at",
+      "url": "https://help.orf.at/stories/3234405/",
+      "date": "2026-02-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/fake-bank-employee-george-code",
+    "at/id-austria-phishing"
+  ]
+}

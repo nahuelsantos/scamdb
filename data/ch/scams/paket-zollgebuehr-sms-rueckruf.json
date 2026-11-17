@@ -1,0 +1,156 @@
+{
+  "id": "ch/paket-zollgebuehr-sms-rueckruf",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "de": "Eine SMS oder E-Mail „von der Post“, DHL oder DPD, danach ein Anruf „Ihrer Bank“",
+    "fr": "Un SMS ou e-mail « de La Poste », DHL ou DPD, puis un appel « de votre banque »",
+    "en": "A text or email “from Swiss Post”, DHL or DPD, then a call “from your bank”"
+  },
+  "name": {
+    "de": "Paket blockiert: kleine Zollgebühr per Link, dann falscher Anruf der Bank („Double Phishing“)",
+    "fr": "Colis bloqué : petits frais de douane par lien, puis faux appel de la banque (« double phishing »)",
+    "en": "Parcel held: small customs fee by link, then a fake bank call (“double phishing”)"
+  },
+  "how": {
+    "de": "Eine SMS oder E-Mail im Namen der Post, von DHL oder DPD meldet, Ihr Paket sei blockiert: Es fehlen Zoll- oder Portogebühren von ein paar Franken (oft CHF 1.50), oder die Adresse müsse bestätigt werden. Der Link führt auf eine täuschend echte Seite, die Ihre Kreditkartendaten verlangt. Kurz darauf ruft ein angeblicher Sicherheitsdienst Ihrer Bank oder Ihres Kartenherausgebers an, manchmal mit gefälschter echter Nummer, und verlangt einen SMS-Code oder eine Bestätigung in der App, „um eine verdächtige Zahlung zu stoppen“. In Wahrheit geben Sie damit die Zahlung der Betrüger frei.",
+    "fr": "Un SMS ou un e-mail au nom de La Poste, de DHL ou de DPD annonce que votre colis est bloqué : il manque des frais de douane ou de port de quelques francs (souvent CHF 1.50), ou l’adresse doit être confirmée. Le lien mène à une copie très crédible qui demande vos données de carte de crédit. Peu après, un prétendu service de sécurité de votre banque ou de l’émetteur de la carte appelle, parfois en affichant le vrai numéro, et demande un code SMS ou une confirmation dans l’app « pour stopper un paiement suspect ». En réalité, vous validez le paiement des escrocs.",
+    "en": "A text or email in the name of Swiss Post, DHL or DPD says your parcel is held: customs or postage of a few francs (often CHF 1.50) is unpaid, or the address must be confirmed. The link leads to a convincing fake page asking for your credit card details. Shortly after, a supposed security team of your bank or card issuer calls, sometimes showing the real number, and asks for a text code or an approval in the app “to stop a suspicious payment”. In fact you are authorising the scammers’ payment."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "SMS: Paket blockiert, kleine Gebühr offen.",
+        "fr": "SMS : colis bloqué, petits frais à payer.",
+        "en": "Text: parcel held, small fee unpaid."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Link zur Zahlung mit Kreditkarte.",
+        "fr": "Lien pour payer par carte de crédit.",
+        "en": "Link to pay by credit card."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Anruf „der Bank“: verdächtige Zahlung.",
+        "fr": "Appel « de la banque » : paiement suspect.",
+        "en": "Call “from the bank”: suspicious payment."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Code vorlesen oder in der App bestätigen.",
+        "fr": "Lire le code ou confirmer dans l’app.",
+        "en": "Read out the code or approve in the app."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "de": "Die Post: Ihre Sendung wird im Verteilzentrum zurückgehalten. Offene Zollgebühr: CHF 1.50. Bitte begleichen Sie den Betrag innert 24 Stunden, sonst geht das Paket zurück an den Absender: [Link]",
+        "fr": "La Poste : votre envoi est retenu au centre de tri. Frais de douane impayés : CHF 1.50. Veuillez régler le montant sous 24 heures, sinon le colis sera retourné à l’expéditeur : [lien]",
+        "en": "Swiss Post: your shipment is being held at the sorting centre. Unpaid customs fee: CHF 1.50. Please pay within 24 hours or the parcel goes back to the sender: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "sms post paket zollgebühr bezahlen",
+      "paket zurückgehalten offene gebühr chf",
+      "dhl sms adresse bestätigen link",
+      "nach paket sms anruf von der bank",
+      "bank will sms code um zahlung zu stoppen",
+      "kreditkarte eingegeben für paketgebühr"
+    ],
+    "fr": [
+      "sms la poste frais de douane colis",
+      "colis retenu frais impayés chf",
+      "sms dhl confirmer adresse lien",
+      "après sms colis appel de la banque",
+      "banque demande code sms pour stopper paiement",
+      "carte de crédit saisie pour frais de colis"
+    ],
+    "en": [
+      "post text parcel customs fee",
+      "parcel held unpaid fee chf",
+      "dhl text confirm address link",
+      "call from the bank after parcel text",
+      "bank asks text code to stop payment",
+      "entered credit card for parcel fee"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Ein paar Franken Gebühr, eine kurze Frist und ein Link in einer SMS.",
+      "Kurz nach der Zahlung ruft „die Bank“ an und will einen Code oder eine Bestätigung."
+    ],
+    "fr": [
+      "Quelques francs de frais, un délai court et un lien dans un SMS.",
+      "Peu après le paiement, « la banque » appelle et veut un code ou une confirmation."
+    ],
+    "en": [
+      "A fee of a few francs, a short deadline and a link in a text.",
+      "Soon after paying, “the bank” calls and wants a code or an approval."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Klicken Sie nicht; prüfen Sie Sendungen selbst in der App oder auf der Website der Post.",
+      "Karte eingegeben? Sofort beim Kartenherausgeber sperren lassen.",
+      "Geben Sie am Telefon nie Codes weiter und bestätigen Sie nichts, das Sie nicht selbst gestartet haben.",
+      "Melden Sie die SMS dem BACS; bei Verlust Anzeige erstatten."
+    ],
+    "fr": [
+      "Ne cliquez pas ; suivez vos envois vous-même dans l’app ou sur le site de La Poste.",
+      "Carte saisie ? Faites-la bloquer tout de suite par l’émetteur.",
+      "Ne donnez jamais de code au téléphone et ne confirmez rien que vous n’avez pas lancé.",
+      "Signalez le SMS à l’OFCS ; en cas de perte, portez plainte."
+    ],
+    "en": [
+      "Don’t click; track parcels yourself in Swiss Post’s app or website.",
+      "Entered your card? Have it blocked by the issuer at once.",
+      "Never give codes on the phone and never approve anything you didn’t start.",
+      "Report the text to BACS; if you lost money, report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/bacs",
+    "ch/police"
+  ],
+  "sources": [
+    {
+      "title": "Woche 18: Paket-Phishing mit perfider Fortsetzung – Die Masche des «Double Phishing»",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w18-de",
+      "date": "2026-05-05"
+    },
+    {
+      "title": "Woche 45: Black Friday wirft seine Schatten voraus – KI-Fakeshops und Paket-Phishing",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w45-de",
+      "date": "2026-11-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

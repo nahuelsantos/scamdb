@@ -1,0 +1,127 @@
+{
+  "id": "at/willhaben-fake-buyer",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "de": "Ein „Käufer“ auf willhaben oder einer anderen Kleinanzeigenplattform",
+    "en": "A “buyer” on willhaben or another classifieds platform"
+  },
+  "name": {
+    "de": "Falscher Käufer auf willhaben: „schon bezahlt“, Link zum Geld-Empfangen oder Transportdienst-Versicherung",
+    "en": "Fake buyer on willhaben: “already paid”, a link to receive money, or shipping-service insurance"
+  },
+  "how": {
+    "de": "Sie verkaufen etwas auf willhaben. Ein freundlicher Interessent will sofort kaufen, kann aber nicht selbst abholen, weil er im Ausland ist. Er schlägt Versand oder einen Kurierdienst vor und sagt, er habe schon „sicher bezahlt“. Sie bekommen einen Link zu einer Seite, die wie willhaben, PayLivery oder die Post aussieht: Um das Geld zu erhalten, sollen Sie Kartendaten eingeben und eine Zahlung freigeben. Oder ein „Transportdienst“ verlangt, dass Sie vorab eine Versicherung zahlen. In Wahrheit schicken Sie Geld an die Betrüger, und die Ware wird nie abgeholt.",
+    "en": "You sell something on willhaben. A friendly buyer wants it at once but can’t collect because they are abroad. They suggest shipping or a courier and say they have already “paid securely”. You get a link to a page that looks like willhaben, PayLivery or the post office: to receive the money you must enter card details and approve a payment. Or a “shipping service” wants you to pay for insurance first. In reality you send money to the scammers, and the item is never collected."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Käufer will Ihren Artikel sofort, ohne zu verhandeln, ist aber im Ausland.",
+        "en": "A buyer wants your item at once, without haggling, but is abroad."
+      }
+    },
+    {
+      "text": {
+        "de": "Er will über WhatsApp oder E-Mail weiterschreiben und schlägt Versand oder einen Kurier vor.",
+        "en": "They want to continue on WhatsApp or email and suggest shipping or a courier."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Er schickt einen Link: Das Geld sei bezahlt, Sie müssten es nur „empfangen“.",
+        "en": "They send a link: the money has been paid, you just have to “receive” it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Auf der Seite sollen Sie Kartendaten eingeben, eine Freigabe bestätigen oder eine Versicherung vorstrecken.",
+        "en": "On the page you must enter card details, confirm an approval or advance an insurance fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hallo, der Kinderwagen ist genau was ich suche. Ich bin beruflich in Deutschland, darum habe ich die Zahlung samt Versand schon über willhaben erledigt. Sie müssen die Zahlung nur noch hier annehmen, dann holt der Kurier morgen ab: [Link] Danke und liebe Grüße",
+        "en": "Hi, the pram is exactly what I’m looking for. I’m in Germany for work, so I’ve already settled the payment including shipping through willhaben. You just have to accept the payment here, then the courier will collect tomorrow: [Link] Thanks and best wishes"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "willhaben käufer link zahlung erhalten",
+      "käufer hat schon bezahlt link",
+      "willhaben sicher bezahlen link whatsapp",
+      "kurier abholung käufer ausland",
+      "transportdienst versicherung vorauszahlen",
+      "paylivery link kartendaten",
+      "verkauf kleinanzeige kreditkarte eingeben geld empfangen"
+    ],
+    "en": [
+      "willhaben buyer sent payment link",
+      "buyer says already paid",
+      "receive money link enter card",
+      "courier pick up buyer abroad",
+      "shipping insurance pay first",
+      "classifieds sale fake payment page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Um Geld zu empfangen, müssen Sie nie Kartendaten, Codes oder eine Freigabe eingeben.",
+      "willhaben und PayLivery schicken keine Zahlungsbestätigungen per SMS oder WhatsApp.",
+      "Der Käufer drängt, den Chat zu verlassen.",
+      "Käufer im Ausland, Kurier, Vorauszahlung für Versicherung oder Versand."
+    ],
+    "en": [
+      "To receive money you never have to enter card details, codes or an approval.",
+      "willhaben and PayLivery do not send payment confirmations by text or WhatsApp.",
+      "The buyer pushes you to leave the platform’s chat.",
+      "Buyer abroad, courier, advance payment for insurance or shipping."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Im Chat der Plattform bleiben, keine Links des Käufers öffnen; bezahlt wird nur innerhalb der Plattform oder bar bei Abholung.",
+      "Kartendaten eingegeben oder Zahlung freigegeben? Sofort Bank anrufen und Karte sperren lassen.",
+      "Profil der Plattform melden und Anzeige erstatten."
+    ],
+    "en": [
+      "Stay in the platform’s chat and open no links from the buyer; accept payment only within the platform or in cash on collection.",
+      "Entered card details or approved a payment? Call your bank at once and have the card blocked.",
+      "Report the profile to the platform and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/card-block",
+    "at/police-report",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "Cybercrimereport 2025",
+      "publisher": "Bundeskriminalamt",
+      "url": "https://www.bundeskriminalamt.at/306/files/307-2026-ccr-2025-a4-v20260812-bf.pdf",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

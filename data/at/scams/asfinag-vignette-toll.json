@@ -1,0 +1,132 @@
+{
+  "id": "at/asfinag-vignette-toll",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "email",
+    "online",
+    "sms"
+  ],
+  "sender": {
+    "de": "„ASFINAG“, „Mautkontrolle“ oder ein Vignetten-Shop",
+    "en": "“ASFINAG”, “toll control” or a vignette shop"
+  },
+  "name": {
+    "de": "Falsche ASFINAG-Mails und Vignetten-Fake-Shops: Ersatzmaut und überteuerte Vignetten",
+    "en": "Fake ASFINAG emails and vignette fake shops: substitute toll and overpriced vignettes"
+  },
+  "how": {
+    "de": "Eine E-Mail im Namen der ASFINAG behauptet, Sie seien ohne gültige Vignette auf der Autobahn gefahren. Statt einer hohen Strafe sollen Sie „aus Kulanz“ sofort eine kleine Ersatzmaut zahlen; der Button führt zu einer Seite, die Kennzeichen und Kreditkartendaten abfragt. Daneben gibt es Shops, die dem ASFINAG-Mautshop täuschend ähnlich sehen und Vignetten mit Aufpreis oder gar nicht liefern.",
+    "en": "An email in the name of ASFINAG claims you drove on the motorway without a valid vignette. Instead of a big fine you should “as a goodwill gesture” pay a small substitute toll at once; the button leads to a page asking for your number plate and credit card details. There are also shops that look deceptively like the ASFINAG toll shop and sell vignettes with a surcharge, or not at all."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "E-Mail „von der ASFINAG“: keine gültige digitale Vignette, Strafe droht.",
+        "en": "Email “from ASFINAG”: no valid digital vignette, a fine is threatened."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Sofort zahlen, sonst hohe Strafe.",
+        "en": "Pay now or face a large fine."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Button oder Link zur Zahlung einer krummen Ersatzmaut.",
+        "en": "A button or link to pay an odd substitute toll amount."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Kennzeichen und Kreditkartendaten werden abgefragt.",
+        "en": "Your number plate and credit card details are requested."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "ASFINAG Mautkontrolle: Für Ihr Fahrzeug wurde keine gültige Vignette festgestellt. Um eine Anzeige mit bis zu 3.000 € zu vermeiden, begleichen Sie heute die Ersatzmaut von 14,87 €: [Link]",
+        "en": "ASFINAG toll control: no valid vignette was found for your vehicle. To avoid a fine of up to €3,000, pay the substitute toll of €14.87 today: [Link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "asfinag ersatzmaut zahlen",
+      "keine gültige vignette strafe",
+      "vignette fake shop überteuert",
+      "mautkontrolle email kreditkarte",
+      "digitale vignette nachzahlen link",
+      "falscher asfinag mautshop"
+    ],
+    "en": [
+      "asfinag email substitute toll",
+      "no valid vignette email fine",
+      "vignette fake shop overpriced",
+      "toll control email credit card",
+      "fake austrian toll shop"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Echte ASFINAG-Mails kommen von Adressen mit @asfinag.at.",
+      "Krumme Beträge wie 12,36 € oder 14,87 € als „Ersatzmaut“ per Link.",
+      "Die ASFINAG verrechnet beim Vignettenkauf keine Zusatzgebühren."
+    ],
+    "en": [
+      "Real ASFINAG emails come from addresses ending @asfinag.at.",
+      "Odd amounts like €12.36 or €14.87 as a “substitute toll” by link.",
+      "ASFINAG charges no extra fees when you buy a vignette."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nicht auf den Button klicken; Vignetten nur im ASFINAG-Mautshop, bei offiziellen Partnern oder an Verkaufsstellen kaufen.",
+      "Kartendaten eingegeben? Karte sperren lassen.",
+      "Die Mail oder den Shop der Watchlist Internet melden."
+    ],
+    "en": [
+      "Don’t click the button; buy vignettes only in the ASFINAG toll shop, from official partners or at sales points.",
+      "Entered card details? Have the card blocked.",
+      "Report the email or the shop to Watchlist Internet."
+    ]
+  },
+  "reportTo": [
+    "at/card-block",
+    "at/your-bank",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "ASFINAG warnt alle Autofahrer: „Keine digitale Vignette“",
+      "publisher": "5min.at",
+      "url": "https://www.5min.at/oesterreich/5202606130950/asfinag-warnt-alle-autofahrer-keine-digitale-vignette/",
+      "date": "2026-06-13"
+    },
+    {
+      "title": "Asfinag-Warnung: Finger weg von überteuerten Vignetten",
+      "publisher": "VIENNA.AT",
+      "url": "https://www.vienna.at/asfinag-warnung-finger-weg-von-ueberteuerten-vignetten/9841424",
+      "date": "2025-12-01"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/fake-shop"
+  ]
+}

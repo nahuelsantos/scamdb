@@ -1,0 +1,133 @@
+{
+  "id": "de/parcel-sms-customs-fee",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "de": "„DHL“, „Deutsche Post“, „Hermes“, „DPD“ oder ein „Kurier“",
+    "en": "“DHL”, “Deutsche Post”, “Hermes”, “DPD” or a “courier”"
+  },
+  "name": {
+    "de": "Paket-SMS: angebliche Zollgebühr oder fehlende Hausnummer, kleiner Betrag per Link",
+    "en": "Parcel text: supposed customs fee or missing house number, small amount by link"
+  },
+  "how": {
+    "de": "Eine SMS, angeblich von DHL, der Post oder einem anderen Paketdienst, meldet: Ihr Paket liege fest, weil eine Zollgebühr von ein bis vier Euro offen sei, die Adresse unvollständig sei oder die Zustellung gescheitert sei. Über einen Link sollen Sie die Gebühr bezahlen oder die Adresse bestätigen, oft innerhalb weniger Stunden. Die Seite fragt Kartendaten ab, kann Sie in ein teures Abo locken oder will eine App installieren. Die Nachrichten tauchen manchmal sogar im echten Verlauf des Paketdienstes auf.",
+    "en": "A text, supposedly from DHL, the post office or another parcel service, says your parcel is held because a customs fee of one to four euros is unpaid, the address is incomplete or delivery failed. You are told to pay the fee or confirm the address through a link, often within a few hours. The page asks for card details, can lock you into a costly subscription or wants to install an app. The messages sometimes even appear in the parcel service’s real message thread."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine SMS: Ihr Paket hängt fest, Zoll oder Adresse fehlen.",
+        "en": "A text: your parcel is stuck; customs or the address is missing."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Kurze Frist, sonst gehe das Paket zurück.",
+        "en": "A short deadline, or the parcel is returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link zu einer Bezahl- oder Bestätigungsseite.",
+        "en": "A link to a payment or confirmation page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Ein kleiner Betrag per Karte, der Ihre Kartendaten abgreift.",
+        "en": "A small card payment that harvests your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "DHL: Für Ihre Sendung aus dem Ausland fällt eine Zollgebühr von 2,49 EUR an. Bitte begleichen Sie den Betrag bis heute 23:59 Uhr, sonst wird das Paket an den Absender zurückgeschickt: [Link]",
+        "en": "DHL: a customs fee of EUR 2.49 is due on your parcel from abroad. Please pay the amount by 11:59 pm today, otherwise the parcel will be returned to the sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "dhl sms zollgebühr",
+      "paket sms gebühr bezahlen link",
+      "sms adresse unvollständig paket",
+      "hausnummer fehlt paket sms",
+      "zollgebühr 2 euro sms",
+      "paket wird zurückgeschickt sms",
+      "hermes dpd sms zustellung fehlgeschlagen",
+      "falsche paketbenachrichtigung",
+      "sendung nicht zugestellt gebühr",
+      "neuzustellung bezahlen adresse aktualisieren"
+    ],
+    "en": [
+      "dhl text customs fee",
+      "parcel text asking for a small payment",
+      "sms about incomplete address for parcel",
+      "package will be returned unless i pay",
+      "fake delivery text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Zollgebühren werden in der Regel bei der Zustellung kassiert, nicht vorab über einen Link in einer SMS.",
+      "Paketdienste fragen nicht per SMS nach Kartendaten.",
+      "Ein kleiner Betrag mit kurzer Frist ist ein typischer Köder."
+    ],
+    "en": [
+      "Customs fees are normally collected on delivery, not in advance through a link in a text.",
+      "Parcel services don’t ask for card details by text.",
+      "A small amount with a short deadline is a typical lure."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Tippen Sie nicht auf den Link und antworten Sie nicht. Prüfen Sie eine echte Sendung mit der Sendungsnummer auf der Webseite oder in der App des Paketdienstes.",
+      "Haben Sie Kartendaten eingegeben? Lassen Sie die Karte über Ihre Bank oder den Sperr-Notruf 116 116 sperren.",
+      "Melden Sie die SMS bei der Bundesnetzagentur und erstatten Sie bei einem Schaden Anzeige."
+    ],
+    "en": [
+      "Don’t tap the link and don’t reply. Check a real parcel with its tracking number on the parcel service’s website or app.",
+      "Did you enter card details? Have the card blocked through your bank or the 116 116 block line.",
+      "Report the text to the Federal Network Agency and file a police report if you lost money."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/sperr-notruf",
+    "de/bundesnetzagentur",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "Genug Betrug: Schutz vor Phishing, Quishing und Identitätsdiebstahl",
+      "publisher": "Landeskriminalamt Rheinland-Pfalz",
+      "url": "https://www.presseportal.de/blaulicht/pm/29763/6375183",
+      "date": "2026-10-21"
+    },
+    {
+      "title": "Paketdienst-SMS: Vorsicht, Abzocke!",
+      "publisher": "Verbraucherzentrale",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/mobilfunk-und-festnetz/paketdienstsms-vorsicht-abzocke-58988",
+      "date": "2026-07-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

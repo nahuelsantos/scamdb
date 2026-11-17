@@ -1,0 +1,149 @@
+{
+  "id": "de/cybertrading-celebrity-ads",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "de": "Werbung mit Prominenten, danach ein „Anlageberater“ oder „Broker“",
+    "en": "Ads with celebrities, then an “investment adviser” or “broker”"
+  },
+  "name": {
+    "de": "Cybertrading-Betrug: Fake-Werbung mit Prominenten, Trading-Plattform und blockierte Auszahlung",
+    "en": "Cybertrading fraud: fake celebrity ads, a trading platform and a blocked withdrawal"
+  },
+  "how": {
+    "de": "In sozialen Netzwerken, auf Nachrichtenseiten oder sogar in Zeitungen sehen Sie Werbung, in der bekannte Persönlichkeiten angeblich mit Krypto, Aktien oder einer KI-Handelsplattform reich geworden sind; Bilder, Stimmen und Videos sind teils mit KI gefälscht. Nach der Anmeldung ruft ein freundlicher „Berater“ an. Sie zahlen erst wenig ein, oft nur ein paar hundert Euro, und sehen auf der Plattform schnell Gewinne. Dann sollen Sie mehr einzahlen und manchmal eine Fernwartungs-App installieren. Wenn Sie auszahlen wollen, verlangen die Täter Steuern, Gebühren oder Provisionen vorab, und am Ende ist das Geld weg.",
+    "en": "On social media, news sites or even in newspapers you see ads in which well-known people supposedly got rich with crypto, shares or an AI trading platform; pictures, voices and videos are partly faked with AI. After you sign up, a friendly “adviser” calls. You first deposit a little, often just a few hundred euros, and quickly see profits on the platform. Then you are pushed to deposit more and sometimes to install a remote-access app. When you want to withdraw, they demand taxes, fees or commissions up front, and in the end the money is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine Anzeige oder ein „Interview“ mit einem Prominenten, der mit einer Plattform reich wurde.",
+        "en": "An ad or “interview” with a celebrity who got rich with a platform."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Nach der Registrierung ruft ein „Berater“ an.",
+        "en": "After you register, an “adviser” calls."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Erst kleine Einzahlung, dann Druck, schnell mehr zu investieren.",
+        "en": "First a small deposit, then pressure to invest more quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Manchmal sollen Sie AnyDesk oder eine ähnliche App installieren.",
+        "en": "Sometimes you are told to install AnyDesk or a similar app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "de": "Für die Auszahlung sollen Sie erst Steuern oder Gebühren überweisen.",
+        "en": "To withdraw, you must first transfer taxes or fees."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hallo Herr Schulze, hier ist Daniel von Ihrer Trading-Plattform. Glückwunsch, Ihre 250 Euro sind in drei Wochen auf 1.870 Euro gewachsen! Wir haben gerade eine einmalige Gelegenheit bei einer neuen Kryptowährung, das Fenster schließt heute Abend. Wenn Sie jetzt 5.000 Euro nachlegen, rechnet unser KI-System mit einer Verdopplung. Ich helfe Ihnen gern bei der Überweisung, installieren Sie dafür kurz AnyDesk.",
+        "en": "Hello Mr Schulze, this is Daniel from your trading platform. Congratulations, your 250 euros have grown to 1,870 euros in three weeks! We have a one-off opportunity in a new cryptocurrency right now; the window closes tonight. If you add 5,000 euros now, our AI system expects it to double. I’m happy to help you with the transfer; just install AnyDesk for that."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "cybertrading betrug",
+      "trading plattform berater ruft an",
+      "krypto werbung prominente",
+      "auszahlung nur gegen gebühr steuern",
+      "ki trading plattform 250 euro",
+      "anlagebetrug online plattform gewinne",
+      "promi interview bitcoin fake",
+      "anydesk anlageberater",
+      "provision für auszahlung zahlen",
+      "moderator verrät ki plattform",
+      "aus 250 euro tausende gemacht",
+      "banken wollen verbieten registrieren"
+    ],
+    "en": [
+      "cybertrading scam",
+      "celebrity crypto ad",
+      "trading platform adviser keeps calling",
+      "have to pay fees to withdraw my profits",
+      "ai trading platform 250 euros",
+      "investment scam fake celebrity endorsement"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Prominente werben nicht für schnelle Gewinne mit Krypto oder Trading: Die Anzeigen sind gefälscht.",
+      "Hohe Gewinne ohne Risiko gibt es nicht.",
+      "Wer vor einer Auszahlung Steuern, Gebühren oder Provisionen verlangt, betrügt.",
+      "Seriöse Berater wollen keinen Fernzugriff auf Ihren Computer."
+    ],
+    "en": [
+      "Celebrities don’t advertise quick profits with crypto or trading: the ads are fake.",
+      "High returns without risk don’t exist.",
+      "Anyone who demands taxes, fees or commissions before a withdrawal is a fraudster.",
+      "Real advisers don’t want remote access to your computer."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Prüfen Sie Anbieter vorher in der Unternehmensdatenbank und den Warnungen der BaFin.",
+      "Zahlen Sie bei blockierten Auszahlungen nichts nach und brechen Sie den Kontakt ab.",
+      "Informieren Sie sofort Ihre Bank, sichern Sie Chats und Belege und erstatten Sie Anzeige.",
+      "Vorsicht vor „Anwälten“ oder „Rückholfirmen“, die gegen Vorkasse Ihr Geld zurückholen wollen."
+    ],
+    "en": [
+      "Check providers beforehand in BaFin’s company database and warnings.",
+      "Don’t pay anything more when a withdrawal is blocked, and cut off contact.",
+      "Tell your bank straight away, save chats and receipts, and file a police report.",
+      "Beware of “lawyers” or “recovery firms” who offer to get your money back for an up-front fee."
+    ]
+  },
+  "reportTo": [
+    "de/bafin",
+    "de/your-bank",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-PDNW: (Bad Dürkheim) -- Betrug mit vermeintlicher Geldanlage",
+      "publisher": "Polizeidirektion Neustadt/Weinstraße (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/117687/6392157",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "LKA-NRW: Hohe Schadenssummen statt hoher Gewinne: Landeskriminalamt NRW warnt vor Anlagebetrug im Internet",
+      "publisher": "Landeskriminalamt Nordrhein-Westfalen (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/58451/6379384",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

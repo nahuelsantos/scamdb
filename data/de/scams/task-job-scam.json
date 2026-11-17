@@ -1,0 +1,140 @@
+{
+  "id": "de/task-job-scam",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "de": "Ein „Personalvermittler“ oder eine „Agentur“ über WhatsApp, Telegram oder eine Anzeige",
+    "en": "A “recruiter” or “agency” via WhatsApp, Telegram or an ad"
+  },
+  "name": {
+    "de": "Task-Scamming: Nebenjob mit Bewertungen, Likes oder „Aufgaben“, dann eigene Einzahlungen",
+    "en": "Task scam: side job with reviews, likes or “tasks”, then deposits of your own money"
+  },
+  "how": {
+    "de": "Eine Nachricht auf WhatsApp oder eine Anzeige in sozialen Netzwerken bietet einen Nebenjob von zu Hause: Produkte bewerten, Bilder oder Videos liken, Bestellungen auslösen, mit flexibler Zeiteinteilung und guter Bezahlung. Oft sollen Sie Ausweis und Selfie schicken. Auf einem „Arbeitskonto“ sehen Sie schnell Provisionen, manchmal wird ein kleiner Betrag ausgezahlt. Dann sollen Sie für weitere Aufgaben selbst Geld einzahlen oder Produkte vorab kaufen. Wollen Sie auszahlen, heißt es, erst weitere Aufgaben erledigen oder noch mehr einzahlen.",
+    "en": "A WhatsApp message or a social media ad offers a side job from home: rating products, liking pictures or videos, triggering orders, with flexible hours and good pay. Often you are asked to send your ID and a selfie. On a “work account” you quickly see commissions, and sometimes a small amount is paid out. Then you must pay in your own money or buy products in advance for further tasks. When you want to withdraw, you are told to finish more tasks or pay in even more first."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein unerwartetes Jobangebot per WhatsApp oder Anzeige: einfache Aufgaben, gute Bezahlung.",
+        "en": "An unexpected job offer via WhatsApp or an ad: simple tasks, good pay."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Sie sollen Ausweisfotos und ein Selfie schicken.",
+        "en": "You are asked to send ID photos and a selfie."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "de": "Auf einem Arbeitskonto wachsen Provisionen, Aufgaben sind zeitlich begrenzt.",
+        "en": "Commissions grow on a work account; tasks are time-limited."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Für weitere Aufgaben oder die Auszahlung sollen Sie selbst Geld einzahlen.",
+        "en": "For more tasks or the payout you must pay in money yourself."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hallo! Ich bin Lisa von einer Online-Marketingagentur. Wir suchen Mitarbeiter im Homeoffice: Sie bewerten Hotels und Produkte in der App, 20–30 Minuten am Tag, Verdienst 80–250 € täglich. Keine Erfahrung nötig. Für die Anmeldung brauche ich nur ein Foto Ihres Ausweises. Interesse? Dann schreiben Sie mir hier oder auf Telegram 😊",
+        "en": "Hello! I’m Lisa from an online marketing agency. We’re looking for staff working from home: you rate hotels and products in the app, 20–30 minutes a day, earning €80–250 daily. No experience needed. To sign up I just need a photo of your ID. Interested? Then write to me here or on Telegram 😊"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "nebenjob whatsapp bewertungen schreiben",
+      "task scamming aufgaben provision",
+      "jobangebot homeoffice likes verdienen",
+      "arbeitskonto auszahlung erst einzahlen",
+      "produkte bewerten geld verdienen whatsapp",
+      "job scamming ausweis selfie",
+      "aufgaben freischalten einzahlung",
+      "nebenjob telegram 200 euro am tag",
+      "videos liken rezensionen schreiben",
+      "vip stufe aufladung provision",
+      "startguthaben aufgabe teilzeit"
+    ],
+    "en": [
+      "whatsapp job offer writing reviews",
+      "task scam pay to unlock tasks",
+      "side job liking videos for money",
+      "have to deposit money to withdraw earnings",
+      "job scam asked for my id and selfie"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "de": [
+      "Seriöse Arbeitgeber verlangen nie, dass Sie für Ihre Arbeit erst Geld einzahlen.",
+      "Unaufgeforderte Jobangebote per WhatsApp mit viel Geld für wenig Arbeit sind ein klares Warnzeichen.",
+      "Ausweiskopien und Selfies können für Konten in Ihrem Namen missbraucht werden."
+    ],
+    "en": [
+      "Real employers never ask you to pay money in before you can work.",
+      "Unsolicited WhatsApp job offers with lots of money for little work are a clear warning sign.",
+      "ID copies and selfies can be misused to open accounts in your name."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Antworten Sie nicht und blockieren Sie die Nummer.",
+      "Haben Sie Ausweis- oder Bankdaten geschickt? Lassen Sie Karten und den Online-Ausweis über den Sperr-Notruf 116 116 sperren, informieren Sie Ihre Bank und erstatten Sie Anzeige.",
+      "Sichern Sie Chatverlauf und Zahlungsbelege als Beweis."
+    ],
+    "en": [
+      "Don’t reply, and block the number.",
+      "Did you send ID or bank details? Have cards and your online ID blocked through the 116 116 block line, tell your bank and file a police report.",
+      "Save the chat history and payment receipts as evidence."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/sperr-notruf",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-GF: Vermeintlicher Nebenjob wird zur Kostenfalle",
+      "publisher": "Polizeiinspektion Gifhorn (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/56517/6365816",
+      "date": "2026-10-06"
+    },
+    {
+      "title": "Jobscamming: So erkennen Sie gefälschte Jobangebote und schützen Ihre Daten",
+      "publisher": "Verbraucherzentrale Niedersachsen",
+      "url": "https://www.verbraucherzentrale-niedersachsen.de/wissen/digitale-welt/datenschutz/jobscamming-so-erkennen-sie-gefaelschte-jobangebote-und-schuetzen-ihre-daten-120421",
+      "date": "2026-08-24"
+    },
+    {
+      "title": "Betrugsmasche auf WhatsApp: Job-Scamming - was tun?",
+      "publisher": "ZDFheute",
+      "url": "https://www.zdfheute.de/ratgeber/aktuelle-betrugsmasche-whatsapp-job-scamming-100.html",
+      "date": "2025-05-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

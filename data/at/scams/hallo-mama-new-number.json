@@ -1,0 +1,122 @@
+{
+  "id": "at/hallo-mama-new-number",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "de": "Ihr Kind „mit neuer Nummer“ (unbekannte Nummer)",
+    "en": "Your child “with a new number” (unknown number)"
+  },
+  "name": {
+    "de": "„Hallo Mama, das ist meine neue Nummer“: Tochter-Sohn-Trick auf WhatsApp",
+    "en": "“Hi Mum, this is my new number”: the son-or-daughter trick on WhatsApp"
+  },
+  "how": {
+    "de": "Von einer unbekannten Nummer schreibt jemand, der sich als Ihre Tochter oder Ihr Sohn ausgibt: Das alte Handy sei kaputt, ins Wasser gefallen oder verloren, das sei die neue Nummer. Kurz darauf kommt eine Bitte: Eine dringende Rechnung müsse heute bezahlt werden, aber die Banking-App funktioniere am neuen Handy noch nicht. Sie sollen einen meist vierstelligen Betrag auf ein fremdes, oft ausländisches Konto überweisen; das Geld komme bald zurück.",
+    "en": "From an unknown number someone writes pretending to be your daughter or son: the old phone is broken, fell in water or was lost, this is the new number. Soon after comes a request: an urgent bill must be paid today, but the banking app doesn’t work on the new phone yet. You are asked to transfer a sum, usually in the thousands, to someone else’s account, often abroad; the money will come back soon."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "„Hallo Mama“ oder „Hallo Papa“ von einer unbekannten Nummer: Das sei die neue Nummer.",
+        "en": "“Hi Mum” or “Hi Dad” from an unknown number: this is supposedly the new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "de": "Das alte Handy sei kaputt; Anrufe gehen angeblich gerade nicht.",
+        "en": "The old phone is broken; calls supposedly don’t work right now."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Eine Rechnung müsse heute noch bezahlt werden.",
+        "en": "A bill has to be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie sollen auf das Konto einer fremden Person überweisen, oft mit Echtzeitüberweisung.",
+        "en": "You are asked to transfer to a stranger’s account, often by instant transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hallo Mama, mein Handy ist mir ins Klo gefallen 🙈 das ist jetzt meine neue Nummer, kannst sie gleich einspeichern. Ich muss heute noch eine Rechnung über 1.480 € zahlen, aber mein Banking geht am neuen Handy erst in zwei Tagen. Kannst du das für mich überweisen? Ich schick dir die Kontodaten, du kriegst es nächste Woche zurück ❤️",
+        "en": "Hi Mum, my phone fell in the toilet 🙈 this is my new number now, you can save it straight away. I have to pay a bill of €1,480 today, but my banking only works on the new phone in two days. Can you transfer it for me? I’ll send you the account details, you’ll get it back next week ❤️"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "hallo mama neue nummer",
+      "tochter sohn trick whatsapp",
+      "handy kaputt neue nummer überweisen",
+      "kind neue handynummer rechnung zahlen",
+      "banking app funktioniert nicht neues handy",
+      "whatsapp sohn geld überweisen fremdes konto"
+    ],
+    "en": [
+      "hi mum new number",
+      "son daughter new number money",
+      "phone broken new number transfer",
+      "child asks to pay a bill for them",
+      "banking app not working on new phone"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Eine neue Nummer und gleich danach eine Geldbitte.",
+      "Die Person kann „gerade nicht telefonieren“.",
+      "Das Geld geht an eine fremde Person, nicht an Ihr Kind."
+    ],
+    "en": [
+      "A new number and right after that a request for money.",
+      "The person “can’t talk on the phone right now”.",
+      "The money goes to a stranger, not to your child."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Ihr Kind auf der alten, bekannten Nummer anrufen, bevor Sie etwas zahlen; die neue Nummer blockieren.",
+      "Schon überwiesen? Sofort die Bank anrufen und um Rückbuchung bitten.",
+      "Anzeige bei der Polizei erstatten."
+    ],
+    "en": [
+      "Call your child on the old, known number before paying anything; block the new number.",
+      "Already transferred? Call your bank at once and ask for a recall.",
+      "File a complaint with the police."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/police-report",
+    "at/bka-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Cybercrimereport 2025",
+      "publisher": "Bundeskriminalamt",
+      "url": "https://www.bundeskriminalamt.at/306/files/307-2026-ccr-2025-a4-v20260812-bf.pdf",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

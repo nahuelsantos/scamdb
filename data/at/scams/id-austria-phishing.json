@@ -1,0 +1,128 @@
+{
+  "id": "at/id-austria-phishing",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "de": "„ID Austria“, „A-Trust“ oder „oesterreich.gv.at“",
+    "en": "“ID Austria”, “A-Trust” or “oesterreich.gv.at”"
+  },
+  "name": {
+    "de": "ID-Austria-Phishing: „Ihre Registrierung läuft ab“, danach ein Anruf der „Bank“",
+    "en": "ID Austria phishing: “your registration is expiring”, then a call from the “bank”"
+  },
+  "how": {
+    "de": "Eine SMS oder E-Mail meldet, Ihre ID Austria oder Ihr Zertifikat laufe bald ab und müsse über einen Link erneuert werden. Die gefälschte Seite fragt Ihre Daten ab. Danach ruft oft ein angeblicher Bankmitarbeiter an: Es gebe einen Fehler oder eine betrügerische Zahlung, Sie sollen eine Fernwartungs-App wie AnyDesk installieren. Dann übernehmen die Täter Ihr Gerät und räumen das Konto leer.",
+    "en": "A text or email says your ID Austria or certificate expires soon and must be renewed through a link. The fake page asks for your details. Afterwards a supposed bank employee often calls: there is an error or a fraudulent payment, you are told to install a remote-access app such as AnyDesk. Then the criminals take over your device and empty the account."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "SMS: Ihre ID Austria laufe ab, letzte Erinnerung.",
+        "en": "Text: your ID Austria is expiring, final reminder."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link zu einer Seite, die wie ID Austria aussieht.",
+        "en": "A link to a page that looks like ID Austria."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Ein Anruf eines „Bankmitarbeiters“ wegen eines Fehlers oder einer verdächtigen Zahlung.",
+        "en": "A call from a “bank employee” about an error or a suspicious payment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Sie sollen eine Fernwartungs-App installieren oder eine TAN nennen.",
+        "en": "You are told to install a remote-access app or give a TAN."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "ID Austria: LETZTE ERINNERUNG. Ihre Registrierung endet am 30.11. Ohne Verlängerung können Sie FinanzOnline und Ihr Online-Banking nicht mehr nutzen. Jetzt verlängern: [Link]",
+        "en": "ID Austria: FINAL REMINDER. Your registration ends on 30 November. Without renewal you can no longer use FinanzOnline and your online banking. Renew now: [Link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "id austria läuft ab sms",
+      "id austria verlängern link",
+      "a-trust zertifikat abgelaufen sms",
+      "id austria registrierung erneuern",
+      "nach id austria sms bank anruf anydesk"
+    ],
+    "en": [
+      "id austria expiring text",
+      "renew id austria link",
+      "certificate expiring sms austria",
+      "id austria then bank call remote app",
+      "government id login expiring link"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "unknown_link",
+    "impersonation",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Behörden schicken keine SMS mit Links zum Eingeben von Daten.",
+      "Die Link-Adresse gehört nicht zu id-austria.gv.at oder oesterreich.gv.at.",
+      "Banken verlangen nie die Installation von Fernwartungs-Apps oder eine TAN am Telefon."
+    ],
+    "en": [
+      "Authorities do not send texts with links for entering data.",
+      "The link’s address is not id-austria.gv.at or oesterreich.gv.at.",
+      "Banks never ask you to install remote-access apps or give a TAN over the phone."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Den Status nur in der ID-Austria-App oder auf oesterreich.gv.at prüfen, Adresse selbst eintippen.",
+      "Daten eingegeben oder Fernwartung erlaubt? Sofort die Bank anrufen und sperren lassen.",
+      "Anzeige erstatten und die SMS der Watchlist Internet melden."
+    ],
+    "en": [
+      "Check the status only in the ID Austria app or on oesterreich.gv.at, typing the address yourself.",
+      "Entered details or allowed remote access? Call the bank at once and have it blocked.",
+      "File a complaint and report the text to Watchlist Internet."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/police-report",
+    "at/bka-cybercrime",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "500.000 Euro Schaden! BKA warnt vor neuer ID-Austria-Masche",
+      "publisher": "Salzburg24",
+      "url": "https://www.salzburg24.at/news/oesterreich/500000-euro-schaden-bka-warnt-vor-neuer-id-austria-masche-art-322168",
+      "date": "2026-04-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/finanzonline-phishing",
+    "at/fake-bank-employee-george-code"
+  ]
+}

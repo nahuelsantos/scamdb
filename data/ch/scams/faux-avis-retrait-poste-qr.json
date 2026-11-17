@@ -1,0 +1,141 @@
+{
+  "id": "ch/faux-avis-retrait-poste-qr",
+  "country": "ch",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "online"
+  ],
+  "sender": {
+    "fr": "Un avis de retrait jaune « de La Poste » dans la boîte aux lettres",
+    "de": "Eine gelbe Abholungseinladung „der Post“ im Briefkasten",
+    "en": "A yellow “Swiss Post” collection notice in your letterbox"
+  },
+  "name": {
+    "fr": "Faux avis de retrait de La Poste avec code QR : « nouvelle livraison » contre petits frais",
+    "de": "Falsche Abholungseinladung der Post mit QR-Code: „neue Zustellung“ gegen kleine Gebühr",
+    "en": "Fake Swiss Post collection notice with a QR code: “redelivery” for a small fee"
+  },
+  "how": {
+    "fr": "Dans la boîte aux lettres, un avis de retrait copie les couleurs, le logo et la mise en page du vrai avis jaune de La Poste : la livraison a échoué, scannez le code QR pour fixer un nouveau rendez-vous. Le site, très crédible, affirme que le colis est bloqué et demande nom, date de naissance, adresse, e-mail et un numéro de portable suisse, puis des « frais de traitement » d’environ CHF 2.10 à 3.99, payables uniquement par carte. Les escrocs volent ainsi les données de carte et les données personnelles. Les cas signalés concernent surtout la Suisse romande.",
+    "de": "Im Briefkasten liegt eine Abholungseinladung, die Farben, Logo und Aufbau der echten gelben Karte der Post kopiert: Die Zustellung sei gescheitert, scannen Sie den QR-Code für einen neuen Termin. Die Seite sieht offiziell aus, sagt, das Paket sei blockiert, und verlangt Name, Geburtsdatum, Adresse, E-Mail und eine Schweizer Handynummer, dann eine „Bearbeitungsgebühr“ von etwa CHF 2.10 bis 3.99, zahlbar nur mit Karte. So stehlen die Betrüger Kartendaten und Personendaten. Gemeldet wurde es bisher vor allem in der Westschweiz.",
+    "en": "A collection notice in your letterbox copies the colours, logo and layout of Swiss Post’s real yellow card: delivery failed, scan the QR code to book a new slot. The convincing site says the parcel is held and asks for your name, date of birth, address, email and a Swiss mobile number, then a “processing fee” of about CHF 2.10 to 3.99, payable only by card. The scammers steal card and personal data. Cases so far are mainly in French-speaking Switzerland."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Avis papier : livraison échouée, scannez le code QR.",
+        "de": "Papierkarte: Zustellung gescheitert, QR-Code scannen.",
+        "en": "Paper card: delivery failed, scan the QR code."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Le site demande date de naissance et portable.",
+        "de": "Seite verlangt Geburtsdatum und Handynummer.",
+        "en": "Site asks for date of birth and mobile number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Petits frais, payables seulement par carte.",
+        "de": "Kleine Gebühr, nur mit Karte zahlbar.",
+        "en": "Small fee, card payment only."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "in-person",
+      "text": {
+        "fr": "La Poste – Avis de retrait. Nous n’avons pas pu distribuer votre envoi aujourd’hui. Scannez le code QR pour choisir une nouvelle date de livraison. Sans réponse de votre part sous 5 jours, l’envoi sera retourné à l’expéditeur.",
+        "de": "Die Post – Abholungseinladung. Wir konnten Ihre Sendung heute nicht zustellen. Scannen Sie den QR-Code, um einen neuen Liefertermin zu wählen. Ohne Ihre Antwort innert 5 Tagen wird die Sendung an den Absender zurückgeschickt.",
+        "en": "Swiss Post – collection notice. We could not deliver your item today. Scan the QR code to choose a new delivery date. Without your reply within 5 days, the item will be returned to the sender."
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "avis de retrait la poste code qr",
+      "scanner le qr code pour nouvelle livraison",
+      "frais de traitement colis chf 2.10",
+      "avis jaune boîte aux lettres faux",
+      "site poste demande date de naissance",
+      "payer par carte pour reprogrammer la livraison"
+    ],
+    "de": [
+      "abholungseinladung post qr code",
+      "qr code scannen für neue zustellung",
+      "bearbeitungsgebühr paket chf 2.10",
+      "gelbe karte briefkasten falsch",
+      "post seite verlangt geburtsdatum",
+      "mit karte zahlen für neuen liefertermin"
+    ],
+    "en": [
+      "swiss post collection notice qr code",
+      "scan qr code for redelivery",
+      "parcel processing fee chf 2.10",
+      "fake yellow card in letterbox",
+      "post site asks date of birth",
+      "pay by card to rebook delivery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un avis papier vous fait scanner un code QR et payer des frais pour une nouvelle livraison.",
+      "On vous demande votre date de naissance pour un colis."
+    ],
+    "de": [
+      "Eine Papierkarte lässt Sie einen QR-Code scannen und Gebühren für eine neue Zustellung zahlen.",
+      "Für ein Paket wird Ihr Geburtsdatum verlangt."
+    ],
+    "en": [
+      "A paper notice has you scan a QR code and pay a fee for redelivery.",
+      "You are asked for your date of birth for a parcel."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Saisissez le numéro de suivi vous-même dans l’app ou sur le site officiel de La Poste.",
+      "Une deuxième livraison standard n’est en général pas payante.",
+      "Carte saisie ? Faites-la bloquer immédiatement.",
+      "Signalez l’avis à l’OFCS."
+    ],
+    "de": [
+      "Geben Sie die Sendungsnummer selbst in der App oder auf der offiziellen Website der Post ein.",
+      "Eine zweite Standardzustellung kostet in der Regel nichts.",
+      "Karte eingegeben? Sofort sperren lassen.",
+      "Melden Sie die Karte dem BACS."
+    ],
+    "en": [
+      "Type the tracking number yourself into Swiss Post’s official app or website.",
+      "A second standard delivery is normally free.",
+      "Entered your card? Have it blocked at once.",
+      "Report the notice to BACS."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/bacs",
+    "ch/police"
+  ],
+  "sources": [
+    {
+      "title": "Semaine 24 : Hameçonnage dans la boîte aux lettres – Faux code QR sur un avis de retrait",
+      "publisher": "Office fédéral de la cybersécurité OFCS",
+      "url": "https://www.bacs.admin.ch/fr/26w24-fr",
+      "date": "2026-06-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,141 @@
+{
+  "id": "de/elster-tax-refund-phishing",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "de": "„ELSTER“, „Finanzamt“ oder „Bundeszentralamt für Steuern“",
+    "en": "“ELSTER”, the “tax office” or the “Federal Central Tax Office”"
+  },
+  "name": {
+    "de": "ELSTER- und Finanzamt-Phishing: Steuererstattung abholen oder Stammdaten aktualisieren",
+    "en": "ELSTER and tax office phishing: claim a tax refund or update your master data"
+  },
+  "how": {
+    "de": "Eine E-Mail mit gefälschtem ELSTER-Absender meldet, Ihnen stehe eine Steuererstattung von einigen hundert oder tausend Euro zu, oder Ihre Stammdaten müssten aktualisiert werden, sonst verfalle die Erstattung oder das Konto. Über einen Link sollen Sie Ihre Identität bestätigen. Die Seite sieht aus wie Mein ELSTER und fragt Bankdaten, Kartendaten oder Zugangsdaten ab. Danach rufen die Täter manchmal als „Bankmitarbeiter“ an, um auch an PIN und TAN zu kommen.",
+    "en": "An email with a forged ELSTER sender says you are due a tax refund of a few hundred or thousand euros, or that your master data must be updated or the refund or account will lapse. You are told to confirm your identity through a link. The page looks like Mein ELSTER and asks for bank details, card details or login details. Afterwards the criminals sometimes call as a “bank employee” to get your PIN and TAN as well."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine Mail „von ELSTER“: Erstattung bereit oder Daten veraltet.",
+        "en": "An email “from ELSTER”: refund ready or details out of date."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Ein Betrag zu Ihren Gunsten macht neugierig.",
+        "en": "An amount in your favour makes you curious."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Eine Frist, sonst verfalle die Erstattung.",
+        "en": "A deadline, or the refund lapses."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link auf eine nachgebaute ELSTER-Seite, die Bank- oder Kartendaten will.",
+        "en": "A link to a copied ELSTER page that wants bank or card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Mein ELSTER – Benachrichtigung: Nach Prüfung Ihrer Einkommensteuererklärung ergibt sich ein Erstattungsbetrag von 734,60 EUR zu Ihren Gunsten. Um die Auszahlung freizugeben, bestätigen Sie bitte innerhalb von 5 Tagen Ihre Identität und Bankverbindung: [Link] Andernfalls verfällt der Anspruch. Ihr Finanzamt",
+        "en": "Mein ELSTER – notification: after review of your income tax return there is a refund of EUR 734.60 in your favour. To release the payment, please confirm your identity and bank details within 5 days: [link] Otherwise the claim will lapse. Your tax office"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "elster mail steuererstattung",
+      "finanzamt erstattung bestätigen link",
+      "elster stammdaten aktualisieren mail",
+      "steuerrückerstattung kartendaten eingeben",
+      "mein elster identität bestätigen",
+      "erstattungsbetrag zu ihren gunsten mail",
+      "elster phishing bankverbindung",
+      "rückzahlung kontodaten hinterlegen",
+      "erstattung verfällt formular",
+      "veranlagungsjahr rückzahlung festgestellt"
+    ],
+    "en": [
+      "elster email tax refund",
+      "tax office refund confirm bank details",
+      "email asking to update elster data",
+      "fake tax refund email germany",
+      "confirm identity to receive tax refund"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "de": [
+      "Das Finanzamt fragt nicht per Mail oder SMS nach Bank- oder Kartendaten und verschickt keine Links für Erstattungen.",
+      "Ihre Erstattung kommt auf das Konto, das Sie in der Steuererklärung angegeben haben.",
+      "Bescheide und Nachrichten finden Sie nur, wenn Sie sich selbst bei Mein ELSTER anmelden."
+    ],
+    "en": [
+      "The tax office doesn’t ask for bank or card details by email or text and doesn’t send links for refunds.",
+      "Your refund goes to the account you gave in your tax return.",
+      "You find assessments and messages only by logging in to Mein ELSTER yourself."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Klicken Sie nicht und geben Sie keine Daten ein. Melden Sie sich bei Bedarf selbst über die Ihnen bekannte Adresse bei Mein ELSTER an.",
+      "Leiten Sie die Mail an das Phishing-Radar der Verbraucherzentrale weiter.",
+      "Haben Sie Bankdaten eingegeben? Rufen Sie Ihre Bank an und erstatten Sie Anzeige. Legen Sie auf, wenn danach ein „Bankmitarbeiter“ anruft."
+    ],
+    "en": [
+      "Don’t click and don’t enter any details. If needed, log in to Mein ELSTER yourself through the address you know.",
+      "Forward the email to the consumer centre’s Phishing Radar.",
+      "Did you enter bank details? Call your bank and file a police report. Hang up if a “bank employee” calls afterwards."
+    ]
+  },
+  "reportTo": [
+    "de/phishing-radar",
+    "de/your-bank",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-KN: (Radolfzell, Lkr. Konstanz) Phishing und anschließender Betrug durch falschen Volksbank-Mitarbeiter (04.09.2026)",
+      "publisher": "Polizeipräsidium Konstanz (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/110973/6347884",
+      "date": "2026-09-08"
+    },
+    {
+      "title": "Phishing im Namen von Elster: Sie sollen eine Steuererstattung in Höhe von 1.459 Euro erhalten",
+      "publisher": "Verbraucherzentrale Niedersachsen",
+      "url": "https://www.verbraucherzentrale-niedersachsen.de/warnungen/phishing-im-namen-von-elster-sie-sollen-eine-steuererstattung-in-hoehe-von-1459-euro-erhalten-124982",
+      "date": "2026-08-18"
+    },
+    {
+      "title": "Fake-SMS zu Online-Banking, Steuerbescheiden und Gerichtsverfahren",
+      "publisher": "Verbraucherzentrale",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/mobilfunk-und-festnetz/infos-zum-onlinebanking-per-sms-vorsicht-betrug-67038",
+      "date": "2026-10-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/bank-employee-safe-account"
+  ]
+}

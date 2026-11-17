@@ -1,0 +1,159 @@
+{
+  "id": "ch/whatsapp-abstimmung-konto-uebernahme",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "de": "Eine WhatsApp-Nachricht von einem bekannten Kontakt",
+    "fr": "Un message WhatsApp d’un contact connu",
+    "en": "A WhatsApp message from a known contact"
+  },
+  "name": {
+    "de": "„Stimm für mein Kind ab“: WhatsApp-Konto wird mit Code oder QR-Code gekapert",
+    "fr": "« Vote pour ma fille » : compte WhatsApp piraté avec un code ou un code QR",
+    "en": "“Vote for my child”: WhatsApp account taken over with a code or QR code"
+  },
+  "how": {
+    "de": "Ein Kontakt, dessen Konto bereits gekapert ist, bittet Sie, an einem Wettbewerb für ein Kind, eine Schule oder eine Tanzgruppe abzustimmen: Es dauere weniger als eine Minute und ende bald. Die Abstimmungsseite verlangt Ihre Telefonnummer und dann den sechsstelligen Code aus der SMS, der in Wahrheit der Registrierungscode von WhatsApp ist, oder Sie sollen einen QR-Code über „Verknüpfte Geräte“ scannen. So übernehmen die Betrüger Ihr Konto, lesen Ihre Chats und schicken dieselbe Nachricht an alle Ihre Kontakte.",
+    "fr": "Un contact dont le compte est déjà piraté vous demande de voter dans un concours pour un enfant, une école ou un groupe de danse : cela prend moins d’une minute et le vote se termine bientôt. La page de vote demande votre numéro puis le code à six chiffres reçu par SMS, qui est en réalité le code d’enregistrement de WhatsApp, ou bien de scanner un code QR via « Appareils connectés ». Les escrocs prennent ainsi votre compte, lisent vos discussions et envoient le même message à tous vos contacts.",
+    "en": "A contact whose account is already hijacked asks you to vote in a contest for a child, a school or a dance group: it takes less than a minute and closes soon. The voting page asks for your phone number and then the six-digit code from a text, which is really WhatsApp’s registration code, or asks you to scan a QR code via “Linked devices”. The scammers take over your account, read your chats and send the same message to all your contacts."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Kontakt bittet um eine Stimme für einen Wettbewerb.",
+        "fr": "Un contact demande un vote pour un concours.",
+        "en": "A contact asks for a vote in a contest."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Schnell, die Abstimmung endet bald.",
+        "fr": "Vite, le vote se termine bientôt.",
+        "en": "Quick, voting closes soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Link zur Abstimmungsseite.",
+        "fr": "Lien vers la page de vote.",
+        "en": "Link to the voting page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Code aus der SMS eingeben oder QR-Code scannen.",
+        "fr": "Saisir le code SMS ou scanner un code QR.",
+        "en": "Enter the text code or scan a QR code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "de": "Hallo! Meine Nichte macht bei einem Tanzwettbewerb mit und ist im Final 😊 Kannst du bitte schnell für sie abstimmen? Dauert keine Minute, die Abstimmung schliesst heute Abend: [Link]",
+        "fr": "Coucou ! Ma nièce participe à un concours de danse et elle est en finale 😊 Tu peux voter vite pour elle ? Ça prend moins d’une minute, le vote ferme ce soir : [lien]",
+        "en": "Hi! My niece is in a dance contest and made it to the final 😊 Could you quickly vote for her? It takes less than a minute, voting closes tonight: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "whatsapp nachricht abstimmen für tochter wettbewerb",
+      "stimm bitte für mich ab link",
+      "abstimmung code aus sms eingeben",
+      "whatsapp konto gehackt nach abstimmung",
+      "qr code scannen verknüpfte geräte abstimmung",
+      "sechsstelliger code whatsapp weitergeben",
+      "wettbewerb abstimmen code per sms bekommen",
+      "fotowettbewerb kind abstimmen"
+    ],
+    "fr": [
+      "message whatsapp voter pour ma fille concours",
+      "vote pour moi s’il te plaît lien",
+      "vote saisir code reçu par sms",
+      "compte whatsapp piraté après un vote",
+      "scanner code qr appareils connectés vote",
+      "code à six chiffres whatsapp transmis",
+      "concours voter code reçu par sms",
+      "concours photo enfant voter"
+    ],
+    "en": [
+      "whatsapp message vote for my daughter contest",
+      "please vote for me link",
+      "voting enter code from text",
+      "whatsapp account hacked after voting",
+      "scan qr code linked devices vote",
+      "six digit whatsapp code shared",
+      "contest vote code received by text",
+      "photo contest child vote"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Eine Abstimmungsseite will Ihre Telefonnummer und einen SMS-Code.",
+      "Ein QR-Code soll über „Verknüpfte Geräte“ gescannt werden."
+    ],
+    "fr": [
+      "Une page de vote veut votre numéro et un code SMS.",
+      "On vous demande de scanner un code QR via « Appareils connectés »."
+    ],
+    "en": [
+      "A voting page wants your phone number and a text code.",
+      "You are asked to scan a QR code via “Linked devices”."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Geben Sie den WhatsApp-Code nie weiter und nirgends ein.",
+      "Fragen Sie den Kontakt über einen anderen Weg, ob die Nachricht echt ist.",
+      "Aktivieren Sie die Verifizierung in zwei Schritten.",
+      "Gekapert? Unbekannte verknüpfte Geräte abmelden oder WhatsApp neu registrieren und Kontakte warnen."
+    ],
+    "fr": [
+      "Ne transmettez et ne saisissez jamais le code WhatsApp.",
+      "Vérifiez auprès du contact par un autre moyen si le message est vrai.",
+      "Activez la vérification en deux étapes.",
+      "Piraté ? Déconnectez les appareils inconnus ou réenregistrez WhatsApp et prévenez vos contacts."
+    ],
+    "en": [
+      "Never share the WhatsApp code or type it anywhere.",
+      "Check with the contact another way whether the message is real.",
+      "Turn on two-step verification.",
+      "Hijacked? Log out unknown linked devices or re-register WhatsApp and warn your contacts."
+    ]
+  },
+  "reportTo": [
+    "ch/bacs",
+    "ch/police"
+  ],
+  "sources": [
+    {
+      "title": "Woche 43: Betrüger kapern erneut WhatsApp-Konten mit gefälschten Abstimmungen",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w43-de",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Woche 30: Aktuelle Betrugsvarianten mit KI-generierten Bildern und Videos",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w30-de",
+      "date": "2026-07-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

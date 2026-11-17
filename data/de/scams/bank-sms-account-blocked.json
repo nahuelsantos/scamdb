@@ -1,0 +1,135 @@
+{
+  "id": "de/bank-sms-account-blocked",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "de": "„Sparkasse“, „Volksbank“ oder eine andere Bank, als SMS",
+    "en": "“Sparkasse”, “Volksbank” or another bank, by text"
+  },
+  "name": {
+    "de": "Fake-SMS von Sparkasse oder Volksbank: Konto oder Karte gesperrt, Link zum Entsperren",
+    "en": "Fake text from Sparkasse or Volksbank: account or card blocked, link to unblock"
+  },
+  "how": {
+    "de": "Eine SMS, angeblich von Ihrer Sparkasse, Volksbank oder einer anderen Bank, meldet ein Problem: Ihr Konto oder Ihre Karte sei gesperrt, eine Überweisung sei angehalten, Ihre Daten seien nicht mehr aktuell. Über einen Link sollen Sie das „sofort“ beheben. Die Seite sieht aus wie das echte Online-Banking und fragt Zugangsdaten, Kartendaten oder einen Code ab, oder Sie sollen eine App installieren. Oft folgt kurz danach der Anruf eines „Bankmitarbeiters“.",
+    "en": "A text, supposedly from your Sparkasse, Volksbank or another bank, reports a problem: your account or card is blocked, a transfer is on hold, your details are out of date. You are told to fix it “now” through a link. The page looks like real online banking and asks for login details, card details or a code, or you are told to install an app. Often a call from a “bank employee” follows shortly after."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine SMS meldet eine Sperre oder ein Problem mit Konto oder Karte.",
+        "en": "A text reports a block or a problem with your account or card."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Sie sollen sofort handeln, damit das Konto nicht dauerhaft gesperrt wird.",
+        "en": "You must act straight away so the account isn’t blocked for good."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link führt auf ein nachgemachtes Online-Banking.",
+        "en": "A link leads to a fake online banking site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Dort werden Zugangsdaten, Kartendaten oder ein Code abgefragt.",
+        "en": "It asks for login details, card details or a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Sparkasse: Ihre Debitkarte wurde wegen einer ungewöhnlichen Anmeldung vorsorglich gesperrt. Entsperrung innerhalb von 24 Std. unter [Link], sonst wird eine neue Karte kostenpflichtig zugestellt.",
+        "en": "Sparkasse: your debit card has been blocked as a precaution because of an unusual login. Unblock within 24 hrs at [link], otherwise a new card will be sent for a fee."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "sms sparkasse karte gesperrt",
+      "volksbank sms konto gesperrt link",
+      "sms bank entsperren link",
+      "debitkarte vorsorglich gesperrt sms",
+      "sms online banking daten aktualisieren",
+      "smishing sparkasse",
+      "sms ungewöhnliche anmeldung konto",
+      "karte gesperrt entsperrung link",
+      "konto eingeschränkt sms verifizieren"
+    ],
+    "en": [
+      "text from sparkasse card blocked",
+      "bank text account blocked link",
+      "sms to unblock my bank card",
+      "text asking to update my online banking",
+      "smishing from my bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Banken schicken keine SMS mit Links zum Entsperren oder Aktualisieren.",
+      "Die Drohung mit Sperre oder Gebühren soll Sie hetzen.",
+      "Echte Hinweise finden Sie immer auch in Ihrer Banking-App oder im Postfach des Online-Bankings."
+    ],
+    "en": [
+      "Banks don’t send texts with links to unblock or update things.",
+      "The threat of a block or fees is meant to rush you.",
+      "Real notices always appear in your banking app or online banking inbox too."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Tippen Sie nicht auf den Link und antworten Sie nicht. Prüfen Sie Ihr Konto direkt in der App.",
+      "Haben Sie Daten eingegeben? Rufen Sie Ihre Bank an oder den Sperr-Notruf 116 116 und erstatten Sie Anzeige.",
+      "Unerwünschte SMS können Sie bei der Bundesnetzagentur melden."
+    ],
+    "en": [
+      "Don’t tap the link and don’t reply. Check your account directly in the app.",
+      "Did you enter details? Call your bank or the 116 116 block line and file a police report.",
+      "You can report unwanted texts to the Federal Network Agency (Bundesnetzagentur)."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/sperr-notruf",
+    "de/onlinewache",
+    "de/bundesnetzagentur"
+  ],
+  "sources": [
+    {
+      "title": "Fake-SMS zu Online-Banking, Steuerbescheiden und Gerichtsverfahren",
+      "publisher": "Verbraucherzentrale",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/mobilfunk-und-festnetz/infos-zum-onlinebanking-per-sms-vorsicht-betrug-67038",
+      "date": "2026-10-13"
+    },
+    {
+      "title": "Wenn Kriminelle ans Konto wollen: So schützen Sie sich",
+      "publisher": "Sparkasse (DSGV)",
+      "url": "https://www.sparkasse.de/aktuelles/mehr-betrugsversuche.html",
+      "date": "2026-06-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/tan-app-reactivation-phishing",
+    "de/bank-employee-safe-account"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": "ch/arnaque-sentiments-ia",
+  "country": "ch",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "fr": "Un profil sur un réseau social ou un site de rencontre",
+    "de": "Ein Profil in sozialen Medien oder auf einer Dating-Plattform",
+    "en": "A profile on social media or a dating site"
+  },
+  "name": {
+    "fr": "Arnaque aux sentiments par IA : photos d’hôpital, « traitement » et faire-part de décès",
+    "de": "Romance Scam mit KI: Spitalbilder, „Behandlung“ und am Ende eine Todesanzeige",
+    "en": "AI romance scam: hospital photos, “treatment” and finally a death notice"
+  },
+  "how": {
+    "fr": "Un faux profil vous aborde de façon anodine ; les échanges deviennent vite intimes, avec des messages quotidiens et des photos. Une rencontre serait impossible, par exemple parce que la personne vit à l’étranger. Viennent ensuite des dettes, des soucis de proches ou une maladie soudaine. Des images générées par IA montrent le « partenaire » dans un lit d’hôpital, parfois avec des objets de la victime. L’état s’aggrave, un traitement urgent coûte cher, puis le décès est annoncé, avec faire-part et photo de tombe. Ensuite, on propose de rembourser les sommes versées, contre de nouveaux frais.",
+    "de": "Ein falsches Profil nimmt harmlos Kontakt auf; bald wird es intim, mit täglichen Nachrichten und Fotos. Ein Treffen ist angeblich unmöglich, etwa weil die Person im Ausland lebt. Dann kommen Schulden, Probleme von Angehörigen oder eine plötzliche Krankheit. Mit KI erzeugte Bilder zeigen den „Partner“ im Spitalbett, manchmal mit Gegenständen des Opfers. Die Lage wird schlimmer, eine dringende Behandlung kostet Geld, schliesslich wird der Tod gemeldet, mit Todesanzeige und Grabfoto. Danach bietet jemand an, das Geld zurückzuzahlen, verlangt aber neue Gebühren.",
+    "en": "A fake profile makes harmless contact; it soon turns intimate, with daily messages and photos. Meeting is supposedly impossible, for example because the person lives abroad. Then come debts, relatives’ problems or a sudden illness. AI-generated images show the “partner” in a hospital bed, sometimes with the victim’s own belongings. Things get worse, urgent treatment costs money, and finally a death is announced, with a death notice and a photo of the grave. Afterwards someone offers to repay the money, but asks for new fees."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un nouveau profil devient très vite intime.",
+        "de": "Ein neues Profil wird schnell sehr vertraut.",
+        "en": "A new profile quickly becomes very close."
+      }
+    },
+    {
+      "text": {
+        "fr": "Rencontre impossible, vit à l’étranger.",
+        "de": "Treffen unmöglich, lebt im Ausland.",
+        "en": "Can’t meet, lives abroad."
+      }
+    },
+    {
+      "text": {
+        "fr": "Maladie ou dettes : envoie de l’argent.",
+        "de": "Krankheit oder Schulden: bitte schick Geld.",
+        "en": "Illness or debts: please send money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Remboursement proposé, contre de nouveaux frais.",
+        "de": "Rückzahlung angeboten, gegen neue Gebühren.",
+        "en": "Refund offered, for new fees."
+      },
+      "signal": "too_good_to_be_true"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "fr": "Mon amour, les médecins disent que je dois être opéré cette semaine, sinon ce sera trop tard. Mes comptes ici sont bloqués, j’ai tellement honte de te demander… Je t’envoie une photo de ma chambre. Tu es la seule personne en qui j’ai confiance ❤️",
+        "de": "Mein Schatz, die Ärzte sagen, ich brauche die Operation diese Woche, sonst ist es zu spät. Meine Konten hier sind blockiert, ich schäme mich so, dich zu fragen… Ich schicke dir ein Foto aus dem Zimmer. Du bist der einzige Mensch, dem ich vertraue ❤️",
+        "en": "My love, the doctors say I need the operation this week or it will be too late. My accounts here are blocked, I’m so ashamed to ask you… I’m sending you a photo from my room. You’re the only person I trust ❤️"
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "rencontre en ligne demande de l’argent pour l’hôpital",
+      "il vit à l’étranger et ne peut pas venir",
+      "photo à l’hôpital opération urgente argent",
+      "faire-part de décès après lui avoir envoyé de l’argent",
+      "rembourser les sommes contre des frais",
+      "amour sur internet comptes bloqués"
+    ],
+    "de": [
+      "online bekanntschaft will geld für spital",
+      "lebt im ausland kann nicht kommen",
+      "foto im spital dringende operation geld",
+      "todesanzeige nachdem ich geld geschickt habe",
+      "geld zurückzahlen gegen gebühren",
+      "liebe im internet konten blockiert"
+    ],
+    "en": [
+      "online partner asks money for hospital",
+      "lives abroad and can’t come",
+      "hospital photo urgent operation money",
+      "death notice after i sent money",
+      "repay the money for fees",
+      "internet love accounts blocked"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "fr": [
+      "Une personne jamais rencontrée demande de l’argent, encore et encore.",
+      "Des photos d’hôpital ou des drames qui s’enchaînent juste quand il faut payer.",
+      "Après un « décès », quelqu’un propose de rembourser contre des frais."
+    ],
+    "de": [
+      "Jemand, den Sie nie getroffen haben, verlangt immer wieder Geld.",
+      "Spitalfotos oder Dramen, genau wenn bezahlt werden soll.",
+      "Nach einem „Todesfall“ bietet jemand eine Rückzahlung gegen Gebühren an."
+    ],
+    "en": [
+      "Someone you have never met asks for money again and again.",
+      "Hospital photos or crises that come just when payment is needed.",
+      "After a “death”, someone offers to repay you for a fee."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "N’envoyez jamais d’argent ou d’objets à quelqu’un que vous n’avez jamais rencontré.",
+      "Coupez le contact si la personne demande de l’argent à plusieurs reprises.",
+      "Victime ? Portez plainte à la police et parlez-en à une personne de confiance.",
+      "Ignorez toute offre de remboursement contre des frais."
+    ],
+    "de": [
+      "Schicken Sie nie Geld oder Gegenstände an jemanden, den Sie nie getroffen haben.",
+      "Brechen Sie den Kontakt ab, wenn die Person wiederholt Geld verlangt.",
+      "Betroffen? Anzeige bei der Polizei und mit einer Vertrauensperson reden.",
+      "Ignorieren Sie Rückzahlungsangebote gegen Gebühren."
+    ],
+    "en": [
+      "Never send money or items to someone you have never met.",
+      "Cut contact if the person asks for money more than once.",
+      "Victim? Report it to the police and talk to someone you trust.",
+      "Ignore any offer to repay you for a fee."
+    ]
+  },
+  "reportTo": [
+    "ch/police",
+    "ch/your-bank",
+    "ch/bacs"
+  ],
+  "sources": [
+    {
+      "title": "Semaine 14 : L’évolution de l’arnaque aux sentiments – l’IA au service de la supercherie parfaite",
+      "publisher": "Office fédéral de la cybersécurité OFCS",
+      "url": "https://www.bacs.admin.ch/fr/26w14-fr",
+      "date": "2026-04-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

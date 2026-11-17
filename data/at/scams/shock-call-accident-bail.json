@@ -1,0 +1,138 @@
+{
+  "id": "at/shock-call-accident-bail",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "de": "„Polizei“, „Staatsanwaltschaft“, ein Spital oder ein weinender Angehöriger",
+    "en": "“Police”, “public prosecutor”, a hospital or a crying relative"
+  },
+  "name": {
+    "de": "Schockanruf: Unfall eines Angehörigen, Kaution oder Spitalskosten (Neffentrick)",
+    "en": "Shock call: a relative’s accident, bail or hospital costs (grandchild trick)"
+  },
+  "how": {
+    "de": "Ein Anruf, oft am Festnetz: Ihr Sohn, Ihre Tochter oder Ihr Enkel habe einen schweren Unfall verursacht und komme ins Gefängnis, wenn Sie nicht sofort eine Kaution zahlen. Oder ein „Spital“ verlangt dringend Bargeld für eine Behandlung. Im Hintergrund weint jemand. Die Anrufer, angeblich Polizisten, Staatsanwälte oder Ärzte, halten Sie stundenlang am Telefon, fragen nach Bargeld, Gold und Schmuck und schicken dann einen Abholer. In Österreich gibt es keine solche Kaution am Telefon.",
+    "en": "A call, often on the landline: your son, daughter or grandchild has caused a serious accident and will go to prison unless you pay bail right away. Or a “hospital” urgently demands cash for treatment. Someone is crying in the background. The callers, supposedly police officers, prosecutors or doctors, keep you on the phone for hours, ask about cash, gold and jewellery, and then send someone to collect. In Austria there is no such bail paid over the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Anruf: Ein Angehöriger hatte einen schweren Unfall; jemand weint im Hintergrund.",
+        "en": "A call: a relative has had a serious accident; someone is crying in the background."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Nur eine Kaution oder sofortige Zahlung verhindere das Gefängnis oder rette die Behandlung.",
+        "en": "Only bail or immediate payment will prevent prison or save the treatment."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie dürfen nicht auflegen und mit niemandem reden, auch nicht mit der Bank.",
+        "en": "You must not hang up or talk to anyone, not even the bank."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "de": "Man fragt, wie viel Bargeld, Gold oder Schmuck Sie haben; ein „Bote“ holt es ab.",
+        "en": "They ask how much cash, gold or jewellery you have; a “courier” collects it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hier spricht Inspektor Berger von der Polizei Wien. Ihr Sohn hat in Favoriten eine Frau auf dem Zebrastreifen niedergefahren. Er sitzt bei uns. Damit er heute nicht in U-Haft muss, braucht es eine Kaution von 60.000 Euro. Wie viel haben Sie zu Hause, auch Gold oder Schmuck? Legen Sie nicht auf, ein Kollege kommt gleich vorbei.",
+        "en": "This is Inspector Berger from the Vienna police. Your son ran over a woman on a zebra crossing in Favoriten. He is with us. So that he doesn’t have to go into custody today, bail of 60,000 euros is needed. How much do you have at home, gold or jewellery too? Don’t hang up, a colleague will come by shortly."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "schockanruf unfall sohn kaution",
+      "anruf polizei enkel unfall geld",
+      "kaution zahlen sonst gefängnis",
+      "spital braucht bargeld behandlung angehöriger",
+      "staatsanwalt anruf kaution gold",
+      "neffentrick anruf bargeld abholen",
+      "tochter weint telefon unfall"
+    ],
+    "en": [
+      "shock call relative accident bail",
+      "police called son caused accident",
+      "pay bail or he goes to prison",
+      "hospital wants cash for treatment",
+      "grandchild trick phone cash collected"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Polizei und Staatsanwaltschaft verlangen nie Geld am Telefon; in Österreich gibt es keine solche Kaution.",
+      "Sie sollen in der Leitung bleiben und niemandem etwas sagen.",
+      "Fragen nach Bargeld, Gold und Schmuck zu Hause."
+    ],
+    "en": [
+      "Police and prosecutors never demand money on the phone; in Austria there is no such bail.",
+      "You are told to stay on the line and tell nobody.",
+      "Questions about cash, gold and jewellery at home."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Sofort auflegen. Den Angehörigen unter der bekannten Nummer anrufen.",
+      "Selbst die Polizei unter 133 anrufen, Nummer neu wählen, nicht zurückrufen.",
+      "Nie Geld oder Wertsachen an Unbekannte übergeben; Anzeige erstatten."
+    ],
+    "en": [
+      "Hang up at once. Call the relative on the number you know.",
+      "Call the police yourself on 133, dialling fresh, not calling back.",
+      "Never hand money or valuables to strangers; file a complaint."
+    ]
+  },
+  "reportTo": [
+    "at/police-emergency",
+    "at/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Vertrauen als Angriffswaffe (Öffentliche Sicherheit 7-8/26)",
+      "publisher": "Bundesministerium für Inneres",
+      "url": "https://www.bmi.gv.at/magazinfiles/2026/07_08/08_betrugskriminalitaet.pdf",
+      "date": "2026-06-25"
+    },
+    {
+      "title": "70-Jährige übergab Betrügern Gold im Millionenwert",
+      "publisher": "ORF Oberösterreich",
+      "url": "https://ooe.orf.at/stories/3347296/",
+      "date": "2026-03-25"
+    },
+    {
+      "title": "Falsche Polizisten fordern Geld und Gold",
+      "publisher": "ORF Oberösterreich",
+      "url": "https://ooe.orf.at/stories/3367288/",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/fake-police-valuables"
+  ]
+}

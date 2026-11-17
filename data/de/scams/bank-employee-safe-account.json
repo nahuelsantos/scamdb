@@ -1,0 +1,161 @@
+{
+  "id": "de/bank-employee-safe-account",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "in-person"
+  ],
+  "sender": {
+    "de": "Ihre Bank oder Ihr Kreditkartenunternehmen (die echte Nummer erscheint im Display)",
+    "en": "Your bank or card company (the real number shows on screen)"
+  },
+  "name": {
+    "de": "Falscher Bankmitarbeiter: „Sicherheitskonto“, Freigabe in der Banking-App und Karte abholen",
+    "en": "Fake bank employee: “security account”, approval in the banking app and card pick-up"
+  },
+  "how": {
+    "de": "Jemand ruft im Namen Ihrer Bank, Sparkasse oder Kreditkartenfirma an. Durch Call-ID-Spoofing steht die echte Nummer der Bank im Display, und der Anrufer kennt oft schon Details zu Ihrem Konto. Er meldet verdächtige Abbuchungen und will sie angeblich stoppen: Sie sollen Ihr Guthaben auf ein „Sicherheitskonto“ überweisen, sich während des Gesprächs in der Banking-App anmelden und etwas freigeben, PIN oder TAN nennen oder eine Fernwartungs-App installieren. Manchmal kommt danach ein „Kollege“ an die Haustür und holt Ihre Bankkarte ab.",
+    "en": "Someone calls on behalf of your bank, savings bank or card company. Because of caller-ID spoofing the bank’s real number shows on screen, and the caller often already knows details about your account. They report suspicious debits and say they want to stop them: you are told to transfer your balance to a “security account”, log in to your banking app during the call and approve something, give your PIN or TAN, or install a remote-access app. Sometimes a “colleague” then comes to your door to collect your bank card."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Anruf, angeblich von der Bank, mit der echten Nummer im Display: Es gebe verdächtige Abbuchungen.",
+        "en": "A call, supposedly from the bank, with the real number on screen: there are suspicious debits."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Sie sollen dranbleiben, alles müsse sofort passieren, sonst sei das Geld weg.",
+        "en": "You must stay on the line; it all has to happen right now or the money is gone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "de": "Sie sollen sich in der Banking-App anmelden und eine „Stornierung“ freigeben, oder PIN und TAN nennen.",
+        "en": "You are asked to log in to the banking app and approve a “cancellation”, or to give your PIN and TAN."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "de": "Oder Sie sollen Ihr Guthaben auf ein „Sicherheitskonto“ überweisen.",
+        "en": "Or you are told to move your balance to a “security account”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "de": "Manchmal holt ein Bote Ihre Bankkarte an der Haustür ab.",
+        "en": "Sometimes a courier collects your bank card at the door."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Guten Tag, hier ist Herr Brandt aus der Sicherheitsabteilung Ihrer Bank. Wir sehen gerade zwei Zahlungen über 1.900 Euro an einen Händler in Rumänien. Waren Sie das? Nein? Dann müssen wir schnell handeln. Bitte bleiben Sie in der Leitung und öffnen Sie Ihre Banking-App, dort erscheint gleich eine Freigabe zur Stornierung. Danach parken wir Ihr Guthaben vorübergehend auf einem geschützten Sicherheitskonto.",
+        "en": "Good afternoon, this is Mr Brandt from your bank’s security department. We can see two payments of 1,900 euros to a merchant in Romania right now. Was that you? No? Then we have to act fast. Please stay on the line and open your banking app; an approval to cancel will appear in a moment. After that we’ll park your balance temporarily in a protected security account."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "falscher bankmitarbeiter anruf",
+      "geld auf sicherheitskonto überweisen",
+      "bank ruft an verdächtige abbuchungen",
+      "freigabe banking app am telefon",
+      "call id spoofing bank nummer",
+      "pushtan freigabe stornierung anrufer",
+      "sparkasse mitarbeiter will karte abholen",
+      "guthaben auf geschütztes konto umbuchen",
+      "angeblicher kreditkartenmitarbeiter zahlung autorisieren",
+      "überweisung stoppen anfrage app bestätigen",
+      "betrugsprävention bank ruft an",
+      "echtzeitüberweisung abgefangen girokonto",
+      "bleiben sie am apparat bank"
+    ],
+    "en": [
+      "fake bank employee called me",
+      "move money to a security account",
+      "bank called about suspicious payments",
+      "asked me to approve in my banking app",
+      "caller showed my bank s real number",
+      "they wanted to collect my bank card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "de": [
+      "Ein „Sicherheitskonto“ gibt es nicht: Ihre Bank verlangt nie, dass Sie Geld umbuchen, um es zu schützen.",
+      "Ihre Bank fragt am Telefon nie nach PIN, TAN oder Passwort und lässt Sie nie etwas in der App freigeben.",
+      "Die Nummer im Display beweist nichts: Sie kann gefälscht sein.",
+      "Bankmitarbeiter holen keine Bankkarten an der Haustür ab."
+    ],
+    "en": [
+      "A “security account” doesn’t exist: your bank never asks you to move money to protect it.",
+      "Your bank never asks for your PIN, TAN or password over the phone and never has you approve something in the app.",
+      "The number on screen proves nothing: it can be faked.",
+      "Bank staff don’t collect bank cards at your door."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Legen Sie auf und rufen Sie Ihre Bank selbst an, über die Nummer auf Ihrer Karte oder in der App, nicht über die Rückruftaste.",
+      "Haben Sie etwas freigegeben oder Daten genannt? Lassen Sie Konto und Karte sofort über Ihre Bank oder den Sperr-Notruf 116 116 sperren.",
+      "Steht jemand vor der Tür, um Ihre Karte abzuholen? Rufen Sie die 110.",
+      "Erstatten Sie Anzeige, auch online über die Onlinewache Ihres Bundeslandes."
+    ],
+    "en": [
+      "Hang up and call your bank yourself, on the number on your card or in the app, not with the call-back button.",
+      "Did you approve something or give details? Have your account and card blocked straight away through your bank or the 116 116 block line.",
+      "Is someone at the door to collect your card? Call 110.",
+      "File a police report, also online through your state’s online police station."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/sperr-notruf",
+    "de/police-110",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-CE: Telefonbetrug: Täter erbeuten Geld durch falsche Bankmitarbeiterin",
+      "publisher": "Polizeiinspektion Celle (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/59457/6391983",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "POL-NB: Betrug durch Call Spoofing: Mehr als 80.000 Euro von Konten abgebucht",
+      "publisher": "Polizeipräsidium Neubrandenburg (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/108747/6392109",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "Wenn Kriminelle ans Konto wollen: So schützen Sie sich",
+      "publisher": "Sparkasse (DSGV)",
+      "url": "https://www.sparkasse.de/aktuelles/mehr-betrugsversuche.html",
+      "date": "2026-06-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/tan-app-reactivation-phishing",
+    "de/bank-sms-account-blocked"
+  ]
+}

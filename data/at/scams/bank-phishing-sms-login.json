@@ -1,0 +1,136 @@
+{
+  "id": "at/bank-phishing-sms-login",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "de": "Ihre Hausbank (Erste Bank/George, Raiffeisen/ELBA, BAWAG, Volksbank …)",
+    "en": "Your bank (Erste Bank/George, Raiffeisen/ELBA, BAWAG, Volksbank …)"
+  },
+  "name": {
+    "de": "Phishing im Namen der Hausbank: „Legitimation verlängern“ oder „unberechtigte Abbuchung“",
+    "en": "Phishing in the name of your bank: “renew your verification” or “unauthorised debit”"
+  },
+  "how": {
+    "de": "Eine SMS oder E-Mail sieht aus, als käme sie von Ihrer Bank. Sie sollen Ihre Legitimation für das Online-Banking verlängern, Ihre Daten bestätigen oder eine angeblich unberechtigte Abbuchung prüfen, sonst werde das Konto gesperrt. Der Link führt zu einer nachgebauten Login-Seite, die Verfügernummer, Passwort und Codes abfragt, oder zu einer App, die Ihre SMS-TANs mitliest. Danach wird Ihr Konto leergeräumt.",
+    "en": "A text or email looks like it comes from your bank. You are told to renew your online banking verification, confirm your details or check a supposedly unauthorised debit, or the account will be blocked. The link leads to a copied login page that asks for your user number, password and codes, or to an app that reads your SMS TANs. Then your account is emptied."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine SMS oder E-Mail „von Ihrer Bank“ mit unpersönlicher Anrede.",
+        "en": "A text or email “from your bank” with an impersonal greeting."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Drohung: Ohne Bestätigung werde das Konto oder die Karte gesperrt.",
+        "en": "Threat: without confirmation the account or card will be blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link zu einer Seite, die wie Ihr Online-Banking aussieht.",
+        "en": "A link to a page that looks like your online banking."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Dort sollen Sie Verfügernummer, Passwort und einen Code eingeben oder eine App installieren.",
+        "en": "There you are asked to enter your user number, password and a code, or to install an app."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Sehr geehrter Kunde, Ihre Sicherheitslegitimation für das Online-Banking läuft am 20.11. ab. Um eine Sperre Ihres Kontos zu vermeiden, bestätigen Sie Ihre Daten bitte innerhalb von 24 Stunden: [Link]",
+        "en": "Dear customer, your online banking security verification expires on 20 November. To avoid your account being blocked, please confirm your details within 24 hours: [Link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "sms bank legitimation verlängern",
+      "online banking gesperrt link",
+      "verfügernummer passwort eingegeben",
+      "unberechtigte abbuchung prüfen link",
+      "elba sicherheitsupdate sms",
+      "george konto bestätigen",
+      "bankdaten bestätigen link"
+    ],
+    "en": [
+      "bank text renew verification",
+      "online banking blocked link",
+      "entered my login on fake bank site",
+      "check unauthorised debit link",
+      "bank security update sms"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Banken schicken keine Links, über die Sie sich einloggen oder Daten bestätigen sollen.",
+      "Unpersönliche Anrede wie „Sehr geehrter Kunde“.",
+      "Drohung mit Sperre und kurze Frist.",
+      "Die Adresse der Seite ist nicht die Ihrer Bank."
+    ],
+    "en": [
+      "Banks do not send links for you to log in or confirm your details.",
+      "Impersonal greeting like “Dear customer”.",
+      "Threat of blocking and a short deadline.",
+      "The page’s address is not your bank’s."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nicht auf den Link tippen; öffnen Sie die Banking-App oder tippen Sie die Adresse selbst ein.",
+      "Daten eingegeben? Sofort die Bank anrufen und Online-Banking und Karten sperren lassen, Passwörter ändern.",
+      "Bei Schaden Anzeige erstatten; den Betrug können Sie an die Meldestelle des Bundeskriminalamts und die Watchlist Internet melden."
+    ],
+    "en": [
+      "Don’t tap the link; open the banking app or type the address yourself.",
+      "Entered your details? Call the bank at once, have online banking and cards blocked, change passwords.",
+      "If you lost money, file a complaint; you can report the scam to the Federal Criminal Police Office and Watchlist Internet."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/card-block",
+    "at/police-report",
+    "at/bka-cybercrime",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "Cybercrimereport 2025",
+      "publisher": "Bundeskriminalamt",
+      "url": "https://www.bundeskriminalamt.at/306/files/307-2026-ccr-2025-a4-v20260812-bf.pdf",
+      "date": "2026-08-12"
+    },
+    {
+      "title": "Phishing/Smishing (Infoblatt)",
+      "publisher": "Bundeskriminalamt",
+      "url": "https://www.bundeskriminalamt.at/212/service/files/294_2025_infoblatt_phishingsmishing_a4_v20251010_bf.pdf",
+      "date": "2025-10-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/fake-bank-employee-george-code"
+  ]
+}

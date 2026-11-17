@@ -1,0 +1,141 @@
+{
+  "id": "de/fake-prize-fee",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "de": "Ein „Gewinnspiel“, „Notar“, „Rechtsanwalt“ oder „Staatsanwalt“",
+    "en": "A “prize draw”, “notary”, “lawyer” or “prosecutor”"
+  },
+  "name": {
+    "de": "Falsches Gewinnversprechen: hoher Gewinn, aber erst Gebühren, Notarkosten oder Steuern zahlen",
+    "en": "Fake prize: a big win, but first pay fees, notary costs or taxes"
+  },
+  "how": {
+    "de": "Ein Anrufer oder eine Werbeanzeige auf Facebook verspricht einen großen Gewinn: Geld, ein Auto oder eine Reise. Um ihn zu bekommen, sollen Sie vorher zahlen: Bearbeitungsgebühren, Notarkosten, Steuern oder eine Teilnahmegebühr. Weitere Anrufer geben sich als Notar, Anwalt, Polizist oder Staatsanwalt aus und machen Druck, manchmal mit der Drohung eines Gerichtsverfahrens. Manche Opfer sollen Fernzugriff auf den Computer geben oder Bankdaten nennen. Einen Gewinn gibt es nie.",
+    "en": "A caller or a Facebook ad promises a big prize: money, a car or a trip. To get it you must pay first: processing fees, notary costs, taxes or an entry fee. Further callers pretend to be a notary, lawyer, police officer or prosecutor and put on pressure, sometimes threatening court action. Some victims are asked to give remote access to their computer or share bank details. There is never a prize."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Anruf oder eine Anzeige: Sie haben einen hohen Betrag gewonnen.",
+        "en": "A call or an ad: you have won a large sum."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Vor der Auszahlung sollen Sie Gebühren, Notarkosten oder Steuern zahlen.",
+        "en": "Before the payout you must pay fees, notary costs or taxes."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "de": "Ein „Notar“ oder „Staatsanwalt“ macht Druck oder droht mit Gericht.",
+        "en": "A “notary” or “prosecutor” puts on pressure or threatens court."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Manchmal sollen Sie Fernzugriff geben oder Bankdaten nennen.",
+        "en": "Sometimes you are asked for remote access or bank details."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Herzlichen Glückwunsch! Hier ist das Gewinnbüro der Deutschen Sonderauslosung. Sie wurden als Hauptgewinner gezogen und erhalten 68.500 Euro. Damit der Notar die Summe heute noch anweisen kann, fällt nur eine Bearbeitungsgebühr von 790 Euro an. Haben Sie Stift und Papier? Ich gebe Ihnen die Daten für die Überweisung durch.",
+        "en": "Congratulations! This is the prize office of the German special draw. You have been drawn as the main winner and will receive 68,500 euros. So that the notary can transfer the sum today, there is just a processing fee of 790 euros. Do you have pen and paper? I’ll give you the details for the transfer."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "gewinnversprechen anruf gebühr",
+      "gewinnspiel gewonnen notarkosten zahlen",
+      "lotteriegewinn bearbeitungsgebühr",
+      "gewinn steuern vorher überweisen",
+      "angeblicher staatsanwalt gewinnspiel",
+      "facebook gewinnspiel überweisen teilnahme",
+      "hauptgewinner gezogen anruf",
+      "gewinnbüro auszahlung gebühr",
+      "ziehung gewinn glückwunsch gewonnen",
+      "angeblicher notar gewinn",
+      "gebühr vor auszahlung gewinn"
+    ],
+    "en": [
+      "prize call asking for a fee",
+      "won a lottery i never entered",
+      "pay notary costs to receive my winnings",
+      "pay taxes before the prize is paid",
+      "facebook prize draw asked me to transfer money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "impersonation",
+    "remote_access",
+    "urgency"
+  ],
+  "redFlags": {
+    "de": [
+      "Wer an keiner Lotterie teilgenommen hat, kann nichts gewonnen haben.",
+      "Echte Gewinne kosten nichts: Gebühren, Notarkosten oder Steuern vorab sind Betrug.",
+      "Drohungen mit Gericht oder Staatsanwalt sollen Angst machen."
+    ],
+    "en": [
+      "If you didn’t enter a lottery, you can’t have won anything.",
+      "Real prizes cost nothing: fees, notary costs or taxes up front are fraud.",
+      "Threats of court or a prosecutor are meant to scare you."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Legen Sie auf, zahlen Sie nichts und machen Sie am Telefon keine Zusagen.",
+      "Geben Sie keine Bankdaten und keinen Fernzugriff heraus.",
+      "Bei Druck oder Drohungen rufen Sie die 110. Schon gezahlt? Informieren Sie Ihre Bank und erstatten Sie Anzeige."
+    ],
+    "en": [
+      "Hang up, pay nothing and make no promises on the phone.",
+      "Don’t give out bank details or remote access.",
+      "If you are pressured or threatened, call 110. Already paid? Tell your bank and file a police report."
+    ]
+  },
+  "reportTo": [
+    "de/police-110",
+    "de/your-bank",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-PPMZ: Betrug mit vermeintlichem Gewinnspiel - über 40.000 Euro Schaden",
+      "publisher": "Polizeipräsidium Mainz (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/117708/6387604",
+      "date": "2026-11-10"
+    },
+    {
+      "title": "POL-AUR: Warnung vor falschen Gewinnversprechen",
+      "publisher": "Polizeiinspektion Aurich/Wittmund (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/104233/6320213",
+      "date": "2026-07-23"
+    },
+    {
+      "title": "POL-OB: Jackpot nur für die Betrüger - „Lotterie-Masche“ kostet Seniorin 20.000 Euro",
+      "publisher": "Polizeipräsidium Oberhausen (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/62138/6038286",
+      "date": "2025-05-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

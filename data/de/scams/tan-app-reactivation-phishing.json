@@ -1,0 +1,137 @@
+{
+  "id": "de/tan-app-reactivation-phishing",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "de": "„Ihre Bank“ (Commerzbank, comdirect, Sparkasse, Volksbank und andere)",
+    "en": "“Your bank” (Commerzbank, comdirect, Sparkasse, Volksbank and others)"
+  },
+  "name": {
+    "de": "photoTAN-, pushTAN- oder SecureGo-Phishing: „Ihr TAN-Verfahren läuft ab, jetzt reaktivieren“",
+    "en": "photoTAN, pushTAN or SecureGo phishing: “your TAN method is expiring, reactivate it now”"
+  },
+  "how": {
+    "de": "Eine E-Mail oder SMS im Design Ihrer Bank behauptet, Ihre photoTAN-App, Ihre pushTAN-Verbindung oder der SecureGo-Dienst sei deaktiviert, laufe heute ab oder brauche ein „Sicherheitsupdate“. Sie sollen das Verfahren innerhalb von 24 oder 48 Stunden über einen Link „reaktivieren“, sonst werde Ihr Zugang gesperrt oder eingeschränkt. Der Link führt auf eine nachgebaute Login-Seite: Mit Ihren Zugangsdaten und dem Code, den Sie dort freigeben, richten die Täter das TAN-Verfahren auf ihrem eigenen Gerät ein und räumen Ihr Konto ab.",
+    "en": "An email or text in your bank’s design claims that your photoTAN app, your pushTAN connection or the SecureGo service has been deactivated, expires today or needs a “security update”. You are told to “reactivate” it through a link within 24 or 48 hours, or your access will be blocked or restricted. The link leads to a copied login page: with your login details and the code you approve there, the criminals set up the TAN method on their own device and empty your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine Mail oder SMS: Ihr TAN-Verfahren sei abgelaufen, deaktiviert oder brauche ein Update.",
+        "en": "An email or text: your TAN method has expired, been deactivated or needs an update."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Frist von 24 oder 48 Stunden, sonst Sperrung oder Gebühr.",
+        "en": "A 24- or 48-hour deadline, or else blocking or a fee."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Button oder Link zur „Reaktivierung“ führt auf eine falsche Login-Seite.",
+        "en": "A button or link to “reactivate” leads to a fake login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Dort sollen Sie Zugangsdaten eingeben und einen Code oder eine Freigabe bestätigen.",
+        "en": "There you must enter your login details and confirm a code or approval."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Sehr geehrte Kundin, sehr geehrter Kunde, im Rahmen unserer jährlichen Sicherheitsprüfung wurde Ihre photoTAN-Kopplung vorübergehend deaktiviert. Bitte bestätigen Sie Ihr Gerät bis spätestens morgen, 18:00 Uhr, erneut, damit Ihr Online-Banking uneingeschränkt nutzbar bleibt: [Link] Ohne Bestätigung wird Ihr Zugang aus Sicherheitsgründen eingeschränkt. Ihr Online-Banking-Team",
+        "en": "Dear customer, as part of our annual security check your photoTAN pairing has been temporarily deactivated. Please confirm your device again by tomorrow, 6 pm at the latest, so that your online banking stays fully usable: [link] Without confirmation your access will be restricted for security reasons. Your online banking team"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "phototan reaktivieren mail",
+      "pushtan verbindung deaktiviert",
+      "securego dienst wird gesperrt",
+      "tan verfahren läuft ab link",
+      "sicherheitsupdate online banking frist 48 stunden",
+      "phototan app läuft heute ab",
+      "gerät erneut bestätigen bank mail",
+      "online banking zugang eingeschränkt bestätigen",
+      "kopplung deaktiviert bestätigen",
+      "sicherheitsprüfung tan app erneuern"
+    ],
+    "en": [
+      "phototan reactivation email",
+      "pushtan connection deactivated",
+      "tan app expires today",
+      "bank email security update deadline",
+      "confirm my device again online banking"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Banken schicken keine Links, über die Sie Ihr TAN-Verfahren „reaktivieren“ sollen.",
+      "Kurze Fristen und angedrohte Sperren sollen Sie zum schnellen Klicken bringen.",
+      "Eine Freigabe oder ein Code, den Sie nicht selbst ausgelöst haben, ist immer verdächtig."
+    ],
+    "en": [
+      "Banks don’t send links for you to “reactivate” your TAN method.",
+      "Short deadlines and threatened blocks are there to make you click fast.",
+      "An approval or code you didn’t start yourself is always suspicious."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Klicken Sie nicht. Öffnen Sie Ihre Banking-App oder die Webseite Ihrer Bank selbst und schauen Sie dort nach Nachrichten.",
+      "Leiten Sie Phishing-Mails an das Phishing-Radar der Verbraucherzentrale weiter und löschen Sie sie dann.",
+      "Haben Sie Daten eingegeben oder etwas freigegeben? Rufen Sie sofort Ihre Bank an oder lassen Sie den Zugang über den Sperr-Notruf 116 116 sperren, und erstatten Sie Anzeige."
+    ],
+    "en": [
+      "Don’t click. Open your banking app or your bank’s website yourself and check for messages there.",
+      "Forward phishing emails to the consumer centre’s Phishing Radar, then delete them.",
+      "Did you enter details or approve something? Call your bank straight away or have access blocked through the 116 116 block line, and file a police report."
+    ]
+  },
+  "reportTo": [
+    "de/phishing-radar",
+    "de/your-bank",
+    "de/sperr-notruf",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "Phishing-Radar: Aktuelle Warnungen (Commerzbank: PhotoTAN-Verbindung deaktiviert)",
+      "publisher": "Verbraucherzentrale NRW",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/phishingradar/phishingradar-aktuelle-warnungen-6059",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Fake-SMS zu Online-Banking, Steuerbescheiden und Gerichtsverfahren",
+      "publisher": "Verbraucherzentrale",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/mobilfunk-und-festnetz/infos-zum-onlinebanking-per-sms-vorsicht-betrug-67038",
+      "date": "2026-10-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/bank-sms-account-blocked",
+    "de/bank-employee-safe-account"
+  ]
+}

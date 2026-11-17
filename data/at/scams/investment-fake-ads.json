@@ -1,0 +1,146 @@
+{
+  "id": "at/investment-fake-ads",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "de": "Werbung mit Prominenten, danach ein „Anlageberater“ oder „Broker“",
+    "en": "Ads with celebrities, then an “investment adviser” or “broker”"
+  },
+  "name": {
+    "de": "Online-Anlagebetrug: Fake-Werbung mit Promis, Krypto-Plattform und „Berater“",
+    "en": "Online investment fraud: fake celebrity ads, crypto platform and an “adviser”"
+  },
+  "how": {
+    "de": "In sozialen Medien oder auf nachgemachten Nachrichtenseiten sehen Sie Werbung oder ein falsches Interview mit bekannten Österreichern, die ein Anlageprogramm oder Krypto empfehlen. Sie hinterlassen Ihre Nummer und zahlen ein „Probeinvestment“ von etwa 250 Euro. Ein angeblicher Berater ruft an, eine professionell wirkende Plattform zeigt steigende Gewinne, kleine Auszahlungen schaffen Vertrauen. Oft installieren Sie auf Wunsch eine Fernwartungs-App. Für die große Auszahlung werden dann „Gebühren“, „Steuern“ oder „Verifizierungen“ verlangt, bis kein Geld mehr da ist.",
+    "en": "On social media or copied news sites you see ads or a fake interview with well-known Austrians recommending an investment programme or crypto. You leave your number and pay a “trial investment” of about 250 euros. A supposed adviser calls, a professional-looking platform shows rising profits, small payouts build trust. Often you install a remote-access app at their request. For the big payout, “fees”, “taxes” or “verifications” are then demanded until no money is left."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Werbung oder ein Fake-Interview mit einem Prominenten verspricht hohe Gewinne.",
+        "en": "An ad or fake interview with a celebrity promises high profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Nach der Registrierung und einer Einzahlung von etwa 250 Euro ruft ein „Berater“ an.",
+        "en": "After you register and pay in about 250 euros, an “adviser” calls."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Der Berater will per Fernwartung „helfen“ und drängt zu höheren Einzahlungen.",
+        "en": "The adviser wants to “help” by remote access and pushes for bigger deposits."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "de": "Für die Auszahlung verlangt man Gebühren, Steuern oder eine Sicherheitsleistung.",
+        "en": "For the payout you are asked for fees, taxes or a security deposit."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Guten Tag, ich bin Ihr persönlicher Analyst. Sie haben sich gestern über die Anzeige registriert. Mit Ihren 250 Euro sind Sie schon bei 1.140 Euro Gewinn. Damit wir jetzt richtig durchstarten, installieren Sie bitte die App, die ich Ihnen schicke, dann richte ich Ihr Konto ein. Ab 5.000 Euro Einlage garantieren wir 30 Prozent im Monat.",
+        "en": "Good afternoon, I’m your personal analyst. You registered through the ad yesterday. With your 250 euros you’re already at 1,140 euros profit. So we can really take off now, please install the app I’m sending you, then I’ll set up your account. From a 5,000 euro deposit we guarantee 30 percent a month."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "werbung prominenter krypto investieren",
+      "fake interview anlage plattform",
+      "anlageberater ruft an plattform gewinne",
+      "auszahlung nur gegen gebühr steuer",
+      "probeinvestment 250 euro",
+      "trading plattform geld weg berater",
+      "fma warnung anbieter krypto"
+    ],
+    "en": [
+      "celebrity ad crypto investment",
+      "fake interview investment platform",
+      "adviser called platform profits",
+      "withdrawal only after paying fees",
+      "trading platform money gone",
+      "small deposit then pressure to invest more"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Prominente werben nicht für Anlageprogramme; solche Interviews sind gefälscht.",
+      "Garantierte hohe Renditen gibt es nicht.",
+      "Für eine Auszahlung sollen Sie zuerst Gebühren oder Steuern zahlen.",
+      "Der Anbieter steht nicht in der Unternehmensdatenbank der FMA."
+    ],
+    "en": [
+      "Celebrities do not advertise investment schemes; such interviews are fake.",
+      "There is no such thing as guaranteed high returns.",
+      "You must pay fees or taxes before a payout.",
+      "The provider is not in the FMA’s company database."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Vor jeder Anlage den Anbieter in der Unternehmensdatenbank und bei den Warnungen der FMA prüfen.",
+      "Nichts mehr einzahlen, Kontakt abbrechen, Fernwartungs-App löschen und die Bank anrufen.",
+      "Beweise sichern und Anzeige erstatten; Vorsicht vor „Rückholhelfern“."
+    ],
+    "en": [
+      "Before any investment, check the provider in the FMA company database and warnings.",
+      "Pay nothing more, cut contact, delete the remote-access app and call your bank.",
+      "Keep evidence and file a complaint; beware of “recovery helpers”."
+    ]
+  },
+  "reportTo": [
+    "at/fma",
+    "at/your-bank",
+    "at/police-report",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "Kampf gegen Online-Anlagebetrug (Öffentliche Sicherheit 3-4/26)",
+      "publisher": "Bundesministerium für Inneres",
+      "url": "https://www.bmi.gv.at/magazinfiles/2026/03_04/05_betrugsbekaempfung.pdf",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Vertrauen als Angriffswaffe (Öffentliche Sicherheit 7-8/26)",
+      "publisher": "Bundesministerium für Inneres",
+      "url": "https://www.bmi.gv.at/magazinfiles/2026/07_08/08_betrugskriminalitaet.pdf",
+      "date": "2026-06-25"
+    },
+    {
+      "title": "Internetbetrug: Immer mehr betroffen",
+      "publisher": "ORF Steiermark",
+      "url": "https://steiermark.orf.at/stories/3370426",
+      "date": "2026-09-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/recovery-scam",
+    "at/romance-scam"
+  ]
+}

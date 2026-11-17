@@ -1,0 +1,139 @@
+{
+  "id": "de/hallo-mama-new-number",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "de": "Ihr „Kind“ oder ein anderer Angehöriger, von einer unbekannten Nummer",
+    "en": "Your “child” or another relative, from an unknown number"
+  },
+  "name": {
+    "de": "„Hallo Mama, hallo Papa“: angebliches Kind mit neuer Nummer braucht Geld",
+    "en": "“Hi Mum, hi Dad”: supposed child with a new number needs money"
+  },
+  "how": {
+    "de": "Per WhatsApp oder SMS schreibt jemand von einer unbekannten Nummer, er sei Ihre Tochter oder Ihr Sohn: Das Handy sei kaputt oder verloren, das sei die neue Nummer, die alte könne gelöscht werden. Nach ein paar freundlichen Nachrichten kommt ein Notfall: Rechnungen müssten heute noch bezahlt werden, das Online-Banking funktioniere auf dem neuen Handy aber noch nicht. Sie sollen das für ihn überweisen, oft an fremde Konten, und bekommen das Geld „morgen zurück“. Telefonieren will die Person nicht.",
+    "en": "Someone writes on WhatsApp or by text from an unknown number, saying they are your daughter or son: the phone is broken or lost, this is the new number, you can delete the old one. After a few friendly messages comes an emergency: bills must be paid today, but online banking doesn’t work on the new phone yet. You are asked to transfer the money for them, often to strangers’ accounts, and will get it “back tomorrow”. The person won’t talk on the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine unbekannte Nummer: „Hallo Mama“ oder „Hallo Papa“, das sei die neue Nummer.",
+        "en": "An unknown number: “Hi Mum” or “Hi Dad”, this is the new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "de": "Die Person gibt sich als Ihr Kind aus und plaudert erst ganz normal.",
+        "en": "The person pretends to be your child and chats normally at first."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Dann eilige Rechnungen, die heute noch bezahlt werden müssen.",
+        "en": "Then urgent bills that have to be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie sollen an ein fremdes Konto überweisen, Anrufe werden abgelehnt.",
+        "en": "You are asked to transfer to a stranger’s account; calls are refused."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hi Mama, ich bin’s 🙈 Mein altes Handy ist runtergefallen, das ist jetzt meine neue Nummer, kannst du die einspeichern? Kleine Frage: Ich muss heute noch zwei Rechnungen bezahlen, 860 und 1.240 Euro, aber mein Banking geht auf dem neuen Handy noch nicht. Kannst du das für mich überweisen? Ich schick dir die Daten, morgen bekommst du alles zurück. Telefonieren geht gerade schlecht, das Mikro spinnt.",
+        "en": "Hi Mum, it’s me 🙈 My old phone fell, this is my new number now, can you save it? Quick question: I have to pay two bills today, 860 and 1,240 euros, but my banking doesn’t work on the new phone yet. Can you transfer it for me? I’ll send you the details, you’ll get it all back tomorrow. Calling is difficult right now, the mic is acting up."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "hallo mama neue nummer",
+      "hallo papa handy kaputt neue nummer",
+      "tochter neue handynummer rechnung bezahlen",
+      "sohn schreibt whatsapp braucht geld",
+      "kind neue nummer überweisung heute",
+      "banking geht auf neuem handy nicht",
+      "alte nummer löschen einspeichern",
+      "whatsapp enkeltrick"
+    ],
+    "en": [
+      "hi mum new number scam",
+      "my son texted from a new number asking for money",
+      "daughter new phone pay bills for her",
+      "child new number cant call",
+      "whatsapp scam pretending to be my kid"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Ein Familienmitglied mit „neuer Nummer“, das sofort Geld braucht, ist das typische Muster.",
+      "Die Person will nicht telefonieren oder hat immer eine Ausrede.",
+      "Das Geld soll auf ein fremdes Konto, nicht auf das Ihres Kindes."
+    ],
+    "en": [
+      "A family member with a “new number” who needs money right away is the typical pattern.",
+      "The person won’t talk on the phone or always has an excuse.",
+      "The money is meant to go to a stranger’s account, not your child’s."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Rufen Sie Ihr Kind unter der alten, bekannten Nummer an oder sprechen Sie persönlich mit ihm. Stellen Sie eine Frage, die nur Ihr Kind beantworten kann.",
+      "Überweisen Sie nichts allein aufgrund einer Nachricht und blockieren Sie die Nummer.",
+      "Schon bezahlt? Rufen Sie sofort Ihre Bank an, um die Überweisung zu stoppen, sichern Sie den Chat und erstatten Sie Anzeige."
+    ],
+    "en": [
+      "Call your child on the old, known number or talk to them in person. Ask a question only your child can answer.",
+      "Don’t transfer anything on the strength of a message alone, and block the number.",
+      "Already paid? Call your bank straight away to stop the transfer, save the chat and file a police report."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/onlinewache",
+    "de/bundesnetzagentur"
+  ],
+  "sources": [
+    {
+      "title": "LPI-SHL: Hallo Mama, hallo Papa....",
+      "publisher": "Landespolizeiinspektion Suhl (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/126725/6389515",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "„Hallo Mama“, „Hallo Papa“ – Betrugsversuche über WhatsApp und SMS",
+      "publisher": "Verbraucherzentrale",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/mobilfunk-und-festnetz/hallo-mama-hallo-papa-betrugsversuche-ueber-whatsapp-und-sms-72910",
+      "date": "2026-07-22"
+    },
+    {
+      "title": "POL-LM: WhatsApp-Betrüger ergaunern Bargeld",
+      "publisher": "PD Limburg-Weilburg, Polizeipräsidium Westhessen (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/50153/6236763",
+      "date": "2026-03-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/whatsapp-ghost-pairing"
+  ]
+}
