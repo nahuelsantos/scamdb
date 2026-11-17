@@ -1,0 +1,96 @@
+{
+  "id": "ng/free-data-promo",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "en": "“MTN”, “Airtel” or “Glo” promo"
+  },
+  "name": {
+    "en": "Fake free data giveaway from a network (“free data for old subscribers”)"
+  },
+  "how": {
+    "en": "A post or message says MTN or another network is giving free data, such as a month of free data for old SIM users or a big anniversary bundle. The link asks for your phone number and personal details, sometimes a payment, and often tells you to share it with many groups first. MTN says it never asks customers to submit details on outside websites to claim data or rewards."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A post says your network is giving free data to old subscribers or for an anniversary."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "A link asks for your phone number and personal details to claim it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You must share it with groups or pay a small fee before the data comes."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "MTN 2026 ANNIVERSARY: all subscribers using their SIM for more than 6 months get 50GB free data for 30 days. Enter your number to claim yours here [link] and share with 5 groups to activate."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "free data for old subscribers mtn link",
+      "mtn anniversary free data giveaway",
+      "claim free data enter your phone number",
+      "share to groups to activate free data",
+      "airtel free data promo link",
+      "network giveaway asked me to pay to receive data"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Free data offered through a link outside the network’s app or USSD code.",
+      "A request to share the link before you receive anything.",
+      "Any payment to receive “free” data."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check offers only in the MyMTN app, *180# or your network’s official app and pages.",
+      "Do not enter your number or personal details on outside sites, and do not forward the message.",
+      "Report fake promos to your network, and to the NCC on 622 if it is not resolved."
+    ]
+  },
+  "reportTo": [
+    "ng/ncc-622",
+    "ng/npf-nccc"
+  ],
+  "sources": [
+    {
+      "title": "MTN warns customers against fake promo",
+      "publisher": "Premium Times",
+      "url": "https://www.premiumtimesng.com/business/business-news/896889-mtn-warns-customers-against-fake-promo.html",
+      "date": "2026-07-20"
+    },
+    {
+      "title": "MTN Warns Nigerians Against Fake 25GB Anniversary Giveaway Offers",
+      "publisher": "BrandSpur",
+      "url": "https://brandspurng.com/2026/08/10/mtn-warns-nigerians-against-fake-25gb-anniversary-giveaway-offers/",
+      "date": "2026-08-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,106 @@
+{
+  "id": "ng/fake-bank-link-sms",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "en": "Your bank, “Customer Care” or “BVN Unit”"
+  },
+  "name": {
+    "en": "Text from “your bank” saying your account or BVN will be restricted unless you verify through a link"
+  },
+  "how": {
+    "en": "A text, WhatsApp or email that looks like it is from your bank says your account, card or BVN has a problem and will be blocked or restricted. It gives a link to “verify”, “reactivate” or “update” your details. The link opens a copy of the bank’s internet banking page that collects your login, BVN, card details and PIN, which the criminals use to empty your account. No Nigerian bank asks you to confirm your PIN, password, OTP or BVN through a link."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message using your bank’s name or logo says your account, card or BVN has a problem."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says the account will be restricted or blocked today unless you act."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A link takes you to a page that looks like your bank’s login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for your login, BVN, card number, PIN and then the OTP the bank sends you."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Dear Customer, your account has been placed on restriction due to incomplete BVN linkage. To avoid permanent deactivation within 24hrs, kindly re-verify your details here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "account will be restricted verify bvn link",
+      "bvn linkage incomplete account deactivation",
+      "reactivate your account through this link",
+      "update your bvn to avoid account suspension",
+      "bank text asking me to verify my account online",
+      "fake bank login page asked for my pin",
+      "clicked link in bank sms and money was taken",
+      "your atm card has been blocked click to unblock"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A bank message with a link to verify, reactivate or update your account.",
+      "A threat that your account or BVN will be blocked today.",
+      "A page asking for your PIN, BVN, card details or OTP."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Do not tap the link. Open your bank app yourself or call the number on the back of your card.",
+      "Never type your PIN, password, OTP or BVN on a page you reached from a message.",
+      "If you entered details, call your bank at once to block your card and secure the account, then report to the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/your-bank",
+    "ng/npf-nccc",
+    "ng/cbn-consumer"
+  ],
+  "sources": [
+    {
+      "title": "ACAMB Advises Bank Customers against Phishing Scams",
+      "publisher": "Techeconomy",
+      "url": "https://techeconomy.ng/acamb-advises-bank-customers-against-phishing-scams",
+      "date": "2026-10-26"
+    },
+    {
+      "title": "ACAMB Warns Bank Customers against Phishing Scams",
+      "publisher": "ThisDay",
+      "url": "https://www.thisdaylive.com/2026/10/28/acamb-warns-bank-customers-against-phishing-scams/",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

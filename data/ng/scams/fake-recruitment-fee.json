@@ -1,0 +1,105 @@
+{
+  "id": "ng/fake-recruitment-fee",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "“Federal Civil Service Commission”, “Immigration”, “Army” or another agency recruiting"
+  },
+  "name": {
+    "en": "Fake government job recruitment: pay for forms, shortlisting or an appointment letter"
+  },
+  "how": {
+    "en": "A message or post says an agency such as the Civil Service Commission, Immigration, the Army or NNPC is recruiting, with a link to an unofficial portal. Applicants are asked for personal details and to pay for application forms, shortlisting, a “processing fee” or an appointment letter, often through an “agent” who claims to have connections. Official recruitment in Nigeria is free and runs only through the agency’s own portal."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A WhatsApp message or post announces recruitment into a government agency with a link."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The link is not the agency’s official portal and asks for your personal details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You are asked to pay for forms, shortlisting, a medical or an appointment letter."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "An “agent” says they can guarantee you a slot if you pay quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "2026 Federal Recruitment exercise is ongoing, 4,500 slots available. Apply through the portal below and pay the ₦7,500 form fee to be shortlisted. Our coordinator can also secure your appointment letter, send your CV on WhatsApp: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "pay for recruitment form government job",
+      "agent promised to secure appointment letter for money",
+      "fake immigration recruitment portal",
+      "federal civil service recruitment link on whatsapp",
+      "asked to pay shortlisting fee for job",
+      "army recruitment form fee",
+      "processing fee for government job offer",
+      "recruitment portal not on official website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "Any fee for forms, shortlisting, medicals or appointment letters.",
+      "Links that do not end in the agency’s official .gov.ng address.",
+      "An agent or “coordinator” who says they can influence the result."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check the agency’s official website and verified social media pages to see if recruitment is open.",
+      "Never pay anyone for a government job or appointment letter.",
+      "Report fake portals and agents to the EFCC or the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/efcc",
+    "ng/npf-nccc"
+  ],
+  "sources": [
+    {
+      "title": "FCSC warns Nigerians against fake recruitment messages, fraudulent links",
+      "publisher": "Nairametrics",
+      "url": "https://nairametrics.com/2026/08/21/fcsc-warns-nigerians-against-fake-recruitment-messages-fraudulent-links/",
+      "date": "2026-08-21"
+    },
+    {
+      "title": "Nigeria Immigration Service warns against fake job offers, says no recruitment ongoing",
+      "publisher": "Nairametrics",
+      "url": "https://nairametrics.com/2025/02/14/nigeria-immigration-service-warns-against-fake-job-offers-says-no-recruitment-ongoing/",
+      "date": "2025-02-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}
