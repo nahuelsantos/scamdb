@@ -53,7 +53,7 @@ export function resultHtml(r, entriesById, signalsById, ui = 'en') {
   const m = r.matches[0] && entriesById.get(r.matches[0].id);
   const match = m ? `${t(ui, 'matches')} <a href="${entryUrl(m)}">${esc(m.id)}</a>, ${L(m.name, 'en')}` : esc(t(ui, 'noMatch'));
   return `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(t(ui, VERDICT_KEY[r.verdict]))}</span><span class="noscore">${esc(t(ui, 'noScore'))}</span></div>
-<ul class="why">${sigs || `<li><code>no_signals</code><span>${esc(t(ui, 'noSignals'))}</span></li>`}</ul><p class="match">${match}</p>`;
+<ul class="why">${sigs || `<li><code>no_signals</code><span>${esc(t(ui, 'noSignals'))}</span></li>`}</ul><p class="match">${match}</p>${r.warning ? `<p class="warning-note">${esc(t(ui, 'warningNote'))}</p>` : ''}`;
 }
 
 export function home({ repo, meta, matchMessage, lang = 'en' }) {
@@ -66,7 +66,8 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
   const sample = matchMessage(SAMPLES[0].text, repo.entries);
   const labels = t(lang, 'pgSampleLabels');
   const strings = { scam: t(lang, 'vScam'), suspicious: t(lang, 'vSuspicious'), not_recognised: t(lang, 'vNone'), noScore: t(lang, 'noScore'),
-    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch'), apiScore: t(lang, 'apiScore'), apiNoKey: t(lang, 'apiNoKey') };
+    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch'), apiScore: t(lang, 'apiScore'), apiNoKey: t(lang, 'apiNoKey'),
+    warningNote: t(lang, 'warningNote'), warningShort: t(lang, 'warningShort') };
   const body = `
 <section class="hero">
   <div>

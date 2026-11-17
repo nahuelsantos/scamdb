@@ -37,6 +37,8 @@ export function buildAnswer({ result, catalogue, top, lang, country, scorer, sco
   const reportCountry = country ?? top?.country ?? (result.matches[0] ? byId.get(result.matches[0].id)?.country : null);
   return {
     verdict: result.verdict,
+    // A forwarded warning about a scam ("they call you from a fake courier… warn your family"): never called a scam.
+    warning: Boolean(result.warning),
     score: result.score ?? null,
     signals: result.signals.map((s) => ({ id: s.id, label: pickText(catalogue.signals.get(s.id)?.label, lang) ?? s.id, evidence: s.evidence })),
     matches: result.matches.map(({ id }) => ({ id, name: pickText(byId.get(id)?.name, lang) ?? id, url: `${ORIGIN}/v1/scams/${id}.json`, page: `${ORIGIN}/catalogue/${id}/` })),

@@ -25,7 +25,7 @@ function render(r) {
   const match = m ? `${esc(S.matches)} <a href="/catalogue/${esc(m.id)}/">${esc(m.id)}</a>, <span lang="en">${esc(english(m.name))}</span>`
     : esc(S.noMatch);
   out.innerHTML = `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(S[r.verdict])}</span><span class="noscore">${esc(S.noScore)}</span></div>
-<ul class="why">${sigs}</ul><p class="match">${match}</p>`;
+<ul class="why">${sigs}</ul><p class="match">${match}</p>${r.warning ? `<p class="warning-note">${esc(S.warningNote)}</p>` : ''}`;
 }
 
 async function check() {
@@ -64,6 +64,7 @@ apiBtn?.addEventListener('click', async () => {
       apiSum.textContent = scored
         ? `${S[body.verdict] ?? body.verdict} · ${S.apiScore} ${Math.round(body.score * 100)}%`
         : `${S[body.verdict] ?? body.verdict} · ${S.apiNoKey}`;
+      if (body.warning) apiSum.textContent += ` · ${S.warningShort}`;
       apiSum.hidden = false;
     }
   } catch {
