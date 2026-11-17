@@ -1,0 +1,106 @@
+{
+  "id": "ng/loan-app-harassment",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "en": "An instant loan app or its “recovery agents”"
+  },
+  "name": {
+    "en": "Loan app that harasses you and messages your contacts calling you a fraudster"
+  },
+  "how": {
+    "en": "A quick-loan app gives a small loan fast, but asks for access to your contacts and photos when you sign up. The repayment period is very short and the charges climb every day you are late. Agents then call and text you, and message your family, friends and colleagues saying you are a debtor or a criminal, sometimes with edited photos. Some apps are not approved by the FCCPC."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A loan app asks for access to your contacts and photos before it pays out."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "The loan is due in days and the amount grows sharply when you are late."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "Agents threaten you and say they will tell everyone you owe money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Your contacts get messages calling you a fraudster or debtor."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Final warning: you have refused to pay your loan of 38,500 naira. Pay before 5pm today or we will send your picture to all your contacts and announce to your family and church that you are a thief."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "loan app sent messages to all my contacts",
+      "loan app calling my family that i owe",
+      "loan app threatened to post my picture",
+      "defamatory message from loan app to my friends",
+      "loan agents calling me a fraudster to my contacts",
+      "quick loan interest doubled after due date",
+      "instant loan app harassment",
+      "they said they will broadcast that i am a debtor"
+    ]
+  },
+  "signals": [
+    "remote_access",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "The app wants your contacts and gallery before lending.",
+      "Very short repayment time and charges that keep growing.",
+      "Threats to shame you to your contacts."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Before borrowing, check the app is on the FCCPC list of approved digital lenders, and refuse access to your contacts and photos.",
+      "Do not pay extra “penalties” to someone who threatens you; keep screenshots of every threat.",
+      "Report harassment to the FCCPC, and threats or leaked photos to the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/fccpc",
+    "ng/npf-nccc",
+    "ng/cbn-consumer"
+  ],
+  "sources": [
+    {
+      "title": "EXPOSED: How digital loan sharks prey on inflation-hit Nigerians",
+      "publisher": "The Frontier",
+      "url": "https://thefrontierng.com/exposed-how-digital-loan-sharks-prey-on-inflation-hit-nigerians/",
+      "date": "2025-09-04"
+    },
+    {
+      "title": "Loan apps go gangster, send ‘shame’ messages to close contacts of loan defaulters",
+      "publisher": "Nairametrics",
+      "url": "https://nairametrics.com/2021/10/15/loan-apps-go-gangster-send-shame-messages-to-close-contacts-of-loan-defaulters/",
+      "date": "2021-10-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

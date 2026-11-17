@@ -1,0 +1,109 @@
+{
+  "id": "ng/fake-bank-social-page",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Customer Care” or “Loan” page using your bank’s name on X, Facebook or Telegram"
+  },
+  "name": {
+    "en": "Fake bank customer care or loan page on social media"
+  },
+  "how": {
+    "en": "When you complain about a failed transfer or debit on your bank’s X or Facebook page, a lookalike account quickly replies as “customer care” and moves you to WhatsApp. It sends a form asking for your account number, card details and PIN, then asks for the OTPs that arrive, and empties the account. Other fake pages using a bank’s name and logo offer quick loans that need an upfront fee or your card details. Wema Bank found more than 70 fake accounts on X in 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "After you post a complaint, an account using the bank’s name replies and offers help."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It moves you to WhatsApp or a form link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The form asks for your card number, PIN and the OTPs you receive."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Or a page offers a quick loan if you pay a fee first."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hello, we are sorry about your failed transfer. Kindly reach our live resolution desk on WhatsApp via [link] and fill the reversal form so your funds can be returned within 10 minutes."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "fake customer care replied to my complaint on twitter",
+      "bank customer care asked me to continue on whatsapp",
+      "reversal form asked for my card pin",
+      "fake bank page offering loans on facebook",
+      "loan page with bank logo asked for upfront fee",
+      "customer care handle asked for my otp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A “customer care” account that replies to your public complaint and moves you to WhatsApp.",
+      "Forms asking for card numbers, PINs or OTPs.",
+      "Loan pages that want a fee or your card details first."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Contact your bank only through its app, the number on your card or a branch, not through replies on social media.",
+      "Never type your PIN or share an OTP with anyone.",
+      "If you shared details, call your bank at once, and report the page to the platform and the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/your-bank",
+    "ng/npf-nccc",
+    "ng/cbn-consumer"
+  ],
+  "sources": [
+    {
+      "title": "Wema Bank suspends engagements on X amid concerns over fraud, impersonation",
+      "publisher": "Premium Times",
+      "url": "https://www.premiumtimesng.com/business/business-news/885748-wema-bank-suspends-engagements-on-x-amid-concerns-over-fraud-impersonation.html",
+      "date": "2026-06-07"
+    },
+    {
+      "title": "Nigeria: Exposing Six Facebook Pages Offering Bogus Loans in the Name of Nigeria's GTBank",
+      "publisher": "Africa Check (via AllAfrica)",
+      "url": "https://allafrica.com/stories/202510030485.html",
+      "date": "2025-10-03"
+    },
+    {
+      "title": "How scammers pose as Zenith Bank’s Twitter help page to defraud unsuspecting customers",
+      "publisher": "Dubawa",
+      "url": "https://dubawa.org/how-scammers-pose-as-zenith-banks-twitter-help-page-to-defraud-unsuspecting-customers/",
+      "date": "2022-04-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -537,3 +537,12 @@ test('1.19.0: Tagalog / Taglish signs (Philippines) and more English call script
   // Tagalog rules apply only where Tagalog is spoken.
   assert.ok(!readSigns('bagong sim ko', ['es', 'en']).includes('new_number'));
 });
+test('1.20.0: English threats, fees and genuine OTP texts (Nigeria)', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  assert.ok(readSigns('If payment is not made by 2pm, we will contact everyone in your phonebook', ['en']).includes('urgency'));
+  assert.ok(readSigns('Send 300,000 naira in the next one hour or I will tag your wife', ['en']).includes('money_request'));
+  assert.ok(readSigns('We sent a 6-digit number to your phone, please call it out for me', ['en']).includes('asks_for_code'));
+  assert.ok(readSigns('This is the EFCC Lagos zonal command. Do not discuss this with anyone', ['en']).includes('secrecy'));
+  const otp = readSigns('Your OTP for the transfer of NGN 25,000.00 to ADEBAYO is [number]. It expires in 5 minutes. Do not disclose this code to anyone.', ['en']);
+  assert.ok(!otp.includes('asks_for_code') && !otp.includes('money_request'));
+});

@@ -1,0 +1,103 @@
+{
+  "id": "ng/fake-efcc-officers",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“EFCC operatives” or someone close to the EFCC chairman"
+  },
+  "name": {
+    "en": "Fake EFCC officers: “you are under investigation, pay to make it go away”"
+  },
+  "how": {
+    "en": "People claiming to be EFCC officers, or aides of the EFCC chairman, say you or a relative is under investigation for fraud or cybercrime. They threaten arrest and prosecution, sometimes show fake ID cards or even detain people, and demand money to drop the case or for a “soft landing”. The EFCC does not take money to start or stop an investigation."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone says they are from the EFCC and that you or a family member is under investigation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They threaten arrest, detention or prosecution."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for money to close the case or release the person."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "They tell you not to involve a lawyer or anyone else."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is Inspector Bello from the EFCC cybercrime unit. Your son was picked up in a raid and his case file is with us. If you want it closed quietly before it goes to court, bring ₦800,000 today and tell nobody."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "efcc officers demanding money to drop case",
+      "fake efcc operatives arrested my son",
+      "pay to stop efcc investigation",
+      "caller said he is from efcc and asked for money",
+      "they showed efcc id card and collected money",
+      "soft landing from efcc chairman for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone asking for money to stop an investigation or release a suspect.",
+      "Threats of immediate arrest unless you pay.",
+      "Being told to keep it secret."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Do not pay. Ask for their name and office, then contact the EFCC yourself through its official website.",
+      "If people are holding someone or threatening you now, call 112.",
+      "Report the impersonators to the EFCC and the police."
+    ]
+  },
+  "reportTo": [
+    "ng/efcc",
+    "ng/emergency",
+    "ng/npf-nccc"
+  ],
+  "sources": [
+    {
+      "title": "$700,000 Fraud Trial: EFCC witness recounts arrest of two alleged impersonators of agency's officials",
+      "publisher": "Premium Times",
+      "url": "https://premiumtimesng.com/news/top-news/919094-700000-fraud-trial-efcc-witness-recounts-arrest-of-two-alleged-impersonators-of-agencys-officials.html",
+      "date": "2026-10-22"
+    },
+    {
+      "title": "Police arrest fake EFCC operatives for abducting students in Niger State",
+      "publisher": "Premium Times",
+      "url": "https://www.premiumtimesng.com/regional/north-central/794716-police-arrest-fake-efcc-operatives-for-abducting-students-in-niger-state.html",
+      "date": "2025-05-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

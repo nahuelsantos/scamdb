@@ -1,0 +1,113 @@
+{
+  "id": "ng/fake-government-grant",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "en": "“Federal Government”, “CBN”, a minister or an “empowerment fund”"
+  },
+  "name": {
+    "en": "Fake government grant or empowerment fund link (“apply now and share”)"
+  },
+  "how": {
+    "en": "A WhatsApp broadcast or Facebook post says the Federal Government, the CBN or a youth or family fund is giving every Nigerian a grant, such as ₦50,000 or ₦185,000. A link asks for your name, phone number, bank account, BVN or NIN to “check eligibility”, then tells you to share the message to many WhatsApp groups before payment. There is no grant: the site collects your details for fraud. Some versions later ask for a “processing fee”."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message says the government or CBN is giving every Nigerian a cash grant."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It tells you to apply quickly on a link before the portal closes."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site asks for your bank account, BVN or NIN and says you are eligible."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "You must share the link with many WhatsApp groups before you are paid."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "FG Youth Support Grant 2026: every Nigerian between 18 and 60 is entitled to ₦120,000 empowerment fund. Portal closes Friday. Check eligibility and validate your account number here [link]. N.B: share to 10 groups to activate your payment."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "federal government grant link on whatsapp",
+      "fg empowerment fund apply now",
+      "cbn grant for all nigerians",
+      "share to whatsapp groups to receive the grant",
+      "grant portal asked me to validate my details",
+      "youth empowerment fund link asking for bvn",
+      "national family support allowance link",
+      "grant portal asked for processing fee"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A grant for “every Nigerian” announced only on WhatsApp or Facebook.",
+      "A link that is not on a .gov.ng website.",
+      "You must share the message to many groups to “activate” payment.",
+      "Requests for your bank account, BVN or NIN."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check the ministry’s or CBN’s official website and verified social media accounts; real programmes are announced there.",
+      "Do not enter your bank details, BVN or NIN, and do not forward the message.",
+      "If you paid a fee or shared bank details, call your bank and report to the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/npf-nccc",
+    "ng/your-bank",
+    "ng/cbn-consumer"
+  ],
+  "sources": [
+    {
+      "title": "Is National Youth Empowerment Fund legitimate government programme?",
+      "publisher": "Dubawa",
+      "url": "https://dubawa.org/is-national-youth-empowerment-fund-legitimate-government-programme/",
+      "date": "2025-10-16"
+    },
+    {
+      "title": "Beware of scams, FG not giving N185,000 family support to Nigerians",
+      "publisher": "Dubawa",
+      "url": "https://dubawa.org/beware-of-scams-fg-not-giving-n185000-family-support-to-nigerians/",
+      "date": "2025-08-03"
+    },
+    {
+      "title": "CBN disowns purported $46 billion grant approval",
+      "publisher": "Premium Times",
+      "url": "https://www.premiumtimesng.com/business/business-news/908738-cbn-disowns-purported-46-billion-grant-approval.html",
+      "date": "2026-09-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

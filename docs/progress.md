@@ -16,6 +16,10 @@ A running record of what was built, what was measured and what we learned. Newes
   penalty threats are urgency; refund bait asking for payment details is a money request.
 - **The Philippines:** 16 entries (English and Taglish), 8 contacts, 22 labelled and 8 real messages; Matcher
   1.19.0 adds a Tagalog block and English call-script rules ("read the 6 digits", "don't end the call").
+- **Nigeria:** 15 entries, 8 contacts, 22 labelled and 16 real messages (scams aimed at people in Nigeria only, not
+  those run from it); Matcher 1.20.0 adds English threats and fees ("we will contact everyone in your phonebook",
+  "pay ₦10,000 for your application form") and a genuine "do not disclose this code" OTP. Nigeria: 33% → 83% called
+  "scam", 1 → 0 false alarms; other countries and the real and private sets unchanged.
 
 **Measured:**
 

@@ -1,0 +1,102 @@
+{
+  "id": "ng/fake-nin-correction",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "en": "“NIMC” or a “NIN correction / NIN-SIM” portal"
+  },
+  "name": {
+    "en": "Fake NIMC link offering free NIN correction or NIN-SIM checks"
+  },
+  "how": {
+    "en": "A flyer, post or WhatsApp message says NIMC has opened a free portal to correct your NIN details, check your NIN-SIM linkage or get a NIN slip. The link leads to a phishing site that collects your NIN, BVN, phone number and other personal details, which criminals use to open accounts or commit fraud in your name. NIMC says changes to NIN records are only made through its own self-service platform."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A post or message says NIMC is offering free NIN modification or verification online."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It gives a link that is not NIMC’s official website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site asks for your NIN, BVN, phone number and other details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "It tells you to share the message with others."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "NIMC FREE NIN CORRECTION PORTAL IS NOW OPEN. Correct your name, date of birth and phone number on your NIN at no cost before the window closes. Tap the link to start [link] and share with your family."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "free nin correction portal link",
+      "nimc free modification of nin details",
+      "check nin sim linkage link on whatsapp",
+      "nin verification website asking for bvn",
+      "fake nimc portal",
+      "correct date of birth on nin online free"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A “free” NIN correction or check link sent on social media or WhatsApp.",
+      "A web address that is not on nimc.gov.ng.",
+      "Requests for both your NIN and your BVN."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Make NIN changes only on NIMC’s official self-service portal or at a NIMC enrolment centre.",
+      "Do not type your NIN or BVN on sites reached from shared links.",
+      "If you entered your details, tell your bank and report the site to the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/npf-nccc",
+    "ng/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "NIMC warns Nigerians against fake NIN correction portal",
+      "publisher": "Premium Times",
+      "url": "https://www.premiumtimesng.com/news/more-news/884780-nimc-warns-nigerians-against-fake-nin-correction-portal.html",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "Website asking Nigerians to verify NIN-SIM status is fraudulent",
+      "publisher": "Dubawa",
+      "url": "https://dubawa.org/website-asking-nigerians-to-verify-nin-sim-status-is-fraudulent/",
+      "date": "2021-01-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "ng/whatsapp-code-hijack",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A caller inviting you to a meeting, class or event, then “you” on WhatsApp"
+  },
+  "name": {
+    "en": "WhatsApp hijack: a caller asks you to read out a six-digit code, then your contacts are asked for money"
+  },
+  "how": {
+    "en": "Someone calls about an event, meeting, club, class or vote and says they have sent you a code to confirm. The six-digit code is really your WhatsApp registration code. Once you read it out, they take over your WhatsApp and message your contacts in your name asking for urgent loans or transfers. The Police National Cybercrime Centre has arrested a syndicate that hijacked accounts of prominent Nigerians this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A stranger calls about a meeting, event or class and says a code has been sent to your phone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask you to read the six-digit code back to them."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "You are logged out of WhatsApp."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "Your contacts receive messages from your account asking for urgent money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Good afternoon sir, this is from the organising committee of the members’ meeting. We sent a six digit code to your line to confirm your seat, please read it to me so I can register you."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "en": "Please I need a small favour urgently, send me ₦150,000 to this account, I will refund you tonight. Don’t call, I’m in a meeting."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "caller asked me to read out the six digit code",
+      "they sent a code to confirm my registration for the meeting",
+      "my whatsapp was hacked and they are asking my contacts for loans",
+      "friend whatsapp asking for urgent loan",
+      "whatsapp verification code shared with caller",
+      "logged out of whatsapp after giving code",
+      "hacked whatsapp asking people for urgent transfers"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone asking you to read out a code sent to your phone.",
+      "A known contact asking for urgent money but refusing to talk on the phone.",
+      "Being logged out of WhatsApp suddenly."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never share a WhatsApp, SMS or bank code with anyone; turn on WhatsApp two-step verification.",
+      "If a friend asks for money on WhatsApp, call them on their normal number first.",
+      "If you were hijacked, re-register WhatsApp with your number, warn your contacts and report to the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/npf-nccc",
+    "ng/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Nigeria Police Dismantles WhatsApp Fraud Syndicate Targeting Prominent Citizens, Recovers Millions",
+      "publisher": "PRNigeria",
+      "url": "https://prnigeria.com/2025/06/11/nigeria-police-dismantles",
+      "date": "2025-06-11"
+    },
+    {
+      "title": "NPF-NCCC cautions public against online impersonation, fraudulent requests for money",
+      "publisher": "Blueprint",
+      "url": "https://blueprint.ng/?p=857518",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "How WhatsApp scammers circumvent security features to swindle Nigerians",
+      "publisher": "Dubawa",
+      "url": "https://dubawa.org/how-whatsapp-scammers-circumvent-security-features-to-swindle-nigerians/",
+      "date": "2023-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

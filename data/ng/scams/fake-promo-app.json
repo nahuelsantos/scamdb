@@ -1,0 +1,105 @@
+{
+  "id": "ng/fake-promo-app",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "An airline “promo”, betting, live-score or “phone update” app"
+  },
+  "name": {
+    "en": "Discount promo that makes you install a malicious app"
+  },
+  "how": {
+    "en": "An advert or link offers a big discount, such as half-price airline tickets, or a betting, live-score, streaming or “update” app. You are asked to pay a token amount and install an app from a link rather than the Play Store or App Store. The app is malware that reads your SMS and OTPs and steals your banking login and PIN, then moves money out of your account. The EFCC and Wema Bank have both warned about this."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An advert offers a big discount or a useful app outside the official app store."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are asked to pay a small token fee to qualify."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "You install the app from a link and allow it to read messages."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "Money is moved from your bank account using your OTPs."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "50% OFF all international flight tickets this week only! Pay ₦500 registration and download our official booking app to unlock your discount: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "50 percent discount flight ticket promo download app",
+      "token registration fee to unlock the discount",
+      "installed app from a link and it read my sms",
+      "malicious app stole my banking login",
+      "airline discount promo booking app",
+      "update app from a link emptied my savings",
+      "live score app outside play store"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Huge discounts that need a small “registration” payment.",
+      "Being told to install an app from a link instead of the official store.",
+      "An app that asks to read your SMS or control your phone."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Install apps only from Google Play or the App Store, and only the bank’s or company’s official app.",
+      "If you installed such an app, turn off data, call your bank to block your accounts, then remove the app.",
+      "Report it to the EFCC or the NPF-NCCC."
+    ]
+  },
+  "reportTo": [
+    "ng/your-bank",
+    "ng/efcc",
+    "ng/npf-nccc"
+  ],
+  "sources": [
+    {
+      "title": "Wema Bank warns customers over fake apps targeting banking details",
+      "publisher": "Premium Times",
+      "url": "https://www.premiumtimesng.com/business/business-news/895790-wema-bank-warns-customers-over-fake-apps-targeting-banking-details.html",
+      "date": "2026-07-16"
+    },
+    {
+      "title": "EFCC alerts public on new promo scam",
+      "publisher": "Blueprint",
+      "url": "https://blueprint.ng/efcc-alerts-public-on-new-promo-scam",
+      "date": "2025-07-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,103 @@
+{
+  "id": "ng/fake-visa-job-abroad",
+  "country": "ng",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "en": "A travel agent, “recruiter” or relocation consultant"
+  },
+  "name": {
+    "en": "Fake work visa or job abroad: pay for a visa, then get forged papers"
+  },
+  "how": {
+    "en": "A travel agency or recruiter promises a job and a work visa to Canada, Europe, the UK or Asia. You pay for the visa, then more for “sponsorship”, clearance or flights, and receive forged visas or offer letters, or nothing at all. Some offers are a trap that ends with people trafficked to scam compounds in Asia. Real employers do not recruit through social media, ask for upfront payment or send workers on tourist visas."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A recruiter or travel agent offers a guaranteed job and work visa abroad."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You pay for the visa and are asked for more fees for sponsorship or clearance."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "You receive an offer letter or visa that turns out to be fake, or are told to travel on a tourist visa."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The agent stops answering or keeps delaying."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Canada work permit 2026: care-giver and warehouse jobs, sponsorship available, no IELTS. Pay ₦1.5m processing and get your visa in 6 weeks. Limited slots, DM us to start."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "paid travel agent for work visa and got fake documents",
+      "job abroad agent asking for visa processing fee",
+      "fake offer letter from recruiter abroad",
+      "canada work visa sponsorship no ielts pay processing",
+      "agent said travel on tourist visa and get job there",
+      "japa agent collected money and disappeared"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "en": [
+      "Guaranteed jobs and visas for a fee.",
+      "Recruitment only through social media or WhatsApp.",
+      "Being told to travel on a tourist visa to work."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Apply for visas only through the embassy’s official website or visa centre, and check the employer exists.",
+      "Do not hand your passport and money to an agent you cannot verify.",
+      "Report fake agents to the EFCC; if someone is being held abroad, call 112 or the police."
+    ]
+  },
+  "reportTo": [
+    "ng/efcc",
+    "ng/npf-nccc",
+    "ng/emergency"
+  ],
+  "sources": [
+    {
+      "title": "EFCC arrests travel firm CEO, accomplice over alleged N68m visa fraud",
+      "publisher": "Nigerian News Direct",
+      "url": "https://nigeriannewsdirect.com/efcc-arrests-travel-firm-ceo-accomplice-over-alleged-n68m-visa-fraud/",
+      "date": "2026-06-23"
+    },
+    {
+      "title": "Nigeria: Govt, UK to Nigerians - Beware of Fake Overseas Job Offers",
+      "publisher": "Vanguard (via AllAfrica)",
+      "url": "https://allafrica.com/stories/202602240110.html",
+      "date": "2026-02-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}
