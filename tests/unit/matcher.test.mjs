@@ -292,3 +292,12 @@ test('1.8.1: "the PIN is in the app" in Greek, Ukrainian and Turkish is genuine'
   assert.ok(!signsOf('Yeni kartınız yolda, PIN kodunu uygulamadan görebilirsiniz.').includes('asks_for_code'));
   assert.ok(signsOf('Πείτε μου το PIN της κάρτας σας').includes('asks_for_code'));
 });
+test('1.9.0: Swedish signs from real-style messages, and genuine Swedish notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Vi har stoppat en betalning. Legitimera dig i BankID-appen nu medan vi pratar. Lägg inte på.', 'asks_for_code'));
+  assert.ok(has('Vi har stoppat en betalning. Legitimera dig i BankID-appen nu medan vi pratar. Lägg inte på.', 'keep_on_line'));
+  assert.ok(has('Hej mamma, har fått nytt nummer, telefonen hamnade i poolen', 'new_number'));
+  assert.ok(has('Det är viktigt att ni inte pratar med någon om det här, inte ens med banken.', 'secrecy'));
+  assert.ok(!has('Din engångskod är 482 917. Lämna aldrig ut koden till någon.', 'asks_for_code'));
+  assert.ok(!has('Påminnelse: logga in själv med BankID på Skatteverkets webbplats. Vi skickar aldrig länkar.', 'unknown_link'));
+});
