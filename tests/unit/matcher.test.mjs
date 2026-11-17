@@ -378,3 +378,39 @@ test('1.12.0: Latvian signs (and Russian wording seen in Latvia), and genuine La
   assert.ok(!has('Karti aktivizējiet ar pirmo PIN darījumu. Banka nekad neprasa PIN.', 'asks_for_code'));
   assert.ok(!has('Mamm, vari lūdzu pārskaitīt 50 eiro, aizmirsu, ka šodien jāmaksā par ekskursiju', 'urgency'));
 });
+test('1.13.0: Serbian, Bosnian and Montenegrin signs (Latin and Cyrillic), and genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Treba mi šestocifreni broj koji vam sada stiže u poruci', 'asks_for_code'));
+  assert.ok(has('Ovo je moj novi Viber, stari mi je hakovan', 'new_number'));
+  assert.ok(has('Колико имате код куће у готовини?', 'money_request'));
+  assert.ok(has('Ако казну измирите данас, умањује се за половину', 'urgency'));
+  assert.ok(has('Nemojte prekidati vezu dok ne završimo', 'keep_on_line'));
+  assert.ok(!has('Nova debitna kartica je poslana. PIN stiže posebnom pošiljkom. Nikome ne otkrivajte PIN.', 'asks_for_code'));
+  assert.ok(!has('Banka nikada ne traži PIN, CVC ni jednokratne kodove. Nemojte otvarati link.', 'money_request'));
+  assert.ok(!has('Mama, možeš li mi prebaciti 100 KM? Nazvaću te večeras kad izađem s posla.', 'urgency'));
+  assert.ok(!has('Sutra ću ti se spojiti preko AnyDeska, kako smo se dogovorili na sastanku.', 'remote_access'));
+});
+test('1.13.0: Albanian signs (Albania and Kosovo), and genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Të kam dërguar padashur një kod me SMS, ma kthe këtu', 'asks_for_code'));
+  assert.ok(has('Dërgoji përmes Western Union, ua kthej javën tjetër', 'money_request'));
+  assert.ok(has('Kjo mbetet mes nesh', 'secrecy'));
+  assert.ok(has('Paguani tarifën e magazinimit 120 Lekë deri sot', 'urgency'));
+  assert.ok(!has('Kodi juaj OTP është 482913. Mos ia jepni kodin askujt, as punonjësve të bankës.', 'asks_for_code'));
+  assert.ok(!has("Karta juaj është dërguar në degë. PIN-i do t'ju vijë me SMS të veçantë.", 'asks_for_code'));
+  assert.ok(!has('Posta e Kosovës: dërgesa është në zyrë. Nuk kërkohet asnjë pagesë.', 'money_request'));
+});
+test('1.13.0: Macedonian signs, and genuine Macedonian notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Ве молиме испратете ни го кодот за потврда што ќе пристигне по СМС', 'asks_for_code'));
+  assert.ok(has('Може да префрлиш 250 евра на сметката на газдарицата?', 'money_request'));
+  assert.ok(has('Тато, ова ми е новиот број', 'new_number'));
+  assert.ok(!has('Еднократна лозинка: 482913. Никому не го споделувајте овој код.', 'asks_for_code'));
+  assert.ok(!has('СВР Скопје: во недела ќе биде затворен сообраќајот на кејот.', 'urgency'));
+  assert.ok(!has('Нема износ за плаќање. Подигнете ја пратката со лична карта.', 'money_request'));
+});
+test('1.13.0: Finnish "varat" (funds) is a whole word, not part of other languages\' words', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(!has('Nemojte otvarati link iz poruke.', 'money_request'));
+  assert.ok(has('Siirrä varat turvatilille heti', 'money_request'));
+});
