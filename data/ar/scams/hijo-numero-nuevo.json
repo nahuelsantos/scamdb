@@ -1,0 +1,137 @@
+{
+  "id": "ar/hijo-numero-nuevo",
+  "country": "ar",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Tu hijo” o “tu hija”, desde un número que no tenías",
+    "en": "“Your son” or “your daughter”, from a number you didn’t have"
+  },
+  "name": {
+    "es": "“Hola ma, agendame este número nuevo”: el falso hijo que pide plata",
+    "en": "“Hi Mum, save my new number”: the fake child who asks for money"
+  },
+  "how": {
+    "es": "Te escribe un número desconocido: “Hola pa, soy Anita, agendame este número que es alternativo, se me cayó el cel y quedó pantalla negra”. Usan el apodo o el nombre de tu hijo o hija, a veces con una foto parecida. Primero solo piden que los agendes. Después aparece un apuro: pagar el arreglo del celular, una cuota o una deuda que vence hoy, y piden una transferencia, muchas veces a la cuenta de “un amigo”. Dicen que no pueden hablar por llamada porque el teléfono no anda.",
+    "en": "An unknown number writes: “Hi Dad, it’s Anita, save this number, it’s an alternative one, my phone fell and the screen went black”. They use your son’s or daughter’s name or nickname, sometimes with a similar photo. First they only ask you to save the number. Then there is an emergency: paying for the phone repair, an instalment or a debt due today, and they ask for a transfer, often to “a friend’s” account. They say they can’t talk on a call because the phone doesn’t work."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un número nuevo diciendo que es tu hijo o tu hija.",
+        "en": "A new number writes saying it is your son or daughter."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "es": "Explica que se le rompió o se le cayó el celular y te pide que lo agendes.",
+        "en": "They explain their phone broke or fell and ask you to save the number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Aparece un apuro: algo que hay que pagar hoy.",
+        "en": "An emergency appears: something that has to be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide una transferencia, muchas veces a la cuenta de otra persona.",
+        "en": "They ask for a transfer, often to someone else’s account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola ma, soy yo, agendame este número nuevo que se me rompió el celu. Después te cuento, ahora no puedo hablar.",
+        "en": "Hi Mum, it’s me, save this new number, my phone broke. I’ll tell you later, I can’t talk now."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "agendame este numero",
+      "agendame a este numero",
+      "numero alternativo",
+      "este es mi numero nuevo",
+      "se me cayo el cel",
+      "se me rompio el celular",
+      "quedo pantalla negra",
+      "hola ma soy yo",
+      "hola pa soy",
+      "mi hijo me escribio de otro numero",
+      "no puedo hablar ahora",
+      "transferime a la cuenta de un amigo"
+    ],
+    "en": [
+      "save my new number",
+      "my phone broke",
+      "hi mum new number",
+      "my son wrote from another number",
+      "they asked for money from a new number"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Tu hijo o tu hija te escribe desde un número que no tenías.",
+      "No puede hablar por llamada ni mandar un audio “porque el teléfono no anda”.",
+      "Al rato aparece una urgencia con plata.",
+      "La cuenta para transferir es de otra persona."
+    ],
+    "en": [
+      "Your son or daughter writes from a number you didn’t have.",
+      "They can’t take a call or send a voice note “because the phone doesn’t work”.",
+      "Soon there is an emergency involving money.",
+      "The account to transfer to belongs to someone else."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No transfieras. Llamá a tu hijo o tu hija al número de siempre, o a alguien que esté con él o ella.",
+      "Hacele una pregunta que solo tu familiar sabría contestar.",
+      "No agendes el número nuevo hasta confirmarlo por otro medio.",
+      "Si ya transferiste, llamá a tu banco o billetera para pedir que retengan el dinero y hacé la denuncia."
+    ],
+    "en": [
+      "Don’t transfer. Call your son or daughter on their usual number, or someone who is with them.",
+      "Ask a question only your relative could answer.",
+      "Don’t save the new number until you confirm it another way.",
+      "If you already transferred, call your bank or wallet to ask them to hold the money, and report it."
+    ]
+  },
+  "reportTo": [
+    "ar/ufeci",
+    "ar/whatsapp-ayuda"
+  ],
+  "sources": [
+    {
+      "title": "“Hola mamá, perdí mi celular”: la estafa en WhatsApp que suplanta a tu hijo para vaciarte la cuenta",
+      "publisher": "Infobae",
+      "url": "https://www.infobae.com/tecno/2026/04/07/hola-mama-perdi-mi-celular-la-estafa-en-whatsapp-que-suplanta-a-tu-hijo-para-vaciarte-la-cuenta/",
+      "date": "2026-04-07"
+    },
+    {
+      "title": "Se hicieron pasar por su hijo y le sacaron $1.430.000 a través de WhatsApp",
+      "publisher": "Diario Panorama",
+      "url": "https://www.diariopanorama.com/noticia/569050/se-hicieron-pasar-hijo-le-sacaron-1430000-traves-whatsapp",
+      "date": "2026-10-08"
+    }
+  ],
+  "updated": "2026-11-16"
+}

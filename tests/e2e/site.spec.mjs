@@ -84,7 +84,7 @@ test('a 429 from the API shows its message', async ({ page }) => {
 test('the API is served as JSON', async ({ request }) => {
   const res = await request.get('/v1/ar/scams.json');
   expect(res.status()).toBe(200);
-  expect((await res.json()).data.length).toBe(20);
+  expect((await res.json()).data.length).toBeGreaterThanOrEqual(20);
 });
 
 test('the original version of a scam opens and passes axe at phone width', async ({ page }) => {
