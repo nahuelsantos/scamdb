@@ -1,0 +1,134 @@
+{
+  "id": "no/vegvesen-toll-licence-sms",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "no": "«Statens vegvesen» eller «AutoPASS»",
+    "en": "“Statens vegvesen” (Public Roads Administration) or “AutoPASS”"
+  },
+  "name": {
+    "no": "Falsk SMS fra Vegvesenet: bompenger, AutoPASS, bot eller fornyelse av førerkort",
+    "en": "Fake Public Roads Administration text: road tolls, AutoPASS, a fine or licence renewal"
+  },
+  "how": {
+    "no": "Svindlerne utgir seg for å være Statens vegvesen, mest på SMS. Meldingen handler om ubetalte bompenger, AutoPASS, trafikkbøter eller at førerkortet må fornyes, og skaper tidspress. Lenken går til en falsk side der du skal oppgi kortopplysninger, og ofte videre til en falsk BankID-innlogging.",
+    "en": "Scammers pose as Statens vegvesen, mostly by text. The message is about unpaid road tolls, AutoPASS, traffic fines or a driving licence that must be renewed, and creates time pressure. The link goes to a fake page asking for card details, often followed by a fake BankID login."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En SMS fra «Vegvesenet» om bompenger, bot eller førerkort.",
+        "en": "A text from “Vegvesenet” about tolls, a fine or your licence."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Frist i dag, ellers øker beløpet eller førerkortet blir ugyldig.",
+        "en": "Deadline today, or the amount goes up or the licence becomes invalid."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "En lenke til en side som ligner Vegvesenets.",
+        "en": "A link to a page that looks like the agency’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Du skal legge inn kortet og logge inn med BankID.",
+        "en": "You are asked to enter your card and log in with BankID."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Statens vegvesen: Du har en ubetalt bompasseringsavgift. Betal innen 48 timer for å unngå tilleggsavgift: [lenke]",
+        "en": "Statens vegvesen: You have an unpaid toll passage charge. Pay within 48 hours to avoid a surcharge: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "sms fra vegvesenet bompenger",
+      "ubetalt bompassering lenke",
+      "autopass faktura sms svindel",
+      "førerkortet må fornyes sms",
+      "trafikkbot på sms betale kort",
+      "vegvesen melding falsk bankid side",
+      "bomstasjon passering ubetalt gebyr",
+      "bomring sms tilleggsavgift"
+    ],
+    "en": [
+      "text from the roads administration about tolls",
+      "unpaid toll charge link",
+      "autopass invoice text",
+      "sms saying my driving licence must be renewed",
+      "traffic fine by text pay by card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "no": [
+      "Meldinger som kommer uten sammenheng og krever rask betaling, er sannsynligvis falske.",
+      "Sjekk avsender og nettadresse nøye, og gå heller selv til Vegvesenets nettsider.",
+      "Legg aldri inn kort eller BankID via en lenke du ikke stoler på."
+    ],
+    "en": [
+      "Messages that come out of the blue and demand quick payment are probably fake.",
+      "Check the sender and web address carefully, and go to the agency’s website yourself instead.",
+      "Never enter your card or BankID through a link you don’t trust."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke trykk på lenken. Sjekk bompenger og førerkort selv på de offisielle nettsidene.",
+      "Har du oppgitt kort eller BankID? Kontakt banken med en gang.",
+      "Videresend SMS-en til 7726 og slett den."
+    ],
+    "en": [
+      "Don’t tap the link. Check tolls and your licence yourself on the official websites.",
+      "Did you give your card or BankID? Contact your bank straight away.",
+      "Forward the text to 7726 and delete it."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/spam-7726",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Svindelforsøk i Vegvesenets navn øker kraftig",
+      "publisher": "Statens vegvesen",
+      "url": "https://www.vegvesen.no/nn/om-oss/presse/aktuelt/2026/10/svindelforsok-i-vegvesenets-navn-oker-kraftig/",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "Pågående SMS-svindel: Ikke åpne falsk SMS fra Vegvesenet",
+      "publisher": "Statens vegvesen",
+      "url": "https://www.vegvesen.no/om-oss/presse/aktuelt/2025/032/pagaende-sms-svindel/",
+      "date": "2025-03-24"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/parking-fine-sms"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "se/recovery-scam",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "sv": "Ett ”räddningsbolag”, en ”advokatbyrå”, en ”myndighet” eller ”bedrägeriutredare”",
+    "en": "A “recovery company”, “law firm”, “authority” or “fraud investigator”"
+  },
+  "name": {
+    "sv": "Räddningsbolag: återvinning av förlorade pengar mot förskottsavgift",
+    "en": "Recovery scam: “we’ll get back the money you lost”, for a fee"
+  },
+  "how": {
+    "sv": "Den som redan blivit lurad, ofta på en investering, blir kontaktad igen. Ett bolag, en ”advokat” eller till och med en påstådd myndighet säger att de har hittat dina pengar och kan få tillbaka dem. Först måste du betala en avgift i förskott, för skatt, juridik eller ”frigörande” av pengarna. Inget betalas tillbaka och du förlorar ännu mer.",
+    "en": "People who have already been scammed, often on an investment, are contacted again. A company, a “lawyer” or even a supposed authority says they have found your money and can get it back. First you must pay a fee in advance, for tax, legal work or “releasing” the funds. Nothing is ever paid back and you lose even more."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Kontakt efter att du redan förlorat pengar: ”vi har spårat dina medel”.",
+        "en": "Contact after you have already lost money: “we have traced your funds”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Pengarna kan återfås, men först krävs en avgift.",
+        "en": "The money can be recovered, but a fee is needed first."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sv": "Erbjudandet gäller bara om du betalar snabbt.",
+        "en": "The offer is only valid if you pay quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej, vi kontaktar dig från en internationell återvinningsbyrå. Vi har lyckats spåra de 85 000 kronor som du förlorade till handelsplattformen förra året. För att frigöra beloppet krävs en administrativ avgift på 6 900 kronor som betalas i förskott. Svara inom 48 timmar så startar vi ärendet.",
+        "en": "Hello, we are contacting you from an international recovery agency. We have managed to trace the 85,000 kronor you lost to the trading platform last year. To release the amount, an administrative fee of 6,900 kronor must be paid in advance. Reply within 48 hours and we’ll open the case."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "få tillbaka förlorade pengar avgift",
+      "räddningsbolag återvinning pengar",
+      "spårat medel frigöra",
+      "förskottsavgift återbetalning bedrägeri",
+      "advokat återfå investering avgift",
+      "lurad igen hjälp pengarna tillbaka",
+      "förluster investeringsbedrägeri återvinna",
+      "juridisk byrå återfå krypto",
+      "avgift frigöra beloppet återbetalning"
+    ],
+    "en": [
+      "recover lost money for a fee",
+      "company says it traced my scammed funds",
+      "pay a fee to release my money",
+      "recovery agency contacted me after investment fraud",
+      "lawyer offers to get my crypto back",
+      "scammed again by people offering help"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sv": [
+      "Ingen seriös aktör kräver förskottsbetalning för att ge tillbaka pengar du blivit lurad på.",
+      "Att de vet att du blivit lurad betyder ofta att de hör till samma nätverk.",
+      "Myndigheter tar inte betalt för att lämna tillbaka pengar."
+    ],
+    "en": [
+      "No genuine organisation asks for an upfront payment to return money you were scammed out of.",
+      "If they know you were scammed, they often belong to the same network.",
+      "Authorities don’t charge to return money."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Betala aldrig i förskott för att få tillbaka förlorade pengar.",
+      "Bryt kontakten och spara meddelandena.",
+      "Polisanmäl och tipsa FI om bolaget.",
+      "Kontakta din bank om du redan har betalat."
+    ],
+    "en": [
+      "Never pay upfront to get lost money back.",
+      "Cut contact and save the messages.",
+      "Report it to the police and tip off FI about the company.",
+      "Contact your bank if you have already paid."
+    ]
+  },
+  "reportTo": [
+    "se/finansinspektionen",
+    "se/polisen-anmalan",
+    "se/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Bedragarna tar hjälp av AI – FI varnar för 197 aktörer",
+      "publisher": "Realtid",
+      "url": "https://www.realtid.se/juridik/bedragarna-tar-hjalp-av-ai-fi-varnar-for-197-aktorer/",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "se/investment-celebrity-ads"
+  ]
+}

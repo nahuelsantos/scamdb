@@ -1,0 +1,150 @@
+{
+  "id": "no/fake-police-bank-safe-account",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "no": "«Politiet», «Økokrim» eller «banken din» (nummeret i displayet ser ekte ut)",
+    "en": "“The police”, “Økokrim” or “your bank” (the number on screen looks real)"
+  },
+  "name": {
+    "no": "Falsk politi eller bankansatt: «flytt pengene til en trygg konto»",
+    "en": "Fake police officer or bank employee: “move your money to a safe account”"
+  },
+  "how": {
+    "no": "Noen ringer fra et nummer som ser ut som politiets eller bankens. De presenterer seg med navn, tjenestenummer og saksnummer, og sier at noen har prøvd å ta opp lån i ditt navn eller overføre penger fra kontoen din. For å «redde» pengene må du flytte dem til en «trygg konto», ofte først til en ny konto i ditt eget navn. Du får beskjed om taushetsplikt og tidsfrist, og blir satt over til en «bankansatt» som leder deg gjennom overføringen. Samtalen kan vare i timevis. Kontoen tilhører svindlerne.",
+    "en": "Someone calls from a number that looks like the police’s or your bank’s. They give a name, badge number and case number, and say someone has tried to take out a loan in your name or move money from your account. To “save” the money you must move it to a “safe account”, often first to a new account in your own name. You are told you are bound to secrecy and given a deadline, then put through to a “bank employee” who guides you through the transfer. The call can last for hours. The account belongs to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "Et anrop fra «politiet» eller «banken» med et nummer som ser ekte ut: Noen prøver å svindle deg.",
+        "en": "A call from “the police” or “the bank” from a number that looks real: someone is trying to defraud you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Du får saksnummer og tjenestenummer, og beskjed om å ikke fortelle det til noen, heller ikke banken eller familien.",
+        "en": "You get a case number and badge number and are told not to tell anyone, not even your bank or family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "no": "Det haster: Pengene må flyttes før en bestemt klokkeslett, og du skal holde linjen.",
+        "en": "It is urgent: the money must be moved before a set time, and you must stay on the line."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "no": "Du blir satt over til en «bankansatt» som ber deg overføre sparepengene til en «trygg konto».",
+        "en": "You are put through to a “bank employee” who asks you to transfer your savings to a “safe account”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "no": "Noen ganger ber de også om BankID-passord eller koder for å «sikre» kontoen.",
+        "en": "Sometimes they also ask for your BankID password or codes to “secure” the account."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Hei, dette er politibetjent Hansen ved økokrimseksjonen, tjenestenummer 4471. Vi etterforsker en sak der noen har søkt om forbrukslån i ditt navn i dag. Pengene på brukskontoen din er i fare. Jeg setter deg nå over til sikkerhetsavdelingen i banken din, som oppretter en beskyttet konto. Du har taushetsplikt i denne saken, så ikke snakk med noen før vi er ferdige, og ikke legg på.",
+        "en": "Hello, this is police officer Hansen from the economic crime unit, badge number 4471. We are investigating a case where someone applied for a consumer loan in your name today. The money in your current account is at risk. I’m putting you through to your bank’s security department now, which will set up a protected account. You are bound to secrecy in this case, so don’t talk to anyone until we are done, and don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "politiet ringte flytte penger trygg konto",
+      "falsk politibetjent ringer om lån i mitt navn",
+      "banken ringte sa kontoen var i fare",
+      "overføre sparepenger til sikker konto",
+      "fikk saksnummer og taushetsplikt på telefonen",
+      "satt over til bankens sikkerhetsavdeling",
+      "økokrim ringte om bankkontoen min",
+      "ring fra nummer som ligner politiet"
+    ],
+    "en": [
+      "police called asking me to move money to a safe account",
+      "fake police officer said someone took a loan in my name",
+      "bank called saying my account was at risk",
+      "told to transfer savings to a secure account",
+      "they gave me a case number and said keep it secret"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "no": [
+      "Politiet, Økokrim og banken ber deg aldri flytte penger til en «trygg konto».",
+      "Ingen seriøse ber deg holde det hemmelig for banken eller familien din.",
+      "Nummeret i displayet beviser ingenting: Det kan forfalskes.",
+      "Verken banken eller politiet ber om BankID-passord eller engangskoder."
+    ],
+    "en": [
+      "The police, Økokrim and your bank never ask you to move money to a “safe account”.",
+      "No genuine organisation asks you to keep it secret from your bank or family.",
+      "The number on screen proves nothing: it can be faked.",
+      "Neither the bank nor the police ask for your BankID password or one-time codes."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Legg på. Ring banken selv på nummeret på kortet eller i appen, ikke tilbake til nummeret som ringte.",
+      "Har du overført penger eller gitt fra deg koder? Kontakt banken med en gang, så kan de sperre konto og BankID og prøve å stanse pengene.",
+      "Anmeld svindelen til politiet digitalt, eller ring 02800."
+    ],
+    "en": [
+      "Hang up. Call your bank yourself on the number on your card or in the app, not back to the number that called.",
+      "Did you transfer money or give out codes? Contact your bank straight away so they can block your account and BankID and try to stop the money.",
+      "Report the fraud to the police online, or call 02800."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/police-report-online",
+    "no/police-02800"
+  ],
+  "sources": [
+    {
+      "title": "Status og tiltak mot svindel for 2026",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/tema/okonomisk-kriminalitet/svindel/status-og-tiltak-mot-svindel-for-2026/",
+      "date": "2026-04-08"
+    },
+    {
+      "title": "Ny svindelbølge: – Det er flest unge som blir rammet",
+      "publisher": "Sparebanken Norge (NTB Kommunikasjon)",
+      "url": "https://kommunikasjon.ntb.no/pressemelding/18814687/ny-svindelbolge-det-er-flest-unge-som-blir-rammet",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Slik blir eldre manipulert og svindlet nå",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/slik-blir-eldre-manipulert-og-svindlet",
+      "date": "2026-01-30"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/fake-police-home-visit"
+  ]
+}

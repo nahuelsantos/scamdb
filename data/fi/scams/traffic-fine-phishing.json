@@ -1,0 +1,139 @@
+{
+  "id": "fi/traffic-fine-phishing",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fi": "Traficom, \"Ajoneuvoministeriö\" tai poliisi",
+    "en": "Traficom, a “Ministry of Vehicles” or the police"
+  },
+  "name": {
+    "fi": "Valesakko: \"ajoneuvosi jäi kameraan, maksa sakko määräajassa\"",
+    "en": "Fake fine: “your vehicle was caught on camera, pay the fine by the deadline”"
+  },
+  "how": {
+    "fi": "Viestissä väitetään, että ajoneuvosi on jäänyt liikennekameraan ylinopeudesta tai muusta rikkeestä ja sakko on maksettava lyhyessä ajassa. Muuten asia siirtyy tuomioistuimeen tai tilisi, palkkasi ja omaisuutesi jäädytetään. Viesti voi esiintyä Traficomin, poliisin tai olemattoman \"Ajoneuvoministeriön\" nimissä. Linkki vie kalastelusivulle, joka vie pankkitunnukset tai maksutiedot. Viestejä on lähetetty myös ihmisille, joilla ei ole autoa.",
+    "en": "The message says your vehicle was caught by a traffic camera speeding or for another offence and the fine must be paid within a short time. Otherwise the case goes to court or your account, salary and property will be frozen. It may appear in the name of Traficom, the police or a non-existent “Ministry of Vehicles”. The link leads to a phishing page that takes your banking codes or payment details. These messages have also been sent to people who don’t own a car."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Viesti viranomaisen nimissä liikennerikkeestä.",
+        "en": "A message in an authority’s name about a traffic offence."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Sakko pitää maksaa tunneissa, muuten seuraa uhkauksia.",
+        "en": "The fine must be paid within hours or threats follow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Maksu tehdään viestin linkistä.",
+        "en": "Payment is made through the link in the message."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Sivu pyytää pankkitunnuksia tai korttitietoja.",
+        "en": "The page asks for banking codes or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Liikenneilmoitus: Ajoneuvosi on tallentunut nopeusvalvontaan 23 km/h ylinopeudesta. Rikesakko 200 €. Ellei maksua ole suoritettu 24 h kuluessa, asia siirretään ulosottoon. Maksa tästä: [linkki]",
+        "en": "Traffic notice: Your vehicle was recorded by speed enforcement 23 km/h over the limit. Fixed fine €200. Unless paid within 24 h, the matter goes to enforcement. Pay here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "maksamaton sakko viesti",
+      "ylinopeus sakko linkki",
+      "ajoneuvo tallentunut kameraan",
+      "rikesakko maksa heti",
+      "traficomin nimissä viesti",
+      "poliisin nimissä sakko",
+      "ajoneuvoministeriö",
+      "sakko siirtyy tuomioistuimeen",
+      "tili jäädytetään sakko",
+      "liikennevirhemaksu tekstiviesti",
+      "nopeusvalvonta sakko sähköposti"
+    ],
+    "en": [
+      "fake speeding fine text",
+      "traffic fine pay within 24 hours",
+      "traficom fine message",
+      "police fine email link",
+      "account frozen unpaid fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "fi": [
+      "Suomessa ei ole \"Ajoneuvoministeriötä\".",
+      "Viranomainen ei peri sakkoja tekstiviestin linkillä eikä uhkaa jäädyttää tiliäsi tunneissa.",
+      "Viesti voi tulla, vaikka sinulla ei olisi autoa."
+    ],
+    "en": [
+      "There is no “Ministry of Vehicles” in Finland.",
+      "An authority doesn’t collect fines through a link in a text or threaten to freeze your account within hours.",
+      "The message can arrive even if you don’t have a car."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Älä avaa linkkiä. Kirjaudu palveluun vain itse kirjoittamalla osoite tai omasta sovelluksesta.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Don’t open the link. Log in to the service only yourself, by typing the address or using its own app.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 22/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-222026",
+      "date": "2026-05-29"
+    },
+    {
+      "title": "Poliisin nimissä liikkuu sakkohuijaus",
+      "publisher": "Suomen Telemarkkinointiliitto ry (STT Info)",
+      "url": "https://www.sttinfo.fi/tiedote/72275024/poliisin-nimissa-liikkuu-sakkohuijaus",
+      "date": "2026-09-01"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "fi/parking-fee-sms"
+  ]
+}

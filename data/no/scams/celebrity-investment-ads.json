@@ -1,0 +1,152 @@
+{
+  "id": "no/celebrity-investment-ads",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "no": "Annonser og falske nyhetsartikler med kjendiser, deretter en «investeringsrådgiver»",
+    "en": "Ads and fake news articles with celebrities, then an “investment adviser”"
+  },
+  "name": {
+    "no": "Investeringssvindel med falske kjendisartikler og «rådgivere» som ringer",
+    "en": "Investment fraud with fake celebrity articles and “advisers” who call"
+  },
+  "how": {
+    "no": "Det starter med en annonse eller en artikkel som ser ut som NRK eller en annen avis, der en kjent person forteller om enorm avkastning på krypto eller trading. Du legger igjen nummeret ditt, og en hyggelig «rådgiver» ringer, ofte fra utlandet og igjen og igjen. Du begynner med et lite beløp, ser fine tall på en plattform og blir presset til å sette inn mer, gjerne ved hjelp av et fjernstyringsprogram. Pengene får du aldri ut.",
+    "en": "It starts with an ad or an article that looks like NRK or another newspaper, where a famous person talks about huge returns on crypto or trading. You leave your number, and a friendly “adviser” calls, often from abroad and again and again. You start with a small amount, see nice figures on a platform and are pushed to put in more, often with a remote-access program. You never get the money out."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En annonse eller artikkel der en kjendis anbefaler en investering.",
+        "en": "An ad or article where a celebrity recommends an investment."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "no": "En «rådgiver» ringer, mange ganger, og vil hjelpe deg i gang.",
+        "en": "An “adviser” calls, many times, and wants to get you started."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Du blir bedt om å installere et program så de kan «hjelpe» på PC-en.",
+        "en": "You are asked to install a program so they can “help” on your computer."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "no": "Små gevinster vises, og du blir presset til å sette inn mer.",
+        "en": "Small gains appear, and you are pushed to deposit more."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "God dag, jeg ringer fra investeringsavdelingen. Du registrerte deg etter intervjuet med den kjente forretningsmannen om kryptoplattformen. Med bare 250 euro kan du komme i gang, og kundene våre har hatt over 30 prosent avkastning denne måneden. Jeg hjelper deg å sette det opp på PC-en nå, det tar ti minutter.",
+        "en": "Good afternoon, I’m calling from the investment department. You signed up after the interview with the well-known businessman about the crypto platform. With just 250 euros you can get started, and our clients have had over 30 percent return this month. I’ll help you set it up on your computer now; it takes ten minutes."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "kjendis anbefaler krypto annonse",
+      "falsk nrk artikkel investering",
+      "investeringsrådgiver ringer fra utlandet",
+      "tradingplattform høy avkastning",
+      "installere program for å investere",
+      "kjent person tjente penger på krypto",
+      "fikk ikke ut pengene fra plattformen",
+      "rådgiver vil fjernstyre pc anydesk",
+      "sette inn mer penger på tradingkonto",
+      "fortjeneste på kryptokonto euro"
+    ],
+    "en": [
+      "celebrity crypto ad",
+      "fake news article about investing",
+      "investment adviser keeps calling",
+      "trading platform with high returns",
+      "they installed software on my computer to invest"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "no": [
+      "Kjendisene er brukt uten samtykke, og artiklene er forfalsket.",
+      "Lovnad om høy og sikker avkastning har ikke rot i virkeligheten.",
+      "Selskapet har ikke tillatelse fra Finanstilsynet.",
+      "Ingen seriøs rådgiver ber om å fjernstyre PC-en din."
+    ],
+    "en": [
+      "The celebrities are used without consent, and the articles are forged.",
+      "Promises of high, safe returns have no basis in reality.",
+      "The company is not authorised by Finanstilsynet.",
+      "No genuine adviser asks to control your computer remotely."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Sjekk selskapet i Finanstilsynets virksomhetsregister og advarselslister før du betaler noe.",
+      "Ikke send mer penger, heller ikke for å «låse opp» gevinst. Kontakt banken.",
+      "Avinstaller fjernstyringsprogrammet, bytt passord og anmeld til politiet."
+    ],
+    "en": [
+      "Check the company in Finanstilsynet’s register and warning lists before you pay anything.",
+      "Don’t send more money, not even to “unlock” gains. Contact your bank.",
+      "Uninstall the remote-access program, change your passwords and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "no/finanstilsynet",
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Finanstilsynet warns against investment offers promoted by Djup Fondstad",
+      "publisher": "Finanstilsynet",
+      "url": "https://www.finanstilsynet.no/en/investor-alerts/2026/finanstilsynet-atvarar-mot-investeringstilbod-marknadsfort-av-djup-fondstad/",
+      "date": "2026-08-17"
+    },
+    {
+      "title": "Misbruk av Arctic Securities AS' navn og logo",
+      "publisher": "Finanstilsynet",
+      "url": "https://www.finanstilsynet.no/markedsadvarsler/2026/misbruk-av-navn-og-logo-til/",
+      "date": "2026-06-11"
+    },
+    {
+      "title": "Rask gevinst fristet – resultatet ble hjertebank og anger",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/investeringssvindel-krypto",
+      "date": "2026-01-20"
+    },
+    {
+      "title": "KI-svindel og bedrageriforsøk skyter i været",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/ki-svindel-og-bedrageriforsok-skyter-i-vaeret-",
+      "date": "2026-01-14"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/investment-recovery-scam",
+    "no/gold-investment-handover"
+  ]
+}

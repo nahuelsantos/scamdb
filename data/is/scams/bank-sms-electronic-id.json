@@ -1,0 +1,135 @@
+{
+  "id": "is/bank-sms-electronic-id",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "is": "„Arion banki“ / „Landsbankinn“ / „Íslandsbanki“",
+    "en": "“Arion banki” / “Landsbankinn” / “Íslandsbanki”"
+  },
+  "name": {
+    "is": "Falskt SMS frá bankanum: „aðgangurinn þinn rennur út“",
+    "en": "Fake bank text: “your access is about to expire”"
+  },
+  "how": {
+    "is": "SMS eða tölvupóstur sem lítur út fyrir að vera frá íslenskum banka segir að aðgangi þínum hafi verið lokað eða að hann renni út. Hlekkurinn opnar eftirlíkingu af síðu bankans þar sem þú slærð inn farsímanúmer og velur banka. Þá kemur beiðni um rafræn skilríki í símann; ef þú samþykkir eru svikararnir komnir inn í heimabankann og geta millifært, tekið yfirdrátt eða vistað kortið þitt í síma. Bankar á Íslandi senda aldrei hlekki til að skrá sig inn í netbanka.",
+    "en": "A text or email that looks like it is from an Icelandic bank says your access has been blocked or is about to expire. The link opens a copy of the bank's site where you enter your mobile number and choose your bank. An electronic ID request then appears on your phone; if you approve it, the scammers are in your online bank and can transfer money, take an overdraft or add your card to a phone wallet. Icelandic banks never send links to log in to online banking."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "SMS í nafni bankans segir að aðgangurinn renni út eða hafi verið lokað.",
+        "en": "A text in the bank's name says your access is expiring or has been blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Þú þarft að bregðast við strax, oft um helgi eða utan opnunartíma.",
+        "en": "You have to act now, often at the weekend or outside opening hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Hlekkurinn opnar falska innskráningarsíðu sem biður um símanúmer.",
+        "en": "The link opens a fake login page that asks for your phone number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "is": "Beiðni um rafræn skilríki kemur í símann; ef þú samþykkir tæma svikararnir reikninginn.",
+        "en": "An electronic ID request arrives on your phone; if you approve, the scammers empty the account."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Landsbankinn: Aðgangur þinn að netbankanum rennur út í dag vegna öryggisuppfærslu. Endurnýjaðu hann hér til að forðast lokun: [hlekkur]",
+        "en": "Landsbankinn: Your online banking access expires today due to a security update. Renew it here to avoid it being closed: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "sms frá bankanum um að aðgangurinn renni út",
+      "netbankanum verði lokað",
+      "hlekkur til að skrá mig inn í netbanka",
+      "slá inn símanúmer og velja banka",
+      "samþykkti rafræn skilríki eftir sms",
+      "heimabankinn tæmdur um helgi"
+    ],
+    "en": [
+      "text from my bank saying my access expires",
+      "online banking will be closed",
+      "link to log in to online banking",
+      "enter my phone number and choose my bank",
+      "approved electronic ID after a text",
+      "online bank emptied at the weekend"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "is": [
+      "Íslenskir bankar senda aldrei hlekki á innskráningarsíðu netbanka.",
+      "Beiðni um rafræn skilríki sem kemur eftir að þú smelltir á hlekk í SMS.",
+      "Vefslóð sem líkist nafni bankans en er það ekki."
+    ],
+    "en": [
+      "Icelandic banks never send links to an online banking login page.",
+      "An electronic ID request that comes after you tapped a link in a text.",
+      "A web address that looks like the bank's name but isn't."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Smelltu ekki á hlekkinn; opnaðu appið eða vef bankans sjálf/ur.",
+      "Samþykktu aldrei rafræn skilríki nema þú sért sjálf/ur að skrá þig inn á rétta síðu.",
+      "Ef þú samþykktir, hringdu strax í bankann (neyðarsími utan opnunartíma) og tilkynntu svo til lögreglu og CERT-IS."
+    ],
+    "en": [
+      "Don't tap the link; open your bank's app or website yourself.",
+      "Never approve an electronic ID request unless you are logging in yourself on the right site.",
+      "If you approved, call your bank at once (emergency line out of hours), then report it to the police and CERT-IS."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/cert-is"
+  ],
+  "sources": [
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Varað við SMS svikaskilaboðum",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/varad-vid-sms-svikaskilabodum",
+      "date": "2023-08-31"
+    },
+    {
+      "title": "Varað við útsmognum SMS svikaskilaboðum",
+      "publisher": "CERT-IS / Lögreglan",
+      "url": "https://island.is/s/logreglan/frett/varad-vid-utsmognum-sms-svikaskilabodum",
+      "date": "2023-06-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

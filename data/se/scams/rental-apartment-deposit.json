@@ -1,0 +1,122 @@
+{
+  "id": "se/rental-apartment-deposit",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "online",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "sv": "En ”hyresvärd” på en bostadssajt, Blocket eller i sociala medier",
+    "en": "A “landlord” on a housing site, Blocket or social media"
+  },
+  "name": {
+    "sv": "Bostadsbedrägeri: falsk hyresvärd kräver deposition före visning",
+    "en": "Rental scam: fake landlord wants a deposit or advance rent before a viewing"
+  },
+  "how": {
+    "sv": "En lägenhet eller ett rum annonseras centralt till en rimlig eller låg hyra, ofta inför terminsstart. Hyresvärden är utomlands eller kan inte visa bostaden, men vill ha deposition eller flera månadshyror i förskott, ibland till ett utländskt konto, och kanske en ID-kopia. Annonsen kan vara kopierad från en riktig bostad, och flera personer kan betala för samma lägenhet. En variant: ”hyresvärden” påstår att hen har betalat för mycket och ber dig skicka tillbaka pengar via en QR-kod.",
+    "en": "A flat or room is advertised centrally at a reasonable or low rent, often before term starts. The landlord is abroad or can’t show the place, but wants a deposit or several months’ rent in advance, sometimes to a foreign account, and maybe an ID copy. The ad may be copied from a real home, and several people may pay for the same flat. A variant: the “landlord” claims to have overpaid you and asks you to send money back via a QR code."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "En bra bostad till ett bra pris, men ingen visning är möjlig.",
+        "en": "A great home at a great price, but no viewing is possible."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sv": "Betala deposition eller förskottshyra för att få kontraktet.",
+        "en": "Pay a deposit or advance rent to get the contract."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sv": "Det är bråttom: många andra vill ha bostaden.",
+        "en": "It’s urgent: many others want the place."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej och tack för ditt intresse för tvåan på Södermalm! Jag jobbar i Spanien just nu så jag kan tyvärr inte visa den, men nycklarna skickas med bud när depositionen på 12 000 kr och första månadshyran är betalda. Det är många som har hört av sig, så vill du ha den behöver jag pengarna senast i morgon.",
+        "en": "Hi and thanks for your interest in the two-room flat on Södermalm! I’m working in Spain right now so unfortunately I can’t show it, but the keys will be sent by courier once the 12,000 kr deposit and first month’s rent are paid. Lots of people have been in touch, so if you want it I need the money by tomorrow."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "hyresvärd utomlands deposition",
+      "betala förskottshyra innan visning",
+      "nycklarna skickas bud",
+      "lägenhetsbedrägeri falsk annons",
+      "studentbostad deposition förskott",
+      "visa lägenheten",
+      "betalat mycket skicka tillbaka qr"
+    ],
+    "en": [
+      "landlord abroad wants a deposit",
+      "pay rent in advance before viewing",
+      "keys will be sent by courier",
+      "fake apartment listing",
+      "student room deposit scam",
+      "landlord overpaid me send money back"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sv": [
+      "Betala aldrig innan du har sett bostaden och skrivit kontrakt.",
+      "En hyresvärd som är utomlands och bara kan nås via mejl är ett varningstecken.",
+      "Utländska konton och anonyma betaltjänster gör pengarna svåra att spåra."
+    ],
+    "en": [
+      "Never pay before you have seen the home and signed a contract.",
+      "A landlord who is abroad and only reachable by email is a warning sign.",
+      "Foreign accounts and anonymous payment services make the money hard to trace."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Kontrollera med fastighetsägaren vem som får hyra ut bostaden och be om legitimation och skriftligt kontrakt.",
+      "Skicka inte ID-kopior till okända.",
+      "Har du betalat? Kontakta banken direkt och polisanmäl."
+    ],
+    "en": [
+      "Check with the property owner who is allowed to let the home and ask for ID and a written contract.",
+      "Don’t send ID copies to strangers.",
+      "Have you paid? Contact your bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Vanligt med bostadsbedrägerier inför skolstart",
+      "publisher": "Ekonomifokus",
+      "url": "https://www.ekonomifokus.se/nyheter/vanligt-med-bostadsbedragerier-infor-skolstart",
+      "date": "2026-08-11"
+    },
+    {
+      "title": "Annonsbedrägeri",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/annonsbedrageri",
+      "date": "2026-07-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

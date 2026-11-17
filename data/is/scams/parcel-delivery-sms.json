@@ -1,0 +1,136 @@
+{
+  "id": "is/parcel-delivery-sms",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "is": "„Pósturinn“ / „Póstur Íslands“ / „DHL“",
+    "en": "“Pósturinn” / “Iceland Post” / “DHL”"
+  },
+  "name": {
+    "is": "Falskt SMS frá Póstinum: „ekki tókst að afhenda pakkann“",
+    "en": "Fake Pósturinn text: “we couldn't deliver your parcel”"
+  },
+  "how": {
+    "is": "SMS eða tölvupóstur í nafni Póstsins, DHL eða annarrar sendingarþjónustu segir að ekki hafi tekist að afhenda pakka. Til að fá hann þarftu að smella á hlekk og greiða smágjald, staðfesta heimilisfang eða skrá þig inn á „Mínar síður“. Síðan stelur kortaupplýsingum eða símanúmeri og þá getur fylgt beiðni um rafræn skilríki. Allar greiðslur til Póstsins fara í gegnum Mínar síður á posturinn.is eða Póst-appið.",
+    "en": "A text or email in the name of Pósturinn, DHL or another delivery service says a parcel couldn't be delivered. To get it you must tap a link and pay a small fee, confirm your address or log in to “My Pages”. The page steals card details or your phone number, and an electronic ID request may follow. All payments to Pósturinn go through My Pages on posturinn.is or the Pósturinn app."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "SMS segir að ekki hafi tekist að afhenda pakka til þín.",
+        "en": "A text says a parcel to you couldn't be delivered."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Þú þarft að bregðast við strax, annars verði pakkanum skilað.",
+        "en": "You must act now or the parcel will be sent back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Hlekkur vísar á síðu þar sem greiða á smágjald eða tollgjald.",
+        "en": "A link leads to a page to pay a small fee or customs charge."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "is": "Kortaupplýsingar eru misnotaðar og upphæðin reynist oft hærri eða í erlendri mynt.",
+        "en": "Your card details are misused and the amount often turns out larger or in foreign currency."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Póstur Íslands: Við reyndum að afhenda pakkann þinn en heimilisfangið var ófullnægjandi. Staðfestu upplýsingar og greiddu 349 kr. endursendingargjald innan 24 klst: [hlekkur]",
+        "en": "Iceland Post: We tried to deliver your parcel but the address was incomplete. Confirm your details and pay a ISK 349 redelivery fee within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "sms frá póstinum um pakka",
+      "ekki tókst að afhenda sendinguna",
+      "borga smágjald fyrir pakka",
+      "tollgjald með hlekk",
+      "staðfesta heimilisfang fyrir sendingu",
+      "dhl sms um greiðslu"
+    ],
+    "en": [
+      "text from Pósturinn about a parcel",
+      "delivery could not be completed",
+      "pay a small fee for a parcel",
+      "customs fee with a link",
+      "confirm my address for a delivery",
+      "DHL text asking for payment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "is": [
+      "Pósturinn tekur ekki við greiðslum í gegnum hlekki í SMS eða tölvupósti.",
+      "Einkennilegt orðalag eins og „Póstur Íslands“ eða „Pósturinn vefsíðunni“.",
+      "Netfang eða vefslóð sem endar ekki á postur.is eða posturinn.is."
+    ],
+    "en": [
+      "Pósturinn doesn't take payments through links in texts or emails.",
+      "Odd wording such as “Póstur Íslands” or “Pósturinn vefsíðunni”.",
+      "An email or web address that doesn't end in postur.is or posturinn.is."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Smelltu ekki á hlekkinn; skoðaðu sendingar þínar á Mínum síðum eða í Póst-appinu.",
+      "Ef þú smelltir og gafst upp kortaupplýsingar, hafðu strax samband við bankann.",
+      "Áframsendu skilaboðin á oryggi@postur.is og CERT-IS."
+    ],
+    "en": [
+      "Don't tap the link; check your parcels on My Pages or in the Pósturinn app.",
+      "If you tapped and gave card details, call your bank straight away.",
+      "Forward the message to oryggi@postur.is and CERT-IS."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/posturinn",
+    "is/cert-is",
+    "is/police"
+  ],
+  "sources": [
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Við vörum við svikapóstum!",
+      "publisher": "Pósturinn",
+      "url": "https://posturinn.is/frettir/almennar-frettir/2025/vid-vorum-vid-svikapostum/",
+      "date": "2025-11-11"
+    },
+    {
+      "title": "Tilkynningar um netsvindl daglegt brauð",
+      "publisher": "Pósturinn",
+      "url": "https://posturinn.is/frettir/almennar-frettir/2025/tilkynningar-um-netsvindl-daglegt-braud/",
+      "date": "2025-03-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

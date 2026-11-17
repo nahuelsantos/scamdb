@@ -1,0 +1,139 @@
+{
+  "id": "no/posten-parcel-fee-sms",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "no": "«Posten», «Bring», «PostNord» eller «Helthjem»",
+    "en": "“Posten”, “Bring”, “PostNord” or “Helthjem”"
+  },
+  "name": {
+    "no": "Falsk pakke-SMS: betal porto, frakt eller toll for å få pakken",
+    "en": "Fake parcel text: pay postage, shipping or customs to get your parcel"
+  },
+  "how": {
+    "no": "Særlig når mange venter pakker, kommer det SMS-er i navnet til Posten, Bring eller andre fraktselskaper: Pakken står fast fordi porto, frakt eller toll ikke er betalt. Beløpet er lite. Lenken går til en falsk betalingsside der du skriver inn kortet. Deretter får du en engangskode fra banken og blir bedt om å taste den inn. Koden aktiverer egentlig kortet ditt i svindlernes Apple Pay eller Google Pay, så de kan handle for mer.",
+    "en": "Especially when many people are waiting for parcels, texts arrive in the name of Posten, Bring or other carriers: your parcel is stuck because postage, shipping or customs hasn’t been paid. The amount is small. The link goes to a fake payment page where you enter your card. Then you get a one-time code from your bank and are asked to type it in. The code actually activates your card in the scammers’ Apple Pay or Google Pay, so they can spend more."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En SMS fra «Posten»: Pakken din venter, men noe må betales.",
+        "en": "A text from “Posten”: your parcel is waiting, but something must be paid."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Et lite beløp og en kort frist, ellers sendes pakken i retur.",
+        "en": "A small amount and a short deadline, or the parcel is returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "En lenke til en side der du skal betale med kort.",
+        "en": "A link to a page where you pay by card."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Du blir bedt om å skrive inn koden banken sender deg.",
+        "en": "You are asked to type in the code your bank sends you."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Posten: Sendingen din er stanset på terminalen på grunn av manglende fraktgebyr (29 kr). Betal innen i kveld for å unngå retur til avsender: [lenke]",
+        "en": "Posten: Your shipment has been held at the terminal due to an unpaid shipping fee (29 kr). Pay by tonight to avoid return to sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "sms fra posten betale toll",
+      "pakken venter på betaling gebyr",
+      "bring sms frakt ikke betalt",
+      "postnord melding porto lenke",
+      "pakke stanset tollgebyr",
+      "betalte fraktgebyr fikk kode fra banken",
+      "apple pay aktivert etter posten sms"
+    ],
+    "en": [
+      "text from posten asking to pay customs",
+      "parcel held until I pay a fee",
+      "bring message about unpaid shipping",
+      "paid a small postage fee on a link",
+      "apple pay was activated after parcel text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "no": [
+      "Posten ber aldri om betaling via lenke i SMS. Bruk appen deres.",
+      "Et lite gebyr med kort frist er et kjent lokkemiddel.",
+      "En kode fra banken som du skal skrive inn på en nettside, kan aktivere kortet ditt hos svindlerne."
+    ],
+    "en": [
+      "Posten never asks for payment through a link in a text. Use their app.",
+      "A small fee with a short deadline is a known lure.",
+      "A code from your bank that you are asked to type on a website can activate your card for the scammers."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke trykk på lenken. Sjekk pakken i appen til fraktselskapet.",
+      "Har du lagt inn kortet? Sperr det i nettbanken og ring banken. Ring også hvis Apple Pay eller Google Pay ble aktivert uten at du gjorde det.",
+      "Videresend SMS-en til 7726."
+    ],
+    "en": [
+      "Don’t tap the link. Check the parcel in the carrier’s app.",
+      "Did you enter your card? Block it in online banking and call your bank. Call too if Apple Pay or Google Pay was activated without you.",
+      "Forward the text to 7726."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/spam-7726",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Slik blir du svindlet i Black November",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/slik-blir-du-svindlet-i-black-november",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Nå er nordmenn på sitt mest lettlurte",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/na-er-nordmenn-pa-sitt-mest-lettlurte",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Slik skjer kortsvindel nå",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/slik-blir-mange-utsatt-for-kortsvindel-na",
+      "date": "2025-11-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/parking-fine-sms"
+  ]
+}

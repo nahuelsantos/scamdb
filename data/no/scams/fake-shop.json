@@ -1,0 +1,127 @@
+{
+  "id": "no/fake-shop",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "no": "En nettbutikk i annonse på sosiale medier, ofte en kopi av en kjent butikk",
+    "en": "An online shop in a social media ad, often a copy of a well-known shop"
+  },
+  "name": {
+    "no": "Falske nettbutikker og tilbud i sosiale medier, også kopier av kjente butikker",
+    "en": "Fake online shops and social media deals, including copies of well-known shops"
+  },
+  "how": {
+    "no": "Særlig rundt Singles Day, Black Friday og jul dukker det opp annonser med fantastiske tilbud. Butikken kan være ukjent, eller en forfalsket kopi av en kjent nettbutikk med en adresse som ligner den ekte. Du betaler, men varen kommer aldri, er falsk eller kortet blir belastet igjen senere.",
+    "en": "Especially around Singles Day, Black Friday and Christmas, ads appear with fantastic deals. The shop may be unknown, or a forged copy of a well-known online shop with an address that looks like the real one. You pay, but the item never arrives, is fake, or your card is charged again later."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En annonse på sosiale medier med et tilbud som er for godt til å være sant.",
+        "en": "A social media ad with a deal that is too good to be true."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "no": "Nettsiden ligner en kjent butikk, men adressen er litt annerledes.",
+        "en": "The website looks like a known shop, but the address is slightly different."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Tilbudet varer bare noen timer.",
+        "en": "The deal only lasts a few hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "Du betaler med kort, men varen kommer aldri.",
+        "en": "You pay by card, but the item never arrives."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "BLACK WEEK: Siste sjanse! Merkejakker og vintersko til 80 % rabatt, bare i dag. Gratis frakt til hele Norge. Lageret må tømmes før nyttår – bestill her: [lenke]",
+        "en": "BLACK WEEK: Last chance! Brand jackets and winter shoes at 80% off, today only. Free shipping across Norway. The warehouse must be cleared before New Year – order here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "falsk nettbutikk fikk aldri varen",
+      "annonse på facebook billige merkeklær",
+      "kopi av kjent nettbutikk",
+      "black friday tilbud svindel",
+      "nettside ligner ekte butikk",
+      "bestilte på instagram kom aldri"
+    ],
+    "en": [
+      "fake online shop never got my order",
+      "cheap brand clothes ad on facebook",
+      "copy of a well known web shop",
+      "black friday deal was a scam",
+      "ordered from an instagram ad never arrived"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "no": [
+      "Kjempetilbud i annonser i sosiale medier, særlig i november og desember.",
+      "Nettadressen er nesten, men ikke helt, lik den ekte butikkens.",
+      "Søk opp butikken selv: Finner du ikke tilbudet der, er det trolig falskt."
+    ],
+    "en": [
+      "Huge deals in social media ads, especially in November and December.",
+      "The web address is almost, but not quite, the same as the real shop’s.",
+      "Look up the shop yourself: if you can’t find the deal there, it is probably fake."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Søk opp butikkens nettside selv i stedet for å trykke på annonsen.",
+      "Har du betalt? Sperr kortet hvis det kommer ukjente trekk, og send reklamasjon til banken.",
+      "Anmeld til politiet og meld annonsen til plattformen."
+    ],
+    "en": [
+      "Look up the shop’s website yourself instead of tapping the ad.",
+      "Did you pay? Block your card if unknown charges appear, and file a claim with your bank.",
+      "Report it to the police and report the ad to the platform."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Slik blir du svindlet i Black November",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/slik-blir-du-svindlet-i-black-november",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Status og tiltak mot svindel for 2026",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/tema/okonomisk-kriminalitet/svindel/status-og-tiltak-mot-svindel-for-2026/",
+      "date": "2026-04-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,140 @@
+{
+  "id": "se/fake-police-home-visit",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "sv": "”Polisen”, en ”polis” eller ”kriminalinspektör”, ibland först ”banken”",
+    "en": "“The police”, a “police officer” or “detective”, sometimes first “the bank”"
+  },
+  "name": {
+    "sv": "Falsk polis: inbrottsvåg, värdesaker hämtas hemma",
+    "en": "Fake police: burglary wave in your area, valuables collected at your home"
+  },
+  "how": {
+    "sv": "Någon ringer och säger sig vara polis eller från banken: det pågår inbrott i området, kriminella har dina uppgifter eller någon på banken är inblandad. Dina smycken, guld, kontanter eller bankkort ska därför tas i ”säkert förvar”. Sedan kommer en ”polis” eller ett bud hem till dig och hämtar dem. Det drabbar främst äldre, ofta efter långa samtal där du inte får prata med någon annan.",
+    "en": "Someone calls saying they are from the police or the bank: there are burglaries in the area, criminals have your details or someone at the bank is involved. Your jewellery, gold, cash or bank cards must therefore be put in “safe keeping”. Then a “police officer” or courier comes to your home and collects them. It mostly hits older people, often after long calls during which you mustn’t talk to anyone else."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Ett samtal från ”polisen”: inbrottsvåg i området eller en utredning om din bank.",
+        "en": "A call from “the police”: a wave of burglaries nearby or an investigation into your bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Du får inte berätta för någon, utredningen är hemlig.",
+        "en": "You mustn’t tell anyone; the investigation is secret."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "sv": "Du ska stanna kvar i telefon medan allt ordnas.",
+        "en": "You must stay on the phone while it is arranged."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "sv": "En ”polis” eller ett bud kommer hem och hämtar guld, smycken, kontanter eller bankkort.",
+        "en": "A “police officer” or courier comes to your home and collects gold, jewellery, cash or bank cards."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Goddag, kriminalinspektör Berg här, polisen. Vi har gripit två personer för inbrott i ditt kvarter och hos dem hittade vi en lista med ditt namn. Har du smycken eller kontanter hemma? Vi rekommenderar att en kollega hämtar dem i kväll och förvarar dem säkert tills vi har gripit resten av ligan. Säg inget till grannarna, det kan störa utredningen.",
+        "en": "Good afternoon, Detective Inspector Berg here, police. We have arrested two people for burglaries in your neighbourhood and found a list with your name on it. Do you have jewellery or cash at home? We recommend a colleague collects them tonight and keeps them safe until we’ve caught the rest of the gang. Don’t tell the neighbours; it could disturb the investigation."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "falsk polis ringde",
+      "polisen hämta värdesaker",
+      "inbrottsvåg området smycken förvar",
+      "säkert förvar guld kontanter",
+      "polis hembesök bankkort",
+      "kriminalinspektör ringer gripit ligan",
+      "vishing hembesök äldre"
+    ],
+    "en": [
+      "fake police officer called",
+      "police will collect my valuables",
+      "burglaries in the area keep jewellery safe",
+      "officer coming to my home for my bank card",
+      "fake police took my gold",
+      "told not to tell anyone about the investigation"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sv": [
+      "Polisen hämtar aldrig guld, smycken, kontanter eller bankkort hemma hos någon.",
+      "Polisen ber dig aldrig logga in med BankID eller lämna ut koder.",
+      "Kravet att hålla det hemligt är ett tecken på bedrägeri."
+    ],
+    "en": [
+      "The police never collect gold, jewellery, cash or bank cards from anyone’s home.",
+      "The police never ask you to log in with BankID or give out codes.",
+      "Being told to keep it secret is a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Lägg på. Släpp inte in obokade besökare.",
+      "Står någon vid dörren eller är på väg? Ring 112.",
+      "Har du lämnat ut ett kort? Ring banken och spärra det direkt.",
+      "Polisanmäl i efterhand, och prata med äldre anhöriga om upplägget."
+    ],
+    "en": [
+      "Hang up. Don’t let unexpected visitors in.",
+      "Is someone at the door or on the way? Call 112.",
+      "Did you hand over a card? Call your bank and block it straight away.",
+      "Report it to the police afterwards, and talk to older relatives about the scheme."
+    ]
+  },
+  "reportTo": [
+    "se/emergency-112",
+    "se/your-bank",
+    "se/polisen-114-14",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Polisen: Fler utsätts för fysiska vishingbedrägerier",
+      "publisher": "SVT Nyheter Väst",
+      "url": "https://www.svt.se/nyheter/lokalt/vast/polisen-fler-utsatts-for-fysiska-vishingbedragerier",
+      "date": "2026-08-03"
+    },
+    {
+      "title": "Bedragarnas skamliga storverk – ett fortsatt närvarande samhällsproblem",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/ost/2026/oktober/bedragarnas-skamliga-storverk/",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "Kraftsamlar mot bedrägerier – fortsätt ”våga vara otrevlig”",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nationell/2026/september/kraftsamlar-mot-bedragerier--fortsatt-vaga-vara-otrevlig/",
+      "date": "2026-09-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

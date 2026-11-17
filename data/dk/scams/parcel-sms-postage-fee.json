@@ -1,0 +1,135 @@
+{
+  "id": "dk/parcel-sms-postage-fee",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "da": "PostNord, GLS, DHL eller “fragtcentret”",
+    "en": "PostNord, GLS, DHL or “the freight centre”"
+  },
+  "name": {
+    "da": "Pakke-sms: restporto, told, gebyr – ellers returneres pakken",
+    "en": "Parcel text: pay remaining postage, customs or a fee via a link or the parcel goes back"
+  },
+  "how": {
+    "da": "En sms eller mail ligner en besked fra PostNord eller et andet fragtfirma: en pakke venter, men der mangler et lille beløb i porto, told eller gebyr, eller adressen skal bekræftes. Linket fører til en kopi af fragtfirmaets side, hvor du skal taste kortoplysninger. Oplysningerne bruges eller sælges videre til kortmisbrug. Beskederne kan dukke op i samme tråd som ægte beskeder.",
+    "en": "A text or email looks like it's from PostNord or another delivery firm: a parcel is waiting but a small amount of postage, customs or a fee is missing, or the address must be confirmed. The link leads to a copy of the delivery firm's site where you must type in card details. The details are used or sold on for card fraud. The messages can show up in the same thread as genuine ones."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Sms om en pakke, du måske venter på: der mangler porto, told eller adresse.",
+        "en": "Text about a parcel you might be expecting: postage, customs or address is missing."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Pakken sendes retur, hvis du ikke betaler inden for kort tid.",
+        "en": "The parcel goes back unless you pay within a short time."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Et link til en side, der ligner fragtfirmaets.",
+        "en": "A link to a page that looks like the delivery firm's."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Du skal taste kortnummer, udløbsdato og kontrolcifre – og måske en kode.",
+        "en": "You must enter card number, expiry date and security code – and maybe a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "PostNord: Din pakke DK48271 er ankommet til vores terminal, men kan ikke udleveres, da der mangler restporto på 18,50 kr. Betal inden 24 timer, ellers returneres forsendelsen til afsender: [link]",
+        "en": "PostNord: Your parcel DK48271 has arrived at our terminal but cannot be delivered because 18.50 kroner in remaining postage is missing. Pay within 24 hours or the shipment will be returned to the sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "postnord sms restporto betale",
+      "pakke told gebyr link",
+      "pakke leveres adresse bekræft",
+      "fragtcentret sms pakke ankommet",
+      "pakke returneres afsender betal",
+      "falsk pakkesporing side kortoplysninger",
+      "gls dhl sms pakke gebyr"
+    ],
+    "en": [
+      "postnord text pay postage",
+      "parcel customs fee link",
+      "parcel cannot be delivered confirm address",
+      "pay small fee or parcel returned",
+      "fake parcel tracking card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "da": [
+      "Fragtfirmaer beder normalt ikke om betaling via et link i en sms. Told på pakker uden for EU betales via fragtfirmaets egen side eller app.",
+      "Små beløb og en kort frist er lokkemad – målet er dine kortoplysninger.",
+      "En afsender eller tråd, der ser ægte ud, kan være forfalsket."
+    ],
+    "en": [
+      "Delivery firms don't normally ask for payment via a link in a text. Customs on parcels from outside the EU is paid via the firm's own site or app.",
+      "Small amounts and a short deadline are bait – the target is your card details.",
+      "A sender name or thread that looks genuine can be faked."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Klik ikke. Spor pakken selv i fragtfirmaets app eller ved at skrive adressen ind.",
+      "Har du tastet kortoplysninger? Spær kortet med det samme.",
+      "Anmeld sms'en til politiet, og slet den."
+    ],
+    "en": [
+      "Don't click. Track the parcel yourself in the delivery firm's app or by typing its address.",
+      "Typed in card details? Block the card straight away.",
+      "Report the text to the police and delete it."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/nets-kortspaerring",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Sådan spotter du falske beskeder",
+      "publisher": "Ældre Sagen (artikel fra sikkerdigital.dk)",
+      "url": "https://www.aeldresagen.dk/viden-og-raadgivning/hverdagsliv/sikkerhed-paa-nettet/undgaa-svindel/saadan-spotter-du-falske-beskeder",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "PostNord advarer: Ekstraordinært mange fupbeskeder i omløb",
+      "publisher": "PostNord Danmark (via Ritzau)",
+      "url": "https://via.ritzau.dk/pressemeddelelse/13681863/postnord-advarer:-ekstraordinaert-mange-fupbeskeder-i-omlob",
+      "date": "2023-05-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

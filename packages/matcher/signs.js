@@ -206,9 +206,8 @@ const DESCRIBES = /\b(te|los|nos|les|lo|la) (llaman|escriben|mandan|piden|van a 
 const CAUTION = /tengan cuidado|\bcuidado\b|\bojo\b|atencion|\balerta\b|be careful|beware|watch out|\bvorsicht\b|let op|attenzione|\buwaga\b|\bmefiez\b|\bprudence\b/;
 
 /** True when the text reads as a warning about a scam rather than as the scam itself. */
-export function isWarningAbout(text) {
+export function isWarningAbout(text, ids = readSigns(text)) {
   const t = normalize(text);
-  const ids = readSigns(text);
   if (ids.some((id) => ['unknown_link', 'keep_on_line', 'secrecy'].includes(id))) return false;
   if (CODE_HANDOVER.test(withoutNegations(t))) return false;
   return WARN_OTHERS.test(t) || (DESCRIBES.test(t) && CAUTION.test(t));

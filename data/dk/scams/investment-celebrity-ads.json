@@ -1,0 +1,141 @@
+{
+  "id": "dk/investment-celebrity-ads",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "da": "Annoncer og “artikler” med kendte danskere, derefter en “rådgiver” i telefonen",
+    "en": "Ads and “articles” with well-known Danes, then an “adviser” on the phone"
+  },
+  "name": {
+    "da": "Investeringssvindel med kendte danskere: falske annoncer, deepfake-videoer og en “rådgiver”",
+    "en": "Investment fraud with famous Danes: fake ads, deepfake videos and an “adviser”"
+  },
+  "how": {
+    "da": "På Facebook og andre sociale medier ser du annoncer, falske nyhedsartikler eller deepfake-videoer, hvor kendte danske erhvervsfolk eller tv-værter lover store, risikofri afkast – ofte i kryptovaluta. Du udfylder en formular, og en “rådgiver” ringer. Du starter med et lille beløb, ser falske gevinster på en platform og bliver presset til at indsætte mere. Svindlerne beder dig ofte give banken falske oplysninger om overførslen. Danskerne mistede 88,9 mio. kr. til investeringssvindel i første halvår 2026.",
+    "en": "On Facebook and other social media you see ads, fake news articles or deepfake videos in which well-known Danish business people or TV presenters promise big, risk-free returns – often in cryptocurrency. You fill in a form and an “adviser” calls. You start with a small amount, see fake gains on a platform and are pushed to deposit more. The scammers often tell you to give your bank false information about the transfer. Danes lost 88.9 million kroner to investment fraud in the first half of 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Annonce eller video med en kendt dansker, der anbefaler en investering.",
+        "en": "Ad or video with a famous Dane recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Høje afkast uden risiko – fx flere tusinde kroner om dagen.",
+        "en": "High returns without risk – for example several thousand kroner a day."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "da": "En “rådgiver” ringer og presser dig til at indsætte mere.",
+        "en": "An “adviser” calls and pushes you to deposit more."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Du skal ikke fortælle banken, hvad pengene skal bruges til.",
+        "en": "You mustn't tell the bank what the money is for."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "da": "Pengene sendes til en platform eller i kryptovaluta og kan ikke hæves.",
+        "en": "The money goes to a platform or into cryptocurrency and can't be withdrawn."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "EKSKLUSIVT: Kendt dansk iværksætter afslører i direkte tv, hvordan almindelige danskere tjener op mod 5.000 kr. om dagen med en ny AI-handelsplatform. Bankerne er rasende. Start med kun 1.800 kr. – pladserne er begrænsede: [link]",
+        "en": "EXCLUSIVE: Famous Danish entrepreneur reveals on live TV how ordinary Danes earn up to 5,000 kroner a day with a new AI trading platform. The banks are furious. Start with just 1,800 kroner – places are limited: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "investering kendt dansker facebook annonce",
+      "deepfake video investering afkast",
+      "kryptovaluta rådgiver ringer indsætte mere",
+      "ai handelsplatform tjen dagen",
+      "investeringsplatform umuligt hæve gevinst",
+      "falsk artikel iværksætter investering"
+    ],
+    "en": [
+      "investment ad with famous dane",
+      "deepfake video investment returns",
+      "crypto adviser keeps calling",
+      "ai trading platform earn daily",
+      "cannot withdraw from investment platform"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "da": [
+      "Høje afkast uden risiko findes ikke.",
+      "Kendte personer anbefaler ikke investeringer i annoncer – videoerne kan være deepfakes.",
+      "Bliver du bedt om at lyve over for banken eller holde det hemmeligt, er det svindel.",
+      "Tjek altid i Finanstilsynets register, om firmaet har tilladelse."
+    ],
+    "en": [
+      "High returns without risk don't exist.",
+      "Celebrities don't recommend investments in ads – the videos can be deepfakes.",
+      "If you're told to lie to your bank or keep it secret, it's fraud.",
+      "Always check Finanstilsynet's register to see whether the firm is authorised."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Stop med at indbetale, også selvom du får lovet at kunne hæve gevinsten.",
+      "Kontakt banken med det samme.",
+      "Anmeld svindlen til politiet.",
+      "Pas på “genindvindingsfirmaer”, der lover at skaffe pengene tilbage mod betaling."
+    ],
+    "en": [
+      "Stop paying in, even if you're promised you can withdraw your gains.",
+      "Contact your bank straight away.",
+      "Report the fraud to the police.",
+      "Beware of “recovery firms” promising to get your money back for a fee."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/finanstilsynet",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Investeringssvindlere lænser danskerne for 89 millioner kroner på seks måneder",
+      "publisher": "Finans Danmark (via Ritzau)",
+      "url": "https://via.ritzau.dk/pressemeddelelse/15176607/investeringssvindlere-laenser-danskerne-for-89-millioner-kroner-pa-seks-maneder",
+      "date": "2026-09-23"
+    },
+    {
+      "title": "Investeringssvindel i AI-æraen – sådan gennemskuer du de falske tilbud",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/investeringssvindel-i-ai-aeraen-saadan-gennemskuer-du-de-falske-tilbud",
+      "date": "2026-03-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

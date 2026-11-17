@@ -1,0 +1,134 @@
+{
+  "id": "se/bank-sms-call-back",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "sv": "Ett sms från ”banken”, ”kortföretaget”, ”Kundtjänst” eller en okänd avsändare",
+    "en": "A text from “the bank”, “the card company”, “Customer service” or an unknown sender"
+  },
+  "name": {
+    "sv": "Bank-sms om kortköp, lån, borgen: ”ring spärrtjänsten”",
+    "en": "Text about a card purchase, loan or guarantee: “call us if it wasn’t you”"
+  },
+  "how": {
+    "sv": "Ett sms säger att ett köp med ditt kort har godkänts, att du står som borgensman för någons lån, att ett hotell eller en hyrbil är bokad i ditt namn, eller att ditt kort eller BankID har spärrats. Om det inte var du ska du ringa numret i sms:et. Där svarar bedragare med ett färdigt manus: du ska logga in med BankID, lämna kortuppgifter eller flytta pengar för att stoppa det.",
+    "en": "A text says a purchase with your card has been approved, that you are named as guarantor for someone’s loan, that a hotel or rental car is booked in your name, or that your card or BankID has been blocked. If it wasn’t you, you should call the number in the text. Scammers answer with a ready-made script: you must log in with BankID, give card details or move money to stop it."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Ett sms om ett köp, ett lån eller en bokning som du inte känner igen.",
+        "en": "A text about a purchase, loan or booking you don’t recognise."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Om det inte var du, ring numret i meddelandet direkt.",
+        "en": "If it wasn’t you, call the number in the message straight away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sv": "I samtalet ska du logga in med BankID eller lämna kortuppgifter.",
+        "en": "On the call you must log in with BankID or give card details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sv": "Eller flytta pengarna till ett annat konto ”för säkerhets skull”.",
+        "en": "Or move the money to another account “to be safe”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Kortköp 8 495 SEK hos ELEKTRONIKHUSET AB har godkänts. Var det inte du? Ring vår spärrtjänst omgående på [nummer] så makulerar vi köpet.",
+        "en": "Card purchase 8,495 SEK at ELEKTRONIKHUSET AB has been approved. Wasn’t it you? Call our blocking service at once on [nummer] and we’ll cancel the purchase."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "sms kortköp godkänt ring",
+      "okänt köp ring numret sms",
+      "borgensman lån sms",
+      "hyrbil bokad mitt namn sms",
+      "spärrtjänst ring omgående",
+      "makulera köpet ring"
+    ],
+    "en": [
+      "text about a card purchase i didn t make",
+      "text says call this number if it wasn t you",
+      "named as guarantor for a loan text",
+      "hotel booked in my name text",
+      "called the number in the text and they wanted bankid",
+      "text said my card was blocked call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "sv": [
+      "Banken ber dig inte ringa ett nummer i ett sms för att stoppa ett köp.",
+      "Numret i sms:et går till bedragarna, inte till banken.",
+      "Ingen seriös aktör ber dig logga in med BankID i telefon för att stoppa något."
+    ],
+    "en": [
+      "Your bank doesn’t ask you to call a number in a text to stop a purchase.",
+      "The number in the text goes to the scammers, not the bank.",
+      "No genuine organisation asks you to log in with BankID on the phone to stop something."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Ring inte numret. Kontrollera köpet i bankens app eller ring numret på ditt kort.",
+      "Vidarebefordra sms:et till 7726.",
+      "Har du ringt och loggat in eller lämnat uppgifter? Ring banken direkt och spärra.",
+      "Polisanmäl."
+    ],
+    "en": [
+      "Don’t call the number. Check the purchase in your bank’s app or call the number on your card.",
+      "Forward the text to 7726.",
+      "Did you call and log in or give details? Call your bank straight away and block.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/spam-7726",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Kraftsamlar mot bedrägerier – fortsätt ”våga vara otrevlig”",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nationell/2026/september/kraftsamlar-mot-bedragerier--fortsatt-vaga-vara-otrevlig/",
+      "date": "2026-09-21"
+    },
+    {
+      "title": "Ökning av bedrägeriförsök av typen ”sms från barn”",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nationell/2026/augusti/okning-av-bedrageriforsok-av-typen-sms-fran-barn/",
+      "date": "2026-08-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "se/bank-employee-bankid"
+  ]
+}

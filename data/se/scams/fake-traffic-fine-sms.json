@@ -1,0 +1,136 @@
+{
+  "id": "se/fake-traffic-fine-sms",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sv": "”Trafikpolisen”, ”Polisen” eller ”Polismyndigheten”, från varierande nummer eller e-postadresser",
+    "en": "“Traffic police”, “Police” or “Police Authority”, from changing numbers or email addresses"
+  },
+  "name": {
+    "sv": "Falsk trafikbot sms: obetald bot, betalningslänk",
+    "en": "Fake traffic fine by text: “unpaid fine, pay through the link”"
+  },
+  "how": {
+    "sv": "Ett sms, som påstås komma från Trafikpolisen eller Polismyndigheten, säger att du har en obetald trafikbot eller fortkörningsbot. Du ska betala via en länk, ofta snabbt för att slippa en högre avgift. Länken leder till en falsk betalsida som tar dina kortuppgifter. Polisen skickar inte sms där man ska betala via länk; böter kommer med brev eller till din digitala brevlåda.",
+    "en": "A text, supposedly from the traffic police or the Police Authority, says you have an unpaid traffic or speeding fine. You must pay through a link, often quickly to avoid a higher fee. The link leads to a fake payment page that takes your card details. The police don’t send texts asking you to pay through a link; fines come by letter or to your digital mailbox."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Ett sms från ”Trafikpolisen”: du har en obetald bot.",
+        "en": "A text from the “traffic police”: you have an unpaid fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Betala inom kort, annars höjs avgiften.",
+        "en": "Pay soon or the fee goes up."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sv": "Betalningen görs via en länk.",
+        "en": "Payment is through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sv": "Sidan frågar efter kortnummer och kod.",
+        "en": "The page asks for your card number and code."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Trafikpolisen: Du har en obetald ordningsbot på 1 500 kr för hastighetsöverträdelse. Betala senast i dag för att undvika förhöjd avgift: [länk]",
+        "en": "Traffic police: You have an unpaid fine of 1,500 kr for speeding. Pay by today to avoid a higher fee: [länk]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "obetald trafikbot sms",
+      "trafikpolisen betala länk",
+      "fortkörningsbot sms länk",
+      "polismyndigheten bot betala",
+      "förhöjd avgift ordningsbot",
+      "hastighetsöverträdelse betala idag"
+    ],
+    "en": [
+      "text about an unpaid traffic fine",
+      "traffic police text with a payment link",
+      "speeding fine text pay now",
+      "police fine sms link",
+      "fine will increase if not paid today",
+      "fake parking or speeding fine message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sv": [
+      "Polisen skickar inte sms där du ska betala via en länk.",
+      "Böter kommer med brev eller till din digitala brevlåda, till exempel Kivra.",
+      "Hot om höjd avgift ska få dig att betala innan du tänker efter."
+    ],
+    "en": [
+      "The police don’t send texts asking you to pay through a link.",
+      "Fines come by letter or to your digital mailbox, such as Kivra.",
+      "The threat of a higher fee is meant to make you pay before you think."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Klicka inte och betala inget.",
+      "Vidarebefordra sms:et till 7726.",
+      "Har du lämnat kortuppgifter? Ring banken och spärra kortet.",
+      "Polisanmäl om du har betalat eller lämnat uppgifter."
+    ],
+    "en": [
+      "Don’t click and don’t pay.",
+      "Forward the text to 7726.",
+      "Did you give card details? Call your bank and block the card.",
+      "Report it to the police if you paid or gave details."
+    ]
+  },
+  "reportTo": [
+    "se/spam-7726",
+    "se/your-bank",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Pågående våg av bedrägeriförsök via sms",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nationell/2026/april/pagaende-vag-av-bedrageriforsok-via-sms/",
+      "date": "2026-04-24"
+    },
+    {
+      "title": "Polisens varning: Falska trafikböter skickas via sms till bilister",
+      "publisher": "Dagens PS",
+      "url": "https://www.dagensps.se/teknik/polisens-varning-falska-trafikboter-skickas-via-sms-till-bilister/",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "Polisen varnar: Falska trafikböter sprids via sms",
+      "publisher": "Vi Bilägare",
+      "url": "https://www.vibilagare.se/nyheter/polisen-varnar-falska-trafikboter-sprids-sms",
+      "date": "2026-04-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

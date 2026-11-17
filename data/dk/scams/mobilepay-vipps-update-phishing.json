@@ -1,0 +1,130 @@
+{
+  "id": "dk/mobilepay-vipps-update-phishing",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "da": "MobilePay eller Vipps",
+    "en": "MobilePay or Vipps"
+  },
+  "name": {
+    "da": "Falsk MobilePay/Vipps-besked: “opdatér din konto før navneskiftet, ellers lukkes den”",
+    "en": "Fake MobilePay/Vipps message: “update your account before the name change or it will be closed”"
+  },
+  "how": {
+    "da": "MobilePay skifter navn til Vipps, og svindlere bruger forvirringen. Du får en sms, mail eller Facebook-besked om, at du skal opdatere dine oplysninger eller bekræfte din konto, ellers bliver den lukket eller begrænset. Linket beder om kortoplysninger eller MitID. Navneskiftet kræver ikke, at du gør noget.",
+    "en": "MobilePay is changing its name to Vipps, and scammers use the confusion. You get a text, email or Facebook message saying you must update your details or confirm your account or it will be closed or restricted. The link asks for card details or MitID. The name change doesn't require you to do anything."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Besked om, at MobilePay bliver til Vipps, og at din konto skal bekræftes.",
+        "en": "Message saying MobilePay is becoming Vipps and your account must be confirmed."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Kontoen lukkes eller begrænses, hvis du ikke opdaterer nu.",
+        "en": "The account will be closed or restricted unless you update now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Et link fører til en falsk side.",
+        "en": "A link leads to a fake page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Du skal taste kortoplysninger eller godkende med MitID.",
+        "en": "You must enter card details or approve with MitID."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "MobilePay bliver til Vipps. For at beholde din konto og dine aftaler skal du verificere dit kort og din identitet inden fredag. Uverificerede konti deaktiveres automatisk. Gå til: [link]",
+        "en": "MobilePay is becoming Vipps. To keep your account and agreements you must verify your card and identity before Friday. Unverified accounts are automatically deactivated. Go to: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "mobilepay vipps opdater oplysninger",
+      "mobilepay konto lukkes sms",
+      "vipps navneskift bekræft konto",
+      "mobilepay link kortoplysninger",
+      "vipps deaktiveres verificer",
+      "falsk mobilepay besked konto lukkes"
+    ],
+    "en": [
+      "mobilepay vipps update details",
+      "mobilepay account will be closed",
+      "vipps name change confirm account",
+      "mobilepay text asks card details",
+      "verify account before deactivation"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "da": [
+      "MobilePay og Vipps beder aldrig om MitID, adgangskoder eller kortoplysninger via sms eller mail.",
+      "Navneskiftet sker automatisk – du skal ikke gøre noget.",
+      "Pres om at handle “nu” er et klassisk tegn."
+    ],
+    "en": [
+      "MobilePay and Vipps never ask for MitID, passwords or card details by text or email.",
+      "The name change happens automatically – you don't need to do anything.",
+      "Pressure to act “now” is a classic sign."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Klik ikke. Åbn selv appen, hvis du er i tvivl.",
+      "Har du tastet kortoplysninger eller MitID? Spær kortet, kontakt banken, og ring til Cyberhotlinen.",
+      "Anmeld beskeden til politiet."
+    ],
+    "en": [
+      "Don't click. Open the app yourself if in doubt.",
+      "Typed in card details or MitID? Block the card, contact the bank and call the Cyber hotline.",
+      "Report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "dk/nets-kortspaerring",
+    "dk/your-bank",
+    "dk/cyberhotline",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "MobilePay: Pas på svindel!",
+      "publisher": "Ældre Sagen Bornholm",
+      "url": "https://www.aeldresagen.dk/lokalafdelinger/bornholm/aktuelt/mobilepay---pas-paa-svindel",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "Fup på sms: Beskyt dig mod svindelbeskederne",
+      "publisher": "Forbrugerrådet Tænk",
+      "url": "https://taenk.dk/forbrugerliv/elektronik-og-digitale-tjenester/fup-paa-sms-beskyt-dig-mod-svindelbeskederne",
+      "date": "2025-08-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,118 @@
+{
+  "id": "se/kronofogden-debt-threat",
+  "country": "se",
+  "lang": "sv",
+  "status": "fading",
+  "channels": [
+    "phone",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sv": "”Kronofogden” eller en ”inkassobyrå”",
+    "en": "“Kronofogden” (Enforcement Authority) or a “debt collection agency”"
+  },
+  "name": {
+    "sv": "Falsk Kronofogden, inkasso: betala skulden, annars utmätning",
+    "en": "Fake Kronofogden or debt collector: pay the debt now or face seizure"
+  },
+  "how": {
+    "sv": "Någon ringer, skickar sms eller mejl och säger sig vara från Kronofogden eller en inkassobyrå. Du ska ha en obetald skuld som måste betalas direkt, annars blir det betalningsanmärkning eller utmätning. Betalningen ska ske via en länk, till ett annat kontonummer eller i telefon, ibland med BankID. Tidigare användes ofta inkassobyråer som täckmantel, nu även Kronofogden direkt.",
+    "en": "Someone calls, texts or emails claiming to be from Kronofogden or a debt collection agency. You supposedly have an unpaid debt that must be paid at once, or you’ll get a payment default or have assets seized. Payment is to be made through a link, to another account number or on the phone, sometimes with BankID. Debt collectors used to be the usual cover; now Kronofogden is used directly too."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "”Kronofogden”: du har en obetald skuld.",
+        "en": "“Kronofogden”: you have an unpaid debt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Betala i dag, annars utmätning eller betalningsanmärkning.",
+        "en": "Pay today or face seizure or a payment default."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sv": "Betala via länk, till ett annat konto eller i telefon med BankID.",
+        "en": "Pay through a link, to another account or on the phone with BankID."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Kronofogden: Ett ärende om obetald skuld på 4 870 kr har registrerats på ditt personnummer. Betala senast i dag för att undvika utmätning och betalningsanmärkning: [länk]",
+        "en": "Kronofogden: A case for an unpaid debt of 4,870 kr has been registered to your personal identity number. Pay by today to avoid seizure and a payment default: [länk]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "kronofogden sms obetald skuld",
+      "undvika utmätning betala idag",
+      "betalningsanmärkning betala länk",
+      "inkasso ringer skuld betala",
+      "kronofogden ringde bankid",
+      "skuld registrerad personnummer"
+    ],
+    "en": [
+      "text from kronofogden about a debt",
+      "pay today to avoid seizure",
+      "debt collector called demanding payment",
+      "threatened with a payment default",
+      "enforcement authority asked me to pay by link",
+      "unpaid debt registered to my id number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sv": [
+      "Kronofogden tar inte betalt via länkar i sms.",
+      "Riktiga krav kommer med brev eller till din digitala brevlåda, inte som ett hot i telefon.",
+      "Du kan själv se om du har ärenden på Kronofogdens Mina sidor."
+    ],
+    "en": [
+      "Kronofogden doesn’t take payment through links in texts.",
+      "Real claims come by letter or to your digital mailbox, not as a threat on the phone.",
+      "You can check yourself whether you have cases on Kronofogden’s My pages."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Lägg på, klicka inte, betala inget.",
+      "Kontrollera på Kronofogdens Mina sidor eller ring Kronofogdens officiella nummer från deras webbplats.",
+      "Vidarebefordra sms:et till 7726.",
+      "Har du betalat eller lämnat uppgifter? Kontakta banken och polisanmäl."
+    ],
+    "en": [
+      "Hang up, don’t click, don’t pay.",
+      "Check Kronofogden’s My pages or call Kronofogden’s official number from its website.",
+      "Forward the text to 7726.",
+      "Did you pay or give details? Contact your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "se/spam-7726",
+    "se/your-bank",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Polisen varnar för våg av bedrägerier – uppger sig komma från Kronofogden",
+      "publisher": "TV4 Nyheterna",
+      "url": "https://www.tv4.se/artikel/22miQ9XspCkGVx40MwkFIm/polisen-varnar-foer-vag-av-bedraegerier-uppger-sig-komma-fran-kronofogden",
+      "date": "2024-07-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

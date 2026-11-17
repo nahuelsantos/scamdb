@@ -1,0 +1,132 @@
+{
+  "id": "no/finn-seller-fake-payment-link",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "no": "En «kjøper» på FINN eller Tise",
+    "en": "A “buyer” on FINN or Tise"
+  },
+  "name": {
+    "no": "Falsk kjøper på FINN: lenke for å «motta betaling» med kortet",
+    "en": "Fake buyer on FINN: a link to “receive payment” with your card"
+  },
+  "how": {
+    "no": "Du selger noe brukt på FINN eller Tise. En kjøper er raskt interessert, vil gjerne ha det sendt og ber om mobilnummeret eller e-posten din. Så kommer en SMS eller e-post med en lenke, ofte forkledd som Helthjem, Vipps eller FINN, der du skal legge inn kortnummer og utløpsdato for å «motta pengene». I stedet blir det trukket penger fra kontoen din.",
+    "en": "You are selling something second-hand on FINN or Tise. A buyer is quickly interested, wants it shipped and asks for your mobile number or email. Then a text or email arrives with a link, often disguised as Helthjem, Vipps or FINN, where you enter your card number and expiry date to “receive the money”. Instead, money is taken from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En kjøper vil kjøpe uten å se varen og ha den sendt.",
+        "en": "A buyer wants to buy without seeing the item and have it shipped."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "no": "Kjøperen vil flytte praten ut av FINN, til SMS, e-post eller WhatsApp.",
+        "en": "The buyer wants to move the chat off FINN, to text, email or WhatsApp."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Du får en lenke fra «Helthjem», «Vipps» eller «FINN» for å motta betalingen.",
+        "en": "You get a link from “Helthjem”, “Vipps” or “FINN” to receive the payment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Du skal legge inn kortnummer, utløpsdato eller en kode for å få pengene.",
+        "en": "You must enter your card number, expiry date or a code to get the money."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Hei! Jeg tar sofaen til prisen du ber om, men bor i Tromsø så den må sendes. Jeg har allerede betalt via Helthjem, frakten er inkludert. Du har fått en e-post med lenke der du godkjenner utbetalingen. Kan du gjøre det i dag?",
+        "en": "Hi! I’ll take the sofa at your asking price, but I live in Tromsø so it has to be shipped. I’ve already paid through Helthjem, shipping included. You’ve received an email with a link where you approve the payout. Can you do it today?"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "kjøper på finn sendte lenke for betaling",
+      "helthjem lenke motta penger kort",
+      "finn kjøper vil ha mobilnummer",
+      "legge inn kortnummer for å motta betaling",
+      "vipps lenke godkjenne betaling selger",
+      "solgte på tise fikk falsk lenke",
+      "kjøper betalt frakt via lenke"
+    ],
+    "en": [
+      "buyer on finn sent a payment link",
+      "asked for my card to receive money",
+      "helthjem link to receive payment",
+      "fake buyer wanted my phone number",
+      "selling second hand got a link to approve payment"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "no": [
+      "Du trenger aldri legge inn kortnummer for å motta penger.",
+      "FINN sender ikke e-post direkte fra kjøpere. Bud og meldinger kommer i meldingsdialogen.",
+      "En kjøper som vil ut av FINN og ha varen sendt uten å se den, er et varsel.",
+      "Bruk Fiks ferdig eller møt kjøperen og bytt vare mot betaling."
+    ],
+    "en": [
+      "You never need to enter your card number to receive money.",
+      "FINN doesn’t send email straight from buyers. Bids and messages come in the message thread.",
+      "A buyer who wants to leave FINN and have the item shipped unseen is a warning.",
+      "Use Fiks ferdig or meet the buyer and swap item for payment."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Hold praten i FINNs meldingsdialog og ikke gi ut nummer eller e-post.",
+      "Har du lagt inn kortet? Sperr det og ring banken med en gang.",
+      "Meld fra til FINN og anmeld til politiet, uansett beløp."
+    ],
+    "en": [
+      "Keep the chat in FINN’s message thread and don’t give out your number or email.",
+      "Did you enter your card? Block it and call your bank straight away.",
+      "Tell FINN and report it to the police, whatever the amount."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/finn-sikkerhet",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Ble lurt trill rundt da hun solgte brudekjolen",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/ble-lurt-trill-rundt-da-hun-solgte-brudekjolen",
+      "date": "2026-01-20"
+    },
+    {
+      "title": "Unngå svindel – slik handler du trygt på FINN",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/din-okonomi/unngaa-svindel-paa-finn",
+      "date": "2025-06-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

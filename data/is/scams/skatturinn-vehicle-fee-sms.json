@@ -1,0 +1,127 @@
+{
+  "id": "is/skatturinn-vehicle-fee-sms",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "is": "„Skatturinn“",
+    "en": "“Skatturinn” (tax authority)"
+  },
+  "name": {
+    "is": "Falskt SMS frá Skattinum um ógreidd bifreiðagjöld",
+    "en": "Fake Skatturinn text about unpaid vehicle fees"
+  },
+  "how": {
+    "is": "SMS berst í nafni Skattsins um að yfirferð á ökutækjaskrá sýni ógreidda stöðu, oft lága upphæð. Þú átt að ljúka uppgjöri innan 48 klukkustunda, annars verði skráning ökutækisins takmörkuð. Hlekkurinn vísar á svikasíðu sem líkir eftir Skattinum og biður um kortaupplýsingar. Skatturinn biður aldrei um kortanúmer; skuldir sjást á Mínum síðum á Ísland.is.",
+    "en": "A text in the name of Skatturinn, the tax authority, says a check of vehicle records shows an unpaid balance, often a small sum. You must settle it within 48 hours or the vehicle's registration will be restricted. The link goes to a fake Skatturinn page that asks for card details. Skatturinn never asks for card numbers; debts show on My Pages at Ísland.is."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "SMS í nafni Skattsins segir að ógreidd bifreiðagjöld séu á ökutækinu þínu.",
+        "en": "A text in Skatturinn's name says there are unpaid vehicle fees on your car."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Upphæðin er lág svo það virðist auðvelt að borga hana bara.",
+        "en": "The amount is small, so it seems easier just to pay."
+      }
+    },
+    {
+      "text": {
+        "is": "Þú hefur 48 klukkustundir áður en skráning bílsins verði takmörkuð.",
+        "en": "You have 48 hours before the car's registration is restricted."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Hlekkurinn opnar falska síðu sem biður um kortanúmer.",
+        "en": "The link opens a fake page that asks for your card number."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Skatturinn: Yfirferð ökutækjaskrár sýnir ógreidda stöðu 2.990 kr. vegna bifreiðagjalds. Gerðu upp innan 48 klst. til að forðast takmörkun á skráningu: [hlekkur]",
+        "en": "Skatturinn: A review of vehicle records shows an unpaid balance of ISK 2,990 for vehicle tax. Settle within 48 hours to avoid a registration restriction: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "sms frá skattinum um bifreiðagjald",
+      "ógreidd bifreiðagjöld með hlekk",
+      "skráning bílsins verði takmörkuð",
+      "borga innan 48 klukkustunda",
+      "lág upphæð fyrir ökutækið",
+      "skatturinn bað um kortanúmer"
+    ],
+    "en": [
+      "text from Skatturinn about vehicle tax",
+      "unpaid vehicle fees with a link",
+      "car registration will be restricted",
+      "pay within 48 hours",
+      "small amount owed for my car",
+      "tax office asked for my card number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "is": [
+      "Skatturinn óskar ekki eftir kortanúmerum og sendir ekki greiðsluhlekki í SMS.",
+      "Hótun um takmörkun á skráningu innan 48 klukkustunda.",
+      "Vefslóð sem er hvorki skatturinn.is né island.is."
+    ],
+    "en": [
+      "Skatturinn does not ask for card numbers or send payment links by text.",
+      "A threat to restrict your registration within 48 hours.",
+      "A web address that is neither skatturinn.is nor island.is."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Ekki ýta á hlekkinn. Skoðaðu skuldastöðu þína sjálf/ur á Mínum síðum á Ísland.is.",
+      "Ef þú gafst upp kortaupplýsingar, hringdu strax í bankann og láttu loka kortinu.",
+      "Tilkynntu skilaboðin til lögreglu og CERT-IS."
+    ],
+    "en": [
+      "Don't tap the link. Check what you owe yourself on My Pages at Ísland.is.",
+      "If you entered card details, call your bank at once and have the card blocked.",
+      "Report the message to the police and CERT-IS."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/cert-is"
+  ],
+  "sources": [
+    {
+      "title": "Varúð! Svikasmáskilaboð með innheimtu ófullbúinna bifreiðagjalda í dreifingu",
+      "publisher": "Lögreglan",
+      "url": "https://island.is/s/logreglan/frett/varud-svikasmaskilabod-med-innheimtu-ofullbuinna-bifreidagjalda-i-dreifingu",
+      "date": "2026-09-18"
+    },
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

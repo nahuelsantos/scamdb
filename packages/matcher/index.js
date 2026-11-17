@@ -31,18 +31,32 @@ export function hardRules(ids) {
 /** The best score over every language the entry has (its phrases plus its name in that language). With `translated`,
  * the machine-translated phrases count too (only for finding scams documented in another country). */
 function scoreEntry(entry, text, words, translated = false) {
-  const lists = { ...(translated ? entry.phrasesTranslated ?? {} : {}), ...(entry.phrases ?? {}) };
-  return Math.max(0, ...Object.keys(lists).map((l) => scoreLang([...(lists[l] ?? []), entry.name?.[l] ?? ''], text, words)));
+  const langs = prepared(entry, translated);
+  let best = 0;
+  for (const list of langs) best = Math.max(best, scoreLang(list, text, words));
+  return best;
+}
+
+// Each entry's phrases, normalised and split into words once per entry (not on every check): checks run against
+// hundreds of entries with dozens of phrases each, so re-normalising them was most of a check's time.
+const PREPARED = [new WeakMap(), new WeakMap()];
+function prepared(entry, translated) {
+  const cache = PREPARED[translated ? 1 : 0];
+  let langs = cache.get(entry);
+  if (!langs) {
+    const lists = { ...(translated ? entry.phrasesTranslated ?? {} : {}), ...(entry.phrases ?? {}) };
+    langs = Object.keys(lists).map((l) => [...(lists[l] ?? []), entry.name?.[l] ?? ''].map(normalize).filter(Boolean)
+      .map((p) => ({ p: ` ${p} `, pw: tokens(p) })).filter((x) => x.pw.length));
+    cache.set(entry, langs);
+  }
+  return langs;
 }
 
 function scoreLang(list, text, words) {
-  const phrases = list.map(normalize).filter(Boolean);
   const counted = new Set();
   let score = 0;
-  for (const p of phrases) {
-    const pw = tokens(p);
-    if (!pw.length) continue;
-    if (pw.length > 1 && (` ${text} `).includes(` ${p} `)) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
+  for (const { p, pw } of list) {
+    if (pw.length > 1 && text.includes(p)) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
     const single = pw.length === 1;
     for (const w of pw) {
       if (counted.has(w)) continue;
@@ -66,7 +80,8 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
   const set = new Set(tokens(text));
   const words = { set, fuzzy: [...set].filter((w) => w.length >= 4) };
-  const rank = (pool, translated = false) => (!text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, text, words, translated), i }))
+  const padded = ` ${text} `;
+  const rank = (pool, translated = false) => (!text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, padded, words, translated), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)
     .sort((a, b) => b.score - a.score || a.i - b.i));
   const local = rank(country ? entries.filter((e) => e.country === country) : entries);
@@ -74,7 +89,7 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
     .slice(0, limit).map(({ id, score }) => ({ id, score }));
   const signals = readSignsWithEvidence(raw);
   // A forwarded warning about a scam is never itself called a scam; its matches say which scam it warns about.
-  const warning = isWarningAbout(raw);
+  const warning = isWarningAbout(raw, signals.map((s) => s.id));
   const verdict = isScam(signals.map((s) => s.id)) && !warning ? 'scam'
     : signals.length || matches.length ? 'suspicious' : 'not_recognised';
   const out = { verdict, score: null, signals, matches };

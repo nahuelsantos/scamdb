@@ -1,0 +1,146 @@
+{
+  "id": "is/skatturinn-refund-electronic-id",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "is": "„Skatturinn“ / „Ríkisskattstjóri“",
+    "en": "“Skatturinn” / “Directorate of Internal Revenue”"
+  },
+  "name": {
+    "is": "Fölsk skattaendurgreiðsla: „skráðu þig inn með rafrænum skilríkjum“",
+    "en": "Fake tax refund: “log in with your electronic ID”"
+  },
+  "how": {
+    "is": "Tölvupóstur eða SMS í nafni Skattsins segir að skattaendurgreiðsla bíði þín eða að leiðrétta þurfi skattframtalið, oft í kringum álagningu. Hlekkur eða QR-kóði vísar á nákvæma eftirlíkingu af síðu Skattsins eða Ísland.is þar sem þú velur banka og samþykkir innskráningu með rafrænum skilríkjum. Með því hleypir þú svikurunum inn í heimabankann. Öll erindi Skattsins eru á Ísland.is eða þjónustuvef Skattsins.",
+    "en": "An email or text in Skatturinn's name says a tax refund is waiting or your tax return needs correcting, often around the annual assessment. A link or QR code leads to an exact copy of Skatturinn's or Ísland.is's site, where you choose your bank and approve an electronic ID login. That lets the scammers into your online bank. All Skatturinn's messages are on Ísland.is or its own service site."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Póstur eða SMS segir að endurgreiðsla frá Skattinum sé tilbúin til útgreiðslu.",
+        "en": "An email or text says your refund from Skatturinn is ready to be paid out."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Þú átt að smella á hlekk eða skanna QR-kóða til að fá peninginn.",
+        "en": "You must click a link or scan a QR code to get the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "is": "Síðan líkir eftir Skattinum eða Ísland.is og biður þig að velja banka.",
+        "en": "The page copies Skatturinn or Ísland.is and asks you to pick your bank."
+      }
+    },
+    {
+      "text": {
+        "is": "Beiðni um innskráningu með rafrænum skilríkjum birtist í símanum; ef þú samþykkir komast svikararnir inn í heimabankann.",
+        "en": "An electronic ID login request pops up on your phone; if you approve, the scammers get into your online bank."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Ríkisskattstjóri – Tilkynning\nSkattaendurgreiðsla þín fyrir árið 2025 að upphæð 48.300 kr. er tilbúin. Til að fá hana greidda þarftu að staðfesta bankaupplýsingar með rafrænum skilríkjum fyrir lok vikunnar: [hlekkur]",
+        "en": "Directorate of Internal Revenue – Notice\nYour 2025 tax refund of ISK 48,300 is ready. To receive it you must confirm your bank details with your electronic ID before the end of the week: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "endurgreiðsla frá skattinum með hlekk",
+      "skattaendurgreiðsla bíður mín",
+      "staðfesta bankaupplýsingar með rafrænum skilríkjum",
+      "leiðrétta skattframtal með hlekk",
+      "qr kóði frá skattinum",
+      "velja bankann minn á síðu skattsins"
+    ],
+    "en": [
+      "refund from Skatturinn with a link",
+      "tax refund waiting for me",
+      "confirm bank details with electronic ID",
+      "correct my tax return through a link",
+      "QR code from the tax office",
+      "choose my bank on a tax office page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "is": [
+      "Inneign sem þú áttir ekki von á og á að greiða út í gegnum hlekk.",
+      "Beiðni um að velja banka og samþykkja rafræn skilríki til að fá endurgreiðslu.",
+      "Netfang eða vefslóð sem tengist ekki Skattinum (skatturinn.is) eða Ísland.is."
+    ],
+    "en": [
+      "A refund you weren't expecting, paid out through a link.",
+      "Being asked to choose your bank and approve your electronic ID to get a refund.",
+      "An email or web address not linked to Skatturinn (skatturinn.is) or Ísland.is."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Smelltu ekki á hlekkinn og skannaðu ekki QR-kóðann. Opnaðu Ísland.is eða skatturinn.is sjálf/ur.",
+      "Samþykktu aldrei innskráningu með rafrænum skilríkjum sem þú hófst ekki sjálf/ur.",
+      "Ef þú skráðir þig inn, hringdu strax í bankann og tilkynntu svo málið til lögreglu."
+    ],
+    "en": [
+      "Don't click the link or scan the QR code. Open Ísland.is or skatturinn.is yourself.",
+      "Never approve an electronic ID login you did not start yourself.",
+      "If you logged in, call your bank at once, then report it to the police."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/cert-is"
+  ],
+  "sources": [
+    {
+      "title": "Vörum okkur á netsvikum",
+      "publisher": "Skatturinn",
+      "url": "https://www.skatturinn.is/um-rsk/frettir-og-tilkynningar/vorum-okkur-a-netsvikum",
+      "date": "2026-05-20"
+    },
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Netsvik í nafni Skattsins",
+      "publisher": "Lögreglan",
+      "url": "https://island.is/s/logreglan/frett/netsvik-i-nafni-skattsins",
+      "date": "2026-02-19"
+    },
+    {
+      "title": "Aðvörun vegna svikapósta í nafni Skattsins",
+      "publisher": "Skatturinn",
+      "url": "https://www.skatturinn.is/um-rsk/frettir-og-tilkynningar/advorun-vegna-svikaposta-i-nafni-skattsins",
+      "date": "2025-08-08"
+    },
+    {
+      "title": "Iceland Revenue And Customs Authority Warns Against Phishing Scam",
+      "publisher": "The Reykjavík Grapevine",
+      "url": "https://grapevine.is/news/2025/02/28/iceland-revenue-and-customs-authority-warns-against-phishing-scam/",
+      "date": "2025-02-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

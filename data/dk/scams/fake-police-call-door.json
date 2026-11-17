@@ -1,0 +1,138 @@
+{
+  "id": "dk/fake-police-call-door",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "da": "Politiet (falsk betjent i telefonen eller ved døren)",
+    "en": "The police (fake officer on the phone or at the door)"
+  },
+  "name": {
+    "da": "Falske politifolk: “dine penge er ikke sikre” – overfør, eller giv kort og værdier fra dig",
+    "en": "Fake police: “your money isn't safe” – transfer it, or hand over cards and valuables"
+  },
+  "how": {
+    "da": "Svindlere ringer og udgiver sig for at være fra politiet. De siger, at kriminelle er ved at tømme din konto, at en bankansat er involveret, eller at der har været indbrud i området. For at “beskytte” dig skal du overføre penge til en sikker konto, oplyse kortnummer og pinkode eller give dit kort, kontanter og smykker til en “kollega”, der kommer forbi. Nogle gange står en person ved døren og viser et falsk id-kort. Ældre er særligt udsatte.",
+    "en": "Scammers call pretending to be from the police. They say criminals are emptying your account, that a bank employee is involved, or that there have been burglaries nearby. To “protect” you, you must transfer money to a safe account, give your card number and PIN, or hand your card, cash and jewellery to a “colleague” who comes by. Sometimes someone stands at the door showing a fake ID card. Older people are especially at risk."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "En “betjent” ringer: kriminelle er efter dine penge, eller banken kan ikke stoles på.",
+        "en": "An “officer” calls: criminals are after your money, or the bank can't be trusted."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Du må ikke tale med banken eller familien om sagen – det kan “ødelægge efterforskningen”.",
+        "en": "You mustn't talk to the bank or family about it – it could “ruin the investigation”."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "da": "Du skal overføre pengene til en sikker konto eller oplyse kort og pinkode.",
+        "en": "You must transfer the money to a safe account or give your card and PIN."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "da": "En “kollega” kommer hjem til dig for at hente kort, kontanter eller smykker.",
+        "en": "A “colleague” comes to your home to collect cards, cash or jewellery."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Det er kriminalassistent Holm fra politiet. Vi har anholdt to personer med en liste over ældre borgere i dit område, og dit navn står på den. Vi mistænker også en medarbejder i din bank. Derfor må du ikke ringe til banken. Jeg sender en civilklædt kollega forbi i aften, som tager dit dankort og dine smykker med i sikker opbevaring. Det her skal blive mellem os.",
+        "en": "This is Detective Holm from the police. We have arrested two people with a list of older residents in your area, and your name is on it. We also suspect an employee at your bank. So you mustn't call the bank. I'll send a plain-clothes colleague round tonight who will take your debit card and jewellery into safe keeping. This has to stay between us."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "falsk politibetjent ringede",
+      "politiet ringer penge konto fare",
+      "betjent kommer hente dankort smykker",
+      "kriminalassistent beder pinkode",
+      "falsk politi id-kort døren",
+      "politimand siger banken involveret",
+      "sikkerhedskonto politiet opkald"
+    ],
+    "en": [
+      "fake police officer called me",
+      "police said my bank is involved",
+      "officer coming to collect my card",
+      "police asked for my pin code",
+      "fake policeman at my door",
+      "police told me to keep it secret"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "da": [
+      "Politiet beder dig aldrig overføre penge, oplyse pinkode eller udlevere kort, kontanter eller smykker.",
+      "Politiet beder dig ikke holde noget hemmeligt for din bank eller familie.",
+      "Et id-kort ved døren eller et nummer i displayet beviser ikke, at det er politiet."
+    ],
+    "en": [
+      "The police never ask you to transfer money, give your PIN or hand over cards, cash or jewellery.",
+      "The police don't ask you to keep things secret from your bank or family.",
+      "An ID card at the door or a number on screen doesn't prove it's the police."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Læg på. Ring selv 114 for at tjekke, om det var politiet.",
+      "Står nogen ved døren for at hente dine ting? Luk ikke op, og ring 112.",
+      "Har du givet kort eller oplysninger? Kontakt banken, og spær kortet med det samme.",
+      "Anmeld forsøget, også selvom du ikke mistede penge."
+    ],
+    "en": [
+      "Hang up. Call 114 yourself to check whether it was the police.",
+      "Is someone at the door to collect your things? Don't open and call 112.",
+      "Did you hand over a card or details? Contact the bank and block the card straight away.",
+      "Report the attempt, even if you lost no money."
+    ]
+  },
+  "reportTo": [
+    "dk/alarm-112",
+    "dk/politi-114",
+    "dk/your-bank",
+    "dk/nets-kortspaerring",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Danskerne blev sidste år svindlet for 280 millioner: Lær at forstå svindlens psykologi",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/danskerne-blev-sidste-aar-svindlet-for-280-millioner-laer-at-forstaa-svindlens-psykologi",
+      "date": "2026-05-18"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "dk/fake-bank-adviser-safe-account"
+  ]
+}

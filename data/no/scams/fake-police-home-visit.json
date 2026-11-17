@@ -1,0 +1,140 @@
+{
+  "id": "no/fake-police-home-visit",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "no": "«Politiet» eller «banken» på telefon, så en «betjent» på døra",
+    "en": "“The police” or “the bank” on the phone, then an “officer” at the door"
+  },
+  "name": {
+    "no": "Hjemmebesøk fra falsk politi eller bank: bankkort, BankID og verdisaker hentes",
+    "en": "Home visit by fake police or bank staff: bank card, BankID and valuables collected"
+  },
+  "how": {
+    "no": "Svindlerne ringer ofte eldre som bor alene, gjerne kvinner (kalt «Olga-svindel»), og sier at kontoen er hacket eller at noen har tatt opp lån i ditt navn. Kort tid etter kommer en «politibetjent» eller «bankansatt», ofte med falsk uniform og legitimasjon, for å «hjelpe» eller «sikre bevis». De tar med seg bankkort, PIN-kode, mobil, BankID og verdisaker, eller ber deg legge dem i postkassen. Du får beskjed om ikke å kontakte familie eller bank. Så tømmes kontoene.",
+    "en": "The scammers often call older people who live alone, often women (known as “Olga fraud”), and say the account has been hacked or someone took out a loan in your name. Shortly after, a “police officer” or “bank employee” arrives, often with a fake uniform and ID, to “help” or “secure evidence”. They take your bank card, PIN, phone, BankID and valuables, or ask you to leave them in the letterbox. You are told not to contact family or the bank. Then the accounts are emptied."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En telefon fra «politiet» eller «banken»: Kontoen din er hacket eller misbrukt.",
+        "en": "A call from “the police” or “the bank”: your account has been hacked or misused."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Du skal ikke snakke med familien eller banken, det kan «ødelegge etterforskningen».",
+        "en": "You must not talk to your family or the bank; it could “ruin the investigation”."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "no": "En betjent eller bankansatt kommer hjem til deg for å sikre bankkort, mobil og BankID.",
+        "en": "An officer or bank employee comes to your home to secure your bank card, phone and BankID."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "De ber om PIN-kode og BankID-passord, eller at du legger kort og smykker i postkassen.",
+        "en": "They ask for your PIN and BankID password, or for you to leave cards and jewellery in the letterbox."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "God dag, jeg ringer fra politiet. Vi har pågrepet en person som hadde kortopplysningene dine, og kontoen din er misbrukt. En av mine kolleger kommer innom deg om en halvtime for å ta vare på bankkortene og mobilen din som bevis. Ha PIN-kodene klare. Ikke ring banken, det kan være en innsider der.",
+        "en": "Good afternoon, I’m calling from the police. We have arrested a person who had your card details, and your account has been misused. One of my colleagues will drop by in half an hour to keep your bank cards and phone as evidence. Have your PIN codes ready. Don’t call the bank; there may be an insider there."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "falsk politi kom hjem til meg",
+      "politimann ville hente bankkortet mitt",
+      "olga svindel eldre dame",
+      "bankansatt på døra ville ha bankid",
+      "legge bankkort i postkassen",
+      "kollega kommer hjem henter kort og mobil",
+      "ikke kontakt banken det er en innsider"
+    ],
+    "en": [
+      "fake police officer came to my house",
+      "they wanted to collect my bank card and bankid",
+      "told to leave my cards in the letterbox",
+      "bank employee came to my door",
+      "caller said a colleague will pick up my phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "no": [
+      "Ingen fra politiet eller banken kommer hjem til deg for å hente bankkort, mobil eller BankID.",
+      "Politiet og banken spør aldri om PIN-kode eller BankID-passord.",
+      "Beskjed om å ikke kontakte familien eller banken er et sikkert tegn på svindel.",
+      "Uniform og legitimasjon kan være falske."
+    ],
+    "en": [
+      "Nobody from the police or bank comes to your home to collect your bank card, phone or BankID.",
+      "The police and banks never ask for your PIN or BankID password.",
+      "Being told not to contact your family or bank is a sure sign of fraud.",
+      "Uniforms and ID can be fake."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke slipp noen inn. Står noen på døra og vil ha kort, mobil eller BankID, ring 112.",
+      "Ring banken selv på nummeret du kjenner, og sperr kort og BankID hvis du har gitt noe fra deg.",
+      "Snakk med familie eller en nabo, og anmeld forholdet til politiet."
+    ],
+    "en": [
+      "Don’t let anyone in. If someone at the door wants your cards, phone or BankID, call 112.",
+      "Call your bank yourself on a number you know, and block your cards and BankID if you have handed anything over.",
+      "Talk to family or a neighbour, and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "no/emergency-112",
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Status og tiltak mot svindel for 2026",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/tema/okonomisk-kriminalitet/svindel/status-og-tiltak-mot-svindel-for-2026/",
+      "date": "2026-04-08"
+    },
+    {
+      "title": "Ny svindelbølge: – Det er flest unge som blir rammet",
+      "publisher": "Sparebanken Norge (NTB Kommunikasjon)",
+      "url": "https://kommunikasjon.ntb.no/pressemelding/18814687/ny-svindelbolge-det-er-flest-unge-som-blir-rammet",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Slik blir eldre manipulert og svindlet nå",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/slik-blir-eldre-manipulert-og-svindlet",
+      "date": "2026-01-30"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/fake-police-bank-safe-account"
+  ]
+}

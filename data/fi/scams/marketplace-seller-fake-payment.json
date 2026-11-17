@@ -1,0 +1,142 @@
+{
+  "id": "fi/marketplace-seller-fake-payment",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "fi": "\"Ostaja\" Tori.fi:ssä, Facebook Marketplacessa tai muulla kauppapaikalla",
+    "en": "A “buyer” on Tori.fi, Facebook Marketplace or another marketplace"
+  },
+  "name": {
+    "fi": "Kauppapaikan valeostaja: \"olen jo maksanut, vastaanota rahat linkistä\"",
+    "en": "Fake marketplace buyer: “I’ve already paid, receive the money through the link”"
+  },
+  "how": {
+    "fi": "Myyt tavaraa netissä, ja \"ostaja\" haluaa käyttää palvelua, joka hoitaa maksun ja kuljetuksen, esimerkiksi Postin tai kauppapaikan nimissä. Hän siirtää keskustelun usein WhatsAppiin tai sähköpostiin ja lähettää linkin aidolta näyttävälle sivulle. Siellä sinua pyydetään \"maksun vastaanottamiseksi\", vakuusmaksun tai vahvistuksen varjolla syöttämään korttitietosi tai kirjautumaan pankkitunnuksilla, tai asentamaan sovellus. Rahaa ei tule, vaan se lähtee tililtäsi.",
+    "en": "You are selling something online and the “buyer” wants to use a service that handles payment and shipping, for example in Posti’s or the marketplace’s name. They often move the chat to WhatsApp or email and send a link to a genuine-looking page. There you are asked, “to receive the payment”, for a deposit or a confirmation, to enter your card details or log in with your banking codes, or to install an app. No money comes in; it goes out of your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Ostaja on kiinnostunut ilman kysymyksiä ja haluaa käyttää maksu- ja kuljetuspalvelua.",
+        "en": "The buyer is keen without questions and wants a payment and delivery service."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fi": "Keskustelu siirretään kauppapaikan ulkopuolelle.",
+        "en": "The chat is moved outside the marketplace."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Saat linkin, josta \"rahat vastaanotetaan\".",
+        "en": "You get a link to “receive the money”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Sivu pyytää korttitietoja tai pankkitunnuksia.",
+        "en": "The page asks for card details or banking codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Hei, ostan kahvinkeittimen pyytämälläsi hinnalla. Olen jo maksanut sen ja postikulut toimituspalvelun kautta, joten sinun tarvitsee vain kuitata rahat vastaan täältä ja tuoda paketti postiin: [linkki]",
+        "en": "Hi, I’ll buy the coffee maker at your price. I’ve already paid for it and the postage through the delivery service, so you only need to accept the money here and take the parcel to the post office: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "ostaja lähetti linkin rahat vastaan",
+      "tori ostaja huijaus",
+      "marketplace ostaja maksulinkki",
+      "olen jo maksanut toimituspalvelu",
+      "omaposti pro maksu myyjä",
+      "vastaanota maksu kortin tiedot",
+      "myyjä syötti kortin tiedot",
+      "nettikirppis huijaus myyjä",
+      "kuriiripalvelu huijaus tori",
+      "ostaja haluaa jatkaa whatsappissa",
+      "tori diili linkki pankkitunnukset",
+      "kuriiri hakee tuotteen",
+      "hyväksy maksu linkistä",
+      "turvamaksu kauppa",
+      "rahat kortille linkki",
+      "ilmoitus torissa ostaja"
+    ],
+    "en": [
+      "buyer sent link to receive money",
+      "tori buyer scam",
+      "marketplace seller card details",
+      "buyer already paid delivery service",
+      "enter card to receive payment"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fi": [
+      "Rahan vastaanottaminen ei koskaan vaadi korttitietoja tai pankkitunnuksia.",
+      "Ostaja, joka siirtää keskustelun kauppapaikan ulkopuolelle ja lähettää linkin, on varoitusmerkki.",
+      "Lataa sovellukset vain virallisista sovelluskaupoista."
+    ],
+    "en": [
+      "Receiving money never requires card details or banking codes.",
+      "A buyer who moves the chat off the marketplace and sends a link is a warning sign.",
+      "Only download apps from official app stores."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Pidä keskustelut kauppapaikan omassa viestipalvelussa ja käytä vain sen omia maksutapoja.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Keep chats in the marketplace’s own messaging and use only its own payment methods.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Varo! Postin nimissä huijauksia",
+      "publisher": "MTV Uutiset",
+      "url": "https://www.mtvuutiset.fi/artikkeli/varo-postin-nimissa-huijauksia/9127644",
+      "date": "2025-03-28"
+    },
+    {
+      "title": "Katala kuvio yleistyy nettikirppareilla: Myyjät menettäneet jopa nelinumeroisia summia",
+      "publisher": "MTV Uutiset",
+      "url": "https://www.mtvuutiset.fi/artikkeli/katala-kuvio-yleistyy-nettikirppareilla-myyjat-menettaneet-jopa-nelinumeroisia-summia-poliisi-kertoo-milloin-halytyskellojen-pitaisi-soida/8425758",
+      "date": "2022-05-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

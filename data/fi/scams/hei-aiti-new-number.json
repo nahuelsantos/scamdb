@@ -1,0 +1,134 @@
+{
+  "id": "fi/hei-aiti-new-number",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "fi": "\"Lapsesi\" tai muu perheenjäsen tuntemattomasta numerosta",
+    "en": "“Your child” or another family member from an unknown number"
+  },
+  "name": {
+    "fi": "\"Hei äiti\": lapsi uudesta numerosta pyytää maksamaan laskun",
+    "en": "“Hi mum”: your child, from a new number, asks you to pay a bill"
+  },
+  "how": {
+    "fi": "Saat tekstiviestin tai WhatsApp-viestin, jossa \"lapsesi\" kertoo puhelimen menneen rikki tai kastuneen ja numeron vaihtuneen. Sinua pyydetään tallentamaan uusi numero tai jatkamaan keskustelua WhatsAppissa. Pian tulee pyyntö: tärkeä lasku pitää maksaa tai uusi puhelin ostaa, eikä lapsi pääse omaan pankkiinsa. Rahat pyydetään siirtämään tilille, joka kuuluu huijarille. Huijauksia nähdään erityisesti äitienpäivän aikaan.",
+    "en": "You get a text or WhatsApp message in which “your child” says their phone broke or got wet and the number changed. You are asked to save the new number or continue on WhatsApp. Soon a request follows: an important bill must be paid or a new phone bought, and the child can’t get into their own bank. The money is to be sent to an account that belongs to the scammer. These scams appear especially around Mother’s Day."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Viesti tuntemattomasta numerosta: \"Hei äiti, tämä on uusi numeroni\".",
+        "en": "A message from an unknown number: “Hi mum, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "fi": "Lähettäjä esittää lastasi tai muuta läheistä.",
+        "en": "The sender pretends to be your child or another relative."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Lasku pitää maksaa tänään, koska oma pankki ei toimi.",
+        "en": "A bill must be paid today because their bank doesn’t work."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Rahat pyydetään siirtämään vieraalle tilille.",
+        "en": "You are asked to send money to an unfamiliar account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "moi mutsi! puhelin tippu vessanpönttöön ja tää on mun uus numero, voit poistaa sen vanhan. mulla ois yks lasku joka eräntyy tänään enkä pääse vielä verkkopankkiin uudella luurilla, voisitko hoitaa sen niin maksan heti takas kun saan tunnukset toimimaan?",
+        "en": "hi mum! my phone fell in the toilet and this is my new number, you can delete the old one. i’ve got a bill due today and i can’t get into online banking yet on the new phone, could you pay it and i’ll pay you straight back once my codes work?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "hei äiti uusi numero",
+      "moikka mutsi uusi numero",
+      "puhelin hajosi uusi numero",
+      "lapsi pyytää rahaa uudesta numerosta",
+      "tallenna uusi numeroni",
+      "lasku eräntyy tänään maksa",
+      "en pääse verkkopankkiin uudella puhelimella",
+      "hei isä huijaus",
+      "whatsapp äiti huijaus",
+      "puhelin kastui numero vaihtui"
+    ],
+    "en": [
+      "hi mum new number",
+      "child asking for money from new number",
+      "phone broke save my new number",
+      "pay my bill today i ll pay you back",
+      "hi dad whatsapp scam"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "fi": [
+      "Uusi numero ja heti perään rahapyyntö on tämän huijauksen tunnusmerkki.",
+      "Tilinomistajan nimi ei ole lapsesi nimi.",
+      "Lähettäjä välttelee puhelua."
+    ],
+    "en": [
+      "A new number followed straight away by a request for money is the hallmark of this scam.",
+      "The account holder’s name isn’t your child’s.",
+      "The sender avoids a call."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Soita lapsellesi hänen vanhaan, tuttuun numeroonsa ja varmista asia.",
+      "Älä siirrä rahaa ennen kuin olet puhunut hänen kanssaan.",
+      "Jos jo maksoit, soita heti pankkiisi; maksun voi joskus vielä pysäyttää.",
+      "Tee rikosilmoitus poliisille verkossa."
+    ],
+    "en": [
+      "Call your child on their old, familiar number and check.",
+      "Don’t send money before you have talked to them.",
+      "If you already paid, call your bank at once; the payment can sometimes still be stopped.",
+      "File a crime report with the police online."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 20/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-202026",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Saitko tällaisen viestin \"lapseltasi\"? Älä mene lankaan",
+      "publisher": "MTV Uutiset",
+      "url": "https://www.mtvuutiset.fi/artikkeli/saitko-tallaisen-viestin-lapseltasi-ala-mene-lankaan/9111254",
+      "date": "2025-03-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

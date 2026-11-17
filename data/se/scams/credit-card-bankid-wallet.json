@@ -1,0 +1,125 @@
+{
+  "id": "se/credit-card-bankid-wallet",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "sv": "”Banken”, ett kortföretag eller en ”bedrägeriutredare”",
+    "en": "“The bank”, a card company or a “fraud investigator”"
+  },
+  "name": {
+    "sv": "Kreditkortsansökan: ”signera BankID, avbryt ansökan”",
+    "en": "Credit card application in your name: “sign with BankID to stop it”"
+  },
+  "how": {
+    "sv": "Någon ringer och säger att en person just nu ansöker om ett kreditkort i ditt namn. För att stoppa ansökan ska du snabbt legitimera dig eller signera med BankID. Det du signerar är i stället själva kreditkortsansökan. Kortet läggs sedan in i bedragarens digitala plånbok, till exempel Apple Pay eller Google Pay, och används för köp.",
+    "en": "Someone calls saying a person is applying for a credit card in your name right now. To stop the application you must quickly identify yourself or sign with BankID. What you sign is actually the credit card application. The card is then added to the scammer’s digital wallet, such as Apple Pay or Google Pay, and used for purchases."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Ett samtal: någon ansöker om kreditkort i ditt namn.",
+        "en": "A call: someone is applying for a credit card in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Det måste stoppas nu, innan kortet hinner skickas.",
+        "en": "It must be stopped now, before the card is sent."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sv": "Du ska signera med BankID för att ”avbryta” ansökan.",
+        "en": "You must sign with BankID to “cancel” the application."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sv": "Kortet hamnar i bedragarens mobilplånbok och används för köp.",
+        "en": "The card ends up in the scammer’s mobile wallet and is used for purchases."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "God eftermiddag, jag ringer från kortavdelningen. Vi har fått in en ansökan om ett kreditkort med en limit på 50 000 kronor i ditt namn för tio minuter sedan. Om det inte är du som har ansökt behöver vi makulera den direkt. Du får strax en signering i BankID med texten ansökan, godkänn den så stoppar vi kortet innan det skickas ut.",
+        "en": "Good afternoon, I’m calling from the card department. Ten minutes ago we received an application for a credit card with a 50,000 kronor limit in your name. If you didn’t apply, we need to void it straight away. You’ll shortly get a BankID signing request with the text application; approve it and we’ll stop the card before it’s sent out."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "någon ansöker kreditkort mitt namn",
+      "signera bankid avbryta ansökan",
+      "kreditkortsansökan stoppa bankid",
+      "kortet lades apple pay",
+      "digital plånbok okända köp",
+      "makulera kortansökan signering"
+    ],
+    "en": [
+      "someone applied for a credit card in my name",
+      "sign with bankid to cancel the application",
+      "card added to apple pay by scammers",
+      "unknown purchases from a digital wallet",
+      "caller said stop the credit card application",
+      "approved a credit card by mistake with bankid"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sv": [
+      "Man stoppar aldrig en ansökan genom att signera med BankID: signeringen är ett godkännande.",
+      "Läs alltid vad som står i BankID-appen innan du signerar.",
+      "Ingen bank eller myndighet ringer och ber dig signera för att avbryta något."
+    ],
+    "en": [
+      "You never stop an application by signing with BankID: the signature is an approval.",
+      "Always read what the BankID app says before you sign.",
+      "No bank or authority calls asking you to sign to cancel something."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Lägg på och ring kortutgivaren eller banken själv.",
+      "Har du signerat? Ring banken direkt, spärra kortet och bestrid varje köp, inte bara ansökan.",
+      "Polisanmäl och spara uppgifter om samtalet.",
+      "Är du missnöjd med bankens svar kan Allmänna reklamationsnämnden pröva tvisten."
+    ],
+    "en": [
+      "Hang up and call the card issuer or your bank yourself.",
+      "Did you sign? Call your bank straight away, block the card and dispute every purchase, not only the application.",
+      "Report it to the police and keep details of the call.",
+      "If you are unhappy with the bank’s answer, the National Board for Consumer Disputes (ARN) can review it."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/polisen-anmalan",
+    "se/polisen-114-14"
+  ],
+  "sources": [
+    {
+      "title": "Bedragarnas nya metod: Lurar dig godkänna via bank-ID",
+      "publisher": "Dagens PS",
+      "url": "https://www.dagensps.se/privatekonomi/bedragarnas-nya-metod-lurar-dig-godkanna-via-bank-id/",
+      "date": "2026-10-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "se/bank-employee-bankid"
+  ]
+}

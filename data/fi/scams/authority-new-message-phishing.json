@@ -1,0 +1,154 @@
+{
+  "id": "fi/authority-new-message-phishing",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "fi": "Suomi.fi-viestit, OmaKanta, Kela tai Digi- ja väestötietovirasto (DVV)",
+    "en": "Suomi.fi Messages, OmaKanta, Kela or the Digital and Population Data Services Agency (DVV)"
+  },
+  "name": {
+    "fi": "\"Sinulle on uusi viesti\": Suomi.fi-, Kanta- tai Kela-kalastelu",
+    "en": "“You have a new message”: Suomi.fi, Kanta or Kela phishing"
+  },
+  "how": {
+    "fi": "Viesti muistuttaa viranomaisen ilmoitusta: Suomi.fi-viesteihin, OmaKantaan tai Kelaan on tullut uusi tärkeä viesti, päätös tai hyvitys, ja sen voi lukea linkistä. Linkki vie tunnistautumissivun näköiselle kalastelusivulle, joka vie pankkitunnukset. Kelan nimissä on käytetty lähettäjää ja osoitetta, joissa pieni l-kirjain on vaihdettu isoon i-kirjaimeen. Viranomaisposti siirtyy pääosin Suomi.fi-viesteihin, joten aidon ja väärennetyn erottaminen on tärkeää.",
+    "en": "The message looks like a notice from an authority: a new important message, decision or refund has arrived in Suomi.fi Messages, OmaKanta or Kela, and you can read it through the link. The link leads to a phishing page that looks like an identification page and takes your banking codes. In Kela’s name, a sender and address have been used where a lower-case l is swapped for a capital I. Mail from authorities is moving mostly to Suomi.fi Messages, so telling real from fake matters."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Ilmoitus uudesta viestistä viranomaisen palvelussa.",
+        "en": "A notice about a new message in an authority’s service."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Viesti pitää lukea linkin kautta.",
+        "en": "You must read the message through the link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Linkki vie tunnistautumissivun näköiselle sivulle.",
+        "en": "The link leads to a page that looks like the identification page."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fi": "Joskus vedotaan määräaikaan tai menetettävään etuuteen.",
+        "en": "Sometimes a deadline or a benefit you could lose is mentioned."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Kela: Sinulle on saapunut päätös asumistuen tarkistuksesta. Lue päätös ja vahvista tietosi 3 päivän kuluessa, ettei maksu keskeydy. Kirjaudu OmaKelaan: [linkki]",
+        "en": "Kela: You have a decision about your housing allowance review. Read the decision and confirm your details within 3 days so payment isn’t interrupted. Log in to OmaKela: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "sinulle on uusi viesti suomi.fi",
+      "suomi.fi viestit linkki",
+      "omakanta viesti kirjaudu",
+      "kanta-palvelun nimissä",
+      "kelan nimissä viesti",
+      "omakela kirjaudu linkki",
+      "kela päätös vahvista tiedot",
+      "dvv viesti linkki",
+      "viranomaisen viesti tunnistaudu",
+      "uusi päätös luettavissa linkki",
+      "tärkeä viesti odottaa"
+    ],
+    "en": [
+      "new message suomi.fi link",
+      "kela message log in",
+      "omakanta phishing email",
+      "authority message identify bank codes",
+      "benefit decision confirm details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "fi": [
+      "Aidot Suomi.fi-viestien sähköposti-ilmoitukset eivät koskaan ohjaa tunnistautumaan linkin kautta.",
+      "Tarkista osoite tarkasti: \"KeIa\" isolla i:llä ei ole Kela.",
+      "Kirjaudu viranomaisen palveluun aina itse virallisen osoitteen kautta."
+    ],
+    "en": [
+      "Real Suomi.fi Messages email notices never direct you to identify through a link.",
+      "Check the address carefully: “KeIa” with a capital i is not Kela.",
+      "Always log in to an authority’s service yourself through its official address."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Älä avaa linkkiä. Kirjaudu palveluun vain itse kirjoittamalla osoite tai omasta sovelluksesta.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Don’t open the link. Log in to the service only yourself, by typing the address or using its own app.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 46/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-462026",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 44/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-442026",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 39/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-392026",
+      "date": "2026-09-25"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 16/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-162026",
+      "date": "2026-04-20"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 14/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-142026",
+      "date": "2026-04-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

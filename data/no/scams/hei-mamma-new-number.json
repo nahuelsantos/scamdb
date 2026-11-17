@@ -1,0 +1,133 @@
+{
+  "id": "no/hei-mamma-new-number",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "no": "Et ukjent nummer som sier det er barnet ditt",
+    "en": "An unknown number claiming to be your child"
+  },
+  "name": {
+    "no": "«Hei mamma / hei pappa»: barnet har fått nytt nummer og trenger penger",
+    "en": "“Hi Mum / hi Dad”: your child has a new number and needs money"
+  },
+  "how": {
+    "no": "Du får en melding på SMS eller WhatsApp fra et ukjent nummer: «Hei mamma, dette er mitt nye nummer.» Telefonen er mistet eller ødelagt. Spør du hvem det er, svarer de «hvem tror du?» og spiller med på navnet du skriver. Snart trenger «barnet» penger, til ny telefon eller en regning som går til inkasso, fordi mobilbanken og BankID ikke virker ennå. Etter første overføring kommer ofte en melding om at betalingen ikke gikk gjennom.",
+    "en": "You get a text or WhatsApp from an unknown number: “Hi Mum, this is my new number.” The phone was lost or broken. If you ask who it is, they reply “who do you think?” and play along with the name you type. Soon the “child” needs money, for a new phone or a bill about to go to debt collection, because their mobile bank and BankID don’t work yet. After the first transfer there is often a message saying the payment didn’t go through."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "Melding fra ukjent nummer: «Hei mamma, nytt nummer.»",
+        "en": "Message from an unknown number: “Hi Mum, new number.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "no": "Hen utgir seg for å være barnet ditt og ber deg slette det gamle nummeret.",
+        "en": "They pose as your child and ask you to delete the old number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Mobilbank og BankID virker ikke, og en regning må betales i dag.",
+        "en": "Mobile banking and BankID don’t work, and a bill must be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "Du blir bedt om å overføre eller vippse penger, ofte til en annens konto.",
+        "en": "You are asked to transfer money or send it by Vipps, often to someone else’s account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Hei mamma! Har mista mobilen i vasken så dette er nytt nr, bare lagre det 🙈 Kan du hjelpe meg litt? Har en regning på 8 900 som forfaller i dag og får ikke logget inn i banken før jeg får ny bankid. Kan betale deg tilbake neste uke ❤️",
+        "en": "Hi Mum! Dropped my phone in the sink so this is a new number, just save it 🙈 Can you help me a bit? I have a bill of 8,900 due today and can’t log in to the bank until I get a new BankID. Can pay you back next week ❤️"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "hei mamma nytt nummer",
+      "sønnen min har fått nytt nummer trenger penger",
+      "datter skriver fra lånt telefon",
+      "mistet mobilen kan du betale regning",
+      "barnet får ikke brukt bankid ennå",
+      "hvem tror du melding ukjent nummer",
+      "vippse penger til ny telefon"
+    ],
+    "en": [
+      "hi mum new number",
+      "my son texted from a new number asking for money",
+      "daughter says her phone broke and needs a bill paid",
+      "message asking me to pay for a new phone",
+      "who do you think text from unknown number"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "no": [
+      "Et «nytt nummer» som straks ber om penger, er et klassisk tegn.",
+      "De vil ikke snakke i telefonen, bare skrive.",
+      "Pengene skal til en konto i et annet navn.",
+      "«Betalingen gikk ikke gjennom, prøv igjen» er en del av svindelen."
+    ],
+    "en": [
+      "A “new number” that soon asks for money is a classic sign.",
+      "They won’t talk on the phone, only text.",
+      "The money is to go to an account in another name.",
+      "“The payment didn’t go through, try again” is part of the scam."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ring barnet på det gamle nummeret du kjenner, eller still et spørsmål bare hen kan svare på.",
+      "Ikke overfør noe før du har snakket med hen.",
+      "Har du betalt? Kontakt banken med en gang og anmeld til politiet."
+    ],
+    "en": [
+      "Call your child on the old number you know, or ask a question only they can answer.",
+      "Don’t send anything until you have spoken to them.",
+      "Did you pay? Contact your bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Vær på vakt, Mamma og Pappa",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/hei-mamma-hei-pappa-svindel",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "Telia Norges kvartalsvise svindelrapport: forhindret tap på 285 millioner kroner i andre kvartal – norske ungdommer brukt som mellomledd",
+      "publisher": "Telia Norge (NTB Kommunikasjon)",
+      "url": "https://kommunikasjon.ntb.no/pressemelding/18979266/",
+      "date": "2026-07-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/whatsapp-code-account-takeover"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "no/job-offer-money-mule",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "no": "En «arbeidsgiver» eller «rekrutterer» på sosiale medier, WhatsApp eller SMS",
+    "en": "An “employer” or “recruiter” on social media, WhatsApp or text"
+  },
+  "name": {
+    "no": "Falske jobbtilbud: enkelt hjemmearbeid, oppdrag mot provisjon eller BankID «for å gå videre»",
+    "en": "Fake job offers: easy work from home, tasks for commission or BankID “to move forward”"
+  },
+  "how": {
+    "no": "Du får tilbud om lett arbeid hjemmefra, pakkehåndtering eller økonomiske oppdrag mot provisjon, ofte via sosiale medier eller meldingsapper. Jobben går ut på å ta imot penger på kontoen din og sende dem videre, eller å opprette mobilabonnement eller konto i ditt navn. Da blir du et «muldyr» som hvitvasker penger fra svindel, og du kan bli holdt ansvarlig. En annen variant: «Arbeidsgiveren» ringer etter en søknad og ber deg godkjenne med BankID for å komme videre i prosessen.",
+    "en": "You are offered easy work from home, parcel handling or financial tasks for commission, often through social media or messaging apps. The job is to receive money in your account and send it on, or to open a mobile subscription or account in your name. You then become a “money mule” laundering fraud money, and you can be held responsible. Another variant: the “employer” calls after an application and asks you to approve with BankID to move forward in the process."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "Et jobbtilbud med høy lønn for lite arbeid, uten intervju.",
+        "en": "A job offer with high pay for little work, with no interview."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "no": "Kontakten skjer på WhatsApp, Telegram eller sosiale medier.",
+        "en": "Contact happens on WhatsApp, Telegram or social media."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Du skal ta imot penger på kontoen og sende dem videre, eller opprette noe i ditt navn.",
+        "en": "You are to receive money in your account and pass it on, or open something in your name."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "no": "Eller du skal logge inn eller godkjenne med BankID for å «gå videre».",
+        "en": "Or you are to log in or approve with BankID to “move forward”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Hei! Vi ser at du er åpen for ekstrajobb. Vårt firma trenger betalingsassistenter i Norge: Du mottar kundebetalinger på din konto og overfører dem videre samme dag, og beholder 10 % provisjon. Kun 1–2 timer i uka. Svar JA, så sender jeg deg detaljene på WhatsApp.",
+        "en": "Hi! We see you are open to extra work. Our company needs payment assistants in Norway: you receive customer payments in your account and transfer them on the same day, keeping 10% commission. Only 1–2 hours a week. Reply YES and I’ll send you the details on WhatsApp."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "jobbtilbud ta imot penger på kontoen",
+      "enkelt hjemmearbeid provisjon",
+      "betalingsassistent jobb whatsapp",
+      "opprette abonnement i mitt navn mot betaling",
+      "jobbintervju godkjenne med bankid",
+      "pakkehåndtering hjemmefra jobb svindel",
+      "overføre penger videre som jobb"
+    ],
+    "en": [
+      "job offer to receive money in my account",
+      "easy work from home for commission",
+      "payment assistant job on whatsapp",
+      "paid to open a phone subscription in my name",
+      "asked to approve with bankid for a job interview"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "asks_for_code",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "no": [
+      "Ingen ekte jobb går ut på å ta imot og sende videre penger på din egen konto.",
+      "Høy betaling for nesten ingenting, uten intervju eller kontrakt.",
+      "En arbeidsgiver ber aldri om BankID-godkjenning for å gå videre i en søknad.",
+      "Å stille kontoen sin til disposisjon er straffbart, selv om du ikke visste hvor pengene kom fra."
+    ],
+    "en": [
+      "No real job involves receiving and passing on money through your own account.",
+      "High pay for almost nothing, with no interview or contract.",
+      "An employer never asks for BankID approval to move forward in an application.",
+      "Letting your account be used is a crime, even if you didn’t know where the money came from."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Si nei og ikke oppgi kontonummer, BankID eller ID-kort.",
+      "Har du tatt imot eller sendt videre penger? Kontakt banken med en gang.",
+      "Anmeld til politiet, og fortell det til noen du stoler på."
+    ],
+    "en": [
+      "Say no and don’t give your account number, BankID or ID card.",
+      "Did you receive or pass on money? Contact your bank straight away.",
+      "Report it to the police, and tell someone you trust."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Telia Norges kvartalsvise svindelrapport: forhindret tap på 285 millioner kroner i andre kvartal – norske ungdommer brukt som mellomledd",
+      "publisher": "Telia Norge (NTB Kommunikasjon)",
+      "url": "https://kommunikasjon.ntb.no/pressemelding/18979266/",
+      "date": "2026-07-03"
+    },
+    {
+      "title": "Status og tiltak mot svindel for 2026",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/tema/okonomisk-kriminalitet/svindel/status-og-tiltak-mot-svindel-for-2026/",
+      "date": "2026-04-08"
+    },
+    {
+      "title": "– Vær obs på at DNB og andres navn ofte blir misbrukt",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/vaer-obs-pa-svindel-pa-sms--whatsapp-og-e-post",
+      "date": "2025-10-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

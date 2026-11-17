@@ -1,0 +1,136 @@
+{
+  "id": "se/marketplace-fake-buyer-link",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "online"
+  ],
+  "sender": {
+    "sv": "En ”köpare” på Blocket, Tradera, Facebook Marketplace eller Vinted",
+    "en": "A “buyer” on Blocket, Tradera, Facebook Marketplace or Vinted"
+  },
+  "name": {
+    "sv": "Falsk köpare på Blocket: betalningslänk, frakt, försäkringsavgift",
+    "en": "Fake buyer on Blocket: sends a link so you can “receive payment” or arrange shipping"
+  },
+  "how": {
+    "sv": "Du säljer något på en köp- och säljsajt. En köpare vill ha varan direkt, utan att se den, och föreslår frakt med ett visst bud. Sedan kommer en länk, ofta i en kopia av sajtens eller fraktbolagets utseende, där du ska ”ta emot pengarna”, betala en försäkrings- eller fraktavgift, ange kortuppgifter eller legitimera dig med BankID. I stället töms ditt konto.",
+    "en": "You are selling something on a buy-and-sell site. A buyer wants the item straight away, without seeing it, and suggests shipping with a particular courier. Then comes a link, often a copy of the site’s or courier’s look, where you must “receive the money”, pay an insurance or shipping fee, enter card details or identify yourself with BankID. Instead your account is emptied."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "En köpare vill köpa direkt utan att se varan och föreslår frakt.",
+        "en": "A buyer wants to buy at once without seeing the item and suggests shipping."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sv": "Du får en länk för att ta emot betalningen eller boka frakten.",
+        "en": "You get a link to receive the payment or book the shipping."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sv": "Sidan vill ha kortuppgifter, BankID eller en försäkringsavgift.",
+        "en": "The page wants card details, BankID or an insurance fee."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sv": "Det är bråttom: annars går köpet förlorat.",
+        "en": "It’s urgent: otherwise the sale is lost."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej! Jag tar soffan för ditt pris. Jag bor i Göteborg så jag har redan betalat via säker frakt, budet hämtar i morgon. Du behöver bara bekräfta mottagandet av pengarna här: [länk] Tack!",
+        "en": "Hi! I’ll take the sofa at your price. I live in Gothenburg so I’ve already paid via secure shipping; the courier collects tomorrow. You just need to confirm receipt of the money here: [länk] Thanks!"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "köpare skickade länk blocket",
+      "ta emot betalningen länk",
+      "säker frakt köpare betalat",
+      "försäkringsavgift budfirma säljare",
+      "bekräfta mottagandet pengarna länk",
+      "köpare frakta utan titta",
+      "kortuppgifter ta emot pengar"
+    ],
+    "en": [
+      "buyer sent me a link to receive payment",
+      "fake buyer on blocket",
+      "pay an insurance fee to the courier as seller",
+      "buyer already paid via secure shipping link",
+      "asked for card details to get paid for my item",
+      "buyer wants shipping without seeing it"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "sv": [
+      "Klicka aldrig på en länk som en köpare skickar.",
+      "Du behöver aldrig kortuppgifter eller BankID för att ta emot pengar.",
+      "Som säljare väljer du fraktsätt; köparen betalar frakten, inte du.",
+      "Betala aldrig en försäkringsavgift till ett bud som ska hämta varan."
+    ],
+    "en": [
+      "Never click a link a buyer sends you.",
+      "You never need card details or BankID to receive money.",
+      "As the seller you choose the shipping; the buyer pays for it, not you.",
+      "Never pay an insurance fee to a courier who will collect the item."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Avbryt kontakten och rapportera köparen till sajten.",
+      "Har du lämnat kortuppgifter eller använt BankID? Ring banken direkt och spärra.",
+      "Spara chatt och länk och polisanmäl."
+    ],
+    "en": [
+      "End contact and report the buyer to the site.",
+      "Did you give card details or use BankID? Call your bank straight away and block.",
+      "Save the chat and link and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/polisen-anmalan",
+    "se/polisen-114-14"
+  ],
+  "sources": [
+    {
+      "title": "Var kritisk när du handlar via nätet",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nord/2025/december/bedragerier/",
+      "date": "2025-12-07"
+    },
+    {
+      "title": "Annonsbedrägeri",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/annonsbedrageri",
+      "date": "2026-07-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "se/marketplace-fake-seller"
+  ]
+}

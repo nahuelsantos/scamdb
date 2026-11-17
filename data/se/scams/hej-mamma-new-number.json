@@ -1,0 +1,124 @@
+{
+  "id": "se/hej-mamma-new-number",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "sv": "Ett okänt nummer som säger sig vara ditt barn eller barnbarn",
+    "en": "An unknown number claiming to be your child or grandchild"
+  },
+  "name": {
+    "sv": "”Hej mamma, nytt nummer”: barnet behöver pengar, Swish",
+    "en": "“Hi mum, new number”: the child needs money by Swish"
+  },
+  "how": {
+    "sv": "Ett sms eller WhatsApp-meddelande från ett okänt nummer: ”Hej mamma/pappa, min telefon gick sönder, det här är mitt nya nummer.” Efter lite prat kommer frågan om pengar till en ny telefon, en räkning eller en skuld som måste betalas i dag, oftast via Swish till ett annat nummer. Beloppen är från några tusen till tiotusentals kronor.",
+    "en": "A text or WhatsApp message from an unknown number: “Hi mum/dad, my phone broke, this is my new number.” After some chat comes the request for money for a new phone, a bill or a debt that must be paid today, usually by Swish to another number. The amounts range from a few thousand to tens of thousands of kronor."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "”Hej mamma, jag har fått nytt nummer, spara det.”",
+        "en": "“Hi mum, I’ve got a new number, save it.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "sv": "Barnet kan inte prata i telefon just nu, bara skriva.",
+        "en": "The child can’t talk on the phone right now, only text."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "En räkning eller en ny telefon måste betalas i dag.",
+        "en": "A bill or a new phone must be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sv": "Swisha till ett nummer som tillhör ”en kompis” eller ”firman”.",
+        "en": "Swish to a number belonging to “a friend” or “the company”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej mamma! Tappade mobilen i går så det här är mitt nya nummer, du kan radera det gamla. Har ett problem, måste betala en faktura i dag men kommer inte åt mitt BankID på nya telefonen. Kan du swisha 6 400 till min kompis så fixar jag tillbaka det i helgen? Kan inte ringa nu, sitter i möte ❤️",
+        "en": "Hi mum! Lost my phone yesterday so this is my new number, you can delete the old one. I have a problem, I have to pay an invoice today but can’t get into my BankID on the new phone. Can you swish 6,400 to my friend and I’ll pay it back at the weekend? Can’t call now, I’m in a meeting ❤️"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "hej mamma nytt nummer",
+      "hej pappa ny telefon",
+      "mobilen gick sönder nya numret",
+      "swisha kompis faktura idag",
+      "radera gamla numret",
+      "barnbarn nytt nummer pengar",
+      "bankid nya telefonen"
+    ],
+    "en": [
+      "hi mum new number text",
+      "message from my child on a new number",
+      "phone broke this is my new number",
+      "asked me to swish money to a friend",
+      "grandchild new number needs money",
+      "can t call only text pay bill today"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sv": [
+      "Ett nytt nummer plus en begäran om pengar är det klassiska tecknet.",
+      "”Kan inte prata just nu” betyder att du inte ska kunna höra rösten.",
+      "Pengarna ska till någon annans nummer, inte till barnet."
+    ],
+    "en": [
+      "A new number plus a request for money is the classic sign.",
+      "“Can’t talk right now” means you can’t hear the voice.",
+      "The money is to go to someone else’s number, not to your child."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Ring ditt barn på det gamla, vanliga numret.",
+      "Ställ en kontrollfråga som bara ni två kan svaret på.",
+      "Har du swishat? Kontakta banken direkt och polisanmäl."
+    ],
+    "en": [
+      "Call your child on the old, usual number.",
+      "Ask a control question only the two of you know the answer to.",
+      "Did you send money by Swish? Contact your bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/polisen-anmalan",
+    "se/polisen-114-14"
+  ],
+  "sources": [
+    {
+      "title": "Ökning av bedrägeriförsök av typen ”sms från barn”",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nationell/2026/augusti/okning-av-bedrageriforsok-av-typen-sms-fran-barn/",
+      "date": "2026-08-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,155 @@
+{
+  "id": "fi/bank-sms-verify-details",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fi": "S-Pankki, OP, Nordea, Danske Bank, Aktia tai muu pankki (viesti tavallisesta numerosta tai sähköpostista)",
+    "en": "S-Pankki, OP, Nordea, Danske Bank, Aktia or another bank (the message comes from an ordinary number or email)"
+  },
+  "name": {
+    "fi": "Pankin nimissä tekstiviesti: \"vahvista asiakastietosi, muuten palvelu estyy\"",
+    "en": "Text in a bank’s name: “confirm your customer details or your service will be blocked”"
+  },
+  "how": {
+    "fi": "Viestissä väitetään, että sinun pitää vahvistaa tai päivittää asiakastietosi, tehdä tietoturvapäivitys tai vahvistaa tili, tai että sinulle on tulossa palautus tai hyvitys. Muuten palvelun käyttö estyy tai tunnukset suljetaan. Linkki vie pankin näköiselle sivulle, joka kalastelee pankkitunnukset, korttitiedot tai muut henkilötiedot. Viesti tulee usein tavallisesta suomalaisesta tai ulkomaisesta numerosta, ei pankin lähettäjänimestä.",
+    "en": "The message says you must confirm or update your customer details, do a security update or verify your account, or that a refund or credit is waiting for you. Otherwise your service will be blocked or your codes closed. The link leads to a page that looks like the bank’s and phishes your online banking codes, card details or other personal data. The message often comes from an ordinary Finnish or foreign number, not from the bank’s sender name."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Tekstiviesti tai sähköposti pankin nimissä, usein tavallisesta numerosta.",
+        "en": "A text or email in the bank’s name, often from an ordinary number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Asiakastiedot pitää vahvistaa pian, muuten palvelu estyy.",
+        "en": "Your details must be confirmed soon or the service will be blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Linkki vie kirjautumissivulle, joka näyttää pankin sivulta.",
+        "en": "The link leads to a login page that looks like the bank’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Sivu kysyy pankkitunnuksia, korttitietoja tai vahvistuskoodia.",
+        "en": "The page asks for online banking codes, card details or a confirmation code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "OP: Asiakastietojesi tarkistus on vanhentunut. Päivitä tiedot 24 tunnin kuluessa, jotta verkkopankkisi käyttö ei keskeydy: [linkki]",
+        "en": "OP: Your customer details check has expired. Update your details within 24 hours so your online banking is not interrupted: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "vahvista asiakastietosi pankki",
+      "päivitä asiakastiedot linkki",
+      "pankin nimissä tekstiviesti",
+      "palvelun käyttö estyy",
+      "verkkopankki suljetaan viesti",
+      "tunnukset suljetaan vahvista",
+      "s-pankin nimissä huijausviesti",
+      "op:n nimissä tekstiviesti",
+      "nordean nimissä viesti",
+      "hyvitysmaksu vahvista linkistä",
+      "tietoturvapäivitys pankki linkki",
+      "tilin vahvistaminen tekstiviesti"
+    ],
+    "en": [
+      "text from my bank asking to confirm details",
+      "bank account will be blocked link",
+      "update customer information sms",
+      "refund from the bank click link",
+      "bank login page from a text",
+      "security update bank message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fi": [
+      "Pankki ei lähetä tekstiviestissä linkkiä kirjautumissivulle, jolla kysytään pankkitunnuksia tai korttitietoja.",
+      "Pankin viesti tavallisesta puhelinnumerosta on huijaus; pankkien aidot viestit tulevat pankin omalla lähettäjänimellä.",
+      "Lähettäjänä \"Roskaposti\" tai \"Tuntematon\" tarkoittaa, ettei lähettäjää voitu varmistaa.",
+      "Kiire ja uhka palvelun sulkemisesta ovat kalastelun tuntomerkkejä."
+    ],
+    "en": [
+      "A bank doesn’t send a link in a text to a login page that asks for codes or card details.",
+      "A bank message from an ordinary phone number is a scam; real bank texts come under the bank’s own sender name.",
+      "“Roskaposti” (spam) or “Tuntematon” (unknown) as sender means the sender could not be verified.",
+      "Urgency and the threat of closing your service are signs of phishing."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Älä avaa linkkiä. Kirjaudu palveluun vain itse kirjoittamalla osoite tai omasta sovelluksesta.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Don’t open the link. Log in to the service only yourself, by typing the address or using its own app.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Rikolliset lähettävät huijaustekstiviestejä S-Pankin nimissä",
+      "publisher": "S-Pankki Oyj (STT Info)",
+      "url": "https://www.sttinfo.fi/tiedote/72412438/rikolliset-lahettavat-huijaustekstiviesteja-s-pankin-nimissa?lang=fi",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 40/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-402026",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 42/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-422026",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "Varo! Tämä \"hyvitysmaksua\" lupaileva viesti on huijaus",
+      "publisher": "MTV Uutiset",
+      "url": "https://www.mtvuutiset.fi/artikkeli/varo-tama-hyvitysmaksua-lupaileva-viesti-on-huijaus/9299850",
+      "date": "2026-02-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "fi/mobilepay-verify-identity"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "is/goods-not-received-online",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "is": "Netverslun eða seljandi á sölusíðu",
+    "en": "Online shop or seller on a marketplace"
+  },
+  "name": {
+    "is": "Vara greidd á netinu sem kemur aldrei",
+    "en": "Goods paid for online that never arrive"
+  },
+  "how": {
+    "is": "Fölsk netverslun eða seljandi á sölusíðu eða samfélagsmiðli býður vöru á góðu verði, oft í kringum stóra tilboðsdaga. Þú greiðir með korti eða millifærslu fyrirfram en varan kemur aldrei, eða seljandinn tefur afhendingu þar til frestur til endurgreiðslu er liðinn. Stundum er tilboðið líka notað til að ná kortaupplýsingum. Þetta er ein algengasta tegund netsvika sem íslenskum banka berst.",
+    "en": "A fake online shop or a seller on a marketplace or social media offers goods at a good price, often around big sale days. You pay by card or transfer in advance, but the goods never come, or the seller delays delivery until the refund window has passed. Sometimes the offer is just a way to get card details. It is one of the most common fraud types reported to an Icelandic bank."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Tilboð á netinu eða samfélagsmiðli virðist of gott til að hafna.",
+        "en": "An offer online or on social media seems too good to turn down."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "is": "Seljandinn vill greiðslu fyrirfram með millifærslu eða korti á síðu sem þú þekkir ekki.",
+        "en": "The seller wants payment in advance by transfer or card on a site you don't know."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "is": "Afhending tefst ítrekað með nýjum afsökunum.",
+        "en": "Delivery is delayed again and again with new excuses."
+      }
+    },
+    {
+      "text": {
+        "is": "Varan kemur aldrei og seljandinn hættir að svara.",
+        "en": "The goods never arrive and the seller stops replying."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Síðasti dagur útsölunnar! Merkjaúlpur á 70% afslætti, aðeins 9.990 kr. Takmarkað magn, frí sending til Íslands. Pantaðu núna: [hlekkur]",
+        "en": "Last day of the sale! Designer parkas 70% off, only ISK 9,990. Limited stock, free shipping to Iceland. Order now: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "pantaði á netinu og fékk ekkert",
+      "varan kom aldrei",
+      "seljandi hættur að svara",
+      "netverslun á facebook sem er svik",
+      "borgaði fyrirfram á sölusíðu",
+      "afhending tefst alltaf"
+    ],
+    "en": [
+      "ordered online and got nothing",
+      "the item never arrived",
+      "seller stopped replying",
+      "Facebook shop that is a scam",
+      "paid in advance on a marketplace",
+      "delivery keeps getting delayed"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "is": [
+      "Mjög lágt verð, „takmarkað magn“ og niðurtalning.",
+      "Ný vefverslun án raunverulegra umsagna eða upplýsinga um fyrirtækið.",
+      "Krafa um millifærslu fyrirfram til einstaklings."
+    ],
+    "en": [
+      "A very low price, “limited stock” and a countdown.",
+      "A new web shop with no real reviews or company details.",
+      "A demand for an advance bank transfer to a private person."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Kannaðu verslunina og seljandann áður en þú greiðir og notaðu kort frekar en millifærslu.",
+      "Ef varan kemur ekki, hafðu strax samband við bankann eða kortafyrirtækið og biddu um endurkröfu.",
+      "Tilkynntu málið til lögreglu."
+    ],
+    "en": [
+      "Check the shop and the seller before paying, and use a card rather than a transfer.",
+      "If the goods don't arrive, contact your bank or card company straight away and ask for a chargeback.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police"
+  ],
+  "sources": [
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

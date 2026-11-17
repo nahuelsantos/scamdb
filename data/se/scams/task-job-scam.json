@@ -1,0 +1,124 @@
+{
+  "id": "se/task-job-scam",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "sv": "En ”rekryterare” i sociala medier, på WhatsApp eller Telegram",
+    "en": "A “recruiter” on social media, WhatsApp or Telegram"
+  },
+  "name": {
+    "sv": "Jobbedrägeri: gilla, recensera, uppdrag kräver insättning",
+    "en": "Job scam: earn money liking, reviewing or “buying” products, but pay in first"
+  },
+  "how": {
+    "sv": "En annons eller ett meddelande erbjuder ett enkelt jobb hemifrån en timme om dagen: gilla och kommentera inlägg, recensera produkter eller göra ”uppdrag”. Snart flyttas kontakten till Telegram eller WhatsApp, du läggs i en grupp och får små utbetalningar som ”provision”. Sedan måste du sätta in egna pengar, ofta krypto, för att låsa upp större uppdrag eller få ut din lön. Du kan också dras in i penningtvätt om du tar emot och skickar vidare pengar.",
+    "en": "An ad or message offers an easy job from home for an hour a day: like and comment on posts, review products or do “tasks”. Soon the contact moves to Telegram or WhatsApp, you are added to a group and get small payouts as “commission”. Then you must deposit your own money, often crypto, to unlock bigger tasks or get your pay. You can also be drawn into money laundering if you receive and pass on money."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Ett jobberbjudande: snabba pengar för enkla uppgifter hemifrån.",
+        "en": "A job offer: quick money for simple tasks from home."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sv": "Kontakten flyttas till Telegram eller WhatsApp, du läggs i en grupp.",
+        "en": "Contact moves to Telegram or WhatsApp; you’re added to a group."
+      }
+    },
+    {
+      "text": {
+        "sv": "Små utbetalningar först, sedan måste du betala in för att fortsätta eller få ut lönen.",
+        "en": "Small payouts first, then you must pay in to continue or get your pay."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sv": "Gruppen pressar dig att betala större belopp.",
+        "en": "The group pressures you to pay bigger amounts."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej! Vi söker personer som vill jobba flexibelt hemifrån, 30–60 minuter om dagen. Du gillar och betygsätter produkter åt våra partnerbutiker och tjänar 800–2 000 kr per dag. Ingen erfarenhet krävs. Vill du veta mer? Lägg till vår handledare på Telegram så skickar vi dagens första uppdrag.",
+        "en": "Hi! We’re looking for people who want to work flexibly from home, 30–60 minutes a day. You like and rate products for our partner shops and earn 800–2,000 kr a day. No experience needed. Want to know more? Add our supervisor on Telegram and we’ll send today’s first task."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "jobb hemifrån gilla videor betalt",
+      "uppdrag betygsätta produkter provision",
+      "jobberbjudande telegram grupp",
+      "betala in låsa uppdrag",
+      "flexibelt deltidsjobb mobilen",
+      "lönen kräver insättning krypto",
+      "recensera produkter tjäna pengar"
+    ],
+    "en": [
+      "job liking videos for money",
+      "task job rating products commission",
+      "recruiter moved me to a telegram group",
+      "had to deposit money to unlock tasks",
+      "work from home one hour a day offer",
+      "pay crypto to withdraw my earnings"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sv": [
+      "En riktig arbetsgivare kräver aldrig att du betalar för att få jobba eller få lön.",
+      "Jobb utan intervju, anställningsavtal eller chef är en varningssignal.",
+      "Ta aldrig emot och skicka vidare pengar åt okända."
+    ],
+    "en": [
+      "A real employer never asks you to pay to work or to get your pay.",
+      "A job with no interview, contract or manager is a warning sign.",
+      "Never receive and pass on money for strangers."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Betala inget mer och lämna gruppen.",
+      "Skicka aldrig ID-kopior, bank- eller kortuppgifter och använd inte ditt BankID åt dem.",
+      "Kontakta banken om du har betalat, och polisanmäl.",
+      "Anmäl annonsen till polisen."
+    ],
+    "en": [
+      "Pay nothing more and leave the group.",
+      "Never send ID copies, bank or card details, and don’t use your BankID for them.",
+      "Contact your bank if you paid, and report it to the police.",
+      "Report the ad to the police."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Varning för falska jobbannonser om snabba pengar",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nationell/2026/januari/varning-for-falska-jobbannonser-om-snabba-pengar/",
+      "date": "2026-01-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

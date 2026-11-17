@@ -1,0 +1,152 @@
+{
+  "id": "fi/parking-fee-sms",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "fi": "EasyPark tai muu pysäköintipalvelu (viesti eri numeroista eri puolilta maailmaa)",
+    "en": "EasyPark or another parking service (messages from changing numbers around the world)"
+  },
+  "name": {
+    "fi": "Pysäköintimaksu maksamatta: \"maksa heti tai siirtyy perintään\"",
+    "en": "Unpaid parking fee: “pay now or it goes to debt collection”"
+  },
+  "how": {
+    "fi": "Tekstiviestissä väitetään, että sinulla on maksamaton pysäköintimaksu, joka pitää maksaa kiireellisesti, muuten se siirtyy perintään tai siihen tulee lisämaksu. Linkki vie maksusivulle, joka kalastelee pankkitunnuksia tai korttitietoja. Viestit tulevat eri numeroista eri puolilta maailmaa ja linkit vaihtuvat, mutta idea on sama. Kyberturvallisuuskeskukselle ilmoitettiin syksyllä 2026 valtava määrä tällaisia viestejä.",
+    "en": "The text says you have an unpaid parking fee that must be paid urgently, or it will go to debt collection or get a surcharge. The link leads to a payment page that phishes online banking codes or card details. The messages come from changing numbers around the world and the links keep changing, but the idea is the same. The NCSC received a huge number of these messages in autumn 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Tekstiviesti pysäköintipalvelun nimissä maksamattomasta maksusta.",
+        "en": "A text in a parking service’s name about an unpaid fee."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Maksu pitää hoitaa heti, muuten perintä tai lisämaksu.",
+        "en": "It must be paid now, or debt collection or a surcharge follows."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Linkki vie maksusivulle.",
+        "en": "The link leads to a payment page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Sivu pyytää pankkitunnuksia tai korttitietoja.",
+        "en": "The page asks for banking codes or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "EasyPark: Ajoneuvollesi on kirjattu maksamaton pysäköinti 4,80 €. Suorita maksu tänään välttääksesi 40 euron muistutusmaksun: [linkki]",
+        "en": "EasyPark: An unpaid parking session of €4.80 is registered to your vehicle. Pay today to avoid a €40 reminder fee: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "maksamaton pysäköintimaksu",
+      "pysäköintimaksu tekstiviesti linkki",
+      "easypark huijausviesti",
+      "easyparkin nimissä viesti",
+      "pysäköinti siirtyy perintään",
+      "pysäköintimaksu perintätoimisto",
+      "maksamaton pysäköinti lisämaksu",
+      "pysäköintivirhe maksa heti",
+      "pysäköinti perintään",
+      "perintäkulut pysäköinti",
+      "pysäköintimaksu rästissä",
+      "pysäköinnin maksu jäänyt maksamatta",
+      "pysäköintimaksun eräpäivä"
+    ],
+    "en": [
+      "unpaid parking fee text",
+      "easypark scam message",
+      "parking fine sent to debt collection",
+      "pay parking fee link",
+      "parking surcharge sms"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "fi": [
+      "Pysäköintipalvelu ei pyydä pankkitunnuksia tekstiviestin linkin kautta.",
+      "Viesti tulee tavallisesta tai ulkomaisesta numerosta.",
+      "Pieni summa ja kova kiire ovat tyypillisiä kalastelulle."
+    ],
+    "en": [
+      "A parking service doesn’t ask for banking codes through a link in a text.",
+      "The message comes from an ordinary or foreign number.",
+      "A small amount and heavy urgency are typical of phishing."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Tarkista mahdolliset maksut pysäköintisovelluksesta tai palvelun omilta sivuilta.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Check any fees in the parking app or on the service’s own website.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 45/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-452026",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 46/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-462026",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 44/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-442026",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Poliisin nimissä liikkuu sakkohuijaus",
+      "publisher": "Suomen Telemarkkinointiliitto ry (STT Info)",
+      "url": "https://www.sttinfo.fi/tiedote/72275024/poliisin-nimissa-liikkuu-sakkohuijaus",
+      "date": "2026-09-01"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "fi/traffic-fine-phishing"
+  ]
+}

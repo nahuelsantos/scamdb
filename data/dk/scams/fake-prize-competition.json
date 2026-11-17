@@ -1,0 +1,131 @@
+{
+  "id": "dk/fake-prize-competition",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "sms",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "da": "En kendt butik, et brand eller en “vindertjeneste”",
+    "en": "A well-known shop, a brand or a “winner service”"
+  },
+  "name": {
+    "da": "Falsk konkurrence: vundet præmie, betal gebyr",
+    "en": "Fake competition: “you've won” – pay shipping or enter card details"
+  },
+  "how": {
+    "da": "Du får en sms, mail eller et opslag på sociale medier om, at du har vundet en telefon, et gavekort eller en anden præmie – ofte i navnet på en kendt dansk butik. For at få præmien skal du betale et lille gebyr for fragt eller “bekræfte” dig med kortoplysninger. I virkeligheden tegner du et dyrt abonnement, eller dine kortdata bliver misbrugt. Politiet registrerer hvert år anmeldelser om falske konkurrencer.",
+    "en": "You get a text, email or social media post saying you've won a phone, a gift card or another prize – often in the name of a well-known Danish shop. To get the prize you must pay a small fee for shipping or “confirm” yourself with card details. In reality you sign up for an expensive subscription or your card data is misused. Police record reports about fake competitions every year."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Besked om en gevinst i en konkurrence, du ikke husker at have deltaget i.",
+        "en": "Message about winning a competition you don't remember entering."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "da": "Præmien skal hentes inden for kort tid.",
+        "en": "The prize must be claimed within a short time."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Et link til en side, hvor du skal bekræfte din gevinst.",
+        "en": "A link to a page where you must confirm your win."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Du skal betale et lille gebyr eller taste kortoplysninger.",
+        "en": "You must pay a small fee or enter card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Tillykke! 🎉 Dit nummer er udtrukket som vinder af et gavekort på 5.000 kr. i vores jubilæumskonkurrence. Du skal blot betale 19 kr. i ekspeditionsgebyr. Gevinsten skal indløses inden kl. 23:59: [link]",
+        "en": "Congratulations! 🎉 Your number has been drawn as the winner of a 5,000-kroner gift card in our anniversary competition. You just need to pay a 19-kroner handling fee. The prize must be redeemed before 23:59: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "vundet gavekort sms betal gebyr",
+      "falsk konkurrence facebook butik",
+      "udtrukket vinder link",
+      "gevinst fragt gebyr",
+      "jubilæumskonkurrence svindel",
+      "præmie indløs inden midnat"
+    ],
+    "en": [
+      "won gift card text pay fee",
+      "fake competition facebook shop",
+      "drawn as winner link",
+      "prize shipping fee card details",
+      "claim prize before midnight"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "da": [
+      "Du kan ikke vinde en konkurrence, du ikke har deltaget i.",
+      "En rigtig gevinst kræver ikke, at du betaler eller taster kortoplysninger.",
+      "En kort frist skal få dig til at handle uden at tænke."
+    ],
+    "en": [
+      "You can't win a competition you didn't enter.",
+      "A real prize doesn't require you to pay or enter card details.",
+      "A short deadline is meant to make you act without thinking."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Klik ikke, og svar ikke.",
+      "Tjek på butikkens officielle side, om konkurrencen findes.",
+      "Har du tastet kortoplysninger? Spær kortet, og hold øje med abonnementer på kontoen.",
+      "Anmeld beskeden til politiet."
+    ],
+    "en": [
+      "Don't click and don't reply.",
+      "Check on the shop's official site whether the competition exists.",
+      "Typed in card details? Block the card and watch your account for subscriptions.",
+      "Report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "dk/nets-kortspaerring",
+    "dk/your-bank",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Sådan spotter du falske beskeder",
+      "publisher": "Ældre Sagen (artikel fra sikkerdigital.dk)",
+      "url": "https://www.aeldresagen.dk/viden-og-raadgivning/hverdagsliv/sikkerhed-paa-nettet/undgaa-svindel/saadan-spotter-du-falske-beskeder",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

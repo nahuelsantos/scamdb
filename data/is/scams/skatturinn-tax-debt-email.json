@@ -1,0 +1,134 @@
+{
+  "id": "is/skatturinn-tax-debt-email",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "is": "„Ríkisskattstjóri“ / „Innheimta ríkissjóðs“",
+    "en": "“Directorate of Internal Revenue” / “State debt collection”"
+  },
+  "name": {
+    "is": "Falskur tölvupóstur um skattskuld",
+    "en": "Fake email about an unpaid tax debt"
+  },
+  "how": {
+    "is": "Tölvupóstur í nafni ríkisskattstjóra eða innheimtu ríkissjóðs segir að þú skuldir skatt og þurfir að ganga frá greiðslu strax. Þú átt að smella á hlekk, skrá þig inn með rafrænum skilríkjum og borga. Netfang sendandans tengist Skattinum ekki og síðan sem opnast er ekki Ísland.is. Raunverulega skuldastöðu við ríkissjóð sérðu á Mínum síðum á Ísland.is.",
+    "en": "An email in the name of the tax directorate or state debt collection says you owe tax and must pay at once. You are told to click a link, log in with your electronic ID and pay. The sender's address has nothing to do with Skatturinn and the page that opens is not Ísland.is. Your real debt to the state is shown on My Pages at Ísland.is."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Tölvupóstur segir að þú skuldir skatt eða opinber gjöld.",
+        "en": "An email says you owe tax or public charges."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Hótað er innheimtuaðgerðum ef ekki er greitt strax.",
+        "en": "Collection action is threatened unless you pay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Hlekkur vísar á síðu sem biður um innskráningu með rafrænum skilríkjum.",
+        "en": "A link goes to a page asking for an electronic ID login."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "is": "Eftir innskráningu er beðið um greiðslu eða kortaupplýsingar.",
+        "en": "After logging in you are asked to pay or give card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Efni: Krafa vegna ógreiddra opinberra gjalda\nSamkvæmt skrám okkar er ógreidd skattskuld á kennitölu þinni. Til að forðast innheimtuaðgerðir skaltu skrá þig inn með rafrænum skilríkjum og ganga frá greiðslu: [hlekkur]\nInnheimtusvið ríkisskattstjóra",
+        "en": "Subject: Claim for unpaid public charges\nOur records show an unpaid tax debt on your ID number. To avoid collection action, log in with your electronic ID and complete the payment: [link]\nDirectorate of Internal Revenue, collections"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "tölvupóstur um skattskuld",
+      "skulda skatt samkvæmt pósti",
+      "innheimtuaðgerðir ef ég borga ekki",
+      "skrá mig inn til að greiða skattskuld",
+      "ógreidd opinber gjöld í tölvupósti",
+      "ríkisskattstjóri krefst greiðslu"
+    ],
+    "en": [
+      "email about a tax debt",
+      "email says I owe tax",
+      "collection action if I don't pay",
+      "log in to pay a tax debt",
+      "unpaid public charges by email",
+      "tax directorate demanding payment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "is": [
+      "Skuld sem þú áttir ekki von á og á að greiða í gegnum hlekk.",
+      "Netfang sendanda er ekki frá Skattinum og síðan er ekki island.is.",
+      "Málvillur, rangt heimilisfang eða einkennilegt orðalag."
+    ],
+    "en": [
+      "A debt you weren't expecting, to be paid through a link.",
+      "The sender's address isn't Skatturinn's and the page isn't island.is.",
+      "Spelling mistakes, a wrong postal address or odd wording."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Smelltu ekki á hlekkinn; skoðaðu skuldastöðu þína á Mínum síðum á Ísland.is.",
+      "Ef þú skráðir þig inn eða greiddir, hringdu strax í bankann.",
+      "Áframsendu póstinn á CERT-IS og lögregluna og eyddu honum."
+    ],
+    "en": [
+      "Don't click; check what you owe on My Pages at Ísland.is.",
+      "If you logged in or paid, call your bank at once.",
+      "Forward the email to CERT-IS and the police, then delete it."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/cert-is"
+  ],
+  "sources": [
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Svikapóstar í nafni Skattsins herja á landsmenn",
+      "publisher": "Skatturinn",
+      "url": "https://www.skatturinn.is/um-rsk/frettir-og-tilkynningar/svikapostar-i-nafni-skattsins-herja-a-landsmenn",
+      "date": "2025-09-23"
+    },
+    {
+      "title": "Netsvik",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/netsvik",
+      "date": "2025-09-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

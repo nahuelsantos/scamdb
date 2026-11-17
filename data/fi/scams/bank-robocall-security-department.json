@@ -1,0 +1,151 @@
+{
+  "id": "fi/bank-robocall-security-department",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "fi": "Nauhoitettu robottipuhelu pankin nimissä, usein ulkomaisesta numerosta",
+    "en": "A recorded robocall in a bank’s name, often from a foreign number"
+  },
+  "name": {
+    "fi": "Robottihuijauspuhelu: \"paina 1, niin yhdistämme pankin turvallisuusosastolle\"",
+    "en": "Robocall scam: “press 1 to be connected to the bank’s security department”"
+  },
+  "how": {
+    "fi": "Puhelu alkaa nauhoitetulla tiedotteella: tililläsi on epäilyttävä tilisiirto, luvaton kirjautuminen tai muu ongelma. Sinua kehotetaan painamaan numeroa, jolloin puhelu yhdistyy rikolliselle, joka esittää pankin työntekijää tai teknistä tukea. Hän painostaa kiireellä ja yrittää saada pankkitunnuksesi, tunnistautumiskoodisi tai korttitietosi, pyytää hyväksymään jotain sovelluksessa tai asentamaan etähallintaohjelman. Samaa kaavaa on käytetty myös maksupalvelun nimissä \"maksamattoman laskun\" varjolla.",
+    "en": "The call starts with a recorded notice: there is a suspicious transfer, an unauthorised login or another problem with your account. You are told to press a number, and the call is put through to a criminal posing as a bank employee or tech support. They pressure you and try to get your online banking codes, identification codes or card details, ask you to approve something in the app or install a remote-access program. The same pattern has also been used in a payment service’s name over an “unpaid invoice”."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Nauhoite kertoo epäilyttävästä tilisiirrosta tai luvattomasta kirjautumisesta.",
+        "en": "A recording reports a suspicious transfer or an unauthorised login."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Sinua pyydetään painamaan numeroa, jotta pääset \"turvallisuusosastolle\".",
+        "en": "You are asked to press a number to reach the “security department”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Soittaja pyytää tunnuksia, koodia tai hyväksyntää sovelluksessa.",
+        "en": "The caller asks for codes, a code or an approval in the app."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fi": "Joskus hän pyytää asentamaan etähallintaohjelman \"tarkistusta varten\".",
+        "en": "Sometimes they ask you to install a remote-access program “for a check”."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "(nauhoite) Tämä on pankkisi turvallisuustiedote. Tililtäsi on havaittu epätavallinen siirto ulkomaille. Jos et tunnista tapahtumaa, paina yksi, niin sinut yhdistetään turvallisuusosastoomme. – Hei, täällä petostorjunnasta. Jotta voimme pysäyttää siirron, tunnistaudu nyt pankkisovellukseen ja hyväksy peruutuspyyntö, joka tulee näytölle.",
+        "en": "(recording) This is a security notice from your bank. An unusual transfer abroad has been detected on your account. If you don’t recognise it, press one to be connected to our security department. – Hello, fraud prevention here. So we can stop the transfer, please log in to your banking app now and approve the cancellation request that appears on screen."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "robottipuhelu pankin nimissä",
+      "nauhoitettu puhelu paina numeroa",
+      "paina yksi turvallisuusosasto",
+      "pankin turvallisuusosasto soitti",
+      "epäilyttävä tilisiirto puhelu",
+      "luvaton kirjautuminen tilille puhelu",
+      "robottihuijauspuhelu",
+      "huijauspuhelu pankista ulkomainen numero",
+      "petostorjunta soittaa hyväksy sovelluksessa",
+      "pankkitunnukset puhelimessa",
+      "tunnistautumiskoodi puhelimessa",
+      "maksamaton lasku nauhoite paina"
+    ],
+    "en": [
+      "robocall from my bank",
+      "recorded message press 1",
+      "bank security department called",
+      "suspicious transfer call",
+      "asked me to approve in the banking app",
+      "install remote access program caller"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "fi": [
+      "Pankki tai viranomainen ei koskaan pyydä pankkitunnuksia tai tunnistautumiskoodeja puhelimessa.",
+      "Aito pankkiasia ei ole koskaan niin kiireellinen, ettei siihen voisi palata rauhassa.",
+      "Nauhoite, joka pyytää painamaan numeroa, on huijauksen tuntomerkki.",
+      "Pankki ei pyydä asentamaan etähallintaohjelmaa."
+    ],
+    "en": [
+      "A bank or authority never asks for online banking codes or identification codes over the phone.",
+      "A real bank matter is never so urgent that you can’t come back to it calmly.",
+      "A recording asking you to press a number is a sign of a scam.",
+      "A bank does not ask you to install a remote-access program."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Katkaise puhelu. Älä paina numeroita.",
+      "Soita itse pankkisi viralliseen numeroon, jos haluat tarkistaa asian.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Hang up. Don’t press any numbers.",
+      "Call your bank’s official number yourself if you want to check.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 46/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-462026",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 3/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-32026",
+      "date": "2026-01-16"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 24/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-242026",
+      "date": "2026-06-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "fi/fake-police-safe-account"
+  ]
+}

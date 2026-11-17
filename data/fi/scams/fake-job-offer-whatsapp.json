@@ -1,0 +1,133 @@
+{
+  "id": "fi/fake-job-offer-whatsapp",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "fi": "\"Rekrytointitiimi\", TE-palvelut tai työllisyyspalvelut (WhatsApp, Telegram tai tekstiviesti)",
+    "en": "A “recruitment team”, TE Services or employment services (WhatsApp, Telegram or text)"
+  },
+  "name": {
+    "fi": "Valetyötarjous: \"helppoa etätyötä, ota yhteyttä WhatsAppissa\"",
+    "en": "Fake job offer: “easy remote work, contact us on WhatsApp”"
+  },
+  "how": {
+    "fi": "Saat pyytämättä viestin, jossa tarjotaan töitä poikkeuksellisen hyvällä palkalla tai palkkioilla, usein työllisyyspalveluiden, TE-palveluiden tai rekrytointitiimin nimissä. Sinua pyydetään jatkamaan WhatsAppissa, Telegramissa, erikoisessa sähköpostissa tai linkin kautta, ja liittymään ryhmiin. Viranomaiset eivät lähetä tällaisia viestejä eivätkä käytä WhatsAppia asiakasviestintään. Ryhmissä altistut kalastelulle ja huijauksille, joissa voidaan pyytää maksuja tai henkilötietoja.",
+    "en": "You get an unsolicited message offering work with exceptionally good pay or rewards, often in the name of employment services, TE Services or a recruitment team. You are asked to continue on WhatsApp, Telegram, an odd email address or through a link, and to join groups. Authorities don’t send such messages and don’t use WhatsApp for customer contact. In the groups you are exposed to phishing and scams that may ask for payments or personal details."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Pyytämätön työtarjous tuntemattomasta numerosta tai osoitteesta.",
+        "en": "An unsolicited job offer from an unknown number or address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Luvataan poikkeuksellisen hyvää palkkaa vähällä vaivalla.",
+        "en": "Exceptionally good pay for little effort is promised."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fi": "Sinua pyydetään jatkamaan WhatsAppissa tai Telegramissa.",
+        "en": "You are asked to continue on WhatsApp or Telegram."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Myöhemmin pyydetään maksua tai henkilötietoja.",
+        "en": "Later a payment or personal details are asked for."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Hei! Olemme rekrytointiyritys ja profiilisi sopii joustavaan osa-aikatyöhön kotoa käsin. Työ vie 30–60 min päivässä, ansio 80–300 € päivässä. Kiinnostaako? Lähetä viesti rekrytoijallemme WhatsAppissa: [linkki]",
+        "en": "Hi! We are a recruitment company and your profile fits a flexible part-time job from home. The work takes 30–60 min a day, earning €80–300 a day. Interested? Message our recruiter on WhatsApp: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "työtarjous whatsappissa",
+      "rekrytointitiimi tekstiviesti",
+      "te-palveluiden nimissä työtarjous",
+      "osa-aikatyö kotoa ansio päivässä",
+      "helppoa etätyötä hyvä palkka",
+      "telegram ryhmä työtarjous",
+      "työllisyyspalveluiden nimissä viesti",
+      "palkkio tehtävistä verkossa",
+      "rekrytoija pyytää ottamaan yhteyttä whatsapp",
+      "tehtävähuijaus"
+    ],
+    "en": [
+      "job offer on whatsapp",
+      "recruiter text part time from home",
+      "easy online work high pay",
+      "te services job scam",
+      "task scam telegram group"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "fi": [
+      "Työllisyyspalvelut eivät tarjoa töitä WhatsAppissa eivätkä tee tällaista viestintää.",
+      "Poikkeuksellisen hyvä palkka vähällä työllä on liian hyvää ollakseen totta.",
+      "Oikea työnantaja ei pyydä sinua maksamaan saadaksesi töitä."
+    ],
+    "en": [
+      "Employment services don’t offer jobs on WhatsApp and don’t send messages like this.",
+      "Exceptionally good pay for little work is too good to be true.",
+      "A real employer doesn’t ask you to pay to get work."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Älä vastaa viestiin äläkä avaa linkkejä tai liitteitä.",
+      "Tarkista lähettäjä ja ota tarvittaessa yhteyttä työllisyyspalveluihin niiden virallisten kanavien kautta.",
+      "Jos maksoit tai annoit tietojasi, ota yhteys pankkiisi ja tee rikosilmoitus."
+    ],
+    "en": [
+      "Don’t reply and don’t open links or attachments.",
+      "Check the sender and, if needed, contact employment services through their official channels.",
+      "If you paid or gave your details, contact your bank and file a police report."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Varo huijausviestejä – työllisyyspalveluiden nimissä liikkuu valheellisia yhteydenottoja",
+      "publisher": "Työmarkkinatori (Ylivieska-Kalajoki-Nivalan työllisyysalue)",
+      "url": "https://tyomarkkinatori.fi/uutiset/varo-huijausviesteja-tyollisyyspalveluiden-nimissa-liikkuu-valheellisia-yhteydenottoja",
+      "date": "2025-07-04"
+    },
+    {
+      "title": "Monenlaisia huijausviestejä liikkeellä",
+      "publisher": "Työmarkkinatori",
+      "url": "https://tyomarkkinatori.fi/uutiset/monenlaisia-huijausviesteja-liikkeella",
+      "date": "2025-07-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

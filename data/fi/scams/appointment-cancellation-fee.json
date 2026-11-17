@@ -1,0 +1,147 @@
+{
+  "id": "fi/appointment-cancellation-fee",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fi": "Hammaslääkäri, terveysasema tai \"neuvola\" (keksitty ajanvarauspalvelu)",
+    "en": "A dentist, health centre or “clinic” (a made-up booking service)"
+  },
+  "name": {
+    "fi": "Väärennetty ajanvaraus: \"peru aika, muuten veloitamme 80 €\"",
+    "en": "Fake appointment: “cancel or we charge €80”"
+  },
+  "how": {
+    "fi": "Viestissä kerrotaan sinulle varatusta ajasta hammaslääkärille, terveystarkastukseen tai muuhun vastaanottoon. Jos aika ei sovi, se pitää perua linkistä, muuten perumatta jättämisestä veloitetaan maksu. Mitään aikaa ei ole varattu: säikähtänyt vastaanottaja klikkaa peruutuslinkkiä, joka vie pankkitunnusten tai korttitietojen kalastelusivulle. Viesteissä on käytetty uskottavalta kuulostavia, mutta keksittyjä palvelunimiä, eikä niissä yleensä ole vastaanottajan nimeä tai klinikan tietoja.",
+    "en": "The message tells you about an appointment booked for you with a dentist, a health check or another clinic. If the time doesn’t suit you, you must cancel it through the link, or a no-show fee is charged. No appointment exists: the startled recipient clicks the cancellation link, which leads to a page phishing banking codes or card details. The messages use plausible-sounding but made-up service names and usually don’t include your name or the clinic’s details."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Viesti varatusta ajasta, jota et ole varannut.",
+        "en": "A message about an appointment you never booked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Perumatta jättämisestä uhataan maksulla.",
+        "en": "A fee is threatened if you don’t cancel."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Peruminen tehdään linkistä.",
+        "en": "Cancelling is done through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Linkki pyytää tunnistautumaan tai maksukortin tietoja.",
+        "en": "The link asks you to identify or for card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Muistutus: Sinulle on varattu suun terveystarkastus ti 14.10. klo 9.15. Jos aika ei sovi, peru se viimeistään vuorokautta ennen. Peruuttamattomasta käynnistä laskutamme 80 €. Hallinnoi varaustasi: [linkki]",
+        "en": "Reminder: A dental check-up is booked for you on Tue 14.10 at 9:15. If the time doesn’t suit you, cancel at least a day before. A missed appointment is billed at €80. Manage your booking: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "peru aika linkistä",
+      "perumatta jättämisestä maksu",
+      "hammaslääkärin ajanvaraus viesti",
+      "varattu aika jota en varannut",
+      "terveystarkastus peruutuslinkki",
+      "omaneuvola",
+      "80 euron maksu peruuttamaton",
+      "ajanvaraus huijausviesti",
+      "vastaanottoaika vahvista linkki",
+      "käyttämättä jätetty aika laskutetaan"
+    ],
+    "en": [
+      "appointment i never booked text",
+      "cancel appointment or pay fee",
+      "dentist booking phishing",
+      "no show fee link",
+      "health check cancellation link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fi": [
+      "Et ole varannut aikaa, eikä viestissä ole nimeäsi tai klinikan tietoja.",
+      "Ajan peruminen ei vaadi pankkitunnuksia tai korttitietoja.",
+      "Uhkaus maksusta saa toimimaan hätäisesti: juuri sitä huijari haluaa."
+    ],
+    "en": [
+      "You didn’t book anything, and the message has no name or clinic details.",
+      "Cancelling an appointment doesn’t need banking codes or card details.",
+      "The threatened fee makes you act in haste: exactly what the scammer wants."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Tarkista ajanvaraus suoraan hoitolan virallisista kanavista.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Check the booking directly through the clinic’s official channels.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 41/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-412026",
+      "date": "2026-10-09"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 37/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-372026",
+      "date": "2026-09-11"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 20/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-202026",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 4/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-42026",
+      "date": "2026-01-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

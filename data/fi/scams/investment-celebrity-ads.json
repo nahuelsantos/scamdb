@@ -1,0 +1,159 @@
+{
+  "id": "fi/investment-celebrity-ads",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "fi": "Valemainos somessa tunnetun henkilön, uutisankkurin tai median nimissä",
+    "en": "A fake social media ad using a celebrity, news anchor or news outlet"
+  },
+  "name": {
+    "fi": "Sijoitushuijaus valemainoksella: julkkis tai \"uutinen\" lupaa suuria tuottoja",
+    "en": "Investment scam via fake ads: a celebrity or “news story” promises big returns"
+  },
+  "how": {
+    "fi": "Facebookissa tai Instagramissa leviää mainos tai uutisen näköinen kuvakaappaus, jossa tunnettu henkilö, uutisankkuri tai toimittaja suosittelee sijoituspalvelua tai \"salaista\" tapaa tehdä isoja tuottoja. Jos jätät yhteystietosi, sinulle soitetaan. \"Sijoitusneuvoja\" pyytää ensin pienen summan, näyttää kasvavia tuottoja ja houkuttelee siirtämään lisää rahaa tilille, jota hallinnoidaan puolestasi. Mainoksissa käytetään luvatta tunnettujen ihmisten nimiä ja kasvoja, myös syväväärennöksiä. Rahoja ei saa takaisin.",
+    "en": "An ad or a screenshot that looks like news spreads on Facebook or Instagram, where a well-known person, news anchor or journalist recommends an investment service or a “secret” way to make big returns. If you leave your contact details, you get a call. The “investment adviser” first asks for a small amount, shows growing profits and gets you to move more money to an account managed on your behalf. The ads use famous people’s names and faces without permission, including deepfakes. The money can’t be withdrawn."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Mainos tai valeuutinen, jossa tuttu kasvo suosittelee sijoitusta.",
+        "en": "An ad or fake news story where a familiar face recommends an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Luvataan epärealistisen suuria tuottoja.",
+        "en": "Unrealistically high returns are promised."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fi": "Yhteystietojen jättämisen jälkeen \"neuvoja\" soittaa.",
+        "en": "After you leave your details, an “adviser” calls."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "fi": "Pieni aloitussumma, sitten yhä isompia siirtoja.",
+        "en": "A small first deposit, then ever larger transfers."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fi": "Joskus pyydetään asentamaan etäohjelma \"avuksi\".",
+        "en": "Sometimes you are asked to install a remote-access program “to help”."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "UUTINEN: Tunnettu juontaja paljasti suorassa lähetyksessä, miten hän kasvatti 250 euron sijoituksen kuukaudessa yli kymmeneentuhanteen. Pankit yrittivät estää tämän. Rekisteröidy ennen kuin paikat loppuvat: [linkki]",
+        "en": "NEWS: A well-known presenter revealed live on air how she grew a €250 investment to over ten thousand in a month. The banks tried to stop this. Sign up before the places run out: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "sijoitushuijaus facebook mainos",
+      "julkkis mainostaa sijoitusta",
+      "uutisankkuri valemainos sijoitus",
+      "valeuutinen sijoitus 250 euroa",
+      "sijoitusneuvoja soitti mainoksen jälkeen",
+      "kryptosijoitus huijaus",
+      "tuotot liian hyvät",
+      "sijoitusalusta ei saa rahoja ulos",
+      "syväväärennös sijoitus video",
+      "sijoitusvinkit whatsapp ryhmä",
+      "leijonan luola huijaus",
+      "kaupankäyntialusta tuotto",
+      "automaattinen kaupankäyntiohjelma",
+      "tv-juontaja suosittelee sijoitusta",
+      "ansaitse tuhansia viikossa sijoittamalla",
+      "aloitussijoitus 250",
+      "asiantuntija soittaa sijoitus"
+    ],
+    "en": [
+      "celebrity investment ad facebook",
+      "fake news article investment platform",
+      "adviser called after ad",
+      "can t withdraw my investment",
+      "deepfake investment video",
+      "crypto trading scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "keep_on_line",
+    "remote_access"
+  ],
+  "redFlags": {
+    "fi": [
+      "Tunnetut henkilöt eivät suosittele sijoituspalveluja somemainoksissa: nimiä ja kasvoja käytetään luvatta.",
+      "Epärealistisen suuret tuotot ja kiire ovat sijoitushuijauksen tuntomerkkejä.",
+      "Sijoituspalveluja saa tarjota vain toimiluvallinen yritys: tarkista toimilupa."
+    ],
+    "en": [
+      "Well-known people don’t recommend investment services in social media ads: names and faces are used without permission.",
+      "Unrealistically high returns and urgency are signs of an investment scam.",
+      "Only authorised firms may offer investment services: check the authorisation."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Älä jätä yhteystietojasi mainoksen kautta äläkä siirrä rahaa tuntemattomalle palveluntarjoajalle.",
+      "Tarkista Finanssivalvonnan varoituslista ja palveluntarjoajan toimilupa.",
+      "Jos olet jo maksanut, lopeta maksut heti ja ota yhteys pankkiisi.",
+      "Tee rikosilmoitus ja hae tarvittaessa apua Rikosuhripäivystyksestä."
+    ],
+    "en": [
+      "Don’t leave your details through an ad and don’t send money to an unknown provider.",
+      "Check the FIN-FSA warning list and the provider’s authorisation.",
+      "If you have already paid, stop paying immediately and contact your bank.",
+      "File a police report and get help from Victim Support Finland if needed."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/police-report",
+    "fi/finanssivalvonta",
+    "fi/riku",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Yle ja MTV varoittavat: \"Älä luota huijausvideoihin\"",
+      "publisher": "SVT Nyheter (Yle, MTV)",
+      "url": "https://www.svt.se/nyheter/uutiset/yle-ja-mtv-varoittavat-ala-luota-huijausvideoihin",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Finanssivalvonta varoittaa lisääntyneistä sijoitushuijauksista",
+      "publisher": "Finanssivalvonta (STT Info)",
+      "url": "https://www.sttinfo.fi/tiedote/71447884/finanssivalvonta-varoittaa-lisaantyneista-sijoitushuijauksista",
+      "date": "2025-09-15"
+    },
+    {
+      "title": "Scammers impersonating Yle journalists on social media",
+      "publisher": "Yle News",
+      "url": "https://yle.fi/a/74-20181431",
+      "date": "2025-09-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

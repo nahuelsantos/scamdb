@@ -1,0 +1,125 @@
+{
+  "id": "se/skatteverket-refund-phishing",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "sv": "”Skatteverket”",
+    "en": "“Skatteverket” (Swedish Tax Agency)"
+  },
+  "name": {
+    "sv": "Falsk skatteåterbäring: Skatteverket ”vill bekräfta kontouppgifter”",
+    "en": "Fake tax refund from Skatteverket: confirm bank details via a link"
+  },
+  "how": {
+    "sv": "Ett mejl eller sms, som påstås komma från Skatteverket, säger att du har fått en skatteåterbäring beviljad, ofta med ett exakt belopp. För att få ut pengarna ska du verifiera dina bankuppgifter och bekräfta din identitet via en länk eller bilaga. Sidan är falsk och vill ha kontonummer, kortuppgifter eller inloggning. Skatteverket ber aldrig om kontouppgifter eller lösenord via mejl eller sms.",
+    "en": "An email or text, supposedly from Skatteverket, says you have been granted a tax refund, often with an exact amount. To receive the money you must verify your bank details and confirm your identity through a link or attachment. The page is fake and wants your account number, card details or login. Skatteverket never asks for bank details or passwords by email or text."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "”Skatteverket”: du har en återbäring som väntar.",
+        "en": "“Skatteverket”: you have a refund waiting."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Verifiera kontouppgifterna för att få utbetalningen.",
+        "en": "Verify your bank details to get the payout."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sv": "Klicka på länken eller öppna bilagan.",
+        "en": "Click the link or open the attachment."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sv": "Sidan vill ha kontonummer, kort eller inloggning.",
+        "en": "The page wants your account number, card or login."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Skatteverket informerar: Efter omräkning av din deklaration har du rätt till en återbetalning på 3 286 kr. För att pengarna ska kunna betalas ut måste du bekräfta ditt konto senast 30 november: [länk]",
+        "en": "Skatteverket informs: After recalculating your tax return, you are entitled to a refund of 3,286 kr. For the money to be paid out you must confirm your account by 30 November: [länk]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "skatteåterbäring bekräfta konto",
+      "skatteverket återbetalning länk",
+      "verifiera bankuppgifter utbetalning skatt",
+      "omräkning deklaration återbetalning",
+      "skatteverket mejl kontonummer",
+      "beviljad återbäring bekräfta identitet"
+    ],
+    "en": [
+      "tax refund email from skatteverket",
+      "confirm my bank account to get a tax refund",
+      "skatteverket text with a link",
+      "tax agency asked for my card details",
+      "refund approved verify identity",
+      "fake tax return recalculation email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sv": [
+      "Skatteverket ber aldrig om kontonummer, kortuppgifter eller lösenord via mejl eller sms.",
+      "Återbäring betalas till det konto du själv har anmält i e-tjänsten.",
+      "Länkar som inte går till Skatteverkets egen webbplats är falska."
+    ],
+    "en": [
+      "Skatteverket never asks for account numbers, card details or passwords by email or text.",
+      "Refunds are paid to the account you registered yourself in the e-service.",
+      "Links that don’t go to Skatteverket’s own website are fake."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Klicka inte. Logga in själv på Skatteverkets webbplats eller app med BankID om du vill kolla.",
+      "Radera mejlet; vidarebefordra sms till 7726.",
+      "Har du lämnat kort- eller kontouppgifter? Ring banken direkt.",
+      "Polisanmäl om du har lämnat uppgifter."
+    ],
+    "en": [
+      "Don’t click. Log in yourself on Skatteverket’s website or app with BankID if you want to check.",
+      "Delete the email; forward texts to 7726.",
+      "Did you give card or account details? Call your bank straight away.",
+      "Report it to the police if you gave details."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/spam-7726",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Ny våg av bluffmejl – påstås komma från Skatteverket: ”Allvarligt”",
+      "publisher": "TV4 Nyheterna",
+      "url": "https://www.tv4.se/artikel/1oRVsjmqJwDF8tsDDag8RO/ny-vag-av-bluffmejl-pastas-komma-fran-skatteverket-allvarligt",
+      "date": "2025-12-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

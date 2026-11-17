@@ -1,0 +1,126 @@
+{
+  "id": "is/utility-bill-email",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "is": "„Orka náttúrunnar“ / „Veitur“",
+    "en": "“Orka náttúrunnar” (ON) / “Veitur”"
+  },
+  "name": {
+    "is": "Falskur ógreiddur rafmagnsreikningur",
+    "en": "Fake unpaid electricity bill"
+  },
+  "how": {
+    "is": "Tölvupóstur í nafni orkufyrirtækis eins og Orku náttúrunnar eða Veitna segir að rafmagnsreikningurinn þinn sé ógreiddur. Þú átt að greiða með sérstökum kóða á greiðslusíðu sem hlekkurinn vísar á. Síðan stelur kortaupplýsingum. Orkufyrirtækin senda aldrei hlekki þar sem beðið er um kortanúmer; stöðu reikninga sérðu á Mínum síðum.",
+    "en": "An email in the name of an energy company such as Orka náttúrunnar (ON) or Veitur says your electricity bill is unpaid. You are told to pay with a special code on a payment page the link opens. The page steals card details. Energy companies never send links asking for your card number; you can see your bills on their My Pages."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Tölvupóstur segir að rafmagnsreikningur sé ógreiddur.",
+        "en": "An email says an electricity bill is unpaid."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Gefið er í skyn að lokað verði fyrir rafmagnið ef ekki er greitt.",
+        "en": "It hints the power will be cut off unless you pay."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Hlekkur og kóði vísa á greiðslusíðu sem biður um kortaupplýsingar.",
+        "en": "A link and a code lead to a payment page asking for card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Rafmagnsreikningur þinn hefur ekki verið greiddur. Til að forðast lokun skaltu greiða 7.450 kr. á greiðslusíðu okkar með kóðanum RF-2291: [hlekkur]\nKveðja, þjónustuver",
+        "en": "Your electricity bill has not been paid. To avoid disconnection, pay ISK 7,450 on our payment page using code RF-2291: [link]\nRegards, customer service"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "ógreiddur rafmagnsreikningur í tölvupósti",
+      "lokað fyrir rafmagnið ef ég borga ekki",
+      "greiða rafmagnsreikning með kóða",
+      "orka náttúrunnar bað um kortanúmer",
+      "veitur sendu greiðsluhlekk",
+      "áminning um rafmagnsreikning frá veitum",
+      "rof á rafmagni nema ég borgi",
+      "eindagi liðinn á orkureikningi"
+    ],
+    "en": [
+      "unpaid electricity bill by email",
+      "power cut off if I don't pay",
+      "pay an electricity bill with a code",
+      "energy company asked for my card number",
+      "utility sent a payment link",
+      "reminder about my electricity bill from Veitur",
+      "power disruption unless I pay",
+      "energy bill past its due date"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "is": [
+      "Orkufyrirtæki senda ekki hlekki þar sem skrá á kortaupplýsingar.",
+      "Reikningur sem birtist ekki á Mínum síðum fyrirtækisins.",
+      "Hótun um lokun og sérstakur „greiðslukóði“."
+    ],
+    "en": [
+      "Energy companies don't send links asking you to enter card details.",
+      "A bill that doesn't appear on the company's My Pages.",
+      "A threat of disconnection and a special “payment code”."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Smelltu ekki á hlekkinn; skoðaðu reikninga á Mínum síðum fyrirtækisins eða hringdu í þjónustuverið.",
+      "Ef þú gafst upp kortaupplýsingar, hafðu strax samband við bankann.",
+      "Áframsendu póstinn á CERT-IS og eyddu honum."
+    ],
+    "en": [
+      "Don't click; check your bills on the company's My Pages or call its customer service.",
+      "If you gave card details, call your bank straight away.",
+      "Forward the email to CERT-IS and delete it."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/cert-is",
+    "is/police"
+  ],
+  "sources": [
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "ON varar við svikapóstum",
+      "publisher": "Orka náttúrunnar",
+      "url": "https://www.on.is/frettir/on-varar-vid-svikapostum",
+      "date": "2025-08-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

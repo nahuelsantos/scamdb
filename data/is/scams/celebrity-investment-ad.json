@@ -1,0 +1,134 @@
+{
+  "id": "is/celebrity-investment-ad",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "is": "Auglýsing á Facebook með þekktum Íslendingi",
+    "en": "Facebook ad featuring a well-known Icelander"
+  },
+  "name": {
+    "is": "Fjárfestingasvik með myndum af þekktum Íslendingum",
+    "en": "Investment scam using photos of well-known Icelanders"
+  },
+  "how": {
+    "is": "Auglýsing á Facebook sýnir þekktan Íslending með stolnum eða breyttum myndum og fyrirsögn sem lítur út eins og frétt. Smellt er á hana og falsk fréttasíða sem líkir eftir íslenskum fréttamiðli segir frá „leynilegri“ fjárfestingu eða rafmynt. Þaðan ertu leidd/ur á falska fjárfestingarsíðu, „ráðgjafi“ hringir og þú leggur inn peninga sem virðast vaxa. Engin raunveruleg fjárfesting á sér stað og peningarnir koma ekki til baka.",
+    "en": "A Facebook ad shows a well-known Icelander with stolen or edited photos and a headline that looks like news. Clicking it opens a fake news page copying an Icelandic news site about a “secret” investment or crypto. From there you are sent to a fake investment platform, an “adviser” calls, and you deposit money that seems to grow. No real investment happens and the money doesn't come back."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Auglýsing á Facebook sýnir þekktan Íslending sem mælir með fjárfestingu.",
+        "en": "A Facebook ad shows a well-known Icelander recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Hlekkurinn opnar falska fréttasíðu sem líkir eftir íslenskum fjölmiðli.",
+        "en": "The link opens a fake news page copying an Icelandic outlet."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "is": "Lofað er miklum hagnaði á stuttum tíma með lítilli upphæð í byrjun.",
+        "en": "Big profits are promised quickly from a small first deposit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "is": "„Ráðgjafi“ hringir og fær þig til að leggja inn meira.",
+        "en": "An “adviser” calls and gets you to deposit more."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "ÞJÓÐIN Í SJOKKI: Þekktur sjónvarpsmaður afhjúpar hvernig hann þénar milljónir á mánuði með nýju rafmyntaforriti – bankarnir vilja að þú vitir þetta ekki! Lestu meira: [hlekkur]",
+        "en": "NATION IN SHOCK: Famous TV presenter reveals how he earns millions a month with a new crypto app – the banks don't want you to know! Read more: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "auglýsing með þekktum íslendingi um fjárfestingu",
+      "fölsk frétt um rafmyntaforrit",
+      "frægur maður mælir með fjárfestingu á facebook",
+      "lagði inn 250 evrur og ráðgjafi hringdi",
+      "fjárfestingarsíða sem ég kemst ekki út úr",
+      "gervigreindarmynd af þekktum manni í auglýsingu",
+      "þekkt kona segist hafa auðgast á forriti",
+      "viðtal við fræga manneskju um gróða"
+    ],
+    "en": [
+      "ad with a famous Icelander about investing",
+      "fake news story about a crypto app",
+      "celebrity recommends investment on Facebook",
+      "deposited 250 euros and an adviser called",
+      "investment site I can't withdraw from",
+      "AI picture of a famous person in an ad",
+      "famous woman says she got rich with an app",
+      "interview with a celebrity about profits"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "is": [
+      "Þekkt fólk auglýsir ekki leynilegar fjárfestingar á Facebook.",
+      "Fréttasíða sem lítur út eins og íslenskur miðill en vefslóðin er önnur.",
+      "Loforð um öruggan og skjótan hagnað."
+    ],
+    "en": [
+      "Well-known people don't advertise secret investments on Facebook.",
+      "A news page that looks like an Icelandic outlet but has a different web address.",
+      "Promises of safe and quick profit."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Smelltu ekki á auglýsinguna; tilkynntu hana til Facebook sem svindl.",
+      "Athugaðu hjá Seðlabankanum hvort fyrirtækið hafi leyfi áður en þú leggur inn.",
+      "Ef þú lagðir inn, hafðu strax samband við bankann og tilkynntu málið til lögreglu; varastu „endurheimtuþjónustu“ sem hefur samband."
+    ],
+    "en": [
+      "Don't click the ad; report it to Facebook as a scam.",
+      "Check with the Central Bank whether the firm is licensed before depositing.",
+      "If you deposited, call your bank at once and report it to the police; beware of “recovery services” that contact you."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/central-bank"
+  ],
+  "sources": [
+    {
+      "title": "Arion Bank’s report on fraud and threats in financial services",
+      "publisher": "Arion banki",
+      "url": "https://www.arionbanki.is/en/news/arion-banks-report-on-fraud-and-threats-in-financial-services",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Netsvindl – vefveiðar",
+      "publisher": "Lögreglan",
+      "url": "https://island.is/s/logreglan/frett/netsvindl-vefveidar",
+      "date": "2024-07-01"
+    }
+  ],
+  "updated": "2026-11-17"
+}
