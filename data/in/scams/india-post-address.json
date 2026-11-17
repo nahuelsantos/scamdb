@@ -1,0 +1,103 @@
+{
+  "id": "in/india-post-address",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“India Post” or “IndiaPost”"
+  },
+  "name": {
+    "en": "Fake India Post SMS: “parcel at warehouse, update your address in 48 hours”"
+  },
+  "how": {
+    "en": "A text claiming to be India Post says your parcel reached the warehouse but could not be delivered because the address was incomplete. It gives 12, 24 or 48 hours to update the address through a link, or the parcel will be returned. The link opens a look-alike India Post site that asks for personal details and a small “redelivery fee” by card, stealing card details and OTPs. India Post does not send links asking you to update your address."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An SMS says India Post could not deliver a parcel because of an incomplete address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says the parcel will be returned unless you act within hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It links to a page that looks like India Post."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for card details and a small fee or OTP."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "IndiaPost: Delivery of your item failed as the house number is missing. Update the address within 12 hours to avoid return to sender: [link] Team India Post"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "india post sms update address",
+      "parcel arrived at warehouse incomplete address",
+      "india post asking to update address within 48 hours",
+      "redelivery fee india post link",
+      "package will be returned india post message",
+      "india post link asked for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "India Post asking you to update an address by link.",
+      "A short deadline before the parcel is “returned”.",
+      "A fee or card details to redeliver."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't tap the link.",
+      "Track a real article only on the India Post website or app with its tracking number.",
+      "If you paid or entered card details, call your bank and 1930.",
+      "Report the SMS on Chakshu."
+    ]
+  },
+  "reportTo": [
+    "in/chakshu",
+    "in/your-bank",
+    "in/cybercrime-1930"
+  ],
+  "sources": [
+    {
+      "title": "Govt debunks SMS from India Post asking people to update their address",
+      "publisher": "All India Radio (Akashvani News)",
+      "url": "https://www.newsonair.gov.in/govt-debunks-sms-from-india-post-asking-people-to-update-their-address",
+      "date": "2026-01-20"
+    },
+    {
+      "title": "Fact Check: Fake SMS Claims Package Delivery from India Post Sent to Warehouse",
+      "publisher": "Asianet Newsable",
+      "url": "https://newsable.asianetnews.com/india/india-post-delivery-scam-fact-check-package-sent-to-warehouse-articleshow-05o6xns",
+      "date": "2025-08-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

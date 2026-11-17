@@ -1,0 +1,104 @@
+{
+  "id": "in/marketplace-qr-buyer",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "en": "A buyer on OLX or Facebook Marketplace, often claiming to be in the army"
+  },
+  "name": {
+    "en": "Fake buyer sends a QR code “to pay you”"
+  },
+  "how": {
+    "en": "You list something for sale online. A buyer, often claiming to be an army officer being transferred and sending an ID card, agrees to your price at once. To “pay” or “verify your account” he sends a QR code or payment request; when you scan it and enter your UPI PIN, money leaves your account. He blames a technical glitch and sends more codes “to refund”. You never need to scan a QR code or enter your UPI PIN to receive money."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A buyer agrees quickly, sometimes saying he is an army officer and sending an ID."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "He sends a QR code or payment request so you can “receive” the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You are asked to enter your UPI PIN to get paid."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "After money goes, he sends more codes to “refund” it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Sir I am in Army, posted at Pathankot, I will take the sofa at your price. Our payments go through the army account so I am sending a QR code, scan and enter PIN to receive ₹1 first for verification, then I will send full amount."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "buyer sent qr code to pay me",
+      "scan qr code to receive money",
+      "army officer buyer olx",
+      "enter upi pin to receive payment",
+      "buyer said technical glitch and sent another qr",
+      "olx buyer verification of one rupee"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Scanning a QR code or entering a UPI PIN to receive money.",
+      "A buyer who doesn't haggle and won't meet.",
+      "“Army” IDs, transfer stories and canteen cards."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never scan a buyer's QR code or enter your PIN to get paid.",
+      "Ask buyers to pay by entering your UPI ID themselves, or meet in person.",
+      "If money went, call 1930 and your bank right away."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/your-bank",
+    "in/chakshu"
+  ],
+  "sources": [
+    {
+      "title": "Bengaluru Teen Girl Loses ₹90,000 in OLX Book Sale Scam",
+      "publisher": "News Karnataka",
+      "url": "https://newskarnataka.com/bengaluru/teen-girl-loses-%e2%82%b990000-in-olx-book-sale-scam/21062025/",
+      "date": "2025-06-21"
+    },
+    {
+      "title": "FPJ Cyber Secure: Man Loses Over ₹2.17 Lakh After Placing Advertisement On OLX",
+      "publisher": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/mumbai/fpj-cyber-secure-man-loses-over-217-lakh-after-placing-advertisement-on-olx",
+      "date": "2023-10-31"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "in/fake-e-challan",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“RTO”, “Traffic Police”, “Parivahan” or “e-Challan”"
+  },
+  "name": {
+    "en": "Fake traffic e-challan: “pending fine, pay now or licence suspended”"
+  },
+  "how": {
+    "en": "An SMS or WhatsApp message, often with your vehicle number, says you have an unpaid traffic challan and must pay now to avoid a court case, a higher fine or licence suspension. It contains a link to a site that copies the Parivahan e-challan portal, or an APK such as “RTO Challan” or “mParivahan”. The site steals card details and OTPs; the app takes over your phone and bank OTPs. Check challans only on the official Parivahan e-challan portal."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message says a traffic fine on your vehicle is pending."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It threatens court, extra fines or licence suspension if not paid now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It has a payment link or an APK file to download."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for card details, CVV or OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Traffic Dept: A challan of Rs 1,000 is pending on your vehicle for over-speeding. Pay today to avoid court action and DL suspension. Pay here: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "RTO notice: your e-challan details are attached. Download RTO_Challan.apk to view and pay the fine."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "traffic challan sms with payment link",
+      "rto challan apk on whatsapp",
+      "pending e challan link in sms",
+      "fake parivahan challan message",
+      "message about traffic violations on my vehicle",
+      "challan message asked for card details",
+      "licence suspended over pending challan"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A payment link or APK in a challan message.",
+      "Threats of court or licence suspension today.",
+      "A website that isn't on a .gov.in address."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't tap the link or open the file.",
+      "Check your vehicle number yourself on the official Parivahan e-challan portal or your state traffic police site.",
+      "If you paid or installed something, call your bank and 1930.",
+      "Report the message on Chakshu."
+    ]
+  },
+  "reportTo": [
+    "in/chakshu",
+    "in/cybercrime-1930",
+    "in/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Beware Of Fake Traffic Fine Messages: Kerala police",
+      "publisher": "Outlook India (PTI)",
+      "url": "https://www.outlookindia.com/national/beware-of-fake-traffic-fine-messages-keralam-police",
+      "date": "2026-11-14"
+    },
+    {
+      "title": "Fake traffic challan scam: PIB warns against malicious WhatsApp, sms links",
+      "publisher": "Business Standard",
+      "url": "https://www.business-standard.com/india-news/fake-traffic-challan-scam-pib-warning-whatsapp-sms-links-126071000400_1.html",
+      "date": "2026-07-10"
+    },
+    {
+      "title": "Keralam police warn of malicious APK scam via fake e-challan SMS",
+      "publisher": "ThePrint (PTI)",
+      "url": "https://theprint.in/india/keralam-police-warn-of-malicious-apk-scam-via-fake-e-challan-sms/3053993/",
+      "date": "2026-09-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

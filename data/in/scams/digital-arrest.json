@@ -1,0 +1,122 @@
+{
+  "id": "in/digital-arrest",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A “CBI”, “ED”, “Mumbai Police”, “customs” or “telecom department” officer on a call or video call"
+  },
+  "name": {
+    "en": "“Digital arrest”: fake CBI or police officer keeps you on a video call"
+  },
+  "how": {
+    "en": "A caller says a SIM card, bank account or Aadhaar in your name has been used for money laundering, drugs or another crime. The call moves to a WhatsApp or Skype video call with someone in uniform, a police logo or a fake courtroom. You are told you are under “digital arrest”, must stay on camera, tell no one, and move your savings to a “safe” or “verification” account to prove you are innocent. Indian police, CBI, ED and courts never arrest anyone or take money over a video call."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call says your Aadhaar, number or bank account is linked to a crime case."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You are put on a video call with an “officer” in uniform, sometimes for days."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "en": "You are told not to tell family or the bank, or you will be arrested at once."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "They threaten arrest within hours unless you cooperate now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They tell you to transfer your savings or FDs to an account “for RBI verification”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: This is Inspector Sharma, Cyber Crime Branch Mumbai. A bank account opened with your Aadhaar is part of a money laundering case and an arrest warrant is issued. Stay on this video call, do not disconnect and do not inform anyone. To clear your name, transfer your funds to the verification account we give you; it will be returned after the inquiry."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "fake cbi officer on video call",
+      "they said i am under digital arrest",
+      "money laundering case on my aadhaar",
+      "told me not to disconnect the video call",
+      "transfer my savings for verification to clear my name",
+      "police officer on whatsapp video call asked for money",
+      "arrest warrant shown on video call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Police, CBI, ED, customs or a judge contacting you on WhatsApp or Skype video.",
+      "Being told to stay on camera and not tell anyone.",
+      "Any demand to move money to prove you are innocent."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. There is no such thing as a “digital arrest”.",
+      "Tell a family member and call your local police station on its official number.",
+      "If you sent money, call 1930 at once and report on cybercrime.gov.in.",
+      "Report the numbers on Chakshu (Sanchar Saathi)."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/emergency",
+    "in/your-bank",
+    "in/chakshu"
+  ],
+  "sources": [
+    {
+      "title": "CBI, ED, police don't arrest people through video calls: Indian Cyber Crime Coordination Centre",
+      "publisher": "ThePrint (PTI)",
+      "url": "https://theprint.in/india/cbi-ed-police-dont-arrest-people-through-video-calls-indian-cyber-crime-coordination-centre/2299608",
+      "date": "2024-10-06"
+    },
+    {
+      "title": "Steps taken to address the issue of digital arrest scams",
+      "publisher": "Press Information Bureau (Ministry of Home Affairs)",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2110809",
+      "date": "2025-03-12"
+    },
+    {
+      "title": "69-Year-Old Retired Health Worker Loses ₹1.57 Crore In 33-Day 'Digital Arrest' Scam In Gwalior; Fraudsters Posed As CBI Officials",
+      "publisher": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/bhopal/69-year-old-retired-health-worker-loses-157-crore-in-33-day-digital-arrest-scam-in-gwalior-fraudsters-posed-as-cbi-officials",
+      "date": "2026-06-24"
+    }
+  ],
+  "updated": "2026-11-17",
+  "story": {
+    "en": "A 69-year-old retired lab technician in Gwalior got a call from a man claiming to be from the telecom department, who said a number and bank account in her name were used for money laundering. Fraudsters posing as Delhi Police and CBI then kept her family on video calls for 33 days, and she transferred about ₹1.57 crore to several accounts before reporting it to police."
+  }
+}

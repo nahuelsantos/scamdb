@@ -1,0 +1,118 @@
+{
+  "id": "in/bank-apk-kyc",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“SBI”, “YONO”, “HDFC”, “ICICI” or another bank"
+  },
+  "name": {
+    "en": "Fake bank message with an APK: “update KYC” or “redeem reward points today”"
+  },
+  "how": {
+    "en": "An SMS or WhatsApp message in a bank's name says your account or YONO app will be blocked unless you update KYC, PAN or Aadhaar, or that reward points worth thousands of rupees expire today. It asks you to tap a link or install an app sent as an .apk file. The app is malware: it reads your OTPs and SMS and lets the fraudsters empty your account. Banks never send APK files or KYC links by SMS or WhatsApp."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message in your bank's name says your account will be blocked or points expire today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It looks like it comes from SBI, YONO or another bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It asks you to install an .apk file or open a link to update KYC or redeem."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The app or page asks for card details, OTP or net banking password."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Dear customer, your bank KYC is pending and your account will be suspended within 24 hrs. Install the KYC Update app to continue banking: [link] (KYC_Update.apk)"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Your credit card reward points worth Rs 7,450 will lapse tonight! Download the Rewards app and redeem as cash in your account: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank kyc update apk file",
+      "sbi reward points will expire today message",
+      "yono account will be blocked update pan",
+      "message asked me to install apk to redeem points",
+      "kyc update link from bank on whatsapp",
+      "aadhaar update apk sbi yono",
+      "account will be suspended kyc pending link"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Any APK file sent by SMS or WhatsApp.",
+      "A deadline: “today”, “24 hours”, “account blocked”.",
+      "Reward points paid “as cash in your account”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't open the link or install the file; delete it.",
+      "Check KYC or rewards only in your bank's official app or branch.",
+      "If you installed it, switch off mobile data, call your bank to block cards and net banking, and call 1930.",
+      "Report the sender on Chakshu."
+    ]
+  },
+  "reportTo": [
+    "in/your-bank",
+    "in/cybercrime-1930",
+    "in/chakshu",
+    "in/rbi-cms"
+  ],
+  "sources": [
+    {
+      "title": "SBI Cautions Customers Against Fake Reward APK Scam, PIB Fact Check Flags Fraud Message",
+      "publisher": "Outlook Money",
+      "url": "https://www.outlookmoney.com/banking/sbi-cautions-customers-against-fake-reward-apk-scam-pib-fact-check-flags-fraud-message",
+      "date": "2026-07-06"
+    },
+    {
+      "title": "Social Media Users Beware! A Fake SBI YONO Message Urging Aadhaar Update Is Doing The Rounds, It Is A Phishing Scam",
+      "publisher": "Free Press Journal (IANS)",
+      "url": "https://www.freepressjournal.in/tech/social-media-users-beware-a-fake-sbi-yono-message-urging-aadhaar-update-is-doing-the-rounds-it-is-a-phishing-scam",
+      "date": "2026-03-23"
+    },
+    {
+      "title": "SBI Warns Customers against Fake KYC, Reward Messages",
+      "publisher": "Kashmir Life",
+      "url": "https://kashmirlife.net/sbi-warns-customers-against-fake-kyc-reward-messages-420146/",
+      "date": "2026-01-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

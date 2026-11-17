@@ -1,0 +1,110 @@
+{
+  "id": "in/income-tax-refund",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“Income Tax Department” or “ITD”"
+  },
+  "name": {
+    "en": "Fake income tax refund: “refund approved, verify your account”"
+  },
+  "how": {
+    "en": "After the return-filing season, an SMS or email in the Income Tax Department's name says a refund has been approved, or that refunds above a limit need “manual verification”. It asks you to confirm or update your bank account through a link. The page copies the e-filing portal and steals your PAN, bank details, card numbers and passwords. The department does not ask for bank details or send refund links by SMS or email."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message in the Income Tax Department's name says a refund is approved or pending."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It asks you to verify or update your bank account by link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "It warns the refund will be cancelled if you don't act soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "The page asks for net banking login, card details or OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "ITD: As per your ITR, a refund of Rs 18,250 is approved and will be credited to your account ending xx41. If this account is wrong, update your bank details here: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Subject: Income tax refund on hold. Your refund needs manual verification before release. Complete verification within 48 hours using the link below or the refund will lapse."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "income tax refund sms with link",
+      "refund approved verify via link income tax",
+      "income tax manual verification email for refund",
+      "itr refund message asked for bank details",
+      "fake income tax department refund email",
+      "tax refund will lapse verify now"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A refund message with a link.",
+      "Requests to “update” or “verify” bank details.",
+      "A refund that will lapse unless you act."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't open the link.",
+      "Check refund status only by logging in to the official e-filing portal yourself.",
+      "If you entered bank details, call your bank and 1930.",
+      "Report the SMS on Chakshu."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/your-bank",
+    "in/chakshu"
+  ],
+  "sources": [
+    {
+      "title": "PIB Fact Check REVEALS Fraudulent ₹60,000 Tax Refund Scam, Are You Next?",
+      "publisher": "Angel One",
+      "url": "https://www.angelone.in/news/personal-finance/pib-fact-check-reveals-fraudulent-60-000-tax-refund-scam-are-you-next",
+      "date": "2025-07-22"
+    },
+    {
+      "title": "ITR refund status: Centre issues scam alert on fraudulent messages",
+      "publisher": "Business Today",
+      "url": "https://www.businesstoday.in/personal-finance/tax/story/itr-refund-status-centre-issues-scam-alert-on-fraudulent-messages-392717-2023-08-03",
+      "date": "2023-08-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

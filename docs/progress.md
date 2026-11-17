@@ -20,6 +20,11 @@ A running record of what was built, what was measured and what we learned. Newes
   those run from it); Matcher 1.20.0 adds English threats and fees ("we will contact everyone in your phonebook",
   "pay ₦10,000 for your application form") and a genuine "do not disclose this code" OTP. Nigeria: 33% → 83% called
   "scam", 1 → 0 false alarms; other countries and the real and private sets unchanged.
+- **India:** 15 entries (14 English, 1 Hindi), 5 contacts, 22 labelled and 13 real messages. `normalize()` now keeps
+  Devanagari vowel signs (they were turned into spaces, splitting Hindi words). Matcher 1.21.0: APK downloads are remote
+  access, fake officers on calls ("Sub-Inspector … from CBI Delhi", "remain on this video call", "press 9 to talk to
+  the officer"), "within 24 hrs", "before midnight", and a Hindi block. India 8% → 75% called "scam", Nigeria 83% →
+  92%, real UK messages 23% → 31%; no new false alarm anywhere.
 
 **Measured:**
 
