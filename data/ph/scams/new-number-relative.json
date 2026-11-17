@@ -1,0 +1,120 @@
+{
+  "id": "ph/new-number-relative",
+  "country": "ph",
+  "lang": "tl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "tl": "Isang “anak” o kamag-anak na nagte-text mula sa bagong number",
+    "en": "A “son”, “daughter” or relative writing from a new number"
+  },
+  "name": {
+    "tl": "“Hi Ma, new number ko ’to”: kamag-anak na humihingi ng pera agad",
+    "en": "“Hi Ma, new number ko ’to”: relative asking for urgent money"
+  },
+  "how": {
+    "tl": "May text o chat mula sa hindi kilalang number na nagsasabing ito ang anak, kamag-anak o kaibigan mo na nawalan ng phone o nagpalit ng SIM. Maya-maya, hihingi sila ng perang ipapadala agad, madalas sa GCash o bank account ng ibang tao, para sa bayarin, emergency o utang. Umiiwas sila sa tawag. Pinapaalalahanan ng BPI ang customers na i-verify muna sa ibang paraan bago magpadala.",
+    "en": "A text or chat from an unknown number says it is your child, relative or friend who lost their phone or changed SIM. Soon they ask you to send money urgently, often to someone else’s GCash or bank account, for a bill, an emergency or a debt. They avoid calls. BPI warns customers to check through another contact before sending anything."
+  },
+  "steps": [
+    {
+      "text": {
+        "tl": "May mensahe mula sa hindi kilalang number na nagsasabing kamag-anak ito na may bagong number.",
+        "en": "A message from an unknown number says it is a relative with a new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "tl": "Humihingi sila ng pera agad para sa bayarin o emergency.",
+        "en": "They ask for money urgently for a bill or an emergency."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tl": "Sa account ng ibang tao ipapadala ang pera.",
+        "en": "The money goes to someone else’s account."
+      }
+    },
+    {
+      "text": {
+        "tl": "Ayaw nilang makipag-usap sa telepono.",
+        "en": "They don’t want to talk on the phone."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "tl": "Ma, it’s me, my phone broke so I am using this one for now. Can you send P3,500 to my friend’s GCash? I will pay you back when I get home. Don’t call yet, I have no load.",
+        "en": "Ma, ako ’to, nasira phone ko kaya ito muna gamit ko. Pwede pa-send muna ng P3,500 sa GCash ng kaibigan ko? Babayaran ko agad pag-uwi. Wag ka muna tumawag, wala pa akong load."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "tl": [
+      "nag-text ang anak ko daw gamit ang bagong number",
+      "humingi ng pera ang kamag-anak sa ibang number",
+      "pa-send daw sa account ng kaibigan niya",
+      "nasira daw ang phone niya kaya ibang number gamit",
+      "ayaw tumawag pero humihingi ng pera"
+    ],
+    "en": [
+      "message from my son on a new number asking for money",
+      "relative with a new number needs money urgently",
+      "send money to her friend account for my daughter",
+      "family member lost phone and texts from another number",
+      "new number asking for money and will not call"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "tl": [
+      "Kapamilya na gumagamit ng number na hindi mo kilala.",
+      "Pera na ipapadala sa account ng ibang tao.",
+      "Ayaw nilang sagutin ang tawag."
+    ],
+    "en": [
+      "A family member on a number you don’t know.",
+      "Money sent to a third person’s account.",
+      "They won’t take a call."
+    ]
+  },
+  "whatToDo": {
+    "tl": [
+      "Tawagan ang kamag-anak mo sa number na alam mo na, o magtanong sa ibang kapamilya.",
+      "Magtanong ng bagay na ang totoong tao lang ang nakakaalam.",
+      "Kung nakapagpadala ka na, tawagan agad ang bangko o e-wallet mo at i-report sa CICC 1326."
+    ],
+    "en": [
+      "Call your relative on the number you already have, or ask another family member.",
+      "Ask something only the real person would know.",
+      "If you sent money, call your bank or e-wallet straight away and report to CICC 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg"
+  ],
+  "sources": [
+    {
+      "title": "5 bank scams to avoid during the holidays",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/money/companies/970434/5-scams-to-avoid-during-the-holidays/story/",
+      "date": "2025-12-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

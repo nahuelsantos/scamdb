@@ -1,0 +1,109 @@
+{
+  "id": "ph/task-job-scam",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A “recruiter” or “receptionist” on Telegram, Messenger or WhatsApp"
+  },
+  "name": {
+    "en": "Task job scam: liking pages for commission, then a deposit to “upgrade” to VIP"
+  },
+  "how": {
+    "en": "Someone offers easy online work: liking shop pages, hotel listings or videos for P20 to P150 a task, with no upfront payment. A Telegram bot really pays the first small amounts. Then you are told to pay to reach a “VIP level”, unlock “welfare tasks” or move money into a crypto account to earn more. Each step needs a bigger deposit, and in the end you cannot withdraw anything."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A stranger offers easy online tasks with daily pay."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are moved to a Telegram group or bot with a “receptionist” or “mentor”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Small first payments arrive to win your trust."
+      }
+    },
+    {
+      "text": {
+        "en": "You must pay or deposit to upgrade, unlock tasks or withdraw."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "The deposits keep growing and you are pushed to finish quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi! We are hiring part-time online assistants. Just like and follow shop pages using your phone, P150 per task, up to P3,000 a day, paid same day to GCash. No fee needed! Message our receptionist on Telegram to start: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "liking pages on telegram for commission then asked to deposit",
+      "online task job asked me to upgrade to vip",
+      "telegram bot sent a small commission then wanted a deposit",
+      "like and follow job that needs a recharge",
+      "welfare task bonus asked for payment",
+      "job asked me to open a crypto wallet and deposit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "Pay for very simple online tasks.",
+      "Having to pay or deposit to earn or withdraw.",
+      "Recruiters who only use Telegram, WhatsApp or Messenger."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Stop. A real job never asks you to pay to work or to withdraw your earnings.",
+      "Don’t send more money to “unlock” what you already paid.",
+      "If you sent money, call your bank or e-wallet straight away and report it to the PNP-ACG or CICC 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg"
+  ],
+  "sources": [
+    {
+      "title": "Mother scammed P43K in ‘instant income’ scheme",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/08/28/mother-scammed-p43k-in-instant-income-scheme",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "Chinese, 13 others nabbed in scam hub",
+      "publisher": "The Philippine Star",
+      "url": "https://www.philstar.com/nation/2025/08/18/2466207/chinese-13-others-nabbed-scam-hub",
+      "date": "2025-08-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

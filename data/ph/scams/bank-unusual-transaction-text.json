@@ -1,0 +1,109 @@
+{
+  "id": "ph/bank-unusual-transaction-text",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“BPI”, “BDO” or another bank, sometimes inside the bank’s real SMS thread"
+  },
+  "name": {
+    "en": "Fake bank text: “unusual transaction, cancel it here”"
+  },
+  "how": {
+    "en": "A text that looks like your bank’s usual alerts says there is an unusual transaction or a problem with your account and gives a link to “cancel” it, reactivate the account or claim a reward. Scammers use fake cell towers so the text can land in the bank’s real message thread. The link opens a copy of the bank’s website that steals your login and OTP. The BSP says banks never ask you to click a texted link to act on a transaction you did not start."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text appears in your bank’s usual SMS thread or uses the bank’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It warns of an unusual transaction, a locked account or an expiring reward."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to cancel the transaction or update your account."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The fake site asks for your online banking login and the OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "BDO: An unusual transaction of PHP 18,450.00 was attempted on your account. If this was not you, cancel it immediately at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank text about an unusual transaction with a link",
+      "text said to cancel a transaction on a website",
+      "bpi text asking me to sign in through a link",
+      "bdo message in the real thread with a link",
+      "bank profile will be deactivated unless i update",
+      "fake bank site copied the real login page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A bank text with a link, even in the bank’s usual thread.",
+      "Alarm about a transaction you don’t recognise.",
+      "A site asking for your login and OTP."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t tap the link. Open your bank’s app or type the bank’s address yourself to check.",
+      "Call the hotline on the back of your card if you are worried about a transaction.",
+      "If you entered your details, call your bank straight away to block online access.",
+      "Report the text to the CICC hotline 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg",
+    "ph/bsp"
+  ],
+  "sources": [
+    {
+      "title": "Pinoys warned against scam texts appearing to come from banks",
+      "publisher": "Interaksyon (Philstar)",
+      "url": "https://interaksyon.philstar.com/rumor-cop/2026/07/09/316097/pinoys-warned-scam-texts-appearing-come-banks/",
+      "date": "2026-07-09"
+    },
+    {
+      "title": "5 bank scams to avoid during the holidays",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/money/companies/970434/5-scams-to-avoid-during-the-holidays/story/",
+      "date": "2025-12-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/ewallet-account-phishing",
+    "ph/bank-call-otp"
+  ]
+}

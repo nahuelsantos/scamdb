@@ -1,0 +1,113 @@
+{
+  "id": "ph/love-scam",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "en": "A new online partner, often a “foreigner”, then a fake Customs officer"
+  },
+  "name": {
+    "en": "Love scam: online partner, then a “parcel held at Customs” or an investment"
+  },
+  "how": {
+    "en": "Someone you meet on social media or a dating app builds a romance over weeks, often posing as a foreigner, and refuses or fakes video calls. They then need money for an emergency or travel, or say they sent you a gift. A fake Bureau of Customs officer calls or texts to say the parcel is held until you pay duties or fees into a personal account or e-wallet. Others steer you into crypto or forex “investments”."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A stranger starts a romance online and moves fast."
+      }
+    },
+    {
+      "text": {
+        "en": "They avoid meeting, or video calls look odd."
+      }
+    },
+    {
+      "text": {
+        "en": "They say they sent you a gift, or need money for an emergency."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "A “Customs officer” says the parcel is held until you pay fees."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You must pay quickly, often in several payments to personal accounts."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hello, this is Bureau of Customs NAIA. A package from the UK addressed to you, containing jewellery and USD cash, is on hold. Pay P28,500 clearance and tax to the officer’s account today or it will be confiscated."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "online boyfriend sent a gift held at customs",
+      "customs officer asked me to pay to release a gift",
+      "met a foreigner online who asked for money",
+      "online date wants me to invest in crypto",
+      "love scam asked for money for an emergency",
+      "clearance fee for a package from my boyfriend abroad"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "Love that grows fast with someone you have never met.",
+      "Money for emergencies, travel or a parcel at Customs.",
+      "Payments to personal accounts or e-wallets."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never send money to someone you have not met in person.",
+      "The Bureau of Customs never collects fees through personal accounts or e-wallets.",
+      "If you paid, call your bank or e-wallet straight away and report it to the CICC hotline 1326 or the PNP-ACG."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg"
+  ],
+  "sources": [
+    {
+      "title": "BOC warns public vs. ‘love scam’ using fake Customs fees",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/07/18/boc-warns-public-vs-love-scam-using-fake-customs-fees",
+      "date": "2026-07-18"
+    },
+    {
+      "title": "PNP warns public vs AI love scams",
+      "publisher": "The Philippine Star",
+      "url": "https://www.philstar.com/headlines/2026/02/04/2505550/pnp-warns-public-vs-ai-love-scams",
+      "date": "2026-02-04"
+    },
+    {
+      "title": "CICC warns vs ‘love scams’ anew",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/01/28/cicc-warns-vs-love-scams-anew",
+      "date": "2026-01-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

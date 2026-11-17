@@ -1,0 +1,136 @@
+{
+  "id": "ph/fake-online-seller",
+  "country": "ph",
+  "lang": "tl",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "tl": "Isang seller sa Facebook Marketplace o ibang marketplace sa social media",
+    "en": "A seller on Facebook Marketplace or another social media marketplace"
+  },
+  "name": {
+    "tl": "Pekeng online seller: nagbayad ka sa e-wallet, tapos naglaho ang seller",
+    "en": "Fake online seller: money sent by e-wallet, then the seller vanishes"
+  },
+  "how": {
+    "tl": "May seller sa Facebook Marketplace o ibang social media page na nag-aalok ng cellphone, pagkain ng aso o iba pang item, madalas mas mura kaysa karaniwan. Pinapabayad ka nang buo o down payment sa GCash o Maya bago ipadala. Pagkabayad mo, bina-block ka o nawawala ang account, o pekeng mumurahing item ang dumarating. Ang online selling scam ang pinakamadalas na cybercrime na naitatala ng PNP-ACG.",
+    "en": "A seller on Facebook Marketplace or another social media page offers a phone, pet food or other item, often below market price. They ask for full payment or a down payment by GCash or Maya before shipping. After you pay, the account blocks you or vanishes, or a cheap fake arrives. Online selling scams are the most common cybercrime the PNP-ACG records."
+  },
+  "steps": [
+    {
+      "text": {
+        "tl": "May seller na nag-aalok ng item sa magandang presyo sa social media.",
+        "en": "A seller offers an item at a good price on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tl": "Gusto nila ng buong bayad o deposit sa e-wallet muna, walang COD.",
+        "en": "They want full payment or a deposit by e-wallet first, no cash on delivery."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tl": "Minamadali ka: marami raw ibang buyer.",
+        "en": "They rush you: many buyers are waiting."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tl": "Pagkabayad, bina-block ka ng seller o peke ang ipinapadala.",
+        "en": "After paying, the seller blocks you or sends a fake item."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "tl": "Still available, sis! Last stock, brand new sealed. Full payment via GCash first before I ship, there are many bogus buyers. I will send the tracking as soon as you pay.",
+        "en": "Available pa po, sis! Last stock na lang, brand new sealed. Full payment muna via GCash bago i-ship ha, madami kasing bogus buyer. Send ko agad tracking pag nakabayad ka."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "tl": [
+      "nagbayad ako sa gcash tapos blinock ako ng seller",
+      "naglaho ang seller sa marketplace pagkabayad ko",
+      "peke ang dumating na cellphone na binili ko online",
+      "bayad muna bago i-ship daw walang cod",
+      "na-scam ako sa facebook marketplace"
+    ],
+    "en": [
+      "marketplace seller blocked me after i sent gcash",
+      "seller disappeared after i sent the money",
+      "online seller sent a fake phone",
+      "seller wants full downpayment before shipping no cod",
+      "scammed by a facebook marketplace seller"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "tl": [
+      "Bayad sa e-wallet bago mo makita ang item.",
+      "Presyong mas mababa nang malaki kaysa sa iba.",
+      "Pagmamadali dahil “maraming buyer na naghihintay”."
+    ],
+    "en": [
+      "Payment by e-wallet before you see the item.",
+      "Prices far below other sellers.",
+      "Pressure because “many buyers are waiting”."
+    ]
+  },
+  "whatToDo": {
+    "tl": [
+      "Gumamit ng cash on delivery, makipagkita sa ligtas na pampublikong lugar, o bumili sa platform na humahawak ng bayad mo.",
+      "I-report ang account ng seller sa marketplace at ang GCash o Maya number sa e-wallet mo.",
+      "Itago ang chats at resibo at i-report sa PNP-ACG o CICC 1326."
+    ],
+    "en": [
+      "Use cash on delivery, meet in a safe public place, or buy inside a platform that holds your payment.",
+      "Report the seller’s account to the marketplace and the GCash or Maya number to your e-wallet.",
+      "Keep the chats and receipts and report to the PNP-ACG or CICC 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/gcash",
+    "ph/pnp-acg",
+    "ph/cicc"
+  ],
+  "sources": [
+    {
+      "title": "Scammed",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/05/17/scammed",
+      "date": "2026-05-18"
+    },
+    {
+      "title": "Scam alert: Shoppers cautioned about scammers on Facebook Marketplace",
+      "publisher": "Interaksyon (Philstar)",
+      "url": "https://interaksyon.philstar.com/?p=307222",
+      "date": "2026-01-06"
+    },
+    {
+      "title": "PNP warns on Christmas season online shopping schemes",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2025/11/18/pnp-warns-on-christmas-season-online-shopping-schemes",
+      "date": "2025-11-18"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/fake-payment-proof",
+    "ph/fake-resort-booking"
+  ]
+}

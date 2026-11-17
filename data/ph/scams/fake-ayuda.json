@@ -1,0 +1,157 @@
+{
+  "id": "ph/fake-ayuda",
+  "country": "ph",
+  "lang": "tl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "tl": "“DSWD”, “NDRRMC”, “GCash” o isang Facebook page o Messenger account na gumagamit ng pangalan ng DSWD",
+    "en": "“DSWD”, “NDRRMC”, “GCash” or a Facebook page or Messenger account using DSWD’s name"
+  },
+  "name": {
+    "tl": "Pekeng ayuda: “nakatanggap ka ng ayuda, i-confirm sa link” o “magbayad para ma-release”",
+    "en": "Fake cash aid (ayuda): “aid sent to your e-wallet, confirm the link” or “release fee”"
+  },
+  "how": {
+    "tl": "May text, Facebook post o Messenger chat na nagsasabing makakakuha ka ng ayuda mula sa DSWD (AICS, 4Ps, AKAP), calamity assistance o fuel subsidy, o na naipadala na ang ayuda sa GCash mo. Para makuha ito, kailangan mong mag-click ng link, mag-fill out ng form ng personal mong detalye, o magbayad ng “release fee”. Ninanakaw ng link ang login ng e-wallet mo, at hindi na babalik ang ibinayad. Sabi ng DSWD, hindi sila humihingi ng bayad para sa ayuda at hindi sila nagpapadala ng link sa text.",
+    "en": "A text, Facebook post or Messenger chat says you can get cash aid from the DSWD (AICS, 4Ps, AKAP), calamity assistance or a fuel subsidy, or that aid was already sent to your GCash. To claim it you must click a link, fill in a form with your personal details, or pay a “release fee”. The link steals your e-wallet login, and the fee is lost. The DSWD says it never asks for money to release aid and does not send links by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "tl": "May mensaheng gumagamit ng pangalan ng DSWD, NDRRMC o isang programa ng ayuda.",
+        "en": "A message uses the name of the DSWD, NDRRMC or a cash aid program."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tl": "Nangangako ito ng libu-libong piso o sinasabing nasa e-wallet mo na ang ayuda.",
+        "en": "It promises thousands of pesos or says aid is already in your e-wallet."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tl": "Kailangan daw i-claim ngayon o mawawala ang ayuda.",
+        "en": "You must claim today or the aid will be forfeited."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tl": "May link o form para sa detalye mo at login ng e-wallet.",
+        "en": "It gives a link or form for your details and e-wallet login."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tl": "May humihingi ng bayad bago i-release ang ayuda.",
+        "en": "Some ask for a fee before the aid is released."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "tl": "DSWD AICS: Approved po kayo sa P7,500 na cash assistance. Pakisagot ang form at bayaran ang P500 processing fee via GCash para ma-release bukas: [link]",
+        "en": "DSWD AICS: Approved po kayo sa P7,500 na cash assistance. Pakisagot ang form at bayaran ang P500 processing fee via GCash para ma-release bukas: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "tl": [
+      "nakatanggap daw ako ng ayuda sa gcash",
+      "napili raw akong beneficiary ng ayuda",
+      "pinapa-click ako ng link para makuha ang ayuda",
+      "pinagbabayad ako ng processing fee para sa ayuda",
+      "pekeng dswd page na nangangako ng cash assistance",
+      "ayuda daw na mafo-forfeit kapag hindi kinlaim",
+      "pinapa-fill out ako ng form para sa 10k na ayuda"
+    ],
+    "en": [
+      "text says dswd aid was credited to my gcash",
+      "release fee for my cash assistance",
+      "fake fuel subsidy or fuel voucher text",
+      "fake dswd page offering cash aid form",
+      "calamity assistance text with a link",
+      "aid will be forfeited if not claimed today",
+      "messenger message offering 8000 pesos aid for my number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "tl": [
+      "Ayudang inaalok sa text, chat o online form.",
+      "Bayad para ma-release ang ayuda.",
+      "Link para “i-confirm” ang pera sa e-wallet mo."
+    ],
+    "en": [
+      "Cash aid offered by text, chat or an online form.",
+      "A fee to release aid.",
+      "A link to “confirm” money in your e-wallet."
+    ]
+  },
+  "whatToDo": {
+    "tl": [
+      "Huwag mag-click o magbayad. Libre ang serbisyo ng DSWD at hindi ito humihingi ng release fee.",
+      "Magtanong sa DSWD field office o local social welfare office, o sa opisyal na website at Facebook page ng DSWD.",
+      "Kung nailagay mo ang login ng e-wallet mo, i-lock ang account sa app at tawagan ang hotline nito.",
+      "I-report ang mensahe sa CICC hotline 1326."
+    ],
+    "en": [
+      "Don’t click or pay. DSWD services are free and it never asks for a release fee.",
+      "Check with your DSWD field office or local social welfare office, or the official DSWD website and Facebook page.",
+      "If you entered your e-wallet login, lock the account in the app and call its hotline.",
+      "Report the message to the CICC hotline 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/dswd",
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg"
+  ],
+  "sources": [
+    {
+      "title": "DSWD warns public vs. fake messages asking payment for cash relief aid",
+      "publisher": "SunStar (Philippine News Agency)",
+      "url": "https://www.sunstar.com.ph/manila/dswd-warns-public-vs-fake-messages-asking-payment-for-cash-relief-aid",
+      "date": "2026-04-10"
+    },
+    {
+      "title": "DSWD warns public anew vs. scam messages",
+      "publisher": "PTV News (Philippine News Agency)",
+      "url": "https://ptvnews.ph/dswd-warns-public-anew-vs-scam-messages/",
+      "date": "2026-04-08"
+    },
+    {
+      "title": "FACT CHECK: NO ₱10K cash aid from DSWD’s AKAP",
+      "publisher": "VERA Files",
+      "url": "https://verafiles.org/articles/fact-check-no-10k-cash-aid-from-dswds-akap",
+      "date": "2026-04-17"
+    },
+    {
+      "title": "Mobile wallet users warned vs ‘Calamity Assistance’ spoofing scam",
+      "publisher": "Interaksyon (Philstar)",
+      "url": "https://interaksyon.philstar.com/rumor-cop/2025/08/06/300161/mobile-wallet-users-warned-vs-calamity-assistance-spoofing-scam/",
+      "date": "2025-08-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/ewallet-account-phishing"
+  ]
+}

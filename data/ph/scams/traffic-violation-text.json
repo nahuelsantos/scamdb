@@ -1,0 +1,114 @@
+{
+  "id": "ph/traffic-violation-text",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“LTO”, “MMDA”, NCAP or the local police"
+  },
+  "name": {
+    "en": "Fake LTO or MMDA text: “unsettled traffic violation, settle now”"
+  },
+  "how": {
+    "en": "A text that claims to be from the LTO, the MMDA (no-contact apprehension) or a city police office says you have an unpaid traffic violation. It names a fine, gives a deadline of a day or less and threatens license suspension or an alarm on your record. The link leads to a fake LTMS portal that asks for your details and card. The LTO says it does not send violation notices or payment links by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text says it is from the LTO, MMDA or police traffic office."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you have an unsettled violation and a fine."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "It gives a deadline and threatens suspension of your license."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It links to a page that looks like the LTO portal."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "LTO Notice: Record shows an unpaid violation (Reckless Driving) under your plate. Pay the P2,000 fine today to avoid license suspension and LTMS alarm: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "lto text about an unpaid traffic violation",
+      "mmda ncap text asking me to settle a fine",
+      "text says my license will be suspended unless i settle",
+      "traffic fine text with a link to settle",
+      "fake lto portal link in a text",
+      "unsettled violation text with a 24 hour deadline"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "A traffic fine sent by text with a link.",
+      "A deadline of hours and threats of license suspension.",
+      "A website that is not the official LTO portal."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t tap the link. Log in to the official LTO portal yourself to check for violations.",
+      "If you paid or entered card details, call your bank straight away.",
+      "Report the text to the CICC hotline 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg"
+  ],
+  "sources": [
+    {
+      "title": "MMDA takes action vs NCAP text scams",
+      "publisher": "The Philippine Star",
+      "url": "https://www.philstar.com/nation/2026/10/07/2561460/mmda-takes-action-vs-ncap-text-scams",
+      "date": "2026-10-07"
+    },
+    {
+      "title": "Baguio motorists warned vs fake traffic violation texts",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/09/06/baguio-motorists-warned-vs-fake-traffic-violation-texts",
+      "date": "2026-09-06"
+    },
+    {
+      "title": "Public cautioned over fake links claiming to be LTO portal",
+      "publisher": "Interaksyon (Philstar)",
+      "url": "https://interaksyon.philstar.com/trends-spotlights/2026/01/22/307994/public-cautioned-fake-link-claiming-lto-portal/",
+      "date": "2026-01-22"
+    },
+    {
+      "title": "Public warned of LTO text scam claiming traffic violations",
+      "publisher": "Interaksyon (Philstar)",
+      "url": "https://interaksyon.philstar.com/rumor-cop/2025/11/13/304429/public-lto-text-scam-traffic-violation/",
+      "date": "2025-11-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}
