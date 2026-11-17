@@ -2,6 +2,27 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 4 (Italy, Poland, Romania, Moldova), forwarded warnings, matcher 1.7.x
+
+**Built:**
+- **Forwarded warnings (#63):** a message that warns about a scam (asks you to warn others, or describes what
+  scammers do) and asks for nothing is never called "scam"; the API returns `warning: true` and names the scam.
+  Found through a real chain message the owner received; it joins the private set.
+- **Groundwork (#63):** it, pl, ro and md in `countries.json`, reports, feed and trends; 39 brands; Italian, Polish
+  and Romanian rules in every sign with context rules and filler words.
+- **Matcher 1.7.1 (#64):** "la poste" word boundary; bare payment nouns aren't requests; greetings aren't a new
+  number; a BLIK is a payment; "the PIN is in the app" is genuine.
+- **Import (for owner review):** 64 entries (it 17, pl 17, ro 16, md 14), 20 contacts, 88 labelled messages; and
+  `ar/whatsapp-codigo` gains the fake Andreani call (iProfesional, Chequeado).
+
+**Measured (eval, 758 messages):** 98.3% of scams caught, 4.7% of safe messages called "scam". Each new country
+catches 12 of 12 scams with no false "scam".
+
+**Learned:**
+- Rules written per language before the data exists produce false alarms that only show up on real hard negatives
+  (seven this wave). Drafting the labelled messages first, then the rules, would catch them earlier.
+- Russian (Moldova, and wave 5) needs filler words and rules before Cyrillic countries go live.
+
 ## 2026-11-17: Europe wave 3 (Germany, Austria, Switzerland) and matcher 1.5.x
 
 **Built:**
