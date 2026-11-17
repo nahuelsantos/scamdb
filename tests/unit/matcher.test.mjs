@@ -246,3 +246,15 @@ test('1.7.0: Italian, Polish and Romanian signs and context rules', () => {
   assert.ok(!has('Codul tău este 482913. Nu comunica nimănui acest cod.', 'asks_for_code'));
   assert.ok(!has('La spedizione arriva domani, nulla da pagare alla consegna.', 'money_request'));
 });
+test('1.7.1: "la poste" needs word boundaries; a blocked-payment alert is not a payment request', () => {
+  assert.ok(!signsOf('Mi fai una ricarica sulla Postepay?').includes('impersonation'));
+  assert.ok(signsOf('La Poste : votre colis est en attente').includes('impersonation'));
+  assert.ok(!signsOf('Abbiamo bloccato un pagamento online di 499 EUR. Non ti chiederemo mai codici, PIN o bonifici.').includes('money_request'));
+  assert.ok(signsOf('Effettua il pagamento di 1,99 euro per la consegna').includes('money_request'));
+  assert.ok(signsOf('Efetue o pagamento da taxa hoje').includes('money_request'));
+});
+test('1.7.1: Romanian "nothing to pay" and "the PIN is in the app" are genuine', () => {
+  assert.ok(!signsOf('Coletul va fi livrat azi. Plata a fost făcută online, nu ai nimic de achitat.').includes('money_request'));
+  assert.ok(!signsOf('Cardul tău nou a fost expediat. PIN-ul îl găsești în aplicația băncii.').includes('asks_for_code'));
+  assert.ok(signsOf('Spune-mi PIN-ul cardului ca să deblocăm contul').includes('asks_for_code'));
+});
