@@ -278,3 +278,11 @@ test('1.8.0: Ukrainian, Russian, Bulgarian, Greek and Turkish signs and genuine-
     'Вашият код е 482913. Не го споделяйте с никого.', 'Ο κωδικός σας είναι 482913. Μην τον γνωστοποιήσετε σε κανέναν.', 'Doğrulama kodunuz 482913. Bu kodu kimseyle paylaşmayın.'])
     assert.ok(!has(t, 'asks_for_code'), t);
 });
+test('1.8.1: Ukrainian scam wording from real messages; "we never call", "set the PIN yourself" are genuine', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Вас турбує відділ безпеки вашого банку', 'impersonation'));
+  assert.ok(has('Тобі мав прийти код з шести цифр, скинь його мені', 'asks_for_code'));
+  assert.ok(has('Квартира вільна, потрібна передоплата за місяць', 'money_request'));
+  assert.ok(!has('Ваш банк нагадує: ми ніколи не телефонуємо з проханням назвати PIN, CVV чи код із SMS.', 'asks_for_code'));
+  assert.ok(!has('Yeni kartınız kuryeyle gelecek; şifrenizi ATM’den veya mobil uygulamadan kendiniz oluşturabilirsiniz.', 'asks_for_code'));
+});
