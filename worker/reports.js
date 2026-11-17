@@ -11,7 +11,7 @@ import { authKey, sessionKey, recordUsage } from './keys.js';
 import { verifyTurnstile } from './turnstile.js';
 import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 
-export const COUNTRIES = ['ar', 'au', 'nz', 'us', 'ca', 'gb', 'mx', 'es', 'br', 'pt', 'ie', 'mt', 'fr', 'be', 'lu', 'nl', 'de', 'at', 'ch', 'it', 'pl', 'ro', 'md', 'ua', 'tr', 'gr', 'cy', 'bg', 'se', 'dk', 'no', 'fi', 'is', 'cz', 'sk', 'hu', 'si', 'hr'];
+export const COUNTRIES = ['ar', 'au', 'nz', 'us', 'ca', 'gb', 'mx', 'es', 'br', 'pt', 'ie', 'mt', 'fr', 'be', 'lu', 'nl', 'de', 'at', 'ch', 'it', 'pl', 'ro', 'md', 'ua', 'tr', 'gr', 'cy', 'bg', 'se', 'dk', 'no', 'fi', 'is', 'cz', 'sk', 'hu', 'si', 'hr', 'ee', 'lv', 'lt'];
 export const CHANNELS = ['whatsapp', 'sms', 'phone', 'online', 'in-person', 'email', 'social'];
 export const LIMITS = { keyless: 10, keyed: 200, global: 2000 };
 
