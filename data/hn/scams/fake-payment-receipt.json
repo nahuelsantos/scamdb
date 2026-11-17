@@ -1,0 +1,123 @@
+{
+  "id": "hn/fake-payment-receipt",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “comprador” en Marketplace o WhatsApp",
+    "en": "A “buyer” on Marketplace or WhatsApp"
+  },
+  "name": {
+    "es": "“Ya le transferí, ahí le mando el comprobante”",
+    "en": "“I’ve transferred it, here’s the receipt”"
+  },
+  "how": {
+    "es": "Si vendés algo (sobre todo celulares caros), un supuesto comprador te manda por WhatsApp una captura o comprobante de transferencia falso, a veces hecho con aplicaciones o inteligencia artificial, y te pide que entregués o enviés el producto de inmediato. El dinero nunca llega a tu cuenta.",
+    "en": "If you sell something (especially expensive phones), a supposed buyer sends you a fake transfer screenshot or receipt by WhatsApp, sometimes made with apps or artificial intelligence, and asks you to hand over or ship the product immediately. The money never reaches your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un comprador se interesa rápido y no regatea.",
+        "en": "A buyer shows interest quickly and doesn’t haggle."
+      }
+    },
+    {
+      "text": {
+        "es": "Te manda una captura o comprobante de transferencia.",
+        "en": "They send a transfer screenshot or receipt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apura para que entregués o mandés el producto ya.",
+        "en": "They rush you to hand over or ship the product now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El dinero no aparece en tu cuenta.",
+        "en": "The money doesn’t show up in your account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Listo hermano, ya le hice la transferencia de los L 14,500, ahí le va la foto del comprobante. Mande al motorista con el cel ya porque me voy de viaje en la tarde, a veces el banco tarda en reflejar.",
+        "en": "Done bro, I’ve made the L 14,500 transfer, here’s the photo of the receipt. Send the courier with the phone now because I’m travelling this afternoon, sometimes the bank takes a while to show it."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "comprobante de transferencia falso",
+      "me mando una captura del deposito",
+      "entregue el celular y no cayo el dinero",
+      "comprador con comprobante editado",
+      "dice que el banco tarda en reflejar"
+    ],
+    "en": [
+      "fake transfer receipt",
+      "sent me a screenshot of the deposit",
+      "handed over the phone and the money never came",
+      "buyer with an edited receipt",
+      "says the bank takes time to show it"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una captura o comprobante se puede falsificar fácil.",
+      "“El banco tarda en reflejar” es la excusa típica.",
+      "Te apuran para que entregués antes de revisar."
+    ],
+    "en": [
+      "A screenshot or receipt is easy to fake.",
+      "“The bank takes a while to show it” is the typical excuse.",
+      "They rush you to hand over before you check."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Entregá solo cuando veas el dinero acreditado en tu propia app o banco.",
+      "Si podés, hacé la venta en persona en un lugar seguro o en el banco.",
+      "Si te estafaron, denunciá en la DPI con el comprobante y la conversación."
+    ],
+    "en": [
+      "Hand over only when you see the money credited in your own app or bank.",
+      "If you can, make the sale in person in a safe place or at the bank.",
+      "If you were scammed, report it to the DPI with the receipt and the chat."
+    ]
+  },
+  "reportTo": [
+    "hn/policia-dpi"
+  ],
+  "sources": [
+    {
+      "title": "Policía revela cómo hondureña uso la IA para engañar a vendedores de celulares",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/hondurena-uso-ia-para-enganar-vendedores-celulares-policia-revela-detalles-2026-10-24",
+      "date": "2026-10-24"
+    },
+    {
+      "title": "Estafan a hondureñas fingiendo ser médicos, soldados y empresarios exitosos",
+      "publisher": "La Prensa (Honduras)",
+      "url": "https://www.laprensa.hn/premium/reportajes/estafan-hondurenas-fingiendo-medicos-soldados-empresarios-exitosos-EI30831104",
+      "date": "2026-05-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

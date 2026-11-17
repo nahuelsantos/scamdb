@@ -1,0 +1,88 @@
+{
+  "id": "bz/central-bank-video-call",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "en": "“Central Bank of Belize”"
+  },
+  "name": {
+    "en": "Call or Google Meet from someone posing as the Central Bank of Belize"
+  },
+  "how": {
+    "en": "People are contacted by phone or invited to a Google Meet video call by someone pretending to work for the Central Bank of Belize. The impersonator asks for banking details, passwords, PINs or credit card information. The Central Bank says it does not make unsolicited calls asking for this information."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone says they represent the Central Bank of Belize and calls you or invites you to a video meeting."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "During the call they ask for your banking details, password, PIN or card information."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They use the details to take money from your account."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: Hello, I am calling from the Central Bank of Belize compliance unit. Your accounts were flagged in a review. Please join the Google Meet I sent to your WhatsApp so we can verify your online banking login and card information with you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "call from the central bank of belize asking for my bank details",
+      "central bank google meet asking for my pin",
+      "video call claiming to be from the central bank",
+      "central bank official wants my online banking password",
+      "someone from central bank asked for my card information"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "The Central Bank does not deal with your personal bank account and does not call to ask for banking details.",
+      "You are invited to a video meeting by someone you don’t know.",
+      "They ask for passwords, PINs or card numbers."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "End the call or leave the meeting straight away.",
+      "Don’t share any password, PIN or card information.",
+      "Check by calling the Central Bank of Belize on its published number.",
+      "If you shared details, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "bz/central-bank",
+    "bz/your-bank",
+    "bz/police"
+  ],
+  "sources": [
+    {
+      "title": "Central Bank of Belize Issues Warning on Telephone Scam Targeting the Public",
+      "publisher": "Central Bank of Belize",
+      "url": "https://www.centralbank.org.bz/detail-pages/news/2026/10/14/central-bank-of-belize-issues-warning-on-telephone-scam-targeting-the-public",
+      "date": "2026-10-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

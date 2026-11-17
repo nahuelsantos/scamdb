@@ -1,0 +1,128 @@
+{
+  "id": "ni/fake-investment-ads",
+  "country": "ni",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Página o perfil que ofrece inversiones con logos de bancos o caras conocidas",
+    "en": "Page or profile offering investments with bank logos or famous faces"
+  },
+  "name": {
+    "es": "“Invertí poquito y ganá mucho en pocos días”",
+    "en": "“Invest a little and earn a lot in a few days”"
+  },
+  "how": {
+    "es": "En Facebook, Telegram u otras redes circulan ofertas de inversión que prometen ganancias altas en poco tiempo con muy poco dinero. Usan sin permiso fotos de periodistas, influencers o figuras públicas, y logos de bancos o hasta de la SIBOIF para parecer serias. Te piden tus datos bancarios y que depositás o enviás dinero a una página o persona.",
+    "en": "Investment offers circulate on Facebook, Telegram and other networks promising high returns in a short time for very little money. They use photos of journalists, influencers or public figures without permission, and logos of banks or even SIBOIF, to look serious. They ask for your bank details and for you to deposit or send money to a website or person."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio o recibís un mensaje con una inversión de ganancias altas y rápidas.",
+        "en": "You see an ad or get a message about an investment with high, fast returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Usa la cara de alguien famoso o el logo de un banco o de la SIBOIF.",
+        "en": "It uses a famous person’s face or the logo of a bank or SIBOIF."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pasan a un chat de Telegram o WhatsApp con un “asesor”.",
+        "en": "They move you to a Telegram or WhatsApp chat with an “adviser”."
+      }
+    },
+    {
+      "text": {
+        "es": "Te piden datos bancarios y un depósito inicial, y después más.",
+        "en": "They ask for bank details and an initial deposit, and then more."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Con solo 100 dólares podés empezar a generar ganancias desde esta semana. Ya somos miles de nicas invirtiendo con nuestro sistema respaldado por expertos. Escribime al privado y te explico cómo abrir tu cuenta [enlace]",
+        "en": "With just 100 dollars you can start earning from this week. Thousands of Nicaraguans are already investing with our expert-backed system. Message me privately and I’ll explain how to open your account [enlace]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "inversion con ganancias rapidas en facebook",
+      "anuncio de inversion con un famoso",
+      "me ofrecieron invertir por telegram",
+      "plataforma de inversion me pide deposito",
+      "asesor de inversiones por whatsapp",
+      "inversion minima con altos rendimientos"
+    ],
+    "en": [
+      "investment with quick profits on facebook",
+      "investment ad with a celebrity",
+      "they offered me an investment on telegram",
+      "investment platform asks me for a deposit",
+      "investment adviser on whatsapp",
+      "minimum investment with high returns"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Promesas de ganancias altas, rápidas y seguras.",
+      "Fotos de famosos o logos oficiales no prueban que sea real.",
+      "Ninguna entidad supervisada por la SIBOIF pide tus datos financieros por redes o mensajería."
+    ],
+    "en": [
+      "Promises of high, fast and safe returns.",
+      "Photos of famous people or official logos don’t prove it’s real.",
+      "No SIBOIF-supervised institution asks for your financial details on social media or messaging apps."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revisá en el sitio de la SIBOIF si la entidad está autorizada antes de invertir.",
+      "No des datos bancarios ni transferás a plataformas o personas que no podés verificar.",
+      "Si ya pagaste, avisá a tu banco y denunciá en la Policía."
+    ],
+    "en": [
+      "Check on SIBOIF’s website whether the company is authorized before investing.",
+      "Don’t give bank details or transfer to platforms or people you can’t verify.",
+      "If you already paid, tell your bank and report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "ni/siboif",
+    "ni/tu-banco",
+    "ni/policia-118"
+  ],
+  "sources": [
+    {
+      "title": "Alertas por falsas inversiones",
+      "publisher": "SIBOIF",
+      "url": "https://www.siboif.gob.ni/alertas/alertas-por-falsas-inversiones",
+      "date": "2025-10-13"
+    },
+    {
+      "title": "Alerta sobre potenciales estafas en redes sociales y plataformas de mensajería",
+      "publisher": "SIBOIF",
+      "url": "https://www.siboif.gob.ni/alertas/alerta-sobre-potenciales-estafas-en-redes-sociales-y-plataformas-de-mensajer%C3%ADa",
+      "date": "2025-05-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

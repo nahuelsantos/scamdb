@@ -1,0 +1,143 @@
+{
+  "id": "pa/fake-superintendency-official",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "es": "Un supuesto funcionario de la Superintendencia de Bancos",
+    "en": "A supposed official of the Superintendency of Banks"
+  },
+  "name": {
+    "es": "Falso funcionario de la Superintendencia de Bancos pide un pago",
+    "en": "Fake Superintendency of Banks official asks for a payment"
+  },
+  "how": {
+    "es": "Te contactan por WhatsApp, redes sociales, correo o desde un celular, diciendo que son directores o funcionarios de la Superintendencia de Bancos. Te ofrecen un préstamo, la compra de una propiedad, recuperar plata de una inversión o resolver un “trámite urgente”, y a veces te mandan documentos con el logo y firmas falsas. Al final te piden un depósito por una multa, un impuesto, gastos administrativos o una comisión. La Superintendencia no pide dinero a nadie.",
+    "en": "They contact you on WhatsApp, social media, email or from a mobile number, saying they are directors or officials of the Superintendencia de Bancos (banking regulator). They offer a loan, a property purchase, recovering money from an investment or sorting out an “urgent procedure”, and sometimes send documents with the logo and fake signatures. In the end they ask for a deposit for a fine, a tax, admin costs or a fee. The Superintendency never asks anyone for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien dice ser funcionario de la Superintendencia de Bancos y te escribe desde un celular o red social.",
+        "en": "Someone claims to be a Superintendency of Banks official and contacts you from a mobile or social media."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece un préstamo, recuperar dinero o resolver un trámite urgente.",
+        "en": "They offer a loan, money recovery or to fix an urgent procedure."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te manda documentos con el logo y sellos para que parezca oficial.",
+        "en": "They send documents with the logo and stamps so it looks official."
+      }
+    },
+    {
+      "text": {
+        "es": "Te pide pagar una multa, un impuesto o gastos administrativos a una cuenta.",
+        "en": "They ask you to pay a fine, tax or admin costs into an account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le escribe el Lic. Herrera, Dirección de Supervisión de la Superintendencia de Bancos. Su reclamo fue aprobado y tiene $4,800 por devolver, pero para liberar los fondos debe cancelar B/. 250 de gastos administrativos. Le adjunto la resolución firmada.",
+        "en": "Good afternoon, this is Mr Herrera, Supervision Department of the Superintendency of Banks. Your claim was approved and you have $4,800 to be refunded, but to release the funds you must pay B/. 250 in admin costs. I attach the signed resolution."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "funcionario de la superintendencia de bancos me pidio plata",
+      "me escribieron de la superintendencia por whatsapp",
+      "pago de gastos administrativos para liberar fondos",
+      "documento con el logo de la superintendencia",
+      "me pidieron pagar una multa para recuperar mi dinero",
+      "falso funcionario del gobierno pide deposito",
+      "recuperar dinero perdido en una inversion",
+      "pago de tramite para liberar una devolucion",
+      "carta oficial con sello y firma por chat"
+    ],
+    "en": [
+      "a superintendency of banks official asked me for money",
+      "the superintendency messaged me on whatsapp",
+      "admin fee to release funds",
+      "document with the superintendency logo",
+      "they asked me to pay a fine to recover my money",
+      "fake government official asks for a deposit",
+      "recover money lost in an investment",
+      "processing fee to release a refund",
+      "official letter with stamp and signature by chat"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La Superintendencia ni su personal piden dinero, pagos ni transferencias.",
+      "Te contactan por redes, WhatsApp o un celular que no es institucional.",
+      "Te piden pagar para liberar fondos, evitar una sanción o terminar un trámite.",
+      "Documentos con logo y firma que llegan por chat."
+    ],
+    "en": [
+      "The Superintendency and its staff never ask for money, payments or transfers.",
+      "They contact you via social media, WhatsApp or a non-institutional mobile.",
+      "You’re asked to pay to release funds, avoid a penalty or finish a procedure.",
+      "Documents with logo and signature sent by chat."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues nada ni mandes datos bancarios.",
+      "Confirma cualquier documento escribiendo o llamando a la Superintendencia por sus canales oficiales.",
+      "Si ya pagaste, llama a tu banco para intentar frenar la transferencia.",
+      "Denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Don’t pay anything or send bank details.",
+      "Check any document by writing to or calling the Superintendency through its official channels.",
+      "If you already paid, call your bank to try to stop the transfer.",
+      "Report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/superbancos",
+    "pa/ministerio-publico",
+    "pa/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Aviso al público: la SBP y su personal no solicitan dinero, pagos ni transferencias",
+      "publisher": "Superintendencia de Bancos de Panamá",
+      "url": "https://www.superbancos.gob.pa/documentos/leyes_y_regulaciones/comunicados/2026/aviso7-2026.pdf",
+      "date": "2026-04-27"
+    },
+    {
+      "title": "Aviso al público sobre personas que se hacen pasar por funcionarios de la Superintendencia",
+      "publisher": "Superintendencia de Bancos de Panamá",
+      "url": "https://www.superbancos.gob.pa/documentos/leyes_y_regulaciones/comunicados/2025/aviso12-2025.pdf",
+      "date": "2025-09-30"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/advance-fee-loan",
+    "pa/fake-investment-deepfake"
+  ]
+}

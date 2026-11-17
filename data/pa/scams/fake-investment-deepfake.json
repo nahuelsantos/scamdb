@@ -1,0 +1,150 @@
+{
+  "id": "pa/fake-investment-deepfake",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un famoso o un “experto financiero” en un video",
+    "en": "A celebrity or “financial expert” in a video"
+  },
+  "name": {
+    "es": "Inversión falsa promocionada con videos de famosos hechos con IA",
+    "en": "Fake investment promoted with AI celebrity videos"
+  },
+  "how": {
+    "es": "En redes sociales ves un video o una “entrevista” donde una figura pública o alguien del mundo financiero recomienda una plataforma para ganar plata rápido. El video está manipulado o hecho con inteligencia artificial. Te registras, un “asesor” te escribe por WhatsApp, haces un primer depósito y ves ganancias en la pantalla. Te piden invertir más y, cuando quieres retirar, te cobran comisiones o desaparecen. La plataforma no tiene licencia de la Superintendencia del Mercado de Valores.",
+    "en": "On social media you see a video or “interview” where a public figure or someone from finance recommends a platform to make money fast. The video is manipulated or made with artificial intelligence. You sign up, an “adviser” messages you on WhatsApp, you make a first deposit and see profits on the screen. They push you to invest more and, when you try to withdraw, they charge fees or vanish. The platform has no licence from the Superintendencia del Mercado de Valores (securities regulator)."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un video de un famoso o experto recomendando una plataforma.",
+        "en": "You see a video of a celebrity or expert recommending a platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Prometen ganancias rápidas o garantizadas.",
+        "en": "They promise fast or guaranteed returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Un asesor te escribe y te pide un primer depósito.",
+        "en": "An adviser messages you and asks for a first deposit."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Para retirar te piden más dinero o comisiones, y luego desaparecen.",
+        "en": "To withdraw they ask for more money or fees, then disappear."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola! Vi que dejaste tus datos en el video de la entrevista 😊 Soy tu asesora asignada. Con un aporte inicial de $250 nuestro sistema de inteligencia artificial opera por ti y los clientes en Panamá están sacando entre 30% y 40% al mes. ¿Activamos tu cuenta hoy?",
+        "en": "Hi! I saw you left your details on the interview video 😊 I’m your assigned adviser. With an initial $250 our artificial intelligence system trades for you and clients in Panama are making 30% to 40% a month. Shall we activate your account today?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "video de un famoso recomendando invertir",
+      "inversion con inteligencia artificial",
+      "plataforma que promete ganancias garantizadas",
+      "no me dejan retirar mi dinero de la inversion",
+      "asesora de inversiones por whatsapp",
+      "plataforma sin licencia de la smv",
+      "robot que invierte por mi",
+      "deposito inicial para empezar a invertir",
+      "ganancias semanales con trading",
+      "noticia de television con un famoso invirtiendo"
+    ],
+    "en": [
+      "celebrity video recommending an investment",
+      "artificial intelligence investment",
+      "platform promising guaranteed profits",
+      "they won’t let me withdraw my investment",
+      "investment adviser on whatsapp",
+      "platform not licensed by the smv",
+      "robot that invests for me",
+      "initial deposit to start investing",
+      "weekly trading profits",
+      "tv news story with a celebrity investing"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganancias rápidas, garantizadas o muy altas.",
+      "Videos o entrevistas de famosos que no salen en medios oficiales.",
+      "Para retirar te piden pagar impuestos o comisiones.",
+      "La empresa no aparece entre las autorizadas por la SMV."
+    ],
+    "en": [
+      "Fast, guaranteed or very high returns.",
+      "Celebrity videos or interviews not carried by official media.",
+      "To withdraw you must pay taxes or fees.",
+      "The company isn’t listed as authorised by the SMV."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de invertir, revisa en la página de la SMV si la empresa tiene licencia.",
+      "No transfieras dinero por un video o una publicación en redes.",
+      "No pagues “impuestos” ni comisiones para retirar: es otra parte de la estafa.",
+      "Si ya invertiste, llama a tu banco, reporta a la SMV y denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Before investing, check on the SMV website whether the company is licensed.",
+      "Don’t transfer money because of a video or social media post.",
+      "Don’t pay “taxes” or fees to withdraw: that is another part of the scam.",
+      "If you already invested, call your bank, report it to the SMV and to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/smv",
+    "pa/ministerio-publico",
+    "pa/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Comunicado conjunto SMV y Latinex sobre contenidos falsos que promueven supuestas inversiones",
+      "publisher": "Superintendencia del Mercado de Valores",
+      "url": "https://supervalores.gob.pa/wp-content/uploads/2026/04/COMUNICADO-CONJUNTO-SMV-LATINEX.pdf",
+      "date": "2026-04-01"
+    },
+    {
+      "title": "Alertan sobre fraudes de inversión usando inteligencia artificial en Panamá",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/alertan-fraudes-inversion-inteligencia-artificial-panama_1_2234540.html",
+      "date": "2026-04-01"
+    },
+    {
+      "title": "Advertencia – Entidad no autorizada – Preferred Capital Limited y Simas As Latam",
+      "publisher": "Superintendencia del Mercado de Valores",
+      "url": "https://supervalores.gob.pa/advertencia-entidad-no-autorizada-preferred-capital-limited-y-simas-as-latam/",
+      "date": "2026-07-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/fake-superintendency-official"
+  ]
+}

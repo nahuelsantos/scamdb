@@ -1,0 +1,131 @@
+{
+  "id": "pa/dgi-fake-email",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "es": "La “DGI” (Dirección General de Ingresos)",
+    "en": "The “DGI” (tax authority)"
+  },
+  "name": {
+    "es": "Correo falso de la DGI cobrando impuestos o multas",
+    "en": "Fake DGI email demanding taxes or fines"
+  },
+  "how": {
+    "es": "Te llega un correo que dice venir de la Dirección General de Ingresos: que tienes impuestos sin pagar o una multa, y que debes pagar para evitar sanciones. El correo viene de un dominio que no es del Ministerio de Economía y Finanzas y trae un enlace o instrucciones de pago. Lo que pagas no llega al Fisco, se lo quedan los estafadores.",
+    "en": "You get an email that claims to come from the Dirección General de Ingresos (tax authority): you have unpaid taxes or a fine and must pay to avoid penalties. The email comes from a domain that doesn’t belong to the Ministry of Economy and Finance and has a link or payment instructions. What you pay never reaches the Treasury; the scammers keep it."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Recibes un correo a nombre de la DGI.",
+        "en": "You get an email in the DGI’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tienes impuestos o multas pendientes y amenaza con sanciones.",
+        "en": "It says you owe taxes or fines and threatens penalties."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace o una cuenta para pagar.",
+        "en": "It has a link or an account to pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "El pago va a los estafadores, no a la DGI.",
+        "en": "The payment goes to the scammers, not the DGI."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Dirección General de Ingresos – Notificación de cobro. Estimado contribuyente: su RUC mantiene un saldo moroso de impuesto sobre la renta más recargos. Evite la apertura de un proceso de cobro coactivo realizando el pago en el siguiente portal: [enlace]",
+        "en": "Dirección General de Ingresos – Collection notice. Dear taxpayer: your RUC has an overdue income tax balance plus surcharges. Avoid enforced collection proceedings by paying on the following portal: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo de la dgi cobrando impuestos",
+      "me llego un aviso de cobro de la dgi",
+      "correo falso de la direccion general de ingresos",
+      "multa de la dgi por correo con enlace",
+      "pagar impuestos desde un link de un correo",
+      "cobro coactivo por correo"
+    ],
+    "en": [
+      "email from the dgi demanding taxes",
+      "i got a dgi collection notice",
+      "fake tax authority email",
+      "dgi fine by email with a link",
+      "pay taxes from a link in an email",
+      "enforced collection by email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El remitente no termina en @mef.gob.pa.",
+      "Amenazas de sanción o cobro coactivo si no pagas ya.",
+      "Enlaces o cuentas para pagar dentro del correo.",
+      "Saludo genérico sin tus datos."
+    ],
+    "en": [
+      "The sender doesn’t end in @mef.gob.pa.",
+      "Threats of penalties or enforced collection if you don’t pay now.",
+      "Links or accounts to pay inside the email.",
+      "Generic greeting without your details."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras enlaces ni adjuntos del correo.",
+      "Revisa tu cuenta entrando tú mismo a la plataforma oficial de la DGI.",
+      "Si pagaste con tarjeta, llama a tu banco.",
+      "Denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Don’t open links or attachments in the email.",
+      "Check your account by going to the DGI’s official platform yourself.",
+      "If you paid by card, call your bank.",
+      "Report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/ministerio-publico",
+    "pa/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "DGI denuncia correos fraudulentos de cobro de impuestos ante el Ministerio Público",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/dgi-denuncia-correos-fraudulentos-cobro_1_2169525.html",
+      "date": "2024-12-17"
+    },
+    {
+      "title": "DGI denuncia cobro paralelo de impuestos ante el Ministerio Público",
+      "publisher": "Panamá América",
+      "url": "https://www.panamaamerica.com.pa/judicial/dgi-denuncia-cobro-paralelo-de-impuestos-ante-el-ministerio-publico-1244319",
+      "date": "2024-12-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

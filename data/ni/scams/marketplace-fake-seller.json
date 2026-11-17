@@ -1,0 +1,135 @@
+{
+  "id": "ni/marketplace-fake-seller",
+  "country": "ni",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Vendedor en Marketplace o en una página de Facebook",
+    "en": "Seller on Marketplace or a Facebook page"
+  },
+  "name": {
+    "es": "“El celular está a buen precio: depositame y te lo mando”",
+    "en": "“The phone is a good price: deposit and I’ll send it”"
+  },
+  "how": {
+    "es": "Ves en Marketplace o en una página de Facebook un celular, un carro u otro producto a buen precio. El vendedor te pasa a WhatsApp, dice ser de una tienda conocida o de otra ciudad y te da una cuenta de banco para que depositás antes de la entrega. Cuando confirma el depósito, te bloquea y el producto nunca llega.",
+    "en": "You see a phone, a car or another product at a good price on Marketplace or a Facebook page. The seller moves you to WhatsApp, says they work with a well-known shop or are in another city, and gives you a bank account to deposit into before delivery. Once the deposit is confirmed they block you and the product never arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Encontrás un producto a muy buen precio en Marketplace o en una página de Facebook.",
+        "en": "You find a product at a very good price on Marketplace or a Facebook page."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor dice trabajar con una tienda conocida para darte confianza.",
+        "en": "The seller says they work with a well-known shop to gain your trust."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pide depositar todo o una “reserva” antes de ver el producto, a veces en cuentas de distintas personas.",
+        "en": "They ask you to deposit the full price or a “reservation” before you see the product, sometimes to accounts in different people’s names."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apura porque “hay otros interesados”.",
+        "en": "They rush you because “others are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Después del depósito te bloquea.",
+        "en": "After the deposit they block you."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Sí amor, todavía lo tengo, está sellado. Soy colaboradora de una tienda en León y lo mandamos por encomienda. Para apartártelo me depositás hoy a esta cuenta del BAC porque ya hay otra muchacha preguntando.",
+        "en": "Yes dear, I still have it, it’s sealed. I work with a shop in León and we send it by courier. To hold it for you, deposit today to this BAC account because another girl is already asking."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "compre un celular en marketplace y no llego",
+      "me pidio depositar antes de entregarme",
+      "vendedora me bloqueo despues del deposito",
+      "deposito para apartar el producto",
+      "dice que trabaja con una tienda conocida",
+      "venta por facebook a muy buen precio",
+      "pague un adelanto para apartar un celular",
+      "me dijo que habia mas interesados",
+      "lo iban a mandar por encomienda despues de depositar"
+    ],
+    "en": [
+      "bought a phone on marketplace and it never came",
+      "they asked me to deposit before delivery",
+      "seller blocked me after the deposit",
+      "deposit to hold the product",
+      "says she works with a known shop",
+      "facebook sale at a very good price",
+      "paid a deposit to hold a phone",
+      "said there were other interested buyers"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden pagar antes de ver el producto.",
+      "La cuenta está a nombre de otra persona, no de la tienda.",
+      "El precio está muy por debajo de lo normal.",
+      "Te presionan con que otros quieren comprar."
+    ],
+    "en": [
+      "They ask you to pay before seeing the product.",
+      "The account is in someone else’s name, not the shop’s.",
+      "The price is far below normal.",
+      "They pressure you saying others want to buy."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Comprá en persona, en un lugar público, y pagá al recibir el producto.",
+      "Si dice ser de una tienda, llamá vos a la tienda por sus canales oficiales.",
+      "Si ya depositaste, avisá enseguida a tu banco y denunciá en la Policía con las capturas."
+    ],
+    "en": [
+      "Buy in person, in a public place, and pay when you receive the product.",
+      "If they say they’re from a shop, call the shop yourself through its official channels.",
+      "If you already deposited, tell your bank right away and report it to the Police with screenshots."
+    ]
+  },
+  "reportTo": [
+    "ni/tu-banco",
+    "ni/policia-118"
+  ],
+  "sources": [
+    {
+      "title": "Una joven perdió 14 mil córdobas al ser estafada por una supuesta vendedora de celulares a través de Facebook",
+      "publisher": "Canal 10",
+      "url": "https://www.canal10.com.ni/noticia/una-joven-perdio-14-mil-cordobas-al-ser-estafada-por-una-supuesta-vendedora-de-celulares-a-traves-de-facebook/",
+      "date": "2026-04-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

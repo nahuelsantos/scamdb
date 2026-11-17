@@ -1,0 +1,131 @@
+{
+  "id": "gt/fake-government-aid",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "“Gobierno de Guatemala” o una secretaría (bono o apoyo)",
+    "en": "“Government of Guatemala” or a ministry (grant or aid)"
+  },
+  "name": {
+    "es": "Bonos y apoyos económicos falsos del gobierno",
+    "en": "Fake government grants and cash aid"
+  },
+  "how": {
+    "es": "En redes sociales circulan anuncios y videos, a veces hechos con inteligencia artificial y con la cara de funcionarios, que ofrecen un bono o apoyo económico del gobierno. Para “inscribirte” te mandan a un enlace donde te piden tus datos, tu DPI, datos bancarios o contraseñas, o te piden un depósito o “inversión” para recibir la ayuda. El programa no existe.",
+    "en": "Ads and videos circulate on social media, sometimes made with AI and showing officials’ faces, offering a government grant or cash aid. To “sign up” they send you to a link that asks for your details, DPI (ID), bank details or passwords, or they ask for a deposit or “investment” to receive the aid. The programme doesn’t exist."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio o video de un “bono” o apoyo del gobierno.",
+        "en": "You see an ad or video about a government “grant” or aid."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te prometen dinero fácil por solo inscribirte.",
+        "en": "They promise easy money just for signing up."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te mandan a un enlace o formulario que no es oficial.",
+        "en": "They send you to a link or form that isn’t official."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden datos personales y bancarios, o un pago para recibir el apoyo.",
+        "en": "They ask for personal and bank details, or a payment to receive the aid."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "📢 NUEVO APOYO ECONÓMICO 2026 para madres de familia y adultos mayores: Q2,500 de una sola vez. Cupos limitados. Inscribite con tu DPI y número de cuenta en el formulario oficial 👉 [enlace]",
+        "en": "📢 NEW 2026 CASH AID for mothers and older adults: Q2,500 one-off. Limited places. Sign up with your DPI and account number on the official form 👉 [enlace]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "bono del gobierno en facebook",
+      "apoyo economico del gobierno para inscribirse en un enlace",
+      "piden mi dpi para un bono",
+      "video de un ministro ofreciendo ayuda economica",
+      "para recibir el bono tengo que depositar",
+      "formulario para cobrar un subsidio"
+    ],
+    "en": [
+      "government grant on facebook",
+      "government cash aid sign up through a link",
+      "they ask for my id for a grant",
+      "video of a minister offering cash aid",
+      "i have to deposit to receive the grant",
+      "form to claim a subsidy"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El gobierno no pide dinero ni inversiones para dar apoyos.",
+      "El enlace no es de un sitio oficial del gobierno.",
+      "Te piden número de cuenta, contraseñas o PIN."
+    ],
+    "en": [
+      "The government doesn’t ask for money or investments to give aid.",
+      "The link isn’t an official government site.",
+      "They ask for your account number, passwords or PIN."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Buscá el programa en las páginas oficiales de la institución.",
+      "No pongás tus datos en formularios de enlaces de redes.",
+      "Si diste datos bancarios, llamá a tu banco.",
+      "Denunciá en el Ministerio Público."
+    ],
+    "en": [
+      "Look up the programme on the institution’s official pages.",
+      "Don’t enter your details on forms from social media links.",
+      "If you gave bank details, call your bank.",
+      "Report it to the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/mp-denuncia",
+    "gt/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "AGN Verifica: Videos falsos ofrecen supuestos apoyos económicos",
+      "publisher": "Agencia Guatemalteca de Noticias (AGN)",
+      "url": "https://agn.gt/agn-verifica-videos-falsos-ofrecen-supuestos-apoyos-economicos/",
+      "date": "2026-09-22"
+    },
+    {
+      "title": "Bono Mujer 2025 Guatemala: Secretaría alerta que no existe y que se trata de una estafa en redes sociales",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/bono-mujer-no-existe-secretaria-de-gobierno-alerta-de-nueva-modalidad-de-estafa-en-redes-sociales/",
+      "date": "2025-02-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,137 @@
+{
+  "id": "pa/bank-sms-phishing",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un mensaje que parece de tu banco",
+    "en": "A message that looks like it’s from your bank"
+  },
+  "name": {
+    "es": "SMS falso del banco con enlace",
+    "en": "Fake bank text with a link"
+  },
+  "how": {
+    "es": "Te llega un mensaje de texto o un correo que parece de tu banco: dice que tu cuenta o tu tarjeta fue bloqueada, que hay una compra que no reconoces o que debes actualizar tus datos. Trae un enlace a una página que copia la del banco. Si pones ahí tu usuario, tu contraseña o los datos de la tarjeta, los delincuentes entran a tu banca en línea y te sacan la plata.",
+    "en": "You get a text or email that looks like it’s from your bank: it says your account or card was blocked, that there is a purchase you don’t recognise, or that you must update your details. It has a link to a page that copies the bank’s. If you enter your username, password or card details there, criminals log in to your online banking and take your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS o correo con el nombre de tu banco.",
+        "en": "You get a text or email with your bank’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tu cuenta está bloqueada o que hay un cargo raro, y que actúes ya.",
+        "en": "It says your account is blocked or there is an odd charge, and to act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace a una página parecida a la del banco.",
+        "en": "It has a link to a page that looks like the bank’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página te pide usuario, contraseña, datos de la tarjeta o la clave que te llega.",
+        "en": "The page asks for your username, password, card details or the code you receive."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "AVISO: Su acceso a Banca en Linea fue suspendido por actividad inusual. Para reactivarlo valide su identidad en las proximas 2 horas: [enlace]",
+        "en": "NOTICE: Your Online Banking access was suspended due to unusual activity. To reactivate it, validate your identity within the next 2 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje del banco con un enlace",
+      "me llego un sms que mi cuenta estaba bloqueada",
+      "pagina falsa del banco",
+      "puse mi usuario y contraseña en un link",
+      "mensaje para actualizar mis datos bancarios",
+      "correo falso del banco"
+    ],
+    "en": [
+      "text from the bank with a link",
+      "i got a text saying my account was blocked",
+      "fake bank website",
+      "i entered my username and password on a link",
+      "message asking me to update my bank details",
+      "fake email from the bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "El mensaje trae un enlace para “reactivar”, “validar” o “actualizar”.",
+      "Te dan un plazo de horas para evitar un bloqueo.",
+      "La dirección de la página no es exactamente la del banco.",
+      "Te piden la clave que te llega por mensaje."
+    ],
+    "en": [
+      "The message has a link to “reactivate”, “validate” or “update”.",
+      "They give you a few hours to avoid a block.",
+      "The page address isn’t exactly the bank’s.",
+      "They ask for the code you get by text."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Entra a tu banco escribiendo la dirección tú mismo o desde la app oficial.",
+      "Si ya pusiste tus datos, cambia la contraseña y llama al banco para bloquear todo.",
+      "Revisa tus movimientos y reporta los que no reconozcas.",
+      "Denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Don’t open the link. Go to your bank by typing the address yourself or through the official app.",
+      "If you already entered your details, change your password and call the bank to block everything.",
+      "Check your transactions and report any you don’t recognise.",
+      "Report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/tu-banco",
+    "pa/ministerio-publico",
+    "pa/superbancos"
+  ],
+  "sources": [
+    {
+      "title": "¡No caiga! Estas son las estafas más denunciadas en Panamá durante 2026",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/no-caiga-estas-son-las-estafas-mas-denunciadas-en-panama-durante-2026-NK22395976",
+      "date": "2026-05-14"
+    },
+    {
+      "title": "Phishing es el principal ataque informático que se registra en el país",
+      "publisher": "Panamá América",
+      "url": "https://www.panamaamerica.com.pa/tecnologia/phishing-es-el-principal-ataque-informatico-que-se-registra-en-el-pais-1260704",
+      "date": "2026-04-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/fake-bank-call"
+  ]
+}

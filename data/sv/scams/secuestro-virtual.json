@@ -1,0 +1,133 @@
+{
+  "id": "sv/secuestro-virtual",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un número extranjero que dice ser de un cartel o tener a tu familiar",
+    "en": "A foreign number claiming to be a cartel or to have your relative"
+  },
+  "name": {
+    "es": "Secuestro virtual: “tenemos a tu familiar, deposita ya”",
+    "en": "Virtual kidnapping: “we have your relative, deposit now”"
+  },
+  "how": {
+    "es": "Te llaman, muchas veces desde números de Colombia, México o Guatemala, diciendo que tienen secuestrado a un familiar o que te tienen rodeado y que son de un cartel. A veces primero engañan a la persona para que vaya a un lugar apartado y deje de contestar, y luego llaman a la familia pidiendo dinero para soltarla. Exigen un depósito inmediato y que no cuelgues ni avises a nadie. El Gabinete de Seguridad dice que las llamadas salen de una cárcel en Colombia y que no hay riesgo físico: es presión psicológica.",
+    "en": "You get a call, often from Colombian, Mexican or Guatemalan numbers, saying they have kidnapped a relative or that you are surrounded and they are from a cartel. Sometimes they first trick the person into going to an isolated place and stop answering, then call the family demanding money to release them. They demand an immediate deposit and tell you not to hang up or tell anyone. The Security Cabinet says the calls come from a prison in Colombia and there is no physical risk: it is psychological pressure."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman de un número extranjero con amenazas.",
+        "en": "You’re called from a foreign number with threats."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que no cuelgues y que no llames a nadie.",
+        "en": "They tell you not to hang up and not to call anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Te prohíben avisar a la policía o a la familia.",
+        "en": "They forbid you to tell the police or your family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Exigen un depósito ya para “soltar” a tu familiar.",
+        "en": "They demand a deposit right now to “release” your relative."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Mire señora, no cuelgue. Su hijo está con nosotros, somos del cartel y lo tenemos vigilado desde hace días. Si quiere volver a verlo deposite $1,500 en la cuenta que le voy a dar, tiene una hora. Si llama a la policía ya sabe lo que pasa.",
+        "en": "Listen, ma’am, don’t hang up. Your son is with us, we’re from the cartel and we’ve been watching him for days. If you want to see him again deposit $1,500 into the account I’ll give you, you have one hour. If you call the police you know what happens."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron diciendo que tienen a mi hijo",
+      "secuestro por telefono falso",
+      "llamada del cartel exigiendo dinero",
+      "no cuelgue o le pasa algo",
+      "numero de colombia amenazando",
+      "depositar para que lo suelten"
+    ],
+    "en": [
+      "they called saying they have my son",
+      "fake kidnapping call",
+      "cartel call demanding money",
+      "don’t hang up or something happens",
+      "threatening call from a colombian number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Números extranjeros con amenazas.",
+      "No te dejan colgar ni verificar.",
+      "Te piden depositar a una cuenta en poco tiempo.",
+      "Tu familiar “no contesta” porque lo engañaron para que se aislara."
+    ],
+    "en": [
+      "Foreign numbers with threats.",
+      "They won’t let you hang up or check.",
+      "They ask you to deposit into an account within a short time.",
+      "Your relative “doesn’t answer” because they were tricked into isolating themselves."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y no pagues.",
+      "Llama a tu familiar con una llamada normal (no WhatsApp) o a alguien que esté con él.",
+      "Bloquea las llamadas de números desconocidos de Colombia, México y Guatemala.",
+      "Llama al 911 si temes por alguien y denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Hang up and don’t pay.",
+      "Call your relative with a normal phone call (not WhatsApp) or someone who is with them.",
+      "Block calls from unknown Colombian, Mexican and Guatemalan numbers.",
+      "Call 911 if you fear for someone and report it to the Attorney General’s Office."
+    ]
+  },
+  "reportTo": [
+    "sv/emergencias",
+    "sv/fiscalia",
+    "sv/denuncia-estafas"
+  ],
+  "sources": [
+    {
+      "title": "Estas son las recomendaciones de las autoridades salvadoreñas ante una llamada sospechosa de estafa",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/estas-son-las-recomendaciones-de-las-autoridades-salvadorenas-ante-una-llamada-sospechosa-de-estafa",
+      "date": "2026-01-24"
+    },
+    {
+      "title": "Gobierno de El Salvador señala a cárcel en Colombia como origen de estafas telefónicas en la región",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/gobierno-de-el-salvador-senala-a-carcel-en-colombia-como-origen-de-estafas-telefonicas-en-la-region",
+      "date": "2026-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,92 @@
+{
+  "id": "bz/facebook-grant-delivery-fee",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social"
+  ],
+  "sender": {
+    "en": "A stranger on Facebook, then a “courier” and a “police officer”"
+  },
+  "name": {
+    "en": "Facebook message about a grant or prize that needs “delivery fees”"
+  },
+  "how": {
+    "en": "A stranger messages you on Facebook to congratulate you on a prize or an international grant worth thousands of dollars. An “agent” says it will be delivered by a courier company, but first you must pay delivery fees. When the package doesn’t come, someone posing as a police officer asks for more money to release it. A man in Toledo District lost BZ$745 this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A stranger on Facebook says you have won a prize or a large grant."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "An “agent” or courier asks you to pay a delivery fee, often in several deposits."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Someone posing as a police officer or official asks for more to release the money."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "Nothing is ever delivered."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Congratulations!! Your name was approved for the International Empowerment Grant of US$50,000. Your package is ready with our courier agent. Contact him to pay the delivery and clearance fee so it can reach you in Belize this week."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "facebook message said i won a grant",
+      "pay a delivery fee to receive my grant money",
+      "courier agent asking for clearance fee for prize package",
+      "police officer asking for money to release my prize",
+      "international grant approved message on facebook"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "en": [
+      "You won something you never entered.",
+      "You must pay fees before receiving money.",
+      "A “police officer” or official joins in to ask for more money."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Stop replying and don’t send any money.",
+      "Real grants and prizes never charge delivery fees.",
+      "If you paid, contact your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "bz/police",
+    "bz/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Online Scam: Belize Man loses $745 after replying to unknown account on Facebook",
+      "publisher": "WIC News",
+      "url": "https://wicnews.com/belize/online-scam-belize-man-loses-745-after-replying-to-unknown-account-on-facebook",
+      "date": "2025-01-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

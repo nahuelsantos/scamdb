@@ -1,0 +1,139 @@
+{
+  "id": "sv/prestamo-falso-anticipo",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Una “financiera” o una institución pública como el BCR",
+    "en": "A “lender” or a public institution such as the Central Bank"
+  },
+  "name": {
+    "es": "Préstamo falso sin requisitos: te cobran antes de darte el crédito",
+    "en": "Fake no-requirements loan: they charge you before giving the loan"
+  },
+  "how": {
+    "es": "Por redes sociales o una página te ofrecen un préstamo rápido, sin fiador y sin revisar tu historial. A veces usan el nombre y el logo del Banco Central de Reserva o de otra institución para ofrecer un “crédito preferencial”. Te piden tu DUI y datos personales y, antes de entregar el dinero, un pago por “trámite”, “seguro” o “desembolso”. Pagas y el préstamo no llega. El BCR recuerda que no otorga créditos ni pide dinero para dar servicios financieros.",
+    "en": "On social media or a website you’re offered a fast loan, with no guarantor and no credit check. Sometimes they use the name and logo of the Central Reserve Bank or another institution to offer a “preferential loan”. They ask for your ID and personal details and, before handing over the money, a payment for “processing”, “insurance” or “disbursement”. You pay and the loan never arrives. The Central Bank reminds people that it does not grant loans or ask for money to provide financial services."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen un crédito con el nombre de una institución conocida.",
+        "en": "You’re offered a loan using a well-known institution’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Sin fiador, sin revisar nada y aprobado al instante.",
+        "en": "No guarantor, no checks and approved instantly."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Antes del desembolso te piden pagar un trámite o seguro.",
+        "en": "Before the payout they ask you to pay a processing fee or insurance."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apuran para que pagues hoy y no pierdas el crédito.",
+        "en": "They rush you to pay today so you don’t lose the loan."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicidades! Su crédito de $2,500 ya fue autorizado sin fiador. Para programar el desembolso a su cuenta solo debe cubrir $45 de gastos de escrituración. Mande foto de su DUI y el comprobante por este medio.",
+        "en": "Congratulations! Your $2,500 loan has been authorised with no guarantor. To schedule the payout to your account you only need to cover $45 in paperwork costs. Send a photo of your ID and the receipt here."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "prestamo sin fiador me pidieron pagar primero",
+      "credito preferencial del bcr",
+      "pagar tramite para el desembolso",
+      "prestamo aprobado pero cobran comision",
+      "financiera falsa en facebook",
+      "me pidieron el dui para un prestamo"
+    ],
+    "en": [
+      "loan with no guarantor but pay first",
+      "central bank preferential loan",
+      "fee before the loan is paid out",
+      "loan approved but they want a commission",
+      "fake lender on facebook"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Te cobran antes de darte el préstamo.",
+      "Usan el nombre del BCR, que no da créditos a personas.",
+      "Aprobación inmediata sin revisar tu historial.",
+      "El pago va a la cuenta de una persona."
+    ],
+    "en": [
+      "They charge you before giving you the loan.",
+      "They use the Central Bank’s name, which doesn’t lend to individuals.",
+      "Instant approval without checking your history.",
+      "The payment goes to an individual’s account."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues nada por adelantado para recibir un préstamo.",
+      "Pide créditos solo en bancos o financieras supervisadas, por sus canales oficiales.",
+      "No mandes foto de tu DUI a desconocidos.",
+      "Si usan el nombre del BCR, repórtalo a sus canales oficiales y a la línea de denuncia de estafas."
+    ],
+    "en": [
+      "Don’t pay anything upfront to get a loan.",
+      "Only apply for loans at supervised banks or lenders, through their official channels.",
+      "Don’t send a photo of your ID to strangers.",
+      "If they use the Central Bank’s name, report it to its official channels and to the scam reporting line."
+    ]
+  },
+  "reportTo": [
+    "sv/denuncia-estafas",
+    "sv/bcr",
+    "sv/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "BCR alerta por estafa que utiliza su nombre e imagen",
+      "publisher": "El Diario de Hoy (elsalvador.com)",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/finanzas-personales/banco-alerta-estafa-creditos/1294566/2026/",
+      "date": "2026-09-22"
+    },
+    {
+      "title": "Las estafas digitales que más circulan en El Salvador",
+      "publisher": "El Diario de Hoy (elsalvador.com), con información de la SSF",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/finanzas-personales/estafas-el-salvador-delitos/1258084/2026/",
+      "date": "2026-01-13"
+    },
+    {
+      "title": "Prestar su cuenta bancaria para que otros reciban fondos puede ser delito: La Advertencia del gabinete de Seguridad",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/prestar-su-cuenta-bancaria-para-que-otros-reciban-fondos-puede-ser-delito-la-advertencia-del-gabinete-de-seguridad",
+      "date": "2025-09-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

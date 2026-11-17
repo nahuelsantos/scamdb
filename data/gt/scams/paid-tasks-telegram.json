@@ -1,0 +1,136 @@
+{
+  "id": "gt/paid-tasks-telegram",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "“Reclutadora” que ofrece ganar dinero desde el celular",
+    "en": "“Recruiter” offering to earn money from your phone"
+  },
+  "name": {
+    "es": "“Gane Q300 al día dando likes”: tareas pagadas por WhatsApp y Telegram",
+    "en": "“Earn Q300 a day liking posts”: paid tasks on WhatsApp and Telegram"
+  },
+  "how": {
+    "es": "Te agregan a un grupo de WhatsApp y te ofrecen ganar dinero fácil por tareas simples: seguir cuentas, dar likes o comentar. Te pagan las primeras tareas para ganarse tu confianza. Luego te pasan a un grupo de Telegram donde te piden “invertir” o depositar para seguir participando, con promesas de ganancias del doble. Cuanto más ponés, más te piden, y el dinero ya no regresa.",
+    "en": "You are added to a WhatsApp group and offered easy money for simple tasks: following accounts, liking or commenting. They pay you for the first tasks to win your trust. Then they move you to a Telegram group where they ask you to “invest” or deposit to keep going, promising to double your money. The more you put in, the more they ask, and the money never comes back."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te agregan a un grupo o te escribe una “reclutadora” sin que lo pidás.",
+        "en": "You are added to a group or a “recruiter” writes to you out of the blue."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrecen ganar cientos de quetzales al día por dar likes o seguir cuentas.",
+        "en": "They offer hundreds of quetzales a day for liking or following accounts."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pagan poquito al principio y te pasan a Telegram.",
+        "en": "They pay you a little at first and move you to Telegram."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden depositar para “desbloquear” tareas o recuperar tus ganancias.",
+        "en": "They ask you to deposit to “unlock” tasks or get your earnings back."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola 😊 Te contactamos para un trabajo desde casa: solo das like y seguís perfiles de TikTok y ganás Q20 por cada tarea, hasta Q400 diarios. El pago es el mismo día a tu cuenta. ¿Te interesa? Te paso con mi coordinadora en Telegram.",
+        "en": "Hi 😊 We’re contacting you for a work-from-home job: you just like and follow TikTok profiles and earn Q20 per task, up to Q400 a day. Payment is the same day to your account. Interested? I’ll pass you to my coordinator on Telegram."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "trabajo de dar likes por whatsapp",
+      "me pagan por seguir cuentas en redes",
+      "me pasaron a un grupo de telegram para invertir",
+      "me pagaron las primeras tareas y luego pidieron deposito",
+      "ganar dinero desde el celular con tareas",
+      "tengo que depositar para retirar mis ganancias"
+    ],
+    "en": [
+      "job liking posts on whatsapp",
+      "they pay me to follow accounts",
+      "moved to a telegram group to invest",
+      "they paid the first tasks then asked for a deposit",
+      "earn money from my phone doing tasks",
+      "i must deposit to withdraw my earnings"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie paga cientos de quetzales al día por dar likes.",
+      "Te piden dinero para poder trabajar o para cobrar.",
+      "El dinero que te pagan puede venir de otras víctimas."
+    ],
+    "en": [
+      "No one pays hundreds of quetzales a day for likes.",
+      "They ask for money so you can work or get paid.",
+      "The money they pay you may come from other victims."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Salite del grupo y bloqueá el número.",
+      "No depositar para “desbloquear” ganancias: no vas a recuperar nada.",
+      "No prestés tu cuenta para recibir pagos de otros.",
+      "Denunciá en el Ministerio Público."
+    ],
+    "en": [
+      "Leave the group and block the number.",
+      "Don’t deposit to “unlock” earnings: you won’t get anything back.",
+      "Don’t lend your account to receive other people’s payments.",
+      "Report it to the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/mp-denuncia",
+    "gt/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Guatemaltecos en alerta por estafas digitales y robo de datos por WhatsApp y Facebook",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/guatemala-no-se-detiene/guatemaltecos-en-alerta-por-estafas-digitales-y-robo-de-datos-por-whatsapp-y-facebook/",
+      "date": "2026-04-26"
+    },
+    {
+      "title": "Estas son las estafas más comunes en Guatemala y cómo evitarlas, según la PDH y el MP",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/nacionales/hgodinez/2025/11/30/las-estafas-mas-comunes-en-guatemala-y-como-evitarlas-segun-la-pdh-y-el-mp/",
+      "date": "2025-11-30"
+    },
+    {
+      "title": "Estafas por WhatsApp: Alertan sobre nueva modalidad de engaño en Guatemala",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/justicia/estafas-por-whatsapp-alertan-sobre-nueva-modalidad-de-engano-en-guatemala/",
+      "date": "2024-05-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

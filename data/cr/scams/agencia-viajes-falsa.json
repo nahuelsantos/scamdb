@@ -1,0 +1,125 @@
+{
+  "id": "cr/agencia-viajes-falsa",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Una “agencia de viajes” en redes sociales",
+    "en": "A “travel agency” on social media"
+  },
+  "name": {
+    "es": "“Paquete a Cancún a mitad de precio, solo por hoy”",
+    "en": "“Package to Cancún at half price, today only”"
+  },
+  "how": {
+    "es": "En redes ve una agencia que ofrece viajes nacionales o al exterior muy por debajo del precio normal, con promociones “solo por hoy”. Le piden un adelanto o el total a una cuenta personal. A veces hacen una reserva real y le mandan el comprobante oficial para darle confianza, y después de que usted paga la cancelan sin avisarle: se entera en el aeropuerto o el hotel. Cambian de nombre seguido y no están registradas ante el ICT.",
+    "en": "On social media you see an agency offering domestic or international trips far below the normal price, with “today only” deals. They ask for a deposit or the full amount to a personal account. Sometimes they make a real booking and send you the official confirmation to gain your trust, and after you pay they cancel it without telling you: you find out at the airport or hotel. They change names often and aren't registered with the ICT (the Costa Rican Tourism Board)."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ve un viaje muy por debajo del precio normal.",
+        "en": "You see a trip far below the normal price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le dicen que la promoción es solo por hoy.",
+        "en": "They say the deal is only for today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le piden depositar a una cuenta personal.",
+        "en": "They ask you to pay into a personal account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Le mandan una reserva que después cancelan sin avisar.",
+        "en": "They send you a booking they later cancel without telling you."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "✈️ PROMO RELÁMPAGO ✈️ Cancún 5 noches todo incluido + vuelo desde SJO, $480 por persona. Solo por hoy, quedan 4 espacios. Aparte con $200 por SINPE o transferencia a la cuenta de nuestra asesora y le enviamos su reserva.",
+        "en": "✈️ FLASH DEAL ✈️ Cancún 5 nights all-inclusive + flight from SJO, $480 per person. Today only, 4 places left. Reserve with $200 by SINPE or transfer to our adviser's account and we'll send your booking."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "agencia de viajes falsa en facebook",
+      "paquete de viaje demasiado barato",
+      "pague el viaje y cancelaron la reserva",
+      "me pidieron depositar a una cuenta personal",
+      "promocion de viaje solo por hoy",
+      "la agencia no esta en el ict"
+    ],
+    "en": [
+      "fake travel agency on facebook",
+      "travel package far too cheap",
+      "paid for the trip and the booking was cancelled",
+      "asked to pay into a personal account",
+      "today only travel deal",
+      "agency not registered with the tourism board"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "es": [
+      "El precio está muy por debajo del mercado.",
+      "Le piden depositar a una cuenta personal.",
+      "No tienen dirección física, factura ni contrato.",
+      "No aparecen registrados ante el ICT."
+    ],
+    "en": [
+      "The price is far below market.",
+      "They ask you to pay into a personal account.",
+      "They have no physical address, invoice or contract.",
+      "They aren't registered with the ICT."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revise que la agencia esté registrada ante el ICT y pida factura y contrato.",
+      "Confirme la reserva directamente con la aerolínea o el hotel.",
+      "Si pagó, avise a su banco y denuncie en el OIJ o la Fiscalía."
+    ],
+    "en": [
+      "Check the agency is registered with the ICT and ask for an invoice and contract.",
+      "Confirm the booking directly with the airline or hotel.",
+      "If you paid, tell your bank and report it to the OIJ or the prosecutor's office."
+    ]
+  },
+  "reportTo": [
+    "cr/oij",
+    "cr/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Reservas falsas e IA: estafadores diversifican engaños con agencias de viajes",
+      "publisher": "CRHoy",
+      "url": "https://crhoy.com/nacionales/reservas-falsas-e-ia-estafadores-diversifican-enganos-con-agencias-de-viajes/",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

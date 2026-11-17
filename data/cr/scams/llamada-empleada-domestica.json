@@ -1,0 +1,150 @@
+{
+  "id": "cr/llamada-empleada-domestica",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “familiar” o “allegado” de los dueños de la casa",
+    "en": "A “relative” or “close friend” of the homeowners"
+  },
+  "name": {
+    "es": "“Los patrones ocupan la plata ya: métala en un bolso, va un Uber por ella”",
+    "en": "“The bosses need the money now: put it in a bag, an Uber is coming for it”"
+  },
+  "how": {
+    "es": "Llaman al teléfono fijo de una casa y quien contesta es la empleada doméstica o un trabajador. Se hacen pasar por un familiar o alguien cercano a los dueños y cuentan una emergencia: un accidente, una multa o impuestos atrasados, un embargo. Le piden su celular, pasan a videollamada y la guían por la casa para que saque plata, joyas o la caja fuerte, lo meta todo en un bolso o maleta y se lo entregue a un chofer de plataforma que llega a recogerlo. A veces usan la voz clonada de la dueña. El OIJ reporta decenas de casos en 2026.",
+    "en": "They call a home's landline and the domestic worker or another employee answers. They pose as a relative or someone close to the owners and describe an emergency: an accident, a fine or overdue taxes, a seizure order. They ask for her mobile number, switch to a video call and guide her through the house to take out cash, jewellery or the safe, put everything in a bag or suitcase and hand it to a ride-hailing driver who comes to collect it. Sometimes they use the owner's cloned voice. The OIJ reports dozens of cases in 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Llaman al fijo de la casa diciendo que son familia de los dueños.",
+        "en": "They call the home landline claiming to be the owners' relatives."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Cuentan una emergencia: multa, impuestos, embargo o accidente.",
+        "en": "They describe an emergency: a fine, taxes, a seizure order or an accident."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Piden el celular y siguen por videollamada sin colgar.",
+        "en": "They ask for the mobile number and continue on a video call without hanging up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Le dicen que no llame a los patrones porque están ocupados.",
+        "en": "They tell her not to call the employers because they're busy."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Le piden meter plata, joyas o la caja fuerte en un bolso para un chofer.",
+        "en": "They ask her to put cash, jewellery or the safe in a bag for a driver."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Aló, ¿con quién hablo? Mire, es que soy la sobrina de doña Lucía. Ella está en una reunión con el abogado y no puede hablar, pero ocupa urgente la plata que tiene guardada en el cuarto porque le van a embargar. Páseme su celular para hacer videollamada y le digo dónde está. Ya va un Uber a recogerla.",
+        "en": "Hello, who am I speaking to? Look, I'm Doña Lucía's niece. She's in a meeting with the lawyer and can't talk, but she urgently needs the money she keeps in the bedroom because they're going to seize her property. Give me your mobile so we can video call and I'll tell you where it is. An Uber is already on its way to pick it up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "llamaron al fijo diciendo que eran familia de los patrones",
+      "a la empleada le pidieron sacar la caja fuerte",
+      "meter las joyas en una maleta para un uber",
+      "videollamada guiando por la casa",
+      "dijeron que la patrona ocupaba plata por un embargo",
+      "chofer de plataforma llego a recoger un bolso",
+      "familiar de los patrones",
+      "taxi para recoger un bolso",
+      "plata guardada en la casa",
+      "dolares guardados en el cuarto"
+    ],
+    "en": [
+      "they called the landline claiming to be the employers' family",
+      "the maid was asked to take out the safe",
+      "put the jewellery in a suitcase for an uber",
+      "video call guiding her around the house",
+      "said the owner needed money because of a seizure",
+      "a ride hailing driver came to collect a bag"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie de la familia manda a sacar plata o joyas por teléfono para dárselas a un chofer.",
+      "Le piden no llamar a los dueños.",
+      "Pasan a videollamada y no la dejan colgar.",
+      "La urgencia es una multa, impuestos o un embargo."
+    ],
+    "en": [
+      "No family member asks by phone for cash or jewellery to be handed to a driver.",
+      "They ask you not to call the owners.",
+      "They switch to a video call and won't let you hang up.",
+      "The urgency is a fine, taxes or a seizure order."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelgue y llame usted a los dueños o a otro familiar a su número de siempre.",
+      "No entregue nada a choferes ni mensajeros que usted no esperaba.",
+      "Si la presionan o ya entregó algo, llame al 911 y denuncie en el OIJ.",
+      "Dueños: hablen de esta estafa con quien trabaja en su casa."
+    ],
+    "en": [
+      "Hang up and call the owners or another relative on their usual number yourself.",
+      "Don't hand anything to drivers or couriers you weren't expecting.",
+      "If you're being pressured or already handed something over, call 911 and report it to the OIJ.",
+      "Homeowners: talk about this scam with whoever works in your home."
+    ]
+  },
+  "reportTo": [
+    "cr/emergencias",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Cuidado con esta llamada: estafa ya dejó pérdidas por ₡40 millones",
+      "publisher": "Teletica",
+      "url": "https://www.teletica.com/sucesos/oij-alerta-por-estafa-que-utiliza-a-empleadas-domesticas_413132",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "Víctimas narran cómo banda engaña a empleadas domésticas para cometer millonarios robos",
+      "publisher": "Teletica",
+      "url": "https://www.teletica.com/sucesos/victimas-narran-como-banda-engana-a-empleadas-domesticas-para-cometer-millonarios-robos_411740",
+      "date": "2026-06-16"
+    },
+    {
+      "title": "OIJ alerta sobre estafas por llamadas a teléfonos fijos; comerciantes y empleadas domésticas, las principales víctimas",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/oij-alerta-sobre-estafas-por-llamadas-a-telefonos-fijos-comerciantes-y-empleadas-domesticas-las-principales-victimas/",
+      "date": "2026-07-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

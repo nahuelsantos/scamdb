@@ -1,0 +1,137 @@
+{
+  "id": "pa/virtual-kidnapping",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Supuestos secuestradores o “autoridades”",
+    "en": "Supposed kidnappers or “authorities”"
+  },
+  "name": {
+    "es": "Secuestro virtual: “tenemos a tu hijo”",
+    "en": "Virtual kidnapping: “we have your child”"
+  },
+  "how": {
+    "es": "Te llaman diciendo que tienen a tu hijo o a otro familiar menor de edad, o que lo detuvieron, y te exigen dinero para soltarlo. Mientras tanto mantienen a tu familiar ocupado en otra llamada para que no puedas comunicarte con él. Usan datos que sacan de redes sociales para sonar creíbles. Tu familiar en realidad está libre.",
+    "en": "They call saying they have your child or another underage relative, or that they’ve been detained, and demand money to release them. Meanwhile they keep your relative busy on another call so you can’t reach them. They use details taken from social media to sound believable. Your relative is actually free."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman diciendo que tienen o detuvieron a tu familiar.",
+        "en": "They call saying they have or detained your relative."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te amenazan y te exigen dinero de inmediato.",
+        "en": "They threaten you and demand money immediately."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "No te dejan colgar ni llamar a tu familiar.",
+        "en": "They won’t let you hang up or call your relative."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Te piden no avisar a la Policía.",
+        "en": "They tell you not to alert the Police."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te piden un depósito o transferencia para “soltarlo”.",
+        "en": "They ask for a deposit or transfer to “release” them."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Escúchame bien y no cuelgues. Tu hija está aquí con nosotros. Si llamas a la Policía no la vuelves a ver. Vas a ir ahora mismo a depositar $2,000 a la cuenta que te voy a dar y te quedas en la línea.",
+        "en": "Listen carefully and don’t hang up. Your daughter is here with us. If you call the Police you won’t see her again. You’re going right now to deposit $2,000 into the account I’ll give you and you stay on the line."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron diciendo que tenian secuestrado a mi hijo",
+      "secuestro virtual",
+      "no me dejaban colgar el telefono",
+      "me pidieron plata para soltar a mi hija",
+      "dijeron que detuvieron a mi hijo",
+      "amenaza por telefono con un familiar secuestrado"
+    ],
+    "en": [
+      "they called saying they had kidnapped my son",
+      "virtual kidnapping",
+      "they wouldn’t let me hang up",
+      "they asked for money to release my daughter",
+      "they said my son had been detained",
+      "phone threat about a kidnapped relative"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "No te dejan colgar ni hablar con tu familiar.",
+      "Te prohíben avisar a la Policía.",
+      "Exigen depósito o transferencia de inmediato.",
+      "Los datos que dicen salen de redes sociales."
+    ],
+    "en": [
+      "They won’t let you hang up or speak to your relative.",
+      "They forbid you from calling the Police.",
+      "They demand a deposit or transfer immediately.",
+      "The details they give come from social media."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama a tu familiar desde otro teléfono, o a su escuela o trabajo.",
+      "Llama a la Policía de inmediato.",
+      "No deposites dinero.",
+      "Denuncia en el Ministerio Público y cuida lo que publicas de tu familia en redes."
+    ],
+    "en": [
+      "Hang up and call your relative from another phone, or their school or workplace.",
+      "Call the Police immediately.",
+      "Don’t deposit any money.",
+      "Report it to the Ministerio Público and be careful what you post about your family online."
+    ]
+  },
+  "reportTo": [
+    "pa/policia-104",
+    "pa/ministerio-publico"
+  ],
+  "sources": [
+    {
+      "title": "Ministerio Público: Unos 50 panameños son estafados cada día",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/ministerio-publico-unos-50-panamenos-son-estafados-cada-dia-EH22433304",
+      "date": "2026-05-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/family-emergency-call"
+  ]
+}

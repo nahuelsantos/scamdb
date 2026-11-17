@@ -1,0 +1,140 @@
+{
+  "id": "cr/robo-whatsapp-codigo",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "Un “contacto”, una empresa o el “soporte de WhatsApp”",
+    "en": "A “contact”, a company or “WhatsApp support”"
+  },
+  "name": {
+    "es": "“Le llegó un código por error, ¿me lo pasa?”",
+    "en": "“A code was sent to you by mistake, can you pass it to me?”"
+  },
+  "how": {
+    "es": "Le llega un código de verificación de WhatsApp que usted no pidió y enseguida alguien le escribe —haciéndose pasar por un amigo, un familiar, una empresa o el soporte de WhatsApp— para pedirle que se lo pase porque “se lo mandaron por error” o para “verificar” su cuenta. Si lo comparte, le roban el WhatsApp en minutos y desde su cuenta les piden plata por SINPE Móvil a su familia, amigos y clientes con una emergencia inventada.",
+    "en": "You get a WhatsApp verification code you didn't ask for, and right away someone writes to you, posing as a friend, relative, company or WhatsApp support, asking you to pass it on because it “was sent by mistake” or to “verify” your account. If you share it, they take over your WhatsApp within minutes and from your account ask your family, friends and clients for money by SINPE Móvil with a made-up emergency."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le llega un código de WhatsApp que usted no pidió.",
+        "en": "You receive a WhatsApp code you didn't request."
+      }
+    },
+    {
+      "text": {
+        "es": "Alguien conocido, una empresa o el “soporte” le pide que se lo reenvíe.",
+        "en": "Someone you know, a company or “support” asks you to forward it."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le apuran: que su cuenta se va a borrar o que es urgente.",
+        "en": "They rush you: your account will be deleted, or it's urgent."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Si lo pasa, pierde su cuenta.",
+        "en": "If you pass it on, you lose your account."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Desde su número les piden SINPE a sus contactos.",
+        "en": "From your number they ask your contacts for SINPE transfers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Holaaa perdón, es que estoy pasando mi WhatsApp a otro cel y sin querer puse su número 🙈 le acaba de llegar un código de 6 números, ¿me lo puede mandar porfa? es urgente que tengo que entrar",
+        "en": "Hiii sorry, I'm moving my WhatsApp to another phone and accidentally put your number 🙈 you just got a 6-digit code, can you send it to me please? it's urgent, I need to log in"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo de whatsapp",
+      "me llego un codigo que no pedi",
+      "me robaron el whatsapp",
+      "soporte de whatsapp me pidio un codigo",
+      "desde mi whatsapp pidieron sinpe a mis contactos",
+      "codigo de seis digitos por error",
+      "reenviar un codigo",
+      "codigo de verificacion por sms",
+      "una tienda me pidio el codigo"
+    ],
+    "en": [
+      "they asked for my whatsapp code",
+      "i got a code i didn't request",
+      "my whatsapp was stolen",
+      "whatsapp support asked for a code",
+      "my contacts got sinpe requests from my whatsapp",
+      "six digit code sent by mistake"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie legítimo le pide el código de verificación de WhatsApp.",
+      "El código llegó sin que usted lo pidiera.",
+      "Le dicen que su cuenta se borra si no responde ya.",
+      "Un contacto le pide el código por mensaje en vez de llamarle."
+    ],
+    "en": [
+      "No one legitimate asks for your WhatsApp verification code.",
+      "The code arrived without you asking for it.",
+      "They say your account will be deleted if you don't reply now.",
+      "A contact asks for the code by message instead of calling you."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca comparta el código. Active la verificación en dos pasos en WhatsApp.",
+      "Si se lo robaron, reinstale WhatsApp y pida un código nuevo; avise a sus contactos por otro medio.",
+      "Si un contacto le pide un SINPE por WhatsApp, llámelo por otro medio antes de mandar nada.",
+      "Denuncie en el OIJ."
+    ],
+    "en": [
+      "Never share the code. Turn on two-step verification in WhatsApp.",
+      "If it was stolen, reinstall WhatsApp and request a new code; warn your contacts another way.",
+      "If a contact asks you for a SINPE on WhatsApp, call them another way before sending anything.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Costa Rica OIJ Warns of New WhatsApp Verification Code Scams",
+      "publisher": "The Tico Times",
+      "url": "https://ticotimes.net/2026/05/12/costa-rica-oij-warns-of-new-whatsapp-verification-code-scams",
+      "date": "2026-05-12"
+    },
+    {
+      "title": "¿Un contacto le pidió hacerle un Sinpe? OIJ alerta sobre hackeo en WhatsApp mediante esa modalidad",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/un-contacto-le-pidio-hacerle-un-sinpe-oij-alerta-sobre-hackeo-en-whatsapp-mediante-esa-modalidad/",
+      "date": "2024-12-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

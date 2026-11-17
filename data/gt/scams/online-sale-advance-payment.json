@@ -1,0 +1,143 @@
+{
+  "id": "gt/online-sale-advance-payment",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Vendedor en Facebook, Marketplace, Instagram o TikTok",
+    "en": "Seller on Facebook, Marketplace, Instagram or TikTok"
+  },
+  "name": {
+    "es": "Ventas falsas en redes: pagás por adelantado y nunca llega",
+    "en": "Fake sales on social media: you pay upfront and it never arrives"
+  },
+  "how": {
+    "es": "Un perfil o página en redes publica productos, carros, celulares o hasta armas a precios muy bajos, con catálogos y testimonios falsos. Te piden un pago anticipado o un depósito para “apartar” o cubrir “trámites”, a veces en la cuenta de otra persona. Cuando pagás, dejan de contestar, te bloquean y borran el perfil.",
+    "en": "A profile or page on social media posts goods, cars, phones or even weapons at very low prices, with fake catalogues and testimonials. They ask for an advance payment or a deposit to “reserve” or cover “paperwork”, sometimes into someone else’s account. Once you pay, they stop answering, block you and delete the profile."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un producto muy barato en una página o perfil de redes.",
+        "en": "You see a very cheap item on a social media page or profile."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor muestra testimonios y dice que todo es legal y seguro.",
+        "en": "The seller shows testimonials and says everything is legal and safe."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pide depositar antes, para apartar o para el envío.",
+        "en": "They ask you to deposit first, to reserve it or for shipping."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apura porque hay “más interesados”.",
+        "en": "They rush you because there are “other buyers”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Sí, todavía lo tengo, es nuevo en caja y con garantía. Como hay varios interesados, se lo aparto si me deposita Q600 hoy y el resto se lo cobra el de la mensajería cuando se lo lleve. Le paso la cuenta de mi hermana porque la mía está en trámite.",
+        "en": "Yes, I still have it, it’s new in the box with warranty. Since several people are interested, I’ll hold it for you if you deposit Q600 today and the courier collects the rest on delivery. I’ll give you my sister’s account because mine is being processed."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "compre en marketplace y nunca me llego",
+      "deposite para apartar y me bloquearon",
+      "vendedor de facebook me pidio pago anticipado",
+      "pague por adelantado y borraron la pagina",
+      "me dieron la cuenta de otra persona para pagar",
+      "precio muy barato en redes y era estafa",
+      "celular barato que mandan por mensajeria si deposito",
+      "vendedor de otro departamento pide deposito antes de enviar"
+    ],
+    "en": [
+      "bought on marketplace and it never arrived",
+      "deposited to reserve and they blocked me",
+      "facebook seller asked for advance payment",
+      "paid upfront and they deleted the page",
+      "they gave me someone elses account to pay",
+      "very cheap price online and it was a scam",
+      "cheap phone sent by courier if i deposit",
+      "seller in another town wants a deposit before shipping"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "El precio es mucho más bajo que en otros lados.",
+      "Te piden pago antes de ver el producto.",
+      "La cuenta para depositar no es del vendedor ni de una tienda.",
+      "Perfil nuevo o con poca información."
+    ],
+    "en": [
+      "The price is much lower than elsewhere.",
+      "They ask for payment before you see the item.",
+      "The account to deposit into isn’t the seller’s or a shop’s.",
+      "A new profile or one with little information."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Primero verificá, después pagá: revisá la antigüedad y los datos del perfil.",
+      "Preferí pago contra entrega o ver el producto en persona.",
+      "No transfirás a cuentas de terceros.",
+      "Si ya pagaste, guardá todo y denunciá en el Ministerio Público."
+    ],
+    "en": [
+      "Check first, pay later: look at how old the profile is and its details.",
+      "Prefer cash on delivery or seeing the item in person.",
+      "Don’t transfer to third-party accounts.",
+      "If you already paid, keep everything and report it to the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/mp-denuncia",
+    "gt/pnc-110"
+  ],
+  "sources": [
+    {
+      "title": "Armas traumáticas: Así operaría la estafa de supuestas ventas en redes sociales, según el MP",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/nacionales/ypena/2026/10/01/armas-traumaticas-asi-operaria-la-estafa-de-supuestas-ventas-en-redes-sociales-segun-el-mp/",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Guatemaltecos en alerta por estafas digitales y robo de datos por WhatsApp y Facebook",
+      "publisher": "Prensa Libre",
+      "url": "https://www.prensalibre.com/guatemala/guatemala-no-se-detiene/guatemaltecos-en-alerta-por-estafas-digitales-y-robo-de-datos-por-whatsapp-y-facebook/",
+      "date": "2026-04-26"
+    },
+    {
+      "title": "Estas son las estafas más comunes en Guatemala y cómo evitarlas, según la PDH y el MP",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/nacionales/hgodinez/2025/11/30/las-estafas-mas-comunes-en-guatemala-y-como-evitarlas-segun-la-pdh-y-el-mp/",
+      "date": "2025-11-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

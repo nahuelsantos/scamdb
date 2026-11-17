@@ -1,0 +1,127 @@
+{
+  "id": "hn/customs-package-fee",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "es": "Un “pariente” o “amigo” en el extranjero",
+    "en": "A “relative” or “friend” abroad"
+  },
+  "name": {
+    "es": "“Te mandé una caja y está retenida en aduana”",
+    "en": "“I sent you a box and it’s held at customs”"
+  },
+  "how": {
+    "es": "Alguien que se hace pasar por un familiar o amigo que vive afuera (a veces con su foto en el perfil) te dice que te mandó una caja con regalos, computadoras o dinero. Luego te avisan que el paquete está retenido en la aduana de Honduras y que hay que pagar para liberarlo. Después del primer depósito aparece “un error en el monto” o un cargo nuevo, y te siguen pidiendo más.",
+    "en": "Someone posing as a relative or friend living abroad (sometimes with their photo on the profile) tells you they sent you a box with gifts, computers or money. Then you are told the package is held at Honduran customs and you must pay to release it. After the first deposit comes “a mistake in the amount” or a new charge, and they keep asking for more."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un “familiar” o “amiga” del extranjero, a veces desde un número que no conocés.",
+        "en": "A “relative” or “friend” abroad writes to you, sometimes from a number you don’t know."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te cuenta que te mandó una caja o encomienda.",
+        "en": "They say they sent you a box or parcel."
+      }
+    },
+    {
+      "text": {
+        "es": "Te dicen que está retenida en aduana y hay que pagar ya para liberarla.",
+        "en": "You are told it’s held at customs and you must pay now to release it."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden depósitos a cuentas personales, y luego más por “errores”.",
+        "en": "They ask for deposits into personal accounts, then more for “mistakes”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Prima ya te mandé la caja con los regalos de los niños y unas laptops 🥰 me dice la agencia que quedó detenida en aduana de San Pedro y tenés que pagar el desaduanaje para que te la entreguen. Te paso la cuenta del agente, hacelo hoy porque si no la devuelven.",
+        "en": "Cousin, I sent you the box with the kids’ presents and some laptops 🥰 the agency says it got held at customs in San Pedro and you have to pay the clearance fee so they deliver it. I’ll send you the agent’s account, do it today or they send it back."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "paquete retenido en aduana",
+      "me pidieron pagar para liberar una caja",
+      "encomienda detenida en aduanas",
+      "mi prima de estados unidos me mando una caja",
+      "deposito para sacar el paquete de aduana",
+      "me pidieron otro deposito por error en el monto"
+    ],
+    "en": [
+      "package held at customs",
+      "asked to pay to release a box",
+      "parcel stuck in customs",
+      "relative abroad sent me a box",
+      "deposit to get the package out of customs",
+      "asked for another deposit due to a mistake"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ningún paquete se libera de aduana con depósitos a cuentas personales.",
+      "El “pariente” escribe desde un número nuevo o no contesta llamadas.",
+      "Cada pago trae un cargo nuevo."
+    ],
+    "en": [
+      "No package is released from customs through deposits into personal accounts.",
+      "The “relative” writes from a new number or won’t take calls.",
+      "Every payment brings a new charge."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llamá a tu familiar a su número de siempre antes de pagar nada.",
+      "No depositás a cuentas personales para “liberar” paquetes.",
+      "Si ya pagaste, avisá a tu banco y denunciá en la DPI con los comprobantes."
+    ],
+    "en": [
+      "Call your relative on their usual number before paying anything.",
+      "Don’t pay into personal accounts to “release” packages.",
+      "If you already paid, tell your bank and report it to the DPI with the receipts."
+    ]
+  },
+  "reportTo": [
+    "hn/policia-dpi",
+    "hn/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Revelan cómo hondureño estafó por L82,000 con falso paquete retenido en aduana",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/hondureno-estafo-por-82000-lempiras-con-falso-paquete-retenido-en-aduana-2026-09-29",
+      "date": "2026-09-29"
+    },
+    {
+      "title": "Capturan a joven por estafa de L397,900 mediante un perfil falso de WhatsApp",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/capturan-joven-estafa-perfil-falso-whatsapp-el-progreso-yoro-2026-07-13",
+      "date": "2026-07-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

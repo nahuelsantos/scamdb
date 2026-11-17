@@ -1,0 +1,141 @@
+{
+  "id": "cr/pagina-banco-falsa-buscador",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online"
+  ],
+  "sender": {
+    "es": "Un anuncio o resultado de Google que imita a su banco",
+    "en": "A Google ad or result that imitates your bank"
+  },
+  "name": {
+    "es": "“Busqué el banco en Google y entré a una página falsa”",
+    "en": "“I searched for my bank on Google and landed on a fake page”"
+  },
+  "how": {
+    "es": "Usted busca su banco en Google para entrar a la banca en línea y hace clic en uno de los primeros resultados. Es una copia casi idéntica de la página del banco, con candado y todo, que los delincuentes logran poner arriba en el buscador. Al meter su usuario y clave, se los roban, entran a su cuenta real y sacan la plata por transferencias, a veces a cuentas de “mulas”.",
+    "en": "You search for your bank on Google to log into online banking and click one of the top results. It's an almost identical copy of the bank's page, padlock and all, that criminals manage to place at the top of the search results. When you enter your username and password, they steal them, log into your real account and take the money by transfer, sometimes to “money mule” accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Busca su banco en Google y entra al primer resultado.",
+        "en": "You search for your bank on Google and click the top result."
+      }
+    },
+    {
+      "text": {
+        "es": "La página es una copia del banco, con candado.",
+        "en": "The page is a copy of the bank's, with a padlock."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "La dirección no es la oficial del banco.",
+        "en": "The address isn't the bank's official one."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le pide usuario, clave o token, a veces “otra vez”.",
+        "en": "It asks for your username, password or token, sometimes “again”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Después ve transferencias que usted no hizo.",
+        "en": "Afterwards you see transfers you didn't make."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Banca en línea | Ingrese aquí a su cuenta – Anuncio. Por actualización de seguridad, digite nuevamente su usuario, contraseña y la clave de su token para continuar: [enlace]",
+        "en": "Online banking | Log in to your account here – Ad. Due to a security update, enter your username, password and token key again to continue: [link]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "busque el banco en google",
+      "entre a una pagina falsa del banco",
+      "pagina clonada del banco",
+      "puse mi clave en un anuncio de google",
+      "la pagina del banco me pidio el token dos veces",
+      "me sacaron plata despues de entrar a la banca en linea"
+    ],
+    "en": [
+      "searched for my bank on google",
+      "logged into a fake bank page",
+      "cloned bank website",
+      "entered my password on a google ad",
+      "bank page asked for my token twice",
+      "money taken after i logged into online banking"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Llegó al banco desde un buscador o un anuncio, no escribiendo la dirección.",
+      "El candado no prueba que la página sea del banco.",
+      "La página le pide el token o datos de más.",
+      "La dirección tiene letras o palabras de más."
+    ],
+    "en": [
+      "You reached the bank from a search engine or an ad, not by typing the address.",
+      "The padlock doesn't prove the page is the bank's.",
+      "The page asks for your token or extra details.",
+      "The address has extra letters or words."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Entre siempre desde la app oficial o escribiendo usted la dirección del banco y guárdela en favoritos.",
+      "Si ya metió sus datos, llame a su banco para bloquear la banca en línea y cambie la clave.",
+      "Denuncie en el OIJ."
+    ],
+    "en": [
+      "Always log in from the official app or by typing the bank's address yourself, and bookmark it.",
+      "If you already entered your details, call your bank to block online banking and change the password.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Vender su carro o buscar trabajo lo podrían poner en la mira de los estafadores informáticos, advierte OIJ",
+      "publisher": "Semanario Universidad",
+      "url": "https://semanariouniversidad.com/pais/vender-su-carro-o-buscar-trabajo-lo-podrian-poner-en-la-mira-de-los-estafadores-informaticos-advierte-oij/",
+      "date": "2025-07-10"
+    },
+    {
+      "title": "OIJ identifica las 6 modalidades más utilizadas para estafas informáticas; 2025 cerraría con hasta 30.000 denuncias",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/oij-identifica-las-6-modalidades-mas-utilizadas-para-estafas-informaticas-2025-cerraria-con-hasta-30-000-denuncias/",
+      "date": "2025-07-10"
+    },
+    {
+      "title": "Buscar el banco en Google les costó millones a 25 ticos",
+      "publisher": "Diario Extra",
+      "url": "https://www.diarioextra.com/noticia/buscar-el-banco-en-google-les-costo-millones-a-25-ticos/",
+      "date": "2025-05-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

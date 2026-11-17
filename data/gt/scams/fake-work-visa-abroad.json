@@ -1,0 +1,136 @@
+{
+  "id": "gt/fake-work-visa-abroad",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "es": "“Reclutador” o “tramitador” de visas de trabajo",
+    "en": "Work-visa “recruiter” or “fixer”"
+  },
+  "name": {
+    "es": "Visas de trabajo y empleos falsos en Estados Unidos o Canadá",
+    "en": "Fake work visas and jobs in the United States or Canada"
+  },
+  "how": {
+    "es": "Alguien ofrece por redes, WhatsApp o en tu comunidad un trabajo temporal en Estados Unidos o Canadá con visa incluida. Te cobra miles de quetzales por “trámites”, te pide tu DPI o pasaporte y a veces te cita en una embajada donde no estás registrado o te entrega documentos falsos. Después deja de contestar. El Ministerio de Trabajo no emite visas y sus programas no tienen costo.",
+    "en": "Someone offers, on social media, WhatsApp or in your community, a temporary job in the United States or Canada with a visa included. They charge thousands of quetzales for “paperwork”, ask for your DPI (ID) or passport and sometimes send you to an embassy where you aren’t registered or hand you fake documents. Then they stop answering. The Labour Ministry doesn’t issue visas and its programmes are free."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen un trabajo en el extranjero con visa garantizada.",
+        "en": "They offer you a job abroad with a guaranteed visa."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dicen trabajar con el Ministerio de Trabajo, Migración o una agencia.",
+        "en": "They claim to work with the Labour Ministry, Immigration or an agency."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden un depósito para el trámite y fotos de tu DPI o pasaporte.",
+        "en": "They ask for a deposit for the paperwork and photos of your DPI or passport."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apuran porque “ya se llenan los cupos”.",
+        "en": "They rush you because “places are filling up”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, tenemos plazas para trabajo agrícola en Canadá por 8 meses, salario en dólares, visa y boleto incluidos. Solo cubrís Q9,500 de trámite migratorio. Mandame foto de tu DPI de los dos lados y te aparto el lugar, quedan pocos.",
+        "en": "Hi, we have farm-work places in Canada for 8 months, salary in dollars, visa and ticket included. You only cover Q9,500 in immigration paperwork. Send me a photo of both sides of your DPI and I’ll hold your place, few left."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me ofrecieron trabajo en canada con visa",
+      "me cobraron por tramitar una visa de trabajo",
+      "visa de trabajo para estados unidos pagando un deposito",
+      "reclutador pide dinero para trabajar afuera",
+      "me citaron en la embajada y no estaba registrado",
+      "oferta de empleo en el extranjero que piden pagar"
+    ],
+    "en": [
+      "offered a job in canada with a visa",
+      "they charged me to process a work visa",
+      "us work visa if i pay a deposit",
+      "recruiter wants money to work abroad",
+      "sent to the embassy and i was not registered",
+      "job offer abroad that requires payment"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie puede garantizarte una visa: la da la embajada del país de destino.",
+      "Te cobran por una plaza o un trámite; los programas del Ministerio de Trabajo son gratis.",
+      "Te piden fotos de tu DPI o pasaporte por chat."
+    ],
+    "en": [
+      "No one can guarantee you a visa: the destination country’s embassy issues it.",
+      "They charge for a job or paperwork; the Labour Ministry’s programmes are free.",
+      "They ask for photos of your DPI or passport by chat."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Verificá la oferta directamente con el Ministerio de Trabajo antes de pagar o dar datos.",
+      "No depositar a reclutadores ni a cuentas personales.",
+      "Si ya pagaste, guardá recibos y mensajes y denunciá en el Ministerio Público."
+    ],
+    "en": [
+      "Check the offer directly with the Labour Ministry before paying or giving details.",
+      "Don’t deposit money to recruiters or personal accounts.",
+      "If you already paid, keep receipts and messages and report it to the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/mp-denuncia",
+    "gt/pnc-110"
+  ],
+  "sources": [
+    {
+      "title": "Mintrab advierte sobre las estafas relacionadas con ofertas de visa de trabajo",
+      "publisher": "Agencia Guatemalteca de Noticias (AGN)",
+      "url": "https://agn.gt/mintrab-advierte-sobre-las-estafas-relacionadas-con-ofertas-de-visa-de-trabajo/",
+      "date": "2026-08-19"
+    },
+    {
+      "title": "Mujer que ofrecía visas de trabajo a EE. UU. y Canadá por Q15 mil, es detenida",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/nacionales/ypena/2026/02/19/mujer-que-ofrecia-visas-de-trabajo-a-ee-uu-y-canada-por-q15-mil-es-detenida/",
+      "date": "2026-02-19"
+    },
+    {
+      "title": "MP reporta aumento de denuncias por estafas: ¡Tome precauciones!",
+      "publisher": "Emisoras Unidas",
+      "url": "https://emisorasunidas.com/nacional/2025/09/06/ministerio-publico-denuncias-estafas-guatemala/",
+      "date": "2025-09-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,131 @@
+{
+  "id": "sv/empleo-falso-vacantes",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "es": "Una cuenta falsa de un ministerio o de una empresa conocida",
+    "en": "A fake account of a ministry or a well-known company"
+  },
+  "name": {
+    "es": "Vacantes falsas del gobierno o de empresas conocidas",
+    "en": "Fake vacancies from the government or well-known companies"
+  },
+  "how": {
+    "es": "En Facebook, TikTok o una página aparece una cuenta que copia el nombre y el logo de un ministerio o de una empresa conocida y publica plazas con buenos salarios: limpieza, seguridad, motoristas, secretarias. Para aplicar te mandan a un enlace donde piden tu DUI, datos personales o bancarios, y a veces un pago por “trámite” o “capacitación”. El Ministerio de Trabajo y la SSF han alertado de estas plazas falsas.",
+    "en": "On Facebook, TikTok or a website an account copies the name and logo of a ministry or a well-known company and posts jobs with good salaries: cleaning, security, drivers, secretaries. To apply you’re sent to a link that asks for your ID, personal or bank details, and sometimes a payment for “processing” or “training”. The Labour Ministry and the Financial System Superintendency have warned about these fake vacancies."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Una cuenta usa el logo de un ministerio o empresa conocida.",
+        "en": "An account uses a ministry’s or well-known company’s logo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Ofrece plazas con salarios atractivos y sin requisitos.",
+        "en": "It offers jobs with attractive salaries and no requirements."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Para aplicar te manda a un enlace que no es oficial.",
+        "en": "To apply it sends you to an unofficial link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden datos del DUI, bancarios o un pago por trámite.",
+        "en": "They ask for your ID or bank details or a processing fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "📢 ¡PLAZAS DISPONIBLES! Contratación inmediata para auxiliares de bodega, vigilantes y motoristas. Salario desde $650 + prestaciones. Envía tu solicitud con número de DUI y cuenta bancaria para planilla en el siguiente formulario: [enlace]. Cupos limitados.",
+        "en": "📢 JOBS AVAILABLE! Immediate hiring for warehouse assistants, security guards and drivers. Salary from $650 + benefits. Send your application with your ID number and bank account for payroll on this form: [link]. Limited places."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "plazas falsas del ministerio",
+      "vacante con logo del gobierno en facebook",
+      "formulario de empleo pide cuenta bancaria",
+      "pagar por capacitacion para un trabajo",
+      "oferta de trabajo falsa en tiktok",
+      "contratacion inmediata con salario alto"
+    ],
+    "en": [
+      "fake government job vacancies",
+      "job post with a ministry logo on facebook",
+      "job form asking for my bank account",
+      "pay for training to get a job",
+      "fake job offer on tiktok"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La cuenta no es la oficial de la institución o empresa.",
+      "Contratación inmediata sin entrevista.",
+      "Te piden datos bancarios o el DUI desde el inicio.",
+      "Te cobran por aplicar o por capacitación."
+    ],
+    "en": [
+      "The account isn’t the institution’s or company’s official one.",
+      "Immediate hiring with no interview.",
+      "They ask for bank details or your ID from the start.",
+      "They charge you to apply or for training."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Busca las plazas solo en las cuentas y páginas oficiales.",
+      "No pagues por aplicar a un empleo.",
+      "No llenes formularios con tu DUI y cuenta bancaria en enlaces dudosos.",
+      "Reporta la cuenta falsa y denuncia en la línea de estafas."
+    ],
+    "en": [
+      "Look for vacancies only on official accounts and websites.",
+      "Don’t pay to apply for a job.",
+      "Don’t fill in forms with your ID and bank account on doubtful links.",
+      "Report the fake account and file a report with the scam line."
+    ]
+  },
+  "reportTo": [
+    "sv/denuncia-estafas",
+    "sv/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Las estafas digitales que más circulan en El Salvador",
+      "publisher": "El Diario de Hoy (elsalvador.com), con información de la SSF",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/finanzas-personales/estafas-el-salvador-delitos/1258084/2026/",
+      "date": "2026-01-13"
+    },
+    {
+      "title": "Ministerio de Trabajo advierte de página falsa que ofrecía plazas con salarios de hasta $1,000",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/economia/ministerio-de-trabajo-advierte-de-pagina-falsa-que-ofrecia-plazas-con-salarios-de-hasta-1000",
+      "date": "2025-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

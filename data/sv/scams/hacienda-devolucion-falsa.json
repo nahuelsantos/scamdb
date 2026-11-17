@@ -1,0 +1,132 @@
+{
+  "id": "sv/hacienda-devolucion-falsa",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Ministerio de Hacienda” o “Administración Tributaria”",
+    "en": "“Ministry of Finance” or “Tax Administration”"
+  },
+  "name": {
+    "es": "Falsa devolución de renta o “saldo a favor” de Hacienda",
+    "en": "Fake income-tax refund or “balance in your favour” from Hacienda"
+  },
+  "how": {
+    "es": "En temporada de renta te llega un correo que parece del Ministerio de Hacienda: tienes una devolución aprobada o un saldo a favor y debes “consultar” o “reclamar” el dinero en un enlace. Usa logos copiados y una dirección parecida a la oficial. La página falsa pide tu NIT o DUI, contraseña y los datos de tu cuenta o tarjeta. Hacienda dice que no pide datos personales ni bancarios por correos no oficiales y que la devolución solo se consulta en su portal o en sus canales oficiales.",
+    "en": "During tax season you get an email that looks like it’s from the Ministry of Finance: you have an approved refund or a balance in your favour and must “check” or “claim” the money through a link. It uses copied logos and an address that looks like the official one. The fake page asks for your tax or ID number, password and your account or card details. Hacienda says it does not ask for personal or bank data by unofficial email and that refunds can only be checked on its portal or official channels."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan de una devolución o saldo a favor de Hacienda.",
+        "en": "You’re told about a refund or balance in your favour from Hacienda."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "El mensaje te apura para reclamarlo antes de que venza.",
+        "en": "The message rushes you to claim it before it expires."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te mandan un enlace para “consultar” o “reclamar”.",
+        "en": "They send a link to “check” or “claim” it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página pide tu contraseña y los datos de tu cuenta o tarjeta.",
+        "en": "The page asks for your password and your account or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Administración Tributaria: Estimado contribuyente, su devolución del Impuesto sobre la Renta por $186.40 se encuentra aprobada y pendiente de acreditar. Valide su cuenta bancaria antes del viernes para no perder el beneficio: [enlace]",
+        "en": "Tax Administration: Dear taxpayer, your income-tax refund of $186.40 has been approved and is pending payment. Validate your bank account before Friday so you don’t lose the benefit: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo de hacienda por devolucion de renta",
+      "saldo a favor en hacienda con enlace",
+      "validar cuenta para recibir la devolucion",
+      "devolucion de renta aprobada por correo",
+      "hacienda me pide datos bancarios",
+      "reclamar devolucion de impuestos"
+    ],
+    "en": [
+      "hacienda email about a tax refund",
+      "balance in my favour with a link",
+      "validate my account to get the refund",
+      "tax refund approved by email",
+      "tax office asking for my bank details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te ofrecen una devolución por correo con un enlace.",
+      "La dirección del remitente no es la oficial, aunque se parezca.",
+      "Te piden contraseña, número de cuenta o tarjeta.",
+      "Logos mal puestos, faltas de ortografía o tono alarmante."
+    ],
+    "en": [
+      "You’re offered a refund by email with a link.",
+      "The sender address isn’t the official one, even if it looks similar.",
+      "They ask for your password, account number or card.",
+      "Misplaced logos, spelling mistakes or an alarming tone."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace ni respondas.",
+      "Consulta tu devolución entrando tú mismo al portal del Ministerio de Hacienda o por sus canales oficiales.",
+      "Si diste datos bancarios, avisa a tu banco y cambia tu contraseña de Hacienda.",
+      "Reporta el correo a la línea de denuncia de estafas."
+    ],
+    "en": [
+      "Don’t open the link or reply.",
+      "Check your refund by going to the Ministry of Finance portal yourself or through its official channels.",
+      "If you gave bank details, tell your bank and change your Hacienda password.",
+      "Report the email to the scam reporting line."
+    ]
+  },
+  "reportTo": [
+    "sv/hacienda",
+    "sv/denuncia-estafas",
+    "sv/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "El Salvador: Hacienda advierte sobre correos falsos que buscan robar datos de contribuyentes",
+      "publisher": "Infobae",
+      "url": "https://www.infobae.com/el-salvador/2026/04/11/el-salvador-hacienda-advierte-sobre-correos-falsos-que-buscan-robar-datos-de-contribuyentes/",
+      "date": "2026-04-10"
+    },
+    {
+      "title": "Alertan estafas con falsas devoluciones de renta en El Salvador",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/economia/alertan-estafas-con-falsas-devoluciones-de-renta-en-el-salvador",
+      "date": "2026-02-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

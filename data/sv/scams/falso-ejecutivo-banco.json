@@ -1,0 +1,135 @@
+{
+  "id": "sv/falso-ejecutivo-banco",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “ejecutivo” o “asesor” de tu banco",
+    "en": "A “representative” or “adviser” from your bank"
+  },
+  "name": {
+    "es": "Llamada del falso ejecutivo del banco: cargos o premios a cambio de tus claves",
+    "en": "Fake bank representative call: charges or prizes in exchange for your passwords"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser de tu banco. Te habla de un cargo que no reconoces, de un bloqueo o de un premio o beneficio que te van a dar. Para “cancelar el cargo” o “acreditar el premio” te pide tu usuario, contraseña, PIN, número de tarjeta o el código que te va a llegar por mensaje. Con eso entra a tu banca en línea y se lleva el dinero. ABANSA y la Superintendencia (SSF) recuerdan que ningún empleado de banco pide claves ni códigos.",
+    "en": "Someone calls saying they are from your bank. They mention a charge you don’t recognise, a block, or a prize or benefit you’re going to get. To “cancel the charge” or “credit the prize” they ask for your username, password, PIN, card number or the code you’re about to receive by text. With that they get into your online banking and take the money. The bank association (ABANSA) and the Financial System Superintendency (SSF) remind people that no bank employee asks for passwords or codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Dice que llama de tu banco.",
+        "en": "They say they’re calling from your bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asusta con un cargo o te ofrece un premio.",
+        "en": "They scare you with a charge or offer you a prize."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide la clave, el PIN o el código que te llegó.",
+        "en": "They ask for your password, PIN or the code you received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Te pide que no cuelgues mientras “revisa”.",
+        "en": "They ask you to stay on the line while they “check”."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le saluda Karla del departamento de seguridad de su banco. Detectamos un consumo de $640 en una tienda en línea con su tarjeta, ¿usted lo hizo? Para revertirlo le va a llegar un código, me lo dicta por favor y me confirma los últimos dígitos de su tarjeta. No cuelgue.",
+        "en": "Good afternoon, this is Karla from your bank’s security department. We detected a $640 purchase at an online store with your card, did you make it? To reverse it you’ll receive a code, please read it out to me and confirm the last digits of your card. Don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco pidiendo la clave",
+      "falso ejecutivo bancario",
+      "me pidieron el codigo para revertir un cargo",
+      "llamada del banco por un premio",
+      "asesor del banco me pidio el pin",
+      "dicte el codigo que me llego",
+      "area de prevencion de fraudes del banco",
+      "cancelar una compra que no hice",
+      "llamada de seguridad del banco por compras raras"
+    ],
+    "en": [
+      "bank called asking for my password",
+      "fake bank representative",
+      "asked for the code to reverse a charge",
+      "bank call about a prize",
+      "bank adviser asked for my pin"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden clave, PIN, token o código por teléfono.",
+      "Te presionan con un cargo urgente o te ofrecen un premio.",
+      "No quieren que cuelgues.",
+      "El número que llama no es el de la tarjeta."
+    ],
+    "en": [
+      "They ask for your password, PIN, token or code by phone.",
+      "They pressure you with an urgent charge or offer a prize.",
+      "They don’t want you to hang up.",
+      "The calling number isn’t the one on your card."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga. Ningún banco te pide claves ni códigos.",
+      "Llama tú al número que está detrás de tu tarjeta para preguntar.",
+      "Si diste datos, pide que bloqueen la tarjeta y la banca en línea.",
+      "Denuncia en la Fiscalía o la línea de denuncia de estafas."
+    ],
+    "en": [
+      "Hang up. No bank asks for passwords or codes.",
+      "Call the number on the back of your card yourself to ask.",
+      "If you gave details, ask them to block your card and online banking.",
+      "Report it to the Attorney General’s Office or the scam reporting line."
+    ]
+  },
+  "reportTo": [
+    "sv/tu-banco",
+    "sv/fiscalia",
+    "sv/denuncia-estafas"
+  ],
+  "sources": [
+    {
+      "title": "Bancos previenen a los salvadoreños de estafas digitales, ¿qué modalidades se han identificado?",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/economia/bancos-previenen-a-los-salvadorenos-de-estafas-digitales-que-modalidades-se-han-identificado",
+      "date": "2025-06-23"
+    },
+    {
+      "title": "¿Conoce cómo evitar ser víctima de estafas en línea?",
+      "publisher": "El Diario de Hoy (elsalvador.com)",
+      "url": "https://www.elsalvador.com/h-noticias/h-nacional/estafas-ahuachapan-ssf-nayib-bukele-redes-sociales-delitos-economia-ministerio-de/1220428/2025/",
+      "date": "2025-05-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,140 @@
+{
+  "id": "pa/fake-prize-call",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "La “compañía telefónica” o una promoción",
+    "en": "The “phone company” or a promotion"
+  },
+  "name": {
+    "es": "Premio falso: “ganó, pero pague los impuestos primero”",
+    "en": "Fake prize: “you won, but pay the taxes first”"
+  },
+  "how": {
+    "es": "Te llaman o te escriben diciendo que eres el ganador de un premio grande: miles de dólares o un viaje, muchas veces a nombre de una compañía de celular. Para “liberar” el premio te piden pagar antes impuestos, gastos de envío o un trámite, por depósito o Yappy. Pagas y el premio nunca llega; a veces te piden más pagos.",
+    "en": "They call or message saying you are the winner of a big prize: thousands of dollars or a trip, often in the name of a mobile phone company. To “release” the prize they ask you to first pay taxes, shipping costs or a fee, by deposit or Yappy. You pay and the prize never comes; sometimes they ask for more payments."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan que ganaste un premio en una promoción en la que no participaste.",
+        "en": "They tell you you won a prize in a promotion you never entered."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dicen que llaman de una compañía conocida.",
+        "en": "They say they’re calling from a well-known company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Para liberar el premio te piden pagar impuestos o un trámite.",
+        "en": "To release the prize they ask you to pay taxes or a fee."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te dicen que el premio vence hoy si no pagas.",
+        "en": "They say the prize expires today if you don’t pay."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicidades! Su línea salió favorecida en el sorteo de aniversario con $25,000. Para hacerle la entrega debe cubrir el impuesto de premio de $350 antes de las 5 pm. Comuníquese con el gerente de promociones para el número de cuenta.",
+        "en": "Congratulations! Your line was selected in the anniversary draw with $25,000. To deliver it you must cover the $350 prize tax before 5 pm. Contact the promotions manager for the account number."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me dijeron que gane un premio y tenia que pagar impuestos",
+      "llamada de la compañia telefonica por un premio",
+      "pagar para liberar el premio",
+      "sorteo en el que nunca participe",
+      "premio de miles de dolares por telefono",
+      "me pidieron un deposito para entregarme el carro"
+    ],
+    "en": [
+      "they said i won a prize and had to pay taxes",
+      "call from the phone company about a prize",
+      "pay to release the prize",
+      "draw i never entered",
+      "prize of thousands of dollars by phone",
+      "they asked for a deposit to hand over the car"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganaste algo en lo que no participaste.",
+      "Te piden pagar para recibir un premio.",
+      "Plazo de horas para pagar.",
+      "El pago va a una cuenta personal o un Yappy."
+    ],
+    "en": [
+      "You won something you never entered.",
+      "You’re asked to pay to receive a prize.",
+      "A deadline of hours to pay.",
+      "The payment goes to a personal account or a Yappy."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Un premio real no se cobra pagando antes.",
+      "Cuelga y llama a la empresa por su número oficial.",
+      "No des datos personales ni bancarios.",
+      "Si ya pagaste, llama a tu banco y denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "A real prize doesn’t require paying first.",
+      "Hang up and call the company on its official number.",
+      "Don’t give personal or bank details.",
+      "If you already paid, call your bank and report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/ministerio-publico",
+    "pa/policia-104",
+    "pa/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Ministerio Público: Unos 50 panameños son estafados cada día",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/ministerio-publico-unos-50-panamenos-son-estafados-cada-dia-EH22433304",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "¡No caiga! Estas son las estafas más denunciadas en Panamá durante 2026",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/no-caiga-estas-son-las-estafas-mas-denunciadas-en-panama-durante-2026-NK22395976",
+      "date": "2026-05-14"
+    },
+    {
+      "title": "Ministerio Público alerta sobre aumento de estafas y nuevas modalidades de engaño",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/ministerio-publico-estafas-en-panama-aumentan-2026_1_2240909.html",
+      "date": "2026-05-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,147 @@
+{
+  "id": "cr/falso-empleo-firma-digital",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Recursos humanos” de una empresa conocida o transnacional",
+    "en": "“HR” at a well-known or multinational company"
+  },
+  "name": {
+    "es": "“Quedó en el proceso: solo falta actualizar su firma digital”",
+    "en": "“You're in the process: we just need to update your digital signature”"
+  },
+  "how": {
+    "es": "Usted manda su currículum a una oferta de trabajo atractiva en redes o en una plataforma de empleo que imita a una empresa conocida. Luego lo llaman de “recursos humanos” y le dicen que para contratarlo deben actualizar su firma digital: le mandan un enlace donde elige su banco y mete su usuario, clave y token, o le preguntan con qué banco tiene la firma y le piden la clave del correo. Otras veces le cobran por trámites, equipo o capacitación. Con esos datos entran a sus cuentas.",
+    "en": "You send your CV to an attractive job ad on social media or a job site that imitates a well-known company. Then “HR” calls and says that to hire you they need to update your digital signature: they send a link where you pick your bank and enter your username, password and token, or they ask which bank holds your digital signature and ask for your email password. Other times they charge you for paperwork, equipment or training. With those details they get into your accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ve una oferta de trabajo muy buena de una empresa conocida y manda el currículum.",
+        "en": "You see a great job offer from a well-known company and send your CV."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Lo llaman de “recursos humanos” para avanzar en la contratación.",
+        "en": "“HR” calls you to move forward with hiring."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dicen que debe actualizar su firma digital por un enlace.",
+        "en": "They say you must update your digital signature through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden usuario y clave del banco, el token o la clave del correo.",
+        "en": "They ask for your bank username and password, token or email password."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "O le cobran por trámites o equipo para empezar.",
+        "en": "Or they charge you for paperwork or equipment to start."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola Daniela, le saluda Paola de Talento Humano. Su perfil fue preseleccionado para el puesto de servicio al cliente bilingüe. Para la contratación necesitamos validar su firma digital: ingrese al [enlace], seleccione la entidad donde la tiene y complete con su usuario y su token. Tiene hasta hoy a las 5.",
+        "en": "Hi Daniela, this is Paola from Human Talent. Your profile was shortlisted for the bilingual customer service job. To hire you we need to validate your digital signature: go to [link], select the institution where you have it and fill in your username and token. You have until 5 today."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "oferta de trabajo pedia actualizar la firma digital",
+      "recursos humanos me pidio la clave del banco",
+      "me llamaron por el curriculum y me pidieron el token",
+      "trabajo en transnacional falso",
+      "me cobraron para contratarme",
+      "falso reclutador por facebook"
+    ],
+    "en": [
+      "job offer asked me to update my digital signature",
+      "hr asked for my bank password",
+      "they called about my cv and asked for my token",
+      "fake multinational job",
+      "they charged me to hire me",
+      "fake recruiter on facebook"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ninguna empresa necesita su clave del banco, el token o la del correo para contratarlo.",
+      "Le piden “actualizar la firma digital” por un enlace.",
+      "Le cobran antes de empezar.",
+      "La oferta es demasiado buena y el proceso, demasiado rápido."
+    ],
+    "en": [
+      "No employer needs your bank password, token or email password to hire you.",
+      "They ask you to “update your digital signature” through a link.",
+      "They charge you before you start.",
+      "The offer is too good and the process too fast."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llame a la empresa al número de su sitio oficial para confirmar la oferta.",
+      "No meta datos del banco en enlaces que le manden.",
+      "Si ya los dio, llame a su banco para bloquear todo y cambie claves.",
+      "Denuncie en el OIJ."
+    ],
+    "en": [
+      "Call the company on the number from its official website to confirm the offer.",
+      "Don't enter bank details on links they send you.",
+      "If you already did, call your bank to block everything and change passwords.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Oficina del Consumidor Financiero advierte sobre principales modalidades de estafa y llama a extremar precauciones",
+      "publisher": "Delfino.cr",
+      "url": "https://delfino.cr/2026/08/oficina-del-consumidor-financiero-advierte-sobre-principales-modalidades-de-estafa-y-llama-a-extremar-precauciones",
+      "date": "2026-08-10"
+    },
+    {
+      "title": "Vender su carro o buscar trabajo lo podrían poner en la mira de los estafadores informáticos, advierte OIJ",
+      "publisher": "Semanario Universidad",
+      "url": "https://semanariouniversidad.com/pais/vender-su-carro-o-buscar-trabajo-lo-podrian-poner-en-la-mira-de-los-estafadores-informaticos-advierte-oij/",
+      "date": "2025-07-10"
+    },
+    {
+      "title": "OIJ identifica las 6 modalidades más utilizadas para estafas informáticas; 2025 cerraría con hasta 30.000 denuncias",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/oij-identifica-las-6-modalidades-mas-utilizadas-para-estafas-informaticas-2025-cerraria-con-hasta-30-000-denuncias/",
+      "date": "2025-07-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

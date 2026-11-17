@@ -1,0 +1,93 @@
+{
+  "id": "bz/belize-bank-staff-call",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "“Belize Bank” staff"
+  },
+  "name": {
+    "en": "Phone call from someone posing as Belize Bank staff"
+  },
+  "how": {
+    "en": "You get a call from someone who says they work at Belize Bank, sometimes about a problem with your account or card. They try to get your full card number, PIN, online banking username or password, then use them to take money. Belize Bank says it never asks for personal or card information over the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are from Belize Bank and there is a problem with your account or card."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say you must act now to protect your money."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for your card number, PIN, online banking login or a code sent to you."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "With those details they get into your account or use your card."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: Good afternoon, this is Kevin from Belize Bank card services. We flagged an online charge on your Visa this morning. To reverse it I need to verify the full card number and the PIN, and the code we just texted to you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "call from belize bank asking for my pin",
+      "someone said they were from the bank and asked for my card number",
+      "bank caller wanted my online banking password",
+      "caller asked for the code the bank sent me",
+      "fake bank representative phone call",
+      "bank called about a suspicious charge and asked for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A bank caller asks for your PIN, password, full card number or a code.",
+      "You are pressured to act during the call.",
+      "The caller uses logos or an official-looking number or email to seem real."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Never share your PIN, password, card number or codes.",
+      "Call your bank yourself on the number on the back of your card, or use the bank’s secure messages in its app.",
+      "If you shared details, ask your bank to block the card and online access straight away."
+    ]
+  },
+  "reportTo": [
+    "bz/your-bank",
+    "bz/police"
+  ],
+  "sources": [
+    {
+      "title": "Belize Bank Issues Urgent Warning About Rising Phone Scams",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/?p=49835",
+      "date": "2025-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "hn/fake-investment-groups",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Asesores” de una casa de bolsa o “plataforma de inversión”",
+    "en": "“Advisers” of a brokerage or “investment platform”"
+  },
+  "name": {
+    "es": "“Invertí hoy y ganá un 5 % semanal”",
+    "en": "“Invest today and earn 5% a week”"
+  },
+  "how": {
+    "es": "Por Facebook, TikTok, WhatsApp o Telegram te ofrecen inversiones con ganancias altas y seguras (“inversiones”, “donaciones”, arrendamientos o un supuesto bono del Gobierno). Te meten en grupos donde “asesores”, a veces usando el nombre de una casa de bolsa real, muestran capturas de grandes pagos y te presionan para depositar ya y traer a familiares. Al principio pagan algo con el dinero de los nuevos; cuando dejan de entrar personas, desaparecen. Solo bancos y cooperativas autorizadas pueden captar dinero del público.",
+    "en": "On Facebook, TikTok, WhatsApp or Telegram you are offered investments with high, guaranteed returns (“investments”, “donations”, leases or a supposed Government bonus). They add you to groups where “advisers”, sometimes using the name of a real brokerage, post screenshots of big payouts and push you to deposit now and bring relatives. At first they pay a little with newcomers’ money; when people stop joining, they vanish. Only authorised banks and cooperatives may take deposits from the public."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te agregan a un grupo de Telegram o WhatsApp, o ves un anuncio con logos oficiales.",
+        "en": "You are added to a Telegram or WhatsApp group, or see an ad with official logos."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Prometen ganancias altas y seguras, como un tanto por ciento cada semana.",
+        "en": "They promise high, guaranteed returns, like a percentage every week."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te presionan: “invertí hoy o perdés el cupo”.",
+        "en": "They pressure you: “invest today or lose your spot”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden depósitos y que metás a familiares y amigos.",
+        "en": "They ask for deposits and for you to bring in family and friends."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Bienvenidos al grupo VIP 🚀 Con un aporte desde L 2,000 recibís el 30 % en 15 días con el equipo de nuestra casa de bolsa. Miren los retiros de hoy 👇 Quedan pocos cupos, escríbanle al asesor para recibir la cuenta.",
+        "en": "Welcome to the VIP group 🚀 With a contribution from L 2,000 you get 30% in 15 days with our brokerage team. Look at today’s withdrawals 👇 Few spots left, message the adviser to get the account."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "grupo de inversion en telegram",
+      "ganancias garantizadas cada semana",
+      "aportes que se recuperan en pocas semanas",
+      "casa de bolsa me agrego a un grupo",
+      "traer familiares para ganar mas",
+      "no me devuelven lo que inverti",
+      "bono del gobierno que lleva a un grupo de inversion",
+      "rendimiento semanal fijo",
+      "pagos cada semana por mi inversion",
+      "pocos cupos para invertir"
+    ],
+    "en": [
+      "investment group on telegram",
+      "guaranteed weekly returns",
+      "get your money back in a few weeks",
+      "brokerage added me to a group",
+      "bring relatives to earn more",
+      "they won't return my investment",
+      "fixed weekly return",
+      "weekly payouts on my investment",
+      "few spots left to invest"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganancias altas y “garantizadas” son la primera señal de estafa.",
+      "Un permiso municipal o una empresa constituida no autoriza a captar dinero.",
+      "Te apuran y te piden reclutar a otros.",
+      "Usan logos del Gobierno o de una casa de bolsa sin permiso."
+    ],
+    "en": [
+      "High, “guaranteed” returns are the first sign of a scam.",
+      "A municipal permit or a registered company doesn’t authorise taking deposits.",
+      "They rush you and ask you to recruit others.",
+      "They use Government or brokerage logos without permission."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de invertir, revisá en la CNBS si la empresa está autorizada.",
+      "Pedí contrato por escrito y no decidás bajo presión.",
+      "No depositás ni metás a tus familiares.",
+      "Si ya perdiste dinero, guardá pruebas y denunciá en la DPI o el Ministerio Público."
+    ],
+    "en": [
+      "Before investing, check with the CNBS whether the company is authorised.",
+      "Ask for a written contract and don’t decide under pressure.",
+      "Don’t pay in or bring in your family.",
+      "If you already lost money, keep evidence and report it to the DPI or the Public Prosecutor."
+    ]
+  },
+  "reportTo": [
+    "hn/cnbs",
+    "hn/policia-dpi"
+  ],
+  "sources": [
+    {
+      "title": "Estafas piramidales: ¿Cómo funcionan y qué protección legal tienen los hondureños?",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/estafas-piramidales-como-funcionan-y-que-proteccion-tienen-los-hondurenos-2026-08-30",
+      "date": "2026-08-30"
+    },
+    {
+      "title": "Alertan por falso bono de Sedesol de L10 mil que circula por WhatsApp",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/bono-10-mil-lempiras-sedesol-alerta-nueva-modalidad-estafa-hondurenos-2026-10-10",
+      "date": "2026-10-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "sv/maleta-familiar-aduana",
+  "country": "sv",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un “familiar en Estados Unidos” o un conocido, desde un número extranjero",
+    "en": "A “relative in the United States” or an acquaintance, from a foreign number"
+  },
+  "name": {
+    "es": "La maleta del familiar en Estados Unidos retenida en aduana",
+    "en": "The relative’s suitcase from the United States held at customs"
+  },
+  "how": {
+    "es": "Te escribe o llama alguien que se hace pasar por un familiar o conocido que vive en Estados Unidos. Dice que te mandó una maleta con regalos, ropa o dinero, o que viene de visita, pero que quedó retenida en aduana o en el aeropuerto. Para “liberarla” tienes que depositar para impuestos o gastos de aduana, a veces cientos o miles de dólares. Después de pagar, dejan de contestar. En La Libertad una mujer fue condenada por una estafa así de $2,000, y la SSF la incluye entre las más comunes.",
+    "en": "Someone writes or calls pretending to be a relative or acquaintance living in the United States. They say they sent you a suitcase with gifts, clothes or money, or that they’re coming to visit, but it was held at customs or the airport. To “release” it you must deposit money for taxes or customs fees, sometimes hundreds or thousands of dollars. After you pay, they stop answering. In La Libertad a woman was convicted for a $2,000 scam like this, and the Superintendency lists it among the most common."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un “familiar” de Estados Unidos te escribe desde otro número.",
+        "en": "A “relative” in the United States writes from another number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "es": "Dice que te mandó una maleta y que está retenida.",
+        "en": "They say they sent you a suitcase and it’s being held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden depositar para impuestos o aduana.",
+        "en": "You’re asked to deposit money for taxes or customs."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apuran porque la maleta se va a devolver o perder.",
+        "en": "They rush you because the suitcase will be returned or lost."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola prima, soy yo, este es mi número de acá de Los Ángeles. Te mandé una maleta con ropa y unas cositas para los cipotes, pero me dicen que en la aduana del aeropuerto la tienen detenida por los impuestos. Son $420, ¿me hacés el favor de depositarlos? Yo después te los mando.",
+        "en": "Hi cousin, it’s me, this is my number here in Los Angeles. I sent you a suitcase with clothes and a few things for the kids, but they tell me it’s being held at airport customs because of taxes. It’s $420, could you do me the favour of depositing it? I’ll send it back to you later."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "maleta retenida en aduana",
+      "familiar de estados unidos me mando una maleta",
+      "pagar impuestos para liberar la maleta",
+      "encomienda detenida en el aeropuerto",
+      "me pidieron deposito por gastos de aduana",
+      "pariente que viene de visita pide dinero"
+    ],
+    "en": [
+      "suitcase held at customs",
+      "relative in the us sent me a suitcase",
+      "pay taxes to release the suitcase",
+      "parcel held at the airport",
+      "customs fee deposit"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "El familiar escribe desde un número nuevo o extranjero.",
+      "Nadie te había avisado del envío.",
+      "Te piden pagar la aduana a la cuenta de una persona.",
+      "Solo escribe, no quiere hablar por llamada normal."
+    ],
+    "en": [
+      "The relative writes from a new or foreign number.",
+      "Nobody had told you about the shipment.",
+      "You’re asked to pay customs into an individual’s account.",
+      "They only text and won’t talk on a normal call."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llama a tu familiar al número que ya tienes guardado.",
+      "No deposites para liberar maletas o encomiendas.",
+      "Pregunta a otros parientes si saben del envío.",
+      "Denuncia en la PNC, la Fiscalía o la línea de denuncia de estafas."
+    ],
+    "en": [
+      "Call your relative on the number you already have saved.",
+      "Don’t deposit money to release suitcases or parcels.",
+      "Ask other relatives whether they know about the shipment.",
+      "Report it to the police, the Attorney General’s Office or the scam reporting line."
+    ]
+  },
+  "reportTo": [
+    "sv/fiscalia",
+    "sv/denuncia-estafas",
+    "sv/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Las estafas digitales que más circulan en El Salvador",
+      "publisher": "El Diario de Hoy (elsalvador.com), con información de la SSF",
+      "url": "https://www.elsalvador.com/dinero-y-negocios/finanzas-personales/estafas-el-salvador-delitos/1258084/2026/",
+      "date": "2026-01-13"
+    },
+    {
+      "title": "Prestar su cuenta bancaria para que otros reciban fondos puede ser delito: La Advertencia del gabinete de Seguridad",
+      "publisher": "Diario El Mundo",
+      "url": "https://diario.elmundo.sv/nacionales/prestar-su-cuenta-bancaria-para-que-otros-reciban-fondos-puede-ser-delito-la-advertencia-del-gabinete-de-seguridad",
+      "date": "2025-09-25"
+    },
+    {
+      "title": "Condenan a mujer que estafó con el envío falso de una maleta en La Libertad",
+      "publisher": "El Diario de Hoy (elsalvador.com)",
+      "url": "https://www.elsalvador.com/h-noticias/h-nacional/condenada-estafa-maleta-falsa/1221734/2025/",
+      "date": "2025-05-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

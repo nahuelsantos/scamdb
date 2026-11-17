@@ -1,0 +1,132 @@
+{
+  "id": "cr/inversion-falsa-famosos",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Anuncios con empresarios, instituciones o famosos ticos",
+    "en": "Ads featuring Costa Rican business leaders, institutions or celebrities"
+  },
+  "name": {
+    "es": "“Invierta ₡130.000 y gane más de un millón”",
+    "en": "“Invest ₡130,000 and earn over a million”"
+  },
+  "how": {
+    "es": "En Facebook, Instagram o TikTok ve un video o una imagen donde un empresario conocido, un personaje público o una institución como el ICE parece recomendar una plataforma de inversión: con poquita plata, ganancias enormes y seguras. Los videos se hacen con inteligencia artificial. Le piden registrarse en un enlace, dar datos personales o financieros y depositar plata para empezar a “ganar”.",
+    "en": "On Facebook, Instagram or TikTok you see a video or image where a well-known business leader, public figure or an institution such as ICE (the state power and telecom company) seems to recommend an investment platform: a small amount for huge, safe returns. The videos are made with artificial intelligence. They ask you to sign up on a link, hand over personal or financial details and deposit money to start “earning”."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ve un video de un famoso, empresario o institución recomendando invertir.",
+        "en": "You see a video of a celebrity, business leader or institution recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le prometen ganancias enormes con poca plata.",
+        "en": "They promise huge returns for a small amount."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le piden registrarse en un enlace con sus datos.",
+        "en": "They ask you to sign up on a link with your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden depositar plata en la plataforma.",
+        "en": "They ask you to deposit money on the platform."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "🔴 EXCLUSIVO: el empresario que todos conocen revela cómo cualquier tico puede ganar hasta ₡900.000 por semana con la nueva plataforma respaldada por el Estado. Inversión mínima ₡125.000. Cupos limitados, regístrese hoy: [enlace]",
+        "en": "🔴 EXCLUSIVE: the business leader everyone knows reveals how any Costa Rican can earn up to ₡900,000 a week with the new state-backed platform. Minimum investment ₡125,000. Limited places, sign up today: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "video de un empresario recomendando invertir",
+      "plataforma de inversion con inteligencia artificial",
+      "invertir en el ice por facebook",
+      "ganancias de un millon con poca plata",
+      "el asesor me pide depositar mas",
+      "no puedo retirar mis ganancias"
+    ],
+    "en": [
+      "video of a business leader recommending an investment",
+      "investment platform using ai video",
+      "invest in ice through facebook",
+      "a million in profit from a small amount",
+      "the adviser keeps asking me to deposit more",
+      "i can't withdraw my profits"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Le prometen ganancias altas, rápidas y seguras.",
+      "Un famoso o una institución “recomienda” la inversión en un anuncio.",
+      "Le piden datos personales o financieros por redes sociales.",
+      "El video puede estar hecho con inteligencia artificial."
+    ],
+    "en": [
+      "They promise high, fast and safe returns.",
+      "A celebrity or institution “recommends” the investment in an ad.",
+      "They ask for personal or financial details through social media.",
+      "The video may be made with artificial intelligence."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No invierta por anuncios en redes. Revise si la entidad está supervisada antes de dar un colón.",
+      "Si ya depositó, no mande más plata para “liberar” ganancias.",
+      "Avise a su banco y denuncie en el OIJ."
+    ],
+    "en": [
+      "Don't invest through social media ads. Check whether the firm is supervised before handing over a single colón.",
+      "If you already deposited, don't send more money to “release” profits.",
+      "Tell your bank and report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/oij",
+    "cr/sugef",
+    "cr/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Grupo Montecristo advierte sobre video falso con IA que busca engañar con imagen del empresario Francis Durman",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/grupo-montecristo-advierte-sobre-video-falso-con-ia-que-busca-enganar-con-imagen-del-empresario-francis-durman/",
+      "date": "2025-06-08"
+    },
+    {
+      "title": "#NoCaiga: Cinde no promueve en redes sociales invertir en el ICE",
+      "publisher": "CRHoy",
+      "url": "https://www.crhoy.com/economia/nocaiga-cinde-no-promueve-en-redes-sociales-invertir-en-el-ice/",
+      "date": "2025-05-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

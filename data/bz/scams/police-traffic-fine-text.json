@@ -1,0 +1,108 @@
+{
+  "id": "bz/police-traffic-fine-text",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "en": "“Belize Police Department”"
+  },
+  "name": {
+    "en": "Fake traffic fine text in the name of the Belize Police"
+  },
+  "how": {
+    "en": "A text message or online notice says you committed a traffic offence and must pay a fine on a website. It threatens to suspend your licence or take legal action if you do not pay. The Belize Police Department says it did not send it: the website copies an official government page to take your money and card or personal details."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or online notice claims to come from the Belize Police Department about a traffic offence."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It warns that your licence will be suspended or you will face legal action unless you pay."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It sends you to a website that looks like an official government page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You are asked to pay the fine and enter card or personal details there."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "The money and details go to the criminals."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "BELIZE POLICE DEPT: Notice of traffic violation - vehicle recorded exceeding speed limit on George Price Hwy. Fine BZ$75 must be settled within 48hrs or your drivers licence will be suspended. Pay online: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text saying i have a traffic fine from belize police",
+      "pay traffic ticket online link text",
+      "police traffic violation notice by text message",
+      "drivers licence will be suspended unless i pay the fine",
+      "fake traffic offence fine website",
+      "unpaid traffic fine sms with a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A traffic fine arrives by text with a link to pay online.",
+      "It threatens licence suspension or court action to rush you.",
+      "The website asks for card details or personal information."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link and don’t pay.",
+      "Check any traffic notice through official Government of Belize channels or at a police station.",
+      "If you entered card details, call your bank to block the card.",
+      "Report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "bz/police",
+    "bz/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Got a Traffic Fine Text? Read This Before You Pay that Fine",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/got-a-traffic-fine-text-read-this-before-you-pay-that-fine/",
+      "date": "2026-08-04"
+    },
+    {
+      "title": "Scammers Pose as Police in Fake Traffic Fine Scheme",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/scammers-pose-as-police-in-fake-traffic-fine-scheme/",
+      "date": "2026-08-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "hn/phone-points-sms",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "es": "Tu “compañía telefónica”",
+    "en": "Your “phone company”"
+  },
+  "name": {
+    "es": "“Sus puntos están por vencer: canjéelos aquí”",
+    "en": "“Your points are about to expire: redeem them here”"
+  },
+  "how": {
+    "es": "Te llega un mensaje de texto que parece de una de las compañías de teléfono del país diciendo que tenés miles de puntos que se vencen en pocos días. El enlace lleva a un formulario que, para “entregarte el premio”, te pide datos personales y los de tu tarjeta bancaria. Con eso hacen compras o retiros.",
+    "en": "You get a text that looks like it’s from one of the country’s phone companies saying you have thousands of points expiring in a few days. The link leads to a form that, to “deliver your prize”, asks for your personal details and bank card details. With that they make purchases or withdrawals."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "El mensaje parece de tu compañía telefónica.",
+        "en": "The message looks like it’s from your phone company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tus puntos vencen en pocos días.",
+        "en": "It says your points expire in a few days."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te manda a un enlace para canjearlos.",
+        "en": "It sends you to a link to redeem them."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "El formulario pide los datos de tu tarjeta “para el envío”.",
+        "en": "The form asks for your card details “for delivery”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Estimado cliente: usted acumula 38,950 puntos que venceran el dia de manana. Canjee hoy celulares, audifonos y mas premios ingresando a [enlace]",
+        "en": "Dear customer: you have 38,950 points expiring tomorrow. Redeem phones, headphones and more prizes today at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje para canjear puntos",
+      "mis puntos se vencen",
+      "premio de la compania telefonica",
+      "formulario pide datos de la tarjeta para el premio",
+      "canje de puntos con enlace"
+    ],
+    "en": [
+      "message to redeem points",
+      "my points are expiring",
+      "prize from the phone company",
+      "form asks for card details for the prize",
+      "points redemption with a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un canje de puntos no necesita los datos de tu tarjeta bancaria.",
+      "El plazo corto es para que no lo verifiqués.",
+      "El enlace no es la app ni la página oficial de la compañía."
+    ],
+    "en": [
+      "Redeeming points doesn’t need your bank card details.",
+      "The short deadline is so you don’t check.",
+      "The link isn’t the company’s official app or site."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abrás el enlace; revisá tus puntos en la app oficial o llamando a tu compañía.",
+      "Si pusiste la tarjeta, bloqueala con tu banco.",
+      "Denunciá el mensaje en la DPI."
+    ],
+    "en": [
+      "Don’t open the link; check your points in the official app or by calling your phone company.",
+      "If you entered your card, block it with your bank.",
+      "Report the message to the DPI."
+    ]
+  },
+  "reportTo": [
+    "hn/tu-banco",
+    "hn/policia-dpi"
+  ],
+  "sources": [
+    {
+      "title": "Alertan sobre falsos mensajes de premios para robar información bancaria",
+      "publisher": "Tunota",
+      "url": "https://www.tunota.com/honduras-hoy/alertan-sobre-falsos-mensajes-premios-robar-informacion-bancaria-2026-10-28",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

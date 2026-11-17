@@ -1,0 +1,149 @@
+{
+  "id": "gt/fake-bank-call",
+  "country": "gt",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Agente” o “asesor” de tu banco",
+    "en": "Your bank’s “agent” or “adviser”"
+  },
+  "name": {
+    "es": "“Le llamamos de su banco para actualizar su app”",
+    "en": "“We’re calling from your bank to update your app”"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser agente o asesor de tu banco. Con la excusa de actualizar tu aplicación, revisar un movimiento raro o desbloquear tu banca virtual, te pide tu usuario, contraseña, token o el código que te acaba de llegar por mensaje. Con eso entra a tu banca en línea, cambia tus claves y se transfiere tu dinero, o te saca extrafinanciamiento a tu nombre. Es la modalidad de robo de datos con más denuncias en el Ministerio Público.",
+    "en": "Someone calls saying they are an agent or adviser from your bank. With the excuse of updating your app, checking an odd transaction or unlocking your online banking, they ask for your username, password, token or the code you just got by text. With that they get into your online banking, change your passwords and transfer your money out, or take out extra credit in your name. It is the data-theft method with the most complaints at the Public Prosecutor’s Office."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman diciendo que son del banco, del área de seguridad o de soporte de la app.",
+        "en": "They call saying they are from the bank, its security team or app support."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dicen que tu app necesita una actualización o que hay un movimiento sospechoso en tu cuenta.",
+        "en": "They say your app needs an update or there is a suspicious transaction on your account."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden usuario, contraseña, token o el código que te llegó por SMS para “validar” que sos vos.",
+        "en": "They ask for your username, password, token or the code you got by text to “confirm it’s you”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Te piden que no colgués mientras “terminan el proceso”.",
+        "en": "They ask you not to hang up while they “finish the process”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Con tus datos entran a tu banca virtual y transfieren tu dinero a otras cuentas.",
+        "en": "With your details they log into your online banking and move your money to other accounts."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le saluda Kevin del departamento de soporte de su banco. Estamos migrando la aplicación a la nueva versión y su usuario quedó pendiente. Para no suspenderle la banca en línea, en este momento le va a entrar un mensaje con seis dígitos, ¿me los dicta por favor? No me cuelgue.",
+        "en": "Good afternoon, this is Kevin from your bank’s support department. We are moving the app to the new version and your user is still pending. So your online banking isn’t suspended, you’ll get a message with six digits right now, can you read them to me please? Don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco para actualizar la app",
+      "me pidieron el token por telefono",
+      "dijeron que eran asesores del banco",
+      "me pidieron el codigo que me llego por mensaje",
+      "me vaciaron la banca en linea",
+      "un supuesto agente del banco me pidio mi usuario y contraseña",
+      "transferencias que no hice desde mi cuenta"
+    ],
+    "en": [
+      "call from my bank to update the app",
+      "they asked for my token over the phone",
+      "they said they were bank advisers",
+      "they asked for the code that came by text",
+      "my online banking was emptied",
+      "transfers i did not make from my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Tu banco nunca te pide contraseñas, PIN, token ni códigos por teléfono, WhatsApp o correo.",
+      "Te llaman a vos para “actualizar” algo que vos no pediste.",
+      "Te apuran para que no tengás tiempo de pensar.",
+      "Te piden que no colgués."
+    ],
+    "en": [
+      "Your bank never asks for passwords, PIN, token or codes by phone, WhatsApp or email.",
+      "They call you to “update” something you never asked for.",
+      "They rush you so you have no time to think.",
+      "They ask you not to hang up."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Colgá. Llamá vos al número que viene atrás de tu tarjeta o entrá a la app oficial.",
+      "No dictés ningún código ni clave, aunque digan ser del banco.",
+      "Si ya diste datos, llamá a tu banco para bloquear la cuenta y cambiá tus claves.",
+      "Guardá capturas y denunciá en el Ministerio Público."
+    ],
+    "en": [
+      "Hang up. Call the number on the back of your card yourself or open the official app.",
+      "Don’t read out any code or password, even if they say they are the bank.",
+      "If you already gave details, call your bank to block the account and change your passwords.",
+      "Keep screenshots and report it to the Public Prosecutor’s Office."
+    ]
+  },
+  "reportTo": [
+    "gt/tu-banco",
+    "gt/mp-denuncia",
+    "gt/pnc-110"
+  ],
+  "sources": [
+    {
+      "title": "Llamadas y mensajes falsos encabezan las estafas digitales que superan los Q19 millones de pérdidas",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/nacionales/ypena/2026/11/11/llamadas-y-mensajes-falsos-encabezan-las-estafas-digitales-que-superan-los-q19-millones-de-perdidas-now/",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "Detenidos simulaban ser empleados bancarios para acreditarse fuertes sumas de dinero",
+      "publisher": "La Hora",
+      "url": "https://lahora.gt/nacionales/ypena/2026/04/08/detenidos-simulaban-ser-empleados-bancarios-para-acreditarse-fuertes-sumas-de-dinero/",
+      "date": "2026-04-08"
+    },
+    {
+      "title": "Cinco consejos para evitar estafas y proteger tu dinero en la banca virtual",
+      "publisher": "Publinews Guatemala",
+      "url": "https://www.publinews.gt/noticias/2026/11/07/cinco-consejos-para-evitar-estafas-y-proteger-tu-dinero-en-la-banca-virtual/",
+      "date": "2026-11-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

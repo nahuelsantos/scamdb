@@ -1,0 +1,135 @@
+{
+  "id": "pa/advance-fee-loan",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Una “financiera” en redes sociales",
+    "en": "A “lender” on social media"
+  },
+  "name": {
+    "es": "Préstamo falso que pide un pago antes del desembolso",
+    "en": "Fake loan that asks for a payment before paying out"
+  },
+  "how": {
+    "es": "Ves en Facebook, Instagram o WhatsApp una oferta de préstamo rápido, sin muchos requisitos, a veces con el logo de la Superintendencia de Bancos o del Ministerio de Comercio para que parezca legal. Te aprueban casi de inmediato, pero antes de darte la plata te piden un depósito por seguro, impuesto, apertura o “garantía”. Pagas y el préstamo nunca llega, o te piden un pago más.",
+    "en": "You see a quick loan offer on Facebook, Instagram or WhatsApp with few requirements, sometimes with the logo of the Superintendency of Banks or the Ministry of Commerce so it looks legal. You’re approved almost immediately, but before you get the money they ask for a deposit for insurance, tax, an opening fee or a “guarantee”. You pay and the loan never comes, or they ask for one more payment."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves una oferta de préstamo fácil en redes con logos oficiales.",
+        "en": "You see an easy loan offer on social media with official logos."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te aprueban rápido y casi sin revisar nada.",
+        "en": "You’re approved fast with hardly any checks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Antes del desembolso te piden pagar seguro, impuesto o garantía.",
+        "en": "Before payout they ask you to pay insurance, tax or a guarantee."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Después de pagar, piden otro cargo o dejan de contestar.",
+        "en": "After you pay, they ask for another fee or stop answering."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Felicidades, su préstamo de $3,000 quedó aprobado ✅ Para hacer el desembolso a su cuenta hoy mismo solo falta el pago de la póliza de seguro por $120. Una vez enviado el comprobante se le deposita.",
+        "en": "Congratulations, your $3,000 loan is approved ✅ To pay it into your account today, only the $120 insurance policy payment is missing. Once you send the receipt, it will be deposited."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "prestamo aprobado pero piden pagar antes",
+      "me pidieron pagar el seguro del prestamo",
+      "financiera en facebook pide deposito",
+      "prestamo rapido sin requisitos",
+      "pago por adelantado para recibir el prestamo",
+      "usan el logo de la superintendencia para prestamos"
+    ],
+    "en": [
+      "loan approved but they want payment first",
+      "they asked me to pay the loan insurance",
+      "facebook lender asks for a deposit",
+      "quick loan with no requirements",
+      "upfront payment to receive the loan",
+      "they use the superintendency logo for loans"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden plata antes de darte el préstamo.",
+      "Usan el logo de la Superintendencia de Bancos, que las financieras no pueden usar.",
+      "Aprobación inmediata, sin revisar tu historial.",
+      "Todo es por chat y el pago va a una cuenta personal o un Yappy."
+    ],
+    "en": [
+      "They ask for money before giving you the loan.",
+      "They use the Superintendency of Banks logo, which lenders are not allowed to use.",
+      "Instant approval without checking your history.",
+      "Everything is by chat and the payment goes to a personal account or a Yappy."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues nada por adelantado para recibir un préstamo.",
+      "Verifica que la empresa tenga licencia antes de dar datos.",
+      "Si necesitas crédito, acude a un banco o financiera autorizada por sus canales oficiales.",
+      "Si ya pagaste, llama a tu banco y denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Don’t pay anything upfront to get a loan.",
+      "Check that the company is licensed before giving any details.",
+      "If you need credit, go to an authorised bank or lender through its official channels.",
+      "If you already paid, call your bank and report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/superbancos",
+    "pa/ministerio-publico",
+    "pa/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Aviso al público sobre ofertas de préstamos de empresas que usan el logo de la SBP o del MICI",
+      "publisher": "Superintendencia de Bancos de Panamá",
+      "url": "https://www.superbancos.gob.pa/documentos/leyes_y_regulaciones/comunicados/2026/aviso5-2026.pdf",
+      "date": "2026-03-26"
+    },
+    {
+      "title": "Aviso al público: la SBP y su personal no solicitan dinero, pagos ni transferencias",
+      "publisher": "Superintendencia de Bancos de Panamá",
+      "url": "https://www.superbancos.gob.pa/documentos/leyes_y_regulaciones/comunicados/2026/aviso7-2026.pdf",
+      "date": "2026-04-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pa/fake-superintendency-official"
+  ]
+}

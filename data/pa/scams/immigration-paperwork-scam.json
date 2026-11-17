@@ -1,0 +1,138 @@
+{
+  "id": "pa/immigration-paperwork-scam",
+  "country": "pa",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "social",
+    "in-person"
+  ],
+  "sender": {
+    "es": "Un “gestor” que dice tener contactos en Migración",
+    "en": "A “fixer” who claims contacts at Immigration"
+  },
+  "name": {
+    "es": "Trámite migratorio falso: “te acelero el permiso por un depósito”",
+    "en": "Fake immigration paperwork: “I’ll speed up your permit for a deposit”"
+  },
+  "how": {
+    "es": "Una persona te ofrece resolver o acelerar tus documentos o permisos migratorios, diciendo que tiene contactos o que es un trámite especial. Te pide un depósito bancario o un pago por adelantado. Después te da largas, te pide más plata o desaparece, y el trámite nunca se hizo.",
+    "en": "Someone offers to sort out or speed up your immigration documents or permits, claiming to have contacts or a special procedure. They ask for a bank deposit or advance payment. Then they stall, ask for more money or vanish, and the paperwork was never done."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien te ofrece acelerar tu permiso o documentos migratorios.",
+        "en": "Someone offers to speed up your permit or immigration documents."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dice tener contactos dentro de la institución.",
+        "en": "They claim to have contacts inside the agency."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pide un depósito o pago por adelantado.",
+        "en": "They ask for a deposit or advance payment."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Luego pide más dinero o deja de responder.",
+        "en": "Then they ask for more money or stop answering."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, me pasaron tu contacto. Yo trabajo con gente adentro de Migración y te saco el carné de residente en dos semanas sin hacer la fila. Son $400, la mitad por depósito hoy para meter el expediente.",
+        "en": "Hi, I was given your contact. I work with people inside Immigration and can get you your residence card in two weeks without queuing. It’s $400, half by deposit today to file the paperwork."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me ofrecieron acelerar mi tramite migratorio",
+      "gestor de migracion pidio deposito",
+      "pague por un permiso de residencia que nunca salio",
+      "contacto dentro de migracion por dinero",
+      "tramite migratorio falso",
+      "me cobraron por adelantado los papeles de migracion"
+    ],
+    "en": [
+      "they offered to speed up my immigration paperwork",
+      "immigration fixer asked for a deposit",
+      "i paid for a residence permit that never came",
+      "contact inside immigration for money",
+      "fake immigration paperwork",
+      "they charged me upfront for immigration papers"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te prometen saltarte los pasos o la fila.",
+      "Dicen tener “contactos adentro”.",
+      "Te piden pagar por adelantado a una cuenta personal.",
+      "No te dan recibos oficiales."
+    ],
+    "en": [
+      "They promise to skip steps or the queue.",
+      "They claim to have “contacts inside”.",
+      "They ask for advance payment to a personal account.",
+      "They don’t give official receipts."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Haz tus trámites directamente en el Servicio Nacional de Migración o con un abogado verificable.",
+      "Paga solo por los medios oficiales y pide recibo.",
+      "No entregues tu pasaporte ni documentos originales a desconocidos.",
+      "Si ya pagaste, denuncia en el Ministerio Público."
+    ],
+    "en": [
+      "Do your paperwork directly with the Servicio Nacional de Migración or a lawyer you can verify.",
+      "Pay only through official channels and ask for a receipt.",
+      "Don’t hand your passport or original documents to strangers.",
+      "If you already paid, report it to the Ministerio Público."
+    ]
+  },
+  "reportTo": [
+    "pa/ministerio-publico",
+    "pa/policia-104"
+  ],
+  "sources": [
+    {
+      "title": "¡No caiga! Estas son las estafas más denunciadas en Panamá durante 2026",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/no-caiga-estas-son-las-estafas-mas-denunciadas-en-panama-durante-2026-NK22395976",
+      "date": "2026-05-14"
+    },
+    {
+      "title": "Ministerio Público: Unos 50 panameños son estafados cada día",
+      "publisher": "La Estrella de Panamá",
+      "url": "https://www.laestrella.com.pa/panama/nacional/ministerio-publico-unos-50-panamenos-son-estafados-cada-dia-EH22433304",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Ministerio Público alerta sobre aumento de estafas y nuevas modalidades de engaño",
+      "publisher": "TVN Noticias",
+      "url": "https://www.tvn-2.com/nacionales/ministerio-publico-estafas-en-panama-aumentan-2026_1_2240909.html",
+      "date": "2026-05-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

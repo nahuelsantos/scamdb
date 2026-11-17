@@ -2,6 +2,25 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Central America wave 12 (Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panama, Belize)
+
+**Built:**
+- **Groundwork (#89):** seven countries in `countries.json` and reports (Belize: English, then Spanish); 34 brands
+  (BAC Credomatic, Ficohsa, Banco Industrial, Banrural, Chivo, SINPE Móvil, OIJ, Banco General, Yappy, Belize Bank...).
+- **Matcher 1.16.0 (#90):** more Latin American Spanish ("me los dicta", "me lo reenviás", "debe consignar", "se lo
+  doy al siguiente", "retenido en aduana", quetzal and dollar amounts), more English from Belize ("activation
+  fee", "forward it here"), and a context rule: a bill's fixed due date ("vence el 25") is not urgency on its own.
+- **Import:** 94 entries, 38 contacts, 154 labelled messages. Panama's emergency number is 104 (police); 911 there
+  is the medical-emergency system.
+
+**Measured (eval, 1,726 messages):** 99.3% of scams caught, 71.1% called "scam", 1.8% of safe messages called
+"scam" (was 2.3%). Each new country: 0/10 false alarms; 83–100% called "scam". The due-date rule also removed
+old false alarms in Argentina and Spain.
+
+**Learned:**
+- Genuine bills are the most common false alarm in Spanish: "monto a pagar … vence el 25" looked like pressure
+  plus a payment. Context rules beat removing the word "vence" everywhere.
+
 ## 2026-11-17: Latin America wave 11 (Chile, Colombia, Peru, Uruguay, Paraguay, Bolivia, Ecuador, Venezuela)
 
 **Built:**

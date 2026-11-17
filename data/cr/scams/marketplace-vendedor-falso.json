@@ -1,0 +1,128 @@
+{
+  "id": "cr/marketplace-vendedor-falso",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “vendedor” en Marketplace o redes sociales",
+    "en": "A “seller” on Marketplace or social media"
+  },
+  "name": {
+    "es": "“Hágame un adelanto por SINPE y se lo mando por mensajería”",
+    "en": "“Send me a deposit by SINPE and I'll ship it to you”"
+  },
+  "how": {
+    "es": "En Marketplace o en redes ve un celular, una compu, una consola u otro artículo a un precio buenísimo. El vendedor pasa la conversación a WhatsApp, lo apura porque “hay más interesados” y le pide un adelanto por SINPE para mandárselo por mensajería, con el resto cuando vaya en camino. Después pide más plata por envío o aduana, o simplemente lo bloquea y la publicación desaparece. Suelen ser perfiles nuevos con muchos productos.",
+    "en": "On Marketplace or social media you see a phone, a computer, a console or another item at a great price. The seller moves the chat to WhatsApp, rushes you because “others are interested” and asks for a deposit by SINPE to ship it to you, with the rest when it's on the way. Then they ask for more money for shipping or customs, or simply block you and the listing disappears. They're usually new profiles with lots of products."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ve un artículo a un precio que no tiene sentido.",
+        "en": "You see an item at a price that makes no sense."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor pasa a WhatsApp y lo apura porque hay más interesados.",
+        "en": "The seller moves to WhatsApp and rushes you because others are interested."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le pide un adelanto por SINPE para mandarlo por mensajería.",
+        "en": "They ask for a SINPE deposit to ship it."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Después pide más o lo bloquea.",
+        "en": "Then they ask for more or block you."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Sí señor, el iPhone 15 Pro todavía está, ₡230.000 nuevo en caja. Estoy en Liberia, se lo mando por encomienda. Me deja ₡80.000 por SINPE para apartarlo y el resto cuando le mande la guía. Apúrese que hay otro muchacho preguntando.",
+        "en": "Yes sir, the iPhone 15 Pro is still available, ₡230,000 new in box. I'm in Liberia, I'll send it by courier. Send me ₡80,000 by SINPE to reserve it and the rest when I send you the tracking number. Hurry, there's another guy asking."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "vendedor de marketplace me pidio adelanto",
+      "pague por sinpe y nunca me mandaron nada",
+      "celular muy barato en facebook",
+      "me bloquearon despues del sinpe",
+      "me cobran mas por el envio",
+      "perfil nuevo vendiendo de todo"
+    ],
+    "en": [
+      "marketplace seller asked for a deposit",
+      "paid by sinpe and nothing arrived",
+      "very cheap phone on facebook",
+      "blocked me after the sinpe",
+      "they charge extra for shipping",
+      "new profile selling everything"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El precio es demasiado bajo.",
+      "Le piden plata antes de que usted vea el producto.",
+      "El perfil es nuevo y vende de todo.",
+      "Lo apuran con otros interesados."
+    ],
+    "en": [
+      "The price is too low.",
+      "They ask for money before you see the item.",
+      "The profile is new and sells everything.",
+      "They rush you with other interested buyers."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Compre en persona, en un lugar seguro, y pague al recibir.",
+      "Revise la antigüedad del perfil y busque opiniones.",
+      "Si pagó, guarde los chats y el comprobante, avise a su banco y denuncie en el OIJ."
+    ],
+    "en": [
+      "Buy in person, in a safe place, and pay on receipt.",
+      "Check how old the profile is and look for reviews.",
+      "If you paid, keep the chats and the receipt, tell your bank and report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/oij",
+    "cr/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Precios absurdos y ofertas imperdibles: así estafan a clientes por Marketplace",
+      "publisher": "CRHoy",
+      "url": "https://crhoy.com/nacionales/precios-absurdos-y-ofertas-imperdibles-asi-estafan-a-clientes-por-marketplace/",
+      "date": "2026-08-21"
+    },
+    {
+      "title": "“Estafadores de Facebook”: Fiscalía identifica 3 trampas en que caen vendedores y compradores en Marketplace",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/estafadores-de-facebook-fiscalia-identifica-3-trampas-en-que-caen-vendedores-y-compradores-en-marketplace/",
+      "date": "2024-08-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

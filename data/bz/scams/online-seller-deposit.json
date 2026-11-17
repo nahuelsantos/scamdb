@@ -1,0 +1,99 @@
+{
+  "id": "bz/online-seller-deposit",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A seller on Facebook or WhatsApp"
+  },
+  "name": {
+    "en": "Fake seller asks for a deposit to hold an item"
+  },
+  "how": {
+    "en": "A seller on social media advertises an item such as a fridge or appliance, often below the normal price. They offer to hold it for you if you send a deposit to a bank account in someone else’s name and send a screenshot as proof. When you go to collect it, the seller gives excuses, a vague location, and then stops answering. Belize Police say these scams are common on Facebook and WhatsApp."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An item is advertised on social media, often cheaper than usual."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The seller asks for a deposit to hold it and a screenshot of the transfer."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "The account for payment belongs to a third person, not the seller."
+      }
+    },
+    {
+      "text": {
+        "en": "After you pay, there is no item and the seller disappears."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Yes hun the fridge is still available, 3 ppl asking for it. If you want I hold it for you, just do a $200 deposit to my cousin account at the bank and send me the screenshot. Then you can pick up tomorrow in Orange Walk."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "seller asked for a deposit to hold the item",
+      "paid deposit to someone else account and the seller disappeared",
+      "send screenshot of deposit to reserve",
+      "item on facebook seller wants money first",
+      "deposit to hold the fridge seller stopped answering",
+      "seller wants a down payment to reserve the item",
+      "bank account in a different name than the seller"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "You must pay before seeing the item.",
+      "The bank account is in a different name from the seller.",
+      "The price is well below market value or the seller rushes you."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Only pay when you see the item in person, in a safe public place.",
+      "Don’t send deposits to third-party accounts.",
+      "If you paid, contact your bank at once and report it to the police with screenshots."
+    ]
+  },
+  "reportTo": [
+    "bz/police",
+    "bz/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "How Scammers Use Reputable Banks to Trick Buyers",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/?p=74189",
+      "date": "2025-12-09"
+    },
+    {
+      "title": "Belize Police Warns Public of Rising Online Scams",
+      "publisher": "Greater Belize Media",
+      "url": "https://www.greaterbelize.com/?p=6943",
+      "date": "2024-03-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

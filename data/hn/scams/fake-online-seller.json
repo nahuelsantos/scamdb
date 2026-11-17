@@ -1,0 +1,138 @@
+{
+  "id": "hn/fake-online-seller",
+  "country": "hn",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Tienda o vendedor en Facebook, Instagram o Marketplace",
+    "en": "Shop or seller on Facebook, Instagram or Marketplace"
+  },
+  "name": {
+    "es": "“Precio especial, pero tiene que depositar hoy”",
+    "en": "“Special price, but you must pay today”"
+  },
+  "how": {
+    "es": "Un perfil recién creado que se presenta como tienda, o un vendedor en Marketplace, ofrece productos o servicios (celulares, ropa, repuestos, reparaciones de carros) muy por debajo del precio normal. Te insiste en que pagués ya, por transferencia o billetera electrónica, a una cuenta personal, o te pide un anticipo grande. Después de recibir el dinero no entrega nada, cambia de número y deja de contestar. Sube en temporada de aguinaldo.",
+    "en": "A newly created profile posing as a shop, or a Marketplace seller, offers products or services (phones, clothes, spare parts, car repairs) far below the normal price. They insist you pay now, by transfer or e-wallet, into a personal account, or ask for a large advance. Once paid they deliver nothing, change number and stop answering. It rises in the year-end bonus season."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves una oferta muy barata en un perfil nuevo o en Marketplace.",
+        "en": "You see a very cheap offer on a new profile or on Marketplace."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te presionan para pagar de inmediato o dejar un anticipo grande.",
+        "en": "You are pushed to pay immediately or leave a large advance."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te dan una cuenta personal aunque digan ser un negocio.",
+        "en": "They give a personal account even though they claim to be a business."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Después de pagar, cambian de número y desaparecen.",
+        "en": "After you pay, they change number and disappear."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, sí, todavía tengo el iPhone 15 sellado a L 9,500, es de un lote que me llegó. Ya hay 3 interesados, si me deposita hoy el 50 % se lo aparto y se lo mando por encomienda. Le paso la cuenta de mi esposa.",
+        "en": "Hi, yes, I still have the sealed iPhone 15 for L 9,500, it’s from a batch I received. There are 3 people interested, if you deposit 50% today I’ll hold it and send it by courier. I’ll send you my wife’s account."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "compre en marketplace y no me entregaron",
+      "tienda falsa en facebook",
+      "me pidieron anticipo y desaparecio",
+      "pague por un celular que nunca llego",
+      "vendedor cambio de numero despues del deposito",
+      "oferta muy barata en redes sociales",
+      "me pidieron apartar el articulo con un deposito",
+      "producto nuevo en caja a precio regalado",
+      "pagar la mitad antes de verlo",
+      "electrodomestico barato en marketplace"
+    ],
+    "en": [
+      "bought on marketplace and never received it",
+      "fake shop on facebook",
+      "asked for an advance and vanished",
+      "paid for a phone that never arrived",
+      "seller changed number after payment",
+      "very cheap offer on social media",
+      "asked for a deposit to hold the item",
+      "brand new in box at a giveaway price",
+      "pay half before seeing it"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El perfil es nuevo, con pocos seguidores y fotos genéricas.",
+      "El precio está muy por debajo del mercado.",
+      "Te piden pagar ya a una cuenta personal.",
+      "Te exigen un anticipo grande por un servicio."
+    ],
+    "en": [
+      "The profile is new, with few followers and generic photos.",
+      "The price is far below the market.",
+      "You are asked to pay now into a personal account.",
+      "They demand a large advance for a service."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revisá la antigüedad y reseñas del perfil; pedí nombre completo, identidad y dirección física.",
+      "Si podés, pagá contra entrega o en persona.",
+      "No transferás a cuentas personales de supuestos negocios.",
+      "Si te estafaron, guardá capturas y comprobantes y denunciá en la DPI."
+    ],
+    "en": [
+      "Check the profile’s age and reviews; ask for full name, ID number and physical address.",
+      "If you can, pay on delivery or in person.",
+      "Don’t transfer to personal accounts of supposed businesses.",
+      "If you were scammed, keep screenshots and receipts and report it to the DPI."
+    ]
+  },
+  "reportTo": [
+    "hn/policia-dpi",
+    "hn/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "DPI alerta sobre fraudes digitales en compras en línea",
+      "publisher": "La Prensa (Honduras)",
+      "url": "https://www.laprensa.hn/sanpedro/dpi-alerta-fraudes-digitales-compras-linea-LE28684179",
+      "date": "2025-12-22"
+    },
+    {
+      "title": "Cae “MajinBuu” por estafar en Marketplace de Facebook; su modalidad era pedir anticipos",
+      "publisher": "La Prensa (Honduras)",
+      "url": "https://www.laprensa.hn/sucesos/cae-majinbuu-estafar-marketplace-facebook-modalidad-pedir-anticipos-OC32566769",
+      "date": "2026-11-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

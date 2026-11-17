@@ -1,0 +1,95 @@
+{
+  "id": "bz/airport-unclaimed-luggage",
+  "country": "bz",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "“Philip Goldson International Airport”"
+  },
+  "name": {
+    "en": "Fake airport sale of unclaimed luggage for a few dollars"
+  },
+  "how": {
+    "en": "A Facebook post claims the Philip Goldson International Airport is selling suitcases that travellers never collected, for only a few dollars, often “for charity”, with photos of warehouses full of bags. The link goes to a website that takes your card details. The airport says it does not sell unclaimed luggage."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A social media post says the airport is selling unclaimed luggage."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "Each suitcase costs only a few dollars, with delivery promised in days."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The post links to a website where you pay by card."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You pay by card, no bag arrives, and criminals have your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "PGIA CHARITY CLEARANCE ✈️ Unclaimed suitcases must go! Each bag with all contents only BZ$4.21. Delivery anywhere in Belize in 5 days. Limited stock, order now 👉 [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "airport selling unclaimed luggage on facebook",
+      "lost suitcases for sale for a few dollars",
+      "pgia unclaimed baggage sale",
+      "buy a mystery suitcase from the airport",
+      "charity sale of unclaimed bags"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Suitcases full of goods for only a few dollars.",
+      "The offer is only on social media and not on the airport’s own website.",
+      "You have to pay by card on an unknown website."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link or pay.",
+      "If you entered card details, call your bank to block the card and watch for further charges.",
+      "Report the post to Facebook."
+    ]
+  },
+  "reportTo": [
+    "bz/your-bank",
+    "bz/police"
+  ],
+  "sources": [
+    {
+      "title": "Philip Goldson International Airport issues scam warning on social media",
+      "publisher": "Belize Live News",
+      "url": "https://belizelivenews.com/?p=8145",
+      "date": "2025-02-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

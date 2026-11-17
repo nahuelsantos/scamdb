@@ -1,0 +1,145 @@
+{
+  "id": "cr/comprador-extranjero-enlace",
+  "country": "cr",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “comprador extranjero” y luego un falso funcionario del banco",
+    "en": "A “foreign buyer” and then a fake bank official"
+  },
+  "name": {
+    "es": "“Ya le deposité el adelanto; el banco solo necesita que libere la transferencia”",
+    "en": "“I've sent the deposit; the bank just needs you to release the transfer”"
+  },
+  "how": {
+    "es": "Usted anuncia la venta de su carro, una casa o un alquiler. Un supuesto comprador extranjero, que a menudo escribe en inglés, dice que viene pronto al país y que le adelanta un depósito, a veces de hasta 2.000 dólares. Le manda un comprobante falso. Cuando usted no ve la plata, lo llama o se une a la llamada alguien que dice ser del banco: la transferencia está “en tránsito” y le manda un enlace para “liberarla”. En esa página le piden usuario, clave, token y correo, y vacían la cuenta.",
+    "en": "You advertise your car, a house or a rental. A supposed foreign buyer, often writing in English, says they'll arrive in the country soon and will send you a deposit, sometimes up to 2,000 dollars. They send a fake receipt. When you don't see the money, someone claiming to be from the bank calls you or joins the call: the transfer is “in transit” and they send a link to “release” it. On that page they ask for your username, password, token and email, and empty the account."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un comprador extranjero se interesa sin ver el carro o la propiedad.",
+        "en": "A foreign buyer is interested without seeing the car or property."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le manda un comprobante de un adelanto que nunca entra.",
+        "en": "They send a receipt for a deposit that never arrives."
+      }
+    },
+    {
+      "text": {
+        "es": "Un supuesto funcionario del banco le dice que la plata está retenida.",
+        "en": "A supposed bank official says the money is on hold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le manda un enlace para “liberar” la transferencia.",
+        "en": "They send a link to “release” the transfer."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Ahí le piden usuario, clave y token.",
+        "en": "There they ask for your username, password and token."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hello my friend, I am very interested in your Hilux, I arrive to Costa Rica next month. I already send you $1,500 deposit, my bank officer will contact you to confirm. — Buenas, le habla Andrés del departamento de transferencias internacionales. Tiene un depósito retenido a su nombre; para acreditarlo ingrese al [enlace] con su usuario y token.",
+        "en": "Hello my friend, I am very interested in your Hilux, I arrive to Costa Rica next month. I already send you $1,500 deposit, my bank officer will contact you to confirm. — Hello, this is Andrés from the international transfers department. There's a deposit on hold in your name; to credit it go to [link] with your username and token."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "comprador extranjero de mi carro",
+      "me mando un comprobante de adelanto",
+      "el banco dice que la transferencia esta retenida",
+      "me pidieron liberar un deposito con un enlace",
+      "comprador gringo escribe en ingles",
+      "llamada a tres con el banco",
+      "transferencia internacional retenida",
+      "validar mi identidad para recibir la plata",
+      "inquilino extranjero",
+      "casa en alquiler para un extranjero",
+      "me pidieron la clave para liberar los fondos"
+    ],
+    "en": [
+      "foreign buyer for my car",
+      "sent me a receipt for a deposit",
+      "bank says the transfer is on hold",
+      "asked to release a deposit through a link",
+      "buyer writes in english and is abroad",
+      "three way call with the bank"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie tiene que meter sus claves para recibir una transferencia.",
+      "El comprador no quiere ver el carro ni la propiedad.",
+      "Un “banco” lo contacta por un depósito retenido.",
+      "El adelanto aparece en un comprobante, no en su cuenta."
+    ],
+    "en": [
+      "No one has to enter their passwords to receive a transfer.",
+      "The buyer doesn't want to see the car or property.",
+      "A “bank” contacts you about a deposit on hold.",
+      "The deposit shows up on a receipt, not in your account."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revise el depósito solo en su app oficial o llamando a su banco.",
+      "No abra enlaces para “liberar” plata.",
+      "Si dio datos, llame a su banco para bloquear y cambie claves.",
+      "Denuncie en el OIJ."
+    ],
+    "en": [
+      "Check the deposit only in your official app or by calling your bank.",
+      "Don't open links to “release” money.",
+      "If you gave details, call your bank to block everything and change passwords.",
+      "Report it to the OIJ."
+    ]
+  },
+  "reportTo": [
+    "cr/tu-banco",
+    "cr/oij"
+  ],
+  "sources": [
+    {
+      "title": "Vender su carro o buscar trabajo lo podrían poner en la mira de los estafadores informáticos, advierte OIJ",
+      "publisher": "Semanario Universidad",
+      "url": "https://semanariouniversidad.com/pais/vender-su-carro-o-buscar-trabajo-lo-podrian-poner-en-la-mira-de-los-estafadores-informaticos-advierte-oij/",
+      "date": "2025-07-10"
+    },
+    {
+      "title": "OIJ identifica las 6 modalidades más utilizadas para estafas informáticas; 2025 cerraría con hasta 30.000 denuncias",
+      "publisher": "El Observador CR",
+      "url": "https://observador.cr/oij-identifica-las-6-modalidades-mas-utilizadas-para-estafas-informaticas-2025-cerraria-con-hasta-30-000-denuncias/",
+      "date": "2025-07-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}
