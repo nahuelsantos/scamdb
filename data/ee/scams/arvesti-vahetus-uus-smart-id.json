@@ -1,0 +1,163 @@
+{
+  "id": "ee/arvesti-vahetus-uus-smart-id",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "et": "\"Elektrilevi\", vee- või gaasiettevõtte töötaja, hiljem \"pank\" või \"politsei\"",
+    "ru": "«Сотрудник» Elektrilevi, водоканала или газовой компании, позже «банк» или «полиция»",
+    "en": "An \"Elektrilevi\", water or gas company employee, later the \"bank\" or \"police\""
+  },
+  "name": {
+    "et": "Arvesti vahetus ja \"uus turvalisem Smart-ID\"",
+    "ru": "Замена счётчика и «новый, более надёжный Smart-ID»",
+    "en": "Meter replacement and a \"new, more secure Smart-ID\""
+  },
+  "how": {
+    "et": "Õhtul helistab \"Elektrilevi\" või mõne vee- või gaasiettevõtte töötaja: sinu elektri- või veearvesti või suitsuandur tuleb välja vahetada, aja kokkuleppimiseks kinnita PIN1. PIN1 tundub ohutu, sest sellega ainult tuvastatakse. Kui hakkad kahtlustama, helistab \"pank\" või \"politsei\": petturid üritasid su andmeid kasutada ja selle parandamiseks pead looma uue, \"turvalisema\" Smart-ID konto või kinnitama midagi PIN2-ga. Nii saavad kelmid sinu digiallkirja. Mõnikord ei juhtu päevi midagi, siis tekivad kontole võõrad maksed või sinu nimele laenud.",
+    "ru": "Вечером звонит «сотрудник» Elektrilevi или водоканала, газовой компании: ваш электро- или водосчётчик или датчик дыма нужно заменить, для записи подтвердите PIN1. PIN1 кажется безопасным, ведь он только для идентификации. Когда вы начинаете сомневаться, звонит «банк» или «полиция»: мошенники пытались использовать ваши данные, и чтобы это исправить, нужно создать новую, «более надёжную» учётную запись Smart-ID или подтвердить что-то PIN2. Так мошенники получают вашу цифровую подпись. Иногда несколько дней ничего не происходит, потом на счёте появляются чужие платежи или кредиты на ваше имя.",
+    "en": "In the evening an \"Elektrilevi\" or water or gas company employee calls: your electricity or water meter or smoke detector must be replaced, and to book a time you should confirm with PIN1. PIN1 seems harmless because it only identifies you. When you get suspicious, the \"bank\" or \"police\" calls: scammers tried to use your details and to fix it you must create a new, \"more secure\" Smart-ID account or confirm something with PIN2. That gives the scammers your digital signature. Sometimes nothing happens for days, then unknown payments or loans in your name appear."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "\"Elektrilevi\": teie arvesti tuleb välja vahetada.",
+        "ru": "«Elektrilevi»: ваш счётчик нужно заменить.",
+        "en": "\"Elektrilevi\": your meter has to be replaced."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Aja broneerimiseks kinnitage PIN1.",
+        "ru": "Для записи подтвердите PIN1.",
+        "en": "Confirm PIN1 to book the appointment."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "et": "\"Pank\": teie andmetega üritati pettust, tegutsege kohe.",
+        "ru": "«Банк»: с вашими данными пытались мошенничать, действуйте сейчас.",
+        "en": "\"Bank\": someone tried fraud with your details, act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Looge uus Smart-ID või kinnitage PIN2-ga.",
+        "ru": "Создайте новый Smart-ID или подтвердите PIN2.",
+        "en": "Create a new Smart-ID or confirm with PIN2."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "et": "Tere õhtust, Elektrilevist. Teie piirkonnas vahetame järgmisel nädalal vanad arvestid kaugloetavate vastu. Et tehnik saaks teile aja panna, saadan kinnituse, vajutage see lihtsalt esimese koodiga ära. Muud midagi te tegema ei pea.",
+        "ru": "Добрый вечер, Elektrilevi. В вашем районе на следующей неделе меняем старые счётчики на дистанционные. Чтобы техник записал вас на время, я отправлю подтверждение, просто подтвердите его первым кодом. Больше ничего делать не нужно.",
+        "en": "Good evening, this is Elektrilevi. Next week we're replacing the old meters in your area with remote-read ones. So the technician can book you a time, I'll send a confirmation, just approve it with your first code. You don't need to do anything else."
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "elektrilevi helistas arvesti vahetus",
+      "elektriarvesti vahetamine kinnita pin1",
+      "veearvesti vahetus helistati",
+      "suitsuanduri vahetus smart-id",
+      "looge uus smart-id konto",
+      "smart-id tuleb uuendada turvalisemaks",
+      "gaasiarvesti vahetus kõne",
+      "elektriarvesti tuleb välja vahetada",
+      "nutiarvesti paigaldus helistati",
+      "võrguettevõte helistas arvesti"
+    ],
+    "ru": [
+      "звонок замена электросчётчика",
+      "elektrilevi замена счётчика pin1",
+      "замена водомера звонок",
+      "создать новый smart-id",
+      "обновить smart-id на более надёжный"
+    ],
+    "en": [
+      "electricity meter replacement call",
+      "elektrilevi call confirm pin1",
+      "water meter replacement call",
+      "create a new smart-id account",
+      "smart-id must be updated more secure"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "et": [
+      "Arvesti vahetuse aja broneerimiseks ei ole vaja PIN-koodi.",
+      "Uut Smart-ID kontot ei saa luua telefoni teel kellegi juhendamisel; Smart-ID uuendamise teate saadab äpp ise.",
+      "Kahtluse peale helistab kohe \"pank\" või \"politsei\"."
+    ],
+    "ru": [
+      "Для записи на замену счётчика ПИН-код не нужен.",
+      "Новый Smart-ID нельзя создать по телефону под чужую диктовку; о продлении Smart-ID сообщает само приложение.",
+      "Как только вы засомневались, звонит «банк» или «полиция»."
+    ],
+    "en": [
+      "Booking a meter replacement never needs a PIN.",
+      "A new Smart-ID cannot be created over the phone on someone's instructions; the app itself tells you when Smart-ID needs renewing.",
+      "As soon as you doubt, the \"bank\" or \"police\" calls."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Lõpeta kõne ja ära sisesta ühtegi PIN-koodi.",
+      "Kontrolli oma aktiivseid Smart-ID kontosid Smart-ID ametlikul lehel ja kustuta võõrad; kahtluse korral kustuta kõik ja loo uus ise.",
+      "Kui sisestasid PIN2, helista kohe pangale.",
+      "Teata politseile veebis."
+    ],
+    "ru": [
+      "Положите трубку и не вводите никаких ПИН-кодов.",
+      "Проверьте свои активные учётные записи на официальном сайте Smart-ID и удалите чужие; при сомнении удалите все и создайте новую сами.",
+      "Если ввели PIN2, сразу звоните в банк.",
+      "Сообщите в полицию онлайн."
+    ],
+    "en": [
+      "Hang up and don't enter any PIN.",
+      "Check your active Smart-ID accounts on the official Smart-ID site and delete unknown ones; if in doubt delete them all and create a new one yourself.",
+      "If you entered PIN2, call your bank at once.",
+      "Report it to the police online."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Politseinik: on olemas kelmuse legend iga Eesti inimese jaoks",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1610028481/politseinik-on-olemas-kelmuse-legend-iga-eesti-inimese-jaoks",
+      "date": "2026-05-19"
+    },
+    {
+      "title": "ПОЛИЦИЯ ⟩ Мошенники за два дня выманили у ида-вируских пенсионеров более 20 000 евро",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8420177/policiya-moshenniki-za-dva-dnya-vymanili-u-ida-viruskih-pensionerov-bolee-20-000-evro",
+      "date": "2026-02-20"
+    },
+    {
+      "title": "Представитель банка: мошенники воруют личность, вынуждая создать новый Smart-ID",
+      "publisher": "ERR (на русском)",
+      "url": "https://rus.err.ee/1609848786/predstavitel-banka-moshenniki-vorujut-lichnost-vynuzhdaja-sozdat-novyj-smart-id",
+      "date": "2025-11-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

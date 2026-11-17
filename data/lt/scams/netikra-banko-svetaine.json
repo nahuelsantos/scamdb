@@ -1,0 +1,137 @@
+{
+  "id": "lt/netikra-banko-svetaine",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "lt": "Netikras banko, įmonės ar „interneto banko programėlės“ puslapis",
+    "en": "A fake bank, company or “online banking app” page"
+  },
+  "name": {
+    "lt": "Netikra banko svetainė ar programėlė: suvedėte prisijungimo duomenis – sąskaita ištuštinta",
+    "en": "Fake bank website or app: you entered your login and the account was emptied"
+  },
+  "how": {
+    "lt": "Žmogus patenka į netikrą banko ar įmonės puslapį, kuris atrodo kaip tikras, arba įsidiegia fiktyvią interneto banko programėlę. Ten suvedami elektroninės bankininkystės duomenys ir „Smart-ID“ PIN kodai. Sukčiai tuo pačiu metu prisijungia prie tikro interneto banko ir perveda pinigus kitur. 2026 m. policijos suvestinėse tokie atvejai minimi nuolat, nuostoliai siekia tūkstančius ar dešimtis tūkstančių eurų.",
+    "en": "Someone lands on a fake bank or company page that looks real, or installs a fake online banking app. They enter their online banking details and Smart-ID PINs there. At the same moment the scammers log in to the real online bank and move the money elsewhere. Such cases appear again and again in police reports in 2026, with losses of thousands or tens of thousands of euros."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "Nuoroda veda į banko puslapio kopiją.",
+        "en": "A link leads to a copy of the bank's page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "lt": "Puslapis ar programėlė atrodo kaip tikras bankas.",
+        "en": "The page or app looks like the real bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Prašo prisijungimo duomenų ir „Smart-ID“ PIN kodų.",
+        "en": "It asks for login details and Smart-ID PINs."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "lt": "Netrukus iš sąskaitos nuskaičiuojami pinigai.",
+        "en": "Soon money is taken from the account."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "lt": "Gerb. kliente, jūsų interneto banko prieiga bus apribota dėl neatnaujintų duomenų. Prisijunkite ir patvirtinkite tapatybę iki šiandien 23:59: [nuoroda]",
+        "en": "Dear customer, your online banking access will be restricted because your details are out of date. Log in and confirm your identity by 23:59 today: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "prisijungiau prie netikros banko svetainės",
+      "suvedžiau elektroninės bankininkystės duomenis netikrame puslapyje",
+      "fiktyvi interneto banko programėlė",
+      "banko puslapio kopija nuskaičiavo pinigus",
+      "patvirtinti tapatybę interneto banke per nuorodą",
+      "prieiga prie interneto banko bus apribota"
+    ],
+    "en": [
+      "logged in on a fake bank website",
+      "entered my online banking details on a fake page",
+      "fake banking app emptied my account",
+      "bank access will be restricted link",
+      "confirm identity online banking link"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "lt": [
+      "Į interneto banką junkitės tik patys įvesdami adresą ar per oficialią programėlę.",
+      "„Smart-ID“ užklausa, kurios tekstas neatitinka to, ką darote, – stokite.",
+      "Žinutės apie „apribotą prieigą“ su nuoroda – apgaulė."
+    ],
+    "en": [
+      "Only reach online banking by typing the address yourself or through the official app.",
+      "A Smart-ID request whose text doesn't match what you're doing – stop.",
+      "Messages about “restricted access” with a link are a scam."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Nedelsdami skambinkite į banką numeriu nuo kortelės ir užblokuokite prieigą.",
+      "Persiųskite netikrą puslapį ar žinutę NKSC.",
+      "Praneškite policijai per e. policiją."
+    ],
+    "en": [
+      "Call your bank at once on the number on your card and block access.",
+      "Forward the fake page or message to NKSC.",
+      "Report it to the police through e-policija."
+    ]
+  },
+  "reportTo": [
+    "lt/your-bank",
+    "lt/nksc",
+    "lt/policija"
+  ],
+  "sources": [
+    {
+      "title": "Rusiškai kalbėję sukčiai iš šiauliečio išviliojo 131,8 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2972029/rusiskai-kalbeje-sukciai-is-siauliecio-isviliojo-131-8-tukst-euru",
+      "date": "2026-06-26"
+    },
+    {
+      "title": "Sukčiai iš gyventojų ir įmonės apgaule išviliojo apie 85,2 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/3077046/sukciai-is-gyventoju-ir-imones-apgaule-isviliojo-apie-85-2-tukst-euru",
+      "date": "2026-10-09"
+    },
+    {
+      "title": "Sukčiai iš trijų žmonių apgaule išviliojo apie 15,6 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/3012116/sukciai-is-triju-zmoniu-apgaule-isviliojo-apie-15-6-tukst-euru",
+      "date": "2026-08-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "lt/netikra-bauda-sms"
+  ]
+}

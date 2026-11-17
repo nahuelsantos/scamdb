@@ -1,0 +1,160 @@
+{
+  "id": "ee/sidefirma-kone-smart-id",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "et": "\"Telia, Elisa või Tele2\" klienditeenindaja telefonis",
+    "ru": "«Оператор» Telia, Elisa или Tele2 по телефону",
+    "en": "A \"Telia, Elisa or Tele2\" customer service agent, by phone"
+  },
+  "name": {
+    "et": "Sidefirma kõne: tellitud telepakett, lepingu uuendus või tasuta kindlustus Smart-ID-ga",
+    "ru": "Звонок оператора связи: заказанный ТВ-пакет, продление договора или бесплатная страховка через Smart-ID",
+    "en": "Phone company call: an ordered TV package, contract renewal or free insurance via Smart-ID"
+  },
+  "how": {
+    "et": "Helistaja esineb Telia, Elisa või Tele2 töötajana. Ta ütleb, et sa tellisid kalli telepaketi ja selle tühistamiseks tuleb minna mõnele veebilehele, või et leping tuleb uuendada, või pakub uudiste ainetel \"tasuta küberkindlustust\", mis tuleb aktiveerida Smart-ID-ga. Päring, mille kinnitad, on tegelikult kelmide sisselogimine või allkiri. Seejärel helistab sageli \"politsei\" või \"pank\", kes käsib raha üle kanda või pangakaardid kullerile anda, ja sinu nimele võidakse võtta laene.",
+    "ru": "Звонящий представляется сотрудником Telia, Elisa или Tele2. Он говорит, что вы заказали дорогой ТВ-пакет и для отмены нужно зайти на какой-то сайт, или что договор нужно обновить, или предлагает по следам новостей «бесплатную киберстраховку», которую надо активировать через Smart-ID. Запрос, который вы подтверждаете, на деле вход или подпись мошенников. Потом часто звонит «полиция» или «банк», велит перевести деньги или отдать карты курьеру, а на ваше имя могут оформить кредиты.",
+    "en": "The caller claims to be from Telia, Elisa or Tele2. They say you ordered an expensive TV package and must visit some website to cancel it, or that your contract needs renewing, or, riding on the news, they offer \"free cyber insurance\" to be activated with Smart-ID. The request you confirm is really the scammers' login or signature. Then the \"police\" or \"bank\" often calls, tells you to transfer money or hand your bank cards to a courier, and loans may be taken out in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "\"Telia\": teile on tellitud telepakett.",
+        "ru": "«Telia»: на вас оформлен ТВ-пакет.",
+        "en": "\"Telia\": a TV package has been ordered on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Tühistage see kohe veebilehel, mille aadressi ütlen.",
+        "ru": "Отмените его сразу на сайте, который я назову.",
+        "en": "Cancel it right now on the website I give you."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "et": "Kinnitage tühistamine või kindlustus Smart-ID-ga.",
+        "ru": "Подтвердите отмену или страховку через Smart-ID.",
+        "en": "Confirm the cancellation or insurance with Smart-ID."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "et": "Järgneb \"politsei\", kes käsib raha üle kanda.",
+        "ru": "Следом «полиция» велит перевести деньги.",
+        "en": "Then the \"police\" tell you to transfer money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "et": "Tere, Elisa klienditugi. Helistan, sest teie lepingu juurde lisandus täna tasuta küberkindlustus, mis kaitseb teid pettuste eest. Selle käivitamiseks saadame teile kinnitusteate, sisestage seal lihtsalt oma koodid ja kaitse on kohe aktiivne.",
+        "ru": "Здравствуйте, служба поддержки Elisa. Звоню, потому что к вашему договору сегодня добавилась бесплатная киберстраховка, которая защищает от мошенников. Чтобы её включить, мы отправим вам уведомление, просто введите там свои коды, и защита сразу заработает.",
+        "en": "Hello, Elisa customer support. I'm calling because a free cyber insurance was added to your contract today to protect you against fraud. To switch it on we'll send you a confirmation, just enter your codes there and the protection is active straight away."
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "telia helistas telepakett tellitud",
+      "tasuta küberkindlustus kinnita smart-id",
+      "tele2 leping uuendada smart-id",
+      "tühistage teenus veebilehel",
+      "sideoperaator küsib pin koode",
+      "elisa helistas kindlustus aktiveerida"
+    ],
+    "ru": [
+      "звонок от telia подключён тв пакет",
+      "бесплатная киберстраховка подтвердить smart-id",
+      "tele2 обновить договор пин",
+      "отменить услугу на сайте",
+      "оператор связи просит подтвердить smart-id"
+    ],
+    "en": [
+      "telia call tv package ordered",
+      "free cyber insurance confirm smart-id",
+      "tele2 contract renewal smart-id",
+      "cancel the service on a website",
+      "phone company asks for pin codes"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "et": [
+      "Ootamatu kõne, kus palutakse kinnitada toiming, mida sa ise ei algatanud.",
+      "Teenuse tühistamiseks suunatakse võõrale veebilehele.",
+      "Kohe järgneb kõne \"politseist\" või \"pangast\"."
+    ],
+    "ru": [
+      "Неожиданный звонок с просьбой подтвердить действие, которое вы сами не начинали.",
+      "Для отмены услуги отправляют на незнакомый сайт.",
+      "Сразу следом звонят «из полиции» или «из банка»."
+    ],
+    "en": [
+      "An unexpected call asking you to confirm something you did not start.",
+      "You are sent to an unfamiliar website to cancel a service.",
+      "A call from the \"police\" or \"bank\" follows straight away."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Lõpeta kõne ja ära kinnita midagi Smart-ID-ga.",
+      "Kontrolli tellimusi ise iseteeninduses või helista sidefirmale ametlikul numbril.",
+      "Kui kinnitasid päringu, helista kohe pangale.",
+      "Teata politseile veebis."
+    ],
+    "ru": [
+      "Положите трубку и ничего не подтверждайте через Smart-ID.",
+      "Проверьте заказы сами в самообслуживании или позвоните оператору по официальному номеру.",
+      "Если подтвердили запрос, сразу звоните в банк.",
+      "Сообщите в полицию онлайн."
+    ],
+    "en": [
+      "Hang up and don't confirm anything with Smart-ID.",
+      "Check your orders yourself in self-service or call the phone company on its official number.",
+      "If you confirmed a request, call your bank at once.",
+      "Report it to the police online."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Elisa о новом виде мошенничества: теперь предлагают по телефону бесплатную киберстраховку",
+      "publisher": "ERR (на русском)",
+      "url": "https://rus.err.ee/1610161888/elisa-o-novom-vide-moshennichestva-teper-predlagajut-po-telefonu-besplatnuju-kiberstrahovku",
+      "date": "2026-10-09"
+    },
+    {
+      "title": "Печальная регулярность: жители Эстонии вновь передали тысячи евро в руки мошенников",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8457388/pechalnaya-regulyarnost-zhiteli-estonii-vnov-peredali-tysyachi-evro-v-ruki-moshennikov",
+      "date": "2026-04-22"
+    },
+    {
+      "title": "За сутки мошенники обманули жителей Эстонии на 150 тысяч евро",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8369497/za-sutki-moshenniki-obmanuli-zhiteley-estonii-na-150-tysyach-evro",
+      "date": "2025-11-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

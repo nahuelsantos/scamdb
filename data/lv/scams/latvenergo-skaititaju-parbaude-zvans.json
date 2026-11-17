@@ -1,0 +1,164 @@
+{
+  "id": "lv/latvenergo-skaititaju-parbaude-zvans",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "lv": "Zvans it kā no Latvenergo, Elektrum, Sadales tīkla vai ūdens skaitītāju uzņēmuma",
+    "ru": "Звонок якобы от Latvenergo, Elektrum, Sadales tīkls или фирмы водяных счётчиков",
+    "en": "A call supposedly from Latvenergo, Elektrum, Sadales tīkls or a water-meter company"
+  },
+  "name": {
+    "lv": "Zvans par «skaitītāja pārbaudi vai nomaiņu», kam seko «banka» vai «policija»",
+    "ru": "Звонок о «проверке или замене счётчика», после которого звонят «банк» или «полиция»",
+    "en": "A call about a 'meter check or replacement', followed by the 'bank' or 'police'"
+  },
+  "how": {
+    "lv": "Zvana «elektrības» vai «ūdens skaitītāju» uzņēmuma darbinieks un saka, ka jāpārbauda vai jānomaina skaitītājs, jāpārslēdz līgums vai jāpiesakās vizītei. Lai to noformētu, viņš lūdz personas kodu, atsūta saiti vai liek apstiprināt Smart-ID. Pēc tam zvana «bankas» vai «policijas» darbinieki, bieži WhatsApp, un stāsta, ka jūsu kontam piekļūst krāpnieki un nauda jāglābj. Tā izkrāpj uzkrājumus, kredītus un dažkārt pat liek pārdot dzīvokli.",
+    "ru": "Звонит сотрудник компании по «электричеству» или «водяным счётчикам» и говорит, что надо проверить или заменить счётчик, переоформить договор или записаться на визит. Для оформления он просит персональный код, присылает ссылку или велит подтвердить Smart-ID. Потом звонят «сотрудники банка» или «полиции», часто в WhatsApp, и говорят, что к вашему счёту подбираются мошенники и деньги надо спасать. Так выманивают сбережения, кредиты, а иногда даже заставляют продать квартиру.",
+    "en": "Someone from an 'electricity' or 'water-meter' company calls and says your meter must be checked or replaced, your contract switched or a visit booked. To arrange it they ask for your personal code, send a link or tell you to approve Smart-ID. Then 'bank' or 'police' staff call, often on WhatsApp, saying fraudsters are getting into your account and your money must be rescued. This is how savings and loans are taken, and sometimes victims are even pushed to sell their home."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Zvana Latvenergo: jāpārbauda jūsu skaitītājs.",
+        "ru": "Звонят из Latvenergo: надо проверить ваш счётчик.",
+        "en": "Latvenergo calling: your meter needs checking."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Pierakstam vizītei vajag jūsu personas kodu un Smart-ID.",
+        "ru": "Для записи на визит нужен ваш персональный код и Smart-ID.",
+        "en": "To book the visit we need your personal code and Smart-ID."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "lv": "Pēc tam zvana «banka»: jūsu kontam piekļūst krāpnieki.",
+        "ru": "Потом звонит «банк»: к вашему счёту подбираются мошенники.",
+        "en": "Then the 'bank' calls: fraudsters are getting into your account."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lv": "Naudu jāpārskaita vai jāizņem, lai to «izglābtu».",
+        "ru": "Деньги надо перевести или снять, чтобы их «спасти».",
+        "en": "The money must be moved or withdrawn to 'save' it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "lv": "Labdien, zvanu no elektrības sadales uzņēmuma. Jūsu adresē beidzas skaitītāja verificēšanas termiņš, tāpēc nākamnedēļ pie jums jāierodas meistaram. Lai rezervētu laiku, apstipriniet, lūdzu, savu personas kodu, un jums atnāks Smart-ID pieprasījums – apstipriniet to, un vizīte būs pierakstīta.",
+        "ru": "Здравствуйте, звоню из компании по распределению электроэнергии. По вашему адресу заканчивается срок поверки счётчика, поэтому на следующей неделе к вам должен прийти мастер. Чтобы забронировать время, подтвердите, пожалуйста, свой персональный код, и вам придёт запрос Smart-ID – подтвердите его, и визит будет записан.",
+        "en": "Hello, I'm calling from the electricity distribution company. The verification period of the meter at your address is ending, so a technician must visit next week. To book a time, please confirm your personal code and you'll get a Smart-ID request – approve it and the visit will be booked."
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "zvanīja no latvenergo par elektrības skaitītāja nomaiņu",
+      "teica ka jāpārbauda ūdens skaitītāji un prasīja personas kodu",
+      "skaitītāja meistara vizītei lika apstiprināt smart-id",
+      "pēc zvana par skaitītāju piezvanīja no bankas",
+      "elektrum darbinieks teica ka jāpārslēdz līgums un atsūtīja saiti"
+    ],
+    "ru": [
+      "позвонили из latvenergo насчёт замены счётчика",
+      "сказали что надо проверить водяные счётчики и спросили персональный код",
+      "для визита мастера по счётчику велели подтвердить smart-id",
+      "после звонка про счётчик позвонили из банка",
+      "сотрудник elektrum сказал переоформить договор и прислал ссылку"
+    ],
+    "en": [
+      "someone from latvenergo called about replacing my electricity meter",
+      "they said my water meters had to be checked and asked for my personal code",
+      "they told me to approve smart-id to book the meter technician",
+      "after the call about the meter the bank called",
+      "an elektrum employee said I had to switch my contract and sent a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "lv": [
+      "Energouzņēmums prasa personas kodu vai Smart-ID pa telefonu.",
+      "Pēc zvana par skaitītāju zvana «banka» vai «policija».",
+      "Saruna tiek pārcelta uz WhatsApp."
+    ],
+    "ru": [
+      "Энергокомпания просит персональный код или Smart-ID по телефону.",
+      "После звонка о счётчике звонит «банк» или «полиция».",
+      "Разговор переводят в WhatsApp."
+    ],
+    "en": [
+      "An energy company asks for your personal code or Smart-ID by phone.",
+      "A 'bank' or 'police' call follows the meter call.",
+      "The conversation moves to WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Pārtrauciet sarunu un pats zvaniet uzņēmumam uz numuru no rēķina vai mājaslapas.",
+      "Nekad neapstipriniet Smart-ID zvana laikā.",
+      "Ja jau kaut ko apstiprinājāt vai pārskaitījāt, zvaniet bankai un ziņojiet policijai."
+    ],
+    "ru": [
+      "Прервите разговор и сами позвоните в компанию по номеру со счёта или сайта.",
+      "Никогда не подтверждайте Smart-ID во время звонка.",
+      "Если уже что-то подтвердили или перевели, звоните в банк и сообщите в полицию."
+    ],
+    "en": [
+      "Hang up and call the company yourself on the number from your bill or its website.",
+      "Never approve Smart-ID during a call.",
+      "If you already approved or sent something, call your bank and report to the police."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "Finanšu krāpšana turpina pieaugt. Krāpnieki iztukšo kontus un liek pārdot īpašumus",
+      "publisher": "LV portāls",
+      "url": "https://lvportals.lv/norises/385440-finansu-krapsana-turpina-pieaugt-krapnieki-iztukso-kontus-un-liek-pardot-ipasumus-2026",
+      "date": "2026-01-28"
+    },
+    {
+      "title": "23,7 miljoni eiro krāpnieku rokās – 2025. gadā izkrāpta ne tikai nauda, bet arī uzkrājumi un īpašumi",
+      "publisher": "LV portāls (Valsts policijas dati)",
+      "url": "https://lvportals.lv/dienaskartiba/385418-237-miljoni-eiro-krapnieku-rokas-2025-gada-izkrapta-ne-tikai-nauda-bet-ari-uzkrajumi-un-ipasumi-2026",
+      "date": "2026-01-28"
+    },
+    {
+      "title": "Beware! During the holidays, scammers pose as couriers",
+      "publisher": "BB.LV",
+      "url": "https://en.bb.lv/article/emergencies-and-crime/2025/12/23/beware-during-the-holidays-scammers-pose-as-couriers-81951",
+      "date": "2025-12-23"
+    },
+    {
+      "title": "Krāpšana, kurā var zaudēt ne tikai naudu, bet arī jumtu virs galvas",
+      "publisher": "LV portāls («Luminor» paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/386424-krapsana-kura-var-zaudet-ne-tikai-naudu-bet-ari-jumtu-virs-galvas-2026",
+      "date": "2026-02-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

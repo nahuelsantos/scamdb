@@ -1,0 +1,150 @@
+{
+  "id": "ee/ostja-kulleri-link",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "et": "\"Ostja\" Facebook Marketplace'is või kuulutusportaalis",
+    "ru": "«Покупатель» в Facebook Marketplace или на сайте объявлений",
+    "en": "A \"buyer\" on Facebook Marketplace or a classifieds site"
+  },
+  "name": {
+    "et": "Libaostja saadab kullerfirma lingi \"raha vastuvõtmiseks\"",
+    "ru": "Фальшивый покупатель присылает ссылку службы доставки, чтобы «получить деньги»",
+    "en": "Fake buyer sends a courier link to \"receive the payment\""
+  },
+  "how": {
+    "et": "Müüd midagi Facebook Marketplace'is või kuulutusportaalis. \"Ostja\" tahab kauba kohe osta, kuid ei saa ise tulla ja soovib kullerisaadet. Ta saadab lingi kullerfirma moodi lehele, kus \"makse vastuvõtmiseks\" või saatmise vormistamiseks tuleb sisestada kaardiandmed või internetipanka sisse logida. Siis võetakse kaardilt nii palju raha kui saab. Politsei andmetel oli suurim kahju sellise skeemiga üle 14 000 euro.",
+    "ru": "Вы продаёте что-то в Facebook Marketplace или на сайте объявлений. «Покупатель» хочет купить сразу, но не может приехать и просит отправить курьером. Он присылает ссылку на страницу, похожую на службу доставки, где «для получения оплаты» или оформления отправки нужно ввести данные карты или войти в интернет-банк. Затем с карты снимают столько, сколько возможно. По данным полиции, самый крупный ущерб от этой схемы превысил 14 000 евро.",
+    "en": "You are selling something on Facebook Marketplace or a classifieds site. A \"buyer\" wants it right away but can't come and wants it sent by courier. They send a link to a courier-looking page where, \"to receive the payment\" or arrange shipping, you must enter your card details or log in to your internet bank. Then as much money as possible is taken from the card. The police say the biggest loss from this scheme was over 14,000 euros."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "Ostja tahab kohe osta, kuid ainult kulleriga.",
+        "ru": "Покупатель хочет купить сразу, но только с курьером.",
+        "en": "The buyer wants it now, but only by courier."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Ta saadab kullerfirma lingi.",
+        "ru": "Присылает ссылку службы доставки.",
+        "en": "They send a courier company link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "et": "Leht näib olevat kullerfirma oma.",
+        "ru": "Страница выглядит как сайт службы доставки.",
+        "en": "The page looks like the courier's own."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Raha saamiseks sisesta kaardiandmed.",
+        "ru": "Чтобы получить деньги, введите данные карты.",
+        "en": "Enter your card details to receive the money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "et": "Tere, võtan jalgratta! Elan Tartus, nii et tasun kohe ja kuller tuleb homme järele. Vormistasin saadetise juba ära, raha ootab teid siin, kinnitage lihtsalt vastuvõtt oma kaardiga: [link]",
+        "ru": "Здравствуйте, беру велосипед! Живу в Тарту, поэтому оплачу сразу, а курьер заберёт завтра. Я уже оформил отправку, деньги ждут вас здесь, просто подтвердите получение своей картой: [ссылка]",
+        "en": "Hi, I'll take the bike! I live in Tartu so I'll pay right away and a courier will pick it up tomorrow. I've already set up the shipment, the money is waiting for you here, just confirm receipt with your card: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "ostja saatis lingi raha kättesaamiseks",
+      "marketplace ostja tahab kulleriga saata",
+      "sisesta kaardiandmed et makse vastu võtta",
+      "ostja maksis ära kinnita lingil",
+      "kullerfirma leht küsib kaardi andmeid",
+      "facebook marketplace ostja pettus"
+    ],
+    "ru": [
+      "покупатель прислал ссылку получить деньги",
+      "покупатель хочет отправить курьером",
+      "ввести данные карты чтобы получить оплату",
+      "покупатель оплатил подтвердите по ссылке",
+      "marketplace покупатель мошенник"
+    ],
+    "en": [
+      "buyer sent link to receive payment",
+      "marketplace buyer wants courier delivery",
+      "enter card details to receive money",
+      "buyer already paid confirm on link",
+      "facebook marketplace buyer scam"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "unknown_link",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "et": [
+      "Raha vastuvõtmiseks ei ole kunagi vaja kaardiandmeid ega internetipanga sisselogimist.",
+      "Ostja ei tule ise ja vormistab saatmise sinu eest.",
+      "Link tuleb ostjalt, mitte kullerfirma kodulehelt."
+    ],
+    "ru": [
+      "Для получения денег никогда не нужны данные карты или вход в интернет-банк.",
+      "Покупатель не приезжает сам и оформляет отправку за вас.",
+      "Ссылка пришла от покупателя, а не с сайта службы доставки."
+    ],
+    "en": [
+      "Receiving money never needs your card details or internet bank login.",
+      "The buyer won't come and arranges the shipping for you.",
+      "The link comes from the buyer, not from the courier's website."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Ära ava ostja saadetud linke.",
+      "Vormista saatmine ise kullerfirma ametlikul lehel; makse saamiseks anna ainult kontonumber.",
+      "Kui sisestasid kaardiandmed, sulge kaart kohe pangas.",
+      "Teata petulehest CERT-EE-le ja kaotusest politseile."
+    ],
+    "ru": [
+      "Не открывайте ссылки от покупателя.",
+      "Оформляйте отправку сами на официальном сайте службы доставки; для оплаты давайте только номер счёта.",
+      "Если ввели данные карты, сразу заблокируйте карту в банке.",
+      "Сообщите о фишинговой странице в CERT-EE, а об ущербе в полицию."
+    ],
+    "en": [
+      "Don't open links from the buyer.",
+      "Arrange shipping yourself on the courier's official site; to get paid, share only your account number.",
+      "If you entered card details, block the card with your bank at once.",
+      "Report the scam page to CERT-EE and any loss to the police."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/cert-ee",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "April in cyberspace: several people lost tens of thousands of euros to scammers",
+      "publisher": "Riigi Infosüsteemi Amet (RIA)",
+      "url": "https://www.ria.ee/en/news/april-cyberspace-several-people-lost-tens-thousands-euros-scammers",
+      "date": "2025-05-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,166 @@
+{
+  "id": "ee/zvonok-bank-kurer-karta",
+  "country": "ee",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ru": "«Банк», «Eesti Pank», «соцслужба» или «полиция» по телефону, затем человек у двери",
+    "et": "\"Pank\", \"Eesti Pank\", \"sotsiaalabi\" või \"politsei\" telefonis, seejärel inimene ukse taga",
+    "en": "The \"bank\", \"Eesti Pank\", \"social services\" or \"police\" by phone, then someone at the door"
+  },
+  "name": {
+    "ru": "Звонок «из банка» или «соцслужбы»: отдайте карту или наличные курьеру",
+    "et": "Kõne \"pangast\" või \"sotsiaalabist\": anna kaart või sularaha kullerile",
+    "en": "A call \"from the bank\" or \"social services\": hand your card or cash to a courier"
+  },
+  "how": {
+    "ru": "Пожилым людям звонят от имени банка, Eesti Pank, соцслужбы, водоканала, больницы или «службы защиты пожилых от мошенников», часто переводят между несколькими «сотрудниками», а в конце подключается «полиция». Под разными предлогами, например карту надо заменить, деньги нужно проверить или защитить, к вам домой приходит «курьер» или женщина, которой нужно отдать банковскую карту, ПИН или наличные. Иногда общение продолжается неделями по телефону и в Telegram, и через пару месяцев мошенники просят ещё.",
+    "et": "Eakatele helistatakse panga, Eesti Panga, sotsiaalabi, veeettevõtte, haigla või \"eakate pettuste eest kaitsmise teenuse\" nimel, sageli suunatakse mitme \"töötaja\" vahel ja lõpuks lülitub sisse \"politsei\". Eri ettekäänetel, näiteks kaart tuleb vahetada või raha kontrollida või kaitsta, tuleb koju \"kuller\" või naine, kellele tuleb anda pangakaart, PIN või sularaha. Mõnikord jätkub suhtlus nädalaid telefonis ja Telegramis ning paari kuu pärast küsitakse veel.",
+    "en": "Elderly people get calls in the name of their bank, Eesti Pank, social services, a water company, a hospital or a \"service protecting the elderly from scammers\", are passed between several \"employees\", and finally the \"police\" join in. On various pretexts, for example that the card must be replaced or the money checked or protected, a \"courier\" or a woman comes to your home and you must hand over your bank card, PIN or cash. Sometimes contact goes on for weeks by phone and Telegram, and a couple of months later the scammers ask for more."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонок «из банка» или «соцслужбы».",
+        "et": "Kõne \"pangast\" või \"sotsiaalabist\".",
+        "en": "A call \"from the bank\" or \"social services\"."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Ваши деньги в опасности, карту нужно срочно заменить.",
+        "et": "Teie raha on ohus, kaart tuleb kohe vahetada.",
+        "en": "Your money is at risk, the card must be replaced now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Не говорите родственникам, это проверка.",
+        "et": "Ärge rääkige sugulastele, see on kontroll.",
+        "en": "Don't tell your family, it's an inspection."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ru": "Отдайте карту, ПИН или наличные нашему сотруднику.",
+        "et": "Andke kaart, PIN või sularaha meie töötajale.",
+        "en": "Give your card, PIN or cash to our employee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Добрый день, Валентина Петровна, вас беспокоит отдел безопасности банка. С вашей карты сейчас пытались снять деньги в Литве. Мы её заблокируем и выпустим новую, а старую сегодня заберёт наш курьер, чтобы её не использовали. Назовите, пожалуйста, ПИН, чтобы мы сверили карту. Родным пока не говорите, идёт проверка.",
+        "et": "Tere päevast, Valentina Petrovna, helistab panga turvaosakond. Teie kaardilt üritati just Leedus raha võtta. Me blokeerime selle ja väljastame uue, vana kaardi viib täna ära meie kuller, et seda ei kasutataks. Palun öelge PIN, et saaksime kaardi üle kontrollida. Lähedastele veel ärge rääkige, käib kontroll.",
+        "en": "Good afternoon, Valentina Petrovna, this is the bank's security department. Someone just tried to take money from your card in Lithuania. We'll block it and issue a new one, and our courier will collect the old card today so it can't be used. Please tell me the PIN so we can verify the card. Don't tell your family yet, there's an inspection going on."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "передать банковскую карту курьеру",
+      "звонок из банка карту заберёт сотрудник",
+      "соцслужба звонит курьер заберёт деньги",
+      "eesti pank звонит заменить карту",
+      "отдала карту женщине которая пришла домой",
+      "звонят из банка потом из полиции",
+      "назовите пин чтобы сверить карту"
+    ],
+    "et": [
+      "kuller tuleb pangakaardi järele",
+      "pangast helistati kaart viiakse ära",
+      "sotsiaalabi helistas raha kullerile",
+      "eesti pank helistas kaart vahetada",
+      "andsin kaardi koju tulnud inimesele"
+    ],
+    "en": [
+      "hand bank card to courier",
+      "bank call employee will collect card",
+      "social services call courier collects money",
+      "eesti pank call replace card",
+      "gave card to woman who came home"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Банк не забирает карты курьером и никогда не спрашивает ПИН.",
+      "Eesti Pank не обслуживает частных клиентов и не звонит им.",
+      "Вас просят ничего не говорить родным.",
+      "Звонок переводят между «банком», «полицией» и другими «службами»."
+    ],
+    "et": [
+      "Pank ei korja kaarte kulleriga ega küsi kunagi PIN-koodi.",
+      "Eesti Pank ei teeninda eraisikuid ega helista neile.",
+      "Sind palutakse lähedastele mitte rääkida.",
+      "Kõnet suunatakse \"panga\", \"politsei\" ja muude \"teenistuste\" vahel."
+    ],
+    "en": [
+      "Banks never collect cards by courier or ask for your PIN.",
+      "Eesti Pank has no private customers and doesn't call them.",
+      "You are asked not to tell your family.",
+      "The call is passed between the \"bank\", \"police\" and other \"services\"."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку и сами позвоните в банк по номеру с карты.",
+      "Никому не отдавайте карту, ПИН или наличные, даже «сотруднику» у двери.",
+      "Если курьер уже идёт, звоните 112.",
+      "Если карта отдана, сразу заблокируйте её через банк и сообщите в полицию."
+    ],
+    "et": [
+      "Pane toru ära ja helista ise pangale kaardil oleval numbril.",
+      "Ära anna kellelegi kaarti, PIN-koodi ega sularaha, ka mitte ukse taga olevale \"töötajale\".",
+      "Kui kuller on tulemas, helista 112.",
+      "Kui kaart on antud, sulge see kohe pangas ja teata politseile."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on your card.",
+      "Never give your card, PIN or cash to anyone, even an \"employee\" at the door.",
+      "If a courier is coming, call 112.",
+      "If you handed over the card, block it with your bank straight away and tell the police."
+    ]
+  },
+  "reportTo": [
+    "ee/emergency-112",
+    "ee/your-bank",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Двое пожилых жителей Ида-Вирумаа лишились более 40 000 евро из-за действий мошенников",
+      "publisher": "ERR (на русском)",
+      "url": "https://rus.err.ee/1610073700/dvoe-pozhilyh-zhitelej-ida-virumaa-lishilis-bolee-40-000-evro-iz-za-dejstvij-moshennikov",
+      "date": "2026-07-09"
+    },
+    {
+      "title": "Жительница Эстонии отдала мошенникам 16 500 евро после общения в Telegram",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8516467/zhitelnica-estonii-otdala-moshennikam-16-500-evro-posle-obshcheniya-v-telegram",
+      "date": "2026-07-27"
+    },
+    {
+      "title": "ПОЛИЦИЯ ⟩ Мошенники за два дня выманили у ида-вируских пенсионеров более 20 000 евро",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8420177/policiya-moshenniki-za-dva-dnya-vymanili-u-ida-viruskih-pensionerov-bolee-20-000-evro",
+      "date": "2026-02-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

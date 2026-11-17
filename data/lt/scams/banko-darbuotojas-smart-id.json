@@ -1,0 +1,170 @@
+{
+  "id": "lt/banko-darbuotojas-smart-id",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "lt": "„Jūsų bankas“, banko saugumo skyrius ar „sukčiavimo prevencija“ (skambutis telefonu arba per „Viber“, „WhatsApp“)",
+    "en": "“Your bank”, its security department or “fraud prevention” (a phone call or a Viber/WhatsApp call)",
+    "ru": "«Ваш банк», служба безопасности или «отдел предотвращения мошенничества» (звонок по телефону или через Viber, WhatsApp)"
+  },
+  "name": {
+    "lt": "Netikras banko darbuotojas: „patvirtinkite Smart-ID“, pinigus į „saugią sąskaitą“",
+    "en": "Fake bank employee: “confirm it in Smart-ID”, move money to a “safe account”",
+    "ru": "Лже-сотрудник банка: «подтвердите в Smart-ID», переведите деньги на «безопасный счёт»"
+  },
+  "how": {
+    "lt": "Skambina žmogus, prisistatantis banko darbuotoju, vis dažniau per „Viber“ ar „WhatsApp“, kur ekrane gali būti rodomas vardas vietoje numerio. Jis praneša apie įtartiną mokėjimą, bandymą paimti paskolą jūsų vardu ar užblokuotą sąskaitą ir skubina „apsaugoti“ pinigus. Jūsų prašoma prisijungti prie interneto banko, suvesti „Smart-ID“ PIN1 ir PIN2 kodus, patvirtinti operaciją, kurios nepradėjote, arba pervesti santaupas į „saugią“ sąskaitą. Kartais prisijungia ir tariamas policijos pareigūnas. Iš tikrųjų taip patvirtinate sukčių mokėjimą arba net naują „Smart-ID“ paskyrą jų įrenginyje.",
+    "en": "Someone calls claiming to be from your bank, more and more often over Viber or WhatsApp, where a name can show instead of a number. They report a suspicious payment, a loan being taken in your name or a blocked account and rush you to “protect” your money. You are asked to log in to online banking, enter your Smart-ID PIN1 and PIN2, approve an operation you did not start, or move your savings to a “safe” account. Sometimes a supposed police officer joins in. In reality you are approving the scammers' payment, or even a new Smart-ID account on their device.",
+    "ru": "Звонит человек, представляющийся сотрудником банка, всё чаще через Viber или WhatsApp, где вместо номера может отображаться имя. Он сообщает о подозрительном платеже, попытке оформить кредит на ваше имя или блокировке счёта и торопит «защитить» деньги. Вас просят войти в интернет-банк, ввести PIN1 и PIN2 Smart-ID, подтвердить операцию, которую вы не начинали, или перевести сбережения на «безопасный» счёт. Иногда подключается якобы полицейский. На самом деле вы подтверждаете платёж мошенников или даже новую учётную запись Smart-ID на их устройстве."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "Skambutis „iš banko“: jūsų sąskaitoje įtartinas mokėjimas ar paskolos paraiška.",
+        "en": "A call “from the bank”: there's a suspicious payment or a loan application on your account.",
+        "ru": "Звонок «из банка»: на вашем счёте подозрительный платёж или заявка на кредит."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Spaudžia: pinigai tuoj dings, veikti reikia dabar.",
+        "en": "Pressure: the money is about to vanish, you must act now.",
+        "ru": "Давление: деньги вот-вот исчезнут, действовать нужно сейчас."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lt": "Prašo prisijungti ir suvesti „Smart-ID“ PIN kodus arba patvirtinti operaciją.",
+        "en": "You're asked to log in and enter your Smart-ID PINs or approve an operation.",
+        "ru": "Просят войти и ввести PIN-коды Smart-ID или подтвердить операцию."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "lt": "Liepia pervesti santaupas į „saugią“ sąskaitą.",
+        "en": "You're told to move your savings to a “safe” account.",
+        "ru": "Велят перевести сбережения на «безопасный» счёт."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "lt": "Laba diena, skambinu iš banko sukčiavimo prevencijos skyriaus. Prieš dešimt minučių jūsų vardu pateikta vartojimo paskolos paraiška 7 000 eurų. Jūs jos neteikėte? Tada reikia ją skubiai atšaukti. Dabar į jūsų telefoną ateis „Smart-ID“ užklausa, įveskite PIN2 – taip paraiška bus atmesta. Po to jūsų lėšas laikinai perkelsime į apsaugotą sąskaitą, kol tyrimas baigsis.",
+        "en": "Good afternoon, I'm calling from the bank's fraud prevention department. Ten minutes ago a consumer loan application for 7,000 euros was submitted in your name. You didn't submit it? Then it needs cancelling urgently. A Smart-ID request will now arrive on your phone, enter PIN2 and the application will be rejected. After that we'll temporarily move your funds to a protected account until the investigation is over.",
+        "ru": "Добрый день, звоню из отдела предотвращения мошенничества банка. Десять минут назад на ваше имя подана заявка на потребительский кредит на 7 000 евро. Вы её не подавали? Тогда её нужно срочно отменить. Сейчас на телефон придёт запрос Smart-ID, введите PIN2 — так заявка будет отклонена. Потом мы временно переведём ваши средства на защищённый счёт до конца проверки."
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "skambino neva banko darbuotojas",
+      "prašė patvirtinti smart id",
+      "įvesti pin2 koda telefonu",
+      "pervesti pinigus į saugią sąskaitą",
+      "banko saugumo skyrius skambina dėl paskolos",
+      "skambutis per viber iš banko",
+      "liepė prisijungti prie interneto banko",
+      "įtartinas mokėjimas mano sąskaitoje skambino",
+      "smart id užklausa kurios nepradėjau",
+      "netikras banko konsultantas"
+    ],
+    "en": [
+      "fake bank employee asked for smart id pin",
+      "told to move money to a safe account",
+      "bank called about a loan i did not apply for",
+      "asked me to confirm an operation in smart id",
+      "bank call over viber"
+    ],
+    "ru": [
+      "звонил якобы сотрудник банка",
+      "просили подтвердить smart id",
+      "перевести деньги на безопасный счёт",
+      "звонок из банка через viber",
+      "ввести pin2 по просьбе банка"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "lt": [
+      "Bankas niekada neprašo telefonu ar per programėles atskleisti „Smart-ID“ PIN kodų ar patvirtinti operacijų, kurių nepradėjote.",
+      "„Saugios sąskaitos“ nėra: bankas neliepia perkelti pinigų, kad juos apsaugotų.",
+      "Vardas ar lietuviškas numeris ekrane nieko neįrodo.",
+      "PIN2 patvirtina mokėjimą: niekada jo nevedkite, jei patys nieko nemokate."
+    ],
+    "en": [
+      "A bank never asks, by phone or in an app, for your Smart-ID PINs or for approval of an operation you did not start.",
+      "There is no “safe account”: a bank never tells you to move money to protect it.",
+      "A name or a Lithuanian number on screen proves nothing.",
+      "PIN2 approves a payment: never enter it unless you are paying for something yourself."
+    ],
+    "ru": [
+      "Банк никогда не просит по телефону или в приложениях сообщить PIN-коды Smart-ID или подтвердить операцию, которую вы не начинали.",
+      "«Безопасного счёта» не существует: банк не просит переводить деньги, чтобы их защитить.",
+      "Имя или литовский номер на экране ничего не доказывают.",
+      "PIN2 подтверждает платёж: никогда не вводите его, если сами ничего не оплачиваете."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Nutraukite pokalbį ir patys paskambinkite į banką numeriu nuo kortelės nugarėlės ar iš oficialios svetainės.",
+      "Jei suvedėte PIN kodus ar pervedėte pinigų, nedelsdami praneškite bankui ir užblokuokite prieigą.",
+      "Praneškite policijai per e. policiją, o jei kas nors važiuoja pas jus – skambinkite 112."
+    ],
+    "en": [
+      "End the call and ring your bank yourself on the number on the back of your card or on its official website.",
+      "If you entered your PINs or sent money, tell your bank at once and block access.",
+      "Report it to the police through e-policija, and if someone is on their way to you, call 112."
+    ],
+    "ru": [
+      "Прервите разговор и сами позвоните в банк по номеру с обратной стороны карты или с официального сайта.",
+      "Если вы ввели PIN-коды или перевели деньги, немедленно сообщите банку и заблокируйте доступ.",
+      "Сообщите в полицию через e-policija, а если к вам кто-то едет — звоните 112."
+    ]
+  },
+  "reportTo": [
+    "lt/your-bank",
+    "lt/policija",
+    "lt/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Naujas sukčių triukas: gyventojams vis dažniau skambina per „Viber“",
+      "publisher": "15min",
+      "url": "https://www.15min.lt/verslas/naujiena/finansai/naujas-sukciu-triukas-gyventojams-vis-dazniau-skambina-per-viber-662-2738046",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "Vilniuje iš dviejų žmonių sukčiai išviliojo 35 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2985035/vilniuje-is-dvieju-zmoniu-sukciai-isviliojo-35-tukst-euru",
+      "date": "2026-07-09"
+    },
+    {
+      "title": "Telefoniniai sukčiai ir toliau atakuoja gyventojus: trys būdai juos atpažinti",
+      "publisher": "15min",
+      "url": "https://www.15min.lt/verslas/naujiena/finansai/telefoniniai-sukciai-ir-toliau-atakuoja-gyventojus-trys-budai-juos-atpazinti-662-2467770",
+      "date": "2025-06-11"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "lt/rusakalbis-banko-darbuotojas-programele"
+  ]
+}

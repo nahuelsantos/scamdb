@@ -1,0 +1,163 @@
+{
+  "id": "ee/rodstvennik-popal-v-avariyu",
+  "country": "ee",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ru": "«Родственник», «врач» или «следователь» по телефону, затем курьер у двери",
+    "et": "\"Sugulane\", \"arst\" või \"uurija\" telefonis, seejärel kuller ukse taga",
+    "en": "A \"relative\", \"doctor\" or \"investigator\" by phone, then a courier at the door"
+  },
+  "name": {
+    "ru": "Родственник попал в аварию: срочно нужны наличные, курьер приедет",
+    "et": "Lähedane sattus õnnetusse: sularaha on kohe vaja, kuller tuleb järele",
+    "en": "A relative was in an accident: cash needed now, a courier will come"
+  },
+  "how": {
+    "ru": "Чаще всего звонят пожилым людям, особенно в Ида-Вирумаа. В трубке плачущий голос «дочери» или «сына» или «врач», «следователь»: близкий попал в аварию, лежит в больнице и нужна операция, или он сбил человека и, чтобы не завели уголовное дело, нужно срочно заплатить. Просят назвать домашний адрес, и вскоре приходит курьер за наличными или банковской картой. Иногда звонят повторно и говорят, что денег не хватило.",
+    "et": "Helistatakse peamiselt eakatele, eriti Ida-Virumaal, ja sageli vene keeles. Telefonis on nutune \"tütre\" või \"poja\" hääl või \"arst\" või \"uurija\": lähedane sattus avariisse, on haiglas ja vajab operatsiooni, või põhjustas õnnetuse ja kriminaalasja vältimiseks tuleb kohe maksta. Küsitakse koduaadressi ja peagi tuleb kuller sularaha või pangakaardi järele. Mõnikord helistatakse uuesti ja öeldakse, et rahast ei piisanud.",
+    "en": "Calls mostly target elderly people, especially in Ida-Viru County, and often in Russian. On the line is a crying \"daughter\" or \"son\", or a \"doctor\" or \"investigator\": your relative was in a crash, is in hospital and needs surgery, or caused an accident and must pay at once to avoid a criminal case. They ask for your home address and soon a courier comes for cash or your bank card. Sometimes they call again to say the money was not enough."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонок: ваша дочь попала в аварию.",
+        "et": "Kõne: teie tütar sattus avariisse.",
+        "en": "A call: your daughter was in a crash."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Деньги нужны прямо сейчас на операцию или чтобы не завели дело.",
+        "et": "Raha on vaja kohe operatsiooniks või kriminaalasja vältimiseks.",
+        "en": "Money is needed right now for surgery or to avoid a criminal case."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Никому не звоните, не кладите трубку.",
+        "et": "Ärge kellelegi helistage, ärge pange toru ära.",
+        "en": "Don't call anyone, don't hang up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ru": "Назовите адрес, курьер заберёт наличные.",
+        "et": "Öelge aadress, kuller võtab sularaha.",
+        "en": "Give your address, a courier will collect the cash."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Мама, это я... (плачет) Я попала в аварию, у меня сломана рука, со мной сейчас врач поговорит. — Здравствуйте, я хирург. Вашей дочери нужна срочная операция, страховка не покрывает. Сколько у вас дома наличными? Скажите адрес, к вам подъедет наш сотрудник, только не кладите трубку.",
+        "et": "Emme, see olen mina... (nutab) Ma sattusin avariisse, käsi on katki, arst räägib nüüd sinuga. — Tere, olen kirurg. Teie tütar vajab kiiret operatsiooni, kindlustus seda ei kata. Kui palju teil kodus sularaha on? Öelge aadress, meie töötaja sõidab teie juurde, ainult ärge pange toru ära.",
+        "en": "Mum, it's me... (crying) I was in an accident, my arm is broken, a doctor will talk to you now. — Hello, I'm the surgeon. Your daughter needs urgent surgery, insurance doesn't cover it. How much cash do you have at home? Tell me your address, our staff member will come to you, just don't hang up."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "дочь попала в аварию нужны деньги",
+      "родственник в больнице нужна операция",
+      "сын сбил человека чтобы не завели дело",
+      "курьер приедет за деньгами",
+      "внук попал в дтп",
+      "нужны наличные на операцию срочно",
+      "звонил врач дочь в больнице"
+    ],
+    "et": [
+      "tütar sattus avariisse raha vaja",
+      "sugulane haiglas operatsioon maksta",
+      "poeg põhjustas õnnetuse kriminaalasi",
+      "kuller tuleb raha järele",
+      "lapselaps liiklusõnnetuses raha"
+    ],
+    "en": [
+      "daughter in car accident needs money",
+      "relative in hospital needs surgery",
+      "son caused accident avoid criminal case",
+      "courier will come for the money",
+      "grandson in crash cash needed"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Ни полиция, ни врачи не забирают деньги через курьера.",
+      "Вас пугают и торопят и не дают перезвонить близкому.",
+      "Спрашивают, сколько денег дома, и домашний адрес."
+    ],
+    "et": [
+      "Politsei ega arstid ei võta raha kulleri kaudu.",
+      "Sind hirmutatakse ja kiirustatakse ega lasta lähedasele tagasi helistada.",
+      "Küsitakse, kui palju raha on kodus, ja koduaadressi."
+    ],
+    "en": [
+      "Neither the police nor doctors collect money by courier.",
+      "You are scared and rushed and not allowed to call your relative back.",
+      "They ask how much cash you have at home and your address."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку и сами перезвоните близкому по его обычному номеру.",
+      "Никогда не отдавайте деньги или карту незнакомому курьеру.",
+      "Если курьер уже едет или стоит у двери, звоните 112.",
+      "Поговорите с пожилыми родственниками об этой схеме."
+    ],
+    "et": [
+      "Pane toru ära ja helista lähedasele ise tema tavalisel numbril.",
+      "Ära anna kunagi raha ega kaarti võõrale kullerile.",
+      "Kui kuller on juba teel või ukse taga, helista 112.",
+      "Räägi eakate sugulastega sellest skeemist."
+    ],
+    "en": [
+      "Hang up and call your relative yourself on their usual number.",
+      "Never hand money or a card to an unknown courier.",
+      "If a courier is on the way or at the door, call 112.",
+      "Talk to elderly relatives about this scheme."
+    ]
+  },
+  "reportTo": [
+    "ee/emergency-112",
+    "ee/police-report",
+    "ee/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Пенсионерка из Ида-Вирумаа отдала мошенникам 20 тысяч евро, поверив в историю об аварии дочери",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8335814/pensionerka-iz-ida-virumaa-otdala-moshennikam-20-tysyach-evro-poveriv-v-istoriyu-ob-avarii-docheri",
+      "date": "2025-10-03"
+    },
+    {
+      "title": "Пенсионерка из Ида-Вирумаа отдала мошенникам 10 000 евро за \"спасение родственника\"",
+      "publisher": "ERR (на русском)",
+      "url": "https://rus.err.ee/1609682162/pensionerka-iz-ida-virumaa-otdala-moshennikam-10-000-evro-za-spasenie-rodstvennika",
+      "date": "2025-05-02"
+    },
+    {
+      "title": "Virumaal langeb üha enam inimesi petturite ohvriks",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1609304835/virumaal-langeb-uha-enam-inimesi-petturite-ohvriks",
+      "date": "2024-04-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

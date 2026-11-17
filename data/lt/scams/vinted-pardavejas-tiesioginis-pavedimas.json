@@ -1,0 +1,122 @@
+{
+  "id": "lt/vinted-pardavejas-tiesioginis-pavedimas",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "lt": "„Smulkus pardavėjas“ „Vinted“ ar kitoje skelbimų platformoje",
+    "en": "A “small seller” on Vinted or another classifieds platform"
+  },
+  "name": {
+    "lt": "Netikras pardavėjas: „nėra mygtuko PIRKTI, perveskite tiesiai į sąskaitą“",
+    "en": "Fake seller: “there's no BUY button, transfer straight to my account”"
+  },
+  "how": {
+    "lt": "Pardavėjas skelbimų platformoje, dažnai su svetimomis nuotraukomis ar prisistatantis „smulkiu pardavėju“, aiškina, kad prekės negalima nupirkti per platformą: neva nėra mygtuko „Pirkti“, nes prekė didelė, negabaritinė ar per brangi. Jis prašo pervesti pinigus tiesiai į jo banko sąskaitą ir žada išsiųsti kurjeriu. Taip apeinama platformos apsauga, o po pavedimo pardavėjas dingsta, prekės nėra.",
+    "en": "A seller on a classifieds platform, often using someone else's photos or calling themselves a “small seller”, explains that the item can't be bought through the platform: supposedly there's no “Buy” button because it's large, bulky or too expensive. They ask you to transfer the money straight to their bank account and promise to send it by courier. This bypasses the platform's protection; after the transfer the seller disappears and there is no item."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "Patrauklus skelbimas, pardavėjas su svetimomis nuotraukomis.",
+        "en": "An attractive listing, a seller with someone else's photos."
+      }
+    },
+    {
+      "text": {
+        "lt": "„Smulkus pardavėjas“ sako, kad mygtuko „Pirkti“ nėra.",
+        "en": "A “small seller” says there's no “Buy” button."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Prašo pervesti tiesiai į banko sąskaitą.",
+        "en": "Asks for a direct bank transfer."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "lt": "Skubina: kitas pirkėjas jau laukia.",
+        "en": "Rushes you: another buyer is already waiting."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "online",
+      "text": {
+        "lt": "Labas! Sofa dar laisva 🙂 Deja, per programėlę jos nupirkti negalima – dėl dydžio nerodo mygtuko. Perveskite 220 € į mano sąskaitą, paskirtyje parašykite savo vardą, ir rytoj išsiųsiu per kurjerį. Turiu dar vieną norintį, tai geriau šiandien.",
+        "en": "Hi! The sofa is still available 🙂 Unfortunately it can't be bought through the app – the button doesn't show because of its size. Transfer 220 € to my account, put your name in the reference, and I'll send it by courier tomorrow. I have someone else interested, so today would be better."
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "pardavėjas prašo pervesti tiesiai į sąskaitą",
+      "nėra mygtuko pirkti vinted",
+      "prekė didelė negalima pirkti per platformą",
+      "pervedžiau pinigus pardavėjui prekės negavau",
+      "vinted pardavėjas dingo po pavedimo",
+      "smulkus pardavėjas siunčia per kurjerį"
+    ],
+    "en": [
+      "seller asks for direct bank transfer",
+      "no buy button on vinted",
+      "item too big to buy through the platform",
+      "paid the seller and got nothing",
+      "vinted seller disappeared after transfer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "lt": [
+      "Bet koks prašymas mokėti ne per platformą.",
+      "Paaiškinimai, kodėl „neveikia“ mygtukas „Pirkti“.",
+      "Svetimos nuotraukos, nauja paskyra be atsiliepimų."
+    ],
+    "en": [
+      "Any request to pay outside the platform.",
+      "Excuses for why the “Buy” button “doesn't work”.",
+      "Someone else's photos, a new account with no reviews."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Pirkite tik su platformos mygtuku „Pirkti“ ir jos mokėjimų sistema.",
+      "Jei jau pervedėte, skubiai kreipkitės į banką dėl pavedimo stabdymo.",
+      "Praneškite apie paskyrą platformai ir policijai."
+    ],
+    "en": [
+      "Buy only with the platform's “Buy” button and its payment system.",
+      "If you already transferred, contact your bank urgently to try to stop it.",
+      "Report the account to the platform and to the police."
+    ]
+  },
+  "reportTo": [
+    "lt/your-bank",
+    "lt/policija"
+  ],
+  "sources": [
+    {
+      "title": "Populiarioje platformoje daiktus perkantiems lietuviams – policijos žinia",
+      "publisher": "tv3.lt (Ukmergės r. policijos komisariatas)",
+      "url": "https://www.tv3.lt/naujiena/gyvenimas/populiarioje-platformoje-daiktus-perkantiems-lietuviams-policijos-zinia-n1558170",
+      "date": "2026-10-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "lt/pirkejas-nuoroda-pinigams-gauti"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "lv/smart-id-robotzvans-jauna-ierice",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "lv": "Automātisks balss zvans it kā no bankas vai Smart-ID",
+    "ru": "Автоматический голосовой звонок якобы от банка или Smart-ID",
+    "en": "An automated voice call supposedly from your bank or Smart-ID"
+  },
+  "name": {
+    "lv": "Robotzvans: «Jūsu Smart-ID pievienota jauna ierīce, nospiediet 1»",
+    "ru": "Робот-звонок: «К вашему Smart-ID добавлено новое устройство, нажмите 1»",
+    "en": "Robocall: 'A new device was added to your Smart-ID, press 1'"
+  },
+  "how": {
+    "lv": "Zvana automātiska balss un paziņo, ka jūsu Smart-ID vai internetbankai pievienota jauna ierīce, piemēram, cits telefons. Ja tas neesat jūs, jānospiež taustiņš, lai savienotu ar «kiberdrošības speciālistu». Tā šķiet, ka sazināties sākāt jūs pats. «Speciālists» un vēlāk «Smart-ID darbinieks» vai «policists» liek apstiprināt Smart-ID pieprasījumus vai nosaukt kodus, lai «noņemtu» svešo ierīci, un tā iegūst piekļuvi jūsu kontam.",
+    "ru": "Звонит автоматический голос и сообщает, что к вашему Smart-ID или интернет-банку добавлено новое устройство, например другой телефон. Если это не вы, надо нажать кнопку, чтобы соединиться со «специалистом по кибербезопасности». Так кажется, что связаться решили вы сами. «Специалист», а затем «сотрудник Smart-ID» или «полицейский» просят подтвердить запросы Smart-ID или назвать коды, чтобы «удалить» чужое устройство, и так получают доступ к вашему счёту.",
+    "en": "An automated voice says a new device, such as another phone, has been added to your Smart-ID or online banking. If it wasn't you, press a key to be connected to a 'cyber-security specialist'. That makes it feel as if you started the contact yourself. The 'specialist', and later a 'Smart-ID employee' or 'police officer', tell you to approve Smart-ID requests or read out codes to 'remove' the unknown device, and so gain access to your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Robots: jūsu Smart-ID pievienota jauna ierīce.",
+        "ru": "Робот: к вашему Smart-ID добавлено новое устройство.",
+        "en": "Robot: a new device was added to your Smart-ID."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Ja tas neesat jūs, nospiediet 1.",
+        "ru": "Если это не вы, нажмите 1.",
+        "en": "If it wasn't you, press 1."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lv": "«Speciālists» paliek līnijā un pārslēdz pie kolēģa.",
+        "ru": "«Специалист» остаётся на линии и переключает на коллегу.",
+        "en": "The 'specialist' stays on the line and transfers you to a colleague."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "lv": "Apstipriniet Smart-ID, lai svešā ierīce tiktu dzēsta.",
+        "ru": "Подтвердите Smart-ID, чтобы чужое устройство удалили.",
+        "en": "Approve Smart-ID so the unknown device is removed."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "lv": "Šis ir automātisks paziņojums no jūsu bankas. Jūsu Smart-ID kontam tikko pievienota jauna ierīce: Samsung Galaxy. Ja neesat pievienojis šo ierīci, iespējams, notiek krāpšanas mēģinājums. Lai savienotos ar mūsu drošības speciālistu, nospiediet taustiņu viens.",
+        "ru": "Это автоматическое сообщение вашего банка. К вашей учётной записи Smart-ID только что добавлено новое устройство: Samsung Galaxy. Если вы не добавляли это устройство, возможно, происходит попытка мошенничества. Чтобы соединиться с нашим специалистом по безопасности, нажмите клавишу один.",
+        "en": "This is an automated message from your bank. A new device has just been added to your Smart-ID account: Samsung Galaxy. If you did not add this device, a fraud attempt may be in progress. To speak to our security specialist, press one."
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "robots teica ka manam smart-id pievienots jauns telefons",
+      "automātisks zvans no bankas lika nospiest vieninieku",
+      "smart-id darbiniece lika apstiprināt pieprasījumu lai dzēstu svešo ierīci",
+      "zvanīja ierakstīta balss par jaunu ierīci internetbankā",
+      "pēc taustiņa nospiešanas atbildēja kiberdrošības speciālists"
+    ],
+    "ru": [
+      "робот сказал что к моему smart-id добавлен новый телефон",
+      "автоматический звонок из банка попросил нажать единицу",
+      "сотрудница smart-id велела подтвердить запрос чтобы удалить чужое устройство",
+      "звонил записанный голос про новое устройство в интернет-банке",
+      "после нажатия кнопки ответил специалист по кибербезопасности"
+    ],
+    "en": [
+      "a robot said a new phone was added to my smart-id",
+      "an automated call from the bank told me to press one",
+      "a smart-id employee told me to approve a request to delete the other device",
+      "a recorded voice called about a new device on my online bank",
+      "after pressing the key a cyber security specialist answered"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "lv": [
+      "Bankas un Smart-ID nezvana ar robotu, kas lūdz nospiest taustiņu.",
+      "Jums liek apstiprināt Smart-ID pieprasījumu, ko neesat sācis.",
+      "Sarunā iesaistās vairāki «speciālisti» pēc kārtas."
+    ],
+    "ru": [
+      "Банки и Smart-ID не звонят роботом с просьбой нажать кнопку.",
+      "Вам велят подтвердить запрос Smart-ID, который вы не начинали.",
+      "В разговор по очереди включаются несколько «специалистов»."
+    ],
+    "en": [
+      "Banks and Smart-ID don't make robocalls asking you to press a key.",
+      "You are told to approve a Smart-ID request you didn't start.",
+      "Several 'specialists' join the call one after another."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Nespiediet taustiņus, nolieciet klausuli un pārbaudiet ierīces pats bankas lietotnē.",
+      "Nekad neapstipriniet Smart-ID pieprasījumu, ko neesat sācis pats.",
+      "Ja apstiprinājāt, nekavējoties zvaniet bankai."
+    ],
+    "ru": [
+      "Не нажимайте кнопки, положите трубку и проверьте устройства сами в приложении банка.",
+      "Никогда не подтверждайте запрос Smart-ID, который вы не начинали.",
+      "Если подтвердили, сразу звоните в банк."
+    ],
+    "en": [
+      "Don't press any key, hang up and check your devices yourself in the bank's app.",
+      "Never approve a Smart-ID request you didn't start yourself.",
+      "If you approved one, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "Tūkstošiem eiro, desmitiem apkrāpto – «Slazds» piedalās telefonkrāpnieces aizturēšanā",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/30.05.2026-tukstosiem-eiro-desmitiem-apkrapto-slazds-piedalas-telefonkrapnieces-aizturesana.a649173/",
+      "date": "2026-05-30"
+    },
+    {
+      "title": "Automatizēts zvans no «bankas». Kā krāpnieki uzzināja jaunās māmiņas telefona modeli un izvīla tūkstošiem eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/18.02.2025-automatizets-zvans-no-bankas-ka-krapnieki-uzzinaja-jaunas-maminas-telefona-modeli-un-izvila-tukstosiem-eiro.a588099/",
+      "date": "2025-02-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

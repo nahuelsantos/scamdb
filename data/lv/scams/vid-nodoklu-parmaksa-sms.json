@@ -1,0 +1,150 @@
+{
+  "id": "lv/vid-nodoklu-parmaksa-sms",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "lv": "Īsziņa vai e-pasts it kā no VID (Valsts ieņēmumu dienesta)",
+    "ru": "SMS или письмо якобы от VID (Службы государственных доходов)",
+    "en": "A text or e-mail supposedly from VID, the State Revenue Service"
+  },
+  "name": {
+    "lv": "Viltus VID ziņa: «jums pienākas nodokļu pārmaksas atmaksa»",
+    "ru": "Фальшивое сообщение VID: «вам положен возврат переплаты налогов»",
+    "en": "Fake VID message: 'you are due a tax refund'"
+  },
+  "how": {
+    "lv": "Atnāk īsziņa vai e-pasts it kā no VID: sagatavots nodokļu pārmaksas dokuments vai jums pienākas atmaksa, tikai jāspiež uz saites. Saite ved uz viltus lapu, kur jāievada bankas dati vai jāapstiprina ar Smart-ID, un krāpnieki iztukšo kontu. Īpaši bieži tās sūta ap deklarēšanas laiku pavasarī. VID īsziņas nesūta; atmaksu var saņemt tikai pēc gada ienākumu deklarācijas iesniegšanas EDS, kur ielogojaties pats.",
+    "ru": "Приходит SMS или письмо якобы от VID: подготовлен документ о переплате налогов или вам положен возврат, нужно только нажать на ссылку. Ссылка ведёт на фальшивую страницу, где надо ввести данные банка или подтвердить Smart-ID, и мошенники опустошают счёт. Особенно часто такие сообщения приходят весной, во время декларирования. VID не присылает SMS; возврат можно получить только подав годовую декларацию о доходах в EDS, куда вы входите сами.",
+    "en": "A text or e-mail supposedly from VID says a tax overpayment document is ready or a refund is due, just click the link. The link goes to a fake page where you enter bank details or approve with Smart-ID, and the scammers empty the account. They are most common in spring, around tax-return time. VID does not send texts; refunds only follow an annual income declaration filed in EDS, which you log in to yourself."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "VID: jums sagatavota nodokļu pārmaksas atmaksa.",
+        "ru": "VID: для вас подготовлен возврат переплаты налогов.",
+        "en": "VID: a tax refund has been prepared for you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Pieprasiet atmaksu piecu dienu laikā.",
+        "ru": "Запросите возврат в течение пяти дней.",
+        "en": "Claim the refund within five days."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lv": "Ievadiet bankas datus saitē, lai saņemtu naudu.",
+        "ru": "Введите данные банка по ссылке, чтобы получить деньги.",
+        "en": "Enter your bank details at the link to receive the money."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "lv": "VID: Par 2025. gadu jums ir aprekinata nodoklu parmaksa 186,40 EUR. Atmaksu var sanemt lidz 15.04, apstiprinot konta datus: [saite]",
+        "ru": "VID: за 2025 год вам начислена переплата налогов 186,40 EUR. Возврат можно получить до 15.04, подтвердив данные счёта: [ссылка]",
+        "en": "VID: a tax overpayment of EUR 186.40 has been calculated for 2025. You can receive the refund until 15.04 by confirming your account details: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "saņēmu īsziņu no vid par nodokļu atmaksu",
+      "vid vārdā rakstīja par nodokļu pārmaksu un atsūtīja saiti",
+      "lai saņemtu nodokļu atmaksu prasīja bankas datus",
+      "e-pasts no vid par atmaksu lika ielogoties internetbankā",
+      "ziņa par pārmaksātiem nodokļiem ar saiti"
+    ],
+    "ru": [
+      "получил смс от vid про возврат налогов",
+      "от имени vid написали о переплате налогов и прислали ссылку",
+      "чтобы получить возврат налогов попросили данные банка",
+      "письмо от vid про возврат просило войти в интернет-банк",
+      "сообщение о переплаченных налогах со ссылкой"
+    ],
+    "en": [
+      "i got a text from vid about a tax refund",
+      "in the name of vid they wrote about a tax overpayment and sent a link",
+      "they asked for bank details so I could get a tax refund",
+      "an e-mail from vid about a refund asked me to log in to online banking",
+      "a message about overpaid tax with a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "lv": [
+      "VID nesūta īsziņas.",
+      "Atmaksu sola bez deklarācijas iesniegšanas.",
+      "Saite neved uz VID oficiālo lapu, prasa bankas datus."
+    ],
+    "ru": [
+      "VID не присылает SMS.",
+      "Возврат обещают без подачи декларации.",
+      "Ссылка ведёт не на официальный сайт VID и просит данные банка."
+    ],
+    "en": [
+      "VID doesn't send texts.",
+      "A refund is promised without filing a declaration.",
+      "The link doesn't go to VID's official site and asks for bank details."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Neatveriet saiti. Ielogojieties EDS pats, ierakstot adresi.",
+      "Pārsūtiet ziņu CERT.LV.",
+      "Ja ievadījāt bankas datus, nekavējoties zvaniet bankai."
+    ],
+    "ru": [
+      "Не открывайте ссылку. Войдите в EDS сами, набрав адрес.",
+      "Перешлите сообщение в CERT.LV.",
+      "Если ввели данные банка, сразу звоните в банк."
+    ],
+    "en": [
+      "Don't open the link. Log in to EDS yourself by typing the address.",
+      "Forward the message to CERT.LV.",
+      "If you entered bank details, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "lv/cert-lv",
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "Šī gada pirmajos sešos mēnešos Latvijas iedzīvotājiem izkrāpti teju 8 miljoni eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/21.07.2026-si-gada-pirmajos-sesos-menesos-latvijas-iedzivotajiem-izkrapti-teju-8-miljoni-eiro.a655765/",
+      "date": "2026-07-21"
+    },
+    {
+      "title": "Oktobrī telefonkrāpnieki no Latvijas iedzīvotājiem izkrāpuši vairāk nekā 1,9 miljonus eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/09.11.2026-oktobri-telefonkrapnieki-no-latvijas-iedzivotajiem-izkrapusi-vairak-neka-19-miljonus-eiro.a670996/",
+      "date": "2026-11-09"
+    },
+    {
+      "title": "Krāpnieki uzdodas par Valsts ieņēmumu dienestu; brīdina nevērt vaļā viltus īsziņu",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/07.02.2024-krapnieki-uzdodas-par-valsts-ienemumu-dienestu-bridina-nevert-vala-viltus-iszinu.a542016/",
+      "date": "2024-02-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

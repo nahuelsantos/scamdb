@@ -1,0 +1,156 @@
+{
+  "id": "ee/emta-tagastus-petukiri",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "et": "\"Maksu- ja Tolliamet (EMTA)\" e-kirjas või sõnumis",
+    "ru": "«Налогово-таможенный департамент (EMTA)» в письме или сообщении",
+    "en": "\"Tax and Customs Board (EMTA)\" by email or message"
+  },
+  "name": {
+    "et": "Maksu- ja Tolliameti nimel petukiri: maksutagastus lingi või QR-koodi kaudu",
+    "ru": "Фальшивое письмо от EMTA: возврат налога по ссылке или QR-коду",
+    "en": "Fake Tax and Customs Board message: tax refund via a link or QR code"
+  },
+  "how": {
+    "et": "Kiri või sõnum väidab, et sul on tulumaksu tagastus või enammakse, mille saamiseks tuleb andmed kinnitada. Selleks on link või QR-kood, mis viib õngitsuslehele, kus küsitakse panga sisselogimist, kaardiandmeid või PIN-koode. Mõnikord küsitakse tagastuse eest väikest tasu. Maksu- ja Tolliamet ei küsi kunagi tasu tagastuse eest, ei pane kirjadesse QR-koode ega manuseid ega küsi andmeid ja PIN-koode kirja, sõnumi ega telefoni teel.",
+    "ru": "Письмо или сообщение утверждает, что вам положен возврат подоходного налога или переплата, и для получения нужно подтвердить данные. Для этого есть ссылка или QR-код, который ведёт на фишинговую страницу, где просят вход в банк, данные карты или ПИН-коды. Иногда за возврат просят небольшую плату. EMTA никогда не берёт плату за возврат, не вставляет в письма QR-коды и вложения и не спрашивает данные и ПИН-коды по почте, в сообщениях или по телефону.",
+    "en": "An email or message claims you have an income tax refund or overpayment and must confirm your details to receive it. There is a link or QR code leading to a phishing page that asks for your bank login, card details or PIN codes. Sometimes a small fee is asked for the refund. The Tax and Customs Board never charges for a refund, never puts QR codes or attachments in its letters and never asks for details or PIN codes by email, message or phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "\"EMTA\": teile kuulub maksutagastus.",
+        "ru": "«EMTA»: вам положен возврат налога.",
+        "en": "\"EMTA\": you are owed a tax refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Tagastuse saamiseks skaneerige QR-kood või avage link.",
+        "ru": "Чтобы получить возврат, отсканируйте QR-код или откройте ссылку.",
+        "en": "Scan the QR code or open the link to get the refund."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "et": "Tähtaeg on lühike.",
+        "ru": "Срок короткий.",
+        "en": "The deadline is short."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Sisestage kaardiandmed või PIN-koodid.",
+        "ru": "Введите данные карты или ПИН-коды.",
+        "en": "Enter your card details or PIN codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "et": "Maksu- ja Tolliamet teavitab: 2025. aasta tuludeklaratsiooni alusel on teile määratud tagastus 214,60 eurot. Väljamakse kinnitamiseks skaneerige allolev QR-kood ja valige oma pank. Kinnitamata summad kantakse riigieelarvesse 5 päeva pärast.",
+        "ru": "Налогово-таможенный департамент сообщает: по декларации о доходах за 2025 год вам назначен возврат 214,60 евро. Чтобы подтвердить выплату, отсканируйте QR-код ниже и выберите свой банк. Неподтверждённые суммы через 5 дней перечисляются в госбюджет.",
+        "en": "The Tax and Customs Board informs you: based on your 2025 income tax return you are due a refund of EUR 214.60. To confirm the payout, scan the QR code below and choose your bank. Unconfirmed amounts go to the state budget after 5 days."
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "maksu- ja tolliamet tulumaksu tagastus link",
+      "emta kiri maksutagastus qr kood",
+      "teile kuulub maksutagastus kinnitage",
+      "maksuamet küsib kaardiandmeid",
+      "tagastuse saamiseks valige oma pank",
+      "emta sõnum enammakse tagastus"
+    ],
+    "ru": [
+      "налоговый департамент возврат налога ссылка",
+      "письмо emta возврат qr код",
+      "вам положен возврат налога подтвердите",
+      "налоговая просит данные карты",
+      "для возврата выберите свой банк"
+    ],
+    "en": [
+      "tax and customs board refund link",
+      "emta email tax refund qr code",
+      "you are owed a tax refund confirm",
+      "tax office asks for card details",
+      "choose your bank to get refund"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "et": [
+      "Maksu- ja Tolliameti kirjades ei ole QR-koode ega manuseid.",
+      "Tagastuse eest küsitakse tasu või kaardiandmeid.",
+      "Kiri on vigases eesti keeles või asutuse nimi on vale."
+    ],
+    "ru": [
+      "В письмах EMTA не бывает QR-кодов и вложений.",
+      "За возврат просят плату или данные карты.",
+      "Письмо написано с ошибками или название департамента неправильное."
+    ],
+    "en": [
+      "Tax and Customs Board letters never contain QR codes or attachments.",
+      "A fee or card details are asked for the refund.",
+      "The message has poor Estonian or the agency's name is wrong."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Ära ava linki ega skaneeri QR-koodi. Logi e-maksuametisse ise ameti kodulehe kaudu.",
+      "Kahtluse korral võta ühendust Maksu- ja Tolliameti klienditoega, mitte kirjas toodud kontaktidel.",
+      "Saada petukiri CERT-EE-le.",
+      "Kui andsid andmed, helista pangale, muuda Mobiil-ID PIN-koodid ja kustuta Smart-ID konto; teata politseile."
+    ],
+    "ru": [
+      "Не открывайте ссылку и не сканируйте QR-код. Входите в e-налоговую сами через сайт департамента.",
+      "При сомнении обратитесь в службу поддержки EMTA, а не по контактам из письма.",
+      "Перешлите письмо в CERT-EE.",
+      "Если отдали данные, звоните в банк, смените ПИН-коды Mobiil-ID и удалите Smart-ID; сообщите в полицию."
+    ],
+    "en": [
+      "Don't open the link or scan the QR code. Log in to e-Tax yourself via the agency's website.",
+      "If in doubt, contact the Tax and Customs Board's support, not the contacts in the message.",
+      "Forward the scam to CERT-EE.",
+      "If you gave details, call your bank, change your Mobile-ID PINs and delete the Smart-ID account; report to the police."
+    ]
+  },
+  "reportTo": [
+    "ee/cert-ee",
+    "ee/your-bank",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Kuidas ära tunda petukirju ja -kõnesid",
+      "publisher": "Maksu- ja Tolliamet",
+      "url": "https://www.emta.ee/eraklient/e-teenused-maksutarkus/nouanded/kuidas-tunda-ara-petukirju",
+      "date": "2026-09-22"
+    },
+    {
+      "title": "Cyberspace in 2025: a year of fraud",
+      "publisher": "Riigi Infosüsteemi Amet (RIA)",
+      "url": "https://www.ria.ee/en/cyberspace-2025-year-fraud",
+      "date": "2026-02-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

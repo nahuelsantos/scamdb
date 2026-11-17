@@ -1,0 +1,156 @@
+{
+  "id": "lv/kurjers-ierakstita-vestule-smart-id",
+  "country": "lv",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ru": "Звонок якобы от курьера Omniva или почтальона Latvijas Pasts",
+    "lv": "Zvans it kā no Omniva kurjera vai Latvijas Pasta pastnieka",
+    "en": "A call supposedly from an Omniva courier or a Latvijas Pasts postman"
+  },
+  "name": {
+    "ru": "«Вам заказное письмо из VSAA»: курьер просит персональный код и Smart-ID",
+    "lv": "«Jums ir ierakstīta vēstule no VSAA»: kurjers prasa personas kodu un Smart-ID",
+    "en": "'You have a registered letter from VSAA': the courier asks for your personal code and Smart-ID"
+  },
+  "how": {
+    "ru": "Звонит «курьер» или «почтальон», часто по-русски, и говорит, что для вас есть заказное письмо от госучреждения, например VSAA или даже VDD, и он сейчас его привезёт. Чтобы «зарегистрировать доставку», надо назвать персональный код, данные документа или подтвердить личность через Smart-ID. На самом деле мошенники через Smart-ID входят в ваш интернет-банк, а вскоре звонит «банк» или «полиция». Чтобы получить письмо, код Smart-ID не нужен; VSAA отправляет письма по почте или на e-адрес.",
+    "lv": "Zvana «kurjers» vai «pastnieks», bieži krieviski, un saka, ka jums ir ierakstīta vēstule no valsts iestādes, piemēram, VSAA vai pat VDD, un viņš to tūlīt atvedīs. Lai «reģistrētu piegādi», jānosauc personas kods, jāiesniedz dokumenta dati vai jāapstiprina identitāte Smart-ID. Patiesībā krāpnieki ar Smart-ID ielogojas jūsu internetbankā, un drīz zvana «banka» vai «policija». Lai saņemtu vēstuli, Smart-ID kods nav vajadzīgs; VSAA vēstules sūta pa pastu vai uz e-adresi.",
+    "en": "A 'courier' or 'postman' calls, often in Russian, and says a registered letter from a state agency such as VSAA or even the State Security Service is waiting and they will bring it now. To 'register the delivery' you must give your personal code or ID details, or confirm your identity with Smart-ID. In fact the scammers use Smart-ID to log in to your online bank, and a 'bank' or 'police' call soon follows. You never need a Smart-ID code to receive a letter; VSAA sends letters by post or to your official e-address."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Курьер: вам заказное письмо из VSAA.",
+        "lv": "Kurjers: jums ir ierakstīta vēstule no VSAA.",
+        "en": "Courier: you have a registered letter from VSAA."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Назовите персональный код, чтобы оформить доставку.",
+        "lv": "Nosauciet personas kodu, lai reģistrētu piegādi.",
+        "en": "Give your personal code to register the delivery."
+      }
+    },
+    {
+      "text": {
+        "ru": "Подтвердите личность в приложении Smart-ID.",
+        "lv": "Apstipriniet identitāti Smart-ID lietotnē.",
+        "en": "Confirm your identity in the Smart-ID app."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Сейчас вам позвонят из банка по поводу подозрительной операции.",
+        "lv": "Tūlīt jums piezvanīs no bankas par aizdomīgu darījumu.",
+        "en": "The bank will call you shortly about a suspicious transaction."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Добрый день, курьер Omniva. Для вас заказное письмо из VSAA, могу привезти сегодня. Чтобы оформить, продиктуйте, пожалуйста, ваш персональный код, и потом вам придёт запрос в Smart-ID – просто подтвердите его, это подпись о получении.",
+        "lv": "Labdien, Omniva kurjers. Jums ir ierakstīta vēstule no VSAA, šodien varu to atvest. Lai to noformētu, nosauciet, lūdzu, savu personas kodu, un tad jums atnāks pieprasījums Smart-ID – vienkārši apstipriniet to, tas ir paraksts par saņemšanu.",
+        "en": "Hello, Omniva courier here. There's a registered letter for you from VSAA and I can bring it today. To process it, please tell me your personal code, and then you'll get a Smart-ID request – just approve it, it's your signature for receipt."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонил курьер omniva сказал что пришло заказное письмо из vsaa",
+      "почтальон попросил продиктовать персональный код для письма",
+      "для получения письма надо было подтвердить smart-id",
+      "звонили насчёт письма от государственного учреждения и просили данные паспорта",
+      "курьер сказал что письмо из службы безопасности и спросил код",
+      "после звонка курьера позвонили из банка"
+    ],
+    "lv": [
+      "zvanīja omniva kurjers par ierakstītu vēstuli no vsaa",
+      "pastnieks lūdza nosaukt personas kodu vēstules piegādei",
+      "lai saņemtu vēstuli bija jāapstiprina smart-id",
+      "zvanīja par vēstuli no valsts iestādes un prasīja pases datus",
+      "pēc kurjera zvana piezvanīja no bankas"
+    ],
+    "en": [
+      "an omniva courier called about a registered letter from vsaa",
+      "a postman asked for my personal code to deliver a letter",
+      "i had to approve smart-id to receive a letter",
+      "they called about a letter from a state agency and asked for my passport details",
+      "after the courier called someone from the bank rang"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "ru": [
+      "Курьер или почтальон спрашивает персональный код, данные документа или Smart-ID.",
+      "Письмо якобы от VSAA, VDD или другого учреждения, хотя вы ничего не ждёте.",
+      "После этого звонка звонит «банк» или «полиция»."
+    ],
+    "lv": [
+      "Kurjers vai pastnieks prasa personas kodu, dokumenta datus vai Smart-ID.",
+      "Vēstule it kā no VSAA, VDD vai citas iestādes, bet jūs neko negaidāt.",
+      "Pēc šī zvana zvana «banka» vai «policija»."
+    ],
+    "en": [
+      "A courier or postman asks for your personal code, ID details or Smart-ID.",
+      "A letter supposedly from VSAA, the security service or another agency, though you expect nothing.",
+      "A 'bank' or 'police' call follows."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку. Для получения письма Smart-ID не нужен.",
+      "Проверьте отправления сами в приложении Latvijas Pasts или Omniva и в своём e-адресе.",
+      "Если подтвердили Smart-ID, сразу звоните в банк."
+    ],
+    "lv": [
+      "Nolieciet klausuli. Vēstules saņemšanai Smart-ID nav vajadzīgs.",
+      "Pārbaudiet sūtījumus pats Latvijas Pasta vai Omniva lietotnē un savā e-adresē.",
+      "Ja apstiprinājāt Smart-ID, nekavējoties zvaniet bankai."
+    ],
+    "en": [
+      "Hang up. You don't need Smart-ID to receive a letter.",
+      "Check your parcels yourself in the Latvijas Pasts or Omniva app and in your official e-address.",
+      "If you approved Smart-ID, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums",
+    "lv/cert-lv"
+  ],
+  "sources": [
+    {
+      "title": "“New Money Scam!” Residents of Riga Sound the Alarm - Scammers are “Delivering Letters” from the Government",
+      "publisher": "BB.LV",
+      "url": "https://en.bb.lv/article/our-latvia/2025/12/09/new-money-scam-residents-of-riga-sound-the-alarm-scammers-are-delivering-letters-from-the-government-80325",
+      "date": "2025-12-09"
+    },
+    {
+      "title": "Telefonkrāpnieki uzdodas par VSAA darbiniekiem – vilinot ar “pensiju pārrēķinu” izkrāpj datus",
+      "publisher": "LV portāls (VSAA paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/387851-telefonkrapnieki-uzdodas-par-vsaa-darbiniekiem-vilinot-ar-pensiju-parrekinu-izkrapj-datus-2026",
+      "date": "2026-03-26"
+    },
+    {
+      "title": "Krāpšana, kurā var zaudēt ne tikai naudu, bet arī jumtu virs galvas",
+      "publisher": "LV portāls («Luminor» paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/386424-krapsana-kura-var-zaudet-ne-tikai-naudu-bet-ari-jumtu-virs-galvas-2026",
+      "date": "2026-02-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

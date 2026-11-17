@@ -1,0 +1,169 @@
+{
+  "id": "ee/tervisekassa-huvitis-kone",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "et": "\"Tervisekassa\" või \"haigla\" töötaja telefonis",
+    "ru": "«Сотрудник» Больничной кассы или больницы по телефону",
+    "en": "A \"Health Insurance Fund\" or \"hospital\" employee, by phone"
+  },
+  "name": {
+    "et": "Tervisekassa või haigla kõne: kasutamata hüvitis, kinnita Smart-ID-ga",
+    "ru": "Звонок из Больничной кассы или больницы: неиспользованная компенсация, подтвердите через Smart-ID",
+    "en": "Health Insurance Fund or hospital call: unused benefit, confirm with Smart-ID"
+  },
+  "how": {
+    "et": "Helistaja esineb Tervisekassa töötajana ja räägib heas eesti keeles: sul on kasutamata hambaravihüvitis või muu soodustus, mis tuleb uude aastasse üle kanda, või on sul võlg tervishoiuteenuse eest. Teine variant: \"haigla\" teatab, et visiit tühistati või nihutati, või pakub lisaprotseduuri ja küsib makset. Selleks palutakse kinnitada päring Smart-ID või Mobiil-ID PIN-koodidega või logida sisse. Edasi suunatakse kõne sageli \"panga turvaosakonda\". PIN-koodidega pääsevad kelmid su pangakontole ja raha liigub sekunditega mitme konto kaudu välismaale.",
+    "ru": "Звонящий представляется сотрудником Больничной кассы и хорошо говорит по-эстонски: у вас неиспользованная компенсация за лечение зубов или другая льгота, которую нужно перенести на новый год, или у вас долг за медицинскую услугу. Другой вариант: «больница» сообщает, что приём отменён или перенесён, или предлагает дополнительную процедуру и просит оплату. Для этого нужно подтвердить запрос ПИН-кодами Smart-ID или Mobiil-ID или войти в систему. Потом звонок часто переводят в «службу безопасности банка». С ПИН-кодами мошенники попадают на ваш счёт, и деньги за секунды уходят через несколько счетов за границу.",
+    "en": "The caller claims to be from the Health Insurance Fund and speaks good Estonian: you have an unused dental care benefit or another discount that must be moved to the new year, or you owe money for a health service. In another version a \"hospital\" says your appointment was cancelled or moved, or offers an extra procedure and asks for payment. To sort it out you are asked to confirm a request with your Smart-ID or Mobile-ID PIN codes or to log in. The call is then often passed to a \"bank security department\". With the PINs the scammers get into your bank account and the money moves through several accounts abroad within seconds."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "\"Tervisekassa\": teil on kasutamata hüvitis.",
+        "ru": "«Больничная касса»: у вас неиспользованная компенсация.",
+        "en": "\"Health Insurance Fund\": you have an unused benefit."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Hüvitis kaob, kui seda täna üle ei kanta.",
+        "ru": "Компенсация пропадёт, если не перенести её сегодня.",
+        "en": "The benefit is lost unless it is moved today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Kinnitage päring Smart-ID PIN-koodidega.",
+        "ru": "Подтвердите запрос ПИН-кодами Smart-ID.",
+        "en": "Confirm the request with your Smart-ID PIN codes."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "et": "Kõne suunatakse \"panga turvaosakonda\".",
+        "ru": "Звонок переводят в «службу безопасности банка».",
+        "en": "The call is passed to the \"bank security department\"."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "et": "Tere päevast, helistan Tervisekassast. Meie andmetel on teil selle aasta täiskasvanu hambaravi hüvitis kasutamata ja aasta lõpus see aegub. Saame selle teie nimele järgmisse aastasse tõsta, selleks tuleb teile praegu teavitus, palun sisestage seal oma PIN ja siis teise teavituse juures teine PIN.",
+        "ru": "Добрый день, звоню из Больничной кассы. По нашим данным, у вас не использована компенсация за лечение зубов для взрослых за этот год, и в конце года она сгорит. Мы можем перенести её на следующий год на ваше имя, для этого вам сейчас придёт уведомление, введите там свой ПИН, а во втором уведомлении второй ПИН.",
+        "en": "Good afternoon, I'm calling from the Health Insurance Fund. Our records show you haven't used this year's adult dental benefit and it expires at the end of the year. We can move it to next year in your name; you'll get a notification now, please enter your PIN there and then the second PIN at the second notification."
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "tervisekassa helistas kasutamata hüvitis",
+      "hambaravi hüvitis kinnita smart-id",
+      "tervisekassa kõne pin koodid",
+      "haiglast helistati visiit tühistatud",
+      "hüvitis kanda uude aastasse",
+      "eriarsti visiiditasu soodustus",
+      "haigla küsib operatsiooni eest makset",
+      "arsti vastuvõtt tühistati kinnita smart-id",
+      "haigla registratuur helistas pin koodid"
+    ],
+    "ru": [
+      "звонок из больничной кассы компенсация",
+      "компенсация за зубы подтвердить smart-id",
+      "звонят из больницы приём отменён",
+      "неиспользованная льгота перенести на следующий год",
+      "больничная касса просит пин коды"
+    ],
+    "en": [
+      "health insurance fund call unused benefit",
+      "dental compensation confirm smart-id",
+      "hospital call appointment cancelled",
+      "tervisekassa call pin codes",
+      "benefit moved to next year confirm"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "et": [
+      "Tervisekassa, haigla ega pank ei palu kunagi telefoni teel PIN-koode ega sisselogimist.",
+      "Kui kõne käigus tuleb PIN-koodidega midagi kinnitada, on see politsei sõnul sajaprotsendiline pettus.",
+      "Kõne suunatakse edasi \"panka\"."
+    ],
+    "ru": [
+      "Больничная касса, больница и банк никогда не просят по телефону ПИН-коды или вход в систему.",
+      "Если во время звонка нужно что-то подтвердить ПИН-кодами, это, по словам полиции, стопроцентный обман.",
+      "Звонок переводят в «банк»."
+    ],
+    "en": [
+      "The Health Insurance Fund, hospitals and banks never ask for PIN codes or a login over the phone.",
+      "If a call asks you to confirm something with PIN codes, the police call it 100% fraud.",
+      "The call is transferred to the \"bank\"."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Lõpeta kõne kohe ja ära sisesta PIN-koode.",
+      "Kontrolli oma hüvitisi ise riigiportaalis või helista Tervisekassale või haiglale nende ametlikul numbril.",
+      "Kui sisestasid PIN-koodi, helista kohe pangale ja kustuta Smart-ID konto.",
+      "Teata politseile veebis."
+    ],
+    "ru": [
+      "Сразу положите трубку и не вводите ПИН-коды.",
+      "Проверьте свои льготы сами на госпортале или позвоните в Больничную кассу или больницу по их официальному номеру.",
+      "Если ввели ПИН-код, сразу звоните в банк и удалите учётную запись Smart-ID.",
+      "Сообщите в полицию онлайн."
+    ],
+    "en": [
+      "Hang up straight away and don't enter any PINs.",
+      "Check your benefits yourself on the state portal or call the Fund or hospital on its official number.",
+      "If you entered a PIN, call your bank at once and delete the Smart-ID account.",
+      "Report it to the police online."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Situation in cyberspace – June 2026",
+      "publisher": "Riigi Infosüsteemi Amet (RIA)",
+      "url": "https://www.ria.ee/en/situation-cyberspace-june-2026",
+      "date": "2026-07-06"
+    },
+    {
+      "title": "Tervisekassat etendanud kelmid petsid maikuus välja 400 000 eurot",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1609713663/tervisekassat-etendanud-kelmid-petsid-maikuus-valja-400-000-eurot",
+      "date": "2025-06-04"
+    },
+    {
+      "title": "April in cyberspace: several people lost tens of thousands of euros to scammers",
+      "publisher": "Riigi Infosüsteemi Amet (RIA)",
+      "url": "https://www.ria.ee/en/news/april-cyberspace-several-people-lost-tens-thousands-euros-scammers",
+      "date": "2025-05-12"
+    },
+    {
+      "title": "Situation in cyberspace – May 2025",
+      "publisher": "Riigi Infosüsteemi Amet (RIA)",
+      "url": "https://www.ria.ee/en/situation-cyberspace-may-2025",
+      "date": "2025-06-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

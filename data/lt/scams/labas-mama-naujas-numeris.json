@@ -1,0 +1,121 @@
+{
+  "id": "lt/labas-mama-naujas-numeris",
+  "country": "lt",
+  "lang": "lt",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "lt": "„Sūnus“ ar „dukra“ iš nežinomo numerio",
+    "en": "A “son” or “daughter” from an unknown number"
+  },
+  "name": {
+    "lt": "„Labas, mama, čia mano naujas numeris“: vėliau prašo pinigų",
+    "en": "“Hi Mum, this is my new number”: later asks for money"
+  },
+  "how": {
+    "lt": "Iš nežinomo numerio ateina žinutė: „Labas, mama, čia mano naujas numeris, išsisaugok.“ Rašoma „sūnus“ ar „dukra“, be vardo. Pirmoje žinutėje nieko neprašoma, todėl žmogus numerį išsaugo vaiko vardu. Po kelių valandų ar dienų „vaikas“ rašo apie nelaimę arba prašo paskolinti nuomai, telefono sąskaitai ar skubiam mokėjimui ir atsiunčia svetimą sąskaitos numerį.",
+    "en": "A message arrives from an unknown number: “Hi Mum, this is my new number, save it.” It's signed “son” or “daughter”, with no name. The first message asks for nothing, so people save the number under their child's name. Hours or days later the “child” writes about an emergency, or asks to borrow money for rent, a phone bill or an urgent payment, and sends someone else's account number."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "„Labas, mama, čia mano naujas numeris, išsisaugok.“",
+        "en": "“Hi Mum, this is my new number, save it.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "lt": "Pasirašo „sūnus“ ar „dukra“, bet ne vardu.",
+        "en": "Signed “son” or “daughter”, not by name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Po kelių dienų: skubiai reikia sumokėti šiandien.",
+        "en": "Days later: something has to be paid urgently today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lt": "Prašo pervesti į draugo ar svetimą sąskaitą.",
+        "en": "Asks for a transfer to a friend's or someone else's account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "lt": "Labas mam, čia mano naujas numeris, senas telefonas sugedo. Išsisaugok šitą, rašyk čia. Gal galėtum šiandien pervesti 640 eurų už nuomą? Iš savo programėlės dar negaliu prisijungti, rytoj grąžinsiu. Sąskaitą atsiųsiu.",
+        "en": "Hi Mum, this is my new number, my old phone broke. Save this one and text me here. Could you transfer 640 euros for the rent today? I can't log in to my app yet, I'll pay you back tomorrow. I'll send the account."
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "labas mama čia mano naujas numeris",
+      "vaikas rašo iš naujo numerio prašo pinigų",
+      "žinutė išsisaugok mano naują numerį",
+      "sūnus pakeitė numerį ir prašo pervesti",
+      "dukra iš nežinomo numerio prašo paskolinti nuomai",
+      "sugedo telefonas rašau iš draugo"
+    ],
+    "en": [
+      "hi mum this is my new number",
+      "child texting from a new number asking for money",
+      "save my new number then asked to borrow",
+      "son changed number and wants a transfer",
+      "daughter from unknown number needs rent money"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "lt": [
+      "Naujas numeris ir netrukus – prašymas pinigų.",
+      "Pasirašo „sūnus“ ar „dukra“, o ne vardu, vengia skambučio.",
+      "Pinigus prašo pervesti į svetimą sąskaitą."
+    ],
+    "en": [
+      "A new number, followed soon by a request for money.",
+      "Signed “son” or “daughter” instead of a name, avoids calls.",
+      "Asks for money to be sent to someone else's account."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Paskambinkite vaikui senuoju numeriu arba paklauskite to, ką žino tik jis.",
+      "Neatsakinėkite ir užblokuokite sukčiaus numerį.",
+      "Jei pervedėte pinigų, nedelsdami skambinkite į banką ir praneškite policijai."
+    ],
+    "en": [
+      "Call your child on the old number, or ask something only they would know.",
+      "Don't reply; block the scammer's number.",
+      "If you sent money, call your bank at once and tell the police."
+    ]
+  },
+  "reportTo": [
+    "lt/your-bank",
+    "lt/policija"
+  ],
+  "sources": [
+    {
+      "title": "„Labas, mama“ atakos grįžo nauju formatu: sukčiai prašo išsisaugoti naują vaiko telefono numerį",
+      "publisher": "LRT (Telia pranešimas)",
+      "url": "https://www.lrt.lt/naujienos/mokslas-ir-it/11/2127030/labas-mama-atakos-grizo-nauju-formatu-sukciai-praso-issisaugoti-nauja-vaiko-telefono-numeri",
+      "date": "2023-11-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

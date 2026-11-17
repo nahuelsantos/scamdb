@@ -1,0 +1,134 @@
+{
+  "id": "lt/vmi-permoka-bauda",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "lt": "„VMI“ arba „Valstybinė mokesčių inspekcija“ SMS ar el. laiške",
+    "en": "“VMI” (State Tax Inspectorate) in a text or email"
+  },
+  "name": {
+    "lt": "Netikra VMI žinutė: „permoka“ ar „bauda“ su nuoroda",
+    "en": "Fake VMI message: a “tax refund” or “fine” with a link"
+  },
+  "how": {
+    "lt": "Sukčiai siunčia SMS ir el. laiškus Valstybinės mokesčių inspekcijos vardu: jums priklauso mokesčių permoka arba paskirta bauda, o informaciją reikia „pasitikrinti“ ar „patvirtinti“ per nuorodą. Puslapis primena VMI ar banko svetainę ir prašo prisijungti per interneto banką ar suvesti kortelės duomenis. VMI pabrėžia, kad nesiunčia SMS su nuorodomis ir konkrečiomis mokesčių, permokų ar baudų sumomis – tai matyti tik prisijungus prie Mano VMI.",
+    "en": "Scammers send texts and emails in the name of the State Tax Inspectorate: you are owed a tax refund or have been fined, and you need to “check” or “confirm” it through a link. The page imitates VMI's or a bank's site and asks you to log in with online banking or enter card details. VMI stresses that it does not send texts with links and specific tax, refund or fine amounts – those are only visible after logging in to Mano VMI."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "Žinutė „iš VMI“: jums priklauso permoka arba paskirta bauda.",
+        "en": "A message “from VMI”: you're owed a refund or have been fined."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Nuoroda permokai atsiimti ar baudai peržiūrėti.",
+        "en": "A link to claim the refund or view the fine."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "lt": "Terminas: atsiimkite per kelias dienas.",
+        "en": "A deadline: claim within a few days."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lt": "Prašo prisijungti per interneto banką ir patvirtinti „Smart-ID“.",
+        "en": "It asks you to log in through online banking and confirm with Smart-ID."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "lt": "Valstybinė mokesčių inspekcija informuoja: perskaičiavus 2025 m. pajamų deklaraciją, Jums grąžintina 286,40 EUR permoka. Kad lėšos būtų pervestos, per 3 darbo dienas patvirtinkite banko sąskaitą elektroninėje sistemoje: [nuoroda]",
+        "en": "The State Tax Inspectorate informs you: after recalculating your 2025 income declaration, a refund of 286.40 EUR is due to you. To have the money transferred, confirm your bank account in the electronic system within 3 working days: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "vmi žinutė apie permoką su nuoroda",
+      "mokesčių permoka atsiimti paspauskite",
+      "laiškas iš mokesčių inspekcijos prašo patvirtinti sąskaitą",
+      "vmi vardu sms apie baudą",
+      "grąžintina permoka prisijungti per banką",
+      "netikra mano vmi svetainė",
+      "pajamų mokesčio permoka grąžinama",
+      "metinės deklaracijos permoka patvirtinti tapatybę"
+    ],
+    "en": [
+      "tax refund message from vmi with a link",
+      "fake tax inspectorate email",
+      "vmi text about a fine",
+      "claim tax overpayment link asked for bank login",
+      "fake mano vmi page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "lt": [
+      "VMI nesiunčia SMS su nuorodomis ir konkrečiomis permokų ar baudų sumomis.",
+      "Permoka grąžinama per Mano VMI, o ne per nuorodą laiške.",
+      "Nuoroda, kuri veda ne į oficialią VMI svetainę."
+    ],
+    "en": [
+      "VMI doesn't send texts with links and specific refund or fine amounts.",
+      "Refunds are claimed in Mano VMI, not through a link in a message.",
+      "A link that doesn't lead to VMI's official website."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Nespauskite nuorodos. Permokas ir sumas tikrinkite patys, prisijungę prie Mano VMI ar EDS.",
+      "Persiųskite žinutės ekrano nuotrauką VMI ir NKSC.",
+      "Jei suvedėte banko duomenis, skambinkite į banką ir praneškite policijai."
+    ],
+    "en": [
+      "Don't tap the link. Check refunds and amounts yourself by logging in to Mano VMI or EDS.",
+      "Send a screenshot of the message to VMI and NKSC.",
+      "If you entered bank details, call your bank and tell the police."
+    ]
+  },
+  "reportTo": [
+    "lt/vmi",
+    "lt/nksc",
+    "lt/your-bank",
+    "lt/policija"
+  ],
+  "sources": [
+    {
+      "title": "VMI perspėja gyventojus: neatidarykite šių nuorodų",
+      "publisher": "15min",
+      "url": "https://www.15min.lt/verslas/naujiena/finansai/vmi-perspeja-gyventojus-neatidarykite-siu-nuorodu-662-2751336",
+      "date": "2026-08-27"
+    },
+    {
+      "title": "Iš VMI – skubi žinia gyventojams: įspėkite ir kitus",
+      "publisher": "tv3.lt",
+      "url": "https://www.tv3.lt/naujiena/verslas/is-vmi-skubi-zinia-gyventojams-ispekite-ir-kitus-n1546848",
+      "date": "2026-08-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "lt/netikra-bauda-sms"
+  ]
+}

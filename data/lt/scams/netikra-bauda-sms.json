@@ -1,0 +1,133 @@
+{
+  "id": "lt/netikra-bauda-sms",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "lt": "„e. policija“, „Regitra“, parkavimo bendrovė ar kelių institucija SMS žinutėje",
+    "en": "“e-policija”, “Regitra”, a parking company or a roads agency in a text"
+  },
+  "name": {
+    "lt": "Netikra SMS apie nesumokėtą baudą: „sumokėkite per nuorodą“",
+    "en": "Fake text about an unpaid fine: “pay through the link”"
+  },
+  "how": {
+    "lt": "Gaunate SMS neva iš e. policijos ar kitos institucijos: jums paskirta administracinė bauda, nesumokėta už stovėjimą ar vinjetę, o jei nesumokėsite iš karto, suma padidės. Nuoroda veda į netikrą puslapį, kuriame prašoma pasirinkti banką ir suvesti interneto banko ar kortelės duomenis. Tada sukčiai prisijungia prie jūsų sąskaitos ir išsiima pinigus. 2026 m. policija pranešė apie žmones, šitaip praradusius nuo kelių iki 40 tūkst. eurų.",
+    "en": "You get a text supposedly from e-policija or another agency: you've been given an administrative fine, or haven't paid for parking or a road vignette, and the amount will rise unless you pay at once. The link leads to a fake page asking you to pick your bank and enter your online banking or card details. The scammers then log in to your account and take the money. In 2026 police reported people losing from a few thousand up to 40,000 euros this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "SMS „iš e. policijos“: jums paskirta bauda.",
+        "en": "A text “from e-policija”: you've been fined."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Sumokėkite šiandien, kitaip bauda padidės.",
+        "en": "Pay today or the fine goes up."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lt": "Nuoroda į „mokėjimo“ puslapį.",
+        "en": "A link to a “payment” page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "lt": "Puslapis prašo interneto banko prisijungimo ir „Smart-ID“ patvirtinimo.",
+        "en": "The page asks for your online banking login and Smart-ID confirmation."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "lt": "E-POLICIJA: Jums skirta administracinė nuobauda 48 EUR (greičio viršijimas). Nesumokėjus per 24 val. suma bus padidinta ir perduota antstoliams. Peržiūrėti ir sumokėti: [nuoroda]",
+        "en": "E-POLICIJA: You have been issued an administrative fine of 48 EUR (speeding). If not paid within 24 hours the amount will be increased and passed to bailiffs. View and pay: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "sms dėl nesumokėtos baudos",
+      "žinutė iš e policijos su nuoroda",
+      "paspaudžiau nuorodą dėl baudos ir suvedžiau banko duomenis",
+      "administracinė nuobauda sumokėti per nuorodą",
+      "bauda už stovėjimą sms žinute",
+      "neva bauda už vinjetę",
+      "bauda padidės jei nesumokėsite šiandien"
+    ],
+    "en": [
+      "text about an unpaid fine with a link",
+      "fake e-policija fine message",
+      "paid a fine through a link and lost money",
+      "parking fine text asked for bank login",
+      "road vignette fine sms"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "lt": [
+      "Institucijos nesiunčia baudų su nuorodomis apmokėti per SMS.",
+      "Grasinimas, kad suma padidės per kelias valandas, – spaudimo triukas.",
+      "Jei puslapis prašo interneto banko prisijungimo vien baudai pamatyti – tai apgaulė."
+    ],
+    "en": [
+      "Agencies don't send fines with payment links by text.",
+      "Threats that the amount will rise within hours are a pressure tactic.",
+      "If a page asks for your bank login just to see a fine, it's a scam."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Nespauskite nuorodos. Baudas tikrinkite patys oficialiose institucijų sistemose, prisijungę ne per nuorodą.",
+      "Jei suvedėte banko duomenis, nedelsdami skambinkite į banką ir užblokuokite prieigą.",
+      "Persiųskite žinutę NKSC, o apie nuostolius praneškite policijai per e. policiją."
+    ],
+    "en": [
+      "Don't tap the link. Check fines yourself in the agencies' official systems, without using the link.",
+      "If you entered your bank details, call your bank at once and block access.",
+      "Forward the text to NKSC and report any loss to the police through e-policija."
+    ]
+  },
+  "reportTo": [
+    "lt/nksc",
+    "lt/your-bank",
+    "lt/policija"
+  ],
+  "sources": [
+    {
+      "title": "Sukčiai iš gyventojų ir įmonės apgaule išviliojo apie 85,2 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/3077046/sukciai-is-gyventoju-ir-imones-apgaule-isviliojo-apie-85-2-tukst-euru",
+      "date": "2026-10-09"
+    },
+    {
+      "title": "Sukčiai iš senjorės Vilniuje išviliojo 114 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2978043/sukciai-is-senjores-vilniuje-isviliojo-114-tukst-euru",
+      "date": "2026-07-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "lt/vmi-permoka-bauda",
+    "lt/netikra-banko-svetaine"
+  ]
+}

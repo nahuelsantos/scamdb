@@ -1,0 +1,149 @@
+{
+  "id": "ee/libatrahv-politsei-sms",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "et": "\"Politsei\" SMS-is",
+    "ru": "«Полиция» в СМС",
+    "en": "\"Police\" by text"
+  },
+  "name": {
+    "et": "Libatrahv politsei nimel: kiiruseületamine, 50% soodustus 24 tunni jooksul",
+    "ru": "Фальшивый штраф от «полиции»: превышение скорости, скидка 50% в течение 24 часов",
+    "en": "Fake police fine: speeding, 50% off if paid within 24 hours"
+  },
+  "how": {
+    "et": "Sõnum näib tulevat politseilt: sind tabati kiiruseületamiselt ja trahv tuleb kohe tasuda. Kui maksad 24 tunni jooksul, saad 50% soodustust, vastasel juhul ähvardatakse karmima karistuse või arestiga. Sind palutakse vastata \"jah\" või \"1\": see paneb telefoni saatjat usaldama ja blokeeritud link muutub klikitavaks. Link viib makse- või õngitsuslehele, mille aadressis on küll sõna \"politsei\", aga see ei ole politsei leht.",
+    "ru": "Сообщение вроде бы от полиции: вас зафиксировали за превышение скорости, штраф нужно оплатить сразу. Если заплатите в течение 24 часов, получите скидку 50%, иначе грозят более строгим наказанием или арестом. Вас просят ответить «да» или «1»: тогда телефон начинает доверять отправителю и заблокированная ссылка становится кликабельной. Ссылка ведёт на платёжную или фишинговую страницу, в адресе которой есть слово «politsei», но это не сайт полиции.",
+    "en": "A text seems to come from the police: you were caught speeding and the fine must be paid now. Pay within 24 hours and you get 50% off; otherwise you are threatened with a harsher penalty or arrest. You are asked to reply \"jah\" (yes) or \"1\": that makes the phone trust the sender so a blocked link becomes clickable. The link leads to a payment or phishing page whose address contains the word \"politsei\" but is not the police site."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "\"Politsei\": teid tabati kiiruseületamiselt.",
+        "ru": "«Полиция»: вы превысили скорость.",
+        "en": "\"Police\": you were caught speeding."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Makske 24 tunni jooksul ja saate 50% soodustust, muidu arest.",
+        "ru": "Оплатите в течение 24 часов со скидкой 50%, иначе арест.",
+        "en": "Pay within 24 hours for 50% off, or face arrest."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Vastake \"jah\", et link avaneks.",
+        "ru": "Ответьте «да», чтобы открылась ссылка.",
+        "en": "Reply \"yes\" so the link opens."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "et": "Makske trahv kaardiga lingi kaudu.",
+        "ru": "Оплатите штраф картой по ссылке.",
+        "en": "Pay the fine by card via the link."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "et": "PPA: Teie sõidukiga ületati lubatud sõidukiirust 21 km/h. Tasudes ööpäeva jooksul, väheneb summa poole võrra. Lingi aktiveerimiseks vastake sellele sõnumile numbriga 1. [link]",
+        "ru": "PPA: Ваш автомобиль превысил разрешённую скорость на 21 км/ч. При оплате в течение суток сумма уменьшается вдвое. Чтобы активировать ссылку, ответьте на это сообщение цифрой 1. [ссылка]",
+        "en": "PPA: Your vehicle exceeded the speed limit by 21 km/h. If paid within a day, the amount is halved. To activate the link, reply to this message with 1. [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "politsei sõnum kiiruseületamine trahv",
+      "trahv poole soodsam 24 tunni jooksul",
+      "vasta jah et link avada",
+      "kiiruseületamise trahv maksa lingilt",
+      "trahvi tasumata arest",
+      "ppa sms trahv soodustus"
+    ],
+    "ru": [
+      "смс от полиции штраф за превышение скорости",
+      "скидка 50 процентов на штраф 24 часа",
+      "ответьте да чтобы открыть ссылку",
+      "оплатить штраф по ссылке",
+      "неоплаченный штраф арест"
+    ],
+    "en": [
+      "police text speeding fine",
+      "fine 50 percent discount within 24 hours",
+      "reply yes to open the link",
+      "pay speeding fine via link",
+      "unpaid fine arrest threat"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "et": [
+      "Politsei ei paku kiire tasumise eest soodustust.",
+      "Sind palutakse vastata \"jah\" või \"1\", et link tööle hakkaks.",
+      "Ähvardus arestiga ja 24-tunnine tähtaeg."
+    ],
+    "ru": [
+      "Полиция не даёт скидок за быструю оплату.",
+      "Вас просят ответить «да» или «1», чтобы ссылка заработала.",
+      "Угроза арестом и срок 24 часа."
+    ],
+    "en": [
+      "The police do not give discounts for quick payment.",
+      "You are asked to reply \"yes\" or \"1\" so the link works.",
+      "A threat of arrest and a 24-hour deadline."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Ära vasta sõnumile, ka mitte \"jah\" või \"1\", ja ära ava linki.",
+      "Kustuta sõnum ja märgi see rämpsuks.",
+      "Kui sisestasid kaardiandmed, sulge kaart pangas.",
+      "Saada sõnum CERT-EE-le."
+    ],
+    "ru": [
+      "Не отвечайте на сообщение, даже «да» или «1», и не открывайте ссылку.",
+      "Удалите сообщение и отметьте его как спам.",
+      "Если ввели данные карты, заблокируйте карту в банке.",
+      "Перешлите сообщение в CERT-EE."
+    ],
+    "en": [
+      "Don't reply, not even \"yes\" or \"1\", and don't open the link.",
+      "Delete the message and mark it as spam.",
+      "If you entered card details, block the card with your bank.",
+      "Forward the message to CERT-EE."
+    ]
+  },
+  "reportTo": [
+    "ee/cert-ee",
+    "ee/your-bank",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "TRAHV VÕI AREST? ⟩ Veebipolitseinik hoiatab uue petuskeemi eest",
+      "publisher": "Postimees (ELU24)",
+      "url": "https://elu24.postimees.ee/8583667/trahv-voi-arest-veebipolitseinik-hoiatab-uue-petuskeemi-eest-muidugi-kellele-ei-meeldiks-joulueelsel-ajal-sooduspakkumised-aga",
+      "date": "2026-11-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

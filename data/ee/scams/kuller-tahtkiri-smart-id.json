@@ -1,0 +1,162 @@
+{
+  "id": "ee/kuller-tahtkiri-smart-id",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "et": "\"Omniva, DPD või muu kulleri\" töötaja telefonis",
+    "ru": "«Курьер» Omniva, DPD или другой службы доставки по телефону",
+    "en": "A \"courier\" from Omniva, DPD or another delivery company, by phone"
+  },
+  "name": {
+    "et": "Kuller helistab: tähtkiri ootab, kinnita isik Smart-ID-ga",
+    "ru": "Звонит «курьер»: заказное письмо, подтвердите личность через Smart-ID",
+    "en": "A \"courier\" calls: a registered letter is waiting, confirm your identity with Smart-ID"
+  },
+  "how": {
+    "et": "Helistaja ütleb, et ta on kuller ja sulle on tulnud tähtkiri või saadetis, näiteks kohtust või Maksu- ja Tolliametist. Kättetoimetamise kiirendamiseks peab isiku \"tuvastama\": telefoni tuleb Smart-ID või Mobiil-ID päring ja sind palutakse sisestada PIN-koodid või öelda saadetud kood. Tegelikult logivad kelmid nii sinu internetipanka. Sageli helistab mõne minuti pärast \"panga turvaosakond\" või \"politsei\" ja pettus jätkub. Saadetist ei olegi.",
+    "ru": "Звонящий говорит, что он курьер и для вас пришло заказное письмо или посылка, например из суда или из Налогово-таможенного департамента. Чтобы ускорить доставку, нужно «подтвердить личность»: на телефон приходит запрос Smart-ID или Mobiil-ID, и вас просят ввести ПИН-коды или назвать присланный код. На самом деле так мошенники входят в ваш интернет-банк. Часто через несколько минут звонит «служба безопасности банка» или «полиция», и обман продолжается. Никакой посылки нет.",
+    "en": "The caller says they are a courier and a registered letter or parcel has arrived for you, for example from a court or the Tax and Customs Board. To speed up delivery your identity must be \"verified\": a Smart-ID or Mobile-ID request appears on your phone and you are asked to enter your PIN codes or read out a code. In reality this logs the scammers into your internet bank. Often a \"bank security department\" or \"police\" calls a few minutes later and the scam continues. There is no parcel."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "Kõne: teile on tähtkiri, kuller toob selle täna.",
+        "ru": "Звонок: для вас заказное письмо, курьер привезёт сегодня.",
+        "en": "A call: there is a registered letter for you, the courier brings it today."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Enne kättetoimetamist tuleb isik kiiresti tuvastada.",
+        "ru": "Перед доставкой нужно быстро подтвердить личность.",
+        "en": "Your identity must be verified quickly before delivery."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Sisestage Smart-ID PIN või öelge saabunud kood.",
+        "ru": "Введите ПИН Smart-ID или назовите пришедший код.",
+        "en": "Enter your Smart-ID PIN or read out the code you got."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "et": "Kohe helistab \"pank\" või \"politsei\" ja hoiab sind liinil.",
+        "ru": "Сразу звонит «банк» или «полиция» и не даёт положить трубку.",
+        "en": "Straight away the \"bank\" or \"police\" calls and keeps you on the line."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "et": "Tere, helistan pakiteenusest. Teile on saabunud tähitud kiri riigiasutuselt ja kuller saaks selle juba tunni aja pärast ära tuua. Et me õigele inimesele annaksime, saadan teile praegu tuvastuspäringu, palun kinnitage see oma koodidega, see võtab ainult hetke.",
+        "ru": "Здравствуйте, звоню из службы доставки. На ваше имя пришло заказное письмо от государственного учреждения, курьер может привезти его уже через час. Чтобы мы вручили его нужному человеку, я сейчас отправлю вам запрос на идентификацию, пожалуйста, подтвердите его своими кодами, это займёт секунду.",
+        "en": "Hello, I'm calling from the parcel service. A registered letter from a state agency has arrived for you and the courier could bring it within the hour. So that we hand it to the right person, I'm sending you an identification request now, please confirm it with your codes, it only takes a moment."
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "kuller helistas tähtkiri",
+      "kuller palub smart-id kinnitada",
+      "tähitud kiri isikut tuvastada",
+      "omniva kuller küsib pin koode",
+      "dpd kuller helistab pin1 pin2",
+      "saadetis kohtust kinnitage kood",
+      "kulleri kõne mobiil-id tuvastus"
+    ],
+    "ru": [
+      "курьер звонит заказное письмо",
+      "курьер просит подтвердить smart-id",
+      "заказное письмо подтвердить личность пин",
+      "звонок от omniva ввести пин коды",
+      "посылка из суда подтвердить код"
+    ],
+    "en": [
+      "courier call registered letter smart-id",
+      "courier asks for pin codes",
+      "confirm identity by phone for delivery",
+      "omniva courier call pin",
+      "parcel from court confirm code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "et": [
+      "Kuller ei tuvasta kedagi telefoni teel: isikut kontrollitakse dokumendiga üleandmisel.",
+      "Kõne ajal tulev Smart-ID või Mobiil-ID päring, mida sa ise ei algatanud.",
+      "Varsti järgneb teine kõne \"pangast\" või \"politseist\"."
+    ],
+    "ru": [
+      "Курьер не проверяет личность по телефону: документ смотрят при вручении.",
+      "Запрос Smart-ID или Mobiil-ID во время звонка, который вы сами не начинали.",
+      "Вскоре следует второй звонок «из банка» или «из полиции»."
+    ],
+    "en": [
+      "A courier never verifies identity by phone: your ID document is checked at handover.",
+      "A Smart-ID or Mobile-ID request during the call that you did not start yourself.",
+      "A second call from the \"bank\" or \"police\" follows soon."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Lõpeta kõne. Ära sisesta PIN-koode ega ütle koode, ükskõik kui veenev helistaja on.",
+      "Kontrolli saadetist ise kulleri ametlikus äpis või kodulehel.",
+      "Kui juba sisestasid PIN-koodi, helista kohe oma pangale, kustuta Smart-ID konto ja muuda Mobiil-ID PIN-koodid.",
+      "Teata politseile veebis."
+    ],
+    "ru": [
+      "Положите трубку. Не вводите ПИН-коды и не называйте коды, как бы убедительно ни говорил звонящий.",
+      "Проверьте посылку сами в официальном приложении или на сайте службы доставки.",
+      "Если уже ввели ПИН-код, сразу звоните в банк, удалите учётную запись Smart-ID и смените ПИН-коды Mobiil-ID.",
+      "Сообщите в полицию онлайн."
+    ],
+    "en": [
+      "Hang up. Never enter PIN codes or read out codes, however convincing the caller is.",
+      "Check the parcel yourself in the courier's official app or website.",
+      "If you already entered a PIN, call your bank at once, delete the Smart-ID account and change your Mobile-ID PINs.",
+      "Report it to the police online."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/police-report",
+    "ee/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Omniva warns against scam calls: couriers never ask customers to verify their identity by phone using PIN codes – scammers do",
+      "publisher": "Omniva",
+      "url": "https://www.omniva.ee/en/news/omniva-warns-against-scam-calls-couriers-never-ask-customers-to-verify-their-identity-by-phone-using-pin-codes/",
+      "date": "2026-03-20"
+    },
+    {
+      "title": "Kelmid petsid Eesti elanikelt poole aastaga välja 13,2 miljonit eurot",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1610109475/kelmid-petsid-eesti-elanikelt-poole-aastaga-valja-13-2-miljonit-eurot",
+      "date": "2026-08-13"
+    },
+    {
+      "title": "За сутки мошенники обманули жителей Эстонии на 150 тысяч евро",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8369497/za-sutki-moshenniki-obmanuli-zhiteley-estonii-na-150-tysyach-evro",
+      "date": "2025-11-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

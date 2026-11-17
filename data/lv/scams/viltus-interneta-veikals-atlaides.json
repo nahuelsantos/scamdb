@@ -1,0 +1,144 @@
+{
+  "id": "lv/viltus-interneta-veikals-atlaides",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "lv": "Reklāma sociālajos tīklos vai meklētājā, interneta veikals ar zināmu zīmolu",
+    "ru": "Реклама в соцсетях или поисковике, интернет-магазин с известным брендом",
+    "en": "An ad on social media or a search engine, an online shop using a known brand"
+  },
+  "name": {
+    "lv": "Viltus interneta veikals: pazīstams zīmols un neticamas atlaides",
+    "ru": "Фальшивый интернет-магазин: известный бренд и невероятные скидки",
+    "en": "Fake online shop: a known brand and unbelievable discounts"
+  },
+  "how": {
+    "lv": "Facebook, Instagram vai meklētāja reklāmā parādās veikals, kas izskatās tieši kā pazīstama zīmola vietne, bet ar milzīgām atlaidēm. Lapas adrese nedaudz atšķiras, atsauksmes un apraksti var būt mākslīgā intelekta veidoti. Pēc pasūtījuma prasa ievadīt kartes datus vai pārskaitīt naudu, bieži privātpersonai. Prece nepienāk vai atnāk lēts viltojums, bet kartes datus izmanto citiem pirkumiem.",
+    "ru": "В рекламе в Facebook, Instagram или поисковике появляется магазин, точь-в-точь как сайт известного бренда, но с огромными скидками. Адрес страницы немного отличается, отзывы и описания могут быть созданы искусственным интеллектом. После заказа просят ввести данные карты или перевести деньги, часто частному лицу. Товар не приходит или приходит дешёвая подделка, а данные карты используют для других покупок.",
+    "en": "An ad on Facebook, Instagram or a search engine shows a shop that looks exactly like a known brand's site but with huge discounts. The address differs slightly and reviews and descriptions may be AI-generated. After ordering you are asked for card details or a bank transfer, often to a private person. The goods never arrive or a cheap fake comes, and the card details are used for other purchases."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Reklāma: zināmā zīmola preces ar 70 % atlaidi.",
+        "ru": "Реклама: товары известного бренда со скидкой 70 %.",
+        "en": "Ad: a known brand's goods at 70% off."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "lv": "Akcija beidzas šovakar, palikuši pēdējie izmēri.",
+        "ru": "Акция заканчивается сегодня вечером, остались последние размеры.",
+        "en": "The sale ends tonight, last sizes left."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lv": "Apmaksājiet rēķinu ar pārskaitījumu vai ievadiet kartes datus.",
+        "ru": "Оплатите счёт переводом или введите данные карты.",
+        "en": "Pay the invoice by transfer or enter your card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "lv": "Tikai šodien! Oriģinālas pārgājienu jakas un apavi ar atlaidi līdz 75 % – noliktavas likvidācija. Bezmaksas piegāde uz Latviju, palikuši pēdējie izmēri: [saite]",
+        "ru": "Только сегодня! Оригинальные туристические куртки и обувь со скидкой до 75 % – ликвидация склада. Бесплатная доставка в Латвию, остались последние размеры: [ссылка]",
+        "en": "Today only! Original hiking jackets and shoes up to 75% off – warehouse clearance. Free delivery to Latvia, last sizes left: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "nopirku internetā ar lielu atlaidi bet prece nepienāca",
+      "veikals izskatījās kā īstais bet adrese bija cita",
+      "facebook reklāmā redzēju zīmola preces par pusi lētāk",
+      "rēķins bija jāapmaksā uz privātpersonas kontu",
+      "pēc pirkuma no kartes noņēma naudu citiem pirkumiem"
+    ],
+    "ru": [
+      "купил в интернете с большой скидкой но товар не пришёл",
+      "магазин выглядел как настоящий но адрес был другой",
+      "в рекламе в фейсбуке видел брендовые вещи в два раза дешевле",
+      "счёт надо было оплатить на счёт частного лица",
+      "после покупки с карты списали деньги за другие покупки"
+    ],
+    "en": [
+      "i bought online at a big discount but the goods never came",
+      "the shop looked like the real one but the address was different",
+      "i saw branded goods at half price in a facebook ad",
+      "the invoice had to be paid to a private person",
+      "after the purchase money was taken from my card for other purchases"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "lv": [
+      "Atlaides ir neticami lielas.",
+      "Adrese atšķiras no zīmola īstās adreses par burtu vai galotni.",
+      "Prasa maksāt ar pārskaitījumu privātpersonai."
+    ],
+    "ru": [
+      "Скидки невероятно большие.",
+      "Адрес отличается от настоящего адреса бренда на букву или окончание.",
+      "Просят оплатить переводом частному лицу."
+    ],
+    "en": [
+      "The discounts are unbelievably large.",
+      "The address differs from the brand's real one by a letter or ending.",
+      "You are asked to pay by transfer to a private person."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Ierakstiet veikala adresi pats un salīdziniet cenas citur.",
+      "Ja ievadījāt kartes datus, nekavējoties bloķējiet karti un zvaniet bankai.",
+      "Ziņojiet par viltus lapu CERT.LV un par zaudēto naudu policijai."
+    ],
+    "ru": [
+      "Наберите адрес магазина сами и сравните цены в других местах.",
+      "Если ввели данные карты, сразу заблокируйте карту и звоните в банк.",
+      "Сообщите о фальшивом сайте в CERT.LV, а о потерянных деньгах в полицию."
+    ],
+    "en": [
+      "Type the shop's address yourself and compare prices elsewhere.",
+      "If you entered card details, block the card and call your bank at once.",
+      "Report the fake site to CERT.LV and lost money to the police."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/cert-lv",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "Pazīstams zīmols, milzīgas atlaides, bet viltots veikals: kā krāpnieki apmāna pircējus",
+      "publisher": "LV portāls («Luminor» paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/396266-pazistams-zimols-milzigas-atlaides-bet-viltots-veikals-ka-krapnieki-apmana-pircejus-2026",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Perfekta mājaslapas kopija un milzu atlaides – krāpnieki upurus atrod arī ar mērķētām reklāmām",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/03.01.2026-perfekta-majaslapas-kopija-un-milzu-atlaides-krapnieki-upurus-atrod-ari-ar-merketam-reklamam.a626808/",
+      "date": "2026-01-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

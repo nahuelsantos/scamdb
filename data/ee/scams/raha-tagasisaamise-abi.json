@@ -1,0 +1,139 @@
+{
+  "id": "ee/raha-tagasisaamise-abi",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "et": "\"Advokaadibüroo\", \"eetiline häkker\" või \"rahatagastusteenus\"",
+    "ru": "«Юридическая фирма», «этичный хакер» или «служба возврата средств»",
+    "en": "A \"law firm\", \"ethical hacker\" or \"fund recovery service\""
+  },
+  "name": {
+    "et": "Raha tagasisaamise pettus: \"aitame petturitelt raha tagasi saada\"",
+    "ru": "Мошенничество с возвратом денег: «поможем вернуть деньги от мошенников»",
+    "en": "Recovery scam: \"we'll get your money back from the scammers\""
+  },
+  "how": {
+    "et": "Pärast pettust otsivad ohvrid internetist abi. Sponsoreeritud postitused ja reklaamid viivad \"advokaadibüroode\" või \"eetiliste häkkerite\" juurde, kes lubavad kaotatud raha tagasi tuua. Selleks tuleb maksta ette tasusid, makse või \"kindlustust\". Pärast maksmist küsitakse veel ja raha ei tule kunagi tagasi: inimene petetakse teist korda.",
+    "ru": "После обмана жертвы ищут помощь в интернете. Спонсируемые посты и реклама ведут к «юридическим фирмам» или «этичным хакерам», которые обещают вернуть потерянные деньги. Для этого нужно заранее оплатить комиссии, налоги или «страховку». После оплаты просят ещё, а деньги так и не возвращаются: человека обманывают второй раз.",
+    "en": "After a scam, victims search online for help. Sponsored posts and ads lead to \"law firms\" or \"ethical hackers\" who promise to get the lost money back. For that you must pay fees, taxes or \"insurance\" upfront. After you pay, they ask for more and the money never comes back: the victim is scammed a second time."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "Reklaam: tagastame petturitele kaotatud raha.",
+        "ru": "Реклама: вернём деньги, потерянные из-за мошенников.",
+        "en": "An ad: we recover money lost to scammers."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "et": "Esineb advokaadi või ametliku asutusena.",
+        "ru": "Представляется адвокатом или официальной организацией.",
+        "en": "Poses as a lawyer or official body."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Enne tagastust tuleb tasuda teenustasu.",
+        "ru": "Перед возвратом нужно оплатить комиссию.",
+        "en": "A fee must be paid before the refund."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "et": "Kaotasite raha võltsplatvormil? Meie juristide ja IT-uurijate meeskond on tagastanud klientidele juba üle miljoni euro. Esimene konsultatsioon tasuta, edu korral tasute vaid väikese protsendi. Kirjutage meile WhatsAppis: [link]",
+        "ru": "Потеряли деньги на фальшивой платформе? Наша команда юристов и IT-следователей уже вернула клиентам более миллиона евро. Первая консультация бесплатно, при успехе платите лишь небольшой процент. Пишите нам в WhatsApp: [ссылка]",
+        "en": "Lost money on a fake platform? Our team of lawyers and IT investigators has already returned over a million euros to clients. First consultation free, and if we succeed you pay only a small percentage. Message us on WhatsApp: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "aitame petturitelt raha tagasi saada",
+      "eetiline häkker tagastab raha",
+      "advokaadibüroo raha tagasinõudmine tasu",
+      "kaotatud raha tagasi ettemaks",
+      "petetud investorite raha tagastamine",
+      "raha tagasi platvormilt teenustasu"
+    ],
+    "ru": [
+      "поможем вернуть деньги от мошенников",
+      "этичный хакер вернёт деньги",
+      "юридическая фирма возврат денег предоплата",
+      "вернуть потерянные деньги за комиссию",
+      "возврат средств обманутым инвесторам"
+    ],
+    "en": [
+      "we help recover money from scammers",
+      "ethical hacker recovers funds",
+      "law firm fund recovery fee",
+      "get lost money back upfront fee",
+      "refund for scammed investors"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "et": [
+      "Keegi lubab kindlalt tuua tagasi raha, mis on juba krüptorahasse või välismaale liikunud.",
+      "Ette tuleb maksta tasu, maksu või kindlustust.",
+      "Pakkumine tuleb reklaamist, sotsiaalmeediast või ootamatult kõnena."
+    ],
+    "ru": [
+      "Кто-то уверенно обещает вернуть деньги, которые уже ушли в криптовалюту или за границу.",
+      "Нужно заранее заплатить комиссию, налог или страховку.",
+      "Предложение пришло из рекламы, соцсетей или неожиданным звонком."
+    ],
+    "en": [
+      "Someone promises for sure to recover money that has already gone into crypto or abroad.",
+      "You must pay a fee, tax or insurance upfront.",
+      "The offer comes from an ad, social media or an unexpected call."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Ära maksa kellelegi raha tagasisaamise eest.",
+      "Pöördu oma panga ja politsei poole; politsei ei küsi menetluse eest tasu.",
+      "Otsi tuge Ohvriabist."
+    ],
+    "ru": [
+      "Никому не платите за возврат денег.",
+      "Обращайтесь в свой банк и в полицию; полиция не берёт плату за расследование.",
+      "Обратитесь за поддержкой в службу помощи жертвам."
+    ],
+    "en": [
+      "Don't pay anyone to get your money back.",
+      "Go to your bank and the police; the police don't charge for an investigation.",
+      "Get support from Victim Support."
+    ]
+  },
+  "reportTo": [
+    "ee/police-report",
+    "ee/your-bank",
+    "ee/ohvriabi"
+  ],
+  "sources": [
+    {
+      "title": "Kelmid petsid Eesti elanikelt poole aastaga välja 13,2 miljonit eurot",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1610109475/kelmid-petsid-eesti-elanikelt-poole-aastaga-valja-13-2-miljonit-eurot",
+      "date": "2026-08-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

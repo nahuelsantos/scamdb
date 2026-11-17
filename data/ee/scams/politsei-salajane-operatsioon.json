@@ -1,0 +1,183 @@
+{
+  "id": "ee/politsei-salajane-operatsioon",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "et": "\"Panga turvaosakond\", seejärel \"politseiuurija\" telefonis",
+    "ru": "«Служба безопасности банка», затем «следователь полиции» по телефону",
+    "en": "The \"bank security department\", then a \"police investigator\", by phone"
+  },
+  "name": {
+    "et": "Salajane politseioperatsioon: \"päästa\" oma raha, anna sularaha või kaardid kullerile",
+    "ru": "Секретная операция полиции: «спасите» деньги, отдайте наличные или карты курьеру",
+    "en": "Secret police operation: \"save\" your money, hand cash or cards to a courier"
+  },
+  "how": {
+    "et": "Mitmeastmeline petukõne. Esmalt helistab \"panga turvaosakond\": keegi üritab sinu kontolt raha võtta või võtta sinu nimele laenu. Siis võtab üle \"politseinik\" ja ütleb, et sind kaasatakse salajasse operatsiooni, millest ei tohi kellelegi, ka pangatöötajatele, rääkida. Sind juhendatakse kandma raha \"turvalisele kontole\", võtma sularaha välja, müüma vara, andma sularaha, pangakaardid ja dokumendid kullerile või jätma need pakiautomaati, või paigaldama kaugjuhtimisprogrammi. Kõned kestavad päevi või nädalaid. Politsei on öelnud, et need skeemid põhjustavad suurima kahju ja helistatakse nii eesti kui vene keeles.",
+    "ru": "Многоэтапный мошеннический звонок. Сначала звонит «служба безопасности банка»: кто-то пытается снять деньги с вашего счёта или оформить на вас кредит. Затем трубку берёт «полицейский» и говорит, что вас привлекают к секретной операции, о которой нельзя говорить никому, даже сотрудникам банка. Вам велят перевести деньги на «безопасный счёт», снять наличные, продать имущество, отдать наличные, банковские карты и документы курьеру или оставить их в пакоавтомате, или установить программу удалённого доступа. Звонки длятся днями и неделями. Полиция говорит, что эти схемы приносят самый большой ущерб и звонят как на эстонском, так и на русском.",
+    "en": "A multi-stage scam call. First the \"bank security department\" calls: someone is trying to take money from your account or take a loan in your name. Then a \"police officer\" takes over and says you are being brought into a secret operation that you must not tell anyone about, not even bank staff. You are told to move money to a \"safe account\", withdraw cash, sell property, hand cash, bank cards and documents to a courier or leave them in a parcel locker, or install remote-access software. The calls go on for days or weeks. The police say these schemes cause the biggest losses and the calls come in both Estonian and Russian."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "\"Pank\" helistab: kurjategijad üritavad su kontolt raha võtta.",
+        "ru": "«Банк» звонит: преступники пытаются снять деньги с вашего счёта.",
+        "en": "The \"bank\" calls: criminals are trying to take money from your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "\"Politseinik\": see on salajane operatsioon, ära räägi kellelegi.",
+        "ru": "«Полицейский»: это секретная операция, никому не рассказывайте.",
+        "en": "\"Police officer\": this is a secret operation, don't tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "et": "Kõnet ei tohi katkestada, juhised tulevad samm-sammult.",
+        "ru": "Нельзя класть трубку, указания идут шаг за шагом.",
+        "en": "You must not hang up; instructions come step by step."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "et": "Kanna raha turvalisele kontole või anna sularaha ja kaardid kullerile.",
+        "ru": "Переведите деньги на безопасный счёт или отдайте наличные и карты курьеру.",
+        "en": "Move money to a safe account or hand cash and cards to a courier."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "et": "Paigalda programm, et \"politsei\" saaks su kontot kaitsta.",
+        "ru": "Установите программу, чтобы «полиция» могла защитить ваш счёт.",
+        "en": "Install an app so the \"police\" can protect your account."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "et": "Siin vanemkomissar Tamm keskkriminaalpolitseist. Panga turvaosakond edastas meile teie juhtumi: teie säästudele on ligi pääsenud rahvusvaheline grupeering ja kahtlustame, et neid aitab teie panga töötaja. Seepärast ei tohi te kontoris kellelegi midagi öelda. Võtke homme raha välja ja meie ametnik tuleb selle hoiule võtma, kuni uurimine kestab.",
+        "ru": "Говорит старший комиссар Тамм из центральной криминальной полиции. Служба безопасности банка передала нам ваше дело: к вашим сбережениям получила доступ международная группировка, и мы подозреваем, что ей помогает сотрудник вашего банка. Поэтому в отделении никому ничего не говорите. Завтра снимите деньги, и наш сотрудник приедет забрать их на хранение, пока идёт расследование.",
+        "en": "This is Senior Commissioner Tamm from the Central Criminal Police. The bank's security department passed your case to us: an international gang has got access to your savings and we suspect someone at your bank is helping them. So you must not say anything to anyone at the branch. Withdraw the money tomorrow and our officer will come to take it into safekeeping while the investigation runs."
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "politsei salajane operatsioon",
+      "panga turvaosakond helistas raha ohus",
+      "politseinik palub raha turvalisele kontole kanda",
+      "anna sularaha kullerile politsei",
+      "pane pangakaardid pakiautomaati",
+      "ärge rääkige kellelegi uurimisest",
+      "pangatöötaja aitab kurjategijaid",
+      "paigaldage anydesk politsei palvel"
+    ],
+    "ru": [
+      "секретная операция полиции",
+      "служба безопасности банка деньги в опасности",
+      "полиция просит перевести на безопасный счёт",
+      "передать наличные курьеру для полиции",
+      "никому не говорите о расследовании",
+      "оставить карты в пакоавтомате"
+    ],
+    "en": [
+      "secret police operation",
+      "bank security department call money at risk",
+      "police ask to move money to safe account",
+      "hand cash to courier for police",
+      "don't tell anyone about the investigation",
+      "leave bank cards in parcel locker"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "et": [
+      "Politsei ei kaasa inimesi salajastesse operatsioonidesse ega palu kunagi raha, kaarte ega PIN-koode.",
+      "Sind keelatakse rääkimast pangaga või lähedastega.",
+      "Politsei ei tegutse WhatsAppi videokõnes.",
+      "Sind kiirustatakse ja kõnet ei lasta lõpetada."
+    ],
+    "ru": [
+      "Полиция не привлекает людей к секретным операциям и никогда не просит деньги, карты или ПИН-коды.",
+      "Вам запрещают говорить с банком или близкими.",
+      "Полиция не работает через видеозвонки в WhatsApp.",
+      "Вас торопят и не дают закончить разговор."
+    ],
+    "en": [
+      "The police never bring people into secret operations or ask for money, cards or PIN codes.",
+      "You are told not to speak to your bank or family.",
+      "The police do not work through WhatsApp video calls.",
+      "You are rushed and not allowed to end the call."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Lõpeta kõne. Kui kahtled, pane telefon ära.",
+      "Helista ise 112 või oma pangale ametlikul numbril.",
+      "Ära anna kellelegi sularaha, kaarte ega dokumente ega jäta neid pakiautomaati.",
+      "Kui oled juba raha andnud, helista kohe pangale ja politseile; kui keegi on teel raha järele, helista 112.",
+      "Kui märkad, et lähedane järgib telefoni teel segaseid juhiseid, sekku rahulikult või teata politseile."
+    ],
+    "ru": [
+      "Положите трубку. Если сомневаетесь, заканчивайте разговор.",
+      "Сами позвоните 112 или в свой банк по официальному номеру.",
+      "Никому не отдавайте наличные, карты или документы и не оставляйте их в пакоавтомате.",
+      "Если уже отдали деньги, сразу звоните в банк и в полицию; если за деньгами кто-то едет, звоните 112.",
+      "Если видите, что близкий выполняет по телефону странные указания, спокойно вмешайтесь или сообщите в полицию."
+    ],
+    "en": [
+      "Hang up. If in any doubt, put the phone down.",
+      "Call 112 or your bank on its official number yourself.",
+      "Never hand cash, cards or documents to anyone or leave them in a parcel locker.",
+      "If you already handed over money, call your bank and the police at once; if someone is on the way to collect, call 112.",
+      "If you notice a relative following confusing instructions on the phone, step in calmly or tell the police."
+    ]
+  },
+  "reportTo": [
+    "ee/emergency-112",
+    "ee/your-bank",
+    "ee/police-report",
+    "ee/ohvriabi"
+  ],
+  "sources": [
+    {
+      "title": "Kelmustega tekitatud kahju on sel aastal vähenenud ligi nelja miljoni euro võrra",
+      "publisher": "Politsei- ja Piirivalveamet",
+      "url": "https://www.politsei.ee/et/uudised/kelmustega-tekitatud-kahju-on-sel-aastal-vaehenenud-ligi-nelja-miljoni-euro-vorra-13927",
+      "date": "2026-11-09"
+    },
+    {
+      "title": "Tähelepaneliku kodaniku sekkumine aitas pettusest hoiduda",
+      "publisher": "Politsei- ja Piirivalveamet",
+      "url": "https://www.politsei.ee/et/uudised/taehelepaneliku-kodaniku-sekkumine-aitas-pettusest-hoiduda-13922",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Pettuseohvrid usuvad politsei asemel sageli kelme",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1610127400/pettuseohvrid-usuvad-politsei-asemel-sageli-kelme",
+      "date": "2026-09-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}
