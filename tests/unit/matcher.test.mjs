@@ -484,3 +484,23 @@ test('1.16.0: Central American Spanish and Belizean English signs, and genuine n
   assert.ok(!has('Claro: tu factura ya está disponible. Monto a pagar C$650, vence el 25.', 'urgency'));
   assert.ok(has('Su factura vence el 25. Pague hoy mismo o se suspende el servicio', 'urgency'));
 });
+test('1.17.0: language blocks apply only for the check country\'s languages', async () => {
+  const { readSigns, compileSigns } = await import('../../packages/matcher/signs.js');
+  const { countryLangs } = await import('../../packages/matcher/index.js');
+  // German "TAN" no longer fires on Spanish "tan" ("so") in a Spanish-speaking country.
+  assert.ok(readSigns('hacía tiempo que no leía algo tan dulce').includes('asks_for_code'), 'unscoped: every block applies');
+  assert.ok(!readSigns('hacía tiempo que no leía algo tan dulce', ['es', 'en']).includes('asks_for_code'));
+  // A country's languages come from its entries, including the languages of their phrases.
+  const lv = countryLangs(entries, 'lv');
+  assert.ok(lv.includes('lv') && lv.includes('ru'));
+  assert.equal(countryLangs(entries, undefined), null);
+  // Related languages share blocks: Turkish rules for Azerbaijani, Bulgarian/Russian rules for Macedonian.
+  assert.ok(readSigns('sms ile gelen parola nedir', ['az', 'en']).includes('asks_for_code'));
+  assert.ok(!readSigns('sms ile gelen parola nedir', ['es', 'en']).includes('asks_for_code'));
+  assert.ok(compileSigns(['mk', 'en']).unknown_link.test(' линк '));
+  // Language-neutral patterns stay on everywhere.
+  assert.ok(compileSigns(['es', 'en']).money_request.test('envia al iban de la cuenta'));
+  // A scoped check still reads the country's own language.
+  // Latvia's entries carry Russian phrases, so Russian rules still apply there.
+  assert.ok(m('никому не говорите об этом звонке', { country: 'lv' }).signals.some((s) => s.id === 'secrecy'));
+});
