@@ -5,7 +5,9 @@ import { loadRepo } from '../../lib/load.js';
 
 const entries = loadRepo(new URL('../../', import.meta.url).pathname).entries;
 const m = (t, o) => matchMessage(t, entries, o);
-const top = (t) => m(t).matches[0]?.id;
+// These examples are Argentine; a real check is always scoped to the user's country, so scope them to Argentina
+// (other Spanish-speaking countries have their own parcel, bank and WhatsApp entries that may score as high).
+const top = (t) => m(t, { country: 'ar' }).matches[0]?.id;
 
 // Catalogue matching (ported from eschamuyo matcher.test.mjs)
 test('delivery call asking for a code matches WhatsApp code theft', () =>
