@@ -93,3 +93,12 @@ test('the private set is well-formed and the matcher stays above its floors on i
   assert.ok(x.caught >= 85, `private: scams caught ${x.caught}%`);
   assert.ok(x.falseScam <= 20, `private: safe called "scam" ${x.falseScam}%`);
 });
+
+test('the real-message set is well-formed: sourced, verbatim, no real links or numbers', async () => {
+  const { loadRealMessages, checkRealMessages } = await import('../../lib/eval.js');
+  const { loadRepo } = await import('../../lib/load.js');
+  const repoRoot = new URL('../../', import.meta.url).pathname;
+  const msgs = loadRealMessages(repoRoot);
+  const problems = checkRealMessages(msgs, new Set(loadRepo(repoRoot).entries.map((e) => e.id)));
+  assert.deepEqual(problems, []);
+});
