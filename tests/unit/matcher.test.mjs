@@ -518,3 +518,12 @@ test('1.18.0: code deliveries, back-of-card alerts and official warnings are not
   assert.ok(isWarningAbout('¿Te llegó ese mensaje? Déjalo en visto. Es un fraude. Nunca compartas tus claves ni aceptes transferencias por enlace'));
   assert.ok(!isWarningAbout('Es un fraude que tu cuenta esté bloqueada, entra aquí para resolverlo: [enlace]'));
 });
+test('1.18.0: penalty threats are urgency, refund bait asking for payment details is a money request', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  assert.ok(readSigns('Su sanción pasó a cobro jurídico. Cancela ahora y evita el decomiso de tus bienes', ['es']).includes('urgency'));
+  assert.ok(readSigns('NOTIFICAÇÃO EXTRAJUDICIAL. Suspensão da sua CNH em andamento. Evite sua restrição', ['pt']).includes('urgency'));
+  assert.ok(readSigns('È richiesto un suo contatto per evitare aggravamenti', ['it']).includes('urgency'));
+  assert.ok(readSigns('Reciba su devolución registrando una cuenta bancaria a su nombre', ['es']).includes('money_request'));
+  assert.ok(readSigns('Your refund was approved. Please provide accurate payment information', ['en']).includes('money_request'));
+  assert.ok(!readSigns('Te recomendamos evitar las horas pico para hacer tu trámite en la sucursal', ['es']).includes('urgency'));
+});
