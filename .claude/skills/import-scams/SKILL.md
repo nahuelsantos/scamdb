@@ -59,7 +59,16 @@ sources. Drop a candidate when:
 - `isDuplicate` (in `tools/importer.mjs`) finds it among the country's existing entries (same name or 3+ shared
   phrases): check with a quick script, or by reading `data/<cc>/scams/`;
 - `isRejected` finds it in `importer/rejected.json`;
-- it has no dated `https://` source you actually read.
+- it has no dated `https://` source you actually read;
+- no source ties it to **this country** (see below).
+
+**Local evidence.** Every entry needs at least one source showing the scam targets people in this country: a warning
+from a local authority, bank, company or regulator; a reported local case (victims, arrests, amounts); or a local
+outlet saying, with specifics, that it is happening there. These do **not** count, even on a local website: a
+translated global explainer (security vendors' blogs, "experts say"), a foreign case republished by a local outlet,
+or an article that only names the country in passing. If a scam is common worldwide but you find no local evidence,
+leave it out and list it under "dropped" in the summary. A re-check of 273 single-source entries found 6 that failed
+this test (`docs/progress.md`, 2026-11-17).
 
 Some official pages (for example New Zealand's Consumer Protection and Police scam pages) have no date. Use them to
 find which scams to look for and for advice, but every entry still needs at least one dated source from the last 5
@@ -85,6 +94,10 @@ Prefer the most widespread and most harmful scams. For each, write `data/<cc>/sc
 - Never invent cases, quotes, statistics or numbers. `story` only when a source describes a real case.
 
 ## 6. Validate
+
+Before validating, re-read each entry's sources against it, one by one: does the page describe this scam (same
+impersonation, same ask), show local evidence (above), and carry the date you cited? Fix the entry or drop it if not.
+An entry with one source rests entirely on it, so prefer two when the first is thin.
 
 Run `npm run validate` and `npm test`. Fix or drop entries that fail. Do not touch code to make data pass.
 
