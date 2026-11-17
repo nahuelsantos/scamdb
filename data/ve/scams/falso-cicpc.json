@@ -1,0 +1,131 @@
+{
+  "id": "ve/falso-cicpc",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Comisario del CICPC”",
+    "en": "“CICPC inspector”"
+  },
+  "name": {
+    "es": "Falso funcionario del CICPC: “usted está siendo investigado”",
+    "en": "Fake CICPC officer: “you are under investigation”"
+  },
+  "how": {
+    "es": "Te llama o escribe un supuesto comisario del CICPC, con la foto de una placa en el perfil. Te dice que estás siendo investigado, que estás involucrado en un caso o que tu teléfono fue clonado, para asustarte. Luego te pide un código que te llega al teléfono o datos, “para aclarar la situación”. Con ese código se meten en tu teléfono o en tus cuentas y piden plata a tus contactos haciéndose pasar por ti. El CICPC cita en persona y pide verificar en sus sedes.",
+    "en": "A supposed CICPC inspector calls or messages you, with a badge photo on the profile. They say you are under investigation, involved in a case or that your phone was cloned, to scare you. Then they ask for a code sent to your phone or for details, “to clear things up”. With that code they get into your phone or accounts and ask your contacts for money pretending to be you. CICPC summons people in person and asks that you check at its offices."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien dice ser comisario del CICPC, con foto de placa.",
+        "en": "Someone claims to be a CICPC inspector, with a badge photo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asusta: estás investigado o tu teléfono fue clonado.",
+        "en": "They scare you: you are under investigation or your phone was cloned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide no contarle a nadie mientras “aclaran” el caso.",
+        "en": "They tell you not to tell anyone while they “clear up” the case."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te pide el código que te llegó al teléfono.",
+        "en": "They ask for the code sent to your phone."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, le escribe el comisario Ramírez de la División de Delitos Informáticos del CICPC. Su línea aparece vinculada a una investigación por estafa. Para descartarlo debe enviarme el código que le va a llegar ahora por mensaje. Es confidencial, no lo comente con nadie.",
+        "en": "Hello, this is Inspector Ramírez from the CICPC Computer Crime Division. Your line appears linked to a fraud investigation. To rule it out you must send me the code that is about to arrive by text. This is confidential, don't discuss it with anyone."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamo un comisario del cicpc",
+      "dicen que estoy siendo investigado",
+      "dicen que clonaron mi linea",
+      "me pidieron un codigo para aclarar el caso",
+      "funcionario del cicpc por whatsapp",
+      "perfil con placa del cicpc",
+      "estoy involucrado en un caso",
+      "expediente abierto a mi nombre",
+      "inspector del cicpc me pidio un codigo"
+    ],
+    "en": [
+      "a police inspector called me",
+      "they say i am under investigation",
+      "my phone was cloned call",
+      "they asked for a code to clear my name",
+      "fake police officer on whatsapp",
+      "profile with a police badge"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un policía que te contacta por WhatsApp o llamada y te pide un código.",
+      "Te asustan con una investigación y te piden silencio.",
+      "El “funcionario” no te cita a una sede."
+    ],
+    "en": [
+      "A police officer who contacts you by WhatsApp or call and asks for a code.",
+      "They scare you with an investigation and ask you to keep quiet.",
+      "The “officer” does not summon you to an office."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y no des códigos ni datos.",
+      "Si te preocupa, ve tú a la sede del CICPC más cercana a verificar.",
+      "Denuncia el número en el CICPC y avisa a tus contactos si te tomaron alguna cuenta."
+    ],
+    "en": [
+      "Hang up and give no codes or details.",
+      "If you are worried, go to the nearest CICPC office yourself to check.",
+      "Report the number to CICPC and warn your contacts if any account was taken."
+    ]
+  },
+  "reportTo": [
+    "ve/cicpc",
+    "ve/whatsapp-ayuda"
+  ],
+  "sources": [
+    {
+      "title": "CICPC alertó sobre modalidad de estafa en la que delincuentes se hacen pasar por sus funcionarios",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/02/26/cicpc-alerto-sobre-modalidad-estafa-delincuente-hacen-pasar-por-funcionarios/",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "CICPC advirtió que estafadores usurpan la identidad del organismo para cometer fraudes",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2025/08/31/cicpc-advirtio-estafadores-usurpan-identidad-dpara-fraudes/",
+      "date": "2025-08-31"
+    }
+  ],
+  "updated": "2026-11-17"
+}

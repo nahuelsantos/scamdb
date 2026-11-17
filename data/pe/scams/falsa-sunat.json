@@ -1,0 +1,131 @@
+{
+  "id": "pe/falsa-sunat",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“SUNAT”",
+    "en": "“SUNAT”"
+  },
+  "name": {
+    "es": "Falsa SUNAT: llamadas, correos y cobros con su nombre",
+    "en": "Fake SUNAT: calls, emails and payment demands in its name"
+  },
+  "how": {
+    "es": "Te llaman o escriben “de la SUNAT” para pedirte datos personales y tributarios, avisarte de un embargo o una deuda, o cobrarte por WhatsApp o SMS. Los correos traen enlaces o archivos. La SUNAT no envía enlaces ni adjuntos, no cobra por esos medios y sus avisos oficiales llegan a tu Buzón Electrónico.",
+    "en": "They call or write “from SUNAT” to ask for personal and tax details, warn you of a seizure or a debt, or charge you via WhatsApp or SMS. The emails have links or attachments. SUNAT doesn’t send links or attachments, doesn’t charge through those channels, and its official notices go to your Buzón Electrónico."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contactan a nombre de la SUNAT por teléfono, correo, SMS o WhatsApp.",
+        "en": "They contact you in SUNAT’s name by phone, email, SMS or WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asustan con un embargo, una deuda o una inconsistencia.",
+        "en": "They scare you with a seizure, a debt or an inconsistency."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te mandan un enlace o archivo, o te piden tu clave SOL y datos.",
+        "en": "They send a link or file, or ask for your SOL password and details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden depositar a una cuenta para “regularizar”.",
+        "en": "They ask you to deposit into an account to “sort it out”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "SUNAT - Notificación: se ha generado una orden de embargo sobre sus cuentas por deuda tributaria no regularizada. Descargue la resolución y verifique el monto a cancelar en el siguiente acceso [enlace]",
+        "en": "SUNAT - Notice: a seizure order has been issued on your accounts for an unresolved tax debt. Download the resolution and check the amount to pay at the following link [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo de la sunat",
+      "orden de embargo",
+      "me llamaron de la sunat",
+      "me pidieron mi clave sol",
+      "deuda tributaria",
+      "resolucion de cobranza coactiva",
+      "cobro de la sunat por whatsapp"
+    ],
+    "en": [
+      "email from sunat",
+      "seizure order",
+      "sunat called me",
+      "asked for my sol password",
+      "tax debt",
+      "sunat payment on whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Correo o SMS de la SUNAT con enlace o archivo adjunto.",
+      "Cobros por WhatsApp o pedidos de depósito.",
+      "Te piden tu clave SOL por teléfono."
+    ],
+    "en": [
+      "SUNAT email or SMS with a link or attachment.",
+      "Payment demands on WhatsApp or deposit requests.",
+      "They ask for your SOL password by phone."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras enlaces ni adjuntos: entra tú mismo a la web de la SUNAT y revisa tu Buzón Electrónico.",
+      "No des información tributaria por teléfono.",
+      "Ante la duda, comunícate por los canales oficiales de la SUNAT."
+    ],
+    "en": [
+      "Don’t open links or attachments: go to SUNAT’s website yourself and check your Buzón Electrónico.",
+      "Don’t give tax information by phone.",
+      "If in doubt, contact SUNAT through its official channels."
+    ]
+  },
+  "reportTo": [
+    "pe/sunat",
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Comunicado: aviso importante (intentos de fraude por llamadas telefónicas)",
+      "publisher": "SUNAT",
+      "url": "https://www.sunat.gob.pe/mensajes/mayo/2026/aviso-ti-050526.html",
+      "date": "2026-05-05"
+    },
+    {
+      "title": "Comunicado: aviso importante (SUNAT no envía enlaces ni solicita depósitos)",
+      "publisher": "SUNAT",
+      "url": "https://www.sunat.gob.pe/mensajes/mayo/2023/aviso-ti-240523.html",
+      "date": "2023-05-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

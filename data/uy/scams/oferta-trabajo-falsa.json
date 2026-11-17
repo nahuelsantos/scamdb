@@ -1,0 +1,119 @@
+{
+  "id": "uy/oferta-trabajo-falsa",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "es": "Una “agencia” o “empresa” que busca personal",
+    "en": "An “agency” or “company” that is hiring"
+  },
+  "name": {
+    "es": "“Trabajo remoto, pocas horas, buena paga”: la falsa entrevista de trabajo",
+    "en": "“Remote work, few hours, good pay”: the fake job interview"
+  },
+  "how": {
+    "es": "Ves una oferta de trabajo en redes o te escriben por Telegram usando el nombre de una agencia o empresa uruguaya conocida. Prometen buena plata por pocas horas de tareas digitales. Para la “entrevista” te piden datos personales, una selfie, la cédula y datos del banco o la tarjeta. Con eso sacan préstamos en línea a tu nombre o te vacían la cuenta.",
+    "en": "You see a job offer on social media or someone writes on Telegram using the name of a well-known Uruguayan agency or company. They promise good money for a few hours of online tasks. For the “interview” they ask for personal details, a selfie, your ID card and bank or card details. With that they take out online loans in your name or empty your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen trabajo usando el nombre de una empresa conocida.",
+        "en": "They offer a job using a well-known company’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "La paga es demasiado buena para lo poco que piden.",
+        "en": "The pay is too good for the little work."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te mandan a un formulario que pide selfie, cédula y datos del banco.",
+        "en": "They send you to a form asking for a selfie, ID and bank details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Buscamos personal! Tareas digitales desde tu casa, 2 a 3 horas por día, pago diario de $ 3.000. Sin experiencia. Escribinos por Telegram y completá el formulario con tus datos, foto de la cédula y una selfie para agendar la entrevista: [enlace]",
+        "en": "We’re hiring! Online tasks from home, 2–3 hours a day, $3,000 paid daily. No experience needed. Write to us on Telegram and fill in the form with your details, a photo of your ID and a selfie to book the interview: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "oferta de trabajo por telegram",
+      "trabajo remoto pocas horas",
+      "me pidieron una selfie con la cedula",
+      "entrevista de trabajo falsa",
+      "sacaron un prestamo a mi nombre",
+      "tareas digitales pago diario"
+    ],
+    "en": [
+      "job offer on telegram",
+      "remote work few hours",
+      "they asked for a selfie with my id",
+      "fake job interview",
+      "a loan was taken out in my name"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "es": [
+      "Una empresa seria no recluta por Telegram.",
+      "Paga diaria alta por pocas horas.",
+      "Te piden selfie con cédula y datos bancarios antes de contratarte."
+    ],
+    "en": [
+      "A serious company doesn’t recruit on Telegram.",
+      "High daily pay for a few hours.",
+      "They ask for an ID selfie and bank details before hiring you."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Confirmá la oferta en la web o redes oficiales de la empresa.",
+      "No mandes foto de la cédula ni selfies a desconocidos.",
+      "Si ya lo hiciste, avisá al banco, revisá si hay créditos a tu nombre y denunciá."
+    ],
+    "en": [
+      "Check the offer on the company’s official website or social accounts.",
+      "Don’t send ID photos or selfies to strangers.",
+      "If you already did, tell the bank, check for loans in your name and report it."
+    ]
+  },
+  "reportTo": [
+    "uy/cibercrimen",
+    "uy/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Investigaciones de la Dirección General de Cibercrimen logran siete condenas por fraudes informáticos",
+      "publisher": "Ministerio del Interior",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/investigaciones-direccion-general-cibercrimen-logran-siete-condenas-fraudes",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "El cuento del tío llegó a la publicidad uruguaya: la maniobra por redes sociales que puso en alerta a las agencias",
+      "publisher": "Forbes Argentina",
+      "url": "https://www.forbesargentina.com/daily-cover/el-cuento-tio-llego-publicidad-uruguaya-maniobra-redes-sociales-puso-alerta-agencias-n67769",
+      "date": "2025-02-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

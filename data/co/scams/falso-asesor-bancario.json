@@ -1,0 +1,149 @@
+{
+  "id": "co/falso-asesor-bancario",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Asesor” de su banco",
+    "en": "Your bank’s “adviser”"
+  },
+  "name": {
+    "es": "“Le hablo de su banco”: el falso asesor que lo guía dentro de la app",
+    "en": "“I’m calling from your bank”: the fake adviser who guides you inside the app"
+  },
+  "how": {
+    "es": "Lo llama alguien que dice ser asesor de su banco. Le ofrece un aumento de cupo, un crédito preaprobado o le dice que hay un movimiento raro que hay que cancelar. Mientras sigue en la llamada le pide abrir un enlace, darle datos o claves, o lo va guiando paso a paso dentro de la app. Usted cree que está cancelando o simulando algo, pero en realidad aprueba una transferencia o un préstamo, y le vacían la cuenta antes de colgar.",
+    "en": "Someone calls saying they are an adviser from your bank. They offer a higher credit limit, a pre-approved loan, or say there is a strange transaction that must be cancelled. While you are still on the line they ask you to open a link, give details or passwords, or guide you step by step inside the app. You think you are cancelling or simulating something, but you are actually approving a transfer or a loan, and the account is emptied before you hang up."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Lo llama un supuesto asesor de su banco, a veces con su nombre y sus datos.",
+        "en": "A supposed adviser from your bank calls, sometimes with your name and details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le ofrece un crédito preaprobado o más cupo, o le habla de un movimiento sospechoso.",
+        "en": "They offer a pre-approved loan or a higher limit, or mention a suspicious transaction."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le pide no colgar y seguir sus instrucciones dentro de la app o en un enlace.",
+        "en": "They ask you not to hang up and to follow their instructions in the app or on a link."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Le pide la clave, el código que le llega o que apruebe una solicitud.",
+        "en": "They ask for your password, the code you receive, or for you to approve a request."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Lo que usted aprobó era una transferencia o un préstamo a nombre suyo.",
+        "en": "What you approved was a transfer or a loan in your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, don Jorge, le habla Camila del área de crédito del banco. Usted tiene aprobado un aumento de cupo en su tarjeta, solo falta validarlo. No me cuelgue: entre a la app, vaya a solicitudes pendientes y me confirma cuando le aparezca la notificación para aprobar.",
+        "en": "Good afternoon, Mr Jorge, this is Camila from the bank’s credit department. You have a limit increase approved on your card, it just needs validating. Don’t hang up: open the app, go to pending requests and tell me when the approval notification appears."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamo un asesor del banco",
+      "me ofrecieron un credito preaprobado",
+      "aumento de cupo de la tarjeta",
+      "me guio dentro de la app",
+      "cancelar un movimiento sospechoso",
+      "me dijo que no colgara",
+      "aprobe una solicitud en la app",
+      "credito de libre inversion por telefono",
+      "autorizar la notificacion en la aplicacion",
+      "me pidio la clave por telefono",
+      "simular un credito"
+    ],
+    "en": [
+      "a bank adviser called me",
+      "pre-approved loan offer",
+      "credit limit increase",
+      "guided me inside the banking app",
+      "cancel a suspicious transaction",
+      "told me not to hang up",
+      "i approved a request in the app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "keep_on_line",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El banco lo llama a usted y le pide claves, códigos o aprobar algo.",
+      "Le piden no colgar mientras hace movimientos en la app.",
+      "Un crédito o un cupo que usted no pidió."
+    ],
+    "en": [
+      "The bank calls you and asks for passwords, codes or to approve something.",
+      "You are asked not to hang up while you make moves in the app.",
+      "A loan or limit you never asked for."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelgue y llame usted al número que aparece detrás de su tarjeta.",
+      "Nunca apruebe una notificación de la app que usted no inició.",
+      "Si ya pasó, bloquee la cuenta con el banco y repórtelo al CAI Virtual."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card yourself.",
+      "Never approve an app notification you didn’t start.",
+      "If it already happened, block the account with the bank and report it to CAI Virtual."
+    ]
+  },
+  "reportTo": [
+    "co/tu-banco",
+    "co/cai-virtual",
+    "co/denuncia-virtual"
+  ],
+  "sources": [
+    {
+      "title": "Alerta por nueva modalidad de estafa telefónica que suplanta asesorías bancarias en Bogotá",
+      "publisher": "Alcaldía de Bogotá",
+      "url": "https://bogota.gov.co/mi-ciudad/seguridad/alerta-por-modalidad-de-estafa-telefonica-con-bancos-en-bogota",
+      "date": "2025-11-30"
+    },
+    {
+      "title": "Mensajes y llamadas: así opera la nueva estafa contra usuarios bancarios",
+      "publisher": "El País (Cali)",
+      "url": "https://www.elpais.com.co/economia/mensajes-y-llamadas-asi-opera-la-nueva-estafa-contra-usuarios-bancarios-2518.html",
+      "date": "2026-04-26"
+    },
+    {
+      "title": "Ojo con su dinero: detectan nueva modalidad de estafa bancaria que imita al Banco de Bogotá",
+      "publisher": "Infobae Colombia",
+      "url": "https://www.infobae.com/colombia/2025/04/23/ojo-con-su-dinero-detectan-nueva-modalidad-de-estafa-bancaria-que-imita-al-banco-de-bogota/",
+      "date": "2025-04-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

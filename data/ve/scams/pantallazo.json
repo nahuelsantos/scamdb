@@ -1,0 +1,124 @@
+{
+  "id": "ve/pantallazo",
+  "country": "ve",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "social",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "es": "Comprador por redes o WhatsApp",
+    "en": "Buyer on social media or WhatsApp"
+  },
+  "name": {
+    "es": "El “pantallazo”: comprobante de pago falso",
+    "en": "The “pantallazo”: fake payment screenshot"
+  },
+  "how": {
+    "es": "Un cliente te compra por redes sociales o WhatsApp: pide comida, mercancía o un producto. Cuando se ponen de acuerdo, te manda un capture de un supuesto pago que nunca se hizo y te apura para llevarse el pedido o que se lo despaches. Cuando revisas tu cuenta, la plata no está y el comprador ya no responde. En Caracas el CICPC detuvo a dos mujeres que estafaban así a comercios.",
+    "en": "A customer buys from you through social media or WhatsApp: they order food, goods or a product. Once you agree, they send a screenshot of a supposed payment that never happened and rush you to hand over or dispatch the order. When you check your account, the money isn't there and the buyer no longer answers. In Caracas CICPC arrested two women who scammed shops this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un cliente nuevo te compra por redes o WhatsApp.",
+        "en": "A new customer buys from you through social media or WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te manda un capture del pago en vez de esperar que lo veas en tu cuenta.",
+        "en": "They send a screenshot of the payment instead of waiting for you to see it in your account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apura para que entregues o despaches ya.",
+        "en": "They rush you to hand over or send the goods now."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Listo mi pana, ya te hice el pago móvil, ahí te mando el capture 👆 El motorizado está afuera esperando, entrégale el pedido de una que vamos tarde, después revisas con calma.",
+        "en": "Done buddy, I already sent the mobile payment, here's the screenshot 👆 The delivery rider is outside waiting, hand him the order right away because we're late, you can check calmly later."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me mandaron un capture del pago",
+      "pantallazo falso",
+      "comprobante de pago falso",
+      "la plata no aparecio en mi cuenta",
+      "entregue la mercancia y no pagaron",
+      "capture de transferencia",
+      "el cliente me apuro para entregar",
+      "captura de la transferencia",
+      "viene alguien a buscar el pedido",
+      "me mostro la captura del pago"
+    ],
+    "en": [
+      "they sent a screenshot of the payment",
+      "fake payment screenshot",
+      "fake transfer receipt",
+      "the payment never reached my account",
+      "i handed over the goods and was not paid",
+      "the buyer rushed me to deliver"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "El cliente manda un capture y no espera a que confirmes en tu banco.",
+      "Mucha prisa por llevarse el pedido.",
+      "Cliente nuevo que nadie conoce."
+    ],
+    "en": [
+      "The customer sends a screenshot and doesn't wait for you to confirm with your bank.",
+      "A big rush to take the order.",
+      "A new customer nobody knows."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entregues hasta ver el pago acreditado en tu banco, en la app o en el mensaje del banco.",
+      "Un capture no prueba nada: se edita fácil.",
+      "Si te estafaron, guarda los chats y el capture y denuncia en el CICPC."
+    ],
+    "en": [
+      "Don't hand over anything until you see the payment credited in your bank, app or the bank's message.",
+      "A screenshot proves nothing: it is easy to edit.",
+      "If you were scammed, keep the chats and screenshot and report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/cicpc",
+    "ve/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Detuvieron a dos mujeres por utilizar la modalidad de pantallazo para estafar en Caracas",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2024/07/12/detuvieron-mujeres-modalidad-de-pantallazo-caracas/",
+      "date": "2024-07-12"
+    },
+    {
+      "title": "Venezuela | Negocios afectados por constantes estafas",
+      "publisher": "DPL News",
+      "url": "https://dplnews.com/venezuela-negocios-afectados-por-constantes-estafas/",
+      "date": "2022-02-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

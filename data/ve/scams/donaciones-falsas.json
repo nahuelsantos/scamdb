@@ -1,0 +1,115 @@
+{
+  "id": "ve/donaciones-falsas",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "es": "“Campaña de ayuda” o “fundación”",
+    "en": "“Relief campaign” or “foundation”"
+  },
+  "name": {
+    "es": "Colectas y donaciones falsas tras los terremotos",
+    "en": "Fake fundraisers and donations after the earthquakes"
+  },
+  "how": {
+    "es": "Después de los terremotos del 24 de junio de 2026 aparecieron páginas y mensajes que imitan colectas, fundaciones o pagos de subsidios para damnificados. Piden que dones a cuentas personales o por pago móvil, o que entres a un enlace donde te sacan claves y códigos del banco. La Asociación Bancaria de Venezuela pidió donar solo a organizaciones registradas y a cuentas a nombre de la organización.",
+    "en": "After the earthquakes of 24 June 2026, pages and messages appeared imitating fundraisers, foundations or subsidy payments for victims. They ask you to donate to personal accounts or by mobile payment, or to open a link where they take your bank passwords and codes. The Venezuelan Banking Association asked people to donate only to registered organisations and to accounts in the organisation's name."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un mensaje o página pide ayuda para damnificados.",
+        "en": "A message or page asks for help for disaster victims."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apura: la ayuda se necesita ya.",
+        "en": "They rush you: the help is needed now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide donar a una cuenta personal o por pago móvil, o entrar a un enlace.",
+        "en": "They ask you to donate to a personal account or by mobile payment, or to open a link."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "🙏 URGENTE: familias damnificadas por el terremoto necesitan agua y comida HOY. Cualquier aporte suma. Pago móvil a nombre de la coordinadora de la fundación o dona con tarjeta aquí: [enlace]. ¡Comparte!",
+        "en": "🙏 URGENT: families affected by the earthquake need water and food TODAY. Every contribution counts. Mobile payment in the name of the foundation's coordinator, or donate by card here: [link]. Share!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "colecta para los damnificados del terremoto",
+      "donar a la cuenta de una persona",
+      "fundacion falsa de ayuda",
+      "campana de donaciones por whatsapp",
+      "ayuda para damnificados a cuenta personal",
+      "subsidio para damnificados pagina"
+    ],
+    "en": [
+      "earthquake relief fundraiser message",
+      "donate to a private person account",
+      "fake relief foundation",
+      "donation campaign on whatsapp",
+      "earthquake aid to a personal account",
+      "subsidy for earthquake victims page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La “fundación” pide plata a la cuenta de una persona.",
+      "No encuentras su registro ni su web oficial.",
+      "Un enlace que te pide datos de la tarjeta o claves para donar."
+    ],
+    "en": [
+      "The “foundation” asks for money into a person's account.",
+      "You can't find its registration or official website.",
+      "A link that asks for card details or passwords to donate."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Dona solo a organizaciones conocidas y registradas, a cuentas a su nombre.",
+      "No pongas claves ni códigos en enlaces de donaciones.",
+      "Si caíste, llama a tu banco y denuncia en el CICPC."
+    ],
+    "en": [
+      "Donate only to known, registered organisations, to accounts in their name.",
+      "Don't enter passwords or codes on donation links.",
+      "If you fell for it, call your bank and report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/tu-banco",
+    "ve/cicpc"
+  ],
+  "sources": [
+    {
+      "title": "Alertan sobre fraudes con donaciones tras terremoto en Venezuela",
+      "publisher": "Finanzas Digital",
+      "url": "https://finanzasdigital.com/alertan-fraudes-donaciones-terremoto-venezuela/",
+      "date": "2026-06-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,138 @@
+{
+  "id": "ec/falso-agente-de-aduana",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Agente de Aduana” o “funcionario del SENAE”",
+    "en": "“Customs agent” or “SENAE official”"
+  },
+  "name": {
+    "es": "Falso agente de Aduana: paquetes retenidos y remates de carros",
+    "en": "Fake customs agent: held parcels and car auctions"
+  },
+  "how": {
+    "es": "Alguien que dice ser agente de la Aduana le escribe: que tiene un paquete retenido en el aeropuerto y debe pagar para liberarlo, o que hay remates de carros y mercadería decomisada a precios bajísimos. Le piden transferir a una cuenta de una persona para “separar” o “liberar”. La Aduana dice que no vende ni remata bienes por WhatsApp.",
+    "en": "Someone claiming to be a customs agent writes to you: you have a parcel held at the airport and must pay to release it, or there are auctions of seized cars and goods at very low prices. They ask you to transfer to a personal account to “reserve” or “release” it. Customs says it does not sell or auction goods via WhatsApp."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un supuesto agente de Aduana le contacta por WhatsApp o redes.",
+        "en": "A supposed customs agent contacts you on WhatsApp or social media."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le ofrece un carro rematado muy barato o le dice que su paquete está retenido.",
+        "en": "They offer a very cheap auctioned car or say your parcel is held."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le apura para pagar hoy antes de que se pierda.",
+        "en": "They push you to pay today before it is lost."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le pide una transferencia a una cuenta personal.",
+        "en": "They ask for a transfer to a personal account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le saluda el agente afianzado de aduanas. Tenemos una camioneta 2021 de remate a USD 7.500, papeles en regla. Para separarla necesito un abono de USD 900 hoy mismo, le paso la cuenta.",
+        "en": "Good afternoon, this is the licensed customs agent. We have a 2021 pickup at auction for USD 7,500, papers in order. To reserve it I need a USD 900 deposit today, I’ll send you the account."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "remate de la aduana",
+      "carros rematados",
+      "agente de aduana por whatsapp",
+      "encomienda retenida en el aeropuerto",
+      "pagar tributos para liberar la encomienda",
+      "abono para separar el carro",
+      "mercaderia decomisada barata"
+    ],
+    "en": [
+      "customs auction",
+      "seized cars for sale",
+      "customs agent on whatsapp",
+      "parcel held at the airport",
+      "pay to release the parcel",
+      "deposit to reserve the car"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La Aduana no vende ni remata por WhatsApp.",
+      "Precios muy por debajo del mercado.",
+      "Le piden depositar a una cuenta de una persona.",
+      "Un paquete que usted no espera, retenido “en el aeropuerto”."
+    ],
+    "en": [
+      "Customs does not sell or auction on WhatsApp.",
+      "Prices far below market value.",
+      "They ask you to deposit into a personal account.",
+      "A parcel you are not expecting, held “at the airport”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pague nada: verifique en los canales oficiales de la Aduana (SENAE) o con su courier.",
+      "Desconfíe de catálogos de “remates” en grupos de WhatsApp.",
+      "Si ya transfirió, avise de inmediato a su banco y ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Do not pay anything: check through the official Customs (SENAE) channels or with your courier.",
+      "Distrust “auction” catalogues in WhatsApp groups.",
+      "If you already transferred, tell your bank immediately and report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/fiscalia",
+    "ec/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Aduana alerta sobre una nueva modalidad de estafa: ofrecen falsos remates de vehículos y mercancías",
+      "publisher": "Vistazo",
+      "url": "https://www.vistazo.com/amp/seguridad/2026-07-09-aduana-alerta-nueva-modalidad-estafa-ofrecen-falsos-remates-vehiculos-mercancias-GB11105355",
+      "date": "2026-07-09"
+    },
+    {
+      "title": "Estafadores engañan con supuestos paquetes retenidos en el Aeropuerto de Quito",
+      "publisher": "Expreso",
+      "url": "https://www.expreso.ec/quito/estafadores-enganan-con-supuestos-paquetes-retenidos-en-el-aeropuerto-de-quito-268990.html",
+      "date": "2025-12-24"
+    },
+    {
+      "title": "Aduana advierte sobre estafas que utilizan su nombre para vender vehículos",
+      "publisher": "Vistazo",
+      "url": "https://www.vistazo.com/amp/actualidad/nacional/2026-04-25-aduana-estafas-nombre-vender-vehiculos-FI10902575",
+      "date": "2026-04-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

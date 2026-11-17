@@ -1,0 +1,130 @@
+{
+  "id": "ec/trabajo-por-likes",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "“Reclutadora” en un grupo de WhatsApp",
+    "en": "“Recruiter” in a WhatsApp group"
+  },
+  "name": {
+    "es": "Trabajo por likes: pagos por tareas en WhatsApp y Telegram",
+    "en": "Likes-for-pay job: paid tasks on WhatsApp and Telegram"
+  },
+  "how": {
+    "es": "Le meten sin aviso a un grupo de WhatsApp de “empleo” o “ingresos extra”, a menudo con números extranjeros. Le ofrecen pagar por dar likes a videos o productos y le mandan un par de dólares para ganarse su confianza. Luego le pasan a Telegram, le piden sus datos y su cuenta bancaria, y los enlaces sirven para robarle claves y datos bancarios.",
+    "en": "You are added without warning to a WhatsApp “jobs” or “extra income” group, often by foreign numbers. They offer pay for liking videos or products and send you a couple of dollars to win your trust. Then they move you to Telegram, ask for your details and bank account, and the links are used to steal passwords and bank details."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le agregan a un grupo de trabajo que usted no pidió.",
+        "en": "You are added to a job group you did not ask for."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le pagan un par de dólares por las primeras tareas.",
+        "en": "They pay a couple of dollars for the first tasks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le mandan a Telegram o a un enlace para “registrar” los likes.",
+        "en": "They send you to Telegram or a link to “register” the likes."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "En formularios le piden datos personales y de su cuenta bancaria.",
+        "en": "Forms ask for your personal and bank account details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, somos del área de reclutamiento. Buscamos personas para dar me gusta a videos de YouTube desde su celular, de USD 40 a USD 250 diarios. ¿Le interesa? Le explico por Telegram 😊",
+        "en": "Hi, we are from recruitment. We are looking for people to like YouTube videos from their phone, USD 40 to USD 250 a day. Interested? I’ll explain on Telegram 😊"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "trabajo por likes",
+      "me agregaron a un grupo de empleo",
+      "pagan por dar me gusta",
+      "me pasaron a telegram",
+      "me depositaron dos dolares",
+      "tareas pagadas desde el celular",
+      "ingresos extra desde casa"
+    ],
+    "en": [
+      "job giving likes",
+      "added to a job group",
+      "they pay you to like videos",
+      "moved me to telegram",
+      "they sent me two dollars",
+      "paid tasks from your phone"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un trabajo que llega solo, sin entrevista.",
+      "Mucho dinero por dar likes.",
+      "Le mueven a Telegram.",
+      "Un formulario le pide su cuenta bancaria o sus claves."
+    ],
+    "en": [
+      "A job that arrives out of nowhere, with no interview.",
+      "Lots of money for giving likes.",
+      "They move you to Telegram.",
+      "A form asks for your bank account or passwords."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Salga del grupo y no abra los enlaces.",
+      "Nunca dé claves ni datos bancarios a un “empleador” por chat.",
+      "Si ya depositó o dio datos, avise a su banco y ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Leave the group and do not open the links.",
+      "Never give passwords or bank details to an “employer” over chat.",
+      "If you already deposited or gave details, tell your bank and report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/tu-banco",
+    "ec/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "¿De verdad pagan tres dólares por “like” en Youtube, WhatsApp, Mercado Libre y otras apps?",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/economia/pago-dolares-like-instagram-youtube-mercado-libre-estafa-apps-phishing-virus-121089/",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "¿Te invitaron a un grupo WhatsApp de Netflix?; Ecuador no es el primer país",
+      "publisher": "Teleamazonas",
+      "url": "https://www.teleamazonas.com/alerta-falsa-oferta-laboral-whatsapp-ecuador/",
+      "date": "2024-06-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

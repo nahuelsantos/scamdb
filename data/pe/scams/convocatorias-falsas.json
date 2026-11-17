@@ -1,0 +1,133 @@
+{
+  "id": "pe/convocatorias-falsas",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un “reclutador” de una entidad o empresa conocida",
+    "en": "A “recruiter” from a well-known institution or company"
+  },
+  "name": {
+    "es": "Convocatorias de trabajo falsas que cobran por “cursos” o trámites",
+    "en": "Fake job openings that charge for “courses” or paperwork"
+  },
+  "how": {
+    "es": "Ves en Facebook una convocatoria con muchas vacantes a nombre de EsSalud, el Banco de la Nación, una minera o el puerto de Chancay. Un “reclutador” te aprueba en minutos y, antes de contratarte, te cobra por certificados, cursos de seguridad o trámites, a cuentas de personas. Luego te bloquea o te cita a un lugar que no existe.",
+    "en": "On Facebook you see a job opening with many vacancies in the name of EsSalud, Banco de la Nación, a mining company or the port of Chancay. A “recruiter” approves you within minutes and, before hiring you, charges for certificates, safety courses or paperwork, into personal accounts. Then they block you or send you to a place that doesn’t exist."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves una convocatoria en redes a nombre de una entidad o empresa conocida.",
+        "en": "You see a job opening on social media in the name of a well-known institution or company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te aprueban rapidísimo por WhatsApp o un correo genérico.",
+        "en": "They approve you very fast via WhatsApp or a generic email."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te piden pagar un curso, certificado o trámite obligatorio.",
+        "en": "They ask you to pay for a mandatory course, certificate or paperwork."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apuran porque las vacantes “se acaban”.",
+        "en": "They rush you because the places are “running out”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Felicidades, su CV fue seleccionado para el puesto de operario. Para la firma de contrato el lunes debe presentar el certificado de seguridad obligatorio (S/ 290). Puede hacer el pago por Yape a nombre de nuestra coordinadora. Quedan pocos cupos.",
+        "en": "Congratulations, your CV was selected for the operator position. To sign the contract on Monday you must present the mandatory safety certificate (S/ 290). You can pay by Yape to our coordinator. Few places left."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "convocatoria de trabajo falsa",
+      "me cobraron por un curso para trabajar",
+      "certificado obligatorio para el puesto",
+      "trabajo en essalud por facebook",
+      "trabajo en el puerto de chancay",
+      "pagar para que me contraten",
+      "reclutador por whatsapp",
+      "vacantes en una minera",
+      "curso de seguridad con costo"
+    ],
+    "en": [
+      "fake job opening",
+      "charged me for a course to get the job",
+      "mandatory certificate for the job",
+      "job ad on facebook",
+      "pay to be hired",
+      "recruiter on whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Te cobran antes de contratarte.",
+      "El pago va a la cuenta o al Yape de una persona.",
+      "Correo genérico, no del dominio de la entidad."
+    ],
+    "en": [
+      "They charge you before hiring you.",
+      "The payment goes to a person’s account or Yape.",
+      "Generic email, not the institution’s domain."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revisa las convocatorias solo en la web oficial de la entidad o empresa.",
+      "Un empleo real no te cobra en ninguna etapa.",
+      "Si pagaste, denuncia en la comisaría con las capturas."
+    ],
+    "en": [
+      "Check job openings only on the institution’s or company’s official website.",
+      "A real job never charges you at any stage.",
+      "If you paid, report it to the police with screenshots."
+    ]
+  },
+  "reportTo": [
+    "pe/emergencias",
+    "pe/indecopi"
+  ],
+  "sources": [
+    {
+      "title": "Reportan falsas convocatorias de trabajo de EsSalud, Banco de la Nación y más entidades del sector público: así operan los delincuentes en Perú",
+      "publisher": "La República",
+      "url": "https://larepublica.pe/economia/2025/02/14/reportan-falsas-convocatorias-de-trabajo-de-essalud-banco-de-la-nacion-y-mas-entidades-del-sector-publico-asi-operan-los-delincuentes-en-peru-atmp-1334200",
+      "date": "2025-02-14"
+    },
+    {
+      "title": "Nueva estafa usa al megapuerto de Chancay para quitar dinero a jóvenes peruanos: aplican falsas convocatorias de trabajo",
+      "publisher": "La República",
+      "url": "https://larepublica.pe/economia/2025/02/20/nueva-estafa-usa-al-megapuerto-de-chancay-para-quitar-dinero-a-jovenes-peruanos-aplican-falsas-convocatorias-de-trabajo-evat-1625480",
+      "date": "2025-02-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

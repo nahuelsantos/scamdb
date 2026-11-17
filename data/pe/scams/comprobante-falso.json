@@ -1,0 +1,128 @@
+{
+  "id": "pe/comprobante-falso",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un cliente o comprador",
+    "en": "A customer or buyer"
+  },
+  "name": {
+    "es": "El “ya te yapeé”: comprobante falso o editado",
+    "en": "“I already paid you by Yape”: the fake or edited receipt"
+  },
+  "how": {
+    "es": "Un comprador te muestra en su celular una constancia de pago por Yape o una transferencia que parece real, pero no existe o tiene el monto cambiado. Usan apps que imitan Yape o editan la captura. Si es “interbancaria”, te dicen que llega mañana. Se llevan la mercadería y la plata nunca llega.",
+    "en": "A buyer shows you on their phone a Yape payment confirmation or a transfer that looks real, but it doesn’t exist or the amount was changed. They use apps that imitate Yape or edit the screenshot. If it is “interbank”, they say it arrives tomorrow. They take the goods and the money never arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "El comprador paga “al toque” y te enseña la pantalla o te manda una captura.",
+        "en": "The buyer pays “right away” and shows you the screen or sends a screenshot."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apura porque tiene prisa o hay cola, para que no revises tu app.",
+        "en": "They rush you because they are in a hurry or there is a queue, so you don’t check your app."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Si no ves el pago, dice que es interbancario y llega mañana.",
+        "en": "If you don’t see the payment, they say it’s interbank and arrives tomorrow."
+      }
+    },
+    {
+      "text": {
+        "es": "Se lleva el producto sin haber pagado, o pagó menos de lo acordado.",
+        "en": "They take the product without paying, or paid less than agreed."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Ya está, casera, ahí te yapeé los 450, mira la pantalla. Llévalo nomás que estoy apurada, si no te aparece es que el sistema está lento.",
+        "en": "Done, I’ve sent you the 450 by Yape, look at the screen. Let me take it, I’m in a hurry; if it doesn’t show up the system is just slow."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me mostro un yape falso",
+      "comprobante falso",
+      "captura editada",
+      "yape fake",
+      "interbancaria que se demora",
+      "yapeo que no aparecio",
+      "se llevo la mercaderia",
+      "constancia trucha"
+    ],
+    "en": [
+      "showed me a fake yape",
+      "fake receipt",
+      "edited screenshot",
+      "interbank transfer that never arrived",
+      "payment never showed in my account",
+      "took the goods without paying"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te enseñan la pantalla de su celular en vez de que veas el pago en el tuyo.",
+      "Apuro para que no revises.",
+      "“Es interbancaria, llega mañana”."
+    ],
+    "en": [
+      "They show you their phone instead of you seeing the payment on yours.",
+      "Rushing you so you don’t check.",
+      "“It’s interbank, it arrives tomorrow”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Entrega solo cuando el pago aparece en tu propia app o cuenta.",
+      "Yape es inmediato: si no llega, no está pagado.",
+      "Si te estafaron, guarda las cámaras y capturas y denuncia en la comisaría."
+    ],
+    "en": [
+      "Hand over goods only when the payment appears in your own app or account.",
+      "Yape is instant: if it hasn’t arrived, it isn’t paid.",
+      "If you were scammed, keep camera footage and screenshots and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "pe/emergencias",
+    "pe/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Ica: comerciantes de Arenales denuncian estafa con falsas transferencias interbancarias",
+      "publisher": "Diario Correo",
+      "url": "https://diariocorreo.pe/edicion/ica/ica-comerciantes-de-arenales-denuncian-estafa-con-falsas-transferencias-interbancarias-noticia/",
+      "date": "2025-09-24"
+    },
+    {
+      "title": "Alerta por nueva modalidad de estafa: usan IA para alterar comprobantes de pago",
+      "publisher": "Panamericana Televisión",
+      "url": "https://panamericana.pe/locales/470196-alerta-nueva-modalidad-estafa-ia-alterar-comprobantes-pago",
+      "date": "2026-06-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

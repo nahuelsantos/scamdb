@@ -1,0 +1,131 @@
+{
+  "id": "cl/falso-sii-devolucion",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "es": "“SII”",
+    "en": "“SII”"
+  },
+  "name": {
+    "es": "“Su devolución está lista”: el falso SII",
+    "en": "“Your refund is ready”: the fake tax office (SII)"
+  },
+  "how": {
+    "es": "En plena Operación Renta te llega un correo o un SMS a nombre del Servicio de Impuestos Internos: que tu devolución está lista, que hay un trámite pendiente o que debes pagar una diferencia. El enlace lleva a una copia de la página del SII que muestra un monto y te pide pagar o ingresar los datos de tu tarjeta. Así te roban los datos y la plata.",
+    "en": "During the annual tax season (Operación Renta) you get an email or text in the name of the tax office (SII): your refund is ready, there is a pending step or you owe a difference. The link goes to a copy of the SII site that shows an amount and asks you to pay or enter your card details. That is how they steal your data and money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un correo o SMS “del SII” sobre tu devolución o un trámite pendiente.",
+        "en": "You get an email or text “from the SII” about your refund or a pending step."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una página que copia los logos del SII.",
+        "en": "The link goes to a page that copies the SII logos."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página muestra un monto “a pagar” o pide la tarjeta para “recibir” la devolución.",
+        "en": "The page shows an amount “to pay” or asks for your card to “receive” the refund."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apuran: el trámite vence hoy o pierdes la devolución.",
+        "en": "They rush you: it expires today or you lose the refund."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Servicio de Impuestos Internos: Tu declaración de renta presenta una observación y tu reembolso quedó retenido. Regulariza antes de 48 horas para no perderlo: [enlace]",
+        "en": "Tax office (SII): Your income tax return has an observation and your refund is on hold. Fix it within 48 hours so you don’t lose it: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "devolucion de impuestos",
+      "mi devolucion esta lista",
+      "correo del sii",
+      "mensaje del sii",
+      "operacion renta",
+      "impuestos internos",
+      "pagar diferencia de impuestos",
+      "devolucion retenida",
+      "pagina falsa del sii"
+    ],
+    "en": [
+      "tax refund is ready",
+      "email from the tax office",
+      "text from the tax office",
+      "refund on hold",
+      "pay a tax difference",
+      "fake tax office website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "El SII no te manda enlaces para pagar ni para recibir la devolución.",
+      "Te piden los datos de la tarjeta para “devolverte” plata.",
+      "Plazos cortos: “antes de 48 horas”."
+    ],
+    "en": [
+      "The SII doesn’t send links to pay or to receive your refund.",
+      "They ask for your card details to “refund” you.",
+      "Short deadlines: “within 48 hours”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Revisa tu declaración entrando tú mismo a la página del SII con tu RUT y clave.",
+      "La devolución se deposita en la cuenta que declaraste: no hay que pagar nada para recibirla.",
+      "Si pusiste la tarjeta, llama a tu banco para bloquearla."
+    ],
+    "en": [
+      "Don’t open the link. Check your return by going to the SII site yourself with your RUT and password.",
+      "The refund is paid into the account you declared: you don’t pay anything to receive it.",
+      "If you entered your card, call your bank to block it."
+    ]
+  },
+  "reportTo": [
+    "cl/tu-banco",
+    "cl/pdi"
+  ],
+  "sources": [
+    {
+      "title": "“Su devolución está lista”: SII alerta sobre estafas en Operación Renta 2026",
+      "publisher": "24horas",
+      "url": "https://www.24horas.cl/actualidad/nacional/devolucion-de-impuestos-estafa-alerta-sii-operacion-renta-2026-",
+      "date": "2026-04-02"
+    },
+    {
+      "title": "Operación Renta 2026: Emiten alerta por sitio web que suplanta al SII para robar datos personales y financieros",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/nacional/518839-operacion-renta-pagina-fraude-estafa-sii-datos-personales-financieros-alerta-agencia-nacional-ciberseguridad-06-04-2026.html",
+      "date": "2026-04-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,133 @@
+{
+  "id": "bo/qr-falso",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "Un QR pegado en una tienda, o enviado por mensaje",
+    "en": "A QR stuck up in a shop, or sent by message"
+  },
+  "name": {
+    "es": "QR falso tapando el de la tienda, o enviado por mensaje “del banco”",
+    "en": "Fake QR code stuck over the shop’s, or sent by message “from the bank”"
+  },
+  "how": {
+    "es": "Los estafadores pegan un código QR falso encima del original en tiendas y puntos de pago, o te mandan un QR por WhatsApp, Facebook o Telegram haciéndose pasar por un banco o una empresa. Si pagas con ese QR, la plata se va a su cuenta. Otros QR llevan a una página falsa o te piden bajar una aplicación para “verificar” tu cuenta; si le das permisos, pueden entrar a tu banca móvil. La FELCC lo detectó en varios departamentos en 2026.",
+    "en": "Scammers stick a fake QR code over the real one in shops and payment points, or send you a QR by WhatsApp, Facebook or Telegram posing as a bank or company. If you pay with that QR, the money goes to their account. Other QR codes open a fake page or ask you to download an app to “verify” your account; if you grant it permissions, they can get into your mobile banking. Bolivian police detected it in several departments in 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un QR por mensaje que dice ser de un banco o empresa, o el QR de la tienda fue tapado con otro.",
+        "en": "You get a QR by message claiming to be from a bank or company, or the shop’s QR has been covered with another."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "El QR abre una página o pide instalar una aplicación.",
+        "en": "The QR opens a page or asks you to install an app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La app pide permisos para manejar el celular.",
+        "en": "The app asks for permissions to control the phone."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Tu pago o tu saldo termina en la cuenta de otra persona.",
+        "en": "Your payment or balance ends up in someone else’s account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, somos del área de verificación de tu banco. Por seguridad escanea este QR y descarga la app de validación para que tu cuenta no quede inhabilitada.",
+        "en": "Hi, we’re from your bank’s verification area. For security, scan this QR and download the validation app so your account isn’t disabled."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "qr falso",
+      "qr pegado encima",
+      "escanee un qr",
+      "el qr era de otra cuenta",
+      "el nombre del qr no coincidia",
+      "me mandaron un qr para verificar",
+      "descargue una app desde un qr",
+      "pague con qr y no llego"
+    ],
+    "en": [
+      "fake qr code",
+      "qr sticker over the real one",
+      "i scanned a qr",
+      "the qr was someone else's account",
+      "the name on the qr didn't match",
+      "they sent me a qr to verify"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un QR pegado encima de otro o con la etiqueta rota.",
+      "Al escanear, el nombre del destinatario no es el de la tienda.",
+      "Un QR que llega por mensaje “del banco” para verificar tu cuenta.",
+      "El QR te pide instalar una aplicación."
+    ],
+    "en": [
+      "A QR stuck over another or with a torn sticker.",
+      "When you scan, the recipient’s name isn’t the shop’s.",
+      "A QR sent by message “from the bank” to verify your account.",
+      "The QR asks you to install an app."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de confirmar un pago con QR, mira que el nombre y el monto sean los correctos.",
+      "No escanees QR que te mandan desconocidos ni instales apps desde ellos.",
+      "Si pagaste a otra cuenta o instalaste algo, llama a tu banco y lleva el celular a Cibercrimen de la FELCC."
+    ],
+    "en": [
+      "Before confirming a QR payment, check the name and amount are correct.",
+      "Don’t scan QR codes strangers send you or install apps from them.",
+      "If you paid the wrong account or installed something, call your bank and take the phone to the FELCC’s cybercrime unit."
+    ]
+  },
+  "reportTo": [
+    "bo/tu-banco",
+    "bo/felcc",
+    "bo/asfi"
+  ],
+  "sources": [
+    {
+      "title": "No escanees cualquier QR: así opera la nueva estafa que preocupa a la Policía",
+      "publisher": "Red Uno",
+      "url": "https://www.reduno.com.bo/noticias/no-escanees-cualquier-qr-asi-opera-la-nueva-estafa-que-preocupa-a-la-policia-202673011127",
+      "date": "2026-07-30"
+    },
+    {
+      "title": "Un clic puede vaciar tu cuenta: ASFI alerta sobre nuevas trampas digitales",
+      "publisher": "El Deber",
+      "url": "https://eldeber.com.bo/economia/clic-puede-vaciar-cuenta-asfi-alerta-nuevas-trampas-digitales_1794711176",
+      "date": "2026-11-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

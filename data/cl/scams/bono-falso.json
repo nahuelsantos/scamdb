@@ -1,0 +1,131 @@
+{
+  "id": "cl/bono-falso",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“Gobierno de Chile”",
+    "en": "“Government of Chile”"
+  },
+  "name": {
+    "es": "“Nuevo bono de $100 mil”: el falso beneficio del Estado",
+    "en": "“New 100,000-peso bonus”: the fake government benefit"
+  },
+  "how": {
+    "es": "Circula por WhatsApp, SMS o correo un mensaje que dice que el Gobierno entrega un bono nuevo, por ejemplo para mujeres o para afectados por un temporal. Explica requisitos y trae un enlace para “postular”. La página pide tu RUT, datos personales y a veces los de tu cuenta o tarjeta. El Estado no avisa beneficios con enlaces.",
+    "en": "A WhatsApp message, text or email says the government is paying a new bonus, for example for women or for people hit by a storm. It lists requirements and has a link to “apply”. The page asks for your RUT (ID number), personal details and sometimes your account or card details. The State doesn’t announce benefits with links."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mensaje “del Gobierno” sobre un bono nuevo.",
+        "en": "You get a message “from the government” about a new bonus."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrecen plata sin que hayas pedido nada.",
+        "en": "They offer you money you never asked for."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Para postular hay que entrar a un enlace.",
+        "en": "To apply you must open a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te apuran: quedan pocos cupos o vence hoy.",
+        "en": "They rush you: few places left or it ends today."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "📢 Gobierno de Chile informa: ya puedes cobrar el Aporte Invierno de $120.000 para jefas de hogar. Revisa si eres beneficiaria con tu RUT, quedan pocos cupos 👉 [enlace]",
+        "en": "📢 Government of Chile: you can now claim the 120,000-peso Winter Contribution for female heads of household. Check if you qualify with your RUT, few places left 👉 [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "bono de 100 mil",
+      "nuevo bono del gobierno",
+      "bono para mujeres",
+      "bono por el temporal",
+      "postular al bono",
+      "beneficio del estado",
+      "revisa si eres beneficiario",
+      "bono de emergencia"
+    ],
+    "en": [
+      "new government bonus",
+      "bonus for women",
+      "emergency bonus after the storm",
+      "apply for the bonus",
+      "check if you are eligible",
+      "government benefit link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "El Estado no notifica beneficios mediante enlaces.",
+      "Llega de un número común o reenviado por un grupo.",
+      "“Quedan pocos cupos”."
+    ],
+    "en": [
+      "The State doesn’t notify benefits through links.",
+      "It comes from an ordinary number or forwarded in a group.",
+      "“Few places left”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace ni pongas tu RUT. Revisa los bonos reales entrando tú mismo a ChileAtiende.",
+      "No reenvíes el mensaje a tus grupos.",
+      "Si diste datos del banco, llama a tu banco y denuncia en la PDI."
+    ],
+    "en": [
+      "Don’t open the link or enter your RUT. Check real bonuses by going to ChileAtiende yourself.",
+      "Don’t forward the message to your groups.",
+      "If you gave bank details, call your bank and report it to the PDI."
+    ]
+  },
+  "reportTo": [
+    "cl/pdi",
+    "cl/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "“Nuevo bono mujer de $100 mil”: PDI alerta de estafa con tentador mensaje de WhatsApp",
+      "publisher": "24horas",
+      "url": "https://www.24horas.cl/actualidad/nacional/nuevo-bono-para-mujeres-de-100-mil-pdi-alerta-de-estafa-whatsapp",
+      "date": "2026-09-06"
+    },
+    {
+      "title": "Phishing: Alerta por estafas que ofrecen bonos estatales tras los temporales",
+      "publisher": "24horas",
+      "url": "https://www.24horas.cl/actualidad/nacional/alerta-por-estafas-que-ofrecen-bonos-estatales-tras-los-temporales",
+      "date": "2026-07-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

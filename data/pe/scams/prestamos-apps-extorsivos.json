@@ -1,0 +1,131 @@
+{
+  "id": "pe/prestamos-apps-extorsivos",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "Una app de préstamos rápidos",
+    "en": "A quick-loan app"
+  },
+  "name": {
+    "es": "Préstamos “solo con DNI” por app que terminan en extorsión",
+    "en": "“ID-only” app loans that end in extortion"
+  },
+  "how": {
+    "es": "Una app o página ofrece préstamos al instante, solo con DNI y sin requisitos. A veces te depositan sin que lo pidas. Luego los intereses se disparan, las cuotas son diarias y empiezan los cobros extorsivos: amenazas y mensajes a tus familiares y contactos. Son entidades informales, no supervisadas por la SBS.",
+    "en": "An app or website offers instant loans, ID only and no requirements. Sometimes they deposit money you never asked for. Then interest soars, payments are daily and extortion-style collection starts: threats and messages to your relatives and contacts. They are informal lenders not supervised by the SBS."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio de préstamo rápido “solo con DNI” y bajas la app.",
+        "en": "You see an ad for a quick “ID-only” loan and download the app."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te piden tus datos, tu cuenta y permisos en el celular; a veces te depositan sin pedirlo.",
+        "en": "They ask for your details, your account and phone permissions; sometimes they deposit without you asking."
+      }
+    },
+    {
+      "text": {
+        "es": "A los pocos días la deuda se multiplica con intereses y moras.",
+        "en": "Within days the debt multiplies with interest and late fees."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te amenazan y escriben a tus contactos para que pagues.",
+        "en": "They threaten you and message your contacts to make you pay."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señor, su préstamo venció hoy y ya tiene mora. Si no deposita los S/ 640 antes de las 6 pm vamos a avisar a todos sus contactos que usted es un estafador. Usted decide.",
+        "en": "Sir, your loan was due today and is already overdue. If you don’t deposit S/ 640 before 6 pm we will tell all your contacts that you are a fraudster. Your choice."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "app de prestamos",
+      "prestamo solo con dni",
+      "me depositaron un prestamo que no pedi",
+      "gota a gota",
+      "cobranza con amenazas",
+      "escribieron a mis contactos",
+      "intereses altisimos",
+      "cuotas diarias",
+      "me tratan de moroso y estafador"
+    ],
+    "en": [
+      "loan app",
+      "loan with just my id",
+      "deposited a loan i never asked for",
+      "they threaten me on whatsapp",
+      "they messaged my contacts",
+      "huge interest"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Préstamo inmediato “solo con DNI” y sin evaluación.",
+      "Te piden acceso a tus contactos o fotos.",
+      "Cuotas diarias o semanales e intereses que no te dijeron."
+    ],
+    "en": [
+      "Instant “ID-only” loan with no checks.",
+      "They ask for access to your contacts or photos.",
+      "Daily or weekly payments and interest they never told you about."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de pedir un préstamo, revisa si la empresa está supervisada por la SBS.",
+      "No bajes apps de préstamo de anuncios y no les des acceso a tus contactos.",
+      "Si te amenazan, guarda los mensajes y denuncia en la Policía o el Ministerio Público."
+    ],
+    "en": [
+      "Before borrowing, check whether the lender is supervised by the SBS.",
+      "Don’t download loan apps from ads and don’t give them access to your contacts.",
+      "If they threaten you, keep the messages and report it to the police or the prosecutor’s office."
+    ]
+  },
+  "reportTo": [
+    "pe/emergencias",
+    "pe/cud-mininter",
+    "pe/indecopi"
+  ],
+  "sources": [
+    {
+      "title": "SBS registró 1.054 denuncias por prácticas financieras ilegales: el 70% es por aplicativos de préstamos extorsivos",
+      "publisher": "La República",
+      "url": "https://larepublica.pe/economia/2025/02/14/sbs-reporta-1054-denuncias-por-practicas-financieras-ilegales-el-70-es-por-apps-de-prestamos-extorsivos-hnews-830999",
+      "date": "2025-02-14"
+    },
+    {
+      "title": "Conoce las 7 formas de identificar apps de préstamos usadas por ‘gota a gota’: 2.000 empresas operan bajo esta modalidad",
+      "publisher": "La República",
+      "url": "https://larepublica.pe/sociedad/2025/10/10/conoce-las-7-formas-de-identificar-apps-de-prestamos-usadas-por-gota-a-gota-2000-empresas-operan-bajo-esta-modalidad-evat-ntpe-865310",
+      "date": "2025-10-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,143 @@
+{
+  "id": "bo/familiar-detenido-falso-policia",
+  "country": "bo",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un supuesto policía, o alguien que se hace pasar por tu familiar",
+    "en": "A supposed police officer, or someone posing as your relative"
+  },
+  "name": {
+    "es": "“Su hermano está detenido”: falso policía o familiar en apuros que pide un depósito",
+    "en": "“Your brother has been arrested”: fake police officer or relative in trouble asking for a deposit"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser policía y te cuenta que un familiar está detenido, tuvo un accidente o lastimó a alguien. Para “arreglar” y que el caso no llegue a la Fiscalía, pide un depósito o crédito por QR. En otra versión, alguien se hace pasar por tu pariente varado en el aeropuerto o con la maleta retenida. Las cuentas suelen estar a nombre de terceros y las llamadas, según la Policía, salen muchas veces de las cárceles.",
+    "en": "Someone calls saying they’re a police officer and tells you a relative has been arrested, had an accident or hurt someone. To “sort it out” so the case doesn’t reach the prosecutor, they ask for a deposit or phone credit by QR. In another version, someone poses as your relative stranded at the airport or with a suitcase held up. The accounts are usually in third parties’ names and, according to police, the calls often come from prisons."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un supuesto policía o un “familiar”.",
+        "en": "A supposed police officer or “relative” calls you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dice que tu familiar está detenido, accidentado o retenido.",
+        "en": "They say your relative is arrested, injured or held up."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide no contar a nadie y arreglarlo ya.",
+        "en": "They ask you to tell no one and fix it now."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te pide un depósito por QR o crédito para el celular.",
+        "en": "They ask for a QR deposit or phone credit."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señora, le habla el sargento Quispe de la Estación Policial. Su hijo está aquí detenido por una pelea y la otra persona está grave. Si me hace un depósito ahorita por QR, lo soltamos sin pasar a la Fiscalía. No le avise a nadie porque se complica.",
+        "en": "Ma’am, this is Sergeant Quispe from the police station. Your son is being held here over a fight and the other person is badly hurt. If you make a QR deposit right now, we’ll release him without going to the prosecutor. Don’t tell anyone or it gets complicated."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "detenido",
+      "policia",
+      "accidente",
+      "fiscalia",
+      "celdas",
+      "nieto",
+      "choque",
+      "su hijo esta detenido",
+      "me llamo un policia pidiendo plata",
+      "familiar accidentado",
+      "deposito para que no pase a la fiscalia",
+      "maleta retenida en el aeropuerto",
+      "no le avise a nadie",
+      "pariente varado",
+      "credito para el celular del policia"
+    ],
+    "en": [
+      "arrested",
+      "accident",
+      "grandson",
+      "your son has been arrested",
+      "a police officer called asking for money",
+      "relative in an accident",
+      "deposit so it doesn't go to the prosecutor",
+      "suitcase held at the airport",
+      "don't tell anyone",
+      "police officer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un policía pide plata por teléfono para “arreglar” un caso.",
+      "Te piden no avisar a nadie.",
+      "La cuenta o el QR está a nombre de un desconocido.",
+      "No te dejan hablar con tu familiar."
+    ],
+    "en": [
+      "A police officer asks for money by phone to “settle” a case.",
+      "They ask you to tell no one.",
+      "The account or QR is in a stranger’s name.",
+      "They won’t let you speak to your relative."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Corta y llama directamente a tu familiar o a alguien que esté con él.",
+      "La Policía no cobra por teléfono: si dudas, llama al 110.",
+      "Guarda el número y denúncialo en la FELCC y en Bloquea la Estafa."
+    ],
+    "en": [
+      "Hang up and call your relative directly or someone who is with them.",
+      "The police don’t charge by phone: if in doubt, call 110.",
+      "Keep the number and report it to the FELCC and on Bloquea la Estafa."
+    ]
+  },
+  "reportTo": [
+    "bo/emergencias",
+    "bo/felcc",
+    "bo/att-bloquea-la-estafa"
+  ],
+  "sources": [
+    {
+      "title": "Nueva modalidad de estafa telefónica: se hacen pasar por la Policía para pedir dinero",
+      "publisher": "Unitel",
+      "url": "https://noticias.unitel.bo/seguridad/nueva-modalidad-de-estafa-telefonica-se-hacen-pasar-por-la-policia-para-pedir-dinero-FC10658692",
+      "date": "2024-01-05"
+    },
+    {
+      "title": "Conozca 15 “cuentos del tío” y evite ser víctima de estafa",
+      "publisher": "Opinión",
+      "url": "https://www.opinion.com.bo/policial/conozca-15-cuentos-tio-evite-ser-victima-estafa/20230423195808904896.html",
+      "date": "2023-04-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

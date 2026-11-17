@@ -1,0 +1,136 @@
+{
+  "id": "uy/cuento-del-tio",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "es": "Un “nieto”, un “policía” o un “abogado”",
+    "en": "A “grandchild”, a “police officer” or a “lawyer”"
+  },
+  "name": {
+    "es": "“Abuela, tuve un problema”: el cuento del tío",
+    "en": "“Grandma, I’m in trouble”: the uncle’s tale"
+  },
+  "how": {
+    "es": "Llaman, muchas veces de noche, a una persona mayor. Alguien se hace pasar por un nieto o un hijo en problemas, y después aparece un “policía” o un “abogado” que pide plata para resolverlo. Le piden que no corte, que no le cuente a nadie y hasta le mandan un taxi para ir a sacar un préstamo. Al final un desconocido pasa a buscar la plata.",
+    "en": "They call an older person, often at night. Someone pretends to be a grandchild or child in trouble, and then a “police officer” or “lawyer” asks for money to fix it. They tell the person not to hang up or tell anyone, and may even send a taxi to go and take out a loan. In the end a stranger comes to collect the money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un “familiar” en problemas.",
+        "en": "A “relative” in trouble calls you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Aparece un “policía” o “abogado” que pide plata urgente.",
+        "en": "A “police officer” or “lawyer” asks for urgent money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te piden que no cortes ni le cuentes a nadie.",
+        "en": "They ask you not to hang up or tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te mantienen en línea mientras vas a buscar la plata.",
+        "en": "They keep you on the line while you go get the money."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Abuela, soy yo... estoy en la seccional, tuve un problema con el auto. Ahora te pasa el comisario, hacele caso. No le digas nada a mamá que se pone mal.",
+        "en": "Grandma, it’s me... I’m at the police station, I had a problem with the car. The officer will talk to you now, do what he says. Don’t tell mum, she’ll get upset."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamo mi nieto",
+      "cuento del tio",
+      "me pidieron plata para sacarlo de la comisaria",
+      "me mandaron un taxi",
+      "pasan a buscar la plata",
+      "me dijeron que no le contara a nadie",
+      "sacar un prestamo para mi nieto",
+      "lo detuvo la policia",
+      "choco con el auto",
+      "hablo un abogado",
+      "pagar para que lo suelten",
+      "no le digas a nadie de la familia",
+      "llamada de noche de un familiar"
+    ],
+    "en": [
+      "call from my grandson in trouble",
+      "they asked money to get him out of jail",
+      "they sent a taxi to take me to the bank",
+      "someone came to pick up the money",
+      "they told me not to tell anyone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "secrecy",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "es": [
+      "La voz no se identifica: espera que vos digas el nombre.",
+      "Piden plata en efectivo o un préstamo urgente.",
+      "Piden secreto.",
+      "La policía nunca pasa a buscar plata."
+    ],
+    "en": [
+      "The caller doesn’t say who they are: they wait for you to say a name.",
+      "They ask for cash or an urgent loan.",
+      "They ask for secrecy.",
+      "Police never come to collect money."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá y llamá vos al familiar a su número de siempre.",
+      "Si alguien viene a buscar plata, llamá al 911.",
+      "Hablalo con alguien de confianza antes de hacer nada."
+    ],
+    "en": [
+      "Hang up and call the relative on their usual number.",
+      "If someone is coming to collect money, call 911.",
+      "Talk to someone you trust before doing anything."
+    ]
+  },
+  "reportTo": [
+    "uy/emergencias",
+    "uy/policia"
+  ],
+  "sources": [
+    {
+      "title": "Que no te engañen: cómo prevenir el “cuento del tío” y evitar las estafas electrónicas",
+      "publisher": "Montevideo Portal",
+      "url": "https://www.montevideo.com.uy/Noticias/Que-no-te-enganen-como-prevenir-el-cuento-del-tio-y-evitar-las-estafas-electronicas-uc949446",
+      "date": "2026-02-17"
+    },
+    {
+      "title": "Denuncia bajo la modalidad denominada “Cuento del Tío”, resultó con la condena de un masculino por Estafa Agravada",
+      "publisher": "Ministerio del Interior (Jefatura de Maldonado)",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/denuncia-bajo-modalidad-denominada-cuento-del-tio-resulto-condena-masculino",
+      "date": "2025-09-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

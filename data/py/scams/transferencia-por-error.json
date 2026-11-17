@@ -1,0 +1,123 @@
+{
+  "id": "py/transferencia-por-error",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "es": "Número desconocido",
+    "en": "Unknown number"
+  },
+  "name": {
+    "es": "“Te transferí por error”: te piden devolver la plata a otro alias",
+    "en": "“I sent it to you by mistake”: they ask you to return the money to another alias"
+  },
+  "how": {
+    "es": "Te llega una transferencia que no esperabas, o solo un SMS que la imita desde un número particular. Enseguida alguien te llama o escribe diciendo que se equivocó y te pide que se la devuelvas, pero a otro alias o cuenta. Si la plata era real, venía de un fraude y tu cuenta queda como “mula”; si era un SMS falso, perdés tu propia plata.",
+    "en": "You receive a transfer you weren’t expecting, or just a text that imitates one from a private number. Right away someone calls or writes saying they made a mistake and asks you to send it back, but to a different alias or account. If the money was real, it came from a fraud and your account becomes a “mule”; if the text was fake, you lose your own money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega una transferencia o un aviso de transferencia que no esperabas.",
+        "en": "You get a transfer or a transfer notice you weren’t expecting."
+      }
+    },
+    {
+      "text": {
+        "es": "Un desconocido dice que se equivocó y está desesperado.",
+        "en": "A stranger says they made a mistake and is desperate."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide devolverla a otro alias o cuenta, a veces con una “recompensa”.",
+        "en": "They ask you to return it to another alias or account, sometimes offering a “reward”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Disculpá la molestia, recién te pasé 450.000 sin querer, era para mi cuñada. ¿Me hacés el favor de mandarlo a este otro alias? Es que su cuenta es otra, te agradezco un montón.",
+        "en": "Sorry to bother you, I just sent you 450,000 by accident, it was for my sister-in-law. Could you do me a favour and send it to this other alias? Her account is a different one, thanks so much."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "te transferi por error",
+      "me equivoque de numero al transferir",
+      "me cayo plata que no era mia",
+      "devolver a otro alias",
+      "reenviar al alias de otra persona",
+      "devolverlo a otra cuenta",
+      "transferencia que no esperaba",
+      "aviso de transferencia desde un numero particular",
+      "cuenta mula",
+      "me ofrecio una recompensa por devolver"
+    ],
+    "en": [
+      "sent to you by mistake",
+      "money that wasn’t mine",
+      "return it to another alias",
+      "transfer i wasn’t expecting",
+      "mule account"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden devolver a una cuenta o alias distinto del que envió.",
+      "El “aviso de transferencia” llega por SMS desde un celular particular.",
+      "Te ofrecen una recompensa."
+    ],
+    "en": [
+      "They ask you to return it to a different account or alias from the sender’s.",
+      "The “transfer notice” arrives by text from a private mobile.",
+      "They offer you a reward."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Mirá tu saldo en la app del banco, no en el SMS.",
+      "No devuelvas nada por tu cuenta: avisá a tu banco y que ellos gestionen la devolución.",
+      "Si insisten, guardá los mensajes y hacé la denuncia."
+    ],
+    "en": [
+      "Check your balance in the bank app, not in the text.",
+      "Don’t send anything back yourself: tell your bank and let it handle the return.",
+      "If they insist, keep the messages and report it."
+    ]
+  },
+  "reportTo": [
+    "py/tu-banco",
+    "py/policia-cibercrimen",
+    "py/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Te transfieren millones por error y luego te piden enviarlos a otro alias: cuidado",
+      "publisher": "El Nacional",
+      "url": "https://elnacional.com.py/nacionales/te-transfieren-millones-error-luego-te-piden-enviarlos-otro-alias-cuidado-n112943",
+      "date": "2026-10-03"
+    },
+    {
+      "title": "“Te transferí por error, devolveme por favor”, nuevo método de estafa",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2024/07/30/te-transferi-por-error-devolveme-por-favor-nuevo-metodo-de-estafa",
+      "date": "2024-07-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

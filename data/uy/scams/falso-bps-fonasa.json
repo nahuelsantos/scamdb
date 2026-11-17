@@ -1,0 +1,137 @@
+{
+  "id": "uy/falso-bps-fonasa",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "es": "“BPS”",
+    "en": "“BPS”"
+  },
+  "name": {
+    "es": "“Cobrá tu devolución Fonasa”: el falso BPS",
+    "en": "“Claim your Fonasa refund”: the fake BPS"
+  },
+  "how": {
+    "es": "Te llega un mail o un mensaje a nombre del BPS: te corresponde la devolución Fonasa, un beneficio o tenés que actualizar datos para que no te bloqueen. Te piden tocar un link o escanear un código QR que lleva a un sitio falso donde te piden usuario, contraseña, tarjeta o códigos. También hay sitios web que copian el nombre del Fonasa y simulan el trámite de devolución.",
+    "en": "You get an email or message in BPS’s name (social security): you are due a Fonasa refund or a benefit, or must update details to avoid a block. They ask you to tap a link or scan a QR code that leads to a fake site asking for your username, password, card or codes. There are also websites that copy the Fonasa name and fake the refund process."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen la devolución Fonasa o un beneficio del BPS.",
+        "en": "They offer you the Fonasa refund or a BPS benefit."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden tocar un link o escanear un QR.",
+        "en": "They ask you to tap a link or scan a QR code."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te amenazan con bloquear la cuenta si no actualizás.",
+        "en": "They threaten to block your account if you don’t update."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El sitio te pide contraseña, tarjeta o códigos.",
+        "en": "The site asks for your password, card or codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "BPS informa: Usted tiene pendiente el cobro de la Devolución Fonasa 2025. Para no perder el beneficio, escanee el código QR adjunto o ingrese aquí y complete sus datos: [enlace]",
+        "en": "BPS informs: you have an uncollected 2025 Fonasa Refund. To keep the benefit, scan the attached QR code or click here and complete your details: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "devolucion fonasa",
+      "mail del bps",
+      "beneficio del bps",
+      "escanear un codigo qr",
+      "actualizar mis datos en el bps",
+      "me van a bloquear la cuenta del bps"
+    ],
+    "en": [
+      "fonasa refund",
+      "email from bps",
+      "social security benefit",
+      "scan a qr code",
+      "update my details or be blocked"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "El BPS no pide datos confidenciales por mail, SMS ni WhatsApp.",
+      "Te piden escanear un QR o entrar a un link.",
+      "Te cobran por un trámite (el BPS no cobra).",
+      "Un sitio con el nombre del Fonasa que no es la web oficial del BPS."
+    ],
+    "en": [
+      "BPS doesn’t ask for confidential details by email, text or WhatsApp.",
+      "They ask you to scan a QR code or open a link.",
+      "They charge for a procedure (BPS doesn’t).",
+      "A site using the Fonasa name that is not BPS’s official website."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Borrá el mensaje sin tocar el link ni el QR.",
+      "Consultá la devolución en la web oficial del BPS o en sus teléfonos oficiales.",
+      "Si pusiste datos o la tarjeta, avisá al banco y cambiá las contraseñas."
+    ],
+    "en": [
+      "Delete the message without tapping the link or the QR code.",
+      "Check the refund on BPS’s official website or phone lines.",
+      "If you entered details or your card, tell the bank and change passwords."
+    ]
+  },
+  "reportTo": [
+    "uy/bps",
+    "uy/tu-banco",
+    "uy/cibercrimen"
+  ],
+  "sources": [
+    {
+      "title": "Precaución sobre correos fraudulentos sobre Devolución Fonasa",
+      "publisher": "Banco de Previsión Social",
+      "url": "https://www.bps.gub.uy/24524/precaucion-sobre-correos-fraudulentos-sobre-devolucion-fonasa.html",
+      "date": "2026-09-04"
+    },
+    {
+      "title": "Alerta por intentos de fraude (phishing)",
+      "publisher": "Banco de Previsión Social",
+      "url": "https://www.bps.gub.uy/23839/alerta-por-intentos-de-fraude-phishing.html",
+      "date": "2026-01-26"
+    },
+    {
+      "title": "BPS alerta sobre nueva modalidad de estafa mediante sitios web que mencionan al Fonasa y simulan devoluciones",
+      "publisher": "El Observador",
+      "url": "https://www.elobservador.com.uy/nacional/bps-alerta-nueva-modalidad-estafa-sitios-web-que-mencionan-al-fonasa-y-simulan-devoluciones-n6013799",
+      "date": "2025-08-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

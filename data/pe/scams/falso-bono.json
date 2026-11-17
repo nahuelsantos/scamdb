@@ -1,0 +1,130 @@
+{
+  "id": "pe/falso-bono",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "es": "“El Estado”, “Midis” o “Yape”",
+    "en": "“The State”, “Midis” or “Yape”"
+  },
+  "name": {
+    "es": "Bonos falsos del Estado: “consulta con tu DNI”",
+    "en": "Fake government bonuses: “check with your ID number”"
+  },
+  "how": {
+    "es": "Circulan mensajes y publicaciones sobre un bono del Estado o de Yape (“Bono Familiar Universal”, bono escolar, bono de 350 soles) con un enlace para “consultar con tu DNI”. La página pide DNI, fecha de nacimiento, datos bancarios o tu clave. El bono no existe o no se cobra así.",
+    "en": "Messages and posts circulate about a government or Yape bonus (“Universal Family Bonus”, school bonus, 350-sol bonus) with a link to “check with your ID number”. The page asks for your ID, date of birth, bank details or password. The bonus doesn’t exist or isn’t paid that way."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega o ves un mensaje sobre un bono que puedes cobrar.",
+        "en": "You receive or see a message about a bonus you can claim."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Usa logos del Estado o de Yape para parecer oficial.",
+        "en": "It uses government or Yape logos to look official."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apuran: “solo hoy” o “últimos cupos”.",
+        "en": "They rush you: “today only” or “last places”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace pide tu DNI, datos bancarios o clave.",
+        "en": "The link asks for your ID, bank details or password."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "🇵🇪 ATENCIÓN: ya puedes cobrar el nuevo bono de S/ 600 para familias. Verifica si eres beneficiario ingresando tu DNI y tu número de cuenta antes del domingo 👉 [enlace]. Compártelo con tu familia.",
+        "en": "🇵🇪 ATTENTION: you can now claim the new S/ 600 family bonus. Check whether you qualify by entering your ID number and account number before Sunday 👉 [link]. Share it with your family."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "bono del estado por whatsapp",
+      "consultar bono con dni",
+      "link del bono",
+      "bono familiar universal",
+      "bono yape",
+      "datos bancarios para cobrar el bono",
+      "bono escolar falso"
+    ],
+    "en": [
+      "government bonus on whatsapp",
+      "check bonus with my id",
+      "bonus link",
+      "yape bonus",
+      "asked for my account number for the bonus",
+      "fake school bonus"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "es": [
+      "Enlace para “consultar con DNI” que no termina en gob.pe.",
+      "Te piden datos bancarios o claves.",
+      "Te pide reenviarlo a tus grupos."
+    ],
+    "en": [
+      "A “check with your ID” link that doesn’t end in gob.pe.",
+      "They ask for bank details or passwords.",
+      "It asks you to forward it to your groups."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Consulta los bonos solo en los canales oficiales del Estado.",
+      "No pongas tu DNI, cuenta ni claves en enlaces de mensajes.",
+      "Si diste datos bancarios, avisa a tu banco."
+    ],
+    "en": [
+      "Check bonuses only on official government channels.",
+      "Don’t enter your ID, account or passwords on links from messages.",
+      "If you gave bank details, tell your bank."
+    ]
+  },
+  "reportTo": [
+    "pe/tu-banco",
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Bono Familiar Universal 2026: NO hay LINK de consulta con DNI",
+      "publisher": "El Tiempo (Perú)",
+      "url": "https://eltiempo.pe/bonos-y-subsidios/bono-familiar-universal-2026-no-hay-link-de-consulta-con-dni/",
+      "date": "2025-11-23"
+    },
+    {
+      "title": "¿Hay link del bono Yape de 350 soles? Billetera digital envía contundente comunicado",
+      "publisher": "El Tiempo (Perú)",
+      "url": "https://eltiempo.pe/economia/hay-link-del-bono-yape-de-350-soles-billetera-digital-envia-contundente-comunicado-banco-de-credito-del-peru-aj/",
+      "date": "2023-09-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

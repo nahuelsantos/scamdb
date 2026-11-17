@@ -1,0 +1,140 @@
+{
+  "id": "bo/compra-usdt",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "es": "Un vendedor de USDT o criptomonedas en redes",
+    "en": "A USDT or crypto seller on social media"
+  },
+  "name": {
+    "es": "Compra falsa de USDT: depositas los bolivianos y las criptomonedas nunca llegan",
+    "en": "Fake USDT purchase: you deposit the bolivianos and the crypto never arrives"
+  },
+  "how": {
+    "es": "Para protegerse del dólar, mucha gente compra USDT u otras criptomonedas a vendedores que encuentra en redes sociales. El estafador acuerda el precio, te pide depositar los bolivianos en una o varias cuentas (a veces manda a alguien a tu casa a recoger el efectivo) y dice que las monedas llegarán a tu billetera “en minutos”. Nunca llegan. En La Paz y Oruro hubo aprehendidos por casos de hasta cientos de miles de bolivianos.",
+    "en": "To protect themselves from the dollar shortage, many people buy USDT or other crypto from sellers they find on social media. The scammer agrees a price, asks you to deposit the bolivianos into one or several accounts (sometimes sends someone to your home to collect cash) and says the coins will reach your wallet “in minutes”. They never arrive. In La Paz and Oruro people were arrested over cases worth up to hundreds of thousands of bolivianos."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Encuentras a un vendedor de USDT en redes sociales.",
+        "en": "You find a USDT seller on social media."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece buen precio y entrega rápida.",
+        "en": "They offer a good price and fast delivery."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pide depositar en varias cuentas o entregar efectivo a un enviado.",
+        "en": "They ask you to deposit into several accounts or hand cash to a messenger."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Dice que las monedas llegan en minutos, pero nunca llegan.",
+        "en": "They say the coins arrive in minutes, but they never do."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Te vendo los USDT a 11,20 bs. Para que no se trabe el banco divide el depósito en estas tres cuentas y apenas me mandes los comprobantes te los suelto a tu billetera, cinco minutitos nomás.",
+        "en": "I’ll sell you USDT at 11.20 bs. So the bank doesn’t hold it up, split the deposit across these three accounts and as soon as you send the receipts I’ll release them to your wallet, just five minutes."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "usdt",
+      "binance",
+      "criptomonedas",
+      "cripto",
+      "compre usdt",
+      "vendedor de usdt",
+      "criptomonedas que nunca llegaron",
+      "deposite en tres cuentas",
+      "no me llegaron los usdt",
+      "compra de cripto por facebook",
+      "billetera binance vacia",
+      "estafa con usdt",
+      "billetera digital"
+    ],
+    "en": [
+      "usdt",
+      "binance",
+      "crypto",
+      "i bought usdt",
+      "usdt seller",
+      "crypto never arrived",
+      "deposited into three accounts",
+      "the usdt never arrived",
+      "bought crypto through facebook"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Un vendedor que conociste en redes y que no opera en una plataforma con garantía.",
+      "Te pide dividir el pago en varias cuentas de terceros.",
+      "Manda a otra persona a recoger el efectivo.",
+      "Promete que las monedas llegan “en minutos” después de pagar."
+    ],
+    "en": [
+      "A seller you met on social media who doesn’t trade on a platform with escrow.",
+      "They ask you to split the payment across several third-party accounts.",
+      "They send someone else to collect the cash.",
+      "They promise the coins arrive “in minutes” after you pay."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues a vendedores de redes sociales; si compras, usa una plataforma con custodia y entidades autorizadas por la ASFI.",
+      "No entregues efectivo a desconocidos que llegan a tu casa.",
+      "Si ya pagaste, guarda chats, cuentas y comprobantes y denuncia en la FELCC."
+    ],
+    "en": [
+      "Don’t pay social-media sellers; if you buy, use a platform with escrow and entities authorised by ASFI.",
+      "Don’t hand cash to strangers who come to your home.",
+      "If you already paid, keep chats, accounts and receipts and report it to the FELCC."
+    ]
+  },
+  "reportTo": [
+    "bo/felcc",
+    "bo/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Aprehenden a joven por presunta estafa en compra de criptomonedas",
+      "publisher": "La Patria, vía eju.tv",
+      "url": "https://eju.tv/?p=5044498",
+      "date": "2026-07-23"
+    },
+    {
+      "title": "Reportan en La Paz dos casos por estafas con criptomonedas que nunca recibieron por Bs 404.000",
+      "publisher": "Erbol",
+      "url": "https://erbol.com.bo/seguridad/reportan-en-la-paz-dos-casos-por-estafas-con-criptomonedas-que-nunca-recibieron-por-bs",
+      "date": "2025-09-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

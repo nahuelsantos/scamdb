@@ -1,0 +1,124 @@
+{
+  "id": "cl/falsa-pdi-retiro-dinero",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "es": "“Tu banco” y “la PDI”",
+    "en": "“Your bank” and “the PDI”"
+  },
+  "name": {
+    "es": "“Retire su plata, la PDI la va a buscar”: el falso ejecutivo con falsos policías",
+    "en": "“Withdraw your money, the PDI will collect it”: the fake bank officer with fake police"
+  },
+  "how": {
+    "es": "Te llama un supuesto ejecutivo de tu banco: alguien quiere entrar a tus cuentas y el caso lo siguen junto con la PDI y la CMF. Para “protegerte” te piden sacar tu plata del banco y entregarla, junto con tus tarjetas o joyas, a funcionarios de la PDI que pasan por tu casa. Esos “policías” son parte de la banda.",
+    "en": "A supposed officer from your bank calls: someone is trying to get into your accounts and the case is being followed with the police (PDI) and the regulator (CMF). To “protect” you they ask you to take your money out of the bank and hand it, with your cards or jewellery, to PDI officers who come to your home. Those “officers” are part of the gang."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un “ejecutivo” y dice que el caso lo ve con la PDI y la CMF.",
+        "en": "An “officer” calls and says the case is handled with the PDI and the CMF."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asustan: te están vaciando las cuentas y hay que actuar hoy.",
+        "en": "They scare you: your accounts are being emptied and you must act today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden no contarle a nadie, ni siquiera en la sucursal.",
+        "en": "They ask you not to tell anyone, not even at the branch."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te piden retirar la plata y entregarla con tus tarjetas a “policías” que van a tu casa.",
+        "en": "They ask you to withdraw the money and hand it over with your cards to “officers” who come to your home."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señora Gloria, soy el subcomisario Rojas, de Cibercrimen. Su ejecutivo nos avisó que hay gente intentando entrar a sus cuentas. Retire sus ahorros hoy y no comente nada en la sucursal, porque hay un funcionario involucrado. A las seis pasa un colega a su domicilio para dejar en custodia el dinero y sus tarjetas.",
+        "en": "Mrs Gloria, I’m Sub-inspector Rojas, from Cybercrime. Your bank officer told us people are trying to get into your accounts. Withdraw your savings today and say nothing at the branch, because an employee is involved. At six a colleague will come to your home to safeguard the money and your cards."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "falsos funcionarios de la pdi",
+      "retirar mi plata del banco",
+      "pasan a buscar la plata a la casa",
+      "entregar las tarjetas a un policia",
+      "ejecutivo y la pdi me llamaron",
+      "resguardar el dinero",
+      "no comente en la sucursal"
+    ],
+    "en": [
+      "fake police came to collect my money",
+      "told to withdraw my savings",
+      "hand my cards to a police officer",
+      "bank and police called together",
+      "safeguard my money at home",
+      "do not tell the bank branch"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ni el banco ni la PDI ni la CMF te piden retirar plata o entregar tarjetas.",
+      "Te piden que no le cuentes a nadie en la sucursal.",
+      "Alguien va a tu casa a buscar plata, joyas o tarjetas."
+    ],
+    "en": [
+      "Neither the bank, the PDI nor the CMF asks you to withdraw money or hand over cards.",
+      "They ask you not to tell anyone at the branch.",
+      "Someone comes to your home for money, jewellery or cards."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Corta y llama tú al banco al número de tu tarjeta.",
+      "No abras la puerta a quien venga a buscar plata: llama a Carabineros.",
+      "Si ya entregaste algo, bloquea las tarjetas y denuncia en la PDI."
+    ],
+    "en": [
+      "Hang up and call your bank on the number on your card.",
+      "Don’t open the door to anyone coming for money: call Carabineros.",
+      "If you already handed something over, block the cards and report it to the PDI."
+    ]
+  },
+  "reportTo": [
+    "cl/carabineros",
+    "cl/tu-banco",
+    "cl/pdi"
+  ],
+  "sources": [
+    {
+      "title": "Incautaron ramo de billetes: cae banda que estafaba haciéndose pasar por la PDI",
+      "publisher": "24horas",
+      "url": "https://www.24horas.cl/actualidad/nacional/robaron-cerca-de-1-000-millones-detienen-a-banda-estafaba-haciendose-pasar-pdi",
+      "date": "2026-01-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

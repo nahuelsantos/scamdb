@@ -1,0 +1,144 @@
+{
+  "id": "bo/sms-banco-enlace",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un SMS o correo “del banco”",
+    "en": "An SMS or email “from the bank”"
+  },
+  "name": {
+    "es": "SMS o correo “del banco” con enlace para actualizar datos o desbloquear la cuenta",
+    "en": "SMS or email “from the bank” with a link to update details or unblock the account"
+  },
+  "how": {
+    "es": "Te llega un mensaje de texto, un correo o un WhatsApp que parece de tu banco: tu cuenta será suspendida, tienes un reembolso o ganaste un premio, y debes entrar a un enlace para “actualizar tus datos”. El enlace abre una página que copia la del banco. Lo que escribes ahí (usuario, clave, códigos) va directo a los estafadores, que entran a tu cuenta.",
+    "en": "You get a text, an email or a WhatsApp that looks like it’s from your bank: your account will be suspended, you have a refund or you won a prize, and you must open a link to “update your details”. The link opens a page that copies the bank’s. Whatever you type there (username, password, codes) goes straight to the scammers, who get into your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mensaje con el nombre de tu banco.",
+        "en": "You get a message with your bank’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tu cuenta será suspendida o que tienes un premio o reembolso.",
+        "en": "It says your account will be suspended or you have a prize or refund."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace para actualizar datos.",
+        "en": "It has a link to update your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página falsa te pide usuario, clave y el código del SMS.",
+        "en": "The fake page asks for your username, password and the SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Estimado cliente: su banca movil sera suspendida hoy por falta de actualizacion de datos. Regularice en el siguiente enlace para evitar el bloqueo: [enlace]",
+        "en": "Dear customer: your mobile banking will be suspended today because your details are out of date. Update them at the following link to avoid the block: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje del banco con enlace",
+      "actualizar mis datos",
+      "mi cuenta sera suspendida",
+      "desbloquear la cuenta",
+      "pagina falsa del banco",
+      "me llego un sms del banco",
+      "puse mi clave en un enlace",
+      "reembolso del banco",
+      "banca por internet",
+      "usuario suspendido",
+      "verificar mi identidad",
+      "banca en linea",
+      "habilitar la cuenta",
+      "link del banco"
+    ],
+    "en": [
+      "text from the bank with a link",
+      "update my details",
+      "my account will be suspended",
+      "unblock the account",
+      "fake bank page",
+      "i got a text from the bank",
+      "i typed my password into a link",
+      "online banking",
+      "account suspended",
+      "verify my identity"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un mensaje con enlace que dice venir del banco.",
+      "Amenaza con suspender o bloquear tu cuenta hoy.",
+      "Te ofrece un premio o reembolso que no esperabas.",
+      "La página pide tu clave y el código que llega por SMS."
+    ],
+    "en": [
+      "A message with a link that says it’s from the bank.",
+      "It threatens to suspend or block your account today.",
+      "It offers a prize or refund you weren’t expecting.",
+      "The page asks for your password and the SMS code."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Entra a tu banca escribiendo tú la dirección o desde la app oficial.",
+      "Si ya pusiste tus datos, llama ya a tu banco para bloquear accesos y cambia tus claves.",
+      "Guarda el mensaje y denúncialo en la plataforma Bloquea la Estafa de la ATT y en la FELCC."
+    ],
+    "en": [
+      "Don’t open the link. Go to your banking by typing the address yourself or from the official app.",
+      "If you already entered your details, call your bank now to block access and change your passwords.",
+      "Keep the message and report it on the ATT’s Bloquea la Estafa platform and to the FELCC."
+    ]
+  },
+  "reportTo": [
+    "bo/tu-banco",
+    "bo/att-bloquea-la-estafa",
+    "bo/felcc",
+    "bo/asfi"
+  ],
+  "sources": [
+    {
+      "title": "Un clic puede vaciar tu cuenta: ASFI alerta sobre nuevas trampas digitales",
+      "publisher": "El Deber",
+      "url": "https://eldeber.com.bo/economia/clic-puede-vaciar-cuenta-asfi-alerta-nuevas-trampas-digitales_1794711176",
+      "date": "2026-11-14"
+    },
+    {
+      "title": "ASFI alerta sobre nuevas modalidades de estafas digitales tras registrar 1.201 reclamos",
+      "publisher": "Red Uno",
+      "url": "https://www.reduno.com.bo/noticias/asfi-alerta-sobre-nuevas-modalidades-de-estafas-digitales-tras-registrar-1-201-reclamos-20261113202348",
+      "date": "2026-11-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

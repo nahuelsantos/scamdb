@@ -1,0 +1,129 @@
+{
+  "id": "cl/cuento-del-tio",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "es": "“Tu hijo”, “tu sobrino” o un amigo",
+    "en": "“Your son”, “your nephew” or a friend"
+  },
+  "name": {
+    "es": "El cuento del tío: “tuve un choque y necesito plata”",
+    "en": "The “uncle’s tale”: “I crashed and need money”"
+  },
+  "how": {
+    "es": "Te llama alguien que llora o habla rápido y dice ser tu hijo, nieto o sobrino: chocó, está detenido o necesita una grúa o un abogado. Luego habla un supuesto abogado o ejecutivo que te pide transferir o juntar efectivo y joyas para que alguien los pase a buscar. Apuntan sobre todo a personas mayores.",
+    "en": "Someone crying or speaking fast calls, claiming to be your son, grandson or nephew: they crashed, they’re under arrest or need a tow truck or a lawyer. Then a supposed lawyer or bank officer asks you to transfer money or gather cash and jewellery for someone to collect. They mostly target older people."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama “un familiar” que tuvo un accidente o un problema legal.",
+        "en": "A “relative” calls who had an accident or legal trouble."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apuran: hay que pagar ahora para que no quede detenido.",
+        "en": "They rush you: you must pay now so they aren’t locked up."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden que no llames a nadie más de la familia.",
+        "en": "They ask you not to call anyone else in the family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te piden transferir o entregar efectivo y joyas a alguien que va a buscarlos.",
+        "en": "They ask you to transfer or hand over cash and jewellery to someone who comes for it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Tía, soy yo… me chocaron en la carretera y el otro caballero quedó herido. Me tienen en la comisaría. Le paso al abogado, él le explica, pero por favor no le diga nada a mi mamá todavía. Hay que pagar hoy para que no me dejen preso.",
+        "en": "Auntie, it’s me… I was hit on the highway and the other man got hurt. They have me at the police station. I’ll pass you to the lawyer, he’ll explain, but please don’t tell my mum yet. We have to pay today so they don’t lock me up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "cuento del tio",
+      "me llamo mi sobrino llorando",
+      "choco y necesitaba dinero",
+      "pagar la grua",
+      "pasan a buscar el efectivo",
+      "llamada de un falso hijo",
+      "el abogado me pidio plata",
+      "detenido en la comisaria"
+    ],
+    "en": [
+      "relative crashed and needs money",
+      "fake grandson called crying",
+      "pay for the tow truck",
+      "lawyer asked for money by phone",
+      "someone came to collect the cash",
+      "relative under arrest needs money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La voz no es clara y no dice su nombre primero.",
+      "Te piden que no llames a nadie.",
+      "Alguien va a tu casa a buscar plata o joyas."
+    ],
+    "en": [
+      "The voice isn’t clear and they don’t say their name first.",
+      "They ask you not to call anyone.",
+      "Someone comes to your home for money or jewellery."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Corta y llama tú al familiar a su número de siempre.",
+      "No entregues plata ni joyas a nadie que vaya a tu casa: llama a Carabineros.",
+      "Acuerden en familia una palabra clave para emergencias."
+    ],
+    "en": [
+      "Hang up and call the relative on their usual number.",
+      "Don’t hand money or jewellery to anyone who comes to your home: call Carabineros.",
+      "Agree a family code word for emergencies."
+    ]
+  },
+  "reportTo": [
+    "cl/carabineros",
+    "cl/pdi"
+  ],
+  "sources": [
+    {
+      "title": "Recibió llamado de falso hijo y le entregó más de $200 millones",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/nacional/500643-cuento-del-tio-adulta-mayor-concepcion-llamado-falso-hijo-estafa-200-millones-01-10-2025.html",
+      "date": "2025-10-01"
+    },
+    {
+      "title": "Para que esté atento: Estos son los tres “cuento del tío” más usados este 2023, según la PDI",
+      "publisher": "T13",
+      "url": "https://www.t13.cl/noticia/nacional/para-no-te-pase-estos-son-tres-cuentos-del-tio-mas-usados-este-2023-2-9-2023",
+      "date": "2023-09-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

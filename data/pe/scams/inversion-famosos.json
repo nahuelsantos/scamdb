@@ -1,0 +1,134 @@
+{
+  "id": "pe/inversion-famosos",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un anuncio con un famoso o “asesor financiero”",
+    "en": "An ad featuring a celebrity or a “financial adviser”"
+  },
+  "name": {
+    "es": "Inversiones falsas con famosos y videos hechos con IA",
+    "en": "Fake investments with celebrities and AI-made videos"
+  },
+  "how": {
+    "es": "Ves en Facebook una “noticia” o un video donde un periodista, un político o un empresario conocido cuenta que ganó plata fácil con una plataforma. Te piden una inversión inicial, un “asesor” te muestra ganancias en un panel y te pide más. Algunos usan el nombre de la SMV para pedir depósitos o “recuperar” lo perdido.",
+    "en": "On Facebook you see a “news story” or a video in which a well-known journalist, politician or businessperson says they made easy money on a platform. You’re asked for an initial investment, an “adviser” shows you profits on a dashboard and asks for more. Some use the SMV’s name to ask for deposits or to “recover” what you lost."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio o video de un famoso recomendando una plataforma.",
+        "en": "You see an ad or video of a celebrity recommending a platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te prometen ganancias rápidas y seguras desde unos cientos de soles.",
+        "en": "They promise fast, safe profits from a few hundred soles."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Un asesor te muestra ganancias en un panel y te pide invertir más.",
+        "en": "An adviser shows you profits on a dashboard and asks you to invest more."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Para retirar te cobran “comisiones” o alguien dice ser de la SMV y pide un pago para liberar los fondos.",
+        "en": "To withdraw they charge “fees”, or someone claiming to be from the SMV asks for a payment to release the funds."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Te escribo de parte del equipo de la plataforma que viste en la entrevista. Con S/ 1,000 de inicio nuestros clientes están doblando su capital en pocas semanas. Si te animas hoy, te asigno un asesor personal y te abro tu panel.",
+        "en": "I’m writing on behalf of the platform team you saw in the interview. Starting with S/ 1,000 our clients are doubling their capital in a few weeks. If you decide today, I’ll assign you a personal adviser and open your dashboard."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "inversion que vi en facebook",
+      "un famoso recomendaba una plataforma",
+      "video falso con inteligencia artificial",
+      "asesor de inversiones",
+      "doblar mi capital",
+      "no me dejan retirar mi inversion",
+      "pagar para liberar mis fondos",
+      "dijeron que eran de la smv",
+      "plataforma de trading"
+    ],
+    "en": [
+      "investment i saw on facebook",
+      "celebrity recommended a platform",
+      "fake ai video",
+      "investment adviser",
+      "double my money",
+      "won’t let me withdraw",
+      "asked to pay to release my funds"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Un famoso “revela su secreto” para ganar dinero.",
+      "Ganancias seguras y rápidas.",
+      "Te cobran para retirar o alguien de la “SMV” te pide plata."
+    ],
+    "en": [
+      "A celebrity “reveals their secret” to making money.",
+      "Safe, fast profits.",
+      "They charge you to withdraw, or someone from the “SMV” asks you for money."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No inviertas por un anuncio o un testimonio, por más conocido que sea.",
+      "La SMV y sus funcionarios no piden dinero para inversiones ni para liberar fondos.",
+      "Si ya depositaste, avisa a tu banco y denuncia en la Policía."
+    ],
+    "en": [
+      "Don’t invest because of an ad or a testimonial, however famous the person.",
+      "The SMV and its staff never ask for money for investments or to release funds.",
+      "If you already deposited, tell your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "pe/tu-banco",
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Cuidado con los anuncios en Facebook: delincuentes pagan para promocionar estafas que buscan robar tu dinero",
+      "publisher": "La República",
+      "url": "https://larepublica.pe/tecnologia/2025/03/17/cuidado-con-los-anuncios-en-facebook-delincuentes-pagan-para-promocionar-estafas-que-buscan-robar-tu-dinero-211718",
+      "date": "2025-03-17"
+    },
+    {
+      "title": "Utilizan nombre de la SMV para realizar estafas a inversionistas: superintendencia advierte sobre esta modalidad y cómo informarlas",
+      "publisher": "Infobae Perú",
+      "url": "https://www.infobae.com/peru/2026/08/04/utilizan-nombre-de-la-smv-para-realizar-estafas-a-inversionistas-superintendencia-advierte-sobre-esta-modalidad-y-como-informarlas/",
+      "date": "2026-08-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "pe/falso-asesor-banco",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu banco” (número que parece el oficial)",
+    "en": "“Your bank” (a number that looks official)"
+  },
+  "name": {
+    "es": "“Le llamo del banco”: el falso asesor de seguridad",
+    "en": "“I’m calling from your bank”: the fake security adviser"
+  },
+  "how": {
+    "es": "Te llaman desde un número que parece el de tu banco y te dicen que hay movimientos sospechosos o que tu tarjeta está bloqueada. Para “solucionarlo al toque” te piden que les leas el código que te llega por SMS o la clave dinámica. Con ese código sacan o transfieren tu plata.",
+    "en": "They call from a number that looks like your bank’s and say there is suspicious activity or your card is blocked. To “fix it right away” they ask you to read out the code that arrives by SMS or your dynamic key. With that code they withdraw or transfer your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama alguien que dice ser asesor de tu banco; en la pantalla aparece un número parecido al oficial.",
+        "en": "Someone calls saying they are an adviser from your bank; a number like the official one shows on screen."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dice que hay operaciones sospechosas o que bloquearon tu tarjeta y que hay que actuar ya.",
+        "en": "They say there are suspicious transactions or your card was blocked and you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te avisa que te va a llegar un código y te pide que se lo dictes sin colgar.",
+        "en": "They warn that a code will arrive and ask you to read it out without hanging up."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Con ese código transfieren o retiran tu plata.",
+        "en": "With that code they transfer or withdraw your money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le saluda el área de prevención de fraudes de su banco. Estamos viendo un consumo que usted no ha hecho y por seguridad vamos a bloquearlo. En un momento le llega un código a su celular, me lo confirma por favor para anular la operación. No cuelgue.",
+        "en": "Good afternoon, this is your bank’s fraud prevention department. We see a purchase you did not make and for security we will block it. A code will reach your phone in a moment, please confirm it to me to cancel the transaction. Don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco",
+      "asesor del banco",
+      "movimientos sospechosos",
+      "dictar el sms del banco por telefono",
+      "clave dinamica",
+      "compra que no hice",
+      "area de prevencion de fraudes",
+      "anular una compra por telefono",
+      "llamada que parecia del banco"
+    ],
+    "en": [
+      "the bank called me",
+      "bank adviser",
+      "suspicious activity on my account",
+      "asked for the code i received",
+      "dynamic key",
+      "said my card was blocked",
+      "fraud prevention department"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te llaman “del banco” por un fraude y te piden un código o tu clave.",
+      "El número se parece al oficial: se puede falsificar.",
+      "No quieren que cuelgues."
+    ],
+    "en": [
+      "They call “from the bank” about a fraud and ask for a code or your password.",
+      "The number looks official: it can be faked.",
+      "They don’t want you to hang up."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama tú al número que está detrás de tu tarjeta.",
+      "Ningún banco te pide claves, códigos ni datos de tu tarjeta por teléfono.",
+      "Si ya diste el código, llama a tu banco para bloquear todo y denuncia en la comisaría."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card yourself.",
+      "No bank asks for passwords, codes or card details by phone.",
+      "If you already gave the code, call your bank to block everything and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "pe/tu-banco",
+    "pe/banco-de-la-nacion",
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "BN advierte sobre llamadas y mensajes falsos para obtener información de clientes",
+      "publisher": "Banco de la Nación",
+      "url": "https://www.bn.com.pe/noticias/2026/19082026-bn-advierte-llamadas-mensajes-falsos.asp",
+      "date": "2026-08-19"
+    },
+    {
+      "title": "Gratificación 2026: SBS alerta sobre fraudes digitales y explica cómo proteger tu dinero",
+      "publisher": "Caretas",
+      "url": "https://caretas.pe/economia/gratificacion-2026-sbs-alerta-sobre-fraudes-digitales-y-explica-como-proteger-tu-dinero/",
+      "date": "2026-07-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

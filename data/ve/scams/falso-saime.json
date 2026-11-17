@@ -1,0 +1,114 @@
+{
+  "id": "ve/falso-saime",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Saime” o “gestor del Saime”",
+    "en": "“Saime” or “Saime gestor”"
+  },
+  "name": {
+    "es": "Cobros falsos de trámites del Saime",
+    "en": "Fake Saime paperwork charges"
+  },
+  "how": {
+    "es": "Te escriben desde un correo de Gmail, por WhatsApp o te llaman diciendo que son del Saime o gestores del Saime. Te piden pagar un supuesto trámite de pasaporte o cédula, una “prórroga” o una cita, a una cuenta de una persona o por fuera de los canales oficiales. El Saime dice que no llama ni escribe por WhatsApp, que sus correos terminan en @gov.ve y que solo cobra al pedir el trámite, en sus oficinas o por pago electrónico en bolívares.",
+    "en": "Someone writes from a Gmail address, on WhatsApp, or calls saying they are from Saime or Saime “gestores”. They ask you to pay for a supposed passport or ID procedure, an “extension” or an appointment, into a personal account or outside official channels. Saime says it does not call or write on WhatsApp, its emails end in @gov.ve and it only charges when you request the procedure, at its offices or by electronic payment in bolívares."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contactan diciendo que son del Saime o gestores.",
+        "en": "They contact you saying they are from Saime or are gestores."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden pagar a una cuenta de una persona o por fuera del sistema.",
+        "en": "They ask you to pay into a personal account or outside the system."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "SAIME - Notificación: su solicitud de pasaporte presenta un pago pendiente por actualización de datos biométricos. Debe cancelar 45 $ antes de 48 horas para no perder la cita. Datos de pago: transferencia a nombre del gestor asignado. Responda este correo con el comprobante.",
+        "en": "SAIME - Notice: your passport application has a pending payment for biometric data update. You must pay $45 within 48 hours so you don't lose your appointment. Payment details: transfer in the name of the assigned agent. Reply to this email with the receipt."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo del saime pidiendo pago",
+      "gestor del saime",
+      "pagar el pasaporte por transferencia a una persona",
+      "me escribieron del saime por whatsapp",
+      "pago pendiente del pasaporte",
+      "prorroga del pasaporte por correo",
+      "cobran por adelantar el tramite del saime"
+    ],
+    "en": [
+      "passport agency email asking for payment",
+      "saime agent on whatsapp",
+      "pay for my passport to a personal account",
+      "pending passport payment email",
+      "passport appointment fee message",
+      "someone offering to speed up my passport"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un correo del Saime que no termina en @gov.ve (por ejemplo, Gmail).",
+      "Te escriben por WhatsApp o te llaman: el Saime no lo hace.",
+      "Te piden pagar a una persona o en dólares por fuera del sistema."
+    ],
+    "en": [
+      "A Saime email that doesn't end in @gov.ve (for example Gmail).",
+      "They write on WhatsApp or call you: Saime doesn't do that.",
+      "They ask you to pay a person, or in dollars outside the system."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Haz los trámites solo entrando tú a la página oficial del Saime o en sus oficinas.",
+      "No pagues a gestores ni a cuentas de personas.",
+      "Si pagaste, guarda el comprobante y denuncia en el CICPC."
+    ],
+    "en": [
+      "Do your paperwork only by going to Saime's official website yourself or at its offices.",
+      "Don't pay gestores or personal accounts.",
+      "If you paid, keep the receipt and report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/cicpc",
+    "ve/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Saime alerta sobre estafas vía correo electrónico para solicitar pagos de trámites",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/07/23/estafas-saime-correo/",
+      "date": "2026-07-23"
+    },
+    {
+      "title": "CICPC advirtió que estafadores usurpan la identidad del organismo para cometer fraudes",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2025/08/31/cicpc-advirtio-estafadores-usurpan-identidad-dpara-fraudes/",
+      "date": "2025-08-31"
+    }
+  ],
+  "updated": "2026-11-17"
+}

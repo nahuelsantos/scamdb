@@ -1,0 +1,129 @@
+{
+  "id": "uy/falsa-dgi-devolucion",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "es": "“DGI”",
+    "en": "“DGI”"
+  },
+  "name": {
+    "es": "“Tenés una devolución de IRPF”: la falsa DGI",
+    "en": "“You have an income-tax refund”: the fake DGI"
+  },
+  "how": {
+    "es": "Te llega un mail que parece de la DGI: tenés una devolución de IRPF para cobrar en efectivo y solo falta confirmar tus datos bancarios. El remitente no es del dominio oficial y el link lleva a un formulario falso. También hay falsos gestores que te cobran por “hacer el trámite” de la devolución.",
+    "en": "You get an email that seems to come from the DGI (tax office): you have an income-tax (IRPF) refund to collect in cash and only need to confirm your bank details. The sender is not the official domain and the link goes to a fake form. There are also fake agents who charge you to “do the paperwork” for the refund."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te anuncian una devolución de IRPF a tu favor.",
+        "en": "They announce an IRPF refund in your favour."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te mandan un link para “confirmar datos bancarios”.",
+        "en": "They send a link to “confirm your bank details”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te apuran para no perder la devolución.",
+        "en": "They rush you so you don’t lose the refund."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "A veces te cobran por gestionarla.",
+        "en": "Sometimes they charge you to process it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Dirección General Impositiva - Aviso: según nuestros registros le corresponde una devolución de IRPF por $ 14.320 disponible para retiro. Para habilitar el cobro, verifique su cuenta bancaria antes de las 48 hs: [enlace]",
+        "en": "Tax Office - Notice: according to our records you are due an IRPF refund of $14,320 available for collection. To enable payment, verify your bank account within 48 hours: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "devolucion de irpf",
+      "mail de la dgi",
+      "confirmar mis datos bancarios",
+      "devolucion en efectivo",
+      "me cobraron por el tramite de la devolucion",
+      "gestor de la dgi"
+    ],
+    "en": [
+      "income tax refund",
+      "email from the tax office",
+      "confirm my bank details",
+      "cash refund",
+      "they charged me to process the refund"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La DGI no te pide datos bancarios por mail.",
+      "El remitente no es del dominio oficial.",
+      "Te ofrecen la devolución “en efectivo”.",
+      "Alguien te cobra por tramitarla."
+    ],
+    "en": [
+      "The DGI doesn’t ask for bank details by email.",
+      "The sender isn’t the official domain.",
+      "They offer the refund “in cash”.",
+      "Someone charges you to process it."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entres al link. Consultá si tenés devolución desde la web oficial de la DGI, escribiendo vos la dirección.",
+      "No pagues a gestores por la devolución.",
+      "Si diste datos del banco, avisá al banco y hacé la denuncia policial."
+    ],
+    "en": [
+      "Don’t open the link. Check whether you have a refund on the official DGI site, typing the address yourself.",
+      "Don’t pay agents for the refund.",
+      "If you gave bank details, tell your bank and file a police report."
+    ]
+  },
+  "reportTo": [
+    "uy/tu-banco",
+    "uy/cibercrimen",
+    "uy/policia"
+  ],
+  "sources": [
+    {
+      "title": "DGI advierte por correos falsos con devolución de IRPF y aclara cuándo se puede cobrar",
+      "publisher": "Montevideo Portal",
+      "url": "https://www.montevideo.com.uy/Noticias/DGI-advierte-por-correos-falsos-con-devolucion-de-IRPF-y-aclara-cuando-se-puede-cobrar-uc962932",
+      "date": "2026-05-22"
+    },
+    {
+      "title": "Boletín Informativo febrero 2026. Nº 633 (Alertamos a los contribuyentes por intentos de estafa en devoluciones de IRPF)",
+      "publisher": "Dirección General Impositiva",
+      "url": "https://www.gub.uy/direccion-general-impositiva/node/3473",
+      "date": "2026-03-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

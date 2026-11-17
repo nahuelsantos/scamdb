@@ -1,0 +1,138 @@
+{
+  "id": "py/prestamos-falsos",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "es": "“Gestor de créditos” o “financiera”",
+    "en": "“Loan agent” or “finance company”"
+  },
+  "name": {
+    "es": "Falsos gestores de préstamos que cobran por adelantado",
+    "en": "Fake loan agents who charge up front"
+  },
+  "how": {
+    "es": "Por redes sociales o casa por casa, alguien promete conseguirte un crédito en un banco o financiera, incluso si estás en Informconf. Después dice que el préstamo “se trabó” y te pide plata para acelerarlo, una y otra vez. También piden foto de tu cédula y un video de tu cara, que después usan para sacar créditos a tu nombre.",
+    "en": "Through social media or door to door, someone promises to get you a loan at a bank or finance company, even if you have a bad credit record. Then they say the loan “got stuck” and ask for money to speed it up, again and again. They also ask for a photo of your ID card and a video of your face, which they later use to take out loans in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen gestionar un crédito rápido, aunque tengas deudas.",
+        "en": "They offer to arrange a quick loan, even if you have debts."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dicen que trabajan con el banco o la financiera.",
+        "en": "They say they work with the bank or finance company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden pagar gastos o comisiones para “destrabar” el préstamo.",
+        "en": "They ask you to pay fees or commissions to “unblock” the loan."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te piden foto de la cédula y un video de tu cara.",
+        "en": "They ask for a photo of your ID and a video of your face."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Crédito aprobado en 24 horas aunque estés en Informconf 💰 Hasta 15 millones sin garantía. Solo abonás el gasto administrativo y mandás foto de cédula de los dos lados. Escribime al privado.",
+        "en": "Loan approved in 24 hours even with a bad credit record 💰 Up to 15 million with no guarantee. You only pay the admin fee and send a photo of both sides of your ID. Message me privately."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "gestor de prestamos",
+      "credito aprobado aunque estes en informconf",
+      "pagar para destrabar el prestamo",
+      "gasto administrativo",
+      "adelantar una comision",
+      "me pidieron foto de la cedula",
+      "video de mi cara",
+      "prestamo rapido sin garantia",
+      "sacaron un credito a mi nombre",
+      "el credito se trabo"
+    ],
+    "en": [
+      "loan agent",
+      "loan approved despite bad credit",
+      "pay to unblock the loan",
+      "admin fee up front",
+      "photo of my id card",
+      "loan taken out in my name"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te cobran antes de darte el préstamo.",
+      "Prometen aprobar aunque tengas deudas.",
+      "Piden foto de cédula y video de tu cara por WhatsApp."
+    ],
+    "en": [
+      "They charge you before giving the loan.",
+      "They promise approval even with debts.",
+      "They ask for a photo of your ID and a video of your face on WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Pedí créditos solo en persona o por los canales oficiales del banco o la financiera.",
+      "Nunca pagues por adelantado para recibir un préstamo.",
+      "No mandes tu cédula ni videos de tu cara a desconocidos; si ya lo hiciste, avisá a tu banco y hacé la denuncia."
+    ],
+    "en": [
+      "Apply for loans only in person or through the bank’s or lender’s official channels.",
+      "Never pay up front to receive a loan.",
+      "Don’t send your ID or videos of your face to strangers; if you did, tell your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "py/policia-cibercrimen",
+    "py/fiscalia",
+    "py/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Cae estafador y alertan a la ciudadanía sobre falsos gestores de préstamos",
+      "publisher": "Última Hora",
+      "url": "https://www.ultimahora.com/cae-estafador-y-alertan-a-la-ciudadania-sobre-falsos-gestores-de-prestamos",
+      "date": "2025-09-18"
+    },
+    {
+      "title": "Ganar dinero con “tareas” online, una de las formas de fraude digital",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/04/14/ganar-dinero-con-tareas-online-una-de-las-formas-de-fraude-digital",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Sorteos, créditos y ofertas de trabajo, los anzuelos más usados por estafadores: qué hacer para no caer",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/nacionales/2025/01/24/sorteos-creditos-y-ofertas-de-trabajo-los-anzuelos-usados-por-estafadores/",
+      "date": "2025-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

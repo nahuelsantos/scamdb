@@ -1,0 +1,127 @@
+{
+  "id": "ve/falso-asesor-bancario",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Asesor” o “gestor” del banco",
+    "en": "Bank “adviser” or “gestor”"
+  },
+  "name": {
+    "es": "Falso asesor del banco por llamada o redes",
+    "en": "Fake bank adviser by phone or social media"
+  },
+  "how": {
+    "es": "Alguien se presenta como asesor, gestor o técnico de tu banco: te llama, o te responde desde un perfil falso en redes cuando comentas o preguntas algo al banco. Te ofrece desbloquear tu cuenta, darte un préstamo o resolver un problema, y te pide claves, el código que te llega por SMS o datos de la tarjeta. Con eso entra a tu banca en línea. La Asociación Bancaria de Venezuela reportó que la mayoría de las estafas en línea vienen de perfiles falsos de bancos en redes sociales.",
+    "en": "Someone introduces themselves as an adviser, “gestor” or technician from your bank: they call you, or answer from a fake social media profile when you comment or ask the bank something. They offer to unblock your account, give you a loan or fix a problem, and ask for passwords, the code sent to you by text or card details. With that they get into your online banking. The Venezuelan Banking Association reported that most online scams come from fake bank profiles on social media."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contacta un “asesor” del banco por llamada o desde un perfil en redes.",
+        "en": "A bank “adviser” contacts you by phone or from a social media profile."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece desbloquear la cuenta, un préstamo o arreglar un problema.",
+        "en": "They offer to unblock your account, a loan or to fix a problem."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pide la clave, el código del SMS o los datos de la tarjeta.",
+        "en": "They ask for your password, the text-message code or your card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, buenas noches 👋 Soy asesora del departamento de atención al cliente. Vi tu comentario sobre el bloqueo de tu tarjeta. Para desbloquearla hoy mismo necesito tu número de cédula, el número de la tarjeta y el código que te va a llegar por mensaje de texto. Escríbeme por interno.",
+        "en": "Hi, good evening 👋 I'm an adviser from the customer service department. I saw your comment about your card being blocked. To unblock it today I need your ID number, the card number and the code you'll receive by text. Message me privately."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "asesor del banco me escribio por instagram",
+      "perfil falso del banco",
+      "desbloquear mi cuenta del banco",
+      "me pidieron el codigo del sms",
+      "llamada del banco pidiendo la clave",
+      "gestor que ofrece prestamos",
+      "me pidieron los datos de la tarjeta",
+      "soporte del banco por mensaje privado",
+      "reactivar la banca en linea",
+      "clave de operaciones especiales",
+      "respondieron mi reclamo en redes"
+    ],
+    "en": [
+      "bank adviser messaged me on instagram",
+      "fake bank profile",
+      "unblock my bank account",
+      "they asked for the text message code",
+      "call from the bank asking for my password",
+      "they asked for my card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "El banco te escribe por mensaje privado desde un perfil que no es el oficial.",
+      "Te piden claves, códigos o datos de la tarjeta: ningún banco los pide.",
+      "Te ofrecen desbloqueos o préstamos rápidos a cambio de datos."
+    ],
+    "en": [
+      "The bank messages you privately from a profile that is not the official one.",
+      "They ask for passwords, codes or card details: no bank asks for them.",
+      "They offer quick unblocking or loans in exchange for details."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama tú al número que está detrás de tu tarjeta.",
+      "No resuelvas problemas del banco por mensajes privados en redes.",
+      "Si diste datos, cambia tus claves, bloquea la tarjeta y denuncia en el CICPC."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card yourself.",
+      "Do not solve bank problems through private social media messages.",
+      "If you gave details, change your passwords, block the card and report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/tu-banco",
+    "ve/cicpc",
+    "ve/sudeban"
+  ],
+  "sources": [
+    {
+      "title": "Sudeban alerta sobre fraudes digitales y recomienda medidas de prevención",
+      "publisher": "Finanzas Digital",
+      "url": "https://finanzasdigital.com/sudeban-alerta-fraudes-digitales-prevencion/",
+      "date": "2025-05-27"
+    },
+    {
+      "title": "La Asociación Bancaria advierte repunte de fraudes digitales",
+      "publisher": "Finanzas Digital",
+      "url": "https://finanzasdigital.com/la-asociacion-bancaria-advierte-repunte-de-fraudes-digitales/",
+      "date": "2025-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

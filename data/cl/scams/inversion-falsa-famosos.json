@@ -1,0 +1,138 @@
+{
+  "id": "cl/inversion-falsa-famosos",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "Video de un famoso en redes",
+    "en": "Celebrity video on social media"
+  },
+  "name": {
+    "es": "La inversión que “recomienda” un famoso chileno",
+    "en": "The investment a Chilean celebrity “recommends”"
+  },
+  "how": {
+    "es": "Ves en redes un video o una noticia falsa donde un empresario o famoso chileno, hecho con inteligencia artificial, recomienda una plataforma para “chilenos” que multiplica la plata. Dejas tus datos y te llama un “asesor” que te pide un depósito inicial chico y luego más. Las ganancias en pantalla son inventadas y la plata no se puede retirar.",
+    "en": "On social media you see a video or fake news story where a Chilean businessman or celebrity, made with AI, recommends a platform “for Chileans” that multiplies your money. You leave your details and an “adviser” calls asking for a small first deposit, then more. The profits on screen are made up and the money can’t be withdrawn."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves a un famoso recomendando una inversión en un video o una noticia.",
+        "en": "You see a celebrity recommending an investment in a video or a news story."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Prometen ganancias enormes en pocos días.",
+        "en": "They promise huge profits in a few days."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Un “asesor” te llama y te pide un depósito para empezar.",
+        "en": "An “adviser” calls and asks for a deposit to start."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te piden instalar una app o compartir pantalla para “ayudarte”.",
+        "en": "They ask you to install an app or share your screen to “help” you."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Mira lo que dijo en la entrevista: con solo $100.000 en esta plataforma automática los chilenos están ganando más de un millón a la semana. Quedan cupos limitados hoy. Regístrate y un asesor te llama: [enlace]",
+        "en": "Look what he said in the interview: with just 100,000 pesos on this automatic platform Chileans are earning over a million a week. Limited places today. Sign up and an adviser will call you: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "video de un famoso recomendando invertir",
+      "inversion con inteligencia artificial",
+      "plataforma de inversion falsa",
+      "deposito inicial de 100 mil",
+      "asesor financiero me llamo",
+      "no puedo retirar mis ganancias",
+      "proyecto financiero para chilenos",
+      "deepfake de un empresario"
+    ],
+    "en": [
+      "celebrity video recommending an investment",
+      "fake investment platform",
+      "investment adviser called me",
+      "cannot withdraw my profits",
+      "deepfake of a businessman",
+      "small first deposit to invest"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "es": [
+      "Un famoso no te recomienda inversiones en un video de redes.",
+      "Ganancias garantizadas y rápidas.",
+      "La empresa no está registrada en la CMF."
+    ],
+    "en": [
+      "A celebrity doesn’t recommend investments in a social media video.",
+      "Guaranteed, fast profits.",
+      "The company isn’t registered with the CMF."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No dejes tus datos. Revisa en la CMF si la plataforma está autorizada.",
+      "No instales apps que te pida un asesor ni compartas pantalla.",
+      "Si depositaste, avisa a tu banco y denuncia en la PDI. Desconfía de quien ofrezca “recuperar” tu plata."
+    ],
+    "en": [
+      "Don’t leave your details. Check with the CMF whether the platform is authorised.",
+      "Don’t install apps an adviser asks for or share your screen.",
+      "If you deposited, tell your bank and report it to the PDI. Distrust anyone offering to “recover” your money."
+    ]
+  },
+  "reportTo": [
+    "cl/cmf",
+    "cl/pdi",
+    "cl/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Leonardo Farkas denuncia nueva estafa digital: utilizan su imagen creada por inteligencia artificial",
+      "publisher": "Radio Agricultura",
+      "url": "https://www.radioagricultura.cl/entretencion/leonardo-farkas-denuncia-nueva-estafa-digital-utilizan-su-imagen-creada-por-inteligencia-artificial_20260307/",
+      "date": "2026-03-07"
+    },
+    {
+      "title": "Alerta por estafa: Delincuentes crean falsos videos de celebridades y sitios que imitan a medios para robar dinero",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/nacional/523657-planeta-futuro-estafa-ia-deepfake-andronico-luksic-robo-datos-bancarios-02-06-2026.html",
+      "date": "2026-06-02"
+    },
+    {
+      "title": "CMF informa sobre plataformas que ofrecen servicios regulados sin autorización y entidades no registradas ni autorizadas",
+      "publisher": "Comisión para el Mercado Financiero (CMF)",
+      "url": "https://www.cmfchile.cl/portal/prensa/625/w4-article-114061.html",
+      "date": "2026-10-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

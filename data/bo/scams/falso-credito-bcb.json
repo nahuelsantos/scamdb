@@ -1,0 +1,141 @@
+{
+  "id": "bo/falso-credito-bcb",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "email",
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "es": "El “Banco Central de Bolivia” o un supuesto funcionario",
+    "en": "The “Central Bank of Bolivia” or a supposed official"
+  },
+  "name": {
+    "es": "Falso crédito o “convenio” del Banco Central: te piden un pago por QR para liberar el préstamo",
+    "en": "Fake Central Bank loan or “agreement”: they ask for a QR payment to release the loan"
+  },
+  "how": {
+    "es": "Por WhatsApp, Telegram, SMS, correo o llamada te ofrecen un préstamo, una inversión o una transferencia a nombre del Banco Central de Bolivia, con su logo, documentos falsos y nombres de funcionarios reales. Para “liberar” el crédito te piden un pago anticipado de gestión por QR, o tus claves y números de cuenta. El BCB no presta plata a personas ni abre cuentas personales: todo es falso. En 2026 el BCB presentó una denuncia penal en Cochabamba por este engaño.",
+    "en": "By WhatsApp, Telegram, SMS, email or phone call they offer you a loan, an investment or a transfer in the name of the Central Bank of Bolivia, with its logo, fake documents and the names of real officials. To “release” the loan they ask for an advance processing fee by QR, or your passwords and account numbers. The BCB doesn’t lend to individuals or open personal accounts: it’s all fake. In 2026 the BCB filed a criminal complaint in Cochabamba over this scam."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contactan a nombre del Banco Central con logo y documentos.",
+        "en": "They contact you in the Central Bank’s name with its logo and documents."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrecen un crédito o convenio fácil, sin garantías.",
+        "en": "They offer you an easy loan or agreement, without collateral."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te piden un pago anticipado de gestión por QR.",
+        "en": "They ask for an advance processing fee by QR."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te piden claves, números de cuenta o códigos.",
+        "en": "They ask for passwords, account numbers or codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Banco Central de Bolivia – Programa de Convenios de Crédito. Su solicitud de Bs 30.000 fue aprobada. Para el desembolso debe cancelar Bs 450 por gestión de trámite mediante el QR adjunto hasta hoy a las 18:00.",
+        "en": "Central Bank of Bolivia – Credit Agreements Programme. Your request for Bs 30,000 was approved. For the disbursement you must pay Bs 450 for processing via the attached QR by 6 pm today."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "credito del banco central",
+      "convenio de credito bcb",
+      "prestamo aprobado pague la gestion",
+      "pago anticipado por qr",
+      "funcionario del banco central",
+      "me ofrecieron un prestamo por whatsapp",
+      "desembolso del credito"
+    ],
+    "en": [
+      "central bank loan",
+      "bcb credit agreement",
+      "loan approved pay the processing fee",
+      "advance payment by qr",
+      "central bank official",
+      "they offered me a loan on whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "El Banco Central te ofrece un préstamo (no da créditos a personas).",
+      "Tienes que pagar algo antes de recibir el préstamo.",
+      "Llega por WhatsApp o Telegram con documentos y sellos.",
+      "Te piden claves o números de cuenta."
+    ],
+    "en": [
+      "The Central Bank offers you a loan (it doesn’t lend to individuals).",
+      "You have to pay something before receiving the loan.",
+      "It arrives by WhatsApp or Telegram with documents and stamps.",
+      "They ask for passwords or account numbers."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues nada para recibir un préstamo: pide créditos solo en entidades autorizadas por la ASFI.",
+      "Consulta en los canales oficiales del BCB si dudas.",
+      "Si pagaste o diste datos, avisa a tu banco y denuncia en la FELCC."
+    ],
+    "en": [
+      "Never pay anything to receive a loan: borrow only from entities authorised by ASFI.",
+      "Check with the BCB’s official channels if in doubt.",
+      "If you paid or gave details, tell your bank and report it to the FELCC."
+    ]
+  },
+  "reportTo": [
+    "bo/felcc",
+    "bo/tu-banco",
+    "bo/asfi",
+    "bo/att-bloquea-la-estafa"
+  ],
+  "sources": [
+    {
+      "title": "El BCB formaliza denuncia penal por falsos ofrecimientos de crédito (NP 18/2026)",
+      "publisher": "Banco Central de Bolivia",
+      "url": "https://www.bcb.gob.bo/webdocs/files_noticias/NP%2018-19%20AGOSTO.pdf",
+      "date": "2026-08-19"
+    },
+    {
+      "title": "Banco Central de Bolivia anuncia acciones legales ante intentos de estafa (NP14/2026)",
+      "publisher": "Banco Central de Bolivia",
+      "url": "https://www.bcb.gob.bo/webdocs/files_noticias/NP%2014-28%20JULIO.pdf",
+      "date": "2026-07-28"
+    },
+    {
+      "title": "¡Alerta! Usan nombre del BCB para vaciar cuentas bancarias",
+      "publisher": "Correo del Sur",
+      "url": "https://correodelsur.com/economia/20260410/alerta-usan-nombre-del-bcb-para-vaciar-cuentas-bancarias.html",
+      "date": "2026-04-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

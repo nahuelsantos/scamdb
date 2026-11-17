@@ -1,0 +1,121 @@
+{
+  "id": "py/maleta-retenida",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Un familiar o conocido” que te manda un regalo",
+    "en": "“A relative or acquaintance” sending you a gift"
+  },
+  "name": {
+    "es": "La maleta o encomienda “retenida en el aeropuerto”",
+    "en": "The suitcase or parcel “held at the airport”"
+  },
+  "how": {
+    "es": "Alguien que parece un familiar o conocido te escribe por Facebook, muchas veces desde una cuenta robada, y te dice que te mandó una maleta o un paquete. Pasa la charla a WhatsApp y te manda fotos de maletas y tickets falsos. Después dice que quedó retenida en el aeropuerto por tasas impagas y te pide que pagues para liberarla.",
+    "en": "Someone who seems to be a relative or acquaintance writes to you on Facebook, often from a stolen account, and says they sent you a suitcase or parcel. They move the chat to WhatsApp and send photos of suitcases and fake tickets. Then they say it was held at the airport for unpaid fees and ask you to pay to release it."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un “familiar” o conocido te avisa que te mandó una maleta o regalo.",
+        "en": "A “relative” or acquaintance tells you they sent you a suitcase or gift."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Pasa la charla a WhatsApp y te manda fotos y tickets.",
+        "en": "They move the chat to WhatsApp and send photos and tickets."
+      }
+    },
+    {
+      "text": {
+        "es": "Quedó retenida y hay que pagar hoy para que no la devuelvan.",
+        "en": "It was held and you must pay today or it will be sent back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide que transfieras la tasa a una cuenta.",
+        "en": "They ask you to transfer the fee to an account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Prima, te mandé una valija con ropa y unos regalitos para los chicos pero la retuvieron en el aeropuerto por un impuesto. Te paso el ticket, tenés que pagar hoy para que no la devuelvan.",
+        "en": "Cousin, I sent you a suitcase with clothes and some gifts for the kids but it got held at the airport for a tax. I’ll send you the ticket, you have to pay today so they don’t send it back."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "maleta retenida en el aeropuerto",
+      "encomienda retenida",
+      "pagar la tasa para liberar",
+      "te mande una valija",
+      "regalo retenido en aduana",
+      "ticket del envio",
+      "impuesto para retirar la maleta",
+      "paquete del exterior"
+    ],
+    "en": [
+      "suitcase held at the airport",
+      "parcel held at customs",
+      "pay the fee to release it",
+      "i sent you a suitcase",
+      "gift held at customs"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un regalo que no esperabas, de alguien que escribe raro.",
+      "Te piden pagar a una cuenta particular para liberarlo.",
+      "Fotos de maletas y tickets en vez de un número de envío que puedas verificar."
+    ],
+    "en": [
+      "A gift you weren’t expecting, from someone who writes oddly.",
+      "They ask you to pay into a personal account to release it.",
+      "Photos of suitcases and tickets instead of a tracking number you can check."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llamá a tu familiar por teléfono al número de siempre.",
+      "No pagues tasas a cuentas particulares: la Aduana y los correos no cobran así.",
+      "Si ya pagaste, guardá todo y hacé la denuncia."
+    ],
+    "en": [
+      "Call your relative by phone on their usual number.",
+      "Don’t pay fees into personal accounts: customs and couriers don’t charge like that.",
+      "If you already paid, keep everything and report it."
+    ]
+  },
+  "reportTo": [
+    "py/policia-cibercrimen",
+    "py/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Instan a no caer en la estafa de las maletas y encomiendas",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2025/01/31/instan-a-no-caer-en-la-estafa-de-las-maletas-y-encomiendas",
+      "date": "2025-01-31"
+    }
+  ],
+  "updated": "2026-11-17"
+}

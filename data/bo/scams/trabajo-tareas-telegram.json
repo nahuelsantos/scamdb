@@ -1,0 +1,137 @@
+{
+  "id": "bo/trabajo-tareas-telegram",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un anuncio de trabajo en TikTok, luego WhatsApp y Telegram",
+    "en": "A job ad on TikTok, then WhatsApp and Telegram"
+  },
+  "name": {
+    "es": "Trabajo fácil con “tareas” por Telegram: te pagan poco al inicio y luego te piden depósitos",
+    "en": "Easy job doing “tasks” on Telegram: they pay a little at first, then ask for deposits"
+  },
+  "how": {
+    "es": "Un anuncio en TikTok o Facebook promete ganar entre cientos y miles de bolivianos por tareas simples: ver videos, dar “me gusta” o hacer “ventas” en una plataforma. Te pasan a WhatsApp y luego a un grupo de Telegram, a veces con un “contrato” falso con el logo del Ministerio de Trabajo. Al principio te pagan unos pocos bolivianos; después, para desbloquear más tareas o retirar lo ganado, te piden depósitos por QR cada vez más grandes. Nunca recuperas la plata.",
+    "en": "An ad on TikTok or Facebook promises to earn hundreds to thousands of bolivianos for simple tasks: watching videos, “liking” posts or making “sales” on a platform. They move you to WhatsApp and then a Telegram group, sometimes with a fake “contract” bearing the Ministry of Labour’s logo. At first they pay you a few bolivianos; then, to unlock more tasks or withdraw your earnings, they ask for ever-larger QR deposits. You never get the money back."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio de trabajo fácil desde el celular.",
+        "en": "You see an ad for an easy job from your phone."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pasan a WhatsApp y a un grupo de Telegram, a veces con un contrato con logos oficiales.",
+        "en": "They move you to WhatsApp and a Telegram group, sometimes with a contract bearing official logos."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pagan un poco al inicio para ganar tu confianza.",
+        "en": "They pay you a little at first to win your trust."
+      }
+    },
+    {
+      "text": {
+        "es": "Te piden depósitos por QR para desbloquear tareas o retirar.",
+        "en": "They ask for QR deposits to unlock tasks or withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicidades! Fuiste seleccionado para el trabajo desde casa. Completa 5 tareas al día y gana hasta Bs 900. Únete a nuestro grupo de Telegram para recibir tu contrato y tu primera tarea: [enlace]",
+        "en": "Congratulations! You were selected for the work-from-home job. Complete 5 tasks a day and earn up to Bs 900. Join our Telegram group to receive your contract and first task: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "tiktok",
+      "likes",
+      "trabajo desde casa por telegram",
+      "pagan por ver videos",
+      "tareas para ganar dinero",
+      "me pidieron deposito para desbloquear tareas",
+      "contrato del ministerio de trabajo por telegram",
+      "dar me gusta y ganar",
+      "no puedo retirar mis ganancias",
+      "paquete de tareas",
+      "medio tiempo",
+      "trabajo desde el celular",
+      "grupo de telegram"
+    ],
+    "en": [
+      "likes",
+      "work from home on telegram",
+      "paid to watch videos",
+      "tasks to earn money",
+      "they asked for a deposit to unlock tasks",
+      "can't withdraw my earnings",
+      "paid to like posts",
+      "part time",
+      "telegram group"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Mucha plata por tareas que cualquiera hace en minutos.",
+      "Te mueven de TikTok a WhatsApp y a Telegram.",
+      "Un “contrato” con logos de un ministerio enviado por Telegram.",
+      "Para cobrar tienes que depositar primero."
+    ],
+    "en": [
+      "A lot of money for tasks anyone can do in minutes.",
+      "They move you from TikTok to WhatsApp to Telegram.",
+      "A “contract” with a ministry’s logos sent on Telegram.",
+      "To get paid you must deposit first."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Ningún trabajo real te pide plata para empezar o para cobrar.",
+      "Verifica la oferta en los canales oficiales de la empresa o institución.",
+      "Si depositaste, guarda chats y comprobantes y denuncia en la FELCC."
+    ],
+    "en": [
+      "No real job asks for money to start or to get paid.",
+      "Check the offer on the company’s or institution’s official channels.",
+      "If you deposited, keep chats and receipts and report it to the FELCC."
+    ]
+  },
+  "reportTo": [
+    "bo/felcc",
+    "bo/att-bloquea-la-estafa"
+  ],
+  "sources": [
+    {
+      "title": "Es falso que el Ministerio de Trabajo entregue contratos laborales por Telegram para hacer tareas digitales",
+      "publisher": "Bolivia Verifica",
+      "url": "https://boliviaverifica.bo/es-falso-que-el-ministerio-de-trabajo-entregue-contratos-laborales-por-telegram-para-hacer-tareas-digitales/",
+      "date": "2025-11-27"
+    },
+    {
+      "title": "Policía boliviana atendió 2.826 denuncias de estafa en 6 meses",
+      "publisher": "El País (Tarija), vía eju.tv",
+      "url": "https://eju.tv/2026/10/policia-boliviana-atendio-2-826-denuncias-de-estafa-en-6-meses/",
+      "date": "2026-10-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

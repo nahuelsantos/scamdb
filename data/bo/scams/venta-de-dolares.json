@@ -1,0 +1,143 @@
+{
+  "id": "bo/venta-de-dolares",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un vendedor de dólares en Marketplace o redes sociales",
+    "en": "A dollar seller on Marketplace or social media"
+  },
+  "name": {
+    "es": "Venta falsa de dólares: “pásame los bolivianos por QR y te entrego los dólares”",
+    "en": "Fake dollar sale: “send me the bolivianos by QR and I’ll hand over the dollars”"
+  },
+  "how": {
+    "es": "Con la falta de dólares, aparecen anuncios en Marketplace y otras redes sociales que venden dólares (o pesos argentinos en la frontera) a un precio mejor que el de la calle. El vendedor pide que le pagues primero en bolivianos por QR o transferencia y promete entregar los billetes después. Cuando pagas, te bloquea y apaga el teléfono. Otras veces te citan en un lugar apartado para robarte, o te hacen firmar un “contrato” y nunca entregan.",
+    "en": "With dollars scarce, ads appear on Marketplace and other social media selling dollars (or Argentine pesos near the border) at a better rate than the street. The seller asks you to pay first in bolivianos by QR or transfer and promises to deliver the cash later. Once you pay, they block you and switch off the phone. Other times they arrange to meet somewhere isolated to rob you, or have you sign a “contract” and never deliver."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio de dólares a mejor precio que el del mercado.",
+        "en": "You see an ad for dollars at a better rate than the market."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor te apura porque “hay otros interesados”.",
+        "en": "The seller rushes you because “others are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide pagar primero en bolivianos por QR o transferencia.",
+        "en": "They ask you to pay first in bolivianos by QR or transfer."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Después del pago te bloquea y desaparece.",
+        "en": "After the payment they block you and disappear."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Tengo 2.000 dólares billete limpio a 9,40, más barato que en la calle. Me haces el QR primero y en media hora te los llevo a tu casa. Avísame rápido que hay más gente preguntando.",
+        "en": "I have 2,000 dollars, clean notes, at 9.40, cheaper than on the street. You do the QR first and I’ll bring them to your house in half an hour. Let me know quickly, more people are asking."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "dolares",
+      "divisas",
+      "cambista",
+      "venta de dolares",
+      "vendo dolares",
+      "dolares mas baratos",
+      "pague por qr y no me entregaron los dolares",
+      "me bloqueo despues del qr",
+      "compre dolares por marketplace",
+      "cambio de dolares por whatsapp",
+      "pesos argentinos por deposito",
+      "precio del dolar",
+      "tipo de cambio paralelo"
+    ],
+    "en": [
+      "dollars",
+      "dollars for sale",
+      "selling dollars",
+      "cheaper dollars",
+      "i paid by qr and never got the dollars",
+      "blocked me after the qr payment",
+      "bought dollars on marketplace",
+      "street exchange rate"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Dólares más baratos que en cualquier otro lado.",
+      "Te pide pagar antes de ver los billetes.",
+      "Te pide un contrato o espera de semanas para entregar.",
+      "Te cita en un lugar apartado para la entrega."
+    ],
+    "en": [
+      "Dollars cheaper than anywhere else.",
+      "They ask you to pay before you see the cash.",
+      "They offer a contract or weeks of waiting before delivery.",
+      "They want to meet somewhere isolated for the handover."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Compra dólares solo en bancos o casas de cambio autorizadas.",
+      "Nunca pagues antes de tener los billetes en la mano; si te encuentras con alguien, que sea en un lugar público y acompañado.",
+      "Si ya pagaste, guarda chats y comprobantes, avisa a tu banco y denuncia en la FELCC."
+    ],
+    "en": [
+      "Buy dollars only at banks or authorised exchange offices.",
+      "Never pay before you have the cash in hand; if you meet someone, do it in a public place and with company.",
+      "If you already paid, keep chats and receipts, tell your bank and report it to the FELCC."
+    ]
+  },
+  "reportTo": [
+    "bo/felcc",
+    "bo/tu-banco",
+    "bo/att-bloquea-la-estafa"
+  ],
+  "sources": [
+    {
+      "title": "Cae pareja acusada de estafar a más de 50 personas con falsa venta de dólares",
+      "publisher": "Red Uno",
+      "url": "https://www.reduno.com.bo/noticias/cae-pareja-acusada-de-estafar-a-mas-de-50-personas-con-falsa-venta-de-dolares-20267238166",
+      "date": "2026-07-23"
+    },
+    {
+      "title": "Policía boliviana atendió 2.826 denuncias de estafa en 6 meses",
+      "publisher": "El País (Tarija), vía eju.tv",
+      "url": "https://eju.tv/2026/10/policia-boliviana-atendio-2-826-denuncias-de-estafa-en-6-meses/",
+      "date": "2026-10-12"
+    },
+    {
+      "title": "¿Cómo realizan las estafas por la venta de dólares en las redes? la Policía difunde recomendaciones para no caer",
+      "publisher": "Unitel, vía eju.tv",
+      "url": "https://eju.tv/?p=4276084",
+      "date": "2024-08-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

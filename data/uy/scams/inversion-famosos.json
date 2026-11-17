@@ -1,0 +1,135 @@
+{
+  "id": "uy/inversion-famosos",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "es": "Un video del Presidente o de un famoso",
+    "en": "A video of the President or a celebrity"
+  },
+  "name": {
+    "es": "“Invertí poco y ganá un sueldo”: el video falso con políticos",
+    "en": "“Invest a little and earn a salary”: the fake video with politicians"
+  },
+  "how": {
+    "es": "Circulan en redes videos o fotos, muchas veces hechos con inteligencia artificial, donde el Presidente, la Vicepresidenta u otra figura pública recomiendan una inversión o un supuesto programa del gobierno. Prometen un ingreso fijo garantizado si depositás un monto chico. El link lleva a una nota falsa de un diario y a un formulario donde dejás tus datos o pagás.",
+    "en": "Videos or photos circulate on social media, often made with AI, where the President, the Vice-President or another public figure recommends an investment or a supposed government programme. They promise a guaranteed fixed income if you deposit a small amount. The link goes to a fake newspaper article and a form where you leave your details or pay."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un video de una figura pública recomendando invertir.",
+        "en": "You see a video of a public figure recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Prometen ganancias fijas y garantizadas.",
+        "en": "They promise fixed, guaranteed profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El link lleva a una nota falsa y a un formulario.",
+        "en": "The link goes to a fake article and a form."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden un depósito para empezar.",
+        "en": "They ask for a deposit to start."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "🇺🇾 Programa nacional de ingresos: con un aporte único de $ 7.900 recibís $ 25.000 por mes garantizados. Cupos limitados para residentes en Uruguay. Anotate acá 👉 [enlace]",
+        "en": "🇺🇾 National income programme: with a one-off contribution of $7,900 you get a guaranteed $25,000 a month. Limited places for residents of Uruguay. Sign up here 👉 [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "video de orsi invirtiendo",
+      "inversion recomendada por el presidente",
+      "ingreso fijo garantizado",
+      "programa del gobierno para invertir",
+      "video hecho con inteligencia artificial",
+      "deposito para empezar a ganar",
+      "el presidente anuncio un plan",
+      "ingresos extra desde casa",
+      "aporte inicial",
+      "cobrar todos los meses sin trabajar",
+      "entrevista exclusiva del presidente"
+    ],
+    "en": [
+      "video of the president recommending an investment",
+      "guaranteed fixed income",
+      "government investment programme",
+      "ai-generated video",
+      "deposit to start earning"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Ganancias “garantizadas”.",
+      "Un político o famoso vendiendo una inversión.",
+      "La nota parece de un diario pero la dirección no es del diario.",
+      "Te piden un depósito por transferencia."
+    ],
+    "en": [
+      "“Guaranteed” returns.",
+      "A politician or celebrity selling an investment.",
+      "The article looks like a newspaper but the address isn’t the paper’s.",
+      "They ask for a deposit by transfer."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entres al link ni compartas el video.",
+      "El gobierno comunica solo por sus canales oficiales.",
+      "Consultá en Verificá y, si pagaste, avisá al banco y denunciá."
+    ],
+    "en": [
+      "Don’t open the link or share the video.",
+      "The government only communicates through its official channels.",
+      "Check with Verificá and, if you paid, tell the bank and report it."
+    ]
+  },
+  "reportTo": [
+    "uy/verifica",
+    "uy/cibercrimen",
+    "uy/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Alarma en Uruguay | Estos son los videos hechos con IA que utilizan la imagen del presidente Yamandú Orsi para estafar",
+      "publisher": "El Observador",
+      "url": "https://www.elobservador.com.uy/nacional/alarma-nacional-uruguay-estos-son-los-videos-hechos-ia-estafar-utilizan-la-imagen-del-presidente-yamandu-orsi-n6025248",
+      "date": "2025-11-19"
+    },
+    {
+      "title": "Advierten por intentos de estafa con imagen de Orsi y Cosse: “Verificar las fuentes”",
+      "publisher": "Montevideo Portal",
+      "url": "https://www.montevideo.com.uy/Noticias/Advierten-por-intentos-de-estafa-con-imagen-de-Orsi-y-Cosse--Verificar-las-fuentes--uc941186",
+      "date": "2025-10-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

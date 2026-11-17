@@ -1,0 +1,128 @@
+{
+  "id": "co/falso-servicio-secuestro",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "es": "Un cliente que pide un servicio; luego un supuesto grupo armado",
+    "en": "A customer asking for a service; then a supposed armed group"
+  },
+  "name": {
+    "es": "“Falso servicio”: lo citan a una zona rural y llaman a su familia diciendo que está secuestrado",
+    "en": "“Fake job call”: you are lured to a rural spot and your family is told you’ve been kidnapped"
+  },
+  "how": {
+    "es": "Lo llaman para un trabajo —un acarreo, una clase, un domicilio— en una vereda o zona rural con poca señal. Cuando llega, alguien que dice ser de un grupo armado lo llama, lo amenaza y le ordena no colgar ni moverse. Al mismo tiempo, con datos sacados de redes sociales, llaman a su familia diciendo que lo tienen secuestrado y piden millones por liberarlo. No hay nadie reteniéndolo: todo es por teléfono.",
+    "en": "You are called for a job — a removal, a class, a delivery — in a rural area with poor signal. When you arrive, someone claiming to be from an armed group calls, threatens you and orders you not to hang up or move. At the same time, using details taken from social media, they call your family saying they have kidnapped you and demand millions for your release. Nobody is physically holding you: it is all done by phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le piden un servicio en un lugar apartado.",
+        "en": "You are asked to do a job in a remote place."
+      }
+    },
+    {
+      "text": {
+        "es": "Al llegar, un supuesto miembro de un grupo armado lo llama y lo amenaza.",
+        "en": "When you arrive, a supposed member of an armed group calls and threatens you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le ordenan no colgar y no hablar con nadie.",
+        "en": "You are ordered not to hang up or talk to anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Llaman a su familia: “lo tenemos”, y piden plata ya.",
+        "en": "They call your family: “we have him”, and demand money now."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señora, a su hijo lo tenemos nosotros aquí en el monte, somos del frente. Si quiere volverlo a ver consiga ocho millones hoy mismo y no llame a la Policía, que lo estamos vigilando. Él está aquí al teléfono, escúchelo.",
+        "en": "Ma’am, we have your son here in the hills, we are from the front. If you want to see him again get eight million pesos today and don’t call the police, we are watching him. He’s here on the phone, listen to him."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "falso servicio",
+      "me llamaron diciendo que tenian secuestrado a mi hijo",
+      "dicen que son de las disidencias",
+      "lo citaron a una vereda para un trabajo",
+      "piden plata para liberarlo",
+      "no cuelgue que lo estamos vigilando",
+      "tenemos a su hijo",
+      "esta secuestrado",
+      "lo llamaron para un trasteo",
+      "consiga la plata hoy y no llame a la policia"
+    ],
+    "en": [
+      "fake job call kidnapping",
+      "they said they kidnapped my son",
+      "claimed to be farc dissidents",
+      "lured to a rural area for a job",
+      "ransom demand by phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un servicio en una zona rural sin señal, pedido por alguien desconocido.",
+      "Le prohíben colgar o comunicarse con su familia.",
+      "Piden plata de inmediato y que no llamen a la Policía."
+    ],
+    "en": [
+      "A job in a rural area without signal, requested by a stranger.",
+      "You are forbidden to hang up or contact your family.",
+      "They demand money immediately and say not to call the police."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Familia: no pague; intente comunicarse con la persona por otro medio y llame al GAULA.",
+      "Antes de ir a un servicio, comparta su ubicación en tiempo real y verifique que el lugar existe.",
+      "Si está en peligro, llame al 123."
+    ],
+    "en": [
+      "Family: don’t pay; try to reach the person another way and call the GAULA.",
+      "Before going to a job, share your live location and check the place exists.",
+      "If you are in danger, call 123."
+    ]
+  },
+  "reportTo": [
+    "co/gaula",
+    "co/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Mujer fue a dar una clase de rumba terapia en La Calera y terminó secuestrada",
+      "publisher": "Infobae Colombia",
+      "url": "https://www.infobae.com/colombia/2026/03/11/gaula-militar-frustro-intento-de-secuestro-en-la-calera-detalles-del-operativo-que-se-dio-por-cuenta-de-la-modalidad-de-falso-servicio/",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Policía frustró el intento de extorsión a una pareja bajo la modalidad de falso servicio en Santander",
+      "publisher": "Infobae Colombia",
+      "url": "https://www.infobae.com/colombia/2025/06/29/policia-frustro-el-intento-de-extorsion-a-una-pareja-bajo-la-modalidad-de-falso-servicio-en-santander/",
+      "date": "2025-06-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

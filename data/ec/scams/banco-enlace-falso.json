@@ -1,0 +1,139 @@
+{
+  "id": "ec/banco-enlace-falso",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Banco” o “programa de millas”",
+    "en": "“Bank” or “miles programme”"
+  },
+  "name": {
+    "es": "SMS o correo del banco con enlace falso",
+    "en": "Bank SMS or email with a fake link"
+  },
+  "how": {
+    "es": "Llega un SMS, correo o WhatsApp que parece de su banco o de su programa de millas: que su cuenta fue bloqueada, que alguien entró a su banca en línea o que sus millas vencen hoy. El enlace lleva a una página copiada donde usted escribe su usuario, clave y el código temporal. Con eso le sacan el dinero de la cuenta.",
+    "en": "An SMS, email or WhatsApp arrives that looks like it is from your bank or miles programme: your account was blocked, someone logged into your online banking, or your miles expire today. The link goes to a copied page where you type your username, password and one-time code. With that they take the money from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le avisan de un bloqueo, un acceso raro o millas por vencer.",
+        "en": "They warn you of a block, a strange login or miles about to expire."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dan poco tiempo para “regularizar” o canjear.",
+        "en": "They give you little time to “fix it” or redeem."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una página parecida a la del banco, con otra dirección.",
+        "en": "The link goes to a page that looks like the bank’s, at a different address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden usuario, clave y el código temporal que le llega.",
+        "en": "They ask for username, password and the one-time code you receive."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Estimado cliente, su acceso a la banca virtual fue suspendido por seguridad. Reactívelo hoy antes de las 18:00 para evitar el bloqueo definitivo de su cuenta: [enlace]",
+        "en": "Dear customer, your online banking access was suspended for security. Reactivate it today before 6 pm to avoid your account being permanently blocked: [enlace]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mi cuenta fue bloqueada",
+      "reactivar la banca virtual",
+      "me llego un mensaje del banco con un link",
+      "mis millas se vencen",
+      "canjear las millas",
+      "puse mi clave en el link",
+      "me sacaron la plata de la cuenta",
+      "acceso suspendido"
+    ],
+    "en": [
+      "my account was blocked",
+      "reactivate online banking",
+      "i got a message from the bank with a link",
+      "my miles are expiring",
+      "redeem my miles",
+      "i entered my password on the link",
+      "they took the money from my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "El banco le escribe con un enlace para “desbloquear” o “reactivar”.",
+      "La dirección de la página no es la del banco, aunque se parezca.",
+      "Le piden la clave y el código temporal juntos.",
+      "Millas o puntos que “vencen hoy”."
+    ],
+    "en": [
+      "The bank writes to you with a link to “unblock” or “reactivate”.",
+      "The page address is not the bank’s, even if it looks similar.",
+      "They ask for your password and one-time code together.",
+      "Miles or points that “expire today”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra el enlace: entre a la app oficial o escriba usted la dirección del banco.",
+      "El banco nunca pide claves, códigos temporales ni números de tarjeta por SMS, correo o llamada.",
+      "Si ya escribió sus datos, llame al banco, cambie la clave y bloquee sus accesos.",
+      "Ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Do not open the link: use the official app or type the bank’s address yourself.",
+      "The bank never asks for passwords, one-time codes or card numbers by SMS, email or call.",
+      "If you already entered your details, call the bank, change your password and block access.",
+      "Report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/tu-banco",
+    "ec/banco-pichincha",
+    "ec/produbanco",
+    "ec/fiscalia",
+    "ec/superbancos-reclamo"
+  ],
+  "sources": [
+    {
+      "title": "Produbanco atribuye retiros no autorizados a fraudes de ingeniería social",
+      "publisher": "El Diario (Manabí)",
+      "url": "https://www.eldiario.ec/manabi/produbanco-atribuye-retiros-no-autorizados-a-fraudes-de-ingenieria-social-23022026/",
+      "date": "2026-02-23"
+    },
+    {
+      "title": "Así es el ‘smishing’ o estafas por mensaje de texto, evite perder millas y dinero",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/economia/estafas-mensajes-texto-sms-acumulacion-millas-dinero-107220/",
+      "date": "2025-10-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

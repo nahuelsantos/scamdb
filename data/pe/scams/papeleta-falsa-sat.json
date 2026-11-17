@@ -1,0 +1,120 @@
+{
+  "id": "pe/papeleta-falsa-sat",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "es": "“SAT de Lima”",
+    "en": "“SAT de Lima”"
+  },
+  "name": {
+    "es": "SMS falso del SAT: papeleta o multa por pagar",
+    "en": "Fake SAT SMS: a traffic ticket or fine to pay"
+  },
+  "how": {
+    "es": "Te llega un SMS que dice que tienes una papeleta, una multa o una deuda pendiente con el SAT de Lima, con un enlace a una página que imita la oficial y tiene una pasarela de pago. Lo que buscan son tus datos personales y los de tu tarjeta.",
+    "en": "An SMS says you have a traffic ticket, fine or pending debt with Lima’s SAT, with a link to a page that imitates the official one and has a payment gateway. What they want is your personal and card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS de una supuesta papeleta, multa o deuda.",
+        "en": "An SMS arrives about a supposed traffic ticket, fine or debt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apuran con recargos o embargo si no pagas hoy.",
+        "en": "They rush you with surcharges or seizure if you don’t pay today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace abre una web falsa con pasarela de pago.",
+        "en": "The link opens a fake site with a payment gateway."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Pones tu tarjeta y se quedan con los datos.",
+        "en": "You enter your card and they keep the details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "SAT LIMA: Registra una papeleta pendiente por infraccion de transito. Evite el incremento de la deuda y el bloqueo de su licencia pagando con descuento hoy en [enlace]",
+        "en": "SAT LIMA: You have a pending ticket for a traffic offence. Avoid the debt increasing and your licence being blocked by paying today at a discount at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "sms del sat",
+      "papeleta pendiente",
+      "multa de transito por mensaje",
+      "pagar papeleta con descuento",
+      "link para pagar la multa",
+      "deuda con el sat de lima"
+    ],
+    "en": [
+      "sms from sat",
+      "pending traffic ticket",
+      "traffic fine by text",
+      "pay the ticket at a discount",
+      "link to pay the fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "SMS de multa con enlace y descuento “solo hoy”.",
+      "El mensaje no trae tus datos personales: los avisos reales del SAT son personalizados.",
+      "Pasarela de pago fuera de la web oficial."
+    ],
+    "en": [
+      "A fine SMS with a link and a “today only” discount.",
+      "The message has none of your personal details: real SAT notices are personalised.",
+      "A payment page outside the official website."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace: consulta tus papeletas entrando tú mismo al portal oficial del SAT.",
+      "Reporta el mensaje a Aló SAT.",
+      "Si pagaste con tarjeta, llama a tu banco para bloquearla."
+    ],
+    "en": [
+      "Don’t open the link: check your tickets by going to the official SAT portal yourself.",
+      "Report the message to Aló SAT.",
+      "If you paid by card, call your bank to block it."
+    ]
+  },
+  "reportTo": [
+    "pe/sat-lima",
+    "pe/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "No te dejes estafar: SAT de Lima alerta sobre mensajes fraudulentos enviados por ciberdelincuentes",
+      "publisher": "SAT de Lima",
+      "url": "https://www.gob.pe/institucion/satlima/noticias/1407977-no-te-dejes-estafar-sat-de-lima-alerta-sobre-mensajes-fraudulentos-enviados-por-ciberdelincuentes",
+      "date": "2026-06-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

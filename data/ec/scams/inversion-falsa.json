@@ -1,0 +1,136 @@
+{
+  "id": "ec/inversion-falsa",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "“Plataforma de inversión” o un famoso en video",
+    "en": "“Investment platform” or a celebrity in a video"
+  },
+  "name": {
+    "es": "Inversión falsa: videos trucados y ganancias aseguradas",
+    "en": "Fake investment: doctored videos and guaranteed returns"
+  },
+  "how": {
+    "es": "En redes aparece un video, a veces hecho con inteligencia artificial, de un presidente, un periodista o un famoso promoviendo una plataforma que promete ganancias o una “jubilación anticipada”. O una empresa le ofrece rendimientos altos en bitcoin o “a plazo fijo”. Usted deposita en cuentas que le indican y no recibe comprobantes, rendimientos ni su dinero de vuelta. Muchas de estas empresas están en la lista de no autorizadas.",
+    "en": "A video appears on social media, sometimes made with artificial intelligence, of a president, a journalist or a celebrity promoting a platform that promises profits or “early retirement”. Or a company offers you high returns in bitcoin or “fixed-term” investments. You deposit into accounts they name and get no receipts, no returns and no money back. Many of these companies are on the unauthorised list."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ve un video de alguien famoso recomendando una plataforma.",
+        "en": "You see a video of someone famous recommending a platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le prometen ganancias altas y seguras cada mes.",
+        "en": "They promise high, safe returns every month."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Un “asesor” le pide depositar a una cuenta que él indica.",
+        "en": "An “adviser” asks you to deposit into an account they name."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "No recibe comprobantes ni rendimientos, y el dinero no vuelve.",
+        "en": "You get no receipts or returns, and the money never comes back."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola 👋 Vi que se registró en el programa de inversión que recomendó el presidente. Con USD 250 de inicio puede ganar hasta USD 1.200 al mes. Hoy quedan pocos cupos, ¿le ayudo a activar su cuenta?",
+        "en": "Hi 👋 I saw you signed up for the investment programme the president recommended. With USD 250 to start you can earn up to USD 1,200 a month. Only a few spots left today, shall I help you activate your account?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "plataforma de inversion",
+      "video del presidente recomendando invertir",
+      "jubilacion anticipada",
+      "ganancias aseguradas",
+      "invertir en bitcoin",
+      "no me dejan retirar mi dinero",
+      "rendimiento mensual alto",
+      "plazo fijo con intereses altos",
+      "programa del gobierno para invertir",
+      "ingresos mensuales fijos",
+      "entrevista falsa de un famoso"
+    ],
+    "en": [
+      "investment platform",
+      "video of the president recommending investing",
+      "early retirement scheme",
+      "guaranteed profits",
+      "invest in bitcoin",
+      "they won't let me withdraw my money",
+      "government investment programme",
+      "fixed monthly income"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un famoso o autoridad “recomendando” invertir en un video.",
+      "Ganancias fijas y altas sin riesgo.",
+      "Depósitos a cuentas de personas o empresas que no son bancos.",
+      "No le dan comprobantes ni contratos claros."
+    ],
+    "en": [
+      "A celebrity or official “recommending” an investment in a video.",
+      "High, fixed returns with no risk.",
+      "Deposits to accounts of individuals or companies that are not banks.",
+      "They give you no receipts or clear contracts."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revise si la empresa está en la lista de entidades no autorizadas.",
+      "Ninguna autoridad promueve inversiones en redes sociales.",
+      "Si ya invirtió, guarde comprobantes y ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Check whether the company is on the list of unauthorised entities.",
+      "No official promotes investments on social media.",
+      "If you already invested, keep receipts and report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/entidades-no-autorizadas",
+    "ec/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Fiscalía investiga presunta estafa con criptomonedas en Ecuador",
+      "publisher": "El Diario (Manabí)",
+      "url": "https://www.eldiario.ec/ecuador/fiscalia-investiga-presunta-estafa-con-criptomonedas-en-ecuador-22012026/",
+      "date": "2026-01-22"
+    },
+    {
+      "title": "Video del presidente Noboa fue modificado con inteligencia artificial para engañar con supuestas inversiones",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/sociedad/promocion-plataforma-inversion-daniel-noboa-inteligencia-artificial-estafa-103765/",
+      "date": "2025-08-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

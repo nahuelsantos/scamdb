@@ -1,0 +1,121 @@
+{
+  "id": "uy/comprador-pago-de-mas",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “comprador” y después “el banco”",
+    "en": "A “buyer” and then “the bank”"
+  },
+  "name": {
+    "es": "“Te transferí de más”: el comprador falso y el falso banco",
+    "en": "“I sent you too much”: the fake buyer and fake bank"
+  },
+  "how": {
+    "es": "Publicás algo para vender (un auto, un mueble) y aparece un comprador que ofrece señarlo. Al rato dice que te transfirió de más por error y que el banco te va a llamar para devolverlo. Te llama alguien que dice ser del banco, te saca datos de tus cuentas y te convence de sacar préstamos y transferir la “diferencia”.",
+    "en": "You list something for sale (a car, a piece of furniture) and a buyer offers to put down a deposit. Soon they say they sent you too much by mistake and the bank will call you to return it. Someone claiming to be from the bank calls, gets your account details and talks you into taking out loans and transferring the “difference”."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un comprador ofrece una seña sin ver el artículo.",
+        "en": "A buyer offers a deposit without seeing the item."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dice que te mandó plata de más por error.",
+        "en": "They say they sent you too much by mistake."
+      }
+    },
+    {
+      "text": {
+        "es": "Te llama un falso empleado del banco y te pide datos.",
+        "en": "A fake bank employee calls and asks for details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Te piden devolver la diferencia con un préstamo.",
+        "en": "They ask you to return the difference with a loan."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, ya te mandé la seña por la camioneta, pero me equivoqué y en vez de $ 5.000 puse $ 50.000 😩 Ya hablé con mi banco, te va a llamar un ejecutivo para hacer la devolución. Atendelo por favor que es urgente.",
+        "en": "Hi, I sent the deposit for the van, but I made a mistake and put $50,000 instead of $5,000 😩 I already spoke to my bank; an officer will call you to process the refund. Please answer, it’s urgent."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me transfirieron de mas",
+      "comprador que me sena sin ver",
+      "el banco me va a llamar para devolver",
+      "devolver la diferencia",
+      "saque prestamos para devolver",
+      "vendia el auto en marketplace"
+    ],
+    "en": [
+      "buyer said they sent too much",
+      "the bank will call me to refund",
+      "return the difference",
+      "i took out loans to pay it back",
+      "selling my car on marketplace"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie confirma un “pago de más” sin que lo veas en tu cuenta.",
+      "El banco no llama para mediar entre comprador y vendedor.",
+      "Te piden sacar préstamos."
+    ],
+    "en": [
+      "Nobody can confirm an “overpayment” unless you see it in your account.",
+      "Banks don’t call to mediate between buyer and seller.",
+      "They ask you to take out loans."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Mirá tu cuenta vos en la app del banco; no te fíes de capturas.",
+      "Cortá y llamá al número de atrás de tu tarjeta.",
+      "Nunca saques préstamos para “devolver” plata; denunciá."
+    ],
+    "en": [
+      "Check your account yourself in the bank app; don’t trust screenshots.",
+      "Hang up and call the number on the back of your card.",
+      "Never take out loans to “return” money; report it."
+    ]
+  },
+  "reportTo": [
+    "uy/tu-banco",
+    "uy/policia",
+    "uy/cibercrimen"
+  ],
+  "sources": [
+    {
+      "title": "Cuatro hombres fueron condenados por estafa en Maldonado",
+      "publisher": "Ministerio del Interior (Jefatura de Maldonado)",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/cuatro-hombres-fueron-condenados-estafa-maldonado",
+      "date": "2026-03-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

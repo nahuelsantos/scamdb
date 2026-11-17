@@ -1,0 +1,127 @@
+{
+  "id": "co/falso-soporte-whatsapp",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Soporte técnico de WhatsApp”",
+    "en": "“WhatsApp technical support”"
+  },
+  "name": {
+    "es": "“Soporte de WhatsApp”: le piden el código y se quedan con su cuenta",
+    "en": "“WhatsApp support”: they ask for the code and take your account"
+  },
+  "how": {
+    "es": "Lo llaman o le escriben diciendo que son de WhatsApp: alguien intentó entrar a su cuenta desde otro equipo o se la van a suspender, y para “verificar” necesitan el código que le llega por SMS. Con ese código se quedan con su WhatsApp y les escriben a sus contactos haciéndose pasar por usted para pedir plata o extorsionarlos. La Policía de Bogotá alertó que muchas de estas llamadas salen de cárceles.",
+    "en": "Someone calls or writes saying they are from WhatsApp: someone tried to get into your account from another device or it will be suspended, and to “verify” they need the code you receive by text. With that code they take over your WhatsApp and write to your contacts pretending to be you to ask for money or extort them. Bogotá police warned that many of these calls come from prisons."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Lo contacta un supuesto empleado de WhatsApp.",
+        "en": "A supposed WhatsApp employee contacts you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dice que su cuenta está en riesgo o la van a suspender.",
+        "en": "They say your account is at risk or will be suspended."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le pide el código de seis dígitos que le llega por SMS.",
+        "en": "They ask for the six-digit code you receive by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Con su cuenta les piden plata a sus contactos.",
+        "en": "With your account they ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, le hablamos del soporte de WhatsApp. Detectamos un ingreso a su cuenta desde otro celular en Medellín. Para bloquearlo le va a llegar un mensaje con un código de verificación; léamelo apenas le llegue para confirmar que usted es el titular, si no, la cuenta queda suspendida.",
+        "en": "Hello, this is WhatsApp support. We detected a login to your account from another phone in Medellín. To block it you’ll receive a text with a verification code; read it to me as soon as it arrives to confirm you are the owner, otherwise the account will be suspended."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron de soporte de whatsapp",
+      "me pidieron el codigo de whatsapp",
+      "me robaron el whatsapp",
+      "codigo de verificacion por mensaje",
+      "van a suspender mi cuenta de whatsapp",
+      "estan pidiendo plata a mis contactos desde mi whatsapp"
+    ],
+    "en": [
+      "whatsapp support called me",
+      "they asked for my whatsapp code",
+      "my whatsapp was stolen",
+      "verification code by text",
+      "my contacts are being asked for money from my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "WhatsApp no llama ni pide códigos.",
+      "Le piden leer un código que le llegó por SMS.",
+      "Amenaza de suspender la cuenta."
+    ],
+    "en": [
+      "WhatsApp doesn’t call or ask for codes.",
+      "You are asked to read out a code that came by text.",
+      "A threat to suspend the account."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca comparta el código de verificación; active la verificación en dos pasos.",
+      "Si ya lo dio, avise a sus contactos por otro medio y recupere la cuenta con WhatsApp.",
+      "Repórtelo al CAI Virtual."
+    ],
+    "en": [
+      "Never share the verification code; turn on two-step verification.",
+      "If you already gave it, warn your contacts another way and recover the account with WhatsApp.",
+      "Report it to CAI Virtual."
+    ]
+  },
+  "reportTo": [
+    "co/whatsapp-ayuda",
+    "co/cai-virtual"
+  ],
+  "sources": [
+    {
+      "title": "No caiga en estafas: esta es la modalidad que usan los delincuentes para engañar desde la cárcel",
+      "publisher": "Noticias RCN",
+      "url": "https://www.noticiasrcn.com/colombia/alerta-por-modalidad-de-estafa-desde-la-carcel-862855",
+      "date": "2025-03-03"
+    },
+    {
+      "title": "Nueva modalidad de estafa: delincuentes llaman y se hacen pasar por funcionarios de WhatsApp",
+      "publisher": "Alcaldía de Bogotá",
+      "url": "https://bogota.gov.co/mi-ciudad/seguridad/delincuentes-se-pasan-por-funcionarios-de-whatsapp-para-estafar",
+      "date": "2025-10-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

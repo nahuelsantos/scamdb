@@ -1,0 +1,140 @@
+{
+  "id": "uy/falso-banco-link",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "online"
+  ],
+  "sender": {
+    "es": "“BROU”, “Itaú” o tu banco",
+    "en": "“BROU”, “Itaú” or your bank"
+  },
+  "name": {
+    "es": "“Tus puntos vencen”: el link falso del banco",
+    "en": "“Your points expire”: the fake bank link"
+  },
+  "how": {
+    "es": "Te llega un SMS o un mail que parece de tu banco: tus puntos vencen en 24 horas, hay un descuento en combustible o tenés que validar algo. También puede aparecer un anuncio arriba de todo en Google con un sitio clonado del banco. La página te pide usuario y contraseña y después el código del segundo factor. Con eso entran a tu cuenta y hacen transferencias.",
+    "en": "You get a text or email that seems to come from your bank: your points expire in 24 hours, there is a fuel discount or you must validate something. A cloned bank site can also show up as the top ad on Google. The page asks for your username and password and then the second-factor code. With that they get into your account and make transfers."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mensaje o un anuncio que parece de tu banco.",
+        "en": "You get a message or ad that seems to come from your bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apuran: los puntos vencen hoy o la promo termina.",
+        "en": "They rush you: the points expire today or the promo ends."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El link lleva a una copia de la página del banco.",
+        "en": "The link goes to a copy of the bank’s page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden usuario, contraseña y el código que te manda el banco.",
+        "en": "They ask for your username, password and the code the bank sends you."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "BROU: Estimado cliente, sus Puntos acumulados vencen en las proximas 24 horas. Canjealos ahora ingresando con tu usuario: [enlace]",
+        "en": "BROU: Dear customer, your accumulated Points expire in the next 24 hours. Redeem them now by logging in: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mis puntos vencen",
+      "puntos brou",
+      "canjear puntos",
+      "descuento en combustible del banco",
+      "pagina del banco clonada",
+      "puse mi usuario y contrasena en un link",
+      "me pidieron el segundo factor",
+      "anuncio del banco en google"
+    ],
+    "en": [
+      "my bank points expire",
+      "redeem points",
+      "bank fuel discount",
+      "cloned bank website",
+      "i entered my login on a link",
+      "they asked for my second-factor code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Puntos o promos que vencen “en 24 horas”.",
+      "El link no es la dirección oficial del banco.",
+      "Te piden el código del segundo factor después de la contraseña.",
+      "Entraste al banco desde un anuncio de Google."
+    ],
+    "en": [
+      "Points or promos that expire “in 24 hours”.",
+      "The link isn’t the bank’s official address.",
+      "They ask for the second-factor code after the password.",
+      "You reached the bank through a Google ad."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Entrá siempre escribiendo vos la dirección del banco o desde su app.",
+      "Ningún banco te pide claves ni códigos por mensaje.",
+      "Si pusiste datos, llamá ya al banco para bloquear la cuenta y hacé la denuncia."
+    ],
+    "en": [
+      "Always log in by typing the bank’s address yourself or through its app.",
+      "No bank asks for passwords or codes by message.",
+      "If you entered details, call the bank now to block the account and file a report."
+    ]
+  },
+  "reportTo": [
+    "uy/tu-banco",
+    "uy/brou",
+    "uy/cibercrimen"
+  ],
+  "sources": [
+    {
+      "title": "Investigaciones de la Dirección General de Cibercrimen logran siete condenas por fraudes informáticos",
+      "publisher": "Ministerio del Interior",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/investigaciones-direccion-general-cibercrimen-logran-siete-condenas-fraudes",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Itaú advierte sobre un aumento sostenido de fraudes financieros en Uruguay",
+      "publisher": "El Observador",
+      "url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/itau-advierte-un-aumento-sostenido-fraudes-financieros-uruguay-n5999191",
+      "date": "2025-05-14"
+    },
+    {
+      "title": "¡Cuidado! el BROU advierte de una nueva estafa con su nombre",
+      "publisher": "Ámbito (Uruguay)",
+      "url": "https://www.ambito.com/uruguay/cuidado-el-brou-advierte-una-nueva-estafa-su-nombre-n6131013",
+      "date": "2025-04-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

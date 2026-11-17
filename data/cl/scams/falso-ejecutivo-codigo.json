@@ -1,0 +1,130 @@
+{
+  "id": "cl/falso-ejecutivo-codigo",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "es": "“Ejecutivo de seguridad de tu banco”",
+    "en": "“Your bank’s security officer”"
+  },
+  "name": {
+    "es": "“Le hablo del área de seguridad del banco”: el falso ejecutivo que pide el código",
+    "en": "“This is your bank’s security department”: the fake bank officer who asks for the code"
+  },
+  "how": {
+    "es": "Te llama alguien que sabe tu nombre y tu RUT y dice ser ejecutivo de seguridad de tu banco. Te cuenta que tu cuenta se bloqueó o que hay un intento de fraude, y que te va a ayudar a recuperarla. Te pide la clave, la clave dinámica o el código que te llega por SMS o correo. Con eso entra a tu cuenta y transfiere tu plata.",
+    "en": "Someone who knows your name and RUT (ID number) calls saying they are from your bank’s security team. They say your account was blocked or there is a fraud attempt, and that they’ll help you recover it. They ask for your password, your one-time key (clave dinámica) or the code sent by text or email. With it they get into your account and transfer your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un “ejecutivo de seguridad” que ya sabe tu nombre y RUT.",
+        "en": "A “security officer” calls who already knows your name and RUT."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dice que tu cuenta está bloqueada o que te están robando.",
+        "en": "They say your account is blocked or someone is stealing from you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide la clave, la clave dinámica o el código que te acaba de llegar.",
+        "en": "They ask for your password, one-time key or the code you just received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "No te deja cortar “para no perder el caso”.",
+        "en": "They won’t let you hang up “so the case isn’t lost”."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, ¿don Patricio? Le hablo del área de prevención de fraudes de su banco. Su acceso quedó bloqueado por varios intentos fallidos desde otro equipo. Para desbloquearlo le va a llegar un código de seis dígitos, me lo dicta y quedamos listos. No cuelgue, por favor.",
+        "en": "Good afternoon, Mr Patricio? This is your bank’s fraud prevention department. Your access was blocked after several failed attempts from another device. To unblock it you’ll get a six-digit code; read it to me and we’re done. Please don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "falso ejecutivo del banco",
+      "me llamaron del banco",
+      "me pidieron la clave dinamica",
+      "me pidieron la clave que me llego del banco",
+      "cuenta bloqueada llamada",
+      "ejecutivo de seguridad del banco",
+      "sabian mi rut",
+      "prevencion de fraudes del banco"
+    ],
+    "en": [
+      "fake bank officer called",
+      "they asked for my one time code",
+      "bank security called me",
+      "they knew my national id number",
+      "my bank account was blocked call",
+      "asked for my bank password on the phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "es": [
+      "El banco nunca te pide claves ni códigos por teléfono.",
+      "Que sepan tu RUT no prueba nada: esos datos circulan.",
+      "Te llega un código que no pediste justo durante la llamada."
+    ],
+    "en": [
+      "Your bank never asks for passwords or codes by phone.",
+      "Knowing your RUT proves nothing: that data circulates.",
+      "A code you didn’t request arrives during the call."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Corta. Llama tú al número que está al reverso de tu tarjeta.",
+      "Si diste un código, llama altiro al banco para bloquear todo y pide que desconozcan las operaciones.",
+      "Denuncia en la PDI o la Fiscalía."
+    ],
+    "en": [
+      "Hang up. Call the number on the back of your card yourself.",
+      "If you gave a code, call the bank at once to block everything and dispute the transactions.",
+      "Report it to the PDI or the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "cl/tu-banco",
+    "cl/pdi",
+    "cl/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "“Lo utilizan para poder enviar estafas”: Así funciona la nueva estafa bancaria que parte con el RUT",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/nacional/530586-nueva-estafa-bancaria-rut-bloquear-cuentas-codigo-verificacion-31-08-2026.html",
+      "date": "2026-08-31"
+    },
+    {
+      "title": "Para que esté atento: Estos son los tres “cuento del tío” más usados este 2023, según la PDI",
+      "publisher": "T13",
+      "url": "https://www.t13.cl/noticia/nacional/para-no-te-pase-estos-son-tres-cuentos-del-tio-mas-usados-este-2023-2-9-2023",
+      "date": "2023-09-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

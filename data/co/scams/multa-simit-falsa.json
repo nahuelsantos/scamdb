@@ -1,0 +1,140 @@
+{
+  "id": "co/multa-simit-falsa",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“SIMIT”, “SIM IT” o “Movilidad”",
+    "en": "“SIMIT”, “SIM IT” or “Mobility office”"
+  },
+  "name": {
+    "es": "Multa de tránsito falsa del SIMIT con “descuento por hoy”",
+    "en": "Fake SIMIT traffic fine with a “discount today”"
+  },
+  "how": {
+    "es": "Le llega un SMS o WhatsApp, a veces con su nombre, que dice que tiene un comparendo o fotomulta en cobro jurídico o coactivo y que le pueden embargar. Le ofrecen un acuerdo de pago o un descuento grande si paga hoy por un enlace. La página copia el diseño del SIMIT y le pide datos de tarjeta o cuenta; a veces lo pasan a un chat con un falso asesor. El SIMIT no cobra por mensajes.",
+    "en": "You get a text or WhatsApp, sometimes with your name, saying you have a traffic ticket or camera fine in legal or enforced collection and your assets could be seized. You are offered a payment plan or a big discount if you pay today through a link. The page copies SIMIT’s design and asks for card or account details; sometimes you are moved to a chat with a fake adviser. SIMIT doesn’t collect payments by message."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le llega un mensaje del “SIMIT” o de Movilidad por una multa.",
+        "en": "A message from “SIMIT” or the mobility office arrives about a fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dicen que está en cobro jurídico o que le embargan.",
+        "en": "It says the fine is in legal collection or you’ll be seized."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le ofrecen un descuento grande solo por unas horas.",
+        "en": "You are offered a big discount for only a few hours."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una página falsa que pide la tarjeta.",
+        "en": "The link leads to a fake page asking for your card."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Paga y la plata se pierde, o le roban los datos.",
+        "en": "You pay and the money is lost, or your details are stolen."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "SIMIT: Sr(a) usuario, su comparendo No. [número] pasa a cobro coactivo con orden de embargo del vehiculo. Acceda hoy al acuerdo con 45% de rebaja y evite la inmovilizacion: [enlace]",
+        "en": "SIMIT: Dear user, your traffic ticket No. [number] moves to enforced collection with an order to seize the vehicle. Access the agreement today with a 45% reduction and avoid impoundment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje del simit",
+      "multa de transito por mensaje",
+      "fotomulta en cobro juridico",
+      "descuento para pagar el comparendo",
+      "me van a embargar el carro por una multa",
+      "link para pagar la multa",
+      "acuerdo de pago del simit por whatsapp",
+      "fotodeteccion pendiente",
+      "comparendo en cobro coactivo",
+      "beneficio de rebaja en la multa"
+    ],
+    "en": [
+      "traffic fine text message",
+      "speed camera fine in legal collection",
+      "discount to pay the ticket today",
+      "they will seize my car over a fine",
+      "link to pay the fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El SIMIT no se comunica por WhatsApp ni cobra por enlaces en SMS.",
+      "Remitente mal escrito o dominio que no es el oficial.",
+      "Descuentos enormes que vencen hoy."
+    ],
+    "en": [
+      "SIMIT doesn’t contact people by WhatsApp or collect through links in texts.",
+      "A misspelt sender or a domain that isn’t the official one.",
+      "Huge discounts that expire today."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra el enlace: consulte usted mismo con su cédula o la placa en el SIMIT.",
+      "Bloquee el número y repórtelo.",
+      "Si pagó con tarjeta, llame a su banco para bloquearla."
+    ],
+    "en": [
+      "Don’t open the link: check yourself with your ID or plate on SIMIT.",
+      "Block the number and report it.",
+      "If you paid by card, call your bank to block it."
+    ]
+  },
+  "reportTo": [
+    "co/simit",
+    "co/tu-banco",
+    "co/cai-virtual"
+  ],
+  "sources": [
+    {
+      "title": "Descuentos trampa y cobros falsos: así se hacen pasar por el SIMIT para vaciarle los bolsillos",
+      "publisher": "Noticias RCN",
+      "url": "https://www.noticiasrcn.com/colombia/mensajes-falsos-de-transito-para-estafas-972987",
+      "date": "2025-12-18"
+    },
+    {
+      "title": "¡Pilas! No haga caso a mensajes de texto que simulan multas de tránsito en Bogotá",
+      "publisher": "Alcaldía de Bogotá",
+      "url": "https://bogota.gov.co/mi-ciudad/seguridad/bogota-alerta-por-mensajes-falsos-que-suplantan-multas-de-transito",
+      "date": "2026-04-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

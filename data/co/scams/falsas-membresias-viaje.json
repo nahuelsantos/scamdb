@@ -1,0 +1,121 @@
+{
+  "id": "co/falsas-membresias-viaje",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "in-person"
+  ],
+  "sender": {
+    "es": "“Agencia de viajes” en un centro comercial",
+    "en": "“Travel agency” in a shopping centre"
+  },
+  "name": {
+    "es": "Falsas membresías de viaje: le piden la cédula, la tarjeta y el celular",
+    "en": "Fake travel memberships: they ask for your ID, card and phone"
+  },
+  "how": {
+    "es": "En un centro comercial lo abordan de una supuesta agencia de viajes con bonos, descuentos en tiquetes o paquetes turísticos. Lo llevan a una oficina y, para “validar los beneficios”, le piden la cédula, las tarjetas y el celular, y no lo dejan leer el contrato con calma. Con eso abren productos financieros y hacen transacciones a su nombre. Si no lleva los documentos, lo acompañan hasta su casa. La Fiscalía reportó más de mil víctimas en Medellín, sobre todo adultos mayores.",
+    "en": "In a shopping centre you are approached by a supposed travel agency offering vouchers, ticket discounts or holiday packages. They take you to an office and, to “validate the benefits”, ask for your ID, cards and phone, and don’t let you read the contract calmly. With that they open financial products and make transactions in your name. If you don’t have your documents, they go home with you. The prosecutor’s office reported more than a thousand victims in Medellín, mostly older adults."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Lo abordan en un centro comercial con un premio o descuento de viaje.",
+        "en": "You are approached in a shopping centre with a travel prize or discount."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Lo llevan a una oficina y le meten afán para firmar.",
+        "en": "They take you to an office and rush you to sign."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le piden la cédula, las tarjetas y el celular para “validar”.",
+        "en": "They ask for your ID, cards and phone to “validate”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Abren créditos y hacen pagos a su nombre.",
+        "en": "They open loans and make payments in your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicitaciones, don Álvaro! Usted salió favorecido con un bono de viaje para dos personas a San Andrés. Acompáñeme a la oficina aquí en el segundo piso, solo necesitamos su cédula, su tarjeta y el celular para activar la membresía, es un momentico.",
+        "en": "Congratulations, Mr Álvaro! You have won a travel voucher for two to San Andrés. Come with me to the office here on the second floor, we only need your ID, your card and your phone to activate the membership, it will just take a moment."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "bono de viaje en un centro comercial",
+      "membresia de viajes",
+      "me pidieron la cedula y la tarjeta para validar",
+      "me sacaron un credito a mi nombre",
+      "agencia de viajes me hizo firmar sin leer",
+      "paquete turistico con descuento"
+    ],
+    "en": [
+      "travel voucher at a shopping mall",
+      "travel membership",
+      "they asked for my id and card to validate",
+      "a loan was opened in my name",
+      "signed a contract without reading it"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un “premio” de viaje que le ofrecen en la calle o un centro comercial.",
+      "Le piden la tarjeta y el celular desbloqueado.",
+      "No lo dejan leer el contrato."
+    ],
+    "en": [
+      "A travel “prize” offered in the street or a mall.",
+      "They ask for your card and unlocked phone.",
+      "They don’t let you read the contract."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca entregue su cédula, tarjetas ni celular para “validar” un premio.",
+      "Si ya firmó, llame a su banco para bloquear y revise créditos a su nombre.",
+      "Denuncie ante la Fiscalía o la Policía."
+    ],
+    "en": [
+      "Never hand over your ID, cards or phone to “validate” a prize.",
+      "If you already signed, call your bank to block and check for loans in your name.",
+      "Report it to the prosecutor’s office or the police."
+    ]
+  },
+  "reportTo": [
+    "co/tu-banco",
+    "co/denuncia-virtual",
+    "co/superfinanciera"
+  ],
+  "sources": [
+    {
+      "title": "Cerca de mil personas fueron estafadas con falsas ofertas de viajes en Medellín",
+      "publisher": "Vanguardia (Colprensa)",
+      "url": "https://www.vanguardia.com/colombia/2026/10/17/cerca-de-mil-personas-fueron-estafadas-con-falsas-ofertas-de-viajes-en-medellin/",
+      "date": "2026-10-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

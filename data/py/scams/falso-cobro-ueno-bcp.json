@@ -1,0 +1,141 @@
+{
+  "id": "py/falso-cobro-ueno-bcp",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "es": "“BCP”, “Fondo de Garantía” o “ueno”",
+    "en": "“BCP”, “Deposit Guarantee Fund” or “ueno”"
+  },
+  "name": {
+    "es": "Falsos avisos para cobrar los ahorros de ueno bank",
+    "en": "Fake notices to collect your ueno bank savings"
+  },
+  "how": {
+    "es": "Tras el cierre de ueno bank, circulan SMS, mensajes y publicaciones que dicen ser del Banco Central o del Fondo de Garantía de Depósitos. Te ofrecen “avisarte” cuándo cobrar, abrir una “Cuenta de Ahorros BCP” o adelantar tu devolución, y te mandan a un enlace. Ahí te piden cédula, datos del banco y claves. El BCP no llama pidiendo contraseñas ni manda enlaces por WhatsApp.",
+    "en": "After ueno bank was closed, texts, messages and posts are circulating that claim to be from the Central Bank or the Deposit Guarantee Fund. They offer to “tell you” when to collect, to open a “BCP Savings Account” or to speed up your refund, and send you to a link. There they ask for your ID number, bank details and passwords. The BCP doesn’t call asking for passwords or send links by WhatsApp."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escriben a nombre del BCP, del Fondo de Garantía o de ueno.",
+        "en": "They write in the name of the BCP, the Guarantee Fund or ueno."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te prometen cobrar antes o abrir una cuenta para recibir tu plata.",
+        "en": "They promise you’ll be paid sooner or open an account to receive your money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te mandan un enlace que no es el portal oficial.",
+        "en": "They send you a link that isn’t the official portal."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden claves, datos bancarios o una transferencia.",
+        "en": "They ask for passwords, bank details or a transfer."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "BCP INFORMA: Su devolucion del Fondo de Garantia ya esta disponible. Habilite su Cuenta de Ahorros BCP para recibir el pago hoy mismo ingresando a [enlace]",
+        "en": "BCP NOTICE: Your Guarantee Fund refund is now available. Activate your BCP Savings Account to receive the payment today at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "devolucion del fondo de garantia",
+      "cobrar mis ahorros de ueno",
+      "ahorristas de ueno",
+      "cuenta de ahorros bcp",
+      "mensaje del banco central",
+      "cobro del fgd",
+      "adelantar mi devolucion",
+      "enlace para cobrar",
+      "me pidieron la clave para cobrar",
+      "catastro de ahorristas"
+    ],
+    "en": [
+      "guarantee fund refund",
+      "collect my ueno savings",
+      "bcp savings account",
+      "message from the central bank",
+      "link to get paid"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un enlace que no es el portal oficial del BCP.",
+      "Te piden claves o una transferencia para cobrar.",
+      "Un correo que no viene de una dirección oficial del BCP."
+    ],
+    "en": [
+      "A link that isn’t the BCP’s official portal.",
+      "They ask for passwords or a transfer to get paid.",
+      "An email that doesn’t come from an official BCP address."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Consultá tu pago solo en el portal oficial del BCP, poniendo tu cédula.",
+      "No ingreses claves en ninguna página que te llegue por mensaje.",
+      "Si ya pusiste datos, llamá a tu banco y hacé la denuncia."
+    ],
+    "en": [
+      "Check your payment only on the BCP’s official portal, with your ID number.",
+      "Don’t enter passwords on any page sent to you by message.",
+      "If you already entered details, call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "py/bcp-fgd",
+    "py/tu-banco",
+    "py/policia-cibercrimen",
+    "py/cert-py"
+  ],
+  "sources": [
+    {
+      "title": "Alertan sobre estafas con la devolución a ahorristas de Ueno",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/11/06/alertan-sobre-estafas-con-la-devolucion-a-ahorristas-de-ueno",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Advierten sobre enlaces falsos que buscan captar datos de ahorristas de Ueno",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/11/08/advierten-sobre-enlaces-falsos-que-buscan-captar-datos-de-ahorristas-de-ueno",
+      "date": "2026-11-08"
+    },
+    {
+      "title": "Alertan estafas a ahorristas de ueno sobre cobro: BCP comunicará mañana y sugieren seguir canales oficiales",
+      "publisher": "La Nación",
+      "url": "https://www.lanacion.com.py/negocios/2026/11/03/alertan-estafas-a-ahorristas-de-ueno-sobre-cobro-bcp-comunicara-manana-y-sugieren-seguir-canales-oficiales/",
+      "date": "2026-11-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

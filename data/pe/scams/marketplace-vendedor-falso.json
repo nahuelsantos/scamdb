@@ -1,0 +1,133 @@
+{
+  "id": "pe/marketplace-vendedor-falso",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un vendedor en Marketplace o una “tienda” en redes",
+    "en": "A Marketplace seller or a social media “shop”"
+  },
+  "name": {
+    "es": "Vendedor falso en Marketplace: pagas por adelantado y nunca llega",
+    "en": "Fake Marketplace seller: you pay upfront and it never arrives"
+  },
+  "how": {
+    "es": "En Facebook Marketplace o en una “tienda virtual” ves celulares, televisores o ropa por debajo del precio. El vendedor pasa a WhatsApp, a veces dice ser policía o militar para dar confianza, y te pide un adelanto o el pago completo por Yape o transferencia para “separarlo”. Después te bloquea.",
+    "en": "On Facebook Marketplace or in an online “shop” you see phones, TVs or clothes below market price. The seller moves to WhatsApp, sometimes claims to be a police officer or soldier to seem trustworthy, and asks for a deposit or full payment by Yape or transfer to “reserve” it. Then they block you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un producto muy barato en Marketplace o en una tienda de redes.",
+        "en": "You see a very cheap product on Marketplace or in a social media shop."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor te lleva a WhatsApp y se presenta como alguien confiable.",
+        "en": "The seller moves you to WhatsApp and presents themselves as trustworthy."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pide adelanto para separar el producto porque “hay más interesados”.",
+        "en": "They ask for a deposit to reserve the item because “others are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Pagas y te bloquea; el producto nunca llega.",
+        "en": "You pay and they block you; the product never arrives."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola amigo, sí está disponible el iPhone, es nuevo en caja y lo dejo en S/ 1,300 porque me voy de viaje. Soy suboficial, no hay problema. Tengo otros dos interesados, si me yapeas S/ 300 de adelanto te lo separo y mañana te lo llevo.",
+        "en": "Hi friend, yes the iPhone is available, new in its box and I’ll let it go for S/ 1,300 because I’m travelling. I’m a police officer, no problem. I have two other buyers, if you send me S/ 300 by Yape as a deposit I’ll hold it and bring it tomorrow."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "estafa en marketplace",
+      "pague adelanto y me bloquearon",
+      "vendedor falso en facebook",
+      "celular muy barato en marketplace",
+      "tienda virtual que no entrega",
+      "yapee para separar el producto",
+      "pedido que jamas entregaron",
+      "me pidio la mitad por adelantado",
+      "mandarlo por shalom u olva",
+      "deposito antes del delivery",
+      "consola muy barata"
+    ],
+    "en": [
+      "marketplace scam",
+      "paid a deposit and got blocked",
+      "fake seller on facebook",
+      "very cheap phone on marketplace",
+      "online shop that never delivers",
+      "my order never arrived"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy por debajo del mercado.",
+      "Te piden adelanto para separar.",
+      "Dice ser policía o militar para que confíes."
+    ],
+    "en": [
+      "Price far below market.",
+      "They ask for a deposit to reserve it.",
+      "Claims to be police or military so you’ll trust them."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Paga solo cuando tengas el producto en la mano, en un lugar seguro.",
+      "Desconfía de cuentas nuevas y de quien no acepta encontrarse.",
+      "Si pagaste, guarda capturas y denuncia en la comisaría o en la División de Estafas."
+    ],
+    "en": [
+      "Pay only when you have the product in your hands, in a safe place.",
+      "Be wary of new accounts and of anyone who won’t meet in person.",
+      "If you paid, keep screenshots and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "pe/emergencias",
+    "pe/indecopi"
+  ],
+  "sources": [
+    {
+      "title": "“Mia Design”, la tienda virtual de ropa femenina que engañó a cientos de clientas en Marketplace de Facebook: así era su modus operandi",
+      "publisher": "Infobae Perú",
+      "url": "https://www.infobae.com/peru/2026/05/18/mia-design-la-tienda-virtual-de-ropa-femenina-que-engano-a-cientos-de-clientas-en-marketplace-de-facebook-asi-era-su-modus-operandi/",
+      "date": "2026-05-18"
+    },
+    {
+      "title": "¡Cuidado! Con este método de estafa por presuntas ventas de Marketplace",
+      "publisher": "Panamericana Televisión",
+      "url": "https://panamericana.pe/buenosdiasperu/locales/436955-cuidado-metodo-estafa-ventas-marketplace",
+      "date": "2025-03-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

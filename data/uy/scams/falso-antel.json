@@ -1,0 +1,127 @@
+{
+  "id": "uy/falso-antel",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "es": "“ANTEL”",
+    "en": "“ANTEL”"
+  },
+  "name": {
+    "es": "“Sacaron un crédito a su nombre”: la llamada de falso ANTEL",
+    "en": "“A loan was taken out in your name”: the fake ANTEL call"
+  },
+  "how": {
+    "es": "Te llaman diciendo que son de ANTEL, con una foto de perfil que parece oficial. Te dicen que sacaron créditos o productos a tu nombre, o que te hackearon el teléfono, y que un fiscal va a pedir tu detención. Para “frenarlo” te mandan a hacer trámites, sacar préstamos y entregar los ahorros.",
+    "en": "Someone calls saying they are from ANTEL (the state telecom), with a profile photo that looks official. They say loans or products were taken out in your name, or your phone was hacked, and that a prosecutor will order your arrest. To “stop it” they send you to do paperwork, take out loans and hand over your savings."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman a nombre de ANTEL con foto oficial.",
+        "en": "They call in ANTEL’s name with an official photo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asustan con créditos a tu nombre o una orden de detención.",
+        "en": "They scare you with loans in your name or an arrest warrant."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden que no lo hables con nadie.",
+        "en": "They ask you not to talk about it."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Te piden préstamos o tus ahorros para “solucionarlo”.",
+        "en": "They ask for loans or your savings to “fix it”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, le hablo de ANTEL. Detectamos que desde su línea se gestionaron dos créditos a su nombre. Si no lo frena hoy, el caso pasa a Fiscalía. Yo lo voy guiando, pero no lo comente con nadie porque puede estar involucrado alguien cercano.",
+        "en": "Hello, I’m calling from ANTEL. We detected that two loans were requested in your name from your line. If you don’t stop it today, the case goes to the prosecutor. I’ll guide you, but don’t tell anyone because someone close to you may be involved."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron de antel",
+      "sacaron un credito a mi nombre",
+      "me hackearon el telefono",
+      "me dijeron que iba a ir preso",
+      "orden de detencion de un fiscal",
+      "tope crediticio",
+      "entregar mis ahorros",
+      "clonaron mi linea",
+      "creditos en financieras a mi nombre",
+      "fiscalia me investiga",
+      "cooperar con la investigacion"
+    ],
+    "en": [
+      "call from the phone company",
+      "a loan was taken out in my name",
+      "my phone was hacked",
+      "they said i would be arrested",
+      "hand over my savings"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "ANTEL no gestiona denuncias penales ni pide plata para frenarlas.",
+      "Llaman de números sin +598.",
+      "Amenazan con fiscales o detención.",
+      "Piden secreto y préstamos."
+    ],
+    "en": [
+      "ANTEL doesn’t handle criminal cases or ask for money to stop them.",
+      "They call from numbers without +598.",
+      "They threaten prosecutors or arrest.",
+      "They ask for secrecy and loans."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá y llamá vos a ANTEL por sus canales oficiales.",
+      "No saques préstamos ni entregues plata por una llamada.",
+      "Denunciá en la seccional o en la línea de denuncias del Ministerio del Interior."
+    ],
+    "en": [
+      "Hang up and call ANTEL yourself through its official channels.",
+      "Don’t take out loans or hand over money because of a call.",
+      "Report it at a police station or on the Ministry of the Interior’s reporting line."
+    ]
+  },
+  "reportTo": [
+    "uy/policia",
+    "uy/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Advierten sobre estafas y fraudes con llamadas en nombre de ANTEL",
+      "publisher": "Ministerio del Interior (Jefatura de Lavalleja)",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/advierten-sobre-estafas-fraudes-llamadas-nombre-antel",
+      "date": "2026-09-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

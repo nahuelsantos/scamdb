@@ -1,0 +1,125 @@
+{
+  "id": "co/paquete-retenido-sms",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "es": "“4-72”, “Interrapidísimo” u otra transportadora",
+    "en": "“4-72”, “Interrapidísimo” or another courier"
+  },
+  "name": {
+    "es": "SMS de “paquete retenido”: pague una tasa para recibir su envío",
+    "en": "“Parcel held” text: pay a fee to get your delivery"
+  },
+  "how": {
+    "es": "Le llega un SMS de una empresa de mensajería como 4-72 diciendo que su envío está detenido, que falta confirmar la dirección o pagar una pequeña tasa o un “impuesto” para entregarlo. El enlace lleva a una página parecida a la de la empresa que le pide datos personales y de la tarjeta. Funciona mejor cuando usted sí está esperando un paquete. 4-72 no pide pagos ni datos por mensaje de texto.",
+    "en": "You get a text from a courier such as 4-72 saying your delivery is held, the address must be confirmed, or a small fee or “tax” must be paid to deliver it. The link leads to a page that looks like the company’s and asks for personal and card details. It works best when you really are expecting a parcel. 4-72 doesn’t ask for payments or details by text message."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le llega un SMS con el nombre de una transportadora.",
+        "en": "A text arrives with the name of a courier."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que el paquete se devuelve si no actúa pronto.",
+        "en": "It says the parcel will be returned unless you act soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace acortado o con un dominio raro.",
+        "en": "It has a shortened link or an odd domain."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página le pide una tasa y los datos de la tarjeta.",
+        "en": "The page asks for a fee and your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "4-72: Su envio [número] no pudo ser entregado por direccion incompleta. Actualice sus datos y cancele $4.900 de reprogramacion antes de 24 horas o sera devuelto al origen: [enlace]",
+        "en": "4-72: Your shipment [number] could not be delivered due to an incomplete address. Update your details and pay 4,900 pesos for rescheduling within 24 hours or it will be returned to sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "paquete retenido",
+      "mensaje de 4 72",
+      "mi envio esta detenido",
+      "pagar para que me entreguen el paquete",
+      "actualizar la direccion de entrega",
+      "impuesto para liberar el envio",
+      "sms de interrapidisimo"
+    ],
+    "en": [
+      "parcel held text",
+      "pay a fee to receive my package",
+      "update the delivery address",
+      "courier text with a link",
+      "delivery could not be completed"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Las transportadoras no cobran tasas por SMS.",
+      "Un enlace acortado o un dominio que no es el de la empresa.",
+      "Le piden la tarjeta por un valor pequeño."
+    ],
+    "en": [
+      "Couriers don’t collect fees by text.",
+      "A shortened link or a domain that isn’t the company’s.",
+      "You are asked for your card for a small amount."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra el enlace: rastree el envío con la guía en la página oficial de la empresa.",
+      "Si puso la tarjeta, llame a su banco para bloquearla."
+    ],
+    "en": [
+      "Don’t open the link: track the delivery with the tracking number on the company’s official site.",
+      "If you entered your card, call your bank to block it."
+    ]
+  },
+  "reportTo": [
+    "co/tu-banco",
+    "co/cai-virtual"
+  ],
+  "sources": [
+    {
+      "title": "¿Le retuvieron un paquete? Cuidado, podría ser una estafa a través de mensaje de texto",
+      "publisher": "Diario Occidente",
+      "url": "https://occidente.co/secciones/tecnologia/paquete-retenido-estafa-cibernetica-por-mensaje-de-texto/",
+      "date": "2025-08-08"
+    },
+    {
+      "title": "No caigas en trampas: 4-72 no envía solicitudes por mensajes de texto",
+      "publisher": "Xataka Colombia",
+      "url": "https://www.xataka.com.co/seguridad/no-caigas-trampas-4-72-no-envia-solicitudes-mensajes-texto",
+      "date": "2024-01-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

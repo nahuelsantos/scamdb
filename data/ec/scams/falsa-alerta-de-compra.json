@@ -1,0 +1,136 @@
+{
+  "id": "ec/falsa-alerta-de-compra",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Su banco” o “Departamento de seguridad”",
+    "en": "“Your bank” or “Security department”"
+  },
+  "name": {
+    "es": "Falsa alerta de compra con tarjeta: el falso asesor del banco",
+    "en": "Fake card purchase alert: the fake bank adviser"
+  },
+  "how": {
+    "es": "Le llega un mensaje de una compra que usted no hizo, con un número para “anularla”. Al llamar, un supuesto asesor del banco le pide los datos de la tarjeta y los códigos que llegan a su celular. Con esos códigos los estafadores aprueban compras por internet, y le siguen pidiendo “el código de la siguiente compra” hasta vaciar el cupo.",
+    "en": "You get a message about a purchase you did not make, with a number to call to “cancel” it. When you call, a fake bank adviser asks for your card details and the codes that reach your phone. The scammers use those codes to approve online purchases, and keep asking for “the code for the next purchase” until the credit limit is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Llega un SMS o aviso de una compra que no reconoce, con un número para llamar.",
+        "en": "An SMS or alert arrives about a purchase you do not recognise, with a number to call."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "El “asesor” le apura: si no actúa ya, la compra se confirma.",
+        "en": "The “adviser” rushes you: if you do not act now, the purchase goes through."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le pide el número de la tarjeta y los códigos que le llegan para “bloquear” la compra.",
+        "en": "They ask for the card number and the codes you receive to “block” the purchase."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Le mantiene en la llamada mientras hacen más compras con su tarjeta.",
+        "en": "They keep you on the call while more purchases are made with your card."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Aviso: se registró un consumo de USD 489,90 con su tarjeta terminada en [número] en una tienda en línea. Si usted no reconoce esta transacción, comuníquese de inmediato al [número] para anularla.",
+        "en": "Notice: a charge of USD 489.90 was made with your card ending in [número] at an online shop. If you do not recognise this transaction, call [número] immediately to cancel it."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "compra que no hice",
+      "consumo no reconocido",
+      "llame para anular la compra",
+      "me pidieron el codigo que me llego",
+      "el asesor me pidio los datos de la tarjeta",
+      "bloquear la compra",
+      "me vaciaron el cupo de la tarjeta",
+      "codigo de la siguiente compra"
+    ],
+    "en": [
+      "purchase i did not make",
+      "unrecognised charge",
+      "call to cancel the purchase",
+      "they asked for the code i received",
+      "the adviser asked for my card details",
+      "block the purchase",
+      "they emptied my credit limit"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "es": [
+      "Un SMS de “compra no reconocida” que le da un número para llamar.",
+      "Le piden códigos que le llegan al celular “para anular” algo.",
+      "Cada código que da trae otra compra.",
+      "Ningún banco pide claves ni códigos por teléfono, SMS o WhatsApp."
+    ],
+    "en": [
+      "An “unrecognised purchase” SMS that gives you a number to call.",
+      "They ask for codes sent to your phone “to cancel” something.",
+      "Each code you give brings another purchase.",
+      "No bank asks for passwords or codes by phone, SMS or WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No llame al número del mensaje: llame al que está atrás de su tarjeta o revise en la app oficial.",
+      "Nunca dicte códigos que le lleguen al celular, aunque digan que son para cancelar.",
+      "Si ya dio datos, bloquee la tarjeta de inmediato y pida el contracargo.",
+      "Ponga la denuncia en la Fiscalía y, si el banco no le responde, reclame ante la Superintendencia de Bancos."
+    ],
+    "en": [
+      "Do not call the number in the message: call the one on the back of your card or check in the official app.",
+      "Never read out codes sent to your phone, even if they say it is to cancel something.",
+      "If you already gave details, block the card immediately and ask for a chargeback.",
+      "Report it to the Fiscalía and, if the bank does not respond, complain to the Superintendency of Banks."
+    ]
+  },
+  "reportTo": [
+    "ec/tu-banco",
+    "ec/fiscalia",
+    "ec/superbancos-reclamo"
+  ],
+  "sources": [
+    {
+      "title": "Falsas alertas de compras con tarjetas: nueva modalidad de estafa en Ecuador",
+      "publisher": "El Mercurio (Cuenca)",
+      "url": "https://elmercurio.com.ec/nacional/2026/07/24/estafa-mensajes-texto-compras-tarjetas-credito-debito-ecuador/",
+      "date": "2026-07-24"
+    },
+    {
+      "title": "Produbanco atribuye retiros no autorizados a fraudes de ingeniería social",
+      "publisher": "El Diario (Manabí)",
+      "url": "https://www.eldiario.ec/manabi/produbanco-atribuye-retiros-no-autorizados-a-fraudes-de-ingenieria-social-23022026/",
+      "date": "2026-02-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

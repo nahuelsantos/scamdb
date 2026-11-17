@@ -1,0 +1,144 @@
+{
+  "id": "uy/falso-funcionario-banco",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Seguridad del BROU” o de tu banco",
+    "en": "“BROU security” or your bank"
+  },
+  "name": {
+    "es": "“Le hablo del banco”: el falso funcionario bancario",
+    "en": "“I’m calling from the bank”: the fake bank employee"
+  },
+  "how": {
+    "es": "Te llaman desde un celular común diciendo que son del banco, muchas veces del BROU. Te hablan de un movimiento raro, un bloqueo o que hay que “corroborar” tus datos. Ya saben algunas cosas tuyas, así que suenan creíbles. Te piden datos de la cuenta, las claves o el código que te llega, o que hagas una transferencia “para proteger la plata”.",
+    "en": "Someone calls you from an ordinary mobile saying they are from the bank, often BROU. They mention an odd transaction, a block or the need to “double-check” your details. They already know some things about you, so they sound credible. They ask for account details, passwords or the code you receive, or for a transfer “to protect your money”."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman diciendo que son del banco.",
+        "en": "They call saying they are from the bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te asustan con un movimiento raro o un bloqueo.",
+        "en": "They scare you with an odd transaction or a block."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden claves o el código que te llega.",
+        "en": "They ask for passwords or the code you receive."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Te piden que muevas la plata a otra cuenta.",
+        "en": "They ask you to move the money to another account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "No te dejan cortar para llamar vos.",
+        "en": "They won’t let you hang up and call back."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le hablo del área de seguridad del banco. Detectamos un ingreso a su cuenta desde otro departamento y necesitamos corroborar sus datos. Le va a llegar un código al celular, me lo lee y anulamos la operación. No corte, por favor.",
+        "en": "Good afternoon, I’m calling from the bank’s security area. We detected a login to your account from another region and need to double-check your details. You’ll get a code on your phone; read it to me and we’ll cancel the operation. Please don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me llamaron del banco",
+      "me llamaron del brou",
+      "corroborar mis datos",
+      "movimiento sospechoso en mi cuenta",
+      "me pidieron la clave por telefono",
+      "me pidieron el codigo que me llego",
+      "transferir a una cuenta segura",
+      "compra en el exterior con mi tarjeta",
+      "prevencion de fraude del banco",
+      "verificar que soy el titular",
+      "me pidieron la cedula por telefono",
+      "banco republica me llamo"
+    ],
+    "en": [
+      "call from the bank",
+      "confirm my details by phone",
+      "suspicious activity on my account",
+      "they asked for my password over the phone",
+      "move money to a safe account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "es": [
+      "Te llaman desde un celular, no desde el banco.",
+      "Te piden claves, PIN o códigos.",
+      "Te dicen que muevas la plata para “protegerla”.",
+      "No quieren que cortes."
+    ],
+    "en": [
+      "They call from a mobile, not the bank.",
+      "They ask for passwords, PINs or codes.",
+      "They tell you to move the money to “protect” it.",
+      "They don’t want you to hang up."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá. Llamá vos al número que está atrás de tu tarjeta.",
+      "Nunca digas claves ni códigos por teléfono.",
+      "Si ya diste datos o transferiste, avisá al banco enseguida y hacé la denuncia."
+    ],
+    "en": [
+      "Hang up. Call the number on the back of your card yourself.",
+      "Never give passwords or codes by phone.",
+      "If you already gave details or transferred, tell the bank at once and file a report."
+    ]
+  },
+  "reportTo": [
+    "uy/tu-banco",
+    "uy/brou",
+    "uy/cibercrimen"
+  ],
+  "sources": [
+    {
+      "title": "En Uruguay hay organizaciones delictivas que operan para cometer estafas cibernéticas",
+      "publisher": "El Observador",
+      "url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/en-uruguay-hay-organizaciones-delictivas-cometer-estafas-ciberneticas-n6051812",
+      "date": "2026-07-24"
+    },
+    {
+      "title": "Que no te engañen: cómo prevenir el “cuento del tío” y evitar las estafas electrónicas",
+      "publisher": "Montevideo Portal",
+      "url": "https://www.montevideo.com.uy/Noticias/Que-no-te-enganen-como-prevenir-el-cuento-del-tio-y-evitar-las-estafas-electronicas-uc949446",
+      "date": "2026-02-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}
