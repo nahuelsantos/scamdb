@@ -1,0 +1,127 @@
+{
+  "id": "tr/toki-housing-fake-application",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "tr": "TOKİ veya e-Devlet’i taklit eden bir site; arama sonuçlarında üstte çıkan reklam",
+    "en": "A site imitating TOKİ or e-Devlet; an ad at the top of search results"
+  },
+  "name": {
+    "tr": "Sahte TOKİ sosyal konut başvurusu: Başvuru, teminat veya sigorta ücreti IBAN’a isteniyor",
+    "en": "Fake TOKİ social housing application: application, guarantee or insurance fee demanded to an IBAN"
+  },
+  "how": {
+    "tr": "Devletin sosyal konut kampanyalarına olan ilgiyi kullanan dolandırıcılar, TOKİ ve e-Devlet sayfalarını taklit eden siteler kurar ve bunları arama sonuçlarında üstlere taşır. Başvuru yapanlardan kimlik bilgileri alınır ve başvuru, teminat ya da sigorta ücreti adıyla bir kişinin IBAN’ına para göndermeleri istenir. Bazı sitelerde girilen şifrelerle hesaplar da ele geçirilir.",
+    "en": "Using interest in government social housing campaigns, scammers build sites imitating TOKİ and e-Devlet pages and push them to the top of search results. Applicants hand over ID details and are told to send money to a private IBAN as an application, guarantee or insurance fee. On some sites the passwords entered are used to take over accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Aramada TOKİ veya e-Devlet’e benzeyen bir site çıkar.",
+        "en": "A site resembling TOKİ or e-Devlet appears in search."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Hak sahibi olmak için hemen başvurmanız gerektiği söylenir.",
+        "en": "You are told to apply now to secure a home."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Kimlik bilgileri ve şifre istenir.",
+        "en": "ID details and passwords are requested."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tr": "Başvuru, teminat veya sigorta ücreti IBAN’a istenir.",
+        "en": "An application, guarantee or insurance fee is demanded to an IBAN."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "online",
+      "text": {
+        "tr": "TOKİ Sosyal Konut Ön Başvuru Ekranı: Kurada öncelik hakkı kazanmak için başvurunuzu tamamlayın. Başvuru teminat bedeli olan 2.500 TL’yi aşağıdaki IBAN’a açıklamaya T.C. kimlik numaranızı yazarak gönderin. Bedeli yatırılmayan başvurular kuraya dahil edilmeyecektir.",
+        "en": "TOKİ Social Housing Pre-Application Screen: Complete your application to gain priority in the draw. Send the 2,500 TL application guarantee fee to the IBAN below, writing your national ID number in the description. Applications without the fee will not be included in the draw."
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "toki başvuru ücreti iban",
+      "sosyal konut başvurusu sahte site",
+      "toki kura öncelik için para istendi",
+      "e devlet görünümlü konut başvurusu",
+      "konut başvuru teminat bedeli yatırdım",
+      "ilk evim sahte başvuru sayfası",
+      "toki sigorta ücreti dolandırıcılık"
+    ],
+    "en": [
+      "fake toki housing application site",
+      "asked to pay application fee for social housing",
+      "paid guarantee fee to iban for housing draw",
+      "fake e-devlet page for housing project",
+      "social housing scam priority in draw"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "tr": [
+      "Resmi başvurular yalnızca e-Devlet ve kurumun kendi sitesi üzerinden yapılır.",
+      "Devlet kurumları bir kişinin IBAN’ına ücret yatırmanızı istemez.",
+      "Kurada öncelik parayla satın alınamaz.",
+      "Arama sonuçlarındaki üst reklam resmi site olmayabilir."
+    ],
+    "en": [
+      "Official applications are made only through e-Devlet and the institution’s own site.",
+      "Government bodies never ask you to pay a fee into a private IBAN.",
+      "Priority in a draw cannot be bought.",
+      "The ad at the top of search results may not be the official site."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Başvurunuzu e-Devlet’e adresi kendiniz yazarak girip yapın.",
+      "Şifre girdiyseniz hemen değiştirin; para gönderdiyseniz bankanızı arayın.",
+      "Sahte siteyi ekran görüntüleriyle CİMER’e bildirin, suç varsa savcılığa başvurun."
+    ],
+    "en": [
+      "Apply by going to e-Devlet and typing the address yourself.",
+      "If you entered a password, change it at once; if you sent money, call your bank.",
+      "Report the fake site to CİMER with screenshots, and go to the prosecutor if a crime occurred."
+    ]
+  },
+  "reportTo": [
+    "tr/cimer",
+    "tr/usom",
+    "tr/police-prosecutor",
+    "tr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Dolandırıcıların 500 bin sosyal konut tuzağı",
+      "publisher": "NTV",
+      "url": "https://www.ntv.com.tr/turkiye/dolandiricilarin-500-bin-sosyal-konut-tuzagi-1694318",
+      "date": "2025-11-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

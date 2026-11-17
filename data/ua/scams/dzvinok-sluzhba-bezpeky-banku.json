@@ -1,0 +1,129 @@
+{
+  "id": "ua/dzvinok-sluzhba-bezpeky-banku",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "uk": "Дзвінок нібито зі служби безпеки чи підтримки вашого банку",
+    "en": "A call supposedly from your bank's security or support team"
+  },
+  "name": {
+    "uk": "Дзвінок «зі служби безпеки банку»: оновити картку чи зупинити операцію",
+    "en": "Call 'from the bank's security team': update the card or stop a transaction"
+  },
+  "how": {
+    "uk": "Шахраї телефонують від імені банку і кажуть про підозрілу операцію або про те, що картку треба терміново «оновити» чи «переактивувати», інакше її заблокують. До розмови може долучитися ще один «працівник», який диктує, що робити в застосунку. Вони знають ваше ім’я та банк, просять реквізити картки, PIN, паролі чи коди з SMS або змушують самих виконати переказ. Справжній банк ніколи не просить цього по телефону.",
+    "en": "Scammers call in the name of your bank and say there is a suspicious transaction, or that the card must urgently be 'updated' or 're-activated' or it will be blocked. A second 'employee' may join and tell you what to do in the app. They know your name and bank, ask for card details, PIN, passwords or SMS codes, or make you carry out a transfer yourself. A real bank never asks for this on the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Дзвонять із банку: з вашою карткою проблема.",
+        "en": "A call from the bank: there's a problem with your card."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Без оновлення картку заблокують сьогодні.",
+        "en": "Without an update the card will be blocked today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "uk": "Не кладіть слухавку, з’єднуємо з фахівцем.",
+        "en": "Don't hang up, we're putting you through to a specialist."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "uk": "Назвіть код із SMS або зробіть операцію в застосунку.",
+        "en": "Read out the SMS code or do an operation in the app."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "uk": "Добрий день, Олено Петрівно, служба безпеки банку. Термін активації вашої картки закінчується, і сьогодні її буде обмежено. Щоб зберегти доступ до коштів, зараз вам надійде код — продиктуйте його, і я передам вас колезі, який допоможе оновити дані в застосунку. Будь ласка, не завершуйте дзвінок.",
+        "en": "Good afternoon, Olena Petrivna, this is the bank's security team. The activation of your card is expiring and it will be restricted today. To keep access to your money, you'll get a code now — read it out to me and I'll pass you to a colleague who will help update your details in the app. Please don't end the call."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "подзвонили з банку сказали оновити картку",
+      "служба безпеки банку попросила код з смс",
+      "кажуть хтось намагається зняти гроші з картки",
+      "працівник банку диктував що натискати в застосунку",
+      "дзвінок з приватбанку картку заблокують",
+      "просили назвати cvv щоб скасувати операцію"
+    ],
+    "en": [
+      "someone called from the bank saying to update my card",
+      "the bank security team asked for my sms code",
+      "they say someone is trying to withdraw money from my card",
+      "a bank employee told me what to press in the app",
+      "a call from my bank saying the card will be blocked",
+      "they asked for the cvv to cancel a transaction"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "uk": [
+      "Банк просить PIN, CVV, пароль або код із SMS.",
+      "Вам кажуть виконувати операції в застосунку під диктовку.",
+      "Тиснуть, що картку заблокують «прямо зараз»."
+    ],
+    "en": [
+      "The bank asks for your PIN, CVV, password or SMS code.",
+      "You are told to carry out operations in the app as they dictate.",
+      "They push that the card will be blocked 'right now'."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Покладіть слухавку й самі зателефонуйте за номером на звороті картки або на сайті банку.",
+      "Те, що співрозмовник знає ваше ім’я та банк, не доводить, що він з банку.",
+      "Якщо назвали дані чи зробили переказ, негайно заблокуйте картку й повідомте кіберполіцію."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card or on the bank's website yourself.",
+      "The caller knowing your name and bank does not prove they are from the bank.",
+      "If you gave details or made a transfer, block the card at once and report it to the cyber police."
+    ]
+  },
+  "reportTo": [
+    "ua/your-bank",
+    "ua/cyberpolice",
+    "ua/nbu"
+  ],
+  "sources": [
+    {
+      "title": "Телефонують нібито з банку: як розпізнати шахрайство з «оновленням» банківської картки",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/telefonuyut-nibyto-z-banku-yak-rozpiznaty-shaxrajstvo-z-onovlennyam-bankivskoyi-kartky-8485/",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "«Встановіть новий застосунок вашого банку»: кіберполіція попереджає про шахрайську схему",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/vstanovit-novyj-zastosunok-vashogo-banku--kiberpolicziya-poperedzhaye-pro-shaxrajsku-sxemu-2145/",
+      "date": "2024-07-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

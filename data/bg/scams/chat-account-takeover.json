@@ -1,0 +1,132 @@
+{
+  "id": "bg/chat-account-takeover",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "bg": "Познат от телефонния ви указател (чийто профил вече е превзет) или „поддръжката“ на приложението",
+    "en": "A contact from your phone book (whose account has already been taken over) or the app's “support”"
+  },
+  "name": {
+    "bg": "Превземане на профил във WhatsApp, Viber или Telegram: „виж снимките“, „гласувай“, код от SMS",
+    "en": "Hijacking a WhatsApp, Viber or Telegram account: “see the photos”, “vote”, a code from a text"
+  },
+  "how": {
+    "bg": "Получавате съобщение от познат: „Има твои снимки, виж ги тук“, молба да гласувате в анкета или конкурс за дете, или „сервизно“ съобщение от приложението за пререгистрация. Линкът води към страница, която иска телефонния ви номер и кода от SMS. Щом го въведете, измамниците влизат в профила ви, а от него пишат на приятелите ви: молят за пари назаем с обещание да ги върнат на другия ден и разпращат същия линк.",
+    "en": "You get a message from someone you know: “There are photos of you, look here”, a request to vote in a poll or a children's contest, or a “service” message from the app asking you to re-register. The link leads to a page asking for your phone number and the code from a text. Once you enter it the scammers get into your account and write to your friends from it: asking to borrow money with a promise to repay it the next day, and sending the same link on."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Съобщение от познат с линк: снимки, гласуване или пререгистрация.",
+        "en": "A message from a contact with a link: photos, voting or re-registration."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Страницата иска номера ви и кода от SMS.",
+        "en": "The page asks for your number and the code from a text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "bg": "От превзетия профил се искат пари назаем от приятелите ви.",
+        "en": "Your friends are asked for a loan from the hijacked account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Здрасти! Видя ли тези снимки? Ти ли си на тях? 😳 [линк] Като отвориш, ще поиска да потвърдиш с номера си, иначе не се виждат.",
+        "en": "Hi! Have you seen these photos? Is that you in them? 😳 [link] When you open it, it asks you to confirm with your number, otherwise you can't see them."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "има твои снимки виж линка",
+      "гласувай за детето в конкурс линк",
+      "превзеха ми профила във вайбър",
+      "хакнаха ми уотсапа",
+      "искат кода от есемеса",
+      "приятел пише иска пари назаем до утре",
+      "пререгистрация на приложението код"
+    ],
+    "en": [
+      "there are photos of you click the link",
+      "vote for a child in a contest link",
+      "my whatsapp account was hacked",
+      "friend asked to borrow money on chat",
+      "asked for the sms code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "bg": [
+      "Кодът от SMS служи само за вход в профила ви; който го поиска, иска да ви го отнеме.",
+      "Линк „снимки“ или „гласуване“ от познат може да идва от вече превзет профил.",
+      "Молба за пари в чат, без обаждане, трябва да се провери."
+    ],
+    "en": [
+      "The text-message code is only for logging in to your account; anyone who asks for it wants to take the account.",
+      "A “photos” or “voting” link from a contact may come from an already hijacked account.",
+      "A request for money in a chat, with no call, has to be checked."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не отваряйте линка и не въвеждайте номер или код.",
+      "Включете двустепенна проверка (ПИН) в WhatsApp, Viber и Telegram.",
+      "Преди да дадете пари на приятел, обадете му се.",
+      "Ако профилът ви е превзет, предупредете близките си, възстановете го с нов код и подайте сигнал в ГДБОП."
+    ],
+    "en": [
+      "Don't open the link or enter your number or a code.",
+      "Turn on two-step verification (PIN) in WhatsApp, Viber and Telegram.",
+      "Before giving money to a friend, call them.",
+      "If your account is hijacked, warn people close to you, recover it with a new code and report it to GDBOP."
+    ]
+  },
+  "reportTo": [
+    "bg/gdbop-cybercrime",
+    "bg/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Внимание! Хакери превземат профили в чатове, молят за пари назаем",
+      "publisher": "БНТ",
+      "url": "https://bntnews.bg/news/vnimanie-hakeri-prevzemat-profili-v-chatove-molyat-za-pari-nazaem-1345318news.html",
+      "date": "2025-07-01"
+    },
+    {
+      "title": "В ход е активно превземане на потребителски профили в чат приложения, предупреждава ГДБОП",
+      "publisher": "БТА",
+      "url": "https://www.bta.bg/bg/news/bulgaria/921855-v-hod-e-aktivno-prevzemane-na-potrebitelski-profili-v-chat-prilozheniya-predupr",
+      "date": "2025-07-01"
+    },
+    {
+      "title": "И бивш главен секретар на МВР с фалшив профил в Телеграм - от такъв уж познат ви праща снимки, после точат пари",
+      "publisher": "24 часа",
+      "url": "https://www.24chasa.bg/bulgaria/article/20857259",
+      "date": "2025-07-07"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/mamo-new-number"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "cy/payment-platform-robocall",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "el": "Ηχογραφημένη κλήση από κυπριακό ή ξένο αριθμό «από πλατφόρμα πληρωμών»",
+    "en": "A recorded call from a Cypriot or foreign number “from a payment platform”"
+  },
+  "name": {
+    "el": "Αυτόματη κλήση «πατήστε 1 για να εγκρίνετε τη συναλλαγή»",
+    "en": "Automated call: “press 1 to approve the transaction”"
+  },
+  "how": {
+    "el": "Μια ηχογραφημένη φωνή λέει ότι είναι πλατφόρμα πληρωμών ή άλλος οργανισμός και ότι μια χρέωση, συχνά γύρω στα €200, θα γίνει από τον λογαριασμό σας. Σας λέει να πατήσετε ένα πλήκτρο για να «εγκρίνετε» ή να «ακυρώσετε». Μετά μπορεί να μιλήσει ζωντανός «υπάλληλος» που ζητά στοιχεία, κωδικούς ή να εγκαταστήσετε εφαρμογή απομακρυσμένης πρόσβασης. Έτσι εγκρίνετε συναλλαγές που δεν κάνατε. Κανένας νόμιμος οργανισμός δεν ζητά έγκριση συναλλαγών με αυτόματες κλήσεις.",
+    "en": "A recorded voice says it is a payment platform or another organisation and that a charge, often around €200, is about to leave your account. It tells you to press a key to “approve” or “cancel”. A live “agent” may then come on and ask for details, codes or that you install a remote access app. This makes you approve payments you never made. No genuine organisation asks you to approve transactions through automated calls."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ηχογραφημένη κλήση λέει ότι είναι πλατφόρμα πληρωμών.",
+        "en": "A recorded call says it is a payment platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Μια χρέωση θα γίνει τώρα αν δεν αντιδράσετε.",
+        "en": "A charge will go through now unless you act."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Σας λέει να πατήσετε ένα πλήκτρο και να μιλήσετε με «υπάλληλο».",
+        "en": "It tells you to press a key and speak to an “agent”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "el": "Ο «υπάλληλος» ζητά κωδικούς ή εφαρμογή απομακρυσμένης πρόσβασης.",
+        "en": "The “agent” asks for codes or a remote access app."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Ηχογραφημένο μήνυμα: Αυτή είναι ειδοποίηση πληρωμής. Μια συναλλαγή €199,90 πρόκειται να χρεωθεί στον λογαριασμό σας. Αν δεν την αναγνωρίζετε, πατήστε 1 για να μιλήσετε με το τμήμα ασφαλείας.",
+        "en": "Recorded message: This is a payment notification. A transaction of €199.90 is about to be charged to your account. If you do not recognise it, press 1 to speak to our security team."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "recorded call says money will be taken from my account",
+      "press 1 to approve or cancel a payment",
+      "automated call from a payment platform",
+      "robocall about a 200 euro charge",
+      "call asked me to confirm a transaction with a key",
+      "payment service call then asked for codes"
+    ],
+    "el": [
+      "ηχογραφημένη κλήση για χρέωση στον λογαριασμό",
+      "πατήστε 1 για έγκριση πληρωμής",
+      "αυτόματη κλήση από πλατφόρμα πληρωμών",
+      "κλήση για χρέωση 200 ευρώ",
+      "μου ζήτησαν να εγκρίνω συναλλαγή με πλήκτρο",
+      "υπάλληλος πλατφόρμας ζήτησε κωδικούς"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "en": [
+      "A recorded voice asking you to press a key to approve or stop a payment.",
+      "A charge you don’t recognise and a rush to act.",
+      "Requests for codes or to install an app."
+    ],
+    "el": [
+      "Ηχογραφημένη φωνή που ζητά να πατήσετε πλήκτρο για να εγκρίνετε ή να σταματήσετε πληρωμή.",
+      "Χρέωση που δεν αναγνωρίζετε και βιασύνη.",
+      "Ζητούν κωδικούς ή να εγκαταστήσετε εφαρμογή."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up without pressing anything.",
+      "Check your account in the bank or payment app yourself.",
+      "Never install remote access apps like AnyDesk or TeamViewer for a caller.",
+      "If you approved something or shared codes, call your bank at once and report it to the police."
+    ],
+    "el": [
+      "Κλείστε χωρίς να πατήσετε τίποτα.",
+      "Ελέγξτε μόνοι σας τον λογαριασμό στην εφαρμογή της τράπεζας ή της πλατφόρμας.",
+      "Μην εγκαταστήσετε ποτέ εφαρμογές απομακρυσμένης πρόσβασης όπως AnyDesk ή TeamViewer για κάποιον που σας καλεί.",
+      "Αν εγκρίνατε κάτι ή δώσατε κωδικούς, καλέστε αμέσως την τράπεζα και καταγγείλετε το στην Αστυνομία."
+    ]
+  },
+  "reportTo": [
+    "cy/your-bank",
+    "cy/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Police warn public after rise in scam calls",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/07/03/police-warn-public-after-rise-in-scam-calls",
+      "date": "2026-07-03"
+    },
+    {
+      "title": "Υπόθεση διαδικτυακής απάτης και απόσπασης χρηματικού ποσού πέραν των 127.000 ευρώ διερευνά η Αστυνομία στη Λευκωσία",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/upothesi-diadiktuakis-apatis-kai-apospasis-xrimatikou-posou-peran-twn-127000-eurw-diereuna-i-astunomia-sti-leukwsia/",
+      "date": "2026-07-02"
+    },
+    {
+      "title": "Wave of complaints over new phone scam in Cyprus",
+      "publisher": "Sigmalive",
+      "url": "https://en.sigmalive.com/wave-of-complaints-over-new-phone-scam-in-cyprus/",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "Μεγάλος αριθμός αναφορών από πολίτες για προσπάθεια απάτης τους μέσω τηλεφωνικών κλήσεων",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/megalos-arithmos-anaforwn-apo-polites-gia-prospatheia-apatis-tous-mesw-tilefwnikwn-klisewn/",
+      "date": "2026-06-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,129 @@
+{
+  "id": "gr/bank-sms-card-phishing",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "el": "«Η τράπεζά σας» ή μια εταιρεία courier, με SMS",
+    "en": "“Your bank” or a courier company, by text"
+  },
+  "name": {
+    "el": "SMS «από την τράπεζα»: η κάρτα σας μπλοκαρίστηκε, πατήστε τον σύνδεσμο",
+    "en": "Text “from your bank”: your card has been blocked, tap the link"
+  },
+  "how": {
+    "el": "Λαμβάνετε SMS που μοιάζει να έρχεται από την τράπεζά σας: η κάρτα σας μπλοκαρίστηκε, έγινε ύποπτη συναλλαγή ή πρέπει να επιβεβαιώσετε τα στοιχεία σας, αλλιώς ο λογαριασμός θα κλειδώσει. Ο σύνδεσμος ανοίγει ψεύτικη σελίδα που μοιάζει με το e-banking και ζητά αριθμό κάρτας, CVV, κωδικούς και τον κωδικό μίας χρήσης. Με αυτά οι απατεώνες κάνουν αγορές ή αδειάζουν τον λογαριασμό. Στην Αττική η Αστυνομία βρήκε ακόμη και ψεύτικη κεραία κινητής σε αυτοκίνητο, που έστελνε τέτοια SMS σε όλα τα κινητά γύρω της.",
+    "en": "You get a text that seems to come from your bank: your card has been blocked, there was a suspicious transaction or you must confirm your details, or the account will be locked. The link opens a fake page that looks like e-banking and asks for the card number, CVV, passwords and the one-time code. With these, scammers make purchases or empty the account. In Attica police even found a fake mobile antenna in a car that sent such texts to every phone nearby."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "SMS με το όνομα της τράπεζάς σας: η κάρτα μπλοκαρίστηκε ή υπάρχει ύποπτη κίνηση.",
+        "en": "A text with your bank’s name: the card is blocked or there is suspicious activity."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Προθεσμία: αν δεν το κάνετε σήμερα, κλειδώνει ο λογαριασμός.",
+        "en": "A deadline: if you don’t act today, the account is locked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ένας σύνδεσμος οδηγεί σε σελίδα που μοιάζει με το e-banking.",
+        "en": "A link leads to a page that looks like e-banking."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά κάρτα, CVV, κωδικούς και τον κωδικό από το SMS.",
+        "en": "The page asks for the card, CVV, passwords and the code from the text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "el": "Η κάρτα σας έχει προσωρινά ανασταλεί λόγω ασυνήθιστης δραστηριότητας. Για να αποφύγετε την οριστική απενεργοποίηση, επιβεβαιώστε τα στοιχεία σας εντός 24 ωρών: [σύνδεσμος]",
+        "en": "Your card has been temporarily suspended due to unusual activity. To avoid permanent deactivation, confirm your details within 24 hours: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "sms η κάρτα σας μπλοκαρίστηκε",
+      "μήνυμα τράπεζα αναστολή κάρτας σύνδεσμος",
+      "επιβεβαιώστε τα στοιχεία σας λογαριασμός κλειδώνει",
+      "έβαλα στοιχεία κάρτας σε σελίδα από sms",
+      "ψεύτικη σελίδα e-banking μήνυμα",
+      "ασυνήθιστη δραστηριότητα κάρτα sms link"
+    ],
+    "en": [
+      "text says my bank card is blocked",
+      "sms from bank with link to confirm details",
+      "entered my card details after a bank text",
+      "fake e-banking page from a text message",
+      "card suspended unusual activity text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "el": [
+      "Οι τράπεζες δεν στέλνουν συνδέσμους για να «ξεμπλοκάρετε» την κάρτα ή να επιβεβαιώσετε στοιχεία.",
+      "Προθεσμία λίγων ωρών και απειλή ότι θα κλειδώσει ο λογαριασμός.",
+      "Η σελίδα ζητά CVV και κωδικό μίας χρήσης μαζί."
+    ],
+    "en": [
+      "Banks don’t send links to “unblock” your card or confirm your details.",
+      "A deadline of a few hours and a threat that the account will be locked.",
+      "The page asks for the CVV and the one-time code together."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην πατάτε τον σύνδεσμο. Ανοίξτε μόνοι σας την εφαρμογή της τράπεζας ή καλέστε τον αριθμό της κάρτας.",
+      "Βάλατε στοιχεία; Καλέστε αμέσως την τράπεζα να μπλοκάρει την κάρτα και αλλάξτε τους κωδικούς.",
+      "Καταγγείλτε το μήνυμα στη Δίωξη Κυβερνοεγκλήματος και σβήστε το."
+    ],
+    "en": [
+      "Don’t tap the link. Open your bank’s app yourself or call the number on your card.",
+      "Entered details? Call your bank straight away to block the card and change your passwords.",
+      "Report the text to the Cybercrime Directorate and delete it."
+    ]
+  },
+  "reportTo": [
+    "gr/your-bank",
+    "gr/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Είχαν στήσει κλώνο κεραίας κινητής τηλεφωνίας, έστελναν παραπλανητικά sms και υπέκλεπταν τραπεζικές κάρτες",
+      "publisher": "in.gr",
+      "url": "https://www.in.gr/2026/01/15/greece/eixan-stisei-klono-keraias-kinitis-tilefonias-estelnan-paraplanitika-sms-kai-ypekleptan-trapezikes-kartes/",
+      "date": "2026-01-15"
+    },
+    {
+      "title": "Συναγερμός για νέα μορφή τηλεφωνικής απάτης – Οι τράπεζες προειδοποιούν για νέα απάτη",
+      "publisher": "alfavita.gr",
+      "url": "https://www.alfavita.gr/koinonia/477634_synagermos-gia-nea-morfi-tilefonikis-apatis-oi-trapezes-proeidopoioyn-gia-nea-apati",
+      "date": "2025-05-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/bank-call-fake-employee"
+  ]
+}

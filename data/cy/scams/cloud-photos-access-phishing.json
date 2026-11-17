@@ -1,0 +1,124 @@
+{
+  "id": "cy/cloud-photos-access-phishing",
+  "country": "cy",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "el": "SMS ή email «από γνωστή εταιρεία τεχνολογίας» για τον λογαριασμό cloud",
+    "en": "A text or email “from a well-known tech company” about your cloud account"
+  },
+  "name": {
+    "el": "Ψεύτικη ειδοποίηση: «άγνωστοι είδαν τις φωτογραφίες σας στο cloud»",
+    "en": "Fake alert: “strangers accessed your photos in the cloud”"
+  },
+  "how": {
+    "el": "Ένα SMS ή email που μοιάζει να έρχεται από μεγάλη εταιρεία τεχνολογίας λέει ότι κάποιος άγνωστος μπήκε στις φωτογραφίες σας στο cloud. Για να «προστατέψετε» τον λογαριασμό σας στέλνει σε ψεύτικη σελίδα που ζητά κωδικούς και προσωπικά στοιχεία «για επαλήθευση». Με αυτά οι απατεώνες παίρνουν τον λογαριασμό και σε αρκετές περιπτώσεις έγιναν μη εξουσιοδοτημένες χρεώσεις.",
+    "en": "A text or email that seems to come from a big tech company says a stranger accessed your photos in the cloud. To “protect” your account it sends you to a fake page that asks for your password and personal details “for verification”. With them the scammers take over the account, and in several cases unauthorised payments followed."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Μήνυμα «από εταιρεία τεχνολογίας» για πρόσβαση στις φωτογραφίες σας.",
+        "en": "A message “from a tech company” about access to your photos."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας τρομάζει ότι κάποιος βλέπει τις προσωπικές σας φωτογραφίες.",
+        "en": "It scares you that someone is looking at your private photos."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Σας λέει να προστατέψετε τον λογαριασμό μέσω συνδέσμου.",
+        "en": "It tells you to protect the account through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά κωδικό και στοιχεία «για επαλήθευση».",
+        "en": "The page asks for your password and details “for verification”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Ειδοποίηση λογαριασμού: Εντοπίστηκε πρόσβαση στη Φωτοθήκη σας από άγνωστη συσκευή στη Ρουμανία. Αν δεν ήσασταν εσείς, ασφαλίστε τον λογαριασμό σας αμέσως: [σύνδεσμος]",
+        "en": "Account alert: Your Photo Library was accessed from an unknown device in Romania. If this wasn’t you, secure your account immediately: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "el": [
+      "μήνυμα ότι κάποιος μπήκε στις φωτογραφίες μου",
+      "ειδοποίηση για πρόσβαση στο cloud από άγνωστη συσκευή",
+      "ασφαλίστε τον λογαριασμό σας μέσω συνδέσμου",
+      "ζητούν κωδικό για επαλήθευση λογαριασμού",
+      "email για τις φωτογραφίες μου στο icloud",
+      "μετά την επαλήθευση έγιναν χρεώσεις"
+    ],
+    "en": [
+      "message says someone accessed my photos",
+      "cloud account accessed from an unknown device",
+      "secure your account through a link",
+      "asked for my password to verify the account",
+      "email about my icloud photos",
+      "charges after I verified my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "el": [
+      "Σύνδεσμος για να «ασφαλίσετε» τον λογαριασμό.",
+      "Φόβος για προσωπικές φωτογραφίες για να βιαστείτε.",
+      "Σελίδα που ζητά κωδικό ή τραπεζικά στοιχεία."
+    ],
+    "en": [
+      "A link to “secure” your account.",
+      "Fear about private photos to rush you.",
+      "A page asking for your password or bank details."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην πατήσετε. Ανοίξτε μόνοι σας την επίσημη εφαρμογή ή ρυθμίσεις και δείτε αν υπάρχει ειδοποίηση.",
+      "Ενεργοποιήστε έλεγχο ταυτότητας δύο παραγόντων.",
+      "Αν δώσατε κωδικό, αλλάξτε τον αμέσως· αν δώσατε κάρτα, καλέστε την τράπεζα.",
+      "Καταγγείλετε το στην Αστυνομία."
+    ],
+    "en": [
+      "Don’t click. Open the official app or settings yourself and check for alerts.",
+      "Turn on two-factor authentication.",
+      "If you gave your password, change it at once; if you gave a card, call your bank.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "ΠΡΟΣΟΧΗ – Διαδικτυακή απάτη με παραπλανητικά μηνύματα",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/prosoxi-diadiktuaki-apati-me-paraplanitika-minumata/",
+      "date": "2026-07-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

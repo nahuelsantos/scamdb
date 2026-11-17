@@ -1,0 +1,141 @@
+{
+  "id": "cy/fake-traffic-fine-sms",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "el": "Ένα SMS «από την Αστυνομία», το «GOVCY» ή υπηρεσία τροχαίας",
+    "en": "A text “from the Police”, “GOVCY” or a traffic fines service"
+  },
+  "name": {
+    "el": "Ψεύτικο SMS για απλήρωτο πρόστιμο τροχαίας",
+    "en": "Fake text about an unpaid traffic fine"
+  },
+  "how": {
+    "el": "Ένα SMS λέει ότι έχετε απλήρωτο πρόστιμο τροχαίας ή εξώδικο και δίνει σύνδεσμο για να το πληρώσετε σήμερα. Η σελίδα μοιάζει με κρατική πλατφόρμα πληρωμών και ζητά στοιχεία κάρτας και κωδικούς. Μετά οι απατεώνες αδειάζουν τον λογαριασμό. Η Αστυνομία Κύπρου λέει ότι δεν ζητά ποτέ πληρωμή προστίμων με SMS.",
+    "en": "A text says you have an unpaid traffic fine or out-of-court fine and gives a link to pay it today. The page looks like a government payment platform and asks for your card details and codes. The scammers then empty the account. Cyprus Police say they never ask for fines to be paid by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ένα SMS λέει ότι έχετε απλήρωτο εξώδικο πρόστιμο.",
+        "en": "A text says you have an unpaid out-of-court fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας πιέζει να πληρώσετε σήμερα για να μη διπλασιαστεί ή πάει στο δικαστήριο.",
+        "en": "It pushes you to pay today before it doubles or goes to court."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ο σύνδεσμος ανοίγει ψεύτικη σελίδα πληρωμής.",
+        "en": "The link opens a fake payment page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά στοιχεία κάρτας και τον κωδικό μιας χρήσης.",
+        "en": "The page asks for card details and the one-time code."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Αστυνομία Κύπρου: Εκκρεμεί εξώδικο πρόστιμο €85 για παράβαση ταχύτητας. Εξοφλήστε μέχρι σήμερα για να αποφύγετε δικαστική διαδικασία: [σύνδεσμος]",
+        "en": "Cyprus Police: An out-of-court fine of €85 for a speeding offence is outstanding. Settle it today to avoid court proceedings: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text about an unpaid traffic fine",
+      "police sms with a link to pay a fine",
+      "out of court fine payment link",
+      "govcy message says I owe a fine",
+      "speeding ticket text pay online today",
+      "paid a fine from a text and money disappeared"
+    ],
+    "el": [
+      "μήνυμα για απλήρωτο πρόστιμο τροχαίας",
+      "sms αστυνομίας με σύνδεσμο για εξώδικο",
+      "πληρωμή προστίμου μέσω συνδέσμου",
+      "μήνυμα govcy ότι χρωστώ πρόστιμο",
+      "εξώδικο για υπερβολική ταχύτητα με sms",
+      "πλήρωσα πρόστιμο από μήνυμα και έφυγαν λεφτά"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "The police never send fines to pay by text.",
+      "A link and a deadline to pay today.",
+      "A payment page that asks for the code your bank just sent."
+    ],
+    "el": [
+      "Η Αστυνομία δεν στέλνει πρόστιμα για πληρωμή με SMS.",
+      "Σύνδεσμος και προθεσμία να πληρώσετε σήμερα.",
+      "Σελίδα πληρωμής που ζητά τον κωδικό που μόλις έστειλε η τράπεζα."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t open the link or reply. Delete the text.",
+      "If you have a doubt about a fine, ask the police through their official channels.",
+      "If you entered card details, call your bank at once to block the card.",
+      "Report the text to the Cybercrime Sub-Directorate."
+    ],
+    "el": [
+      "Μην ανοίξετε τον σύνδεσμο και μην απαντήσετε. Διαγράψτε το μήνυμα.",
+      "Αν έχετε αμφιβολία για πρόστιμο, ρωτήστε την Αστυνομία από τα επίσημα κανάλια της.",
+      "Αν δώσατε στοιχεία κάρτας, καλέστε αμέσως την τράπεζά σας να μπλοκάρει την κάρτα.",
+      "Καταγγείλετε το μήνυμα στην Υποδιεύθυνση Ηλεκτρονικού Εγκλήματος."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Απάτη με μηνύματα που παριστάνουν ψευδώς την Αστυνομία",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/apati-me-minumata-pou-paristanoun-pseudws-tin-astunomia/",
+      "date": "2026-09-19"
+    },
+    {
+      "title": "Woman loses more than €4,800 in fake fine scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/08/11/woman-loses-more-than-e4800-in-fake-fine-scam",
+      "date": "2026-08-11"
+    },
+    {
+      "title": "Alert issued over SMS scam targeting traffic fines",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/05/26/alert-issued-over-sms-scam-targeting-traffic-fines",
+      "date": "2026-05-26"
+    },
+    {
+      "title": "Police warn public after scam text costs man €18,500",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2025/07/18/police-warn-public-after-scam-text-costs-man-e18500",
+      "date": "2025-07-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

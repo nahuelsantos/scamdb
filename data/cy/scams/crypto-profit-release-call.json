@@ -1,0 +1,149 @@
+{
+  "id": "cy/crypto-profit-release-call",
+  "country": "cy",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "el": "Κλήση σε ελληνικά ή μήνυμα από κάποιον που «θα σας βοηθήσει να πάρετε τα κέρδη ή τα χαμένα σας χρήματα»",
+    "en": "A call in Greek or a message from someone who “will help you get your profits or lost money back”"
+  },
+  "name": {
+    "el": "Κλήση για «αποδέσμευση κερδών» από κρυπτονομίσματα ή «ανάκτηση» χαμένων χρημάτων",
+    "en": "Call to “release” crypto profits or “recover” lost money"
+  },
+  "how": {
+    "el": "Κάποιος καλεί άνθρωπο που έχει αγοράσει κρυπτονομίσματα ή έχει χάσει χρήματα σε επενδυτική απάτη και λέει ότι θα τον βοηθήσει να εισπράξει τα κέρδη ή να πάρει πίσω τα χρήματα. Ένας δεύτερος «προϊστάμενος» ζητά να εγκαταστήσετε εφαρμογή απομακρυσμένης πρόσβασης και να μπείτε στο e-banking ενώ είναι στη γραμμή. Μετά μεταφέρει χρήματα και σας ζητά να του διαβάσετε τους κωδικούς μιας χρήσης. Στην παραλλαγή της «ανάκτησης» ζητούν προμήθειες, ασφάλιστρα και φόρους.",
+    "en": "Someone calls a person who has bought crypto or lost money in an investment scam and says they will help them cash out profits or get the money back. A second “supervisor” asks you to install a remote access app and log in to online banking while they are on the line. They then move money and ask you to read out the one-time codes. In the “recovery” version they demand commissions, insurance and taxes."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ο καλών λέει ότι θα σας βοηθήσει να πάρετε κέρδη ή χαμένα χρήματα.",
+        "en": "The caller says they will help you get profits or lost money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Σας λέει να εγκαταστήσετε μια εφαρμογή στον υπολογιστή ή στο κινητό.",
+        "en": "They tell you to install an app on your computer or phone."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "el": "Σας ζητά να μπείτε στο e-banking ενώ μένει στη γραμμή.",
+        "en": "They ask you to log in to online banking while they stay on the line."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "el": "Σας ζητά να του διαβάσετε τους κωδικούς της τράπεζας.",
+        "en": "They ask you to read them the bank’s codes."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "el": "Ή ζητά προμήθειες και φόρους για να «αποδεσμεύσει» τα χρήματα.",
+        "en": "Or they ask for commissions and taxes to “release” the money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Καλών: Καλησπέρα, σας καλώ για τα κρυπτονομίσματα που αγοράσατε πέρσι. Υπάρχουν κέρδη €18.000 που δεν έχετε εισπράξει. Ο προϊστάμενός μου θα σας συνδέσει με μια εφαρμογή για να τα μεταφέρουμε στον λογαριασμό σας, μπείτε μόνο στο e-banking σας.",
+        "en": "Caller: Good evening, I’m calling about the crypto you bought last year. There are €18,000 in profits you have not collected. My supervisor will connect you through an app so we can transfer them to your account, just log in to your online banking."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "el": [
+      "κλήση για κέρδη από κρυπτονομίσματα",
+      "μου είπαν να εγκαταστήσω εφαρμογή για να πάρω τα κέρδη",
+      "μπήκα στο e-banking με κάποιον στη γραμμή",
+      "ζητούν κωδικούς otp για να μεταφέρουν κέρδη",
+      "εταιρεία ανάκτησης χαμένων χρημάτων ζητά προμήθεια",
+      "προϊστάμενος στο τηλέφωνο για επένδυση σε crypto",
+      "πλατφόρμα κρυπτονομισμάτων λέει ότι έχω υπόλοιπο να πάρω",
+      "κατέβασα εφαρμογή και άνοιξα το 1bank με οδηγίες στο τηλέφωνο"
+    ],
+    "en": [
+      "call about uncollected crypto profits",
+      "told to install an app to get my profits",
+      "logged into online banking with someone on the phone",
+      "asked for otp codes to transfer profits",
+      "company recovering lost money asks for a fee",
+      "supervisor on the phone about my crypto investment",
+      "crypto platform says I have a balance to collect",
+      "downloaded an app and opened 1bank while they guided me"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "keep_on_line",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Κανείς νόμιμος δεν σας καλεί για να σας δώσει κέρδη που «ξεχάσατε».",
+      "Αίτημα να εγκαταστήσετε εφαρμογή ή να μπείτε στο e-banking μπροστά του.",
+      "Οι «εταιρείες ανάκτησης» που ζητούν προμήθεια μπροστά είναι συνήθως νέα απάτη."
+    ],
+    "en": [
+      "No genuine firm calls to hand you profits you “forgot”.",
+      "A request to install an app or log in to online banking in front of them.",
+      "“Recovery companies” asking for fees up front are usually another scam."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Κλείστε. Μην εγκαταστήσετε τίποτα και μη μπείτε στο e-banking.",
+      "Αν έχετε ήδη εγκαταστήσει εφαρμογή, απεγκαταστήστε τη και αλλάξτε κωδικούς.",
+      "Καλέστε αμέσως την τράπεζα να μπλοκάρει λογαριασμούς και κάρτες.",
+      "Καταγγείλετε το στην Αστυνομία."
+    ],
+    "en": [
+      "Hang up. Don’t install anything or log in to online banking.",
+      "If you already installed an app, remove it and change your passwords.",
+      "Call your bank at once to block accounts and cards.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "cy/your-bank",
+    "cy/cybercrime",
+    "cy/cysec"
+  ],
+  "sources": [
+    {
+      "title": "Paphos man loses €65,000 in double scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/10/02/paphos-man-loses-e65000-in-double-scam",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "Νέα υπόθεση διαδικτυακής απάτης με επενδύσεις διερευνά στη Λευκωσία η Αστυνομία",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/nea-upothesi-diadiktuakis-apatis-me-ependuseis-diereuna-sti-leukwsia-i-astunomia/",
+      "date": "2026-08-29"
+    },
+    {
+      "title": "Νέα απάτη απόσπασης χρημάτων μέσω τηλεφωνικών κλήσεων σε σχέση με επενδύσεις σε κρυπτονομίσματα",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/nea-apati-apospasis-xrimatwn-mesw-tilefwnikwn-klisewn-se-sxesi-me-ependuseis-se-kruptonomismata/",
+      "date": "2026-04-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

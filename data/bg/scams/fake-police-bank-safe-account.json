@@ -1,0 +1,150 @@
+{
+  "id": "bg/fake-police-bank-safe-account",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "in-person"
+  ],
+  "sender": {
+    "bg": "Мним полицай, „комисар от ГДБОП“, банков служител, служител на БНБ или прокурор (често с истински български номер на дисплея)",
+    "en": "A fake police officer, “GDBOP commissioner”, bank employee, central bank employee or prosecutor (often with a real Bulgarian number on screen)"
+  },
+  "name": {
+    "bg": "Мним полицай и банков служител: „някой тегли кредит на ваше име“, парите на „защитена сметка“",
+    "en": "Fake police officer and bank employee: “someone is taking a loan in your name”, money to a “protected account”"
+  },
+  "how": {
+    "bg": "Обажда се човек, който се представя за служител на полицията или на ГДБОП: някой с фалшиво пълномощно опитвал да изтегли кредит или спестяванията ви. Пита за сметки, наличности и лични данни, после ви „свързва“ с банков служител, понякога и със „служител на БНБ“ или прокурор. Казват ви да изтеглите парите си или максимален кредит и да ги преведете по „защитена“ или „служебна“ сметка, да ги внесете в криптомат или да ги дадете на човек пред банката. Номерът на дисплея може да е на истинска институция, защото е подменен. Държат ви на линия и ви заплашват, че иначе ще бъдете заподозрян.",
+    "en": "Someone calls posing as a police or GDBOP officer: a person with a forged power of attorney has tried to take out a loan or your savings. They ask about accounts, balances and personal details, then “put you through” to a bank employee, sometimes also a “central bank employee” or prosecutor. You are told to withdraw your money or take the maximum loan and transfer it to a “protected” or “official” account, put it into a crypto ATM, or hand it to someone outside the bank. The number on screen may belong to a real institution because it is spoofed. They keep you on the line and threaten that you will otherwise be a suspect."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Обаждане от „полицията“ или „ГДБОП“: някой се опитва да източи сметката ви или да тегли кредит на ваше име.",
+        "en": "A call from the “police” or “GDBOP”: someone is trying to drain your account or take a loan in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Свързват ви с „банков служител“ и ви държат на линия, за да не проверите.",
+        "en": "They put you through to a “bank employee” and keep you on the line so you can't check."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "bg": "Трябва да изтеглите парите или кредит и да ги преведете по „защитена сметка“ или да ги дадете на куриер.",
+        "en": "You must withdraw the money or a loan and move it to a “protected account” or give it to a courier."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "bg": "Искат да не казвате на никого, иначе ще навредите на разследването.",
+        "en": "You are asked not to tell anyone or you will harm the investigation."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Добър ден, комисар Петров от ГДБОП. Разследваме група, която с фалшиво пълномощно се опитва да изтегли кредит от вашата банка на ваше име. За да го спрем, ще ви свържа с отдел сигурност на банката. Ще трябва временно да прехвърлите наличността си по защитена сметка, докато приключи проверката. Не казвайте нищо на служителите в клона, някой от тях може да е замесен.",
+        "en": "Good afternoon, Commissioner Petrov from GDBOP. We are investigating a group trying to take out a loan from your bank in your name with a forged power of attorney. To stop it I'll put you through to the bank's security department. You'll need to move your balance temporarily to a protected account until the check is over. Don't say anything to the staff at the branch; one of them may be involved."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "обади се полицай за фалшиво пълномощно",
+      "комисар от гдбоп звъни за сметката ми",
+      "прехвърлете парите по защитена сметка",
+      "изтеглете кредит за да го закрием",
+      "банков служител ме държи на линия",
+      "служител на бнб ще възстанови сумата",
+      "пари в криптомат по указание на полицай",
+      "мним прокурор заплашва съучастие"
+    ],
+    "en": [
+      "fake police officer called about my bank account",
+      "told to move money to a protected account",
+      "they said someone is taking a loan in my name",
+      "fake bank employee kept me on the line",
+      "asked to put cash into a crypto atm"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "bg": [
+      "Полицията, ГДБОП и БНБ никога не искат да местите пари по „защитена“ или „служебна“ сметка.",
+      "Истински банков служител не ви кара да теглите кредит, за да го „закриете“.",
+      "Номерът на дисплея може да е подменен: дори да изглежда истински, не доказва нищо.",
+      "Искането да пазите тайна от служителите в клона е признак на измама."
+    ],
+    "en": [
+      "The police, GDBOP and the central bank never ask you to move money to a “protected” or “official” account.",
+      "A real bank employee never has you take out a loan to “close” it.",
+      "The number on screen can be spoofed: even if it looks real, it proves nothing.",
+      "Being asked to keep it secret from branch staff is a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Затворете и се обадете сами на банката си на номера от картата или приложението.",
+      "Не превеждайте пари, не теглете кредит и не давайте пари на куриер.",
+      "Ако вече сте платили, уведомете банката веднага и подайте сигнал на 112 или в ГДБОП."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number from your card or app.",
+      "Don't transfer money, don't take a loan and don't give cash to a courier.",
+      "If you already paid, tell your bank straight away and report it on 112 or to GDBOP."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/emergency-112",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "България е под нова атака с измами от името на МВР и банки",
+      "publisher": "Сега",
+      "url": "https://www.segabg.com/hot/category-bulgaria/bulgariya-e-pod-nova-ataka-izmami-imeto-na-mvr-i-banki",
+      "date": "2026-07-22"
+    },
+    {
+      "title": "ГДБОП предупреждава, че от нейно име масово се мами за банкови сметки",
+      "publisher": "Сега",
+      "url": "https://www.segabg.com/hot/category-bulgaria/gdbop-preduprezhdava-che-neyno-ime-masovo-se-mami-za-bankovi-smetki",
+      "date": "2025-07-22"
+    },
+    {
+      "title": "Нова финансова измама използва името на ГДБОП, съобщиха от вътрешното министерство",
+      "publisher": "БТА",
+      "url": "https://www.bta.bg/bg/videos/29488",
+      "date": "2025-07-22"
+    },
+    {
+      "title": "МВР предупреди за нова измама с полицаи, банки и кредити",
+      "publisher": "Сега",
+      "url": "https://www.segabg.com/hot/category-bulgaria/mvr-predupredi-za-nova-izmama-policai-banki-i-krediti",
+      "date": "2025-05-19"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/relative-accident-call",
+    "bg/bank-phishing-messages"
+  ]
+}

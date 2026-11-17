@@ -1,0 +1,131 @@
+{
+  "id": "gr/efka-impersonation",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "el": "«e-ΕΦΚΑ», «υπάλληλος του ΕΦΚΑ» ή email με το λογότυπο του φορέα",
+    "en": "“e-EFKA” (social security), an “EFKA employee” or an email with its logo"
+  },
+  "name": {
+    "el": "Ψεύτικος ΕΦΚΑ: κάρτα υγείας, οφειλές ή επιστροφές με σύνδεσμο ή τηλεφώνημα",
+    "en": "Fake EFKA: health card, debts or refunds by link or phone call"
+  },
+  "how": {
+    "el": "Λαμβάνετε email που μοιάζει πολύ με του e-ΕΦΚΑ, SMS ή τηλεφώνημα από «υπάλληλο του ΕΦΚΑ»: η κάρτα υγείας σας θα ανασταλεί, έχετε οφειλή, ή δικαιούστε επιστροφή εισφορών. Σας ζητούν να πατήσετε σύνδεσμο, να δώσετε προσωπικά στοιχεία, στοιχεία λογαριασμού ή κωδικούς, ή να καταθέσετε χρήματα σε λογαριασμό που σας υπαγορεύουν.",
+    "en": "You get an email that looks very like e-EFKA’s, a text, or a call from an “EFKA employee”: your health card will be suspended, you have a debt, or you are owed a refund of contributions. You are asked to tap a link, give personal details, account details or passwords, or deposit money into an account they dictate."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Email, SMS ή κλήση με το όνομα του e-ΕΦΚΑ.",
+        "en": "An email, text or call in e-EFKA’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Αναστολή κάρτας υγείας ή οφειλή που πρέπει να τακτοποιηθεί τώρα.",
+        "en": "A health card suspension or a debt to settle now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ένας σύνδεσμος για να «ενημερώσετε τα στοιχεία σας».",
+        "en": "A link to “update your details”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Κατάθεση σε λογαριασμό που σας λένε στο τηλέφωνο.",
+        "en": "A deposit to an account they give you on the phone."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "el": "e-ΕΦΚΑ – Ειδοποίηση: Η Ευρωπαϊκή Κάρτα Ασφάλισης Ασθένειας σας πρόκειται να ανασταλεί λόγω ελλιπών στοιχείων. Για να συνεχίσετε να έχετε ιατροφαρμακευτική κάλυψη, ενημερώστε τα στοιχεία σας εντός 48 ωρών: [σύνδεσμος]",
+        "en": "e-EFKA – Notice: Your European Health Insurance Card is about to be suspended due to incomplete details. To keep your medical cover, update your details within 48 hours: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "email εφκα αναστολή κάρτας υγείας",
+      "τηλεφώνησε υπάλληλος εφκα ζήτησε λογαριασμό",
+      "μήνυμα εφκα οφειλή πληρωμή σύνδεσμος",
+      "επιστροφή εισφορών email στοιχεία λογαριασμού",
+      "εφκα ζητά να καταθέσω χρήματα τηλέφωνο",
+      "ασφαλισμένος email με λογότυπο εφκα"
+    ],
+    "en": [
+      "efka email health card suspended",
+      "caller from efka asked for bank details",
+      "social security debt text with link greece",
+      "refund of contributions email asks card",
+      "efka employee asked me to deposit money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Ο e-ΕΦΚΑ δεν ζητά ποτέ στοιχεία κάρτας ή λογαριασμού στο τηλέφωνο, ούτε κατάθεση σε λογαριασμό που σας λένε προφορικά.",
+      "Τα γνήσια email του φορέα τελειώνουν σε @efka.gov.gr· όλα τα άλλα είναι ύποπτα.",
+      "Απειλή ότι θα χάσετε την ιατρική κάλυψη σε λίγες ώρες."
+    ],
+    "en": [
+      "e-EFKA never asks for card or account details on the phone, or for a deposit to an account given verbally.",
+      "Genuine emails from EFKA end in @efka.gov.gr; anything else is suspicious.",
+      "A threat that you will lose medical cover within hours."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην πατάτε συνδέσμους. Μπείτε στις υπηρεσίες του e-ΕΦΚΑ μόνο από την επίσημη σελίδα ή εφαρμογή.",
+      "Για ύποπτη κλήση ή μήνυμα, καλέστε εσείς την εξυπηρέτηση του e-ΕΦΚΑ στο 1555.",
+      "Δώσατε στοιχεία; Καλέστε την τράπεζα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Don’t tap links. Use e-EFKA services only through the official site or app.",
+      "For a suspicious call or message, call e-EFKA’s helpline 1555 yourself.",
+      "Gave details? Call your bank and report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "New-generation scams to beware of: Calls emptying bank accounts overnight",
+      "publisher": "Πρώτο Θέμα (English edition)",
+      "url": "https://en.protothema.gr/2026/08/28/new-generation-scams-to-beware-of-calls-emptying-bank-accounts-overnight/",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "ΕΦΚΑ: Προσοχή σε απάτες - Επιτήδειοι παριστάνουν υπαλλήλους του φορέα και ζητούν προσωπικά στοιχεία",
+      "publisher": "CNN Greece",
+      "url": "https://www.cnn.gr/oikonomia/chrima/story/477152/efka-prosoxi-se-apates-epitideioi-paristanoun-ypallilous-tou-forea-kai-zitoyn-prosopika-stoixeia",
+      "date": "2025-05-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/benefit-refund-sms"
+  ]
+}

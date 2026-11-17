@@ -1,0 +1,119 @@
+{
+  "id": "ua/feikovyi-zbir-na-zsu",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "social",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "uk": "Фейкова сторінка відомого військового, волонтера, фонду або «посадовця» в TikTok, Telegram чи соцмережах",
+    "en": "A fake page of a well-known soldier, volunteer, foundation or \"official\" on TikTok, Telegram or social media"
+  },
+  "name": {
+    "uk": "Фейковий збір «на ЗСУ» від імені відомих людей",
+    "en": "Fake fundraiser 'for the army' in the name of well-known people"
+  },
+  "how": {
+    "uk": "Шахраї створюють фейкові акаунти відомих військових, волонтерів чи фондів, викладають їхні справжні відео й фото та оголошують збір на дрони, авто чи амуніцію. Буває й розсилка підприємствам від імені керівника обласної адміністрації з підробленим листом про «програму допомоги ЗСУ». Гроші просять на картки підставних осіб, а не на офіційні рахунки. Після збору сторінки зникають.",
+    "en": "Scammers create fake accounts of well-known soldiers, volunteers or foundations, post their real videos and photos and announce a fundraiser for drones, vehicles or equipment. Some send companies messages in the name of a regional administration head, with a forged letter about an 'army support programme'. The money is asked for on cards of front people, not official accounts. After the collection the pages disappear."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Відомий військовий чи фонд збирає на фронт.",
+        "en": "A well-known soldier or foundation is raising money for the front."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Терміново потрібні гроші на дрони.",
+        "en": "Money is urgently needed for drones."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "uk": "Скидайте на цю картку.",
+        "en": "Send it to this card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "uk": "🔥 ТЕРМІНОВИЙ ЗБІР! Хлопцям на нуль потрібні 5 FPV-дронів і зарядна станція. Закрити треба за дві доби, кожна гривня рятує життя! Збираємо на особисту картку [номер], бо банк тимчасово заблокував рахунок фонду. Звіт буде в сторіс. Слава Україні! 🇺🇦",
+        "en": "🔥 URGENT FUNDRAISER! The guys on the front line need 5 FPV drones and a power station. We have to close it in two days, every hryvnia saves lives! Collecting on a personal card [number] because the bank froze the foundation's account. Report in stories. Glory to Ukraine! 🇺🇦"
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "у тіктоку відомий командир збирає на дрони на особисту картку",
+      "фейкова сторінка волонтера оголосила збір",
+      "збір на зсу від імені фонду але картка приватна",
+      "підприємству прийшов лист від ова про допомогу армії",
+      "після донату сторінка зі збором зникла"
+    ],
+    "en": [
+      "a well-known commander on tiktok raises money for drones on a personal card",
+      "a fake volunteer page announced a fundraiser",
+      "army fundraiser in a foundation’s name but the card is personal",
+      "our company got a letter from the regional administration about helping the army",
+      "after my donation the fundraiser page disappeared"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "uk": [
+      "Акаунт новий, хоч і з відомим ім’ям чи фото.",
+      "Гроші просять на особисту картку, а не на рахунок фонду чи офіційну банку.",
+      "Немає посилання з офіційного сайту фонду чи підрозділу."
+    ],
+    "en": [
+      "The account is new, even with a famous name or photo.",
+      "Money is asked for on a personal card, not a foundation's account or official jar.",
+      "There is no link from the foundation's or unit's official site."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Донатьте лише за реквізитами з офіційних сайтів і перевірених сторінок фондів і підрозділів.",
+      "Перевірте, чи сам військовий або волонтер підтверджує збір на своєму основному акаунті.",
+      "Про фейкові збори повідомляйте кіберполіцію й платформу."
+    ],
+    "en": [
+      "Donate only using details from official websites and verified pages of foundations and units.",
+      "Check whether the soldier or volunteer confirms the fundraiser on their main account.",
+      "Report fake fundraisers to the cyber police and the platform."
+    ]
+  },
+  "reportTo": [
+    "ua/cyberpolice",
+    "ua/police"
+  ],
+  "sources": [
+    {
+      "title": "Збирали донати від імені «Мадяра»: шахраї ошукали українців на мільйон гривень (фото)",
+      "publisher": "Фокус",
+      "url": "https://focus.ua/uk/ukraine/729752-zbirali-donati-vid-imeni-madyara-meshkanci-odeshchini-oshukali-ukrajinciv-na-milyon-griven-foto",
+      "date": "2025-10-22"
+    },
+    {
+      "title": "Кіберполіція припинила діяльність шахрайської групи, що розсилала фейкові повідомлення від імені ОВА",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/news/kiberpolicziya-prypynyla-diyalnist-shaxrajskoyi-grupy-shho-rozsylala-fejkovi-povidomlennya-vid-imeni-ova-835/",
+      "date": "2025-08-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

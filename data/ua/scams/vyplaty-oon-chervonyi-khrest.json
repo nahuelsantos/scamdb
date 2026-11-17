@@ -1,0 +1,139 @@
+{
+  "id": "ua/vyplaty-oon-chervonyi-khrest",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "uk": "Повідомлення в месенджері, Telegram-канал або ефір у TikTok від імені ООН, Червоного Хреста, UNICEF чи благодійного фонду",
+    "en": "A messenger post, Telegram channel or TikTok live in the name of the UN, the Red Cross, UNICEF or a charity"
+  },
+  "name": {
+    "uk": "«Грошова допомога від ООН чи Червоного Хреста» за посиланням",
+    "en": "'Cash aid from the UN or the Red Cross' through a link"
+  },
+  "how": {
+    "uk": "Шахраї поширюють у месенджерах, Telegram-каналах і TikTok повідомлення про нібито виплати всім громадянам від ООН, Червоного Хреста, UNICEF або відомих фондів. Людину просять перейти за посиланням, заповнити «анкету» і ввести номер картки, CVV, а інколи пароль від банкінгу чи код із SMS. Ці дані одразу потрапляють до зловмисників, які спустошують рахунок. Поліція наголошує: таких виплат немає, і міжнародні організації не роздають гроші через посилання в месенджерах.",
+    "en": "Scammers spread posts in messengers, Telegram channels and TikTok about supposed payments for everyone from the UN, the Red Cross, UNICEF or well-known charities. You are asked to open a link, fill in a 'form' and enter your card number, CVV and sometimes your online banking password or an SMS code. The details go straight to the criminals, who empty the account. Police stress that these payments do not exist and international organisations do not hand out money through links in messengers."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Міжнародна організація нібито виплачує допомогу всім.",
+        "en": "An international organisation is supposedly paying aid to everyone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Реєстрація триває лише кілька днів.",
+        "en": "Registration is only open for a few days."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "uk": "Перейдіть за посиланням і заповніть анкету.",
+        "en": "Open the link and fill in the form."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "uk": "Введіть номер картки, CVV і код, щоб отримати гроші.",
+        "en": "Enter your card number, CVV and code to receive the money."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "uk": "Друзі, перевірте! ООН відкрила програму підтримки для українців, по 7200 грн на кожного члена родини. Подати заявку можна до неділі, далі прийом закривають. Я вже отримала, все чесно 👇 [посилання] Перешліть рідним, поки діє!",
+        "en": "Friends, check this! The UN has opened a support programme for Ukrainians, 7,200 hryvnias for every family member. You can apply until Sunday, then it closes. I've already received mine, it's legit 👇 [link] Forward it to your family while it lasts!"
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "прийшло повідомлення про допомогу від ООН",
+      "червоний хрест виплачує гроші за посиланням",
+      "просять номер картки щоб отримати виплату",
+      "знайома переслала анкету на допомогу від юнісеф",
+      "у тіктоку обіцяли гроші від міжнародного фонду",
+      "після анкети на виплату зникли гроші з картки"
+    ],
+    "en": [
+      "got a message about aid from the UN",
+      "red cross pays money through a link",
+      "they ask my card number to get the payment",
+      "a friend forwarded a form for unicef aid",
+      "tiktok promised money from an international fund",
+      "money vanished from my card after the payment form"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "uk": [
+      "Гроші обіцяють «усім» без жодних умов.",
+      "Щоб отримати виплату, просять CVV, пароль або код із SMS.",
+      "Посилання веде не на офіційний сайт організації."
+    ],
+    "en": [
+      "Money is promised to 'everyone' with no conditions.",
+      "To receive a payment they ask for the CVV, a password or an SMS code.",
+      "The link does not lead to the organisation's official website."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Перевіряйте програми допомоги лише на офіційних сайтах організацій і держави.",
+      "Для зарахування коштів достатньо номера картки; CVV, PIN і коди не потрібні нікому.",
+      "Ввели дані картки? Негайно заблокуйте її в застосунку банку й повідомте кіберполіцію."
+    ],
+    "en": [
+      "Check aid programmes only on the official websites of the organisations and the state.",
+      "Receiving money needs only a card number; nobody needs the CVV, PIN or codes.",
+      "Entered your card details? Block the card in your bank's app right away and report it to the cyber police."
+    ]
+  },
+  "reportTo": [
+    "ua/your-bank",
+    "ua/cyberpolice",
+    "ua/police"
+  ],
+  "sources": [
+    {
+      "title": "«Грошова допомога всім громадянам»: шахраї через месенджери спустошують картки",
+      "publisher": "Знай.ua",
+      "url": "https://sport.znaj.ua/558512-groshova-dopomoga-vsim-gromadyanam-shahraji-cherez-mesendzheri-spustoshuyut-kartki",
+      "date": "2026-08-14"
+    },
+    {
+      "title": "Шахраї через TikTok і фішингові сайти зібрали понад мільйон гривень, видаючи себе за БО",
+      "publisher": "Судово-юридична газета (sud.ua)",
+      "url": "https://sud.ua/uk/news/photo/364679-shakhrayi-cherez-tiktok-i-fishingovi-sayti-zibrali-ponad-milyon-griven-vidayuchi-sebe-za-bo",
+      "date": "2026-06-23"
+    },
+    {
+      "title": "\"Виплати по 4 тис. грн від Червоного Хреста\": ЦПД попереджає про нову шахрайську схему у TikTok",
+      "publisher": "Еспресо",
+      "url": "https://espreso.tv/suspilstvo-viplati-po-4-tis-grn-vid-chervonogo-khresta-tspd-poperedzhae-pro-novu-shakhraysku-skhemu-u-tiktok",
+      "date": "2025-04-30"
+    }
+  ],
+  "related": [
+    "ua/diia-yepidtrymka-feikova-vyplata"
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "ua/zlam-telegram-druh-prosyt-u-borh",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "uk": "Зламаний акаунт друга чи родича в Telegram, Viber, WhatsApp або соцмережі",
+    "en": "A friend's or relative's hijacked Telegram, Viber, WhatsApp or social media account"
+  },
+  "name": {
+    "uk": "Зламаний месенджер: «друг просить у борг»",
+    "en": "Hijacked messenger: 'a friend asks for a loan'"
+  },
+  "how": {
+    "uk": "Шахраї захоплюють акаунт у месенджері через фішингове посилання, фальшивий бот «підтримки» або виманивши код підтвердження («підтвердіть оголошення», «проголосуйте за дитину»). Потім від імені власника пишуть усім контактам: терміново потрібні гроші в борг на картку, бо своя заблокована. Вони також розсилають далі фішингові посилання, щоб зламати наступних. Повідомлення приходить зі справжнього акаунта, тому йому легко повірити.",
+    "en": "Scammers take over a messenger account through a phishing link, a fake 'support' bot or by tricking the owner into giving a confirmation code ('confirm your listing', 'vote for my child'). They then write to all the owner's contacts: money is urgently needed as a loan to a card, because their own card is blocked. They also forward phishing links to hijack the next people. The message comes from the real account, so it is easy to believe."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Знайомий пише в месенджері.",
+        "en": "Someone you know writes in a messenger."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Позич терміново, сьогодні поверну.",
+        "en": "Lend me some urgently, I'll pay you back today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "uk": "Скинь на цю картку, моя заблокована.",
+        "en": "Send it to this card, mine is blocked."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "uk": "Або надішли код, що прийшов тобі.",
+        "en": "Or send me the code you just got."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "uk": "Привіт, не відволікаю? Слухай, виручи до вечора 4 000 грн, у мене картку заблокували, а треба терміново заплатити за ремонт машини. Ось картка майстра [номер], я ввечері все поверну. Подзвонити не можу, сиджу на нараді 🙏",
+        "en": "Hi, not bothering you? Listen, can you help me out with 4,000 hryvnias until tonight? My card got blocked and I need to pay for the car repair urgently. Here's the mechanic's card [number], I'll pay it all back tonight. Can't call, I'm in a meeting 🙏"
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "друг у телеграмі просить позичити гроші на чужу картку",
+      "зламали телеграм і пишуть знайомим",
+      "кума пише у вайбері терміново скинути гроші",
+      "попросили переслати код для підтвердження оголошення",
+      "з акаунта сестри прийшло посилання проголосувати",
+      "просить у борг але не відповідає на дзвінки",
+      "подруга помилково відправила код на мій номер і просить переслати",
+      "просить переслати код з смс щоб зайти в акаунт"
+    ],
+    "en": [
+      "a friend on telegram asks to borrow money to another card",
+      "telegram was hacked and they write to my contacts",
+      "a relative on viber asks me to send money urgently",
+      "they asked me to forward a code to confirm a listing",
+      "a voting link came from my sister's account",
+      "asks for a loan but won't answer calls",
+      "a friend sent a code to my number by mistake and asks me to forward it",
+      "asks me to forward the sms code so they can get into the account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "asks_for_code",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "uk": [
+      "Гроші просять лише письмово, людина «не може говорити».",
+      "Переказ потрібен на картку іншої людини.",
+      "Раніше вас просили переслати код або перейти за посиланням."
+    ],
+    "en": [
+      "Money is asked for only in writing and the person 'can't talk'.",
+      "The transfer must go to someone else's card.",
+      "Earlier you were asked to forward a code or open a link."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Перетелефонуйте другові за номером, який ви знаєте, а не з профілю.",
+      "Нікому не пересилайте коди з SMS чи месенджера; увімкніть двофакторну автентифікацію.",
+      "Якщо зламали ваш акаунт, попередьте знайомих іншим каналом і зверніться до підтримки месенджера."
+    ],
+    "en": [
+      "Call your friend on a number you know, not the one in the profile.",
+      "Never forward codes from texts or the messenger; turn on two-factor authentication.",
+      "If your account was hijacked, warn contacts another way and contact the messenger's support."
+    ]
+  },
+  "reportTo": [
+    "ua/cyberpolice",
+    "ua/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Зламали Telegram: що робити, щоб повернути доступ до акаунту",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/zlamaly-telegram-shho-robyty-shhob-povernuty-dostup-do-akauntu-7297/",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Що робити у разі зламу облікового запису в Telegram: алгоритм дій від кіберполіції",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/shho-robyty-u-razi-zlamu-oblikovogo-zapysu-v-telegram-algorytm-dij-vid-kiberpolicziyi-6931/",
+      "date": "2026-07-14"
+    },
+    {
+      "title": "Афери з діпфейками: кіберполіція застерігає від шахраїв",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/afery-z-dipfejkamy-kiberpolicziya-zasterigaye-vid-shaxrayiv-7638/",
+      "date": "2024-05-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

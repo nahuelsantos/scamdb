@@ -1,0 +1,137 @@
+{
+  "id": "ua/polon-spysky-obminu-za-hroshi",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "uk": "Незнайомець у Telegram чи соцмережах, який називає себе посередником, волонтером або людиною «зі зв’язками»",
+    "en": "A stranger on Telegram or social media calling themselves a go-between, volunteer or someone 'with connections'"
+  },
+  "name": {
+    "uk": "«Внесемо вашого рідного до списків на обмін» за гроші",
+    "en": "'We'll put your relative on the exchange list' for money"
+  },
+  "how": {
+    "uk": "Шахраї стежать за дописами родин, які шукають полонених чи зниклих безвісти військових, і пропонують «допомогу». Вони запевняють, що мають зв’язки і за гроші внесуть рідного до списків на обмін, знайдуть інформацію чи оплатять лікування. Для довіри просять документи про полон, а потім вимагають нові й нові платежі на свої картки. Пошуком і обміном займаються лише державні органи, і жоден із них не бере за це грошей.",
+    "en": "Scammers watch posts by families looking for captured or missing soldiers and offer 'help'. They claim to have connections and, for money, to put the relative on the exchange list, find information or pay for treatment. To win trust they ask for documents about the captivity, then demand payment after payment to their cards. Only state bodies handle searches and exchanges, and none of them charge for it."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Я маю зв’язки й можу допомогти з обміном.",
+        "en": "I have connections and can help with the exchange."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Надішліть документи про полон.",
+        "en": "Send the documents about the captivity."
+      }
+    },
+    {
+      "text": {
+        "uk": "Потрібна оплата, щоб внести його до списку.",
+        "en": "Payment is needed to put him on the list."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "uk": "Нікому не кажіть, інакше все зірветься.",
+        "en": "Don't tell anyone or it will fall through."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "uk": "Добрий день. Бачив ваш допис про чоловіка. Маю людей, які формують списки на наступний обмін, його можуть включити, але треба вирішити питання фінансово — 60 тисяч, частину зараз, решту після. Про нашу розмову нікому, ні в Коордштаб, ні в поліцію, бо людей можуть підставити.",
+        "en": "Good afternoon. I saw your post about your husband. I know the people who draw up the lists for the next exchange; he can be included, but it needs to be settled financially — 60 thousand, part now and the rest later. Don't tell anyone about our conversation, not the Coordination HQ or the police, or the people could be exposed."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "пропонують внести чоловіка до списку на обмін за гроші",
+      "незнайомець каже що знає де мій син у полоні",
+      "просять гроші за інформацію про зниклого безвісти",
+      "посередник обіцяє повернути брата з полону",
+      "пишуть що полоненому потрібні гроші на лікування",
+      "після допису про пошук військового прийшло повідомлення"
+    ],
+    "en": [
+      "they offer to put my husband on the exchange list for money",
+      "a stranger says he knows where my son is held captive",
+      "asking for money for information about a missing soldier",
+      "a go-between promises to bring my brother back from captivity",
+      "they write that the prisoner needs money for treatment",
+      "after my post searching for a soldier I got a message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "secrecy",
+    "urgency"
+  ],
+  "redFlags": {
+    "uk": [
+      "Хтось обіцяє місце в обміні чи інформацію за гроші.",
+      "Вас просять нікому не розповідати, навіть державним органам.",
+      "Після першого платежу з’являються нові вимоги."
+    ],
+    "en": [
+      "Someone promises a place in an exchange or information for money.",
+      "You are asked not to tell anyone, not even state bodies.",
+      "New demands appear after the first payment."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Звертайтеся лише до Координаційного штабу з питань поводження з військовополоненими та до поліції.",
+      "Не платіть нікому за обмін, пошук чи інформацію: держава робить це безкоштовно.",
+      "Збережіть листування й номери та повідомте поліцію за номером 102."
+    ],
+    "en": [
+      "Deal only with the Coordination Headquarters for the Treatment of Prisoners of War and the police.",
+      "Do not pay anyone for an exchange, search or information: the state does this free of charge.",
+      "Keep the messages and numbers and report it to the police on 102."
+    ]
+  },
+  "reportTo": [
+    "ua/police",
+    "ua/cyberpolice"
+  ],
+  "sources": [
+    {
+      "title": "«Сприяння» у поверненні військовополоненого за 422 тисячі гривень: шахраю повідомлено про підозру",
+      "publisher": "АрміяInform",
+      "url": "https://armyinform.com.ua/2026/07/13/spryyannya-u-povernenni-vijskovopolonenogo-za-422-tysyachi-gryven-shahrayu-povidomleno-pro-pidozru/",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Правоохоронці викрили шахраїв, які ошукали родини зниклих безвісти й полонених військових",
+      "publisher": "АрміяInform",
+      "url": "https://armyinform.com.ua/2025/07/11/pravoohoronczi-vykryly-shahrayiv-yaki-oshukaly-rodyny-znyklyh-bezvisty-j-polonenyh-vijskovyh/",
+      "date": "2025-07-11"
+    },
+    {
+      "title": "Кіберполіція та Офіс Омбудсмана реалізовують інформаційну кампанію з протидії шахрайству на темі військовополонених та зниклих безвісти",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/kiberpolicziya-ta-ofis-ombudsmana-realizovuyut-informaczijnu-kampaniyu-z-protydiyi-shaxrajstvu-na-temi-vijskovopolonenyx-ta-znyklyx-bezvisty-5430/",
+      "date": "2025-04-23"
+    }
+  ],
+  "related": [
+    "ua/polonenyi-videozviazok-dodatok"
+  ],
+  "updated": "2026-11-17"
+}

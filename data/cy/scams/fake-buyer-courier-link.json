@@ -1,0 +1,125 @@
+{
+  "id": "cy/fake-buyer-courier-link",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "el": "Ένας «αγοραστής» για κάτι που πουλάτε στο διαδίκτυο",
+    "en": "A “buyer” for something you are selling online"
+  },
+  "name": {
+    "el": "Ψεύτικος αγοραστής στέλνει σύνδεσμο courier για να «λάβετε την πληρωμή»",
+    "en": "Fake buyer sends a courier link so you can “receive the payment”"
+  },
+  "how": {
+    "el": "Βάζετε μια αγγελία πώλησης και ένας αγοραστής δείχνει αμέσως ενδιαφέρον χωρίς να ρωτά πολλά. Λέει ότι έχει ήδη πληρώσει μέσω εταιρείας courier και σας στέλνει σύνδεσμο για να «αποδεχτείτε την πληρωμή». Η σελίδα μοιάζει με courier και ζητά στοιχεία κάρτας ή τραπεζικού λογαριασμού. Στην πραγματικότητα τα χρήματα φεύγουν από εσάς.",
+    "en": "You post an item for sale and a buyer shows interest straight away without asking much. They say they have already paid through a courier company and send a link so you can “accept the payment”. The page looks like a courier and asks for card or bank account details. In reality the money leaves your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ένας αγοραστής θέλει το αντικείμενο αμέσως, χωρίς να το δει.",
+        "en": "A buyer wants the item straight away, without seeing it."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Λέει ότι πλήρωσε μέσω courier και σας στέλνει σύνδεσμο.",
+        "en": "They say they paid through a courier and send you a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά στοιχεία κάρτας για να «λάβετε» τα χρήματα.",
+        "en": "The page asks for card details to “receive” the money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "el": "Ζητά τον κωδικό που σας στέλνει η τράπεζα.",
+        "en": "It asks for the code your bank sends you."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Γεια, ενδιαφέρομαι για το ποδήλατο, το παίρνω στην τιμή που ζητάτε. Έχω ήδη πληρώσει μέσω courier μαζί με τη μεταφορά, πατήστε εδώ για να εισπράξετε τα χρήματα: [σύνδεσμος]",
+        "en": "Hi, I’m interested in the bike, I’ll take it at your price. I’ve already paid through the courier including delivery, tap here to collect your money: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "buyer sent a courier link to receive payment",
+      "buyer wants my card details to pay me",
+      "sold something online and got a payment link",
+      "accept the payment through a delivery company link",
+      "buyer already paid via courier",
+      "selling a camera and buyer sends a link"
+    ],
+    "el": [
+      "αγοραστής έστειλε σύνδεσμο courier για πληρωμή",
+      "αγοραστής θέλει στοιχεία κάρτας για να με πληρώσει",
+      "πουλώ κάτι στο διαδίκτυο και πήρα σύνδεσμο πληρωμής",
+      "αποδοχή πληρωμής μέσω εταιρείας μεταφορών",
+      "ο αγοραστής πλήρωσε ήδη μέσω courier",
+      "πουλώ κάμερα και ο αγοραστής στέλνει σύνδεσμο"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "You never need to enter card details or codes to receive money.",
+      "A buyer who pays before seeing the item and insists on a courier link.",
+      "A courier “service” the real courier doesn’t offer."
+    ],
+    "el": [
+      "Για να λάβετε χρήματα δεν χρειάζεται ποτέ να δώσετε στοιχεία κάρτας ή κωδικούς.",
+      "Αγοραστής που πληρώνει πριν δει το αντικείμενο και επιμένει σε σύνδεσμο courier.",
+      "«Υπηρεσία» που η πραγματική εταιρεία courier δεν προσφέρει."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t open the link. Ask for payment in person or by a normal bank transfer.",
+      "Check with the courier company directly if in doubt.",
+      "If you entered details, call your bank at once.",
+      "Report the buyer to the platform and to the police."
+    ],
+    "el": [
+      "Μην ανοίξετε τον σύνδεσμο. Ζητήστε πληρωμή από κοντά ή με κανονική τραπεζική μεταφορά.",
+      "Αν έχετε αμφιβολία, ρωτήστε απευθείας την εταιρεία courier.",
+      "Αν δώσατε στοιχεία, καλέστε αμέσως την τράπεζα.",
+      "Αναφέρετε τον αγοραστή στην πλατφόρμα και στην Αστυνομία."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Police issue new warning for online fraud",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2025/07/18/police-issue-new-warning-for-online-fraud",
+      "date": "2025-07-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

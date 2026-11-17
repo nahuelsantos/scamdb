@@ -1,0 +1,129 @@
+{
+  "id": "ua/sbu-derzhzrada-povistka",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "uk": "Дзвінок або повідомлення у Viber, Telegram чи WhatsApp нібито від СБУ, поліції чи іншого державного органу",
+    "en": "A call or Viber, Telegram or WhatsApp message supposedly from the SBU, the police or another state body"
+  },
+  "name": {
+    "uk": "«СБУ» лякає справою про держзраду й вимагає гроші",
+    "en": "The 'SBU' threatens a treason case and demands money"
+  },
+  "how": {
+    "uk": "Шахраї від імені СБУ чи поліції повідомляють про нібито відкрите провадження: державна зрада, фінансування Росії, купівля заборонених товарів. Для тиску в месенджер надсилають підроблену повістку на допит з печатками, а інколи імітують обшук по відеозв’язку. Потім пропонують «вирішити питання»: переказати гроші на рахунок нібито для перевірки їх походження або для закриття справи. Справжні правоохоронці не вимагають грошей телефоном і не надсилають повісток у месенджери.",
+    "en": "Scammers in the name of the SBU or police say a case has supposedly been opened against you: treason, financing Russia, buying banned goods. To add pressure they send a forged summons with stamps to your messenger, and sometimes stage a search over video call. They then offer to 'resolve the matter': transfer money to an account supposedly to check where it came from or to close the case. Real law enforcement never demands money by phone or sends summonses in messengers."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Проти вас відкрито справу про держзраду.",
+        "en": "A treason case has been opened against you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Ось повістка на допит.",
+        "en": "Here is your summons for questioning."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "uk": "Про розмову нікому не можна розповідати.",
+        "en": "You must not tell anyone about this conversation."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "uk": "Переведіть гроші на перевірку, щоб закрити справу.",
+        "en": "Transfer the money for checking to close the case."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "uk": "Служба безпеки України. Відносно вас зареєстровано кримінальне провадження за фактом фінансування збройних формувань РФ. Повістку на допит надіслано нижче 📄. Щоб не допустити арешту рахунків, ви повинні сьогодні пройти перевірку коштів у нашого співробітника. Розголошення відомостей слідства карається законом.",
+        "en": "Security Service of Ukraine. Criminal proceedings have been registered against you for financing Russian armed forces. Your summons for questioning is attached below 📄. To prevent your accounts being frozen, you must have your funds checked by our officer today. Disclosing investigation details is punishable by law."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "подзвонили з сбу кажуть справа про держзраду",
+      "у вайбер прийшла повістка на допит від сбу",
+      "вимагають гроші щоб закрити кримінальну справу",
+      "лякають фінансуванням росії і просять перевести гроші",
+      "співробітник сбу каже нікому не розповідати",
+      "просять перевірити гроші на спеціальному рахунку"
+    ],
+    "en": [
+      "someone called from the sbu saying there is a treason case",
+      "a summons from the sbu came to my viber",
+      "they demand money to close a criminal case",
+      "they scare me with financing russia and ask me to transfer money",
+      "an sbu officer says not to tell anyone",
+      "they ask me to check my money on a special account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "urgency",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "uk": [
+      "Повістку надсилають у месенджер.",
+      "Справу пропонують закрити за гроші або «перевірити» кошти на іншому рахунку.",
+      "Вимагають мовчати й нікому не телефонувати."
+    ],
+    "en": [
+      "The summons is sent in a messenger.",
+      "They offer to close the case for money or to 'check' your money on another account.",
+      "They demand silence and that you call nobody."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Завершіть розмову й перевірте інформацію за офіційними контактами СБУ чи поліції.",
+      "Нікому не переказуйте гроші й не називайте даних картки.",
+      "Збережіть номер і скриншоти та повідомте поліцію за номером 102."
+    ],
+    "en": [
+      "End the call and check the information through the official SBU or police contacts.",
+      "Do not transfer money or give card details to anyone.",
+      "Keep the number and screenshots and report it to the police on 102."
+    ]
+  },
+  "reportTo": [
+    "ua/police",
+    "ua/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Шахраї масово видають себе за співробітників СБУ та розсилають фейкові повістки на допит",
+      "publisher": "Слово і Діло",
+      "url": "https://www.slovoidilo.ua/2026/05/15/novyna/suspilstvo/shaxrayi-masovo-vydayut-sebe-spivrobitnykiv-sbu-ta-rozsylayut-fejkovi-povistky-dopyt",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Залякують справою про держзраду: активізувалися шахраї, які видають себе за СБУ",
+      "publisher": "Вікна-новини (vikna.tv)",
+      "url": "https://vikna.tv/dlia-tebe/bezpeka/yak-shahrayi-vydayut-sebe-za-pravoohorontsiv-ta-oshukuyut-ukrayintsiv/",
+      "date": "2026-05-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

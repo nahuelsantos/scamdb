@@ -1,0 +1,137 @@
+{
+  "id": "ua/diia-yepidtrymka-feikova-vyplata",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "uk": "Реклама у Facebook, TikTok чи Telegram або чат-бот «підтримки», схожий на Дію чи єПідтримку",
+    "en": "An ad on Facebook, TikTok or Telegram, or a \"support\" chatbot that looks like Diia or ePidtrymka"
+  },
+  "name": {
+    "uk": "Фейкова виплата через «Дію» чи «єПідтримку»",
+    "en": "Fake payment through 'Diia' or 'ePidtrymka'"
+  },
+  "how": {
+    "uk": "Зловмисники запускають рекламу про нібито нараховану допомогу: для переселенців, «зимову» чи «весняну» програму, виплату через Дію або єПідтримку. Посилання веде на копію сайту Дії чи сторінку входу в банк, де людина вводить логін, пароль і номер телефону. Скрипт тим часом входить у справжній банкінг, і жертва сама підтверджує код чи push-повідомлення, думаючи, що отримує гроші. Далі шахраї піднімають кредитний ліміт і забирають усе.",
+    "en": "Criminals run ads about aid that has supposedly been credited to you: for displaced people, a 'winter' or 'spring' programme, a payment through Diia or ePidtrymka. The link leads to a copy of the Diia site or a bank login page, where you type your login, password and phone number. Meanwhile a script logs into your real online banking, and you confirm the code or push notification yourself, thinking you are receiving money. The scammers then raise the credit limit and take everything."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Вам нараховано державну допомогу.",
+        "en": "State aid has been credited to you."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "uk": "Сторінка виглядає як Дія або ваш банк.",
+        "en": "The page looks like Diia or your bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Увійдіть у банк через це посилання.",
+        "en": "Log in to your bank through this link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "uk": "Підтвердьте код, щоб зарахувати кошти.",
+        "en": "Confirm the code so the money can be credited."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "online",
+      "text": {
+        "uk": "Дія інформує: вам нараховано одноразову допомогу 6 300 грн за програмою «Зимова підтримка». Щоб отримати кошти, оберіть свій банк і авторизуйтесь протягом 24 годин: [посилання]. Після входу підтвердьте зарахування кодом, що надійде на телефон.",
+        "en": "Diia informs you: a one-off payment of 6,300 hryvnias has been credited to you under the 'Winter support' programme. To receive the money, choose your bank and log in within 24 hours: [link]. After logging in, confirm the payment with the code sent to your phone."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "побачив рекламу про виплату через дію",
+      "сайт схожий на дію просить увійти в банк",
+      "бот єпідтримки пообіцяв допомогу",
+      "підтвердив код а замість виплати зняли кредитний ліміт",
+      "допомога переселенцям за посиланням з реклами",
+      "просили логін і пароль від приват24 для виплати",
+      "дія пише що нараховано допомогу впо",
+      "посилання на виплату просить вибрати банк і авторизуватись"
+    ],
+    "en": [
+      "saw an ad about a payment through diia",
+      "a site like diia asks me to log in to my bank",
+      "the epidtrymka bot promised me aid",
+      "confirmed a code and instead my credit limit was taken",
+      "aid for displaced people via an ad link",
+      "they asked my banking login and password for a payment",
+      "diia says aid for displaced people has been credited",
+      "the payment link asks me to choose my bank and log in"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true",
+    "urgency"
+  ],
+  "redFlags": {
+    "uk": [
+      "Справжня Дія не надсилає посилань на виплати в рекламі, SMS чи месенджерах.",
+      "Для «зарахування» просять увійти в банк на сторонньому сайті.",
+      "Код чи push-повідомлення з банку нібито потрібні, щоб отримати гроші."
+    ],
+    "en": [
+      "The real Diia does not send payment links in ads, texts or messengers.",
+      "To 'credit' the money you are asked to log in to your bank on another site.",
+      "A bank code or push notification is supposedly needed to receive money."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Відкривайте Дію чи банк лише через офіційний застосунок, який ви встановили самі.",
+      "Ніколи не підтверджуйте код або вхід, якого ви не починали.",
+      "Якщо дані вже введені, зателефонуйте в банк, заблокуйте картки й банкінг, повідомте кіберполіцію."
+    ],
+    "en": [
+      "Open Diia or your bank only through the official app you installed yourself.",
+      "Never confirm a code or a login you did not start.",
+      "If you already entered details, call your bank, block cards and online banking, and report it to the cyber police."
+    ]
+  },
+  "reportTo": [
+    "ua/your-bank",
+    "ua/cyberpolice"
+  ],
+  "sources": [
+    {
+      "title": "«Вам нараховано 6500 грн допомоги»: як фішинг-шахраї вичищають кредитні ліміти українців під приводом ООН та єПідтримки",
+      "publisher": "dev.ua",
+      "url": "https://dev.ua/news/shakhrai1-1783337996",
+      "date": "2026-07-07"
+    },
+    {
+      "title": "Остерігайтеся шахрайських телеграм-ботів",
+      "publisher": "Департамент кіберполіції Національної поліції України",
+      "url": "https://cyberpolice.gov.ua/article/osterigajtesya-shaxrajskyx-telegram-botiv-5476/",
+      "date": "2025-06-26"
+    }
+  ],
+  "related": [
+    "ua/vyplaty-oon-chervonyi-khrest",
+    "ua/nadbavka-do-pensii-pfu"
+  ],
+  "updated": "2026-11-17"
+}

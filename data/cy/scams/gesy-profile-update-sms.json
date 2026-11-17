@@ -1,0 +1,139 @@
+{
+  "id": "cy/gesy-profile-update-sms",
+  "country": "cy",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "el": "Ένα SMS «από το ΓεΣΥ» ή τον Οργανισμό Ασφάλισης Υγείας",
+    "en": "A text “from GESY” or the Health Insurance Organisation"
+  },
+  "name": {
+    "el": "Ψεύτικο SMS του ΓεΣΥ για «ανανέωση προφίλ»",
+    "en": "Fake GESY text asking you to “renew your profile”"
+  },
+  "how": {
+    "el": "Ένα SMS που μοιάζει να έρχεται από το ΓεΣΥ λέει ότι το προφίλ σας πρέπει να ανανεωθεί ή να αναβαθμιστεί, αλλιώς θα χάσετε την πρόσβαση. Ο σύνδεσμος οδηγεί σε ψεύτικη σελίδα που αντιγράφει την επίσημη και ζητά προσωπικά και τραπεζικά στοιχεία, συχνά για μια μικρή «χρέωση». Μερικά ψεύτικα μηνύματα εμφανίζονται στην ίδια συνομιλία με τα αληθινά. Ο ΟΑΥ δεν ζητά ποτέ κωδικούς ή πληρωμή με SMS.",
+    "en": "A text that seems to come from GESY says your profile must be renewed or upgraded or you will lose access. The link leads to a fake page that copies the official one and asks for personal and bank details, often for a small “fee”. Some fake texts appear in the same thread as real ones. The HIO never asks for passwords or payment by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ένα SMS «από το ΓεΣΥ» λέει ότι το προφίλ σας χρειάζεται ανανέωση.",
+        "en": "A text “from GESY” says your profile needs renewing."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Προειδοποιεί ότι θα χάσετε την πρόσβαση αν δεν το κάνετε τώρα.",
+        "en": "It warns you will lose access if you don’t do it now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ο σύνδεσμος ανοίγει αντίγραφο της επίσημης σελίδας.",
+        "en": "The link opens a copy of the official page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Ζητά στοιχεία κάρτας ή τραπεζικού λογαριασμού για μια μικρή πληρωμή.",
+        "en": "It asks for card or bank account details for a small payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "ΓεΣΥ: Το προφίλ δικαιούχου σας λήγει. Για να συνεχίσετε να έχετε πρόσβαση σε γιατρούς, ολοκληρώστε την ανανέωση μέσα σε 24 ώρες: [σύνδεσμος]",
+        "en": "GESY: Your beneficiary profile is expiring. To keep access to doctors, complete the renewal within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "el": [
+      "μήνυμα γεσυ για ανανέωση προφίλ",
+      "sms από οαυ με σύνδεσμο",
+      "αναβάθμιση προφίλ γεσυ με πληρωμή",
+      "θα χάσω πρόσβαση στο γεσυ αν δεν πατήσω",
+      "ζητούν στοιχεία κάρτας για το γεσυ",
+      "έβαλα στοιχεία σε σελίδα του γεσυ από sms",
+      "ενημέρωση λογαριασμού στο γεσυ μέσω συνδέσμου",
+      "μήνυμα οαυ ότι θα σταματήσουν οι παραπομπές"
+    ],
+    "en": [
+      "gesy text asking to renew my profile",
+      "hio sms with a link",
+      "gesy profile upgrade fee",
+      "lose access to gesy unless I click",
+      "health system message asks for card details",
+      "entered bank details on a gesy page from a text",
+      "gesy account update link",
+      "hio text says my referrals will stop"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Ο ΟΑΥ δεν ζητά ποτέ κωδικούς, πληρωμή ή τραπεζικά στοιχεία με SMS.",
+      "Σύνδεσμος για «ανανέωση» ή «αναβάθμιση» προφίλ.",
+      "Το ψεύτικο μήνυμα μπορεί να εμφανιστεί δίπλα σε αληθινά μηνύματα του ΓεΣΥ."
+    ],
+    "en": [
+      "The HIO never asks for passwords, payment or bank details by text.",
+      "A link to “renew” or “upgrade” your profile.",
+      "The fake text can appear next to real GESY messages."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην ανοίξετε τον σύνδεσμο. Διαγράψτε το μήνυμα.",
+      "Μπείτε στο ΓεΣΥ μόνο από την επίσημη εφαρμογή ή γράφοντας εσείς τη διεύθυνση.",
+      "Αν δώσατε στοιχεία κάρτας ή λογαριασμού, καλέστε αμέσως την τράπεζά σας.",
+      "Καταγγείλετε το μήνυμα στην Αστυνομία."
+    ],
+    "en": [
+      "Don’t open the link. Delete the text.",
+      "Go to GESY only through the official app or by typing the address yourself.",
+      "If you gave card or account details, call your bank at once.",
+      "Report the text to the police."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Scammers sending messages posing as Gesy",
+      "publisher": "Cyprus Mail",
+      "url": "https://www.cyprus-mail.com/2026/09/28/scammers-sending-messages-posing-as-gesy",
+      "date": "2026-09-28"
+    },
+    {
+      "title": "GESY scam in Cyprus costs victim €48,000",
+      "publisher": "Sigmalive",
+      "url": "https://en.sigmalive.com/gesy-scam-in-cyprus-costs-victim-e48000/",
+      "date": "2026-05-06"
+    },
+    {
+      "title": "Αυξημένες καταγγελίες για τηλεφωνικές και διαδικτυακές απάτες – Έκκληση της Αστυνομίας για προσοχή",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/auksimenes-kataggelies-gia-tilefwnikes-kai-diadiktuakes-apates-ekklisi-tis-astunomias-gia-prosoxi/",
+      "date": "2026-04-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

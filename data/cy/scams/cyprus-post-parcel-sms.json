@@ -1,0 +1,130 @@
+{
+  "id": "cy/cyprus-post-parcel-sms",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "el": "SMS «από τα Κυπριακά Ταχυδρομεία» ή εταιρεία courier",
+    "en": "A text “from Cyprus Post” or a courier"
+  },
+  "name": {
+    "el": "Ψεύτικο SMS των Κυπριακών Ταχυδρομείων: λάθος διεύθυνση ή τέλη δέματος",
+    "en": "Fake Cyprus Post text: wrong address or parcel fee"
+  },
+  "how": {
+    "el": "Ένα SMS λέει ότι ένα δέμα έφτασε στο κέντρο διανομής αλλά δεν παραδόθηκε λόγω «λάθους στη διεύθυνση» ή απλήρωτων τελών. Σας στέλνει σε σύνδεσμο (ή σε αριθμό) για να διορθώσετε τα στοιχεία και να πληρώσετε μικρό ποσό. Η σελίδα κλέβει στοιχεία κάρτας. Τα Κυπριακά Ταχυδρομεία λένε ότι οι πληρωμές τους γίνονται μόνο μέσω JCCSmart ή της επίσημης ιστοσελίδας τους.",
+    "en": "A text says a parcel reached the delivery centre but was not delivered because of an “address error” or unpaid fees. It sends you to a link (or a number) to correct your details and pay a small amount. The page steals card details. Cyprus Post says its payments are made only through JCCSmart or its official website."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "SMS «από τα Ταχυδρομεία» για δέμα που δεν παραδόθηκε.",
+        "en": "A text “from Cyprus Post” about an undelivered parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας λέει να διορθώσετε τη διεύθυνση μέσω συνδέσμου.",
+        "en": "It tells you to correct your address through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Ζητά μικρό τέλος και στοιχεία κάρτας.",
+        "en": "It asks for a small fee and card details."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "el": "Το δέμα θα επιστραφεί αν δεν πληρώσετε σύντομα.",
+        "en": "The parcel will be returned unless you pay soon."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Cyprus Post: Το δέμα σας κρατείται στο κέντρο διανομής λόγω ελλιπούς διεύθυνσης. Ενημερώστε τα στοιχεία σας και πληρώστε €1,85 εντός 48 ωρών, αλλιώς θα επιστραφεί: [σύνδεσμος]",
+        "en": "Cyprus Post: Your parcel is held at our sorting centre due to an incomplete address. Update your details and pay €1.85 within 48 hours or it will be returned: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "cyprus post text about my parcel",
+      "parcel held because of an address error",
+      "small fee to release a parcel",
+      "update delivery address through a link",
+      "customs charge text for a package",
+      "courier sms asks for card details"
+    ],
+    "el": [
+      "μήνυμα κυπριακά ταχυδρομεία για δέμα",
+      "δέμα δεν παραδόθηκε λάθος διεύθυνση",
+      "μικρό τέλος για να πάρω το δέμα",
+      "διόρθωση διεύθυνσης μέσω συνδέσμου",
+      "sms για τελωνειακά τέλη δέματος",
+      "courier ζητά στοιχεία κάρτας"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A parcel you weren’t expecting.",
+      "A fee paid through a link in a text.",
+      "A web address that isn’t Cyprus Post’s real one."
+    ],
+    "el": [
+      "Δέμα που δεν περιμένατε.",
+      "Τέλος που πληρώνεται μέσω συνδέσμου σε SMS.",
+      "Διεύθυνση ιστοσελίδας που δεν είναι η πραγματική των Ταχυδρομείων."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t open the link or call the number in the text.",
+      "Track parcels only on the Cyprus Post website or the courier’s own app.",
+      "If you entered card details, call your bank.",
+      "Report the text to the police."
+    ],
+    "el": [
+      "Μην ανοίξετε τον σύνδεσμο και μην καλέσετε τον αριθμό του μηνύματος.",
+      "Παρακολουθείτε δέματα μόνο στην ιστοσελίδα των Ταχυδρομείων ή στην εφαρμογή του courier.",
+      "Αν δώσατε στοιχεία κάρτας, καλέστε την τράπεζά σας.",
+      "Καταγγείλετε το μήνυμα στην Αστυνομία."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Cyprus Sees Surge in Scam SMS Posing as Postal Service",
+      "publisher": "Cyprus FAQ",
+      "url": "https://www.cyprus-faq.com/en/south/news/na-kipre-fiksiruetsya-vsplesk-moshennicheskikh-sms-ot-imeni-pochty",
+      "date": "2025-08-13"
+    },
+    {
+      "title": "Police warn of yet another scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2025/04/09/police-warn-of-yet-another-scam",
+      "date": "2025-04-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

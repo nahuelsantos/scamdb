@@ -1,0 +1,139 @@
+{
+  "id": "gr/fake-accountant-call",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "el": "Ένας «λογιστής», «δικηγόρος» ή «υπάλληλος της Εφορίας»",
+    "en": "An “accountant”, “lawyer” or “tax office employee”"
+  },
+  "name": {
+    "el": "Ψεύτικος λογιστής: λάθος στη φορολογική δήλωση, επίδομα ή κοσμήματα που πρέπει να «καταγραφούν»",
+    "en": "Fake accountant: an error in your tax return, a benefit, or jewellery that must be “recorded”"
+  },
+  "how": {
+    "el": "Σας τηλεφωνεί κάποιος που λέει ότι είναι λογιστής ή συνεργάτης της Εφορίας. Λέει ότι έγινε λάθος στη φορολογική σας δήλωση και πρέπει να πληρώσετε τώρα για να μην έχετε πρόστιμο, ότι δικαιούστε επίδομα ή επιστροφή φόρου και χρειάζεται τα στοιχεία της κάρτας σας, ότι το παιδί σας κρατείται και χρειάζονται χρήματα, ή ότι τα κοσμήματα και τα μετρητά σας πρέπει να «καταγραφούν από δορυφόρο». Σας κρατά στη γραμμή, και ένας συνεργός περνά από το σπίτι να πάρει μετρητά, λίρες ή κοσμήματα, ή αδειάζουν τον λογαριασμό με την κάρτα σας.",
+    "en": "Someone calls saying they are an accountant or work with the tax office. They say there was a mistake in your tax return and you must pay now to avoid a fine, that you are due a benefit or tax refund and they need your card details, that your child has been detained and money is needed, or that your jewellery and cash must be “recorded by satellite”. They keep you on the line while an accomplice comes to your home to collect cash, gold sovereigns or jewellery, or they empty your account with your card."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Τηλεφώνημα από «λογιστή» ή «Εφορία».",
+        "en": "A call from an “accountant” or “the tax office”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Λάθος στη δήλωση, πρόστιμο ή παιδί που κρατείται: πρέπει να γίνει σήμερα.",
+        "en": "A tax-return error, a fine or a detained child: it must be sorted today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Σας ζητούν στοιχεία κάρτας ή PIN «για το επίδομα».",
+        "en": "They ask for card details or a PIN “for the benefit”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "el": "Ένας άγνωστος περνά να πάρει μετρητά ή κοσμήματα.",
+        "en": "A stranger comes to collect cash or jewellery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "el": "Καλημέρα, ο λογιστής σας είμαι, από το γραφείο. Έγινε ένα λάθος στη δήλωση του 2025 και η Εφορία σας βάζει πρόστιμο 6.000 ευρώ αν δεν τακτοποιηθεί σήμερα. Μπορώ να το κλείσω με 1.900 μετρητά, θα περάσει ένας συνεργάτης μου σε μισή ώρα. Μην το πείτε στα παιδιά, να μην ανησυχούν.",
+        "en": "Good morning, it’s your accountant, from the office. There was a mistake in your 2025 return and the tax office will fine you 6,000 euros unless it’s settled today. I can close it for 1,900 in cash, a colleague of mine will come by in half an hour. Don’t tell your children, so they don’t worry."
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "τηλεφώνησε λογιστής λάθος φορολογική δήλωση",
+      "τηλεφώνημα από λογιστικό γραφείο ζητά κάρτα",
+      "λογιστής ζητά μετρητά για πρόστιμο εφορίας",
+      "καταγραφή κοσμημάτων από δορυφόρο",
+      "λογιστής είπε ότι εγκρίθηκε επίδομα ζήτησε cvv",
+      "λογιστής είπε ότι ο γιος μου κρατείται",
+      "συνεργάτης λογιστή έρχεται να πάρει λίρες"
+    ],
+    "en": [
+      "fake accountant called about tax return error",
+      "accountant wants cash to avoid tax fine",
+      "jewellery must be recorded by satellite",
+      "caller said i qualify for benefits asked card",
+      "accountant said my son is detained"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Ούτε λογιστής ούτε η Εφορία μαζεύουν μετρητά ή κοσμήματα στο σπίτι σας.",
+      "Κανείς δεν χρειάζεται το PIN ή τον κωδικό σας για να σας πληρώσει επίδομα.",
+      "Σας ζητούν να μην το πείτε σε κανέναν."
+    ],
+    "en": [
+      "Neither an accountant nor the tax office collects cash or jewellery at your home.",
+      "Nobody needs your PIN or code to pay you a benefit.",
+      "You are asked not to tell anyone."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Κλείστε και καλέστε τον δικό σας λογιστή στον αριθμό που ήδη έχετε.",
+      "Μην ανοίγετε σε αγνώστους και μην παραδίδετε τίποτα. Καλέστε το 100.",
+      "Δώσατε στοιχεία κάρτας; Καλέστε αμέσως την τράπεζα."
+    ],
+    "en": [
+      "Hang up and call your own accountant on the number you already have.",
+      "Don’t open the door to strangers or hand anything over. Call 100.",
+      "Gave card details? Call your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "gr/police-100",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "New-generation scams to beware of: Calls emptying bank accounts overnight",
+      "publisher": "Πρώτο Θέμα (English edition)",
+      "url": "https://en.protothema.gr/2026/08/28/new-generation-scams-to-beware-of-calls-emptying-bank-accounts-overnight/",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "Χειροπέδες σε αλλοδαπό στην Έδεσσα για τηλεφωνικές απάτες σε βάρος ηλικιωμένων",
+      "publisher": "CNN Greece",
+      "url": "https://www.cnn.gr/ellada/story/536257/xeiropedes-se-allodapo-stin-edessa-gia-tilefonikes-apates-se-varos-ilikiomenon",
+      "date": "2026-05-30"
+    },
+    {
+      "title": "Διπλασιάστηκαν οι απόπειρες εξαπάτησης σε ηλικιωμένους το 2025 - Οδηγίες προστασίας",
+      "publisher": "CNN Greece",
+      "url": "https://www.cnn.gr/ellada/story/518992/diplasiastikan-oi-apopeires-eksapatisis-se-ilikiomenous-to-2025-odigies-prostasias",
+      "date": "2026-02-11"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/relative-accident-doctor-call",
+    "gr/fake-power-technician-valuables"
+  ]
+}

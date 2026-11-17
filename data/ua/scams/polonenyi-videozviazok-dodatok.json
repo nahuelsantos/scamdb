@@ -1,0 +1,124 @@
+{
+  "id": "ua/polonenyi-videozviazok-dodatok",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "uk": "Повідомлення в Telegram від нібито «журналіста», який пропонує зв’язок із полоненим",
+    "en": "A Telegram message from a supposed 'journalist' offering contact with a prisoner of war"
+  },
+  "name": {
+    "uk": "«Відеозв’язок із полоненим» через шкідливий додаток",
+    "en": "'Video call with your captive relative' through a malicious app"
+  },
+  "how": {
+    "uk": "Родичам полонених і зниклих безвісти пишуть у Telegram люди, що називають себе журналістами, які нібито готують інтерв’ю з полоненими. Вони пропонують організувати відеорозмову з рідним і надсилають файл — «спеціальний додаток для відеоконференцій». Насправді це вірус, який дає віддалений доступ до телефону, особистих даних і банкінгу. Омбудсман наголошує, що в Україні так не зв’язуються з полоненими і не просять встановлювати сторонні програми.",
+    "en": "Relatives of prisoners of war and missing soldiers are contacted on Telegram by people claiming to be journalists preparing interviews with prisoners. They offer to set up a video call with the relative and send a file — a 'special video conferencing app'. It is really malware that gives remote access to the phone, personal data and online banking. The Ombudsman stresses that this is not how contact with prisoners works in Ukraine and nobody asks you to install outside apps."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Ми журналісти й готуємо інтерв’ю з полоненими.",
+        "en": "We are journalists preparing interviews with prisoners."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Можемо влаштувати відеодзвінок із вашим рідним.",
+        "en": "We can arrange a video call with your relative."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "uk": "Встановіть цей додаток для зв’язку.",
+        "en": "Install this app for the call."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "uk": "Дзвінок лише сьогодні ввечері.",
+        "en": "The call is only tonight."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "uk": "Доброго вечора. Ми знімаємо матеріал про українських військових у полоні, і ваш син погодився на розмову. Можемо з’єднати вас по відео вже сьогодні. Звичайні месенджери там не працюють, тому встановіть, будь ласка, програму для конференцій з файлу нижче 📎 і напишіть, коли буде готово.",
+        "en": "Good evening. We are filming a story about Ukrainian soldiers in captivity, and your son has agreed to talk. We can connect you by video today. Normal messengers don't work there, so please install the conferencing program from the file below 📎 and let me know when it's ready."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "пишуть журналісти що можуть з’єднати з сином у полоні",
+      "надіслали файл для відеозв’язку з полоненим",
+      "просять встановити програму щоб поговорити з чоловіком",
+      "обіцяють відеодзвінок з полоненим через додаток",
+      "після встановлення додатку зникли гроші з банку"
+    ],
+    "en": [
+      "journalists write that they can connect me with my son in captivity",
+      "they sent a file for a video call with a prisoner",
+      "they ask me to install a program to talk to my husband",
+      "they promise a video call with a prisoner through an app",
+      "money vanished from my bank after I installed the app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "too_good_to_be_true",
+    "urgency"
+  ],
+  "redFlags": {
+    "uk": [
+      "Незнайомці обіцяють розмову з полоненим.",
+      "Для зв’язку просять встановити файл чи додаток.",
+      "Пишуть із Telegram-акаунта без жодного підтвердження особи."
+    ],
+    "en": [
+      "Strangers promise a conversation with a prisoner.",
+      "You are asked to install a file or app for the call.",
+      "They write from a Telegram account with no proof of identity."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Не встановлюйте файлів і додатків від незнайомців.",
+      "Перевіряйте будь-яку інформацію про полонених лише через офіційні державні органи.",
+      "Уже встановили? Вимкніть інтернет, зателефонуйте в банк і повідомте кіберполіцію."
+    ],
+    "en": [
+      "Do not install files or apps from strangers.",
+      "Check any information about prisoners only through official state bodies.",
+      "Already installed it? Turn off the internet, call your bank and report it to the cyber police."
+    ]
+  },
+  "reportTo": [
+    "ua/cyberpolice",
+    "ua/your-bank",
+    "ua/police"
+  ],
+  "sources": [
+    {
+      "title": "Омбудсмен попередив родичів військовополонених та зниклих безвісти про нову схему шахраїв",
+      "publisher": "ZAXID.NET",
+      "url": "https://zaxid.net/ombudsmen_poperediv_rodichiv_viyskovopolonenih_ta_zniklih_bezvisti_pro_novu_shemu_shahrayiv_n1634556",
+      "date": "2026-04-10"
+    }
+  ],
+  "related": [
+    "ua/polon-spysky-obminu-za-hroshi"
+  ],
+  "updated": "2026-11-17"
+}

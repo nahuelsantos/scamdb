@@ -1,0 +1,123 @@
+{
+  "id": "cy/supermarket-points-sms",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "el": "SMS «από σούπερ μάρκετ» για πόντους επιβράβευσης",
+    "en": "A text “from a supermarket” about reward points"
+  },
+  "name": {
+    "el": "Ψεύτικο SMS σούπερ μάρκετ: «οι πόντοι σας λήγουν»",
+    "en": "Fake supermarket text: “your points are expiring”"
+  },
+  "how": {
+    "el": "Ένα SMS που μοιάζει να έρχεται από σούπερ μάρκετ λέει ότι έχετε πόντους επιβράβευσης που λήγουν σύντομα και ότι μπορείτε να τους εξαργυρώσετε μέσω συνδέσμου. Η σελίδα ζητά στοιχεία κάρτας, συχνά για ένα μικρό «κόστος αποστολής» δώρου. Στόχος είναι τα τραπεζικά σας στοιχεία και τα χρήματά σας.",
+    "en": "A text that seems to come from a supermarket says you have reward points that expire soon and can redeem them through a link. The page asks for card details, often for a small “shipping cost” for a gift. The aim is your bank details and your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ένα SMS «από σούπερ μάρκετ» λέει ότι έχετε πόντους.",
+        "en": "A text “from a supermarket” says you have points."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Οι πόντοι λήγουν σήμερα ή αύριο.",
+        "en": "The points expire today or tomorrow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Η εξαργύρωση γίνεται μέσω συνδέσμου για ένα δώρο.",
+        "en": "Redeeming is through a link for a gift."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά στοιχεία κάρτας για μικρό κόστος.",
+        "en": "The page asks for card details for a small cost."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Συγχαρητήρια! Έχετε 2.450 πόντους επιβράβευσης που λήγουν αύριο. Εξαργυρώστε τους τώρα για μια ηλεκτρική φριτέζα: [σύνδεσμος]",
+        "en": "Congratulations! You have 2,450 reward points expiring tomorrow. Redeem them now for an air fryer: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "supermarket text says my points are expiring",
+      "redeem reward points through a link",
+      "loyalty points gift pay only shipping",
+      "sms about supermarket rewards",
+      "points expire tomorrow claim a prize",
+      "loyalty card text asks for card details"
+    ],
+    "el": [
+      "μήνυμα σούπερ μάρκετ ότι λήγουν οι πόντοι μου",
+      "εξαργύρωση πόντων μέσω συνδέσμου",
+      "δώρο από πόντους πληρώνω μόνο μεταφορικά",
+      "sms για επιβράβευση σούπερ μάρκετ",
+      "οι πόντοι λήγουν αύριο κερδίστε δώρο",
+      "μήνυμα κάρτας μέλους ζητά στοιχεία κάρτας"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Points or prizes that expire “tomorrow”.",
+      "A link to redeem instead of the store’s own app.",
+      "Card details asked for a free gift."
+    ],
+    "el": [
+      "Πόντοι ή δώρα που λήγουν «αύριο».",
+      "Σύνδεσμος εξαργύρωσης αντί για την εφαρμογή του καταστήματος.",
+      "Ζητούν στοιχεία κάρτας για δωρεάν δώρο."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t open the link or reply. Delete the text.",
+      "Check your points in the store’s own app or at the till.",
+      "If you entered card details, call your bank.",
+      "Report the text to the police."
+    ],
+    "el": [
+      "Μην ανοίξετε τον σύνδεσμο και μην απαντήσετε. Διαγράψτε το μήνυμα.",
+      "Ελέγξτε τους πόντους σας στην εφαρμογή του καταστήματος ή στο ταμείο.",
+      "Αν δώσατε στοιχεία κάρτας, καλέστε την τράπεζά σας.",
+      "Καταγγείλετε το μήνυμα στην Αστυνομία."
+    ]
+  },
+  "reportTo": [
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Police warn of fake supermarket reward SMS scam",
+      "publisher": "Sigmalive",
+      "url": "https://en.sigmalive.com/police-warn-of-fake-supermarket-reward-sms-scam/",
+      "date": "2025-08-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

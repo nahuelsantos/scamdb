@@ -1,0 +1,130 @@
+{
+  "id": "gr/benefit-refund-sms",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "el": "«gov.gr», «ΕΟΠΥΥ», «Fuel Pass» ή άλλος δημόσιος φορέας",
+    "en": "“gov.gr”, “EOPYY” (national health fund), “Fuel Pass” or another public body"
+  },
+  "name": {
+    "el": "Ψεύτικο SMS για επίδομα ή επιστροφή χρημάτων (Fuel Pass, ΕΟΠΥΥ)",
+    "en": "Fake text about a benefit or refund (Fuel Pass, EOPYY)"
+  },
+  "how": {
+    "el": "Όταν ανακοινώνεται ένα κρατικό επίδομα, όπως το Fuel Pass, ή μια επιστροφή, κυκλοφορούν SMS και email που λένε ότι είστε δικαιούχος ή ότι ο ΕΟΠΥΥ σας χρωστά επιστροφή χρημάτων. Σας ζητούν να πατήσετε σύνδεσμο για να κάνετε αίτηση ή να επιβεβαιώσετε τα στοιχεία σας. Η σελίδα μιμείται κρατική υπηρεσία και ζητά προσωπικά στοιχεία, κωδικούς και στοιχεία κάρτας ή λογαριασμού.",
+    "en": "Whenever a state benefit such as the Fuel Pass, or a refund, is announced, texts and emails circulate saying you are eligible or that EOPYY owes you a refund. You are asked to tap a link to apply or confirm your details. The page imitates a government service and asks for personal details, passwords and card or account details."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "SMS «από το κράτος»: είστε δικαιούχος επιδόματος ή επιστροφής.",
+        "en": "A text “from the state”: you are eligible for a benefit or refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Χρήματα που δεν περιμένατε, αρκεί να κάνετε αίτηση τώρα.",
+        "en": "Money you weren’t expecting, if you just apply now."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Ένας σύνδεσμος για αίτηση ή επιβεβαίωση στοιχείων.",
+        "en": "A link to apply or confirm your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά κωδικούς, κάρτα ή IBAN.",
+        "en": "The page asks for passwords, card or IBAN."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "el": "Είστε δικαιούχος του επιδόματος καυσίμων 2026 ύψους 60 €. Ολοκληρώστε την αίτησή σας και επιβεβαιώστε τον λογαριασμό πίστωσης έως την Παρασκευή: [σύνδεσμος]",
+        "en": "You are eligible for the 2026 fuel allowance of €60. Complete your application and confirm the account for payment by Friday: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "sms fuel pass δικαιούχος σύνδεσμος",
+      "μήνυμα εοπυυ επιστροφή χρημάτων",
+      "επίδομα αίτηση με link από sms",
+      "είστε δικαιούχος επιδότησης επιβεβαιώστε",
+      "ψεύτικο μήνυμα gov gr επίδομα καυσίμων",
+      "κρατικό επίδομα sms ζητά κάρτα"
+    ],
+    "en": [
+      "fuel pass text says i am eligible",
+      "eopyy refund text message",
+      "benefit application link by sms greece",
+      "fake gov gr message about allowance",
+      "refund email asks for bank account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "el": [
+      "Οι δημόσιοι φορείς δεν στέλνουν SMS που ζητούν να πατήσετε σύνδεσμο για αίτηση ή επιβεβαίωση στοιχείων.",
+      "Ένα επίδομα ή μια επιστροφή που δεν ζητήσατε, με προθεσμία.",
+      "Η σελίδα ζητά στοιχεία κάρτας, κάτι που δεν χρειάζεται για να πληρωθείτε."
+    ],
+    "en": [
+      "Public bodies don’t send texts asking you to tap a link to apply or confirm your details.",
+      "A benefit or refund you didn’t ask for, with a deadline.",
+      "The page asks for card details, which you never need to receive a payment."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην πατάτε τον σύνδεσμο. Κάντε αιτήσεις μόνο από την επίσημη σελίδα ή εφαρμογή του φορέα, πληκτρολογώντας εσείς τη διεύθυνση.",
+      "Μην δίνετε κωδικούς Taxisnet σε «μεσάζοντες» που προσφέρονται να κάνουν την αίτηση για εσάς.",
+      "Δώσατε στοιχεία; Καλέστε την τράπεζα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Don’t tap the link. Apply only through the body’s official site or app, typing the address yourself.",
+      "Don’t give your Taxisnet passwords to “middlemen” offering to apply for you.",
+      "Gave details? Call your bank and report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Νέα απάτη με SMS για το Fuel Pass – Τι θα πρέπει να προσέξετε",
+      "publisher": "in.gr",
+      "url": "https://www.in.gr/2026/03/24/greece/nea-apati-sms-gia-fuel-pass-ti-tha-prepei-na-proseksete/amp/",
+      "date": "2026-03-24"
+    },
+    {
+      "title": "Νέα απάτη μέσω sms για επιστροφή χρημάτων από τον ΕΟΠΥΥ",
+      "publisher": "aftodioikisi.gr",
+      "url": "https://www.aftodioikisi.gr/koinonia/nea-apati-meso-sms-gia-epistrofi-chrimaton-apo-ton-eopyy/",
+      "date": "2026-03-19"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/aade-tax-refund-phishing"
+  ]
+}

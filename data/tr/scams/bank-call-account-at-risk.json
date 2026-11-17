@@ -1,0 +1,143 @@
+{
+  "id": "tr/bank-call-account-at-risk",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "tr": "“Bankanızın güvenlik birimi” ya da müşteri hizmetleri; ekranda bankanın gerçek numarası görünebilir",
+    "en": "Your bank’s “security unit” or customer service; the bank’s real number may show on screen"
+  },
+  "name": {
+    "tr": "Sahte banka görevlisi: “Hesabınızda şüpheli işlem var”, onay ve SMS kodu isteniyor",
+    "en": "Fake bank employee: “suspicious activity on your account”, approval and SMS code demanded"
+  },
+  "how": {
+    "tr": "Bankanızın numarasını taklit eden biri arar ve hesabınızda şüpheli işlem olduğunu, kartınızın kopyalandığını ya da hesap sigortanızın iptal edilmesi gerektiğini söyler. İşlemi “durdurmak” için mobil uygulamada gelen bildirimi onaylamanızı, SMS kodunu okumanızı veya parayı “güvenli” bir hesaba aktarmanızı ister. Siz onay verirken adınıza kredi çekilir ya da hesabınız boşaltılır.",
+    "en": "Someone spoofing your bank’s number calls and says there is suspicious activity on your account, your card was cloned, or your account insurance must be cancelled. To “stop” it they ask you to approve a notification in the mobile app, read out the SMS code, or move money to a “safe” account. While you approve, a loan is taken out in your name or your account is emptied."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Bankanın numarasından gelen bir arama: “Hesabınızda şüpheli işlem var.”",
+        "en": "A call from what looks like your bank’s number: “suspicious activity on your account”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Hemen işlem yapmazsanız paranızın gideceği söylenir.",
+        "en": "You are told your money will be lost unless you act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Uygulamadaki bildirimi onaylamanız veya SMS kodunu söylemeniz istenir.",
+        "en": "You are asked to approve an app notification or read out the SMS code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "tr": "Parayı “güvenli hesaba” aktarmanız istenir.",
+        "en": "You are asked to move money to a “safe account”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tr": "Arama boyunca telefonu kapatmamanız söylenir.",
+        "en": "You are told not to hang up during the call."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "tr": "Merhaba, bankanızın güvenlik biriminden arıyorum. Kartınızla az önce yurt dışından 18.400 TL’lik bir harcama denendi, kartınız kopyalanmış görünüyor. İşlemi iptal edebilmemiz için size gelen altı haneli kodu bana söyler misiniz? Ardından mobil uygulamanıza bir onay düşecek, onu da onaylayın. Hattan ayrılmayın, işlem iki dakika sürecek.",
+        "en": "Hello, I’m calling from your bank’s security unit. A purchase of 18,400 TL was just attempted abroad with your card; it looks cloned. So we can cancel it, could you tell me the six-digit code you received? Then an approval will appear in your mobile app; please approve that too. Stay on the line, it takes two minutes."
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "banka görevlisi aradı şüpheli işlem dedi",
+      "kart kopyalandı diye aradılar",
+      "sms ile gelen kodu banka çalışanı istedi",
+      "telefondayken uygulamada onay vermemi istedi",
+      "havaleyi durdurmak için doğrulama şifresi istendi",
+      "şüpheli harcamayı iptal edeceğiz kodu okuyun",
+      "hesabınız güvende değil parayı aktarın",
+      "bankanın numarasından arama geldi dolandırıcı",
+      "hesap sigortası iptali için aradılar",
+      "adıma kredi çekildi telefon görüşmesi",
+      "güvenli hesaba para gönderin dediler"
+    ],
+    "en": [
+      "fake bank employee called about suspicious transaction",
+      "caller asked for my sms code",
+      "told to approve notification in banking app",
+      "bank number on screen but it was a scam",
+      "loan taken out in my name after a call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "tr": [
+      "Banka görevlisi telefonda asla şifre, SMS kodu veya internet bankacılığı bilgisi istemez.",
+      "Bankalar paranızı “güvenli hesaba” aktarmanızı istemez.",
+      "Ekranda bankanın numarasının görünmesi aramanın gerçek olduğunu kanıtlamaz.",
+      "Telefondayken uygulamada onay istenmesi tehlike işaretidir."
+    ],
+    "en": [
+      "A bank employee never asks for your password, SMS code or online banking details on the phone.",
+      "Banks never ask you to move money to a “safe account”.",
+      "Seeing the bank’s number on screen does not prove the call is real.",
+      "Being asked to approve something in the app during a call is a warning sign."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Telefonu kapatın ve bankanızı kartın arkasındaki numaradan kendiniz arayın.",
+      "Kod veya onay verdiyseniz hemen bankanızı arayıp kartı, internet bankacılığını ve işlemleri durdurun.",
+      "Para gittiyse savcılığa veya polise suç duyurusunda bulunun; arama kayıtlarını ve dekontları saklayın."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on the back of your card.",
+      "If you gave a code or approval, call your bank at once to block the card, online banking and the transactions.",
+      "If money was taken, file a complaint with the prosecutor or police; keep call logs and receipts."
+    ]
+  },
+  "reportTo": [
+    "tr/your-bank",
+    "tr/police-prosecutor",
+    "tr/cimer"
+  ],
+  "sources": [
+    {
+      "title": "Telefon Dolandırıcılığı Nasıl Anlaşılır?",
+      "publisher": "Türkiye İş Bankası (Blog)",
+      "url": "https://www.isbank.com.tr/blog/telefon-dolandiriciligi-nasil-anlasilir",
+      "date": "2025-09-16"
+    },
+    {
+      "title": "Banka numarasını kopyalayıp bilim ödüllü profesörü 1 milyon lira dolandırdılar",
+      "publisher": "Hürriyet",
+      "url": "https://www.hurriyet.com.tr/video/banka-numarasini-kopyalayip-bilim-odullu-profesoru-1-milyon-lira-dolandirdilar-42704069",
+      "date": "2025-02-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

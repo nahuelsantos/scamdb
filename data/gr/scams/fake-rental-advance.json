@@ -1,0 +1,120 @@
+{
+  "id": "gr/fake-rental-advance",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "el": "Ένας «ιδιοκτήτης» σε αγγελία ενοικίασης",
+    "en": "A “landlord” in a rental ad"
+  },
+  "name": {
+    "el": "Ψεύτικη αγγελία ενοικίασης: προκαταβολή για σπίτι που δεν είναι του «ιδιοκτήτη»",
+    "en": "Fake rental ad: a deposit for a home that isn’t the “owner’s”"
+  },
+  "how": {
+    "el": "Βρίσκετε σε σελίδα αγγελιών ή βραχυχρόνιας μίσθωσης ένα διαμέρισμα σε πολύ καλή τιμή. Ο «ιδιοκτήτης» σας μιλά στο τηλέφωνο, μπορεί και να σας το δείξει, και ζητά προκαταβολή ή το πρώτο ενοίκιο για να «κλείσει» η συμφωνία, μερικές φορές με πλαστό μισθωτήριο. Μετά εξαφανίζεται. Σε υποθέσεις που εξιχνίασε η Αστυνομία, ο δράστης είχε νοικιάσει ο ίδιος το σπίτι για λίγες μέρες και το έδειχνε σε δεκάδες ενδιαφερόμενους, ή τους έδινε κλειδιά και αργότερα έβρισκαν μέσα τους πραγματικούς ιδιοκτήτες.",
+    "en": "On a classifieds or short-stay site you find a flat at a very good price. The “owner” talks to you by phone, may even show it to you, and asks for a deposit or the first month’s rent to “secure” the deal, sometimes with a fake lease. Then they disappear. In cases solved by police, the suspect had rented the home himself for a few days and showed it to dozens of people, or handed over keys and the victims later found the real owners living there."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Αγγελία ενοικίασης σε τιμή πολύ χαμηλότερη από την αγορά.",
+        "en": "A rental ad at a price far below the market."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Ο «ιδιοκτήτης» λέει ότι υπάρχουν κι άλλοι ενδιαφερόμενοι.",
+        "en": "The “owner” says other people are interested."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Προκαταβολή ή πρώτο ενοίκιο με μεταφορά, πριν από οτιδήποτε άλλο.",
+        "en": "A deposit or first month’s rent by transfer, before anything else."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "el": "Το διάρι στο Περιστέρι είναι ακόμη διαθέσιμο, αλλά έχω άλλους τρεις να το δουν αύριο. Αν μου στείλετε σήμερα 450 € προκαταβολή στο IBAN μου, το κρατάω για εσάς και σας φέρνω το συμφωνητικό την Πέμπτη μαζί με τα κλειδιά.",
+        "en": "The two-room flat in Peristeri is still available, but I have three others coming to see it tomorrow. If you send me a €450 deposit to my IBAN today, I’ll hold it for you and bring the agreement on Thursday with the keys."
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "αγγελία ενοικίασης ζητά προκαταβολή πριν το συμφωνητικό",
+      "ιδιοκτήτης εξαφανίστηκε μετά την προκαταβολή",
+      "διαμέρισμα πολύ φθηνό ενοίκιο απάτη",
+      "έστειλα ενοίκιο για σπίτι που δεν ήταν δικό του",
+      "πλαστό μισθωτήριο ενοικίαση",
+      "εξοχικό διακοπές προκαταβολή σε iban αγγελία"
+    ],
+    "en": [
+      "landlord wants a deposit before the lease",
+      "paid rent deposit then landlord vanished",
+      "rental flat too cheap greece scam",
+      "fake holiday rental deposit to iban",
+      "fake lease for an apartment athens"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Τιμή πολύ κάτω από την αγορά και βιασύνη «γιατί έχει κι άλλους».",
+      "Προκαταβολή σε προσωπικό IBAN πριν δείτε έγγραφα ιδιοκτησίας.",
+      "Ο «ιδιοκτήτης» αποφεύγει να δώσει στοιχεία ή να υπογράψετε κανονικά."
+    ],
+    "en": [
+      "A price far below the market and a rush “because others want it”.",
+      "A deposit to a personal IBAN before you see any proof of ownership.",
+      "The “owner” avoids giving details or signing properly."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Πληρώνετε μόνο μέσα από την πλατφόρμα κράτησης ή αφού ελέγξετε ποιος είναι ο ιδιοκτήτης και υπογράψετε μισθωτήριο.",
+      "Ζητήστε ταυτότητα και έγγραφα· για καταλύματα, ελέγξτε τον αριθμό μητρώου βραχυχρόνιας μίσθωσης.",
+      "Πληρώσατε; Καλέστε την τράπεζα και καταγγείλτε το στην Αστυνομία."
+    ],
+    "en": [
+      "Only pay through the booking platform, or after checking who the owner is and signing a lease.",
+      "Ask for ID and documents; for holiday lets, check the short-term rental registration number.",
+      "Already paid? Call your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/your-bank",
+    "gr/police-100"
+  ],
+  "sources": [
+    {
+      "title": "Παγκράτι: Συνελήφθη 27χρονος για 94 απάτες",
+      "publisher": "ΣΚΑΪ",
+      "url": "https://www.skai.gr/news/greece/pagkrati-synelifthi-27xronos-gia-94-apates-me-maimou-enoikiaseis-kai-proslipseis",
+      "date": "2026-05-28"
+    },
+    {
+      "title": "Συνελήφθη 49χρονος που εξαπατούσε πολίτες με το πρόσχημα ενοικίασης διαμερίσματος",
+      "publisher": "CNN Greece",
+      "url": "https://www.cnn.gr/ellada/story/437792/synelifthi-49xronos-pou-eksapatoyse-polites-me-to-prosxima-enoikiasis-diamerismatos",
+      "date": "2024-09-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

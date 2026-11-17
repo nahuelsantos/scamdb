@@ -1,0 +1,119 @@
+{
+  "id": "gr/fake-police-email-charges",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "el": "«Διεύθυνση Δίωξης Ηλεκτρονικού Εγκλήματος», «Ελληνική Αστυνομία» ή «Europol»",
+    "en": "“Cybercrime Directorate”, “Hellenic Police” or “Europol”"
+  },
+  "name": {
+    "el": "Πλαστή επιστολή της «Δίωξης»: κατηγορίες για πορνογραφία, απαντήστε αμέσως",
+    "en": "Fake letter from the “Cybercrime Directorate”: pornography charges, reply at once"
+  },
+  "how": {
+    "el": "Λαμβάνετε email με συνημμένη «επιστολή» με τα λογότυπα της Ελληνικής Αστυνομίας, της Δίωξης Ηλεκτρονικού Εγκλήματος και της Europol, σφραγίδα και υπογραφές δήθεν αξιωματικών. Σας κατηγορεί ότι εμπλέκεστε σε υπόθεση παιδικής πορνογραφίας ή άλλα αδικήματα και ζητά να απαντήσετε αμέσως για να αποφύγετε φυλάκιση ή πρόστιμο. Όποιος απαντήσει, δέχεται πίεση να πληρώσει για να «κλείσει» η υπόθεση. Τα συνημμένα μπορεί να έχουν και κακόβουλο λογισμικό.",
+    "en": "You get an email with an attached “letter” bearing the logos of the Hellenic Police, the Cybercrime Directorate and Europol, a stamp and signatures of supposed officers. It accuses you of involvement in a child pornography case or other offences and demands you reply at once to avoid prison or a fine. Anyone who replies is pushed to pay to “close” the case. The attachments may also contain malware."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Email με λογότυπα της Αστυνομίας και της Europol.",
+        "en": "An email with Police and Europol logos."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σοβαρές κατηγορίες και απειλή φυλάκισης αν δεν απαντήσετε αμέσως.",
+        "en": "Serious charges and a threat of prison unless you reply at once."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ζητούν να μη μιλήσετε σε κανέναν για την «έρευνα».",
+        "en": "You are told not to tell anyone about the “investigation”."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "el": "Πληρωμή «προστίμου» για να κλείσει η υπόθεση.",
+        "en": "Payment of a “fine” to close the case."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "el": "ΚΛΗΣΗ ΣΕ ΑΠΟΛΟΓΙΑ. Κατόπιν έρευνας της Διεύθυνσης Δίωξης Ηλεκτρονικού Εγκλήματος σε συνεργασία με την Europol, η ηλεκτρονική σας διεύθυνση συνδέεται με διακίνηση παράνομου υλικού ανηλίκων. Οφείλετε να απαντήσετε εντός 72 ωρών με τις εξηγήσεις σας, διαφορετικά ο φάκελος διαβιβάζεται στον Εισαγγελέα και εκδίδεται ένταλμα σύλληψης. Η υπόθεση είναι εμπιστευτική.",
+        "en": "SUMMONS TO RESPOND. Following an investigation by the Cybercrime Directorate in cooperation with Europol, your email address is linked to the distribution of illegal material involving minors. You must reply within 72 hours with your explanation, otherwise the file goes to the Prosecutor and an arrest warrant is issued. The case is confidential."
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "email από δίωξη ηλεκτρονικού εγκλήματος κατηγορία πορνογραφία",
+      "επιστολή europol ελληνική αστυνομία email απάντηση 72 ώρες",
+      "πλαστό email αστυνομίας ένταλμα σύλληψης",
+      "μου ήρθε κλήση σε απολογία με email",
+      "ζητούν πρόστιμο για να κλείσει η υπόθεση email"
+    ],
+    "en": [
+      "email from greek cybercrime police accusing me",
+      "europol letter email child pornography accusation",
+      "fake police email arrest warrant reply in 72 hours",
+      "summons by email from hellenic police",
+      "pay a fine to close the case email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Η Αστυνομία δεν στέλνει κατηγορίες ή κλήσεις με email ζητώντας απάντηση ή πληρωμή.",
+      "Απειλή φυλάκισης και προθεσμία λίγων ημερών.",
+      "Λογότυπα και σφραγίδες αντιγράφονται εύκολα."
+    ],
+    "en": [
+      "Police don’t send charges or summonses by email asking for a reply or payment.",
+      "A threat of prison and a deadline of a few days.",
+      "Logos and stamps are easy to copy."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην απαντάτε, μην ανοίγετε τα συνημμένα και διαγράψτε το μήνυμα.",
+      "Αν ανησυχείτε, επικοινωνήστε εσείς με τη Δίωξη Κυβερνοεγκλήματος στο 11188.",
+      "Πληρώσατε; Καλέστε την τράπεζα και καταγγείλτε το."
+    ],
+    "en": [
+      "Don’t reply, don’t open the attachments, and delete the message.",
+      "If you are worried, contact the Cybercrime Directorate yourself on 11188.",
+      "Already paid? Call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "ΕΛΑΣ: Προσοχή σε πλαστό μήνυμα που διακινείται ως δήθεν επιστολή της Διεύθυνσης Δίωξης Ηλεκτρονικού Εγκλήματος",
+      "publisher": "Ναυτεμπορική",
+      "url": "https://www.naftemporiki.gr/society/1951883/elas-prosochi-se-plasto-minyma-poy-diakineitai-os-dithen-epistoli-tis-dieythynsis-dioxis-ilektronikoy-egklimatos/",
+      "date": "2025-05-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

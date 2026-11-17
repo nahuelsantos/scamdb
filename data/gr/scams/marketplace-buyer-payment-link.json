@@ -1,0 +1,124 @@
+{
+  "id": "gr/marketplace-buyer-payment-link",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "el": "Ένας «αγοραστής» για κάτι που πουλάτε σε αγγελία",
+    "en": "A “buyer” for something you are selling in an ad"
+  },
+  "name": {
+    "el": "Ψεύτικος αγοραστής σε αγγελία στέλνει σύνδεσμο για να «λάβετε» την πληρωμή",
+    "en": "Fake buyer for your ad sends a link so you can “receive” the payment"
+  },
+  "how": {
+    "el": "Πουλάτε κάτι σε σελίδα αγγελιών, π.χ. κινητό, ρούχα ή αυτοκίνητο. Ένας «αγοραστής» το θέλει αμέσως, χωρίς να το δει, και ζητά να συνεχίσετε τη συζήτηση σε email, WhatsApp ή Viber. Λέει ότι πλήρωσε ή ότι θα στείλει courier να το παραλάβει και σας στέλνει σύνδεσμο για να «λάβετε» τα χρήματα. Η σελίδα μοιάζει με τράπεζα, με την πλατφόρμα ή με courier και ζητά στοιχεία κάρτας και κωδικούς e-banking. Αντί να πληρωθείτε, σας αδειάζουν τον λογαριασμό.",
+    "en": "You are selling something on a classifieds site, for instance a phone, clothes or a car. A “buyer” wants it straight away without seeing it and asks to continue by email, WhatsApp or Viber. They say they have paid, or will send a courier to collect, and send you a link to “receive” the money. The page looks like a bank, the platform or a courier and asks for card details and e-banking passwords. Instead of being paid, you have your account emptied."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ένας αγοραστής θέλει το αντικείμενο χωρίς να το δει και ζητά να μιλήσετε εκτός πλατφόρμας.",
+        "en": "A buyer wants the item unseen and asks to talk off the platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Σας στέλνει σύνδεσμο για να «λάβετε» την πληρωμή.",
+        "en": "They send you a link to “receive” the payment."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά κάρτα, CVV ή κωδικούς e-banking.",
+        "en": "The page asks for your card, CVV or e-banking passwords."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "el": "Πίεση: ο courier περνά σε λίγο, η πληρωμή λήγει.",
+        "en": "Pressure: the courier is coming soon, the payment expires."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "el": "Καλησπέρα, για το ποδήλατο της αγγελίας. Το παίρνω στην τιμή που ζητάτε, δεν χρειάζεται να το δω. Έκανα ήδη την πληρωμή μέσω της ασφαλούς υπηρεσίας και ο courier περνά αύριο το πρωί. Για να πιστωθούν τα 230 € πατήστε εδώ και βάλτε τα στοιχεία της κάρτας σας: [σύνδεσμος]",
+        "en": "Good evening, about the bike in your ad. I’ll take it at your price, no need to see it. I’ve already paid through the secure service and the courier will come tomorrow morning. To have the €230 credited, tap here and enter your card details: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "αγοραστής αγγελίας έστειλε σύνδεσμο πληρωμής",
+      "αγοραστής λέει ότι πλήρωσε πατήστε για να πάρετε τα λεφτά",
+      "για να πληρωθώ ζητούν στοιχεία κάρτας",
+      "πουλάω κινητό αγοραστής θέλει courier",
+      "αγοραστής ζητά να μιλήσουμε στο whatsapp",
+      "ψεύτικη σελίδα πληρωμής vinted car gr",
+      "πωλητής έχασα χρήματα από link αγοραστή",
+      "αγοραστής ασφαλής αποστολή πληρωμή στην κάρτα του πωλητή"
+    ],
+    "en": [
+      "buyer sent me a link to receive payment",
+      "selling online they want my card to pay me",
+      "buyer wants courier pickup and payment link",
+      "fake payment page vinted car gr greece",
+      "buyer asks to move chat to whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "el": [
+      "Για να λάβετε χρήματα δεν χρειάζεται ποτέ να δώσετε CVV, PIN ή κωδικούς e-banking.",
+      "Ο αγοραστής δεν θέλει να δει το αντικείμενο και βιάζεται.",
+      "Ζητά να φύγετε από την πλατφόρμα και στέλνει δικό του σύνδεσμο ή courier."
+    ],
+    "en": [
+      "You never need to give a CVV, PIN or e-banking passwords to receive money.",
+      "The buyer doesn’t want to see the item and is in a hurry.",
+      "They ask to leave the platform and send their own link or courier."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μιλάτε και πληρώνεστε μόνο μέσα από την πλατφόρμα ή με παράδοση από κοντά.",
+      "Μην ανοίγετε συνδέσμους «πληρωμής» από αγοραστές. Αν βάλατε στοιχεία, καλέστε αμέσως την τράπεζα.",
+      "Αναφέρετε τον χρήστη στην πλατφόρμα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Talk and get paid only through the platform or by handing it over in person.",
+      "Don’t open “payment” links from buyers. If you entered details, call your bank at once.",
+      "Report the user to the platform and to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/your-bank",
+    "gr/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "New-generation scams to beware of: Calls emptying bank accounts overnight",
+      "publisher": "Πρώτο Θέμα (English edition)",
+      "url": "https://en.protothema.gr/2026/08/28/new-generation-scams-to-beware-of-calls-emptying-bank-accounts-overnight/",
+      "date": "2026-08-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

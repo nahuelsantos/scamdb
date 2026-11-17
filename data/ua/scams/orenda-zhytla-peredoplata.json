@@ -1,0 +1,113 @@
+{
+  "id": "ua/orenda-zhytla-peredoplata",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "uk": "«Орендодавець» з оголошення на OLX, у соцмережі чи Telegram-каналі",
+    "en": "A 'landlord' from an ad on OLX, social media or a Telegram channel"
+  },
+  "name": {
+    "uk": "Оренда неіснуючої квартири з передоплатою",
+    "en": "Renting a flat that does not exist, with a prepayment"
+  },
+  "how": {
+    "uk": "Шахраї публікують оголошення про оренду квартири чи будинку з гарними фото й ціною нижчою за ринкову. «Власник» не може показати житло зараз, бо він за кордоном або «вже багато охочих», і просить передоплату чи завдаток на картку, щоб забронювати. Після переказу він зникає, а за адресою або немає такого житла, або там живуть інші люди. Фото зазвичай скопійовані з інших оголошень.",
+    "en": "Scammers post ads for flats or houses to rent with nice photos and a below-market price. The 'owner' cannot show the property now because they are abroad or 'lots of people are interested', and asks for a prepayment or deposit to a card to book it. After the transfer they vanish, and at the address there is either no such home or other people live there. The photos are usually copied from other ads."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Гарна квартира за низьку ціну.",
+        "en": "A nice flat at a low price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "uk": "Охочих багато, треба бронювати сьогодні.",
+        "en": "Lots of people want it, you need to book today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "uk": "Скиньте завдаток на картку, ключі передам потім.",
+        "en": "Send a deposit to my card, I'll hand over the keys later."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "online",
+      "text": {
+        "uk": "Добрий день! Квартира ще вільна, але сьогодні вже троє питали. Я зараз у Польщі, тому показати не можу, ключі передасть сусідка. Щоб я зняла оголошення, скиньте завдаток за перший місяць на картку [номер], договір підпишемо, коли заїдете.",
+        "en": "Good afternoon! The flat is still free, but three people have already asked today. I'm in Poland right now so I can't show it; the neighbour will hand over the keys. So I can take the ad down, send the first month's deposit to my card [number], and we'll sign the contract when you move in."
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "господар просить завдаток за квартиру не показавши її",
+      "оренда квартири дешево а власник за кордоном",
+      "скинула передоплату за оренду і орендодавець зник",
+      "фото квартири знайшла в іншому оголошенні",
+      "бронювання житла на олх через переказ на картку"
+    ],
+    "en": [
+      "the landlord asks for a deposit without showing the flat",
+      "cheap flat to rent and the owner is abroad",
+      "I sent a rental prepayment and the landlord disappeared",
+      "I found the flat photos in another ad",
+      "booking a home on olx with a transfer to a card"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "uk": [
+      "Ціна помітно нижча за ринкову.",
+      "Житло не можна подивитися до оплати.",
+      "Гроші просять на картку без договору."
+    ],
+    "en": [
+      "The price is clearly below market.",
+      "You cannot see the property before paying.",
+      "Money is asked for to a card without a contract."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Не переказуйте гроші без огляду житла й договору.",
+      "Перевірте фото зворотним пошуком зображень і право власності орендодавця.",
+      "Якщо вже заплатили, повідомте банк, поліцію й платформу з оголошенням."
+    ],
+    "en": [
+      "Do not transfer money without viewing the home and signing a contract.",
+      "Check the photos with a reverse image search and the landlord's ownership.",
+      "If you already paid, tell your bank, the police and the platform with the ad."
+    ]
+  },
+  "reportTo": [
+    "ua/police",
+    "ua/cyberpolice",
+    "ua/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Як розпізнати шахрайські оголошення про оренду житла: поради МВС",
+      "publisher": "Главком",
+      "url": "https://glavcom.ua/country/society/jak-rozpiznati-shakhrajski-oholoshennja-pro-orendu-zhitla-poradi-mvs-1082984.html",
+      "date": "2025-10-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

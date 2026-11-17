@@ -1,0 +1,129 @@
+{
+  "id": "gr/traffic-fine-sms",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "el": "«GOV Car», «GR GOV», «MYaade» ή άλλο όνομα που μοιάζει κρατικό",
+    "en": "“GOV Car”, “GR GOV”, “MYaade” or another official-looking name"
+  },
+  "name": {
+    "el": "SMS για απλήρωτη κλήση τροχαίας ή τέλη κυκλοφορίας",
+    "en": "Text about an unpaid traffic fine or road tax"
+  },
+  "how": {
+    "el": "Λαμβάνετε SMS με αποστολέα που μοιάζει κρατικός: έχετε απλήρωτο πρόστιμο τροχαίας, π.χ. για παράνομη στάθμευση, που «παραμένει απλήρωτο πάνω από 10 ημέρες» και θα αυξηθεί πολύ μετά από μια προθεσμία, ή χρωστάτε τέλη κυκλοφορίας. Κάποιες εκδοχές υπόσχονται έκπτωση για γρήγορη πληρωμή. Ο σύνδεσμος ανοίγει ψεύτικη σελίδα που μιμείται το gov.gr ή την ΑΑΔΕ και ζητά προσωπικά στοιχεία και στοιχεία κάρτας. Τα μηνύματα είναι συχνά γραμμένα σε σωστά ελληνικά.",
+    "en": "You get a text from an official-looking sender: you have an unpaid traffic fine, for instance for illegal parking, that has “remained unpaid for more than 10 days” and will rise sharply after a deadline, or you owe road tax. Some versions promise a discount for paying fast. The link opens a fake page imitating gov.gr or AADE that asks for personal and card details. The messages are often written in correct Greek."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "SMS από «GOV» ή «ΑΑΔΕ»: απλήρωτη κλήση ή τέλη κυκλοφορίας.",
+        "en": "A text from “GOV” or “AADE”: an unpaid fine or road tax."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Το ποσό θα αυξηθεί πολύ αν δεν πληρώσετε μέχρι την προθεσμία.",
+        "en": "The amount will rise a lot if you don’t pay by the deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Πληρωμή μέσω συνδέσμου σε σελίδα που μοιάζει κρατική.",
+        "en": "Payment through a link to a page that looks official."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά στοιχεία κάρτας ή e-banking.",
+        "en": "The page asks for card or e-banking details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "el": "Ειδοποίηση παράβασης ΚΟΚ: Το πρόστιμο στάθμευσης των 20 € για το όχημά σας παραμένει ανεξόφλητο. Μετά τις 21/11 το ποσό αυξάνεται και αφαιρείται η άδεια κυκλοφορίας. Εξοφλήστε άμεσα: [σύνδεσμος]",
+        "en": "Traffic code violation notice: the €20 parking fine for your vehicle remains unpaid. After 21/11 the amount increases and the vehicle registration is withdrawn. Pay now: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "sms απλήρωτη κλήση τροχαίας σύνδεσμος",
+      "μήνυμα πρόστιμο στάθμευσης πληρωμή link",
+      "gov car sms πρόστιμο",
+      "sms τέλη κυκλοφορίας απλήρωτα ααδε",
+      "πρόστιμο αυξάνεται αν δεν πληρώσετε σήμερα",
+      "ψεύτικο μήνυμα κλήση τροχαίας στοιχεία κάρτας"
+    ],
+    "en": [
+      "text about an unpaid traffic fine greece",
+      "parking fine sms with payment link",
+      "gov car text message fine",
+      "road tax unpaid text from aade",
+      "fine will increase unless i pay today"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Οι δημόσιες υπηρεσίες δεν στέλνουν SMS με σύνδεσμο για να πληρώσετε πρόστιμο.",
+      "Απειλή ότι το ποσό θα πολλαπλασιαστεί ή έκπτωση αν πληρώσετε αμέσως.",
+      "Σωστά ελληνικά δεν σημαίνουν ότι το μήνυμα είναι γνήσιο."
+    ],
+    "en": [
+      "Public services don’t send texts with a link to pay a fine.",
+      "A threat that the amount will multiply, or a discount if you pay right now.",
+      "Correct Greek doesn’t mean the message is genuine."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Μην πατάτε τον σύνδεσμο. Για να δείτε αν έχετε πραγματική κλήση, μπείτε μόνοι σας στο gov.gr και στη Θυρίδα του Πολίτη.",
+      "Βάλατε στοιχεία κάρτας; Καλέστε αμέσως την τράπεζα.",
+      "Καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος και σβήστε το μήνυμα."
+    ],
+    "en": [
+      "Don’t tap the link. To see whether you really have a fine, go to gov.gr yourself and check your Citizen’s Inbox.",
+      "Entered card details? Call your bank straight away.",
+      "Report it to the Cybercrime Directorate and delete the message."
+    ]
+  },
+  "reportTo": [
+    "gr/cybercrime",
+    "gr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Fake 'GOV Car' Texts Demand €10 Traffic Fine, Then Steal Bank Details, Greek Police Warn",
+      "publisher": "iefimerida.gr",
+      "url": "https://www.iefimerida.gr/english/fake-gov-car-texts-demand-eu10-traffic-fine-then-steal-bank-details-greek-police-warn",
+      "date": "2026-10-07"
+    },
+    {
+      "title": "Νέα απάτη με SMS για δήθεν πρόστιμα τροχαίας",
+      "publisher": "powergame.gr",
+      "url": "https://www.powergame.gr/ellada/1318581/nea-apati-me-sms-gia-dithen-prostima-trochaias/",
+      "date": "2026-03-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/aade-tax-refund-phishing"
+  ]
+}

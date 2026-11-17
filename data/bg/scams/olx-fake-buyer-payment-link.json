@@ -1,0 +1,136 @@
+{
+  "id": "bg/olx-fake-buyer-payment-link",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "bg": "„Купувач“ от сайт за обяви (OLX, Bazar и др.), който пише във Viber или WhatsApp",
+    "en": "A “buyer” from a classifieds site (OLX, Bazar etc.) who writes on Viber or WhatsApp"
+  },
+  "name": {
+    "bg": "Фалшив купувач в OLX: „платих през куриер“, линк за получаване на парите",
+    "en": "Fake OLX buyer: “I paid through the courier”, a link to receive the money"
+  },
+  "how": {
+    "bg": "Пускате обява за продажба. „Купувач“ ви пише във Viber или WhatsApp, не пита почти нищо за стоката и предлага „сигурно“ плащане с куриерска доставка или вече „платено“. Изпраща линк, на който уж получавате парите: страницата прилича на OLX, куриер или вашата банка и иска номер на карта, срок, CVV или вход за онлайн банкиране. Ако „не мине“, ви молят да въведете данните отново, и всеки път от сметката се тегли сума.",
+    "en": "You post an item for sale. A “buyer” writes to you on Viber or WhatsApp, asks almost nothing about the item and offers a “safe” payment with courier delivery, or says they have already “paid”. They send a link where you supposedly receive the money: the page looks like OLX, a courier or your bank and asks for your card number, expiry, CVV or online-banking login. If it “fails” you are asked to enter the details again, and each time money is taken from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Купувач пише извън сайта, във Viber или WhatsApp, и бърза.",
+        "en": "A buyer writes outside the site, on Viber or WhatsApp, and is in a hurry."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Предлага „сигурно плащане“ с куриер и праща линк.",
+        "en": "Offers a “safe payment” with a courier and sends a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Страницата иска данни от картата ви или вход в онлайн банкирането, за да „получите“ парите.",
+        "en": "The page asks for your card details or online-banking login so you can “receive” the money."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "bg": "„Грешка“ и молба да въведете данните пак.",
+        "en": "An “error” and a request to enter the details again."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Здравейте, още ли продавате количката? Взимам я без оглед. Платих я вече през сигурна доставка, куриерът ще мине да я вземе утре. Остава само да потвърдите получаването на сумата тук: [линк] Въведете картата, по която да ви преведат парите.",
+        "en": "Hi, are you still selling the pram? I'll take it without viewing. I've already paid through secure delivery and the courier will pick it up tomorrow. You just need to confirm receiving the money here: [link] Enter the card you want the money paid to."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "купувач от olx прати линк за плащане",
+      "платих през куриер потвърдете сумата",
+      "продавам в olx искат данни от картата",
+      "сигурна доставка линк за получаване на пари",
+      "купувач пише във вайбър без оглед",
+      "въведох картата за да получа парите от продажба",
+      "фалшива страница на куриер за продавачи",
+      "купувач от друг град плаща с доставка",
+      "изберете банката си за да получите сумата",
+      "купувачът твърди че вече е платил",
+      "обява за продажба купувач изпрати линк"
+    ],
+    "en": [
+      "olx buyer sent me a payment link",
+      "asked my card details to receive money for an item",
+      "buyer says paid through courier",
+      "selling online fake payment page",
+      "marketplace buyer on viber",
+      "buyer says pick your bank to get paid"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "bg": [
+      "За да получите пари, никога не е нужно да въвеждате CVV, ПИН или вход за онлайн банкиране.",
+      "Купувач, който не иска да види стоката и бърза, е подозрителен.",
+      "Линк от купувача към „OLX“, „куриер“ или „банка“ е фалшива страница."
+    ],
+    "en": [
+      "To receive money you never need to enter a CVV, PIN or online-banking login.",
+      "A buyer who doesn't want to see the item and is in a hurry is suspicious.",
+      "A link from the buyer to “OLX”, a “courier” or a “bank” is a fake page."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не отваряйте линкове от купувачи; продавайте с наложен платеж, през самия сайт или лично.",
+      "Ако сте въвели картата или вход, обадете се веднага на банката да я блокира.",
+      "Подайте сигнал в ГДБОП и съобщете профила на сайта за обяви."
+    ],
+    "en": [
+      "Don't open links from buyers; sell cash on delivery, through the site itself or in person.",
+      "If you entered your card or login, call your bank straight away to block it.",
+      "Report it to GDBOP and report the profile to the classifieds site."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Your security is important to us: how to recognize fraud attempts",
+      "publisher": "Българо-американска кредитна банка",
+      "url": "https://www.bacb.bg/en/news/your-security-is-important-to-us-how-to-recognize-fraud-attempts",
+      "date": "2026-05-25"
+    },
+    {
+      "title": "Surge in frauds on online trading websites: Hundreds of thousands of BGN siphoned off from Bulgarian customers",
+      "publisher": "BNT",
+      "url": "https://bntnews.bg/news/surge-in-frauds-on-online-trading-websites-hundreds-of-thousands-of-bgn-siphoned-off-from-bulgarian-customers-1330639news.html",
+      "date": "2025-03-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/courier-sms-fee"
+  ]
+}

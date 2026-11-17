@@ -1,0 +1,145 @@
+{
+  "id": "cy/fake-investment-platform",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "el": "Διαφήμιση στο διαδίκτυο και μετά ένας «σύμβουλος επενδύσεων» στο τηλέφωνο ή σε εφαρμογή μηνυμάτων",
+    "en": "An online ad, then an “investment adviser” on the phone or a messaging app"
+  },
+  "name": {
+    "el": "Ψεύτικη πλατφόρμα επενδύσεων σε μετοχές, κρυπτονομίσματα ή χρυσό",
+    "en": "Fake investment platform for shares, crypto or gold"
+  },
+  "how": {
+    "el": "Μια διαφήμιση ή ένα μήνυμα υπόσχεται σίγουρα κέρδη από μετοχές, κρυπτονομίσματα, πετρέλαιο ή χρυσό. Ένας «σύμβουλος» σας ανοίγει λογαριασμό σε ιστοσελίδα που δείχνει μεγάλα κέρδη και σας πείθει να στέλνετε όλο και περισσότερα χρήματα σε λογαριασμούς στο εξωτερικό. Όταν ζητήσετε ανάληψη, ζητούν «τέλη ρευστοποίησης», φόρους ή προμήθειες. Η ιστοσελίδα δεν έχει άδεια από την Επιτροπή Κεφαλαιαγοράς.",
+    "en": "An ad or a message promises sure profits from shares, crypto, oil or gold. An “adviser” opens an account for you on a website that shows big gains and persuades you to keep sending more money to accounts abroad. When you ask to withdraw, they demand “liquidation fees”, taxes or commissions. The website is not licensed by CySEC."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Μια διαφήμιση υπόσχεται σίγουρα και μεγάλα κέρδη.",
+        "en": "An ad promises sure, big profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "el": "Ένας «σύμβουλος» σας καθοδηγεί σε μια ιστοσελίδα συναλλαγών.",
+        "en": "An “adviser” guides you onto a trading website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Σας πιέζει να στείλετε περισσότερα χρήματα σε λογαριασμούς στο εξωτερικό.",
+        "en": "They push you to send more money to accounts abroad."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "el": "Για ανάληψη ζητούν πρώτα «τέλη» ή «φόρους».",
+        "en": "To withdraw they first demand “fees” or “taxes”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Γεια σας, είμαι η Έλενα, η προσωπική σας σύμβουλος. Ο λογαριασμός σας έχει ήδη +38% αυτή την εβδομάδα. Αν προσθέσετε €5.000 πριν κλείσει η αγορά την Παρασκευή, μπορούμε να διπλασιάσουμε την απόδοση. Σας στέλνω τα στοιχεία για τη μεταφορά.",
+        "en": "Hello, I’m Elena, your personal account manager. Your account is already up 38% this week. If you add €5,000 before the market closes on Friday, we can double the return. I’ll send you the transfer details."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "online ad for crypto investment with guaranteed profit",
+      "account manager keeps asking for more deposits",
+      "cannot withdraw my profits from the platform",
+      "asked to pay liquidation fees to withdraw",
+      "investment in gold and oil through a messaging app",
+      "trading site not licensed by cysec",
+      "my portfolio shows profits but I must pay tax before withdrawal",
+      "account manager says pay a fee to release my funds"
+    ],
+    "el": [
+      "διαφήμιση για επενδύσεις σε κρυπτονομίσματα με σίγουρο κέρδος",
+      "σύμβουλος ζητά συνέχεια νέες καταθέσεις",
+      "δεν μπορώ να κάνω ανάληψη των κερδών",
+      "ζητούν τέλη ρευστοποίησης για ανάληψη",
+      "επένδυση σε χρυσό και πετρέλαιο μέσω εφαρμογής",
+      "πλατφόρμα συναλλαγών χωρίς άδεια επιτροπής κεφαλαιαγοράς",
+      "το χαρτοφυλάκιο δείχνει κέρδη αλλά πρέπει να πληρώσω φόρο για ανάληψη",
+      "ο διαχειριστής λογαριασμού ζητά τέλος για να αποδεσμεύσει τα χρήματα"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "Guaranteed or very high returns.",
+      "Transfers to bank accounts abroad.",
+      "Fees you must pay before you can withdraw.",
+      "A firm you can’t find on CySEC’s register."
+    ],
+    "el": [
+      "Εγγυημένες ή πολύ υψηλές αποδόσεις.",
+      "Μεταφορές σε τραπεζικούς λογαριασμούς στο εξωτερικό.",
+      "Τέλη που πρέπει να πληρώσετε πριν κάνετε ανάληψη.",
+      "Εταιρεία που δεν υπάρχει στο μητρώο της Επιτροπής Κεφαλαιαγοράς."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check the firm and its exact website on CySEC’s register before investing.",
+      "Don’t pay any “fee” to withdraw. Stop sending money.",
+      "Call your bank to try to stop transfers.",
+      "Report it to the police and to CySEC."
+    ],
+    "el": [
+      "Ελέγξτε την εταιρεία και την ακριβή ιστοσελίδα της στο μητρώο της Επιτροπής Κεφαλαιαγοράς πριν επενδύσετε.",
+      "Μην πληρώσετε «τέλη» για ανάληψη. Σταματήστε να στέλνετε χρήματα.",
+      "Καλέστε την τράπεζα για να σταματήσει μεταφορές.",
+      "Καταγγείλετε το στην Αστυνομία και στην Επιτροπή Κεφαλαιαγοράς."
+    ]
+  },
+  "reportTo": [
+    "cy/cysec",
+    "cy/cybercrime",
+    "cy/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Cyprus regulator warns investors over six unauthorised financial websites",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/10/06/cyprus-regulator-warns-investors-over-six-unauthorised-financial-websites",
+      "date": "2026-10-06"
+    },
+    {
+      "title": "Paphos man loses €65,000 in double scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/10/02/paphos-man-loses-e65000-in-double-scam",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "Elderly man loses over €250,000 in online scam",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2026/03/25/elderly-man-loses-over-e250000-in-online-scam",
+      "date": "2026-03-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

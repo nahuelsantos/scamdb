@@ -1,0 +1,125 @@
+{
+  "id": "ua/nova-poshta-sms-indeks",
+  "country": "ua",
+  "lang": "uk",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "uk": "SMS з незнайомого номера від імені «Нової пошти»",
+    "en": "A text from an unknown number in the name of 'Nova Poshta'"
+  },
+  "name": {
+    "uk": "SMS від «Нової пошти»: посилку затримано, підтвердіть адресу",
+    "en": "Text from 'Nova Poshta': parcel held, confirm your address"
+  },
+  "how": {
+    "uk": "Приходить SMS нібито від «Нової пошти»: посилку затримано через неправильний індекс чи неповну адресу. Щоб її отримати, треба перейти за посиланням і «підтвердити адресу» або доплатити дрібну суму. Сторінка підроблена й збирає особисті дані та реквізити картки: номер, термін дії, CVV. Потім із картки розраховуються за чужі покупки.",
+    "en": "A text arrives, supposedly from 'Nova Poshta': your parcel is held because of a wrong postcode or incomplete address. To get it you must open a link and 'confirm the address' or pay a small amount. The page is fake and collects personal details and card data: number, expiry date, CVV. The card is then used to pay for other people's purchases."
+  },
+  "steps": [
+    {
+      "text": {
+        "uk": "Ваша посилка затримана на складі.",
+        "en": "Your parcel is held at the depot."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "uk": "Підтвердьте адресу, інакше посилку повернуть.",
+        "en": "Confirm your address or the parcel will be returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "uk": "Перейдіть за посиланням.",
+        "en": "Open the link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "uk": "Введіть дані картки, щоб сплатити доставку.",
+        "en": "Enter your card details to pay for delivery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "uk": "Нова Пошта: Ваше відправлення затримано через неправильний індекс. Оновіть адресу доставки протягом 12 годин, інакше посилку буде повернуто відправнику: [посилання]",
+        "en": "Nova Poshta: Your shipment has been held because of an incorrect postcode. Update your delivery address within 12 hours or the parcel will be returned: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "uk": [
+      "прийшла смс від нової пошти про неправильний індекс",
+      "нова пошта просить підтвердити адресу за посиланням",
+      "посилку затримали треба доплатити за доставку",
+      "смс про посилку якої я не чекаю",
+      "на сайті доставки просили номер картки і cvv"
+    ],
+    "en": [
+      "got a text from nova poshta about a wrong postcode",
+      "nova poshta asks to confirm my address through a link",
+      "parcel held, I need to pay extra for delivery",
+      "a text about a parcel I am not expecting",
+      "the delivery site asked for my card number and cvv"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "uk": [
+      "SMS приходить зі звичайного номера, а не від офіційного відправника.",
+      "Посилання веде на схожий, але чужий сайт.",
+      "Для «підтвердження адреси» просять дані картки."
+    ],
+    "en": [
+      "The text comes from an ordinary number, not the official sender.",
+      "The link leads to a similar-looking but different site.",
+      "Card details are requested to 'confirm the address'."
+    ]
+  },
+  "whatToDo": {
+    "uk": [
+      "Перевіряйте посилки лише в застосунку чи на сайті «Нової пошти», ввівши номер ТТН самі.",
+      "Не переходьте за посиланням із такої SMS; видаліть її й попередьте літніх рідних.",
+      "Ввели дані картки? Заблокуйте її в банку й повідомте кіберполіцію."
+    ],
+    "en": [
+      "Check parcels only in the Nova Poshta app or website, typing the tracking number yourself.",
+      "Do not open the link in such a text; delete it and warn older relatives.",
+      "Entered card details? Block the card with your bank and report it to the cyber police."
+    ]
+  },
+  "reportTo": [
+    "ua/your-bank",
+    "ua/cyberpolice"
+  ],
+  "sources": [
+    {
+      "title": "«Нова пошта» попередила про фішингову розсилку від її імені",
+      "publisher": "Бухгалтер 911 / Бухплатформа (buhplatforma.com.ua)",
+      "url": "https://buhplatforma.com.ua/news/102970-nova-poshta-poperedyla-pro-fishyngovu-rozsylku-vid-ii-imeni",
+      "date": "2025-09-25"
+    },
+    {
+      "title": "Шахраї надсилаються повідомлення від імені “Нової пошти”: як вберегтись",
+      "publisher": "КОШТ",
+      "url": "https://kosht.media/shakhrai-nadsylaiutsia-povidomlennia-vid-imeni-novoi-poshty-iak-vberehtys/",
+      "date": "2024-04-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

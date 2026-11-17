@@ -1,0 +1,130 @@
+{
+  "id": "cy/bank-details-update-phishing",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "el": "SMS ή email «από την τράπεζά σας» (Τράπεζα Κύπρου, Ελληνική Τράπεζα κ.ά.)",
+    "en": "A text or email “from your bank” (Bank of Cyprus, Hellenic Bank and others)"
+  },
+  "name": {
+    "el": "Ψεύτικο μήνυμα τράπεζας: «ενημερώστε τα στοιχεία σας αλλιώς ο λογαριασμός κλειδώνει»",
+    "en": "Fake bank message: “update your details or your account will be locked”"
+  },
+  "how": {
+    "el": "Ένα SMS ή email που μοιάζει να έρχεται από την τράπεζά σας λέει ότι πρέπει να ανανεώσετε τα προσωπικά σας στοιχεία, αλλιώς ο λογαριασμός ή η κάρτα θα μπλοκαριστεί. Ο σύνδεσμος ανοίγει αντίγραφο της σελίδας e-banking, που κλέβει όνομα χρήστη, κωδικό και τους κωδικούς μιας χρήσης. Συχνά έχει λάθη από αυτόματη μετάφραση. Οι κυπριακές τράπεζες λένε ότι δεν στέλνουν ποτέ σύνδεσμο για ενημέρωση στοιχείων.",
+    "en": "A text or email that looks like it is from your bank says you must refresh your personal details or your account or card will be blocked. The link opens a copy of the online banking login page, which steals your username, password and one-time codes. It often has errors from machine translation. Cypriot banks say they never send a link to update your details."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Μήνυμα «από την τράπεζα» λέει ότι τα στοιχεία σας έληξαν.",
+        "en": "A message “from the bank” says your details have expired."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Απειλεί ότι ο λογαριασμός θα κλειδώσει σήμερα.",
+        "en": "It threatens that the account will be locked today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ο σύνδεσμος ανοίγει ψεύτικη σελίδα e-banking.",
+        "en": "The link opens a fake online banking page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "el": "Η σελίδα ζητά κωδικούς και τον κωδικό μιας χρήσης.",
+        "en": "The page asks for your passwords and the one-time code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Ειδοποίηση ασφαλείας: Τα στοιχεία του λογαριασμού σας δεν έχουν ενημερωθεί. Η πρόσβαση στο e-banking θα περιοριστεί σήμερα. Επιβεβαιώστε τα στοιχεία σας εδώ: [σύνδεσμος]",
+        "en": "Security notice: Your account information has not been updated. Your online banking access will be restricted today. Verify your details here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank text says update my details",
+      "account will be locked unless I click",
+      "fake 1bank login page",
+      "hellenic bank email asking to refresh information",
+      "bank sms with a link to verify",
+      "message says my card is blocked click here"
+    ],
+    "el": [
+      "μήνυμα τράπεζας να ενημερώσω τα στοιχεία μου",
+      "ο λογαριασμός θα κλειδώσει αν δεν πατήσω",
+      "ψεύτικη σελίδα 1bank",
+      "email ελληνικής τράπεζας για ανανέωση στοιχείων",
+      "sms τράπεζας με σύνδεσμο επιβεβαίωσης",
+      "μήνυμα ότι η κάρτα μπλοκαρίστηκε πατήστε εδώ"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Your bank never sends a link to update your details or log in.",
+      "A threat to lock your account today.",
+      "Odd wording and a sender that doesn’t match your bank."
+    ],
+    "el": [
+      "Η τράπεζα δεν στέλνει ποτέ σύνδεσμο για ενημέρωση στοιχείων ή σύνδεση.",
+      "Απειλή ότι ο λογαριασμός θα κλειδώσει σήμερα.",
+      "Περίεργη διατύπωση και αποστολέας που δεν ταιριάζει με την τράπεζα."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click. Open your banking app or type the bank’s address yourself.",
+      "Forward the message to your bank’s fraud team.",
+      "If you entered passwords or codes, call your bank at once.",
+      "Report it to the police."
+    ],
+    "el": [
+      "Μην πατήσετε. Ανοίξτε την εφαρμογή της τράπεζας ή γράψτε εσείς τη διεύθυνση.",
+      "Προωθήστε το μήνυμα στην τράπεζά σας.",
+      "Αν δώσατε κωδικούς, καλέστε αμέσως την τράπεζα.",
+      "Καταγγείλετε το στην Αστυνομία."
+    ]
+  },
+  "reportTo": [
+    "cy/your-bank",
+    "cy/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Προσοχή! Νέες αναφορές για παραπλανητικά E-mails",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/prosoxi-nees-anafores-gia-paraplanitika-e-mails/",
+      "date": "2026-06-26"
+    },
+    {
+      "title": "Hellenic Bank warns customers against new phishing scams",
+      "publisher": "Cyprus Mail",
+      "url": "https://cyprus-mail.com/2025/01/24/hellenic-bank-warns-customers-against-new-phishing-scams",
+      "date": "2025-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

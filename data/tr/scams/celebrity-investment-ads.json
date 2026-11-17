@@ -1,0 +1,142 @@
+{
+  "id": "tr/celebrity-investment-ads",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "tr": "Sosyal medyada ünlü bir isim, sunucu veya siyasetçinin yer aldığı “sponsorlu” reklam; ardından bir “yatırım danışmanı”",
+    "en": "A “sponsored” ad on social media showing a celebrity, TV presenter or politician; then an “investment adviser”"
+  },
+  "name": {
+    "tr": "Ünlü yüzlü sahte yatırım reklamı: Yapay zekayla “devlet destekli yatırım” vaadi",
+    "en": "Fake investment ad with a celebrity face: AI-made “state-backed investment” pitch"
+  },
+  "how": {
+    "tr": "Sosyal medyada tanınmış kişilerin yapay zekayla taklit edilmiş görüntü ve sesleriyle hazırlanmış reklamlar yüksek ve hızlı kazanç vaat eder. Formu dolduran kişiyi bir “danışman” arar, küçük bir tutarla sahte bir platforma yatırım yaptırır ve ekranda büyüyen kazanç gösterir. Sonra daha büyük tutarlar istenir; para çekmek istediğinizde vergi, komisyon gibi yeni ücretler çıkar ya da kimseye ulaşamazsınız.",
+    "en": "Social media ads made with AI copies of well-known people’s faces and voices promise high, fast returns. An “adviser” calls whoever fills in the form, gets them to invest a small sum on a fake platform and shows growing gains on screen. Then bigger sums are requested; when you try to withdraw, new fees such as tax or commission appear, or you can’t reach anyone."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Ünlü birinin önerdiği görünen bir yatırım reklamı.",
+        "en": "An investment ad apparently endorsed by a celebrity."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Kısa sürede yüksek ve garantili kazanç vaadi.",
+        "en": "A promise of high, guaranteed returns in a short time."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tr": "Bir danışman arar, uygulama veya platform kurdurur.",
+        "en": "An adviser calls and has you install an app or join a platform."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "tr": "Önce küçük, sonra giderek büyüyen yatırımlar istenir.",
+        "en": "First small, then ever larger deposits are requested."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tr": "Para çekmek için önce vergi veya komisyon ödemeniz gerekir.",
+        "en": "To withdraw you must first pay tax or commission."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "tr": "Ünlü iş insanı canlı yayında açıkladı: “Devlet destekli yeni yatırım platformuyla 5.000 TL yatıran her vatandaş ilk haftada 40.000 TL kazanıyor.” Kontenjan sınırlı, başvurular bu akşam kapanıyor. Hemen kaydolun, danışmanımız sizi arasın: [link]",
+        "en": "A famous businessman announced live: “Every citizen who invests 5,000 TL with the new state-backed investment platform earns 40,000 TL in the first week.” Places are limited, applications close tonight. Sign up now and our adviser will call you: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "ünlü reklamında yatırım tavsiyesi",
+      "devlet destekli yatırım reklamı",
+      "yapay zeka ile ünlü yüzü yatırım dolandırıcılığı",
+      "yatırım danışmanı aradı platforma para yatırdım",
+      "paramı çekmek için vergi ödemem istendi",
+      "haftada yüksek kazanç vaadi kripto",
+      "sponsorlu reklam sahte yatırım sitesi",
+      "küçük yatırımla büyük kazanç dediler"
+    ],
+    "en": [
+      "celebrity investment ad was fake",
+      "ai video of famous person promoting investment",
+      "adviser called after i filled in form",
+      "cannot withdraw money from trading platform",
+      "asked to pay tax before withdrawal"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "tr": [
+      "Ünlülerin görüntüsü ve sesi yapay zekayla taklit edilebilir.",
+      "Garantili ve çok yüksek kazanç vaadi her zaman şüphelidir.",
+      "SPK izni olmadan yatırım hizmeti veren kişi ve kuruluşlar yasa dışıdır.",
+      "Para çekmek için önce ücret istenmesi dolandırıcılık işaretidir."
+    ],
+    "en": [
+      "Celebrities’ faces and voices can be faked with AI.",
+      "Guaranteed, very high returns are always suspicious.",
+      "Anyone offering investment services without SPK authorisation is operating illegally.",
+      "Being asked to pay a fee before withdrawing is a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Para göndermeden önce firmanın SPK’nın yetkili kuruluşlar listesinde olup olmadığını kontrol edin.",
+      "Kurdurulan uygulamaları silin, bankanızı arayın ve daha fazla para göndermeyin.",
+      "Polise veya savcılığa suç duyurusunda bulunun; reklamın ve yazışmaların ekran görüntülerini saklayın."
+    ],
+    "en": [
+      "Before sending money, check whether the firm is on SPK’s list of authorised institutions.",
+      "Delete any apps you were told to install, call your bank and send no more money.",
+      "File a complaint with the police or prosecutor; keep screenshots of the ad and the chats."
+    ]
+  },
+  "reportTo": [
+    "tr/spk",
+    "tr/police-prosecutor",
+    "tr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Yapay zeka ile dev vurgun! Ünlülerin yüzünü kopyalayıp 'yatırım tavsiyesi' verdirdiler",
+      "publisher": "Milliyet",
+      "url": "https://www.milliyet.com.tr/7540712",
+      "date": "2026-02-18"
+    },
+    {
+      "title": "Emniyet uyardı: İşte dolandırıcıların yapay zekalı yeni yöntemi",
+      "publisher": "NTV",
+      "url": "https://www.ntv.com.tr/turkiye/emniyet-uyardi-iste-dolandiricilarin-yapay-zekali-yeni-yontemi,4WrLc8aPj0iimrPHlgtIWg",
+      "date": "2024-07-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

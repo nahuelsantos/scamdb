@@ -1,0 +1,133 @@
+{
+  "id": "bg/nap-refund-phishing",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "bg": "„НАП“ или „Министерство на финансите“, по Viber, SMS или имейл, често от чуждестранен номер",
+    "en": "The “National Revenue Agency” or “Ministry of Finance”, by Viber, text or email, often from a foreign number"
+  },
+  "name": {
+    "bg": "Фалшиво съобщение от НАП: надвзет данък и „възстановяване“ през линк",
+    "en": "Fake National Revenue Agency message: overpaid tax and a “refund” through a link"
+  },
+  "how": {
+    "bg": "Получавате съобщение, уж от НАП или Министерството на финансите: данъчната ви декларация е обработена и имате сума за възстановяване, или ви е надвзет данък. За да получите парите, трябва да отворите линк и да въведете лични данни и данни от банкова карта, понякога в срок от 24 часа. Има и имейли с „покана за доброволно плащане“ или с линкове, които крадат паролата за пощата ви. НАП не изпраща съобщения, в които трябва да въвеждате банкова информация.",
+    "en": "You get a message supposedly from the National Revenue Agency (NAP) or the Ministry of Finance: your tax return has been processed and you have money to be refunded, or you were overcharged. To get the money you must open a link and enter personal details and card details, sometimes within 24 hours. There are also emails with an “invitation to pay voluntarily” or links that steal your email password. NAP doesn't send messages asking you to enter bank details."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Съобщение от „НАП“: имате сума за възстановяване или надвзет данък.",
+        "en": "A message from “NAP”: you have money to be refunded or overpaid tax."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Линк, на който трябва да въведете ЕГН, данни от карта или парола.",
+        "en": "A link where you must enter your personal ID number, card details or a password."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Кратък срок, иначе сумата „се губи“.",
+        "en": "A short deadline, or the money is “lost”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "НАП: Вашата годишна данъчна декларация е обработена. Полагат Ви се 214,60 EUR за възстановяване. Попълнете данните на картата, по която да получите сумата, до 24 часа: [линк]",
+        "en": "NAP: Your annual tax return has been processed. You are due a refund of 214.60 EUR. Enter the details of the card to receive the money within 24 hours: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "нап съобщение за възстановяване на данък",
+      "надвзет данък линк за получаване",
+      "вайбър съобщение от министерство на финансите",
+      "декларацията е обработена попълнете картата",
+      "имейл от нап покана за доброволно плащане",
+      "фалшив сайт на нап за връщане на пари"
+    ],
+    "en": [
+      "tax refund message from the revenue agency",
+      "overpaid tax refund link",
+      "viber message from the ministry of finance",
+      "enter my card to get a tax refund",
+      "fake revenue agency email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "bg": [
+      "НАП никога не изпраща съобщения, в които трябва да въвеждате банкова информация или лични данни.",
+      "Държавна институция не пише от чуждестранен номер във Viber.",
+      "Възстановяването на данък не изисква данни от карта и CVC код."
+    ],
+    "en": [
+      "NAP never sends messages asking you to enter bank details or personal data.",
+      "A government agency doesn't write to you on Viber from a foreign number.",
+      "A tax refund never needs card details and a CVC code."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не отваряйте линка; изтрийте съобщението.",
+      "Проверете задълженията и възстановяванията си сами, като влезете в портала на НАП с ПИК или електронен подпис.",
+      "Ако сте въвели данни от карта, обадете се на банката; ако сте въвели парола, сменете я веднага.",
+      "Докладвайте съобщението на CERT България."
+    ],
+    "en": [
+      "Don't open the link; delete the message.",
+      "Check your tax balance yourself by logging in to NAP's portal with your access code or e-signature.",
+      "If you entered card details, call your bank; if you entered a password, change it straight away.",
+      "Report the message to CERT Bulgaria."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/cert-bulgaria",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Разпространяват се фишинг съобщения от името на НАП",
+      "publisher": "KIK-Info (по съобщение на НАП)",
+      "url": "https://kik-info.com/novini/nap/Razprostranyavat-se-fishing-saobshteniya-ot-imeto-na-NAP.15351.php",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "НАП предупреди за фалшиви съобщения от името на агенцията",
+      "publisher": "24 часа",
+      "url": "https://www.24chasa.bg/bulgaria/article/22551040",
+      "date": "2026-03-27"
+    },
+    {
+      "title": "Фалшиви съобщения от името на НАП се разпространяват чрез приложението Viber",
+      "publisher": "KIK-Info (по съобщение на НАП)",
+      "url": "https://kik-info.com/novini/nap/Falshivi-saobshteniya-ot-imeto-na-NAP-se-razprostranyavat.15227.php",
+      "date": "2026-03-25"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/fake-traffic-fine-sms"
+  ]
+}

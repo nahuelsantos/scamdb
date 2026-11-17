@@ -1,0 +1,143 @@
+{
+  "id": "tr/fake-police-prosecutor-terror",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "tr": "Kendini “polis”, “başkomiser” ya da “Cumhuriyet savcısı” olarak tanıtan biri; ekranda bazen resmi görünen bir numara",
+    "en": "Someone calling themselves a “police officer”, “chief inspector” or “public prosecutor”; sometimes an official-looking number on screen"
+  },
+  "name": {
+    "tr": "Sahte polis ve savcı: “Adınız terör/FETÖ soruşturmasında geçiyor”, altın ve para “emanete” isteniyor",
+    "en": "Fake police and prosecutor: “your name is in a terror/FETÖ investigation”, gold and cash demanded for “safekeeping”"
+  },
+  "how": {
+    "tr": "Arayan kişi polis, başkomiser veya savcı olduğunu söyler ve adınızın bir terör ya da FETÖ soruşturmasında, yakalanan şüphelilerin üzerinden çıkan belgelerde geçtiğini, hakkınızda yakalama kararı olduğunu iddia eder. Kararın kaldırılması için “gizli operasyona” yardım etmenizi ister, kimseye söylememenizi, telefonu kapatmamanızı tembihler. Bankadaki altın ve parayı çekip “devlet güvencesine” almak üzere eve gelen “görevliye” teslim etmenizi, hatta evinizi ya da dükkanınızı satıp parasını vermenizi ister.",
+    "en": "The caller says they are a police officer, chief inspector or prosecutor and claims your name appeared in a terror or FETÖ investigation, in documents found on arrested suspects, and that there is an arrest warrant for you. To lift it you must help a “secret operation”, tell no one and stay on the line. You are told to withdraw gold and cash from the bank and hand them to an “officer” who comes to your home to be put under “state protection”, or even to sell your home or shop and hand over the money."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Polis veya savcı olduğunu söyleyen biri arar.",
+        "en": "Someone calls claiming to be police or a prosecutor."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Adınızın terör/FETÖ soruşturmasında geçtiği, hakkınızda yakalama kararı olduğu söylenir.",
+        "en": "You are told your name is in a terror/FETÖ investigation and there is a warrant for you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Kimseye, aileye bile anlatmamanız ve telefonu kapatmamanız istenir.",
+        "en": "You must tell no one, not even family, and stay on the phone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "tr": "Altın ve parayı bankadan çekip eve gelen “görevliye” teslim etmeniz istenir.",
+        "en": "You are asked to withdraw gold and cash and hand them to an “officer” at your door."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tr": "Uzun süre hatta tutulur, ne yapacağınız adım adım söylenir.",
+        "en": "You are kept on the line for hours and told what to do step by step."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "tr": "İyi günler, Emniyet Müdürlüğü Terörle Mücadele Şubesi’nden Başkomiser Yılmaz. Dün gözaltına alınan örgüt üyelerinin üzerinden sizin kimlik fotokopiniz çıktı, savcılık hakkınızda yakalama kararı çıkardı. Masum olduğunuzu kanıtlamak için birikimlerinizin kayıt altına alınması gerekiyor. Bankadaki altınlarınızı bugün çekin, akşam bir memurumuz gelip teslim alacak. Bu gizli bir operasyon, çocuklarınız dahil kimseye söylemeyin, telefonu da kapatmayın.",
+        "en": "Good afternoon, this is Chief Inspector Yılmaz from the police counter-terrorism branch. A copy of your ID was found on members of the organisation detained yesterday, and the prosecutor has issued a warrant for you. To prove your innocence your savings must be registered. Withdraw your gold from the bank today; one of our officers will come to collect it this evening. This is a secret operation; don’t tell anyone, including your children, and don’t hang up."
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "polis olduğunu söyleyen biri aradı altın istedi",
+      "savcı arayıp fetö soruşturması dedi",
+      "adınız terör soruşturmasında geçiyor",
+      "hakkınızda yakalama kararı var dediler",
+      "altınları bankadan çekip görevliye teslim et",
+      "paranızı devlet güvencesine alacağız",
+      "gizli operasyon kimseye söyleme",
+      "sahte polis savcı dolandırıcılığı",
+      "eve memur gelip altınları aldı",
+      "telefonu kapatmayın soruşturma gizli",
+      "kimliğiniz şüphelilerin üzerinden çıktı"
+    ],
+    "en": [
+      "fake police officer called about terror investigation",
+      "fake prosecutor asked me to hand over gold",
+      "they said there is an arrest warrant for me",
+      "told to withdraw savings and give them to an officer",
+      "caller said keep it secret from my family"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "tr": [
+      "Polis, jandarma veya savcı telefonla asla para, altın ya da banka bilgisi istemez.",
+      "Hiçbir soruşturmada birikimleriniz eve gelen birine “emanet” edilmez.",
+      "Ekrandaki numara sahte olabilir; resmi görünmesi hiçbir şey kanıtlamaz.",
+      "Kimseye söylememeniz ve telefonu kapatmamanız istenmesi en büyük tehlike işaretidir."
+    ],
+    "en": [
+      "Police, gendarmerie or prosecutors never ask for money, gold or bank details by phone.",
+      "No investigation involves handing your savings to someone at your door for “safekeeping”.",
+      "The number on screen can be faked; looking official proves nothing.",
+      "Being told to tell no one and not hang up is the biggest warning sign."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Hemen telefonu kapatın.",
+      "Bir yakınınıza anlatın ve 112’yi kendiniz arayarak durumu sorun.",
+      "Kimseye altın, para veya kart teslim etmeyin. Teslim ettiyseniz hemen 112’yi arayın ve bankanıza haber verin."
+    ],
+    "en": [
+      "Hang up immediately.",
+      "Tell someone close to you and dial 112 yourself to ask about it.",
+      "Hand no gold, money or card to anyone. If you already did, call 112 straight away and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "tr/emergency-112",
+    "tr/police-prosecutor",
+    "tr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "\"FETÖ operasyonu\" diyerek 40 milyon lira dolandırıldılar",
+      "publisher": "NTV",
+      "url": "https://www.ntv.com.tr/yerel-haberler/galeri-feto-operasyonu-diyerek-40-milyon-lira-dolandirildilar-1734931",
+      "date": "2026-07-28"
+    },
+    {
+      "title": "Telefon Dolandırıcılığı Nasıl Anlaşılır?",
+      "publisher": "Türkiye İş Bankası (Blog)",
+      "url": "https://www.isbank.com.tr/blog/telefon-dolandiriciligi-nasil-anlasilir",
+      "date": "2025-09-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

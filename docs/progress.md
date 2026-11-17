@@ -2,6 +2,26 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 5 (Ukraine, Türkiye, Greece, Cyprus, Bulgaria) and matcher 1.8.x
+
+**Built:**
+- **Groundwork (#66):** ua, tr, gr, cy and bg in `countries.json`, reports, feed and trends; 45 brands; Ukrainian,
+  Russian, Bulgarian, Greek and Turkish rules with genuine-code warnings and filler words.
+- **Matcher 1.8.1 (#67):** rules tuned on the drafts' labelled messages (Ukrainian scam wording, "we never call",
+  PIN set or shown in the app).
+- **Import:** 80 entries (gr 17, ua 16, tr 16, bg 16, cy 15), 26 contacts, 110 labelled messages. Owner asked to
+  keep merging when green while away; review points are listed in the PR.
+
+**Measured (eval, 868 messages):** 98.5% of scams caught, 4.1% of safe messages called "scam". Each new country
+catches 12 of 12 scams with no false "scam".
+
+**Learned:**
+- Without the `u` flag, `\b` and `\w` are ASCII-only: `\bкод` never matches. Non-Latin rules use spaces as
+  boundaries. Patterns must be written in the normaliser's folded form (й → и), or they silently never match; a
+  test now checks the stop list.
+- Tuning rules on real labelled messages (data first) worked better than writing them ahead: Ukraine went from 17%
+  to 33% of scams called "scam" with no new false alarms.
+
 ## 2026-11-17: Europe wave 4 (Italy, Poland, Romania, Moldova), forwarded warnings, matcher 1.7.x
 
 **Built:**

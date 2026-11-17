@@ -1,0 +1,133 @@
+{
+  "id": "gr/mama-new-number",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "el": "Το «παιδί» σας, από άγνωστο αριθμό",
+    "en": "Your “child”, from an unknown number"
+  },
+  "name": {
+    "el": "«Μαμά, χάλασε το κινητό μου, αυτός είναι ο νέος μου αριθμός»",
+    "en": "“Mum, my phone broke, this is my new number”"
+  },
+  "how": {
+    "el": "Λαμβάνετε SMS ή μήνυμα στο WhatsApp ή στο Viber από άγνωστο αριθμό: «Μαμά» ή «μπαμπά», το κινητό μου χάλασε ή έπεσε στη θάλασσα, αυτός είναι ο νέος, προσωρινός μου αριθμός, γράψε μου εδώ. Αφού απαντήσετε, έρχεται το πρόβλημα: η εφαρμογή της τράπεζας δεν δουλεύει στο νέο κινητό και πρέπει να πληρωθεί σήμερα ένας λογαριασμός. Σας ζητά να μεταφέρετε χρήματα σε έναν λογαριασμό, συχνά του εξωτερικού, και υπόσχεται να σας τα δώσει αύριο. Δεν θέλει να μιλήσει στο τηλέφωνο.",
+    "en": "You get a text or a WhatsApp or Viber message from an unknown number: “Mum” or “Dad”, my phone broke or fell in the sea, this is my new, temporary number, write to me here. Once you reply, the problem comes: the banking app doesn’t work on the new phone and a bill must be paid today. You are asked to transfer money to an account, often abroad, with a promise to pay you back tomorrow. They won’t talk on the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Άγνωστος αριθμός: «Μαμά, αυτός είναι ο νέος μου αριθμός».",
+        "en": "Unknown number: “Mum, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "el": "Παριστάνει το παιδί σας και ζητά να σβήσετε τον παλιό αριθμό.",
+        "en": "They pretend to be your child and ask you to delete the old number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Ένας λογαριασμός πρέπει να πληρωθεί σήμερα.",
+        "en": "A bill must be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Μεταφορά σε λογαριασμό που δεν είναι του παιδιού σας· τηλεφώνημα δεν γίνεται.",
+        "en": "A transfer to an account that isn’t your child’s; no phone call possible."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "el": "Μαμά γεια, εγώ είμαι! Μου έπεσε το κινητό και έσπασε η οθόνη, γράφω από καινούργιο νούμερο, σβήσε το παλιό. Έχω ένα θέμα, πρέπει να πληρώσω σήμερα το ενοίκιο 640 € αλλά το e-banking δεν μου ανοίγει εδώ. Μπορείς να το στείλεις εσύ και σου τα δίνω αύριο; Σου στέλνω τον λογαριασμό. Δεν μπορώ να μιλήσω τώρα, είμαι σε μάθημα.",
+        "en": "Hi Mum, it’s me! I dropped my phone and the screen broke, I’m writing from a new number, delete the old one. I’ve got a problem, I have to pay the rent today, €640, but e-banking won’t open here. Can you send it and I’ll pay you back tomorrow? I’ll send you the account. I can’t talk now, I’m in class."
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "μαμά άλλαξα κινητό νέο νούμερο",
+      "παιδί γράφει από καινούργιο νούμερο ζητά λεφτά",
+      "χάλασε το κινητό γράψε μου στο νέο νούμερο",
+      "κόρη με νέο κινητό θέλει να πληρώσω λογαριασμό της",
+      "γιος από άγνωστο νούμερο ζητά μεταφορά σήμερα",
+      "δεν δουλεύει το e-banking στο νέο κινητό",
+      "σβήσε το παλιό νούμερο αποθήκευσε το νέο",
+      "μπαμπά έσπασε το κινητό μου viber"
+    ],
+    "en": [
+      "hi mum new number scam greece",
+      "my child texted from a new number asking for money",
+      "daughter new phone needs bill paid today",
+      "son cant talk on phone wants transfer",
+      "fake child on whatsapp asking for money"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Ένα μέλος της οικογένειας με «νέο αριθμό» που χρειάζεται αμέσως χρήματα είναι το κλασικό μοτίβο.",
+      "Δεν μπορεί ή δεν θέλει να μιλήσει στο τηλέφωνο.",
+      "Ο λογαριασμός για τη μεταφορά είναι ξένου ή του εξωτερικού."
+    ],
+    "en": [
+      "A family member with a “new number” who needs money right away is the classic pattern.",
+      "They can’t or won’t talk on the phone.",
+      "The account for the transfer belongs to someone else or is abroad."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Καλέστε το παιδί σας στον παλιό, γνωστό αριθμό ή ρωτήστε κάποιον κοινό γνωστό. Το παλιό κινητό συνήθως δουλεύει κανονικά.",
+      "Μην στέλνετε χρήματα πριν μιλήσετε με τη φωνή του. Μπλοκάρετε τον αριθμό.",
+      "Στείλατε ήδη; Καλέστε αμέσως την τράπεζα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Call your child on the old, known number or ask someone you both know. The old phone usually works normally.",
+      "Don’t send money before you have heard their voice. Block the number.",
+      "Already sent it? Call your bank at once and report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/your-bank",
+    "gr/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Η νέα απάτη στο WhatsApp και στο Viber που αδειάζει τραπεζικούς λογαριασμούς",
+      "publisher": "Marathon Press",
+      "url": "https://news.marathonpress.gr/apati-mama-echasa-kinito-viber-whatsapp-trapeza-chrimata/",
+      "date": "2026-09-24"
+    },
+    {
+      "title": "Νέα ηλεκτρονική απάτη στοχεύει γονείς",
+      "publisher": "Epirus Post",
+      "url": "https://www.epiruspost.gr/nea-ilektroniki-apati-stocheyei-gonei/",
+      "date": "2025-08-23"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/hacked-friend-account-money",
+    "gr/whatsapp-code-hijack"
+  ]
+}

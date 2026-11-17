@@ -1,0 +1,127 @@
+{
+  "id": "bg/courier-sms-fee",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "bg": "„Куриерска фирма“ или „Български пощи“ в SMS или имейл, с линк",
+    "en": "A “courier company” or “Bulgarian Posts” in a text or email, with a link"
+  },
+  "name": {
+    "bg": "Фалшиво SMS от куриер: пратката чака, платете малка такса през линк",
+    "en": "Fake courier text: your parcel is waiting, pay a small fee through a link"
+  },
+  "how": {
+    "bg": "Идва SMS или имейл от името на голяма куриерска фирма или пощата: пратката ви е задържана, адресът е непълен или трябва да платите малка такса за доставка или съхранение. Линкът води към страница, която копира сайта на куриера и иска лични данни и данни от банкова карта, а после код от SMS. Вместо малката такса от сметката изчезва много повече.",
+    "en": "A text or email arrives in the name of a big courier company or the post office: your parcel is held, the address is incomplete, or you must pay a small delivery or storage fee. The link leads to a page copying the courier's site that asks for personal and card details and then a code from a text. Instead of the small fee much more disappears from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "SMS за пратка, която не чакате или не помните.",
+        "en": "A text about a parcel you aren't expecting or don't remember."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Малка такса или потвърждение на адрес през линк.",
+        "en": "A small fee or an address confirmation through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Страницата иска данни от карта и код от SMS.",
+        "en": "The page asks for card details and a code from a text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "bg": "Срок: иначе пратката се връща.",
+        "en": "A deadline: otherwise the parcel is returned."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Вашата пратка е задържана в нашия офис поради неплатена такса за доставка 1,49 EUR. Платете до 24 часа, иначе пратката ще бъде върната на подателя: [линк]",
+        "en": "Your parcel is being held at our office because of an unpaid delivery fee of 1.49 EUR. Pay within 24 hours or the parcel will be returned to the sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "sms пратката ви е задържана",
+      "такса за доставка линк есемес",
+      "куриер иска да платя малка сума",
+      "потвърдете адреса за доставка линк",
+      "пратка ще бъде върната на подателя",
+      "имате пратка платете",
+      "фалшив сайт на куриер"
+    ],
+    "en": [
+      "text says my parcel is held",
+      "pay a small delivery fee link",
+      "courier sms confirm address",
+      "parcel will be returned unless I pay",
+      "fake courier website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "bg": [
+      "Куриерите не искат такси за доставка през линк в SMS от непознат номер.",
+      "Малката сума е стръв: целта е данните на картата ви.",
+      "Адресът на сайта не е официалният на куриера."
+    ],
+    "en": [
+      "Couriers don't ask for delivery fees through a link in a text from an unknown number.",
+      "The small amount is bait: the target is your card details.",
+      "The web address isn't the courier's official one."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не отваряйте линка; проверете пратката в официалното приложение или сайт на куриера, като въведете номера сами.",
+      "Ако сте въвели картата, обадете се веднага на банката да я блокира.",
+      "Докладвайте съобщението на CERT България."
+    ],
+    "en": [
+      "Don't open the link; check the parcel in the courier's official app or site, typing the tracking number yourself.",
+      "If you entered your card, call your bank straight away to block it.",
+      "Report the message to CERT Bulgaria."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/cert-bulgaria",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "\"Имате пратка ...\": Нова измама от името на куриерски фирми краде пари и данни на потребители",
+      "publisher": "БНТ",
+      "url": "https://bntnews.bg/news/imate-pratka-nova-izmama-ot-imeto-na-kurierski-firmi-krade-pari-i-danni-na-potrebiteli-1350491news.html",
+      "date": "2025-08-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/fake-traffic-fine-sms",
+    "bg/olx-fake-buyer-payment-link"
+  ]
+}

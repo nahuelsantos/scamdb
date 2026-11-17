@@ -1,0 +1,116 @@
+{
+  "id": "gr/hacked-friend-account-money",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "el": "Ένας φίλος ή συγγενής, από τον κανονικό του λογαριασμό που όμως έχει παραβιαστεί",
+    "en": "A friend or relative, from their usual account, which has been hacked"
+  },
+  "name": {
+    "el": "Φίλος στο Messenger ή στο Instagram ζητά δανεικά «μέχρι το απόγευμα»",
+    "en": "A friend on Messenger or Instagram asks for a loan “until this afternoon”"
+  },
+  "how": {
+    "el": "Ένας φίλος σάς γράφει από τον γνωστό του λογαριασμό στο Facebook, στο Instagram ή σε άλλη εφαρμογή. Ξέχασε το πορτοφόλι ή η κάρτα του δεν περνά, είναι σε δύσκολη θέση και χρειάζεται επειγόντως ένα ποσό, π.χ. μερικές εκατοντάδες ευρώ. Υπόσχεται να σας τα επιστρέψει σε λίγες ώρες, μερικές φορές και με κάτι παραπάνω. Στην πραγματικότητα ο λογαριασμός του έχει κλαπεί και τα χρήματα πάνε στον λογαριασμό του απατεώνα.",
+    "en": "A friend writes to you from their usual Facebook, Instagram or other account. They forgot their wallet or their card won’t work, they are in a tight spot and urgently need some money, say a few hundred euros. They promise to pay you back in a few hours, sometimes with a little extra. In reality their account has been stolen and the money goes to the scammer’s account."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Μήνυμα από τον λογαριασμό ενός φίλου που ξέρετε.",
+        "en": "A message from the account of a friend you know."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Ξέχασε το πορτοφόλι ή η κάρτα δεν περνά: είναι επείγον.",
+        "en": "They forgot their wallet or the card won’t work: it’s urgent."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ζητά κατάθεση σε έναν λογαριασμό, με επιστροφή σε λίγες ώρες.",
+        "en": "They ask for a deposit to an account, paid back in a few hours."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "el": "Ρε συ, με σώζεις αν μπορείς τώρα; Είμαι στο φαρμακείο, ξέχασα το πορτοφόλι και η κάρτα στο κινητό δεν περνάει. Βάλε μου 380 € σε αυτό το IBAN και στις 6 σου τα επιστρέφω με 20 παραπάνω για τον κόπο, το υπόσχομαι!",
+        "en": "Hey, can you save me right now? I’m at the pharmacy, I forgot my wallet and the card on my phone isn’t working. Put €380 into this IBAN and I’ll pay you back at 6 with 20 extra for your trouble, I promise!"
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "φίλος στο messenger ζητά δανεικά επειγόντως",
+      "μήνυμα instagram ξέχασα το πορτοφόλι στείλε χρήματα",
+      "χάκαραν το facebook φίλου ζητά λεφτά",
+      "βάλε μου χρήματα σε iban θα σου τα δώσω το απόγευμα",
+      "φίλη ζητά κατάθεση η κάρτα της δεν περνάει"
+    ],
+    "en": [
+      "friend on messenger asks to borrow money urgently",
+      "hacked facebook account asking for money",
+      "instagram friend forgot wallet send money",
+      "pay back in a few hours with extra",
+      "friend card not working wants transfer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Ο φίλος δεν μπορεί να μιλήσει στο τηλέφωνο, μόνο γράφει.",
+      "Ζητά κατάθεση σε IBAN που δεν είναι στο όνομά του.",
+      "Υπόσχεται να επιστρέψει τα χρήματα πολύ σύντομα, ακόμη και με «τόκο»."
+    ],
+    "en": [
+      "Your friend can’t talk on the phone, they only write.",
+      "They ask for a deposit to an IBAN that isn’t in their name.",
+      "They promise to repay very soon, even with “interest”."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Πριν στείλετε οτιδήποτε, καλέστε τον φίλο σας στον γνωστό του αριθμό.",
+      "Ειδοποιήστε τον ότι ο λογαριασμός του μάλλον παραβιάστηκε, για να τον ανακτήσει και να προειδοποιήσει τους άλλους.",
+      "Στείλατε ήδη; Καλέστε την τράπεζα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Before sending anything, phone your friend on their known number.",
+      "Tell them their account has probably been hacked, so they can recover it and warn others.",
+      "Already sent it? Call your bank and report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/your-bank",
+    "gr/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Greek Police Warn of Social Media Hackers Using ‘Friends’ as Bait to Steal Money",
+      "publisher": "Greek City Times",
+      "url": "https://greekcitytimes.com/2025/10/31/greek-social-media-hackers/",
+      "date": "2025-10-31"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/mama-new-number",
+    "gr/whatsapp-code-hijack"
+  ]
+}

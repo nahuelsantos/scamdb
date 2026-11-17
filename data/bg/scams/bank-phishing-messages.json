@@ -1,0 +1,132 @@
+{
+  "id": "bg/bank-phishing-messages",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "bg": "„Вашата банка“ (ОББ, ДСК, Пощенска банка и др.) в имейл или SMS",
+    "en": "“Your bank” (UBB, DSK, Postbank etc.) in an email or text"
+  },
+  "name": {
+    "bg": "Фишинг от името на банка: блокирана сметка, Apple Pay/Google Pay, „спрете превода“",
+    "en": "Bank phishing: blocked account, Apple Pay/Google Pay, “stop the transfer”"
+  },
+  "how": {
+    "bg": "Получавате имейл или SMS уж от банката си: сметката ви е блокирана или ограничена, има нередност, недовършено плащане, картата ви се добавя към Apple Pay или Google Pay, или трябва да „спрете превод и да си върнете парите“. Има кратък срок и линк. Страницата копира онлайн банкирането и иска потребител, парола, данни от карта и кодове за потвърждение. Друг вариант ви кара сами да одобрите в истинското приложение превод към сметка на измамника.",
+    "en": "You get an email or text supposedly from your bank: your account is blocked or restricted, there's an irregularity, an unfinished payment, your card is being added to Apple Pay or Google Pay, or you must “stop a transfer and get your money back”. There's a short deadline and a link. The page copies online banking and asks for your username, password, card details and confirmation codes. Another version gets you to approve, in the real app, a transfer to the scammer's account."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Съобщение от „банката“: блокирана сметка, нередност или нова карта в дигитален портфейл.",
+        "en": "A message from the “bank”: a blocked account, an irregularity or a new card in a digital wallet."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "Кратък срок за потвърждение.",
+        "en": "A short deadline to confirm."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bg": "Линк към страница, която прилича на онлайн банкирането.",
+        "en": "A link to a page that looks like online banking."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bg": "Искат парола, данни от карта или код за потвърждение, или да одобрите нещо в приложението.",
+        "en": "They ask for a password, card details or a confirmation code, or for you to approve something in the app."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Уважаеми клиенти, поради нередност при последния вход достъпът Ви до мобилното банкиране е временно ограничен. За да избегнете блокиране на картата, потвърдете самоличността си до 18:00 ч. днес: [линк]",
+        "en": "Dear customer, because of an irregularity at your last login your access to mobile banking is temporarily restricted. To avoid your card being blocked, confirm your identity by 18:00 today: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "сметката ми е ограничена имейл от банката",
+      "картата ви е добавена към apple pay линк",
+      "нередност по сметката потвърдете",
+      "спрете превода и си върнете парите",
+      "есемес от банката с линк за вход",
+      "фалшив сайт на онлайн банкиране",
+      "потвърдете самоличността си до днес банка"
+    ],
+    "en": [
+      "bank email says account restricted",
+      "card added to apple pay message",
+      "stop the transfer get your money back email",
+      "bank text with a login link",
+      "fake online banking site"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "bg": [
+      "Банките никога не искат пароли, ПИН, CVC или кодове чрез имейл, SMS или линк.",
+      "Заплаха за блокиране и срок „до днес“ са типични за фишинг.",
+      "Не одобрявайте в приложението операция, която не сте започнали."
+    ],
+    "en": [
+      "Banks never ask for passwords, PINs, CVCs or codes by email, text or link.",
+      "A threat of blocking and a “by today” deadline are typical of phishing.",
+      "Don't approve in the app an operation you didn't start."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Не отваряйте линка; влезте в банкирането само през приложението или като напишете адреса сами.",
+      "Ако сте въвели данни, обадете се на банката на номера от картата и поискайте блокиране.",
+      "Препратете съобщението на банката и докладвайте на CERT България."
+    ],
+    "en": [
+      "Don't open the link; log in to banking only through the app or by typing the address yourself.",
+      "If you entered details, call your bank on the number from your card and ask for a block.",
+      "Forward the message to your bank and report it to CERT Bulgaria."
+    ]
+  },
+  "reportTo": [
+    "bg/your-bank",
+    "bg/cert-bulgaria",
+    "bg/gdbop-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "ОББ предупреди за нови фишинг атаки",
+      "publisher": "Сега",
+      "url": "https://www.segabg.com/hot/category-economy/obb-predupredi-za-novi-fishing-ataki",
+      "date": "2026-10-07"
+    },
+    {
+      "title": "Внимание! Активни фишинг кампании",
+      "publisher": "Пощенска банка",
+      "url": "https://www.postbank.bg/za-nas/novini/vnimanie-aktivni-fishing-kampanii/",
+      "date": "2026-09-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/fake-police-bank-safe-account"
+  ]
+}

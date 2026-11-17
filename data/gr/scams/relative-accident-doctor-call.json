@@ -1,0 +1,140 @@
+{
+  "id": "gr/relative-accident-doctor-call",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "el": "Ένας «γιατρός», «αστυνομικός» ή ο «συγγενής» σας που κλαίει",
+    "en": "A “doctor”, “police officer” or your crying “relative”"
+  },
+  "name": {
+    "el": "«Ο γιος σας είχε τροχαίο»: ψεύτικος γιατρός ζητά χρήματα για χειρουργείο",
+    "en": "“Your son had a car accident”: fake doctor asks for money for surgery"
+  },
+  "how": {
+    "el": "Σας τηλεφωνεί ένας «γιατρός» νοσοκομείου: η κόρη, ο γιος ή το εγγόνι σας τραυματίστηκε σοβαρά σε τροχαίο και χρειάζεται επειγόντως χειρουργείο που κοστίζει χιλιάδες ευρώ. Για να πειστείτε, μια συνεργός παριστάνει στο τηλέφωνο τον συγγενή, κλαίγοντας. Μερικές φορές ακολουθεί κλήση από «αστυνομικό» που λέει ότι η απάτη εντοπίστηκε και ότι πρέπει να αφήσετε τα χρήματα έξω από το σπίτι για να πιαστούν οι δράστες. Ένας «εισπράκτορας» έρχεται και παίρνει μετρητά, λίρες ή κοσμήματα.",
+    "en": "A hospital “doctor” calls: your daughter, son or grandchild was badly injured in a car accident and urgently needs surgery costing thousands of euros. To convince you, an accomplice plays the relative on the phone, crying. Sometimes a call follows from a “police officer” saying the scam has been detected and you must leave the money outside so the criminals can be caught. A “collector” comes and takes cash, gold sovereigns or jewellery."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Τηλεφώνημα από «γιατρό» ή «αστυνομικό» για τροχαίο συγγενή.",
+        "en": "A call from a “doctor” or “police officer” about a relative’s accident."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Επείγον χειρουργείο: τα χρήματα χρειάζονται τώρα.",
+        "en": "Urgent surgery: the money is needed now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Δεν σας αφήνουν να κλείσετε για να πάρετε τον συγγενή σας.",
+        "en": "They won’t let you hang up to call your relative."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "el": "Ένας άγνωστος έρχεται να πάρει μετρητά ή κοσμήματα.",
+        "en": "A stranger comes to collect cash or jewellery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "el": "Γεια σας, είμαι ο εφημερεύων χειρουργός. Η εγγονή σας έπεσε με το αυτοκίνητο σε κολόνα και είναι στο χειρουργείο, έχει εσωτερική αιμορραγία. Το υλικό που χρειάζεται δεν το καλύπτει το ταμείο, πρέπει να καταβληθούν 18.000 ευρώ σήμερα. Έχετε μετρητά ή χρυσαφικά στο σπίτι; Θα στείλουμε άνθρωπο του νοσοκομείου να τα παραλάβει.",
+        "en": "Hello, I’m the surgeon on duty. Your granddaughter crashed her car into a post and is in surgery, she has internal bleeding. The materials she needs aren’t covered by the health fund, 18,000 euros must be paid today. Do you have cash or gold at home? We’ll send someone from the hospital to collect it."
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "γιατρός τηλεφώνησε τροχαίο εγγονός χειρουργείο",
+      "ο γιος μου είχε τροχαίο ζητούν χρήματα",
+      "πληρωμή χειρουργείου μετρητά τηλεφώνημα",
+      "έρχεται άνθρωπος να πάρει τα χρήματα νοσοκομείο",
+      "κόρη τραυματίστηκε σε τροχαίο τηλεφώνημα λεφτά",
+      "αστυνομικός είπε να αφήσω χρήματα έξω από την πόρτα",
+      "λίρες κοσμήματα για εγχείρηση συγγενή"
+    ],
+    "en": [
+      "doctor called saying my grandson had an accident",
+      "pay for surgery after car crash phone call",
+      "someone coming to collect money for hospital",
+      "crying relative on phone accident money",
+      "police officer told me to leave money outside"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Κανένα δημόσιο νοσοκομείο δεν ζητά μετρητά ή κοσμήματα στο σπίτι σας για να χειρουργήσει.",
+      "Η Αστυνομία δεν σας ζητά ποτέ να αφήσετε χρήματα έξω από το σπίτι για να «πιάσει» απατεώνες.",
+      "Η φωνή που κλαίει δεν είναι απαραίτητα του συγγενή σας."
+    ],
+    "en": [
+      "No public hospital asks for cash or jewellery at your home before operating.",
+      "Police never ask you to leave money outside to “catch” scammers.",
+      "The crying voice is not necessarily your relative’s."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Κλείστε και καλέστε τον συγγενή σας ή άλλο μέλος της οικογένειας στον γνωστό αριθμό.",
+      "Μην δίνετε χρήματα ή τιμαλφή σε κανέναν που έρχεται στην πόρτα. Καλέστε αμέσως το 100.",
+      "Σημειώστε τον αριθμό και την ώρα της κλήσης και καταγγείλτε το ακόμη κι αν δεν δώσατε τίποτα."
+    ],
+    "en": [
+      "Hang up and call your relative or another family member on the known number.",
+      "Don’t give money or valuables to anyone who comes to the door. Call 100 at once.",
+      "Note the number and time of the call and report it even if you gave nothing."
+    ]
+  },
+  "story": {
+    "el": "Τον Ιούλιο του 2026 στη Χαλκιδική, ένας «γιατρός» είπε σε 81χρονο ότι η κόρη του χρειαζόταν χειρουργείο 85.000 ευρώ μετά από τροχαίο. Στη συνέχεια ένας «αστυνομικός» του είπε να αφήσει τα χρήματα έξω από το σπίτι. Η Αστυνομία συνέλαβε τον εισπράκτορα και επέστρεψε τα χρήματα.",
+    "en": "In July 2026 in Chalkidiki, a “doctor” told an 81-year-old that his daughter needed 85,000 euros of surgery after a car accident. A “police officer” then told him to leave the money outside his house. Police arrested the collector and returned the money."
+  },
+  "reportTo": [
+    "gr/police-100"
+  ],
+  "sources": [
+    {
+      "title": "Χαλκιδική: Συλλήψεις για απόπειρα εξαπάτησης ηλικιωμένου - Του ζήτησαν 85.000 ευρώ",
+      "publisher": "parapolitika.gr",
+      "url": "https://www.parapolitika.gr/ellada/article/1757253/halkidiki-sullipseis-gia-apopeira-exapatisis-ilikiomenou-tou-zitisan-85000-euro/",
+      "date": "2026-07-06"
+    },
+    {
+      "title": "Διπλασιάστηκαν οι απόπειρες εξαπάτησης σε ηλικιωμένους το 2025 - Οδηγίες προστασίας",
+      "publisher": "CNN Greece",
+      "url": "https://www.cnn.gr/ellada/story/518992/diplasiastikan-oi-apopeires-eksapatisis-se-ilikiomenous-to-2025-odigies-prostasias",
+      "date": "2026-02-11"
+    },
+    {
+      "title": "Θεσσαλονίκη: Εξιχνιάστηκε υπόθεση με τηλεφωνικές απάτες σε Πιερία, Πρέβεζα και Καστοριά",
+      "publisher": "CNN Greece",
+      "url": "https://www.cnn.gr/ellada/story/482401/thessaloniki-eksixniastike-ypothesi-me-tilefonikes-apates-se-pieria-preveza-kai-kastoria",
+      "date": "2025-06-18"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/fake-accountant-call",
+    "gr/fake-power-technician-valuables"
+  ]
+}

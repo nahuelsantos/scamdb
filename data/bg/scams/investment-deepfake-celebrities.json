@@ -1,0 +1,139 @@
+{
+  "id": "bg/investment-deepfake-celebrities",
+  "country": "bg",
+  "lang": "bg",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "bg": "Реклама в социалните мрежи с известни личности или фалшива статия, после „брокер“ по телефона",
+    "en": "A social media ad with famous people or a fake article, then a “broker” on the phone"
+  },
+  "name": {
+    "bg": "Фалшиви инвестиции с известни личности и „изкуствен интелект“: дийпфейк видеа и платформи без лиценз",
+    "en": "Fake investments with famous people and “AI”: deepfake videos and unlicensed platforms"
+  },
+  "how": {
+    "bg": "В социалните мрежи виждате реклама или видео, в което президентът, премиерът, известен бизнесмен или водещ „препоръчва“ платформа с изкуствен интелект, програма на БНБ или сигурна печалба срещу първоначална вноска от няколкостотин евро. Линкът води към сайт, копиращ известна българска медия. Попълвате форма, обажда ви се „финансов съветник“, който ви кара да внасяте все повече, да инсталирате програма за отдалечен достъп или да теглите кредит. Печалбата се вижда само на екрана; парите не могат да се изтеглят.",
+    "en": "On social media you see an ad or video in which the president, the prime minister, a well-known businessman or a TV presenter “recommends” an AI platform, a central bank programme or guaranteed profit for a first deposit of a few hundred euros. The link leads to a site copying a well-known Bulgarian news outlet. You fill in a form and a “financial adviser” calls, getting you to pay in more and more, install remote-access software or take out a loan. The profit exists only on screen; the money can't be withdrawn."
+  },
+  "steps": [
+    {
+      "text": {
+        "bg": "Реклама или видео с известна личност, която обещава сигурна печалба.",
+        "en": "An ad or video with a famous person promising guaranteed profit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "bg": "Сайтът имитира българска медия; попълвате форма с телефона си.",
+        "en": "The site imitates a Bulgarian news outlet; you leave your phone number in a form."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bg": "„Съветник“ звъни и иска все по-големи вноски или да инсталирате програма.",
+        "en": "An “adviser” calls and asks for ever larger deposits or for you to install software."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "bg": "За да изтеглите печалбата, трябва да платите „такса“ или „данък“.",
+        "en": "To withdraw the profit you must pay a “fee” or “tax”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bg": "Ексклузивно: известният предприемач разкрива в интервю как с платформата на изкуствен интелект всеки българин може да печели по 2000 евро месечно само с 250 евро начална инвестиция. Местата са ограничени до края на седмицата. Регистрирайте се тук: [линк]",
+        "en": "Exclusive: the well-known entrepreneur reveals in an interview how, with the AI trading platform, any Bulgarian can earn 2,000 euros a month with only 250 euros to start. Places are limited until the end of the week. Register here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "bg": [
+      "реклама с президента за инвестиция",
+      "видео с премиера пасивен доход",
+      "платформа с изкуствен интелект гарантирана печалба",
+      "фалшива статия известен бизнесмен инвестира",
+      "брокер звъни след регистрация",
+      "не мога да изтегля печалбата",
+      "внесох 250 евро в платформа",
+      "дийпфейк видео инвестиция"
+    ],
+    "en": [
+      "investment ad with a famous person",
+      "deepfake video of a politician promoting investing",
+      "ai trading platform guaranteed returns",
+      "broker called after I registered",
+      "can't withdraw my profit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "bg": [
+      "Известни личности не рекламират платформи за бърза печалба; видеата са фалшиви, често генерирани с изкуствен интелект.",
+      "Гарантирана висока доходност не съществува.",
+      "Ако не е ясно кой стои зад сайта и няма лиценз от КФН, не влагайте.",
+      "Такса, за да изтеглите собствените си пари, е знак за измама."
+    ],
+    "en": [
+      "Famous people don't advertise get-rich-quick platforms; the videos are fake, often AI-generated.",
+      "Guaranteed high returns don't exist.",
+      "If it isn't clear who runs the site and it has no FSC licence, don't invest.",
+      "A fee to withdraw your own money is a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "bg": [
+      "Проверете в списъците на КФН дали фирмата има лиценз, преди да платите каквото и да е.",
+      "Не инсталирайте програми за отдалечен достъп по молба на „съветник“.",
+      "Ако сте платили, уведомете банката веднага и подайте сигнал в ГДБОП и КФН.",
+      "Пазете се от хора, които обещават да „върнат“ загубените пари срещу такса."
+    ],
+    "en": [
+      "Check the FSC registers to see whether the firm is licensed before paying anything.",
+      "Don't install remote-access software when an “adviser” asks.",
+      "If you paid, tell your bank straight away and report it to GDBOP and the FSC.",
+      "Beware of people who promise to “recover” the lost money for a fee."
+    ]
+  },
+  "reportTo": [
+    "bg/kfn",
+    "bg/gdbop-cybercrime",
+    "bg/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "КФН предприе действия по спиране на копие на популярен сайт заради потенциална финансова измама",
+      "publisher": "Комисия за финансов надзор",
+      "url": "https://www.fsc.bg/kfn-predprie-dejstviya-po-spirane-na-kopie-na-populyaren-sajt-zaradi-potenczialna-finansova-izmama/",
+      "date": "2026-09-25"
+    },
+    {
+      "title": "Deepfake Scams Target Bulgarian President and Prime Minister in Online Fraud Campaign",
+      "publisher": "BNT",
+      "url": "https://bntnews.bg/news/deepfake-scams-target-bulgarian-president-and-prime-minister-in-online-fraud-campaign-1364671news.html",
+      "date": "2025-11-11"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "bg/romance-scam"
+  ]
+}

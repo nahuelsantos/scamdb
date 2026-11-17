@@ -1,0 +1,123 @@
+{
+  "id": "tr/spk-fund-payout-priority",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "tr": "“Avukat”, “aracı kurum” ya da SPK adına arayan biri",
+    "en": "Someone calling as a “lawyer”, “brokerage” or on behalf of SPK"
+  },
+  "name": {
+    "tr": "Tasfiye edilen fon yatırımcılarına tuzak: “Ödemenizi hızlandırırız, öncelik veririz”",
+    "en": "Trap for investors in liquidated funds: “we can speed up your payout, give you priority”"
+  },
+  "how": {
+    "tr": "SPK’nın tasfiyesine karar verdiği ya da işleme kapatılan fonlarda parası olan yatırımcılar telefon, SMS veya sosyal medya üzerinden aranır. Arayanlar ödeme sürecine aracılık edebileceklerini, ödemeyi hızlandırabileceklerini veya sıra önceliği sağlayabileceklerini söyler. Karşılığında masraf, komisyon ya da avans ücreti ve kimlik ile banka bilgileri istenir.",
+    "en": "Investors holding money in funds that SPK ordered liquidated, or that were closed to trading, are contacted by phone, SMS or social media. The callers say they can broker the payment process, speed it up or get you priority in the queue. In return they ask for an expense, commission or advance fee and your ID and bank details."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "Fon yatırımcısına “avukat” veya “aracı” olarak ulaşılır.",
+        "en": "The fund investor is approached by a “lawyer” or “intermediary”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Ödemenin hızlanacağı veya öncelik verileceği vaat edilir.",
+        "en": "A faster payout or priority is promised."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "tr": "Masraf, komisyon veya dosya ücreti istenir.",
+        "en": "An expense, commission or file fee is requested."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tr": "Kimlik ve banka bilgilerinizi “güncellemeniz” istenir.",
+        "en": "You are asked to “update” your ID and bank details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "tr": "İyi günler, fon tasfiye sürecindeki yatırımcılarla ilgilenen hukuk bürosundan arıyorum. Normalde ödemeniz aylar sürecek ama dosyanızı öncelikli listeye alabiliriz. Bunun için 2.750 TL dosya masrafı yatırmanız ve kimlik ile IBAN bilginizi bize iletmeniz yeterli. Kontenjan bu hafta doluyor.",
+        "en": "Good afternoon, I’m calling from the law firm handling investors in the fund liquidation process. Normally your payout would take months, but we can put your file on the priority list. You just need to pay a 2,750 TL file fee and send us your ID and IBAN. The places fill up this week."
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "tasfiye edilen fon ödemesi hızlandırma",
+      "fon paranızı öncelikli öderiz dediler",
+      "fon yatırımcısına avukat aradı masraf istedi",
+      "tefas işlem kapatılan fon dolandırıcılık",
+      "fon ödemesi için komisyon talebi",
+      "fon zararınızı geri alıyoruz",
+      "spk adına arayıp ücret istediler"
+    ],
+    "en": [
+      "caller offered to speed up liquidated fund payout",
+      "asked for fee to get priority on fund payment",
+      "fake lawyer called about my fund money",
+      "fund recovery scam",
+      "they asked for my iban to pay fund money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "tr": [
+      "Fon ödemeleri yalnızca yetkili kuruluşlarca yapılır; kimse sıra önceliği satamaz.",
+      "Yetkili kurumlar ödeme için yatırımcıdan ücret, komisyon veya masraf istemez.",
+      "Ödeme için yeni kimlik veya banka bilgisi istenmez."
+    ],
+    "en": [
+      "Fund payouts are made only by authorised institutions; nobody can sell priority.",
+      "Authorised institutions never ask investors for fees, commission or expenses to pay out.",
+      "You are not asked for new ID or bank details for the payout."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Para göndermeyin ve bilgi paylaşmayın.",
+      "Ödeme bilgisini yalnızca SPK ve fonun yetkili kurumunun resmi duyurularından takip edin.",
+      "Bu tür aramaları polise veya Cumhuriyet Başsavcılığına bildirin."
+    ],
+    "en": [
+      "Don’t send money or share details.",
+      "Follow payout information only from SPK and the fund’s authorised institution’s official announcements.",
+      "Report such calls to the police or the public prosecutor."
+    ]
+  },
+  "reportTo": [
+    "tr/spk",
+    "tr/police-prosecutor"
+  ],
+  "sources": [
+    {
+      "title": "Fon Yatırımcılarına Yönelik Dolandırıcılık Amaçlı Girişimlere İlişkin Uyarı",
+      "publisher": "Sermaye Piyasası Kurulu (SPK)",
+      "url": "https://spk.gov.tr/duyurular/basin-duyurulari/2026/fon-yatirimcilarina-yonelik-dolandiricilik-amacli-girisimlere-iliskin-uyari",
+      "date": "2026-11-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

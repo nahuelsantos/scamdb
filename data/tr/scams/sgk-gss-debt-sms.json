@@ -1,0 +1,121 @@
+{
+  "id": "tr/sgk-gss-debt-sms",
+  "country": "tr",
+  "lang": "tr",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "tr": "“SGK” adıyla gelen bir SMS",
+    "en": "An SMS in the name of “SGK” (Social Security Institution)"
+  },
+  "name": {
+    "tr": "Sahte SGK mesajı: “GSS prim borcunuz var, hesabınız bloke edilecek”",
+    "en": "Fake SGK text: “you owe health insurance (GSS) premiums, your account will be blocked”"
+  },
+  "how": {
+    "tr": "SGK’dan geliyormuş gibi görünen bir SMS, ödenmemiş genel sağlık sigortası (GSS) prim borcunuz olduğunu söyler. Hemen ödemezseniz hesaplarınıza bloke konacağı veya yasal işlem başlatılacağı tehdidi yapılır. Ödeme için bir link ya da IBAN verilir; link sahte bir sayfada kart ve banka bilgilerinizi ister.",
+    "en": "A text that seems to come from SGK says you have unpaid general health insurance (GSS) premiums. It threatens that your accounts will be blocked or legal action started unless you pay now. A link or IBAN is given for payment; the link asks for your card and bank details on a fake page."
+  },
+  "steps": [
+    {
+      "text": {
+        "tr": "SGK adıyla gelen SMS: “GSS prim borcunuz bulunmaktadır.”",
+        "en": "An SMS in SGK’s name: “you have a GSS premium debt”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "tr": "Hesaplara bloke veya icra tehdidi.",
+        "en": "A threat of account blocks or enforcement."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "tr": "Ödeme için link veya IBAN verilir.",
+        "en": "A link or IBAN is given for payment."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "tr": "Kart bilgileri veya havale istenir.",
+        "en": "Card details or a transfer are requested."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "tr": "SGK BILGILENDIRME: 1.842,60 TL tutarinda odenmemis GSS prim borcunuz bulunmaktadir. 48 saat icinde odenmemesi halinde banka hesaplariniza haciz uygulanacaktir. Borc sorgulama ve odeme: [link]",
+        "en": "SGK NOTICE: You have an unpaid GSS premium debt of 1,842.60 TL. If not paid within 48 hours, your bank accounts will be seized. Debt check and payment: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "tr": [
+      "sgk gss prim borcu sms",
+      "genel sağlık sigortası borcu link geldi",
+      "sgk hesabınız bloke edilecek mesajı",
+      "sgk adına iban gönderip ödeme istediler",
+      "prim borcu haciz uyarısı sms",
+      "sahte sgk mesajı"
+    ],
+    "en": [
+      "fake sgk text about health insurance debt",
+      "gss premium debt sms with link",
+      "message said my account will be blocked for unpaid premiums",
+      "sgk payment link scam",
+      "text asked me to pay premium to an iban"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "tr": [
+      "SGK prim borcu için SMS’le ödeme linki veya bir kişinin IBAN’ını göndermez.",
+      "SGK SMS’leri yalnızca e-Devlet’te kayıtlı numaranıza gelir.",
+      "48 saat, haciz, bloke gibi tehditler sizi acele ettirmek içindir."
+    ],
+    "en": [
+      "SGK does not text payment links or a private person’s IBAN for premium debts.",
+      "SGK texts only go to the number you registered on e-Devlet.",
+      "Threats like 48 hours, seizure or blocking are meant to rush you."
+    ]
+  },
+  "whatToDo": {
+    "tr": [
+      "Linke tıklamayın, IBAN’a para göndermeyin.",
+      "Borcunuz olup olmadığını e-Devlet’e kendiniz girerek kontrol edin.",
+      "Kart bilgisi girdiyseniz bankanızı hemen arayıp kartı kapattırın."
+    ],
+    "en": [
+      "Don’t tap the link and don’t send money to the IBAN.",
+      "Check whether you owe anything by logging in to e-Devlet yourself.",
+      "If you entered card details, call your bank at once and block the card."
+    ]
+  },
+  "reportTo": [
+    "tr/your-bank",
+    "tr/usom",
+    "tr/police-prosecutor"
+  ],
+  "sources": [
+    {
+      "title": "SGK'dan sahte GSS prim borcu mesajlarına karşı kritik uyarı: e-Devlet detayı ortaya çıktı",
+      "publisher": "GZT",
+      "url": "https://www.gzt.com/gundem/telefonunuza-boyle-bir-sms-geldiyse-sakin-o-linke-tiklamayin-panik-yaptirip-hesaplari-bosaltiyorlar-4251677",
+      "date": "2026-08-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

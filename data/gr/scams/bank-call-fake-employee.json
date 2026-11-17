@@ -1,0 +1,134 @@
+{
+  "id": "gr/bank-call-fake-employee",
+  "country": "gr",
+  "lang": "el",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "el": "«Υπάλληλος» του τμήματος ασφαλείας της τράπεζάς σας, συχνά από αριθμό που μοιάζει ελληνικός",
+    "en": "A “member” of your bank’s security team, often from a number that looks Greek"
+  },
+  "name": {
+    "el": "Ψεύτικος υπάλληλος τράπεζας στο τηλέφωνο ζητά κωδικούς ή χρήματα",
+    "en": "Fake bank employee on the phone asks for codes or money"
+  },
+  "how": {
+    "el": "Σας τηλεφωνεί κάποιος που λέει ότι είναι από την τράπεζά σας. Ο αριθμός μπορεί να μοιάζει ελληνικός ή ίδιος με της εξυπηρέτησης πελατών, και ο καλών μπορεί να χρησιμοποιεί όνομα πραγματικού υπαλλήλου. Λέει ότι κάποιος προσπαθεί να μπει στον λογαριασμό σας, ότι υπάρχει ύποπτη χρέωση ή ότι δικαιούστε επίδομα ή επιστροφή, και ζητά κωδικούς e-banking, PIN ή τον κωδικό μίας χρήσης που μόλις ήρθε με SMS. Άλλες φορές σας λέει να μεταφέρετε χρήματα «για προστασία», να κάνετε κινήσεις στο ΑΤΜ ή να δώσετε μετρητά σε «συνεργάτη», π.χ. επειδή δήθεν καταργείται το ευρώ.",
+    "en": "Someone calls saying they are from your bank. The number may look Greek or identical to customer service, and the caller may use a real employee’s name. They say someone is trying to get into your account, there is a suspicious charge, or you are due a benefit or refund, and they ask for e-banking passwords, a PIN or the one-time code that just arrived by text. Other times they tell you to move money “for protection”, use the ATM as instructed, or hand cash to a “colleague”, for instance because the euro is supposedly being abolished."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Τηλεφώνημα από «την τράπεζα», με αριθμό που μοιάζει γνήσιος.",
+        "en": "A call from “the bank”, from a number that looks genuine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Ύποπτη κίνηση ή απόπειρα εισόδου στον λογαριασμό, πρέπει να ενεργήσετε τώρα.",
+        "en": "A suspicious transaction or login attempt; you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Σας ζητούν τον κωδικό από το SMS, το PIN ή τους κωδικούς e-banking.",
+        "en": "You are asked for the code from the text, the PIN or e-banking passwords."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "el": "Ή σας λένε να μεταφέρετε ή να παραδώσετε χρήματα «για να προστατευτούν».",
+        "en": "Or you are told to move or hand over money “to protect it”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "el": "Καλησπέρα σας, από το τμήμα ασφάλειας συναλλαγών της τράπεζάς σας. Βλέπουμε μια προσπάθεια σύνδεσης στο e-banking σας από άλλη συσκευή και μια εκκρεμή πληρωμή 1.480 ευρώ. Για να την ακυρώσουμε θα σας έρθει τώρα ένας κωδικός με μήνυμα, διαβάστε μου τον παρακαλώ, και μην κλείσετε τη γραμμή γιατί χάνεται η διαδικασία.",
+        "en": "Good afternoon, this is your bank’s transaction security department. We can see a login attempt on your e-banking from another device and a pending payment of 1,480 euros. To cancel it you will now get a code by text, please read it out to me, and don’t hang up or the process is lost."
+      }
+    }
+  ],
+  "phrases": {
+    "el": [
+      "τηλεφώνησε υπάλληλος τράπεζας ζήτησε κωδικό",
+      "μου ζήτησαν τον κωδικό από το sms στο τηλέφωνο",
+      "ύποπτη συναλλαγή κάρτα κλήση τράπεζα",
+      "τμήμα ασφαλείας τράπεζας κωδικοί e-banking",
+      "μεταφέρετε τα χρήματα σε ασφαλή λογαριασμό",
+      "να αλλάξω τις καταθέσεις σε νέο νόμισμα",
+      "κλήση από αριθμό τράπεζας ζητά pin",
+      "πρόληψη απάτης τράπεζα μπλοκάρουμε μεταφορά"
+    ],
+    "en": [
+      "bank employee called asking for the code",
+      "caller from my bank wants the sms code",
+      "bank security team call suspicious transaction",
+      "told to move money to a safe account",
+      "call said the euro is being abolished"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "el": [
+      "Καμία τράπεζα δεν σας ζητά PIN, κωδικούς e-banking ή κωδικό μίας χρήσης στο τηλέφωνο.",
+      "Ο αριθμός που φαίνεται στην οθόνη μπορεί να είναι παραποιημένος· δεν αποδεικνύει τίποτα.",
+      "Η τράπεζα δεν σας ζητά ποτέ να μεταφέρετε χρήματα «για προστασία» ή να δώσετε μετρητά σε κάποιον."
+    ],
+    "en": [
+      "No bank asks for your PIN, e-banking passwords or one-time code over the phone.",
+      "The number on your screen can be spoofed; it proves nothing.",
+      "Your bank never asks you to move money “for protection” or hand cash to anyone."
+    ]
+  },
+  "whatToDo": {
+    "el": [
+      "Κλείστε το τηλέφωνο και καλέστε εσείς την τράπεζα στον αριθμό της κάρτας ή της εφαρμογής.",
+      "Μην πληκτρολογείτε κωδικούς που σας υπαγορεύει κάποιος και διαβάζετε προσεκτικά κάθε SMS με κωδικό: γράφει για ποια πράξη είναι.",
+      "Δώσατε κωδικούς ή χρήματα; Καλέστε αμέσως την τράπεζα για μπλοκάρισμα και καταγγείλτε το στη Δίωξη Κυβερνοεγκλήματος."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on your card or in the app.",
+      "Never type in codes someone dictates, and read every code text carefully: it says what it is for.",
+      "Gave codes or money? Call your bank at once to block everything and report it to the Cybercrime Directorate."
+    ]
+  },
+  "reportTo": [
+    "gr/your-bank",
+    "gr/cybercrime",
+    "gr/police-100"
+  ],
+  "sources": [
+    {
+      "title": "Συναγερμός για νέα μορφή τηλεφωνικής απάτης – Οι τράπεζες προειδοποιούν για νέα απάτη",
+      "publisher": "alfavita.gr",
+      "url": "https://www.alfavita.gr/koinonia/477634_synagermos-gia-nea-morfi-tilefonikis-apatis-oi-trapezes-proeidopoioyn-gia-nea-apati",
+      "date": "2025-05-13"
+    },
+    {
+      "title": "«Καταργείται το ευρώ»: Πώς απατεώνες απέσπασαν 32.000 ευρώ από ηλικιωμένη στην Άρτα",
+      "publisher": "alfavita.gr",
+      "url": "https://www.alfavita.gr/koinonia/554911_katargeitai-eyro-pos-apateones-apespasan-32000-eyro-apo-ilikiomeni-stin-arta",
+      "date": "2026-07-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "gr/bank-sms-card-phishing"
+  ]
+}

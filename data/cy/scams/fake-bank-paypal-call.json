@@ -1,0 +1,141 @@
+{
+  "id": "cy/fake-bank-paypal-call",
+  "country": "cy",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "el": "Κλήση από «την τράπεζα», το PayPal ή το Revolut, μερικές φορές με τον πραγματικό αριθμό της τράπεζας",
+    "en": "A call from “the bank”, PayPal or Revolut, sometimes showing the bank’s real number"
+  },
+  "name": {
+    "el": "Ψεύτικη κλήση από τράπεζα ή PayPal: «ύποπτη κίνηση στον λογαριασμό σας»",
+    "en": "Fake bank or PayPal call: “suspicious activity on your account”"
+  },
+  "how": {
+    "el": "Κάποιος καλεί ως εξυπηρέτηση πελατών της τράπεζας, του PayPal ή του Revolut και λέει ότι υπάρχει ύποπτη κίνηση στον λογαριασμό σας. Ο αριθμός μπορεί να φαίνεται ίδιος με της τράπεζας. Για να «σας προστατέψει» ζητά κωδικούς 1bank, κωδικούς μιας χρήσης, στοιχεία κάρτας, να εγκαταστήσετε εφαρμογή απομακρυσμένης πρόσβασης ή να μεταφέρετε χρήματα σε «ασφαλή λογαριασμό». Με το Revolut οι κλήσεις γίνονται και ως βιντεοκλήσεις σε εφαρμογές μηνυμάτων.",
+    "en": "Someone calls as customer service for your bank, PayPal or Revolut and says there is suspicious activity on your account. The number can look the same as the bank’s. To “protect you” they ask for your 1bank login, one-time codes, card details, that you install a remote access app, or that you move money to a “safe account”. Revolut impersonators also call by video on messaging apps."
+  },
+  "steps": [
+    {
+      "text": {
+        "el": "Ο καλών λέει ότι είναι από την τράπεζα ή το PayPal.",
+        "en": "The caller says they are from the bank or PayPal."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "el": "Λέει ότι κάποιος προσπαθεί να πάρει χρήματα από τον λογαριασμό σας τώρα.",
+        "en": "They say someone is trying to take money from your account right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "el": "Ζητά τον κωδικό που θα σας έρθει με SMS.",
+        "en": "They ask for the code you will get by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "el": "Ή σας λέει να εγκαταστήσετε εφαρμογή ή να μεταφέρετε χρήματα σε «ασφαλή λογαριασμό».",
+        "en": "Or they tell you to install an app or move money to a “safe account”."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "el": "Καλών: Καλημέρα, σας καλώ από το κέντρο εξυπηρέτησης της τράπεζας. Βλέπουμε μια προσπάθεια πληρωμής €740 στο εξωτερικό. Για να την ακυρώσουμε, πείτε μου τον εξαψήφιο κωδικό που μόλις λάβατε.",
+        "en": "Caller: Good morning, I’m calling from the bank’s customer service centre. We can see an attempted payment of €740 abroad. To cancel it, please read me the six-digit code you just received."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank called about suspicious activity",
+      "paypal call asking for a code",
+      "caller from the bank wants my otp",
+      "move money to a safe account",
+      "bank asked me to install anydesk",
+      "revolut video call on whatsapp",
+      "paypal called about an unknown login on my account",
+      "someone abroad is using my paypal says caller"
+    ],
+    "el": [
+      "με πήρε η τράπεζα για ύποπτη κίνηση",
+      "κλήση paypal ζητά κωδικό",
+      "υπάλληλος τράπεζας θέλει τον κωδικό otp",
+      "μεταφορά χρημάτων σε ασφαλή λογαριασμό",
+      "η τράπεζα μου είπε να βάλω anydesk",
+      "βιντεοκλήση revolut στο whatsapp",
+      "με πήρε το paypal για άγνωστη σύνδεση στον λογαριασμό",
+      "λένε ότι κάποιος στο εξωτερικό χρησιμοποιεί το paypal μου"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Your bank never asks for passwords, PINs or one-time codes on the phone.",
+      "There is no such thing as a “safe account”.",
+      "A familiar number on screen can be faked."
+    ],
+    "el": [
+      "Η τράπεζα δεν ζητά ποτέ κωδικούς, PIN ή κωδικούς μιας χρήσης στο τηλέφωνο.",
+      "Δεν υπάρχει «ασφαλής λογαριασμός».",
+      "Ένας γνωστός αριθμός στην οθόνη μπορεί να είναι πλαστός."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Call your bank back on the number on your card or in the app.",
+      "Never install apps or share codes for a caller.",
+      "If you shared anything or approved a payment, call your bank at once.",
+      "Report the call to the police."
+    ],
+    "el": [
+      "Κλείστε. Καλέστε εσείς την τράπεζα στον αριθμό της κάρτας ή της εφαρμογής.",
+      "Μην εγκαταστήσετε εφαρμογές και μη δώσετε κωδικούς σε κάποιον που σας κάλεσε.",
+      "Αν δώσατε κάτι ή εγκρίνατε πληρωμή, καλέστε αμέσως την τράπεζα.",
+      "Καταγγείλετε την κλήση στην Αστυνομία."
+    ]
+  },
+  "reportTo": [
+    "cy/your-bank",
+    "cy/cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Authorities warn of phone scam and urge public to hang up",
+      "publisher": "Sigmalive",
+      "url": "https://en.sigmalive.com/?p=76515",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "Bank of Cyprus scam: How fraudsters trap victims",
+      "publisher": "Sigmalive",
+      "url": "https://en.sigmalive.com/bank-of-cyprus-scam-how-fraudsters-trap-victims/",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "ΠΡΟΣΟΧΗ – Απάτη με βιντεοκλήσεις",
+      "publisher": "Cyprus Police (CyberAlert.CY)",
+      "url": "https://cyberalert.cy/anakoinwseis/prosoxi-apati-me-binteokliseis/",
+      "date": "2026-03-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}
