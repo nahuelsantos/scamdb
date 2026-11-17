@@ -1,0 +1,123 @@
+{
+  "id": "xk/marketplace-fake-buyer-link",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "sq": "Një “blerës” që ka parë shpalljen tuaj",
+    "en": "A “buyer” who saw your ad"
+  },
+  "name": {
+    "sq": "“Blerësi” që ju dërgon link për të marrë pagesën",
+    "en": "The “buyer” who sends you a link to receive payment"
+  },
+  "how": {
+    "sq": "Keni shpallur diçka për shitje në internet. Ju shkruan një person i panjohur që thotë se e do produktin, nuk pazarit dhe thotë se do të paguajë online. Pastaj ju dërgon një link “për të pranuar pagesën”, ku duhet të shkruani numrin e kartelës, datën e skadimit, kodin CVV dhe kodin që ju vjen nga banka. Me to, mashtruesit marrin para nga llogaria juaj në vend që t’ju paguajnë. Për të shitur, nuk ju duhet kurrë të jepni të dhënat e kartelës.",
+    "en": "You have put something up for sale online. A stranger messages you saying they want it, doesn’t haggle and says they will pay online. Then they send a link “to receive the payment”, where you have to enter your card number, expiry date, CVV and the code your bank sends you. With these, the scammers take money from your account instead of paying you. To sell something, you never need to give your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Pas shpalljes, ju shkruan një blerës i panjohur shumë i interesuar.",
+        "en": "After you post the ad, an unknown buyer writes, very keen."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Thotë se paguan online ose me postë dhe ju dërgon një link.",
+        "en": "They say they’ll pay online or through a courier and send you a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon të dhënat e plota të kartelës suaj “për të pranuar paratë”.",
+        "en": "The page asks for your full card details “to receive the money”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkon edhe kodin e konfirmimit që ju vjen nga banka.",
+        "en": "They also ask for the confirmation code your bank sends you."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Përshëndetje, a është ende në shitje biçikleta? E marr pa e pa, sepse jam jashtë vendit. Kam paguar tashmë përmes shërbimit të dërgesës, vetëm hyni këtu dhe shkruani kartelën që t’ju kalojnë paratë: [link]",
+        "en": "Hi, is the bike still for sale? I’ll take it without seeing it, as I’m abroad. I’ve already paid through the delivery service, just go here and enter your card so the money is transferred to you: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "blerësi më dërgoi link për pagesë",
+      "shkruaj kartelën që të pranoj paratë",
+      "shita diçka online dhe më kërkuan kodin cvv",
+      "blerës nga jashtë që nuk e sheh produktin",
+      "pagesa përmes postës me link",
+      "më kërkoi kodin që më erdhi nga banka"
+    ],
+    "en": [
+      "the buyer sent me a payment link",
+      "enter my card to receive the money",
+      "sold something online and they asked for my cvv",
+      "buyer abroad who won't see the item",
+      "payment through the courier with a link",
+      "asked for the code my bank sent me"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "Për të pranuar para nuk ju duhet kurrë CVV-ja apo kodi i konfirmimit.",
+      "Blerës që nuk pazarit, nuk vjen ta shohë produktin dhe nxiton.",
+      "Link “për pagesë” që e dërgon vetë blerësi."
+    ],
+    "en": [
+      "You never need your CVV or a confirmation code to receive money.",
+      "A buyer who doesn’t haggle, won’t come to see the item and is in a hurry.",
+      "A “payment” link sent by the buyer."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos hapni linqe nga blerësit dhe mos shkruani kartelën askund. Kërkoni pagesë në dorë ose transfer bankar te IBAN-i juaj.",
+      "Nëse keni dhënë të dhënat, telefononi bankën që ta bllokojë kartelën.",
+      "Raportojeni në Policinë e Kosovës dhe te platforma ku keni shpallur."
+    ],
+    "en": [
+      "Don’t open links from buyers and don’t enter your card anywhere. Ask for cash in person or a bank transfer to your IBAN.",
+      "If you gave your details, call your bank to block the card.",
+      "Report it to the Kosovo Police and to the platform where you posted the ad."
+    ]
+  },
+  "reportTo": [
+    "xk/your-bank",
+    "xk/police"
+  ],
+  "sources": [
+    {
+      "title": "Policia apelon: KUJDES NGA MASHTRIMET ONLINE GJATË SHITJES SË PRODUKTEVE",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/policia-apelon-kujdes-nga-mashtrimet-online-gjate-shitjes-se-produkteve/",
+      "date": "2026-11-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

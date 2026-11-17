@@ -1,0 +1,140 @@
+{
+  "id": "al/whatsapp-votim-kodi",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "sq": "Një kontakt juaj në WhatsApp (llogaria e të cilit është vjedhur tashmë)",
+    "en": "One of your WhatsApp contacts (whose account was already stolen)"
+  },
+  "name": {
+    "sq": "WhatsApp: \"votoni për mua\" ose \"më dërgo kodin\", dhe llogaria juaj vidhet",
+    "en": "WhatsApp: \"vote for me\" or \"send me the code\", and your account is stolen"
+  },
+  "how": {
+    "sq": "Një mik ose i afërm ju shkruan në WhatsApp dhe ju kërkon të votoni në një konkurs, p.sh. për një bursë falas, ose të konfirmoni diçka. Linku hap një faqe që kërkon numrin tuaj të telefonit dhe kodin 6-shifror të verifikimit të WhatsApp. Ai kod është çelësi i llogarisë: me të, mashtruesit e regjistrojnë WhatsApp-in tuaj në pajisjen e tyre dhe u shkruajnë kontakteve tuaja me të njëjtin mesazh ose me kërkesa të tjera. Mesazhi vjen nga dikush që e njihni, sepse edhe ai është mashtruar.",
+    "en": "A friend or relative writes on WhatsApp asking you to vote in a contest, for example for a free scholarship, or to confirm something. The link opens a page asking for your phone number and the 6-digit WhatsApp verification code. That code is the key to your account: with it the scammers register your WhatsApp on their device and message your contacts with the same text or other requests. The message comes from someone you know because they were tricked too."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një kontakt ju kërkon të votoni për dikë në një konkurs ose bursë.",
+        "en": "A contact asks you to vote for someone in a contest or scholarship."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Linku kërkon numrin tuaj të telefonit \"për të votuar\".",
+        "en": "The link asks for your phone number \"to vote\"."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkohet kodi 6-shifror që ju vjen me SMS nga WhatsApp.",
+        "en": "You are asked for the 6-digit code WhatsApp sends you by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sq": "Llogaria juaj kalon në një pajisje tjetër dhe kontaktet tuaja marrin mesazhe.",
+        "en": "Your account moves to another device and your contacts get messages."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Pershendetje! Mbesa e nje shoqes sime eshte ne finale per nje burse studimi falas. Te lutem voto per te, te merr vetem nje minute: [link] 🙏",
+        "en": "Hi! A friend's niece is in the final for a free study scholarship. Please vote for her, it only takes a minute: [link] 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "votim burse whatsapp link",
+      "më kërkoi kodin whatsapp",
+      "kod gjashtëshifror whatsapp mesazh",
+      "llogaria whatsapp vjedhur",
+      "voto për mbesën konkurs",
+      "kodi verifikimit dërguar gabim",
+      "shoku kërkoi kodin sms whatsapp",
+      "ia dhashë kodin mikut llogaria humbi"
+    ],
+    "en": [
+      "vote for a scholarship whatsapp link",
+      "friend asked for my whatsapp code",
+      "six digit whatsapp code message",
+      "my whatsapp account was stolen",
+      "code sent to you by mistake",
+      "friend asked me to forward an sms code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "Asnjë votim i vërtetë nuk kërkon kodin tuaj të WhatsApp.",
+      "Kodi i verifikimit është personal: as një i afërm nuk duhet t'jua kërkojë.",
+      "Linku vjen nga një kontakt, por kërkesa është e pazakontë për të.",
+      "Faqja kërkon numrin e telefonit dhe një kod."
+    ],
+    "en": [
+      "No real vote asks for your WhatsApp code.",
+      "The verification code is personal: not even a relative should ask for it.",
+      "The link comes from a contact, but the request is unusual for them.",
+      "The page asks for your phone number and a code."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos e jepni kurrë kodin; aktivizoni verifikimin me dy hapa në cilësimet e WhatsApp.",
+      "Nëse e keni dhënë, rihyni në WhatsApp me numrin tuaj për të marrë llogarinë mbrapsht dhe paralajmëroni kontaktet.",
+      "Telefononi mikun me zë për t'i thënë se llogaria e tij është vjedhur.",
+      "Denoncojeni te Policia e Shtetit."
+    ],
+    "en": [
+      "Never give out the code; turn on two-step verification in WhatsApp settings.",
+      "If you gave it, log back in to WhatsApp with your number to recover the account and warn your contacts.",
+      "Call your friend by voice to tell them their account was stolen.",
+      "Report it to the State Police."
+    ]
+  },
+  "reportTo": [
+    "al/krimi-kibernetik"
+  ],
+  "sources": [
+    {
+      "title": "Skema mashtrimi për marrjen e llogarive të WhatsApp, policia thirrje qytetarëve: Mbroni të dhënat tuaja, mos klikoni linke të dyshimta",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/skema-mashtrimi-per-marrjen-e-llogarive-te-whatsapp-policia-thirrje-qytetareve-mbroni-te-dhenat-tuaja-mos-klikoni-linke-te-dyshimta/",
+      "date": "2026-07-28"
+    },
+    {
+      "title": "\"Mos bini pre e mashtrimeve!\", policia apel qytetarëve: Kujdes linqet në \"WhatsApp\"!",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/mos-bini-pre-e-mashtrimeve-policia-apel-qytetareve-kujdes-linqet-ne-whatsapp/",
+      "date": "2025-12-30"
+    },
+    {
+      "title": "Albanian Police Warn of Rising WhatsApp Account Hijacking Scam",
+      "publisher": "Albanian Daily News",
+      "url": "https://albaniandailynews.com/news/albanian-police-warn-of-rising-whatsapp-account-hijacking-scam",
+      "date": "2026-07-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "al/i-afermi-kerkon-para-urgjent"
+  ]
+}

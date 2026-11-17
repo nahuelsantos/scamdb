@@ -1,0 +1,136 @@
+{
+  "id": "me/investicije-lazni-oglasi-zvanicnici",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "sr": "Sponzorisani oglas ili „članak“ sa likom premijera ili drugih poznatih ličnosti",
+    "en": "A sponsored ad or “article” featuring the Prime Minister or other well-known people"
+  },
+  "name": {
+    "sr": "Lažna investiciona platforma sa likom premijera: „80 eura dnevno uz mali ulog“",
+    "en": "Fake investment platform featuring the Prime Minister: “80 euros a day from a small deposit”"
+  },
+  "how": {
+    "sr": "Na Facebooku, Instagramu i sajtovima kruže oglasi i lažni novinski članci u kojima premijer ili drugi državni zvaničnici navodno preporučuju investicionu platformu, ponekad sa državnim simbolima i slikama napravljenim vještačkom inteligencijom. Obećava se siguran dnevni prihod uz početnu uplatu od oko 250 eura. Nakon prijave javlja se „savjetnik“, traži uplate i podatke kartice, a novac se više ne može povući.",
+    "en": "Ads and fake news articles circulate on Facebook, Instagram and websites in which the Prime Minister or other state officials supposedly recommend an investment platform, sometimes with state symbols and AI-generated images. A guaranteed daily income is promised for an initial payment of about 250 euros. After you sign up an “adviser” calls, asks for payments and card details, and the money can never be withdrawn."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Oglas ili članak sa poznatom ličnošću koja „preporučuje“ ulaganje.",
+        "en": "An ad or article with a well-known person “recommending” the investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Obećanje sigurne dnevne zarade bez rizika.",
+        "en": "A promise of guaranteed daily earnings with no risk."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Forma traži lične podatke i podatke kartice.",
+        "en": "A form asks for personal and card details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "„Savjetnik“ traži početnu uplatu, pa sve veće iznose.",
+        "en": "An “adviser” asks for a starting deposit, then ever larger amounts."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "EKSKLUZIVNO: Premijer otkrio kako svaki gradjanin Crne Gore moze zaradjivati od 80 eura dnevno. Platforma je podrzana od drzave, potrebno je samo 250 EUR za start. Broj mjesta je ogranicen, prijavite se danas: [link]",
+        "en": "EXCLUSIVE: The Prime Minister revealed how every citizen of Montenegro can earn from 80 euros a day. The platform is backed by the state, you only need 250 EUR to start. Places are limited, sign up today: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "premijer preporučuje investicionu platformu",
+      "oglas zarada 80 eura dnevno",
+      "ulog 250 eura državna platforma",
+      "lažni članak poznata ličnost ulaganje",
+      "savjetnik za kripto traži uplatu",
+      "investicija sa slikom zvaničnika na facebooku",
+      "ministar preporučuje ulaganje",
+      "državni program ulaganja zarada hiljade eura",
+      "platforma za građane mali ulog"
+    ],
+    "en": [
+      "prime minister recommends an investment platform",
+      "ad promising 80 euros a day",
+      "250 euro deposit state platform",
+      "fake article celebrity investment",
+      "crypto adviser asking for a deposit",
+      "minister recommends investing",
+      "state investment programme earn thousands"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Država i zvaničnici ne reklamiraju investicione platforme.",
+      "Zagarantovana zarada bez rizika ne postoji.",
+      "Slike i izjave mogu biti montirane ili napravljene vještačkom inteligencijom."
+    ],
+    "en": [
+      "The state and officials don’t advertise investment platforms.",
+      "Guaranteed earnings with no risk don’t exist.",
+      "Pictures and statements can be edited or made with artificial intelligence."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne ulažite na osnovu oglasa i ne upisujte podatke kartice na takvim stranicama.",
+      "Državne programe provjeravajte samo preko zvaničnih kanala.",
+      "Ako ste uplatili novac ili dali podatke, odmah pozovite banku i prijavite slučaj policiji."
+    ],
+    "en": [
+      "Don’t invest based on ads and don’t enter card details on such pages.",
+      "Check government programmes only through official channels.",
+      "If you paid money or gave details, call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "me/your-bank",
+    "me/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "Policija upozorava na investicionu platformu: Lažni oglasi koriste Spajićevo ime za prevaru građana",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/policija-upozorava-na-investicionu-platformu-lazni-oglasi-koriste-spajicevo-ime-za-prevaru-gradana",
+      "date": "2026-06-24"
+    },
+    {
+      "title": "Internet prevare uzimaju maha: Pogrešni klikovi građane koštali 300.000 eura",
+      "publisher": "Raskrinkavanje",
+      "url": "https://www.raskrinkavanje.me/istrazeno/internet-prevare-uzimaju-maha-pogresni-klikovi-gradane-kostali-300-000-eura/",
+      "date": "2025-11-11"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "me/online-zarada-zadaci-ai"
+  ]
+}

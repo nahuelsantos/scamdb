@@ -1,0 +1,129 @@
+{
+  "id": "me/sms-banka-azuriranje-podataka",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "sr": "„Vaša banka“ (CKB, NLB, Erste i druge), porukom ili mejlom",
+    "en": "“Your bank” (CKB, NLB, Erste and others), by text or email"
+  },
+  "name": {
+    "sr": "Lažna poruka banke: „ažurirajte podatke ili će vam račun biti blokiran“",
+    "en": "Fake bank message: “update your details or your account will be blocked”"
+  },
+  "how": {
+    "sr": "Stiže SMS, Viber poruka ili mejl koji izgleda kao obavještenje vaše banke: račun treba „verifikovati“, podatke ažurirati ili aktivirati novu aplikaciju, inače više nećete moći da ga koristite. Link vodi na lažnu stranicu banke sa sličnom adresom, gdje se upisuju korisničko ime, lozinka, podaci kartice i kodovi. S tim podacima prevaranti ulaze u vaš e-banking i prazne račun.",
+    "en": "A text, Viber message or email arrives that looks like a notice from your bank: the account has to be “verified”, details updated or a new app activated, otherwise you won’t be able to use it. The link leads to a fake bank page with a similar address, where you enter your username, password, card details and codes. With them the scammers log in to your online banking and empty the account."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka „banke“ da je račun ograničen ili da podaci nisu ažurni.",
+        "en": "A message from the “bank” saying the account is restricted or details are out of date."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Prijetnja blokadom ako ne reagujete odmah.",
+        "en": "A threat of blocking if you don’t act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Link ka stranici koja liči na e-banking.",
+        "en": "A link to a page that looks like online banking."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Traže lozinku, podatke kartice ili SMS kod.",
+        "en": "They ask for your password, card details or SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Postovani klijente, zbog novih sigurnosnih propisa Vas pristup elektronskom bankarstvu bice ogranicen. Molimo Vas da u roku od 24h potvrdite svoje podatke kako biste nastavili koristiti uslugu: [link]",
+        "en": "Dear customer, due to new security regulations your access to online banking will be restricted. Please confirm your details within 24h to keep using the service: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "banka traži ažuriranje podataka preko linka",
+      "poruka da će mi račun biti blokiran",
+      "verifikujte račun lažna stranica banke",
+      "aktivirajte novu aplikaciju banke link",
+      "upisao lozinku za e-banking na linku",
+      "mejl od banke traži podatke kartice"
+    ],
+    "en": [
+      "bank asks to update details through a link",
+      "message saying my account will be blocked",
+      "verify your account fake bank page",
+      "activate the new banking app link",
+      "entered my e-banking password on a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sr": [
+      "Banka nikad ne traži lozinku, PIN, podatke kartice ni kodove porukom ili mejlom.",
+      "Adresa stranice se razlikuje od prave za slovo ili dva.",
+      "Rok od 24 sata služi da ne stignete da pozovete banku."
+    ],
+    "en": [
+      "Your bank never asks for your password, PIN, card details or codes by message or email.",
+      "The page address differs from the real one by a letter or two.",
+      "The 24-hour deadline is there so you don’t call the bank."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link. U e-banking ulazite samo preko aplikacije ili adrese koju sami upišete.",
+      "Ako ste upisali podatke, odmah pozovite banku na broj sa kartice i tražite blokadu kartice i pristupa.",
+      "Lažnu poruku i link prijavite Nacionalnom CIRT-u, a ako ste izgubili novac, i policiji na 122."
+    ],
+    "en": [
+      "Don’t open the link. Only log in through the app or an address you type yourself.",
+      "If you entered details, call your bank at once on the number on your card and ask for the card and access to be blocked.",
+      "Report the fake message and link to the National CIRT and, if you lost money, to the police on 122."
+    ]
+  },
+  "reportTo": [
+    "me/your-bank",
+    "me/cirt",
+    "me/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "Policija upozorila na prevare na Vajberu: Pošiljaoci se predstavljaju kao crnogorska pošta ili banka",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/policija-upozorila-na-prevare-na-vajberu-posiljaoci-se-predstavljaju-kao-crnogorska-posta-ili-banka",
+      "date": "2025-12-23"
+    },
+    {
+      "title": "Aktivne fišing kampanje koje ciljaju korisnike CKB banke",
+      "publisher": "Dan",
+      "url": "https://www.dan.co.me/vijesti/drustvo/aktivne-fising-kampanje-koje-ciljaju-korisnike-ckb-banke-5280587",
+      "date": "2025-01-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

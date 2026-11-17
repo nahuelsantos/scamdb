@@ -1,0 +1,132 @@
+{
+  "id": "xk/fake-official-call-money",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "sq": "“Zyrtar policor”, një komandant i njohur ose një person publik",
+    "en": "A “police officer”, a known commander or a public figure"
+  },
+  "name": {
+    "sq": "Telefonatë nga “zyrtari policor” që kërkon para",
+    "en": "Call from a “police officer” asking for money"
+  },
+  "how": {
+    "sq": "Ju telefonon dikush që prezantohet si zyrtar policor, ndonjëherë me emrin e vërtetë të një komandanti rajonal ose të një personi publik, shpesh përmes Viber-it ose WhatsApp-it nga numra të Bosnjës dhe Hercegovinës ose të Malit të Zi. Kërkon rreth 1.000 euro me një pretekst, si “ndihmë” ose për të rregulluar një problem, dhe ju thotë t’i dërgoni përmes Western Union, MoneyGram ose shërbimeve të ngjashme. Pasi dërgoni paratë, komunikimi ndërpritet.",
+    "en": "Someone calls saying they are a police officer, sometimes using the real name of a regional police commander or a public figure, often over Viber or WhatsApp from Bosnian or Montenegrin numbers. They ask for around €1,000 with some excuse, such as “help” or sorting out a problem, and tell you to send it through Western Union, MoneyGram or similar services. Once you send the money, they stop answering."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Ju telefonon dikush që thotë se është zyrtar policor ose person i njohur.",
+        "en": "Someone calls saying they are a police officer or a well-known person."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Numri është i huaj, shpesh në Viber ose WhatsApp.",
+        "en": "The number is foreign, often on Viber or WhatsApp."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Kërkon para urgjentisht, me një arsye që nuk mund ta kontrolloni.",
+        "en": "They ask for money urgently, with a reason you can’t check."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Ju thotë t’i dërgoni paratë me Western Union ose MoneyGram.",
+        "en": "They tell you to send the money by Western Union or MoneyGram."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Caller: Përshëndetje, jam nga Drejtoria Rajonale e Policisë, më njihni nga televizioni. Kam një rast urgjent me një familje në nevojë dhe kam nevojë për 1.000 euro sot. Nuk mund të flas më gjatë, ju dërgoj në Viber emrin për Western Union.",
+        "en": "Caller: Hello, I’m from the Regional Police Directorate, you know me from TV. I have an urgent case with a family in need and I need €1,000 today. I can’t talk longer, I’ll send you the name for Western Union on Viber."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "më thirri një polic dhe më kërkoi para",
+      "zyrtar policor kërkon 1000 euro",
+      "thirrje në viber nga numër i bosnjës",
+      "dërgo paratë me western union",
+      "prezantohet si komandant i policisë",
+      "numër nga mali i zi kërkon ndihmë financiare"
+    ],
+    "en": [
+      "a police officer called and asked me for money",
+      "police officer asking for 1000 euros",
+      "viber call from a bosnian number",
+      "send the money by western union",
+      "says he is a police commander",
+      "montenegrin number asking for financial help"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sq": [
+      "Policia nuk kërkon kurrë para me telefon.",
+      "Numër i huaj që pretendon të jetë zyrtar në Kosovë.",
+      "Kërkesë për transfer parash me Western Union ose MoneyGram."
+    ],
+    "en": [
+      "The police never ask for money over the phone.",
+      "A foreign number claiming to be an official in Kosovo.",
+      "A request to send money through Western Union or MoneyGram."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos dërgoni para. Mbylleni dhe telefononi vetë policinë në 192.",
+      "Nëse keni dërguar para, lajmëroni menjëherë shërbimin e transferit dhe policinë.",
+      "Ruani numrin, mesazhet dhe dëftesën e transferit."
+    ],
+    "en": [
+      "Don’t send money. Hang up and call the police yourself on 192.",
+      "If you sent money, tell the transfer service and the police at once.",
+      "Keep the number, the messages and the transfer receipt."
+    ]
+  },
+  "reportTo": [
+    "xk/police"
+  ],
+  "sources": [
+    {
+      "title": "Thirrje drejtuar qytetarëve që të mos bien pre e mashtrimeve",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/thirrje-drejtuar-qytetareve-qe-te-mos-bien-pre-e-mashtrimeve/",
+      "date": "2025-09-19"
+    },
+    {
+      "title": "Identifikohet personi i dyshuar për disa raste te mashtrimeve, shpallet person në kërkim",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/identifikohet-personi-i-dyshuar-per-disa-raste-te-mashtrimeve-shpallet-person-ne-kerkim/",
+      "date": "2025-10-24"
+    },
+    {
+      "title": "Raste të mashtrimit përmes prezantimit të rremë si zyrtar policor",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/raste-te-mashtrimit-permes-prezantimit-te-rreme-si-zyrtar-policor/",
+      "date": "2025-08-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

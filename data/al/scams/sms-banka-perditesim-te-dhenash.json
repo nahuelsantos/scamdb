@@ -1,0 +1,141 @@
+{
+  "id": "al/sms-banka-perditesim-te-dhenash",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sq": "Emri i bankës suaj (BKT, Raiffeisen, Credins, OTP, Intesa Sanpaolo…) si dërgues i SMS-it",
+    "en": "Your bank's name (BKT, Raiffeisen, Credins, OTP, Intesa Sanpaolo…) as the text sender"
+  },
+  "name": {
+    "sq": "SMS i rremë i bankës: \"përditësoni të dhënat\" ose \"llogaria juaj u bllokua\"",
+    "en": "Fake bank text: \"update your details\" or \"your account has been blocked\""
+  },
+  "how": {
+    "sq": "Vjen një SMS ose email që duket nga banka juaj: llogaria do të bllokohet, ka një veprim të pazakontë ose duhet të përditësoni të dhënat brenda ditës. Linku hap një faqe që kopjon faqen zyrtare të bankës dhe kërkon numrin e kartës, datën e skadimit, kodin CVV, PIN-in, fjalëkalimin e bankingut online dhe kodin OTP që ju vjen në telefon. Me to mashtruesit hyjnë në llogari ose paguajnë me kartën tuaj. Policia e Shtetit ka goditur fushata të tilla në emër të bankave të nivelit të dytë, ndërsa AKSK paralajmëron se mesazhet vijnë edhe me email.",
+    "en": "A text or email that looks like it is from your bank says your account will be blocked, there is unusual activity, or you must update your details today. The link opens a copy of the bank's official site that asks for your card number, expiry date, CVV, PIN, online banking password and the OTP code sent to your phone. With these the scammers get into the account or pay with your card. The State Police have taken down such campaigns in the name of commercial banks, and AKSK warns the messages also arrive by email."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një SMS në emër të bankës thotë se llogaria do të bllokohet nëse nuk veproni sot.",
+        "en": "A text in the bank's name says your account will be blocked unless you act today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Linku hap një faqe që duket si ajo e bankës, por adresa është tjetër.",
+        "en": "The link opens a page that looks like the bank's, but the address is different."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon të dhënat e kartës, PIN-in dhe fjalëkalimin e bankingut.",
+        "en": "The page asks for your card details, PIN and online banking password."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Në fund ju kërkon kodin OTP që ju vjen me SMS, \"për ta konfirmuar\".",
+        "en": "Finally it asks for the OTP code you receive by text, \"to confirm\"."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Klient i nderuar, llogaria juaj do te pezullohet per shkak te mungeses se te dhenave. Verifikoni identitetin tuaj brenda 24 oreve ketu: [link]",
+        "en": "Dear customer, your account will be suspended because of missing details. Verify your identity within 24 hours here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "sms banka përditësoni të dhënat",
+      "mesazh banka llogaria bllokuar link",
+      "faqe false banke kërkon kartën",
+      "dhashë kodin otp faqe banke",
+      "email banka veprim pazakontë",
+      "verifikim identiteti banka sms link"
+    ],
+    "en": [
+      "bank text asking to update my details",
+      "text says my bank account is blocked",
+      "fake bank page asked for card number",
+      "entered otp code on bank link",
+      "email from bank about unusual activity"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "Asnjë bankë nuk kërkon përditësimin e të dhënave përmes SMS-ve ose linkeve të dërguara në telefon.",
+      "Banka nuk ju kërkon kurrë numrin e kartës, PIN-in, fjalëkalimin ose kodin OTP.",
+      "Afati i shkurtër (\"brenda 24 orëve\") është për t'ju nxituar.",
+      "Adresa e faqes nuk është adresa zyrtare e bankës."
+    ],
+    "en": [
+      "No bank asks you to update your details through texts or links sent to your phone.",
+      "Your bank never asks for your card number, PIN, password or OTP code.",
+      "The short deadline (\"within 24 hours\") is there to rush you.",
+      "The page address is not the bank's official address."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos klikoni linkun: hapni vetë aplikacionin e bankës ose telefononi numrin në pjesën e pasme të kartës.",
+      "Nëse keni shkruar të dhënat ose kodin, telefononi menjëherë bankën për të bllokuar kartën dhe bankingun online.",
+      "Denoncojeni mesazhin te Policia e Shtetit (krimi kibernetik) dhe te AKSK.",
+      "Fshijeni mesazhin pasi të keni ruajtur një pamje ekrani."
+    ],
+    "en": [
+      "Do not click the link: open your bank's app yourself or call the number on the back of your card.",
+      "If you entered details or the code, call your bank at once to block the card and online banking.",
+      "Report the message to the State Police (cybercrime) and to AKSK.",
+      "Delete the message after keeping a screenshot."
+    ]
+  },
+  "reportTo": [
+    "al/your-bank",
+    "al/krimi-kibernetik",
+    "al/aksk"
+  ],
+  "sources": [
+    {
+      "title": "\"Jemi banka! Përditësoni të dhënat\" / Mashtronin qytetarët me mesazhe false, arrestohet 25-vjeçari",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/?p=2968552",
+      "date": "2026-05-12"
+    },
+    {
+      "title": "Cybersecurity Authority Warns of Phishing Campaigns Impersonating Banks and Postal Service",
+      "publisher": "Albanian Daily News",
+      "url": "https://albaniandailynews.com/news/cybersecurity-authority-warns-of-phishing-campaigns-impersonating-banks-and-postal-service",
+      "date": "2026-07-10"
+    },
+    {
+      "title": "Mashtrues pas telefonit po vjedhin llogaritë e qytetarëve, Shoqata e Bankave: Kujdes, mos jepni të dhënat",
+      "publisher": "Shqiptarja.com",
+      "url": "https://shqiptarja.com/lajm/mashtrues-pas-telefonit-po-vjedhin-llogarite-e-qytetareve-shoqata-e-bankave-kujdes-mos-jepni-te-dhenat",
+      "date": "2025-01-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "al/telefonate-punonjes-banke-i-rreme"
+  ]
+}

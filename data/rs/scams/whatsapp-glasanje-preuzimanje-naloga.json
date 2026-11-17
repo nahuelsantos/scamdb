@@ -1,0 +1,121 @@
+{
+  "id": "rs/whatsapp-glasanje-preuzimanje-naloga",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "sr": "Poznati kontakt na WhatsApp-u ili SMS „WhatsApp verifikacija”",
+    "en": "A known contact on WhatsApp, or an SMS about “WhatsApp verification”"
+  },
+  "name": {
+    "sr": "Glasanje ili „verifikacija naloga”: link kojim preuzimaju vaš WhatsApp",
+    "en": "A vote or “account verification”: a link that takes over your WhatsApp"
+  },
+  "how": {
+    "sr": "Od poznatog kontakta stiže molba da glasate za dete ili rođaka na takmičenju, ili poruka da „potvrdite” ili „verifikujete” WhatsApp nalog. Link vodi kroz „registraciju” u kojoj upišete broj i kod ili odobrite povezivanje novog uređaja. Time prevaranti preuzimaju nalog, čitaju poruke i pišu vašim kontaktima tražeći hitnu pozajmicu ili šireći isti link.",
+    "en": "A known contact asks you to vote for a child or relative in a contest, or a message asks you to “confirm” or “verify” your WhatsApp account. The link takes you through a “registration” where you enter your number and a code or approve linking a new device. That hands the scammers your account: they read your chats and write to your contacts asking for an urgent loan or spreading the same link."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka od poznatog kontakta ili „WhatsApp-a” sa linkom.",
+        "en": "A message from a known contact or “WhatsApp” with a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Traži se broj telefona i kod koji stigne porukom.",
+        "en": "Your phone number and the code you receive are requested."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sr": "„Samo danas”, glasanje se završava.",
+        "en": "“Today only”, voting closes."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Ćao! Izvini što smaram 🙈 Sestričina mi je u finalu takmičenja za najbolji crtež, može glas? Samo klikneš, ukucaš broj i potvrdiš kodom koji dobiješ: [link] Hvala ti puno ❤️",
+        "en": "Hi! Sorry to bother you 🙈 My niece is in the final of a best-drawing contest, can you vote? Just click, type your number and confirm with the code you get: [link] Thanks so much ❤️"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "glasanje takmičenje link whatsapp kod",
+      "poruka verifikujte whatsapp nalog link",
+      "drugarica traži glas za dete takmičenje",
+      "izgubio pristup whatsapp nalogu posle linka",
+      "povezani uređaji nepoznat uređaj whatsapp",
+      "гласање линк ватсап код",
+      "glasajte za dete nagrada unesite broj telefona",
+      "šifra iz sms poruke za glasanje"
+    ],
+    "en": [
+      "vote contest link whatsapp code",
+      "message to verify my whatsapp account link",
+      "friend asks me to vote for her child in a contest",
+      "lost access to whatsapp after clicking a link",
+      "unknown device in whatsapp linked devices"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "sr": [
+      "Glasanje koje traži vaš broj i kod iz poruke.",
+      "WhatsApp ne šalje linkove za „verifikaciju” naloga.",
+      "Neočekivan zahtev za glas od nekoga ko inače ne piše tako."
+    ],
+    "en": [
+      "A vote that asks for your number and a code from a text.",
+      "WhatsApp doesn’t send “verification” links for your account.",
+      "An unexpected request to vote from someone who doesn’t usually write like that."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link i nikome ne dajte kod.",
+      "Proverite Podešavanja → Povezani uređaji i uklonite nepoznate. Uključite verifikaciju u dva koraka.",
+      "Ako je nalog preuzet, upozorite kontakte drugim kanalom i prijavite na Sajber straži."
+    ],
+    "en": [
+      "Don’t open the link and never give the code to anyone.",
+      "Check Settings → Linked devices and remove unknown ones. Turn on two-step verification.",
+      "If your account was taken, warn your contacts another way and report it on Sajber straža."
+    ]
+  },
+  "reportTo": [
+    "rs/sajber-straza",
+    "rs/cert-prijava"
+  ],
+  "sources": [
+    {
+      "title": "Aktuelna fišing kampanja usmerena na korisnike aplikacije WhatsApp",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://www.cert.rs/en/obavestenje/1513-Aktuelna-fi%C5%A1ing-kampanja-usmerena-na-korisnike-aplikacije-WhatsApp.html",
+      "date": "2026-02-12"
+    },
+    {
+      "title": "MUP upozorava: Nova prevara – ne klikćite na link, preuzeće vam naloge; A onda se obraćaju vašim najbližima",
+      "publisher": "B92",
+      "url": "https://www.b92.net/info/drustvo/232424/mup-srbije-oprez-zbog-prevare-preko-whatsapp-a/vest",
+      "date": "2026-05-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

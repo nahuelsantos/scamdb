@@ -1,0 +1,126 @@
+{
+  "id": "al/kredi-online-e-rreme",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "email"
+  ],
+  "sender": {
+    "sq": "Një \"përfaqësues\" i një banke ose institucioni financiar, në rrjete sociale, faqe interneti ose email",
+    "en": "A \"representative\" of a bank or financial institution, on social media, a website or by email"
+  },
+  "name": {
+    "sq": "Ofertë e rreme për kredi online: aplikoni shpejt, por jepni të dhënat bankare ose paguani paraprakisht",
+    "en": "Fake online loan offer: apply fast, but hand over bank details or pay up front"
+  },
+  "how": {
+    "sq": "Në rrjete sociale, në faqe interneti të dyshimta ose me email shfaqen oferta për kredi të shpejta, pa garanci dhe pa dokumente, shpesh me logon e një banke të njohur. \"Përfaqësuesi\" ju kërkon të aplikoni online me kartë identiteti, të dhëna të kartës bankare ose kode, ose të paguani paraprakisht një tarifë \"dosjeje\" apo \"sigurimi\". Kredia nuk vjen kurrë; me të dhënat tuaja mund të boshatisin llogarinë. Policia e Shtetit paralajmëron se qëllimi është marrja e të dhënave personale dhe financiare.",
+    "en": "On social media, dubious websites or by email there are offers of quick loans with no guarantee and no paperwork, often with a well-known bank's logo. The \"representative\" asks you to apply online with your ID card, bank card details or codes, or to pay an up-front \"file\" or \"insurance\" fee. The loan never comes; with your details they can empty your account. The State Police warn that the aim is to obtain personal and financial data."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një reklamë ofron kredi të shpejtë pa garanci, me logon e një banke.",
+        "en": "An ad offers a quick loan with no guarantee, using a bank's logo."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sq": "\"Përfaqësuesi\" ju shkruan në Messenger ose WhatsApp dhe kërkon dokumentet.",
+        "en": "The \"representative\" writes on Messenger or WhatsApp and asks for documents."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkon të dhënat e kartës ose kodin që ju vjen \"për verifikim\".",
+        "en": "They ask for your card details or the code you receive \"for verification\"."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkon të paguani një tarifë para se të lëvrohet kredia.",
+        "en": "They ask you to pay a fee before the loan is released."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Kredi deri ne 1.500.000 leke pa garanci dhe pa vertetim page! Miratim brenda dites. Shkruani ne mesazh emrin dhe numrin e kartes per verifikim, nje konsulent ju kontakton menjehere.",
+        "en": "Loans up to 1,500,000 lek with no guarantee and no proof of salary! Approval the same day. Send your name and card number by message for verification, an adviser will contact you right away."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "kredi online pa garanci facebook",
+      "kredi shpejtë kërkojnë kartën bankare",
+      "paguaj tarifë para kredisë",
+      "ofertë kredie logo bankës rreme",
+      "konsulent kredie kërkoi kodin"
+    ],
+    "en": [
+      "quick loan without guarantee on facebook",
+      "loan offer asked for my card details",
+      "pay a fee before getting the loan",
+      "fake bank logo loan advert",
+      "loan adviser asked for my code"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "sq": [
+      "Kredi pa garanci, pa dokumente dhe e miratuar brenda ditës.",
+      "Bankat nuk japin kredi përmes Messenger ose WhatsApp dhe nuk kërkojnë kodin e kartës.",
+      "Ju kërkojnë të paguani diçka para se të merrni kredinë.",
+      "Logoja e bankës në reklamë nuk provon që oferta është e saj."
+    ],
+    "en": [
+      "A loan with no guarantee, no paperwork and approved the same day.",
+      "Banks don't grant loans through Messenger or WhatsApp and don't ask for card codes.",
+      "You are asked to pay something before getting the loan.",
+      "A bank logo in the ad doesn't prove the offer is the bank's."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Kontaktoni bankën vetëm përmes kontakteve zyrtare në faqen e saj.",
+      "Mos dërgoni para, të dhëna bankare ose dokumente personale te persona të paidentifikuar.",
+      "Nëse keni dhënë të dhënat e kartës, bllokojeni kartën te banka.",
+      "Denoncojeni te Policia e Shtetit."
+    ],
+    "en": [
+      "Contact the bank only through the official contacts on its website.",
+      "Don't send money, bank details or personal documents to unidentified people.",
+      "If you gave card details, have the card blocked by your bank.",
+      "Report it to the State Police."
+    ]
+  },
+  "reportTo": [
+    "al/your-bank",
+    "al/krimi-kibernetik",
+    "al/policia-kallezim"
+  ],
+  "sources": [
+    {
+      "title": "Oferta mashtruese për kredi online, policia apel qytetarëve: Tregoni kujdes, marrin të dhënat bankare!",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/oferta-mashtruese-per-kredi-online-policia-apel-qytetareve-tregoni-kujdes-marrin-te-dhenat-bankare/",
+      "date": "2026-01-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

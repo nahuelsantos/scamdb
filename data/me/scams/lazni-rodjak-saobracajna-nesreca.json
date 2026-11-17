@@ -1,0 +1,132 @@
+{
+  "id": "me/lazni-rodjak-saobracajna-nesreca",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "sr": "„Rođak“ ili član porodice, telefonom",
+    "en": "A “relative” or family member, by phone"
+  },
+  "name": {
+    "sr": "Lažni rođak zove: „imao sam saobraćajnu nesreću, hitno mi treba novac“",
+    "en": "Fake relative calls: “I’ve had a car accident, I need money urgently”"
+  },
+  "how": {
+    "sr": "Zove nepoznata osoba koja se predstavlja kao rođak ili neko blizak, ili kao neko ko zove u njegovo ime. Kaže da je doživio saobraćajnu nesreću i da hitno treba novac da se situacija „riješi“. Traži da novac predate osobi koja će doći ili da ga uplatite odmah. Na meti su najčešće stariji građani.",
+    "en": "An unknown person calls, posing as a relative or someone close, or as someone calling on their behalf. They say they have had a car accident and urgently need money to “sort out” the situation. They ask you to hand the money to someone who will come by or to pay it straight away. Older people are the most common targets."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poziv „rođaka“ ili nekog u njegovo ime.",
+        "en": "A call from a “relative” or someone on their behalf."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Saobraćajna nesreća i hitna potreba za novcem.",
+        "en": "A car accident and an urgent need for money."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Novac treba predati osobi koja dolazi ili uplatiti odmah.",
+        "en": "The money must be handed to someone who comes by or paid at once."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "Traže da ne prekidate vezu i da nikoga ne zovete.",
+        "en": "They ask you not to hang up and not to call anyone."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Ujna, ja sam... ne mogu sad da pričam dugo, udario sam auto kod Danilovgrada, čovjek je povrijeđen. Policija kaže da se sve može riješiti ako odmah platim štetu, treba mi 2.000 eura. Poslaću ti druga da dođe po novac, samo nemoj zvati mamu da se ne sekira.",
+        "en": "Auntie, it’s me... I can’t talk long now, I hit a car near Danilovgrad and a man is hurt. The police say it can all be settled if I pay the damage right away, I need 2,000 euros. I’ll send a friend to collect the money, just don’t call mum so she doesn’t worry."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "zvao rođak imao saobraćajnu nesreću traži novac",
+      "hitno treba novac za nesreću",
+      "poslaće druga da dođe po novac",
+      "poziv da unuk udario auto",
+      "lažni rođak telefonom",
+      "nemoj nikome reći treba platiti štetu",
+      "udes na putu treba novac za štetu",
+      "zove neko u ime sina ili unuka",
+      "šteta se mora platiti na licu mjesta"
+    ],
+    "en": [
+      "relative called saying he had a car accident and needs money",
+      "urgent money for an accident",
+      "sending a friend to collect the money",
+      "call saying my grandson crashed a car",
+      "fake relative on the phone",
+      "son had a crash pay the damage now",
+      "son’s friend calls asking for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "keep_on_line",
+    "secrecy"
+  ],
+  "redFlags": {
+    "sr": [
+      "Pravi rođak će razumjeti da prvo provjerite.",
+      "Štete u saobraćaju se ne „rješavaju“ predajom gotovine nepoznatoj osobi.",
+      "Traže tajnost da ne biste pozvali ostale članove porodice."
+    ],
+    "en": [
+      "A real relative will understand that you check first.",
+      "Traffic damage isn’t “settled” by handing cash to a stranger.",
+      "They ask for secrecy so you don’t call other family members."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Prekinite poziv i nazovite rođaka na broj koji već imate.",
+      "Ne dajte novac nikome ko dođe po njega.",
+      "Odmah prijavite poziv policiji na 122 ili u najbližoj stanici; ako neko dolazi po novac, zovite 112."
+    ],
+    "en": [
+      "Hang up and call the relative on the number you already have.",
+      "Don’t give money to anyone who comes to collect it.",
+      "Report the call to the police on 122 or at the nearest station straight away; if someone is coming for the money, call 112."
+    ]
+  },
+  "reportTo": [
+    "me/policija-122",
+    "me/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Policija upozorava: Lažni telefonski pozivi i pokušaji prevare u Podgorici",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/policija-upozorava-lazni-telefonski-pozivi-i-pokusaji-prevare-u-podgorici",
+      "date": "2025-08-22"
+    },
+    {
+      "title": "UP upozorila građane: Pokušaji telefonskih prevara na području Podgorice",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/up-upozorila-gradane-pokusaji-telefonskih-prevara-na-podrucju-podgorice",
+      "date": "2025-09-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

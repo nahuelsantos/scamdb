@@ -1,0 +1,128 @@
+{
+  "id": "rs/poreska-uprava-lazni-mejl",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "sr": "„Poreska uprava” sa adrese koja nije @purs.gov.rs",
+    "en": "“Poreska uprava” (Tax Administration) from an address that isn’t @purs.gov.rs"
+  },
+  "name": {
+    "sr": "Lažni mejl Poreske uprave: povraćaj poreza, kamata ili dug, otvorite prilog",
+    "en": "Fake Tax Administration email: tax refund, interest or debt, open the attachment"
+  },
+  "how": {
+    "sr": "Stiže mejl ili poruka „od Poreske uprave” o povraćaju poreza, neplaćenom porezu ili kamati. Traži da otvorite prilog, kliknete na link ili „ažurirate bankovne podatke” da biste dobili povraćaj. Polje pošiljaoca može da prikaže i ime službenika, ali prava adresa nije na domenu purs.gov.rs. Prilog može da zarazi računar, a link da ukrade podatke kartice i računa.",
+    "en": "An email or message “from the Tax Administration” arrives about a tax refund, unpaid tax or interest. It asks you to open an attachment, click a link or “update your bank details” to get the refund. The sender field may even show an official’s name, but the real address isn’t on the purs.gov.rs domain. The attachment can infect your computer and the link can steal card and account details."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Mejl u ime Poreske uprave sa nezvanične adrese.",
+        "en": "An email in the name of the Tax Administration from an unofficial address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Povraćaj ili dug: otvorite prilog ili link.",
+        "en": "A refund or debt: open the attachment or link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Traže bankovne podatke ili podatke kartice za „povraćaj”.",
+        "en": "They want bank or card details for the “refund”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Poštovani poreski obvezniče, utvrđena vam je preplata poreza na dohodak građana u iznosu od 18.420 RSD. Da bi povraćaj bio izvršen, potrebno je da ažurirate podatke o tekućem računu putem obrasca u prilogu. Rok za dostavu je 5 radnih dana. Poreska uprava Republike Srbije",
+        "en": "Dear taxpayer, you have been found to have overpaid personal income tax by 18,420 RSD. For the refund to be made, please update your current account details using the attached form. The deadline is 5 working days. Tax Administration of the Republic of Serbia"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "mejl poreska uprava povraćaj poreza prilog",
+      "poreska traži ažuriranje bankovnih podataka",
+      "obaveštenje o kamati neplaćeni porez link",
+      "adresa nije purs.gov.rs poreska uprava mejl",
+      "povraćaj preplaćenog poreza kartica podaci",
+      "пореска управа мејл поврат пореза"
+    ],
+    "en": [
+      "tax administration email refund attachment",
+      "tax office asks to update bank details",
+      "interest notice unpaid tax link",
+      "tax email not from purs.gov.rs",
+      "refund of overpaid tax card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Poreska uprava piše samo sa adresa na domenu @purs.gov.rs.",
+      "Prilog ili link uz obećanje povraćaja.",
+      "Traže podatke kartice ili računa preko mejla.",
+      "Kratak rok i pretnja kamatom."
+    ],
+    "en": [
+      "The Tax Administration only writes from addresses on the @purs.gov.rs domain.",
+      "An attachment or link with a promised refund.",
+      "Card or account details requested by email.",
+      "A short deadline and a threat of interest."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte prilog i link i ne šaljite podatke. Obrišite mejl.",
+      "Svoje poreske obaveze proverite sami, prijavom na zvanični portal Poreske uprave ili eUpravu.",
+      "Ako ste uneli podatke kartice, zovite banku i prijavite incident CERT-u."
+    ],
+    "en": [
+      "Don’t open the attachment or link and don’t send any details. Delete the email.",
+      "Check your tax yourself by logging in to the Tax Administration’s official portal or eUprava.",
+      "If you entered card details, call your bank and report it to CERT."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/cert-prijava",
+    "rs/sajber-straza"
+  ],
+  "sources": [
+    {
+      "title": "PORESKA UPRAVA: Pokušaji zloupotrebe elektronske pošte u ime Poreske uprave",
+      "publisher": "Paragraf Lex (prenosi Poresku upravu)",
+      "url": "https://www.paragraf.rs/dnevne-vesti/211026/211026-vest10.html",
+      "date": "2026-10-19"
+    },
+    {
+      "title": "PORESKA UPRAVA: Obaveštenje o pokušajima zloupotrebe elektronske pošte u ime Poreske uprave Republike Srbije",
+      "publisher": "Paragraf Lex (prenosi Poresku upravu)",
+      "url": "https://www.paragraf.rs/dnevne-vesti/270426/270426-vest9.html",
+      "date": "2026-04-24"
+    },
+    {
+      "title": "Aktuelna nova fišing kampanja koja zloupotrebljava naziv Poreske uprave Republike Srbije",
+      "publisher": "Nacionalni CERT Republike Srbije",
+      "url": "https://cert.rs/en/obavestenje/1444-Aktuelna-nova-fi%C5%A1ing-kampanja-koja-zloupotrebljava-naziv-Poreske-uprave-Republike-Srbije.html",
+      "date": "2025-10-01"
+    }
+  ],
+  "updated": "2026-11-17"
+}

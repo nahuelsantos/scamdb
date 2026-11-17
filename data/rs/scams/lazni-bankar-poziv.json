@@ -1,0 +1,130 @@
+{
+  "id": "rs/lazni-bankar-poziv",
+  "country": "rs",
+  "lang": "sr",
+  "status": "fading",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "sr": "Poziv „iz banke”, „agencije” ili „poreske”, ponekad sa lažiranim brojem",
+    "en": "A call “from the bank”, an “agency” or the “tax office”, sometimes from a spoofed number"
+  },
+  "name": {
+    "sr": "Lažni službenik banke zove: sumnjiva transakcija, recite podatke ili kod",
+    "en": "Fake bank employee calls: suspicious transaction, give your details or code"
+  },
+  "how": {
+    "sr": "Zove osoba koja se predstavlja kao službenik banke ili druge institucije i već zna deo vaših podataka. Javlja da je nalog ugrožen ili da postoji sumnjiva transakcija i traži da potvrdite JMBG, broj računa, broj kartice, kod iz poruke ili da „hitno nešto uradite”, uz pritisak i strah od blokade. Sa tim podacima prazne račun.",
+    "en": "Someone calls claiming to be a bank or other institution employee and already knows some of your details. They say your account is at risk or there’s a suspicious transaction and ask you to confirm your personal ID number, account or card number, a code from a text, or to “act urgently”, using pressure and fear of a block. With those details they empty the account."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poziv „banke” koji zna deo vaših podataka.",
+        "en": "A call from the “bank” that knows some of your details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Sumnjiva transakcija, nalog ugrožen.",
+        "en": "A suspicious transaction, your account at risk."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Traže kod iz poruke, PIN ili podatke kartice.",
+        "en": "They ask for the code from a text, PIN or card details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sr": "Ostanite na vezi dok „rešavamo”.",
+        "en": "Stay on the line while “we fix it”."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Dobar dan, ovde Jelena iz sektora za bezbednost platnih kartica. Imamo pokušaj plaćanja od 64.000 dinara u inostranstvu sa vaše kartice. Da bismo ga stopirali, pročitajte mi kod koji vam upravo stiže porukom. Ne prekidajte vezu.",
+        "en": "Good afternoon, this is Jelena from the payment card security department. There’s an attempted payment of 64,000 dinars abroad from your card. To stop it, read me the code you’re receiving by text right now. Don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "zvao službenik banke sumnjiva transakcija kod",
+      "banka telefonom traži jmbg i broj kartice",
+      "lažni bankar traži kod iz poruke",
+      "poziv iz banke nalog ugrožen prebacite novac",
+      "neko iz banke zna moje podatke traži pin",
+      "zovu iz banke da zaustave plaćanje pročitajte kod",
+      "službenik banke traži broj iz poruke da poništi transakciju"
+    ],
+    "en": [
+      "bank employee called suspicious transaction code",
+      "bank on the phone asks for personal id and card number",
+      "fake banker asks for code from text",
+      "call from bank account at risk move money",
+      "someone from the bank knows my details asks for pin"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "sr": [
+      "Banka nikada ne traži kod, PIN ili lozinku telefonom.",
+      "Prikazani broj može biti lažiran.",
+      "Pozivalac već zna deo vaših podataka da bi delovao uverljivo.",
+      "Pritisak i strah od blokade."
+    ],
+    "en": [
+      "Banks never ask for a code, PIN or password over the phone.",
+      "The displayed number can be spoofed.",
+      "The caller already knows some of your details to seem credible.",
+      "Pressure and fear of a block."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Prekinite vezu i sami pozovite banku na broj sa poleđine kartice.",
+      "Ne diktirajte kodove i ne prebacujte novac.",
+      "Ako ste dali podatke, odmah blokirajte karticu i aplikaciju."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on the back of your card.",
+      "Don’t read out codes and don’t move money.",
+      "If you gave details, block your card and app at once."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/policija-192",
+    "rs/nbs-zastita-korisnika"
+  ],
+  "sources": [
+    {
+      "title": "Upozorenje na prevaru: Građani da ne odgovaraju na poruke „svojih banaka”",
+      "publisher": "N1",
+      "url": "https://n1info.rs/biznis/upozorenje-na-prevaru-gradjani-da-ne-odgovaraju-na-poruke-svojih-banaka/",
+      "date": "2024-06-17"
+    },
+    {
+      "title": "Forum za prevenciju zloupotreba platnih kartica PKS upozorio na opasne poruke",
+      "publisher": "Biznis.rs",
+      "url": "https://biznis.rs/vesti/srbija/forum-za-prevenciju-zloupotreba-platnih-kartica-pks-upozorio-na-opasne-poruke/",
+      "date": "2024-06-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

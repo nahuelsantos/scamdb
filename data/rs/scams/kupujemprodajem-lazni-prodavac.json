@@ -1,0 +1,113 @@
+{
+  "id": "rs/kupujemprodajem-lazni-prodavac",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "online"
+  ],
+  "sender": {
+    "sr": "Oglas na KupujemProdajem ili drugom oglasniku, prodavac sa tuđim podacima",
+    "en": "An ad on KupujemProdajem or another classifieds site, a seller using someone else’s identity"
+  },
+  "name": {
+    "sr": "Lažni prodavac na oglasniku: plaćate pouzećem, u paketu nije ono što ste kupili",
+    "en": "Fake seller on a classifieds site: you pay cash on delivery, the parcel holds something else"
+  },
+  "how": {
+    "sr": "Na oglasniku se prodaje skup telefon ili drugi uređaj po povoljnoj ceni. Prodavac šalje paket pouzećem ili traži uplatu unapred, koristeći tuđe ili ukradene lične podatke. Kad platite i otvorite paket, u njemu su sveće, dezodoransi ili bezvredne stvari, a prodavac nestaje.",
+    "en": "An expensive phone or other device is offered on a classifieds site at a good price. The seller ships cash on delivery or asks for payment in advance, using someone else’s or stolen identity details. When you pay and open the parcel, it holds candles, deodorants or worthless items, and the seller disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Povoljan oglas za skup uređaj.",
+        "en": "A bargain ad for an expensive device."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Uplata unapred ili pouzećem pre otvaranja paketa.",
+        "en": "Payment in advance or cash on delivery before opening the parcel."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sr": "Prodavac požuruje: „ima još zainteresovanih”.",
+        "en": "The seller hurries you: “others are interested”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Telefon je nov, zapakovan, poklon koji mi ne treba. Šaljem danas Post Expressom pouzećem, platite kuriru i to je to. Imam još dvoje zainteresovanih pa mi javite odmah ako uzimate.",
+        "en": "The phone is new, still sealed, a gift I don’t need. I’ll send it today by courier cash on delivery, you pay the courier and that’s it. Two other people are interested, so tell me right away if you’re taking it."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "kupio telefon na kupujem prodajem u paketu sveće",
+      "lažni prodavac oglas ajfon pouzeće",
+      "platio kuriru paket bez telefona",
+      "prodavac nestao posle uplate oglasnik",
+      "jeftin ajfon oglas prevara kp"
+    ],
+    "en": [
+      "bought phone on classifieds parcel had candles",
+      "fake seller ad iphone cash on delivery",
+      "paid courier parcel without phone",
+      "seller vanished after payment classifieds",
+      "cheap iphone ad scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sr": [
+      "Cena znatno ispod tržišne za nov uređaj.",
+      "Prodavac ne dozvoljava lično preuzimanje i proveru.",
+      "Pritisak da odlučite odmah.",
+      "Novi profil bez istorije ili ocena."
+    ],
+    "en": [
+      "A price well below market for a new device.",
+      "The seller won’t allow pickup in person and a check.",
+      "Pressure to decide at once.",
+      "A new profile with no history or ratings."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Kupujte uz lično preuzimanje ili otvaranje paketa pre plaćanja kad je moguće.",
+      "Sačuvajte oglas, poruke i potvrdu o plaćanju.",
+      "Prijavite prodavca oglasniku i podnesite prijavu policiji."
+    ],
+    "en": [
+      "Buy with pickup in person, or open the parcel before paying when possible.",
+      "Keep the ad, the messages and the payment receipt.",
+      "Report the seller to the site and file a police report."
+    ]
+  },
+  "reportTo": [
+    "rs/policija-192",
+    "rs/sajber-straza"
+  ],
+  "sources": [
+    {
+      "title": "Kazne i do 5 godina zatvora za prevaru na Kupujem-prodajem",
+      "publisher": "Kurir",
+      "url": "https://www.kurir.rs/crna-hronika/9670452/otkrivena-prevara-kupujem-prodajem",
+      "date": "2025-05-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

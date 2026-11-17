@@ -1,0 +1,121 @@
+{
+  "id": "mk/fake-cheap-phones-social",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "mk": "Спонзорирана објава на социјалните мрежи што се претставува како позната продавница за техника",
+    "en": "A sponsored social media post posing as a well-known electronics shop"
+  },
+  "name": {
+    "mk": "Лажна распродажба на телефони: „оштетена амбалажа“, нови мобилни за мала сума",
+    "en": "Fake phone sale: \"damaged packaging\", new phones for a small sum"
+  },
+  "how": {
+    "mk": "На Фејсбук или Инстаграм се шири објава дека позната продавница за техника распродава најнови мобилни телефони за мал дел од цената, наводно поради оштетена амбалажа или „внатрешна програма“. Линкот води до лажна страница каде оставате лични податоци и картичка за „достава“ или мала уплата. Телефон не стигнува, а податоците се злоупотребуваат.",
+    "en": "A post spreads on Facebook or Instagram saying a well-known electronics shop is selling the newest phones for a fraction of the price, supposedly because of damaged packaging or an \"internal programme\". The link goes to a fake page where you leave personal and card details for \"delivery\" or a small payment. No phone arrives and the details are misused."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Објава со лого на позната продавница и нереално ниска цена.",
+        "en": "A post with a well-known shop's logo and an unrealistically low price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "mk": "Изговор: оштетена амбалажа, тајна или внатрешна понуда.",
+        "en": "An excuse: damaged packaging, a secret or internal offer."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Ограничени количини, „само денес“.",
+        "en": "Limited stock, \"today only\"."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mk": "Линк за нарачка со картичка на непозната страница.",
+        "en": "An order link with card payment on an unknown site."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Распродажба на залиха! Поради оштетени кутии, 200 нови паметни телефони се продаваат за само 990 денари. Апаратите се неотпакувани и со гаранција. Останаа уште 17 парчиња, нарачајте пред полноќ: [линк]",
+        "en": "Stock clearance! Because of damaged boxes, 200 new smartphones are being sold for just 990 denars. The devices are unopened and under warranty. 17 left; order before midnight: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "телефони оштетена амбалажа евтино",
+      "нов мобилен за 990 денари реклама",
+      "продавница техника распродажба фејсбук линк",
+      "нарачав телефон не пристигна",
+      "тајна понуда мобилни социјални мрежи"
+    ],
+    "en": [
+      "phones with damaged packaging cheap",
+      "new phone for a few euros ad",
+      "electronics shop clearance facebook link",
+      "ordered a phone and it never came",
+      "secret phone offer on social media"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "mk": [
+      "Нов телефон за мал дел од цената е невозможна понуда.",
+      "Продавниците немаат тајни страници за специјални понуди.",
+      "Линкот не води до официјалната страница на продавницата."
+    ],
+    "en": [
+      "A new phone for a fraction of the price is an impossible offer.",
+      "Shops don't have secret pages for special offers.",
+      "The link doesn't lead to the shop's official website."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Проверете ја понудата на официјалната страница на продавницата.",
+      "Не внесувајте картичка на страница од реклама.",
+      "Пријавете ја објавата во полиција и на социјалната мрежа; ако сте платиле, јавете се во банката."
+    ],
+    "en": [
+      "Check the offer on the shop's official website.",
+      "Don't enter your card on a site from an ad.",
+      "Report the post to the police and the social network; if you paid, call your bank."
+    ]
+  },
+  "reportTo": [
+    "mk/your-bank",
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt"
+  ],
+  "sources": [
+    {
+      "title": "МВР ПРЕДУПРЕДУВА: Интернет измама преку лажни објави",
+      "publisher": "Радио Лидер",
+      "url": "https://lider.mk/mvr-predupreduva-nova-internet-izmama-preku-lazhni-objavi-za-evtini-telefoni-zaradi-oshtetena-ambalazha-ne-nasednuvajte/",
+      "date": "2025-07-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

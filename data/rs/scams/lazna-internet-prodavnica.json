@@ -1,0 +1,130 @@
+{
+  "id": "rs/lazna-internet-prodavnica",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "sr": "Sajt koji liči na poznatu prodavnicu ili brend, često preko reklame na mrežama",
+    "en": "A site that looks like a well-known shop or brand, often via a social media ad"
+  },
+  "name": {
+    "sr": "Lažna internet prodavnica: veliki popust, platite karticom, roba ne stiže",
+    "en": "Fake online shop: big discount, pay by card, nothing arrives"
+  },
+  "how": {
+    "sr": "Reklama ili link vodi na sajt koji izgleda kao prodavnica poznatog brenda, a adresa se razlikuje za jedno slovo, ili na prodavnicu sa neverovatno niskim cenama (klima uređaji, obuća, elektronika). Plaćate karticom unapred. Roba ne stiže, a sa kartice se kasnije skidaju i drugi iznosi.",
+    "en": "An ad or link leads to a site that looks like a well-known brand’s shop with an address one letter off, or to a shop with unbelievably low prices (air conditioners, shoes, electronics). You pay by card in advance. Nothing arrives, and more charges later appear on the card."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Reklama sa velikim popustom.",
+        "en": "An ad with a big discount."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Sajt sa adresom koja liči na pravu.",
+        "en": "A site with an address that looks like the real one."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Akcija traje još samo danas.",
+        "en": "The sale ends today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Plaćanje karticom unapred.",
+        "en": "Payment by card in advance."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "RASPRODAJA ZALIHA: inverter klima 12000 BTU sa montažom samo 19.990 din! Ostalo još 7 komada, akcija važi do ponoći. Poruči odmah: [link]",
+        "en": "STOCK CLEARANCE: 12000 BTU inverter air conditioner with installation for just 19,990 dinars! Only 7 left, offer ends at midnight. Order now: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "naručio preko sajta roba nije stigla",
+      "lažni sajt poznatog brenda popust kartica",
+      "klima uređaj jeftino internet prevara",
+      "sajt liči na pravu prodavnicu jedno slovo razlike",
+      "posle kupovine na sajtu skidaju novac sa kartice",
+      "лажна продавница сајт попуст"
+    ],
+    "en": [
+      "ordered from a website nothing arrived",
+      "fake brand website discount card",
+      "cheap air conditioner online scam",
+      "site looks like real shop one letter different",
+      "after buying on site money taken from card"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Cene daleko ispod uobičajenih.",
+      "Adresa sajta se razlikuje od zvanične za slovo ili nastavak.",
+      "Samo plaćanje karticom unapred, bez pouzeća.",
+      "Nema podataka o firmi, PIB-a ni adrese."
+    ],
+    "en": [
+      "Prices far below normal.",
+      "The site address differs from the official one by a letter or ending.",
+      "Only card payment in advance, no cash on delivery.",
+      "No company details, tax ID or address."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Proverite adresu sajta i podatke o prodavcu pre kupovine. Za internet koristite posebnu karticu sa limitom.",
+      "Ako ste platili, odmah zovite banku i tražite blokadu i povraćaj.",
+      "Lažnu prodavnicu prijavite na Sajber straži."
+    ],
+    "en": [
+      "Check the site address and seller details before buying. Use a separate, limited card online.",
+      "If you paid, call your bank at once and ask for a block and a chargeback.",
+      "Report the fake shop on Sajber straža."
+    ]
+  },
+  "reportTo": [
+    "rs/sajber-straza",
+    "rs/your-bank",
+    "rs/nbs-zastita-korisnika"
+  ],
+  "sources": [
+    {
+      "title": "Prva uspešna blokada internet prevare putem platforme Sajber straža",
+      "publisher": "Kurir",
+      "url": "https://www.kurir.rs/crna-hronika/10023686/prva-uspesna-blokada-internet-prevare-putem-platforme-sajber-straza",
+      "date": "2026-06-15"
+    },
+    {
+      "title": "NA MREŽI IH IZULI IZ PAPUČA: Nova prevara na internetu, kriminalci zloupotrebljavaju poznati brend obuće",
+      "publisher": "Večernje novosti",
+      "url": "https://www.novosti.rs/ekonomija/vesti/1517829/mrezi-izuli-papuca-nova-prevara-internetu-kriminalci-zloupotrebljavaju-poznati-brend-obuce",
+      "date": "2025-08-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

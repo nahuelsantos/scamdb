@@ -1,0 +1,145 @@
+{
+  "id": "ba/lazni-bankar-poziv",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "bs": "„Vaša banka“, njena služba sigurnosti ili odjel za kartice",
+    "en": "“Your bank”, its security service or card department"
+  },
+  "name": {
+    "bs": "Lažni bankar: „primijetili smo sumnjivu transakciju, prebacite novac“",
+    "en": "Fake bank employee: “we spotted a suspicious transaction, move your money”"
+  },
+  "how": {
+    "bs": "Zove mirna, ljubazna osoba koja tvrdi da je iz vaše banke. Na ekranu se može pojaviti i pravi broj banke, jer se broj pozivaoca lako lažira. Kaže da je na vašem računu primijećena sumnjiva transakcija i da novac odmah treba prebaciti na „siguran račun“ ili da joj diktirate kod iz SMS-a ili aplikacije. Žurba je namjerna: da ne stignete nazvati banku sami.",
+    "en": "A calm, friendly person calls claiming to be from your bank. The bank’s real number may even show on screen, because caller ID is easy to fake. They say a suspicious transaction was spotted on your account and that the money must be moved to a “safe account” right away, or that you must read out a code from a text or the app. The rush is deliberate: so you don’t have time to call the bank yourself."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "Poziv „iz banke“: na računu je sumnjiva transakcija.",
+        "en": "A call “from the bank”: there is a suspicious transaction on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Hitno je, ne prekidajte vezu dok se ne „riješi“.",
+        "en": "It’s urgent; don’t hang up until it’s “sorted”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "bs": "Traže PIN, lozinku ili kod koji vam je stigao SMS-om.",
+        "en": "They ask for your PIN, password or the code you got by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "bs": "Ili da novac prebacite na „siguran račun“.",
+        "en": "Or that you move the money to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "Dobar dan, zovem iz sigurnosne službe vaše banke. Upravo pokušavaju sa vaše kartice platiti 2.400 KM u inostranstvu. Da zaštitimo sredstva, prebacićemo ih na privremeni zaštićeni račun. Molim vas, nemojte spuštati slušalicu i pročitajte mi kod koji vam sad stiže porukom.",
+        "en": "Good afternoon, I’m calling from your bank’s security service. Someone is trying to pay 2,400 KM abroad with your card right now. To protect the funds we’ll move them to a temporary protected account. Please don’t hang up and read me the code that is arriving by text now."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "zvali iz banke sumnjiva transakcija",
+      "bankar traži kod iz poruke",
+      "prebacite novac na siguran račun",
+      "lažni službenik banke telefonom",
+      "pozvali sa broja banke traže pin",
+      "služba sigurnosti banke traži lozinku",
+      "pokušaj plaćanja karticom u inostranstvu zvali iz banke",
+      "službenik banke kaže da ne prekidam vezu",
+      "pročitajte mi kod koji vam stiže porukom"
+    ],
+    "en": [
+      "bank called about a suspicious transaction",
+      "bank employee asked for the code from a text",
+      "move your money to a safe account",
+      "fake bank employee on the phone",
+      "call from the bank number asking for my pin",
+      "bank security asked for my password",
+      "bank called about a card payment attempt abroad",
+      "bank employee told me not to hang up",
+      "read me the code you are getting by text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "bs": [
+      "Banka telefonom nikad ne traži PIN, lozinku ni kod iz SMS-a, niti da prebacujete novac.",
+      "„Siguran račun“ ne postoji.",
+      "Broj na ekranu ne dokazuje ništa: može biti lažiran.",
+      "Pritisak da ne prekidate vezu služi tome da ne provjerite."
+    ],
+    "en": [
+      "Your bank never asks by phone for your PIN, password or a code from a text, or for you to move money.",
+      "A “safe account” doesn’t exist.",
+      "The number on screen proves nothing: it can be faked.",
+      "The pressure to stay on the line is there to stop you checking."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Prekinite poziv, bez rasprave.",
+      "Nazovite banku sami, na broj sa kartice ili sa službene stranice, ne preko dugmeta za povratni poziv.",
+      "Ako ste već dali podatke, odmah tražite blokadu kartice i pristupa, pa prijavite policiji (122)."
+    ],
+    "en": [
+      "Hang up, don’t argue.",
+      "Call the bank yourself on the number on your card or its official website, not with the call-back button.",
+      "If you already gave details, ask straight away for your card and access to be blocked, then report it to the police (122)."
+    ]
+  },
+  "reportTo": [
+    "ba/your-bank",
+    "ba/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "\"Zovem iz vaše banke, primijetili smo sumnjivu transakciju na vašem računu\"",
+      "publisher": "N1 BiH",
+      "url": "https://n1info.ba/vijesti/ekonomija/zovem-iz-vase-banke-primijetili-smo-sumnjivu-transakciju-na-vasem-racunu/",
+      "date": "2026-08-26"
+    },
+    {
+      "title": "Budite oprezni sa SMS-ovima i internet stranicama: Udruženje banaka BiH upozorilo na opasne prevare",
+      "publisher": "Klix.ba",
+      "url": "https://www.klix.ba/biznis/finansije/budite-oprezni-sa-sms-ovima-i-internet-stranicama-udruzenje-banaka-bih-upozorilo-na-opasne-prevare/260717121",
+      "date": "2026-07-17"
+    },
+    {
+      "title": "Upozorenje MUP-a na prevaru koja se širi BiH",
+      "publisher": "N1 BiH (MUP Unsko-sanskog kantona)",
+      "url": "https://n1info.ba/vijesti/upozorenje-mup-a-na-prevaru-koja-se-siri-bih/",
+      "date": "2023-04-14"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ba/sms-banka-azuriranje-aplikacije"
+  ]
+}

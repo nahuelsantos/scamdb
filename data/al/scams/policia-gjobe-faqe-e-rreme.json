@@ -1,0 +1,128 @@
+{
+  "id": "al/policia-gjobe-faqe-e-rreme",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "sq": "\"Policia e Shtetit\" ose \"Policia Rrugore\", nga një numër i panjohur",
+    "en": "\"State Police\" or \"Traffic Police\", from an unknown number"
+  },
+  "name": {
+    "sq": "Faqe e rreme e Policisë së Shtetit: \"Keni marrë gjobë\", paguajeni me kartë",
+    "en": "Fake State Police site: \"You have been fined\", pay by card"
+  },
+  "how": {
+    "sq": "Një SMS thotë se keni marrë gjobë dhe ju dërgon në një faqe që imiton Policinë e Shtetit, me stemën, foto të godinës dhe grafika si të shërbimeve të emergjencës. Faqja ju çon hap pas hapi: fillimisht numri i telefonit \"për konfirmim identiteti\", pastaj targa e automjetit, në fund të dhënat bankare për të paguar gjobën. Qëllimi është të vjedhin të dhënat e kartës, PIN-in dhe kodet e hyrjes. Policia thotë se nuk kërkon konfirmim identiteti apo pagesë gjobash përmes linkeve me SMS.",
+    "en": "A text says you have been fined and sends you to a page imitating the State Police, with its emblem, photos of its headquarters and emergency-service graphics. The page walks you step by step: first your phone number \"to confirm your identity\", then your vehicle plate, finally your bank details to pay the fine. The goal is to steal card details, PIN and login codes. The police say they never ask for identity confirmation or fine payments through links sent by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një SMS thotë se keni një gjobë nga policia.",
+        "en": "A text says you have a fine from the police."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Linku hap një faqe me stemën e Policisë, por me adresë të panjohur.",
+        "en": "The link opens a page with the Police emblem but an unknown address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon numrin e telefonit dhe targën \"për verifikim\".",
+        "en": "The page asks for your phone number and plate \"for verification\"."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Në fund kërkon të dhënat e kartës dhe kodin e konfirmimit.",
+        "en": "Finally it asks for card details and the confirmation code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Policia e Shtetit: Ndaj jush eshte vendosur nje gjobe per shkelje rrugore. Per te shmangur procedimin, paguani brenda 48 oreve: [link]",
+        "en": "State Police: A fine has been issued against you for a traffic offence. To avoid proceedings, pay within 48 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "sms policia gjobë link",
+      "keni marrë gjobë policia mesazh",
+      "faqe false policisë targa kartë",
+      "gjobë rrugore pagesë online link",
+      "policia kërkon të dhënat bankare gjobë"
+    ],
+    "en": [
+      "text from police about a fine",
+      "fake police site asked for plate number",
+      "pay traffic fine by link",
+      "police fine page asked for card",
+      "you have been fined text message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "Policia nuk kërkon konfirmim identiteti apo pagesë gjobash përmes linkeve me SMS.",
+      "Stema dhe fotot e Policisë kopjohen lehtë; kontrolloni adresën e faqes.",
+      "Faqja kërkon numrin e telefonit, targën dhe kartën njëra pas tjetrës.",
+      "Ju kërcënojnë me procedim nëse nuk paguani menjëherë."
+    ],
+    "en": [
+      "The police never ask for identity confirmation or fine payments through links sent by text.",
+      "The Police emblem and photos are easy to copy; check the page address.",
+      "The page asks for your phone number, plate and card one after another.",
+      "They threaten proceedings if you don't pay at once."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos klikoni; verifikoni gjobat vetëm përmes kanaleve zyrtare të Policisë së Shtetit ose e-Albania.",
+      "Nëse keni dhënë të dhënat e kartës, telefononi menjëherë bankën.",
+      "Denoncojeni faqen te Drejtoria e Krimit Kibernetik.",
+      "Fshijeni mesazhin."
+    ],
+    "en": [
+      "Do not click; check fines only through official State Police or e-Albania channels.",
+      "If you gave card details, call your bank at once.",
+      "Report the page to the Cybercrime Directorate.",
+      "Delete the message."
+    ]
+  },
+  "reportTo": [
+    "al/your-bank",
+    "al/krimi-kibernetik",
+    "al/aksk"
+  ],
+  "sources": [
+    {
+      "title": "\"You have been fined...\"/ The Cybercrime Directorate warns: Beware of fraudulent sites that imitate the State Police",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/en/you-have-been-fined--the-cybercrime-directorate-warns-against-fraudulent-sites-that-imitate-the-state-police/",
+      "date": "2026-01-21"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "al/e-albania-sms-gjobe"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "me/epcg-povrat-preplate-email",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "sr": "„Elektroprivreda Crne Gore (EPCG)“ ili drugo komunalno preduzeće, mejlom",
+    "en": "“Elektroprivreda Crne Gore (EPCG)” or another utility, by email"
+  },
+  "name": {
+    "sr": "Lažni mejl EPCG-a: „duplo ste platili račun, preuzmite povraćaj“",
+    "en": "Fake EPCG email: “you paid your bill twice, claim your refund”"
+  },
+  "how": {
+    "sr": "Stiže mejl u ime EPCG-a da ste račun za struju platili dva puta i da imate pravo na povraćaj novca. Da biste ga dobili, treba otvoriti link i potvrditi lične i bankovne podatke. Stranica je lažna i podaci kartice završavaju kod prevaranata. EPCG ne traži potvrdu podataka na ovaj način.",
+    "en": "An email arrives in the name of EPCG saying you paid your electricity bill twice and are entitled to a refund. To get it you have to open a link and confirm your personal and banking details. The page is fake and your card details end up with the scammers. EPCG doesn’t ask you to confirm details this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Mejl „EPCG-a“ o duplo plaćenom računu.",
+        "en": "An email from “EPCG” about a bill paid twice."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Obećan povraćaj novca.",
+        "en": "A promised refund."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Link za potvrdu podataka kartice ili računa.",
+        "en": "A link to confirm card or account details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Postovani korisnice, utvrdili smo da je Vas racun za elektricnu energiju za prethodni mjesec placen dva puta. Iznos od 38,40 EUR bice vracen na Vasu karticu nakon potvrde podataka. Zahtjev za povrat podnesite ovdje: [link]",
+        "en": "Dear customer, we found that your electricity bill for last month was paid twice. The amount of 38.40 EUR will be returned to your card after you confirm your details. Submit the refund request here: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "epcg mejl povraćaj novca",
+      "duplo plaćen račun za struju povrat",
+      "potvrdite podatke kartice za povraćaj",
+      "elektroprivreda traži bankovne podatke",
+      "mejl da imam preplatu na računu"
+    ],
+    "en": [
+      "epcg email refund",
+      "electricity bill paid twice refund",
+      "confirm card details for a refund",
+      "power company asks for bank details",
+      "email saying I overpaid my bill"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "sr": [
+      "Za povraćaj vam niko ne treba broj kartice, CVV ni PIN.",
+      "EPCG ne traži lične ni bankovne podatke mejlom.",
+      "Adresa pošiljaoca ne odgovara pravoj adresi preduzeća."
+    ],
+    "en": [
+      "Nobody needs your card number, CVV or PIN to give you a refund.",
+      "EPCG doesn’t ask for personal or banking details by email.",
+      "The sender’s address doesn’t match the company’s real address."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link i ne odgovarajte na mejl.",
+      "Stanje računa provjerite sami preko zvaničnih kanala EPCG-a.",
+      "Odmah se javite svojoj banci na broj sa kartice ili iz aplikacije i tražite blokadu kartice ako ste upisali njene podatke.",
+      "Lažnu poruku i link prijavite Nacionalnom CIRT-u, a ako ste izgubili novac, i policiji na 122."
+    ],
+    "en": [
+      "Don’t open the link or reply to the email.",
+      "Check your account balance yourself through EPCG’s official channels.",
+      "Call your bank straight away on the number on your card or in the app and ask for the card to be blocked if you entered its details.",
+      "Report the fake message and link to the National CIRT and, if you lost money, to the police on 122."
+    ]
+  },
+  "reportTo": [
+    "me/cirt",
+    "me/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "EPCG upozorava građane na lažne imejl poruke",
+      "publisher": "Standard",
+      "url": "https://standard.co.me/drustvo/epcg-upozorava-gradjane-na-lazne-imejl-poruke",
+      "date": "2026-11-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

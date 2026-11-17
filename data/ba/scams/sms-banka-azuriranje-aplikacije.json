@@ -1,0 +1,133 @@
+{
+  "id": "ba/sms-banka-azuriranje-aplikacije",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "bs": "„Vaša banka“ (SMS ili Viber s imenom banke)",
+    "en": "“Your bank” (a text or Viber message with the bank’s name)"
+  },
+  "name": {
+    "bs": "Lažna poruka banke: „ažurirajte mobilno bankarstvo ili će usluga biti obustavljena“",
+    "en": "Fake bank message: “update your mobile banking or the service will be suspended”"
+  },
+  "how": {
+    "bs": "Stiže SMS ili Viber poruka u ime banke: morate ažurirati aplikaciju mobilnog bankarstva, potvrditi identitet ili podatke, inače će račun ili usluga biti blokirani. Link vodi na stranicu koja izgleda kao bančina i traži broj kartice, PIN, CVC, JMB ili jednokratni kod. S tim podacima prevaranti ulaze u vaš račun i prazne ga.",
+    "en": "A text or Viber message arrives in your bank’s name: you must update the mobile banking app or confirm your identity or details, otherwise your account or service will be blocked. The link leads to a page that looks like the bank’s and asks for your card number, PIN, CVC, personal ID number (JMB) or a one-time code. With that the scammers get into your account and empty it."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "Poruka „banke“: aplikacija ili račun bit će blokirani.",
+        "en": "A “bank” message: the app or account will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Rok je kratak, danas ili za nekoliko sati.",
+        "en": "The deadline is short, today or within hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bs": "Link na stranicu koja nije službena stranica banke.",
+        "en": "A link to a page that isn’t the bank’s official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bs": "Traže PIN, CVC, JMB ili kod iz SMS-a.",
+        "en": "They ask for your PIN, CVC, ID number or a code from a text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "Postovani klijentu, vasa usluga mobilnog bankarstva bice obustavljena zbog neazuriranih podataka. Za nastavak koristenja potvrdite podatke do 18h: [link]",
+        "en": "Dear customer, your mobile banking service will be suspended because your details are out of date. To keep using it, confirm your details by 6 pm: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "poruka banke ažurirajte aplikaciju",
+      "mobilno bankarstvo bit će obustavljeno link",
+      "banka traži potvrdu podataka putem linka",
+      "lažni sms banke pin cvc",
+      "viber poruka banka blokada računa",
+      "upisao podatke kartice na stranicu banke iz poruke"
+    ],
+    "en": [
+      "bank text asking to update the app",
+      "mobile banking will be suspended link",
+      "bank asks to confirm details via a link",
+      "fake bank text asking for pin and cvc",
+      "viber message from bank about account block",
+      "entered card details on a bank page from a message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "bs": [
+      "Banke ne ažuriraju podatke preko linkova u porukama; ažuriranje ide samo kroz službenu aplikaciju.",
+      "Prijetnja blokadom i kratak rok.",
+      "Adresa stranice nije službena adresa banke.",
+      "Niko legitiman ne traži PIN i CVC zajedno."
+    ],
+    "en": [
+      "Banks don’t update details through links in messages; updates only happen in the official app.",
+      "A threat of blocking and a short deadline.",
+      "The page address isn’t the bank’s official address.",
+      "No legitimate party asks for your PIN and CVC together."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Ne otvarajte link. Otvorite aplikaciju banke sami ili nazovite banku na broj sa kartice.",
+      "Ako ste unijeli podatke, odmah tražite blokadu kartice i osporavanje transakcija.",
+      "Sačuvajte poruku i prijavite policiji (122)."
+    ],
+    "en": [
+      "Don’t open the link. Open the bank’s app yourself or call the bank on the number on your card.",
+      "If you entered details, immediately ask for the card to be blocked and the transactions disputed.",
+      "Keep the message and report it to the police (122)."
+    ]
+  },
+  "reportTo": [
+    "ba/your-bank",
+    "ba/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "Lažne akcije i poruke banaka: Policija otkrila kako prevaranti građanima u BiH prazne račune",
+      "publisher": "Radio Sarajevo (MUP Tuzlanskog kantona)",
+      "url": "https://radiosarajevo.ba/vijesti/crna-hronika/lazne-akcije-poruke-banaka-prevaranti-bih/660814",
+      "date": "2026-11-14"
+    },
+    {
+      "title": "Budite oprezni sa SMS-ovima i internet stranicama: Udruženje banaka BiH upozorilo na opasne prevare",
+      "publisher": "Klix.ba",
+      "url": "https://www.klix.ba/biznis/finansije/budite-oprezni-sa-sms-ovima-i-internet-stranicama-udruzenje-banaka-bih-upozorilo-na-opasne-prevare/260717121",
+      "date": "2026-07-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ba/lazni-bankar-poziv"
+  ]
+}

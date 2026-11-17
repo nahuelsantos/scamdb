@@ -1,0 +1,137 @@
+{
+  "id": "xk/fake-police-email-summons",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "sq": "“Drejtori i Përgjithshëm i Policisë”, “Krimi kibernetik”, FBI, INTERPOL",
+    "en": "“Police Director General”, “cybercrime unit”, FBI, INTERPOL"
+  },
+  "name": {
+    "sq": "Email i rremë nga “policia”: thirrje gjyqësore ose “arrestim i menjëhershëm”",
+    "en": "Fake “police” email: court summons or “immediate arrest”"
+  },
+  "how": {
+    "sq": "Vjen një email me logo, vula dhe nënshkrime të falsifikuara të Policisë së Kosovës, të Agjencisë së Sigurisë Kibernetike, FBI-së ose INTERPOL-it. Titulli është “Ftesë / arrestim i menjëhershëm” ose “Thirrje gjyqësore”, me numër dosjeje, dhe thotë se jeni nën hetim për krime kibernetike e keni 24 orë kohë të paraqiteni ose të përgjigjeni. Qëllimi është t’ju frikësojë që të përgjigjeni, të dërgoni të dhëna ose para, ose të hapni bashkëngjitjen. Policia thotë se këto nuk janë dokumente zyrtare.",
+    "en": "An email arrives with forged logos, stamps and signatures of the Kosovo Police, the Cyber Security Agency, the FBI or INTERPOL. It is titled “Invitation / immediate arrest” or “Court summons”, with a case number, and says you are under investigation for cybercrime and have 24 hours to report or reply. The aim is to scare you into replying, sending details or money, or opening the attachment. The police say these are not official documents."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Vjen një email në emër të drejtorit të policisë ose të agjencive ndërkombëtare.",
+        "en": "An email arrives in the name of the police director or international agencies."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Thotë se jeni nën hetim ose se ka një urdhër gjykate kundër jush.",
+        "en": "It says you are under investigation or that there is a court order against you."
+      }
+    },
+    {
+      "text": {
+        "sq": "Ju jep 24 orë për t’u përgjigjur ose për t’u paraqitur.",
+        "en": "It gives you 24 hours to reply or report."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Kërkon përgjigje me të dhëna personale, ose t’i hapni dokumentin e bashkangjitur.",
+        "en": "It asks you to reply with personal details, or to open the attached document."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "THIRRJE GJYQËSORE – Dosja nr. [numër]. Ju njoftojmë se ndaj jush është hapur hetim për shpërndarje të përmbajtjeve të paligjshme në internet. Keni 24 orë kohë të përgjigjeni në këtë adresë me shpjegimin tuaj, përndryshe urdhri për arrestim do t’i dërgohet njësisë së krimit kibernetik. Drejtori i Përgjithshëm",
+        "en": "COURT SUMMONS – Case no. [number]. We inform you that an investigation has been opened against you for sharing illegal content online. You have 24 hours to reply to this address with your explanation, otherwise the arrest order will be sent to the cybercrime unit. Director General"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "email nga policia për arrestim",
+      "thirrje gjyqësore me email",
+      "keni 24 orë kohë të paraqiteni",
+      "email në emër të drejtorit të policisë",
+      "jeni nën hetim për krime kibernetike",
+      "email me logo të fbi dhe interpol"
+    ],
+    "en": [
+      "email from the police about an arrest",
+      "court summons by email",
+      "you have 24 hours to report",
+      "email in the name of the police director",
+      "you are under investigation for cybercrime",
+      "email with FBI and Interpol logos"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "sq": [
+      "Policia nuk dërgon thirrje apo urdhra arresti me email nga adresa të çfarëdoshme.",
+      "Logo të shumë institucioneve në një dokument të vetëm, me afat 24 orë.",
+      "Ju kërkohet të përgjigjeni me email, jo të shkoni vetë në stacion."
+    ],
+    "en": [
+      "The police do not send summons or arrest orders by email from random addresses.",
+      "Logos of many agencies on one document, with a 24-hour deadline.",
+      "You are asked to reply by email rather than go to a station yourself."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos u përgjigjni, mos hapni bashkëngjitjen dhe mos dërgoni të dhëna apo para.",
+      "Dërgojeni email-in te Policia e Kosovës në adresën e saj zyrtare.",
+      "Nëse keni dyshime, telefononi policinë në 192 ose shkoni në stacion."
+    ],
+    "en": [
+      "Don’t reply, don’t open the attachment and don’t send details or money.",
+      "Forward the email to the Kosovo Police at its official address.",
+      "If you are unsure, call the police on 192 or go to a station."
+    ]
+  },
+  "reportTo": [
+    "xk/police",
+    "xk/kos-cert"
+  ],
+  "sources": [
+    {
+      "title": "Policia e Kosovës fton qytetarët për kujdes ndaj mesazheve mashtruese",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/policia-e-kosoves-fton-qytetaret-per-kujdes-ndaj-mesazheve-mashtruese/",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "Njoftim nga Policia e Kosovës rreth një shkrese (e-mail) me përmbajtje mashtrimi",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/njoftim-nga-policia-e-kosoves-rreth-nje-shkrese-e-mail-me-permbajtje-mashtrimi/",
+      "date": "2026-07-24"
+    },
+    {
+      "title": "Njoftim zyrtar lidhur me qarkullimin e e-mailave të rreme/false",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/njoftim-zyrtar-lidhur-me-qarkullimin-e-e-mailave-te-rreme-false-3/",
+      "date": "2025-12-16"
+    },
+    {
+      "title": "“Ftesë – arrestim i menjëhershëm”, Policia e Kosovës njofton lidhur me qarkullimin e e-mailave të rreme",
+      "publisher": "Telegrafi",
+      "url": "https://telegrafi.com/ftese-arrestim-i-menjehershem-policia-e-kosoves-njofton-lidhur-me-qarkullimin-e-e-mailave-te-rreme/",
+      "date": "2025-11-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

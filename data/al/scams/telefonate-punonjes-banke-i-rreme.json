@@ -1,0 +1,138 @@
+{
+  "id": "al/telefonate-punonjes-banke-i-rreme",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "sq": "Një \"punonjës i bankës\": në ekran mund të shfaqet emri ose logoja e bankës",
+    "en": "A \"bank employee\": the bank's name or logo may show on the screen"
+  },
+  "name": {
+    "sq": "Telefonatë nga \"punonjësi i bankës\" që kërkon të dhënat e kartës dhe kodet",
+    "en": "Call from a \"bank employee\" asking for card details and codes"
+  },
+  "how": {
+    "sq": "Ju telefonon dikush që prezantohet si punonjës i bankës suaj. Telefonata bëhet shpesh përmes internetit, ndaj në ekran mund të shfaqet emri ose logoja e bankës; ndonjëherë flet edhe në gjuhë të huaj që të duket më zyrtar. Ju thotë se ka një problem me kartën ose llogarinë dhe ju kërkon numrin e kartës, të dhëna personale ose kodin që ju vjen me SMS, \"për ta zgjidhur\". Me këto mashtruesi hyn në llogarinë tuaj. AKSK paralajmëron se numrat dhe të dhënat e kontaktit i marrin nga rrjetet sociale dhe burime të tjera online.",
+    "en": "Someone calls claiming to be from your bank. The call is often made over the internet, so the bank's name or logo may show on screen; sometimes the caller speaks a foreign language to seem more official. They say there is a problem with your card or account and ask for your card number, personal details or the code you receive by text, \"to fix it\". With these the scammer gets into your account. AKSK warns that numbers and contact details are gathered from social networks and other online sources."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Ju telefonon \"banka\": në ekran shfaqet emri ose logoja e saj.",
+        "en": "\"The bank\" calls you: its name or logo shows on screen."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Ju thonë se karta ose llogaria ka një problem që duhet zgjidhur menjëherë.",
+        "en": "They say your card or account has a problem that must be fixed immediately."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkojnë numrin e kartës dhe kodin që sapo ju erdhi me SMS.",
+        "en": "They ask for your card number and the code that just arrived by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sq": "Ju mbajnë në linjë që të mos kontrolloni me bankën.",
+        "en": "They keep you on the line so you cannot check with the bank."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Mirëdita, ju flet Elona nga departamenti i sigurisë së bankës. Kemi vënë re një tentativë pagese me kartën tuaj nga jashtë shtetit. Për ta anuluar, më konfirmoni numrin e kartës dhe kodin që do t'ju vijë tani me mesazh. Mos e mbyllni telefonin.",
+        "en": "Good afternoon, this is Elona from the bank's security department. We have noticed an attempted payment with your card from abroad. To cancel it, confirm your card number and the code that will now arrive by text. Do not hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "telefonatë punonjës banke kërkon kodin",
+      "më morën nga banka kartën",
+      "logo banke ekran telefonatë",
+      "departamenti sigurisë bankës telefonoi",
+      "kërkuan numrin kartës telefon",
+      "anulim pagese kartë telefonatë",
+      "telefonoi banka blerje refuzuar kartë",
+      "lexova kodin telefon punonjësit"
+    ],
+    "en": [
+      "bank employee called asking for code",
+      "caller showed bank logo on screen",
+      "bank security department called me",
+      "asked for card number on the phone",
+      "cancel a payment on my card call",
+      "read the code to the bank caller"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "sq": [
+      "Bankat nuk kërkojnë kurrë të dhëna personale, kredenciale ose kode sigurie në telefon.",
+      "Emri ose logoja e bankës në ekran nuk provon asgjë: telefonatat përmes internetit e falsifikojnë lehtë.",
+      "Ju nxitojnë dhe nuk ju lënë ta mbyllni telefonin.",
+      "Ju kërkojnë kodin që sapo ju erdhi me SMS."
+    ],
+    "en": [
+      "Banks never ask for personal details, credentials or security codes on the phone.",
+      "The bank's name or logo on screen proves nothing: internet calls fake it easily.",
+      "They rush you and won't let you hang up.",
+      "They ask for the code that just arrived by text."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mbylleni telefonin dhe mos jepni asnjë të dhënë.",
+      "Telefononi vetë bankën në numrin zyrtar në pjesën e pasme të kartës ose në aplikacion.",
+      "Nëse keni dhënë të dhëna ose kode, kërkoni menjëherë bllokimin e kartës.",
+      "Denoncojeni te Policia e Shtetit dhe te banka."
+    ],
+    "en": [
+      "Hang up and give no details.",
+      "Call your bank yourself on the official number on the back of your card or in the app.",
+      "If you gave details or codes, ask for the card to be blocked at once.",
+      "Report it to the State Police and to the bank."
+    ]
+  },
+  "reportTo": [
+    "al/your-bank",
+    "al/krimi-kibernetik",
+    "al/policia-kallezim"
+  ],
+  "sources": [
+    {
+      "title": "Fraudulent calls from \"banks\"/ Cybersecurity experts: Do not give out personal information",
+      "publisher": "Alfapress",
+      "url": "https://alfapress.al/english/aktualitet/telefonata-mashtruese-nga-banka-ekspertet-e-sigurise-kibernetike-mos--i188266",
+      "date": "2026-03-14"
+    },
+    {
+      "title": "Cybersecurity Authority Warns of Phishing Campaigns Impersonating Banks and Postal Service",
+      "publisher": "Albanian Daily News",
+      "url": "https://albaniandailynews.com/news/cybersecurity-authority-warns-of-phishing-campaigns-impersonating-banks-and-postal-service",
+      "date": "2026-07-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "al/sms-banka-perditesim-te-dhenash"
+  ]
+}

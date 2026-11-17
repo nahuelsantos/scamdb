@@ -1,0 +1,128 @@
+{
+  "id": "al/kura-mrekullibese-lajme-te-rreme",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "sq": "Faqe Facebook ose kanale YouTube me emra si portale lajmesh",
+    "en": "Facebook pages or YouTube channels with news-portal-like names"
+  },
+  "name": {
+    "sq": "Lajme të rreme për persona të njohur që shesin \"kura mrekullibërëse\"",
+    "en": "Fake news about well-known people that sells \"miracle cures\""
+  },
+  "how": {
+    "sq": "Faqe në Facebook dhe kanale në YouTube, shpesh me tekste dhe zëra të krijuar me inteligjencë artificiale, publikojnë lajme tronditëse e të rreme: një këngëtar ka vdekur, një politikan është arrestuar. Linku, shpesh i fshehur në komente, çon në një faqe që imiton një media të njohur dhe reklamon kura \"mrekullibërëse\" për prostatën, dhimbjet e kyçeve e të tjera, me \"mjekë\" dhe dëshmi të rreme. Ju kërkojnë numrin e telefonit, ju telefonojnë për adresën dhe produkti, që nuk vlen asgjë, paguhet në dorëzim. BIRN ka gjetur rrjete të tilla me qindra mijë ndjekës që synojnë shqiptarët.",
+    "en": "Facebook pages and YouTube channels, often with AI-generated text and voices, publish shocking fake news: a singer has died, a politician has been arrested. The link, often hidden in the comments, leads to a page imitating a well-known media outlet and advertising \"miracle\" cures for the prostate, joint pain and more, with fake \"doctors\" and testimonials. They ask for your phone number, call you for your address, and the worthless product is paid for on delivery. BIRN has found such networks with hundreds of thousands of followers targeting Albanians."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një lajm tronditës për një person të njohur ju bën të klikoni.",
+        "en": "Shocking news about a well-known person makes you click."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja imiton një portal lajmesh dhe reklamon një kurë \"mrekullibërëse\".",
+        "en": "The page imitates a news portal and advertises a \"miracle\" cure."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Oferta vlen \"vetëm sot\" dhe sasitë janë \"të kufizuara\".",
+        "en": "The offer is valid \"today only\" and stock is \"limited\"."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Lini numrin e telefonit dhe paguani në dorëzim për një produkt pa vlerë.",
+        "en": "You leave your phone number and pay on delivery for a worthless product."
+      },
+      "signal": "too_good_to_be_true"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "LAJM I FUNDIT: Mjeku i njohur zbulon sekretin që e fshehin farmacitë! Dhimbjet e kyçeve zhduken për 7 ditë. Vetëm sot -50%, paguani në dorëzim. Shkruani numrin tuaj këtu: [link]",
+        "en": "BREAKING: Famous doctor reveals the secret pharmacies hide! Joint pain gone in 7 days. Today only -50%, pay on delivery. Leave your number here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "lajm vdekje këngëtari facebook link",
+      "kurë mrekullibërëse prostata reklamë",
+      "krem dhimbje kyçesh paguaj dorëzim",
+      "faqe lajmesh rreme mjek reklamë",
+      "video inteligjencë artificiale kurë",
+      "porosita ilaç facebook nuk bën",
+      "lajm rremë vdiq aktori facebook",
+      "postim tronditës link komente"
+    ],
+    "en": [
+      "fake celebrity death news link",
+      "miracle cure prostate advert",
+      "joint pain cream pay on delivery",
+      "fake news site doctor advert",
+      "ordered remedy from facebook useless",
+      "shocking post with link in comments"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "sq": [
+      "Lajmi tronditës nuk gjendet në asnjë media të njohur.",
+      "Linku është i fshehur në komente dhe çon në një faqe tjetër nga ajo që duket.",
+      "Një produkt që \"shëron\" sëmundje serioze në pak ditë.",
+      "\"Vetëm sot\", \"sasi të kufizuara\" dhe dëshmi \"mjekësh\" që nuk i gjeni dot."
+    ],
+    "en": [
+      "The shocking news is not on any established outlet.",
+      "The link is hidden in the comments and leads somewhere other than it seems.",
+      "A product that \"cures\" serious illness in a few days.",
+      "\"Today only\", \"limited stock\" and \"doctor\" testimonials you can't verify."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Kontrolloni lajmin në media të njohura para se të klikoni.",
+      "Mos lini numrin e telefonit ose adresën në faqe që shesin kura mrekullibërëse; pyesni mjekun ose farmacistin.",
+      "Raportoni faqen ose videon në Facebook ose YouTube.",
+      "Raportoni faqen te AKSK."
+    ],
+    "en": [
+      "Check the news on established outlets before clicking.",
+      "Don't leave your phone number or address on sites selling miracle cures; ask your doctor or pharmacist.",
+      "Report the page or video on Facebook or YouTube.",
+      "Report the site to AKSK."
+    ]
+  },
+  "reportTo": [
+    "al/aksk",
+    "al/krimi-kibernetik"
+  ],
+  "sources": [
+    {
+      "title": "Si \"luhet\" me jetën e personazheve të njohur/ BIRN: \"Jetë & Yje\", tituj karrem dhe lajme të kobshme për të shitur kura \"mrekullibërëse\"",
+      "publisher": "BalkanWeb (BIRN)",
+      "url": "https://www.balkanweb.com/?p=2892586",
+      "date": "2026-01-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

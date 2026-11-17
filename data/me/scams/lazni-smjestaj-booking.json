@@ -1,0 +1,138 @@
+{
+  "id": "me/lazni-smjestaj-booking",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "online",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "sr": "„Smještaj“ ili „hotel“, preko Bookinga, oglasa ili poruke",
+    "en": "An “apartment” or “hotel”, via Booking, an ad or a message"
+  },
+  "name": {
+    "sr": "Lažni smještaj i poruke o rezervaciji: „potvrdite karticu ili uplatite depozit“",
+    "en": "Fake accommodation and booking messages: “confirm your card or pay a deposit”"
+  },
+  "how": {
+    "sr": "Uoči sezone kruže lažne ponude smještaja na moru i poruke koje stižu kao da su od smještaja koji ste rezervisali. Traže da „potvrdite“ karticu preko linka ili da depozit uplatite na drugi račun, jer rezervacija inače propada. Ponekad prevaranti preuzmu nalog pravog smještaja i pišu preko aplikacije. Novac odlazi prevarantima, a smještaj ne postoji ili za vas ne zna.",
+    "en": "Before the season, fake seaside accommodation offers circulate, along with messages that look as if they come from the place you booked. They ask you to “confirm” your card through a link or pay the deposit to a different account, or the booking will be cancelled. Sometimes scammers take over the real property’s account and write through the app. The money goes to the scammers, and the accommodation doesn’t exist or doesn’t know about you."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka „smještaja“ da rezervacija nije potvrđena.",
+        "en": "A message from the “accommodation” saying the booking isn’t confirmed."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Rok: rezervacija se otkazuje za par sati.",
+        "en": "A deadline: the booking is cancelled in a few hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Link za „potvrdu kartice“.",
+        "en": "A link to “confirm your card”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Ili depozit na drugi račun, van platforme.",
+        "en": "Or a deposit to another account, outside the platform."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Postovani gostu, Vasa rezervacija apartmana u Budvi za period 12.07-19.07 nije garantovana jer banka nije odobrila karticu. Molimo potvrdite karticu u narednih 12 sati preko ovog linka, u suprotnom rezervacija ce biti otkazana: [link]",
+        "en": "Dear guest, your apartment booking in Budva for 12.07-19.07 is not guaranteed because the bank didn’t approve your card. Please confirm your card within the next 12 hours through this link, otherwise the booking will be cancelled: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "smještaj traži potvrdu kartice preko linka",
+      "rezervacija će biti otkazana ako ne platim",
+      "depozit za apartman na drugi račun",
+      "lažni apartman na moru oglas",
+      "booking poruka traži podatke kartice",
+      "uplatio depozit a smještaj ne postoji",
+      "apartman traži uplatu direktno na račun vlasnika",
+      "domaćin traži depozit van platforme"
+    ],
+    "en": [
+      "accommodation asks to confirm card through a link",
+      "booking will be cancelled unless I pay",
+      "deposit for the apartment to a different account",
+      "fake seaside apartment ad",
+      "booking message asks for card details",
+      "host asks for deposit outside the platform"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Pravi smještaj ne traži da karticu „potvrdite“ preko linka iz poruke.",
+      "Uplata van platforme, na drugi račun, nije zaštićena.",
+      "Cijena mnogo niža od ostalih u istom mjestu je mamac."
+    ],
+    "en": [
+      "Real accommodation doesn’t ask you to “confirm” your card through a link in a message.",
+      "Payment outside the platform, to another account, isn’t protected.",
+      "A price much lower than others in the same town is bait."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Plaćajte samo unutar platforme i provjerite rezervaciju u aplikaciji, ne preko linka.",
+      "Ako ste upisali karticu, odmah pozovite banku i tražite blokadu.",
+      "Prijavite slučaj platformi i policiji."
+    ],
+    "en": [
+      "Pay only within the platform and check the booking in the app, not through a link.",
+      "If you entered your card, call your bank at once and ask for it to be blocked.",
+      "Report it to the platform and the police."
+    ]
+  },
+  "reportTo": [
+    "me/your-bank",
+    "me/policija-122",
+    "me/cirt"
+  ],
+  "sources": [
+    {
+      "title": "Internet prevare uzimaju maha: Pogrešni klikovi građane koštali 300.000 eura",
+      "publisher": "Raskrinkavanje",
+      "url": "https://www.raskrinkavanje.me/istrazeno/internet-prevare-uzimaju-maha-pogresni-klikovi-gradane-kostali-300-000-eura/",
+      "date": "2025-11-11"
+    },
+    {
+      "title": "Sve više žrtava online prevara u Crnoj Gori, stotine eura gubitka zbog pogrešnog klika",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/sve-vise-zrtava-online-prevara-u-crnoj-gori-stotine-eura-gubitka-zbog-pogresnog-klika",
+      "date": "2025-11-24"
+    },
+    {
+      "title": "Korisnici Bookinga na meti hakera: Evo kako su došli do podataka",
+      "publisher": "Dan",
+      "url": "https://www.dan.co.me/vijesti/tehnologije/korisnici-bookinga-na-meti-hakera-evo-kako-su-dosli-do-podataka-5211892",
+      "date": "2023-12-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,128 @@
+{
+  "id": "mk/posta-parcel-sms",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "mk": "Непознат број или е-адреса што се претставува како Пошта на Северна Македонија или курирска служба",
+    "en": "An unknown number or email address posing as the Post of North Macedonia or a courier"
+  },
+  "name": {
+    "mk": "Лажна пратка од пошта: СМС за задржана пратка и мала доплата преку линк",
+    "en": "Fake postal parcel: a text about a held parcel and a small fee paid through a link"
+  },
+  "how": {
+    "mk": "Пристигнува СМС дека вашата пратка е задржана, вратена поради погрешна адреса или чека царина, и дека за повторна испорака треба да платите мала сума. Линкот води до лажна страница што личи на поштата, каде ги внесувате личните податоци и картичката. Малата сума навистина се наплаќа, а подоцна измамниците прават поголеми трансакции со истата картичка. МВР наведува дека ова се најчестите фишинг пораки.",
+    "en": "A text says your parcel is being held, was returned because of a wrong address or is waiting for customs, and that a small sum must be paid for redelivery. The link goes to a fake page that looks like the post office, where you enter your personal and card details. The small sum is really charged, and later the scammers make bigger transactions with the same card. The Ministry of Interior says these are the most common phishing messages."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "СМС за пратка што не ја очекувате: погрешна адреса, вратена пратка или царина.",
+        "en": "A text about a parcel you aren't expecting: wrong address, returned parcel or customs."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Мала доплата за повторна испорака, „инаку пратката се враќа“.",
+        "en": "A small fee for redelivery, \"or the parcel goes back\"."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mk": "Линк до страница што само личи на поштата.",
+        "en": "A link to a page that only looks like the post office."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mk": "Се бараат сите податоци од картичката и потоа код од банката.",
+        "en": "It asks for full card details and then a code from your bank."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Македонска пошта: Вашата пратка бр. MK48213 не може да биде доставена поради нецелосна адреса. Ажурирајте ја адресата и платете 65 ден. за повторна достава во рок од 48 часа: [линк]",
+        "en": "Macedonian Post: your parcel no. MK48213 cannot be delivered because of an incomplete address. Update the address and pay 65 denars for redelivery within 48 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "смс пошта пратка доплата",
+      "пратката е задржана погрешна адреса",
+      "платете за повторна достава",
+      "македонска пошта линк картичка",
+      "порака за царина пратка",
+      "вратена пратка смс плаќање"
+    ],
+    "en": [
+      "post office parcel text fee",
+      "parcel held wrong address message",
+      "pay for redelivery link",
+      "customs fee parcel sms",
+      "returned parcel payment text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "mk": [
+      "Пошта што не ја очекувате, а бара плаќање преку линк.",
+      "Мала сума и краток рок за да не размислувате.",
+      "Страницата бара и код што банката ви го праќа."
+    ],
+    "en": [
+      "Post you aren't expecting, asking for payment through a link.",
+      "A small sum and a short deadline so you don't stop to think.",
+      "The page also asks for the code your bank sends you."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не отворајте го линкот; статусот на пратката проверете го на официјалната страница на Пошта, со бројот за следење од продавачот.",
+      "Никогаш не внесувајте податоци од картичка за „доплата“ од СМС.",
+      "Ако сте платиле, веднаш блокирајте ја картичката преку банката и пријавете во МВР."
+    ],
+    "en": [
+      "Don't open the link; check the parcel on the Post's official site using the tracking number from the seller.",
+      "Never enter card details for a \"fee\" from a text.",
+      "If you paid, block the card through your bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "mk/your-bank",
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt"
+  ],
+  "sources": [
+    {
+      "title": "Не отварајте сомнителни линкови и пораки и не споделувајте лични податоци",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/ne-otvarajte-somnitelni-linkovi-i-poraki-i-ne-spodeluvajte-licni-podatoci",
+      "date": "2026-01-16"
+    },
+    {
+      "title": "ВНИМАВАЈТЕ: НЛБ и Шпаркасе Банка повторно изложени на phishing напади",
+      "publisher": "Bankarstvo MK",
+      "url": "https://bankarstvo.mk/nlb-sparkasse-phishing-napadi/",
+      "date": "2024-01-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

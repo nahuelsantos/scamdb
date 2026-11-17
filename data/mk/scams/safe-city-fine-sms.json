@@ -1,0 +1,135 @@
+{
+  "id": "mk/safe-city-fine-sms",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "mk": "Непознат испраќач или странски број што се претставува како МВР, „Безбеден град“ или Оддел за моторни возила",
+    "en": "An unknown sender or foreign number posing as the Ministry of Interior, \"Safe City\" or the motor vehicles department"
+  },
+  "name": {
+    "mk": "Лажна казна од „Безбеден град“: СМС за неплатен сообраќаен прекршок со линк за плаќање",
+    "en": "Fake \"Safe City\" fine: a text about an unpaid traffic offence with a payment link"
+  },
+  "how": {
+    "mk": "Добивате СМС, е-порака или порака на социјалните мрежи дека камерите на „Безбеден град“ регистрирале прекршок со вашето возило и дека казната мора да се плати веднаш, со попуст ако платите денес или со закана за дополнителни трошоци. Линкот води до лажна страница што личи на државна, каде се бараат податоци од платежната картичка. Вистинските известувања доаѓаат од испраќачот MVR-SC, ја содржат регистарската ознака на возилото и водат само до официјалниот домен на МВР.",
+    "en": "You get a text, email or social media message saying \"Safe City\" cameras recorded an offence with your vehicle and the fine must be paid now, with a discount if you pay today or a threat of extra costs. The link leads to a fake page that looks official and asks for your card details. Real notices come from the sender MVR-SC, include the vehicle's registration plate and only lead to the Ministry's official domain."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Порака за неплатена казна од „Безбеден град“ без регистарска ознака на возилото.",
+        "en": "A message about an unpaid \"Safe City\" fine without the vehicle's registration plate."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Рок до денес, попуст за брзо плаќање или закана со зголемена казна.",
+        "en": "A deadline of today, a discount for paying fast or a threat of a bigger fine."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mk": "Линк до страница за плаќање што не е на доменот на МВР.",
+        "en": "A link to a payment page not on the Ministry's domain."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mk": "Страницата бара број на картичка, рок на важење и CVV код.",
+        "en": "The page asks for the card number, expiry date and CVV."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Известување: Системот Безбеден град евидентираше пречекорување на брзината. Неплатена казна 2.500 ден. Платете до 23:59 часот и добивате 50% попуст, во спротивно предметот оди на извршител. [линк]",
+        "en": "Notice: the Safe City system recorded speeding. Unpaid fine 2,500 denars. Pay by 23:59 and get 50% off; otherwise the case goes to a bailiff. [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "казна безбеден град порака",
+      "смс за сообраќаен прекршок линк плаќање",
+      "неплатена казна брзина попуст денес",
+      "лажна казна од мвр",
+      "порака казна извршител ако не платам",
+      "казна камери линк картичка"
+    ],
+    "en": [
+      "safe city fine text message",
+      "traffic fine sms with payment link",
+      "unpaid speeding fine discount today",
+      "fake police fine message",
+      "fine will go to bailiff text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "mk": [
+      "Вистинските СМС известувања се од испраќачот MVR-SC и ја содржат регистарската ознака на возилото.",
+      "Попуст или закана со извршител за плаќање „до вечерта“.",
+      "Линк до страница што не е официјалниот домен на МВР."
+    ],
+    "en": [
+      "Real text notices come from the sender MVR-SC and include the vehicle's registration plate.",
+      "A discount, or a bailiff threat, for paying \"by tonight\".",
+      "A link to a page that isn't the Ministry's official domain."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не отворајте го линкот и не внесувајте податоци од картичка.",
+      "Проверете дали имате казна самите, преку официјалната страница на МВР што ја пребарувате сами.",
+      "Ако сте внеле податоци, веднаш јавете се во банката да ја блокира картичката и пријавете во МВР."
+    ],
+    "en": [
+      "Don't open the link or enter card details.",
+      "Check whether you have a fine yourself, through the Ministry's official site that you look up yourself.",
+      "If you entered details, call your bank straight away to block the card and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "mk/your-bank",
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt"
+  ],
+  "sources": [
+    {
+      "title": "Повторно зачестени измамнички пораки за наводна наплата на сообраќајни прекршоци – МВР апелира на внимателност",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/povtorno-zacesteni-izmamnicki-poraki-za-navodna-naplata-na-soobrakjajni-prekrsoci",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "Известување за зачестена појава на измамнички пораки за наплата на сообраќајни прекршоци",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/izvestuvanje-za-zacestena-pojava-na-izmamnicki-poraki-za-naplata-na-soobrakjajni-prekrsoci",
+      "date": "2026-08-19"
+    },
+    {
+      "title": "Policia e Maqedonisë së Veriut paralajmëroi se janë duke u përsëritur mashtrimet me mesazhe rreth dënimeve në komunikacion",
+      "publisher": "Portalb",
+      "url": "https://portalb.mk/policia-e-maqedonise-se-veriut-paralajmeroi-se-jane-duke-u-perseritur-mashtrimet-me-mesazhe-rreth-denimeve-ne-komunikacion/",
+      "date": "2026-11-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

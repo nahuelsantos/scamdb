@@ -1,0 +1,119 @@
+{
+  "id": "mk/fake-police-email-investigation",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "mk": "Е-порака наводно од директорот на Бирото за јавна безбедност или од „одделение за сајбер криминал“",
+    "en": "An email supposedly from the director of the Bureau for Public Security or a \"cybercrime unit\""
+  },
+  "name": {
+    "mk": "Лажна полициска покана по е-пошта: „против вас се води кривична истрага“",
+    "en": "Fake police summons by email: \"a criminal investigation is under way against you\""
+  },
+  "how": {
+    "mk": "Стигнува е-порака со лого и име на висок функционер од МВР дека сте предмет на кривична истрага за тешки дела што никогаш не сте ги направиле. Во рок од 24 часа треба да одговорите на пораката или да се „регистрирате“ со лични податоци, инаку ќе бидете уапсени. Целта е да ги дадете личните податоци, а понекогаш и да платите „казна“. МВР не праќа покани за истражни постапки преку е-пошта.",
+    "en": "An email arrives with the logo and name of a senior Ministry of Interior official saying you're under criminal investigation for serious offences you never committed. Within 24 hours you must reply or \"register\" with your personal details, or you'll be arrested. The goal is to get your personal data, and sometimes a \"fine\" payment. The Ministry doesn't send summons for investigations by email."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Е-порака во име на полицијата со тешки обвинувања.",
+        "en": "An email in the police's name with serious accusations."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Рок од 24 часа, закана со апсење.",
+        "en": "A 24-hour deadline and a threat of arrest."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mk": "Барање да одговорите со лични податоци или документ.",
+        "en": "A request to reply with personal details or an ID document."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "mk": "Понекогаш барање за уплата за да се „затвори“ предметот.",
+        "en": "Sometimes a payment request to \"close\" the case."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "ПОКАНА – Биро за јавна безбедност. Против Вас е отворена постапка за дела поврзани со малолетници на интернет. Имате 24 часа да одговорите на оваа е-порака со Вашите податоци и објаснување. Ако не одговорите, предметот се доставува до обвинителство и се издава налог за приведување.",
+        "en": "SUMMONS – Bureau for Public Security. Proceedings have been opened against you for online offences involving minors. You have 24 hours to reply to this email with your details and an explanation. If you don't reply, the case goes to the prosecutor and a warrant is issued."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "имејл од полиција кривична истрага",
+      "покана од мвр по е-пошта",
+      "обвинети сме за дела на интернет имејл",
+      "одговорете во рок 24 часа полиција",
+      "лажна покана биро за јавна безбедност"
+    ],
+    "en": [
+      "email from police criminal investigation",
+      "police summons by email",
+      "accused of online crimes email",
+      "reply within 24 hours or arrest",
+      "fake bureau for public security email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "mk": [
+      "МВР не праќа покани за истрага по е-пошта.",
+      "Тешки обвинувања и рок од 24 часа за да се исплашите.",
+      "Текст со грешки, како лош машински превод."
+    ],
+    "en": [
+      "The Ministry doesn't send investigation summons by email.",
+      "Serious accusations and a 24-hour deadline to scare you.",
+      "Text full of mistakes, like a poor machine translation."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не одговарајте и не отворајте прилози или линкови.",
+      "Не давајте лични податоци и не плаќајте ништо.",
+      "Препратете ја пораката до МВР за компјутерски криминал и избришете ја."
+    ],
+    "en": [
+      "Don't reply or open attachments or links.",
+      "Don't give personal data or pay anything.",
+      "Forward the email to the police computer crime unit and delete it."
+    ]
+  },
+  "reportTo": [
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt"
+  ],
+  "sources": [
+    {
+      "title": "Предупредување: Обид за дигитална измама - не наседнувајте на лажни електронски пораки во име на директорот на БЈБ и од Единица за сајбер безбедност",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/predupreduvanje-obid-za-digitalna-izmama-ne-nasednuvajte-na-lazni-elektronski-poraki-vo-ime-na-direktorot-na-bjb-i-od-edinica-za-sajber-bezbednost",
+      "date": "2026-01-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

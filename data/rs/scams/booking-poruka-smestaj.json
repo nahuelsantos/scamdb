@@ -1,0 +1,123 @@
+{
+  "id": "rs/booking-poruka-smestaj",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "email",
+    "online"
+  ],
+  "sender": {
+    "sr": "„Smeštaj” ili „Booking” u poruci, sa vašim pravim podacima o rezervaciji",
+    "en": "“The property” or “Booking” in a message, with your real booking details"
+  },
+  "name": {
+    "sr": "Lažna poruka o rezervaciji smeštaja: verifikujte karticu ili hitno platite",
+    "en": "Fake accommodation booking message: verify your card or pay urgently"
+  },
+  "how": {
+    "sr": "Posle krađe podataka sa platforme Booking, prevaranti pišu u ime smeštaja ili platforme i znaju vaše ime i datume. Javljaju problem sa plaćanjem i traže „verifikaciju” kartice preko linka ili hitnu uplatu, inače će rezervacija biti otkazana.",
+    "en": "After data was stolen from the Booking platform, scammers write in the name of the property or the platform and know your name and dates. They report a payment problem and ask you to “verify” your card through a link or pay urgently, or the booking will be cancelled."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka smeštaja ili platforme sa vašim podacima.",
+        "en": "A message from the property or platform with your details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Rezervacija će biti otkazana.",
+        "en": "The booking will be cancelled."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Link izvan zvanične aplikacije.",
+        "en": "A link outside the official app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Verifikacija kartice ili direktna uplata.",
+        "en": "Card verification or a direct payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Poštovani, u vezi sa vašim boravkom od 12. do 19. jula: banka nije odobrila autorizaciju kartice. Molimo potvrdite podatke u narednih 12 sati, u suprotnom sistem automatski otkazuje rezervaciju. [link]",
+        "en": "Dear guest, regarding your stay from 12 to 19 July: the bank did not approve the card authorisation. Please confirm your details within the next 12 hours, otherwise the system cancels the booking automatically. [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "booking poruka problem sa plaćanjem kartica",
+      "rezervacija smeštaja biće otkazana potvrdite karticu",
+      "smeštaj traži verifikaciju kartice link",
+      "hotel piše na whatsapp hitna uplata rezervacija",
+      "znaju datume rezervacije traže podatke kartice"
+    ],
+    "en": [
+      "booking message payment problem card",
+      "accommodation booking will be cancelled confirm card",
+      "property asks for card verification link",
+      "hotel writes on whatsapp urgent payment booking",
+      "they know my booking dates and want card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Podatke kartice unosite samo u zvaničnoj aplikaciji ili na sajtu platforme.",
+      "Tačni podaci o rezervaciji ne dokazuju da je poruka prava: podaci su procureli.",
+      "Pretnja otkazivanjem.",
+      "Zahtev za plaćanje mimo platforme."
+    ],
+    "en": [
+      "Only enter card details in the platform’s official app or website.",
+      "Correct booking details don’t prove a message is real: the data leaked.",
+      "A threat of cancellation.",
+      "A request to pay outside the platform."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link. Rezervaciju proverite sami u aplikaciji.",
+      "Ne šaljite podatke kartice porukom. Razmislite o nižem dnevnom limitu za plaćanje na internetu.",
+      "Ako ste upisali karticu, odmah je blokirajte i prijavite slučaj."
+    ],
+    "en": [
+      "Don’t open the link. Check the booking yourself in the app.",
+      "Don’t send card details by message. Consider a lower daily limit for online payments.",
+      "If you entered your card, block it at once and report it."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/sajber-straza"
+  ],
+  "sources": [
+    {
+      "title": "MUP povodom krađe podataka korisnika sajta Booking: Obratite pažnju na sve transakcije",
+      "publisher": "021.rs",
+      "url": "https://www.021.rs/info/srbija/441756/mup-povodom-kradje-podataka-korisnika-sajta-booking-obratite-paznju-na-sve-transakcije",
+      "date": "2026-04-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

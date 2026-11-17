@@ -1,0 +1,115 @@
+{
+  "id": "rs/oglas-lazni-kupac-link",
+  "country": "rs",
+  "lang": "sr",
+  "status": "fading",
+  "channels": [
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "sr": "„Kupac” sa oglasnika koji prelazi na WhatsApp ili Viber, često strani broj",
+    "en": "A “buyer” from a classifieds site who moves to WhatsApp or Viber, often a foreign number"
+  },
+  "name": {
+    "sr": "Lažni kupac: šalje link „kurirske službe” da biste primili novac karticom",
+    "en": "Fake buyer: sends a “courier” link so you can receive the money by card"
+  },
+  "how": {
+    "sr": "Prodajete nešto na oglasniku. „Kupac” pita da li je stvar dostupna, uzima je bez cenkanja i prebacuje razgovor na WhatsApp ili Viber. Kaže da je već platio preko kurirske službe ili „sigurne dostave” i šalje link na kojem treba da upišete broj kartice, CVV i kod iz poruke da biste „primili” novac. Podaci odlaze prevarantima koji skidaju novac sa računa.",
+    "en": "You’re selling something on a classifieds site. A “buyer” asks if it’s available, takes it without haggling and moves the chat to WhatsApp or Viber. They say they’ve already paid through a courier or “safe delivery” and send a link where you must enter your card number, CVV and a code from a text to “receive” the money. The details go to scammers who drain the account."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Kupac odmah prelazi na WhatsApp ili Viber.",
+        "en": "The buyer moves straight to WhatsApp or Viber."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "„Već sam platio”: link kurirske službe za prijem novca.",
+        "en": "“I’ve already paid”: a courier link to receive the money."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Traže broj kartice, CVV i kod iz poruke.",
+        "en": "They ask for your card number, CVV and the code from a text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Pozdrav, uzimam vaš bicikl bez cenkanja. Novac sam već uplatio preko sigurne dostave, kurir dolazi po paket sutra. Da bi vam sredstva legla, popunite podatke kartice na ovoj stranici: [link]",
+        "en": "Hello, I’ll take your bike without haggling. I’ve already paid through safe delivery and the courier will pick up the parcel tomorrow. For the money to reach you, fill in your card details on this page: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "kupac sa oglasa šalje link da primim novac",
+      "prodajem na oglasniku traže podatke kartice cvv",
+      "kupac platio preko kurirske službe link",
+      "kupac prešao na vajber strani broj link za uplatu",
+      "sigurna dostava link primanje uplate kartica"
+    ],
+    "en": [
+      "buyer from my ad sends link to receive money",
+      "selling online they ask for card details cvv",
+      "buyer paid through courier service link",
+      "buyer moved to viber foreign number payment link",
+      "safe delivery link receive payment card"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sr": [
+      "Za prijem novca dovoljan je broj računa; CVV i kod nikada.",
+      "Kupac odmah prelazi u WhatsApp ili Viber.",
+      "Link „kurirske službe” ili „oglasnika” koji niste sami otvorili.",
+      "Nezainteresovan za cenu ili za pregled stvari."
+    ],
+    "en": [
+      "To receive money you only need an account number, never a CVV or code.",
+      "The buyer moves to WhatsApp or Viber straight away.",
+      "A “courier” or “marketplace” link you didn’t open yourself.",
+      "No interest in the price or in seeing the item."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link i ne upisujte karticu.",
+      "Dogovarajte lično preuzimanje i plaćanje gotovinom ili uplatu na račun.",
+      "Ako ste uneli podatke, odmah blokirajte karticu i prijavite slučaj."
+    ],
+    "en": [
+      "Don’t open the link or enter your card.",
+      "Arrange pickup in person with cash, or a transfer to your account.",
+      "If you entered your details, block your card at once and report it."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/sajber-straza",
+    "rs/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "Pazite se ove prevare ako kupujete i prodajete preko interneta",
+      "publisher": "N1",
+      "url": "https://n1info.rs/magazin/scitech/pzite-se-ove-prevare-ako-kupujete-i-prodajete-preko-interneta/",
+      "date": "2023-08-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,121 @@
+{
+  "id": "mk/pazar3-fake-verification",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "mk": "Профил или порака што изгледа како известување од огласникот (на пример Пазар3), или „купувач“",
+    "en": "A profile or message that looks like a notice from the ads site (for example Pazar3), or a \"buyer\""
+  },
+  "name": {
+    "mk": "Лажна верификација на огласник: „потврдете ја картичката за да огласувате“",
+    "en": "Fake ads-site verification: \"confirm your card to keep posting ads\""
+  },
+  "how": {
+    "mk": "Ако продавате нешто на огласник, добивате порака од профил со име како „Важно известување“ дека заради безбедност мора да ја потврдите сметката и картичката. Линкот води до надворешна страница каде внесувате податоци од картичката, а „агент“ во разговор (понекогаш чет-бот) постојано ве притиска да потврдите или „резервирате“ средства. Додека сте збунети, од картичката се повлекуваат пари.",
+    "en": "If you're selling something on an ads site, you get a message from a profile named something like \"Important notice\" saying that for security you must confirm your account and card. The link goes to an outside site where you enter your card details, and an \"agent\" in a chat (sometimes a chatbot) keeps pushing you to confirm or \"reserve\" funds. While you're confused, money is taken from the card."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Порака „од огласникот“: потврдете ја сметката или нема да можете да огласувате.",
+        "en": "A message \"from the ads site\": confirm your account or you can't post ads."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Линк до надворешна страница за „верификација“.",
+        "en": "A link to an outside \"verification\" page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mk": "Се бараат сите податоци од картичката и кодот од банката.",
+        "en": "It asks for full card details and the bank code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "mk": "Разговор што брза: „потврдете веднаш“, „резервирајте ги средствата“.",
+        "en": "A chat that rushes you: \"confirm now\", \"reserve the funds\"."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Важно известување: Вашиот оглас е привремено сокриен. Според новите безбедносни правила, секој продавач мора да ја верификува картичката за да прима уплати од купувачи. Потврдете во рок од 1 час: [линк]",
+        "en": "Important notice: your ad is temporarily hidden. Under the new security rules, every seller must verify their card to receive payments from buyers. Confirm within 1 hour: [link]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "пазар3 бара верификација на картичка",
+      "порака важно известување оглас сокриен",
+      "купувач праќа линк за примање пари",
+      "за да продавам морам да внесам картичка",
+      "огласник бара код од банка"
+    ],
+    "en": [
+      "ads site asks to verify my card",
+      "important notice my ad is hidden",
+      "buyer sends a link to receive money",
+      "must enter card to sell",
+      "marketplace asks for bank code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "mk": [
+      "За да примите пари никогаш не треба да внесувате картичка или код.",
+      "Известување од непознат профил, а не од самиот огласник.",
+      "Страница надвор од огласникот."
+    ],
+    "en": [
+      "You never need to enter a card or code to receive money.",
+      "A notice from an unknown profile, not from the ads site itself.",
+      "A page outside the ads site."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не отворајте линкови што ги праќаат „огласникот“ или купувачи.",
+      "Продавајте лично или со уплата на сметка што ја проверувате сами.",
+      "Ако сте внеле картичка, веднаш блокирајте ја преку банката."
+    ],
+    "en": [
+      "Don't open links sent by the \"ads site\" or buyers.",
+      "Sell in person or with a transfer to your account that you check yourself.",
+      "If you entered your card, block it through your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "mk/your-bank",
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt"
+  ],
+  "sources": [
+    {
+      "title": "Нова година, нови измами – злоупотреба на картички преку Пазар3",
+      "publisher": "Meta.mk",
+      "url": "https://meta.mk/nova-godina-novi-izmami-zloupotreba-na-kartichki-preku-pazar3/",
+      "date": "2025-01-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

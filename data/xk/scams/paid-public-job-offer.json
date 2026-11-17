@@ -1,0 +1,131 @@
+{
+  "id": "xk/paid-public-job-offer",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "phone"
+  ],
+  "sender": {
+    "sq": "Dikush që thotë se punon në një institucion shtetëror",
+    "en": "Someone who says they work at a state institution"
+  },
+  "name": {
+    "sq": "Punë në institucion publik “me lidhje”, në këmbim të parave",
+    "en": "A job in a public institution “through connections”, for money"
+  },
+  "how": {
+    "sq": "Një person prezantohet si punonjës i një institucioni shtetëror, në një rast të raportuar si punonjës i Agjencisë së Kosovës për Inteligjencë, dhe thotë se mund t’ju punësojë aty. Kërkon shuma të ndryshme parash, shpesh në disa këste, “për ta rregulluar” punësimin. Punësimi nuk vjen kurrë. Punët në institucionet publike shpallen me konkurs, dhe askush nuk mund t’i shesë.",
+    "en": "A person says they work for a state institution, in one reported case the Kosovo Intelligence Agency, and claims they can get you hired there. They ask for various sums of money, often in instalments, “to arrange” the job. The job never comes. Jobs in public institutions are filled through open competitions, and nobody can sell them."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Dikush thotë se punon në një institucion shtetëror dhe ka lidhje.",
+        "en": "Someone says they work at a state institution and have connections."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Ju premton një vend pune të sigurt aty.",
+        "en": "They promise you a secure job there."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sq": "Kërkon para për ta “rregulluar”, shpesh në disa pagesa.",
+        "en": "They ask for money to “arrange” it, often in several payments."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sq": "Ju thotë të mos i tregoni askujt.",
+        "en": "They tell you not to tell anyone."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "E kam folë me shefin, vendi është i jotja, po duhet me i dhanë 2.000 euro deri të premten që ta shtyjmë dosjen tënde përpara. Mos i trego askujt, se ka edhe të tjerë që e duan këtë vend.",
+        "en": "I’ve talked to the boss, the job is yours, but we need to give him €2,000 by Friday to move your file forward. Don’t tell anyone, there are others who want this job too."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "më premtoi punë në shtet për para",
+      "pagova që të më punësojnë në një institucion",
+      "tha se punon në aki dhe mund të më punësojë",
+      "para për ta rregulluar vendin e punës",
+      "punësim me lidhje në këmbim të parave",
+      "më kërkoi para për me më punësu në shtet",
+      "punë në komunë ose në doganë me pagesë",
+      "njeri me lidhje që rregullon punësim për para",
+      "pagova këste për një vend pune që s’erdhi kurrë",
+      "konkurs i rregulluar me para",
+      "duhet me pagu që me t’marrë në punë"
+    ],
+    "en": [
+      "promised me a state job for money",
+      "I paid to get hired at an institution",
+      "said he works at the intelligence agency and can hire me",
+      "money to arrange the job",
+      "a job through connections in exchange for money",
+      "asked me for money to get me a state job",
+      "a job at the municipality or customs for a payment",
+      "someone with connections who arranges jobs for money",
+      "I paid instalments for a job that never came",
+      "a job competition fixed with money",
+      "you have to pay to get taken on"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "sq": [
+      "Punët në institucione publike nuk shiten: ato shpallen me konkurs publik.",
+      "Kërkesë për para në dorë ose në këste, pa asnjë dokument.",
+      "Ju kërkon ta mbani të fshehtë."
+    ],
+    "en": [
+      "Jobs in public institutions are not for sale: they go through public competitions.",
+      "A request for cash or instalments, with no documents.",
+      "They ask you to keep it secret."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos jepni para për punësim. Kontrolloni konkurset vetë në faqet zyrtare të institucioneve.",
+      "Nëse keni paguar, ruani mesazhet dhe dëftesat dhe raportojeni rastin në Policinë e Kosovës.",
+      "Mund të raportoni edhe pa humbur para, që të ndalen të tjerët."
+    ],
+    "en": [
+      "Don’t pay for a job. Check job competitions yourself on the institutions’ official websites.",
+      "If you paid, keep the messages and receipts and report it to the Kosovo Police.",
+      "You can report even if you lost nothing, so others are stopped."
+    ]
+  },
+  "reportTo": [
+    "xk/police"
+  ],
+  "sources": [
+    {
+      "title": "Arrestohet një person i dyshuar për mashtrim, dyshohet se u prezantua rrejshëm si punonjës i AKI-së",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/arrestohet-nje-person-i-dyshuar-per-mashtrim-dyshohet-se-u-prezantua-rrejshem-si-punonjes-i-aki-se/",
+      "date": "2026-10-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

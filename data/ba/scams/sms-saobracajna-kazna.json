@@ -1,0 +1,133 @@
+{
+  "id": "ba/sms-saobracajna-kazna",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "bs": "„IDDEEA“, „E-Policija“, MUP ili „saobraćajna policija“",
+    "en": "“IDDEEA”, “E-Policija”, the Interior Ministry or “traffic police”"
+  },
+  "name": {
+    "bs": "Lažna SMS kazna za saobraćajni prekršaj: „platite odmah putem linka“",
+    "en": "Fake traffic fine text: “pay now via the link”"
+  },
+  "how": {
+    "bs": "SMS u ime IDDEEA-e, MUP-a ili sistema „E-Policija“ javlja da je vaše vozilo snimljeno zbog prekoračenja brzine ili drugog prekršaja. Prijeti pravnim posljedicama ako kaznu ne platite brzo i šalje link, ponekad uz uputu da ga kopirate u preglednik. Lažna stranica traži lične podatke i podatke kartice. IDDEEA ne izdaje kazne, a policija ne naplaćuje kazne SMS-om.",
+    "en": "A text in the name of IDDEEA, the Interior Ministry or an “E-Policija” system says your vehicle was recorded speeding or committing another offence. It threatens legal consequences if you don’t pay quickly and sends a link, sometimes telling you to copy it into your browser. The fake page asks for personal and card details. IDDEEA doesn’t issue fines and the police don’t collect fines by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "SMS „policije“ ili IDDEEA-e: vozilo snimljeno u prekršaju.",
+        "en": "A “police” or IDDEEA text: your vehicle was recorded committing an offence."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Platite odmah ili slijede sud i veća kazna.",
+        "en": "Pay now or court and a bigger fine follow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "bs": "Link, ponekad uz uputu da ga kopirate u preglednik.",
+        "en": "A link, sometimes with an instruction to copy it into your browser."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bs": "Stranica traži podatke kartice.",
+        "en": "The page asks for card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "E-Policija: Vase vozilo evidentirano je kamerom zbog prekoracenja brzine. Neplacena kazna: 100 KM. Ukoliko uplata ne bude izvrsena danas, predmet se upucuje sudu. Kopirajte link u preglednik: [link]",
+        "en": "E-Policija: Your vehicle was recorded by camera for speeding. Unpaid fine: 100 KM. If payment isn’t made today, the case goes to court. Copy the link into your browser: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "sms kazna za prekoračenje brzine link",
+      "iddeea poruka saobraćajni prekršaj",
+      "e policija sms platite kaznu",
+      "lažna saobraćajna kazna poruka",
+      "vozilo snimljeno kamerom plaćanje preko linka"
+    ],
+    "en": [
+      "text about a speeding fine with a link",
+      "iddeea message about a traffic offence",
+      "e policija text pay the fine",
+      "fake traffic fine message",
+      "vehicle caught on camera pay via link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "bs": [
+      "IDDEEA ne izdaje ni ne naplaćuje saobraćajne kazne i ne šalje linkove za plaćanje.",
+      "Policija ne šalje SMS s linkom za plaćanje kazne.",
+      "Poruka sa stranog broja i prijetnja sudom.",
+      "Uputa da link kopirate u preglednik služi zaobilaženju zaštite."
+    ],
+    "en": [
+      "IDDEEA doesn’t issue or collect traffic fines and doesn’t send payment links.",
+      "The police don’t send texts with a link to pay a fine.",
+      "A message from a foreign number and a threat of court.",
+      "An instruction to copy the link into your browser is meant to get around protection."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Ne otvarajte link i ne odgovarajte.",
+      "Ako mislite da imate kaznu, provjerite u policijskoj stanici ili na službenoj stranici.",
+      "Ako ste upisali karticu, zovite banku; poruku prijavite policiji."
+    ],
+    "en": [
+      "Don’t open the link or reply.",
+      "If you think you have a fine, check at a police station or on the official website.",
+      "If you entered your card, call your bank; report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "ba/policija-122",
+    "ba/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Ne nasjedajte: Policija ne šalje ovakve SMS poruke",
+      "publisher": "Bljesak.info (MUP Hercegovačko-neretvanske županije)",
+      "url": "https://bljesak.info/vijesti/bih/ne-nasjedajte-policija-ne-salje-ovakve-sms-poruke/559319",
+      "date": "2026-04-25"
+    },
+    {
+      "title": "Warning of a New Wave of Smishing Attacks in Bosnia and Herzegovina: Fake Messages Exploit Institutional Identities",
+      "publisher": "a&s Adria",
+      "url": "https://www.asadria.com/en/warning-of-a-new-wave-of-smishing-attacks-in-bosnia-and-herzegovina-fake-messages-exploit-institutional-identities/",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "SMS prevare i dalje vrebaju građane u BiH: Ne unosite bankovne podatke i ne vjerujte čak ni \"prijateljima\"",
+      "publisher": "Klix.ba",
+      "url": "https://www.klix.ba/vijesti/bih/sms-prevare-i-dalje-vrebaju-gradane-u-bih-ne-unosite-bankovne-podatke-i-ne-vjerujte-cak-ni-prijateljima/260507095",
+      "date": "2026-05-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

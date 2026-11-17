@@ -1,0 +1,120 @@
+{
+  "id": "xk/posta-kosoves-sms",
+  "country": "xk",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sq": "“Posta e Kosovës”",
+    "en": "“Posta e Kosovës” (Kosovo Post)"
+  },
+  "name": {
+    "sq": "SMS e rreme nga Posta e Kosovës për pakon",
+    "en": "Fake Posta e Kosovës text about your parcel"
+  },
+  "how": {
+    "sq": "Një SMS në emër të Postës së Kosovës thotë se një dërgesë po ju pret ose nuk mund t’ju dorëzohet, dhe ju dërgon te një link. Faqja, me adresë që vetëm i ngjan postës, kërkon të dhënat personale dhe të kartelës, shpesh për një pagesë të vogël. Posta e Kosovës nuk i ka dërguar këto mesazhe dhe nuk kërkon të dhëna bankare me SMS.",
+    "en": "A text in the name of Posta e Kosovës says a parcel is waiting or cannot be delivered, and sends you to a link. The page, on an address that only looks like the post office’s, asks for your personal and card details, often for a small payment. Posta e Kosovës did not send these messages and does not ask for bank details by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Vjen një SMS në emër të Postës së Kosovës për një dërgesë.",
+        "en": "A text arrives in Posta e Kosovës’s name about a parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Ju kërkon të konfirmoni adresën ose të paguani përmes një linku.",
+        "en": "It asks you to confirm your address or pay through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon një pagesë të vogël dhe të dhënat e kartelës.",
+        "en": "The page asks for a small payment and your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Posta e Kosovës: Dërgesa juaj nr. [numër] është mbajtur në qendrën tonë për shkak të adresës së paplotë. Përditësoni adresën dhe paguani 1,20€ për ridërgim: [link]",
+        "en": "Posta e Kosovës: Your parcel no. [number] is being held at our centre because the address is incomplete. Update your address and pay €1.20 for redelivery: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "sms nga posta për pako me link",
+      "pakoja nuk mund të dorëzohet",
+      "më kërkon të paguaj për dërgesën",
+      "konfirmo adresën për pakon",
+      "posta më kërkon të dhënat e kartelës",
+      "pagesë e vogël për ridërgim"
+    ],
+    "en": [
+      "text from the post office about a parcel with a link",
+      "parcel cannot be delivered",
+      "asking me to pay for the delivery",
+      "confirm the address for the parcel",
+      "post office asking for my card details",
+      "small fee for redelivery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sq": [
+      "Posta e Kosovës nuk kërkon të dhëna personale apo numra bankarë me SMS.",
+      "Pagesë e vogël “për ridërgim” përmes një linku.",
+      "Adresa e faqes i ngjan postës por nuk është e saj."
+    ],
+    "en": [
+      "Posta e Kosovës does not ask for personal details or bank numbers by text.",
+      "A small “redelivery” payment through a link.",
+      "The site’s address looks like the post office’s but isn’t."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos klikoni dhe mos paguani. Për dërgesat pyesni vetë në postë ose në kanalet e saj zyrtare.",
+      "Nëse keni paguar, telefononi bankën dhe kërkoni anulimin e pagesës.",
+      "Raportojeni në stacionin më të afërt policor dhe te KOS-CERT, pastaj fshijeni mesazhin."
+    ],
+    "en": [
+      "Don’t click and don’t pay. Ask about parcels yourself at the post office or through its official channels.",
+      "If you paid, call your bank and ask it to cancel the payment.",
+      "Report it at the nearest police station and to KOS-CERT, then delete the message."
+    ]
+  },
+  "reportTo": [
+    "xk/your-bank",
+    "xk/police",
+    "xk/kos-cert"
+  ],
+  "sources": [
+    {
+      "title": "Njoftim i Policisë së Kosovës për fushatë mashtruese (Phishing) përmes Mesazheve SMS",
+      "publisher": "Policia e Kosovës",
+      "url": "https://www.kosovopolice.com/njoftim-i-policise-se-kosoves-per-fushate-mashtruese-phishing-permes-mesazheve-sms/",
+      "date": "2026-01-06"
+    },
+    {
+      "title": "Be careful if you get these SMS on the phone on behalf of the Kosovo Post, it's cheating",
+      "publisher": "Periskopi",
+      "url": "https://periskopi.com/en/2025/4/careful-sms-phone-behalf-kosovo-post-cheating",
+      "date": "2025-04-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

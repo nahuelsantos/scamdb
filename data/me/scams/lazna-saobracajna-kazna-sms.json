@@ -1,0 +1,141 @@
+{
+  "id": "me/lazna-saobracajna-kazna-sms",
+  "country": "me",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "sr": "„Vlada Crne Gore“, „Uprava policije“ ili drugi državni organ, sa stranog broja",
+    "en": "“Government of Montenegro”, “Police Administration” or another state body, from a foreign number"
+  },
+  "name": {
+    "sr": "Lažna poruka o neplaćenoj saobraćajnoj kazni: „platite odmah ili slijedi blokada računa“",
+    "en": "Fake unpaid traffic fine text: “pay now or your account gets frozen”"
+  },
+  "how": {
+    "sr": "Stiže SMS ili poruka u aplikaciji, navodno od Vlade ili policije, da imate neplaćenu saobraćajnu kaznu i da je ovo „posljednje obavještenje“. Ako ne platite u kratkom roku, prijete prinudnom naplatom, blokadom računa i zapljenom imovine. Link vodi na lažnu stranicu koja izgleda kao državni sajt i traži broj kartice i lične podatke. Poruke stižu sa stranih brojeva, a državni organi Crne Gore kazne ne šalju na taj način.",
+    "en": "A text or app message arrives, supposedly from the Government or the police, saying you have an unpaid traffic fine and this is the “final notice”. If you don’t pay within a short deadline, they threaten enforcement, a frozen bank account and seizure of property. The link leads to a fake page that looks like a government site and asks for your card number and personal details. The messages come from foreign numbers, and Montenegrin state bodies don’t send fines this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka „Vlade“ ili „policije“ sa stranog broja o neplaćenoj kazni.",
+        "en": "A message from the “Government” or “police” from a foreign number about an unpaid fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Kratak rok i prijetnja blokadom računa ili prinudnom naplatom.",
+        "en": "A short deadline and a threat of a frozen account or enforcement."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Link za plaćanje koji vodi na lažnu državnu stranicu.",
+        "en": "A payment link leading to a fake government page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sr": "Stranica traži broj kartice, CVV i lične podatke.",
+        "en": "The page asks for your card number, CVV and personal details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Vlada Crne Gore - POSLJEDNJE OBAVJESTENJE: Evidentirana je neizmirena saobracajna kazna u iznosu od 45 EUR. Ukoliko uplata ne bude izvrsena u roku od 24h, slijedi prinudna naplata i blokada racuna. Izmirite obavezu ovdje: [link]",
+        "en": "Government of Montenegro - FINAL NOTICE: An unpaid traffic fine of 45 EUR has been recorded. If payment is not made within 24h, enforcement and an account freeze will follow. Settle it here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "poruka o neplaćenoj saobraćajnoj kazni",
+      "vlada crne gore sms kazna link",
+      "prijete blokadom računa zbog kazne",
+      "posljednje obavještenje prinudna naplata",
+      "platiti kaznu preko linka iz poruke",
+      "kazna sa stranog broja",
+      "uprava policije poruka za uplatu kazne",
+      "prekršaj kazna sms uplata",
+      "izvršni postupak ako ne platim kaznu"
+    ],
+    "en": [
+      "text about an unpaid traffic fine",
+      "government of montenegro fine text with link",
+      "threatened to freeze my account over a fine",
+      "final notice before enforcement",
+      "pay a fine through a link in a message",
+      "fine message from a foreign number",
+      "speeding offence text payment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sr": [
+      "Državni organi Crne Gore ne šalju obavještenja o kaznama porukama sa stranih brojeva.",
+      "Prijetnja blokadom računa u roku od par sati služi da ne stignete da provjerite.",
+      "Kazna se ne plaća upisivanjem kartice na stranicu iz poruke."
+    ],
+    "en": [
+      "Montenegrin state bodies don’t send fine notices in messages from foreign numbers.",
+      "The threat of a frozen account within hours is there so you don’t check.",
+      "A fine isn’t paid by entering your card on a page from a message."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link i ne odgovarajte. Blokirajte broj i obrišite poruku.",
+      "Ako mislite da imate kaznu, provjerite je sami preko zvaničnih kanala, ne preko linka.",
+      "Odmah se javite svojoj banci na broj sa kartice ili iz aplikacije i tražite blokadu kartice ako ste upisali njene podatke.",
+      "Lažnu poruku i link prijavite Nacionalnom CIRT-u, a ako ste izgubili novac, i policiji na 122."
+    ],
+    "en": [
+      "Don’t open the link or reply. Block the number and delete the message.",
+      "If you think you have a fine, check it yourself through official channels, not the link.",
+      "Call your bank straight away on the number on your card or in the app and ask for the card to be blocked if you entered its details.",
+      "Report the fake message and link to the National CIRT and, if you lost money, to the police on 122."
+    ]
+  },
+  "reportTo": [
+    "me/your-bank",
+    "me/cirt",
+    "me/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "Policija upozorava na pokušaje prevare: Ponovo kruže lažne poruke o kaznama i blokadi računa, ne otvarajte ih",
+      "publisher": "Portal Analitika",
+      "url": "https://www.portalanalitika.me/clanak/policija-upozorava-na-pokusaje-prevare-ponovo-kruze-lazne-poruke-o-kaznama-i-blokadi-racuna-ne-otvarajte-ih",
+      "date": "2026-06-02"
+    },
+    {
+      "title": "Upozorenje građanima na pokušaje prevare putem SMS poruka i drugih sistema za razmjenu poruka",
+      "publisher": "Standard",
+      "url": "https://standard.co.me/hronika/upozorenje-gradjanima-na-pokusaje-prevare-putem-sms-poruka-i-drugih-sistema-za-razmjenu-poruka",
+      "date": "2026-05-20"
+    },
+    {
+      "title": "Phishing napad putem lažnih SMS poruka",
+      "publisher": "NLB Banka Podgorica",
+      "url": "https://www.nlb.me/saopstenja/2026/20-05-26-1",
+      "date": "2026-05-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

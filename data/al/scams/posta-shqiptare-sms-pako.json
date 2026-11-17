@@ -1,0 +1,140 @@
+{
+  "id": "al/posta-shqiptare-sms-pako",
+  "country": "al",
+  "lang": "sq",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sq": "\"Posta Shqiptare\" ose një shërbim postar, nga një numër i panjohur",
+    "en": "\"Posta Shqiptare\" or a postal service, from an unknown number"
+  },
+  "name": {
+    "sq": "SMS i rremë i Postës Shqiptare: pakoja nuk u dorëzua, paguani ose konfirmoni adresën",
+    "en": "Fake Posta Shqiptare text: parcel not delivered, pay or confirm your address"
+  },
+  "how": {
+    "sq": "Vjen një SMS që thotë se pakoja juaj nuk mund të dorëzohet dhe duhet të paguani një tarifë të vogël ose të konfirmoni adresën. Linku çon në një faqe që kopjon faqen e Postës Shqiptare dhe kërkon të dhënat personale dhe ato të kartës bankare. Me to mashtruesit marrin para nga llogaria. Posta Shqiptare ka deklaruar se nuk kërkon pagesa, të dhëna personale ose bankare me SMS; policia ka arrestuar persona që ndërtonin faqe identike me atë të Postës.",
+    "en": "A text says your parcel cannot be delivered and you must pay a small fee or confirm your address. The link leads to a copy of the Posta Shqiptare website that asks for personal and bank card details. With these the scammers take money from the account. Posta Shqiptare has stated it does not ask for payments, personal or bank details by text; police have arrested people who built sites identical to the Post's."
+  },
+  "steps": [
+    {
+      "text": {
+        "sq": "Një SMS thotë se pakoja juaj është bllokuar ose nuk u dorëzua.",
+        "en": "A text says your parcel is held or was not delivered."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sq": "Duhet të paguani një tarifë të vogël ose të konfirmoni adresën sot.",
+        "en": "You must pay a small fee or confirm your address today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sq": "Linku hap një faqe që duket si ajo e Postës Shqiptare.",
+        "en": "The link opens a page that looks like Posta Shqiptare's."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sq": "Faqja kërkon numrin e kartës, CVV-në dhe kodin që ju vjen me SMS.",
+        "en": "The page asks for the card number, CVV and the code you receive by text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sq": "Posta: Pakoja juaj me numer gjurmimi AL73XXX nuk u dorezua per shkak te adreses se paplote. Konfirmoni adresen dhe paguani 150 leke per ridergim: [link]",
+        "en": "Post: Your parcel with tracking number AL73XXX was not delivered because of an incomplete address. Confirm your address and pay 150 lek for redelivery: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sq": [
+      "sms posta shqiptare pako",
+      "pakoja nuk u dorëzua link pagesë",
+      "konfirmo adresën posta mesazh",
+      "tarifë ridërgimi pako sms",
+      "faqe false postës kartë bankare",
+      "mesazh pako pritje pagesë"
+    ],
+    "en": [
+      "text from albanian post about parcel",
+      "parcel not delivered pay fee link",
+      "confirm address for delivery text",
+      "fake post office page asked for card",
+      "small redelivery fee message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sq": [
+      "Posta Shqiptare nuk kërkon pagesa ose të dhëna personale e bankare me SMS ose linke.",
+      "Nuk prisni asnjë pako, ose mesazhi nuk tregon dërguesin.",
+      "Shuma e vogël është karrem: qëllimi janë të dhënat e kartës.",
+      "Adresa e linkut nuk është faqja zyrtare e Postës."
+    ],
+    "en": [
+      "Posta Shqiptare does not ask for payments or personal and bank details by text or link.",
+      "You are not expecting a parcel, or the message does not say who sent it.",
+      "The small amount is bait: the goal is your card details.",
+      "The link address is not the Post's official site."
+    ]
+  },
+  "whatToDo": {
+    "sq": [
+      "Mos klikoni linkun; kontrolloni dërgesën vetëm në kanalet zyrtare të Postës Shqiptare.",
+      "Nëse keni shkruar të dhënat e kartës, telefononi menjëherë bankën.",
+      "Denoncojeni mesazhin te krimi kibernetik i Policisë dhe te AKSK.",
+      "Fshijeni mesazhin."
+    ],
+    "en": [
+      "Do not click the link; check the delivery only through Posta Shqiptare's official channels.",
+      "If you entered card details, call your bank at once.",
+      "Report the message to the Police cybercrime unit and to AKSK.",
+      "Delete the message."
+    ]
+  },
+  "reportTo": [
+    "al/your-bank",
+    "al/krimi-kibernetik",
+    "al/aksk"
+  ],
+  "sources": [
+    {
+      "title": "\"Kujdes me sms!\"/ Policia zbulon skemën: Shtetas të huaj mashtronin qytetarët shqiptarë duke u hequr si…",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/?p=2976616",
+      "date": "2026-05-25"
+    },
+    {
+      "title": "BIRN: Mesazhet mashtruese në emër të Postës Shqiptare rrisin rrezikun për qytetarët",
+      "publisher": "BalkanWeb (BIRN)",
+      "url": "https://www.balkanweb.com/?p=2949311",
+      "date": "2026-04-13"
+    },
+    {
+      "title": "Mesazhe mashtruese në emër të postës u drejtohen qytetarëve! Policia ngre alarmin",
+      "publisher": "BalkanWeb",
+      "url": "https://www.balkanweb.com/mesazhe-mashtruese-ne-emer-te-postes-u-drejtohen-qytetareve-policia-ngre-alarmin-ja-si-te-ruani-te-dhenat-tuaja/",
+      "date": "2026-04-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "al/e-albania-sms-gjobe"
+  ]
+}

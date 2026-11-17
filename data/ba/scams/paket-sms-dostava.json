@@ -1,0 +1,125 @@
+{
+  "id": "ba/paket-sms-dostava",
+  "country": "ba",
+  "lang": "bs",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "bs": "Kurirska služba ili pošta: „BH Pošta“, „EuroExpress“, „DHL“",
+    "en": "A courier or the post: “BH Pošta”, “EuroExpress”, “DHL”"
+  },
+  "name": {
+    "bs": "Lažni SMS kurira ili pošte: „paket ne može biti dostavljen“",
+    "en": "Fake courier or post text: “your parcel can’t be delivered”"
+  },
+  "how": {
+    "bs": "Stiže SMS, često sa stranog broja, u ime kurirske službe ili pošte: paket čeka, ali ne može biti isporučen zbog adrese, carine ili male doplate. Link vodi na kopiju stranice kurira koja traži lične podatke i podatke kartice. Tekst ima čudne znakove, greške ili neprirodne rečenice.",
+    "en": "A text arrives, often from a foreign number, in the name of a courier or the post: a parcel is waiting but can’t be delivered because of the address, customs or a small extra fee. The link leads to a copy of the courier’s site that asks for personal and card details. The text has odd characters, mistakes or unnatural sentences."
+  },
+  "steps": [
+    {
+      "text": {
+        "bs": "SMS „kurira“: paket je zadržan.",
+        "en": "A “courier” text: your parcel is held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "bs": "Link na stranicu koja nije službena stranica kurira.",
+        "en": "A link to a page that isn’t the courier’s official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "bs": "Treba platiti sitnu doplatu ili carinu.",
+        "en": "You must pay a small fee or customs duty."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "bs": "Traže broj kartice i CVC.",
+        "en": "They ask for your card number and CVC."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "bs": "EuroExpress: Vasa posiljka je zadrzana u skladistu zbog nepotpune adrese. Za ponovnu dostavu potrebno je platiti 2,50 KM u roku od 24h: [link]",
+        "en": "EuroExpress: Your shipment is held at the warehouse because of an incomplete address. Re-delivery requires a payment of 2.50 KM within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "bs": [
+      "sms paket ne može biti dostavljen",
+      "poruka kurira doplata za dostavu link",
+      "bh pošta sms pošiljka zadržana",
+      "lažna poruka dhl carina kartica",
+      "pošiljka čeka ažurirajte adresu link"
+    ],
+    "en": [
+      "text saying my parcel can’t be delivered",
+      "courier message with delivery fee link",
+      "bh posta text parcel held",
+      "fake dhl customs message asking for card",
+      "parcel waiting update address link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "bs": [
+      "Kuriri i pošta ne traže podatke kartice preko linka u SMS-u.",
+      "Poruka sa stranog broja, s greškama i čudnim znakovima.",
+      "Kratak rok i mali iznos koji „nije vrijedan“ provjere."
+    ],
+    "en": [
+      "Couriers and the post don’t ask for card details through a link in a text.",
+      "A message from a foreign number, with mistakes and odd characters.",
+      "A short deadline and a small amount that seems “not worth” checking."
+    ]
+  },
+  "whatToDo": {
+    "bs": [
+      "Ne otvarajte link. Pošiljku provjerite na službenoj stranici ili aplikaciji kurira, upisujući adresu sami.",
+      "Ako ste unijeli podatke kartice, odmah zovite banku radi blokade.",
+      "Prijavite poruku policiji."
+    ],
+    "en": [
+      "Don’t open the link. Check the parcel on the courier’s official site or app, typing the address yourself.",
+      "If you entered card details, call your bank at once to block the card.",
+      "Report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "ba/your-bank",
+    "ba/policija-122"
+  ],
+  "sources": [
+    {
+      "title": "SMS prevare i dalje vrebaju građane u BiH: Ne unosite bankovne podatke i ne vjerujte čak ni \"prijateljima\"",
+      "publisher": "Klix.ba",
+      "url": "https://www.klix.ba/vijesti/bih/sms-prevare-i-dalje-vrebaju-gradane-u-bih-ne-unosite-bankovne-podatke-i-ne-vjerujte-cak-ni-prijateljima/260507095",
+      "date": "2026-05-07"
+    },
+    {
+      "title": "FUP upozorava na drastičan rast prevara u BiH: Jedan klik može vas skupo koštati",
+      "publisher": "Depo Portal (FENA, Federalna uprava policije)",
+      "url": "https://depo.ba/clanak/284958/fup-upozorava-na-drastican-rast-prevara-u-bih-jedan-klik-moze-vas-skupo-kostati",
+      "date": "2026-05-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,128 @@
+{
+  "id": "mk/viber-account-takeover",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "mk": "Порака во Viber што наводно е од Viber „корисничка поддршка“, или повик од странски број (често +1)",
+    "en": "A Viber message supposedly from Viber \"support\", or a call from a foreign number (often +1)"
+  },
+  "name": {
+    "mk": "Преземање на Viber профил: „сметката ви е украдена, внесете го кодот“",
+    "en": "Viber account takeover: \"your account was stolen, enter the code\""
+  },
+  "how": {
+    "mk": "Добивате порака во Viber дека е пријавено оти вашата сметка е украдена и дека за да ја потврдите сопственоста треба да го внесете или испратите кодот што ви стигнал по СМС, инаку профилот трајно ќе се избрише. Тој код всушност е код за најава на вашиот профил на друг уред. Штом го дадете, измамниците го преземаат профилот, ве исфрлаат и им пишуваат на вашите контакти дека сте во неволја и ви требаат пари.",
+    "en": "You get a Viber message saying your account was reported stolen and that to confirm ownership you must enter or send the code you got by text, or the profile will be permanently deleted. That code is really the login code for your profile on another device. Once you give it, the scammers take over the profile, lock you out and write to your contacts that you're in trouble and need money."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Порака „од Viber“: сметката е украдена или ќе биде избришана.",
+        "en": "A message \"from Viber\": the account was stolen or will be deleted."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mk": "Барање да го внесете или испратите кодот од СМС.",
+        "en": "A request to enter or send the code from a text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "mk": "Закана со трајно бришење ако не потврдите веднаш.",
+        "en": "A threat of permanent deletion if you don't confirm now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mk": "Потоа вашите контакти добиваат барања за пари од вашиот профил.",
+        "en": "Then your contacts get money requests from your profile."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Viber Безбедност: Примивме пријава дека Вашиот профил се користи на непознат уред. За да ја задржите сметката, препишете го шестцифрениот код што Ви го испративме по СМС во овој разговор. Без потврда профилот ќе биде деактивиран за 30 минути.",
+        "en": "Viber Security: we received a report that your profile is being used on an unknown device. To keep your account, type the six-digit code we texted you into this chat. Without confirmation the profile will be deactivated in 30 minutes."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "вибер бара код од смс",
+      "ми го презедоа профилот на вибер",
+      "порака сметката е украдена внеси код",
+      "пријател на вибер бара пари хакиран",
+      "повик на вибер од број +1",
+      "испратив код и останав без вибер"
+    ],
+    "en": [
+      "viber asks for the code from sms",
+      "my viber account was taken over",
+      "message says account stolen enter code",
+      "friend on viber asking money hacked",
+      "sent the code and lost my viber"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "mk": [
+      "Viber никогаш не ви пишува во разговор за да бара код.",
+      "Кодот од СМС е за најава и не се дава никому.",
+      "Пријател што одеднаш бара пари само преку пораки."
+    ],
+    "en": [
+      "Viber never writes to you in a chat to ask for a code.",
+      "The text code is for logging in and is never given to anyone.",
+      "A friend suddenly asking for money only by message."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не испраќајте го кодот; вклучете проверка во два чекора со ПИН во поставките.",
+      "Ако профилот е преземен, повторно регистрирајте го бројот и предупредете ги контактите по друг пат.",
+      "Пријавете го случајот во МВР и пријавете го профилот до Viber."
+    ],
+    "en": [
+      "Don't send the code; turn on two-step verification with a PIN in settings.",
+      "If the profile was taken over, register your number again and warn your contacts another way.",
+      "Report it to the police and report the profile to Viber."
+    ]
+  },
+  "reportTo": [
+    "mk/mvr-cybercrime",
+    "mk/mkd-cirt",
+    "mk/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Нов бран на измами преку Вибер: Еве на што да внимавате",
+      "publisher": "Република",
+      "url": "https://republika.mk/vesti/hronika/nov-bran-na-izmami-preku-viber-eve-na-shto-da-vnimavate/",
+      "date": "2025-08-14"
+    },
+    {
+      "title": "ВНИМАНИЕ: Нов бран на измами преку Вибер!",
+      "publisher": "Либертас",
+      "url": "https://libertas.mk/vnimanie-nov-bran-na-izmami-preku-viber/",
+      "date": "2025-08-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

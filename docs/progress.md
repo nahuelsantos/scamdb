@@ -2,6 +2,26 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 9 (Serbia, Bosnia and Herzegovina, Montenegro, North Macedonia, Albania, Kosovo)
+
+**Built:**
+- **Groundwork (#79):** rs, ba, me, mk, al and xk in `countries.json` and reports; 29 brands (Pošta Srbije,
+  KupujemProdajem, OLX.ba, BH Pošta, Pošta CG, Стопанска банка, УЈП, Posta Shqiptare, e-Albania, Posta e Kosovës...).
+- **Matcher 1.13.0 (#80):** a Serbo-Croatian block in Latin and Serbian Cyrillic, an Albanian block and a Macedonian
+  block, all from the drafts' labelled messages; genuine warnings in each language; a remote session the person
+  arranged is not remote access; "večeras" alone is not urgency; Finnish "varat" must be a whole word.
+- **Import:** 79 entries (rs 16, mk 14, ba 14, al 12, me 12, xk 11), 28 contacts, 132 labelled messages.
+  Emergency numbers: Bosnia 122 (no confirmed nationwide 112), Albania 129 (112 works only in Tirana).
+
+**Measured (eval, 1,286 messages):** 98.9% of scams caught, 2.8% of safe messages called "scam" (was 3.1%).
+Each new country: 0/10 false alarms; 83–100% of scams called "scam". No other country's numbers changed.
+
+**Learned:**
+- Short words still collide across languages: Finnish "varat" (funds) matched inside Bosnian "otvarati" (to open).
+- Agents sharing a scratchpad must each keep their scripts in their own folder (one ran another's generator).
+- Sources for smaller countries often reach us only through news reports; official sites block automated
+  readers (gov.me, fup.gov.ba, nbrm.mk, bqk-kos.org).
+
 ## 2026-11-17: Europe wave 8 (Estonia, Latvia, Lithuania)
 
 **Built:**

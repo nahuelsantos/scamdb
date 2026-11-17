@@ -1,0 +1,131 @@
+{
+  "id": "mk/crypto-platform-channel",
+  "country": "mk",
+  "lang": "mk",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "mk": "Канал или група во апликација за пораки, лажни профили на социјалните мрежи или повик од „брокер“",
+    "en": "A channel or group in a messaging app, fake social media profiles or a call from a \"broker\""
+  },
+  "name": {
+    "mk": "Лажна инвестициска платформа: канал со „сигурни добивки“ од криптовалути",
+    "en": "Fake investment platform: a channel promising \"sure profits\" from crypto"
+  },
+  "how": {
+    "mk": "Преку социјалните мрежи, лажни профили или телефонски повик ве покануваат во канал каде стотици луѓе наводно заработуваат од криптовалути. Ви ветуваат високи и сигурни приноси и ве упатуваат да уплатите на платформа што изгледа сосема легитимно. Во почетокот гледате „добивка“ на екранот, но кога ќе побарате исплата, бараат уште уплати за такси или парите исчезнуваат.",
+    "en": "Through social media, fake profiles or a phone call you're invited to a channel where hundreds of people supposedly earn from crypto. You're promised high, safe returns and told to pay into a platform that looks completely legitimate. At first you see \"profit\" on screen, but when you ask to withdraw, they want more payments for fees or the money disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "mk": "Покана во канал или група за брза заработка од криптовалути.",
+        "en": "An invitation to a channel or group for fast crypto earnings."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "mk": "Ветување за високи и сигурни приноси без ризик.",
+        "en": "A promise of high, safe returns with no risk."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "mk": "Уплата на непозната платформа или крипто паричник.",
+        "en": "Payment into an unknown platform or crypto wallet."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "mk": "За исплата бараат нова уплата „за такса“ или „данок“.",
+        "en": "To withdraw, they ask for a new payment \"for a fee\" or \"tax\"."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mk": "Добредојдовте во VIP сигнали! Членовите денес заработија по 18% на биткоин. Почнете со 250 евра на нашата платформа, тимот тргува наместо вас, а профитот се гледа веднаш на профилот. Местата за овој месец се ограничени, пишете ми лично за регистрација.",
+        "en": "Welcome to VIP signals! Members earned 18% on bitcoin today. Start with 250 euros on our platform; the team trades for you and the profit shows on your profile right away. Places this month are limited; message me privately to register."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "mk": [
+      "канал за инвестирање крипто сигурна заработка",
+      "вложив пари на платформа не можам да ги извадам",
+      "бараат такса за исплата на профитот",
+      "брокер ме вика инвестирај биткоин",
+      "група во телеграм ветуваат добивки",
+      "платформа покажува профит а исплата нема",
+      "ме додадоа во група за тргување со крипто",
+      "сигнали за тргување секој ден заработка",
+      "отворив профил на платформа за тргување",
+      "мал влог а голем месечен профит"
+    ],
+    "en": [
+      "crypto investment channel guaranteed profit",
+      "invested on a platform and can't withdraw",
+      "they want a fee to pay out profit",
+      "broker called me to invest in bitcoin",
+      "telegram group promising returns",
+      "added me to a crypto trading group",
+      "daily trading signals group"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "mk": [
+      "Сигурен и висок принос не постои.",
+      "„Профитот“ е само број на екранот на платформа што не ја знаете.",
+      "За исплата треба прво да платите уште."
+    ],
+    "en": [
+      "A safe, high return doesn't exist.",
+      "The \"profit\" is just a number on a platform you don't know.",
+      "You have to pay more before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "mk": [
+      "Не уплаќајте повеќе, ниту „такса“ за исплата.",
+      "Зачувајте ги разговорите, адресите на паричниците и потврдите за уплата.",
+      "Пријавете во Секторот за компјутерски криминал и известете ја банката."
+    ],
+    "en": [
+      "Don't pay any more, including a withdrawal \"fee\".",
+      "Keep the chats, wallet addresses and payment receipts.",
+      "Report it to the police computer crime sector and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "mk/mvr-cybercrime",
+    "mk/your-bank"
+  ],
+  "story": {
+    "mk": "Според МВР, од декември 2025 до април 2026 година, преку канал во мобилна апликација со неколку стотици претплатници, двајца осомничени навеле голем број граѓани од целата држава да вложуваат на лажна интернет платформа со ветувања за добивки што никогаш не се исплатиле. Само пет оштетени поднеле пријава, иако според сметката оштетени се стотици луѓе.",
+    "en": "According to the Ministry of Interior, from December 2025 to April 2026, through a channel in a mobile app with several hundred subscribers, two suspects led many people across the country to invest on a fake online platform with promises of winnings that were never paid. Only five victims reported it, although the account records show hundreds were affected."
+  },
+  "sources": [
+    {
+      "title": "Кривична пријава за „измама“ против две лица, навеле повеќе лица да инвестираат во лажна интернет платформа и им нанеле финансиска штета",
+      "publisher": "Министерство за внатрешни работи",
+      "url": "https://mvr.gov.mk/mk-MK/odnosi-so-javnost/novosti/krivicna-prijava-za-izmama-protiv-dve-lica",
+      "date": "2026-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

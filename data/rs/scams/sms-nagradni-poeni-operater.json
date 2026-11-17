@@ -1,0 +1,123 @@
+{
+  "id": "rs/sms-nagradni-poeni-operater",
+  "country": "rs",
+  "lang": "sr",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sr": "„Vaš mobilni operater”, u istoj niti kao prave poruke operatera",
+    "en": "“Your mobile operator”, in the same thread as the operator’s real texts"
+  },
+  "name": {
+    "sr": "Lažni SMS operatera: skupljeni poeni ističu, preuzmite nagradu uz karticu",
+    "en": "Fake operator text: your points are expiring, claim a prize with your card"
+  },
+  "how": {
+    "sr": "SMS u istoj niti sa pravim porukama vašeg mobilnog operatera javlja da ste skupili poene koji uskoro ističu. Link vodi na lažni sajt operatera sa „besplatnim” telefonima, slušalicama, aparatima ili kozmetikom, ali za dostavu traži podatke platne kartice. Kartica se zatim zloupotrebi, a žrtva to vidi tek po obaveštenju o zaduženju.",
+    "en": "A text in the same thread as your mobile operator’s real messages says you’ve collected points that expire soon. The link opens a fake operator site with “free” phones, headphones, appliances or cosmetics, but asks for your card details for delivery. The card is then misused, and the victim only notices from a debit notice."
+  },
+  "steps": [
+    {
+      "text": {
+        "sr": "Poruka „operatera” o poenima i nagradi.",
+        "en": "A message from the “operator” about points and a prize."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sr": "Poeni ističu danas.",
+        "en": "The points expire today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sr": "Besplatan poklon, samo platite dostavu.",
+        "en": "A free gift, just pay for delivery."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sr": "Link ka lažnom sajtu i unos kartice.",
+        "en": "A link to a fake site and card entry."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sr": "Postovani korisnice, na vasem racunu je 4.870 bonus poena koji isticu 30.11. Zamenite ih za bezicne slusalice ili usisivac uz placanje samo postarine: [link]",
+        "en": "Dear customer, your account has 4,870 bonus points that expire on 30 Nov. Exchange them for wireless headphones or a vacuum cleaner, paying only postage: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sr": [
+      "sms bonus poeni ističu nagrada operater",
+      "poruka poeni zameniti za telefon platiti poštarinu",
+      "lažni sajt operatera traži karticu za poklon",
+      "mts yettel a1 poeni nagrada link",
+      "besplatan poklon samo kartica za dostavu",
+      "бонус поени порука награда"
+    ],
+    "en": [
+      "text bonus points expiring prize operator",
+      "message exchange points for phone pay postage",
+      "fake operator site asks card for gift",
+      "mobile operator points reward link",
+      "free gift just card for delivery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "sr": [
+      "Za pravi besplatan poklon dovoljna je adresa, ne i kartica.",
+      "Za program poena biste znali unapred.",
+      "Prava i lažna poruka mogu da stoje u istoj niti.",
+      "Kratak rok „poeni ističu”."
+    ],
+    "en": [
+      "A real free gift only needs your address, not your card.",
+      "You would know about a points programme in advance.",
+      "Real and fake texts can sit in the same thread.",
+      "A short “points expiring” deadline."
+    ]
+  },
+  "whatToDo": {
+    "sr": [
+      "Ne otvarajte link. Poene proverite u zvaničnoj aplikaciji operatera.",
+      "Ako ste upisali karticu, odmah je blokirajte u banci: posle prijave rizik prelazi na banku.",
+      "Poruku prijavite CERT-u ili na Sajber straži."
+    ],
+    "en": [
+      "Don’t open the link. Check points in your operator’s official app.",
+      "If you entered your card, block it with your bank at once: after you report it, the risk moves to the bank.",
+      "Report the message to CERT or on Sajber straža."
+    ]
+  },
+  "reportTo": [
+    "rs/your-bank",
+    "rs/cert-prijava",
+    "rs/nbs-zastita-korisnika"
+  ],
+  "sources": [
+    {
+      "title": "NBS upozorila korisnike mobilne telefonije na lažne SMS poruke o preuzimanju nagrade",
+      "publisher": "N1",
+      "url": "https://n1info.rs/vesti/nbs-upozorila-korisnike-mobilne-telefonije-na-lazne-sms-poruke-o-preuzimanju-nagrade/",
+      "date": "2025-07-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}
