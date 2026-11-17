@@ -29,3 +29,8 @@ test('the evidence map stays aligned with non-Latin text', async () => {
   assert.ok(ev.some((s) => s.id === 'money_request' && /fee|€5/.test(s.evidence)));
   assert.ok(ev.some((s) => s.id === 'urgency' && s.evidence === 'today'));
 });
+test('tokens drop Portuguese, French and Dutch filler words but keep words that matter in English', () => {
+  assert.deepEqual(tokens('Dit is het nummer van een vriend voor ons'), ['nummer', 'vriend']);
+  assert.deepEqual(tokens('Votre colis est dans notre dépôt pour vous'), ['colis', 'notre', 'depot']);
+  assert.deepEqual(tokens('my son at the door'), ['son', 'door']);
+});

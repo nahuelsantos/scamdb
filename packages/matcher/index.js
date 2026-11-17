@@ -4,7 +4,7 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence } from './signs.js';
-export const VERSION = '1.4.0';
+export const VERSION = '1.4.1';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
