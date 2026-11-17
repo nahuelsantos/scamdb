@@ -2,6 +2,24 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 6 (Sweden, Denmark, Norway, Finland, Iceland), rules from data
+
+**Built:**
+- **Groundwork (#69):** se, dk, no, fi and is in `countries.json`, reports, feed and trends; 36 brands.
+- **Matcher 1.9.0 (#70):** Swedish, Danish, Norwegian, Finnish and Icelandic rules written *after* the labelled
+  messages, from them: BankID/MitID approvals during a call, electronic-ID authentication, "lägg inte på",
+  "nytt nummer", gift-card codes, and the genuine "lämna aldrig ut koden" / "älä koskaan kerro koodia".
+- **Import:** 82 entries (se 17, no 17, fi 17, dk 16, is 15), 34 contacts, 110 labelled messages; all 196 source
+  links load.
+
+**Measured (eval, 978 messages):** 98.7% of scams caught, 3.7% of safe messages called "scam". The Nordic
+countries call 75–92% of their scams "scam" with 0/10 false alarms each, the best wave so far.
+
+**Learned:**
+- Data first, rules second, works: the rules hit the wording real messages use ("legitimera dig i BankID-appen nu
+  medan vi pratar") instead of guesses, and false alarms are caught before the PR.
+- The 5-hour usage limit stopped all five agents at once; resuming them with SendMessage kept their progress.
+
 ## 2026-11-17: Europe wave 5 (Ukraine, Türkiye, Greece, Cyprus, Bulgaria) and matcher 1.8.x
 
 **Built:**
