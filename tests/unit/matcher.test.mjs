@@ -286,3 +286,9 @@ test('1.8.1: Ukrainian scam wording from real messages; "we never call", "set th
   assert.ok(!has('Ваш банк нагадує: ми ніколи не телефонуємо з проханням назвати PIN, CVV чи код із SMS.', 'asks_for_code'));
   assert.ok(!has('Yeni kartınız kuryeyle gelecek; şifrenizi ATM’den veya mobil uygulamadan kendiniz oluşturabilirsiniz.', 'asks_for_code'));
 });
+test('1.8.1: "the PIN is in the app" in Greek, Ukrainian and Turkish is genuine', () => {
+  assert.ok(!signsOf('Η νέα σας κάρτα στάλθηκε. Το PIN θα το δείτε στην εφαρμογή.').includes('asks_for_code'));
+  assert.ok(!signsOf('Нова картка вже в дорозі, PIN побачите у застосунку банку.').includes('asks_for_code'));
+  assert.ok(!signsOf('Yeni kartınız yolda, PIN kodunu uygulamadan görebilirsiniz.').includes('asks_for_code'));
+  assert.ok(signsOf('Πείτε μου το PIN της κάρτας σας').includes('asks_for_code'));
+});
