@@ -1,0 +1,102 @@
+{
+  "id": "lu/arrest-warrant-robocall",
+  "country": "lu",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "“The Police” or “the justice authorities” (recorded voice)"
+  },
+  "name": {
+    "en": "Recorded call: “an arrest warrant has been issued against you”"
+  },
+  "how": {
+    "en": "Your phone rings, often showing a Luxembourg mobile or official-looking number, and a recording says an arrest warrant has been issued in your name. You are told to press a key or stay on the line to speak to an “officer”, who then asks for personal or bank details, a transfer, or valuables to settle the matter. The number is spoofed. In 2025 the Police reported the recording played in English; in July 2026 they warned of a new wave of these calls."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call from what looks like a Luxembourg or official number plays a recording."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The recording says there is an arrest warrant against you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "You are told to press a key or hold for an officer."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "en": "The “officer” asks for your details, bank information or a payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is an automated message from the police department. An arrest warrant has been issued under your name for a serious offence. To avoid immediate arrest, press 1 now to speak with the officer in charge of your file."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "recorded message said arrest warrant",
+      "arrest warrant issued against me",
+      "press 1 to speak to an officer",
+      "automated police call Luxembourg number",
+      "officer asked for my bank details to cancel warrant",
+      "call from justice about a warrant"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "The Police and courts don’t announce arrest warrants with a recorded call.",
+      "Being asked to press a key and stay on the line.",
+      "Any request for bank details, a transfer or valuables to “settle” a warrant.",
+      "A Luxembourg number on screen can be faked (caller ID spoofing)."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up at once. Don’t call the number back.",
+      "If unsure, contact the Police yourself through the usual channels (113 in an emergency).",
+      "If you gave details or paid, call your bank and file a complaint at any police station."
+    ]
+  },
+  "reportTo": [
+    "lu/police",
+    "lu/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Vorsicht vor betrügerischen Telefonanrufen im Namen der Polizei bzw. der Justiz",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/07/semaine-31/arnaque-appels-police-justice.html",
+      "date": "2026-07-22"
+    },
+    {
+      "title": "Vorsicht vor unerwünschten Telefonanrufen!",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/06/semaine-23/arnaque-appels-mandat-arret.html",
+      "date": "2025-06-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

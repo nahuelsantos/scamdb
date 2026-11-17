@@ -1,0 +1,132 @@
+{
+  "id": "nl/fake-debt-collector",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "nl": "Een gerechtsdeurwaarder of incassobureau",
+    "en": "A bailiff or debt collection agency"
+  },
+  "name": {
+    "nl": "Valse factuur van een deurwaarder of incassobureau: betaal binnen 2 dagen",
+    "en": "Fake bailiff or debt-collector invoice: pay within 2 days"
+  },
+  "how": {
+    "nl": "U krijgt een e-mail, soms met uw naam, van een “gerechtsdeurwaarder” of “incassobureau” over een openstaande betaling. Vaak is het onduidelijk waarvoor: een loterij, een puzzelboekabonnement of een “mondelinge overeenkomst” aan de telefoon, soms met uw (oude) telefoonnummer erbij. U moet binnen twee dagen betalen via een iDEAL-link, anders volgt “conservatoir beslag”.",
+    "en": "You get an email, sometimes with your name, from a “bailiff” or “debt collector” about an outstanding payment. It’s often unclear what for: a lottery, a puzzle-book subscription or a “verbal agreement” on the phone, sometimes with your (old) phone number added. You must pay within two days through an iDEAL link, or there will be a “prejudgment seizure”."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een factuur of aanmaning voor iets dat u niet kent.",
+        "en": "An invoice or reminder for something you don’t recognise."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Een “mondelinge overeenkomst” voor een loterij of abonnement.",
+        "en": "A “verbal agreement” for a lottery or subscription."
+      }
+    },
+    {
+      "text": {
+        "nl": "Binnen 2 dagen betalen, anders conservatoir beslag.",
+        "en": "Pay within 2 days, or a prejudgment seizure."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Betalen via een iDEAL-link of een nummer bellen.",
+        "en": "Pay through an iDEAL link or call a number."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Geachte heer/mevrouw Jansen, namens onze opdrachtgever vorderen wij een openstaand bedrag van € 219,95 voor uw deelname aan een loterij-actie, afgesloten via een mondelinge overeenkomst. Betaal binnen 2 dagen via [link] om conservatoir beslag en extra kosten te voorkomen.",
+        "en": "Dear Mr/Ms Jansen, on behalf of our client we are claiming an outstanding amount of €219.95 for your participation in the lottery offer, agreed through a verbal agreement. Pay within 2 days via [link] to avoid a prejudgment seizure and extra costs."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "mail deurwaarder openstaande betaling",
+      "incassobureau mondelinge overeenkomst loterij",
+      "conservatoir beslag dagen betalen",
+      "aanmaning puzzelboek abonnement",
+      "incasso factuur onbekend",
+      "deurwaarder ideal link",
+      "opdrachtgever vorderen bedrag"
+    ],
+    "en": [
+      "bailiff email about unpaid bill",
+      "debt collector verbal agreement lottery",
+      "pay within 2 days or seizure",
+      "invoice for a subscription i never took",
+      "debt collection payment link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een schuld voor iets dat u niet kent of nooit afsloot.",
+      "Een “mondelinge overeenkomst” als enige bewijs.",
+      "Heel kort de tijd en dreigen met beslag."
+    ],
+    "en": [
+      "A debt for something you don’t know or never signed up for.",
+      "A “verbal agreement” as the only proof.",
+      "Very little time and threats of seizure."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Heeft u geen openstaande rekening? Negeer de mail en betaal niets.",
+      "Twijfelt u, zoek het bureau zelf op en bel het op een nummer dat u zelf vindt.",
+      "Meld het bij de Fraudehelpdesk; al betaald, bel uw bank."
+    ],
+    "en": [
+      "No outstanding bill? Ignore the email and pay nothing.",
+      "In doubt, look the agency up yourself and call a number you find yourself.",
+      "Report it to the Fraud Helpdesk; if you paid, call your bank."
+    ]
+  },
+  "reportTo": [
+    "nl/fraudehelpdesk",
+    "nl/fraudehelpdesk-valse-email",
+    "nl/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Valse berichten namens gerechtsdeurwaarders of incassobureaus",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-berichten-namens-gerechtsdeurwaarders/",
+      "date": "2026-07-27"
+    },
+    {
+      "title": "Valse berichten namens incassobureaus",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-berichten-namens-incassobureaus/",
+      "date": "2025-10-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "nl/belastingdienst-fake-debt"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "fr/renovation-energetique-faux-agent",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "fr": "« France Rénov’ », « l’Anah », « Enedis », « la mairie » ou un installateur",
+    "en": "“France Rénov’”, “Anah” (housing agency), “Enedis”, “the town hall” or an installer"
+  },
+  "name": {
+    "fr": "Faux agent France Rénov’ ou MaPrimeRénov’ : démarchage pour des travaux « aidés »",
+    "en": "Fake France Rénov’ or MaPrimeRénov’ agent: cold calls for “subsidised” works"
+  },
+  "how": {
+    "fr": "On vous appelle, parfois plusieurs fois par jour, en se disant envoyé par l'État, l'Anah, France Rénov', Enedis ou la mairie : vous auriez droit à des aides pour une pompe à chaleur, des panneaux solaires ou une isolation presque gratuite. Le démarcheur veut venir faire un « diagnostic gratuit », vous fait signer vite un devis et un crédit, ou demande votre numéro fiscal et votre avis d'imposition pour « vérifier l'éligibilité », ce qui lui permet d'ouvrir un dossier MaPrimeRénov' à votre nom. L'État ne démarche pas pour ses aides et le démarchage téléphonique pour la rénovation énergétique est interdit.",
+    "en": "Someone calls, sometimes several times a day, claiming to be sent by the State, the housing agency (Anah), France Rénov’, Enedis or the town hall: you supposedly qualify for grants for a heat pump, solar panels or nearly free insulation. The caller wants to come for a “free assessment”, gets you to sign a quote and a loan quickly, or asks for your tax number and tax notice “to check eligibility”, which lets them open a MaPrimeRénov’ file in your name. The State does not cold-call about its grants, and phone canvassing for energy renovation is banned."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un appel « de la part de l'État » ou de France Rénov' : vous avez droit à des aides.",
+        "en": "A call “on behalf of the State” or France Rénov’: you qualify for grants."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Travaux presque gratuits, offre limitée, rendez-vous à domicile.",
+        "en": "Almost free works, limited offer, home visit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fr": "On vous demande avis d'imposition, numéro fiscal, RIB ou une signature immédiate de crédit.",
+        "en": "You are asked for your tax notice, tax number, bank details or to sign a loan straight away."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Bonjour, je vous appelle de la part du service rénovation de l'Etat. Votre logement est eligible a une pompe a chaleur pour 1 euro avec MaPrimeRenov. Il me faut juste votre numero fiscal et la reference de votre avis d'imposition pour bloquer le dossier, les places sont limitees ce mois-ci.",
+        "en": "Hello, I’m calling on behalf of the State renovation service. Your home qualifies for a heat pump for 1 euro with MaPrimeRénov’. I just need your tax number and your tax notice reference to secure the file, places are limited this month."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux agent france renov",
+      "demarchage maprimerenov pompe a chaleur",
+      "appel aide etat renovation energetique",
+      "panneaux solaires aides demarchage telephone",
+      "demande numero fiscal avis d imposition eligibilite",
+      "isolation a 1 euro appel"
+    ],
+    "en": [
+      "fake france renov agent",
+      "cold call maprimerenov heat pump",
+      "energy renovation grant phone call",
+      "solar panels subsidy cold call",
+      "asked for my tax number to check eligibility"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "L'État, l'Anah et France Rénov' ne démarchent pas pour proposer leurs aides.",
+      "Des travaux « à 1 euro » ou une offre limitée dans le temps.",
+      "Une demande d'avis d'imposition, de numéro fiscal ou de RIB au premier contact."
+    ],
+    "en": [
+      "The State, Anah and France Rénov’ don’t cold-call to offer their grants.",
+      "Works “for 1 euro” or a time-limited offer.",
+      "A request for your tax notice, tax number or bank details at first contact."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez ; créez vous-même votre compte MaPrimeRénov' et demandez conseil à un conseiller France Rénov' public.",
+      "Vérifiez le label RGE de l'entreprise et comparez plusieurs devis ; vous avez 14 jours pour vous rétracter.",
+      "Signalez le démarchage et, si vous avez payé ou signé sous pression, portez plainte."
+    ],
+    "en": [
+      "Hang up; create your MaPrimeRénov’ account yourself and ask a public France Rénov’ adviser.",
+      "Check the firm’s RGE label and compare several quotes; you have 14 days to withdraw.",
+      "Report the cold call and, if you paid or signed under pressure, file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/info-escroqueries",
+    "fr/33700",
+    "fr/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Usurpation d'identité et faux crédits : les conseils pour déjouer les nouvelles arnaques à la rénovation",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/l-invite-de-la-redaction-de-ici-la-rochelle/usurpation-d-identite-et-faux-credits-comment-dejouer-les-nouvelles-arnaques-a-la-renovation-7112426",
+      "date": "2026-11-03"
+    },
+    {
+      "title": "Rénovation thermique : gare aux fausses promesses des démarcheurs par téléphone",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/renovation-thermique-gare-aux-fausses-promesses-des-demarcheurs-par-telephone-2738472",
+      "date": "2026-03-06"
+    },
+    {
+      "title": "Rénovation énergétique : attention aux arnaques qui explosent",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/le-dossier-du-jour-ici-saint-etienne-loire/renovation-energetique-attention-aux-arnaques-qui-explosent-5573207",
+      "date": "2026-01-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

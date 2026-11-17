@@ -1,0 +1,144 @@
+{
+  "id": "be/fake-app-install-link",
+  "country": "be",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "nl": "Een bericht dat lijkt te komen van een vertrouwde organisatie",
+    "fr": "Un message qui semble venir d’une organisation de confiance",
+    "en": "A message that seems to come from a trusted organisation"
+  },
+  "name": {
+    "nl": "Sms met link om een app te installeren: malware die je gsm overneemt",
+    "fr": "SMS avec un lien pour installer une app : un logiciel espion prend votre téléphone",
+    "en": "Text with a link to install an app: malware takes over your phone"
+  },
+  "how": {
+    "nl": "Je krijgt een sms, WhatsApp of mail die lijkt te komen van een bekende dienst, met een link om een (nieuwe) app te installeren. De app heeft dezelfde naam en hetzelfde icoontje als de echte, maar is malware. Daarmee lezen de oplichters je contacten, foto’s, wachtwoorden en verificatiecodes, en doen ze betalingen zonder dat je het meteen merkt.",
+    "fr": "Vous recevez un SMS, un WhatsApp ou un e-mail qui semble venir d’un service connu, avec un lien pour installer une (nouvelle) app. L’app a le même nom et la même icône que la vraie, mais c’est un logiciel malveillant. Les escrocs lisent alors vos contacts, photos, mots de passe et codes de vérification, et font des paiements sans que vous le remarquiez tout de suite.",
+    "en": "You get a text, WhatsApp or email that seems to come from a known service, with a link to install a (new) app. The app has the same name and icon as the real one but is malware. The scammers then read your contacts, photos, passwords and verification codes, and make payments without you noticing straight away."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Bericht van een “vertrouwde dienst” met een link.",
+        "fr": "Message d’un « service de confiance » avec un lien.",
+        "en": "A message from a “trusted service” with a link."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Je moet een app installeren buiten de officiële appwinkel.",
+        "fr": "Il faut installer une app hors du magasin officiel.",
+        "en": "You must install an app outside the official store."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "nl": "De app vraagt toegang tot alles op je gsm.",
+        "fr": "L’app demande l’accès à tout votre téléphone.",
+        "en": "The app asks for access to everything on your phone."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "nl": "Uw mutualiteit: vanaf volgende week werkt de oude app niet meer. Installeer de nieuwe versie via deze link om uw terugbetalingen te blijven ontvangen: [link]",
+        "fr": "Votre mutualité : dès la semaine prochaine, l’ancienne app ne fonctionnera plus. Installez la nouvelle version via ce lien pour continuer à recevoir vos remboursements : [lien]",
+        "en": "Your health insurer: from next week the old app will stop working. Install the new version through this link to keep receiving your refunds: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "sms met link om app te installeren",
+      "nieuwe app downloaden via link",
+      "nep app malware gsm",
+      "installeer de nieuwe versie van de app",
+      "app buiten de app store installeren"
+    ],
+    "fr": [
+      "sms lien pour installer une application",
+      "télécharger la nouvelle app via un lien",
+      "fausse application logiciel malveillant",
+      "installez la nouvelle version de l’app",
+      "app hors du play store"
+    ],
+    "en": [
+      "text with a link to install an app",
+      "download the new app from a link",
+      "fake app malware phone",
+      "install the new version of the app",
+      "app outside the app store"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een link om een app te installeren in een sms of mail.",
+      "Een app die niet uit de officiële appwinkel komt.",
+      "De app vraagt toegang tot sms’en, scherm of toegankelijkheid."
+    ],
+    "fr": [
+      "Un lien pour installer une app dans un SMS ou un e-mail.",
+      "Une app qui ne vient pas du magasin officiel.",
+      "L’app demande l’accès aux SMS, à l’écran ou à l’accessibilité."
+    ],
+    "en": [
+      "A link to install an app in a text or email.",
+      "An app that doesn’t come from the official store.",
+      "The app asks for access to texts, the screen or accessibility."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Installeer apps enkel via de officiële appwinkel.",
+      "Al geïnstalleerd? Zet je gsm in vliegtuigmodus, bel je bank en laat je gsm nakijken.",
+      "Doe aangifte bij de politie en stuur het bericht naar Safeonweb."
+    ],
+    "fr": [
+      "Installez les apps uniquement depuis le magasin officiel.",
+      "Déjà installée ? Mettez le téléphone en mode avion, appelez votre banque et faites vérifier l’appareil.",
+      "Portez plainte et transférez le message à Safeonweb."
+    ],
+    "en": [
+      "Install apps only from the official app store.",
+      "Already installed? Put the phone in flight mode, call your bank and have the phone checked.",
+      "Report it to the police and forward the message to Safeonweb."
+    ]
+  },
+  "reportTo": [
+    "be/your-bank",
+    "be/safeonweb",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Parket Antwerpen en Limburg waarschuwt voor nieuwe oplichtingsmethode via nep-apps: al meer dan 80 meldingen",
+      "publisher": "VRT NWS",
+      "url": "https://www.vrt.be/vrtnws/nl/2026/02/17/phishing-nieuwe-oplichtingsmethode-app-downloaden/",
+      "date": "2026-02-17"
+    },
+    {
+      "title": "SMS, WhatsApp ou e-mail... Gare à cette nouvelle arnaque qui sévit en Belgique",
+      "publisher": "La DH",
+      "url": "https://www.dhnet.be/actu/faits/2026/02/17/sms-whatsapp-ou-e-mail-gare-a-cette-nouvelle-arnaque-qui-sevit-en-belgique-EK2HFAM575GLNJFY3SVJMZD2T4/",
+      "date": "2026-02-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

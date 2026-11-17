@@ -1,0 +1,131 @@
+{
+  "id": "lu/myguichet-phishing",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fr": "« Guichet.lu » ou « MyGuichet.lu »",
+    "en": "“Guichet.lu” or “MyGuichet.lu”"
+  },
+  "name": {
+    "fr": "Faux MyGuichet.lu : « synchronisez votre compte d’imposition avec votre banque »",
+    "en": "Fake MyGuichet.lu: “sync your tax account with your bank”"
+  },
+  "how": {
+    "fr": "Des SMS et e-mails au nom de Guichet.lu ou MyGuichet.lu vous annoncent un « message important », une erreur de calcul en votre faveur, ou une synchronisation obligatoire de votre compte d’imposition avec votre compte bancaire. Le lien mène à une copie du portail qui demande vos identifiants (souvent LuxTrust) et vos coordonnées bancaires, qui servent ensuite à vider le compte. Guichet.lu a signalé une nouvelle vague en novembre 2026 : les acteurs publics ne demandent jamais vos données via un lien.",
+    "en": "Texts and emails in the name of Guichet.lu or MyGuichet.lu tell you about an “important message”, a calculation error in your favour, or a mandatory sync of your tax account with your bank account. The link leads to a copy of the portal that asks for your login (often LuxTrust) and bank details, which are then used to empty the account. Guichet.lu reported a new wave in November 2026: public bodies never ask for your data through a link."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un SMS ou e-mail « MyGuichet.lu » annonce un message important, un remboursement ou une synchronisation obligatoire.",
+        "en": "A “MyGuichet.lu” text or email announces an important message, a refund or a mandatory sync."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il faut réagir vite, sinon l’accès sera restreint.",
+        "en": "You must act fast or access will be restricted."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Le lien ouvre une fausse page de connexion.",
+        "en": "The link opens a fake login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "On vous demande vos identifiants LuxTrust et vos coordonnées bancaires.",
+        "en": "You are asked for your LuxTrust login and bank details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "MyGuichet.lu : la synchronisation de votre compte fiscal avec votre compte bancaire est obligatoire avant le 30/11. Sans action, votre espace sera bloqué. Synchroniser : [lien]",
+        "en": "MyGuichet.lu: syncing your tax account with your bank account is mandatory before 30/11. Without action your space will be locked. Sync now: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "synchronisation obligatoire compte d’imposition",
+      "MyGuichet important cliquer",
+      "erreur de calcul en ma faveur Guichet",
+      "Guichet montant dû à recevoir",
+      "MyGuichet bloqué sans action",
+      "identifiants LuxTrust demandés Guichet"
+    ],
+    "en": [
+      "sync tax account with bank account",
+      "MyGuichet important message link",
+      "calculation error in my favour Guichet",
+      "Guichet refund link by text",
+      "MyGuichet space locked",
+      "LuxTrust login through Guichet text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fr": [
+      "Guichet.lu et MyGuichet.lu ne vous demandent jamais de saisir vos données via un lien reçu par SMS ou e-mail.",
+      "Une « synchronisation obligatoire » avec votre banque n’existe pas.",
+      "Une promesse de remboursement ou une menace de blocage pour vous faire cliquer."
+    ],
+    "en": [
+      "Guichet.lu and MyGuichet.lu never ask you to enter data through a link in a text or email.",
+      "There is no “mandatory sync” with your bank.",
+      "A promised refund or a threatened lock to make you click."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas : tapez vous-même l’adresse de Guichet.lu pour vérifier vos messages.",
+      "En cas de doute, appelez le helpdesk Guichet.lu et transférez le message à GOVCERT.LU.",
+      "Si vous avez saisi vos identifiants : appelez votre banque, faites bloquer votre accès LuxTrust et portez plainte."
+    ],
+    "en": [
+      "Don’t click: type the Guichet.lu address yourself to check your messages.",
+      "If in doubt, call the Guichet.lu helpdesk and forward the message to GOVCERT.LU.",
+      "If you entered your login: call your bank, have your LuxTrust access blocked and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/guichet-helpdesk",
+    "lu/govcert",
+    "lu/your-bank",
+    "lu/luxtrust",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Attention aux e-mails ou SMS frauduleux au nom d’institutions gouvernementales",
+      "publisher": "Guichet.lu",
+      "url": "https://guichet.public.lu/fr/citoyens/actualites/2026/novembre/12-phishing.html",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "Vorsicht vor Betrugsmasche durch falsche Bankangestellte",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/01/semaine-4/arnaque-faux-employes-banque.html",
+      "date": "2025-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

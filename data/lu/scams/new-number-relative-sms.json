@@ -1,0 +1,128 @@
+{
+  "id": "lu/new-number-relative-sms",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "fr": "Votre enfant ou un proche, « depuis un nouveau numéro »",
+    "en": "Your child or a relative, “from a new number”"
+  },
+  "name": {
+    "fr": "« Maman, on m’a volé mon téléphone, voici mon nouveau numéro » : demande d’argent urgente",
+    "en": "“Mum, my phone was stolen, this is my new number”: urgent money request"
+  },
+  "how": {
+    "fr": "Un inconnu se fait passer pour votre enfant ou un autre proche par SMS : son téléphone aurait été volé et il vous écrit depuis un nouveau numéro. Il vous demande de lui répondre ou de l’appeler sur ce numéro, puis explique qu’il a besoin d’argent tout de suite, par exemple pour un nouveau téléphone ou une facture qu’il ne peut pas payer. Si vous faites le virement, l’argent part chez les escrocs. La Police rappelle de vérifier en posant des questions précises ou en appelant l’ancien numéro.",
+    "en": "A stranger pretends by text to be your child or another relative: their phone was stolen and they are writing from a new number. They ask you to reply or call them on that number, then explain they need money right away, for example for a new phone or a bill they can’t pay. If you transfer it, the money goes to the scammers. The Police advise checking by asking precise questions or calling the old number."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un message d’un numéro inconnu : « c’est moi, on m’a volé mon téléphone ».",
+        "en": "A message from an unknown number: “it’s me, my phone was stolen”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "fr": "Il vous demande d’enregistrer ce numéro et de lui répondre là.",
+        "en": "They ask you to save the number and reply there."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il a besoin d’argent aujourd’hui pour un téléphone ou une facture.",
+        "en": "They need money today for a phone or a bill."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Il dit qu’il ne peut pas appeler et insiste pour que ce soit vite.",
+        "en": "They say they can’t call and insist it be quick."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Coucou maman, c’est moi, on m’a volé mon portable hier soir 😩 c’est mon nouveau numéro, enregistre-le. Tu pourrais me faire un virement de 780 € pour un nouveau téléphone ? Je te rembourse samedi promis, je peux pas appeler pour l’instant.",
+        "en": "Hi mum, it’s me, my phone got stolen last night 😩 this is my new number, save it. Could you transfer me €780 for a new phone? I’ll pay you back on Saturday I promise, I can’t call right now."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "coucou maman nouveau numéro",
+      "téléphone volé nouveau numéro",
+      "enfant demande virement depuis numéro inconnu",
+      "enregistre mon nouveau numéro",
+      "argent pour un nouveau téléphone",
+      "impossible d’appeler virement urgent"
+    ],
+    "en": [
+      "hi mum new number",
+      "phone stolen new number",
+      "child asks for transfer from unknown number",
+      "save my new number",
+      "money for a new phone",
+      "can’t call please make the transfer"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un « proche » qui écrit d’un numéro inconnu et demande de l’argent.",
+      "Il ne peut pas appeler ni envoyer de message vocal.",
+      "Le virement va sur un compte qui n’est pas le sien."
+    ],
+    "en": [
+      "A “relative” writing from an unknown number and asking for money.",
+      "They can’t call or send a voice message.",
+      "The transfer goes to an account that isn’t theirs."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Appelez votre proche sur son ancien numéro ou posez une question que lui seul connaît.",
+      "Ne faites aucun virement avant d’avoir parlé à la personne.",
+      "Si vous avez payé, appelez votre banque tout de suite et portez plainte."
+    ],
+    "en": [
+      "Call your relative on their old number or ask something only they would know.",
+      "Don’t transfer anything until you have spoken to them.",
+      "If you paid, call your bank at once and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/your-bank",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Arnaque du petit-fils",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/prevention/arnaques/arnaque-petit-fils-enkeltrick.html",
+      "date": "2025-01-23"
+    },
+    {
+      "title": "« Léif Boma, léiwe Bopa, loosst iech net beducksen! » : lancement d’une campagne de prévention des arnaques visant les personnes âgées",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/11/semaine-48/leif-boma-leiw-bopa-lancement-campagne-de-prevention-2026.html",
+      "date": "2026-11-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

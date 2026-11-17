@@ -1,0 +1,136 @@
+{
+  "id": "lu/fake-fine-sms",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fr": "« Police Grand-Ducale », « Grand Ducal Police » ou « Guichet.lu »",
+    "en": "“Police Grand-Ducale”, “Grand Ducal Police” or “Guichet.lu”"
+  },
+  "name": {
+    "fr": "Faux SMS d’amende : « votre avertissement taxé est impayé »",
+    "en": "Fake fine text: “your traffic fine is unpaid”"
+  },
+  "how": {
+    "fr": "Un SMS ou un e-mail au nom de la Police Grand-Ducale ou de Guichet.lu affirme qu’une amende pour infraction au code de la route n’a pas été payée. Il menace d’une majoration ou d’autres sanctions si vous ne payez pas tout de suite via un lien. Le site imite un service officiel et récupère vos données de carte ou de connexion. Certains SMS arrivent même d’un numéro étranger signé « Grand Ducal Police ». Au Luxembourg, les avertissements taxés arrivent par courrier, ou dans MyGuichet.lu si vous vous êtes abonné à l’eDelivery, et jamais avec un lien de paiement direct.",
+    "en": "A text or email in the name of the Grand Ducal Police or Guichet.lu says a traffic fine has not been paid. It threatens a higher fine or other penalties unless you pay right away through a link. The site imitates an official service and steals your card or login details. Some texts even come from a foreign number signed “Grand Ducal Police”. In Luxembourg, fines arrive by post, or in MyGuichet.lu if you signed up for eDelivery, and never with a direct payment link."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un SMS « Police » ou « Guichet.lu » parle d’une amende de circulation impayée.",
+        "en": "A “Police” or “Guichet.lu” text mentions an unpaid traffic fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il menace d’une majoration si vous ne payez pas aujourd’hui.",
+        "en": "It threatens a higher amount if you don’t pay today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Un lien mène à une page de paiement qui demande votre carte.",
+        "en": "A link leads to a payment page asking for your card."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Vous payez un petit montant et vos données de carte sont volées.",
+        "en": "You pay a small amount and your card details are stolen."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "POLICE LU : Avertissement taxé n° 48213 non réglé (49 €). Sans paiement sous 24h, majoration et poursuites. Réglez ici : [lien]",
+        "en": "POLICE LU: Fixed penalty no. 48213 unpaid (€49). Without payment within 24h, surcharge and prosecution. Pay here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "SMS amende impayée police",
+      "avertissement taxé à payer par lien",
+      "majoration si pas payé aujourd’hui",
+      "Grand Ducal Police SMS amende",
+      "infraction routière payer par lien",
+      "amende excès de vitesse SMS"
+    ],
+    "en": [
+      "text about unpaid police fine",
+      "traffic fine to pay through a link",
+      "surcharge if not paid today",
+      "Grand Ducal Police fine text",
+      "traffic offence pay by link",
+      "speeding fine text message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Les amendes arrivent par courrier (ou dans MyGuichet.lu si vous l’avez demandé), jamais par SMS avec un lien.",
+      "Une menace de majoration pour vous faire payer vite.",
+      "Un numéro luxembourgeois ou officiel affiché peut être falsifié."
+    ],
+    "en": [
+      "Fines arrive by post (or in MyGuichet.lu if you asked for it), never by text with a link.",
+      "A threatened surcharge to make you pay fast.",
+      "A Luxembourg or official number on screen can be faked."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas et ne payez pas : connectez-vous vous-même à MyGuichet.lu ou contactez la Police par ses canaux habituels.",
+      "Transférez le message à GOVCERT.LU puis supprimez-le.",
+      "Si vous avez saisi votre carte : appelez votre banque et faites bloquer la carte."
+    ],
+    "en": [
+      "Don’t click or pay: log in to MyGuichet.lu yourself or contact the Police through its usual channels.",
+      "Forward the message to GOVCERT.LU, then delete it.",
+      "If you entered your card: call your bank and have the card blocked."
+    ]
+  },
+  "reportTo": [
+    "lu/govcert",
+    "lu/guichet-helpdesk",
+    "lu/your-bank",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Warnung vor Betrugsmasche im Namen der Polizei",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/06/semaine-23/arnaque-police.html",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "Attention aux e-mails ou SMS frauduleux au nom d’institutions gouvernementales",
+      "publisher": "Guichet.lu",
+      "url": "https://guichet.public.lu/fr/citoyens/actualites/2026/novembre/12-phishing.html",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "Vorsicht vor falschen Zahlungsaufforderungen einer Geldstrafe per SMS oder E-Mail",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/01/semaine-03/arnaque-avertissement-taxe.html",
+      "date": "2025-01-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

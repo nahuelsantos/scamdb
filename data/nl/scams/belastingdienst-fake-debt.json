@@ -1,0 +1,134 @@
+{
+  "id": "nl/belastingdienst-fake-debt",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "nl": "Belastingdienst of Toeslagen",
+    "en": "Tax Administration (Belastingdienst) or Benefits office (Toeslagen)"
+  },
+  "name": {
+    "nl": "Valse sms of mail van de Belastingdienst: openstaande schuld of beslag",
+    "en": "Fake Tax Administration text or email: outstanding debt or seizure"
+  },
+  "how": {
+    "nl": "Een sms of mail, soms met uw volledige naam, zegt dat u ondanks herinneringen een belastingschuld heeft. Betaalt u niet snel via de link, dan volgt beslag door een deurwaarder. Andere varianten gaan over een cryptowallet aangeven of geld terugkrijgen. De link gaat naar een nagemaakte Belastingdienst-site, soms met een chat die u een betaallink geeft.",
+    "en": "A text or email, sometimes with your full name, says you have a tax debt despite reminders. If you don’t pay quickly through the link, a bailiff will seize your goods. Other versions are about declaring a crypto wallet or getting money back. The link goes to a copied Tax Administration site, sometimes with a chat that gives you a payment link."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een sms met uw naam: openstaande schuld, ondanks herinneringen.",
+        "en": "A text with your name: an outstanding debt, despite reminders."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Dreiging: betaal vóór een datum, anders legt de deurwaarder beslag.",
+        "en": "A threat: pay by a date, or the bailiff will seize your goods."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Betalen via een link naar een nep-Belastingdienstsite.",
+        "en": "Pay through a link to a fake Tax Administration site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Een chat op de site geeft u een betaallink.",
+        "en": "A chat on the site gives you a payment link."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Belastingdienst: Beste J. de Vries, ondanks meerdere aanmaningen staat er nog een bedrag van € 387,40 open. Betaal uiterlijk morgen om beslaglegging door de gerechtsdeurwaarder te voorkomen: [link]",
+        "en": "Tax Administration: Dear J. de Vries, despite several reminders an amount of €387.40 is still outstanding. Pay by tomorrow at the latest to avoid seizure by the bailiff: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "sms belastingdienst openstaande schuld",
+      "belastingdienst dreigt beslag",
+      "belastingschuld betalen link",
+      "achterstallige aanslag sms",
+      "cryptowallet aangeven belastingdienst",
+      "terugbetaling belastingdienst link",
+      "toeslagen terugbetalen",
+      "beslaglegging gerechtsdeurwaarder belastingdienst"
+    ],
+    "en": [
+      "tax office text about unpaid debt",
+      "belastingdienst text threatening seizure",
+      "pay tax debt through a link",
+      "fake tax refund link",
+      "declare crypto wallet text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "De Belastingdienst stuurt nooit een sms of mail om via een link een schuld te betalen.",
+      "Een openstaand bedrag krijgt u altijd per brief of aanslag.",
+      "Dreigen met beslag binnen een dag of twee."
+    ],
+    "en": [
+      "The Tax Administration never sends a text or email to pay a debt through a link.",
+      "An outstanding amount always comes by letter or assessment.",
+      "Threats of seizure within a day or two."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Klik niet en betaal niets. Log zelf in op Mijn Belastingdienst of Mijn toeslagen om te zien of er echt iets openstaat.",
+      "Stuur het bericht of een schermafbeelding naar valse-email@belastingdienst.nl.",
+      "Toch betaald? Bel direct uw bank."
+    ],
+    "en": [
+      "Don’t click and don’t pay. Log in yourself to Mijn Belastingdienst or Mijn toeslagen to see whether anything is really outstanding.",
+      "Send the message or a screenshot to valse-email@belastingdienst.nl.",
+      "Paid anyway? Call your bank right away."
+    ]
+  },
+  "reportTo": [
+    "nl/belastingdienst-valse-berichten",
+    "nl/fraudehelpdesk",
+    "nl/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Valse sms met uw volledige naam",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-sms-over-onbetaalde-schuld/",
+      "date": "2026-06-01"
+    },
+    {
+      "title": "Sms Belastingdienst is nep",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/sms-belastingdienst-is-nep-2/",
+      "date": "2024-11-29"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "nl/fake-debt-collector"
+  ]
+}

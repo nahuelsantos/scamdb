@@ -1,0 +1,130 @@
+{
+  "id": "nl/whatsapp-code-theft",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "nl": "Een bekende op WhatsApp, of een “koper”",
+    "en": "Someone you know on WhatsApp, or a “buyer”"
+  },
+  "name": {
+    "nl": "WhatsApp-kaping: stemmen op een wedstrijd of een code “die per ongeluk naar u ging”",
+    "en": "WhatsApp hijack: voting in a contest or a code “sent to you by mistake”"
+  },
+  "how": {
+    "nl": "Een bekende appt of u wilt stemmen op een kind, bijvoorbeeld een jonge ballerina, via een link. Om de stem te “verifiëren” vult u uw nummer in en daarna een code die u via WhatsApp krijgt. In werkelijkheid koppelt u zo uw WhatsApp aan het apparaat van de oplichter. Een andere smoes: iemand stuurde “per ongeluk” een code naar u en vraagt die terug. Met uw account vragen de oplichters daarna geld aan uw contacten.",
+    "en": "Someone you know asks you to vote for a child, for example a young ballerina, through a link. To “verify” the vote you enter your number and then a code you get on WhatsApp. In reality this links your WhatsApp to the scammer’s device. Another excuse: someone sent a code to you “by mistake” and asks for it back. With your account the scammers then ask your contacts for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een appje van een bekende: “Wil je op haar stemmen?” met een link.",
+        "en": "A message from someone you know: “Will you vote for her?” with a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Op de site vult u uw telefoonnummer in om de stem te verifiëren.",
+        "en": "On the site you enter your phone number to verify the vote."
+      }
+    },
+    {
+      "text": {
+        "nl": "U moet de code van WhatsApp invoeren of doorsturen.",
+        "en": "You must enter or forward the WhatsApp code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "nl": "Uw account is overgenomen en uw contacten krijgen geldverzoeken.",
+        "en": "Your account is taken over and your contacts get money requests."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Hoi! Mijn nichtje doet mee aan een danswedstrijd en kan een gratis dansles winnen 🩰 Wil je even op haar stemmen? Duurt maar een minuutje: [link] Je krijgt een code om je stem te bevestigen, die moet je daar invullen.",
+        "en": "Hi! My niece is in a dance contest and can win a free dance lesson 🩰 Could you vote for her? It only takes a minute: [link] You’ll get a code to confirm your vote, you have to enter it there."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "stemmen ballerina whatsapp",
+      "code invullen stem bevestigen",
+      "whatsapp code per ongeluk gestuurd",
+      "whatsapp gekaapt",
+      "verificatiecode doorsturen",
+      "sms zes cijfers doorsturen",
+      "whatsapp account overgenomen",
+      "stemactie danswedstrijd"
+    ],
+    "en": [
+      "vote for my niece whatsapp",
+      "enter the code to confirm my vote",
+      "whatsapp code sent to me by mistake",
+      "my whatsapp got hijacked",
+      "asked me to forward a verification code"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "unknown_link",
+    "impersonation"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een stemactie waarvoor u een code moet invoeren.",
+      "Iemand die een WhatsApp-code van u wil.",
+      "Een code die u niet zelf heeft aangevraagd."
+    ],
+    "en": [
+      "A vote that needs you to enter a code.",
+      "Someone who wants a WhatsApp code from you.",
+      "A code you didn’t ask for yourself."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Geef nooit een code door en vul geen code in op een website.",
+      "Zet verificatie in twee stappen en een passkey aan in WhatsApp, en een pincode op uw voicemail.",
+      "Gekaapt? Log opnieuw in met de sms-code, meld uit op alle gekoppelde apparaten en waarschuw uw contacten."
+    ],
+    "en": [
+      "Never pass on a code and never enter a code on a website.",
+      "Turn on two-step verification and a passkey in WhatsApp, and a PIN on your voicemail.",
+      "Hijacked? Log in again with the text code, log out of all linked devices and warn your contacts."
+    ]
+  },
+  "reportTo": [
+    "nl/fraudehelpdesk",
+    "nl/politie"
+  ],
+  "sources": [
+    {
+      "title": "Valse appjes over stemmen op ballerina",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-appjes-over-stemmen-op-ballerina/",
+      "date": "2026-10-19"
+    },
+    {
+      "title": "WhatsApp-fraude herkennen en voorkomen",
+      "publisher": "Consumentenbond",
+      "url": "https://www.consumentenbond.nl/veilig-internetten/whatsapp-fraude",
+      "date": "2026-07-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "nl/hi-mum-new-number"
+  ]
+}

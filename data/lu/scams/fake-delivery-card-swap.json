@@ -1,0 +1,127 @@
+{
+  "id": "lu/fake-delivery-card-swap",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "fr": "Un « livreur de colis »",
+    "en": "A “parcel delivery driver”"
+  },
+  "name": {
+    "fr": "Faux livreur de colis : frais de livraison payés par carte, puis carte échangée",
+    "en": "Fake parcel courier: delivery fee paid by card, then the card is swapped"
+  },
+  "how": {
+    "fr": "On vous appelle pour annoncer une livraison, souvent un colis de pharmacie. Peu après, un faux livreur sonne et réclame des frais de livraison. Il tient votre carte bancaire contre un téléphone portable, vous fait taper votre code PIN et appuyer plusieurs fois sur un bouton vert. Il vous rend ensuite une carte qui ressemble à la vôtre, mais au nom de quelqu’un d’autre, et utilise la vraie pour payer ou retirer de grosses sommes. Ce sont surtout des personnes âgées qui sont visées ; la Police a reçu de nouveaux cas fin octobre 2026.",
+    "en": "Someone calls to announce a delivery, often a parcel from a pharmacy. Soon after, a fake courier rings and asks for a delivery fee. They hold your bank card against a mobile phone, make you type your PIN and press a green button several times. They then hand back a card that looks like yours but is in someone else’s name, and use the real one to pay or withdraw large sums. Mostly older people are targeted; the Police received new cases at the end of October 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un appel annonce un colis, par exemple d’une pharmacie.",
+        "en": "A call announces a parcel, for example from a pharmacy."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Le livreur réclame des frais de livraison à payer par carte, sur place.",
+        "en": "The courier asks for a delivery fee, to be paid by card on the spot."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Il tient votre carte contre son téléphone et vous fait taper votre PIN plusieurs fois.",
+        "en": "They hold your card against their phone and make you type your PIN several times."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fr": "Il vous rend une carte semblable à un autre nom et part avec la vôtre.",
+        "en": "They give back a similar card in another name and leave with yours."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Bonjour Madame, ici le service de livraison. Nous avons un colis de la pharmacie pour vous, je passe dans vingt minutes. Il y a juste 4,90 € de frais de livraison, par carte uniquement, préparez-la s’il vous plaît.",
+        "en": "Hello madam, this is the delivery service. We have a parcel from the pharmacy for you, I’ll be there in twenty minutes. There is just a €4.90 delivery fee, card only, please have it ready."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "livreur colis pharmacie frais de livraison",
+      "livreur a pris ma carte contre son téléphone",
+      "taper mon code PIN pour le livreur",
+      "appuyer plusieurs fois sur le bouton vert",
+      "carte rendue au nom d’une autre personne",
+      "appel annonce un colis de pharmacie"
+    ],
+    "en": [
+      "courier pharmacy parcel delivery fee",
+      "courier held my card against his phone",
+      "type my PIN for the courier",
+      "press the green button several times",
+      "card returned in another person’s name",
+      "call announcing a pharmacy parcel"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un colis annoncé par téléphone avec des frais à payer par carte à la porte.",
+      "Un « terminal » qui est en fait un téléphone portable.",
+      "On vous demande de taper le PIN plusieurs fois ou de lâcher votre carte."
+    ],
+    "en": [
+      "A parcel announced by phone with a fee to pay by card at the door.",
+      "A “payment terminal” that is really a mobile phone.",
+      "You are asked to type your PIN several times or let go of your card."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne donnez jamais votre carte et cachez votre code PIN.",
+      "Vérifiez la livraison auprès de la société ou de la pharmacie, avec leurs coordonnées officielles.",
+      "Si votre carte a été échangée : bloquez-la tout de suite chez Worldline, appelez votre banque et portez plainte."
+    ],
+    "en": [
+      "Never hand over your card, and hide your PIN.",
+      "Check the delivery with the company or pharmacy on their official details.",
+      "If your card was swapped: block it at once with Worldline, call your bank and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/worldline-card-block",
+    "lu/your-bank",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Weitere Fälle der Betrugsmasche durch falsche Paketlieferanten",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/10/semaine-45/arnaque-faux-livreurs.html",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Betrugsmasche durch falsche Paketlieferanten / Arnaque par de faux livreurs de colis",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/10/semaine-43/escroquerie-livreurs-de-colis.html",
+      "date": "2025-10-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

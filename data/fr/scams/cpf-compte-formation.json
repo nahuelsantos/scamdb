@@ -1,0 +1,117 @@
+{
+  "id": "fr/cpf-compte-formation",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fr": "« Mon Compte Formation », « CPF », un « conseiller formation »",
+    "en": "“Mon Compte Formation”, “CPF” (training account), a “training adviser”"
+  },
+  "name": {
+    "fr": "Arnaque au CPF : « vos droits formation vont expirer »",
+    "en": "CPF scam: “your training credit is about to expire”"
+  },
+  "how": {
+    "fr": "Un appel, un SMS ou un mail vous annonce un changement sur le solde de votre Compte personnel de formation, des droits qui vont expirer ou une formation « offerte », parfois avec un cadeau. Le faux conseiller demande vos identifiants ou vous fait vous inscrire à une formation bidon : votre argent CPF part à un faux organisme. Le démarchage pour le CPF est interdit depuis 2022, et vos droits CPF n'expirent pas.",
+    "en": "A call, text or email tells you there is a change to your Personal Training Account (CPF) balance, that your credit is about to expire, or offers a “free” course, sometimes with a gift. The fake adviser asks for your login or signs you up for a sham course: your CPF money goes to a fake training provider. Cold-calling about the CPF has been banned since 2022, and CPF credit does not expire."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Contact non sollicité : votre solde CPF change ou va expirer.",
+        "en": "Unsolicited contact: your CPF balance is changing or about to expire."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Un lien ou un « conseiller » propose une formation, parfois avec un cadeau.",
+        "en": "A link or an “adviser” offers a course, sometimes with a gift."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Il demande vos identifiants ou un code pour « valider l'inscription ».",
+        "en": "They ask for your login or a code to “confirm the enrolment”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Mon Compte Formation : il vous reste 1 340 EUR de droits CPF non utilises qui seront perdus le 31/12. Reservez votre formation gratuite des maintenant : [lien]",
+        "en": "Mon Compte Formation: you have EUR 1,340 of unused CPF credit that will be lost on 31/12. Book your free course now: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "arnaque cpf",
+      "droits cpf vont expirer sms",
+      "compte formation solde change appel",
+      "conseiller cpf demande identifiants",
+      "formation gratuite cpf cadeau",
+      "mon compte formation inscription a mon insu"
+    ],
+    "en": [
+      "cpf training account scam",
+      "training credit about to expire text",
+      "fake cpf adviser asked my login",
+      "free course with cpf and a gift",
+      "enrolled in a course without my consent"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "fr": [
+      "Aucun organisme n'a le droit de vous démarcher pour le CPF.",
+      "Les droits CPF n'ont pas de date limite.",
+      "Un cadeau ou de l'argent en échange d'une inscription."
+    ],
+    "en": [
+      "No organisation is allowed to cold-contact you about the CPF.",
+      "CPF credit has no deadline.",
+      "A gift or money in exchange for signing up."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez, ne cliquez pas, ne donnez ni identifiants ni code.",
+      "Transférez le SMS au 33700.",
+      "Si une inscription a été faite à votre insu : annulez-la dans votre compte, changez le mot de passe, signalez-la sur Mon Compte Formation et portez plainte."
+    ],
+    "en": [
+      "Hang up, don’t click, give no login or code.",
+      "Forward the text to 33700.",
+      "If you were enrolled without consent: cancel it in your account, change the password, report it on Mon Compte Formation and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/33700",
+    "fr/police-complaint",
+    "fr/17cyber"
+  ],
+  "sources": [
+    {
+      "title": "Tentatives de fraude : adoptez les bons réflexes !",
+      "publisher": "Mon Compte Formation (Caisse des Dépôts)",
+      "url": "https://www.moncompteformation.gouv.fr/espace-public/adoptez-les-bons-reflexes-face-aux-tentatives-de-fraudes",
+      "date": "2025-11-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

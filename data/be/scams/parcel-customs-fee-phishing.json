@@ -1,0 +1,153 @@
+{
+  "id": "be/parcel-customs-fee-phishing",
+  "country": "be",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "nl": "Een bericht “van bpost” of een andere pakjesdienst",
+    "fr": "Un message « de bpost » ou d’un autre transporteur",
+    "en": "A message “from bpost” or another parcel service"
+  },
+  "name": {
+    "nl": "Valse bpost-melding: “betaal douanekosten of je pakje wordt niet geleverd”",
+    "fr": "Faux message bpost : « payez les frais de douane ou votre colis ne sera pas livré »",
+    "en": "Fake bpost notice: “pay customs fees or your parcel won’t be delivered”"
+  },
+  "how": {
+    "nl": "Je krijgt een mail of sms in naam van bpost (of een andere pakjesdienst zoals Mondial Relay): je pakje kon niet geleverd worden omdat er een klein bedrag aan douanekosten openstaat, of je moet een nieuw leveringsmoment kiezen. De link leidt naar een nagemaakte site die je naam, adres, IBAN en kaartgegevens vraagt. Daarmee wordt je kaart misbruikt.",
+    "fr": "Vous recevez un e-mail ou un SMS au nom de bpost (ou d’un autre transporteur comme Mondial Relay) : votre colis n’a pas pu être livré car de petits frais de douane sont impayés, ou vous devez choisir un nouveau créneau. Le lien mène à un faux site qui demande vos nom, adresse, IBAN et données de carte. Votre carte est ensuite utilisée par les escrocs.",
+    "en": "You get an email or text in the name of bpost (or another carrier such as Mondial Relay): your parcel could not be delivered because a small customs fee is unpaid, or you must pick a new delivery slot. The link leads to a fake site asking for your name, address, IBAN and card details. Your card is then misused."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Bericht van “bpost”: je pakje is tegengehouden.",
+        "fr": "Message de « bpost » : votre colis est bloqué.",
+        "en": "Message from “bpost”: your parcel is held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Je moet een klein bedrag betalen, vandaag nog.",
+        "fr": "Vous devez payer un petit montant, aujourd’hui.",
+        "en": "You must pay a small amount, today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Een link naar een valse betaalpagina.",
+        "fr": "Un lien vers une fausse page de paiement.",
+        "en": "A link to a fake payment page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "De site vraagt je kaartgegevens en IBAN.",
+        "fr": "Le site demande vos données de carte et votre IBAN.",
+        "en": "The site asks for your card details and IBAN."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "nl": "bpost: Uw zending kon niet worden afgeleverd wegens onbetaalde invoerrechten (2,99 EUR). Betaal binnen 24 uur om terugzending te voorkomen: [link]",
+        "fr": "bpost : Votre envoi n’a pas pu être livré en raison de droits d’importation impayés (2,99 EUR). Payez dans les 24 heures pour éviter le renvoi : [lien]",
+        "en": "bpost: Your shipment could not be delivered due to unpaid import duties (EUR 2.99). Pay within 24 hours to avoid it being returned: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "sms bpost douanekosten betalen",
+      "pakje niet geleverd invoerrechten",
+      "bpost vraagt kaartgegevens",
+      "nieuw leveringsmoment kiezen link",
+      "valse mail van bpost pakje",
+      "verzendkosten betalen voor pakje"
+    ],
+    "fr": [
+      "sms bpost frais de douane",
+      "colis non livré droits d’importation",
+      "faux message bpost colis",
+      "choisir un nouveau créneau mondial relay",
+      "payer pour recevoir mon colis"
+    ],
+    "en": [
+      "bpost text customs fee",
+      "parcel not delivered import duties",
+      "fake bpost email parcel",
+      "pick a new delivery slot link",
+      "pay small fee to get my parcel"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een klein bedrag betalen via een link om een pakje te krijgen.",
+      "Een site die je kaartgegevens of IBAN vraagt.",
+      "Je verwacht geen pakje uit het buitenland."
+    ],
+    "fr": [
+      "Payer un petit montant via un lien pour recevoir un colis.",
+      "Un site qui demande vos données de carte ou votre IBAN.",
+      "Vous n’attendez pas de colis de l’étranger."
+    ],
+    "en": [
+      "Paying a small amount through a link to get a parcel.",
+      "A site asking for your card details or IBAN.",
+      "You aren’t expecting a parcel from abroad."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Klik niet. Kijk je zending zelf na in de app of op de website van de vervoerder.",
+      "Kaartgegevens ingegeven? Laat je kaart meteen blokkeren via Card Stop.",
+      "Stuur het bericht door naar Safeonweb."
+    ],
+    "fr": [
+      "Ne cliquez pas. Vérifiez votre envoi vous-même dans l’app ou sur le site du transporteur.",
+      "Données de carte saisies ? Faites bloquer votre carte tout de suite via Card Stop.",
+      "Transférez le message à Safeonweb."
+    ],
+    "en": [
+      "Don’t click. Check your shipment yourself in the carrier’s app or website.",
+      "Entered card details? Block your card at once through Card Stop.",
+      "Forward the message to Safeonweb."
+    ]
+  },
+  "reportTo": [
+    "be/safeonweb",
+    "be/card-stop",
+    "be/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Fake parcel delivery messages steal your card and bank details",
+      "publisher": "Malwarebytes",
+      "url": "https://www.malwarebytes.com/blog/scams/2026/09/fake-parcel-delivery-messages-steal-your-card-and-bank-details",
+      "date": "2026-09-18"
+    },
+    {
+      "title": "L’arnaque en ligne du moment usurpe l’identité d’un partenaire essentiel de Vinted : la Belgique est ciblée",
+      "publisher": "L’Avenir",
+      "url": "https://www.lavenir.net/actu/conso/multimedia/2026/03/17/larnaque-en-ligne-du-moment-usurpe-lidentite-dun-partenaire-essentiel-de-vinted-la-belgique-est-ciblee-HJE37DST6NFAHAOJSCEY3WPMBU/",
+      "date": "2026-03-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,157 @@
+{
+  "id": "be/fake-bank-employee-card-pickup",
+  "country": "be",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "nl": "Iemand die zegt dat hij van je bank, van Card Stop of van de politie is",
+    "fr": "Quelqu’un qui dit être de votre banque, de Card Stop ou de la police",
+    "en": "Someone who says they are from your bank, Card Stop or the police"
+  },
+  "name": {
+    "nl": "Valse bankmedewerker belt en komt je bankkaart ophalen",
+    "fr": "Un faux employé de banque appelle puis vient chercher votre carte",
+    "en": "Fake bank employee calls, then comes to collect your bank card"
+  },
+  "how": {
+    "nl": "Je wordt gebeld door een “bankmedewerker”: er zijn verdachte verrichtingen of je bent slachtoffer van phishing, en je kaarten moeten “veiliggesteld” worden. Hij vraagt je pincode of laat je die opschrijven en zegt dat een collega de kaarten komt ophalen. Even later belt iemand aan en neemt je kaarten, soms ook je gsm, mee. Daarna wordt je rekening leeggehaald.",
+    "fr": "Un « employé de la banque » vous appelle : il y a des opérations suspectes ou vous êtes victime de phishing, et vos cartes doivent être « sécurisées ». Il demande votre code PIN ou vous le fait noter, puis annonce qu’un collègue va passer chercher les cartes. Peu après, quelqu’un sonne et emporte vos cartes, parfois aussi votre téléphone. Ensuite, votre compte est vidé.",
+    "en": "A “bank employee” calls: there are suspicious transactions or you have been phished, and your cards must be “secured”. He asks for your PIN or has you write it down and says a colleague will come to collect the cards. Soon after, someone rings the bell and takes your cards, sometimes your phone too. Then your account is emptied."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Telefoontje van “je bank”: je rekening is in gevaar.",
+        "fr": "Appel de « votre banque » : votre compte est en danger.",
+        "en": "A call from “your bank”: your account is at risk."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Je moet snel handelen en mag niet ophangen.",
+        "fr": "Il faut agir vite et ne pas raccrocher.",
+        "en": "You must act fast and not hang up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "nl": "Ze vragen je pincode of kaartcode.",
+        "fr": "On vous demande votre code PIN.",
+        "en": "They ask for your PIN."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "nl": "Een “collega” komt de kaarten aan huis ophalen.",
+        "fr": "Un « collègue » vient chercher les cartes à domicile.",
+        "en": "A “colleague” comes to your home to collect the cards."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "nl": "Goedemiddag, u spreekt met de fraudedienst van uw bank. We zien vreemde betalingen op uw rekening, iemand heeft uw gegevens. Blijf aan de lijn. Om uw kaarten te blokkeren komt een collega ze straks bij u ophalen. Steek ze in een envelop met uw pincode erbij.",
+        "fr": "Bonjour, ici le service fraude de votre banque. Nous voyons des paiements anormaux sur votre compte, quelqu’un a vos données. Restez en ligne. Pour bloquer vos cartes, un collègue va passer les chercher chez vous. Mettez-les dans une enveloppe avec votre code.",
+        "en": "Good afternoon, this is your bank’s fraud department. We see strange payments on your account, someone has your details. Stay on the line. To block your cards, a colleague will come to collect them shortly. Put them in an envelope with your PIN."
+      }
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "bankmedewerker komt bankkaart ophalen",
+      "gebeld door valse bankmedewerker",
+      "kaart ophalen aan huis met pincode",
+      "verdachte verrichtingen op mijn rekening telefoon",
+      "collega komt kaarten veiligstellen",
+      "bankkaart in envelop meegeven"
+    ],
+    "fr": [
+      "faux employé de banque vient chercher ma carte",
+      "appel de la banque opérations suspectes",
+      "remettre ma carte bancaire et mon code",
+      "un collègue passe récupérer les cartes",
+      "faux banquier à domicile"
+    ],
+    "en": [
+      "fake bank employee collects my card",
+      "bank called about suspicious payments",
+      "someone coming to pick up my bank card",
+      "asked for my pin on the phone",
+      "hand over cards in an envelope"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "asks_for_code",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "nl": [
+      "Iemand wil je bankkaart aan huis komen ophalen.",
+      "Ze vragen je pincode of laten je die opschrijven.",
+      "Je mag niet ophangen of niemand verwittigen."
+    ],
+    "fr": [
+      "Quelqu’un veut venir chercher votre carte chez vous.",
+      "On vous demande votre code PIN ou de le noter.",
+      "On vous dit de ne pas raccrocher ni prévenir personne."
+    ],
+    "en": [
+      "Someone wants to collect your bank card at home.",
+      "They ask for your PIN or tell you to write it down.",
+      "You are told not to hang up or tell anyone."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Hang op. Bankmedewerkers, Card Stop of de politie komen nooit een kaart ophalen.",
+      "Bel zelf je bank met het nummer op je kaart of in de app.",
+      "Staat er iemand aan de deur: doe niet open en bel 101.",
+      "Kaart al afgegeven? Laat ze meteen blokkeren via Card Stop en doe aangifte."
+    ],
+    "fr": [
+      "Raccrochez. Ni la banque, ni Card Stop, ni la police ne viennent chercher une carte.",
+      "Appelez vous-même votre banque avec le numéro de votre carte ou de l’app.",
+      "Quelqu’un sonne ? N’ouvrez pas et appelez le 101.",
+      "Carte déjà remise ? Faites-la bloquer tout de suite via Card Stop et portez plainte."
+    ],
+    "en": [
+      "Hang up. Banks, Card Stop and the police never collect a card.",
+      "Call your bank yourself on the number on your card or in the app.",
+      "Someone at the door? Don’t open it and call 101.",
+      "Already handed over the card? Block it at once through Card Stop and report it."
+    ]
+  },
+  "reportTo": [
+    "be/your-bank",
+    "be/card-stop",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Valse bankmedewerkers aangehouden die bankkaart en gsm stelen van 72-jarige vrouw uit Baal",
+      "publisher": "VRT NWS",
+      "url": "https://www.vrt.be/vrtnws/nl/2026/11/04/baal-leuven-valse-bankmedewerkers-bankkaart-vrouw-nederlanders",
+      "date": "2026-11-04"
+    },
+    {
+      "title": "Valse bankmedewerkers opgepakt die man van 85 uit Kortenaken probeerden op te lichten",
+      "publisher": "VRT NWS",
+      "url": "https://www.vrt.be/vrtnws/nl/2026/10/30/valse-bankmedewerkers-opgepakt-in-diest-en-kortenaken",
+      "date": "2026-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

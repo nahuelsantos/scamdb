@@ -1,0 +1,133 @@
+{
+  "id": "nl/bank-sms-card-blocked",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "nl": "Uw bank, iDEAL of Wero",
+    "en": "Your bank, iDEAL or Wero"
+  },
+  "name": {
+    "nl": "Valse sms van de bank: pas wordt geblokkeerd of u moet overstappen naar Wero",
+    "en": "Fake bank text: your card will be blocked or you must switch to Wero"
+  },
+  "how": {
+    "nl": "Een sms of e-mail “van de bank” zegt dat uw betaalpas wordt geblokkeerd na meerdere herinneringen, of dat u zelf iets moet doen voor de overstap van iDEAL naar Wero. Soms staat uw echte IBAN of naam erin, zodat het betrouwbaar lijkt. Via de link komt u op een nagemaakte bankpagina die uw inloggegevens vraagt. Daarna kan er een nep-bankmedewerker bellen.",
+    "en": "A text or email “from the bank” says your bank card will be blocked after several reminders, or that you must do something yourself for the switch from iDEAL to Wero. Sometimes your real IBAN or name is in it, so it looks trustworthy. The link leads to a copied bank page that asks for your login details. Then a fake bank employee may call."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een sms of mail: uw pas wordt geblokkeerd, of u moet uw account “bijwerken” voor Wero.",
+        "en": "A text or email: your card will be blocked, or you must “update” your account for Wero."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Er staat uw naam of echte IBAN in, zodat het echt lijkt.",
+        "en": "It contains your name or real IBAN, so it looks real."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "De link gaat naar een nagemaakte inlogpagina van de bank.",
+        "en": "The link goes to a copied bank login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Daarna belt soms een “bankmedewerker” om uw geld veilig te stellen.",
+        "en": "Then a “bank employee” sometimes calls to secure your money."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Uw bank: Na meerdere herinneringen wordt uw betaalpas vandaag geblokkeerd. Rekening NL** **** **** 4821. Voorkom blokkering en bevestig uw gegevens binnen 24 uur via [link]",
+        "en": "Your bank: After several reminders your bank card will be blocked today. Account NL** **** **** 4821. Avoid blocking and confirm your details within 24 hours via [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "sms bank betaalpas geblokkeerd",
+      "betaalpas blokkering herinneringen",
+      "overstappen wero link",
+      "bankpas vervangen sms",
+      "sms iban erin",
+      "gegevens bevestigen blokkering voorkomen",
+      "pas verloopt sms bank"
+    ],
+    "en": [
+      "bank text says my card will be blocked",
+      "switch to wero link",
+      "text with my real iban",
+      "confirm details or account blocked",
+      "fake bank login page"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "nl": [
+      "Banken sturen geen sms met een link om uw pas te houden of te vervangen.",
+      "Voor de overstap naar Wero hoeft u zelf niets te doen.",
+      "Dat uw naam of IBAN erin staat, maakt het bericht niet echt."
+    ],
+    "en": [
+      "Banks don’t send texts with a link to keep or replace your card.",
+      "You don’t have to do anything yourself for the switch to Wero.",
+      "Your name or IBAN being in it doesn’t make the message real."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Klik niet op de link, vul niets in en verwijder het bericht.",
+      "Twijfelt u? Log zelf in via de app van uw bank.",
+      "Heeft u gegevens ingevuld? Bel direct uw bank en meld het bij de Fraudehelpdesk."
+    ],
+    "en": [
+      "Don’t click the link, don’t fill anything in and delete the message.",
+      "In doubt? Log in yourself through your bank’s app.",
+      "Did you enter details? Call your bank right away and report it to the Fraud Helpdesk."
+    ]
+  },
+  "reportTo": [
+    "nl/your-bank",
+    "nl/fraudehelpdesk",
+    "nl/fraudehelpdesk-valse-email",
+    "nl/politie"
+  ],
+  "sources": [
+    {
+      "title": "Valse sms over blokkeren betaalpas met vermelding van de echte IBAN van ontvanger",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-sms-over-blokkeren-betaalpas-met-vermelding-van-de-echte-iban-van-ontvanger/",
+      "date": "2026-04-22"
+    },
+    {
+      "title": "Fraudeurs haken in op overgang van iDEAL naar Wero",
+      "publisher": "Betaalvereniging Nederland",
+      "url": "https://www.betaalvereniging.nl/actueel/fraudeurs-overgang-ideal-wero/",
+      "date": "2026-02-24"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "nl/bank-helpdesk-safe-account"
+  ]
+}

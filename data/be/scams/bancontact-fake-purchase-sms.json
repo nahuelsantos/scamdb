@@ -1,0 +1,139 @@
+{
+  "id": "be/bancontact-fake-purchase-sms",
+  "country": "be",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "nl": "Een sms “van Bancontact” over een aankoop",
+    "fr": "Un SMS « de Bancontact » au sujet d’un achat",
+    "en": "A text “from Bancontact” about a purchase"
+  },
+  "name": {
+    "nl": "Valse sms van Bancontact: “aankoop van 540 euro in behandeling, bel ons”",
+    "fr": "Faux SMS Bancontact : « achat de 540 € en attente, appelez-nous »",
+    "en": "Fake Bancontact text: “€540 purchase pending, call us”"
+  },
+  "how": {
+    "nl": "Je krijgt een sms in naam van Bancontact over een grote aankoop die je niet deed, bijvoorbeeld bij een webshop. Je moet met “1” bevestigen of, als je het niet herkent, een Belgisch gsm-nummer bellen. Daar zit een valse medewerker die je logingegevens van je online bankieren vraagt “om de bestelling te annuleren”.",
+    "fr": "Vous recevez un SMS au nom de Bancontact pour un gros achat que vous n’avez pas fait, par exemple sur une boutique en ligne. Il faut répondre « 1 » pour confirmer ou, si vous ne reconnaissez pas l’achat, appeler un numéro de portable belge. Un faux opérateur vous demande alors vos identifiants de banque en ligne « pour annuler la commande ».",
+    "en": "You get a text in Bancontact’s name about a large purchase you did not make, for example from a web shop. You must reply “1” to confirm or, if you don’t recognise it, call a Belgian mobile number. A fake operator then asks for your online banking login “to cancel the order”."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Sms: een aankoop die je niet deed staat klaar.",
+        "fr": "SMS : un achat que vous n’avez pas fait est en attente.",
+        "en": "Text: a purchase you did not make is pending."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Antwoord meteen of bel een gsm-nummer.",
+        "fr": "Répondez tout de suite ou appelez un numéro de portable.",
+        "en": "Reply now or call a mobile number."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "De “medewerker” vraagt je bankcodes om te annuleren.",
+        "fr": "L’« opérateur » demande vos codes bancaires pour annuler.",
+        "en": "The “operator” asks for your bank codes to cancel."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "nl": "Bancontact Alert: een betaling van 612,00 EUR bij een online winkel wacht op goedkeuring. Antwoord 1 om te bevestigen. Niet herkend? Bel onmiddellijk onze dienst op [nummer].",
+        "fr": "Alerte Bancontact : un paiement de 612,00 EUR chez un marchand en ligne est en attente de validation. Répondez 1 pour confirmer. Non reconnu ? Appelez immédiatement notre service au [numéro].",
+        "en": "Bancontact alert: a payment of EUR 612.00 at an online shop is awaiting approval. Reply 1 to confirm. Don’t recognise it? Call our service immediately on [number]."
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "sms bancontact achat en attente",
+      "alerte bancontact paiement non reconnu",
+      "répondez 1 pour confirmer",
+      "appeler un numéro pour annuler un achat",
+      "achat que je n’ai pas fait sms banque"
+    ],
+    "nl": [
+      "sms bancontact aankoop in behandeling",
+      "bancontact alert betaling niet herkend",
+      "antwoord 1 om te bevestigen",
+      "bellen om aankoop te annuleren",
+      "aankoop die ik niet deed sms"
+    ],
+    "en": [
+      "bancontact text purchase pending",
+      "bancontact alert payment not recognised",
+      "reply 1 to confirm",
+      "call a number to cancel a purchase",
+      "text about a purchase i didn’t make"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een sms over een aankoop die je niet kent, met een gsm-nummer om te bellen.",
+      "Iemand vraagt je login of codes van je bank om iets te annuleren."
+    ],
+    "fr": [
+      "Un SMS pour un achat inconnu, avec un numéro de portable à appeler.",
+      "On vous demande vos identifiants ou codes bancaires pour annuler quelque chose."
+    ],
+    "en": [
+      "A text about a purchase you don’t know, with a mobile number to call.",
+      "Someone asks for your bank login or codes to cancel something."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Antwoord niet en bel het nummer in de sms niet.",
+      "Kijk zelf in je bankapp of er echt een betaling is.",
+      "Gegevens gegeven? Bel je bank en Card Stop, en doe aangifte.",
+      "Stuur een schermafbeelding naar Safeonweb."
+    ],
+    "fr": [
+      "Ne répondez pas et n’appelez pas le numéro du SMS.",
+      "Vérifiez vous-même dans l’app de votre banque s’il y a vraiment un paiement.",
+      "Données transmises ? Appelez votre banque et Card Stop, et portez plainte.",
+      "Envoyez une capture d’écran à Safeonweb."
+    ],
+    "en": [
+      "Don’t reply and don’t call the number in the text.",
+      "Check in your banking app yourself whether there really is a payment.",
+      "Gave details? Call your bank and Card Stop, and report it.",
+      "Send a screenshot to Safeonweb."
+    ]
+  },
+  "reportTo": [
+    "be/your-bank",
+    "be/card-stop",
+    "be/safeonweb",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "L’arnaque par SMS du moment : Shein, Bancontact et un numéro belge pour vous pousser dans le piège",
+      "publisher": "L’Avenir",
+      "url": "https://www.lavenir.net/actu/conso/multimedia/2026/03/09/larnaque-par-sms-du-moment-shein-bancontact-et-un-numero-belge-pour-vous-pousser-dans-le-piege-TZOJLX6MPBAG5FD6PB43X5YOS4/",
+      "date": "2026-03-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

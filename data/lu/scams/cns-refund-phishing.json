@@ -1,0 +1,127 @@
+{
+  "id": "lu/cns-refund-phishing",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "fr": "« CNS » ou « CCSS »",
+    "en": "“CNS” or “CCSS”"
+  },
+  "name": {
+    "fr": "Faux e-mail ou SMS de la CNS : remboursement en attente ou carte de sécurité sociale expirée",
+    "en": "Fake CNS email or text: refund pending or social security card expired"
+  },
+  "how": {
+    "fr": "Des e-mails reprennent le nom et le logo de la Caisse nationale de santé et évoquent un remboursement de frais médicaux en attente ou une erreur administrative. D’autres SMS affirment que votre carte de sécurité sociale a expiré et qu’il faut la renouveler. Dans tous les cas, un lien vous invite à « accéder à votre espace » et demande vos données personnelles, bancaires ou de connexion. La CNS a mis en garde contre une nouvelle vague en août 2026 et rappelle qu’elle n’envoie pas ce type de message.",
+    "en": "Emails use the name and logo of the National Health Fund (CNS) and mention a pending refund of medical costs or an administrative error. Other texts say your social security card has expired and must be renewed. Either way a link invites you to “access your account” and asks for personal, bank or login details. The CNS warned of a new wave in August 2026 and says it does not send such messages."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un e-mail ou SMS « CNS » parle d’un remboursement en attente ou d’une carte expirée.",
+        "en": "A “CNS” email or text mentions a pending refund or an expired card."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Un lien vous demande d’accéder à votre espace pour recevoir l’argent ou commander la carte.",
+        "en": "A link asks you to open your account to get the money or order the card."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "La page réclame vos coordonnées bancaires et vos identifiants.",
+        "en": "The page asks for your bank details and login."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "CNS : un remboursement de 86,40 € est en attente suite à une erreur administrative. Confirmez vos coordonnées bancaires dans votre espace assuré sous 48h : [lien]",
+        "en": "CNS: a refund of €86.40 is pending following an administrative error. Confirm your bank details in your insured person’s area within 48h: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "CNS remboursement en attente",
+      "erreur administrative CNS e-mail",
+      "carte de sécurité sociale expirée",
+      "renouveler ma carte CNS par lien",
+      "accéder à mon espace assuré lien",
+      "confirmer coordonnées bancaires CNS"
+    ],
+    "en": [
+      "CNS refund pending",
+      "CNS administrative error email",
+      "social security card expired text",
+      "renew my CNS card through a link",
+      "access my insured account link",
+      "confirm bank details CNS"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fr": [
+      "La CNS n’envoie pas de lien pour recevoir un remboursement ou renouveler votre carte.",
+      "Le logo et le nom de la CNS ne prouvent rien : regardez l’adresse réelle de l’expéditeur.",
+      "Un délai court pour confirmer vos coordonnées bancaires."
+    ],
+    "en": [
+      "The CNS doesn’t send links to receive a refund or renew your card.",
+      "The CNS name and logo prove nothing: check the sender’s real address.",
+      "A short deadline to confirm your bank details."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas ; contactez la CNS par ses canaux officiels.",
+      "Transférez le message à GOVCERT.LU puis supprimez-le.",
+      "Si vous avez saisi des données bancaires, appelez votre banque."
+    ],
+    "en": [
+      "Don’t click; contact the CNS through its official channels.",
+      "Forward the message to GOVCERT.LU, then delete it.",
+      "If you entered bank details, call your bank."
+    ]
+  },
+  "reportTo": [
+    "lu/govcert",
+    "lu/your-bank",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Alerte phishing : une nouvelle vague de faux e-mails au nom de la CNS",
+      "publisher": "Caisse nationale de santé (CNS)",
+      "url": "https://cns.public.lu/fr/assure/actualites/alerte-phishing-faux-emails.html",
+      "date": "2026-08-20"
+    },
+    {
+      "title": "Beware of fraudulent text messages concerning your social security card!",
+      "publisher": "Caisse nationale de santé (CNS)",
+      "url": "https://cns.public.lu/en/assure/actualites/carte-secu-phishing-sms.html",
+      "date": "2025-11-24"
+    },
+    {
+      "title": "Attention aux arnaques par SMS et/ou e-mail",
+      "publisher": "Gouvernement luxembourgeois (SIP)",
+      "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2024/02-fevrier/02-arnaques-sms.html",
+      "date": "2024-02-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

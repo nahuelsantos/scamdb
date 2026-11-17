@@ -1,0 +1,139 @@
+{
+  "id": "be/whatsapp-vote-code-takeover",
+  "country": "be",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "nl": "Een vriend of familielid wiens WhatsApp al gekaapt is",
+    "fr": "Un ami ou un proche dont le WhatsApp a déjà été piraté",
+    "en": "A friend or relative whose WhatsApp is already hijacked"
+  },
+  "name": {
+    "nl": "WhatsApp gekaapt via een “stemwedstrijd”: geef de sms-code",
+    "fr": "WhatsApp piraté via un faux concours de vote : donnez le code SMS",
+    "en": "WhatsApp hijacked through a fake voting contest: give the text code"
+  },
+  "how": {
+    "nl": "Een bekende stuurt je op WhatsApp een vraag om te stemmen voor een meisje in een wedstrijd. De link leidt naar een valse pagina die je telefoonnummer vraagt en daarna de code die je per sms krijgt. Met die code koppelen de oplichters je WhatsApp aan hun eigen toestel. Ze lezen je gesprekken en vragen je contacten om dringend geld.",
+    "fr": "Un proche vous demande sur WhatsApp de voter pour une jeune participante à un concours. Le lien mène à une fausse page qui demande votre numéro, puis le code reçu par SMS. Avec ce code, les escrocs associent votre WhatsApp à leur propre appareil. Ils lisent vos conversations et demandent de l’argent en urgence à vos contacts.",
+    "en": "Someone you know asks you on WhatsApp to vote for a girl in a contest. The link leads to a fake page asking for your phone number and then the code you receive by text. With that code the scammers link your WhatsApp to their own device. They read your chats and ask your contacts for urgent money."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een bekende vraagt om te stemmen in een wedstrijd.",
+        "fr": "Un proche vous demande de voter pour un concours.",
+        "en": "Someone you know asks you to vote in a contest."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Een link naar een stempagina.",
+        "fr": "Un lien vers une page de vote.",
+        "en": "A link to a voting page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "De pagina vraagt je nummer en de sms-code.",
+        "fr": "La page demande votre numéro et le code SMS.",
+        "en": "The page asks for your number and the text code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "nl": "Hey! Sorry dat ik stoor, de dochter van een collega doet mee aan een danswedstrijd. Wil je even voor haar stemmen? Het duurt maar 1 minuut: [link] Je krijgt een code per sms om je stem te bevestigen 🙏",
+        "fr": "Coucou ! Désolée de te déranger, la fille d’une collègue participe à un concours de danse. Tu peux voter pour elle ? Ça prend 1 minute : [lien] Tu recevras un code par SMS pour valider ton vote 🙏",
+        "en": "Hi! Sorry to bother you, a colleague’s daughter is in a dance contest. Could you vote for her? It only takes a minute: [link] You’ll get a code by text to confirm your vote 🙏"
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "voter pour un concours whatsapp",
+      "code reçu par sms pour valider mon vote",
+      "compte whatsapp piraté",
+      "concours de danse vote lien",
+      "un ami me demande un code",
+      "mes contacts reçoivent des messages de mon whatsapp"
+    ],
+    "nl": [
+      "stemmen voor wedstrijd whatsapp",
+      "code per sms om stem te bevestigen",
+      "whatsapp gehackt overgenomen",
+      "vriendin vraagt om code",
+      "danswedstrijd stemmen link"
+    ],
+    "en": [
+      "vote in a contest on whatsapp",
+      "code by text to confirm my vote",
+      "whatsapp account hijacked",
+      "friend asked me for a code",
+      "dance contest voting link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een stemwedstrijd die een sms-code vraagt.",
+      "Ook een bekende kan al gehackt zijn.",
+      "Een code die je niet zelf aanvroeg."
+    ],
+    "fr": [
+      "Un concours de vote qui demande un code SMS.",
+      "Même un proche peut déjà être piraté.",
+      "Un code que vous n’avez pas demandé."
+    ],
+    "en": [
+      "A voting contest that asks for a text code.",
+      "Even someone you know may already be hacked.",
+      "A code you did not ask for."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Geef nooit een sms-code door, aan niemand.",
+      "Bel de persoon om te vragen of het echt is.",
+      "Kijk in WhatsApp bij Gekoppelde apparaten en meld onbekende toestellen af; zet verificatie in twee stappen aan.",
+      "Waarschuw je contacten als je account gekaapt is."
+    ],
+    "fr": [
+      "Ne donnez jamais un code SMS, à personne.",
+      "Appelez la personne pour vérifier.",
+      "Dans WhatsApp, vérifiez les appareils connectés et déconnectez ceux que vous ne connaissez pas ; activez la vérification en deux étapes.",
+      "Prévenez vos contacts si votre compte a été piraté."
+    ],
+    "en": [
+      "Never pass on a text code to anyone.",
+      "Call the person to check it is real.",
+      "In WhatsApp, check Linked devices and log out unknown ones; turn on two-step verification.",
+      "Warn your contacts if your account was taken."
+    ]
+  },
+  "reportTo": [
+    "be/safeonweb",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Faux concours de vote sur WhatsApp : attention à l’arnaque vicieuse qui pirate votre compte en un clic",
+      "publisher": "L’Avenir",
+      "url": "https://www.lavenir.net/actu/conso/multimedia/2026/10/27/faux-concours-de-vote-sur-whatsapp-attention-a-larnaque-vicieuse-qui-pirate-votre-compte-en-un-clic-R7VALJNRBVHUBF2YHHTYIFW45E/",
+      "date": "2026-10-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

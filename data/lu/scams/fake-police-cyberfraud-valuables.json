@@ -1,0 +1,135 @@
+{
+  "id": "lu/fake-police-cyberfraud-valuables",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "fr": "« La Police », « la cybercriminalité »",
+    "en": "“The Police”, “the cybercrime unit”"
+  },
+  "name": {
+    "fr": "Faux policiers : « vous êtes victime d’une cyberfraude, on vient sécuriser vos bijoux »",
+    "en": "Fake police: “you are a victim of cyber fraud, we’ll come and secure your jewellery”"
+  },
+  "how": {
+    "fr": "Un faux policier vous contacte par WhatsApp ou par téléphone : vous seriez victime d’une cyberfraude. Pour « protéger » vos comptes, il vous fait cliquer sur un lien, saisir vos données LuxTrust et accepter la demande LuxTrust sur votre téléphone, ce qui lui ouvre vos comptes. Il demande ensuite si vous avez des bijoux ou de l’argent liquide à la maison, puis un faux policier passe les chercher « pour les mettre en sécurité ». Les vrais policiers luxembourgeois peuvent montrer leur carte et parlent luxembourgeois ; en cas de doute, appelez le 113.",
+    "en": "A fake police officer contacts you by WhatsApp or phone: you are supposedly a victim of cyber fraud. To “protect” your accounts they have you click a link, enter your LuxTrust details and accept the LuxTrust request on your phone, which opens your accounts to them. They then ask whether you have jewellery or cash at home, and a fake officer comes to pick it up “to keep it safe”. Real Luxembourg police officers can show ID and speak Luxembourgish; if in doubt, call 113."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un « policier » vous écrit sur WhatsApp ou appelle : vous êtes victime d’une cyberfraude.",
+        "en": "A “police officer” messages you on WhatsApp or calls: you are a victim of cyber fraud."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il envoie un lien pour saisir vos données LuxTrust et vous fait accepter la demande sur votre téléphone.",
+        "en": "They send a link to enter your LuxTrust details and make you accept the request on your phone."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fr": "Il demande quels objets de valeur vous avez chez vous et vous dit de n’en parler à personne.",
+        "en": "They ask what valuables you have at home and tell you not to tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "fr": "Un faux policier sonne pour emporter bijoux et liquide « en sécurité ».",
+        "en": "A fake officer rings to take the jewellery and cash “to safety”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Police – Cellule cybercriminalité. Madame, votre compte bancaire est utilisé par un réseau de fraudeurs. Pour le protéger, connectez-vous ici [lien] et acceptez la demande LuxTrust qui va arriver. Avez-vous des bijoux ou des espèces au domicile ? Un agent passera ce soir les placer sous scellés. Ne parlez de l’enquête à personne, même à votre banque.",
+        "en": "Police – Cybercrime unit. Madam, your bank account is being used by a fraud network. To protect it, log in here [link] and accept the LuxTrust request that will arrive. Do you have jewellery or cash at home? An officer will come by tonight to seal them as evidence. Don’t tell anyone about the investigation, not even your bank."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "policier dit que je suis victime d’une cyberfraude",
+      "policier demande d’accepter la demande LuxTrust",
+      "mettre mes bijoux en sécurité",
+      "policier vient chercher objets de valeur",
+      "police WhatsApp enquête cyberfraude",
+      "agent passe récupérer espèces au domicile",
+      "ne parlez de l’enquête à personne"
+    ],
+    "en": [
+      "police officer says I am a victim of cyber fraud",
+      "police officer asked me to accept the LuxTrust request",
+      "keep my jewellery safe",
+      "police officer coming to collect valuables",
+      "police on WhatsApp cyber fraud investigation",
+      "officer coming to pick up cash at home",
+      "don’t tell anyone about the investigation"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "secrecy",
+    "money_request",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "fr": [
+      "La Police ne vous demande jamais vos données LuxTrust ni de valider une demande.",
+      "La Police ne vient jamais chercher bijoux ou argent liquide pour les « sécuriser ».",
+      "Un « policier » qui vous écrit sur WhatsApp ou ne parle pas luxembourgeois.",
+      "On vous demande le secret, même vis-à-vis de votre banque."
+    ],
+    "en": [
+      "The Police never ask for your LuxTrust details or to approve a request.",
+      "The Police never come to collect jewellery or cash to “secure” it.",
+      "A “police officer” who writes to you on WhatsApp or doesn’t speak Luxembourgish.",
+      "You are asked to keep it secret, even from your bank."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez, n’ouvrez pas la porte et appelez le 113 pour vérifier.",
+      "Ne cliquez sur aucun lien et ne validez rien dans LuxTrust.",
+      "Si vous avez validé une demande : appelez votre banque, faites bloquer votre accès LuxTrust et portez plainte."
+    ],
+    "en": [
+      "Hang up, don’t open the door and call 113 to check.",
+      "Don’t click any link or approve anything in LuxTrust.",
+      "If you approved a request: call your bank, have your LuxTrust access blocked and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/police",
+    "lu/your-bank",
+    "lu/luxtrust"
+  ],
+  "sources": [
+    {
+      "title": "Betrugsmasche durch falsche Polizisten",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/01/semaine-02/arnaque-faux-policiers.html",
+      "date": "2026-01-06"
+    },
+    {
+      "title": "Betrugsmasche durch falsche Polizisten gemeldet",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/08/semaine-33/signalement-arnaque-policier.html",
+      "date": "2026-08-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

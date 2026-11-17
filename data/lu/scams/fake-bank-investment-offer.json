@@ -1,0 +1,141 @@
+{
+  "id": "lu/fake-bank-investment-offer",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "email",
+    "phone",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "fr": "Un « conseiller » d’une banque luxembourgeoise ou d’une plateforme de trading",
+    "en": "An “adviser” from a Luxembourg bank or a trading platform"
+  },
+  "name": {
+    "fr": "Faux placement au nom d’une banque luxembourgeoise : brochure et rendements garantis",
+    "en": "Fake investment in a Luxembourg bank’s name: brochure and guaranteed returns"
+  },
+  "how": {
+    "fr": "De faux employés diffusent des brochures d’investissement au nom d’une vraie banque luxembourgeoise, avec des rendements irréalistes. D’autres escrocs contactent leurs victimes par SMS, WhatsApp ou e-mail et les dirigent vers une plateforme de trading où un petit premier placement semble rapporter beaucoup. On vous pousse ensuite à verser des sommes plus importantes, souvent sur des comptes à l’étranger ; quand vous voulez retirer, les « conseillers » disparaissent ou invoquent des problèmes techniques. La CSSF rappelle que les sites d’entités surveillées sont parfois copiés à l’identique.",
+    "en": "Fake employees spread investment brochures in the name of a real Luxembourg bank, promising unrealistic returns. Other scammers contact victims by text, WhatsApp or email and steer them to a trading platform where a small first investment seems to earn a lot. You are then pushed to pay in larger sums, often to accounts abroad; when you try to withdraw, the “advisers” vanish or blame technical problems. The CSSF warns that the websites of supervised firms are sometimes copied exactly."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un conseiller vous contacte sans que vous l’ayez demandé, au nom d’une banque connue ou d’une plateforme.",
+        "en": "An adviser contacts you unasked, in the name of a well-known bank or a platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il envoie une brochure ou un lien vers une plateforme avec des rendements élevés « garantis ».",
+        "en": "They send a brochure or a link to a platform with high “guaranteed” returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fr": "Un petit essai rapporte vite ; on vous presse d’investir davantage avant la fin de l’offre.",
+        "en": "A small trial pays off fast; you are pushed to invest more before the offer ends."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "L’argent part vers un compte à l’étranger et ne peut plus être retiré.",
+        "en": "The money goes to an account abroad and can no longer be withdrawn."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Bonjour, suite à votre demande, vous trouverez ci-joint notre brochure « Placement Sécurité 2027 » : 9,5 % de rendement annuel garanti, capital protégé à 100 %. Offre réservée à nos clients jusqu’à vendredi. Votre conseiller attitré, gestion privée.",
+        "en": "Hello, further to your request please find attached our “Secure Investment 2027” brochure: 9.5% guaranteed annual return, 100% capital protection. Offer reserved for our clients until Friday. Your dedicated adviser, private banking."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "brochure investissement banque luxembourgeoise",
+      "rendement garanti capital protégé",
+      "faux conseiller placement banque",
+      "plateforme de trading crypto bénéfices",
+      "petit investissement d’essai qui rapporte",
+      "virement vers compte à l’étranger pour investir",
+      "impossible de retirer mon argent"
+    ],
+    "en": [
+      "investment brochure Luxembourg bank",
+      "guaranteed return capital protected",
+      "fake adviser bank investment",
+      "crypto trading platform profits",
+      "small trial investment that pays",
+      "transfer to an account abroad to invest",
+      "can’t withdraw my money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Des rendements élevés « garantis » sans risque.",
+      "Un contact non sollicité, une offre limitée dans le temps.",
+      "Un virement vers un compte à l’étranger ou à un autre nom que la société.",
+      "Un numéro étranger pour une entité qui se dit luxembourgeoise."
+    ],
+    "en": [
+      "High “guaranteed” returns with no risk.",
+      "An unsolicited contact and a time-limited offer.",
+      "A transfer to an account abroad or in a name other than the firm’s.",
+      "A foreign phone number for a firm that says it is in Luxembourg."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Contactez vous-même la banque par ses coordonnées officielles pour vérifier.",
+      "Vérifiez l’agrément dans le registre et les avertissements de la CSSF.",
+      "Si vous avez versé de l’argent, appelez votre banque et portez plainte."
+    ],
+    "en": [
+      "Contact the bank yourself on its official details to check.",
+      "Check the firm in the CSSF register and warnings.",
+      "If you paid money, call your bank and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/cssf",
+    "lu/police",
+    "lu/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Warnung vor Betrugsmasche mit gefälschten Anlagebroschüren",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/01/semaine-04/fraude-aux-brochures.html",
+      "date": "2026-01-23"
+    },
+    {
+      "title": "Fraude à l’investissement",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/prevention/arnaques/investment-scam.html",
+      "date": "2025-02-18"
+    },
+    {
+      "title": "Betrug mit Hilfe von Handelsplattformen für Kryptowährung",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/02/semaine-06/crypto-monnaire.html",
+      "date": "2025-02-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,153 @@
+{
+  "id": "be/coucou-maman-new-number",
+  "country": "be",
+  "lang": "fr",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "nl": "Een onbekend nummer dat zegt je kind te zijn",
+    "fr": "Un numéro inconnu qui dit être votre enfant",
+    "en": "An unknown number claiming to be your child"
+  },
+  "name": {
+    "nl": "“Hallo mama, dit is mijn nieuw nummer”: je kind vraagt dringend geld",
+    "fr": "« Coucou maman, c’est mon nouveau numéro » : votre enfant demande de l’argent",
+    "en": "“Hi mum, this is my new number”: your child urgently needs money"
+  },
+  "how": {
+    "nl": "Je krijgt een sms of WhatsApp van een onbekend nummer: “Coucou maman” of “Hallo mama”, mijn gsm is kapot of ik heb een nieuw nummer, stuur me op WhatsApp. Daarna komt een dringend probleem: een rekening die vandaag betaald moet worden, een vakantiehuis, een factuur. Je moet geld overschrijven naar de rekening van een “vriend” of een verhuurder. Het is je kind niet.",
+    "fr": "Vous recevez un SMS ou un WhatsApp d’un numéro inconnu : « Coucou maman », mon téléphone est cassé ou j’ai changé de numéro, écris-moi sur WhatsApp. Vient ensuite un problème urgent : une facture à payer aujourd’hui, une location de vacances. Il faut virer de l’argent sur le compte d’un « ami » ou d’un propriétaire. Ce n’est pas votre enfant.",
+    "en": "You get a text or WhatsApp from an unknown number: “Hi mum”, my phone broke or I have a new number, message me on WhatsApp. Then comes an urgent problem: a bill to pay today, a holiday rental. You must transfer money to the account of a “friend” or a landlord. It isn’t your child."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "“Hallo mama/papa”, van een nieuw nummer.",
+        "fr": "« Coucou maman/papa », depuis un nouveau numéro.",
+        "en": "“Hi mum/dad”, from a new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "nl": "Je kind kan niet bellen: alleen berichten.",
+        "fr": "Votre enfant ne peut pas appeler : seulement des messages.",
+        "en": "Your child can’t call: messages only."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Een dringende betaling, vandaag nog.",
+        "fr": "Un paiement urgent, aujourd’hui.",
+        "en": "An urgent payment, today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Overschrijven naar de rekening van iemand anders.",
+        "fr": "Virer sur le compte de quelqu’un d’autre.",
+        "en": "Transfer to someone else’s account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "nl": "Hallo mama, mijn gsm is in het water gevallen, dit is mijn nieuw nummer, sla het op. Kan je me helpen? Ik moet vandaag nog een factuur van 980 euro betalen en mijn app werkt niet. Zet het op de rekening van mijn vriend, ik geef het morgen terug x",
+        "fr": "Coucou maman, mon téléphone est tombé dans l’eau, voici mon nouveau numéro, enregistre-le. Tu peux m’aider ? Je dois payer une facture de 980 euros aujourd’hui et mon appli ne marche pas. Fais-le sur le compte de mon ami, je te rends demain bisous",
+        "en": "Hi mum, my phone fell in the water, this is my new number, save it. Can you help? I have to pay a 980 euro bill today and my app isn’t working. Put it in my friend’s account, I’ll pay you back tomorrow x"
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "coucou maman nouveau numéro",
+      "mon téléphone est cassé whatsapp",
+      "enfant demande de l’argent nouveau numéro",
+      "payer une facture pour mon fils",
+      "virement sur le compte d’un ami",
+      "coucou papa j’ai changé de numéro"
+    ],
+    "nl": [
+      "hallo mama nieuw nummer",
+      "mijn gsm is kapot whatsapp",
+      "kind vraagt geld nieuw nummer",
+      "factuur betalen voor mijn dochter",
+      "geld op rekening van vriend zetten"
+    ],
+    "en": [
+      "hi mum new number",
+      "my phone broke message me on whatsapp",
+      "child asking for money from new number",
+      "pay a bill for my son today",
+      "transfer to my friend’s account"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een “nieuw nummer” en je kind kan niet bellen.",
+      "Betalen naar de rekening van iemand anders.",
+      "Haast: het moet vandaag nog."
+    ],
+    "fr": [
+      "Un « nouveau numéro » et votre enfant ne peut pas appeler.",
+      "Payer sur le compte de quelqu’un d’autre.",
+      "Urgence : il faut le faire aujourd’hui."
+    ],
+    "en": [
+      "A “new number” and your child can’t call.",
+      "Paying into someone else’s account.",
+      "Pressure: it has to be today."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Bel je kind op het oude, gekende nummer of stel een vraag die alleen je kind kent.",
+      "Betaal niets zolang je je kind niet gesproken hebt.",
+      "Al betaald? Bel meteen je bank en doe aangifte bij de politie."
+    ],
+    "fr": [
+      "Appelez votre enfant sur son ancien numéro ou posez une question que seul votre enfant connaît.",
+      "Ne payez rien tant que vous ne lui avez pas parlé.",
+      "Déjà payé ? Appelez tout de suite votre banque et portez plainte."
+    ],
+    "en": [
+      "Call your child on the old, known number or ask something only your child would know.",
+      "Pay nothing until you have spoken to your child.",
+      "Already paid? Call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "be/your-bank",
+    "be/police",
+    "be/safeonweb"
+  ],
+  "sources": [
+    {
+      "title": "Attention si vous recevez ce SMS: il s’agit d’une arnaque",
+      "publisher": "La Libre",
+      "url": "https://www.lalibre.be/belgique/societe/2023/05/04/attention-si-vous-recevez-ce-sms-il-sagit-dune-arnaque-AP24LQQAA5AHDJBO25N36XXQT4/",
+      "date": "2023-05-04"
+    },
+    {
+      "title": "Terwijl Marleen via Whatsapp wordt opgelicht, belt haar bank: “Toch konden ze het geld niet blokkeren”",
+      "publisher": "VRT NWS",
+      "url": "https://www.vrt.be/vrtnws/nl/2023/02/07/whatsapp-oplichting-bank/",
+      "date": "2023-02-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

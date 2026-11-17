@@ -1,0 +1,161 @@
+{
+  "id": "be/second-hand-buyer-payment-link",
+  "country": "be",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "nl": "Een “koper” op 2dehands, Vinted of Marketplace",
+    "fr": "Un « acheteur » sur 2ememain, Vinted ou Marketplace",
+    "en": "A “buyer” on 2ememain/2dehands, Vinted or Marketplace"
+  },
+  "name": {
+    "nl": "Valse koper op 2dehands of Vinted: “klik op de link om je geld te ontvangen”",
+    "fr": "Faux acheteur sur 2ememain ou Vinted : « cliquez sur le lien pour recevoir l’argent »",
+    "en": "Fake buyer on second-hand sites: “click the link to receive your money”"
+  },
+  "how": {
+    "nl": "Je verkoopt iets en een koper wil meteen, soms zelfs voor meer dan je vraagprijs. Hij wil verder praten via WhatsApp of mail en stuurt een link “om je geld te ontvangen” of van een koerier die het komt ophalen. De pagina vraagt je kaartgegevens, codes of een klein bedrag “ter bevestiging”. Om geld te ontvangen moet je nooit je kaart of codes ingeven.",
+    "fr": "Vous vendez un objet et un acheteur le veut tout de suite, parfois même plus cher que le prix demandé. Il veut continuer sur WhatsApp ou par e-mail et envoie un lien « pour recevoir l’argent » ou d’un coursier qui viendra chercher l’objet. La page demande vos données de carte, vos codes ou un petit montant « de validation ». Pour recevoir de l’argent, on ne doit jamais encoder sa carte ni ses codes.",
+    "en": "You are selling something and a buyer wants it right away, sometimes for more than your asking price. He wants to continue on WhatsApp or email and sends a link “to receive your money” or from a courier who will collect the item. The page asks for your card details, codes or a small “confirmation” amount. To receive money you never need to enter your card or codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een koper die meteen wil, zelfs voor meer geld.",
+        "fr": "Un acheteur pressé, prêt à payer plus.",
+        "en": "A buyer in a hurry, even offering more."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "nl": "Verder praten buiten het platform.",
+        "fr": "Continuer hors de la plateforme.",
+        "en": "Moving off the platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Een link om je geld te ontvangen of voor een koerier.",
+        "fr": "Un lien pour recevoir l’argent ou pour un coursier.",
+        "en": "A link to receive the money or for a courier."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "De pagina vraagt kaartgegevens of codes.",
+        "fr": "La page demande vos données de carte ou vos codes.",
+        "en": "The page asks for card details or codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "nl": "Goedendag, ik neem uw kast voor 150 euro, ik heb hem al betaald via de veilige betaling. Een koerier komt hem morgen halen. Klik op de link om de betaling te ontvangen en vul uw kaartgegevens in: [link]",
+        "fr": "Bonjour, je prends votre armoire pour 150 euros, je l’ai déjà payée via le paiement sécurisé. Un coursier passe la chercher demain. Cliquez sur le lien pour recevoir le paiement et remplissez vos données de carte : [lien]",
+        "en": "Hello, I’ll take your wardrobe for 150 euros, I already paid through the secure payment. A courier will pick it up tomorrow. Click the link to receive the payment and fill in your card details: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "acheteur 2ememain lien pour recevoir le paiement",
+      "faux acheteur vinted lien de paiement",
+      "coursier vient chercher l’objet",
+      "remplir mes données de carte pour recevoir l’argent",
+      "acheteur propose plus que le prix",
+      "paiement sécurisé faux lien"
+    ],
+    "nl": [
+      "koper 2dehands link om geld te ontvangen",
+      "valse koper vinted betaallink",
+      "koerier komt het ophalen",
+      "kaartgegevens invullen om betaling te ontvangen",
+      "koper biedt meer dan vraagprijs"
+    ],
+    "en": [
+      "buyer sent a link to receive payment",
+      "fake buyer vinted payment link",
+      "courier will collect the item",
+      "enter card details to receive money",
+      "buyer offers more than asking price"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "nl": [
+      "Je moet een link openen om geld te ontvangen.",
+      "Kaartgegevens, codes of een klein bedrag om een verkoop te “bevestigen”.",
+      "De koper wil weg van het platform."
+    ],
+    "fr": [
+      "Vous devez ouvrir un lien pour recevoir de l’argent.",
+      "Des données de carte, des codes ou un petit montant pour « valider » une vente.",
+      "L’acheteur veut quitter la plateforme."
+    ],
+    "en": [
+      "You must open a link to receive money.",
+      "Card details, codes or a small amount to “confirm” a sale.",
+      "The buyer wants to leave the platform."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Blijf op het platform en gebruik alleen de betaalmethode van het platform zelf.",
+      "Geef nooit kaartgegevens of codes om geld te ontvangen.",
+      "Gegevens ingegeven? Bel je bank en Card Stop, en doe aangifte."
+    ],
+    "fr": [
+      "Restez sur la plateforme et utilisez uniquement son propre moyen de paiement.",
+      "Ne donnez jamais vos données de carte ou codes pour recevoir de l’argent.",
+      "Données saisies ? Appelez votre banque et Card Stop, et portez plainte."
+    ],
+    "en": [
+      "Stay on the platform and use only its own payment method.",
+      "Never give card details or codes to receive money.",
+      "Entered details? Call your bank and Card Stop, and report it."
+    ]
+  },
+  "reportTo": [
+    "be/your-bank",
+    "be/card-stop",
+    "be/safeonweb",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Arnaques en hausse sur Vinted : soyez prudents !",
+      "publisher": "Test-Achats",
+      "url": "https://www.test-achats.be/famille-prive/boutique-en-ligne/news/plateforme-vinted",
+      "date": "2026-03-13"
+    },
+    {
+      "title": "How can you recognise phishing on second-hand platforms?",
+      "publisher": "Bancontact Payconiq Company",
+      "url": "https://www.bancontact.com/en/news/how-can-you-recognise-phishing-on-second-hand-platforms",
+      "date": "2024-10-29"
+    },
+    {
+      "title": "Veilig kopen en verkopen op tweedehandssites doe je zo",
+      "publisher": "VRT NWS",
+      "url": "https://www.vrt.be/vrtnws/nl/2024/07/03/veilig-kopen-verkopen-tweedehands/",
+      "date": "2024-07-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

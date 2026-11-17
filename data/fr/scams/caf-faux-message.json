@@ -1,0 +1,123 @@
+{
+  "id": "fr/caf-faux-message",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "fr": "« CAF », « Caisse d’allocations familiales », « Mon compte Caf »",
+    "en": "“CAF” (family allowance fund), “Mon compte Caf”"
+  },
+  "name": {
+    "fr": "Faux message de la CAF : aide exceptionnelle, remboursement ou dossier à mettre à jour",
+    "en": "Fake CAF message: special benefit, refund or file to update"
+  },
+  "how": {
+    "fr": "Un SMS, un mail ou un appel « de la CAF » parle d'une prime ou d'une aide exceptionnelle, d'un remboursement que la CAF vous doit, d'un retard de paiement ou d'un contrôle urgent. Le lien ou le faux agent demande vos identifiants Mon compte, votre RIB, votre pièce d'identité ou votre carte bancaire. Depuis une fuite de données d'allocataires fin 2025, les escrocs connaissent souvent vos nom et adresse. Si la CAF vous doit de l'argent, elle le verse sur le compte que vous lui avez déjà donné.",
+    "en": "A text, email or call “from the CAF” (family allowance fund) mentions a special bonus or benefit, a refund the CAF owes you, a late payment or an urgent check. The link or fake agent asks for your Mon compte login, your bank details (RIB), your ID or your card. Since a leak of claimants’ data in late 2025, scammers often know your name and address. If the CAF owes you money, it pays it into the account you already gave it."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Message : aide exceptionnelle, remboursement ou dossier bloqué.",
+        "en": "Message: special benefit, refund or blocked file."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Un lien vers une fausse page CAF, avec urgence.",
+        "en": "A link to a fake CAF page, with urgency."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "On demande identifiants, RIB, pièce d'identité ou carte bancaire.",
+        "en": "They ask for your login, bank details, ID or card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "CAF : Suite a un recalcul de vos droits, une aide de 185 EUR vous sera versee. Confirmez votre RIB et votre identite avant le 15 pour ne pas perdre ce versement : [lien]",
+        "en": "CAF: Following a recalculation of your rights, a payment of EUR 185 will be made to you. Confirm your bank details and identity before the 15th so as not to lose this payment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux sms caf",
+      "caf aide exceptionnelle lien",
+      "caf remboursement confirmer rib",
+      "mon compte caf identifiants sms",
+      "caf dossier a mettre a jour controle urgent",
+      "prime caf message frauduleux"
+    ],
+    "en": [
+      "fake caf text",
+      "caf special benefit link",
+      "caf refund confirm bank details",
+      "family allowance fund phishing",
+      "caf urgent check update file"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "fr": [
+      "La CAF ne demande pas votre RIB, votre pièce d'identité ni vos codes par message.",
+      "Une aide « exceptionnelle » ou un remboursement à réclamer par un lien.",
+      "Une adresse qui imite celle de la CAF avec une faute ou des mots en plus."
+    ],
+    "en": [
+      "The CAF does not ask for your bank details, ID or codes by message.",
+      "A “special” benefit or a refund to claim through a link.",
+      "A web address imitating the CAF’s with a typo or extra words."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas : vérifiez vos paiements dans votre espace Mon compte, en tapant l'adresse vous-même.",
+      "Transférez le SMS au 33700.",
+      "Si vous avez donné vos codes ou votre carte : changez le mot de passe, prévenez la CAF et votre banque."
+    ],
+    "en": [
+      "Don’t click: check your payments in your Mon compte area, typing the address yourself.",
+      "Forward the text to 33700.",
+      "If you gave your codes or card: change the password, tell the CAF and your bank."
+    ]
+  },
+  "reportTo": [
+    "fr/33700",
+    "fr/pharos",
+    "fr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Les arnaques CAF par e-mail et SMS se multiplient : l'alerte est lancée pour protéger les allocataires",
+      "publisher": "Clubic",
+      "url": "https://www.clubic.com/actualite-604747-les-arnaques-caf-par-e-mail-et-sms-se-multiplient-l-alerte-est-lancee-pour-proteger-les-allocataires.html",
+      "date": "2026-03-16"
+    },
+    {
+      "title": "SMS, mails, appels : Attention aux messages frauduleux imitant votre Caf",
+      "publisher": "CAF de la Haute-Savoie",
+      "url": "https://www.caf.fr/allocataires/caf-de-la-haute-savoie/actualites-departementales/sms-mails-appels-attention-aux-messages-frauduleux-imitant-votre-caf",
+      "date": "2025-05-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

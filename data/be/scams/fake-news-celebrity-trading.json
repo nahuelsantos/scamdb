@@ -1,0 +1,154 @@
+{
+  "id": "be/fake-news-celebrity-trading",
+  "country": "be",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "nl": "Een advertentie of “nieuwsartikel” met een bekende Belg",
+    "fr": "Une publicité ou un « article de presse » avec une personnalité belge",
+    "en": "An ad or “news article” with a well-known Belgian"
+  },
+  "name": {
+    "nl": "Vals nieuwsartikel of deepfake van een bekende Belg die een tradingplatform aanprijst",
+    "fr": "Faux article ou deepfake d’une personnalité belge qui vante une plateforme de trading",
+    "en": "Fake news article or deepfake of a Belgian celebrity promoting a trading platform"
+  },
+  "how": {
+    "nl": "Op sociale media zie je een advertentie of een artikel dat lijkt op Le Soir, La Libre of HLN, of een video waarin een bekende Belg vertelt dat hij rijk werd met een tradingplatform. Je laat je gegevens na en een “adviseur” belt je. Je begint met 250 euro, je ziet je winst stijgen en wordt aangespoord om steeds meer te storten. Wanneer je wil afhalen, is alles weg.",
+    "fr": "Sur les réseaux sociaux, vous voyez une publicité ou un article qui imite Le Soir, La Libre ou HLN, ou une vidéo où une personnalité belge explique s’être enrichie grâce à une plateforme de trading. Vous laissez vos coordonnées et un « conseiller » vous appelle. Vous commencez avec 250 euros, vous voyez vos gains monter et on vous pousse à verser toujours plus. Quand vous voulez retirer, tout a disparu.",
+    "en": "On social media you see an ad or an article that looks like Le Soir, La Libre or HLN, or a video where a well-known Belgian says they got rich with a trading platform. You leave your details and an “adviser” calls you. You start with 250 euros, watch your profits grow and are pushed to deposit more and more. When you want to withdraw, everything is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een bekende Belg “onthult” een geheim om rijk te worden.",
+        "fr": "Une personnalité belge « révèle » le secret pour s’enrichir.",
+        "en": "A famous Belgian “reveals” the secret to getting rich."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "nl": "Een nagemaakte krant of een deepfake-video.",
+        "fr": "Un faux journal ou une vidéo deepfake.",
+        "en": "A fake newspaper or a deepfake video."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Een link om je in te schrijven.",
+        "fr": "Un lien pour s’inscrire.",
+        "en": "A link to sign up."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Een “adviseur” laat je steeds meer storten.",
+        "fr": "Un « conseiller » vous fait verser toujours plus.",
+        "en": "An “adviser” has you deposit more and more."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "nl": "EXCLUSIEF: de bekende presentatrice verraste iedereen live op tv toen ze vertelde hoe ze elke maand duizenden euro’s verdient met één platform. Met 250 euro begin je al, zonder risico. Lees het volledige artikel voor het verwijderd wordt: [link]",
+        "fr": "EXCLUSIF : la célèbre présentatrice a surpris tout le monde en direct à la télé en expliquant comment elle gagne des milliers d’euros par mois avec une seule plateforme. On commence avec 250 euros, sans risque. Lisez l’article complet avant qu’il soit supprimé : [lien]",
+        "en": "EXCLUSIVE: the famous presenter surprised everyone live on TV by explaining how she earns thousands of euros a month with one platform. You start with just 250 euros, no risk. Read the full article before it’s removed: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "personnalité belge plateforme de trading",
+      "faux article de presse investissement",
+      "vidéo deepfake investissement",
+      "commencer avec 250 euros sans risque",
+      "conseiller me pousse à investir plus",
+      "impossible de retirer mon argent trading"
+    ],
+    "nl": [
+      "bekende belg tradingplatform",
+      "vals krantenartikel beleggen",
+      "deepfake video beleggen",
+      "beginnen met 250 euro zonder risico",
+      "kan mijn geld niet afhalen trading"
+    ],
+    "en": [
+      "famous belgian trading platform",
+      "fake news article investment",
+      "deepfake video investment ad",
+      "start with 250 euros no risk",
+      "can’t withdraw my money trading platform"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een bekende persoon of krant is geen garantie.",
+      "Gegarandeerde winst zonder risico.",
+      "Je moet betalen om je eigen geld te kunnen afhalen."
+    ],
+    "fr": [
+      "Une personnalité ou un média connu n’est pas une garantie.",
+      "Des gains garantis sans risque.",
+      "Il faut payer pour pouvoir retirer votre propre argent."
+    ],
+    "en": [
+      "A famous person or newspaper is no guarantee.",
+      "Guaranteed profit without risk.",
+      "You must pay to withdraw your own money."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Ga bij de FSMA na of het platform een vergunning heeft, vóór je iets stort.",
+      "Stort niets meer, ook niet om je geld “vrij te maken”.",
+      "Al betaald? Bel je bank, meld het aan de FSMA en doe aangifte."
+    ],
+    "fr": [
+      "Vérifiez auprès de la FSMA si la plateforme est agréée, avant tout versement.",
+      "Ne versez plus rien, même pas pour « débloquer » votre argent.",
+      "Déjà payé ? Appelez votre banque, signalez-le à la FSMA et portez plainte."
+    ],
+    "en": [
+      "Check with the FSMA whether the platform is authorised before you pay anything.",
+      "Don’t pay any more, not even to “release” your money.",
+      "Already paid? Call your bank, report it to the FSMA and to the police."
+    ]
+  },
+  "reportTo": [
+    "be/fsma",
+    "be/your-bank",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Plateformes frauduleuses de trading : ne vous fiez pas aux faux articles de presse",
+      "publisher": "FSMA",
+      "url": "https://www.fsma.be/fr/warnings/plateformes-frauduleuses-de-trading-ne-vous-fiez-pas-aux-faux-articles-de-presse",
+      "date": "2026-08-10"
+    },
+    {
+      "title": "Une vidéo truquée par IA fait perdre 410.000 euros à une Belge : notre enquête remonte la filière",
+      "publisher": "RTBF",
+      "url": "https://www.rtbf.be/article/une-video-truquee-par-ia-fait-perdre-410-000-a-une-belge-notre-enquete-remonte-la-filiere-11726495",
+      "date": "2026-05-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

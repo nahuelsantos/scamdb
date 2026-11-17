@@ -1,0 +1,130 @@
+{
+  "id": "nl/task-job-scam",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "nl": "Een uitzendbureau, recruiter of “Indeed”",
+    "en": "A temp agency, recruiter or “Indeed”"
+  },
+  "name": {
+    "nl": "Vacaturefraude: thuiswerk met reviews of taken, maar eerst zelf geld storten",
+    "en": "Job scam: work from home with reviews or tasks, but you pay in first"
+  },
+  "how": {
+    "nl": "Een bandje, sms of WhatsApp “namens Indeed” of een uitzendbureau biedt thuiswerk aan: 100 tot 300 euro per dag voor een uurtje reviews schrijven of producten “boosten”. Een recruiter begeleidt u en in het begin krijgt u echt iets uitbetaald. Daarna moet u zelf geld storten om taken af te maken of uw tegoed op te nemen, en wordt het bedrag steeds hoger.",
+    "en": "A recording, text or WhatsApp “on behalf of Indeed” or a temp agency offers work from home: 100 to 300 euros a day for an hour of writing reviews or “boosting” products. A recruiter guides you and at first you really get paid something. Then you must deposit money yourself to finish tasks or withdraw your balance, and the amount keeps growing."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een ongevraagd baanaanbod via sms, WhatsApp of een bandje.",
+        "en": "An unsolicited job offer by text, WhatsApp or a recording."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "nl": "Simpel thuiswerk: reviews of beoordelingen, veel geld voor weinig tijd.",
+        "en": "Simple work from home: reviews or ratings, lots of money for little time."
+      }
+    },
+    {
+      "text": {
+        "nl": "Eerst kleine uitbetalingen om vertrouwen te winnen.",
+        "en": "Small payouts first to win your trust."
+      }
+    },
+    {
+      "text": {
+        "nl": "Daarna moet u geld of crypto storten om taken af te maken of uit te betalen.",
+        "en": "Then you must deposit money or crypto to finish tasks or get paid."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Hallo! Ik ben recruiter namens Indeed. Wij zoeken mensen voor flexibel thuiswerk: 60–90 minuten per dag reviews plaatsen, verdienste € 100–€ 300 per dag. Geen ervaring nodig. Bent u 20 jaar of ouder en wilt u meer informatie? Antwoord met JA.",
+        "en": "Hello! I’m a recruiter on behalf of Indeed. We’re looking for people for flexible work from home: 60–90 minutes a day posting reviews, earnings €100–€300 a day. No experience needed. Are you 20 or older and want more information? Reply YES."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "thuiswerk reviews schrijven whatsapp",
+      "baan aangeboden indeed",
+      "geld storten taken afronden",
+      "recruiter whatsapp bijverdienen",
+      "vacaturefraude",
+      "tegoed opnemen eerst betalen",
+      "vanuit huis producten beoordelen",
+      "euro dag thuiswerk",
+      "begeleider legt uit thuiswerk"
+    ],
+    "en": [
+      "work from home writing reviews",
+      "job offer from indeed on whatsapp",
+      "pay to unlock tasks",
+      "task scam deposit to withdraw",
+      "recruiter texted me about an online job"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een baan die u niet zocht, met veel geld voor weinig werk.",
+      "Een echte werkgever vraagt nooit dat u zelf geld stort.",
+      "Uitbetaling pas na nog een betaling."
+    ],
+    "en": [
+      "A job you didn’t look for, with lots of money for little work.",
+      "A real employer never asks you to deposit money.",
+      "Payout only after one more payment."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Reageer niet en voeg het nummer niet toe aan uw contacten.",
+      "Stort nooit geld of crypto om te mogen werken of uitbetaald te worden.",
+      "Al betaald? Stop, bel uw bank, doe aangifte en meld het bij de Fraudehelpdesk."
+    ],
+    "en": [
+      "Don’t reply and don’t add the number to your contacts.",
+      "Never deposit money or crypto to be allowed to work or get paid.",
+      "Already paid? Stop, call your bank, file a police report and report it to the Fraud Helpdesk."
+    ]
+  },
+  "reportTo": [
+    "nl/fraudehelpdesk",
+    "nl/politie",
+    "nl/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Nieuwe benadering vacaturefraude",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/nieuwe-variant-vacaturefraude/",
+      "date": "2025-10-14"
+    },
+    {
+      "title": "Vals voorstel via o.a. WhatsApp: thuiswerkvacature reviews schrijven",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/vals-voorstel-via-whatsapp-thuiswerkvacature-reviews-schrijven/",
+      "date": "2024-07-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}
