@@ -12,7 +12,7 @@ A running record of what was built, what was measured and what we learned. Newes
 - **Import (for owner review):** 65 entries (fr 17, nl 17, be 16, lu 15), 32 contacts and 88 labelled messages,
   researched and drafted by one agent per country.
 
-**Measured (eval, 600 messages):** each new country catches 12 of 12 scams; one false "scam" each in fr, lu and nl
+**Measured (eval, 604 messages):** 97.9% of scams caught, 6.3% of safe messages called "scam"; each new country catches 12 of 12 scams; one false "scam" each in fr, lu and nl
 (a genuine ameli refund, a CNS notice that says it has no link, a Tikkie between friends).
 
 **Learned:**
