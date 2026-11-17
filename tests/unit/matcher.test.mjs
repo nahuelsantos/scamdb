@@ -340,3 +340,12 @@ test('1.10.0: Czech and Croatian signs, and their genuine notices', () => {
   assert.ok(!has('PIN ćete vidjeti u mobilnoj aplikaciji. Djelatnici banke nikad ne traže PIN ni CVV.', 'asks_for_code'));
   assert.ok(!has('Porezna uprava ne šalje poveznice za prijavu niti traži podatke kartice.', 'money_request'));
 });
+test('1.10.0: Hungarian signs from labelled messages, and genuine Hungarian notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Az OTP biztonsági csoportjától: a pénzét át kell vezetnünk egy védett technikai számlára', 'money_request'));
+  assert.ok(has('Szia apu, ez az új számom, mentsd el légyszi', 'new_number'));
+  assert.ok(has('Fontos, hogy a bankfióknak ne mondja el', 'secrecy'));
+  assert.ok(!has('Egyszer használatos kódja 518 204. A kódot senkinek ne adja meg.', 'asks_for_code'));
+  assert.ok(!has('Az új kártyát bármely ATM-nél PIN-kóddal tudja aktiválni.', 'asks_for_code'));
+  assert.ok(!has('A küldemény átvehető, nem kell fizetnie semmit.', 'money_request'));
+});
