@@ -318,3 +318,25 @@ test('1.9.0: Danish, Norwegian, Finnish and Icelandic signs, and their genuine n
   assert.ok(!has('Pósturinn: pakkinn þinn er kominn, ekkert að greiða.', 'money_request'));
   assert.ok(!has('Del aldri koden med noen. Vi ber aldri om BankID.', 'asks_for_code'));
 });
+test('1.10.0: Slovenian and Slovak signs from labelled messages, and their genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Tukaj varnostna služba banke. Sredstva bomo premaknili na rezervni račun.', 'impersonation'));
+  assert.ok(has('Če plačate varščino, ga izpustimo. Ne prekinjajte zveze.', 'keep_on_line'));
+  assert.ok(has('Z bezpečnostného útvaru vašej banky: prostriedky musíme presunúť na technický účet.', 'money_request'));
+  assert.ok(has('Zadaj svoje číslo a ten kód čo ti príde mi prepošli', 'asks_for_code'));
+  assert.ok(!has('Vaša enkratna koda je 551 204. Kode ne posredujte nikomur.', 'asks_for_code'));
+  assert.ok(!has('Overovací kód 518 204. Kód nikomu neposkytujte.', 'asks_for_code'));
+  assert.ok(!has('Zásielku vám dnes doručí kuriér, dobierka 34,90 € sa platí pri prevzatí.', 'money_request'));
+  assert.ok(!has('Tento e-mail neobsahuje odkazy.', 'unknown_link'));
+});
+test('1.10.0: Czech and Croatian signs, and their genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Dobrý den, oddělení bezpečnosti České spořitelny, peníze je nutné vybrat', 'impersonation'));
+  assert.ok(has('Omylem jsem ti poslal šestimístný kód, můžeš mi ho přeposlat?', 'asks_for_code'));
+  assert.ok(has('Zovem iz policijske uprave, imate li kod kuće ušteđevinu ili zlato?', 'money_request'));
+  assert.ok(has('Bok tata, ovo je privremeni broj jer mi je stari mob pao u more', 'new_number'));
+  assert.ok(!has('Kód nikomu nesdělujte, pracovníci banky jej po vás nikdy nebudou chtít.', 'asks_for_code'));
+  assert.ok(!has('Jednokratni kod je 583 214. Kod nikome ne dajte.', 'asks_for_code'));
+  assert.ok(!has('PIN ćete vidjeti u mobilnoj aplikaciji. Djelatnici banke nikad ne traže PIN ni CVV.', 'asks_for_code'));
+  assert.ok(!has('Porezna uprava ne šalje poveznice za prijavu niti traži podatke kartice.', 'money_request'));
+});
