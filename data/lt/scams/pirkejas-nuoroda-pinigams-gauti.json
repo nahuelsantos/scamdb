@@ -1,0 +1,132 @@
+{
+  "id": "lt/pirkejas-nuoroda-pinigams-gauti",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "lt": "„Pirkėjas“ skelbimų platformoje („Vinted“ ir kt.) arba „kurjeris“",
+    "en": "A “buyer” on a classifieds platform (Vinted and others) or a “courier”"
+  },
+  "name": {
+    "lt": "Netikras pirkėjas: „sumokėjau, gaukite pinigus per nuorodą“",
+    "en": "Fake buyer: “I've paid, receive the money through the link”"
+  },
+  "how": {
+    "lt": "Parduodate daiktą internete, o „pirkėjas“ iškart sutinka pirkti, dažnai su kurjerio pristatymu. Jis pasiūlo bendrauti „WhatsApp“ ar el. paštu ir atsiunčia nuorodą: pinigai jau sumokėti ar „rezervuoti“, tereikia „patvirtinti užsakymą“ ar „gauti lėšas“. Puslapis atrodo kaip skelbimų platformos ar kurjerio svetainė ir prašo kortelės ar interneto banko duomenų. Kurjeriai ir platformos primena, kad pinigams už parduotą prekę gauti kortelės duomenų nereikia.",
+    "en": "You're selling something online and a “buyer” agrees at once, often with courier delivery. They suggest moving to WhatsApp or email and send a link: the money is already paid or “reserved”, you only need to “confirm the order” or “receive the funds”. The page looks like the classifieds platform's or courier's site and asks for card or online banking details. Couriers and platforms point out that receiving money for something you sold never needs your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "„Pirkėjas“ perka be derybų ir siūlo kurjerį.",
+        "en": "A “buyer” agrees without haggling and suggests a courier."
+      }
+    },
+    {
+      "text": {
+        "lt": "Atsiunčia nuorodą „pinigams gauti“ ar užsakymui patvirtinti.",
+        "en": "Sends a link to “receive the money” or confirm the order."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "lt": "Puslapis prašo kortelės duomenų ir patvirtinimo kodo.",
+        "en": "The page asks for card details and a confirmation code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "lt": "Skubina: rezervacija netrukus baigsis.",
+        "en": "Rushes you: the reservation is about to expire."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "lt": "Laba diena, dėl vaikiško vežimėlio – imu už jūsų kainą 🙂 Apmokėjau per saugų pirkimą, kurjeris pasiims rytoj. Kad pinigai būtų įskaityti, paspauskite čia ir įveskite kortelės, į kurią norite gauti lėšas, duomenis: [nuoroda]",
+        "en": "Good afternoon, about the pram – I'll take it at your price 🙂 I've paid through safe purchase, the courier will pick it up tomorrow. For the money to be credited, tap here and enter the details of the card you want to receive the funds on: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "pirkėjas atsiuntė nuorodą pinigams gauti",
+      "patvirtinti užsakymą per nuorodą vinted",
+      "pardaviau daiktą prašė kortelės duomenų",
+      "gauti lėšas suvesti kortelės duomenis",
+      "pirkėjas nori bendrauti whatsapp ir siunčia nuorodą",
+      "kurjeris pasiims prekę paspauskite nuorodą"
+    ],
+    "en": [
+      "buyer sent a link to receive payment",
+      "confirm the order link asked for my card",
+      "selling on vinted buyer wants to move to whatsapp",
+      "enter card details to get paid",
+      "fake buyer courier link"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "lt": [
+      "Norint gauti pinigus, kortelės duomenų, PIN ar kodų nereikia.",
+      "Prašymas tęsti pokalbį už platformos ribų.",
+      "Platformos ir kurjeriai nesiunčia nuorodų „lėšoms gauti“."
+    ],
+    "en": [
+      "Receiving money never needs your card details, PIN or codes.",
+      "A request to continue outside the platform.",
+      "Platforms and couriers don't send links to “receive funds”."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Bendraukite ir atsiskaitykite tik platformos programėlėje; nuorodų iš pirkėjų neatidarykite.",
+      "Jei suvedėte kortelės duomenis, nedelsdami blokuokite kortelę.",
+      "Praneškite platformai, NKSC ir, jei praradote pinigų, policijai."
+    ],
+    "en": [
+      "Chat and get paid only inside the platform's app; don't open links from buyers.",
+      "If you entered card details, block the card straight away.",
+      "Report it to the platform, to NKSC and, if you lost money, to the police."
+    ]
+  },
+  "reportTo": [
+    "lt/your-bank",
+    "lt/nksc",
+    "lt/policija"
+  ],
+  "sources": [
+    {
+      "title": "DPD perspėja: gavę tokią žinutę nepadarykite klaidos",
+      "publisher": "tv3.lt",
+      "url": "https://www.tv3.lt/naujiena/verslas/dpd-perspeja-gave-tokia-zinute-nepadarykite-klaidos-n1533058",
+      "date": "2026-07-02"
+    },
+    {
+      "title": "Įspėja gyventojus: sukčiai masiškai siunčia žinutes apie tariamai sulaikytas siuntas",
+      "publisher": "LRT",
+      "url": "https://www.lrt.lt/naujienos/verslas/4/2978226/ispeja-gyventojus-sukciai-masiskai-siuncia-zinutes-apie-tariamai-sulaikytas-siuntas",
+      "date": "2026-07-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "lt/vinted-pardavejas-tiesioginis-pavedimas"
+  ]
+}

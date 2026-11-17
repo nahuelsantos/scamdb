@@ -1,0 +1,129 @@
+{
+  "id": "lt/siunta-sulaikyta-sms",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "lt": "„DPD“, „Lietuvos paštas“, „Omniva“ ar kitas kurjeris SMS žinutėje",
+    "en": "“DPD”, “Lietuvos paštas”, “Omniva” or another courier in a text"
+  },
+  "name": {
+    "lt": "Netikra žinutė apie sulaikytą siuntą: „sumokėkite mokestį“ ar „patvirtinkite adresą“",
+    "en": "Fake text about a held parcel: “pay a fee” or “confirm your address”"
+  },
+  "how": {
+    "lt": "Masiškai siunčiamos žinutės kurjerių vardu: siunta esą sulaikyta rūšiavimo terminale, nepavyko pristatyti ar reikia sumokėti nedidelį muito ar pristatymo mokestį. Nuoroda veda į netikrą puslapį, kuris atrodo kaip kurjerio svetainė, ir prašo asmens bei mokėjimo kortelės duomenų. Kurjeriai primena, kad siuntai sekti ar pristatyti kortelės duomenų nereikia. Suvesti duomenys panaudojami pinigams nuskaičiuoti.",
+    "en": "Texts are sent en masse in couriers' names: your parcel is supposedly held at a sorting terminal, couldn't be delivered, or needs a small customs or delivery fee. The link leads to a fake page that looks like the courier's site and asks for personal and card details. Couriers point out that tracking or delivering a parcel never needs card details. The details entered are used to take money."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "SMS „nuo kurjerio“: siunta sulaikyta terminale.",
+        "en": "A text “from the courier”: your parcel is held at the terminal."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Nesumokėjus šiandien siunta bus grąžinta siuntėjui.",
+        "en": "If you don't pay today the parcel goes back to the sender."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lt": "Nuoroda adresui patvirtinti ar mokesčiui sumokėti.",
+        "en": "A link to confirm your address or pay a fee."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "lt": "Prašo kortelės duomenų nedideliam mokesčiui.",
+        "en": "It asks for card details for a small fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "lt": "Jūsų siunta Nr. LT90314 sulaikyta rūšiavimo centre dėl neišsamaus adreso. Patvirtinkite duomenis ir sumokėkite 1,99 EUR pakartotinio pristatymo mokestį per 12 val., kitaip siunta bus grąžinta: [nuoroda]",
+        "en": "Your parcel no. LT90314 is held at the sorting centre because of an incomplete address. Confirm your details and pay a 1.99 EUR redelivery fee within 12 hours, otherwise the parcel will be returned: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "sms apie sulaikytą siuntą",
+      "siunta sulaikyta rūšiavimo terminale",
+      "sumokėti už pakartotinį pristatymą",
+      "žinutė neva iš dpd su nuoroda",
+      "lietuvos paštas prašo sumokėti muitą sms",
+      "omniva siunta nepristatyta patvirtinti adresą",
+      "prašė kortelės duomenų siuntai atsiimti"
+    ],
+    "en": [
+      "text says my parcel is held",
+      "pay a small fee to release a parcel",
+      "fake courier sms asked for card details",
+      "confirm address for delivery link",
+      "lietuvos pastas customs fee text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "lt": [
+      "Siuntai sekti ar pristatyti kortelės duomenų nereikia.",
+      "Jei siuntų programėlėje nėra jokios laukiamos siuntos – žinutė netikra.",
+      "Keistas adresas, papildomi žodžiai ar neįprasta domeno pabaiga nuorodoje."
+    ],
+    "en": [
+      "Tracking or delivering a parcel never needs card details.",
+      "If the courier's app shows no parcel on its way, the text is fake.",
+      "An odd address, extra words or an unusual ending in the link."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Nespauskite nuorodos; siuntą tikrinkite kurjerio programėlėje ar svetainėje, kurią įvedate patys.",
+      "Jei suvedėte kortelės duomenis, nedelsdami blokuokite kortelę banke.",
+      "Persiųskite žinutę NKSC; jei praradote pinigų, praneškite policijai."
+    ],
+    "en": [
+      "Don't tap the link; check the parcel in the courier's app or a website you type yourself.",
+      "If you entered card details, block the card with your bank at once.",
+      "Forward the text to NKSC; if you lost money, tell the police."
+    ]
+  },
+  "reportTo": [
+    "lt/nksc",
+    "lt/your-bank",
+    "lt/policija"
+  ],
+  "sources": [
+    {
+      "title": "Įspėja gyventojus: sukčiai masiškai siunčia žinutes apie tariamai sulaikytas siuntas",
+      "publisher": "LRT",
+      "url": "https://www.lrt.lt/naujienos/verslas/4/2978226/ispeja-gyventojus-sukciai-masiskai-siuncia-zinutes-apie-tariamai-sulaikytas-siuntas",
+      "date": "2026-07-02"
+    },
+    {
+      "title": "DPD perspėja: gavę tokią žinutę nepadarykite klaidos",
+      "publisher": "tv3.lt",
+      "url": "https://www.tv3.lt/naujiena/verslas/dpd-perspeja-gave-tokia-zinute-nepadarykite-klaidos-n1533058",
+      "date": "2026-07-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

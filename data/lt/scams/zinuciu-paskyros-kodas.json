@@ -1,0 +1,126 @@
+{
+  "id": "lt/zinuciu-paskyros-kodas",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "lt": "Draugas, „WhatsApp“, „Signal“ ar „Telegram“ „palaikymo komanda“",
+    "en": "A friend, or WhatsApp, Signal or Telegram “support”"
+  },
+  "name": {
+    "lt": "Paskyros perėmimas: „atsiųsk man kodą, kurį gavai SMS“",
+    "en": "Account takeover: “send me the code you got by text”"
+  },
+  "how": {
+    "lt": "Sukčiai bando perimti „WhatsApp“, „Signal“ ar „Telegram“ paskyras. Jie rašo apsimetę programėlės palaikymo komanda dėl „įtartino prisijungimo“ arba iš draugo paskyros prašo atsiųsti „per klaidą“ gautą SMS kodą, prisijungti prie grupės, atidaryti nuorodą ar nuskenuoti QR kodą. Atskleidus kodą ar PIN, paskyra atitenka sukčiams, o jie jūsų vardu rašo draugams ir prašo pinigų ar dar daugiau kodų. NKSC primena, kad šios programėlės niekada neprašo kodų per žinutes.",
+    "en": "Scammers try to take over WhatsApp, Signal or Telegram accounts. They write posing as the app's support team about a “suspicious login”, or from a friend's account ask you to send a text code you got “by mistake”, join a group, open a link or scan a QR code. Once you reveal the code or PIN, the account is theirs, and they write to your friends in your name asking for money or more codes. NKSC reminds people that these apps never ask for codes by message."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "Žinutė iš draugo ar „palaikymo komandos“.",
+        "en": "A message from a friend or “the support team”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Skubiai: „įtartinas prisijungimas“ arba „padėk greitai“.",
+        "en": "Urgent: a “suspicious login”, or “help me quickly”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lt": "Prašo persiųsti SMS kodą ar programėlės PIN.",
+        "en": "Asks you to pass on a text code or the app PIN."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "lt": "Arba prašo atidaryti nuorodą ar nuskenuoti QR kodą.",
+        "en": "Or asks you to open a link or scan a QR code."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "lt": "Sveika, atsiprašau, kad trukdau 🙈 Bandžiau prisijungti prie savo paskyros naujame telefone ir per klaidą įvedžiau tavo numerį, tau turėjo ateiti 6 skaitmenų kodas. Gali man jį persiųsti? Labai reikia, kitaip užblokuos.",
+        "en": "Hi, sorry to bother you 🙈 I was trying to log in to my account on a new phone and typed your number by mistake, you should have got a 6-digit code. Can you forward it to me? I really need it, otherwise they'll block me."
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "draugas prašo atsiųsti kodą iš sms",
+      "per klaidą įvedė mano numerį kodas",
+      "perėmė whatsapp paskyrą",
+      "palaikymo komanda prašo patvirtinimo kodo",
+      "nuskenuoti qr kodą grupei prisijungti",
+      "iš draugo paskyros prašo pinigų",
+      "signal paskyra perimta pin kodas",
+      "prašo balsuoti konkurse ir atsiųsti kodą",
+      "persiųsk kodą kurį gavai sms"
+    ],
+    "en": [
+      "friend asked me to send the code i got by text",
+      "whatsapp account taken over",
+      "support asked for my verification code",
+      "scan a qr code to join a group",
+      "hacked friend asking for money on messenger"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "lt": [
+      "Niekas – nei draugas, nei palaikymo komanda – neturi prašyti jūsų SMS kodo ar PIN.",
+      "Programėlių palaikymas nerašo žinučių prašydamas kodų.",
+      "Draugo paskyra gali būti perimta: neįprastas prašymas pinigų ar kodo – ženklas."
+    ],
+    "en": [
+      "Nobody – not a friend, not support – should ask for your text code or PIN.",
+      "App support teams don't message you asking for codes.",
+      "A friend's account may be hijacked: an unusual request for money or a code is the sign."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Niekam nesiųskite kodų ir PIN. Įjunkite dviejų žingsnių patvirtinimą ar registracijos užraktą.",
+      "Patikrinkite susietus įrenginius ir atjunkite nežinomus; perspėkite draugus.",
+      "Jei paskyra perimta ar pervedėte pinigų, praneškite policijai ir bankui; apie sukčių žinutes – NKSC."
+    ],
+    "en": [
+      "Never send codes or PINs to anyone. Turn on two-step verification or registration lock.",
+      "Check linked devices and remove unknown ones; warn your friends.",
+      "If the account was taken or you sent money, tell the police and your bank; report the scam messages to NKSC."
+    ]
+  },
+  "reportTo": [
+    "lt/nksc",
+    "lt/policija",
+    "lt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Perspėja šių programėlių naudotojus: daugėja bandymų perimti paskyras",
+      "publisher": "15min (NKSC, AOTD ir VSD rekomendacijos)",
+      "url": "https://www.15min.lt/verslas/naujiena/mokslas-it/perspeja-siu-programeliu-naudotojus-daugeja-bandymu-perimti-paskyras-1290-2722964",
+      "date": "2026-07-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

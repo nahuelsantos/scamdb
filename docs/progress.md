@@ -2,6 +2,23 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 8 (Estonia, Latvia, Lithuania)
+
+**Built:**
+- **Groundwork (#76):** ee, lv and lt (each with Russian as a second language) in `countries.json`, reports, feed
+  and trends; 21 brands (Smart-ID, Omniva, Swedbank, SEB, Luminor, EMTA, VID, VMI...).
+- **Matcher 1.12.0 (#77):** Lithuanian, Estonian and Latvian rules from the drafts' labelled messages (Smart-ID PIN
+  prompts during a call, "saugi sąskaita", "cik uzkrājumu"), Russian wording seen in the Baltics, and two fixes:
+  the Finnish "maksu" no longer matches the Estonian tax board; "kohe"/"šodien" alone are not urgency.
+- **Import:** 48 entries (16 each), 16 contacts, 66 labelled messages; all 112 source links load.
+
+**Measured (eval, 1,154 messages):** 98.7% of scams caught, 3.1% of safe messages called "scam". Each Baltic
+country: 0/10 false alarms; 75–100% of scams called "scam".
+
+**Learned:**
+- Short words collide across languages ("maksu" is payment in Finnish and tax in Estonian); test new rules
+  against every country's safe messages, not only the new country's.
+
 ## 2026-11-17: Europe wave 7 (Czechia, Slovakia, Hungary, Slovenia, Croatia), speed fix
 
 **Built:**

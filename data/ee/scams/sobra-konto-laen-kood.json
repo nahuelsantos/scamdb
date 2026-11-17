@@ -1,0 +1,150 @@
+{
+  "id": "ee/sobra-konto-laen-kood",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "et": "Sõber või tuttav Facebookis, Instagramis või sõnumirakenduses (häkitud konto)",
+    "ru": "Друг или знакомый в Facebook, Instagram или мессенджере (взломанный аккаунт)",
+    "en": "A friend or acquaintance on Facebook, Instagram or a messaging app (hacked account)"
+  },
+  "name": {
+    "et": "Sõbra häkitud konto küsib laenu, telefoninumbrit või koodi",
+    "ru": "Взломанный аккаунт друга просит в долг, номер телефона или код",
+    "en": "A friend's hacked account asks for a loan, your phone number or a code"
+  },
+  "how": {
+    "et": "Kurjategijad võtavad üle kellegi Facebooki, Instagrami või sõnumirakenduse konto ja kirjutavad tema sõpradele. \"Sõber\" palub kiiresti raha laenata, sest tema pank ei tööta, või küsib su telefoninumbrit ja seejärel SMS-iga tulnud koodi. Mõnikord palutakse kinnitada Smart-ID või Mobiil-ID päring. Kood annab kelmidele sinu konto ja nad jätkavad sinu nimel. Ohver saab aru alles siis, kui raha või konto on kadunud.",
+    "ru": "Преступники захватывают чей-то аккаунт в Facebook, Instagram или мессенджере и пишут его друзьям. «Друг» просит срочно занять денег, потому что его банк не работает, или спрашивает ваш номер телефона, а затем код, пришедший по СМС. Иногда просят подтвердить запрос Smart-ID или Mobiil-ID. Код даёт мошенникам ваш аккаунт, и они продолжают от вашего имени. Жертва понимает это, только когда деньги или аккаунт уже пропали.",
+    "en": "Criminals take over someone's Facebook, Instagram or messaging account and write to their friends. The \"friend\" asks to borrow money quickly because their bank isn't working, or asks for your phone number and then for the code that arrives by text. Sometimes you are asked to confirm a Smart-ID or Mobile-ID request. The code gives the scammers your account and they carry on in your name. The victim only realises once the money or account is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "Sõber kirjutab ootamatult ja palub abi.",
+        "ru": "Друг неожиданно пишет и просит помочь.",
+        "en": "A friend writes out of the blue asking for help."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Raha on vaja kohe, tagastab homme.",
+        "ru": "Деньги нужны сейчас, вернёт завтра.",
+        "en": "The money is needed now, paid back tomorrow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Kanna raha võõrale kontole.",
+        "ru": "Переведите деньги на чужой счёт.",
+        "en": "Send money to an unfamiliar account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "et": "Saada mulle sulle tulnud SMS-kood.",
+        "ru": "Перешли мне код, который пришёл тебе по СМС.",
+        "en": "Send me the text code you just got."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "et": "tsau! kas oled praegu telefoni juures? mul tekkis jama, kaart jäi automaati kinni ja peaks täna ühe arve ära maksma, kas saaksid mulle 280 laenata? homme õhtuks kannan tagasi. kirjutan sulle konto, see on mu õe oma",
+        "ru": "привет! ты сейчас у телефона? у меня проблема, карту зажевал банкомат, а сегодня надо оплатить один счёт, можешь занять 280? завтра к вечеру верну. сейчас напишу счёт, это моей сестры",
+        "en": "hey! are you by your phone? i've got a problem, the cash machine swallowed my card and i have to pay a bill today, could you lend me 280? i'll send it back by tomorrow evening. i'll write you the account, it's my sister's"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "sõber küsib messengeris raha laenuks",
+      "sõber palub telefoninumbrit ja koodi",
+      "saada mulle sms kood mis tuli",
+      "tuttav kirjutab facebookis laena raha",
+      "sõbra konto häkitud küsib raha",
+      "sõber palub smart-id kinnitada"
+    ],
+    "ru": [
+      "друг просит в мессенджере занять денег",
+      "друг просит номер телефона и код",
+      "перешли код из смс",
+      "знакомый пишет в фейсбуке одолжи деньги",
+      "взломали аккаунт друга просит деньги"
+    ],
+    "en": [
+      "friend asks to borrow money on messenger",
+      "friend asks for phone number and code",
+      "send me the sms code you got",
+      "friend's account hacked asks money",
+      "friend asks to confirm smart-id"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "et": [
+      "Ootamatu rahapalve või koodipalve tuttavalt, kes tavaliselt nii ei kirjuta.",
+      "Konto omaniku nimi ei ole sõbra nimi.",
+      "\"Sõber\" väldib telefonikõnet."
+    ],
+    "ru": [
+      "Неожиданная просьба о деньгах или коде от знакомого, который обычно так не пишет.",
+      "Владелец счёта не ваш друг.",
+      "«Друг» избегает телефонного звонка."
+    ],
+    "en": [
+      "An unexpected request for money or a code from someone who doesn't usually write like that.",
+      "The account holder isn't your friend.",
+      "The \"friend\" avoids a phone call."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Helista sõbrale tema tavalisel numbril ja küsi otse.",
+      "Ära saada kellelegi SMS-koode ega kinnita Smart-ID päringuid kellegi teise palvel.",
+      "Kui andsid koodi, vaheta parool ja lülita sisse kaheastmeline kinnitus; kui maksid, helista pangale.",
+      "Teata konto kaaperdamisest politsei veebivormil."
+    ],
+    "ru": [
+      "Позвоните другу по его обычному номеру и спросите напрямую.",
+      "Никому не пересылайте СМС-коды и не подтверждайте запросы Smart-ID по чужой просьбе.",
+      "Если отдали код, смените пароль и включите двухэтапную проверку; если заплатили, звоните в банк.",
+      "Сообщите о взломе аккаунта через форму полиции."
+    ],
+    "en": [
+      "Call your friend on their usual number and ask directly.",
+      "Never forward text codes or confirm Smart-ID requests at someone else's request.",
+      "If you gave a code, change your password and turn on two-step verification; if you paid, call your bank.",
+      "Report the account takeover on the police online form."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/police-report",
+    "ee/cert-ee"
+  ],
+  "sources": [
+    {
+      "title": "Пять схем мошенничества, от которых жители Эстонии пострадали в этом году больше всего",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8387004/pyat-shem-moshennichestva-ot-kotoryh-zhiteli-estonii-postradali-v-etom-godu-bolshe-vsego",
+      "date": "2025-12-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

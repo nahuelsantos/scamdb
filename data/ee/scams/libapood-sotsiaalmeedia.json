@@ -1,0 +1,157 @@
+{
+  "id": "ee/libapood-sotsiaalmeedia",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "et": "Sotsiaalmeedias reklaamitud e-pood või müüja",
+    "ru": "Интернет-магазин или продавец из рекламы в соцсетях",
+    "en": "An online shop or seller advertised on social media"
+  },
+  "name": {
+    "et": "Libapood või libamüüja: \"suur tühjendusmüük\", kaupa ei tule",
+    "ru": "Фальшивый магазин или продавец: «большая распродажа», товар не приходит",
+    "en": "Fake shop or seller: \"big clearance sale\", nothing arrives"
+  },
+  "how": {
+    "et": "Sotsiaalmeedias reklaamitakse e-poodi, mis väidetavalt suleb uksed või on raskustes ja müüb kõik ülisuure allahindlusega. Leht on tehtud kaardiandmete või internetipanga andmete varastamiseks või raha võtmiseks kauba eest, mida ei tule. Sarnaselt müüakse Marketplace'is liiga odavalt näiteks telefone: maksad ette ja pakiautomaadist tuleb hoopis muu ese või ei midagi ning müüja kaob.",
+    "ru": "В соцсетях рекламируют интернет-магазин, который якобы закрывается или в трудностях и распродаёт всё с огромными скидками. Сайт создан, чтобы украсть данные карты или интернет-банка или взять деньги за товар, который не придёт. Похоже продают в Marketplace слишком дёшево, например телефоны: вы платите заранее, а в пакоавтомате оказывается совсем другой предмет или ничего, и продавец исчезает.",
+    "en": "A shop is advertised on social media that is supposedly closing down or in trouble and selling everything at huge discounts. The site is built to steal card or internet bank details or to take money for goods that never come. In the same way, phones and the like are sold too cheaply on Marketplace: you pay upfront, and the parcel locker holds some other item or nothing, and the seller vanishes."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "Reklaam: pood suleb, kõik -80%.",
+        "ru": "Реклама: магазин закрывается, всё -80%.",
+        "en": "An ad: the shop is closing, everything 80% off."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "et": "Pakkumine kehtib ainult täna.",
+        "ru": "Предложение действует только сегодня.",
+        "en": "The offer is only valid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Leht on uus, ilma ajaloo ja arvustusteta.",
+        "ru": "Сайт новый, без истории и отзывов.",
+        "en": "The site is new, with no history or reviews."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "et": "Maksa ette kaardiga või ülekandega.",
+        "ru": "Оплатите заранее картой или переводом.",
+        "en": "Pay upfront by card or transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "et": "Kahjuks peame pärast 15 aastat oma poe sulgema. Tühjendame lao: kõik jalanõud ja joped -75%, kuni kaupa jätkub! Tänan kõiki kliente aastate eest. Vaata valikut: [link]",
+        "ru": "К сожалению, после 15 лет мы вынуждены закрыть наш магазин. Освобождаем склад: вся обувь и куртки -75%, пока товар есть! Спасибо всем клиентам за эти годы. Смотреть ассортимент: [ссылка]",
+        "en": "Sadly after 15 years we have to close our shop. Clearing the warehouse: all shoes and jackets 75% off while stocks last! Thank you to all our customers over the years. See the range: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "e-pood sulgeb uksed suur allahindlus",
+      "tühjendusmüük sotsiaalmeedia reklaam",
+      "tellisin aga kaupa ei tulnud",
+      "pood küsib internetipanga andmeid",
+      "liiga odav telefon müüja kadus",
+      "pakiautomaadis oli vale asi",
+      "libapood"
+    ],
+    "ru": [
+      "интернет-магазин закрывается большие скидки",
+      "распродажа склада реклама в соцсетях",
+      "заказал но товар не пришёл",
+      "слишком дешёвый телефон продавец пропал",
+      "в посылке оказался другой предмет"
+    ],
+    "en": [
+      "online shop closing down huge discount",
+      "clearance sale social media ad",
+      "ordered but nothing arrived",
+      "too cheap phone seller disappeared",
+      "wrong item in parcel locker"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "et": [
+      "Ebatavaliselt suur allahindlus ja lugu poe sulgemisest.",
+      "E-poel puudub jälgitav ajalugu ja arvustused.",
+      "Müüja tahab ettemaksu ega lase kaupa enne näha."
+    ],
+    "ru": [
+      "Необычно большие скидки и история о закрытии магазина.",
+      "У магазина нет прослеживаемой истории и отзывов.",
+      "Продавец хочет предоплату и не даёт увидеть товар."
+    ],
+    "en": [
+      "Unusually big discounts and a closing-down story.",
+      "The shop has no traceable history or reviews.",
+      "The seller wants payment upfront and won't let you see the item first."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Otsi poe nime internetist ja loe teiste ostjate kogemusi enne ostu.",
+      "Kasuta kaardimakset või platvormi turvalist makset, mitte ülekannet võõrale.",
+      "Kui maksid libapoes, helista pangale ja küsi kaardimakse vaidlustamist.",
+      "Teata libapoest CERT-EE-le ja kaotusest politseile."
+    ],
+    "ru": [
+      "Перед покупкой поищите название магазина в интернете и почитайте отзывы.",
+      "Платите картой или через безопасную оплату платформы, а не переводом незнакомцу.",
+      "Если заплатили фальшивому магазину, звоните в банк и спросите об оспаривании платежа.",
+      "Сообщите о магазине в CERT-EE, а об ущербе в полицию."
+    ],
+    "en": [
+      "Search the shop's name and read other buyers' experiences before buying.",
+      "Pay by card or the platform's secure payment, not a transfer to a stranger.",
+      "If you paid a fake shop, call your bank and ask about disputing the card payment.",
+      "Report the fake shop to CERT-EE and any loss to the police."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/cert-ee",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Печальная регулярность: жители Эстонии вновь передали тысячи евро в руки мошенников",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8457388/pechalnaya-regulyarnost-zhiteli-estonii-vnov-peredali-tysyachi-evro-v-ruki-moshennikov",
+      "date": "2026-04-22"
+    },
+    {
+      "title": "Situation in cyberspace – May 2025",
+      "publisher": "Riigi Infosüsteemi Amet (RIA)",
+      "url": "https://www.ria.ee/en/situation-cyberspace-may-2025",
+      "date": "2025-06-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

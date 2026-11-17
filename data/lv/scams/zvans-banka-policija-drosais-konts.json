@@ -1,0 +1,186 @@
+{
+  "id": "lv/zvans-banka-policija-drosais-konts",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "lv": "Zvans it kā no Valsts policijas, bankas vai Latvijas Bankas",
+    "ru": "Звонок якобы из Госполиции, банка или Банка Латвии",
+    "en": "A call supposedly from the State Police, your bank or Latvijas Banka"
+  },
+  "name": {
+    "lv": "Zvans no «policijas» un «bankas»: konts apdraudēts, nauda jāpārceļ uz jaunu drošu kontu",
+    "ru": "Звонок из «полиции» и «банка»: счёт под угрозой, деньги надо перевести на новый безопасный счёт",
+    "en": "Call from the 'police' and the 'bank': your account is at risk, move the money to a new safe account"
+  },
+  "how": {
+    "lv": "Vispirms zvana «izmeklētājs» un saka, ka kāds ar pilnvaru mēģina izņemt jūsu naudu vai noformēt kredītu jūsu vārdā. Viņš zina jūsu vārdu, personas kodu un adresi un vaicā, cik naudas ir kontā un vai jums ir kredīti. Tad sarunu turpina «bankas speciālists», bieži WhatsApp, un stāsta, ka konts ir kompromitēts: tas tiks slēgts, tāpēc visa nauda jāpārskaita uz «jaunu, drošu kontu» vai jāizņem skaidrā naudā. Īsta banka vai policija nekad neliek pārcelt naudu uz citu kontu un neprasa Smart-ID kodus.",
+    "ru": "Сначала звонит «следователь» и говорит, что кто-то по доверенности пытается снять ваши деньги или оформить кредит на ваше имя. Он знает ваше имя, персональный код и адрес и спрашивает, сколько денег на счету и есть ли кредиты. Затем разговор продолжает «специалист банка», часто в WhatsApp, и объясняет, что счёт скомпрометирован: его закроют, поэтому все деньги надо перевести на «новый безопасный счёт» или снять наличными. Настоящий банк или полиция никогда не просят переводить деньги на другой счёт и не спрашивают коды Smart-ID.",
+    "en": "First an 'investigator' calls and says someone with a power of attorney is trying to withdraw your money or take out a loan in your name. He knows your name, personal code and address and asks how much money is in your account and whether you have loans. Then a 'bank specialist' takes over, often on WhatsApp, and says the account is compromised: it will be closed, so all the money must be moved to a 'new, safe account' or withdrawn in cash. A real bank or the police never tell you to move money to another account and never ask for Smart-ID codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Zvana «izmeklētājs»: kāds ar pilnvaru mēģināja izņemt jūsu naudu.",
+        "ru": "Звонит «следователь»: кто-то по доверенности пытался снять ваши деньги.",
+        "en": "An 'investigator' calls: someone with a power of attorney tried to withdraw your money."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Cik naudas jums ir kontā? Vai ir kredīti?",
+        "ru": "Сколько денег у вас на счету? Есть ли кредиты?",
+        "en": "How much money is in your account? Any loans?"
+      }
+    },
+    {
+      "text": {
+        "lv": "Sarunu turpina «bankas drošības speciālists» WhatsApp.",
+        "ru": "Разговор продолжает «специалист службы безопасности банка» в WhatsApp.",
+        "en": "A 'bank security specialist' continues the conversation on WhatsApp."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "lv": "Nevienam nestāstiet, notiek izmeklēšana.",
+        "ru": "Никому не рассказывайте, идёт расследование.",
+        "en": "Don't tell anyone, there is an investigation."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "lv": "Konts tiks slēgts: pārskaitiet visu uz jauno drošo kontu.",
+        "ru": "Счёт закроют: переведите всё на новый безопасный счёт.",
+        "en": "The account will be closed: move everything to the new safe account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "lv": "Labdien, jūs traucē Valsts policijas vecākais izmeklētājs. Šorīt kāda sieviete ar pilnvaru jūsu vārdā mēģināja bankā izņemt naudu un pieteikt kredītu. Lai mēs to apturētu, man jāzina, cik aptuveni ir jūsu kontā – līdz tūkstotim vai vairāk? Tūlīt jums piezvanīs bankas drošības nodaļa, viņi palīdzēs pārcelt līdzekļus uz jaunu, aizsargātu kontu. Lūdzu, pagaidām nevienam par šo nestāstiet.",
+        "ru": "Добрый день, вас беспокоит старший следователь Госполиции. Сегодня утром женщина с доверенностью от вашего имени пыталась снять деньги в банке и подать заявку на кредит. Чтобы мы это остановили, мне нужно знать, сколько примерно у вас на счету – до тысячи или больше? Сейчас вам позвонит отдел безопасности банка, они помогут перевести средства на новый защищённый счёт. Пожалуйста, пока никому об этом не говорите.",
+        "en": "Good afternoon, this is a senior investigator from the State Police. This morning a woman with a power of attorney in your name tried to withdraw money at the bank and apply for a loan. To stop it I need to know roughly how much is in your account – under a thousand or more? The bank security department will call you shortly and help move your funds to a new, protected account. Please do not tell anyone about this for now."
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "zvanīja no policijas un teica ka kāds ar pilnvaru grib izņemt manu naudu",
+      "bankas darbinieks lika pārskaitīt naudu uz drošu kontu",
+      "teica ka mans konts ir kompromitēts un jāatver jauns konts",
+      "izmeklētājs jautāja cik naudas man ir kontā",
+      "zvanītājs zināja manu personas kodu un adresi",
+      "pēc zvana rakstīja whatsapp un atsūtīja policista apliecību",
+      "lika izņemt visu naudu no bankomāta jo konts esot apdraudēts"
+    ],
+    "ru": [
+      "позвонили из полиции сказали что кто-то по доверенности хочет снять мои деньги",
+      "сотрудник банка сказал перевести деньги на безопасный счёт",
+      "сказали что мой счёт скомпрометирован и нужно открыть новый",
+      "следователь спрашивал сколько денег у меня на счету",
+      "звонивший знал мой персональный код и адрес",
+      "потом написали в ватсап и прислали удостоверение полицейского"
+    ],
+    "en": [
+      "the police called saying someone with a power of attorney wants to withdraw my money",
+      "a bank employee told me to move my money to a safe account",
+      "they said my account was compromised and I needed a new one",
+      "the investigator asked how much money I have in my account",
+      "the caller knew my personal code and address",
+      "after the call they messaged on whatsapp and sent a police id",
+      "they told me to withdraw all my cash because the account was at risk"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "lv": [
+      "Zvanītājs zina jūsu personas kodu un adresi – tas nepierāda, ka viņš ir no policijas.",
+      "Jums jautā, cik naudas ir kontā.",
+      "Saruna tiek pārcelta uz WhatsApp, atsūta «dienesta apliecību».",
+      "Prasa pārcelt naudu uz «drošu» vai «jaunu» kontu vai izņemt to skaidrā naudā.",
+      "Lūdz nevienam nestāstīt, arī bankai."
+    ],
+    "ru": [
+      "Звонящий знает ваш персональный код и адрес – это не доказывает, что он из полиции.",
+      "Вас спрашивают, сколько денег на счету.",
+      "Разговор переводят в WhatsApp, присылают «служебное удостоверение».",
+      "Просят перевести деньги на «безопасный» или «новый» счёт или снять наличными.",
+      "Просят никому не говорить, даже банку."
+    ],
+    "en": [
+      "The caller knows your personal code and address – that does not prove they are the police.",
+      "You are asked how much money is in your account.",
+      "The conversation moves to WhatsApp and they send a 'service ID'.",
+      "They ask you to move money to a 'safe' or 'new' account or withdraw it in cash.",
+      "They tell you not to tell anyone, not even the bank."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Pārtrauciet sarunu un pats zvaniet bankai uz numuru uz kartes vai lietotnē.",
+      "Policija nekad nezvana WhatsApp un neprasa pārskaitīt naudu.",
+      "Ja jau pārskaitījāt naudu vai apstiprinājāt Smart-ID, nekavējoties zvaniet bankai un ziņojiet policijai.",
+      "Ja pie jums brauc «kurjers» pēc naudas vai kartes, zvaniet 112."
+    ],
+    "ru": [
+      "Прервите разговор и сами позвоните в банк по номеру на карте или в приложении.",
+      "Полиция никогда не звонит в WhatsApp и не просит переводить деньги.",
+      "Если вы уже перевели деньги или подтвердили Smart-ID, сразу звоните в банк и сообщите в полицию.",
+      "Если к вам едет «курьер» за деньгами или картой, звоните 112."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on your card or in the app.",
+      "The police never call on WhatsApp and never ask you to transfer money.",
+      "If you already moved money or approved Smart-ID, call your bank at once and report to the police.",
+      "If a 'courier' is coming for your cash or card, call 112."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums",
+    "lv/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "«Jānoskaidro, cik naudas ir kontā» – aizturētais krāpnieks atklāj naudas izvilināšanas shēmu",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/14.06.2026-janoskaidro-cik-naudas-ir-konta-aizturetais-krapnieks-atklaj-naudas-izvilinasanas-shemu.a651093/",
+      "date": "2026-06-14"
+    },
+    {
+      "title": "A Scammer from a Ukrainian Call Center Revealed a Scheme to Deceive Residents of Latvia by Phone",
+      "publisher": "BB.LV",
+      "url": "https://en.bb.lv/article/emergencies-and-crime/2026/06/15/a-scammer-from-a-ukrainian-call-center-revealed-a-scheme-to-deceive-residents-of-latvia-by-phone-102137",
+      "date": "2026-06-15"
+    },
+    {
+      "title": "Ludzas novadā aizturēts naudas kurjers; izmeklēšanā atklāta viņa saistība ar krāpšanām Rīgā, Daugavpilī un Igaunijā",
+      "publisher": "LV portāls (Valsts policijas paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/395528-ludzas-novada-aizturets-naudas-kurjers-izmeklesana-atklata-vina-saistiba-ar-krapsanam-riga-daugavpili-un-igaunija-2026",
+      "date": "2026-10-08"
+    },
+    {
+      "title": "Izkrāpti 2 miljoni eiro: Valsts policija telefonkrāpšanas lietā noskaidro vairāk nekā 170 naudas mūļus un nelikumīgos kriptoaktīvu mainītājus",
+      "publisher": "LV portāls (Valsts policijas paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/387457-izkrapti-2-miljoni-eiro-valsts-policija-telefonkrapsanas-lieta-noskaidro-vairak-neka-170-naudas-mulus-un-nelikumigos-kriptoaktivu-mainitajus-2026",
+      "date": "2026-03-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

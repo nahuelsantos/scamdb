@@ -1,0 +1,148 @@
+{
+  "id": "lv/csdd-sods-sms-saite",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "lv": "Īsziņa it kā no CSDD (Ceļu satiksmes drošības direkcijas)",
+    "ru": "SMS якобы от CSDD (Дирекции безопасности дорожного движения)",
+    "en": "A text supposedly from CSDD, the Road Traffic Safety Directorate"
+  },
+  "name": {
+    "lv": "Viltus CSDD īsziņa: nesamaksāts sods vai ceļu satiksmes pārkāpums",
+    "ru": "Фальшивое SMS от CSDD: неоплаченный штраф или нарушение ПДД",
+    "en": "Fake CSDD text: unpaid fine or traffic offence"
+  },
+  "how": {
+    "lv": "Atnāk īsziņa, kur sūtītājs ir «CSDD», par reģistrētu ceļu satiksmes noteikumu pārkāpumu vai nesamaksātu sodu. Saite ved uz lapu ar adresi, kas atgādina CSDD, un tur aicina apskatīt protokolu vai samaksāt, ielogojoties internetbankā. Kad ievadāt bankas datus un apstiprināt ar Smart-ID, no konta pazūd nauda. CSDD iedzīvotājiem nesūta īsziņas ar saitēm.",
+    "ru": "Приходит SMS, где отправитель указан как «CSDD», о зарегистрированном нарушении ПДД или неоплаченном штрафе. Ссылка ведёт на страницу с адресом, похожим на CSDD, где предлагают посмотреть протокол или оплатить, войдя в интернет-банк. Когда вы вводите данные банка и подтверждаете Smart-ID, деньги со счёта исчезают. CSDD не рассылает жителям SMS со ссылками.",
+    "en": "A text with 'CSDD' as the sender says a traffic offence was recorded or a fine is unpaid. The link goes to an address that looks like CSDD, inviting you to view the report or pay by logging in to online banking. Once you enter your bank details and approve with Smart-ID, money disappears from your account. CSDD does not send residents texts with links."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "CSDD: jums ir nesamaksāts sods.",
+        "ru": "CSDD: у вас неоплаченный штраф.",
+        "en": "CSDD: you have an unpaid fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Samaksājiet līdz rītdienai, lai izvairītos no soda palielināšanas.",
+        "ru": "Оплатите до завтра, чтобы штраф не увеличился.",
+        "en": "Pay by tomorrow to avoid a higher fine."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lv": "Apskatiet protokolu saitē un ielogojieties ar internetbanku.",
+        "ru": "Посмотрите протокол по ссылке и войдите через интернет-банк.",
+        "en": "View the report at the link and log in with online banking."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "lv": "CSDD: Jums ir registrets CSN parkapums (atrums). Sods 40 EUR jasamaksa lidz 20.11, pretejā gadijuma tiks piemerota soda nauda. Protokols: [saite]",
+        "ru": "CSDD: на вас зарегистрировано нарушение ПДД (скорость). Штраф 40 EUR нужно оплатить до 20.11, иначе будет начислена пеня. Протокол: [ссылка]",
+        "en": "CSDD: a traffic offence (speeding) is registered against you. The EUR 40 fine must be paid by 20.11, otherwise a penalty applies. Report: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "saņēmu csdd īsziņu par nesamaksātu sodu",
+      "īsziņa par ātruma pārkāpumu ar saiti uz protokolu",
+      "csdd vārdā lika samaksāt sodu caur internetbanku",
+      "pēc csdd saites apstiprināju smart-id un pazuda nauda",
+      "atnāca ziņa par ceļu satiksmes pārkāpumu un sodu"
+    ],
+    "ru": [
+      "получил смс от csdd про неоплаченный штраф",
+      "смс про превышение скорости со ссылкой на протокол",
+      "от имени csdd просили оплатить штраф через интернет-банк",
+      "после ссылки csdd подтвердил smart-id и пропали деньги",
+      "пришло сообщение о нарушении правил дорожного движения и штрафе"
+    ],
+    "en": [
+      "i got a csdd text about an unpaid fine",
+      "a text about speeding with a link to the report",
+      "in the name of csdd they asked me to pay a fine through online banking",
+      "after the csdd link I approved smart-id and money was gone",
+      "a message came about a traffic offence and a fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "lv": [
+      "CSDD nesūta īsziņas ar saitēm.",
+      "Saites adrese tikai atgādina īsto, ar liekām zīmēm vai citu galotni.",
+      "Lai «apskatītu protokolu», jāielogojas internetbankā."
+    ],
+    "ru": [
+      "CSDD не присылает SMS со ссылками.",
+      "Адрес ссылки только похож на настоящий, с лишними знаками или другим окончанием.",
+      "Чтобы «посмотреть протокол», надо войти в интернет-банк."
+    ],
+    "en": [
+      "CSDD doesn't send texts with links.",
+      "The link only looks like the real address, with extra characters or a different ending.",
+      "You must log in to online banking to 'see the report'."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Neatveriet saiti. Sodus pārbaudiet pats e-CSDD, ierakstot adresi.",
+      "Pārsūtiet īsziņu CERT.LV.",
+      "Ja ievadījāt bankas datus, nekavējoties zvaniet bankai un ziņojiet policijai."
+    ],
+    "ru": [
+      "Не открывайте ссылку. Проверьте штрафы сами в e-CSDD, набрав адрес вручную.",
+      "Перешлите SMS в CERT.LV.",
+      "Если ввели данные банка, сразу звоните в банк и сообщите в полицию."
+    ],
+    "en": [
+      "Don't open the link. Check fines yourself in e-CSDD by typing the address.",
+      "Forward the text to CERT.LV.",
+      "If you entered bank details, call your bank at once and report to the police."
+    ]
+  },
+  "reportTo": [
+    "lv/cert-lv",
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "Noziedznieki ar īsziņām CSDD vārdā šogad izkrāpuši simtiem tūkstošu eiro",
+      "publisher": "LV portāls (Valsts policijas paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/377699-noziedznieki-ar-iszinam-csdd-varda-sogad-izkrapusi-simtiem-tukstosu-eiro-2025",
+      "date": "2025-06-20"
+    },
+    {
+      "title": "23,7 miljoni eiro krāpnieku rokās – 2025. gadā izkrāpta ne tikai nauda, bet arī uzkrājumi un īpašumi",
+      "publisher": "LV portāls (Valsts policijas dati)",
+      "url": "https://lvportals.lv/dienaskartiba/385418-237-miljoni-eiro-krapnieku-rokas-2025-gada-izkrapta-ne-tikai-nauda-bet-ari-uzkrajumi-un-ipasumi-2026",
+      "date": "2026-01-28"
+    },
+    {
+      "title": "Oktobrī telefonkrāpnieki no Latvijas iedzīvotājiem izkrāpuši vairāk nekā 1,9 miljonus eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/09.11.2026-oktobri-telefonkrapnieki-no-latvijas-iedzivotajiem-izkrapusi-vairak-neka-19-miljonus-eiro.a670996/",
+      "date": "2026-11-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

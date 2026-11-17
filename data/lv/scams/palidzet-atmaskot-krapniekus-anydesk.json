@@ -1,0 +1,160 @@
+{
+  "id": "lv/palidzet-atmaskot-krapniekus-anydesk",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "lv": "Zvans no «policijas» vai «bankas drošības dienesta»",
+    "ru": "Звонок из «полиции» или «службы безопасности банка»",
+    "en": "A call from the 'police' or the 'bank security service'"
+  },
+  "name": {
+    "lv": "«Palīdziet atmaskot krāpniekus»: kredīts jūsu vārdā, instalējiet AnyDesk un apstipriniet Smart-ID",
+    "ru": "«Помогите разоблачить мошенников»: кредит на ваше имя, установите AnyDesk и подтвердите Smart-ID",
+    "en": "'Help us catch the fraudsters': a loan in your name, install AnyDesk and approve Smart-ID"
+  },
+  "how": {
+    "lv": "Zvanītājs uzdodas par policistu vai bankas darbinieku un saka, ka jūsu vārdā noformēts kredīts vai kontā notiek aizdomīgas darbības. Jūs aicina palīdzēt «atmaskot krāpniekus» slepenā operācijā. Lai to izdarītu, liek telefonā vai datorā instalēt attālinātās piekļuves programmu, piemēram, AnyDesk, pieslēgties internetbankai un apstiprināt Smart-ID pieprasījumus. Tā krāpnieki redz jūsu ekrānu, ņem kredītus un pārskaita naudu.",
+    "ru": "Звонящий представляется полицейским или сотрудником банка и говорит, что на ваше имя оформлен кредит или по счёту идут подозрительные операции. Вас просят помочь «разоблачить мошенников» в секретной операции. Для этого велят установить на телефон или компьютер программу удалённого доступа, например AnyDesk, зайти в интернет-банк и подтверждать запросы Smart-ID. Так мошенники видят ваш экран, берут кредиты и переводят деньги.",
+    "en": "The caller poses as a police officer or bank employee and says a loan has been taken out in your name or there is suspicious activity on your account. You are asked to help 'expose the fraudsters' in a secret operation. To do so you must install a remote-access app such as AnyDesk on your phone or computer, log in to online banking and approve Smart-ID requests. The scammers then see your screen, take out loans and move your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Uz jūsu vārda noformēts kredīts, notiek izmeklēšana.",
+        "ru": "На ваше имя оформлен кредит, идёт расследование.",
+        "en": "A loan was taken out in your name, there is an investigation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Palīdziet mums notvert krāpniekus, tas ir slepeni.",
+        "ru": "Помогите нам поймать мошенников, это секретно.",
+        "en": "Help us catch the fraudsters, it is secret."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "lv": "Instalējiet AnyDesk, lai mēs redzētu jūsu internetbanku.",
+        "ru": "Установите AnyDesk, чтобы мы видели ваш интернет-банк.",
+        "en": "Install AnyDesk so we can see your online bank."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "lv": "Apstipriniet Smart-ID pieprasījumu, lai apturētu darījumu.",
+        "ru": "Подтвердите запрос Smart-ID, чтобы остановить операцию.",
+        "en": "Approve the Smart-ID request to stop the transaction."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "lv": "Labvakar, Kibernoziegumu apkarošanas pārvalde. Jūsu vārdā šodien pieteikts patēriņa kredīts, un mums ir aizdomas, ka tajā iesaistīts bankas darbinieks. Mēs lūdzam jūsu palīdzību, lai viņu notvertu. Lūdzu, ielādējiet telefonā lietotni AnyDesk un nosauciet man ciparus, kas parādās ekrānā. Pēc tam atvērsiet internetbanku, un, kad Smart-ID prasīs apstiprinājumu, spiediet «Apstiprināt» – tā mēs bloķēsim krāpnieka darījumu.",
+        "ru": "Добрый вечер, Управление по борьбе с киберпреступностью. Сегодня на ваше имя подана заявка на потребительский кредит, и мы подозреваем, что в этом замешан сотрудник банка. Мы просим вашей помощи, чтобы его задержать. Пожалуйста, скачайте на телефон приложение AnyDesk и назовите мне цифры, которые появятся на экране. Потом откроете интернет-банк, и когда Smart-ID попросит подтверждение, нажмите «Подтвердить» – так мы заблокируем операцию мошенника.",
+        "en": "Good evening, Cybercrime Unit. A consumer loan was applied for in your name today, and we suspect a bank employee is involved. We need your help to catch him. Please download the AnyDesk app on your phone and read me the numbers that appear on the screen. Then open your online bank, and when Smart-ID asks for confirmation, press 'Confirm' – that is how we will block the fraudster's transaction."
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "policists lūdza palīdzēt atmaskot krāpniekus",
+      "lika instalēt anydesk un pieslēgties internetbankai",
+      "teica ka uz mana vārda paņemts kredīts",
+      "zvanītājs lika apstiprināt smart-id lai apturētu darījumu",
+      "kibernoziegumu pārvalde lūdza nosaukt ciparus no ekrāna",
+      "teica ka bankā strādā krāpnieks un tas ir slepeni"
+    ],
+    "ru": [
+      "полицейский попросил помочь поймать мошенников",
+      "сказали установить anydesk и зайти в интернет-банк",
+      "сказали что на моё имя взяли кредит",
+      "звонивший велел подтвердить smart-id чтобы отменить операцию",
+      "попросили назвать цифры с экрана телефона",
+      "сказали что в банке работает мошенник и это секретно"
+    ],
+    "en": [
+      "a police officer asked me to help catch fraudsters",
+      "they told me to install anydesk and log in to my online bank",
+      "they said a loan had been taken out in my name",
+      "the caller told me to approve smart-id to stop a transaction",
+      "the cybercrime unit asked me to read the numbers on my screen",
+      "they said a bank employee was a fraudster and it was secret"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "remote_access",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "lv": [
+      "Policija neiesaista iedzīvotājus «slepenās operācijās» pa telefonu.",
+      "Prasa instalēt AnyDesk, TeamViewer vai citu attālinātās piekļuves programmu.",
+      "Liek apstiprināt Smart-ID pieprasījumu, ko neesat sācis pats.",
+      "Saka, ka par sarunu nedrīkst stāstīt ne bankai, ne tuviniekiem."
+    ],
+    "ru": [
+      "Полиция не привлекает жителей к «секретным операциям» по телефону.",
+      "Просят установить AnyDesk, TeamViewer или другую программу удалённого доступа.",
+      "Велят подтвердить запрос Smart-ID, который вы не начинали сами.",
+      "Говорят, что о разговоре нельзя рассказывать ни банку, ни родным."
+    ],
+    "en": [
+      "The police do not recruit residents into 'secret operations' by phone.",
+      "You are asked to install AnyDesk, TeamViewer or another remote-access app.",
+      "You are told to approve a Smart-ID request you didn't start yourself.",
+      "They say you must not tell the bank or your family about the call."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Pārtrauciet sarunu un neinstalējiet neko pēc svešinieka lūguma.",
+      "Ja programma jau instalēta, atvienojiet internetu, izdzēsiet to un zvaniet bankai.",
+      "Lūdziet bankai bloķēt internetbanku un Smart-ID un pārbaudīt kredītus.",
+      "Ziņojiet Valsts policijai."
+    ],
+    "ru": [
+      "Прервите разговор и ничего не устанавливайте по просьбе незнакомца.",
+      "Если программа уже установлена, отключите интернет, удалите её и звоните в банк.",
+      "Попросите банк заблокировать интернет-банк и Smart-ID и проверить кредиты.",
+      "Сообщите в Госполицию."
+    ],
+    "en": [
+      "Hang up and don't install anything a stranger asks for.",
+      "If the app is already installed, disconnect from the internet, delete it and call your bank.",
+      "Ask the bank to block online banking and Smart-ID and check for loans.",
+      "Report it to the State Police."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "Izkrāpti 2 miljoni eiro: Valsts policija telefonkrāpšanas lietā noskaidro vairāk nekā 170 naudas mūļus un nelikumīgos kriptoaktīvu mainītājus",
+      "publisher": "LV portāls (Valsts policijas paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/387457-izkrapti-2-miljoni-eiro-valsts-policija-telefonkrapsanas-lieta-noskaidro-vairak-neka-170-naudas-mulus-un-nelikumigos-kriptoaktivu-mainitajus-2026",
+      "date": "2026-03-18"
+    },
+    {
+      "title": "Brīdina par telefonkrāpniecības shēmu VSAA vārdā",
+      "publisher": "LV portāls («Bite Latvija» paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/390998-bridina-par-telefonkrapniecibas-shemu-vsaa-varda-2026",
+      "date": "2026-06-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

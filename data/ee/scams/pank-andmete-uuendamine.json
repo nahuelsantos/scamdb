@@ -1,0 +1,151 @@
+{
+  "id": "ee/pank-andmete-uuendamine",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "et": "\"LHV, Swedbank, SEB või Luminor\" e-kirjas või SMS-is",
+    "ru": "«LHV, Swedbank, SEB или Luminor» в письме или СМС",
+    "en": "\"LHV, Swedbank, SEB or Luminor\" by email or text"
+  },
+  "name": {
+    "et": "Panga kiri: uuenda oma andmed, muidu konto piiratakse",
+    "ru": "Письмо «банка»: обновите данные, иначе счёт ограничат",
+    "en": "Bank message: update your details or your account will be restricted"
+  },
+  "how": {
+    "et": "E-kiri või SMS näib tulevat sinu pangalt: isikuandmed tuleb uuendada või kinnitada, muidu piiratakse internetipanka või kaarti. Link viib panga moodi lehele, kus logid sisse ja sind palutakse kinnitada toiming Smart-ID PIN2-ga. Tegelikult kinnitad kaardimakse või ülekande kelmidele, näiteks krüptorahavahendajale. Politsei teatel on õngitsussõnumid LHV, Swedbanki ja Omniva nimel kõige sagedasemad.",
+    "ru": "Письмо или СМС вроде бы от вашего банка: личные данные нужно обновить или подтвердить, иначе интернет-банк или карту ограничат. Ссылка ведёт на страницу, похожую на банк, где вы входите, и вас просят подтвердить операцию через PIN2 Smart-ID. На самом деле вы подтверждаете платёж картой или перевод мошенникам, например криптопосреднику. По данным полиции, чаще всего фишинг приходит от имени LHV, Swedbank и Omniva.",
+    "en": "An email or text seems to come from your bank: your personal details must be updated or confirmed, or your internet bank or card will be restricted. The link leads to a bank-looking page where you log in and are asked to confirm an action with your Smart-ID PIN2. In reality you are approving a card payment or transfer to the scammers, for example to a crypto exchange. The police say phishing in the names of LHV, Swedbank and Omniva is the most common."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "Kiri \"pangalt\": teie andmed on aegunud.",
+        "ru": "Письмо «из банка»: ваши данные устарели.",
+        "en": "A message \"from the bank\": your details are out of date."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Kui te täna ei uuenda, piiratakse konto.",
+        "ru": "Если не обновите сегодня, счёт ограничат.",
+        "en": "If you don't update today, the account will be restricted."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Uuendage andmed lingi kaudu.",
+        "ru": "Обновите данные по ссылке.",
+        "en": "Update your details through the link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "et": "Kinnitage toiming PIN2-ga.",
+        "ru": "Подтвердите операцию PIN2.",
+        "en": "Confirm the action with PIN2."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "et": "Lugupeetud klient! Seoses rahapesu tõkestamise nõuetega peame teie kliendiandmed üle kontrollima. Palume need kinnitada 48 tunni jooksul, vastasel juhul peatatakse ajutiselt teie internetipanga kasutamine. Kinnita andmed: [link]",
+        "ru": "Уважаемый клиент! В связи с требованиями по предотвращению отмывания денег нам нужно проверить ваши данные. Просим подтвердить их в течение 48 часов, иначе доступ к интернет-банку будет временно приостановлен. Подтвердить данные: [ссылка]",
+        "en": "Dear customer! Due to anti-money-laundering requirements we need to re-check your customer details. Please confirm them within 48 hours, otherwise your internet bank access will be temporarily suspended. Confirm details: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "pank palub isikuandmed uuendada",
+      "lhv kiri andmete uuendamine link",
+      "swedbank sõnum konto piiratakse",
+      "uuendage oma andmed internetipangas",
+      "kinnita pin2 lingilt",
+      "internetipank suletakse kui andmeid ei kinnita",
+      "kliendiandmete kontroll pank e-kiri"
+    ],
+    "ru": [
+      "банк просит обновить личные данные",
+      "письмо lhv обновить данные ссылка",
+      "сообщение swedbank счёт ограничат",
+      "обновите данные в интернет-банке",
+      "подтвердить pin2 по ссылке из письма"
+    ],
+    "en": [
+      "bank asks to update personal data",
+      "lhv email update details link",
+      "swedbank message account restricted",
+      "update your details in internet bank",
+      "confirm pin2 from email link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "et": [
+      "Pank ei saada linki, mille kaudu sisse logida või andmeid uuendada.",
+      "Ähvardus konto piiramisega lühikese tähtajaga.",
+      "Smart-ID kinnituse tekst ei vasta sellele, mida sa arvad tegevat."
+    ],
+    "ru": [
+      "Банк не присылает ссылки для входа или обновления данных.",
+      "Угроза ограничить счёт с коротким сроком.",
+      "Текст подтверждения Smart-ID не совпадает с тем, что вы думаете, что делаете."
+    ],
+    "en": [
+      "Your bank does not send links for logging in or updating details.",
+      "A threat to restrict the account with a short deadline.",
+      "The Smart-ID confirmation text doesn't match what you think you are doing."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Ära vajuta lingile. Ava internetipank ise panga äpist või kirjutades aadressi.",
+      "Kui sisestasid andmed või PIN2, helista kohe pangale ja lase kaardid sulgeda.",
+      "Saada kahtlane kiri CERT-EE-le.",
+      "Kui raha kadus, teata politseile."
+    ],
+    "ru": [
+      "Не нажимайте на ссылку. Откройте интернет-банк сами через приложение или набрав адрес.",
+      "Если ввели данные или PIN2, сразу звоните в банк и закройте карты.",
+      "Перешлите подозрительное письмо в CERT-EE.",
+      "Если пропали деньги, сообщите в полицию."
+    ],
+    "en": [
+      "Don't click the link. Open your internet bank yourself in the app or by typing the address.",
+      "If you entered details or PIN2, call your bank straight away and block your cards.",
+      "Forward the suspicious message to CERT-EE.",
+      "If money is gone, report to the police."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/cert-ee",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Печальная регулярность: жители Эстонии вновь передали тысячи евро в руки мошенников",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8457388/pechalnaya-regulyarnost-zhiteli-estonii-vnov-peredali-tysyachi-evro-v-ruki-moshennikov",
+      "date": "2026-04-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

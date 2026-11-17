@@ -1,0 +1,162 @@
+{
+  "id": "lv/soka-zvans-radinieks-avarija",
+  "country": "lv",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ru": "Звонок от «полицейского» или плачущего «родственника»",
+    "lv": "Zvans no «policista» vai raudoša «radinieka»",
+    "en": "A call from a 'police officer' or a crying 'relative'"
+  },
+  "name": {
+    "ru": "«Шоковый звонок»: родственник попал в аварию, деньги надо отдать курьеру",
+    "lv": "«Šoka zvans»: tuvinieks izraisījis avāriju, nauda jānodod kurjeram",
+    "en": "'Shock call': a relative caused a crash, hand cash to a courier"
+  },
+  "how": {
+    "ru": "Звонит незнакомый человек, часто по-русски, представляется полицейским, или сам «сын» или «внучка» плача говорит, что устроил аварию и пострадал человек. Чтобы не завели уголовное дело, срочно нужна крупная сумма. К вам домой приезжает «курьер» и забирает наличные или украшения. Номер может быть подменён, а звонящие сидят в колл-центре за границей. Полиция никогда не звонит, чтобы просить деньги.",
+    "lv": "Zvana nepazīstams cilvēks, bieži krieviski, uzdodas par policistu vai pats «dēls» vai «mazmeita» raudot saka, ka izraisījis ceļu satiksmes negadījumu un cietis cilvēks. Lai neuzsāktu kriminālprocesu, steidzami vajag lielu naudas summu. Pie jums mājās atbrauc «kurjers» un paņem skaidru naudu vai dārglietas. Numurs var būt viltots, un zvanītāji ir zvanu centrā ārzemēs. Policija nekad nezvana, lai prasītu naudu.",
+    "en": "A stranger calls, often in Russian, posing as a police officer, or a crying 'son' or 'granddaughter' says they caused a road accident and someone was hurt. Money is needed urgently to avoid criminal charges. A 'courier' comes to your home and takes cash or jewellery. The number may be spoofed and the callers are in a call centre abroad. The police never call to ask for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Ваш сын устроил аварию, человек в больнице.",
+        "lv": "Jūsu dēls izraisīja avāriju, cilvēks slimnīcā.",
+        "en": "Your son caused a crash, someone is in hospital."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Чтобы закрыть дело, деньги нужны сегодня.",
+        "lv": "Lai lietu izbeigtu, nauda vajadzīga šodien.",
+        "en": "To drop the case, the money is needed today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Не кладите трубку и никому не звоните.",
+        "lv": "Nenolieciet klausuli un nevienam nezvaniet.",
+        "en": "Don't hang up and don't call anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ru": "Отдайте деньги курьеру, который к вам приедет.",
+        "lv": "Iedodiet naudu kurjeram, kas atbrauks pie jums.",
+        "en": "Give the money to the courier who will come to you."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Мама, это я... Я сбил женщину на переходе, она в больнице. Сейчас с тобой будет говорить следователь. – Здравствуйте, полиция. Ваш сын задержан. Если пострадавшая получит компенсацию, дело можно не заводить. Сколько у вас денег дома? Через час приедет наш сотрудник, отдайте ему конверт. Не кладите трубку.",
+        "lv": "Mammu, tas esmu es... Es notriecu sievieti pie pārejas, viņa ir slimnīcā. Tūlīt runās izmeklētājs. – Labdien, policija. Jūsu dēls ir aizturēts. Ja cietusī saņems kompensāciju, lietu var neuzsākt. Cik naudas jums ir mājās? Pēc stundas atbrauks mūsu darbinieks, iedodiet viņam aploksni. Nenolieciet klausuli.",
+        "en": "Mum, it's me... I hit a woman at the crossing, she's in hospital. The investigator will talk to you now. – Hello, police. Your son has been detained. If the victim receives compensation, the case need not be opened. How much money do you have at home? Our officer will come in an hour, give him the envelope. Don't hang up."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили сказали что сын сбил человека и нужны деньги",
+      "полицейский сказал что внучка попала в аварию",
+      "просили деньги чтобы не заводили уголовное дело",
+      "за деньгами должен был приехать курьер",
+      "плакал в трубку как будто мой сын",
+      "звонили на русском из полиции про аварию"
+    ],
+    "lv": [
+      "zvanīja un teica ka dēls notriecis cilvēku un vajag naudu",
+      "policists teica ka mazmeita iekļuvusi avārijā",
+      "prasīja naudu lai neuzsāktu krimināllietu",
+      "pēc naudas bija jāatbrauc kurjeram",
+      "telefonā raudāja it kā mans dēls"
+    ],
+    "en": [
+      "they called saying my son hit someone and money was needed",
+      "a police officer said my granddaughter was in a car accident",
+      "they wanted money so no criminal case would be opened",
+      "a courier was going to come for the money",
+      "someone cried on the phone pretending to be my son"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "ru": [
+      "Полиция или «родственник» просит деньги, чтобы закрыть дело.",
+      "Торопят и не дают положить трубку.",
+      "Деньги надо отдать незнакомому курьеру.",
+      "Голос неразборчивый, «родственник» только плачет."
+    ],
+    "lv": [
+      "Policija vai «tuvinieks» prasa naudu, lai izbeigtu lietu.",
+      "Steidzina un neļauj nolikt klausuli.",
+      "Naudu jānodod svešam kurjeram.",
+      "Balss neskaidra, «tuvinieks» tikai raud."
+    ],
+    "en": [
+      "The police or a 'relative' ask for money to end a case.",
+      "They rush you and won't let you hang up.",
+      "Money is to be handed to an unknown courier.",
+      "The voice is unclear and the 'relative' just cries."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку и сами позвоните родственнику на его обычный номер.",
+      "Никогда не отдавайте деньги или украшения незнакомцам.",
+      "Если курьер уже едет или забрал деньги, звоните 112."
+    ],
+    "lv": [
+      "Nolieciet klausuli un pats piezvaniet tuviniekam uz viņa parasto numuru.",
+      "Nekad nedodiet naudu vai dārglietas svešiniekiem.",
+      "Ja kurjers jau brauc vai paņēma naudu, zvaniet 112."
+    ],
+    "en": [
+      "Hang up and call your relative yourself on their usual number.",
+      "Never give cash or jewellery to strangers.",
+      "If a courier is on the way or took the money, call 112."
+    ]
+  },
+  "reportTo": [
+    "lv/emergency-112",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "23,7 miljoni eiro krāpnieku rokās – 2025. gadā izkrāpta ne tikai nauda, bet arī uzkrājumi un īpašumi",
+      "publisher": "LV portāls (Valsts policijas dati)",
+      "url": "https://lvportals.lv/dienaskartiba/385418-237-miljoni-eiro-krapnieku-rokas-2025-gada-izkrapta-ne-tikai-nauda-bet-ari-uzkrajumi-un-ipasumi-2026",
+      "date": "2026-01-28"
+    },
+    {
+      "title": "Finanšu krāpšana turpina pieaugt. Krāpnieki iztukšo kontus un liek pārdot īpašumus",
+      "publisher": "LV portāls",
+      "url": "https://lvportals.lv/norises/385440-finansu-krapsana-turpina-pieaugt-krapnieki-iztukso-kontus-un-liek-pardot-ipasumus-2026",
+      "date": "2026-01-28"
+    },
+    {
+      "title": "Rīgas seniori pēdējo nedēļu laikā krāpniekiem atdevuši 210 000 eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/22.08.2024-rigas-seniori-pedejo-nedelu-laika-krapniekiem-atdevusi-210-000-eiro.a565999/",
+      "date": "2024-08-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

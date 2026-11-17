@@ -1,0 +1,179 @@
+{
+  "id": "lt/telekomunikaciju-sutartis-policija",
+  "country": "lt",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ru": "«Оператор связи», потом «банк» и «полиция» (звонок по-русски)",
+    "lt": "„Ryšio operatorius“, paskui „bankas“ ir „policija“ (skambutis rusiškai)",
+    "en": "“Your phone company”, then “the bank” and “the police” (a call in Russian)"
+  },
+  "name": {
+    "ru": "«Ваш договор со связью истекает»: потом «полиция» и курьер за деньгами",
+    "lt": "„Baigiasi jūsų ryšio sutartis“: paskui „policija“ ir kurjeris pinigams",
+    "en": "“Your phone contract is expiring”: then “the police” and a courier for the cash"
+  },
+  "how": {
+    "ru": "Звонят по-русски от имени телекоммуникационной компании: договор на телефон или интернет якобы истёк и его нужно продлить. В ходе разговора просят данные или код, а потом звонят «сотрудники банка» и «полицейские»: на ваше имя пытаются взять кредит, ваши деньги в опасности или дома могут быть фальшивые купюры, которые надо «проверить». В итоге человека уговаривают снять сбережения и отдать их незнакомцу, который приезжает домой, или оставить в указанном месте.",
+    "lt": "Skambina rusiškai telekomunikacijų bendrovės vardu: neva baigėsi telefono ar interneto sutartis ir ją reikia pratęsti. Pokalbio metu prašo duomenų ar kodo, o paskui skambina „banko darbuotojai“ ir „policijos pareigūnai“: jūsų vardu bandoma paimti paskolą, pinigams gresia pavojus arba namuose gali būti padirbtų pinigų, kuriuos reikia „patikrinti“. Galiausiai žmogus įkalbamas išgryninti santaupas ir atiduoti jas į namus atvykusiam nepažįstamajam arba palikti nurodytoje vietoje.",
+    "en": "The call comes in Russian in the name of a telecom company: your phone or internet contract has supposedly expired and must be renewed. During the call they ask for details or a code, and then “bank employees” and “police officers” call: someone is trying to take a loan in your name, your money is in danger, or there may be counterfeit notes at home that need “checking”. In the end the person is talked into withdrawing their savings and handing them to a stranger who comes to the door, or leaving them at a given spot."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "Звонок «от оператора»: договор истекает, надо продлить.",
+        "en": "A call “from the phone company”: the contract is expiring and must be renewed.",
+        "ru": "Skambutis „iš operatoriaus“: sutartis baigiasi, reikia pratęsti."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lt": "Просят продиктовать код из SMS или личные данные.",
+        "en": "You're asked to read out a code from a text or give personal details.",
+        "ru": "Prašo padiktuoti kodą iš SMS ar asmens duomenis."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "lt": "Переключают на «банк» и «полицию», не дают положить трубку.",
+        "en": "You're passed on to “the bank” and “the police” and not allowed to hang up.",
+        "ru": "Sujungia su „banku“ ir „policija“, neleidžia padėti ragelio."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "lt": "Велят снять наличные и отдать человеку, который приедет.",
+        "en": "You're told to withdraw cash and hand it to someone who will come.",
+        "ru": "Liepia išgryninti pinigus ir atiduoti atvykusiam žmogui."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Добрый день, вас беспокоит отдел обслуживания клиентов. Срок вашего договора на мобильную связь заканчивается сегодня, номер могут отключить. Чтобы продлить на старых условиях, я отправлю вам SMS с кодом, просто назовите его мне. Спасибо… Так, вижу, что с вашими данными уже пытались оформить кредит. Сейчас я соединю вас с сотрудником полиции, оставайтесь на линии.",
+        "lt": "Laba diena, klientų aptarnavimo skyrius. Jūsų mobiliojo ryšio sutartis baigiasi šiandien, numerį gali atjungti. Kad pratęstume senomis sąlygomis, atsiųsiu SMS su kodu, tiesiog jį pasakykite. Ačiū… Matau, kad jūsų duomenimis jau bandyta imti paskolą. Dabar sujungsiu jus su policijos pareigūnu, likite ant linijos.",
+        "en": "Good afternoon, customer service department. Your mobile contract expires today and the number may be disconnected. To renew it on the old terms I'll send you a text with a code, just tell it to me. Thank you… Now, I can see someone has already tried to take out a loan with your details. I'll put you through to a police officer now, stay on the line."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили от оператора связи договор заканчивается",
+      "продлить договор на телефон назвать код",
+      "потом позвонили из полиции",
+      "сказали что дома фальшивые деньги",
+      "отдать деньги человеку который приедет",
+      "звонок от телекоммуникационной компании и полиции",
+      "мобильный оператор потом банк и полицейский"
+    ],
+    "lt": [
+      "skambino neva telekomunikacijų bendrovė baigiasi sutartis",
+      "pratęsti telefono sutartį padiktuoti kodą",
+      "prisistatė policijos pareigūnais",
+      "namuose padirbti pinigai patikrinti",
+      "pinigus atidaviau atvykusiai moteriai",
+      "skambino rusiškai operatorius paskui policija"
+    ],
+    "en": [
+      "phone company said my contract was expiring",
+      "asked for a code to renew the contract",
+      "then a police officer called",
+      "told my cash might be counterfeit",
+      "handed money to a stranger who came to my door"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "ru": [
+      "Оператор связи не продлевает договор по коду, продиктованному по телефону.",
+      "Полиция никогда не забирает деньги на «проверку» и не присылает за ними курьера.",
+      "Цепочка «оператор – банк – полиция» в одном разговоре — классическая схема.",
+      "Мошенники часто говорят по-русски или на ломаном литовском."
+    ],
+    "lt": [
+      "Ryšio operatorius nepratęsia sutarties pagal telefonu padiktuotą kodą.",
+      "Policija niekada nepaima pinigų „patikrinti“ ir nesiunčia jų pasiimti kurjerio.",
+      "Grandinė „operatorius – bankas – policija“ viename pokalbyje – klasikinė schema.",
+      "Sukčiai dažnai kalba rusiškai arba laužyta lietuvių kalba."
+    ],
+    "en": [
+      "A phone company never renews a contract with a code read out over the phone.",
+      "The police never take money for “checking” and never send a courier for it.",
+      "A chain of “phone company – bank – police” in one call is the classic script.",
+      "The scammers often speak Russian or broken Lithuanian."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку. Сами позвоните оператору и в банк по официальным номерам.",
+      "Если кто-то едет за деньгами, звоните 112.",
+      "Предупредите пожилых родственников и соседей об этой схеме; о случившемся сообщите в полицию через e-policija."
+    ],
+    "lt": [
+      "Padėkite ragelį. Patys paskambinkite operatoriui ir bankui oficialiais numeriais.",
+      "Jei kas nors važiuoja pasiimti pinigų, skambinkite 112.",
+      "Įspėkite vyresnius artimuosius ir kaimynus apie šią schemą; apie įvykį praneškite policijai per e. policiją."
+    ],
+    "en": [
+      "Hang up. Call your phone company and bank yourself on their official numbers.",
+      "If someone is coming for the money, call 112.",
+      "Warn older relatives and neighbours about this script; report what happened to the police through e-policija."
+    ]
+  },
+  "reportTo": [
+    "lt/emergency-112",
+    "lt/policija",
+    "lt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Sukčiai iš trijų žmonių apgaule išviliojo apie 15,6 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/3012116/sukciai-is-triju-zmoniu-apgaule-isviliojo-apie-15-6-tukst-euru",
+      "date": "2026-08-05"
+    },
+    {
+      "title": "Vilniuje iš dviejų žmonių sukčiai išviliojo 35 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2985035/vilniuje-is-dvieju-zmoniu-sukciai-isviliojo-35-tukst-euru",
+      "date": "2026-07-09"
+    },
+    {
+      "title": "Sukčiai iš gyventojų visoje šalyje išviliojo 320,5 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2969034/sukciai-is-gyventoju-visoje-salyje-isviliojo-320-5-tukst-euru",
+      "date": "2026-06-23"
+    },
+    {
+      "title": "Telefoniniai sukčiai iš vilniečio išviliojo 15 tūkst. eurų",
+      "publisher": "LRT (ELTA, Policijos departamentas)",
+      "url": "https://www.lrt.lt/naujienos/lietuvoje/2/2872099/telefoniniai-sukciai-is-vilniecio-isviliojo-15-tukst-euru",
+      "date": "2026-03-19"
+    },
+    {
+      "title": "Policija stebi vis įžūliau veikiančius sukčius, įvardija 3 populiariausias jų schemas",
+      "publisher": "15min",
+      "url": "https://www.15min.lt/naujiena/aktualu/nusikaltimaiirnelaimes/policija-stebi-vis-izuliau-veikiancius-sukcius-ivardija-3-populiariausias-ju-schemas-59-2456430",
+      "date": "2025-05-23"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "lt/rusakalbis-banko-darbuotojas-programele"
+  ]
+}

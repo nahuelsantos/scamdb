@@ -1,0 +1,122 @@
+{
+  "id": "lt/netikra-el-parduotuve",
+  "country": "lt",
+  "lang": "lt",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "lt": "Elektroninė parduotuvė iš reklamos socialiniuose tinkluose",
+    "en": "An online shop from a social media ad"
+  },
+  "name": {
+    "lt": "Netikra el. parduotuvė: „uždarome – viskas iki −80 %“",
+    "en": "Fake online shop: “closing down – everything up to 80% off”"
+  },
+  "how": {
+    "lt": "Socialiniuose tinkluose pasirodo reklama: parduotuvė neva užsidaro ar išparduoda prekes su milžiniškomis nuolaidomis. Nuoroda veda į tikroviškai atrodančią svetainę su vogtomis nuotraukomis, netikrais atsiliepimais ir „patikimumo“ ženklais. Sumokėjus kortele prekės dažniausiai neatkeliauja arba atsiunčiama prasta kopija, o parduotuvė dingsta. Kortelės duomenys gali būti panaudoti kitiems pirkiniams. Tokių svetainių daugėja prieš Juodąjį penktadienį ir Kalėdas.",
+    "en": "An ad appears on social media: a shop is supposedly closing down or clearing stock with huge discounts. The link leads to a realistic-looking site with stolen photos, fake reviews and “trust” badges. After you pay by card, the goods usually never arrive or a poor copy is sent, and the shop disappears. The card details may be used for other purchases. These sites multiply before Black Friday and Christmas."
+  },
+  "steps": [
+    {
+      "text": {
+        "lt": "Reklama: brangios prekės už itin mažą kainą.",
+        "en": "An ad: expensive goods at a very low price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "lt": "„Paskutinė diena“, „liko 3 vienetai“.",
+        "en": "“Last day”, “only 3 left”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lt": "Svetainė su keistu adresu, be įmonės duomenų.",
+        "en": "A site with an odd address and no company details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "lt": "Mokama kortele ar pavedimu, prekė neatkeliauja.",
+        "en": "You pay by card or transfer, the goods never arrive."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "online",
+      "text": {
+        "lt": "UŽDAROME PARDUOTUVĘ VILNIUJE! Išparduodame visas striukes ir batus iki −80 %. Kokybiški prekės ženklai už juokingą kainą, nemokamas pristatymas visoje Lietuvoje. Akcija galioja tik iki sekmadienio, prekių lieka vis mažiau: [nuoroda]",
+        "en": "WE'RE CLOSING OUR SHOP IN VILNIUS! Selling off all jackets and shoes at up to 80% off. Quality brands at a ridiculous price, free delivery across Lithuania. Offer only valid until Sunday, stock is running out: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lt": [
+      "užsisakiau internetu ir prekės negavau",
+      "parduotuvė uždaroma išpardavimas iki 80 procentų",
+      "reklama facebook pigios prekės netikra parduotuvė",
+      "sumokėjau kortele parduotuvė dingo",
+      "atsiuntė prastą kopiją vietoj prekės",
+      "netikra el parduotuvė"
+    ],
+    "en": [
+      "ordered online and never got the goods",
+      "closing down sale up to 80 off on facebook",
+      "paid by card and the shop vanished",
+      "received a cheap copy instead",
+      "fake online store"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "lt": [
+      "Neįtikėtinai didelės nuolaidos ir laikmatis.",
+      "Nėra įmonės duomenų, kontaktų, keistas domenas (.shop, .top).",
+      "Vienodi ar dirbtiniai atsiliepimai, ribotas atsiskaitymo būdų pasirinkimas."
+    ],
+    "en": [
+      "Unbelievably big discounts and a countdown.",
+      "No company details or contacts, an odd domain (.shop, .top).",
+      "Identical or fake-looking reviews, limited payment options."
+    ]
+  },
+  "whatToDo": {
+    "lt": [
+      "Prieš pirkdami patikrinkite, ar pardavėjas registruotas ir turi tikrus kontaktus; ieškokite atsiliepimų kitur.",
+      "Venkite tiesioginių pavedimų, kriptovaliutų ir dovanų kortelių.",
+      "Jei sumokėjote, susisiekite su banku dėl mokėjimo ginčo ir praneškite policijai."
+    ],
+    "en": [
+      "Before buying, check the seller is registered and has real contacts; look for reviews elsewhere.",
+      "Avoid direct transfers, crypto and gift cards.",
+      "If you paid, contact your bank about a payment dispute and tell the police."
+    ]
+  },
+  "reportTo": [
+    "lt/your-bank",
+    "lt/policija",
+    "lt/nksc"
+  ],
+  "sources": [
+    {
+      "title": "Socialiniuose tinkluose sukčiai vilioja netikrais išpardavimais: ką būtina žinoti?",
+      "publisher": "LRT (Luminor pranešimas)",
+      "url": "https://www.lrt.lt/naujienos/verslas/4/2724044/socialiniuose-tinkluose-sukciai-vilioja-netikrais-ispardavimais-ka-butina-zinoti",
+      "date": "2025-11-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

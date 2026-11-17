@@ -1,0 +1,150 @@
+{
+  "id": "lv/kurjeru-sms-sutijums-samaksa",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "lv": "Īsziņa it kā no Latvijas Pasta, Omniva, DPD vai cita kurjera",
+    "ru": "SMS якобы от Latvijas Pasts, Omniva, DPD или другой курьерской службы",
+    "en": "A text supposedly from Latvijas Pasts, Omniva, DPD or another courier"
+  },
+  "name": {
+    "lv": "Viltus īsziņa par sūtījumu: muitas nodoklis, nepareiza adrese vai piegādes maksa",
+    "ru": "Фальшивое SMS о посылке: таможенный сбор, неверный адрес или оплата доставки",
+    "en": "Fake parcel text: customs duty, wrong address or delivery fee"
+  },
+  "how": {
+    "lv": "Atnāk īsziņa vai e-pasts it kā no pasta vai kurjera: sūtījumam piemērots muitas nodoklis, adrese ir nepareiza vai piegāde jāapmaksā nekavējoties. Saite ved uz viltus lapu, kas izskatās kā kurjera vai bankas lapa, un prasa kartes datus, internetbankas PIN kodus vai Smart-ID apstiprinājumu. Šādas īsziņas sūta visu gadu, bet īpaši pirms svētkiem. Ievadītie dati nonāk krāpnieku rokās.",
+    "ru": "Приходит SMS или письмо якобы от почты или курьера: на посылку начислен таможенный сбор, адрес неверный или доставку надо оплатить немедленно. Ссылка ведёт на фальшивую страницу, похожую на сайт курьера или банка, где просят данные карты, PIN-коды интернет-банка или подтверждение Smart-ID. Такие SMS рассылают круглый год, особенно перед праздниками. Введённые данные попадают к мошенникам.",
+    "en": "A text or e-mail supposedly from the post or a courier says customs duty applies to your parcel, the address is wrong or delivery must be paid at once. The link leads to a fake page that looks like the courier or a bank and asks for card details, online banking PIN codes or Smart-ID approval. These texts are sent all year, especially before holidays. Whatever you enter goes to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Jūsu sūtījums aizturēts: nepareiza adrese vai muitas nodoklis.",
+        "ru": "Ваша посылка задержана: неверный адрес или таможенный сбор.",
+        "en": "Your parcel is held: wrong address or customs duty."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Samaksājiet nelielu summu šodien, citādi sūtījums tiks atgriezts.",
+        "ru": "Оплатите небольшую сумму сегодня, иначе посылку вернут.",
+        "en": "Pay a small amount today or the parcel will be returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lv": "Atveriet saiti un ievadiet kartes datus vai PIN kodus.",
+        "ru": "Откройте ссылку и введите данные карты или PIN-коды.",
+        "en": "Open the link and enter card details or PIN codes."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "lv": "Latvijas Pasts: Jusu sutijumam LV2281 piemerots muitas nodoklis 2,49 EUR. Lai piegade notiktu rit, apmaksajiet 24 stundu laika: [saite]",
+        "ru": "Latvijas Pasts: на вашу посылку LV2281 начислен таможенный сбор 2,49 EUR. Чтобы доставка состоялась завтра, оплатите в течение 24 часов: [ссылка]",
+        "en": "Latvijas Pasts: customs duty of EUR 2.49 applies to your parcel LV2281. For delivery tomorrow, pay within 24 hours: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "saņēmu īsziņu par muitas nodokli sūtījumam",
+      "kurjers rakstīja ka nepareiza adrese un jāatjauno caur saiti",
+      "latvijas pasta īsziņa prasīja samaksāt piegādi",
+      "pēc saites par paku prasīja internetbankas pin kodus",
+      "dpd īsziņa lika apmaksāt sūtījumu kartē",
+      "omniva vārdā atnāca saite par neizdevušos piegādi"
+    ],
+    "ru": [
+      "пришло смс про таможенный сбор за посылку",
+      "курьер написал что неверный адрес и надо обновить по ссылке",
+      "смс от латвийской почты просило оплатить доставку",
+      "по ссылке про посылку спросили pin коды интернет-банка",
+      "смс от dpd просило оплатить посылку картой"
+    ],
+    "en": [
+      "i got a text about customs duty on a parcel",
+      "the courier texted that the address was wrong and I had to update it through a link",
+      "a latvijas pasts text asked me to pay for delivery",
+      "the parcel link asked for my online banking pin codes",
+      "a dpd text asked me to pay for a parcel by card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "lv": [
+      "Negaidīta īsziņa ar saiti un nelielu maksājumu.",
+      "Saite neved uz kurjera oficiālo adresi.",
+      "Lapa prasa internetbankas PIN kodus vai Smart-ID."
+    ],
+    "ru": [
+      "Неожиданное SMS со ссылкой и небольшим платежом.",
+      "Ссылка ведёт не на официальный адрес курьера.",
+      "Страница просит PIN-коды интернет-банка или Smart-ID."
+    ],
+    "en": [
+      "An unexpected text with a link and a small payment.",
+      "The link does not go to the courier's official address.",
+      "The page asks for online banking PIN codes or Smart-ID."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Neatveriet saiti. Sūtījumu pārbaudiet pats kurjera lietotnē vai mājaslapā.",
+      "Pārsūtiet īsziņu CERT.LV.",
+      "Ja ievadījāt kartes datus vai kodus, nekavējoties bloķējiet karti un zvaniet bankai."
+    ],
+    "ru": [
+      "Не открывайте ссылку. Проверьте посылку сами в приложении или на сайте курьера.",
+      "Перешлите SMS в CERT.LV.",
+      "Если ввели данные карты или коды, сразу заблокируйте карту и звоните в банк."
+    ],
+    "en": [
+      "Don't open the link. Check the parcel yourself in the courier's app or website.",
+      "Forward the text to CERT.LV.",
+      "If you entered card details or codes, block the card and call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "lv/cert-lv",
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "Beware! During the holidays, scammers pose as couriers",
+      "publisher": "BB.LV",
+      "url": "https://en.bb.lv/article/emergencies-and-crime/2025/12/23/beware-during-the-holidays-scammers-pose-as-couriers-81951",
+      "date": "2025-12-23"
+    },
+    {
+      "title": "23,7 miljoni eiro krāpnieku rokās – 2025. gadā izkrāpta ne tikai nauda, bet arī uzkrājumi un īpašumi",
+      "publisher": "LV portāls (Valsts policijas dati)",
+      "url": "https://lvportals.lv/dienaskartiba/385418-237-miljoni-eiro-krapnieku-rokas-2025-gada-izkrapta-ne-tikai-nauda-bet-ari-uzkrajumi-un-ipasumi-2026",
+      "date": "2026-01-28"
+    },
+    {
+      "title": "Oktobrī telefonkrāpnieki no Latvijas iedzīvotājiem izkrāpuši vairāk nekā 1,9 miljonus eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/09.11.2026-oktobri-telefonkrapnieki-no-latvijas-iedzivotajiem-izkrapusi-vairak-neka-19-miljonus-eiro.a670996/",
+      "date": "2026-11-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

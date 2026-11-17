@@ -1,0 +1,170 @@
+{
+  "id": "ee/investeerimine-kuulsused",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "et": "Libareklaam või -uudis tuntud eestlasega, seejärel \"maakler\"",
+    "ru": "Фальшивая реклама или новость с известным эстонцем, затем «брокер»",
+    "en": "A fake ad or news story with a well-known Estonian, then a \"broker\""
+  },
+  "name": {
+    "et": "Investeerimispettus tuntud eestlaste nimel",
+    "ru": "Инвестиционное мошенничество от имени известных эстонцев",
+    "en": "Investment scam using famous Estonians"
+  },
+  "how": {
+    "et": "Sotsiaalmeedias ja libauudistes kasutatakse tuntud eestlaste nägusid ja nimesid, et reklaamida väga tulusat ja \"riskivaba\" investeerimist krüptorahasse, aktsiatesse või võlakirjadesse; on kasutatud ka presidendi süvavõltsingut. Kui jätad oma andmed, helistab \"maakler\", kes juhendab sind esimese, umbes 250-eurose makse tegemisel platvormile ja näitab kasumit. Siis soovitab ta võtta laenu, et rohkem investeerida, ja võib paluda paigaldada kaugjuhtimisprogrammi. Skeem kestab kuid ja lõpeb, kui raha on otsas või kui proovid \"virtuaalset\" raha välja võtta.",
+    "ru": "В соцсетях и фальшивых новостях используют лица и имена известных эстонцев, чтобы рекламировать очень доходные и «безрисковые» инвестиции в криптовалюту, акции или облигации; использовали даже дипфейк президента. Если вы оставите свои данные, звонит «брокер», который помогает сделать первый платёж примерно 250 евро на платформу и показывает прибыль. Потом он советует взять кредит, чтобы вложить больше, и может попросить установить программу удалённого доступа. Схема длится месяцами и заканчивается, когда деньги кончаются или когда вы пытаетесь вывести «виртуальные» деньги.",
+    "en": "Social media posts and fake news stories use the faces and names of well-known Estonians to promote highly profitable, \"risk-free\" investing in crypto, shares or bonds; a deepfake of the President has been used too. If you leave your details, a \"broker\" calls, guides you through a first payment of about 250 euros to a platform and shows you profits. Then they suggest taking out a loan to invest more and may ask you to install remote-access software. It goes on for months and ends when the money runs out or when you try to withdraw the \"virtual\" funds."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "Tuntud eestlane räägib reklaamis lihtsast teenimisvõimalusest.",
+        "ru": "Известный эстонец в рекламе рассказывает о лёгком заработке.",
+        "en": "A famous Estonian in an ad talks about an easy way to earn."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Suur tulu ilma riskita.",
+        "ru": "Высокий доход без риска.",
+        "en": "Big returns with no risk."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "et": "\"Maakler\" palub alustuseks 250 eurot, hiljem laenu võtta.",
+        "ru": "«Брокер» просит для начала 250 евро, потом взять кредит.",
+        "en": "A \"broker\" asks for 250 euros to start, later for a loan."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "et": "Paigalda programm, et maakler saaks aidata.",
+        "ru": "Установите программу, чтобы брокер мог помочь.",
+        "en": "Install an app so the broker can help."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "et": "ERAKORRALINE: Tuntud rallisõitja paljastas saates, kuidas ta teenib uue platvormiga igakuiselt 30 000 eurot. Pank üritas intervjuud peatada! Alustada saab juba 250 euroga, platvorm teeb kõik ise. Loe edasi: [link]",
+        "ru": "СРОЧНО: Известный раллист раскрыл в эфире, как он зарабатывает 30 000 евро в месяц на новой платформе. Банк пытался остановить интервью! Начать можно всего с 250 евро, платформа всё делает сама. Читать дальше: [ссылка]",
+        "en": "BREAKING: A famous rally driver revealed on air how he earns 30,000 euros a month with a new platform. The bank tried to stop the interview! You can start with just 250 euros, the platform does everything itself. Read more: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "investeerimine tuntud eestlane reklaam",
+      "kuulus inimene soovitab investeerimisplatvormi",
+      "maakler helistas investeeri 250 eurot",
+      "krüptoraha tulu ilma riskita",
+      "võtke laen et rohkem investeerida",
+      "presidendi video investeerimine",
+      "kasum platvormil raha välja ei saa"
+    ],
+    "ru": [
+      "инвестиции реклама известный эстонец",
+      "знаменитость советует платформу",
+      "брокер звонит вложить 250 евро",
+      "доход без риска криптовалюта",
+      "возьмите кредит чтобы инвестировать больше",
+      "не могу вывести деньги с платформы"
+    ],
+    "en": [
+      "investment ad famous estonian",
+      "celebrity recommends trading platform",
+      "broker calls invest 250 euros",
+      "crypto returns without risk",
+      "take a loan to invest more",
+      "can't withdraw money from platform"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "et": [
+      "Tuntud inimene \"soovitab\" investeerimist reklaamis või uudises, mida ei leia päris meediast.",
+      "Lubatakse suurt ja kindlat tulu madala riskiga.",
+      "Maakler soovitab võtta laenu või paigaldada kaugjuhtimisprogrammi.",
+      "Raha välja võtmiseks küsitakse veel tasusid."
+    ],
+    "ru": [
+      "Знаменитость «советует» инвестиции в рекламе или новости, которой нет в настоящих СМИ.",
+      "Обещают большой и гарантированный доход с низким риском.",
+      "Брокер советует взять кредит или установить программу удалённого доступа.",
+      "За вывод денег просят ещё платежи."
+    ],
+    "en": [
+      "A celebrity \"recommends\" investing in an ad or story you can't find in real media.",
+      "Big, guaranteed returns with low risk are promised.",
+      "The broker suggests a loan or remote-access software.",
+      "More fees are asked before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Kontrolli enne investeerimist, kas ettevõttel on Finantsinspektsiooni tegevusluba ja kas tema kohta on hoiatus.",
+      "Ära paigalda kaugjuhtimisprogramme ega võta laenu kellegi teise soovitusel.",
+      "Kui oled raha kandnud, helista kohe pangale ja teata politseile.",
+      "Ole valmis järgmiseks pettuseks: \"raha tagasisaamise\" pakkumised on samuti pettus."
+    ],
+    "ru": [
+      "Перед вложением проверьте, есть ли у компании лицензия Финансовой инспекции и нет ли о ней предупреждения.",
+      "Не устанавливайте программы удалённого доступа и не берите кредит по чужому совету.",
+      "Если уже перевели деньги, сразу звоните в банк и сообщите в полицию.",
+      "Будьте готовы к следующему обману: предложения «вернуть деньги» тоже мошенничество."
+    ],
+    "en": [
+      "Before investing, check whether the company is authorised by the Financial Supervision Authority and whether there is a warning about it.",
+      "Never install remote-access software or take a loan on someone else's advice.",
+      "If you transferred money, call your bank at once and report to the police.",
+      "Expect the next scam: offers to \"recover your money\" are fraud too."
+    ]
+  },
+  "reportTo": [
+    "ee/finantsinspektsioon",
+    "ee/your-bank",
+    "ee/police-report",
+    "ee/ohvriabi"
+  ],
+  "sources": [
+    {
+      "title": "Kelmustega tekitatud kahju on sel aastal vähenenud ligi nelja miljoni euro võrra",
+      "publisher": "Politsei- ja Piirivalveamet",
+      "url": "https://www.politsei.ee/et/uudised/kelmustega-tekitatud-kahju-on-sel-aastal-vaehenenud-ligi-nelja-miljoni-euro-vorra-13927",
+      "date": "2026-11-09"
+    },
+    {
+      "title": "Kelmid petsid Eesti elanikelt poole aastaga välja 13,2 miljonit eurot",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1610109475/kelmid-petsid-eesti-elanikelt-poole-aastaga-valja-13-2-miljonit-eurot",
+      "date": "2026-08-13"
+    },
+    {
+      "title": "Пять схем мошенничества, от которых жители Эстонии пострадали в этом году больше всего",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8387004/pyat-shem-moshennichestva-ot-kotoryh-zhiteli-estonii-postradali-v-etom-godu-bolshe-vsego",
+      "date": "2025-12-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

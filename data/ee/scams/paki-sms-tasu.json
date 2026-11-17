@@ -1,0 +1,163 @@
+{
+  "id": "ee/paki-sms-tasu",
+  "country": "ee",
+  "lang": "et",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "et": "\"Omniva, DPD või Smartposti\" SMS-is",
+    "ru": "«Omniva, DPD или Smartposti» в СМС",
+    "en": "\"Omniva, DPD or Smartposti\" by text"
+  },
+  "name": {
+    "et": "Paki SMS: vale aadress või tollitasu, maksa lingi kaudu",
+    "ru": "СМС о посылке: неверный адрес или таможенный сбор, оплатите по ссылке",
+    "en": "Parcel text: wrong address or customs fee, pay via a link"
+  },
+  "how": {
+    "et": "Tuleb sõnum, et sinu pakk on peatatud või saadetakse lattu tagasi, sest aadress on vale või tollitasu maksmata. Link viib kulleri moodi lehele, kus küsitakse aadressi ja kaardiandmeid ning väikest teenustasu. Tegelik eesmärk on kaardiandmed: pärast väikest makset tühjendatakse kaart või võetakse kogu krediidilimiit. Kuna saatja nimeks on seatud kulleri nimi, võib võltssõnum ilmuda samasse vestlusse päris teavitustega.",
+    "ru": "Приходит сообщение, что ваша посылка задержана или возвращается на склад, потому что адрес неверный или не оплачен таможенный сбор. Ссылка ведёт на страницу, похожую на службу доставки, где просят адрес, данные карты и небольшую плату. Настоящая цель данные карты: после маленького платежа карту опустошают или снимают весь кредитный лимит. Так как в отправителе стоит имя службы доставки, фальшивое сообщение может оказаться в той же переписке, что и настоящие уведомления.",
+    "en": "A message says your parcel is on hold or being returned to the warehouse because the address is wrong or a customs fee is unpaid. The link leads to a courier-looking page asking for your address, card details and a small service fee. The real goal is your card details: after the small payment the card is emptied or the whole credit limit is taken. Because the sender name is set to the courier's name, the fake message can land in the same thread as real notices."
+  },
+  "steps": [
+    {
+      "text": {
+        "et": "\"Omniva\": pakk on peatatud.",
+        "ru": "«Omniva»: посылка задержана.",
+        "en": "\"Omniva\": your parcel is on hold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "et": "Muidu saadetakse pakk tagasi.",
+        "ru": "Иначе посылку вернут отправителю.",
+        "en": "Otherwise the parcel is sent back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "et": "Uuenda aadress lingi kaudu.",
+        "ru": "Обновите адрес по ссылке.",
+        "en": "Update the address via the link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "et": "Maksa väike tasu kaardiga.",
+        "ru": "Оплатите небольшой сбор картой.",
+        "en": "Pay a small fee by card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "et": "Teie saadetis on jõudnud jaotuskeskusesse, kuid kättetoimetamine ebaõnnestus puuduliku aadressi tõttu. Täpsustage andmed ja tasuge 1,20 EUR ümbersuunamise eest 24 h jooksul: [link]",
+        "ru": "Ваше отправление прибыло в распределительный центр, но доставка не удалась из-за неполного адреса. Уточните данные и оплатите 1,20 EUR за переадресацию в течение 24 часов: [ссылка]",
+        "en": "Your shipment has reached the sorting centre, but delivery failed because of an incomplete address. Correct your details and pay EUR 1.20 for redirection within 24 h: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "et": [
+      "omniva sõnum pakk tagastatakse",
+      "pakk ootab vale aadress maksa",
+      "väike teenustasu paki eest link",
+      "dpd sms tollitasu",
+      "saadetis peatatud uuendage aadress",
+      "smartposti sõnum makse link",
+      "kättetoimetamine ebaõnnestus tasu"
+    ],
+    "ru": [
+      "смс omniva посылка возвращена",
+      "неверный адрес посылки оплатить",
+      "небольшая плата за доставку ссылка",
+      "dpd смс таможенный сбор",
+      "посылка задержана обновите адрес"
+    ],
+    "en": [
+      "omniva text parcel returned",
+      "parcel wrong address pay fee",
+      "small delivery fee link",
+      "dpd sms customs fee",
+      "parcel on hold update address"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "et": [
+      "Link ei vii kulleri ametlikule aadressile.",
+      "Väike tasu ja kaardiandmed ootamatu paki eest.",
+      "Tähtaeg ja ähvardus paki tagastamisega."
+    ],
+    "ru": [
+      "Ссылка ведёт не на официальный адрес службы доставки.",
+      "Небольшая плата и данные карты за неожиданную посылку.",
+      "Срок и угроза вернуть посылку."
+    ],
+    "en": [
+      "The link does not go to the courier's official address.",
+      "A small fee and card details for a parcel you weren't expecting.",
+      "A deadline and a threat to return the parcel."
+    ]
+  },
+  "whatToDo": {
+    "et": [
+      "Ära ava linki. Kontrolli pakki kulleri ametlikus äpis või kodulehel.",
+      "Kui sisestasid kaardiandmed, sulge kaart kohe pangas.",
+      "Saada sõnum CERT-EE-le ja märgi see rämpsuks.",
+      "Kui raha kadus, teata politseile."
+    ],
+    "ru": [
+      "Не открывайте ссылку. Проверьте посылку в официальном приложении или на сайте службы доставки.",
+      "Если ввели данные карты, сразу заблокируйте карту в банке.",
+      "Перешлите сообщение в CERT-EE и отметьте его как спам.",
+      "Если пропали деньги, сообщите в полицию."
+    ],
+    "en": [
+      "Don't open the link. Check the parcel in the courier's official app or website.",
+      "If you entered card details, block the card with your bank at once.",
+      "Forward the message to CERT-EE and mark it as spam.",
+      "If money is gone, report to the police."
+    ]
+  },
+  "reportTo": [
+    "ee/your-bank",
+    "ee/cert-ee",
+    "ee/police-report"
+  ],
+  "sources": [
+    {
+      "title": "A surge in scams costs Estonian people 29 million euros",
+      "publisher": "Riigi Infosüsteemi Amet (RIA)",
+      "url": "https://www.ria.ee/en/surge-scams-costs-estonian-people-29-million-euros",
+      "date": "2026-02-11"
+    },
+    {
+      "title": "Пять схем мошенничества, от которых жители Эстонии пострадали в этом году больше всего",
+      "publisher": "Postimees (на русском)",
+      "url": "https://rus.postimees.ee/8387004/pyat-shem-moshennichestva-ot-kotoryh-zhiteli-estonii-postradali-v-etom-godu-bolshe-vsego",
+      "date": "2025-12-29"
+    },
+    {
+      "title": "Petturid saatsid Omniva nime alt tuhandeid sõnumeid",
+      "publisher": "ERR",
+      "url": "https://www.err.ee/1609423798/petturid-saatsid-omniva-nime-alt-tuhandeid-sonumeid",
+      "date": "2024-08-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,143 @@
+{
+  "id": "lv/cau-mammu-jauns-numurs",
+  "country": "lv",
+  "lang": "lv",
+  "status": "fading",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "lv": "Ziņa no nezināma numura it kā no dēla vai meitas",
+    "ru": "Сообщение с незнакомого номера якобы от сына или дочери",
+    "en": "A message from an unknown number supposedly from your son or daughter"
+  },
+  "name": {
+    "lv": "«Čau, mammu, šis ir mans jaunais numurs»: bērns steidzami lūdz samaksāt rēķinu",
+    "ru": "«Привет, мама, это мой новый номер»: ребёнок срочно просит оплатить счёт",
+    "en": "'Hi mum, this is my new number': your child urgently asks you to pay a bill"
+  },
+  "how": {
+    "lv": "WhatsApp vai īsziņā atnāk ziņa no nezināma numura: «Čau, mammu! Šis ir mans jaunais numurs, saglabā to.» Tālāk «bērns» stāsta, ka telefons saplīsis un viņš netiek internetbankā, tāpēc lūdz steidzami samaksāt rēķinu, zāles vai remontu. Nauda jāpārskaita uz sveša cilvēka kontu. Parasti cieš mātes un vecmāmiņas; daudzi izglābās, piezvanot bērnam uz veco numuru.",
+    "ru": "В WhatsApp или SMS приходит сообщение с незнакомого номера: «Привет, мама! Это мой новый номер, сохрани его». Дальше «ребёнок» рассказывает, что телефон сломался и он не может зайти в интернет-банк, поэтому просит срочно оплатить счёт, лекарства или ремонт. Деньги надо перевести на счёт чужого человека. Обычно страдают матери и бабушки; многих спасло то, что они позвонили ребёнку на старый номер.",
+    "en": "A WhatsApp message or text comes from an unknown number: 'Hi mum! This is my new number, save it.' The 'child' says their phone broke and they can't get into online banking, so they urgently ask you to pay a bill, medicine or a repair. The money must go to a stranger's account. Mothers and grandmothers are usually targeted; many avoided it by calling their child on the old number."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Čau, mammu, šis ir mans jaunais numurs.",
+        "ru": "Привет, мама, это мой новый номер.",
+        "en": "Hi mum, this is my new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "lv": "Telefons saplīsa, netieku bankā.",
+        "ru": "Телефон сломался, не могу зайти в банк.",
+        "en": "My phone broke and I can't get into my bank."
+      }
+    },
+    {
+      "text": {
+        "lv": "Vari šodien samaksāt šo rēķinu? Atdošu rīt.",
+        "ru": "Можешь сегодня оплатить этот счёт? Верну завтра.",
+        "en": "Can you pay this bill today? I'll pay you back tomorrow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "lv": "Pārskaiti uz šo kontu, saņēmējs ir cits cilvēks.",
+        "ru": "Переведи на этот счёт, получатель другой человек.",
+        "en": "Send it to this account, the payee is someone else."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "lv": "Čau mammu, šis ir mans jaunais numurs, vecais telefons nokrita un vairs neieslēdzas 🙈 saglabā šo. Vari palīdzēt? Man šodien jāsamaksā rēķins par 640 eiro, bet bankas lietotne uz jaunā telefona vēl nestrādā. Atsūtīšu rekvizītus, rīt atdošu",
+        "ru": "Привет мам, это мой новый номер, старый телефон упал и больше не включается 🙈 сохрани этот. Можешь помочь? Мне сегодня надо оплатить счёт на 640 евро, а приложение банка на новом телефоне ещё не работает. Пришлю реквизиты, завтра верну",
+        "en": "Hi mum, this is my new number, my old phone fell and won't turn on anymore 🙈 save this one. Can you help? I need to pay a 640 euro bill today but the bank app doesn't work on the new phone yet. I'll send the details, I'll pay you back tomorrow"
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "meita rakstīja no jauna numura un lūdza samaksāt rēķinu",
+      "dēls teica ka telefons saplīsis un nevar tikt bankā",
+      "whatsapp ziņa čau mammu šis ir mans jaunais numurs",
+      "bērns no svešā numura lūdza pārskaitīt naudu uz cita cilvēka kontu",
+      "rakstīja it kā dēls un steidzami vajadzēja naudu zālēm"
+    ],
+    "ru": [
+      "дочь написала с нового номера и попросила оплатить счёт",
+      "сын сказал что телефон сломался и он не может зайти в банк",
+      "сообщение в ватсап привет мама это мой новый номер",
+      "ребёнок с чужого номера попросил перевести деньги на счёт другого человека",
+      "писали как будто сын и срочно нужны деньги на лекарства"
+    ],
+    "en": [
+      "my daughter wrote from a new number and asked me to pay a bill",
+      "my son said his phone broke and he can't get into his bank",
+      "whatsapp message hi mum this is my new number",
+      "my child on an unknown number asked me to send money to someone else's account",
+      "someone wrote as if they were my son and urgently needed money for medicine"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "lv": [
+      "«Bērns» raksta no nezināma numura un nevar runāt pa telefonu.",
+      "Naudu lūdz pārskaitīt uz sveša cilvēka kontu.",
+      "Steidzina, jo rēķins jāsamaksā šodien."
+    ],
+    "ru": [
+      "«Ребёнок» пишет с незнакомого номера и не может говорить по телефону.",
+      "Деньги просят перевести на счёт чужого человека.",
+      "Торопят, потому что счёт надо оплатить сегодня."
+    ],
+    "en": [
+      "The 'child' writes from an unknown number and can't talk on the phone.",
+      "You are asked to send money to a stranger's account.",
+      "They rush you because the bill must be paid today."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Piezvaniet bērnam uz veco, zināmo numuru, pirms ko maksājat.",
+      "Uzdodiet jautājumu, uz kuru atbildi zina tikai jūsu bērns.",
+      "Ja jau samaksājāt, nekavējoties zvaniet bankai un ziņojiet policijai."
+    ],
+    "ru": [
+      "Позвоните ребёнку на старый, знакомый номер, прежде чем платить.",
+      "Задайте вопрос, ответ на который знает только ваш ребёнок.",
+      "Если уже заплатили, сразу звоните в банк и сообщите в полицию."
+    ],
+    "en": [
+      "Call your child on their old, known number before paying anything.",
+      "Ask a question only your child would know the answer to.",
+      "If you already paid, call your bank at once and report to the police."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums"
+  ],
+  "sources": [
+    {
+      "title": "«Čau, mammu!» – jaunā krāpnieku shēma «Whatsapp». Seniorēm izkrāpti jau 32 tūkstoši eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/25.09.2023-cau-mammu-jauna-krapnieku-shema-whatsapp-seniorem-izkrapti-jau-32-tukstosi-eiro.a525276/",
+      "date": "2023-09-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,163 @@
+{
+  "id": "lv/vsaa-pensiju-parrekins-zvans",
+  "country": "lv",
+  "lang": "lv",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "lv": "Zvans it kā no VSAA (Valsts sociālās apdrošināšanas aģentūras)",
+    "ru": "Звонок якобы из VSAA (Государственного агентства социального страхования)",
+    "en": "A call supposedly from VSAA, the State Social Insurance Agency"
+  },
+  "name": {
+    "lv": "Zvans no «VSAA»: pensijas pārrēķins, darba stāžs vai pieraksts uz vizīti",
+    "ru": "Звонок из «VSAA»: перерасчёт пенсии, трудовой стаж или запись на приём",
+    "en": "Call from 'VSAA': pension recalculation, work record or booking an appointment"
+  },
+  "how": {
+    "lv": "Zvana «VSAA darbinieks» latviski vai krieviski un saka, ka jāveic pensijas pārrēķins, jāprecizē darba stāžs vai jāpierakstās uz vizīti. Viņš var nosaukt īstas filiāles adresi un jautā, kurā bankā jums konts un vai lietojat internetbanku. Pēc tam atsūta īsziņu ar saiti, kur jāievada personas kods un bankas dati, vai lūdz apstiprināt identitāti ar Smart-ID. Bieži seko nākamais zvans no «bankas» vai «policijas». VSAA nesūta saites īsziņās un neprasa Smart-ID kodus.",
+    "ru": "Звонит «сотрудник VSAA» по-латышски или по-русски и говорит, что надо сделать перерасчёт пенсии, уточнить трудовой стаж или записаться на приём. Он может назвать настоящий адрес филиала и спрашивает, в каком банке у вас счёт и пользуетесь ли вы интернет-банком. Потом присылает SMS со ссылкой, где надо ввести персональный код и данные банка, или просит подтвердить личность через Smart-ID. Часто следом звонит «банк» или «полиция». VSAA не присылает ссылки в SMS и не спрашивает коды Smart-ID.",
+    "en": "A 'VSAA employee' calls in Latvian or Russian and says your pension must be recalculated, your work record checked or an appointment booked. They may give a real branch address and ask which bank you use and whether you have online banking. Then they text a link where you enter your personal code and bank details, or ask you to confirm your identity with Smart-ID. A follow-up call from the 'bank' or 'police' often comes next. VSAA does not send links by text and does not ask for Smart-ID codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "lv": "Zvana no VSAA: jums pienākas pensijas pārrēķins.",
+        "ru": "Звонят из VSAA: вам положен перерасчёт пенсии.",
+        "en": "A call from VSAA: you're due a pension recalculation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "lv": "Kurā bankā jums ir konts? Vai lietojat internetbanku?",
+        "ru": "В каком банке у вас счёт? Пользуетесь интернет-банком?",
+        "en": "Which bank is your account with? Do you use online banking?"
+      }
+    },
+    {
+      "text": {
+        "lv": "Atveriet saiti īsziņā un ievadiet datus.",
+        "ru": "Откройте ссылку в SMS и введите данные.",
+        "en": "Open the link in the text and enter your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "lv": "Apstipriniet identitāti ar Smart-ID.",
+        "ru": "Подтвердите личность через Smart-ID.",
+        "en": "Confirm your identity with Smart-ID."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "lv": "Labdien, zvanu no VSAA Rīgas klientu apkalpošanas centra. Šomēnes notiek pensiju pārrēķins, un jūsu darba stāžā trūkst dažu gadu, tāpēc pensija var būt mazāka. Es jums tūlīt nosūtīšu īsziņu ar saiti, kur varēsiet precizēt datus un pierakstīties uz konsultāciju. Lai pabeigtu, sistēma prasīs apstiprināt ar Smart-ID.",
+        "ru": "Здравствуйте, звоню из рижского центра обслуживания VSAA. В этом месяце идёт перерасчёт пенсий, и в вашем стаже не хватает нескольких лет, поэтому пенсия может быть меньше. Я сейчас пришлю вам SMS со ссылкой, где вы уточните данные и запишетесь на консультацию. В конце система попросит подтвердить через Smart-ID.",
+        "en": "Hello, I'm calling from the VSAA customer centre in Riga. Pensions are being recalculated this month and a few years are missing from your work record, so your pension may be lower. I'll text you a link now where you can correct your details and book a consultation. To finish, the system will ask you to confirm with Smart-ID."
+      }
+    }
+  ],
+  "phrases": {
+    "lv": [
+      "zvanīja no vsaa par pensijas pārrēķinu",
+      "vsaa darbinieks lika precizēt darba stāžu caur saiti",
+      "teica ka jāpierakstās rindā vsaa un atsūtīja īsziņu",
+      "pensijas pārrēķinam prasīja apstiprināt ar smart-id",
+      "jautāja kurā bankā saņemu pensiju"
+    ],
+    "ru": [
+      "позвонили из vsaa насчёт перерасчёта пенсии",
+      "сотрудник vsaa сказал уточнить трудовой стаж по ссылке",
+      "сказали записаться в очередь в vsaa и прислали смс",
+      "для перерасчёта пенсии просили подтвердить через smart-id",
+      "спрашивали в каком банке я получаю пенсию"
+    ],
+    "en": [
+      "someone from vsaa called about recalculating my pension",
+      "the vsaa employee told me to update my work record through a link",
+      "they said I had to book a place in the vsaa queue and sent a text",
+      "they asked me to confirm the pension recalculation with smart-id",
+      "they asked which bank my pension is paid into"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "lv": [
+      "VSAA zvanītājs prasa personas kodu, bankas datus vai Smart-ID.",
+      "Pēc zvana atnāk īsziņa ar saiti.",
+      "Jautā, kurā bankā jums konts un vai lietojat internetbanku.",
+      "Rada steigu: pensija samazināsies, ja nerīkosieties tūlīt."
+    ],
+    "ru": [
+      "Звонящий из VSAA спрашивает персональный код, данные банка или Smart-ID.",
+      "После звонка приходит SMS со ссылкой.",
+      "Спрашивают, в каком банке у вас счёт и пользуетесь ли интернет-банком.",
+      "Торопят: пенсия уменьшится, если не сделать сразу."
+    ],
+    "en": [
+      "A VSAA caller asks for your personal code, bank details or Smart-ID.",
+      "A text with a link arrives after the call.",
+      "They ask which bank you use and whether you have online banking.",
+      "They rush you: your pension will drop if you don't act now."
+    ]
+  },
+  "whatToDo": {
+    "lv": [
+      "Pārtrauciet sarunu un pats sazinieties ar VSAA pa tālruni, kas norādīts VSAA mājaslapā.",
+      "Neatveriet saites un neapstipriniet Smart-ID.",
+      "Ja ievadījāt bankas datus, zvaniet bankai un ziņojiet policijai.",
+      "Pastāstiet par šo shēmu vecākiem tuviniekiem."
+    ],
+    "ru": [
+      "Прервите разговор и сами свяжитесь с VSAA по телефону с сайта VSAA.",
+      "Не открывайте ссылки и не подтверждайте Smart-ID.",
+      "Если ввели данные банка, звоните в банк и сообщите в полицию.",
+      "Расскажите об этой схеме пожилым родственникам."
+    ],
+    "en": [
+      "Hang up and contact VSAA yourself on the number on VSAA's website.",
+      "Don't open links and don't approve Smart-ID.",
+      "If you entered bank details, call your bank and report to the police.",
+      "Tell older relatives about this scheme."
+    ]
+  },
+  "reportTo": [
+    "lv/your-bank",
+    "lv/valsts-policija-iesniegums",
+    "lv/cert-lv"
+  ],
+  "sources": [
+    {
+      "title": "Brīdina par telefonkrāpniecības shēmu VSAA vārdā",
+      "publisher": "LV portāls («Bite Latvija» paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/390998-bridina-par-telefonkrapniecibas-shemu-vsaa-varda-2026",
+      "date": "2026-06-11"
+    },
+    {
+      "title": "Telefonkrāpnieki uzdodas par VSAA darbiniekiem – vilinot ar “pensiju pārrēķinu” izkrāpj datus",
+      "publisher": "LV portāls (VSAA paziņojums)",
+      "url": "https://lvportals.lv/dienaskartiba/387851-telefonkrapnieki-uzdodas-par-vsaa-darbiniekiem-vilinot-ar-pensiju-parrekinu-izkrapj-datus-2026",
+      "date": "2026-03-26"
+    },
+    {
+      "title": "Oktobrī telefonkrāpnieki no Latvijas iedzīvotājiem izkrāpuši vairāk nekā 1,9 miljonus eiro",
+      "publisher": "Latvijas Sabiedriskie mediji (LSM)",
+      "url": "https://www.lsm.lv/raksts/zinas/latvija/09.11.2026-oktobri-telefonkrapnieki-no-latvijas-iedzivotajiem-izkrapusi-vairak-neka-19-miljonus-eiro.a670996/",
+      "date": "2026-11-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}
