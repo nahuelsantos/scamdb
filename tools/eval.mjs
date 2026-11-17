@@ -9,12 +9,13 @@
 //   node tools/eval.mjs --ai --chat-model @cf/…   try another Workers AI chat model
 //   node tools/eval.mjs --cross           scams known abroad, in another language (eval/crosslingual.json): found in seenElsewhere?
 //   node tools/eval.mjs --private        the encrypted private set instead (needs EVAL_PRIVATE_KEY; never commit its report)
+//   node tools/eval.mjs --real           real messages quoted in warnings and news (eval/real), each with its source
 //   node tools/eval.mjs --out eval/results.md   also write the report to a file
 //   node tools/eval.mjs --ai --cache /tmp/ai.json   keep the AI's answers and reuse them (to tune the combine rules for free)
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { loadRepo } from '../lib/load.js';
-import { loadMessages, checkMessages, evaluate, evaluateCross, report } from '../lib/eval.js';
+import { loadMessages, checkMessages, loadRealMessages, checkRealMessages, evaluate, evaluateCross, report } from '../lib/eval.js';
 import { loadPrivateMessages } from '../lib/private-eval.js';
 import { matchMessage } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from '../worker/scorer.js';
@@ -35,13 +36,14 @@ if (flag('--cross')) {
 }
 const priv = flag('--private');
 if (priv && !process.env.EVAL_PRIVATE_KEY) { console.error('--private needs EVAL_PRIVATE_KEY.'); process.exit(1); }
-const messages = (priv ? loadPrivateMessages(root) ?? [] : loadMessages(root)).filter((m) => !country || m.country === country);
-const problems = checkMessages(messages, new Set(repo.entries.map((e) => e.id)));
+const real = flag('--real');
+const messages = (priv ? loadPrivateMessages(root) ?? [] : real ? loadRealMessages(root) : loadMessages(root)).filter((m) => !country || m.country === country);
+const problems = (real ? checkRealMessages : checkMessages)(messages, new Set(repo.entries.map((e) => e.id)));
 if (problems.length) {
   console.error(`The test set has problems:\n${problems.map((p) => `  ${p}`).join('\n')}`);
   process.exit(1);
 }
-if (!messages.length) { console.error('No messages in eval/messages.'); process.exit(1); }
+if (!messages.length) { console.error(`No messages in eval/${real ? 'real' : 'messages'}.`); process.exit(1); }
 
 /** The matcher exactly as the API runs it: the caller's country narrows the matches. */
 const matcherEngine = (entries) => (m) => matchMessage(m.text, entries, { country: m.country });
@@ -61,7 +63,7 @@ function restAI(accountId, token) {
 }
 
 const started = Date.now();
-let out = `# scamdb engine report${priv ? ' (private set: do not commit)' : ''}\n\n${messages.length} labelled messages (${messages.filter((m) => m.label === 'scam').length} scams, ${messages.filter((m) => m.label === 'safe').length} safe)${country ? ` for ${country}` : ''}.\n\n`;
+let out = `# scamdb engine report${priv ? ' (private set: do not commit)' : real ? ' (real messages; right match counts scams no entry covers yet as misses)' : ''}\n\n${messages.length} labelled messages (${messages.filter((m) => m.label === 'scam').length} scams, ${messages.filter((m) => m.label === 'safe').length} safe)${country ? ` for ${country}` : ''}.\n\n`;
 out += report('Keyword matcher', await evaluate(messages, matcherEngine(repo.entries)));
 
 if (flag('--ai')) {
