@@ -1,0 +1,151 @@
+{
+  "id": "dk/fake-bank-adviser-safe-account",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "da": "Din bank (ofte vises bankens rigtige nummer i displayet)",
+    "en": "Your bank (often the bank's real number shows on screen)"
+  },
+  "name": {
+    "da": "Falsk bankrådgiver: “sikkerhedskonto” og godkendelse med MitID under opkaldet",
+    "en": "Fake bank adviser: “safe account” and MitID approval during the call"
+  },
+  "how": {
+    "da": "En person ringer og siger, at han er fra din bank. Nummeret kan være forfalsket, så det ligner bankens, og ofte er der kommet en falsk sms først. Han fortæller, at nogen er ved at tømme din konto, og at pengene skal flyttes til en “sikkerhedskonto”, eller at du skal godkende en “annullering” i MitID-appen, mens han er i røret. Det, du godkender, er i virkeligheden en overførsel eller et nyt login til din netbank. Politiet så flere sager med sikkerhedskonto i 2025 end i 2024.",
+    "en": "Someone calls saying they are from your bank. The number can be spoofed to look like the bank's, and often a fake text message came first. They say someone is emptying your account and that the money must be moved to a “safe account”, or that you must approve a “cancellation” in the MitID app while they stay on the line. What you approve is really a transfer or a new login to your online bank. Police saw more safe-account cases in 2025 than in 2024."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Et opkald fra “banken” – nummeret ligner bankens, og opkalderen taler flydende dansk.",
+        "en": "A call from “the bank” – the number looks like the bank's and the caller speaks fluent Danish."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Din konto er angiveligt i fare: nogen prøver lige nu at trække penge.",
+        "en": "Your account is supposedly at risk: someone is trying to take money right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Du skal blive i røret og godkende noget i MitID-appen eller oplyse kortnummer og kode.",
+        "en": "You must stay on the line and approve something in the MitID app or give your card number and code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "da": "Eller du skal overføre pengene til en “sikkerhedskonto”, som tilhører svindlerne.",
+        "en": "Or you must transfer the money to a “safe account” that belongs to the scammers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Goddag, det er Mikkel fra bankens svindelafdeling. Vi kan se, at nogen netop har forsøgt at hæve 14.800 kr. fra din lønkonto i udlandet. For at stoppe det skal jeg bruge din hjælp nu. Bliv i telefonen, åbn MitID-appen og godkend den anmodning, der kommer om lidt – så lukker vi betalingen. Bagefter flytter vi dine penge midlertidigt over på en sikker konto.",
+        "en": "Good afternoon, this is Mikkel from the bank's fraud department. We can see that someone has just tried to withdraw 14,800 kroner from your salary account abroad. To stop it I need your help now. Stay on the phone, open the MitID app and approve the request that arrives shortly – then we'll close the payment. Afterwards we'll move your money temporarily to a safe account."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "falsk bankrådgiver ringede",
+      "bank ringer sikkerhedskonto overføre",
+      "godkend mitid annullering telefonen",
+      "nogen forsøger hæve penge konto",
+      "spoofing bankens nummer opkald",
+      "flytte penge sikker konto",
+      "svindelafdeling banken ringer",
+      "bankens sikkerhedsafdeling ringer",
+      "flytte opsparing konto bank",
+      "mistænkelig overførsel udlandet bank ringer",
+      "blive røret godkende app",
+      "opkald bank kortnummer pinkode"
+    ],
+    "en": [
+      "fake bank adviser called me",
+      "move money to a safe account",
+      "approve mitid during the call",
+      "bank said someone is taking my money",
+      "caller showed my bank's number",
+      "fraud department asked me to approve"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "da": [
+      "Din bank beder dig aldrig flytte penge til en “sikkerhedskonto”.",
+      "Banken, Nets og politiet beder aldrig om din MitID- eller netbankkode i telefonen.",
+      "Nummeret i displayet beviser ingenting – det kan være forfalsket.",
+      "Læs altid, hvad du godkender i MitID-appen. Godkend aldrig noget, en opkalder beder om."
+    ],
+    "en": [
+      "Your bank never asks you to move money to a “safe account”.",
+      "The bank, Nets and the police never ask for your MitID or online banking code over the phone.",
+      "The number on screen proves nothing – it can be spoofed.",
+      "Always read what you approve in the MitID app. Never approve anything a caller asks for."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Læg på, og ring selv til banken på nummeret på dit kort eller i bankens app.",
+      "Har du godkendt noget eller givet oplysninger? Kontakt banken med det samme, og spær kort og MitID.",
+      "Ring til Cyberhotlinen for gratis vejledning, hvis du har givet MitID-oplysninger.",
+      "Anmeld svindlen på politi.dk."
+    ],
+    "en": [
+      "Hang up and call the bank yourself on the number on your card or in the bank's app.",
+      "Did you approve something or give details? Contact the bank straight away and block your card and MitID.",
+      "Call the Cyber hotline for free guidance if you gave out MitID details.",
+      "Report the fraud at politi.dk."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/nets-kortspaerring",
+    "dk/cyberhotline",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Danskerne blev sidste år svindlet for 280 millioner: Lær at forstå svindlens psykologi",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/danskerne-blev-sidste-aar-svindlet-for-280-millioner-laer-at-forstaa-svindlens-psykologi",
+      "date": "2026-05-18"
+    },
+    {
+      "title": "Opkald fra svindlere: Undgå at blive snydt i telefonen",
+      "publisher": "Forbrugerrådet Tænk",
+      "url": "https://taenk.dk/raadgivning/markedsfoering/opkald-fra-svindlere-undgaa-blive-snydt-i-telefonen",
+      "date": "2024-12-20"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "dk/fake-police-call-door",
+    "dk/card-blocked-sms"
+  ]
+}

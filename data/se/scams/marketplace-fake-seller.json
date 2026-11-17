@@ -1,0 +1,136 @@
+{
+  "id": "se/marketplace-fake-seller",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "sv": "En ”säljare” på Blocket, Facebook Marketplace eller en annan annonssajt",
+    "en": "A “seller” on Blocket, Facebook Marketplace or another listing site"
+  },
+  "name": {
+    "sv": "Falsk säljare: förskottsbetalning via Swish, varan uteblir",
+    "en": "Fake seller: pay by Swish in advance for an item that never arrives"
+  },
+  "how": {
+    "sv": "En annons för en eftertraktad vara, ofta billigt, på Blocket eller i sociala medier. Säljaren kan inte ses, bor långt bort och vill att du swishar hela eller delar av beloppet i förskott så skickas varan. Annonsen kan använda någon annans namn och adress. När du har betalat kommer ingen vara och säljaren försvinner.",
+    "en": "An ad for a sought-after item, often cheap, on Blocket or social media. The seller can’t meet, lives far away and wants you to pay all or part of the price by Swish in advance and the item will be sent. The ad may use someone else’s name and address. Once you’ve paid, no item comes and the seller disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "En annons med bra pris på en eftertraktad vara.",
+        "en": "An ad with a good price on a sought-after item."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sv": "Säljaren kan inte ses och vill ha betalt i förskott.",
+        "en": "The seller can’t meet and wants payment in advance."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sv": "Det är bråttom, många andra är intresserade.",
+        "en": "It’s urgent; many others are interested."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sv": "Efter betalningen kommer ingen vara.",
+        "en": "After payment, nothing arrives."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej, cykeln finns kvar men jag har flera intresserade. Jag jobbar i Umeå i veckan så kan inte visa den, men jag skickar med PostNord så fort du swishat 3 900 kr till [nummer]. Först till kvarn!",
+        "en": "Hi, the bike is still available but several people are interested. I’m working in Umeå this week so I can’t show it, but I’ll send it with PostNord as soon as you’ve swished 3,900 kr to [nummer]. First come, first served!"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "swishade säljare fick varan",
+      "säljare förskottsbetalning blocket",
+      "visa varan skickar",
+      "billig annons flera intresserade",
+      "säljaren försvann swish",
+      "falsk annons blocket betalade"
+    ],
+    "en": [
+      "paid a seller by swish and never got the item",
+      "seller wanted payment in advance",
+      "seller can t meet will post it",
+      "cheap ad lots of interested buyers",
+      "seller disappeared after payment",
+      "fake listing on blocket"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sv": [
+      "Förskottsbetalning till en privatperson du inte har träffat är den stora risken.",
+      "Stress med ”flera intresserade” ska få dig att betala innan du kollar.",
+      "Kontrollera att Swish-mottagaren är samma person som du har kontakt med."
+    ],
+    "en": [
+      "Paying in advance to a private person you haven’t met is the big risk.",
+      "Pressure with “many interested” is meant to make you pay before checking.",
+      "Check that the Swish recipient is the same person you are dealing with."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Träffas och betala när du får varan, om det går.",
+      "Använd sajtens köpskydd för dyrare varor.",
+      "Har du betalat? Kontakta banken direkt, spara chatt och annons och polisanmäl."
+    ],
+    "en": [
+      "Meet and pay when you get the item, if possible.",
+      "Use the site’s purchase protection for pricier items.",
+      "Have you paid? Contact your bank straight away, save the chat and ad and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/polisen-anmalan",
+    "se/polisen-114-14"
+  ],
+  "sources": [
+    {
+      "title": "Var kritisk när du handlar via nätet",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nord/2025/december/bedragerier/",
+      "date": "2025-12-07"
+    },
+    {
+      "title": "Polisen varnar för snöslungebluff på Blocket",
+      "publisher": "TV4 Nyheterna",
+      "url": "https://www.tv4.se/artikel/6Mhcw0TKuQ8ZNaWkqpt86l/polisen-varnar-foer-blocket-bluff",
+      "date": "2025-12-07"
+    },
+    {
+      "title": "Annonsbedrägeri",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/annonsbedrageri",
+      "date": "2026-07-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "se/marketplace-fake-buyer-link"
+  ]
+}

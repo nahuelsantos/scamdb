@@ -1,0 +1,140 @@
+{
+  "id": "no/bank-sms-bankid-phishing",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "no": "«DNB», «Nordea», «Vipps», «BankID» eller banken din",
+    "en": "“DNB”, “Nordea”, “Vipps”, “BankID” or your bank"
+  },
+  "name": {
+    "no": "Falsk SMS fra banken: «kontoen er sperret», logg inn med BankID via lenke",
+    "en": "Fake bank text: “your account is blocked”, log in with BankID through a link"
+  },
+  "how": {
+    "no": "Du får en SMS eller e-post som ser ut til å komme fra banken, Vipps eller BankID: Kontoen eller kortet er sperret, BankID må fornyes eller det er en mistenkelig betaling. Lenken går til en falsk side som ligner bankens, der du skal logge inn med BankID, oppgi kortnummer eller taste inn en engangskode. Svindlerne bruker opplysningene til å logge inn i nettbanken, legge kortet ditt i Apple Pay eller Google Pay, eller ringe deg etterpå som «banken».",
+    "en": "You get a text or email that seems to come from your bank, Vipps or BankID: the account or card is blocked, BankID must be renewed, or there is a suspicious payment. The link leads to a fake page that looks like the bank’s, where you log in with BankID, enter your card number or type in a one-time code. The scammers use the details to log in to your online bank, add your card to Apple Pay or Google Pay, or call you afterwards as “the bank”."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En SMS fra «banken» eller «BankID»: Kontoen er sperret eller noe må bekreftes.",
+        "en": "A text from “the bank” or “BankID”: the account is blocked or something must be confirmed."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Det haster: Ellers stenges kontoen eller kortet i dag.",
+        "en": "It is urgent: otherwise the account or card is closed today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "En lenke til en side som ligner bankens.",
+        "en": "A link to a page that looks like the bank’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Du blir bedt om å logge inn med BankID, oppgi kortnummer eller skrive inn en kode du får på SMS.",
+        "en": "You are asked to log in with BankID, give your card number or type in a code you get by text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "DNB: Vi har midlertidig sperret kontoen din etter uvanlig aktivitet. For å oppheve sperringen må du bekrefte identiteten din med BankID innen 24 timer: [lenke]",
+        "en": "DNB: We have temporarily blocked your account after unusual activity. To lift the block you must confirm your identity with BankID within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "sms fra banken konto sperret lenke",
+      "bekreft identitet med bankid via lenke",
+      "falsk innlogging bankid side",
+      "bankid må fornyes sms",
+      "kortet ditt er sperret melding",
+      "logget inn med bankid på falsk side",
+      "engangskode fra banken til nettside"
+    ],
+    "en": [
+      "text from my bank saying account blocked",
+      "asked to confirm my identity with bankid through a link",
+      "fake bankid login page",
+      "message said my card is blocked",
+      "entered a one time code on a website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "no": [
+      "BankID sender aldri SMS med lenker.",
+      "Banken ber deg aldri logge inn eller oppgi koder via en lenke i SMS eller e-post.",
+      "Avsendernavnet i SMS-en kan forfalskes og havne i samme tråd som ekte meldinger.",
+      "Trusler om sperring i dag er laget for å stresse deg."
+    ],
+    "en": [
+      "BankID never sends text messages with links.",
+      "Your bank never asks you to log in or give codes through a link in a text or email.",
+      "The sender name in a text can be faked and end up in the same thread as genuine messages.",
+      "Threats of a block today are designed to rush you."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke trykk på lenken. Åpne bankens app eller skriv adressen selv.",
+      "Har du logget inn eller oppgitt kort eller kode? Ring banken med en gang og sperr kort og BankID.",
+      "Videresend SMS-en til 7726 og slett den."
+    ],
+    "en": [
+      "Don’t tap the link. Open your bank’s app or type the address yourself.",
+      "Did you log in or give your card or a code? Call your bank straight away and block your card and BankID.",
+      "Forward the text to 7726 and delete it."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/spam-7726",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Nå er nordmenn på sitt mest lettlurte",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/na-er-nordmenn-pa-sitt-mest-lettlurte",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Status og tiltak mot svindel for 2026",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/tema/okonomisk-kriminalitet/svindel/status-og-tiltak-mot-svindel-for-2026/",
+      "date": "2026-04-08"
+    },
+    {
+      "title": "– Vær obs på at DNB og andres navn ofte blir misbrukt",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/vaer-obs-pa-svindel-pa-sms--whatsapp-og-e-post",
+      "date": "2025-10-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/posten-parcel-fee-sms"
+  ]
+}

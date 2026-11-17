@@ -1,0 +1,147 @@
+{
+  "id": "se/bank-employee-bankid",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "sv": "”Din bank”, bankens säkerhetsavdelning eller bedrägeriavdelning (ibland med bankens riktiga nummer i displayen)",
+    "en": "“Your bank”, its security or fraud department (sometimes with the bank’s real number on screen)"
+  },
+  "name": {
+    "sv": "Falsk bankman: BankID ”stoppar betalningen”",
+    "en": "Fake bank employee: log in with BankID “to stop a payment”"
+  },
+  "how": {
+    "sv": "Någon ringer och säger sig vara från din bank. Det har gjorts konstiga köp eller överföringar från ditt konto, eller någon försöker ta pengar just nu. För att stoppa det ska du logga in eller signera med BankID medan ni pratar, läsa upp koder från kortet eller dosan, eller flytta pengarna till ett ”säkert konto”. Det du signerar är i själva verket bedragarnas inloggning, en överföring eller en ny betalning. Ibland börjar det med ett sms med ett nummer att ringa.",
+    "en": "Someone calls saying they are from your bank. There have been strange purchases or transfers from your account, or someone is trying to take money right now. To stop it you must log in or sign with BankID while you talk, read out codes from your card or card reader, or move the money to a “safe account”. What you sign is really the scammers’ login, a transfer or a new payment. Sometimes it starts with a text with a number to call."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Ett samtal från ”banken”: någon försöker tömma ditt konto just nu.",
+        "en": "A call from “the bank”: someone is trying to empty your account right now."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Det är bråttom, du ska stanna kvar i luren medan ni ”stoppar” det.",
+        "en": "It’s urgent; you must stay on the line while you “stop” it."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "sv": "Du ombeds öppna BankID-appen och legitimera dig eller signera, eller läsa upp en kod.",
+        "en": "You are asked to open the BankID app and identify yourself or sign, or to read out a code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sv": "Eller så ska du flytta pengarna till ett ”säkert konto”.",
+        "en": "Or you are told to move the money to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej, det här är Johan från säkerhetsavdelningen på din bank. Vi ser att någon just nu försöker göra två överföringar på totalt 24 000 kronor från ditt sparkonto. Har du gjort dem? Inte? Då måste vi agera direkt. Öppna din BankID-app, så skickar jag en spärrbegäran som du godkänner. Lägg inte på under tiden, annars hinner pengarna gå iväg.",
+        "en": "Hi, this is Johan from your bank’s security department. We can see someone is trying to make two transfers totalling 24,000 kronor from your savings account right now. Did you make them? No? Then we have to act straight away. Open your BankID app and I’ll send a blocking request that you approve. Don’t hang up meanwhile, or the money may leave."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "falsk bankman ringde",
+      "logga in bankid stoppa betalningen",
+      "banken ringer misstänkta överföringar",
+      "säkerhetsavdelningen banken bankid",
+      "godkänn spärren bankid appen",
+      "flytta pengarna säkert konto",
+      "koden kortläsaren dosan",
+      "bedrägeriavdelningen ringde kontot töms",
+      "signera bankid under samtalet"
+    ],
+    "en": [
+      "fake bank employee called me",
+      "log in with bankid to stop a payment",
+      "bank called about suspicious transfers",
+      "asked me to sign with bankid on the phone",
+      "move my money to a safe account",
+      "read out the code from my card reader"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "sv": [
+      "Banken ber dig aldrig logga in, signera eller legitimera dig med BankID för att stoppa ett bedrägeri.",
+      "Banken behöver inga koder från dig för att spärra ett kort eller stoppa en betalning.",
+      "Ett ”säkert konto” finns inte.",
+      "Numret i displayen bevisar ingenting: det kan vara förfalskat."
+    ],
+    "en": [
+      "Your bank never asks you to log in, sign or identify yourself with BankID to stop a fraud.",
+      "The bank needs no codes from you to block a card or stop a payment.",
+      "A “safe account” doesn’t exist.",
+      "The number on screen proves nothing: it can be faked."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Lägg på. Ring sedan banken själv på numret på kortet eller i appen.",
+      "Har du signerat eller lämnat ut koder? Ring banken direkt och spärra BankID, kort och konto.",
+      "Polisanmäl, på webben eller via 114 14.",
+      "Prata med äldre anhöriga om att aldrig använda BankID på någon annans uppmaning."
+    ],
+    "en": [
+      "Hang up. Then call your bank yourself on the number on your card or in the app.",
+      "Did you sign or give out codes? Call your bank straight away and block your BankID, card and account.",
+      "Report it to the police, online or on 114 14.",
+      "Talk to older relatives about never using BankID because someone else asks."
+    ]
+  },
+  "reportTo": [
+    "se/your-bank",
+    "se/polisen-anmalan",
+    "se/polisen-114-14"
+  ],
+  "sources": [
+    {
+      "title": "Banker: Så använder du BankID fel",
+      "publisher": "Realtid",
+      "url": "https://realtid.se/bors-finans/bank-fintech/banker-sa-anvander-du-bankid-fel/",
+      "date": "2026-05-14"
+    },
+    {
+      "title": "Kraftsamlar mot bedrägerier – fortsätt ”våga vara otrevlig”",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/nationell/2026/september/kraftsamlar-mot-bedragerier--fortsatt-vaga-vara-otrevlig/",
+      "date": "2026-09-21"
+    },
+    {
+      "title": "Bedragarnas skamliga storverk – ett fortsatt närvarande samhällsproblem",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/aktuellt/nyheter/ost/2026/oktober/bedragarnas-skamliga-storverk/",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "se/bank-sms-call-back",
+    "se/credit-card-bankid-wallet"
+  ]
+}

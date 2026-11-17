@@ -1,0 +1,135 @@
+{
+  "id": "fi/mobilepay-verify-identity",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fi": "MobilePay (väärennetty viesti logolla)",
+    "en": "MobilePay (a fake message with the logo)"
+  },
+  "name": {
+    "fi": "MobilePayn nimissä: \"vahvista henkilöllisyytesi\"",
+    "en": "In MobilePay’s name: “verify your identity”"
+  },
+  "how": {
+    "fi": "Viestissä on MobilePayn logo ja väite, että sinun pitää vahvistaa henkilöllisyytesi palvelun muutosten vuoksi, jotta voit jatkaa käyttöä. Viestin linkki ei vie MobilePayn tiedotteeseen vaan pankkitunnusten kalastelusivulle. Huijaus hyödyntää palvelun suurta käyttäjämäärää ja tulossa olevia muutoksia.",
+    "en": "The message has the MobilePay logo and says you must verify your identity because of changes to the service so you can keep using it. Its link doesn’t lead to MobilePay’s announcement but to a page that phishes online banking codes. The scam uses the service’s large user base and upcoming changes."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Viesti MobilePayn nimissä ja logolla.",
+        "en": "A message in MobilePay’s name with its logo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Henkilöllisyys pitää vahvistaa, jotta käyttö voi jatkua.",
+        "en": "You must verify your identity to keep using it."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "\"Lisätietoja\"-linkki vie kirjautumissivulle.",
+        "en": "A “more information” link leads to a login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Sivu pyytää tunnistautumaan pankkitunnuksilla.",
+        "en": "The page asks you to identify with your online banking codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "MobilePay: Palvelumme uudistuu. Vahvista henkilöllisyytesi viimeistään perjantaina, jotta maksut ja vastaanotot toimivat jatkossakin. Vahvistus vie vain minuutin: [linkki]",
+        "en": "MobilePay: Our service is being renewed. Verify your identity by Friday so payments and receiving money keep working. It only takes a minute: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "mobilepay vahvista henkilöllisyys",
+      "mobilepayn nimissä viesti",
+      "mobilepay tunnistaudu pankkitunnuksilla",
+      "mobilepay muutokset vahvistus linkki",
+      "mobilepay käyttö estyy",
+      "mobilepay huijausviesti",
+      "mobilepay tili vahvistettava"
+    ],
+    "en": [
+      "mobilepay verify identity message",
+      "mobilepay link bank login",
+      "mobilepay account will stop working",
+      "mobilepay phishing text",
+      "mobilepay changes confirm"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fi": [
+      "Viestin linkki ei vie MobilePayn omaan sovellukseen tai tiedotteeseen.",
+      "Henkilöllisyyden vahvistus linkin kautta pankkitunnuksilla on kalastelun tuntomerkki.",
+      "Logo ja tuttu nimi eivät todista viestiä aidoksi."
+    ],
+    "en": [
+      "The message’s link doesn’t lead to MobilePay’s own app or announcement.",
+      "Verifying your identity with banking codes through a link is a sign of phishing.",
+      "A logo and a familiar name don’t prove the message is real."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Avaa MobilePay-sovellus itse ja katso, onko siellä jotain tehtävää.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Open the MobilePay app yourself and see if anything needs doing.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 41/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-412026",
+      "date": "2026-10-09"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 33/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-332026",
+      "date": "2026-08-14"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "fi/bank-sms-verify-details"
+  ]
+}

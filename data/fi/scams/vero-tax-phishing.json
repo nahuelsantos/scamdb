@@ -1,0 +1,153 @@
+{
+  "id": "fi/vero-tax-phishing",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "fi": "Verohallinto, Vero tai OmaVero (väärennetty sähköposti)",
+    "en": "The Finnish Tax Administration, Vero or OmaVero (a fake email)"
+  },
+  "name": {
+    "fi": "Veron nimissä: \"verotuksesi on vahvistettu\", \"päivitä tietosi\" tai \"palautus odottaa\"",
+    "en": "In the Tax Administration’s name: “your taxation is confirmed”, “update your details” or “a refund is waiting”"
+  },
+  "how": {
+    "fi": "Sähköpostissa kerrotaan, että verotuksesi on vahvistettu, sinulle on uusi verotuspäätös tai päätösilmoitus, tai sinun pitää päivittää tietosi. Painike vie pankkitunnusten kalastelusivulle. Joissain viesteissä on liite, joka asennettuna voi muuttaa puhelimen asetuksia, esimerkiksi jakaa kalenterisi rikolliselle. Veron nimissä huijauksia on liikkunut pitkään eri muodoissa.",
+    "en": "The email says your taxation has been confirmed, you have a new tax decision or decision notice, or you must update your details. The button leads to a page that phishes online banking codes. Some messages have an attachment that, once run, can change phone settings, for example share your calendar with the criminal. Scams in the Tax Administration’s name have circulated for a long time in different forms."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Sähköposti tai viesti Veron nimissä.",
+        "en": "An email or message in the Tax Administration’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Verotuspäätös pitää tarkistaa tai tiedot päivittää pian.",
+        "en": "A tax decision must be checked or details updated soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Painike tai linkki vie tunnistautumissivulle.",
+        "en": "A button or link leads to an identification page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Sivu pyytää pankkitunnuksia.",
+        "en": "The page asks for online banking codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Verohallinto: Sinulle on muodostettu uusi verotuspäätös vuodelta 2025. Päätös on nähtävissä 5 päivän ajan. Tarkastele päätöstä ja mahdollista palautusta tunnistautumalla: [linkki]",
+        "en": "Tax Administration: A new tax decision for 2025 has been issued to you. It can be viewed for 5 days. View the decision and any refund by identifying yourself: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "veron nimissä sähköposti",
+      "verotuksesi on vahvistettu",
+      "uusi verotuspäätös linkki",
+      "päätösilmoitus tarkista heti",
+      "omavero huijausviesti",
+      "veronpalautus tunnistaudu",
+      "verohallinto päivitä tietosi",
+      "verottajan nimissä huijaus",
+      "veropalautus odottaa linkki",
+      "verotuspäätös pankkitunnukset",
+      "veronpalautus pankkitili vahvista",
+      "verohallinto palautus linkki",
+      "veropalautuksen maksaminen tunnistautuminen",
+      "verotuksessa virhe palautus"
+    ],
+    "en": [
+      "tax refund email bank login",
+      "omavero phishing",
+      "tax decision link identify",
+      "tax administration update details",
+      "taxation confirmed email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fi": [
+      "Verohallinto ei lähetä linkkejä, joista pitää tunnistautua pankkitunnuksilla.",
+      "Tarkista verotuksesi aina itse kirjautumalla OmaVeroon.",
+      "Älä avaa liitettä, joka pyytää muuttamaan puhelimen asetuksia."
+    ],
+    "en": [
+      "The Tax Administration doesn’t send links that ask you to identify with your banking codes.",
+      "Always check your taxation yourself by logging in to OmaVero.",
+      "Don’t open an attachment that asks to change your phone settings."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Kirjaudu OmaVeroon itse kirjoittamalla osoite selaimeen.",
+      "Jos annoit liitteen muuttaa puhelimen asetuksia, palauta laite tehdasasetuksiin.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Log in to OmaVero yourself by typing the address into the browser.",
+      "If you let an attachment change your phone settings, restore the device to factory settings.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 42/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-422026",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 38/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-382026",
+      "date": "2026-09-18"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 24/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-242026",
+      "date": "2026-06-12"
+    },
+    {
+      "title": "Saitko viestin verottajalta? Varoitus huijauksista!",
+      "publisher": "MTV Uutiset",
+      "url": "https://www.mtvuutiset.fi/artikkeli/saitko-viestin-verottajalta-varoitus-huijauksista/9310772",
+      "date": "2026-03-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

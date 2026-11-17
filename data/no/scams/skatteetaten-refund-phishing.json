@@ -1,0 +1,129 @@
+{
+  "id": "no/skatteetaten-refund-phishing",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "no": "«Skatteetaten», noen ganger sammen med «politiet»",
+    "en": "“Skatteetaten” (Tax Administration), sometimes together with “the police”"
+  },
+  "name": {
+    "no": "Falsk Skatteetaten: penger tilbake på skatten, restskatt eller krav på Vipps",
+    "en": "Fake Tax Administration: tax refund, back tax or a demand paid by Vipps"
+  },
+  "how": {
+    "no": "Når skattemeldingen og skatteoppgjøret kommer, sendes falske e-poster og SMS-er i Skatteetatens navn: Du har penger til gode, må sjekke kontonummeret eller betale restskatt, via en lenke. Lenken går til en kopi med logo og språk som ligner det ekte, der du skal logge inn eller gi bankopplysninger. Noen meldinger blander inn politiet, og nytt i 2026 er telefoner med krav om betaling via Vipps.",
+    "en": "When the tax return and tax settlement come out, fake emails and texts are sent in Skatteetaten’s name: you have money to get back, must check your account number or pay back tax, through a link. The link goes to a copy with a logo and wording like the real one, where you log in or give bank details. Some messages bring in the police, and new in 2026 are phone calls demanding payment by Vipps."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En SMS eller e-post fra «Skatteetaten»: penger tilbake eller restskatt.",
+        "en": "A text or email from “Skatteetaten”: a refund or back tax."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "En lenke for å bekrefte kontonummer, få pengene eller betale.",
+        "en": "A link to confirm your account number, get the money or pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Du skal logge inn eller oppgi bank- eller kortopplysninger.",
+        "en": "You are asked to log in or give bank or card details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "no": "Eller en oppringning: Restskatten må betales nå med Vipps.",
+        "en": "Or a phone call: the back tax must be paid now with Vipps."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Skatteetaten: Skatteoppgjøret ditt for 2025 viser at du har 4 870 kr til gode. Kontonummeret ditt er ikke registrert. Bekreft det innen fredag for å få utbetalingen: [lenke]",
+        "en": "Skatteetaten: Your 2025 tax settlement shows you are owed 4,870 kr. Your account number is not registered. Confirm it by Friday to receive the payment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "sms skatteetaten penger tilbake",
+      "penger til gode på skatten lenke",
+      "bekreft kontonummer for skatterefusjon",
+      "restskatt betale med vipps telefon",
+      "skatteetaten ringte krevde betaling",
+      "falsk e-post om skatteoppgjør",
+      "tilbakebetaling av skatt lenke",
+      "skatteetaten ber om bankopplysninger",
+      "skatterefusjon oppgi kontonummer"
+    ],
+    "en": [
+      "text from the tax office about a refund",
+      "asked to confirm my account number for a tax refund",
+      "tax office called demanding payment by vipps",
+      "email about my tax settlement with a link",
+      "back tax demand by text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "no": [
+      "Skatteetaten sender aldri lenker uoppfordret på SMS eller e-post.",
+      "Skatteetaten ringer deg ikke uoppfordret om skattemeldingen, og krever ikke betaling på Vipps.",
+      "Lenker kan se ut som de går til de ekte sidene uten å gjøre det.",
+      "Sponsede søkeresultater kan føre til falske sider."
+    ],
+    "en": [
+      "Skatteetaten never sends unsolicited links by text or email.",
+      "Skatteetaten doesn’t call you out of the blue about your tax return and doesn’t demand payment by Vipps.",
+      "Links can look like they go to the real pages without doing so.",
+      "Sponsored search results can lead to fake pages."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Skriv adressen selv og logg inn på Skatteetatens sider for å sjekke skatten.",
+      "Har du gitt fra deg bankopplysninger eller BankID? Kontakt banken med en gang.",
+      "Legg på hvis noen ringer og krever betaling, og anmeld forsøket."
+    ],
+    "en": [
+      "Type the address yourself and log in on Skatteetaten’s website to check your tax.",
+      "Did you give out bank details or BankID? Contact your bank straight away.",
+      "Hang up if someone calls demanding payment, and report the attempt."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/spam-7726",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Skattemeldingen er på vei. Skatteetaten advarer mot svindel",
+      "publisher": "Skatteetaten",
+      "url": "https://www.skatteetaten.no/presse/nyhetsrommet/skattemeldingen-er-pa-vei.-skatteetaten-advarer-mot-svindel/",
+      "date": "2026-03-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

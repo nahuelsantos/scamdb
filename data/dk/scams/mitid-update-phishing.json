@@ -1,0 +1,138 @@
+{
+  "id": "dk/mitid-update-phishing",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "da": "MitID, Digitaliseringsstyrelsen eller din bank",
+    "en": "MitID, the Digitisation Agency or your bank"
+  },
+  "name": {
+    "da": "Falsk MitID-besked: “dit MitID udløber eller spærres – opdatér nu”",
+    "en": "Fake MitID message: “your MitID is expiring or will be blocked – update now”"
+  },
+  "how": {
+    "da": "En sms eller mail siger, at dit MitID skal fornyes, opdateres eller er blevet spærret, og at du skal logge ind via et link for at undgå at miste adgangen. Linket fører til en kopi af MitID-login. Svindlerne bruger dine oplysninger til at logge ind i din netbank eller oprette et nyt MitID, og ofte følger et opkald fra en falsk bankmand. Beskeden kan dukke op i samme tråd som ægte MitID-beskeder.",
+    "en": "A text or email says your MitID must be renewed, updated or has been blocked, and that you must log in via a link to avoid losing access. The link leads to a copy of the MitID login. The scammers use your details to log in to your online bank or set up a new MitID, and often a call from a fake bank employee follows. The message can show up in the same thread as genuine MitID messages."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Besked om, at MitID udløber, skal opdateres eller er spærret.",
+        "en": "Message saying MitID is expiring, must be updated or is blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Du mister adgangen, hvis du ikke reagerer i dag.",
+        "en": "You'll lose access unless you act today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Et link fører til en falsk MitID-side.",
+        "en": "A link leads to a fake MitID page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Du skal taste bruger-id og godkende i MitID-appen – men godkender svindlernes login.",
+        "en": "You must enter your user ID and approve in the MitID app – but you approve the scammers' login."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "MitID: Din kodeviser/app skal fornyes senest i dag af sikkerhedshensyn. Undlader du at forny, suspenderes dit MitID og du kan ikke logge på netbank eller Digital Post. Forny her: [link]",
+        "en": "MitID: Your code display/app must be renewed by today for security reasons. If you don't renew, your MitID will be suspended and you won't be able to log in to online banking or Digital Post. Renew here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "mitid udløber forny link",
+      "mitid spærret opdater oplysninger",
+      "sms mitid suspenderes",
+      "falsk mitid login side",
+      "forny kodeviser sms",
+      "mitid mail blokeret svindel",
+      "digitaliseringsstyrelsen mitid sms",
+      "mitid app opdatering påkrævet"
+    ],
+    "en": [
+      "mitid expiring renew link",
+      "mitid blocked update details",
+      "text says mitid suspended",
+      "fake mitid login page",
+      "renew mitid app message"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "da": [
+      "MitID og offentlige myndigheder sender dig ikke links til login i en sms.",
+      "Læs altid teksten i MitID-appen: godkend kun, hvis du selv er ved at logge ind det sted.",
+      "En besked i samme tråd som ægte MitID-beskeder kan stadig være falsk."
+    ],
+    "en": [
+      "MitID and public authorities don't send you login links in a text.",
+      "Always read the text in the MitID app: only approve if you yourself are logging in to that place.",
+      "A message in the same thread as genuine MitID messages can still be fake."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Klik ikke. Gå selv til mitid.dk, hvis du er i tvivl.",
+      "Har du indtastet oplysninger eller godkendt noget? Spær MitID, og ring til Cyberhotlinen.",
+      "Kontakt banken, hvis du er bange for, at nogen er kommet ind i netbanken.",
+      "Anmeld beskeden til politiet."
+    ],
+    "en": [
+      "Don't click. Go to mitid.dk yourself if in doubt.",
+      "Entered details or approved something? Block MitID and call the Cyber hotline.",
+      "Contact the bank if you fear someone got into your online bank.",
+      "Report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "dk/cyberhotline",
+    "dk/your-bank",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "De seneste års massive udvikling i svindel mod kunder kan vendes, viser nye tal fra Danske Bank",
+      "publisher": "Danske Bank",
+      "url": "https://danskebank.com/da/news-og-insights/nyhedsarkiv/press-releases/2026/pm25022026",
+      "date": "2026-02-25"
+    },
+    {
+      "title": "Sådan spotter du falske beskeder",
+      "publisher": "Ældre Sagen (artikel fra sikkerdigital.dk)",
+      "url": "https://www.aeldresagen.dk/viden-og-raadgivning/hverdagsliv/sikkerhed-paa-nettet/undgaa-svindel/saadan-spotter-du-falske-beskeder",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Rekordmange rammes af svindelbeskeder – sådan gennemskuer du dem",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/rekordmange-rammes-af-svindelbeskeder-saadan-gennemskuer-du-dem",
+      "date": "2026-08-31"
+    }
+  ],
+  "updated": "2026-11-17"
+}

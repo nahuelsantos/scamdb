@@ -1,0 +1,129 @@
+{
+  "id": "is/messenger-prize-electronic-id",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "social"
+  ],
+  "sender": {
+    "is": "Vinur eða kunningi á Facebook Messenger",
+    "en": "A friend or acquaintance on Facebook Messenger"
+  },
+  "name": {
+    "is": "Vinur á Messenger: „þú vannst í leik, staðfestu með rafrænum skilríkjum“",
+    "en": "Friend on Messenger: “you won a game, confirm with your electronic ID”"
+  },
+  "how": {
+    "is": "Þú færð skilaboð á Messenger frá vini sem búið er að brjótast inn hjá. Vinurinn biður um símanúmerið þitt og segir svo að þú hafir unnið verðlaun í Facebook-leik sem þurfi að staðfesta með rafrænum skilríkjum. Beiðnin sem kemur í símann er í raun innskráning í heimabankann þinn. Svikararnir millifæra svo út af reikningnum, oft um helgar.",
+    "en": "You get a Messenger message from a friend whose account has been hacked. The friend asks for your phone number, then says you have won a prize in a Facebook game that must be confirmed with your electronic ID. The request that pops up on your phone is really a login to your online bank. The scammers then transfer money out, often at weekends."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Vinur sendir skilaboð á Messenger og biður um símanúmerið þitt.",
+        "en": "A friend messages you on Messenger and asks for your phone number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Þér er sagt að þú hafir unnið pening eða verðlaun í leik.",
+        "en": "You are told you have won money or a prize in a game."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "is": "Til að fá vinninginn þarftu að samþykkja beiðni um rafræn skilríki í símanum.",
+        "en": "To claim it you must approve an electronic ID request on your phone."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "is": "Svikararnir komast inn í heimabankann og millifæra.",
+        "en": "The scammers get into your online bank and transfer money."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Hæ! Til hamingju 🎉 ég sá að þú ert á vinningslistanum í Facebook leiknum, ég vann líka í gær! Sendu mér símanúmerið þitt og samþykktu svo beiðnina sem kemur í símann svo vinningurinn verði lagður inn hjá þér",
+        "en": "Hi! Congrats 🎉 I saw you're on the winners list in the Facebook game, I won yesterday too! Send me your phone number and then approve the request that comes up on your phone so the prize gets paid to you"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "vinur bað um símanúmerið mitt á messenger",
+      "vann í facebook leik",
+      "staðfesta vinning með rafrænum skilríkjum",
+      "samþykkja beiðni í símanum fyrir vinninginn",
+      "messenger aðgangur vinar hakkaður",
+      "peningar teknir eftir facebook leik",
+      "verðlaunaleikur á facebook",
+      "vinkona sagði að ég hefði unnið pening"
+    ],
+    "en": [
+      "friend asked for my phone number on Messenger",
+      "won a Facebook game",
+      "confirm a prize with electronic ID",
+      "approve a request on my phone for the prize",
+      "friend's Messenger account hacked",
+      "money taken after a Facebook game",
+      "Facebook prize draw",
+      "a friend said I had won money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "is": [
+      "Vinningur sem þarf að staðfesta með rafrænum skilríkjum er alltaf svik.",
+      "Vinur biður um símanúmerið þitt á Messenger, sem hann ætti að hafa.",
+      "Beiðni um rafræn skilríki sem þú hófst ekki sjálf/ur."
+    ],
+    "en": [
+      "A prize you must confirm with your electronic ID is always a scam.",
+      "A friend asks for your phone number on Messenger, which they should already have.",
+      "An electronic ID request you didn't start yourself."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Sendu aldrei símanúmerið þitt á Messenger og samþykktu aldrei rafræna auðkenningu að beiðni annarra.",
+      "Hringdu í vininn í númerið sem þú þekkir og láttu vita að aðgangurinn sé hakkaður.",
+      "Ef þú samþykktir beiðni, hafðu strax samband við bankann (neyðarsími utan opnunartíma) og tilkynntu til lögreglu."
+    ],
+    "en": [
+      "Never send your phone number on Messenger and never approve an electronic ID request for someone else.",
+      "Call your friend on the number you know and tell them their account is hacked.",
+      "If you approved a request, call your bank at once (emergency line out of hours) and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police"
+  ],
+  "sources": [
+    {
+      "title": "Netsvik – Facebook Messenger",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/netsvik-facebook-messenger",
+      "date": "2025-03-13"
+    },
+    {
+      "title": "Netbrot",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/netbrot",
+      "date": "2024-08-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

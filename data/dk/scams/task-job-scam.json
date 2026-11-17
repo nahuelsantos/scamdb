@@ -1,0 +1,123 @@
+{
+  "id": "dk/task-job-scam",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "da": "En “rekrutterer” på TikTok, WhatsApp, Telegram eller sms",
+    "en": "A “recruiter” on TikTok, WhatsApp, Telegram or text"
+  },
+  "name": {
+    "da": "Jobsvindel med opgaver: tjen penge på at like videoer – betal for at låse op",
+    "en": "Task job scam: earn money liking videos – pay to unlock"
+  },
+  "how": {
+    "da": "Et jobopslag eller en besked lover nem fortjeneste hjemmefra: like videoer, abonnere på kanaler eller skrive anmeldelser. Samtalen flyttes til WhatsApp eller Telegram. De første små udbetalinger kommer, så det virker ægte. Derefter skal du betale for en “startpakke” eller indbetale penge eller krypto for at låse op for større opgaver – og pengene forsvinder. Unge bliver ofte ramt, og nogle ender med at blive brugt som muldyr til hvidvask.",
+    "en": "A job ad or message promises easy money from home: liking videos, subscribing to channels or writing reviews. The chat moves to WhatsApp or Telegram. The first small payouts arrive so it seems real. Then you must pay for a “starter pack” or deposit money or crypto to unlock bigger tasks – and the money disappears. Young people are often hit, and some end up being used as money mules."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Tilbud om et nemt job: like videoer eller skrive anmeldelser for høj løn.",
+        "en": "Offer of an easy job: like videos or write reviews for high pay."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "da": "Samtalen flyttes til WhatsApp eller Telegram.",
+        "en": "The chat moves to WhatsApp or Telegram."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "De første små beløb udbetales for at vinde din tillid.",
+        "en": "The first small amounts are paid out to win your trust."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "da": "Du skal indbetale penge eller krypto for at låse op for nye opgaver eller hæve din løn.",
+        "en": "You must deposit money or crypto to unlock new tasks or withdraw your pay."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Hej! Vi søger medarbejdere til et fleksibelt deltidsjob online. Du liker og gemmer videoer for vores kunder og tjener 300-900 kr. om dagen, ingen erfaring nødvendig. Skriv til vores koordinator på WhatsApp for at komme i gang: [link]",
+        "en": "Hi! We're looking for staff for a flexible part-time online job. You like and save videos for our clients and earn 300-900 kroner a day, no experience needed. Message our coordinator on WhatsApp to get started: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "job like videoer tjen penge",
+      "tiktok drømmejob svindel",
+      "deltidsjob online whatsapp koordinator",
+      "betale startpakke låse opgaver",
+      "opgaver anmeldelser løn indbetale krypto",
+      "jobtilbud telegram tjen dagen"
+    ],
+    "en": [
+      "job liking videos earn money",
+      "tiktok dream job scam",
+      "online part time job whatsapp",
+      "pay to unlock tasks",
+      "task job deposit crypto withdraw"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "da": [
+      "Et rigtigt job kræver aldrig, at du betaler for at arbejde.",
+      "Høj løn for meget simple opgaver.",
+      "Kontakt kun via private apps og ingen rigtig virksomhed bag."
+    ],
+    "en": [
+      "A real job never requires you to pay to work.",
+      "High pay for very simple tasks.",
+      "Contact only through private apps and no real company behind it."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Betal aldrig penge eller krypto for at få et job eller hæve løn.",
+      "Tjek virksomheden på dens officielle hjemmeside.",
+      "Lad ikke andre bruge din konto til at modtage eller sende penge – det er strafbart.",
+      "Har du betalt? Kontakt banken, og anmeld det til politiet."
+    ],
+    "en": [
+      "Never pay money or crypto to get a job or withdraw pay.",
+      "Check the company on its official website.",
+      "Don't let others use your account to receive or send money – it's a crime.",
+      "Already paid? Contact your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Svindlere lokker med ”drømmejob” på TikTok",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/svindlere-lokker-med-droemmejob-paa-tiktok",
+      "date": "2026-09-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

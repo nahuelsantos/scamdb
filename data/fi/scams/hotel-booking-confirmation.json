@@ -1,0 +1,146 @@
+{
+  "id": "fi/hotel-booking-confirmation",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "email",
+    "online"
+  ],
+  "sender": {
+    "fi": "Hotellin vastaanotto tai majoituspalvelu (WhatsApp, sähköposti tai varauspalvelun viesti)",
+    "en": "A hotel front desk or accommodation service (WhatsApp, email or a booking platform message)"
+  },
+  "name": {
+    "fi": "Majoitusvaraus \"vaatii lisävahvistuksen\": oikeat varaustiedot, väärä maksulinkki",
+    "en": "Hotel booking “needs extra confirmation”: real booking details, fake payment link"
+  },
+  "how": {
+    "fi": "Viesti tulee hotellin tai majoituspalvelun nimissä ja sisältää oikeita tietoja varauksestasi, kuten hotellin nimen ja päivät. Tiedot ovat voineet vuotaa majoituspalvelun tai varausjärjestelmän kautta. Viestissä väitetään, että varaus pitää vahvistaa, muuten se perutaan, ja vahvistusta varten pitää syöttää maksukortin tiedot linkin kautta. Oikeat tiedot eivät takaa viestin aitoutta.",
+    "en": "The message comes in the name of a hotel or accommodation service and contains real details of your booking, such as the hotel name and dates. The details may have leaked through an accommodation service or booking system. It says the booking must be confirmed or it will be cancelled, and that to confirm you must enter your card details through a link. Real details don’t make the message genuine."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Viesti hotellin nimissä oikeilla varaustiedoilla.",
+        "en": "A message in the hotel’s name with real booking details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Varaus perutaan, jos sitä ei vahvisteta pian.",
+        "en": "The booking will be cancelled unless confirmed soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Vahvistus tehdään linkistä.",
+        "en": "Confirmation is done through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Linkki pyytää maksukortin tiedot.",
+        "en": "The link asks for your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Hei! Täällä Hotelli Rantasaaren vastaanotto. Varauksenne 12.–14.12. vaatii vielä kortin varmennuksen, muuten järjestelmä vapauttaa huoneen tänään klo 18. Ole hyvä ja tee varmennus tästä: [linkki]",
+        "en": "Hi! This is the front desk at Hotel Rantasaari. Your booking for 12–14 December still needs card verification, otherwise the system releases the room today at 6 pm. Please verify here: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "hotellivaraus vaatii vahvistuksen",
+      "majoitusvaraus vahvista kortti",
+      "hotellin vastaanotto whatsapp",
+      "varaus perutaan ellei vahvisteta",
+      "kortin varmennus varaus linkki",
+      "majoituspalvelun nimissä huijaus",
+      "varaustiedot oikein mutta huijaus",
+      "matkavaraus kalasteluviesti"
+    ],
+    "en": [
+      "hotel booking confirm card link",
+      "hotel reception whatsapp message",
+      "booking will be cancelled verify",
+      "booking platform phishing",
+      "real reservation details scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "fi": [
+      "Oikeat varaustiedot viestissä eivät todista sen aitoutta.",
+      "Yllättävä maksupyyntö linkillä ja uhka perumisesta ovat varoitusmerkkejä.",
+      "Hotelli ei pyydä korttitietoja WhatsAppissa."
+    ],
+    "en": [
+      "Real booking details in a message don’t prove it is genuine.",
+      "An unexpected payment request with a link and a threat of cancellation are warning signs.",
+      "A hotel doesn’t ask for card details on WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Tarkista varaus kirjautumalla varauspalveluun itse tai ottamalla yhteyttä majoituspaikkaan sen virallisten yhteystietojen kautta.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Check the booking by logging in to the booking service yourself or contacting the property through its official contact details.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 42/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-422026",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 40/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-402026",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 18/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-182026",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 3/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-32026",
+      "date": "2026-01-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

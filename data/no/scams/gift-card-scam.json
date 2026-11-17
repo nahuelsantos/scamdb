@@ -1,0 +1,139 @@
+{
+  "id": "no/gift-card-scam",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "no": "Noen du «stoler på»: politiet, Skatteetaten, banken, teknisk støtte, sjefen eller et familiemedlem",
+    "en": "Someone you “trust”: the police, Skatteetaten, the bank, tech support, your boss or a relative"
+  },
+  "name": {
+    "no": "Gavekortsvindel: kjøp gavekort og send kodene",
+    "en": "Gift card scam: buy gift cards and send the codes"
+  },
+  "how": {
+    "no": "Du blir kontaktet på telefon, e-post, SMS eller sosiale medier av noen som utgir seg for å være en kjæreste fra nettet, en myndighet som politiet eller Skatteetaten, teknisk støtte fra banken eller Microsoft, en leder på jobben eller et familiemedlem i nød. Du blir bedt om å kjøpe gavekort, ofte Apple eller Google, for tusenvis av kroner i dagligvarebutikken, skrape fram koden og sende bilde eller lese den opp. Noen blir lovet belønning.",
+    "en": "You are contacted by phone, email, text or social media by someone posing as an online partner, an authority such as the police or Skatteetaten, tech support from the bank or Microsoft, a manager at work or a relative in trouble. You are asked to buy gift cards, often Apple or Google, for thousands of kroner at the supermarket, scratch off the code and send a photo or read it out. Some are promised a reward."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "Noen du tror du kan stole på, har et akutt problem.",
+        "en": "Someone you think you can trust has an urgent problem."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Løsningen er gavekort fra butikken, ikke en vanlig betaling.",
+        "en": "The solution is gift cards from the shop, not a normal payment."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "no": "Du skal skrape fram kodene og sende bilde eller lese dem opp.",
+        "en": "You must scratch off the codes and send a photo or read them out."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "no": "Det haster, og du skal ikke si noe til butikken.",
+        "en": "It is urgent, and you mustn’t say anything to the shop."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Hei, det er Kari fra ledelsen. Sitter i møte og kan ikke ringe. Kan du gjøre meg en tjeneste og kjøpe fem Apple-gavekort à 1 000 kr til kunder i dag? Skrap fram kodene og send meg bilde her, så får du pengene tilbake på lønna. Ikke snakk om det, det er en overraskelse.",
+        "en": "Hi, it’s Kari from management. I’m in a meeting and can’t call. Could you do me a favour and buy five Apple gift cards of 1,000 kr each for clients today? Scratch off the codes and send me a photo here, and you’ll get the money back in your wages. Don’t talk about it, it’s a surprise."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "bedt om å kjøpe gavekort",
+      "sende koden på gavekortet",
+      "apple gavekort betale skatt",
+      "sjefen ba meg kjøpe gavekort",
+      "skrape fram koder sende bilde",
+      "google play kort til politiet"
+    ],
+    "en": [
+      "asked to buy gift cards",
+      "send the code on the gift card",
+      "pay with apple gift cards",
+      "boss asked me to buy gift cards",
+      "scratch off codes and send a photo"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "asks_for_code",
+    "urgency",
+    "secrecy"
+  ],
+  "redFlags": {
+    "no": [
+      "Ingen myndighet, bank eller arbeidsgiver ber om betaling med gavekort.",
+      "Ingen med rent mel i posen trenger en haug gavekort i all hast.",
+      "Når koden er sendt, er pengene borte og kan ikke spores."
+    ],
+    "en": [
+      "No authority, bank or employer asks for payment with gift cards.",
+      "No one with honest intentions needs a pile of gift cards in a hurry.",
+      "Once the code is sent, the money is gone and can’t be traced."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Legg på eller svar ikke. Kontakt personen eller etaten selv på en kjent måte.",
+      "Har du sendt koder? Kontakt butikken, utstederen av gavekortet og banken med en gang.",
+      "Anmeld forholdet til politiet."
+    ],
+    "en": [
+      "Hang up or don’t reply. Contact the person or agency yourself in a way you know.",
+      "Did you send codes? Contact the shop, the gift card issuer and your bank straight away.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Status og tiltak mot svindel for 2026",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/tema/okonomisk-kriminalitet/svindel/status-og-tiltak-mot-svindel-for-2026/",
+      "date": "2026-04-08"
+    },
+    {
+      "title": "Slik blir eldre manipulert og svindlet nå",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/slik-blir-eldre-manipulert-og-svindlet",
+      "date": "2026-01-30"
+    },
+    {
+      "title": "Gavekortsvindlerne herjer fortsatt – eldre mest utsatt",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/na-blir-mange-utsatt-for-gavekortsvindel",
+      "date": "2025-12-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/romance-scam"
+  ]
+}

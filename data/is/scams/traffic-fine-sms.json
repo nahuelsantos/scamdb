@@ -1,0 +1,122 @@
+{
+  "id": "is/traffic-fine-sms",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "is": "„Umferðarlögreglan“",
+    "en": "“Traffic police”"
+  },
+  "name": {
+    "is": "Falskt SMS um sekt frá umferðarlögreglunni",
+    "en": "Fake traffic police fine text"
+  },
+  "how": {
+    "is": "SMS berst í nafni umferðarlögreglunnar um að þú eigir ógreidda sekt, til dæmis fyrir hraðakstur eða stöðubrot. Þér er sagt að ýta á hlekk og greiða strax, annars hækki sektin. Hlekkurinn opnar falska greiðslusíðu sem stelur kortaupplýsingum eða biður um innskráningu með rafrænum skilríkjum. Raunverulegar sektir frá lögreglu berast alltaf inn á Ísland.is.",
+    "en": "A text in the name of the traffic police says you have an unpaid fine, for example for speeding or parking. You are told to tap a link and pay now or the fine goes up. The link opens a fake payment page that steals card details or asks you to log in with your electronic ID. Real police fines always arrive in your Ísland.is inbox."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "SMS segir að þú hafir fengið sekt frá umferðarlögreglunni.",
+        "en": "A text says you have been fined by the traffic police."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Gefinn er stuttur frestur, annars hækki sektin eða málið fari lengra.",
+        "en": "You get a short deadline or the fine will rise or the case will go further."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Hlekkur vísar á síðu sem lítur út eins og greiðslusíða.",
+        "en": "A link leads to a page that looks like a payment page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "is": "Síðan biður um kortanúmer eða innskráningu með rafrænum skilríkjum og peningar eru teknir af kortinu.",
+        "en": "The page asks for your card number or an electronic ID login and money is taken from your card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Umferðarlögreglan: Ökutæki þitt var myndað á of miklum hraða. Ógreidd sekt 9.800 kr. Greiddu í dag til að forðast tvöföldun sektar: [hlekkur]",
+        "en": "Traffic police: Your vehicle was photographed speeding. Unpaid fine ISK 9,800. Pay today to avoid the fine doubling: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "sms um hraðasekt frá lögreglunni",
+      "umferðarlögreglan sendi mér hlekk",
+      "borga sekt með hlekk í sms",
+      "sekt hækkar ef ég borga ekki strax",
+      "stöðubrot sem ég kannast ekki við",
+      "lögreglan rukkar sekt í sms"
+    ],
+    "en": [
+      "text about a speeding fine from the police",
+      "traffic police sent me a link",
+      "pay a fine through a link in a text",
+      "fine goes up if I don't pay now",
+      "parking fine I don't recognise",
+      "police charging a fine by text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "is": [
+      "Lögreglan sendir ekki hlekki í SMS til að greiða sektir; sektir berast á Ísland.is.",
+      "Hótun um að sektin hækki ef þú greiðir ekki strax.",
+      "Sekt sem þú áttir ekki von á og vefslóð sem er ekki island.is."
+    ],
+    "en": [
+      "The police do not text links to pay fines; fines arrive on Ísland.is.",
+      "A threat that the fine will go up unless you pay at once.",
+      "A fine you weren't expecting and a web address that isn't island.is."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Ekki ýta á hlekkinn. Skráðu þig sjálf/ur inn á Ísland.is og athugaðu hvort þar sé sekt.",
+      "Ef þú gafst upp kortanúmer eða samþykktir rafræn skilríki, hafðu strax samband við bankann.",
+      "Áframsendu skilaboðin á lögregluna og CERT-IS og eyddu þeim svo."
+    ],
+    "en": [
+      "Don't tap the link. Log in to Ísland.is yourself and check whether there is a fine.",
+      "If you gave your card number or approved an electronic ID request, call your bank straight away.",
+      "Forward the message to the police and CERT-IS, then delete it."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/cert-is"
+  ],
+  "sources": [
+    {
+      "title": "Netbrot í nafni umferðarlögreglunnar",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/netbrot-i-nafni-umferdarloegreglunnar",
+      "date": "2026-06-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

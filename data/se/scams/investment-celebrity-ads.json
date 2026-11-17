@@ -1,0 +1,142 @@
+{
+  "id": "se/investment-celebrity-ads",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "sv": "En annons med en känd person, en ”nyhetsartikel” eller en ”investeringsrådgivare”",
+    "en": "An ad featuring a celebrity, a “news article” or an “investment adviser”"
+  },
+  "name": {
+    "sv": "Investeringsbedrägeri: kändisar, kryptoplattform, rådgivare ringer",
+    "en": "Investment fraud: celebrities in fake ads, crypto platform, “adviser” calls"
+  },
+  "how": {
+    "sv": "En annons i sociala medier, ofta utformad som en nyhetsartikel och med bilder eller AI-videor på kända svenskar, lovar höga vinster med krypto eller ny teknik. Du lämnar ditt nummer och en ”rådgivare” ringer, hjälper dig öppna ett konto på en snygg plattform och börjar med en liten insättning. Vinsterna på skärmen växer, så du sätter in mer, ibland med fjärrstyrning av datorn. När du vill ta ut pengarna kommer nya avgifter, eller så försvinner kontakten.",
+    "en": "An ad on social media, often designed like a news article and with pictures or AI videos of well-known Swedes, promises big profits with crypto or new technology. You leave your number and an “adviser” calls, helps you open an account on a slick platform and starts you with a small deposit. The profits on screen grow, so you deposit more, sometimes with remote control of your computer. When you want to withdraw, new fees appear or contact disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "En annons eller ”artikel” där en känd person säger sig ha blivit rik.",
+        "en": "An ad or “article” where a celebrity says they got rich."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sv": "En ”rådgivare” ringer och hjälper dig komma igång.",
+        "en": "An “adviser” calls and helps you get started."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "Du ska installera en app så att de kan ”hjälpa” dig på datorn.",
+        "en": "You’re told to install an app so they can “help” you on the computer."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "sv": "Sätt in mer för att inte missa vinsten; uttag kräver avgifter.",
+        "en": "Deposit more so you don’t miss the gains; withdrawals require fees."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Hej! Det är Daniel från investeringsteamet, du lämnade ditt nummer via artikeln om kryptoroboten. Med en startinsättning på 2 500 kronor brukar våra kunder se 30–40 procents avkastning första månaden. Jag kan hjälpa dig öppna kontot nu, ladda bara ner AnyDesk så guidar jag dig.",
+        "en": "Hi! It’s Daniel from the investment team, you left your number through the article about the crypto robot. With a starting deposit of 2,500 kronor our clients usually see a 30–40 percent return in the first month. I can help you open the account now; just download AnyDesk and I’ll guide you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "investeringsbedrägeri kändis annons",
+      "kryptoplattform hög avkastning",
+      "rådgivare ringer investera krypto",
+      "känd person tjänat pengar krypto",
+      "startinsättning 2500 kronor",
+      "ta ut pengarna plattform",
+      "ai video kändis investering",
+      "programledare avslöjar hemlighet förmögenhet",
+      "investeringsplattform registrera konto handledare",
+      "kändis tjänade miljoner kryptorobot"
+    ],
+    "en": [
+      "celebrity investment ad",
+      "crypto platform promised high returns",
+      "investment adviser called after an ad",
+      "can t withdraw my money from the platform",
+      "fake news article about a crypto robot",
+      "deepfake celebrity video investing"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sv": [
+      "Kända personer gör inte reklam för snabba kryptovinster; bilderna är stulna eller AI-gjorda.",
+      "Hög garanterad avkastning finns inte.",
+      "Ingen seriös rådgivare ber dig installera fjärrstyrning.",
+      "Avgifter för att få ta ut dina egna pengar är ett säkert tecken på bedrägeri."
+    ],
+    "en": [
+      "Celebrities don’t advertise quick crypto profits; the images are stolen or AI-made.",
+      "High guaranteed returns don’t exist.",
+      "No genuine adviser asks you to install remote control.",
+      "Fees to withdraw your own money are a sure sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Kontrollera bolaget på FI:s varningslista och i företagsregistret innan du investerar; vänta 24 timmar.",
+      "Har du installerat fjärrstyrning? Avinstallera och kontakta banken.",
+      "Sluta betala, spara all kommunikation och polisanmäl.",
+      "Tipsa FI om plattformen."
+    ],
+    "en": [
+      "Check the company on FI’s warning list and register before investing; wait 24 hours.",
+      "Did you install remote control? Uninstall it and contact your bank.",
+      "Stop paying, save all communication and report it to the police.",
+      "Tip off FI about the platform."
+    ]
+  },
+  "reportTo": [
+    "se/finansinspektionen",
+    "se/your-bank",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Bedragarna tar hjälp av AI – FI varnar för 197 aktörer",
+      "publisher": "Realtid",
+      "url": "https://www.realtid.se/juridik/bedragarna-tar-hjalp-av-ai-fi-varnar-for-197-aktorer/",
+      "date": "2026-08-17"
+    },
+    {
+      "title": "Varningen: Falska sms från myndigheten ska lura dig",
+      "publisher": "Dagens PS",
+      "url": "https://www.dagensps.se/privatekonomi/sakerhet/varningen-falska-sms-fran-myndigheten-ska-lura-dig/",
+      "date": "2025-10-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "se/recovery-scam"
+  ]
+}

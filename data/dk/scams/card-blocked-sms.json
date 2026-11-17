@@ -1,0 +1,134 @@
+{
+  "id": "dk/card-blocked-sms",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "da": "Nets, din bank eller “kortservice”",
+    "en": "Nets, your bank or “card service”"
+  },
+  "name": {
+    "da": "“Kort spærret”-sms: falsk genaktivering af betalingskort",
+    "en": "“Your card is blocked”: confirm the card via a link to avoid it being blocked"
+  },
+  "how": {
+    "da": "En sms siger, at dit betalingskort er spærret eller bliver spærret – fx på grund af “aktivitet fra udlandet” – og at du skal bekræfte kortet via et link. Siden ligner Nets' eller bankens og beder om kortnummer, udløbsdato, kontrolcifre og nogle gange MitID. Bagefter ringer en falsk bankmand måske og prøver at få dig til at godkende noget.",
+    "en": "A text says your payment card is blocked or will be – for example because of “activity from abroad” – and that you must confirm the card via a link. The page looks like Nets' or the bank's and asks for card number, expiry, security code and sometimes MitID. Afterwards a fake bank employee may call and try to get you to approve something."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Sms: dit kort er spærret eller bliver spærret om kort tid.",
+        "en": "Text: your card is blocked or will be soon."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Fristen er kort: bekræft i dag, ellers kan kortet ikke bruges.",
+        "en": "The deadline is short: confirm today or the card can't be used."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Et link fører til en falsk side, der beder om kortdata og MitID.",
+        "en": "A link leads to a fake page asking for card data and MitID."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Senere kan der komme et opkald fra “banken”, der vil have dig til at godkende noget.",
+        "en": "Later a call from “the bank” may come asking you to approve something."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Nets Sikkerhed: Vi har registreret usædvanlig aktivitet fra udlandet på dit Visa/Dankort, og kortet er midlertidigt låst. Genaktivér kortet inden kl. 20 i dag for at undgå permanent spærring: [link]",
+        "en": "Nets Security: We have detected unusual activity from abroad on your Visa/Dankort, and the card is temporarily locked. Reactivate the card before 8 pm today to avoid permanent blocking: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "kort spærret sms link",
+      "nets sms usædvanlig aktivitet",
+      "bekræft betalingskort undgå spærring",
+      "dankort låst genaktiver",
+      "kortet lukkes bekræft oplysninger",
+      "bank sms kort blokeret udlandet"
+    ],
+    "en": [
+      "card blocked text link",
+      "nets text unusual activity",
+      "confirm my card to avoid blocking",
+      "debit card locked reactivate",
+      "bank text card blocked abroad"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "da": [
+      "Banker og Nets beder dig ikke om at bekræfte kortet via et link i en sms.",
+      "Afsendernavnet kan være forfalsket.",
+      "Et opkald lige efter en mistænkelig sms er typisk samme svindler."
+    ],
+    "en": [
+      "Banks and Nets don't ask you to confirm your card via a link in a text.",
+      "The sender name can be faked.",
+      "A call right after a suspicious text is typically the same scammer."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Klik ikke. Tjek kortet i bankens app.",
+      "Har du tastet kortdata? Spær kortet med det samme.",
+      "Har du givet MitID-oplysninger? Spær MitID, og ring til Cyberhotlinen.",
+      "Anmeld sms'en på politi.dk."
+    ],
+    "en": [
+      "Don't click. Check the card in your bank's app.",
+      "Typed in card data? Block the card straight away.",
+      "Gave MitID details? Block MitID and call the Cyber hotline.",
+      "Report the text at politi.dk."
+    ]
+  },
+  "reportTo": [
+    "dk/nets-kortspaerring",
+    "dk/your-bank",
+    "dk/cyberhotline",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Fup på sms: Beskyt dig mod svindelbeskederne",
+      "publisher": "Forbrugerrådet Tænk",
+      "url": "https://taenk.dk/forbrugerliv/elektronik-og-digitale-tjenester/fup-paa-sms-beskyt-dig-mod-svindelbeskederne",
+      "date": "2025-08-08"
+    },
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "dk/fake-bank-adviser-safe-account"
+  ]
+}

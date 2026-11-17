@@ -1,0 +1,134 @@
+{
+  "id": "dk/marketplace-fake-buyer",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "da": "En køber på DBA, Facebook Marketplace eller en anden handelsplatform",
+    "en": "A buyer on DBA, Facebook Marketplace or another trading platform"
+  },
+  "name": {
+    "da": "Falsk køber på DBA/Marketplace: “betalt” vare, falsk udbetalingsside",
+    "en": "Fake buyer on DBA/Marketplace: “I've paid” – send the item or “receive” the money via a link"
+  },
+  "how": {
+    "da": "Du sælger noget, og en køber skriver hurtigt. Køberen vil ikke mødes, men presser på for, at du sender varen, før pengene er kommet, og viser et skærmbillede som “bevis” for betaling. Andre vil flytte samtalen væk fra platformen og sender et link, hvor du skal “modtage” betalingen eller bestille fragt – og så beder siden om dine kortoplysninger. Politiet modtog over 10.000 anmeldelser om svindel ved handel mellem private i 2025.",
+    "en": "You're selling something and a buyer writes quickly. The buyer won't meet, but pushes you to send the item before the money has arrived and shows a screenshot as “proof” of payment. Others want to move the chat off the platform and send a link where you must “receive” the payment or book shipping – and then the page asks for your card details. Police received more than 10,000 reports of fraud in trade between private people in 2025."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "En køber vil have varen uden at mødes og uden at se den.",
+        "en": "A buyer wants the item without meeting or seeing it."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "da": "Køberen vil skrive på mail, sms eller WhatsApp i stedet for på platformen.",
+        "en": "The buyer wants to write by email, text or WhatsApp instead of on the platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Du får et skærmbillede af en betaling eller et link til at “modtage” pengene.",
+        "en": "You get a screenshot of a payment or a link to “receive” the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Siden beder om kortnummer og kode – eller du sender varen, og pengene kommer aldrig.",
+        "en": "The page asks for card number and code – or you send the item and the money never comes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Hej, jeg køber gerne din cykel til fuld pris. Jeg bor i Aalborg, så jeg kan ikke hente, men jeg har allerede betalt inkl. fragt gennem platformens sikre handel. Du skal bare bekræfte, at du vil modtage beløbet her: [link]. Skynd dig gerne, så fragtmanden kan hente i morgen.",
+        "en": "Hi, I'd like to buy your bike at full price. I live in Aalborg so I can't collect, but I've already paid including shipping through the platform's secure trade. You just need to confirm you want to receive the amount here: [link]. Please hurry so the courier can pick it up tomorrow."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "køber dba betalt link modtage penge",
+      "falsk køber marketplace send varen",
+      "skærmbillede overførsel køber falsk",
+      "køber skrive mail udenfor dba",
+      "sikker handel udbetaling sælger",
+      "køber bor langt væk fragt betalt"
+    ],
+    "en": [
+      "fake buyer dba paid link",
+      "buyer sent screenshot of payment",
+      "buyer wants me to ship before paying",
+      "link to receive money as seller",
+      "buyer won't meet asks card details"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "da": [
+      "Du skal aldrig oplyse kortdata for at modtage penge.",
+      "Et skærmbillede er ikke en betaling – vent, til pengene står på din konto eller i appen.",
+      "En køber, der vil væk fra platformen og ikke vil mødes, er et advarselstegn."
+    ],
+    "en": [
+      "You never need to give card details to receive money.",
+      "A screenshot isn't a payment – wait until the money is in your account or app.",
+      "A buyer who wants to leave the platform and won't meet is a warning sign."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Bliv på platformen, og mød køberen, hvis muligt.",
+      "Udlever først varen, når pengene faktisk er modtaget.",
+      "Har du tastet kortdata? Spær kortet med det samme.",
+      "Anmeld svindlen til platformen og på politi.dk."
+    ],
+    "en": [
+      "Stay on the platform and meet the buyer if possible.",
+      "Only hand over the item once the money has actually arrived.",
+      "Typed in card data? Block the card straight away.",
+      "Report the fraud to the platform and at politi.dk."
+    ]
+  },
+  "reportTo": [
+    "dk/nets-kortspaerring",
+    "dk/your-bank",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Vær opmærksom på svindlere, når du handler med private",
+      "publisher": "Ældre Sagen og Styrelsen for Samfundssikkerhed",
+      "url": "https://www.aeldresagen.dk/viden-og-raadgivning/hverdagsliv/sikkerhed-paa-nettet/undgaa-svindel/vaer-opmaerksom-paa-svindlere-naar-du-handler-med-private",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "dk/fake-seller-tickets"
+  ]
+}

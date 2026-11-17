@@ -1,0 +1,135 @@
+{
+  "id": "is/crypto-help-remote-access-call",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "is": "Íslenskt eða erlent númer – „ráðgjafi“",
+    "en": "Icelandic or foreign number – “adviser”"
+  },
+  "name": {
+    "is": "Símtal sem býður „aðstoð“ við rafmynt eða endurheimt",
+    "en": "Call offering “help” with crypto or getting money back"
+  },
+  "how": {
+    "is": "Hringt er, oft úr númeri sem lítur út fyrir að vera íslenskt og oft á ensku, og boðin aðstoð við kaup á rafmynt, þóknun eða útgreiðslu „inneignar“. Þú ert beðin/n um að setja upp AnyDesk eða deila skjánum svo ráðgjafinn geti hjálpað. Þá kemst svikarinn í tölvupóst og heimabanka. Þeim sem þegar hafa tapað er síðan boðin „aðstoð við endurheimt“, sem er framhald sama svindls.",
+    "en": "Someone calls, often from what looks like an Icelandic number and often in English, offering help to buy crypto, a commission, or to pay out a “refund”. You are asked to install AnyDesk or share your screen so the adviser can help. That gives the scammer access to your email and online bank. People who have already lost money are later offered “help to recover it”, which is the same scam continuing."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Ráðgjafi hringir og býður aðstoð við rafmyntakaup, þóknun eða inneign sem þú eigir.",
+        "en": "An adviser calls offering help with crypto, a commission or a refund you are owed."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "is": "Þú ert beðin/n um að setja upp AnyDesk eða deila skjá.",
+        "en": "You are asked to install AnyDesk or share your screen."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "is": "Ráðgjafinn leiðir þig inn í heimabankann og fylgist með öllu.",
+        "en": "The adviser walks you into your online bank and watches everything."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "is": "Seinna hringir einhver og býðst til að endurheimta peningana gegn gjaldi.",
+        "en": "Later someone calls offering to recover the money for a fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Góðan dag, ég hringi frá endurheimtuþjónustu sem vinnur með íslenskum bönkum. Við höfum rakið rafmyntina sem þú tapaðir í fyrra og getum skilað henni. Ég þarf bara að þú setjir upp AnyDesk svo ég geti sýnt þér veskið. Það er smávægilegt losunargjald.",
+        "en": "Hi, I'm calling from a recovery service that works with Icelandic banks. We traced the crypto you lost last year and can return it to you. I just need you to install AnyDesk so I can show you the wallet. There is a small release fee."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "boðin aðstoð við rafmyntakaup",
+      "beðinn um að deila skjánum",
+      "ráðgjafi vildi að ég setti upp anydesk",
+      "boðið að endurheimta tapaða peninga",
+      "inneign sem ég ætti að fá útgreidda",
+      "hringt á ensku úr íslensku númeri"
+    ],
+    "en": [
+      "offered help buying crypto",
+      "asked to share my screen",
+      "adviser wanted me to install AnyDesk",
+      "offered to recover lost money",
+      "refund I was supposed to be paid out",
+      "call in English from an Icelandic number"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "is": [
+      "Ókunnugur býður aðstoð við rafmynt eða endurheimt peninga.",
+      "Beiðni um AnyDesk, TeamViewer eða skjádeilingu.",
+      "Gjald sem þarf að greiða áður en þú færð peningana „til baka“."
+    ],
+    "en": [
+      "A stranger offering help with crypto or recovering money.",
+      "A request for AnyDesk, TeamViewer or screen sharing.",
+      "A fee to pay before you get the money “back”."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Leggðu á. Ef það er of gott til að vera satt er það líklega ekki satt.",
+      "Ef þú settir upp forrit, fjarlægðu það og hringdu strax í bankann.",
+      "Athugaðu hjá Seðlabankanum hvort fyrirtækið hafi leyfi og tilkynntu málið til lögreglu."
+    ],
+    "en": [
+      "Hang up. If it sounds too good to be true, it probably is.",
+      "If you installed a program, remove it and call your bank at once.",
+      "Check with the Central Bank whether the firm is licensed and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/central-bank"
+  ],
+  "sources": [
+    {
+      "title": "Lögreglan varar við ítrekuðum tilraunum til fjársvika",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/logreglan-varar-vid-itrekudum-tilraunum-til-fjarsvika",
+      "date": "2025-05-19"
+    },
+    {
+      "title": "Mikið um svikasímtöl undanfarið",
+      "publisher": "Lögreglan",
+      "url": "https://island.is/s/logreglan/frett/mikid-um-svikasimtol-undanfarid",
+      "date": "2024-09-27"
+    },
+    {
+      "title": "Svikasímtöl",
+      "publisher": "Lögreglan",
+      "url": "https://island.is/s/logreglan/frett/svikasimtol-2",
+      "date": "2024-02-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

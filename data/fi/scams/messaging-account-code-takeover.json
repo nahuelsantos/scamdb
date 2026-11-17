@@ -1,0 +1,145 @@
+{
+  "id": "fi/messaging-account-code-takeover",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "fi": "WhatsApp, Telegram tai Signal (vahvistuskoodi tai \"tuki\")",
+    "en": "WhatsApp, Telegram or Signal (a verification code or “support”)"
+  },
+  "name": {
+    "fi": "Pikaviestitilin kaappaus: vahvistuskoodi, jota et pyytänyt",
+    "en": "Messaging account takeover: a verification code you didn’t ask for"
+  },
+  "how": {
+    "fi": "Saat tekstiviestinä WhatsAppin, Telegramin tai muun pikaviestimen vahvistuskoodin, vaikka et ole rekisteröitymässä. Joku yrittää ottaa tilisi haltuun numerollasi. Usein perään tulee viesti tutulta tai \"tuelta\", jossa koodia pyydetään lähettämään, koska se tuli \"vahingossa\" sinulle. Tilin kaapattuaan rikollinen voi ottaa käyttöön kaksivaiheisen tunnistautumisen, jolloin et saa tiliä takaisin, ja pyytää rahaa yhteystiedoiltasi sinun nimissäsi.",
+    "en": "You get a WhatsApp, Telegram or other messenger verification code by text even though you aren’t registering. Someone is trying to take over your account with your number. Often a message from a friend or “support” follows, asking you to send the code because it reached you “by mistake”. Once the account is taken over, the criminal can turn on two-step verification so you can’t get it back, and ask your contacts for money in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Tekstiviestinä tulee vahvistuskoodi, jota et pyytänyt.",
+        "en": "A verification code you didn’t ask for arrives by text."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Tuttu tai \"tuki\" pyytää lähettämään koodin.",
+        "en": "A friend or “support” asks you to send the code."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Koodi pitää lähettää heti.",
+        "en": "The code must be sent right away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Koodin antaminen luovuttaa tilisi.",
+        "en": "Giving the code hands over your account."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Moi! Sori, lähetin vahingossa kuusinumeroisen koodin sun numeroon kun yritin kirjautua uudelle puhelimelle. Voisitko laittaa sen mulle tänne heti? Se vanhenee parissa minuutissa.",
+        "en": "Hi! Sorry, I accidentally sent a six-digit code to your number while trying to log in on a new phone. Could you send it to me here right away? It expires in a couple of minutes."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "whatsapp vahvistuskoodi jota en pyytänyt",
+      "telegram koodi tekstiviestinä",
+      "lähetä koodi vahingossa sinulle",
+      "kuusinumeroinen koodi kaveri pyytää",
+      "whatsapp tili kaapattu",
+      "pikaviestitilin kaappaus",
+      "kaksivaiheinen tunnistautuminen whatsapp",
+      "signal tuki pyytää koodia",
+      "tilin kaappaus koodi",
+      "koodi tuli vahingossa",
+      "lähetä se koodi minulle",
+      "kaveri pyytää tekstiviestikoodia",
+      "whatsappin vahvistuskoodi",
+      "kirjautui ulos whatsapp koodi"
+    ],
+    "en": [
+      "whatsapp verification code i didn t request",
+      "friend asks for my six digit code",
+      "telegram code by sms",
+      "whatsapp account hijacked",
+      "signal support asked for code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fi": [
+      "Vahvistuskoodi on vain sinua varten: kukaan ei tarvitse sitä \"vahingossa\".",
+      "Tutun nimellä tuleva pyyntö voi tulla jo kaapatulta tililtä.",
+      "WhatsAppin tai Signalin tuki ei pyydä koodeja viestillä."
+    ],
+    "en": [
+      "A verification code is for you only: nobody needs it “by mistake”.",
+      "A request in a friend’s name may come from an account that is already hijacked.",
+      "WhatsApp or Signal support doesn’t ask for codes by message."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Älä anna koodia kenellekään. Poista viesti.",
+      "Ota sovelluksen asetuksista käyttöön kaksivaiheinen tunnistautuminen.",
+      "Jos tili kaapattiin, varoita yhteystietojasi muuta kautta ja ilmoita Kyberturvallisuuskeskukselle.",
+      "Jos sinun nimissäsi on pyydetty rahaa, tee rikosilmoitus."
+    ],
+    "en": [
+      "Don’t give the code to anyone. Delete the message.",
+      "Turn on two-step verification in the app’s settings.",
+      "If the account was hijacked, warn your contacts another way and report it to the NCSC.",
+      "If money was asked for in your name, file a police report."
+    ]
+  },
+  "reportTo": [
+    "fi/ncsc-report",
+    "fi/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 3/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-32026",
+      "date": "2026-01-16"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 19/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-192026",
+      "date": "2026-05-08"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 33/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-332026",
+      "date": "2026-08-14"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "fi/hei-aiti-new-number"
+  ]
+}

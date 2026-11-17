@@ -1,0 +1,136 @@
+{
+  "id": "dk/fake-seller-tickets",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "da": "En privat sælger på DBA, i en Facebook-gruppe eller på Marketplace",
+    "en": "A private seller on DBA, in a Facebook group or on Marketplace"
+  },
+  "name": {
+    "da": "Falsk sælger: billetter, telefoner og barnevogne, der aldrig kommer",
+    "en": "Fake seller: tickets, phones and prams that never arrive"
+  },
+  "how": {
+    "da": "Svindlere sætter populære ting til salg – festival- og koncertbilletter, telefoner, barnevogne – ofte billigt og især når noget er udsolgt. De har en undskyldning for, hvorfor du ikke kan se varen, og vil have pengene først. Billetter bliver aldrig sendt, eller den samme billet er solgt til flere, så du bliver afvist ved indgangen. Profilen og annoncen forsvinder efter betalingen.",
+    "en": "Scammers put popular items up for sale – festival and concert tickets, phones, prams – often cheap and especially when something is sold out. They have an excuse for why you can't see the item and want the money first. Tickets are never sent, or the same ticket is sold to several people so you're turned away at the gate. The profile and ad disappear after payment."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Annonce eller opslag med en eftertragtet vare eller udsolgte billetter, ofte billigt.",
+        "en": "Ad or post with a sought-after item or sold-out tickets, often cheap."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "da": "Sælgeren kan ikke mødes og har altid en undskyldning.",
+        "en": "The seller can't meet and always has an excuse."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Du skal betale nu, ellers går varen til en anden.",
+        "en": "You must pay now or the item goes to someone else."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Pengene skal overføres først – via MobilePay eller bankoverførsel.",
+        "en": "The money must be transferred first – via MobilePay or bank transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Hej! Jeg har 2 partoutbilletter til festivalen, kan desværre ikke selv komme pga. arbejde. Du kan få dem til 1.900 pr. stk. Der er flere der har skrevet, så hvis du vil have dem, skal du MobilePay'e i dag, så sender jeg billetterne på mail med det samme.",
+        "en": "Hi! I have 2 full festival passes, unfortunately I can't go myself because of work. You can have them for 1,900 each. Several people have written, so if you want them you need to MobilePay today, then I'll email the tickets straight away."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "festivalbilletter facebook gruppe aldrig modtaget",
+      "sælger dba sendte aldrig varen",
+      "billet solgt flere afvist indgang",
+      "betalte mobilepay sælger forsvandt",
+      "udsolgt koncert billetter billigt svindel",
+      "sælger undskyldning mødes betal først"
+    ],
+    "en": [
+      "festival tickets facebook never arrived",
+      "seller on dba never sent the item",
+      "ticket sold to several people",
+      "paid by mobilepay and seller vanished",
+      "seller won't meet wants payment first"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "da": [
+      "En pris langt under markedet eller udsolgte billetter, der pludselig er til salg.",
+      "En ny profil med få venner og ingen aktivitet.",
+      "Sælgeren vil ikke mødes eller vise varen."
+    ],
+    "en": [
+      "A price far below market or sold-out tickets suddenly for sale.",
+      "A new profile with few friends and no activity.",
+      "The seller won't meet or show the item."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Køb billetter via den officielle sælger eller dens videresalg.",
+      "Mød sælgeren, og se varen, før du betaler.",
+      "Har du betalt? Kontakt banken, gem skærmbilleder, og anmeld det på politi.dk."
+    ],
+    "en": [
+      "Buy tickets via the official seller or its resale service.",
+      "Meet the seller and see the item before you pay.",
+      "Already paid? Contact the bank, keep screenshots and report it at politi.dk."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Afvis billetsvindlerne og kom sikkert på festival",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/afvis-billetsvindlerne-og-kom-sikkert-paa-festival",
+      "date": "2026-06-02"
+    },
+    {
+      "title": "Vær opmærksom på svindlere, når du handler med private",
+      "publisher": "Ældre Sagen og Styrelsen for Samfundssikkerhed",
+      "url": "https://www.aeldresagen.dk/viden-og-raadgivning/hverdagsliv/sikkerhed-paa-nettet/undgaa-svindel/vaer-opmaerksom-paa-svindlere-naar-du-handler-med-private",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "dk/marketplace-fake-buyer",
+    "dk/fake-webshop"
+  ]
+}

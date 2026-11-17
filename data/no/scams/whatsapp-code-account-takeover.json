@@ -1,0 +1,132 @@
+{
+  "id": "no/whatsapp-code-account-takeover",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "no": "En venn i WhatsApp eller Messenger, «WhatsApp support» eller en «automatisk tjeneste»",
+    "en": "A friend on WhatsApp or Messenger, “WhatsApp support” or an “automated service”"
+  },
+  "name": {
+    "no": "Kodesvindel i meldingsapper: send meg koden, så tar de over kontoen",
+    "en": "Code scam in messaging apps: send me the code, and they take over the account"
+  },
+  "how": {
+    "no": "Du får en sikkerhetskode på SMS, og straks etter en melding fra en venn (som allerede er hacket), fra «support» eller om en «premie» du har vunnet: Koden ble sendt til deg ved en feil, eller må oppgis for å bekrefte. Gir du koden, logger svindlerne inn på kontoen din i WhatsApp, Signal eller Facebook og låser deg ute. Så skriver de til kontaktene dine i ditt navn og ber om penger eller nye koder.",
+    "en": "You receive a security code by text, and straight after a message from a friend (who has already been hacked), from “support” or about a “prize” you won: the code was sent to you by mistake, or must be given to confirm. If you give the code, the scammers log in to your WhatsApp, Signal or Facebook account and lock you out. Then they write to your contacts in your name asking for money or more codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "Du får en sikkerhetskode du ikke har bedt om.",
+        "en": "You get a security code you didn’t ask for."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "no": "En kjent kontakt eller «support» ber deg sende koden.",
+        "en": "A known contact or “support” asks you to send the code."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Det haster, eller det er en premie som må bekreftes.",
+        "en": "It is urgent, or there is a prize to confirm."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "Kontoen din blir overtatt og brukt til å lure vennene dine.",
+        "en": "Your account is taken over and used to trick your friends."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Heisann! Sorry, jeg prøvde å logge inn på den nye telefonen og skrev visst inn ditt nummer ved en feil 😅 Du fikk nettopp en 6-sifret kode på SMS, kan du sende den til meg? Trenger den skikkelig nå",
+        "en": "Hi there! Sorry, I was trying to log in on my new phone and must have typed your number by mistake 😅 You just got a 6-digit code by text, can you send it to me? Really need it now"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "venn ba om koden jeg fikk på sms",
+      "whatsapp kode sendt ved en feil",
+      "kontoen min på whatsapp ble overtatt",
+      "facebook premie oppgi kode fra sms",
+      "noen logget inn på whatsapp med min kode",
+      "støtte ba om verifiseringskode",
+      "sende sekssifret kode til venn",
+      "kode på sms videresende i whatsapp"
+    ],
+    "en": [
+      "friend asked for the code I got by text",
+      "whatsapp code sent to me by mistake",
+      "my whatsapp account was taken over",
+      "messenger prize asked for an sms code",
+      "support asked for my verification code"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "no": [
+      "Verifiserings- og sikkerhetskoder skal aldri deles med noen, heller ikke venner.",
+      "Support eller automatiske systemer i appene ber ikke om koden din i en melding.",
+      "En kjent kontakt kan være hacket: Ring personen før du gjør noe."
+    ],
+    "en": [
+      "Verification and security codes must never be shared with anyone, friends included.",
+      "Support or automated systems in the apps don’t ask for your code in a message.",
+      "A known contact may be hacked: call them before you do anything."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke send koden. Ring vennen på et nummer du kjenner.",
+      "Slå på totrinnsbekreftelse og fjern ukjente koblede enheter i appen.",
+      "Er kontoen overtatt? Logg inn på nytt med nummeret ditt, og varsle kontaktene dine."
+    ],
+    "en": [
+      "Don’t send the code. Call your friend on a number you know.",
+      "Turn on two-step verification and remove unknown linked devices in the app.",
+      "Has the account been taken over? Log in again with your number, and warn your contacts."
+    ]
+  },
+  "reportTo": [
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Hackeralarm: Nå jakter de WhatsApp- og Signal-kontoen din",
+      "publisher": "Nasjonal kommunikasjonsmyndighet (NTB Kommunikasjon)",
+      "url": "https://kommunikasjon.ntb.no/pressemelding/18837732/hackeralarm-na-jakter-de-whatsapp-og-signal-kontoen-din?lang=no",
+      "date": "2026-03-18"
+    },
+    {
+      "title": "– Vær obs på at DNB og andres navn ofte blir misbrukt",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/vaer-obs-pa-svindel-pa-sms--whatsapp-og-e-post",
+      "date": "2025-10-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/hei-mamma-new-number"
+  ]
+}

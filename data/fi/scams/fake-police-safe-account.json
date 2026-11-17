@@ -1,0 +1,162 @@
+{
+  "id": "fi/fake-police-safe-account",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "fi": "Poliisi tai pankin edustaja puhelimessa tai Google Meet -videopuhelussa",
+    "en": "The police or a bank representative on the phone or in a Google Meet video call"
+  },
+  "name": {
+    "fi": "Valepoliisi ja \"turvatili\": rahat pitää siirtää turvaan",
+    "en": "Fake police and a “safe account”: your money must be moved to safety"
+  },
+  "how": {
+    "fi": "Rikollinen ottaa yhteyttä poliisin tai pankin nimissä, puhelimitse tai nykyään myös Google Meet -videopuhelulla, jossa voidaan käyttää tunnettujen poliisien kasvoja ja syväväärennöksiä. Hän väittää, että tililläsi on epäilyttävää toimintaa, rikollinen on päässyt rahoihisi tai sinua epäillään rikoksesta. Rahat pitää siirtää heti \"turvatilille\", tunnukset ja koodit pitää kertoa tai asiakirjat näyttää kameralle. Uhkailuna voi olla tilien sulkeminen, pidätys tai maasta karkottaminen. Usein huijaus on kaksivaiheinen: ensin tulee viesti tai puhelu yrityksen nimissä, sitten \"virkailija\" soittaa.",
+    "en": "A criminal contacts you in the name of the police or a bank, by phone or now also in a Google Meet video call, where the faces of well-known police officers and deepfakes may be used. They claim there is suspicious activity on your account, a criminal has got to your money or you are suspected of a crime. The money must be moved straight away to a “safe account”, codes must be given or documents shown to the camera. Threats can include closing your accounts, arrest or deportation. Often it comes in two stages: first a message or call in a company’s name, then an “official” calls."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Soittaja esittäytyy poliisiksi tai pankin edustajaksi, joskus videopuhelussa.",
+        "en": "The caller says they are police or from the bank, sometimes on a video call."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Rahasi ovat vaarassa tai sinua epäillään rikoksesta; pitää toimia heti.",
+        "en": "Your money is at risk or you are suspected of a crime; you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fi": "Puhelua ei saa katkaista eikä asiasta saa kertoa muille.",
+        "en": "You must not hang up or tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "fi": "Sinua pyydetään kertomaan tunnukset tai näyttämään kortti ja asiakirjat kameralle.",
+        "en": "You are asked for your codes or to show your card and documents to the camera."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fi": "Lopuksi rahat pitää siirtää \"turvatilille\".",
+        "en": "Finally the money must be moved to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Hyvää iltapäivää, täällä rikosylikonstaapeli Laaksonen Helsingin poliisista. Tutkimme verkkopankkipetosta, ja nimesi on tullut esiin. Tilillesi on kirjauduttu tänään kahdesti. Varojesi suojaamiseksi siirrämme ne väliaikaisesti suojatulle tilille, ja tarvitsen siihen tunnistautumisesi. Älä katkaise puhelua äläkä kerro tästä pankin konttorissa, koska epäilemme, että sisäpiiri on mukana.",
+        "en": "Good afternoon, this is Detective Sergeant Laaksonen from the Helsinki police. We are investigating an online banking fraud and your name has come up. Someone has logged in to your account twice today. To protect your funds we will move them temporarily to a protected account, and I need you to identify yourself for that. Don’t hang up and don’t mention this at your bank branch, because we suspect insiders are involved."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "valepoliisi soitti",
+      "poliisi soittaa pankkitunnukset",
+      "turvatili siirrä rahat",
+      "rahat turvaan uudelle tilille",
+      "turvatilipetos",
+      "poliisi videopuhelu google meet",
+      "poliisin nimissä huijauspuhelu",
+      "pankin edustaja videopuhelu",
+      "näytä kortti kameralle",
+      "uhkaa pidätyksellä puhelimessa",
+      "epäillään rikoksesta soittaja",
+      "kielsi kertomasta pankille",
+      "keskusrikospoliisi soitti",
+      "krp soitti rahat",
+      "rahanpesuepäily puhelu",
+      "säästöt siirrettävä suojatulle tilille",
+      "tutkinta salainen pankki"
+    ],
+    "en": [
+      "fake police officer called",
+      "move money to a safe account",
+      "police video call google meet",
+      "asked to show my card on camera",
+      "threatened with arrest on the phone",
+      "told not to tell my bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "keep_on_line",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "fi": [
+      "Turvatiliä ei ole olemassa. Poliisi tai pankki ei koskaan pyydä siirtämään rahaa turvaan.",
+      "Poliisi ei pyydä pankkitunnuksia eikä soita Google Meetin kautta näyttääkseen tunnuksia.",
+      "Tuttu kasvo videolla ei todista mitään: se voi olla syväväärennös.",
+      "Pyyntö pitää asia salassa omalta pankilta on huijauksen merkki."
+    ],
+    "en": [
+      "There is no such thing as a safe account. The police or a bank never ask you to move money to safety.",
+      "The police don’t ask for online banking codes and don’t call on Google Meet to show their ID.",
+      "A familiar face on video proves nothing: it can be a deepfake.",
+      "Being told to keep it secret from your own bank is a sign of a scam."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Katkaise puhelu. Älä näytä kortteja tai asiakirjoja kameralle.",
+      "Jos joku on tulossa hakemaan rahaa tai korttia, soita 112.",
+      "Google Meetissä voit sallia puhelut vain omilta yhteystiedoiltasi.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Hang up. Don’t show cards or documents to the camera.",
+      "If someone is coming to collect money or a card, call 112.",
+      "In Google Meet you can allow calls only from your own contacts.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/emergency-112",
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 44/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-442026",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Poliisi varoittaa: Katala huijaus hyödyntää kiireen ja hädän tunteita",
+      "publisher": "MTV Uutiset",
+      "url": "https://www.mtvuutiset.fi/artikkeli/poliisi-varoittaa-katala-huijaus-hyodyntaa-kiireen-ja-hadan-tunteita/9160548",
+      "date": "2025-05-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "fi/bank-robocall-security-department"
+  ]
+}

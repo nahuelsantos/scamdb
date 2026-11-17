@@ -1,0 +1,137 @@
+{
+  "id": "dk/hej-mor-new-number",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "da": "Dit barn, en ven eller et familiemedlem – fra et ukendt nummer eller en kopieret profil",
+    "en": "Your child, a friend or a relative – from an unknown number or a copied profile"
+  },
+  "name": {
+    "da": "“Hej mor”-svindel: nyt nummer, akut regning",
+    "en": "“Hi mum”: your child has a new number and needs a bill paid"
+  },
+  "how": {
+    "da": "Du får en sms eller WhatsApp-besked fra et ukendt nummer: “Hej mor/far, min telefon er gået i stykker, det her er mit nye nummer.” Kort efter kommer en regning, der skal betales i dag, men “barnet” kan ikke komme ind på MitID eller netbank på den nye telefon. Du bliver bedt om at overføre pengene. Varianter bruger hackede eller kopierede profiler på Messenger og Snapchat (“min MobilePay virker ikke”) eller en AI-klonet stemme.",
+    "en": "You get a text or WhatsApp message from an unknown number: “Hi mum/dad, my phone broke, this is my new number.” Soon a bill arrives that must be paid today, but the “child” can't get into MitID or online banking on the new phone. You're asked to transfer the money. Variants use hacked or copied profiles on Messenger and Snapchat (“my MobilePay isn't working”) or an AI-cloned voice."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Besked fra ukendt nummer: “det er mig, jeg har fået nyt nummer”.",
+        "en": "Message from an unknown number: “it's me, I have a new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "da": "Personen kan ikke tale i telefon og svarer uklart på spørgsmål.",
+        "en": "The person can't talk on the phone and gives vague answers."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "En regning skal betales i dag, men MitID eller netbank virker ikke på den nye telefon.",
+        "en": "A bill must be paid today but MitID or online banking doesn't work on the new phone."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Du bliver bedt om at overføre pengene til en konto, du ikke kender.",
+        "en": "You're asked to transfer the money to an account you don't know."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Hej mor 😊 min telefon røg på gulvet og er helt død, så jeg skriver fra det her nummer. Du må gerne gemme det og slette det gamle. Jeg har lidt et problem, min husleje skal betales i dag og jeg kan ikke komme på MitID før jeg får ny telefon. Kan du lægge 6.450 kr. ud? Jeg sender dig kontonummeret. Giver dig dem tilbage på fredag ❤️",
+        "en": "Hi mum 😊 my phone fell on the floor and is completely dead, so I'm writing from this number. Please save it and delete the old one. I've got a bit of a problem, my rent has to be paid today and I can't get on MitID until I get a new phone. Could you cover 6,450 kroner? I'll send you the account number. I'll pay you back on Friday ❤️"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "hej mor nyt nummer",
+      "barn mistet telefon skriver ukendt nummer",
+      "datter beder betale regning mitid virker",
+      "søn nyt nummer penge",
+      "gem nyt nummer slet gamle",
+      "telefon gået stykker regning betales idag",
+      "ven messenger profil kopieret penge"
+    ],
+    "en": [
+      "hi mum new number text",
+      "child lost phone writing from unknown number",
+      "daughter asks me to pay a bill",
+      "son has a new number and needs money",
+      "save my new number delete the old one"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "da": [
+      "Et nyt nummer + en regning, der skal betales i dag, er det klassiske mønster.",
+      "Personen vil ikke eller kan ikke tale i telefon.",
+      "Pengene skal til en konto i et andet navn end dit barns."
+    ],
+    "en": [
+      "A new number plus a bill that must be paid today is the classic pattern.",
+      "The person won't or can't talk on the phone.",
+      "The money is to go to an account in a name other than your child's."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Ring til barnets gamle nummer – virker det, er beskeden falsk.",
+      "Stil et spørgsmål, kun den rigtige person kan svare på.",
+      "Overfør ikke penge, før du har talt med personen.",
+      "Har du betalt? Kontakt banken straks, og anmeld det til politiet."
+    ],
+    "en": [
+      "Call your child's old number – if it works, the message is fake.",
+      "Ask a question only the real person can answer.",
+      "Don't transfer money until you've spoken to the person.",
+      "Already paid? Contact the bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "\"Hej mor\"-svindel: Sådan spotter du falske beskeder fra bekendte",
+      "publisher": "Forbrugerrådet Tænk",
+      "url": "https://taenk.dk/forbrugerliv/elektronik-og-digitale-tjenester/hej-mor-svindel-saadan-genkender-du-falske-beskeder",
+      "date": "2026-03-24"
+    },
+    {
+      "title": "Rekordmange rammes af svindelbeskeder – sådan gennemskuer du dem",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/rekordmange-rammes-af-svindelbeskeder-saadan-gennemskuer-du-dem",
+      "date": "2026-08-31"
+    },
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

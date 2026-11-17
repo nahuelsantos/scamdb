@@ -1,0 +1,127 @@
+{
+  "id": "is/fake-police-court-email",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "is": "„Ríkislögreglustjóri“ / „Lögreglan“",
+    "en": "“National Police Commissioner” / “Police”"
+  },
+  "name": {
+    "is": "Falskur tölvupóstur frá lögreglu um dómsmál",
+    "en": "Fake police email about a court case"
+  },
+  "how": {
+    "is": "Tölvupóstur sem virðist frá lögreglu, ríkislögreglustjóra eða dómsmálaráðuneytinu segir að hafið sé dómsmál gegn þér vegna netbrota eða kynferðisbrota. Í viðhengi er bréf með nafni ríkislögreglustjóra. Þér er sagt að svara fljótt, opna viðhengi eða smella á hlekk til að forðast handtöku eða ákæru. Markmiðið er að hræða þig til að gefa upp persónu- eða kortaupplýsingar eða greiða „sekt“.",
+    "en": "An email that looks like it comes from the police, the National Police Commissioner or the Ministry of Justice says court proceedings have started against you over online or sexual offences. The attachment is a letter bearing the commissioner's name. You are told to reply fast, open the attachment or click a link to avoid arrest or charges. The aim is to frighten you into giving personal or card details or paying a “fine”."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Tölvupóstur í nafni lögreglu segir að mál hafi verið höfðað gegn þér.",
+        "en": "An email in the police's name says a case has been opened against you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Ásakanir eru alvarlegar og skammarlegar svo þú þorir ekki að spyrja neinn.",
+        "en": "The accusations are serious and shameful, so you don't dare ask anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "is": "Þú átt að svara innan stutts frests til að forðast handtöku.",
+        "en": "You must reply within a short deadline to avoid arrest."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Viðhengi eða hlekkur biður um persónuupplýsingar, kortanúmer eða greiðslu.",
+        "en": "An attachment or link asks for personal details, a card number or a payment."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Efni: Opinber tilkynning – upphaf dómsmáls\nÁ grundvelli rannsóknar netglæpadeildar hefur verið höfðað mál gegn yður. Yður ber að svara innan 72 klst., annars verður gefin út handtökuskipun. Sjá fylgiskjal og svarið á [hlekkur].\nEmbætti ríkislögreglustjóra",
+        "en": "Subject: Official notice – start of court proceedings\nFollowing an investigation by the cybercrime unit, proceedings have been opened against you. You must respond within 72 hours or an arrest warrant will be issued. See the attachment and reply at [link].\nNational Police Commissioner"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "tölvupóstur frá lögreglunni um dómsmál",
+      "ríkislögreglustjóri sendi mér bréf",
+      "sakaður um netbrot í tölvupósti",
+      "handtökuskipun ef ég svara ekki",
+      "viðhengi frá dómsmálaráðuneytinu",
+      "lögreglan vill svar innan 72 tíma"
+    ],
+    "en": [
+      "email from the police about a court case",
+      "national police commissioner sent me a letter",
+      "accused of online crimes by email",
+      "arrest warrant if I don't reply",
+      "attachment from the Ministry of Justice",
+      "police want a reply within 72 hours"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "is": [
+      "Lögreglan tilkynnir ekki dómsmál með óvæntum tölvupósti með viðhengi.",
+      "Hótun um handtöku nema þú svarir eða greiðir strax.",
+      "Einkennilegt orðalag, rangt nafn á stofnun eða netfang sem er ekki frá lögreglunni."
+    ],
+    "en": [
+      "The police don't announce court cases by surprise email with an attachment.",
+      "A threat of arrest unless you reply or pay at once.",
+      "Odd wording, a wrong agency name or an address that isn't the police's."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Ekki svara, ekki opna viðhengið og ekki smella á hlekki.",
+      "Ef þú ert óviss, hafðu samband við lögregluna í gegnum opinbert símanúmer eða vef.",
+      "Áframsendu póstinn á CERT-IS og lögregluna og eyddu honum svo."
+    ],
+    "en": [
+      "Don't reply, don't open the attachment and don't click links.",
+      "If unsure, contact the police through their official number or website.",
+      "Forward the email to CERT-IS and the police, then delete it."
+    ]
+  },
+  "reportTo": [
+    "is/police",
+    "is/cert-is"
+  ],
+  "sources": [
+    {
+      "title": "Varúð! Svikapóstar í nafni lögreglu og ríkislögreglustjóra",
+      "publisher": "Ríkislögreglustjóri",
+      "url": "https://island.is/s/logreglan/frett/varud-svikapostar-i-nafni-loegreglu-og-rikisloegreglustjora",
+      "date": "2026-08-26"
+    },
+    {
+      "title": "Varúð! Svikapóstar í nafni lögreglu og dómsmálaráðuneytisins",
+      "publisher": "Ríkislögreglustjóri",
+      "url": "https://island.is/s/logreglan/frett/varud-svikapostar-i-nafni-loegreglu-og-domsmalaraduneytisins",
+      "date": "2026-01-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

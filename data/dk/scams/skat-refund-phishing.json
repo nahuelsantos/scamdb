@@ -1,0 +1,130 @@
+{
+  "id": "dk/skat-refund-phishing",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "da": "Skattestyrelsen, SKAT eller skat.dk",
+    "en": "The Danish Tax Agency, SKAT or skat.dk"
+  },
+  "name": {
+    "da": "Falsk Skattestyrelsen: “penge tilbage i skat” – bekræft betalingsoplysninger",
+    "en": "Fake Tax Agency: “you have a tax refund – confirm your details”"
+  },
+  "how": {
+    "da": "Især når årsopgørelsen kommer, får mange mails og sms'er om, at de har penge tilbage i skat – ofte med et præcist beløb og en frist på få dage. Linket fører til en kopi af skat.dk, hvor du skal oplyse CPR-nummer, MitID eller kortoplysninger for at få pengene. Andre beskeder handler om gæld eller en betaling til “Skattekontoen”. Nogle ringer også og udgiver sig for at være fra Skattestyrelsen.",
+    "en": "Especially when the annual tax statement arrives, many people get emails and texts saying they have a tax refund – often with an exact amount and a deadline of a few days. The link leads to a copy of skat.dk where you must give your CPR number, MitID or card details to get the money. Other messages are about debt or a payment to the “tax account”. Some also call pretending to be from the Tax Agency."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Mail eller sms: du har penge tilbage i skat, med et præcist beløb.",
+        "en": "Email or text: you have a tax refund, with an exact amount."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Du skal bekræfte inden for få dage, ellers bortfalder udbetalingen.",
+        "en": "You must confirm within a few days or the payout lapses."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Linket fører til en falsk skat.dk-side.",
+        "en": "The link leads to a fake skat.dk page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Du skal oplyse kortnummer, CPR eller MitID for at “modtage” pengene.",
+        "en": "You must give your card number, CPR or MitID to “receive” the money."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Skattestyrelsen: Efter genberegning af din årsopgørelse har du 3.412,60 kr. til gode. Beløbet kan ikke udbetales til din NemKonto, før du har bekræftet dine betalingsoplysninger. Bekræft inden 72 timer: [link]",
+        "en": "Danish Tax Agency: After recalculating your annual statement you are owed 3,412.60 kroner. The amount cannot be paid to your NemKonto until you have confirmed your payment details. Confirm within 72 hours: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "penge tilbage skat mail",
+      "skattestyrelsen sms tilbagebetaling",
+      "årsopgørelse bekræft betalingsoplysninger",
+      "skat.dk falsk side kortnummer",
+      "overskydende skat link",
+      "skattekonto mobilepay anmodning"
+    ],
+    "en": [
+      "tax refund email denmark",
+      "tax agency text refund link",
+      "annual tax statement confirm card",
+      "fake skat site card details",
+      "overpaid tax payout link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "da": [
+      "Overskydende skat udbetales automatisk til din NemKonto – du skal aldrig oplyse kortoplysninger.",
+      "Skattestyrelsen skriver ikke beløb i mails og sms'er og beder ikke om konto- eller kortoplysninger.",
+      "Skattestyrelsen sender ikke betalingsanmodninger til Skattekontoen via MobilePay."
+    ],
+    "en": [
+      "Overpaid tax is paid automatically to your NemKonto – you never need to give card details.",
+      "The Tax Agency doesn't put amounts in emails and texts and doesn't ask for account or card details.",
+      "The Tax Agency doesn't send payment requests for the tax account via MobilePay."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Klik ikke. Log selv ind på skat.dk med MitID for at se din årsopgørelse.",
+      "Har du tastet kort- eller MitID-oplysninger? Kontakt banken, og spær det med det samme.",
+      "Anmeld beskeden til politiet."
+    ],
+    "en": [
+      "Don't click. Log in to skat.dk yourself with MitID to see your annual statement.",
+      "Typed in card or MitID details? Contact your bank and block them straight away.",
+      "Report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/cyberhotline",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Forsøg på svindel: Sådan spotter du falske mails og sms'er",
+      "publisher": "Skattestyrelsen (skat.dk)",
+      "url": "https://skat.dk/sikkerhed/pas-paa-falske-mails-og-identitetstyveri/saadan-spotter-du-falske-mails-og-smser",
+      "date": "2026-10-22"
+    },
+    {
+      "title": "Svindlere står klar, når årsopgørelsen lander",
+      "publisher": "Nordea Danmark",
+      "url": "https://www.nordea.com/da/nyhed/svindlere-staar-klar-naar-aarsopgoerelsen-lander",
+      "date": "2026-03-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

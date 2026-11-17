@@ -1,0 +1,127 @@
+{
+  "id": "is/ai-voice-police-chief-call",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "is": "Leyninúmer – „ríkislögreglustjóri“",
+    "en": "Hidden number – “National Police Commissioner”"
+  },
+  "name": {
+    "is": "Gervigreindarsímtal frá „ríkislögreglustjóra“ um sekt",
+    "en": "AI voice call from the “police chief” about a fine"
+  },
+  "how": {
+    "is": "Hringt er úr leyninúmeri og rödd búin til með gervigreind kynnir sig sem ríkislögreglustjóra. Röddin segist hringja vegna alvarlegs afbrots og spyr hvort þú hafir þegar greitt sekt vegna málsins. Síðan er reynt að fá kortanúmer eða láta þig samþykkja rafræn skilríki. Lögreglan innheimtir ekki sektir í gegnum síma.",
+    "en": "A call comes from a hidden number and an AI-generated voice introduces itself as the National Police Commissioner. The voice says it is calling about a serious crime and asks whether you have already paid a fine over it. Then it tries to get your card number or make you approve an electronic ID request. The police never collect fines by phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Hringt er úr leyninúmeri; rödd segist vera ríkislögreglustjóri.",
+        "en": "A hidden number calls; a voice says it is the National Police Commissioner."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Röddin talar um alvarlegt afbrot sem tengist þér.",
+        "en": "The voice talks about a serious crime linked to you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Spurt er hvort þú hafir greitt sekt og boðið að ganga frá henni núna.",
+        "en": "You are asked whether you paid the fine and offered to settle it now."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "is": "Beðið er um kortanúmer eða að samþykkja rafræn skilríki á meðan þú ert í símanum.",
+        "en": "You are asked for your card number or to approve an electronic ID request while still on the call."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "[Upptekin rödd] Góðan dag, þetta er ríkislögreglustjóri. Ég hringi vegna alvarlegs brots sem er skráð á þig. Hefur þú þegar greitt sektina vegna málsins? Ef ekki, getum við gengið frá henni núna í símanum. Vinsamlegast hafðu kortið tilbúið.",
+        "en": "[Recorded voice] Good day, this is the National Police Commissioner. I am calling about a serious offence registered to you. Have you already paid the fine for this case? If not, we can settle it now on the phone. Please have your card ready."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "ríkislögreglustjóri hringdi í mig",
+      "gervigreindarrödd frá lögreglunni",
+      "spurð hvort ég hefði greitt sekt",
+      "hringt úr leyninúmeri vegna afbrots",
+      "lögreglan vildi kortanúmer í símanum",
+      "sekt greidd í gegnum síma",
+      "tölvurödd sagðist vera lögreglustjórinn",
+      "alvarlegt mál til rannsóknar hjá lögreglunni",
+      "borga sekt lögreglunnar með korti"
+    ],
+    "en": [
+      "the police commissioner called me",
+      "AI voice from the police",
+      "asked if I had paid a fine",
+      "hidden number calling about a crime",
+      "police wanted my card number on the phone",
+      "paying a fine over the phone",
+      "computer voice said it was the police chief",
+      "serious case under police investigation",
+      "pay a police fine by card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "is": [
+      "Lögreglan innheimtir ekki sektir í gegnum síma.",
+      "Yfirmaður lögreglunnar hringir ekki sjálfur í fólk úr leyninúmeri.",
+      "Beiðni um kortanúmer eða rafræn skilríki í símtali sem þú áttir ekki von á."
+    ],
+    "en": [
+      "The police don't collect fines by phone.",
+      "The head of the police doesn't personally ring people from a hidden number.",
+      "A request for a card number or electronic ID in a call you weren't expecting."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Leggðu á. Gefðu aldrei upp kortanúmer í síma.",
+      "Samþykktu ekki rafræna auðkenningu nema þú sért sjálf/ur að skrá þig inn.",
+      "Ef þú gafst upp upplýsingar eða tapaðir peningum, hafðu strax samband við bankann og tilkynntu málið til lögreglu."
+    ],
+    "en": [
+      "Hang up. Never give a card number over the phone.",
+      "Don't approve an electronic ID request unless you are logging in yourself.",
+      "If you gave details or lost money, call your bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police"
+  ],
+  "sources": [
+    {
+      "title": "Varað við svikasímtölum",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/varad-vid-svikasimtoelum",
+      "date": "2026-02-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

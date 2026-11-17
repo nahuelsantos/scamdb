@@ -1,0 +1,135 @@
+{
+  "id": "no/investment-recovery-scam",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "no": "Et «gjenvinningsselskap», en «advokat» eller «myndighet»",
+    "en": "A “recovery company”, a “lawyer” or an “authority”"
+  },
+  "name": {
+    "no": "«Vi kan hente tilbake pengene dine»: svindel mot tidligere svindelofre",
+    "en": "“We can get your money back”: fraud targeting earlier victims"
+  },
+  "how": {
+    "no": "Har du tapt penger på investeringssvindel, kan du bli kontaktet igjen. Et selskap sier det har funnet midler i ditt navn fra en tidligere plattform, eller at det kan få tilbake tapet ditt. De ber om opplysninger om investeringene og tapene dine, og deretter om gebyrer, skatt eller avgifter før pengene kan utbetales. Det er de samme svindlerne eller nye, og navn og telefonnumre blir ofte misbrukt.",
+    "en": "If you have lost money to investment fraud, you may be contacted again. A company says it has found funds in your name from an earlier platform, or that it can recover your loss. They ask for details of your investments and losses, then for fees, tax or charges before the money can be paid out. They are the same scammers or new ones, and names and phone numbers are often misused."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "Uoppfordret kontakt: De vet at du har tapt penger før.",
+        "en": "Unsolicited contact: they know you lost money before."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "De har «funnet» pengene dine eller kan få dem tilbake.",
+        "en": "They have “found” your money or can get it back."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "no": "De ber om opplysninger om tidligere investeringer, kontoer og ID.",
+        "en": "They ask for details of past investments, accounts and ID."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "no": "Før utbetaling må du betale et gebyr eller skatt.",
+        "en": "Before payout you must pay a fee or tax."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Hei, jeg ringer fra et selskap som jobber med tilbakeføring av midler. Vi har sporet 86 000 kroner som står registrert på deg fra en tradingkonto du hadde i 2024. For å frigjøre beløpet må det betales et behandlingsgebyr på 7 500 kroner. Kan du sende meg kopi av ID-en din og kontoutskriftene fra den gangen?",
+        "en": "Hi, I’m calling from a company that works on returning funds. We have traced 86,000 kroner registered to you from a trading account you had in 2024. To release the amount, a processing fee of 7,500 kroner must be paid. Can you send me a copy of your ID and your account statements from back then?"
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "få tilbake tapte penger investering",
+      "selskap fant penger i mitt navn",
+      "gebyr for å frigjøre midler",
+      "hjelp etter kryptosvindel ringer",
+      "advokat lover å hente pengene",
+      "betale skatt før utbetaling av tap",
+      "tilbakeføring av tapte midler tradingplattform",
+      "behandlingsgebyr for å få pengene tilbake",
+      "kopi av pass for utbetaling av tap"
+    ],
+    "en": [
+      "company says it can recover my lost money",
+      "they found funds in my name",
+      "fee to release my money",
+      "contacted after crypto scam offering help",
+      "pay tax before getting my money back"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "no": [
+      "Uoppfordrede tilbud om å hente tilbake tapte penger er ofte svindel.",
+      "Du skal aldri betale gebyr eller skatt for å få tilbake dine egne penger.",
+      "De vet om tapet ditt fordi opplysningene er solgt eller fordi det er de samme svindlerne."
+    ],
+    "en": [
+      "Unsolicited offers to recover lost money are often fraud.",
+      "You should never pay a fee or tax to get your own money back.",
+      "They know about your loss because the details were sold, or because they are the same scammers."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke betal og ikke del ID, kontoopplysninger eller detaljer om tidligere investeringer.",
+      "Sjekk selskapet hos Finanstilsynet.",
+      "Snakk med banken din og legg ved den nye henvendelsen i anmeldelsen til politiet."
+    ],
+    "en": [
+      "Don’t pay and don’t share ID, account details or details of past investments.",
+      "Check the company with Finanstilsynet.",
+      "Talk to your bank and add the new contact to your police report."
+    ]
+  },
+  "reportTo": [
+    "no/finanstilsynet",
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Finanstilsynet advarer mot HelpInNeedFinance",
+      "publisher": "Finanstilsynet",
+      "url": "https://www.finanstilsynet.no/markedsadvarsler/2026/finanstilsynet-advarer-mot-helpinneedfinance/",
+      "date": "2026-08-27"
+    },
+    {
+      "title": "Status og tiltak mot svindel for 2026",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/tema/okonomisk-kriminalitet/svindel/status-og-tiltak-mot-svindel-for-2026/",
+      "date": "2026-04-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/celebrity-investment-ads"
+  ]
+}

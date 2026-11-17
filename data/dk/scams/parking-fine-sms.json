@@ -1,0 +1,128 @@
+{
+  "id": "dk/parking-fine-sms",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "da": "Et p-selskab (Apcoa, Q-Park m.fl.) eller en myndighed som “Statens Motorkontor”",
+    "en": "A parking company (Apcoa, Q-Park and others) or an authority like “the State Motor Office”"
+  },
+  "name": {
+    "da": "Falsk p-afgift på sms: ubetalt parkering, betal straks",
+    "en": "Fake parking charge by text: “unpaid parking – pay now via link”"
+  },
+  "how": {
+    "da": "En sms siger, at du har en ubetalt parkeringsafgift eller bøde, ofte med rabat for hurtig betaling eller trussel om højere gebyr. Afsenderen ligner et p-selskab eller en myndighed, og beskeden kan dukke op i samme tråd som ægte kvitteringer for p-tilladelser. Linket fører til en kopi af selskabets side, hvor du skal taste kortoplysninger.",
+    "en": "A text says you have an unpaid parking charge or fine, often with a discount for quick payment or a threat of a higher fee. The sender looks like a parking company or an authority, and the message can appear in the same thread as genuine receipts for parking permits. The link leads to a copy of the company's site where you must enter card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "Sms om ubetalt parkering eller en trafikbøde.",
+        "en": "Text about unpaid parking or a traffic fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "Rabat ved hurtig betaling, eller beløbet stiger.",
+        "en": "A discount for quick payment, or the amount goes up."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Et betalingslink til en side, der ligner p-selskabets.",
+        "en": "A payment link to a page that looks like the parking company's."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "da": "Du skal taste kortoplysninger.",
+        "en": "You must enter card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "Vi har registreret en ubetalt parkering på dit køretøj. Betal afgiften på 95 kr. inden i morgen for at undgå et ekstra gebyr på 650 kr. Betal sikkert her: [link]",
+        "en": "We have registered an unpaid parking session on your vehicle. Pay the charge of 95 kroner by tomorrow to avoid an extra fee of 650 kroner. Pay securely here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "parkeringsafgift sms betalingslink",
+      "ubetalt parkering sms",
+      "apcoa sms betal afgift",
+      "q-park falsk sms",
+      "p-bøde sms ekstra gebyr",
+      "statens motorkontor sms bøde",
+      "p-afgift betal link sms"
+    ],
+    "en": [
+      "parking fine text payment link",
+      "unpaid parking text denmark",
+      "parking company text pay charge",
+      "fake parking sms fee",
+      "traffic fine text link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "da": [
+      "P-selskaber sender normalt ikke betalingskrav med link på sms.",
+      "En besked i samme tråd som ægte p-kvitteringer kan stadig være falsk.",
+      "Tjek webadressen: falske sider ligner de rigtige."
+    ],
+    "en": [
+      "Parking companies don't normally send payment demands with a link by text.",
+      "A message in the same thread as genuine parking receipts can still be fake.",
+      "Check the web address: fake sites look like the real ones."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Klik ikke, og betal ikke. Kontakt p-selskabet via dets officielle side, hvis du er i tvivl.",
+      "Har du tastet kortoplysninger? Spær kortet med det samme.",
+      "Anmeld sms'en til politiet, og slet den."
+    ],
+    "en": [
+      "Don't click and don't pay. Contact the parking company via its official site if in doubt.",
+      "Typed in card details? Block the card straight away.",
+      "Report the text to the police and delete it."
+    ]
+  },
+  "reportTo": [
+    "dk/nets-kortspaerring",
+    "dk/your-bank",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Pas på falsk sms fra p-selskab",
+      "publisher": "FDM",
+      "url": "https://fdm.dk/nyheder/nyt-om-trafik-og-biler/pas-paa-falsk-sms-fra-p-selskab",
+      "date": "2026-06-15"
+    },
+    {
+      "title": "Q-Park opdaterer: Falske SMS'er er stadig et stort problem!",
+      "publisher": "Q-Park Operations Denmark (via Ritzau)",
+      "url": "https://via.ritzau.dk/pressemeddelelse/15041500/q-park-opdaterer-falske-smser-er-stadig-et-stort-problem?lang=da",
+      "date": "2026-07-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

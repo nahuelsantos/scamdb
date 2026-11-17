@@ -1,0 +1,135 @@
+{
+  "id": "is/microsoft-icelandic-voice-call",
+  "country": "is",
+  "lang": "is",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "is": "„Microsoft“ – íslenskt símanúmer",
+    "en": "“Microsoft” – Icelandic phone number"
+  },
+  "name": {
+    "is": "„Microsoft“ hringir á íslensku: eitthvað sé að tölvunni",
+    "en": "“Microsoft” calls in Icelandic: something is wrong with your computer"
+  },
+  "how": {
+    "is": "Hringt er úr íslensku símanúmeri og talgervill eða sannfærandi aðili talar íslensku og segist vera frá Microsoft. Þér er sagt að eitthvað sé að tölvunni og þú leiddur í gegnum uppsetningu á forriti, til dæmis AnyDesk, sem gefur svikurunum stjórn á tölvunni. Þeir komast svo inn í heimabankann og millifæra peninga. Dæmi eru um að maður hafi komið heim til eldri borgara og sagst vera frá Microsoft.",
+    "en": "A call comes from an Icelandic number and a synthetic voice or a convincing person speaks Icelandic and claims to be from Microsoft. You are told something is wrong with your computer and guided to install a program, such as AnyDesk, that gives the scammers control of it. They then get into your online bank and move money. In one case a man turned up at an elderly person's home claiming to be from Microsoft."
+  },
+  "steps": [
+    {
+      "text": {
+        "is": "Íslenskt númer hringir; röddin talar íslensku og segist vera frá Microsoft.",
+        "en": "An Icelandic number calls; the voice speaks Icelandic and says it is Microsoft."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "is": "Þér er sagt að tölvan sé sýkt eða að eitthvað alvarlegt sé að henni.",
+        "en": "You are told your computer is infected or something serious is wrong with it."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "is": "Þú ert beðin/n um að setja upp forrit svo „tæknimaður“ geti lagað tölvuna.",
+        "en": "You are asked to install a program so a “technician” can fix the computer."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "is": "Haldið er í þig í símanum á meðan þeir skrá sig inn í heimabankann og millifæra.",
+        "en": "They keep you on the line while they log in to your online bank and transfer money."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "is": "Halló, ég heiti Jón og hringi frá tækniþjónustu Microsoft. Við höfum séð að tölvan þín sendir frá sér villuboð og gæti verið sýkt. Ef þú opnar tölvuna núna leiðbeini ég þér að sækja lítið forrit svo ég geti lagað þetta fyrir þig.",
+        "en": "Hello, my name is Jón and I'm calling from Microsoft technical support. We've seen that your computer is sending out error reports and may be infected. If you open your computer now, I'll guide you to download a small program so I can fix this for you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "is": [
+      "microsoft hringdi úr íslensku númeri",
+      "talaði íslensku og sagðist vera microsoft",
+      "tölvan mín sögð sýkt",
+      "beðin um að setja upp anydesk",
+      "tæknimaður vildi stjórna tölvunni",
+      "maður kom heim og sagðist vera frá microsoft"
+    ],
+    "en": [
+      "Microsoft called from an Icelandic number",
+      "spoke Icelandic and said it was Microsoft",
+      "told my computer was infected",
+      "asked to install AnyDesk",
+      "technician wanted control of my computer",
+      "man came to the house saying he was from Microsoft"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "keep_on_line",
+    "urgency"
+  ],
+  "redFlags": {
+    "is": [
+      "Microsoft hringir ekki óumbeðið í fólk og kemur aldrei óboðið heim.",
+      "Beiðni um að setja upp forrit eins og AnyDesk eða TeamViewer.",
+      "Íslenskt númer og íslenskt tal sanna ekki að símtalið sé raunverulegt."
+    ],
+    "en": [
+      "Microsoft doesn't call people out of the blue and never turns up at your home uninvited.",
+      "Being asked to install software like AnyDesk or TeamViewer.",
+      "An Icelandic number and Icelandic speech don't prove the call is genuine."
+    ]
+  },
+  "whatToDo": {
+    "is": [
+      "Leggðu á strax og hleyptu engum inn sem segist vera frá Microsoft.",
+      "Ef þú settir upp forrit, slökktu á tölvunni, fjarlægðu forritið og hringdu í bankann.",
+      "Tilkynntu málið til lögreglu, líka ef þú tapaðir engu."
+    ],
+    "en": [
+      "Hang up at once and don't let in anyone who says they are from Microsoft.",
+      "If you installed a program, turn off the computer, remove the program and call your bank.",
+      "Report it to the police, even if you lost nothing."
+    ]
+  },
+  "reportTo": [
+    "is/your-bank",
+    "is/police",
+    "is/emergency"
+  ],
+  "sources": [
+    {
+      "title": "Talgervill notaður við fjársvik",
+      "publisher": "Lögreglan",
+      "url": "https://island.is/s/logreglan/frett/talgervill-notadur-vid-fjarsvik",
+      "date": "2026-05-18"
+    },
+    {
+      "title": "Bíræfið fjársvikamál",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/biraefid-fjarsvikamal",
+      "date": "2025-09-03"
+    },
+    {
+      "title": "Lögreglan varar við ítrekuðum tilraunum til fjársvika",
+      "publisher": "Lögreglan á höfuðborgarsvæðinu",
+      "url": "https://island.is/s/logreglan/frett/logreglan-varar-vid-itrekudum-tilraunum-til-fjarsvika",
+      "date": "2025-05-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

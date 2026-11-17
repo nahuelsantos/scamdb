@@ -1,0 +1,129 @@
+{
+  "id": "no/parking-fine-sms",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "no": "«EasyPark», et parkeringsselskap eller «kommunen»",
+    "en": "“EasyPark”, a parking company or “the council”"
+  },
+  "name": {
+    "no": "Falsk parkerings-SMS: ubetalt parkering eller bot med purregebyr",
+    "en": "Fake parking text: unpaid parking or fine with a late fee"
+  },
+  "how": {
+    "no": "Du får en SMS om at du har et lite ubetalt beløp for parkering, og at det kommer purregebyr hvis du ikke betaler fort. Mange betaler bare for å bli ferdige. Lenken går til en falsk side der du betaler med kort og bekrefter med BankID. Svindlerne legger kortet inn i en digital lommebok og bruker det videre.",
+    "en": "You get a text saying you owe a small amount for parking and that a late fee will be added unless you pay quickly. Many pay just to be done with it. The link goes to a fake page where you pay by card and confirm with BankID. The scammers add the card to a digital wallet and keep using it."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En SMS om ubetalt parkering eller en parkeringsbot.",
+        "en": "A text about unpaid parking or a parking fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Betal i dag, ellers kommer purregebyr eller inkasso.",
+        "en": "Pay today or a late fee or debt collection follows."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "En lenke til en betalingsside.",
+        "en": "A link to a payment page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "no": "Du skal legge inn kortet og bekrefte med BankID eller en kode.",
+        "en": "You are asked to enter your card and confirm with BankID or a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "EasyPark: Vi har registrert en ubetalt parkering på kjøretøyet ditt (49 kr). Unngå tilleggsgebyr på 300 kr ved å betale i dag: [lenke]",
+        "en": "EasyPark: We have registered an unpaid parking session on your vehicle (49 kr). Avoid an extra fee of 300 kr by paying today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "sms ubetalt parkering lenke",
+      "easypark melding betale parkering",
+      "parkeringsbot på sms purregebyr",
+      "betalte parkering via lenke svindel",
+      "kontrollavgift sms betal i dag"
+    ],
+    "en": [
+      "text about unpaid parking",
+      "easypark message asking me to pay",
+      "parking fine by text with late fee",
+      "paid parking through a link in a text",
+      "parking charge sms pay today"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "no": [
+      "Et lite beløp med trussel om gebyr er laget for at du skal betale uten å tenke.",
+      "Sjekk parkering i appen du faktisk bruker, ikke via lenken.",
+      "Du blir ikke ferdig med saken ved å betale: Svindlerne vil ha kortet ditt."
+    ],
+    "en": [
+      "A small amount with the threat of a fee is designed to make you pay without thinking.",
+      "Check parking in the app you actually use, not through the link.",
+      "Paying doesn’t end it: the scammers want your card."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke trykk på lenken. Sjekk i parkeringsappen eller hos kommunen selv.",
+      "Har du betalt? Sperr kortet og ring banken.",
+      "Videresend SMS-en til 7726."
+    ],
+    "en": [
+      "Don’t tap the link. Check in the parking app or with the council yourself.",
+      "Did you pay? Block your card and call your bank.",
+      "Forward the text to 7726."
+    ]
+  },
+  "reportTo": [
+    "no/your-bank",
+    "no/spam-7726"
+  ],
+  "sources": [
+    {
+      "title": "Nå er nordmenn på sitt mest lettlurte",
+      "publisher": "DNB Nyheter",
+      "url": "https://www.dnb.no/dnbnyheter/no/samfunn/na-er-nordmenn-pa-sitt-mest-lettlurte",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Telia Norges kvartalsvise svindelrapport: forhindret tap på 285 millioner kroner i andre kvartal – norske ungdommer brukt som mellomledd",
+      "publisher": "Telia Norge (NTB Kommunikasjon)",
+      "url": "https://kommunikasjon.ntb.no/pressemelding/18979266/",
+      "date": "2026-07-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/posten-parcel-fee-sms",
+    "no/vegvesen-toll-licence-sms"
+  ]
+}

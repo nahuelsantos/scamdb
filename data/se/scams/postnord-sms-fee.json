@@ -1,0 +1,132 @@
+{
+  "id": "se/postnord-sms-fee",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sv": "”PostNord”, ”Tullverket” eller en annan fraktfirma",
+    "en": "“PostNord”, “Customs” or another delivery company"
+  },
+  "name": {
+    "sv": "Falsk paketavi: liten fraktavgift, porto, tull, betalningslänk",
+    "en": "Fake parcel notice: small fee for shipping, postage or customs via a link"
+  },
+  "how": {
+    "sv": "Ett sms eller mejl, som ser ut att komma från PostNord eller en annan fraktfirma, säger att ditt paket väntar men att en liten avgift för frakt, porto eller tull måste betalas, eller att adressen måste bekräftas. Länken leder till en falsk sida som vill ha kortuppgifter, lösenord eller BankID. Meddelandet kan till och med hamna i samma tråd som riktiga aviseringar.",
+    "en": "A text or email, looking like it comes from PostNord or another delivery company, says your parcel is waiting but a small fee for shipping, postage or customs must be paid, or the address must be confirmed. The link leads to a fake page that wants card details, passwords or BankID. The message can even land in the same thread as genuine notices."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "Ett sms från ”PostNord”: ditt paket har stoppats.",
+        "en": "A text from “PostNord”: your parcel has been held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sv": "En liten avgift saknas, eller adressen måste bekräftas.",
+        "en": "A small fee is missing, or the address must be confirmed."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sv": "Betala via länken, annars skickas paketet tillbaka.",
+        "en": "Pay through the link or the parcel is returned."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sv": "Sidan vill ha kortuppgifter eller BankID.",
+        "en": "The page wants card details or BankID."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "PostNord: Ditt paket kan inte levereras på grund av otillräckligt porto (19 kr). Betala inom 24 timmar, annars returneras försändelsen: [länk]",
+        "en": "PostNord: Your parcel cannot be delivered because of insufficient postage (19 kr). Pay within 24 hours or the item will be returned: [länk]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "postnord sms betala avgift",
+      "paket stoppat tullavgift länk",
+      "otillräckligt porto paket",
+      "fraktavgift betala länk paket",
+      "försändelsen returneras betala",
+      "bekräfta adress paket länk",
+      "falsk avisering postnord"
+    ],
+    "en": [
+      "parcel text asking for a small fee",
+      "postnord text pay customs fee",
+      "insufficient postage parcel link",
+      "parcel will be returned unless i pay",
+      "confirm my address for delivery link",
+      "fake delivery notice text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sv": [
+      "PostNord ber normalt inte om betalning via sms eller mejl.",
+      "Riktiga länkar leder till PostNords egen webbplats; kolla adressen.",
+      "En liten summa och en kort tidsfrist är typiskt för bluffen."
+    ],
+    "en": [
+      "PostNord doesn’t normally ask for payment by text or email.",
+      "Genuine links lead to PostNord’s own website; check the address.",
+      "A small sum and a short deadline are typical of the scam."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Klicka inte. Kolla paketet i fraktfirmans egen app.",
+      "Vidarebefordra sms:et till 7726.",
+      "Har du lämnat kortuppgifter? Spärra kortet via banken.",
+      "Polisanmäl om du har förlorat pengar."
+    ],
+    "en": [
+      "Don’t click. Check the parcel in the delivery company’s own app.",
+      "Forward the text to 7726.",
+      "Did you give card details? Block the card through your bank.",
+      "Report it to the police if you lost money."
+    ]
+  },
+  "reportTo": [
+    "se/spam-7726",
+    "se/your-bank",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "PostNord slår larm: Varannan svensk har drabbats",
+      "publisher": "Dagens PS",
+      "url": "https://www.dagensps.se/privatekonomi/postnord-slar-larm-varannan-svensk-har-drabbats/",
+      "date": "2025-11-13"
+    },
+    {
+      "title": "Experten förklarar: Så går sms-bluffen till",
+      "publisher": "SVT Nyheter",
+      "url": "https://www.svt.se/nyheter/inrikes/sa-gar-sms-bluffen-till",
+      "date": "2022-12-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

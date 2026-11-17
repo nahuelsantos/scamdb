@@ -1,0 +1,141 @@
+{
+  "id": "fi/parcel-customs-fee-sms",
+  "country": "fi",
+  "lang": "fi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fi": "Posti, Matkahuolto tai muu kuljetusyhtiö",
+    "en": "Posti, Matkahuolto or another delivery company"
+  },
+  "name": {
+    "fi": "Paketti pysäytetty: \"maksa tulli- tai toimitusmaksu\"",
+    "en": "Parcel held: “pay the customs or delivery fee”"
+  },
+  "how": {
+    "fi": "Tekstiviestissä tai sähköpostissa väitetään, että pakettisi on pysäytetty tulliin tai sen käsittely on keskeytynyt puuttuvan maksun, virheellisen osoitteen tai tullimaksun vuoksi. Pieni toimitusmaksu pitää maksaa \"Suorita maksu\" -linkin kautta. Linkki vie kalastelusivulle, joka vie pankkitunnukset, korttitiedot tai muut tunnukset. Pakettia ei ole olemassa. Huijaukset yleistyvät erityisesti Black Fridayn ja joulun alla.",
+    "en": "A text or email says your parcel has been stopped at customs or its handling has been suspended because of a missing payment, a wrong address or a customs fee. A small delivery fee has to be paid through a “Pay now” link. The link leads to a phishing page that takes your banking codes, card details or other credentials. There is no parcel. These scams increase especially around Black Friday and Christmas."
+  },
+  "steps": [
+    {
+      "text": {
+        "fi": "Viesti kuljetusyhtiön nimissä: paketti odottaa.",
+        "en": "A message in a delivery company’s name: a parcel is waiting."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fi": "Toimitus jatkuu vasta, kun pieni tulli- tai toimitusmaksu on maksettu.",
+        "en": "Delivery only continues once a small customs or delivery fee is paid."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fi": "Maksu tehdään viestin linkistä.",
+        "en": "The payment is made through the link in the message."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fi": "Paketti palautetaan, jos et maksa pian.",
+        "en": "The parcel will be returned if you don’t pay soon."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fi": "Posti: Lähetyksesi JJFI on tullin käsittelyssä. Toimituksen jatkaminen edellyttää 2,99 € käsittelymaksua. Maksamaton lähetys palautetaan lähettäjälle 48 tunnin kuluttua. [linkki]",
+        "en": "Posti: Your shipment JJFI is being processed by customs. Delivery requires a €2.99 handling fee. Unpaid shipments are returned to the sender after 48 hours. [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fi": [
+      "paketti pysäytetty tulliin",
+      "tullimaksu tekstiviesti",
+      "toimitusmaksu maksa linkistä",
+      "postin nimissä huijausviesti",
+      "matkahuollon nimissä viesti",
+      "lähetyksen käsittely keskeytynyt",
+      "paketti odottaa maksua",
+      "suorita maksu paketti",
+      "virheellinen osoite paketti linkki",
+      "pakettihuijaus"
+    ],
+    "en": [
+      "parcel held at customs text",
+      "pay delivery fee link",
+      "posti scam message",
+      "package delivery suspended",
+      "small customs fee sms"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "fi": [
+      "Aito logistiikkayhtiö ei koskaan pyydä pankkitunnuksia tekstiviestillä tai sähköpostilla.",
+      "Pieni maksu on syötti: tavoitteena ovat pankkitunnuksesi ja korttitietosi.",
+      "Tarkista lähetykset vain kuljetusyhtiön omasta sovelluksesta tai seurantapalvelusta."
+    ],
+    "en": [
+      "A real delivery company never asks for banking codes by text or email.",
+      "The small fee is bait: the goal is your banking codes and card details.",
+      "Check shipments only in the delivery company’s own app or tracking service."
+    ]
+  },
+  "whatToDo": {
+    "fi": [
+      "Älä avaa linkkiä. Kirjaudu palveluun vain itse kirjoittamalla osoite tai omasta sovelluksesta.",
+      "Jos annoit tunnuksesi, korttitietosi tai hyväksyit jotain, soita heti pankkiisi tai sen sulkupalveluun ja sulje tunnukset ja kortti.",
+      "Tee rikosilmoitus poliisille verkossa.",
+      "Ilmoita viestistä tai puhelusta Kyberturvallisuuskeskukselle, niin muita voidaan varoittaa."
+    ],
+    "en": [
+      "Don’t open the link. Log in to the service only yourself, by typing the address or using its own app.",
+      "If you gave your codes or card details or approved something, call your bank or its block line straight away and block the codes and card.",
+      "File a crime report with the police online.",
+      "Report the message or call to the NCSC so others can be warned."
+    ]
+  },
+  "reportTo": [
+    "fi/your-bank",
+    "fi/bank-block-lines",
+    "fi/police-report",
+    "fi/ncsc-report"
+  ],
+  "sources": [
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 18/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-182026",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "Kyberturvallisuuskeskuksen viikkokatsaus – 21/2026",
+      "publisher": "Traficomin Kyberturvallisuuskeskus",
+      "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/kyberturvallisuuskeskuksen-viikkokatsaus-212026",
+      "date": "2026-05-22"
+    },
+    {
+      "title": "Odotatko pakettia? Näin sinua saatetaan nyt yrittää huijata",
+      "publisher": "MTV Uutiset",
+      "url": "https://www.mtvuutiset.fi/artikkeli/odotatko-pakettia-nain-sinua-saatetaan-nyt-yrittaa-huijata/9259040",
+      "date": "2025-11-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

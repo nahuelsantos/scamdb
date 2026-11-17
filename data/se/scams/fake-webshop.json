@@ -1,0 +1,134 @@
+{
+  "id": "se/fake-webshop",
+  "country": "se",
+  "lang": "sv",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "sv": "En okänd webbutik, ofta via en annons i sociala medier",
+    "en": "An unknown online shop, often through a social media ad"
+  },
+  "name": {
+    "sv": "Falsk webbutik: ”familjeföretag stänger”, jätterabatter, uteblivna varor",
+    "en": "Fake or dishonest online shop: “family business closing down”, huge discounts, wrong or no item"
+  },
+  "how": {
+    "sv": "En annons i sociala medier visar en butik som säger sig vara ett litet familjeföretag som stänger och säljer ut lagret, eller en kopia av en känd butik med Black Friday-priser. Sidan ser proffsig ut, ofta med AI-genererade bilder och påhittade omdömen. Du får ingenting, en billig kopia från Asien, eller dina kortuppgifter stjäls; ibland startar en prenumeration som dras från kortet. Returer är dyra eller omöjliga.",
+    "en": "An ad on social media shows a shop claiming to be a small family business closing down and selling off its stock, or a copy of a well-known shop with Black Friday prices. The site looks professional, often with AI-generated images and made-up reviews. You get nothing, a cheap copy from Asia, or your card details are stolen; sometimes a subscription starts charging your card. Returns are costly or impossible."
+  },
+  "steps": [
+    {
+      "text": {
+        "sv": "En annons med stora rabatter, ofta ”utförsäljning, vi stänger”.",
+        "en": "An ad with big discounts, often “clearance, we’re closing”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sv": "Erbjudandet gäller bara i dag.",
+        "en": "The offer is only valid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sv": "Du betalar med kort på en okänd sida.",
+        "en": "You pay by card on an unknown site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sv": "Ingen vara, en billig kopia eller oväntade dragningar från kortet.",
+        "en": "No item, a cheap copy or unexpected charges to your card."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sv": "Efter 32 år stänger vi vår lilla läderverkstad i Dalarna. Alla handgjorda väskor säljs nu ut med 80 % rabatt – bara i helgen. Tack för alla fina år! ❤️ Handla här: [länk]",
+        "en": "After 32 years we are closing our little leather workshop in Dalarna. All handmade bags are now sold off at 80% off – this weekend only. Thank you for all the lovely years! ❤️ Shop here: [länk]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sv": [
+      "falsk webbutik beställde fick inget",
+      "familjeföretag stänger utförsäljning",
+      "bluffbutik annons facebook",
+      "handgjorda väskor 80 rabatt",
+      "billig kopia kina retur dyr",
+      "webbutik prenumeration drogs kortet",
+      "kopia känd butik black friday"
+    ],
+    "en": [
+      "fake online shop never delivered",
+      "family business closing down sale ad",
+      "scam shop from a facebook ad",
+      "got a cheap copy instead of what i ordered",
+      "huge discount shop only today",
+      "shop started charging my card monthly"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "sv": [
+      "Väldigt låga priser och ”vi stänger” är klassiska lockbeten.",
+      "Otydlig adress, inget organisationsnummer eller bara en privatperson bakom sidan är varningstecken.",
+      "Kontrollera webbadressen: kopior av kända butiker har nästan samma adress."
+    ],
+    "en": [
+      "Very low prices and “we’re closing down” are classic lures.",
+      "No clear address, no company registration number or only a private person behind the site are warning signs.",
+      "Check the web address: copies of well-known shops have almost the same address."
+    ]
+  },
+  "whatToDo": {
+    "sv": [
+      "Sök på butikens namn och läs oberoende omdömen innan du köper.",
+      "Har du betalat? Kontakta banken, spärra kortet om uppgifterna kan ha stulits och begär återbetalning.",
+      "Kontakta Hallå konsument och anmäl butiken; polisanmäl om du inte fått något."
+    ],
+    "en": [
+      "Search the shop’s name and read independent reviews before buying.",
+      "Have you paid? Contact your bank, block the card if the details may be stolen and ask for a chargeback.",
+      "Contact Hallå konsument and report the shop; report it to the police if you got nothing."
+    ]
+  },
+  "reportTo": [
+    "se/halla-konsument",
+    "se/your-bank",
+    "se/polisen-anmalan"
+  ],
+  "sources": [
+    {
+      "title": "Falska shoppingsidor exploderar inför Black Friday",
+      "publisher": "Realtid",
+      "url": "https://www.realtid.se/it-tech/falska-shoppingsidor-exploderar-infor-black-friday/",
+      "date": "2025-11-26"
+    },
+    {
+      "title": "Konsumentverket larmar: AI-bluffsajter lurar svenska kunder",
+      "publisher": "Dagens PS",
+      "url": "https://www.dagensps.se/privatekonomi/konsumentverket-larmar-ai-bluffsajter-lurar-svenska-kunder/",
+      "date": "2024-12-28"
+    },
+    {
+      "title": "Annonsbedrägeri",
+      "publisher": "Polisen",
+      "url": "https://polisen.se/annonsbedrageri",
+      "date": "2026-07-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

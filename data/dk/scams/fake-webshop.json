@@ -1,0 +1,126 @@
+{
+  "id": "dk/fake-webshop",
+  "country": "dk",
+  "lang": "da",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "da": "En webshop, du finder via en annonce på Facebook eller Instagram",
+    "en": "A web shop you find via an ad on Facebook or Instagram"
+  },
+  "name": {
+    "da": "Falsk webshop: elektronik til lav pris via annonce – varen kommer aldrig",
+    "en": "Fake web shop: cheap electronics via an ad – the goods never arrive"
+  },
+  "how": {
+    "da": "En annonce på sociale medier fører til en webshop med professionelt design, troværdige billeder, priser og handelsbetingelser – ofte lavet med AI og på dansk. Især elektronik er billigt. Du betaler, men varen kommer aldrig, og dine kortoplysninger kan blive misbrugt. Politiet fik 92 procent flere anmeldelser om falske webshops i 2025 end året før.",
+    "en": "An ad on social media leads to a web shop with professional design, believable photos, prices and terms – often made with AI and in Danish. Electronics especially are cheap. You pay but the goods never come, and your card details may be misused. Police received 92 percent more reports about fake web shops in 2025 than the year before."
+  },
+  "steps": [
+    {
+      "text": {
+        "da": "En annonce på Facebook eller Instagram med store rabatter.",
+        "en": "An ad on Facebook or Instagram with big discounts."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "da": "Webshoppen ser professionel ud, men er ny og ukendt.",
+        "en": "The web shop looks professional but is new and unknown."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "da": "“Kun i dag” eller “få tilbage på lager”.",
+        "en": "“Today only” or “only a few left in stock”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "da": "Du betaler med kort, og varen kommer aldrig.",
+        "en": "You pay by card and the goods never arrive."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "da": "LAGERUDSALG ⚡ Alt skal væk! Spar op til 80% på telefoner, tablets og høretelefoner. Fri fragt i hele Danmark – kun i weekenden. Køb her: [link]",
+        "en": "WAREHOUSE CLEARANCE ⚡ Everything must go! Save up to 80% on phones, tablets and headphones. Free shipping all over Denmark – this weekend only. Buy here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "da": [
+      "falsk webshop varen kom aldrig",
+      "facebook annonce billig elektronik webshop",
+      "fupbutik bestilte telefon",
+      "webshop lagerudsalg svindel",
+      "bestilt online varen udeblev",
+      "webshop forsvundet pengene"
+    ],
+    "en": [
+      "fake web shop goods never arrived",
+      "facebook ad cheap electronics shop",
+      "ordered phone from fake store",
+      "warehouse clearance scam shop",
+      "paid online never received parcel"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "da": [
+      "Priser, der er langt under alle andres.",
+      "En ny webshop uden anmeldelser eller med adressen et uventet sted.",
+      "En lille stavefejl i webadressen i forhold til en kendt butik."
+    ],
+    "en": [
+      "Prices far below everyone else's.",
+      "A new web shop without reviews or with an unexpected address.",
+      "A small misspelling in the web address compared with a known shop."
+    ]
+  },
+  "whatToDo": {
+    "da": [
+      "Søg efter butikkens navn og “svindel” eller anmeldelser, før du køber.",
+      "Betal med kort, så du kan gøre indsigelse via banken.",
+      "Har du købt? Kontakt banken, og spær kortet, hvis du er i tvivl.",
+      "Anmeld webshoppen til politiet."
+    ],
+    "en": [
+      "Search for the shop's name plus “scam” or reviews before buying.",
+      "Pay by card so you can dispute the charge with your bank.",
+      "Already bought? Contact your bank and block the card if in doubt.",
+      "Report the shop to the police."
+    ]
+  },
+  "reportTo": [
+    "dk/your-bank",
+    "dk/nets-kortspaerring",
+    "dk/politi-anmeld"
+  ],
+  "sources": [
+    {
+      "title": "Årsrapport om it-relateret økonomisk kriminalitet 2025",
+      "publisher": "Politiet, National enhed for Særlig Kriminalitet (NCIK)",
+      "url": "https://politi.dk/-/media/mediefiler/landsdaekkende-dokumenter/aktuelt/statistik-og-udgivelser/it-relateret-oekonomisk-kriminalitet/aarsrapport-om-itrelateret-oekonomisk-kriminalitet-anmeldt-i-2025.pdf",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "dk/fake-seller-tickets"
+  ]
+}

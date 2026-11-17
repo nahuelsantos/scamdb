@@ -1,0 +1,126 @@
+{
+  "id": "no/gold-investment-handover",
+  "country": "no",
+  "lang": "no",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "no": "En «investeringsrådgiver» eller et «gullselskap» som ringer",
+    "en": "An “investment adviser” or “gold company” that calls"
+  },
+  "name": {
+    "no": "Gullsvindel: kjøp gull og legg det fra deg der «rådgiveren» sier",
+    "en": "Gold scam: buy gold and leave it where the “adviser” says"
+  },
+  "how": {
+    "no": "En «rådgiver» kontakter deg og anbefaler gull som trygg investering. Du blir bedt om å kjøpe gull for store summer og overlate det til noen som skal «oppbevare» det til prisen stiger. Overleveringen skjer ofte på uvanlige måter, for eksempel at du legger gullet fra deg ute i naturen eller et annet sted, så noen kan hente det senere. Gullet er borte.",
+    "en": "An “adviser” contacts you and recommends gold as a safe investment. You are asked to buy gold for large sums and hand it over to someone who will “store” it until the price rises. The handover is often unusual, for example leaving the gold outdoors or somewhere else so someone can collect it later. The gold is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "no": "En «rådgiver» ringer og anbefaler å investere i gull.",
+        "en": "An “adviser” calls and recommends investing in gold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "no": "Du skal kjøpe gull for store beløp, gjerne raskt før prisen stiger.",
+        "en": "You are to buy gold for large amounts, quickly before the price rises."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "no": "Gullet skal overleveres til ukjente eller legges igjen på et avtalt sted.",
+        "en": "The gold is to be handed to strangers or left at an agreed place."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "no": "Du får beskjed om å ikke fortelle banken hva gullet skal brukes til.",
+        "en": "You are told not to tell the bank what the gold is for."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "no": "Gullprisen kommer til å stige kraftig i vinter, så nå er tiden. Kjøp barrene hos forhandleren i morgen, så sørger vi for trygg oppbevaring. Legg pakken bak den store steinen ved parkeringsplassen ved turløypa klokka sju, så henter vår kurer den. Ikke nevn noe for banken, de vil bare selge deg sine egne fond.",
+        "en": "The gold price will rise sharply this winter, so now is the time. Buy the bars from the dealer tomorrow and we’ll take care of safe storage. Leave the package behind the big rock by the car park at the walking trail at seven, and our courier will collect it. Don’t mention anything to the bank; they just want to sell you their own funds."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "no": [
+      "kjøpe gull som investering rådgiver ringte",
+      "legge gull fra meg i skogen",
+      "kurer henter gullbarrer",
+      "oppbevaring av gull til prisen stiger",
+      "investere i gull overlevere til ukjent"
+    ],
+    "en": [
+      "adviser told me to buy gold",
+      "asked to leave gold in the woods",
+      "courier collects gold bars",
+      "store gold until the price rises",
+      "hand over gold to a stranger"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "no": [
+      "Ingen seriøs aktør ber deg legge fra deg verdier ute eller gi dem til ukjente.",
+      "Press om å kjøpe raskt og holde det skjult for banken er tegn på svindel.",
+      "Vær svært skeptisk når noen tar kontakt og vil at du skal kjøpe gull eller andre verdier."
+    ],
+    "en": [
+      "No genuine firm asks you to leave valuables outdoors or give them to strangers.",
+      "Pressure to buy quickly and hide it from the bank are signs of fraud.",
+      "Be very sceptical when someone contacts you and wants you to buy gold or other valuables."
+    ]
+  },
+  "whatToDo": {
+    "no": [
+      "Ikke kjøp eller overlever noe. Snakk med banken eller familien først.",
+      "Har du allerede lagt fra deg gull eller verdier? Ring politiet.",
+      "Sjekk selskapet hos Finanstilsynet og anmeld forsøket."
+    ],
+    "en": [
+      "Don’t buy or hand over anything. Talk to your bank or family first.",
+      "Have you already left gold or valuables somewhere? Call the police.",
+      "Check the company with Finanstilsynet and report the attempt."
+    ]
+  },
+  "reportTo": [
+    "no/police-02800",
+    "no/finanstilsynet",
+    "no/your-bank",
+    "no/police-report-online"
+  ],
+  "sources": [
+    {
+      "title": "Bankene advarer: Svindlere ber folk legge gull i skogen",
+      "publisher": "Finans Norge",
+      "url": "https://www.finansnorge.no/artikler/2026/10/bankene-advarer-svindlere-ber-folk-legge-gull-i-skogen/",
+      "date": "2026-10-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "no/celebrity-investment-ads"
+  ]
+}
