@@ -65,6 +65,10 @@ test('the score is always null (no made-up number)', () => {
 
 // Review Focus 4: odd input
 test('empty, emoji-only and huge input are not recognised and fast', () => {
+  // The first check prepares every entry's phrases once (the Worker keeps the catalogue per isolate); time real checks.
+  const cold = performance.now();
+  m('warm up');
+  assert.ok(performance.now() - cold < 2000, 'preparing the catalogue took too long');
   for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000)]) {
     const t0 = performance.now();
     const r = m(t);
