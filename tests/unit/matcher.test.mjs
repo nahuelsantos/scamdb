@@ -208,3 +208,8 @@ test('1.5.0: German signs and context rules', () => {
   assert.ok(!has('Melden Sie sich mit Ihrem Passwort bei ELSTER an.', 'asks_for_code'));
   assert.ok(!has('Diese SMS enthält keinen Link.', 'unknown_link'));
 });
+test('1.5.1: "keine Zahlung erforderlich" cancels the money sign', () => {
+  assert.ok(!signsOf('Ihr Paket wird heute zugestellt. Es ist keine Zahlung erforderlich.').includes('money_request'));
+  assert.ok(!signsOf('Uw pakket komt vandaag, geen betaling nodig.').includes('money_request'));
+  assert.ok(signsOf('Zahlung erforderlich: bitte heute 2,99 € Zollgebühr bezahlen').includes('money_request'));
+});
