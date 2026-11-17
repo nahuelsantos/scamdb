@@ -1,0 +1,122 @@
+{
+  "id": "by/zamena-domofona-poliklinika-kod-iz-sms",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Звонок якобы из поликлиники, ЖЭС, водоканала или компании по замене домофонов",
+    "en": "A call supposedly from a clinic, housing office, water utility or intercom company"
+  },
+  "name": {
+    "ru": "Замена домофона, запись в поликлинику, поверка счётчиков: «назовите код из SMS»",
+    "en": "Intercom replacement, clinic appointment, meter check: 'tell us the SMS code'"
+  },
+  "how": {
+    "ru": "Мошенники звонят под видом поликлиники, коммунальной службы, водоканала или компании, которая меняет домофоны или счётчики. Повод бытовой и не вызывает подозрений: новые ключи, запись к врачу, бесплатная установка счётчика. В конце просят продиктовать код из SMS «для подтверждения». С этим кодом они получают доступ к вашим аккаунтам и банковским приложениям. Потом часто звонит «сотрудник милиции» или КГБ и требует перевести деньги.",
+    "en": "Scammers call posing as a clinic, a utility, the water company or a firm that replaces intercoms or meters. The pretext is everyday and unsuspicious: new keys, a doctor's appointment, a free meter installation. At the end they ask you to read out a code from an SMS 'to confirm'. With that code they get into your accounts and banking apps. Often a 'police officer' or KGB 'officer' calls next and demands you move your money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонок: в доме меняют домофон, нужно обновить ключи.",
+        "en": "A call: the building's intercom is being replaced, keys need updating."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Вам придёт код, продиктуйте его для подтверждения.",
+        "en": "You'll get a code, read it out to confirm."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "С вашего аккаунта пытаются вывести деньги, срочно действуйте.",
+        "en": "Someone is trying to take money from your account, act now."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Добрый день, это управляющая компания. В вашем подъезде на следующей неделе устанавливаем новый домофон, всем жильцам выдаём ключи бесплатно. Я вношу вас в список, сейчас придёт сообщение с кодом — назовите его, чтобы закрепить ключ за вашей квартирой.",
+        "en": "Good afternoon, this is the property management company. Next week we're installing a new intercom in your entrance and giving all residents free keys. I'm adding you to the list; you'll get a message with a code now — tell me it so the key is assigned to your flat."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили насчет замены домофона и попросили код",
+      "звонок из поликлиники попросили продиктовать цифры",
+      "для новых ключей от подъезда нужен код из смс",
+      "предложили бесплатно поменять счетчик воды",
+      "звонили с водоканала про поверку",
+      "сказали что на телефон придет код для записи к врачу"
+    ],
+    "en": [
+      "they called about replacing the intercom and asked for a code",
+      "a call from the clinic asking me to read out numbers",
+      "they need an sms code for new entrance keys",
+      "they offered to replace my water meter for free",
+      "the water company called about a meter check",
+      "they said a code would come to book a doctor's appointment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Бытовой звонок заканчивается просьбой назвать код из SMS.",
+      "Звонящий торопит и говорит, что без кода вас не запишут или не дадут ключ.",
+      "После звонка приходят сообщения о входе в ваши аккаунты."
+    ],
+    "en": [
+      "An everyday call ends with a request to read out an SMS code.",
+      "The caller rushes you and says without the code you won't get the appointment or the key.",
+      "After the call you get messages about logins to your accounts."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Коды из SMS нельзя сообщать ни при каких обстоятельствах.",
+      "Перезвоните в поликлинику или ЖЭС сами по номеру с официального сайта или квитанции.",
+      "Если код уже назвали, смените пароли, завершите чужие сеансы, предупредите банк и позвоните 102."
+    ],
+    "en": [
+      "Never give out SMS codes under any circumstances.",
+      "Call the clinic or housing office back yourself using the number from its official website or your bill.",
+      "If you already gave the code, change passwords, end unknown sessions, warn your bank and call 102."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/your-bank",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "В МВД рассказали, сколько кибермошенничеств выявили за три месяца, и пригрозили курьерам применением огнестрельного оружия",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/124986.html",
+      "date": "2026-04-13"
+    },
+    {
+      "title": "Звонили от имени водоканала и КГБ. В МВД рассказали о раскрытии крупной сети мошенников",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/138675.html",
+      "date": "2026-10-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

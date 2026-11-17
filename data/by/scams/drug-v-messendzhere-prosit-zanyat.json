@@ -1,0 +1,122 @@
+{
+  "id": "by/drug-v-messendzhere-prosit-zanyat",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ru": "Сообщение, голосовое или видео-«кружочек» от взломанного аккаунта друга или родственника",
+    "en": "A message, voice note or video 'circle' from a friend's or relative's hijacked account"
+  },
+  "name": {
+    "ru": "Друг в Telegram или Viber срочно просит занять денег на карту",
+    "en": "A friend on Telegram or Viber urgently asks to borrow money to a card"
+  },
+  "how": {
+    "ru": "Мошенники угоняют аккаунт в мессенджере (через фишинговую ссылку, «голосование», «бесплатную фотосессию» или «премиум-подписку») и пишут от имени владельца его друзьям и родным. Просят срочно одолжить небольшую сумму и перевести на чужую карточку. Чтобы было убедительнее, присылают голосовые сообщения или видео-«кружочки», собранные нейросетью из старых записей владельца.",
+    "en": "Scammers hijack a messenger account (through a phishing link, a 'vote', a 'free photo shoot' or a 'premium subscription') and write to the owner's friends and family in their name. They urgently ask to borrow a small sum sent to someone else's card. To be convincing they send voice notes or video 'circles' made by AI from the owner's old recordings."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Привет, выручи, срочно нужны деньги до завтра.",
+        "en": "Hi, help me out, I urgently need money until tomorrow."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Переведи на эту карту, моя не работает.",
+        "en": "Send it to this card, mine isn't working."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ru": "Позвонить не могу, давай быстрее.",
+        "en": "I can't call, please hurry."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Слушай, можешь до вечера скинуть 300 рублей? Карта заблокировалась, а надо срочно оплатить. Номер карты сестры сейчас пришлю, вечером всё верну. Говорить не могу, на совещании.",
+        "en": "Listen, can you send me 300 roubles until tonight? My card got blocked and I need to pay urgently. I'll send my sister's card number now, I'll pay it all back tonight. Can't talk, I'm in a meeting."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "друг в телеграме просит занять денег",
+      "знакомый просит перевести на чужую карту",
+      "пришел кружочек от подруги с просьбой о деньгах",
+      "взломали вайбер и просят деньги у моих контактов",
+      "подруга пишет что карта заблокирована и просит скинуть",
+      "голосовое от брата просит срочно перевести"
+    ],
+    "en": [
+      "a friend on telegram asks to borrow money",
+      "someone I know asks me to send money to another person's card",
+      "I got a video circle from a friend asking for money",
+      "my viber was hacked and they're asking my contacts for money",
+      "a friend writes that her card is blocked and asks me to send money",
+      "a voice note from my brother asks me to transfer urgently"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency",
+    "new_number"
+  ],
+  "redFlags": {
+    "ru": [
+      "Знакомый пишет необычно и просит перевести на чужую карточку.",
+      "Ссылается на то, что не может говорить, и торопит.",
+      "Видео или голос выглядят неестественно: засветы, слишком гладкая кожа."
+    ],
+    "en": [
+      "Someone you know writes unusually and asks for money to another person's card.",
+      "They claim they can't talk and rush you.",
+      "The video or voice looks unnatural: glare, overly smooth skin."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Позвоните другу по обычному номеру и спросите сами.",
+      "Не переводите деньги, пока не убедились, что пишет именно он.",
+      "Если перевели, сразу сообщите в банк и в милицию."
+    ],
+    "en": [
+      "Call your friend on their usual number and ask them yourself.",
+      "Don't send money until you're sure it's really them.",
+      "If you sent money, tell your bank and the police at once."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/your-bank",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "«Выдают засветы и слишком идеальная кожа». Мошенники придумали новую схему обмана с «кружочками» в Telegram",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/96066.html",
+      "date": "2025-04-05"
+    },
+    {
+      "title": "Эксперты назвали самые частые схемы финансового мошенничества в Беларуси",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2025/11/28/eksperty-nazvali-samye-chastye-sxemy-finansovogo-moshennichestva-v-belarusi",
+      "date": "2025-11-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

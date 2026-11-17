@@ -1,0 +1,134 @@
+{
+  "id": "az/fake-online-shop-prepayment",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "az": "Sosial şəbəkədə saxta satış səhifəsi və ya brendi təqlid edən sayt",
+    "en": "A fake sales page on social media or a site copying a brand"
+  },
+  "name": {
+    "az": "Saxta onlayn mağaza: brend məhsullar çox ucuz, “son fürsət”, əvvəlcədən ödəniş",
+    "en": "Fake online shop: branded goods very cheap, “last chance”, pay in advance"
+  },
+  "how": {
+    "az": "Sosial şəbəkələrdə və saytlarda tanınmış brendlərin məhsulları, bilet və ya kampaniyalar bazar qiymətindən xeyli ucuz reklam olunur; “son fürsət”, “məhdud sayda” kimi ifadələrlə tələsdirilir. Sifariş üçün əvvəlcədən karta ödəniş və ya saytda kart məlumatı istənilir. Pul alındıqdan sonra satıcı əlaqəni kəsir, nömrənizi və hesabınızı bloklayır, ya da daxil etdiyiniz kart məlumatları ilə pul oğurlanır. Eyni üsul tədbir biletləri üçün iTicket kimi platformaları təqlid edən saxta səhifələrdə də işlədilir.",
+    "en": "Branded goods, tickets or promotions are advertised on social media and sites far below the market price, with “last chance” and “limited stock” to rush you. To order, you must prepay to a card or enter card details on the site. Once paid, the seller cuts contact and blocks your number and account, or the card details you typed are used to steal money. The same trick is used by fake pages copying ticket platforms such as iTicket."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Brend məhsul və ya bilet şübhəli dərəcədə ucuzdur.",
+        "en": "A branded product or ticket is suspiciously cheap."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "az": "“Son fürsət”, “məhdud sayda” deyə tələsdirirlər.",
+        "en": "They rush you with “last chance” and “limited stock”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "az": "Ödəniş üçün tanımadığınız sayta və ya linkə yönləndirilirsiniz.",
+        "en": "You are sent to an unknown site or link to pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "az": "Əvvəlcədən karta köçürmə istənilir.",
+        "en": "A prepayment to a card is required."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "az": "🔥 Yalnız bu həftə! Orijinal brend idman ayaqqabıları 59 AZN (mağazada 260 AZN). Stokda cəmi 14 cüt qalıb. Sifariş üçün profildəki linkdən ölçünüzü seçin və 50% əvvəlcədən ödəniş edin, çatdırılma Bakı daxili pulsuzdur: [link]",
+        "en": "🔥 This week only! Original brand trainers 59 AZN (260 AZN in shops). Only 14 pairs left in stock. To order, choose your size via the link in our profile and prepay 50%, delivery within Baku is free: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "instagramda ucuz brend məhsul aldım gəlmədi",
+      "əvvəlcədən ödəniş etdim satıcı blokladı",
+      "saxta onlayn mağaza pul aldı",
+      "son fürsət endirim linkində kart məlumatı",
+      "saxta bilet satış səhifəsi",
+      "çox ucuz qiymətə orijinal məhsul reklamı"
+    ],
+    "en": [
+      "fake online shop took my prepayment",
+      "bought cheap branded goods on instagram never arrived",
+      "seller blocked me after I paid",
+      "fake ticket sales page",
+      "too cheap designer products ad scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "az": [
+      "Qiymət bazardan xeyli aşağıdırsa, ehtiyatlı olun.",
+      "Yalnız əvvəlcədən ödəniş qəbul edən, ünvanı və rəsmi əlaqəsi olmayan səhifə risklidir.",
+      "Bilet yalnız platformanın rəsmi saytında satılır."
+    ],
+    "en": [
+      "Be careful when the price is far below the market.",
+      "A page that only takes prepayment and has no address or official contact is risky.",
+      "Tickets are sold only on the platform’s official site."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "Ödənişdən əvvəl satıcını, səhifənin yaşını və rəylərini yoxlayın.",
+      "Tanımadığınız səhifəyə əvvəlcədən pul köçürməyin, CVV və SMS kodunu heç yerə yazmayın.",
+      "Aldanmısınızsa, bankınıza və 102-yə müraciət edin, saxta saytı Blacklist.gov.az-a bildirin."
+    ],
+    "en": [
+      "Before paying, check the seller, the page’s age and its reviews.",
+      "Don’t prepay unknown pages and never type your CVV or SMS code anywhere.",
+      "If you were tricked, contact your bank and 102, and report the fake site to Blacklist.gov.az."
+    ]
+  },
+  "reportTo": [
+    "az/police-102",
+    "az/your-bank",
+    "az/blacklist-gov"
+  ],
+  "sources": [
+    {
+      "title": "Onlayn alış-veriş edənlərə XƏBƏRDARLIQ",
+      "publisher": "Modern.az",
+      "url": "https://modern.az/az/aktual/734440/onlayn-alis-veris-edenlere-xeberdarliq/",
+      "date": "2026-08-11"
+    },
+    {
+      "title": "DİN-dən sosial şəbəkədə cəlbedici reklamlarla bağlı vətəndaşlara XƏBƏRDARLIQ",
+      "publisher": "1news.az",
+      "url": "https://1news.az/az/news/20260428011426317-DIN-den-sosial-shebekede-celbedici-reklamlarla-bagli-vetendashlara-XEBERDARLIQ",
+      "date": "2026-04-28"
+    },
+    {
+      "title": "MKA saxta bilet satış səhifələri ilə bağlı vətəndaşlara xəbərdarlıq edir",
+      "publisher": "1news.az",
+      "url": "https://1news.az/az/news/20261028171737463-MKA-saxta-bilet-satish-sehifeleri-ile-bagli-vetendashlara-xeberdarliq-edir",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

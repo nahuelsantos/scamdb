@@ -1,0 +1,115 @@
+{
+  "id": "by/kredit-v-telegram-oplata-za-odobrenie",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Канал, бот или «менеджер» в Telegram, предлагающий кредит",
+    "en": "A Telegram channel, bot or 'manager' offering a loan"
+  },
+  "name": {
+    "ru": "«Кредит одобрен»: заплатите за страховку или комиссию, чтобы получить деньги",
+    "en": "'Loan approved': pay for insurance or a fee to get the money"
+  },
+  "how": {
+    "ru": "В Telegram мошенники создают каналы, боты и аккаунты, которые предлагают кредиты под низкий процент без справок. «Менеджер» общается, в том числе голосовыми, просит фото паспорта и страницы с пропиской, данные карточки, а потом сообщает, что кредит одобрен. Чтобы получить деньги, нужно оплатить «страховку», «комиссию за перевод», «открытие безопасного счёта» или «проверочный платёж». После оплаты человека блокируют, а его документы могут использовать для новых афер.",
+    "en": "Scammers set up Telegram channels, bots and accounts offering low-interest loans with no paperwork. A 'manager' chats, including by voice notes, asks for photos of your passport and registration page and your card details, then says the loan is approved. To get the money you must pay for 'insurance', a 'transfer fee', 'opening a safe account' or a 'verification payment'. After paying you are blocked, and your documents may be used for more scams."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Кредит без справок под низкий процент, одобрение за час.",
+        "en": "A loan with no paperwork at low interest, approved in an hour."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ru": "Пришлите фото паспорта и данные карточки.",
+        "en": "Send a photo of your passport and your card details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Кредит одобрен, оплатите страховку для зачисления.",
+        "en": "Loan approved, pay for insurance to receive it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Поздравляем! Ваша заявка на 5000 BYN одобрена. Для зачисления средств необходимо оплатить обязательное страхование займа — 85 BYN. После оплаты деньги поступят на вашу карту в течение 15 минут.",
+        "en": "Congratulations! Your application for 5000 BYN has been approved. To receive the funds you must pay compulsory loan insurance of 85 BYN. After payment the money will reach your card within 15 minutes."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "в телеграме одобрили кредит но просят оплатить страховку",
+      "для получения займа надо заплатить комиссию",
+      "кредит без справок в телеграм канале",
+      "попросили фото паспорта для оформления кредита",
+      "менеджер просит проверочный платеж на карту",
+      "заплатил за одобрение кредита и меня заблокировали"
+    ],
+    "en": [
+      "a loan was approved on telegram but they want me to pay insurance",
+      "I have to pay a fee to get the loan",
+      "a no-paperwork loan in a telegram channel",
+      "they asked for a passport photo to arrange a loan",
+      "the manager asks for a verification payment to a card",
+      "I paid for loan approval and got blocked"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ru": [
+      "Кредит предлагают в Telegram без справок и проверок.",
+      "За «одобрение» или «зачисление» нужно заплатить заранее.",
+      "Просят фото паспорта и данные карточки в переписке."
+    ],
+    "en": [
+      "A loan is offered on Telegram with no paperwork or checks.",
+      "You must pay up front for 'approval' or 'payout'.",
+      "They ask for passport photos and card details in the chat."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Оформляйте кредиты только в банке или в его официальном приложении.",
+      "Никогда не платите за выдачу кредита.",
+      "Если отправили документы или данные карточки, предупредите банк и обратитесь в милицию."
+    ],
+    "en": [
+      "Only take out loans at a bank or in its official app.",
+      "Never pay to receive a loan.",
+      "If you sent documents or card details, warn your bank and go to the police."
+    ]
+  },
+  "reportTo": [
+    "by/your-bank",
+    "by/police",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "«Кредит одобрен»: как белорусов обманывают через Telegram",
+      "publisher": "Myfin.by",
+      "url": "https://myfin.by/article/money/kredit-odobren-kak-belorusov-obmanyvaut-cerez-telegram-47520",
+      "date": "2026-08-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,143 @@
+{
+  "id": "ru/silovik-bezopasnyi-schet-kurer",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "ru": "Звонок якобы из ФСБ, МВД, Центробанка или Росфинмониторинга",
+    "en": "A call supposedly from the FSB, police, Central Bank or financial watchdog"
+  },
+  "name": {
+    "ru": "Звонок «из ФСБ или ЦБ»: перевести сбережения на «безопасный счёт» или отдать курьеру",
+    "en": "Call \"from the FSB or Central Bank\": move your savings to a \"safe account\" or hand them to a courier"
+  },
+  "how": {
+    "ru": "Сначала звонит «администратор Госуслуг», «сотрудник поликлиники» или «банка», затем подключаются «следователь», «сотрудник ФСБ» или «Центробанка». Вас пугают, что от вашего имени оформили доверенность или финансируют запрещённую организацию, и требуют «задекларировать» деньги или «обновить основной счёт в Банке России». Деньги просят внести через банкоматы на чужие счета, установить приложение и приложить карту к телефону или отдать наличные курьеру с поддельными документами. Банк России не открывает счетов гражданам, а силовики не забирают деньги.",
+    "en": "First a \"Gosuslugi administrator\", \"clinic worker\" or \"bank\" calls, then a \"detective\", \"FSB officer\" or \"Central Bank officer\" joins. They frighten you that someone issued a power of attorney in your name or is funding a banned organisation, and demand that you \"declare\" your money or \"update your main account at the Bank of Russia\". You are told to deposit cash through ATMs into other people's accounts, install an app and hold your card to the phone, or hand cash to a courier carrying fake documents. The Bank of Russia does not open accounts for individuals and law enforcement never collects money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Сначала сообщают о взломе, доверенности или утечке данных.",
+        "en": "First they report a hacked account, a power of attorney or a data leak."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Подключается «сотрудник ФСБ» или «Центробанка» и запрещает рассказывать родным.",
+        "en": "An \"FSB\" or \"Central Bank officer\" joins and forbids you to tell your family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ru": "Требуют снять сбережения и перевести их на «безопасный» или «основной» счёт.",
+        "en": "They demand you withdraw your savings and move them to a \"safe\" or \"main\" account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ru": "Иногда за наличными присылают курьера или просят установить приложение.",
+        "en": "Sometimes a courier is sent for the cash, or you are told to install an app."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Говорит старший лейтенант финансового надзора. По вашим счетам проходит перевод в пользу запрещённой организации, возбуждена проверка. Чтобы вас не признали соучастником, деньги нужно перевести на резервный счёт Центрального банка — после проверки они вернутся. Разговор секретный, родственникам и в банке ничего не объясняйте.",
+        "en": "This is a senior lieutenant from financial supervision. A transfer to a banned organisation is going through your accounts and an inquiry has been opened. So that you are not treated as an accomplice, the money must go to a reserve account at the Central Bank — it will come back after the check. This conversation is secret, explain nothing to your relatives or the bank."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили из фсб сказали перевести деньги на безопасный счет",
+      "сотрудник центробанка велел обновить основной счет",
+      "сказали что я финансирую запрещенную организацию",
+      "велели снять все сбережения и отдать курьеру",
+      "просили задекларировать наличные деньги",
+      "следователь запретил рассказывать родственникам о разговоре"
+    ],
+    "en": [
+      "someone from the fsb told me to move my money to a safe account",
+      "a central bank officer told me to update my main account",
+      "they said I am funding a banned organisation",
+      "they told me to withdraw all my savings and give them to a courier",
+      "they asked me to declare my cash",
+      "the detective told me not to tell my relatives about the call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "urgency",
+    "remote_access"
+  ],
+  "redFlags": {
+    "ru": [
+      "ФСБ, полиция или Центробанк звонят и говорят о ваших деньгах.",
+      "Слова «безопасный», «резервный», «основной» или «специальный» счёт.",
+      "Требуют секретности, курьера или установку приложения."
+    ],
+    "en": [
+      "The FSB, police or Central Bank call about your money.",
+      "The words \"safe\", \"reserve\", \"main\" or \"special\" account.",
+      "They demand secrecy, send a courier or ask you to install an app."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Прервите разговор: силовики и Центробанк не звонят по поводу денег и не забирают их.",
+      "Сами перезвоните в полицию по 102 и расскажите родным.",
+      "Если деньги уже переданы, сразу звоните в банк и в полицию."
+    ],
+    "en": [
+      "End the call: law enforcement and the Central Bank do not call about money or collect it.",
+      "Call the police on 102 yourself and tell your family.",
+      "If money has already been handed over, call the bank and the police at once."
+    ]
+  },
+  "reportTo": [
+    "ru/police",
+    "ru/your-bank",
+    "ru/cbr"
+  ],
+  "sources": [
+    {
+      "title": "ЦБ: мошенники убеждают жертв срочно обновить «основной счет» в Банке России",
+      "publisher": "Объясняем.рф (по данным Банка России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/tsb-moshenniki-ubezhdayut-zhertv-srochno-obnovit-osnovnoy-schet-v-banke-rossii/",
+      "date": "2026-07-16"
+    },
+    {
+      "title": "Появился новый способ обмана с использованием «безопасного счета»",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/poyavilsya-novyy-sposob-obmana-s-ispolzovaniem-bezopasnogo-scheta/",
+      "date": "2026-02-09"
+    },
+    {
+      "title": "В МВД рассказали, как курьеры мошенников используют для обмана поддельные документы ФСБ",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-rasskazali-kak-kurery-moshennikov-ispolzuyut-dlya-obmana-poddelnye-dokumenty-fsb/",
+      "date": "2025-12-15"
+    },
+    {
+      "title": "Банк России назвал 10 самых распространенных фраз мошенников",
+      "publisher": "Объясняем.рф (по данным Банка России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/bank-rossii-nazval-10-samykh-rasprostranennykh-fraz-moshennikov/",
+      "date": "2025-10-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

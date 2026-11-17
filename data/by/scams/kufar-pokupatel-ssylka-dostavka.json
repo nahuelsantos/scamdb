@@ -1,0 +1,134 @@
+{
+  "id": "by/kufar-pokupatel-ssylka-dostavka",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "ru": "«Покупатель» с площадки объявлений, который переводит общение в мессенджер",
+    "en": "A 'buyer' from a classifieds site who moves the conversation to a messenger"
+  },
+  "name": {
+    "ru": "Покупатель на Kufar присылает ссылку «Европочты» или «для получения оплаты»",
+    "en": "A Kufar buyer sends a 'Europochta' link or a link 'to receive payment'"
+  },
+  "how": {
+    "ru": "Вы продаёте вещь на Kufar или другой площадке объявлений. «Покупатель» пишет в Telegram, Viber или WhatsApp, говорит, что живёт в другом городе, и предлагает оформить доставку через «Европочту» или онлайн-оплату. Он присылает ссылку на поддельную страницу доставки или площадки, где нужно ввести номер карточки, срок действия, CVV и код из SMS «чтобы получить деньги». Вместо зачисления деньги списываются с вашей карточки. Иногда ссылку присылают картинкой или QR-кодом, чтобы обойти фильтры площадки.",
+    "en": "You are selling something on Kufar or another classifieds site. A 'buyer' writes on Telegram, Viber or WhatsApp, says they live in another city and suggests delivery through 'Europochta' or an online payment. They send a link to a fake delivery or marketplace page where you must enter your card number, expiry date, CVV and SMS code 'to receive the money'. Instead of being paid, money is taken from your card. Sometimes the link is sent as an image or QR code to slip past the site's filters."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Покупатель хочет купить сразу, но живёт в другом городе.",
+        "en": "The buyer wants to buy at once but lives in another city."
+      }
+    },
+    {
+      "text": {
+        "ru": "Давайте общаться в Telegram, я оформлю доставку.",
+        "en": "Let's talk on Telegram, I'll arrange delivery."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "ru": "Я уже оплатил, получите деньги по ссылке.",
+        "en": "I've already paid, collect the money via the link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "Введите данные карточки и код из SMS.",
+        "en": "Enter your card details and the SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Добрый день! Пишу по объявлению о продаже коляски. Забираю, но я в Гомеле, поэтому оформил доставку курьером Европочты, оплата уже прошла. Чтобы деньги поступили вам на карту, заполните форму получателя по ссылке: [ссылка]. Курьер приедет за коляской завтра.",
+        "en": "Good afternoon! I'm writing about your pram listing. I'll take it, but I'm in Gomel, so I've arranged a Europochta courier and the payment has gone through. For the money to reach your card, fill in the recipient form at the link: [ссылка]. The courier will collect the pram tomorrow."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "покупатель с куфара прислал ссылку на доставку",
+      "просят ввести данные карты чтобы получить деньги за товар",
+      "покупатель пишет в телеграм и предлагает европочту",
+      "для получения оплаты нужно ввести cvv",
+      "продавал вещь и с карты списали деньги после ссылки",
+      "покупатель прислал qr код для получения денег"
+    ],
+    "en": [
+      "a buyer from kufar sent me a delivery link",
+      "they ask me to enter card details to get paid for an item",
+      "the buyer is writing on telegram and suggests europochta",
+      "to receive payment I have to enter the cvv",
+      "I was selling something and money left my card after a link",
+      "the buyer sent a qr code to receive the money"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "new_number",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ru": [
+      "Покупатель сразу уводит разговор из чата площадки в мессенджер.",
+      "Чтобы получить деньги, просят ввести CVV или код из SMS.",
+      "Адрес ссылки отличается от официального сайта площадки или почты."
+    ],
+    "en": [
+      "The buyer immediately moves the chat off the site into a messenger.",
+      "To receive money you are asked for the CVV or an SMS code.",
+      "The link address differs from the site's or post office's official address."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Общайтесь только во внутреннем чате площадки и пользуйтесь её собственной доставкой и оплатой.",
+      "Для получения денег не нужны CVV, срок действия карточки и коды из SMS.",
+      "Если ввели данные, сразу заблокируйте карточку и сообщите в милицию."
+    ],
+    "en": [
+      "Talk only in the site's own chat and use its own delivery and payment.",
+      "Receiving money never needs your CVV, card expiry date or SMS codes.",
+      "If you entered details, block the card at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "by/your-bank",
+    "by/police",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "Белорус продавал жесткий диск, но сам лишился денег — вот что случилось",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2026/01/27/belorus-prodaval-zhestkij-disk-no-sam-lishilsya-deneg",
+      "date": "2026-01-27"
+    },
+    {
+      "title": "«Ну и сиди, хрюкай дальше». Неизвестный расстроился, когда не смог «развести» белоруса",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2025/01/13/neizvestnyj-rasstroilsya-kogda-ne-smog-razvesti-belorusa",
+      "date": "2025-01-13"
+    },
+    {
+      "title": "Под кого чаще всего маскируются кибермошенники – рассказали в Куфаре",
+      "publisher": "Myfin.by",
+      "url": "https://myfin.by/article/money/case-vsego-kibermosenniki-maskiruutsa-pod-prodavcov-smartfonov-preduprezdaet-kufar",
+      "date": "2022-10-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

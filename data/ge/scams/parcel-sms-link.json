@@ -1,0 +1,123 @@
+{
+  "id": "ge/parcel-sms-link",
+  "country": "ge",
+  "lang": "ka",
+  "status": "fading",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "ka": "„საქართველოს ფოსტა“, კურიერი ან საერთაშორისო გადამზიდავი",
+    "en": "“Georgian Post”, a courier or an international carrier"
+  },
+  "name": {
+    "ka": "ყალბი SMS ამანათზე: გადაიხადეთ მცირე თანხა",
+    "en": "Fake parcel text: pay a small fee"
+  },
+  "how": {
+    "ka": "მოდის SMS საფოსტო ან სატრანსპორტო კომპანიის სახელით: თქვენს სახელზე ამანათია, მაგრამ შეჩერებულია მისამართის ან გადაუხდელი მოსაკრებლის გამო. მის მისაღებად ბმულზე უნდა გადახვიდეთ და მცირე თანხა გადაიხადოთ. ყალბი გვერდი ითხოვს ბარათის სრულ ნომერს, ვადას, სამნიშნა კოდს ან ინტერნეტბანკის მონაცემებს.",
+    "en": "A text arrives in the name of a postal or delivery company: there is a parcel for you but it is on hold because of the address or an unpaid fee. To receive it you must follow a link and pay a small amount. The fake page asks for the full card number, expiry date, three-digit code or internet-banking details."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "SMS ფოსტის ან კურიერის სახელით: ამანათი შეჩერებულია.",
+        "en": "A text in the name of the post or a courier: your parcel is on hold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "დღესვე უნდა გადაიხადოთ, თორემ ამანათი დაბრუნდება.",
+        "en": "You must pay today or the parcel will be returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ka": "გადახდა ბმულით, რამდენიმე ლარი.",
+        "en": "Payment by link, a couple of lari."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ka": "გვერდი ბარათის მონაცემებს და SMS კოდს ითხოვს.",
+        "en": "The page asks for card details and the SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ka": "GPost: თქვენი გზავნილი შეჩერებულია დახარისხების ცენტრში მისამართის არასრულად მითითების გამო. მიწოდების გასაგრძელებლად გადაიხადეთ 1,90 ₾ დღეს 23:59-მდე: [ბმული]",
+        "en": "GPost: your item is held at the sorting centre because the address is incomplete. To continue delivery, pay 1.90 ₾ by 23:59 today: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "ფოსტის sms ამანათზე საფასური",
+      "ამანათი შეჩერებულია მისამართის გამო",
+      "კურიერის შეტყობინება ბმულით რამდენიმე ლარი",
+      "ამანათის მიწოდება ჩავარდა ბმული",
+      "საბაჟო მოსაკრებელი sms ბმული",
+      "gpost sms amanati gadakhda"
+    ],
+    "en": [
+      "post office text to pay for a parcel",
+      "parcel on hold because of the address",
+      "courier text with a payment link",
+      "card details requested to receive a parcel",
+      "customs fee text message link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ka": [
+      "მცირე თანხა ბმულით და მოკლე ვადა.",
+      "გვერდი ითხოვს ბარათის სამნიშნა კოდს ან ინტერნეტბანკის პაროლს.",
+      "ბმულის მისამართი კომპანიის ოფიციალურ საიტს არ ემთხვევა."
+    ],
+    "en": [
+      "A small amount by link and a short deadline.",
+      "The page asks for the card’s three-digit code or your internet-banking password.",
+      "The link address doesn’t match the company’s official site."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "ბმულზე არ გადახვიდეთ. ამანათი შეამოწმეთ კომპანიის ოფიციალურ საიტზე ან აპლიკაციაში, თრექინგ ნომრით.",
+      "ბარათის მონაცემები შეიყვანეთ? სასწრაფოდ დაბლოკეთ ბარათი და დაუკავშირდით ბანკს.",
+      "პაროლი შეიყვანეთ? შეცვალეთ იგი."
+    ],
+    "en": [
+      "Don’t open the link. Check the parcel on the company’s official site or app with the tracking number.",
+      "Entered card details? Block the card right away and contact your bank.",
+      "Entered a password? Change it."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "როგორ უნდა მოიქცეთ, თუ მიიღეთ საეჭვო SMS შეტყობინება, რომ თქვენს სახელზე ამანათია. დეტალური ინსტრუქცია",
+      "publisher": "Imedi",
+      "url": "https://imedinews.ge/ge/sazogadoeba/344997/rogor-unda-moiqtset-tu-miiget-saechvo-sms-shetkobineba-rom-tqvens-sakhelze-amanatia-detaluri-instruqtsia",
+      "date": "2024-07-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ge/revenue-service-refund-sms"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "ru/feikovyi-vzlom-gosuslug",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "ru": "Сообщение «от Госуслуг» или Минцифры о взломе аккаунта",
+    "en": "A message \"from Gosuslugi\" or the digital ministry about a hacked account"
+  },
+  "name": {
+    "ru": "«Ваш аккаунт на Госуслугах взломан»: позвоните в «поддержку»",
+    "en": "\"Your Gosuslugi account has been hacked\": call \"support\""
+  },
+  "how": {
+    "ru": "Приходит письмо, СМС или ссылка, где сообщают о взломе «Госуслуг», подозрительной доверенности или кредите и дают номер «службы поддержки». Иногда ссылка открывает сайт с фальшивым видео «взлома», где по экрану бегут паспортные данные, СНИЛС и кредитная история. Позвонив по номеру, человек попадает к мошенникам, которые от имени Минцифры, банка или полиции «спасают» деньги и требуют перевести их или взять кредит. Госуслуги не звонят и не пишут в мессенджерах.",
+    "en": "An email, SMS or link reports that your Gosuslugi account has been hacked, or mentions a suspicious power of attorney or loan, and gives a \"support\" number. Sometimes the link opens a site with a fake \"hacking\" video showing passport data, SNILS and credit history scrolling past. Calling the number puts you through to scammers who, in the name of the digital ministry, a bank or the police, \"rescue\" your money and demand you transfer it or take out a loan. Gosuslugi does not call or write in messengers."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Приходит сообщение о взломе аккаунта или подозрительном входе.",
+        "en": "A message arrives about a hacked account or a suspicious login."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "В сообщении номер «поддержки» или ссылка.",
+        "en": "The message has a \"support\" number or a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "«Специалист» пугает кредитами и доверенностями от вашего имени.",
+        "en": "A \"specialist\" frightens you with loans and powers of attorney in your name."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Потом просят перевести деньги или оформить кредит, чтобы их «защитить».",
+        "en": "Then you are asked to transfer money or take a loan to \"protect\" it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ru": "Госуслуги: зафиксирован вход в ваш личный кабинет с нового устройства и оформление доверенности. Если это были не вы, срочно свяжитесь со службой защиты учётных записей по номеру [номер] или перейдите [ссылка].",
+        "en": "Gosuslugi: a login to your account from a new device and the issuing of a power of attorney were recorded. If this was not you, urgently contact the account protection service on [номер] or go to [ссылка]."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "пришло сообщение что мой аккаунт на госуслугах взломан",
+      "в смс номер поддержки госуслуг",
+      "по ссылке показали видео как взламывают мой кабинет",
+      "звонил специалист минцифры про доверенность",
+      "сказали что на меня оформляют кредит через госуслуги",
+      "письмо о подозрительной активности на портале"
+    ],
+    "en": [
+      "I got a message that my gosuslugi account was hacked",
+      "the sms had a gosuslugi support number",
+      "the link showed a video of my account being hacked",
+      "a digital ministry specialist called about a power of attorney",
+      "they said someone is taking out a loan in my name through gosuslugi",
+      "an email about suspicious activity on the portal"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Сообщение о взломе с номером телефона для связи.",
+      "Ссылка ведёт не на официальный адрес портала.",
+      "Звонящий «из Госуслуг» или Минцифры — сотрудники портала не звонят."
+    ],
+    "en": [
+      "A hacking alert with a phone number to call.",
+      "The link does not lead to the portal's official address.",
+      "A caller \"from Gosuslugi\" or the digital ministry — portal staff do not call."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не звоните по номеру из сообщения и не открывайте ссылку.",
+      "Сами войдите в «Госуслуги» через приложение или набрав адрес вручную и проверьте историю входов.",
+      "Если уже звонили и переводили деньги — сразу в банк и полицию."
+    ],
+    "en": [
+      "Do not call the number in the message or open the link.",
+      "Log in to Gosuslugi yourself through the app or by typing the address and check the login history.",
+      "If you already called and sent money, go straight to the bank and the police."
+    ]
+  },
+  "reportTo": [
+    "ru/police",
+    "ru/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "В МВД предупредили о мошеннической схеме с фейковым взломом «Госуслуг»",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-predupredili-o-moshennicheskoy-skheme-s-feykovym-vzlomom-gosuslug/",
+      "date": "2026-08-30"
+    },
+    {
+      "title": "В УБК МВД рассказали, как работают многоступенчатые схемы мошенников",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-ubk-mvd-rasskazali-kak-rabotayut-mnogostupenchatye-skhemy-moshennikov/",
+      "date": "2025-12-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

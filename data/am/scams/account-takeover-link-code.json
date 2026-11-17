@@ -1,0 +1,130 @@
+{
+  "id": "am/account-takeover-link-code",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "hy": "Ընկերոջ կոտրված Telegram կամ WhatsApp հաշիվ, կամ «Instagram», «WhatsApp», «Telegram» անունով հաղորդագրություն",
+    "en": "A friend’s hacked Telegram or WhatsApp account, or a message in the name of “Instagram”, “WhatsApp” or “Telegram”"
+  },
+  "name": {
+    "hy": "«Քվեարկիր», «փոխիր գաղտնաբառը». հաշվի առևանգում կոդով",
+    "en": "“Vote for me”, “change your password”: account takeover with a code"
+  },
+  "how": {
+    "hy": "Ծանոթի կոտրված հաշվից գալիս է հաղորդագրություն՝ «մասնակցում եմ մրցույթի, քվեարկիր ինձ համար» և հղում: Հղումը բացում է կեղծ Telegram-ի մուտքի էջ, որը պահանջում է հեռախոսահամարը, հետո՝ կոդը: Կոդը մուտքագրելուց հետո խարդախները մտնում են ձեր հաշիվ և նույն հաղորդագրությունն ուղարկում ձեր կոնտակտներին: Նման ձևով գալիս են կեղծ «գաղտնաբառը փոխելու» հղումներ Instagram-ի կամ WhatsApp-ի անունից, որոնք դուք չեք պահանջել:",
+    "en": "A message comes from a friend’s hacked account: “I’m in a contest, vote for me” with a link. The link opens a fake Telegram login page that asks for your phone number, then the code. Once you enter the code, scammers take over your account and send the same message to your contacts. Fake “change your password” links in the name of Instagram or WhatsApp, which you never requested, work the same way."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Ծանոթից անսպասելի հաղորդագրություն՝ քվեարկելու կամ «ստուգելու» հղումով:",
+        "en": "An unexpected message from a friend with a link to vote or “check”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Հղումը բացում է էջ, որը նման է Telegram-ի, Instagram-ի կամ WhatsApp-ի մուտքին:",
+        "en": "The link opens a page that looks like a Telegram, Instagram or WhatsApp login."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hy": "Էջը պահանջում է հեռախոսահամարը, կոդը կամ գաղտնաբառը:",
+        "en": "The page asks for your phone number, code or password."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "hy": "Բարև, ներողություն, որ գրում եմ: Աղջիկս մասնակցում է պարի մրցույթի, ամեն ձայնը կարևոր է: Կքվեարկե՞ս նրա համար, ընդամենը մեկ րոպե է, մտիր և հաստատիր համարով [հղում]",
+        "en": "Hi, sorry for writing. My daughter is in a dance contest and every vote counts. Could you vote for her? It only takes a minute, go in and confirm with your number [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "ընկերը գրեց քվեարկիր մրցույթում հղում",
+      "տելեգրամի կոդը մուտքագրեցի կայքում հաշիվս կոտրեցին",
+      "instagram գաղտնաբառը փոխելու հղում whatsapp",
+      "հաշվիցս կոնտակտներիս հաղորդագրություններ են գնում",
+      "քվեարկելու հեռախոսահամարս կոդը ուզեցին",
+      "կոտրել են տելեգրամ հաշիվը մուտքի կոդով",
+      "կեղծ telegram մուտքի էջ հեռախոսահամար կոդ",
+      "qvearkir mrcuyt link"
+    ],
+    "en": [
+      "friend asked me to vote in a contest with a link",
+      "entered my telegram code on a site and lost my account",
+      "instagram password change link on whatsapp",
+      "my account is sending messages to my contacts",
+      "voting page asked for my number and code",
+      "telegram account hijacked with login code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hy": [
+      "Telegram-ի կամ WhatsApp-ի կոդը պետք է միայն հավելվածում, երբեք՝ կայքում:",
+      "Քվեարկելու համար հեռախոսահամար և կոդ պետք չեն:",
+      "Գաղտնաբառը փոխելու հղում, որը դուք չեք պահանջել:"
+    ],
+    "en": [
+      "A Telegram or WhatsApp code is only for the app itself, never for a website.",
+      "Voting never needs your phone number and a code.",
+      "A password-change link you never asked for."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Մի մուտքագրեք կոդեր և գաղտնաբառեր հղումով բացված էջերում: Ընկերոջը զանգահարեք և ստուգեք:",
+      "Միացրեք երկքայլ ստուգումը (PIN) WhatsApp-ում և Telegram-ում, ավելացրեք էլ. հասցե:",
+      "Հաշիվը կորցրե՞լ եք. Telegram-ում ավարտեք անծանոթ սեսիաները «Սարքեր» բաժնում, զգուշացրեք ընկերներին և հաղորդեք կիբեռոստիկանությանը:"
+    ],
+    "en": [
+      "Don’t enter codes or passwords on pages opened from a link. Call your friend to check.",
+      "Turn on two-step verification (PIN) in WhatsApp and Telegram and add an email address.",
+      "Lost the account? In Telegram end unknown sessions under “Devices”, warn your friends and report it to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "am/cyber-police"
+  ],
+  "sources": [
+    {
+      "title": "Armenia's Cyber Police Warns of Fraudulent Links for Changing Instagram Passwords",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/armenia-s-cyber-police-warns-of-fraudulent-links-for-changing-instagram-passwords/",
+      "date": "2026-06-11"
+    },
+    {
+      "title": "Armenia's Cyber Police warns of mass hijacking of WhatsApp accounts",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/armenia-s-cyber-police-warns-of-mass-hijacking-of-whatsapp-accounts",
+      "date": "2026-01-20"
+    },
+    {
+      "title": "Telegram Hijack Attack Targeting Armenian Users",
+      "publisher": "CyberHUB-AM",
+      "url": "https://cyberhub.am/en/blog/2024/03/26/telegram-hijack-attack-targeting-armenian-users",
+      "date": "2024-03-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "am/hacked-friend-account-money"
+  ]
+}

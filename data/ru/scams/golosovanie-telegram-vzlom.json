@@ -1,0 +1,131 @@
+{
+  "id": "ru/golosovanie-telegram-vzlom",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Сообщение от знакомого или в домовом чате: «проголосуй» или «чат переезжает»",
+    "en": "A message from a friend or in a building chat: \"vote\" or \"the chat is moving\""
+  },
+  "name": {
+    "ru": "«Проголосуй за меня» или «чат переезжает»: ссылка, которая крадёт Telegram",
+    "en": "\"Vote for me\" or \"the chat is moving\": a link that steals your Telegram"
+  },
+  "how": {
+    "ru": "Знакомый, который давно не был в сети, просит проголосовать за ребёнка в конкурсе, или в домовом чате предлагают голосование по ЖКХ, или пишут, что чат переезжает на новую площадку. Ссылка ведёт на фишинговую страницу или бот, который просит номер телефона и код из СМС «для подтверждения». С этим кодом мошенники входят в ваш аккаунт, рассылают ту же ссылку вашим контактам и просят у них деньги, а иногда пугают «взломом Госуслуг».",
+    "en": "A friend who has not been online for a while asks you to vote for their child in a contest, or a building chat proposes a vote on housing matters, or says the chat is moving to a new platform. The link leads to a phishing page or bot that asks for your phone number and SMS code \"to confirm\". With that code the scammers log in to your account, send the same link to your contacts and ask them for money, and sometimes scare you with a \"Gosuslugi hack\"."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Знакомый или домовой чат просит проголосовать или перейти в новый чат.",
+        "en": "A friend or building chat asks you to vote or move to a new chat."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Ссылка ведёт на сайт или бот, похожий на Telegram.",
+        "en": "The link leads to a site or bot that looks like Telegram."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "Для «подтверждения голоса» просят номер и код.",
+        "en": "To \"confirm the vote\" they ask for your number and code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Аккаунт угоняют и пишут от вашего имени друзьям.",
+        "en": "Your account is hijacked and used to write to your friends."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ru": "Привет! Моя племянница участвует в конкурсе рисунков, осталось совсем чуть-чуть до первого места 🙏 Проголосуй, пожалуйста, там быстро, нужно только подтвердить номер: [ссылка]",
+        "en": "Hi! My niece is in a drawing contest and is so close to first place 🙏 Please vote, it's quick, you just need to confirm your number: [ссылка]"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "друг попросил проголосовать за ребенка в конкурсе",
+      "для голосования попросили ввести номер и код",
+      "в домовом чате голосование по жкх по ссылке",
+      "написали что чат переезжает на новую платформу",
+      "после голосования потерял доступ к телеграму",
+      "бот попросил код из смс для подтверждения участия"
+    ],
+    "en": [
+      "a friend asked me to vote for a child in a contest",
+      "to vote I was asked to enter my number and code",
+      "a vote on housing matters by link in the building chat",
+      "they wrote that the chat is moving to a new platform",
+      "after voting I lost access to my telegram",
+      "a bot asked for an sms code to confirm I take part"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ru": [
+      "Голосование, для которого нужен вход по номеру и коду.",
+      "Внезапный «переезд» чата по ссылке.",
+      "Просьба от знакомого, который давно не писал."
+    ],
+    "en": [
+      "A vote that requires logging in with your number and a code.",
+      "A sudden \"move\" of the chat by link.",
+      "A request from someone who has not written in a long time."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не вводите номер и код из Telegram или СМС на сторонних сайтах и в ботах.",
+      "Включите облачный пароль в Telegram и проверьте активные сеансы.",
+      "Если аккаунт угнали, предупредите контакты другим способом."
+    ],
+    "en": [
+      "Never enter your number and Telegram or SMS code on outside sites or bots.",
+      "Turn on two-step verification in Telegram and check active sessions.",
+      "If your account was hijacked, warn your contacts another way."
+    ]
+  },
+  "reportTo": [
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "МВД предупредило о новой схеме мошенничества с фейковым голосованием по ЖКХ",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-predupredilo-o-novoy-skheme-moshennichestva-s-feykovym-golosovaniem-po-zhkkh/",
+      "date": "2026-08-09"
+    },
+    {
+      "title": "Мошенники под предлогом переноса чатов похищают аккаунты в мессенджерах",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-pod-predlogom-perenosa-chatov-pokhishchayut-akkaunty-v-messendzherakh/",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "В МВД рассказали о новой схеме мошенничества в Telegram с помощью голосований",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-rasskazali-o-novoy-skheme-moshennichestva-v-telegram-s-pomoshchyu-golosovaniy/",
+      "date": "2025-01-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,122 @@
+{
+  "id": "by/izveshchenie-nalogovaya-ssylka-msi",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "SMS или сообщение в мессенджере якобы от налоговой (МНС) или Белпочты",
+    "en": "An SMS or messenger message supposedly from the tax ministry (MNS) or Belpochta"
+  },
+  "name": {
+    "ru": "«Вам направлено извещение из налоговой»: ссылка на поддельный сайт и вход через МСИ",
+    "en": "'You have a notice from the tax office': a link to a fake site and an MSI login"
+  },
+  "how": {
+    "ru": "Мошенники массово рассылают в Telegram, Viber, WhatsApp и по SMS сообщения о том, что вам направлено извещение из налоговой или заказное письмо. Ссылка ведёт на сайт-двойник Белпочты или налоговой, где просят войти через межбанковскую систему идентификации (МСИ), ввести логин, пароль, код из SMS или данные карточки. Получив доступ к МСИ или личному кабинету, преступники входят в ваши сервисы, а затем звонят от «службы безопасности» и выманивают деньги под предлогом «ошибки в системе» или «задолженности».",
+    "en": "Scammers mass-send Telegram, Viber, WhatsApp and SMS messages saying you have a notice from the tax office or a registered letter. The link leads to a lookalike Belpochta or tax site that asks you to log in through the interbank identification system (MSI), enter a login, password, SMS code or card details. With access to MSI or your personal account, criminals get into your services, then call from a 'security service' and extract money over a 'system error' or 'debt'."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Вам направлено извещение из налоговой, получите по ссылке.",
+        "en": "A notice from the tax office has been sent to you, get it at the link."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Войдите через МСИ и подтвердите кодом из SMS.",
+        "en": "Log in through MSI and confirm with the SMS code."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "Звонок службы безопасности: по вашему кабинету задолженность.",
+        "en": "A security service call: your account shows a debt."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ru": "МНС: в ваш личный кабинет поступило налоговое извещение. Для ознакомления и во избежание пени пройдите авторизацию: [ссылка]",
+        "en": "MNS: a tax notice has arrived in your personal account. To view it and avoid a penalty, log in: [ссылка]"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "пришло извещение из налоговой со ссылкой",
+      "просят войти через мси по ссылке из смс",
+      "сообщение что на мое имя письмо из налоговой",
+      "сайт белпочты попросил логин и пароль",
+      "взломали кабинет в межбанковской системе идентификации",
+      "налоговая прислала ссылку в вайбер"
+    ],
+    "en": [
+      "I got a notice from the tax office with a link",
+      "they ask me to log in through msi via a link in a text",
+      "a message saying there's a letter from the tax office in my name",
+      "the belpochta site asked for my login and password",
+      "my interbank identification account was hacked",
+      "the tax office sent me a link on viber"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Налоговая присылает ссылку в SMS или мессенджере.",
+      "Адрес сайта похож на официальный, но отличается лишними словами или доменом.",
+      "Просят вход через МСИ или данные карточки ради «извещения»."
+    ],
+    "en": [
+      "The tax office sends a link by SMS or messenger.",
+      "The site address looks official but has extra words or a different domain.",
+      "You're asked for an MSI login or card details for a 'notice'."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "МНС не рассылает ссылки: проверяйте извещения только в личном кабинете на официальном сайте.",
+      "Если ввели данные, сразу смените пароль МСИ и банковских приложений.",
+      "Сообщите в банк и в милицию, если после этого были звонки или списания."
+    ],
+    "en": [
+      "The tax ministry doesn't send links: check notices only in your personal account on the official website.",
+      "If you entered details, change your MSI and banking app passwords at once.",
+      "Tell your bank and the police if calls or debits followed."
+    ]
+  },
+  "reportTo": [
+    "by/your-bank",
+    "by/police",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "«Обязательно перешлите это сообщение своим родителям и бабушкам». Налоговая предупредила о новых схемах мошенников",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/economics/130520.html",
+      "date": "2026-06-26"
+    },
+    {
+      "title": "Налоговики сообщили, что люди обрывают им телефоны. Они просят ни в коем случае не совершать одно действие — иначе могут быть проблемы",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/economics/101035.html",
+      "date": "2025-06-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

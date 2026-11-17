@@ -1,0 +1,121 @@
+{
+  "id": "by/evropochta-belpochta-sms-adres-ssylka",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "SMS или сообщение в мессенджере якобы от Европочты или Белпочты",
+    "en": "An SMS or messenger message supposedly from Europochta or Belpochta"
+  },
+  "name": {
+    "ru": "Сообщение «от Европочты»: посылка не доставлена, обновите адрес по ссылке",
+    "en": "Message 'from Europochta': parcel not delivered, update your address at the link"
+  },
+  "how": {
+    "ru": "Приходит SMS, iMessage или сообщение в мессенджере от имени Европочты или Белпочты: посылка лежит в сортировочном центре и не может быть доставлена из-за неверного адреса, иначе начислят дополнительные сборы или вернут отправителю. Ссылка ведёт на поддельный сайт службы доставки, где просят ввести личные данные и данные карточки «для оплаты доставки». Часто человек вообще не ждал посылки.",
+    "en": "An SMS, iMessage or messenger message arrives in the name of Europochta or Belpochta: a parcel is at a sorting centre and can't be delivered because of a wrong address, otherwise extra fees will be charged or it will be returned. The link leads to a fake delivery website asking for personal and card details 'to pay for delivery'. Often the person wasn't expecting a parcel at all."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Ваша посылка в сортировочном центре, адрес указан неверно.",
+        "en": "Your parcel is at the sorting centre, the address is wrong."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Обновите адрес по ссылке, иначе будут дополнительные сборы.",
+        "en": "Update the address at the link or extra fees will apply."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "Оплатите небольшую сумму за повторную доставку картой.",
+        "en": "Pay a small amount by card for redelivery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ru": "Европочта: отправление №[номер] задержано в сортировочном центре из-за ошибки в адресе получателя. Подтвердите адрес в течение 24 часов, иначе будет начислена плата за хранение: [ссылка]",
+        "en": "Europochta: item No. [номер] is held at the sorting centre due to an error in the recipient's address. Confirm the address within 24 hours or a storage fee will be charged: [ссылка]"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "пришла смс от европочты что посылка не доставлена",
+      "просят обновить адрес доставки по ссылке",
+      "сообщение от белпочты про доплату за доставку",
+      "посылка в сортировочном центре а я ничего не заказывал",
+      "на сайте почты попросили ввести данные карты",
+      "грозят дополнительным сбором если не подтвердить адрес"
+    ],
+    "en": [
+      "I got a text from europochta saying the parcel wasn't delivered",
+      "they ask me to update my delivery address via a link",
+      "a message from belpochta about an extra delivery charge",
+      "a parcel is at the sorting centre but I didn't order anything",
+      "the post office site asked me to enter my card details",
+      "they threaten an extra fee unless I confirm my address"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Вы не ждали посылку, а сообщение торопит с оплатой или подтверждением.",
+      "Ссылка ведёт не на официальный сайт службы доставки.",
+      "На странице просят данные карточки за доставку."
+    ],
+    "en": [
+      "You weren't expecting a parcel and the message rushes you to pay or confirm.",
+      "The link doesn't lead to the delivery service's official website.",
+      "The page asks for card details to pay for delivery."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не переходите по ссылке; проверьте посылку по трек-номеру в официальном приложении или на сайте службы.",
+      "Не вводите данные карточки на страницах из сообщений.",
+      "Если ввели данные, заблокируйте карточку через банк."
+    ],
+    "en": [
+      "Don't open the link; check the parcel by tracking number in the official app or website.",
+      "Don't enter card details on pages from messages.",
+      "If you entered details, block the card through your bank."
+    ]
+  },
+  "reportTo": [
+    "by/your-bank",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "«Посылка — в сортировочном центре». Белорусу в iMessage пришло странное сообщение",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2026/07/30/posylka-v-sortirovochnom-centre-belorusu-prishlo-soobshhenie-yakoby-ot-evropochty",
+      "date": "2026-07-30"
+    },
+    {
+      "title": "«Обязательно перешлите это сообщение своим родителям и бабушкам». Налоговая предупредила о новых схемах мошенников",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/economics/130520.html",
+      "date": "2026-06-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

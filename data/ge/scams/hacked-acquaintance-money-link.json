@@ -1,0 +1,124 @@
+{
+  "id": "ge/hacked-acquaintance-money-link",
+  "country": "ge",
+  "lang": "ka",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ka": "ნაცნობი, მეგობარი ან ნათესავი WhatsApp-ზე ან Messenger-ში",
+    "en": "An acquaintance, friend or relative on WhatsApp or Messenger"
+  },
+  "name": {
+    "ka": "ნაცნობის ანგარიშიდან ფულის თხოვნა ან ბმული",
+    "en": "Money request or link from an acquaintance’s account"
+  },
+  "how": {
+    "ka": "გწერთ ნაცნობის, მეგობრის ან ნათესავის სახელით — მისი გატეხილი ანგარიშიდან ან მისი ფოტოთი შექმნილი პროფილიდან. ზოგჯერ გიგზავნიან ბმულს ყალბ ვებგვერდზე, სადაც ბარათის ნომერს და პირად მონაცემებს ითხოვენ. ზოგჯერ კი პირდაპირ გთხოვენ თანხის გადარიცხვას, ხშირად „ნათესავისთვის“ ან სხვის ანგარიშზე, და დარეკვაზე უარს ამბობენ.",
+    "en": "Someone writes in the name of an acquaintance, friend or relative — from their hacked account or from a profile made with their photo. Sometimes they send a link to a fake website asking for your card number and personal details. Sometimes they simply ask you to transfer money, often “for a relative” or to someone else’s account, and refuse to talk on the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "ნაცნობის ანგარიშიდან მოდის შეტყობინება.",
+        "en": "A message arrives from an acquaintance’s account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "სასწრაფოდ სჭირდება თანხა, ან გიგზავნის ბმულს.",
+        "en": "They urgently need money, or they send a link."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ka": "თანხა სხვის ანგარიშზე უნდა ჩარიცხოთ.",
+        "en": "The money must go to someone else’s account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ka": "დარეკვა „ახლა არ შეუძლია“.",
+        "en": "They “can’t talk right now”."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ka": "გამარჯობა, როგორ ხარ? ერთი დიდი თხოვნა მაქვს. ბიძაშვილს გადაუდებლად სჭირდება 650 ლარი საავადმყოფოში გადასახდელად, მე კი ბარათი გადამეკეტა. მის ანგარიშზე ჩარიცხავ? ნომერს ახლავე მოგწერ, ხვალ დილით დაგიბრუნებ. ახლა ვერ დაგირეკავ, კრებაზე ვზივარ.",
+        "en": "Hi, how are you? I have a big favour to ask. My cousin urgently needs 650 lari to pay at the hospital and my card got blocked. Could you send it to his account? I’ll text you the number now and pay you back tomorrow morning. I can’t call now, I’m in a meeting."
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "მეგობარმა ფული მთხოვა მესენჯერში",
+      "ნაცნობმა whatsapp-ზე სესხი მთხოვა",
+      "სხვის ანგარიშზე ჩარიცხვა მთხოვა მეგობარმა",
+      "ბარათი დაებლოკა და ფული სჭირდება",
+      "მეგობრის ანგარიშიდან ბმული მომივიდა",
+      "გატეხილი ფეისბუქიდან ფულს ითხოვენ",
+      "ჩაურიცხე ფული ხვალ დაგიბრუნებო",
+      "სასწრაფოდ დასჭირდა ფული მეგობარს"
+    ],
+    "en": [
+      "a friend asked me for money on whatsapp",
+      "got a link from my friend's account",
+      "asked to send money to a relative's account",
+      "friend on messenger asking to borrow money",
+      "they only text and refuse to call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "ka": [
+      "თანხა „ნათესავის“ ან უცნობის ანგარიშზე უნდა ჩაირიცხოს.",
+      "დარეკვაზე უარი და ჩქარება.",
+      "ბმული, რომელიც ბარათის ნომერს ან პირად მონაცემებს ითხოვს."
+    ],
+    "en": [
+      "The money must go to a “relative’s” or a stranger’s account.",
+      "A refusal to call and pressure to hurry.",
+      "A link that asks for your card number or personal details."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "დაურეკეთ ადამიანს ძველ, ნაცნობ ნომერზე ან ჰკითხეთ რამე, რაც მხოლოდ მან იცის.",
+      "ბმულზე არ გადახვიდეთ. ბარათის მონაცემები შეიყვანეთ? დაბლოკეთ ბარათი.",
+      "გააფრთხილეთ ნაცნობი და საერთო მეგობრები, რომ მისი ანგარიში გატეხილია."
+    ],
+    "en": [
+      "Call the person on their old, known number or ask something only they would know.",
+      "Don’t open the link. Entered card details? Block the card.",
+      "Warn the person and your mutual friends that their account has been hacked."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "Banking Association of Georgia warns of rising phishing and messaging scams",
+      "publisher": "Georgia Today",
+      "url": "https://georgiatoday.ge/banking-association-of-georgia-warns-of-rising-phishing-and-messaging-scams/",
+      "date": "2026-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

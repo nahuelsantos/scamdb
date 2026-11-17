@@ -1,0 +1,125 @@
+{
+  "id": "ge/bank-call-loan-otp",
+  "country": "ge",
+  "lang": "ka",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ka": "„ბანკის წარმომადგენელი“, „ბანკის უსაფრთხოების სამსახური“",
+    "en": "“A bank representative”, “the bank’s security department”"
+  },
+  "name": {
+    "ka": "ზარი „ბანკიდან“: უცნობი სესხის აღებას ცდილობს",
+    "en": "Call “from your bank”: a stranger is trying to take out a loan"
+  },
+  "how": {
+    "ka": "გირეკავთ ვიღაც, ვინც თავს ბანკის წარმომადგენლად ასაღებს, და გეუბნებათ, რომ უცნობი პირი თქვენს სახელზე სესხის აღებას ცდილობს. როცა ამბობთ, რომ ასეთ ადამიანს არ იცნობთ, გირეკავთ მეორე „თანამშრომელი“ და „უსაფრთხოების პროცედურის“ გავლას გთავაზობთ. ამ დროს ითხოვს პირად მონაცემებს, ინტერნეტბანკის მონაცემებს და SMS-ით მოსულ ერთჯერად კოდს. ამ მონაცემებით თაღლითები თქვენს სახელზე ონლაინ სესხს აფორმებენ და ანგარიშიდან თანხას ითვისებენ.",
+    "en": "Someone posing as a bank representative calls and says an unknown person is trying to take out a loan in your name. When you say you don’t know that person, a second “employee” calls and offers to take you through a “security procedure”. He asks for personal details, internet-banking login details and the one-time code sent by SMS. With them the fraudsters take out an online loan in your name and empty your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "ზარი „ბანკიდან“: თქვენს სახელზე სესხის განაცხადია შემოსული.",
+        "en": "A call “from the bank”: a loan application has come in under your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "სესხი სასწრაფოდ უნდა გაუქმდეს, თორემ დამტკიცდება.",
+        "en": "The loan must be cancelled right now or it will be approved."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ka": "მეორე „თანამშრომელი“ რეკავს და „უსაფრთხოების პროცედურას“ გთავაზობთ, ხაზზე გაკავებთ.",
+        "en": "A second “employee” calls with a “security procedure” and keeps you on the line."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ka": "ითხოვს ინტერნეტბანკის მონაცემებს და SMS-ით მოსულ კოდს.",
+        "en": "He asks for your internet-banking details and the code sent by SMS."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ka": "გამარჯობათ, ბანკის უსაფრთხოების განყოფილებიდან გირეკავთ. ათი წუთის წინ თქვენი პირადი ნომრით ონლაინ სესხზე 4 800 ლარის განაცხადი შემოვიდა. თქვენ არ შეგივსიათ, ხომ? მაშინ ახლავე უნდა შევაჩეროთ. ტელეფონზე მოგივათ ექვსნიშნა კოდი, უბრალოდ წამიკითხეთ და განაცხადს გავაუქმებთ. ხაზიდან არ გახვიდეთ, გთხოვთ.",
+        "en": "Hello, I’m calling from the bank’s security department. Ten minutes ago an online loan application for 4,800 lari came in with your personal ID number. You didn’t fill it in, did you? Then we need to stop it now. You’ll get a six-digit code on your phone, just read it to me and we’ll cancel the application. Please stay on the line."
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "ბანკიდან დარეკეს სესხის განაცხადზე",
+      "უცნობი სესხის აღებას ცდილობს",
+      "სესხის გასაუქმებლად კოდი მთხოვეს",
+      "კრედიტის გაუქმება ტელეფონით",
+      "უსაფრთხოების განყოფილება კოდს ითხოვს",
+      "ონლაინ სესხი გამიფორმეს უნებართვოდ",
+      "მეორე თანამშრომელი შემოუერთდა საუბარს",
+      "კრედიტის განაცხადი ვიღაცამ შეავსო"
+    ],
+    "en": [
+      "bank called about a loan in my name",
+      "caller from the bank asked for the sms code",
+      "someone trying to take a loan under my id",
+      "security procedure over the phone from the bank",
+      "online loan taken out without my consent"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ka": [
+      "ბანკის წარმომადგენელი არასდროს ითხოვს ტელეფონით ინტერნეტბანკის მომხმარებლის სახელს, პაროლს ან SMS-ით მიღებულ კოდს.",
+      "ზარი სესხზე, რომელიც არ აგიღიათ, და მერე მეორე „თანამშრომლის“ ზარი.",
+      "გაჩქარებენ და ზარის გათიშვას არ გაძლევენ."
+    ],
+    "en": [
+      "A bank employee never asks by phone for your internet-banking username, password or an SMS code.",
+      "A call about a loan you never applied for, followed by a call from a second “employee”.",
+      "They rush you and won’t let you hang up."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "გათიშეთ და თავად დაურეკეთ ბანკს ბარათზე ან ოფიციალურ ვებგვერდზე მითითებულ ნომერზე.",
+      "კოდი ან პაროლი უკვე უთხარით? დაუყოვნებლივ დაუკავშირდით ბანკს, დაბლოკეთ ბარათი და შეცვალეთ პაროლი.",
+      "შეამოწმეთ, ხომ არ გაფორმდა თქვენს სახელზე სესხი, და მიმართეთ პოლიციას."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on your card or its official website.",
+      "Already gave a code or password? Contact your bank at once, block the card and change the password.",
+      "Check whether a loan was taken out in your name and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "საქართველოს საბანკო ასოციაცია - ფინანსური თაღლითობის ახალი სქემა: თაღლითები ბანკის სახელით მოქმედებენ",
+      "publisher": "InterPressNews",
+      "url": "https://www.interpressnews.ge/ka/article/882326-sakartvelos-sabanko-asociacia-pinansuri-taglitobis-axali-skema-taglitebi-bankis-saxelit-mokmedeben",
+      "date": "2026-10-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ge/nbg-impersonation-whatsapp"
+  ]
+}

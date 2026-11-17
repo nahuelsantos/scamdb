@@ -1,0 +1,129 @@
+{
+  "id": "ge/nbg-impersonation-whatsapp",
+  "country": "ge",
+  "lang": "ka",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "ka": "„საქართველოს ეროვნული ბანკი“ (ხშირად ბანკის ლოგოთი)",
+    "en": "“National Bank of Georgia” (often with its logo)"
+  },
+  "name": {
+    "ka": "ყალბი „ეროვნული ბანკი“ WhatsApp-ზე",
+    "en": "Fake “National Bank of Georgia” on WhatsApp"
+  },
+  "how": {
+    "ka": "WhatsApp-ით ან სხვა არხით გწერენ ან გირეკავენ ეროვნული ბანკის სახელით და მის ლოგოს იყენებენ. გთავაზობენ „დახმარებას“ ეროვნული ბანკის მიმართ თითქოსდა არსებული სესხის დავალიანების დაფარვაში, ან გეუბნებიან, რომ ვიღაც თქვენს საბანკო მონაცემებზე წვდომას და სესხის გააქტიურებას ცდილობდა. „გადასამოწმებლად“ გთხოვენ ინტერნეტ ან მობილბანკში შესვლას და მომხმარებლის სახელის, პაროლისა და სხვა მონაცემების გაზიარებას. ამით თაღლითები ანგარიშში შედიან და თანხას გადარიცხავენ.",
+    "en": "Someone writes or calls on WhatsApp or another channel in the name of the National Bank of Georgia, using its logo. They offer “help” repaying a supposed loan debt to the National Bank, or say someone tried to access your banking data and activate a loan. To “verify” it they ask you to log in to internet or mobile banking and share your username, password and other details. With them the fraudsters get into the account and move the money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "WhatsApp შეტყობინება ან ზარი ეროვნული ბანკის ლოგოთი.",
+        "en": "A WhatsApp message or call with the National Bank’s logo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "თქვენს მონაცემებზე უცნობი წვდომა და სესხის გააქტიურების მცდელობა დაფიქსირდა.",
+        "en": "Unknown access to your data and an attempt to activate a loan were detected."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ka": "გთხოვენ ინტერნეტბანკში შესვლას „გადამოწმებისთვის“.",
+        "en": "You are asked to log in to internet banking to “verify”."
+      }
+    },
+    {
+      "text": {
+        "ka": "ითხოვენ მომხმარებლის სახელს, პაროლს ან კოდს.",
+        "en": "They ask for your username, password or a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ka": "საქართველოს ეროვნული ბანკი | მომხმარებელთა დაცვა. პატივცემულო მოქალაქევ, ჩვენმა მონიტორინგმა აჩვენა, რომ თქვენს საბანკო ანგარიშზე უცნობი პირი შევიდა და სესხის გააქტიურება სცადა. ოპერაციის შესაჩერებლად დღესვე უნდა დაადასტუროთ ვინაობა: შედით მობილბანკში და გამოგვიგზავნეთ მომხმარებლის სახელი და ეკრანზე გამოსული კოდი.",
+        "en": "National Bank of Georgia | Consumer protection. Dear citizen, our monitoring showed that an unknown person accessed your bank account and tried to activate a loan. To stop the operation you must confirm your identity today: log in to mobile banking and send us your username and the code shown on the screen."
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "ეროვნული ბანკიდან მწერენ whatsapp-ზე",
+      "ეროვნული ბანკის ლოგოთი მოვიდა შეტყობინება",
+      "ეროვნული ბანკი სესხის დავალიანების დაფარვას მთავაზობს",
+      "ეროვნული ბანკის ოპერატორი ინტერნეტბანკში შესვლას მთხოვს",
+      "ეროვნულმა ბანკმა პაროლი მთხოვა",
+      "nbg ვოცაპზე სესხის დავალიანება"
+    ],
+    "en": [
+      "national bank of georgia messaged me on whatsapp",
+      "message with the national bank logo about a loan",
+      "asked me to log into internet banking to verify",
+      "national bank representative asking for my password",
+      "help paying off a loan debt to the national bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ka": [
+      "ეროვნული ბანკი მოქალაქეებს WhatsApp-ით არ უკავშირდება და სესხებს არ გასცემს.",
+      "ლოგო შეტყობინებაში არაფერს ამტკიცებს: მისი კოპირება ნებისმიერს შეუძლია.",
+      "ითხოვენ ინტერნეტბანკის მომხმარებლის სახელს, პაროლს ან კოდს."
+    ],
+    "en": [
+      "The National Bank does not contact citizens on WhatsApp and does not lend to them.",
+      "A logo in a message proves nothing: anyone can copy it.",
+      "They ask for your internet-banking username, password or a code."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "არ უპასუხოთ, არ გადახვიდეთ ბმულზე და არავის გაუზიაროთ შესვლის მონაცემები.",
+      "მონაცემები უკვე გაუზიარეთ? დაუყოვნებლივ დაურეკეთ თქვენს ბანკს და შეცვალეთ პაროლი.",
+      "აცნობეთ პოლიციას და, საჭიროების შემთხვევაში, ეროვნული ბანკის ცხელ ხაზს."
+    ],
+    "en": [
+      "Don’t reply, don’t open links and don’t share your login details with anyone.",
+      "Already shared them? Call your bank at once and change the password.",
+      "Tell the police and, if needed, the National Bank’s hotline."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112",
+    "ge/nbg"
+  ],
+  "sources": [
+    {
+      "title": "Consumer Warning from the National Bank of Georgia",
+      "publisher": "National Bank of Georgia",
+      "url": "https://nbg.gov.ge/en/media/news/consumer-warning-from-the-national-bank-of-georgia",
+      "date": "2026-07-30"
+    },
+    {
+      "title": "National Bank warns customers about fraud attempts",
+      "publisher": "Georgia Today",
+      "url": "https://georgiatoday.ge/national-bank-warns-customers-about-fraud-attempts/",
+      "date": "2026-07-30"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ge/bank-call-loan-otp"
+  ]
+}

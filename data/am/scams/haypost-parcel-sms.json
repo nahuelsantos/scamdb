@@ -1,0 +1,126 @@
+{
+  "id": "am/haypost-parcel-sms",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "hy": "«HayPost» կամ առաքման ծառայություն, SMS-ով, էլ. փոստով կամ մեսենջերով",
+    "en": "“HayPost” or a delivery service, by text, email or messenger"
+  },
+  "name": {
+    "hy": "SMS «HayPost»-ից. ծանրոցը կանգնած է, վճարեք փոքր գումար",
+    "en": "Text “from HayPost”: your parcel is on hold, pay a small fee"
+  },
+  "how": {
+    "hy": "Գալիս է հաղորդագրություն, իբր HayPost-ից. հասցեում սխալ կա կամ պետք է վճարել մաքսազերծման կամ պահպանման փոքր վճար՝ սովորաբար մի քանի հազար դրամ: Հղումը բացում է կեղծ էջ, որը նման է HayPost-ի կայքին և պահանջում է քարտի ամբողջական տվյալները, CVV-ն և SMS կոդը: Երբեմն առաջարկում են տեղադրել «պաշտոնական հավելված» (.apk), որը իրականում լրտեսող ծրագիր է և հասանելիություն է տալիս բանկային հավելվածներին: Հաղորդագրության մեջ սովորաբար չկա հետևման համար կամ ուղարկողի տվյալներ:",
+    "en": "A message arrives, supposedly from HayPost: there is an error in the address or a small customs or storage fee is due, usually a few thousand drams. The link opens a fake page that looks like HayPost and asks for the full card details, the CVV and the SMS code. Sometimes it asks you to install an “official app” (.apk) that is really spyware with access to your banking apps. The message usually has no tracking number or sender details."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "SMS կամ նամակ HayPost-ի անունով. ծանրոցը կանգնած է:",
+        "en": "A text or email in HayPost’s name: your parcel is on hold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Պետք է վճարել մի քանի հազար դրամ կամ ճշտել հասցեն՝ հղումով:",
+        "en": "You must pay a few thousand drams or confirm the address via a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hy": "Էջը պահանջում է քարտի տվյալներ, CVV և SMS կոդ:",
+        "en": "The page asks for card details, the CVV and the SMS code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "hy": "Կամ առաջարկում են տեղադրել հետևման «հավելված»:",
+        "en": "Or it tells you to install a tracking “app”."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "hy": "HayPost: Ձեր առաքանին պահվում է տեսակավորման կենտրոնում՝ հասցեի անճշտության պատճառով: Վերաառաքման համար վճարեք 1 900 դրամ 24 ժամվա ընթացքում: [հղում]",
+        "en": "HayPost: Your item is being held at the sorting centre due to an address error. Pay 1,900 drams within 24 hours for redelivery: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "sms հայփոստից ծանրոցը չի առաքվել",
+      "հայփոստ պահանջում է վճարել հղումով",
+      "առաքման վճար մաքսազերծում sms հղում",
+      "մուտքագրեցի քարտը հայփոստի էջում",
+      "haypost հասցեի սխալ վճարեք",
+      "ծանրոցի հետևման հավելված ներբեռնել",
+      "առաքանին պահվում է տեսակավորման կենտրոնում վճարեք",
+      "haypost tsanrots vjarum"
+    ],
+    "en": [
+      "text from haypost parcel not delivered",
+      "haypost asks to pay a fee by link",
+      "customs fee text with a link for my parcel",
+      "entered my card on a haypost page",
+      "haypost address error pay now",
+      "told to download a parcel tracking app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "remote_access",
+    "urgency"
+  ],
+  "redFlags": {
+    "hy": [
+      "HayPost-ի իրական հաղորդագրությունները գալիս են միայն haypost.am տիրույթից:",
+      "Հետևման համար չկա, բայց վճար են պահանջում հղումով:",
+      "Փոքր վճարի համար պահանջում են CVV և SMS կոդ:"
+    ],
+    "en": [
+      "Real HayPost messages come only from the haypost.am domain.",
+      "There is no tracking number, yet they want a fee via a link.",
+      "A small fee, but they want the CVV and the SMS code."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Մի բացեք հղումը: Ծանրոցը ստուգեք HayPost-ի պաշտոնական կայքում կամ հավելվածում՝ ինքներդ մուտքագրելով հետևման համարը:",
+      "Տվե՞լ եք քարտի տվյալներ կամ տեղադրել եք ծրագիր. անմիջապես զանգահարեք բանկ:",
+      "Հաղորդեք կիբեռոստիկանությանը:"
+    ],
+    "en": [
+      "Don’t open the link. Check the parcel on HayPost’s official website or app, typing the tracking number yourself.",
+      "Entered card details or installed an app? Call your bank straight away.",
+      "Report it to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "am/your-bank",
+    "am/cyber-police"
+  ],
+  "sources": [
+    {
+      "title": "\"Cannot deliver your package\". IDBank warns about fake messages from ''HayPost''",
+      "publisher": "ARKA",
+      "url": "https://arka.am/en/news/business/cannot-deliver-your-package-idbank-warns-about-fake-messages-from-haypost-/",
+      "date": "2026-05-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

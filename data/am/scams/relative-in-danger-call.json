@@ -1,0 +1,136 @@
+{
+  "id": "am/relative-in-danger-call",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "hy": "«Բժիշկ», «քննիչ» կամ «ոստիկան», երբեմն՝ լացող «հարազատ»",
+    "en": "A “doctor”, “investigator” or “police officer”, sometimes a crying “relative”"
+  },
+  "name": {
+    "hy": "Զանգ. հարազատը վթարի է ենթարկվել, շտապ գումար են պահանջում",
+    "en": "Call: your relative had an accident and money is demanded now"
+  },
+  "how": {
+    "hy": "Զանգողը ներկայանում է որպես բժիշկ, քննիչ կամ ոստիկան և ասում, որ ձեր հարազատը ծանր վթարի է ենթարկվել, վերակենդանացման բաժնում է կամ ձերբակալված է: Համոզելու համար կարող են ընդօրինակել հարազատի ձայնը, լաց կամ աղմուկ ավելացնել, այժմ՝ նաև արհեստական բանականությամբ: Պահանջում են մեծ գումար՝ կանխիկ տալ սուրհանդակին կամ փոխանցել անծանոթ քարտի կամ դրամապանակի, և ժամանակ չեն թողնում ստուգելու: Հատկապես տուժում են տարեց մարդիկ:",
+    "en": "The caller says they are a doctor, investigator or police officer and that your relative has had a serious accident, is in intensive care or has been detained. To convince you they may imitate the relative’s voice, add crying or noise, now also with AI. They demand a large sum, handed in cash to a courier or sent to an unknown card or wallet, and leave no time to check. Elderly people are hit hardest."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Զանգ «բժշկից» կամ «քննիչից», երբեմն հարազատի լացող ձայնով:",
+        "en": "A call from a “doctor” or “investigator”, sometimes with a relative’s crying voice."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Հարազատը վթարի է ենթարկվել կամ ձերբակալված է, պետք է հենց հիմա վճարել:",
+        "en": "The relative had an accident or was detained and you must pay right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hy": "Գումարը պետք է տալ սուրհանդակին կամ փոխանցել քարտին:",
+        "en": "The money must go to a courier or be sent to a card."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hy": "Չեն թողնում անջատել և զանգել հարազատին:",
+        "en": "They won’t let you hang up and call the relative."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "hy": "Տիկին, ես քննիչ եմ: Ձեր որդին վթար է արել, մարդ է տուժել, հիմա բաժանմունքում է: Եթե հենց հիմա 2 000 դոլար չտրամադրեք տուժողի բուժման համար, գործ կհարուցվի: Մեր մարդը կգա ձեր տուն վերցնելու, ոչ մեկին մի ասեք:",
+        "en": "Madam, I’m an investigator. Your son caused an accident, someone was hurt, he is at the station now. If you don’t provide 2,000 dollars right now for the victim’s treatment, a case will be opened. Our man will come to your home to collect it, don’t tell anyone."
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "զանգեցին ասացին որդիս վթարի է ենթարկվել",
+      "քննիչը գումար է պահանջում գործ չհարուցելու",
+      "բժիշկը զանգեց հարազատը վերակենդանացման բաժնում",
+      "սուրհանդակ է գալու կանխիկ վերցնելու",
+      "թոռնիկիս ձայնով լաց էին լինում հեռախոսով",
+      "հարազատը ձերբակալված է շտապ փող",
+      "հիվանդանոցից զանգ վերակենդանացում բուժման գումար"
+    ],
+    "en": [
+      "call saying my son had an accident",
+      "investigator demands money so no case is opened",
+      "doctor called relative in intensive care pay now",
+      "courier coming to collect cash for my relative",
+      "crying voice like my grandson on the phone",
+      "relative detained urgent money needed"
+    ],
+    "ru": [
+      "ваш сын попал в аварию нужны деньги",
+      "звонок от следователя родственник задержан деньги",
+      "врач звонит родственник в реанимации нужны деньги",
+      "курьер приедет забрать деньги за родственника",
+      "плачущий голос внука по телефону авария"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "keep_on_line",
+    "secrecy"
+  ],
+  "redFlags": {
+    "hy": [
+      "Պետական մարմինները և հիվանդանոցները երբեք կանխիկ վերցնելու համար սուրհանդակ չեն ուղարկում:",
+      "Ժամանակ չեն տալիս ստուգելու և խնդրում են ոչ մեկին չասել:",
+      "Ձայնը կարող է կեղծված լինել արհեստական բանականությամբ:"
+    ],
+    "en": [
+      "Officials and hospitals never send a courier to collect cash.",
+      "They give you no time to check and ask you to tell no one.",
+      "The voice can be faked with AI."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Ասեք, որ հետ կզանգեք, անջատեք և ինքներդ զանգահարեք հարազատին կամ ընտանիքի այլ անդամի:",
+      "Տվեք հարց, որի պատասխանը միայն իսկական հարազատը կիմանա:",
+      "Զանգահարեք 112 կամ հաղորդեք ոստիկանությանը, նույնիսկ եթե չեք խաբվել:"
+    ],
+    "en": [
+      "Say you will call back, hang up and call your relative or another family member yourself.",
+      "Ask a question only the real relative could answer.",
+      "Call 112 or report it to the police, even if you weren’t fooled."
+    ]
+  },
+  "reportTo": [
+    "am/emergency-112",
+    "am/cyber-police"
+  ],
+  "sources": [
+    {
+      "title": "“Your Relative is in Danger”: IDBank Warns About an Aggressive Wave of Phone Scams",
+      "publisher": "NEWS.am",
+      "url": "https://news.am/en/news/946539",
+      "date": "2026-04-28"
+    },
+    {
+      "title": "”Do not trust your eyes’’: IDBank warns about fraud using deepfakes",
+      "publisher": "ArmBanks.am (ARKA)",
+      "url": "https://armbanks.am/en/2026/06/17/274743/",
+      "date": "2026-06-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

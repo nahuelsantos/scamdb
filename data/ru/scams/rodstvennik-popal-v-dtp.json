@@ -1,0 +1,127 @@
+{
+  "id": "ru/rodstvennik-popal-v-dtp",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ru": "Звонок от «родственника», «следователя» или «адвоката»",
+    "en": "A call from a \"relative\", \"detective\" or \"lawyer\""
+  },
+  "name": {
+    "ru": "«Ваш родственник попал в ДТП»: деньги за решение вопроса через курьера",
+    "en": "\"Your relative has been in a car accident\": money to settle it, via a courier"
+  },
+  "how": {
+    "ru": "Обычно звонят пожилым людям: плачущий «сын», «дочь» или «внук» говорит, что попал в аварию, а потом трубку берёт «следователь» или «адвокат». Он объясняет, что пострадавшему нужна компенсация или «чтобы не возбуждали дело», и просит крупную сумму наличными. За деньгами приезжает курьер. Мошенники могут звонить и от имени пожилых родственников с «срочной бедой», а голос иногда подделывают нейросетью.",
+    "en": "They usually call elderly people: a crying \"son\", \"daughter\" or \"grandchild\" says they caused an accident, then a \"detective\" or \"lawyer\" takes the phone. He explains that the injured person needs compensation, or that it is \"so the case is not opened\", and asks for a large sum in cash. A courier comes to collect it. Scammers also call in the name of elderly relatives with an \"urgent problem\", and the voice is sometimes faked with AI."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонит «родственник» в слезах: случилась беда.",
+        "en": "A tearful \"relative\" calls: something terrible has happened."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Трубку берёт «следователь» или «адвокат».",
+        "en": "A \"detective\" or \"lawyer\" takes the phone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Нужны деньги прямо сейчас, иначе уголовное дело.",
+        "en": "Money is needed right now or there will be a criminal case."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "За наличными пришлют курьера; никому не говорить.",
+        "en": "A courier will collect the cash; tell no one."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Мама, это я, я сбила человека, он в больнице... Тут со мной следователь, поговори с ним. — Здравствуйте, ваша дочь виновница аварии. Пострадавшему нужна операция, если семья получит компенсацию, дело можно не заводить. Сколько у вас дома наличных? К вам подъедет наш сотрудник.",
+        "en": "Mum, it's me, I hit someone, he's in hospital... There's a detective here, talk to him. — Hello, your daughter caused the accident. The injured man needs surgery; if the family gets compensation, the case need not be opened. How much cash do you have at home? Our officer will come round."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили сказали что сын попал в аварию",
+      "внучка плакала в трубке потом говорил следователь",
+      "просили деньги чтобы не заводили уголовное дело",
+      "за деньгами приедет курьер",
+      "звонил адвокат сказал дочь виновница дтп",
+      "родственник срочно просил деньги на лечение пострадавшего"
+    ],
+    "en": [
+      "they called saying my son was in a car accident",
+      "my granddaughter was crying on the phone then a detective spoke",
+      "they asked for money so no criminal case would be opened",
+      "a courier will come for the money",
+      "a lawyer called saying my daughter caused an accident",
+      "a relative urgently asked for money for the injured person's treatment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "ru": [
+      "Плачущий голос, который трудно узнать, и сразу «следователь».",
+      "Деньги наличными «чтобы не было дела» и курьер.",
+      "Просят не класть трубку и никому не звонить."
+    ],
+    "en": [
+      "A crying voice that is hard to recognise, then straight away a \"detective\".",
+      "Cash \"so there is no case\", and a courier.",
+      "You are asked not to hang up and not to call anyone."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Прервите разговор и сами позвоните родственнику по известному вам номеру.",
+      "Полиция не решает дела за деньги; не отдавайте наличные курьерам.",
+      "Сообщите о звонке в полицию по 102 и предупредите пожилых родных."
+    ],
+    "en": [
+      "End the call and ring your relative yourself on the number you know.",
+      "The police do not settle cases for money; never give cash to couriers.",
+      "Report the call to the police on 102 and warn elderly relatives."
+    ]
+  },
+  "reportTo": [
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "Мошенники стали чаще звонить от лица пожилых родственников",
+      "publisher": "Mail Финансы (по данным РИА Новости)",
+      "url": "https://finance.mail.ru/article/moshenniki-stali-chashe-zvonit-ot-lica-pozhilyh-rodstvennikov-69213251/",
+      "date": "2026-06-17"
+    },
+    {
+      "title": "Снова «ваш ребенок попал в ДТП» – предупредите родителей!",
+      "publisher": "За рулём",
+      "url": "https://www.zr.ru/content/news/958274-snova-vash-rebenok-popal-v-dtp/",
+      "date": "2024-07-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

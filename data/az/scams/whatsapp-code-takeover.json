@@ -1,0 +1,131 @@
+{
+  "id": "az/whatsapp-code-takeover",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "az": "Tanış birinin hesabından və ya “WhatsApp dəstək xidməti” adından yazan şəxs",
+    "en": "Someone writing from a friend’s account or as “WhatsApp support”"
+  },
+  "name": {
+    "az": "WhatsApp hesabının ələ keçirilməsi: “sənə səhvən kod getdi, mənə göndər”",
+    "en": "WhatsApp account takeover: “a code was sent to you by mistake, send it to me”"
+  },
+  "how": {
+    "az": "Telefonunuza WhatsApp-ı başqa cihazda aktivləşdirmək üçün birdəfəlik kod gəlir, ardınca tanış birinin artıq ələ keçirilmiş hesabından və ya “dəstək xidməti” adından “kod səhvən sənə gəlib, göndər” mesajı yazılır. Bəzən “hesabınız bağlanacaq”, “biznes hesabınızı təsdiqləyin” kimi saxta bildiriş və ya QR-kod göndərilir. Kodu və ya təhlükəsizlik PIN-ini verən kimi hesab başqa cihazda açılır; dələduzlar sizin adınızdan dostlarınıza yazıb təcili pul, borc və ya yeni kodlar istəyirlər. Hesab sizin telefonunuzda işləsə belə, “Bağlı cihazlar” bölməsində yad cihaz ola bilər.",
+    "en": "A one-time code to activate WhatsApp on another device reaches your phone, followed by a message from a friend’s already hijacked account or from “support”: “the code came to you by mistake, send it”. Sometimes a fake notice like “your account will be closed” or “verify your business account”, or a QR code, is sent. As soon as you give the code or security PIN, the account opens on another device and the scammers write to your friends in your name asking for urgent money, loans or more codes. Even if the account still works on your phone, there may be a stranger’s device under “Linked devices”."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Gözləmədiyiniz WhatsApp təsdiq kodu gəlir.",
+        "en": "A WhatsApp verification code you didn’t expect arrives."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "az": "Tanış birinin adından və ya “dəstək” adından kodu göndərməyinizi istəyirlər.",
+        "en": "You are asked, in a friend’s or “support’s” name, to send the code."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "az": "“Hesabınız bağlanacaq” deyə tələsdirirlər.",
+        "en": "They rush you: “your account will be closed”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "az": "Hesab ələ keçəndən sonra dostlarınızdan sizin adınızla pul istənilir.",
+        "en": "Once the account is taken, your friends are asked for money in your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "az": "Salam canım, bağışla narahat edirəm, telefonuma yeni nömrə qoşurdum, 6 rəqəmli kod səhvən sənin nömrənə gəldi. Zəhmət olmasa o kodu mənə yaz, təcili lazımdır, yoxsa hesabım bloklanır.",
+        "en": "Hi dear, sorry to bother you, I was adding a new number to my phone and a 6-digit code went to your number by mistake. Please write me that code, it’s urgent, otherwise my account gets blocked."
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "whatsapp kodu səhvən sənə gəldi göndər dedi",
+      "whatsapp hesabım ələ keçirildi",
+      "6 rəqəmli kodu istədilər",
+      "dostumun adından kod istəyən mesaj",
+      "whatsapp dəstək xidməti hesabınız bağlanacaq",
+      "hesabım başqa cihazda açılıb",
+      "bağlı cihazlarda tanımadığım cihaz var",
+      "nömrəmə gələn təsdiq kodunu soruşdu",
+      "tanış adından kodu yaz dedilər",
+      "whatsapp kodu istediler"
+    ],
+    "en": [
+      "someone asked me to send my whatsapp code",
+      "my whatsapp account was hijacked",
+      "friend asked for a 6 digit code sent by mistake",
+      "fake whatsapp support says account will be closed",
+      "unknown device in linked devices"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "az": [
+      "Heç kimin kodu “səhvən” sizin nömrənizə gəlmir.",
+      "WhatsApp dəstək xidməti sizdən kod və ya PIN istəmir.",
+      "Özünüz başlatmadığınız giriş sorğusu hücum cəhdidir."
+    ],
+    "en": [
+      "Nobody’s code arrives at your number “by mistake”.",
+      "WhatsApp support never asks you for a code or PIN.",
+      "A login request you didn’t start is an attack attempt."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "SMS kodunu, təhlükəsizlik PIN-ini heç kimə verməyin.",
+      "İki mərhələli təsdiqləməni aktivləşdirin və “Bağlı cihazlar”dan yad cihazlardan çıxış edin.",
+      "Hesab ələ keçibsə, dostlarınıza başqa yolla xəbər verin və MKA-ya və ya 102-yə müraciət edin."
+    ],
+    "en": [
+      "Never give anyone the SMS code or security PIN.",
+      "Turn on two-step verification and log out unknown devices under “Linked devices”.",
+      "If the account was taken, warn friends another way and contact the MKA or 102."
+    ]
+  },
+  "reportTo": [
+    "az/mka-1654",
+    "az/police-102"
+  ],
+  "sources": [
+    {
+      "title": "Baş Prokurorluq \"WhatsApp\" hesabları ilə bağlı vətəndaşlara xəbərdarlıq edib",
+      "publisher": "Trend",
+      "url": "https://az.trend.az/azerbaijan/society/4239298.html",
+      "date": "2026-10-26"
+    },
+    {
+      "title": "“WhatsApp” istifadəçilərinə xəbərdarlıq edilib",
+      "publisher": "Trend",
+      "url": "https://az.trend.az/azerbaijan/gundem/4239911.html",
+      "date": "2026-10-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

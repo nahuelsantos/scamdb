@@ -1,0 +1,128 @@
+{
+  "id": "by/rodstvennik-dtp-kurer-za-dengami",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ru": "Звонок на домашний или мобильный телефон от «родственника» или «следователя»",
+    "en": "A call to a landline or mobile from a 'relative' or an 'investigator'"
+  },
+  "name": {
+    "ru": "«Алло, мама»: родственник попал в ДТП, деньги нужно передать курьеру",
+    "en": "'Hello, mum': a relative caused a car crash and money must go to a courier"
+  },
+  "how": {
+    "ru": "Пожилым людям звонят на домашний или мобильный телефон. Плачущий голос «внука», «сына» или «дочери» говорит, что он виновник тяжёлого ДТП, затем трубку берёт «следователь». Чтобы родственника не привлекли к уголовной ответственности, требуют срочно отдать все накопления. За деньгами приезжает курьер, иногда просят выбросить свёрток в окно. Человека держат на линии, чтобы он не успел перезвонить родным.",
+    "en": "Older people get a call on a landline or mobile. A crying 'grandson', 'son' or 'daughter' says they caused a serious car crash, then an 'investigator' takes the phone. To keep the relative out of criminal prosecution, they demand all your savings at once. A courier comes for the money; sometimes you are told to throw the package out of the window. You are kept on the line so you can't call your family back."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Плачущий голос: мама, я попал в аварию.",
+        "en": "A crying voice: mum, I've been in a crash."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Следователь: чтобы закрыть дело, нужны деньги прямо сейчас.",
+        "en": "The investigator: to close the case we need money right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Не кладите трубку, курьер уже едет к вам.",
+        "en": "Don't hang up, the courier is already on the way."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ru": "Отдайте курьеру все сбережения.",
+        "en": "Give the courier all your savings."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Бабуля, это я... Я сбил человека, тут милиция, мне очень плохо. Сейчас трубку возьмёт следователь, сделай, пожалуйста, всё, как он скажет, и никому не звони, а то будет хуже.",
+        "en": "Granny, it's me... I hit someone, the police are here, I feel terrible. The investigator will take the phone now, please do everything he says and don't call anyone, or it will be worse."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили сказали что внук попал в дтп",
+      "просят деньги чтобы сына не посадили",
+      "следователь сказал отдать деньги курьеру",
+      "дочь плакала в трубку и просила помочь",
+      "за деньгами приедет человек от следователя",
+      "велели не звонить родным и собрать все сбережения"
+    ],
+    "en": [
+      "they called saying my grandson was in a car crash",
+      "they want money so my son won't go to prison",
+      "an investigator told me to give the money to a courier",
+      "my daughter was crying on the phone asking for help",
+      "someone from the investigator will come for the money",
+      "they told me not to call my family and to gather all my savings"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Голос плачет и его трудно узнать, а «следователь» торопит.",
+      "Деньги нужно отдать курьеру или выбросить в окно.",
+      "Запрещают класть трубку и звонить родным."
+    ],
+    "en": [
+      "The voice is crying and hard to recognise, and the 'investigator' rushes you.",
+      "The money must be handed to a courier or thrown out of the window.",
+      "You are forbidden to hang up or call your family."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку и сами позвоните родственнику по его обычному номеру.",
+      "Милиция не берёт деньги за закрытие дел и не присылает курьеров.",
+      "Позвоните 102 и запишите крупно номера близких и 102 у телефона пожилых родных."
+    ],
+    "en": [
+      "Hang up and call your relative on their usual number yourself.",
+      "The police never take money to close cases and never send couriers.",
+      "Call 102, and write your loved ones' numbers and 102 in large print next to older relatives' phones."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "Заставили доползти до окна и выбросить деньги. Лежачий беларус с инвалидностью потерял сбережения по схеме «Алло, мама»",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/accidents/125823.html",
+      "date": "2026-04-25"
+    },
+    {
+      "title": "Financial hygiene. How not to become a victim of fraudsters in 2026",
+      "publisher": "Белорусский национальный технический университет (БНТУ)",
+      "url": "https://times.bntu.by/en/news/19811-finansovaya-gigiena-kak-ne-stat-zhertvoj-moshennikov",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

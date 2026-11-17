@@ -1,0 +1,127 @@
+{
+  "id": "ge/fake-cheap-goods-pages",
+  "country": "ge",
+  "lang": "ka",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ka": "ცნობილი კომპანიის, მაღაზიის ან აეროპორტის ყალბი ფეისბუქ გვერდი",
+    "en": "A fake Facebook page of a well-known company, shop or the airport"
+  },
+  "name": {
+    "ka": "ყალბი გვერდი: ნივთები რამდენიმე ლარად",
+    "en": "Fake page: goods for a few lari"
+  },
+  "how": {
+    "ka": "ფეისბუქზე ჩნდება გვერდი, რომელიც ცნობილი კომპანიის, მაღაზიის ან თბილისის აეროპორტის გვერდს ჰგავს. გთავაზობენ ძვირ ნივთს ან „დაკარგულ ჩემოდნებს“ ელექტრონიკით სულ რამდენიმე ლარად, მცირე რაოდენობით. ბმული საიტზე მიდის, სადაც კითხვარს ავსებთ, „იგებთ“ და მერე სახელს, მისამართს და ბარათის მონაცემებს ითხოვენ. ნივთი არ არსებობს: მიზანი თქვენი ბარათის მონაცემებია.",
+    "en": "A Facebook page appears that looks like the page of a well-known company, shop or Tbilisi airport. It offers an expensive item or “lost suitcases” full of electronics for just a few lari, in limited numbers. The link leads to a site where you fill in a quiz, “win”, and then are asked for your name, address and card details. The item doesn’t exist: they want your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "ცნობილი კომპანიის ან აეროპორტის სახელით გვერდი.",
+        "en": "A page in the name of a known company or the airport."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "ძვირი ნივთი რამდენიმე ლარად.",
+        "en": "An expensive item for a few lari."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ka": "მხოლოდ რამდენიმე დარჩა, შეუკვეთეთ ახლავე.",
+        "en": "Only a few left, order now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ka": "ბმული ბარათის მონაცემებს ითხოვს.",
+        "en": "The link asks for card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ka": "✈️ აეროპორტის საწყობი იცლება! პატრონის გარეშე დარჩენილი ჩემოდნები ელექტრონიკითა და ტანსაცმლით იყიდება მხოლოდ 6 ლარად. დარჩა 40 ცალი. შეუკვეთეთ ბმულზე, სანამ ამოიწურება: [ბმული]",
+        "en": "✈️ The airport storage is being cleared! Unclaimed suitcases with electronics and clothes are on sale for just 6 lari. 40 left. Order via the link before they run out: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "დაკარგული ჩემოდნები აეროპორტიდან იაფად",
+      "ფეისბუქ გვერდი ძვირ ნივთს რამდენიმე ლარად ყიდის",
+      "ჩაიდანი 7 ლარად რეკლამა",
+      "შეკვეთისთვის ბარათის მონაცემები მოითხოვა",
+      "ცნობილი მაღაზიის ყალბი გვერდი გათამაშება",
+      "კითხვარი შევავსე და მოვიგე ნივთი"
+    ],
+    "en": [
+      "lost airport luggage sold for a few lari",
+      "facebook page selling expensive items very cheap",
+      "kettle for 7 lari ad",
+      "fake shop page asked for my card details",
+      "quiz said i won and asked for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "ka": [
+      "ფასი ნივთის ღირებულებასთან შედარებით აბსურდულად დაბალია.",
+      "გვერდი ახლახან შეიქმნა, ცოტა მიმდევარი ჰყავს ან სახელი ოდნავ განსხვავდება.",
+      "„მოგების“ შემდეგ ბარათის მონაცემებს ითხოვენ."
+    ],
+    "en": [
+      "The price is absurdly low for what is offered.",
+      "The page was created recently, has few followers or its name is slightly off.",
+      "After you “win” they ask for card details."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "შეამოწმეთ კომპანიის ოფიციალური გვერდი ან საიტი; ფასი რეალურია?",
+      "ბარათის მონაცემები შეიყვანეთ? დაბლოკეთ ბარათი და შეამოწმეთ ამონაწერი.",
+      "დაარეპორტეთ გვერდი ფეისბუქზე."
+    ],
+    "en": [
+      "Check the company’s official page or website; is the price real?",
+      "Entered card details? Block the card and check your statement.",
+      "Report the page to Facebook."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "Fraudulent Pages Spread Information About Buying Lost Luggage For GEL 5.50",
+      "publisher": "Myth Detector",
+      "url": "https://mythdetector.com/en/about-buying-lost-luggage/",
+      "date": "2025-09-22"
+    },
+    {
+      "title": "Fraudulent Page Promotes Smeg Kettles For GEL 7",
+      "publisher": "Myth Detector",
+      "url": "https://mythdetector.com/en/smeg-kettles-for-gel-7/",
+      "date": "2025-03-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

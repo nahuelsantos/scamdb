@@ -1,0 +1,123 @@
+{
+  "id": "az/azerpost-parcel-address-sms",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "az": "Xarici nömrədən “Azərpoçt” adından gələn SMS",
+    "en": "A text in Azərpoçt’s name from a foreign number"
+  },
+  "name": {
+    "az": "Saxta Azərpoçt SMS-i: “bağlamanız çatdırıla bilmir, ünvanı təsdiqləyin və xidmət haqqını ödəyin”",
+    "en": "Fake Azərpoçt text: “your parcel can’t be delivered, confirm the address and pay the service fee”"
+  },
+  "how": {
+    "az": "Xarici nömrələrdən “Təcili çatdırılma problemi” kimi başlıqlı SMS-lər gəlir: guya poçt indeksi göstərilmədiyi üçün “dəyərli əşya” olan bağlamanız çatdırıla bilmir. Ünvanı müəyyən saata qədər yeniləməsəniz əlavə haqq tutulacağı, bağlamanın 72 saata göndərənə qaytarılacağı deyilir. Bəzən mesaja “1” yazıb cavab verməyiniz istənilir ki, keçid aktivləşsin. Link ASAN Pay-a bənzədilmiş saxta səhifəyə aparır: əvvəl ad, ünvan, telefon, sonra “çatdırılma haqqı” adı ilə kart nömrəsi, son istifadə tarixi və CVV istənilir. Azərpoçt çatdırılma haqqını onlayn link ilə almır və kart məlumatı soruşmur.",
+    "en": "Texts from foreign numbers with titles like “Urgent delivery problem” say your parcel, a “valuable item”, can’t be delivered because the postcode is missing. If you don’t update the address by a set time, extra fees will be charged and the parcel goes back to the sender within 72 hours. Sometimes you are asked to reply “1” so the link becomes active. The link opens a fake page dressed up as ASAN Pay: first name, address and phone, then card number, expiry date and CVV for a “delivery fee”. Azərpoçt does not take delivery fees through links and does not ask for card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Xarici nömrədən Azərpoçt adından SMS gəlir.",
+        "en": "A text arrives in Azərpoçt’s name from a foreign number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "az": "Bağlamanın 72 saata qaytarılacağı və əlavə haqq tutulacağı ilə hədələyirlər.",
+        "en": "They threaten that the parcel will be returned within 72 hours and extra fees charged."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "az": "Ünvanı təsdiqləmək üçün linkə keçmək və ya “1” yazmaq istənilir.",
+        "en": "You are asked to open a link or reply “1” to confirm the address."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "az": "Kiçik çatdırılma haqqı üçün kart məlumatları istənilir.",
+        "en": "Card details are asked for a small delivery fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "az": "AZERPOST: Sizin baglamaniz (deyerli esya) poct indeksi qeyd olunmadigi ucun catdirila bilmir. Unvaninizi bu gun saat 23:00-a qeder yenileyin, eks halda 72 saat erzinde gondereye qaytarilacaq ve geri qaytarma xerci size aid olacaq. Linki aktiv etmek ucun 1 yazin: [link]",
+        "en": "AZERPOST: Your parcel (valuable item) cannot be delivered because no postcode was given. Update your address by 23:00 today, otherwise it will be returned to the sender within 72 hours and the return cost will be yours. Reply 1 to activate the link: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "azərpoçt adından sms gəldi bağlama çatdırılmır",
+      "poçt indeksi yoxdur ünvanı təsdiqlə dedilər",
+      "bağlama üçün çatdırılma haqqı kartla ödə",
+      "bağlama göndərənə qaytarılacaq mesajı",
+      "mesaja 1 yazın deyirlər link açılsın",
+      "asan pay oxşar saytda kart məlumatı istədi"
+    ],
+    "en": [
+      "azerpost text says my parcel cannot be delivered",
+      "asked to confirm my address and pay a delivery fee",
+      "parcel will be returned in 72 hours text",
+      "reply 1 to activate the link message",
+      "fake asan pay page asking for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "az": [
+      "Azərpoçt çatdırılma haqqını onlayn link ilə almır və kart məlumatı istəmir.",
+      "Rəsmi bildirişlər xarici ölkə kodlu nömrələrdən gəlmir.",
+      "Həqiqi Azərpoçt bildirişində link olmur; izləmə nömrəsi və poçt şöbəsinin indeksi yazılır.",
+      ".cyou, .top, .xyz kimi şübhəli domenlər fişinq əlamətidir."
+    ],
+    "en": [
+      "Azərpoçt does not take delivery fees through links or ask for card details.",
+      "Official notices do not come from numbers with foreign country codes.",
+      "A genuine Azərpoçt notice has no link; it gives the tracking number and the post office index.",
+      "Odd domains like .cyou, .top or .xyz are a phishing sign."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "Linkə keçməyin və mesaja “1” və ya “Bəli” yazmayın.",
+      "Bağlamanızı yalnız Azərpoçt-un rəsmi saytında və ya şöbədə izləmə nömrəsi ilə yoxlayın.",
+      "Kart məlumatı daxil etmisinizsə, kartı dərhal bloklatdırın və MKA-ya məlumat verin."
+    ],
+    "en": [
+      "Don’t open the link and don’t reply “1” or “Yes”.",
+      "Check your parcel only on Azərpoçt’s official site or at the post office with the tracking number.",
+      "If you entered card details, have the card blocked at once and report it to the MKA."
+    ]
+  },
+  "reportTo": [
+    "az/your-bank",
+    "az/mka-1654",
+    "az/police-102"
+  ],
+  "sources": [
+    {
+      "title": "MKA “Azərpoçt”un adından göndərilən saxta SMS-lərlə bağlı xəbərdarlıq edib",
+      "publisher": "APA",
+      "url": "https://apa.az/ict/mka-azerpoctun-adindan-gonderilen-saxta-sms-lerle-bagli-xeberdarliq-edib-1014692",
+      "date": "2026-11-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

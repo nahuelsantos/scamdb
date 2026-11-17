@@ -1,0 +1,124 @@
+{
+  "id": "az/fake-loan-page-card-details",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "az": "Bank olmayan kredit təşkilatının rəsmi səhifəsini təqlid edən sosial şəbəkə səhifəsi və ya WhatsApp qrupundakı elan",
+    "en": "A social media page copying a non-bank lender’s official page, or an ad in a WhatsApp group"
+  },
+  "name": {
+    "az": "Saxta kredit elanı: “zaminsiz, arayışsız kredit, rəsmiləşdirmək üçün kart məlumatlarını və kodu yazın”",
+    "en": "Fake loan ad: “loan with no guarantor or papers, enter your card details and code to process it”"
+  },
+  "how": {
+    "az": "Sosial şəbəkələrdə və WhatsApp qruplarında bank olmayan kredit təşkilatlarının səhifələrinə vizual olaraq oxşayan saxta səhifələr asan, sürətli, zaminsiz kredit vəd edir. Müraciət edənlərdən “kreditin rəsmiləşdirilməsi” adı ilə kart nömrəsi, son istifadə tarixi, CVV və SMS-lə gələn OTP kodu istənilir, bəzən də “xidmət haqqı” ödəmək tələb olunur. Məlumatı verən kimi kartdakı pul başqa şəxslərin hesablarına köçürülüb nağdlaşdırılır, kredit isə verilmir.",
+    "en": "Fake pages on social media and in WhatsApp groups that look like non-bank lenders’ pages promise easy, fast loans with no guarantor. Applicants are asked for card number, expiry date, CVV and the OTP code sent by SMS “to process the loan”, and sometimes for a “service fee”. As soon as they give the details, the money on the card is moved to other people’s accounts and cashed out, and no loan is ever paid."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Asan və zaminsiz kredit vəd edən reklam görürsünüz.",
+        "en": "You see an ad promising an easy loan with no guarantor."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "az": "Səhifə tanınmış kredit təşkilatının səhifəsinə oxşayır.",
+        "en": "The page looks like a well-known lender’s page."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "az": "Kreditin rəsmiləşdirilməsi üçün kart məlumatları və OTP kodu istənilir.",
+        "en": "Card details and the OTP code are asked “to process the loan”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "az": "Kreditdən əvvəl xidmət haqqı ödəmək tələb olunur.",
+        "en": "A service fee is required before the loan."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "az": "Kredit 5 dəqiqəyə! Zaminsiz, arayışsız, kredit tarixçəsinə baxılmadan 300 AZN-dən 15 000 AZN-ə qədər nağd kredit. Müraciət üçün formada kart məlumatlarınızı daxil edin, məbləğ həmin karta köçürüləcək. Təsdiq üçün gələn kodu operatora yazın: [link]",
+        "en": "Loan in 5 minutes! Cash loans from 300 AZN to 15,000 AZN, no guarantor, no papers, no credit history check. To apply, enter your card details in the form and the money will be sent to that card. Write the confirmation code you receive to the operator: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "kredit səhifəsi kart məlumatlarımı istədi",
+      "zaminsiz kredit elanı dələduzluq",
+      "kredit üçün sms kodunu istədilər",
+      "kredit verəcəkləri adı ilə kartdan pul çıxdı",
+      "kredit təşkilatının saxta səhifəsi",
+      "kreditdən əvvəl xidmət haqqı ödə dedilər",
+      "onlayn kredit üçün kart nömrəsi və bitmə tarixi istədilər",
+      "kredit kartınıza köçürüləcək deyib kod istədilər"
+    ],
+    "en": [
+      "fake loan page asked for my card details",
+      "loan ad asked for the sms code",
+      "money taken from my card instead of a loan",
+      "fake lender page on instagram",
+      "asked to pay a fee before getting the loan"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "az": [
+      "Kredit vermək üçün CVV və SMS kodu lazım deyil.",
+      "Leqal kredit təşkilatı kreditdən əvvəl karta ödəniş istəmir.",
+      "“Zaminsiz, arayışsız, 5 dəqiqəyə” vədi yemdir."
+    ],
+    "en": [
+      "A loan never needs your CVV or SMS code.",
+      "A legal lender doesn’t ask for a card payment before the loan.",
+      "“No guarantor, no papers, in 5 minutes” is bait."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "Krediti yalnız bankın və ya kredit təşkilatının rəsmi saytı və tətbiqi ilə rəsmiləşdirin.",
+      "Kart məlumatını və OTP kodunu heç kimə verməyin.",
+      "Məlumat vermisinizsə, kartı bloklatdırın və 102-yə müraciət edin."
+    ],
+    "en": [
+      "Apply for loans only through the bank’s or lender’s official site and app.",
+      "Never give anyone your card details or OTP code.",
+      "If you gave them, have the card blocked and contact 102."
+    ]
+  },
+  "reportTo": [
+    "az/your-bank",
+    "az/police-102"
+  ],
+  "sources": [
+    {
+      "title": "Saxta kredit elanları ilə vətəndaşların pullarını ələ keçirən şəxs saxlanılıb - VİDEO",
+      "publisher": "1news.az",
+      "url": "https://1news.az/az/news/20260821144426971-Saxta-kredit-elanlari-ile-vetendashlarin-pullarini-ele-kechiren-shexs-saxlanilib-VIDEO",
+      "date": "2026-08-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,153 @@
+{
+  "id": "am/telecom-5g-app-call",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "hy": "«Ucom», «Team Telecom», «Viva Armenia» կամ «բջջային օպերատոր», հաճախ արտասահմանյան համարից",
+    "en": "“Ucom”, “Team Telecom”, “Viva Armenia” or “your mobile operator”, often from a foreign number"
+  },
+  "name": {
+    "hy": "Զանգ «օպերատորից». տեղադրեք 5G ծրագիր",
+    "en": "Call “from your operator”: install a 5G app"
+  },
+  "how": {
+    "hy": "Զանգում կամ գրում են իբր բջջային օպերատորից և առաջարկում բարելավել ինտերնետը կամ միացնել 5G՝ փոխել հեռախոսի կարգավորումները, տեղադրել ծրագիր կամ ֆայլ, երբեմն՝ վերագործարկել հեռախոսը: Մեկ այլ տարբերակում ասում են, որ բջջային պայմանագիրը ժամկետանց է և պետք է երկարացնել: Այդ քայլերով խարդախները հասանելիություն են ստանում հեռախոսին, բանկային հավելվածներին և SMS-ներին, գողանում են գումարը կամ վարկ են ձևակերպում: Ոչ օպերատորը, ոչ բանկը նման փոփոխություններ չեն պահանջում:",
+    "en": "Someone calls or writes, supposedly from your mobile operator, offering to improve your internet or enable 5G: change phone settings, install an app or file, sometimes restart the phone. In another version they say your mobile contract has expired and must be renewed. These steps give scammers access to your phone, banking apps and texts, and they steal money or take out loans. Neither operators nor banks require such changes."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Զանգ կամ հաղորդագրություն «օպերատորից», հաճախ արտասահմանյան համարից:",
+        "en": "A call or message “from your operator”, often from a foreign number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Առաջարկում են անվճար 5G կամ արագ ինտերնետ:",
+        "en": "They offer free 5G or faster internet."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hy": "Խնդրում են տեղադրել ծրագիր, ֆայլ կամ փոխել կարգավորումները:",
+        "en": "They ask you to install an app or file or change settings."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "hy": "Գծի վրա պահում են, մինչ ստանում են ձեզ եկած կոդերը:",
+        "en": "They keep you on the line while they grab the codes you receive."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "hy": "Բարև ձեզ, ձեր օպերատորի տեխնիկական բաժնից եմ: Ձեր համարի համար անվճար 5G է հասանելի: Հիմա կուղարկեմ կարգավորման ֆայլը, տեղադրեք, հետո վերագործարկեք հեռախոսը, ես գծի վրա կսպասեմ:",
+        "en": "Hello, I’m from your operator’s technical department. Free 5G is available for your number. I’ll send you the settings file now, install it, then restart the phone, I’ll wait on the line."
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "զանգեցին օպերատորից 5g միացնելու",
+      "ասացին ծրագիր տեղադրեմ ինտերնետը արագացնելու",
+      "կարգավորումների ֆայլ ուղարկեցին հեռախոսս վերագործարկել",
+      "5g ակտիվացումից հետո բանկի հաշվից գումար գնաց",
+      "պայմանագիրը ժամկետանց է զանգ օպերատորից",
+      "արտասահմանյան համարից զանգ ucom team viva անունից",
+      "անվճար 5g սակագին ծրագիր տեղադրել"
+    ],
+    "en": [
+      "call from operator to activate 5g",
+      "told to install an app to speed up internet",
+      "they sent a settings file and told me to restart",
+      "money vanished after 5g activation call",
+      "call saying my mobile contract expired",
+      "foreign number claiming to be my mobile operator"
+    ],
+    "ru": [
+      "звонок от оператора подключить 5g бесплатно",
+      "оператор просит установить приложение для 5g",
+      "оператор просит изменить настройки телефона",
+      "продлить договор мобильной связи звонок",
+      "звонок с иностранного номера от оператора 5g"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "hy": [
+      "Օպերատորները զանգով ծրագիր կամ ֆայլ տեղադրել չեն խնդրում:",
+      "Զանգը արտասահմանյան համարից է:",
+      "Խնդրում են վերագործարկել հեռախոսը կամ տալ էկրանի հասանելիություն:"
+    ],
+    "en": [
+      "Operators don’t ask you to install apps or files over the phone.",
+      "The call comes from a foreign number.",
+      "They ask you to restart the phone or share your screen."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Անջատեք և զանգահարեք ձեր օպերատորին նրա պաշտոնական համարով:",
+      "Ծրագիր եք տեղադրե՞լ. անջատեք ինտերնետը, զանգահարեք բանկ և արգելափակեք քարտերը:",
+      "Արգելափակեք համարը և հաղորդեք կիբեռոստիկանությանը:"
+    ],
+    "en": [
+      "Hang up and call your operator on its official number.",
+      "Installed something? Turn off the internet, call your bank and block your cards.",
+      "Block the number and report it to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "am/your-bank",
+    "am/cyber-police",
+    "am/financial-mediator"
+  ],
+  "sources": [
+    {
+      "title": "Central Bank of Armenia warns of a new wave of telephone fraud",
+      "publisher": "ArmBanks.am",
+      "url": "https://armbanks.am/en/2026/05/26/273647/",
+      "date": "2026-05-26"
+    },
+    {
+      "title": "Protect Yourself from Fraud: Safety Tips from AraratBank",
+      "publisher": "NEWS.am",
+      "url": "https://news.am/en/news/1036238",
+      "date": "2026-05-18"
+    },
+    {
+      "title": "Armenia's Cyber Police Warns of Fraudulent Schemes Using \"5G Apps\"",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/armenia-s-cyber-police-warns-of-fraudulent-schemes-using-5g-apps",
+      "date": "2026-03-24"
+    },
+    {
+      "title": "“Money vanished from my bank card”: surge in phone scams reported in Armenia",
+      "publisher": "JAMnews",
+      "url": "https://jam-news.net/phone-scams-in-armenia-expert-comment/",
+      "date": "2025-10-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "am/bank-call-fake-employee"
+  ]
+}
