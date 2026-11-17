@@ -169,3 +169,9 @@ test('1.3.0: European Portuguese signs (MB WAY, Multibanco, telemóvel, não par
   assert.ok(!signsOf('O seu código é 123456. Não partilhe este código com ninguém.').includes('asks_for_code'));
   assert.ok(!signsOf('Vamos jantar hoje às oito?').includes('money_request'));
 });
+test('1.3.1: "we will never ask for your bank details" cancels the money sign; a real request next to it does not', () => {
+  assert.ok(!signsOf('Log in to myAccount yourself. Revenue will never ask for your bank details by email or text.').includes('money_request'));
+  assert.ok(!signsOf('O banco nunca lhe vai pedir os seus dados bancários por SMS.').includes('money_request'));
+  assert.ok(signsOf('We never ask for bank details, but pay the release fee here today').includes('money_request'));
+  assert.ok(signsOf('Please confirm your bank details to receive the refund').includes('money_request'));
+});

@@ -32,7 +32,12 @@ const NEGATED = /\b(never|nunca|nao|no|don t|do not|won t|will not)( \w+){0,7} (
 // "Ingresá con tu clave fiscal", "sign in with your password": where to log in, not a request to hand it over.
 const LOGIN_WITH = /\b(ingresa|ingresando|entra|entrando|accede|accediendo|inicia sesion|inicie sesion|log in|login|sign in|acesse|entre)( \w+){0,4} (con|with|com|using|usando) (tu|su|your|sua|seu) (clave|contrasena|password|senha|usuario)/;
 // "No tenés nada que pagar", "nothing to pay": the message says there is no payment.
+// "We will never ask for your bank details": a warning, not a request. The negated clause is removed and the money
+// sign is read again on what is left, so "never ask for bank details, but pay the fee here" still counts.
+const NEGATED_MONEY = /\b(never|nunca|nao|won t|will not|do not|don t)( \w+){0,6} (bank|card|account) (details|number|information)|\b(never|nunca|nao)( \w+){0,6} (datos|dados) (bancarios|de (tu|su) tarjeta|do (seu )?cartao)/g;
 const NO_PAYMENT = /nada que pagar|nothing to pay|no (payment|fee|charge)s? (is |are )?(needed|required|due)|nao (precisa|e preciso|tem que) pagar|sin (costo|cargo)( alguno)?|free of charge|you don t need to pay|no hace falta pagar/;
+
+const withoutNegatedMoney = (t) => { const rest = t.replace(NEGATED_MONEY, ' '); return rest !== t && !SIGNS.money_request.test(rest); };
 
 /** The sign ids that apply, after context rules (genuine-code warnings, login instructions, "nothing to pay"). */
 function applyContext(t, ids) {
@@ -41,7 +46,7 @@ function applyContext(t, ids) {
     const handover = CODE_HANDOVER.test(t.replace(NEGATED, ' '));
     if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t))) out = out.filter((id) => id !== 'asks_for_code');
   }
-  if (out.includes('money_request') && NO_PAYMENT.test(t)) out = out.filter((id) => id !== 'money_request');
+  if (out.includes('money_request') && (NO_PAYMENT.test(t) || withoutNegatedMoney(t))) out = out.filter((id) => id !== 'money_request');
   return out;
 }
 
