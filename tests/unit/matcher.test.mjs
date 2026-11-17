@@ -359,3 +359,13 @@ test('1.12.0: Lithuanian signs (and Russian wording seen in Lithuania), and genu
   assert.ok(!has('Banko darbuotojai niekada neprašo Smart-ID PIN kodų.', 'asks_for_code'));
   assert.ok(!has('Siunta jau paštomate, mokėti nieko nereikia.', 'money_request'));
 });
+test('1.12.0: Estonian signs, and Estonian tax wording is not Finnish "maksu" (payment)', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Teile tuleb teavitus telefoni, palun sisestage seal PIN1', 'asks_for_code'));
+  assert.ok(has('Broneeringu kinnitamiseks tuleb teile Smart-ID teade, palun kinnitage', 'asks_for_code'));
+  assert.ok(has('Swedbanki pettuste ennetuse osakond, suunan teid uurija juurde', 'impersonation'));
+  assert.ok(!has('LHV: sinu kinnituskood on 482913. Ära anna koodi kellelegi.', 'asks_for_code'));
+  assert.ok(!has('Meie töötajad ei küsi kunagi PIN-koode ega palu Smart-ID-ga midagi kinnitada.', 'asks_for_code'));
+  assert.ok(!has('Maksu- ja Tolliamet: palun logige e-maksuametisse sisse ise.', 'money_request'));
+  assert.ok(has('Pysäköintimaksu on maksamatta, maksu 3,20 €', 'money_request'));
+});
