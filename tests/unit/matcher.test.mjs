@@ -233,3 +233,16 @@ test('1.6.0: a scam that opens with "scammers are impersonating us" is still a s
   assert.equal(r.verdict, 'scam');
   assert.ok(!m('Alerta: estafadores usan nuestro nombre. Verificá tu cuenta acá [enlace] hoy mismo', { country: 'ar' }).warning);
 });
+test('1.7.0: Italian, Polish and Romanian signs and context rules', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Sono della Polizia Postale, non riattacchi e mi dica il codice di sicurezza', 'keep_on_line'));
+  assert.ok(has('Tu pracownik banku, proszę się nie rozłączać i podać kod BLIK', 'asks_for_code'));
+  assert.ok(has('Sunt de la departamentul de securitate al băncii, nu închideți și spuneți-mi codul', 'keep_on_line'));
+  assert.ok(has('Ciao mamma, questo è il mio nuovo numero, il telefono è rotto', 'new_number'));
+  assert.ok(has('Cześć mamo, to mój nowy numer', 'new_number'));
+  assert.ok(has('Paczka czeka, dopłata 1,99 zł: kliknij w link', 'money_request'));
+  assert.ok(!has('Il tuo codice è 482913. Non condividere questo codice con nessuno.', 'asks_for_code'));
+  assert.ok(!has('Twój kod BLIK: 482913. Nie udostępniaj nikomu tego kodu.', 'asks_for_code'));
+  assert.ok(!has('Codul tău este 482913. Nu comunica nimănui acest cod.', 'asks_for_code'));
+  assert.ok(!has('La spedizione arriva domani, nulla da pagare alla consegna.', 'money_request'));
+});
