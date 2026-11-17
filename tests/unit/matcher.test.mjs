@@ -175,3 +175,18 @@ test('1.3.1: "we will never ask for your bank details" cancels the money sign; a
   assert.ok(signsOf('We never ask for bank details, but pay the release fee here today').includes('money_request'));
   assert.ok(signsOf('Please confirm your bank details to receive the refund').includes('money_request'));
 });
+test('1.4.0: French and Dutch signs, and their "never share" and "nothing to pay" context rules', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Ne raccrochez pas, je suis votre conseiller, donnez-moi le code reçu par SMS', 'keep_on_line'));
+  assert.ok(has('Donnez-moi le code reçu par SMS', 'asks_for_code'));
+  assert.ok(has('Colissimo : réglez les frais de livraison de 1,99 € via ce lien', 'money_request'));
+  assert.ok(has('Coucou maman, c’est mon nouveau numéro, mon téléphone est cassé', 'new_number'));
+  assert.ok(has('Hoi mam, dit is mijn nieuwe nummer, mijn telefoon is kapot', 'new_number'));
+  assert.ok(has('Blijf aan de lijn, wij zetten uw geld op een veilige rekening', 'keep_on_line'));
+  assert.ok(has('Kunt u dit betaalverzoek vandaag nog betalen?', 'money_request'));
+  assert.ok(!has('Votre code de connexion est 482913. Ne le communiquez jamais, même à un conseiller.', 'asks_for_code'));
+  assert.ok(!has('Uw verificatiecode is 482913. Deel deze code nooit met iemand.', 'asks_for_code'));
+  assert.ok(!has('Votre colis arrive demain, rien à payer à la livraison.', 'money_request'));
+  assert.ok(!has('Uw pakket komt morgen, u hoeft niets te betalen.', 'money_request'));
+  assert.ok(!has('Connectez-vous avec votre mot de passe sur impots.gouv.fr', 'asks_for_code'));
+});
