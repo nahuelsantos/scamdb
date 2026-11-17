@@ -318,3 +318,14 @@ test('1.9.0: Danish, Norwegian, Finnish and Icelandic signs, and their genuine n
   assert.ok(!has('Pósturinn: pakkinn þinn er kominn, ekkert að greiða.', 'money_request'));
   assert.ok(!has('Del aldri koden med noen. Vi ber aldri om BankID.', 'asks_for_code'));
 });
+test('1.10.0: Slovenian and Slovak signs from labelled messages, and their genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Tukaj varnostna služba banke. Sredstva bomo premaknili na rezervni račun.', 'impersonation'));
+  assert.ok(has('Če plačate varščino, ga izpustimo. Ne prekinjajte zveze.', 'keep_on_line'));
+  assert.ok(has('Z bezpečnostného útvaru vašej banky: prostriedky musíme presunúť na technický účet.', 'money_request'));
+  assert.ok(has('Zadaj svoje číslo a ten kód čo ti príde mi prepošli', 'asks_for_code'));
+  assert.ok(!has('Vaša enkratna koda je 551 204. Kode ne posredujte nikomur.', 'asks_for_code'));
+  assert.ok(!has('Overovací kód 518 204. Kód nikomu neposkytujte.', 'asks_for_code'));
+  assert.ok(!has('Zásielku vám dnes doručí kuriér, dobierka 34,90 € sa platí pri prevzatí.', 'money_request'));
+  assert.ok(!has('Tento e-mail neobsahuje odkazy.', 'unknown_link'));
+});
