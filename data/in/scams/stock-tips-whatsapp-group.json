@@ -1,0 +1,105 @@
+{
+  "id": "in/stock-tips-whatsapp-group",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "A stock-market “expert”, “professor” or brokerage “VIP group” on WhatsApp or Telegram"
+  },
+  "name": {
+    "en": "Stock tips WhatsApp group and fake trading app"
+  },
+  "how": {
+    "en": "You are added to a WhatsApp or Telegram group, or click a social media ad, where a “market expert” shares free tips, IPO allotments and screenshots of big profits. An assistant asks you to install a trading app or open an “institutional account” and invest through bank transfers. The app shows huge profits, but when you try to withdraw you are told to pay tax, fees or a “service charge” first, and the group disappears. SEBI warns against such invitation-only groups and apps they suggest."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You are added to a stock tips or “VIP” trading group you did not join."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The group promises guaranteed profits, IPO allotments or institutional trading."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are asked to install an app from a link and transfer money to an account."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Withdrawals need more payments for tax, fees or a deadline."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Welcome to the Alpha Wealth VIP Club. Our research team gives daily institutional stock picks with 20-30% returns. Download our trading platform from the link below and use invite code AW88 to get IPO priority allotment: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "added to stock market whatsapp group",
+      "vip trading group gave link to trading platform",
+      "ipo allotment in whatsapp group",
+      "trading app shows profit but cannot withdraw",
+      "tax before withdrawing profit from trading platform",
+      "institutional account stock tips telegram",
+      "stock market professor whatsapp group"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Unknown groups giving “sure-shot” stock tips.",
+      "An app installed from a link, not a SEBI-registered broker.",
+      "Paying fees to withdraw your own money."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Leave and report the group; don't install apps from its links.",
+      "Trade only through a SEBI-registered broker's official app.",
+      "If you paid, call 1930 and report on cybercrime.gov.in."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/your-bank",
+    "in/chakshu"
+  ],
+  "sources": [
+    {
+      "title": "SEBI warns investors against fake stock tips on invitation-only WhatsApp groups",
+      "publisher": "Business Today",
+      "url": "https://www.businesstoday.in/personal-finance/story/sebi-warns-investors-against-fake-stock-tips-on-invitation-only-whatsapp-groups-563162-2026-10-22",
+      "date": "2026-10-22"
+    },
+    {
+      "title": "Mumbai Cyber Fraud: 49-Year-Old Prabhadevi Project Manager Duped Of ₹1.23 Crore In Fake Trading App Scam; FIR Registered",
+      "publisher": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/mumbai/mumbai-cyber-fraud-49-year-old-prabhadevi-project-manager-duped-of-123-crore-in-fake-trading-app-scam-fir-registered",
+      "date": "2026-03-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

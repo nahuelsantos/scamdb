@@ -1,0 +1,104 @@
+{
+  "id": "in/telecom-disconnection-call",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“TRAI”, “Department of Telecommunications (DoT)” or your mobile operator"
+  },
+  "name": {
+    "en": "“Your mobile number will be disconnected in 2 hours”: fake TRAI or DoT call"
+  },
+  "how": {
+    "en": "A recorded call or caller claiming to be TRAI or the DoT says your mobile number will be blocked within hours because it was used for illegal messages or a KYC problem. Pressing 9 connects you to an “official” who says another SIM in your name is linked to a crime and puts you through to fake police, often leading to a digital-arrest style demand for money. TRAI says it never contacts customers about disconnection; real disconnections are handled by your operator."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An automated call says your number will be disconnected in two hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It claims to be TRAI or the DoT, and says your SIM was used for illegal activity."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You are asked to press 9 or join a video call to “verify”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "en": "They ask for Aadhaar, bank details or a payment to keep the number."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Recorded voice: This is a call from the Department of Telecom. All services on your mobile number will be stopped within two hours due to misuse reported against your SIM. To talk to our officer, press 9 now."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "trai call said my mobile will be blocked",
+      "mobile will be disconnected in two hours",
+      "press 9 to speak to trai officer",
+      "dot officer said another sim in my name",
+      "call from telecom department about illegal activity on my sim",
+      "sim will be blocked by trai"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone claiming TRAI or DoT will cut your number.",
+      "A two-hour deadline and “press 9”.",
+      "Being passed on to police about your SIM."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up: TRAI does not disconnect numbers or call about it.",
+      "Check with your operator's customer care using the number on its official app or website.",
+      "Report the call on Chakshu (Sanchar Saathi).",
+      "If you paid or shared bank details, call 1930 and your bank."
+    ]
+  },
+  "reportTo": [
+    "in/chakshu",
+    "in/cybercrime-1930",
+    "in/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "TRAI Warns Public Against Fake Calls Threatening Mobile Disconnection",
+      "publisher": "All India Radio (Akashvani News)",
+      "url": "https://www.newsonair.gov.in/trai-warns-public-against-fake-calls-threatening-mobile-disconnection",
+      "date": "2025-04-07"
+    },
+    {
+      "title": "TRAI's Advisory on Frauds Misusing its Identity",
+      "publisher": "SCC Times",
+      "url": "https://www.scconline.com/blog/post/2025/08/08/trai-issues-advisory-on-frauds-misusing-trais-identity/",
+      "date": "2025-08-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

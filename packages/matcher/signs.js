@@ -212,13 +212,13 @@ const LATAM = {
 // More English (wave 12), from the Belize draft's labelled messages: loan "activation fees", forwarded verification
 // numbers, sellers holding an item for a deposit.
 const EN2 = {
-  secrecy: String.raw`(do not|don ?t) discuss this with anyone`,
-  keep_on_line: String.raw`(don ?t|do not) (end|drop) the call|stay on the call`,
-  remote_access: String.raw`(download|install)( the| this| our)? screen ?sharing( app)?|so we can watch you|download( \w+){0,2} app( |$)`,
+  secrecy: String.raw`(must not|do not|don ?t) (speak|talk) to (your|anyone)|(do not|don ?t) discuss this with anyone`,
+  keep_on_line: String.raw`remain on (this|the) (video )?call|press [0-9] to (talk|speak|connect)|(don ?t|do not) (end|drop) the call|stay on the call`,
+  remote_access: String.raw`(^| )apk( |$)|(download|install)( the| this| our)? screen ?sharing( app)?|so we can watch you|download( \w+){0,2} app( |$)`,
   asks_for_code: String.raw`[0-9]+ ?digit (number|code) to your phone|(call|read) it out( for me)?|(read|tell|give|send)( me)?( the)? (6|six|4|four)[ -]?digits?|(reference|verification|security) code to your (mobile|phone)|(verification|confirmation|security) (number|code) (was |has been )?sent to your phone|please forward it( here)?( |$)`,
-  urgency: String.raw`if payment is not made by|we will contact everyone in your (phonebook|contacts)|in the next (one|1|two|2|24) hours? or|or i will (tag|post|share|send|leak|expose)|(slots|spots) are filling (up )?fast|or (they|we) will (auction|cancel|suspend|block|dispose)|lots of people want it|(many|other) people (are )?interested|only keep it for you if|spaces (are )?limited`,
-  money_request: String.raw`(submit|enter|provide) your (account|bank) details|pay [^ ]*[0-9][0-9,]* for (your )?(application|form|screening|processing|registration)|send [0-9][0-9,]* (naira|dollars|pounds|usd)|(^| )[0-9][0-9,]* naira|you are owing|make full payment|pay the p?[0-9.,]+ (redelivery|delivery|shipping|storage|reservation)|redelivery (charge|fee)|reservation fee|(you must|need to) settle p?[0-9]|activation fee|release the (full )?amount|have your (bank login|debit card|online banking)( [^ ]+){0,3} (on hand|ready)`,
-  impersonation: String.raw`this is the (efcc|police|fbi|irs|hmrc|ato|cra)\b|zonal command|central bank of [a-z]+|supervision office`,
+  urgency: String.raw`within [0-9]+ ?hrs?( |$)|before midnight|suspended within [0-9]+|avoid (additional |late |further )?(fees|penalt|charges|suspension)|if payment is not made by|we will contact everyone in your (phonebook|contacts)|in the next (one|1|two|2|24) hours? or|or i will (tag|post|share|send|leak|expose)|(slots|spots) are filling (up )?fast|or (they|we) will (auction|cancel|suspend|block|dispose)|lots of people want it|(many|other) people (are )?interested|only keep it for you if|spaces (are )?limited`,
+  money_request: String.raw`pay to (get|have) (the |your )?(video|photos?) (deleted|removed)|transfer (your|the) fixed deposit|(submit|enter|provide) your (account|bank) details|pay [^ ]*[0-9][0-9,]* for (your )?(application|form|screening|processing|registration)|send [0-9][0-9,]* (naira|dollars|pounds|usd)|(^| )[0-9][0-9,]* naira|you are owing|make full payment|pay the p?[0-9.,]+ (redelivery|delivery|shipping|storage|reservation)|redelivery (charge|fee)|reservation fee|(you must|need to) settle p?[0-9]|activation fee|release the (full )?amount|have your (bank login|debit card|online banking)( [^ ]+){0,3} (on hand|ready)`,
+  impersonation: String.raw`this is (sub ?inspector|inspector|officer) [a-z]+|from (the )?cyber cell|(cbi|ncb|customs|ed) (delhi|mumbai|office)|transferring (the|your) call to [a-z]+ police|this call is from (trai|the department of telecom)|this is the (efcc|police|fbi|irs|hmrc|ato|cra)\b|zonal command|central bank of [a-z]+|supervision office`,
   too_good_to_be_true: String.raw`salary sent daily|p?[0-9]+ per (review|task|like)|(give|pay) you back double|bad credit (ok|okay|no problem|accepted)|loans? up to \$?[0-9]`,
 };
 // Tagalog / Taglish rules (the Philippines), from the Philippines draft's labelled messages. Folded, space boundaries.
@@ -228,6 +228,13 @@ const TL = {
   new_number: String.raw`bagong (sim|number|numero) ko|(^| )nawala (yung|ang) phone ko`,
   secrecy: String.raw`text lang muna tayo|wag mo (sabihin|ipaalam)`,
   urgency: String.raw`(^| )ngayon na( |$)|(^| )kailangan ko( [^ ]+){0,2} ngayon`,
+};
+// Hindi rules (India), from the India draft's labelled messages. Devanagari keeps its vowel signs (lib/text.js); the
+// virama is dropped as a diacritic, so write conjuncts without it. Space boundaries.
+const HI = {
+  urgency: String.raw`काट दिया जा(येगा|एगा)|(^| )तुरंत( |$)|(^| )आज रात( |$)|बंद (हो|कर दिया) जा(येगा|एगा)`,
+  money_request: String.raw`भुगतान कर(ें|े)|पैसे भेज|टरांसफर कर`,
+  asks_for_code: String.raw`(ओटीपी|otp)( [^ ]+){0,3} (बताइए|बताएं|बताओ|भेजें|भेजो)`,
 };
 // Hungarian rules (wave 7), from the Hungary draft's labelled messages. Folded: á → a, é → e, ő/ö/ó → o, ű/ü/ú → u.
 const HU = {
@@ -288,14 +295,14 @@ const LV = {
 // blocks. Language blocks below apply only when the check's country uses that language (see compileSigns).
 const BASE = {
   asks_for_code: String.raw`\bcodigo|\bclave|\bpin\b|\btoken\b|contrasena|` + EN.code + '|' + EN2.asks_for_code + '|' + LATAM.asks_for_code,
-  remote_access: String.raw`(download|install)( the| this| our)? screen ?sharing( app)?|so we can watch you|download( \w+){0,2} app( |$)|instal(a|e|ar|o|en|ame|ate)\b|descarg|anydesk|teamviewer|supremo|baj(a|e|ar|o) (esta|la|una|el|este) (app|aplicacion)|ver (tu|su|mi) pantalla|selfie|foto (de|del) (tu |su )?dni|` + EN.remote,
+  remote_access: String.raw`(^| )apk( |$)|(download|install)( the| this| our)? screen ?sharing( app)?|so we can watch you|download( \w+){0,2} app( |$)|instal(a|e|ar|o|en|ame|ate)\b|descarg|anydesk|teamviewer|supremo|baj(a|e|ar|o) (esta|la|una|el|este) (app|aplicacion)|ver (tu|su|mi) pantalla|selfie|foto (de|del) (tu |su )?dni|` + EN.remote,
   urgency: String.raw`evit(a|e|ar|ando)( [a-z]+){0,2} (decomiso|embargo|restriccion|suspension|recargo|bloqueo)|cobro juridico|ultimo recordatorio|embargos? bancari|aumento de la deuda|notificacao extrajudicial|evite (a |sua |o |seu )?(restricao|suspensao|bloqueio|multa)|avoid (late fees|penalt|suspension|additional (fees|charges)|legal action)|urgent|\bhoy\b|vence|vencimiento|bloque|suspend|inmediat|ahora mismo|\b24 ?(h|hs|horas|hours)\b|ultimo aviso|rapido|\btoday\b|immediately|right (now|away)|expir|account (is |will be |has been )?locked|final (notice|warning)|last chance|\basap\b|\bhoje\b|imediatamente|` + EN2.urgency + '|' + LATAM.urgency,
   money_request: String.raw`(registrando|registre|registra|ingrese|indique) (una|su|tu) cuenta bancaria|provide (accurate |your |correct )?(payment|bank|billing|card) (information|details)|\biban\b|transfer|\bplata\b|dinero|\bpag(a|ar|ue|ues|a)\b|abon|\bsena\b|\bcbu\b|\bcvu\b|\balias\b|\$|€|£|deposit|prestamo|cajero|devolv|(datos|numero) de (tu|la|su) tarjeta|` + EN.money + '|' + EN2.money_request + '|' + LATAM.money_request,
   unknown_link: String.raw`(^| )линк|enlace|\blink\b|http|www|desconocid|click (here|the|this|below)|`,
   new_number: String.raw`troquei de numero|numero novo|novo numero|salva (esse|este|meu) numero|numero nuevo|nuevo numero|cambie de numero|agendalo|agenda este|agendame|numero alternativo|se me (cayo|rompio|mojo) el (cel|celu|celular|telefono)|new number|changed my number|save (this|my) number|mudei de numero|guarda (este|esse|o meu) numero|telemovel (caiu|partiu|avariou|estragou)|` + LATAM.new_number,
   impersonation: String.raw`raiffeisen|le hablo de|te hablo de|somos de|\bpami\b|\banses\b|\barca\b|\bafip\b|\bbanco\b|correo argentino|mercado pago|soporte tecnico|area de seguridad|(calling|call|message) from (your|the) bank|your bank s|bank s (fraud|security)|tech(nical)? support|fraud (team|department)|security (team|department)|calling from|post office|customs (office|fee)|tax (office|agency)|from the (irs|hmrc|ato|cra)|royal mail|\busps\b|\bctt\b|financas|autoridade tributaria|seguranca social|seg social|an post|\brevenue\b|\bgarda\b|\bbov\b|maltapost|\bmtca\b|` + EN2.impersonation + '|' + LATAM.impersonation,
-  secrecy: String.raw`(do not|don ?t) discuss this with anyone|nao (conta|fala|diga|conte|fale) (pra|para|a) ninguem|no le digas|no se lo digas|no le cuentes|entre nosotros|que no se entere|don ?t tell (anyone|anybody|your)|do not tell (anyone|anybody|your)|between (us|you and me)|keep (this|it) (secret|quiet)|` + LATAM.secrecy,
-  keep_on_line: String.raw`(don ?t|do not) (end|drop) the call|stay on the call|nao (desligue|desliga)|fique na linha|no corte|no cortes|quedese en linea|no cuelgue|don ?t hang up|do not hang up|stay on the (line|phone)|` + LATAM.keep_on_line,
+  secrecy: String.raw`(must not|do not|don ?t) (speak|talk) to (your|anyone)|(do not|don ?t) discuss this with anyone|nao (conta|fala|diga|conte|fale) (pra|para|a) ninguem|no le digas|no se lo digas|no le cuentes|entre nosotros|que no se entere|don ?t tell (anyone|anybody|your)|do not tell (anyone|anybody|your)|between (us|you and me)|keep (this|it) (secret|quiet)|` + LATAM.secrecy,
+  keep_on_line: String.raw`remain on (this|the) (video )?call|press [0-9] to (talk|speak|connect)|(don ?t|do not) (end|drop) the call|stay on the call|nao (desligue|desliga)|fique na linha|no corte|no cortes|quedese en linea|no cuelgue|don ?t hang up|do not hang up|stay on the (line|phone)|` + LATAM.keep_on_line,
   too_good_to_be_true: String.raw`ganaste|ganador|premio|sorteo|gratis|rendimiento|ganancia|duplic|congratulations,? you|you (ve |have )?won|winner|\bprize|lottery|guaranteed (return|profit|income|earning)|double your|` + EN2.too_good_to_be_true + '|' + LATAM.too_good_to_be_true,
 };
 // Each block applies only to checks whose country uses one of its languages (or a close relative: Azerbaijani and
@@ -322,6 +329,7 @@ const BLOCKS = [
   { langs: ["et"], rules: ET },
   { langs: ["lv"], rules: LV },
   { langs: ["tl"], rules: TL },
+  { langs: ["hi"], rules: HI },
   // Turkish uses "parola" for a password, as Romanian and Italian do.
   { langs: ["tr", "az"], rules: { asks_for_code: String.raw`\bparola\b` } },
 ];

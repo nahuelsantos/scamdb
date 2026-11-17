@@ -546,3 +546,12 @@ test('1.20.0: English threats, fees and genuine OTP texts (Nigeria)', async () =
   const otp = readSigns('Your OTP for the transfer of NGN 25,000.00 to ADEBAYO is [number]. It expires in 5 minutes. Do not disclose this code to anyone.', ['en']);
   assert.ok(!otp.includes('asks_for_code') && !otp.includes('money_request'));
 });
+test('1.21.0: India: APK downloads, fake officers on calls, Hindi urgency', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  assert.ok(readSigns('Download and install SBI_Aadhaar_Update.apk to continue services', ['en']).includes('remote_access'));
+  assert.ok(readSigns('This is Sub-Inspector Rathore from CBI Delhi. You will remain on this video call', ['en']).includes('keep_on_line'));
+  assert.ok(readSigns('Press 9 to talk to the officer', ['en']).includes('keep_on_line'));
+  assert.ok(readSigns('Update within 24 hrs or it will be sent back', ['en']).includes('urgency'));
+  assert.ok(readSigns('आपका बिजली कनेक्शन आज रात काट दिया जायेगा', ['en', 'hi']).includes('urgency'));
+  assert.ok(!readSigns('आपका बिजली कनेक्शन आज रात काट दिया जायेगा', ['en']).includes('urgency'), 'Hindi rules only where Hindi is spoken');
+});

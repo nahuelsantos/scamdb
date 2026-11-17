@@ -1,0 +1,103 @@
+{
+  "id": "in/fake-customer-care",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "en": "A “customer care” or “refund desk” number found on Google search"
+  },
+  "name": {
+    "en": "Fake customer care number from a web search"
+  },
+  "how": {
+    "en": "You search online for the helpline of an airline, bank, e-commerce site, cab app or courier, and call a number on a fake page or listing. The “executive” promises a refund or fix, then asks you to install a screen-sharing app like AnyDesk, fill a form with card details, share an OTP or scan a QR code. Money is taken from your account instead of refunded. Official helplines are only on the company's own app or website."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "You call a helpline number found through a web search."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The agent asks you to install AnyDesk or another screen-sharing app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "You are asked for an OTP, UPI PIN or card details to process a refund."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They keep you on the call while money is taken."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: Thank you for calling the airline refund desk. Your cancellation refund is stuck. Please download AnyDesk and give me the nine-digit code, then open your bank app so I can push the refund to your account."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "customer care number found on google",
+      "refund executive asked me to install anydesk",
+      "called helpline from google search and lost money",
+      "fake airline refund customer care",
+      "fake helpline agent wanted remote access",
+      "refund desk asked for screen sharing"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "en": [
+      "Helpline numbers from search results, ads or social media.",
+      "Requests for screen sharing, OTP or UPI PIN.",
+      "A refund that needs you to pay or scan."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Find helplines only in the company's official app or website.",
+      "Never install screen-sharing apps for a stranger.",
+      "If money was taken, call your bank and 1930 immediately."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/your-bank",
+    "in/rbi-cms"
+  ],
+  "sources": [
+    {
+      "title": "Mumbai: 77-Year-Old Woman Loses ₹7.51 Lakh In Fake IndiGo Refund Scam After Searching Number Online",
+      "publisher": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/mumbai/mumbai-77-year-old-woman-loses-751-lakh-in-fake-indigo-refund-scam-after-searching-number-online",
+      "date": "2025-07-11"
+    },
+    {
+      "title": "Don’t Trust Customer Care Numbers From Web Searches: Kerala Police",
+      "publisher": "Outlook India (PTI)",
+      "url": "https://www.outlookindia.com/national/don-t-trust-customer-care-numbers-from-web-searches-keralam-police",
+      "date": "2026-10-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

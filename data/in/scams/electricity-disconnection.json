@@ -1,0 +1,132 @@
+{
+  "id": "in/electricity-disconnection",
+  "country": "in",
+  "lang": "hi",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "hi": "“बिजली विभाग”, “बिजली अधिकारी” या बिजली कंपनी",
+    "en": "“Electricity department”, an “electricity officer” or your power company"
+  },
+  "name": {
+    "hi": "फर्जी बिजली बिल मैसेज: “आज रात बिजली कट जाएगी”",
+    "en": "Fake electricity bill message: “your power will be cut tonight”"
+  },
+  "how": {
+    "hi": "निजी मोबाइल नंबर से SMS या WhatsApp आता है कि पिछला बिल अपडेट नहीं हुआ, इसलिए आज रात बिजली काट दी जाएगी, और तुरंत “बिजली अधिकारी” को कॉल करें। कॉल करने पर ठग छोटा भुगतान करवाते हैं, AnyDesk जैसा ऐप या APK डाउनलोड करवाते हैं या कोड डलवाते हैं, और फिर खाते से पैसे निकाल लेते हैं। बिजली कंपनियां निजी नंबरों से बिल के मैसेज नहीं भेजतीं।",
+    "en": "An SMS or WhatsApp message from a private mobile number says your last bill was not updated, so power will be cut tonight, and you must call the “electricity officer” at once. On the call, fraudsters get you to make a small payment, install AnyDesk or an APK, or enter a code, then empty your bank account. Power companies don't send bill messages from personal numbers."
+  },
+  "steps": [
+    {
+      "text": {
+        "hi": "निजी नंबर से मैसेज आता है कि आज रात बिजली काट दी जाएगी।",
+        "en": "A message from a private number says power will be cut tonight."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hi": "मैसेज खुद को बिजली विभाग या अधिकारी बताता है।",
+        "en": "It claims to be the electricity department or an officer."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hi": "कॉल पर ऐप डाउनलोड करने या लिंक से भुगतान करने को कहा जाता है।",
+        "en": "On the call you are told to install an app or pay through a link."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "hi": "फिर OTP, PIN या कोड मांगा जाता है और खाते से पैसे कट जाते हैं।",
+        "en": "Then they ask for an OTP, PIN or code and money leaves your account."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hi": "प्रिय उपभोक्ता, आपका पिछले महीने का बिजली बिल अपडेट नहीं है। आज रात 10 बजे आपकी बिजली सप्लाई बंद कर दी जाएगी। तुरंत बिजली अधिकारी से इस नंबर पर बात करें: [number]",
+        "en": "Dear consumer, your last month's electricity bill is not updated. Your power supply will be stopped tonight at 10 pm. Speak to the electricity officer at once on this number: [number]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hi": [
+      "आज रात बिजली काट दी जाएगी",
+      "बिजली बिल अपडेट नहीं है मैसेज",
+      "बिजली अधिकारी के नंबर पर कॉल करें",
+      "बिजली बिल के नाम पर ऐप डाउनलोड करवाया",
+      "बिजली कनेक्शन कटने का फर्जी मैसेज",
+      "बिजली विभाग का अधिकारी बनकर ठगी"
+    ],
+    "en": [
+      "sms says electricity will be cut at night",
+      "message to call electricity officer",
+      "electricity bill message asked to install anydesk",
+      "fake electricity disconnection sms",
+      "message says last bill pending power cut",
+      "light bill pending call electricity officer"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hi": [
+      "निजी मोबाइल नंबर से बिल का मैसेज।",
+      "“आज रात” बिजली काटने की धमकी।",
+      "किसी “अधिकारी” को कॉल करने, ऐप डाउनलोड करने या कोड डालने को कहना।"
+    ],
+    "en": [
+      "A bill message from a personal mobile number.",
+      "A threat to cut power “tonight”.",
+      "Being told to call an “officer”, install an app or enter a code."
+    ]
+  },
+  "whatToDo": {
+    "hi": [
+      "मैसेज वाले नंबर पर कॉल न करें, लिंक न खोलें।",
+      "बिल की स्थिति अपनी बिजली कंपनी के आधिकारिक ऐप, वेबसाइट या बिल पर दिए नंबर से जांचें।",
+      "पैसे कटे हों तो तुरंत बैंक और 1930 पर कॉल करें।",
+      "मैसेज की शिकायत चक्षु (संचार साथी) पर करें।"
+    ],
+    "en": [
+      "Don't call the number in the message or open links.",
+      "Check your bill in your power company's official app, website or the number printed on your bill.",
+      "If money was taken, call your bank and 1930 at once.",
+      "Report the message on Chakshu (Sanchar Saathi)."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/your-bank",
+    "in/chakshu"
+  ],
+  "sources": [
+    {
+      "title": "Chhatrapati Sambhajinagar: MSEDCL Warns Of Spike In Fake Power Disconnection Messages",
+      "publisher": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/pune/chhatrapati-sambhajinagar-msedcl-warns-of-spike-in-fake-power-disconnection-messages",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Indore News: बिजली बिल से साइबर ठगी, रिटायर्ड अफसर को ही शिकार बना लिया",
+      "publisher": "Amar Ujala",
+      "url": "https://www.amarujala.com/madhya-pradesh/indore/indore-news-retired-officer-cheated-in-cyber-fraud-mpeb-bill-2026-08-02",
+      "date": "2026-08-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

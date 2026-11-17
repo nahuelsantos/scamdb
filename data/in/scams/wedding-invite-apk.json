@@ -1,0 +1,96 @@
+{
+  "id": "in/wedding-invite-apk",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A contact or unknown number on WhatsApp sending a “wedding card”"
+  },
+  "name": {
+    "en": "WhatsApp wedding invitation APK"
+  },
+  "how": {
+    "en": "A WhatsApp message, sometimes from a known contact whose account was hacked, shares a digital wedding invitation. The “card” is an APK file. Once opened and installed, it hijacks the phone, reads OTPs, sends the same file to your contacts and makes transactions from your bank account. A real invitation is an image, PDF or video, never an app to install."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A wedding invitation arrives on WhatsApp as a file to download."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "It may come from a known contact, so it seems safe."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "Opening it asks to install an app and grant permissions."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "Soon OTPs arrive and money leaves your account."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Namaste ji 🙏 You and your family are warmly invited to my daughter's wedding. Please see the invitation card: Wedding_Card.apk"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "wedding invitation apk on whatsapp",
+      "wedding card file asked to install",
+      "opened wedding invite and phone got hacked",
+      "shaadi invitation apk file",
+      "invitation apk from known contact",
+      "after opening invitation money debited"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Any invitation that is an .apk file.",
+      "A request to install or allow permissions.",
+      "Files from a contact who doesn't normally send them."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't open APK files; delete the message.",
+      "Call the sender to check.",
+      "If you installed it, switch off mobile data, call your bank and 1930, and reset your WhatsApp."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/your-bank",
+    "in/chakshu"
+  ],
+  "sources": [
+    {
+      "title": "Maharashtra: 43-Year-Old Beed Resident Loses ₹97,500 After Downloading Fake Wedding Invitation APK",
+      "publisher": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/mumbai/maharashtra-43-year-old-beed-resident-loses-97500-after-downloading-fake-wedding-invitation-apk",
+      "date": "2025-11-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "in/courier-drugs-parcel",
+  "country": "in",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A “FedEx”, “DHL” or courier company executive, then “customs” or “cyber cell”"
+  },
+  "name": {
+    "en": "Courier parcel with drugs: “your parcel to Iran was seized by customs”"
+  },
+  "how": {
+    "en": "An automated call or a caller from a courier company says a parcel sent in your name, often to Iran, Thailand or Taiwan, was stopped by customs with drugs, fake passports or cash inside. The call is “transferred” to a police, narcotics or customs officer who accuses you of a crime, often on a video call. To avoid arrest you must pay a “fine”, “security deposit” or move money for “verification”. Courier firms do not connect you to the police, and officers do not settle cases over the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A courier call says a parcel with your Aadhaar was seized with drugs or passports."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The call is transferred to a “police” or “narcotics” officer."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "en": "You are told the case is secret and you must not tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "They ask for a fee, fine or a transfer to clear your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Automated call: Your FedEx shipment has been held by customs. Press 1 to speak to an executive. Executive: The parcel booked with your Aadhaar to Tehran contains five passports and MDMA. I am connecting you to Mumbai Narcotics for your statement; please stay on the line."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "parcel with drugs in my name",
+      "courier call said customs seized my parcel",
+      "fedex executive transferred me to police",
+      "parcel to iran with fake passports",
+      "narcotics officer asked me to pay to close the case",
+      "dhl parcel held by customs call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A courier company “transferring” you to police or customs.",
+      "A parcel you never sent, linked to your Aadhaar.",
+      "Pressure to pay or keep the call secret."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up; you did not send the parcel and couriers do not hand calls to police.",
+      "Check any real shipment only on the courier's official website.",
+      "If you paid, call 1930 and your bank straight away.",
+      "Report the calling numbers on Chakshu."
+    ]
+  },
+  "reportTo": [
+    "in/cybercrime-1930",
+    "in/your-bank",
+    "in/chakshu"
+  ],
+  "sources": [
+    {
+      "title": "Mumbai: Cyber Fraudsters Dupe Senior Citizen in Mulund of ₹40 Lakh Using ‘Digital Arrest’ Scam",
+      "publisher": "Lokmat Times",
+      "url": "https://www.lokmattimes.com/mumbai/mumbai-cyber-fraudsters-dupe-senior-citizen-in-mulund-of-rs40-lakh-using-digital-arrest-scam-a522/",
+      "date": "2026-01-17"
+    },
+    {
+      "title": "Mumbai Drugs Parcel Scam: Fake Cops Extort ₹1.8 Crore From Senior Citizen",
+      "publisher": "Free Press Journal",
+      "url": "https://www.freepressjournal.in/mumbai/mumbai-drugs-parcel-scam-fake-cops-extort-18-crore-from-senior-citizen",
+      "date": "2024-08-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}
