@@ -196,3 +196,15 @@ test('1.4.2: "this message contains no link" cancels the link sign; a real link 
   assert.ok(!signsOf('Deze sms bevat geen link.').includes('unknown_link'));
   assert.ok(signsOf('Click here to pay: [link]').includes('unknown_link'));
 });
+test('1.5.0: German signs and context rules', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Legen Sie nicht auf, ich bin von der Kriminalpolizei', 'keep_on_line'));
+  assert.ok(has('Legen Sie nicht auf, ich bin von der Kriminalpolizei', 'impersonation'));
+  assert.ok(has('Nennen Sie mir bitte den Code aus der SMS', 'asks_for_code'));
+  assert.ok(has('Hallo Mama, das ist meine neue Nummer, mein Handy ist kaputt', 'new_number'));
+  assert.ok(has('Bitte überweisen Sie heute die Kaution', 'money_request'));
+  assert.ok(!has('Ihre TAN lautet 482913. Geben Sie diesen Code niemals weiter.', 'asks_for_code'));
+  assert.ok(!has('Ihr Paket kommt morgen, es ist nichts zu bezahlen.', 'money_request'));
+  assert.ok(!has('Melden Sie sich mit Ihrem Passwort bei ELSTER an.', 'asks_for_code'));
+  assert.ok(!has('Diese SMS enthält keinen Link.', 'unknown_link'));
+});
