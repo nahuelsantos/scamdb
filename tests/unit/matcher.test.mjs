@@ -266,3 +266,15 @@ test('1.7.1: a greeting is not a new number; a BLIK is a payment; "PIN w aplikac
   assert.ok(!signsOf('Nowa karta wysłana. PIN ustawisz samodzielnie w aplikacji.').includes('asks_for_code'));
   assert.ok(!signsOf('Hallo Mama, wie geht es dir?').includes('new_number'));
 });
+test('1.8.0: Ukrainian, Russian, Bulgarian, Greek and Turkish signs and genuine-code warnings', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Служба безпеки банку. Не кладіть слухавку, назвіть код з СМС', 'keep_on_line'));
+  assert.ok(has('Служба безпеки банку. Не кладіть слухавку, назвіть код з СМС', 'asks_for_code'));
+  assert.ok(has('Мамо, це мій новий номер, телефон розбився', 'new_number'));
+  assert.ok(has('Служител на банка: не затваряйте, кажете ми кода за потвърждение', 'asks_for_code'));
+  assert.ok(has('Τμήμα ασφαλείας της τράπεζας. Μην κλείσετε, πείτε μου τον κωδικό επιβεβαίωσης', 'keep_on_line'));
+  assert.ok(has('Banka güvenlik birimi: telefonu kapatmayın, doğrulama kodunu bana söyleyin', 'asks_for_code'));
+  for (const t of ['Ваш код підтвердження 482913. Нікому не повідомляйте цей код.', 'Ваш код подтверждения 482913. Никому не сообщайте этот код.',
+    'Вашият код е 482913. Не го споделяйте с никого.', 'Ο κωδικός σας είναι 482913. Μην τον γνωστοποιήσετε σε κανέναν.', 'Doğrulama kodunuz 482913. Bu kodu kimseyle paylaşmayın.'])
+    assert.ok(!has(t, 'asks_for_code'), t);
+});

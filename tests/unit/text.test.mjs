@@ -34,3 +34,7 @@ test('tokens drop Portuguese, French and Dutch filler words but keep words that 
   assert.deepEqual(tokens('Votre colis est dans notre dépôt pour vous'), ['colis', 'notre', 'depot']);
   assert.deepEqual(tokens('my son at the door'), ['son', 'door']);
 });
+test('every STOP word is already in normalised form (otherwise it can never match a token)', async () => {
+  const { STOP } = await import('../../lib/text.js');
+  assert.deepEqual([...STOP].filter((w) => normalize(w) !== w), []);
+});
