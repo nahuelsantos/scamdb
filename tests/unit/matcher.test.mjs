@@ -469,3 +469,18 @@ test('1.15.0: Latin American Spanish signs (South America), and genuine notices'
   assert.ok(!has('Recuerda activarla en el cajero con tu PIN.', 'asks_for_code'));
   assert.ok(has('BPS: valida tu identidad con tu usuario y contraseña en [enlace]', 'asks_for_code'));
 });
+test('1.16.0: Central American Spanish and Belizean English signs, and genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Le va a llegar un mensajito con unos números. Me los dicta para terminar', 'asks_for_code'));
+  assert.ok(has('Te acaba de caer un mensajito con números, ¿me lo reenviás?', 'asks_for_code'));
+  assert.ok(has('Ocupo que me diga el usuario con que entra al banco', 'asks_for_code'));
+  assert.ok(has('Para emitir el cheque debe consignar B/. 310 en timbres', 'money_request'));
+  assert.ok(has('Ya me están preguntando bastante, si no se lo doy al siguiente', 'urgency'));
+  assert.ok(has('A verification number was sent to your phone, please forward it here', 'asks_for_code'));
+  assert.ok(has('Only requirement is a $150 activation fee', 'money_request'));
+  assert.ok(!has('BAC: Su codigo es 4821. Nunca lo comparta con nadie.', 'asks_for_code'));
+  assert.ok(!has('El BCR nunca le solicitara su PIN ni claves por llamada o mensaje.', 'asks_for_code'));
+  assert.ok(!has('Hacienda: ingrese directamente al portal del Ministerio con su usuario y contraseña.', 'asks_for_code'));
+  assert.ok(!has('Claro: tu factura ya está disponible. Monto a pagar C$650, vence el 25.', 'urgency'));
+  assert.ok(has('Su factura vence el 25. Pague hoy mismo o se suspende el servicio', 'urgency'));
+});
