@@ -2,6 +2,17 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: the normaliser speaks every European alphabet
+
+Part A of the Europe plan, before Polish, Greek, Cyrillic and Turkish:
+- **`foldChar` in `lib/text.js`** is now shared by `normalize` and the evidence map:
+  - special letters are spelled out (ß→ss, ł→l, ø→o, æ→ae, œ→oe, đ/ð→d, þ→th, ı→i, final ς→σ);
+  - letters of every alphabet are kept;
+  - the `$`, `€` and `£` signs are kept.
+- **No change for existing languages:** every number on the 450 labelled messages stayed identical.
+- **€ and £ now count as money signs,** like `$` already did. UK scams called "scam" rose from 25% to 57%, and
+  all scams called "scam" from 42.5% to 46% (floor raised). Safe messages called "scam" stayed at 7.1%.
+
 ## 2026-11-17: scams known abroad, in any language ("seen elsewhere")
 
 **Owner's request:** a scam documented in one country and language must still be recognised when it arrives in
