@@ -7,13 +7,14 @@
 //                                        "Workers AI: Read" permission)
 //   node tools/eval.mjs --country au     one country
 //   node tools/eval.mjs --ai --chat-model @cf/…   try another Workers AI chat model
+//   node tools/eval.mjs --cross           scams known abroad, in another language (eval/crosslingual.json): found in seenElsewhere?
 //   node tools/eval.mjs --private        the encrypted private set instead (needs EVAL_PRIVATE_KEY; never commit its report)
 //   node tools/eval.mjs --out eval/results.md   also write the report to a file
 //   node tools/eval.mjs --ai --cache /tmp/ai.json   keep the AI's answers and reuse them (to tune the combine rules for free)
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { loadRepo } from '../lib/load.js';
-import { loadMessages, checkMessages, evaluate, report } from '../lib/eval.js';
+import { loadMessages, checkMessages, evaluate, evaluateCross, report } from '../lib/eval.js';
 import { loadPrivateMessages } from '../lib/private-eval.js';
 import { matchMessage } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from '../worker/scorer.js';
@@ -25,6 +26,13 @@ const value = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : nu
 const root = new URL('..', import.meta.url).pathname;
 const repo = loadRepo(root);
 const country = value('--country');
+if (flag('--cross')) {
+  const { messages: cross } = JSON.parse(readFileSync(new URL('../eval/crosslingual.json', import.meta.url), 'utf8'));
+  const r = await evaluateCross(cross, (m) => matchMessage(m.text, repo.entries, { country: m.country, elsewhere: true }));
+  const pct = (n) => `${Math.round((n / r.total) * 1000) / 10}%`;
+  console.log(`# Cross-lingual (keyword matcher)\n\n${r.total} messages translated into another language and checked against another country.\n\n| found in seenElsewhere | first in seenElsewhere | found anywhere in the answer |\n|---|---|---|\n| ${pct(r.found)} (${r.found}) | ${pct(r.first)} | ${pct(r.anywhere)} |\n`);
+  process.exit(0);
+}
 const priv = flag('--private');
 if (priv && !process.env.EVAL_PRIVATE_KEY) { console.error('--private needs EVAL_PRIVATE_KEY.'); process.exit(1); }
 const messages = (priv ? loadPrivateMessages(root) ?? [] : loadMessages(root)).filter((m) => !country || m.country === country);

@@ -138,3 +138,26 @@ test('Argentine "new number" phrasing: agendame, número alternativo, se me cay�
   for (const t of ['Hola pa soy yo, agendame este número', 'este es un número alternativo', 'se me cayó el cel y quedó pantalla negra', 'se me rompió el celular']) assert.ok(signsOf(t).includes('new_number'), t);
   assert.ok(!signsOf('mañana te paso el número del plomero').includes('new_number'));
 });
+
+import { matchMessage as mm } from '../../packages/matcher/index.js';
+const fakeEntries = [
+  { id: 'ar/local', country: 'ar', name: { es: 'Premio falso' }, phrases: { es: ['ganaste un premio', 'premio de navidad'] } },
+  { id: 'us/jury', country: 'us', name: { en: 'Jury duty warrant' }, phrases: { en: ['missed jury duty', 'warrant for your arrest'] }, phrasesTranslated: { es: ['no se presento al jurado', 'orden de arresto pendiente', 'tarjetas de regalo'] } },
+];
+test('elsewhere: a scam known only abroad is found from another language when it beats the local matches', () => {
+  const r = mm('Usted no se presentó al jurado y tiene una orden de arresto pendiente, pague con tarjetas de regalo', fakeEntries, { country: 'ar', elsewhere: true });
+  assert.deepEqual(r.elsewhere.map((x) => x.id), ['us/jury']);
+});
+test('elsewhere: nothing foreign is shown when a local entry fits as well', () => {
+  const r = mm('Ganaste un premio de navidad', fakeEntries, { country: 'ar', elsewhere: true });
+  assert.deepEqual(r.elsewhere, []);
+  assert.equal(r.matches[0].id, 'ar/local');
+});
+test('elsewhere is only computed when asked and a country is given', () => {
+  assert.equal(mm('orden de arresto pendiente', fakeEntries, { country: 'ar' }).elsewhere, undefined);
+  assert.equal(mm('orden de arresto pendiente', fakeEntries, { elsewhere: true }).elsewhere, undefined);
+});
+test('translated phrases are used only for the search abroad, never for local matching', () => {
+  const r = mm('orden de arresto pendiente', fakeEntries, {});
+  assert.deepEqual(r.matches, [], 'without elsewhere, machine translations do not match');
+});

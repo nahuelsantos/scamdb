@@ -61,6 +61,6 @@ export function buildSite(repo, outDir, meta, root) {
   const signals = repo.signals.map(({ id, label }) => ({ id, label }));
   // Every country's entries for the playground, which matches phrases in every language.
   put('assets/entries.json', JSON.stringify({ version: meta.version, signals,
-    entries: repo.entries.map(({ id, country, name, phrases, signals: s }) => ({ id, country, name, phrases, signals: s })) }));
+    entries: repo.entries.map(({ id, country, name, phrases, phrasesTranslated, signals: s }) => ({ id, country, name, phrases, ...(phrasesTranslated ? { phrasesTranslated } : {}), signals: s })) }));
   return written;
 }
