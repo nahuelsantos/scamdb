@@ -504,3 +504,17 @@ test('1.17.0: language blocks apply only for the check country\'s languages', as
   // Latvia's entries carry Russian phrases, so Russian rules still apply there.
   assert.ok(m('никому не говорите об этом звонке', { country: 'lv' }).signals.some((s) => s.id === 'secrecy'));
 });
+test('1.18.0: code deliveries, back-of-card alerts and official warnings are not scams (real-message set)', async () => {
+  const { readSigns, isWarningAbout } = await import('../../packages/matcher/signs.js');
+  // A text that only delivers a code asks for nothing...
+  assert.ok(!readSigns('Your Medibank verification code is: 730968', ['en']).includes('asks_for_code'));
+  assert.ok(!readSigns('Codice di sicurezza 123456 per completare la creazione della carta virtuale', ['it']).includes('asks_for_code'));
+  // ...unless it also asks you to pass the code on.
+  assert.ok(readSigns('Your verification code is 730968. Please read me the code to confirm it is you', ['en']).includes('asks_for_code'));
+  // A bank alert that sends you to the number on the back of your card mentions an amount to check, not to pay.
+  assert.ok(!readSigns('Possible unauthorised payment of £250. Please call the number on the back of your card.', ['en']).includes('money_request'));
+  assert.ok(readSigns('Possible unauthorised payment of £250. Pay the fee here [link] or call the number on the back of your card.', ['en']).includes('money_request'));
+  // An official warning post is a warning even when it mentions links and transfers, if it carries no link itself.
+  assert.ok(isWarningAbout('¿Te llegó ese mensaje? Déjalo en visto. Es un fraude. Nunca compartas tus claves ni aceptes transferencias por enlace'));
+  assert.ok(!isWarningAbout('Es un fraude que tu cuenta esté bloqueada, entra aquí para resolverlo: [enlace]'));
+});
