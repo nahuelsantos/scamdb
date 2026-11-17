@@ -349,3 +349,13 @@ test('1.10.0: Hungarian signs from labelled messages, and genuine Hungarian noti
   assert.ok(!has('Az új kártyát bármely ATM-nél PIN-kóddal tudja aktiválni.', 'asks_for_code'));
   assert.ok(!has('A küldemény átvehető, nem kell fizetnie semmit.', 'money_request'));
 });
+test('1.12.0: Lithuanian signs (and Russian wording seen in Lithuania), and genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Čia jūsų banko klientų saugumo tarnyba, įveskite PIN2 programėlėje', 'asks_for_code'));
+  assert.ok(has('Sumokėkite 0,89 EUR, kitaip siuntinys bus sunaikintas', 'money_request'));
+  assert.ok(has('Tik nesakyk mamai, prašau', 'secrecy'));
+  assert.ok(has('Сейчас придёт SMS с цифрами, назовите их', 'asks_for_code'));
+  assert.ok(!has('Mokėjimo kodas 517 204. Niekam neatskleiskite kodo, banko darbuotojai jo niekada neprašo.', 'asks_for_code'));
+  assert.ok(!has('Banko darbuotojai niekada neprašo Smart-ID PIN kodų.', 'asks_for_code'));
+  assert.ok(!has('Siunta jau paštomate, mokėti nieko nereikia.', 'money_request'));
+});
