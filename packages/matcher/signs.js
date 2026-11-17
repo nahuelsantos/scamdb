@@ -68,7 +68,7 @@ const SCAND = {
   asks_for_code: String.raw`legitimera dig|(signera|signerar|godkann|godkand)( [^ ]+){0,4} (bankid|mitid)|signering i (ditt )?bankid|(bekraeft|bekraefte|opdater|opdatere)( [^ ]+){0,3} mitid|(godkend|godkender|bekraeft)( [^ ]+){0,3} (i )?mitid|(signer|godkjenn)( [^ ]+){0,3} (i )?bankid|(las upp|uppge|ge mig|oplys|giv mig|les opp|oppgi|gi meg)( [^ ]+){0,3} (koden|engangskoden|sakerhetskoden|sikkerhedskoden|kode)|(send|skicka)( [^ ]+){0,3} (den|koden) (hit|till mig|til meg)|bilde av kodene|lapp med kodene`,
   remote_access: String.raw`(ladda ner|installera|download|installer|last ned)( [^ ]+){0,3} (appen|programmet|app)|fjarrstyrning|fjernadgang|fjernstyring|dela (din )?skarm`,
   urgency: String.raw`(^| )(idag|i dag|i dag)( |$)|inom (24|48|72) timmar|inom (fem|tre) dagar|omgaende|meddela snabbt|med en gang|(^| )straks( |$)|umiddelbart|hurtigst muligt|innen (24|48|72) timer|inden for (24|48) timer`,
-  money_request: String.raw`(^| )swisha|swisha (till|mig)|betala (hyran|avgiften|in)|uppdatera betalningen|tullavgift|serviceavgift|(^| )deposition|kortuppgifter|overfor (pengar|penge)|overfore|mobilepay|(^| )vipps|(^| )betal (gebyr|told|nu)|(^| )gebyr|kortoplysninger|kortinformasjon|depositum|tollavgift|indbetal|aktivera utbetalning|pengarna vantar|pengene venter|(modtag|motta) (betalingen|pengene|penger)|(^| )vippse|(^| )betal innen|(^| )betal [0-9]|(^| )betale (en faktura|regningen|fakturaen)|(^| )(indskud|insattning|innskudd)|utestaende belop|gavekort|presentkort|google play( )?kort|itunes( )?kort`,
+  money_request: String.raw`kontoopplysning|kontonummeret ditt mangler|(^| )swisha|swisha (till|mig)|betala (hyran|avgiften|in)|uppdatera betalningen|tullavgift|serviceavgift|(^| )deposition|kortuppgifter|overfor (pengar|penge)|overfore|mobilepay|(^| )vipps|(^| )betal (gebyr|told|nu)|(^| )gebyr|kortoplysninger|kortinformasjon|depositum|tollavgift|indbetal|aktivera utbetalning|pengarna vantar|pengene venter|(modtag|motta) (betalingen|pengene|penger)|(^| )vippse|(^| )betal innen|(^| )betal [0-9]|(^| )betale (en faktura|regningen|fakturaen)|(^| )(indskud|insattning|innskudd)|utestaende belop|gavekort|presentkort|google play( )?kort|itunes( )?kort`,
   unknown_link: String.raw`(^| )(lank|lanken|linket|lenken|lenke)( |$)|via den har lanken|klicka (har|pa)|(^| )klik (her|pa)|trykk (her|pa)`,
   new_number: String.raw`(^| )(nytt|nyt) (nummer|telefonnummer)|mit nye (nr|nummer)|mitt nye nummer|telefon(en)? er gaet i stykker|telefonen (hamnade|ramlade|gick sonder|ar trasig|gik i stykker|er odelagt|er knust)|mobilen (ar trasig|er odelagt|er knust)|(spara|gem|lagre) (detta|dette|mitt|mit) (nya |nye )?nummer`,
   impersonation: String.raw`bedrageriavdelning|sakerhetsavdelning|kortcentral|polismyndigheten|(^| )polisen|(^| )politiet|skatteverket|kronofogden|postnord|skattestyrelsen|skatteetaten|svindelafdeling|sikkerhedsafdeling|svindelavdeling|sikkerhetsavdeling|civilkladd kollega|sivilkledd|politidistrikt|sikkerhedsteam|sikkerhetsteam|sakerhetsteam|politiassistent|kobenhavns politi|(^| )etterforsker|(^| )bankansatt|statens vegvesen`,
@@ -202,7 +202,7 @@ const KA = {
 const LATAM = {
   asks_for_code: String.raw`(numero|codigo|clave)( [^ ]+){0,2} que (le|te) (acaba de llegar|acaban de llegar|llego|llega|va a llegar)|(me confirma|me dice|me lee|me los puede leer|me lo puede leer|me pasa|me dicta)( [^ ]+){0,4} (numero|numeritos|codigo)|numeritos|(mensaje|notificacion) para (autorizar|aprobar)|(^| )seis numeros|me lo puede leer|leamelo|leemelo|me lo lee( |$)|me (los|lo) dicta|mensajito con (unos|los|seis) numeros|mensajito con numeros|me lo reenvias|reenviamelo|(me diga|deme|digame)( [^ ]+){0,2} (usuario|clave|contrasena)`,
   urgency: String.raw`plazo:? [0-9]+ (dias|horas)|solo hasta (la )?medianoche|valido solo hasta|antes de que se cierren|hay otra persona (que )?(ya )?(me )?(quiere|interesad)|antes de las 23 59|cupos (solo )?hasta|ultimos cupos|(esta|anda) apurado|se va de viaje|hay varios interesados|antes de que lo borren|entre bancos se demora|me estan preguntando (bastante|mucho)|por tanto mensaje|se lo doy al siguiente|antes de que (la|lo) quiten|proceso de baja|cierran el registro|personas mas interesadas|mi mensajero pasa|pasa en [0-9]+ minutos por|apurese|tiene hasta (manana|hoy)`,
-  money_request: String.raw`(actualice|actualiza|confirme|confirma)( [^ ]+){0,2} (cuenta bancaria|datos bancarios)|si (hoy )?no (se )?(cancelan|cancela|paga|pagan)|invierta desde|invierte desde|(^| )me adelanta(s)?( |$)|me consigue [^ ]+ (millones|mil)|(^| )consigame|(^| )pones [0-9]|(^| )transfier(a|e|an)( |$)|me haces el pago movil|hazme (un|el) pago movil|(llena|completa) (tus|sus) datos para recibir|(^| )(girar|gires|girame|girarme)( |$)|(si )?me pasas [0-9]|pasame [0-9]|saque (sus|tus) ahorros|retirarlos como evidencia|(^| )meti (l |\$ ?)?[0-9]|debe consignar|(cubres|cubre|pagas|paga) la poliza|antes del desembolso|mandame el [0-9]+ ?%|aparto con|sobre con (dolares|dinero|plata)|un taxi para recogerlo|recoger la tarjeta|invertir desde|(^| )q ?[0-9]|(^| )puse [0-9]|inversion minima|(^| )[0-9][0-9.,]* dolares`,
+  money_request: String.raw`(actualice|actualiza|confirme|confirma)( [^ ]+){0,2} (cuenta bancaria|datos bancarios)|si (hoy )?no (se )?(cancelan|cancela|paga|pagan)|invierta desde|invierte desde|(^| )me adelanta(s)?( |$)|me consigue [^ ]+ (millones|mil)|(^| )consigame|(^| )pones [0-9]|(^| )transfier(a|e|an)( |$)|me haces el pago movil|hazme (un|el) pago movil|(llena|completa) (tus|sus) datos para recibir|comision por cada tarea|(^| )(girar|gires|girame|girarme)( |$)|(si )?me pasas [0-9]|pasame [0-9]|saque (sus|tus) ahorros|retirarlos como evidencia|(^| )meti (l |\$ ?)?[0-9]|debe consignar|(cubres|cubre|pagas|paga) la poliza|antes del desembolso|mandame el [0-9]+ ?%|aparto con|sobre con (dolares|dinero|plata)|un taxi para recogerlo|recoger la tarjeta|invertir desde|(^| )q ?[0-9]|(^| )puse [0-9]|inversion minima|(^| )[0-9][0-9.,]* dolares`,
   new_number: String.raw`te escribo de (este|otro) numero|el mio esta sin saldo|soy yo,? [a-z]+,? desde mi numero`,
   impersonation: String.raw`oficina de encomiendas|revision de aduana|retenid[oa] en (la )?aduana|superintendencia de bancos|direccion juridica|(^| )felcc( |$)|habla el (teniente|sargento|capitan|oficial|mayor|inspector|comisario)|policia de investigaciones|area de fraudes|oficina de prevencion|centro de seguridad de|linea preferencial`,
   secrecy: String.raw`no (comente|comentes|cuente|cuentes|diga|digas)( [^ ]+){0,3} con nadie|no me vaya a llamar a ningun policia|no (llame|llames) a (la )?policia|no (llame|llames|avise|avises) a (sus|tus) (papas|padres|hijos)|no le (comente|cuente|diga) a nadie|si (llama|le dice|avisa|le avisa) a la policia|no lo llame,? que le quitaron|sin (comentarle|decirle|contarle) a nadie|no le (cuente|diga|digas|cuentes) a (mi|tu|su) (papa|mama)`,
@@ -212,6 +212,7 @@ const LATAM = {
 // More English (wave 12), from the Belize draft's labelled messages: loan "activation fees", forwarded verification
 // numbers, sellers holding an item for a deposit.
 const EN2 = {
+  remote_access: String.raw`(download|install)( the| this| our)? screen ?sharing( app)?|so we can watch you|download( \w+){0,2} app( |$)`,
   asks_for_code: String.raw`(verification|confirmation|security) (number|code) (was |has been )?sent to your phone|please forward it( here)?( |$)`,
   urgency: String.raw`lots of people want it|(many|other) people (are )?interested|only keep it for you if|spaces (are )?limited`,
   money_request: String.raw`activation fee|release the (full )?amount|have your (bank login|debit card|online banking)( [^ ]+){0,3} (on hand|ready)`,
@@ -273,18 +274,61 @@ const LV = {
   keep_on_line: String.raw`nenolieciet klausuli|neliekiet klausuli`,
   too_good_to_be_true: String.raw`stabilus ienakumus|izmaksa katru dienu|(^| )ienakumi [0-9]`,
 };
-export const SIGNS = {
-  asks_for_code: new RegExp(String.raw`\bcodigo|\bclave|\bpin\b|\btoken\b|contrasena|` + EN.code + '|' + FR_NL.asks_for_code + '|' + DE.asks_for_code + '|' + IT_PL_RO.asks_for_code + '|' + CY_EL_TR.asks_for_code + '|' + SCAND.asks_for_code + '|' + FI.asks_for_code + '|' + IS.asks_for_code + '|' + SLAVIC.asks_for_code + '|' + EN2.asks_for_code + '|' + LATAM.asks_for_code + '|' + KA.asks_for_code + '|' + AZ.asks_for_code + '|' + RU2.asks_for_code + '|' + HY.asks_for_code + '|' + MK.asks_for_code + '|' + SQ.asks_for_code + '|' + BCS.asks_for_code + '|' + HU.asks_for_code + '|' + LT.asks_for_code + '|' + ET.asks_for_code + '|' + LV.asks_for_code),
-  remote_access: new RegExp(String.raw`instal(a|e|ar|o|en|ame|ate)\b|descarg|anydesk|teamviewer|supremo|baj(a|e|ar|o) (esta|la|una|el|este) (app|aplicacion)|ver (tu|su|mi) pantalla|selfie|foto (de|del) (tu |su )?dni|` + EN.remote + '|' + FR_NL.remote_access + '|' + DE.remote_access + '|' + IT_PL_RO.remote_access + '|' + CY_EL_TR.remote_access + '|' + SCAND.remote_access + '|' + FI.remote_access + '|' + IS.remote_access + '|' + SLAVIC.remote_access + '|' + KA.remote_access + '|' + RU2.remote_access + '|' + HY.remote_access + '|' + SQ.remote_access + '|' + HU.remote_access + '|' + LT.remote_access + '|' + ET.remote_access + '|' + LV.remote_access),
-  urgency: new RegExp(String.raw`urgent|\bhoy\b|vence|vencimiento|bloque|suspend|inmediat|ahora mismo|\b24 ?(h|hs|horas|hours)\b|ultimo aviso|rapido|\btoday\b|immediately|right (now|away)|expir|account (is |will be |has been )?locked|final (notice|warning)|last chance|\basap\b|\bhoje\b|imediatamente|` + FR_NL.urgency + '|' + DE.urgency + '|' + IT_PL_RO.urgency + '|' + CY_EL_TR.urgency + '|' + SCAND.urgency + '|' + FI.urgency + '|' + IS.urgency + '|' + SLAVIC.urgency + '|' + EN2.urgency + '|' + LATAM.urgency + '|' + KA.urgency + '|' + AZ.urgency + '|' + RU2.urgency + '|' + HY.urgency + '|' + MK.urgency + '|' + SQ.urgency + '|' + BCS.urgency + '|' + HU.urgency + '|' + LT.urgency + '|' + ET.urgency + '|' + LV.urgency),
-  money_request: new RegExp(String.raw`transfer|\bplata\b|dinero|\bpag(a|ar|ue|ues|a)\b|abon|\bsena\b|\bcbu\b|\bcvu\b|\balias\b|\$|€|£|deposit|prestamo|cajero|devolv|(datos|numero) de (tu|la|su) tarjeta|` + EN.money + '|' + FR_NL.money_request + '|' + DE.money_request + '|' + IT_PL_RO.money_request + '|' + CY_EL_TR.money_request + '|' + SCAND.money_request + '|' + FI.money_request + '|' + IS.money_request + '|' + SLAVIC.money_request + '|' + EN2.money_request + '|' + LATAM.money_request + '|' + KA.money_request + '|' + AZ.money_request + '|' + RU2.money_request + '|' + HY.money_request + '|' + MK.money_request + '|' + SQ.money_request + '|' + BCS.money_request + '|' + HU.money_request + '|' + LT.money_request + '|' + ET.money_request + '|' + LV.money_request),
-  unknown_link: new RegExp(String.raw`enlace|\blink\b|http|www|desconocid|click (here|the|this|below)|` + FR_NL.unknown_link + '|' + DE.unknown_link + '|' + IT_PL_RO.unknown_link + '|' + CY_EL_TR.unknown_link + '|' + SCAND.unknown_link + '|' + FI.unknown_link + '|' + IS.unknown_link + '|' + SLAVIC.unknown_link + '|' + KA.unknown_link + '|' + HY.unknown_link + '|' + SQ.unknown_link + '|' + BCS.unknown_link + '|' + HU.unknown_link + '|' + LT.unknown_link + '|' + ET.unknown_link + '|' + LV.unknown_link),
-  new_number: new RegExp(String.raw`troquei de numero|numero novo|novo numero|salva (esse|este|meu) numero|numero nuevo|nuevo numero|cambie de numero|agendalo|agenda este|agendame|numero alternativo|se me (cayo|rompio|mojo) el (cel|celu|celular|telefono)|new number|changed my number|save (this|my) number|mudei de numero|guarda (este|esse|o meu) numero|telemovel (caiu|partiu|avariou|estragou)|` + FR_NL.new_number + '|' + DE.new_number + '|' + IT_PL_RO.new_number + '|' + CY_EL_TR.new_number + '|' + SCAND.new_number + '|' + FI.new_number + '|' + IS.new_number + '|' + SLAVIC.new_number + '|' + LATAM.new_number + '|' + MK.new_number + '|' + SQ.new_number + '|' + BCS.new_number + '|' + HU.new_number + '|' + LT.new_number + '|' + ET.new_number + '|' + LV.new_number),
-  impersonation: new RegExp(String.raw`le hablo de|te hablo de|somos de|\bpami\b|\banses\b|\barca\b|\bafip\b|\bbanco\b|correo argentino|mercado pago|soporte tecnico|area de seguridad|(calling|call|message) from (your|the) bank|your bank s|bank s (fraud|security)|tech(nical)? support|fraud (team|department)|security (team|department)|calling from|post office|customs (office|fee)|tax (office|agency)|from the (irs|hmrc|ato|cra)|royal mail|\busps\b|\bctt\b|financas|autoridade tributaria|seguranca social|seg social|an post|\brevenue\b|\bgarda\b|\bbov\b|maltapost|\bmtca\b|` + FR_NL.impersonation + '|' + DE.impersonation + '|' + IT_PL_RO.impersonation + '|' + CY_EL_TR.impersonation + '|' + SCAND.impersonation + '|' + FI.impersonation + '|' + IS.impersonation + '|' + SLAVIC.impersonation + '|' + EN2.impersonation + '|' + LATAM.impersonation + '|' + KA.impersonation + '|' + AZ.impersonation + '|' + RU2.impersonation + '|' + HY.impersonation + '|' + MK.impersonation + '|' + SQ.impersonation + '|' + BCS.impersonation + '|' + HU.impersonation + '|' + LT.impersonation + '|' + ET.impersonation + '|' + LV.impersonation),
-  secrecy: new RegExp(String.raw`nao (conta|fala|diga|conte|fale) (pra|para|a) ninguem|no le digas|no se lo digas|no le cuentes|entre nosotros|que no se entere|don ?t tell (anyone|anybody|your)|do not tell (anyone|anybody|your)|between (us|you and me)|keep (this|it) (secret|quiet)|` + FR_NL.secrecy + '|' + DE.secrecy + '|' + IT_PL_RO.secrecy + '|' + CY_EL_TR.secrecy + '|' + SCAND.secrecy + '|' + FI.secrecy + '|' + IS.secrecy + '|' + SLAVIC.secrecy + '|' + LATAM.secrecy + '|' + AZ.secrecy + '|' + RU2.secrecy + '|' + HY.secrecy + '|' + MK.secrecy + '|' + SQ.secrecy + '|' + BCS.secrecy + '|' + HU.secrecy + '|' + LT.secrecy + '|' + ET.secrecy + '|' + LV.secrecy),
-  keep_on_line: new RegExp(String.raw`nao (desligue|desliga)|fique na linha|no corte|no cortes|quedese en linea|no cuelgue|don ?t hang up|do not hang up|stay on the (line|phone)|` + FR_NL.keep_on_line + '|' + DE.keep_on_line + '|' + IT_PL_RO.keep_on_line + '|' + CY_EL_TR.keep_on_line + '|' + SCAND.keep_on_line + '|' + FI.keep_on_line + '|' + IS.keep_on_line + '|' + SLAVIC.keep_on_line + '|' + LATAM.keep_on_line + '|' + RU2.keep_on_line + '|' + HY.keep_on_line + '|' + SQ.keep_on_line + '|' + BCS.keep_on_line + '|' + HU.keep_on_line + '|' + LT.keep_on_line + '|' + ET.keep_on_line + '|' + LV.keep_on_line),
-  too_good_to_be_true: new RegExp(String.raw`ganaste|ganador|premio|sorteo|gratis|rendimiento|ganancia|duplic|congratulations,? you|you (ve |have )?won|winner|\bprize|lottery|guaranteed (return|profit|income|earning)|double your|` + FR_NL.too_good_to_be_true + '|' + DE.too_good_to_be_true + '|' + IT_PL_RO.too_good_to_be_true + '|' + CY_EL_TR.too_good_to_be_true + '|' + SCAND.too_good_to_be_true + '|' + FI.too_good_to_be_true + '|' + IS.too_good_to_be_true + '|' + SLAVIC.too_good_to_be_true + '|' + EN2.too_good_to_be_true + '|' + LATAM.too_good_to_be_true + '|' + KA.too_good_to_be_true + '|' + AZ.too_good_to_be_true + '|' + RU2.too_good_to_be_true + '|' + HY.too_good_to_be_true + '|' + MK.too_good_to_be_true + '|' + SQ.too_good_to_be_true + '|' + BCS.too_good_to_be_true + '|' + HU.too_good_to_be_true + '|' + LT.too_good_to_be_true + '|' + ET.too_good_to_be_true + '|' + LV.too_good_to_be_true),
+// Rules every check uses: Spanish, Portuguese and English (the first countries), plus the Latin American and Belize
+// blocks. Language blocks below apply only when the check's country uses that language (see compileSigns).
+const BASE = {
+  asks_for_code: String.raw`\bcodigo|\bclave|\bpin\b|\btoken\b|contrasena|` + EN.code + '|' + EN2.asks_for_code + '|' + LATAM.asks_for_code,
+  remote_access: String.raw`(download|install)( the| this| our)? screen ?sharing( app)?|so we can watch you|download( \w+){0,2} app( |$)|instal(a|e|ar|o|en|ame|ate)\b|descarg|anydesk|teamviewer|supremo|baj(a|e|ar|o) (esta|la|una|el|este) (app|aplicacion)|ver (tu|su|mi) pantalla|selfie|foto (de|del) (tu |su )?dni|` + EN.remote,
+  urgency: String.raw`urgent|\bhoy\b|vence|vencimiento|bloque|suspend|inmediat|ahora mismo|\b24 ?(h|hs|horas|hours)\b|ultimo aviso|rapido|\btoday\b|immediately|right (now|away)|expir|account (is |will be |has been )?locked|final (notice|warning)|last chance|\basap\b|\bhoje\b|imediatamente|` + EN2.urgency + '|' + LATAM.urgency,
+  money_request: String.raw`\biban\b|transfer|\bplata\b|dinero|\bpag(a|ar|ue|ues|a)\b|abon|\bsena\b|\bcbu\b|\bcvu\b|\balias\b|\$|€|£|deposit|prestamo|cajero|devolv|(datos|numero) de (tu|la|su) tarjeta|` + EN.money + '|' + EN2.money_request + '|' + LATAM.money_request,
+  unknown_link: String.raw`(^| )линк|enlace|\blink\b|http|www|desconocid|click (here|the|this|below)|`,
+  new_number: String.raw`troquei de numero|numero novo|novo numero|salva (esse|este|meu) numero|numero nuevo|nuevo numero|cambie de numero|agendalo|agenda este|agendame|numero alternativo|se me (cayo|rompio|mojo) el (cel|celu|celular|telefono)|new number|changed my number|save (this|my) number|mudei de numero|guarda (este|esse|o meu) numero|telemovel (caiu|partiu|avariou|estragou)|` + LATAM.new_number,
+  impersonation: String.raw`raiffeisen|le hablo de|te hablo de|somos de|\bpami\b|\banses\b|\barca\b|\bafip\b|\bbanco\b|correo argentino|mercado pago|soporte tecnico|area de seguridad|(calling|call|message) from (your|the) bank|your bank s|bank s (fraud|security)|tech(nical)? support|fraud (team|department)|security (team|department)|calling from|post office|customs (office|fee)|tax (office|agency)|from the (irs|hmrc|ato|cra)|royal mail|\busps\b|\bctt\b|financas|autoridade tributaria|seguranca social|seg social|an post|\brevenue\b|\bgarda\b|\bbov\b|maltapost|\bmtca\b|` + EN2.impersonation + '|' + LATAM.impersonation,
+  secrecy: String.raw`nao (conta|fala|diga|conte|fale) (pra|para|a) ninguem|no le digas|no se lo digas|no le cuentes|entre nosotros|que no se entere|don ?t tell (anyone|anybody|your)|do not tell (anyone|anybody|your)|between (us|you and me)|keep (this|it) (secret|quiet)|` + LATAM.secrecy,
+  keep_on_line: String.raw`nao (desligue|desliga)|fique na linha|no corte|no cortes|quedese en linea|no cuelgue|don ?t hang up|do not hang up|stay on the (line|phone)|` + LATAM.keep_on_line,
+  too_good_to_be_true: String.raw`ganaste|ganador|premio|sorteo|gratis|rendimiento|ganancia|duplic|congratulations,? you|you (ve |have )?won|winner|\bprize|lottery|guaranteed (return|profit|income|earning)|double your|` + EN2.too_good_to_be_true + '|' + LATAM.too_good_to_be_true,
 };
+// Each block applies only to checks whose country uses one of its languages (or a close relative: Azerbaijani and
+// Turkish, Macedonian with Bulgarian and Serbian), so a short word in one language can't
+// fire inside another (Finnish "varat" in Bosnian "otvarati"). With no languages given, every block applies.
+const BLOCKS = [
+  { langs: ["fr", "nl"], rules: FR_NL },
+  { langs: ["de"], rules: DE },
+  { langs: ["it", "pl", "ro"], rules: IT_PL_RO },
+  { langs: ["uk", "ru", "bg", "el", "tr", "be", "mk", "az"], rules: CY_EL_TR },
+  { langs: ["sv", "da", "no"], rules: SCAND },
+  { langs: ["fi"], rules: FI },
+  { langs: ["is"], rules: IS },
+  { langs: ["sl", "sk", "cs", "hr", "bs", "sr"], rules: SLAVIC },
+  { langs: ["ka"], rules: KA },
+  { langs: ["az"], rules: AZ },
+  { langs: ["ru", "be", "uk"], rules: RU2 },
+  { langs: ["hy"], rules: HY },
+  { langs: ["mk"], rules: MK },
+  { langs: ["sq"], rules: SQ },
+  { langs: ["sr", "bs", "hr", "mk", "bg"], rules: BCS },
+  { langs: ["hu"], rules: HU },
+  { langs: ["lt"], rules: LT },
+  { langs: ["et"], rules: ET },
+  { langs: ["lv"], rules: LV },
+  // Turkish uses "parola" for a password, as Romanian and Italian do.
+  { langs: ["tr", "az"], rules: { asks_for_code: String.raw`\bparola\b` } },
+];
+const SIGN_IDS = Object.keys(BASE);
+const COMPILED = new Map();
+/** The sign regexes for a set of language codes (null or empty = every block). Cached per language set. */
+export function compileSigns(langs) {
+  const key = langs && langs.length ? [...new Set(langs)].sort().join(',') : '*';
+  let out = COMPILED.get(key);
+  if (!out) {
+    const want = key === '*' ? null : new Set(key.split(','));
+    const blocks = BLOCKS.filter((b) => !want || b.langs.some((l) => want.has(l)));
+    out = Object.fromEntries(SIGN_IDS.map((id) => [id, new RegExp([BASE[id], ...blocks.map((b) => b.rules[id])].filter(Boolean).map((r) => r.replace(/^\|+|\|+$/g, '')).join('|'))]));
+    COMPILED.set(key, out);
+  }
+  return out;
+}
+export const SIGNS = compileSigns(null);
 
 // A genuine one-time-code text warns you not to share the code ("no lo compartas", "never share", "we will never ask").
 // That warning cancels asks_for_code unless the message also asks you to hand the code over.
@@ -308,7 +352,7 @@ const NO_PAYMENT = /nada que pagar|nothing to pay|no (payment|fee|charge)s? (is 
 // "Ce SMS ne contient pas de lien", "this message contains no link": the message says there is no link.
 const NO_LINK = /(ne contient|ne contiennent|ne comporte) (aucun|pas de) lien|sans (aucun )?lien|contains? no links?|(does not|doesn t|will never|never) (contain|include|send)( \w+){0,2} links?|no (contiene|incluye) (ningun|enlaces?)|nunca (te )?(enviamos|enviaremos|mandamos) (un |ningun )?enlace|bevat geen link|nooit een link|nao (contem|tem) (nenhum )?link|nunca envia(mos)? links?|enthalt keinen link|keine links?|vi skickar aldrig lankar|ne vsebuje povezav|nesuta saites|me ei saada( [^ ]+){0,3} linke|nesiuncia nuorodu|nem tartalmaz (hivatkozast|linket)|nem kuldunk( [^ ]+){0,2} linket|ne sadrzi poveznic|no (envia|enviamos|envian) enlaces|ne salje poveznic|neobsahuje odkaz|sender aldrig links|sender aldri lenker|sender (vi )?ikke lenker|sender (vi )?ikke links|emme laheta( [^ ]+){0,3} linkkeja|не містить посилань|не содержит ссылок|не съдържа линк|δεν περιεχει (κανεναν )?συνδεσμ|(link|baglanti) icermez|non contiene (alcun )?link|nie zawiera (zadnych )?link|nu contine (niciun )?link/;
 
-const withoutNegatedMoney = (t) => { const rest = t.replace(NEGATED_MONEY, ' '); return rest !== t && !SIGNS.money_request.test(rest); };
+const withoutNegatedMoney = (t, signs = SIGNS) => { const rest = t.replace(NEGATED_MONEY, ' '); return rest !== t && !signs.money_request.test(rest); };
 
 // A bill's fixed due date ("vence el 25", "vence segun su NIT") is not pressure; urgency stays if anything else in the message is.
 const DUE_DATE = /vencen? (el (dia )?[0-9]+|segun)/;
@@ -318,16 +362,16 @@ const DUE_DATE_ALL = /vencen? (el (dia )?[0-9]+|segun)/g;
 const AGREED_SESSION = /kako smo (se )?dogovorili|као што смо се договорили|kako smo se dogovorili/;
 
 /** The sign ids that apply, after context rules (genuine-code warnings, login instructions, "nothing to pay"). */
-function applyContext(t, ids) {
+function applyContext(t, ids, signs = SIGNS) {
   let out = ids;
   if (out.includes('asks_for_code')) {
     const handover = CODE_HANDOVER.test(withoutNegations(t));
     if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t))) out = out.filter((id) => id !== 'asks_for_code');
   }
-  if (out.includes('urgency') && DUE_DATE.test(t) && !SIGNS.urgency.test(t.replace(DUE_DATE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
+  if (out.includes('urgency') && DUE_DATE.test(t) && !signs.urgency.test(t.replace(DUE_DATE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
   if (out.includes('remote_access') && AGREED_SESSION.test(t)) out = out.filter((id) => id !== 'remote_access');
   if (out.includes('unknown_link') && NO_LINK.test(t)) out = out.filter((id) => id !== 'unknown_link');
-  if (out.includes('money_request') && (NO_PAYMENT.test(t) || withoutNegatedMoney(t))) out = out.filter((id) => id !== 'money_request');
+  if (out.includes('money_request') && (NO_PAYMENT.test(t) || withoutNegatedMoney(t, signs))) out = out.filter((id) => id !== 'money_request');
   return out;
 }
 
@@ -351,18 +395,20 @@ export function normalizeWithMap(text) {
   return { text: out, map };
 }
 
-/** Signal ids found in the text, in SIGNS order. */
-export function readSigns(text) {
+/** Signal ids found in the text, in SIGNS order. `langs`: the check's languages (see compileSigns). */
+export function readSigns(text, langs) {
   const t = normalize(text);
-  return applyContext(t, Object.keys(SIGNS).filter((k) => SIGNS[k].test(t)));
+  const signs = compileSigns(langs);
+  return applyContext(t, Object.keys(signs).filter((k) => signs[k].test(t)), signs);
 }
 
 /** Like readSigns, with the words that triggered each sign (from the original text, up to 60 characters). */
-export function readSignsWithEvidence(text) {
+export function readSignsWithEvidence(text, langs) {
   const { text: t, map } = normalizeWithMap(text);
   const src = String(text ?? '');
+  const signs = compileSigns(langs);
   const out = [];
-  for (const [id, re] of Object.entries(SIGNS)) {
+  for (const [id, re] of Object.entries(signs)) {
     const m = re.exec(t);
     if (!m) continue;
     // widen to whole words around the match
@@ -372,7 +418,7 @@ export function readSignsWithEvidence(text) {
     const from = map[a], to = map[b - 1] + 1;
     out.push({ id, evidence: src.slice(from, to).slice(0, 60) });
   }
-  const keep = applyContext(t, out.map((s) => s.id));
+  const keep = applyContext(t, out.map((s) => s.id), signs);
   return out.filter((s) => keep.includes(s.id));
 }
 

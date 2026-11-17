@@ -4,7 +4,7 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
-export const VERSION = '1.16.0';
+export const VERSION = '1.17.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
@@ -74,6 +74,23 @@ function scoreLang(list, text, words) {
  * With `elsewhere: true` (and a country), entries from other countries are scored too: a scam known only abroad (in
  * any language its phrases cover) is returned in `elsewhere` when it fits clearly better than every local entry.
  */
+// The languages a country's messages arrive in, read from its entries: each entry's language and the languages its
+// phrases are written in (Latvian entries carry Russian phrases, for instance). Cached per catalogue and country.
+const LANGS = new WeakMap();
+export function countryLangs(entries, country) {
+  if (!country) return null;
+  let byCountry = LANGS.get(entries);
+  if (!byCountry) { byCountry = new Map(); LANGS.set(entries, byCountry); }
+  let langs = byCountry.get(country);
+  if (!langs) {
+    const set = new Set();
+    for (const e of entries) if (e.country === country) { if (e.lang) set.add(e.lang); for (const l of Object.keys(e.phrases ?? {})) set.add(l); }
+    langs = set.size ? [...set] : null;
+    byCountry.set(country, langs);
+  }
+  return langs;
+}
+
 export function matchMessage(input, entries, { country, limit = 3, elsewhere = false, elsewhereMin = ELSEWHERE_MIN, elsewhereMargin = ELSEWHERE_MARGIN } = {}) {
   const raw = String(input ?? '').slice(0, MAX_INPUT);
   const text = normalize(raw);
@@ -87,7 +104,8 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   const local = rank(country ? entries.filter((e) => e.country === country) : entries);
   const matches = local.filter((r, _, all) => r.score >= MATCH_RELATIVE * all[0].score)
     .slice(0, limit).map(({ id, score }) => ({ id, score }));
-  const signals = readSignsWithEvidence(raw);
+  // Language blocks apply only for the country's languages; with no country, every block applies.
+  const signals = readSignsWithEvidence(raw, countryLangs(entries, country));
   // A forwarded warning about a scam is never itself called a scam; its matches say which scam it warns about.
   const warning = isWarningAbout(raw, signals.map((s) => s.id));
   const verdict = isScam(signals.map((s) => s.id)) && !warning ? 'scam'
