@@ -258,3 +258,11 @@ test('1.7.1: Romanian "nothing to pay" and "the PIN is in the app" are genuine',
   assert.ok(!signsOf('Cardul tău nou a fost expediat. PIN-ul îl găsești în aplicația băncii.').includes('asks_for_code'));
   assert.ok(signsOf('Spune-mi PIN-ul cardului ca să deblocăm contul').includes('asks_for_code'));
 });
+test('1.7.1: a greeting is not a new number; a BLIK is a payment; "PIN w aplikacji" is genuine', () => {
+  assert.ok(!signsOf('Cześć mamo, możesz mi wysłać BLIK-a na 80 zł? Możesz też zadzwonić.').includes('new_number'));
+  assert.ok(!signsOf('Cześć mamo, możesz mi wysłać BLIK-a na 80 zł?').includes('asks_for_code'));
+  assert.ok(signsOf('Cześć mamo, możesz mi wysłać BLIK-a na 80 zł?').includes('money_request'));
+  assert.ok(signsOf('Pilnie potrzebuję pożyczki, podaj mi kod BLIK').includes('asks_for_code'));
+  assert.ok(!signsOf('Nowa karta wysłana. PIN ustawisz samodzielnie w aplikacji.').includes('asks_for_code'));
+  assert.ok(!signsOf('Hallo Mama, wie geht es dir?').includes('new_number'));
+});
