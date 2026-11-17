@@ -1,0 +1,145 @@
+{
+  "id": "it/trading-vip-deepfake",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "it": "Pubblicità sui social con volti noti o politici (video deepfake), poi un \"consulente\" o broker",
+    "en": "Social media ads with famous faces or politicians (deepfake videos), then an “adviser” or broker"
+  },
+  "name": {
+    "it": "Falso trading online e cripto pubblicizzato da VIP con video deepfake",
+    "en": "Fake online trading and crypto advertised by celebrities in deepfake videos"
+  },
+  "how": {
+    "it": "Sui social compaiono articoli, interviste o video in cui un giornalista, un imprenditore o un politico famoso consiglia una piattaforma di investimento \"sicura\" o con rendimenti altissimi. Le voci e i volti sono rifatti con l'intelligenza artificiale. Dopo aver lasciato il numero vi chiama un \"consulente\" che vi fa aprire un conto su una piattaforma non autorizzata, vi mostra guadagni finti e vi spinge a versare sempre di più. Quando chiedete di prelevare servono \"tasse\" o \"commissioni\", e i soldi spariscono all'estero.",
+    "en": "On social media you see articles, interviews or videos in which a famous journalist, businessperson or politician recommends a “safe” investment platform or one with very high returns. The voices and faces are faked with artificial intelligence. After you leave your number, an “adviser” calls and has you open an account on an unauthorised platform, shows you fake gains and pushes you to pay in more and more. When you ask to withdraw, “taxes” or “fees” are needed, and the money disappears abroad."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un video con un personaggio famoso promuove guadagni facili e garantiti.",
+        "en": "A video with a celebrity promotes easy, guaranteed profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "it": "Un \"consulente\" vi chiama e vi segue su WhatsApp.",
+        "en": "An “adviser” calls you and follows you on WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Vi fa installare un'app di accesso remoto per \"aiutarvi\" con la piattaforma.",
+        "en": "They have you install a remote-access app to “help” you with the platform."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "it": "Per prelevare i guadagni dovete pagare tasse o commissioni.",
+        "en": "To withdraw your gains you must pay taxes or fees."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Ha visto l'intervista in TV? Con il nostro algoritmo bastano 250 euro per iniziare e i clienti guadagnano fino a 1.500 euro alla settimana. Il suo account manager la contatterà oggi per attivare il conto, tenga il telefono a portata di mano.",
+        "en": "Did you see the TV interview? With our algorithm, 250 euros is enough to start and clients earn up to 1,500 euros a week. Your account manager will contact you today to activate the account, keep your phone handy."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "investimento consigliato da vip",
+      "video deepfake trading online",
+      "piattaforma trading guadagni garantiti",
+      "consulente finanziario whatsapp cripto",
+      "non riesco prelevare guadagni commissioni",
+      "broker chiede tasse per prelievo",
+      "pubblicità social investimento personaggio famoso",
+      "deposito iniziale 250 euro"
+    ],
+    "en": [
+      "celebrity investment ad",
+      "deepfake video trading platform",
+      "cannot withdraw my profits",
+      "broker asks for fees to withdraw",
+      "crypto adviser on whatsapp"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "it": [
+      "Nessun personaggio famoso consiglia davvero piattaforme di investimento in pubblicità sui social.",
+      "Guadagni garantiti e alti in poco tempo non esistono.",
+      "Pagare per prelevare i propri soldi è il segno sicuro di una truffa.",
+      "Chi offre investimenti in Italia deve essere autorizzato e iscritto negli elenchi CONSOB o Banca d'Italia."
+    ],
+    "en": [
+      "No celebrity really recommends investment platforms in social media ads.",
+      "High, guaranteed returns in a short time do not exist.",
+      "Paying to withdraw your own money is a sure sign of a scam.",
+      "Anyone offering investments in Italy must be authorised and listed by CONSOB or the Bank of Italy."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Prima di investire controllate negli elenchi e negli avvisi della CONSOB.",
+      "Non installate app di accesso remoto e non mandate altri soldi per \"sbloccare\" i guadagni.",
+      "Avvisate la banca, conservate chat e ricevute e sporgete denuncia; segnalate il sito alla Polizia Postale."
+    ],
+    "en": [
+      "Before investing, check CONSOB's registers and warnings.",
+      "Do not install remote-access apps and do not send more money to “unlock” gains.",
+      "Tell your bank, keep chats and receipts and file a complaint; report the site to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/consob",
+    "it/polizia-postale",
+    "it/denuncia",
+    "it/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Attenzione alle false proposte di investimenti online",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/attenzione-alle-false-proposte-di-investimenti-online/index.html",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Falso sito di trading online, denunciate otto persone",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/falso-sito-di-trading-online-denunciate-otto-persone/index.html",
+      "date": "2026-09-07"
+    },
+    {
+      "title": "Occhio alle truffe! Abusivismo finanziario: Consob oscura 11 siti internet (Comunicato stampa del 10 settembre 2026)",
+      "publisher": "CONSOB",
+      "url": "https://www.consob.it/web/consob/w/occhio-alle-truffe-abusivismo-finanziario-consob-oscura-11-siti-internet%C2%A0",
+      "date": "2026-09-10"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/truffa-romantica"
+  ]
+}

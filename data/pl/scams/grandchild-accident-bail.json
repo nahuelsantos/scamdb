@@ -1,0 +1,137 @@
+{
+  "id": "pl/grandchild-accident-bail",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "pl": "„Wnuczek”, „córka” lub inny bliski, potem „policjant”, „prokurator” albo „adwokat”",
+    "en": "A “grandchild”, “daughter” or other relative, then a “police officer”, “prosecutor” or “lawyer”"
+  },
+  "name": {
+    "pl": "„Na wnuczka”: wypadek bliskiej osoby i „kaucja”, po którą przychodzi kurier",
+    "en": "“Grandchild scam”: a relative’s accident and “bail” collected by a courier"
+  },
+  "how": {
+    "pl": "Na telefon (często stacjonarny) dzwoni ktoś płaczący, kto podaje się za wnuczka, córkę albo syna, albo od razu „policjant” lub „adwokat”. Mówi, że bliska osoba spowodowała poważny wypadek, na przykład potrąciła pieszego, i trafi do aresztu, jeśli od razu nie zostanie wpłacona kaucja. Oszuści grają na strachu, nie pozwalają się rozłączyć i pytają, ile pieniędzy i złota jest w domu. Po gotówkę przychodzi kurier lub „pracownik sądu”.",
+    "en": "A crying caller rings, often on a landline, pretending to be your grandchild, daughter or son, or a “police officer” or “lawyer” calls straight away. They say your relative caused a serious accident, for example hit a pedestrian, and will be locked up unless bail is paid right now. The scammers play on fear, won’t let you hang up and ask how much money and gold you have at home. A courier or “court worker” comes to collect the cash."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Płaczący „wnuczek” albo „córka”: spowodowałem wypadek, pomóż.",
+        "en": "A crying “grandchild” or “daughter”: I caused an accident, help me."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Do rozmowy włącza się „policjant”, „prokurator” albo „adwokat”.",
+        "en": "A “police officer”, “prosecutor” or “lawyer” joins the call."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Kaucja musi być zapłacona natychmiast, inaczej areszt.",
+        "en": "Bail must be paid immediately, or it’s jail."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Nie wolno się rozłączać; po pieniądze przychodzi kurier.",
+        "en": "You mustn’t hang up; a courier comes for the money."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "pl": "Pytania o gotówkę i złotą biżuterię w domu.",
+        "en": "Questions about cash and gold jewellery at home."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Babciu, to ja… stało się coś strasznego, wjechałam w kobietę na pasach… (płacz) Dzień dobry, mecenas Kowalski. Pani wnuczka jest zatrzymana. Jeśli dziś zostanie wpłacona kaucja, wróci do domu i sprawa skończy się bez więzienia. Ile może Pani przygotować? Proszę nie odkładać słuchawki, zaraz przyjedzie po pieniądze pracownik sądu.",
+        "en": "Grandma, it’s me… something terrible happened, I hit a woman on the crossing… (crying) Good afternoon, this is attorney Kowalski. Your granddaughter has been detained. If bail is paid today she’ll come home and the case will end without prison. How much can you get together? Please don’t put the phone down, a court worker is coming for the money."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "oszustwo na wnuczka",
+      "wnuczek spowodował wypadek kaucja",
+      "córka potrąciła pieszego pieniądze",
+      "telefon babcia ratuj wypadek",
+      "adwokat dzwoni kaucja areszt",
+      "kurier przyjdzie odebrać pieniądze kaucja",
+      "prokurator wypadek zapłacić dzisiaj",
+      "płacząca wnuczka telefon stacjonarny"
+    ],
+    "en": [
+      "grandchild scam call about an accident",
+      "caller said my granddaughter needs bail",
+      "lawyer called saying my son caused a crash",
+      "courier coming to collect bail money",
+      "crying grandson on the phone asking for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Żadna „kaucja” nie jest odbierana w domu przez kuriera ani przekazywana przez osoby prywatne.",
+      "Policja, prokurator i sąd nie żądają pieniędzy przez telefon.",
+      "Płacz i zmieniony głos to sposób, żeby nie dało się rozpoznać rozmówcy."
+    ],
+    "en": [
+      "No “bail” is ever collected at your home by a courier or paid through private people.",
+      "Police, prosecutors and courts never demand money over the phone.",
+      "Crying and a changed voice are there so you can’t recognise the caller."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Rozłącz się i zadzwoń do bliskiej osoby na jej zwykły numer albo do kogoś z rodziny.",
+      "Jeśli ktoś jest w drodze po pieniądze, dzwoń pod 112.",
+      "Ustalcie w rodzinie hasło na takie sytuacje.",
+      "Jeśli przekazałeś pieniądze, natychmiast zgłoś to Policji."
+    ],
+    "en": [
+      "Hang up and call your relative on their usual number, or someone else in the family.",
+      "If someone is on the way for the money, call 112.",
+      "Agree a family password for situations like this.",
+      "If you handed money over, report it to the police straight away."
+    ]
+  },
+  "reportTo": [
+    "pl/emergency-112",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Uwaga na oszustwa metodą „na wnuczka”! Seniorzy tracą oszczędności życia",
+      "publisher": "Komenda Miejska Policji w Legnicy",
+      "url": "https://legnica.policja.gov.pl/dle/aktualnosci/bieza/169623,Uwaga-na-oszustwa-metoda-na-wnuczka-Seniorzy-traca-oszczednosci-zycia.html",
+      "date": "2026-03-20"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/fake-police-officer",
+    "pl/hej-mamo-new-number"
+  ]
+}

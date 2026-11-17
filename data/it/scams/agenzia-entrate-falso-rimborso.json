@@ -1,0 +1,130 @@
+{
+  "id": "it/agenzia-entrate-falso-rimborso",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "it": "Finta Agenzia delle Entrate",
+    "en": "Fake Agenzia delle Entrate (Italian Revenue Agency)"
+  },
+  "name": {
+    "it": "Falso rimborso IRPEF dell'Agenzia delle Entrate: dati bancari per ricevere l'accredito",
+    "en": "Fake Agenzia delle Entrate income-tax (IRPEF) refund: bank details to receive the credit"
+  },
+  "how": {
+    "it": "Un'e-mail o un SMS a nome dell'Agenzia delle Entrate annuncia un rimborso IRPEF o una nuova comunicazione fiscale da consultare. Il link, con un nome che ricorda l'Agenzia, porta a una pagina che mostra lo \"stato del rimborso\" e, per completare l'accredito, chiede dati personali, IBAN e dati della carta. Varianti simili parlano di fatture, solleciti di pagamento o documenti fiscali da scaricare.",
+    "en": "An email or text in the name of the Agenzia delle Entrate announces an IRPEF refund or a new tax notice to view. The link, with a name that recalls the Agency, leads to a page showing the “refund status” and, to complete the credit, asks for personal details, IBAN and card details. Similar versions talk about invoices, payment reminders or tax documents to download."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un messaggio dell'\"Agenzia delle Entrate\" annuncia un rimborso da riscuotere.",
+        "en": "A message from the “Agenzia delle Entrate” announces a refund to collect."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Il rimborso scade se non lo confermate in pochi giorni.",
+        "en": "The refund expires unless you confirm it within days."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Il link porta a un sito che non è agenziaentrate.gov.it.",
+        "en": "The link leads to a site that is not agenziaentrate.gov.it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "Per ricevere i soldi chiede IBAN, dati della carta e codici.",
+        "en": "To receive the money it asks for IBAN, card details and codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Agenzia delle Entrate - Gentile contribuente, dopo il ricalcolo della dichiarazione le spetta un rimborso di 412,30 EUR. Per ricevere l'accredito verifichi i dati bancari entro 5 giorni lavorativi: [link]",
+        "en": "Agenzia delle Entrate - Dear taxpayer, after recalculating your tax return you are owed a refund of 412.30 EUR. To receive the credit, verify your bank details within 5 working days: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "rimborso irpef email agenzia entrate",
+      "rimborso fiscale da riscuotere link",
+      "agenzia entrate chiede dati carta",
+      "verifica stato rimborso dichiarazione",
+      "sms agenzia entrate nuova comunicazione",
+      "accredito rimborso inserire iban"
+    ],
+    "en": [
+      "tax refund email from agenzia delle entrate",
+      "income tax refund verify bank details",
+      "revenue agency asked for card details",
+      "text about a new tax notice link",
+      "refund expires unless i confirm"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "it": [
+      "L'Agenzia delle Entrate non chiede mai dati della carta, codici o password per e-mail o SMS.",
+      "I rimborsi arrivano sul conto indicato nella dichiarazione, non tramite un link.",
+      "Un dominio che non è agenziaentrate.gov.it non è dell'Agenzia, anche se ne contiene il nome."
+    ],
+    "en": [
+      "The Agenzia delle Entrate never asks for card details, codes or passwords by email or text.",
+      "Refunds are paid to the account given in your tax return, not through a link.",
+      "A domain that is not agenziaentrate.gov.it is not the Agency's, even if it contains its name."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non cliccate: controllate i rimborsi nella vostra area riservata, entrando voi con SPID o CIE dal sito ufficiale.",
+      "Nel dubbio consultate la pagina \"Focus sul phishing\" dell'Agenzia o il vostro ufficio.",
+      "Se avete inserito la carta, bloccatela con la banca e segnalate il messaggio alla Polizia Postale."
+    ],
+    "en": [
+      "Do not click: check refunds in your personal area, logging in yourself with SPID or CIE from the official site.",
+      "If in doubt, see the Agency's “Focus sul phishing” page or your local office.",
+      "If you entered your card, block it with your bank and report the message to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Avviso del 21 ottobre 2026 - Continua la campagna di phishing a tema falso rimborso IRPEF",
+      "publisher": "Agenzia delle Entrate",
+      "url": "https://www.agenziaentrate.gov.it/portale/avviso-del-21-ottobre-2026-continua-la-campagna-di-phishing-a-tema-falso-rimborso-irpef",
+      "date": "2026-10-21"
+    },
+    {
+      "title": "Avviso del 21 settembre 2026 - Campagna di smishing (phishing via SMS) con false comunicazioni fiscali dall'Agenzia",
+      "publisher": "Agenzia delle Entrate",
+      "url": "https://www.agenziaentrate.gov.it/portale/avviso-del-21-settembre-2026-campagna-di-smishing-phishing-via-sms-con-false-comunicazioni-fiscali-dall-agenzia",
+      "date": "2026-09-21"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/spid-phishing"
+  ]
+}

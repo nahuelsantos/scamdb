@@ -1,0 +1,144 @@
+{
+  "id": "ro/task-job-scam",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "ro": "Un „recrutor” sau un apel automat, apoi un grup pe Telegram cu „administrator”",
+    "en": "A “recruiter” or an automated call, then a Telegram group with an “administrator”"
+  },
+  "name": {
+    "ro": "Job online fals: bani pentru like-uri sau recenzii, apoi depuneri ca să „deblocați” câștigurile",
+    "en": "Fake online job: money for likes or reviews, then deposits to “unlock” your earnings"
+  },
+  "how": {
+    "ro": "Primiți un apel automat sau un mesaj pe WhatsApp de la un „recrutor”: un job de acasă, câteva sute de lei pe zi pentru like-uri la videoclipuri, recenzii sau „sarcini” simple. Sunteți mutat pe Telegram, unde un „administrator” vă dă sarcini și vă plătește la început sume mici ca să aveți încredere. Apoi vi se cer IBAN-ul și date personale și vi se spune că trebuie să depuneți bani proprii ca să treceți la sarcini mai bine plătite, să acoperiți un „sold negativ” sau să retrageți câștigurile. Fiecare plată aduce o nouă taxă.",
+    "en": "You get an automated call or a WhatsApp message from a “recruiter”: a job from home, a few hundred lei a day for liking videos, writing reviews or simple “tasks”. You are moved to Telegram, where an “administrator” gives you tasks and pays small sums at first so you trust them. Then you are asked for your IBAN and personal details and told you must deposit your own money to move to better-paid tasks, cover a “negative balance” or withdraw your earnings. Each payment brings a new fee."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un „recrutor” vă oferă bani mulți pentru like-uri sau recenzii.",
+        "en": "A “recruiter” offers a lot of money for likes or reviews."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Discuția se mută pe Telegram sau WhatsApp.",
+        "en": "The chat moves to Telegram or WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Primiți la început câțiva lei, ca să aveți încredere.",
+        "en": "You get a few lei at first so you trust them."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Trebuie să depuneți bani ca să deblocați sarcini sau câștiguri.",
+        "en": "You must deposit money to unlock tasks or earnings."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Sarcinile „expiră” dacă nu plătiți repede.",
+        "en": "Tasks “expire” if you don’t pay quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Bună ziua! Sunt Elena, recrutor la o agenție de marketing digital. Căutăm colaboratori care să aprecieze videoclipuri pe TikTok, 10–15 minute pe zi, între 250 și 600 de lei zilnic, plata imediată. Primele trei sarcini sunt de probă și le plătim pe loc. Vă interesează? Vă adaug în grupul nostru de pe Telegram.",
+        "en": "Good afternoon! I’m Elena, a recruiter at a digital marketing agency. We’re looking for people to like TikTok videos, 10–15 minutes a day, between 250 and 600 lei daily, paid immediately. The first three tasks are a trial and we pay on the spot. Interested? I’ll add you to our Telegram group."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "job online like-uri bani pe zi",
+      "recrutor whatsapp lucru de acasă",
+      "grup telegram sarcini plătite",
+      "trebuie să depun bani ca să retrag câștigul",
+      "apel automat ofertă de job",
+      "recenzii plătite apoi cer depunere",
+      "sold negativ sarcini online",
+      "bani pentru evaluări la produse",
+      "lucru de pe telefon câștig zilnic",
+      "sarcină de probă plătită apoi depunere"
+    ],
+    "en": [
+      "online job paid for likes",
+      "whatsapp recruiter work from home",
+      "telegram group paid tasks",
+      "must deposit money to withdraw earnings",
+      "paid reviews then asked for deposit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ro": [
+      "Un loc de muncă real nu vă cere să plătiți ca să fiți plătit.",
+      "Bani mulți pentru like-uri sau recenzii, fără interviu și fără contract.",
+      "Plățile mici de la început sunt momeală."
+    ],
+    "en": [
+      "A real job never asks you to pay in order to get paid.",
+      "Lots of money for likes or reviews, with no interview and no contract.",
+      "The small payments at the start are bait."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Opriți orice plată: banii depuși ca să „deblocați” câștigurile nu se mai întorc.",
+      "Ați plătit sau ați dat IBAN-ul și datele? Anunțați banca.",
+      "Păstrați conversațiile și dovezile și depuneți plângere la Poliție; raportați și la DNSC."
+    ],
+    "en": [
+      "Stop all payments: money deposited to “unlock” earnings doesn’t come back.",
+      "Did you pay or give your IBAN and details? Tell your bank.",
+      "Keep the chats and proof and file a police complaint; also report it to DNSC."
+    ]
+  },
+  "reportTo": [
+    "ro/police-complaint",
+    "ro/your-bank",
+    "ro/dnsc-1911"
+  ],
+  "sources": [
+    {
+      "title": "Escrocherii cu task-uri: jobul online fals care te plătește la început, apoi îți cere bani",
+      "publisher": "Bitdefender",
+      "url": "https://www.bitdefender.com/ro-ro/blog/hotforsecurity/task-scam-job-online-fals",
+      "date": "2026-10-08"
+    },
+    {
+      "title": "Te-a sunat un robot să-ți spună că ai fost acceptat la un job? Nu vei fi plătit pentru like-urile pe care te pune să le dai",
+      "publisher": "G4Media",
+      "url": "https://www.g4media.ro/te-a-sunat-un-robot-sa-ti-spuna-ca-ai-fost-acceptat-la-un-job-nu-vei-fi-platit-pentru-like-urile-pe-care-te-pune-sa-le-dai-si-risti-sa-platesti-tu-pentru-a-creste-artificial-conturile-altora-de-tikto.html",
+      "date": "2025-02-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/investment-deepfake-energy"
+  ]
+}

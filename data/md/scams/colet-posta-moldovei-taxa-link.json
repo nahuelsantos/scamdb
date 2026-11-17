@@ -1,0 +1,144 @@
+{
+  "id": "md/colet-posta-moldovei-taxa-link",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "ro": "Un SMS sau mesaj „de la Poșta Moldovei”",
+    "ru": "SMS или сообщение «от Почты Молдовы»",
+    "en": "A text or message 'from Poșta Moldovei'"
+  },
+  "name": {
+    "ro": "Fals mesaj Poșta Moldovei: „coletul nu poate fi livrat până nu achitați taxa”",
+    "ru": "Фальшивое сообщение Почты Молдовы: «посылку не доставят, пока не оплатите сбор»",
+    "en": "Fake Poșta Moldovei message: 'your parcel can't be delivered until you pay a fee'"
+  },
+  "how": {
+    "ro": "Primiți un mesaj cu logo-ul Poștei Moldovei care spune că un colet nu poate fi livrat până nu achitați o taxă suplimentară. Linkul duce la o pagină falsă unde vi se cer datele cardului sau codul din SMS. Poșta Moldovei spune că nu cere niciodată bani, coduri sau date bancare prin mesaje, apeluri sau rețele sociale.",
+    "ru": "Приходит сообщение с логотипом Почты Молдовы о том, что посылку не доставят, пока вы не оплатите дополнительный сбор. Ссылка ведёт на поддельную страницу, где просят данные карты или код из SMS. Почта Молдовы заявляет, что никогда не просит деньги, коды или банковские данные в сообщениях, звонках или соцсетях.",
+    "en": "You get a message with the Poșta Moldovei logo saying a parcel can't be delivered until you pay an extra fee. The link leads to a fake page asking for your card details or an SMS code. Poșta Moldovei says it never asks for money, codes or bank details by message, call or social media."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Mesaj: coletul dvs. este reținut.",
+        "ru": "Сообщение: ваша посылка задержана.",
+        "en": "Message: your parcel is on hold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Achitați o taxă mică până la o anumită oră.",
+        "ru": "Оплатите небольшой сбор до определённого времени.",
+        "en": "Pay a small fee by a deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Link spre o pagină care cere datele cardului.",
+        "ru": "Ссылка на страницу, где просят данные карты.",
+        "en": "A link to a page asking for card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ro": "POSTA MOLDOVEI: Expedierea Nr. RM48213 a fost oprită la centrul de sortare din cauza adresei incomplete. Actualizați datele și achitați 18,50 lei pentru relivrare în 24 de ore: [link]",
+        "ru": "POSTA MOLDOVEI: Отправление № RM48213 остановлено в сортировочном центре из-за неполного адреса. Обновите данные и оплатите 18,50 леев за повторную доставку в течение 24 часов: [ссылка]",
+        "en": "POSTA MOLDOVEI: Shipment No. RM48213 has been stopped at the sorting centre because of an incomplete address. Update your details and pay 18.50 lei for redelivery within 24 hours: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "sms posta moldovei colet taxă de plătit",
+      "coletul nu poate fi livrat achitați taxa",
+      "mesaj poșta link plată livrare",
+      "adresă incompletă colet plătiți lei",
+      "colet reținut la vamă sms link"
+    ],
+    "ru": [
+      "смс почта молдовы посылка оплатить сбор",
+      "посылку не могут доставить оплатите",
+      "сообщение почты ссылка оплата доставки",
+      "неполный адрес посылка заплатить леев",
+      "посылка задержана на таможне смс ссылка"
+    ],
+    "en": [
+      "sms posta moldovei parcel fee to pay",
+      "parcel can't be delivered pay the fee",
+      "post office message payment link delivery",
+      "incomplete address parcel pay lei",
+      "parcel held at customs sms link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ro": [
+      "Poșta Moldovei nu cere plăți sau date de card prin SMS.",
+      "Termen foarte scurt și sumă mică.",
+      "Linkul nu duce la site-ul oficial al Poștei."
+    ],
+    "ru": [
+      "Почта Молдовы не просит оплату или данные карты по SMS.",
+      "Очень короткий срок и маленькая сумма.",
+      "Ссылка ведёт не на официальный сайт Почты."
+    ],
+    "en": [
+      "Poșta Moldovei does not ask for payments or card details by text.",
+      "A very short deadline and a small amount.",
+      "The link doesn't go to the Post's official site."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul; verificați coletul pe site-ul sau aplicația oficială.",
+      "Ați introdus datele cardului? Blocați cardul prin bancă.",
+      "Semnalați mesajul Poliției."
+    ],
+    "ru": [
+      "Не открывайте ссылку; проверьте посылку на официальном сайте или в приложении.",
+      "Ввели данные карты? Заблокируйте карту через банк.",
+      "Сообщите о сообщении в полицию."
+    ],
+    "en": [
+      "Don't open the link; check the parcel on the official site or app.",
+      "Entered card details? Block the card through your bank.",
+      "Report the message to the police."
+    ]
+  },
+  "reportTo": [
+    "md/your-bank",
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Ai un colet de primit? Fii atent, escrocii trimit mesaje false în numele Poștei Moldovei",
+      "publisher": "Unimedia",
+      "url": "https://unimedia.info/ro/news/b319eaf726865a90/ai-un-colet-de-primit-fii-atent-escrocii-trimit-mesaje-false-in-numele-postei-moldovei.html",
+      "date": "2026-10-25"
+    },
+    {
+      "title": "Poșta Moldovei avertizează asupra escrocheriilor: Cum încearcă infractorii să fure datele bancare",
+      "publisher": "Realitatea.md",
+      "url": "https://realitatea.md/posta-moldovei-avertizeaza-asupra-escrocheriilor-cum-incearca-infractorii-sa-fure-datele-bancare/",
+      "date": "2026-10-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

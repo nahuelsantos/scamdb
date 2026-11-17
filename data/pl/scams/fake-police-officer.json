@@ -1,0 +1,130 @@
+{
+  "id": "pl/fake-police-officer",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "pl": "„Policja”, „CBŚP” lub „komenda”, czasem poprzedzone telefonem od „listonosza” albo „banku”",
+    "en": "“Police”, “CBŚP” (the central investigation bureau) or “the station”, sometimes after a call from a “postman” or the “bank”"
+  },
+  "name": {
+    "pl": "Fałszywy policjant: „tajna akcja” i przekazanie oszczędności kurierowi",
+    "en": "Fake police officer: a “secret operation” and handing your savings to a courier"
+  },
+  "how": {
+    "pl": "Dzwoni ktoś, kto przedstawia się jako policjant, często z CBŚP. Opowiada o grupie przestępczej: złodziejach, fałszywych listonoszach roznoszących podrobione banknoty albo nieuczciwych pracownikach banku. Twierdzi, że trwa tajna akcja, patrol jest w ukryciu, a Ty możesz pomóc. Wypytuje o oszczędności i kosztowności, każe przygotować gotówkę i biżuterię, czasem wypłacić pieniądze z banku, ustala hasło i każe nie rozłączać się. Po chwili przychodzi „funkcjonariusz” albo kurier, podaje hasło i zabiera wszystko.",
+    "en": "Someone calls introducing themselves as a police officer, often from CBŚP. They describe a criminal gang: thieves, fake postmen handing out counterfeit banknotes, or dishonest bank staff. They claim a secret operation is under way, a patrol is hidden nearby, and you can help. They ask about your savings and valuables, tell you to get cash and jewellery ready, sometimes to withdraw money from the bank, agree a password and tell you to stay on the line. Soon an “officer” or courier arrives, says the password and takes everything."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Telefon od „policjanta”: działa grupa przestępcza, trwa tajna akcja.",
+        "en": "A call from a “police officer”: a gang is operating and a secret operation is under way."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Masz nikomu nie mówić i nie rozłączać się.",
+        "en": "You must tell nobody and stay on the line."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "pl": "Pytania o gotówkę i biżuterię, polecenie, żeby je przygotować albo wypłacić pieniądze.",
+        "en": "Questions about cash and jewellery, and an order to get them ready or withdraw money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pl": "Przychodzi nieznajomy z ustalonym hasłem i zabiera pieniądze „do depozytu”.",
+        "en": "A stranger with the agreed password comes and takes the money “into safekeeping”."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Mówi komisarz Nowak z Centralnego Biura Śledczego. Rozpracowujemy grupę, która wymienia ludziom pieniądze na fałszywe banknoty, a Pani nazwisko jest na ich liście. Proszę nikomu o tym nie mówić, nawet rodzinie. Ile ma Pani gotówki w domu? Proszę ją spakować razem z biżuterią. Za kwadrans przyjdzie nasz funkcjonariusz w cywilu, poda hasło „Jaśmin” i zabierze wszystko do ekspertyzy.",
+        "en": "This is Inspector Nowak from the Central Investigation Bureau. We’re investigating a gang that swaps people’s money for counterfeit notes, and your name is on their list. Please don’t tell anyone, not even your family. How much cash do you have at home? Please pack it together with your jewellery. In fifteen minutes our plain-clothes officer will come, say the password “Jasmine” and take it all for examination."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "oszustwo na policjanta",
+      "dzwonił policjant cbśp tajna akcja",
+      "fałszywy policjant kazał przygotować gotówkę",
+      "przekazać oszczędności policji depozyt",
+      "fałszywe banknoty listonosz policjantka dzwoni",
+      "hasło kurier odbiera pieniądze biżuterię",
+      "policja prosi pomoc rozpracowanie grupy",
+      "wypłacić pieniądze banku akcja policyjna"
+    ],
+    "en": [
+      "fake police officer called my grandmother",
+      "police said there is a secret operation",
+      "told to hand over cash and jewellery to an officer",
+      "caller claimed to be from cbsp",
+      "courier came with a password for the money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Policja nigdy nie prosi o przekazanie pieniędzy ani kosztowności i nie odbiera ich w domu.",
+      "Prawdziwy policjant nie każe utrzymywać sprawy w tajemnicy przed rodziną.",
+      "Polecenie, żeby się nie rozłączać, ma uniemożliwić Ci sprawdzenie, kto naprawdę dzwoni."
+    ],
+    "en": [
+      "The police never ask you to hand over money or valuables and never collect them at your home.",
+      "A real officer never tells you to keep it secret from your family.",
+      "Being told not to hang up is meant to stop you checking who is really calling."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Przerwij rozmowę. Policję wezwij samodzielnie pod 112, najlepiej z innego telefonu albo po upewnieniu się, że poprzednie połączenie zostało zakończone.",
+      "Jeśli ktoś właśnie idzie po pieniądze albo stoi pod drzwiami, dzwoń pod 112.",
+      "Jeśli już przekazałeś pieniądze, jak najszybciej zgłoś to Policji i opisz osobę, która je odebrała.",
+      "Porozmawiaj z rodzicami i dziadkami o tym schemacie."
+    ],
+    "en": [
+      "End the call. Call the police yourself on 112, ideally from another phone or after making sure the previous call has really ended.",
+      "If someone is on the way for the money or at your door, call 112.",
+      "If you already handed money over, report it to the police as soon as possible and describe the person who took it.",
+      "Talk to your parents and grandparents about this scheme."
+    ]
+  },
+  "reportTo": [
+    "pl/emergency-112",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Kolejna seniorka oszukana metodą „na policjanta”. Nie dajmy się zwieść przestępcom",
+      "publisher": "Komenda Powiatowa Policji w Kłodzku",
+      "url": "https://klodzko.policja.gov.pl/dkl/aktualnosci/bieza/180540,Kolejna-seniorka-oszukana-metoda-na-policjanta-Nie-dajmy-sie-zwiesc-przestepcom.html",
+      "date": "2026-08-07"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/grandchild-accident-bail",
+    "pl/bank-employee-safe-account"
+  ]
+}

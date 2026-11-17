@@ -1,0 +1,134 @@
+{
+  "id": "ro/buna-mama-new-number",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "ro": "Un număr necunoscut care pretinde că e copilul sau o rudă",
+    "en": "An unknown number claiming to be your child or a relative"
+  },
+  "name": {
+    "ro": "„Bună, mama, am număr nou”: copilul cu telefon nou cere bani urgent",
+    "en": "“Hi mum, I have a new number”: child with a new phone asks for money urgently"
+  },
+  "how": {
+    "ro": "Primiți un mesaj pe WhatsApp sau SMS de la un număr necunoscut: „Bună, mama” sau „Bună, tata, mi-am schimbat numărul”. Persoana spune că e copilul dumneavoastră, că telefonul s-a stricat sau a fost pierdut și vă roagă să salvați noul număr. După puțină discuție vine o problemă urgentă: o factură, chiria, o plată pe care nu o poate face din aplicația bancară. Vă cere să transferați câteva mii de lei într-un cont, de obicei al altcuiva. Nu poate vorbi la telefon. O variantă: infractorii preiau contul real al unei cunoștințe și scriu din el.",
+    "en": "You get a WhatsApp or text message from an unknown number: “Hi mum” or “Hi dad, I changed my number”. The person says they are your child, that their phone broke or was lost, and asks you to save the new number. After a little chat comes an urgent problem: a bill, the rent, a payment they can’t make from their banking app. They ask you to transfer a few thousand lei to an account, usually someone else’s. They can’t talk on the phone. A variant: criminals take over the real account of someone you know and write from it."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un mesaj de la un număr nou: „Bună, mama, mi-am schimbat numărul.”",
+        "en": "A message from a new number: “Hi mum, I changed my number.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "ro": "Pretinde că e copilul sau o rudă.",
+        "en": "They claim to be your child or a relative."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Nu poate vorbi la telefon, doar pe mesaje.",
+        "en": "They can’t talk on the phone, only by message."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ro": "Are o plată urgentă pentru azi.",
+        "en": "They have an urgent payment for today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Vă cere să transferați bani într-un cont necunoscut.",
+        "en": "They ask you to transfer money to an unknown account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Bună, tati! Am scăpat telefonul în apă și ăsta e numărul meu nou, șterge-l pe cel vechi. Am o problemă, trebuie să plătesc azi rata la laptop și nu-mi merge aplicația băncii pe telefonul ăsta. Poți să trimiți tu 2.150 lei în contul ăsta? Îți dau înapoi săptămâna viitoare. Nu pot vorbi acum, sunt la curs.",
+        "en": "Hi dad! I dropped my phone in water and this is my new number, delete the old one. I have a problem: I have to pay the laptop instalment today and my banking app doesn’t work on this phone. Can you send 2,150 lei to this account? I’ll pay you back next week. I can’t talk now, I’m in class."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "bună mama am număr nou",
+      "copilul îmi scrie de pe alt număr",
+      "mi-am schimbat numărul trimite bani",
+      "fiica cere bani urgent pe whatsapp",
+      "telefon stricat număr nou plată urgentă",
+      "nu poate vorbi doar mesaje bani"
+    ],
+    "en": [
+      "hi mum new number message",
+      "my child texting from a new number",
+      "changed my number send money",
+      "daughter asks for money urgently on whatsapp",
+      "broken phone new number urgent payment"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "secrecy",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ro": [
+      "Un număr nou, o urgență și un cont necunoscut în același mesaj.",
+      "Persoana evită apelurile și găsește scuze să nu vorbească.",
+      "Contul în care trebuie trimiși banii e pe numele altcuiva."
+    ],
+    "en": [
+      "A new number, an emergency and an unknown account in the same message.",
+      "The person avoids calls and finds excuses not to talk.",
+      "The account the money must go to is in someone else’s name."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Sunați copilul sau ruda la numărul vechi, pe care îl știți, înainte de orice plată.",
+      "Puneți o întrebare la care doar persoana reală știe răspunsul.",
+      "Ați trimis bani? Sunați imediat banca și depuneți plângere la Poliție."
+    ],
+    "en": [
+      "Call your child or relative on the old number you know before paying anything.",
+      "Ask a question only the real person can answer.",
+      "Did you send money? Call your bank straight away and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "ro/your-bank",
+    "ro/police-complaint",
+    "ro/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Mega-escrocheria momentului pe WhatsApp: românii cad în plasa cu „numărul nou” și pierd banii",
+      "publisher": "Știri pe surse",
+      "url": "https://www.stiripesurse.ro/frauda-whatsapp-numarul-nou-romani-pacaleala_3818740",
+      "date": "2025-10-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/whatsapp-code-takeover",
+    "ro/accident-relative-call"
+  ]
+}

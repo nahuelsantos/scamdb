@@ -1,0 +1,131 @@
+{
+  "id": "pl/fake-traffic-fine-sms",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "pl": "„Policja”, „Wydział Ruchu Drogowego”, „mObywatel” lub „e-TOLL”",
+    "en": "“Police”, “Traffic Department”, “mObywatel” or “e-TOLL”"
+  },
+  "name": {
+    "pl": "SMS o mandacie lub karze drogowej do pilnej zapłaty",
+    "en": "Text about a traffic fine or penalty to pay urgently"
+  },
+  "how": {
+    "pl": "SMS informuje o rzekomym wykroczeniu drogowym, nieopłaconym mandacie albo karze i grozi dodatkowymi konsekwencjami, jeśli nie zapłacisz od razu. Nadawcą ma być Policja, wydział ruchu drogowego, mObywatel albo system e-TOLL; nazwa nadawcy bywa podrobiona tak, że wiadomość trafia do wątku z prawdziwymi SMS-ami. Link prowadzi do strony udającej serwis rządowy, która prosi o dane prawa jazdy, numer rejestracyjny i dane karty płatniczej.",
+    "en": "A text reports a supposed traffic offence, an unpaid fine or a penalty and threatens further consequences unless you pay at once. It claims to come from the police, a traffic department, mObywatel or the e-TOLL system; the sender name can be faked so the message lands in a thread with genuine texts. The link leads to a page posing as a government site that asks for your driving licence details, number plate and card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "SMS o wykroczeniu drogowym lub nieopłaconym mandacie.",
+        "en": "A text about a traffic offence or an unpaid fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Pilny termin i groźba dodatkowych kar.",
+        "en": "An urgent deadline and the threat of extra penalties."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Link do strony podobnej do serwisu rządowego.",
+        "en": "A link to a page resembling a government site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pl": "Formularz na dane prawa jazdy i karty płatniczej.",
+        "en": "A form for your driving licence and card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Policja – Wydział Ruchu Drogowego: Zarejestrowano wykroczenie Twojego pojazdu. Mandat 300 zł należy uregulować do jutra, w przeciwnym razie sprawa trafi do sądu, a kwota wzrośnie. Szczegóły i płatność: [link]",
+        "en": "Police – Traffic Department: an offence by your vehicle has been recorded. The 300 zł fine must be paid by tomorrow, otherwise the case will go to court and the amount will rise. Details and payment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "sms mandat do zapłaty link",
+      "fałszywy mandat policja sms",
+      "wykroczenie drogowe sms opłać",
+      "nieopłacona kara drogowa sms",
+      "mobywatel sms mandat karta",
+      "e toll sms zaległa opłata",
+      "wydział ruchu drogowego sms płatność"
+    ],
+    "en": [
+      "text about a traffic fine with a link",
+      "fake police fine sms",
+      "mobywatel text says i have an unpaid ticket",
+      "e toll text about an unpaid charge",
+      "sms asking to pay a speeding fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Policja nie wysyła SMS-ów z linkiem do zapłaty mandatu.",
+      "Groźba sądu lub wyższej kary, jeśli nie zapłacisz w ciągu doby.",
+      "Strona prosi o dane karty i prawa jazdy, a jej adres tylko przypomina rządowy."
+    ],
+    "en": [
+      "The police don’t send texts with a link to pay a fine.",
+      "A threat of court or a higher penalty unless you pay within a day.",
+      "The page asks for card and licence details, and its address only resembles a government one."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Nie klikaj linku. Mandaty i opłaty sprawdzaj w oficjalnych kanałach Policji, w aplikacji mObywatel lub w serwisie e-TOLL otwartym samodzielnie.",
+      "Przekaż SMS na numer 8080.",
+      "Jeśli podałeś dane karty, od razu zadzwoń do banku i zastrzeż kartę."
+    ],
+    "en": [
+      "Don’t click the link. Check fines and charges through the police’s official channels, the mObywatel app or the e-TOLL site opened yourself.",
+      "Forward the text to 8080.",
+      "If you entered card details, call your bank straight away and block the card."
+    ]
+  },
+  "reportTo": [
+    "pl/cert-polska",
+    "pl/your-bank",
+    "pl/zastrzegam"
+  ],
+  "sources": [
+    {
+      "title": "Uwaga na fałszywe SMS-y o mandatach! Oszuści podszywają się pod Policję [212/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/212/uwaga-na-falszywe-sms-y-o-mandatach-oszusci-podszywaja-sie-pod-policje/",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "Przestępcy masowo rozsyłają powiadomienia o rzekomych mandatach [164/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/164/przestepcy-masowo-rozsylaja-powiadomienia-o-rzekomych-mandatach/",
+      "date": "2026-09-07"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/gov-data-update-phishing"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "md/fals-operator-mobil-aplicatie",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "ro": "Un apel pe WhatsApp sau Viber de la „operatorul mobil”",
+    "ru": "Звонок в WhatsApp или Viber от «мобильного оператора»",
+    "en": "A WhatsApp or Viber call from 'your mobile operator'"
+  },
+  "name": {
+    "ro": "Fals operator mobil: „instalați aplicația ca să nu vă blocăm numărul”",
+    "ru": "Фальшивый оператор: «установите приложение, иначе номер заблокируют»",
+    "en": "Fake mobile operator: 'install this app or we'll block your number'"
+  },
+  "how": {
+    "ro": "Vă contactează pe WhatsApp sau Viber cineva care se prezintă drept angajat al operatorului mobil (de exemplu Orange sau Moldcell) sau al unei aplicații de stat. Pretextul: optimizarea internetului, o verificare de securitate obligatorie, contractul care expiră sau blocarea numărului. Vă cere să instalați o aplicație de „suport tehnic” și să schimbați setări. Aplicația le dă control total asupra telefonului: aplicația băncii, parolele și codurile din SMS. În câteva minute vă golesc contul.",
+    "ru": "Вам пишет или звонит в WhatsApp или Viber человек, который представляется сотрудником мобильного оператора (например, Orange или Moldcell) или государственного приложения. Предлог: оптимизация интернета, обязательная проверка безопасности, истекающий договор или блокировка номера. Он просит установить приложение «техподдержки» и изменить настройки. Приложение даёт полный контроль над телефоном: банковское приложение, пароли и коды из SMS. За несколько минут счёт опустошают.",
+    "en": "Someone contacts you on WhatsApp or Viber claiming to work for your mobile operator (for example Orange or Moldcell) or a state app. The pretext: speeding up your internet, a mandatory security check, an expiring contract or your number being blocked. They ask you to install a 'technical support' app and change settings. The app gives them full control of the phone: your banking app, passwords and SMS codes. Within minutes your account is emptied."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Apel de la „operator”: numărul va fi blocat.",
+        "ru": "Звонок от «оператора»: номер заблокируют.",
+        "en": "Call from the 'operator': your number will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Verificare obligatorie, chiar acum.",
+        "ru": "Обязательная проверка прямо сейчас.",
+        "en": "A mandatory check, right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Instalați o aplicație de suport și dați permisiuni.",
+        "ru": "Установите приложение поддержки и дайте разрешения.",
+        "en": "Install a support app and grant permissions."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ro": "Bună ziua, vă contactăm din partea serviciului tehnic al operatorului. Cartela dvs. SIM nu a trecut actualizarea de securitate și va fi deconectată astăzi la ora 18. Ca să păstrați numărul, descărcați aplicația noastră de asistență din linkul pe care vi-l trimit și activați toate permisiunile, vă ghidez eu.",
+        "ru": "Здравствуйте, мы из технической службы оператора. Ваша SIM-карта не прошла обновление безопасности и сегодня в 18 часов будет отключена. Чтобы сохранить номер, скачайте наше приложение поддержки по ссылке, которую я пришлю, и включите все разрешения, я подскажу.",
+        "en": "Hello, we're contacting you from your operator's technical service. Your SIM card failed the security update and will be disconnected today at 6 pm. To keep your number, download our support app from the link I'll send and turn on all permissions; I'll guide you."
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "operatorul mobil m-a sunat pe whatsapp să instalez aplicație",
+      "angajat orange cere aplicație de suport",
+      "numărul va fi blocat verificare securitate",
+      "optimizare internet instalați aplicația",
+      "moldcell pe viber cere acces la telefon",
+      "suport tehnic operator program de acces la distanță",
+      "operatorul cere să dau permisiuni aplicației",
+      "se întrerupe legătura dacă nu instalez aplicația"
+    ],
+    "ru": [
+      "оператор позвонил в whatsapp установить приложение",
+      "сотрудник orange просит приложение поддержки",
+      "номер заблокируют проверка безопасности",
+      "оптимизация интернета установите приложение",
+      "moldcell в viber просит доступ к телефону",
+      "техподдержка оператора программа удалённого доступа",
+      "оператор просит дать разрешения приложению",
+      "отключат связь не установлю программу"
+    ],
+    "en": [
+      "mobile operator called on whatsapp to install an app",
+      "orange employee wants a support app",
+      "number will be blocked security check",
+      "speed up internet install the app",
+      "moldcell on viber asks for access to my phone",
+      "operator tech support remote access program",
+      "operator asks me to give the app permissions",
+      "line will be cut if i don't install the program"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ro": [
+      "Operatorii nu sună pe WhatsApp sau Viber și nu cer instalarea de aplicații.",
+      "Amenințarea că numărul va fi blocat azi.",
+      "Vi se cer permisiuni de accesibilitate sau de ecran."
+    ],
+    "ru": [
+      "Операторы не звонят в WhatsApp или Viber и не просят устанавливать приложения.",
+      "Угроза, что номер заблокируют сегодня.",
+      "Просят дать разрешения на доступ к экрану."
+    ],
+    "en": [
+      "Operators don't call on WhatsApp or Viber or ask you to install apps.",
+      "The threat that your number will be blocked today.",
+      "You're asked to grant accessibility or screen permissions."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Închideți și sunați operatorul la numărul de pe site-ul lui.",
+      "Ați instalat? Scoateți cartela SIM, verificați contul și sunați banca.",
+      "Anunțați Poliția."
+    ],
+    "ru": [
+      "Положите трубку и позвоните оператору по номеру с его сайта.",
+      "Установили? Выньте SIM-карту, проверьте счёт и позвоните в банк.",
+      "Сообщите в полицию."
+    ],
+    "en": [
+      "Hang up and call your operator on the number from its website.",
+      "Installed it? Remove the SIM card, check your account and call your bank.",
+      "Tell the police."
+    ]
+  },
+  "reportTo": [
+    "md/your-bank",
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Nou val de fraude lovește moldovenii: Escrocii preiau controlul telefonului și golesc conturile bancare",
+      "publisher": "Realitatea.md",
+      "url": "https://realitatea.md/nou-val-de-fraude-loveste-moldovenii-escrocii-preiau-controlul-telefonului-si-golesc-conturilor-bancare/",
+      "date": "2025-11-17"
+    },
+    {
+      "title": "Paynet Warning: Record Number of Phone Fraud Attempts in the Republic of Moldova",
+      "publisher": "Paynet",
+      "url": "https://paynet.md/en/news/details/alerta-paynet-record-escrocherii-telefonice-moldova-2026",
+      "date": "2026-05-19"
+    },
+    {
+      "title": "Escrocherii de aproape 3 milioane de lei. Cum au fost înșelați moldovenii",
+      "publisher": "NewsMaker",
+      "url": "https://newsmaker.md/ro/escrocherii-de-aproape-3-milioane-de-lei-cum-au-fost-%C3%AEn%C8%99ela%C8%9Bi-moldovenii",
+      "date": "2026-06-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

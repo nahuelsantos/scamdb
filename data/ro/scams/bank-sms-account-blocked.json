@@ -1,0 +1,139 @@
+{
+  "id": "ro/bank-sms-account-blocked",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "ro": "„ING”, „BCR”, „Banca Transilvania”, „BRD”, „Revolut” sau „banca dumneavoastră”",
+    "en": "“ING”, “BCR”, “Banca Transilvania”, “BRD”, “Revolut” or “your bank”"
+  },
+  "name": {
+    "ro": "SMS fals de la bancă: cont blocat sau date de actualizat, autentificare printr-un link",
+    "en": "Fake bank text: account blocked or details to update, login through a link"
+  },
+  "how": {
+    "ro": "Primiți un SMS sau un e-mail care pare de la banca dumneavoastră (ING, BCR, Banca Transilvania, BRD sau alta): contul va fi blocat, o plată a fost oprită sau trebuie să vă actualizați datele. Linkul duce la o copie a internet bankingului care cere utilizatorul, parola, datele cardului și codurile primite prin SMS. Uneori vi se cere să instalați o „aplicație nouă” a băncii. Cu datele furate, infractorii intră în cont și fac transferuri.",
+    "en": "You get a text or email that looks like it is from your bank (ING, BCR, Banca Transilvania, BRD or another): the account will be blocked, a payment was stopped or you must update your details. The link leads to a copy of online banking that asks for your username, password, card details and the codes sent by text. Sometimes you are told to install a “new app” from the bank. With the stolen data, criminals log in and make transfers."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un SMS „de la bancă”: contul va fi blocat.",
+        "en": "A text “from the bank”: the account will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Trebuie să acționați azi.",
+        "en": "You must act today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Un link către o pagină de autentificare falsă.",
+        "en": "A link to a fake login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Pagina cere parola, cardul și codurile din SMS.",
+        "en": "The page asks for your password, card and text codes."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ro": "Sau trebuie să instalați o aplicație din link.",
+        "en": "Or you must install an app from the link."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "BT Info: Accesul la contul dvs. a fost restrictionat temporar din motive de securitate. Pentru reactivare, confirmati datele in maxim 12 ore: [link]",
+        "en": "BT Info: Access to your account has been temporarily restricted for security reasons. To reactivate it, confirm your details within 12 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "sms de la bancă cont blocat link",
+      "mesaj ing actualizare date link",
+      "bcr cont restricționat confirmare date",
+      "banca transilvania sms fals reactivare",
+      "pagină falsă internet banking parolă",
+      "instalează noua aplicație a băncii link"
+    ],
+    "en": [
+      "bank text account blocked link",
+      "bank message update your details link",
+      "account restricted confirm details text",
+      "fake online banking login page",
+      "install new bank app from link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "ro": [
+      "Banca nu vă cere să vă autentificați printr-un link primit prin SMS sau e-mail.",
+      "Banca nu vă cere parola, PIN-ul sau codurile din SMS.",
+      "Aplicația băncii se instalează doar din magazinul oficial de aplicații."
+    ],
+    "en": [
+      "Your bank never asks you to log in through a link sent by text or email.",
+      "Your bank never asks for your password, PIN or text codes.",
+      "The bank’s app is installed only from the official app store."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul. Intrați în aplicația băncii sau tastați chiar dumneavoastră adresa.",
+      "Ați introdus datele? Sunați imediat banca, la numărul de pe card, pentru blocare.",
+      "Raportați mesajul la bancă și la DNSC (1911 sau pnrisc.dnsc.ro)."
+    ],
+    "en": [
+      "Don’t open the link. Open your bank’s app or type its address yourself.",
+      "Entered your details? Call your bank straight away, on the number on your card, to block everything.",
+      "Report the message to your bank and to DNSC (1911 or pnrisc.dnsc.ro)."
+    ]
+  },
+  "reportTo": [
+    "ro/your-bank",
+    "ro/dnsc-1911",
+    "ro/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Avertisment pentru clienții ING. Nu răspundeți acestor mesaje: Șansele de recuperare a banilor sunt extrem de reduse",
+      "publisher": "Capital",
+      "url": "https://www.capital.ro/avertisment-pentru-clientii-ing-nu-raspundeti-acestor-mesaje-sansele-de-recuperare-a-banilor-sunt-extrem-de-reduse.html",
+      "date": "2026-03-28"
+    },
+    {
+      "title": "O nouă metodă de fraudă în România! Alertă pentru cei cu card bancar și telefon mobil de ultimă generație",
+      "publisher": "BZI",
+      "url": "https://www.bzi.ro/o-noua-metoda-de-frauda-in-romania-alerta-pentru-cei-cu-card-bancar-si-telefon-mobil-de-ultima-generatie-5208286",
+      "date": "2025-03-19"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/bank-employee-safe-account"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "it/spid-phishing",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "it": "Finti SPID, AgID, Agenzia delle Entrate o gestore dell'identità digitale",
+    "en": "Fake SPID, AgID, Agenzia delle Entrate or digital identity provider"
+  },
+  "name": {
+    "it": "Phishing SPID: identità digitale \"in scadenza\" da rinnovare o confermare",
+    "en": "SPID phishing: digital identity “expiring” to renew or confirm"
+  },
+  "how": {
+    "it": "Un'e-mail o un SMS con loghi di SPID, AgID o dell'Agenzia delle Entrate dice che l'identità digitale scade, è sospesa o va confermata. Il link porta a un sito che sembra ufficiale e chiede nome utente, password e codici SPID, a volte anche documenti e dati della carta. Con lo SPID rubato i truffatori entrano nei servizi pubblici a vostro nome, cambiano l'IBAN di pensioni o stipendi e attivano nuove identità.",
+    "en": "An email or text with SPID, AgID or Agenzia delle Entrate logos says your digital identity is expiring, suspended or must be confirmed. The link leads to an official-looking site asking for SPID username, password and codes, sometimes also documents and card details. With stolen SPID, scammers access public services in your name, change the IBAN for pensions or salaries and activate new identities."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un messaggio dice che lo SPID è in scadenza o sospeso.",
+        "en": "A message says your SPID is expiring or suspended."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Va rinnovato o confermato entro poche ore.",
+        "en": "It must be renewed or confirmed within hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Il link porta a un dominio che imita un sito pubblico.",
+        "en": "The link leads to a domain imitating a public site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "La pagina chiede credenziali SPID e il codice di accesso.",
+        "en": "The page asks for SPID credentials and the login code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Gentile utente, la sua identità digitale SPID risulta in scadenza. Per non perdere l'accesso ai servizi della Pubblica Amministrazione confermi le credenziali entro 24 ore tramite il portale: [link]",
+        "en": "Dear user, your SPID digital identity is about to expire. To keep access to public administration services, confirm your login details within 24 hours through the portal: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "spid in scadenza email",
+      "rinnovare identità digitale link",
+      "confermare credenziali spid",
+      "spid sospeso messaggio",
+      "furto spid cambio iban pensione",
+      "portale spid falso codice accesso"
+    ],
+    "en": [
+      "spid expiring email",
+      "renew my digital identity link",
+      "confirm spid login details",
+      "stolen spid changed pension iban",
+      "fake spid portal asked for code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "it": [
+      "SPID non scade con un'e-mail e non si rinnova tramite link.",
+      "Nessun ente vi chiede di inserire password e codici SPID su un sito arrivato per messaggio.",
+      "Domini che contengono \"agenziaentrate\" o \"spid\" ma non sono quelli ufficiali sono falsi."
+    ],
+    "en": [
+      "SPID does not expire by email and is not renewed through a link.",
+      "No public body asks you to enter your SPID password and codes on a site sent in a message.",
+      "Domains containing “agenziaentrate” or “spid” that are not the official ones are fake."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non cliccate: entrate voi nel sito o nell'app del vostro gestore SPID.",
+      "Se avete inserito le credenziali, cambiate subito password e contattate il gestore per sospendere l'identità; controllate l'IBAN su INPS e altri servizi.",
+      "Segnalate alla Polizia Postale e sporgete denuncia."
+    ],
+    "en": [
+      "Do not click: go to your SPID provider's site or app yourself.",
+      "If you entered your credentials, change your password at once and contact the provider to suspend the identity; check your IBAN on INPS and other services.",
+      "Report it to the Postal Police and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/denuncia"
+  ],
+  "sources": [
+    {
+      "title": "Avviso del 30 marzo 2026 - Campagna di phishing mirata al furto di credenziali SPID",
+      "publisher": "Agenzia delle Entrate",
+      "url": "https://www.agenziaentrate.gov.it/portale/avviso-del-30-marzo-2026-campagna-di-phishing-mirata-al-furto-di-credenziali-spid",
+      "date": "2026-03-30"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/agenzia-entrate-falso-rimborso"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "md/sms-amenda-circulatie-igp",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "ro": "Un SMS „de la Poliție” despre o amendă",
+    "ru": "SMS «от полиции» о штрафе",
+    "en": "A text 'from the Police' about a fine"
+  },
+  "name": {
+    "ro": "SMS fals de la Poliție: „aveți o amendă de circulație, achitați aici”",
+    "ru": "Фальшивое SMS от полиции: «у вас штраф за нарушение ПДД, оплатите здесь»",
+    "en": "Fake Police text: 'you have a traffic fine, pay here'"
+  },
+  "how": {
+    "ro": "Primiți un SMS în numele Inspectoratului General al Poliției despre o presupusă încălcare a regulilor de circulație sau parcare neregulamentară. Mesajul are un număr de proces-verbal, trimiteri la legi și un link care imită o platformă oficială. Termenul e foarte scurt și vi se amenință cu penalități sau suspendarea permisului. Pe pagină vi se cer datele personale și ale cardului. Poliția spune că aceste mesaje nu îi aparțin.",
+    "ru": "Приходит SMS от имени Генерального инспектората полиции о якобы нарушении ПДД или неправильной парковке. В сообщении есть номер протокола, ссылки на законы и ссылка, похожая на официальную платформу. Срок очень короткий, грозят штрафами или лишением прав. На странице просят личные данные и данные карты. Полиция заявляет, что эти сообщения ей не принадлежат.",
+    "en": "You get a text in the name of the General Police Inspectorate about an alleged traffic or parking offence. It has a report number, references to the law and a link that imitates an official platform. The deadline is very short and you're threatened with penalties or losing your licence. The page asks for personal and card details. The police say these messages are not theirs."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "SMS: amendă pentru încălcarea regulilor de circulație.",
+        "ru": "SMS: штраф за нарушение ПДД.",
+        "en": "Text: a fine for a traffic offence."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Plătiți în 24 de ore sau se dublează.",
+        "ru": "Оплатите за 24 часа, иначе сумма удвоится.",
+        "en": "Pay within 24 hours or it doubles."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Link spre o pagină care cere cardul.",
+        "ru": "Ссылка на страницу, где просят карту.",
+        "en": "A link to a page asking for your card."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ro": "INSPECTORATUL GENERAL AL POLITIEI: Ati depasit viteza admisa, proces-verbal nr. 0841/26. Amenda de 900 lei poate fi achitata cu reducere 50% in 72 ore. Dupa termen se aplica suspendarea dreptului de a conduce. Achitati: [link]",
+        "ru": "ГЕНЕРАЛЬНЫЙ ИНСПЕКТОРАТ ПОЛИЦИИ: Вы превысили скорость, протокол № 0841/26. Штраф 900 леев можно оплатить со скидкой 50% в течение 72 часов. После срока применяется лишение права управления. Оплатить: [ссылка]",
+        "en": "GENERAL POLICE INSPECTORATE: You exceeded the speed limit, report no. 0841/26. The 900 lei fine can be paid at 50% off within 72 hours. After the deadline your driving licence will be suspended. Pay: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "sms amendă poliție circulație link",
+      "am primit amendă pentru viteză prin sms",
+      "parcare neregulamentară amendă link plată",
+      "igp sms proces verbal de achitat",
+      "suspendarea permisului dacă nu plătesc amenda"
+    ],
+    "ru": [
+      "смс штраф полиция пдд ссылка",
+      "пришёл штраф за превышение скорости по смс",
+      "штраф за неправильную парковку ссылка оплата",
+      "смс от игп протокол оплатить",
+      "лишат прав не оплачу штраф"
+    ],
+    "en": [
+      "sms police traffic fine link",
+      "got a speeding fine by text",
+      "illegal parking fine payment link",
+      "police text report number to pay",
+      "licence suspended if I don't pay the fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ro": [
+      "Poliția nu trimite linkuri de plată a amenzilor prin SMS.",
+      "Termene foarte scurte și amenințări cu permisul.",
+      "Linkul nu este pe un domeniu gov.md."
+    ],
+    "ru": [
+      "Полиция не присылает ссылки на оплату штрафов по SMS.",
+      "Очень короткие сроки и угрозы лишить прав.",
+      "Ссылка не на домене gov.md."
+    ],
+    "en": [
+      "The police don't send fine-payment links by text.",
+      "Very short deadlines and threats about your licence.",
+      "The link is not on a gov.md domain."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul; verificați amenzile doar pe serviciile oficiale ale statului.",
+      "Ați introdus datele cardului? Blocați cardul imediat.",
+      "Semnalați mesajul Poliției."
+    ],
+    "ru": [
+      "Не открывайте ссылку; проверяйте штрафы только в официальных госуслугах.",
+      "Ввели данные карты? Сразу заблокируйте карту.",
+      "Сообщите о сообщении в полицию."
+    ],
+    "en": [
+      "Don't open the link; check fines only on official government services.",
+      "Entered your card details? Block the card right away.",
+      "Report the text to the police."
+    ]
+  },
+  "reportTo": [
+    "md/your-bank",
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "IGP avertizează despre o nouă tentativă de fraudă online. Escrocii invocă presupuse încălcări ale regulilor de circulație",
+      "publisher": "Moldpres",
+      "url": "https://www.moldpres.md/rom/societate/igp-avertizeaza-despre-o-noua-tentativa-de-frauda-online-escrocii-invoca-presupuse-incalcari-ale-regulilor-de-circulatie",
+      "date": "2026-08-17"
+    },
+    {
+      "title": "Paynet Warning: Record Number of Phone Fraud Attempts in the Republic of Moldova",
+      "publisher": "Paynet",
+      "url": "https://paynet.md/en/news/details/alerta-paynet-record-escrocherii-telefonice-moldova-2026",
+      "date": "2026-05-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

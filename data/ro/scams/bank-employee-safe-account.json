@@ -1,0 +1,155 @@
+{
+  "id": "ro/bank-employee-safe-account",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "ro": "„Banca dumneavoastră”, „departamentul de securitate” sau „antifraudă” (pe ecran poate apărea chiar numărul real al băncii)",
+    "en": "“Your bank”, its “security” or “anti-fraud department” (the bank’s real number may even show on screen)"
+  },
+  "name": {
+    "ro": "Fals angajat al băncii: „tranzacție suspectă”, cod din aplicație și mutarea banilor într-un „cont sigur”",
+    "en": "Fake bank employee: “suspicious transaction”, app code and moving your money to a “safe account”"
+  },
+  "how": {
+    "ro": "Sunteți sunat de la un număr care pare al băncii (tehnica se numește spoofing). Apelantul spune că există o tranzacție suspectă, o autentificare din altă țară, un atac cibernetic sau un credit cerut în numele dumneavoastră. Uneori primiți înainte un SMS că vă va suna „departamentul de securitate”. Vă cere codurile primite prin SMS, parola de internet banking, datele cardului sau să aprobați o notificare în aplicație. Alteori apelul e transferat la un „polițist” sau „specialist” care vă cere să mutați economiile într-un „cont sigur” sau să instalați o aplicație de control la distanță. Banii ajung la infractori.",
+    "en": "You get a call from a number that looks like your bank’s (the trick is called spoofing). The caller says there is a suspicious transaction, a login from another country, a cyberattack or a loan requested in your name. Sometimes a text first says the “security department” will call you. They ask for the codes sent by text, your online banking password, your card details, or to approve a notification in the app. Other times the call is passed to a “police officer” or “specialist” who tells you to move your savings to a “safe account” or to install a remote-control app. The money goes to the criminals."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un apel de la „bancă”, cu număr care pare real: o plată suspectă sau un atac asupra contului.",
+        "en": "A call from the “bank”, with a number that looks real: a suspicious payment or an attack on the account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Totul e urgent, să nu închideți, altfel pierdeți banii.",
+        "en": "Everything is urgent; don’t hang up or you’ll lose the money."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ro": "Vi se cer codul primit prin SMS, parola sau aprobarea unei notificări în aplicație.",
+        "en": "You are asked for the code sent by text, your password or to approve a notification in the app."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ro": "Sau vi se cere să transferați economiile într-un „cont sigur”.",
+        "en": "Or you are told to transfer your savings to a “safe account”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Uneori trebuie să instalați o aplicație ca „să vă ajute” la distanță.",
+        "en": "Sometimes you must install an app so they can “help” remotely."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Bună ziua, vă sun de la departamentul antifraudă al băncii. Am observat o plată de 3.400 de lei către un comerciant din Lituania. Dumneavoastră ați făcut-o? Nu? Atunci trebuie să acționăm repede. Nu închideți, vă rog. O să primiți un cod prin SMS, mi-l citiți ca să anulăm tranzacția, apoi mutăm temporar soldul într-un cont protejat al băncii.",
+        "en": "Good afternoon, I’m calling from the bank’s anti-fraud department. We noticed a payment of 3,400 lei to a merchant in Lithuania. Did you make it? No? Then we have to act fast. Please don’t hang up. You’ll get a code by text; read it to me so we can cancel the transaction, then we’ll move your balance temporarily to a protected bank account."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "fals angajat al băncii m-a sunat",
+      "mi-a cerut să mut banii într-un cont sigur",
+      "banca m-a sunat despre o tranzacție suspectă",
+      "mi-a cerut codul primit prin sms la telefon",
+      "apel de la departamentul antifraudă al băncii",
+      "numărul băncii apărea pe ecran spoofing",
+      "să aprob o notificare în aplicația băncii",
+      "transfer economii cont securizat bancă",
+      "credit aprobat în numele meu sunat de bancă",
+      "mi-a cerut să instalez anydesk pentru bancă"
+    ],
+    "en": [
+      "fake bank employee called me",
+      "asked me to move money to a safe account",
+      "bank called about a suspicious transaction",
+      "caller asked for the code from my text",
+      "bank number showed on screen spoofing",
+      "asked me to approve a notification in my banking app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "ro": [
+      "Nu există „cont sigur”: banca nu vă cere niciodată să mutați banii ca să-i protejeze.",
+      "Banca nu vă cere la telefon coduri din SMS, parole, PIN sau CVV și nu vă cere să aprobați ceva în aplicație.",
+      "Numărul de pe ecran nu dovedește nimic: poate fi falsificat.",
+      "Un angajat al băncii nu vă cere să instalați aplicații de control la distanță."
+    ],
+    "en": [
+      "There is no “safe account”: your bank never asks you to move money to protect it.",
+      "Your bank never asks over the phone for text codes, passwords, PIN or CVV, and never asks you to approve something in the app.",
+      "The number on screen proves nothing: it can be faked.",
+      "A bank employee never asks you to install remote-control apps."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Închideți și sunați chiar dumneavoastră banca, la numărul de pe spatele cardului sau din aplicație.",
+      "Ați dat un cod, ați aprobat ceva sau ați trimis bani? Cereți imediat băncii blocarea cardului și a internet bankingului.",
+      "Depuneți plângere la Poliție și raportați apelul la DNSC (1911 sau pnrisc.dnsc.ro)."
+    ],
+    "en": [
+      "Hang up and call your bank yourself, on the number on the back of your card or in the app.",
+      "Did you give a code, approve something or send money? Ask your bank straight away to block your card and online banking.",
+      "File a police complaint and report the call to DNSC (1911 or pnrisc.dnsc.ro)."
+    ]
+  },
+  "reportTo": [
+    "ro/your-bank",
+    "ro/police-complaint",
+    "ro/dnsc-1911",
+    "ro/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Poliția Română avertizează asupra fraudelor prin telefon. Cum funcționează vishing-ul și ce date nu trebuie să oferi niciodată",
+      "publisher": "Alba24 (citând Poliția Română)",
+      "url": "https://alba24.ro/politia-romana-avertizeaza-asupra-fraudelor-prin-telefon-cum-functioneaza-vishing-ul-si-ce-date-nu-trebuie-sa-oferi-niciodata-1152507.html",
+      "date": "2026-08-09"
+    },
+    {
+      "title": "Te sună „banca”? Află cum să recunoști o tentativă de fraudă și ce trebuie să faci",
+      "publisher": "BZI",
+      "url": "https://www.bzi.ro/te-suna-banca-afla-cum-sa-recunosti-o-tentativa-de-frauda-si-ce-trebuie-sa-faci-5405670",
+      "date": "2025-11-20"
+    },
+    {
+      "title": "Tentative de fraudă prin telefon. Infractorii pretind că sunt angajați ai băncilor. Atenționările Poliției",
+      "publisher": "Alba24 (citând Poliția Română)",
+      "url": "https://alba24.ro/tentative-de-frauda-prin-telefon-infractorii-pretind-ca-sunt-angajati-ai-bancilor-atentionarile-politiei-1065379.html",
+      "date": "2025-01-20"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/fake-police-bnr-loan",
+    "ro/bank-sms-account-blocked"
+  ]
+}

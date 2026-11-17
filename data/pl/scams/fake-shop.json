@@ -1,0 +1,133 @@
+{
+  "id": "pl/fake-shop",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "pl": "Sklep internetowy z reklamy w mediach społecznościowych lub wyszukiwarce, czasem udający znaną markę",
+    "en": "An online shop from a social media or search ad, sometimes posing as a well-known brand"
+  },
+  "name": {
+    "pl": "Fałszywy sklep internetowy: okazje, których nie ma",
+    "en": "Fake online shop: bargains that don’t exist"
+  },
+  "how": {
+    "pl": "Reklama prowadzi do sklepu z bardzo niskimi cenami: sezonowe towary (znicze, opał, elektronika), złoto i monety kolekcjonerskie albo produkty znanej marki. Strona wygląda profesjonalnie, ma zdjęcia i opinie, czasem udaje znany sklep. Przy płatności zbiera dane osobowe, dane karty, a nawet logowanie do bankowości. Towar nie przychodzi, a dane mogą posłużyć do kolejnych transakcji.",
+    "en": "An ad leads to a shop with very low prices: seasonal goods (grave candles, heating fuel, electronics), gold and collector coins, or products of a well-known brand. The site looks professional, with photos and reviews, and sometimes poses as a known shop. At checkout it collects personal details, card details and even your online-banking login. The goods never arrive, and the details can be used for further transactions."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Reklama z ceną dużo niższą niż gdzie indziej.",
+        "en": "An ad with a price far lower than elsewhere."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pl": "Strona podobna do znanego sklepu lub marki.",
+        "en": "A site resembling a known shop or brand."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Presja: promocja tylko dziś, ostatnie sztuki.",
+        "en": "Pressure: offer only today, last items."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Płatność wymaga danych karty albo logowania do banku na stronie sklepu.",
+        "en": "Payment requires card details or a bank login on the shop’s own page."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "WYPRZEDAŻ MAGAZYNU 🔥 Złote monety bulionowe 40% taniej niż w mennicy! Tylko do północy, zostało 17 sztuk. Bezpłatna dostawa w 24h. Zamów teraz: [link]",
+        "en": "WAREHOUSE CLEARANCE 🔥 Gold bullion coins 40% cheaper than at the mint! Only until midnight, 17 left. Free 24h delivery. Order now: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "fałszywy sklep internetowy",
+      "zamówiony towar nigdy dotarł sklep",
+      "podejrzanie tanie znicze sklep",
+      "sklep z reklamy facebook oszustwo",
+      "fałszywy sklep złoto monety mennica",
+      "sklep podszywający znaną markę",
+      "płatność sklep logowanie bank",
+      "tani opał sklep internetowy oszustwo"
+    ],
+    "en": [
+      "fake online shop",
+      "ordered from an ad and nothing arrived",
+      "shop too cheap to be true",
+      "fake shop pretending to be a known brand",
+      "fake gold coin shop"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Ceny znacząco niższe od rynkowych.",
+      "Brak danych firmy, regulaminu lub prawdziwego kontaktu; opinie tylko na stronie sklepu.",
+      "Sklep prosi o logowanie do bankowości na swojej stronie."
+    ],
+    "en": [
+      "Prices far below the market.",
+      "No company details, terms or real contact; reviews only on the shop’s own site.",
+      "The shop asks you to log in to your bank on its own page."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Sprawdź dane sprzedawcy i opinie o sklepie w niezależnych źródłach.",
+      "Jeśli reklama dotyczy znanego sklepu, samodzielnie wyszukaj jego stronę i porównaj adres.",
+      "Jeśli zapłaciłeś, skontaktuj się z bankiem (zastrzeżenie karty, reklamacja) i złóż zawiadomienie na Policji.",
+      "Zgłoś stronę do CERT Polska."
+    ],
+    "en": [
+      "Check the seller’s details and reviews of the shop in independent sources.",
+      "If the ad is for a known shop, look up its site yourself and compare the address.",
+      "If you paid, contact your bank (block the card, file a chargeback) and report it to the police.",
+      "Report the site to CERT Polska."
+    ]
+  },
+  "reportTo": [
+    "pl/cert-polska",
+    "pl/your-bank",
+    "pl/zastrzegam",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Znicze w atrakcyjnych cenach? Uważaj na fałszywe sklepy! [201/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/201/znicze-w-atrakcyjnych-cenach-uwazaj-na-falszywe-sklepy/",
+      "date": "2026-10-24"
+    },
+    {
+      "title": "Uważaj na fałszywe sklepy wykorzystujące wizerunek renomowanych podmiotów [56/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/56/uwazaj-na-falszywe-sklepy-wykorzystujace-wizerunek-renomowanych-podmiotow/",
+      "date": "2026-04-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

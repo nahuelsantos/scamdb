@@ -1,0 +1,133 @@
+{
+  "id": "it/poste-postepay-sms",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "it": "Finta Poste Italiane, PostePay o BancoPosta (a volte nella conversazione con i messaggi veri)",
+    "en": "Fake Poste Italiane, PostePay or BancoPosta (sometimes in the thread with the real messages)"
+  },
+  "name": {
+    "it": "SMS falso di Poste Italiane: carta PostePay sospesa o accesso anomalo, con link o numero da chiamare",
+    "en": "Fake Poste Italiane text: PostePay card suspended or unusual login, with a link or number to call"
+  },
+  "how": {
+    "it": "Un SMS o un'e-mail a nome di Poste Italiane o PostePay dice che la carta sarà sospesa, che c'è stato un accesso anomalo o che bisogna aggiornare i dati. Il link porta a una copia del sito di Poste che ruba credenziali, dati della carta e codici; in altre versioni dovete chiamare un numero dove un finto operatore si fa dare i codici e vi spinge a spostare i risparmi su un nuovo conto o carta.",
+    "en": "A text or email in the name of Poste Italiane or PostePay says your card will be suspended, that there was an unusual login or that you must update your details. The link leads to a copy of the Poste site that steals logins, card details and codes; in other versions you must call a number where a fake operator gets your codes and pushes you to move your savings to a new account or card."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un SMS di \"Poste\" avvisa che la PostePay o il conto saranno bloccati.",
+        "en": "A “Poste” text warns that your PostePay or account will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Bisogna aggiornare i dati entro oggi tramite un link.",
+        "en": "You must update your details today through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "La pagina chiede credenziali, dati della carta e il codice ricevuto via SMS.",
+        "en": "The page asks for login, card details and the code received by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "it": "Oppure un operatore al telefono vi dice di spostare i risparmi su una nuova carta.",
+        "en": "Or an operator on the phone tells you to move your savings to a new card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "PosteInfo: la sua carta Postepay Evolution è stata limitata per mancato aggiornamento della sicurezza. Per evitare il blocco definitivo completi la verifica entro 24 ore: [link]",
+        "en": "PosteInfo: your Postepay Evolution card has been restricted because of a missing security update. To avoid a permanent block, complete the verification within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "sms poste italiane carta sospesa",
+      "postepay bloccata aggiornare dati",
+      "accesso anomalo bancoposta link",
+      "posteinfo messaggio verifica",
+      "libretto postale prelievo non riconosciuto",
+      "finto operatore poste codici",
+      "spostare risparmi nuova postepay"
+    ],
+    "en": [
+      "poste italiane text card suspended",
+      "postepay blocked update details",
+      "unusual login on my poste account",
+      "fake poste operator asked for codes",
+      "move savings to a new postepay"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "it": [
+      "Poste Italiane non chiede mai credenziali, dati della carta o codici OTP per SMS, e-mail o telefono.",
+      "Nessuno vi fa aprire un nuovo conto o spostare i risparmi per \"metterli al sicuro\".",
+      "I bonifici istantanei non si possono annullare."
+    ],
+    "en": [
+      "Poste Italiane never asks for login details, card details or OTP codes by text, email or phone.",
+      "Nobody legitimate has you open a new account or move savings to “keep them safe”.",
+      "Instant transfers cannot be cancelled."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non cliccate e non chiamate il numero del messaggio: entrate voi nell'app BancoPosta o PostePay.",
+      "Se avete dato dati o codici, bloccate la carta con il numero ufficiale di Poste o andate in ufficio postale.",
+      "Segnalate il messaggio alla Polizia Postale e, in caso di perdite, sporgete denuncia."
+    ],
+    "en": [
+      "Do not click or call the number in the message: open the BancoPosta or PostePay app yourself.",
+      "If you gave details or codes, block the card through Poste's official number or go to a post office.",
+      "Report the message to the Postal Police and, if you lost money, file a complaint."
+    ]
+  },
+  "reportTo": [
+    "it/your-bank",
+    "it/polizia-postale",
+    "it/denuncia"
+  ],
+  "sources": [
+    {
+      "title": "Sintesi riepilogativa delle campagne malevole nella settimana del 7 – 13 Novembre",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/sintesi-riepilogativa-delle-campagne-malevole-nella-settimana-del-7-13-novembre/",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Catania, finto SMS svuota-conto: Poste sventa una truffa ai danni di un pensionato",
+      "publisher": "LiveUnict",
+      "url": "https://catania.liveuniversity.it/2026/06/18/truffa-poste-italiane-sms/",
+      "date": "2026-06-18"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/sms-banca-falso-operatore"
+  ]
+}

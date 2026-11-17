@@ -1,0 +1,150 @@
+{
+  "id": "it/sms-banca-falso-operatore",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "it": "La vostra banca, Nexi o Poste (il nome giusto compare come mittente dell'SMS)",
+    "en": "Your bank, Nexi or Poste (the right name shows as the text sender)"
+  },
+  "name": {
+    "it": "SMS della banca e falso operatore antifrode: \"bonifico di sicurezza\" per bloccare un pagamento",
+    "en": "Bank text and fake fraud-team operator: a “security transfer” to stop a payment"
+  },
+  "how": {
+    "it": "Arriva un SMS che sembra della banca, di Nexi o di Poste, a volte nella stessa conversazione dei messaggi veri: segnala un pagamento o un bonifico che non avete fatto e chiede di chiamare un numero o di aspettare una chiamata. Il finto operatore antifrode è gentile e preparato: vi chiede codici OTP, PIN o di confermare operazioni nell'app, oppure vi convince a fare bonifici \"di sicurezza\" o \"di storno\" che verrebbero restituiti. Spesso passa la chiamata a un finto agente della Polizia Postale o dei Carabinieri, che manda documenti falsi su WhatsApp per sembrare credibile.",
+    "en": "A text that looks like it is from your bank, Nexi or Poste arrives, sometimes in the same thread as the real ones: it reports a payment or transfer you did not make and asks you to call a number or wait for a call. The fake fraud-team operator is polite and well prepared: they ask for OTP codes, PIN or to confirm operations in the app, or convince you to make “security” or “reversal” transfers that will supposedly be refunded. Often they hand the call to a fake Postal Police or Carabinieri officer, who sends fake documents on WhatsApp to seem credible."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un SMS segnala un pagamento sospetto e chiede di chiamare subito un numero.",
+        "en": "A text reports a suspicious payment and asks you to call a number right away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Al telefono risponde un \"operatore antifrode\" che sembra sapere tutto del vostro conto.",
+        "en": "A “fraud-team operator” answers and seems to know all about your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Vi chiede codici OTP, PIN o di approvare un'operazione nell'app per \"annullare\" il pagamento.",
+        "en": "They ask for OTP codes, PIN or to approve something in the app to “cancel” the payment."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "it": "Vi convince a fare un bonifico istantaneo su un \"conto sicuro\", che poi sarebbe stornato.",
+        "en": "They convince you to make an instant transfer to a “safe account”, to be reversed later."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "it": "Arriva un finto agente di polizia che conferma tutto e vi dice di non parlarne con nessuno.",
+        "en": "A fake police officer joins, confirms everything and tells you not to talk about it."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Banca: risulta un bonifico di 1.480,00 EUR verso un IBAN estero in attesa di conferma. Se non lo riconosci contatta subito il servizio sicurezza al numero [numero]. Non rispondere a questo messaggio.",
+        "en": "Bank: a transfer of 1,480.00 EUR to a foreign IBAN is awaiting confirmation. If you do not recognise it, contact the security service right away on [number]. Do not reply to this message."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "sms banca bonifico non autorizzato",
+      "operatore antifrode mi ha chiamato",
+      "bonifico di sicurezza conto protetto",
+      "mi hanno chiesto codice otp telefono",
+      "chiamare numero indicato sms banca",
+      "falso operatore nexi carta bloccata",
+      "storno bonifico istantaneo truffa",
+      "spoofing numero della banca",
+      "operazione sospetta conto corrente chiamata",
+      "finto ufficio sicurezza banca",
+      "trasferire risparmi nuovo conto"
+    ],
+    "en": [
+      "bank text about unauthorised transfer",
+      "fake bank fraud team called me",
+      "security transfer to a safe account",
+      "asked for my otp code on the phone",
+      "caller showed my bank s number",
+      "told me the transfer would be reversed"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "keep_on_line",
+    "secrecy"
+  ],
+  "redFlags": {
+    "it": [
+      "La banca, Nexi e Poste non chiedono mai OTP, PIN o password, né per SMS né al telefono.",
+      "Un \"conto di sicurezza\" o un \"bonifico di storno\" non esiste: nessuna banca protegge i soldi facendovi fare un bonifico.",
+      "Il nome del mittente o il numero che compare sul telefono possono essere falsificati.",
+      "Un vero agente di polizia non vi fa fare bonifici e non vi manda atti giudiziari su WhatsApp."
+    ],
+    "en": [
+      "Banks, Nexi and Poste never ask for OTP, PIN or password, by text or on the phone.",
+      "A “security account” or “reversal transfer” does not exist: no bank protects money by having you send a transfer.",
+      "The sender name or the number shown on your phone can be faked.",
+      "A real police officer does not have you make transfers and does not send court papers on WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non chiamate il numero dell'SMS: controllate i movimenti nell'app ufficiale o chiamate il numero scritto sulla carta.",
+      "Se avete dato codici o fatto bonifici, chiamate subito la banca per bloccare carta e accessi e chiedere il richiamo del bonifico.",
+      "Sporgete denuncia alla Polizia o ai Carabinieri con le ricevute e gli IBAN.",
+      "Segnalate l'SMS alla Polizia Postale."
+    ],
+    "en": [
+      "Do not call the number in the text: check your transactions in the official app or call the number on your card.",
+      "If you gave codes or made transfers, call your bank at once to block card and logins and ask to recall the transfer.",
+      "File a complaint with the Police or Carabinieri with receipts and IBANs.",
+      "Report the text to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/your-bank",
+    "it/denuncia",
+    "it/polizia-postale"
+  ],
+  "sources": [
+    {
+      "title": "Falsi SMS a nome Nexi: non farti ingannare dall'urgenza",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/falsi-sms-a-nome-nexi-non-farti-ingannare-dallurgenza/index.html",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Si spacciano per agenti della polizia postale e convincono una donna a effettuare bonifici per 6.000 euro",
+      "publisher": "Il Giorno",
+      "url": "https://www.ilgiorno.it/cronaca/truffa-sms-polizia-postale-nexi-7f18d34f",
+      "date": "2026-04-18"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/poste-postepay-sms"
+  ]
+}

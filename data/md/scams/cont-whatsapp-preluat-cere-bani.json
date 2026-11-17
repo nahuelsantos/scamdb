@@ -1,0 +1,145 @@
+{
+  "id": "md/cont-whatsapp-preluat-cere-bani",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "ro": "Un mesaj de pe contul de WhatsApp al unei rude sau al unui prieten",
+    "ru": "Сообщение с аккаунта WhatsApp родственника или друга",
+    "en": "A message from a relative's or friend's WhatsApp account"
+  },
+  "name": {
+    "ro": "Cont de WhatsApp preluat: „o rudă” vă cere bani urgent",
+    "ru": "Взломанный WhatsApp: «родственник» срочно просит деньги",
+    "en": "Hijacked WhatsApp account: a 'relative' urgently asks for money"
+  },
+  "how": {
+    "ro": "Escrocii obțin acces la contul de WhatsApp al cuiva, de obicei cerându-i codul de verificare primit prin SMS sau păcălindu-l cu un link. Apoi scriu rudelor și prietenilor din agendă de pe contul adevărat și cer un transfer urgent pe un card, cu o scuză: nu am acces la bancă, trebuie să achit ceva azi. Mesajul vine de la un contact cunoscut, de aceea pare credibil. Poliția a destructurat un grup de deținuți care făceau asta din penitenciar.",
+    "ru": "Мошенники получают доступ к чьему-то аккаунту WhatsApp, обычно выманив код подтверждения из SMS или обманув человека ссылкой. Затем они пишут родственникам и друзьям из списка контактов с настоящего аккаунта и просят срочно перевести деньги на карту под предлогом: нет доступа к банку, нужно сегодня что-то оплатить. Сообщение приходит от знакомого контакта, поэтому кажется правдой. Полиция разоблачила группу заключённых, которые делали это из тюрьмы.",
+    "en": "Scammers get into someone's WhatsApp account, usually by getting the verification code sent by text or tricking them with a link. They then message relatives and friends from the real account and ask for an urgent transfer to a card, with an excuse: I can't get into my bank, I have to pay something today. The message comes from a known contact, so it seems believable. Police broke up a group of prisoners who did this from inside prison."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Mesaj de la un contact cunoscut.",
+        "ru": "Сообщение от знакомого контакта.",
+        "en": "A message from a known contact."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Am nevoie urgent de bani, azi.",
+        "ru": "Срочно нужны деньги, сегодня.",
+        "en": "I urgently need money, today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Transferați pe cardul unei alte persoane.",
+        "ru": "Переведите на карту другого человека.",
+        "en": "Send it to someone else's card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ro": "Salut, ești ocupată? Am o rugăminte, mi s-a blocat aplicația băncii și trebuie să achit azi avansul pentru mobilă, 3 500 lei. Poți să transferi tu pe cardul ăsta? Seara ți-i dau înapoi, acum nu pot vorbi, sunt la o ședință.",
+        "ru": "Привет, ты занята? Есть просьба, у меня заблокировалось приложение банка, а сегодня нужно внести аванс за мебель, 3 500 леев. Можешь перевести на эту карту? Вечером верну, сейчас не могу говорить, я на совещании.",
+        "en": "Hi, are you busy? I have a favour to ask: my banking app is blocked and I need to pay the deposit for furniture today, 3,500 lei. Can you transfer it to this card? I'll pay you back tonight; I can't talk now, I'm in a meeting."
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "prietena îmi cere bani pe whatsapp pe alt card",
+      "contul de whatsapp al rudei a fost spart",
+      "mi-a scris fratele să transfer urgent bani",
+      "whatsapp piratat cere împrumut",
+      "cineva a preluat contul meu de whatsapp și scrie la prieteni",
+      "îmi scrie o rudă pe whatsapp că i s-a blocat cardul",
+      "cere împrumut urgent și nu răspunde la telefon",
+      "mesaj de la nepoată cere bani pe alt card"
+    ],
+    "ru": [
+      "подруга просит деньги в whatsapp на чужую карту",
+      "аккаунт whatsapp родственника взломали",
+      "брат написал срочно перевести деньги",
+      "взломанный whatsapp просит в долг",
+      "кто-то захватил мой whatsapp и пишет друзьям",
+      "родственница пишет в whatsapp заблокировалась карта",
+      "просит в долг срочно и не отвечает на звонки",
+      "племянница пишет просит деньги на чужую карту"
+    ],
+    "en": [
+      "friend asks for money on whatsapp to another card",
+      "relative's whatsapp account was hacked",
+      "my brother texted to send money urgently",
+      "hacked whatsapp asking for a loan",
+      "someone took over my whatsapp and messages friends",
+      "relative writes on whatsapp that their card is blocked",
+      "asks for an urgent loan and won't answer calls",
+      "message from my niece asking money to another card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ro": [
+      "Cererea de bani vine doar în scris și persoana „nu poate vorbi”.",
+      "Banii merg pe cardul altcuiva.",
+      "Înainte, cineva v-a cerut un cod de verificare WhatsApp."
+    ],
+    "ru": [
+      "Просьба о деньгах только письменно, и человек «не может говорить».",
+      "Деньги нужно отправить на чужую карту.",
+      "Перед этим кто-то просил у вас код подтверждения WhatsApp."
+    ],
+    "en": [
+      "The money request is only in writing and the person 'can't talk'.",
+      "The money goes to someone else's card.",
+      "Earlier, someone asked you for a WhatsApp verification code."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Sunați persoana la numărul obișnuit înainte să trimiteți ceva.",
+      "Nu dați nimănui codul de verificare WhatsApp; activați verificarea în doi pași.",
+      "Ați trimis bani? Sunați banca și 112."
+    ],
+    "ru": [
+      "Позвоните человеку по обычному номеру, прежде чем что-то отправлять.",
+      "Никому не сообщайте код подтверждения WhatsApp; включите двухэтапную проверку.",
+      "Отправили деньги? Звоните в банк и по номеру 112."
+    ],
+    "en": [
+      "Call the person on their usual number before sending anything.",
+      "Never share your WhatsApp verification code; turn on two-step verification.",
+      "Sent money? Call your bank and 112."
+    ]
+  },
+  "reportTo": [
+    "md/police",
+    "md/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Escrocherii din Penitenciar. Nouă deținuți implicați.",
+      "publisher": "Inspectoratul General al Poliției",
+      "url": "https://igp.gov.md/ro/politia-actiune/escrocherii-din-penitenciar-noua-detinuti-implicati",
+      "date": "2025-12-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,132 @@
+{
+  "id": "pl/energy-refund-phishing",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "pl": "„Dostawca energii” (podszycie pod znaną firmę energetyczną)",
+    "en": "“Your energy supplier” (impersonating a well-known power company)"
+  },
+  "name": {
+    "pl": "Dostawca prądu: „zwrot nadpłaty” lub „korekta prognozy” przez fałszywy link",
+    "en": "Power supplier: “overpayment refund” or “forecast correction” via a fake link"
+  },
+  "how": {
+    "pl": "E-mail lub SMS w imieniu dostawcy energii informuje o rozliczeniu, korekcie prognozy zużycia albo nadpłacie, którą można odzyskać. Wygląd i logo przypominają prawdziwą firmę, ale link prowadzi do podrobionej strony z innym adresem. Żeby „odebrać zwrot”, trzeba podać dane osobowe, dane karty płatniczej lub zalogować się do banku. Te dane trafiają do przestępców.",
+    "en": "An email or text in the name of an energy supplier announces a bill settlement, a correction of the usage forecast or an overpayment you can get back. The design and logo look like the real company, but the link leads to a fake page with a different address. To “get the refund” you must enter personal details, card details or log in to your bank. Those details go to the criminals."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Wiadomość o nadpłacie lub korekcie rozliczenia za prąd.",
+        "en": "A message about an overpayment or a corrected electricity bill."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Obietnica zwrotu pieniędzy, czasem z krótkim terminem.",
+        "en": "A promise of money back, sometimes with a short deadline."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pl": "Link do strony podobnej do serwisu dostawcy.",
+        "en": "A link to a page that looks like the supplier’s site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pl": "Formularz na dane karty albo logowanie do bankowości „do wypłaty”.",
+        "en": "A form for card details or a bank login “for the payout”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Szanowny Kliencie, w wyniku korekty prognozy zużycia energii przysługuje Panu zwrot nadpłaty w wysokości 287,40 zł. Aby otrzymać środki, prosimy potwierdzić dane w Elektronicznym Biurze Obsługi Klienta do 20 listopada: [link] Dział Rozliczeń",
+        "en": "Dear Customer, following a correction of your energy usage forecast you are entitled to an overpayment refund of 287.40 zł. To receive the funds, please confirm your details in the Electronic Customer Service Office by 20 November: [link] Billing Department"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "zwrot nadpłaty za prąd mail",
+      "korekta prognozy zużycia energii link",
+      "dostawca energii zwrot pieniędzy dane karty",
+      "nadpłata rachunek za prąd sms",
+      "fałszywy ebok energia logowanie",
+      "rozliczenie prądu przysługuje zwrot",
+      "mail od elektrowni nadpłata potwierdź dane"
+    ],
+    "en": [
+      "energy company email about an overpayment refund",
+      "electricity bill refund link asks for card details",
+      "power supplier says i am owed money",
+      "forecast correction email from energy supplier",
+      "fake electricity refund text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "pl": [
+      "Żeby dostać zwrot, nie trzeba podawać numeru karty, kodu CVV ani logowania do banku.",
+      "Adres strony różni się od oficjalnego, nawet jeśli wygląd jest identyczny.",
+      "Nieoczekiwana informacja o pieniądzach do odebrania."
+    ],
+    "en": [
+      "You never need to give your card number, CVV or bank login to receive a refund.",
+      "The page address differs from the official one, even if it looks identical.",
+      "Unexpected news of money waiting for you."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Rozliczenie sprawdź w swoim koncie klienta, logując się z samodzielnie wpisanego adresu, albo na infolinii dostawcy.",
+      "Zgłoś wiadomość do CERT Polska; SMS-y przekaż na numer 8080.",
+      "Jeśli podałeś dane karty lub logowania, od razu zadzwoń do banku."
+    ],
+    "en": [
+      "Check your bill in your customer account, logging in from an address you type yourself, or on the supplier’s helpline.",
+      "Report the message to CERT Polska; forward texts to 8080.",
+      "If you entered card or login details, call your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "pl/cert-polska",
+    "pl/your-bank",
+    "pl/zastrzegam"
+  ],
+  "sources": [
+    {
+      "title": "Korekta prognozy zużycia prądu? Zachowaj ostrożność! [172/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/172/korekta-prognozy-zuzycia-pradu-zachowaj-ostroznosc/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Zwrot nadpłaty za prąd? Uważaj na oszustów! [152/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/152/zwrot-nadplaty-za-prad-uwazaj-na-oszustow/",
+      "date": "2026-08-24"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/tax-refund-phishing"
+  ]
+}

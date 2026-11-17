@@ -1,0 +1,138 @@
+{
+  "id": "md/recuperare-bani-avocati-deepfake",
+  "country": "md",
+  "lang": "ro",
+  "status": "fading",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ro": "O reclamă cu un „birou de avocatură” care promite recuperarea banilor",
+    "ru": "Реклама «адвокатской конторы», обещающей вернуть деньги",
+    "en": "An ad for a 'law firm' promising to recover your money"
+  },
+  "name": {
+    "ro": "Falși avocați care promit recuperarea banilor pierduți pe platforme de investiții",
+    "ru": "Фальшивые адвокаты обещают вернуть деньги, потерянные на инвестиционных платформах",
+    "en": "Fake lawyers promising to recover money lost on investment platforms"
+  },
+  "how": {
+    "ro": "După ce ați pierdut bani pe o platformă falsă de investiții, vedeți pe Facebook sau Instagram reclame cu „birouri de avocatură” care promit să vă recupereze banii. Reclamele folosesc videoclipuri deepfake cu demnitari sau persoane publice care par să recomande serviciul. „Avocații” cer onorarii, taxe sau acces la distanță la dispozitiv, iar banii nu se întorc niciodată.",
+    "ru": "После того как вы потеряли деньги на фальшивой инвестиционной платформе, в Facebook или Instagram появляется реклама «адвокатских контор», которые обещают вернуть деньги. В рекламе используют дипфейк-видео с должностными лицами или известными людьми, которые будто бы рекомендуют услугу. «Адвокаты» требуют гонорары, сборы или удалённый доступ к устройству, а деньги так и не возвращаются.",
+    "en": "After losing money on a fake investment platform, you see Facebook or Instagram ads for 'law firms' that promise to get your money back. The ads use deepfake videos of officials or public figures who seem to recommend the service. The 'lawyers' ask for fees, charges or remote access to your device, and the money never comes back."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Reclamă: vă recuperăm banii pierduți.",
+        "ru": "Реклама: вернём потерянные деньги.",
+        "en": "Ad: we'll recover your lost money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Un demnitar „recomandă” biroul de avocatură.",
+        "ru": "Должностное лицо «рекомендует» адвокатскую контору.",
+        "en": "An official 'recommends' the law firm."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Plătiți un onorariu sau dați acces la calculator.",
+        "ru": "Заплатите гонорар или дайте доступ к компьютеру.",
+        "en": "Pay a fee or give access to your computer."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ro": "Ați fost înșelat pe o platformă de investiții sau de criptomonede? Echipa noastră de juriști a ajutat deja peste 1 200 de moldoveni să-și primească banii înapoi. Consultație gratuită, onorariu doar după recuperare. Completați formularul: [link]",
+        "ru": "Вас обманули на инвестиционной или криптоплатформе? Наша команда юристов уже помогла более чем 1 200 молдаванам вернуть деньги. Бесплатная консультация, гонорар только после возврата. Заполните форму: [ссылка]",
+        "en": "Were you cheated on an investment or crypto platform? Our legal team has already helped over 1,200 Moldovans get their money back. Free consultation, fee only after recovery. Fill in the form: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "avocat promite recuperarea banilor de pe platformă",
+      "birou de avocatură recuperare bani criptomonede",
+      "reclamă demnitar recomandă recuperarea banilor",
+      "am plătit onorariu ca să-mi întorc banii",
+      "recuperare fonduri pierdute investiții online"
+    ],
+    "ru": [
+      "адвокат обещает вернуть деньги с платформы",
+      "адвокатская контора возврат денег криптовалюта",
+      "реклама чиновник рекомендует возврат денег",
+      "заплатил гонорар вернуть деньги",
+      "возврат потерянных средств онлайн инвестиции"
+    ],
+    "en": [
+      "lawyer promises to recover money from platform",
+      "law firm recovering crypto money",
+      "ad official recommends money recovery",
+      "paid a fee to get my money back",
+      "recover funds lost on online investments"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "ro": [
+      "Nimeni nu poate garanta recuperarea banilor contra unui onorariu în avans.",
+      "Reclamă cu un demnitar care recomandă un serviciu privat.",
+      "Vi se cere acces la distanță la dispozitiv."
+    ],
+    "ru": [
+      "Никто не может гарантировать возврат денег за предоплату.",
+      "Реклама, где чиновник рекомендует частную услугу.",
+      "У вас просят удалённый доступ к устройству."
+    ],
+    "en": [
+      "No one can guarantee recovery for an upfront fee.",
+      "An ad where an official recommends a private service.",
+      "You're asked for remote access to your device."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu plătiți și nu dați acces la dispozitiv.",
+      "Pentru banii pierduți depuneți plângere la Poliție (112) și anunțați banca.",
+      "Semnalați reclama rețelei sociale."
+    ],
+    "ru": [
+      "Не платите и не давайте доступ к устройству.",
+      "По потерянным деньгам подайте заявление в полицию (112) и сообщите в банк.",
+      "Пожалуйтесь на рекламу в соцсети."
+    ],
+    "en": [
+      "Don't pay and don't give access to your device.",
+      "For lost money, report to the police (112) and tell your bank.",
+      "Report the ad to the social network."
+    ]
+  },
+  "reportTo": [
+    "md/police",
+    "md/your-bank",
+    "md/cnpf"
+  ],
+  "sources": [
+    {
+      "title": "O nouă escrocherie: persoane publice și demnitari de stat, care recomandă servicii false de recuperare a bunurilor",
+      "publisher": "NewsMaker",
+      "url": "https://newsmaker.md/ro/o-noua-escrocherie-persoane-publice-si-demnitari-de-stat-care-recomanda-servicii-false-de-recuperare-a-bunurilor/",
+      "date": "2024-07-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

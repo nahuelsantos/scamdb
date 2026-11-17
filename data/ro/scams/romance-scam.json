@@ -1,0 +1,141 @@
+{
+  "id": "ro/romance-scam",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "ro": "Un profil atrăgător pe Facebook, Instagram sau o aplicație de întâlniri: „militar în misiune”, „medic”, „inginer pe o platformă”",
+    "en": "An attractive profile on Facebook, Instagram or a dating app: “soldier on a mission”, “doctor”, “engineer on a rig”"
+  },
+  "name": {
+    "ro": "Înșelătorie romantică: iubire online, apoi bani pentru o urgență sau un bilet de avion",
+    "en": "Romance scam: online love, then money for an emergency or a plane ticket"
+  },
+  "how": {
+    "ro": "Cineva vă abordează online, cu poze frumoase, uneori generate cu inteligență artificială. Spune că e militar în misiune, medic în străinătate sau om de afaceri. Vă scrie zilnic, e foarte atent și vorbește repede despre iubire și o viață împreună, dar nu se poate vedea niciodată pe video sau în persoană. După săptămâni sau luni apare o problemă: o urgență medicală, vamă pentru un colet cu cadouri, un bilet de avion ca să vină la dumneavoastră, sau o investiție „sigură”. Cere bani, iar cererile nu se mai opresc.",
+    "en": "Someone approaches you online, with beautiful photos, sometimes generated with artificial intelligence. They say they are a soldier on a mission, a doctor abroad or a businessman. They write every day, are very attentive and quickly talk of love and a life together, but can never meet on video or in person. After weeks or months a problem appears: a medical emergency, customs on a parcel of gifts, a plane ticket to come to you, or a “safe” investment. They ask for money, and the requests never stop."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un necunoscut cu profil perfect vă scrie și vorbește repede despre iubire.",
+        "en": "A stranger with a perfect profile writes and quickly talks of love."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Nu poate face apel video și nu poate veni niciodată.",
+        "en": "They can’t video call and can never come."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ro": "Apare o urgență: spital, vamă, bilet de avion.",
+        "en": "An emergency appears: hospital, customs, a plane ticket."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Vă cere bani, carduri cadou sau cripto.",
+        "en": "They ask for money, gift cards or crypto."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Sau vă propune o investiție „sigură” împreună.",
+        "en": "Or they propose a “safe” investment together."
+      },
+      "signal": "too_good_to_be_true"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Iubirea mea, aici în bază e tot mai greu, dar mă gândesc doar la tine. Vestea bună: comandantul îmi aprobă concediul și pot veni în România, dar trebuie să plătesc eu biletul și taxa de eliberare, 6.800 de lei, iar cardul meu e blocat aici. Poți să mă ajuți tu? Îți dau totul înapoi imediat ce ajung.",
+        "en": "My love, it’s getting harder here at the base, but I think only of you. The good news: my commander is approving my leave and I can come to Romania, but I have to pay the ticket and the release fee myself, 6,800 lei, and my card is blocked here. Can you help me? I’ll give it all back as soon as I arrive."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "m-am îndrăgostit online îmi cere bani",
+      "militar american în misiune cere bani",
+      "iubit de pe facebook bilet de avion",
+      "nu vrea apel video dar cere bani",
+      "colet cu cadouri reținut la vamă iubit",
+      "înșelătorie romantică pe internet",
+      "relație la distanță urgență medicală bani"
+    ],
+    "en": [
+      "online lover asks me for money",
+      "soldier on mission asks for money",
+      "boyfriend from facebook plane ticket",
+      "never video calls but asks for money",
+      "romance scam online relationship"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "urgency",
+    "money_request",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "ro": [
+      "Nu trimiteți niciodată bani cuiva pe care l-ați cunoscut doar online.",
+      "Persoana evită apelurile video și întâlnirile, dar are mereu o urgență.",
+      "Pozele pot fi furate sau generate cu inteligență artificială."
+    ],
+    "en": [
+      "Never send money to someone you only know online.",
+      "The person avoids video calls and meetings but always has an emergency.",
+      "The photos can be stolen or generated with artificial intelligence."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Căutați pozele profilului cu o căutare inversă de imagini (de exemplu Google Lens).",
+      "Opriți plățile și vorbiți cu cineva apropiat despre relație.",
+      "Ați trimis bani? Anunțați banca și depuneți plângere la Poliție cât mai repede."
+    ],
+    "en": [
+      "Search the profile photos with a reverse image search (for example Google Lens).",
+      "Stop paying and talk to someone close to you about the relationship.",
+      "Did you send money? Tell your bank and file a police complaint as soon as possible."
+    ]
+  },
+  "reportTo": [
+    "ro/police-complaint",
+    "ro/your-bank",
+    "ro/dnsc-1911"
+  ],
+  "sources": [
+    {
+      "title": "SmartJob contra minciunii | Mihai Rotariu (DNSC) despre fraudele online",
+      "publisher": "Europa Liberă România",
+      "url": "https://romania.rferl.org/amp/mihai-rotariu-dnsc-fraude-online-romance-scams-atacuri-cibernetice/33689702.html",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Avertisment de ultimă oră al Poliției Române! Cele mai noi metode de înșelăciune și cum să vă protejați banii",
+      "publisher": "BZI (citând Poliția Română)",
+      "url": "https://www.bzi.ro/avertisment-de-ultima-ora-al-politiei-romane-cele-mai-noi-metode-de-inselaciune-si-cum-sa-va-protejati-banii-5408703",
+      "date": "2025-11-24"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/investment-deepfake-energy"
+  ]
+}

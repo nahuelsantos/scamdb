@@ -1,0 +1,124 @@
+{
+  "id": "it/lavoro-like-task",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "it": "Una finta agenzia di reclutamento, spesso da numeri con prefisso estero",
+    "en": "A fake recruitment agency, often from numbers with a foreign prefix"
+  },
+  "name": {
+    "it": "Lavoro online \"metti like e guadagni\": task pagati che finiscono in versamenti",
+    "en": "Online job “like posts and earn”: paid tasks that end in deposits"
+  },
+  "how": {
+    "it": "Un messaggio su WhatsApp o Telegram offre un lavoro facile da casa: mettere \"mi piace\", seguire profili o scrivere recensioni, pagati pochi euro a task. I primi compensi arrivano davvero, per farvi fidare. Poi vi aggiungono a un gruppo dove altri \"colleghi\" mostrano guadagni enormi e vi chiedono di versare soldi per sbloccare task più pagati o per recuperare un saldo \"bloccato\". I versamenti crescono e il saldo non si può mai prelevare.",
+    "en": "A message on WhatsApp or Telegram offers an easy work-from-home job: liking posts, following profiles or writing reviews, paid a few euros per task. The first payments really arrive, to make you trust them. Then you are added to a group where other “colleagues” show huge earnings, and you are asked to pay in money to unlock better-paid tasks or to recover a “frozen” balance. The deposits grow and the balance can never be withdrawn."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un numero sconosciuto offre un lavoro part-time da casa ben pagato.",
+        "en": "An unknown number offers a well-paid part-time job from home."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "it": "I primi piccoli compensi arrivano davvero.",
+        "en": "The first small payments really arrive."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Per continuare o sbloccare il saldo dovete versare soldi.",
+        "en": "To continue or unlock your balance you must pay in money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "it": "Vi mettono fretta: il task scade, perdete tutto se non pagate.",
+        "en": "They rush you: the task expires, you lose it all if you do not pay."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Buongiorno, la contatto da un'agenzia di marketing digitale. Cerchiamo collaboratori da casa: basta mettere like ai video dei nostri clienti, 3 euro per ogni like, fino a 200 euro al giorno. Nessuna esperienza richiesta. Le interessa ricevere i dettagli?",
+        "en": "Good morning, I'm contacting you from a digital marketing agency. We are looking for home-based collaborators: you just like our clients' videos, 3 euros per like, up to 200 euros a day. No experience needed. Would you like the details?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "lavoro mettere like pagato",
+      "offerta lavoro whatsapp numero estero",
+      "guadagnare recensioni da casa",
+      "task da sbloccare versamento",
+      "gruppo telegram compiti pagati",
+      "saldo bloccato devo versare soldi",
+      "agenzia marketing cerca collaboratori"
+    ],
+    "en": [
+      "job liking posts for money",
+      "whatsapp job offer from foreign number",
+      "pay to unlock tasks",
+      "telegram group paid tasks",
+      "balance frozen need to deposit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "it": [
+      "Un lavoro vero non vi chiede mai di versare soldi per lavorare o per ricevere lo stipendio.",
+      "Offerte non richieste da numeri esteri su WhatsApp sono un segnale tipico.",
+      "I primi guadagni piccoli servono a farvi versare somme più grandi."
+    ],
+    "en": [
+      "A real job never asks you to pay money to work or to get your pay.",
+      "Unsolicited offers from foreign numbers on WhatsApp are a typical sign.",
+      "The first small earnings are there to make you pay in larger sums."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non rispondete, bloccate il numero e uscite dai gruppi.",
+      "Non versate altri soldi per \"recuperare\" quelli già persi.",
+      "Conservate chat e ricevute, avvisate la banca e sporgete denuncia; segnalate alla Polizia Postale."
+    ],
+    "en": [
+      "Do not reply, block the number and leave the groups.",
+      "Do not pay more to “recover” what you already lost.",
+      "Keep chats and receipts, tell your bank and file a complaint; report it to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/denuncia",
+    "it/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "«Metti \"like\" e ti paghiamo»: come funziona la truffa dei \"mi piace\" che ha fatto perdere 4.500 euro a una ventenne",
+      "publisher": "Open",
+      "url": "https://www.open.online/2026/10/03/truffa-mi-piace-like-matera/",
+      "date": "2026-10-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

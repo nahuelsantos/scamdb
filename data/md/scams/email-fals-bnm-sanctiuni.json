@@ -1,0 +1,143 @@
+{
+  "id": "md/email-fals-bnm-sanctiuni",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "ro": "Un e-mail „de la Banca Națională” sau altă instituție",
+    "ru": "Письмо «от Национального банка» или другого учреждения",
+    "en": "An email 'from the National Bank' or another authority"
+  },
+  "name": {
+    "ro": "E-mail fals de la BNM: „ați fost sancționat, achitați amenda prin link”",
+    "ru": "Фальшивое письмо от НБМ: «вы оштрафованы, оплатите штраф по ссылке»",
+    "en": "Fake BNM email: 'you've been sanctioned, pay the fine via this link'"
+  },
+  "how": {
+    "ro": "Primiți un e-mail sau SMS în numele Băncii Naționale a Moldovei sau al Centrului pentru combaterea crimelor informatice, care vorbește despre sancțiuni și vă cere să achitați o amendă printr-un link sau să deschideți un fișier atașat. Linkurile și fișierele pot fura datele sau pot da acces la dispozitiv. BNM spune că nu trimite astfel de mesaje și nu cere plata amenzilor prin linkuri.",
+    "ru": "Приходит письмо или SMS от имени Национального банка Молдовы или Центра по борьбе с киберпреступлениями, где говорится о санкциях и просят оплатить штраф по ссылке или открыть вложенный файл. Ссылки и файлы могут украсть данные или дать доступ к устройству. НБМ заявляет, что не отправляет такие сообщения и не требует оплачивать штрафы по ссылкам.",
+    "en": "You get an email or text in the name of the National Bank of Moldova or the Cybercrime Combating Centre, mentioning sanctions and asking you to pay a fine through a link or open an attachment. The links and files can steal data or give access to your device. The BNM says it sends no such messages and never asks for fines to be paid via links."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "E-mail cu sigla BNM despre o sancțiune.",
+        "ru": "Письмо с логотипом НБМ о санкции.",
+        "en": "An email with the BNM logo about a sanction."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Deschideți fișierul atașat sau linkul.",
+        "ru": "Откройте вложенный файл или ссылку.",
+        "en": "Open the attachment or the link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Achitați amenda în termen scurt.",
+        "ru": "Оплатите штраф в короткий срок.",
+        "en": "Pay the fine within a short time."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "ro": "Banca Națională a Moldovei – Notificare privind aplicarea sancțiunii. În urma controlului, contului dvs. i s-a aplicat o amendă de 3 200 lei pentru încălcarea regulilor de raportare. Detaliile se află în fișierul atașat. Achitarea până la data de 20 a lunii curente: [link]",
+        "ru": "Национальный банк Молдовы – Уведомление о применении санкции. По итогам проверки к вашему счёту применён штраф 3 200 леев за нарушение правил отчётности. Подробности во вложенном файле. Оплатить до 20 числа текущего месяца: [ссылка]",
+        "en": "National Bank of Moldova – Notice of sanction. Following an inspection, a fine of 3,200 lei has been applied to your account for breaching reporting rules. Details are in the attached file. Pay by the 20th of this month: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "email de la banca națională amendă link",
+      "bnm mi-a trimis sancțiune de achitat",
+      "mesaj centrul combatere crime informatice amendă",
+      "fișier atașat notificare sancțiune bnm",
+      "plata amenzii prin link e-mail instituție"
+    ],
+    "ru": [
+      "письмо от национального банка штраф ссылка",
+      "нбм прислал санкцию оплатить",
+      "сообщение центр по борьбе с киберпреступлениями штраф",
+      "вложенный файл уведомление о санкции нбм",
+      "оплата штрафа по ссылке письмо учреждение"
+    ],
+    "en": [
+      "email from the national bank fine link",
+      "bnm sent me a sanction to pay",
+      "cybercrime centre message fine",
+      "attached file sanction notice bnm",
+      "pay fine via link email authority"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ro": [
+      "BNM nu cere plata amenzilor prin linkuri.",
+      "Fișiere atașate de la un expeditor neașteptat.",
+      "Adresa expeditorului nu este a instituției."
+    ],
+    "ru": [
+      "НБМ не требует оплаты штрафов по ссылкам.",
+      "Вложенные файлы от неожиданного отправителя.",
+      "Адрес отправителя не принадлежит учреждению."
+    ],
+    "en": [
+      "The BNM never asks for fines to be paid via links.",
+      "Attachments from an unexpected sender.",
+      "The sender's address isn't the institution's."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul sau fișierul și nu retransmiteți mesajul.",
+      "Verificați direct la instituție, pe canalele ei oficiale.",
+      "Pe un calculator de serviciu? Anunțați imediat responsabilul IT."
+    ],
+    "ru": [
+      "Не открывайте ссылку или файл и не пересылайте сообщение.",
+      "Проверьте напрямую в учреждении, по его официальным каналам.",
+      "На рабочем компьютере? Сразу сообщите ответственному за IT."
+    ],
+    "en": [
+      "Don't open the link or the file and don't forward the message.",
+      "Check directly with the institution through its official channels.",
+      "On a work computer? Tell your IT security person at once."
+    ]
+  },
+  "reportTo": [
+    "md/bnm",
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Banca Națională a Moldovei: Atenție la mesajele suspecte. Verificați expeditorul înainte de a da curs solicitărilor",
+      "publisher": "Banca Națională a Moldovei",
+      "url": "https://bnm.md/ro/content/banca-nationala-moldovei-atentie-la-mesajele-suspecte-verificati-expeditorul-inainte-de-da",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "Paynet Warning: Record Number of Phone Fraud Attempts in the Republic of Moldova",
+      "publisher": "Paynet",
+      "url": "https://paynet.md/en/news/details/alerta-paynet-record-escrocherii-telefonice-moldova-2026",
+      "date": "2026-05-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

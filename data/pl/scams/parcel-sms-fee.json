@@ -1,0 +1,133 @@
+{
+  "id": "pl/parcel-sms-fee",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "pl": "„InPost”, „Poczta Polska” lub inna firma kurierska",
+    "en": "“InPost”, “Poczta Polska” (Polish Post) or another courier"
+  },
+  "name": {
+    "pl": "SMS o paczce: mała dopłata, opłata celna albo „brak danych adresowych”",
+    "en": "Parcel text: a small surcharge, a customs fee or “missing address details”"
+  },
+  "how": {
+    "pl": "Przychodzi SMS lub e-mail, rzekomo od InPostu, Poczty Polskiej albo kuriera: paczka czeka, brakuje danych adresowych, trzeba ustalić nowy termin dostawy, paczka wraca do nadawcy albo należy dopłacić kilka złotych opłaty celnej. Link prowadzi do strony podobnej do serwisu przewoźnika. Najpierw zbiera dane osobowe i adres, potem numer karty, datę ważności i kod CVV, czasem też logowanie do banku.",
+    "en": "A text or email arrives, supposedly from InPost, Polish Post or a courier: a parcel is waiting, address details are missing, a new delivery date must be set, the parcel is going back to the sender, or a customs fee of a few złoty must be paid. The link leads to a page that looks like the carrier’s site. It first collects your personal details and address, then your card number, expiry date and CVV, sometimes your bank login too."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "SMS o problemie z przesyłką lub o drobnej dopłacie.",
+        "en": "A text about a problem with a parcel or a small surcharge."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Termin: dziś, inaczej zwrot do nadawcy.",
+        "en": "A deadline: today, or it goes back to the sender."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Link do strony, która tylko przypomina serwis przewoźnika.",
+        "en": "A link to a page that only resembles the carrier’s site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pl": "Formularz na dane karty i kod CVV, rzekomo do zapłaty kilku złotych.",
+        "en": "A form for your card details and CVV, supposedly to pay a few złoty."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "InPost: Twoja przesyłka nie mogła zostać dostarczona z powodu niepełnego adresu. Uzupełnij dane i opłać ponowne doręczenie (1,99 zł) w ciągu 24 godzin, w przeciwnym razie paczka wróci do nadawcy: [link]",
+        "en": "InPost: your parcel could not be delivered because of an incomplete address. Complete your details and pay for redelivery (1.99 zł) within 24 hours, otherwise the parcel will be returned to the sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "sms inpost dopłata do paczki",
+      "poczta polska sms opłata celna",
+      "paczka czeka dopłata link",
+      "brak danych adresowych przesyłka sms",
+      "paczkomat zwrot paczki sms link",
+      "fałszywy sms kurier ponowne doręczenie",
+      "opłata celna kilka złotych karta cvv",
+      "nowy termin dostawy paczki link"
+    ],
+    "en": [
+      "inpost text asking for a small fee",
+      "polish post sms customs fee",
+      "parcel text with a payment link",
+      "sms says my address is incomplete",
+      "fake delivery text from a courier"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Przewoźnicy nie wysyłają SMS-ów z linkiem do dopłaty ani do „uzupełnienia adresu”.",
+      "Wiadomość przychodzi, choć niczego nie zamawiałeś, albo nie zgadza się z Twoją przesyłką.",
+      "Bardzo mała kwota ma uśpić czujność: chodzi o dane karty, a nie o 2 zł."
+    ],
+    "en": [
+      "Carriers don’t send texts with a link to pay a surcharge or “complete an address”.",
+      "The message arrives although you ordered nothing, or doesn’t match your parcel.",
+      "The tiny amount is meant to lower your guard: they want your card details, not 2 złoty."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Status paczki sprawdzaj w oficjalnej aplikacji przewoźnika albo wpisz adres jego strony samodzielnie.",
+      "Przekaż podejrzany SMS na bezpłatny numer 8080 (CERT Polska).",
+      "Jeśli podałeś dane karty, od razu zadzwoń do banku i zastrzeż kartę."
+    ],
+    "en": [
+      "Check the parcel’s status in the carrier’s official app or by typing its website address yourself.",
+      "Forward the suspicious text to the free number 8080 (CERT Polska).",
+      "If you entered card details, call your bank straight away and block the card."
+    ]
+  },
+  "reportTo": [
+    "pl/cert-polska",
+    "pl/your-bank",
+    "pl/zastrzegam"
+  ],
+  "sources": [
+    {
+      "title": "Uważaj na fałszywe wiadomości o przesyłkach! [211/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/211/uwazaj-na-falszywe-wiadomosci-o-przesylkach/",
+      "date": "2026-11-09"
+    },
+    {
+      "title": "Dopłata do przesyłki? Zachowaj ostrożność! [209/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/209/doplata-do-przesylki-zachowaj-ostroznosc/",
+      "date": "2026-11-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/olx-vinted-payment-link"
+  ]
+}

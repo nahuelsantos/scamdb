@@ -1,0 +1,169 @@
+{
+  "id": "md/investitii-deepfake-demnitari",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "ro": "O reclamă pe Facebook sau Instagram cu un demnitar „care recomandă” o platformă",
+    "ru": "Реклама в Facebook или Instagram, где должностное лицо «рекомендует» платформу",
+    "en": "A Facebook or Instagram ad with an official 'recommending' a platform"
+  },
+  "name": {
+    "ro": "Investiții false promovate cu deepfake-uri ale demnitarilor",
+    "ru": "Фальшивые инвестиции с дипфейками должностных лиц",
+    "en": "Fake investments promoted with deepfakes of officials"
+  },
+  "how": {
+    "ro": "Pe rețelele sociale apar reclame care copiază aspectul unor site-uri de știri și folosesc imaginea Președintei, a premierului, a conducerii BNM sau a altor persoane publice, uneori în videoclipuri deepfake. Ele promit câștiguri rapide pe o platformă „cu inteligență artificială” sau un „program de stat”. După ce lăsați datele, vă sună un „consultant”, vă convinge să depuneți bani, vă arată profituri false și vă cere tot mai mult. BNM și CNPF spun că nu promovează nicio platformă de investiții.",
+    "ru": "В соцсетях появляется реклама, которая копирует вид новостных сайтов и использует образ президента, премьер-министра, руководства НБМ или других публичных людей, иногда в видео-дипфейках. Обещают быстрый доход на платформе «с искусственным интеллектом» или по «государственной программе». После того как вы оставите данные, звонит «консультант», уговаривает внести деньги, показывает фальшивую прибыль и просит всё больше. НБМ и НКФР заявляют, что не продвигают никакие инвестиционные платформы.",
+    "en": "Social media ads copy the look of news sites and use the image of the President, the Prime Minister, BNM leadership or other public figures, sometimes in deepfake videos. They promise quick gains on an 'AI-powered' platform or a 'state programme'. Once you leave your details a 'consultant' calls, persuades you to deposit money, shows fake profits and asks for more and more. The BNM and the CNPF say they promote no investment platform."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Video cu un demnitar care promite câștiguri garantate.",
+        "ru": "Видео с должностным лицом, обещающим гарантированный доход.",
+        "en": "A video of an official promising guaranteed gains."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Vă sună un „consultant” după ce lăsați datele.",
+        "ru": "После регистрации звонит «консультант».",
+        "en": "A 'consultant' calls after you sign up."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Depuneți bani; ofertă limitată.",
+        "ru": "Внесите деньги; предложение ограничено.",
+        "en": "Deposit money; limited offer."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Vă cere să instalați o aplicație de acces la distanță.",
+        "ru": "Просит установить приложение удалённого доступа.",
+        "en": "Asks you to install a remote-access app."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ro": "EXCLUSIV: Guvernatorul băncii centrale confirmă la TV că fiecare cetățean poate primi un venit pasiv de la 25 000 lei pe lună datorită noii platforme de stat bazate pe inteligență artificială. Locurile sunt limitate, înregistrarea se închide astăzi: [link]",
+        "ru": "ЭКСКЛЮЗИВ: Глава центрального банка подтвердил по ТВ, что каждый гражданин может получать пассивный доход от 25 000 леев в месяц благодаря новой государственной платформе на искусственном интеллекте. Мест мало, регистрация закрывается сегодня: [ссылка]",
+        "en": "EXCLUSIVE: The central bank's governor confirms on TV that every citizen can earn passive income from 25,000 lei a month thanks to the new state AI platform. Places are limited, registration closes today: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "reclamă cu maia sandu investiții platformă",
+      "video deepfake demnitar recomandă investiție",
+      "platformă cu inteligență artificială câștig garantat",
+      "program de stat venit pasiv reclamă facebook",
+      "consultant investiții m-a sunat după reclamă",
+      "guvernatorul bnm recomandă platformă",
+      "premierul face reclamă la investiții",
+      "platformă de investiții de stat venit săptămânal"
+    ],
+    "ru": [
+      "реклама с майей санду инвестиции платформа",
+      "видео дипфейк чиновник рекомендует инвестиции",
+      "платформа с искусственным интеллектом гарантированный доход",
+      "государственная программа пассивный доход реклама фейсбук",
+      "консультант по инвестициям позвонил после рекламы",
+      "глава нбм рекомендует платформу",
+      "премьер-министр рекламирует инвестиции",
+      "государственная инвестиционная платформа доход каждую неделю"
+    ],
+    "en": [
+      "ad with maia sandu investment platform",
+      "deepfake video official recommends investing",
+      "ai platform guaranteed profit",
+      "state programme passive income facebook ad",
+      "investment consultant called after the ad",
+      "bnm governor recommends a platform",
+      "prime minister advertises investments",
+      "state investment platform weekly income"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "ro": [
+      "Demnitarii, BNM și CNPF nu recomandă platforme de investiții.",
+      "Profit garantat și ofertă „doar azi”.",
+      "Firma nu apare pe lista entităților autorizate de CNPF."
+    ],
+    "ru": [
+      "Должностные лица, НБМ и НКФР не рекомендуют инвестиционные платформы.",
+      "Гарантированная прибыль и предложение «только сегодня».",
+      "Компании нет в списке лицензированных НКФР."
+    ],
+    "en": [
+      "Officials, the BNM and the CNPF never recommend investment platforms.",
+      "Guaranteed profit and an offer 'today only'.",
+      "The firm is not on the CNPF list of authorised entities."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu lăsați datele și nu depuneți bani; verificați firma la CNPF.",
+      "Ați plătit? Opriți plățile, sunați banca și Poliția.",
+      "Semnalați reclama CNPF și rețelei sociale."
+    ],
+    "ru": [
+      "Не оставляйте данные и не вносите деньги; проверьте компанию в НКФР.",
+      "Уже заплатили? Прекратите платежи, звоните в банк и полицию.",
+      "Сообщите о рекламе в НКФР и в соцсеть."
+    ],
+    "en": [
+      "Don't leave your details or deposit money; check the firm with the CNPF.",
+      "Already paid? Stop paying, call your bank and the police.",
+      "Report the ad to the CNPF and the social network."
+    ]
+  },
+  "reportTo": [
+    "md/cnpf",
+    "md/police",
+    "md/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Cetățeni, fiți prudenți! CNPF avertizează asupra tentativelor de fraudă online care folosesc numele lui Snegur și Sandu",
+      "publisher": "Realitatea.md",
+      "url": "https://realitatea.md/cetateni-fiti-prudenti-cnpf-avertizeaza-asupra-tentativelor-de-frauda-online-care-folosesc-numele-lui-snegur-si-sandu/",
+      "date": "2026-02-20"
+    },
+    {
+      "title": "BNM atenționează cetățenii asupra riscurilor generate de dezinformare și schemelor de investiții false",
+      "publisher": "Banca Națională a Moldovei",
+      "url": "https://bnm.md/ro/content/bnm-atentioneaza-cetatenii-asupra-riscurilor-generate-de-dezinformare-si-schemelor-de",
+      "date": "2025-06-03"
+    },
+    {
+      "title": "Escrocherii de aproape 3 milioane de lei. Cum au fost înșelați moldovenii",
+      "publisher": "NewsMaker",
+      "url": "https://newsmaker.md/ro/escrocherii-de-aproape-3-milioane-de-lei-cum-au-fost-%C3%AEn%C8%99ela%C8%9Bi-moldovenii",
+      "date": "2026-06-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

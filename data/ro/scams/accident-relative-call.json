@@ -1,0 +1,144 @@
+{
+  "id": "ro/accident-relative-call",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ro": "Un „nepot” sau „fiu” care plânge, apoi un „medic”, „avocat”, „polițist” sau „procuror”",
+    "en": "A crying “grandchild” or “son”, then a “doctor”, “lawyer”, “police officer” or “prosecutor”"
+  },
+  "name": {
+    "ro": "„Metoda accidentul”: rudă care a provocat un accident sau e grav rănită, bani ceruți urgent",
+    "en": "“The accident method”: a relative who caused an accident or is badly hurt, money demanded urgently"
+  },
+  "how": {
+    "ro": "De obicei la telefonul fix sau mobil al unei persoane în vârstă sună cineva care se dă drept nepotul, fiul sau fiica, plângând, sau un „medic”, „avocat” ori „polițist”. Spune că ruda a provocat un accident grav sau că e internată în stare critică și are nevoie urgent de bani pentru tratament, cauțiune sau ca să „se rezolve” dosarul. Vocea poate fi chiar clonată cu inteligență artificială. Nu vă lasă timp să verificați, iar după scurt timp vine la ușă un „curier”, „reprezentant al spitalului” sau „avocat” care ridică banii sau bijuteriile.",
+    "en": "Usually an elderly person gets a call, on the landline or mobile, from someone posing as their grandson, son or daughter, crying, or from a “doctor”, “lawyer” or “police officer”. They say the relative caused a serious accident or is in hospital in a critical state and urgently needs money for treatment, bail or to “settle” the case. The voice can even be cloned with artificial intelligence. They give you no time to check, and soon a “courier”, “hospital representative” or “lawyer” comes to the door to collect the money or jewellery."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un apel: „nepotul” plânge sau un „medic” spune că ruda e grav rănită ori a lovit pe cineva.",
+        "en": "A call: the “grandson” is crying or a “doctor” says the relative is badly hurt or hit someone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Banii trebuie dați imediat, pentru tratament, cauțiune sau ca să nu meargă la închisoare.",
+        "en": "The money must be handed over right away, for treatment, bail or to avoid prison."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Nu aveți voie să închideți sau să sunați pe altcineva.",
+        "en": "You may not hang up or call anyone else."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ro": "Vi se cer toți banii din casă sau bijuteriile.",
+        "en": "You are asked for all the cash at home or your jewellery."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Un necunoscut vine la ușă să ridice banii.",
+        "en": "A stranger comes to the door to collect the money."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Mamaie, eu sunt, Andrei… am făcut un accident, am lovit o femeie pe trecere… Doamnă, sunt doctorul Ionescu de la Urgențe. Nepotul dumneavoastră are nevoie de o operație care nu e decontată, costă 25.000 de lei. Câți bani aveți în casă? Trimitem imediat un coleg să-i ia, nu închideți și nu sunați pe nimeni, fiecare minut contează.",
+        "en": "Granny, it’s me, Andrei… I had an accident, I hit a woman on the crossing… Madam, I’m Dr Ionescu from the emergency ward. Your grandson needs an operation that isn’t covered; it costs 25,000 lei. How much money do you have at home? We’ll send a colleague right away to collect it; don’t hang up and don’t call anyone, every minute counts."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "metoda accidentul m-a sunat nepotul",
+      "nepotul a făcut un accident cere bani",
+      "doctor mă sună că fiul e grav rănit",
+      "bani pentru operație vine cineva să-i ia",
+      "cauțiune ca nepotul să nu facă închisoare",
+      "bunica a dat banii unui necunoscut la ușă",
+      "voce clonată copilul meu plângea la telefon",
+      "avocat cere garanție să nu fie arestat nepotul",
+      "trimite pe cineva să ridice banii de acasă",
+      "fiul a lovit pe cineva cu mașina"
+    ],
+    "en": [
+      "grandson in accident needs money call",
+      "doctor called saying my son is badly hurt",
+      "someone coming to collect money for surgery",
+      "bail money so my grandson avoids prison",
+      "cloned voice of my child crying on the phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "ro": [
+      "Medicii, polițiștii și avocații nu cer bani cash la telefon și nu trimit pe nimeni acasă să-i ridice.",
+      "Graba și interdicția de a suna pe altcineva sunt făcute ca să nu verificați.",
+      "Vocea care plânge poate fi falsă sau clonată cu inteligență artificială."
+    ],
+    "en": [
+      "Doctors, police officers and lawyers don’t ask for cash over the phone and don’t send anyone to your home to collect it.",
+      "The rush and the ban on calling anyone else are there so you don’t check.",
+      "The crying voice can be fake or cloned with artificial intelligence."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Închideți și sunați ruda la numărul pe care îl știți, sau pe altcineva din familie.",
+      "Stabiliți în familie un cuvânt de siguranță pentru urgențe.",
+      "Dacă vine cineva să ridice bani, sunați la 112. Nu dați bani sau bijuterii.",
+      "Depuneți plângere la Poliție, chiar dacă nu ați pierdut nimic."
+    ],
+    "en": [
+      "Hang up and call the relative on the number you know, or someone else in the family.",
+      "Agree a family safety word for emergencies.",
+      "If someone comes to collect money, call 112. Don’t hand over money or jewellery.",
+      "File a police complaint even if you lost nothing."
+    ]
+  },
+  "reportTo": [
+    "ro/emergency-112",
+    "ro/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "SmartJob contra minciunii | Mihai Rotariu (DNSC) despre fraudele online",
+      "publisher": "Europa Liberă România",
+      "url": "https://romania.rferl.org/amp/mihai-rotariu-dnsc-fraude-online-romance-scams-atacuri-cibernetice/33689702.html",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "O pensionară din Tulcea a fost escrocată prin „metoda accidentul”. Ce apel sinistru a primit bătrâna",
+      "publisher": "Gândul",
+      "url": "https://www.gandul.ro/actualitate/o-pensionara-din-tulcea-a-fost-escrocata-prin-metoda-accidentul-ce-apel-sinistru-a-primit-batrana-20789509",
+      "date": "2026-01-31"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/buna-mama-new-number"
+  ]
+}

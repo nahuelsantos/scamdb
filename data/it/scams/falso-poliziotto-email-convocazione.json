@@ -1,0 +1,121 @@
+{
+  "id": "it/falso-poliziotto-email-convocazione",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "it": "Falsa Polizia di Stato, Polizia Postale o altre Forze di Polizia, con loghi e firme di dirigenti",
+    "en": "Fake State Police, Postal Police or other police forces, with logos and officials' signatures"
+  },
+  "name": {
+    "it": "Falsa convocazione della Polizia via e-mail: \"pagate per chiudere il procedimento\"",
+    "en": "Fake police summons by email: “pay to close the case”"
+  },
+  "how": {
+    "it": "Arriva un'e-mail che sembra un atto ufficiale della Polizia: loghi, intestazioni, numeri di protocollo e la firma del Capo della Polizia o di un dirigente. Vi accusa di aver visto siti o materiale illegale, spesso pedopornografico, e vi chiede di giustificarvi entro poche ore. Se rispondete, arriva una seconda richiesta: pagare una somma per \"estinguere\" il procedimento. La paura e la vergogna servono a farvi pagare in fretta e in silenzio.",
+    "en": "An email arrives that looks like an official police document: logos, letterheads, reference numbers and the signature of the Chief of Police or a senior officer. It accuses you of viewing illegal websites or material, often child abuse material, and asks you to justify yourself within hours. If you reply, a second request follows: pay a sum to “close” the case. Fear and shame are used to make you pay quickly and quietly."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un'e-mail con loghi della Polizia vi accusa di aver visitato siti illegali.",
+        "en": "An email with police logos accuses you of visiting illegal sites."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Dovete rispondere entro 24 o 72 ore, altrimenti parte una denuncia.",
+        "en": "You must reply within 24 or 72 hours or a criminal case will start."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Chi risponde riceve la richiesta di pagare una \"sanzione\" per chiudere tutto.",
+        "en": "Whoever replies is asked to pay a “fine” to make it all go away."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "it": "Vi chiedono di non parlarne con nessuno, per riservatezza.",
+        "en": "You are asked not to tell anyone, for confidentiality."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Oggetto: CONVOCAZIONE URGENTE. A seguito di indagini informatiche risulta che il suo dispositivo ha consultato contenuti vietati. È tenuto a inviare le sue giustificazioni via e-mail entro 48 ore, in assenza delle quali il fascicolo sarà trasmesso al Tribunale. Dirigente Divisione Cybercrime.",
+        "en": "Subject: URGENT SUMMONS. Following online investigations, your device appears to have accessed prohibited content. You are required to email your justification within 48 hours, failing which the file will be sent to the Court. Head of the Cybercrime Division."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "email polizia convocazione urgente",
+      "accusa siti pedopornografici email",
+      "pagare per chiudere procedimento penale",
+      "mail firmata capo della polizia",
+      "giustificazioni entro 48 ore",
+      "falsa citazione giudiziaria posta elettronica",
+      "polizia postale chiede soldi email"
+    ],
+    "en": [
+      "police email summons accusing me",
+      "email says i viewed illegal content",
+      "pay a fine to close the investigation",
+      "letter signed by chief of police",
+      "reply with justification within hours"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "it": [
+      "La Polizia di Stato non invia notifiche, convocazioni o richieste di pagamento per e-mail o messaggio.",
+      "Nessun procedimento penale si chiude pagando una somma su richiesta via e-mail.",
+      "Loghi, firme e numeri di protocollo si copiano facilmente."
+    ],
+    "en": [
+      "The State Police does not send notices, summonses or payment demands by email or message.",
+      "No criminal case is closed by paying a sum requested by email.",
+      "Logos, signatures and reference numbers are easy to copy."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non rispondete, non aprite allegati e non cliccate sui link.",
+      "Non pagate nulla e non inviate dati personali o documenti.",
+      "Segnalate l'e-mail alla Polizia Postale; se avete già pagato, sporgete denuncia."
+    ],
+    "en": [
+      "Do not reply, open attachments or click links.",
+      "Do not pay anything or send personal details or documents.",
+      "Report the email to the Postal Police; if you already paid, file a complaint."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/denuncia"
+  ],
+  "sources": [
+    {
+      "title": "Polizia di Stato: attenzione alle truffe online a nome delle Forze di Polizia",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/polizia-di-stato-attenzione-alle-truffe-online-a-nome-delle-forze-di-polizia/index.html",
+      "date": "2026-08-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

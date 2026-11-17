@@ -1,0 +1,139 @@
+{
+  "id": "pl/blik-code-hacked-friend",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "pl": "Znajomy lub ktoś z rodziny na Messengerze, Facebooku lub innym komunikatorze (konto przejęte przez oszustów)",
+    "en": "A friend or relative on Messenger, Facebook or another messaging app (account taken over by scammers)"
+  },
+  "name": {
+    "pl": "„Pożyczysz na BLIK-a?”: prośba o kod BLIK z przejętego konta znajomego",
+    "en": "“Can you lend me via BLIK?”: a request for a BLIK code from a friend’s hijacked account"
+  },
+  "how": {
+    "pl": "Przestępcy włamują się na konto w mediach społecznościowych i piszą do znajomych właściciela. Proszą o szybką pożyczkę: trzeba opłacić zamówienie, bank nie działa, zabrakło na zakupy. Zamiast przelewu chcą kodu BLIK, a potem kolejnych. Kod z Twojej aplikacji pozwala im wypłacić pieniądze z bankomatu lub zapłacić w sklepie, a Ty sam zatwierdzasz tę operację w telefonie. Dopiero później okazuje się, że konto znajomego było przejęte.",
+    "en": "Criminals break into a social media account and message the owner’s friends. They ask for a quick loan: an order needs paying, their bank isn’t working, they’re short at the till. Instead of a transfer they want a BLIK code, then more of them. A code from your app lets them withdraw cash at an ATM or pay in a shop, and you approve the operation yourself on your phone. Only later does it turn out the friend’s account had been hijacked."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Wiadomość od znajomego z prośbą o pilną pomoc finansową.",
+        "en": "A message from a friend asking for urgent financial help."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Ma to być szybko, „na chwilę”, „oddam jutro”.",
+        "en": "It has to be quick, “just for a moment”, “I’ll pay you back tomorrow”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Prośba o kod BLIK zamiast przelewu, potem o kolejne.",
+        "en": "A request for a BLIK code instead of a transfer, then more of them."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "pl": "Wymówki, gdy proponujesz telefon: „nie mogę teraz rozmawiać”.",
+        "en": "Excuses when you suggest a call: “I can’t talk right now”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Hej, masz chwilkę? Mam głupią sytuację, jestem przy kasie, a karta mi nie przechodzi 🙈 Mogłabyś mi wysłać kod BLIK na 600 zł? Wieczorem Ci oddam, obiecuję. Tylko szybko, bo kolejka czeka 😅",
+        "en": "Hey, got a sec? Silly situation, I’m at the till and my card won’t go through 🙈 Could you send me a BLIK code for 600 zł? I’ll pay you back tonight, promise. Just quick, the queue is waiting 😅"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "oszustwo na blika",
+      "znajomy prosi o kod blik messenger",
+      "przejęte konto facebook pożyczka",
+      "wysłałam kod blik koleżance oszust",
+      "prośba o pożyczkę przez komunikator",
+      "kod blik opłacić zamówienie znajomy",
+      "zatwierdziłam blik aplikacji pieniądze zniknęły",
+      "oszustwo na znajomego messenger",
+      "kolega pilnie potrzebuje pieniędzy facebook",
+      "koleżanka napisała wyślij kod blik",
+      "prośba pożyczka blik zwrot jutro",
+      "blik zakupy paczka opłacić prośba"
+    ],
+    "en": [
+      "friend asked me for a blik code on messenger",
+      "hacked facebook account asking for money",
+      "sent a blik code to a friend and lost money",
+      "friend messaged asking for a quick loan",
+      "blik scam from a friends account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Kod BLIK to pieniądze w gotówce: kto go ma, wypłaca je w bankomacie albo płaci w sklepie.",
+      "Znajomy, który nie może odebrać telefonu, ale pilnie potrzebuje kodu, to typowy znak przejętego konta.",
+      "Prośba o kilka kodów po kolei."
+    ],
+    "en": [
+      "A BLIK code is as good as cash: whoever has it can withdraw money at an ATM or pay in a shop.",
+      "A friend who can’t pick up the phone but urgently needs a code is a classic sign of a hijacked account.",
+      "Being asked for several codes one after another."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Zanim cokolwiek wyślesz, zadzwoń do znajomego na jego numer telefonu albo zapytaj o coś, co wie tylko on.",
+      "Zawsze czytaj, co zatwierdzasz w aplikacji: kwotę i miejsce wypłaty.",
+      "Jeśli już przekazałeś kod, natychmiast zadzwoń do banku, może uda się zablokować operację.",
+      "Złóż zawiadomienie na Policji i uprzedź znajomego, że jego konto zostało przejęte."
+    ],
+    "en": [
+      "Before sending anything, phone your friend on their number, or ask something only they would know.",
+      "Always read what you are approving in the app: the amount and where it’s being withdrawn.",
+      "If you already gave a code, call your bank at once; the operation may still be blocked.",
+      "Report it to the police and tell your friend their account has been taken over."
+    ]
+  },
+  "reportTo": [
+    "pl/your-bank",
+    "pl/policja",
+    "pl/cert-polska"
+  ],
+  "sources": [
+    {
+      "title": "Oszustwo „na znajomego”- mieszkanka powiatu straciła 3000 złotych",
+      "publisher": "Komenda Powiatowa Policji w Opolu Lubelskim",
+      "url": "https://opole-lubelskie.policja.gov.pl/lol/informacje/aktualnosci/170705,Oszustwo-na-znajomego-mieszkanka-powiatu-stracila-3000-zlotych.html",
+      "date": "2026-07-15"
+    },
+    {
+      "title": "Kolejne dwa oszustwa metodą „na BLIK” – prosimy o zachowanie czujności",
+      "publisher": "Komenda Powiatowa Policji w Świdniku",
+      "url": "https://swidnik.policja.gov.pl/lsw/informacje/aktualnosci/165765,Kolejne-dwa-oszustwa-metoda-na-BLIK-prosimy-o-zachowanie-czujnosci.html",
+      "date": "2026-01-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/whatsapp-vote-takeover"
+  ]
+}

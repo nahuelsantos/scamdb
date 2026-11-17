@@ -1,0 +1,127 @@
+{
+  "id": "it/truffa-romantica",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "it": "Un profilo affascinante sui social o sulle app di incontri (finto militare, medico, ingegnere all'estero)",
+    "en": "An attractive profile on social media or dating apps (fake soldier, doctor, engineer abroad)"
+  },
+  "name": {
+    "it": "Truffa romantica: relazione online e richieste di soldi o investimenti",
+    "en": "Romance scam: online relationship and requests for money or investments"
+  },
+  "how": {
+    "it": "Un profilo gentile e premuroso vi contatta sui social o su un'app di incontri. Dice di lavorare all'estero, spesso come militare, medico o ingegnere, e in poche settimane parla di amore e di un futuro insieme, ma non può mai fare videochiamate. Poi arrivano i problemi: dogana, spese mediche, un biglietto per venire in Italia, un pacco bloccato, oppure un investimento in criptovalute \"per il nostro futuro\". Le richieste di soldi aumentano finché non vi fermate.",
+    "en": "A kind, caring profile contacts you on social media or a dating app. They say they work abroad, often as a soldier, doctor or engineer, and within weeks talk about love and a future together, but can never do video calls. Then the problems start: customs, medical bills, a ticket to come to Italy, a blocked parcel, or a crypto investment “for our future”. The money requests grow until you stop."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Una persona sconosciuta vi contatta e diventa subito molto affettuosa.",
+        "en": "A stranger contacts you and quickly becomes very affectionate."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Evita sempre videochiamate e incontri, e vi chiede di non parlarne con la famiglia.",
+        "en": "They always avoid video calls and meetings, and ask you not to tell your family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "it": "Arriva un'emergenza: dogana, ospedale o biglietto aereo da pagare.",
+        "en": "An emergency arises: customs, hospital or a plane ticket to pay for."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "it": "Oppure vi propone un investimento in cripto che rende tantissimo.",
+        "en": "Or they suggest a crypto investment with huge returns."
+      },
+      "signal": "too_good_to_be_true"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Amore mio, finalmente ho la licenza e posso raggiungerti in Italia. Però l'ufficio della base vuole 2.300 euro per i documenti di viaggio e io qui non posso usare la mia carta. Ti prego aiutami, appena arrivo ti restituisco tutto. Non dirlo ai tuoi figli, non capirebbero.",
+        "en": "My love, I finally got leave and can join you in Italy. But the base office wants 2,300 euros for the travel papers and I can't use my card here. Please help me, I'll give it all back as soon as I arrive. Don't tell your children, they wouldn't understand."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "conosciuto online chiede soldi",
+      "militare estero vuole venire italia",
+      "fidanzato virtuale spese dogana",
+      "non vuole fare videochiamata",
+      "amore online investimento cripto",
+      "pacco bloccato dogana spedito amore",
+      "profilo falso app incontri soldi"
+    ],
+    "en": [
+      "online partner asks for money",
+      "soldier abroad wants to visit",
+      "never does video calls",
+      "love interest suggests crypto investment",
+      "customs fee for a parcel from my partner"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "it": [
+      "Chi conoscete solo online e vi chiede soldi, per qualunque motivo, è quasi sempre un truffatore.",
+      "Rifiuta sempre le videochiamate o ha scuse per non incontrarvi.",
+      "Vi chiede di tenere la relazione segreta."
+    ],
+    "en": [
+      "Someone you only know online who asks for money, for any reason, is almost always a scammer.",
+      "They always refuse video calls or have excuses not to meet.",
+      "They ask you to keep the relationship secret."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non mandate soldi, ricariche o criptovalute e non condividete foto intime.",
+      "Parlatene con una persona di fiducia; cercate le foto del profilo con una ricerca per immagini.",
+      "Conservate le chat, avvisate la banca e sporgete denuncia; segnalate il profilo alla Polizia Postale."
+    ],
+    "en": [
+      "Do not send money, top-ups or crypto and do not share intimate photos.",
+      "Talk to someone you trust; search the profile photos with a reverse image search.",
+      "Keep the chats, tell your bank and file a complaint; report the profile to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/denuncia",
+    "it/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Cuneo, truffe 'romantiche' e falsi investimenti in cryptovalute: 23 indagati",
+      "publisher": "LaPresse",
+      "url": "https://www.lapresse.it/cronaca/2026/02/26/cuneo-truffe-romantiche-e-falsi-investimenti-in-cryptovalute-23-indagati/",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/trading-vip-deepfake"
+  ]
+}

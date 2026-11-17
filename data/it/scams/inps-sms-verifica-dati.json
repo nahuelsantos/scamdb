@@ -1,0 +1,137 @@
+{
+  "id": "it/inps-sms-verifica-dati",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "it": "Finto INPS",
+    "en": "Fake INPS (Italian social security institute)"
+  },
+  "name": {
+    "it": "SMS falso dell'INPS: verificare i dati per non perdere pensione, assegno o rimborso",
+    "en": "Fake INPS text: verify your details to keep your pension, allowance or refund"
+  },
+  "how": {
+    "it": "Un SMS con nome e logo dell'INPS chiede di aggiornare o verificare i dati per non perdere un pagamento, una pensione o un rimborso. Il link porta a una copia del portale INPS che chiede, passo dopo passo, dati anagrafici, documento d'identità, buste paga, CU, IBAN e perfino un selfie, oltre ai dati della carta. Con questi materiali i truffatori svuotano conti e aprono servizi a vostro nome.",
+    "en": "A text with the INPS name and logo asks you to update or verify your details so you do not lose a payment, pension or refund. The link leads to a copy of the INPS portal that asks, step by step, for personal details, ID document, payslips, tax certificates, IBAN and even a selfie, as well as card details. With this material scammers empty accounts and open services in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un SMS dell'\"INPS\" dice che i vostri dati vanno aggiornati.",
+        "en": "An “INPS” text says your details must be updated."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Altrimenti il pagamento o la pensione verrà sospesa.",
+        "en": "Otherwise the payment or pension will be suspended."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Il link porta a un finto portale INPS.",
+        "en": "The link leads to a fake INPS portal."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "Chiede foto dei documenti, buste paga, selfie e dati della carta.",
+        "en": "It asks for photos of documents, payslips, a selfie and card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "INPS: gentile utente, per garantire la continuità delle prestazioni è necessario aggiornare il fascicolo previdenziale entro 3 giorni. In caso contrario l'erogazione sarà sospesa. Procedi qui: [link]",
+        "en": "INPS: dear user, to keep your benefits running you must update your social security file within 3 days. Otherwise payments will be suspended. Continue here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "sms inps aggiornare dati",
+      "inps pensione sospesa messaggio",
+      "verifica fascicolo previdenziale link",
+      "inps chiede documento selfie",
+      "rimborso inps sms link",
+      "assegno sospeso aggiornare iban",
+      "finto portale inps",
+      "naspi sospesa sms",
+      "inps vuole busta paga documento"
+    ],
+    "en": [
+      "inps text update my details",
+      "pension will be suspended text",
+      "fake inps site asked for selfie",
+      "inps refund link in a text",
+      "verify identity to keep benefits"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "it": [
+      "L'INPS non manda SMS con link per aggiornare dati, IBAN o documenti.",
+      "Nessun servizio pubblico chiede foto dei documenti, buste paga e selfie tramite un link.",
+      "L'unico sito dell'INPS è inps.it."
+    ],
+    "en": [
+      "INPS does not send texts with links to update details, IBAN or documents.",
+      "No public service asks for photos of documents, payslips and a selfie through a link.",
+      "INPS's only website is inps.it."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non cliccate: entrate voi su inps.it o nell'app INPS con SPID o CIE per controllare.",
+      "Se avete inviato documenti o dati della carta, avvisate la banca e sporgete denuncia: i documenti possono essere usati per furto d'identità.",
+      "Segnalate l'SMS alla Polizia Postale."
+    ],
+    "en": [
+      "Do not click: go to inps.it or the INPS app yourself with SPID or CIE to check.",
+      "If you sent documents or card details, tell your bank and file a complaint: documents can be used for identity theft.",
+      "Report the text to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/your-bank",
+    "it/denuncia"
+  ],
+  "sources": [
+    {
+      "title": "Smishing con AI: attacchi e truffe diventano sempre più pericolosi",
+      "publisher": "INPS",
+      "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.08.smishing-con-ai-attacchi-e-truffe-diventano-sempre-pi-pericolosi.html",
+      "date": "2026-08-14"
+    },
+    {
+      "title": "Sintesi riepilogativa delle campagne malevole nella settimana del 31 ottobre – 6 novembre",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/sintesi-riepilogativa-delle-campagne-malevole-nella-settimana-del-31-ottobre-6-novembre/",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Sintesi riepilogativa delle campagne malevole nella settimana del 7 – 13 Novembre",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/sintesi-riepilogativa-delle-campagne-malevole-nella-settimana-del-7-13-novembre/",
+      "date": "2026-11-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,142 @@
+{
+  "id": "md/cumparator-fals-link-incasare",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "ro": "Un „cumpărător” la anunțul dvs. de vânzare",
+    "ru": "«Покупатель» по вашему объявлению о продаже",
+    "en": "A 'buyer' for your sale ad"
+  },
+  "name": {
+    "ro": "Cumpărător fals: „plătesc online și trimit curierul, primiți banii pe link”",
+    "ru": "Фальшивый покупатель: «оплачу онлайн и пришлю курьера, получите деньги по ссылке»",
+    "en": "Fake buyer: 'I'll pay online and send a courier, collect the money via this link'"
+  },
+  "how": {
+    "ro": "Vindeți ceva pe un site de anunțuri (de exemplu 999) și un „cumpărător” vă scrie, de obicei pe WhatsApp sau Viber. Nu negociază, spune că plătește online și trimite un curier după marfă. Apoi vă trimite un link pentru a „primi banii”, care imită o pagină de livrare sau de plată. Acolo vi se cer numărul cardului, data, codul CVV și codul din SMS, iar banii vă sunt luați de pe card.",
+    "ru": "Вы продаёте что-то на сайте объявлений (например, 999), и вам пишет «покупатель», обычно в WhatsApp или Viber. Он не торгуется, говорит, что оплатит онлайн и пришлёт курьера за товаром. Затем присылает ссылку, чтобы «получить деньги», которая похожа на страницу доставки или оплаты. Там просят номер карты, срок, CVV и код из SMS, и деньги списывают с вашей карты.",
+    "en": "You are selling something on a classifieds site (such as 999) and a 'buyer' writes to you, usually on WhatsApp or Viber. They don't haggle, say they'll pay online and send a courier for the item. Then they send a link to 'receive the money' that imitates a delivery or payment page. It asks for your card number, expiry date, CVV and SMS code, and the money is taken from your card."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "„Cumpărătorul” vrea marfa fără să o vadă.",
+        "ru": "«Покупатель» берёт товар не глядя.",
+        "en": "The 'buyer' wants the item without seeing it."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Trimite un link ca să „primiți plata”.",
+        "ru": "Присылает ссылку, чтобы «получить оплату».",
+        "en": "Sends a link so you can 'receive the payment'."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Pagina cere cardul, CVV-ul și codul din SMS.",
+        "ru": "Страница просит карту, CVV и код из SMS.",
+        "en": "The page asks for card, CVV and SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ro": "Bună, mai este disponibil frigiderul? Îl iau la prețul din anunț, nu am timp să vin, trimit curierul mâine dimineață. Am achitat deja livrarea și plata, ca să încasați banii completați datele cardului aici: [link]",
+        "ru": "Здравствуйте, холодильник ещё продаётся? Беру по цене из объявления, приехать не успеваю, пришлю курьера завтра утром. Доставку и оплату я уже провёл, чтобы получить деньги, заполните данные карты здесь: [ссылка]",
+        "en": "Hi, is the fridge still available? I'll take it at the listed price; I can't come myself so I'll send a courier tomorrow morning. I've already paid for delivery and the item; to collect the money fill in your card details here: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "cumpărător pe 999 trimite link să primesc banii",
+      "vând pe 999 și cer datele cardului pentru plată",
+      "cumpărătorul trimite curier și link de plată",
+      "link pentru încasarea banilor din vânzare",
+      "cumpărător fals anunț cere cvv"
+    ],
+    "ru": [
+      "покупатель на 999 прислал ссылку получить деньги",
+      "продаю на 999 просят данные карты оплаты",
+      "покупатель пришлёт курьера и ссылку на оплату",
+      "ссылка получения денег за товар",
+      "фальшивый покупатель объявление просит cvv"
+    ],
+    "en": [
+      "buyer on 999 sends link to get my money",
+      "selling on 999 asked for card details for payment",
+      "buyer sends courier and payment link",
+      "link to receive money for my sale",
+      "fake buyer classified ad asks for cvv"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "ro": [
+      "Ca să primiți bani nu trebuie să dați CVV-ul sau codul din SMS.",
+      "Cumpărătorul vrea să treceți din platformă pe WhatsApp.",
+      "Nu se interesează de marfă, doar de plata prin link."
+    ],
+    "ru": [
+      "Чтобы получить деньги, не нужно сообщать CVV или код из SMS.",
+      "Покупатель просит перейти с площадки в WhatsApp.",
+      "Его не интересует товар, только оплата по ссылке."
+    ],
+    "en": [
+      "You never need your CVV or an SMS code to receive money.",
+      "The buyer wants to move off the platform to WhatsApp.",
+      "They don't care about the item, only the link payment."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul; pentru plată dați doar IBAN-ul, nu datele cardului.",
+      "Ați introdus datele? Blocați cardul imediat prin bancă.",
+      "Semnalați anunțul platformei și Poliției."
+    ],
+    "ru": [
+      "Не открывайте ссылку; для оплаты давайте только IBAN, а не данные карты.",
+      "Ввели данные? Сразу заблокируйте карту через банк.",
+      "Сообщите о покупателе площадке и полиции."
+    ],
+    "en": [
+      "Don't open the link; give only your IBAN for payment, never card details.",
+      "Entered your details? Block the card through your bank at once.",
+      "Report it to the platform and the police."
+    ]
+  },
+  "reportTo": [
+    "md/your-bank",
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Ai un colet de primit? Fii atent, escrocii trimit mesaje false în numele Poștei Moldovei",
+      "publisher": "Unimedia",
+      "url": "https://unimedia.info/ro/news/b319eaf726865a90/ai-un-colet-de-primit-fii-atent-escrocii-trimit-mesaje-false-in-numele-postei-moldovei.html",
+      "date": "2026-10-25"
+    },
+    {
+      "title": "Poșta Moldovei avertizează asupra escrocheriilor: Cum încearcă infractorii să fure datele bancare",
+      "publisher": "Realitatea.md",
+      "url": "https://realitatea.md/posta-moldovei-avertizeaza-asupra-escrocheriilor-cum-incearca-infractorii-sa-fure-datele-bancare/",
+      "date": "2026-10-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

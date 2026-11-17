@@ -1,0 +1,156 @@
+{
+  "id": "ro/fake-police-bnr-loan",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ro": "„Poliția Română”, „procuratura”, „BNR”, „MAI” sau un „ofițer” cu legitimație trimisă pe WhatsApp",
+    "en": "“Romanian Police”, “prosecutor’s office”, “National Bank (BNR)”, “Interior Ministry” or an “officer” with an ID card photo sent on WhatsApp"
+  },
+  "name": {
+    "ro": "Fals polițist sau angajat BNR: „credit în numele tău”, dosar penal și bani de „protejat”",
+    "en": "Fake police officer or central-bank employee: “loan in your name”, criminal case and money to “protect”"
+  },
+  "how": {
+    "ro": "Un apelant se prezintă ca polițist, procuror sau angajat al MAI, adesea de la un număr care pare oficial. Vă spune că un infractor a luat un credit în numele dumneavoastră sau că sunteți implicat într-un dosar de fraudă și vă amenință cu citație sau arestare. Ca să pară credibil, vă trimite pe WhatsApp poza unei legitimații sau a unei adrese „de la BNR”. Apoi sunteți transferat la un „specialist BNR” care vă cere extrase de cont, coduri, să faceți un credit „ca să-l anulați” pe cel fraudulos, să scoateți bani sau să-i transferați ca să fie „protejați”. Vi se spune să nu vorbiți cu nimeni, nici măcar cu banca.",
+    "en": "A caller says they are a police officer, prosecutor or Interior Ministry employee, often from a number that looks official. They say a criminal took out a loan in your name or that you are involved in a fraud case, and threaten you with a summons or arrest. To look credible they send you on WhatsApp a photo of an ID card or a letter “from the BNR”. Then you are passed to a “BNR specialist” who asks for bank statements and codes, or tells you to take out a loan “to cancel” the fraudulent one, withdraw cash or transfer money so it is “protected”. You are told not to talk to anyone, not even your bank."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Vă sună un „polițist” sau „procuror”: există un credit sau un dosar pe numele dumneavoastră.",
+        "en": "A “police officer” or “prosecutor” calls: there is a loan or a case in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Primiți pe WhatsApp poza unei legitimații sau a unei scrisori oficiale.",
+        "en": "You receive on WhatsApp a photo of an ID card or an official letter."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Vi se interzice să vorbiți cu cineva despre „anchetă”.",
+        "en": "You are forbidden to talk to anyone about the “investigation”."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ro": "Un „specialist BNR” vă cere coduri sau date bancare.",
+        "en": "A “BNR specialist” asks for codes or bank details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ro": "Trebuie să faceți un credit, să scoateți bani sau să-i transferați ca să fie „protejați”.",
+        "en": "You must take out a loan, withdraw cash or transfer it so it is “protected”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Bună seara, sunt comisarul Dinu de la Poliția Capitalei, Serviciul de Combatere a Criminalității Informatice. Pe numele dumneavoastră a fost aprobat azi un credit de 48.000 de lei cu un buletin fals. Vă trimit acum pe WhatsApp legitimația mea. Vă fac legătura cu un coleg de la Banca Națională, care vă spune cum blocăm banii. Vă rog, nu discutați cu nimeni, ancheta e confidențială.",
+        "en": "Good evening, I’m Commissioner Dinu of the Bucharest Police, cybercrime unit. A loan of 48,000 lei was approved in your name today with a fake ID. I’m sending you my ID card on WhatsApp now. I’ll put you through to a colleague at the National Bank who will tell you how we block the money. Please don’t discuss it with anyone; the investigation is confidential."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "m-a sunat un fals polițist despre un credit",
+      "credit luat în numele meu poliția mă sună",
+      "polițist mi-a trimis legitimația pe whatsapp",
+      "angajat bnr mi-a cerut să fac un credit",
+      "procuror la telefon dosar penal amenințare arestare",
+      "să nu spun nimănui ancheta confidențială",
+      "transfer bani protejați la cererea poliției",
+      "apel de la mai cu număr clonat",
+      "polițiștii spun că s-au făcut împrumuturi pe numele meu",
+      "insignă de poliție trimisă pe whatsapp",
+      "reprezentant banca națională mă sună",
+      "să nu anunț banca sau familia"
+    ],
+    "en": [
+      "fake police officer called about a loan",
+      "loan taken out in my name police called",
+      "officer sent me his badge on whatsapp",
+      "national bank employee told me to take a loan",
+      "told not to tell anyone about the investigation",
+      "police asked me to transfer money to protect it"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "ro": [
+      "Poliția, procurorii, MAI și BNR nu cer bani, transferuri, coduri sau date bancare la telefon.",
+      "Nicio autoritate nu vă cere să faceți un credit ca să vă „protejați” banii.",
+      "O poză cu legitimație pe WhatsApp și numărul de pe ecran pot fi false.",
+      "Cererea de a nu vorbi cu nimeni, nici cu banca, e semnul clasic al înșelătoriei."
+    ],
+    "en": [
+      "The police, prosecutors, the Interior Ministry and the BNR never ask for money, transfers, codes or bank details over the phone.",
+      "No authority asks you to take out a loan to “protect” your money.",
+      "An ID-card photo on WhatsApp and the number on screen can be fake.",
+      "Being told not to talk to anyone, not even your bank, is the classic sign of the scam."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Închideți. Dacă vreți să verificați, sunați chiar dumneavoastră la 112 sau la secția de poliție.",
+      "Ați dat date sau bani? Sunați imediat banca, la numărul de pe card, pentru blocare.",
+      "Depuneți plângere la Poliție și raportați la DNSC (1911 sau pnrisc.dnsc.ro)."
+    ],
+    "en": [
+      "Hang up. If you want to check, call 112 or your police station yourself.",
+      "Did you give details or money? Call your bank at once, on the number on your card, to block everything.",
+      "File a police complaint and report it to DNSC (1911 or pnrisc.dnsc.ro)."
+    ]
+  },
+  "reportTo": [
+    "ro/emergency-112",
+    "ro/your-bank",
+    "ro/police-complaint",
+    "ro/dnsc-1911"
+  ],
+  "sources": [
+    {
+      "title": "Avertisment DNSC: Frauda „credit în numele tău” a revenit",
+      "publisher": "StartupCafe",
+      "url": "https://startupcafe.ro/avertisment-dnsc-frauda-creditului-in-numele-tau-a-revenit-104921",
+      "date": "2026-08-11"
+    },
+    {
+      "title": "O nouă fraudă exploatează încrederea românilor. Avertisment de la MAI: „Închideți imediat conversația și nu furnizați date personale”",
+      "publisher": "Capital",
+      "url": "https://www.capital.ro/o-noua-frauda-exploateaza-increderea-romanilor-avertisment-de-la-mai-inchideti-imediat-conversatia-si-nu-furnizati-date-personale.html",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Fraudă cu apeluri telefonice false în numele Poliției și BNR. Avertismentul DNSC",
+      "publisher": "Digi24",
+      "url": "https://www.digi24.ro/stiri/sci-tech/lumea-digitala/frauda-cu-apeluri-telefonice-false-in-numele-politiei-si-bnr-avertismentul-dnsc-cum-obtin-infractorii-date-bancare-confidentiale-3208919",
+      "date": "2025-04-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/bank-employee-safe-account"
+  ]
+}
