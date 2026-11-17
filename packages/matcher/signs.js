@@ -50,6 +50,9 @@ const LOGIN_WITH = /\b(ingresa|ingresando|entra|entrando|accede|accediendo|inici
 const NEGATED_MONEY = /\b(never|nunca|nao|won t|will not|do not|don t)( \w+){0,6} (bank|card|account) (details|number|information)|\b(never|nunca|nao)( \w+){0,6} (datos|dados) (bancarios|de (tu|su) tarjeta|do (seu )?cartao)|\b(jamais|nooit)( \w+){0,6} (coordonnees bancaires|donnees bancaires|numero de carte|bankgegevens|rekeningnummer)/g;
 const NO_PAYMENT = /nada que pagar|nothing to pay|no (payment|fee|charge)s? (is |are )?(needed|required|due)|nao (precisa|e preciso|tem que) pagar|sin (costo|cargo)( alguno)?|free of charge|you don t need to pay|no hace falta pagar|rien a payer|aucun (frais|paiement)|niets (te )?betalen|geen kosten/;
 
+// "Ce SMS ne contient pas de lien", "this message contains no link": the message says there is no link.
+const NO_LINK = /(ne contient|ne contiennent|ne comporte) (aucun|pas de) lien|sans (aucun )?lien|contains? no links?|(does not|doesn t|will never|never) (contain|include|send)( \w+){0,2} links?|no (contiene|incluye) (ningun|enlaces?)|nunca (te )?(enviamos|enviaremos|mandamos) (un |ningun )?enlace|bevat geen link|nooit een link|nao (contem|tem) (nenhum )?link|nunca envia(mos)? links?/;
+
 const withoutNegatedMoney = (t) => { const rest = t.replace(NEGATED_MONEY, ' '); return rest !== t && !SIGNS.money_request.test(rest); };
 
 /** The sign ids that apply, after context rules (genuine-code warnings, login instructions, "nothing to pay"). */
@@ -59,6 +62,7 @@ function applyContext(t, ids) {
     const handover = CODE_HANDOVER.test(t.replace(NEGATED, ' '));
     if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t))) out = out.filter((id) => id !== 'asks_for_code');
   }
+  if (out.includes('unknown_link') && NO_LINK.test(t)) out = out.filter((id) => id !== 'unknown_link');
   if (out.includes('money_request') && (NO_PAYMENT.test(t) || withoutNegatedMoney(t))) out = out.filter((id) => id !== 'money_request');
   return out;
 }
