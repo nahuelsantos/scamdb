@@ -1,0 +1,115 @@
+{
+  "id": "ph/national-id-screen-share",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "online"
+  ],
+  "sender": {
+    "en": "“PhilSys”, “eGovPH” or the National ID office"
+  },
+  "name": {
+    "en": "Fake National ID or eGovPH “verification” over Google Meet with screen sharing"
+  },
+  "how": {
+    "en": "Someone posing as PhilSys, the PSA or eGovPH contacts you by email or call to say your National ID is ready or needs verification. They invite you to a Google Meet, have you install a “verification” app from a link and ask you to share your screen. While watching, they capture your OTPs, PINs and passwords and empty your bank and e-wallet accounts. The PSA says ID updates are done only in person at registration centers."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email or call says your National ID or eGovPH account needs verification."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You are invited to a video meeting and sent a link to install an app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "They ask you to share your screen."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They watch you open your bank or e-wallet and read your codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Good day! This is PhilSys Registration Office. Your National ID is ready for online verification. Kindly join our Google Meet at 2PM and install the PhilSys Verify app here before the call: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "national id verification on google meet",
+      "philsys asked me to share my screen",
+      "egovph caller asked me to install a verification apk",
+      "national id ready for verification email",
+      "fake verification apk for national id",
+      "caller watched my screen during my bank login"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A government “verification” over a video call.",
+      "Being asked to install an app from a link.",
+      "Any request to share your screen."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up or ignore the invite. No real government process asks you to share your screen.",
+      "Install apps only from the official app stores.",
+      "If you shared your screen or codes, call your bank and e-wallet straight away and change your passwords.",
+      "Report it to the CICC hotline 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/gcash",
+    "ph/cicc",
+    "ph/pnp-acg"
+  ],
+  "sources": [
+    {
+      "title": "Scammers impersonate officials, GCash warns users",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/02/11/scammers-impersonate-officials-gcash-warns-users",
+      "date": "2026-02-11"
+    },
+    {
+      "title": "GCash warns of new scams posing as gov’t, legit groups",
+      "publisher": "SunStar Davao",
+      "url": "https://www.sunstar.com.ph/davao/business/gcash-warns-of-new-scams-posing-as-govt-legit-groups",
+      "date": "2026-02-04"
+    },
+    {
+      "title": "PSA warns public against phishing scams targeting National ID holders",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2025/09/08/psa-warns-public-against-phishing-scams-targeting-national-id-holders",
+      "date": "2025-09-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/bank-call-otp"
+  ]
+}

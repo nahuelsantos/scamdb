@@ -527,3 +527,13 @@ test('1.18.0: penalty threats are urgency, refund bait asking for payment detail
   assert.ok(readSigns('Your refund was approved. Please provide accurate payment information', ['en']).includes('money_request'));
   assert.ok(!readSigns('Te recomendamos evitar las horas pico para hacer tu trámite en la sucursal', ['es']).includes('urgency'));
 });
+test('1.19.0: Tagalog / Taglish signs (Philippines) and more English call scripts', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  assert.ok(readSigns("I've sent a reference code to your mobile, can you read the 6 digits", ['en']).includes('asks_for_code'));
+  assert.ok(readSigns("Please don't end the call or the block won't go through", ['en']).includes('keep_on_line'));
+  assert.ok(readSigns('Pay the P35.00 redelivery charge here [link]', ['en']).includes('money_request'));
+  assert.ok(readSigns('Tita si Bea to, bagong sim ko kasi nawala yung phone ko', ['en', 'tl']).includes('new_number'));
+  assert.ok(readSigns('may darating po na code sa inyo, pakisend na lang', ['en', 'tl']).includes('asks_for_code'));
+  // Tagalog rules apply only where Tagalog is spoken.
+  assert.ok(!readSigns('bagong sim ko', ['es', 'en']).includes('new_number'));
+});

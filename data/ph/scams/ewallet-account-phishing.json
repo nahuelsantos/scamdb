@@ -1,0 +1,124 @@
+{
+  "id": "ph/ewallet-account-phishing",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "en": "“GCash”, “Maya” or another e-wallet, sometimes inside the real e-wallet SMS thread"
+  },
+  "name": {
+    "en": "Fake GCash or Maya text: “verify your account” or “claim your refund” link"
+  },
+  "how": {
+    "en": "A text or chat that looks like it comes from GCash, Maya or another e-wallet says your account needs verification, will be suspended, or that a refund or cashback is waiting. It can even appear inside the real e-wallet message thread. The link leads to a fake login page that steals your number, MPIN and OTP, and the scammers then empty the wallet. GCash says it never sends links by SMS, email or chat and never asks for your MPIN or OTP."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text or chat appears to come from your e-wallet, sometimes in its usual SMS thread."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says your account will be limited, or that a refund, cashback or credit is waiting, and gives a short deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It has a link to “verify”, “update” or “claim”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for your mobile number, MPIN and the OTP you receive."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "GCash Advisory: Your account is scheduled for limitation due to incomplete KYC. Re-verify within 12 hrs to keep using Send Money: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "gcash text with a link to verify my account",
+      "maya text saying my account will be suspended",
+      "e-wallet asked for my mpin and otp on a website",
+      "refund credited to my gcash confirm via link",
+      "cashback waiting in my e-wallet click to claim",
+      "fake gcash login page took my otp",
+      "scam text appeared in the real gcash thread"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Any e-wallet text, email or chat with a link.",
+      "A deadline to verify or claim before your account is limited.",
+      "A page asking for your MPIN or OTP."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t tap the link. Open the GCash or Maya app yourself to check alerts and transactions.",
+      "Never share your MPIN or OTP. GCash and Maya never ask for them.",
+      "If you entered your details, lock your account in the app and call your e-wallet’s hotline straight away.",
+      "Report the text to the CICC hotline 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/gcash",
+    "ph/cicc",
+    "ph/pnp-acg",
+    "ph/bsp"
+  ],
+  "sources": [
+    {
+      "title": "GCash warns of online scams ahead Undas",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/10/30/gcash-warns-of-online-scams-ahead-undas",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Public cautioned vs scams",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2025/10/30/public-cautioned-vs-scams",
+      "date": "2025-10-31"
+    },
+    {
+      "title": "‘Expires bukas if not claimed’: Pinoys share text scams in conyo speak",
+      "publisher": "Interaksyon (Philstar)",
+      "url": "https://interaksyon.philstar.com/trends-spotlights/2025/07/17/299193/pinoys-text-scams-conyo-speak/",
+      "date": "2025-07-17"
+    },
+    {
+      "title": "CICC warns vs text scam that sneaks into legit message threads",
+      "publisher": "Inquirer Technology",
+      "url": "https://technology.inquirer.net/138367/cicc-warns-vs-text-scam-that-sneaks-into-legit-message-threads",
+      "date": "2024-11-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/bank-unusual-transaction-text",
+    "ph/fake-ayuda"
+  ]
+}

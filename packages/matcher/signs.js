@@ -212,12 +212,21 @@ const LATAM = {
 // More English (wave 12), from the Belize draft's labelled messages: loan "activation fees", forwarded verification
 // numbers, sellers holding an item for a deposit.
 const EN2 = {
+  keep_on_line: String.raw`(don ?t|do not) (end|drop) the call|stay on the call`,
   remote_access: String.raw`(download|install)( the| this| our)? screen ?sharing( app)?|so we can watch you|download( \w+){0,2} app( |$)`,
-  asks_for_code: String.raw`(verification|confirmation|security) (number|code) (was |has been )?sent to your phone|please forward it( here)?( |$)`,
-  urgency: String.raw`lots of people want it|(many|other) people (are )?interested|only keep it for you if|spaces (are )?limited`,
-  money_request: String.raw`activation fee|release the (full )?amount|have your (bank login|debit card|online banking)( [^ ]+){0,3} (on hand|ready)`,
+  asks_for_code: String.raw`(read|tell|give|send)( me)?( the)? (6|six|4|four)[ -]?digits?|(reference|verification|security) code to your (mobile|phone)|(verification|confirmation|security) (number|code) (was |has been )?sent to your phone|please forward it( here)?( |$)`,
+  urgency: String.raw`(slots|spots) are filling (up )?fast|or (they|we) will (auction|cancel|suspend|block|dispose)|lots of people want it|(many|other) people (are )?interested|only keep it for you if|spaces (are )?limited`,
+  money_request: String.raw`pay the p?[0-9.,]+ (redelivery|delivery|shipping|storage|reservation)|redelivery (charge|fee)|reservation fee|(you must|need to) settle p?[0-9]|activation fee|release the (full )?amount|have your (bank login|debit card|online banking)( [^ ]+){0,3} (on hand|ready)`,
   impersonation: String.raw`central bank of [a-z]+|supervision office`,
-  too_good_to_be_true: String.raw`bad credit (ok|okay|no problem|accepted)|loans? up to \$?[0-9]`,
+  too_good_to_be_true: String.raw`salary sent daily|p?[0-9]+ per (review|task|like)|(give|pay) you back double|bad credit (ok|okay|no problem|accepted)|loans? up to \$?[0-9]`,
+};
+// Tagalog / Taglish rules (the Philippines), from the Philippines draft's labelled messages. Folded, space boundaries.
+const TL = {
+  asks_for_code: String.raw`may darating( po)? na code|pakisend( [^ ]+){0,3} (code|otp)|(code|otp)( [^ ]+){0,3} pakisend|(sabihin|ibigay)( mo| nyo)?( [^ ]+){0,2} (code|otp)`,
+  money_request: String.raw`pa ?send ng|(^| )pakibalik|(^| )makisuyo|(^| )padalhan|pahiram( [^ ]+){0,2} [0-9]`,
+  new_number: String.raw`bagong (sim|number|numero) ko|(^| )nawala (yung|ang) phone ko`,
+  secrecy: String.raw`text lang muna tayo|wag mo (sabihin|ipaalam)`,
+  urgency: String.raw`(^| )ngayon na( |$)|(^| )kailangan ko( [^ ]+){0,2} ngayon`,
 };
 // Hungarian rules (wave 7), from the Hungary draft's labelled messages. Folded: á → a, é → e, ő/ö/ó → o, ű/ü/ú → u.
 const HU = {
@@ -285,7 +294,7 @@ const BASE = {
   new_number: String.raw`troquei de numero|numero novo|novo numero|salva (esse|este|meu) numero|numero nuevo|nuevo numero|cambie de numero|agendalo|agenda este|agendame|numero alternativo|se me (cayo|rompio|mojo) el (cel|celu|celular|telefono)|new number|changed my number|save (this|my) number|mudei de numero|guarda (este|esse|o meu) numero|telemovel (caiu|partiu|avariou|estragou)|` + LATAM.new_number,
   impersonation: String.raw`raiffeisen|le hablo de|te hablo de|somos de|\bpami\b|\banses\b|\barca\b|\bafip\b|\bbanco\b|correo argentino|mercado pago|soporte tecnico|area de seguridad|(calling|call|message) from (your|the) bank|your bank s|bank s (fraud|security)|tech(nical)? support|fraud (team|department)|security (team|department)|calling from|post office|customs (office|fee)|tax (office|agency)|from the (irs|hmrc|ato|cra)|royal mail|\busps\b|\bctt\b|financas|autoridade tributaria|seguranca social|seg social|an post|\brevenue\b|\bgarda\b|\bbov\b|maltapost|\bmtca\b|` + EN2.impersonation + '|' + LATAM.impersonation,
   secrecy: String.raw`nao (conta|fala|diga|conte|fale) (pra|para|a) ninguem|no le digas|no se lo digas|no le cuentes|entre nosotros|que no se entere|don ?t tell (anyone|anybody|your)|do not tell (anyone|anybody|your)|between (us|you and me)|keep (this|it) (secret|quiet)|` + LATAM.secrecy,
-  keep_on_line: String.raw`nao (desligue|desliga)|fique na linha|no corte|no cortes|quedese en linea|no cuelgue|don ?t hang up|do not hang up|stay on the (line|phone)|` + LATAM.keep_on_line,
+  keep_on_line: String.raw`(don ?t|do not) (end|drop) the call|stay on the call|nao (desligue|desliga)|fique na linha|no corte|no cortes|quedese en linea|no cuelgue|don ?t hang up|do not hang up|stay on the (line|phone)|` + LATAM.keep_on_line,
   too_good_to_be_true: String.raw`ganaste|ganador|premio|sorteo|gratis|rendimiento|ganancia|duplic|congratulations,? you|you (ve |have )?won|winner|\bprize|lottery|guaranteed (return|profit|income|earning)|double your|` + EN2.too_good_to_be_true + '|' + LATAM.too_good_to_be_true,
 };
 // Each block applies only to checks whose country uses one of its languages (or a close relative: Azerbaijani and
@@ -311,6 +320,7 @@ const BLOCKS = [
   { langs: ["lt"], rules: LT },
   { langs: ["et"], rules: ET },
   { langs: ["lv"], rules: LV },
+  { langs: ["tl"], rules: TL },
   // Turkish uses "parola" for a password, as Romanian and Italian do.
   { langs: ["tr", "az"], rules: { asks_for_code: String.raw`\bparola\b` } },
 ];

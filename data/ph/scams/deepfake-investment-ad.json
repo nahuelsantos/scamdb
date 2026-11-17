@@ -1,0 +1,115 @@
+{
+  "id": "ph/deepfake-investment-ad",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "A video of a famous tycoon, politician or news anchor on Facebook or YouTube"
+  },
+  "name": {
+    "en": "Deepfake celebrity investment ad"
+  },
+  "how": {
+    "en": "A video on social media shows a well-known businessman, senator or mayor, or a fake news report, recommending an investment, crypto platform or “investment adviser”. The face and voice are made with AI. You are sent to a trading site or a chat “adviser” who asks for a deposit, your card details or OTP. After paying, you cannot withdraw and the contact disappears. The SEC and the people shown say they endorse no such investment."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad or video shows a famous person or a news show recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It promises big profits from a small deposit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are sent to a website or a chat “adviser” to register."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "You are asked for a deposit, card details or the OTP."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "[Video] “I personally invest in this platform. Filipinos can start with P15,000 and earn up to P50,000 a week. Register now, slots are limited.” Message our account manager to begin."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "video of a businessman endorsing an investment",
+      "deepfake video of a senator recommending investment",
+      "ai video of a celebrity promoting crypto",
+      "fake news report about a crypto platform",
+      "facebook ad with a tycoon promising profits",
+      "investment adviser from the video asked for a deposit",
+      "tycoon interview about an ai trading platform"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A famous person endorsing an investment in an ad.",
+      "Mouth movements that don’t match the voice.",
+      "Guaranteed profits from a small deposit."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t register or pay. Check the person’s official pages: they will say they endorse nothing.",
+      "Check with the SEC whether the platform is licensed.",
+      "If you shared card details or an OTP, call your bank straight away.",
+      "Report the ad to the platform and to the SEC."
+    ]
+  },
+  "reportTo": [
+    "ph/sec",
+    "ph/your-bank",
+    "ph/pnp-acg",
+    "ph/cicc"
+  ],
+  "sources": [
+    {
+      "title": "Fact check: Hontiveros deepfaked to promote investment scheme",
+      "publisher": "The Philippine Star",
+      "url": "https://www.philstar.com/headlines/2025/08/09/2464110/fact-check-hontiveros-deepfaked-promote-investment-scheme",
+      "date": "2025-08-09"
+    },
+    {
+      "title": "SEC Warns Public of Crypto Scams Using Deepfake Videos of Lance Gokongwei",
+      "publisher": "BitPinas",
+      "url": "https://bitpinas.com/regulation/sec-advisory-deepfake-gokongwei/",
+      "date": "2025-07-19"
+    },
+    {
+      "title": "SEC, continues to warn against widespread deepfake videos",
+      "publisher": "Bombo Radyo Roxas",
+      "url": "https://roxas.bomboradyo.com/sec-continues-to-warn-against-widespread-deepfake-videos",
+      "date": "2025-07-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/investment-guaranteed-returns"
+  ]
+}

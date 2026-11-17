@@ -1,0 +1,128 @@
+{
+  "id": "ph/wrong-send-ewallet",
+  "country": "ph",
+  "lang": "tl",
+  "status": "fading",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "tl": "Isang estranghero na nagsasabing nagkamali sila ng padala sa e-wallet mo",
+    "en": "A stranger who says they sent money to your e-wallet by mistake"
+  },
+  "name": {
+    "tl": "“Wrong send” scam: ibalik daw ang perang “napadala nang mali” o ibigay ang OTP",
+    "en": "“Wrong send” scam: return money that was “sent by mistake” or give an OTP"
+  },
+  "how": {
+    "tl": "May tumatawag o nagte-text na nagsasabing nagkamali sila at napadala ang pera sa GCash o ibang e-wallet mo, at pinapabalik ito, minsan sa ibang number. Madalas walang pumasok na pera, o galing ito sa nakaw na account. May humihingi ng OTP na kararating lang “para ma-reverse”, na nagagamit para magbukas ng account o maglipat ng pera sa pangalan mo. Kapag tumanggi ka, nananakot silang ire-report ka sa pulis o ime-message ang mga kaibigan mo.",
+    "en": "A caller or texter says they accidentally sent money to your GCash or other e-wallet and asks you to send it back, sometimes to a different number. Often no money arrived, or it came from a stolen account. Some ask for the OTP you just received “to reverse it”, which lets them open accounts or move money in your name. If you refuse, they threaten to report you to the police or message your friends."
+  },
+  "steps": [
+    {
+      "text": {
+        "tl": "May estrangherong nagsasabing nagkamali sila ng padala sa e-wallet mo.",
+        "en": "A stranger says they sent money to your e-wallet by mistake."
+      }
+    },
+    {
+      "text": {
+        "tl": "Pinapabalik nila ito, madalas sa ibang number.",
+        "en": "They ask you to send it back, often to another number."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "tl": "May humihingi ng OTP na kararating lang sa iyo.",
+        "en": "Some ask for the OTP you just received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "tl": "Pinipilit ka nila at tinatakot ng pulis o pagpapahiya online.",
+        "en": "They pressure you with threats of police or shaming online."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "tl": "Sir/Ma’am, I wrongly sent P8,000 to your GCash, it was for a hospital bill. Please return it to this number right now, or I will report you to cybercrime.",
+        "en": "Sir/Ma’am, na-wrong send po ako ng P8,000 sa GCash nyo, pambayad ko sana sa ospital. Paki-balik po sa number na ito ngayon din, kundi irereport ko kayo sa cybercrime."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "tl": [
+      "nagkamali daw ng send sa gcash ko",
+      "nagkamali daw ng type ng number kaya sa akin napunta",
+      "pinapabalik ang pera na na-wrong send",
+      "hiningi ang otp para ma-reverse daw ang padala",
+      "tinakot ako na ire-report sa cybercrime kapag hindi ko ibinalik",
+      "wala namang pumasok na pera pero pinapabalik"
+    ],
+    "en": [
+      "someone says they sent money to my gcash by mistake",
+      "stranger says they sent money to my maya by accident",
+      "asked to return a wrong send to another number",
+      "stranger wants the otp to reverse a transfer",
+      "threatened with police if i do not return the money",
+      "no money arrived but they want it back"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "tl": [
+      "Estrangherong humihingi na ibalik ang pera.",
+      "Paghingi ng OTP.",
+      "Pananakot kapag hindi ka kumilos agad."
+    ],
+    "en": [
+      "A stranger asking you to return money.",
+      "A request for an OTP.",
+      "Threats if you don’t act now."
+    ]
+  },
+  "whatToDo": {
+    "tl": [
+      "Tingnan mismo ang transaction history sa app. Kadalasan walang pumasok.",
+      "Huwag kang magbalik ng pera nang sarili mo o magbigay ng OTP. Sabihan ang tao na mag-request sa e-wallet, at i-report ito sa e-wallet mo.",
+      "I-report ang pananakot at ang number sa PNP-ACG o CICC 1326."
+    ],
+    "en": [
+      "Check your transaction history in the app yourself. Most of the time nothing arrived.",
+      "Never send money back yourself or give an OTP. Tell the person to file a request with the e-wallet, and report it to your e-wallet.",
+      "Report threats and the number to the PNP-ACG or CICC 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/gcash",
+    "ph/your-bank",
+    "ph/pnp-acg",
+    "ph/cicc"
+  ],
+  "sources": [
+    {
+      "title": "New Scam? Watch Out for Scammers Who Claim They ‘Accidentally’ Sent Money to Your E-Wallet",
+      "publisher": "8List.ph",
+      "url": "https://www.8list.ph/?p=186459",
+      "date": "2024-04-12"
+    },
+    {
+      "title": "PNP, GCash crack down on spoofing scam, warns public of modus",
+      "publisher": "SunStar Bacolod",
+      "url": "https://www.sunstar.com.ph/bacolod/business/pnp-gcash-crack-down-on-spoofing-scam-warns-public-of-modus",
+      "date": "2023-09-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

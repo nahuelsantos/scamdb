@@ -2,6 +2,37 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Detection quality first: language scoping, real messages, freshness; the Philippines
+
+**Built:**
+- **Language scoping (#92):** each language block applies only for the check country's languages (read from its
+  entries), so short words no longer fire across languages (German "TAN" in Spanish "tan"). Every test-set number
+  unchanged or better.
+- **Real-message set (#93, #95):** 178 messages quoted verbatim in official warnings, fact-checks and genuine
+  notices (15 countries), each with its source: `node tools/eval.mjs --real`. Rules are judged on it, never fitted
+  to it one message at a time.
+- **Freshness (#94):** `tools/freshness.mjs` compares sources against today; a weekly "freshness" issue.
+- **Matcher 1.18.0 (#96):** code deliveries, back-of-card bank alerts and official warning posts are not scams;
+  penalty threats are urgency; refund bait asking for payment details is a money request.
+- **The Philippines:** 16 entries (English and Taglish), 8 contacts, 22 labelled and 8 real messages; Matcher
+  1.19.0 adds a Tagalog block and English call-script rules ("read the 6 digits", "don't end the call").
+
+**Measured:**
+
+| | Real messages | Agent-written set | Private set |
+|---|---|---|---|
+| Scams caught | 87.4% → 90.9% | 99.3% | 93.3% |
+| Scams called "scam" | 30.8% → 31.5% | 71.1% → 71.3% | 43.3% → 40% (one accidental hit removed) |
+| Genuine called "scam" | 20% → 8.6% | 1.8% → 1.4% | 10.7% |
+
+**Learned:**
+- The agent-written set flatters the matcher: on real messages it calls 31% of scams "scam", not 71%, and
+  genuine messages were wrongly called "scam" ten times as often. Measure on real text before trusting a number.
+- Many "language" patterns were really language-neutral (IBAN, bank names, the Cyrillic "линк"), and some
+  countries were only protected by another language's words. Scoping exposed both.
+- Most real scams still missed are short link-phishing texts with no other sign; keyword rules can't separate them
+  from genuine notices safely. That is the AI scorer's job.
+
 ## 2026-11-17: Central America wave 12 (Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panama, Belize)
 
 **Built:**

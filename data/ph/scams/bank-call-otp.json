@@ -1,0 +1,116 @@
+{
+  "id": "ph/bank-call-otp",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "en": "A caller from your “bank”, e-wallet or card company"
+  },
+  "name": {
+    "en": "Fake bank call: “we need to verify your account, read me the OTP”"
+  },
+  "how": {
+    "en": "Someone calls saying they are from your bank or e-wallet’s security team. They mention a suspicious transaction, a “system check” or a prize, and say they need to verify your account. They ask you to read out the OTP you just received, share your screen or install an app. With the code they log in, add their device and move your money. Banks say they never ask for OTPs or passwords over the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller says they are from your bank, e-wallet or card company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They report a suspicious transaction or a prize and say it must be fixed now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you to read out the OTP or PIN sent to your phone."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Some ask you to share your screen or install an app so they can “help”."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They keep you on the line until the transfer is done."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: Good afternoon, this is the fraud department of your bank. We blocked a suspicious online purchase on your card. To reverse it, I will send a code to your phone. Please read the six digits back to me so I can verify you are the cardholder."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank called and asked me to read the otp",
+      "caller from the bank said suspicious transaction",
+      "caller asked me to screen share to verify",
+      "caller said they will reverse a transaction if i give the six digit pin",
+      "bank security team asked for my one time pin",
+      "won a prize and caller wants my otp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "remote_access",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "en": [
+      "Any caller who asks for an OTP, PIN or password.",
+      "Being asked to share your screen or install an app.",
+      "Pressure to act before you hang up."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Call your bank yourself on the number on your card or in its app.",
+      "Never read out an OTP, even to someone who says they are from your bank.",
+      "If you shared a code, call your bank straight away to block your account and cards.",
+      "Report the call to the CICC hotline 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg",
+    "ph/bsp"
+  ],
+  "sources": [
+    {
+      "title": "Congratulations, you won PHP 1M! Please send me your OTP",
+      "publisher": "Metrobank",
+      "url": "https://www.metrobank.com.ph/articles/metrobank-urges-filipinos-to-remain-vigilant-against-vishing-scams",
+      "date": "2026-06-11"
+    },
+    {
+      "title": "5 bank scams to avoid during the holidays",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/money/companies/970434/5-scams-to-avoid-during-the-holidays/story/",
+      "date": "2025-12-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/bank-unusual-transaction-text",
+    "ph/national-id-screen-share"
+  ]
+}

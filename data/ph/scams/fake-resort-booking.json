@@ -1,0 +1,104 @@
+{
+  "id": "ph/fake-resort-booking",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "A resort, “accommodation” or travel page on Facebook or an online marketplace"
+  },
+  "name": {
+    "en": "Fake resort or vacation booking"
+  },
+  "how": {
+    "en": "A page advertises a beach resort, private pool or vacation package at a very low price, using photos and videos copied from real resorts. To “reserve the slot” you must pay a down payment or the full amount by e-wallet or bank transfer. When you arrive, the resort has no booking, or the page has disappeared. The PNP-ACG warns these cases rise before summer and holidays."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A page offers a resort or tour at a big discount."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It uses photos copied from a real resort."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "Only a few slots are left, so you must reserve now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "You pay a down payment by e-wallet or to a personal account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "SUMMER PROMO! Private pool villa good for 15 pax, 50% OFF, P4,999 overnight only. Few dates left! Send 50% downpayment via GCash to lock your date."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "resort booking page asked for downpayment then vanished",
+      "fake beach resort promo on facebook",
+      "reserved and sent money but the resort had no booking",
+      "private pool villa 50 percent off downpayment via gcash",
+      "cheap vacation package scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Discounts of half or more.",
+      "Payment to a personal e-wallet or bank account.",
+      "A new page with few real reviews."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Book through the resort’s official website or a known booking platform, or call the resort on a number you found yourself.",
+      "If you paid, contact your bank or e-wallet straight away and report the page to the PNP-ACG."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/pnp-acg",
+    "ph/cicc"
+  ],
+  "sources": [
+    {
+      "title": "Public warned vs online scams amid rising fuel, travel, product costs",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/980318/public-warned-vs-online-scams-amid-rising-fuel-travel-product-costs/story",
+      "date": "2026-03-17"
+    },
+    {
+      "title": "PNP-ACG warns against online vacation scams",
+      "publisher": "DZRH News",
+      "url": "https://www.dzrh.com.ph/post/pnp-acg-warns-against-online-vacation-scams",
+      "date": "2026-03-11"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/fake-online-seller"
+  ]
+}

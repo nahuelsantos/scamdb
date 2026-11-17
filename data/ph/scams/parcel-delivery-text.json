@@ -1,0 +1,108 @@
+{
+  "id": "ph/parcel-delivery-text",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“PHLPost”, “J&T Express”, “LBC” or another courier"
+  },
+  "name": {
+    "en": "Fake courier text: “update your address” or “pay the redelivery fee”"
+  },
+  "how": {
+    "en": "A text that uses the name of PHLPost, J&T, LBC or another courier says your parcel could not be delivered because your address or barangay is incomplete, or that a small redelivery fee is due. The link opens a fake tracking page that asks for your details and card number or OTP. PHLPost and J&T say these texts are not from them and that you should track parcels only in their official apps or websites."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text uses the name of PHLPost, J&T, LBC or another courier."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says delivery failed because of a missing or wrong address, or is on hold."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link to update your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The site asks for a small redelivery fee by card, or for your OTP."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "J&T Express: Your parcel is on hold, the barangay in your address is missing. Update within 24 hours to avoid return to sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "courier text saying my address is incomplete",
+      "phlpost text asking for a redelivery fee",
+      "j&t text to update my barangay with a link",
+      "parcel on hold text with a link",
+      "pay a small fee to redeliver my package",
+      "fake tracking site charged a redelivery fee"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A delivery text with a link.",
+      "A small fee or card details to “redeliver”.",
+      "A foreign number or odd sender for a local courier."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t tap the link. Track the parcel in the courier’s own app or website, or ask the seller.",
+      "If you entered card details, call your bank straight away.",
+      "Report the text to the CICC hotline 1326."
+    ]
+  },
+  "reportTo": [
+    "ph/your-bank",
+    "ph/cicc",
+    "ph/pnp-acg"
+  ],
+  "sources": [
+    {
+      "title": "PHLPost warns public against ‘smishing’ scams",
+      "publisher": "Daily Tribune",
+      "url": "https://tribune.net.ph/2026/08/23/phlpost-warns-public-against-smishing-scams",
+      "date": "2026-08-23"
+    },
+    {
+      "title": "J&T Express warns patrons of scam texts asking them to ‘update’ info",
+      "publisher": "Interaksyon (Philstar)",
+      "url": "https://interaksyon.philstar.com/trends-spotlights/2026/08/28/318204/jt-express-patrons-scam-texts-update-info/",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "PHLPost warns vs. scam messages using fake delivery notices",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/945635/phlpost-warns-vs-scam-messages-using-fake-delivery-notices/story",
+      "date": "2025-05-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

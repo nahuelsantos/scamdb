@@ -1,0 +1,108 @@
+{
+  "id": "ph/fake-payment-proof",
+  "country": "ph",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "A “buyer” on Facebook, Marketplace or chat"
+  },
+  "name": {
+    "en": "Fake proof of payment sent to online sellers"
+  },
+  "how": {
+    "en": "A buyer orders from your online shop and sends a screenshot of a bank or e-wallet transfer with a reference number and amount, sometimes made with AI. They book their own delivery rider and push you to hand over the goods right away. The money never arrives. Some repeat small orders first to build trust, then place big ones."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A buyer orders and sends a screenshot as proof of payment."
+      }
+    },
+    {
+      "text": {
+        "en": "The receipt shows a reference number and amount but the money is not in your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They rush you to release the item to their own rider."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "Orders grow bigger once you trust them."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Paid already via InstaPay, here is the screenshot with the ref no. My rider will pick up in 10 mins, please have the 4 tires ready, I need them today."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "buyer sent a fake payment screenshot",
+      "proof of payment but no money came in",
+      "buyer rushed me to give the item to his rider",
+      "fake bank transfer receipt from a buyer",
+      "ai generated gcash receipt from a customer",
+      "buyer sent a screenshot with a reference number but nothing came in"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A screenshot instead of money you can see in your account.",
+      "A rush to hand over the goods.",
+      "A buyer who books their own rider and changes the address."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check your bank or e-wallet app yourself. Release the item only when the money shows in your balance.",
+      "Don’t be rushed by a waiting rider.",
+      "If you were cheated, keep the chats and receipts and report to the PNP-ACG."
+    ]
+  },
+  "reportTo": [
+    "ph/pnp-acg",
+    "ph/cicc",
+    "ph/emergency"
+  ],
+  "sources": [
+    {
+      "title": "Fake proof of payments used in P1.4 million online selling scam",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/topstories/metro/1006083/fake-proof-of-payments-used-in-p1-4-million-online-selling-scam/story/",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "Public warned vs online scams amid rising fuel, travel, product costs",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/topstories/nation/980318/public-warned-vs-online-scams-amid-rising-fuel-travel-product-costs/story",
+      "date": "2026-03-17"
+    },
+    {
+      "title": "5 bank scams to avoid during the holidays",
+      "publisher": "GMA News",
+      "url": "https://www.gmanetwork.com/news/money/companies/970434/5-scams-to-avoid-during-the-holidays/story/",
+      "date": "2025-12-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ph/fake-online-seller"
+  ]
+}
