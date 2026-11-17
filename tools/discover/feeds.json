@@ -1,0 +1,162 @@
+{
+ "about": "Sources the discovery pipeline may read (docs/research/discovery-sources-2026-11-16.md). Only metadata is kept: link, title, date, publisher. Set allowed: false to stop a source; CI refuses a source without terms.",
+ "feeds": [
+  {
+   "id": "au-scamwatch",
+   "country": "au",
+   "type": "agency",
+   "url": "https://www.scamwatch.gov.au/rss/news-feed.xml",
+   "terms": "CC BY (scamwatch.gov.au disclaimer)",
+   "allowed": true
+  },
+  {
+   "id": "us-ic3",
+   "country": "us",
+   "type": "agency",
+   "url": "https://www.ic3.gov/PSA/RSS",
+   "terms": "US federal work",
+   "allowed": true
+  },
+  {
+   "id": "us-cfpb",
+   "country": "us",
+   "type": "agency",
+   "url": "https://www.consumerfinance.gov/about-us/blog/feed/",
+   "terms": "US federal work",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "us-cftc",
+   "country": "us",
+   "type": "agency",
+   "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+   "terms": "US federal work",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "gb-ncsc",
+   "country": "gb",
+   "type": "agency",
+   "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+   "terms": "Open Government Licence",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "gb-fca",
+   "country": "gb",
+   "type": "agency",
+   "url": "https://www.fca.org.uk/news/rss.xml",
+   "terms": "OGL for general information",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "ca-rcmp",
+   "country": "ca",
+   "type": "agency",
+   "url": "https://api.io.canada.ca/io-server/gc/news/en/v2?dept=royalcanadianmountedpolice&type=newsreleases&sort=publishedDate&orderBy=desc&pick=50&format=atom&atomtitle=RCMP",
+   "terms": "Open Government Licence – Canada",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "ca-competition",
+   "country": "ca",
+   "type": "agency",
+   "url": "https://api.io.canada.ca/io-server/gc/news/en/v2?dept=competitionbureaucanada&type=newsreleases&sort=publishedDate&orderBy=desc&pick=50&format=atom&atomtitle=CompetitionBureau",
+   "terms": "Open Government Licence – Canada",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "nz-police",
+   "country": "nz",
+   "type": "agency",
+   "url": "https://www.police.govt.nz/rss/news",
+   "terms": "links and our own summaries only",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "eu-europol",
+   "country": "eu",
+   "type": "agency",
+   "url": "https://www.europol.europa.eu/rss.xml",
+   "terms": "links only (private use for content)",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "fr-cybermalveillance",
+   "country": "fr",
+   "type": "agency",
+   "url": "https://www.cybermalveillance.gouv.fr/feed/atom-flux-alertes",
+   "terms": "Etalab Licence Ouverte 2.0",
+   "allowed": true
+  },
+  {
+   "id": "be-safeonweb",
+   "country": "be",
+   "type": "agency",
+   "url": "https://safeonweb.be/en/rss.xml",
+   "terms": "links only",
+   "allowed": true
+  },
+  {
+   "id": "nl-fraudehelpdesk",
+   "country": "nl",
+   "type": "agency",
+   "url": "https://www.fraudehelpdesk.nl/feed/",
+   "terms": "links only",
+   "allowed": true
+  },
+  {
+   "id": "pl-cert",
+   "country": "pl",
+   "type": "agency",
+   "url": "https://cert.pl/rss.xml",
+   "terms": "links only",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "fi-ncsc",
+   "country": "fi",
+   "type": "agency",
+   "url": "https://www.kyberturvallisuuskeskus.fi/feed/rss/fi",
+   "terms": "links only",
+   "allowed": true,
+   "filter": true
+  },
+  {
+   "id": "gb-bbc-tech",
+   "country": "gb",
+   "type": "news",
+   "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+   "terms": "BBC feeds allowed with attribution (\"BBC News\")",
+   "allowed": true,
+   "filter": true
+  }
+ ],
+ "gdelt": {
+  "about": "GDELT DOC 2.0 API: free, unrestricted use with citation (https://www.gdeltproject.org/). One request per 6 s.",
+  "query": "(scam OR fraud OR phishing OR estafa OR golpe OR fraude OR arnaque OR betrug OR truffa OR oszustwo)",
+  "countries": {
+   "ar": "AR",
+   "au": "AS",
+   "nz": "NZ",
+   "us": "US",
+   "ca": "CA",
+   "gb": "UK",
+   "mx": "MX",
+   "es": "SP",
+   "br": "BR",
+   "pt": "PO",
+   "ie": "EI",
+   "mt": "MT"
+  }
+ }
+}

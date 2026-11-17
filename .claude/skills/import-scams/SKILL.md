@@ -47,7 +47,12 @@ original language; every contact has a `source` URL and `checked` date (today).
 
 ## 4. Research
 
-Start with the country's entries in `importer/sources.json`, then reputable national news. Use material from the
+First read the latest open GitHub issue labelled `signals` ("Scam signals <week>", written by the daily Discover
+workflow, `tools/discover.mjs`). For this country, its "Possibly new" stories and "Official warnings" with "no
+catalogue match" are **leads**: scams worth checking first. A signal is never a source: open the official or
+reputable pages yourself, and cite only what you read. Ignore signals for other countries.
+
+Then go to the country's entries in `importer/sources.json`, then reputable national news. Use material from the
 **last 5 years**, newest first: prefer scams with sources from the last 2 years. List candidate scams with their
 sources. Drop a candidate when:
 
