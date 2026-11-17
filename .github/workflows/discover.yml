@@ -1,0 +1,48 @@
+# Daily scam discovery: reads the allowed sources (tools/discover/feeds.json: official feeds and GDELT news metadata),
+# keeps only links, dates and publishers, and classifies items against the catalogue. Results are kept as a run
+# artifact; on Mondays (or by hand) a "Scam signals <week>" issue lists leads for the weekly importer.
+name: Discover
+on:
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: Open the weekly signals issue now
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: discover
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Discover
+        run: node tools/discover.mjs --days 7 --out signals.json --md signals.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: signals-${{ github.run_id }}
+          path: |
+            signals.json
+            signals.md
+          retention-days: 90
+      - name: Weekly signals issue
+        if: github.event_name == 'schedule' || inputs.issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" != "1" ]; then echo "Not Monday"; exit 0; fi
+          week=$(node -e "console.log(require('./signals.json').week)")
+          gh label create signals --color 0E8A16 --description "Weekly scam signals for the importer" 2>/dev/null || true
+          gh issue create --title "Scam signals $week" --label signals --body-file signals.md

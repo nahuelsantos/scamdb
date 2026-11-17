@@ -2,6 +2,30 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: worldwide discovery pipeline (daily)
+
+**Built:**
+- **`tools/discover.mjs` and `lib/discover.js`** read only the sources allowed in `tools/discover/feeds.json`:
+  - 16 official feeds: Scamwatch, IC3, CFPB, CFTC, NCSC, FCA, RCMP, the Competition Bureau, NZ Police, Europol,
+    Cybermalveillance, Safeonweb, Fraudehelpdesk, CERT Polska, NCSC-FI, and BBC technology (filtered);
+  - GDELT news metadata for 12 countries.
+- **What it does:** keeps only links, dates and publishers, de-duplicates, classifies each item against the
+  catalogue (matcher plus brands), and builds signals: official warnings, possibly-new clusters (3 or more
+  publishers, grouped by word overlap) and per-entry counts.
+- **`.github/workflows/discover.yml`:** runs daily at 05:23 UTC and keeps results as a 90-day artifact. On Mondays
+  (or by hand) it opens a "Scam signals <week>" issue, with links, counts and our own labels, never copied titles.
+- **The import skill** now reads the latest signals issue first, as leads only. It still cites only sources it
+  reads itself.
+- **Tests:** feed parsing, URL clean-up, de-duplication, clustering, no copied titles, every source has terms,
+  and the forbidden sources can't be added.
+
+**Findings from the first run** (from this session, 30-day window):
+- All 16 feeds were reachable.
+- 7 official scam items, including Scamwatch's holiday-scam alert, two IC3 notices, a Europol investment-scam
+  takedown and Cybermalveillance's "faux votes WhatsApp" bulletin. That's a scam our future French catalogue needs.
+- Title-only classification is rough (the Europol takedown "looked like" a US election scam), so matches are hints.
+- GDELT was unreachable through this session's proxy. It runs in GitHub Actions.
+
 ## 2026-11-17: the normaliser speaks every European alphabet
 
 Part A of the Europe plan, before Polish, Greek, Cyrillic and Turkish:
