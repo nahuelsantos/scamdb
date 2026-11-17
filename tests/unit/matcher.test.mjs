@@ -5,7 +5,9 @@ import { loadRepo } from '../../lib/load.js';
 
 const entries = loadRepo(new URL('../../', import.meta.url).pathname).entries;
 const m = (t, o) => matchMessage(t, entries, o);
-const top = (t) => m(t).matches[0]?.id;
+// These examples are Argentine; a real check is always scoped to the user's country, so scope them to Argentina
+// (other Spanish-speaking countries have their own parcel, bank and WhatsApp entries that may score as high).
+const top = (t) => m(t, { country: 'ar' }).matches[0]?.id;
 
 // Catalogue matching (ported from eschamuyo matcher.test.mjs)
 test('delivery call asking for a code matches WhatsApp code theft', () =>
@@ -448,4 +450,22 @@ test('1.14.0: Azerbaijani signs (ə or e), and genuine Azerbaijani notices', () 
   assert.ok(!has('Tesdiq kodu: 518 362. Bu kodu hec kime demeyin.', 'asks_for_code'));
   assert.ok(!has('PIN kodu mobil tetbiqde ozunuz teyin edin.', 'asks_for_code'));
   assert.ok(!has('Hech bir odenis teleb olunmur.', 'money_request'));
+});
+test('1.15.0: Latin American Spanish signs (South America), and genuine notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('¿Me confirma el número que le acaba de llegar por mensaje?', 'asks_for_code'));
+  assert.ok(has('Cuando le salga el mensaje para autorizar, me avisa', 'asks_for_code'));
+  assert.ok(has('Le va a llegar un mensaje con un número, léamelo', 'asks_for_code'));
+  assert.ok(has('Hay otra persona que ya me quiere hacer el depósito, si usted me adelanta se la guardo', 'urgency'));
+  assert.ok(has('Su solicitud ya salió aprobada, sin garante', 'too_good_to_be_true'));
+  assert.ok(has('Habla el teniente Mamani de la FELCC', 'impersonation'));
+  assert.ok(has('Te escribo de este número porque el mío está sin saldo', 'new_number'));
+  assert.ok(has('¿Me podés girar a la cuenta de mi compañero?', 'money_request'));
+  assert.ok(!has('Equipo, la junta con el cliente se adelanta a mañana a las 8 am', 'money_request'));
+  assert.ok(!has('Davivienda: tu nueva tarjeta fue despachada. No te pediremos claves por este medio.', 'asks_for_code'));
+  assert.ok(!has('SRI recuerda: ingrese con su clave a SRI en línea escribiendo la dirección oficial.', 'asks_for_code'));
+  assert.ok(!has('BCP: Tu clave digital es 4821. Nunca la compartas con nadie, ni con personal del banco.', 'asks_for_code'));
+  assert.ok(!has('Te mando la ubicación y la clave del portón el día antes.', 'asks_for_code'));
+  assert.ok(!has('Recuerda activarla en el cajero con tu PIN.', 'asks_for_code'));
+  assert.ok(has('BPS: valida tu identidad con tu usuario y contraseña en [enlace]', 'asks_for_code'));
 });
