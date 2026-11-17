@@ -1,0 +1,81 @@
+{
+  "id": "mt/fake-police-email",
+  "country": "mt",
+  "lang": "en",
+  "status": "fading",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "en": "“Commissioner of Police” or “Malta Police Force”"
+  },
+  "name": {
+    "en": "Fake police email: “legal proceedings against you”"
+  },
+  "how": {
+    "en": "An email that seems to come from the Commissioner of Police accuses you of a crime, such as a cyberattack linked to illegal websites, and says legal proceedings have started against you. It demands a reply within 48 hours, or the case will go to a prosecutor who will ask for an arrest warrant. The police say it is fake and should be ignored."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email uses the police’s name and logo and accuses you of a crime."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It demands a reply within 48 hours or you will be arrested."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "OFFICIAL SUMMONS – Office of the Commissioner. Following an investigation by our cybercrime section, you are under legal proceedings for offences committed online. You have 48 hours to send your justifications by return email, failing which the file will be sent to the prosecutor for a warrant."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "email from the police commissioner",
+      "accused of a crime by email",
+      "legal proceedings email",
+      "48 hours to reply or arrest",
+      "police summons email",
+      "arrest warrant email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "The police don’t accuse people of crimes by email.",
+      "A 48-hour deadline and threats of arrest.",
+      "A reply address that isn’t an official government one."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t reply, click or pay. Delete the email.",
+      "Report it to the Police Cyber Crime Unit.",
+      "If you are worried, call the Police yourself on their official number."
+    ]
+  },
+  "reportTo": [
+    "mt/cyber-crime-unit",
+    "mt/police"
+  ],
+  "sources": [
+    {
+      "title": "Malta Police Force Issues Warning About Scam Email",
+      "publisher": "Malta Daily",
+      "url": "https://maltadaily.mt/malta-police-force-issues-warning-about-scam-email",
+      "date": "2024-09-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

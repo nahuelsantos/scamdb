@@ -1,0 +1,97 @@
+{
+  "id": "ie/revenue-refund-message",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "en": "“Revenue”, “ROS” or “myAccount”"
+  },
+  "name": {
+    "en": "Fake Revenue message: a tax refund, an urgent payment or an audit"
+  },
+  "how": {
+    "en": "An email, text or call that claims to be from Revenue says you are due a tax refund, must make an urgent payment, or are due an audit. It includes a link and asks for personal or banking details. Revenue does not correspond with customers through ordinary email or text, and will never ask for financial information during a phone call."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email, text or call says it is from Revenue."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you are due a refund, or must pay or face an audit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It gives a link to claim or pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "It asks for your bank or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Revenue Commissioners – Notice of Overpayment. Following a review of your PAYE record you are entitled to a refund of €348.60. To have the funds lodged to your account, confirm your bank details within 72 hours: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "revenue email tax refund",
+      "text from revenue saying im due a refund",
+      "revenue audit email with a link",
+      "revenue asked for my bank details",
+      "urgent payment to revenue text",
+      "ros myaccount email asking me to log in"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A refund or a bill from Revenue by email or text: Revenue doesn’t contact you this way.",
+      "A link to claim or pay.",
+      "A caller from “Revenue” asking for financial details."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click. Log in to myAccount or ROS yourself to see what you really owe or are owed.",
+      "If you entered your password, change it. If you gave card or bank details, call your bank.",
+      "Report it to the Gardaí and delete the message."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Revenue provides further warning on fraudulent communications",
+      "publisher": "Chartered Accountants Ireland",
+      "url": "https://www.charteredaccountants.ie/News/revenue-provides-further-warning-on-fraudulent-communications",
+      "date": "2026-09-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

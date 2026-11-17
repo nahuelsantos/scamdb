@@ -1,0 +1,101 @@
+{
+  "id": "mt/fake-mfsa-compensation",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "en": "“MFSA” or a law firm"
+  },
+  "name": {
+    "en": "Fake “MFSA compensation programme” for scam victims"
+  },
+  "how": {
+    "en": "Online ads claim the MFSA has started a compensation programme for Maltese residents who lost money to fake brokers, and invite you to click “learn more” to see if you are on the list. The MFSA has no such programme. People who reply are then asked for fees, personal details or access to their devices to “recover” their money, and lose even more."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad or message says the MFSA is compensating victims of fake brokers."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You click to check whether you are on the list of people owed money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "A “lawyer” or “recovery agent” says your money was found."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They ask for a fee to release it, then another."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Lost money to an online broker? The Malta Financial Services Authority has opened a refund scheme for residents. A list of eligible people has been compiled. Check if your name is included – learn more [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "MFSA compensation programme",
+      "refund for victims of fake brokers",
+      "check if I'm on the compensation list",
+      "recovery agent says money was found",
+      "fee to release recovered money",
+      "lawyer offering to get my money back"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone who contacts you because you were scammed before.",
+      "Paying a fee to get back money you lost.",
+      "The MFSA doesn’t run compensation programmes or ask for transfers or confidential information."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click, reply or pay. Stop all contact.",
+      "Report it to the MFSA and the Police.",
+      "Never give passwords or remote access to your phone or computer."
+    ]
+  },
+  "reportTo": [
+    "mt/mfsa",
+    "mt/police"
+  ],
+  "sources": [
+    {
+      "title": "MFSA sounds alarm over rise in financial scams, flags unauthorised entities operating in Malta",
+      "publisher": "Business Now",
+      "url": "https://businessnow.mt/mfsa-sounds-alarm-over-rise-in-financial-scams-flags-unauthorised-entities-operating-in-malta/",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "mt/fake-investment-platform"
+  ]
+}

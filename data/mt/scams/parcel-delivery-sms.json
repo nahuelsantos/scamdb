@@ -1,0 +1,89 @@
+{
+  "id": "mt/parcel-delivery-sms",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“MaltaPost”, “UPS” or another courier"
+  },
+  "name": {
+    "en": "Fake parcel delivery text"
+  },
+  "how": {
+    "en": "A text says a parcel is waiting and asks you to confirm your details or pay a small fee through a link. The link goes to a fake courier page that collects your personal and card details. Real couriers don’t ask you to confirm details through random links."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from a courier says your parcel can’t be delivered."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It asks you to confirm your details through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for a small fee and your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "UPS: Your package is on hold at our Malta depot due to an incomplete address. Update your details and pay the €1.99 handling charge today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "parcel text with a link",
+      "confirm my address for a parcel",
+      "small fee to deliver the parcel",
+      "fake MaltaPost message",
+      "UPS text about my package",
+      "package on hold at the depot"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A text about a parcel you weren’t expecting.",
+      "A delivery fee paid through a link.",
+      "A web address that is not the courier’s real one."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t open the link. Check tracking on the courier’s own website or app.",
+      "If you entered card details, call your bank.",
+      "Report the text to the Police Cyber Crime Unit."
+    ]
+  },
+  "reportTo": [
+    "mt/cyber-crime-unit",
+    "mt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Police issue warning on text message parcel scam",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/police-issue-warning-on-text-message-parcel-scam/",
+      "date": "2025-01-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,121 @@
+{
+  "id": "pt/task-job-scam",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "pt": "Um “recrutador” ou uma “empresa” por WhatsApp ou Telegram",
+    "en": "A “recruiter” or “company” on WhatsApp or Telegram"
+  },
+  "name": {
+    "pt": "Falsas ofertas de emprego: tarefas online pagas e “likes”",
+    "en": "Fake jobs: paid online tasks and “likes”"
+  },
+  "how": {
+    "pt": "Uma mensagem por SMS, WhatsApp ou Telegram oferece trabalho fácil a partir de casa: avaliar hotéis, dar “gostos” em vídeos ou seguir contas, sem experiência. Nos primeiros dias recebe pequenos pagamentos para ganhar confiança. Depois tem de “depositar” dinheiro para desbloquear tarefas maiores ou levantar o que ganhou, e nunca recupera nada. Por vezes pedem a sua conta bancária para passar dinheiro de terceiros, o que o transforma em “conta-mula”.",
+    "en": "A text, WhatsApp or Telegram message offers easy work from home: rating hotels, liking videos or following accounts, no experience needed. In the first days you get small payments to build trust. Then you must “deposit” money to unlock bigger tasks or withdraw what you earned, and you never get anything back. Sometimes they ask for your bank account to pass other people’s money through it, which makes you a “money mule”."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Oferta de trabalho fácil por mensagem, de um número desconhecido.",
+        "en": "An easy job offer by message, from an unknown number."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Recebe pequenos pagamentos pelas primeiras tarefas.",
+        "en": "You get small payments for the first tasks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Para continuar ou levantar, tem de depositar dinheiro.",
+        "en": "To carry on or withdraw, you must deposit money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Olá, recebemos o seu currículo 😊 Temos uma vaga a tempo parcial: só precisa de dar gosto a vídeos no telemóvel, 20 a 30 minutos por dia, e ganha entre 60€ e 200€ por dia. Sem experiência. Quer saber mais? Fale com a nossa coordenadora no Telegram.",
+        "en": "Hello, we’ve received your CV 😊 We have a part-time vacancy: you just need to like videos on your phone, 20 to 30 minutes a day, and earn between €60 and €200 a day. No experience needed. Want to know more? Talk to our coordinator on Telegram."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "oferta de emprego no whatsapp para dar gostos",
+      "trabalho a partir de casa a avaliar hotéis",
+      "recebemos o seu currículo mensagem",
+      "tenho de depositar para levantar o dinheiro",
+      "tarefas online pagas telegram",
+      "job scam burla emprego"
+    ],
+    "en": [
+      "job offer on whatsapp to like videos",
+      "work from home rating hotels",
+      "we received your cv message",
+      "deposit money to withdraw earnings",
+      "paid online tasks telegram"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "new_number"
+  ],
+  "redFlags": {
+    "pt": [
+      "Muito dinheiro por pouco trabalho e sem experiência.",
+      "Pagar para trabalhar ou para levantar o que ganhou.",
+      "Pedidos para receber e passar dinheiro de outras pessoas."
+    ],
+    "en": [
+      "A lot of money for little work and no experience.",
+      "Paying to work or to withdraw your earnings.",
+      "Requests to receive and pass on other people’s money."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Pare e não deposite mais dinheiro.",
+      "Nunca empreste a sua conta bancária nem o MB WAY a desconhecidos.",
+      "Avise o banco e apresente queixa."
+    ],
+    "en": [
+      "Stop and don’t deposit any more money.",
+      "Never lend your bank account or MB WAY to strangers.",
+      "Tell your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/queixa-eletronica",
+    "pt/your-bank",
+    "pt/psp-gnr"
+  ],
+  "sources": [
+    {
+      "title": "Polícia Judiciária alerta para a burla 'Job Scam'",
+      "publisher": "DNotícias",
+      "url": "https://www.dnoticias.pt/2026/4/11/487944-policia-judiciaria-alerta-para-a-burla-job-scam/",
+      "date": "2026-04-11"
+    },
+    {
+      "title": "PGR alerta para praga das burlas com oferta de trabalho como isco",
+      "publisher": "Ordem dos Advogados (revista de imprensa)",
+      "url": "https://portal.oa.pt/comunicacao/imprensa/2025/8/4/pgr-alerta-para-praga-das-burlas-com-oferta-de-trabalho-como-isco/",
+      "date": "2025-08-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

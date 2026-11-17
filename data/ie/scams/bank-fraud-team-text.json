@@ -1,0 +1,104 @@
+{
+  "id": "ie/bank-fraud-team-text",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "en": "“Bank of Ireland”, “AIB”, “PTSB” or another bank’s “fraud team”"
+  },
+  "name": {
+    "en": "Fake bank text about a suspicious payment, then a “fraud team” call to move your money"
+  },
+  "how": {
+    "en": "A text that looks like it is from your bank asks about a suspicious or declined card transaction and tells you to call a number. It can even land in the same thread as your bank’s real texts. The person who answers sounds calm and professional as part of the “fraud team”, but quickly creates urgency: you are told to make a payment, give away banking details, or move your money to a “safe account”. That account belongs to the fraudster."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text “from your bank” asks whether you made a payment you don’t recognise."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It tells you to ring a number in the message, or a “fraud team” calls you."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The caller says your money is at risk and you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "You are told to move your savings to a “safe account” or approve a payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "PTSB ALERT: Was this you? A card payment of €689.00 to ZX MEDIA LTD is pending. If you did not authorise it, ring our Fraud Prevention Unit today on [number] quoting ref [number]."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "text from my bank about a payment i didnt make",
+      "rang the number in the bank text",
+      "bank fraud team told me to move my money",
+      "safe account to protect my savings",
+      "declined transaction text asking me to call",
+      "caller from aib security said my account is at risk",
+      "told to transfer my money to a new account by the bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A phone number to ring inside a text about a suspicious payment.",
+      "Being told to move your money to keep it safe: your bank will never ask you to do this.",
+      "Pressure to act before you can check."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t call any number in the text. Ring your bank on the number on the back of your card or on its official website.",
+      "Never move money to a “safe account” or approve a payment because a caller tells you to.",
+      "If you paid or shared details, call your bank straight away and report it to your local Garda station."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/bank-of-ireland-fraud",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Fraud alert: Significant spike in cases of bank impersonation cases",
+      "publisher": "Bank of Ireland",
+      "url": "https://www.bankofireland.com/about-bank-of-ireland/press-releases/2026/fraud-alert-significant-spike-in-cases-of-bank-impersonation-cases/",
+      "date": "2026-06-04"
+    },
+    {
+      "title": "Protect your money from bank impersonators",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2026/01/22/fraudsmart-alert-protect-your-money-from-bank-impersonators/",
+      "date": "2026-01-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

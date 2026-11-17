@@ -1,0 +1,104 @@
+{
+  "id": "ie/ai-state-investment-ad",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "en": "Fake videos of Irish politicians, businesspeople or celebrities"
+  },
+  "name": {
+    "en": "AI ads for a fake “state-backed” investment scheme"
+  },
+  "how": {
+    "en": "Ads online and on social media show AI-generated images or videos of well-known Irish politicians, businesspeople or celebrities promoting a “state-backed” savings or investment scheme with guaranteed returns and limited places. Clicking “learn more” asks for your contact details; then a so-called financial adviser rings, often using the names of real banks and investment firms, and persuades you to send money. It mostly targets people in their 50s and over looking to top up a pension."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad shows a famous Irish face backing a “state-backed” or government scheme."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It promises guaranteed monthly returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It says places are limited and closing soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "An “adviser” rings and asks you to invest."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Sponsored · The Minister confirms it on air: the new Government-backed savings plan pays Irish residents a guaranteed income every month from a deposit of just €250. Only a limited number of places this week. Register here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "ad with a politician promoting a state backed investment",
+      "government savings scheme ad on facebook",
+      "celebrity video saying guaranteed income",
+      "registered for an investment scheme and an adviser rang me",
+      "ai video of a famous person recommending investing",
+      "state backed scheme places limited"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A famous person or politician in an ad recommending an investment.",
+      "Guaranteed returns with no risk.",
+      "“Places are limited” or “closing soon”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click or fill in the form. Real state schemes are announced on official government websites, not in ads.",
+      "Check that any firm is authorised on the Central Bank registers before you invest.",
+      "If you gave your details or paid, call your bank and report it to the Gardaí."
+    ]
+  },
+  "reportTo": [
+    "ie/central-bank",
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Surge in AI-generated online adverts promoting bogus state-backed investment schemes, as consumers warned to be on alert",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2026/05/28/investment-scams-campaign-2026/",
+      "date": "2026-05-28"
+    },
+    {
+      "title": "Over 50s warned to be on high alert for investment scams following marked increase in adverts featuring AI-generated celebrity endorsements",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2025/11/10/investment-scams-campaign/",
+      "date": "2025-11-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

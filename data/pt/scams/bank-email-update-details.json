@@ -1,0 +1,111 @@
+{
+  "id": "pt/bank-email-update-details",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "pt": "Um banco, por exemplo o Banco CTT",
+    "en": "A bank, for example Banco CTT"
+  },
+  "name": {
+    "pt": "Email do banco: “atualize os seus dados ou a conta será bloqueada”",
+    "en": "Bank email: “update your details or your account will be blocked”"
+  },
+  "how": {
+    "pt": "Recebe um email com o logótipo do banco a dizer que, “por razões de segurança”, tem de atualizar os seus dados de imediato, senão perde o acesso à conta. O botão leva a uma página igual à do banco que pede o número de adesão, o código de acesso e os dados do cartão. Tudo o que escrever vai para os burlões.",
+    "en": "You get an email with the bank’s logo saying that, “for security reasons”, you must update your details immediately or lose access to your account. The button leads to a page that looks like the bank’s and asks for your user number, access code and card details. Everything you type goes to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Email com o logótipo do banco: a conta vai ser bloqueada.",
+        "en": "An email with the bank’s logo: your account will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Tem de “atualizar os dados” já, num link.",
+        "en": "You must “update your details” now, through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "A página falsa pede códigos de acesso e dados do cartão.",
+        "en": "The fake page asks for access codes and card details."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Caro cliente, por motivos de segurança, a sua conta será suspensa se não atualizar os seus dados nas próximas 24 horas. Clique em “Atualizar dados” para manter o acesso: [link]",
+        "en": "Dear customer, for security reasons your account will be suspended if you don’t update your details within the next 24 hours. Click “Update details” to keep access: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "email do banco para atualizar dados",
+      "conta vai ser bloqueada se não atualizar",
+      "phishing banco ctt",
+      "atualizar dados por motivos de segurança",
+      "pediram o código de acesso e o cartão",
+      "email falso do banco"
+    ],
+    "en": [
+      "bank email asking to update my details",
+      "account will be blocked unless i update",
+      "banco ctt phishing",
+      "fake bank login page",
+      "update details for security reasons"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Ameaça de bloqueio da conta se não agir já.",
+      "Um link para “atualizar dados” ou entrar no homebanking."
+    ],
+    "en": [
+      "A threat to block your account unless you act now.",
+      "A link to “update details” or log in to online banking."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não carregue no link; abra a app ou escreva você o endereço do banco.",
+      "Se já escreveu dados, ligue ao banco para bloquear o acesso e o cartão.",
+      "Reencaminhe o email ao banco e denuncie-o."
+    ],
+    "en": [
+      "Don’t click the link; open the app or type the bank’s address yourself.",
+      "If you already entered details, call the bank to block access and the card.",
+      "Forward the email to your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/your-bank",
+    "pt/mp-cibercrime"
+  ],
+  "sources": [
+    {
+      "title": "Alerta Cibercrime: 'Phishing' – Banco CTT",
+      "publisher": "Ministério Público, Gabinete Cibercrime",
+      "url": "https://cibercrime.ministeriopublico.pt/sites/default/files/editor-files/2026.10.08-alerta-phishing-banco-ctt.pdf",
+      "date": "2026-10-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

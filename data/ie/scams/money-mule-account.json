@@ -1,0 +1,96 @@
+{
+  "id": "ie/money-mule-account",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A “recruiter”, an online “friend” or a job ad"
+  },
+  "name": {
+    "en": "Money mule: paid to let money pass through your bank account"
+  },
+  "how": {
+    "en": "Someone on social media, in a fake job ad or an online friend offers easy money if you let funds be paid into your bank account and send them on. It is laundering the proceeds of crime. Most mule accounts belong to young people, some as young as 14. Even if you didn’t know where the money came from, you can be prosecuted, and your account will be closed."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone offers easy money to use your bank account."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "Money arrives and you are told to transfer it on, keeping a cut."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "You are told not to tell your bank or family."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hey 👋 want to make €500 this week with zero effort? You just let a payment land in your Revolut and send it on to my mate, you keep €500. Loads of lads from college are doing it. Keep it between us tho"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "paid to use my bank account",
+      "receive money and send it on",
+      "easy money for using my revolut",
+      "someone wants to transfer money through my account",
+      "keep a cut of the money",
+      "job ad to process payments through my account"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "en": [
+      "Being paid to let money pass through your account.",
+      "An offer of easy money on social media.",
+      "Being asked to keep it secret."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Say no. Never let anyone else use your account, card, PIN or online banking.",
+      "If money has already gone through your account, tell your bank straight away.",
+      "Report it to the Gardaí."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Over €7 million laundered through money mule accounts in the 12 months to June 2026",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2026/10/21/money-mules-campaign-2026/",
+      "date": "2026-10-21"
+    },
+    {
+      "title": "An Garda Síochána issues student fraud warning ahead of CAO offers",
+      "publisher": "An Garda Síochána",
+      "url": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2026/august/25-08-2026-an-garda-siochana-issues-student-fraud-warning-ahead-of-cao-offers-25th-august-2026.html",
+      "date": "2026-08-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

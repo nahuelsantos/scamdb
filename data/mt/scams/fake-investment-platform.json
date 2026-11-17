@@ -1,0 +1,108 @@
+{
+  "id": "mt/fake-investment-platform",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "en": "An “account manager” or a new online friend"
+  },
+  "name": {
+    "en": "Fake investment platform with a personal “account manager”"
+  },
+  "how": {
+    "en": "It often starts with a friend request on social media, a job offer, an ad or a cold call. A friendly “account manager” gets you to open an account on a trading or crypto platform that shows growing profits. You are pushed to deposit more and more, sometimes through Revolut or crypto, but the money is gone. Fake investments were the biggest scam by value that Malta’s police investigated in the first half of 2025."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A stranger adds you on social media, offers a job or calls about an investment."
+      }
+    },
+    {
+      "text": {
+        "en": "They show you a platform where your money seems to grow fast."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They urge you to deposit more before the chance is gone."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "You send more money by transfer or crypto, and you can’t get it back."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi dear, I saw your profile and I think you work hard like me 😊 My mentor taught me trading in gold, I made €3,200 this month starting from €250. Let me show you the platform, the window closes Friday."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "account manager on a trading platform",
+      "investment friend from Facebook",
+      "platform showing big profits",
+      "asked me to deposit more",
+      "can't withdraw my money",
+      "crypto trading mentor"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Big, fast or guaranteed profits.",
+      "A stranger online who turns the conversation to investing.",
+      "Being asked to pay more before you can withdraw.",
+      "A firm you can’t find on the MFSA register."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Stop paying. Check the firm on the MFSA Financial Services Register.",
+      "Tell your bank and report it to the Police.",
+      "Beware of anyone who later offers to recover your money for a fee."
+    ]
+  },
+  "reportTo": [
+    "mt/police",
+    "mt/mfsa",
+    "mt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Police investigated €13 million worth of scams in first 6 months this year",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/police-investigated-e13-million-worth-of-scams-in-first-6-months-this-year/",
+      "date": "2025-09-30"
+    },
+    {
+      "title": "MFSA issues consumer warnings against unauthorised firms misusing Maltese company details",
+      "publisher": "Business Now",
+      "url": "https://businessnow.mt/mfsa-issues-consumer-warnings-against-unauthorised-firms-misusing-maltese-company-details/",
+      "date": "2025-08-19"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "mt/fake-mfsa-compensation",
+    "mt/deepfake-pm-crypto-ad"
+  ]
+}

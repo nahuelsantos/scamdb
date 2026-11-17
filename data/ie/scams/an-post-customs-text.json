@@ -1,0 +1,102 @@
+{
+  "id": "ie/an-post-customs-text",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“An Post”, a courier or “Revenue”"
+  },
+  "name": {
+    "en": "Fake An Post text asking you to pay a customs charge"
+  },
+  "how": {
+    "en": "Since 1 July 2026, parcels from outside the EU worth under €150 carry a €3 customs charge per item, and scammers use this. A text that looks like it is from An Post, a delivery company or Revenue says a parcel is held until you pay a small customs or delivery fee through a link. The page steals your card details. An Post never sends a payment link by text, and customs charges are never paid by consumers directly to Revenue."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from “An Post” or a courier says your parcel is held at customs."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It asks for a small customs or delivery fee."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "You must pay through a link in the text."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "It warns the parcel will be returned if you don’t pay soon."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "AnPost: Your item from outside the EU is held at the Athlone hub pending a customs charge of €3.00 + VAT. Settle within 48 hours to release your delivery: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "an post text about customs charge",
+      "pay customs fee for my parcel",
+      "parcel held until i pay a small fee",
+      "text with a link to pay customs",
+      "revenue customs charge text",
+      "delivery fee text with a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A link in a text asking you to pay customs: An Post never sends payment links by text.",
+      "Any request for payment that claims to be from Revenue.",
+      "A small fee that asks for your full card details."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click. Check your parcel on An Post’s official website or app, typed in yourself.",
+      "If you paid through the link, call your bank straight away: your card details are now with the scammers.",
+      "Report it to the Gardaí. The CCPC can advise on customs charges."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/ccpc",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Bank of Ireland warns about expected scams on new customs charges",
+      "publisher": "Bank of Ireland",
+      "url": "https://www.bankofireland.com/about-bank-of-ireland/press-releases/2026/bank-of-ireland-warns-about-expected-scams-on-new-customs-charges/",
+      "date": "2026-06-29"
+    },
+    {
+      "title": "Watchdog warns of spike in scam text messages, as new customs charges to take effect on 1 July",
+      "publisher": "The Journal",
+      "url": "https://www.thejournal.ie/watchdog-warns-of-spike-in-scam-text-messages-as-new-customs-charges-to-take-effect-on-1-july-7076307-Jun2026/",
+      "date": "2026-06-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

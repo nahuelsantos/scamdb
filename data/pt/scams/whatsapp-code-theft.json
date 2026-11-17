@@ -1,0 +1,119 @@
+{
+  "id": "pt/whatsapp-code-theft",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "pt": "Um contacto seu no WhatsApp (cuja conta já foi roubada)",
+    "en": "One of your WhatsApp contacts (whose account was already stolen)"
+  },
+  "name": {
+    "pt": "“Vota no meu filho” ou “mandei-te um código por engano”: roubam-lhe o WhatsApp",
+    "en": "“Vote for my son” or “I sent you a code by mistake”: they steal your WhatsApp"
+  },
+  "how": {
+    "pt": "Um contacto conhecido pede-lhe que vote no filho num concurso, ou diz que lhe enviou por engano um código de seis dígitos e pede que lho reencaminhe. Esse código é a chave de registo da sua conta: quem o tiver ativa o seu número noutro telemóvel. Depois os burlões escrevem aos seus contactos em seu nome, a pedir dinheiro ou a repetir o mesmo truque.",
+    "en": "A contact you know asks you to vote for their son in a contest, or says they sent you a six-digit code by mistake and asks you to forward it. That code is the registration key for your account: whoever has it activates your number on another phone. The scammers then write to your contacts in your name, asking for money or repeating the same trick."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Um contacto pede um voto num concurso ou diz que lhe mandou um código por engano.",
+        "en": "A contact asks for a vote in a contest or says they sent you a code by mistake."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Chega-lhe por SMS um código de seis dígitos do WhatsApp.",
+        "en": "A six-digit WhatsApp code arrives by text."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pt": "Pedem que lhes envie o código.",
+        "en": "They ask you to send them the code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Olá! Desculpa incomodar, enviei-te um código de 6 números sem querer, era para outra pessoa. Podes reencaminhar-mo? É urgente 🙏",
+        "en": "Hi! Sorry to bother you, I sent you a 6-digit code by accident, it was for someone else. Can you forward it to me? It’s urgent 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "pediram-me o código de seis dígitos do whatsapp",
+      "mandei-te um código por engano",
+      "vota no meu filho whatsapp",
+      "roubaram-me a conta do whatsapp",
+      "reencaminhar o código que recebeste por sms",
+      "whatsapp roubado código",
+      "pedem votos num concurso e um código de 6 números"
+    ],
+    "en": [
+      "asked for my whatsapp six digit code",
+      "i sent you a code by mistake",
+      "vote for my son whatsapp",
+      "my whatsapp account was stolen",
+      "forward the code you got by text",
+      "asked to vote in a contest and send a 6 digit code"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "pt": [
+      "Alguém lhe pede um código que chegou por SMS, mesmo que seja um amigo.",
+      "Pedidos de votos com links ou códigos."
+    ],
+    "en": [
+      "Someone asks you for a code that came by text, even a friend.",
+      "Requests to vote that come with links or codes."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Nunca partilhe o código de verificação do WhatsApp.",
+      "Ative a verificação em dois passos nas definições do WhatsApp.",
+      "Se perdeu a conta, volte a registar o seu número, avise os seus contactos e apresente queixa."
+    ],
+    "en": [
+      "Never share your WhatsApp verification code.",
+      "Turn on two-step verification in WhatsApp settings.",
+      "If you lost the account, register your number again, warn your contacts and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/queixa-eletronica",
+    "pt/psp-gnr"
+  ],
+  "sources": [
+    {
+      "title": "WhatsApp: como se defender da fraude “Vote no meu filho”",
+      "publisher": "DECO PROteste",
+      "url": "https://www.deco.proteste.pt/tecnologia/ciberseguranca/noticias/whatsapp-como-se-defender-da-fraude-vote-no-meu-filho",
+      "date": "2025-11-10"
+    },
+    {
+      "title": "Conta de WhatsApp roubada: como recuperar e avisar contactos",
+      "publisher": "e-konomista",
+      "url": "https://www.e-konomista.pt/conta-whatsapp-roubada/",
+      "date": "2026-10-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

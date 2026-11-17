@@ -1,0 +1,114 @@
+{
+  "id": "pt/hi-mum-new-number",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "pt": "Um filho, uma filha ou outro familiar “com número novo”",
+    "en": "A son, daughter or other relative “with a new number”"
+  },
+  "name": {
+    "pt": "“Olá mãe, olá pai”: o filho com número novo que precisa de dinheiro",
+    "en": "“Hi Mum, hi Dad”: the child with a new number who needs money"
+  },
+  "how": {
+    "pt": "Chega uma mensagem de um número desconhecido: “Olá mãe!” ou “Olá pai!”. O “filho” diz que o telemóvel se estragou e pede que guarde o novo número. Pouco depois, pede dinheiro para um pagamento urgente, por transferência para um IBAN de outra pessoa ou por MB WAY, e diz que não pode falar. Há versões com outros familiares e com vozes imitadas por inteligência artificial.",
+    "en": "A message arrives from an unknown number: “Hi Mum!” or “Hi Dad!”. The “child” says their phone broke and asks you to save the new number. Soon after, they ask for money for an urgent payment, by transfer to someone else’s IBAN or by MB WAY, and say they can’t talk. There are versions with other relatives and with voices imitated by artificial intelligence."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Mensagem de um número novo: “Olá mãe, este é o meu número novo”.",
+        "en": "A message from a new number: “Hi Mum, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "pt": "Diz que não pode falar ao telefone.",
+        "en": "They say they can’t talk on the phone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Pede dinheiro com urgência para uma conta que não é a dele.",
+        "en": "They urgently ask for money to an account that isn’t theirs."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Olá mãe, o meu telemóvel caiu na sanita e deixou de dar 😩 este é o meu número novo, grava aí. Preciso de um favor, tenho de pagar hoje uma fatura e a app do banco não abre neste telemóvel. Podes transferir 1.380€ para este IBAN? Amanhã devolvo-te.",
+        "en": "Hi Mum, my phone fell in the toilet and stopped working 😩 this is my new number, save it. I need a favour, I have to pay a bill today and the bank app won’t open on this phone. Can you transfer €1,380 to this IBAN? I’ll pay you back tomorrow."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "olá mãe este é o meu número novo",
+      "olá pai mudei de número",
+      "filho com número novo pede dinheiro",
+      "o telemóvel caiu e tenho número novo",
+      "pede transferência para um iban que não é dele",
+      "burla olá mãe whatsapp"
+    ],
+    "en": [
+      "hi mum this is my new number",
+      "hi dad i changed my number",
+      "child with a new number asks for money",
+      "my phone broke new number",
+      "asks to pay someone else s iban"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "pt": [
+      "Um familiar escreve de um número novo e não pode falar.",
+      "Pagamento urgente para a conta de outra pessoa."
+    ],
+    "en": [
+      "A relative writes from a new number and can’t talk.",
+      "An urgent payment to someone else’s account."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Ligue para o número antigo do seu familiar antes de fazer qualquer coisa.",
+      "Faça uma pergunta que só ele saiba responder, ou combinem uma palavra-código em família.",
+      "Se transferiu, ligue ao banco e apresente queixa."
+    ],
+    "en": [
+      "Call your relative’s old number before doing anything.",
+      "Ask something only they would know, or agree a family code word.",
+      "If you transferred money, call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/your-bank",
+    "pt/queixa-eletronica",
+    "pt/psp-gnr"
+  ],
+  "sources": [
+    {
+      "title": "“Olá mãe, olá pai”: como proteger-se deste tipo de burlas",
+      "publisher": "DECO PROteste",
+      "url": "https://www.deco.proteste.pt/tecnologia/ciberseguranca/noticias/ola-mae-ola-pai-defender-burlas",
+      "date": "2025-04-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

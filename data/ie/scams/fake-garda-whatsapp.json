@@ -1,0 +1,96 @@
+{
+  "id": "ie/fake-garda-whatsapp",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "en": "“An Garda Síochána” (the Garda crest as profile photo)"
+  },
+  "name": {
+    "en": "Fake Garda calling on WhatsApp for your bank details"
+  },
+  "how": {
+    "en": "You get a WhatsApp call or message from someone whose profile photo is the Garda crest. They say they are a Garda and ask for personal information such as your bank account details. Gardaí will never contact you out of the blue by phone and ask for your bank details."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A WhatsApp call or message comes from a profile with the Garda crest."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say it is urgent, for example about an investigation."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for your bank account or personal details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is Garda Sergeant Byrne. Your name has come up in a fraud investigation and we need to check your account is not involved. Reply today with your bank, IBAN and date of birth so we can clear you."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "garda contacted me on whatsapp",
+      "whatsapp call with garda crest profile picture",
+      "gardai asked for my bank details",
+      "fake garda on whatsapp",
+      "guard rang asking for my iban",
+      "garda investigation message asking for personal details",
+      "garda said my bank account is linked to a fraud case"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "The Garda crest on a WhatsApp profile.",
+      "A “Garda” asking for your bank details: Gardaí never do this out of the blue.",
+      "A call from an unknown number."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up or don’t reply. Don’t answer calls from unknown numbers.",
+      "If you are unsure, ring your local Garda station yourself.",
+      "If you shared bank details, call your bank and report it at your local Garda station."
+    ]
+  },
+  "reportTo": [
+    "ie/garda-station",
+    "ie/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Public warned about callers posing as Gardai in latest Whatsapp scam",
+      "publisher": "Connacht Tribune",
+      "url": "https://www.con-telegraph.ie/2026/01/20/whatsapp-scam-alert/",
+      "date": "2026-01-20"
+    },
+    {
+      "title": "Gardaí Issue Scam Alert For WhatsApp Calls Looking To Gather Personal Information",
+      "publisher": "Kfm Radio",
+      "url": "https://www.kfmradio.com/news/localnews/gardai-issue-scam-alert-for-whatsapp-calls-looking-to-gather-personal-information",
+      "date": "2026-01-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

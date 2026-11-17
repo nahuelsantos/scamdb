@@ -1,0 +1,120 @@
+{
+  "id": "pt/financas-fake-tax-debt",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "pt": "Autoridade Tributária e Aduaneira (“Finanças”)",
+    "en": "Tax and Customs Authority (“Finanças”)"
+  },
+  "name": {
+    "pt": "Falsa dívida às Finanças: “pague para evitar a penhora”",
+    "en": "Fake tax debt: “pay to avoid seizure”"
+  },
+  "how": {
+    "pt": "Chega uma mensagem por WhatsApp, SMS ou email em nome da Autoridade Tributária a dizer que tem uma dívida fiscal por pagar e que deve regularizá-la “para evitar penhora”. Um link mostra os “detalhes” e leva a uma página de pagamento ou que pede dados pessoais e bancários. Outras mensagens falsas prometem um reembolso do IRS. As Finanças não pedem pagamentos nem dados por links em mensagens.",
+    "en": "A WhatsApp message, text or email in the name of the Tax Authority says you have an unpaid tax debt and must settle it “to avoid seizure”. A link shows the “details” and leads to a payment page or one that asks for personal and bank details. Other fake messages promise an income tax (IRS) refund. The tax authority doesn’t ask for payments or details through links in messages."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Mensagem das “Finanças” sobre uma dívida fiscal.",
+        "en": "A message from “Finanças” about a tax debt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Ameaça de penhora se não pagar depressa.",
+        "en": "A threat of seizure if you don’t pay quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Link para ver os detalhes e pagar.",
+        "en": "A link to see the details and pay."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "AT: Consta no sistema um valor em divida referente ao IRS. Regularize ate amanha para evitar processo de penhora. Consulte os detalhes: [link]",
+        "en": "AT: Our system shows an outstanding amount relating to income tax. Settle it by tomorrow to avoid seizure proceedings. See the details: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "mensagem das finanças com dívida",
+      "pagar para evitar penhora",
+      "sms falso autoridade tributária",
+      "dívida fiscal link para pagar",
+      "reembolso do irs por mensagem",
+      "whatsapp das finanças"
+    ],
+    "en": [
+      "fake tax debt message portugal",
+      "pay to avoid seizure",
+      "tax authority text with a link",
+      "financas whatsapp scam",
+      "irs refund text"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Ameaça de penhora numa mensagem com link.",
+      "As Finanças não pedem pagamentos nem dados por link em SMS, WhatsApp ou email."
+    ],
+    "en": [
+      "A threat of seizure in a message with a link.",
+      "The tax authority doesn’t ask for payments or details through links by text, WhatsApp or email."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não carregue no link nem pague.",
+      "Entre você no Portal das Finanças e veja as suas comunicações e dívidas.",
+      "Apague a mensagem e denuncie-a."
+    ],
+    "en": [
+      "Don’t click the link or pay.",
+      "Log in to the Portal das Finanças yourself and check your messages and debts.",
+      "Delete the message and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/mp-cibercrime",
+    "pt/queixa-eletronica",
+    "pt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Alerta Cibercrime: Burla – Falsas Dívidas à Autoridade Tributária",
+      "publisher": "Ministério Público, Gabinete Cibercrime",
+      "url": "https://cibercrime.ministeriopublico.pt/sites/default/files/editor-files/2026.04.06-burlas-supostas-dividas-a-at.pdf",
+      "date": "2026-04-06"
+    },
+    {
+      "title": "Alerta de segurança",
+      "publisher": "Autoridade Tributária e Aduaneira (Portal das Finanças)",
+      "url": "https://info.portaldasfinancas.gov.pt/pt/destaques/Paginas/Alerta-seguranca-02-11-2026.aspx",
+      "date": "2026-11-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

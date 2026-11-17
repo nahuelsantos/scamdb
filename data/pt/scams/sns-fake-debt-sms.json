@@ -1,0 +1,112 @@
+{
+  "id": "pt/sns-fake-debt-sms",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "SNS, SNS 24 ou Ministério da Saúde",
+    "en": "The national health service (SNS, SNS 24) or the Ministry of Health"
+  },
+  "name": {
+    "pt": "SMS falso do Ministério da Saúde: “valor em incumprimento” a pagar por Multibanco",
+    "en": "Fake Ministry of Health text: an “unpaid amount” to pay by Multibanco"
+  },
+  "how": {
+    "pt": "Chega um SMS com o remetente “MIN.SAUDE” ou SNS 24, às vezes na mesma conversa das mensagens verdadeiras, a dizer que tem um valor em incumprimento, por exemplo de uma ida às urgências, que deve pagar em poucos dias com uma referência Multibanco. A referência é verdadeira, mas o dinheiro vai para os burlões. Também circulam versões por WhatsApp. O SNS não cobra dívidas por SMS.",
+    "en": "A text from the sender “MIN.SAUDE” or SNS 24, sometimes in the same thread as genuine messages, says you have an unpaid amount, for example for an A&E visit, to pay within a few days with a Multibanco payment reference. The reference is real, but the money goes to the scammers. WhatsApp versions also circulate. The health service doesn’t collect debts by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "SMS do “Ministério da Saúde” ou do SNS 24 sobre um valor por pagar.",
+        "en": "A text from the “Ministry of Health” or SNS 24 about an unpaid amount."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Prazo curto, de poucos dias.",
+        "en": "A short deadline of a few days."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Entidade e referência Multibanco para pagar.",
+        "en": "A Multibanco entity and reference to pay."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "MIN.SAUDE: Informamos que tem um valor de 47,90 EUR em incumprimento relativo a episodio de urgencia. Efetue o pagamento em 5 dias. Entidade: [número] Ref: [número]",
+        "en": "MIN.SAUDE: We inform you that you have an unpaid amount of EUR 47.90 for an emergency department visit. Pay within 5 days. Entity: [número] Ref: [número]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "sms do ministério da saúde para pagar",
+      "valor em incumprimento sns",
+      "referência multibanco por sms da saúde",
+      "sns 24 pede pagamento",
+      "dívida das urgências por mensagem",
+      "sms min saude burla"
+    ],
+    "en": [
+      "fake ministry of health text",
+      "unpaid hospital fee by text",
+      "multibanco reference from the health service",
+      "sns debt message scam",
+      "a and e visit payment text"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Uma referência de pagamento enviada por SMS.",
+      "Prazo de poucos dias e nenhum número de processo."
+    ],
+    "en": [
+      "A payment reference sent by text.",
+      "A deadline of a few days and no case number."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não pague a referência.",
+      "Em caso de dúvida, contacte o SNS 24 ou o seu centro de saúde pelos contactos oficiais.",
+      "Apague a mensagem e, se pagou, avise o banco e apresente queixa."
+    ],
+    "en": [
+      "Don’t pay the reference.",
+      "If in doubt, contact SNS 24 or your health centre through official channels.",
+      "Delete the message and, if you paid, tell your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/queixa-eletronica",
+    "pt/mp-cibercrime",
+    "pt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "SMS em nome do Ministério da Saúde: fraude",
+      "publisher": "DECO PROteste",
+      "url": "https://www.deco.proteste.pt/tecnologia/ciberseguranca/noticias/sms-fraudulentos-burla-nome-ministerio-saude-exige-pagamento-indevido",
+      "date": "2026-03-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

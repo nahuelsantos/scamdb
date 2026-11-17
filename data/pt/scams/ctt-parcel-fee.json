@@ -1,0 +1,113 @@
+{
+  "id": "pt/ctt-parcel-fee",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "CTT",
+    "en": "CTT (Portuguese post)"
+  },
+  "name": {
+    "pt": "Encomenda dos CTT retida: pague uma pequena taxa",
+    "en": "CTT parcel held: pay a small fee"
+  },
+  "how": {
+    "pt": "Recebe um SMS, email ou WhatsApp “dos CTT” a dizer que uma encomenda está retida na alfândega, que a morada está incompleta ou que a entrega foi suspensa. Para a receber, tem de pagar uma pequena taxa ou confirmar os dados num link. A página falsa fica com os dados do seu cartão.",
+    "en": "You get a text, email or WhatsApp message “from CTT” saying a parcel is held at customs, the address is incomplete or the delivery was suspended. To get it, you must pay a small fee or confirm your details through a link. The fake page keeps your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Mensagem “dos CTT” sobre uma encomenda retida.",
+        "en": "A message “from CTT” about a held parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Prazo curto para resolver.",
+        "en": "A short deadline to sort it out."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Link para pagar uma taxa ou confirmar a morada.",
+        "en": "A link to pay a fee or confirm the address."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "CTT: A sua encomenda encontra-se retida no centro de distribuicao por falta de pagamento de portes (1,89 EUR). Regularize em 48h para evitar a devolucao: [link]",
+        "en": "CTT: Your parcel is being held at the distribution centre because postage (EUR 1.89) is unpaid. Settle it within 48 hours to avoid it being returned: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "sms dos ctt encomenda retida",
+      "pagar taxa para receber encomenda",
+      "encomenda retida na alfândega",
+      "ctt pede pagamento por link",
+      "morada incompleta encomenda sms",
+      "taxa alfandegária ctt mensagem"
+    ],
+    "en": [
+      "ctt parcel held text",
+      "pay a fee to get my parcel",
+      "parcel held at customs portugal",
+      "ctt payment link",
+      "incomplete address parcel text"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Uma pequena taxa a pagar por link.",
+      "Prazo curto e ameaça de devolução."
+    ],
+    "en": [
+      "A small fee to pay through a link.",
+      "A short deadline and a threat to return the parcel."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não carregue no link.",
+      "Veja o seguimento da encomenda no site ou na app oficial dos CTT.",
+      "Se meteu dados do cartão, ligue ao banco de imediato."
+    ],
+    "en": [
+      "Don’t click the link.",
+      "Check the tracking on the official CTT website or app.",
+      "If you entered card details, call your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "pt/your-bank",
+    "pt/mp-cibercrime"
+  ],
+  "sources": [
+    {
+      "title": "SMS das Finanças, dos CTT ou do banco: 7 cuidados para não cair numa burla",
+      "publisher": "RFM",
+      "url": "https://rfm.pt/atualidade/24211/sms-das-financas-dos-ctt-ou-do-banco-7-cuidados-para-nao-cair-numa-burla",
+      "date": "2026-11-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

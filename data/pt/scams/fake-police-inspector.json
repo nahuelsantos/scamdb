@@ -1,0 +1,124 @@
+{
+  "id": "pt/fake-police-inspector",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "pt": "Um falso inspetor da PJ, agente da PSP ou GNR, ou inspetor da ASAE",
+    "en": "A fake PJ inspector, PSP or GNR officer, or ASAE inspector"
+  },
+  "name": {
+    "pt": "Falsos polícias e inspetores ao telefone",
+    "en": "Fake police officers and inspectors on the phone"
+  },
+  "how": {
+    "pt": "Alguém liga com o número verdadeiro de um posto da GNR, de uma esquadra da PSP ou de um departamento da PJ a aparecer no ecrã. Num tom duro, fala de uma inspeção, de uma infração, de uma investigação ou de um acesso indevido à sua conta bancária, e exige um pagamento imediato ou que passe o dinheiro para uma conta “segura”. Às vezes enviam por WhatsApp falsos mandados ou cartões de identificação, ou aparecem em lojas e casas.",
+    "en": "Someone calls with the real number of a GNR post, PSP station or PJ department showing on screen. In a harsh tone they talk about an inspection, an offence, an investigation or improper access to your bank account, and demand an immediate payment or that you move your money to a “safe” account. Sometimes they send fake warrants or ID cards on WhatsApp, or turn up at shops and homes."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Liga um “inspetor” ou “agente”, com o número de um posto ou esquadra no ecrã.",
+        "en": "An “inspector” or “officer” calls, with a police station’s number on screen."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Fala de uma infração ou investigação e exige uma resposta imediata.",
+        "en": "They talk about an offence or investigation and demand an immediate answer."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Pede um pagamento, dados bancários ou uma transferência para uma conta “segura”.",
+        "en": "They ask for a payment, bank details or a transfer to a “safe” account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Fala o inspetor Martins, da Polícia Judiciária. A sua conta bancária foi usada numa fraude e o seu dinheiro corre risco. Para o proteger, vamos transferi-lo hoje para uma conta segura sob a nossa custódia. Não fale disto com o banco, para não prejudicar a investigação.",
+        "en": "This is Inspector Martins from the Judicial Police. Your bank account was used in a fraud and your money is at risk. To protect it, we’ll move it today to a safe account in our custody. Don’t talk about this with the bank, so you don’t harm the investigation."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "ligou um inspetor da polícia judiciária",
+      "falso agente da gnr ao telefone",
+      "pediram para pagar a multa por telefone",
+      "falso inspetor da asae",
+      "polícia pede para transferir dinheiro para conta segura",
+      "número da esquadra no ecrã mas era burla",
+      "agente da gnr diz que tenho uma coima e desconto se pagar agora"
+    ],
+    "en": [
+      "fake police inspector called me",
+      "fake gnr officer on the phone",
+      "asked to pay a fine over the phone",
+      "fake asae inspector",
+      "police asked me to move money to a safe account",
+      "officer says i have a fine with a discount if i pay now"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "pt": [
+      "A polícia não pede dinheiro nem dados bancários por telefone.",
+      "Não há descontos por pagar uma multa ao telefone ou online na hora.",
+      "Pedem segredo, até em relação ao banco."
+    ],
+    "en": [
+      "The police don’t ask for money or bank details by phone.",
+      "There are no discounts for paying a fine on the spot by phone or online.",
+      "They ask you to keep it secret, even from your bank."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Desligue e ligue você para a força policial pelo número oficial.",
+      "Peça identificação formal a quem aparecer e confirme-a.",
+      "Se está alguém à sua porta, ligue 112; se pagou, avise o banco e apresente queixa."
+    ],
+    "en": [
+      "Hang up and call the police force yourself on its official number.",
+      "Ask anyone who turns up for formal ID and check it.",
+      "If someone is at your door, call 112; if you paid, tell your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/emergency",
+    "pt/psp-gnr",
+    "pt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "GNR regista mais de 190 burlas por falsos polícias e inspetores desde 2024",
+      "publisher": "Diário de Notícias",
+      "url": "https://www.dn.pt/sociedade/gnr-regista-mais-de-190-burlas-por-falsos-polcias-e-inspetores-desde-2024",
+      "date": "2026-10-10"
+    },
+    {
+      "title": "PJ usada em campanha de burla massiva e com recurso a inteligência artificial",
+      "publisher": "Diário de Notícias (Lusa)",
+      "url": "https://www.dn.pt/sociedade/pj-usada-em-campanha-de-burla-massiva-e-com-recurso-a-inteligencia-artificial",
+      "date": "2024-09-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

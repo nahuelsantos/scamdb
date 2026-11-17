@@ -1,0 +1,111 @@
+{
+  "id": "pt/fake-parking-fine-email",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "pt": "Autenticação.gov (a plataforma de autenticação do Estado)",
+    "en": "Autenticação.gov (the State’s login platform)"
+  },
+  "name": {
+    "pt": "Falsa multa de estacionamento em nome do Autenticação.gov",
+    "en": "Fake parking fine “from Autenticação.gov”"
+  },
+  "how": {
+    "pt": "Um email com o logótipo do Autenticação.gov diz que tem uma multa de estacionamento por pagar, que vai subir muito se não pagar dentro de poucos dias, e que pode perder pontos na carta. O botão “Pagar online” abre uma página que pede os dados do cartão, que depois são usados em compras.",
+    "en": "An email with the Autenticação.gov logo says you have an unpaid parking fine that will rise sharply unless you pay within a few days, and that you may lose points on your licence. The “Pay online” button opens a page that asks for your card details, which are then used for purchases."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Email com o logótipo do Autenticação.gov sobre uma multa.",
+        "en": "An email with the Autenticação.gov logo about a fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "A multa aumenta se não pagar em poucos dias, e há perda de pontos.",
+        "en": "The fine goes up unless you pay within days, and you lose points."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Botão para pagar online com cartão.",
+        "en": "A button to pay online by card."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Autenticação.gov – Aviso de coima: Regista-se uma multa de estacionamento de 95,00€ por liquidar. Se não for paga até sexta-feira, o valor passa para 280,00€ e serão retirados pontos à sua carta de condução. Pagar online: [link]",
+        "en": "Autenticação.gov – Fine notice: There is an unpaid parking fine of €95.00. If it is not paid by Friday, the amount rises to €280.00 and points will be taken off your driving licence. Pay online: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "multa de estacionamento por email",
+      "email do autenticação gov para pagar multa",
+      "multa aumenta se não pagar",
+      "perder pontos na carta email",
+      "pagar coima online link",
+      "multa falsa autenticação gov"
+    ],
+    "en": [
+      "parking fine email portugal",
+      "autenticacao gov fine email",
+      "fine will increase if not paid",
+      "lose licence points email",
+      "pay fine online link"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Uma multa que sobe em poucos dias.",
+      "Um botão para pagar com cartão dentro de um email."
+    ],
+    "en": [
+      "A fine that grows within days.",
+      "A button to pay by card inside an email."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não pague nem escreva dados do cartão.",
+      "Se já o fez, ligue ao banco para cancelar o cartão.",
+      "Denuncie o email."
+    ],
+    "en": [
+      "Don’t pay or enter card details.",
+      "If you already did, call your bank to cancel the card.",
+      "Report the email."
+    ]
+  },
+  "reportTo": [
+    "pt/your-bank",
+    "pt/mp-cibercrime"
+  ],
+  "sources": [
+    {
+      "title": "Alerta Cibercrime: 'Phishing' abusando da plataforma autenticação.gov",
+      "publisher": "Ministério Público, Gabinete Cibercrime",
+      "url": "https://cibercrime.ministeriopublico.pt/sites/default/files/editor-files/2026.01.20-alerta-phishing-autenticacao.pdf",
+      "date": "2026-01-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

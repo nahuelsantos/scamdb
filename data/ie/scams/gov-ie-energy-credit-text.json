@@ -1,0 +1,89 @@
+{
+  "id": "ie/gov-ie-energy-credit-text",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“GOV IE” or the “Department of Social Protection”"
+  },
+  "name": {
+    "en": "“GOV IE” text offering a reduced electricity bill or an emergency payment"
+  },
+  "how": {
+    "en": "A text from “GOV IE” says you qualify for a reduced electricity bill or a payment under an “Emergency Benefit Scheme”, with a link to claim. It is timed to look like real supports, such as payments after a storm or past energy credits. The link leads to a fake page that collects your personal and bank details. The Department of Social Protection has confirmed the text is a scam."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from “GOV IE” says you qualify for a benefit."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It offers a reduced electricity bill or an emergency payment."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It gives a link to claim."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "GOV-IE: Your household has been approved for a €200 winter energy support credit. Claim before 31 Jan or the credit will be reassigned: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "gov ie text reduced electricity bill",
+      "emergency benefit scheme text",
+      "text saying i qualify for an energy credit",
+      "department of social protection text with link",
+      "government payment text claim now",
+      "storm payment text asking for bank details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "A benefit offered by text with a link.",
+      "A sender called “GOV IE”.",
+      "A deadline to claim money you never applied for."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click. Check supports only on the government’s official websites or MyWelfare, typed in yourself.",
+      "If you entered bank or card details, call your bank.",
+      "Report it to the Gardaí."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Warning of scam text message for reduced electricity bill",
+      "publisher": "RTÉ News",
+      "url": "https://www.rte.ie/news/business/2026/0130/1555948-reduced-electricity-bill-scam-warning",
+      "date": "2026-01-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}
