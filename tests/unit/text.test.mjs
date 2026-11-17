@@ -38,3 +38,9 @@ test('every STOP word is already in normalised form (otherwise it can never matc
   const { STOP } = await import('../../lib/text.js');
   assert.deepEqual([...STOP].filter((w) => normalize(w) !== w), []);
 });
+
+test('normalize keeps Devanagari vowel signs (they are combining marks, not accents)', async () => {
+  const { normalize } = await import('../../lib/text.js');
+  assert.equal(normalize('आपका पार्सल रोक दिया गया है'), 'आपका पारसल रोक दिया गया है');
+  assert.equal(normalize('Ça va? Łódź'), 'ca va lodz');
+});
