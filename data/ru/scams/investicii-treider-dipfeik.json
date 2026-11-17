@@ -1,0 +1,141 @@
+{
+  "id": "ru/investicii-treider-dipfeik",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "ru": "Новый знакомый, «финансовый консультант» или видео с известным человеком",
+    "en": "A new acquaintance, a \"financial adviser\" or a video with a famous person"
+  },
+  "name": {
+    "ru": "Инвестиции с «куратором» или дипфейк чиновника: биржа, крипта, «госконтракт»",
+    "en": "Investing with a \"curator\" or a deepfake official: exchange, crypto, a \"state contract\""
+  },
+  "how": {
+    "ru": "Мошенники знакомятся в мессенджерах и тематических группах, выдают себя за поклонников того же блогера, расспрашивают о доходах и отношении к криптовалюте, а потом предлагают «выгодный заработок» или попробовать себя трейдером. Бывает и рассылка с дипфейк-видео федерального чиновника о «дополнительных выплатах» и «госконтракте», после чего звонит «финансовый консультант» и уговаривает взять кредит. Сначала дают вывести немного денег, а когда вы вкладываете крупную сумму, кабинет «блокируется» или требуют комиссию.",
+    "en": "Scammers make friends in messengers and topic groups, pose as fans of the same blogger, ask about your income and views on crypto, then offer \"easy profit\" or a chance to try trading. There are also mailings with a deepfake video of a federal official about \"extra payments\" and a \"state contract\", after which a \"financial adviser\" calls and talks you into taking a loan. At first you may withdraw a little, but once you put in a large sum the account is \"frozen\" or a fee is demanded."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Новый знакомый или видео обещает доход на бирже, крипте или «госконтракте».",
+        "en": "A new acquaintance or a video promises profit from trading, crypto or a \"state contract\"."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ru": "«Куратор» или «консультант» ведёт вас и просит установить приложение.",
+        "en": "A \"curator\" or \"adviser\" guides you and asks you to install an app."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Дают вывести немного, потом просят вложить больше или взять кредит.",
+        "en": "You may withdraw a little, then are asked to invest more or take a loan."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ru": "Вывести деньги нельзя без «налога» или «комиссии».",
+        "en": "You cannot withdraw without paying \"tax\" or a \"fee\"."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Добрый день! Я тоже давно смотрю этот канал, вижу, вы интересуетесь финансами. Сейчас занимаюсь трейдингом с наставником, за месяц вышла в хороший плюс. Могу показать, как это работает, первые сделки он помогает сделать бесплатно. С какой суммы вам было бы комфортно начать?",
+        "en": "Good afternoon! I've also followed this channel for a long time and I see you're interested in finance. I'm trading with a mentor now and made a nice profit in a month. I can show you how it works, he helps with the first trades for free. What amount would you feel comfortable starting with?"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "познакомилась в чате и предложили заработать на бирже",
+      "наставник по трейдингу просит вложить больше",
+      "видео с чиновником про инвестиции в госконтракт",
+      "финансовый консультант уговаривал взять кредит",
+      "не могу вывести деньги с инвестиционной платформы",
+      "просят заплатить налог чтобы вывести прибыль",
+      "обещают пассивный доход от вложений",
+      "личный аналитик подсказывает когда вкладывать"
+    ],
+    "en": [
+      "I met someone in a chat who offered to make money on the exchange",
+      "a trading mentor asks me to invest more",
+      "a video of an official about investing in a state contract",
+      "a financial adviser talked me into taking a loan",
+      "I can't withdraw money from the investment platform",
+      "they ask me to pay tax to withdraw my profit",
+      "they promise passive income from investing",
+      "a personal analyst tells me when to invest"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "ru": [
+      "Незнакомец быстро переходит к деньгам и криптовалюте.",
+      "Обещают гарантированный доход и помощь «куратора».",
+      "Предлагают взять кредит или платить за вывод денег."
+    ],
+    "en": [
+      "A stranger quickly moves on to money and crypto.",
+      "They promise guaranteed returns and help from a \"curator\".",
+      "They suggest taking a loan or paying to withdraw money."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Проверьте компанию в справочнике участников финансового рынка Банка России.",
+      "Не берите кредиты для инвестиций и не платите «комиссию за вывод».",
+      "Прекратите переписку, заблокируйте собеседника и сообщите в полицию."
+    ],
+    "en": [
+      "Check the company in the Bank of Russia directory of financial market participants.",
+      "Never take loans to invest or pay a \"withdrawal fee\".",
+      "Stop the conversation, block the contact and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ru/police",
+    "ru/cbr",
+    "ru/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "УБК МВД: аферисты используют общие интересы для выстраивания доверительных отношений",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/ubk-mvd-aferisty-ispolzuyut-obshchie-interesy-dlya-vystraivaniya-doveritelnykh-otnosheniy/",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "Мошенники используют дипфейки федеральных чиновников для обмана россиян",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-ispolzuyut-dipfeyki-federalnykh-chinovnikov-dlya-obmana-rossiyan/",
+      "date": "2025-11-21"
+    },
+    {
+      "title": "МВД: мошенники чаще всего обманывают россиян в сфере инвестиций",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-moshenniki-chashche-vsego-obmanyvayut-rossiyan-v-sfere-investitsiy/",
+      "date": "2025-08-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

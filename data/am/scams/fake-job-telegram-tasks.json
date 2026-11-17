@@ -1,0 +1,124 @@
+{
+  "id": "am/fake-job-telegram-tasks",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "hy": "«Գործատու» կամ «HR»՝ Telegram-ում կամ WhatsApp-ում, հաճախ Alibaba-ի կամ այլ հայտնի հարթակի անունով",
+    "en": "An “employer” or “HR” on Telegram or WhatsApp, often using the name of Alibaba or another well-known platform"
+  },
+  "name": {
+    "hy": "«Հեշտ աշխատանք, բարձր եկամուտ» Telegram-ով. նախ գումար փոխանցեք",
+    "en": "“Easy job, high income” on Telegram: first send money"
+  },
+  "how": {
+    "hy": "Telegram-ում կամ WhatsApp-ում գովազդում են հեշտ աշխատանք կամ ներդրում Alibaba-ի կամ նմանատիպ հարթակի անունով՝ խոստանալով բարձր եկամուտ: «Աշխատանքը սկսելու» կամ «վաստակածը» դուրս բերելու համար պահանջում են գումար փոխանցել նշված բանկային հաշիվներին: Յուրաքանչյուր փոխանցումից հետո պահանջում են ավելի մեծ գումար, հետո անհետանում են: Երբեմն խնդրում են մուտքագրել քարտի տվյալները կասկածելի կայքում:",
+    "en": "On Telegram or WhatsApp, an easy job or investment is advertised under the name of Alibaba or a similar platform, promising high income. To “start work” or withdraw your “earnings”, you are told to send money to given bank accounts. After each payment they ask for a bigger sum, then disappear. Sometimes they ask you to enter card details on a suspicious website."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Անծանոթը Telegram-ում առաջարկում է տնից աշխատանք օրական լավ եկամուտով:",
+        "en": "A stranger on Telegram offers a work-from-home job with good daily income."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hy": "Աշխատանքը ներկայացնում են հայտնի հարթակի անունով:",
+        "en": "The job is presented under the name of a well-known platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Սկսելու կամ վաստակածը հանելու համար պետք է գումար փոխանցել:",
+        "en": "To start or withdraw your earnings you must send money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hy": "Ամեն անգամ պահանջում են ավելի մեծ գումար՝ «վերջին քայլը» ավարտելու համար:",
+        "en": "Each time they want more to finish “the last step”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "hy": "Բարև ձեզ: Alibaba-ի գործընկեր ընկերությունը հեռավար օգնականներ է փնտրում՝ օրական 1–2 ժամ, 25 000-ից 60 000 դրամ: Փորձ պետք չէ: Առաջին առաջադրանքն ակտիվացնելու համար պետք է համալրել հաշիվը 10 000 դրամով, այն կվերադարձվի եկամտի հետ միասին:",
+        "en": "Hello! An Alibaba partner company is looking for remote assistants, 1–2 hours a day, 25,000 to 60,000 drams. No experience needed. To activate the first task you need to top up your account with 10,000 drams, it will be returned together with your earnings."
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "տելեգրամով աշխատանք առաջարկեցին գումար փոխանցել",
+      "alibaba աշխատանք օրական եկամուտ կանխավճար",
+      "վաստակածը հանելու ավելի շատ փող են ուզում",
+      "հեշտ աշխատանք տնից առաջադրանքներ համալրել հաշիվը",
+      "աշխատանքի գումար փոխանցեցի անհետացան",
+      "whatsapp առաջարկ առաջադրանքներ կատարել վճարով",
+      "հեռավար աշխատանք սկսելու գումար փոխանցել հաշվին"
+    ],
+    "en": [
+      "telegram job offer asks me to send money",
+      "alibaba job daily income pay first",
+      "they want more money before I can withdraw",
+      "easy work from home tasks top up account",
+      "paid for a job and they disappeared",
+      "whatsapp offer to do paid tasks after deposit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "hy": [
+      "Իսկական գործատուն աշխատանքի համար գումար չի պահանջում:",
+      "Փոքր ջանքի դիմաց բարձր եկամուտ են խոստանում:",
+      "Գումարը հանելու համար պետք է նորից վճարել:"
+    ],
+    "en": [
+      "A real employer never asks you to pay to get a job.",
+      "High income is promised for little effort.",
+      "You have to pay again to withdraw your money."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Գումար մի փոխանցեք անծանոթ հաշիվների՝ աշխատանք ստանալու համար:",
+      "Մի մուտքագրեք քարտի տվյալներ կամ CVV կասկածելի կայքերում:",
+      "Արգելափակեք և հաղորդեք կիբեռոստիկանությանը: Արդեն վճարե՞լ եք. զանգահարեք բանկ:"
+    ],
+    "en": [
+      "Don’t send money to unknown accounts to get a job.",
+      "Don’t enter card details or the CVV on suspicious websites.",
+      "Block them and report to the Cyber Police. Already paid? Call your bank."
+    ]
+  },
+  "reportTo": [
+    "am/cyber-police",
+    "am/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "\"Easy Jobs\" and High Income: Armenia's Cyber Police Warns of New Fraudulent Scheme",
+      "publisher": "ARKA",
+      "url": "https://arka.am/en/news/society/easy-jobs-and-high-income-armenia-s-cyber-police-warns-of-new-fraudulent-scheme/",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,136 @@
+{
+  "id": "by/investitsii-feikovyi-broker",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "ru": "Реклама в Instagram или соцсетях с логотипом известного банка или предприятия, затем звонки «брокера»",
+    "en": "An Instagram or social media ad with a well-known bank's or company's logo, then calls from a 'broker'"
+  },
+  "name": {
+    "ru": "Фейковые инвестиции: «брокер от банка» и доход 15–20% в месяц",
+    "en": "Fake investments: a 'broker from the bank' and 15–20% a month"
+  },
+  "how": {
+    "ru": "Реклама в соцсетях обещает высокий доход и использует логотип известного белорусского банка или крупного предприятия. Вы оставляете номер, и вам звонит «личный брокер», который давит ограниченным предложением. Первый взнос небольшой, на «платформе» быстро растёт баланс, иногда дают вывести мелкую сумму. Потом просят пополнять через криптосервисы на «личный кошелёк», а для вывода требуют «страховку», «компенсацию» или «налог». Деньги уходят мошенникам.",
+    "en": "A social media ad promises high returns and uses the logo of a well-known Belarusian bank or large company. You leave your number and a 'personal broker' calls, pushing a limited-time offer. The first deposit is small, the balance on the 'platform' grows fast, and sometimes you can withdraw a little. Then you're asked to top up through crypto services to a 'personal wallet', and to withdraw they demand 'insurance', 'compensation' or 'tax'. The money goes to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Реклама: инвестируйте с банком, доход от 15% в месяц.",
+        "en": "Ad: invest with the bank, returns from 15% a month."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ru": "Звонит личный брокер: предложение только сегодня.",
+        "en": "A personal broker calls: the offer is only for today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Пополните счёт через криптосервис на личный кошелёк.",
+        "en": "Top up through a crypto service to a personal wallet."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ru": "Для вывода прибыли оплатите страховку.",
+        "en": "To withdraw the profit, pay for insurance."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ru": "Государственная инвестиционная программа для граждан Беларуси! Вложите от 150 рублей и получайте пассивный доход до 3000 рублей в месяц. Персональный менеджер поможет начать. Количество мест ограничено, оставьте заявку: [ссылка]",
+        "en": "State investment programme for citizens of Belarus! Invest from 150 roubles and earn passive income of up to 3000 roubles a month. A personal manager will help you start. Places are limited, apply now: [ссылка]"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "увидел рекламу инвестиций от банка в инстаграме",
+      "брокер звонит и уговаривает пополнить счет",
+      "на платформе вырос баланс но не дают вывести",
+      "для вывода денег просят заплатить страховку",
+      "предложили вложиться в акции крупного предприятия",
+      "перевел деньги на криптокошелек по совету брокера"
+    ],
+    "en": [
+      "I saw an investment ad from a bank on instagram",
+      "a broker keeps calling to get me to top up my account",
+      "the balance on the platform grew but they won't let me withdraw",
+      "they ask me to pay insurance to withdraw my money",
+      "they offered to invest in shares of a big company",
+      "I sent money to a crypto wallet on a broker's advice"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ru": [
+      "Гарантированный высокий доход и логотип известного банка в рекламе.",
+      "Деньги просят переводить через криптосервисы или на «личный кошелёк».",
+      "За вывод прибыли требуют новые платежи."
+    ],
+    "en": [
+      "Guaranteed high returns and a well-known bank's logo in an ad.",
+      "You're asked to send money through crypto services or to a 'personal wallet'.",
+      "They demand new payments before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Проверьте компанию сами: позвоните в банк, чьим логотипом пользуется реклама, по номеру с его официального сайта.",
+      "Не платите за вывод денег: это признак обмана.",
+      "Сохраните переписку и адреса кошельков и обратитесь в милицию."
+    ],
+    "en": [
+      "Check the company yourself: call the bank whose logo the ad uses on the number from its official website.",
+      "Don't pay to withdraw money: it's a sign of fraud.",
+      "Keep the messages and wallet addresses and go to the police."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/your-bank",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "«Хоть я не дурак». Почему опытный технарь поверил фейковым «брокерам от Альфа-банка»",
+      "publisher": "dev.by",
+      "url": "https://devby.io/news/programmist-poveril-feikovym-brokeram-ot-alfa-banka",
+      "date": "2025-11-25"
+    },
+    {
+      "title": "Эксперты назвали самые частые схемы финансового мошенничества в Беларуси",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2025/11/28/eksperty-nazvali-samye-chastye-sxemy-finansovogo-moshennichestva-v-belarusi",
+      "date": "2025-11-28"
+    },
+    {
+      "title": "В МВД рассказали, сколько кибермошенничеств выявили за три месяца, и пригрозили курьерам применением огнестрельного оружия",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/124986.html",
+      "date": "2026-04-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

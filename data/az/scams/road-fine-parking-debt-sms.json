@@ -1,0 +1,130 @@
+{
+  "id": "az/road-fine-parking-debt-sms",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "az": "Xarici nömrədən Dövlət Yol Polisi (DYP) və ya “Azparking” adından gələn SMS",
+    "en": "A text from a foreign number in the name of the State Road Police (DYP) or Azparking"
+  },
+  "name": {
+    "az": "Saxta DYP cəriməsi və ya Azparking borcu SMS-i: “ödəmək üçün linkə keçin”",
+    "en": "Fake road-police fine or Azparking debt text: “follow the link to pay”"
+  },
+  "how": {
+    "az": "Xarici nömrələrdən sürət həddini aşdığınıza görə cərimə və ya “ödənilməmiş parkinq haqqı” barədə SMS gəlir; məbləğ çox vaxt kiçikdir (məsələn, bir manatdan az). Link ASAN Pay və ya Azparking-in eynilə təqlid olunmuş səhifəsinə aparır: əvvəl avtomobilin dövlət qeydiyyat nişanı, sonra telefon nömrəsi və nəhayət “cərimənin ödənilməsi” adı ilə kart nömrəsi, etibarlılıq müddəti və CVV istənilir. Bu məlumatlarla kartdakı pul oğurlanır. Dövlət qurumları ödəniş və cərimə bildirişlərini xarici nömrələrdən göndərmir.",
+    "en": "Texts from foreign numbers claim a speeding fine or an “unpaid parking fee”, often for a small amount (for example under one manat). The link opens a perfect copy of ASAN Pay or Azparking: first your number plate, then your phone number and finally card number, expiry date and CVV “to pay the fine”. The card details are then used to steal your money. Government bodies do not send payment or fine notices from foreign numbers."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Xarici nömrədən DYP və ya Azparking adından SMS gəlir.",
+        "en": "A text arrives from a foreign number in the name of the road police or Azparking."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "az": "Cərimə və ya borc tez ödənilməlidir deyilir.",
+        "en": "You are told the fine or debt must be paid quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "az": "Mesajdakı link ASAN Pay-a bənzəyən saxta səhifəyə aparır.",
+        "en": "The link leads to a fake page that looks like ASAN Pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "az": "Kiçik məbləğ üçün kart nömrəsi və CVV istənilir.",
+        "en": "Card number and CVV are asked for a small amount."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "az": "DYP Bildiris: 10-HK-xxx qeydiyyat nisanli avtomobiliniz Heyder Aliyev prospektinde suret heddini asdigina gore 40 AZN cerimelenmisdir. Cerime 24 saat erzinde odenilmezse meblege faiz hesablanacaq. Odenis ucun: [link]",
+        "en": "Road Police notice: your car with plate 10-HK-xxx was fined 40 AZN for speeding on Heydar Aliyev Avenue. If the fine is not paid within 24 hours, interest will be added. To pay: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "dyp adından cərimə mesajı gəldi linklə",
+      "sürət həddini aşmısınız cərimə ödə sms",
+      "azparking ödənilməmiş parkinq haqqı mesajı",
+      "parkinq borcu 70 qəpik linkə keç",
+      "cərimə ödəmək üçün kart məlumatı istədi",
+      "asan pay oxşar səhifədə cvv soruşdu",
+      "yol hərəkəti qayda pozuntusu borcu mesajı",
+      "ödənilməmiş cərimə borcu linkdən ödə",
+      "cerime borcunuz var odenis linki gelib"
+    ],
+    "en": [
+      "text about a road police speeding fine with a link",
+      "azparking unpaid parking fee message",
+      "small parking debt text asking for card details",
+      "fake fine payment page like asan pay",
+      "foreign number sent me a traffic fine sms"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "az": [
+      "Dövlət qurumları cərimə bildirişini xarici nömrədən göndərmir.",
+      "Cərimə ödəmək üçün CVV kodu tələb edən link saxtadır.",
+      "Çox kiçik borc məbləği kart məlumatını almaq üçün yemdir."
+    ],
+    "en": [
+      "Government bodies don’t send fine notices from foreign numbers.",
+      "A link that wants your CVV to pay a fine is fake.",
+      "A tiny debt is bait to get your card details."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "Linkə keçməyin.",
+      "Cərimələri yalnız rəsmi dövlət resurslarında və asanpay.az ünvanını özünüz yazaraq yoxlayın.",
+      "Kart məlumatını daxil etmisinizsə, kartı bloklatdırın və MKA-ya və polisə məlumat verin."
+    ],
+    "en": [
+      "Don’t open the link.",
+      "Check fines only on official government resources, typing asanpay.az yourself.",
+      "If you entered card details, have the card blocked and tell the MKA and the police."
+    ]
+  },
+  "reportTo": [
+    "az/your-bank",
+    "az/mka-1654",
+    "az/police-102"
+  ],
+  "sources": [
+    {
+      "title": "DYP adından saxta cərimə mesajları göndərilir - XƏBƏRDARLIQ",
+      "publisher": "Trend",
+      "url": "https://az.trend.az/azerbaijan/society/4245251.html",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "\"Azparking\" adından fişinq hücumları həyata keçirilir",
+      "publisher": "Trend",
+      "url": "https://az.trend.az/azerbaijan/society/4245276.html",
+      "date": "2026-11-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,127 @@
+{
+  "id": "am/fake-traffic-police-message",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "hy": "«Ճանապարհային ոստիկանություն», «ՆԳՆ» կամ այլ պետական մարմին՝ iMessage-ով, RCS-ով կամ SMS-ով, հաճախ արտասահմանյան համարից",
+    "en": "“Traffic Police”, “Ministry of Internal Affairs” or another state body, via iMessage, RCS or SMS, often from a foreign number"
+  },
+  "name": {
+    "hy": "Հաղորդագրություն «ճանապարհային ոստիկանությունից»՝ վճարեք տուգանքը հղումով",
+    "en": "Message “from the Traffic Police”: pay the fine via the link"
+  },
+  "how": {
+    "hy": "iMessage-ով, RCS-ով կամ SMS-ով գալիս են հաղորդագրություններ, իբր ճանապարհային ոստիկանությունից, ՆԳՆ-ից կամ այլ պետական մարմնից, հաճախ արտասահմանյան կոդերով համարներից: Նրանք խնդրում են կատարել ինչ-որ գործողություն՝ օրինակ սեղմել հղումը կամ վճարել տուգանք: Կիբեռոստիկանության խոսքով՝ դրանց միակ նպատակը ձեր գումարը գողանալն է: Պետական մարմինները նման հաղորդագրություններ արտասահմանյան համարներից չեն ուղարկում:",
+    "en": "Messages arrive via iMessage, RCS or SMS, supposedly from the Traffic Police, the Ministry of Internal Affairs or another state body, often from numbers with foreign codes. They ask you to do something, for example tap a link or pay a fine. According to the Cyber Police, their only aim is to steal your money. State bodies don’t send such messages from foreign numbers."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Հաղորդագրություն պետական մարմնի անունով՝ արտասահմանյան համարից կամ էլ. հասցեից:",
+        "en": "A message in a state body’s name from a foreign number or email address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Ասում են, որ չվճարված տուգանք կամ խախտում ունեք, և ժամկետ են դնում:",
+        "en": "They say you have an unpaid fine or violation and set a deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hy": "Պետք է սեղմել հղումը և վճարել կամ «ստուգել» տվյալները:",
+        "en": "You must tap the link and pay or “check” your details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "hy": "Ճանապարհային ոստիկանություն: Ձեր տրանսպորտային միջոցի համար գրանցվել է չվճարված տուգանք: Վճարեք մինչև այսօր 23:59, հակառակ դեպքում գումարը կկրկնապատկվի և վարորդական իրավունքը կկասեցվի: [հղում]",
+        "en": "Traffic Police: An unpaid fine has been recorded for your vehicle. Pay by 23:59 today, otherwise the amount will double and your driving licence will be suspended. [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "imessage ճանապարհային ոստիկանությունից տուգանք",
+      "հաղորդագրություն նգն անունից արտասահմանյան համարից",
+      "չվճարված տուգանք հղումով վճարել",
+      "ճանապարհային ոստիկանություն վարորդական իրավունքը կկասեցվի հղում",
+      "պետական մարմնի անունից կեղծ sms",
+      "տուգանքի հաղորդագրություն +63 +212 համարից",
+      "chanaparhayin vostikanutyun tuganq"
+    ],
+    "en": [
+      "imessage from traffic police about a fine",
+      "message from interior ministry from a foreign number",
+      "unpaid fine pay by link",
+      "traffic police says licence will be suspended link",
+      "fake text in the name of a state agency",
+      "fine message from a +63 or +212 number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "hy": [
+      "Հաղորդագրությունը գալիս է արտասահմանյան համարից կամ անծանոթ էլ. հասցեից:",
+      "Սպառնում են կրկնապատկել տուգանքը կամ կասեցնել իրավունքը:",
+      "Տուգանքը պետք է վճարել անծանոթ հղումով:"
+    ],
+    "en": [
+      "The message comes from a foreign number or unknown email address.",
+      "They threaten to double the fine or suspend your licence.",
+      "The fine must be paid through an unknown link."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Մի պատասխանեք և մի բացեք հղումը: Արգելափակեք ուղարկողի համարը կամ հասցեն:",
+      "Տուգանքները ստուգեք միայն պաշտոնական պետական կայքերում՝ ինքներդ մուտք գործելով:",
+      "Վճարե՞լ եք հղումով. զանգահարեք բանկ և հաղորդեք կիբեռոստիկանությանը:"
+    ],
+    "en": [
+      "Don’t reply or open the link. Block the sender’s number or address.",
+      "Check fines only on official government websites, logging in yourself.",
+      "Paid via the link? Call your bank and report it to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "am/cyber-police",
+    "am/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Armenia's Cyber Police Warns of Fraudulent Messages via iMessage",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/armenia-s-cyber-police-warns-of-fraudulent-messages-via-imessage/",
+      "date": "2026-07-24"
+    },
+    {
+      "title": "Central Bank of Armenia warns of a new wave of telephone fraud",
+      "publisher": "ArmBanks.am",
+      "url": "https://armbanks.am/en/2026/05/26/273647/",
+      "date": "2026-05-26"
+    },
+    {
+      "title": "Armenia's Cyber Police Warns of Fake SMS Messages Supposedly Coming from Government Agencies",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/armenia-s-cyber-police-warns-of-fake-sms-messages-supposedly-coming-from-government-agencies/",
+      "date": "2026-05-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

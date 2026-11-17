@@ -1,0 +1,119 @@
+{
+  "id": "by/golosovanie-konkurs-ugon-telegram",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ru": "Сообщение в Telegram от знакомого или незнакомого контакта",
+    "en": "A Telegram message from a known or unknown contact"
+  },
+  "name": {
+    "ru": "«Проголосуй за племянницу в конкурсе»: ссылка, которая угоняет Telegram",
+    "en": "'Vote for my niece in a contest': a link that hijacks your Telegram"
+  },
+  "how": {
+    "ru": "В Telegram приходит просьба проголосовать за участника конкурса: «племянницу», «дочь подруги», «весенний конкурс». Часто пишет взломанный аккаунт знакомого. Ссылка ведёт на страницу, где для «подтверждения голоса» нужно войти через Telegram: ввести номер телефона и код или отсканировать QR-код. На деле вы подключаете чужое устройство к своему аккаунту. После угона мошенники рассылают ту же ссылку вашим контактам и просят у них деньги от вашего имени.",
+    "en": "A Telegram message asks you to vote for a contestant: a 'niece', a 'friend's daughter', a 'spring contest'. Often it comes from a friend's hijacked account. The link leads to a page where, to 'confirm your vote', you must log in with Telegram: enter your phone number and code or scan a QR code. In fact you are linking someone else's device to your account. Once it's taken, scammers send the same link to your contacts and ask them for money in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Проголосуй, пожалуйста, это очень важно для нас.",
+        "en": "Please vote, it's really important to us."
+      }
+    },
+    {
+      "text": {
+        "ru": "Перейди по ссылке и выбери участницу.",
+        "en": "Open the link and pick the contestant."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "Подтверди голос: введи номер и код из Telegram.",
+        "en": "Confirm your vote: enter your number and the Telegram code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Привет! Извини, что отвлекаю 🙏 Моя крестница участвует в конкурсе детского рисунка, осталось совсем чуть-чуть до первого места. Проголосуй за неё, пожалуйста, там одна кнопка: [ссылка]",
+        "en": "Hi! Sorry to bother you 🙏 My goddaughter is in a children's drawing contest and is really close to first place. Please vote for her, it's just one button: [ссылка]"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "прислали ссылку проголосовать за племянницу",
+      "попросили проголосовать в конкурсе в телеграме",
+      "для голосования нужно ввести код из телеграма",
+      "после голосования взломали телеграм",
+      "знакомый просит отдать голос за ребенка",
+      "на сайте конкурса попросили войти через телеграм"
+    ],
+    "en": [
+      "someone sent a link to vote for their niece",
+      "they asked me to vote in a contest on telegram",
+      "to vote I have to enter my telegram code",
+      "my telegram was hacked after voting",
+      "a friend asks me to vote for a child",
+      "the contest site asked me to log in with telegram"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ru": [
+      "Просьба проголосовать по ссылке, даже от знакомого.",
+      "Для голоса нужен вход через Telegram, номер телефона, код или QR-код.",
+      "Друзья жалуются, что от вас пришли странные сообщения."
+    ],
+    "en": [
+      "A request to vote via a link, even from someone you know.",
+      "Voting needs a Telegram login, phone number, code or QR code.",
+      "Friends complain they got strange messages from you."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не переходите по ссылкам на голосования; уточните у знакомого по телефону.",
+      "Включите двухэтапную проверку в Telegram и проверьте активные сеансы.",
+      "Если аккаунт угнали, завершите чужие сеансы и предупредите контакты."
+    ],
+    "en": [
+      "Don't open voting links; check with your friend by phone.",
+      "Turn on two-step verification in Telegram and check active sessions.",
+      "If the account was taken, end unknown sessions and warn your contacts."
+    ]
+  },
+  "reportTo": [
+    "by/mvd",
+    "by/police"
+  ],
+  "sources": [
+    {
+      "title": "«Проголосуйте в весеннем конкурсе». Белорусам в Telegram приходят странные «просьбы» — не попадитесь на них",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2025/04/01/progolosujte-v-vesennem-konkurse-belorusam-v-telegram-prixodyat-strannye-prosby-ne-popadites-na-nix",
+      "date": "2025-04-01"
+    },
+    {
+      "title": "«Выдают засветы и слишком идеальная кожа». Мошенники придумали новую схему обмана с «кружочками» в Telegram",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/96066.html",
+      "date": "2025-04-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

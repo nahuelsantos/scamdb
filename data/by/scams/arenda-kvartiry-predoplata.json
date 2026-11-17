@@ -1,0 +1,121 @@
+{
+  "id": "by/arenda-kvartiry-predoplata",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "«Хозяйка» или «риелтор» по объявлению о сдаче квартиры",
+    "en": "A 'landlady' or 'estate agent' from a flat rental ad"
+  },
+  "name": {
+    "ru": "Аренда квартиры: предоплата до просмотра за жильё, которого нет",
+    "en": "Flat rental: prepayment before viewing for a flat that doesn't exist"
+  },
+  "how": {
+    "ru": "На сайте объявлений, в Telegram или соцсетях выкладывают красивую квартиру дешевле рынка. «Хозяйка» общается только в мессенджере, рассказывает трогательную историю, говорит, что желающих много, и просит предоплату или залог, чтобы «забронировать» квартиру. Могут прислать фото паспорта и поддельное свидетельство о собственности или «договор агентства». После оплаты человека блокируют.",
+    "en": "A nice flat below market price appears on a classifieds site, Telegram or social media. The 'landlady' talks only through a messenger, tells a touching story, says many people want it and asks for a prepayment or deposit to 'reserve' it. They may send a passport photo and a forged ownership certificate or an 'agency contract'. After payment you are blocked."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Квартира в центре заметно дешевле рынка.",
+        "en": "A flat in the centre well below market price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ru": "Желающих много, переведите залог, чтобы забронировать.",
+        "en": "Lots of people want it, transfer a deposit to reserve it."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Показать не могу, я в отъезде, ключи передам после оплаты.",
+        "en": "I can't show it, I'm away, I'll hand over the keys after payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Добрый день! Квартира свободна, но на неё уже трое желающих. Я сейчас живу у дочери в Польше, поэтому показать лично не получится. Если переведёте 300 рублей залога на карту, сниму объявление и вышлю договор, а ключи вам передаст соседка.",
+        "en": "Good afternoon! The flat is available but three people already want it. I'm living with my daughter in Poland now, so I can't show it in person. If you transfer a 300-rouble deposit to my card, I'll take down the ad and send the contract, and my neighbour will give you the keys."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "хозяйка квартиры просит предоплату до просмотра",
+      "квартира сильно дешевле чем у всех",
+      "просят залог чтобы забронировать жилье",
+      "хозяйка в отъезде и не может показать квартиру",
+      "риелтор просит деньги за показ и договор",
+      "после перевода залога меня заблокировали"
+    ],
+    "en": [
+      "the landlady asks for prepayment before viewing",
+      "the flat is much cheaper than everything else",
+      "they ask for a deposit to reserve the flat",
+      "the landlady is away and can't show the flat",
+      "an estate agent asks for money for a viewing and contract",
+      "I was blocked after transferring the deposit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Деньги просят до того, как вы увидели квартиру.",
+      "Цена заметно ниже рынка, а хозяйка «в отъезде».",
+      "Документы присылают фотографиями, в них ошибки и нарисованные печати."
+    ],
+    "en": [
+      "You're asked for money before you've seen the flat.",
+      "The price is well below market and the landlady is 'away'.",
+      "Documents are sent as photos, with errors and drawn-on stamps."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не платите до просмотра и проверки документов на месте.",
+      "Поищите фото квартиры в интернете: те же снимки с другим адресом выдают мошенников.",
+      "Если перевели деньги, сохраните переписку и обратитесь в милицию."
+    ],
+    "en": [
+      "Don't pay before viewing and checking documents in person.",
+      "Search for the flat's photos online: the same pictures with another address give scammers away.",
+      "If you sent money, keep the messages and go to the police."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "«Ты ведь хорошая, я чувствую это сердцем». Как мошенники пытаются нажиться на желании беларусов снять в Минске бюджетное жилье",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/113069.html",
+      "date": "2025-11-11"
+    },
+    {
+      "title": "В Беларуси раскрыли мошенническую схему с арендой квартир",
+      "publisher": "Myfin.by",
+      "url": "https://myfin.by/article/zhizn/v-belarusi-raskryli-mosenniceskuu-shemu-s-arendoj-kvartir-41705",
+      "date": "2025-11-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

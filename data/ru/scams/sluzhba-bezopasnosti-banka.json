@@ -1,0 +1,134 @@
+{
+  "id": "ru/sluzhba-bezopasnosti-banka",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Звонок якобы из службы безопасности или поддержки вашего банка",
+    "en": "A call supposedly from your bank's security or support team"
+  },
+  "name": {
+    "ru": "Звонок «из службы безопасности банка»: подозрительная операция, назовите код",
+    "en": "Call \"from the bank's security team\": a suspicious transaction, read out the code"
+  },
+  "how": {
+    "ru": "Мошенники звонят от имени банка и говорят о подозрительной операции, «сбое в базе данных», начислении бонусов или блокировке карты. Иногда они сами заранее блокируют вашу карту, обратившись в банк от вашего имени, чтобы звонок выглядел правдоподобно. Затем просят назвать реквизиты карты, код с обратной стороны или одноразовый пароль из СМС, а потом списывают деньги. Настоящий сотрудник банка никогда не просит эти данные и не проводит операций по телефону.",
+    "en": "Scammers call in the name of your bank about a suspicious transaction, a \"database error\", bonus points or a blocked card. Sometimes they get your card blocked in advance by contacting the bank in your name, so that the call looks real. They then ask for the card details, the code on the back or the one-time SMS password, and take the money. A real bank employee never asks for these details or carries out transactions over the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонят из «службы безопасности» вашего банка.",
+        "en": "A call from your bank's \"security team\"."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "По карте якобы идёт подозрительная операция, её надо срочно остановить.",
+        "en": "There is supposedly a suspicious transaction on the card that must be stopped now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Просят назвать номер карты, код с оборота или пароль из СМС.",
+        "en": "They ask for the card number, the code on the back or the SMS password."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Не дают положить трубку и переключают на «старшего специалиста».",
+        "en": "They won't let you hang up and transfer you to a \"senior specialist\"."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Здравствуйте, Марина Сергеевна, вас беспокоит отдел безопасности банка. Зафиксирована попытка списания с вашей карты, операцию я приостановил. Чтобы её окончательно отклонить, сейчас придёт сообщение с паролем — продиктуйте его мне. Пожалуйста, не прерывайте звонок, иначе защита не сработает.",
+        "en": "Hello, Marina Sergeyevna, this is the bank's security department. Someone tried to take money from your card and I have paused the transaction. To reject it for good, you'll get a message with a password now — read it out to me. Please don't end the call or the protection won't work."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили из службы безопасности банка",
+      "сказали что с карты пытаются списать деньги",
+      "просили продиктовать код из смс для отмены операции",
+      "сотрудник банка спрашивал трехзначный код на обороте карты",
+      "карту заблокировали а потом позвонили якобы из банка",
+      "звонок про сбой в базе данных банка"
+    ],
+    "en": [
+      "someone called from the bank security team",
+      "they said someone is trying to take money from my card",
+      "they asked me to read out the sms code to cancel a transaction",
+      "a bank employee asked for the three digit code on the back of my card",
+      "my card was blocked and then someone called claiming to be the bank",
+      "a call about an error in the bank database"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "ru": [
+      "Просят код из СМС, пароль, PIN или код с оборота карты.",
+      "Звонящий знает ваше имя и банк и торопит.",
+      "Вас просят не класть трубку или перевести деньги, чтобы их «защитить»."
+    ],
+    "en": [
+      "They ask for an SMS code, password, PIN or the code on the back of the card.",
+      "The caller knows your name and bank and rushes you.",
+      "You are told not to hang up, or to move money to \"protect\" it."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку и сами позвоните по номеру на обороте карты.",
+      "Никому не называйте коды из СМС и пуш-уведомлений, даже «сотруднику банка».",
+      "Если назвали данные, сразу заблокируйте карту и обратитесь в банк и полицию."
+    ],
+    "en": [
+      "Hang up and call the number on the back of your card yourself.",
+      "Never give anyone SMS or push codes, even a \"bank employee\".",
+      "If you gave details, block the card at once and contact the bank and the police."
+    ]
+  },
+  "reportTo": [
+    "ru/your-bank",
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "В МВД рассказали о новой мошеннической схеме с блокировкой банковских карт",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-rasskazali-o-novoy-moshennicheskoy-skheme-s-blokirovkoy-bankovskikh-kart/",
+      "date": "2026-01-06"
+    },
+    {
+      "title": "В ЦБ рассказали, как распознать мошенников, выдающих себя за службу поддержки",
+      "publisher": "Объясняем.рф (по данным Банка России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-tsb-rasskazali-kak-raspoznat-moshennikov-vydayushchikh-sebya-za-sluzhbu-podderzhki/",
+      "date": "2025-10-17"
+    },
+    {
+      "title": "МВД: мошенники под видом сотрудников банков применяют несколько схем обмана",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-moshenniki-pod-vidom-sotrudnikov-bankov-primenyayut-neskolko-skhem-obmana/",
+      "date": "2025-09-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

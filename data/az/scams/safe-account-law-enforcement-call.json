@@ -1,0 +1,130 @@
+{
+  "id": "az/safe-account-law-enforcement-call",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "az": "Özünü polis, prokurorluq, digər güc strukturu və ya bank əməkdaşı kimi təqdim edən zəng edən",
+    "en": "A caller posing as the police, prosecutor’s office, another law-enforcement body or a bank"
+  },
+  "name": {
+    "az": "“Adınızdan terrorçuluğa pul köçürülüb”: pulu “təhlükəsiz hesaba” köçürün",
+    "en": "“Money was sent to terrorists in your name”: move your money to a “safe account”"
+  },
+  "how": {
+    "az": "Zəng edən özünü hüquq-mühafizə orqanının və ya bankın əməkdaşı kimi təqdim edir və hesabınızda şübhəli əməliyyat aparıldığını, adınızdan qanunsuz köçürmə, hətta terrorçuluğun maliyyələşdirilməsi üçün pul göndərildiyini deyir. Pulunuzu “qorumaq” üçün onu “təhlükəsiz hesaba” köçürməyinizi, depozitdəki vəsaiti nağdlaşdırıb ödəniş terminalı ilə göstərilən hesaba yatırmağınızı və bu barədə heç kimə, hətta banka və ailənizə danışmamağınızı tələb edir. Belə zənglərin bir hissəsi xaricdəki qanunsuz “call center”lərdən hazır ssenarilərlə edilir.",
+    "en": "The caller claims to be from law enforcement or a bank and says there were suspicious transactions on your account, illegal transfers in your name, even money sent to finance terrorism. To “protect” your money they tell you to move it to a “safe account”, to cash out your deposit and pay it into a given account through a payment terminal, and not to tell anyone, not even the bank or your family. Some of these calls are made from illegal call centres abroad using ready-made scripts."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Polis, prokuror və ya bank adından zəng gəlir.",
+        "en": "A call comes in the name of the police, a prosecutor or a bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "az": "Adınızdan qanunsuz əməliyyat, terrorçuluğun maliyyələşdirilməsi iddia edilir.",
+        "en": "They claim illegal transactions or terrorism financing in your name."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "az": "Pulu “təhlükəsiz hesaba” köçürməyiniz və ya nağdlaşdırıb terminala yatırmağınız istənilir.",
+        "en": "You are told to move money to a “safe account” or cash it out and pay it in at a terminal."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "az": "Banka və ailənizə heç nə deməməyiniz tələb olunur.",
+        "en": "You are told to say nothing to the bank or your family."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "az": "Sizi Daxili İşlər orqanlarından narahat edirlər, müstəntiq Rəhimovam. Adınıza açılmış hesabdan xaricə şübhəli köçürmə edilib, terrorçuluğun maliyyələşdirilməsi faktı araşdırılır. Vəsaitinizi qorumaq üçün depozitinizdəki pulu bu gün çıxarıb sizə göndərəcəyim təhlükəsiz hesaba terminal vasitəsilə yatırmalısınız. İstintaq sirridir, bankda heç kimə səbəbini deməyin.",
+        "en": "This is the internal affairs bodies, investigator Rahimov speaking. A suspicious transfer abroad was made from an account opened in your name and a case of terrorism financing is being investigated. To protect your funds you must withdraw the money in your deposit today and pay it through a terminal into a safe account I will send you. This is an investigation secret, don’t tell anyone at the bank why."
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "polis zəng edib pulu təhlükəsiz hesaba köçür dedi",
+      "adımdan terrorçuluğa pul köçürülüb dedilər",
+      "depozitdəki pulu çıxarıb terminala yatır dedilər",
+      "müstəntiq kimi zəng edib heç kimə demə dedi",
+      "prokurorluqdan zəng gəldi hesabımda şübhəli əməliyyat",
+      "pulunuzu qorumaq üçün başqa hesaba köçürün"
+    ],
+    "en": [
+      "police caller told me to move money to a safe account",
+      "they said my name was used to finance terrorism",
+      "told to withdraw my deposit and pay it into a terminal",
+      "fake investigator said keep it secret from the bank",
+      "safe account scam call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "az": [
+      "Polis və bank heç vaxt pulu “təhlükəsiz hesaba” köçürməyi tələb etmir.",
+      "Depoziti nağdlaşdırıb terminaldan kiməsə göndərmək istəyi açıq-aydın dələduzluqdur.",
+      "“Banka və ailənizə deməyin” tələbi ciddi xəbərdarlıq siqnalıdır.",
+      "Ekranda tanış nömrənin görünməsi zəng edənin həqiqiliyini sübut etmir."
+    ],
+    "en": [
+      "Police and banks never ask you to move money to a “safe account”.",
+      "Being told to cash out a deposit and send it from a terminal is plainly fraud.",
+      "“Don’t tell the bank or your family” is a serious warning sign.",
+      "A familiar number on the screen does not prove who is calling."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "Zəngi bitirin, heç bir pul köçürməyin və nağdlaşdırmayın.",
+      "102-yə özünüz zəng edib yoxlayın və bankınızla rəsmi nömrə ilə əlaqə saxlayın.",
+      "Pul göndərmisinizsə, dərhal bankınıza və polisə müraciət edin."
+    ],
+    "en": [
+      "Hang up and don’t transfer or withdraw any money.",
+      "Call 102 yourself to check, and contact your bank on its official number.",
+      "If you sent money, contact your bank and the police at once."
+    ]
+  },
+  "reportTo": [
+    "az/police-102",
+    "az/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Sizi aldatmağa çalışdıqlarını necə anlaya bilərsiniz? - Maliyyə fırıldaqlarından qorunmaq üçün bank ekspertindən məsləhət",
+      "publisher": "APA",
+      "url": "https://apa.az/finance/sizi-aldatmaga-calisdiqlarini-nece-anlaya-bilersiniz-maliyye-firildaqlarindan-qorunmaq-ucun-bank-ekspertinden-meslehet-1014539",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "Azərbaycan və Ukrayna polisləri birgə əməliyyat keçirdi - 11 nəfər saxlanılıb (VİDEO) (YENİLƏNİB)",
+      "publisher": "Trend",
+      "url": "https://az.trend.az/azerbaijan/incident/4242261.html",
+      "date": "2026-11-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

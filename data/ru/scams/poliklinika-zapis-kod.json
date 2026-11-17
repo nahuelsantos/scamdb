@@ -1,0 +1,135 @@
+{
+  "id": "ru/poliklinika-zapis-kod",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "«Поликлиника» в мессенджере или звонок «сотрудника поликлиники»",
+    "en": "A \"clinic\" in a messenger or a call from a \"clinic worker\""
+  },
+  "name": {
+    "ru": "«Поликлиника»: прикрепление, диспансеризация или запись к врачу по коду",
+    "en": "\"Clinic\": registration, health check or doctor's appointment with a code"
+  },
+  "how": {
+    "ru": "Мошенники звонят от имени поликлиники и предлагают пройти диспансеризацию или пересдать анализы, либо пишут со взломанного аккаунта, оформленного как «поликлиника», о прикреплении или откреплении. Для «подтверждения записи» просят назвать код из СМС или ввести его на сайте по ссылке. Так они получают доступ к «Госуслугам» или мессенджеру, а потом звонят «служба поддержки» и «силовики» с требованием перевести деньги на «безопасный счёт». Госучреждения не подтверждают данные через соцсети.",
+    "en": "Scammers call in the name of a clinic offering a health check or a repeat of tests, or write from a hacked account styled as a \"clinic\" about registering with or leaving it. To \"confirm the appointment\" they ask you to read out an SMS code or enter it on a site by link. That gives them access to Gosuslugi or your messenger, after which \"support\" and \"officials\" call demanding you move money to a \"safe account\". Public institutions do not confirm details through social media."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонят или пишут «из поликлиники» про запись, анализы или прикрепление.",
+        "en": "A call or message \"from the clinic\" about an appointment, tests or registration."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Для подтверждения просят код из СМС или переход по ссылке.",
+        "en": "To confirm they ask for an SMS code or to follow a link."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Вскоре сообщают о взломе «Госуслуг».",
+        "en": "Soon you are told that your Gosuslugi account was hacked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Затем звонят «силовики» и требуют деньги.",
+        "en": "Then \"officials\" call and demand money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Здравствуйте, вас беспокоят из районной поликлиники. Вы в этом году не проходили диспансеризацию, мы записываем вас на четверг к терапевту. Сейчас придёт сообщение с кодом подтверждения записи, назовите его, пожалуйста, чтобы я закрепила время.",
+        "en": "Hello, this is the district clinic. You haven't had your health check this year, we're booking you with the GP for Thursday. A message with a booking confirmation code will arrive now, please read it out so I can secure the time."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили из поликлиники и попросили код для записи к врачу",
+      "предлагали пройти диспансеризацию и спросили цифры из смс",
+      "поликлиника в телеграме прислала ссылку на прикрепление",
+      "звонили насчет пересдачи анализов",
+      "медсестра попросила продиктовать код подтверждения",
+      "после записи к врачу сообщили что госуслуги взломаны"
+    ],
+    "en": [
+      "the clinic called and asked for a code to book a doctor",
+      "they offered a health check and asked for the digits from an sms",
+      "a clinic on telegram sent a link to register",
+      "someone called about redoing my tests",
+      "a nurse asked me to read out a confirmation code",
+      "after booking a doctor I was told my gosuslugi was hacked"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "«Поликлиника» просит код из СМС или пишет в мессенджере.",
+      "Ссылка для прикрепления или записи из личной переписки.",
+      "После звонка — сообщения о взломе и звонки «силовиков»."
+    ],
+    "en": [
+      "A \"clinic\" asks for an SMS code or writes in a messenger.",
+      "A link to register or book sent in a private chat.",
+      "After the call — hacking alerts and calls from \"officials\"."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не называйте коды: запись к врачу их не требует.",
+      "Перезвоните в поликлинику по номеру с её сайта или запишитесь сами через «Госуслуги».",
+      "Если код назвали, смените пароль «Госуслуг» и предупредите банк."
+    ],
+    "en": [
+      "Do not give codes: booking a doctor does not need them.",
+      "Call the clinic back on the number from its website or book yourself through Gosuslugi.",
+      "If you gave a code, change your Gosuslugi password and warn your bank."
+    ]
+  },
+  "reportTo": [
+    "ru/police",
+    "ru/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Россиян предупредили о новой схеме мошенников с прикреплением к поликлинике",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/rossiyan-predupredili-o-novoy-skheme-moshennikov-s-prikrepleniem-k-poliklinike/",
+      "date": "2026-11-01"
+    },
+    {
+      "title": "Мошенники начали обманывать пенсионеров под видом работников медучреждений",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-nachali-obmanyvat-pensionerov-pod-vidom-rabotnikov-meduchrezhdeniy/",
+      "date": "2025-10-09"
+    },
+    {
+      "title": "Мошенники начали взламывать «Госуслуги» россиян под предлогом прохождения диспансеризации",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-nachali-vzlamyvat-gosuslugi-rossiyan-pod-predlogom-prokhozhdeniya-dispanserizatsii/",
+      "date": "2025-04-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

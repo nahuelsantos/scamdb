@@ -1,0 +1,135 @@
+{
+  "id": "by/belpochta-zakaznoe-pismo-kod-iz-sms",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Звонок якобы от сотрудника Белпочты, затем от «правоохранителя»",
+    "en": "A call supposedly from a Belpochta employee, then from a 'law enforcement officer'"
+  },
+  "name": {
+    "ru": "«Вам заказное письмо от Белпочты»: продиктуйте код из SMS",
+    "en": "'You have a registered letter from Belpochta': read out the SMS code"
+  },
+  "how": {
+    "ru": "Мошенник звонит от имени Белпочты (на экране может даже высвечиваться «Белпочта») и сообщает, что на ваше имя пришло заказное письмо или посылка, которую нужно перенаправить или подтвердить. Для этого просят продиктовать код из SMS. На самом деле это код восстановления доступа к вашему личному кабинету на сайте почты или в другом сервисе. Сразу после этого звонит «сотрудник милиции», КГБ или Нацбанка: якобы ваши данные используют преступники, грозит обыск, и сбережения нужно «задекларировать» или перевести на «безопасный счёт».",
+    "en": "A scammer calls in the name of Belpochta (the screen may even show 'Belpochta') and says a registered letter or parcel has arrived in your name and needs to be redirected or confirmed. To do this they ask you to read out a code from an SMS. In fact it is a code to recover access to your account on the post office website or another service. Straight after, a 'police officer', KGB or National Bank 'employee' calls: supposedly criminals are using your data, your home may be searched, and your savings must be 'declared' or moved to a 'safe account'."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонок от «Белпочты»: на ваше имя пришло заказное письмо.",
+        "en": "A call 'from Belpochta': a registered letter has arrived in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Чтобы получить отправление, назовите код из SMS.",
+        "en": "To receive the item, tell us the code from the SMS."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Звонок перехвачен, с вами говорит сотрудник милиции.",
+        "en": "The call has been intercepted, a police officer is speaking."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ru": "Чтобы избежать обыска, переведите деньги на безопасный счёт.",
+        "en": "To avoid a search, transfer your money to a safe account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Добрый день, вас беспокоит отделение Белпочты. На ваше имя поступило заказное письмо из налоговой, а вы его до сих пор не получили. Могу оформить доставку на дом, но нужно подтвердить личность: сейчас вам придёт сообщение с цифрами, продиктуйте их, пожалуйста. Иначе отправление вернут отправителю.",
+        "en": "Good afternoon, this is the Belpochta branch. A registered letter from the tax office has arrived in your name and you still haven't collected it. I can arrange home delivery, but I need to confirm your identity: you'll get a message with numbers now, please read them out to me. Otherwise the item will be returned to the sender."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили с белпочты про заказное письмо",
+      "попросили продиктовать код чтобы получить посылку",
+      "сотрудник почты спросил код из смс",
+      "после звонка с почты позвонил следователь",
+      "сказали что письмо вернут если не назову код",
+      "белпочта звонит в вайбер насчет извещения"
+    ],
+    "en": [
+      "belpochta called about a registered letter",
+      "they asked me to read out a code to get my parcel",
+      "a post office employee asked for my sms code",
+      "after the call from the post office an investigator called",
+      "they said the letter will be returned if I don't give the code",
+      "belpochta called on viber about a notice"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Почта звонит сама и просит продиктовать код из SMS.",
+      "Вы не ждали никакого письма или посылки.",
+      "Следом звонит «милиция» или «КГБ» и говорит о деньгах."
+    ],
+    "en": [
+      "The post office calls you and asks you to read out an SMS code.",
+      "You weren't expecting any letter or parcel.",
+      "Next, 'the police' or 'the KGB' calls and talks about your money."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Никому не называйте коды из SMS: почте они не нужны.",
+      "Проверьте отправление сами на сайте или в приложении почты по трек-номеру.",
+      "Если код уже назвали, смените пароли, предупредите банк и позвоните 102."
+    ],
+    "en": [
+      "Never tell anyone an SMS code: the post office has no need for it.",
+      "Check the item yourself on the post office website or app using the tracking number.",
+      "If you already gave the code, change your passwords, warn your bank and call 102."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/your-bank",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "Минчанин ответил на звонок, взял 10 тысяч и решил их отправить на безопасный счет. В банке понял, что что-то в этой схеме не так",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/accidents/120164.html",
+      "date": "2026-02-12"
+    },
+    {
+      "title": "«Поняли, что схема раскрыта, и начали оскорблять». Минчанин сберег от мошенников 30 тысяч рублей",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/129800.html",
+      "date": "2026-06-17"
+    },
+    {
+      "title": "«Обязательно перешлите это сообщение своим родителям и бабушкам». Налоговая предупредила о новых схемах мошенников",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/economics/130520.html",
+      "date": "2026-06-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

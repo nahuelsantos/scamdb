@@ -1,0 +1,135 @@
+{
+  "id": "ru/perevod-ot-neznakomca-drop",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "ru": "Незнакомец, который «ошибся переводом», или «работодатель»",
+    "en": "A stranger who \"sent money by mistake\", or an \"employer\""
+  },
+  "name": {
+    "ru": "Перевод от незнакомца: «верните, я ошибся» или «примите деньги и перешлите» (дроп)",
+    "en": "Money from a stranger: \"send it back, I made a mistake\" or \"receive and forward it\" (money mule)"
+  },
+  "how": {
+    "ru": "На карту приходит перевод от незнакомого человека, и тут же пишут или звонят: «ошибся, верните на другой номер». Это могут быть украденные деньги, и, вернув их сами, вы становитесь звеном схемы, а банк может заблокировать вашу карту. Похожим образом в мессенджерах, особенно подросткам, предлагают «заработок»: принимать переводы на свою карту и пересылать их дальше или снимать наличные. Это дропперство, за него грозит уголовная ответственность.",
+    "en": "A transfer from a stranger lands on your card, and right away someone writes or calls: \"my mistake, send it back to another number\". It may be stolen money, and if you return it yourself you become part of the scheme and the bank may block your card. In a similar way, people in messengers, especially teenagers, are offered \"work\": receiving transfers on their card and forwarding them or withdrawing cash. This is acting as a money mule, which is a criminal offence."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Приходит перевод от незнакомого человека.",
+        "en": "A transfer arrives from a stranger."
+      }
+    },
+    {
+      "text": {
+        "ru": "Просят срочно вернуть деньги на другой номер или карту.",
+        "en": "They urgently ask you to return the money to another number or card."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Или предлагают процент за то, чтобы принимать и пересылать деньги.",
+        "en": "Or they offer a percentage for receiving and forwarding money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ru": "Просят никому не говорить о переводах.",
+        "en": "They ask you not to tell anyone about the transfers."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ru": "Здравствуйте, я случайно перевёл вам 7 500 рублей, ошибся в одной цифре номера. Это деньги на лекарства маме, верните, пожалуйста, на этот номер [номер], очень прошу, мне срочно.",
+        "en": "Hello, I accidentally sent you 7,500 roubles, I got one digit of the number wrong. It's money for my mother's medicine, please send it back to this number [номер], I beg you, it's urgent."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "пришел перевод от незнакомого человека просят вернуть",
+      "написали что ошиблись номером при переводе",
+      "просят вернуть деньги на другую карту",
+      "предложили заработок принимать переводы на свою карту",
+      "попросили снять деньги с карты и передать",
+      "платят процент за то чтобы переслать деньги дальше"
+    ],
+    "en": [
+      "a stranger sent me money and asks for it back",
+      "they wrote that they got the number wrong when transferring",
+      "they ask me to return the money to a different card",
+      "I was offered money to receive transfers on my card",
+      "they asked me to withdraw money from my card and hand it over",
+      "they pay a percentage to forward money on"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request",
+    "too_good_to_be_true",
+    "secrecy"
+  ],
+  "redFlags": {
+    "ru": [
+      "Деньги от незнакомца и просьба вернуть их на другие реквизиты.",
+      "Работа, где нужно принимать и пересылать чужие деньги.",
+      "Давят на жалость и торопят."
+    ],
+    "en": [
+      "Money from a stranger and a request to return it to different details.",
+      "A job that involves receiving and forwarding other people's money.",
+      "They play on your sympathy and rush you."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не возвращайте деньги сами: позвоните в банк по официальному номеру и сообщите о переводе.",
+      "Никогда не передавайте свою карту и не принимайте чужие переводы за плату.",
+      "Поговорите с детьми-подростками об этой схеме."
+    ],
+    "en": [
+      "Do not return the money yourself: call your bank on its official number and report the transfer.",
+      "Never hand over your card or accept other people's transfers for a fee.",
+      "Talk to your teenage children about this scheme."
+    ]
+  },
+  "reportTo": [
+    "ru/your-bank",
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "МВД: нельзя самостоятельно возвращать денежный перевод неизвестному отправителю",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-nelzya-samostoyatelno-vozvrashchat-denezhnyy-perevod-neizvestnomu-otpravitelyu/",
+      "date": "2026-08-16"
+    },
+    {
+      "title": "Мошенники могут присылать провокационные переводы по системе быстрых платежей",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-mogut-prisylat-provokatsionnye-perevody-po-sisteme-bystrykh-platezhey/",
+      "date": "2026-04-26"
+    },
+    {
+      "title": "Банк России: мошенники вовлекают подростков в операции по отмыванию денег и дропперство",
+      "publisher": "Объясняем.рф (по данным Банка России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/bank-rossii-moshenniki-vovlekayut-podrostkov-v-operatsii-po-otmyvaniyu-deneg-i-dropperstvo/",
+      "date": "2025-09-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

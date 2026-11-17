@@ -1,0 +1,127 @@
+{
+  "id": "ge/fake-police-relative-accident",
+  "country": "ge",
+  "lang": "ka",
+  "status": "fading",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ka": "„შვილი“ ან „ახლობელი“ ტირილით, მერე „პოლიციელი“ ან შსს-ს „თანამშრომელი“",
+    "en": "A crying “child” or “relative”, then a “police officer” or Interior Ministry “officer”"
+  },
+  "name": {
+    "ka": "ზარი: თქვენმა ახლობელმა ავარია გამოიწვია, საქმის მოსაგვარებლად ფულია საჭირო",
+    "en": "Call: your relative caused an accident and money is needed to settle it"
+  },
+  "how": {
+    "ka": "ხშირად სახლის ტელეფონზე, მოხუცებთან, რეკავს ვიღაც ტირილით და ამბობს, რომ თქვენი შვილი ან ახლობელი ავარიაში მოყვა. მერე ყურმილს იღებს „პოლიციელი“ ან შსს-ს „თანამშრომელი“: თქვენი ახლობლის ბრალით ავტოსაგზაო შემთხვევა მოხდა და პრობლემის მოსაგვარებლად, ქრთამის სახით, თანხაა საჭირო. თუ დათანხმდებით, ფულის წასაღებად სახლში ვიღაც მოდის სხვა სახელით. შსს-მ ასეთი ჯგუფი 2024 წელს დააკავა, რომელმაც 61 მოქალაქე დააზარალა.",
+    "en": "Often on a home landline, to older people, someone calls crying and says your child or relative has been in an accident. Then a “police officer” or Interior Ministry “officer” takes the phone: your relative caused a road accident and money is needed, as a bribe, to make the problem go away. If you agree, someone comes to your home under a false name to collect the cash. The Interior Ministry arrested such a group in 2024 that had defrauded 61 people."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "ტირილით ზარი: შვილი ან ახლობელი ავარიაში მოყვა.",
+        "en": "A crying call: your child or relative has been in an accident."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ka": "„პოლიციელი“ ერთვება და საქმის მოგვარებას გთავაზობთ.",
+        "en": "A “police officer” joins and offers to settle the case."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "ფული ახლავე სჭირდებათ, ხაზიდან არ გიშვებენ.",
+        "en": "They need the money now and keep you on the line."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ka": "არავის დაურეკოთ; კურიერი ფულის წასაღებად მოდის.",
+        "en": "Don’t call anyone; a courier comes to collect the money."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ka": "დედა, მე ვარ... ძალიან ცუდად ვარ, ქალი დავაზიანე მანქანით... [ტირილი] ქალბატონო, პატრულიდან გესაუბრებით. თქვენმა შვილმა ავტოსაგზაო შემთხვევა გამოიწვია, დაზარალებული რეანიმაციაშია. საქმე შეიძლება ახლა მოგვარდეს, სანამ ოქმი არ შედგენილა, მაგრამ 5 000 დოლარია საჭირო. ჩვენი კაცი გამოვა თქვენთან. არავის დაურეკოთ, თორემ შვილს გაუჭირდება.",
+        "en": "Mum, it’s me... I’m in a bad way, I hit a woman with the car... [crying] Madam, I’m speaking from the patrol police. Your son caused a road accident and the victim is in intensive care. It can be settled now, before the report is drawn up, but 5,000 dollars are needed. Our man will come to you. Don’t call anyone or it will go badly for your son."
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "დამირეკეს შვილი ავარიაში მოყვაო",
+      "პოლიციელი ფულს ითხოვს საქმის მოსაგვარებლად",
+      "სახლის ტელეფონზე ტირილით დარეკეს",
+      "ფულის წასაღებად კაცი მოვა სახლში",
+      "ახლობელმა ადამიანი დააზიანა თანხაა საჭირო",
+      "შსს-ს სახელით დამირეკეს ავარიაზე"
+    ],
+    "en": [
+      "call saying my son was in a car accident",
+      "police officer wants money to settle the case",
+      "crying voice called the home phone",
+      "someone coming to my house to collect money",
+      "relative hit someone and needs money now"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "ka": [
+      "პოლიცია ფულს საქმის „მოსაგვარებლად“ არასდროს ითხოვს — ეს ქრთამია.",
+      "ტირილი, პანიკა და ჩქარება, რომ ნათესავს ვერ გადაურეკოთ.",
+      "ფულის წასაღებად უცნობი მოდის სახლში."
+    ],
+    "en": [
+      "Police never ask for money to “settle” a case — that would be a bribe.",
+      "Crying, panic and rushing so you can’t call your relative back.",
+      "A stranger comes to your home to collect the money."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "გათიშეთ და თავად დაურეკეთ ახლობელს მის ნაცნობ ნომერზე.",
+      "ფული ან ოქრო არავის გადასცეთ და კარი არ გაუღოთ.",
+      "დარეკეთ 112-ზე და აუხსენით, რა მოხდა."
+    ],
+    "en": [
+      "Hang up and call your relative yourself on their known number.",
+      "Don’t hand over money or gold and don’t open the door.",
+      "Call 112 and explain what happened."
+    ]
+  },
+  "reportTo": [
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "„დაკავებულია 4 პირი, რომლებიც მოქალაქეებთან უწყების სახელით რეკავდნენ და არწმუნებდნენ, რომ მათი ოჯახის წევრის ბრალეულობით მომხდარი იყო ავარია“ - შსს",
+      "publisher": "Ambebi.ge",
+      "url": "https://www.ambebi.ge/article/320379-dakavebulia-4-piri-romlebic-mokalakeebtan-ucqebi/",
+      "date": "2024-12-24"
+    },
+    {
+      "title": "„გირეკავენ სახლის ტელეფონზე, ტირიან, ფულს გთხოვენ“ - შსს თაღლითობის სქემას იძიებს",
+      "publisher": "რადიო თავისუფლება (Radio Free Europe/Radio Liberty)",
+      "url": "https://www.radiotavisupleba.ge/a/33087551.html",
+      "date": "2024-08-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

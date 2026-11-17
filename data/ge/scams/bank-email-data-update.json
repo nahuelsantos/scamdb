@@ -1,0 +1,119 @@
+{
+  "id": "ge/bank-email-data-update",
+  "country": "ge",
+  "lang": "ka",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "ka": "ბანკი ან „ფინანსური ინსტიტუტი“ ელფოსტით",
+    "en": "A bank or “financial institution” by email"
+  },
+  "name": {
+    "ka": "ყალბი წერილი ბანკიდან: „განაახლეთ პირადი მონაცემები“",
+    "en": "Fake bank email: “update your personal details”"
+  },
+  "how": {
+    "ka": "მოდის ელფოსტა, რომელიც ბანკის ან სხვა ფინანსური ორგანიზაციის წერილს ჰგავს. წერია, რომ ახალი რეგულაციების გამო სავალდებულოა საიდენტიფიკაციო მონაცემების განახლება, თორემ ანგარიში შეიზღუდება. ბმული ყალბ გვერდზე მიდის, სადაც ითხოვენ პირად მონაცემებს, ბარათის ნომერს, ინტერნეტბანკის პაროლს ან კოდს.",
+    "en": "An email arrives that looks like it comes from a bank or another financial institution. It says new regulations require you to update your identification details or the account will be restricted. The link leads to a fake page asking for personal details, card number, internet-banking password or a code."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "წერილი „ბანკიდან“: ახალი რეგულაცია, განაახლეთ მონაცემები.",
+        "en": "An email “from the bank”: new regulation, update your details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "ვადა მოკლეა, მერე ანგარიში შეიზღუდება.",
+        "en": "The deadline is short, then the account will be restricted."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ka": "ბმული ბანკის გვერდის ასლზე მიდის.",
+        "en": "The link goes to a copy of the bank’s page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ka": "გვერდი ითხოვს ბარათს, პაროლს ან SMS კოდს.",
+        "en": "The page asks for your card, password or SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "ka": "თემა: საიდენტიფიკაციო მონაცემების სავალდებულო განახლება. ძვირფასო კლიენტო, ფინანსური მონიტორინგის ახალი წესების შესაბამისად, ყველა მომხმარებელმა 48 საათის განმავლობაში უნდა დაადასტუროს პირადი მონაცემები. დაუდასტურებელი ანგარიშები დროებით შეიზღუდება. მონაცემების განახლება: [ბმული]. პატივისცემით, კლიენტთა მომსახურების დეპარტამენტი",
+        "en": "Subject: Mandatory update of identification details. Dear client, under the new financial monitoring rules all customers must confirm their personal details within 48 hours. Unconfirmed accounts will be temporarily restricted. Update your details: [link]. Kind regards, Customer Service Department"
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "ბანკის სახელით მეილი მონაცემების განახლებაზე",
+      "რეგულაციის გამო საიდენტიფიკაციო მონაცემების განახლება",
+      "ანგარიში შეიზღუდება თუ მონაცემებს არ განაახლებ",
+      "ელფოსტით ბარათის მონაცემებს ითხოვენ",
+      "ბანკის წერილი ვერიფიკაციის ბმულით"
+    ],
+    "en": [
+      "email from my bank asking to update my details",
+      "new regulation requires updating my id info",
+      "account will be restricted unless i verify",
+      "email asking for my card details",
+      "bank verification link in an email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ka": [
+      "ბანკები კონფიდენციალურ მონაცემებს ვებგვერდის ბმულით ან შეტყობინებით არ ითხოვენ.",
+      "მუქარა, რომ ანგარიში შეიზღუდება, და მოკლე ვადა.",
+      "გამგზავნის მისამართი ან ბმული ბანკის ოფიციალურ მისამართს არ ემთხვევა."
+    ],
+    "en": [
+      "Banks don’t ask for confidential details through a link or a message.",
+      "A threat that the account will be restricted and a short deadline.",
+      "The sender address or link doesn’t match the bank’s official address."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "ბმულზე არ გადახვიდეთ; შედით ბანკის აპლიკაციაში ან ოფიციალურ ვებგვერდზე თავად.",
+      "მონაცემები უკვე შეიყვანეთ? დაუყოვნებლივ დაბლოკეთ ბარათი და შეცვალეთ პაროლები.",
+      "ჩართეთ ორსაფეხურიანი ავტორიზაცია და წერილი ბანკს გადაუგზავნეთ."
+    ],
+    "en": [
+      "Don’t open the link; log in to your bank’s app or official website yourself.",
+      "Already entered details? Block the card and change your passwords at once.",
+      "Turn on two-step verification and forward the email to your bank."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "Banking Association of Georgia warns of rising phishing and messaging scams",
+      "publisher": "Georgia Today",
+      "url": "https://georgiatoday.ge/banking-association-of-georgia-warns-of-rising-phishing-and-messaging-scams/",
+      "date": "2026-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

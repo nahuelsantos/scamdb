@@ -1,0 +1,147 @@
+{
+  "id": "am/bank-call-fake-employee",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "hy": "«Բանկի անվտանգության բաժին», զանգ տեղական կամ արտասահմանյան համարից կամ WhatsApp/Viber/Telegram-ով",
+    "en": "“The bank’s security department”, calling from a local or foreign number or via WhatsApp/Viber/Telegram"
+  },
+  "name": {
+    "hy": "Զանգ «բանկից». թելադրեք SMS-ով եկած կոդը",
+    "en": "Call “from the bank”: read out the code you got by SMS"
+  },
+  "how": {
+    "hy": "Զանգում է մեկը, ով ներկայանում է որպես բանկի աշխատակից՝ հաճախ ռուսերենով: Ասում է, որ ձեր քարտով կասկածելի գործարք կա կամ քարտը արգելափակվելու է, և շտապեցնում է: Խնդրում է թելադրել SMS-ով եկած կոդը, քարտի տվյալները կամ CVV-ն, իբր գործարքը չեղարկելու համար: Կոդով խարդախները մտնում են բանկի հավելված, դատարկում հաշիվը կամ ձեր անունով վարկ են ձևակերպում:",
+    "en": "Someone calls claiming to work for your bank, often in Russian. They say there is a suspicious transaction on your card or the card is about to be blocked, and rush you. They ask you to read out the code you got by SMS, the card details or the CVV, supposedly to cancel the transaction. With the code, scammers get into your banking app, empty the account or take out loans in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Զանգ անծանոթ կամ արտասահմանյան համարից՝ «բանկի անվտանգության բաժնից»:",
+        "en": "A call from an unknown or foreign number “from the bank’s security department”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Ասում են, որ քարտով կասկածելի գործարք է կատարվում կամ քարտը արգելափակվում է հենց հիմա:",
+        "en": "They say a suspicious transaction is happening or the card is being blocked right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hy": "Խնդրում են թելադրել SMS կոդը, քարտի համարը կամ հետևի եռանիշ կոդը:",
+        "en": "They ask you to read out the SMS code, the card number or the three-digit code on the back."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "hy": "Չեն թողնում անջատել, որ չհասցնեք զանգել բանկ:",
+        "en": "They won’t let you hang up so you can’t call the bank."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "hy": "Բարև ձեզ, զանգում եմ բանկի անվտանգության ծառայությունից: Ձեր քարտից հիմա փորձում են դուրս բերել 380 000 դրամ: Գործարքը կասեցնելու համար ձեզ կգա հաստատման կոդ, խնդրում եմ անմիջապես ասեք ինձ, մի անջատեք:",
+        "en": "Hello, I’m calling from the bank’s security service. Someone is trying to withdraw 380,000 drams from your card right now. To stop the transaction you will receive a confirmation code, please tell it to me straight away, don’t hang up."
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "զանգեցին բանկից խնդրեցին sms կոդը",
+      "բանկի աշխատակից ասաց քարտը արգելափակվում է",
+      "կասկածելի գործարք քարտով զանգ անվտանգության բաժնից",
+      "թելադրեցի կոդը հաշվից գումարը գնաց",
+      "բանկի աշխատակցի զանգ cvv կոդ պահանջեց",
+      "անունով վարկ ձևակերպեցին զանգից հետո",
+      "բանկից զանգող չեղարկել փոխանցումը կոդով",
+      "զանգողը չէր թողնում անջատել բանկ զանգել"
+    ],
+    "en": [
+      "bank called and asked for the sms code",
+      "caller said my card is being blocked",
+      "suspicious transaction call from bank security",
+      "read out the code and money left my account",
+      "fake bank employee asked for my cvv",
+      "loan taken in my name after a bank call"
+    ],
+    "ru": [
+      "звонок из банка просят код из смс",
+      "служба безопасности банка подозрительная операция",
+      "сотрудник банка просит продиктовать код",
+      "звонят из банка карта заблокирована",
+      "позвонили из банка и оформили кредит на мое имя"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "hy": [
+      "Բանկը երբեք չի խնդրում քարտի տվյալներ, PIN, CVV կամ մեկանգամյա կոդ:",
+      "Զանգը արտասահմանյան կամ անծանոթ համարից է, իսկ համարը կարող է կեղծվել՝ բանկի համարի տեսքով:",
+      "Շտապեցնում են և չեն թողնում անջատել:"
+    ],
+    "en": [
+      "A bank never asks for card details, a PIN, the CVV or a one-time code.",
+      "The call comes from a foreign or unknown number, and the number can be spoofed to look like the bank’s.",
+      "They rush you and won’t let you hang up."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Անջատեք և ինքներդ զանգահարեք բանկ՝ քարտի հետևի համարով:",
+      "Կոդը տվե՞լ եք. անմիջապես արգելափակեք քարտը հավելվածում կամ բանկի միջոցով:",
+      "Հաղորդեք կիբեռոստիկանությանը:"
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on the back of your card.",
+      "Gave the code? Block the card at once in the app or through the bank.",
+      "Report it to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "am/your-bank",
+    "am/cyber-police",
+    "am/financial-mediator"
+  ],
+  "sources": [
+    {
+      "title": "Protect Yourself from Fraud: Safety Tips from AraratBank",
+      "publisher": "NEWS.am",
+      "url": "https://news.am/en/news/1036238",
+      "date": "2026-05-18"
+    },
+    {
+      "title": "WARNING — New wave of phone scams",
+      "publisher": "Information Systems Agency of Armenia / AM-CERT",
+      "url": "https://isaa.am/en/articles/նորություններ/warning-new-wave-of-phone-scams",
+      "date": "2026-03-12"
+    },
+    {
+      "title": "“Money vanished from my bank card”: surge in phone scams reported in Armenia",
+      "publisher": "JAMnews",
+      "url": "https://jam-news.net/phone-scams-in-armenia-expert-comment/",
+      "date": "2025-10-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "am/telecom-5g-app-call"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "ru/domofon-kurer-kod-iz-sms",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Звонок «соседа», управляющей компании, курьера или магазина",
+    "en": "A call from a \"neighbour\", the building manager, a courier or a shop"
+  },
+  "name": {
+    "ru": "«Замена домофона» или «доставка»: продиктуйте код из СМС",
+    "en": "\"Intercom replacement\" or \"delivery\": read out the SMS code"
+  },
+  "how": {
+    "ru": "Звонят под бытовым предлогом: меняют домофон и надо «привязать ключи», курьер маркетплейса или магазина уточняет доставку, «соседка» просит сверить технический код. Звонящие часто знают ваше имя и адрес. Цифры, которые приходят в СМС, на самом деле — код входа в «Госуслуги» или банковское приложение. После этого начинается второй этап: сообщения о взломе, звонки «из Росфинмониторинга» и требования перевести деньги.",
+    "en": "They call with an everyday excuse: the intercom is being replaced and keys must be \"linked\", a marketplace or shop courier is confirming a delivery, or a \"neighbour\" asks you to compare a technical code. Callers often know your name and address. The digits that arrive by SMS are really a login code for Gosuslugi or your banking app. Then the second stage starts: messages about a hacked account, calls \"from the financial watchdog\" and demands to move money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонят по бытовому поводу: домофон, доставка, ошибка в заказе.",
+        "en": "A call about something everyday: the intercom, a delivery, a wrong order."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Говорят, что сейчас придёт код, и просят его продиктовать.",
+        "en": "They say a code is coming and ask you to read it out."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Торопят: мастер уже у подъезда, курьер ждёт.",
+        "en": "They rush you: the technician is at the door, the courier is waiting."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Потом приходит сообщение о взломе «Госуслуг» и звонят «силовики».",
+        "en": "Then a message about a hacked Gosuslugi account arrives and \"officials\" call."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Добрый вечер, это Валентина Петровна из соседнего подъезда. У нас в среду меняют домофон, всех жильцов вносят в новую систему. Вам сейчас придёт сообщение с цифрами, мне тоже приходило — скажите, какие у вас, я сверю и передам мастеру, чтобы ключ работал.",
+        "en": "Good evening, it's Valentina Petrovna from the next entrance. They're replacing the intercom on Wednesday and putting all residents into the new system. You'll get a message with some digits now, I got one too — tell me yours, I'll compare them and pass them to the technician so your key works."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили насчет замены домофона и попросили код",
+      "соседка попросила сверить цифры из смс",
+      "курьер просит назвать код для подтверждения доставки",
+      "звонили из магазина про ошибочный заказ и спросили код",
+      "сказали привязать ключ от домофона по коду",
+      "после звонка курьера пришло что госуслуги взломаны"
+    ],
+    "en": [
+      "someone called about replacing the intercom and asked for a code",
+      "a neighbour asked me to compare the digits from an sms",
+      "a courier asked for a code to confirm delivery",
+      "a shop called about a wrong order and asked for the code",
+      "they said to link my intercom key with a code",
+      "after the courier call I got a message that my gosuslugi was hacked"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "ru": [
+      "Любая просьба назвать цифры из СМС или пуш-уведомления.",
+      "Коды не имеют отношения к домофонам и доставке.",
+      "После звонка приходят сообщения о взломе и звонки «силовиков»."
+    ],
+    "en": [
+      "Any request to read out digits from an SMS or push notification.",
+      "Codes have nothing to do with intercoms or deliveries.",
+      "After the call come messages about a hack and calls from \"officials\"."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Не называйте коды никому — ни соседу, ни курьеру, ни управляющей компании.",
+      "Сохраните официальные контакты управляющей компании и проверяйте у них.",
+      "Если код уже назвали, смените пароль «Госуслуг», завершите чужие сеансы и предупредите банк."
+    ],
+    "en": [
+      "Never give codes to anyone — not a neighbour, a courier or the building manager.",
+      "Save your building manager's official contacts and check with them.",
+      "If you already gave a code, change your Gosuslugi password, end unknown sessions and warn your bank."
+    ]
+  },
+  "reportTo": [
+    "ru/your-bank",
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "Мошенники обновили схему обмана с «заменой домофона»",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-obnovili-skhemu-obmana-s-zamenoy-domofona/",
+      "date": "2026-06-02"
+    },
+    {
+      "title": "УБК МВД: один из самых распространенных предлогов у кибермошенников — замена домофона",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/ubk-mvd-odin-iz-samykh-rasprostranennykh-predlogov-u-kibermoshennikov-zamena-domofona/",
+      "date": "2026-03-10"
+    },
+    {
+      "title": "МВД: аферисты используют названия крупных магазинов и представляются курьерами",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-aferisty-ispolzuyut-nazvaniya-krupnykh-magazinov-i-predstavlyayutsya-kurerami/",
+      "date": "2026-02-19"
+    },
+    {
+      "title": "Россиян предупредили о звонках мошенников, представляющихся курьерами маркетплейсов",
+      "publisher": "Объясняем.рф (по данным Банка России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/rossiyan-predupredili-o-zvonkakh-moshennikov-predstavlyayushchikhsya-kurerami-marketpleysov/",
+      "date": "2025-09-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

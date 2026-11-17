@@ -2,6 +2,24 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 10 (Russia, Belarus, Georgia, Armenia, Azerbaijan)
+
+**Built:**
+- **Groundwork (#82):** ru, by (Russian first, then Belarusian), ge, am and az in `countries.json` and reports;
+  41 brands (Госуслуги, Сбербанк, Почта России, Белпочта, ЕРИП, Georgian Post, TBC, HayPost, Idram, Azərpoçt, ASAN...).
+- **Matcher 1.14.0 (#83):** more Russian (protected accounts, investigators, loan fees, "dictate the code"), Armenian
+  and Georgian (each in its script and in the Latin transliteration SMS use), Azerbaijani (ə or e); genuine
+  notices in each language; a post office pickup code "из приложения" is not a code handover.
+- **Import:** 72 entries (ru 16, by 15, am 13, ge 13, az 13), 19 contacts, 110 labelled messages.
+
+**Measured (eval, 1,396 messages):** 99% of scams caught, 2.5% of safe messages called "scam" (was 2.8%).
+Each new country: 0/10 false alarms; 67–100% of scams called "scam". No other country's numbers changed.
+
+**Learned:**
+- Georgian and Armenian SMS often come in Latin letters; rules and phrases need both spellings.
+- A rule that says "never mind the warning, this is a handover" (CODE_HANDOVER) can override a genuine notice;
+  exemptions belong in the handover rule itself.
+
 ## 2026-11-17: Europe wave 9 (Serbia, Bosnia and Herzegovina, Montenegro, North Macedonia, Albania, Kosovo)
 
 **Built:**

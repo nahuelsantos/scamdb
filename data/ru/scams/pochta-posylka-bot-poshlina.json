@@ -1,0 +1,135 @@
+{
+  "id": "ru/pochta-posylka-bot-poshlina",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ru": "«Почта России», служба доставки или «таможня»",
+    "en": "\"Russian Post\", a delivery service or \"customs\""
+  },
+  "name": {
+    "ru": "Посылка «Почты России» или из-за границы: бот для адреса или оплата пошлины",
+    "en": "A \"Russian Post\" or foreign parcel: a bot for the address or a customs payment"
+  },
+  "how": {
+    "ru": "Звонят или пишут от имени «Почты России»: на ваше имя пришла посылка или заказное письмо, есть «проблема с доставкой», уточните адрес в Telegram-боте. Бот с логотипом почты просит войти через «Госуслуги» или банк, и данные уходят мошенникам. Другой вариант — «таможенники» в мессенджере требуют оплатить пошлину за посылку из-за границы и угрожают штрафом или делом. ФТС не присылает требований об оплате через мессенджеры.",
+    "en": "Someone calls or writes in the name of \"Russian Post\": a parcel or registered letter has arrived for you, there is a \"delivery problem\", confirm your address in a Telegram bot. The bot with the Post logo asks you to log in through Gosuslugi or your bank, and the details go to the scammers. Another version: \"customs officers\" in a messenger demand a duty payment for a parcel from abroad and threaten a fine or a case. The Federal Customs Service does not send payment demands through messengers."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Сообщают о посылке или заказном письме на ваше имя.",
+        "en": "They report a parcel or registered letter in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Просят уточнить адрес в боте или по ссылке.",
+        "en": "They ask you to confirm the address in a bot or by link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "Бот просит вход в «Госуслуги» или банк, либо требуют пошлину.",
+        "en": "The bot asks for a Gosuslugi or bank login, or they demand a duty."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ru": "Пугают возвратом посылки, штрафом или делом.",
+        "en": "They threaten to return the parcel, fine you or open a case."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Почта России: на ваше имя поступило международное отправление. Для выдачи необходимо оплатить таможенный сбор 1 340 руб. в течение 24 часов, иначе посылка будет возвращена отправителю, а на получателя наложен штраф. Оплата и подтверждение адреса: [ссылка]",
+        "en": "Russian Post: an international item has arrived in your name. To collect it you must pay a customs fee of 1,340 roubles within 24 hours, otherwise the parcel will be returned to the sender and a fine imposed on the recipient. Payment and address confirmation: [ссылка]"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили с почты насчет посылки и дали бот в телеграме",
+      "бот почты россии попросил войти через госуслуги",
+      "пришло сообщение оплатить таможенную пошлину за посылку",
+      "таможня пишет в мессенджере про штраф за посылку",
+      "посылку вернут если не уточнить адрес по ссылке",
+      "заказное письмо на мое имя надо подтвердить в боте"
+    ],
+    "en": [
+      "the post office called about a parcel and gave me a telegram bot",
+      "a russian post bot asked me to log in through gosuslugi",
+      "a message asked me to pay customs duty on a parcel",
+      "customs is writing in a messenger about a fine for a parcel",
+      "the parcel will be returned unless I confirm my address by link",
+      "a registered letter in my name must be confirmed in a bot"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ru": [
+      "Посылку надо «подтвердить» в боте или по ссылке.",
+      "Пошлину требуют в мессенджере, с угрозами.",
+      "Бот просит пароль от «Госуслуг» или банка."
+    ],
+    "en": [
+      "The parcel must be \"confirmed\" in a bot or by link.",
+      "Duty is demanded in a messenger, with threats.",
+      "The bot asks for your Gosuslugi or bank password."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Проверяйте трек-номер только в официальном приложении почты или магазина.",
+      "Не входите в «Госуслуги» и банк через боты и ссылки из сообщений.",
+      "Если ввели данные карты, сразу заблокируйте её."
+    ],
+    "en": [
+      "Check the tracking number only in the official Post or shop app.",
+      "Never log in to Gosuslugi or your bank through bots or links from messages.",
+      "If you entered card details, block the card at once."
+    ]
+  },
+  "reportTo": [
+    "ru/your-bank",
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "Мошенники начали требовать платежи за посылки из-за границы от имени таможенной службы",
+      "publisher": "Объясняем.рф (по данным ФТС России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-nachali-trebovat-platezhi-za-posylki-iz-za-granitsy-ot-imeni-tamozhennoy-sluzhby/",
+      "date": "2026-03-05"
+    },
+    {
+      "title": "Мошенники стали похищать средства граждан через поддельный Telegram-бот «Почты России»",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-stali-pokhishchat-sredstva-grazhdan-cherez-poddelnyy-telegram-bot-pochty-rossii/",
+      "date": "2025-05-23"
+    },
+    {
+      "title": "МВД: мошенники действуют в Telegram от имени «Почты России»",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-moshenniki-deystvuyut-v-telegram-ot-imeni-pochty-rossii/",
+      "date": "2025-03-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

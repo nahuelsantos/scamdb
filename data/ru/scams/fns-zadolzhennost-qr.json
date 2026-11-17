@@ -1,0 +1,134 @@
+{
+  "id": "ru/fns-zadolzhennost-qr",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Письмо или сообщение якобы от ФНС",
+    "en": "An email or message supposedly from the tax service"
+  },
+  "name": {
+    "ru": "Письмо «от ФНС»: долг по налогу, QR-код для оплаты или ссылка «проверить начисления»",
+    "en": "Email \"from the tax service\": a tax debt, a QR code to pay or a link to \"check your charges\""
+  },
+  "how": {
+    "ru": "Приходит аккуратное письмо в официальном тоне о неуплаченном налоге или задолженности с QR-кодом для оплаты и номером «сотрудника ФНС». QR-код ведёт на фишинговый сайт, где просят данные карты, телефон и паспорт, а «сотрудник» по телефону подтверждает, что всё настоящее. В другом варианте «сотрудник УФНС» пишет в мессенджере ссылку проверить начисления, после чего появляется сообщение о взломе «Госуслуг» и номер для «помощи». Налоговая не пишет в мессенджерах.",
+    "en": "A neat, official-sounding email arrives about unpaid tax or a debt, with a QR code to pay and the number of a \"tax officer\". The QR code leads to a phishing site asking for card details, phone and passport, and the \"officer\" on the phone confirms it is all real. In another version a \"regional tax officer\" sends a link in a messenger to check your charges, after which a message about a Gosuslugi hack appears with a number to call for \"help\". The tax service does not write in messengers."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Письмо о долге по налогу с QR-кодом или ссылкой.",
+        "en": "An email about a tax debt with a QR code or link."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "На сайте просят карту, телефон и паспорт.",
+        "en": "The site asks for your card, phone and passport."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "«Сотрудник ФНС» по телефону торопит оплатить.",
+        "en": "A \"tax officer\" on the phone rushes you to pay."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Деньги уходят мошенникам.",
+        "en": "The money goes to the scammers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "ru": "Федеральная налоговая служба. Уведомление о задолженности. По данным налогового органа за вами числится неоплаченный налог на имущество в размере 4 870 руб. Во избежание начисления пени просим погасить задолженность до конца недели, отсканировав QR-код ниже. Консультация специалиста: [номер].",
+        "en": "Federal Tax Service. Debt notice. According to the tax office you have unpaid property tax of 4,870 roubles. To avoid penalty interest please settle the debt by the end of the week by scanning the QR code below. Specialist advice: [номер]."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "пришло письмо от налоговой о задолженности с qr кодом",
+      "сотрудник фнс в мессенджере прислал ссылку проверить начисления",
+      "по qr коду попросили данные карты и паспорта",
+      "налоговая пишет про долг и пени",
+      "после ссылки налоговой написали что госуслуги взломали",
+      "чат бот налоговой в мессенджере"
+    ],
+    "en": [
+      "I got an email from the tax office about a debt with a qr code",
+      "a tax officer in a messenger sent a link to check my charges",
+      "the qr code asked for my card and passport details",
+      "the tax office writes about a debt and penalties",
+      "after the tax link they wrote that my gosuslugi was hacked",
+      "a tax office chat bot in a messenger"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Оплата налога по QR-коду из письма или по ссылке из мессенджера.",
+      "Номер «сотрудника» в письме.",
+      "«Налоговая» в мессенджере или чат-боте."
+    ],
+    "en": [
+      "Paying tax by a QR code from an email or a link from a messenger.",
+      "An \"officer's\" number in the email.",
+      "The \"tax office\" in a messenger or chat bot."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Проверяйте налоги только в личном кабинете налогоплательщика или на «Госуслугах», зайдя туда сами.",
+      "Не сканируйте QR-коды и не звоните по номерам из таких писем.",
+      "Если ввели данные карты, заблокируйте её через банк."
+    ],
+    "en": [
+      "Check your taxes only in the taxpayer's online account or Gosuslugi, logging in yourself.",
+      "Do not scan QR codes or call numbers from such emails.",
+      "If you entered card details, block the card through your bank."
+    ]
+  },
+  "reportTo": [
+    "ru/your-bank",
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "Мошенники от лица налоговой запугивают россиян взломом «Госуслуг»",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-ot-litsa-nalogovoy-zapugivayut-rossiyan-vzlomom-gosuslug/",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "Россиян предупредили о мошеннических письмах от имени ФНС",
+      "publisher": "Объясняем.рф (по данным РИА Новости)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/rossiyan-predupredili-o-moshennicheskikh-pismakh-ot-imeni-fns/",
+      "date": "2026-03-07"
+    },
+    {
+      "title": "В МВД выявили поддельный чат-бот, выдающий себя за официальный ресурс налоговой службы",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-vyyavili-poddelnyy-chat-bot-vydayushchiy-sebya-za-ofitsialnyy-resurs-nalogovoy-sluzhby/",
+      "date": "2026-02-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

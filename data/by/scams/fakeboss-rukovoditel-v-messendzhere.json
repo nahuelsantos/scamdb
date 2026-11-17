@@ -1,0 +1,121 @@
+{
+  "id": "by/fakeboss-rukovoditel-v-messendzhere",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "ru": "Сообщение в Telegram или Viber от «руководителя» с вашей работы",
+    "en": "A Telegram or Viber message from your 'boss' at work"
+  },
+  "name": {
+    "ru": "Сообщение от «руководителя»: на работе проверка, с вами свяжется куратор",
+    "en": "A message from your 'boss': there's an inspection at work, a supervisor will contact you"
+  },
+  "how": {
+    "ru": "Мошенники создают в мессенджерах аккаунт с именем и фото настоящего руководителя предприятия или ведомства. «Начальник» пишет, что на работе проверка, утечка данных или выявлены нарушения, и предупреждает, что с вами свяжется «куратор», «проверяющий» или «сотрудник КГБ». Дальше этот человек под давлением выпытывает личные данные и коды из SMS, заставляет оформлять кредиты или переводить деньги.",
+    "en": "Scammers create a messenger account with the name and photo of a real head of a company or agency. The 'boss' writes that there is an inspection at work, a data leak or violations, and warns that a 'supervisor', 'inspector' or 'KGB officer' will contact you. That person then pressures you for personal details and SMS codes, and makes you take out loans or transfer money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Пишет «директор»: в организации проверка.",
+        "en": "The 'director' writes: there's an inspection at the organisation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Вам позвонит куратор из органов, выполняйте его указания.",
+        "en": "A supervisor from the authorities will call you, follow their instructions."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ru": "Куратор просит код из SMS или оформить кредит.",
+        "en": "The supervisor asks for an SMS code or to take out a loan."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Добрый вечер. Это Сергей Николаевич. Тут ситуация серьёзная: по нашему предприятию идёт служебная проверка, есть подозрение на утечку персональных данных сотрудников. С вами сегодня свяжется представитель органов, ответьте ему и сделайте всё, что скажет. Пока никому из коллег не говорите, это конфиденциально.",
+        "en": "Good evening. It's Sergei Nikolaevich. The situation is serious: there's an internal investigation at our company, a suspected leak of staff personal data. A representative of the authorities will contact you today, answer and do whatever they say. Don't tell any colleagues for now, it's confidential."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "написал директор в телеграме что будет проверка",
+      "начальник сказал что со мной свяжется сотрудник кгб",
+      "пишет руководитель с нового аккаунта",
+      "руководитель попросил ответить куратору",
+      "на работе якобы утечка данных и мне позвонят",
+      "директор в вайбере просит никому не говорить",
+      "руководитель предупредил о проверке на предприятии",
+      "директор пишет что выявлены нарушения и надо ответить проверяющему"
+    ],
+    "en": [
+      "the director wrote on telegram that there will be an inspection",
+      "my boss said a kgb officer will contact me",
+      "my manager is writing from a new account",
+      "my boss asked me to answer a supervisor",
+      "supposedly there's a data leak at work and someone will call me",
+      "the director on viber asks me not to tell anyone",
+      "my manager warned me about an inspection at the company",
+      "the director writes that violations were found and I must answer an inspector"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "new_number",
+    "secrecy",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Руководитель пишет с незнакомого аккаунта, а не по рабочим каналам.",
+      "Просит выполнять указания постороннего «куратора» и держать всё в тайне.",
+      "В разговоре всплывают коды, кредиты или переводы."
+    ],
+    "en": [
+      "Your boss writes from an unfamiliar account, not through work channels.",
+      "They ask you to follow an outside 'supervisor' and keep it secret.",
+      "Codes, loans or transfers come up in the conversation."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Проверьте сообщение: позвоните руководителю по известному номеру или зайдите к нему лично.",
+      "Не выполняйте указания «кураторов» и не называйте коды.",
+      "Сообщите о поддельном аккаунте коллегам и в милицию по 102."
+    ],
+    "en": [
+      "Check the message: call your boss on the number you know or see them in person.",
+      "Don't follow 'supervisors' instructions and don't give out codes.",
+      "Tell colleagues about the fake account and report it to the police on 102."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/your-bank",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "Мошенники начали выдавать себя за председателя Следственного комитета",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/accidents/131438.html",
+      "date": "2026-07-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

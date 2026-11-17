@@ -1,0 +1,130 @@
+{
+  "id": "by/operator-svyazi-prodlenie-dogovora",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Звонок якобы от сотрудника мобильного оператора или Белтелекома",
+    "en": "A call supposedly from a mobile operator or Beltelecom employee"
+  },
+  "name": {
+    "ru": "«Ваш договор с оператором истекает»: продление, код из SMS и приложение",
+    "en": "'Your contract with the operator is expiring': renewal, an SMS code and an app"
+  },
+  "how": {
+    "ru": "Мошенники звонят, часто через мессенджер, от имени мобильного оператора или Белтелекома и говорят, что срок договора истекает и его нужно продлить, иначе номер отключат. Просят паспортные данные, код из SMS или установить «приложение оператора» по ссылке. Затем звонит «правоохранитель»: якобы от вашего имени финансируют преступников, и чтобы избежать ответственности, нужно взять кредит или передать сбережения курьеру «для декларирования».",
+    "en": "Scammers call, often through a messenger, in the name of a mobile operator or Beltelecom and say your contract is expiring and must be renewed or the number will be cut off. They ask for passport details, an SMS code, or to install the 'operator's app' from a link. Then a 'law enforcement officer' calls: supposedly someone is funding criminals in your name, and to avoid prosecution you must take out a loan or hand your savings to a courier 'to declare them'."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонок от оператора: договор заканчивается, номер отключат.",
+        "en": "A call from the operator: your contract is ending and the number will be cut off."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Для продления назовите код из SMS или установите приложение по ссылке.",
+        "en": "To renew, tell us the SMS code or install the app from the link."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Звонит «следователь»: от вашего имени переводят деньги за границу.",
+        "en": "An 'investigator' calls: money is being sent abroad in your name."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ru": "Передайте сбережения курьеру для декларирования.",
+        "en": "Hand your savings to a courier to declare them."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Здравствуйте! Служба поддержки абонентов. У вас заканчивается срок действия договора на услуги связи, с понедельника номер будет заблокирован. Продлить можно прямо сейчас по телефону: подтвердите, пожалуйста, ваши паспортные данные и продиктуйте проверочный код, который придёт в сообщении.",
+        "en": "Hello! Subscriber support. Your telecom service contract is expiring and the number will be blocked from Monday. You can renew right now over the phone: please confirm your passport details and read out the verification code that will arrive in a message."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили от оператора и сказали продлить договор",
+      "у меня якобы заканчивается договор на симку",
+      "сотрудник мтс попросил код из смс",
+      "предложили установить приложение оператора по ссылке",
+      "звонили из белтелекома насчет договора",
+      "сказали что номер заблокируют если не продлить"
+    ],
+    "en": [
+      "someone from the operator called saying to renew my contract",
+      "they said my sim card contract is ending",
+      "an mts employee asked for my sms code",
+      "they offered to install the operator's app from a link",
+      "beltelecom called about my contract",
+      "they said my number will be blocked unless I renew"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "remote_access",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Оператор звонит в мессенджере и торопит с «продлением».",
+      "Просят код из SMS или установить приложение не из официального магазина.",
+      "После звонка оператора сразу звонят «силовики»."
+    ],
+    "en": [
+      "The operator calls through a messenger and rushes you to 'renew'.",
+      "They ask for an SMS code or to install an app from outside the official store.",
+      "Right after the operator's call, 'the authorities' call."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Договор с оператором не нужно продлевать по телефону: проверьте его в официальном приложении или в салоне связи.",
+      "Устанавливайте приложения только из официальных магазинов.",
+      "Если назвали код или установили приложение, позвоните в банк и в милицию по 102."
+    ],
+    "en": [
+      "There's no need to renew an operator contract by phone: check it in the official app or at a store.",
+      "Only install apps from official app stores.",
+      "If you gave a code or installed an app, call your bank and the police on 102."
+    ]
+  },
+  "reportTo": [
+    "by/police",
+    "by/your-bank",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "Белорус ответил представителям «оператора». Итог — минус 116 тысяч рублей",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2026/10/26/belorus-xotel-prodlit-dogovor-na-mobilnye-uslugi-i-poteryal-116-tysyach-rublej",
+      "date": "2026-10-26"
+    },
+    {
+      "title": "Минчанин поверил «Белтелекому» и передал 4 тысячи рублей. «Курьером» оказалась пенсионерка",
+      "publisher": "Onliner",
+      "url": "https://tech.onliner.by/2025/11/24/minchanin-poveril-beltelekomu-i-peredal-4-tysyachi-rublej-kurerom-okazalas-pensionerka",
+      "date": "2025-11-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

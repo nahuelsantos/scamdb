@@ -1,0 +1,137 @@
+{
+  "id": "az/bank-employee-call-card-code",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "az": "Özünü bankın təhlükəsizlik və ya texniki dəstək əməkdaşı kimi təqdim edən şəxs; çox vaxt xarici nömrədən və ya WhatsApp zəngi ilə",
+    "en": "A person posing as your bank’s security or tech-support staff, often from a foreign number or as a WhatsApp call"
+  },
+  "name": {
+    "az": "Saxta bank əməkdaşı: “kartınıza müdaxilə var, SMS-lə gələn kodu deyin”",
+    "en": "Fake bank employee: “someone is getting into your card, tell me the code we texted you”"
+  },
+  "how": {
+    "az": "Sizə zəng edən və ya WhatsApp-dan yazan şəxs özünü bank əməkdaşı kimi təqdim edir, kartınızda şübhəli əməliyyat olduğunu, hesabınızın bloklanacağını və ya pulun itirilə biləcəyini deyir. Təşviş yaradıb tələsdirir, sonra “yoxlama” və ya “ləğv” adı ilə kartın 16 rəqəmini, CVV kodunu, PIN-i və ya SMS-lə gələn birdəfəlik təsdiq kodunu istəyir. Kodu deyən kimi kartdakı pul başqa hesablara köçürülür. Heç bir bank bu məlumatları zəng və ya mesajla soruşmur.",
+    "en": "Someone calls or writes on WhatsApp claiming to be from your bank and says there is a suspicious transaction on your card, your account will be blocked or money may be lost. They create panic and rush you, then ask for the 16-digit card number, CVV, PIN or the one-time code sent by SMS “to check” or “to cancel” it. As soon as you read out the code, the money on the card is moved to other accounts. No bank asks for these details by call or message."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Bank adından naməlum və ya xarici nömrədən zəng, WhatsApp zəngi və ya mesaj gəlir.",
+        "en": "A call, WhatsApp call or message arrives in the bank’s name from an unknown or foreign number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "az": "“Kartınıza müdaxilə var”, “hesabınız bloklanacaq” deyərək tələsdirirlər.",
+        "en": "They rush you: “someone is getting into your card”, “your account will be blocked”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "az": "Kart nömrəsi, CVV və ya SMS-lə gələn təsdiq kodu istənilir.",
+        "en": "You are asked for the card number, CVV or the confirmation code sent by SMS."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "az": "Telefonu bağlamamağı və heç kimə deməməyi tapşırırlar.",
+        "en": "You are told not to hang up and not to tell anyone."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "az": "Salam, bankınızın təhlükəsizlik şöbəsindən narahat edirəm. Bu gün saat 11:40-da kartınızdan xaricdəki saytda 640 manatlıq ödəniş cəhdi olub. Əməliyyatı dayandırmaq üçün sizə indi kod göndərirəm, zəhmət olmasa rəqəmləri mənə oxuyun. Xətti bağlamayın, yoxsa vəsait gedəcək.",
+        "en": "Hello, I’m calling from your bank’s security department. Today at 11:40 there was an attempt to pay 640 manats from your card on a foreign site. To stop the transaction I’m sending you a code now, please read the digits to me. Don’t hang up, or the money will go."
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "bank əməkdaşı zəng edib kod istədi",
+      "kartıma müdaxilə var dedilər",
+      "sms ilə gələn şifrəni soruşdular",
+      "whatsappdan bankdan zəng gəldi",
+      "cvv kodunu istədilər bankdan deyib",
+      "xarici nömrədən bank adından zəng",
+      "kartınız bloklanacaq deyib məlumat istədilər"
+    ],
+    "en": [
+      "bank employee called asking for the code",
+      "they said someone is accessing my card",
+      "caller asked for the sms code",
+      "whatsapp call from my bank",
+      "fake bank security call asking for cvv"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "az": [
+      "Heç bir bank zəng və ya mesajla PIN, CVV və SMS kodu istəmir.",
+      "Bank WhatsApp zəngi ilə kart məlumatı soruşmur.",
+      "Zəng edənin adınızı və bankınızı bilməsi onun bank əməkdaşı olduğunu sübut etmir.",
+      "Tələsdirmək və “xətti bağlamayın” demək dələduzluq əlamətidir."
+    ],
+    "en": [
+      "No bank asks for your PIN, CVV or SMS code by call or message.",
+      "A bank does not ask for card details in a WhatsApp call.",
+      "A caller knowing your name and bank does not prove they work there.",
+      "Rushing you and saying “don’t hang up” are signs of fraud."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "Zəngi dərhal bitirin və nömrəni bloklayın.",
+      "Bankınıza kartın arxasındakı nömrə ilə özünüz zəng edin.",
+      "Kodu və ya kart məlumatını verdinizsə, kartı dərhal bloklatdırın və 102-yə məlumat verin."
+    ],
+    "en": [
+      "Hang up at once and block the number.",
+      "Call your bank yourself on the number on the back of your card.",
+      "If you gave a code or card details, have the card blocked at once and report it on 102."
+    ]
+  },
+  "reportTo": [
+    "az/your-bank",
+    "az/police-102"
+  ],
+  "sources": [
+    {
+      "title": "DİN: Bank əməkdaşı kimi “WhatsApp”la kart məlumatları tələb edənlərə inanmayın - VİDEO",
+      "publisher": "1news.az",
+      "url": "https://1news.az/az/news/20260228102238695-DIN-Bank-emekdashi-kimi-WhatsApp-la-kart-melumatlari-teleb-edenlere-inanmayin-VIDEO",
+      "date": "2026-02-28"
+    },
+    {
+      "title": "Vətəndaşlara kiber təhlükəsizliklə bağlı XƏBƏRDARLIQ",
+      "publisher": "Metbuat.az",
+      "url": "https://metbuat.az/news/1536404/vetendaslara-kiber-tehlukesizlikle-bagli.html",
+      "date": "2025-10-03"
+    },
+    {
+      "title": "Sizi aldatmağa çalışdıqlarını necə anlaya bilərsiniz? - Maliyyə fırıldaqlarından qorunmaq üçün bank ekspertindən məsləhət",
+      "publisher": "APA",
+      "url": "https://apa.az/finance/sizi-aldatmaga-calisdiqlarini-nece-anlaya-bilersiniz-maliyye-firildaqlarindan-qorunmaq-ucun-bank-ekspertinden-meslehet-1014539",
+      "date": "2026-11-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}

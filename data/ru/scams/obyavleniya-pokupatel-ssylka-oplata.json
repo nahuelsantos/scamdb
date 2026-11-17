@@ -1,0 +1,133 @@
+{
+  "id": "ru/obyavleniya-pokupatel-ssylka-oplata",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ru": "«Покупатель» с сайта объявлений, который пишет в мессенджер",
+    "en": "A \"buyer\" from a classifieds site who moves to a messenger"
+  },
+  "name": {
+    "ru": "Продаёте на Авито: «покупатель» оплатил и прислал ссылку, чтобы получить деньги",
+    "en": "Selling on Avito: a \"buyer\" has paid and sends a link to receive the money"
+  },
+  "how": {
+    "ru": "Мошенник пишет продавцу как покупатель, не торгуется и сразу просит перейти в мессенджер, потому что в чатах сайтов объявлений ссылки блокируются. Потом сообщает, что уже оплатил через «безопасную сделку» или доставку, и присылает ссылку на «защищённый сайт», чтобы получить деньги. Сайт копирует площадку или службу доставки и просит данные карты и код — после этого деньги списывают. Для доверия присылают «селфи с паспортом» или накладной.",
+    "en": "A scammer writes to a seller as a buyer, does not haggle and immediately asks to move to a messenger, because classifieds chats block links. He then says he has already paid through a \"safe deal\" or delivery and sends a link to a \"secure site\" to receive the money. The site copies the marketplace or delivery service and asks for card details and a code — then the money is taken. To win trust they send a \"selfie with a passport\" or a waybill."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "«Покупатель» сразу соглашается и зовёт в мессенджер.",
+        "en": "The \"buyer\" agrees at once and invites you to a messenger."
+      }
+    },
+    {
+      "text": {
+        "ru": "Говорит, что уже оплатил через «безопасную сделку».",
+        "en": "He says he already paid through a \"safe deal\"."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ru": "Присылает ссылку, чтобы «получить деньги».",
+        "en": "He sends a link so you can \"receive the money\"."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "На сайте просят данные карты и код из СМС.",
+        "en": "The site asks for card details and the SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Здравствуйте, я по объявлению о коляске, беру без торга. Оплату уже внёс через сервис доставки, деньги зарезервированы на ваше имя. Чтобы они поступили, откройте форму получения и укажите карту для зачисления: [ссылка]. Курьер заберёт товар завтра.",
+        "en": "Hello, I'm writing about your pram ad, I'll take it without haggling. I've already paid through the delivery service, the money is reserved in your name. To receive it, open the payment form and enter the card to credit: [ссылка]. The courier will collect the item tomorrow."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "покупатель с авито прислал ссылку для получения денег",
+      "просит перейти в вотсап чтобы обсудить покупку",
+      "написал что оплатил через безопасную сделку",
+      "на сайте доставки попросили данные карты",
+      "покупатель прислал селфи с паспортом для доверия",
+      "чтобы получить оплату надо ввести код из смс"
+    ],
+    "en": [
+      "a buyer on avito sent a link to receive the money",
+      "they ask to move to whatsapp to discuss the purchase",
+      "he wrote that he paid through a safe deal",
+      "the delivery site asked for my card details",
+      "the buyer sent a selfie with a passport to build trust",
+      "to get the payment I have to enter an sms code"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "ru": [
+      "Покупатель уводит общение из чата площадки.",
+      "Чтобы получить деньги, просят ввести данные карты.",
+      "Ссылка на «безопасную сделку» пришла в личной переписке."
+    ],
+    "en": [
+      "The buyer moves the conversation off the platform chat.",
+      "To receive money you are asked to enter card details.",
+      "A \"safe deal\" link arrived in a private chat."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Общайтесь и оформляйте доставку только внутри приложения площадки.",
+      "Чтобы получить деньги, не нужны CVV и коды — не вводите их.",
+      "Если ввели данные карты, заблокируйте её и пожалуйтесь на пользователя."
+    ],
+    "en": [
+      "Talk and arrange delivery only inside the platform's app.",
+      "You never need a CVV or codes to receive money — do not enter them.",
+      "If you entered card details, block the card and report the user."
+    ]
+  },
+  "reportTo": [
+    "ru/your-bank",
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "МВД сообщило об обмане пользователей сайтов объявлений",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-soobshchilo-ob-obmane-polzovateley-saytov-obyavleniy-/",
+      "date": "2025-09-12"
+    },
+    {
+      "title": "В МВД рассказали, для чего мошенники переводят диалоги о продаже товаров в мессенджеры",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-rasskazali-dlya-chego-moshenniki-perevodyat-dialogi-o-prodazhe-tovarov-v-messendzhery/",
+      "date": "2025-07-21"
+    },
+    {
+      "title": "Мошенники начали похищать данные банковских карт онлайн-продавцов",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/moshenniki-nachali-pokhishchat-dannye-bankovskikh-kart-onlayn-prodavtsov/",
+      "date": "2025-05-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

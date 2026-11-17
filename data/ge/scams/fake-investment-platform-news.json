@@ -1,0 +1,132 @@
+{
+  "id": "ge/fake-investment-platform-news",
+  "country": "ge",
+  "lang": "ka",
+  "status": "fading",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "ka": "ცნობილი ქართული მედიის ყალბი გვერდი, პოლიტიკოსი ან დიდი კომპანია რეკლამაში",
+    "en": "A fake page of a well-known Georgian outlet, a politician or a big company in an ad"
+  },
+  "name": {
+    "ka": "ყალბი საინვესტიციო პლატფორმა პოლიტიკოსებისა და კომპანიების სახელით",
+    "en": "Fake investment platform using politicians’ and companies’ names"
+  },
+  "how": {
+    "ka": "ფეისბუქზე ჩნდება რეკლამა ან „სტატია“, რომელიც ცნობილი ქართული მედიის გვერდს ჰგავს. მასში პოლიტიკოსები, ბიზნესმენები ან დიდი ენერგეტიკული კომპანია თითქოს ახალ საინვესტიციო პლატფორმას უჭერენ მხარს, ზოგჯერ მონტაჟირებული ვიდეოთი. გპირდებიან, რომ მცირე შენატანით, დაახლოებით 200–250 დოლარით, თვეში ათასობით ლარს მიიღებთ. რეგისტრაციის შემდეგ „მენეჯერი“ გირეკავთ და უფრო დიდი თანხის შეტანას გთხოვთ; კომპანიებს ასეთი პლატფორმა არ გაუხსნიათ.",
+    "en": "An ad or “article” appears on Facebook that looks like a well-known Georgian outlet’s page. In it politicians, businesspeople or a big energy company appear to back a new investment platform, sometimes with an edited video. You are promised thousands of lari a month for a small deposit of about 200–250 dollars. After you register, a “manager” calls and asks you to deposit more; the companies never opened any such platform."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "რეკლამა ან სტატია ცნობილი მედიის სახელით, პოლიტიკოსის ფოტოთი ან ვიდეოთი.",
+        "en": "An ad or article in a known outlet’s name with a politician’s photo or video."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "მცირე შენატანით თვეში ათასობით ლარი.",
+        "en": "Thousands of lari a month for a small deposit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ka": "რეგისტრაცია ბმულით: სახელი, ტელეფონი, ელფოსტა.",
+        "en": "Register through a link: name, phone, email."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ka": "„ფინანსური მენეჯერი“ რეკავს და შენატანს ითხოვს.",
+        "en": "A “financial manager” calls and asks for a deposit."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ka": "ექსკლუზივი: ქართველებს ახლა შეუძლიათ ენერგეტიკული გიგანტის მოგებაში მონაწილეობა! პრემიერ-მინისტრის თქმით, პლატფორმა ყველასთვის ხელმისაწვდომია: 250 დოლარის შეტანით თვეში 3 000 ლარამდე შემოსავალი. ადგილები შეზღუდულია. დარეგისტრირდით დღესვე: [ბმული]",
+        "en": "Exclusive: Georgians can now share in an energy giant’s profits! According to the Prime Minister, the platform is open to everyone: invest 250 dollars and earn up to 3,000 lari a month. Places are limited. Register today: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "პოლიტიკოსი ინვესტიციის რეკლამაში ფეისბუქზე",
+      "ცნობილი კომპანიის აქციები მცირე შენატანით",
+      "ყალბი სტატია ცნობილი მედიის სახელით ინვესტიცია",
+      "თვეში ათასობით ლარი საინვესტიციო პლატფორმა",
+      "რეგისტრაციის შემდეგ ინვესტიციის მენეჯერი მირეკავს",
+      "მონტაჟირებული ვიდეო პრემიერი ინვესტიცია"
+    ],
+    "en": [
+      "politician in a facebook investment ad",
+      "fake news article about an investment platform",
+      "invest 250 dollars earn thousands a month",
+      "investment manager called after i registered",
+      "edited video of prime minister promoting investment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ka": [
+      "პოლიტიკოსები და სახელმწიფო კომპანიები ინვესტიციებს ფეისბუქის რეკლამით არ გთავაზობენ.",
+      "მცირე შენატანით გარანტირებული დიდი შემოსავალი.",
+      "მედიის გვერდი ან საიტი ახალი შექმნილია ან მისამართი ოდნავ განსხვავდება."
+    ],
+    "en": [
+      "Politicians and state companies don’t offer investments through Facebook ads.",
+      "Guaranteed big income for a small deposit.",
+      "The outlet’s page or site is newly created or its address is slightly different."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "არ დარეგისტრირდეთ და პირადი მონაცემები არ შეიყვანოთ.",
+      "„მენეჯერს“ ფული არ გადაურიცხოთ და პროგრამა ტელეფონზე არ დააყენოთ.",
+      "უკვე გადარიცხეთ? დაუკავშირდით ბანკს, შეინახეთ ყველაფერი და მიმართეთ პოლიციას."
+    ],
+    "en": [
+      "Don’t register and don’t enter personal details.",
+      "Don’t send the “manager” money and don’t install any app on your phone.",
+      "Already paid? Contact your bank, keep everything and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112",
+    "ge/nbg"
+  ],
+  "sources": [
+    {
+      "title": "Fraudulent Information About Socar's Fake Investment Platform Disseminated On Behalf Of Georgian Media Outlets",
+      "publisher": "Myth Detector",
+      "url": "https://mythdetector.com/en/fraudulent-information-about-socar-s-fake-investment-platform-disseminated-on-behalf-of-georgian-media-outlets/",
+      "date": "2024-05-22"
+    },
+    {
+      "title": "The Names of Garibashvili and Lukoil are Used to Attract People to Join another Fraudulent Scheme",
+      "publisher": "Myth Detector",
+      "url": "https://mythdetector.com/en/the-names-of-garibashvili-and-lukoil-are-used-to-attract-people-to-join-another-fraudulent-scheme/",
+      "date": "2023-11-29"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ge/crypto-pyramid-social"
+  ]
+}

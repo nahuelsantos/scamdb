@@ -1,0 +1,138 @@
+{
+  "id": "am/fake-giveaway-ad-code",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "hy": "Սուպերմարկետի, Telcell Wallet-ի կամ հայտնի ընկերության կեղծ էջ Facebook-ում կամ Instagram-ում",
+    "en": "A fake page of a supermarket, Telcell Wallet or another well-known company on Facebook or Instagram"
+  },
+  "name": {
+    "hy": "Կեղծ խաղարկություն, նվեր սոցցանցում՝ մուտքագրեք SMS կոդը",
+    "en": "Fake prize draw or gift on social media: enter the SMS code"
+  },
+  "how": {
+    "hy": "Facebook-ում և Instagram-ում հայտնվում են սուպերմարկետների, Telcell Wallet-ի կամ այլ ընկերությունների կեղծ էջեր՝ խաղարկությամբ, անվճար նվերներով կամ հատուկ առաջարկով, օրինակ՝ «մեկ ամիս անվճար երթևեկություն Երևանում»: Հղումը խնդրում է մուտքագրել հեռախոսահամարը և SMS-ով եկած հաստատման կոդը կամ քարտի տվյալները: Կոդով խարդախները մտնում են էլեկտրոնային դրամապանակ և հանում գումարը դրամապանակից ու դրան կցված քարտերից:",
+    "en": "Fake pages of supermarkets, Telcell Wallet or other companies appear on Facebook and Instagram with prize draws, free gifts or special deals, such as “a month of free travel in Yerevan”. The link asks for your phone number and the confirmation code sent by SMS, or card details. With the code scammers get into your e-wallet and take money from it and from the cards linked to it."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Գովազդ կամ էջ հայտնի ընկերության անունով:",
+        "en": "An ad or page in a well-known company’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Անվճար նվեր, շահում կամ մեկ ամիս անվճար ծառայություն:",
+        "en": "A free gift, prize or a month of free service."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hy": "Հղումը տանում է կայք, որը հեռախոսահամար է պահանջում:",
+        "en": "The link leads to a site that asks for your phone number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hy": "Հետո պահանջում է SMS-ով եկած կոդը կամ քարտի տվյալները:",
+        "en": "Then it asks for the code sent by SMS or card details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "hy": "Մեր խանութի ծննդյան առթիվ նվիրում ենք 50 000 դրամի նվեր-քարտ առաջին 500 մասնակիցներին: Սեղմեք հղումը, մուտքագրեք ձեր համարը և SMS-ով ստացված կոդը՝ նվերն ակտիվացնելու համար [հղում]",
+        "en": "For our shop’s birthday we are giving a 50,000-dram gift card to the first 500 participants. Tap the link, enter your number and the code you get by SMS to activate the gift [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "սուպերմարկետի խաղարկություն ֆեյսբուքում հղում",
+      "նվեր քարտ ստանալու sms կոդ են ուզում",
+      "telcell անվճար երթևեկություն գովազդ",
+      "կոդը մուտքագրեցի դրամապանակից գումարը գնաց",
+      "կեղծ էջ նվեր է խոստանում instagram",
+      "շահել եք նվեր մուտքագրեք համարը կոդը",
+      "ակցիա շահում նվեր հաստատման կոդ"
+    ],
+    "en": [
+      "supermarket giveaway on facebook with a link",
+      "gift card asks for my sms code",
+      "telcell free travel ad",
+      "entered the code and my wallet was emptied",
+      "fake page promising a gift on instagram",
+      "you won a prize enter number and code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hy": [
+      "Նվեր ստանալու համար երբեք պետք չէ SMS կոդ կամ քարտի տվյալներ:",
+      "Էջը նոր է կամ անունը մի փոքր տարբերվում է պաշտոնականից:",
+      "Առաջարկը սահմանափակ է՝ «առաջին 500-ին» կամ «միայն այսօր»:"
+    ],
+    "en": [
+      "A gift never needs an SMS code or card details.",
+      "The page is new or its name differs slightly from the official one.",
+      "The offer is limited: “first 500” or “today only”."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Մի բացեք հղումը: Ակցիաները ստուգեք ընկերության պաշտոնական կայքում կամ հավելվածում:",
+      "Ոչ մեկին մի ասեք SMS կոդերը և գաղտնաբառերը:",
+      "Կոդը տվե՞լ եք. անմիջապես արգելափակեք դրամապանակը և քարտերը, հաղորդեք կիբեռոստիկանությանը:"
+    ],
+    "en": [
+      "Don’t open the link. Check offers on the company’s official website or app.",
+      "Never share SMS codes or passwords.",
+      "Gave the code? Block the wallet and cards at once and report it to the Cyber Police."
+    ]
+  },
+  "reportTo": [
+    "am/your-bank",
+    "am/cyber-police"
+  ],
+  "sources": [
+    {
+      "title": "Armenian residents warned about fake sweepstakes purported to be from supermarkets",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/armenian-residents-warned-about-fake-sweepstakes-purported-to-be-from-supermarkets/",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "\"A Month of Free Travel in Yerevan\": Armenia's Cyber Police Warns of New Fraudulent Scheme",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/-a-month-of-free-travel-in-yerevan-armenia-s-cyber-police-warns-of-new-fraudulent-scheme/",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Protect Yourself from Fraud: Safety Tips from AraratBank",
+      "publisher": "NEWS.am",
+      "url": "https://news.am/en/news/1036238",
+      "date": "2026-05-18"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "am/fake-social-benefit-link"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "ge/revenue-service-refund-sms",
+  "country": "ge",
+  "lang": "ka",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "ka": "„შემოსავლების სამსახური“ ან „RS“",
+    "en": "“Revenue Service” or “RS”"
+  },
+  "name": {
+    "ka": "ყალბი SMS შემოსავლების სამსახურიდან: „საგადასახადო ზედმეტობა“",
+    "en": "Fake Revenue Service text: “tax overpayment” refund"
+  },
+  "how": {
+    "ka": "სხვადასხვა ნომრიდან მოდის SMS შემოსავლების სამსახურის სახელით: თქვენზე რიცხულია საგადასახადო ზედმეტობა და თანხის დასაბრუნებლად ბმულზე უნდა გადახვიდეთ. ბმული ყალბ გვერდზე მიდის, სადაც პირად და ბარათის მონაცემებს ითხოვენ. შემოსავლების სამსახურმა განაცხადა, რომ ეს შეტყობინებები სიცრუეა და მის საქმიანობასთან კავშირი არ აქვს.",
+    "en": "A text arrives from various numbers in the name of the Revenue Service: you have a tax overpayment and must follow a link to get the money back. The link leads to a fake page asking for personal and card details. The Revenue Service said these messages are false and have nothing to do with it."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "SMS „შემოსავლების სამსახურიდან“.",
+        "en": "A text “from the Revenue Service”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "თქვენ ზედმეტად გადაიხადეთ და თანხა დაგიბრუნდებათ.",
+        "en": "You overpaid and will get money back."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ka": "დასაბრუნებლად ბმულზე უნდა გადახვიდეთ.",
+        "en": "To get it back you must follow a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ka": "გვერდი ბარათის მონაცემებს და კოდს ითხოვს.",
+        "en": "The page asks for card details and a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "ka": "შემოსავლების სამსახური: 2025 წლის გადასახადების გადამოწმების შედეგად თქვენზე ირიცხება ზედმეტობა 187,40 ლარი. თანხის ჩარიცხვისთვის მიუთითეთ ბარათის მონაცემები 24 საათში: [ბმული]",
+        "en": "Revenue Service: after checking your 2025 taxes, an overpayment of 187.40 lari is due to you. To receive it, enter your card details within 24 hours: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "შემოსავლების სამსახურის sms ზედმეტობაზე",
+      "საგადასახადო ზედმეტობის დაბრუნება ბმულით",
+      "ზედმეტობა დაგიბრუნდებათ ბარათზე",
+      "შემოსავლების სამსახური ბარათის მონაცემებს მთხოვს",
+      "rs sms zedmetoba dabruneba",
+      "shemosavlebis samsakhuri sms bmuli"
+    ],
+    "en": [
+      "revenue service text about a tax overpayment",
+      "tax refund link by sms georgia",
+      "message says tax money will be returned to my card",
+      "revenue service asking for card details",
+      "overpaid tax refund text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ka": [
+      "შემოსავლების სამსახური შეტყობინებებს საქართველოს ფოსტით ან თავისი ვებგვერდის პირად კაბინეტში აგზავნის, არა ბმულით SMS-ში.",
+      "თანხის „დაბრუნებისთვის“ ბარათის მონაცემებს ითხოვენ.",
+      "შეტყობინება ჩვეულებრივი ნომრიდან მოდის და ვადით გაშინებთ."
+    ],
+    "en": [
+      "The Revenue Service sends notices by Georgian Post or in your account on its website, not as a link in a text.",
+      "They ask for card details to “return” money.",
+      "The text comes from an ordinary number and pressures you with a deadline."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "ბმულზე არ გადახვიდეთ. შეამოწმეთ თქვენი პირადი კაბინეტი შემოსავლების სამსახურის საიტზე, მისამართი თავად აკრიფეთ.",
+      "ბარათის მონაცემები შეიყვანეთ? დაუყოვნებლივ დაბლოკეთ ბარათი ბანკში.",
+      "შეტყობინება წაშალეთ და შეატყობინეთ პოლიციას."
+    ],
+    "en": [
+      "Don’t open the link. Check your personal account on the Revenue Service website by typing the address yourself.",
+      "Entered card details? Block the card with your bank at once.",
+      "Delete the text and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "შემოსავლების სამსახური მოქალაქეებს მათი სახელით მოქმედი თაღლითური სქემის შესახებ აფრთხილებს",
+      "publisher": "Netgazeti",
+      "url": "https://netgazeti.ge/news/765753/",
+      "date": "2025-02-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ge/parcel-sms-link"
+  ]
+}

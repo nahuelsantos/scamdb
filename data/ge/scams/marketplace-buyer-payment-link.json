@@ -1,0 +1,120 @@
+{
+  "id": "ge/marketplace-buyer-payment-link",
+  "country": "ge",
+  "lang": "ka",
+  "status": "fading",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "ka": "„მყიდველი“ ყიდვა-გაყიდვის საიტზე",
+    "en": "A “buyer” on a buy-and-sell site"
+  },
+  "name": {
+    "ka": "ყალბი მყიდველი: „ფული უკვე გადავიხადე, ბმულით მიიღეთ“",
+    "en": "Fake buyer: “I’ve already paid, receive it by link”"
+  },
+  "how": {
+    "ka": "ყიდვა-გაყიდვის პლატფორმაზე განცხადება გაქვთ და „მყიდველი“ გწერთ, რომ ნივთს მიტანის სერვისით იყიდის. გიგზავნით ერთი შეხედვით სანდო ბმულს თანხის მისაღებად. ბმულზე ბანკს ირჩევთ, წერთ ანგარიშის ნომერს და სახელს, მერე კი ყალბი გვერდი ინტერნეტბანკის მომხმარებლის სახელს და პაროლს ითხოვს. ამ მონაცემებით თაღლითები თქვენი ანგარიშიდან ფულს გაიტანენ.",
+    "en": "You have a listing on a buy-and-sell platform and a “buyer” writes that they will buy the item using a delivery service. They send a trustworthy-looking link to receive the money. On the link you pick your bank, type your account number and name, and then a fake page asks for your internet-banking username and password. With them the fraudsters take money from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "ka": "„მყიდველი“ ნივთს უყურებლად ყიდულობს, კურიერით.",
+        "en": "A “buyer” takes the item unseen, by courier."
+      }
+    },
+    {
+      "text": {
+        "ka": "„თანხა უკვე გადავიხადე“, მიიღეთ ბმულით.",
+        "en": "“I’ve already paid”, receive it via a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ka": "ბმულზე ბანკს ირჩევთ და ანგარიშის მონაცემებს წერთ.",
+        "en": "On the link you choose your bank and enter account details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ka": "გვერდი ინტერნეტბანკის პაროლს და კოდს ითხოვს.",
+        "en": "The page asks for your internet-banking password and code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ka": "გამარჯობა, სარეცხი მანქანა ისევ იყიდება? ვიღებ, ოღონდ ქუთაისში ვარ და კურიერი წამოიღებს. ფული მიწოდების სერვისში უკვე ჩავრიცხე, აი ბმული, შედით, აირჩიეთ თქვენი ბანკი და თანხა ანგარიშზე დაგერიცხებათ: [ბმული]",
+        "en": "Hi, is the washing machine still for sale? I’ll take it, but I’m in Kutaisi so a courier will pick it up. I’ve already paid into the delivery service, here’s the link, open it, choose your bank and the money will be credited to your account: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "ka": [
+      "მყიდველმა ბმული გამომიგზავნა თანხის მისაღებად",
+      "განცხადებაზე მომწერეს კურიერით წაიღებენ",
+      "ფულის მისაღებად ინტერნეტბანკის პაროლი მთხოვეს",
+      "მყიდველი ამბობს თანხა დავბლოკეო",
+      "mymarket ss მყიდველი ბმული ბანკის არჩევა",
+      "უსაფრთხო გარიგების ბმული მყიდველისგან"
+    ],
+    "en": [
+      "buyer sent me a link to receive payment",
+      "buyer wants to send a courier for my item",
+      "link asked for my internet banking password",
+      "buyer says they already paid via delivery service",
+      "scam buyer on a classifieds site"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ka": [
+      "თანხის მისაღებად ბარათის ან ინტერნეტბანკის მონაცემები არ გჭირდებათ.",
+      "მყიდველი ნივთს უყურებლად იღებს და კურიერს გზავნის.",
+      "ბმული, რომელიც ბანკის არჩევას და პაროლს ითხოვს."
+    ],
+    "en": [
+      "You never need card or internet-banking details to receive money.",
+      "The buyer takes the item unseen and sends a courier.",
+      "A link that asks you to pick your bank and enter a password."
+    ]
+  },
+  "whatToDo": {
+    "ka": [
+      "ბმულზე არ შეხვიდეთ. გადახდა შეამოწმეთ მხოლოდ თქვენი ბანკის აპლიკაციაში.",
+      "პაროლი ან კოდი შეიყვანეთ? დაუყოვნებლივ დაუკავშირდით ბანკს და შეცვალეთ მონაცემები.",
+      "შეატყობინეთ პლატფორმას და დაბლოკეთ მყიდველი."
+    ],
+    "en": [
+      "Don’t open the link. Check any payment only in your bank’s own app.",
+      "Entered a password or code? Contact your bank at once and change your details.",
+      "Report the buyer to the platform and block them."
+    ]
+  },
+  "reportTo": [
+    "ge/your-bank",
+    "ge/police-112"
+  ],
+  "sources": [
+    {
+      "title": "ინტერნეტთაღლითობის ახალი სქემა საქართველოში - როგორ დავიცვათ თავი მისგან?",
+      "publisher": "Entrepreneur Georgia",
+      "url": "https://www.entrepreneur.com/ka/siakhleebi-da-tendentsiebi/internettaghlitobis/435254",
+      "date": "2022-09-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

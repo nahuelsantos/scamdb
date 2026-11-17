@@ -1,0 +1,145 @@
+{
+  "id": "am/investment-deepfake-ads",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "hy": "Գովազդ Facebook-ում, Instagram-ում կամ Telegram-ում՝ վարչապետի, հայտնի գործարարի կամ քաղաքական գործչի կեղծ տեսանյութով, հետո՝ «մենեջեր»",
+    "en": "An ad on Facebook, Instagram or Telegram with a fake video of the prime minister, a famous businessman or politician, then a “manager”"
+  },
+  "name": {
+    "hy": "Ներդրում հայտնի մարդու կեղծ տեսանյութով՝ ամսական մեծ եկամուտ",
+    "en": "Investment promoted with a famous person’s fake video: big monthly income"
+  },
+  "how": {
+    "hy": "Սոցցանցերում տարածվում են արհեստական բանականությամբ ստեղծված տեսանյութեր, որտեղ վարչապետը կամ հայտնի մարդիկ իբր գովազդում են ներդրումային նախագիծ կամ բաժնետոմսեր՝ խոստանալով ամսական մեծ եկամուտ: Հղումով գրանցվում եք, հետո զանգում է «անձնական մենեջերը», պահանջում քարտի տվյալներ և համոզում ներդնել ավելի ու ավելի շատ: Կան նաև բուրգային (Պոնցիի) հարթակներ, որտեղ եկամուտը վճարվում է նոր մասնակիցների գումարից: Հետագայում կարող են զանգել «օգնելու գումարը վերադարձնել»՝ վճարի դիմաց:",
+    "en": "AI-made videos spread on social media in which the prime minister or famous people seem to promote an investment project or shares, promising big monthly income. You register via a link, then a “personal manager” calls, asks for card details and pushes you to invest more and more. There are also pyramid (Ponzi) platforms that pay returns from new members’ money. Later someone may call offering to “recover” your money for a fee."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "Տեսանյութ, որտեղ հայտնի մարդը գովազդում է ներդրում:",
+        "en": "A video in which a famous person promotes an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hy": "Խոստանում են ամսական մեծ և երաշխավորված եկամուտ:",
+        "en": "Big, guaranteed monthly income is promised."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hy": "Գրանցվելու համար սահմանափակ ժամանակ է տրվում:",
+        "en": "There is only a short time to register."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hy": "«Մենեջերը» զանգում է և պահանջում ներդնել ավելի շատ:",
+        "en": "A “manager” calls and asks you to put in more."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "hy": "Վարչապետը ներկայացնում է նոր պետական ներդրումային ծրագիր. 100 000 դրամ ներդնելով՝ ամսական կստանաք ավելի քան 1,2 միլիոն դրամ: Գրանցումը բաց է միայն 24 ժամ: Լրացրեք ձեր տվյալները, և անձնական մենեջերը կկապվի ձեզ հետ [հղում]",
+        "en": "The prime minister presents a new state investment programme: invest 100,000 drams and get over 1.2 million drams a month. Registration is open for just 24 hours. Fill in your details and a personal manager will contact you [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "վարչապետի տեսանյութ ներդրում ամսական եկամուտ",
+      "ֆեյսբուքում գովազդ ներդրում արեք մենեջերը կզանգի",
+      "ներդրեցի հարթակում գումարը հանել անհնար է",
+      "կրիպտո ներդրում անծանոթը համոզում է ավելի շատ դնել",
+      "կեղծ տեսանյութ հայտնի գործարար բաժնետոմսեր",
+      "զանգում են օգնելու վերադարձնել կորցրած գումարը",
+      "գրանցվեք հղումով անձնական մենեջեր կզանգի",
+      "ներդրումային ընկերություն ամսական միլիոն դրամ եկամուտ"
+    ],
+    "en": [
+      "prime minister video investment monthly income",
+      "facebook ad invest and a manager will call",
+      "invested on a platform and can’t withdraw",
+      "crypto investment caller pushes me to deposit more",
+      "deepfake video of famous person selling shares",
+      "they call offering to recover my lost money"
+    ],
+    "ru": [
+      "инвестиции видео премьер министра доход в месяц",
+      "платформа заработок менеджер позвонит вложить деньги",
+      "фейковое видео пашиняна инвестиции",
+      "русскоязычный менеджер звонит в whatsapp вложить деньги",
+      "минимальный депозит 300 долларов прибыль"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "hy": [
+      "Պաշտոնյաները և հայտնի մարդիկ սոցցանցային գովազդով ներդրումներ չեն առաջարկում:",
+      "Սովորական բիզնեսը տարեկան մի քանի տասնյակ տոկոսից ավելի չի խոստանում:",
+      "Գումարը հանելու համար նոր վճար են պահանջում:"
+    ],
+    "en": [
+      "Officials and famous people don’t offer investments in social media ads.",
+      "Normal business doesn’t promise more than a few tens of percent a year.",
+      "They want a new payment before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Մի գրանցվեք և ձեր տվյալները մի թողեք նման կայքերում:",
+      "Ներդնելուց առաջ խորհրդակցեք կիբեռոստիկանության թեժ գծի հետ:",
+      "Արդեն վճարե՞լ եք. անմիջապես զանգահարեք բանկ և մի վստահեք «գումարը վերադարձնող» զանգերին:"
+    ],
+    "en": [
+      "Don’t register or leave your details on such sites.",
+      "Before investing, ask the Cyber Police hotline for advice.",
+      "Already paid? Call your bank at once and don’t trust calls offering to “recover” the money."
+    ]
+  },
+  "reportTo": [
+    "am/cyber-police",
+    "am/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Cyberpolice warns of new investment fraud in Armenia",
+      "publisher": "ArmBanks.am",
+      "url": "https://armbanks.am/en/2025/12/10/269031/",
+      "date": "2025-12-10"
+    },
+    {
+      "title": "Armenian police launch cybercrime hotline (VIDEO)",
+      "publisher": "ARKA Telecom",
+      "url": "https://arkatelecom.am/en/news/telecom/armenian_police_launch_cybercrime_hotline_video_/",
+      "date": "2024-12-10"
+    },
+    {
+      "title": "Scammers make half a million dollars in Armenia with the help of AI neural networks",
+      "publisher": "JAMnews",
+      "url": "https://jam-news.net/scam-with-neural-networks/",
+      "date": "2024-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

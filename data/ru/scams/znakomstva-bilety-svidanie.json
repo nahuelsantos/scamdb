@@ -1,0 +1,125 @@
+{
+  "id": "ru/znakomstva-bilety-svidanie",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ru": "Девушка с сайта знакомств, которая зовёт на свидание",
+    "en": "A woman from a dating site who invites you on a date"
+  },
+  "name": {
+    "ru": "Знакомство в интернете: «купи билет в театр или кино по моей ссылке»",
+    "en": "Online dating: \"buy a theatre or cinema ticket through my link\""
+  },
+  "how": {
+    "ru": "Мошенник под видом девушки знакомится на сайте знакомств, переводит общение в мессенджер и предлагает свидание в театре, кино или на концерте. «У неё уже есть билет», а вам она присылает ссылку на поддельный сайт кассы. После оплаты «билет не пришёл» или встречу отменяют, а «служба поддержки» сайта для «возврата» просит снова ввести данные карты или внести такую же сумму — и списывает ещё больше денег.",
+    "en": "A scammer posing as a woman meets you on a dating site, moves the chat to a messenger and suggests a date at the theatre, cinema or a concert. \"She already has a ticket\" and sends you a link to a fake box office site. After you pay, \"the ticket didn't arrive\" or the date is cancelled, and the site's \"support\" asks you to enter your card details again or pay the same amount for a \"refund\" — and takes even more money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Знакомая с сайта знакомств быстро зовёт на свидание.",
+        "en": "A match from a dating site quickly suggests a date."
+      }
+    },
+    {
+      "text": {
+        "ru": "Присылает ссылку, где надо купить билет рядом с её местом.",
+        "en": "She sends a link to buy a ticket next to her seat."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ru": "После оплаты — ошибка или отмена встречи.",
+        "en": "After paying — an error or the date is cancelled."
+      }
+    },
+    {
+      "text": {
+        "ru": "«Поддержка» просит снова ввести карту или доплатить для возврата.",
+        "en": "\"Support\" asks you to enter your card again or pay extra for a refund."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ru": "Привет 😊 Слушай, давай в субботу сходим на спектакль? Я уже взяла себе билет, там остались места рядом. Купи, пожалуйста, вот здесь, на сайте театра, чтобы сидеть вместе: [ссылка]. Только побыстрее, их разбирают!",
+        "en": "Hi 😊 Listen, shall we go to a play on Saturday? I already got my ticket and there are seats left next to me. Please buy one here on the theatre site so we can sit together: [ссылка]. Be quick though, they're selling out!"
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "девушка с сайта знакомств прислала ссылку на билеты в театр",
+      "купил билет в кино по ссылке а он не пришел",
+      "свидание отменили и предложили вернуть деньги через поддержку",
+      "для возврата билета попросили снова ввести карту",
+      "познакомился в приложении и она позвала на концерт",
+      "служба поддержки кассы просит оплатить такую же сумму для возврата"
+    ],
+    "en": [
+      "a woman from a dating site sent a link for theatre tickets",
+      "I bought a cinema ticket by link and it never came",
+      "the date was cancelled and they offered a refund through support",
+      "to refund the ticket they asked me to enter my card again",
+      "I met someone on an app and she invited me to a concert",
+      "the box office support asks me to pay the same amount to get a refund"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ru": [
+      "Билеты предлагают купить только по её ссылке.",
+      "Новая знакомая торопит с покупкой.",
+      "Для «возврата» снова нужна карта или доплата."
+    ],
+    "en": [
+      "You are told to buy tickets only through her link.",
+      "The new match rushes you to buy.",
+      "A \"refund\" needs your card again or an extra payment."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Покупайте билеты сами на известных сайтах, набрав адрес вручную.",
+      "Не вводите данные карты для «возврата» — так деньги не возвращают.",
+      "Если заплатили, заблокируйте карту и обратитесь в банк и полицию."
+    ],
+    "en": [
+      "Buy tickets yourself on well-known sites, typing the address yourself.",
+      "Never enter card details for a \"refund\" — that is not how refunds work.",
+      "If you paid, block the card and contact the bank and the police."
+    ]
+  },
+  "reportTo": [
+    "ru/your-bank",
+    "ru/police"
+  ],
+  "sources": [
+    {
+      "title": "В МВД рассказали о мошеннической схеме на сайтах знакомств",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-rasskazali-o-moshennicheskoy-skheme-na-saytakh-znakomstv/",
+      "date": "2026-01-01"
+    },
+    {
+      "title": "МВД: мошенники крадут деньги под предлогом покупки билетов для первого свидания",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/mvd-moshenniki-kradut-dengi-pod-predlogom-pokupki-biletov-dlya-pervogo-svidaniya/",
+      "date": "2025-05-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

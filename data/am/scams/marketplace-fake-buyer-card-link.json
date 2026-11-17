@@ -1,0 +1,138 @@
+{
+  "id": "am/marketplace-fake-buyer-card-link",
+  "country": "am",
+  "lang": "hy",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "hy": "«Գնորդ» List.am-ում, Facebook Marketplace-ում կամ Telegram խմբում",
+    "en": "A “buyer” on List.am, Facebook Marketplace or a Telegram group"
+  },
+  "name": {
+    "hy": "«Գնորդը» ուղարկում է հղում՝ գումարը «ստանալու»",
+    "en": "A “buyer” sends a link to “receive” your money"
+  },
+  "how": {
+    "hy": "Վաճառքի հայտարարություն եք տեղադրում, և «գնորդը» արագ գրում է, առանց սակարկելու, նույնիսկ առաջարկում է կանխավճար: Հետո ասում է, որ գումարը արդեն ուղարկել է, և հղում է տալիս «ստացումը հաստատելու» համար: Էջը նման է բանկի կամ վճարային ծառայության ձևի և պահանջում է քարտի համարը, ժամկետը, անունը և եռանիշ կոդը: Կարող են ուղարկել կեղծ սքրինշոթ կամ ասել, որ գումարը «սառեցված» է մինչև հաստատումը:",
+    "en": "You post an item for sale and a “buyer” writes quickly, without haggling, even offering to pay in advance. Then they say the money has already been sent and give you a link to “confirm receipt”. The page looks like a bank or payment service form and asks for the card number, expiry date, name and three-digit code. They may send a fake screenshot or say the money is “frozen” until you confirm."
+  },
+  "steps": [
+    {
+      "text": {
+        "hy": "«Գնորդը» անմիջապես համաձայնում է գնին և ուզում է վճարել նախապես:",
+        "en": "The “buyer” agrees to the price at once and wants to pay upfront."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hy": "Ուղարկում է հղում՝ գումարը ստանալու կամ «ապասառեցնելու» համար:",
+        "en": "They send a link to receive or “unfreeze” the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hy": "Էջը պահանջում է քարտի ժամկետը, CVV-ն կամ SMS կոդը:",
+        "en": "The page asks for the card expiry date, CVV or SMS code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "hy": "Շտապեցնում է՝ «առաքիչն արդեն ճանապարհին է»:",
+        "en": "They rush you: “the courier is already on the way”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "hy": "Բարև, լվացքի մեքենան դեռ վաճառվու՞մ է: Վերցնում եմ, գումարը արդեն փոխանցել եմ անվտանգ գործարքի ծառայությամբ, առաքիչը ինքը կգա: Մնում է միայն ստանալ՝ մուտքագրեք քարտի տվյալները այստեղ [հղում]",
+        "en": "Hi, is the washing machine still for sale? I’ll take it, I’ve already sent the money through a safe-deal service and the courier will come himself. You just need to receive it, enter your card details here [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "hy": [
+      "list.am գնորդը հղում ուղարկեց գումար ստանալու",
+      "գնորդը քարտի cvv է ուզում վճարելու",
+      "վաճառում էի ապրանքը ասացին գումարը սառեցված է",
+      "անվտանգ գործարք հղում մուտքագրեք քարտը",
+      "կեղծ վճարման սքրինշոթ ուղարկեց գնորդը",
+      "գումարը ստանալու քարտի ժամկետը պահանջեցին",
+      "գնորդը ասում է գումարը արդեն ուղարկել է",
+      "հայտարարություն list վաճառք գնորդ հղում"
+    ],
+    "en": [
+      "list.am buyer sent a link to receive payment",
+      "buyer wants my card cvv to pay me",
+      "selling an item and told money is frozen",
+      "safe deal link asks for my card details",
+      "buyer sent a fake payment screenshot",
+      "asked for card expiry date to receive money"
+    ],
+    "ru": [
+      "покупатель с list.am прислал ссылку для получения денег",
+      "покупатель просит данные карты чтобы оплатить",
+      "фейковый покупатель ссылка безопасная сделка",
+      "покупатель просит cvv чтобы перевести деньги",
+      "деньги заморожены подтвердите получение по ссылке"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "hy": [
+      "Գումար ստանալու համար բավական է քարտի համարը. ժամկետ, CVV կամ SMS կոդ պետք չէ:",
+      "Գնորդը գրեթե չի հետաքրքրվում ապրանքով, բայց պնդում է իր «ծառայության» վրա:",
+      "Վճարման սքրինշոթը ապացույց չէ:"
+    ],
+    "en": [
+      "To receive money only the card number is needed, never the expiry date, CVV or an SMS code.",
+      "The buyer barely asks about the item but insists on their “service”.",
+      "A payment screenshot is not proof."
+    ]
+  },
+  "whatToDo": {
+    "hy": [
+      "Մի բացեք անծանոթի հղումները: Գումարը համարեք ստացված միայն երբ այն երևում է ձեր բանկի հավելվածում:",
+      "Առաջարկեք սովորական փոխանցում քարտի համարին կամ կանխիկ՝ հանդիպելիս:",
+      "Մուտքագրե՞լ եք տվյալները. անմիջապես զանգահարեք բանկ:"
+    ],
+    "en": [
+      "Don’t open links from strangers. Count the money as received only when it shows in your banking app.",
+      "Offer a normal transfer to your card number or cash when you meet.",
+      "Entered your details? Call your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "am/your-bank",
+    "am/cyber-police"
+  ],
+  "sources": [
+    {
+      "title": "\"We want to buy your item, please provide your card details.\" IDBank warns about fraud on classified platforms",
+      "publisher": "B24.am",
+      "url": "https://en.b24.am/17491.html",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Protect Yourself from Fraud: Safety Tips from AraratBank",
+      "publisher": "NEWS.am",
+      "url": "https://news.am/en/news/1036238",
+      "date": "2026-05-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

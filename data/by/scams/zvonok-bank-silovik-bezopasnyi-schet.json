@@ -1,0 +1,132 @@
+{
+  "id": "by/zvonok-bank-silovik-bezopasnyi-schet",
+  "country": "by",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ru": "Звонок в мессенджере якобы от сотрудника банка, милиции, КГБ, Следственного комитета или Нацбанка",
+    "en": "A messenger call supposedly from a bank employee, the police, the KGB, the Investigative Committee or the National Bank"
+  },
+  "name": {
+    "ru": "Звонок «из банка» или «от силовиков»: взять кредит и перевести деньги на «безопасный счёт»",
+    "en": "Call 'from the bank' or 'the authorities': take out a loan and move money to a 'safe account'"
+  },
+  "how": {
+    "ru": "Это самая распространённая схема в Беларуси. Звонят чаще всего через Viber, WhatsApp или Telegram, представляются сотрудником банка, милиции, КГБ или Следственного комитета и говорят о подозрительной операции, утечке данных или о том, что от вашего имени кто-то оформляет кредит или финансирует преступников. Разговор передают от одного «специалиста» к другому, показывают поддельные удостоверения, могут звонить по видео. Человека убеждают взять кредит, снять сбережения и перевести их на «безопасный счёт», «задекларировать» деньги или участвовать в «спецоперации» по поимке мошенников. Настоящий банк и милиция так никогда не делают.",
+    "en": "This is the most common scheme in Belarus. The call usually comes through Viber, WhatsApp or Telegram from someone posing as a bank employee, the police, the KGB or the Investigative Committee, who talks about a suspicious transaction, a data leak, or someone taking out a loan or funding criminals in your name. You are passed from one 'specialist' to another, shown fake ID cards, sometimes on a video call. You are talked into taking out a loan, withdrawing your savings and moving them to a 'safe account', 'declaring' the money, or joining a 'special operation' to catch fraudsters. A real bank and the police never do this."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонок в мессенджере: с вашим счётом подозрительная операция.",
+        "en": "A messenger call: there's a suspicious transaction on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Вас соединяют с «сотрудником милиции» или «Нацбанка».",
+        "en": "You are put through to a 'police officer' or 'National Bank employee'."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ru": "Никому не говорите, это тайна следствия.",
+        "en": "Tell no one, it's part of a confidential investigation."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ru": "Оформите кредит и переведите деньги на защищённый счёт.",
+        "en": "Take out a loan and transfer the money to a protected account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ru": "Здравствуйте, Ирина Владимировна. Отдел финансового мониторинга банка. По вашим данным только что подана заявка на кредит в другом городе. Чтобы её аннулировать, нужно опередить мошенников: оформите встречную заявку, а средства мы временно разместим на резервном счёте Национального банка. Сейчас с вами свяжется наш куратор из правоохранительных органов. Прошу никому не сообщать о разговоре, это может помешать проверке.",
+        "en": "Hello, Irina Vladimirovna. This is the bank's financial monitoring department. A loan application has just been filed in your name in another city. To cancel it we need to get ahead of the fraudsters: file a counter-application, and we'll temporarily place the money in a reserve account at the National Bank. Our supervisor from law enforcement will contact you now. Please don't tell anyone about this call, it could interfere with the check."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонили из банка и сказали срочно взять кредит",
+      "звонок в вайбере от сотрудника кгб",
+      "попросили перевести деньги на безопасный счет",
+      "следователь сказал задекларировать сбережения",
+      "звонили из нацбанка про подозрительную операцию",
+      "на меня якобы оформляют кредит мошенники",
+      "предложили участвовать в операции по поимке мошенников"
+    ],
+    "en": [
+      "the bank called and told me to take out a loan urgently",
+      "a viber call from a kgb officer",
+      "they asked me to move my money to a safe account",
+      "an investigator told me to declare my savings",
+      "someone from the national bank called about a suspicious transaction",
+      "they said fraudsters are taking out a loan in my name",
+      "they asked me to help in an operation to catch fraudsters"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ru": [
+      "Звонок «из банка» или «из милиции» приходит в мессенджере.",
+      "Вас просят взять кредит, снять наличные или перевести деньги на «безопасный» или «резервный» счёт.",
+      "Требуют молчать и не класть трубку, передают от одного «сотрудника» к другому."
+    ],
+    "en": [
+      "The call 'from the bank' or 'the police' comes through a messenger.",
+      "You are asked to take out a loan, withdraw cash or move money to a 'safe' or 'reserve' account.",
+      "They demand secrecy, tell you not to hang up and pass you from one 'officer' to another."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку и сами позвоните в банк по номеру на обороте карточки или в милицию по 102.",
+      "Безопасных счетов не существует: ни банк, ни милиция, ни Нацбанк не просят переводить деньги.",
+      "Если вы уже взяли кредит или перевели деньги, немедленно сообщите в банк и в милицию."
+    ],
+    "en": [
+      "Hang up and call your bank on the number on the back of your card, or the police on 102, yourself.",
+      "There is no such thing as a safe account: neither the bank, the police nor the National Bank ever asks you to move money.",
+      "If you have already taken out a loan or transferred money, tell your bank and the police at once."
+    ]
+  },
+  "reportTo": [
+    "by/your-bank",
+    "by/police",
+    "by/mvd"
+  ],
+  "sources": [
+    {
+      "title": "В МВД рассказали, сколько кибермошенничеств выявили за три месяца, и пригрозили курьерам применением огнестрельного оружия",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/life/124986.html",
+      "date": "2026-04-13"
+    },
+    {
+      "title": "Банки составили топ уловок мошенников, которые пытаются увести деньги. Есть смысл прочесть и рассказать родным — возможно, убережете их",
+      "publisher": "Зеркало",
+      "url": "https://news.zerkalo.io/economics/107459.html",
+      "date": "2025-08-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

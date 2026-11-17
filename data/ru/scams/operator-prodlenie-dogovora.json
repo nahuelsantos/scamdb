@@ -1,0 +1,127 @@
+{
+  "id": "ru/operator-prodlenie-dogovora",
+  "country": "ru",
+  "lang": "ru",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ru": "Звонок якобы от мобильного оператора",
+    "en": "A call supposedly from your mobile operator"
+  },
+  "name": {
+    "ru": "«Истекает договор с оператором»: продлите его по коду из СМС",
+    "en": "\"Your contract with the operator is expiring\": renew it with an SMS code"
+  },
+  "how": {
+    "ru": "Звонящий называется сотрудником сотового оператора и говорит, что срок действия номера или договора заканчивается и номер отключат, если не продлить его прямо сейчас. Он напоминает, что к номеру привязаны банк, мессенджеры и «Госуслуги», предлагает «особые условия» и просит назвать код из СМС для «подтверждения данных». С этим кодом мошенники входят в «Госуслуги» или личный кабинет и начинают следующий этап обмана. Договор с оператором обычно бессрочный, и продлить его по телефону нельзя.",
+    "en": "The caller claims to be from your mobile operator and says the number or contract is expiring and will be cut off unless renewed right now. He reminds you that your bank, messengers and Gosuslugi are linked to the number, offers \"special terms\" and asks for an SMS code to \"confirm your details\". With the code the scammers log in to Gosuslugi or your account and start the next stage. Operator contracts usually have no end date and cannot be renewed over the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "ru": "Звонят «от оператора»: срок договора или номера истекает.",
+        "en": "A call \"from the operator\": the contract or number is expiring."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ru": "Номер якобы отключат в течение часа.",
+        "en": "The number will supposedly be cut off within the hour."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ru": "Просят продиктовать код из СМС для продления.",
+        "en": "They ask you to read out the SMS code to renew."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ru": "Не дают перезвонить на официальный номер.",
+        "en": "They discourage you from calling the official number."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ru": "Добрый день, Алексей Викторович, это служба поддержки вашего оператора. У вашей сим-карты заканчивается срок обслуживания, сегодня номер будет отключён, а к нему у вас привязан банк и Госуслуги. Я могу продлить договор прямо сейчас на льготных условиях — вам придёт сообщение, назовите цифры.",
+        "en": "Good afternoon, Alexei Viktorovich, this is your operator's support service. Your SIM card's service period is ending and the number will be disconnected today, and your bank and Gosuslugi are linked to it. I can renew the contract right now on special terms — you'll get a message, tell me the digits."
+      }
+    }
+  ],
+  "phrases": {
+    "ru": [
+      "позвонил оператор сказал что истекает договор",
+      "просили код из смс чтобы продлить договор связи",
+      "сказали что сим карту отключат сегодня",
+      "звонок от сотовой связи про продление на особых условиях",
+      "заканчивается срок действия номера надо подтвердить данные",
+      "оператор предлагал сменить тариф по коду"
+    ],
+    "en": [
+      "the operator called saying my contract is expiring",
+      "they asked for an sms code to renew my phone contract",
+      "they said my sim card will be cut off today",
+      "a call from the mobile company about renewing on special terms",
+      "my number is expiring and I need to confirm my details",
+      "the operator offered to change my tariff with a code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "ru": [
+      "«Истекает срок действия номера» — у обычного договора нет срока.",
+      "Код из СМС для «продления» или «смены тарифа».",
+      "Звонок не с официального номера оператора и давление «решить сейчас»."
+    ],
+    "en": [
+      "\"Your number is expiring\" — ordinary contracts have no end date.",
+      "An SMS code to \"renew\" or \"change tariff\".",
+      "The call is not from the operator's official number and pushes you to \"decide now\"."
+    ]
+  },
+  "whatToDo": {
+    "ru": [
+      "Положите трубку и сами позвоните оператору по номеру с его сайта или из приложения.",
+      "Не называйте коды из СМС.",
+      "Если код назвали, смените пароль «Госуслуг» и предупредите банк."
+    ],
+    "en": [
+      "Hang up and call your operator yourself using the number on its website or app.",
+      "Do not read out SMS codes.",
+      "If you gave a code, change your Gosuslugi password and warn your bank."
+    ]
+  },
+  "reportTo": [
+    "ru/police",
+    "ru/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Мошенники притворяются операторами связи и предлагают продлить договор. Как не стать жертвой обмана",
+      "publisher": "E1.ru",
+      "url": "https://www.e1.ru/text/incidents/2026/02/01/76241345/",
+      "date": "2026-02-01"
+    },
+    {
+      "title": "В МВД объяснили, какие фразы используют мошенники под видом операторов связи",
+      "publisher": "Объясняем.рф (по данным МВД России)",
+      "url": "https://xn--90aivcdt6dxbc.xn--p1ai/articles/news/v-mvd-obyasnili-kakie-frazy-ispolzuyut-moshenniki-pod-vidom-operatorov-svyazi/",
+      "date": "2026-01-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

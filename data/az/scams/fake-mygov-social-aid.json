@@ -1,0 +1,124 @@
+{
+  "id": "az/fake-mygov-social-aid",
+  "country": "az",
+  "lang": "az",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "az": "Sosial şəbəkə və messencerlərdə “dövlət yardımı” xəbəri və myGov portalını təqlid edən saxta sayt",
+    "en": "A “state aid” post on social media or messengers and a fake site copying the myGov portal"
+  },
+  "name": {
+    "az": "Saxta “dövlət sosial yardımı”: myGov-a oxşar saytda şəxsiyyət vəsiqəsi və kart məlumatları",
+    "en": "Fake “state social aid”: ID card and bank card details on a site copying myGov"
+  },
+  "how": {
+    "az": "Sosial şəbəkələrdə və messencerlərdə dövlətin vətəndaşlara birdəfəlik və ya ünvanlı sosial yardım verdiyi barədə yalan xəbər yayılır. Link Rəqəmsal İnkişaf və Nəqliyyat Nazirliyinin myGov portalını təqlid edən saxta sayta aparır; “müraciət” və “ödənişin karta köçürülməsi” adı ilə şəxsiyyət vəsiqəsinin məlumatları, istifadəçi hesabı və bank kartı rekvizitləri istənilir. Bu məlumatlar hesabların ələ keçirilməsi və kartdan pul oğurlanması üçün istifadə olunur.",
+    "en": "False news spreads on social media and messengers that the state is paying one-off or targeted social aid. The link leads to a fake site copying the myGov portal of the Ministry of Digital Development and Transport; to “apply” and “have the payment sent to your card”, it asks for ID card details, user account and bank card details. These are then used to take over accounts and steal money from the card."
+  },
+  "steps": [
+    {
+      "text": {
+        "az": "Dövlətin hamıya pul ödədiyi barədə xəbər və link yayılır.",
+        "en": "A post with a link claims the state is paying everyone money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "az": "Sayt myGov və ya dövlət qurumunu təqlid edir.",
+        "en": "The site imitates myGov or a government body."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "az": "Yardımı almaq üçün linkə keçmək lazımdır deyilir.",
+        "en": "You are told to follow the link to get the aid."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "az": "Şəxsiyyət vəsiqəsi və kart məlumatları, bəzən kod istənilir.",
+        "en": "ID and card details, sometimes a code, are asked for."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "az": "Diqqət! Prezidentin sərəncamı ilə bütün vətəndaşlara 250 AZN birdəfəlik sosial yardım ödənilir. Müraciət müddəti 3 gündür. Ş/V məlumatlarınızı və ödənişin köçürüləcəyi kartı myGov səhifəsində qeyd edin: [link] Bu mesajı yaxınlarınıza da göndərin!",
+        "en": "Attention! By presidential order, all citizens are being paid a one-off 250 AZN social aid. You have 3 days to apply. Enter your ID details and the card for the payment on the myGov page: [link] Forward this message to your loved ones too!"
+      }
+    }
+  ],
+  "phrases": {
+    "az": [
+      "dövlət sosial yardım verir linkə keç",
+      "mygov oxşar saytda kart məlumatı istədi",
+      "birdəfəlik yardım üçün şəxsiyyət vəsiqəsi məlumatı",
+      "prezident sərəncamı ilə pul ödənilir mesajı",
+      "sosial yardım müraciəti saxta sayt",
+      "yardımı almaq üçün kartı qeyd edin dedilər"
+    ],
+    "en": [
+      "message says the state is paying social aid",
+      "fake mygov site asking for card details",
+      "one off government payment link",
+      "asked for my id card details to receive aid",
+      "forward this message to get state money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "az": [
+      "Dövlət yardımları WhatsApp zənciri və naməlum linklə paylanmır.",
+      "Ünvan çubuğunda rəsmi gov.az domeni yoxdursa, sayt saxtadır.",
+      "“Yaxınlarınıza da göndərin” çağırışı fişinqin yayılma üsuludur."
+    ],
+    "en": [
+      "State aid isn’t handed out via WhatsApp chains and unknown links.",
+      "If the address bar doesn’t show the official gov.az domain, the site is fake.",
+      "“Forward this to your loved ones” is how phishing spreads."
+    ]
+  },
+  "whatToDo": {
+    "az": [
+      "Linkə keçməyin və mesajı başqalarına göndərməyin.",
+      "Dövlət xidmətlərini yalnız ünvanı özünüz yazaraq rəsmi portalda yoxlayın.",
+      "Saxta saytı Blacklist.gov.az-a bildirin; kart məlumatı vermisinizsə, kartı bloklatdırın."
+    ],
+    "en": [
+      "Don’t open the link or forward the message.",
+      "Check government services only on the official portal, typing the address yourself.",
+      "Report the fake site to Blacklist.gov.az; if you gave card details, have the card blocked."
+    ]
+  },
+  "reportTo": [
+    "az/blacklist-gov",
+    "az/your-bank",
+    "az/mka-1654"
+  ],
+  "sources": [
+    {
+      "title": "Websites committing cyber fraud on behalf of the President have been blocked",
+      "publisher": "Tech.az",
+      "url": "https://tech.az/en/posts/websites-committing-cyber-fraud-on-behalf-of-the-president-have-been-blocked-6492",
+      "date": "2026-01-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}
