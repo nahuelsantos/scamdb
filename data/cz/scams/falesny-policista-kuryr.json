@@ -1,0 +1,141 @@
+{
+  "id": "cz/falesny-policista-kuryr",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person",
+    "email"
+  ],
+  "sender": {
+    "cs": "„Policista“ z hospodářské kriminality, „pracovník ČNB“ a pak „kurýr“, který si přijede pro hotovost",
+    "en": "A “police officer” from the economic crime unit, a “Czech National Bank employee”, then a “courier” who comes for the cash"
+  },
+  "name": {
+    "cs": "Falešný policista a „kurýr ČNB“ si přijdou pro hotovost",
+    "en": "Fake police officer and a “Czech National Bank courier” come for your cash"
+  },
+  "how": {
+    "cs": "Volá „policista“, který tvrdí, že někdo na vaše jméno podal žádost o úvěr nebo zneužil vaše doklady a že probíhá vyšetřování. Pošle e-mailem dokumenty, které vypadají jako policejní, a přepojí vás na další „policisty“ nebo na „pracovníka České národní banky“. Celé hodiny vás drží na telefonu, nesmíte nic říct rodině ani v bance. Nakonec vás přimějí vzít si úvěr, vybrat hotovost a předat ji „kurýrovi“, nebo peníze poslat na „depozitní“ účet.",
+    "en": "A “police officer” calls saying someone applied for a loan in your name or misused your ID and an investigation is under way. They email documents that look like police papers and pass you to more “officers” or to a “Czech National Bank employee”. They keep you on the phone for hours and you must not tell your family or the bank. In the end they get you to take out a loan, withdraw cash and hand it to a “courier”, or send the money to a “deposit” account."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Volá „policie“: na vaše jméno je podvodný úvěr, probíhá vyšetřování.",
+        "en": "The “police” call: there is a fraudulent loan in your name and an investigation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Nesmíte o tom mluvit s rodinou ani v bance, je to „utajené“.",
+        "en": "You must not talk about it with family or at the bank; it is “confidential”."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "cs": "Hodiny na telefonu, přepojování na „ČNB“.",
+        "en": "Hours on the phone, being passed to the “central bank”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "cs": "Máte vybrat hotovost nebo vzít úvěr a předat peníze kurýrovi.",
+        "en": "You must withdraw cash or take out a loan and hand the money to a courier."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Tady kapitán Dvořák, odbor hospodářské kriminality. Na základě padělané plné moci byla na vaše jméno podána žádost o úvěr. Vyšetřování je utajené, proto o něm nesmíte mluvit s nikým v bance ani v rodině. Za chvíli vás spojím s pracovníkem České národní banky, který vám vysvětlí, jak peníze zajistit. Hotovost si od vás převezme náš kurýr.",
+        "en": "This is Captain Dvořák from the economic crime department. A loan application was filed in your name on a forged power of attorney. The investigation is confidential, so you must not talk about it with anyone at the bank or in your family. In a moment I’ll connect you with a Czech National Bank employee who will explain how to secure your money. Our courier will collect the cash from you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "falešný policista volal",
+      "kurýr převezme hotovost",
+      "pracovník čnb volal",
+      "vyšetřování úvěr moje jméno",
+      "nesmím říct bance rodině",
+      "vybrat hotovost předat kurýrovi",
+      "policejní předvolání emailem"
+    ],
+    "en": [
+      "fake police officer called",
+      "courier will collect the cash",
+      "central bank employee called me",
+      "police investigation loan in my name",
+      "told not to tell the bank or family",
+      "withdraw cash and hand it over"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "cs": [
+      "Skutečný policista nikdy nechce, abyste vybírali peníze, brali si úvěr nebo předávali hotovost kurýrovi.",
+      "ČNB s veřejností takto po telefonu nekomuniká a nevede účty lidem.",
+      "Zákaz mluvit s bankou nebo rodinou je typický znak podvodu.",
+      "Dokumenty poslané e-mailem se dají snadno padělat."
+    ],
+    "en": [
+      "A real police officer never asks you to withdraw money, take a loan or hand cash to a courier.",
+      "The Czech National Bank does not contact the public like this by phone and does not hold accounts for individuals.",
+      "Being told not to talk to the bank or family is a classic sign of a scam.",
+      "Documents sent by email are easy to forge."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Zavěste a zavolejte sami na linku 158; ověřte si, zda vás policie opravdu hledá.",
+      "Hotovost nikomu nepředávejte, ani „kurýrovi“, který přijde ke dveřím.",
+      "Pokud kurýr právě přichází nebo stojí u dveří, volejte 158 nebo 112.",
+      "Pokud jste už platili, volejte okamžitě banku a podejte trestní oznámení."
+    ],
+    "en": [
+      "Hang up and call 158 yourself to check whether the police really want you.",
+      "Never hand cash to anyone, including a “courier” at your door.",
+      "If a courier is on the way or at your door, call 158 or 112.",
+      "If you already paid, call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "cz/policie-158",
+    "cz/emergency-112",
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Falešný policista připravil ženu o téměř tři čtvrtě milionu korun",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/falesny-policista-pripravil-zenu-o-temer-tri-ctvrte-milionu-korun.aspx",
+      "date": "2026-02-23"
+    },
+    {
+      "title": "„Zastav. Zavěs. Zkontroluj.“ Policie varuje před falešnými policisty a bankéři",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/zastav-zaves-zkontroluj-policie-varuje-pred-falesnymi-policisty-a-bankeri.aspx",
+      "date": "2026-05-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/falesny-banker-bezpecny-ucet",
+    "cz/vybrat-hotovost-bitcoinmat"
+  ]
+}

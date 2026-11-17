@@ -1,0 +1,124 @@
+{
+  "id": "cz/vzdaleny-pristup-anydesk",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "cs": "„Bankéř“, „investiční poradce“ nebo „technická podpora“",
+    "en": "A “banker”, an “investment adviser” or “technical support”"
+  },
+  "name": {
+    "cs": "Nainstalujte si AnyDesk: falešný poradce ovládne váš počítač",
+    "en": "Install AnyDesk: a fake adviser takes over your computer"
+  },
+  "how": {
+    "cs": "Volá „bankéř“ nebo „investiční specialista“. Láká na výhodné zhodnocení peněz nebo tvrdí, že je potřeba prověřit podezřelý pohyb na účtu. Navede vás k instalaci programu pro vzdálený přístup (například AnyDesk nebo TeamViewer). Pak vidí vaši obrazovku, může do prohlížeče podstrčit škodlivý doplněk, ukazovat vám falešné platby a získat hesla do bankovnictví. Nakonec vás přiměje poslat peníze na podvodné účty.",
+    "en": "A “banker” or “investment specialist” calls. They tempt you with great returns or say a suspicious movement on your account must be checked. They guide you to install a remote-access program (such as AnyDesk or TeamViewer). They can then see your screen, plant a malicious browser add-on, show you fake payments and get your banking passwords. Finally they get you to send money to fraudulent accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Hovor od „poradce“ o investici nebo podezřelé transakci.",
+        "en": "A call from an “adviser” about an investment or a suspicious transaction."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Máte si stáhnout aplikaci a nadiktovat kód pro připojení.",
+        "en": "You are asked to download an app and read out a connection code."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "cs": "Na obrazovce pak „vidíte“ platby, které neexistují, a máte převést peníze.",
+        "en": "You then “see” payments on screen that do not exist and are told to transfer money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Dobrý den, volám z oddělení investic vaší banky. Na účtu vidíme nestandardní pohyb a potřebujeme to s vámi projít. Stáhněte si prosím aplikaci AnyDesk a nadiktujte mi devítimístné číslo, které se vám zobrazí. Já se připojím a ukážu vám, kam máte kliknout, nic nemusíte zadávat sama.",
+        "en": "Hello, I’m calling from your bank’s investment department. We can see an unusual movement on your account and need to go through it with you. Please download the AnyDesk app and read me the nine-digit number it shows. I’ll connect and show you where to click; you don’t have to enter anything yourself."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "nainstalovat anydesk bankéř",
+      "vzdálený přístup počítač podvodník",
+      "investiční poradce teamviewer",
+      "připojil počítače ovládal",
+      "stáhnout aplikaci nadiktovat číslo",
+      "technická podpora vzdálená plocha"
+    ],
+    "en": [
+      "asked me to install anydesk",
+      "remote access to my computer",
+      "investment adviser teamviewer",
+      "he connected to my computer",
+      "download an app and read out the number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "cs": [
+      "Banka ani policie vás nikdy nežádá o instalaci programů pro vzdálený přístup.",
+      "Kdo ovládá váš počítač, může vám ukazovat falešné zůstatky a platby.",
+      "Nečekaná nabídka investice po telefonu je varovný signál."
+    ],
+    "en": [
+      "Neither the bank nor the police will ever ask you to install remote-access software.",
+      "Whoever controls your computer can show you fake balances and payments.",
+      "An unexpected investment offer over the phone is a warning sign."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Ukončete hovor a program pro vzdálený přístup odinstalujte; odpojte počítač od internetu.",
+      "Volejte banku na číslo z karty, zablokujte bankovnictví a změňte hesla z jiného zařízení.",
+      "Podejte trestní oznámení."
+    ],
+    "en": [
+      "End the call, uninstall the remote-access program and disconnect the computer from the internet.",
+      "Call your bank on the number on your card, block online banking and change passwords from another device.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni",
+    "cz/policie-158"
+  ],
+  "sources": [
+    {
+      "title": "Nový podvod – falešný investiční nebo bankovní poradce žádá vzdálený přístup",
+      "publisher": "Komerční banka",
+      "url": "https://www.kb.cz/cs/o-bance/novinky/bezpecnost/novy-podvod-falesny-investicni-nebo-bankovni-poradce-zada-vzdaleny-pristup",
+      "date": "2026-04-27"
+    },
+    {
+      "title": "„Zastav. Zavěs. Zkontroluj.“ Policie varuje před falešnými policisty a bankéři",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/zastav-zaves-zkontroluj-policie-varuje-pred-falesnymi-policisty-a-bankeri.aspx",
+      "date": "2026-05-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/falesny-banker-bezpecny-ucet",
+    "cz/investice-celebrity-deepfake"
+  ]
+}

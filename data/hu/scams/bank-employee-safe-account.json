@@ -1,0 +1,154 @@
+{
+  "id": "hu/bank-employee-safe-account",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "hu": "„A bankja” biztonsági vagy csalásmegelőzési osztálya, „kiberbiztonsági munkatárs” (néha a bank valódi számával a kijelzőn)",
+    "en": "“Your bank”, its security or fraud prevention team, a “cyber security officer” (sometimes with the bank’s real number on screen)"
+  },
+  "name": {
+    "hu": "Hamis banki ügyintéző: „biztonsági számla” és távoli hozzáférés",
+    "en": "Fake bank employee: “safe account” and remote access"
+  },
+  "how": {
+    "hu": "Valaki felhívja, és a bankja munkatársának mondja magát. Gyanús tranzakciót vagy támadást észleltek a számláján, ezért azonnal cselekedni kell. Arra kéri, hogy telepítsen egy „víruskereső” vagy „biztonsági” alkalmazást (valójában távoli hozzáférést adó programot, például AnyDesket), olvassa fel az SMS-ben kapott kódokat, adja meg a kártyaadatait, emelje meg az utalási limitet, vagy utalja át a megtakarítását egy „biztonsági számlára”. Miközben beszélnek, a csalók leemelik a pénzt. Gyakran egy „rendőr” is bekapcsolódik a hívásba.",
+    "en": "Someone calls saying they work for your bank. A suspicious transaction or an attack on your account has been detected, so you must act now. They ask you to install an “antivirus” or “security” app (really a remote-access program such as AnyDesk), read out codes you get by SMS, give your card details, raise your transfer limit, or move your savings to a “safe account”. While you talk, the scammers take the money. Often a “police officer” joins the call too."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Hívás „a banktól”: gyanús tranzakció vagy támadás érte a számláját.",
+        "en": "A call from “the bank”: a suspicious transaction or attack hit your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Sürgetnek, és végig vonalban kell maradnia.",
+        "en": "They rush you and you must stay on the line the whole time."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "hu": "Telepítsen egy alkalmazást, amellyel „átvizsgálják” a telefonját vagy gépét.",
+        "en": "Install an app so they can “check” your phone or computer."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "hu": "Olvassa fel az SMS-kódokat, vagy adja meg a kártyaadatait.",
+        "en": "Read out SMS codes or give your card details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "hu": "Utalja át a pénzét egy „biztonsági számlára”.",
+        "en": "Transfer your money to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Jó napot kívánok, Kovács Péter vagyok a bankja csalásmegelőzési osztályáról. Most látjuk, hogy valaki egy külföldi kereskedőnél próbál költeni a kártyájáról, és újabb terhelések várnak jóváhagyásra. Hogy le tudjuk állítani, telepítenie kell egy védelmi alkalmazást, utána pedig átvezetjük a pénzét egy ideiglenes biztonsági számlára. Kérem, ne tegye le a telefont, minden perc számít.",
+        "en": "Good afternoon, this is Péter Kovács from your bank’s fraud prevention team. We can see someone trying to spend from your card at a foreign merchant, and more charges are waiting for approval. To stop them you need to install a protection app, and then we will move your money to a temporary safe account. Please don’t hang up, every minute counts."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "hamis banki ügyintéző hívott",
+      "banki ügyintézőnek adta ki magát",
+      "biztonsági számlára utaljam a pénzemet",
+      "bank biztonsági osztálya telefonált gyanús tranzakció",
+      "anydesk telepítését kérték bankosok",
+      "víruskereső programot telepíttetett velem",
+      "felolvastatták velem sms kódokat",
+      "utalási limitet emeltették velem",
+      "csalásmegelőzési osztály hívott kártyámról"
+    ],
+    "en": [
+      "fake bank clerk called me",
+      "asked me to move money to a safe account",
+      "bank security called about suspicious transaction",
+      "told me to install anydesk",
+      "made me read out sms codes",
+      "asked me to raise my transfer limit"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "remote_access",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "A bank soha nem kér telefonon kártyaadatot, PIN-kódot vagy SMS-ben kapott kódot.",
+      "„Biztonsági számla” nem létezik: a bank nem kéri, hogy átutalja a pénzét.",
+      "A bank nem kér távoli hozzáférést adó alkalmazás telepítését.",
+      "A kijelzőn látható szám hamisítható."
+    ],
+    "en": [
+      "Your bank never asks for card details, a PIN or an SMS code over the phone.",
+      "A “safe account” doesn’t exist: the bank never asks you to move your money.",
+      "The bank never asks you to install a remote-access app.",
+      "The number on screen can be faked."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Tegye le. Hívja vissza a bankját a kártyája hátoldalán vagy a bank honlapján található számon.",
+      "Ha adatot adott meg vagy utalt, azonnal hívja a bankját, tiltassa le a kártyát és a netbankot.",
+      "Törölje a telepített alkalmazást, és ellenőriztesse a készüléket.",
+      "Tegyen feljelentést a rendőrségen."
+    ],
+    "en": [
+      "Hang up. Call your bank back on the number on the back of your card or on its website.",
+      "If you gave details or sent money, call your bank at once and block your card and online banking.",
+      "Delete the app you installed and have the device checked.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/rendorseg-feljelentes",
+    "hu/mnb-ugyfelszolgalat"
+  ],
+  "sources": [
+    {
+      "title": "Egyetlen telefonhívás elég volt: 47 millió forint tűnt el egy magyar bankszámláról",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/belfold/2026/06/09/lebukas-telefon-csalo-sertett-bankszamla/",
+      "date": "2026-06-09"
+    },
+    {
+      "title": "Egyetlen hívással kifosztják a családot: milliók tűntek el a zalai férfi számlájáról",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/befektetes/2025/10/29/nyeremenyjatek-csalas-telefonos-banki-csalok-818468/",
+      "date": "2025-10-29"
+    },
+    {
+      "title": "Óvatosan a telefonhívásokkal, üzenetekkel, az internettel és a csomagokkal!",
+      "publisher": "Rendőrség (Békés Vármegyei Rendőr-főkapitányság)",
+      "url": "https://www.police.hu/hu/hirek-es-informaciok/bunmegelozes/internet-biztonsag/ovatosan-a-telefonhivasokkal-uzenetekkel-az",
+      "date": "2026-01-21"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/fake-police-cyber-call",
+    "hu/bank-sms-account-suspended"
+  ]
+}

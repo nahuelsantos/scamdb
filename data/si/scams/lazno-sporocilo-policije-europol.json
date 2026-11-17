@@ -1,0 +1,131 @@
+{
+  "id": "si/lazno-sporocilo-policije-europol",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "sl": "»Policija«, »Europol«, »tožilstvo« ali visok policijski uradnik (s ponarejenim podpisom)",
+    "en": "“Police”, “Europol”, “prosecutor’s office” or a senior police official (with a forged signature)"
+  },
+  "name": {
+    "sl": "Lažno pismo policije ali Europola: »plačajte globo za spletni prekršek«",
+    "en": "Fake police or Europol letter: “pay a fine for an online offence”"
+  },
+  "how": {
+    "sl": "Po e-pošti prejmete uradno videti pismo s simboli policije, Europola ali sodišča in podpisom visokega uradnika. V njem piše, da ste povezani z nezakonito spletno vsebino ali zlorabami in da bo sledil kazenski postopek, če se ne odzovete v 24 ali 48 urah. Ko odgovorite, vam »ponudijo«, da zadevo zaključite s plačilom »globe« od nekaj sto do nekaj tisoč evrov, pogosto v kriptovalutah ali na neznan račun. Goljufi za prepričljivost uporabljajo ukradene osebne podatke.",
+    "en": "You get an official-looking email with police, Europol or court symbols and a senior official’s signature. It says you are linked to illegal online content or abuse and that criminal proceedings will follow unless you respond within 24 or 48 hours. When you reply, they “offer” to close the case for a “fine” of a few hundred to a few thousand euros, often in cryptocurrency or to an unknown account. The scammers use leaked personal data to sound convincing."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Uradno pismo »policije« ali »Europola« o vaši domnevni kršitvi na spletu.",
+        "en": "An official letter from “the police” or “Europol” about your alleged offence online."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Odgovoriti morate v 24 ali 48 urah, sicer sledi postopek.",
+        "en": "You must reply within 24 or 48 hours or proceedings follow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Ne smete se o tem pogovarjati z drugimi.",
+        "en": "You must not talk about it with others."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "sl": "Zadevo lahko »zaključite« s plačilom globe v kriptovalutah ali na račun.",
+        "en": "You can “close” the case by paying a fine in crypto or to an account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "POZIV – Generalna policijska uprava v sodelovanju z Europolom. Zoper vas je bil uveden postopek zaradi ogledovanja prepovedanih vsebin na spletu. Na to sporočilo morate odgovoriti v 48 urah in pojasniti okoliščine. V nasprotnem primeru bo zadeva odstopljena tožilstvu, vaše ime pa bo objavljeno. Zadeva je zaupna.",
+        "en": "SUMMONS – General Police Directorate in cooperation with Europol. Proceedings have been opened against you for viewing prohibited content online. You must reply to this message within 48 hours and explain the circumstances. Otherwise the case will be passed to the prosecutor and your name will be published. This matter is confidential."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "pismo europola policije e-pošta",
+      "obtožba prepovedane vsebine spletu",
+      "odgovorite 48 ur postopek tožilstvo",
+      "plačilo globe kriptovalute policija",
+      "policijski poziv elektronska pošta grožnja"
+    ],
+    "en": [
+      "email from europol and police",
+      "accused of viewing illegal content online",
+      "reply within 48 hours or prosecution",
+      "pay a fine in crypto to the police",
+      "threatening police summons by email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "sl": [
+      "Policija in Europol ne pošiljata obtožb po e-pošti in ne zahtevata plačila globe za »zaključek« postopka.",
+      "Kratek rok in grožnja z objavo imena sta pritisk, ne postopek.",
+      "Plačilo v kriptovalutah ali na neznan račun je znak prevare.",
+      "Vaš odgovor goljufom potrdi, da naslov deluje."
+    ],
+    "en": [
+      "The police and Europol don’t send accusations by email or ask for a fine to “close” a case.",
+      "A short deadline and a threat to publish your name are pressure, not procedure.",
+      "Payment in crypto or to an unknown account is a sign of fraud.",
+      "Replying tells the scammers your address works."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne odgovarjajte, ne plačajte, sporočilo izbrišite in pošiljatelja blokirajte.",
+      "Če ste že plačali, se obrnite na banko in prijavite goljufijo policiji.",
+      "Sporočilo lahko posredujete SI-CERT."
+    ],
+    "en": [
+      "Don’t reply or pay; delete the message and block the sender.",
+      "If you already paid, contact your bank and report the fraud to the police.",
+      "You can forward the message to SI-CERT."
+    ]
+  },
+  "reportTo": [
+    "si/policija-e-naznanilo",
+    "si/your-bank",
+    "si/si-cert"
+  ],
+  "sources": [
+    {
+      "title": "Znova krožijo lažna elektronska sporočila v imenu Policije",
+      "publisher": "24ur",
+      "url": "https://www.24ur.com/novice/slovenija/znova-krozijo-lazna-elektronska-sporocila-v-imenu-policije.html",
+      "date": "2025-01-10"
+    },
+    {
+      "title": "Spletne prevare: policija zahteva plačilo globe",
+      "publisher": "RTV Slovenija",
+      "url": "https://www.rtvslo.si/znanost-in-tehnologija/spletne-prevare-policija-zahteva-placilo-globe/747465",
+      "date": "2025-06-01"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/lazna-policijska-kazen-sms"
+  ]
+}

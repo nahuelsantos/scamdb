@@ -1,0 +1,135 @@
+{
+  "id": "sk/fake-police-cash-courier",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "sk": "„Policajt“ alebo „vyšetrovateľ“, potom „špecialista NBS“ a „kuriér“, ktorý príde k dverám",
+    "en": "A “police officer” or “investigator”, then an “NBS specialist” and a “courier” who comes to the door"
+  },
+  "name": {
+    "sk": "Falošný policajt: vyberte hotovosť a odovzdajte ju kuriérovi",
+    "en": "Fake police officer: withdraw cash and hand it to a courier"
+  },
+  "how": {
+    "sk": "Volá „policajtka“ alebo „vyšetrovateľ“: niekto sa nabúral do vášho účtu alebo si na vás berie úver a ide o vyšetrovanie. Pošlú vám „predvolanie“ e-mailom, prepoja vás na „odborníka z NBS“ a držia vás na telefóne aj celé hodiny, aby ste nikomu nezavolali. Máte vybrať úspory v hotovosti a odovzdať ich „kuriérovi“, ktorý ich „zabezpečí“, často aj opakovane. Útočí to hlavne na seniorov.",
+    "en": "A “police officer” or “investigator” calls: someone has broken into your account or is taking a loan in your name and there is an investigation. They email you a “summons”, put you through to an “NBS specialist” and keep you on the phone for hours so you can’t call anyone. You must withdraw your savings in cash and hand them to a “courier” who will “secure” them, often more than once. It mainly targets older people."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Volá „polícia“: váš účet je napadnutý alebo prebieha vyšetrovanie.",
+        "en": "“The police” call: your account is compromised or there is an investigation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Nesmiete telefón položiť ani nikomu o tom povedať.",
+        "en": "You must not hang up or tell anyone about it."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "sk": "Máte vybrať hotovosť z banky.",
+        "en": "You are told to withdraw cash from the bank."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sk": "Peniaze si príde vyzdvihnúť „kuriér“ alebo „kolega“.",
+        "en": "A “courier” or “colleague” comes to collect the money."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Pani Horváthová, tu kapitán Kováč z kriminálnej polície. Vyšetrujeme skupinu, ktorá sa dostala k vášmu účtu, a podozrivý je aj niekto z vašej banky. Kvôli vyšetrovaniu musíte zostať na linke. Vyberte dnes všetky úspory v hotovosti, peniaze si od vás o piatej prevezme náš kolega, ukáže vám potvrdenie. Rodine nič nehovorte, ohrozili by ste akciu.",
+        "en": "Mrs Horváthová, this is Captain Kováč from the criminal police. We are investigating a gang that got into your account, and someone at your bank is also a suspect. Because of the investigation you must stay on the line. Withdraw all your savings in cash today; our colleague will collect the money from you at five and show you a receipt. Don’t tell your family anything, you would put the operation at risk."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "falošný policajt volal",
+      "vybrať hotovosť pre kuriéra",
+      "polícia vyšetruje môj účet",
+      "odovzdať peniaze kolegovi polície",
+      "predvolanie e-mailom podvod",
+      "zamestnanec banky podozrivý polícia vyšetruje",
+      "policajt v civile prevezme peniaze",
+      "seniorka dala peniaze kuriérovi"
+    ],
+    "en": [
+      "fake police officer called",
+      "withdraw cash for a courier",
+      "police investigating my bank account",
+      "hand money to a police colleague",
+      "summons by email scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sk": [
+      "Skutoční policajti ani bankári nikdy nežiadajú odovzdať hotovosť po telefóne.",
+      "Polícia neposiela „kuriérov“ po vaše úspory.",
+      "Hovor, ktorý nesmiete prerušiť, je varovný signál."
+    ],
+    "en": [
+      "Real police officers and bank staff never ask you to hand over cash over the phone.",
+      "The police don’t send “couriers” for your savings.",
+      "A call you are not allowed to end is a warning sign."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Položte telefón a zavolajte na 158 alebo príbuzným.",
+      "Nikomu neotvárajte a nedávajte peniaze ani kartu.",
+      "Ak kuriér už ide, volajte 112."
+    ],
+    "en": [
+      "Hang up and call 158 or your relatives.",
+      "Don’t open the door or give anyone money or your card.",
+      "If the courier is already on the way, call 112."
+    ]
+  },
+  "reportTo": [
+    "sk/emergency-112",
+    "sk/policia-158",
+    "sk/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Seniorka prekabátila podvodníkov. Namiesto 8 600 eur im dala nastrihané papiere, polícia ich chytila pri čine",
+      "publisher": "Noviny.sk",
+      "url": "https://www.noviny.sk/slovensko/nitra/1280198-seniorka-prekabatila-podvodnikov-namiesto-8-600-eur-im-dala-nastrihane-papiere-policia-ich-chytila-pri-cine",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Slovenskom sa šíria nové podvody. Tieto telefonáty vás môžu zruinovať",
+      "publisher": "TOUCHIT",
+      "url": "https://touchit.sk/slovenskom-sa-siria-dva-nove-typy-podvodov-ludi-oberaju-o-tisice-eur/756523/",
+      "date": "2025-08-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/fake-bank-safe-account",
+    "sk/grandchild-accident-fake-doctor"
+  ]
+}

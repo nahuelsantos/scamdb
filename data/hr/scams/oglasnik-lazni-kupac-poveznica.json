@@ -1,0 +1,124 @@
+{
+  "id": "hr/oglasnik-lazni-kupac-poveznica",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "hr": "„Kupac“ s Njuškala, OLX-a, Facebook Marketplacea ili sličnog oglasnika",
+    "en": "A “buyer” from Njuškalo, OLX, Facebook Marketplace or a similar classifieds site"
+  },
+  "name": {
+    "hr": "Lažni kupac na oglasniku: „poslao sam vam poveznicu da primite uplatu“",
+    "en": "Fake buyer on a classifieds site: “I sent you a link to receive the payment”"
+  },
+  "how": {
+    "hr": "Prodajete nešto na oglasniku i brzo se javlja kupac, često preko WhatsAppa ili SMS-a, izvan poruka oglasnika. Ne pregovara, ne dolazi po stvar nego „šalje dostavu“ i poveznicu na kojoj trebate „primiti uplatu“. Stranica izgleda kao oglasnik, dostavna služba ili banka i traži osobne podatke, broj kartice i CVV ili kod iz tokena. Umjesto da primite novac, novac odlazi s vašeg računa.",
+    "en": "You are selling something on a classifieds site and a buyer gets in touch quickly, often via WhatsApp or text, outside the site’s messages. They don’t haggle or come to collect; they “send a courier” and a link where you must “receive the payment”. The page looks like the classifieds site, a courier or a bank and asks for personal details, card number and CVV or a token code. Instead of receiving money, money leaves your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Kupac se javlja odmah i prelazi na WhatsApp ili SMS.",
+        "en": "A buyer replies at once and moves to WhatsApp or text."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "hr": "Plaća unaprijed i šalje dostavu, bez dolaska.",
+        "en": "They pay up front and send a courier, without coming."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hr": "Šalje poveznicu za „primanje uplate“.",
+        "en": "They send a link to “receive the payment”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Stranica traži karticu, CVV ili kod tokena.",
+        "en": "The page asks for your card, CVV or a token code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Pozdrav, je li bicikl još dostupan? Uzimam ga po cijeni iz oglasa, ali sam u Osijeku pa ću poslati dostavu, sve sam već platio. Samo potvrdite primitak novca na kartici ovdje i kurir dolazi sutra: [poveznica]",
+        "en": "Hi, is the bike still available? I’ll take it at the advertised price, but I’m in Osijek so I’ll send a courier, I’ve already paid for everything. Just confirm receipt of the money on your card here and the courier comes tomorrow: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "lažni kupac oglasnik poveznica",
+      "njuškalo kupac šalje dostavu link",
+      "primite uplatu karticu cvv",
+      "prodaja oglasnik skinut novac računa",
+      "kupac traži podatke kartice primitak novca",
+      "olx kupac whatsapp poveznica plaćanje"
+    ],
+    "en": [
+      "fake buyer on classifieds sent a link",
+      "njuskalo buyer sending a courier link",
+      "receive payment enter card and cvv",
+      "selling online money taken from my account",
+      "buyer asked for card details to receive money",
+      "olx buyer whatsapp payment link"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hr": [
+      "Da biste primili novac, nikad ne trebate upisati broj kartice, CVV ni kod iz tokena.",
+      "Kupac odmah traži kontakt izvan oglasnika.",
+      "Ne pregovara, ne želi vidjeti stvar i sam „organizira dostavu“."
+    ],
+    "en": [
+      "To receive money you never need to enter your card number, CVV or a token code.",
+      "The buyer wants to talk off the site straight away.",
+      "They don’t haggle, don’t want to see the item and “arrange the delivery” themselves."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Dopisujte se samo kroz poruke oglasnika i dogovorite osobnu primopredaju.",
+      "Ne otvarajte poveznice od kupaca. Za uplatu kupcu dajte samo IBAN.",
+      "Ako ste upisali karticu, odmah nazovite banku i prijavite policiji."
+    ],
+    "en": [
+      "Only chat through the site’s messages and arrange to hand over in person.",
+      "Don’t open links from buyers. Give a buyer only your IBAN.",
+      "If you entered your card, call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/policija-192",
+    "hr/cert-incident"
+  ],
+  "sources": [
+    {
+      "title": "Prodavao usisavač, lažni kupac „usisao“ mu račun; gospođa uplatila za štence – ni psića, ni novaca",
+      "publisher": "Novi list",
+      "url": "https://www.novilist.hr/novosti/prodavao-usisivac-lazni-kupac-usisao-mu-racun-gospodja-uplatila-za-stence-psice-nije-dobila/",
+      "date": "2026-02-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

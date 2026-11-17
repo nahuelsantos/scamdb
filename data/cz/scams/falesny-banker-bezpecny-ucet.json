@@ -1,0 +1,140 @@
+{
+  "id": "cz/falesny-banker-bezpecny-ucet",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "cs": "„Vaše banka“, její bezpečnostní oddělení nebo „bezpečnostní specialista“; číslo na displeji může vypadat jako číslo banky",
+    "en": "“Your bank”, its security department or a “security specialist”; the number on screen can look like the bank’s"
+  },
+  "name": {
+    "cs": "Falešný bankéř: převeďte peníze na „bezpečný účet“",
+    "en": "Fake banker: move your money to a “safe account”"
+  },
+  "how": {
+    "cs": "Volá někdo, kdo se představí jako pracovník vaší banky. Tvrdí, že váš účet je napadený, že si někdo na vaše jméno bere úvěr nebo že vaše úspory jsou v ohrožení. Pak vás přepojí na „bezpečnostní oddělení“ a přesvědčí vás, abyste peníze rychle převedli na nový „bezpečný“ nebo „chráněný“ účet, sdělili přihlašovací údaje či autorizační kódy, nebo potvrdili platbu v aplikaci. Bezpečný účet ale patří podvodníkům a peníze jsou pryč.",
+    "en": "Someone calls saying they work for your bank. They claim your account has been attacked, someone is taking out a loan in your name, or your savings are at risk. They put you through to a “security department” that persuades you to move the money quickly to a new “safe” or “protected” account, give out login details or authorisation codes, or confirm a payment in the app. The safe account belongs to the scammers and the money is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Hovor „z banky“: účet je napadený nebo někdo žádá o úvěr na vaše jméno.",
+        "en": "A call “from the bank”: your account is under attack or someone is applying for a loan in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Přepojí vás na další „specialistu“ a nesmíte zavěsit.",
+        "en": "You are passed to another “specialist” and must not hang up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "cs": "Musíte jednat hned, jinak o peníze přijdete.",
+        "en": "You must act now or you will lose the money."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "cs": "Máte peníze převést na nový „bezpečný účet“ nebo potvrdit platbu či kód.",
+        "en": "You are told to transfer the money to a new “safe account” or confirm a payment or code."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Dobrý den, tady Novotná z bezpečnostního oddělení vaší banky. Zaznamenali jsme podezřelou žádost o úvěr na 380 000 Kč podanou na vaši osobu. Abychom ochránili vaše úspory, musíme je ještě dnes přesunout na zajištěný účet, který vám teď zřídíme. Prosím nezavěšujte, přepojím vás na kolegu, který vám nadiktuje číslo účtu.",
+        "en": "Good afternoon, this is Novotná from your bank’s security department. We have detected a suspicious application for a 380,000 CZK loan in your name. To protect your savings we must move them today to a secured account that we will set up for you now. Please don’t hang up, I’ll put you through to a colleague who will read you the account number."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "falešný bankéř volal",
+      "převést peníze bezpečný účet",
+      "volali banky účet napadený",
+      "někdo bere úvěr moje jméno",
+      "bezpečnostní oddělení banky přepojili",
+      "chráněný účet převod úspor",
+      "potvrdit platbu telefonu bankéř"
+    ],
+    "en": [
+      "fake banker called me",
+      "move money to a safe account",
+      "bank called saying my account was hacked",
+      "someone is taking a loan in my name",
+      "transferred to the bank security department",
+      "told to confirm a payment during the call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "cs": [
+      "Banka ani policie vás nikdy nežádá, abyste převedli peníze na jiný „bezpečný“ účet.",
+      "Bezpečný účet neexistuje: číslo, které vám nadiktují, patří podvodníkům.",
+      "Číslo na displeji nic nedokazuje, dá se napodobit.",
+      "Nikdo z banky po vás nechce hesla, PIN ani autorizační kódy."
+    ],
+    "en": [
+      "Neither your bank nor the police will ever ask you to move money to another “safe” account.",
+      "A safe account does not exist: the number they read out belongs to the scammers.",
+      "The number on screen proves nothing; it can be faked.",
+      "Nobody from the bank will ask for your passwords, PIN or authorisation codes."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Zastav. Zavěs. Zkontroluj: ukončete hovor a zavolejte bance sami na číslo z karty nebo z aplikace.",
+      "Pokud jste peníze už poslali nebo sdělili údaje, volejte hned banku a nechte zablokovat účet a karty.",
+      "Podejte trestní oznámení; když podvod právě probíhá, volejte 158.",
+      "Mluvte o tomto podvodu se staršími příbuznými."
+    ],
+    "en": [
+      "Stop. Hang up. Check: end the call and phone your bank yourself on the number on your card or in the app.",
+      "If you already sent money or gave out details, call your bank straight away and have your account and cards blocked.",
+      "Report it to the police; if the scam is happening right now, call 158.",
+      "Talk about this scam with older relatives."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/policie-158",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "„Zastav. Zavěs. Zkontroluj.“ Policie varuje před falešnými policisty a bankéři",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/zastav-zaves-zkontroluj-policie-varuje-pred-falesnymi-policisty-a-bankeri.aspx",
+      "date": "2026-05-12"
+    },
+    {
+      "title": "Do bitcoinmatu vkládala peníze podvodníkům",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/do-bitcoinmatu-vkladala-penize-podvodnikum.aspx",
+      "date": "2026-05-20"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/falesny-policista-kuryr",
+    "cz/vybrat-hotovost-bitcoinmat",
+    "cz/vzdaleny-pristup-anydesk"
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "hr/whatsapp-glasanje-preuzimanje-racuna",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "hr": "Poznata osoba ili grupa na Facebooku čiji je račun već preuzet",
+    "en": "Someone you know, or a Facebook group, whose account was already taken over"
+  },
+  "name": {
+    "hr": "„Glasajte za moje dijete“: kod iz SMS-a predaje vaš WhatsApp",
+    "en": "“Vote for my child”: the code from a text hands over your WhatsApp"
+  },
+  "how": {
+    "hr": "Od poznate osobe ili na Facebooku stiže molba da glasate za dijete u natjecanju, uz poveznicu. Za „glasanje“ stranica traži broj mobitela i kod koji vam stigne SMS-om. To je zapravo kod za prijavu u vaš WhatsApp ili povezivanje novog uređaja. Prevarant preuzima račun, vas zaključava i istu poruku ili molbu za hitnu posudbu novca šalje vašim kontaktima.",
+    "en": "A friend, or a post on Facebook, asks you to vote for a child in a competition, with a link. To “vote”, the page asks for your mobile number and the code you get by text. That is really the code to log in to your WhatsApp or link a new device. The scammer takes over the account, locks you out and sends the same message, or an urgent request to borrow money, to your contacts."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Poruka od poznate osobe: glasaj za dijete u natjecanju.",
+        "en": "A message from someone you know: vote for a child in a competition."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Poveznica na stranicu za „glasanje“.",
+        "en": "A link to a “voting” page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Traže broj mobitela i kod iz SMS-a.",
+        "en": "They ask for your mobile number and the code from a text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "hr": "Račun je preuzet i šalje molbe za novac vašim kontaktima.",
+        "en": "Your account is taken over and asks your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Bok! Oprosti što smetam, možeš li dati glas za Lanu, kćer moje kolegice? Natječe se za stipendiju plesne škole i fali joj još malo glasova 🙏 [poveznica] Samo upišeš broj i potvrdiš kodom.",
+        "en": "Hi! Sorry to bother you, could you give a vote to Lana, my colleague’s daughter? She’s competing for a dance school scholarship and needs a few more votes 🙏 [link] You just enter your number and confirm with the code."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "glasajte moje dijete natjecanje",
+      "glasanje poveznica kod whatsapp",
+      "preuzet whatsapp račun",
+      "upisao kod iz sms glasanje",
+      "povezani uređaji nepoznati whatsapp",
+      "prijateljica traži glas stipendija"
+    ],
+    "en": [
+      "vote for my child competition",
+      "voting link whatsapp code",
+      "whatsapp account taken over",
+      "entered the sms code to vote",
+      "unknown linked devices on whatsapp",
+      "friend asked me to vote for a scholarship"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hr": [
+      "Nijedno pravo glasanje ne traži kod iz SMS-a.",
+      "Kod za WhatsApp ne dajte nikome, ni prijatelju.",
+      "I poruka od poznate osobe može doći s preuzetog računa."
+    ],
+    "en": [
+      "No real vote needs a code from a text.",
+      "Never give your WhatsApp code to anyone, not even a friend.",
+      "Even a message from someone you know can come from a hijacked account."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne klikajte i ne upisujte broj ni kod.",
+      "U WhatsAppu provjerite Povezane uređaje i uklonite nepoznate; uključite potvrdu u dva koraka.",
+      "Ako ste izgubili račun, upozorite kontakte drugim putem i prijavite incident CERT-u."
+    ],
+    "en": [
+      "Don’t click or enter your number or code.",
+      "In WhatsApp check Linked devices and remove unknown ones; turn on two-step verification.",
+      "If you lost the account, warn your contacts another way and report it to CERT."
+    ]
+  },
+  "reportTo": [
+    "hr/cert-incident",
+    "hr/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "Upozorenje: WhatsApp prijevara „Glasajte za moje dijete“",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-whatsapp-prijevara-glasajte-za-moje-dijete/",
+      "date": "2026-09-07"
+    },
+    {
+      "title": "Upozorenje: Prijevara putem Facebooka s ciljem krađe WhatsApp računa",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-prijevara-putem-facebooka-s-ciljem-krade-whatsapp-racuna/",
+      "date": "2026-01-05"
+    },
+    {
+      "title": "Nova prijevara širi se omiljenom aplikacijom za dopisivanje: Sve započinje bezazlenom porukom",
+      "publisher": "DNEVNIK.hr",
+      "url": "https://dnevnik.hr/vijesti/tech/nova-prijevara-siri-se-omiljenom-aplikacijom-za-dopisivanje-sve-zapocinje-bezazlenom-porukom---916028.html",
+      "date": "2025-05-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/novi-broj-posudi-novac"
+  ]
+}

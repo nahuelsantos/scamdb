@@ -1,0 +1,130 @@
+{
+  "id": "sk/ahoj-mami-new-number",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "sk": "Neznáme číslo, ktoré sa vydáva za vaše dieťa alebo vnuka",
+    "en": "An unknown number claiming to be your child or grandchild"
+  },
+  "name": {
+    "sk": "„Ahoj mami, mám nové číslo“: dieťa potrebuje zaplatiť faktúru",
+    "en": "“Hi mum, I have a new number”: the child needs a bill paid"
+  },
+  "how": {
+    "sk": "Z neznámeho čísla, najčastejšie na WhatsAppe, príde správa „Ahoj mami/oci, rozbil sa mi mobil, toto je moje nové číslo“. Po krátkej konverzácii príde prosba: treba hneď zaplatiť faktúru, nájom alebo nákup, lebo „nové“ bankovníctvo ešte nefunguje. Pošle číslo účtu a súri. Volať nemôže, vraj mikrofón nefunguje.",
+    "en": "A message comes from an unknown number, usually on WhatsApp: “Hi mum/dad, my phone broke, this is my new number.” After a short chat comes the request: a bill, rent or purchase must be paid at once because the “new” banking doesn’t work yet. He sends an account number and pushes. He can’t call; the microphone supposedly doesn’t work."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "„Ahoj mami, toto je moje nové číslo, ulož si ho.“",
+        "en": "“Hi mum, this is my new number, save it.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "sk": "Píše, ale nemôže volať.",
+        "en": "They text but can’t call."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Treba dnes zaplatiť faktúru, bankovníctvo vraj nefunguje.",
+        "en": "A bill must be paid today; banking supposedly doesn’t work."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sk": "Pošle cudzie číslo účtu.",
+        "en": "They send someone else’s account number."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Ahoj mami, spadol mi mobil do vody, toto je moje nové číslo, ulož si ho 🙈 Mám problém, potrebujem dnes zaplatiť faktúru 780 €, ale na novom mobile mi ešte nejde banka. Môžeš to poslať za mňa? Vrátim ti v piatok. Pošlem ti údaje, volať teraz nemôžem.",
+        "en": "Hi mum, my phone fell in water, this is my new number, save it 🙈 I have a problem, I need to pay a 780 € bill today but my banking doesn’t work on the new phone yet. Can you send it for me? I’ll pay you back on Friday. I’ll send you the details, I can’t call right now."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "ahoj mami nové číslo",
+      "dieťa píše z nového čísla peniaze",
+      "rozbitý mobil zaplatiť faktúru za mňa",
+      "syn nové číslo whatsapp platba",
+      "dcéra nemôže volať pošli peniaze",
+      "neznáme číslo vydáva za dieťa"
+    ],
+    "en": [
+      "hi mum new number",
+      "child texting from a new number money",
+      "broken phone pay a bill for me",
+      "son new number whatsapp payment",
+      "daughter cannot call send money"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sk": [
+      "Nové číslo a hneď prosba o peniaze.",
+      "Nemôže volať, len písať.",
+      "Účet patrí inej osobe."
+    ],
+    "en": [
+      "A new number and an immediate request for money.",
+      "They can’t call, only text.",
+      "The account belongs to someone else."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Zavolajte dieťaťu na staré, známe číslo.",
+      "Nič neplaťte, kým s ním nehovoríte.",
+      "Ak ste zaplatili, hneď volajte banke a podajte oznámenie na polícii."
+    ],
+    "en": [
+      "Call your child on the old, known number.",
+      "Don’t pay anything until you have spoken to them.",
+      "If you paid, call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "POZOR NA PODVODNÍKOV: Vydávajú sa za pracovníkov štátnych inštitúcií",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/regiony/pozor-na-podvodnikov-vydavaju-sa-za/970721-clanok.html",
+      "date": "2026-06-16"
+    },
+    {
+      "title": "Predstierajú, že sú deti v núdzi. Podvody „Fake family“ zaznamenali výrazný nárast",
+      "publisher": "Startitup",
+      "url": "https://www.startitup.sk/predstieraju-ze-su-deti-v-nudzi-podvody-fake-family-zaznamenali-vyrazny-narast/",
+      "date": "2025-03-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/whatsapp-vote-code"
+  ]
+}

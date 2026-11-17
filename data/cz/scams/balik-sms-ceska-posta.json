@@ -1,0 +1,124 @@
+{
+  "id": "cz/balik-sms-ceska-posta",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "cs": "„Česká pošta“, „Balíkovna“, „Zásilkovna“, PPL nebo DPD, často ze zahraničního čísla",
+    "en": "“Česká pošta”, “Balíkovna”, “Zásilkovna”, PPL or DPD, often from a foreign number"
+  },
+  "name": {
+    "cs": "Falešná SMS o zásilce: doplaťte poštovné nebo opravte adresu",
+    "en": "Fake parcel text: pay a small fee or fix your address"
+  },
+  "how": {
+    "cs": "Přijde SMS nebo e-mail, že zásilku nebylo možné doručit kvůli neúplné adrese nebo nezaplacenému poplatku. Máte kliknout na odkaz, potvrdit adresu a zaplatit pár korun. Stránka vypadá jako web přepravce, ale slouží ke krádeži údajů z platební karty nebo k instalaci škodlivé aplikace.",
+    "en": "A text or email says your parcel could not be delivered because of an incomplete address or an unpaid fee. You must click a link, confirm your address and pay a few crowns. The page looks like the carrier’s site but is there to steal your card details or install a malicious app."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Zpráva „od pošty“: zásilka čeká, chybí adresa nebo poplatek.",
+        "en": "A message “from the post”: a parcel is waiting, the address or a fee is missing."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Jinak se zásilka vrátí odesílateli.",
+        "en": "Otherwise the parcel goes back to the sender."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "cs": "Odkaz na falešnou stránku přepravce.",
+        "en": "A link to a fake carrier page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "cs": "Máte zadat údaje z karty kvůli malé platbě.",
+        "en": "You must enter card details for a small payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Ceska posta: Vasi zasilku CZ88412 nelze dorucit z duvodu nekompletni adresy. Aktualizujte udaje a uhradte poplatek 32 Kc do 12 hodin, jinak bude vracena: [odkaz]",
+        "en": "Czech Post: Your parcel CZ88412 cannot be delivered due to an incomplete address. Update your details and pay a 32 CZK fee within 12 hours or it will be returned: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "sms česká pošta zásilka poplatek",
+      "balík nelze doručit neúplná adresa",
+      "doplatit poštovné odkaz",
+      "zásilkovna sms zaplatit",
+      "potvrdit adresu doručení odkaz",
+      "zásilka vrácena odesílateli zaplatit"
+    ],
+    "en": [
+      "parcel text pay a small fee",
+      "package cannot be delivered address",
+      "czech post text link to pay",
+      "confirm delivery address link",
+      "parcel will be returned unless I pay"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "cs": [
+      "Přepravci nežádají platbu kartou přes odkaz v nevyžádané SMS.",
+      "Zahraniční číslo odesílatele a podivné formulace jsou varovné.",
+      "Zásilku si ověřte v aplikaci nebo na webu přepravce, který sami znáte."
+    ],
+    "en": [
+      "Carriers do not ask for card payment through a link in an unexpected text.",
+      "A foreign sender number and odd wording are warning signs.",
+      "Check the parcel in the carrier’s app or on the website you know yourself."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na odkaz neklikejte a zprávu smažte.",
+      "Pokud jste zadali údaje z karty, kartu ihned zablokujte u banky.",
+      "Podvodnou stránku nahlaste přes formulář pro hlášení kyberkriminality."
+    ],
+    "en": [
+      "Don’t click the link; delete the message.",
+      "If you entered card details, block the card with your bank at once.",
+      "Report the fake page through the cybercrime reporting form."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/hlaseni-kyberkriminality"
+  ],
+  "sources": [
+    {
+      "title": "Pozor na falešné SMS vydávající se za Českou poštu. Jak vypadá nejnovější trik podvodníků?",
+      "publisher": "CNN Prima NEWS",
+      "url": "https://cnn.iprima.cz/pozor-na-falesne-sms-vydavajici-se-za-ceskou-postu-jak-vypada-nejnovejsi-trik-podvodniku-477263",
+      "date": "2025-06-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/bazar-falesny-kupec-odkaz"
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "hr/lazni-bankovni-sluzbenik",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "hr": "„Vaša banka“, njezin odjel sigurnosti ili za sprječavanje prijevara",
+    "en": "“Your bank”, its security or fraud-prevention department"
+  },
+  "name": {
+    "hr": "Lažni bankovni službenik: „račun vam je napadnut, upišite kodove“",
+    "en": "Fake bank employee: “your account is under attack, enter the codes”"
+  },
+  "how": {
+    "hr": "Zove osoba koja tvrdi da je iz vaše banke. Kaže da je račun meta hakerskog napada ili da netko upravo pokušava podići novac. Da bi to „zaustavila“, traži da ispred nje upišete ili pročitate kodove iz tokena ili m-tokena, „resetirate“ aplikaciju, potvrdite obavijest u aplikaciji ili prebacite novac na „siguran račun“. Te radnje zapravo odobravaju prevarantove prijave i uplate s vašeg računa.",
+    "en": "Someone calls claiming to be from your bank. They say your account is the target of a hacker attack or that someone is trying to withdraw money right now. To “stop” it they ask you to enter or read out codes from your token or m-token, “reset” the app, approve a notification in the app or move the money to a “safe account”. Those actions actually approve the scammer’s logins and payments from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Poziv „iz banke“: račun vam je napadnut ili se netko upravo prijavljuje.",
+        "en": "A call “from the bank”: your account is under attack or someone is logging in right now."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Hitno je, ne smijete prekinuti vezu dok se problem ne „riješi“.",
+        "en": "It’s urgent; you must not hang up until the problem is “fixed”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "hr": "Traže kodove iz tokena, PIN ili da potvrdite nešto u aplikaciji.",
+        "en": "They ask for token codes, your PIN or for you to approve something in the app."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "hr": "Ili da novac prebacite na „siguran račun“.",
+        "en": "Or for you to move the money to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Dobar dan, zovem iz odjela sigurnosti vaše banke. Zabilježili smo pokušaj prijave u vaše internetsko bankarstvo s uređaja u Rumunjskoj. Da blokiramo pristup, otvorite m-token i pročitajte mi broj koji se pojavi. Molim vas da ne spuštate slušalicu, inače nalog prolazi.",
+        "en": "Good afternoon, I’m calling from your bank’s security department. We recorded an attempt to log in to your online banking from a device in Romania. To block the access, open your m-token and read me the number that appears. Please don’t hang up, otherwise the order goes through."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "zvali iz banke račun napadnut",
+      "pročitajte kod iz tokena",
+      "resetiranje bankovne aplikacije kodovi",
+      "lažni bankovni službenik telefonom",
+      "prebacite novac siguran račun",
+      "odjel sigurnosti banke traži m-token",
+      "potvrdite obavijest aplikaciji banke",
+      "sumnjiva transakcija poziv banke",
+      "služba banke telefonom traži šifru"
+    ],
+    "en": [
+      "bank called saying my account was hacked",
+      "asked me to read the token code",
+      "reset my banking app with codes",
+      "fake bank employee on the phone",
+      "move money to a safe account",
+      "bank security asked for my m-token code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "hr": [
+      "Banka nikad ne traži kodove iz tokena, PIN ni CVV, ni telefonom ni porukom.",
+      "„Siguran račun“ ne postoji.",
+      "Pritisak da ne prekidate vezu služi tome da ne stignete nazvati banku.",
+      "Broj na zaslonu ne dokazuje ništa: može biti lažiran."
+    ],
+    "en": [
+      "Your bank never asks for token codes, your PIN or CVV, by phone or message.",
+      "A “safe account” doesn’t exist.",
+      "The pressure to stay on the line is there so you can’t call the bank.",
+      "The number on screen proves nothing: it can be faked."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Prekinite poziv. Nazovite banku sami, na broj s kartice ili iz aplikacije.",
+      "Ako ste dali kodove ili potvrdili nešto, odmah zatražite blokadu pristupa i kartice.",
+      "Prijavite slučaj policiji na 192 ili u policijskoj postaji."
+    ],
+    "en": [
+      "Hang up. Call the bank yourself on the number on your card or in the app.",
+      "If you gave codes or approved something, immediately ask for your access and card to be blocked.",
+      "Report it to the police on 192 or at a police station."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "Prevaranti ispraznili račune četvero građana, šteta veća od 23.700 eura",
+      "publisher": "tportal.hr",
+      "url": "https://www.tportal.hr/vijesti/clanak/prevaranti-ispraznili-racune-cetvero-gradana-steta-veca-od-23-700-eura-20260708",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "UPOZORENJE GRAĐANIMA: Porast prijevara u kojima se počinitelji lažno predstavljaju kao liječnici",
+      "publisher": "Ravnateljstvo policije (MUP)",
+      "url": "https://policija.gov.hr/vijesti/upozorenje-gradjanima-porast-prijevara-u-kojima-se-pocinitelji-lazno-predstavljaju-kao-lijecnici/10440",
+      "date": "2026-01-23"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/sms-banka-deaktivacija-aplikacije"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "sk/parcel-fee-sms",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sk": "SMS alebo e-mail v mene Slovenskej pošty, Packety, GLS, DPD či iného kuriéra",
+    "en": "A text or email in the name of Slovenská pošta, Packeta, GLS, DPD or another courier"
+  },
+  "name": {
+    "sk": "Falošná SMS od pošty či kuriéra: malý poplatok za doručenie",
+    "en": "Fake post or courier text: a small delivery fee"
+  },
+  "how": {
+    "sk": "Príde SMS alebo e-mail: zásielka sa nedá doručiť, chýba číslo domu, vráti sa do skladu alebo treba doplatiť clo či poplatok za opätovné doručenie, zvyčajne pár desiatok centov alebo eur. Odkaz vedie na kópiu stránky pošty alebo kuriéra, kde zadáte údaje karty. Podvodníci ich potom zneužijú na väčšie platby alebo pridanie karty do svojho mobilu.",
+    "en": "A text or email arrives: the parcel can’t be delivered, the house number is missing, it will go back to the warehouse, or customs or a redelivery fee must be paid, usually a few cents or euros. The link leads to a copy of the post office or courier site where you enter your card details. The scammers then use them for bigger payments or to add the card to their phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Správa v mene pošty alebo kuriéra: zásielka čaká.",
+        "en": "A message in the name of the post or a courier: a parcel is waiting."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Treba doplatiť malý poplatok alebo doplniť adresu.",
+        "en": "A small fee must be paid or the address completed."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sk": "Inak sa zásielka vráti, lehota je krátka.",
+        "en": "Otherwise the parcel goes back; the deadline is short."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sk": "Odkaz vedie na falošnú platobnú stránku.",
+        "en": "The link leads to a fake payment page."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Vaša zásielka bola pozastavená v triediacom centre pre neúplnú adresu. Na opätovné doručenie uhraďte poplatok 1,49 € do 24 h, inak bude vrátená odosielateľovi: [odkaz]",
+        "en": "Your parcel has been held at the sorting centre because of an incomplete address. To have it redelivered pay a 1.49 € fee within 24 h or it will be returned to the sender: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "SMS pošta doplatiť poplatok zásielka",
+      "kuriér poplatok opätovné doručenie odkaz",
+      "zásielka vrátená do skladu SMS",
+      "neúplná adresa balík zaplatiť",
+      "falošná SMS packeta poplatok",
+      "doplatok clo zásielka odkaz karta"
+    ],
+    "en": [
+      "post office text fee for parcel",
+      "courier redelivery fee link",
+      "parcel held incomplete address pay",
+      "fake packeta text fee",
+      "customs fee parcel link card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "sk": [
+      "Slovenská pošta nikdy nežiada platby SMS ani e-mailom; poplatky sa platia pri prevzatí.",
+      "Kuriéri nepýtajú dodatočné poplatky cez odkaz v SMS.",
+      "Adresa stránky nie je oficiálna adresa pošty či kuriéra."
+    ],
+    "en": [
+      "Slovenská pošta never asks for payments by text or email; fees are paid on collection.",
+      "Couriers don’t ask for extra fees through a link in a text.",
+      "The page address is not the post office’s or courier’s official address."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Neklikajte. Zásielku si overte v oficiálnej aplikácii alebo podľa čísla zásielky na webe dopravcu.",
+      "Ak ste zadali kartu, hneď ju zablokujte cez banku.",
+      "Správu nahláste SK-CERT a pošte alebo kuriérovi."
+    ],
+    "en": [
+      "Don’t click. Check the parcel in the official app or by its tracking number on the carrier’s website.",
+      "If you entered your card, block it through your bank at once.",
+      "Report the message to SK-CERT and to the post office or courier."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/sk-cert",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "Falošná SMS od kuriéra útočí na Slovákov. Poplatok 0,79 € je skrytá pasca na tvoju kartu",
+      "publisher": "FonTech (Startitup)",
+      "url": "https://fontech.startitup.sk/falosna-sms-kurier-slovensko-poplatok-podvod/",
+      "date": "2026-06-26"
+    },
+    {
+      "title": "Police warn of fake SMS messages. Fraudsters want to get hold of data, hide behind transport companies",
+      "publisher": "TA3",
+      "url": "https://www.ta3.com/clanok/953233/police-warn-of-fake-sms-messages-fraudsters-want-to-get-hold-of-data-hide-behind-transport-companies",
+      "date": "2024-08-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

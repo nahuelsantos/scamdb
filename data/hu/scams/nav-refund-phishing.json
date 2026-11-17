@@ -1,0 +1,137 @@
+{
+  "id": "hu/nav-refund-phishing",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hu": "„NAV”, „Nemzeti Adó- és Vámhivatal”, „Ügyfélkapu”",
+    "en": "“NAV” (tax authority), “Nemzeti Adó- és Vámhivatal”, “Ügyfélkapu”"
+  },
+  "name": {
+    "hu": "Hamis NAV-üzenet: adó-visszatérítés, adótartozás",
+    "en": "Fake tax office message: a tax refund or tax debt by link"
+  },
+  "how": {
+    "hu": "SMS vagy e-mail érkezik a NAV nevében: feldolgozták a bevallását, és több tízezer vagy százezer forint visszatérítés jár, vagy éppen tartozása van. A kifizetéshez linkre kell kattintani, „frissíteni” a számlaadatokat, belépni egy Ügyfélkapura hasonlító oldalon, és megadni a bankkártya adatait a CVC-kóddal együtt. Az oldal valódinak tűnhet, de a feladó címe és a webcím árulkodó.",
+    "en": "A text or email in the name of NAV, the tax authority: your return has been processed and a refund of tens or hundreds of thousands of forints is due, or you owe tax. To get it you must click a link, “update” your account details, log in on a page that looks like Ügyfélkapu (the government login), and enter your card details including the CVC. The page can look real, but the sender address and web address give it away."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Üzenet „a NAV-tól”: visszatérítés jár, vagy tartozása van.",
+        "en": "A message from “NAV”: a refund is due, or you owe tax."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Határidőn belül kell igényelni.",
+        "en": "You must claim it before a deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "A link egy Ügyfélkapus belépőhöz hasonló oldalra visz.",
+        "en": "The link leads to a page that looks like the Ügyfélkapu login."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hu": "A „kifizetéshez” kártyaszámot és CVC-kódot kérnek.",
+        "en": "They ask for card number and CVC “to pay you”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Nemzeti Adó- és Vámhivatal – Értesítés. Tisztelt Adózó! Az Ön 2025. évi személyijövedelemadó-bevallásának feldolgozása megtörtént, Önnek 86 400 Ft visszatérítés jár. A jóváíráshoz kérjük, 72 órán belül azonosítsa magát és adja meg bankkártyája adatait az alábbi felületen: [link]",
+        "en": "National Tax and Customs Administration – Notice. Dear Taxpayer, your 2025 personal income tax return has been processed and you are due a refund of 86,400 Ft. To receive it, please identify yourself and enter your bank card details within 72 hours on the page below: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "nav sms adó visszatérítés",
+      "adóvisszatérítés kártyaadatokat kérik",
+      "nav email jóváírás azonosítás",
+      "ügyfélkapus belépést kértek linkről",
+      "hamis nav üzenet adótartozás",
+      "visszatérítéshez bankkártya adatait kérte",
+      "adóhivatal sms százezer forint visszatérítés"
+    ],
+    "en": [
+      "text from nav about a tax refund",
+      "tax refund link asked for my card details",
+      "fake tax office email",
+      "had to log in to ugyfelkapu from a link",
+      "message said i owe tax pay by link",
+      "refund needs my card number and cvc"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "hu": [
+      "A NAV nem küld e-mailben vagy SMS-ben visszatérítésről vagy tartozásról szóló értesítést, és nem kér bankkártyaadatot.",
+      "A NAV a tárhelyére (Ügyfélkapu+, DÁP) vagy postai levélben ír.",
+      "Visszatérítéshez senkinek nem kell kártyaszámot vagy CVC-kódot megadnia."
+    ],
+    "en": [
+      "NAV doesn’t send refund or debt notices by email or SMS, and never asks for card details.",
+      "NAV writes to your government mailbox (Ügyfélkapu+, DÁP) or by post.",
+      "No refund needs your card number or CVC."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne kattintson. A NAV felületeit mindig közvetlenül a nav.gov.hu oldalról nyissa meg.",
+      "Ha megadta a kártyaadatait, azonnal tiltassa le a kártyát.",
+      "Ha belépési adatot adott meg, változtassa meg a jelszavát.",
+      "Jelentse az oldalt az Internet Hotline-on."
+    ],
+    "en": [
+      "Don’t click. Always open NAV’s services directly from nav.gov.hu.",
+      "If you entered card details, block the card at once.",
+      "If you entered login details, change your password.",
+      "Report the page to Internet Hotline."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/internet-hotline",
+    "hu/nki-csirt"
+  ],
+  "sources": [
+    {
+      "title": "Figyelem, veszélyes üzenet terjed Magyarországon: százezer forintos adó-visszatérítéssel trükköznek",
+      "publisher": "Portfolio",
+      "url": "https://www.portfolio.hu/uzlet/20260902/figyelem-veszelyes-uzenet-terjed-magyarorszagon-szazezer-forintos-ado-visszateritessel-trukkoznek-859806",
+      "date": "2026-09-02"
+    },
+    {
+      "title": "Internet Hotline Warns of Intensified Fraudulent Activities",
+      "publisher": "NMHH Internet Hotline",
+      "url": "https://english.nmhh.hu/article/257614/Internet_Hotline_Warns_of_Intensified_Fraudulent_Activities",
+      "date": "2026-02-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/mvm-electricity-bill",
+    "hu/neak-taj-card-sms"
+  ]
+}

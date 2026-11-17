@@ -1,0 +1,130 @@
+{
+  "id": "si/furs-vracilo-davka",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "sl": "»Finančna uprava (FURS)«, »eDavki«",
+    "en": "“Financial Administration (FURS)”, “eDavki”"
+  },
+  "name": {
+    "sl": "Lažni FURS: »vračilo preplačila davka«",
+    "en": "Fake FURS: “refund of overpaid tax”"
+  },
+  "how": {
+    "sl": "Prejmete e-pošto ali SMS v imenu Finančne uprave: informativni izračun dohodnine je pokazal preplačilo in pripada vam vračilo nekaj sto evrov. Da ga prejmete, morate klikniti povezavo in na strani, ki je videti kot FURS, vpisati davčno številko, podatke kartice ali enkratno geslo spletne banke. S temi podatki goljufi dostopajo do vašega računa. FURS vračila nakazuje sam na vaš transakcijski račun in podatkov po povezavah ali SMS nikoli ne zahteva.",
+    "en": "You get an email or text in the name of the Financial Administration: your income-tax assessment shows an overpayment and you are owed a refund of a few hundred euros. To get it you must click a link and, on a page that looks like FURS, enter your tax number, card details or online-banking one-time password. With these the scammers get into your account. FURS pays refunds to your bank account on its own and never asks for details through links or texts."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Sporočilo »FURS« o preplačilu davka in vračilu.",
+        "en": "A message from “FURS” about overpaid tax and a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Vračilo zahtevate prek povezave v sporočilu.",
+        "en": "You claim the refund through a link in the message."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sl": "Rok za vračilo je kratek.",
+        "en": "The deadline for the refund is short."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Stran zahteva podatke kartice ali kodo spletne banke.",
+        "en": "The page asks for card details or an online-banking code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Finančna uprava RS – Obvestilo o vračilu. Na podlagi ponovnega izračuna vam pripada vračilo preplačanega davka v znesku 286,40 EUR. Zahtevek za izplačilo oddajte v 5 dneh prek obrazca: [povezava]. Po izteku roka vračilo zapade.",
+        "en": "Financial Administration of the Republic of Slovenia – Refund notice. Based on a recalculation you are owed a refund of overpaid tax of 286.40 EUR. Submit the payout request within 5 days using the form: [link]. After the deadline the refund lapses."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "furs vračilo preplačila davka povezava",
+      "sporočilo finančne uprave vračilo",
+      "dohodnina preplačilo obrazec kartica",
+      "edavki povezava vpišite podatke",
+      "vračilo davka zapade rok",
+      "pripada vračilo dohodnine",
+      "potrdite transakcijski račun vračilo davka",
+      "obračun dohodnine obvestilo povezava"
+    ],
+    "en": [
+      "email from tax office about a refund",
+      "furs says i overpaid tax",
+      "tax refund form asks for my card",
+      "income tax refund link message",
+      "refund will lapse after five days"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sl": [
+      "FURS vračila nakazuje sam na vaš transakcijski račun; zahtevka prek povezave ni.",
+      "FURS ne zahteva vpisa osebnih podatkov ali podatkov računa prek povezav ali SMS.",
+      "Tuj jezik, nenavadno besedilo ali pritisk s kratkim rokom so znaki lažnega sporočila."
+    ],
+    "en": [
+      "FURS pays refunds to your bank account itself; there is no request through a link.",
+      "FURS never asks you to enter personal or account details through links or texts.",
+      "Foreign-language text, odd wording or pressure with a short deadline are signs of a fake."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne odpirajte povezav in prilog. Stanje preverite sami v eDavkih.",
+      "Dvomljivo sporočilo lahko posredujete Finančni upravi v preverjanje, nato ga izbrišite.",
+      "Če ste vpisali podatke, spremenite geslo, pokličite banko in prijavite goljufijo policiji."
+    ],
+    "en": [
+      "Don’t open links or attachments. Check your status yourself in eDavki.",
+      "You can forward a doubtful message to the Financial Administration to check, then delete it.",
+      "If you entered details, change your password, call your bank and report the fraud to the police."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/si-cert",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Previdno pri lažnih elektronskih sporočilih (phishing)",
+      "publisher": "Finančna uprava Republike Slovenije (GOV.SI)",
+      "url": "https://www.gov.si/novice/2026-10-16-previdno-pri-laznih-elektronskih-sporocilih-phishing/",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "Nove spletne prevare v imenu Fursa: \"Bodite previdni\"",
+      "publisher": "N1 Slovenija",
+      "url": "https://n1info.si/novice/slovenija/nove-spletne-prevare-v-imenu-fursa-bodite-previdni/",
+      "date": "2023-04-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

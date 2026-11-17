@@ -1,0 +1,123 @@
+{
+  "id": "si/posta-slovenije-doplacilo-sms",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sl": "»Pošta Slovenije«, »Paketomat«, »dostava«",
+    "en": "“Pošta Slovenije” (Post of Slovenia), “parcel locker”, “delivery”"
+  },
+  "name": {
+    "sl": "Lažno sporočilo Pošte Slovenije: doplačilo za paket",
+    "en": "Fake Pošta Slovenije message: an extra fee for a parcel"
+  },
+  "how": {
+    "sl": "Prejmete SMS ali e-pošto z imenom in logotipom Pošte Slovenije: paket čaka, a dostava ni mogoča zaradi napačnega naslova ali neplačanega doplačila, poštnine ali carine. Za majhen znesek morate klikniti povezavo in plačati s kartico. Stran je lažna, goljufi pa dobijo podatke kartice in jih zlorabijo. Pošta Slovenije poštnine ne zahteva vnaprej po povezavi; plačate jo lahko ob prevzemu.",
+    "en": "You get a text or email with the Pošta Slovenije name and logo: a parcel is waiting, but delivery is not possible because of a wrong address or an unpaid extra fee, postage or customs. You must click a link and pay a small amount by card. The page is fake, and the scammers take and misuse your card details. Pošta Slovenije does not ask for postage in advance through a link; you can pay it on collection."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Sporočilo »Pošte« o paketu, ki ga ni mogoče dostaviti.",
+        "en": "A message from “the post office” about a parcel that can’t be delivered."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Doplačilo ali potrditev naslova prek povezave.",
+        "en": "An extra fee or address confirmation through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sl": "Paket bo vrnjen, če ne ukrepate hitro.",
+        "en": "The parcel will be returned unless you act fast."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Plačilo s kartico za majhen znesek.",
+        "en": "A card payment for a small amount."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Pošta Slovenije: Vaša pošiljka je prispela v sortirni center, vendar je ni mogoče vročiti zaradi neporavnanega doplačila (1,99 EUR). Brez plačila bo pošiljka v 24 urah vrnjena pošiljatelju. Uredite tukaj: [povezava]",
+        "en": "Pošta Slovenije: Your shipment has reached the sorting centre but cannot be delivered because of an unpaid extra fee (1.99 EUR). Without payment it will be returned to the sender within 24 hours. Sort it here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "sms pošta slovenije doplačilo paket",
+      "pošiljka ni mogoče vročiti plačilo",
+      "paket čaka poštnina povezava",
+      "napačen naslov dostave potrdite",
+      "plačal carino paket sporočilo kartica"
+    ],
+    "en": [
+      "text from post office about a parcel fee",
+      "parcel cannot be delivered unpaid fee",
+      "pay postage through a link",
+      "confirm my delivery address text",
+      "paid customs for a parcel by card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sl": [
+      "Pošta Slovenije poštnine ne zahteva vnaprej po povezavi; plačate jo lahko ob prevzemu.",
+      "Prava sporočila Pošte vodijo na njeno uradno spletno stran, ne na neznane naslove.",
+      "Majhen znesek je vaba za podatke kartice."
+    ],
+    "en": [
+      "Pošta Slovenije does not ask for postage in advance through a link; you can pay on collection.",
+      "Real Pošta messages lead to its official website, not to unknown addresses.",
+      "The small amount is bait for your card details."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Sporočilo izbrišite in ne odpirajte povezave.",
+      "Pošiljko preverite sami s številko za sledenje v aplikaciji Moja pošta ali na uradni strani Pošte.",
+      "Če ste vpisali podatke kartice, takoj pokličite banko.",
+      "Sporočilo lahko posredujete SI-CERT."
+    ],
+    "en": [
+      "Delete the message and don’t open the link.",
+      "Check the parcel yourself with the tracking number in the Moja pošta app or on Pošta’s official site.",
+      "If you entered card details, call your bank straight away.",
+      "You can forward the message to SI-CERT."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/si-cert",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Pošta Slovenije opozarja na povečano število spletnih prevar",
+      "publisher": "RTV Slovenija",
+      "url": "https://www.rtvslo.si/enostavno/uporabno/posta-slovenije-opozarja-na-povecano-stevilo-spletnih-prevar/767783",
+      "date": "2025-12-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

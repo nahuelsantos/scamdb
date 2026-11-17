@@ -1,0 +1,143 @@
+{
+  "id": "hr/investicije-slavne-osobe",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "hr": "Oglas na društvenim mrežama s poznatom osobom, pa „broker“ ili „savjetnik“",
+    "en": "A social media ad with a celebrity, then a “broker” or “adviser”"
+  },
+  "name": {
+    "hr": "Lažno ulaganje uz poznata lica: deepfake oglas i „osobni broker“",
+    "en": "Fake investment with famous faces: a deepfake ad and a “personal broker”"
+  },
+  "how": {
+    "hr": "Na društvenoj mreži vidite oglas ili video u kojem poznati poduzetnik ili javna osoba, izrađena umjetnom inteligencijom, preporučuje platformu za ulaganje u kriptovalute, dionice ili zlato. Ostavite broj, javi se „broker“, a mala početna uplata na zaslonu brzo raste. Traži veće uplate, instalaciju aplikacije ili dijeljenje zaslona. Kad pokušate podići novac, traži „poreze“ i „naknade“, a onda nestane.",
+    "en": "On social media you see an ad or video in which a well-known entrepreneur or public figure, made with AI, recommends a platform for investing in crypto, shares or gold. You leave your number, a “broker” calls, and a small first deposit grows quickly on screen. They ask for bigger deposits, to install an app or share your screen. When you try to withdraw, they demand “taxes” and “fees”, then vanish."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Oglas ili video s poznatom osobom koja „jamči“ zaradu.",
+        "en": "An ad or video with a famous person who “guarantees” profit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hr": "Javlja se „broker“ i vodi vas korak po korak.",
+        "en": "A “broker” calls and guides you step by step."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Traži instalaciju aplikacije ili dijeljenje zaslona.",
+        "en": "They ask you to install an app or share your screen."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "hr": "Traži sve veće uplate i „naknade“ za isplatu.",
+        "en": "They ask for ever bigger deposits and “fees” to withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Ekskluzivno: poznati hrvatski poduzetnik otkrio kako je svaki građanin s ulogom od 250 € može zarađivati do 1.500 € tjedno uz automatsku platformu. Banke pokušavaju zabraniti ovaj video. Registrirajte se danas, naš savjetnik će vas nazvati [poveznica]",
+        "en": "Exclusive: a well-known Croatian entrepreneur revealed how any citizen with a 250 € stake can earn up to 1,500 € a week with an automated platform. Banks are trying to ban this video. Register today and our adviser will call you [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "oglas poznata osoba ulaganje kriptovalute",
+      "broker zove platforma zarada",
+      "deepfake video ulaganje",
+      "uložio 250 eura zarada tjedno",
+      "instalirao aplikaciju brokera dijeljenje zaslona",
+      "traže porez naknadu isplatu dobiti",
+      "ulaganje dionice zlato nepoznati savjetnik"
+    ],
+    "en": [
+      "celebrity ad investing in crypto",
+      "broker called about a trading platform",
+      "deepfake investment video",
+      "invested 250 euros weekly profit",
+      "installed the broker's app and shared screen",
+      "they want tax or fee to withdraw profit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "hr": [
+      "Poznate osobe ne reklamiraju platforme za brzu zaradu; takvi videi su lažni.",
+      "Zajamčena velika zarada bez rizika ne postoji.",
+      "Tvrtka nije u registrima Hanfe.",
+      "Naknada ili porez prije isplate znak je prijevare."
+    ],
+    "en": [
+      "Celebrities don’t advertise quick-profit platforms; such videos are fake.",
+      "Guaranteed big returns with no risk don’t exist.",
+      "The firm isn’t in Hanfa’s registers.",
+      "A fee or tax before a payout is a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne klikajte na oglas i ne ostavljajte broj.",
+      "Provjerite tvrtku u registrima i na popisu sumnjivih subjekata Hanfe.",
+      "Ne plaćajte više; ako ste dali bankovne podatke, nazovite banku i prijavite policiji."
+    ],
+    "en": [
+      "Don’t click the ad or leave your number.",
+      "Check the firm in Hanfa’s registers and list of suspicious entities.",
+      "Don’t pay any more; if you gave bank details, call your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hr/hanfa",
+    "hr/policija-192",
+    "hr/your-bank",
+    "hr/cert-incident"
+  ],
+  "sources": [
+    {
+      "title": "UPOZORENJE: Hrvatska na udaru investicijskih prijevara i prijevara s povratom novca!",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-hrvatska-na-udaru-investicijskih-prijevara-i-prijevara-s-povratom-novca/",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Niz prijevara diljem Hrvatske: Od lažnih liječnika i istražitelja do lažnih ulaganja",
+      "publisher": "Novi list",
+      "url": "https://www.novilist.hr/novosti/crna-kronika/niz-prijevara-diljem-hrvatske-od-laznih-lijecnika-i-istrazitelja-do-laznih-ulaganja/",
+      "date": "2026-06-27"
+    },
+    {
+      "title": "Starica digla s računa 100.000 eura i dala ih policajcu da ih provjeri. Nemojte biti kao ona",
+      "publisher": "DNEVNIK.hr",
+      "url": "https://dnevnik.hr/vijesti/hrvatska/starica-povjerovala-laznom-policajcu-pa-ostala-bez-100-tisuca-eura-prevaranti-su-sve-lukaviji-policija-poslala-upozorenje---978386.html",
+      "date": "2026-05-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/povrat-ukradenog-novca"
+  ]
+}

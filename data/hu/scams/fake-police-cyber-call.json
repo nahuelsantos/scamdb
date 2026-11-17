@@ -1,0 +1,142 @@
+{
+  "id": "hu/fake-police-cyber-call",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "hu": "„Rendőrség”, „kiberrendőrség”, „BRFK”, „internetrendőrség kibervédelmi osztálya”",
+    "en": "“Police”, “cyber police”, “Budapest Police (BRFK)”, “internet police cyber defence unit”"
+  },
+  "name": {
+    "hu": "Álrendőr hívás: „támadás érte a bankszámláját”",
+    "en": "Fake police call: “your bank account is under attack”"
+  },
+  "how": {
+    "hu": "Rendőrnek vagy „kiberrendőrnek” kiadó személy hív, és azt mondja, hogy adathalászok megszerezték a banki adatait, vagy nyomozás folyik egy gyanús utalás miatt. Rákérdez, melyik banknál van számlája, órákig szóval tartja, távoli hozzáférést kér a számítógépéhez, vagy arra utasítja, hogy menjen be a bankba és utalja a megtakarítását „biztonságos számlákra”. Hogy hihetőbb legyen, bankszámlaszámokat, ügyszámot, „rendőrségi” e-mail-címet ad meg, és titoktartást kér, mert „a banki dolgozó is benne lehet”.",
+    "en": "Someone posing as a police or “cyber police” officer calls and says phishers have got your bank details, or that an investigation is under way over a suspicious transfer. They ask which bank you use, keep you talking for hours, ask for remote access to your computer, or tell you to go to the bank and move your savings to “secure accounts”. To sound real they quote account numbers, a case number or a “police” email address, and ask you to keep it secret because “someone at the bank may be involved”."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Hívás a „rendőrségtől”: veszélyben a bankszámlája.",
+        "en": "A call from “the police”: your bank account is in danger."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Senkinek ne szóljon, a banki ügyintéző is gyanús lehet.",
+        "en": "Tell nobody, the bank clerk may be in on it."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "hu": "Vonalban kell maradnia, amíg „elhárítják a támadást”.",
+        "en": "You must stay on the line while they “stop the attack”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "hu": "Távoli hozzáférést kérnek, vagy azt, hogy utalja át a pénzét „biztonságos számlára”.",
+        "en": "They ask for remote access, or for you to move your money to a “secure account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Jó napot, Szabó főhadnagy vagyok a kiberbűnözés elleni osztályról. Nyomozást folytatunk, mert az Ön nevében hitelt próbáltak felvenni, és a bankfiókban is van beépített emberük. Senkinek ne beszéljen erről, még a családjának sem. Mondja meg, melyik banknál vezeti a számláját, és ma még intézkednünk kell, hogy a pénze biztonságba kerüljön.",
+        "en": "Good afternoon, this is Lieutenant Szabó from the cybercrime unit. We are investigating because someone tried to take out a loan in your name, and they have an insider at the bank branch. Don’t talk to anyone about this, not even your family. Tell me which bank holds your account; we must act today to keep your money safe."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "rendőrnek adta ki magát telefonáló",
+      "kiberrendőrség hívott bankszámlámról",
+      "álrendőr biztonságos számlára utaltatott",
+      "rendőrségre hivatkozva kértek pénzt",
+      "brfk munkatársa hívott",
+      "őrnagy főhadnagy rendőrtiszt hívott",
+      "kiberbűnözés elleni rendőr hívott",
+      "bankfiókban titkoljam utalás okát",
+      "nyomozásra hivatkozva titoktartást kértek",
+      "internetrendőrség kibervédelmi osztálya"
+    ],
+    "en": [
+      "caller claimed to be police",
+      "cyber police called about my bank account",
+      "fake police told me to move money",
+      "told to keep the investigation secret",
+      "police officer asked which bank i use",
+      "asked to transfer savings to a secure account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "A rendőrség soha nem kér pénzt, utalást vagy banki adatot telefonon.",
+      "A rendőrség nem kér távoli hozzáférést a számítógépéhez.",
+      "Valódi nyomozás miatt senkinek sem kell „biztonságos számlára” utalnia.",
+      "A titoktartás kérése arra szolgál, hogy ne kérdezzen meg senkit."
+    ],
+    "en": [
+      "The police never ask for money, a transfer or bank details over the phone.",
+      "The police never ask for remote access to your computer.",
+      "No real investigation needs you to move money to a “secure account”.",
+      "Being told to keep it secret is meant to stop you from checking with anyone."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Tegye le. Hívja a 112-t vagy a bankját olyan számon, amelyet saját maga keres ki.",
+      "Ha utalt vagy hozzáférést adott, azonnal szóljon a bankjának.",
+      "Tegyen feljelentést a rendőrségen.",
+      "Beszéljen idős hozzátartozóival erről a trükkről."
+    ],
+    "en": [
+      "Hang up. Call 112 or your bank on a number you look up yourself.",
+      "If you sent money or gave access, tell your bank at once.",
+      "Report it to the police.",
+      "Talk to older relatives about this trick."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/rendorseg-feljelentes",
+    "hu/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Egyre többen próbálnak a rendőrségre hivatkozva pénzt kicsalni emberektől, néha meglepően sikeresen",
+      "publisher": "444",
+      "url": "https://444.hu/2026/03/25/egyre-tobben-probalnak-a-rendorsegre-hivatkozva-penzt-kicsalni-emberektol-neha-meglepoen-sikeresen",
+      "date": "2026-03-25"
+    },
+    {
+      "title": "Csalási kísérlet: tömegesen hívják a gyanútlanokat magukat a BRFK munkatársainak hazudók",
+      "publisher": "Világgazdaság",
+      "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/07/kiberrendorok-kezdtek-el-felhivni-a-magyarokat-hogy-a-penzugyeikrol-erdeklodjenek-ez-durva-atveres-senki-ne-doljon-be-igy-lehet-leleplezni-oket",
+      "date": "2026-07-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/bank-employee-safe-account"
+  ]
+}

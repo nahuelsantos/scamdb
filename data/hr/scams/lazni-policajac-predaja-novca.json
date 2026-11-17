@@ -1,0 +1,145 @@
+{
+  "id": "hr/lazni-policajac-predaja-novca",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "hr": "„Policija“, „kriminalistički policajac“ ili „istražitelj USKOK-a“",
+    "en": "“The police”, a “criminal investigator” or a “USKOK investigator”"
+  },
+  "name": {
+    "hr": "Lažni policajac: novac je „predmet istrage“, predajte ga",
+    "en": "Fake police officer: your money is “under investigation”, hand it over"
+  },
+  "how": {
+    "hr": "Zove netko tko se predstavlja kao policajac ili istražitelj. Kaže da je novac na vašem računu ili kod kuće predmet istrage, da je krivotvoren ili da vas bankari potkradaju. Traži da podignete ušteđevinu i predate je, s nakitom ili karticom i PIN-om, „kolegi“ koji dolazi na adresu. Ponekad daje i lažnu potvrdu o oduzimanju. Najčešće su žrtve starije osobe.",
+    "en": "Someone calls posing as a police officer or investigator. They say the money in your account or at home is under investigation, is counterfeit, or that bank staff are stealing from you. They ask you to withdraw your savings and hand them, with jewellery or your card and PIN, to a “colleague” who comes to your address. Sometimes they even give a fake seizure receipt. Most victims are elderly."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Poziv „policije“ ili „istražitelja“ o istrazi koja se tiče vašeg novca.",
+        "en": "A call from “police” or an “investigator” about an investigation involving your money."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Ne smijete nikome reći, ni banci ni obitelji.",
+        "en": "You must not tell anyone, not the bank or your family."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "hr": "Trebate podići novac ili skupiti nakit i karticu.",
+        "en": "You must withdraw cash or gather jewellery and your card."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hr": "„Kolega“ dolazi po to na vaša vrata, odmah.",
+        "en": "A “colleague” comes to your door for it, right away."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Ovdje inspektor Horvat, kriminalistička policija. Pratimo skupinu koja radi u vašoj poslovnici banke i sumnjamo da su dio vaše ušteđevine zamijenili krivotvorenim novčanicama. Trebate podići gotovinu, a naš djelatnik u civilu doći će je preuzeti radi vještačenja. O ovome ne smijete razgovarati sa službenicima banke jer su i oni pod istragom.",
+        "en": "This is Inspector Horvat, criminal police. We are following a group working in your bank branch and we suspect they replaced part of your savings with counterfeit notes. You need to withdraw the cash and our plain-clothes officer will come to collect it for examination. You must not talk about this with the bank staff because they are under investigation too."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "lažni policajac tražio novac",
+      "novac predmet istrage predati policiji",
+      "podići ušteđevinu kolega dolazi",
+      "krivotvorene novčanice provjera policija",
+      "istražitelj uskok podignite novac",
+      "potvrda privremenom oduzimanju novca",
+      "predala nakit karticu pin policajcu"
+    ],
+    "en": [
+      "fake police officer asked for money",
+      "money under investigation hand it to police",
+      "withdraw savings a colleague will collect",
+      "counterfeit banknotes police check",
+      "uskok investigator told me to withdraw cash",
+      "gave jewellery and card to a policeman"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "hr": [
+      "Policija nikad ne traži da joj predate novac, nakit ili karticu, ni telefonom ni na vratima.",
+      "Policija ne provjerava stanje računa telefonom.",
+      "Zahtjev da šutite pred bankom i obitelji znak je prijevare."
+    ],
+    "en": [
+      "The police never ask you to hand over money, jewellery or cards, by phone or at the door.",
+      "The police don’t check your account balance by phone.",
+      "Being told to keep quiet with your bank and family is a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Prekinite poziv i nazovite 192 ili 112 sami.",
+      "Ne otvarajte vrata nepoznatima i ništa im ne predajte.",
+      "Upozorite starije članove obitelji na ovu prijevaru."
+    ],
+    "en": [
+      "Hang up and call 192 or 112 yourself.",
+      "Don’t open the door to strangers or hand them anything.",
+      "Warn older relatives about this scam."
+    ]
+  },
+  "reportTo": [
+    "hr/emergency-112",
+    "hr/policija-192",
+    "hr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Starija žena u Splitu lažnom policajcu predala 100.000 eura",
+      "publisher": "Index.hr",
+      "url": "https://www.index.hr/vijesti/clanak/lazni-policajac-u-dalmaciji-od-zene-82-uzeo-100000-eura/2788842.aspx",
+      "date": "2026-05-05"
+    },
+    {
+      "title": "Starica digla s računa 100.000 eura i dala ih policajcu da ih provjeri. Nemojte biti kao ona",
+      "publisher": "DNEVNIK.hr",
+      "url": "https://dnevnik.hr/vijesti/hrvatska/starica-povjerovala-laznom-policajcu-pa-ostala-bez-100-tisuca-eura-prevaranti-su-sve-lukaviji-policija-poslala-upozorenje---978386.html",
+      "date": "2026-05-05"
+    },
+    {
+      "title": "Niz prijevara diljem Hrvatske: Od lažnih liječnika i istražitelja do lažnih ulaganja",
+      "publisher": "Novi list",
+      "url": "https://www.novilist.hr/novosti/crna-kronika/niz-prijevara-diljem-hrvatske-od-laznih-lijecnika-i-istrazitelja-do-laznih-ulaganja/",
+      "date": "2026-06-27"
+    },
+    {
+      "title": "UPOZORENJE GRAĐANIMA: Porast prijevara u kojima se počinitelji lažno predstavljaju kao liječnici",
+      "publisher": "Ravnateljstvo policije (MUP)",
+      "url": "https://policija.gov.hr/vijesti/upozorenje-gradjanima-porast-prijevara-u-kojima-se-pocinitelji-lazno-predstavljaju-kao-lijecnici/10440",
+      "date": "2026-01-23"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/lazni-lijecnik-hitna-operacija"
+  ]
+}

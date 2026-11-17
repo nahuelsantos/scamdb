@@ -1,0 +1,123 @@
+{
+  "id": "hr/e-gradani-lazna-stranica",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hr": "„e-Građani“, „NIAS“ ili „Službena NIAS obavijest“",
+    "en": "“e-Građani”, “NIAS” or an “Official NIAS notice”"
+  },
+  "name": {
+    "hr": "Lažni e-Građani: „pristup će vam biti ukinut, prijavite se“",
+    "en": "Fake e-Građani: “your access will be cancelled, log in”"
+  },
+  "how": {
+    "hr": "SMS ili e-pošta kao „Službena NIAS obavijest“ upozorava da će vam pristup e-Građanima biti ukinut ili da imate neriješen zahtjev. Poveznica vodi na stranicu koja izgleda kao prijava u e-Građane i traži vjerodajnice te broj iz tokena mobilnog bankarstva. S tim podacima prevaranti ulaze u vaše usluge i račun.",
+    "en": "A text or email labelled “Official NIAS notice” warns that your e-Građani access will be cancelled or that you have a pending request. The link leads to a page that looks like the e-Građani login and asks for your credentials and the number from your mobile banking token. With these the scammers get into your services and account."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "„Službena“ obavijest e-Građana stiže SMS-om ili e-poštom.",
+        "en": "An “official” e-Građani notice arrives by text or email."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Prijete ukidanjem pristupa, s kratkim rokom.",
+        "en": "They threaten to cancel your access, with a short deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hr": "Poveznica na lažnu prijavu.",
+        "en": "A link to a fake login page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Traže prijavu i broj iz m-tokena.",
+        "en": "They ask for your login and the m-token number."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "NIAS obavijest: Vaš korisnički račun u sustavu e-Građani bit će deaktiviran zbog neusklađenih podataka. Za nastavak korištenja usluga potvrdite identitet u roku od 24 sata: [poveznica]",
+        "en": "NIAS notice: Your user account in the e-Građani system will be deactivated due to mismatched data. To keep using the services, confirm your identity within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "lažna stranica egrađani prijava",
+      "nias obavijest sms poveznica",
+      "ukidanje pristupa egrađanima",
+      "egrađani traži token banke",
+      "službena nias obavijest email"
+    ],
+    "en": [
+      "fake egradani login page",
+      "nias notice text with link",
+      "egradani access will be cancelled",
+      "egradani page asked for bank token",
+      "official nias notice email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hr": [
+      "Obavijesti e-Građana stižu u Osobni korisnički pretinac unutar sustava, ne na e-poštu ili SMS.",
+      "Poveznica ne vodi na službenu adresu sustava.",
+      "Nijedna državna usluga ne traži broj iz tokena izvan prijave koju ste sami pokrenuli."
+    ],
+    "en": [
+      "e-Građani notices arrive in your personal mailbox inside the system, not by email or text.",
+      "The link doesn’t lead to the system’s official address.",
+      "No state service asks for a token number outside a login you started yourself."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne klikajte. U e-Građane uđite sami, upisivanjem službene adrese.",
+      "Ako ste upisali broj tokena, odmah nazovite banku.",
+      "Promijenite lozinke i prijavite stranicu CERT-u."
+    ],
+    "en": [
+      "Don’t click. Go into e-Građani yourself by typing the official address.",
+      "If you entered a token number, call your bank at once.",
+      "Change your passwords and report the page to CERT."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/cert-incident"
+  ],
+  "sources": [
+    {
+      "title": "UPOZORENJE: Stranice koje imitiraju sustav e-Građani",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-stranice-koje-imitiraju-sustav-e-gradani/",
+      "date": "2026-01-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/porezna-povrat-sms"
+  ]
+}

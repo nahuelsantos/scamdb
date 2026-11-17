@@ -1,0 +1,134 @@
+{
+  "id": "hr/hrvatska-posta-sms-dostava",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hr": "„Hrvatska pošta“ ili dostavna služba",
+    "en": "“Hrvatska pošta” (Croatian Post) or a courier"
+  },
+  "name": {
+    "hr": "Lažna Hrvatska pošta: paket ne može biti dostavljen, ažurirajte adresu",
+    "en": "Fake Croatian Post: parcel can’t be delivered, update your address"
+  },
+  "how": {
+    "hr": "SMS u ime Hrvatske pošte javlja da paket ne može biti isporučen zbog netočne adrese ili podataka koji nedostaju. Poveznica traži „ažuriranje“ ili malu doplatu za dostavu, a na kraju broj kartice i CVC/CVV. Poruka često stiže upravo dok čekate paket, ali to je slučajnost.",
+    "en": "A text in the name of Croatian Post says a parcel can’t be delivered because of a wrong address or missing details. The link asks you to “update” them or pay a small delivery fee, and finally asks for your card number and CVC/CVV. It often arrives just as you’re expecting a parcel, but that is a coincidence."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "SMS „Pošte“: paket čeka, nešto nedostaje.",
+        "en": "A “Post” text: a parcel is waiting, something is missing."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Poveznica na stranicu koja nije na službenoj domeni pošte.",
+        "en": "A link to a page that isn’t on the Post’s official domain."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Treba ažurirati adresu ili platiti sitnu doplatu.",
+        "en": "You must update the address or pay a small fee."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hr": "Traže broj kartice i CVV.",
+        "en": "They ask for your card number and CVV."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Hrvatska posta: Vasa posiljka je zadrzana u sortirnom centru jer adresa nije potpuna. Molimo dopunite podatke unutar 12 sati, inace ce posiljka biti vracena posiljatelju [poveznica]",
+        "en": "Croatian Post: Your shipment is held at the sorting centre because the address is incomplete. Please complete the details within 12 hours, otherwise it will be returned to the sender [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "sms hrvatska pošta paket adresa",
+      "pošiljka nije isporučena poveznica",
+      "doplata dostava sms kartica",
+      "lažna poruka pošte cvv",
+      "ažurirajte podatke dostavu paketa",
+      "paket vraćen pošiljatelju sms"
+    ],
+    "en": [
+      "croatian post text about parcel address",
+      "parcel not delivered link",
+      "delivery fee text asks for card",
+      "fake post message cvv",
+      "update delivery details for parcel",
+      "parcel will be returned to sender text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hr": [
+      "Hrvatska pošta SMS-om ne traži dodatno plaćanje ni podatke kartice.",
+      "Službene obavijesti imaju broj pošiljke koji možete provjeriti sami u praćenju pošiljaka.",
+      "Gramatičke greške, tekst bez dijakritika ili na engleskom i čudna adresa znakovi su prijevare."
+    ],
+    "en": [
+      "Croatian Post doesn’t ask for extra payment or card details by text.",
+      "Official notices carry a tracking number you can check yourself in parcel tracking.",
+      "Grammar mistakes, text without Croatian letters or in English, and an odd address are signs of fraud."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ignorirajte poruku i ne otvarajte poveznicu.",
+      "Status pošiljke provjerite sami na službenoj stranici za praćenje.",
+      "Ako ste upisali karticu, odmah nazovite banku."
+    ],
+    "en": [
+      "Ignore the message and don’t open the link.",
+      "Check the parcel yourself on the official tracking page.",
+      "If you entered your card, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/cert-incident"
+  ],
+  "sources": [
+    {
+      "title": "Širi se nova SMS prevara",
+      "publisher": "Index.hr",
+      "url": "https://www.index.hr/vijesti/clanak/siri-se-nova-sms-prevara/2811003.aspx",
+      "date": "2026-07-07"
+    },
+    {
+      "title": "HP upozorava na prevaru: Ignorirajte lažne SMS poruke o nemogućnosti dostave paketa",
+      "publisher": "DNEVNIK.hr (Hina)",
+      "url": "https://dnevnik.hr/vijesti/tech/hp-upozorava-na-prevaru-ignorirajte-lazne-sms-poruke-o-nemogucnosti-dostave-paketa---918926.html",
+      "date": "2025-06-13"
+    },
+    {
+      "title": "CARNET-ov Nacionalni CERT upozorava: Uoči Crnog petka pripazite na lažne internetske trgovine i prijevare",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/novosti/carnet-ov-nacionalni-cert-upozorava-uoci-crnog-petka-pripazite-na-lazne-internetske-trgovine-i-prijevare/",
+      "date": "2026-11-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

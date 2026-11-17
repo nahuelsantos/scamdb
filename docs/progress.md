@@ -2,6 +2,26 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 7 (Czechia, Slovakia, Hungary, Slovenia, Croatia), speed fix
+
+**Built:**
+- **Speed (#71):** the matcher prepares each entry's phrases once (WeakMap; the Worker keeps the catalogue per
+  isolate), pads the text once, and reuses the signs for the warning check. Huge input: 127 ms -> 28 ms per check;
+  a typical message ~5 ms. CI's speed test had started failing as the catalogue grew to 565 entries.
+- **Groundwork (#72):** cz, sk, hu, si and hr in `countries.json`, reports, feed and trends; 38 brands.
+- **Matcher 1.10–1.11 (#73, #74):** a shared Slavic block (Slovenian, Slovak, Czech, Croatian) and Hungarian rules,
+  all written from the drafts' labelled messages; card details count as money, not as a code request; paying the
+  courier on delivery means nothing to pay.
+- **Import:** 80 entries (hr 17, cz 16, sk 16, si 16, hu 15), 34 contacts, 110 labelled messages.
+
+**Measured (eval, 1,088 messages):** 98.7% of scams caught, 3.3% of safe messages called "scam". Every wave-7
+country has 0/10 false alarms; 83–100% of their scams are called "scam".
+
+**Learned:**
+- Watch for agents tuning phrases against their own eval messages: two Czech romance phrases echoed cz-12 and
+  were replaced; cz-12 (a romance opener that asks for nothing yet) is now an honest miss.
+- Never stash the drafts folder while agents are writing to it.
+
 ## 2026-11-17: Europe wave 6 (Sweden, Denmark, Norway, Finland, Iceland), rules from data
 
 **Built:**

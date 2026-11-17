@@ -1,0 +1,124 @@
+{
+  "id": "cz/dluh-pojistne-sms",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "cs": "„Zdravotní pojišťovna“ (např. VZP) nebo jiný úřad, který vymáhá dluh",
+    "en": "A “health insurer” (such as VZP) or another body chasing a debt"
+  },
+  "name": {
+    "cs": "Falešná SMS o dluhu na pojistném: zaplaťte ještě dnes",
+    "en": "Fake text about unpaid insurance: pay today"
+  },
+  "how": {
+    "cs": "SMS tvrdí, že dlužíte na zdravotním pojištění nebo jiném poplatku a musíte zaplatit ještě dnes, jinak hrozí další kroky. Odkaz na „podrobnosti dluhu“ vede na stránku, která napodobuje web pojišťovny, ale na cizí doméně. Podvodníci chtějí platbu a přístup do vašeho internetového bankovnictví.",
+    "en": "A text says you owe health insurance or another fee and must pay today or face further steps. A link to the “debt details” leads to a page that imitates the insurer’s site but on another domain. The scammers want the payment and access to your online banking."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "SMS jménem pojišťovny o nezaplaceném pojistném.",
+        "en": "A text in the insurer’s name about unpaid contributions."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Zaplatit je nutné ještě dnes.",
+        "en": "It must be paid today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "cs": "Odkaz na podobnou, ale falešnou stránku.",
+        "en": "A link to a similar but fake page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "cs": "Platba kartou nebo přihlášení do bankovnictví.",
+        "en": "Card payment or a banking login."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Zdravotni pojistovna: Evidujeme u vas nedoplatek na pojistnem 1 284 Kc. Uhradte jej jeste dnes, jinak bude predan k vymahani. Detail dluhu: [odkaz]",
+        "en": "Health insurer: We have an outstanding insurance payment of 1,284 CZK on your account. Pay it today or it will be passed on for collection. Debt details: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "sms dluh pojistném",
+      "nedoplatek zdravotní pojištění odkaz",
+      "vzp sms zaplatit dnes",
+      "pojišťovna vymáhání dluhu sms",
+      "falešná stránka pojišťovny",
+      "podrobnosti dluhu odkaz"
+    ],
+    "en": [
+      "text about unpaid health insurance",
+      "insurance debt pay today link",
+      "health insurer text collection",
+      "fake insurer page",
+      "debt details link in text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "cs": [
+      "Pojišťovny ani úřady nepožadují platbu dluhu přes odkaz v SMS.",
+      "Adresa stránky neodpovídá oficiálnímu webu.",
+      "Tlak na zaplacení ještě dnes je typický pro podvod."
+    ],
+    "en": [
+      "Insurers and authorities do not ask you to pay a debt through a link in a text.",
+      "The page address does not match the official website.",
+      "Pressure to pay today is typical of a scam."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na odkaz neklikejte a zprávu smažte nebo odesílatele zablokujte.",
+      "Dluh si ověřte sami v aplikaci nebo na pobočce pojišťovny.",
+      "Pokud jste zadali údaje, kontaktujte banku a policii."
+    ],
+    "en": [
+      "Don’t click the link; delete the message or block the sender.",
+      "Check any debt yourself in the insurer’s app or at a branch.",
+      "If you entered details, contact your bank and the police."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/hlaseni-kyberkriminality",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Kyberšmejdům skončily prázdniny. Pozor na falešné SMS o fiktivním dluhu na pojistném!",
+      "publisher": "VZP ČR",
+      "url": "https://www.vzp.cz/o-nas/aktuality/kybersmejdum-skoncily-prazdniny-pozor-na-falesne-sms-o-fiktivnim-dluhu-na-pojistnem",
+      "date": "2026-08-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/financni-sprava-preplatek"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "si/whatsapp-lazno-glasovanje",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "sl": "Znanec iz imenika (čigar račun je že prevzet)",
+    "en": "A contact in your phone (whose account is already taken over)"
+  },
+  "name": {
+    "sl": "Lažno glasovanje na WhatsAppu: koda poveže napravo goljufov",
+    "en": "Fake vote on WhatsApp: a code links the scammers’ device"
+  },
+  "how": {
+    "sl": "Prek WhatsAppa, pogosto od znanca, prejmete prošnjo, naj glasujete na tekmovanju ali za projekt. Stran z glasovanjem zahteva vašo telefonsko številko, nato pa morate v WhatsApp vpisati prikazano osemmestno kodo ali skenirati kodo QR. S tem ne glasujete, ampak potrdite povezavo naprave goljufov z vašim računom. Ti nato berejo vaše pogovore in v vašem imenu pošiljajo enake povezave ali prošnje za denar vašim stikom.",
+    "en": "On WhatsApp, often from someone you know, you are asked to vote in a contest or for a project. The voting page asks for your phone number, then you must type a displayed eight-digit code into WhatsApp or scan a QR code. You don’t vote: you confirm a link between the scammers’ device and your account. They then read your chats and send the same links, or requests for money, to your contacts in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Znanec prosi za glas prek povezave.",
+        "en": "A contact asks for your vote through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sl": "Stran zahteva telefonsko številko in kodo ali sken kode QR.",
+        "en": "The page asks for your phone number and a code or a QR scan."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sl": "Goljufi prevzamejo račun in pišejo vašim stikom.",
+        "en": "The scammers take over the account and message your contacts."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Živjo! Moja nečakinja je v finalu tekmovanja mladih plesalcev, pa ji manjka še nekaj glasov 🙏 Bi lahko glasoval/a zanjo? Traja 10 sekund: [povezava] Hvala tiiisoč!",
+        "en": "Hi! My niece is in the final of a young dancers’ contest and she’s a few votes short 🙏 Could you vote for her? It takes 10 seconds: [link] Thanks a milliooon!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "whatsapp glasovanje povezava koda",
+      "glasuj nečakinja tekmovanje povezava",
+      "vpisal osemmestno kodo whatsapp",
+      "skeniral qr kodo glasovanje",
+      "prevzeli whatsapp račun povezane naprave"
+    ],
+    "en": [
+      "whatsapp vote link asked for a code",
+      "friend asked me to vote in a contest",
+      "typed an eight digit code into whatsapp",
+      "scanned a qr code to vote",
+      "my whatsapp was taken over linked devices"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation"
+  ],
+  "redFlags": {
+    "sl": [
+      "Za glasovanje nikoli ne potrebujete kode iz WhatsAppa ali skeniranja kode QR.",
+      "Prošnja za glas lahko pride tudi od znanca, katerega račun je že prevzet.",
+      "Koda za povezavo naprave odpre vaš račun drugim."
+    ],
+    "en": [
+      "A vote never needs a WhatsApp code or a QR scan.",
+      "The request can come from a friend whose account is already taken over.",
+      "A device-linking code opens your account to others."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne vpisujte kode. V WhatsAppu odprite Povezane naprave in odstranite neznane naprave.",
+      "Vklopite preverjanje v dveh korakih s PIN-om.",
+      "Opozorite stike in znanca, od katerega je prišlo sporočilo.",
+      "Sporočilo posredujte SI-CERT."
+    ],
+    "en": [
+      "Don’t enter the code. In WhatsApp open Linked devices and remove any you don’t recognise.",
+      "Turn on two-step verification with a PIN.",
+      "Warn your contacts and the friend the message came from.",
+      "Forward the message to SI-CERT."
+    ]
+  },
+  "reportTo": [
+    "si/si-cert",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Če ste prek WhatsAppa dobili takšno sporočilo, bodite pazljivi",
+      "publisher": "N1 Slovenija",
+      "url": "https://n1info.si/magazin/digitalno/ce-ste-prek-whatsappa-dobili-taksno-sporocilo-bodite-pazljivi/",
+      "date": "2026-10-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

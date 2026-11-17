@@ -1,0 +1,139 @@
+{
+  "id": "hr/novi-broj-posudi-novac",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "hr": "„Dijete“, prijatelj ili rođak s novog broja ili s preuzetog računa",
+    "en": "A “child”, friend or relative on a new number or a hijacked account"
+  },
+  "name": {
+    "hr": "„Bok mama, ovo mi je novi broj“: hitno posudi novac",
+    "en": "“Hi mum, this is my new number”: lend me money urgently"
+  },
+  "how": {
+    "hr": "Stiže poruka od „djeteta“ kojem se pokvario ili izgubio mobitel, pa piše s novog broja. Ili poznata osoba, s računa koji je netko preuzeo, moli da joj posudite novac do sutra. Ubrzo slijedi IBAN tuđe osobe i molba da se uplati odmah. Ne može razgovarati, samo pisati. Ponekad stiže i glasovna poruka s glasom stvorenim umjetnom inteligencijom.",
+    "en": "A message arrives from a “child” whose phone broke or got lost, so they are writing from a new number. Or someone you know, from an account someone has taken over, asks to borrow money until tomorrow. Soon comes someone else’s IBAN and a request to pay right away. They can’t talk, only text. Sometimes a voice message with an AI-made voice arrives too."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Poruka s nepoznatog broja: „Bok mama/tata, ovo je moj novi broj“.",
+        "en": "A message from an unknown number: “Hi mum/dad, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "hr": "Ne može nazvati, samo pisati.",
+        "en": "They can’t call, only text."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Hitno treba novac za račun ili posudbu.",
+        "en": "They urgently need money for a bill or a loan."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hr": "Šalje IBAN koji nije njegov.",
+        "en": "They send an IBAN that isn’t theirs."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Bok mama, razbio mi se mob pa pišem s ovog broja, spremi ga. Imam problem, moram danas platiti račun za stan a ne mogu u bankarstvo na novom mobu. Možeš uplatiti 640 € na ovaj IBAN, vratim ti u ponedjeljak? Ne mogu sad pričati, piši tu",
+        "en": "Hi mum, my phone broke so I’m writing from this number, save it. I have a problem, I have to pay the rent bill today and I can’t get into banking on the new phone. Can you pay 640 € to this IBAN, I’ll pay you back on Monday? Can’t talk now, text here"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "bok mama novi broj",
+      "pokvario mobitel pišem novog broja",
+      "posudi novac vratim sutra",
+      "dijete traži uplatu tuđi iban",
+      "ne može razgovarati samo piše",
+      "poznanica tražila posudbu whatsapp"
+    ],
+    "en": [
+      "hi mum new number",
+      "phone broke writing from a new number",
+      "lend me money back tomorrow",
+      "child asking for payment to someone else's iban",
+      "can't talk only texting",
+      "friend asked to borrow money on whatsapp"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "hr": [
+      "Novi broj i hitna molba za novac u istoj poruci.",
+      "IBAN glasi na nekog drugog.",
+      "Izbjegava poziv ili ne može razgovarati.",
+      "Glas u poruci može biti umjetno stvoren."
+    ],
+    "en": [
+      "A new number and an urgent money request in the same message.",
+      "The IBAN is in someone else’s name.",
+      "They avoid calls or can’t talk.",
+      "The voice in a message can be AI-made."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne plaćajte. Nazovite osobu na njezin stari, poznati broj.",
+      "Postavite pitanje na koje samo ona zna odgovor ili dogovorite obiteljsku lozinku.",
+      "Ako ste platili, odmah nazovite banku i prijavite policiji."
+    ],
+    "en": [
+      "Don’t pay. Call the person on their old, known number.",
+      "Ask something only they would know, or agree a family password.",
+      "If you paid, call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "Upozorenje: WhatsApp prijevara „Glasajte za moje dijete“",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-whatsapp-prijevara-glasajte-za-moje-dijete/",
+      "date": "2026-09-07"
+    },
+    {
+      "title": "Nova prijevara širi se omiljenom aplikacijom za dopisivanje: Sve započinje bezazlenom porukom",
+      "publisher": "DNEVNIK.hr",
+      "url": "https://dnevnik.hr/vijesti/tech/nova-prijevara-siri-se-omiljenom-aplikacijom-za-dopisivanje-sve-zapocinje-bezazlenom-porukom---916028.html",
+      "date": "2025-05-28"
+    },
+    {
+      "title": "Kako vjerovati glasu vlastitog djeteta? Nova i iznimno uvjerljiva prevara širi se WhatsAppom",
+      "publisher": "DNEVNIK.hr",
+      "url": "https://dnevnik.hr/vijesti/tech/kako-vjerovati-glasu-vlastitog-djeteta-nova-i-iznimno-uvjerljiva-prevara-siri-se-whatsappom---911738.html",
+      "date": "2025-05-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/whatsapp-glasanje-preuzimanje-racuna"
+  ]
+}

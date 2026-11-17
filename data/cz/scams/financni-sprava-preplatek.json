@@ -1,0 +1,135 @@
+{
+  "id": "cz/financni-sprava-preplatek",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "cs": "„Finanční správa“, „finanční úřad“, „Moje daně“ nebo „Portál občana“",
+    "en": "“Finanční správa” (tax authority), “tax office”, “Moje daně” or “Portál občana”"
+  },
+  "name": {
+    "cs": "Falešný přeplatek na dani od „Finanční správy“",
+    "en": "Fake tax refund from the “Finanční správa”"
+  },
+  "how": {
+    "cs": "SMS nebo e-mail oznamuje, že máte přeplatek na dani, a vyzývá vás, abyste si ho vyzvedli do několika dnů. Odkaz nebo QR kód vede na kopii portálu Moje daně, která chce osobní údaje, přihlášení do bankovnictví, Bankovní identitu nebo údaje z karty. Existuje i varianta s automatickým hlasem v telefonu. Finanční správa přeplatky vrací automaticky a odkazy k platbám ani přihlášení neposílá.",
+    "en": "A text or email says you have a tax overpayment and must claim it within a few days. A link or QR code leads to a copy of the Moje daně portal asking for personal details, your banking login, Bank iD or card details. There is also a variant with an automated voice on the phone. The tax authority pays refunds automatically and never sends payment or login links."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Zpráva „z Finanční správy“ o přeplatku.",
+        "en": "A message “from the tax authority” about a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Vyzvedněte si ho do několika dnů.",
+        "en": "Claim it within a few days."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "cs": "Odkaz nebo QR kód na falešný portál Moje daně.",
+        "en": "A link or QR code to a fake Moje daně portal."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "cs": "Máte zadat bankovní údaje nebo údaje z karty.",
+        "en": "You must enter banking or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Financni sprava CR: Na zaklade podaneho priznani vam vznikl preplatek 4 870 Kc. Pro jeho vyplaceni overte svou totoznost na portalu MOJE dane do 3 dnu: [odkaz]",
+        "en": "Czech Financial Administration: Based on your tax return you are owed a refund of 4,870 CZK. To receive it, verify your identity on the MOJE daně portal within 3 days: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "přeplatek dani sms odkaz",
+      "finanční správa vrácení přeplatku",
+      "moje daně ověřit totožnost",
+      "finanční úřad email přeplatek formulář",
+      "vyzvednout přeplatek dnů",
+      "automatický hlas přeplatek dani"
+    ],
+    "en": [
+      "tax refund text with a link",
+      "tax authority refund email",
+      "verify identity on moje dane",
+      "claim my tax overpayment",
+      "automated call about a tax refund"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "cs": [
+      "Finanční správa neposílá v SMS ani e-mailech odkazy k platbám nebo přihlášení.",
+      "Přeplatek se vrací automaticky, nemusíte nic „vyzvedávat“.",
+      "Pravé e-maily chodí z domény @fs.gov.cz.",
+      "Nikdy po vás nechce údaje z karty ani přihlášení do bankovnictví."
+    ],
+    "en": [
+      "The tax authority does not send payment or login links by text or email.",
+      "Refunds are paid automatically; there is nothing to “claim”.",
+      "Real emails come from the @fs.gov.cz domain.",
+      "It never asks for card details or your banking login."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na odkaz neklikejte, neskenujte QR kód a neodpovídejte.",
+      "O stavu přeplatku se informujte sami přes portál, který znáte, nebo na svém finančním úřadě.",
+      "Pokud jste zadali bankovní údaje, volejte ihned banku."
+    ],
+    "en": [
+      "Don’t click the link, don’t scan the QR code and don’t reply.",
+      "Check your refund yourself through the portal you know or at your tax office.",
+      "If you entered banking details, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/hlaseni-kyberkriminality",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Objevila se další intenzivní vlna podvodných e-mailů a SMS: útočníci zneužívají jméno a logo finanční správy i Portálu občana",
+      "publisher": "Finanční správa",
+      "url": "https://financnisprava.gov.cz/cs/financni-sprava/media-a-verejnost/tiskove-zpravy-gfr/tiskove-zpravy-2025/dalsi-intenzivni-vlna-podvodnych-emailu-a-sms",
+      "date": "2025-10-30"
+    },
+    {
+      "title": "Podvodné zprávy o vrácení přeplatku na dani",
+      "publisher": "Komerční banka",
+      "url": "https://www.kb.cz/cs/o-bance/novinky/bezpecnost/podvodne-zpravy-s-vracenim-preplatku-na-dani",
+      "date": "2026-03-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/dluh-pojistne-sms"
+  ]
+}

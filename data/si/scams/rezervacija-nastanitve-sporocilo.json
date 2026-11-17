@@ -1,0 +1,122 @@
+{
+  "id": "si/rezervacija-nastanitve-sporocilo",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sl": "»Vaša nastanitev« ali platforma za rezervacije, z vašimi pravimi podatki o rezervaciji",
+    "en": "“Your accommodation” or the booking platform, quoting your real booking details"
+  },
+  "name": {
+    "sl": "Lažno sporočilo o rezervaciji nastanitve: »potrdite kartico, sicer odpovemo«",
+    "en": "Fake accommodation booking message: “confirm your card or we cancel”"
+  },
+  "how": {
+    "sl": "Goljufi so iz platform za rezervacije ukradli podatke gostov. Prejmete prepričljivo sporočilo, največkrat po WhatsAppu, ki omenja vašo pravo rezervacijo: datum, nastanitev, ime. Rezervacijo morate potrditi, plačati dodatno takso ali varščino ali ponovno vpisati podatke kartice, sicer bo odpovedana. Povezava vodi na lažno plačilno stran, ki ukrade podatke kartice.",
+    "en": "Scammers have stolen guests’ data from booking platforms. You get a convincing message, most often on WhatsApp, that mentions your real booking: dates, property, name. You must confirm the booking, pay an extra fee or deposit, or re-enter your card details, or it will be cancelled. The link leads to a fake payment page that steals your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Sporočilo »nastanitve« z vašimi pravimi podatki o rezervaciji.",
+        "en": "A message from “the accommodation” with your real booking details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Rezervacija bo odpovedana, če ne ukrepate v nekaj urah.",
+        "en": "The booking will be cancelled unless you act within hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Povezava za potrditev ali doplačilo.",
+        "en": "A link to confirm or pay extra."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sl": "Stran zahteva podatke kartice.",
+        "en": "The page asks for card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Pozdravljeni, pišemo vam iz apartmajev, kjer imate rezervacijo od 14. do 18. avgusta. Pri preverjanju vaše kartice je prišlo do napake, zato vaša rezervacija še ni potrjena. Prosimo, da kartico ponovno potrdite v 12 urah, sicer bomo rezervacijo morali sprostiti: [povezava]",
+        "en": "Hello, we’re writing from the apartments where you have a booking from 14 to 18 August. There was an error verifying your card, so your booking is not yet confirmed. Please re-confirm your card within 12 hours or we will have to release the booking: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "sporočilo nastanitve potrdite kartico",
+      "rezervacija odpovedana doplačilo povezava",
+      "apartma whatsapp varščina plačilo",
+      "napaka preverjanju kartice rezervacija",
+      "ponovno vpišite podatke kartice rezervacija"
+    ],
+    "en": [
+      "message from my hotel asking to confirm my card",
+      "booking will be cancelled unless i pay",
+      "apartment host asked for a deposit on whatsapp",
+      "error verifying card for my reservation",
+      "re-enter card details for my booking"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sl": [
+      "Poznavanje vaše prave rezervacije ne dokazuje, da sporočilo pošilja nastanitev: podatki so ukradeni.",
+      "Grožnja z odpovedjo v nekaj urah je pritisk.",
+      "Ponovni vpis kartice prek povezave iz sporočila je znak prevare."
+    ],
+    "en": [
+      "Knowing your real booking doesn’t prove the message is from the property: the data was stolen.",
+      "A threat to cancel within hours is pressure.",
+      "Re-entering your card through a link from a message is a sign of fraud."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne odpirajte povezave in ne vpisujte kartice. Preverite rezervacijo v aplikaciji platforme ali pokličite nastanitev na številko, ki jo najdete sami.",
+      "Če ste vpisali kartico, takoj pokličite banko.",
+      "Sporočilo posredujte SI-CERT, finančno škodo prijavite policiji."
+    ],
+    "en": [
+      "Don’t open the link or enter your card. Check the booking in the platform’s app or call the property on a number you find yourself.",
+      "If you entered your card, call your bank straight away.",
+      "Forward the message to SI-CERT and report any financial loss to the police."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/si-cert",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Pazite na lažna sporočila glede rezervacij nastanitev",
+      "publisher": "Varni na internetu (SI-CERT)",
+      "url": "https://www.varninainternetu.si/lazna-sporocila-glede-rezervacij-nastanitev/",
+      "date": "2026-07-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

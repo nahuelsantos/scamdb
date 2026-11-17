@@ -1,0 +1,138 @@
+{
+  "id": "hu/mvm-electricity-bill",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hu": "„MVM Next”, „MVM”, „áramszolgáltató”",
+    "en": "“MVM Next”, “MVM”, “electricity supplier”"
+  },
+  "name": {
+    "hu": "Hamis MVM-üzenet: kifizetetlen villanyszámla, áramkikapcsolás",
+    "en": "Fake MVM message: unpaid electricity bill or refund"
+  },
+  "how": {
+    "hu": "SMS vagy e-mail érkezik az MVM Next nevében: kiegyenlítetlen villanyszámlája van, és ha nem fizet azonnal, kikapcsolják az áramot; vagy éppen visszatérítés jár a „rezsistop” vagy az éves elszámolás miatt. A link egy MVM-nek látszó oldalra visz, ahol bankkártyával kell fizetni vagy „igényelni” az összeget. A kártyaadatokkal a csalók vásárolnak.",
+    "en": "A text or email in the name of MVM Next, the energy supplier: you have an unpaid electricity bill and the power will be cut if you don’t pay now; or a refund is due because of the price cap or annual settlement. The link leads to an MVM-looking page where you pay or “claim” by card. The scammers use the card details to buy things."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Üzenet „az MVM-től” a villanyszámlájáról.",
+        "en": "A message from “MVM” about your electricity bill."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Azonnal fizessen, különben kikapcsolják az áramot.",
+        "en": "Pay now or your power will be cut."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "A link nem az MVM hivatalos oldalára visz.",
+        "en": "The link doesn’t go to MVM’s official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hu": "Bankkártyaadatot kérnek fizetéshez vagy „visszatérítéshez”.",
+        "en": "They ask for card details to pay or for a “refund”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "MVM Next: Tisztelt Ugyfelunk! Villamosenergia-szamlaja 12 840 Ft osszegben lejart. Az aramszolgaltatas felfuggesztesenek elkerulese erdekeben fizessen ma 23:59-ig: [link]",
+        "en": "MVM Next: Dear Customer, your electricity bill of 12,840 Ft is overdue. To avoid suspension of your power supply, pay by 23:59 today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "mvm sms kifizetetlen villanyszámla",
+      "áramszolgáltató kikapcsolással fenyeget",
+      "mvm next hamis email",
+      "rezsistop visszatérítés kártyaadat",
+      "villanyszámla tartozás sms fizetés",
+      "kikapcsolják áramot ma fizessek"
+    ],
+    "en": [
+      "text from mvm about unpaid electricity bill",
+      "electricity will be cut off pay by link",
+      "fake mvm email refund",
+      "energy supplier text asking for card details",
+      "overdue power bill sms link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "A szolgáltatók és hatóságok nem küldenek fizetési linket SMS-ben.",
+      "Fenyegetés azonnali kikapcsolással.",
+      "A link domainje nem az MVM-é."
+    ],
+    "en": [
+      "Utilities and authorities don’t send payment links by SMS.",
+      "A threat of immediate disconnection.",
+      "The link’s domain isn’t MVM’s."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne kattintson. Számláját az MVM hivatalos alkalmazásában vagy ügyfélszolgálatán ellenőrizze.",
+      "Tiltsa le a feladót.",
+      "Ha megadta a kártyaadatait, azonnal hívja a bankját.",
+      "Jelentse az oldalt az Internet Hotline-on."
+    ],
+    "en": [
+      "Don’t click. Check your bill in MVM’s official app or with its customer service.",
+      "Block the sender.",
+      "If you entered card details, call your bank at once.",
+      "Report the page to Internet Hotline."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/internet-hotline"
+  ],
+  "sources": [
+    {
+      "title": "Internet Hotline Warns of Intensified Fraudulent Activities",
+      "publisher": "NMHH Internet Hotline",
+      "url": "https://english.nmhh.hu/article/257614/Internet_Hotline_Warns_of_Intensified_Fraudulent_Activities",
+      "date": "2026-02-13"
+    },
+    {
+      "title": "Vigyázzon! Ráugrottak a csalók a rezsistopra, sokakat megtévesztenek",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/gazdasag/nmhh-mvm-nav-csalas-villanyszamla.823941.html",
+      "date": "2026-02-15"
+    },
+    {
+      "title": "Villanyszámla vagy adóvisszatérítés a trükk, intenzív csaláshullám a nyakunkon",
+      "publisher": "Infostart",
+      "url": "https://infostart.hu/tudomany/tech/2026/02/15/villanyszamla-vagy-adovisszaterites-a-trukk-intenziv-csalashullam-a-nyakunkon",
+      "date": "2026-02-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/nav-refund-phishing"
+  ]
+}

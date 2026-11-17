@@ -1,0 +1,141 @@
+{
+  "id": "hr/e-prekrsaji-sms-kazna",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hr": "„Policija“, „MUP“ ili „e-Prekršaji“",
+    "en": "“The police”, “the Interior Ministry” or “e-Prekršaji”"
+  },
+  "name": {
+    "hr": "Lažna prometna kazna SMS-om: platite u 48 sati preko poveznice",
+    "en": "Fake traffic fine by text: pay within 48 hours through a link"
+  },
+  "how": {
+    "hr": "SMS ili e-pošta tvrdi da je vaše vozilo evidentirano zbog prekršaja iz Zakona o sigurnosti prometa na cestama i da kaznu možete platiti online u 48 sati, inače slijede ovrha, veća kazna ili oduzimanje vozačke. Poveznica vodi na stranicu koja oponaša e-Prekršaje ili e-Građane, traži registraciju vozila i zatim podatke kartice.",
+    "en": "A text or email says your vehicle was recorded committing an offence under the Road Traffic Safety Act and that you can pay the fine online within 48 hours, or face enforcement, a higher fine or losing your licence. The link leads to a page imitating e-Prekršaji or e-Građani that asks for your number plate and then your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Poruka „policije“ o neplaćenoj prometnoj kazni.",
+        "en": "A “police” message about an unpaid traffic fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Rok od 48 sati i prijetnja ovrhom ili oduzimanjem vozačke.",
+        "en": "A 48-hour deadline and threats of enforcement or losing your licence."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hr": "Poveznica na lažne e-Prekršaje.",
+        "en": "A link to a fake e-Prekršaji page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Traže broj kartice i CVV za plaćanje.",
+        "en": "They ask for your card number and CVV to pay."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "MUP RH: Za vaše vozilo utvrđen je prekršaj prekoračenja brzine. Iznos kazne umanjuje se ako platite u roku od 48 sati. Nakon isteka roka predmet se upućuje na prisilnu naplatu. Detalji i plaćanje: [poveznica]",
+        "en": "Ministry of the Interior: A speeding offence has been recorded for your vehicle. The fine is reduced if you pay within 48 hours. After that the case goes to enforced collection. Details and payment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "sms prometna kazna platiti online",
+      "lažni eprekrsaji stranica",
+      "kazna 48 sati ovrha vozačka",
+      "poruka mup neplaćena kazna",
+      "prekršaj zakon sigurnosti prometa poveznica",
+      "policija sms platite kaznu karticom"
+    ],
+    "en": [
+      "text about a traffic fine to pay online",
+      "fake eprekrsaji website",
+      "fine within 48 hours or enforcement",
+      "message from police unpaid fine",
+      "road traffic offence text with link",
+      "pay police fine by card link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hr": [
+      "Policija ne šalje obavijesti o prometnim kaznama ni zahtjeve za plaćanje SMS-om.",
+      "Adresa stranice nije službena adresa e-Prekršaja ni e-Građana.",
+      "Prijetnja ovrhom u 48 sati služi za paniku."
+    ],
+    "en": [
+      "The police don’t send traffic fine notices or payment requests by text.",
+      "The page address is not the official e-Prekršaji or e-Građani address.",
+      "A 48-hour enforcement threat is meant to cause panic."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne odgovarajte i ne otvarajte poveznicu. Obrišite poruku.",
+      "Kazne provjerite sami kroz e-Građane.",
+      "Ako ste upisali karticu, odmah nazovite banku."
+    ],
+    "en": [
+      "Don’t reply or open the link. Delete the message.",
+      "Check fines yourself in e-Građani.",
+      "If you entered your card, call your bank straight away."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/cert-incident",
+    "hr/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "Upozorenje građanima na lažnu internetsku stranicu koja oponaša sustav e-Prekršaji",
+      "publisher": "Ravnateljstvo policije (MUP)",
+      "url": "https://policija.gov.hr/vijesti/upozorenje-gradjanima-na-laznu-internetsku-stranicu-koja-oponasa-sustav-e-prekrsaji/12891",
+      "date": "2026-08-13"
+    },
+    {
+      "title": "Upozorenje o zlonamjernoj SMS poruci i e-mailu",
+      "publisher": "Ravnateljstvo policije (MUP)",
+      "url": "https://policija.gov.hr/vijesti/upozorenje-o-zlonamjernoj-sms-poruci-i-e-mailu/12796",
+      "date": "2026-06-29"
+    },
+    {
+      "title": "Upozorenje: u tijeku je SMS prijevara s plaćanjem kazni",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-u-tijeku-je-sms-prijevara-s-placanjem-kazni/",
+      "date": "2026-05-12"
+    },
+    {
+      "title": "Policija upozorila građane: Mi ne šaljemo ovakve poruke!",
+      "publisher": "tportal.hr",
+      "url": "https://www.tportal.hr/vijesti/clanak/policija-upozorila-gradane-mi-ne-saljemo-ovakve-poruke-20260505",
+      "date": "2026-05-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

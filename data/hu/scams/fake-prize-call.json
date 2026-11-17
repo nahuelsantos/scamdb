@@ -1,0 +1,128 @@
+{
+  "id": "hu/fake-prize-call",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "hu": "„Nyereményjáték-szervező”, áruházlánc vagy ismert cég nevében telefonáló",
+    "en": "A “prize draw organiser” or caller in the name of a retailer or well-known company"
+  },
+  "name": {
+    "hu": "Hamis nyeremény: „nyert, banki adatait kérjük”",
+    "en": "Fake prize: “you’ve won, just give your bank details”"
+  },
+  "how": {
+    "hu": "Telefonon, SMS-ben vagy közösségi oldalon közlik, hogy megnyert egy nagy pénzösszeget, autót vagy telefont. Az átvételhez meg kell adnia a bankkártyája vagy netbankja adatait, fel kell emelnie az utalási limitet, vagy ki kell fizetnie egy kis „szállítási” vagy „kezelési” díjat. Egy valódi esetben a „nyertes” milliókat veszített, miután a csalók kérésére megemelte a limitet.",
+    "en": "You’re told by phone, text or social media that you’ve won a large sum, a car or a phone. To receive it you must give your card or online-banking details, raise your transfer limit, or pay a small “delivery” or “handling” fee. In one real case the “winner” lost millions after raising the limit at the scammers’ request."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Nyert valamit, amire nem is emlékszik, hogy jelentkezett.",
+        "en": "You won something you don’t remember entering."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hu": "Az átvételhez banki adatok vagy limitemelés kell.",
+        "en": "To receive it you need to give bank details or raise your limit."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "hu": "Kis díjat kell fizetni a szállításért.",
+        "en": "A small fee must be paid for delivery."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hu": "Gyorsan kell dönteni, különben más kapja.",
+        "en": "Decide fast or someone else gets it."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Gratulálok, Ön a havi nyereményjátékunk fődíjasa, félmillió forintot nyert! Hogy még ma átutalhassuk, szükségem lesz a bankkártyája számára, és kérem, a netbankban emelje meg ideiglenesen az utalási limitet, mert a rendszer nagy összeget nem enged be. Az ügyintézés pár perc, maradjon vonalban.",
+        "en": "Congratulations, you are the main winner of our monthly prize draw, you’ve won half a million forints! So we can transfer it today I’ll need your card number, and please raise your transfer limit in online banking temporarily, because the system won’t let a large amount in. It only takes a few minutes, please stay on the line."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "nyereményjátékon nyertem banki adatokat kértek",
+      "félmillió forintot nyertem hívásban",
+      "nyeremény átvételéhez limitet emeltettek",
+      "nyeremény szállítási díjat kértek",
+      "gratulálunk ön nyert kártyaszámot kérték",
+      "nyertem iphone kezelési díj"
+    ],
+    "en": [
+      "called to say i won a prize asked for bank details",
+      "won money but had to raise my transfer limit",
+      "prize delivery fee scam",
+      "congratulations you won give your card number",
+      "won a phone pay small fee"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request",
+    "urgency",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "hu": [
+      "Nyereményt nem kell kifizetni, és átvételéhez nem kell kártyaadat vagy limitemelés.",
+      "Olyan játékon nyert, amelyre nem jelentkezett.",
+      "Sürgetés és vonalban tartás."
+    ],
+    "en": [
+      "You never pay to receive a prize, and it needs no card details or limit increase.",
+      "You won a game you never entered.",
+      "Pressure and being kept on the line."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Tegye le. Ne adjon meg banki adatot, és ne emeljen limitet.",
+      "A cég hivatalos oldalán ellenőrizze, létezik-e a játék.",
+      "Ha adatot adott meg, azonnal hívja a bankját.",
+      "Tegyen feljelentést."
+    ],
+    "en": [
+      "Hang up. Don’t give bank details or raise any limit.",
+      "Check on the company’s official site whether the draw exists.",
+      "If you gave details, call your bank at once.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/rendorseg-feljelentes"
+  ],
+  "sources": [
+    {
+      "title": "Egyetlen hívással kifosztják a családot: milliók tűntek el a zalai férfi számlájáról",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/befektetes/2025/10/29/nyeremenyjatek-csalas-telefonos-banki-csalok-818468/",
+      "date": "2025-10-29"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/bank-employee-safe-account"
+  ]
+}

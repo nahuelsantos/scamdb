@@ -1,0 +1,127 @@
+{
+  "id": "sk/financna-sprava-refund",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "sk": "E-mail alebo SMS v mene Finančnej správy SR (daňového úradu)",
+    "en": "An email or text in the name of the Financial Administration (tax office)"
+  },
+  "name": {
+    "sk": "Falošný daňový preplatok od Finančnej správy",
+    "en": "Fake tax refund from the Financial Administration"
+  },
+  "how": {
+    "sk": "Príde e-mail alebo SMS: máte nárok na daňový preplatok, napríklad niekoľko stoviek eur. Aby vám ho poslali, máte cez odkaz „potvrdiť“ osobné údaje a údaje karty alebo bankového účtu. Stránka vyzerá ako stránka Finančnej správy. Namiesto preplatku podvodníci získajú vaše údaje a peniaze z účtu.",
+    "en": "An email or text arrives: you are entitled to a tax refund, for example a few hundred euros. To receive it you must “confirm” your personal details and card or bank account details through a link. The page looks like the Financial Administration’s site. Instead of a refund the scammers get your data and the money in your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Správa „Finančnej správy“: máte nárok na preplatok.",
+        "en": "A message from the “Financial Administration”: you are owed a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Suma je lákavá a stačí pár klikov.",
+        "en": "The amount is tempting and only takes a few clicks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sk": "Odkaz vedie na falošnú stránku úradu.",
+        "en": "The link leads to a fake authority page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sk": "Máte zadať údaje karty alebo účtu.",
+        "en": "You must enter card or account details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Finančná správa SR: Na základe ročného zúčtovania vám bol vyčíslený preplatok dane 412,30 €. Pre jeho pripísanie na účet vyplňte žiadosť do 3 dní: [odkaz]",
+        "en": "Financial Administration: Based on your annual tax return a tax refund of 412.30 € has been calculated. To have it credited to your account complete the request within 3 days: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "finančná správa preplatok dane odkaz",
+      "daňový preplatok potvrdiť údaje karty",
+      "SMS vrátenie dane podvod",
+      "email finančnej správy nárok peniaze",
+      "preplatok ročné zúčtovanie odkaz"
+    ],
+    "en": [
+      "tax office refund link",
+      "tax refund confirm card details",
+      "tax refund text scam",
+      "financial administration email money owed",
+      "refund annual tax return link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sk": [
+      "Finančná správa nežiada osobné ani bankové údaje cez odkaz v e-maile či SMS.",
+      "Preplatky sa riešia cez osobnú internetovú zónu alebo poštou, nie cez kartu.",
+      "Krátka lehota a lákavá suma sú typické pre podvod."
+    ],
+    "en": [
+      "The Financial Administration doesn’t ask for personal or bank details through a link in an email or text.",
+      "Refunds are handled in your personal online zone or by post, not by card.",
+      "A short deadline and a tempting amount are typical of a scam."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Neklikajte; preplatok si overte po prihlásení do osobnej internetovej zóny alebo na Slovensko.sk.",
+      "Ak ste zadali kartu, hneď volajte banke.",
+      "Správu zmažte a podvodnú stránku nahláste SK-CERT."
+    ],
+    "en": [
+      "Don’t click; check any refund by logging in to your personal online zone or Slovensko.sk.",
+      "If you entered your card, call your bank at once.",
+      "Delete the message and report the scam page to SK-CERT."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/sk-cert",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "Polícia upozorňuje na podvodníkov s SMS správami. Nalákajú vás na daňový preplatok",
+      "publisher": "Noviny.sk (TASR)",
+      "url": "https://www.noviny.sk/krimi/1257269-policia-upozornuje-na-podvodnikov-s-sms-spravami-nalakaju-vas-na-danovy-preplatok",
+      "date": "2026-09-10"
+    },
+    {
+      "title": "FS upozorňuje na podvodníkov, ktorí lákajú ľudí na falošné daňové preplatky",
+      "publisher": "Noviny.sk (TASR)",
+      "url": "https://www.noviny.sk/1241685-fs-upozornuje-na-podvodnikov-ktori-lakaju-ludi-na-falosne-danove-preplatky",
+      "date": "2026-08-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "hr/sms-banka-deaktivacija-aplikacije",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "hr": "SMS koji izgleda kao poruka vaše banke",
+    "en": "A text that looks like it comes from your bank"
+  },
+  "name": {
+    "hr": "SMS „banke“: aplikacija će biti deaktivirana, ažurirajte podatke",
+    "en": "Bank text: “your app will be deactivated, update your details”"
+  },
+  "how": {
+    "hr": "Stiže SMS koji izgleda kao poruka banke: mobilno bankarstvo bit će deaktivirano, kartica blokirana ili aplikacija istječe, pa je treba „ažurirati“ preko poveznice. Stranica izgleda kao bankina i traži korisničke podatke, PIN, broj kartice i CVV ili kod iz tokena. Uskoro s računa odlazi novac.",
+    "en": "A text arrives that looks like it is from your bank: mobile banking will be deactivated, your card blocked or the app is expiring, so you must “update” it through a link. The page looks like the bank’s and asks for your login, PIN, card number and CVV or a token code. Soon after, money leaves your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "SMS „banke“: aplikacija ili kartica bit će blokirana.",
+        "en": "A “bank” text: your app or card will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Rok je kratak, danas ili za nekoliko sati.",
+        "en": "The deadline is short: today or within hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hr": "Poveznica vodi na stranicu sličnu bankinoj.",
+        "en": "The link leads to a page that looks like the bank’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Traži PIN, broj kartice, CVV ili kod tokena.",
+        "en": "It asks for your PIN, card number, CVV or a token code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Poštovani klijente, zbog nove sigurnosne regulative vaša aplikacija mobilnog bankarstva bit će onemogućena u roku od 24 sata. Potvrdite svoje podatke kako biste nastavili koristiti uslugu: [poveznica]",
+        "en": "Dear client, due to new security regulations your mobile banking app will be disabled within 24 hours. Confirm your details to keep using the service: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "sms banka aplikacija deaktivirana",
+      "ažurirajte mobilno bankarstvo poveznica",
+      "kartica blokirana sms poveznica",
+      "upisala pin preko poruke banke",
+      "istek aplikacije internetskog bankarstva",
+      "poruka banke tražila cvv",
+      "blokada mobilnog bankarstva poruka",
+      "lažna poruka erste pbz zaba"
+    ],
+    "en": [
+      "text from bank app will be deactivated",
+      "update mobile banking via link",
+      "card blocked text with link",
+      "entered my pin after a bank text",
+      "bank app expiring message",
+      "bank message asked for cvv"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hr": [
+      "Banke nikad ne traže PIN, CVV, lozinke ni jednokratne kodove preko poveznice u SMS-u ili e-pošti.",
+      "Aplikacija se ažurira samo iz službene trgovine aplikacija.",
+      "Prijetnja blokadom i kratak rok tipični su za prijevaru."
+    ],
+    "en": [
+      "Banks never ask for your PIN, CVV, passwords or one-time codes through a link in a text or email.",
+      "An app is only updated from the official app store.",
+      "A threat of blocking and a short deadline are typical of fraud."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne otvarajte poveznicu. Obrišite poruku.",
+      "Ako ste upisali podatke, odmah nazovite banku na broj s kartice i zatražite blokadu.",
+      "Uključite obavijesti o transakcijama i prijavite slučaj policiji."
+    ],
+    "en": [
+      "Don’t open the link. Delete the message.",
+      "If you entered details, call your bank at once on the number on your card and ask for a block.",
+      "Turn on transaction alerts and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/policija-192",
+    "hr/cert-incident"
+  ],
+  "sources": [
+    {
+      "title": "Nova prevara. Žena ažurirala bankovnu aplikaciju putem SMS poruke, pa ostala bez svog novca",
+      "publisher": "Novi list (Hina)",
+      "url": "https://www.novilist.hr/novosti/crna-kronika/nova-prevara-zena-azurirala-bankovnu-aplikaciju-putem-sms-poruke-pa-ostala-bez-svog-novca/",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Prevaranti ispraznili račune četvero građana, šteta veća od 23.700 eura",
+      "publisher": "tportal.hr",
+      "url": "https://www.tportal.hr/vijesti/clanak/prevaranti-ispraznili-racune-cetvero-gradana-steta-veca-od-23-700-eura-20260708",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "U Donjem Lapcu mještanka naivnost platila sa 9300 eura",
+      "publisher": "Novi list",
+      "url": "https://www.novilist.hr/novosti/u-donjem-lapcu-mjestanka-naivnost-platila-sa-9300-eura/",
+      "date": "2026-07-21"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/lazni-bankovni-sluzbenik"
+  ]
+}

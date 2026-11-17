@@ -1,0 +1,138 @@
+{
+  "id": "hu/fake-webshop",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "hu": "Ismeretlen webáruház közösségi médiás hirdetéssel („kiárusítás”, „üzletbezárás”), gyakran „Budapest” a nevében",
+    "en": "An unknown online shop advertised on social media (“clearance”, “closing down”), often with “Budapest” in its name"
+  },
+  "name": {
+    "hu": "Hamis webshop: óriási kiárusítás, silány termék, semmi áru",
+    "en": "Fake online shop: huge clearance sale, junk or nothing at all"
+  },
+  "how": {
+    "hu": "A Facebookon vagy az Instagramon hirdetés jön egy webáruházról, amely márkás cipőt, ruhát vagy eszközt kínál 60–80% kedvezménnyel, mert „bezár az üzlet”. Az oldal profi, a vélemények kitaláltak. Fizetés után hetekig nem jön semmi, vagy egy olcsó, használhatatlan terméket kap, esetleg olyan csomagot, amit nem is rendelt, és utánvéttel kell fizetni. Panaszokra senki nem válaszol, az oldal eltűnik, és új néven jelenik meg. A kártyaadatait is ellophatják.",
+    "en": "An ad on Facebook or Instagram shows an online shop selling branded shoes, clothes or gadgets at 60–80% off because the “store is closing”. The site looks professional and the reviews are made up. After paying, nothing arrives for weeks, or you get a cheap, useless item, or a parcel you never ordered that must be paid cash on delivery. Nobody answers complaints; the site vanishes and reappears under a new name. Your card details may be stolen too."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Hirdetés óriási kedvezménnyel egy ismeretlen webshopból.",
+        "en": "An ad with a huge discount from an unknown shop."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hu": "Csak ma, csak pár darab maradt.",
+        "en": "Only today, only a few left."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "Előre kell fizetni kártyával vagy utalással.",
+        "en": "You must pay up front by card or transfer."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hu": "Silány termék vagy semmi, és az oldal eltűnik.",
+        "en": "Junk or nothing arrives, and the site disappears."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "ÜZLETBEZÁRÁS MIATTI VÉGKIÁRUSÍTÁS! Prémium bőr ortopéd cipők -75% kedvezménnyel, már csak 47 pár raktáron. Ingyenes szállítás, 30 napos visszaküldés. Rendelj most, mielőtt elfogy: [link]",
+        "en": "CLOSING-DOWN SALE! Premium leather orthopaedic shoes at 75% off, only 47 pairs left in stock. Free delivery, 30-day returns. Order now before they’re gone: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "webshopból rendelt csomag sosem érkezett",
+      "kiárusítás hetvenöt százalék kedvezmény webáruház",
+      "hamis webshop facebook hirdetés",
+      "rendelt cipő helyett olcsó vacakot kaptam",
+      "utánvéttel fizettem rendeletlen csomagot",
+      "webáruház eltűnt panaszra válaszolnak",
+      "üzletbezárás akció gyanús oldal"
+    ],
+    "en": [
+      "ordered from an online shop nothing arrived",
+      "fake shop with huge discount",
+      "facebook ad clearance sale shop",
+      "got cheap junk instead of what i ordered",
+      "paid cash on delivery for a parcel i didnt order",
+      "online store disappeared after i paid"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "Túl szép, hogy igaz legyen: márkás termék töredék áron.",
+      "Nincs valós cégadat, magyartalan szöveg, friss domain.",
+      "Csak előre utalással lehet fizetni.",
+      "Csomag, amit nem rendelt, de fizetni kell érte."
+    ],
+    "en": [
+      "Too good to be true: branded goods at a fraction of the price.",
+      "No real company details, poor Hungarian, a newly registered domain.",
+      "Payment only by advance transfer.",
+      "A parcel you didn’t order but must pay for."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Vásárlás előtt keressen rá a bolt nevére és véleményekre.",
+      "Fizessen visszatéríthető módon, például virtuális kártyával, és állítson limitet.",
+      "Ne vegye át és ne fizesse ki a nem rendelt csomagot.",
+      "Ha fizetett, kérjen visszaterhelést a bankjától, és tegyen feljelentést."
+    ],
+    "en": [
+      "Search the shop’s name and reviews before buying.",
+      "Pay in a way you can get back, such as a virtual card, and set a limit.",
+      "Don’t accept or pay for a parcel you didn’t order.",
+      "If you paid, ask your bank for a chargeback and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/rendorseg-feljelentes",
+    "hu/internet-hotline"
+  ],
+  "sources": [
+    {
+      "title": "Kamu webshopok lepték el a hazai internetet: rengeteg magyart húznak le sok pénzzel, az adataikat is ellopják",
+      "publisher": "Pénzcentrum",
+      "url": "https://www.penzcentrum.hu/vasarlas/20260323/kamu-webshopok-leptek-el-a-hazai-internetet-rengeteg-magyart-huznak-le-sok-penzzel-az-adataikat-is-ellopjak-1195730",
+      "date": "2026-03-23"
+    },
+    {
+      "title": "Óvatosan a telefonhívásokkal, üzenetekkel, az internettel és a csomagokkal!",
+      "publisher": "Rendőrség (Békés Vármegyei Rendőr-főkapitányság)",
+      "url": "https://www.police.hu/hu/hirek-es-informaciok/bunmegelozes/internet-biztonsag/ovatosan-a-telefonhivasokkal-uzenetekkel-az",
+      "date": "2026-01-21"
+    },
+    {
+      "title": "Black Friday – bűnmegelőzési tanácsok",
+      "publisher": "Rendőrség (Csongrád-Csanád Vármegyei Rendőr-főkapitányság)",
+      "url": "https://www.police.hu/hu/hirek-es-informaciok/bunmegelozes/internet-biztonsag/black-friday-bunmegelozesi-tanacsok",
+      "date": "2025-11-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}
