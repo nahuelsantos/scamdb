@@ -369,3 +369,12 @@ test('1.12.0: Estonian signs, and Estonian tax wording is not Finnish "maksu" (p
   assert.ok(!has('Maksu- ja Tolliamet: palun logige e-maksuametisse sisse ise.', 'money_request'));
   assert.ok(has('Pysäköintimaksu on maksamatta, maksu 3,20 €', 'money_request'));
 });
+test('1.12.0: Latvian signs (and Russian wording seen in Latvia), and genuine Latvian notices', () => {
+  const has = (t, id) => signsOf(t).includes(id);
+  assert.ok(has('Valsts policijas Ekonomisko noziegumu pārvalde. Cik aptuveni jums ir uzkrājumu?', 'money_request'));
+  assert.ok(has('Sveika, mamm, saglabā šo numuru, manējais saplīsa', 'new_number'));
+  assert.ok(has('Если сегодня внести залог, дело оформим как несчастный случай', 'money_request'));
+  assert.ok(!has('Smart-ID kontroles kods 4821. Nevienam neizpaudiet kodu.', 'asks_for_code'));
+  assert.ok(!has('Karti aktivizējiet ar pirmo PIN darījumu. Banka nekad neprasa PIN.', 'asks_for_code'));
+  assert.ok(!has('Mamm, vari lūdzu pārskaitīt 50 eiro, aizmirsu, ka šodien jāmaksā par ekskursiju', 'urgency'));
+});
