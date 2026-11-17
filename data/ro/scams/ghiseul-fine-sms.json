@@ -1,0 +1,129 @@
+{
+  "id": "ro/ghiseul-fine-sms",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "ro": "„Ghișeul.ro”, „Ministerul Transporturilor”, „Poliția Rutieră” sau o „primărie”",
+    "en": "“Ghișeul.ro”, “Ministry of Transport”, “Traffic Police” or a “city hall”"
+  },
+  "name": {
+    "ro": "SMS cu amendă falsă: viteză sau parcare neplătită, plata pe o copie a Ghișeul.ro",
+    "en": "Fake fine text: unpaid speeding or parking fine, payment on a copy of Ghișeul.ro"
+  },
+  "how": {
+    "ro": "Primiți un SMS, aparent de la Ministerul Transporturilor, Ghișeul.ro sau o primărie: aveți o amendă de viteză de la camere sau o taxă de parcare neplătită. Termenul e scurt și sunteți amenințat cu penalități, blocarea ITP-ului sau trimiterea dosarului la Parchet. Linkul duce la o copie a Ghișeul.ro, cu sigla oficială, care cere întâi date de identificare și apoi datele complete ale cardului, inclusiv CVV. Uneori suma apare chiar în dolari.",
+    "en": "You get a text, apparently from the Ministry of Transport, Ghișeul.ro (the state payments site) or a city hall: you have a speeding fine from cameras or an unpaid parking charge. The deadline is short and you are threatened with penalties, a blocked vehicle inspection (ITP) or the case going to the prosecutor. The link leads to a copy of Ghișeul.ro with the official logo, which first asks for identification details and then your full card details, CVV included. Sometimes the amount is even shown in dollars."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un SMS: aveți o amendă de viteză sau de parcare neplătită.",
+        "en": "A text: you have an unpaid speeding or parking fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Plătiți azi, altfel penalități, ITP blocat sau Parchet.",
+        "en": "Pay today or face penalties, a blocked ITP or the prosecutor."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Linkul duce la o pagină care copiază Ghișeul.ro.",
+        "en": "The link goes to a page copying Ghișeul.ro."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Vi se cer datele complete ale cardului, cu CVV.",
+        "en": "You are asked for your full card details with CVV."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Ministerul Transporturilor: Vehiculul dvs. a fost inregistrat de radar cu depasirea vitezei legale. Amenda de 290 lei trebuie achitata pana azi la 23:59 pe Ghiseul.ro, altfel se aplica penalitati si blocarea ITP: [link]",
+        "en": "Ministry of Transport: Your vehicle was recorded by radar exceeding the speed limit. The 290 lei fine must be paid by 23:59 today on Ghiseul.ro, otherwise penalties and an ITP block apply: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "sms amendă viteză ghișeul ro link",
+      "amendă de parcare neplătită mesaj",
+      "ministerul transporturilor amendă radar sms",
+      "site fals ghișeul cere cvv",
+      "blocare itp dacă nu plătesc amenda",
+      "amendă rutieră plată card azi",
+      "amendă parcare primărie sms link",
+      "sancțiune contravențională neplătită mesaj",
+      "executare silită dacă nu plătesc amenda",
+      "amenda se dublează plată online"
+    ],
+    "en": [
+      "speeding fine text ghiseul link",
+      "unpaid parking fine text message",
+      "transport ministry radar fine text",
+      "fake fine site asks for cvv",
+      "pay fine today or inspection blocked"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ro": [
+      "Ghișeul.ro nu anunță amenzi și nu cere plăți prin linkuri în SMS.",
+      "Adresa site-ului nu este ghiseul.ro, chiar dacă sigla e aceeași.",
+      "Amenințările cu Parchetul și ITP-ul blocat sunt făcute ca să vă grăbiți."
+    ],
+    "en": [
+      "Ghișeul.ro doesn’t announce fines or ask for payments through links in texts.",
+      "The site address isn’t ghiseul.ro, even if the logo is the same.",
+      "Threats about the prosecutor and a blocked ITP are there to rush you."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul. Verificați amenzile tastând chiar dumneavoastră ghiseul.ro în browser.",
+      "Ați introdus datele cardului? Sunați imediat banca pentru blocarea cardului.",
+      "Raportați mesajul la DNSC (1911 sau pnrisc.dnsc.ro)."
+    ],
+    "en": [
+      "Don’t open the link. Check fines by typing ghiseul.ro into your browser yourself.",
+      "Did you enter card details? Call your bank straight away to block the card.",
+      "Report the message to DNSC (1911 or pnrisc.dnsc.ro)."
+    ]
+  },
+  "reportTo": [
+    "ro/dnsc-1911",
+    "ro/your-bank",
+    "ro/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "O nouă fraudă online care vizează șoferii: DNSC avertizează asupra unui SMS prin care românii sunt păcăliți cu amenzi false",
+      "publisher": "Digi24",
+      "url": "https://www.digi24.ro/stiri/o-noua-frauda-online-care-vizeaza-soferii-dnsc-avertizeaza-asupra-unui-sms-prin-care-romanii-sunt-pacaliti-cu-amenzi-false-3862281",
+      "date": "2026-07-14"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/anaf-refund-phishing"
+  ]
+}

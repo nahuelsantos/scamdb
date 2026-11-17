@@ -1,0 +1,123 @@
+{
+  "id": "ro/netflix-subscription-phishing",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "ro": "„Netflix” sau alt serviciu de streaming ori abonament",
+    "en": "“Netflix” or another streaming or subscription service"
+  },
+  "name": {
+    "ro": "Mesaj fals de la Netflix: plata abonamentului a eșuat, contul va fi suspendat",
+    "en": "Fake Netflix message: subscription payment failed, account will be suspended"
+  },
+  "how": {
+    "ro": "Primiți un e-mail sau un SMS, aparent de la Netflix: ultima plată a abonamentului a fost respinsă și contul va fi suspendat în curând dacă nu actualizați datele de plată. Linkul duce la o pagină falsă, care arată ca Netflix, și cere datele cardului, uneori și parola contului. Datele ajung la infractori, care fac plăți neautorizate sau folosesc parola și pe alte servicii.",
+    "en": "You get an email or text, apparently from Netflix: the last subscription payment was declined and the account will soon be suspended unless you update your payment details. The link leads to a fake page that looks like Netflix and asks for your card details, sometimes also your account password. The data goes to criminals, who make unauthorised payments or try the password on other services."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un mesaj „de la Netflix”: plata a eșuat.",
+        "en": "A message “from Netflix”: the payment failed."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Contul va fi suspendat în 24 de ore.",
+        "en": "The account will be suspended within 24 hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Un link ca să actualizați metoda de plată.",
+        "en": "A link to update your payment method."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Pagina cere datele cardului și parola.",
+        "en": "The page asks for card details and your password."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Netflix: Nu am putut procesa plata pentru abonamentul tău. Pentru a evita suspendarea contului, actualizează metoda de plată în următoarele 24 de ore: [link] Echipa Netflix",
+        "en": "Netflix: We couldn’t process the payment for your subscription. To avoid your account being suspended, update your payment method within the next 24 hours: [link] The Netflix Team"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "netflix plata a eșuat email",
+      "abonament suspendat actualizează cardul",
+      "mesaj fals netflix cont suspendat",
+      "plata abonamentului respinsă link",
+      "actualizează metoda de plată streaming"
+    ],
+    "en": [
+      "netflix payment failed email",
+      "subscription suspended update card",
+      "fake netflix account suspended message",
+      "update payment method streaming link",
+      "subscription payment declined link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ro": [
+      "Netflix nu cere numărul cardului sau parola prin e-mail sau SMS.",
+      "Termenul scurt și amenințarea cu suspendarea sunt făcute ca să nu verificați.",
+      "Linkul nu duce la site-ul oficial Netflix."
+    ],
+    "en": [
+      "Netflix never asks for your card number or password by email or text.",
+      "The short deadline and the suspension threat are there so you don’t check.",
+      "The link doesn’t go to Netflix’s official site."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul. Verificați abonamentul în aplicația Netflix sau tastând chiar dumneavoastră adresa.",
+      "Ați introdus cardul? Sunați imediat banca. Ați dat parola? Schimbați-o peste tot unde o folosiți.",
+      "Raportați mesajul la Netflix (adresa de phishing din Centrul de ajutor) și la DNSC."
+    ],
+    "en": [
+      "Don’t open the link. Check your subscription in the Netflix app or by typing the address yourself.",
+      "Entered your card? Call your bank straight away. Gave your password? Change it everywhere you use it.",
+      "Report the message to Netflix (the phishing address in its Help Center) and to DNSC."
+    ]
+  },
+  "reportTo": [
+    "ro/dnsc-1911",
+    "ro/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Tentativă de fraudă în numele Netflix. Mesaje false despre suspendarea contului, pentru a fura datele bancare. Avertisment DNSC",
+      "publisher": "Alba24",
+      "url": "https://alba24.ro/tentativa-de-frauda-in-numele-netflix-mesaje-false-despre-suspendarea-contului-pentru-a-fura-datele-bancare-avertisment-dnsc-1166319.html",
+      "date": "2026-11-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/energy-bill-phishing"
+  ]
+}

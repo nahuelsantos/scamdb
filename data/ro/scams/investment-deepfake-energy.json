@@ -1,0 +1,153 @@
+{
+  "id": "ro/investment-deepfake-energy",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "ro": "Reclame cu „Hidroelectrica”, „Petrom”, oameni politici, bancheri sau vedete, apoi un „consultant financiar”",
+    "en": "Ads with “Hidroelectrica”, “Petrom”, politicians, bankers or celebrities, then a “financial advisor”"
+  },
+  "name": {
+    "ro": "Investiții false cu Hidroelectrica, Petrom sau vedete în videoclipuri deepfake",
+    "en": "Fake investments using Hidroelectrica, Petrom or celebrities in deepfake videos"
+  },
+  "how": {
+    "ro": "Vedeți pe Facebook, Instagram sau YouTube o reclamă sau un videoclip în care un om de afaceri, un politician, guvernatorul BNR sau o vedetă pare să recomande o platformă de investiții, de exemplu una „asociată” cu Hidroelectrica sau Petrom. Videoclipul e adesea făcut cu inteligență artificială (deepfake). Lăsați numărul de telefon, apoi vă sună un „consultant” care vă convinge să depuneți puțin, vă arată profituri false și vă cere sume tot mai mari, uneori să instalați o aplicație de control la distanță. Când vreți să retrageți banii apar taxe, scuze sau platforma dispare.",
+    "en": "You see an ad or video on Facebook, Instagram or YouTube where a businessman, a politician, the central bank governor or a celebrity seems to recommend an investment platform, for example one “linked” to Hidroelectrica or Petrom (big Romanian energy companies). The video is often made with artificial intelligence (deepfake). You leave your phone number, then an “advisor” calls, gets you to deposit a little, shows you fake profits and asks for bigger and bigger sums, sometimes to install a remote-control app. When you want to withdraw, fees and excuses appear or the platform disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "O reclamă cu o persoană cunoscută care recomandă o platformă cu profit garantat.",
+        "en": "An ad with a well-known person recommending a platform with guaranteed profit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Platforma folosește numele Hidroelectrica, Petrom sau al unei instituții.",
+        "en": "The platform uses the name of Hidroelectrica, Petrom or an institution."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Un „consultant” vă sună și vă cere un prim depozit.",
+        "en": "An “advisor” calls and asks for a first deposit."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Vă cere să instalați o aplicație ca să vă „ajute” la cont.",
+        "en": "They ask you to install an app to “help” with the account."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "ro": "Ca să retrageți profitul, trebuie să mai plătiți taxe.",
+        "en": "To withdraw the profit you have to pay more fees."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Investește doar 1.000 de lei în acțiunile Hidroelectrica prin noua platformă susținută de stat și câștigă până la 9.000 de lei pe lună! Locurile sunt limitate. Lasă-ți numărul și un consultant te sună în 15 minute. [link]",
+        "en": "Invest just 1,000 lei in Hidroelectrica shares through the new state-backed platform and earn up to 9,000 lei a month! Places are limited. Leave your number and an advisor will call you within 15 minutes. [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "platformă investiții hidroelectrica reclamă facebook",
+      "videoclip deepfake recomandă investiții",
+      "acțiuni petrom câștig garantat lunar",
+      "consultant financiar mă sună după reclamă",
+      "nu pot retrage banii de pe platformă",
+      "guvernatorul bnr recomandă platformă",
+      "depozit 1000 lei profit garantat"
+    ],
+    "en": [
+      "hidroelectrica investment platform facebook ad",
+      "deepfake video recommends investment",
+      "petrom shares guaranteed monthly profit",
+      "financial advisor called after an ad",
+      "cannot withdraw money from trading platform"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "remote_access",
+    "urgency"
+  ],
+  "redFlags": {
+    "ro": [
+      "Hidroelectrica și alte companii nu cer investiții prin platforme sau aplicații promovate pe rețele sociale.",
+      "Profitul garantat și mare e mereu o minciună.",
+      "Videoclipurile cu persoane cunoscute pot fi falsificate cu inteligență artificială.",
+      "Taxele cerute ca să vă retrageți banii arată că e o capcană."
+    ],
+    "en": [
+      "Hidroelectrica and other companies don’t solicit investments through platforms or apps promoted on social media.",
+      "High, guaranteed profit is always a lie.",
+      "Videos with well-known people can be faked with artificial intelligence.",
+      "Fees demanded before you can withdraw show it’s a trap."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Verificați în registrele ASF dacă firma este autorizată, înainte de orice plată.",
+      "Ați plătit sau ați instalat o aplicație? Sunați imediat banca și dezinstalați aplicația.",
+      "Depuneți plângere la Poliție și raportați reclama pe platformă și la DNSC.",
+      "Nu plătiți pe cineva care promite să vă „recupereze” banii pierduți."
+    ],
+    "en": [
+      "Check in the ASF registers whether the firm is authorised, before any payment.",
+      "Did you pay or install an app? Call your bank straight away and uninstall the app.",
+      "File a police complaint and report the ad on the platform and to DNSC.",
+      "Don’t pay anyone who promises to “recover” the money you lost."
+    ]
+  },
+  "reportTo": [
+    "ro/asf",
+    "ro/your-bank",
+    "ro/police-complaint",
+    "ro/dnsc-1911"
+  ],
+  "sources": [
+    {
+      "title": "Anunț important de la Hidroelectrica: „Este o fraudă, nu accesați platforma!” Despre ce e vorba?",
+      "publisher": "Newsweek România",
+      "url": "https://newsweek.ro/actualitate/anunt-important-de-la-hidroelectrica-este-o-frauda-nu-accesati-platforma-despre-ce-e-vorba",
+      "date": "2026-03-09"
+    },
+    {
+      "title": "SmartJob contra minciunii | Mihai Rotariu (DNSC) despre fraudele online",
+      "publisher": "Europa Liberă România",
+      "url": "https://romania.rferl.org/amp/mihai-rotariu-dnsc-fraude-online-romance-scams-atacuri-cibernetice/33689702.html",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Avertisment de ultimă oră al Poliției Române! Cele mai noi metode de înșelăciune și cum să vă protejați banii",
+      "publisher": "BZI (citând Poliția Română)",
+      "url": "https://www.bzi.ro/avertisment-de-ultima-ora-al-politiei-romane-cele-mai-noi-metode-de-inselaciune-si-cum-sa-va-protejati-banii-5408703",
+      "date": "2025-11-24"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/task-job-scam",
+    "ro/romance-scam"
+  ]
+}

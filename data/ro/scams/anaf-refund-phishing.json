@@ -1,0 +1,139 @@
+{
+  "id": "ro/anaf-refund-phishing",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "ro": "„ANAF”, „ANAF RO”, „Serviciul clienți ANAF” sau „Ministerul Finanțelor”",
+    "en": "“ANAF”, “ANAF RO”, “ANAF customer service” or “Ministry of Finance”"
+  },
+  "name": {
+    "ro": "E-mail fals de la ANAF: rambursare de impozit sau sold disponibil, datele cardului pe un portal fals",
+    "en": "Fake ANAF email: tax refund or available balance, card details on a fake portal"
+  },
+  "how": {
+    "ro": "Primiți un e-mail, aparent de la ANAF, cu sigla instituției: aveți dreptul la o rambursare de impozit sau un sold disponibil. Un buton de tip „Accesați portalul ANAF” duce la un site care imită portalul oficial. Acolo vi se cer CNP-ul și telefonul, apoi vi se arată o „analiză fiscală” cu suma de primit și vi se cer numele și datele cardului ca să „primiți” banii. La final apare o pagină falsă 3D Secure: dacă aprobați, autorizați de fapt o plată către infractori. Datele pot fi folosite apoi pentru alte fraude.",
+    "en": "You get an email, apparently from ANAF (the tax agency), with its logo: you are owed a tax refund or have an available balance. A button such as “Access the ANAF portal” leads to a site imitating the official portal. There you are asked for your personal ID number (CNP) and phone, then shown a “tax analysis” with the amount due and asked for your name and card details to “receive” the money. At the end a fake 3D Secure page appears: if you approve, you actually authorise a payment to the criminals. The data can then be used for other frauds."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un e-mail „de la ANAF”: vi se cuvine o rambursare.",
+        "en": "An email “from ANAF”: you are owed a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Un buton către un „portal ANAF” care nu e cel oficial.",
+        "en": "A button to an “ANAF portal” that isn’t the official one."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Vi se cer CNP-ul și datele cardului ca să primiți banii.",
+        "en": "You are asked for your CNP and card details to receive the money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Trebuie să aprobați o „verificare” 3D Secure sau un cod.",
+        "en": "You must approve a 3D Secure “verification” or a code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ro": "Termenul e scurt, altfel pierdeți rambursarea.",
+        "en": "The deadline is short or you lose the refund."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "ANAF – Notificare rambursare. Stimate contribuabil, în urma analizei fiscale pentru anul 2025, aveți de primit suma de 1.240 lei. Pentru a primi rambursarea, accesați portalul și confirmați datele cardului în termen de 48 de ore: [link] Agenția Națională de Administrare Fiscală",
+        "en": "ANAF – Refund notice. Dear taxpayer, following the tax analysis for 2025 you are due 1,240 lei. To receive the refund, access the portal and confirm your card details within 48 hours: [link] National Agency for Fiscal Administration"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "email anaf rambursare impozit link",
+      "anaf îmi cere datele cardului pentru rambursare",
+      "sold disponibil anaf mesaj fals",
+      "portal anaf fals cnp și card",
+      "notificare rambursare anaf confirmare date",
+      "analiză fiscală bani de primit email"
+    ],
+    "en": [
+      "anaf tax refund email link",
+      "tax agency asks for card details for refund",
+      "fake anaf portal asks for card",
+      "tax refund notice confirm card details",
+      "available balance tax agency email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "ro": [
+      "ANAF nu cere date de card prin e-mail, SMS sau telefon pentru rambursări.",
+      "Expeditorul și adresa site-ului nu sunt ale ANAF.",
+      "Ca să primiți bani nu trebuie să aprobați nicio plată sau cod 3D Secure."
+    ],
+    "en": [
+      "ANAF never asks for card details by email, text or phone for refunds.",
+      "The sender and the site address aren’t ANAF’s.",
+      "To receive money you never have to approve a payment or a 3D Secure code."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul. Intrați în Spațiul Privat Virtual (SPV) tastând chiar dumneavoastră adresa ANAF.",
+      "Ați introdus datele cardului? Sunați imediat banca pentru blocare și schimbați parolele.",
+      "Raportați e-mailul la DNSC (1911 sau pnrisc.dnsc.ro)."
+    ],
+    "en": [
+      "Don’t open the link. Log in to your Virtual Private Space (SPV) by typing ANAF’s address yourself.",
+      "Did you enter card details? Call your bank straight away to block the card and change your passwords.",
+      "Report the email to DNSC (1911 or pnrisc.dnsc.ro)."
+    ]
+  },
+  "reportTo": [
+    "ro/dnsc-1911",
+    "ro/your-bank",
+    "ro/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Avertisment pentru clienții ING. Nu răspundeți acestor mesaje: Șansele de recuperare a banilor sunt extrem de reduse",
+      "publisher": "Capital",
+      "url": "https://www.capital.ro/avertisment-pentru-clientii-ing-nu-raspundeti-acestor-mesaje-sansele-de-recuperare-a-banilor-sunt-extrem-de-reduse.html",
+      "date": "2026-03-28"
+    },
+    {
+      "title": "DNSC avertizează: Atacuri de tip Phishing care vizează utilizatorii ANAF prin e-mailuri false",
+      "publisher": "Știrile ProTV",
+      "url": "https://stirileprotv.ro/stiri/actualitate/dnsc-avertizeaza-atacuri-de-tip-phishing-care-vizeaza-utilizatorii-anaf-prin-e-mailuri-false.html",
+      "date": "2025-03-20"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/ghiseul-fine-sms"
+  ]
+}

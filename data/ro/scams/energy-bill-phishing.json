@@ -1,0 +1,124 @@
+{
+  "id": "ro/energy-bill-phishing",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "ro": "„E.ON”, „Enel”, „PPC”, „Hidroelectrica” sau alt furnizor de energie",
+    "en": "“E.ON”, “Enel”, “PPC”, “Hidroelectrica” or another energy supplier"
+  },
+  "name": {
+    "ro": "E-mail fals de la furnizorul de energie: factură neachitată, plată urgentă prin link",
+    "en": "Fake energy supplier email: unpaid bill, urgent payment by link"
+  },
+  "how": {
+    "ro": "Primiți un e-mail cu numele și sigla furnizorului de energie, de exemplu E.ON, cu subiectul „Factura neachitată”: aveți o restanță și trebuie să plătiți repede, altfel vi se oprește curentul sau gazul. Adresa expeditorului poate părea legitimă. Linkul duce la un site fals care cere datele personale și datele cardului. Infractorii se folosesc de faptul că oricine primește facturi lunare.",
+    "en": "You get an email with the name and logo of your energy supplier, for example E.ON, with the subject “Unpaid invoice”: you are in arrears and must pay fast or your electricity or gas will be cut off. The sender address may look legitimate. The link leads to a fake site that asks for personal details and card details. Criminals rely on the fact that everyone gets monthly bills."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un e-mail „de la furnizor”: factură neachitată.",
+        "en": "An email “from the supplier”: unpaid invoice."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Plătiți azi, altfel se oprește curentul sau gazul.",
+        "en": "Pay today or the power or gas is cut off."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Un link de plată către un site fals.",
+        "en": "A payment link to a fake site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Site-ul cere datele cardului.",
+        "en": "The site asks for card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Stimate client, factura dvs. de energie electrică în valoare de 386,40 lei nu a fost achitată până la scadență. Pentru a evita întreruperea furnizării în 48 de ore, vă rugăm să efectuați plata online: [link] Departamentul Facturare",
+        "en": "Dear customer, your electricity bill of 386.40 lei was not paid by the due date. To avoid supply interruption within 48 hours, please pay online: [link] Billing Department"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "email factură neachitată e.on",
+      "furnizor energie amenință cu debranșarea",
+      "factură curent plată urgentă link",
+      "mesaj fals enel factură restantă",
+      "întrerupere gaz dacă nu plătesc azi",
+      "plată factură energie cere cardul"
+    ],
+    "en": [
+      "unpaid electricity bill email",
+      "energy supplier threatens disconnection",
+      "power bill urgent payment link",
+      "gas cut off unless I pay today",
+      "energy bill payment asks for card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ro": [
+      "Amenințarea cu oprirea curentului în câteva ore e făcută ca să vă grăbiți.",
+      "Adresa expeditorului poate părea reală: nu dovedește nimic.",
+      "Linkul nu duce la site-ul oficial al furnizorului."
+    ],
+    "en": [
+      "The threat of cutting power within hours is meant to rush you.",
+      "The sender address can look real: it proves nothing.",
+      "The link doesn’t lead to the supplier’s official site."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu plătiți din link. Verificați factura în contul de client sau în aplicația oficială a furnizorului.",
+      "Ați introdus datele cardului? Sunați imediat banca pentru blocare și schimbați parolele.",
+      "Raportați e-mailul la DNSC (1911 sau pnrisc.dnsc.ro) și ștergeți-l."
+    ],
+    "en": [
+      "Don’t pay from the link. Check the bill in your customer account or the supplier’s official app.",
+      "Did you enter card details? Call your bank straight away to block the card and change your passwords.",
+      "Report the email to DNSC (1911 or pnrisc.dnsc.ro) and delete it."
+    ]
+  },
+  "reportTo": [
+    "ro/dnsc-1911",
+    "ro/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Atenționare de phishing în numele E.On. E-mailuri false privind presupuse facturi neachitate",
+      "publisher": "Alba24",
+      "url": "https://alba24.ro/atentionare-de-phishing-in-numele-e-on-e-mailuri-false-privind-presupuse-facturi-neachitate-1155246.html",
+      "date": "2026-08-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/netflix-subscription-phishing"
+  ]
+}

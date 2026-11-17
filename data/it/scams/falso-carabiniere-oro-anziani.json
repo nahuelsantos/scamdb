@@ -1,0 +1,124 @@
+{
+  "id": "it/falso-carabiniere-oro-anziani",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "it": "Un finto carabiniere, maresciallo, avvocato o poliziotto al telefono (fisso)",
+    "en": "A fake carabiniere, marshal, lawyer or police officer on the (landline) phone"
+  },
+  "name": {
+    "it": "Falso carabiniere al telefono: controllo dell'oro o parente nei guai, poi un complice ritira soldi e gioielli",
+    "en": "Fake carabiniere on the phone: a check on your gold or a relative in trouble, then an accomplice collects cash and jewellery"
+  },
+  "how": {
+    "it": "Telefonano soprattutto ad anziani, spesso sul fisso. Il finto carabiniere racconta che l'auto o i documenti di famiglia sono stati usati in una rapina, oppure che un figlio o un nipote ha causato un incidente ed è in arresto: servono soldi per la cauzione o bisogna \"verificare\" che oro e gioielli non siano rubati. Vi tengono al telefono per non farvi chiamare nessuno, e intanto un complice suona alla porta e ritira contanti, oro e preziosi.",
+    "en": "They call mostly older people, often on the landline. The fake carabiniere says the family car or documents were used in a robbery, or that a son or grandchild caused an accident and has been arrested: money is needed for bail, or your gold and jewellery must be “checked” to show they are not stolen. They keep you on the phone so you cannot call anyone, and meanwhile an accomplice rings the doorbell and collects cash, gold and valuables."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un \"carabiniere\" telefona: vostro figlio ha fatto un incidente, o la vostra auto è stata usata in una rapina.",
+        "en": "A “carabiniere” calls: your son had an accident, or your car was used in a robbery."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Dovete restare in linea e non chiamare nessuno, nemmeno il parente.",
+        "en": "You must stay on the line and not call anyone, not even the relative."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "it": "Servono subito contanti per la cauzione, o bisogna controllare oro e gioielli.",
+        "en": "Cash is needed right away for bail, or gold and jewellery must be checked."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "it": "Un \"collega\" passa a casa a ritirare soldi e preziosi.",
+        "en": "A “colleague” comes to the house to collect money and valuables."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Buongiorno signora, sono il maresciallo Ferri della stazione dei Carabinieri. La sua macchina risulta usata stamattina per una rapina in una gioielleria. Per escludere il suo coinvolgimento dobbiamo verificare gli oggetti d'oro che ha in casa: tra poco passa un mio collega, lei li prepari sul tavolo e non riattacchi.",
+        "en": "Good morning madam, this is Marshal Ferri from the Carabinieri station. Your car seems to have been used this morning in a robbery at a jeweller's. To rule out your involvement we need to check the gold items you have at home: a colleague of mine will come by shortly, get them ready on the table and do not hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "finto carabiniere al telefono",
+      "controllo oro gioielli casa",
+      "figlio incidente arrestato cauzione",
+      "nipote nei guai servono soldi",
+      "maresciallo chiede contanti",
+      "auto usata per rapina telefonata",
+      "collega passa ritirare preziosi",
+      "truffa anziani telefono fisso"
+    ],
+    "en": [
+      "fake carabiniere called my mother",
+      "they wanted to check our gold",
+      "son arrested after accident need bail",
+      "someone came to collect jewellery",
+      "told to stay on the phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "it": [
+      "Nessun carabiniere o poliziotto chiede soldi, oro o gioielli al telefono o a casa.",
+      "Le cauzioni non si pagano in contanti a qualcuno che passa a casa.",
+      "Chi vi impedisce di riattaccare o di chiamare un parente vuole isolarvi."
+    ],
+    "en": [
+      "No carabiniere or police officer asks for money, gold or jewellery on the phone or at your home.",
+      "Bail is never paid in cash to someone who comes to your house.",
+      "Someone who stops you hanging up or calling a relative wants to isolate you."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Riattaccate e chiamate voi il 112, poi il parente al suo numero di sempre.",
+      "Non aprite la porta e non consegnate nulla; se qualcuno sta arrivando, chiamate il 112.",
+      "Avvisate genitori e nonni di questa truffa; sporgete denuncia se avete consegnato qualcosa."
+    ],
+    "en": [
+      "Hang up and call 112 yourself, then the relative on their usual number.",
+      "Do not open the door or hand anything over; if someone is on the way, call 112.",
+      "Warn parents and grandparents about this scam; file a complaint if you handed anything over."
+    ]
+  },
+  "reportTo": [
+    "it/emergency-112",
+    "it/denuncia"
+  ],
+  "sources": [
+    {
+      "title": "\"Mi mostri il tesserino\", anziana sventa la truffa del falso carabiniere",
+      "publisher": "La Nazione",
+      "url": "https://www.lanazione.it/la-spezia/cronaca/truffa-falso-carabiniere-dye2w5gw",
+      "date": "2026-02-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,142 @@
+{
+  "id": "md/locuri-munca-strainatate-intermediari",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ro": "Un anunț sau „intermediar” care promite muncă în UE",
+    "ru": "Объявление или «посредник», обещающий работу в ЕС",
+    "en": "An ad or 'agent' promising work in the EU"
+  },
+  "name": {
+    "ro": "Locuri de muncă false în străinătate: plătiți intermediarul pentru viză și contract",
+    "ru": "Фальшивая работа за границей: заплатите посреднику за визу и контракт",
+    "en": "Fake jobs abroad: pay the agent for a visa and contract"
+  },
+  "how": {
+    "ro": "Un intermediar sau o firmă necunoscută promite un loc de muncă în Germania, Finlanda sau altă țară din UE (de exemplu la o fabrică) și se oferă să rezolve viza, programarea la ambasadă și actele, contra unei sume în avans. Arată scrisori și confirmări care par oficiale, dar nu sunt emise de ambasadă. După plată, intermediarul dispare. Ambasadele spun că programările sunt gratuite, se fac online pe site-ul oficial și nu e nevoie de intermediari.",
+    "ru": "Посредник или неизвестная фирма обещает работу в Германии, Финляндии или другой стране ЕС (например, на заводе) и предлагает оформить визу, запись в посольство и документы за предоплату. Показывает письма и подтверждения, которые выглядят официально, но выданы не посольством. После оплаты посредник исчезает. Посольства сообщают, что запись бесплатная, делается онлайн на официальном сайте и посредники не нужны.",
+    "en": "An agent or unknown firm promises a job in Germany, Finland or another EU country (for example at a factory) and offers to arrange the visa, the embassy appointment and the paperwork for an upfront fee. They show letters and confirmations that look official but weren't issued by the embassy. After you pay, the agent disappears. Embassies say appointments are free, booked online on the official site, and no agents are needed."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Ofertă de muncă în UE cu salariu bun.",
+        "ru": "Предложение работы в ЕС с хорошей зарплатой.",
+        "en": "A well-paid job offer in the EU."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Intermediarul „rezolvă” viza și programarea.",
+        "ru": "Посредник «решает» визу и запись.",
+        "en": "The agent 'sorts out' the visa and appointment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Plătiți în avans pentru acte.",
+        "ru": "Заплатите вперёд за документы.",
+        "en": "Pay upfront for the paperwork."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "ro": "Angajăm urgent 20 de persoane la o fabrică de ambalaje din Germania, salariu de la 2 400 euro net, cazare inclusă. Ne ocupăm noi de programarea la ambasadă și de viza de muncă în 3 săptămâni. Taxa de perfectare a actelor 450 euro, locurile se ocupă repede. Scrieți-ne în privat.",
+        "ru": "Срочно набираем 20 человек на упаковочный завод в Германии, зарплата от 2 400 евро чистыми, жильё включено. Запись в посольство и рабочую визу берём на себя, за 3 недели. Оформление документов 450 евро, места быстро заканчиваются. Пишите в личку.",
+        "en": "Urgently hiring 20 people at a packaging factory in Germany, from 2,400 euros net, accommodation included. We handle the embassy appointment and work visa within 3 weeks. Paperwork fee 450 euros, places are filling fast. Message us privately."
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "intermediar muncă în germania cere bani pentru viză",
+      "am plătit pentru programare la ambasadă",
+      "loc de muncă fabrică finlanda intermediar a dispărut",
+      "taxă pentru acte de muncă în străinătate",
+      "firmă promite viză de muncă contra plată"
+    ],
+    "ru": [
+      "посредник работа в германии просит деньги за визу",
+      "заплатил за запись в посольство",
+      "работа на заводе в финляндии посредник пропал",
+      "плата за документы работы за границей",
+      "фирма обещает рабочую визу за деньги"
+    ],
+    "en": [
+      "agent job in germany wants money for visa",
+      "paid for an embassy appointment",
+      "factory job finland agent disappeared",
+      "fee for paperwork to work abroad",
+      "firm promises work visa for payment"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ro": [
+      "Programările la ambasadă sunt gratuite și se fac doar online.",
+      "Plată în avans către un intermediar.",
+      "Documente care „par” de la ambasadă, fără contract semnat de angajator."
+    ],
+    "ru": [
+      "Запись в посольство бесплатная и делается только онлайн.",
+      "Предоплата посреднику.",
+      "Документы «как будто» от посольства, без подписанного работодателем контракта."
+    ],
+    "en": [
+      "Embassy appointments are free and booked only online.",
+      "Upfront payment to an agent.",
+      "Documents that 'look' like the embassy's, with no contract signed by the employer."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu plătiți pentru servicii gratuite; verificați pe site-ul oficial al ambasadei.",
+      "Cereți contractul de muncă semnat și verificați angajatorul.",
+      "Ați plătit? Depuneți plângere la Poliție."
+    ],
+    "ru": [
+      "Не платите за бесплатные услуги; проверяйте на официальном сайте посольства.",
+      "Требуйте подписанный трудовой договор и проверяйте работодателя.",
+      "Уже заплатили? Подайте заявление в полицию."
+    ],
+    "en": [
+      "Don't pay for free services; check the embassy's official website.",
+      "Ask for the signed employment contract and check the employer.",
+      "Already paid? Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Ambasada Finlandei avertizează cetățenii moldoveni asupra unor escrocherii legate de locuri de muncă în această țară",
+      "publisher": "Moldpres",
+      "url": "https://www.moldpres.md/rom/societate/ambasada-finlandei-avertizeaza-cetatenii-moldoveni-asupra-unor-escrocherii-legate-de-locuri-de-munca-in-aceasta-tara",
+      "date": "2026-05-22"
+    },
+    {
+      "title": "Programări false cu bani pentru vize și locuri de muncă în Germania: Poliția avertizează despre o nouă escrocherie care lasă moldovenii fără bani",
+      "publisher": "Unimedia",
+      "url": "https://unimedia.info/ro/news/6a43a308c821a8cb/programari-false-cu-bani-pentru-vize-si-locuri-de-munca-in-germania-politia-avertizeaza-despre-o-noua-escrocherie-care-lasa-moldovenii-fara-bani.html",
+      "date": "2025-07-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

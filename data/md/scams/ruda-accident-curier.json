@@ -1,0 +1,154 @@
+{
+  "id": "md/ruda-accident-curier",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ro": "Un apel de la un „polițist”, „medic” sau chiar de la ruda dvs.",
+    "ru": "Звонок от «полицейского», «врача» или будто бы от родственника",
+    "en": "A call from a 'police officer', a 'doctor' or supposedly your relative"
+  },
+  "name": {
+    "ro": "„Ruda dvs. a provocat un accident”: bani predați unui curier",
+    "ru": "«Ваш родственник попал в аварию»: деньги передают курьеру",
+    "en": "'Your relative caused an accident': cash handed to a courier"
+  },
+  "how": {
+    "ro": "Vă sună cineva care se dă drept polițist, anchetator sau medic, uneori cu o voce care plânge și seamănă cu a fiului sau nepotului. Spune că ruda a provocat un accident grav și că poate scăpa de dosar sau primi tratament doar dacă plătiți imediat. Vă țin la telefon și trimit un „curier” să ia banii în numerar de la ușă. Poliția avertizează că escrocii pot folosi inteligența artificială pentru a imita vocea și chipul rudelor în apeluri video.",
+    "ru": "Звонит человек, который выдаёт себя за полицейского, следователя или врача, иногда с плачущим голосом, похожим на голос сына или внука. Он говорит, что родственник устроил серьёзную аварию и избежит уголовного дела или получит лечение, только если вы немедленно заплатите. Вас держат на телефоне и присылают «курьера» забрать наличные у двери. Полиция предупреждает, что мошенники могут подделывать голос и лицо родственников с помощью искусственного интеллекта в видеозвонках.",
+    "en": "Someone calls posing as a police officer, investigator or doctor, sometimes with a crying voice that sounds like your son or grandson. They say your relative caused a serious accident and can avoid a criminal case or get treatment only if you pay right away. They keep you on the phone and send a 'courier' to collect the cash at your door. The police warn that scammers may use AI to imitate a relative's voice and face in video calls."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Apel: ruda a făcut un accident grav.",
+        "ru": "Звонок: родственник попал в серьёзную аварию.",
+        "en": "Call: your relative caused a serious accident."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Trebuie plătit acum ca să nu ajungă la închisoare.",
+        "ru": "Нужно заплатить сейчас, чтобы его не посадили.",
+        "en": "You must pay now so they won't go to prison."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Nu închideți și nu sunați pe nimeni.",
+        "ru": "Не кладите трубку и никому не звоните.",
+        "en": "Don't hang up and don't call anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ro": "Un curier vine să ia banii de la ușă.",
+        "ru": "Курьер приедет забрать деньги у двери.",
+        "en": "A courier comes to pick up the cash."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ro": "Alo, doamna Maria? Sunt de la poliția de sector. Nepotul dumneavoastră a lovit o femeie pe trecere, ea e la reanimare. Ca să nu i se deschidă dosar penal trebuie să-i acoperim familiei cheltuielile, 4000 de euro, chiar acum. Nu închideți telefonul, în jumătate de oră vine colegul meu după bani.",
+        "ru": "Алло, Мария? Это из районной полиции. Ваш внук сбил женщину на переходе, она в реанимации. Чтобы на него не завели уголовное дело, нужно сейчас же покрыть расходы её семьи, 4000 евро. Не кладите трубку, через полчаса за деньгами приедет мой коллега.",
+        "en": "Hello, Mrs Maria? This is the local police. Your grandson hit a woman on a crossing and she is in intensive care. To keep him out of a criminal case we have to cover her family's costs, 4,000 euros, right now. Don't hang up, my colleague will come for the money in half an hour."
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "ruda implicată în accident cer bani",
+      "fiul meu a făcut accident și polițistul cere bani",
+      "curier vine să ia banii pentru accident",
+      "nepotul a lovit pe cineva cer bani pentru familie",
+      "bani ca să nu se deschidă dosar penal",
+      "voce care plânge la telefon accident"
+    ],
+    "ru": [
+      "родственник попал в аварию просят деньги",
+      "сын сбил человека полицейский требует деньги",
+      "курьер заберёт деньги за аварию",
+      "внук сбил женщину нужно заплатить",
+      "деньги не завели уголовное дело",
+      "плачущий голос по телефону авария"
+    ],
+    "en": [
+      "relative in an accident asking for money",
+      "my son caused an accident and police want money",
+      "courier coming to collect money for accident",
+      "grandson hit someone have to pay",
+      "money so no criminal case is opened",
+      "crying voice on the phone accident"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "keep_on_line",
+    "secrecy"
+  ],
+  "redFlags": {
+    "ro": [
+      "Poliția nu cere bani ca să închidă un dosar.",
+      "Vi se cere să nu închideți și să nu sunați pe nimeni.",
+      "Banii sunt ceruți în numerar, pentru un curier."
+    ],
+    "ru": [
+      "Полиция не требует денег, чтобы закрыть дело.",
+      "Вас просят не класть трубку и никому не звонить.",
+      "Деньги требуют наличными, для курьера."
+    ],
+    "en": [
+      "The police never ask for money to drop a case.",
+      "You are told not to hang up or call anyone.",
+      "The money is wanted in cash, for a courier."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Închideți și sunați ruda la numărul pe care îl știți.",
+      "Întrebați ce spital sau ce secție de poliție și verificați singur.",
+      "Nu dați bani niciunui curier; sunați la 112."
+    ],
+    "ru": [
+      "Положите трубку и позвоните родственнику по известному вам номеру.",
+      "Спросите, какая больница или какой участок, и проверьте сами.",
+      "Не отдавайте деньги никакому курьеру; звоните 112."
+    ],
+    "en": [
+      "Hang up and call your relative on the number you know.",
+      "Ask which hospital or police station and check it yourself.",
+      "Give no money to any courier; call 112."
+    ]
+  },
+  "reportTo": [
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Escrocherii de aproape 3 milioane de lei. Cum au fost înșelați moldovenii",
+      "publisher": "NewsMaker",
+      "url": "https://newsmaker.md/ro/escrocherii-de-aproape-3-milioane-de-lei-cum-au-fost-%C3%AEn%C8%99ela%C8%9Bi-moldovenii",
+      "date": "2026-06-19"
+    },
+    {
+      "title": "Rude „clonate” și milioane furate: Noua metodă de escrocherie care ar putea ajunge în Moldova",
+      "publisher": "TV8",
+      "url": "https://tv8.md/2026/10/12/video-rude-clonate-si-milioane-furate-noua-metoda-de-escrocherie-care-ar-putea-ajunge-in-moldova/310537",
+      "date": "2026-10-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

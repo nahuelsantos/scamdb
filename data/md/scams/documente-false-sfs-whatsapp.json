@@ -1,0 +1,147 @@
+{
+  "id": "md/documente-false-sfs-whatsapp",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "ro": "Un mesaj pe WhatsApp sau Viber cu un „document al Serviciului Fiscal”",
+    "ru": "Сообщение в WhatsApp или Viber с «документом налоговой службы»",
+    "en": "A WhatsApp or Viber message with a 'Tax Service document'"
+  },
+  "name": {
+    "ro": "Document fals de la Serviciul Fiscal: „banii dvs. sunt blocați până achitați confirmarea”",
+    "ru": "Фальшивый документ налоговой: «ваши деньги заблокированы, пока не оплатите подтверждение»",
+    "en": "Fake Tax Service document: 'your funds are frozen until you pay for confirmation'"
+  },
+  "how": {
+    "ro": "Pe WhatsApp sau Viber primiți un document cu antetul Serviciului Fiscal de Stat, uneori cu semnătura falsă a directorului. Se spune că aveți dreptul să încasați un transfer sau că fondurile dvs. sunt reținute „până la confirmarea fiscală” și că trebuie să plătiți o sumă (de exemplu zeci de mii de lei) sau să trimiteți date personale. Expeditorul se poate prezenta drept funcționar al unei comisii financiare străine. SFS spune că nu trimite documente prin aplicații de mesagerie și nu cere coduri sau date confidențiale.",
+    "ru": "В WhatsApp или Viber приходит документ на бланке Государственной налоговой службы, иногда с поддельной подписью директора. В нём говорится, что вам положен перевод или что ваши средства удерживаются «до налогового подтверждения» и нужно заплатить сумму (например, десятки тысяч леев) или прислать личные данные. Отправитель может называть себя сотрудником иностранной финансовой комиссии. ГНС заявляет, что не отправляет документы через мессенджеры и не просит коды или конфиденциальные данные.",
+    "en": "On WhatsApp or Viber you receive a document on State Tax Service letterhead, sometimes with the director's forged signature. It says you are entitled to receive a transfer, or that your funds are held 'pending tax confirmation' and you must pay a sum (for example tens of thousands of lei) or send personal data. The sender may claim to work for a foreign financial commission. The Tax Service says it never sends documents through messaging apps and never asks for codes or confidential data."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Document cu antetul SFS pe WhatsApp.",
+        "ru": "Документ на бланке ГНС в WhatsApp.",
+        "en": "A Tax Service letterhead document on WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Fondurile sau transferul dvs. sunt „reținute”.",
+        "ru": "Ваши средства или перевод «удерживаются».",
+        "en": "Your funds or transfer are 'on hold'."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Plătiți o taxă de confirmare ca să le primiți.",
+        "ru": "Оплатите сбор за подтверждение, чтобы их получить.",
+        "en": "Pay a confirmation fee to release them."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "whatsapp",
+      "text": {
+        "ro": "Stimate contribuabil, conform deciziei SFS nr. 112/4, suma de 146 000 lei aferentă contului dvs. de tranzacționare a fost reținută în sistem până la confirmarea fiscală. Pentru deblocare este necesară achitarea taxei de verificare de 2% în termen de 3 zile lucrătoare. Documentul oficial îl găsiți atașat.",
+        "ru": "Уважаемый налогоплательщик, согласно решению ГНС № 112/4, сумма 146 000 леев по вашему торговому счёту удерживается в системе до налогового подтверждения. Для разблокировки необходимо оплатить сбор за проверку 2% в течение 3 рабочих дней. Официальный документ во вложении.",
+        "en": "Dear taxpayer, under Tax Service decision no. 112/4, the sum of 146,000 lei on your trading account is held in the system pending tax confirmation. To release it you must pay a 2% verification fee within 3 working days. The official document is attached."
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "document de la serviciul fiscal pe whatsapp",
+      "sfs zice că banii mei sunt blocați până plătesc",
+      "confirmarea achitării obligațiilor fiscale mesaj",
+      "taxă de deblocare fonduri fisc",
+      "dreptul la încasarea unui transfer serviciul fiscal",
+      "notificare de la fisc pe whatsapp cer impozit ca să primesc transferul",
+      "mi-au cerut copia buletinului și o taxă pentru transfer"
+    ],
+    "ru": [
+      "документ от налоговой службы в whatsapp",
+      "гнс пишет деньги заблокированы пока не заплачу",
+      "подтверждение уплаты налоговых обязательств сообщение",
+      "сбор за разблокировку средств налоговая",
+      "право на получение перевода налоговая служба",
+      "уведомление налоговой в whatsapp требуют налог получить перевод",
+      "просят копию паспорта и сбор за перевод"
+    ],
+    "en": [
+      "tax service document on whatsapp",
+      "tax office says my money is frozen until I pay",
+      "confirmation of tax payment message",
+      "fee to unfreeze funds tax office",
+      "right to collect a transfer tax service",
+      "tax office notice on whatsapp wants tax paid before transfer",
+      "asked for a copy of my id and a fee for the transfer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "too_good_to_be_true",
+    "urgency"
+  ],
+  "redFlags": {
+    "ro": [
+      "SFS nu trimite documente pe WhatsApp sau Viber.",
+      "Trebuie să plătiți ca să primiți bani.",
+      "Adresa portalului din document nu e cea corectă."
+    ],
+    "ru": [
+      "ГНС не отправляет документы в WhatsApp или Viber.",
+      "Нужно заплатить, чтобы получить деньги.",
+      "Адрес портала в документе неверный."
+    ],
+    "en": [
+      "The Tax Service doesn't send documents on WhatsApp or Viber.",
+      "You must pay to receive money.",
+      "The portal address in the document is wrong."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu răspundeți, nu plătiți și nu trimiteți date.",
+      "Verificați doar pe canalele oficiale ale SFS.",
+      "Semnalați mesajul Poliției și Serviciului Fiscal."
+    ],
+    "ru": [
+      "Не отвечайте, не платите и не отправляйте данные.",
+      "Проверяйте только по официальным каналам ГНС.",
+      "Сообщите о сообщении в полицию и налоговую службу."
+    ],
+    "en": [
+      "Don't reply, pay or send any data.",
+      "Check only through the Tax Service's official channels.",
+      "Report the message to the police and the Tax Service."
+    ]
+  },
+  "reportTo": [
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Mesaje frauduloase privind confirmarea achitării obligațiilor fiscale. SFS recomandă cetățenilor să ignore solicitările",
+      "publisher": "Agora",
+      "url": "https://agora.md/2026/04/06/mesaje-frauduloase-privind-confirmarea-achitarii-obligatiilor-fiscale-sfs-recomanda-cetatenilor-sa-ignore-solicitarile",
+      "date": "2026-04-06"
+    },
+    {
+      "title": "Document din numele Serviciului Fiscal, transmis prin mesaje: solicită 30.000 lei; Reacție: este fals (FOTO)",
+      "publisher": "NewsMaker",
+      "url": "https://newsmaker.md/ro/document-din-numele-serviciului-fiscal-transmis-prin-mesaje-solicita-30-000-lei-reactie-este-fals-foto",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

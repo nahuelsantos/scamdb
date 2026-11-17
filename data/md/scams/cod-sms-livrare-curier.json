@@ -1,0 +1,148 @@
+{
+  "id": "md/cod-sms-livrare-curier",
+  "country": "md",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "ro": "Un apel de la „curier”, „Poștă” sau „Serviciul Fiscal”",
+    "ru": "Звонок от «курьера», «почты» или «налоговой службы»",
+    "en": "A call from a 'courier', 'the Post' or 'the Tax Service'"
+  },
+  "name": {
+    "ro": "„Dictați codul din SMS ca să confirmați livrarea”",
+    "ru": "«Продиктуйте код из SMS, чтобы подтвердить доставку»",
+    "en": "'Read out the SMS code to confirm the delivery'"
+  },
+  "how": {
+    "ro": "Sună cineva care spune că trebuie să vă livreze urgent o scrisoare sau un colet, uneori „de la Serviciul Fiscal de Stat” sau de la Poștă. Ca să „confirmați livrarea”, vă cere codul pe care tocmai l-ați primit prin SMS. De fapt, codul deschide contul dvs. bancar sau de la operator, iar escrocii pot face plăți sau credite pe numele dvs. Urmează alte apeluri, de la „bancă” sau „poliție”, care spun că s-a cerut un credit pe numele dvs.",
+    "ru": "Звонит человек и говорит, что должен срочно доставить вам письмо или посылку, иногда «от Государственной налоговой службы» или от почты. Чтобы «подтвердить доставку», он просит код, который только что пришёл вам в SMS. На самом деле этот код открывает доступ к вашему банковскому счёту или кабинету оператора, и мошенники могут делать платежи или брать кредиты на ваше имя. Затем звонят «из банка» или «из полиции» и говорят, что на вас оформили кредит.",
+    "en": "Someone calls saying they must urgently deliver a letter or parcel to you, sometimes 'from the State Tax Service' or the Post. To 'confirm the delivery' they ask for the code you've just received by text. In fact the code opens your bank or phone-operator account, and the scammers can make payments or take loans in your name. More calls follow, from 'the bank' or 'the police', saying a loan was requested in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Apel: aveți o livrare urgentă.",
+        "ru": "Звонок: у вас срочная доставка.",
+        "en": "Call: you have an urgent delivery."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Spuneți codul primit prin SMS.",
+        "ru": "Назовите код из SMS.",
+        "en": "Tell us the code you got by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ro": "Apoi sună „banca”: s-a cerut un credit pe numele dvs.",
+        "ru": "Потом звонит «банк»: на вас подали заявку на кредит.",
+        "en": "Then 'the bank' calls: a loan was requested in your name."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "ro": "Bună ziua, sunt curierul, am pentru dumneavoastră un plic recomandat de la Fisc. Ca să-l înregistrez în sistem, v-a venit acum un SMS cu un cod din șase cifre, spuneți-mi-l vă rog, altfel scrisoarea se întoarce înapoi.",
+        "ru": "Добрый день, я курьер, у меня для вас заказное письмо из налоговой. Чтобы отметить его в системе, вам сейчас пришло SMS с шестизначным кодом, продиктуйте, пожалуйста, иначе письмо вернётся обратно.",
+        "en": "Good afternoon, I'm the courier, I have a registered letter for you from the tax office. To log it in the system you've just received a text with a six-digit code, please read it to me, otherwise the letter goes back."
+      }
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "curierul cere codul din sms pentru livrare",
+      "sună de la poștă să dictez codul",
+      "scrisoare de la fisc cer cod sms",
+      "confirmare livrare colet cod primit prin sms",
+      "după cod sună banca credit pe numele meu"
+    ],
+    "ru": [
+      "курьер просит код из смс доставки",
+      "звонят с почты продиктовать код",
+      "письмо из налоговой просят код из смс",
+      "подтверждение доставки посылки кодом из смс",
+      "после кода звонят из банка про кредит"
+    ],
+    "en": [
+      "courier asks for sms code for delivery",
+      "post office calls asking me to read a code",
+      "letter from tax office they want sms code",
+      "confirm parcel delivery with sms code",
+      "after the code the bank calls about a loan"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "ro": [
+      "Niciun curier și nicio instituție nu vă cere coduri din SMS.",
+      "Serviciul Fiscal nu trimite colete și nu cere coduri la telefon.",
+      "Textul SMS-ului spune adesea să nu dați codul nimănui."
+    ],
+    "ru": [
+      "Ни курьер, ни учреждение не просят коды из SMS.",
+      "Налоговая служба не отправляет посылки и не просит коды по телефону.",
+      "В самом SMS часто написано никому не сообщать код."
+    ],
+    "en": [
+      "No courier or institution asks for SMS codes.",
+      "The Tax Service doesn't send parcels or ask for codes by phone.",
+      "The text itself often says never to share the code."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu dictați niciun cod; închideți.",
+      "Ați dat codul? Sunați banca și operatorul mobil să blocheze accesul.",
+      "Sunați la 112 dacă urmează apeluri de la „bancă” sau „poliție”."
+    ],
+    "ru": [
+      "Не диктуйте никаких кодов; положите трубку.",
+      "Сообщили код? Позвоните в банк и оператору, чтобы закрыть доступ.",
+      "Звоните 112, если потом звонят «банк» или «полиция»."
+    ],
+    "en": [
+      "Don't read out any code; hang up.",
+      "Gave the code? Call your bank and mobile operator to lock access.",
+      "Call 112 if 'bank' or 'police' calls follow."
+    ]
+  },
+  "reportTo": [
+    "md/your-bank",
+    "md/police"
+  ],
+  "sources": [
+    {
+      "title": "Escrocherii telefonice în numele SFS: Cetățenii sunt induși în eroare să ofere coduri SMS și riscă accesarea conturilor",
+      "publisher": "Radio Moldova",
+      "url": "https://radiomoldova.md/p/73365/escrocherii-telefonice-in-numele-sfs-cetatenii-sunt-indusi-in-eroare-sa-ofere-coduri-sms-si-risca-accesarea-conturilor",
+      "date": "2026-04-02"
+    },
+    {
+      "title": "Paynet Warning: Record Number of Phone Fraud Attempts in the Republic of Moldova",
+      "publisher": "Paynet",
+      "url": "https://paynet.md/en/news/details/alerta-paynet-record-escrocherii-telefonice-moldova-2026",
+      "date": "2026-05-19"
+    },
+    {
+      "title": "Ai un colet de primit? Fii atent, escrocii trimit mesaje false în numele Poștei Moldovei",
+      "publisher": "Unimedia",
+      "url": "https://unimedia.info/ro/news/b319eaf726865a90/ai-un-colet-de-primit-fii-atent-escrocii-trimit-mesaje-false-in-numele-postei-moldovei.html",
+      "date": "2026-10-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

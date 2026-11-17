@@ -1,0 +1,130 @@
+{
+  "id": "it/whatsapp-codice-voto",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "it": "Un vostro contatto WhatsApp (con l'account già rubato)",
+    "en": "One of your WhatsApp contacts (whose account was already stolen)"
+  },
+  "name": {
+    "it": "Furto dell'account WhatsApp: \"vota la ballerina\" e il codice di verifica",
+    "en": "WhatsApp account theft: “vote for the dancer” and the verification code"
+  },
+  "how": {
+    "it": "Un amico o un parente vi scrive su WhatsApp chiedendo di votare una ragazza in un concorso di danza o un'altra gara online, con una foto e un link. Il sito chiede il vostro numero e poi il codice a sei cifre che WhatsApp vi invia: con quel codice i truffatori registrano il vostro account su un altro telefono. Voi restate fuori, e loro scrivono ai vostri contatti chiedendo soldi a nome vostro.",
+    "en": "A friend or relative writes to you on WhatsApp asking you to vote for a girl in a dance contest or another online competition, with a photo and a link. The site asks for your number and then the six-digit code WhatsApp sends you: with that code the scammers register your account on another phone. You are locked out, and they write to your contacts asking for money in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un contatto vi chiede di votare qualcuno in un concorso tramite un link.",
+        "en": "A contact asks you to vote for someone in a contest through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "Il sito chiede il numero di telefono e poi il codice ricevuto per SMS.",
+        "en": "The site asks for your phone number and then the code you received by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "it": "Oppure il contatto vi chiede di girargli un codice \"arrivato per sbaglio\".",
+        "en": "Or the contact asks you to forward a code “sent by mistake”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Perdete l'account e i vostri contatti ricevono richieste di soldi.",
+        "en": "You lose your account and your contacts receive money requests."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Ciao! Scusa il disturbo, mia nipote partecipa a un concorso di danza e le mancano pochi voti per la finale 💃 Mi faresti la cortesia di votarla? Ci vuole un attimo: [link] Grazie mille!!",
+        "en": "Hi! Sorry to bother you, my niece is in a dance contest and needs just a few votes to reach the final 💃 Could you do me a favour and vote for her? It only takes a second: [link] Thanks so much!!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "vota ballerina concorso whatsapp",
+      "codice whatsapp sei cifre",
+      "mi hanno rubato account whatsapp",
+      "inviato codice per sbaglio",
+      "votare concorso link numero telefono",
+      "whatsapp disconnesso altro dispositivo",
+      "amico chiede codice sms",
+      "girare codice ricevuto errore"
+    ],
+    "en": [
+      "vote for a dancer whatsapp link",
+      "whatsapp six digit code",
+      "my whatsapp account was stolen",
+      "friend asked me to forward a code",
+      "logged out of whatsapp new device"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "it": [
+      "Il codice di WhatsApp serve solo a voi: chi ve lo chiede vuole il vostro account.",
+      "Un concorso non ha bisogno del vostro numero e di un codice per un voto.",
+      "Anche un messaggio da un contatto conosciuto può arrivare da un account rubato."
+    ],
+    "en": [
+      "The WhatsApp code is for you only: anyone who asks for it wants your account.",
+      "A contest does not need your number and a code for a vote.",
+      "Even a message from a known contact can come from a stolen account."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non inserite il numero e non condividete mai il codice; attivate la verifica in due passaggi con PIN.",
+      "Se perdete l'account, reinstallate WhatsApp e registratevi con il vostro numero, poi avvisate i contatti con un altro mezzo.",
+      "Segnalate alla Polizia Postale."
+    ],
+    "en": [
+      "Do not enter your number and never share the code; turn on two-step verification with a PIN.",
+      "If you lose the account, reinstall WhatsApp and register with your number, then warn your contacts another way.",
+      "Report it to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale"
+  ],
+  "sources": [
+    {
+      "title": "Nuova ondata di furti di account WhatsApp: attenzione ai falsi concorsi online",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/nuova-ondata-di-furti-di-account-whatsapp-attenzione-ai-falsi-concorsi-online/index.html",
+      "date": "2026-10-10"
+    },
+    {
+      "title": "Richieste di denaro e furto dell'account WhatsApp",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/richieste-di-denaro-e-furto-dellaccount-whatsapp/index.html",
+      "date": "2026-08-25"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/ciao-mamma-nuovo-numero"
+  ]
+}

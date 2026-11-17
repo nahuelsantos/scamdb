@@ -1,0 +1,137 @@
+{
+  "id": "it/multa-pagopa-falsa",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "it": "Finti pagoPA, SEND, Polizia Stradale o Comune (anche da caselle PEC vere ma violate)",
+    "en": "Fake pagoPA, SEND, Traffic Police or town council (even from real but hacked PEC mailboxes)"
+  },
+  "name": {
+    "it": "Falsa multa da pagare con pagoPA o SEND via SMS, e-mail o PEC",
+    "en": "Fake traffic fine to pay through pagoPA or SEND by text, email or certified email (PEC)"
+  },
+  "how": {
+    "it": "Arriva un SMS, un'e-mail o perfino una PEC su una presunta violazione del Codice della Strada non pagata, con loghi di pagoPA, SEND o della Polizia. Si minaccia un aumento dell'importo o il fermo amministrativo se non pagate entro poche ore. Il link porta a un falso portale pagoPA che chiede nome, codice fiscale e dati della carta, e a volte i codici della banca per \"confermare\" il pagamento.",
+    "en": "A text, an email or even a certified email (PEC) arrives about an unpaid traffic offence, with pagoPA, SEND or police logos. It threatens a higher amount or a vehicle seizure if you do not pay within hours. The link leads to a fake pagoPA portal asking for name, tax code and card details, and sometimes bank codes to “confirm” the payment."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un messaggio segnala una multa non pagata e un link per vederla o pagarla.",
+        "en": "A message reports an unpaid fine with a link to view or pay it."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "L'importo aumenta se non pagate subito.",
+        "en": "The amount goes up if you do not pay at once."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Il sito copia pagoPA o SEND e chiede codice fiscale e dati della carta.",
+        "en": "The site copies pagoPA or SEND and asks for tax code and card details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Per confermare chiede il codice ricevuto dalla banca.",
+        "en": "To confirm, it asks for the code sent by your bank."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Avviso di verbale: risulta una sanzione per eccesso di velocità non saldata. Importo ridotto 87,50 EUR se pagato entro oggi tramite pagoPA, poi maggiorazione e fermo del veicolo. Consulta il verbale: [link]",
+        "en": "Fine notice: an unpaid speeding penalty is on record. Reduced amount 87.50 EUR if paid today through pagoPA, then a surcharge and vehicle seizure. View the notice: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "multa da pagare link sms",
+      "verbale pagopa non saldato",
+      "notifica send multa email",
+      "sanzione codice della strada messaggio",
+      "pec multa da pagare urgente",
+      "pagamento sanzione maggiorazione fermo",
+      "polizia stradale sms verbale"
+    ],
+    "en": [
+      "text about an unpaid traffic fine",
+      "pagopa fine payment link",
+      "send notification fine email",
+      "pay the fine today or it goes up",
+      "certified email with a fine to pay"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "it": [
+      "La Polizia di Stato non notifica verbali o multe via SMS, app di messaggistica o link.",
+      "Una PEC non garantisce che il messaggio sia vero: anche le caselle PEC possono essere rubate.",
+      "Un indirizzo che non è quello ufficiale di pagoPA o SEND è falso."
+    ],
+    "en": [
+      "The State Police does not serve fines by text, messaging app or link.",
+      "A PEC does not prove the message is real: PEC mailboxes can be hacked too.",
+      "An address that is not the official pagoPA or SEND site is fake."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non cliccate: verificate eventuali multe sull'app IO o sul sito ufficiale di SEND entrando voi.",
+      "Se avete inserito i dati della carta, bloccatela subito con la banca.",
+      "Segnalate il messaggio alla Polizia Postale."
+    ],
+    "en": [
+      "Do not click: check for fines in the IO app or on the official SEND site, going there yourself.",
+      "If you entered your card details, block the card with your bank at once.",
+      "Report the message to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Phishing PagoPA: nuove campagne a tema multe diffuse tramite PEC compromesse",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/phishing-pagopa-nuove-campagne-a-tema-multe-diffuse-tramite-pec-compromesse/",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "Sintesi riepilogativa delle campagne malevole nella settimana del 31 ottobre – 6 novembre",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/sintesi-riepilogativa-delle-campagne-malevole-nella-settimana-del-31-ottobre-6-novembre/",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Richieste di pagamento per presunte infrazioni stradali via SMS: attenzione alle truffe",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/richieste-di-pagamento-per-presunte-infrazioni-stradali-via-sms-attenzione-alle-truffe/index.html",
+      "date": "2026-08-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/pedaggio-autostrade-whatsapp"
+  ]
+}

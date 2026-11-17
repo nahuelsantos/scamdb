@@ -1,0 +1,136 @@
+{
+  "id": "pl/crypto-investment-advisor",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "pl": "„Doradca finansowy”, „opiekun” lub „konsultantka firmy inwestycyjnej”",
+    "en": "A “financial adviser”, “account manager” or “investment firm consultant”"
+  },
+  "name": {
+    "pl": "Inwestycja w kryptowaluty z „doradcą”: nowe konto, AnyDesk i wypłata, której nie ma",
+    "en": "Crypto investment with an “adviser”: a new account, AnyDesk and a withdrawal that never comes"
+  },
+  "how": {
+    "pl": "Po wypełnieniu formularza z reklamy albo po telefonie od nieznajomych zgłasza się „doradca” lub „konsultantka”. Przez tygodnie, a nawet miesiące, prowadzi Cię przez „inwestowanie” w kryptowaluty: każe założyć nowe konto w banku lub na giełdzie, wpłacać tam pieniądze i przelewać je dalej, pokazuje zyski w panelu. Często prosi o instalację AnyDesk lub podobnej aplikacji i przejmuje kontrolę nad telefonem lub komputerem. Przy próbie wypłaty pojawiają się „podatki”, „opłaty” albo cisza.",
+    "en": "After you fill in a form from an ad, or after a call from strangers, an “adviser” or “consultant” gets in touch. Over weeks or even months they walk you through “investing” in crypto: you’re told to open a new bank or exchange account, pay money in and send it on, and they show profits in a dashboard. They often ask you to install AnyDesk or a similar app and take control of your phone or computer. When you try to withdraw, “taxes”, “fees” or silence appear."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Kontakt od „doradcy” po formularzu lub nieoczekiwany telefon.",
+        "en": "Contact from an “adviser” after a form, or an unexpected call."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Obietnice bezpiecznego i wysokiego zysku z kryptowalut.",
+        "en": "Promises of safe, high crypto returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pl": "Instalacja AnyDesk lub innej aplikacji do zdalnego dostępu.",
+        "en": "Installing AnyDesk or another remote-access app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "pl": "Wpłaty na nowe konta i portfele, a przy wypłacie kolejne opłaty.",
+        "en": "Payments into new accounts and wallets, and more fees when you try to withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Dzień dobry, Anna z działu obsługi inwestorów. W zeszłym tygodniu zostawił Pan zgłoszenie w sprawie kryptowalut. Mamy teraz świetny moment na wejście: przy wpłacie 2 000 zł nasi analitycy prognozują ponad 30% w miesiąc. Pomogę Panu wszystko skonfigurować, proszę tylko pobrać aplikację AnyDesk i podać mi kod, który się wyświetli.",
+        "en": "Good morning, this is Anna from investor services. Last week you left an enquiry about cryptocurrencies. Now is a great time to get in: with a 2,000 zł deposit our analysts forecast over 30% in a month. I’ll help you set everything up, just download the AnyDesk app and give me the code that appears."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "inwestycja kryptowaluty doradca oszustwo",
+      "fałszywy doradca finansowy anydesk",
+      "konsultantka firmy inwestycyjnej kryptowaluty wpłaty",
+      "brak możliwości wypłaty zysków platforma krypto",
+      "kazali założyć nowe konto bankowe inwestycja",
+      "opiekun inwestycji przejął telefon",
+      "opłata podatek przed wypłatą zysku krypto",
+      "giełda kryptowalut zysk panel wypłata"
+    ],
+    "en": [
+      "crypto investment adviser scam",
+      "adviser asked me to install anydesk",
+      "cannot withdraw my crypto profits",
+      "told to open a new bank account to invest",
+      "have to pay a fee before withdrawing profits"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Legalna instytucja finansowa nie każe instalować programów do zdalnego dostępu ani przekazywać dostępu do bankowości.",
+      "Opłata lub „podatek” przed wypłatą zysku to znak oszustwa.",
+      "Polecenie założenia nowego konta, żeby przelewać pieniądze dalej."
+    ],
+    "en": [
+      "A legitimate financial firm never asks you to install remote-access software or hand over access to your banking.",
+      "A fee or “tax” before you can withdraw profits is a sign of fraud.",
+      "Being told to open a new account just to pass money on."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Przerwij kontakt i nie wpłacaj więcej, nawet żeby „odblokować” wypłatę.",
+      "Odinstaluj aplikację do zdalnego dostępu, zmień hasła i skontaktuj się z bankiem.",
+      "Sprawdź podmiot na Liście ostrzeżeń publicznych KNF.",
+      "Złóż zawiadomienie na Policji: przygotuj korespondencję, numery kont i adresy portfeli."
+    ],
+    "en": [
+      "Cut contact and don’t pay anything more, not even to “unlock” a withdrawal.",
+      "Uninstall the remote-access app, change your passwords and contact your bank.",
+      "Check the firm on the KNF public warnings list.",
+      "Report it to the police: have the messages, account numbers and wallet addresses ready."
+    ]
+  },
+  "reportTo": [
+    "pl/your-bank",
+    "pl/policja",
+    "pl/knf"
+  ],
+  "sources": [
+    {
+      "title": "52-latka straciła niemal 30 000 zł inwestując w kryptowaluty",
+      "publisher": "Komenda Powiatowa Policji w Radzyniu Podlaskim",
+      "url": "https://radzyn-podlaski.policja.gov.pl/lrp/informacje/aktualnosci/170929,52-latka-stracila-niemal-30-tysiecy-zlotych-inwestujac-w-kryptowaluty.html",
+      "date": "2026-07-24"
+    },
+    {
+      "title": "Uwierzył fałszywym konsultantom – stracił ponad 30 000 zł",
+      "publisher": "Komenda Miejska Policji w Białej Podlaskiej",
+      "url": "https://biala-podlaska.policja.gov.pl/lbp/informacje/aktualnosci/169161,Uwierzyl-falszywym-konsultantom-stracil-ponad-30-000-zl.html",
+      "date": "2026-05-14"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/fake-investment-celebrity-ads"
+  ]
+}

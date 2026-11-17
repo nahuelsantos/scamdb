@@ -1,0 +1,132 @@
+{
+  "id": "pl/gov-data-update-phishing",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "pl": "„gov.pl”, „mObywatel” lub inny urząd",
+    "en": "“gov.pl”, “mObywatel” (the government app) or another public office"
+  },
+  "name": {
+    "pl": "SMS „z gov.pl” lub „mObywatela”: aktualizacja danych, wygasające dokumenty, dopłata do odebrania",
+    "en": "Text “from gov.pl” or “mObywatel”: update your data, documents expiring, a grant to collect"
+  },
+  "how": {
+    "pl": "SMS podszywa się pod administrację publiczną, serwis gov.pl lub aplikację mObywatel. Pisze o konieczności aktualizacji danych, wygasających dokumentach albo o rządowym dofinansowaniu, na przykład mieszkaniowym, które trzeba „uzupełnić”. Link prowadzi do strony udającej serwis rządowy. Pod pozorem logowania strona prosi o login i hasło do bankowości elektronicznej, dane osobowe i adres albo dane karty, rzekomo do wypłaty pieniędzy.",
+    "en": "A text pretends to come from the public administration, the gov.pl site or the mObywatel app. It says your data must be updated, your documents are expiring, or a government grant, for example for housing, needs to be “completed”. The link leads to a page posing as a government site. Under the pretext of logging in it asks for your online-banking username and password, personal details and address, or card details supposedly needed to pay you."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "SMS „z urzędu”: aktualizacja danych lub wniosek do uzupełnienia.",
+        "en": "A text “from the government”: update your data or complete an application."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Groźba utraty ważności danych albo przepadku dopłaty.",
+        "en": "A threat that your data will expire or you’ll lose the grant."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Link do strony udającej serwis rządowy.",
+        "en": "A link to a page pretending to be a government site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pl": "Logowanie „przez bank” albo dane karty do wypłaty.",
+        "en": "A login “through your bank” or card details for the payout."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "mObywatel: Ważność Twoich danych w systemie wygasa dziś o 23:59. Aby uniknąć zawieszenia dokumentów cyfrowych, potwierdź tożsamość, logując się przez swój bank: [link]",
+        "en": "mObywatel: the validity of your data in the system expires today at 11:59 pm. To avoid your digital documents being suspended, confirm your identity by logging in through your bank: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "sms mobywatel aktualizacja danych link",
+      "ważność danych wygasa sms gov",
+      "dofinansowanie mieszkaniowe sms link",
+      "logowanie przez bank fałszywa strona gov",
+      "urząd sms potwierdź tożsamość",
+      "wniosek do uzupełnienia sms dane karty",
+      "zawieszenie dokumentów cyfrowych sms"
+    ],
+    "en": [
+      "text from mobywatel asking to update my data",
+      "gov pl text says my data expires today",
+      "housing grant text with a link",
+      "fake government site asked for my bank login",
+      "sms to confirm identity through my bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "pl": [
+      "mObywatel i urzędy nie wysyłają SMS-ów z linkami do logowania ani wypłat.",
+      "Odbiór pieniędzy od państwa nigdy nie wymaga podania danych karty.",
+      "Groźba „wygaśnięcia” lub „zawieszenia” dziś do północy."
+    ],
+    "en": [
+      "mObywatel and public offices don’t send texts with links to log in or collect payments.",
+      "Receiving money from the state never requires your card details.",
+      "A threat that something “expires” or will be “suspended” by midnight today."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Sprawy urzędowe załatwiaj w oficjalnej aplikacji mObywatel lub po samodzielnym wpisaniu adresu serwisu.",
+      "Przekaż SMS na numer 8080 albo zgłoś go w aplikacji mObywatel (usługa „Bezpiecznie w sieci”).",
+      "Jeśli podałeś logowanie do banku lub dane karty, natychmiast zadzwoń do banku."
+    ],
+    "en": [
+      "Deal with official matters in the official mObywatel app or by typing the site’s address yourself.",
+      "Forward the text to 8080 or report it in the mObywatel app (“Bezpiecznie w sieci” service).",
+      "If you gave your bank login or card details, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "pl/cert-polska",
+    "pl/your-bank",
+    "pl/zastrzegam"
+  ],
+  "sources": [
+    {
+      "title": "Ważność danych wygasa? Nie daj się presji czasu [163/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/163/waznosc-danych-wygasa-nie-daj-sie-presji-czasu/",
+      "date": "2026-09-07"
+    },
+    {
+      "title": "Dofinansowanie mieszkaniowe – uwaga, oszuści wykorzystują nowy scenariusz ataku! [132/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/132/dofinansowanie-mieszkaniowe-uwaga-oszusci-wykorzystuja-nowy-scenariusz-ataku/",
+      "date": "2026-07-29"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/fake-traffic-fine-sms",
+    "pl/tax-refund-phishing"
+  ]
+}

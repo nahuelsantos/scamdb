@@ -1,0 +1,126 @@
+{
+  "id": "it/subito-falso-acquirente",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "it": "Un finto acquirente su Subito, Marketplace o Vinted, o un finto operatore della piattaforma",
+    "en": "A fake buyer on Subito, Marketplace or Vinted, or a fake platform operator"
+  },
+  "name": {
+    "it": "Subito e Marketplace: finto acquirente che \"ha già pagato\" e manda un link per incassare",
+    "en": "Subito and Marketplace: fake buyer who “has already paid” and sends a link to collect"
+  },
+  "how": {
+    "it": "Mettete in vendita un oggetto e un acquirente lo vuole subito, senza trattare. Vi chiede di continuare su WhatsApp o per e-mail, dice di aver già pagato con il sistema della piattaforma o con un corriere, e vi manda un link o una ricevuta falsa per \"ricevere\" i soldi. La pagina, che imita Subito o il corriere, chiede i dati della carta o le credenziali, oppure vi fa pagare una \"commissione di sblocco\". Varianti: finto operatore di Subito che dice che l'annuncio è sospeso, o venditore che chiede un anticipo e sparisce.",
+    "en": "You list an item and a buyer wants it right away, without haggling. They ask to continue on WhatsApp or by email, say they have already paid through the platform's system or a courier, and send you a link or a fake receipt to “receive” the money. The page, which imitates Subito or the courier, asks for card details or login, or makes you pay an “unlock fee”. Variants: a fake Subito operator saying your listing is suspended, or a seller who asks for a deposit and disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un acquirente accetta subito il prezzo e vuole spostarsi su WhatsApp.",
+        "en": "A buyer accepts the price at once and wants to move to WhatsApp."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Dice di aver già pagato e vi manda un link o uno screenshot.",
+        "en": "They say they already paid and send a link or a screenshot."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "La pagina chiede i dati della carta per \"ricevere\" il pagamento.",
+        "en": "The page asks for your card details to “receive” the payment."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "it": "Oppure bisogna pagare una commissione per sbloccare la somma.",
+        "en": "Or you must pay a fee to unlock the money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Ciao, prendo la bici al prezzo dell'annuncio, non posso venire di persona perché sono fuori città. Ho già pagato con la spedizione tutelata, a te arriva un'email per incassare: inserisci i dati della carta su cui vuoi l'accredito e poi il corriere passa a ritirare. Mi confermi?",
+        "en": "Hi, I'll take the bike at the listed price, I can't come in person because I'm out of town. I've already paid with protected shipping, you'll get an email to collect: enter the details of the card you want credited and then the courier will come to pick it up. Can you confirm?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "acquirente subito ha già pagato",
+      "link per ricevere pagamento subito",
+      "inserire dati carta per incassare",
+      "commissione per sbloccare pagamento",
+      "continuare trattativa su whatsapp",
+      "finto operatore subito annuncio sospeso",
+      "venditore marketplace chiede anticipo",
+      "corriere ritira pagamento tutelato"
+    ],
+    "en": [
+      "subito buyer says already paid",
+      "link to receive payment for my item",
+      "enter card details to get paid",
+      "pay a fee to release the payment",
+      "buyer wants to move to whatsapp"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "it": [
+      "Per ricevere soldi non servono mai i dati completi della carta, il CVV o un codice OTP.",
+      "Un vero acquirente non chiede di pagare commissioni per sbloccare il suo pagamento.",
+      "I pagamenti di Subito si controllano solo nell'app, non da link in chat o per e-mail."
+    ],
+    "en": [
+      "Receiving money never needs your full card details, CVV or an OTP code.",
+      "A real buyer does not ask you to pay fees to release their payment.",
+      "Subito payments are only checked in the app, not through links in chats or emails."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Restate nella chat della piattaforma e usate i suoi pagamenti, o vendete di persona con contanti.",
+      "Non cliccate sui link; se avete inserito la carta, bloccatela con la banca.",
+      "Segnalate l'utente alla piattaforma e alla Polizia Postale; sporgete denuncia in caso di perdite."
+    ],
+    "en": [
+      "Stay in the platform's chat and use its payments, or sell in person for cash.",
+      "Do not click links; if you entered your card, block it with your bank.",
+      "Report the user to the platform and to the Postal Police; file a complaint if you lost money."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/your-bank",
+    "it/denuncia"
+  ],
+  "sources": [
+    {
+      "title": "Stai per comprare o vendere su Subito.it? Attento a queste truffe comuni",
+      "publisher": "Altroconsumo",
+      "url": "https://www.altroconsumo.it/soldi/truffe/news/truffe-su-subito",
+      "date": "2026-06-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

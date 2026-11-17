@@ -1,0 +1,140 @@
+{
+  "id": "pl/fake-investment-celebrity-ads",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "pl": "Reklama w mediach społecznościowych ze znaną osobą, politykiem, bankiem lub dużą spółką; potem „doradca”",
+    "en": "A social media ad featuring a celebrity, politician, bank or big company; then an “adviser”"
+  },
+  "name": {
+    "pl": "Fałszywe inwestycje z reklam: znane twarze, deepfake, „platforma” i doradca",
+    "en": "Fake investments from ads: famous faces, deepfakes, a “platform” and an adviser"
+  },
+  "how": {
+    "pl": "W mediach społecznościowych pojawia się reklama lub „artykuł” ze znaną osobą, politykiem albo logo banku, NBP czy dużej spółki, często z nagraniem wygenerowanym przez AI. Obiecuje łatwy, szybki zysk. Po zostawieniu numeru telefonu w formularzu dzwoni „doradca”, zachęca do małej wpłaty, pokazuje rosnące zyski na platformie, czasem pozwala wypłacić drobną kwotę, a potem namawia na coraz większe wpłaty i instalację programu do zdalnego pulpitu. Pieniędzy nie da się wypłacić.",
+    "en": "An ad or “news article” appears on social media featuring a celebrity, a politician, or the logo of a bank, the central bank or a big company, often with an AI-generated video. It promises easy, quick profit. After you leave your phone number in a form, an “adviser” calls, encourages a small deposit, shows profits growing on the platform, sometimes lets you withdraw a small amount, then pushes ever larger payments and the installation of a remote-desktop program. The money can’t be withdrawn."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Reklama ze znaną twarzą lub logo i obietnicą wysokiego zysku.",
+        "en": "An ad with a famous face or logo and a promise of high returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pl": "Po zostawieniu numeru dzwoni „doradca”.",
+        "en": "After you leave your number, an “adviser” calls."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Pierwsza mała wpłata, potem kolejne, coraz większe.",
+        "en": "A small first deposit, then more and bigger ones."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pl": "Prośba o instalację programu do zdalnego dostępu.",
+        "en": "A request to install a remote-access program."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "PILNE: Znany prezenter ujawnił w programie na żywo, jak zarabia 18 000 zł miesięcznie dzięki nowej platformie wspieranej przez polskie banki. Bank centralny chciał przerwać nagranie! Wystarczy 1 000 zł na start. Zostaw numer telefonu, a nasz opiekun oddzwoni: [link]",
+        "en": "URGENT: A famous TV presenter revealed on live TV how he earns 18,000 zł a month with a new platform backed by Polish banks. The central bank tried to stop the broadcast! Just 1,000 zł to start. Leave your phone number and our adviser will call you back: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "fałszywa inwestycja reklama facebook znana osoba",
+      "deepfake polityk inwestycja zarobek",
+      "platforma inwestycyjna doradca dzwoni wpłata",
+      "reklama orlen inwestycja zysk",
+      "zostawiłem numer reklama inwestycja dzwonią",
+      "gwarantowany zysk tysiące złotych miesięcznie",
+      "nagranie prezenter ujawnił sposób zarabiania",
+      "bank centralny wspiera platformę inwestycyjną"
+    ],
+    "en": [
+      "fake investment ad with a celebrity",
+      "deepfake video promoting an investment platform",
+      "left my number on an ad and an adviser called",
+      "investment ad using a bank logo",
+      "guaranteed returns ad on facebook"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "remote_access",
+    "urgency"
+  ],
+  "redFlags": {
+    "pl": [
+      "Znane osoby, politycy i banki nie reklamują „cudownych” platform inwestycyjnych; nagranie może być deepfake’iem.",
+      "Gwarantowany, szybki i wysoki zysk nie istnieje.",
+      "Drobna wypłata na początku ma Cię skłonić do większych wpłat.",
+      "Prośba o instalację programu do zdalnego pulpitu."
+    ],
+    "en": [
+      "Celebrities, politicians and banks don’t advertise “miracle” investment platforms; the video may be a deepfake.",
+      "Guaranteed, quick, high returns don’t exist.",
+      "A small early payout is there to get you to pay in more.",
+      "Being asked to install remote-desktop software."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Sprawdź firmę na Liście ostrzeżeń publicznych KNF i w rejestrach KNF, zanim wpłacisz pieniądze.",
+      "Nie instaluj programów do zdalnego dostępu na prośbę nieznajomych.",
+      "Jeśli wpłaciłeś pieniądze, od razu skontaktuj się z bankiem i złóż zawiadomienie na Policji.",
+      "Uważaj na „odzyskiwanie” utraconych pieniędzy za opłatą: to często drugie oszustwo."
+    ],
+    "en": [
+      "Check the company on the KNF public warnings list and in the KNF registers before paying anything.",
+      "Don’t install remote-access programs because a stranger asks you to.",
+      "If you paid money, contact your bank straight away and report it to the police.",
+      "Beware of paid offers to “recover” lost money: it’s often a second scam."
+    ]
+  },
+  "reportTo": [
+    "pl/knf",
+    "pl/your-bank",
+    "pl/policja",
+    "pl/cert-polska"
+  ],
+  "sources": [
+    {
+      "title": "Prawdziwy wizerunek - fałszywa inwestycja [182/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/182/prawdziwy-wizerunek-falszywa-inwestycja/",
+      "date": "2026-09-29"
+    },
+    {
+      "title": "Oszustwa inwestycyjne przenoszą się do Lead Ads. KNF ostrzega",
+      "publisher": "Analizy.pl",
+      "url": "https://www.analizy.pl/puls-rynku/40739/oszustwa-inwestycyjne-przenosza-sie-do-lead-ads-knf-ostrzega",
+      "date": "2026-09-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/crypto-investment-advisor"
+  ]
+}

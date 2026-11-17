@@ -1,0 +1,133 @@
+{
+  "id": "pl/tax-refund-phishing",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "pl": "„e-Urząd Skarbowy”, „Krajowa Administracja Skarbowa” lub „Ministerstwo Finansów”",
+    "en": "“e-Urząd Skarbowy” (the online tax office), the “National Revenue Administration” or the “Ministry of Finance”"
+  },
+  "name": {
+    "pl": "e-Urząd Skarbowy: „zwrot podatku do odebrania” przez fałszywy link",
+    "en": "Online tax office: “tax refund waiting for you” via a fake link"
+  },
+  "how": {
+    "pl": "E-mail lub SMS w imieniu e-Urzędu Skarbowego, KAS albo serwisu podatkowego informuje o przyznanym zwrocie podatku i zachęca do „potwierdzenia dyspozycji wypłaty”. Link prowadzi do podrobionej strony, która zbiera imię, nazwisko, PESEL, numer telefonu i rachunku, a potem dane karty lub logowanie do bankowości elektronicznej.",
+    "en": "An email or text in the name of the online tax office, the National Revenue Administration or the tax website says a tax refund has been granted and urges you to “confirm the payout instruction”. The link leads to a fake page that collects your name, PESEL number, phone and account number, then your card details or online-banking login."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Wiadomość o zwrocie podatku albo nadpłacie do odebrania.",
+        "en": "A message about a tax refund or overpayment waiting for you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Trzeba „potwierdzić dane” lub „dyspozycję wypłaty”, najlepiej szybko.",
+        "en": "You must “confirm your details” or the “payout instruction”, preferably fast."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Link do strony, która tylko udaje serwis rządowy.",
+        "en": "A link to a page that only pretends to be a government site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pl": "Formularz na PESEL, dane karty albo logowanie do banku.",
+        "en": "A form for your PESEL number, card details or bank login."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "e-Urząd Skarbowy: Uprzejmie informujemy, że na podstawie złożonego zeznania przysługuje Pani zwrot w kwocie 1 146,00 zł. Aby środki zostały przekazane, należy potwierdzić dyspozycję wypłaty w terminie 3 dni roboczych: [link]",
+        "en": "e-Urząd Skarbowy: We are pleased to inform you that, based on your tax return, you are entitled to a refund of 1,146.00 zł. For the funds to be transferred, please confirm the payout instruction within 3 working days: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "zwrot podatku mail link",
+      "e urząd skarbowy zwrot pieniędzy wiadomość",
+      "potwierdź dyspozycję wypłaty zwrotu",
+      "nadpłata podatku sms link",
+      "skarbówka mail zwrot dane karty",
+      "krajowa administracja skarbowa wiadomość zwrot pesel",
+      "fałszywy zwrot pit"
+    ],
+    "en": [
+      "tax refund email with a link",
+      "tax office says i have a refund to claim",
+      "confirm payout of tax refund",
+      "fake polish tax refund message",
+      "tax refund asks for card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "pl": [
+      "Zwrot podatku trafia automatycznie na rachunek podany w zeznaniu lub w e-Urzędzie Skarbowym, bez klikania w linki.",
+      "Urząd nie prosi o dane karty ani o logowanie do banku.",
+      "Adres strony tylko przypomina rządowy."
+    ],
+    "en": [
+      "A tax refund is paid automatically to the account in your tax return or in the online tax office, with no link to click.",
+      "The tax office never asks for card details or your bank login.",
+      "The page address only resembles a government one."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Nie klikaj linku. Wejdź do e-Urzędu Skarbowego, wpisując adres samodzielnie, albo zadzwoń do swojego urzędu skarbowego.",
+      "Zgłoś wiadomość do CERT Polska; SMS przekaż na numer 8080.",
+      "Jeśli podałeś dane karty lub banku, od razu zadzwoń do banku; rozważ zastrzeżenie PESEL."
+    ],
+    "en": [
+      "Don’t click the link. Go to the online tax office by typing the address yourself, or call your tax office.",
+      "Report the message to CERT Polska; forward texts to 8080.",
+      "If you entered card or bank details, call your bank straight away; consider restricting your PESEL number."
+    ]
+  },
+  "reportTo": [
+    "pl/cert-polska",
+    "pl/your-bank",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Wiadomość o zwrocie podatku? Uważaj na kradzież danych! [206/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/206/wiadomosc-o-zwrocie-podatku-uwazaj-na-kradziez-danych/",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Wiadomość o zwrocie pieniędzy z e-Urzędu Skarbowego? Zachowaj ostrożność! [138/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/138/wiadomosc-o-zwrocie-pieniedzy-z-e-urzedu-skarbowego-zachowaj-ostroznosc/",
+      "date": "2026-08-05"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/energy-refund-phishing",
+    "pl/gov-data-update-phishing"
+  ]
+}

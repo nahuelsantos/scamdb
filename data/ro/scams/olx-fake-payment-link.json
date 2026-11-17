@@ -1,0 +1,142 @@
+{
+  "id": "ro/olx-fake-payment-link",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "ro": "Un „cumpărător” de pe OLX, apoi „OLX”, „livrare OLX” sau „FAN Courier”",
+    "en": "An OLX “buyer”, then “OLX”, “OLX delivery” or “FAN Courier”"
+  },
+  "name": {
+    "ro": "OLX: fals cumpărător, „plată prin curier” și link ca să „primiți banii”",
+    "en": "OLX: fake buyer, “payment by courier” and a link to “receive the money”"
+  },
+  "how": {
+    "ro": "Vindeți ceva pe OLX sau pe alt site de anunțuri. Un „cumpărător” vrea produsul imediat, fără să negocieze, și propune livrare prin curier cu plată online. Mută discuția pe WhatsApp, SMS sau e-mail și vă trimite un link „OLX” sau „FAN Courier” unde spune că banii vă așteaptă. Pagina falsă vă cere datele cardului, soldul sau codul primit prin SMS, ca să „încasați” suma. De fapt autorizați o plată din contul dumneavoastră. Uneori vine și un „suport” fals care spune că trebuie să repetați operațiunea. Varianta inversă: un „vânzător” cu preț foarte mic vă trimite un link de plată falsă.",
+    "en": "You are selling something on OLX or another classifieds site. A “buyer” wants it right away without haggling and proposes courier delivery with online payment. They move the chat to WhatsApp, text or email and send you an “OLX” or “FAN Courier” link where the money is supposedly waiting. The fake page asks for your card details, balance or the code sent by text so you can “collect” the amount. In fact you authorise a payment out of your account. Sometimes a fake “support” agent says you must repeat the operation. The reverse version: a “seller” with a very low price sends you a fake payment link."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un cumpărător vrea produsul imediat și propune „plată prin curier”.",
+        "en": "A buyer wants the item right away and proposes “payment by courier”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Discuția se mută pe WhatsApp sau SMS.",
+        "en": "The chat moves to WhatsApp or text."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Primiți un link „OLX” ca să încasați banii.",
+        "en": "You get an “OLX” link to collect the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Pagina cere datele cardului și codul primit prin SMS.",
+        "en": "The page asks for your card details and the code sent by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ro": "Trebuie să confirmați repede, altfel „tranzacția expiră”.",
+        "en": "You must confirm quickly or the “transaction expires”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Bună ziua, iau eu bicicleta la prețul din anunț. Sunt în Cluj și nu pot veni, dar am plătit deja prin livrarea OLX, curierul o ridică mâine. Ca să primiți banii completați aici datele cardului pe care vreți încasarea: [link] Grăbiți-vă puțin, linkul expiră în 30 de minute.",
+        "en": "Hello, I’ll take the bike at the advertised price. I’m in Cluj and can’t come, but I’ve already paid through OLX delivery; the courier will pick it up tomorrow. To receive the money, fill in the details of the card you want it paid to here: [link] Please hurry a little, the link expires in 30 minutes."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "cumpărător olx mi-a trimis link să primesc banii",
+      "plată prin curier olx link fals",
+      "olx livrare cere datele cardului vânzător",
+      "cumpărătorul a mutat discuția pe whatsapp",
+      "introduc cardul ca să încasez banii olx",
+      "pagină olx cere codul din sms",
+      "fals cumpărător anunț plătește online"
+    ],
+    "en": [
+      "olx buyer sent me a link to receive money",
+      "payment by courier olx fake link",
+      "buyer asks for my card details to pay me",
+      "buyer moved the chat to whatsapp",
+      "classifieds page asks for my sms code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "ro": [
+      "Ca să primiți bani nu trebuie să introduceți datele cardului, soldul sau coduri din SMS.",
+      "Cumpărătorul care nu negociază și insistă pe un link extern e suspect.",
+      "Mutarea discuției de pe platformă pe WhatsApp sau SMS e un semnal de fraudă."
+    ],
+    "en": [
+      "To receive money you never need to enter your card details, balance or codes from texts.",
+      "A buyer who doesn’t haggle and insists on an outside link is suspicious.",
+      "Moving the chat off the platform to WhatsApp or text is a fraud signal."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul. Vorbiți și plătiți doar în aplicația OLX sau vindeți cu predare în mână.",
+      "Ați introdus datele cardului sau un cod? Sunați imediat banca pentru blocare.",
+      "Raportați anunțul și contul pe platformă și la DNSC (1911 sau pnrisc.dnsc.ro)."
+    ],
+    "en": [
+      "Don’t open the link. Chat and pay only inside the OLX app, or sell in person.",
+      "Did you enter card details or a code? Call your bank straight away to block the card.",
+      "Report the account on the platform and to DNSC (1911 or pnrisc.dnsc.ro)."
+    ]
+  },
+  "reportTo": [
+    "ro/your-bank",
+    "ro/dnsc-1911",
+    "ro/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Avertisment privind fraudele în numele Fan Courier sau OLX. Cum vi se fură banii: Nu introduceți datele bancare",
+      "publisher": "Capital",
+      "url": "https://www.capital.ro/avertisment-privind-fraudele-in-numele-fan-courier-sau-olx-cum-vi-se-fura-banii-nu-introduceti-datele-bancare.html",
+      "date": "2026-01-20"
+    },
+    {
+      "title": "Atenție, utilizatori OLX. Infractorii cibernetici folosesc identitatea platformei pentru a fura date. Avertismentul DNSC",
+      "publisher": "Capital",
+      "url": "https://www.capital.ro/atentie-utilizatori-olx-infractorii-cibernetici-folosesc-identitatea-platformei-pentru-a-fura-date-avertismentul-dnsc-nu-oferi-informatii-personale-pe-internet.html",
+      "date": "2025-10-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/courier-sms-fee"
+  ]
+}

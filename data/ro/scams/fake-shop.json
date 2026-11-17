@@ -1,0 +1,142 @@
+{
+  "id": "ro/fake-shop",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "ro": "Un magazin online necunoscut sau o copie a unui magazin cunoscut, promovat pe rețele sociale",
+    "en": "An unknown online shop or a copy of a known shop, promoted on social media"
+  },
+  "name": {
+    "ro": "Magazin online fals: reduceri uriașe, plată și niciun produs (sau „rambursare” cu aprobare în aplicație)",
+    "en": "Fake online shop: huge discounts, payment and no product (or a “refund” approved in your banking app)"
+  },
+  "how": {
+    "ro": "Pe Facebook, Instagram sau TikTok apare o reclamă la un magazin cu reduceri de 70–90%, adesea o copie a unui brand cunoscut, cu același logo și aceleași poze. Site-ul are lacăt și https, dar nu are firmă, adresă sau date de contact reale. Plătiți cu cardul sau prin transfer, iar produsul nu vine niciodată ori primiți ceva ieftin și contrafăcut. Uneori, după comandă, primiți un mesaj că produsul nu mai e disponibil și că trebuie să confirmați „rambursarea” într-un link sau în aplicația băncii: de fapt aprobați o plată din contul dumneavoastră.",
+    "en": "On Facebook, Instagram or TikTok an ad appears for a shop with 70–90% discounts, often a copy of a known brand with the same logo and photos. The site has a padlock and https but no real company, address or contact details. You pay by card or transfer, and the product never arrives or you get something cheap and fake. Sometimes, after ordering, you get a message that the product is unavailable and that you must confirm the “refund” in a link or in your banking app: in fact you approve a payment out of your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "O reclamă cu reduceri uriașe la produse de marcă.",
+        "en": "An ad with huge discounts on branded products."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ro": "Stoc limitat și cronometru: trebuie să comandați acum.",
+        "en": "Limited stock and a countdown: you must order now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Site-ul copiază un magazin cunoscut, dar adresa e alta.",
+        "en": "The site copies a known shop, but the address is different."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Plata se cere prin transfer sau direct cu datele cardului.",
+        "en": "Payment is requested by transfer or directly with card details."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Pentru „rambursare” trebuie să aprobați ceva în aplicația băncii.",
+        "en": "For a “refund” you must approve something in the banking app."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Lichidare de stoc! Geci de iarnă originale la doar 149 lei în loc de 1.199 lei. Mai sunt doar 17 bucăți, oferta expiră în 2 ore. Livrare gratuită în toată țara. Comandă acum: [link]",
+        "en": "Clearance sale! Original winter jackets for only 149 lei instead of 1,199 lei. Only 17 left, offer ends in 2 hours. Free delivery nationwide. Order now: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "magazin online fals nu am primit comanda",
+      "reduceri 80 la sută reclamă facebook",
+      "site clonă magazin cunoscut",
+      "am plătit și produsul nu a venit",
+      "confirmă rambursarea în aplicația băncii",
+      "lichidare de stoc preț foarte mic",
+      "magazin fără date de firmă"
+    ],
+    "en": [
+      "fake online shop order never arrived",
+      "huge discount ad on facebook",
+      "cloned website of a known store",
+      "paid and the product never came",
+      "confirm refund in banking app"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "impersonation",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ro": [
+      "Reduceri de 80–90% la produse de marcă sunt un semn clar de fraudă.",
+      "Lacătul și https nu dovedesc că magazinul e legitim.",
+      "Lipsesc numele firmei, adresa și un contact real.",
+      "O rambursare nu cere niciodată să aprobați o plată din contul dumneavoastră."
+    ],
+    "en": [
+      "Discounts of 80–90% on branded products are a clear fraud sign.",
+      "A padlock and https don’t prove the shop is legitimate.",
+      "The company name, address and real contact are missing.",
+      "A refund never requires you to approve a payment out of your account."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Înainte să cumpărați, verificați firma, recenziile independente și adresa exactă a site-ului.",
+      "Plătiți cu cardul, nu prin transfer: banca poate contesta plata.",
+      "Ați plătit? Sunați banca, păstrați dovezile, depuneți plângere la Poliție și raportați la DNSC."
+    ],
+    "en": [
+      "Before buying, check the company, independent reviews and the exact site address.",
+      "Pay by card, not by transfer: your bank can dispute the payment.",
+      "Already paid? Call your bank, keep the evidence, file a police complaint and report it to DNSC."
+    ]
+  },
+  "reportTo": [
+    "ro/your-bank",
+    "ro/police-complaint",
+    "ro/dnsc-1911"
+  ],
+  "sources": [
+    {
+      "title": "Avertisment DNSC de Black Friday 2026: atenție la magazinele false, mesajele de la curieri și fraudele cu rambursări",
+      "publisher": "Alba24",
+      "url": "https://alba24.ro/avertisment-dnsc-de-black-friday-2026-atentie-la-magazinele-false-mesajele-de-la-curieri-si-fraudele-cu-rambursari-1165375.html",
+      "date": "2026-10-31"
+    },
+    {
+      "title": "Cum recunoști un magazin online fals înainte să plătești. ANPC a lansat un ghid oficial pentru cumpărături pe Internet sigure",
+      "publisher": "Alba24",
+      "url": "https://alba24.ro/cum-recunosti-un-magazin-online-fals-inainte-sa-platesti-anpc-a-lansat-un-ghid-oficial-pentru-cumparaturi-pe-internet-sigure-1149034.html",
+      "date": "2026-07-18"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/courier-sms-fee"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "pl/hej-mamo-new-number",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "pl": "Twoje „dziecko” lub inny bliski, z nieznanego numeru",
+    "en": "Your “child” or another relative, from an unknown number"
+  },
+  "name": {
+    "pl": "„Hej mamo, to mój nowy numer”: pilny przelew dla „dziecka”",
+    "en": "“Hi mum, this is my new number”: an urgent transfer for your “child”"
+  },
+  "how": {
+    "pl": "Przychodzi wiadomość z nieznanego numeru, SMS-em albo przez WhatsApp: „Hej mamo/tato, to mój nowy numer, stary możesz usunąć”. Wymówka to zepsuty, zgubiony albo zalany telefon. Po chwili „dziecko” prosi o opłacenie pilnego rachunku, zakupu lub telefonu, bo nie ma dostępu do bankowości. Nie odbiera połączeń, pisze tylko wiadomości. Pieniądze trafiają na konto oszustów.",
+    "en": "A message arrives from an unknown number, by text or WhatsApp: “Hi mum/dad, this is my new number, you can delete the old one”. The excuse is a broken, lost or water-damaged phone. Soon your “child” asks you to pay an urgent bill, a purchase or a new phone because they can’t get into their banking. They don’t answer calls, they only text. The money goes to the scammers’ account."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Wiadomość z nowego numeru: „to ja, zmieniłem telefon”.",
+        "en": "A message from a new number: “it’s me, I changed my phone”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "pl": "Prośba, żeby zapisać nowy numer, a stary usunąć.",
+        "en": "A request to save the new number and delete the old one."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Pilny rachunek do zapłaty, bo bank „nie działa” na nowym telefonie.",
+        "en": "An urgent bill to pay because banking “doesn’t work” on the new phone."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pl": "Brak możliwości rozmowy, tylko prośba o przelew.",
+        "en": "No way to talk, just a request for a transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Cześć tato, piszę z nowego numeru, poprzedni telefon mi się roztrzaskał 😩 Zapisz ten. Mam problem, muszę dziś zapłacić za kurs, a apka banku jeszcze mi nie działa. Przelałbyś 2 300 zł? Podeślę Ci numer konta. Oddam w poniedziałek ❤️",
+        "en": "Hi dad, writing from a new number, my old phone smashed 😩 Save this one. I have a problem, I need to pay for a course today and my banking app isn’t working yet. Could you transfer 2,300 zł? I’ll send you the account number. I’ll pay you back on Monday ❤️"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "hej mamo nowy numer",
+      "cześć tato zmieniłam telefon nowy numer",
+      "córka pisze nowego numeru przelew",
+      "syn whatsapp nowy numer rachunek zapłacić",
+      "stary numer możesz usunąć",
+      "telefon wpadł do toalety nowy numer",
+      "dziecko prosi przelew aplikacja banku działa"
+    ],
+    "en": [
+      "hi mum new number scam",
+      "daughter texted from a new number asking for money",
+      "son says his phone broke and needs a bill paid",
+      "whatsapp message pretending to be my child",
+      "new number delete the old one message"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pl": [
+      "Nowy numer i od razu prośba o pieniądze.",
+      "„Dziecko” nie może rozmawiać, tylko pisze.",
+      "Przelew ma iść na nieznane konto, często obcej osoby."
+    ],
+    "en": [
+      "A new number and an immediate request for money.",
+      "Your “child” can’t talk, only text.",
+      "The transfer is to go to an unknown account, often in a stranger’s name."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Zadzwoń na dotychczasowy, znany numer dziecka, zanim cokolwiek przelejesz.",
+      "Zadaj pytanie, na które odpowiedź zna tylko ono.",
+      "Jeśli już przelałeś pieniądze, natychmiast zadzwoń do banku i złóż zawiadomienie na Policji.",
+      "Podejrzany SMS przekaż na numer 8080."
+    ],
+    "en": [
+      "Call your child’s old, known number before you transfer anything.",
+      "Ask something only they would know.",
+      "If you already sent money, call your bank at once and report it to the police.",
+      "Forward a suspicious text to 8080."
+    ]
+  },
+  "reportTo": [
+    "pl/your-bank",
+    "pl/policja",
+    "pl/cert-polska"
+  ],
+  "sources": [
+    {
+      "title": "„Mamo, opłacisz mi rachunek?” - jedno zdanie wystarczyło, by stracić blisko 6 tysięcy złotych",
+      "publisher": "Komenda Powiatowa Policji w Trzebnicy",
+      "url": "https://trzebnica.policja.gov.pl/dtr/aktualnosci/bieza/184266,Mamo-oplacisz-mi-rachunek-jedno-zdanie-wystarczylo-by-stracic-blisko-6-tysiecy-z.html",
+      "date": "2026-09-25"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/grandchild-accident-bail",
+    "pl/blik-code-hacked-friend"
+  ]
+}

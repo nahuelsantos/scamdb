@@ -1,0 +1,140 @@
+{
+  "id": "pl/bank-employee-safe-account",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "pl": "„Twój bank”, „dział bezpieczeństwa” lub „departament bezpieczeństwa” (często z prawdziwym numerem banku na ekranie)",
+    "en": "“Your bank”, its “security department” (often with the bank’s real number on screen)"
+  },
+  "name": {
+    "pl": "Fałszywy pracownik banku: „pieniądze zagrożone”, przelew na „bezpieczne konto”",
+    "en": "Fake bank employee: “your money is at risk”, transfer to a “safe account”"
+  },
+  "how": {
+    "pl": "Dzwoni ktoś, kto podaje się za pracownika banku lub jego działu bezpieczeństwa. Dzięki spoofingowi na ekranie może wyświetlać się prawdziwy numer banku, a SMS może trafić do wątku z prawdziwymi wiadomościami z banku. Rozmówca mówi o włamaniu na konto, podejrzanej transakcji albo wniosku o kredyt i przekonuje, że oszczędności trzeba „zabezpieczyć”: przelać na „bezpieczne” lub „techniczne” konto, podać kody BLIK, zatwierdzić operację w aplikacji albo zainstalować program do zdalnego pulpitu. Czasem do rozmowy włącza się rzekomy policjant. Pieniądze trafiają na rachunek przestępców.",
+    "en": "Someone calls claiming to be from your bank or its security department. Thanks to spoofing, the bank’s real number can show on screen, and a text can land in the same thread as genuine messages from your bank. The caller talks about a break-in on your account, a suspicious transaction or a loan application and insists your savings must be “secured”: moved to a “safe” or “technical” account, paid out with BLIK codes, approved in the banking app, or reached through a remote-desktop app you are told to install. Sometimes a supposed police officer joins the call. The money ends up in the criminals’ account."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Telefon „z banku”: na koncie jest włamanie albo podejrzana transakcja.",
+        "en": "A call “from the bank”: there’s a break-in or a suspicious transaction on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Rozmówca naciska: trzeba działać od razu i nie rozłączać się.",
+        "en": "The caller pushes: you must act now and not hang up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "pl": "Masz przelać oszczędności na „bezpieczne konto” lub „konto techniczne”.",
+        "en": "You’re told to move your savings to a “safe account” or “technical account”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pl": "Albo podać kody BLIK, zatwierdzić operację w aplikacji lub zainstalować program do zdalnego dostępu.",
+        "en": "Or to read out BLIK codes, approve something in the app, or install a remote-access program."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Dzień dobry, Marek Zieliński, departament bezpieczeństwa Pana banku. Odnotowaliśmy próbę zalogowania z nowego urządzenia i wniosek o kredyt na 40 tysięcy złotych. Czy to Pan? Nie? W takim razie środki są zagrożone. Proszę się nie rozłączać, przeprowadzę Pana przez zabezpieczenie: założymy tymczasowy rachunek ochronny i przeleje Pan tam saldo, zanim przestępcy zdążą je wypłacić.",
+        "en": "Good morning, Marek Zieliński from your bank’s security department. We’ve recorded a login attempt from a new device and a loan application for 40,000 złoty. Was that you? No? Then your funds are at risk. Please don’t hang up, I’ll guide you through securing them: we’ll set up a temporary protective account and you’ll transfer your balance there before the criminals can withdraw it."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "oszustwo na pracownika banku",
+      "fałszywy konsultant banku dzwoni",
+      "przelew na bezpieczne konto",
+      "konto techniczne przelać oszczędności",
+      "dział bezpieczeństwa banku telefon włamanie konto",
+      "spoofing numer banku wyświetla",
+      "podejrzana transakcja zabezpieczyć środki",
+      "wniosek kredytowy którego składałem",
+      "kazali zainstalować anydesk bank",
+      "podać kody blik konsultantowi",
+      "rachunek ochronny saldo przelać",
+      "przenieść pieniądze nowy rachunek kazał bank",
+      "logowanie zagranicy moje konto bankowe telefon",
+      "konsultant dyktuje numer rachunku przelew"
+    ],
+    "en": [
+      "fake bank employee called me",
+      "told to move money to a safe account",
+      "bank security department said my account was hacked",
+      "caller showed my bank s real number",
+      "asked me to install anydesk for the bank",
+      "they wanted blik codes to protect my money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "pl": [
+      "Nie istnieje „bezpieczne konto” ani „konto techniczne”: bank nigdy nie każe przelewać pieniędzy, żeby je chronić.",
+      "Pracownik banku nie prosi o kody BLIK, hasła ani zatwierdzanie operacji w aplikacji w trakcie rozmowy.",
+      "Numer na ekranie i SMS w tym samym wątku co prawdziwe wiadomości niczego nie dowodzą: mogą być podrobione.",
+      "Bank nie każe instalować programów do zdalnego pulpitu."
+    ],
+    "en": [
+      "There’s no “safe account” or “technical account”: your bank never tells you to move money to protect it.",
+      "A bank employee never asks for BLIK codes, passwords or approvals in the app during a call.",
+      "The number on screen, or a text in the same thread as genuine ones, proves nothing: both can be faked.",
+      "Your bank never asks you to install remote-desktop software."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Rozłącz się i sam zadzwoń do banku na numer z karty lub z aplikacji, najlepiej z innego telefonu.",
+      "Jeśli przelałeś pieniądze lub podałeś dane, natychmiast zgłoś to w banku i zablokuj kartę oraz dostęp do konta.",
+      "Rozważ zastrzeżenie numeru PESEL w aplikacji mObywatel, żeby nikt nie wziął kredytu na Twoje dane.",
+      "Złóż zawiadomienie w dowolnej jednostce Policji, z wydrukiem przelewów i numerem rachunku."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on your card or in the app, ideally from another phone.",
+      "If you transferred money or gave details, tell your bank at once and block your card and online access.",
+      "Consider restricting your PESEL number in the mObywatel app so nobody can take a loan in your name.",
+      "Report it at any police station, with printouts of the transfers and the account number."
+    ]
+  },
+  "reportTo": [
+    "pl/your-bank",
+    "pl/zastrzegam",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Straciła 142 tysiące złotych. Uwierzyła fałszywemu pracownikowi banku",
+      "publisher": "Komenda Miejska Policji w Grudziądzu",
+      "url": "https://grudziadz.policja.gov.pl/kb2/informacje/wiadomosci/172564,Stracila-142-tysiace-zlotych-Uwierzyla-falszywemu-pracownikowi-banku.html",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/fake-police-officer"
+  ]
+}

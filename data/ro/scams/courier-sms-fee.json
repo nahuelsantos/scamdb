@@ -1,0 +1,148 @@
+{
+  "id": "ro/courier-sms-fee",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "ro": "„FAN Courier”, „Sameday”, „Poșta Română”, „DHL” sau un „curier”",
+    "en": "“FAN Courier”, “Sameday”, “Poșta Română”, “DHL” or a “courier”"
+  },
+  "name": {
+    "ro": "SMS de la „curier”: colet blocat, taxă mică de livrare sau alegeți un locker, plată prin link",
+    "en": "Text from a “courier”: parcel held, small delivery fee or choose a locker, payment by link"
+  },
+  "how": {
+    "ro": "Primiți un SMS sau un mesaj pe WhatsApp, aparent de la FAN Courier, Sameday, Poșta Română sau alt curier: coletul nu a putut fi livrat, adresa e incompletă, trebuie să alegeți un locker sau să plătiți o taxă mică pentru reprogramarea livrării. Linkul duce la un site care imită curierul și vă cere datele cardului, aprobarea unei plăți sau un cod de confirmare WhatsApp, cu care vi se fură contul. Faptul că așteptați un colet nu face mesajul real.",
+    "en": "You get a text or WhatsApp message, apparently from FAN Courier, Sameday, Poșta Română or another courier: the parcel couldn’t be delivered, the address is incomplete, you must choose a locker or pay a small fee to reschedule delivery. The link leads to a site that imitates the courier and asks for your card details, approval of a payment or a WhatsApp confirmation code, which is used to steal your account. Waiting for a parcel doesn’t make the message genuine."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un SMS de la „curier”: coletul e blocat sau trebuie ales un locker.",
+        "en": "A text from the “courier”: the parcel is held or you must choose a locker."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Trebuie să acționați azi, altfel coletul se returnează.",
+        "en": "You must act today or the parcel is returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ro": "Un link către un site care seamănă cu al curierului.",
+        "en": "A link to a site that looks like the courier’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Vi se cere o taxă de câțiva lei cu cardul.",
+        "en": "You are asked for a fee of a few lei by card."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ro": "Sau vi se cere un cod primit prin SMS ori de la WhatsApp.",
+        "en": "Or you are asked for a code received by text or from WhatsApp."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "FAN Courier: Coletul dvs. AWB 4471 nu a putut fi livrat din cauza adresei incomplete. Pentru reprogramare achitati taxa de 3,49 lei in 24h: [link] Altfel coletul va fi returnat expeditorului.",
+        "en": "FAN Courier: Your parcel AWB 4471 could not be delivered because the address is incomplete. To reschedule, pay the 3.49 lei fee within 24h: [link] Otherwise the parcel will be returned to the sender."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "sms fan courier taxă colet link",
+      "colet blocat plătesc taxa de livrare",
+      "mesaj sameday adresă incompletă colet",
+      "poșta română colet reținut plată card",
+      "alegeți un locker fanbox mesaj fals",
+      "taxă reprogramare livrare câțiva lei",
+      "curierul cere cod whatsapp pentru colet"
+    ],
+    "en": [
+      "courier text parcel fee link",
+      "parcel held pay small delivery fee",
+      "incomplete address parcel text message",
+      "choose a locker parcel waiting text",
+      "reschedule delivery fee by card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ro": [
+      "Curierii nu cer taxe de livrare prin linkuri trimise prin SMS sau WhatsApp.",
+      "Adresa site-ului nu este cea oficială a curierului.",
+      "Un curier nu vă cere niciodată un cod de confirmare WhatsApp."
+    ],
+    "en": [
+      "Couriers don’t ask for delivery fees through links sent by text or WhatsApp.",
+      "The site’s address isn’t the courier’s official one.",
+      "A courier never asks you for a WhatsApp confirmation code."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu deschideți linkul. Verificați coletul în aplicația magazinului sau pe site-ul oficial al curierului, tastat de dumneavoastră.",
+      "Ați introdus datele cardului? Sunați imediat banca pentru blocarea cardului.",
+      "Raportați mesajul la DNSC (1911 sau pnrisc.dnsc.ro) și ștergeți-l."
+    ],
+    "en": [
+      "Don’t open the link. Check the parcel in the shop’s app or on the courier’s official site, typed in yourself.",
+      "Did you enter card details? Call your bank straight away to block the card.",
+      "Report the message to DNSC (1911 or pnrisc.dnsc.ro) and delete it."
+    ]
+  },
+  "reportTo": [
+    "ro/dnsc-1911",
+    "ro/your-bank",
+    "ro/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Avertisment DNSC de Black Friday 2026: atenție la magazinele false, mesajele de la curieri și fraudele cu rambursări",
+      "publisher": "Alba24",
+      "url": "https://alba24.ro/avertisment-dnsc-de-black-friday-2026-atentie-la-magazinele-false-mesajele-de-la-curieri-si-fraudele-cu-rambursari-1165375.html",
+      "date": "2026-10-31"
+    },
+    {
+      "title": "DNSC avertizează românii să nu cadă în capcana site-urilor false, care ar vinde produse la promoţii. Cum arată un mesaj înşelător",
+      "publisher": "Antena 3 CNN",
+      "url": "https://www.antena3.ro/actualitate/dnsc-avertizeaza-romanii-sa-nu-cada-in-capcana-site-urilor-false-care-ar-vinde-produse-la-promotii-cum-arata-un-mesaj-inselator-774223.html",
+      "date": "2026-01-20"
+    },
+    {
+      "title": "DNSC avertizează că încă se desfășoară o campanie de fraudă prin folosirea identității unor companii de curierat. Cum vă puteți proteja",
+      "publisher": "Digi24",
+      "url": "https://www.digi24.ro/stiri/actualitate/dnsc-avertizeaza-ca-inca-se-desfasoara-o-campanie-de-frauda-prin-folosirea-identitatii-unor-companii-de-curierat-cum-va-puteti-proteja-3074593",
+      "date": "2025-01-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/whatsapp-code-takeover",
+    "ro/olx-fake-payment-link"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "it/ciao-mamma-nuovo-numero",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "it": "Un numero sconosciuto che dice di essere vostro figlio, figlia o un parente",
+    "en": "An unknown number claiming to be your son, daughter or a relative"
+  },
+  "name": {
+    "it": "\"Ciao mamma, ho cambiato numero\": falso figlio su WhatsApp che chiede un bonifico urgente",
+    "en": "“Hi mum, I changed number”: fake child on WhatsApp asking for an urgent transfer"
+  },
+  "how": {
+    "it": "Da un numero nuovo arriva un messaggio: \"Ciao mamma\" o \"Ciao papà\", il telefono si è rotto o è stato rubato e questo è il nuovo numero. Dopo qualche messaggio affettuoso arriva il problema: una bolletta, un affitto o un acquisto da pagare oggi, ma l'app della banca non funziona sul nuovo telefono. Vi chiedono un bonifico istantaneo o una ricarica su un IBAN di un \"amico\". A volte il messaggio arriva da un account WhatsApp vero ma rubato.",
+    "en": "A message arrives from a new number: “Hi mum” or “Hi dad”, the phone broke or was stolen and this is the new number. After a few affectionate messages comes the problem: a bill, rent or purchase to pay today, but the banking app does not work on the new phone. They ask for an instant transfer or a top-up to a “friend's” IBAN. Sometimes the message comes from a real but stolen WhatsApp account."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un numero sconosciuto scrive \"ciao mamma, questo è il mio nuovo numero\".",
+        "en": "An unknown number writes “hi mum, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "it": "Non può chiamare o mandare vocali, ha solo poco tempo.",
+        "en": "They cannot call or send voice notes and are short on time."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "it": "C'è un pagamento urgente da fare oggi.",
+        "en": "There is an urgent payment to make today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Chiede un bonifico su un IBAN che non è il suo.",
+        "en": "They ask for a transfer to an IBAN that is not theirs."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Ciao mamma, mi è caduto il telefono nel lavandino, questo è il numero nuovo, salvalo. Ho una fattura da pagare entro stasera e la app della banca non va sul telefono nuovo. Puoi fare tu un bonifico istantaneo di 860 euro? Ti mando l'IBAN, domani ti ridò tutto",
+        "en": "Hi mum, my phone fell in the sink, this is the new number, save it. I have an invoice to pay by tonight and the banking app does not work on the new phone. Can you make an instant transfer of 860 euros? I'll send you the IBAN, I'll pay you back tomorrow"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "ciao mamma nuovo numero",
+      "figlio cambiato numero chiede soldi",
+      "telefono rotto numero nuovo whatsapp",
+      "bonifico urgente figlia whatsapp",
+      "app banca non funziona telefono nuovo",
+      "salva questo numero ciao papà",
+      "parente chiede ricarica urgente"
+    ],
+    "en": [
+      "hi mum new number message",
+      "son changed number asking for money",
+      "daughter phone broken whatsapp transfer",
+      "banking app does not work on new phone",
+      "relative asks for urgent top up"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "urgency",
+    "money_request",
+    "secrecy",
+    "impersonation"
+  ],
+  "redFlags": {
+    "it": [
+      "Un figlio che cambia numero di solito può anche telefonare o mandare un vocale.",
+      "L'IBAN è intestato a un'altra persona.",
+      "La fretta e il \"non posso parlare\" servono a non farvi verificare."
+    ],
+    "en": [
+      "A child who changes number can usually also call or send a voice note.",
+      "The IBAN belongs to someone else.",
+      "The rush and “I can't talk” are there to stop you checking."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Chiamate vostro figlio al numero di sempre, o fategli una domanda che solo lui conosce.",
+      "Non mandate soldi né codici; se avete pagato, chiamate subito la banca per il richiamo del bonifico.",
+      "Segnalate il numero alla Polizia Postale e sporgete denuncia in caso di perdita."
+    ],
+    "en": [
+      "Call your child on their usual number, or ask a question only they would know.",
+      "Do not send money or codes; if you paid, call your bank at once to recall the transfer.",
+      "Report the number to the Postal Police and file a complaint if you lost money."
+    ]
+  },
+  "reportTo": [
+    "it/your-bank",
+    "it/polizia-postale",
+    "it/denuncia"
+  ],
+  "sources": [
+    {
+      "title": "Richieste di denaro e furto dell'account WhatsApp",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/richieste-di-denaro-e-furto-dellaccount-whatsapp/index.html",
+      "date": "2026-08-25"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/whatsapp-codice-voto"
+  ]
+}

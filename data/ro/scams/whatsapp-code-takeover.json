@@ -1,0 +1,134 @@
+{
+  "id": "ro/whatsapp-code-takeover",
+  "country": "ro",
+  "lang": "ro",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "ro": "Un prieten sau o cunoștință (contul lor a fost deja furat), un „concurs” sau o „petiție”",
+    "en": "A friend or acquaintance (their account was already stolen), a “contest” or a “petition”"
+  },
+  "name": {
+    "ro": "Cont de WhatsApp furat: „votează”, „semnează petiția” sau „trimite-mi codul primit”",
+    "en": "Stolen WhatsApp account: “vote”, “sign the petition” or “send me the code you got”"
+  },
+  "how": {
+    "ro": "Primiți un mesaj, adesea de la un prieten al cărui cont a fost deja furat: votați un copil la un concurs, semnați o petiție împotriva uciderii animalelor sau confirmați ceva pentru un colet. Linkul vă cere numărul de telefon și apoi codul primit prin SMS sau un cod de asociere a unui dispozitiv. Uneori persoana vă scrie direct: „Ți-am trimis din greșeală un cod, mi-l dai?”. Cu codul, infractorii vă preiau contul de WhatsApp și le scriu contactelor dumneavoastră ca să ceară bani sau să fure alte conturi.",
+    "en": "You get a message, often from a friend whose account has already been stolen: vote for a child in a contest, sign a petition against killing animals, or confirm something for a parcel. The link asks for your phone number and then the code sent by text or a device-pairing code. Sometimes the person writes directly: “I sent you a code by mistake, can you give it to me?”. With the code, the criminals take over your WhatsApp account and write to your contacts to ask for money or steal more accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "ro": "Un mesaj de la un prieten: votează, semnează o petiție sau ajută-mă.",
+        "en": "A message from a friend: vote, sign a petition or help me."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ro": "Un link care cere numărul de telefon.",
+        "en": "A link that asks for your phone number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ro": "Vi se cere codul primit prin SMS sau un cod de asociere.",
+        "en": "You are asked for the code sent by text or a pairing code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ro": "Trebuie făcut repede, „se închide votul”.",
+        "en": "It has to be done fast; “voting closes”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ro": "Salut! Te rog frumos, poți să votezi pentru fetița unei colege la concursul de dans? Mai are nevoie de câteva voturi până diseară. Intri pe [link], pui numărul tău și confirmi cu codul pe care îl primești. Mersi mult!",
+        "en": "Hi! Please, could you vote for a colleague’s little girl in the dance contest? She needs a few more votes by tonight. Go to [link], enter your number and confirm with the code you receive. Thanks a lot!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ro": [
+      "mi-a cerut codul de whatsapp primit prin sms",
+      "votează pentru copil concurs link whatsapp",
+      "semnează petiția link cere numărul",
+      "mi-au furat contul de whatsapp",
+      "cod de asociere dispozitiv whatsapp fals",
+      "prieten mi-a trimis link să votez",
+      "ți-am trimis un cod din greșeală",
+      "cineva îmi cere codul de șase cifre",
+      "prietenul vrea codul de verificare venit pe sms"
+    ],
+    "en": [
+      "asked for my whatsapp code from sms",
+      "vote for a child contest whatsapp link",
+      "sign petition link asks for my number",
+      "my whatsapp account was stolen",
+      "sent you a code by mistake"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "ro": [
+      "Niciun vot, concurs sau petiție nu are nevoie de codul de WhatsApp.",
+      "Codul primit prin SMS e cheia contului dumneavoastră: nu îl dați nimănui.",
+      "Mesajul poate veni de la un prieten real, dacă i-a fost furat contul."
+    ],
+    "en": [
+      "No vote, contest or petition needs your WhatsApp code.",
+      "The code sent by text is the key to your account: never give it to anyone.",
+      "The message can come from a real friend if their account was stolen."
+    ]
+  },
+  "whatToDo": {
+    "ro": [
+      "Nu dați codul. Activați verificarea în doi pași în setările WhatsApp.",
+      "Verificați lista de dispozitive conectate și deconectați ce nu recunoașteți.",
+      "V-au furat contul? Anunțați contactele pe alt canal să nu trimită bani și raportați la DNSC."
+    ],
+    "en": [
+      "Don’t give the code. Turn on two-step verification in WhatsApp settings.",
+      "Check the list of linked devices and log out any you don’t recognise.",
+      "Account stolen? Warn your contacts on another channel not to send money, and report it to DNSC."
+    ]
+  },
+  "reportTo": [
+    "ro/dnsc-1911",
+    "ro/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Avertisment DNSC: A apărut o nouă metodă folosită de atacatori pentru compromiterea conturilor de mesagerie",
+      "publisher": "Alba24",
+      "url": "https://alba24.ro/avertisment-dnsc-a-aparut-o-noua-metoda-folosita-de-atacatori-pentru-compromiterea-conturilor-de-mesagerie-1127429.html",
+      "date": "2026-03-26"
+    },
+    {
+      "title": "DNSC avertizează că încă se desfășoară o campanie de fraudă prin folosirea identității unor companii de curierat. Cum vă puteți proteja",
+      "publisher": "Digi24",
+      "url": "https://www.digi24.ro/stiri/actualitate/dnsc-avertizeaza-ca-inca-se-desfasoara-o-campanie-de-frauda-prin-folosirea-identitatii-unor-companii-de-curierat-cum-va-puteti-proteja-3074593",
+      "date": "2025-01-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "ro/buna-mama-new-number",
+    "ro/courier-sms-fee"
+  ]
+}

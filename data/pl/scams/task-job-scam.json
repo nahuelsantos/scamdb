@@ -1,0 +1,123 @@
+{
+  "id": "pl/task-job-scam",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "pl": "„Rekruterka” lub „koordynator” na WhatsAppie, Telegramie albo w komunikatorze",
+    "en": "A “recruiter” or “coordinator” on WhatsApp, Telegram or another messenger"
+  },
+  "name": {
+    "pl": "Praca „na lajkach”: płatne zadania, a potem wpłaty, żeby odebrać pieniądze",
+    "en": "Job “liking posts”: paid tasks, then deposits to get your money out"
+  },
+  "how": {
+    "pl": "W komunikatorze przychodzi propozycja dorywczej pracy online: lajkowanie postów, ogłoszeń lub filmów, wystawianie opinii. Pierwsze zadania są naprawdę płatne, kilka lub kilkanaście złotych trafia na Twoje konto. Potem pojawiają się „zadania premiowe” albo „inwestycyjne”, w których trzeba wpłacić własne pieniądze, rzekomo z wysoką prowizją. Gdy chcesz wypłacić zarobek, okazuje się, że najpierw trzeba wpłacić jeszcze więcej.",
+    "en": "An offer of casual online work arrives in a messaging app: liking posts, listings or videos, writing reviews. The first tasks are really paid, and a few złoty land in your account. Then “bonus” or “investment” tasks appear in which you must pay in your own money, supposedly with a high commission. When you want to withdraw your earnings, it turns out you must first pay in even more."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Nieoczekiwana oferta łatwej pracy online za lajki lub opinie.",
+        "en": "An unexpected offer of easy online work for likes or reviews."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pl": "Pierwsze małe wypłaty, żeby zdobyć zaufanie.",
+        "en": "Small first payouts to win your trust."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pl": "Zadania, w których trzeba wpłacić własne pieniądze.",
+        "en": "Tasks where you have to pay in your own money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "pl": "Wypłata możliwa dopiero po kolejnej, większej wpłacie.",
+        "en": "A withdrawal is only possible after another, bigger deposit."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Dzień dobry! Jestem Kasia z agencji marketingowej. Szukamy osób do pracy zdalnej: polubienie produktu w sklepie internetowym to 5 zł, dziennie można zarobić 200–700 zł, wystarczy telefon i 20 minut. Wypłaty codziennie na konto. Czy mogę wysłać instrukcję?",
+        "en": "Good morning! I’m Kasia from a marketing agency. We’re looking for people for remote work: liking a product in an online shop pays 5 zł, you can earn 200–700 zł a day, all you need is a phone and 20 minutes. Payouts to your account every day. May I send you the instructions?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "praca na lajkach oszustwo",
+      "zarabianie na lajkowaniu postów komunikator",
+      "praca zdalna zadania wpłata prowizja",
+      "oferta pracy whatsapp polubienia płatne",
+      "zadanie premiowe trzeba wpłacić",
+      "wypłata zarobku dopiero po wpłacie",
+      "lajkowanie ogłoszeń wynagrodzenie telegram",
+      "pisanie opinii płatne zadania online"
+    ],
+    "en": [
+      "paid to like posts job scam",
+      "whatsapp job offer liking products",
+      "task scam had to deposit money to withdraw",
+      "online tasks commission pay in first",
+      "remote job writing reviews then asked for money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "pl": [
+      "Prawdziwy pracodawca nie każe wpłacać pieniędzy, żeby dostać pracę albo wypłatę.",
+      "Bardzo wysoki zarobek za kilka kliknięć.",
+      "Oferta przychodzi sama, od nieznajomego, w komunikatorze."
+    ],
+    "en": [
+      "A real employer never makes you pay in to get work or your wages.",
+      "Very high pay for a few clicks.",
+      "The offer arrives unprompted, from a stranger, in a messaging app."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Nie wpłacaj pieniędzy, nawet żeby „odblokować” wypłatę.",
+      "Przerwij kontakt i zablokuj nadawcę.",
+      "Jeśli przelałeś pieniądze, skontaktuj się z bankiem i złóż zawiadomienie na Policji."
+    ],
+    "en": [
+      "Don’t pay anything in, not even to “unlock” a withdrawal.",
+      "Cut contact and block the sender.",
+      "If you transferred money, contact your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "pl/your-bank",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Miała zarobić „na lajkach”, straciła niemal 23 tys. zł. Apelujemy o rozwagę!",
+      "publisher": "Komenda Miejska Policji w Białej Podlaskiej",
+      "url": "https://biala-podlaska.policja.gov.pl/lbp/informacje/aktualnosci/163730,Miala-zarobic-na-lajkach-stracila-niemal-23-tys-zl-Apelujemy-o-rozwage.html",
+      "date": "2025-11-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

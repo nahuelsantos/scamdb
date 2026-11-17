@@ -1,0 +1,126 @@
+{
+  "id": "pl/whatsapp-vote-takeover",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "pl": "Znajomy na WhatsAppie (konto już przejęte)",
+    "en": "A friend on WhatsApp (their account already taken over)"
+  },
+  "name": {
+    "pl": "WhatsApp: „zagłosuj na mnie w konkursie” i przejęcie konta kodem",
+    "en": "WhatsApp: “vote for me in a contest” and account takeover with a code"
+  },
+  "how": {
+    "pl": "Znajomy pisze na WhatsAppie z prośbą o głos w konkursie, na przykład dla dziecka albo siostrzenicy. Żeby zagłosować, trzeba się „zweryfikować” przez WhatsApp: zeskanować kod QR albo przepisać kod, który przyszedł SMS-em. W rzeczywistości w ten sposób oszuści podłączają swoje urządzenie do Twojego konta. Potem piszą z niego do Twoich kontaktów: z tą samą prośbą albo z prośbą o pieniądze.",
+    "en": "A friend writes on WhatsApp asking you to vote in a contest, for example for their child or niece. To vote you must “verify” through WhatsApp: scan a QR code or type in a code that came by text. In reality this links the scammers’ device to your account. They then use it to write to your contacts: with the same request, or asking for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Znajomy prosi o głos w konkursie.",
+        "en": "A friend asks you to vote in a contest."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Link do strony głosowania.",
+        "en": "A link to a voting page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pl": "„Weryfikacja” przez WhatsApp: kod QR albo kod z SMS-a.",
+        "en": "“Verification” through WhatsApp: a QR code or a code from a text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "pl": "Twoje konto zostaje podłączone do cudzego urządzenia.",
+        "en": "Your account gets linked to someone else’s device."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Hejka! 🙏 Moja chrześnica bierze udział w konkursie tanecznym i brakuje jej kilku głosów do finału. Kliknij proszę i zagłosuj, trzeba tylko potwierdzić numer przez WhatsApp: [link] Z góry dziękuję! 💃",
+        "en": "Hiya! 🙏 My goddaughter is in a dance contest and needs a few more votes to reach the final. Please click and vote, you just need to confirm your number through WhatsApp: [link] Thanks in advance! 💃"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "whatsapp głosowanie konkurs kod",
+      "znajomy prosi zagłosuj link whatsapp",
+      "przejęte konto whatsapp kod weryfikacyjny",
+      "zeskanuj kod qr głosowanie",
+      "konkurs dziecko głos potwierdź numer",
+      "powiązane urządzenia whatsapp obce",
+      "przepisałam kod sms głosowania"
+    ],
+    "en": [
+      "whatsapp vote for my niece scam",
+      "friend asked me to vote and enter a code",
+      "whatsapp account hijacked after voting",
+      "scan qr code to vote in a contest",
+      "unknown linked device on my whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "pl": [
+      "Żadne głosowanie nie wymaga logowania przez WhatsApp ani kodu z SMS-a.",
+      "Kod weryfikacyjny WhatsApp lub kod QR połączenia urządzeń daje komuś dostęp do Twojego konta.",
+      "Prośba przychodzi od znajomego, bo jego konto zostało już przejęte."
+    ],
+    "en": [
+      "No vote ever requires logging in with WhatsApp or a code from a text.",
+      "A WhatsApp verification code or device-linking QR code gives someone access to your account.",
+      "The request comes from a friend because their account has already been taken over."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Nie podawaj nikomu kodów i nie skanuj kodów QR z takich stron.",
+      "Jeśli to zrobiłeś, od razu wejdź w ustawienia WhatsApp i wyloguj wszystkie połączone urządzenia; włącz weryfikację dwuetapową.",
+      "Uprzedź znajomych, że ktoś może pisać z Twojego konta.",
+      "Zgłoś stronę do CERT Polska; SMS-y przekaż na numer 8080."
+    ],
+    "en": [
+      "Don’t give anyone codes and don’t scan QR codes from such pages.",
+      "If you did, open WhatsApp settings straight away and log out all linked devices; turn on two-step verification.",
+      "Warn your contacts that someone may be writing from your account.",
+      "Report the page to CERT Polska; forward texts to 8080."
+    ]
+  },
+  "reportTo": [
+    "pl/cert-polska",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Uważaj na prośby o głosowanie od znajomych! [134/2026]",
+      "publisher": "CERT Polska (NASK)",
+      "url": "https://moje.cert.pl/komunikaty/2026/134/uwazaj-na-prosby-o-glosowanie-od-znajomych/",
+      "date": "2026-08-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/blik-code-hacked-friend"
+  ]
+}

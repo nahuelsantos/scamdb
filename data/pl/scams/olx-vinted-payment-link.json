@@ -1,0 +1,134 @@
+{
+  "id": "pl/olx-vinted-payment-link",
+  "country": "pl",
+  "lang": "pl",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "online",
+    "email"
+  ],
+  "sender": {
+    "pl": "„Kupujący” z OLX lub Vinted, zwykle przenoszący rozmowę na WhatsApp; potem fałszywa „obsługa” lub „kurier”",
+    "en": "A “buyer” from OLX or Vinted, usually moving the chat to WhatsApp; then a fake “support team” or “courier”"
+  },
+  "name": {
+    "pl": "OLX i Vinted: „kupujący zapłacił, odbierz płatność” przez fałszywy link",
+    "en": "OLX and Vinted: “the buyer has paid, collect your payment” via a fake link"
+  },
+  "how": {
+    "pl": "Sprzedajesz coś na portalu ogłoszeniowym. Odzywa się chętny, często przez WhatsApp, który od razu „kupuje” i „płaci”, czasem zamawia też kuriera. Wysyła link, pod którym rzekomo odbierzesz pieniądze. Strona wygląda jak OLX, Vinted, firma kurierska albo Twój bank i prosi o dane karty, logowanie do bankowości lub kod BLIK. W rzeczywistości dane trafiają do oszustów, którzy wykonują transakcje z Twojego konta. Bywa też, że „kupujący” twierdzi, iż płatność utknęła i trzeba ją „odblokować”.",
+    "en": "You’re selling something on a classifieds site. A keen buyer gets in touch, often on WhatsApp, who “buys” and “pays” straight away and sometimes books a courier too. They send a link where you can supposedly collect the money. The page looks like OLX, Vinted, a courier company or your bank and asks for your card details, your online-banking login or a BLIK code. In reality the details go to the scammers, who make transactions from your account. Sometimes the “buyer” claims the payment is stuck and needs “unlocking”."
+  },
+  "steps": [
+    {
+      "text": {
+        "pl": "Kupujący nie negocjuje, od razu chce płacić i przenosi rozmowę na WhatsApp.",
+        "en": "The buyer doesn’t haggle, wants to pay at once and moves the chat to WhatsApp."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pl": "Dostajesz link do „odbioru płatności” albo „potwierdzenia przesyłki”.",
+        "en": "You get a link to “collect the payment” or “confirm the shipment”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "pl": "Strona wygląda jak serwis, kurier lub bank i prosi o dane karty lub logowanie.",
+        "en": "The page looks like the site, a courier or a bank and asks for card details or a login."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pl": "Pojawia się prośba o kod BLIK lub kod z SMS-a, żeby „przyjąć” pieniądze.",
+        "en": "You’re asked for a BLIK code or a code from a text to “receive” the money."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pl": "Dzień dobry, kupuję Pani rower 🙂 Zapłaciłem już przez OLX z dostawą, kurier odbierze paczkę jutro. Żeby pieniądze wpłynęły na Pani konto, trzeba jeszcze potwierdzić dane do wypłaty pod tym linkiem: [link] Proszę zrobić to dzisiaj, bo transakcja wygaśnie.",
+        "en": "Good morning, I’m buying your bike 🙂 I’ve already paid through OLX with delivery, the courier will collect the parcel tomorrow. For the money to reach your account you just need to confirm your payout details at this link: [link] Please do it today or the transaction will expire."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pl": [
+      "oszustwo olx link odbierz płatność",
+      "vinted kupujący wysłał link zapłata",
+      "kupujący whatsapp olx kurier płatność",
+      "odbiór środków sprzedaż link dane karty",
+      "oszustwo na link sprzedający ogłoszenie",
+      "olx dostawa potwierdź dane wypłaty",
+      "kupujący zapłacił odblokuj transakcję",
+      "fałszywa strona olx bankowość logowanie",
+      "sprzedaję przedmiot kupująca opłaciła link",
+      "wpisać numer karty odebrać pieniądze ogłoszenie",
+      "pieniądze kupującego czekają sprzedający odbiór"
+    ],
+    "en": [
+      "olx buyer sent me a link to receive payment",
+      "vinted scam link to get paid",
+      "buyer on whatsapp says he already paid",
+      "fake courier page asking for my card details",
+      "link to collect money for item i sold"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "pl": [
+      "Żeby otrzymać pieniądze, nigdy nie musisz podawać danych logowania, kodu CVV ani kodu BLIK.",
+      "OLX i Vinted nie wysyłają linków do „odbioru płatności” przez WhatsApp ani SMS.",
+      "Kupujący, który nie pyta o stan rzeczy i od razu chce płacić, to częsty znak oszustwa."
+    ],
+    "en": [
+      "To receive money you never need to give your login, CVV or a BLIK code.",
+      "OLX and Vinted don’t send links to “collect a payment” over WhatsApp or text.",
+      "A buyer who asks nothing about the item and wants to pay immediately is a common warning sign."
+    ]
+  },
+  "whatToDo": {
+    "pl": [
+      "Rozliczaj się wyłącznie w aplikacji lub na stronie portalu, zgodnie z jego zasadami. Nie klikaj linków od kupujących.",
+      "Czytaj uważnie SMS-y autoryzacyjne z banku: często opisują coś zupełnie innego niż „odbiór pieniędzy”.",
+      "Jeśli podałeś dane, od razu zadzwoń do banku i zastrzeż kartę.",
+      "Zgłoś fałszywą stronę do CERT Polska i złóż zawiadomienie na Policji."
+    ],
+    "en": [
+      "Settle only in the site’s app or website, following its rules. Don’t click links from buyers.",
+      "Read the bank’s authorisation texts carefully: they often describe something very different from “receiving money”.",
+      "If you entered details, call your bank at once and block your card.",
+      "Report the fake page to CERT Polska and file a report with the police."
+    ]
+  },
+  "reportTo": [
+    "pl/your-bank",
+    "pl/zastrzegam",
+    "pl/cert-polska",
+    "pl/policja"
+  ],
+  "sources": [
+    {
+      "title": "Uwaga na oszustwa metodą \"na link\"",
+      "publisher": "Komenda Powiatowa Policji w Świdniku",
+      "url": "https://swidnik.policja.gov.pl/lsw/informacje/aktualnosci/166456,Uwaga-na-oszustwa-metoda-quotna-linkquot.html",
+      "date": "2026-02-04"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "pl/parcel-sms-fee"
+  ]
+}

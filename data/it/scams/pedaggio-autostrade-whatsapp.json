@@ -1,0 +1,131 @@
+{
+  "id": "it/pedaggio-autostrade-whatsapp",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "it": "Finti Autostrade per l'Italia, Telepass o servizi di pedaggio (spesso da numero estero)",
+    "en": "Fake Autostrade per l'Italia, Telepass or toll services (often from a foreign number)"
+  },
+  "name": {
+    "it": "Pedaggio autostradale non pagato o Telepass sospeso: link per pagare",
+    "en": "Unpaid motorway toll or Telepass suspended: link to pay"
+  },
+  "how": {
+    "it": "Su WhatsApp, per SMS o per e-mail arriva un avviso a nome di Autostrade per l'Italia o di Telepass: un pedaggio non risulta pagato, o il dispositivo Telepass sarà disattivato. Bisogna pagare subito per evitare una sanzione, tramite un link. Il sito falso ruba dati personali e della carta e le credenziali della banca.",
+    "en": "On WhatsApp, by text or by email, a notice arrives in the name of Autostrade per l'Italia or Telepass: a toll appears unpaid, or your Telepass device will be deactivated. You must pay at once to avoid a penalty, through a link. The fake site steals personal and card details and bank logins."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un messaggio, spesso da un numero estero, segnala un pedaggio non pagato.",
+        "en": "A message, often from a foreign number, reports an unpaid toll."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Bisogna pagare subito per evitare sanzioni.",
+        "en": "You must pay at once to avoid penalties."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Il link porta a un sito che imita Autostrade o Telepass.",
+        "en": "The link leads to a site imitating Autostrade or Telepass."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "Il sito chiede dati della carta e codici della banca.",
+        "en": "The site asks for card details and bank codes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Autostrade per l'Italia: risulta un mancato pagamento del pedaggio del 14/11. Per evitare la sanzione amministrativa regolarizza la posizione entro oggi: [link]",
+        "en": "Autostrade per l'Italia: a missed toll payment from 14/11 is on record. To avoid an administrative penalty, settle it today: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "pedaggio non pagato messaggio",
+      "autostrade per l italia whatsapp link",
+      "telepass sospeso aggiornare carta",
+      "mancato pagamento casello sanzione",
+      "rapporto mancato pagamento pedaggio sms",
+      "dispositivo telepass disattivato email"
+    ],
+    "en": [
+      "unpaid motorway toll message",
+      "autostrade whatsapp payment link",
+      "telepass suspended update card",
+      "pay toll today to avoid fine",
+      "telepass device deactivated email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "it": [
+      "Autostrade per l'Italia non chiede pagamenti con un link su WhatsApp da numeri esteri.",
+      "Toni minacciosi come \"paga subito\" o \"evita sanzioni\" sono tipici della truffa.",
+      "I mancati pagamenti si controllano solo sul sito o nell'app ufficiale."
+    ],
+    "en": [
+      "Autostrade per l'Italia does not ask for payments through a WhatsApp link from foreign numbers.",
+      "Threatening tones like “pay now” or “avoid penalties” are typical of the scam.",
+      "Missed payments are only checked on the official site or app."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non cliccate: bloccate il numero e controllate eventuali pedaggi sul sito o nell'app ufficiale.",
+      "Se avete pagato, chiamate subito la banca, bloccate la carta e cambiate le password.",
+      "Segnalate alla Polizia Postale."
+    ],
+    "en": [
+      "Do not click: block the number and check any tolls on the official site or app.",
+      "If you paid, call your bank at once, block the card and change your passwords.",
+      "Report it to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Nuova truffa WhatsApp su presunti mancati pagamenti autostradali",
+      "publisher": "Polizia di Stato, Commissariato di P.S. Online",
+      "url": "https://www.commissariatodips.it/notizie/articolo/nuova-truffa-whatsapp-su-presunti-mancati-pagamenti-autostradali/index.html",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "Sintesi riepilogativa delle campagne malevole nella settimana del 31 ottobre – 6 novembre",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/sintesi-riepilogativa-delle-campagne-malevole-nella-settimana-del-31-ottobre-6-novembre/",
+      "date": "2026-11-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "it/multa-pagopa-falsa"
+  ]
+}

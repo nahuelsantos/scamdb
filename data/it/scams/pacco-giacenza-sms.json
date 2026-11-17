@@ -1,0 +1,128 @@
+{
+  "id": "it/pacco-giacenza-sms",
+  "country": "it",
+  "lang": "it",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "it": "Finti BRT, GLS, Poste, DHL o InPost",
+    "en": "Fake BRT, GLS, Poste, DHL or InPost"
+  },
+  "name": {
+    "it": "Pacco in giacenza: SMS di un falso corriere con piccola tassa da pagare",
+    "en": "Parcel on hold: fake courier text with a small fee to pay"
+  },
+  "how": {
+    "it": "Un SMS o un'e-mail a nome di un corriere dice che un pacco è fermo in giacenza per indirizzo incompleto o spese di spedizione non pagate. Basta pagare pochi euro tramite un link per riprogrammare la consegna. Il sito falso ruba i dati della carta e spesso chiede anche il codice di conferma della banca, che poi viene usato per pagamenti molto più alti.",
+    "en": "A text or email in a courier's name says a parcel is held because of an incomplete address or unpaid shipping costs. You only need to pay a few euros through a link to reschedule delivery. The fake site steals your card details and often also asks for the bank's confirmation code, which is then used for much bigger payments."
+  },
+  "steps": [
+    {
+      "text": {
+        "it": "Un \"corriere\" scrive che il pacco è in giacenza.",
+        "en": "A “courier” writes that your parcel is on hold."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "it": "Bisogna pagare una piccola cifra per la riconsegna tramite link.",
+        "en": "A small sum must be paid for redelivery through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "it": "Se non pagate entro poco tempo il pacco torna al mittente.",
+        "en": "If you do not pay soon the parcel goes back to the sender."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "it": "Il sito chiede dati della carta e il codice di conferma della banca.",
+        "en": "The site asks for card details and the bank's confirmation code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "it": "Il tuo pacco è in giacenza presso il nostro centro di smistamento: indirizzo incompleto. Paga 1,99 EUR per la nuova consegna entro 48 ore, poi la spedizione sarà restituita: [link]",
+        "en": "Your parcel is being held at our sorting centre: incomplete address. Pay 1.99 EUR for a new delivery within 48 hours, after which the shipment will be returned: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "it": [
+      "pacco in giacenza sms",
+      "spese spedizione da pagare link",
+      "corriere indirizzo incompleto",
+      "brt consegna non riuscita messaggio",
+      "pagare riconsegna pacco carta",
+      "spedizione bloccata dogana sms",
+      "gls pacco fermo deposito"
+    ],
+    "en": [
+      "parcel on hold text",
+      "pay shipping fee to redeliver",
+      "courier says address incomplete",
+      "small fee for parcel delivery link",
+      "package returned unless i pay"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "it": [
+      "I corrieri non chiedono piccoli pagamenti via SMS con un link.",
+      "Il messaggio non dice da quale negozio arriva il pacco né il vostro nome.",
+      "Per pagare pochi euro non serve mai il codice di conferma della banca di un'altra operazione."
+    ],
+    "en": [
+      "Couriers do not ask for small payments by text with a link.",
+      "The message does not say which shop the parcel is from, nor your name.",
+      "Paying a few euros never needs a bank confirmation code for another operation."
+    ]
+  },
+  "whatToDo": {
+    "it": [
+      "Non cliccate: controllate la spedizione dal sito o dall'app del negozio dove avete comprato.",
+      "Se avete inserito la carta, bloccatela subito con la banca.",
+      "Segnalate il messaggio alla Polizia Postale."
+    ],
+    "en": [
+      "Do not click: track the shipment on the website or app of the shop you bought from.",
+      "If you entered your card, block it with your bank at once.",
+      "Report the message to the Postal Police."
+    ]
+  },
+  "reportTo": [
+    "it/polizia-postale",
+    "it/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Sintesi riepilogativa delle campagne malevole nella settimana del 7 – 13 Novembre",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/sintesi-riepilogativa-delle-campagne-malevole-nella-settimana-del-7-13-novembre/",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Sintesi riepilogativa delle campagne malevole nella settimana del 24 – 30 ottobre",
+      "publisher": "CERT-AgID (Agenzia per l'Italia Digitale)",
+      "url": "https://cert-agid.gov.it/news/sintesi-riepilogativa-delle-campagne-malevole-nella-settimana-del-24-30-ottobre/",
+      "date": "2026-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}
