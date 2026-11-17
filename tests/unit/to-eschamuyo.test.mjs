@@ -5,7 +5,9 @@ import { toEschamuyo } from '../../tools/to-eschamuyo.mjs';
 import { loadRepo } from '../../lib/load.js';
 
 const fx = (f) => JSON.parse(readFileSync(new URL(`../fixtures/eschamuyo/${f}`, import.meta.url)));
-const entries = loadRepo(new URL('../../', import.meta.url).pathname).entries;
+// The 20 entries migrated from eschamuyo round-trip exactly; entries added later in scamdb are tested below.
+const migrated = new Set(JSON.parse(readFileSync(new URL('../fixtures/eschamuyo/scams.json', import.meta.url))).scams.map((s) => `ar/${s.id}`));
+const entries = loadRepo(new URL('../../', import.meta.url).pathname).entries.filter((e) => migrated.has(e.id));
 const overlay = fx('overlay.json');
 
 test('round trip: scamdb data gives back eschamuyo scams.json exactly', () =>

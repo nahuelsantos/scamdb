@@ -2,6 +2,38 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe and worldwide discovery research; real screenshots
+
+**Research:**
+- `docs/research/europe-sources-2026-11-16.md`: every European country's official warning sources, where to
+  report, feeds and licences, plus a rollout in 9 waves.
+- `docs/research/discovery-sources-2026-11-16.md`: free sources for spotting new scams worldwide and their terms.
+- Plan: `docs/superpowers/plans/2026-11-16-europe-and-discovery.md`.
+
+**Findings:**
+- **The matcher's normaliser drops Greek and Cyrillic entirely**, plus ß, ł, ø and €. It must be fixed before wave
+  4 (Polish) and wave 5 (Greek, Cyrillic, Turkish).
+- **Few European sources are openly licensed:** Cybermalveillance (Etalab), NCSC.nl (CC0), UK NCSC (OGL),
+  CSIRT.CZ (CC BY-SA). We cite and write our own text everywhere.
+- **For worldwide discovery, GDELT** (free, global, 65 languages, commercial use allowed with credit) **plus
+  official agency RSS feeds are the clean backbone.**
+  - **Reddit's terms cover even its RSS feeds**, and robots.txt says `Disallow: /`, so no automated Reddit
+    ingestion.
+  - **YouTube's API forbids "gaining insights" from aggregated data.** Telegram bans scraping. OpenPhish is
+    personal use only.
+- **Workers Free can't run the fetcher** (10 ms CPU per cron run), so the discovery pipeline runs in GitHub
+  Actions.
+
+**Real screenshots from the owner (3):**
+- **Two show a fake dollar sale** ("tengo 5.000 dólares para vender… necesito los pesos por transferencia") from a
+  hijacked WhatsApp. Argentina had no entry for it: before, the checker only said "suspicious" and matched unrelated
+  scams. New entry `ar/venta-de-dolares` drafted, with 2026 sources; now the top match (score 14).
+- **One shows a fake daughter with a new number** ("Hola pa soy …, agendame este número alternativo, se me cayó el
+  cel"). Argentina had no "Hi Mum" entry, and the keyword rules missed "agendame" and "número alternativo". New entry
+  `ar/hijo-numero-nuevo` drafted (score 15.5), and the `new_number` rule now knows the Argentine phrasing.
+- **All three messages were added, redacted, to the encrypted private test set** (now 57 messages). No phone number,
+  name or image is stored anywhere.
+
 ## 2026-11-16 (night): open data, feeds, corrections
 
 From the competitor review (`docs/research/competitors-2026-11-16.md`), approved by the owner:
