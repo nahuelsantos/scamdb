@@ -1,6 +1,6 @@
 // Warning signs read from a message (Spanish and English). Spanish rules come from eschamuyo's analyze.js.
 // Every regex runs on normalize(text): lowercase, no accents, no punctuation.
-import { normalize } from '../../lib/text.js';
+import { normalize, foldChar } from '../../lib/text.js';
 
 // Portuguese rules are folded into the same ids (Brazil). English rules need context: bare "code", "pay" or "download" appear in ordinary messages.
 const EN = {
@@ -12,7 +12,7 @@ export const SIGNS = {
   asks_for_code: new RegExp(String.raw`\bcodigo|\bclave|\bpin\b|\btoken\b|contrasena|` + EN.code),
   remote_access: new RegExp(String.raw`instal(a|e|ar|o|en|ame|ate)\b|descarg|anydesk|teamviewer|supremo|baj(a|e|ar|o) (esta|la|una|el|este) (app|aplicacion)|ver (tu|su|mi) pantalla|selfie|foto (de|del) (tu |su )?dni|` + EN.remote),
   urgency: /urgent|\bhoy\b|vence|vencimiento|bloque|suspend|inmediat|ahora mismo|\b24 ?(h|hs|horas|hours)\b|ultimo aviso|rapido|\btoday\b|immediately|right (now|away)|expir|account (is |will be |has been )?locked|final (notice|warning)|last chance|\basap\b/,
-  money_request: new RegExp(String.raw`transfer|\bplata\b|dinero|\bpag(a|ar|ue|ues|a)\b|abon|\bsena\b|\bcbu\b|\bcvu\b|\balias\b|\$|deposit|prestamo|cajero|devolv|(datos|numero) de (tu|la|su) tarjeta|` + EN.money),
+  money_request: new RegExp(String.raw`transfer|\bplata\b|dinero|\bpag(a|ar|ue|ues|a)\b|abon|\bsena\b|\bcbu\b|\bcvu\b|\balias\b|\$|€|£|deposit|prestamo|cajero|devolv|(datos|numero) de (tu|la|su) tarjeta|` + EN.money),
   unknown_link: /enlace|\blink\b|http|www|desconocid|click (here|the|this|below)/,
   new_number: /troquei de numero|numero novo|novo numero|salva (esse|este|meu) numero|numero nuevo|nuevo numero|cambie de numero|agendalo|agenda este|agendame|numero alternativo|se me (cayo|rompio|mojo) el (cel|celu|celular|telefono)|new number|changed my number|save (this|my) number/,
   impersonation: /le hablo de|te hablo de|somos de|\bpami\b|\banses\b|\barca\b|\bafip\b|\bbanco\b|correo argentino|mercado pago|soporte tecnico|area de seguridad|(calling|call|message) from (your|the) bank|your bank s|bank s (fraud|security)|tech(nical)? support|fraud (team|department)|security (team|department)|calling from|post office|customs (office|fee)|tax (office|agency)|from the (irs|hmrc|ato|cra)|royal mail|\busps\b/,
@@ -53,7 +53,7 @@ export function normalizeWithMap(text) {
   for (let i = 0; i < src.length; i++) {
     // Keep thousands separators inside numbers ("$1,480", "$50.000") so evidence quotes the whole amount.
     if ((src[i] === ',' || src[i] === '.') && /\d/.test(src[i - 1] ?? '') && /\d/.test(src[i + 1] ?? '')) continue;
-    const c = src[i].toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/[^a-z0-9$ñ\s]/g, ' ');
+    const c = foldChar(src[i]);
     for (const ch of c) {
       const ws = /\s/.test(ch);
       if (ws && (out === '' || out.endsWith(' '))) continue;

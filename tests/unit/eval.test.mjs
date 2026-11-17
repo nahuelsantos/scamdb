@@ -69,7 +69,7 @@ test('the matcher stays above its floors on the labelled set', async () => {
   const r = await evaluate(real, (m) => matchMessage(m.text, repo.entries, { country: m.country }));
   const x = rates(r.all);
   assert.ok(x.caught >= 96, `scams caught ${x.caught}%`);
-  assert.ok(x.calledScam >= 42, `scams called "scam" ${x.calledScam}%`);
+  assert.ok(x.calledScam >= 46, `scams called "scam" ${x.calledScam}%`);
   assert.ok(x.top3 >= 76, `right match in top 3 ${x.top3}%`);
   assert.ok(x.falseScam <= 7.5, `safe messages called "scam" ${x.falseScam}%`);
   assert.ok(r.all.wrongMatches / r.all.scams <= 0.95, `wrong matches per scam ${(r.all.wrongMatches / r.all.scams).toFixed(2)}`);
