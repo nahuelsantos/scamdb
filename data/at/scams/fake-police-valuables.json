@@ -1,0 +1,132 @@
+{
+  "id": "at/fake-police-valuables",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "de": "„Kriminalpolizei“ oder „Polizei“ (oft mit gefälschter Nummer)",
+    "en": "“Criminal police” or “police” (often with a faked number)"
+  },
+  "name": {
+    "de": "Falscher Polizist: Einbrecherbande in der Nähe, Wertsachen „sicherstellen“",
+    "en": "Fake police officer: burglars nearby, “secure” your valuables"
+  },
+  "how": {
+    "de": "Ein angeblicher Polizist ruft an: In Ihrer Nachbarschaft sei eingebrochen worden, man habe Täter mit einer Liste gefasst, auf der Ihre Adresse stehe. Oder Ihr Geld bei der Bank sei nicht sicher, weil Bankmitarbeiter mit den Tätern zusammenarbeiten. Sie sollen Bargeld abheben, Gold und Schmuck zusammensuchen und einem „Kollegen“ übergeben, der alles in Verwahrung nimmt. Sie werden lange am Telefon gehalten und sollen niemandem davon erzählen.",
+    "en": "A supposed police officer calls: there have been break-ins in your neighbourhood, and burglars were caught with a list that includes your address. Or your money at the bank is not safe because bank staff are working with the criminals. You are told to withdraw cash, gather gold and jewellery and hand them to a “colleague” who will keep them safe. You are kept on the phone for a long time and told to tell nobody."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein „Polizist“ ruft an: Einbrecher in der Gegend, Ihre Adresse stehe auf einer Liste.",
+        "en": "A “police officer” calls: burglars in the area, your address is on a list."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Ihre Wertsachen und Ihr Bankguthaben seien in Gefahr; auch der Bank dürfen Sie nicht trauen.",
+        "en": "Your valuables and bank balance are in danger; you mustn’t trust the bank either."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "de": "Sie sollen am Telefon bleiben, während Sie Geld abheben.",
+        "en": "You must stay on the phone while you withdraw money."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "de": "Ein Zivilbeamter holt Bargeld, Gold und Schmuck ab.",
+        "en": "A plain-clothes officer collects cash, gold and jewellery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Guten Abend, Kriminalpolizei Linz. Wir haben letzte Nacht zwei Einbrecher festgenommen, bei denen ein Zettel mit Ihrer Adresse gefunden wurde. Die Komplizen sind noch frei. Haben Sie Bargeld oder Schmuck im Haus? Ein Kollege in Zivil kommt in einer Stunde und nimmt alles zur Sicherheit mit. Sprechen Sie mit niemandem darüber, auch nicht mit Ihrer Bank, dort gibt es einen Verdächtigen.",
+        "en": "Good evening, criminal police Linz. Last night we arrested two burglars who had a note with your address. Their accomplices are still free. Do you have cash or jewellery in the house? A plain-clothes colleague will come in an hour and take everything for safekeeping. Don’t talk to anyone about this, not even your bank, there is a suspect there."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "falscher polizist anruf einbrecher",
+      "polizei will wertsachen abholen",
+      "schmuck gold zur sicherheit übergeben",
+      "einbrecherbande liste adresse anruf",
+      "bankmitarbeiter komplizen polizei anruf",
+      "zivilbeamter holt bargeld ab",
+      "kriminalpolizei anruf wertsachen verwahrung"
+    ],
+    "en": [
+      "fake police officer call burglars",
+      "police want to collect valuables",
+      "hand over gold for safekeeping",
+      "burglars had list with my address",
+      "officer said bank staff involved",
+      "plain clothes officer collects cash"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Die Polizei holt nie Geld, Gold oder Schmuck zur Verwahrung ab.",
+      "Die echte Polizei ruft nicht mit 133 oder 112 am Display an.",
+      "Sie sollen niemandem trauen, auch nicht der Bank oder Familie."
+    ],
+    "en": [
+      "The police never collect money, gold or jewellery for safekeeping.",
+      "The real police do not call showing 133 or 112 on screen.",
+      "You are told to trust nobody, not even the bank or family."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Auflegen und selbst 133 wählen, neu eintippen.",
+      "Kommt jemand, um Wertsachen abzuholen? Nicht öffnen und sofort 133 anrufen.",
+      "Familie informieren und Anzeige erstatten."
+    ],
+    "en": [
+      "Hang up and dial 133 yourself, typing it fresh.",
+      "Is someone coming to collect valuables? Don’t open the door and call 133 at once.",
+      "Tell your family and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "at/police-emergency",
+    "at/police-report"
+  ],
+  "sources": [
+    {
+      "title": "Falsche Polizisten fordern Geld und Gold",
+      "publisher": "ORF Oberösterreich",
+      "url": "https://ooe.orf.at/stories/3367288/",
+      "date": "2026-08-17"
+    },
+    {
+      "title": "Cybercrimereport 2025",
+      "publisher": "Bundeskriminalamt",
+      "url": "https://www.bundeskriminalamt.at/306/files/307-2026-ccr-2025-a4-v20260812-bf.pdf",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/shock-call-accident-bail"
+  ]
+}

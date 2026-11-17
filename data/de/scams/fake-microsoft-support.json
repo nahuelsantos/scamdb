@@ -1,0 +1,134 @@
+{
+  "id": "de/fake-microsoft-support",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "de": "„Microsoft-Support“, eine Warnmeldung auf dem Bildschirm oder ein Anrufer",
+    "en": "“Microsoft support”, a warning on screen or a caller"
+  },
+  "name": {
+    "de": "Falsche Microsoft-Mitarbeiter: Warnmeldung oder Anruf, Fernzugriff und Zugriff aufs Online-Banking",
+    "en": "Fake Microsoft staff: a warning or call, remote access and access to online banking"
+  },
+  "how": {
+    "de": "Auf dem Computer erscheint plötzlich eine Warnung, oft mit Sirene oder gesperrtem Bildschirm: Ihr PC sei infiziert oder gehackt, rufen Sie sofort den Microsoft-Support an. Andere bekommen eine Mail oder einen Anruf von „Microsoft“. Der angebliche Techniker erzählt von Hackern oder Kriminellen, die gerade Geld abbuchen wollen, und lässt Sie ein Fernwartungsprogramm installieren. Dann sollen Sie sich ins Online-Banking einloggen, „zur Kontrolle“, oder für die angebliche Reparatur bezahlen. In Wahrheit überweisen die Täter Geld von Ihrem Konto.",
+    "en": "A warning suddenly appears on your computer, often with a siren or a locked screen: your PC is infected or hacked; call Microsoft support now. Others get an email or a call from “Microsoft”. The supposed technician talks about hackers or criminals trying to take money right now and has you install a remote-access program. Then you are asked to log in to online banking “to check”, or to pay for the supposed repair. In reality the criminals transfer money from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine Warnmeldung mit Telefonnummer, eine Mail oder ein Anruf von „Microsoft“.",
+        "en": "A warning with a phone number, an email or a call from “Microsoft”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Ihr Computer sei gehackt, Ihr Geld in Gefahr.",
+        "en": "Your computer is hacked; your money is at risk."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie sollen AnyDesk, TeamViewer oder eine ähnliche App installieren.",
+        "en": "You must install AnyDesk, TeamViewer or a similar app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "de": "Dann sollen Sie sich ins Online-Banking einloggen oder für den Support zahlen.",
+        "en": "Then you must log in to online banking or pay for the support."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "WARNUNG! Ihr Windows-Computer wurde aufgrund verdächtiger Aktivitäten gesperrt. Ihre Bankdaten und Passwörter sind gefährdet. Schalten Sie den Computer NICHT aus. Rufen Sie sofort den Microsoft Technischen Support an: [Nummer]. Fehlercode: 0x80070fx",
+        "en": "WARNING! Your Windows computer has been locked because of suspicious activity. Your bank details and passwords are at risk. Do NOT turn off the computer. Call Microsoft Technical Support immediately: [number]. Error code: 0x80070fx"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "falscher microsoft mitarbeiter",
+      "microsoft support anruf fernzugriff",
+      "warnmeldung computer gesperrt anrufen",
+      "pc gehackt microsoft hotline",
+      "fernwartung anydesk microsoft",
+      "techniker will online banking sehen",
+      "windows gesperrt warnung telefonnummer",
+      "banner microsoft funktioniert nicht",
+      "rechner fehlermeldungen hacker zugriff",
+      "programm herunterladen bereinigen techniker",
+      "technischer kundendienst microsoft"
+    ],
+    "en": [
+      "fake microsoft support call",
+      "pop up said my computer is locked call this number",
+      "technician asked for remote access",
+      "microsoft scammer logged into my bank",
+      "windows warning with a phone number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Microsoft meldet sich nie unaufgefordert per Anruf, Mail oder Pop-up, um Probleme zu beheben.",
+      "Echte Warnungen enthalten keine Telefonnummer zum Anrufen.",
+      "Niemand vom Support muss Ihr Online-Banking sehen."
+    ],
+    "en": [
+      "Microsoft never contacts you unprompted by call, email or pop-up to fix problems.",
+      "Real warnings don’t contain a phone number to call.",
+      "No support worker needs to see your online banking."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Rufen Sie nicht an und legen Sie auf. Schließen Sie den Browser, notfalls über einen Neustart.",
+      "Haben Sie Fernzugriff gewährt? Trennen Sie den Computer vom Internet, lassen Sie Online-Banking und Karten über Ihre Bank oder den Sperr-Notruf 116 116 sperren und ändern Sie Passwörter von einem anderen Gerät.",
+      "Erstatten Sie Anzeige bei der Polizei."
+    ],
+    "en": [
+      "Don’t call, and hang up. Close the browser, restarting if necessary.",
+      "Did you give remote access? Disconnect the computer from the internet, have online banking and cards blocked through your bank or the 116 116 block line, and change passwords from another device.",
+      "File a police report."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/sperr-notruf",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-PPWP: Falsche Microsoft-Mitarbeiter: 20.000 Euro Schaden",
+      "publisher": "Polizeipräsidium Westpfalz (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/117683/6392072",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "POL-Pforzheim: (PF) Pforzheim - Polizei warnt vor falschen Microsoft-Mitarbeitern",
+      "publisher": "Polizeipräsidium Pforzheim (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/137462/6390979",
+      "date": "2026-11-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

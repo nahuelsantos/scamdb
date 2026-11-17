@@ -1,0 +1,136 @@
+{
+  "id": "ch/e-vignette-phishing-fakeshop",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "email",
+    "online"
+  ],
+  "sender": {
+    "de": "Eine E-Mail zur E-Vignette oder eine gesponserte Suchanzeige",
+    "fr": "Un e-mail sur la e-vignette ou une annonce sponsorisée dans un moteur de recherche",
+    "en": "An email about the e-vignette or a sponsored search ad"
+  },
+  "name": {
+    "de": "E-Vignette: „Vignette gesperrt, Zahlungsdaten aktualisieren“ und falsche Verkaufsseiten",
+    "fr": "E-vignette : « vignette bloquée, mettez à jour le paiement » et faux sites de vente",
+    "en": "E-vignette: “vignette blocked, update payment details” and fake sales sites"
+  },
+  "how": {
+    "de": "Zu Jahresbeginn kommen E-Mails, Ihre E-Vignette sei wegen eines Abrechnungsproblems vorübergehend gesperrt: Aktualisieren Sie Ihre Zahlungsdaten über einen Link. Die Seite kopiert die offizielle und stiehlt Kreditkarten- und Personendaten. Andere Betrüger schalten Suchanzeigen, die zuoberst erscheinen und auf gefälschte Vignetten-Shops führen: Sie zahlen für eine ungültige Vignette. Dazu kommen Zwischenhändler, die echte Vignetten mit Aufschlägen über dem offiziellen Preis von CHF 40 verkaufen.",
+    "fr": "En début d’année arrivent des e-mails affirmant que votre e-vignette est temporairement bloquée à cause d’un problème de facturation : mettez à jour vos données de paiement via un lien. Le site copie le site officiel et vole les données de carte et personnelles. D’autres escrocs achètent des annonces qui apparaissent en tête des résultats et mènent à de fausses boutiques de vignettes : vous payez une vignette non valable. S’y ajoutent des intermédiaires qui vendent de vraies vignettes avec des suppléments au-dessus du prix officiel de CHF 40.",
+    "en": "At the start of the year, emails say your e-vignette is temporarily blocked because of a billing problem: update your payment details through a link. The page copies the official one and steals card and personal data. Other scammers buy search ads that appear at the top and lead to fake vignette shops: you pay for an invalid vignette. There are also middlemen selling real vignettes with surcharges above the official price of CHF 40."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "E-Mail: Ihre E-Vignette ist gesperrt.",
+        "fr": "E-mail : votre e-vignette est bloquée.",
+        "en": "Email: your e-vignette is blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Zahlungsdaten über den Link aktualisieren.",
+        "fr": "Mettre à jour le paiement via le lien.",
+        "en": "Update payment details through the link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Oder: gesponserte Anzeige führt zu einem falschen Shop.",
+        "fr": "Ou : une annonce sponsorisée mène à une fausse boutique.",
+        "en": "Or: a sponsored ad leads to a fake shop."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "de": "Ihre E-Vignette wurde vorübergehend gesperrt, da die letzte Abbuchung fehlgeschlagen ist. Um Bussen bei Kontrollen zu vermeiden, aktualisieren Sie bitte Ihre Zahlungsinformationen innerhalb von 48 Stunden: [Link]",
+        "fr": "Votre e-vignette a été temporairement bloquée car le dernier prélèvement a échoué. Pour éviter une amende lors d’un contrôle, veuillez mettre à jour vos informations de paiement dans les 48 heures : [lien]",
+        "en": "Your e-vignette has been temporarily blocked because the last charge failed. To avoid fines at checks, please update your payment information within 48 hours: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "e-vignette gesperrt zahlungsdaten aktualisieren",
+      "mail vignette abrechnungsproblem",
+      "vignette online kaufen falsche seite",
+      "vignette teurer als 40 franken",
+      "gesponserte anzeige vignette shop",
+      "e-vignette ungültig nach kauf"
+    ],
+    "fr": [
+      "e-vignette bloquée mettre à jour paiement",
+      "e-mail vignette problème de facturation",
+      "acheter vignette en ligne faux site",
+      "vignette plus chère que 40 francs",
+      "annonce sponsorisée boutique vignette",
+      "e-vignette pas valable après achat"
+    ],
+    "en": [
+      "e-vignette blocked update payment",
+      "vignette email billing problem",
+      "buy vignette online fake site",
+      "vignette more than 40 francs",
+      "sponsored ad vignette shop",
+      "e-vignette invalid after purchase"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "de": [
+      "Eine E-Mail sagt, die Vignette sei gesperrt, und will Kartendaten über einen Link.",
+      "Ein Vignetten-Shop aus einer Anzeige, der mehr als CHF 40 verlangt oder nicht offiziell ist."
+    ],
+    "fr": [
+      "Un e-mail dit que la vignette est bloquée et veut vos données de carte via un lien.",
+      "Une boutique de vignettes trouvée par une annonce, plus chère que CHF 40 ou non officielle."
+    ],
+    "en": [
+      "An email says your vignette is blocked and wants card details through a link.",
+      "A vignette shop from an ad that charges more than CHF 40 or isn’t official."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Kaufen Sie die E-Vignette nur im offiziellen Webshop des Bundes (Via-Portal des BAZG).",
+      "Scrollen Sie an Anzeigen mit „gesponsert“ vorbei.",
+      "Karte eingegeben? Sofort sperren lassen und den Fall dem BACS melden."
+    ],
+    "fr": [
+      "Achetez l’e-vignette uniquement sur la boutique officielle de la Confédération (portail Via de l’OFDF).",
+      "Ignorez les annonces marquées « sponsorisé ».",
+      "Carte saisie ? Faites-la bloquer et signalez le cas à l’OFCS."
+    ],
+    "en": [
+      "Buy the e-vignette only from the federal government’s official shop (the BAZG Via portal).",
+      "Scroll past ads marked “sponsored”.",
+      "Entered your card? Have it blocked and report it to BACS."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/bacs",
+    "ch/police"
+  ],
+  "sources": [
+    {
+      "title": "Woche 1: E-Vignette - Vorsicht vor Phishing und irreführenden Angeboten",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w1-de",
+      "date": "2026-01-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

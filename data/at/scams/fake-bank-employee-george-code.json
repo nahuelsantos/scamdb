@@ -1,0 +1,147 @@
+{
+  "id": "at/fake-bank-employee-george-code",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "de": "Ihre Bank, „Sicherheitsabteilung“ (die echte Banknummer kann am Display stehen)",
+    "en": "Your bank’s “security department” (the bank’s real number may show on screen)"
+  },
+  "name": {
+    "de": "Falsche Bankmitarbeiter: George-Aktivierungscode, QR-Code oder Freigabe in der App",
+    "en": "Fake bank employees: George activation code, QR code or approval in the banking app"
+  },
+  "how": {
+    "de": "Jemand ruft im Namen Ihrer Bank an, etwa der Erste Bank, Sparkasse oder Raiffeisen. Die Nummer am Display kann gefälscht sein. Angeblich wurde eine verdächtige Abbuchung gestoppt oder jemand hat Zugriff auf Ihr Online-Banking. Sie sollen George oder Ihr Banking „neu registrieren“: einen Aktivierungscode oder QR-Code am Bankomat ausdrucken und per WhatsApp an einen „Kundenberater“ schicken, oder eine Push-Nachricht in der Banking-App bestätigen. In Wahrheit geben Sie den Betrügern damit Zugang zu Ihrem Konto oder erhöhen das Überweisungslimit.",
+    "en": "Someone calls on behalf of your bank, for example Erste Bank, Sparkasse or Raiffeisen. The number on screen can be faked. Supposedly a suspicious debit was stopped or someone has access to your online banking. You are told to “re-register” George or your banking: print an activation code or QR code at the ATM and send it by WhatsApp to a “customer adviser”, or confirm a push notification in your banking app. In reality this gives the scammers access to your account or raises your transfer limit."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Anruf, manchmal mit der echten Nummer der Bank am Display: Eine verdächtige Abbuchung sei verhindert worden.",
+        "en": "A call, sometimes with the bank’s real number on screen: a suspicious debit has supposedly been stopped."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Es sei dringend: Ihr Online-Banking müsse sofort neu eingerichtet werden, sonst sei das Geld weg.",
+        "en": "It is urgent: your online banking must be set up again right away or the money will be gone."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie sollen am Bankomat einen neuen Aktivierungscode oder QR-Code ausdrucken und per WhatsApp schicken.",
+        "en": "You are told to print a new activation code or QR code at the ATM and send it by WhatsApp."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "de": "Oder Sie sollen während des Gesprächs eine Push-Nachricht in der Banking-App bestätigen.",
+        "en": "Or you are told to confirm a push notification in the banking app during the call."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "de": "Danach werden Überweisungen von Ihrem Konto gemacht.",
+        "en": "Then transfers are made from your account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Grüß Gott, hier ist die Sicherheitsabteilung Ihrer Bank. Wir haben heute früh eine Abbuchung über 1.890 Euro nach Litauen gestoppt. Damit niemand mehr auf Ihr George zugreift, müssen wir den Zugang neu aktivieren. Gehen Sie bitte zum nächsten Bankomat, drucken Sie den Aktivierungscode aus und schicken Sie mir ein Foto davon per WhatsApp. Bleiben Sie solange erreichbar.",
+        "en": "Good morning, this is your bank’s security department. Early today we stopped a debit of 1,890 euros to Lithuania. So that nobody can access your George any more, we need to activate the access again. Please go to the nearest ATM, print the activation code and send me a photo of it by WhatsApp. Stay reachable until then."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "falscher bankmitarbeiter angerufen",
+      "george aktivierungscode weitergeben",
+      "qr code bankomat ausdrucken whatsapp",
+      "verdächtige abbuchung gestoppt anruf",
+      "push nachricht banking app bestätigen",
+      "george neu registrieren",
+      "sicherheitsabteilung bank anruf",
+      "überweisungslimit erhöht anrufer"
+    ],
+    "en": [
+      "fake bank employee called",
+      "george activation code",
+      "print qr code at atm and send on whatsapp",
+      "suspicious debit stopped call",
+      "confirm push notification banking app",
+      "re register online banking caller"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Ihre Bank fragt nie nach Aktivierungscodes, QR-Codes, TAN oder PIN.",
+      "Banken schreiben nicht über WhatsApp und verlangen keine Freigaben am Telefon.",
+      "Die Nummer am Display beweist nichts: Sie kann gefälscht sein.",
+      "Eine Push-Nachricht, die Sie nicht selbst ausgelöst haben, nie bestätigen."
+    ],
+    "en": [
+      "Your bank never asks for activation codes, QR codes, a TAN or your PIN.",
+      "Banks do not write on WhatsApp and do not ask for approvals over the phone.",
+      "The number on screen proves nothing: it can be faked.",
+      "Never confirm a push notification you did not start yourself."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Auflegen und die Bank selbst anrufen, mit der Nummer auf Ihrer Karte oder in der App.",
+      "Haben Sie einen Code geschickt oder etwas bestätigt? Sofort die Bank anrufen und Online-Banking sperren lassen; außerhalb der Öffnungszeiten den Sperrnotruf.",
+      "Anzeige bei der Polizei erstatten."
+    ],
+    "en": [
+      "Hang up and call the bank yourself, using the number on your card or in the app.",
+      "Did you send a code or approve something? Call the bank at once and have online banking blocked; outside opening hours, the blocking line.",
+      "File a complaint with the police."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/card-block",
+    "at/police-report",
+    "at/bka-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Geben Sie niemals George Aktivierungscodes weiter (Fake-Bankmitarbeiter:innen)",
+      "publisher": "Erste Bank und Sparkasse",
+      "url": "https://www.sparkasse.at/sicherheitscenter/aktuelle-warnung/2026/05/27/fake-bankmitarbeiter-innen",
+      "date": "2026-05-27"
+    },
+    {
+      "title": "Steirer verlor über gefälschte FinanzOnline-Site hohen Euro-Betrag",
+      "publisher": "help.ORF.at",
+      "url": "https://help.orf.at/stories/3234405/",
+      "date": "2026-02-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/bank-phishing-sms-login",
+    "at/finanzonline-phishing"
+  ]
+}

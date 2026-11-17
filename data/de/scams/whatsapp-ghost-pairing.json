@@ -1,0 +1,133 @@
+{
+  "id": "de/whatsapp-ghost-pairing",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "de": "Ein Freund oder Verwandter von seinem echten, aber gekaperten WhatsApp-Konto",
+    "en": "A friend or relative from their real but hijacked WhatsApp account"
+  },
+  "name": {
+    "de": "WhatsApp-Konto gekapert („Ghost Pairing“): Abstimmungslink, Bestätigungscode, dann Geldforderungen an Kontakte",
+    "en": "Hijacked WhatsApp account (“ghost pairing”): voting link, confirmation code, then money requests to contacts"
+  },
+  "how": {
+    "de": "Ein Bekannter schickt Ihnen über WhatsApp einen Link: Sie sollen für ein Kind in einem Wettbewerb oder etwas Ähnliches abstimmen. Auf der Seite sollen Sie Ihre Handynummer eingeben und einen Bestätigungscode verwenden. Damit koppeln die Täter Ihr WhatsApp-Konto mit ihrem eigenen Gerät. Danach schreiben sie unter Ihrem Namen Ihre Kontakte an und bitten um dringende Überweisungen, oft einige hundert Euro, oder verschicken denselben Link weiter. Die Chats verschieben sie ins Archiv, damit Sie es nicht bemerken.",
+    "en": "An acquaintance sends you a link on WhatsApp: you are asked to vote for a child in a competition or something similar. On the page you must enter your mobile number and use a confirmation code. With that, the criminals link your WhatsApp account to their own device. They then write to your contacts in your name asking for urgent transfers, often a few hundred euros, or send the same link on. They move the chats to the archive so you don’t notice."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein bekannter Kontakt bittet Sie, über einen Link abzustimmen.",
+        "en": "A known contact asks you to vote through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Sie sollen Ihre Nummer eingeben und einen Bestätigungscode verwenden oder weitergeben.",
+        "en": "You must enter your number and use or pass on a confirmation code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "de": "Ihr Konto wird auf einem fremden Gerät gekoppelt, Ihre Kontakte bekommen Nachrichten in Ihrem Namen.",
+        "en": "Your account is linked to a stranger’s device, and your contacts get messages in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Sie oder Ihre Kontakte werden um eine dringende Überweisung gebeten.",
+        "en": "You or your contacts are asked for an urgent transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hey, sorry dass ich so direkt frage 🙏 Die Tochter meiner Kollegin ist im Finale von einem Malwettbewerb, kannst du kurz für sie abstimmen? Geht ganz schnell, du musst nur deine Nummer eingeben und den Code bestätigen, damit jede Stimme nur einmal zählt: [Link] Danke dir!!",
+        "en": "Hey, sorry to ask so directly 🙏 My colleague’s daughter is in the final of a drawing competition, could you quickly vote for her? It’s really quick, you just enter your number and confirm the code so each vote only counts once: [link] Thank you!!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "whatsapp abstimmung link code",
+      "ghost pairing whatsapp",
+      "whatsapp konto gekapert freunde angeschrieben",
+      "für kind abstimmen nummer eingeben",
+      "bestätigungscode whatsapp weitergeben",
+      "bekannter fragt per whatsapp nach geld überweisung",
+      "gerät verknüpft whatsapp unbekannt",
+      "fotowettbewerb stimmen link",
+      "wettbewerb abstimmen handynummer code eintippen"
+    ],
+    "en": [
+      "whatsapp vote link asked for my code",
+      "ghost pairing whatsapp",
+      "my whatsapp was hijacked and friends got money requests",
+      "friend asked me to vote for a child",
+      "linked device i dont recognise"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "de": [
+      "Eine Abstimmung, für die Sie Ihre Nummer und einen Code eingeben sollen, ist eine Falle.",
+      "Geben Sie WhatsApp-Codes nie ein oder weiter, wenn Sie das nicht selbst ausgelöst haben.",
+      "Auch Nachrichten von bekannten Kontakten können von Betrügern kommen."
+    ],
+    "en": [
+      "A vote that needs your number and a code is a trap.",
+      "Never enter or pass on WhatsApp codes you didn’t request yourself.",
+      "Even messages from known contacts can come from fraudsters."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Fragen Sie bei Geldbitten persönlich oder per Anruf beim Kontakt nach.",
+      "Prüfen Sie in WhatsApp unter „Verknüpfte Geräte“, ob fremde Geräte angemeldet sind, und melden Sie sie ab. Richten Sie die Bestätigung in zwei Schritten ein.",
+      "Warnen Sie Ihre Kontakte. Wurde Geld überwiesen, rufen Sie Ihre Bank an und erstatten Sie Anzeige."
+    ],
+    "en": [
+      "When asked for money, check with the contact in person or by phone.",
+      "In WhatsApp, check “Linked devices” for unknown devices and log them out. Turn on two-step verification.",
+      "Warn your contacts. If money was transferred, call your bank and file a police report."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-KN: (Polizeipräsidum Konstanz) - Betrüger übernehmen WhatsApp-Accounts und fordern Geld von Kontakten - Polizei warnt erneut vor neuer Betrugsmasche (13.11.26)",
+      "publisher": "Polizeipräsidium Konstanz (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/110973/6390098",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Genug Betrug: Schutz vor Phishing, Quishing und Identitätsdiebstahl",
+      "publisher": "Landeskriminalamt Rheinland-Pfalz",
+      "url": "https://www.presseportal.de/blaulicht/pm/29763/6375183",
+      "date": "2026-10-21"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/hallo-mama-new-number"
+  ]
+}

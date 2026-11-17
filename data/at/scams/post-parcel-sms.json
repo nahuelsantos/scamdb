@@ -1,0 +1,129 @@
+{
+  "id": "at/post-parcel-sms",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "de": "„Post“, „Österreichische Post“, DHL oder ein anderer Paketdienst",
+    "en": "“Post”, Austrian Post, DHL or another parcel service"
+  },
+  "name": {
+    "de": "Falsche Paket-SMS: fehlende Hausnummer, Zustellgebühr oder Zoll",
+    "en": "Fake parcel text: missing house number, delivery fee or customs"
+  },
+  "how": {
+    "de": "Sie bekommen eine SMS oder E-Mail, angeblich von der Post oder einem Paketdienst: Ihr Paket konnte nicht zugestellt werden, etwa wegen einer fehlenden Hausnummer, oder es sei eine kleine Gebühr offen. Über einen Link sollen Sie Adresse und Zahlungsdaten eingeben. Die Seite stiehlt Ihre Kartendaten oder installiert Schadsoftware am Handy. Die Post verlangt keine Zahlungen per SMS.",
+    "en": "You get a text or email, supposedly from the post office or a parcel service: your parcel could not be delivered, for example because the house number is missing, or a small fee is due. Through a link you are asked to enter your address and payment details. The page steals your card details or installs malware on your phone. The post office does not ask for payments by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "SMS „von der Post“: Zustellung nicht möglich, Adresse unvollständig.",
+        "en": "Text “from the post office”: delivery not possible, address incomplete."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Frist: Sonst geht das Paket zurück.",
+        "en": "Deadline: otherwise the parcel goes back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link mit fremder Adresse zum „Aktualisieren“ der Daten.",
+        "en": "A link with a strange address to “update” your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Sie sollen eine kleine Gebühr mit Kreditkarte zahlen; später kommen hohe Abbuchungen.",
+        "en": "You are asked to pay a small fee by credit card; later large charges follow."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Post: Ihre Sendung wartet im Verteilerzentrum. Wegen unvollständiger Adresse ist keine Zustellung möglich. Bitte Daten innerhalb von 48 Stunden aktualisieren und 1,99 EUR Nachsendegebühr begleichen: [Link]",
+        "en": "Post: your shipment is waiting at the distribution centre. Because the address is incomplete, delivery is not possible. Please update your details within 48 hours and pay a 1.99 EUR forwarding fee: [Link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "sms post paket nicht zugestellt",
+      "fehlende hausnummer paket sms",
+      "zustellgebühr per link zahlen",
+      "paket zollgebühr sms",
+      "post sendung adresse aktualisieren",
+      "dhl paket link kreditkarte"
+    ],
+    "en": [
+      "post office text parcel not delivered",
+      "missing house number parcel text",
+      "pay delivery fee link",
+      "parcel customs fee text",
+      "update address parcel link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Die Post verschickt keine Zahlungsaufforderungen per SMS oder E-Mail; Gebühren zahlen Sie bei der Zustellung.",
+      "Die Link-Adresse gehört nicht zur Post.",
+      "Druck mit Frist, obwohl Sie nichts bestellt haben."
+    ],
+    "en": [
+      "The post office does not send payment requests by text or email; fees are paid on delivery.",
+      "The link’s address does not belong to the post office.",
+      "Pressure with a deadline, even though you ordered nothing."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nicht auf den Link tippen; die Sendungsnummer selbst auf der Website oder in der App des Zustellers prüfen.",
+      "Kartendaten eingegeben? Karte sofort sperren lassen.",
+      "Die SMS bei der Watchlist Internet melden und löschen."
+    ],
+    "en": [
+      "Don’t tap the link; check the tracking number yourself on the carrier’s website or app.",
+      "Entered card details? Have the card blocked at once.",
+      "Report the text to Watchlist Internet and delete it."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/card-block",
+    "at/watchlist-internet",
+    "at/bka-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Gefälschte SMS der Post unterwegs",
+      "publisher": "ORF Kärnten",
+      "url": "https://kaernten.orf.at/stories/3377767/",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Cybercrimereport 2025",
+      "publisher": "Bundeskriminalamt",
+      "url": "https://www.bundeskriminalamt.at/306/files/307-2026-ccr-2025-a4-v20260812-bf.pdf",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

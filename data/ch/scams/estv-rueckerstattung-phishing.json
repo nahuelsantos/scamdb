@@ -1,0 +1,130 @@
+{
+  "id": "ch/estv-rueckerstattung-phishing",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "de": "Eine E-Mail „der Eidgenössischen Steuerverwaltung (ESTV)“",
+    "fr": "Un e-mail « de l’Administration fédérale des contributions (AFC) »",
+    "en": "An email “from the Federal Tax Administration (ESTV)”"
+  },
+  "name": {
+    "de": "Falsche ESTV-Mail: „Rückerstattung“ oder „neues System“, Bankverbindung und Geburtsdatum angeben",
+    "fr": "Faux e-mail de l’AFC : « remboursement » ou « nouveau système », donnez IBAN et date de naissance",
+    "en": "Fake tax office email: “refund” or “new system”, give your bank account and date of birth"
+  },
+  "how": {
+    "de": "Eine E-Mail im Namen der ESTV kündigt eine Steuerrückerstattung an oder behauptet, wegen eines neuen Systems oder einer Systemumstellung müssten Ihre Angaben aktualisiert werden. Über einen Link oder ein Formular sollen Sie Geburtsdatum, Telefonnummer und Bankverbindung angeben. Anders als beim üblichen Phishing geht es hier vor allem um Personendaten, die für weitere Betrugsversuche missbraucht werden können, etwa für glaubwürdige Anrufe.",
+    "fr": "Un e-mail au nom de l’Administration fédérale des contributions annonce un remboursement d’impôt ou affirme qu’en raison d’un nouveau système vos données doivent être mises à jour. Par un lien ou un formulaire, on vous demande votre date de naissance, votre numéro de téléphone et vos coordonnées bancaires. Contrairement à l’hameçonnage habituel, le but est surtout de récolter des données personnelles, réutilisées ensuite pour d’autres escroqueries, par exemple des appels crédibles.",
+    "en": "An email in the name of the Federal Tax Administration announces a tax refund or claims your details must be updated because of a new system or a system changeover. Through a link or form you are asked for your date of birth, phone number and bank account. Unlike usual phishing it is mainly after personal data, which can then be used for further scams, such as convincing phone calls."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "E-Mail der „ESTV“: Rückerstattung oder Systemumstellung.",
+        "fr": "E-mail de « l’AFC » : remboursement ou changement de système.",
+        "en": "Email from the “tax office”: refund or system change."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Link zu einem Formular.",
+        "fr": "Lien vers un formulaire.",
+        "en": "Link to a form."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Geburtsdatum, Telefonnummer und IBAN eingeben.",
+        "fr": "Saisir date de naissance, téléphone et IBAN.",
+        "en": "Enter date of birth, phone number and IBAN."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "de": "Eidgenössische Steuerverwaltung ESTV – Gemäss unserer Neuberechnung steht Ihnen eine Rückerstattung von CHF 386.40 zu. Wegen der Umstellung auf unser neues System müssen Sie Ihre Angaben (Geburtsdatum, Mobilnummer, IBAN) bis am 30. November bestätigen: [Link]",
+        "fr": "Administration fédérale des contributions AFC – Selon notre nouveau calcul, un remboursement de CHF 386.40 vous revient. En raison du passage à notre nouveau système, vous devez confirmer vos données (date de naissance, numéro de portable, IBAN) d’ici au 30 novembre : [lien]",
+        "en": "Federal Tax Administration – According to our recalculation you are due a refund of CHF 386.40. Because of the changeover to our new system, you must confirm your details (date of birth, mobile number, IBAN) by 30 November: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "mail estv steuerrückerstattung",
+      "eidgenössische steuerverwaltung rückerstattung iban angeben",
+      "estv neues system daten aktualisieren",
+      "steuerverwaltung verlangt geburtsdatum und telefonnummer",
+      "steuerrückerstattung link bankverbindung bestätigen"
+    ],
+    "fr": [
+      "e-mail afc remboursement d’impôt",
+      "administration fédérale des contributions remboursement iban",
+      "afc nouveau système mettre à jour mes données",
+      "impôts demandent date de naissance et téléphone",
+      "remboursement d’impôt lien confirmer coordonnées bancaires"
+    ],
+    "en": [
+      "estv email tax refund",
+      "federal tax administration refund give iban",
+      "tax office new system update my details",
+      "tax office asks date of birth and phone number",
+      "tax refund link confirm bank details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "de": [
+      "Die ESTV verlangt per E-Mail mit Link Geburtsdatum, Telefonnummer und Bankverbindung.",
+      "Eine unerwartete Rückerstattung oder eine „Systemumstellung“ mit Frist."
+    ],
+    "fr": [
+      "L’AFC demande par e-mail avec un lien votre date de naissance, téléphone et coordonnées bancaires.",
+      "Un remboursement inattendu ou un « changement de système » avec un délai."
+    ],
+    "en": [
+      "The tax office asks by email with a link for your date of birth, phone number and bank account.",
+      "An unexpected refund or a “system changeover” with a deadline."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Antworten Sie nicht und geben Sie keine Daten ein.",
+      "Melden Sie die E-Mail dem BACS und löschen Sie sie.",
+      "Daten schon eingegeben? Seien Sie bei späteren Anrufen „der Bank“ oder „der Behörde“ besonders misstrauisch und informieren Sie Ihre Bank."
+    ],
+    "fr": [
+      "Ne répondez pas et ne saisissez aucune donnée.",
+      "Signalez l’e-mail à l’OFCS et supprimez-le.",
+      "Données déjà saisies ? Méfiez-vous d’autant plus des appels « de la banque » ou « de l’administration » et prévenez votre banque."
+    ],
+    "en": [
+      "Don’t reply and don’t enter any details.",
+      "Report the email to BACS and delete it.",
+      "Already entered details? Be extra wary of later calls “from the bank” or “from the authorities” and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "ch/bacs",
+    "ch/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Phishing im Namen der Eidgenössischen Steuerverwaltung (ESTV)",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/warnung-estv-de",
+      "date": "2026-11-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

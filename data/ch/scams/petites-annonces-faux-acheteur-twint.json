@@ -1,0 +1,155 @@
+{
+  "id": "ch/petites-annonces-faux-acheteur-twint",
+  "country": "ch",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fr": "Un « acheteur » sur Anibis, tutti, Ricardo ou Facebook Marketplace",
+    "de": "Ein „Käufer“ auf Anibis, tutti, Ricardo oder Facebook Marketplace",
+    "en": "A “buyer” on Anibis, tutti, Ricardo or Facebook Marketplace"
+  },
+  "name": {
+    "fr": "Faux acheteur sur les petites annonces : frais à avancer, demande TWINT ou code QR « pour recevoir »",
+    "de": "Falscher Käufer bei Kleinanzeigen: Gebühren vorschiessen, TWINT-Anfrage oder QR-Code „zum Empfangen“",
+    "en": "Fake buyer on classified ads: advance fees, a TWINT request or a QR code “to receive”"
+  },
+  "how": {
+    "fr": "Vous vendez un objet en ligne et un prétendu acheteur veut tout organiser par un transporteur comme DHL ou UPS ou par une plateforme de paiement. Vous devez avancer des frais, par cartes cadeaux, Paysafecard ou via un formulaire, avec un remboursement promis. D’autres envoient un lien ou un code QR « pour recevoir le paiement par TWINT » qui mène à une page d’hameçonnage, ou une demande TWINT qui est en réalité un paiement de votre part. Après paiement, certains vous menacent de poursuites pour obtenir encore plus.",
+    "de": "Sie verkaufen etwas online, und ein angeblicher Käufer will alles über einen Kurier wie DHL oder UPS oder über eine Zahlungsplattform abwickeln. Sie sollen Gebühren vorschiessen, etwa mit Gutscheinkarten, Paysafecard oder über ein Formular, angeblich mit Rückerstattung. Andere schicken einen Link oder QR-Code, „um die Zahlung per TWINT zu empfangen“, der auf eine Phishing-Seite führt, oder eine TWINT-Anfrage, die in Wahrheit eine Zahlung von Ihnen ist. Wer gezahlt hat, wird manchmal mit Strafverfolgung bedroht, um noch mehr zu zahlen.",
+    "en": "You are selling something online and a supposed buyer wants to arrange everything through a courier such as DHL or UPS or a payment platform. You must advance fees, by gift cards, Paysafecard or a form, with a promised refund. Others send a link or QR code “to receive the payment by TWINT” that leads to a phishing page, or a TWINT request that is really a payment from you. Once you have paid, some threaten prosecution to get even more."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "L’acheteur veut un transporteur ou une plateforme de paiement.",
+        "de": "Käufer will Kurier oder Zahlungsplattform.",
+        "en": "Buyer wants a courier or payment platform."
+      }
+    },
+    {
+      "text": {
+        "fr": "Avancer des frais, avec des cartes cadeaux.",
+        "de": "Gebühren vorschiessen, mit Gutscheinkarten.",
+        "en": "Advance fees, with gift cards."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Lien ou code QR pour « recevoir » l’argent TWINT.",
+        "de": "Link oder QR-Code, um TWINT-Geld zu „empfangen“.",
+        "en": "Link or QR code to “receive” TWINT money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Accepter la demande TWINT ou saisir un code.",
+        "de": "TWINT-Anfrage bestätigen oder Code eingeben.",
+        "en": "Approve the TWINT request or enter a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "fr": "Bonjour, je prends votre vélo au prix affiché. Je suis à l’étranger, mon transporteur passera le chercher. J’ai déjà payé : scannez ce code QR pour recevoir et valider le paiement TWINT. Les frais d’envoi de CHF 45 vous seront remboursés ensuite.",
+        "de": "Hallo, ich nehme Ihr Velo zum vollen Preis. Ich bin im Ausland, mein Kurier holt es ab. Ich habe schon bezahlt: Scannen Sie diesen QR-Code, um die TWINT-Zahlung zu empfangen und zu bestätigen. Die Versandgebühr von CHF 45 erhalten Sie danach zurück.",
+        "en": "Hello, I’ll take your bike at the full price. I’m abroad, my courier will collect it. I’ve already paid: scan this QR code to receive and confirm the TWINT payment. You’ll get the CHF 45 shipping fee back afterwards."
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "acheteur annonce scanner qr code recevoir twint",
+      "faux acheteur anibis transporteur",
+      "avancer les frais d’envoi cartes cadeaux",
+      "demande twint pour recevoir l’argent de la vente",
+      "acheteur à l’étranger paiement déjà effectué",
+      "menace de plainte après avoir payé les frais"
+    ],
+    "de": [
+      "käufer inserat qr code scannen twint empfangen",
+      "falscher käufer anibis kurier",
+      "versandgebühr vorschiessen gutscheinkarten",
+      "twint anfrage um geld vom verkauf zu erhalten",
+      "käufer im ausland schon bezahlt",
+      "drohung mit anzeige nach gebühren"
+    ],
+    "en": [
+      "buyer ad scan qr code receive twint",
+      "fake buyer anibis courier",
+      "advance shipping fee gift cards",
+      "twint request to receive sale money",
+      "buyer abroad already paid",
+      "threat of prosecution after paying fees"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Pour recevoir de l’argent, on vous demande de payer, de scanner un code QR ou de saisir un code.",
+      "L’acheteur est à l’étranger et envoie un transporteur sans voir l’objet."
+    ],
+    "de": [
+      "Um Geld zu erhalten, sollen Sie zahlen, einen QR-Code scannen oder einen Code eingeben.",
+      "Der Käufer ist im Ausland und schickt einen Kurier, ohne die Ware zu sehen."
+    ],
+    "en": [
+      "To receive money, you are asked to pay, scan a QR code or enter a code.",
+      "The buyer is abroad and sends a courier without seeing the item."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Recevoir de l’argent par TWINT ne demande jamais de lien, de code QR ni de code.",
+      "N’acceptez une demande TWINT que si vous connaissez le destinataire.",
+      "Victime ? Portez plainte et signalez à TWINT le numéro utilisé.",
+      "Signalez l’acheteur à la plateforme."
+    ],
+    "de": [
+      "Geld per TWINT zu empfangen braucht nie einen Link, QR-Code oder Code.",
+      "Bestätigen Sie eine TWINT-Anfrage nur, wenn Sie den Empfänger kennen.",
+      "Betroffen? Anzeige erstatten und die verwendete Nummer TWINT melden.",
+      "Melden Sie den Käufer der Plattform."
+    ],
+    "en": [
+      "Receiving money by TWINT never needs a link, QR code or code.",
+      "Only approve a TWINT request if you know the recipient.",
+      "Victim? Report it to the police and report the number used to TWINT.",
+      "Report the buyer to the platform."
+    ]
+  },
+  "reportTo": [
+    "ch/police",
+    "ch/your-bank",
+    "ch/bacs"
+  ],
+  "sources": [
+    {
+      "title": "Cybercriminalité – Arnaque à l’avance de frais ou Twint",
+      "publisher": "Police cantonale fribourgeoise (État de Fribourg)",
+      "url": "https://www.fr.ch/police-et-securite/prevention/cybercriminalite/cybercriminalite-arnaque-a-lavance-de-frais-ou-twint",
+      "date": "2025-03-27"
+    },
+    {
+      "title": "Semaine 42 : Des comptes TWINT ciblés par une nouvelle variante d’hameçonnage liée aux réservations d’hôtels",
+      "publisher": "Office fédéral de la cybersécurité OFCS",
+      "url": "https://www.bacs.admin.ch/fr/26w42-fr",
+      "date": "2026-10-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

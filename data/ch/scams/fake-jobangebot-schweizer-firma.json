@@ -1,0 +1,144 @@
+{
+  "id": "ch/fake-jobangebot-schweizer-firma",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "de": "Ein Stelleninserat einer angeblichen Schweizer Firma, oft für Heimarbeit",
+    "fr": "Une offre d’emploi d’une prétendue entreprise suisse, souvent en télétravail",
+    "en": "A job ad from a supposed Swiss company, often for home working"
+  },
+  "name": {
+    "de": "Falsches Jobangebot: Heimarbeit bei „Schweizer Logistikfirma“, Aufgaben gegen Vorauszahlung",
+    "fr": "Fausse offre d’emploi : télétravail pour une « entreprise de logistique suisse », tâches contre paiement",
+    "en": "Fake job offer: home work for a “Swiss logistics firm”, tasks that need payments"
+  },
+  "how": {
+    "de": "Auf echten Jobportalen und sogar in Zeitungen erscheinen Inserate für flexible Heimarbeit, oft bei einer angeblichen Logistikfirma. Der Firmenname existiert im Handelsregister, die Website ist aber gefälscht und erst wenige Tage alt; der Karrierebereich ist passwortgeschützt. Bewerbende sollen einen Messenger wie Element installieren und Lebenslauf, Zeugnisse und Diplome hochladen. Dann folgen bezahlte „Aufgaben“ (Bewertungen schreiben, Produkte kaufen, Apps testen) auf einer Plattform, wo Lohn nur angezeigt wird: Für neue Aufgaben oder die Auszahlung müssen Sie zahlen, etwa mit Krypto-Gutscheinen. Ältere Varianten verlangen 300 bis 1000 Euro für eine Arbeitsbewilligung oder Versicherung.",
+    "fr": "Sur de vrais portails d’emploi et même dans des journaux paraissent des annonces de télétravail flexible, souvent pour une prétendue entreprise de logistique. Le nom existe au registre du commerce, mais le site est faux et date de quelques jours ; la rubrique carrière est protégée par un mot de passe. Les candidats doivent installer une messagerie comme Element et envoyer CV, certificats et diplômes. Viennent ensuite des « tâches » rémunérées (écrire des avis, acheter des produits, tester des apps) sur une plateforme où le salaire est seulement affiché : pour de nouvelles tâches ou le retrait, il faut payer, par exemple avec des bons crypto. D’anciennes variantes exigent 300 à 1000 euros pour un permis de travail ou une assurance.",
+    "en": "Ads for flexible home working appear on real job portals and even in newspapers, often for a supposed logistics firm. The company name exists in the commercial register, but the website is fake and only days old; the careers section is password-protected. Applicants must install a messenger such as Element and upload their CV, references and diplomas. Then come paid “tasks” (writing reviews, buying products, testing apps) on a platform where wages are only displayed: to get new tasks or withdraw, you must pay, for example with crypto vouchers. Older variants ask for 300 to 1,000 euros for a work permit or insurance."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Gut bezahlte Heimarbeit, einfache Aufgaben.",
+        "fr": "Télétravail bien payé, tâches simples.",
+        "en": "Well-paid home work, simple tasks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Messenger installieren, Dokumente hochladen.",
+        "fr": "Installer une messagerie, envoyer ses documents.",
+        "en": "Install a messenger, upload documents."
+      }
+    },
+    {
+      "text": {
+        "de": "Für Aufgaben oder Auszahlung zuerst zahlen.",
+        "fr": "Payer d’abord pour des tâches ou le retrait.",
+        "en": "Pay first for tasks or to withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "online",
+      "text": {
+        "de": "Logistik AG – Mitarbeiter/in Homeoffice (20–100 %). Freie Zeiteinteilung, Verdienst bis CHF 400 pro Tag, keine Erfahrung nötig. Das Passwort für unser Karriereportal erhalten Sie nach Kontaktaufnahme. Kommunikation ausschliesslich über die App Element.",
+        "fr": "Logistique SA – Collaborateur/trice en télétravail (20–100 %). Horaires libres, gain jusqu’à CHF 400 par jour, sans expérience. Le mot de passe de notre portail carrière vous est remis après prise de contact. Communication uniquement via l’app Element.",
+        "en": "Logistics Ltd – home-office employee (20–100%). Flexible hours, earn up to CHF 400 a day, no experience needed. You get the password for our careers portal after you contact us. Communication only through the Element app."
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "jobangebot homeoffice logistikfirma",
+      "heimarbeit aufgaben bewertungen schreiben bezahlt",
+      "für auszahlung zuerst gebühr zahlen",
+      "app element installieren bewerbung",
+      "karriereportal mit passwort firma",
+      "krypto gutscheine kaufen für job"
+    ],
+    "fr": [
+      "offre d’emploi télétravail entreprise logistique",
+      "travail à domicile tâches écrire des avis payé",
+      "payer des frais avant le retrait",
+      "installer l’app element candidature",
+      "portail carrière avec mot de passe",
+      "acheter bons crypto pour un emploi"
+    ],
+    "en": [
+      "job offer home office logistics company",
+      "home work tasks writing reviews paid",
+      "pay a fee before withdrawal",
+      "install element app job application",
+      "careers portal with password",
+      "buy crypto vouchers for a job"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "de": [
+      "Viel Geld für einfache Aufgaben, ohne Erfahrung.",
+      "Sie sollen bezahlen, um zu arbeiten oder Ihren Lohn zu erhalten.",
+      "Neue Website, passwortgeschützter Karrierebereich, Kontakt nur per Messenger."
+    ],
+    "fr": [
+      "Beaucoup d’argent pour des tâches simples, sans expérience.",
+      "On vous demande de payer pour travailler ou toucher votre salaire.",
+      "Site récent, rubrique carrière avec mot de passe, contact uniquement par messagerie."
+    ],
+    "en": [
+      "Lots of money for simple tasks, no experience needed.",
+      "You must pay to work or to get your wages.",
+      "A new website, a password-protected careers section, contact only by messenger."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Zahlen Sie nie etwas, um eine Stelle zu bekommen oder Lohn auszuzahlen.",
+      "Brechen Sie den Kontakt ab und antworten Sie nicht mehr.",
+      "Geld verloren? Anzeige bei der Polizei; melden Sie das Inserat dem BACS."
+    ],
+    "fr": [
+      "Ne payez jamais pour obtenir un emploi ou toucher un salaire.",
+      "Coupez le contact et ne répondez plus.",
+      "Argent perdu ? Portez plainte à la police ; signalez l’annonce à l’OFCS."
+    ],
+    "en": [
+      "Never pay to get a job or to be paid.",
+      "Cut contact and stop replying.",
+      "Lost money? Report it to the police; report the ad to BACS."
+    ]
+  },
+  "reportTo": [
+    "ch/police",
+    "ch/bacs"
+  ],
+  "sources": [
+    {
+      "title": "Woche 12: Betrügerische Jobangebote auf Websites angeblicher Schweizer Firmen",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w12-de",
+      "date": "2026-03-24"
+    },
+    {
+      "title": "Woche 23: Stellensuchende im Visier – Phishing, Betrug und Schadsoftware im Bewerbungsprozess",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w23-de",
+      "date": "2026-06-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

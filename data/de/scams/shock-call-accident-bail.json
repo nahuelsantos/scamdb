@@ -1,0 +1,157 @@
+{
+  "id": "de/shock-call-accident-bail",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "de": "Ein weinender Angehöriger, dann ein „Polizist“, „Staatsanwalt“ oder „Richter“",
+    "en": "A crying relative, then a “police officer”, “prosecutor” or “judge”"
+  },
+  "name": {
+    "de": "Schockanruf und Enkeltrick: Angehöriger hatte einen schweren Unfall, Kaution soll die Haft verhindern",
+    "en": "Shock call and grandchild trick: a relative caused a serious accident and bail must keep them out of jail"
+  },
+  "how": {
+    "de": "Das Telefon klingelt, am anderen Ende weint scheinbar Ihre Tochter, Ihr Sohn oder Ihr Enkel, manchmal mit einer Stimme, die mit KI nachgeahmt sein kann. Er oder sie habe einen schweren Unfall verursacht, ein Mensch, oft ein Kind, sei schwer verletzt oder tot. Dann übernimmt ein angeblicher Polizist, Staatsanwalt oder Richter: Nur eine Kaution von zehntausenden Euro verhindere die Untersuchungshaft. Sie sollen Bargeld, Gold oder Schmuck in eine Tasche packen und einem Boten an der Haustür übergeben oder zur Bank fahren, während das Gespräch weiterläuft.",
+    "en": "The phone rings, and at the other end your daughter, son or grandchild seems to be crying, sometimes with a voice that may be imitated with AI. They have caused a serious accident; someone, often a child, is badly injured or dead. Then a supposed police officer, prosecutor or judge takes over: only bail of tens of thousands of euros will keep them out of custody. You are told to pack cash, gold or jewellery in a bag and hand it to a courier at your door, or go to the bank while the call carries on."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Anruf mit weinender Stimme: Ihr Kind oder Enkel hatte einen schlimmen Unfall.",
+        "en": "A call with a crying voice: your child or grandchild has had a terrible accident."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Ein „Polizist“ oder „Staatsanwalt“ übernimmt und fordert eine Kaution.",
+        "en": "A “police officer” or “prosecutor” takes over and demands bail."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "de": "Alles müsse sofort passieren, sonst komme Ihr Angehöriger ins Gefängnis.",
+        "en": "It all has to happen now or your relative goes to prison."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie sollen nicht auflegen und mit niemandem sprechen.",
+        "en": "You must not hang up and must not talk to anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "de": "Ein Abholer holt Geld, Gold oder Schmuck an der Haustür ab.",
+        "en": "A collector picks up cash, gold or jewellery at your door."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "(weinend) Mama, ich bin’s … es ist was Schreckliches passiert, ich hab einen Unfall gebaut, eine Frau ist schwer verletzt … – Guten Tag, hier spricht Oberkommissar Wagner. Ihre Tochter sitzt bei uns auf der Wache. Der Haftrichter hat eine Kaution von 45.000 Euro festgesetzt, sonst kommt sie heute noch in Untersuchungshaft. Wie viel Bargeld oder Gold haben Sie im Haus? Legen Sie bitte nicht auf, ein Gerichtsbote kommt gleich zu Ihnen.",
+        "en": "(crying) Mum, it’s me … something terrible has happened, I caused an accident, a woman is badly hurt … – Good afternoon, this is Chief Inspector Wagner. Your daughter is with us at the station. The custody judge has set bail at 45,000 euros, otherwise she goes into custody today. How much cash or gold do you have at home? Please don’t hang up, a court messenger will be with you shortly."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "schockanruf tochter unfall kaution",
+      "enkeltrick anruf enkel unfall",
+      "sohn tödlicher unfall untersuchungshaft",
+      "kaution bargeld abholer haustür",
+      "staatsanwalt fordert kaution telefon",
+      "weinende stimme anruf unfall",
+      "gold schmuck kaution übergeben",
+      "ki stimme angehöriger anruf geld",
+      "sicherheitsleistung haft enkel",
+      "oma hilf mir unfall",
+      "radfahrer intensivstation kaution",
+      "justizbeamter holt geld ab"
+    ],
+    "en": [
+      "shock call daughter accident bail",
+      "grandchild trick call",
+      "caller said my son caused a fatal accident",
+      "pay bail in cash to a courier",
+      "crying voice on the phone asking for money",
+      "ai cloned voice of my child"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency",
+    "keep_on_line",
+    "secrecy"
+  ],
+  "redFlags": {
+    "de": [
+      "Polizei, Staatsanwaltschaft und Gerichte fordern nie eine Kaution am Telefon und holen nie Geld oder Schmuck an der Haustür ab.",
+      "Weinen, Schock und Zeitdruck sollen verhindern, dass Sie nachdenken.",
+      "Eine vertraute Stimme ist kein Beweis: Stimmen können mit KI nachgeahmt werden."
+    ],
+    "en": [
+      "Police, prosecutors and courts never demand bail over the phone and never collect money or jewellery at your door.",
+      "Crying, shock and time pressure are there to stop you thinking.",
+      "A familiar voice is no proof: voices can be imitated with AI."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Legen Sie auf. Rufen Sie Ihren Angehörigen unter der Ihnen bekannten Nummer an.",
+      "Wählen Sie selbst die 110 (nicht die Rückruftaste) und schildern Sie den Anruf.",
+      "Übergeben Sie niemals Geld oder Wertsachen an Fremde. Vereinbaren Sie in der Familie ein Codewort für Notfälle."
+    ],
+    "en": [
+      "Hang up. Call your relative on the number you know.",
+      "Dial 110 yourself (not the call-back button) and describe the call.",
+      "Never hand money or valuables to strangers. Agree a family code word for emergencies."
+    ]
+  },
+  "reportTo": [
+    "de/police-110",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-HN: Main-Tauber-Kreis: Schockanruf",
+      "publisher": "Polizeipräsidium Heilbronn (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/110971/6366468",
+      "date": "2026-10-07"
+    },
+    {
+      "title": "POL-KA: (KA) Malsch - Telefonbetrüger verursachen hohen Vermögensschaden",
+      "publisher": "Polizeipräsidium Karlsruhe (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/110972/6327893",
+      "date": "2026-08-05"
+    },
+    {
+      "title": "„Neue Dimension“ der Schockanrufe: Polizeigewerkschaft warnt vor Betrug durch KI-gesteuerte Stimmen",
+      "publisher": "Tagesspiegel",
+      "url": "https://www.tagesspiegel.de/gesellschaft/panorama/neue-dimension-der-schockanrufe-polizeigewerkschaft-warnt-vor-betrug-durch-ki-gesteuerte-stimmen-10333840.html",
+      "date": "2023-08-19"
+    },
+    {
+      "title": "POL-DA: Rüsselsheim: Geld und Schmuck mit Enkeltrick erbeutet / Polizei warnt vor Betrugsmasche",
+      "publisher": "Polizeipräsidium Südhessen (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/4969/6326030",
+      "date": "2026-08-03"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/fake-police-valuables"
+  ]
+}

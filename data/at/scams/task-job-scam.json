@@ -1,0 +1,127 @@
+{
+  "id": "at/task-job-scam",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "de": "Eine „Agentur“ oder „Personalvermittlung“ über WhatsApp, Telegram oder Social Media",
+    "en": "An “agency” or “recruiter” via WhatsApp, Telegram or social media"
+  },
+  "name": {
+    "de": "Job-Scam: Geld für Likes und Bewertungen, dann Einzahlungen für „Aufträge“",
+    "en": "Job scam: money for likes and reviews, then deposits for “tasks”"
+  },
+  "how": {
+    "de": "Über Werbung oder eine Nachricht wird ein einfacher Nebenjob angeboten: Produkte, Hotels oder Videos liken und bewerten, bezahlt pro Aufgabe. Anfangs kommen wirklich kleine Beträge. Dann folgen „Händleraufträge“ oder Premium-Aufgaben, für die Sie selbst Geld einzahlen müssen, oft in Kryptowährung. Ihr Guthaben wächst nur auf dem Bildschirm; für die Auszahlung werden immer neue Zahlungen verlangt, das Konto sei sonst „eingefroren“.",
+    "en": "Through an ad or a message an easy side job is offered: like and rate products, hotels or videos, paid per task. At first small amounts really arrive. Then come “merchant orders” or premium tasks for which you have to deposit money yourself, often in cryptocurrency. Your balance only grows on screen; for the payout ever new payments are demanded, or the account will be “frozen”."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Eine Nachricht oder Anzeige: Nebenjob von zu Hause, Geld für Likes und Bewertungen.",
+        "en": "A message or ad: side job from home, money for likes and reviews."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Die ersten Aufgaben werden wirklich bezahlt.",
+        "en": "The first tasks are really paid."
+      }
+    },
+    {
+      "text": {
+        "de": "Für größere Aufträge sollen Sie selbst Geld einzahlen, oft in Krypto an eine Wallet.",
+        "en": "For bigger orders you are told to deposit money yourself, often in crypto to a wallet."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "de": "Die Auszahlung sei gesperrt, bis Sie noch mehr zahlen.",
+        "en": "The payout is blocked until you pay more."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hallo! Wir suchen Mitarbeiter im Homeoffice, 20–30 Minuten täglich. Sie bewerten Produkte für Online-Händler und verdienen 80 bis 250 Euro am Tag. Keine Erfahrung nötig. Interesse? Schreiben Sie unserer Betreuerin auf WhatsApp: [Link]",
+        "en": "Hello! We are looking for home-office staff, 20–30 minutes a day. You rate products for online retailers and earn 80 to 250 euros a day. No experience needed. Interested? Message our coordinator on WhatsApp: [Link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "nebenjob produkte liken geld",
+      "job bewertungen schreiben einzahlen",
+      "händleraufträge krypto einzahlen",
+      "auszahlung gesperrt nebenjob",
+      "homeoffice job whatsapp aufgaben",
+      "likes bezahlt dann selbst zahlen"
+    ],
+    "en": [
+      "side job liking products paid",
+      "task job deposit to unlock",
+      "rating products job crypto deposit",
+      "withdrawal frozen task job",
+      "whatsapp job offer tasks"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "de": [
+      "Ein Job, für den Sie selbst einzahlen müssen, ist kein Job.",
+      "Viel Geld für wenige Minuten Liken oder Bewerten.",
+      "Angebot über WhatsApp oder Telegram ohne Bewerbung und ohne Vertrag."
+    ],
+    "en": [
+      "A job you have to pay into is not a job.",
+      "Lots of money for a few minutes of liking or rating.",
+      "Offer via WhatsApp or Telegram with no application and no contract."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nicht antworten, nichts einzahlen, Nummer blockieren.",
+      "Schon gezahlt? Keine weiteren Zahlungen, die Bank anrufen und Chats sichern.",
+      "Anzeige erstatten."
+    ],
+    "en": [
+      "Don’t reply, deposit nothing, block the number.",
+      "Already paid? No further payments, call your bank and keep the chats.",
+      "File a complaint."
+    ]
+  },
+  "reportTo": [
+    "at/police-report",
+    "at/your-bank",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "Betrug mit Nebenbeschäftigung",
+      "publisher": "ORF Kärnten",
+      "url": "https://kaernten.orf.at/stories/3378166",
+      "date": "2026-11-05"
+    },
+    {
+      "title": "Internetbetrug: Immer mehr betroffen",
+      "publisher": "ORF Steiermark",
+      "url": "https://steiermark.orf.at/stories/3370426",
+      "date": "2026-09-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

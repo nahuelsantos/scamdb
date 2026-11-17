@@ -1,0 +1,123 @@
+{
+  "id": "at/recovery-scam",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "de": "„Anwaltskanzlei“, „Ermittler“, „internationale Behörde“ oder „Finanzdienstleister“",
+    "en": "“Law firm”, “investigator”, “international authority” or “financial services firm”"
+  },
+  "name": {
+    "de": "Recovery-Scam: Angebliche Helfer holen verlorenes Geld zurück, gegen Vorauszahlung",
+    "en": "Recovery scam: supposed helpers will get lost money back, for an advance fee"
+  },
+  "how": {
+    "de": "Nach einem Anlagebetrug melden sich, manchmal Monate später, angebliche Anwälte, Ermittler oder Vertreter einer Behörde. Sie kennen Details Ihres Falls und behaupten, die Täter seien gefasst und Ihr Geld liege bereit. Für die Rückholung verlangen sie eine Gebühr, Steuer oder Vorauszahlung. Die Daten stammen meist aus dem ersten Betrug; auch das zweite Geld ist verloren.",
+    "en": "After an investment fraud, sometimes months later, supposed lawyers, investigators or officials get in touch. They know details of your case and claim the criminals have been caught and your money is ready. For the recovery they want a fee, tax or advance payment. The data usually comes from the first fraud; the second payment is lost too."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein unerwarteter Kontakt von „Anwälten“ oder „Ermittlern“, die Ihren Betrugsfall kennen.",
+        "en": "Unexpected contact from “lawyers” or “investigators” who know your fraud case."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Die Täter seien gefasst, Ihr Geld könne zurückgeholt werden.",
+        "en": "The criminals have been caught, your money can be recovered."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Vorher sei eine Gebühr, Steuer oder Kaution fällig.",
+        "en": "First a fee, tax or deposit is due."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Sehr geehrte Frau Huber, unsere Kanzlei arbeitet mit internationalen Ermittlungsbehörden zusammen. Die Betreiber der Plattform, bei der Sie 2025 investiert haben, wurden festgenommen. Ihr Guthaben von 38.500 Euro wurde sichergestellt. Für die Freigabe ist vorab eine Bearbeitungsgebühr von 2.900 Euro zu überweisen.",
+        "en": "Dear Ms Huber, our law firm works with international investigative authorities. The operators of the platform you invested with in 2025 have been arrested. Your balance of 38,500 euros has been secured. For the release, a processing fee of 2,900 euros must be transferred in advance."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "anwalt verspricht geld zurück gebühr",
+      "verlorenes geld zurückholen vorauszahlung",
+      "ermittler täter gefasst geld sichergestellt",
+      "recovery scam kanzlei",
+      "behörde geld zurück bearbeitungsgebühr"
+    ],
+    "en": [
+      "lawyer promises to recover lost money",
+      "recovery fee upfront",
+      "investigator says scammers caught",
+      "recovery scam law firm",
+      "get my money back after scam fee"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Niemand verlangt eine Vorauszahlung, um Ihnen Ihr Geld zurückzugeben.",
+      "Dass jemand Details Ihres Falls kennt, beweist nichts: Die Daten stammen oft von den Tätern.",
+      "Behörden schreiben nicht unaufgefordert und verlangen keine Gebühren."
+    ],
+    "en": [
+      "Nobody asks for an advance payment to give you your money back.",
+      "Someone knowing details of your case proves nothing: the data often comes from the criminals.",
+      "Authorities do not write out of the blue or charge fees."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nichts zahlen und den Kontakt abbrechen.",
+      "Die Nachricht der Polizei melden, die Ihren ersten Fall bearbeitet.",
+      "Kanzleien und Anbieter bei der FMA und der Watchlist Internet prüfen."
+    ],
+    "en": [
+      "Pay nothing and cut contact.",
+      "Report the message to the police handling your first case.",
+      "Check firms and providers with the FMA and Watchlist Internet."
+    ]
+  },
+  "reportTo": [
+    "at/police-report",
+    "at/fma",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "Vertrauen als Angriffswaffe (Öffentliche Sicherheit 7-8/26)",
+      "publisher": "Bundesministerium für Inneres",
+      "url": "https://www.bmi.gv.at/magazinfiles/2026/07_08/08_betrugskriminalitaet.pdf",
+      "date": "2026-06-25"
+    },
+    {
+      "title": "Kampf gegen Online-Anlagebetrug (Öffentliche Sicherheit 3-4/26)",
+      "publisher": "Bundesministerium für Inneres",
+      "url": "https://www.bmi.gv.at/magazinfiles/2026/03_04/05_betrugsbekaempfung.pdf",
+      "date": "2026-02-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/investment-fake-ads"
+  ]
+}

@@ -2,6 +2,26 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 3 (Germany, Austria, Switzerland) and matcher 1.5.x
+
+**Built:**
+- **Groundwork (#60):** de, at and ch in `countries.json`, reports, feed and trends; 27 brands; German rules in
+  every sign and German context rules; German filler words in STOP. Also: "this message contains no link"
+  cancels the link sign.
+- **Matcher 1.5.1 (#61):** "keine Zahlung erforderlich" (and nl/fr/en equivalents) means nothing to pay; "the
+  PIN comes in a separate letter" is not a code request.
+- **Import (for owner review):** 50 entries (de 17, at 17, ch 16), 19 contacts and 66 labelled messages,
+  researched and drafted by one agent per country.
+
+**Measured (eval, 670 messages):** 98.1% of scams caught, 5.4% of safe messages called "scam". Each new country
+catches 12 of 12 scams with no false "scam".
+
+**Learned:**
+- German police press releases on presseportal.de are dated, open and plentiful; Polizei-Beratung objects to
+  scraping, and fma.gv.at and watchlist-internet.at block automated reading.
+- An agent tuning phrases against its own eval messages can overfit (copying the message's words into phrases).
+  Reviewed and generalised for de-11; worth a check in every import.
+
 ## 2026-11-17: Europe wave 2 (France, Belgium, Luxembourg, Netherlands) and matcher 1.4.x
 
 **Built:**

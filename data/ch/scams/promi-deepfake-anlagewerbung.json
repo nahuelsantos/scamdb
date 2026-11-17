@@ -1,0 +1,160 @@
+{
+  "id": "ch/promi-deepfake-anlagewerbung",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "de": "Eine Online-Werbung oder ein „Zeitungsartikel“ mit einer bekannten Schweizer Persönlichkeit",
+    "fr": "Une publicité en ligne ou un « article de presse » avec une personnalité suisse connue",
+    "en": "An online ad or “news article” featuring a well-known Swiss personality"
+  },
+  "name": {
+    "de": "Deepfake-Werbung mit Prominenten: „Mit 250 Franken zur finanziellen Freiheit“",
+    "fr": "Publicité deepfake avec des célébrités : « 250 francs pour la liberté financière »",
+    "en": "Celebrity deepfake ads: “250 francs to financial freedom”"
+  },
+  "how": {
+    "de": "In sozialen Medien und Suchmaschinen erscheinen Werbungen, Videos oder kopierte Artikel im Stil bekannter Schweizer Medien, in denen Bundesrätinnen, TV-Stars oder Sportler eine Krypto- oder Trading-Plattform empfehlen. Die Interviews sind mit KI gefälscht. Nach einer Einzahlung von etwa 250 Franken ruft ein „Berater“ an, zeigt scheinbare Gewinne und drängt zu immer höheren Beträgen. Auszahlen lässt sich nichts. Später melden sich angebliche „Helfer“, die das verlorene Geld gegen eine Vorauszahlung zurückholen wollen.",
+    "fr": "Sur les réseaux sociaux et les moteurs de recherche apparaissent des publicités, vidéos ou articles copiés imitant des médias suisses connus, où des conseillères fédérales, stars de la télé ou sportifs recommandent une plateforme de crypto ou de trading. Les interviews sont truquées par IA. Après un dépôt d’environ 250 francs, un « conseiller » appelle, montre des gains apparents et pousse à verser toujours plus. Rien ne peut être retiré. Plus tard, de prétendus « aidants » proposent de récupérer l’argent perdu contre une avance de frais.",
+    "en": "On social media and search engines, ads, videos or copied articles in the style of well-known Swiss media show Federal Councillors, TV stars or athletes recommending a crypto or trading platform. The interviews are faked with AI. After a deposit of around 250 francs, an “adviser” calls, shows apparent profits and pushes for ever larger sums. Nothing can be withdrawn. Later, supposed “helpers” offer to recover the lost money for an upfront fee."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Prominente empfehlen eine Anlageplattform.",
+        "fr": "Une célébrité recommande une plateforme de placement.",
+        "en": "A celebrity recommends an investment platform."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Kleiner Einstieg, riesige Gewinne versprochen.",
+        "fr": "Petit dépôt, gains énormes promis.",
+        "en": "Small start, huge profits promised."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Ein „Berater“ ruft an und will mehr Geld.",
+        "fr": "Un « conseiller » appelle et veut plus d’argent.",
+        "en": "An “adviser” calls and wants more money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "de": "Für die Auszahlung zuerst Gebühren zahlen.",
+        "fr": "Payer des frais avant tout retrait.",
+        "en": "Pay fees before any withdrawal."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "de": "EXKLUSIV: Bekannte TV-Moderatorin verrät live im Studio, wie sie mit einer neuen Krypto-Plattform jeden Monat Tausende verdient. Schon mit 250 Franken starten – die Banken wollen das verbieten! Jetzt registrieren, bevor es zu spät ist: [Link]",
+        "fr": "EXCLUSIF : une célèbre animatrice télé révèle en direct comment elle gagne des milliers chaque mois avec une nouvelle plateforme crypto. Dès 250 francs – les banques veulent l’interdire ! Inscrivez-vous avant qu’il ne soit trop tard : [lien]",
+        "en": "EXCLUSIVE: a well-known TV presenter reveals live in the studio how she earns thousands a month with a new crypto platform. Start with just 250 francs – the banks want to ban it! Sign up before it’s too late: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "werbung prominente krypto plattform",
+      "video bundesrätin empfiehlt investition",
+      "mit 250 franken starten trading",
+      "berater ruft an nach einzahlung krypto",
+      "auszahlung nicht möglich gebühren zahlen",
+      "geld zurückholen gegen vorauszahlung"
+    ],
+    "fr": [
+      "publicité célébrité plateforme crypto",
+      "vidéo conseillère fédérale recommande investissement",
+      "commencer avec 250 francs trading",
+      "conseiller appelle après dépôt crypto",
+      "retrait impossible payer des frais",
+      "récupérer l’argent perdu contre avance"
+    ],
+    "en": [
+      "ad celebrity crypto platform",
+      "video federal councillor recommends investing",
+      "start with 250 francs trading",
+      "adviser calls after crypto deposit",
+      "can’t withdraw pay fees",
+      "recover lost money for upfront fee"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "de": [
+      "Eine bekannte Person wirbt für schnelle Gewinne mit Krypto oder Trading.",
+      "Sie können nichts auszahlen, ohne vorher noch mehr zu zahlen.",
+      "Jemand verspricht, verlorenes Geld gegen eine Gebühr zurückzuholen."
+    ],
+    "fr": [
+      "Une personnalité vante des gains rapides avec la crypto ou le trading.",
+      "Vous ne pouvez rien retirer sans payer encore.",
+      "Quelqu’un promet de récupérer l’argent perdu contre des frais."
+    ],
+    "en": [
+      "A famous person promotes quick profits from crypto or trading.",
+      "You can’t withdraw anything without paying more first.",
+      "Someone promises to recover lost money for a fee."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Prüfen Sie Anbieter auf der FINMA-Warnliste und investieren Sie nichts über Werbeanzeigen.",
+      "Zahlen Sie nichts mehr ein und keine „Auszahlungsgebühren“.",
+      "Geld verloren? Bank anrufen und Anzeige bei der Polizei erstatten; „Rückholhelfer“ ignorieren.",
+      "Melden Sie Werbung und Website dem BACS."
+    ],
+    "fr": [
+      "Vérifiez le prestataire sur la liste d’alerte de la FINMA et n’investissez rien via des publicités.",
+      "Ne versez plus rien, ni « frais de retrait ».",
+      "Argent perdu ? Appelez la banque et portez plainte ; ignorez les « aidants » de récupération.",
+      "Signalez la publicité et le site à l’OFCS."
+    ],
+    "en": [
+      "Check the provider on FINMA’s warning list and never invest through ads.",
+      "Pay nothing more, including “withdrawal fees”.",
+      "Lost money? Call your bank and report it to the police; ignore “recovery helpers”.",
+      "Report the ad and website to BACS."
+    ]
+  },
+  "reportTo": [
+    "ch/finma",
+    "ch/your-bank",
+    "ch/police",
+    "ch/bacs"
+  ],
+  "sources": [
+    {
+      "title": "Fünfmal mehr Fälle: Werbung für Onlinebetrug explodiert",
+      "publisher": "Blick",
+      "url": "https://www.blick.ch/digital/bund-schlaegt-alarm-werbung-fuer-onlinebetrug-explodiert-fuenfmal-mehr-faelle-id21433442.html",
+      "date": "2025-11-18"
+    },
+    {
+      "title": "Woche 30: Aktuelle Betrugsvarianten mit KI-generierten Bildern und Videos",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w30-de",
+      "date": "2026-07-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

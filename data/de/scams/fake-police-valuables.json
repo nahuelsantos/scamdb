@@ -1,0 +1,146 @@
+{
+  "id": "de/fake-police-valuables",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "de": "Die „Polizei“ oder „Kriminalpolizei“, manchmal mit einer echt wirkenden Nummer im Display",
+    "en": "The “police” or “criminal police”, sometimes with a genuine-looking number on screen"
+  },
+  "name": {
+    "de": "Falsche Polizeibeamte: „Einbrecher in der Nachbarschaft“, Wertsachen sollen in Sicherheit gebracht werden",
+    "en": "Fake police officers: “burglars in the neighbourhood”, valuables to be taken to safety"
+  },
+  "how": {
+    "de": "Ein angeblicher Polizist oder Kriminalbeamter ruft an, oft spät abends und manchmal mit einer gefälschten, vertrauenswürdig wirkenden Nummer im Display. Er erzählt, in Ihrer Nachbarschaft sei eingebrochen worden, bei Festgenommenen habe man eine Liste mit Ihrem Namen gefunden, oder Ihre Bank stecke mit Kriminellen unter einer Decke. Er fragt nach Bargeld, Gold und Schmuck im Haus. Um alles „in Sicherheit zu bringen“, sollen Sie es einem Kollegen übergeben, vor die Tür legen oder Geld bei der Bank abheben. Die Täter kennen manchmal Ihren Namen und private Details aus dem Internet.",
+    "en": "A supposed police officer or detective calls, often late in the evening and sometimes with a faked, trustworthy-looking number on screen. They say there were burglaries in your neighbourhood, a list with your name was found on arrested suspects, or your bank is working with criminals. They ask about cash, gold and jewellery in the house. To “put everything in safekeeping” you are told to hand it to a colleague, leave it outside your door or withdraw money from the bank. The criminals sometimes know your name and private details from the internet."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Anruf von der „Polizei“, manchmal mit einer echt wirkenden Nummer im Display.",
+        "en": "A call from the “police”, sometimes with a genuine-looking number on screen."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Einbrecher in der Nachbarschaft, Ihr Name stehe auf einer Liste.",
+        "en": "Burglars in the neighbourhood; your name is on a list."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie werden nach Bargeld, Schmuck und Gold im Haus gefragt.",
+        "en": "You are asked about cash, jewellery and gold in the house."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "de": "Sie sollen mit niemandem darüber sprechen, auch nicht mit der Bank.",
+        "en": "You must not talk to anyone about it, not even the bank."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "de": "Ein „Kollege“ holt die Wertsachen ab oder sie sollen vor die Tür.",
+        "en": "A “colleague” collects the valuables, or they are to be left outside."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Guten Abend, Kriminalpolizei, mein Name ist Hauptkommissar Krüger. Wir haben heute zwei Einbrecher in Ihrer Straße festgenommen, bei ihnen lag ein Zettel mit Ihrer Adresse. Die Komplizen sind noch frei. Haben Sie Bargeld oder Goldschmuck im Haus? Dann stellen wir das heute Nacht sicher, ein Zivilbeamter kommt vorbei. Bitte sprechen Sie mit niemandem darüber, auch nicht mit Ihrer Bank, dort gibt es einen Verdacht gegen Mitarbeiter.",
+        "en": "Good evening, criminal police, my name is Detective Chief Inspector Krüger. Today we arrested two burglars in your street; they had a note with your address. Their accomplices are still at large. Do you have cash or gold jewellery in the house? Then we’ll secure it tonight; a plain-clothes officer will come by. Please don’t talk to anyone about this, not even your bank; there are suspicions against staff there."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "falscher polizist anruf wertsachen",
+      "polizei will schmuck abholen",
+      "einbrecher nachbarschaft polizei ruft an",
+      "kriminalpolizei fragt nach bargeld gold",
+      "wertsachen in sicherheit bringen polizei",
+      "schmuck vor haustür ablegen",
+      "zivilbeamter holt geld ab",
+      "polizei ruft an wertsachen sichern",
+      "häuser ausgeräumt siedlung einbruch",
+      "schmuck bargeld zu hause aufbewahren polizei",
+      "kollege in zivil verwahren",
+      "niemandem erzählen ermittlungen gefährden"
+    ],
+    "en": [
+      "fake police officer called about burglars",
+      "police wanted to collect my jewellery",
+      "caller asked how much cash i keep at home",
+      "leave valuables outside the door",
+      "police number showed on my phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "urgency",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "de": [
+      "Echte Polizisten fragen nie am Telefon nach Ihrem Vermögen oder wo Sie Wertsachen aufbewahren.",
+      "Die Polizei holt nie Geld, Schmuck oder Gold zur „Verwahrung“ ab.",
+      "Die Nummer im Display beweist nichts: Sie kann gefälscht sein.",
+      "Die Aufforderung, mit niemandem zu sprechen, ist ein Alarmzeichen."
+    ],
+    "en": [
+      "Real police officers never ask on the phone about your wealth or where you keep valuables.",
+      "The police never collect money, jewellery or gold for “safekeeping”.",
+      "The number on screen proves nothing: it can be faked.",
+      "Being told not to talk to anyone is a warning sign."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Legen Sie sofort auf.",
+      "Wählen Sie selbst die 110 und fragen Sie nach, ob der Anruf echt war.",
+      "Übergeben Sie nichts und legen Sie nichts vor die Tür. Erstatten Sie Anzeige, auch wenn nichts passiert ist."
+    ],
+    "en": [
+      "Hang up immediately.",
+      "Dial 110 yourself and ask whether the call was real.",
+      "Hand nothing over and leave nothing outside. Report it, even if nothing happened."
+    ]
+  },
+  "reportTo": [
+    "de/police-110",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-HSK: Falsche Polizisten und angeblicher Bekannter: Betrüger bringen ältere Menschen um Geld und Schmuck",
+      "publisher": "Kreispolizeibehörde Hochsauerlandkreis (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/65847/6391889",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "POL-NI: Linsburg - Betrug durch falsche Polizeibeamte - Geschädigte verliert Goldschmuck im Wert von mindestens 10.000 Euro - Zeugenaufruf",
+      "publisher": "Polizeiinspektion Nienburg / Schaumburg (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/57922/6391308",
+      "date": "2026-11-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "de/shock-call-accident-bail"
+  ]
+}

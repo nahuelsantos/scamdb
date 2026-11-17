@@ -1,0 +1,150 @@
+{
+  "id": "ch/callback-falsche-abbuchung",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "de": "Eine E-Mail oder SMS „von Migros“, „UBS“ oder „TWINT“ mit Rückrufnummer",
+    "fr": "Un e-mail ou SMS « de Migros », « UBS » ou « TWINT » avec un numéro à rappeler",
+    "en": "An email or text “from Migros”, “UBS” or “TWINT” with a number to call back"
+  },
+  "name": {
+    "de": "Callback-Betrug: falsche Abbuchung oder Bestellung, „rufen Sie uns an“",
+    "fr": "Arnaque au rappel : faux débit ou fausse commande, « appelez-nous »",
+    "en": "Callback scam: a fake charge or order, “call us”"
+  },
+  "how": {
+    "de": "Eine E-Mail oder SMS meldet einen abgeschlossenen kostenpflichtigen Vertrag, einen Einkauf von mehreren hundert Franken, einen Login-Versuch aus dem Ausland oder eine TWINT-Zahlung, die Sie nicht kennen. Wenn Sie nicht innert kurzer Frist anrufen, werde der Betrag belastet. Die angegebene Nummer ist oft eine Schweizer Festnetznummer (häufig mit 021, 022, 026 oder 071). Am Telefon verlangt der falsche Support Kartendaten, Bestätigungscodes, die Freigabe einer TWINT-Zahlung oder die Installation einer Fernwartungssoftware, „um die Abbuchung zu stornieren“.",
+    "fr": "Un e-mail ou un SMS annonce un contrat payant conclu, un achat de plusieurs centaines de francs, une tentative de connexion depuis l’étranger ou un paiement TWINT que vous ne connaissez pas. Si vous n’appelez pas dans un court délai, le montant sera débité. Le numéro indiqué est souvent un fixe suisse (fréquemment 021, 022, 026 ou 071). Au téléphone, le faux support demande vos données de carte, des codes de confirmation, l’acceptation d’un paiement TWINT ou l’installation d’un logiciel d’accès à distance « pour annuler le débit ».",
+    "en": "An email or text reports a paid contract you signed, a purchase of several hundred francs, a login attempt from abroad or a TWINT payment you don’t recognise. Unless you call within a short deadline, the amount will be charged. The number given is often a Swiss landline (frequently 021, 022, 026 or 071). On the phone, the fake support asks for card details, confirmation codes, approval of a TWINT payment or installing remote-access software “to cancel the charge”."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Nachricht: Abbuchung oder Bestellung, die Sie nicht kennen.",
+        "fr": "Message : un débit ou une commande inconnus.",
+        "en": "Message: a charge or order you don’t recognise."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Nicht Sie? Rufen Sie sofort diese Nummer an.",
+        "fr": "Pas vous ? Appelez tout de suite ce numéro.",
+        "en": "Not you? Call this number now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Am Telefon: Code nennen oder TWINT-Zahlung bestätigen.",
+        "fr": "Au téléphone : donner un code ou accepter un paiement TWINT.",
+        "en": "On the phone: give a code or approve a TWINT payment."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "de": "Oder: Fernwartungsprogramm installieren.",
+        "fr": "Ou : installer un programme d’accès à distance.",
+        "en": "Or: install a remote-access program."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "de": "TWINT: Eine Zahlung von CHF 689.00 an einen Elektronikhändler wurde autorisiert. Waren Sie das nicht? Rufen Sie innerhalb von 30 Minuten unseren Kundendienst an unter [Nummer], sonst wird der Betrag endgültig belastet.",
+        "fr": "TWINT : un paiement de CHF 689.00 à un commerce d’électronique a été autorisé. Ce n’était pas vous ? Appelez notre service clientèle dans les 30 minutes au [numéro], sinon le montant sera débité définitivement.",
+        "en": "TWINT: a payment of CHF 689.00 to an electronics retailer has been authorised. Wasn’t you? Call our customer service within 30 minutes on [number], or the amount will be charged for good."
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "sms zahlung nicht ich rufen sie an",
+      "twint zahlung autorisiert kundendienst anrufen",
+      "migros mail bestellung über 700 franken",
+      "ubs login versuch ausland nummer anrufen",
+      "rückrufnummer 022 abbuchung stornieren",
+      "betrag wird belastet wenn sie nicht anrufen"
+    ],
+    "fr": [
+      "sms paiement pas moi appelez",
+      "paiement twint autorisé appeler service client",
+      "e-mail migros commande plus de 700 francs",
+      "ubs tentative de connexion étranger appeler",
+      "numéro à rappeler 022 annuler débit",
+      "montant débité si vous n’appelez pas"
+    ],
+    "en": [
+      "text payment not me call us",
+      "twint payment authorised call customer service",
+      "migros email order over 700 francs",
+      "ubs login attempt abroad call number",
+      "callback number 022 cancel charge",
+      "amount charged unless you call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "de": [
+      "Eine Nachricht verlangt einen Rückruf auf eine Nummer im Text, mit kurzer Frist.",
+      "Der „Support“ will Codes, eine TWINT-Freigabe oder Fernzugriff."
+    ],
+    "fr": [
+      "Un message exige de rappeler un numéro indiqué, avec un délai court.",
+      "Le « support » veut des codes, l’acceptation d’un TWINT ou un accès à distance."
+    ],
+    "en": [
+      "A message asks you to call back a number in the text, with a short deadline.",
+      "The “support” wants codes, a TWINT approval or remote access."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Rufen Sie nie die Nummer aus der Nachricht an; prüfen Sie in der offiziellen App oder über die offizielle Website.",
+      "Geben Sie keine Codes oder Kartendaten weiter und installieren Sie nichts.",
+      "Karte genannt? Sofort sperren lassen; bei Verlust Anzeige erstatten.",
+      "Melden Sie Nachricht und Nummer dem BACS."
+    ],
+    "fr": [
+      "N’appelez jamais le numéro du message ; vérifiez dans l’app officielle ou sur le site officiel.",
+      "Ne donnez ni codes ni données de carte et n’installez rien.",
+      "Carte communiquée ? Faites-la bloquer ; en cas de perte, portez plainte.",
+      "Signalez le message et le numéro à l’OFCS."
+    ],
+    "en": [
+      "Never call the number in the message; check in the official app or website.",
+      "Don’t give codes or card details and don’t install anything.",
+      "Gave your card? Have it blocked; if you lost money, report it to the police.",
+      "Report the message and number to BACS."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/bacs",
+    "ch/police"
+  ],
+  "sources": [
+    {
+      "title": "Woche 37: Starke Zunahme bei «Callback-Betrug», häufig mit der Vorwahl 021, 022, 026, 071",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w37-de",
+      "date": "2026-09-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

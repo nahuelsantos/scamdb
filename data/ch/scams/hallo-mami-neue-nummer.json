@@ -1,0 +1,149 @@
+{
+  "id": "ch/hallo-mami-neue-nummer",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "de": "Eine SMS, iMessage oder WhatsApp „von Ihrem Kind“ mit unbekannter Nummer",
+    "fr": "Un SMS, iMessage ou WhatsApp « de votre enfant » depuis un numéro inconnu",
+    "en": "A text, iMessage or WhatsApp “from your child” from an unknown number"
+  },
+  "name": {
+    "de": "„Hallo Mami, mein Handy ist kaputt“: neue Nummer, dringende Rechnung",
+    "fr": "« Coucou maman, mon téléphone est cassé » : nouveau numéro, facture urgente",
+    "en": "“Hi Mum, my phone is broken”: new number, urgent bill"
+  },
+  "how": {
+    "de": "Von einer unbekannten, oft ausländischen Nummer schreibt jemand „Hallo Mami“ oder „Hoi Papi“, manchmal sogar auf Schweizerdeutsch: Das alte Handy sei kaputt oder verloren, das sei die neue Nummer. Kurz darauf kommt die Bitte um Geld: Die Banking-App funktioniere auf dem neuen Handy noch nicht, eine Rechnung müsse heute bezahlt werden. In einer Variante soll man einen Code in der TWINT-App eingeben oder einen SMS-Code weitergeben, damit die Betrüger das TWINT-Konto übernehmen. Die Nachrichten kommen zunehmend per iMessage.",
+    "fr": "Depuis un numéro inconnu, souvent étranger, quelqu’un écrit « Coucou maman » ou « Salut papa », parfois même en suisse allemand : l’ancien téléphone serait cassé ou perdu, voici le nouveau numéro. Peu après vient la demande d’argent : l’app bancaire ne marche pas encore sur le nouveau téléphone, une facture doit être payée aujourd’hui. Dans une variante, on vous demande de saisir un code dans l’app TWINT ou de transmettre un code SMS pour reprendre votre compte TWINT. Les messages arrivent de plus en plus par iMessage.",
+    "en": "From an unknown, often foreign number, someone writes “Hi Mum” or “Hi Dad”, sometimes even in Swiss German: their old phone is broken or lost and this is the new number. Soon comes the request for money: the banking app does not work yet on the new phone and a bill must be paid today. In one variant you are asked to enter a code in the TWINT app or pass on a text code, so the scammers can take over your TWINT account. The messages increasingly arrive by iMessage."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "„Das ist meine neue Nummer, das alte Handy ist kaputt.“",
+        "fr": "« C’est mon nouveau numéro, l’ancien téléphone est cassé. »",
+        "en": "“This is my new number, my old phone is broken.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "de": "Die Banking-App geht nicht, eine Rechnung ist heute fällig.",
+        "fr": "L’app bancaire ne marche pas, une facture est due aujourd’hui.",
+        "en": "The banking app doesn’t work and a bill is due today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Bitte für mich überweisen, ich zahle es zurück.",
+        "fr": "Fais le virement pour moi, je te rembourse.",
+        "en": "Please pay it for me, I’ll pay you back."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "de": "Oder: Gib mir den Code aus der SMS.",
+        "fr": "Ou : donne-moi le code reçu par SMS.",
+        "en": "Or: give me the code from the text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "de": "Hoi Mami, ich bins. Mis Handy isch kaputt, das isch mini neui Nummer, chasch se spichere? Ich han es Problem, muess hüt no e Rächnig zahle und mis E-Banking gaht uf em neue Handy nonig. Chönntsch du das churz für mich überwiise? Ich zahl dirs morn zrugg ❤️",
+        "fr": "Coucou maman, c’est moi. Mon téléphone est cassé, voici mon nouveau numéro, tu peux l’enregistrer ? J’ai un souci, je dois encore payer une facture aujourd’hui et mon e-banking ne marche pas sur le nouveau téléphone. Tu pourrais faire le virement pour moi ? Je te rembourse demain ❤️",
+        "en": "Hi Mum, it’s me. My phone is broken, this is my new number, can you save it? I have a problem, I still have to pay a bill today and my e-banking doesn’t work on the new phone yet. Could you quickly transfer it for me? I’ll pay you back tomorrow ❤️"
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "hallo mami neue nummer",
+      "handy kaputt das ist meine neue nummer",
+      "kind schreibt von unbekannter nummer rechnung bezahlen",
+      "e-banking geht nicht auf dem neuen handy",
+      "überweis das für mich zahle es zurück",
+      "code in twint app eingeben für freundin"
+    ],
+    "fr": [
+      "coucou maman nouveau numéro",
+      "téléphone cassé voici mon nouveau numéro",
+      "enfant écrit d’un numéro inconnu facture à payer",
+      "e-banking ne marche pas sur le nouveau téléphone",
+      "fais le virement pour moi je te rembourse",
+      "saisir un code dans l’app twint pour un ami"
+    ],
+    "en": [
+      "hi mum new number",
+      "phone broken this is my new number",
+      "child texting from unknown number pay a bill",
+      "e-banking doesn’t work on the new phone",
+      "pay it for me i’ll pay you back",
+      "enter a code in the twint app for a friend"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "urgency",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "de": [
+      "Ein Familienmitglied meldet sich von einer neuen, oft ausländischen Nummer und braucht sofort Geld.",
+      "Es verlangt einen Code aus einer SMS oder eine Eingabe in der TWINT-App."
+    ],
+    "fr": [
+      "Un proche vous écrit depuis un nouveau numéro, souvent étranger, et a besoin d’argent tout de suite.",
+      "On vous demande un code reçu par SMS ou une saisie dans l’app TWINT."
+    ],
+    "en": [
+      "A family member writes from a new, often foreign number and needs money right away.",
+      "You are asked for a code from a text or to enter something in the TWINT app."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Rufen Sie Ihr Kind auf der bisherigen, bekannten Nummer an.",
+      "Überweisen Sie nichts und geben Sie keine Codes weiter.",
+      "Blockieren Sie den Absender; bei iMessage „Spam melden“.",
+      "Geld verloren? Bank anrufen und Anzeige bei der Polizei erstatten."
+    ],
+    "fr": [
+      "Appelez votre enfant sur son ancien numéro, celui que vous connaissez.",
+      "Ne versez rien et ne transmettez aucun code.",
+      "Bloquez l’expéditeur ; dans iMessage, « Signaler comme indésirable ».",
+      "Argent perdu ? Appelez la banque et portez plainte à la police."
+    ],
+    "en": [
+      "Call your child on the old number you know.",
+      "Don’t send money and don’t pass on any codes.",
+      "Block the sender; in iMessage use “Report Junk”.",
+      "Lost money? Call your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/police",
+    "ch/bacs"
+  ],
+  "sources": [
+    {
+      "title": "Woche 17: «Hallo Mami, mein Handy ist kaputt» – Betrüger nutzen verstärkt iMessage",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w17-de",
+      "date": "2026-04-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

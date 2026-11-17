@@ -1,0 +1,164 @@
+{
+  "id": "ch/falsche-bankmitarbeiter-fernwartung",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "de": "Ein Anruf „vom Sicherheitsdienst Ihrer Bank“",
+    "fr": "Un appel « du service de sécurité de votre banque »",
+    "en": "A call “from your bank’s security team”"
+  },
+  "name": {
+    "de": "Falsche Bankmitarbeiter: „verdächtige Transaktion, installieren Sie dieses Sicherheitsprogramm“",
+    "fr": "Faux employés de banque : « transaction suspecte, installez ce programme de sécurité »",
+    "en": "Fake bank staff: “suspicious transaction, install this security program”"
+  },
+  "how": {
+    "de": "Ein angeblicher Mitarbeiter einer bekannten Schweizer Bank ruft an und meldet besorgt eine verdächtige Transaktion. Er kennt oft Ihren Namen und Ihre Adresse. Dann verbindet er Sie mit einem „IT-Spezialisten“, der behauptet, Ihr E-Banking oder Computer sei mit Schadsoftware infiziert, und Sie drängt, ein „Support-Tool“ wie AnyDesk oder TeamViewer zu installieren. Damit sehen die Betrüger Ihren Bildschirm, steuern den Computer und greifen auf Ihr E-Banking zu. Eine neue Variante gibt sich als BAKOM aus und behauptet, Ihre Telefonnummer werde gesperrt.",
+    "fr": "Un prétendu employé d’une grande banque suisse appelle et signale, l’air inquiet, une transaction suspecte. Il connaît souvent votre nom et votre adresse. Il vous passe ensuite un « spécialiste informatique » qui affirme que votre e-banking ou votre ordinateur est infecté et vous pousse à installer un « outil d’assistance » comme AnyDesk ou TeamViewer. Les escrocs voient alors votre écran, prennent le contrôle de l’ordinateur et accèdent à votre e-banking. Une variante se fait passer pour l’OFCOM et prétend que votre numéro va être bloqué.",
+    "en": "A supposed employee of a well-known Swiss bank calls, sounding worried about a suspicious transaction. They often know your name and address. They then put you through to an “IT specialist” who claims your e-banking or computer is infected and pushes you to install a “support tool” such as AnyDesk or TeamViewer. The scammers then see your screen, control the computer and get into your e-banking. A newer variant poses as the Federal Office of Communications (BAKOM) and says your phone number is about to be blocked."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Anruf: verdächtige Transaktion auf Ihrem Konto.",
+        "fr": "Appel : transaction suspecte sur votre compte.",
+        "en": "Call: a suspicious transaction on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Ein „IT-Spezialist“ sagt, Ihr E-Banking sei infiziert.",
+        "fr": "Un « spécialiste informatique » dit que votre e-banking est infecté.",
+        "en": "An “IT specialist” says your e-banking is infected."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie sollen AnyDesk oder TeamViewer installieren.",
+        "fr": "On vous demande d’installer AnyDesk ou TeamViewer.",
+        "en": "You are told to install AnyDesk or TeamViewer."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "de": "Bleiben Sie dran, während Sie ins E-Banking gehen.",
+        "fr": "Restez en ligne pendant que vous ouvrez l’e-banking.",
+        "en": "Stay on the line while you log in to e-banking."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "de": "Grüezi Frau Meier, hier ist die Sicherheitsabteilung Ihrer Bank. Wir sehen gerade einen verdächtigen Zahlungsauftrag über 4800 Franken. Ihr E-Banking ist wahrscheinlich von einem Virus befallen. Ich verbinde Sie mit unserem Techniker, er hilft Ihnen, ein Schutzprogramm zu installieren. Bitte legen Sie nicht auf.",
+        "fr": "Bonjour Madame Meier, ici le service de sécurité de votre banque. Nous voyons un ordre de paiement suspect de 4800 francs. Votre e-banking est probablement infecté par un virus. Je vous passe notre technicien, il va vous aider à installer un programme de protection. Ne raccrochez pas, s’il vous plaît.",
+        "en": "Hello Mrs Meier, this is your bank’s security department. We can see a suspicious payment order for 4,800 francs. Your e-banking has probably been infected by a virus. I’ll put you through to our technician, who will help you install a protection program. Please don’t hang up."
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "anruf bank verdächtige transaktion",
+      "angeblicher bankmitarbeiter will anydesk installieren",
+      "teamviewer installieren bank e-banking virus",
+      "it spezialist bank fernwartung",
+      "bakom anruf telefonnummer wird gesperrt",
+      "sicherheitsabteilung bank schutzprogramm installieren",
+      "computer gehackt anruf bank techniker",
+      "betrugsabteilung bank anydesk herunterladen",
+      "ungewöhnliche überweisung bank ruft an"
+    ],
+    "fr": [
+      "appel banque transaction suspecte",
+      "faux employé de banque anydesk",
+      "installer teamviewer e-banking virus",
+      "technicien banque accès à distance",
+      "appel ofcom numéro bloqué",
+      "service de sécurité banque programme de protection",
+      "ordinateur piraté appel banque technicien",
+      "service des fraudes banque télécharger anydesk"
+    ],
+    "en": [
+      "bank call suspicious transaction",
+      "fake bank employee wants anydesk",
+      "install teamviewer e-banking virus",
+      "bank it specialist remote access",
+      "bakom call phone number blocked",
+      "bank security department protection program",
+      "computer hacked bank call technician",
+      "bank fraud department download anydesk"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "de": [
+      "Ihre Bank verlangt am Telefon nie, eine Fernwartungssoftware zu installieren.",
+      "Ein Anrufer kennt Ihren Namen und Ihre Adresse und spricht von einem Virus im E-Banking.",
+      "Sie werden zu einem „Techniker“ weiterverbunden und sollen dranbleiben."
+    ],
+    "fr": [
+      "Votre banque ne vous demande jamais par téléphone d’installer un logiciel d’accès à distance.",
+      "L’appelant connaît votre nom et votre adresse et parle d’un virus dans l’e-banking.",
+      "On vous transfère à un « technicien » et vous devez rester en ligne."
+    ],
+    "en": [
+      "Your bank never asks you on the phone to install remote-access software.",
+      "The caller knows your name and address and talks about a virus in your e-banking.",
+      "You are transferred to a “technician” and told to stay on the line."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Legen Sie sofort auf und rufen Sie Ihre Bank selbst über die Nummer auf der Karte an.",
+      "Installiert? Programm sofort deinstallieren, Bank anrufen und alle Passwörter auf diesem Gerät ändern.",
+      "Haben Sie Geld verloren, erstatten Sie Anzeige bei der Polizei.",
+      "Melden Sie den Anruf dem BACS."
+    ],
+    "fr": [
+      "Raccrochez et appelez vous-même votre banque au numéro figurant sur la carte.",
+      "Logiciel installé ? Désinstallez-le, appelez la banque et changez tous les mots de passe utilisés sur cet appareil.",
+      "Si vous avez perdu de l’argent, portez plainte à la police.",
+      "Signalez l’appel à l’OFCS."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on your card.",
+      "Installed it? Uninstall it at once, call your bank and change every password used on that device.",
+      "If you lost money, report it to the police.",
+      "Report the call to BACS."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/police",
+    "ch/bacs"
+  ],
+  "sources": [
+    {
+      "title": "Woche 15: Falsche Bankmitarbeiter fordern Installation von Fernwartungssoftware",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w15-de",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Zunahme von Telefonbetrug durch angebliche Bankmitarbeiter",
+      "publisher": "Kanton Basel-Stadt, Justiz- und Sicherheitsdepartement",
+      "url": "https://www.bs.ch/medienmitteilungen/jsd/2025-zunahme-von-telefonbetrug-durch-angebliche-bankmitarbeiter",
+      "date": "2025-07-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

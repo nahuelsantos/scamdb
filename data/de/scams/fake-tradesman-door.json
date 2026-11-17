@@ -1,0 +1,126 @@
+{
+  "id": "de/fake-tradesman-door",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "in-person"
+  ],
+  "sender": {
+    "de": "Ein „Wasserwerker“, „Handwerker“ oder „Ableser“ an der Haustür",
+    "en": "A “water board worker”, “tradesman” or “meter reader” at the door"
+  },
+  "name": {
+    "de": "Falsche Handwerker und Wasserwerker an der Haustür: Ablenkung im Keller, Diebstahl im Schlafzimmer",
+    "en": "Fake tradesmen and water workers at the door: distraction in the cellar, theft in the bedroom"
+  },
+  "how": {
+    "de": "Es klingelt, ein Mann gibt sich als Mitarbeiter der Stadtwerke, des Wasserwerks oder als Handwerker aus: Es gebe einen Wasserrohrbruch, der Zählerstand müsse abgelesen oder das Wasser geprüft werden. In der Wohnung lenkt er Sie ab, etwa im Keller oder im Bad, wo Sie den Duschkopf halten oder das Wasser laufen lassen sollen. Währenddessen durchsucht ein Komplize unbemerkt Schlafzimmer und Schränke und stiehlt Bargeld, Schmuck und Wertsachen. Betroffen sind vor allem ältere Menschen.",
+    "en": "The doorbell rings and a man claims to work for the utility company or water board, or to be a tradesman: there is a burst pipe, the meter must be read or the water checked. Inside he distracts you, for example in the cellar or bathroom, where you are asked to hold the shower head or let the water run. Meanwhile an accomplice slips in and searches bedrooms and cupboards, stealing cash, jewellery and valuables. Older people are targeted most."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Unangekündigter Besuch: Wasserrohrbruch, Zählerablesung oder Prüfung.",
+        "en": "An unannounced visit: burst pipe, meter reading or inspection."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Es sei dringend, sofort müsse etwas geprüft werden.",
+        "en": "It’s urgent; something must be checked right away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie werden in Keller oder Bad abgelenkt.",
+        "en": "You are distracted in the cellar or bathroom."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "de": "Ein Komplize stiehlt unbemerkt Geld und Schmuck.",
+        "en": "An accomplice quietly steals money and jewellery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Guten Tag, Stadtwerke, Wasserversorgung. Bei Ihren Nachbarn ist ein Rohr geplatzt, wir müssen sofort Ihre Leitungen und den Zähler prüfen, sonst kann braunes Wasser in Ihre Leitung kommen. Gehen Sie bitte mit mir in den Keller, und danach drehen Sie im Bad die Dusche auf und halten den Duschkopf, bis das Wasser klar ist.",
+        "en": "Good afternoon, utility company, water supply. A pipe has burst at your neighbours’; we have to check your pipes and meter right away, otherwise brown water may get into your supply. Please come down to the cellar with me, and afterwards turn on the shower in the bathroom and hold the shower head until the water runs clear."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "falscher wasserwerker haustür",
+      "falsche handwerker wasserrohrbruch",
+      "zählerstand ablesen unangemeldet",
+      "stadtwerke mitarbeiter klingelt",
+      "duschkopf halten wasser laufen lassen",
+      "trickdiebstahl schmuck schlafzimmer",
+      "handwerker lenkt ab keller",
+      "stadtwerke wasserversorgung leitungen prüfen"
+    ],
+    "en": [
+      "fake water board worker at my door",
+      "man said there was a burst pipe",
+      "unannounced meter reading",
+      "distraction burglary while i was in the cellar",
+      "fake tradesman stole jewellery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "de": [
+      "Echte Ablesungen und Arbeiten werden in der Regel angekündigt, durch Vermieter, Hausverwaltung oder Brief.",
+      "Wer drängelt und Sie in einen anderen Raum lotst, will Sie oft nur ablenken.",
+      "Ein Ausweis allein beweist nichts: Er kann gefälscht sein."
+    ],
+    "en": [
+      "Real meter readings and work are normally announced, by the landlord, building management or letter.",
+      "Someone who rushes you and steers you into another room often just wants to distract you.",
+      "An ID card alone proves nothing: it can be forged."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Lassen Sie niemanden unangekündigt herein. Fragen Sie nach dem Ausweis und rufen Sie das Unternehmen unter einer selbst gesuchten Nummer an.",
+      "Bitten Sie Nachbarn oder Angehörige dazu oder bestellen Sie die Person für später.",
+      "Kommt Ihnen etwas verdächtig vor oder fehlt etwas? Rufen Sie die 110."
+    ],
+    "en": [
+      "Don’t let anyone in unannounced. Ask for ID and call the company on a number you looked up yourself.",
+      "Ask neighbours or relatives to join you, or tell the person to come back later.",
+      "Does something seem suspicious, or is something missing? Call 110."
+    ]
+  },
+  "reportTo": [
+    "de/police-110"
+  ],
+  "sources": [
+    {
+      "title": "POL-DN: Falscher Wasserwerker bestiehlt Bewohnerin - Polizei sucht Zeugen",
+      "publisher": "Polizei Düren (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6391328",
+      "date": "2026-11-16"
+    },
+    {
+      "title": "POL-ST: Greven, Falsche Handwerker unterwegs - Die Polizei warnt ausdrücklich",
+      "publisher": "Polizei Steinfurt (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/43526/6389036",
+      "date": "2026-11-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

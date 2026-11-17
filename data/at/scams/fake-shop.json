@@ -1,0 +1,124 @@
+{
+  "id": "at/fake-shop",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "de": "Ein Onlineshop mit sehr günstigen Preisen",
+    "en": "An online shop with very low prices"
+  },
+  "name": {
+    "de": "Fake-Shop: Vorkasse bezahlt, Ware kommt nie",
+    "en": "Fake shop: paid in advance, the goods never arrive"
+  },
+  "how": {
+    "de": "Über Werbung oder die Suche finden Sie einen Onlineshop mit stark reduzierten Preisen, etwa für Elektrogeräte, Stromspeicher, Gartengeräte, Pellets oder Markenkleidung. Der Name ähnelt oft einem echten Shop, nur ein Buchstabe ist anders. Am Ende bleibt nur Vorkasse per Überweisung, oft auf ein ausländisches Konto. Die Ware kommt nie, der Shop ist bald verschwunden.",
+    "en": "Through an ad or a search you find an online shop with heavily reduced prices, for example on electronics, battery storage, garden machines, pellets or brand clothing. The name often looks like a real shop with one letter changed. At checkout only prepayment by bank transfer is left, often to a foreign account. The goods never come and the shop soon disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Shop mit Preisen weit unter allen anderen.",
+        "en": "A shop with prices far below everyone else."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Die Adresse ähnelt einem bekannten Shop; Impressum fehlt oder ist kopiert.",
+        "en": "The address looks like a known shop; the imprint is missing or copied."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Am Ende geht nur Vorkasse per Überweisung, oft auf ein Konto im Ausland.",
+        "en": "At the end only prepayment by transfer works, often to an account abroad."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Nur heute: Balkonkraftwerk-Speicher 2,5 kWh statt 1.299 € jetzt 389 €! Lieferung in 2–3 Werktagen. Wegen hoher Nachfrage ist derzeit nur Zahlung per Vorkasse möglich. Jetzt bestellen: [Link]",
+        "en": "Today only: balcony solar battery 2.5 kWh, instead of €1,299 now €389! Delivery in 2–3 working days. Because of high demand, only prepayment is possible at the moment. Order now: [Link]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "fake shop ware nie geliefert",
+      "onlineshop vorkasse überwiesen nichts gekommen",
+      "billiger shop konto ausland",
+      "shop kein impressum bestellt",
+      "stromspeicher online bestellt nie angekommen",
+      "fakeshop bezahlt kreditkarte keine ware"
+    ],
+    "en": [
+      "fake online shop never delivered",
+      "paid in advance nothing arrived",
+      "cheap shop foreign bank account",
+      "shop with no imprint",
+      "ordered online goods never came"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "de": [
+      "Fast alles stark reduziert, viel günstiger als überall sonst.",
+      "Die Adresse ist ein echter Shopname mit vertauschten oder zusätzlichen Buchstaben.",
+      "Kein Impressum, oder am Ende nur noch Vorkasse per Überweisung."
+    ],
+    "en": [
+      "Almost everything heavily reduced, much cheaper than anywhere else.",
+      "The address is a real shop’s name with swapped or extra letters.",
+      "No imprint, or only prepayment by transfer at the end."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Shop vor dem Kauf auf der Watchlist Internet prüfen und unabhängige Bewertungen suchen.",
+      "Schon bezahlt? Sofort die Bank oder das Kreditkartenunternehmen anrufen und eine Rückbuchung versuchen.",
+      "Anzeige erstatten und den Shop der Watchlist Internet melden."
+    ],
+    "en": [
+      "Check the shop on Watchlist Internet before buying and look for independent reviews.",
+      "Already paid? Call your bank or card company at once and try to reverse the payment.",
+      "File a complaint and report the shop to Watchlist Internet."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/police-report",
+    "at/watchlist-internet"
+  ],
+  "sources": [
+    {
+      "title": "Tausende Adressen geplanter Fake-Shops entdeckt",
+      "publisher": "help.ORF.at",
+      "url": "https://help.orf.at/stories/3238206/",
+      "date": "2026-11-14"
+    },
+    {
+      "title": "Zwei Betrugsfälle bei Onlinekäufen",
+      "publisher": "ORF Kärnten",
+      "url": "https://kaernten.orf.at/stories/3373571/",
+      "date": "2026-10-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "at/asfinag-vignette-toll"
+  ]
+}

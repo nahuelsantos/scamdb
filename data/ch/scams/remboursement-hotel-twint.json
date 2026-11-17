@@ -1,0 +1,140 @@
+{
+  "id": "ch/remboursement-hotel-twint",
+  "country": "ch",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "fr": "Un e-mail « de votre hôtel » avec vos vraies données de réservation",
+    "de": "Eine E-Mail „Ihres Hotels“ mit Ihren echten Buchungsdaten",
+    "en": "An email “from your hotel” with your real booking details"
+  },
+  "name": {
+    "fr": "Faux remboursement d’hôtel sur TWINT : identifiants et code bancaire volés",
+    "de": "Falsche Hotel-Rückerstattung auf TWINT: Login-Daten und Code der Bank abgegriffen",
+    "en": "Fake hotel refund to TWINT: bank login and code stolen"
+  },
+  "how": {
+    "fr": "Des criminels ont piraté le système de réservation d’un hôtel et connaissent noms, dates et établissement. Au nom de l’hôtel, ils proposent par e-mail un remboursement de 7,5 % d’une nuit déjà payée, versé directement sur votre compte TWINT. Le lien mène à une copie du site de l’hôtel, puis à une fausse page de connexion de votre banque. Pendant que vous « finalisez le remboursement », les escrocs se connectent avec vos identifiants à votre vrai e-banking et vous pressent de valider la connexion ou de générer un code avec votre lecteur de carte et de le lire à un « support ». Le but : transférer votre TWINT sur leur numéro ou faire des paiements.",
+    "de": "Kriminelle haben das Buchungssystem eines Hotels gehackt und kennen Namen, Daten und Hotel. Im Namen des Hotels bieten sie per E-Mail 7,5 % Rückerstattung auf eine bezahlte Nacht an, direkt auf Ihr TWINT-Konto. Der Link führt auf eine Kopie der Hotelseite, dann auf eine falsche Login-Seite Ihrer Bank. Während Sie „die Rückerstattung“ abschliessen, loggen sich die Betrüger mit Ihren Daten im echten E-Banking ein und drängen Sie, das Login zu bestätigen oder einen Code mit dem Kartenleser zu erzeugen und einem „Support“ vorzulesen. Ziel: Ihr TWINT auf ihre Nummer umzuleiten oder Zahlungen auszulösen.",
+    "en": "Criminals have hacked a hotel’s booking system and know names, dates and the hotel. In the hotel’s name, they offer by email a 7.5% refund on a night already paid, sent straight to your TWINT account. The link leads to a copy of the hotel’s site, then to a fake login page for your bank. While you “complete the refund”, the scammers log in to your real e-banking with your details and push you to approve the login or generate a code with your card reader and read it to a “support” agent. The aim: move your TWINT to their number or make payments."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "E-mail de l’hôtel avec vos vraies données de réservation.",
+        "de": "Hotel-E-Mail mit Ihren echten Buchungsdaten.",
+        "en": "Hotel email with your real booking details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Remboursement sur TWINT : choisir sa banque, se connecter.",
+        "de": "Rückerstattung auf TWINT: Bank wählen, einloggen.",
+        "en": "Refund to TWINT: pick your bank, log in."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Valider la connexion ou lire le code du lecteur de carte.",
+        "de": "Login bestätigen oder Kartenleser-Code vorlesen.",
+        "en": "Approve the login or read out the card-reader code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "fr": "Cher client, pour vous remercier de votre séjour du 12 au 14 septembre, nous vous remboursons 7,5 % d’une nuitée. Le montant sera versé directement sur votre compte TWINT. Veuillez choisir votre banque et confirmer le remboursement sous 48 heures : [lien]",
+        "de": "Sehr geehrter Gast, als Dank für Ihren Aufenthalt vom 12. bis 14. September erstatten wir Ihnen 7,5 % einer Nacht zurück. Die Gutschrift erfolgt direkt auf Ihr TWINT-Konto. Bitte wählen Sie Ihre Bank und bestätigen Sie die Rückerstattung innert 48 Stunden: [Link]",
+        "en": "Dear guest, to thank you for your stay from 12 to 14 September, we are refunding 7.5% of one night. The money will go straight to your TWINT account. Please choose your bank and confirm the refund within 48 hours: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "e-mail hôtel remboursement d’une nuit twint",
+      "remboursement sur mon compte twint choisir ma banque",
+      "hôtel connaît ma réservation lien remboursement",
+      "lire le code du lecteur de carte au support",
+      "valider la connexion e-banking pour remboursement",
+      "geste commercial hôtel 7,5 %"
+    ],
+    "de": [
+      "hotel mail rückerstattung einer nacht twint",
+      "rückerstattung auf twint konto bank wählen",
+      "hotel kennt meine buchung link rückerstattung",
+      "kartenleser code dem support vorlesen",
+      "e-banking login bestätigen für rückerstattung",
+      "hotel kulanz 7,5 prozent"
+    ],
+    "en": [
+      "hotel email refund one night twint",
+      "refund to my twint account choose bank",
+      "hotel knows my booking refund link",
+      "read card reader code to support",
+      "approve e-banking login for refund",
+      "hotel goodwill 7.5 percent"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Pour recevoir de l’argent, on vous demande de vous connecter à votre banque.",
+      "Un « support » veut un code de votre lecteur de carte ou la validation d’une connexion."
+    ],
+    "de": [
+      "Um Geld zu erhalten, sollen Sie sich bei Ihrer Bank einloggen.",
+      "Ein „Support“ will einen Kartenleser-Code oder eine Login-Bestätigung."
+    ],
+    "en": [
+      "To receive money, you are asked to log in to your bank.",
+      "A “support” wants a card-reader code or a login approval."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas ; contactez l’hôtel à un numéro que vous trouvez vous-même.",
+      "Ne communiquez jamais de code SMS ou de lecteur de carte.",
+      "Identifiants saisis ? Appelez votre banque pour bloquer e-banking et TWINT.",
+      "Signalez l’e-mail à l’OFCS ; en cas de perte, portez plainte."
+    ],
+    "de": [
+      "Klicken Sie nicht; kontaktieren Sie das Hotel über eine selbst gesuchte Nummer.",
+      "Geben Sie nie SMS- oder Kartenleser-Codes weiter.",
+      "Login-Daten eingegeben? Bank anrufen und E-Banking und TWINT sperren lassen.",
+      "Melden Sie die E-Mail dem BACS; bei Verlust Anzeige erstatten."
+    ],
+    "en": [
+      "Don’t click; contact the hotel on a number you find yourself.",
+      "Never share text or card-reader codes.",
+      "Entered your login? Call your bank to block e-banking and TWINT.",
+      "Report the email to BACS; if you lost money, report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/bacs",
+    "ch/police"
+  ],
+  "sources": [
+    {
+      "title": "Semaine 42 : Des comptes TWINT ciblés par une nouvelle variante d’hameçonnage liée aux réservations d’hôtels",
+      "publisher": "Office fédéral de la cybersécurité OFCS",
+      "url": "https://www.bacs.admin.ch/fr/26w42-fr",
+      "date": "2026-10-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

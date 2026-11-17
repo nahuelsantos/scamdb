@@ -1,0 +1,130 @@
+{
+  "id": "de/fake-shop",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "de": "Ein Onlineshop, der wie ein bekannter Händler aussieht",
+    "en": "An online shop that looks like a well-known retailer"
+  },
+  "name": {
+    "de": "Fake-Shop: Schnäppchen im Look eines bekannten Händlers, Vorkasse, keine Ware",
+    "en": "Fake shop: bargains dressed up as a well-known retailer, pay in advance, no goods"
+  },
+  "how": {
+    "de": "Über eine Anzeige oder Suchmaschine landen Sie in einem Onlineshop, der wie ein bekannter Discounter oder Markenhändler aussieht oder sehr günstige Preise für gefragte Ware hat, etwa Gartengeräte, Heizöl, Elektronik oder Kinderwagen. Bezahlt werden kann am Ende nur per Vorkasse oder Überweisung, oft auf ein ausländisches Konto. Die Ware kommt nie, und kurz danach ist die Seite verschwunden. Die Internetadresse weicht oft nur in einem Buchstaben oder einer Endung vom echten Shop ab.",
+    "en": "Through an ad or a search engine you land in an online shop that looks like a well-known discounter or brand retailer, or has very low prices for popular goods, such as garden equipment, heating oil, electronics or prams. At checkout you can only pay in advance or by bank transfer, often to a foreign account. The goods never arrive, and shortly after the site has disappeared. The web address often differs from the real shop by just one letter or ending."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein auffällig günstiges Angebot in einem Shop, der einem bekannten Händler ähnelt.",
+        "en": "A strikingly cheap offer in a shop that resembles a known retailer."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Die Internetadresse ist leicht anders als die des echten Händlers.",
+        "en": "The web address is slightly different from the real retailer’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "„Nur noch heute“ oder „nur noch 2 Stück“.",
+        "en": "“Today only” or “only 2 left”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Bezahlen geht nur per Vorkasse oder Überweisung.",
+        "en": "You can only pay in advance or by bank transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Räumungsverkauf! Akku-Rasenmäher mit Mähroboter-Funktion statt 649 € jetzt nur 119 €. Nur noch heute, solange der Vorrat reicht. Kostenloser Versand. Zahlung per Vorkasse, Sie erhalten nach der Bestellung unsere Bankverbindung. Zum Shop: [Link]",
+        "en": "Clearance sale! Cordless lawn mower with robot function, now only €119 instead of €649. Today only, while stocks last. Free shipping. Payment in advance; you will receive our bank details after ordering. To the shop: [link]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "fake shop bestellt ware nicht geliefert",
+      "onlineshop nur vorkasse überweisung",
+      "shop sieht aus wie discounter",
+      "internetadresse anders als echter shop",
+      "schnäppchen online betrug",
+      "heizöl online günstig betrug",
+      "shop impressum fehlt",
+      "seite nach bestellung nicht mehr erreichbar",
+      "räumungsverkauf vorkasse bankverbindung"
+    ],
+    "en": [
+      "fake online shop never delivered",
+      "shop only accepts bank transfer",
+      "site looked like a discount store",
+      "web address slightly different",
+      "too cheap online offer scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Preise weit unter dem Marktpreis sind ein Warnsignal.",
+      "Nur Vorkasse oder Überweisung, kein Kauf auf Rechnung oder Käuferschutz.",
+      "Die Adresse weicht vom echten Händler ab, das Impressum fehlt oder ist unvollständig."
+    ],
+    "en": [
+      "Prices far below market value are a warning sign.",
+      "Only payment in advance or transfer, no buying on invoice or buyer protection.",
+      "The address differs from the real retailer’s; the imprint is missing or incomplete."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Prüfen Sie die Internetadresse genau und vergleichen Sie Preise und Impressum.",
+      "Zahlen Sie möglichst auf Rechnung oder mit Käuferschutz, nicht per Vorkasse an Unbekannte.",
+      "Schon bezahlt? Rufen Sie sofort Ihre Bank an, ob sich die Zahlung zurückholen lässt, sichern Sie Bestellung und Seite (Screenshots) und erstatten Sie Anzeige."
+    ],
+    "en": [
+      "Check the web address carefully and compare prices and the imprint.",
+      "Pay on invoice or with buyer protection where possible, not in advance to strangers.",
+      "Already paid? Call your bank straight away to see whether the payment can be recalled, save the order and page (screenshots) and file a police report."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "POL-BI: Vorsicht beim Rasenmäherkauf - Achtung Fake-Shop",
+      "publisher": "Polizei Bielefeld (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/12522/6371006",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "POL-NB: Polizei warnt vor Fake-Shops im Internet",
+      "publisher": "Polizeipräsidium Neubrandenburg (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/108747/6339473",
+      "date": "2026-08-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

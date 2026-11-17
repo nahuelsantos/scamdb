@@ -1,0 +1,153 @@
+{
+  "id": "de/kleinanzeigen-fake-payment",
+  "country": "de",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "online",
+    "email",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "de": "Ein „Käufer“ auf Kleinanzeigen, oder „Kleinanzeigen“ selbst per E-Mail",
+    "en": "A “buyer” on Kleinanzeigen, or “Kleinanzeigen” itself by email"
+  },
+  "name": {
+    "de": "Kleinanzeigen: falscher Käufer mit „Sicher bezahlen“-Link und Phishing „Konto verifizieren“",
+    "en": "Kleinanzeigen: fake buyer with a “Sicher bezahlen” link and “verify your account” phishing"
+  },
+  "how": {
+    "de": "Sie verkaufen etwas auf Kleinanzeigen. Ein Interessent will sofort kaufen, nichts verhandeln und „sicher bezahlen“. Kurz darauf kommt per Mail, SMS oder WhatsApp eine Nachricht, das Geld sei schon bezahlt oder reserviert: Sie müssten den Empfang nur noch über einen Link oder QR-Code bestätigen. Die Seite sieht aus wie Kleinanzeigen und fragt Ihre Kreditkarten-, Bank- oder PayPal-Daten ab. Eine zweite Variante: Eine Mail behauptet, Ihr Kleinanzeigen-Konto sei wegen verdächtiger Aktivitäten gesperrt und müsse innerhalb von 24 Stunden verifiziert werden.",
+    "en": "You are selling something on Kleinanzeigen. A buyer wants to buy at once, no haggling, and “pay securely”. Shortly after, a message arrives by email, text or WhatsApp saying the money is already paid or reserved: you just have to confirm receipt through a link or QR code. The page looks like Kleinanzeigen and asks for your credit card, bank or PayPal details. A second version: an email claims your Kleinanzeigen account has been blocked because of suspicious activity and must be verified within 24 hours."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Käufer will sofort kaufen, ohne Fragen, und „sicher bezahlen“.",
+        "en": "A buyer wants to buy immediately, no questions, and “pay securely”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "de": "Eine Nachricht im Kleinanzeigen-Stil: Zahlung erfolgt, bitte bestätigen.",
+        "en": "A message in Kleinanzeigen style: payment made, please confirm."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Ein Link oder QR-Code führt aus der App heraus auf eine falsche Seite.",
+        "en": "A link or QR code takes you out of the app to a fake page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Dort sollen Sie Kartendaten oder Zugangsdaten eingeben, um Geld zu „empfangen“.",
+        "en": "There you must enter card or login details to “receive” money."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "de": "Oder: Ihr Konto sei gesperrt und müsse binnen 24 Stunden verifiziert werden.",
+        "en": "Or: your account is blocked and must be verified within 24 hours."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hallo, ich nehme den Kinderwagen zum angegebenen Preis. Ich habe schon über „Sicher bezahlen“ gezahlt, der Betrag ist für Sie reserviert. Sie bekommen gleich eine Mail, bitte dort auf „Zahlung erhalten“ klicken und Ihre Karte für die Auszahlung hinterlegen: [Link] Den Versand organisiere ich, danke!",
+        "en": "Hi, I’ll take the pram at the listed price. I’ve already paid through “Sicher bezahlen”, the amount is reserved for you. You’ll get an email in a moment; please click “Payment received” there and enter your card for the payout: [link] I’ll arrange the shipping, thanks!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "kleinanzeigen sicher bezahlen link",
+      "käufer schickt link zahlung bestätigen",
+      "kleinanzeigen zahlung erhalten kartendaten",
+      "kleinanzeigen konto gesperrt verifizieren",
+      "kleinanzeigen qr code zahlung",
+      "betrug als verkäufer kleinanzeigen",
+      "geld empfangen kreditkarte eingeben",
+      "käufer will per whatsapp weiterschreiben",
+      "betrag liegt zur auszahlung bereit artikel",
+      "zahlungsangaben bestätigen käufer bezahlt"
+    ],
+    "en": [
+      "kleinanzeigen buyer sent a payment link",
+      "confirm payment to receive money",
+      "asked for my card to get paid",
+      "kleinanzeigen account blocked verify",
+      "fake buyer secure payment scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "de": [
+      "Bei „Sicher bezahlen“ müssen Sie als Verkäufer keinem Link folgen: Alles läuft in der App.",
+      "Um Geld zu empfangen, brauchen Sie nie Ihre Kreditkartendaten oder Ihr Passwort einzugeben.",
+      "Käufer, die sofort auf WhatsApp oder E-Mail wechseln wollen, sind verdächtig.",
+      "Kleinanzeigen sperrt Konten nicht per Mail mit 24-Stunden-Frist und Link."
+    ],
+    "en": [
+      "With “Sicher bezahlen” you as the seller never have to follow a link: everything happens in the app.",
+      "To receive money you never need to enter your credit card details or password.",
+      "Buyers who want to move straight to WhatsApp or email are suspicious.",
+      "Kleinanzeigen doesn’t block accounts by email with a 24-hour deadline and a link."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Bleiben Sie im Kleinanzeigen-Chat und öffnen Sie Zahlungen nur in der App oder auf der Seite, die Sie selbst aufrufen.",
+      "Am sichersten ist die Übergabe vor Ort mit Barzahlung.",
+      "Haben Sie Kartendaten eingegeben? Lassen Sie die Karte sperren, ändern Sie Ihr Passwort, melden Sie den Nutzer bei Kleinanzeigen und erstatten Sie Anzeige.",
+      "Phishing-Mails können Sie an das Phishing-Radar der Verbraucherzentrale weiterleiten."
+    ],
+    "en": [
+      "Stay in the Kleinanzeigen chat and open payments only in the app or on the site you open yourself.",
+      "The safest way is handing over in person for cash.",
+      "Did you enter card details? Have the card blocked, change your password, report the user to Kleinanzeigen and file a police report.",
+      "You can forward phishing emails to the consumer centre’s Phishing Radar."
+    ]
+  },
+  "reportTo": [
+    "de/your-bank",
+    "de/sperr-notruf",
+    "de/phishing-radar",
+    "de/onlinewache"
+  ],
+  "sources": [
+    {
+      "title": "Phishing-Radar: Aktuelle Warnungen",
+      "publisher": "Verbraucherzentrale NRW",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/phishingradar/phishingradar-aktuelle-warnungen-6059",
+      "date": "2026-11-16"
+    },
+    {
+      "title": "POL-OS: Pünktlich zum Weihnachtsgeschäft: Polizei startet landesweite Kampagne gegen Onlinebetrug",
+      "publisher": "Polizeidirektion Osnabrück (Presseportal)",
+      "url": "https://www.presseportal.de/blaulicht/pm/104232/6391521",
+      "date": "2026-11-16"
+    },
+    {
+      "title": "Betrug mit Kleinanzeigen: Diese Maschen sollten Sie kennen",
+      "publisher": "Verbraucherzentrale",
+      "url": "https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/betrug-mit-kleinanzeigen-diese-maschen-sollten-sie-kennen-110389",
+      "date": "2025-09-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,145 @@
+{
+  "id": "ch/ricardo-erstverkaeufer-verifizierung",
+  "country": "ch",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "email",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "de": "Eine E-Mail „von Ricardo“ nach Ihrem ersten Inserat, manchmal ein WhatsApp-„Support“",
+    "fr": "Un e-mail « de Ricardo » après votre première annonce, parfois un « support » WhatsApp",
+    "en": "An email “from Ricardo” after your first listing, sometimes a WhatsApp “support”"
+  },
+  "name": {
+    "de": "Erstverkäufer auf Ricardo: falsche „Pflicht-Verifizierung“ der Bankdaten",
+    "fr": "Premiers vendeurs sur Ricardo : fausse « vérification obligatoire » des données bancaires",
+    "en": "First-time sellers on Ricardo: fake “mandatory verification” of bank details"
+  },
+  "how": {
+    "de": "Kaum haben Sie zum ersten Mal etwas auf Ricardo inseriert, meldet sich ein angeblicher Käufer. Danach kommt eine täuschend echte E-Mail „von Ricardo“: Als neuer Verkäufer müsse Ihr Konto aus Sicherheitsgründen verifiziert werden, sonst könne der Verkauf nicht abgeschlossen werden. Antworten Sie, folgt sofort ein Link oder QR-Code, um „die Bankdaten zu verifizieren“, der auf eine Phishing-Seite führt. Manchmal landen Sie in einem WhatsApp-Chat mit einem falschen Ricardo-Support, der weitere „Sicherheitsschritte“ verlangt und Ihre Login-Daten abgreift.",
+    "fr": "À peine votre première annonce publiée sur Ricardo, un prétendu acheteur vous contacte. Puis arrive un e-mail très crédible « de Ricardo » : en tant que nouveau vendeur, votre compte doit être vérifié pour des raisons de sécurité, sinon la vente ne peut pas aboutir. Si vous répondez, un lien ou un code QR suit aussitôt pour « vérifier vos données bancaires », menant à une page d’hameçonnage. Parfois, vous arrivez dans un chat WhatsApp avec un faux support Ricardo qui exige d’autres « étapes de sécurité » et vole vos identifiants.",
+    "en": "As soon as you list something on Ricardo for the first time, a supposed buyer gets in touch. Then a convincing email “from Ricardo” arrives: as a new seller your account must be verified for security reasons, or the sale cannot go ahead. If you reply, a link or QR code follows straight away “to verify your bank details”, leading to a phishing page. Sometimes you end up in a WhatsApp chat with a fake Ricardo support that demands more “security steps” and steals your login."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Erstes Inserat, sofort meldet sich ein „Käufer“.",
+        "fr": "Première annonce, un « acheteur » se manifeste aussitôt.",
+        "en": "First listing, a “buyer” gets in touch at once."
+      }
+    },
+    {
+      "text": {
+        "de": "E-Mail „von Ricardo“: Konto muss verifiziert werden.",
+        "fr": "E-mail « de Ricardo » : le compte doit être vérifié.",
+        "en": "Email “from Ricardo”: account must be verified."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Sonst kein Verkauf: jetzt handeln.",
+        "fr": "Sinon pas de vente : agissez maintenant.",
+        "en": "Otherwise no sale: act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Link oder QR-Code zur Bankdaten-Prüfung.",
+        "fr": "Lien ou code QR pour vérifier les données bancaires.",
+        "en": "Link or QR code to check bank details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "email",
+      "text": {
+        "de": "Ricardo Sicherheitsteam: Als neuer Verkäufer ist für Ihr Konto eine einmalige Verifizierung erforderlich. Ihr Verkauf bleibt bis dahin blockiert. Bitte bestätigen Sie Ihre Bankverbindung innert 2 Stunden über den folgenden Link: [Link]",
+        "fr": "Équipe de sécurité Ricardo : en tant que nouveau vendeur, une vérification unique de votre compte est nécessaire. Votre vente reste bloquée jusque-là. Veuillez confirmer vos coordonnées bancaires dans les 2 heures via le lien suivant : [lien]",
+        "en": "Ricardo security team: as a new seller, a one-time verification of your account is required. Your sale stays blocked until then. Please confirm your bank details within 2 hours using the following link: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "de": [
+      "ricardo mail konto verifizieren neuer verkäufer",
+      "ricardo bankdaten bestätigen link",
+      "erstes inserat ricardo verifizierung",
+      "ricardo support whatsapp sicherheitsschritte",
+      "verkauf blockiert bis verifizierung",
+      "qr code bankverbindung verifizieren ricardo"
+    ],
+    "fr": [
+      "ricardo e-mail vérifier compte nouveau vendeur",
+      "ricardo confirmer coordonnées bancaires lien",
+      "première annonce ricardo vérification",
+      "support ricardo whatsapp étapes de sécurité",
+      "vente bloquée jusqu’à la vérification",
+      "code qr vérifier données bancaires ricardo"
+    ],
+    "en": [
+      "ricardo email verify account new seller",
+      "ricardo confirm bank details link",
+      "first listing ricardo verification",
+      "ricardo support whatsapp security steps",
+      "sale blocked until verification",
+      "qr code verify bank details ricardo"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "de": [
+      "Eine „Pflicht-Verifizierung“ per E-Mail, kurz nach dem ersten Inserat.",
+      "Ein Link, QR-Code oder WhatsApp-„Support“ für Ihre Bankdaten."
+    ],
+    "fr": [
+      "Une « vérification obligatoire » par e-mail juste après la première annonce.",
+      "Un lien, un code QR ou un « support » WhatsApp pour vos données bancaires."
+    ],
+    "en": [
+      "A “mandatory verification” by email just after your first listing.",
+      "A link, QR code or WhatsApp “support” for your bank details."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Klicken Sie nicht; prüfen Sie Ihr Konto nur direkt in der Ricardo-App oder auf der Website.",
+      "Daten eingegeben? Passwort sofort ändern, Ricardo und Ihre Bank kontaktieren.",
+      "Melden Sie Käufer und Nachricht der Plattform und dem BACS."
+    ],
+    "fr": [
+      "Ne cliquez pas ; vérifiez votre compte uniquement dans l’app ou sur le site de Ricardo.",
+      "Données saisies ? Changez le mot de passe, contactez Ricardo et votre banque.",
+      "Signalez l’acheteur et le message à la plateforme et à l’OFCS."
+    ],
+    "en": [
+      "Don’t click; check your account only in the Ricardo app or website.",
+      "Entered details? Change your password at once and contact Ricardo and your bank.",
+      "Report the buyer and the message to the platform and to BACS."
+    ]
+  },
+  "reportTo": [
+    "ch/your-bank",
+    "ch/bacs",
+    "ch/police"
+  ],
+  "sources": [
+    {
+      "title": "Woche 13: Phishing-Mails im Namen von Kleinanzeigenplattformen – Erstverkäufer im Visier",
+      "publisher": "Bundesamt für Cybersicherheit BACS",
+      "url": "https://www.bacs.admin.ch/de/26w13-de",
+      "date": "2026-03-31"
+    }
+  ],
+  "updated": "2026-11-17"
+}

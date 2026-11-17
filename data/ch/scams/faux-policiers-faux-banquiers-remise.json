@@ -1,0 +1,163 @@
+{
+  "id": "ch/faux-policiers-faux-banquiers-remise",
+  "country": "ch",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "fr": "Un appel « de la police » ou « de votre banque », puis quelqu’un qui passe chez vous",
+    "de": "Ein Anruf „der Polizei“ oder „Ihrer Bank“, danach ein Abholer an der Haustür",
+    "en": "A call “from the police” or “your bank”, then a collector at your door"
+  },
+  "name": {
+    "fr": "Faux policiers et faux banquiers : remettre argent, bijoux ou cartes à un coursier",
+    "de": "Falsche Polizisten und Bankmitarbeiter: Bargeld, Schmuck oder Karten einem Abholer übergeben",
+    "en": "Fake police and bankers: handing cash, jewellery or cards to a collector"
+  },
+  "how": {
+    "fr": "Au téléphone, les escrocs se présentent comme policiers, banquiers ou employés d’un établissement financier : une enquête est en cours, votre compte fait l’objet d’une tentative de fraude, vos valeurs doivent être mises en sécurité. Souvent, « la banque » appelle d’abord puis renvoie vers « la police », dont on vous donne le numéro. Ils insistent pour vous empêcher de réfléchir ou de demander conseil à un proche. Vous devez retirer de l’argent, préparer bijoux, cartes bancaires ou codes PIN ; un complice passe chez vous pour tout récupérer. Les personnes âgées sont les premières visées.",
+    "de": "Betrüger geben sich am Telefon als Polizisten, Bankangestellte oder Mitarbeitende eines Finanzinstituts aus: Es laufe eine Ermittlung, Ihr Konto werde angegriffen, Ihre Wertsachen müssten in Sicherheit gebracht werden. Oft ruft zuerst „die Bank“ an und verweist dann auf „die Polizei“, deren Nummer man anrufen soll. Sie setzen unter Druck, damit Sie nicht nachdenken oder Angehörige fragen. Sie sollen Bargeld abheben, Schmuck, Bankkarten oder PIN-Codes bereithalten; ein Komplize kommt vorbei und holt alles ab. Betroffen sind vor allem ältere Menschen.",
+    "en": "On the phone, scammers pose as police officers, bank staff or employees of a financial institution: an investigation is under way, someone is trying to defraud your account, your valuables must be made safe. Often “the bank” calls first and then refers you to “the police”, giving you a number to call. They pressure you so you don’t stop to think or ask a relative. You are told to withdraw cash and get jewellery, bank cards or PIN codes ready; an accomplice comes to your home to collect it all. Elderly people are the main targets."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Appel : police ou banque, une enquête est en cours.",
+        "de": "Anruf: Polizei oder Bank, eine Ermittlung läuft.",
+        "en": "Call: police or bank, an investigation is under way."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "N’en parlez à personne.",
+        "de": "Sprechen Sie mit niemandem darüber.",
+        "en": "Don’t tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "fr": "Retirer de l’argent, préparer bijoux et cartes.",
+        "de": "Bargeld abheben, Schmuck und Karten bereitlegen.",
+        "en": "Withdraw cash, get jewellery and cards ready."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Un collègue passe tout récupérer.",
+        "de": "Ein Kollege kommt vorbei und holt alles ab.",
+        "en": "A colleague will come and collect it all."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "fr": "Bonjour Madame, ici la police cantonale. Nous avons arrêté une bande et votre nom figurait sur leur liste. Un complice travaille aussi dans votre banque. Retirez vos économies et préparez vos bijoux, un agent en civil passera aujourd’hui les mettre en sécurité. N’en parlez à personne, même pas au guichet de la banque.",
+        "de": "Guten Tag, hier ist die Kantonspolizei. Wir haben eine Bande festgenommen, und Ihr Name stand auf ihrer Liste. Auch bei Ihrer Bank arbeitet ein Komplize. Heben Sie Ihr Erspartes ab und legen Sie Ihren Schmuck bereit, ein Beamter in Zivil holt alles heute zur Sicherheit ab. Sagen Sie niemandem etwas, auch nicht am Bankschalter.",
+        "en": "Good afternoon, this is the cantonal police. We have arrested a gang and your name was on their list. An accomplice also works at your bank. Withdraw your savings and get your jewellery ready, a plain-clothes officer will collect everything today for safekeeping. Don’t tell anyone, not even at the bank counter."
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "appel de la police mettre mes bijoux en sécurité",
+      "faux policier demande de retirer de l’argent",
+      "un agent passe chercher l’argent à la maison",
+      "faux banquier vient chercher ma carte bancaire",
+      "police au téléphone code pin",
+      "n’en parlez à personne même pas à la banque"
+    ],
+    "de": [
+      "anruf polizei wertsachen in sicherheit bringen",
+      "falscher polizist verlangt bargeld abheben",
+      "beamter holt geld zu hause ab",
+      "falscher bankmitarbeiter holt bankkarte ab",
+      "polizei am telefon pin code",
+      "niemandem etwas sagen auch nicht bank"
+    ],
+    "en": [
+      "police call keep my jewellery safe",
+      "fake police officer asks me to withdraw cash",
+      "officer comes to collect money at home",
+      "fake banker comes to pick up my bank card",
+      "police on the phone pin code",
+      "don’t tell anyone not even the bank"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "La police ou la banque vous demande de l’argent, des bijoux, une carte ou un code PIN.",
+      "Quelqu’un doit passer chez vous pour récupérer vos valeurs.",
+      "On vous interdit d’en parler à vos proches ou à la banque."
+    ],
+    "de": [
+      "Polizei oder Bank verlangen Geld, Schmuck, eine Karte oder den PIN-Code.",
+      "Jemand soll bei Ihnen vorbeikommen, um Wertsachen abzuholen.",
+      "Sie dürfen mit Angehörigen oder der Bank nicht darüber reden."
+    ],
+    "en": [
+      "The police or bank ask you for money, jewellery, a card or your PIN.",
+      "Someone is to come to your home to collect valuables.",
+      "You are told not to talk to relatives or the bank about it."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez et appelez le 117 ; le 117 peut aussi s’afficher faussement.",
+      "Ne remettez jamais rien à quelqu’un qui sonne chez vous, même s’il se dit policier ou banquier.",
+      "Appelez votre banque au numéro officiel figurant sur vos documents.",
+      "Victime ? Faites bloquer vos cartes et portez plainte."
+    ],
+    "de": [
+      "Legen Sie auf und rufen Sie 117 an; auch 117 kann gefälscht angezeigt werden.",
+      "Übergeben Sie nie etwas an jemanden an der Tür, auch wenn er sich als Polizist oder Banker ausgibt.",
+      "Rufen Sie Ihre Bank über die offizielle Nummer auf Ihren Unterlagen an.",
+      "Betroffen? Karten sperren lassen und Anzeige erstatten."
+    ],
+    "en": [
+      "Hang up and call 117; 117 can also be shown falsely on your screen.",
+      "Never hand anything to someone at your door, even if they say they are police or a banker.",
+      "Call your bank on the official number on your documents.",
+      "Victim? Have your cards blocked and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ch/police",
+    "ch/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Escroqueries aux faux policiers et faux banquiers : plus d’une centaine de personnes interpellées depuis le début de l’année dans le canton de Vaud",
+      "publisher": "État de Vaud",
+      "url": "https://www.vd.ch/actualites/actualite/news/26705-escroqueries-aux-faux-policiers-et-faux-banquiers-plus-dune-centaine-de-personnes-interpellees-depuis-le-debut-de-lannee-dans-le-canton-de-vaud",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "Vorsicht, jetzt treiben wieder falsche Polizisten ihr Unwesen",
+      "publisher": "blue News",
+      "url": "https://www.bluewin.ch/de/news/schweiz/vorsicht-jetzt-sind-wieder-vermehrt-telefonbetrueger-aktiv-und-erfolgreich-li.3192907",
+      "date": "2026-04-16"
+    },
+    {
+      "title": "Zunahme von Telefonbetrug durch angebliche Bankmitarbeiter",
+      "publisher": "Kanton Basel-Stadt, Justiz- und Sicherheitsdepartement",
+      "url": "https://www.bs.ch/medienmitteilungen/jsd/2025-zunahme-von-telefonbetrug-durch-angebliche-bankmitarbeiter",
+      "date": "2025-07-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

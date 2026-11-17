@@ -1,0 +1,149 @@
+{
+  "id": "ch/boutique-suisse-fictive-asie",
+  "country": "ch",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "fr": "Une boutique en ligne avec une adresse .ch et un nom de ville suisse",
+    "de": "Ein Online-Shop mit .ch-Adresse und Schweizer Stadtnamen",
+    "en": "An online shop with a .ch address and a Swiss city name"
+  },
+  "name": {
+    "fr": "Boutique à fausse façade suisse : rabais permanents, « fermeture », marchandise et retours en Asie",
+    "de": "Fake-Shop mit Schweizer Fassade: Dauerrabatte, „Ladenschliessung“, Ware und Retouren aus Asien",
+    "en": "Shop with a fake Swiss front: permanent discounts, “closing down”, goods and returns from Asia"
+  },
+  "how": {
+    "fr": "Des boutiques avec un prénom et une ville suisse dans le nom, un domaine .ch et des rabais permanents se donnent l’air d’une boutique locale. La page « À propos » raconte une histoire inventée, souvent une prétendue fermeture. Produits et mannequins sont créés par IA. Les mentions légales manquent ou indiquent une personne ou société à l’étranger ; les conditions de retour révèlent un entrepôt en Asie. La marchandise arrive après des semaines, jamais, ou de mauvaise qualité, et le renvoi vers l’Asie coûte plus que l’article. Avant le Black Friday, ces boutiques se multiplient avec de faux avis clients et des copies de commerces suisses.",
+    "de": "Shops mit einem Vornamen und einer Schweizer Stadt im Namen, .ch-Domain und dauernden Rabatten wirken wie eine lokale Boutique. Die Seite „Über uns“ erzählt eine erfundene Geschichte, oft mit angeblicher Geschäftsaufgabe. Produkte und Models sind mit KI erstellt. Das Impressum fehlt oder nennt eine Person oder Firma im Ausland; laut Rückgabebedingungen liegt das Lager in Asien. Die Ware kommt nach Wochen, gar nicht oder in schlechter Qualität, und die Rücksendung nach Asien kostet mehr als der Artikel. Vor Black Friday werden solche Shops auch mit gefälschten Kundenbewertungen und Kopien von Schweizer Händlern beworben.",
+    "en": "Shops with a first name and a Swiss city in their name, a .ch domain and permanent discounts look like a local boutique. The “About us” page tells an invented story, often a supposed closing-down. Products and models are AI-generated. The legal notice is missing or names a person or company abroad; the returns policy shows the warehouse is in Asia. Goods arrive after weeks, never, or in poor quality, and sending them back to Asia costs more than the item. Before Black Friday, such shops multiply with fake customer reviews and copies of Swiss retailers."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Nom suisse, adresse .ch, rabais énormes.",
+        "de": "Schweizer Name, .ch-Adresse, riesige Rabatte.",
+        "en": "Swiss name, .ch address, huge discounts."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fr": "« Liquidation totale, aujourd’hui seulement ».",
+        "de": "„Totalausverkauf, nur noch heute“.",
+        "en": "“Closing-down sale, today only”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Paiement d’avance ; rien n’arrive ou ça vient d’Asie.",
+        "de": "Vorauszahlung; Ware kommt nicht oder aus Asien.",
+        "en": "Pay upfront; nothing comes or it comes from Asia."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "online",
+      "text": {
+        "fr": "Après 25 ans, notre petite boutique de Lucerne ferme définitivement 😢 Merci pour votre fidélité ! Liquidation totale : tout jusqu’à -80 %, jusqu’à épuisement du stock. Livraison gratuite dans toute la Suisse. Commandez maintenant : [lien]",
+        "de": "Nach 25 Jahren schliesst unsere kleine Boutique in Luzern für immer 😢 Danke für eure Treue! Totalausverkauf: alles bis zu 80 % reduziert, nur solange Vorrat. Gratis Versand in der ganzen Schweiz. Jetzt bestellen: [Link]",
+        "en": "After 25 years our little boutique in Lucerne is closing for good 😢 Thank you for your loyalty! Closing-down sale: everything up to 80% off, while stocks last. Free delivery across Switzerland. Order now: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "boutique en ligne suisse ferme liquidation",
+      "rabais jusqu’à 80 % boutique .ch",
+      "commande jamais reçue boutique suisse",
+      "retour à envoyer en asie",
+      "mentions légales société à l’étranger",
+      "produits photos générées par ia boutique"
+    ],
+    "de": [
+      "online shop schweiz schliesst ausverkauf",
+      "rabatt bis 80 prozent shop .ch",
+      "bestellung nie erhalten schweizer shop",
+      "rücksendung nach asien schicken",
+      "impressum firma im ausland",
+      "produktfotos ki generiert shop"
+    ],
+    "en": [
+      "swiss online shop closing down sale",
+      "up to 80 percent off .ch shop",
+      "order never arrived swiss shop",
+      "returns must go to asia",
+      "legal notice company abroad",
+      "ai generated product photos shop"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Une adresse .ch et un nom de ville, mais des mentions légales à l’étranger et un entrepôt en Asie.",
+      "Des rabais permanents, une « fermeture » et un compte à rebours.",
+      "Seulement le paiement d’avance par carte, TWINT ou virement instantané."
+    ],
+    "de": [
+      "Eine .ch-Adresse und ein Stadtname, aber ein Impressum im Ausland und ein Lager in Asien.",
+      "Dauerrabatte, eine „Geschäftsaufgabe“ und ein Countdown.",
+      "Nur Vorauszahlung mit Karte, TWINT oder Sofortüberweisung."
+    ],
+    "en": [
+      "A .ch address and a city name, but a legal notice abroad and a warehouse in Asia.",
+      "Permanent discounts, a “closing-down” and a countdown.",
+      "Only upfront payment by card, TWINT or instant transfer."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Vérifiez les mentions légales et l’adresse de retour avant d’acheter.",
+      "Cherchez le nom de la boutique avec « avis » ou « arnaque ».",
+      "Préférez le paiement sur facture.",
+      "Signalez la boutique au SECO ; en cas de perte, portez plainte."
+    ],
+    "de": [
+      "Prüfen Sie Impressum und Rücksendeadresse vor dem Kauf.",
+      "Suchen Sie den Shopnamen mit „Erfahrungen“ oder „Betrug“.",
+      "Bezahlen Sie lieber auf Rechnung.",
+      "Melden Sie den Shop dem SECO; bei Verlust Anzeige erstatten."
+    ],
+    "en": [
+      "Check the legal notice and returns address before buying.",
+      "Search the shop’s name with “reviews” or “scam”.",
+      "Prefer paying by invoice.",
+      "Report the shop to SECO; if you lost money, report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ch/seco",
+    "ch/police",
+    "ch/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Semaine 41 : Quand la référence à la Suisse est trompeuse - boutiques en ligne avec adresses de retour en Asie",
+      "publisher": "Office fédéral de la cybersécurité OFCS",
+      "url": "https://www.bacs.admin.ch/fr/26w41-fr",
+      "date": "2026-10-13"
+    },
+    {
+      "title": "Semaine 45 : C’est bientôt le Black Friday - attention aux boutiques fictives alimentées par l’IA et à l’hameçonnage lié aux colis",
+      "publisher": "Office fédéral de la cybersécurité OFCS",
+      "url": "https://www.bacs.admin.ch/fr/26w45-fr",
+      "date": "2026-11-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

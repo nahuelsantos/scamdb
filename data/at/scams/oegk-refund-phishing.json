@@ -1,0 +1,128 @@
+{
+  "id": "at/oegk-refund-phishing",
+  "country": "at",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "de": "Österreichische Gesundheitskasse (ÖGK)",
+    "en": "Austrian Health Insurance Fund (ÖGK)"
+  },
+  "name": {
+    "de": "Falsche Rückerstattung im Namen der ÖGK",
+    "en": "Fake refund in the name of the ÖGK (health insurance)"
+  },
+  "how": {
+    "de": "Eine SMS oder E-Mail im Namen der ÖGK: Ihnen stehe eine Rückerstattung zu, etwa für Arztkosten, oder Ihre Daten für die e-card müssten geprüft werden. Über einen Link sollen Sie die Rückerstattung online beantragen und dabei persönliche Daten und Kreditkartendaten eingeben. Die Seite gehört Betrügern; danach wird von Ihrer Karte abgebucht.",
+    "en": "A text or email in the name of the ÖGK: you are due a refund, for example for doctor’s costs, or your e-card details must be checked. Through a link you are asked to apply for the refund online, entering personal and credit card details. The page belongs to scammers; afterwards your card is charged."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "SMS oder E-Mail „von der ÖGK“ über eine Rückerstattung.",
+        "en": "Text or email “from the ÖGK” about a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Frist: Der Antrag müsse umgehend gestellt werden.",
+        "en": "Deadline: the claim must be made right away."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Ein Link zu einem Online-Formular.",
+        "en": "A link to an online form."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "de": "Dort werden Kreditkartendaten und Codes für die „Auszahlung“ verlangt.",
+        "en": "There credit card details and codes are requested for the “payout”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "ÖGK: Ihr Antrag auf Kostenerstattung wurde genehmigt. Betrag: 132,40 EUR. Um die Gutschrift zu erhalten, bestätigen Sie bitte Ihre Kartendaten bis morgen: [Link]",
+        "en": "ÖGK: your claim for reimbursement has been approved. Amount: 132.40 EUR. To receive the credit, please confirm your card details by tomorrow: [Link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "ögk rückerstattung sms",
+      "gesundheitskasse rückerstattung link",
+      "ögk kostenerstattung kartendaten",
+      "e-card daten prüfen sms",
+      "gesundheitskasse erstattung beantragen link"
+    ],
+    "en": [
+      "health insurance refund text austria",
+      "ögk refund email link",
+      "health fund reimbursement card details",
+      "e-card details check text",
+      "claim refund online link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "de": [
+      "Für eine Rückerstattung braucht niemand Ihre Kreditkartendaten.",
+      "Die ÖGK schickt keine Links, über die Sie Geld anfordern sollen.",
+      "Kurze Frist und ein Link mit fremder Adresse."
+    ],
+    "en": [
+      "Nobody needs your credit card details to pay you a refund.",
+      "The ÖGK does not send links for you to claim money.",
+      "A short deadline and a link with a strange address."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Nicht auf die Nachricht reagieren und den Link nicht öffnen.",
+      "Bei Zweifeln selbst bei der ÖGK nachfragen, über meineSV oder die Nummer auf der offiziellen Website.",
+      "Kartendaten eingegeben? Karte sofort sperren lassen und die Nachricht der Watchlist Internet melden."
+    ],
+    "en": [
+      "Don’t respond to the message or open the link.",
+      "If unsure, ask the ÖGK yourself, through meineSV or the number on the official website.",
+      "Entered card details? Have the card blocked at once and report the message to Watchlist Internet."
+    ]
+  },
+  "reportTo": [
+    "at/your-bank",
+    "at/card-block",
+    "at/watchlist-internet",
+    "at/bka-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Gesundheitskasse warnt vor falschen Mails und SMS",
+      "publisher": "Salzburg24",
+      "url": "https://www.salzburg24.at/news/salzburg/gesundheitskasse-warnt-vor-falschen-mails-und-sms-art-283501",
+      "date": "2025-01-02"
+    },
+    {
+      "title": "Falsche Polizisten fordern Geld und Gold",
+      "publisher": "ORF Oberösterreich",
+      "url": "https://ooe.orf.at/stories/3367288/",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-17"
+}
