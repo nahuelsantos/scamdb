@@ -1,0 +1,103 @@
+{
+  "id": "mt/clone-licensed-firm",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "en": "A “Maltese licensed” financial firm"
+  },
+  "name": {
+    "en": "Clone or unlicensed firm claiming to be licensed in Malta"
+  },
+  "how": {
+    "en": "Fake firms copy the name, address or website of a real MFSA-licensed company, or simply claim to be registered in Malta, to sell investments, crypto or other financial services. They may cold-call or message you, and some copy the MFSA’s own website. Money sent to them is very likely lost."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A firm contacts you or you find its website, and it says it is licensed in Malta."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It offers investment or crypto services with attractive returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It asks you to send money to open an account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Dear client, we are an MFSA-regulated investment house based in Sliema. Our managed portfolios return 8–12% per quarter. To open your account, complete the attached form and transfer the minimum €1,000 deposit."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "firm says it is licensed in Malta",
+      "company copying a real Maltese firm",
+      "unlicensed investment firm",
+      "fake MFSA licence",
+      "cold call offering investment advice",
+      "clone firm website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A firm you can’t find on the MFSA register, or whose contact details differ from the register.",
+      "Unexpected calls or messages offering investment advice.",
+      "A website address that only looks like the real firm’s or the MFSA’s."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check the firm on the MFSA Financial Services Register and contact it only through the details listed there.",
+      "Don’t send money or documents.",
+      "If you are dealing with one, stop all payments and contact the MFSA and the Police."
+    ]
+  },
+  "reportTo": [
+    "mt/mfsa",
+    "mt/police"
+  ],
+  "sources": [
+    {
+      "title": "Public urged to avoid two unlicensed financial operators",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/public-urged-to-avoid-two-unlicensed-financial-operators/",
+      "date": "2026-06-22"
+    },
+    {
+      "title": "MFSA warns public about website impersonating the Authority",
+      "publisher": "Business Now",
+      "url": "https://businessnow.mt/mfsa-warns-public-about-website-impersonating-the-authority/",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "MFSA issues consumer warnings against unauthorised firms misusing Maltese company details",
+      "publisher": "Business Now",
+      "url": "https://businessnow.mt/mfsa-issues-consumer-warnings-against-unauthorised-firms-misusing-maltese-company-details/",
+      "date": "2025-08-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

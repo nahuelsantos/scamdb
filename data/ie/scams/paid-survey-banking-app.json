@@ -1,0 +1,97 @@
+{
+  "id": "ie/paid-survey-banking-app",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A survey company, or an ad using your bank’s name"
+  },
+  "name": {
+    "en": "Paid survey or “test a banking app” offer that takes over your account"
+  },
+  "how": {
+    "en": "While browsing, or after an AI search for quick ways to earn money, you see an ad offering easy cash for a short survey or for testing a banking app, sometimes with your bank’s name on it. You are moved to a chat app and given step-by-step instructions: download software, share your screen, log in to your banking app and share one-time passcodes. The criminals use this to take money from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad offers easy cash for a survey or testing a banking app."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are moved to a chat app with step-by-step instructions."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask you to download software or share your screen."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "en": "They ask you to log in to your bank and share passcodes."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Welcome to the app tester programme! Task 1 pays €40: install the screen viewer from the link, open your banking app so our team can check the layout, and read out the 6-digit code you get to confirm the test."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "paid survey asked me to log into my bank",
+      "test a banking app for money",
+      "survey job asked me to share my screen",
+      "earn money testing apps asked for my code",
+      "quick cash survey ad",
+      "they wanted me to install software for a survey"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "Being paid to log in to your bank while someone watches.",
+      "Being asked to share your screen, install software or read out codes.",
+      "Easy money for very little work."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Stop. Never share your screen, passwords or one-time passcodes.",
+      "If you logged in or shared codes, call your bank straight away.",
+      "Report it to the Gardaí."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Beware of paid survey scams that put your bank account at risk",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2026/07/13/beware-of-paid-survey-scams-that-put-your-bank-account-at-risk/",
+      "date": "2026-07-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

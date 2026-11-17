@@ -1,0 +1,107 @@
+{
+  "id": "mt/mtca-tax-refund-sms",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "en": "“MTCA” (Malta Tax and Customs Administration)"
+  },
+  "name": {
+    "en": "Fake MTCA tax refund text"
+  },
+  "how": {
+    "en": "A text that seems to come from the MTCA says you are owed a tax refund and gives a link. The link opens a copy of the MTCA website that asks for your card details to “release” the refund. With those details, the scammers take money from your bank account. The MTCA says its only website is mtca.gov.mt."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from “MTCA” says you are owed a tax refund."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "It has a link to claim the money."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page looks like the MTCA site and asks for your card details to receive the refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "Money is then taken from your account."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "MTCA: Following the review of your 2025 return you are entitled to a refund of €231.40. To receive it, confirm your payment card within 48 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "MTCA tax refund text",
+      "tax refund link",
+      "card details to receive a refund",
+      "fake MTCA website",
+      "text saying I'm owed a refund",
+      "refund from tax and customs"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "impersonation"
+  ],
+  "redFlags": {
+    "en": [
+      "Being asked for card details to receive money.",
+      "A tax refund offered by text with a link.",
+      "Any website address other than mtca.gov.mt."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t open the link or enter card details. Type mtca.gov.mt yourself or call the MTCA freephone on 153.",
+      "If you entered card details, call your bank at once to block the card.",
+      "Report it to the Police Cyber Crime Unit."
+    ]
+  },
+  "reportTo": [
+    "mt/your-bank",
+    "mt/cyber-crime-unit",
+    "mt/police"
+  ],
+  "sources": [
+    {
+      "title": "Police warn of fraudulent tax refund SMS scam",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/police-warn-of-fraudulent-tax-refund-sms-scam/",
+      "date": "2026-08-19"
+    },
+    {
+      "title": "Public warned of fraudulent websites impersonating official tax portal",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/public-warned-of-fraudulent-websites-impersonating-official-tax-portal/",
+      "date": "2026-08-13"
+    },
+    {
+      "title": "MTCA warns public over fake tax refund websites",
+      "publisher": "Business Now",
+      "url": "https://businessnow.mt/mtca-warns-public-over-fake-tax-refund-websites/",
+      "date": "2026-08-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

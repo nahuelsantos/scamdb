@@ -1,0 +1,111 @@
+{
+  "id": "pt/mbway-money-sent-by-mistake",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "pt": "Um desconhecido que diz ter enviado dinheiro por engano",
+    "en": "A stranger who says they sent you money by mistake"
+  },
+  "name": {
+    "pt": "MB WAY: “enviei-lhe dinheiro por engano”",
+    "en": "MB WAY: “I sent you money by mistake”"
+  },
+  "how": {
+    "pt": "Recebe no MB WAY uma transferência de alguém que não conhece. Pouco depois, chega uma mensagem de outro número, muitas vezes por WhatsApp, a dizer que foi um engano e a pedir que devolva o valor depressa, para um número de telemóvel diferente. O dinheiro vem de outras burlas: se o devolver, pode estar a ajudar a branquear dinheiro e ainda ficar com o problema quando a vítima verdadeira reclamar.",
+    "en": "You receive an MB WAY transfer from someone you don’t know. Soon after, a message from another number, often on WhatsApp, says it was a mistake and asks you to send the money back quickly, to a different phone number. The money comes from other scams: if you send it back, you may be helping to launder it and still be left with the problem when the real victim complains."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Recebe uma transferência MB WAY inesperada de um desconhecido.",
+        "en": "You get an unexpected MB WAY transfer from a stranger."
+      }
+    },
+    {
+      "text": {
+        "pt": "Outra pessoa, de outro número, escreve a dizer que foi engano.",
+        "en": "Someone else, from another number, writes to say it was a mistake."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Pede que devolva já o valor para um número de telemóvel que indica.",
+        "en": "They ask you to return the money right away to a phone number they give."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Boa tarde, peço imensa desculpa, enganei-me num número e mandei-lhe 180€ por MB WAY. Era para a minha sobrinha. Consegue devolver para este número [número]? Preciso mesmo do dinheiro hoje, obrigado!",
+        "en": "Good afternoon, I’m so sorry, I got a number wrong and sent you €180 on MB WAY. It was for my niece. Could you send it back to this number [número]? I really need the money today, thank you!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "recebi dinheiro no mb way de um desconhecido",
+      "transferência por engano mb way",
+      "pedem para devolver o dinheiro",
+      "enganei-me no número e mandei-lhe dinheiro",
+      "devolver mb way para outro número",
+      "mb way por engano burla"
+    ],
+    "en": [
+      "money sent by mistake on mb way",
+      "stranger sent me money on mb way",
+      "asked to send the money back",
+      "refund to a different number",
+      "mb way mistake scam"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Quem pede a devolução não é o número que enviou o dinheiro.",
+      "Pressa para devolver para um número de telemóvel."
+    ],
+    "en": [
+      "The person asking for the money back is not the number that sent it.",
+      "Pressure to send it back to a phone number."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não devolva o dinheiro por iniciativa própria nem para outro número.",
+      "Ligue para o seu banco para que trate da devolução pela via oficial.",
+      "Guarde capturas de ecrã das mensagens e apresente queixa."
+    ],
+    "en": [
+      "Don’t send the money back yourself or to another number.",
+      "Call your bank so it handles the return the official way.",
+      "Keep screenshots of the messages and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/your-bank",
+    "pt/queixa-eletronica",
+    "pt/psp-gnr"
+  ],
+  "sources": [
+    {
+      "title": "Cuidado com nova burla através de MB Way",
+      "publisher": "DECO PROteste",
+      "url": "https://www.deco.proteste.pt/tecnologia/ciberseguranca/noticias/mb-way-cuidado-nova-burla",
+      "date": "2026-04-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

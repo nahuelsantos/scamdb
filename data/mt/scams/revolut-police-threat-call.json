@@ -1,0 +1,94 @@
+{
+  "id": "mt/revolut-police-threat-call",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "“Revolut”"
+  },
+  "name": {
+    "en": "Recorded “Revolut” call threatening to report you to the police"
+  },
+  "how": {
+    "en": "A call from a Maltese number plays a recorded message in English that says it is Revolut and that your personal details don’t match. It threatens to report you to the police unless you give your details. A second caller then asks for your account codes and personal information. People who went along with it had their accounts emptied, sometimes within hours."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A Maltese number calls and a recording says it is Revolut."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says there is a problem with your personal details and threatens a police report."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A live caller asks for your account codes and personal details."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Money is taken from your account soon after."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Automated message: Hello, this is Revolut. We found a mismatch in the information on your account. If you do not verify your identity now, this case will be passed to the police. Press 1 to speak to an agent."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "recorded call from Revolut",
+      "Revolut said my details don't match",
+      "threatened to report me to the police",
+      "second caller asked for my codes",
+      "Revolut account emptied after a call",
+      "press 1 to speak to Revolut"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A bank or payment app threatening you with the police.",
+      "Being asked for codes or personal details on a call you didn’t expect.",
+      "A recorded message that hands you over to a “colleague”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up and block the number. Check your account only in the Revolut app.",
+      "Never share codes or personal details with someone who called you.",
+      "If you lost money, keep screenshots, the number and your transactions, tell Revolut at once and report it to the Police, even if you lost nothing."
+    ]
+  },
+  "reportTo": [
+    "mt/your-bank",
+    "mt/police",
+    "mt/cyber-crime-unit"
+  ],
+  "sources": [
+    {
+      "title": "15 report being victims of Revolut impersonation scams",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/15-report-being-victims-of-revolut-impersonation-scams/",
+      "date": "2026-03-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "mt/fake-police-call",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "“Malta Police”"
+  },
+  "name": {
+    "en": "Fake police officer calling from a local number"
+  },
+  "how": {
+    "en": "Someone calls from what looks like a local mobile number and says they are a police officer. They ask you a few questions, then want personal details, such as your email address, to set up an “appointment” that doesn’t exist. The number is spoofed, so it looks Maltese."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A local-looking number calls and the caller says they are from the police."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask questions as if there were a case about you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for personal details, including your email, to book an appointment."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: Good afternoon, I’m an officer from the district police station. We need to speak to you about a matter that involves you. Before I give you a time to come in, can you confirm your full name, ID card number and your email so I can send you the details?"
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "police officer called me",
+      "fake police appointment",
+      "police asked for my email",
+      "caller said he was from the police",
+      "police call from a mobile number",
+      "asked for my ID card number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "The “police” calling from a mobile number and asking for personal details.",
+      "Being told you are part of a case without any letter or visit.",
+      "Pressure to answer straight away."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up and don’t give any details.",
+      "To check whether the call was real, call Crime Stop on 119 yourself.",
+      "Report the number to the Police."
+    ]
+  },
+  "reportTo": [
+    "mt/crime-stop",
+    "mt/police"
+  ],
+  "sources": [
+    {
+      "title": "Police warn of 'spoofed' calls as scammers impersonate officers",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/police-warn-of-spoofed-calls-as-scammers-impersonate-officers/",
+      "date": "2026-04-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "pt/fake-rental-deposit",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "Um falso senhorio ou anunciante",
+    "en": "A fake landlord or advertiser"
+  },
+  "name": {
+    "pt": "Falso arrendamento: casa de férias ou quarto a pedir sinal",
+    "en": "Fake rental: a holiday home or room asking for a deposit"
+  },
+  "how": {
+    "pt": "Um anúncio de casa, quarto ou casa de férias muito abaixo do preço da zona, com fotografias copiadas de casas verdadeiras. O anunciante não permite visitas, diz que há muitos interessados e pede um sinal imediato para reservar. Depois deixa de responder, e muitas vezes só se descobre a burla ao chegar à morada.",
+    "en": "An ad for a house, room or holiday home well below the local price, with photos copied from real houses. The advertiser doesn’t allow viewings, says many people are interested and asks for an immediate deposit to book it. Then they stop answering, and the scam is often only discovered on arrival at the address."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Anúncio com preço muito abaixo do mercado.",
+        "en": "An ad priced well below the market."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Não há visita possível e há “muitos interessados”.",
+        "en": "No viewing is possible and “many people are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Pede um sinal por transferência para reservar.",
+        "en": "They ask for a deposit by transfer to book it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Boa noite, a casa no Algarve ainda está disponível para agosto mas tenho mais três famílias interessadas. Estou a trabalhar fora do país e não consigo mostrar. Se transferir hoje o sinal de 600€ fica reservada para si e envio-lhe as chaves por correio.",
+        "en": "Good evening, the house in the Algarve is still available for August but I have three more families interested. I’m working abroad and can’t show it. If you transfer the €600 deposit today it’s booked for you and I’ll post you the keys."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "casa de férias pede sinal por transferência",
+      "senhorio está fora do país e não mostra a casa",
+      "anúncio de arrendamento muito barato",
+      "muitos interessados pague hoje o sinal",
+      "burla arrendamento casa de férias",
+      "quarto para arrendar sem visita"
+    ],
+    "en": [
+      "holiday home asks for a deposit",
+      "landlord is abroad and can t show the house",
+      "rental ad too cheap",
+      "many interested pay the deposit today",
+      "holiday rental scam portugal"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Preço muito abaixo da média da zona.",
+      "Não é possível visitar e há pressa para pagar o sinal.",
+      "O nome do titular da conta não corresponde ao do anunciante."
+    ],
+    "en": [
+      "A price well below the local average.",
+      "No viewing is possible and there is pressure to pay the deposit.",
+      "The account holder’s name doesn’t match the advertiser’s."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Visite a casa antes de pagar.",
+      "Pesquise as mesmas fotografias noutras plataformas.",
+      "Peça a identificação do anunciante e não pague sinais por pressão; se pagou, apresente queixa."
+    ],
+    "en": [
+      "Visit the property before paying.",
+      "Search for the same photos on other platforms.",
+      "Ask for the advertiser’s ID and don’t pay deposits under pressure; if you paid, report it."
+    ]
+  },
+  "reportTo": [
+    "pt/queixa-eletronica",
+    "pt/psp-gnr",
+    "pt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "GNR alerta para burlas no arrendamento de casas de férias",
+      "publisher": "RTP",
+      "url": "https://www.rtp.pt/noticias/pais/gnr-alerta-para-burlas-no-arrendamento-de-casas-de-ferias_n1734248",
+      "date": "2026-04-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

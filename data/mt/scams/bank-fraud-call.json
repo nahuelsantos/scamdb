@@ -1,0 +1,142 @@
+{
+  "id": "mt/bank-fraud-call",
+  "country": "mt",
+  "lang": "mt",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "mt": "“Id-dipartiment tal-frodi tal-bank tiegħek”",
+    "en": "“Your bank’s fraud department”"
+  },
+  "name": {
+    "mt": "Telefonata falza mill-bank bil-Malti: “nikkanċellaw it-tranżazzjoni”",
+    "en": "Fake bank call in Maltese: “let’s cancel the transaction”"
+  },
+  "how": {
+    "mt": "Tirċievi SMS b’link, imbagħad telefonata minn numru li jidher Malti. Mara li titkellem Malti tajjeb (xi drabi vuċi magħmula bl-intelliġenza artifiċjali) tgħid li hi mid-dipartiment tal-frodi tal-bank, issejħilek b’ismek u tistaqsik jekk għamiltx xiri b’iPhone f’xi raħal. Meta tgħid le, tibagħtlek link biex “tikkanċella” t-tranżazzjoni, iżda l-link iwassal għal paġna falza li tixbah lil tal-bank. Malli tispiċċa t-telefonata, il-flus jinħarġu mill-kont lejn kontijiet barra minn Malta.",
+    "en": "You get a text with a link, then a call from what looks like a Maltese number. A woman speaking fluent Maltese (sometimes an AI-generated voice) says she is from the bank’s fraud department, calls you by your name and asks whether you made a purchase with an iPhone in some town. When you say no, she sends a link to “cancel” the transaction, but it opens a fake page that looks like your bank. As soon as the call ends, money leaves your account for accounts outside Malta."
+  },
+  "steps": [
+    {
+      "text": {
+        "mt": "Tasal SMS b’link li tidher qisha mill-bank.",
+        "en": "A text with a link arrives that looks like it is from your bank."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mt": "Iċemplulek minn numru Malti. Mara titkellem bil-Malti, tgħid li hi mill-frodi tal-bank u ssejħilek b’ismek.",
+        "en": "A Maltese number calls. A woman speaking Maltese says she is from the bank’s fraud team and uses your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "mt": "Tistaqsik dwar xiri b’iPhone jew pagament ta’ ċertu ammont li ma tagħrafx.",
+        "en": "She asks about an iPhone purchase or a payment of a certain amount that you don’t recognise."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "mt": "Tibagħtlek link biex “twaqqaf” il-pagament. Il-paġna tixbah lil tal-bank u titolbok tidħol fil-kont.",
+        "en": "She sends a link to “stop” the payment. The page looks like your bank and asks you to log in."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "mt": "Wara t-telefonata, il-flus jinħarġu lejn kontijiet barra minn Malta.",
+        "en": "After the call, money is sent out to accounts abroad."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "mt": "Bonġu Josephine, jien Claire mill-uffiċċju tas-sigurtà tal-bank. Qed inċempillek għax dalgħodu deher xiri ta’ €689 b’iPhone f’Ħaż-Żabbar. Int għamiltu? Le? Allura issa nibagħtlek messaġġ fuq il-mowbajl, agħfas fuqu u nwaqqfuh flimkien qabel ma jgħaddi.",
+        "en": "Good morning Josephine, I’m Claire from the bank’s security office. I’m calling because a €689 purchase on an iPhone in Żabbar showed up this morning. Did you make it? No? Then I’ll send you a message on your mobile now, tap on it and we’ll stop it together before it goes through."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "mt": [
+      "ċempluni mill-bank bil-Malti",
+      "mara qaltli li hi mill-frodi tal-bank",
+      "staqsietni dwar xiri b’iPhone",
+      "bagħtitli link biex nikkanċella t-tranżazzjoni",
+      "ħaduli l-flus wara t-telefonata",
+      "numru Malti qal li hu l-bank",
+      "tranżazzjoni li ma nagħrafx"
+    ],
+    "en": [
+      "bank called me in Maltese",
+      "woman said she was from bank fraud",
+      "asked about an iPhone purchase",
+      "sent me a link to cancel the transaction",
+      "money taken after the call",
+      "Maltese number said it was my bank",
+      "transaction I don't recognise"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "mt": [
+      "Il-bank ma jibgħatlekx link biex tikkanċella tranżazzjoni.",
+      "Telefonata mhux mistennija dwar xiri li ma għamiltx, segwita minn link.",
+      "Numru Malti jew isem il-bank fuq l-iskrin ma jfissirx li hu l-bank: in-numri jistgħu jiġu ffalsifikati."
+    ],
+    "en": [
+      "Banks don’t send a link to cancel a transaction.",
+      "An unexpected call about a purchase you didn’t make, followed by a link.",
+      "A Maltese number or the bank’s name on screen doesn’t prove it is your bank: numbers can be faked."
+    ]
+  },
+  "whatToDo": {
+    "mt": [
+      "Aqta’ t-telefonata u ċempel lill-bank fuq in-numru fuq wara tal-kard jew fl-app.",
+      "Tagħfasx links li jaslu b’SMS jew waqt telefonata.",
+      "Jekk dħalt fil-link jew ħarġu l-flus, ċempel lill-bank minnufih u rrapporta lill-Pulizija. Żomm screenshots u n-numru li ċemplek."
+    ],
+    "en": [
+      "Hang up and call your bank on the number on the back of your card or in its app.",
+      "Don’t tap links sent by text or during a call.",
+      "If you opened the link or money left your account, call your bank at once and report it to the Police. Keep screenshots and the number that called."
+    ]
+  },
+  "reportTo": [
+    "mt/your-bank",
+    "mt/police",
+    "mt/cyber-crime-unit"
+  ],
+  "sources": [
+    {
+      "title": "Police issue warning over banking fraud scam",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/police-issue-warning-over-banking-fraud-scam/",
+      "date": "2025-07-07"
+    },
+    {
+      "title": "AI now being used to target victims of fraud",
+      "publisher": "TVMnews",
+      "url": "https://tvmnews.mt/en/news/ai-now-being-used-to-target-victims-of-fraud/",
+      "date": "2025-06-05"
+    },
+    {
+      "title": "Two arrested in Malta over online fraud that defrauded 200 victims of €1m",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/two-arrested-in-malta-over-online-fraud-that-defrauded-200-victims-of-e1m/",
+      "date": "2026-02-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

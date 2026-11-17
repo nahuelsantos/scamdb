@@ -1,0 +1,122 @@
+{
+  "id": "pt/seguranca-social-fake-debt",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "pt": "“Seg-Social” / Segurança Social",
+    "en": "“Seg-Social” / Social Security"
+  },
+  "name": {
+    "pt": "Falsa dívida à Segurança Social ou “prestações suspensas”",
+    "en": "Fake Social Security debt or “benefits suspended”"
+  },
+  "how": {
+    "pt": "Uma mensagem assinada “Seg-Social” diz que tem uma dívida em atraso, às vezes já com penhora pendente, ou que o seu acesso e as suas prestações foram desativados. O link abre uma imitação da Segurança Social Direta com “pagamento em atraso” e um botão que gera uma referência Multibanco verdadeira, mas dos burlões. Noutra versão, é passado para um “operador” no WhatsApp que pede os seus dados bancários.",
+    "en": "A message signed “Seg-Social” says you have an overdue debt, sometimes with seizure already pending, or that your access and benefits were deactivated. The link opens a copy of Segurança Social Direta showing “overdue payment” and a button that produces a real Multibanco payment reference, but one belonging to the scammers. In another version you are passed to an “operator” on WhatsApp who asks for your bank details."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Mensagem da “Seg-Social” sobre dívida ou prestações suspensas.",
+        "en": "A message from “Seg-Social” about a debt or suspended benefits."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "O prazo está a acabar ou já há penhora.",
+        "en": "The deadline is running out, or seizure is already under way."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Um link mostra uma referência Multibanco para pagar, ou um operador pede o IBAN.",
+        "en": "A link shows a Multibanco reference to pay, or an operator asks for your IBAN."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Seg-Social: O seu acesso e as prestacoes associadas foram desativados por falta de validacao. Para reativar e evitar a perda do apoio, valide os seus dados hoje: [link]",
+        "en": "Seg-Social: Your access and the related benefits have been deactivated for lack of validation. To reactivate and avoid losing the support, validate your details today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "mensagem da seg-social com dívida",
+      "segurança social pede pagamento por referência multibanco",
+      "prestações suspensas mensagem falsa",
+      "dívida à segurança social penhora",
+      "segurança social direta link falso",
+      "operador da segurança social no whatsapp"
+    ],
+    "en": [
+      "fake social security debt portugal",
+      "seg-social text with a link",
+      "benefits suspended message",
+      "multibanco reference from social security",
+      "social security operator on whatsapp"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "pt": [
+      "Uma referência Multibanco enviada por mensagem.",
+      "Ameaça de penhora ou de perder as prestações.",
+      "Passagem para um “operador” no WhatsApp."
+    ],
+    "en": [
+      "A Multibanco payment reference sent by message.",
+      "A threat of seizure or of losing your benefits.",
+      "Being moved to an “operator” on WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Não pague nem dê dados bancários.",
+      "Entre você na Segurança Social Direta para confirmar se há alguma dívida.",
+      "Se pagou, ligue ao banco e apresente queixa."
+    ],
+    "en": [
+      "Don’t pay or give bank details.",
+      "Log in to Segurança Social Direta yourself to check whether there is any debt.",
+      "If you paid, call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/queixa-eletronica",
+    "pt/mp-cibercrime",
+    "pt/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Alerta Cibercrime: Burla – Falsas Dívidas à Segurança Social",
+      "publisher": "Ministério Público, Gabinete Cibercrime",
+      "url": "https://cibercrime.ministeriopublico.pt/sites/default/files/editor-files/2026.01.29-burlas-supostas-dividas-seguranca-social.pdf",
+      "date": "2026-01-29"
+    },
+    {
+      "title": "Burlas da internet: o esquema da falsa mensagem da Segurança Social",
+      "publisher": "Pplware",
+      "url": "https://pplware.sapo.pt/informacao/burlas-da-internet-o-esquema-da-falsa-mensagem-da-seguranca-social/",
+      "date": "2026-06-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

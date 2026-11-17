@@ -1,0 +1,94 @@
+{
+  "id": "ie/eflow-toll-text",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“eFlow” or a motorway toll operator"
+  },
+  "name": {
+    "en": "Fake eFlow text about an unpaid motorway toll"
+  },
+  "how": {
+    "en": "A text that claims to be from eFlow says you have an unpaid M50 or motorway toll, or even a “radar ticket”, and threatens penalties such as prosecution, a suspended licence or vehicle registration, extra charges or harm to your credit score. A link leads to a fake eFlow website asking for your card details. It works because many people really have driven through a toll recently."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text says it is from eFlow or a toll operator."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says you owe an unpaid toll and must pay by a deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It threatens prosecution, penalties or your licence."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A link leads to a fake payment page for your card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "eFlow: Our records show an outstanding M50 passage on your vehicle. Pay the €3.70 balance before midnight to avoid a €40 penalty and further enforcement: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "eflow text unpaid toll",
+      "m50 toll text with a link",
+      "text saying i will be prosecuted for a toll",
+      "pay toll penalty link",
+      "motorway toll text asking for card details",
+      "radar ticket text from eflow"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "en": [
+      "A link in a toll text: pay tolls only on eFlow’s official website, typed in yourself.",
+      "Threats of prosecution, licence suspension or credit score damage.",
+      "A sender number from outside Ireland."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click the link. Check your account on eFlow’s official website or app.",
+      "If you entered card details, call your bank straight away.",
+      "Report it to the Gardaí."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Gardaí urge public to be vigilant over latest eFlow scam texts",
+      "publisher": "Irish Examiner",
+      "url": "https://www.irishexaminer.com/news/arid-41674754.html",
+      "date": "2025-07-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

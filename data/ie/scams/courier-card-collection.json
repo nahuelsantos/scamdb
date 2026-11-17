@@ -1,0 +1,98 @@
+{
+  "id": "ie/courier-card-collection",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "en": "“Your bank’s security team”"
+  },
+  "name": {
+    "en": "Courier card scam: the “bank” sends someone to collect your card"
+  },
+  "how": {
+    "en": "It starts with a text about suspicious activity on your account. Soon after, someone from your bank’s “security” or “fraud team” rings and says your card is at immediate risk, quoting convincing but false transactions. They say a courier or taxi will call to your home to collect your card “for security reasons”, ask for your PIN, and may tell you to delete your banking app. The card is then used to empty your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text says there is suspicious activity on your bank account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "A caller from the bank’s “security team” says your card is at immediate risk."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you for your PIN."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "A courier or taxi comes to your door to collect your card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: Your card has been cloned, so we’re sending one of our couriers to pick it up from your house within the hour for destruction. Before he arrives, could you confirm your four-digit PIN so I can cancel it on the system? And please remove the banking app until the new card arrives."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank sending a courier to collect my card",
+      "taxi coming to my house for my bank card",
+      "asked for my pin and to hand over my card",
+      "told to delete my banking app",
+      "security team said my card is compromised and will be picked up",
+      "someone collecting my debit card at the door"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone offering to collect your card from your home: banks never do this.",
+      "Being asked for your PIN.",
+      "Being told to delete your banking app."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never hand your card to anyone at the door and never tell anyone your PIN.",
+      "Hang up and ring your bank from a different phone, using the number on your card.",
+      "If someone is on the way to collect your card, call 999 or 112."
+    ]
+  },
+  "reportTo": [
+    "ie/emergency",
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "FraudSMART warning – Beware of courier card scams",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2026/02/24/fraudsmart-warning-beware-of-courier-card-scams/",
+      "date": "2026-02-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

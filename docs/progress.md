@@ -2,6 +2,23 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 1 (Portugal, Ireland, Malta) and matcher 1.3.x
+
+**Built:**
+- **Groundwork (#54):** pt, ie and mt in `countries.json` and in reports, the feed and trends; 39 brands; European
+  Portuguese signs (MB WAY, Multibanco, "mudei de número", "telemóvel avariou", "não partilhe").
+- **Matcher 1.3.1 (#55):** "we will never ask for your bank details" no longer counts as a money request.
+- **Import (for owner review):** 48 entries (pt 17, ie 16, mt 15), 23 contacts and 66 labelled messages, drafted
+  by one agent per country from `docs/research/wave1-pt-ie-mt-2026-11-17.md`.
+
+**Measured (eval, 516 messages):** 97.6% of scams caught, 6.1% of safe messages called "scam". Each new country
+catches 12 of 12 scams; one false "scam" left in pt (a genuine MB WAY receipt that mentions the bank).
+
+**Learned:**
+- Many official sites (mfsa.mt, Banco de Portugal, rr.pt, gnr.pt) block automated reading, so several entries cite
+  news reports of the official warning instead.
+- The new entries still need `phrasesTranslated` (cross-language matching) once the Workers AI allowance resets.
+
 ## 2026-11-17: worldwide discovery pipeline (daily)
 
 **Built:**

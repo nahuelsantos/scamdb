@@ -1,0 +1,95 @@
+{
+  "id": "mt/lesa-fine-sms",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "en": "“LESA” (Local Enforcement System Agency)"
+  },
+  "name": {
+    "en": "Fake LESA traffic fine text"
+  },
+  "how": {
+    "en": "A text says you have an outstanding traffic contravention or fine and gives a link to pay it. The link leads to a fake website made to look like the agency’s, which takes your card details. LESA has said these messages are not from it."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text from “LESA” says you have an unpaid traffic fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It warns the fine will go up or go to court if you don’t act soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A link takes you to a page to pay the fine by card."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Your card details go to the scammers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "LESA: An outstanding contravention is registered on your vehicle. Settle €35.00 by tomorrow to avoid additional charges and a court summons: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "LESA fine text",
+      "traffic contravention text",
+      "unpaid traffic fine link",
+      "pay the fine by link",
+      "fake LESA website",
+      "contravention on my car by SMS"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A fine you can only pay through a link in a text.",
+      "Threats that the fine will rise or go to court within a day.",
+      "A website you reached from a text rather than by typing the address yourself."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t open the link. Check any fines on LESA’s official website by typing its address yourself.",
+      "If you paid or entered card details, call your bank at once.",
+      "Report the text to the Police Cyber Crime Unit."
+    ]
+  },
+  "reportTo": [
+    "mt/your-bank",
+    "mt/cyber-crime-unit"
+  ],
+  "sources": [
+    {
+      "title": "MTCA warns public over fake tax refund websites",
+      "publisher": "Business Now",
+      "url": "https://businessnow.mt/mtca-warns-public-over-fake-tax-refund-websites/",
+      "date": "2026-08-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

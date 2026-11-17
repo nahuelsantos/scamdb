@@ -1,0 +1,97 @@
+{
+  "id": "ie/dial-21-call-forwarding",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "en": "“Your bank”"
+  },
+  "name": {
+    "en": "“Dial *21*”: a fake bank caller makes you forward your calls"
+  },
+  "how": {
+    "en": "Someone claiming to be your bank calls, texts or emails about suspicious activity on your account or a security problem with your phone. They may already know your name and number. They try to get banking details or one-time passcodes, then tell you to open your dial pad and enter *21* followed by a number they give you, “to verify your device”. This turns on call forwarding: when your real bank rings to check a payment, the call goes to the criminal, who passes the security checks as you."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "Someone claiming to be your bank contacts you about suspicious activity or a phone security issue."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They ask for your online banking details or a one-time passcode."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They tell you to type *21* and a number on your phone to “verify the device”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "They keep you on the phone so you can’t ring the bank yourself."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: We’ve flagged some unusual logins on your account, so I need to secure this handset. Open your keypad and enter star two one star, then the number I read out, then hash and call. Stay on the line with me while it connects."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "told to dial star 21 on my phone",
+      "caller asked me to enter a code with *21*",
+      "bank said to verify my device by dialling a code",
+      "my calls are being forwarded after a bank call",
+      "call forwarding code scam",
+      "fake bank asked me to change my phone settings"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "en": [
+      "Being asked to dial a code starting *21* or to change your phone’s settings: no bank asks for this.",
+      "A caller asking for a one-time passcode.",
+      "An unexpected call about your phone’s “security”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Ring your bank on the number on the back of your card.",
+      "If you dialled the code, call your bank and your mobile provider straight away so call forwarding is switched off.",
+      "Check your account for payments you don’t recognise and report it to the Gardaí."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/mobile-provider",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Fraud Alert: Do not dial *21* phone codes at the request of an unexpected caller",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2026/10/30/fraud-alert-do-not-dial-21-phone-codes-at-the-request-of-an-unexpected-caller/",
+      "date": "2026-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

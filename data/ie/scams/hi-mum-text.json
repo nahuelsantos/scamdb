@@ -1,0 +1,97 @@
+{
+  "id": "ie/hi-mum-text",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Your son”, “your daughter” or another relative"
+  },
+  "name": {
+    "en": "“Hi Mam, Hi Dad”: a text from your child on a new number asking for money"
+  },
+  "how": {
+    "en": "A text or WhatsApp message from an unknown number says it is your son or daughter with a lost or broken phone. Soon they ask for help paying for something urgently, to a bank account they give you. Some ask for your card number, add it to Apple Pay or Google Pay, and then ask you for the code your bank just sent."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message from an unknown number says it is your child."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They say their phone is lost or broken and this is a new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "en": "They ask you to pay something urgently for them."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Some ask for your card number and the code your bank sends you."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi Mam it’s me, phone fell in the sink so this is my new number for now 🙈 Are you around? I have a bill I need paid today and can’t get into my banking app, will fix you up at the weekend x"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "hi mam text new number",
+      "hi dad message asking for money",
+      "son texted from a new number",
+      "daughter broke her phone and needs a bill paid",
+      "child asked for my card number and bank code",
+      "message from unknown number saying its my kid"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "new_number",
+    "money_request",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A family member writing from a number you don’t have.",
+      "An urgent payment to a bank account you don’t know.",
+      "Asking for your card number or a code from your bank."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Ring your child on the number you already have before doing anything.",
+      "Never share your card details or a bank code by message.",
+      "If you paid, call your bank straight away and report it to the Gardaí."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/bank-of-ireland-fraud",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Wave of ‘Hi Mam / Hi Dad..’ and bank impersonation scam texts in circulation",
+      "publisher": "TechBuzz Ireland",
+      "url": "https://techbuzzireland.com/2026/04/02/wave-of-hi-mam-hi-dad-and-bank-impersonation-scam-texts-in-circulation/",
+      "date": "2026-04-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

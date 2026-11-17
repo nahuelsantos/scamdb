@@ -1,0 +1,113 @@
+{
+  "id": "pt/paypal-fake-support-call",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "pt": "O “apoio” da PayPal",
+    "en": "PayPal “support”"
+  },
+  "name": {
+    "pt": "Falsa chamada do apoio PayPal que lhe pede para instalar um programa",
+    "en": "Fake PayPal support call that asks you to install a program"
+  },
+  "how": {
+    "pt": "Recebe uma chamada em inglês com uma mensagem gravada: foi feita uma compra com a sua conta PayPal, muitas vezes de criptomoedas, e deve carregar numa tecla para a cancelar. Um falso funcionário confirma a “compra suspeita” e envia-lhe por email um link para instalar um programa de acesso remoto, como AnyDesk ou TeamViewer. Com o controlo do computador, usa a sua conta PayPal.",
+    "en": "You get a call in English with a recorded message: a purchase was made with your PayPal account, often of cryptocurrency, and you should press a key to cancel it. A fake employee confirms the “suspicious purchase” and emails you a link to install a remote-access program, such as AnyDesk or TeamViewer. With control of your computer, they use your PayPal account."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Chamada gravada sobre uma compra com a sua conta PayPal.",
+        "en": "A recorded call about a purchase on your PayPal account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "pt": "Carrega numa tecla e um “funcionário” pede que não desligue.",
+        "en": "You press a key and an “employee” asks you not to hang up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "pt": "Pede para instalar um programa para “resolver” o problema.",
+        "en": "They ask you to install a program to “fix” the problem."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "This is PayPal security. A payment of 499 euros for cryptocurrency has been made from your account. If you did not authorise this, press 1 to speak to an agent. [o agente:] Vou enviar-lhe agora um email, instale o programa para eu ver o seu computador e cancelar a compra.",
+        "en": "This is PayPal security. A payment of 499 euros for cryptocurrency has been made from your account. If you did not authorise this, press 1 to speak to an agent. [the agent:] I’ll send you an email now, install the program so I can see your computer and cancel the purchase."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "chamada da paypal em inglês",
+      "mensagem gravada compra paypal",
+      "pediram para instalar anydesk",
+      "apoio paypal falso",
+      "carregue no 1 para cancelar a compra",
+      "compra de criptomoedas na minha conta paypal"
+    ],
+    "en": [
+      "paypal call in english about a purchase",
+      "recorded message paypal purchase",
+      "asked me to install anydesk",
+      "fake paypal support",
+      "press 1 to cancel the purchase"
+    ]
+  },
+  "signals": [
+    "remote_access",
+    "urgency",
+    "impersonation",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "pt": [
+      "Uma chamada gravada sobre uma compra que não fez.",
+      "Pedido para instalar um programa de acesso remoto."
+    ],
+    "en": [
+      "A recorded call about a purchase you didn’t make.",
+      "A request to install a remote-access program."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Desligue; não carregue em teclas.",
+      "Nunca instale programas a pedido de quem lhe liga.",
+      "Veja os movimentos na app da PayPal; se deu acesso, desligue o computador da internet, mude as palavras-passe, avise o banco e apresente queixa."
+    ],
+    "en": [
+      "Hang up; don’t press any keys.",
+      "Never install programs at a caller’s request.",
+      "Check your activity in the PayPal app; if you gave access, disconnect the computer from the internet, change your passwords, tell your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "pt/your-bank",
+    "pt/mp-cibercrime",
+    "pt/queixa-eletronica"
+  ],
+  "sources": [
+    {
+      "title": "Alerta Cibercrime: Falsos telefonemas da Paypal",
+      "publisher": "Ministério Público, Gabinete Cibercrime",
+      "url": "https://cibercrime.ministeriopublico.pt/sites/default/files/editor-files/2026.06.22-falsos-telefonemas-paypal.pdf",
+      "date": "2026-06-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

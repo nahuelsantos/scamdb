@@ -1,0 +1,127 @@
+{
+  "id": "pt/fake-investment-public-figures",
+  "country": "pt",
+  "lang": "pt",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "pt": "Um “consultor” ou corretora, com a cara de figuras públicas ou o nome da CMVM",
+    "en": "An “adviser” or broker, using the faces of public figures or the CMVM’s name"
+  },
+  "name": {
+    "pt": "Falso investimento com figuras públicas e vídeos falsos",
+    "en": "Fake investment ads with public figures and fake videos"
+  },
+  "how": {
+    "pt": "Anúncios, vídeos e falsas notícias usam a cara de figuras públicas, por vezes manipulada com inteligência artificial, ou até o nome da CMVM, para prometer lucros altos e sem risco. Depois de deixar o contacto, um “consultor” liga ou escreve por WhatsApp, cria confiança, pressiona para investir mais e pode pedir para instalar uma app de acesso remoto. Quando quer levantar o dinheiro, pedem “taxas” ou desaparecem.",
+    "en": "Ads, videos and fake news stories use the faces of public figures, sometimes manipulated with artificial intelligence, or even the CMVM’s name, to promise high, risk-free returns. Once you leave your details, an “adviser” calls or writes on WhatsApp, builds trust, pushes you to invest more and may ask you to install a remote-access app. When you want to withdraw, they ask for “fees” or disappear."
+  },
+  "steps": [
+    {
+      "text": {
+        "pt": "Um anúncio ou vídeo com uma figura pública promete lucros garantidos.",
+        "en": "An ad or video with a public figure promises guaranteed profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "pt": "Um “consultor” contacta-o e pressiona para decidir depressa.",
+        "en": "An “adviser” contacts you and pushes you to decide quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "pt": "Pede para instalar uma app para o “ajudar” a investir.",
+        "en": "They ask you to install an app to “help” you invest."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "pt": "Para levantar o dinheiro, tem de pagar mais taxas.",
+        "en": "To withdraw, you must pay more fees."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "pt": "Boa tarde! Sou o seu gestor de conta. Vi que se registou na plataforma recomendada no vídeo do apresentador. Com 250€ iniciais os nossos clientes estão a ter retornos de 30% por semana. Vou ajudá-lo a abrir a conta, só precisa de instalar uma aplicação para eu ver o seu ecrã.",
+        "en": "Good afternoon! I’m your account manager. I saw you registered on the platform recommended in the TV presenter’s video. With an initial €250 our clients are getting 30% returns a week. I’ll help you open the account, you just need to install an app so I can see your screen."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "pt": [
+      "investimento recomendado por figura pública",
+      "anúncio de investimento com famoso",
+      "lucros garantidos sem risco",
+      "consultor de investimentos no whatsapp",
+      "pagar taxa para levantar o dinheiro",
+      "vídeo falso a promover investimento"
+    ],
+    "en": [
+      "investment ad with a celebrity",
+      "guaranteed profits no risk",
+      "investment adviser on whatsapp",
+      "pay a fee to withdraw my money",
+      "deepfake video investment"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "remote_access",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "pt": [
+      "Retornos altos ou garantidos.",
+      "Uma figura pública num anúncio a promover um investimento.",
+      "Contacto por WhatsApp em nome da CMVM: a CMVM não contacta investidores por WhatsApp.",
+      "Pagar para recuperar ou levantar o dinheiro."
+    ],
+    "en": [
+      "High or guaranteed returns.",
+      "A public figure in an ad promoting an investment.",
+      "WhatsApp contact in the CMVM’s name: the CMVM doesn’t contact investors on WhatsApp.",
+      "Paying to recover or withdraw your money."
+    ]
+  },
+  "whatToDo": {
+    "pt": [
+      "Confirme na CMVM se a entidade está autorizada antes de investir.",
+      "Não instale apps a pedido de quem lhe liga.",
+      "Se já pagou, fale com o banco e apresente queixa; desconfie de quem promete recuperar o dinheiro."
+    ],
+    "en": [
+      "Check with the CMVM whether the firm is authorised before investing.",
+      "Don’t install apps at a caller’s request.",
+      "If you already paid, talk to your bank and report it; be wary of anyone offering to recover the money."
+    ]
+  },
+  "reportTo": [
+    "pt/cmvm",
+    "pt/your-bank",
+    "pt/queixa-eletronica"
+  ],
+  "sources": [
+    {
+      "title": "CMVM alerta para aumento de fraudes associadas a falsos investimentos",
+      "publisher": "24notícias",
+      "url": "https://24noticias.sapo.pt/atualidade/artigos/cmvm-alerta-para-aumento-de-fraudes-associadas-a-falsos-investimentos",
+      "date": "2026-09-01"
+    }
+  ],
+  "updated": "2026-11-17"
+}

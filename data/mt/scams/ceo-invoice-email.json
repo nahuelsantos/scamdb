@@ -1,0 +1,95 @@
+{
+  "id": "mt/ceo-invoice-email",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "en": "Your boss, a director or a supplier"
+  },
+  "name": {
+    "en": "Fake boss or supplier email asking for an urgent payment"
+  },
+  "how": {
+    "en": "Scammers pretend to be a company’s chief executive or director, or a supplier, and email staff to pay an invoice or send money to a new account. The request is urgent and often confidential. Maltese companies lost millions this way in 2025; some found out only months later."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email that seems to come from the boss or a supplier arrives."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It asks for an urgent payment or gives new bank details."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It asks you to keep it quiet or not to call."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "en": "The money goes to the scammers’ account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi Mark, are you at your desk? I need a payment processed before noon for a deal we’re closing, €48,500 to the account in the attached invoice. Keep this between us until it’s announced. I’m in meetings so email only. Thanks, David"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "email from the CEO asking for a payment",
+      "supplier changed bank details",
+      "urgent invoice from the director",
+      "boss asked me to keep the payment quiet",
+      "fake invoice email",
+      "new account for a supplier"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "An urgent or secret payment request by email.",
+      "New bank details for a supplier sent by email.",
+      "The sender can’t be reached by phone."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Confirm by phone on a number you already know, never the one in the email.",
+      "If money was sent, call your bank straight away to try to stop it.",
+      "Report it to the Police."
+    ]
+  },
+  "reportTo": [
+    "mt/your-bank",
+    "mt/police"
+  ],
+  "sources": [
+    {
+      "title": "Police investigated €13 million worth of scams in first 6 months this year",
+      "publisher": "Newsbook",
+      "url": "https://newsbook.com.mt/en/police-investigated-e13-million-worth-of-scams-in-first-6-months-this-year/",
+      "date": "2025-09-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

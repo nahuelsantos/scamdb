@@ -1,0 +1,98 @@
+{
+  "id": "mt/crypto-regulator-impersonation",
+  "country": "mt",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "email",
+    "phone",
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "“MFSA”, an EU regulator or your crypto exchange"
+  },
+  "name": {
+    "en": "Fake regulator or crypto firm: “move your crypto to a safe account”"
+  },
+  "how": {
+    "en": "Scammers pretend to be a regulator, such as the MFSA, or your crypto provider. Using forged documents and copied logos, they say your provider is no longer licensed under the new EU crypto rules (MiCA) and that you must move your crypto to a “safe” or “regulated” account right away. Crypto sent there is lost for good."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An email, call or message says it is from a regulator or your crypto provider."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "It says your provider has lost its licence under the new EU rules."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "You are told to move your crypto to a new “safe” wallet or account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Notice of Regulatory Transition – Your current crypto service provider is not authorised under MiCA. To protect your holdings, transfer your assets to the designated compliant wallet within 72 hours. Ref: [number]. Compliance Department"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "provider no longer licensed under MiCA",
+      "move my crypto to a safe wallet",
+      "regulator asked me to transfer crypto",
+      "fake MFSA email about crypto",
+      "crypto exchange losing its licence",
+      "transfer assets to a compliant wallet"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A regulator asking you to move money or crypto: they never do.",
+      "An email from the “MFSA” that doesn’t end in mfsa.mt.",
+      "Deadlines and talk of an investigation you knew nothing about."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t transfer anything. Check with your provider through its official app or website.",
+      "Contact the MFSA directly to check any message that uses its name.",
+      "If you sent crypto, report it to the Police at once."
+    ]
+  },
+  "reportTo": [
+    "mt/mfsa",
+    "mt/police"
+  ],
+  "sources": [
+    {
+      "title": "Malta Regulator Flags Surge in Crypto Scams Exploiting MiCA Transition",
+      "publisher": "Finance Magnates",
+      "url": "https://www.financemagnates.com/cryptocurrency/malta-regulator-flags-surge-in-crypto-scams-exploiting-mica-transition/",
+      "date": "2026-08-07"
+    },
+    {
+      "title": "MFSA sounds alarm over rise in financial scams, flags unauthorised entities operating in Malta",
+      "publisher": "Business Now",
+      "url": "https://businessnow.mt/mfsa-sounds-alarm-over-rise-in-financial-scams-flags-unauthorised-entities-operating-in-malta/",
+      "date": "2026-08-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

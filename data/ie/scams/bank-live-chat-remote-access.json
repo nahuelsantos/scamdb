@@ -1,0 +1,96 @@
+{
+  "id": "ie/bank-live-chat-remote-access",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "en": "“Your bank’s fraud department”"
+  },
+  "name": {
+    "en": "Fake bank “live chat” that takes over your laptop"
+  },
+  "how": {
+    "en": "A caller from your bank’s “fraud department” says a suspicious payment has been made from your account and they need remote access to your laptop or computer to block it. They send you to a website that looks like your bank’s and ask you to click “start live chat”. That downloads a remote-access app, which lets them control your computer and log in to your online banking. The “cancellation” actually sends your money to them."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A caller from your bank’s “fraud department” says there is a suspicious payment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They need to act now to stop the payment."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They send you to a look-alike bank website with a “start live chat” button."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Clicking it installs an app that lets them control your computer."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Caller: To reverse that payment I’ll need to see your computer. Type the web address I give you, click the green “Start live chat” button, then accept the download that pops up so our agent can connect to your screen."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank asked for remote access to my laptop",
+      "start live chat button download",
+      "caller made me install an app to cancel a payment",
+      "fraud department took control of my computer",
+      "they could see my screen and logged into my banking",
+      "fake bank website with live chat"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "remote_access"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone asking you to download an app or share your screen to stop a payment.",
+      "A website address read out on the phone that is close to, but not the same as, your bank’s.",
+      "Pressure to act before the payment goes through."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Never install software or give remote access at a caller’s request.",
+      "Switch off the computer’s internet connection if they already connected, and ring your bank on the number on your card.",
+      "Report it to your local Garda station."
+    ]
+  },
+  "reportTo": [
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "Increase in phone scams asking for remote access to your laptop",
+      "publisher": "FraudSMART (Banking & Payments Federation Ireland)",
+      "url": "https://www.fraudsmart.ie/2025/08/26/remote-access-scam/",
+      "date": "2025-08-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

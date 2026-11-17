@@ -1,0 +1,105 @@
+{
+  "id": "ie/clone-firm-bonds-deposits",
+  "country": "ie",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "en": "A copy of a real bank or investment firm"
+  },
+  "name": {
+    "en": "Fake bonds and fixed-term deposits from a “clone” of a real firm"
+  },
+  "how": {
+    "en": "Professional-looking ads or unsolicited calls and emails offer bonds or fixed-term deposits with attractive rates. The scammers copy the name, address and sometimes the registration details of a real, authorised firm and use look-alike websites and email addresses. A fake adviser asks for your ID, may quote real bond codes and fake regulation, and has you transfer money, often to an account abroad. The money is gone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad, call or email offers a bond or fixed-term deposit from a well-known firm."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The rate is better than what your own bank offers."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You are told the offer closes soon."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "You are asked to send money to an account, often outside Ireland."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Further to our call, please find attached the brochure for the 24-month Fixed Rate Bond at 7.1% AER. To reserve your allocation before the tranche closes on Friday, return a copy of your passport and transfer the deposit to our custodian account in Lithuania. Kind regards, Private Client Desk"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "fixed term deposit offer from an investment firm",
+      "bond with a high interest rate cold call",
+      "firm asked me to transfer money to an account abroad",
+      "clone firm using a real company name",
+      "investment adviser asked for my passport",
+      "fixed rate bond email from a bank i never contacted"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "An offer you didn’t ask for, by phone, email or online ad.",
+      "A payment account abroad or in a different name from the firm.",
+      "A website or email address slightly different from the real firm’s."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Check the firm on the Central Bank registers and contact it only through the details listed there.",
+      "Never send money to an account the firm’s registered details don’t match. Get independent advice first.",
+      "Report it to the Central Bank and to the Gardaí; call your bank if you paid."
+    ]
+  },
+  "reportTo": [
+    "ie/central-bank",
+    "ie/your-bank",
+    "ie/garda-station"
+  ],
+  "sources": [
+    {
+      "title": "JP Morgan Asset Management (CLONE) – Central Bank of Ireland Issues Warning on Unauthorised Firm",
+      "publisher": "Central Bank of Ireland",
+      "url": "https://www.centralbank.ie/news/article/jp-morgan-asset-management-(clone)---central-bank-of-ireland-issues-warning-on-unauthorised-firm",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "GNECB – An Garda Síochána Advises the Public to be Extra Vigilant of Fraud When Investing",
+      "publisher": "An Garda Síochána",
+      "url": "https://www.garda.ie/en/about-us/our-departments/office-of-corporate-communications/press-releases/2025/october/gnecb-an-garda-siochana-advises-the-public-to-be-extra-vigilant-of-fraud-when-investing.html",
+      "date": "2025-10-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}
