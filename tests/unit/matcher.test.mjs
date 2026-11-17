@@ -161,3 +161,11 @@ test('translated phrases are used only for the search abroad, never for local ma
   const r = mm('orden de arresto pendiente', fakeEntries, {});
   assert.deepEqual(r.matches, [], 'without elsewhere, machine translations do not match');
 });
+test('1.3.0: European Portuguese signs (MB WAY, Multibanco, telemóvel, não partilhe)', () => {
+  assert.ok(signsOf('Envie o pagamento por MB WAY hoje').includes('money_request'));
+  assert.ok(signsOf('Use a referência Multibanco para regularizar a dívida').includes('money_request'));
+  assert.ok(signsOf('Olá mãe, mudei de número, o meu telemóvel avariou').includes('new_number'));
+  assert.ok(signsOf('Aviso das Finanças: regularize hoje').includes('impersonation'));
+  assert.ok(!signsOf('O seu código é 123456. Não partilhe este código com ninguém.').includes('asks_for_code'));
+  assert.ok(!signsOf('Vamos jantar hoje às oito?').includes('money_request'));
+});
