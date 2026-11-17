@@ -141,11 +141,12 @@ export function combine(matcher, scorer, text) {
   const p = probability(WEIGHTS, features(matcher, scorer));
   let verdict = p >= THRESHOLDS.scam ? 'scam' : p >= THRESHOLDS.suspicious ? 'suspicious' : 'not_recognised';
   if (verdict === 'not_recognised' && hardRules(signals.map((s) => s.id))) verdict = 'suspicious';
+  if (matcher.warning && verdict === 'scam') verdict = 'suspicious'; // a warning about a scam is not the scam
   const seen = new Set();
   const matches = verdict === 'not_recognised' ? []
     : [...matcher.matches, ...scorer.matches].filter((m) => !seen.has(m.id) && seen.add(m.id)).slice(0, 3);
   const seenE = new Set();
   const elsewhere = verdict === 'not_recognised' ? []
     : [...(matcher.elsewhere ?? []), ...(scorer.elsewhere ?? [])].filter((m) => !seenE.has(m.id) && seenE.add(m.id)).slice(0, 2);
-  return { verdict, score: Math.round(p * 100) / 100, signals, matches, elsewhere };
+  return { verdict, ...(matcher.warning ? { warning: true } : {}), score: Math.round(p * 100) / 100, signals, matches, elsewhere };
 }

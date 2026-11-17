@@ -200,3 +200,10 @@ test('concurrent checks share one catalogue embedding, and a failed one is retri
   assert.equal((await scoreWithWorkersAI(ai, { text: TEXT, catalogue })).verdict, 'scam');
   assert.equal(catalogueCalls, 2);
 });
+test('combine: a warning about a scam stays below "scam" even when the AI is sure, and keeps the warning flag', () => {
+  const matcher = { verdict: 'suspicious', warning: true, score: null, signals: [{ id: 'asks_for_code', evidence: 'código' }, { id: 'impersonation', evidence: 'banco' }], matches: [{ id: 'ar/whatsapp-codigo', score: 6 }] };
+  const c = combine(matcher, { verdict: 'scam', score: 0.97, signals: [{ id: 'asks_for_code', evidence: 'código' }], matches: [{ id: 'ar/whatsapp-codigo', similarity: 0.9 }] }, 'te piden el código de WhatsApp, avisen a los mayores, banco');
+  assert.notEqual(c.verdict, 'scam');
+  assert.equal(c.warning, true);
+  assert.equal(c.matches[0].id, 'ar/whatsapp-codigo');
+});

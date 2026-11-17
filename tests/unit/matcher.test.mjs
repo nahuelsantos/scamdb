@@ -218,3 +218,18 @@ test('1.5.1: "the PIN comes in a separate letter" is not a code request', () => 
   assert.ok(!signsOf('Your new card is on its way; the PIN will be sent separately by post.').includes('asks_for_code'));
   assert.ok(signsOf('Nennen Sie mir die PIN Ihrer Karte').includes('asks_for_code'));
 });
+test('1.6.0: a forwarded warning about a scam is not itself called a scam, and still names the scam', () => {
+  const warning = 'Ojo: están llamando haciéndose pasar por un correo, ya tienen tu DNI y dirección y después te piden el código de WhatsApp para robarte la cuenta. Avisen a los mayores.';
+  const r = m(warning, { country: 'ar' });
+  assert.equal(r.warning, true);
+  assert.notEqual(r.verdict, 'scam');
+  assert.equal(r.matches[0]?.id, 'ar/whatsapp-codigo');
+  assert.ok(m('Beware: scammers call pretending to be your bank and ask for the code. Warn your family!', { country: 'gb' }).warning);
+});
+test('1.6.0: a scam that opens with "scammers are impersonating us" is still a scam', () => {
+  const scam = 'Cuidado: hay estafadores haciéndose pasar por el banco. Para proteger tus ahorros pasame el código que te llegó y no cortes la llamada.';
+  const r = m(scam, { country: 'ar' });
+  assert.ok(!r.warning);
+  assert.equal(r.verdict, 'scam');
+  assert.ok(!m('Alerta: estafadores usan nuestro nombre. Verificá tu cuenta acá [enlace] hoy mismo', { country: 'ar' }).warning);
+});

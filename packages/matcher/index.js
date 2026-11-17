@@ -1,10 +1,10 @@
 // "Is this a scam?": reads the warning signs in a message and finds the catalogue entries it looks like.
 // Ported from eschamuyo (site/js/matcher.js, analyze.js, checker.js). Runs in Node and in the browser.
 import { normalize, tokens, editDistance } from '../../lib/text.js';
-import { readSignsWithEvidence } from './signs.js';
+import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
-export { SIGNS, readSigns, readSignsWithEvidence } from './signs.js';
-export const VERSION = '1.5.1';
+export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
+export const VERSION = '1.6.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
@@ -54,7 +54,7 @@ function scoreLang(list, text, words) {
 }
 
 /**
- * @returns {{ verdict: 'scam'|'suspicious'|'not_recognised', score: null,
+ * @returns {{ verdict: 'scam'|'suspicious'|'not_recognised', score: null, warning?: true,
  *             signals: {id: string, evidence: string}[], matches: {id: string, score: number}[],
  *             elsewhere?: {id: string, score: number}[] }}
  * With `elsewhere: true` (and a country), entries from other countries are scored too: a scam known only abroad (in
@@ -73,9 +73,12 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   const matches = local.filter((r, _, all) => r.score >= MATCH_RELATIVE * all[0].score)
     .slice(0, limit).map(({ id, score }) => ({ id, score }));
   const signals = readSignsWithEvidence(raw);
-  const verdict = isScam(signals.map((s) => s.id)) ? 'scam'
+  // A forwarded warning about a scam is never itself called a scam; its matches say which scam it warns about.
+  const warning = isWarningAbout(raw);
+  const verdict = isScam(signals.map((s) => s.id)) && !warning ? 'scam'
     : signals.length || matches.length ? 'suspicious' : 'not_recognised';
   const out = { verdict, score: null, signals, matches };
+  if (warning) out.warning = true;
   if (elsewhere && country) {
     const best = local[0]?.score ?? 0;
     out.elsewhere = rank(entries.filter((e) => e.country !== country), true)

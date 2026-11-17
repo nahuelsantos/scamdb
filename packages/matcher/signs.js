@@ -124,3 +124,21 @@ export function readSignsWithEvidence(text) {
   const keep = applyContext(t, out.map((s) => s.id));
   return out.filter((s) => keep.includes(s.id));
 }
+
+// A warning *about* a scam (a forwarded alert: "they call you from a fake courier to ask for your WhatsApp code,
+// warn your family") uses the scam's own words but asks the reader for nothing. It asks you to warn others, or
+// describes what scammers do in the third person next to a word of caution. It is not a warning when it also makes a
+// request of its own: a link, a handover of a code, "stay on the line" or "don't tell anyone" (fake bank calls often
+// open with "scammers are impersonating us, so move your money").
+const WARN_OTHERS = /\b(avisen|avisales|adviertan|difundan|compartan|pasalo|reenvienlo|warn (your|others|everyone|friends|family|the elderly)|pass (this|it) on|share this|avisem|compartilhem|repassem|faites passer|partagez|prevenez|warnen sie|weitersagen|waarschuw|deel dit|avvisate|condividete|ostrzezcie|udostepnijcie)\b/;
+const DESCRIBES = /\b(te|los|nos|les|lo|la) (llaman|escriben|mandan|piden|van a pedir|contactan)\b|estan llamando|se hacen pasar|they (call|text|message|ask|pretend|will ask)|scammers (are|will|call|pretend)|\b(estafadores|golpistas|delincuentes)\b|se fazem passar|ligam para|ils (appellent|se font passer)|\bescrocs\b|\bbetruger\b|\boplichters\b|\btruffatori\b|\boszusci\b|\bescroci\b/;
+const CAUTION = /tengan cuidado|\bcuidado\b|\bojo\b|atencion|\balerta\b|be careful|beware|watch out|\bvorsicht\b|let op|attenzione|\buwaga\b|\bmefiez\b|\bprudence\b/;
+
+/** True when the text reads as a warning about a scam rather than as the scam itself. */
+export function isWarningAbout(text) {
+  const t = normalize(text);
+  const ids = readSigns(text);
+  if (ids.some((id) => ['unknown_link', 'keep_on_line', 'secrecy'].includes(id))) return false;
+  if (CODE_HANDOVER.test(t.replace(NEGATED, ' '))) return false;
+  return WARN_OTHERS.test(t) || (DESCRIBES.test(t) && CAUTION.test(t));
+}
