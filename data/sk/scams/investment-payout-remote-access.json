@@ -1,0 +1,139 @@
+{
+  "id": "sk/investment-payout-remote-access",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "sk": "„Poradca“ alebo „finančný špecialista“, ktorý vám chce vyplatiť zisk z investície",
+    "en": "An “adviser” or “financial specialist” who wants to pay out your investment profit"
+  },
+  "name": {
+    "sk": "„Vyplatenie zisku“: aplikácia na vzdialený prístup a priložená karta",
+    "en": "“Paying out your profit”: a remote-access app and a card held to the phone"
+  },
+  "how": {
+    "sk": "Volajú vám, že na vás čaká zisk z investície alebo kryptomien, často z dávnej registrácie. Aby vám ho vyplatili, máte si nainštalovať aplikáciu na vzdialený prístup (napríklad AnyDesk alebo HopToDesk), priložiť platobnú kartu k mobilu, povedať PIN alebo kartu odovzdať „kuriérovi“. Cez prístup do mobilu robia platby, cez skopírovanú kartu vyberajú z bankomatu.",
+    "en": "They call to say an investment or crypto profit is waiting for you, often from an old registration. To pay it out you must install a remote-access app (such as AnyDesk or HopToDesk), hold your payment card to the phone, tell them your PIN or hand the card to a “courier”. Through access to your phone they make payments; with the copied card they withdraw from ATMs."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Volajú: máte vyplatiť zisk z investície.",
+        "en": "They call: you have an investment profit to pay out."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sk": "Máte nainštalovať aplikáciu na vzdialený prístup.",
+        "en": "You must install a remote-access app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "sk": "Priložte kartu k mobilu alebo povedzte PIN.",
+        "en": "Hold your card to the phone or tell them your PIN."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sk": "Kartu si vyzdvihne neznámy človek.",
+        "en": "A stranger comes to collect the card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Dobrý deň, volám z oddelenia výplat. Vo vašom investičnom účte z roku 2021 je zostatok 11 400 eur. Aby som vám ho mohol poslať, nainštalujte si prosím aplikáciu, ktorú vám pošlem v SMS, a priložte kartu k zadnej strane telefónu na overenie. Celé to zaberie desať minút.",
+        "en": "Hello, I’m calling from the payouts department. Your investment account from 2021 has a balance of 11,400 euros. So I can send it to you, please install the app I’ll text you and hold your card to the back of the phone for verification. It all takes ten minutes."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "vyplatenie zisku z investície aplikácia",
+      "nainštalovať anydesk vyplatiť peniaze",
+      "priložiť kartu k mobilu",
+      "zostatok investičný účet volajú",
+      "odovzdať platobnú kartu neznámemu",
+      "vzdialený prístup do mobilu banka"
+    ],
+    "en": [
+      "investment profit payout app",
+      "install anydesk to get paid",
+      "hold card against the phone",
+      "old investment account balance call",
+      "remote access to my phone bank"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "asks_for_code",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "sk": [
+      "Na prijatie peňazí nikdy netreba aplikáciu na vzdialený prístup ani priložiť kartu.",
+      "Kartu ani PIN nikomu nedávajte.",
+      "Zisk, o ktorom neviete, je návnada."
+    ],
+    "en": [
+      "Receiving money never needs a remote-access app or holding your card to a phone.",
+      "Never give anyone your card or PIN.",
+      "A profit you didn’t know about is bait."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Ukončite hovor a aplikáciu hneď odinštalujte.",
+      "Volajte banke, zablokujte kartu a internetbanking.",
+      "Podajte oznámenie na polícii."
+    ],
+    "en": [
+      "End the call and uninstall the app at once.",
+      "Call your bank and block your card and internet banking.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/policia-158",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "INVESTIČNÝ PODVOD: Žena uverila lákavým sľubom, prišla o 8000 eur",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/regiony/zena-z-bratislavy-uverila-vynosu-z-inv/985539-clanok.html",
+      "date": "2026-08-17"
+    },
+    {
+      "title": "Aktuálnym trendom sú investičné podvody, tvoria už väčšinu strát",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/najnovsie/aktualnym-trendom-su-investicne-podv/952873-clanok.html",
+      "date": "2026-04-03"
+    },
+    {
+      "title": "Slovenskom sa šíria nové podvody. Tieto telefonáty vás môžu zruinovať",
+      "publisher": "TOUCHIT",
+      "url": "https://touchit.sk/slovenskom-sa-siria-dva-nove-typy-podvodov-ludi-oberaju-o-tisice-eur/756523/",
+      "date": "2025-08-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/investment-celebrity-ads"
+  ]
+}

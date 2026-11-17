@@ -1,0 +1,120 @@
+{
+  "id": "sk/fake-traffic-fine-sms",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sk": "SMS v mene dopravnej polície alebo „systému dohľadu“, často z cudzieho čísla",
+    "en": "A text in the name of the traffic police or an “enforcement system”, often from a foreign number"
+  },
+  "name": {
+    "sk": "Falošná SMS o dopravnej pokute",
+    "en": "Fake traffic fine text"
+  },
+  "how": {
+    "sk": "SMS tvrdí, že automatický systém zaznamenal váš dopravný priestupok, napríklad rýchlosť, a pokutu treba zaplatiť do 48 hodín cez odkaz, inak hrozí zvýšenie alebo konanie. Odkaz vedie na falošnú platobnú stránku, kde zadáte údaje karty.",
+    "en": "A text claims an automated system recorded your traffic offence, such as speeding, and the fine must be paid within 48 hours via a link or it will increase or go to court. The link leads to a fake payment page where you enter your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "SMS „polície“: zaznamenali sme váš priestupok.",
+        "en": "A text from “the police”: your offence has been recorded."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Zaplaťte do 48 hodín, inak sa pokuta zvýši.",
+        "en": "Pay within 48 hours or the fine will increase."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sk": "Platí sa cez odkaz kartou.",
+        "en": "You pay by card through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sk": "Stránka pýta údaje karty.",
+        "en": "The page asks for card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Upozornenie: Kamerový systém zaznamenal prekročenie rýchlosti vaším vozidlom. Pokutu 60 € uhraďte do 48 hodín, po lehote bude vec postúpená na správne konanie: [odkaz]",
+        "en": "Notice: The camera system recorded your vehicle speeding. Pay the 60 € fine within 48 hours; after that the case will be referred for administrative proceedings: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "SMS dopravná pokuta odkaz",
+      "pokuta za rýchlosť zaplatiť 48 hodín",
+      "polícia pokuta SMS podvod",
+      "kamerový systém priestupok zaplatiť odkaz",
+      "neuhradená pokuta vozidlo SMS"
+    ],
+    "en": [
+      "traffic fine text link",
+      "speeding fine pay within 48 hours",
+      "police fine text scam",
+      "camera recorded offence pay link",
+      "unpaid fine vehicle text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sk": [
+      "Polícia neposiela pokuty cez SMS s odkazom.",
+      "Skutočné oznámenie príde písomne, poštou alebo do elektronickej schránky, so spisovým číslom.",
+      "Cudzie číslo odosielateľa a 48-hodinová lehota sú varovné znaky."
+    ],
+    "en": [
+      "The police don’t send fines by text with a link.",
+      "A real notice comes in writing, by post or to your electronic mailbox, with a case number.",
+      "A foreign sender number and a 48-hour deadline are warning signs."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Neklikajte a nič neplaťte.",
+      "Ak ste zadali kartu, hneď volajte banke.",
+      "Nahláste správu polícii alebo SK-CERT."
+    ],
+    "en": [
+      "Don’t click or pay anything.",
+      "If you entered your card, call your bank at once.",
+      "Report the message to the police or SK-CERT."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/sk-cert",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "POZOR NA TIETO SMS: Podvodníci vyzývajú uhradiť dopravnú pokutu",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/slovensko/policia-opatovne-upozornuje-na-podvod/969202-clanok.html",
+      "date": "2026-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,128 @@
+{
+  "id": "cz/bazar-falesny-kupec-odkaz",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "online",
+    "email",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "cs": "„Kupující“ z Bazoše, Vintedu nebo Facebook Marketplace, často s nabídkou kurýra",
+    "en": "A “buyer” from Bazoš, Vinted or Facebook Marketplace, often offering a courier"
+  },
+  "name": {
+    "cs": "Falešný kupec na bazaru pošle odkaz „pro přijetí platby“",
+    "en": "Fake buyer on a marketplace sends a link “to receive payment”"
+  },
+  "how": {
+    "cs": "Prodáváte něco na Bazoši, Vintedu nebo Facebooku. Ozve se nadšený kupec, který nemůže přijet osobně a navrhne doručení přes kurýra (např. DPD, Zásilkovna) nebo „bezpečnou platbu“. Pošle snímek „zaplacené“ platby a odkaz, kde máte platbu přijmout. Stránka napodobuje přepravce nebo platební bránu a chce údaje z karty, přihlášení do bankovnictví, Bankovní identitu nebo kód z SMS. Podvodníci pak vybílí účet.",
+    "en": "You are selling something on Bazoš, Vinted or Facebook. An eager buyer who can’t come in person suggests delivery by courier (e.g. DPD, Zásilkovna) or a “safe payment”. They send a screenshot of the “paid” payment and a link where you must accept the money. The page imitates a carrier or payment gateway and asks for your card details, banking login, Bank iD or a code from a text. The scammers then empty your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Kupec chce zboží hned, ale nemůže přijet; navrhne kurýra.",
+        "en": "The buyer wants the item now but can’t come; suggests a courier."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "cs": "Pošle odkaz, kde máte „přijmout platbu“.",
+        "en": "Sends a link where you must “accept the payment”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "cs": "Stránka chce údaje z karty, přihlášení nebo kód.",
+        "en": "The page asks for card details, a login or a code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "cs": "Někdy po vás chce „poplatek“ za dopravu nebo pojištění.",
+        "en": "Sometimes asks you to pay a “fee” for delivery or insurance."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Dobrý den, kočárek beru za vaši cenu. Bohužel jsem teď pracovně v zahraničí, takže si ho nechám vyzvednout kurýrem. Platbu jsem již odeslal přes zabezpečenou službu, tady je potvrzení. Pro připsání peněz stačí vyplnit údaje ke kartě na tomto odkazu: [odkaz]",
+        "en": "Hello, I’ll take the pram at your price. Unfortunately I’m abroad for work, so I’ll have a courier collect it. I’ve already sent the payment through a secure service, here is the confirmation. To receive the money just fill in your card details at this link: [link]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "kupující bazoš poslal odkaz",
+      "přijmout platbu vyplnit kartu",
+      "falešný kupec kurýr vyzvedne",
+      "vinted kupující odkaz platba",
+      "prodávám bazaru odkaz přepravce",
+      "potvrzení platby odkaz připsání peněz"
+    ],
+    "en": [
+      "buyer on bazos sent a link",
+      "accept payment enter my card",
+      "fake buyer courier will collect",
+      "vinted buyer payment link",
+      "selling online link from the courier"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "cs": [
+      "Pro přijetí peněz stačí číslo účtu; nikdy nezadávejte údaje z karty ani kódy.",
+      "Kupec, který nemůže přijet a nabízí vlastního kurýra nebo neznámou platební službu.",
+      "Odkaz na „Bazoš pay“ nebo stránku přepravce, kterou jste si nevybrali sami."
+    ],
+    "en": [
+      "To receive money an account number is enough; never enter card details or codes.",
+      "A buyer who can’t come and offers their own courier or an unknown payment service.",
+      "A link to a “Bazoš pay” or carrier page you didn’t choose yourself."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na odkaz neklikejte; způsob prodeje a dopravy si zvolte sami.",
+      "Pokud jste zadali údaje nebo kód, volejte ihned banku a zablokujte kartu a bankovnictví.",
+      "Nahlaste profil platformě a podejte trestní oznámení."
+    ],
+    "en": [
+      "Don’t click the link; choose the sale and delivery method yourself.",
+      "If you entered details or a code, call your bank at once and block your card and online banking.",
+      "Report the profile to the platform and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni",
+    "cz/hlaseni-kyberkriminality"
+  ],
+  "sources": [
+    {
+      "title": "Phishingový podvod připravil inzerenta o úspory",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/phishingovy-podvod-pripravil-inzerenta-o-uspory.aspx",
+      "date": "2025-10-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/balik-sms-ceska-posta"
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "hu/toll-fine-sms",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "hu": "„Nemzeti Útdíj Rendszer”, „Nemzeti Útdíjfizetési Szolgáltató”, „HU-GO”, „Rendőrség” (gyakran külföldi számról)",
+    "en": "“National Toll System”, “National Toll Payment Services”, “HU-GO”, “Police” (often from a foreign number)"
+  },
+  "name": {
+    "hu": "Hamis útdíj- és bírság-SMS: „fizessen, különben eljárás indul”",
+    "en": "Fake toll or fine text: “pay or proceedings will start”"
+  },
+  "how": {
+    "hu": "SMS jön: kifizetetlen útdíjtartozása vagy közlekedési bírsága van, és ha egy napon belül nem rendezi, büntetőeljárás indul, kivonják a forgalomból az autót, vagy „negatív bejegyzés” kerül a nyilvántartásba. A link egy HU-GO-ra vagy hivatalos oldalra hasonlító hamis oldalra visz, ahol kártyával kell fizetni. Akkor is érkezik, ha nincs is autója.",
+    "en": "A text arrives: you have an unpaid toll or traffic fine, and if you don’t settle it within a day criminal proceedings will start, your car will be taken off the road, or a “negative entry” will go on record. The link leads to a fake page resembling HU-GO or an official site, where you pay by card. It arrives even if you don’t own a car."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "SMS útdíjtartozásról vagy bírságról.",
+        "en": "A text about an unpaid toll or fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Egy napon belül fizetni kell, különben eljárás és forgalomból kivonás.",
+        "en": "Pay within a day or face proceedings and losing your car."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "Link egy hivatalosnak látszó oldalra.",
+        "en": "A link to an official-looking page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hu": "Kártyás fizetés a linken.",
+        "en": "Card payment through the link."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Nemzeti Utdij Rendszer: Jarmuve utdijtartozasa rendezetlen (2 870 Ft). A mai napon belul nem teljesitett fizetes eseten eljaras indul es a jarmu forgalombol kivonasra kerul. Rendezes: [link]",
+        "en": "National Toll System: Your vehicle’s toll debt is unpaid (2,870 Ft). If payment is not made today, proceedings will start and the vehicle will be taken off the road. Settle here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "útdíjtartozás sms fizetés",
+      "hu-go hamis üzenet",
+      "autópálya matrica tartozás sms",
+      "bírság sms forgalomból kivonás",
+      "nemzeti útdíj rendszer sms eljárás indul",
+      "gyorshajtási bírság sms fizetni",
+      "útdíj pótdíj sms kártyával"
+    ],
+    "en": [
+      "text about unpaid road toll",
+      "fake hu-go message",
+      "motorway toll debt sms link",
+      "sms fine says car will be taken off road",
+      "speeding fine text pay by link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "A rendőrség nem SMS-ben értesít a bírságról.",
+      "Fenyegetés egynapos határidővel és forgalomból kivonással.",
+      "Külföldi feladó, ékezet nélküli szöveg, a szervezethez nem illő link."
+    ],
+    "en": [
+      "The police don’t notify fines by SMS.",
+      "Threats with a one-day deadline and losing your car.",
+      "A foreign sender, text without accents, a link unrelated to the organisation."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne kattintson. Tartozását csak a hivatalos oldalon vagy ügyfélszolgálaton ellenőrizze.",
+      "Bírságot a rendőrség e-ügyintézési oldalán ellenőrizhet, a címet maga írja be.",
+      "Ha fizetett, azonnal hívja a bankját.",
+      "Jelentse az oldalt az Internet Hotline-on."
+    ],
+    "en": [
+      "Don’t click. Check any debt only on the official site or with customer service.",
+      "Check fines on the police e-administration site, typing the address yourself.",
+      "If you paid, call your bank at once.",
+      "Report the page to Internet Hotline."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/internet-hotline",
+    "hu/nki-csirt"
+  ],
+  "sources": [
+    {
+      "title": "Veszélyben lehet sokak bankszámlája, beindultak az adathalászok",
+      "publisher": "Infostart",
+      "url": "https://infostart.hu/belfold/2026/03/20/veszelyben-lehet-sokak-bankszamlaja-beindultak-az-adathalaszok",
+      "date": "2026-03-20"
+    },
+    {
+      "title": "Ha megnyitja ezt az SMS-t, minden pénzét bukhatja",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/gazdasag/2026/03/16/sms-csalas-online-atveres-birsag-825510/",
+      "date": "2026-03-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/parcel-fee-sms"
+  ]
+}

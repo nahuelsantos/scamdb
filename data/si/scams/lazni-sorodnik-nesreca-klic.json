@@ -1,0 +1,125 @@
+{
+  "id": "si/lazni-sorodnik-nesreca-klic",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "sl": "»Zdravnik«, »bolnišnica«, »policist« ali jokajoč »sorodnik«",
+    "en": "A “doctor”, “hospital”, “police officer” or a crying “relative”"
+  },
+  "name": {
+    "sl": "Klic o nesreči sorodnika: denar za operacijo ali varščino prevzame kurir",
+    "en": "Call about a relative’s accident: a courier collects money for surgery or bail"
+  },
+  "how": {
+    "sl": "Pokličejo vas, največkrat starejše, in povedo, da je vaša hči, sin ali vnuk v bolnišnici ali je povzročil prometno nesrečo. Takoj potrebuje denar za nujno operacijo ali za varščino. Klicatelj vas drži na zvezi, da ne morete preveriti, nato pa po gotovino ali nakit na dom pride neznanec, ki se predstavi kot kurir, sodelavec ali uradna oseba. Pri tej organizirani goljufiji sodeluje več ljudi.",
+    "en": "You get a call, usually if you are older, saying your daughter, son or grandchild is in hospital or caused a road accident. They need money right away for urgent surgery or for bail. The caller keeps you on the line so you can’t check, then a stranger posing as a courier, colleague or official comes to your home for cash or jewellery. Several people work together in this organised fraud."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Klic: vaš bližnji je v bolnišnici ali je povzročil nesrečo.",
+        "en": "A call: someone close to you is in hospital or caused an accident."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Denar je potreben takoj, za operacijo ali varščino.",
+        "en": "The money is needed now, for surgery or bail."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Ne smete prekiniti klica ali poklicati drugih.",
+        "en": "You must not hang up or call anyone else."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "sl": "Po gotovino ali nakit pride neznanec na dom.",
+        "en": "A stranger comes to your home for the cash or jewellery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Gospa, kliče vas zdravnik z urgence. Vaša vnukinja je bila v hudi prometni nesreči in jo pripravljamo na operacijo, ki je zavarovanje ne krije. Potrebujemo 8.000 evrov še danes. Ostanite na liniji, naš sodelavec bo čez pol ure pri vas in bo denar prevzel. Vnukinja je zdaj ne more govoriti.",
+        "en": "Madam, this is a doctor from the emergency ward. Your granddaughter was in a serious road accident and we are preparing her for surgery that insurance doesn’t cover. We need 8,000 euros today. Stay on the line, our colleague will be with you in half an hour to collect the money. Your granddaughter can’t talk right now."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "klic hči bolnišnica nujno denar",
+      "vnuk povzročil prometno nesrečo varščina",
+      "zdravnik klical operacija plačati gotovino",
+      "kurir pride domov prevzame denar",
+      "sorodnik nesreča klic starejši"
+    ],
+    "en": [
+      "call saying my daughter is in hospital and needs money",
+      "grandson caused a car accident and needs bail",
+      "doctor called asking cash for surgery",
+      "courier coming to my home to collect money",
+      "phone call about a relative in an accident"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "sl": [
+      "Bolnišnice in policija ne pobirajo gotovine na domu.",
+      "Klicatelj vas ne pusti prekiniti in poklicati sorodnika.",
+      "Neznancu na vratih nikoli ne izročite denarja ali nakita."
+    ],
+    "en": [
+      "Hospitals and the police don’t collect cash at your home.",
+      "The caller won’t let you hang up and call your relative.",
+      "Never hand money or jewellery to a stranger at the door."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Prekinite klic in sami pokličite sorodnika ali nekoga, ki mu zaupate.",
+      "Če je kurir na poti ali pred vrati, pokličite 113 ali 112.",
+      "O dogodku obvestite policijo, tudi če niste ničesar izročili.",
+      "Pogovorite se s starejšimi sorodniki o tej prevari."
+    ],
+    "en": [
+      "Hang up and call your relative, or someone you trust, yourself.",
+      "If a courier is on the way or at the door, call 113 or 112.",
+      "Tell the police even if you handed nothing over.",
+      "Talk to older relatives about this scam."
+    ]
+  },
+  "reportTo": [
+    "si/policija-113",
+    "si/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Telefonskih prevar je vedno več",
+      "publisher": "RTV Slovenija",
+      "url": "https://www.rtvslo.si/enostavno/uporabno/telefonskih-prevar-je-vedno-vec/779452",
+      "date": "2026-04-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/zivjo-mami-nova-stevilka"
+  ]
+}

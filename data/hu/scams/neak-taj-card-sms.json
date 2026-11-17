@@ -1,0 +1,126 @@
+{
+  "id": "hu/neak-taj-card-sms",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "hu": "„NEAK”, „Nemzeti Egészségbiztosítási Alapkezelő”, „TAJ-kártya” (külföldi számról)",
+    "en": "“NEAK” (national health insurance fund), “TAJ card” (from a foreign number)"
+  },
+  "name": {
+    "hu": "Hamis NEAK-SMS: „lejár a TAJ-kártyája”",
+    "en": "Fake health insurance text: “your TAJ card is expiring”"
+  },
+  "how": {
+    "hu": "SMS jön a NEAK nevében: lejár a TAJ-kártyája, és meg kell újítani. A link egy NEAK-nak látszó oldalra visz, amely előbb a nevét, születési dátumát, lakcímét, TAJ-számát és telefonszámát kéri, majd a „kártya kézbesítési díjához” a bankkártya számát, lejáratát és CVC-kódját. Az adatokkal a csalók pénzt emelnek le, vagy újabb csalásokhoz használják.",
+    "en": "A text arrives in the name of NEAK: your TAJ (health insurance) card is expiring and must be renewed. The link leads to a NEAK-looking page that first asks for your name, date of birth, address, TAJ number and phone number, then your card number, expiry date and CVC for the “card delivery fee”. The scammers use the data to take money or for further scams."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "SMS „a NEAK-tól”: lejár a TAJ-kártyája.",
+        "en": "A text from “NEAK”: your TAJ card is expiring."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Most kell megújítani.",
+        "en": "You must renew it now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "A link egy hamis NEAK-oldalra visz.",
+        "en": "The link leads to a fake NEAK page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hu": "Személyes adatok, majd kártyaadat a „kézbesítési díjhoz”.",
+        "en": "Personal data, then card details for a “delivery fee”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "NEAK: TAJ kartyaja ervenyessege hamarosan lejar. Az egeszsegugyi ellatas folyamatossaga erdekeben igenyelje uj kartyajat online: [link]",
+        "en": "NEAK: Your TAJ card will expire soon. To keep your access to health care, request your new card online: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "taj kártya lejár sms",
+      "neak sms megújítás",
+      "taj kártya kézbesítési díj kártyaadat",
+      "egészségbiztosítási kártya megújítás sms",
+      "taj számomat kérték",
+      "neak hamis oldal bankkártya"
+    ],
+    "en": [
+      "text says my taj card is expiring",
+      "fake neak sms renewal link",
+      "health insurance card delivery fee",
+      "asked for my taj number and card details",
+      "renew health card online text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "A TAJ-kártyát nem kell SMS-ben kapott linken megújítani.",
+      "Állami szerv nem kér kártyaadatot SMS-ben kapott linken.",
+      "Külföldi feladó, ékezet nélküli szöveg."
+    ],
+    "en": [
+      "You don’t renew your TAJ card through a link in a text.",
+      "Government bodies don’t ask for card details through a link in a text.",
+      "A foreign sender and text without accents."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne nyissa meg a linket, és ne válaszoljon.",
+      "Tiltsa le a feladót, és jelölje spamként.",
+      "Ha megadta a kártyaadatait, azonnal tiltassa le a kártyát.",
+      "Jelentse az NKI-nak vagy az Internet Hotline-on."
+    ],
+    "en": [
+      "Don’t open the link and don’t reply.",
+      "Block the sender and mark it as spam.",
+      "If you entered card details, block the card at once.",
+      "Report it to NKI or Internet Hotline."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/nki-csirt",
+    "hu/internet-hotline"
+  ],
+  "sources": [
+    {
+      "title": "Tájékoztatás a NEAK-ot megszemélyesítő adathalász SMS üzenetekről",
+      "publisher": "Nemzeti Kibervédelmi Intézet (NBSZ NKI)",
+      "url": "https://nki.gov.hu/figyelmeztetesek/tajekoztatas/tajekoztatas-a-neak-ot-megszemelyesito-adathalasz-sms-uzenetekrol/",
+      "date": "2026-03-13"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/nav-refund-phishing"
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "sk/bank-phishing-link",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "sk": "E-mail alebo SMS v mene banky (Slovenská sporiteľňa, Tatra banka, VÚB, ČSOB a ďalšie)",
+    "en": "An email or text in the name of a bank (Slovenská sporiteľňa, Tatra banka, VÚB, ČSOB and others)"
+  },
+  "name": {
+    "sk": "Falošná správa z banky: „zabezpečte si účet“ cez odkaz alebo QR kód",
+    "en": "Fake bank message: “secure your account” via a link or QR code"
+  },
+  "how": {
+    "sk": "Príde e-mail alebo SMS, ktorá vyzerá ako od vašej banky: účet treba overiť, zabezpečiť alebo aktualizovať, inak bude obmedzený. Odkaz alebo QR kód vedie na verne skopírovanú stránku internetového bankovníctva, kde zadáte prihlasovacie údaje, údaje karty alebo potvrdíte kód. Podvodníci sa hneď prihlásia a vyberú peniaze. Stránky menia často, takže vyzerajú zakaždým inak.",
+    "en": "An email or text arrives that looks like it’s from your bank: your account must be verified, secured or updated or it will be restricted. The link or QR code leads to a faithful copy of the internet banking site where you enter your login, card details or confirm a code. The scammers log in at once and take the money. They change the sites often, so they look different every time."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Správa „z banky“: účet treba zabezpečiť alebo bude obmedzený.",
+        "en": "A message “from the bank”: your account must be secured or it will be restricted."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Lehota je krátka, musíte konať hneď.",
+        "en": "The deadline is short; you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sk": "Odkaz alebo QR kód vedie na falošné internetové bankovníctvo.",
+        "en": "The link or QR code leads to a fake internet banking site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sk": "Stránka chce prihlasovacie údaje, číslo karty alebo SMS kód.",
+        "en": "The page asks for your login, card number or text code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Vážený klient, z dôvodu nových bezpečnostných pravidiel je potrebné do 24 hodín overiť vašu identitu v internetbankingu. Neoverené účty budú dočasne pozastavené. Naskenujte priložený QR kód alebo pokračujte cez [odkaz] a potvrďte údaje platobnej karty.",
+        "en": "Dear client, due to new security rules you must verify your identity in internet banking within 24 hours. Unverified accounts will be temporarily suspended. Scan the attached QR code or continue via [link] and confirm your payment card details."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "email banka overte účet odkaz",
+      "QR kód zabezpečenie účtu banka",
+      "falošné internetbankingové prihlásenie",
+      "SMS banka účet pozastavený",
+      "zadal som prihlasovacie údaje falošná stránka banky",
+      "overenie identity platobná karta odkaz"
+    ],
+    "en": [
+      "bank email verify account link",
+      "qr code to secure bank account",
+      "fake internet banking login page",
+      "bank text account suspended link",
+      "entered my login on fake bank site"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sk": [
+      "Banky nežiadajú prihlasovacie údaje ani údaje karty e-mailom, SMS ani cez QR kód.",
+      "Bezpečnosť účtu banka nerieši naliehavým e-mailom.",
+      "Adresa stránky sa líši od skutočnej adresy banky."
+    ],
+    "en": [
+      "Banks don’t ask for login or card details by email, text or QR code.",
+      "Banks don’t handle account security with urgent emails.",
+      "The page address differs from the bank’s real address."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Neklikajte a neskenujte. Do internetbankingu sa prihláste sami, cez aplikáciu.",
+      "Ak ste zadali údaje, hneď volajte banke, zablokujte kartu a zmeňte heslá.",
+      "Podvodnú stránku nahláste SK-CERT, škodu polícii."
+    ],
+    "en": [
+      "Don’t click or scan. Log in to internet banking yourself, in the app.",
+      "If you entered details, call your bank at once, block the card and change your passwords.",
+      "Report the scam page to SK-CERT and any loss to the police."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/sk-cert",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "Podvodníci nestrácajú vynaliezavosť: V mene banky vás nabádajú na zabezpečenie účtu cez QR kód",
+      "publisher": "Noviny.sk",
+      "url": "https://www.noviny.sk/krimi/1161792-podvodnici-nestracaju-vynaliezavost-v-mene-banky-vas-nabadaju-na-zabezpecenie-uctu-cez-qr-kod",
+      "date": "2026-01-27"
+    },
+    {
+      "title": "POZOR NA PODVODNÍKOV: Vydávajú sa za pracovníkov štátnych inštitúcií",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/regiony/pozor-na-podvodnikov-vydavaju-sa-za/970721-clanok.html",
+      "date": "2026-06-16"
+    },
+    {
+      "title": "OPATRNE: Polícia upozorňuje na novú vlnu podvodných SMS správ",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/krimi/policia-upozornuje-na-novu-vlnu-podvo/975991-clanok.html",
+      "date": "2026-07-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

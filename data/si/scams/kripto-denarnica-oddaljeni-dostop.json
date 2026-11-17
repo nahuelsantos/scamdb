@@ -1,0 +1,133 @@
+{
+  "id": "si/kripto-denarnica-oddaljeni-dostop",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "sl": "»Kripto borza«, »banka« ali »podpora« (pogosto s ponarejene slovenske številke)",
+    "en": "A “crypto exchange”, “bank” or “support” (often from a spoofed Slovenian number)"
+  },
+  "name": {
+    "sl": "Klic: »na vaši kripto denarnici čaka denar« in aplikacija za oddaljeni dostop",
+    "en": "Call: “money is waiting in your crypto wallet” and a remote-access app"
+  },
+  "how": {
+    "sl": "Pokliče vas neznanec, ki se predstavi kot uslužbenec znane kripto borze ali banke. Pravi, da vas na virtualni denarnici čaka nekaj tisoč evrov ali bitcoinov. Da bi denar dvignili, morate na telefon ali računalnik namestiti aplikacijo, kot je AnyDesk. S tem goljufi dobijo dostop do naprave in spletne banke ter z vaših računov prenesejo denar, včasih tudi več deset tisoč evrov.",
+    "en": "A stranger calls posing as an employee of a well-known crypto exchange or a bank. They say several thousand euros or bitcoins are waiting for you in a virtual wallet. To withdraw it you must install an app such as AnyDesk on your phone or computer. That gives the scammers access to your device and online banking, and they move money out of your accounts, sometimes tens of thousands of euros."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Klic: na vašem imenu je kripto denarnica z denarjem.",
+        "en": "A call: there is a crypto wallet with money in your name."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sl": "Klicatelj se predstavi kot borza ali banka.",
+        "en": "The caller says they are an exchange or a bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Namestiti morate aplikacijo za oddaljeni dostop.",
+        "en": "You must install a remote-access app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "sl": "Ostati morate na zvezi, medtem ko vas »vodi«.",
+        "en": "You must stay on the line while they “guide” you."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Dober dan, kličem iz podpore kripto borze. Na vaše ime imamo evidentirano denarnico, na kateri je 0,14 bitcoina, kar je okoli 9.000 evrov. Da vam jih prenesemo na bančni račun, si na telefon prosim naložite aplikacijo za podporo, ki vam jo zdaj pošljem, in mi preberite številko, ki se prikaže.",
+        "en": "Good afternoon, I’m calling from a crypto exchange’s support. We have a wallet registered in your name holding 0.14 bitcoin, about 9,000 euros. To transfer it to your bank account, please install the support app I’m sending you now and read me the number it shows."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "klic bitcoini čakajo denarnici",
+      "kripto borza klicala namestite anydesk",
+      "aplikacija oddaljeni dostop telefon klic",
+      "denar virtualni denarnici dvig",
+      "namestil aplikacijo izpraznili račun",
+      "kripto račun izplačilo klic",
+      "naložite program računalnik klicatelj",
+      "digitalna sredstva izplačamo danes"
+    ],
+    "en": [
+      "call saying bitcoins are waiting in my wallet",
+      "crypto exchange called and asked me to install anydesk",
+      "remote access app on my phone from a caller",
+      "money in a virtual wallet to withdraw",
+      "installed an app and my account was emptied"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "sl": [
+      "Nihče vas ne kliče, da bi vam podaril denar s pozabljene kripto denarnice.",
+      "Banka ali borza vas nikoli ne prosi za namestitev aplikacije za oddaljeni dostop.",
+      "Ponarejena slovenska številka ne dokazuje ničesar."
+    ],
+    "en": [
+      "Nobody calls to give you money from a forgotten crypto wallet.",
+      "A bank or exchange never asks you to install a remote-access app.",
+      "A spoofed Slovenian number proves nothing."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Takoj prekinite klic in ne pritiskajte tipk.",
+      "Ne nameščajte aplikacij po navodilih klicatelja; če ste jo, jo odstranite in odklopite napravo s spleta.",
+      "Pokličite banko, blokirajte dostop in kartice ter prijavite goljufijo policiji."
+    ],
+    "en": [
+      "Hang up straight away without pressing any keys.",
+      "Don’t install apps a caller tells you to; if you did, remove it and take the device offline.",
+      "Call your bank, block access and cards, and report the fraud to the police."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/policija-113",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Zadnje dni goljufi z lažnimi obljubami o zaslužku s kriptovalutami izpraznili več bančnih računov",
+      "publisher": "RTV Slovenija",
+      "url": "https://www.rtvslo.si/crna-kronika/zadnje-dni-goljufi-z-laznimi-obljubami-o-zasluzku-s-kriptovalutami-izpraznili-vec-bancnih-racunov/740010",
+      "date": "2025-03-20"
+    },
+    {
+      "title": "Telefonskih prevar je vedno več",
+      "publisher": "RTV Slovenija",
+      "url": "https://www.rtvslo.si/enostavno/uporabno/telefonskih-prevar-je-vedno-vec/779452",
+      "date": "2026-04-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/nalozbena-prevara-znane-osebe",
+    "si/lazni-bancni-usluzbenec"
+  ]
+}

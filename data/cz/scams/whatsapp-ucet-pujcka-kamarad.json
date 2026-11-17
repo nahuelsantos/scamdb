@@ -1,0 +1,125 @@
+{
+  "id": "cz/whatsapp-ucet-pujcka-kamarad",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "cs": "Skutečný kontakt z vašeho WhatsAppu (kamarád, kolega, příbuzný), jehož účet převzali podvodníci",
+    "en": "A real contact in your WhatsApp (friend, colleague, relative) whose account the scammers have taken over"
+  },
+  "name": {
+    "cs": "Převzatý WhatsApp: „hlasuj v anketě“ a „půjč mi peníze“",
+    "en": "Hijacked WhatsApp: “vote in a poll” and “lend me money”"
+  },
+  "how": {
+    "cs": "Od známého přijde zpráva s odkazem, abyste hlasovali v anketě nebo soutěži, nebo s tvrzením, že vám omylem poslal ověřovací kód. Když na odkazu zadáte telefonní číslo a párovací kód, nebo kód přepošlete, podvodníci převezmou váš účet nebo k němu tiše připojí své zařízení. Pak jménem vás i dalších obětí píšou kontaktům s naléhavou prosbou o půjčku, například desítky tisíc korun, někdy i s QR kódem k platbě.",
+    "en": "A message from someone you know asks you to vote in a poll or contest via a link, or says they sent you a verification code by mistake. If you enter your phone number and a pairing code on that page, or forward the code, the scammers take over your account or silently link their device to it. They then message contacts in your name and other victims’ names with an urgent plea for a loan, often tens of thousands of crowns, sometimes with a QR code for payment."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Zpráva od známého: hlasuj v anketě nebo pošli kód, co přišel omylem.",
+        "en": "A message from a friend: vote in a poll or send the code that came by mistake."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "cs": "Zadáte číslo a kód, a účet přebírají podvodníci.",
+        "en": "You enter your number and the code, and the scammers take over the account."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "cs": "Kontakty dostávají naléhavé prosby o půjčku.",
+        "en": "Your contacts get urgent requests for a loan."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Ahoj, prosím tě, mohl bys hlasovat pro moji neteř v soutěži o stipendium? Stačí kliknout a potvrdit svým číslem, zabere to minutu: [odkaz] Moc děkuju!",
+        "en": "Hi, could you please vote for my niece in a scholarship contest? Just click and confirm with your number, it takes a minute: [link] Thanks so much!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "hlasovat anketě whatsapp odkaz",
+      "kamarád poslal kód omylem",
+      "převzatý účet whatsapp půjčka",
+      "známý píše půjčit peníze whatsapp",
+      "připojené zařízení whatsapp cizí",
+      "hlasování soutěž stipendium odkaz"
+    ],
+    "en": [
+      "vote in a poll whatsapp link",
+      "friend sent me a code by mistake",
+      "hacked whatsapp asking for a loan",
+      "friend on whatsapp wants to borrow money",
+      "unknown linked device on whatsapp"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "cs": [
+      "Ověřovací ani párovací kód z WhatsAppu nikdy nikomu nesdělujte a nezadávejte na cizí stránce.",
+      "Hlasování v anketě nevyžaduje vaše telefonní číslo a kód.",
+      "Známý, který náhle chce půjčit peníze a nechce volat, nemusí být on."
+    ],
+    "en": [
+      "Never share a WhatsApp verification or pairing code or enter it on a strange page.",
+      "Voting in a poll never needs your phone number and a code.",
+      "A friend who suddenly wants a loan and won’t call may not be them."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Než pošlete peníze, zavolejte dotyčnému na číslo, které znáte.",
+      "Zapněte si dvoufázové ověření a v Nastavení zkontrolujte připojená zařízení.",
+      "Pokud byl účet převzat, obnovte ho, varujte kontakty a při ztrátě peněz volejte banku a policii."
+    ],
+    "en": [
+      "Before sending money, call the person on the number you know.",
+      "Turn on two-step verification and check linked devices in Settings.",
+      "If your account was taken over, recover it, warn your contacts and, if money was lost, call your bank and the police."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni",
+    "cz/hlaseni-kyberkriminality"
+  ],
+  "sources": [
+    {
+      "title": "Váš kamarád na sociální síti může být podvodník",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/vas-kamarad-na-socialni-siti-muze-byt-podvodnik.aspx",
+      "date": "2026-02-18"
+    },
+    {
+      "title": "Nový podvod v Česku umožňuje získat přístup do WhatsAppu",
+      "publisher": "Seznam Zprávy (ČTK)",
+      "url": "https://www.seznamzpravy.cz/clanek/domaci-zivot-v-cesku-novy-podvod-v-cesku-umoznuje-ziskat-pristup-do-whatsappu-294484",
+      "date": "2025-12-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/ahoj-mami-nove-cislo"
+  ]
+}

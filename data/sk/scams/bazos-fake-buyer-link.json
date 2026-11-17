@@ -1,0 +1,133 @@
+{
+  "id": "sk/bazos-fake-buyer-link",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "sk": "„Kupujúci“ z inzerátu na Bazoši alebo inom bazári, často cez WhatsApp",
+    "en": "A “buyer” from your ad on Bazoš or another marketplace, often via WhatsApp"
+  },
+  "name": {
+    "sk": "Falošný kupujúci na Bazoši: „platba cez kuriéra“ a odkaz na kartu",
+    "en": "Fake buyer on Bazoš: “payment via courier” and a card link"
+  },
+  "how": {
+    "sk": "Predávate niečo na Bazoši alebo inom bazári. „Kupujúci“ chce tovar hneď, sám si zariadi kuriéra a pošle vám odkaz na stránku s logom Bazoša, Slovenskej pošty alebo kuriérskej firmy, kde si máte „prevziať platbu“. Stránka chce číslo karty, dátum platnosti, CVV, prihlásenie do internetbankingu alebo potvrdenie v aplikácii banky. Namiesto prijatia peňazí vám ich vyberú. Iná verzia: pýta si overovací kód z Bazoša a prevezme vaše inzeráty.",
+    "en": "You are selling something on Bazoš or another marketplace. A “buyer” wants it at once, arranges a courier himself and sends a link to a page with the Bazoš, Slovenská pošta or courier logo where you must “receive the payment”. The page asks for your card number, expiry date, CVV, internet banking login or approval in your bank app. Instead of receiving money, you lose it. Another version: he asks for the Bazoš verification code and takes over your ads."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Kupujúci nevyjednáva a tovar chce hneď, bez osobného stretnutia.",
+        "en": "The buyer doesn’t haggle and wants the item at once without meeting."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sk": "Pošle odkaz, aby ste si „prevzali platbu“ cez kuriéra.",
+        "en": "He sends a link so you can “receive the payment” via a courier."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sk": "Stránka pýta údaje karty alebo prihlásenie do banky.",
+        "en": "The page asks for card details or a bank login."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sk": "Alebo pýta overovací kód zo SMS.",
+        "en": "Or he asks for the verification code from a text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Dobrý deň, mám záujem o ten detský bicykel, beriem za plnú cenu. Som momentálne pracovne v zahraničí, tak doručenie vybavím cez kuriéra a platbu som už zadal. Tu si ju prosím potvrdíte a peniaze vám prídu na kartu: [odkaz]. Kuriér si to vyzdvihne zajtra.",
+        "en": "Hello, I’m interested in the children’s bike, I’ll pay full price. I’m abroad for work right now, so I’ll arrange delivery by courier and I’ve already sent the payment. Please confirm it here and the money will reach your card: [link]. The courier will pick it up tomorrow."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "falošný kupujúci bazoš odkaz",
+      "prevziať platbu cez kuriéra odkaz",
+      "kupujúci chce číslo karty",
+      "predávam na bazoši podvod whatsapp",
+      "stránka s logom pošty platba za inzerát",
+      "overovací kód bazoš kupujúci pýta"
+    ],
+    "en": [
+      "fake buyer on bazos link",
+      "receive payment through courier link",
+      "buyer wants my card number",
+      "selling on marketplace whatsapp scam",
+      "buyer asked for bazos verification code"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "money_request",
+    "asks_for_code",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "sk": [
+      "Na prijatie peňazí stačí číslo účtu (IBAN), nikdy nie údaje karty ani prihlásenie do banky.",
+      "Bazoš ani pošta nesprostredkúvajú platby cez odkazy od kupujúceho.",
+      "Kupujúci, ktorý sa nechce stretnúť a hneď posiela odkaz, je podozrivý."
+    ],
+    "en": [
+      "To receive money an account number (IBAN) is enough, never card details or a bank login.",
+      "Bazoš and the post office don’t handle payments through links from the buyer.",
+      "A buyer who won’t meet and sends a link straight away is suspicious."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Neotvárajte odkaz a predávajte osobne alebo na dobierku.",
+      "Ak ste zadali údaje, hneď volajte banke a zablokujte kartu.",
+      "Podajte oznámenie na polícii a inzerát nahláste portálu."
+    ],
+    "en": [
+      "Don’t open the link; sell in person or cash on delivery.",
+      "If you entered details, call your bank at once and block the card.",
+      "Report it to the police and flag the ad on the site."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/policia-oznamenie",
+    "sk/sk-cert"
+  ],
+  "sources": [
+    {
+      "title": "Skákací hrad ho takmer pripravil o peniaze. Polícia varuje, cez bazár sa takto nepredáva",
+      "publisher": "Pravda",
+      "url": "https://www.pravda.sk/uzitocna/spotrebitel/clanok/789066-predaval-cez-bazar-a-takmer-prisiel-o-peniaze-podvodnik-sa-vydaval-za-kupujuceho-policia-upozornuje-na-novy-trik",
+      "date": "2026-03-06"
+    },
+    {
+      "title": "Podvody pri nákupoch na online bazároch nahláste banke aj polícii",
+      "publisher": "SITA",
+      "url": "https://sita.sk/podvody-pri-nakupoch-na-online-bazaroch-nahlaste-banke-aj-policii/",
+      "date": "2023-04-19"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/marketplace-fake-seller"
+  ]
+}

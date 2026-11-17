@@ -1,0 +1,126 @@
+{
+  "id": "si/lazna-policijska-kazen-sms",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "sl": "»Policija«, »prometna policija« (pogosto s tuje številke)",
+    "en": "“Police”, “traffic police” (often from a foreign number)"
+  },
+  "name": {
+    "sl": "Lažni SMS policije: neplačana prometna kazen",
+    "en": "Fake police text: an unpaid traffic fine"
+  },
+  "how": {
+    "sl": "Prejmete SMS, ki naj bi ga poslala slovenska policija: storili ste prometni prekršek, na primer prekoračili hitrost, in morate plačati globo ali se prijaviti prek povezave, sicer se bo znesek povečal. Povezava vodi na obrazec, kjer vpišete podatke kartice ali spletne banke. Goljufi nato dvignejo denar z vašega računa. Policija o prometnih prekrških nikoli ne obvešča po SMS.",
+    "en": "You get a text that claims to be from the Slovenian police: you committed a traffic offence, for example speeding, and must pay a fine or log in through a link, or the amount will go up. The link opens a form where you enter your card or online-banking details. The scammers then take money from your account. The police never notify traffic offences by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "SMS »policije« o prometnem prekršku in neplačani globi.",
+        "en": "A text from “the police” about a traffic offence and an unpaid fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Globa se bo povečala, če ne plačate takoj.",
+        "en": "The fine will go up unless you pay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Plačilo ali prijava prek povezave.",
+        "en": "Pay or log in through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sl": "Obrazec zahteva podatke kartice ali spletne banke.",
+        "en": "The form asks for card or online-banking details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "POLICIJA: Zabeležena je prekoračitev hitrosti z vašim vozilom. Globa 40 EUR še ni poravnana. Če plačila ne opravite v 48 urah, se znesek poviša in sledi postopek izterjave. Plačilo: [povezava]",
+        "en": "POLICE: A speeding offence by your vehicle has been recorded. The 40 EUR fine is unpaid. If you don’t pay within 48 hours, the amount goes up and collection follows. Payment: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "sms policije prometna kazen povezava",
+      "neplačana globa prekoračitev hitrosti sms",
+      "plačilo globe prek povezave",
+      "policija poslala sms prekršek",
+      "globa poviša 48 ur",
+      "parkirna kazen policija sms",
+      "plačilni nalog prekršek povezava",
+      "neplačana kazen izvršba policija"
+    ],
+    "en": [
+      "text from police about a traffic fine",
+      "unpaid speeding fine text message",
+      "pay the fine through a link",
+      "police sent me a text about an offence",
+      "fine will increase within 48 hours"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "sl": [
+      "Slovenska policija o prometnih prekrških nikoli ne obvešča po SMS.",
+      "Sporočilo pride s tuje ali neznane številke.",
+      "Globe se ne plačujejo s podatki kartice na povezavi iz sporočila."
+    ],
+    "en": [
+      "The Slovenian police never notify traffic offences by text.",
+      "The message comes from a foreign or unknown number.",
+      "Fines are not paid by entering card details on a link from a message."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne odgovarjajte in ne odpirajte povezave; sporočilo izbrišite.",
+      "Če ste vpisali podatke kartice, takoj pokličite banko in kartico blokirajte.",
+      "Goljufijo prijavite na policijski postaji ali prek e-naznanila."
+    ],
+    "en": [
+      "Don’t reply or open the link; delete the message.",
+      "If you entered card details, call your bank straight away and block the card.",
+      "Report the fraud at a police station or through the online report."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/policija-e-naznanilo",
+    "si/si-cert"
+  ],
+  "sources": [
+    {
+      "title": "Goljufi z lažnimi policijskimi sporočili naenkrat pobrali skoraj 3.000 evrov",
+      "publisher": "N1 Slovenija",
+      "url": "https://n1info.si/novice/slovenija/goljufi-z-laznimi-policijskimi-sporocili-naenkrat-pobrali-skoraj-3000-evrov/",
+      "date": "2026-05-16"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/lazno-sporocilo-policije-europol"
+  ]
+}

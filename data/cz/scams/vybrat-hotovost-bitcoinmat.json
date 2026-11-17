@@ -1,0 +1,125 @@
+{
+  "id": "cz/vybrat-hotovost-bitcoinmat",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "cs": "„Bankéř“, „bezpečnostní specialistka banky“ nebo „investiční společnost“, který vás po celou dobu navádí po telefonu",
+    "en": "A “banker”, a “bank security specialist” or an “investment company” guiding you on the phone the whole time"
+  },
+  "name": {
+    "cs": "Vyberte hotovost a vložte ji do bitcoinmatu",
+    "en": "Withdraw cash and put it into a bitcoin ATM"
+  },
+  "how": {
+    "cs": "Podvodník vám po telefonu namluví, že je váš účet napadený, nebo že máte u „investiční společnosti“ peníze, které si musíte vyzvednout. Pak vás navede, abyste vybrali hotovost z bankomatu a vložili ji do bitcoinmatu (kryptoměnového automatu) podle QR kódu, který vám pošle. Po celou dobu s vámi telefonuje. Peníze se okamžitě převedou do kryptoměny podvodníků a nedají se vrátit.",
+    "en": "On the phone the scammer convinces you that your account has been hacked, or that an “investment company” is holding money you must collect. They then guide you to withdraw cash from an ATM and feed it into a bitcoin ATM (crypto machine) using a QR code they send. They stay on the phone the whole time. The money is converted instantly into the scammers’ crypto and cannot be recovered."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Hovor o napadeném účtu nebo o penězích z investice.",
+        "en": "A call about a hacked account or money from an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Máte vybrat hotovost a jít k bitcoinmatu, telefon nesmíte položit.",
+        "en": "You must withdraw cash and go to a bitcoin ATM without hanging up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "cs": "Do automatu vložíte peníze podle QR kódu, který vám pošlou.",
+        "en": "You feed the money into the machine using a QR code they send you."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Paní Kučerová, peníze na vašem účtu jsou pořád v ohrožení. Vyberte prosím z bankomatu 90 000 Kč a zajděte k automatu na kryptoměny v obchodním centru. Pošlu vám QR kód chráněného účtu, peníze vložíte tam. Telefon mějte celou dobu u ucha a s nikým nemluvte, mohl by to být člověk podvodníků.",
+        "en": "Mrs Kučerová, the money in your account is still at risk. Please withdraw 90,000 CZK from the cash machine and go to the crypto machine in the shopping centre. I’ll send you the QR code of a protected account and you put the money in there. Keep the phone at your ear all the time and don’t talk to anyone, it could be one of the scammers."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "vložit peníze bitcoinmat",
+      "vybrat hotovost bankomat telefonu",
+      "kryptoměnový automat qr kód",
+      "chráněný účet bitcoin automat",
+      "investiční společnost vyzvednout peníze bitcoinmat",
+      "navádí telefonu bankomat"
+    ],
+    "en": [
+      "put cash into a bitcoin atm",
+      "told to withdraw cash on the phone",
+      "crypto machine qr code",
+      "protected account bitcoin machine",
+      "caller guiding me at the atm"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "cs": [
+      "Žádná banka ani policie vás nenavádí, abyste vybírali hotovost a vkládali ji do bitcoinmatu.",
+      "Peníze vložené do kryptoměnového automatu se nedají vrátit.",
+      "Když vám někdo zakazuje mluvit s lidmi kolem, je to podvod."
+    ],
+    "en": [
+      "No bank or police force will guide you to withdraw cash and put it into a bitcoin ATM.",
+      "Money put into a crypto machine cannot be recovered.",
+      "If someone tells you not to talk to people around you, it is a scam."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Okamžitě zavěste a nic do automatu nevkládejte.",
+      "Zavolejte své bance na číslo z karty a policii na 158.",
+      "Vidíte-li u bitcoinmatu staršího člověka, který podle pokynů v telefonu vkládá peníze, oslovte ho nebo volejte 158."
+    ],
+    "en": [
+      "Hang up immediately and put nothing into the machine.",
+      "Call your bank on the number on your card and the police on 158.",
+      "If you see an older person at a bitcoin ATM feeding in money on phone instructions, speak to them or call 158."
+    ]
+  },
+  "reportTo": [
+    "cz/policie-158",
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Do bitcoinmatu vkládala peníze podvodníkům",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/do-bitcoinmatu-vkladala-penize-podvodnikum.aspx",
+      "date": "2026-05-20"
+    },
+    {
+      "title": "Díky všímavosti občanů a rychlému zásahu policistů senior nepřišel o své úspory",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/diky-vsimavosti-obcanu-a-rychlemu-zasahu-policistu-senior-neprisel-o-sve-uspory.aspx",
+      "date": "2026-02-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/falesny-banker-bezpecny-ucet",
+    "cz/falesny-policista-kuryr"
+  ]
+}

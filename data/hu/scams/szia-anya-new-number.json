@@ -1,0 +1,128 @@
+{
+  "id": "hu/szia-anya-new-number",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "hu": "Ismeretlen szám, amely a gyereke vagy unokája nevében ír",
+    "en": "An unknown number writing as your child or grandchild"
+  },
+  "name": {
+    "hu": "„Szia anya, ez az új számom”: pénzt kér a gyerek új számról",
+    "en": "“Hi mum, this is my new number”: your child asks for money from a new number"
+  },
+  "how": {
+    "hu": "Ismeretlen számról SMS vagy WhatsApp-üzenet jön: „Szia anya/apa, tönkrement a telefonom, ez az új számom, mentsd el.” Ha válaszol, a „gyerek” hamarosan sürgős gondról ír: ki kell fizetnie egy számlát, a netbankja nem működik az új telefonon, ezért utaljon helyette egy megadott számlára, és pár nap múlva visszaadja. Hívni nem lehet, mert „rossz a mikrofonja” vagy „épp nem tud beszélni”.",
+    "en": "A text or WhatsApp message arrives from an unknown number: “Hi mum/dad, my phone broke, this is my new number, save it.” If you reply, the “child” soon writes about an urgent problem: a bill must be paid, their online banking doesn’t work on the new phone, so please transfer the money to an account they give, and they’ll pay it back in a few days. You can’t call because “the microphone is broken” or “they can’t talk right now”."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Üzenet új számról: „elromlott a telefonom, ez az új számom”.",
+        "en": "A message from a new number: “my phone broke, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "hu": "Hamarosan sürgős pénzügyi gond jön.",
+        "en": "Soon there’s an urgent money problem."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "Utaljon egy ismeretlen nevű számlára, majd visszaadja.",
+        "en": "Transfer to an account in an unfamiliar name, they’ll pay you back."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hu": "Hívni nem lehet, csak írni.",
+        "en": "They can’t take calls, only text."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Szia anyu! Leejtettem a telóm és teljesen meghalt, ezt a számot mentsd el légyszi. Most vettem egy újat, de a banki app még nem engedi az utalást. Ma kéne kifizetnem a kollégiumi díjat, át tudnál utalni 148 ezret erre a számlára? Holnapután megadom! Hívni most nem tudlak, bent vagyok órán 🙏",
+        "en": "Hi mum! I dropped my phone and it’s completely dead, please save this number. I’ve just bought a new one but the bank app won’t let me transfer yet. I have to pay the dorm fee today, could you transfer 148 thousand to this account? I’ll pay you back the day after tomorrow! I can’t call right now, I’m in class 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "szia anya ez az új számom",
+      "gyerekem új számról pénzt kért",
+      "elromlott telefonom új szám utalás",
+      "whatsappon fiamnak adta ki magát",
+      "lányomnak adta ki magát pénzt kértek",
+      "új számról írt unokám számlát fizetni",
+      "banki app új mobilon utalj helyette"
+    ],
+    "en": [
+      "hi mum this is my new number",
+      "my son texted from a new number asking for money",
+      "daughter on a new number needs a bill paid",
+      "message from my child on whatsapp asking to transfer",
+      "said their phone broke and asked for money",
+      "cant call only text new number"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "Új szám és rögtön pénzkérés.",
+      "A számla egy ismeretlen ember nevén van.",
+      "Nem lehet felhívni, nem küld hangüzenetet."
+    ],
+    "en": [
+      "A new number and an immediate money request.",
+      "The account is in a stranger’s name.",
+      "You can’t call them and they send no voice message."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Hívja fel a gyerekét a régi, megszokott számán.",
+      "Kérdezzen olyat, amit csak ő tudhat.",
+      "Ne utaljon sietségből.",
+      "Ha utalt, azonnal hívja a bankját, és tegyen feljelentést."
+    ],
+    "en": [
+      "Call your child on their old, usual number.",
+      "Ask something only they would know.",
+      "Don’t transfer in a hurry.",
+      "If you paid, call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/rendorseg-feljelentes"
+  ],
+  "sources": [
+    {
+      "title": "Így lopják el a pénzünket a Meta platformján, de meg is óvhatjuk a tárcánk tartalmát",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/belfold/2025/10/11/csalas-lopas-penz-meta-whatsapp-atveres-817487/",
+      "date": "2025-10-11"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/grandchild-lawyer-call"
+  ]
+}

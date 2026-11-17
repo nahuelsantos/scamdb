@@ -1,0 +1,138 @@
+{
+  "id": "si/lazni-bancni-usluzbenec",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "sl": "»Vaša banka«, oddelek za varnost ali preprečevanje zlorab",
+    "en": "“Your bank”, its security or fraud-prevention department"
+  },
+  "name": {
+    "sl": "Lažni bančni uslužbenec: »varni račun« in koda CVV",
+    "en": "Fake bank employee: a “safe account” and your CVV code"
+  },
+  "how": {
+    "sl": "Pokliče vas nekdo, ki se predstavi kot uslužbenec vaše banke. Pravi, da je bila na vaše ime oddana vloga za kredit, da so v vašem imenu odprli nov račun ali da nekdo prav zdaj poskuša dvigniti vaš denar. Da bi denar »zaščitili«, ga morate nakazati na »varni račun«, odpreti nov račun po njegovih navodilih ali izpolniti obrazec, ki vam ga pošlje po e-pošti, s številko računa in kodo CVV s kartice. Vse to gre naravnost goljufom.",
+    "en": "Someone calls saying they work for your bank. They say a loan application was filed in your name, a new account was opened in your name, or someone is trying to take your money right now. To “protect” the money you must transfer it to a “safe account”, open a new account on their instructions, or fill in a form they email you with your account number and the CVV code from your card. All of it goes straight to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Klic »banke«: na vaše ime je nekdo vložil kredit ali odprl račun.",
+        "en": "A call from “the bank”: someone has applied for a loan or opened an account in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Zadeva je nujna, ostati morate na zvezi, dokler je ne »uredite«.",
+        "en": "It is urgent; you must stay on the line until it is “sorted”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "sl": "Prosijo vas za podatke kartice, kodo CVV ali kodo iz bančne aplikacije.",
+        "en": "You are asked for card details, the CVV code or a code from the banking app."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sl": "Ali pa morate denar prenesti na »varni račun«.",
+        "en": "Or you must move the money to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Dober dan, kliče Mateja iz oddelka za preprečevanje zlorab vaše banke. Danes dopoldne smo prejeli vlogo za potrošniški kredit v višini 9.500 evrov na vaše ime. Je niste oddali vi? Potem moramo takoj ukrepati, ker so goljufi že vstopili v vašo spletno banko. Sredstva vam bomo začasno prenesli na zaščiten račun, za potrditev pa potrebujem tri številke s hrbtne strani vaše kartice. Prosim, ne prekinite klica.",
+        "en": "Good afternoon, this is Mateja from your bank’s fraud-prevention department. This morning we received an application for a 9,500-euro consumer loan in your name. You didn’t file it? Then we must act now, because scammers are already inside your online bank. We’ll move your funds to a protected account for now, and to confirm I need the three digits on the back of your card. Please don’t hang up."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "klical lažni bančni uslužbenec",
+      "varni račun prenos denarja",
+      "kredit vložen moje ime banka klicala",
+      "banka zahtevala kodo cvv",
+      "oddelek preprečevanje zlorab klic",
+      "odprli račun moje ime klic banke",
+      "prenesite sredstva zaščiten račun"
+    ],
+    "en": [
+      "fake bank employee called me",
+      "bank told me to move money to a safe account",
+      "caller said a loan was taken in my name",
+      "bank asked for my cvv code",
+      "fraud department called about my account",
+      "new account opened in my name call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "sl": [
+      "Banka vas nikoli ne prosi, da denar zaradi varnosti prenesete na drug račun. »Varni račun« ne obstaja.",
+      "Banka po telefonu ne sprašuje po kodi CVV, PIN-u ali kodah iz aplikacije.",
+      "Številka na zaslonu ne dokazuje ničesar: lahko je ponarejena.",
+      "Pritisk, naj ne prekinete klica, je znak prevare."
+    ],
+    "en": [
+      "Your bank never asks you to move money to another account for safety. A “safe account” doesn’t exist.",
+      "A bank never asks for your CVV, PIN or app codes on the phone.",
+      "The number on your screen proves nothing: it can be faked.",
+      "Pressure not to hang up is a sign of a scam."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Prekinite klic. Nato sami pokličite banko na številko s kartice ali iz aplikacije.",
+      "Če ste posredovali podatke ali nakazali denar, takoj pokličite banko in blokirajte kartico ter spletno banko.",
+      "Prijavite goljufijo policiji na 113 ali prek e-naznanila.",
+      "Starejše sorodnike opozorite, da banka nikoli ne kliče zaradi prenosa denarja."
+    ],
+    "en": [
+      "Hang up. Then call your bank yourself on the number on your card or in the app.",
+      "If you gave details or sent money, call your bank straight away and block your card and online banking.",
+      "Report the fraud to the police on 113 or through the online report.",
+      "Warn older relatives that a bank never calls to have money moved."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/policija-113",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Združenje bank svari pred lažnimi klici: \"Takšne zahteve so jasen znak prevare\"",
+      "publisher": "N1 Slovenija",
+      "url": "https://n1info.si/magazin/digitalno/zdruzenje-bank-svari-pred-laznimi-klici-taksne-zahteve-so-jasen-znak-prevare/",
+      "date": "2026-03-17"
+    },
+    {
+      "title": "Spletni goljufi tokrat kličejo občane na Tolminskem",
+      "publisher": "24ur",
+      "url": "https://www.24ur.com/novice/crna-kronika/spletni-goljufi-tokrat-aktivni-na-tolminskem.html",
+      "date": "2026-03-04"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/bancno-sporocilo-posodobitev",
+    "si/kripto-denarnica-oddaljeni-dostop"
+  ]
+}

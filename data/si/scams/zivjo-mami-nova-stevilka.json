@@ -1,0 +1,123 @@
+{
+  "id": "si/zivjo-mami-nova-stevilka",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "sl": "»Hči«, »sin« ali drug družinski član z neznane številke",
+    "en": "Your “daughter”, “son” or another family member from an unknown number"
+  },
+  "name": {
+    "sl": "»Živjo mami, to je moja nova številka«",
+    "en": "“Hi mum, this is my new number”"
+  },
+  "how": {
+    "sl": "SMS z neznane številke: »Mami, izgubil sem telefon« ali »Živjo, to je moja nova številka«. Pošiljatelj se izdaja za vašega otroka ali drugega družinskega člana in kmalu predlaga pogovor na WhatsAppu ali Viberju. Tam prosi za nujno pomoč: plačati mora račun, ker mu nova banka še ne deluje, ali kupiti darilne ali predplačniške kartice. Včasih prosi tudi za podatke kartice ali dostop do spletne banke.",
+    "en": "A text from an unknown number: “Mum, I lost my phone” or “Hi, this is my new number”. The sender poses as your child or another family member and soon suggests moving to WhatsApp or Viber. There they ask for urgent help: they have to pay a bill because their new bank isn’t working yet, or buy gift or prepaid cards. Sometimes they also ask for card details or online-banking access."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Sporočilo »otroka« z nove številke: telefon je izgubljen ali pokvarjen.",
+        "en": "A message from your “child” from a new number: the phone is lost or broken."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "sl": "Pogovor se preseli na WhatsApp ali Viber.",
+        "en": "The chat moves to WhatsApp or Viber."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Nujno potrebuje denar za račun ali darilne kartice.",
+        "en": "They urgently need money for a bill or gift cards."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sl": "Danes, takoj, ker je rok.",
+        "en": "Today, right away, because of a deadline."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Živjo mami, to sem jaz, telefon mi je padel v vodo in to je moja začasna številka, shrani si jo. Mi lahko pišeš na WhatsApp? Danes moram nujno plačati položnico, pa mi nova aplikacija za banko še ne dela. Ti vrnem jutri, obljubim ❤️",
+        "en": "Hi mum, it’s me, my phone fell in the water and this is my temporary number, save it. Can you message me on WhatsApp? I have to pay a bill urgently today and my new banking app isn’t working yet. I’ll pay you back tomorrow, promise ❤️"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "mami izgubil telefon nova številka",
+      "hči piše neznane številke denar",
+      "otrok prosi nakazilo whatsapp nova številka",
+      "položnica plačati nujno nova aplikacija banka",
+      "darilne kartice sin sporočilo"
+    ],
+    "en": [
+      "mum i lost my phone new number",
+      "text from my daughter on an unknown number asking money",
+      "my son asked me to pay a bill from a new number",
+      "family member asked for gift cards on whatsapp",
+      "hi mum this is my new number"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sl": [
+      "Nova številka in prošnja za denar v istem pogovoru sta tipičen vzorec.",
+      "Pošiljatelj se izogiba klicu ali glasovnemu sporočilu.",
+      "Prošnja za darilne kartice ali podatke kartice je znak prevare."
+    ],
+    "en": [
+      "A new number and a request for money in the same chat is the typical pattern.",
+      "The sender avoids a call or a voice message.",
+      "A request for gift cards or card details is a sign of a scam."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne odgovarjajte. Pokličite svojega otroka na številko, ki jo že poznate.",
+      "Nikomur ne posredujte podatkov kartice ali dostopa do spletne banke.",
+      "Če ste nakazali denar ali dali podatke, takoj pokličite banko in prijavite goljufijo policiji."
+    ],
+    "en": [
+      "Don’t reply. Call your child on the number you already know.",
+      "Never pass on card details or online-banking access.",
+      "If you sent money or details, call your bank straight away and report the fraud to the police."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Banke opozarjajo: Goljufi se v SMS-sporočilih izdajajo za vaše otroke",
+      "publisher": "N1 Slovenija (STA)",
+      "url": "https://n1info.si/magazin/digitalno/banke-opozarjajo-goljufi-se-v-sms-sporocilih-izdajajo-za-vase-otroke/",
+      "date": "2026-09-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/lazni-sorodnik-nesreca-klic"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "hu/marketplace-fake-buyer-link",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hu": "„Vevő” a Jófogáson, a Vaterán, a Facebook Marketplace-en vagy a Vintedon; később „futárszolgálat” (Foxpost, GLS)",
+    "en": "A “buyer” on Jófogás, Vatera, Facebook Marketplace or Vinted; later a “courier” (Foxpost, GLS)"
+  },
+  "name": {
+    "hu": "Hamis vevő a Jófogáson és a Marketplace-en: „kattints, és megkapod a pénzt”",
+    "en": "Fake buyer on Jófogás and Marketplace: “click the link to receive the money”"
+  },
+  "how": {
+    "hu": "Eladóként meghirdet valamit, és egy „vevő” azonnal megvenné, alkudozás nélkül. Nem tud személyesen jönni, ezért futárral kéri, és már ki is fizette. Küld egy linket (vagy QR-kódot) egy hamis Jófogás-, Foxpost- vagy GLS-oldalra, ahol „a pénz fogadásához” meg kell adnia a kártyaszámát, a lejáratot, a CVC-kódot, vagy be kell lépnie a netbankjába. A pénz átvételéhez elég lenne a bankszámlaszám: a megadott adatokkal a csalók vásárolnak vagy utalnak a számlájáról.",
+    "en": "You list something for sale and a “buyer” wants it at once, without haggling. They can’t come in person, so they want a courier and say they have already paid. They send a link (or QR code) to a fake Jófogás, Foxpost or GLS page where, “to receive the money”, you must enter your card number, expiry date and CVC, or log in to your online bank. Receiving money only needs your account number: with the details you enter the scammers buy things or transfer money from your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Egy vevő azonnal megvenné, alkudozás nélkül, futárral.",
+        "en": "A buyer wants it at once, no haggling, by courier."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hu": "A beszélgetést WhatsAppra vagy e-mailre viszi.",
+        "en": "They move the chat to WhatsApp or email."
+      }
+    },
+    {
+      "text": {
+        "hu": "Linket küld, hogy „megkapja a pénzt” vagy „visszaigazolja a szállítást”.",
+        "en": "They send a link to “receive the money” or “confirm delivery”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hu": "Az oldal kártyaadatot, CVC-kódot vagy netbanki belépést kér.",
+        "en": "The page asks for card details, the CVC or your online-banking login."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Szia! A biciklit megveszem a meghirdetett áron, a szállítást is kifizettem, a futár holnap jön érte. A Jófogás rendszere visszaigazolást kér tőled, itt tudod elfogadni az utalást: [link] Ha kész, írj és küldöm a címet.",
+        "en": "Hi! I’ll buy the bike at the listed price, I’ve already paid for delivery and the courier will come tomorrow. The Jófogás system needs your confirmation, you can accept the payment here: [link] Let me know when it’s done and I’ll send the address."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "jófogáson vevő küldött fogadási felületet",
+      "pénz fogadásához kártyaadatot kértek",
+      "marketplace vevő futárral kérte linkkel",
+      "foxpost felületen megadtam kártyámat eladóként",
+      "eladóként kártyaadataimat kérték",
+      "vatera vevő whatsappon írt",
+      "jófogás fizetési visszaigazolás vételár fogadása"
+    ],
+    "en": [
+      "buyer sent me a link on jofogas",
+      "link asked for card details to receive payment",
+      "fake buyer wants courier delivery",
+      "as a seller i entered my card details",
+      "marketplace buyer moved chat to whatsapp",
+      "qr code to receive money from buyer"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hu": [
+      "A pénz fogadásához csak bankszámlaszám kell, kártyaadat soha.",
+      "A Jófogás nem kér előre bankkártyaadatot a szállításhoz.",
+      "Az a vevő, aki látatlanban vesz és a platformon kívülre viszi a beszélgetést, gyanús.",
+      "Netbanki belépés vagy SMS-kód kérése a „pénz fogadásához”."
+    ],
+    "en": [
+      "Receiving money needs only your account number, never card details.",
+      "Jófogás doesn’t ask for card details in advance for delivery.",
+      "A buyer who buys unseen and moves the chat off the platform is suspect.",
+      "Being asked to log in to your bank or give an SMS code “to receive money”."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne nyissa meg a linket, maradjon a platform üzenetküldőjében.",
+      "Lehetőleg személyesen adja át a terméket, vagy kérjen sima átutalást.",
+      "Ha megadta a kártyaadatait, azonnal tiltassa le a kártyát a bankjánál.",
+      "Jelentse a profilt a platformon, és tegyen feljelentést."
+    ],
+    "en": [
+      "Don’t open the link; keep the chat in the platform’s messages.",
+      "Hand the item over in person if you can, or ask for a plain bank transfer.",
+      "If you entered your card details, block the card with your bank at once.",
+      "Report the profile on the platform and to the police."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/rendorseg-feljelentes"
+  ],
+  "sources": [
+    {
+      "title": "Óvatosan a telefonhívásokkal, üzenetekkel, az internettel és a csomagokkal!",
+      "publisher": "Rendőrség (Békés Vármegyei Rendőr-főkapitányság)",
+      "url": "https://www.police.hu/hu/hirek-es-informaciok/bunmegelozes/internet-biztonsag/ovatosan-a-telefonhivasokkal-uzenetekkel-az",
+      "date": "2026-01-21"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/parcel-fee-sms"
+  ]
+}

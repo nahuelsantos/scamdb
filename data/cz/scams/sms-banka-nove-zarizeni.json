@@ -1,0 +1,129 @@
+{
+  "id": "cz/sms-banka-nove-zarizeni",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "cs": "SMS, která se tváří jako zpráva od banky (např. odesílatel podobný názvu banky)",
+    "en": "A text that pretends to come from your bank (for example a sender name similar to the bank’s)"
+  },
+  "name": {
+    "cs": "Podvodná SMS od „banky“: nové zařízení, zablokovaný účet",
+    "en": "Fake bank text: new device added, account blocked"
+  },
+  "how": {
+    "cs": "Přijde SMS, že k vašemu účtu bylo přidáno nové zařízení, že byl aktivován mobilní klíč nebo že bude účet zablokován. Pokud to nebyli vy, máte kliknout na odkaz. Ten vede na stránku, která vypadá jako internetové bankovnictví. Kdo tam zadá přihlašovací údaje nebo kód z SMS, dá podvodníkům přístup k účtu. Někdy po tom volá falešný bankéř.",
+    "en": "A text says a new device has been added to your account, a mobile key has been activated or your account will be blocked. If it wasn’t you, you should click a link. It leads to a page that looks like internet banking. Anyone who enters their login or the code from a text gives the scammers access to the account. Sometimes a fake banker calls afterwards."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "SMS o novém zařízení nebo blokaci účtu.",
+        "en": "A text about a new device or a blocked account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Musíte reagovat hned, „pokud jste to nebyli vy“.",
+        "en": "You must react now “if it wasn’t you”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "cs": "Odkaz vede na falešné přihlášení do bankovnictví.",
+        "en": "The link leads to a fake banking login."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "cs": "Zadáte přihlašovací údaje a kód z SMS.",
+        "en": "You enter your login details and the code from a text."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Banka info: K vasemu uctu bylo pridano nove zarizeni Samsung Galaxy. Pokud jste to nebyli vy, okamzite zruste pristup zde: [odkaz]",
+        "en": "Bank info: A new Samsung Galaxy device has been added to your account. If this was not you, cancel access immediately here: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "sms banky nové zařízení",
+      "zablokovaný účet odkaz sms",
+      "přihlásit bankovnictví přes odkaz",
+      "zrušit přístup pokud jste nebyli",
+      "falešná stránka internetového bankovnictví",
+      "podvodná sms banka phishing",
+      "podezřelá aktivita účet omezen sms",
+      "obnovit přístup bankovnictví odkaz"
+    ],
+    "en": [
+      "bank text new device added",
+      "account blocked link in text",
+      "log in to banking through a link",
+      "cancel access if it was not you",
+      "fake internet banking page",
+      "suspicious activity account restricted text",
+      "restore access to online banking link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "cs": [
+      "Banka vás nikdy nežádá o přihlášení přes odkaz v SMS.",
+      "Chybějící diakritika a odkaz na cizí doménu jsou typické.",
+      "Bankéři neposílají ověřovací kódy přes SMS ani WhatsApp."
+    ],
+    "en": [
+      "Your bank never asks you to log in through a link in a text.",
+      "Missing Czech accents and a link to an unknown domain are typical.",
+      "Bankers do not send verification codes by text or WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na odkaz neklikejte; do bankovnictví se přihlaste jen přes aplikaci nebo adresu, kterou znáte.",
+      "Pokud jste údaje zadali, ihned volejte banku a nechte zablokovat přístup a karty.",
+      "Podvodné SMS a stránky můžete nahlásit přes formulář Policie ČR a CZ.NIC."
+    ],
+    "en": [
+      "Don’t click the link; log in to banking only through the app or the address you know.",
+      "If you entered your details, call your bank at once and have access and cards blocked.",
+      "You can report scam texts and sites through the Czech Police and CZ.NIC form."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/hlaseni-kyberkriminality",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Pozor na falešné SMS „Přidali jste nové zařízení Samsung“",
+      "publisher": "Komerční banka",
+      "url": "https://www.kb.cz/cs/o-bance/novinky/bezpecnost/pozor-na-falesne-sms-pridali-jste-nove-zarizeni-samsung",
+      "date": "2026-11-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/bankovni-identita-sms",
+    "cz/falesny-banker-bezpecny-ucet"
+  ]
+}

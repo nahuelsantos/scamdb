@@ -1,0 +1,124 @@
+{
+  "id": "sk/grandchild-accident-fake-doctor",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "sk": "„Lekár“, „advokát“ alebo „policajt“, niekedy plačúci hlas, ktorý sa vydáva za vnuka či dcéru",
+    "en": "A “doctor”, “lawyer” or “police officer”, sometimes a crying voice posing as a grandchild or daughter"
+  },
+  "name": {
+    "sk": "Vnuk mal nehodu: „lekár“ chce peniaze na operáciu alebo odškodné",
+    "en": "Grandchild in an accident: a “doctor” wants money for surgery or compensation"
+  },
+  "how": {
+    "sk": "Volá „lekár“ alebo „advokát“: vaše dieťa či vnuk spôsobil vážnu nehodu alebo leží v nemocnici a bez okamžitej platby ho nebudú liečiť, prípadne pôjde do väzenia. Niekedy počujete plač alebo hlas podobný príbuznému. Peniaze si príde vyzdvihnúť „kuriér“ alebo ich máte hneď poslať. Nesmiete nikomu volať a overovať to.",
+    "en": "A “doctor” or “lawyer” calls: your child or grandchild caused a serious accident or is in hospital and won’t be treated without immediate payment, or will go to prison. Sometimes you hear crying or a voice like your relative’s. A “courier” comes for the money or you must send it at once. You mustn’t call anyone to check."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Volá „lekár“: váš blízky mal ťažkú nehodu.",
+        "en": "A “doctor” calls: your loved one had a serious accident."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Bez peňazí hneď teraz ho neoperujú alebo ho zavrú.",
+        "en": "Without money right now he won’t be operated on or will be locked up."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sk": "Nikomu nevolajte, je to dôverné.",
+        "en": "Don’t call anyone, it’s confidential."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "sk": "Peniaze si vyzdvihne kuriér alebo ich máte poslať.",
+        "en": "A courier will collect the money or you must send it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Dobrý deň, tu doktor Baláž z úrazovej ambulancie. Váš vnuk Martin mal autonehodu, zranená je aj žena, ktorú zrazil. Potrebuje urgentnú operáciu a poisťovňa ju nepokryje, kým sa neuhradí záloha 6 000 eur. Rodičom sa nevieme dovolať. Ak máte peniaze doma, pošleme po ne sanitára, čas hrá proti nemu.",
+        "en": "Hello, this is Doctor Baláž from the trauma unit. Your grandson Martin had a car accident; the woman he hit is injured too. He needs urgent surgery and insurance won’t cover it until a 6,000-euro deposit is paid. We can’t reach his parents. If you have money at home we’ll send an orderly for it; time is against him."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "vnuk mal nehodu volal lekár",
+      "lekár pýta peniaze na operáciu",
+      "dcéra spôsobila nehodu treba zaplatiť",
+      "kuriér príde po peniaze nehoda",
+      "plačúci hlas telefón vnuk"
+    ],
+    "en": [
+      "doctor called grandson accident",
+      "doctor asking money for surgery",
+      "daughter caused an accident pay now",
+      "courier coming for cash accident",
+      "crying voice grandchild phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "sk": [
+      "Lekári nikdy nepýtajú peniaze po telefóne.",
+      "Polícia nerieši nehody mimosúdne za peniaze.",
+      "Tlak, aby ste to nikomu nepovedali, je znak podvodu."
+    ],
+    "en": [
+      "Doctors never ask for money over the phone.",
+      "The police don’t settle accidents out of court for money.",
+      "Pressure not to tell anyone is a sign of a scam."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Ukončite hovor a zavolajte príbuznému na jeho známe číslo.",
+      "Nikomu neodovzdávajte peniaze ani cennosti.",
+      "Pri pochybnostiach volajte 158."
+    ],
+    "en": [
+      "End the call and phone your relative on their usual number.",
+      "Don’t hand money or valuables to anyone.",
+      "If in doubt call 158."
+    ]
+  },
+  "reportTo": [
+    "sk/policia-158",
+    "sk/emergency-112"
+  ],
+  "sources": [
+    {
+      "title": "Váš vnuk mal nehodu, treba okamžite zaplatiť! Polícia varuje pred podvodníkmi, ktorí sa vydávajú za lekárov",
+      "publisher": "Pravda",
+      "url": "https://www.pravda.sk/spravy/domace/clanok/2070653-vas-vnuk-mal-nehodu-treba-okamzite-zaplatit-policia-varuje-pred-podvodnikmi-ktori-sa-vydavaju-za-lekarov",
+      "date": "2026-11-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/fake-police-cash-courier"
+  ]
+}

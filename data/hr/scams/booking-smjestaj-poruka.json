@@ -1,0 +1,129 @@
+{
+  "id": "hr/booking-smjestaj-poruka",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "hr": "„Smještaj“ ili „Booking“, s nepoznatog ili stranog broja",
+    "en": "“The accommodation” or “Booking”, from an unknown or foreign number"
+  },
+  "name": {
+    "hr": "Lažna poruka o rezervaciji smještaja: potvrdite karticu ili rezervacija propada",
+    "en": "Fake accommodation booking message: confirm your card or lose the booking"
+  },
+  "how": {
+    "hr": "Nakon rezervacije smještaja stiže poruka na WhatsApp sa stranog broja, u ime smještaja ili platforme Booking. Zna vaše ime i točne datume. Javlja problem s plaćanjem i traži da „potvrdite“ karticu preko poveznice ili uplatite akontaciju izravno, inače će rezervacija biti otkazana. Druga varijanta je oglas za apartman koji ne postoji, uz uplatu akontacije.",
+    "en": "After booking accommodation, a WhatsApp message arrives from a foreign number, in the name of the property or the Booking platform. It knows your name and exact dates. It reports a payment problem and asks you to “confirm” your card through a link or pay a deposit directly, or the booking will be cancelled. Another variant is an ad for an apartment that doesn’t exist, with a deposit to pay."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Poruka „smještaja“ ili „Bookinga“ sa stranog broja, s vašim podacima.",
+        "en": "A message from “the property” or “Booking” from a foreign number, with your details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Problem s plaćanjem: rezervacija će biti otkazana.",
+        "en": "A payment problem: the booking will be cancelled."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hr": "Poveznica izvan službene aplikacije.",
+        "en": "A link outside the official app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Traže karticu ili izravnu uplatu.",
+        "en": "They ask for your card or a direct payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Poštovani gospodine Kovač, vezano uz vaš boravak 14.–21. srpnja: banka je odbila autorizaciju kartice. Molimo da ponovno potvrdite podatke u sljedećih 12 sati, u protivnom sustav automatski otkazuje rezervaciju. [poveznica]",
+        "en": "Dear Mr Kovač, regarding your stay 14–21 July: the bank declined the card authorisation. Please confirm your details again within the next 12 hours, otherwise the system cancels the booking automatically. [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "poruka booking problem plaćanjem",
+      "rezervacija smještaja otkazana potvrdite karticu",
+      "apartman akontacija ne postoji",
+      "strani broj whatsapp rezervacija",
+      "smještaj traži podatke kartice poveznica"
+    ],
+    "en": [
+      "booking message payment problem",
+      "accommodation booking cancelled confirm card",
+      "apartment deposit doesn't exist",
+      "foreign number whatsapp about my reservation",
+      "property asked for card details through link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "hr": [
+      "Podatke kartice unosite samo u službenoj aplikaciji ili na službenoj stranici platforme.",
+      "Poruke sa stranih brojeva i nepoznate domene.",
+      "Prijetnja otkazivanjem ako odmah ne reagirate.",
+      "Točni podaci rezervacije ne dokazuju da je poruka prava: mogli su procuriti."
+    ],
+    "en": [
+      "Only enter card details in the platform’s official app or website.",
+      "Messages from foreign numbers and unknown domains.",
+      "A threat of cancellation if you don’t act at once.",
+      "Correct booking details don’t prove the message is real: they may have leaked."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne otvarajte poveznicu. Provjerite rezervaciju sami u aplikaciji ili kontaktirajte smještaj preko platforme.",
+      "Ne plaćajte izravno izvan platforme.",
+      "Ako ste upisali karticu, odmah nazovite banku."
+    ],
+    "en": [
+      "Don’t open the link. Check the booking yourself in the app or contact the property through the platform.",
+      "Don’t pay directly outside the platform.",
+      "If you entered your card, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/cert-incident",
+    "hr/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "Upozorenje: prijevare povezane s rezervacijama smještaja putem Bookinga",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-prijevare-povezane-s-rezervacijama-smjestaja-putem-bookinga/",
+      "date": "2026-07-01"
+    },
+    {
+      "title": "Niz prijevara diljem Hrvatske: Od lažnih liječnika i istražitelja do lažnih ulaganja",
+      "publisher": "Novi list",
+      "url": "https://www.novilist.hr/novosti/crna-kronika/niz-prijevara-diljem-hrvatske-od-laznih-lijecnika-i-istrazitelja-do-laznih-ulaganja/",
+      "date": "2026-06-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

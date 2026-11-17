@@ -1,0 +1,122 @@
+{
+  "id": "si/bolha-lazni-kupec-povezava",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "sl": "»Kupec« z oglasnika (Bolha in drugi), pogosto prek WhatsAppa",
+    "en": "A “buyer” from a classifieds site (Bolha and others), often on WhatsApp"
+  },
+  "name": {
+    "sl": "Lažni kupec na oglasniku: »plačal sem, prevzemite denar na povezavi«",
+    "en": "Fake buyer on a classifieds site: “I’ve paid, collect the money through the link”"
+  },
+  "how": {
+    "sl": "Prodajate nekaj na spletnem oglasniku, kot je Bolha. Oglasi se »kupec«, ki izdelek kupi brez ogledovanja in pravi, da je že plačal prek dostave ali varnega plačila oglasnika. Pošlje vam povezavo, kjer naj bi »prevzeli« denar, na strani pa morate vpisati podatke kartice ali spletne banke. Goljufi nato z vašega računa dvignejo denar. Za prejem denarja nikoli ne potrebujete vpisovati podatkov kartice.",
+    "en": "You are selling something on a classifieds site such as Bolha. A “buyer” gets in touch, buys without viewing and says they have already paid through the site’s delivery or safe-payment service. They send a link where you supposedly “collect” the money, but the page asks for your card or online-banking details. The scammers then take money from your account. You never need to enter card details to receive money."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Kupec kupi brez vprašanj in želi pogovor na WhatsAppu.",
+        "en": "The buyer buys without questions and wants to chat on WhatsApp."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sl": "Pravi, da je že plačal prek »varnega plačila« ali dostave.",
+        "en": "They say they have already paid through “safe payment” or delivery."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Pošlje povezavo, da »prevzamete« kupnino.",
+        "en": "They send a link to “collect” the payment."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sl": "Stran zahteva podatke kartice ali kodo iz banke.",
+        "en": "The page asks for card details or a bank code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Pozdravljeni, kolo vzamem po vaši ceni. Plačilo sem že izvedel prek varne dostave, kurir ga prevzame jutri. Denar si nakažete tukaj, samo vpišite kartico, na katero želite prejeti znesek: [povezava]. Hvala in lep dan!",
+        "en": "Hello, I’ll take the bike at your price. I’ve already paid through safe delivery, the courier will collect it tomorrow. Transfer the money to yourself here, just enter the card you want to receive it on: [link]. Thanks and have a nice day!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "kupec bolha poslal povezavo plačilo",
+      "prodajal oglasniku vpisal kartico prejem denarja",
+      "varna dostava kupnina povezava",
+      "lažni kupec whatsapp oglas",
+      "prevzem denarja prodaja izdelka povezava"
+    ],
+    "en": [
+      "buyer on bolha sent me a payment link",
+      "entered my card to receive money for a sale",
+      "safe delivery payment link from buyer",
+      "fake buyer on whatsapp for my ad",
+      "link to collect the money for my item"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sl": [
+      "Za prejem denarja nikoli ne potrebujete vpisovati podatkov kartice ali kod spletne banke.",
+      "Povezava za »prevzem« kupnine, ki jo pošlje kupec, ni del oglasnika.",
+      "Kupec, ki kupi brez vprašanj in se mudi na WhatsApp, je sumljiv."
+    ],
+    "en": [
+      "You never need to enter card details or online-banking codes to receive money.",
+      "A “collect your payment” link sent by a buyer is not part of the classifieds site.",
+      "A buyer who buys without questions and rushes to WhatsApp is suspicious."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne odpirajte povezave in pogovor prekinite. Blaga ne pošljite, dokler denar ni na vašem računu.",
+      "Če ste vpisali podatke, takoj pokličite banko in kartico blokirajte.",
+      "Prijavite uporabnika oglasniku in goljufijo policiji."
+    ],
+    "en": [
+      "Don’t open the link; end the chat. Don’t ship anything until the money is in your account.",
+      "If you entered details, call your bank straight away and block the card.",
+      "Report the user to the site and the fraud to the police."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/policija-e-naznanilo",
+    "si/si-cert"
+  ],
+  "sources": [
+    {
+      "title": "Nova spletna goljufija: prodajal fotoaparat in ostal brez 1.500 evrov",
+      "publisher": "N1 Slovenija",
+      "url": "https://n1info.si/novice/crna-kronika/nova-spletna-goljufija-prodajal-fotoaparat-in-ostal-brez-1500-evrov/",
+      "date": "2025-09-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

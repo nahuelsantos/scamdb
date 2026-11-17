@@ -1,0 +1,141 @@
+{
+  "id": "cz/investice-celebrity-deepfake",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "cs": "Reklama na sociálních sítích s tváří politika nebo celebrity, pak „finanční poradce“ nebo „broker“",
+    "en": "A social media ad with a politician’s or celebrity’s face, then a “financial adviser” or “broker”"
+  },
+  "name": {
+    "cs": "Investice „doporučená“ politikem nebo celebritou (deepfake)",
+    "en": "Investment “endorsed” by a politician or celebrity (deepfake)"
+  },
+  "how": {
+    "cs": "Na Facebooku nebo Instagramu uvidíte reklamu či falešný článek, který vypadá jako zpravodajský web: známý politik, guvernér ČNB nebo celebrita v něm „radí“ investovat na platformě s pohádkovým výnosem. Videa jsou často vytvořená umělou inteligencí. Vyplníte kontaktní formulář a ozve se „manažer“ nebo „broker“, který vás vede k prvním vkladům, ukazuje rostoucí zisky a chce další peníze. Výběr nikdy nepřijde.",
+    "en": "On Facebook or Instagram you see an ad or a fake article that looks like a news site: a well-known politician, the central bank governor or a celebrity “recommends” investing on a platform with fabulous returns. The videos are often made with AI. You fill in a contact form and a “manager” or “broker” calls, guides you to make first deposits, shows growing profits and asks for more money. You can never withdraw."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Reklama nebo „článek“ se známou tváří a zázračnými zisky.",
+        "en": "An ad or “article” with a famous face and miracle profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "cs": "Vyplníte formulář a volá vám „investiční manažer“.",
+        "en": "You fill in a form and an “investment manager” calls."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "cs": "Posíláte vklady, často na zahraniční účty nebo v kryptoměnách.",
+        "en": "You send deposits, often to foreign accounts or in crypto."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "cs": "Někdy chce instalovat aplikaci, aby vám „pomohl“.",
+        "en": "Sometimes they want you to install an app so they can “help”."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Premiér v rozhovoru prozradil, jak si každý Čech může přivydělat až 90 000 Kč měsíčně. Stačí počáteční vklad 6 000 Kč a o zbytek se postará chytrý obchodní algoritmus. Registrace je otevřená jen do půlnoci: [odkaz]",
+        "en": "The prime minister revealed in an interview how every Czech can earn up to 90,000 CZK a month. A starting deposit of 6,000 CZK is enough and a smart trading algorithm does the rest. Registration is open only until midnight: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "investice reklama známá osobnost",
+      "deepfake video investiční platforma",
+      "politik doporučuje investovat facebook",
+      "investiční manažer volal vklad",
+      "počáteční vklad obchodní algoritmus",
+      "falešný článek investice zisk",
+      "guvernér čnb investice reklama",
+      "umělá inteligence obchodování výdělek měsíčně",
+      "registrace vklad poradce zavolá"
+    ],
+    "en": [
+      "investment ad with a famous person",
+      "deepfake video investment platform",
+      "politician recommends investing on facebook",
+      "investment manager called about a deposit",
+      "small deposit trading algorithm",
+      "central bank governor investment ad",
+      "ai trading earn every month",
+      "register deposit adviser will call"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request",
+    "remote_access"
+  ],
+  "redFlags": {
+    "cs": [
+      "Skuteční politici a známé osobnosti investiční platformy nepropagují.",
+      "Garantovaný vysoký výnos bez rizika neexistuje.",
+      "Firmu si ověřte v seznamech ČNB; podvodné názvy se rychle mění.",
+      "Nikdy neinstalujte aplikaci pro vzdálený přístup na žádost „poradce“."
+    ],
+    "en": [
+      "Real politicians and celebrities do not promote investment platforms.",
+      "A guaranteed high return with no risk does not exist.",
+      "Check the firm in the Czech National Bank registers; scam names change quickly.",
+      "Never install a remote-access app because an “adviser” asks."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na reklamu neklikejte a nevyplňujte formuláře; reklamu nahlaste síti.",
+      "Pokud jste už platili, neposílejte nic dalšího, volejte banku a podejte trestní oznámení.",
+      "Pozor na „vymáhače“, kteří vám za poplatek slíbí ztracené peníze vrátit."
+    ],
+    "en": [
+      "Don’t click the ad or fill in forms; report the ad to the platform.",
+      "If you already paid, send nothing more, call your bank and report it to the police.",
+      "Beware of “recovery agents” who promise to get your money back for a fee."
+    ]
+  },
+  "reportTo": [
+    "cz/cnb",
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Falešný Babiš v článcích, co nikdy nevyšly. Podvod na statisíce Čechů bobtná",
+      "publisher": "Seznam Zprávy",
+      "url": "https://www.seznamzpravy.cz/clanek/domaci-kauzy-falesny-babis-v-clancich-co-nikdy-nevysly-podvod-na-statisice-cechu-bobtna-312148",
+      "date": "2026-08-03"
+    },
+    {
+      "title": "Klamavá reklama s fiktivní tváří celebrit",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/klamava-reklama-s-fiktivni-tvari-celebrit.aspx",
+      "date": "2025-10-31"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/vzdaleny-pristup-anydesk"
+  ]
+}

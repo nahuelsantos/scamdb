@@ -1,0 +1,120 @@
+{
+  "id": "cz/ahoj-mami-nove-cislo",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "cs": "„Vaše dítě“ nebo příbuzný z neznámého, často zahraničního čísla",
+    "en": "“Your child” or a relative writing from an unknown, often foreign number"
+  },
+  "name": {
+    "cs": "„Ahoj mami, mám nové číslo“: dítě potřebuje rychle peníze",
+    "en": "“Hi mum, I have a new number”: your child needs money fast"
+  },
+  "how": {
+    "cs": "Z neznámého čísla přijde zpráva: „Ahoj mami, mám nové číslo“ nebo „telefon mi spadl do vody“. Pisatel nepoužívá jméno, jen „mami“ nebo „tati“. Po krátké konverzaci přijde prosba o rychlou finanční pomoc: zaplatit fakturu nebo poslat peníze na cizí účet, protože nové bankovnictví „ještě nefunguje“. Slibuje, že vše hned vrátí, a nemůže zrovna telefonovat.",
+    "en": "A message arrives from an unknown number: “Hi mum, I have a new number” or “my phone fell in the water”. The writer uses no name, just “mum” or “dad”. After a short chat comes a plea for quick financial help: pay a bill or send money to someone else’s account, because their new banking “doesn’t work yet”. They promise to pay it straight back and can’t talk on the phone right now."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Zpráva z nového čísla: „mami, tohle je moje nové číslo“.",
+        "en": "A message from a new number: “mum, this is my new number”."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "cs": "Nemůže volat, jen psát.",
+        "en": "They can’t call, only text."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "cs": "Potřebuje rychle zaplatit fakturu nebo poslat peníze na cizí účet.",
+        "en": "They urgently need to pay a bill or send money to another account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Ahoj mami, to jsem já, rozbil se mi mobil, tohle je moje nové číslo, ulož si ho. Potřebuju dneska nutně zaplatit jednu fakturu, ale do bankovnictví se z nového telefonu zatím nedostanu. Mohla bys poslat 14 600 Kč? Pošlu ti číslo účtu, zítra ti to hned vrátím. Teď nemůžu volat, piš sem.",
+        "en": "Hi mum, it’s me, my phone broke, this is my new number, save it. I really need to pay a bill today but I can’t get into my banking from the new phone yet. Could you send 14,600 CZK? I’ll send you the account number and pay you back tomorrow. I can’t call now, write here."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "ahoj mami nové číslo",
+      "dítě píše neznámého čísla peníze",
+      "spadl telefon vody nové číslo",
+      "zaplatit fakturu dceři syn whatsapp",
+      "nemůže volat jen píše peníze",
+      "mami pošli peníze účet"
+    ],
+    "en": [
+      "hi mum new number",
+      "child texting from an unknown number asking for money",
+      "phone fell in water new number",
+      "pay a bill for my son on whatsapp",
+      "cannot call only text money"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "cs": [
+      "Neznámé číslo, často se zahraniční předvolbou.",
+      "Pisatel vás neoslovuje tak, jak je ve vaší rodině zvykem.",
+      "Nemůže zavolat, ale peníze potřebuje hned.",
+      "Peníze mají jít na účet někoho jiného."
+    ],
+    "en": [
+      "An unknown number, often with a foreign prefix.",
+      "The writer doesn’t address you the way your family usually does.",
+      "They can’t call, but need the money right now.",
+      "The money is to go to someone else’s account."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Zavolejte dítěti na původní číslo, které znáte, nebo se zeptejte na něco, co ví jen ono.",
+      "Dokud si nejste jistí, nic neposílejte.",
+      "Číslo na WhatsAppu zablokujte a nahlaste; pokud jste platili, volejte banku a policii."
+    ],
+    "en": [
+      "Call your child on the old number you know, or ask something only they would know.",
+      "Send nothing until you are sure.",
+      "Block and report the number on WhatsApp; if you paid, call your bank and the police."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "„Ahoj mami, mám nové číslo, napiš mi na WhatsApp.“ Tohle není vaše dítě, ale podvodník",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/ahoj-mami-mam-nove-cislo-napis-mi-na-whatsapp-tohle-neni-vase-dite-ale-podvodnik.aspx",
+      "date": "2025-09-17"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/whatsapp-ucet-pujcka-kamarad"
+  ]
+}

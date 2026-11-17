@@ -1,0 +1,136 @@
+{
+  "id": "si/bancno-sporocilo-posodobitev",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "sl": "»Vaša banka« ali »tehnična podpora banke«",
+    "en": "“Your bank” or “bank technical support”"
+  },
+  "name": {
+    "sl": "Lažno bančno sporočilo: »posodobite spletno banko«",
+    "en": "Fake bank message: “update your online banking”"
+  },
+  "how": {
+    "sl": "Prejmete SMS ali e-pošto, ki je videti kot sporočilo vaše banke: spletno banko morate posodobiti, račun preseliti na novo platformo ali potrditi podatke, sicer bo dostop omejen. Povezava vodi na ponarejeno stran banke, ki je skoraj enaka pravi. Kar vpišete, dobijo goljufi. Pogosto vas nato pokliče še »tehnična podpora banke« v slovenščini in vas prosi za kodo ali potrditev v aplikaciji, nato pa z vašega računa nakažejo denar na druge račune.",
+    "en": "You get a text or email that looks like it is from your bank: you must update your online banking, move your account to a new platform or confirm your details, or access will be limited. The link opens a fake bank page almost identical to the real one. Whatever you type goes to the scammers. Often “bank technical support” then calls you in Slovenian and asks for a code or a confirmation in the app, and then money is moved from your account to other accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "SMS ali e-pošta »banke«: posodobitev, selitev na novo platformo, omejen dostop.",
+        "en": "A text or email from “the bank”: an update, a move to a new platform, limited access."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Rok je kratek, sicer bo račun blokiran.",
+        "en": "The deadline is short, or the account will be blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Povezava vodi na stran, ki je videti kot vaša spletna banka.",
+        "en": "The link opens a page that looks like your online bank."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sl": "Sledi klic »podpore« in prošnja za kodo ali potrditev v aplikaciji.",
+        "en": "Then a “support” call asks for a code or an in-app confirmation."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Spoštovani komitent, zaradi prehoda na nov varnostni sistem je vaš dostop do spletne banke začasno omejen. Za nemoteno uporabo potrdite svoje podatke do jutri do 18. ure: [povezava]. Po tem roku bo račun zaradi vaše varnosti zaklenjen.",
+        "en": "Dear customer, because of the move to a new security system your access to online banking is temporarily limited. To keep using it, confirm your details by 6 pm tomorrow: [link]. After that the account will be locked for your safety."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "sms banke posodobite spletno banko",
+      "selitev računa nova platforma povezava",
+      "dostop spletne banke omejen sporočilo",
+      "lažna stran banke vpisal podatke",
+      "klic tehnične podpore banke koda",
+      "potrdite podatke račun zaklenjen"
+    ],
+    "en": [
+      "text from my bank asking to update online banking",
+      "email said move my account to a new platform",
+      "online banking access limited message",
+      "entered my details on a fake bank page",
+      "bank technical support called asking for a code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "sl": [
+      "Banka vam ne pošilja povezav za prijavo v spletno banko po SMS ali e-pošti.",
+      "Grožnja z zaklepom računa v kratkem roku je značilna za prevaro.",
+      "Klic »podpore« takoj po sporočilu ni naključje.",
+      "Kode za prijavo ali potrditev plačila ne posredujte nikomur."
+    ],
+    "en": [
+      "Your bank does not send online-banking login links by text or email.",
+      "A threat to lock your account within a short deadline is typical of a scam.",
+      "A “support” call straight after the message is no coincidence.",
+      "Never pass on a login or payment confirmation code."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne odpirajte povezave. V spletno banko se prijavite sami, prek aplikacije ali naslova, ki ga poznate.",
+      "Če ste vpisali podatke, takoj pokličite banko in blokirajte dostop ter kartice.",
+      "Sporočilo posredujte SI-CERT, goljufijo prijavite policiji.",
+      "Shranite sporočila in posnetke zaslona."
+    ],
+    "en": [
+      "Don’t open the link. Log in to your online bank yourself, through the app or the address you know.",
+      "If you entered details, call your bank straight away and block access and cards.",
+      "Forward the message to SI-CERT and report the fraud to the police.",
+      "Keep the messages and screenshots."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/si-cert",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Spet krožijo lažna bančna sporočila: žrtvi ukradel več deset tisoč evrov",
+      "publisher": "N1 Slovenija",
+      "url": "https://n1info.si/novice/crna-kronika/spet-krozijo-lazna-bancna-sporocila-zrtvi-ukradel-vec-deset-tisoc-evrov/",
+      "date": "2025-05-30"
+    },
+    {
+      "title": "V imenu banke poslali sporočilo ter z računa podjetja dvignili več kot 100.000 evrov",
+      "publisher": "24ur",
+      "url": "https://www.24ur.com/novice/crna-kronika/v-imenu-banke-poslali-sporocilo-ter-z-racuna-podjetja-dvignili-vec-kot-100000-evrov.html",
+      "date": "2025-07-06"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/lazni-bancni-usluzbenec"
+  ]
+}

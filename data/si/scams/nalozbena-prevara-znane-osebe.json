@@ -1,0 +1,129 @@
+{
+  "id": "si/nalozbena-prevara-znane-osebe",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "sl": "Oglas z znano osebo, lažen novičarski portal, nato »finančni svetovalec« po telefonu",
+    "en": "An ad with a celebrity, a fake news site, then a “financial adviser” on the phone"
+  },
+  "name": {
+    "sl": "Naložbena prevara z znanimi osebami in »umetno inteligenco«",
+    "en": "Investment scam with celebrities and “artificial intelligence”"
+  },
+  "how": {
+    "sl": "Na družbenem omrežju ali v iskalniku vidite senzacionalen oglas z znano slovensko osebo. Vodi na lažno stran, ki posnema znan slovenski novičarski portal: v »intervjuju« oseba hvali platformo, ki naj bi z umetno inteligenco iz 250 evrov ustvarila velike dnevne dobičke. Ko vpišete ime in telefonsko številko, vas s spreminjajočih se številk kličejo »svetovalci«. Po prvem vplačilu dobite dostop do portala, ki kaže izmišljeno rast. Pozivajo vas k večjim vplačilom, za izplačilo pa zahtevajo provizije, davke ali takse. Ko nehate plačevati, izginejo.",
+    "en": "On social media or in a search engine you see a sensational ad featuring a well-known Slovenian. It leads to a fake page imitating a well-known Slovenian news site: in an “interview” the person praises a platform that supposedly turns 250 euros into big daily profits with artificial intelligence. Once you enter your name and phone number, “advisers” call you from changing numbers. After the first deposit you get access to a portal showing invented growth. You are pushed to deposit more, and to withdraw you are asked for commissions, taxes or fees. When you stop paying, they vanish."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Oglas z znano osebo obljublja velike zaslužke z malo vložka.",
+        "en": "An ad with a celebrity promises big profits from a small stake."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sl": "Stran posnema znan novičarski portal.",
+        "en": "The page imitates a well-known news site."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Po vpisu podatkov vas kličejo »svetovalci« in vodijo vplačilo.",
+        "en": "After you sign up, “advisers” call and guide the deposit."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sl": "Za izplačilo morate plačati provizijo ali davek.",
+        "en": "To withdraw you must pay a commission or tax."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Znani voditelj v oddaji razkril, kako si vsak mesec ustvari dodaten dohodek: s 250 evri in pametnim algoritmom do 1.200 evrov na dan. Banke so zahtevale, da se posnetek odstrani. Število mest je omejeno – prijava še danes: [povezava]",
+        "en": "Famous presenter revealed on air how he makes extra income every month: from 250 euros to 1,200 euros a day with a smart algorithm. The banks demanded the clip be taken down. Places are limited – sign up today: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "oglas znana oseba naložba umetna inteligenca",
+      "vplačal 250 evrov platforma dobički",
+      "svetovalec klical naložba kriptovalute",
+      "izplačilo zahtevali provizijo davek",
+      "lažen članek portal znana oseba zaslužek"
+    ],
+    "en": [
+      "celebrity ad investment artificial intelligence",
+      "deposited 250 euros on a trading platform",
+      "adviser keeps calling about my investment",
+      "asked to pay a fee to withdraw my profits",
+      "fake news article celebrity got rich"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sl": [
+      "Znane osebe ne priporočajo naložb v oglasih; posnetki in članki so ponarejeni.",
+      "Zagotovljeni visoki dnevni dobički ne obstajajo.",
+      "Plačilo provizije ali davka za izplačilo je znak prevare.",
+      "Plačan oglas na velikem omrežju ne pomeni, da je ponudba zaupanja vredna."
+    ],
+    "en": [
+      "Celebrities don’t recommend investments in ads; the clips and articles are faked.",
+      "Guaranteed high daily profits don’t exist.",
+      "Paying a fee or tax to withdraw is a sign of fraud.",
+      "A paid ad on a big platform doesn’t make an offer trustworthy."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ne vpisujte podatkov in ne odgovarjajte na klice.",
+      "Sumljiv oglas prijavite prek menija oglasa.",
+      "Če ste plačali, prekinite stik, shranite potrdila, sporočila in povezave ter prijavite goljufijo policiji in banki.",
+      "Ne nasedajte ponudbam za »povrnitev« izgubljenega denarja proti plačilu."
+    ],
+    "en": [
+      "Don’t enter your details and don’t answer their calls.",
+      "Report a suspicious ad through the ad’s menu.",
+      "If you paid, cut contact, keep receipts, messages and links, and report the fraud to the police and your bank.",
+      "Don’t fall for offers to “recover” lost money for a fee."
+    ]
+  },
+  "reportTo": [
+    "si/policija-e-naznanilo",
+    "si/your-bank",
+    "si/si-cert"
+  ],
+  "sources": [
+    {
+      "title": "Triglav Quant AI, priložnost za zaslužek ali izgubo?",
+      "publisher": "Varni na internetu (SI-CERT)",
+      "url": "https://www.varninainternetu.si/triglav-quant-ai-priloznost-za-zasluzek-ali-izgubo/",
+      "date": "2026-07-20"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "si/kripto-denarnica-oddaljeni-dostop"
+  ]
+}

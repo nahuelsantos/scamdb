@@ -1,0 +1,124 @@
+{
+  "id": "cz/brigada-hodnoceni-ukoly",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "cs": "„Personalistka“ nebo „mentor“ na WhatsAppu či Telegramu, často s ženským jménem",
+    "en": "A “recruiter” or “mentor” on WhatsApp or Telegram, often with a woman’s name"
+  },
+  "name": {
+    "cs": "Online brigáda: hodnocení hotelů, lajkování videí, „úkoly“",
+    "en": "Online side job: rating hotels, liking videos, “tasks”"
+  },
+  "how": {
+    "cs": "Neznámý kontakt nabídne snadný přivýdělek z domova: hodnotit hotely nebo produkty, lajkovat videa nebo plnit skupinové úkoly. Na začátku dostanete malé odměny, často v kryptoměně. Pak vás „mentor“ navede na pracovní účet nebo kryptoměnovou peněženku a k „úkolům“, kvůli kterým musíte nejdřív vložit vlastní peníze. Účet najednou ukáže dluh, který musíte doplatit, abyste dostali výplatu. Platíte dál, někdy i z půjčky.",
+    "en": "An unknown contact offers easy money from home: rating hotels or products, liking videos or doing group tasks. At first you get small rewards, often in crypto. Then a “mentor” moves you to a work account or a crypto wallet and to “tasks” that require you to pay in your own money first. The account suddenly shows a debt you must clear to get paid. You keep paying, sometimes with a loan."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "Nabídka brigády z neznámého čísla: hodnocení, lajky, úkoly.",
+        "en": "A job offer from an unknown number: reviews, likes, tasks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "cs": "První malé odměny skutečně přijdou.",
+        "en": "The first small rewards really arrive."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "cs": "Pak „prémiové úkoly“, kvůli kterým musíte vložit peníze.",
+        "en": "Then “premium tasks” that require you to deposit money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "cs": "Účet je v mínusu a výplata jen po doplacení, rychle.",
+        "en": "The account is in debt and you get paid only after topping up, quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "Dobrý den, jmenuji se Klára a hledám spolupracovníky na částečný úvazek. Práce spočívá v hodnocení hotelů online, zabere 30 minut denně a vydělat se dá 1 500 až 4 000 Kč denně. Žádné zkušenosti nejsou potřeba. Máte zájem o více informací?",
+        "en": "Hello, my name is Klára and I’m looking for part-time collaborators. The work is rating hotels online, takes 30 minutes a day and pays 1,500 to 4,000 CZK a day. No experience needed. Are you interested in more information?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "brigáda hodnocení hotelů",
+      "lajkování videí výdělek",
+      "online úkoly vložit peníze",
+      "mentor telegram úkoly",
+      "pracovní účet mínusu doplatit",
+      "přivýdělek domova whatsapp nabídka"
+    ],
+    "en": [
+      "side job rating hotels",
+      "paid to like videos",
+      "online tasks deposit money",
+      "mentor on telegram tasks",
+      "work account negative must top up"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "cs": [
+      "Skutečná práce po vás nechce, abyste do ní vkládali vlastní peníze.",
+      "Nabídka z neznámého čísla s vysokou odměnou za jednoduché klikání.",
+      "Výplata v kryptoměně a „dluh“, který musíte doplatit.",
+      "Kdo přijímá a přeposílá cizí peníze, riskuje trestní stíhání jako „bílý kůň“."
+    ],
+    "en": [
+      "A real job never asks you to pay in your own money.",
+      "An offer from an unknown number with high pay for simple clicks.",
+      "Pay in crypto and a “debt” you must clear.",
+      "Receiving and forwarding other people’s money can get you prosecuted as a money mule."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na nabídku neodpovídejte, číslo zablokujte a nahlaste.",
+      "Pokud jste už platili, nic dalšího neposílejte, nesnažte se ztráty dohnat novou půjčkou a volejte banku.",
+      "Podejte trestní oznámení."
+    ],
+    "en": [
+      "Don’t answer the offer; block and report the number.",
+      "If you already paid, send nothing more, don’t take a loan to chase losses, and call your bank.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Žena přišla o více než 700 tisíc korun",
+      "publisher": "Policie ČR",
+      "url": "https://archiv.policie.gov.cz/clanek/zena-prisla-o-vice-nez-700-tisic-korun.aspx",
+      "date": "2026-07-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,123 @@
+{
+  "id": "hr/porezna-povrat-sms",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hr": "„Porezna uprava“",
+    "en": "“The Tax Administration” (Porezna uprava)"
+  },
+  "name": {
+    "hr": "Lažni povrat poreza: upišite IBAN i karticu da primite novac",
+    "en": "Fake tax refund: enter your IBAN and card to receive the money"
+  },
+  "how": {
+    "hr": "SMS u ime Porezne uprave javlja da vam je odobren povrat poreza. Poveznica vodi na lažnu stranicu koja najprije traži ime, IBAN, broj mobitela i datum rođenja, a zatim broj kartice, datum isteka i CVC. Podaci se koriste za krađu novca i za uvjerljivije buduće prijevare.",
+    "en": "A text in the name of the Tax Administration says your tax refund has been approved. The link leads to a fake page that first asks for your name, IBAN, mobile number and date of birth, then your card number, expiry date and CVC. The data is used to steal money and to make later scams more convincing."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "SMS „Porezne“: odobren vam je povrat.",
+        "en": "A “Tax Administration” text: your refund is approved."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Novac čeka samo još potvrdu, kratko vrijeme.",
+        "en": "The money just needs confirming, for a short time."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hr": "Poveznica na lažnu stranicu Porezne.",
+        "en": "A link to a fake tax page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hr": "Traže IBAN, a onda i karticu s CVC-om.",
+        "en": "They ask for your IBAN, then your card and CVC."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Porezna uprava: Na temelju godišnjeg obračuna imate pravo na povrat od 186,40 EUR. Za isplatu potvrdite podatke do kraja tjedna: [poveznica]",
+        "en": "Tax Administration: Based on the annual assessment you are entitled to a refund of 186.40 EUR. To receive it, confirm your details by the end of the week: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "sms povrat poreza poveznica",
+      "porezna uprava odobren povrat",
+      "povrat poreza traži karticu cvc",
+      "upišite iban povrat porezna",
+      "lažna stranica porezne uprave"
+    ],
+    "en": [
+      "text about a tax refund with link",
+      "tax administration refund approved",
+      "tax refund asks for card and cvc",
+      "enter iban to get tax refund",
+      "fake tax administration website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "hr": [
+      "Za uplatu na vaš račun nitko ne treba broj kartice ni CVC, dovoljan je IBAN.",
+      "Porezna uprava povrat ne isplaćuje preko poveznice u SMS-u.",
+      "Naziv i logo na stranici nisu dokaz da je službena."
+    ],
+    "en": [
+      "Nobody needs your card number or CVC to pay you; an IBAN is enough.",
+      "The Tax Administration doesn’t pay refunds through a link in a text.",
+      "A name and logo on a page don’t prove it is official."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Ne otvarajte poveznicu i obrišite poruku.",
+      "Povrat provjerite sami u e-Građanima ili na službenim kanalima Porezne uprave.",
+      "Ako ste upisali karticu, odmah nazovite banku i zatražite blokadu."
+    ],
+    "en": [
+      "Don’t open the link and delete the message.",
+      "Check your refund yourself in e-Građani or through official Tax Administration channels.",
+      "If you entered your card, call your bank at once and ask for a block."
+    ]
+  },
+  "reportTo": [
+    "hr/your-bank",
+    "hr/cert-incident"
+  ],
+  "sources": [
+    {
+      "title": "Upozorenje: Lažne SMS poruke o povratu poreza",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-lazne-sms-poruke-o-povratu-poreza/",
+      "date": "2026-10-15"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/e-gradani-lazna-stranica"
+  ]
+}

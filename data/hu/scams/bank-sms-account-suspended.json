@@ -1,0 +1,138 @@
+{
+  "id": "hu/bank-sms-account-suspended",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hu": "„A bankja”, „OTP”, „MNB” vagy „Magyar Nemzeti Bank” (gyakran külföldi számról)",
+    "en": "“Your bank”, “OTP”, “MNB” or “Magyar Nemzeti Bank” (often from a foreign number)"
+  },
+  "name": {
+    "hu": "Hamis banki és MNB SMS: „felfüggesztjük a számláját”",
+    "en": "Fake bank or central bank SMS: “your account will be suspended”"
+  },
+  "how": {
+    "hu": "SMS vagy e-mail érkezik a bankja vagy a Magyar Nemzeti Bank nevében: sürgősen ellenőrizni kell az adatait, különben felfüggesztik a számláját vagy letiltják a kártyáját. A linkre kattintva ki kell választania a bankját, és egy hamis netbanki belépő oldalon megadni a felhasználónevét, jelszavát, kártyaadatait és az SMS-ben kapott kódot. Ezekkel a csalók belépnek a netbankjába, vagy a kártyáját a saját telefonjukhoz adják hozzá.",
+    "en": "A text or email arrives in the name of your bank or the Hungarian central bank (MNB): you must urgently verify your details, or your account will be suspended or your card blocked. The link asks you to pick your bank and enter your username, password, card details and the SMS code on a fake online-banking login page. With them the scammers log in to your bank or add your card to their own phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "SMS „a banktól” vagy az MNB-től: ellenőrizze az adatait.",
+        "en": "A text from “the bank” or MNB: verify your details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Ha nem teszi meg, felfüggesztik a számláját vagy letiltják a kártyáját.",
+        "en": "If you don’t, your account will be suspended or your card blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "A link egy netbankhoz hasonló oldalra visz.",
+        "en": "The link leads to a page that looks like online banking."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hu": "Meg kell adnia a jelszavát, kártyaadatait és az SMS-kódot.",
+        "en": "You must enter your password, card details and the SMS code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "MNB ertesites: Bankszamlaja ideiglenesen korlatozasra kerul, mert az ugyfeladatok egyeztetese elmaradt. Kerjuk 24 oran belul valassza ki bankjat es erositse meg adatait: [link]",
+        "en": "MNB notice: Your bank account will be temporarily restricted because your customer details were not confirmed. Please choose your bank and confirm your details within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "sms bankszámlám felfüggesztéséről",
+      "mnb sms adategyeztetés sürgős",
+      "kártyáját letiltjuk sms érkezett",
+      "bankomat választottam ki listából",
+      "hamis netbank felületen megadtam jelszavamat",
+      "banki sms ügyféladatok ellenőrzése",
+      "korlátozzák számlámat adatmegerősítés"
+    ],
+    "en": [
+      "text said my bank account will be suspended",
+      "sms from the central bank asking to verify",
+      "link asked me to choose my bank",
+      "entered my login on a fake bank page",
+      "text said my card will be blocked",
+      "bank sms asking to confirm my details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "hu": [
+      "Sem az MNB, sem a bankok nem kérnek bizalmas banki adatot SMS-ben vagy e-mailben.",
+      "Az MNB-nél nincs lakossági bankszámlája, amit felfüggeszthetne.",
+      "A bank nem küld linket netbanki belépéshez.",
+      "Ékezet nélküli, sürgető szöveg és ismeretlen feladó."
+    ],
+    "en": [
+      "Neither the MNB nor the banks ask for confidential banking details by SMS or email.",
+      "You don’t have a personal account at the central bank that it could suspend.",
+      "Banks don’t send links to log in to online banking.",
+      "Text without accents, pressure and an unknown sender."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne kattintson. Törölje az üzenetet.",
+      "A bankját az alkalmazásban vagy a kártyája hátoldalán lévő számon ellenőrizze.",
+      "Ha megadott adatot, azonnal hívja a bankját, és tiltassa le a kártyát és a netbankot.",
+      "Az adathalász oldalt jelentheti az Internet Hotline-on."
+    ],
+    "en": [
+      "Don’t click. Delete the message.",
+      "Check with your bank in its app or on the number on the back of your card.",
+      "If you entered details, call your bank at once and block your card and online banking.",
+      "You can report the phishing site to Internet Hotline."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/mnb-ugyfelszolgalat",
+    "hu/internet-hotline",
+    "hu/rendorseg-feljelentes"
+  ],
+  "sources": [
+    {
+      "title": "Egyre több embert támadnak pénzükért a csalók ezzel a módszerrel",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/gazdasag/2025/12/01/mnb-csalok-sms-adathalaszat-820246/",
+      "date": "2025-12-01"
+    },
+    {
+      "title": "Ne dőljön be az ilyen SMS-nek, mert minden pénzét vihetik",
+      "publisher": "Infostart",
+      "url": "https://infostart.hu/bunugyek/2025/12/02/ne-doljon-be-az-ilyen-sms-nek-mert-minden-penzet-vihetik",
+      "date": "2025-12-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/bank-employee-safe-account"
+  ]
+}

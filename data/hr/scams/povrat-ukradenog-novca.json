@@ -1,0 +1,149 @@
+{
+  "id": "hr/povrat-ukradenog-novca",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social",
+    "email"
+  ],
+  "sender": {
+    "hr": "„Odvjetnik“, „agencija za povrat sredstava“, „broker“ ili „financijska institucija“",
+    "en": "A “lawyer”, “fund recovery agency”, “broker” or “financial institution”"
+  },
+  "name": {
+    "hr": "Lažni povrat novca: „vratit ćemo vam izgubljeno ulaganje“",
+    "en": "Fake money recovery: “we’ll get your lost investment back”"
+  },
+  "how": {
+    "hr": "Nakon što ste izgubili novac na prijevari, ili potpuno iz vedra neba, javlja se netko tko obećava povrat izgubljenog novca ili isplatu „zaboravljene zarade“ od kriptovaluta. Za to traži „naknade“, „poreze“ ili „troškove obrade“, pristupne podatke internetskog bankarstva, jednokratne kodove, fotografiju osobne ili instalaciju aplikacije za dijeljenje zaslona. Tako vas pokradu drugi put, ponekad i podignu kredit na vaše ime.",
+    "en": "After you lost money to a scam, or completely out of the blue, someone contacts you promising to recover the lost money or pay out “forgotten profits” from crypto. For that they ask for “fees”, “taxes” or “processing costs”, your online banking login, one-time codes, a photo of your ID or to install a screen-sharing app. That’s how they rob you a second time, sometimes even taking out a loan in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Neočekivan poziv ili oglas: možemo vratiti vaš novac.",
+        "en": "An unexpected call or ad: we can get your money back."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hr": "Predstavljaju se kao odvjetnici, brokeri ili institucija.",
+        "en": "They pose as lawyers, brokers or an institution."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Traže kodove, prijavu u bankarstvo ili dijeljenje zaslona.",
+        "en": "They ask for codes, your banking login or screen sharing."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "hr": "Za isplatu prvo treba platiti naknadu.",
+        "en": "To get paid you must first pay a fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Poštovani, kontaktiramo vas u ime međunarodne agencije za povrat sredstava. U bazi oštećenih ulagača pronađen je vaš iznos od 7.300 € koji možemo vratiti. Za otvaranje predmeta potrebna je administrativna pristojba od 290 € i kratka provjera identiteta putem videopoziva.",
+        "en": "Dear Sir or Madam, we are contacting you on behalf of an international fund recovery agency. In the database of defrauded investors we found your amount of 7,300 € which we can recover. Opening the case requires an administrative fee of 290 € and a short identity check by video call."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "povrat izgubljenog novca agencija",
+      "zaboravljena zarada kriptovalute isplata",
+      "platiti naknadu povrat sredstava",
+      "odvjetnik vraća ukradeni novac",
+      "kredit podignut moje ime povrat",
+      "oglas pomoć povrat novca prijevara"
+    ],
+    "en": [
+      "agency to recover lost money",
+      "forgotten crypto profits payout",
+      "pay a fee to recover funds",
+      "lawyer promises to recover stolen money",
+      "loan taken in my name after recovery call",
+      "ad offering help to get scam money back"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "remote_access",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "hr": [
+      "Pravi povrat novca ne počinje plaćanjem naknade.",
+      "Nitko vas ne zove iz vedra neba s pravom na isplatu.",
+      "Traženje kodova, PIN-a ili dijeljenja zaslona uvijek je prijevara.",
+      "Adrese e-pošte i domene ne pripadaju službenim institucijama."
+    ],
+    "en": [
+      "A real recovery never starts with paying a fee.",
+      "No one calls you out of the blue with a right to a payout.",
+      "Being asked for codes, your PIN or screen sharing is always fraud.",
+      "The email addresses and domains don’t belong to official institutions."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Prekinite kontakt i ništa ne plaćajte.",
+      "Pomoć tražite samo od policije, svoje banke i Hanfe.",
+      "Prijavite stranice i oglase za „povrat novca“ CERT-u."
+    ],
+    "en": [
+      "End contact and pay nothing.",
+      "Seek help only from the police, your bank and Hanfa.",
+      "Report “money recovery” sites and ads to CERT."
+    ]
+  },
+  "reportTo": [
+    "hr/policija-192",
+    "hr/your-bank",
+    "hr/hanfa",
+    "hr/cert-incident"
+  ],
+  "sources": [
+    {
+      "title": "Upozorenje građanima: Porast prijevara povezanih s „povratom novca“ i kriptovalutama",
+      "publisher": "Ravnateljstvo policije (MUP)",
+      "url": "https://policija.gov.hr/vijesti/upozorenje-gradjanima-porast-prijevara-povezanih-s-povratom-novca-i-kriptovalutama/12535",
+      "date": "2026-03-05"
+    },
+    {
+      "title": "Policija ima savjete kako najlakše otkriti prevarante na internetu",
+      "publisher": "tportal.hr (Hina)",
+      "url": "https://www.tportal.hr/vijesti/clanak/policija-ima-savjete-kako-najlakse-otkriti-prevarante-na-internetu-20260305",
+      "date": "2026-03-05"
+    },
+    {
+      "title": "UPOZORENJE: Hrvatska na udaru investicijskih prijevara i prijevara s povratom novca!",
+      "publisher": "CARNET-ov Nacionalni CERT",
+      "url": "https://cert.hr/upozorenja/upozorenje-hrvatska-na-udaru-investicijskih-prijevara-i-prijevara-s-povratom-novca/",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Prevaranti ispraznili račune četvero građana, šteta veća od 23.700 eura",
+      "publisher": "tportal.hr",
+      "url": "https://www.tportal.hr/vijesti/clanak/prevaranti-ispraznili-racune-cetvero-gradana-steta-veca-od-23-700-eura-20260708",
+      "date": "2026-07-08"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/investicije-slavne-osobe"
+  ]
+}

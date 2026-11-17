@@ -1,0 +1,144 @@
+{
+  "id": "sk/investment-celebrity-ads",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "sk": "Reklama na Facebooku či YouTube so známou osobnosťou, potom „investičný poradca“",
+    "en": "An ad on Facebook or YouTube with a famous person, then an “investment adviser”"
+  },
+  "name": {
+    "sk": "Investičná reklama so známou tvárou a „poradca“ na telefóne",
+    "en": "Investment ad with a famous face and an “adviser” on the phone"
+  },
+  "how": {
+    "sk": "Na sociálnej sieti uvidíte reklamu alebo video, často vytvorené umelou inteligenciou, v ktorom známy politik, moderátor či šéf banky odporúča investičnú platformu s rýchlym ziskom. Po vyplnení kontaktu vám zavolá „poradca“, prvý vklad býva okolo 250 eur. Na platforme vidíte rastúci zisk, tak posielate ďalšie peniaze. Vybrať ich nejde; vždy treba zaplatiť ďalší „poplatok“.",
+    "en": "On social media you see an ad or video, often made with AI, in which a well-known politician, presenter or bank boss recommends an investment platform with quick profits. After you leave your contact, an “adviser” calls; the first deposit is usually around 250 euros. On the platform you see your profit growing, so you send more. You can’t withdraw it; there is always another “fee” to pay."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Reklama: známa osobnosť odporúča investíciu s vysokým výnosom.",
+        "en": "An ad: a celebrity recommends an investment with high returns."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sk": "Volá „poradca“ a tlačí na prvý vklad.",
+        "en": "An “adviser” calls and pushes for a first deposit."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Zisk na platforme rastie, chcú ďalšie vklady.",
+        "en": "The profit on the platform grows; they want more deposits."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sk": "Banke máte tvrdiť, že platíte faktúru.",
+        "en": "You are told to tell the bank you are paying an invoice."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Dobrý deň, volám z investičného oddelenia ohľadom vašej registrácie cez video s pánom prezidentom. Pri vklade 250 eur vám náš systém obchodovania s kryptomenami vie už prvý mesiac zarobiť aj 2 000 eur. Ak dnes potvrdíte účet, pridelím vám osobného manažéra.",
+        "en": "Hello, I’m calling from the investment department about your registration through the video with the President. With a 250-euro deposit our crypto trading system can earn you as much as 2,000 euros in the first month. If you confirm your account today, I’ll assign you a personal manager."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "investícia reklama známa osobnosť",
+      "deepfake video investovanie podvod",
+      "investičný poradca volal vklad 250 eur",
+      "platforma kryptomeny rýchly zisk",
+      "nemôžem vybrať peniaze z platformy poplatok",
+      "prezident odporúča investovať reklama",
+      "privyrobiť tisíce mesačne investícia",
+      "registrácia vklad analytik zavolá"
+    ],
+    "en": [
+      "investment ad with a celebrity",
+      "deepfake video investing scam",
+      "investment adviser called 250 euro deposit",
+      "crypto platform quick profit",
+      "cannot withdraw money from platform fee"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency",
+    "secrecy"
+  ],
+  "redFlags": {
+    "sk": [
+      "Známe osobnosti neodporúčajú investície v reklamách; videá sú falošné.",
+      "Garantovaný vysoký zisk neexistuje.",
+      "Firma bez povolenia NBS.",
+      "Výber zisku podmienený ďalšou platbou."
+    ],
+    "en": [
+      "Celebrities don’t recommend investments in ads; the videos are fake.",
+      "Guaranteed high returns don’t exist.",
+      "A firm without NBS authorisation.",
+      "Withdrawing profit depends on yet another payment."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Firmu si overte v zozname subjektov NBS.",
+      "Neposielajte ďalšie peniaze a neinštalujte aplikácie, ktoré pýtajú.",
+      "Kontaktujte banku a podajte oznámenie na polícii."
+    ],
+    "en": [
+      "Check the firm in the NBS register.",
+      "Don’t send more money or install apps they ask for.",
+      "Contact your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "sk/nbs",
+    "sk/your-bank",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "Kybernetické útoky na Slovensku menia podobu, dominujú investičné podvody",
+      "publisher": "SITA",
+      "url": "https://sita.sk/vofinanciach/kyberneticke-utoky-na-slovensku-menia-podobu-dominuju-investicne-podvody/",
+      "date": "2026-03-28"
+    },
+    {
+      "title": "Aktuálnym trendom sú investičné podvody, tvoria už väčšinu strát",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/najnovsie/aktualnym-trendom-su-investicne-podv/952873-clanok.html",
+      "date": "2026-04-03"
+    },
+    {
+      "title": "Deepfake, falošné banky a „bezpečné účty“. Ako sa mení tvár finančných podvodov?",
+      "publisher": "Noviny.sk (SITA)",
+      "url": "https://www.noviny.sk/ekonomika/1124955-deepfake-falosne-banky-a-bezpecne-ucty-ako-sa-meni-tvar-financnych-podvodov",
+      "date": "2025-10-23"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/investment-payout-remote-access",
+    "sk/task-job-scam"
+  ]
+}

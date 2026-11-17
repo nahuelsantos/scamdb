@@ -1,0 +1,145 @@
+{
+  "id": "hu/investment-celebrity-ads",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "hu": "Közösségi médiás hirdetés hamis hírrel, ismert ember vagy cég nevével; később „pénzügyi tanácsadó” vagy „brókercég”",
+    "en": "A social-media ad with fake news using a celebrity’s or company’s name; later a “financial adviser” or “broker”"
+  },
+  "name": {
+    "hu": "Befektetési csalás hírességekkel és hamis platformmal",
+    "en": "Investment scam with celebrities and a fake platform"
+  },
+  "how": {
+    "hu": "Facebookon, Instagramon vagy TikTokon hirdetés vagy hamis cikk jelenik meg: egy ismert ember, bankvezető vagy nagyvállalat „titkos” befektetéssel, kriptóval vagy részvénnyel gyors gazdagodást ígér. Megadja a telefonszámát, és egy „tanácsadó” hívja. Kezdésnek kis összeget kér (például 50 ezer forintot), a platformon gyorsan nő a „nyereség”, majd egyre többet kell befizetni, és alkalmazás telepítését kérik, amellyel átveszik az irányítást a telefonja felett. Kivenni a pénzt nem lehet: újabb díjakat, „adót”, biztosítást kérnek.",
+    "en": "An ad or fake article appears on Facebook, Instagram or TikTok: a well-known person, bank boss or big company promises fast riches through a “secret” investment, crypto or shares. You leave your number and an “adviser” calls. They ask for a small start (say 50 thousand forints), the “profit” on the platform grows fast, then you must pay in more and more, and they ask you to install an app that gives them control of your phone. You can’t withdraw: they ask for more fees, “tax” or insurance."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Hirdetés vagy hamis cikk ismert emberrel, gyors meggazdagodással.",
+        "en": "An ad or fake article with a celebrity and fast riches."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "hu": "Egy „tanácsadó” hív, és kis befizetéssel indít.",
+        "en": "An “adviser” calls and starts you with a small deposit."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Alkalmazást kell telepíteni, „hogy segítsen kereskedni”.",
+        "en": "You must install an app “so they can help you trade”."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "hu": "Egyre nagyobb befizetések, a kivételhez díjat kell fizetni.",
+        "en": "Ever bigger deposits, and a fee to withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "RENDKÍVÜLI: A tévé élő adásában szólta el magát a milliárdos – ezzel a platformmal bárki havi 2 milliót kereshet itthonról. A bankok le akarják tiltani, ezért csak ma regisztrálhatsz! Kezdéshez elég 80 ezer forint, egy személyes menedzser felhív és segít: [link]",
+        "en": "BREAKING: The billionaire let it slip on live TV – with this platform anyone can earn 2 million a month from home. The banks want it banned, so you can only sign up today! 80 thousand forints is enough to start, a personal manager will call and help you: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "befektetési hirdetés híres ember facebookon",
+      "kriptó platformon nő nyereségem kivenni képtelenség",
+      "tanácsadó hívott regisztráció befektetés",
+      "kivételhez adót díjat követeltek",
+      "hamis cikk milliárdos befektetési platform",
+      "befektetési menedzser alkalmazást telepíttetett",
+      "ötvenezer forinttal kezdtem befektetést"
+    ],
+    "en": [
+      "investment ad with a celebrity",
+      "crypto platform profit cant withdraw",
+      "account manager called after i signed up",
+      "had to pay fees to withdraw my money",
+      "fake news article about investing",
+      "broker asked me to install an app"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "Irreálisan magas, biztos hozam és sürgetés.",
+      "Ismert emberek nem ajánlanak befektetést hirdetésekben: a nevüket ellopják.",
+      "Kéretlen hívás befektetési ajánlattal, alkalmazás telepítése.",
+      "A kivételhez díjat kérnek."
+    ],
+    "en": [
+      "Unrealistically high, sure returns and pressure.",
+      "Famous people don’t recommend investments in ads: their names are stolen.",
+      "Unsolicited investment calls and requests to install apps.",
+      "They ask for a fee before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne fizessen többet, és ne fizessen „kivételi díjat”.",
+      "Ellenőrizze a céget az MNB Piaci szereplők keresőjében és figyelmeztetései között.",
+      "Ha alkalmazást telepített vagy utalt, szóljon a bankjának.",
+      "Tegyen feljelentést, és őrizze meg a beszélgetéseket és az utalások adatait."
+    ],
+    "en": [
+      "Don’t pay any more, and don’t pay a “withdrawal fee”.",
+      "Check the company in the MNB’s register of market participants and its warnings.",
+      "If you installed an app or sent money, tell your bank.",
+      "Report it to the police and keep the chats and payment details."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/rendorseg-feljelentes",
+    "hu/mnb-ugyfelszolgalat"
+  ],
+  "sources": [
+    {
+      "title": "Bankolj tudatosan – Túl szép, hogy igaz legyen? Ismerd fel a befektetési csalásokat!",
+      "publisher": "OTP Bank",
+      "url": "https://www.otpbank.hu/bankoljtudatosan/hu/mindennapi-bankolas/befektetesi-csalas",
+      "date": "2026-08-25"
+    },
+    {
+      "title": "Elképesztő: milliárdokat lopnak el tőlünk a közösségi oldalak",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/befektetes/2026/02/24/kiberbiztonsag-kozossegi-media-csalasok-bunozok-824364/",
+      "date": "2026-02-24"
+    },
+    {
+      "title": "120 milliót csaltak ki egy 64 éves asszonytól",
+      "publisher": "Infostart",
+      "url": "https://infostart.hu/bunugyek/2025/10/12/120-milliot-csaltak-ki-egy-64-eves-asszonytol",
+      "date": "2025-10-12"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/romance-scam"
+  ]
+}

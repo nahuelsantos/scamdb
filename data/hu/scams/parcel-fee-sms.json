@@ -1,0 +1,140 @@
+{
+  "id": "hu/parcel-fee-sms",
+  "country": "hu",
+  "lang": "hu",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "hu": "„Magyar Posta”, „MPL”, „GLS”, „Foxpost” vagy más csomagküldő",
+    "en": "“Magyar Posta”, “MPL”, “GLS”, “Foxpost” or another delivery company"
+  },
+  "name": {
+    "hu": "Hamis csomagértesítő: kis vámdíj, szállítási díj",
+    "en": "Fake parcel notice: a small customs or delivery fee by link"
+  },
+  "how": {
+    "hu": "SMS-t vagy e-mailt kap a Magyar Posta, a GLS vagy a Foxpost nevében: a csomagja elakadt, a cím hiányos, vagy pár száz forintos vámkezelési vagy szállítási díjat kell fizetni. A link egy valódinak látszó oldalra visz, ahol előbb a nevét és címét, majd a kártyaadatait kérik. A kis összeg csak csali: a megadott adatokkal a csalók nagyobb összegeket emelnek le, vagy a kártyát a saját telefonjukhoz adják hozzá.",
+    "en": "You get a text or email in the name of Magyar Posta, GLS or Foxpost: your parcel is stuck, the address is incomplete, or a customs or delivery fee of a few hundred forints is due. The link leads to a real-looking page that first asks for your name and address, then your card details. The small amount is bait: with your details the scammers take much more or add your card to their own phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "hu": "Üzenet „a postától” vagy egy futárcégtől a csomagjáról.",
+        "en": "A message from “the post” or a courier about your parcel."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hu": "Kis díjat kell fizetni, vagy pótolni kell a címet, különben visszaküldik.",
+        "en": "A small fee is due or the address must be completed, or it goes back."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hu": "A link egy postásnak látszó oldalra visz.",
+        "en": "The link leads to a page that looks like the courier’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "hu": "Az oldal kártyaszámot, lejáratot és CVC-kódot kér.",
+        "en": "The page asks for card number, expiry date and CVC."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hu": "Magyar Posta: Kuldemenye a vamkezelesi dij (390 Ft) rendezeseig raktarunkban varakozik. Fizetes es kezbesitesi idopont valasztasa: [link]",
+        "en": "Magyar Posta: Your parcel is waiting in our warehouse until the customs fee (390 Ft) is paid. Pay and choose a delivery time: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "hu": [
+      "posta sms vámdíj fizetés",
+      "csomagom vámkezelési díját kérték",
+      "gls sms szállítási díj kártyával",
+      "foxpost üzenet csomag díj fizetése",
+      "magyar posta hamis sms",
+      "kézbesítés címpontosítás díj",
+      "pár száz forintos díj csomag"
+    ],
+    "en": [
+      "text from magyar posta asking for customs fee",
+      "parcel fee link asked for card details",
+      "gls text about delivery fee",
+      "fake foxpost message about my package",
+      "small fee to release my parcel",
+      "update address for parcel delivery link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "hu": [
+      "A Magyar Posta csak nemzetközi küldemény vámdíjáról küld fizetési értesítést, és az mindig a posta.hu oldalára mutat.",
+      "A futárcégek nem kérnek kártyaadatot SMS-ben kapott linken.",
+      "Olyan csomagról szól, amit nem vár, vagy a feladó külföldi szám."
+    ],
+    "en": [
+      "Magyar Posta only sends payment notices for customs fees on international items, and they always point to posta.hu.",
+      "Couriers don’t ask for card details through a link in a text.",
+      "It’s about a parcel you aren’t expecting, or the sender is a foreign number."
+    ]
+  },
+  "whatToDo": {
+    "hu": [
+      "Ne kattintson. A csomagot a futárcég hivatalos alkalmazásában vagy honlapján ellenőrizze.",
+      "Ha megadta a kártyaadatait, azonnal tiltassa le a kártyát.",
+      "Az adathalász oldalt jelentheti az Internet Hotline-on vagy az NKI-nak."
+    ],
+    "en": [
+      "Don’t click. Check the parcel in the courier’s official app or website.",
+      "If you entered card details, block the card at once.",
+      "You can report the phishing site to Internet Hotline or to NKI."
+    ]
+  },
+  "reportTo": [
+    "hu/your-bank",
+    "hu/internet-hotline",
+    "hu/nki-csirt",
+    "hu/rendorseg-feljelentes"
+  ],
+  "sources": [
+    {
+      "title": "Tájékoztatás a GLS nevével visszaélő adathalász támadásokról",
+      "publisher": "Nemzeti Kibervédelmi Intézet (NBSZ NKI)",
+      "url": "https://nki.gov.hu/figyelmeztetesek/tajekoztatas/tajekoztatas-a-gls-nevevel-visszaelo-adathalasz-tamadasokrol/",
+      "date": "2026-03-03"
+    },
+    {
+      "title": "Mutatjuk, mire ne nyomjon rá, ha a Posta keresi!",
+      "publisher": "Infostart",
+      "url": "https://infostart.hu/belfold/2025/10/23/mutatjuk-mire-ne-nyomjon-ra-ha-a-posta-keresi",
+      "date": "2025-10-23"
+    },
+    {
+      "title": "Veszélyes trükk terjed: így vernek át a csalók",
+      "publisher": "Economx",
+      "url": "https://www.economx.hu/gazdasag/2025/12/02/magyar-posta-csalas-sms-rendorseg-felhivas-820304/",
+      "date": "2025-12-02"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hu/marketplace-fake-buyer-link"
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "hr/lazni-lijecnik-hitna-operacija",
+  "country": "hr",
+  "lang": "hr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "hr": "„Liječnik“ iz bolnice u blizini, često na lošem hrvatskom",
+    "en": "A “doctor” from a nearby hospital, often in poor Croatian"
+  },
+  "name": {
+    "hr": "Lažni liječnik: vaše dijete treba hitnu operaciju, platite gotovinom",
+    "en": "Fake doctor: your child needs urgent surgery, pay in cash"
+  },
+  "how": {
+    "hr": "Starijoj osobi telefonom se javlja „liječnik“ iz obližnje bolnice. Kaže da je njezin sin, kći ili unuk teško ozlijeđen, najčešće u prometnoj nesreći, i da se hitna operacija može obaviti samo ako se odmah plati. U pozadini se čuje glas koji plače i moli. Dogovara se da će pred kuću doći osoba po novac, a opisuju vam i kako će izgledati.",
+    "en": "An elderly person gets a call from a “doctor” at a nearby hospital. They say their son, daughter or grandchild is badly injured, usually in a car crash, and urgent surgery can only happen if it is paid for at once. A crying, pleading voice is heard in the background. Someone is sent to the house for the money, and they even describe what that person looks like."
+  },
+  "steps": [
+    {
+      "text": {
+        "hr": "Poziv „iz bolnice“: član obitelji je teško ozlijeđen.",
+        "en": "A call “from the hospital”: a relative is badly injured."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "hr": "Operacija mora biti odmah, nema vremena za provjeru.",
+        "en": "The surgery must happen now; there’s no time to check."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "hr": "Treba platiti gotovinom ili zlatom.",
+        "en": "It must be paid in cash or gold."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "hr": "Netko dolazi po novac pred kuću ili stan.",
+        "en": "Someone comes to your house or flat for the money."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "hr": "Gospođo, ja sam doktor s traumatologije. Vaša kći je dovezena nakon sudara, ima unutarnje krvarenje. Postoji poseban zahvat, ali bolnica ga radi samo uz plaćanje unaprijed. Koliko gotovine imate kod kuće? Naš vozač bit će kod vas za pola sata, visok je, u tamnoj jakni.",
+        "en": "Madam, I’m a doctor from the trauma ward. Your daughter was brought in after a crash, she has internal bleeding. There is a special procedure, but the hospital only does it with payment in advance. How much cash do you have at home? Our driver will be with you in half an hour; he’s tall, in a dark jacket."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "hr": [
+      "lažni liječnik zvao bolnica",
+      "sin prometna nesreća hitna operacija novac",
+      "doktor traži gotovinu operaciju",
+      "kurir dolazi novac bolnice",
+      "unuk ozlijeđen platiti operaciju odmah",
+      "plač pozadini telefonom liječnik"
+    ],
+    "en": [
+      "fake doctor called from hospital",
+      "son car accident urgent surgery money",
+      "doctor asked for cash for an operation",
+      "courier coming for hospital money",
+      "grandchild injured pay for surgery now",
+      "crying in background doctor on phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "hr": [
+      "Bolnice ni državne ustanove nikad ne traže hitnu uplatu gotovinom za operaciju.",
+      "Nitko iz bolnice ne šalje kurira po novac.",
+      "Lomljen hrvatski i plač u pozadini dio su scenarija."
+    ],
+    "en": [
+      "Hospitals and state institutions never demand urgent cash for surgery.",
+      "No one from a hospital sends a courier for money.",
+      "Broken Croatian and crying in the background are part of the script."
+    ]
+  },
+  "whatToDo": {
+    "hr": [
+      "Prekinite poziv i nazovite člana obitelji na njegov poznati broj.",
+      "Ako netko dolazi po novac, nazovite 112 ili 192.",
+      "Dogovorite s obitelji obiteljsku lozinku za hitne slučajeve."
+    ],
+    "en": [
+      "Hang up and call your relative on their usual number.",
+      "If someone is coming for money, call 112 or 192.",
+      "Agree a family password for emergencies."
+    ]
+  },
+  "reportTo": [
+    "hr/emergency-112",
+    "hr/policija-192"
+  ],
+  "sources": [
+    {
+      "title": "UPOZORENJE GRAĐANIMA: Porast prijevara u kojima se počinitelji lažno predstavljaju kao liječnici",
+      "publisher": "Ravnateljstvo policije (MUP)",
+      "url": "https://policija.gov.hr/vijesti/upozorenje-gradjanima-porast-prijevara-u-kojima-se-pocinitelji-lazno-predstavljaju-kao-lijecnici/10440",
+      "date": "2026-01-23"
+    },
+    {
+      "title": "Niz prijevara diljem Hrvatske: Od lažnih liječnika i istražitelja do lažnih ulaganja",
+      "publisher": "Novi list",
+      "url": "https://www.novilist.hr/novosti/crna-kronika/niz-prijevara-diljem-hrvatske-od-laznih-lijecnika-i-istrazitelja-do-laznih-ulaganja/",
+      "date": "2026-06-27"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "hr/lazni-policajac-predaja-novca"
+  ]
+}

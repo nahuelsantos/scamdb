@@ -1,0 +1,118 @@
+{
+  "id": "cz/bankovni-identita-sms",
+  "country": "cz",
+  "lang": "cs",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "cs": "SMS jménem služby Bankovní identita (Bank iD) a pak telefonát „z banky“",
+    "en": "A text in the name of the Bank iD service, then a phone call “from the bank”"
+  },
+  "name": {
+    "cs": "Falešná SMS „Bankovní identita“: aktualizujte údaje, jinak blokace",
+    "en": "Fake “Bank iD” text: update your details or be blocked"
+  },
+  "how": {
+    "cs": "SMS tvrdí, že musíte aktualizovat údaje k Bankovní identitě, jinak vám bude účet zablokován. Odkaz vede na stránku téměř k nerozeznání od oficiální, která chce jméno, datum narození, adresu, telefon a číslo účtu. S těmito údaji vám pak podvodníci volají, chtějí další „ověření“, instalaci aplikace pro vzdálený přístup nebo přihlašovací údaje. S ukradenou identitou mohou na vaše jméno otevřít účet nebo vzít úvěr.",
+    "en": "The text says you must update your Bank iD details or your account will be blocked. The link leads to a page almost identical to the official one, asking for your name, date of birth, address, phone and account number. With those details the scammers then call you, asking for more “verification”, a remote-access app or your login details. With a stolen identity they can open accounts or take out loans in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "cs": "SMS: aktualizujte údaje k Bankovní identitě, jinak blokace.",
+        "en": "Text: update your Bank iD details or be blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "cs": "Odkaz na stránku, která kopíruje oficiální web.",
+        "en": "A link to a page that copies the official site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "cs": "Pak volá „banka“ a chce další ověření nebo instalaci aplikace.",
+        "en": "Then “the bank” calls asking for more verification or an app install."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "cs": "BankID: Vase udaje k bankovni identite vyprsely. Pro zachovani pristupu je aktualizujte do 24 hodin, jinak bude ucet docasne omezen: [odkaz]",
+        "en": "BankID: Your bank identity details have expired. To keep access, update them within 24 hours or your account will be temporarily restricted: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "cs": [
+      "sms bankovní identita aktualizovat údaje",
+      "bank id ověření odkaz",
+      "aktualizace bankid jinak blokace",
+      "ověřit identitu bankovní identita sms",
+      "falešný web bankovní identity",
+      "údaje bankid vypršely"
+    ],
+    "en": [
+      "bank id text update my details",
+      "verify my bank identity link",
+      "bank id expired update",
+      "fake bank identity website",
+      "text says account restricted unless I verify"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "remote_access"
+  ],
+  "redFlags": {
+    "cs": [
+      "Bankovní identita ani banka nežádají osobní údaje nebo ověření přes SMS.",
+      "Jediná oficiální doména služby je bankid.cz.",
+      "Telefonát, který na SMS navazuje, je další krok podvodu."
+    ],
+    "en": [
+      "Neither Bank iD nor your bank asks for personal details or verification by text.",
+      "The only official domain of the service is bankid.cz.",
+      "A phone call that follows the text is the next step of the scam."
+    ]
+  },
+  "whatToDo": {
+    "cs": [
+      "Na odkaz neklikejte a SMS smažte.",
+      "Pokud jste údaje zadali a někdo vám volá, zavěste a číslo zablokujte; zavolejte bance sami.",
+      "Nahlaste podvodnou stránku přes formulář pro hlášení kyberkriminality."
+    ],
+    "en": [
+      "Don’t click the link; delete the text.",
+      "If you entered details and someone calls, hang up and block the number; call your bank yourself.",
+      "Report the fake site through the cybercrime reporting form."
+    ]
+  },
+  "reportTo": [
+    "cz/your-bank",
+    "cz/hlaseni-kyberkriminality",
+    "cz/policie-trestni-oznameni"
+  ],
+  "sources": [
+    {
+      "title": "Nový typ podvodu – falešné SMS vydávající se za službu Bankovní identita",
+      "publisher": "Komerční banka",
+      "url": "https://www.kb.cz/cs/o-bance/novinky/bezpecnost/falesne-sms-vydavajici-se-za-sluzbu-bankovni-identita",
+      "date": "2026-02-24"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "cz/sms-banka-nove-zarizeni"
+  ]
+}

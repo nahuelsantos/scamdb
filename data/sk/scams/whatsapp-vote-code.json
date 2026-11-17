@@ -1,0 +1,125 @@
+{
+  "id": "sk/whatsapp-vote-code",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "sk": "Známy kontakt na WhatsAppe, ktorého účet už ovládajú podvodníci",
+    "en": "A known contact on WhatsApp whose account the scammers already control"
+  },
+  "name": {
+    "sk": "WhatsApp: „zahlasuj za moju dcéru“ a pošli kód",
+    "en": "WhatsApp: “vote for my daughter” and send the code"
+  },
+  "how": {
+    "sk": "Známy vám na WhatsAppe napíše, či by ste nezahlasovali v súťaži, napríklad za jeho dcéru. Odkaz vedie na stránku, kde treba zadať telefónne číslo a potom kód, ktorý vám príde v SMS. V skutočnosti je to kód na prihlásenie do vášho WhatsAppu. Podvodník prevezme účet a od vašich kontaktov pýta peniaze.",
+    "en": "Someone you know writes on WhatsApp asking you to vote in a contest, for example for their daughter. The link leads to a page where you enter your phone number and then the code you get by text. It is really the login code for your WhatsApp. The scammer takes over your account and asks your contacts for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Známy prosí o hlas v súťaži.",
+        "en": "A friend asks for your vote in a contest."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Pošle odkaz na „hlasovanie“.",
+        "en": "They send a link to “vote”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sk": "Treba zadať alebo poslať kód zo SMS.",
+        "en": "You must enter or send the code from a text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "sk": "Potom vaše kontakty dostávajú prosby o peniaze.",
+        "en": "Then your contacts get requests for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Ahoj, prepáč že otravujem 🙏 Moja Natálka je vo finále tanečnej súťaže, môžeš za ňu zahlasovať? Stačí sa overiť číslom tu [odkaz] a poslať mi kód, čo ti príde, aby sa hlas započítal. Ďakujem moc!",
+        "en": "Hi, sorry to bother you 🙏 My Natálka is in the final of a dance competition, could you vote for her? Just verify with your number here [link] and send me the code you get so the vote counts. Thanks so much!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "hlasovanie súťaž whatsapp kód",
+      "zahlasuj za dcéru pošli kód",
+      "ukradnutý účet whatsapp overovací kód",
+      "kamarát pýta kód zo SMS",
+      "prevzatý whatsapp pýta peniaze kontakty",
+      "známy chce aby som mu preposlala kód",
+      "hlasovanie za dieťa súťaž odkaz"
+    ],
+    "en": [
+      "vote in contest whatsapp code",
+      "vote for my daughter send the code",
+      "whatsapp account stolen verification code",
+      "friend asking for the text code",
+      "hijacked whatsapp asking contacts for money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "sk": [
+      "Na hlasovanie nikdy netreba SMS kód.",
+      "Overovací kód WhatsAppu nikomu neposielajte, ani známemu.",
+      "Neobvyklá prosba od známeho môže byť z ukradnutého účtu."
+    ],
+    "en": [
+      "Voting never needs a text code.",
+      "Never send your WhatsApp verification code to anyone, even a friend.",
+      "An unusual request from a friend may come from a stolen account."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Zapnite si v WhatsAppe dvojstupňové overenie (PIN).",
+      "Ak ste kód poslali, skontrolujte prepojené zariadenia a odpojte neznáme; kontakty upozornite inou cestou.",
+      "Prevzatie účtu oznámte polícii."
+    ],
+    "en": [
+      "Turn on two-step verification (PIN) in WhatsApp.",
+      "If you sent the code, check linked devices and remove unknown ones; warn your contacts another way.",
+      "Report the account takeover to the police."
+    ]
+  },
+  "reportTo": [
+    "sk/policia-oznamenie",
+    "sk/sk-cert"
+  ],
+  "sources": [
+    {
+      "title": "Polícia vydala naliehavé upozornenie. Slováci používajúci WhatsApp môžu prísť o peniaze aj súkromné údaje",
+      "publisher": "DRAN.sk (SITA)",
+      "url": "https://dran.sita.sk/policia-vydala-naliehave-upozornenie-slovaci-pouzivajuci-whatsapp-mozu-prist-o-peniaze-aj-sukromne-udaje/",
+      "date": "2026-05-22"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/ahoj-mami-new-number"
+  ]
+}

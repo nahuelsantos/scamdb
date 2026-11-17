@@ -1,0 +1,120 @@
+{
+  "id": "si/delo-naloge-spletna-platforma",
+  "country": "si",
+  "lang": "sl",
+  "status": "fading",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "sl": "»Kadrovnica« ali »agencija za zaposlovanje« (včasih z imenom znanega podjetja)",
+    "en": "A “recruiter” or “employment agency” (sometimes using a known company’s name)"
+  },
+  "name": {
+    "sl": "Delo na daljavo z »nalogami«: všečki, ocene in vplačila v kriptovalutah",
+    "en": "Remote “task” job: likes, reviews and deposits in crypto"
+  },
+  "how": {
+    "sl": "SMS z neznane številke, pogosto v angleščini, ponuja preprosto delo na daljavo s plačilom od 20 evrov do več sto evrov na dan. Pogovor se preseli na WhatsApp, kjer vam »kadrovnica« odpre račun na platformi podjetja. Naloge so všečkanje izdelkov, pisanje ocen ali »virtualna naročila«, zaslužek pa se kaže v USDT. Kmalu morate vplačati svoj denar, da »odklenete« bolje plačane naloge ali poravnate negativno stanje. Izplačila ni, platforma pa nekega dne izgine.",
+    "en": "A text from an unknown number, often in English, offers simple remote work paying from 20 euros to several hundred euros a day. The chat moves to WhatsApp, where a “recruiter” opens an account for you on the company’s platform. Tasks are liking products, writing reviews or “virtual orders”, and earnings show up in USDT. Soon you must deposit your own money to “unlock” better-paid tasks or clear a negative balance. There is no payout, and one day the platform disappears."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Nepričakovana ponudba za lahko delo od doma z visokim plačilom.",
+        "en": "An unexpected offer of easy home work with high pay."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sl": "Pogovor se preseli na WhatsApp s »kadrovnico«.",
+        "en": "The chat moves to WhatsApp with a “recruiter”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Za nadaljevanje morate vplačati denar ali kriptovalute.",
+        "en": "To continue you must deposit money or crypto."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sl": "Če ne vplačate takoj, izgubite ves zaslužek.",
+        "en": "If you don’t deposit now, you lose all your earnings."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Pozdravljeni! Naše podjetje išče sodelavce za delo s telefona, 30–60 minut na dan, plačilo 50–300 EUR dnevno. Izkušnje niso potrebne. Za več informacij mi pišite na WhatsApp. Lep pozdrav, Nina, kadrovska služba",
+        "en": "Hello! Our company is looking for people to work from their phone, 30–60 minutes a day, paid 50–300 EUR daily. No experience needed. Write to me on WhatsApp for more information. Kind regards, Nina, HR department"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "delo od doma všečkanje izdelkov plačilo",
+      "ponudba dela sms whatsapp kadrovnica",
+      "naloge platforma vplačati usdt",
+      "negativno stanje vplačilo odkleniti naloge",
+      "zaslužek ocene izdelkov dnevno"
+    ],
+    "en": [
+      "work from home liking products for money",
+      "job offer by text then whatsapp recruiter",
+      "tasks platform asked me to deposit usdt",
+      "negative balance deposit to unlock tasks",
+      "paid to write product reviews daily"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "sl": [
+      "Pravo delo nikoli ne zahteva, da delodajalcu plačate.",
+      "Visok zaslužek za všečke in ocene je neresničen.",
+      "Plačilo v kriptovalutah in platforma, ki je ne najdete nikjer drugje, sta znaka prevare."
+    ],
+    "en": [
+      "A real job never asks you to pay the employer.",
+      "High pay for likes and reviews is unrealistic.",
+      "Crypto payments and a platform you can’t find anywhere else are signs of fraud."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Ponudbo prezrite in številko blokirajte.",
+      "Ne vplačujte denarja, da bi »rešili« prejšnja vplačila.",
+      "Če ste plačali, shranite pogovore in potrdila ter prijavite goljufijo policiji in banki."
+    ],
+    "en": [
+      "Ignore the offer and block the number.",
+      "Don’t deposit more to “rescue” earlier deposits.",
+      "If you paid, keep the chats and receipts and report the fraud to the police and your bank."
+    ]
+  },
+  "reportTo": [
+    "si/policija-e-naznanilo",
+    "si/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Ponudba za delo iz pekla: če ste jo dobili, jo ignorirajte",
+      "publisher": "Siol.net",
+      "url": "https://siol.net/novice/digisvet/ponudba-za-delo-iz-pekla-ce-ste-jo-dobili-jo-ignorirajte-638661",
+      "date": "2024-07-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

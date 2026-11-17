@@ -1,0 +1,130 @@
+{
+  "id": "sk/marketplace-fake-seller",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "sk": "„Predajca“ na Bazoši, Facebook Marketplace alebo v bazárovej skupine",
+    "en": "A “seller” on Bazoš, Facebook Marketplace or a buy-and-sell group"
+  },
+  "name": {
+    "sk": "Falošný predajca na bazári: zaplatíte vopred, tovar nepríde",
+    "en": "Fake seller on a marketplace: you pay in advance, nothing arrives"
+  },
+  "how": {
+    "sk": "Na bazári alebo v skupine na Facebooku nájdete výhodnú ponuku: mobil, konzolu, kočík, lístky. Predajca sa nechce stretnúť, je vraj ďaleko alebo v zahraničí, a chce zálohu alebo celú sumu vopred na účet. Môže poslať fotku dokladu totožnosti alebo „potvrdenie o odoslaní“. Po zaplatení prestane odpovedať.",
+    "en": "On a marketplace or a Facebook group you find a good deal: a phone, a console, a pram, tickets. The seller doesn’t want to meet, saying they are far away or abroad, and wants a deposit or the full amount in advance to their account. They may send a photo of an ID or a “proof of dispatch”. After you pay they stop replying."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Výhodná ponuka, ktorú treba rýchlo chytiť.",
+        "en": "A good deal you have to grab quickly."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sk": "Predajca sa nechce stretnúť ani posielať na dobierku.",
+        "en": "The seller won’t meet or send cash on delivery."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "sk": "Chce zálohu alebo celú sumu vopred.",
+        "en": "They want a deposit or the full amount in advance."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sk": "Ďalší záujemcovia čakajú, treba sa rozhodnúť hneď.",
+        "en": "Other buyers are waiting; you must decide now."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Ahoj, konzola je ešte voľná, ale mám ďalších dvoch záujemcov. Som teraz v Nemecku, tak ti ju pošlem kuriérom. Keď mi dnes pošleš 200 € na účet, rezervujem ju pre teba a zajtra ráno odchádza. Fotku občianky ti kľudne pošlem, nech vidíš, že som reálny.",
+        "en": "Hi, the console is still available but I have two other buyers. I’m in Germany now, so I’ll send it by courier. If you send me 200 € today I’ll reserve it for you and it ships tomorrow morning. I can send a photo of my ID so you see I’m real."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "zaplatil som vopred predajca nereaguje",
+      "predajca bazár chce zálohu na účet",
+      "predajca v zahraničí pošle kuriérom",
+      "fotka občianky predajca podvod",
+      "tovar z marketplace neprišiel"
+    ],
+    "en": [
+      "paid seller in advance no reply",
+      "marketplace seller wants deposit",
+      "seller abroad will ship by courier",
+      "seller sent photo of id scam",
+      "item from marketplace never came"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "secrecy"
+  ],
+  "redFlags": {
+    "sk": [
+      "Predajca sa vyhýba osobnému odovzdaniu aj dobierke.",
+      "Fotka občianky nič nedokazuje, môže byť ukradnutá.",
+      "Tlak na rýchlu platbu."
+    ],
+    "en": [
+      "The seller avoids handing over in person and cash on delivery.",
+      "An ID photo proves nothing; it may be stolen.",
+      "Pressure to pay quickly."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Kupujte osobne alebo na dobierku; kartou máte viac ochrany ako prevodom.",
+      "Ak ste platili, požiadajte banku o vrátenie platby.",
+      "Podajte oznámenie na polícii, banka ho zvyčajne potrebuje."
+    ],
+    "en": [
+      "Buy in person or cash on delivery; a card gives more protection than a transfer.",
+      "If you paid, ask your bank to recover the payment.",
+      "Report it to the police; the bank usually needs the report."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "Podvody na Slovensku sa najčastejšie šíria cez Facebook, rastie aj hrozba z Telegramu",
+      "publisher": "SITA",
+      "url": "https://sita.sk/podvody-na-slovensku-sa-najcastejsie-siria-cez-facebook-rastie-aj-hrozba-z-telegramu/",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Podvody pri nákupoch na online bazároch nahláste banke aj polícii",
+      "publisher": "SITA",
+      "url": "https://sita.sk/podvody-pri-nakupoch-na-online-bazaroch-nahlaste-banke-aj-policii/",
+      "date": "2023-04-19"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/bazos-fake-buyer-link",
+    "sk/fake-eshop"
+  ]
+}

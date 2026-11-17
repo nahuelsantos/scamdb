@@ -1,0 +1,131 @@
+{
+  "id": "sk/fake-eshop",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "sk": "Internetový obchod alebo reklama, ktorá napodobňuje známu značku či predajcu",
+    "en": "An online shop or ad imitating a well-known brand or retailer"
+  },
+  "name": {
+    "sk": "Falošný e-shop: lacný tovar, ktorý nikdy nepríde",
+    "en": "Fake online shop: cheap goods that never arrive"
+  },
+  "how": {
+    "sk": "Cez reklamu na sociálnej sieti, SMS alebo e-mail sa dostanete do e-shopu, ktorý vyzerá ako známy obchod, len adresa sa líši pár znakmi. Ceny sú výrazne nižšie, napríklad pri výpredaji či Black Friday. Platí sa vopred, kartou alebo prevodom. Tovar nepríde, obchod nereaguje a po čase zmizne; údaje karty môžu byť zneužité.",
+    "en": "Through a social media ad, text or email you reach an online shop that looks like a well-known store, only the address differs by a few characters. Prices are much lower, for example in a sale or on Black Friday. You pay in advance by card or transfer. The goods never arrive, the shop doesn’t reply and later disappears; your card details may be misused."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Reklama s neuveriteľne nízkou cenou.",
+        "en": "An ad with an unbelievably low price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sk": "Adresa obchodu sa podobá známej značke.",
+        "en": "The shop address resembles a known brand."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "sk": "Akcia končí o pár hodín.",
+        "en": "The offer ends in a few hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sk": "Len platba vopred, bez dobierky.",
+        "en": "Advance payment only, no cash on delivery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "VÝPREDAJ SKLADU –70 %! Zimné bundy a topánky originálnych značiek od 29 €. Ponuka platí len do polnoci alebo do vypredania zásob. Objednávajte tu: [odkaz]",
+        "en": "WAREHOUSE CLEARANCE –70%! Original-brand winter jackets and boots from 29 €. Offer valid only until midnight or while stocks last. Order here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "falošný e-shop tovar neprišiel",
+      "reklama výpredaj podozrivo lacné",
+      "zaplatil som vopred obchod nereaguje",
+      "stránka napodobňuje známu značku",
+      "black friday podvodný obchod"
+    ],
+    "en": [
+      "fake online shop order never arrived",
+      "suspiciously cheap sale ad",
+      "paid in advance shop not responding",
+      "website imitating a known brand",
+      "black friday fake store"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sk": [
+      "Ceny výrazne nižšie ako inde.",
+      "Chýba názov firmy, IČO, adresa a obchodné podmienky.",
+      "Slovenská doména neznamená, že obchod je zo Slovenska."
+    ],
+    "en": [
+      "Prices much lower than elsewhere.",
+      "No company name, registration number, address or terms.",
+      "A Slovak domain doesn’t mean the shop is in Slovakia."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Pred nákupom si skontrolujte adresu a recenzie obchodu.",
+      "Ak ste platili kartou, hneď volajte banke a žiadajte reklamáciu platby.",
+      "Podajte oznámenie na polícii."
+    ],
+    "en": [
+      "Before buying, check the shop’s address and reviews.",
+      "If you paid by card, call your bank at once and ask to dispute the payment.",
+      "Report it to the police."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/policia-oznamenie",
+    "sk/sk-cert"
+  ],
+  "sources": [
+    {
+      "title": "Stačí jeden klik a namiesto výhodného nákupu prídete o peniaze. Polícia varuje pred pascou, ktorá vás pripraví o peniaze.",
+      "publisher": "Pravda",
+      "url": "https://www.pravda.sk/uzitocna/spotrebitel/clanok/2073921-staci-jeden-klik-a-namiesto-vyhodneho-nakupu-pridete-o-peniaze-policia-vydala-varovanie-pred-black-friday",
+      "date": "2026-11-07"
+    },
+    {
+      "title": "Podvody na Slovensku sa najčastejšie šíria cez Facebook, rastie aj hrozba z Telegramu",
+      "publisher": "SITA",
+      "url": "https://sita.sk/podvody-na-slovensku-sa-najcastejsie-siria-cez-facebook-rastie-aj-hrozba-z-telegramu/",
+      "date": "2026-02-26"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/marketplace-fake-seller"
+  ]
+}

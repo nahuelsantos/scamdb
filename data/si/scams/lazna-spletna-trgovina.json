@@ -1,0 +1,129 @@
+{
+  "id": "si/lazna-spletna-trgovina",
+  "country": "si",
+  "lang": "sl",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "sl": "Spletna trgovina z velikimi popusti (pogosto z besedo »Slovenija« ali »Ljubljana« v imenu)",
+    "en": "An online shop with huge discounts (often with “Slovenija” or “Ljubljana” in its name)"
+  },
+  "name": {
+    "sl": "Lažna spletna trgovina: znamke za pol cene, blaga ni",
+    "en": "Fake online shop: brands at half price, goods never arrive"
+  },
+  "how": {
+    "sl": "V oglasu na družbenem omrežju ali v iskalniku najdete trgovino z znanimi znamkami po izjemno nizkih cenah, popusti presegajo tudi 80 odstotkov, vse je na zalogi v vseh velikostih. Stran je lahko v slovenščini in s končnico .si, a podatkov o podjetju ni ali so izmišljeni, domena pa je bila registrirana pred kratkim. Po plačilu ne dobite ničesar, dobite ponaredek ali drug izdelek, trgovec pa se ne odziva. Tudi plačilo po povzetju ne zagotavlja varnosti.",
+    "en": "In a social media ad or a search engine you find a shop selling known brands at extremely low prices, with discounts even above 80 percent and everything in stock in every size. The site may be in Slovenian with a .si ending, but company details are missing or invented and the domain was registered recently. After paying you get nothing, a fake or a different product, and the seller doesn’t answer. Even cash on delivery is no guarantee."
+  },
+  "steps": [
+    {
+      "text": {
+        "sl": "Oglas z neverjetnimi popusti za znane znamke.",
+        "en": "An ad with unbelievable discounts on known brands."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "sl": "Trgovina se predstavlja kot slovenska ali kot uradna trgovina znamke.",
+        "en": "The shop poses as Slovenian or as the brand’s official store."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sl": "Akcija velja le še nekaj ur.",
+        "en": "The sale lasts only a few more hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "sl": "Plačilo vnaprej s kartico ali nakazilom.",
+        "en": "Payment in advance by card or transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sl": "Zapiramo trgovino v Ljubljani! Vsi športni copati znanih znamk -75 % samo še danes. Brezplačna dostava po vsej Sloveniji. Zaloge pošle hitro – naroči zdaj: [povezava]",
+        "en": "We’re closing our Ljubljana shop! All big-brand trainers -75% today only. Free delivery across Slovenia. Stock is running out fast – order now: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "sl": [
+      "spletna trgovina paket ni prispel",
+      "popust 80 odstotkov znamka oglas",
+      "trgovec odziva naročilo plačano",
+      "lažna trgovina slovenija ime domena",
+      "prejel ponaredek namesto naročenega izdelka"
+    ],
+    "en": [
+      "online shop order never arrived",
+      "80 percent off brand ad on facebook",
+      "seller does not answer after i paid",
+      "fake shop with slovenia in the name",
+      "got a fake instead of what i ordered"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "sl": [
+      "Nerealno nizke cene znanih znamk so glavni znak lažne trgovine.",
+      "Ni podatkov o podjetju, naslova ali telefona, ali pa so izmišljeni.",
+      "Domena je stara le nekaj tednov; končnica .si ali slovenščina ne pomenita slovenskega trgovca.",
+      "Plačan oglas na velikem omrežju ne dokazuje, da je trgovina prava."
+    ],
+    "en": [
+      "Unrealistically low prices on known brands are the main sign of a fake shop.",
+      "There are no company details, address or phone, or they are invented.",
+      "The domain is only weeks old; a .si ending or Slovenian text doesn’t mean a Slovenian seller.",
+      "A paid ad on a big platform doesn’t prove the shop is real."
+    ]
+  },
+  "whatToDo": {
+    "sl": [
+      "Pred nakupom preverite podatke o podjetju, starost domene in izkušnje drugih kupcev.",
+      "Če ste plačali s kartico, pokličite banko in vprašajte za blokado kartice in vračilo.",
+      "Za trgovce iz drugih držav EU se obrnite na Evropski potrošniški center, za slovenske na Tržni inšpektorat; goljufijo prijavite policiji."
+    ],
+    "en": [
+      "Before buying, check the company details, the domain’s age and other buyers’ experiences.",
+      "If you paid by card, call your bank and ask about blocking the card and a chargeback.",
+      "For sellers in other EU countries contact the European Consumer Centre, for Slovenian ones the Market Inspectorate; report fraud to the police."
+    ]
+  },
+  "reportTo": [
+    "si/your-bank",
+    "si/epc-slovenija",
+    "si/policija-e-naznanilo"
+  ],
+  "sources": [
+    {
+      "title": "Kupila kosilnico, ki ni delovala: Prodajalec iz Slovaške se ne odziva",
+      "publisher": "Svet24",
+      "url": "https://svet24.si/novice/slovenija/prevara-nakup-prodajalec-domena-1872469",
+      "date": "2026-01-10"
+    },
+    {
+      "title": "Ponovno opozarjamo - Ne nasedajte goljufivim spletnim trgovinam in oglasom",
+      "publisher": "Tržni inšpektorat RS (GOV.SI)",
+      "url": "https://www.gov.si/novice/2025-06-10-ponovno-opozarjamo-ne-nasedajte-goljufivim-spletnim-trgovinam-in-oglasom/",
+      "date": "2025-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

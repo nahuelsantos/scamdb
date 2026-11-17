@@ -1,0 +1,145 @@
+{
+  "id": "sk/fake-bank-safe-account",
+  "country": "sk",
+  "lang": "sk",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "sk": "„Vaša banka“, bezpečnostné oddelenie banky alebo „pracovník Národnej banky Slovenska“, často spolu s „policajtom“",
+    "en": "“Your bank”, its security department or an “employee of the National Bank of Slovakia”, often together with a “police officer”"
+  },
+  "name": {
+    "sk": "Falošný bankár alebo NBS: presuňte peniaze na „bezpečný účet“",
+    "en": "Fake bank or central bank employee: move your money to a “safe account”"
+  },
+  "how": {
+    "sk": "Volá vám niekto z „banky“, „NBS“ alebo „polície“: váš účet je napadnutý, niekto si na vás berie úver alebo sa vám chystá ukradnúť úspory. Aby ste peniaze zachránili, máte ich hneď previesť na „bezpečný“, „zrkadlový“ či „ochranný“ účet, alebo ich vybrať v hotovosti. Hovor pokračuje cez WhatsApp, posielajú vám falošné preukazy a dokumenty a nechcú, aby ste položili telefón alebo išli do pobočky. Účet patrí podvodníkom.",
+    "en": "Someone calls from “the bank”, “the National Bank (NBS)” or “the police”: your account has been hacked, someone is taking a loan in your name or is about to steal your savings. To save your money you must transfer it straight away to a “safe”, “mirror” or “protected” account, or withdraw it in cash. The call moves to WhatsApp, they send fake IDs and documents and don’t want you to hang up or go to a branch. The account belongs to the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "sk": "Hovor z „banky“ alebo „NBS“: váš účet je napadnutý alebo si na vás niekto berie úver.",
+        "en": "A call from “the bank” or “the NBS”: your account has been hacked or someone is taking a loan in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "sk": "Musíte konať hneď a nesmiete položiť telefón ani nikomu nič povedať.",
+        "en": "You must act right now and not hang up or tell anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "sk": "Peniaze máte previesť na „bezpečný účet“ alebo ich vybrať v hotovosti.",
+        "en": "You are told to transfer the money to a “safe account” or withdraw it in cash."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "sk": "Banke máte povedať, že platba je pre rodinu alebo za faktúru.",
+        "en": "You are told to tell the bank the payment is for family or an invoice."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "sk": "Dobrý deň, tu Novák, oddelenie bezpečnosti Národnej banky Slovenska. Zaznamenali sme, že na vaše meno práve niekto žiada úver vo výške 9 000 eur a z účtu odchádzajú platby. Vaše úspory sú v ohrození. Kým to zablokujeme, musíte ich previesť na dočasný chránený účet, číslo vám pošlem na WhatsApp. Nikomu v pobočke nehovorte, o čo ide, môžu byť zapletení.",
+        "en": "Good afternoon, this is Novák from the security department of the National Bank of Slovakia. We have seen that someone is applying for a loan of 9,000 euros in your name right now and payments are leaving your account. Your savings are at risk. Until we block it you must transfer them to a temporary protected account; I’ll send the number on WhatsApp. Don’t tell anyone at the branch what it’s about, they may be involved."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "sk": [
+      "volal falošný bankár",
+      "previesť peniaze na bezpečný účet",
+      "pracovník národnej banky volal",
+      "účet napadnutý hackermi",
+      "niekto si berie úver na moje meno",
+      "zrkadlový účet ochrana úspor",
+      "bezpečnostné oddelenie banky volá",
+      "banka volá podozrivé prihlásenie presunúť úspory",
+      "nezavesujte prevedieme peniaze iný účet"
+    ],
+    "en": [
+      "fake bank employee called",
+      "move my money to a safe account",
+      "national bank employee called me",
+      "someone taking a loan in my name",
+      "account hacked transfer savings"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "sk": [
+      "Banka, NBS ani polícia vás nikdy nežiadajú presunúť peniaze na „bezpečný účet“.",
+      "NBS nevedie účty pre občanov a nevolá im kvôli ich úsporám.",
+      "Číslo na displeji sa dá sfalšovať.",
+      "Ak vám radia klamať banke o účele platby, je to podvod."
+    ],
+    "en": [
+      "Your bank, the NBS and the police never ask you to move money to a “safe account”.",
+      "The NBS doesn’t hold accounts for the public and doesn’t call people about their savings.",
+      "The number on screen can be faked.",
+      "If they tell you to lie to your bank about the payment, it’s a scam."
+    ]
+  },
+  "whatToDo": {
+    "sk": [
+      "Položte telefón a zavolajte banke sami, na číslo zo zadnej strany karty.",
+      "Ak ste už poslali peniaze, okamžite volajte banke a žiadajte zastavenie platby.",
+      "Podajte oznámenie na polícii.",
+      "Upozornite starších príbuzných na tento trik."
+    ],
+    "en": [
+      "Hang up and call your bank yourself on the number on the back of your card.",
+      "If you already sent money, call your bank straight away and ask it to stop the payment.",
+      "Report it to the police.",
+      "Warn older relatives about this trick."
+    ]
+  },
+  "reportTo": [
+    "sk/your-bank",
+    "sk/policia-158",
+    "sk/policia-oznamenie"
+  ],
+  "sources": [
+    {
+      "title": "POZOR NA PODVODNÍKOV: Vydávajú sa za pracovníkov štátnych inštitúcií",
+      "publisher": "TASR (teraz.sk)",
+      "url": "https://www.teraz.sk/regiony/pozor-na-podvodnikov-vydavaju-sa-za/970721-clanok.html",
+      "date": "2026-06-16"
+    },
+    {
+      "title": "Stačí jeden telefonát a obec môže prísť o peniaze. Polícia varuje pred sofistikovaným podvodom",
+      "publisher": "Noviny.sk",
+      "url": "https://www.noviny.sk/slovensko/1235451-staci-jeden-telefonat-a-obec-moze-prist-o-peniaze-policia-varuje-pred-sofistikovanym-podvodom",
+      "date": "2026-07-17"
+    },
+    {
+      "title": "Deepfake, falošné banky a „bezpečné účty“. Ako sa mení tvár finančných podvodov?",
+      "publisher": "Noviny.sk (SITA)",
+      "url": "https://www.noviny.sk/ekonomika/1124955-deepfake-falosne-banky-a-bezpecne-ucty-ako-sa-meni-tvar-financnych-podvodov",
+      "date": "2025-10-23"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "sk/fake-police-cash-courier"
+  ]
+}
