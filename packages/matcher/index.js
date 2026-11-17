@@ -8,6 +8,10 @@ export const VERSION = '1.2.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
+// A scam from another country is shown only when it beats the best local match (and the threshold) by this much.
+export const ELSEWHERE_MARGIN = 3;
+// …and scores at least this on its own: a scam abroad must be a strong fit, not a few shared words.
+export const ELSEWHERE_MIN = 6;
 export const MAX_INPUT = 5000;
 // Asking for money is only "scam" with a second sign that it isn't who it seems or isn't what it seems: a relative
 // asking from their usual number, or a shop confirming a payment, stays "suspicious" at most.
@@ -24,10 +28,11 @@ export function hardRules(ids) {
   return has('asks_for_code') || has('remote_access') || (has('money_request') && has('impersonation'));
 }
 
-/** The best score over every language the entry has (its phrases plus its name in that language). */
-function scoreEntry(entry, text, words) {
-  const langs = Object.keys(entry.phrases ?? {});
-  return Math.max(0, ...langs.map((l) => scoreLang([...(entry.phrases[l] ?? []), entry.name?.[l] ?? ''], text, words)));
+/** The best score over every language the entry has (its phrases plus its name in that language). With `translated`,
+ * the machine-translated phrases count too (only for finding scams documented in another country). */
+function scoreEntry(entry, text, words, translated = false) {
+  const lists = { ...(translated ? entry.phrasesTranslated ?? {} : {}), ...(entry.phrases ?? {}) };
+  return Math.max(0, ...Object.keys(lists).map((l) => scoreLang([...(lists[l] ?? []), entry.name?.[l] ?? ''], text, words)));
 }
 
 function scoreLang(list, text, words) {
@@ -50,22 +55,32 @@ function scoreLang(list, text, words) {
 
 /**
  * @returns {{ verdict: 'scam'|'suspicious'|'not_recognised', score: null,
- *             signals: {id: string, evidence: string}[], matches: {id: string, score: number}[] }}
+ *             signals: {id: string, evidence: string}[], matches: {id: string, score: number}[],
+ *             elsewhere?: {id: string, score: number}[] }}
+ * With `elsewhere: true` (and a country), entries from other countries are scored too: a scam known only abroad (in
+ * any language its phrases cover) is returned in `elsewhere` when it fits clearly better than every local entry.
  */
-export function matchMessage(input, entries, { country, limit = 3 } = {}) {
+export function matchMessage(input, entries, { country, limit = 3, elsewhere = false, elsewhereMin = ELSEWHERE_MIN, elsewhereMargin = ELSEWHERE_MARGIN } = {}) {
   const raw = String(input ?? '').slice(0, MAX_INPUT);
   const text = normalize(raw);
   // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
   const set = new Set(tokens(text));
   const words = { set, fuzzy: [...set].filter((w) => w.length >= 4) };
-  const pool = country ? entries.filter((e) => e.country === country) : entries;
-  const matches = !text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, text, words), i }))
+  const rank = (pool, translated = false) => (!text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, text, words, translated), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)
-    .sort((a, b) => b.score - a.score || a.i - b.i)
-    .filter((r, _, all) => r.score >= MATCH_RELATIVE * all[0].score)
+    .sort((a, b) => b.score - a.score || a.i - b.i));
+  const local = rank(country ? entries.filter((e) => e.country === country) : entries);
+  const matches = local.filter((r, _, all) => r.score >= MATCH_RELATIVE * all[0].score)
     .slice(0, limit).map(({ id, score }) => ({ id, score }));
   const signals = readSignsWithEvidence(raw);
   const verdict = isScam(signals.map((s) => s.id)) ? 'scam'
     : signals.length || matches.length ? 'suspicious' : 'not_recognised';
-  return { verdict, score: null, signals, matches };
+  const out = { verdict, score: null, signals, matches };
+  if (elsewhere && country) {
+    const best = local[0]?.score ?? 0;
+    out.elsewhere = rank(entries.filter((e) => e.country !== country), true)
+      .filter((r) => r.score >= Math.max(elsewhereMin, best + elsewhereMargin))
+      .slice(0, 2).map(({ id, score }) => ({ id, score }));
+  }
+  return out;
 }

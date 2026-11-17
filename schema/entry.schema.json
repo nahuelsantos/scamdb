@@ -220,6 +220,10 @@
     },
     "updated": {
       "$ref": "text.schema.json#/$defs/date"
+    },
+    "phrasesTranslated": {
+      "$ref": "text.schema.json#/$defs/textList",
+      "description": "Machine-translated search phrases (tools/translate-phrases.mjs), used only to recognise this scam when it arrives in another language in another country. Never shown."
     }
   }
 }

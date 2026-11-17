@@ -34,12 +34,15 @@ export function validateCheck(b, countries) {
 /** The response body (pure). `result` is { verdict, score, signals: [{id, evidence}], matches: [{id}] }. */
 export function buildAnswer({ result, catalogue, top, lang, country, scorer, scorerError }) {
   const byId = new Map(catalogue.entries.map((e) => [e.id, e]));
-  const reportCountry = top?.country ?? (result.matches[0] ? byId.get(result.matches[0].id)?.country : null) ?? country;
+  const reportCountry = country ?? top?.country ?? (result.matches[0] ? byId.get(result.matches[0].id)?.country : null);
   return {
     verdict: result.verdict,
     score: result.score ?? null,
     signals: result.signals.map((s) => ({ id: s.id, label: pickText(catalogue.signals.get(s.id)?.label, lang) ?? s.id, evidence: s.evidence })),
     matches: result.matches.map(({ id }) => ({ id, name: pickText(byId.get(id)?.name, lang) ?? id, url: `${ORIGIN}/v1/scams/${id}.json`, page: `${ORIGIN}/catalogue/${id}/` })),
+    // Scams documented in another country (any language) that fit better than anything local. whatToDo and reportTo
+    // stay those of the caller's country.
+    seenElsewhere: (result.verdict === 'not_recognised' ? [] : result.elsewhere ?? []).map(({ id }) => ({ id, country: byId.get(id)?.country ?? id.split('/')[0], name: pickText(byId.get(id)?.name, lang) ?? id, url: `${ORIGIN}/v1/scams/${id}.json`, page: `${ORIGIN}/catalogue/${id}/` })),
     whatToDo: pickText(top?.whatToDo, lang) ?? [],
     reportTo: reportCountry ? `${ORIGIN}/v1/${reportCountry}/contacts.json` : null,
     engine: { matcher: VERSION, scorer, ...(scorerError ? { scorerError } : {}) },
@@ -85,7 +88,7 @@ export async function handleIsItAScam(request, env) {
   }
 
   await checkProbe(env.DB, subject, check.text, now); // many near-identical checks look like tuning a scam against us
-  let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined });
+  let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
   if (check.report && !check.country && !result.matches.length) throw invalid('country', 'needed to save a report when no catalogue scam matches');
   let scorer = 'matcher', scorerError = null; // keyed callers see why the AI step was skipped
   // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.

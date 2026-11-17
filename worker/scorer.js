@@ -112,7 +112,10 @@ export async function scoreWithWorkersAI(ai, { text, catalogue, country = null, 
         Object.assign(diag, { reason: 'answer', detail: clip(detail) });
         return null;
       }
-      return { ...parsed, matches: near.filter((n) => n.similarity >= SIMILAR).slice(0, 3), nearest: near[0]?.similarity ?? 0 };
+      // Embeddings are multilingual: a scam documented only in another country (and language) can still be the closest.
+      const localBest = near[0]?.similarity ?? 0;
+      const elsewhere = country ? nearAll.filter((n) => countryOf.get(n.id) !== country && n.similarity >= SIMILAR + 0.05 && n.similarity >= localBest + 0.05).slice(0, 2) : [];
+      return { ...parsed, matches: near.filter((n) => n.similarity >= SIMILAR).slice(0, 3), nearest: localBest, elsewhere };
     })(), timeoutMs);
   } catch (e) {
     const timedOut = e?.message === 'timeout';
@@ -141,5 +144,8 @@ export function combine(matcher, scorer, text) {
   const seen = new Set();
   const matches = verdict === 'not_recognised' ? []
     : [...matcher.matches, ...scorer.matches].filter((m) => !seen.has(m.id) && seen.add(m.id)).slice(0, 3);
-  return { verdict, score: Math.round(p * 100) / 100, signals, matches };
+  const seenE = new Set();
+  const elsewhere = verdict === 'not_recognised' ? []
+    : [...(matcher.elsewhere ?? []), ...(scorer.elsewhere ?? [])].filter((m) => !seenE.has(m.id) && seenE.add(m.id)).slice(0, 2);
+  return { verdict, score: Math.round(p * 100) / 100, signals, matches, elsewhere };
 }

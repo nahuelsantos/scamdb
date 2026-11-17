@@ -2,6 +2,38 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: scams known abroad, in any language ("seen elsewhere")
+
+**Owner's request:** a scam documented in one country and language must still be recognised when it arrives in
+another language elsewhere. For example, a US scam received in Spanish in Argentina.
+
+**Built:**
+- **New answer field:** `/v1/isitascam` answers carry `seenElsewhere`: scams from other countries that fit clearly
+  better than anything local. `whatToDo` and `reportTo` stay those of the caller's country. The report country is
+  now the caller's when one is given.
+- **Matcher:** with `elsewhere: true`, it also scores other countries' entries using **`phrasesTranslated`**.
+  These are machine-translated search phrases (es/en/pt, 272 lists, from `tools/translate-phrases.mjs` via Workers
+  AI), kept apart from the human-written `phrases` and never shown.
+- **AI scorer:** it keeps strong cross-country embedding matches (bge-m3 is multilingual) instead of filtering them
+  out by country.
+- **Test set:** `eval/crosslingual.json` has 90 labelled scam messages, translated by hand into another language
+  and checked against another country. `node tools/eval.mjs --cross` scores it.
+
+**Findings:**
+- **Before:** a Spanish version of a US-only scam got the right verdict from the warning signs, but matched
+  unrelated Argentine entries. Only 4 of 90 cross-language messages found their scam.
+- **Translated phrases alone:** 21 of 90 found, but 34 of 198 safe messages then showed an unrelated foreign scam.
+  Mixing translations into normal matching also broke local matching (a Spanish text with no country matched UK
+  entries), which is why they live in their own field.
+- **Keyword matching can't separate signal from noise across languages.** At settings with little noise (8 of 198
+  safe), it finds only 7 of 90. The strict setting is kept for free checks. **Meaning-based matching (the AI
+  embeddings, keyed checks) is the right tool.** It's measured on the same set after the Workers AI allowance
+  resets.
+- **Workers AI daily limit:** generating 540 translations used the account's free allocation for 17 Nov ("used up
+  your daily free allocation of 10,000 neurons"). **The account is on the Free plan, so nothing is billed.** On a
+  day the limit is hit, keyed checks fall back to the keyword matcher. **Rule from now on:** big AI jobs run right
+  after the UTC reset, one per day.
+
 ## 2026-11-17: Europe and worldwide discovery research; real screenshots
 
 **Research:**
