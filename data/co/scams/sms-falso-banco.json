@@ -1,0 +1,138 @@
+{
+  "id": "co/sms-falso-banco",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "es": "“Bancolombia”, “Nequi”, “Daviplata” o “Bre-B”",
+    "en": "“Bancolombia”, “Nequi”, “Daviplata” or “Bre-B”"
+  },
+  "name": {
+    "es": "SMS del banco: “pago recibido”, “cuenta bloqueada” o “seguro activado”, con enlace",
+    "en": "Bank text: “payment received”, “account blocked” or “insurance activated”, with a link"
+  },
+  "how": {
+    "es": "Le llega un mensaje de texto que parece de Bancolombia, Nequi, Daviplata o de un pago por Bre-B. Dice que recibió una plata, que su cuenta está bloqueada, que se activó un seguro que usted no pidió o que hay un problema con una transferencia. Trae un enlace a una página igualita a la del banco donde le piden usuario, clave y códigos. Con eso entran a su cuenta y le pasan la plata en minutos.",
+    "en": "You get a text message that looks like it is from Bancolombia, Nequi, Daviplata or a Bre-B payment. It says you received money, your account is blocked, an insurance policy you never asked for was activated, or there is a problem with a transfer. It has a link to a page that looks just like the bank’s, asking for your username, password and codes. With that they get into your account and move the money out within minutes."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le llega un SMS con el nombre de su banco, billetera o de Bre-B.",
+        "en": "You get a text with the name of your bank, wallet or Bre-B."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dice que la cuenta se bloquea o que debe actuar ya para no perder un pago.",
+        "en": "It says the account will be blocked or you must act now not to lose a payment."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace que no es el oficial del banco.",
+        "en": "It has a link that isn’t the bank’s official one."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página falsa le pide usuario, clave y el código que le llega.",
+        "en": "The fake page asks for your username, password and the code you receive."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Entran a su cuenta y transfieren la plata.",
+        "en": "They get into your account and transfer the money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Bancolombia: Se activo la poliza de proteccion por $89.900 mensuales a su cuenta. Si usted no la solicito, cancele antes de las 6 p.m. ingresando aqui [enlace]",
+        "en": "Bancolombia: A protection policy for $89,900 a month was activated on your account. If you did not request it, cancel before 6 p.m. by entering here [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mensaje de texto de bancolombia con un link",
+      "me llego un sms de nequi",
+      "mi cuenta fue bloqueada",
+      "seguro activado que no pedi",
+      "pago recibido por bre b",
+      "link para cancelar el cobro",
+      "meti mi clave en la pagina",
+      "transferencia pendiente por confirmar"
+    ],
+    "en": [
+      "text message from my bank with a link",
+      "account blocked sms",
+      "insurance i never signed up for",
+      "payment received via bre-b",
+      "link to cancel the charge",
+      "i entered my password on the page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un SMS del banco con un enlace para “cancelar”, “confirmar” o “desbloquear”.",
+      "La página le pide su clave y el código que le llega.",
+      "Un plazo de horas para no perder plata."
+    ],
+    "en": [
+      "A bank text with a link to “cancel”, “confirm” or “unblock”.",
+      "The page asks for your password and the code you receive.",
+      "A deadline of hours so you don’t lose money."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra el enlace: entre a la app oficial escribiendo usted la dirección o desde la tienda de apps.",
+      "Bre-B no tiene app propia ni enlaces externos: todo se hace desde la app de su banco.",
+      "Si ya puso la clave, llame a su banco para bloquear y cambie las claves."
+    ],
+    "en": [
+      "Don’t open the link: go into the official app yourself or type the address.",
+      "Bre-B has no app of its own or external links: everything happens in your bank’s app.",
+      "If you already entered your password, call your bank to block and change your passwords."
+    ]
+  },
+  "reportTo": [
+    "co/tu-banco",
+    "co/cai-virtual",
+    "co/denuncia-virtual"
+  ],
+  "sources": [
+    {
+      "title": "Bancolombia alerta a millones de clientes con peligrosa estafa que roba sus datos y dinero de las cuentas",
+      "publisher": "Noticias RCN",
+      "url": "https://www.noticiasrcn.com/economia/bancolombia-alerta-con-peligrosa-estafa-que-se-esta-dando-933218",
+      "date": "2025-09-09"
+    },
+    {
+      "title": "Alerta por estafa en Bre-B: el mensaje falso que vacía cuentas bancarias en Colombia",
+      "publisher": "El País (Cali)",
+      "url": "https://www.elpais.com.co/economia/alerta-por-estafa-en-bre-b-el-mensaje-falso-que-vacia-cuentas-bancarias-en-colombia-1740.html",
+      "date": "2026-07-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

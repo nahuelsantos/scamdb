@@ -1,0 +1,136 @@
+{
+  "id": "py/venta-fantasma",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Vendedor en Marketplace o Facebook",
+    "en": "Seller on Marketplace or Facebook"
+  },
+  "name": {
+    "es": "Ventas fantasma en Marketplace: celulares, aires o autos que nunca llegan",
+    "en": "Ghost sales on Marketplace: phones, air conditioners or cars that never arrive"
+  },
+  "how": {
+    "es": "En Marketplace o grupos de Facebook ofrecen celulares, aires acondicionados o hasta autos a un precio muy por debajo del mercado. Te piden pagar o señar por transferencia o billetera antes de entregar, con la excusa del envío. En el caso de autos, a veces son alquilados y los publican con sus documentos. Pagás y el vendedor desaparece o el auto no era suyo.",
+    "en": "On Marketplace or Facebook groups they offer phones, air conditioners or even cars far below market price. They ask you to pay or leave a deposit by transfer or e-wallet before delivery, using shipping as an excuse. With cars, they are sometimes rented and listed with their papers. You pay and the seller disappears, or the car wasn’t theirs."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves algo muy barato en Marketplace.",
+        "en": "You see something very cheap on Marketplace."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor te apura porque “hay muchos interesados”.",
+        "en": "The seller rushes you because “lots of people are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide pagar o señar por transferencia o billetera antes de entregar.",
+        "en": "They ask you to pay or leave a deposit by transfer or e-wallet before delivery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, sí está disponible el aire de 18.000 BTU, nuevo en caja. Hago envío al interior: me pasás la mitad por giro y el resto cuando te llega. Tengo varios interesados, avisame rápido.",
+        "en": "Hi, yes the 18,000 BTU air conditioner is available, new in the box. I ship to the countryside: send half by money transfer and the rest when it arrives. I have several people interested, let me know quickly."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "marketplace",
+      "compre en marketplace y nunca llego",
+      "pagar por adelantado",
+      "seña por transferencia",
+      "me bloqueo despues de pagar",
+      "celular muy barato",
+      "iphone barato",
+      "auto a precio de remate",
+      "vendedor informal",
+      "envio al interior",
+      "pagar por billetera antes de recibir",
+      "pagar una parte antes de recibir",
+      "celular de ciudad del este",
+      "precio por debajo del mercado",
+      "nuevo en caja"
+    ],
+    "en": [
+      "bought on marketplace and it never arrived",
+      "pay up front",
+      "deposit by transfer",
+      "blocked me after paying",
+      "very cheap price",
+      "car at a bargain price"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El precio está muy por debajo de lo normal.",
+      "Te piden pagar antes de ver el producto.",
+      "No quiere encontrarse en persona ni dejar revisar el vehículo."
+    ],
+    "en": [
+      "The price is far below normal.",
+      "They ask you to pay before you see the product.",
+      "They won’t meet in person or let you check the vehicle."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Pagá solo al recibir y ver el producto, en un lugar seguro.",
+      "Para un auto, verificá los documentos antes de pagar.",
+      "Si ya pagaste, guardá comprobantes y chats y hacé la denuncia."
+    ],
+    "en": [
+      "Pay only when you receive and see the product, in a safe place.",
+      "For a car, check the papers before paying.",
+      "If you already paid, keep receipts and chats and report it."
+    ]
+  },
+  "reportTo": [
+    "py/policia-cibercrimen",
+    "py/fiscalia",
+    "py/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Las estafas cibernéticas más utilizadas, en qué consisten y cómo evitarlas",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/08/11/las-estafas-ciberneticas-mas-utilizadas-en-que-consisten-y-como-evitarlas",
+      "date": "2026-08-11"
+    },
+    {
+      "title": "¡Alerta de la Policía! Auge de tres modalidades de estafa en venta de autos",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/policiales/2026/08/27/alerta-de-la-policia-auge-de-tres-modalidades-de-estafa-en-venta-de-autos/",
+      "date": "2026-08-27"
+    },
+    {
+      "title": "Alerta de fin de año: cuáles son las 10 estafas frecuentes y cómo protegerse",
+      "publisher": "El Nacional",
+      "url": "https://elnacional.com.py/economia/alerta-fin-ano-cuales-son-10-estafas-frecuentes-como-protegerse-n97146",
+      "date": "2025-12-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

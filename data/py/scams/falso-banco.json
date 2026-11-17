@@ -1,0 +1,152 @@
+{
+  "id": "py/falso-banco",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Tu banco” (Itaú, Continental, BNF u otro)",
+    "en": "“Your bank” (Itaú, Continental, BNF or another)"
+  },
+  "name": {
+    "es": "“Tu cuenta será bloqueada”: página falsa del banco",
+    "en": "“Your account will be blocked”: a fake bank page"
+  },
+  "how": {
+    "es": "Te llega un SMS, un correo o una llamada que dice que tu cuenta del banco se va a bloquear o que hay un movimiento raro, y te pasan un enlace. A veces la página falsa aparece primera en Google cuando buscás tu banco. Se ve igual que la del banco, con sus colores, y te pide usuario, clave, token y PIN transaccional. Con eso vacían tu cuenta en minutos.",
+    "en": "You get a text, email or call saying your bank account will be blocked or there is unusual activity, with a link. Sometimes the fake page shows up first on Google when you search for your bank. It looks just like the bank’s, with its colours, and asks for your username, password, token and transaction PIN. With those they empty your account in minutes."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan que tu cuenta se bloquea o que hay un movimiento que no reconocés.",
+        "en": "They tell you your account is being blocked or there is a transaction you don’t recognise."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dan pocos minutos para actuar.",
+        "en": "They give you only a few minutes to act."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te mandan un enlace, o entrás desde el primer resultado de Google, a una página que imita al banco.",
+        "en": "They send a link, or you click the first Google result, to a page that copies the bank."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden clave, token y PIN transaccional, y con eso transfieren tu plata.",
+        "en": "They ask for your password, token and transaction PIN, and use them to transfer your money."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Estimado cliente: detectamos un acceso no autorizado a su cuenta. Para evitar el bloqueo definitivo valide sus datos dentro de los próximos 15 minutos en [enlace]",
+        "en": "Dear customer: we detected unauthorised access to your account. To avoid permanent blocking, validate your details within the next 15 minutes at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "mi cuenta va a ser bloqueada",
+      "cuenta bloqueada",
+      "validar mis datos del banco",
+      "actualizar datos del banco",
+      "pagina falsa del banco",
+      "entre al primer resultado de google",
+      "me pidieron el token",
+      "pin transaccional",
+      "me vaciaron la cuenta",
+      "acceso no autorizado",
+      "desbloquear la cuenta",
+      "correo del banco con un enlace",
+      "me suspendieron el homebanking",
+      "bloquearon mi usuario del banco"
+    ],
+    "en": [
+      "my account will be blocked",
+      "validate my bank details",
+      "fake bank website",
+      "they asked for my token",
+      "transaction pin",
+      "they emptied my account",
+      "unauthorised access"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Te apuran con que la cuenta se bloquea en minutos.",
+      "El enlace no es exactamente la dirección oficial del banco.",
+      "Te piden token, PIN o clave: el banco nunca los pide."
+    ],
+    "en": [
+      "They rush you, saying the account will be blocked in minutes.",
+      "The link is not exactly the bank’s official address.",
+      "They ask for your token, PIN or password: the bank never does."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el enlace. Escribí vos la dirección del banco o usá su app.",
+      "No entres al primer resultado de Google sin mirar la dirección.",
+      "Si ya pusiste tus datos, llamá ya al número que está detrás de tu tarjeta para bloquear todo, y hacé la denuncia."
+    ],
+    "en": [
+      "Don’t tap the link. Type the bank’s address yourself or use its app.",
+      "Don’t click the first Google result without checking the address.",
+      "If you already entered your details, call the number on the back of your card now to block everything, and report it."
+    ]
+  },
+  "reportTo": [
+    "py/tu-banco",
+    "py/itau",
+    "py/policia-cibercrimen",
+    "py/fiscalia",
+    "py/cert-py"
+  ],
+  "story": {
+    "es": "Un hombre buscó su banco en Google, entró al primer resultado y cargó su clave, token y PIN. Al día siguiente le habían transferido G. 25 millones de su cuenta; hizo la denuncia en la Fiscalía, la Sedeco y el BCP.",
+    "en": "A man searched for his bank on Google, opened the first result and entered his password, token and PIN. Soon after, G. 25 million had been transferred out of his account; he reported it to the prosecutor’s office, the consumer agency and the central bank."
+  },
+  "sources": [
+    {
+      "title": "BCP insta a desconfiar de pedidos de datos y llamados urgentes por bloqueo de cuenta",
+      "publisher": "La Nación",
+      "url": "https://www.lanacion.com.py/negocios/2026/09/24/bcp-insta-a-desconfiar-de-pedidos-de-datos-y-llamados-urgentes-por-bloqueo-de-cuenta/",
+      "date": "2026-09-24"
+    },
+    {
+      "title": "Ciberestafas y vaciamientos de cuentas: víctima relata cómo le robaron G. 25 millones",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/policiales/2026/08/04/ciberestafas-y-vaciamientos-de-cuentas-victima-cuenta-como-le-robaron-g-25-millones/",
+      "date": "2026-08-04"
+    },
+    {
+      "title": "Las estafas cibernéticas más utilizadas, en qué consisten y cómo evitarlas",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/08/11/las-estafas-ciberneticas-mas-utilizadas-en-que-consisten-y-como-evitarlas",
+      "date": "2026-08-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

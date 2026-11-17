@@ -1,0 +1,141 @@
+{
+  "id": "py/familiar-pide-plata",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Un familiar o amigo”, con su foto de perfil",
+    "en": "“A relative or friend”, with their profile photo"
+  },
+  "name": {
+    "es": "El amigo o familiar que te escribe con una urgencia y te pide plata",
+    "en": "The friend or relative who writes with an emergency and asks for money"
+  },
+  "how": {
+    "es": "Te escribe por WhatsApp alguien con la foto de un familiar o amigo: copiaron su foto en otro número o le robaron la cuenta. Cuenta una urgencia (se le pinchó la goma, tiene que pagar algo hoy) y te pide que le transfieras uno o dos millones, muchas veces a la cuenta de otra persona. Promete devolverte mañana. La Policía dice que muchos de estos mensajes salen de las cárceles.",
+    "en": "Someone with a relative’s or friend’s photo writes to you on WhatsApp: they copied the photo onto another number or stole the account. They tell you about an emergency (a flat tyre, a bill to pay today) and ask you to transfer one or two million guaraníes, often to someone else’s account. They promise to pay you back tomorrow. Police say many of these messages come from prisons."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe “tu amigo” o “tu familiar”, con su foto, a veces desde un número nuevo.",
+        "en": "“Your friend” or “your relative” writes with their photo, sometimes from a new number."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "es": "Te cuenta una emergencia y que necesita la plata ya.",
+        "en": "They describe an emergency and need the money now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide una transferencia, a menudo a la cuenta de otra persona.",
+        "en": "They ask for a transfer, often to someone else’s account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "No puede atender llamadas: solo escribe.",
+        "en": "They can’t take calls: they only text."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, ¿cómo estás? Te molesto porque me quedé tirado en la ruta y el gomero no acepta tarjeta. ¿Me podés pasar 900 mil a esta cuenta de un conocido? Mañana temprano te devuelvo sin falta.",
+        "en": "Hi, how are you? Sorry to bother you, I’m stuck on the highway and the tyre repairer won’t take cards. Could you send 900,000 to this account of someone I know? I’ll pay you back first thing tomorrow."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidio prestado por whatsapp",
+      "pidio plata con urgencia",
+      "pagarle al gomero",
+      "se quedo varado",
+      "se le rompio el vehiculo",
+      "girar a la cuenta de otra persona",
+      "transferir a la cuenta de un conocido",
+      "copiaron la foto de perfil",
+      "perfil falso de mi familiar",
+      "le robaron el whatsapp a mi amiga",
+      "me escribio desde otro numero",
+      "no atiende llamadas",
+      "no le avises a nadie"
+    ],
+    "en": [
+      "asked to borrow money on whatsapp",
+      "urgent money request",
+      "transfer to someone else’s account",
+      "they copied the profile photo",
+      "fake profile of my relative",
+      "wrote from another number"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "es": [
+      "Te pide plata con urgencia por WhatsApp, aunque sea de un número conocido.",
+      "La cuenta para transferir es de otra persona.",
+      "Evita atender una llamada normal."
+    ],
+    "en": [
+      "They urgently ask for money on WhatsApp, even from a known number.",
+      "The account to transfer to belongs to someone else.",
+      "They avoid taking a normal call."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llamá a esa persona por una llamada común (no por WhatsApp) al número que ya tenías.",
+      "No transfieras hasta hablar con ella.",
+      "Bloqueá y denunciá el número en WhatsApp, y avisá a la persona para que alerte a sus contactos."
+    ],
+    "en": [
+      "Call that person with a normal phone call (not WhatsApp) on the number you already had.",
+      "Don’t transfer until you have spoken to them.",
+      "Block and report the number in WhatsApp, and tell the person so they can warn their contacts."
+    ]
+  },
+  "reportTo": [
+    "py/policia-cibercrimen",
+    "py/fiscalia",
+    "py/whatsapp-ayuda"
+  ],
+  "sources": [
+    {
+      "title": "Las estafas cibernéticas más utilizadas, en qué consisten y cómo evitarlas",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/08/11/las-estafas-ciberneticas-mas-utilizadas-en-que-consisten-y-como-evitarlas",
+      "date": "2026-08-11"
+    },
+    {
+      "title": "Ganar dinero con “tareas” online, una de las formas de fraude digital",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/04/14/ganar-dinero-con-tareas-online-una-de-las-formas-de-fraude-digital",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Cómo evitar estafas y el “hackeo” de WhatsApp: una guía de la Policía Nacional",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/policiales/2026/08/08/como-evitar-estafas-y-el-hackeo-de-whatsapp-una-guia-de-la-policia-nacional/",
+      "date": "2026-08-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "bo/multa-transito-falsa",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "La “Dirección de Tránsito”",
+    "en": "The “Traffic Directorate”"
+  },
+  "name": {
+    "es": "Falsa multa de Tránsito por WhatsApp: “paga hoy o te retenemos la licencia”",
+    "en": "Fake traffic fine on WhatsApp: “pay today or we withhold your licence”"
+  },
+  "how": {
+    "es": "Te escriben por WhatsApp o redes haciéndose pasar por Tránsito: cometiste una infracción (exceso de velocidad, pasar en rojo) y si no pagas ya te retendrán la licencia hasta un año o te embargarán bienes. El mensaje trae un enlace a una página que imita un portal del Estado o un QR para pagar unos 200 bolivianos. Después de pagar, te bloquean. La Policía no cobra multas por mensajes.",
+    "en": "They write to you on WhatsApp or social media posing as the Traffic police: you committed an offence (speeding, running a red light) and if you don’t pay now your licence will be withheld for up to a year or your assets seized. The message has a link to a page imitating a government portal, or a QR to pay around 200 bolivianos. After you pay, they block you. The police don’t collect fines by message."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe la supuesta Dirección de Tránsito.",
+        "en": "The supposed Traffic Directorate writes to you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te amenaza con retener tu licencia o embargarte si no pagas hoy.",
+        "en": "It threatens to withhold your licence or seize assets if you don’t pay today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Trae un enlace o un portal que imita al del Estado.",
+        "en": "It has a link or a portal imitating the government’s."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te pide pagar la multa por QR o transferencia.",
+        "en": "It asks you to pay the fine by QR or transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "DIRECCION DE TRANSITO: Su vehiculo registra infraccion por exceso de velocidad. Monto: Bs 180. De no cancelar en 24 horas su licencia sera retenida por 1 año. Consulte y pague aqui: [enlace]",
+        "en": "TRAFFIC DIRECTORATE: Your vehicle has a speeding offence. Amount: Bs 180. If not paid within 24 hours your licence will be withheld for 1 year. Check and pay here: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "multa",
+      "infraccion",
+      "papeleta",
+      "transito",
+      "multa de transito por whatsapp",
+      "infraccion por exceso de velocidad",
+      "me van a retener la licencia",
+      "pagar la multa por qr",
+      "consulta de infracciones",
+      "transito me escribio",
+      "embargo de bienes por multa",
+      "placa del auto",
+      "semaforo en rojo"
+    ],
+    "en": [
+      "fine",
+      "traffic fine on whatsapp",
+      "speeding offence",
+      "they'll withhold my licence",
+      "pay the fine by qr",
+      "check traffic offences",
+      "traffic police messaged me",
+      "traffic ticket",
+      "number plate"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una multa que llega por WhatsApp o redes sociales.",
+      "Amenaza con retener la licencia o embargar en pocas horas.",
+      "Un enlace acortado o una página que no termina en .gob.bo.",
+      "Te piden pagar por QR a una cuenta personal."
+    ],
+    "en": [
+      "A fine that arrives by WhatsApp or social media.",
+      "It threatens to withhold your licence or seize assets within hours.",
+      "A shortened link or a page that doesn’t end in .gob.bo.",
+      "They ask you to pay by QR to a personal account."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace ni pagues: las multas se consultan y pagan en las oficinas o canales oficiales de Tránsito.",
+      "Si pagaste, guarda el comprobante y el chat y denuncia en la FELCC.",
+      "Reporta el número en Bloquea la Estafa."
+    ],
+    "en": [
+      "Don’t open the link or pay: fines are checked and paid at Traffic offices or official channels.",
+      "If you paid, keep the receipt and chat and report it to the FELCC.",
+      "Report the number on Bloquea la Estafa."
+    ]
+  },
+  "reportTo": [
+    "bo/felcc",
+    "bo/att-bloquea-la-estafa"
+  ],
+  "sources": [
+    {
+      "title": "Alerta en Cochabamba: Detectan nueva modalidad de estafa digital por WhatsApp usando falsas multas de Tránsito",
+      "publisher": "Red Uno, vía eju.tv",
+      "url": "https://eju.tv/?p=5042159",
+      "date": "2026-07-21"
+    },
+    {
+      "title": "Policía boliviana atendió 2.826 denuncias de estafa en 6 meses",
+      "publisher": "El País (Tarija), vía eju.tv",
+      "url": "https://eju.tv/2026/10/policia-boliviana-atendio-2-826-denuncias-de-estafa-en-6-meses/",
+      "date": "2026-10-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

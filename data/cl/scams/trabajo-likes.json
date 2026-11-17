@@ -1,0 +1,115 @@
+{
+  "id": "cl/trabajo-likes",
+  "country": "cl",
+  "lang": "es",
+  "status": "fading",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "Número extranjero por WhatsApp",
+    "en": "Foreign number on WhatsApp"
+  },
+  "name": {
+    "es": "“¿Tienes tiempo?”: el trabajo por dar likes",
+    "en": "“Do you have time?”: the job of giving likes"
+  },
+  "how": {
+    "es": "Te escribe por WhatsApp un número extranjero: “¿tienes tiempo?”. Te ofrecen ganar plata desde la casa dando likes a videos o haciendo tareas simples. Al principio te pagan montos chicos, después te pasan a Telegram y te piden pagar para hacerte “socia” o desbloquear ganancias. Cuando pones más plata, desaparecen.",
+    "en": "A foreign number writes on WhatsApp: “do you have time?”. They offer money from home for liking videos or doing simple tasks. At first they pay small amounts, then move you to Telegram and ask you to pay to become a “member” or unlock earnings. When you put in more money, they vanish."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un número extranjero ofreciendo trabajo fácil desde la casa.",
+        "en": "A foreign number writes offering easy work from home."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pagan montos chicos al principio para ganar tu confianza.",
+        "en": "They pay small amounts at first to win your trust."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te pasan a Telegram y te piden depositar para seguir o retirar.",
+        "en": "They move you to Telegram and ask you to deposit to continue or withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola 😊 ¿tienes unos minutos? Buscamos personas para apoyar a creadores dando me gusta a sus videos desde el celular. Pagamos entre $25.000 y $60.000 diarios, sin experiencia. Si te interesa te agrego con mi supervisora.",
+        "en": "Hi 😊 do you have a few minutes? We’re looking for people to support creators by liking their videos from their phone. We pay 25,000 to 60,000 pesos a day, no experience needed. If you’re interested I’ll add you to my supervisor."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "trabajo por dar likes",
+      "me preguntaron si tenia tiempo libre",
+      "ganar plata dando me gusta",
+      "tareas pagadas por telegram",
+      "aporte para ser socia",
+      "likes a videos de youtube",
+      "prefijo extranjero ofreciendo trabajo"
+    ],
+    "en": [
+      "paid to like videos",
+      "job offer from a foreign number",
+      "tasks on telegram",
+      "pay to unlock my earnings",
+      "work from home liking videos",
+      "do you have time message"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie paga por dar likes.",
+      "Un número extranjero que no conoces.",
+      "Te piden plata para seguir “trabajando” o retirar."
+    ],
+    "en": [
+      "Nobody pays for giving likes.",
+      "A foreign number you don’t know.",
+      "They ask for money to keep “working” or to withdraw."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No respondas, bloquea y reporta el número en WhatsApp.",
+      "No deposites para “desbloquear” ganancias.",
+      "Si ya pagaste, denuncia en la PDI."
+    ],
+    "en": [
+      "Don’t reply; block and report the number in WhatsApp.",
+      "Don’t deposit to “unlock” earnings.",
+      "If you already paid, report it to the PDI."
+    ]
+  },
+  "reportTo": [
+    "cl/pdi",
+    "cl/whatsapp-ayuda"
+  ],
+  "sources": [
+    {
+      "title": "“Hola, tienes tiempo”: alertan de millonarias estafas por WhatsApp donde ofrecen trabajo desde casa",
+      "publisher": "24horas",
+      "url": "https://www.24horas.cl/actualidad/nacional/hola-tienes-tiempo-alertan-de-millonarias-estafas-por-whatsapp-oferta-trabajo",
+      "date": "2024-01-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

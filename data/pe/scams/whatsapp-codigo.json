@@ -1,0 +1,130 @@
+{
+  "id": "pe/whatsapp-codigo",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Soporte de WhatsApp” o un contacto",
+    "en": "“WhatsApp support” or a contact"
+  },
+  "name": {
+    "es": "Te roban el WhatsApp con el código de 6 dígitos",
+    "en": "They steal your WhatsApp with the 6-digit code"
+  },
+  "how": {
+    "es": "Alguien instala WhatsApp con tu número en otro celular y te escribe para que le pases el código que te llega, con la excusa de “verificar que eres el titular” o de cambios de seguridad. Si lo das, pierden tu cuenta y piden plata a tus contactos haciéndose pasar por ti.",
+    "en": "Someone installs WhatsApp with your number on another phone and messages you to pass on the code you receive, with the excuse of “verifying you are the owner” or security changes. If you give it, you lose your account and they ask your contacts for money pretending to be you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escriben como soporte, una empresa o un conocido.",
+        "en": "They write as support, a company or someone you know."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te avisan que te llegará un código y te piden reenviarlo.",
+        "en": "They warn a code will arrive and ask you to forward it."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Pierdes el control de tu WhatsApp.",
+        "en": "You lose control of your WhatsApp."
+      }
+    },
+    {
+      "text": {
+        "es": "Desde tu cuenta piden dinero urgente a tus contactos.",
+        "en": "From your account they ask your contacts for urgent money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, somos el equipo de verificación de WhatsApp. Por cambios en las políticas de seguridad necesitamos confirmar que eres el titular de la línea. Te enviamos un código de 6 dígitos por SMS, respóndenos con él para no desactivar tu cuenta.",
+        "en": "Hi, we are the WhatsApp verification team. Due to changes in the security policies we need to confirm you are the line owner. We sent you a 6-digit code by SMS, reply with it so your account is not deactivated."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo de whatsapp",
+      "codigo de seis digitos",
+      "hackearon mi whatsapp",
+      "clonaron mi whatsapp",
+      "piden plata a mis contactos",
+      "verificar que soy el titular",
+      "perdi mi whatsapp",
+      "me pidio reenviar un codigo de sms",
+      "se registro por error con mi linea",
+      "una amiga me pidio un codigo"
+    ],
+    "en": [
+      "they asked for my whatsapp code",
+      "six digit code",
+      "my whatsapp was stolen",
+      "asking my contacts for money",
+      "verify i am the owner",
+      "lost my whatsapp account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden un código que llegó a tu celular.",
+      "Dicen ser de WhatsApp o de “verificación”.",
+      "Un contacto te pide plata urgente desde su número de siempre pero escribe raro."
+    ],
+    "en": [
+      "They ask for a code that reached your phone.",
+      "They claim to be from WhatsApp or “verification”.",
+      "A contact asks for urgent money from their usual number but writes oddly."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca compartas el código de WhatsApp, ni con conocidos.",
+      "Activa la verificación en dos pasos.",
+      "Si te la robaron, avisa a tus contactos y denuncia en la comisaría o la Divindat."
+    ],
+    "en": [
+      "Never share your WhatsApp code, not even with people you know.",
+      "Turn on two-step verification.",
+      "If it was stolen, warn your contacts and report it to the police or Divindat."
+    ]
+  },
+  "reportTo": [
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Mujer denuncia suplantación de identidad en WhatsApp: ciberdelincuentes pidieron dinero a sus contactos",
+      "publisher": "El Tiempo (Perú)",
+      "url": "https://eltiempo.pe/nacional/mujer-denuncia-suplantacion-de-identidad-en-whatsapp-ciberdelincuentes-pidieron-dinero-a-sus-contactos-ru/",
+      "date": "2025-09-12"
+    },
+    {
+      "title": "Alerta por robos de cuenta de WhatsApp",
+      "publisher": "Ministerio del Interior",
+      "url": "https://www.gob.pe/institucion/mininter/campa%C3%B1as/48718-alerta-por-robos-de-cuenta-de-whatsapp",
+      "date": "2024-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

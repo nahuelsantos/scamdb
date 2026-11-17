@@ -1,0 +1,157 @@
+{
+  "id": "bo/falso-funcionario-banco",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu banco”",
+    "en": "“Your bank”"
+  },
+  "name": {
+    "es": "“Le llamo del banco”: el falso funcionario que pide claves y códigos",
+    "en": "“I’m calling from your bank”: the fake bank officer who asks for passwords and codes"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser funcionario de tu banco. Te avisa de un bloqueo, una operación sospechosa o una transferencia que no hiciste y te pide tu clave, el código que te llega por SMS o tus datos para “frenarla”. Con eso entra a tu banca móvil y mueve tu plata. A veces te pide instalar una aplicación o compartir la pantalla. La ASFI informó que en 2026 los reclamos por operaciones digitales no reconocidas se duplicaron.",
+    "en": "Someone calls saying they work for your bank. They warn you of a block, a suspicious transaction or a transfer you didn’t make, and ask for your password, the code you get by SMS or your details to “stop it”. With that they get into your mobile banking and move your money. Sometimes they ask you to install an app or share your screen. Bolivia’s financial regulator ASFI reported that complaints about unrecognised digital transactions more than doubled in 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un supuesto funcionario del banco.",
+        "en": "A supposed bank officer calls you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dice que tu cuenta está bloqueada o que hay una operación sospechosa.",
+        "en": "They say your account is blocked or there is a suspicious transaction."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide tu clave o el código que te llegó por SMS.",
+        "en": "They ask for your password or the code you got by SMS."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "A veces te hace instalar una app o compartir la pantalla.",
+        "en": "Sometimes they get you to install an app or share your screen."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Vacía tu cuenta con transferencias que no hiciste.",
+        "en": "They empty your account with transfers you didn’t make."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le habla Rodrigo del área de seguridad de su banco. Tenemos una transferencia de 4.500 bolivianos pendiente desde su cuenta. Si usted no la hizo, le va a llegar un código de verificación; dígamelo para anularla ahorita.",
+        "en": "Good afternoon, this is Rodrigo from your bank’s security area. We have a pending transfer of 4,500 bolivianos from your account. If you didn’t make it, you’ll receive a verification code; read it to me so I can cancel it right now."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "clave",
+      "me llamaron del banco",
+      "funcionario del banco",
+      "operacion sospechosa",
+      "su cuenta esta bloqueada",
+      "me pidieron la clave",
+      "codigo de verificacion",
+      "dicte el codigo",
+      "transferencia que no hice",
+      "me vaciaron la cuenta",
+      "area de seguridad del banco",
+      "compartir pantalla",
+      "tarjeta de debito",
+      "compra no reconocida",
+      "bloquear la tarjeta",
+      "seguridad del banco"
+    ],
+    "en": [
+      "the bank called me",
+      "bank officer",
+      "suspicious transaction",
+      "your account is blocked",
+      "they asked for my password",
+      "verification code",
+      "read me the code",
+      "transfer i didn't make",
+      "they emptied my account",
+      "debit card",
+      "unrecognised purchase",
+      "block the card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El “banco” te llama a ti por una operación sospechosa.",
+      "Te pide clave, PIN o un código que te llegó por SMS.",
+      "Te apura para que actúes mientras sigues en la llamada.",
+      "Te pide instalar una aplicación o compartir la pantalla."
+    ],
+    "en": [
+      "The “bank” calls you about a suspicious transaction.",
+      "They ask for your password, PIN or a code you got by SMS.",
+      "They rush you to act while still on the call.",
+      "They ask you to install an app or share your screen."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Corta y llama tú al número oficial de tu banco (está atrás de tu tarjeta o en su página).",
+      "Ningún banco te pide claves ni códigos por teléfono.",
+      "Si ya diste datos, pide al banco el bloqueo de tu banca móvil y tarjetas y cambia tus claves.",
+      "Guarda el número, capturas y comprobantes y denuncia en la FELCC; si el banco no responde, reclama a la ASFI."
+    ],
+    "en": [
+      "Hang up and call your bank’s official number yourself (on the back of your card or on its website).",
+      "No bank asks for passwords or codes by phone.",
+      "If you already gave details, ask the bank to block your mobile banking and cards and change your passwords.",
+      "Keep the number, screenshots and receipts and report it to the FELCC; if the bank doesn’t respond, complain to ASFI."
+    ]
+  },
+  "reportTo": [
+    "bo/tu-banco",
+    "bo/felcc",
+    "bo/asfi",
+    "bo/att-bloquea-la-estafa"
+  ],
+  "sources": [
+    {
+      "title": "Un clic puede vaciar tu cuenta: ASFI alerta sobre nuevas trampas digitales",
+      "publisher": "El Deber",
+      "url": "https://eldeber.com.bo/economia/clic-puede-vaciar-cuenta-asfi-alerta-nuevas-trampas-digitales_1794711176",
+      "date": "2026-11-14"
+    },
+    {
+      "title": "ASFI alerta sobre nuevas modalidades de estafas digitales tras registrar 1.201 reclamos",
+      "publisher": "Red Uno",
+      "url": "https://www.reduno.com.bo/noticias/asfi-alerta-sobre-nuevas-modalidades-de-estafas-digitales-tras-registrar-1-201-reclamos-20261113202348",
+      "date": "2026-11-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

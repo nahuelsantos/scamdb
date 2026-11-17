@@ -1,0 +1,124 @@
+{
+  "id": "pe/hijo-numero-nuevo",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "Un número desconocido que dice ser tu hijo o familiar",
+    "en": "An unknown number claiming to be your child or relative"
+  },
+  "name": {
+    "es": "“Cambié de número”: el falso familiar en apuros",
+    "en": "“I changed my number”: the fake relative in trouble"
+  },
+  "how": {
+    "es": "Te escribe un número desconocido: “soy yo, cambié de número”. Se hace pasar por tu hijo, sobrino o un familiar, te pide que lo guardes y luego te cuenta un problema urgente para que le yapees o transfieras, muchas veces a la cuenta de otra persona. No quiere hablar por llamada.",
+    "en": "An unknown number writes: “it’s me, I changed my number”. They pretend to be your child, nephew or a relative, ask you to save the number and then tell you about an urgent problem so you send money by Yape or transfer, often to someone else’s account. They won’t talk on a call."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escribe un número nuevo diciendo que es tu familiar.",
+        "en": "A new number writes saying it’s your relative."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "es": "Te pide guardar el número y borrar el anterior.",
+        "en": "They ask you to save the number and delete the old one."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Cuenta un apuro y pide plata hoy mismo.",
+        "en": "They describe a problem and ask for money today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te da una cuenta o Yape de otra persona “porque el suyo está bloqueado”.",
+        "en": "They give you someone else’s account or Yape “because theirs is blocked”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Ma, soy yo, este es mi número nuevo, guárdalo. El otro se me malogró. Oye, estoy en un aprieto, tengo que pagar algo hoy y mi Yape no funciona, ¿me puedes pasar 700 a la cuenta de un amigo? Te devuelvo el fin de semana.",
+        "en": "Mum, it’s me, this is my new number, save it. The other one broke. Listen, I’m in a bind, I have to pay something today and my Yape isn’t working, can you send 700 to a friend’s account? I’ll pay you back at the weekend."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "cambie de numero",
+      "guarda mi numero nuevo",
+      "se hizo pasar por mi hijo",
+      "se hizo pasar por mi sobrino",
+      "yapear o plinear a un amigo suyo",
+      "mi celular se malogro",
+      "le robaron el celular a mi hijo",
+      "numero desconocido que decia ser mi familiar"
+    ],
+    "en": [
+      "i changed my number",
+      "save my new number",
+      "pretended to be my son",
+      "asked me to send money to another account",
+      "my phone broke",
+      "unknown number claiming to be family"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un número nuevo que dice ser tu familiar y pide plata.",
+      "No acepta llamada ni videollamada.",
+      "La cuenta es de otra persona."
+    ],
+    "en": [
+      "A new number claiming to be your relative and asking for money.",
+      "Won’t take a call or video call.",
+      "The account belongs to someone else."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llama a tu familiar a su número de siempre antes de enviar nada.",
+      "Haz una pregunta que solo él sabría.",
+      "Si ya pagaste, avisa a tu banco o billetera y denuncia en la Policía o el Ministerio Público."
+    ],
+    "en": [
+      "Call your relative on their usual number before sending anything.",
+      "Ask a question only they would know.",
+      "If you already paid, tell your bank or wallet and report it to the police or prosecutor’s office."
+    ]
+  },
+  "reportTo": [
+    "pe/tu-banco",
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Si recibes este mensaje en WhatsApp, no respondas: podría ser una estafa",
+      "publisher": "El Tiempo (Perú)",
+      "url": "https://eltiempo.pe/uncategorized/si-recibes-este-mensaje-en-whatsapp-no-respondas-podria-ser-una-estafa/",
+      "date": "2026-08-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

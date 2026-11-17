@@ -1,0 +1,126 @@
+{
+  "id": "cl/tienda-falsa-cyber",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "es": "Tienda o “oferta Cyber”",
+    "en": "Shop or “Cyber deal”"
+  },
+  "name": {
+    "es": "La tienda clonada y la oferta fantasma del Cyber",
+    "en": "The cloned shop and the ghost Cyber deal"
+  },
+  "how": {
+    "es": "Para el Cyber Day o en redes aparecen tiendas con dominios parecidos a los reales, que copian logos y banners, o avisos con productos muy baratos. Te piden pagar por transferencia a una cuenta personal o meter la tarjeta en una página falsa. El producto nunca llega y a veces te mandan un número de seguimiento inventado.",
+    "en": "Around Cyber Day (Chile’s online sale event) or on social media, shops appear with domains similar to real ones, copying logos and banners, or ads with very cheap products. They ask you to pay by transfer to a personal account or enter your card on a fake page. The product never arrives and sometimes they send a made-up tracking number."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves una oferta muy barata en redes o una tienda que copia a una conocida.",
+        "en": "You see a very cheap deal on social media or a shop copying a known one."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una página con una dirección parecida a la real.",
+        "en": "The link goes to a page with an address similar to the real one."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden transferir a una cuenta personal o pagar por WhatsApp.",
+        "en": "They ask you to transfer to a personal account or pay via WhatsApp."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apuran: la oferta dura solo unas horas.",
+        "en": "They rush you: the deal lasts only a few hours."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "🔥 CYBER EXCLUSIVO 🔥 Smart TV 65\" a $189.990, solo 30 unidades hasta medianoche. Paga por transferencia y te regalamos el despacho a todo Chile. Escríbenos por WhatsApp para reservar: [enlace]",
+        "en": "🔥 CYBER EXCLUSIVE 🔥 65\" Smart TV for 189,990 pesos, only 30 units until midnight. Pay by transfer and we’ll give you free delivery anywhere in Chile. Message us on WhatsApp to reserve: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "tienda falsa cyber day",
+      "pagina clonada de una tienda",
+      "oferta falsa en instagram",
+      "compre y nunca llego",
+      "transferencia a cuenta personal",
+      "seguimiento de envio inventado",
+      "producto que nunca llego",
+      "tienda trucha"
+    ],
+    "en": [
+      "fake online shop",
+      "cloned shop website",
+      "bought online and it never arrived",
+      "fake cyber day deal",
+      "paid by transfer to a personal account",
+      "fake tracking number"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Precios demasiado bajos y pocas horas para comprar.",
+      "Te piden transferir a una cuenta personal.",
+      "La dirección de la página no es la oficial de la tienda."
+    ],
+    "en": [
+      "Prices too low and only hours to buy.",
+      "They ask you to transfer to a personal account.",
+      "The page address isn’t the shop’s official one."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Entra a las tiendas escribiendo tú la dirección o desde el sitio oficial del Cyber.",
+      "Paga con tarjeta de crédito o plataformas conocidas, no con transferencias a personas.",
+      "Si te estafaron, llama a tu banco, avisa al SERNAC y denuncia en la PDI."
+    ],
+    "en": [
+      "Go to shops by typing the address yourself or from the official Cyber site.",
+      "Pay by credit card or known platforms, not transfers to individuals.",
+      "If you were scammed, call your bank, tell SERNAC and report it to the PDI."
+    ]
+  },
+  "reportTo": [
+    "cl/tu-banco",
+    "cl/sernac",
+    "cl/pdi"
+  ],
+  "sources": [
+    {
+      "title": "Cyber Day 2025: Sernac advierte sobre los principales tipos de fraudes",
+      "publisher": "Radio Universidad de Chile",
+      "url": "https://radio.uchile.cl/?p=847224",
+      "date": "2025-06-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

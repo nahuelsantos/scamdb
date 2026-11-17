@@ -1,0 +1,141 @@
+{
+  "id": "bo/app-futbol-gratis",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un anuncio en Facebook o un enlace por WhatsApp o Telegram",
+    "en": "An ad on Facebook or a link on WhatsApp or Telegram"
+  },
+  "name": {
+    "es": "App para ver fútbol o películas gratis que roba tu banca móvil",
+    "en": "App to watch football or films for free that steals your mobile banking"
+  },
+  "how": {
+    "es": "En Facebook, WhatsApp o Telegram ofrecen una aplicación para ver gratis los partidos (como el Mundial 2026), doramas, películas o un “antivirus”. La instalas tú, desde un enlace, fuera de la tienda oficial. Es un virus: espera unos días, captura tus claves y toma el control del celular para hacer transferencias desde tu banca móvil. La Policía detectó víctimas en Sucre y Cochabamba.",
+    "en": "On Facebook, WhatsApp or Telegram they offer an app to watch matches for free (like the 2026 World Cup), K-dramas, films or an “antivirus”. You install it yourself, from a link, outside the official store. It’s malware: it waits a few days, captures your passwords and takes control of the phone to make transfers from your mobile banking. Bolivian police found victims in Sucre and Cochabamba."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un anuncio o te mandan un enlace para ver fútbol o películas gratis.",
+        "en": "You see an ad or get a link to watch football or films for free."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El enlace descarga una app fuera de la tienda oficial.",
+        "en": "The link downloads an app outside the official store."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La app pide permisos y toma el control del celular.",
+        "en": "The app asks for permissions and takes control of the phone."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Días después aparecen transferencias que no hiciste.",
+        "en": "Days later transfers you didn’t make appear."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "⚽ Mira TODOS los partidos del Mundial EN VIVO y gratis, sin cable y sin cortes. Descarga la app aquí 👉 [enlace] y actívala antes del partido inaugural.",
+        "en": "⚽ Watch ALL World Cup matches LIVE and free, no cable, no cuts. Download the app here 👉 [link] and activate it before the opening match."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "partidos",
+      "futbol",
+      "permisos",
+      "apk",
+      "app para ver futbol gratis",
+      "partidos en vivo gratis",
+      "descargue una aplicacion de un enlace",
+      "me sacaron plata despues de instalar",
+      "app de doramas",
+      "virus en el celular",
+      "tomaron control de mi celular",
+      "transferencias que no hice",
+      "play store",
+      "streaming gratis"
+    ],
+    "en": [
+      "football",
+      "matches",
+      "permissions",
+      "apk",
+      "app to watch football free",
+      "free live matches",
+      "downloaded an app from a link",
+      "money taken after installing",
+      "virus on my phone",
+      "they took control of my phone"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Partidos, películas o series gratis que normalmente se pagan.",
+      "Te piden descargar la app desde un enlace y no desde la tienda oficial.",
+      "El celular pide permitir “orígenes desconocidos” o accesibilidad.",
+      "La app pide muchos permisos para algo simple."
+    ],
+    "en": [
+      "Matches, films or series for free that normally cost money.",
+      "You’re asked to download the app from a link, not the official store.",
+      "The phone asks you to allow “unknown sources” or accessibility.",
+      "The app asks for many permissions for something simple."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Instala aplicaciones solo desde la tienda oficial.",
+      "Si ya la instalaste, desinstálala, llama a tu banco para bloquear la banca móvil y cambia tus claves desde otro dispositivo.",
+      "Lleva el celular a Cibercrimen de la FELCC y guarda el enlace y capturas."
+    ],
+    "en": [
+      "Install apps only from the official store.",
+      "If you already installed it, uninstall it, call your bank to block mobile banking and change your passwords from another device.",
+      "Take the phone to the FELCC’s cybercrime unit and keep the link and screenshots."
+    ]
+  },
+  "reportTo": [
+    "bo/tu-banco",
+    "bo/felcc"
+  ],
+  "sources": [
+    {
+      "title": "Alerta: Usan apps de fútbol para robar",
+      "publisher": "Correo del Sur",
+      "url": "https://correodelsur.com/seguridad/20260715/alerta-usan-apps-de-futbol-para-robar.html",
+      "date": "2026-07-15"
+    },
+    {
+      "title": "¡Cuidado! Ciberdelincuentes toman control total de celulares con un solo ‘click’",
+      "publisher": "Red Uno",
+      "url": "https://www.reduno.com.bo/noticias/cuidado-ciberdelincuentes-toman-control-total-de-celulares-con-un-solo-click--20251120105811",
+      "date": "2025-11-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

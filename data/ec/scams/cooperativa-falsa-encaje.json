@@ -1,0 +1,128 @@
+{
+  "id": "ec/cooperativa-falsa-encaje",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "es": "“Cooperativa” o “caja de ahorro”",
+    "en": "“Credit union” or “savings fund”"
+  },
+  "name": {
+    "es": "Cooperativa falsa: le piden un “encaje” antes del crédito",
+    "en": "Fake credit union: an upfront “deposit” before the loan"
+  },
+  "how": {
+    "es": "Una supuesta cooperativa o caja de ahorro le ofrece un crédito rápido, sin garante ni buró, por redes o en una oficina con letrero. Antes de darle el dinero le piden pagar un “encaje”, un “gasto de calificación” o un “gasto administrativo”. Usted paga y el crédito nunca llega, ni le devuelven lo pagado.",
+    "en": "A supposed credit union or savings fund offers you a quick loan with no guarantor or credit check, online or in an office with a sign. Before handing over the money they ask you to pay a “deposit” (encaje), an “assessment fee” or an “admin fee”. You pay and the loan never arrives, and you do not get your money back."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le ofrecen un crédito alto, inmediato y sin garante.",
+        "en": "They offer a large, instant loan with no guarantor."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El nombre se parece al de una cooperativa conocida.",
+        "en": "The name looks like that of a well-known credit union."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le piden pagar un “encaje” o gasto antes del desembolso.",
+        "en": "They ask you to pay a “deposit” or fee before the loan is paid out."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Le apuran para que pague y “no pierda el cupo”.",
+        "en": "They rush you to pay so you “don’t lose your spot”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Felicidades, su crédito de USD 8.000 está preaprobado sin garante. Para el desembolso debe cancelar el encaje del 5% (USD 400) hasta mañana. Le envío los datos de la cuenta de la cooperativa.",
+        "en": "Congratulations, your USD 8,000 loan is pre-approved with no guarantor. To release it you must pay the 5% deposit (USD 400) by tomorrow. I’ll send you the credit union’s account details."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "pagar el encaje",
+      "gasto de calificacion",
+      "gasto administrativo antes del credito",
+      "cooperativa falsa",
+      "credito sin garante",
+      "pague y nunca me dieron el prestamo",
+      "caja de ahorro falsa",
+      "credito preaprobado"
+    ],
+    "en": [
+      "pay a deposit before the loan",
+      "assessment fee",
+      "fake credit union",
+      "loan with no guarantor",
+      "i paid and never got the loan",
+      "pre-approved loan"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Le piden dinero antes de darle el crédito.",
+      "Crédito sin garante ni buró y con tasas muy bajas.",
+      "Montos más altos de los que daría una entidad regulada.",
+      "La entidad no aparece en los registros oficiales."
+    ],
+    "en": [
+      "They ask for money before giving you the loan.",
+      "A loan with no guarantor or credit check and very low rates.",
+      "Amounts higher than a regulated lender would give.",
+      "The entity is not in the official registers."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Una cooperativa real descuenta sus costos del crédito al desembolsar; no cobra antes.",
+      "Revise si la entidad está autorizada antes de pagar nada.",
+      "Si ya pagó, guarde comprobantes y ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "A real credit union deducts its costs from the loan when paying it out; it does not charge beforehand.",
+      "Check whether the entity is authorised before paying anything.",
+      "If you already paid, keep the receipts and report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/entidades-no-autorizadas",
+    "ec/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Si le piden que pague un ‘encaje’ antes de darle un crédito, podría tratarse de una cooperativa falsa, alerta Intendente",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/economia/cooperativas-falsas-entidades-fantasmas-encaje-credito-denuncias-fiscalia-135585/",
+      "date": "2026-10-25"
+    }
+  ],
+  "updated": "2026-11-17"
+}

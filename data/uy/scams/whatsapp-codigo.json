@@ -1,0 +1,130 @@
+{
+  "id": "uy/whatsapp-codigo",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "“ASSE”, “Ministerio” o un conocido",
+    "en": "“ASSE”, a “Ministry” or someone you know"
+  },
+  "name": {
+    "es": "“Pasame el código que te llegó”: el robo del WhatsApp",
+    "en": "“Send me the code you got”: WhatsApp account theft"
+  },
+  "how": {
+    "es": "Te llaman o te escriben haciéndose pasar por una institución (ASSE, un ministerio, un turno médico) y te piden el código de seis números que te llega por SMS. Ese código es para registrar tu WhatsApp en otro teléfono. Con tu cuenta, escriben a tus contactos pidiendo transferencias urgentes a tu nombre.",
+    "en": "Someone calls or writes pretending to be an institution (ASSE, a ministry, a medical appointment) and asks for the six-digit code you get by text. That code registers your WhatsApp on another phone. With your account, they message your contacts asking for urgent transfers in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contactan a nombre de una institución o de un conocido.",
+        "en": "They contact you in the name of an institution or someone you know."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden el código de seis números que te llegó.",
+        "en": "They ask for the six-digit code you received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Perdés el WhatsApp y piden plata a tus contactos.",
+        "en": "You lose WhatsApp and they ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buen día, le hablamos del centro de salud por la actualización de su carné de vacunas. Le llegó un mensaje con seis números, ¿me los confirma así queda registrado en el sistema?",
+        "en": "Good morning, we’re calling from the health centre about updating your vaccination card. You got a text with six numbers; can you confirm them so it’s registered in the system?"
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me robaron el whatsapp",
+      "me pidieron el codigo de seis numeros",
+      "codigo de verificacion de whatsapp",
+      "me llamaron de asse",
+      "no puedo entrar a mi whatsapp",
+      "piden plata a mis contactos desde mi whatsapp",
+      "confirmar un turno medico",
+      "codigo por sms para el turno",
+      "la mutualista me pidio un codigo",
+      "pasame el codigo que te llega"
+    ],
+    "en": [
+      "they stole my whatsapp",
+      "they asked for the six-digit code",
+      "whatsapp verification code",
+      "i can’t get into my whatsapp",
+      "my contacts got money requests from my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie legítimo te pide el código de WhatsApp.",
+      "Te llega un código que no pediste.",
+      "Te piden “confirmar” números por teléfono."
+    ],
+    "en": [
+      "No genuine caller asks for your WhatsApp code.",
+      "You get a code you didn’t request.",
+      "They ask you to “confirm” numbers over the phone."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No compartas nunca el código ni el PIN.",
+      "Activá la verificación en dos pasos con un mail de recuperación.",
+      "Si te robaron la cuenta, volvé a registrar tu número, avisá a tus contactos y denuncialo."
+    ],
+    "en": [
+      "Never share the code or the PIN.",
+      "Turn on two-step verification with a recovery email.",
+      "If your account was taken, re-register your number, warn your contacts and report it."
+    ]
+  },
+  "reportTo": [
+    "uy/whatsapp-ayuda",
+    "uy/cibercrimen"
+  ],
+  "sources": [
+    {
+      "title": "Que no te engañen: cómo prevenir el “cuento del tío” y evitar las estafas electrónicas",
+      "publisher": "Montevideo Portal",
+      "url": "https://www.montevideo.com.uy/Noticias/Que-no-te-enganen-como-prevenir-el-cuento-del-tio-y-evitar-las-estafas-electronicas-uc949446",
+      "date": "2026-02-17"
+    },
+    {
+      "title": "“¿Me robaron el WhatsApp, a quién recurro?”: Uruguay proyecta una “ventanilla” de reclamos",
+      "publisher": "El Observador",
+      "url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/me-robaron-el-whatsapp-quien-recurro-uruguay-proyecta-una-ventanilla-reclamos-n6016342",
+      "date": "2025-09-09"
+    },
+    {
+      "title": "Se advierte sobre estafas electrónicas mediante vishing",
+      "publisher": "Ministerio del Interior",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/se-advierte-sobre-estafas-electronicas-mediante-vishing",
+      "date": "2024-01-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

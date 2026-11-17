@@ -1,0 +1,144 @@
+{
+  "id": "py/inversion-con-famosos",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Horacio Cartes”, un periodista o un medio conocido",
+    "en": "“Horacio Cartes”, a journalist or a well-known news outlet"
+  },
+  "name": {
+    "es": "Videos falsos de famosos que recomiendan una plataforma de inversión",
+    "en": "Fake videos of famous people recommending an investment platform"
+  },
+  "how": {
+    "es": "En Facebook o en una página que imita a un diario aparece un video hecho con inteligencia artificial: un político, un periodista o un empresario conocido recomienda una plataforma que paga millones por semana. Te piden registrarte, dejar tus datos y hacer un primer depósito. Después piden más para “liberar” las ganancias, y nunca te pagan.",
+    "en": "On Facebook or on a page imitating a newspaper, an AI-made video appears: a well-known politician, journalist or businessman recommends a platform that pays millions a week. You’re asked to sign up, leave your details and make a first deposit. Then they ask for more to “release” the profits, and never pay."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves a un famoso o un medio conocido recomendando una inversión.",
+        "en": "You see a celebrity or a known outlet recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Prometen ganancias enormes con poca plata.",
+        "en": "They promise huge returns for little money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te mandan a registrarte en una página o canal desconocido.",
+        "en": "They send you to sign up on an unknown page or channel."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden un depósito inicial y después más para retirar.",
+        "en": "They ask for a first deposit and then more to withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Miles de paraguayos ya cobran hasta 9 millones por semana con la nueva plataforma recomendada en televisión. Cupos limitados: registrate hoy con una inversión mínima en [enlace]",
+        "en": "Thousands of Paraguayans already earn up to 9 million a week with the new platform recommended on TV. Limited places: sign up today with a minimum investment at [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "plataforma de inversion",
+      "video de cartes",
+      "video con inteligencia artificial",
+      "ganar millones por semana",
+      "ganancias diarias",
+      "inversion minima",
+      "invertir y multiplicar mi plata",
+      "recomendada por un famoso",
+      "empresario famoso recomienda",
+      "noticia falsa de un diario",
+      "deposito inicial para empezar",
+      "canal de telegram para invertir",
+      "liberar mis ganancias",
+      "lo que los bancos no quieren que sepas"
+    ],
+    "en": [
+      "investment platform",
+      "ai video of a celebrity",
+      "earn millions a week",
+      "minimum investment",
+      "release my profits",
+      "telegram investment channel"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un famoso “recomienda” ganancias garantizadas.",
+      "La página copia el logo de un medio pero la dirección es otra.",
+      "Te piden pagar más para poder retirar."
+    ],
+    "en": [
+      "A celebrity “recommends” guaranteed profits.",
+      "The page copies a news outlet’s logo but the address is different.",
+      "They ask you to pay more before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No deposites: nadie paga millones por semana.",
+      "Reportá la publicación como estafa en la red social.",
+      "Si ya pagaste, guardá comprobantes, avisá a tu banco y hacé la denuncia."
+    ],
+    "en": [
+      "Don’t deposit: no one pays millions a week.",
+      "Report the post as a scam on the social network.",
+      "If you already paid, keep the receipts, tell your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "py/policia-cibercrimen",
+    "py/fiscalia",
+    "py/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Difunden falso anuncio de Horacio Cartes sobre plataformas de inversión",
+      "publisher": "La Nación",
+      "url": "https://www.lanacion.com.py/politica/2026/11/16/difunden-falso-anuncio-de-horacio-cartes-sobre-plataformas-de-inversion/",
+      "date": "2026-11-16"
+    },
+    {
+      "title": "Estafa digital: difunden falso anuncio de Cartes sobre plataforma millonaria",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/07/08/estafa-digital-difunden-falso-anuncio-de-cartes-sobre-plataforma-millonaria",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "¡Cuidado con las estafas por redes sociales! Este es el modus operandi",
+      "publisher": "NPY",
+      "url": "https://www.npy.com.py/noticias/nacionales/sucesos/cuidado-con-las-estafas-por-redes-sociales-este-es-el-modus-operandi",
+      "date": "2025-05-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

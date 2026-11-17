@@ -1,0 +1,129 @@
+{
+  "id": "cl/comprobante-falso",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "in-person"
+  ],
+  "sender": {
+    "es": "Comprador en Marketplace o redes",
+    "en": "Buyer on Marketplace or social media"
+  },
+  "name": {
+    "es": "“Ya te transferí”: el comprobante falso al vender",
+    "en": "“I already transferred it”: the fake transfer receipt when you sell"
+  },
+  "how": {
+    "es": "Vendes algo por Marketplace o redes y aparece un comprador apurado. Te manda una captura o un comprobante de transferencia que se ve real, hecho con una app falsa, y dice que un repartidor pasa a retirar el producto. La plata nunca llega a tu cuenta. Con autos, incluso simulan vales vista o cheques.",
+    "en": "You sell something on Marketplace or social media and a buyer in a hurry appears. They send a screenshot or transfer receipt that looks real, made with a fake app, and say a courier will pick up the item. The money never reaches your account. With cars they even fake bank drafts or cheques."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un comprador acepta el precio sin regatear y está apurado.",
+        "en": "A buyer accepts the price without haggling and is in a hurry."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te manda un comprobante o captura de una transferencia.",
+        "en": "They send you a receipt or screenshot of a transfer."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Manda a un repartidor o a un tercero a retirar antes de que revises tu cuenta.",
+        "en": "They send a courier or someone else to collect before you check your account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Listo, te hice la transferencia por los $380.000, te mando el comprobante. A veces el banco demora un rato en reflejarla. En 20 minutos pasa un motorista a retirar la consola, ¿me confirmas la dirección?",
+        "en": "Done, I made the transfer for the 380,000 pesos, here’s the receipt. Sometimes the bank takes a while to show it. A motorbike courier will pick up the console in 20 minutes, can you confirm the address?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "comprobante de transferencia falso",
+      "me mandaron un comprobante falso",
+      "la transferencia nunca llego",
+      "comprador de marketplace",
+      "pasa un repartidor a retirar",
+      "vendi por marketplace",
+      "pantallazo del pago",
+      "mando a otra persona a retirar",
+      "dijo que entre bancos demoraba",
+      "vale vista falso"
+    ],
+    "en": [
+      "fake transfer receipt",
+      "the transfer never arrived",
+      "buyer sent a screenshot of the payment",
+      "courier came to pick up the item",
+      "sold on marketplace and never got paid",
+      "fake bank draft"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un comprobante o captura no prueba que te pagaron.",
+      "“El banco demora en reflejarla”.",
+      "Te mandan a un tercero a retirar, sin conocerte."
+    ],
+    "en": [
+      "A receipt or screenshot doesn’t prove you were paid.",
+      "“The bank takes a while to show it”.",
+      "They send someone else to collect, without meeting you."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entregues nada hasta ver la plata abonada en tu cartola, entrando tú a la app o la página del banco.",
+      "Si te estafaron, guarda los chats y denuncia en la PDI."
+    ],
+    "en": [
+      "Don’t hand anything over until you see the money in your statement, checking in your bank’s app or site yourself.",
+      "If you were scammed, keep the chats and report it to the PDI."
+    ]
+  },
+  "reportTo": [
+    "cl/pdi",
+    "cl/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Detienen a hombre por estafa con cartas Pokémon: así funcionaba el engaño",
+      "publisher": "T13",
+      "url": "https://www.t13.cl/noticia/nacional/detienen-hombre-por-estafa-cartas-pokemon-asi-funcionaba-engano-10-10-2026",
+      "date": "2026-10-10"
+    },
+    {
+      "title": "Cae banda que estafaba con autos en Marketplace: 38 víctimas y millonario fraude",
+      "publisher": "24horas",
+      "url": "https://www.24horas.cl/actualidad/nacional/cae-banda-que-estafaba-con-autos-en-redes-sociales-38-victimas",
+      "date": "2026-04-18"
+    },
+    {
+      "title": "Comprobantes de transferencias falsos: Esto es lo que debes hacer para no caer en la nueva modalidad de estafa usada en Chile",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/nacional/498259-como-evitar-estafa-fraude-comprobantes-de-transferencias-falsas-aplicacion-falsa-banco-estado-pdi-recomendaciones-brk-08-09-2025.html",
+      "date": "2025-09-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

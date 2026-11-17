@@ -1,0 +1,130 @@
+{
+  "id": "pe/falso-secuestro-voz",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un familiar “en peligro” o sus captores",
+    "en": "A relative “in danger” or their captors"
+  },
+  "name": {
+    "es": "Falso secuestro con la voz de un familiar",
+    "en": "Fake kidnapping with a relative’s voice"
+  },
+  "how": {
+    "es": "Te llaman diciendo que tienen a tu familiar o que está detenido y te hacen escuchar su voz: grabaciones recortadas de otra llamada o una voz clonada con inteligencia artificial a partir de videos de redes. Te exigen un depósito inmediato y que no cuelgues ni llames a nadie.",
+    "en": "They call saying they have your relative or that they’ve been arrested, and make you hear their voice: clips cut from another call or a voice cloned with artificial intelligence from social media videos. They demand an immediate deposit and that you don’t hang up or call anyone."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman con una emergencia: secuestro, accidente o detención de un familiar.",
+        "en": "They call with an emergency: a relative kidnapped, in an accident or arrested."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Escuchas una voz que parece la de tu familiar.",
+        "en": "You hear a voice that sounds like your relative."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden no colgar y no avisar a nadie.",
+        "en": "They tell you not to hang up and not to tell anyone."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Exigen una transferencia o un Yape inmediato.",
+        "en": "They demand an immediate transfer or Yape payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Escúchame bien, tenemos a tu hijo. Si cuelgas o llamas a la policía, no lo vuelves a ver. Ahorita deposita 2 mil soles al número que te voy a dar y lo soltamos.",
+        "en": "Listen carefully, we have your son. If you hang up or call the police, you won’t see him again. Deposit 2 thousand soles right now to the number I’ll give you and we’ll let him go."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "falso secuestro",
+      "tenemos a tu hijo",
+      "clonaron la voz de mi hija",
+      "voz con inteligencia artificial",
+      "me pidieron rescate",
+      "no cuelgues ni llames a la policia",
+      "familiar detenido en la comisaria"
+    ],
+    "en": [
+      "fake kidnapping",
+      "we have your son",
+      "they cloned my daughter’s voice",
+      "ai voice",
+      "they asked for ransom",
+      "don’t hang up or call the police"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te exigen no colgar ni llamar a nadie.",
+      "La voz dice frases cortas o raras.",
+      "Piden plata al toque por Yape o transferencia."
+    ],
+    "en": [
+      "They demand you don’t hang up or call anyone.",
+      "The voice says short or odd phrases.",
+      "They want money instantly by Yape or transfer."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cuelga y llama a tu familiar a su número de siempre, o pide a otra persona que lo ubique.",
+      "Pon tus videos y redes en privado.",
+      "Llama al 105 y denuncia el número."
+    ],
+    "en": [
+      "Hang up and call your relative on their usual number, or ask someone else to find them.",
+      "Make your videos and social media private.",
+      "Call 105 and report the number."
+    ]
+  },
+  "reportTo": [
+    "pe/emergencias",
+    "pe/cud-mininter"
+  ],
+  "sources": [
+    {
+      "title": "Le roban la movilidad escolar en San Isidro, simulan su voz y engañan a su hija para cobrar un falso rescate",
+      "publisher": "Infobae Perú",
+      "url": "https://www.infobae.com/peru/2025/08/07/le-roban-la-movilidad-escolar-en-san-isidro-simulan-su-voz-y-enganan-a-su-hija-para-cobrar-un-falso-rescate/",
+      "date": "2025-08-06"
+    },
+    {
+      "title": "Clonación de voz: autoridad nacional brinda recomendaciones ante nueva modalidad de estafa",
+      "publisher": "El Peruano",
+      "url": "https://elperuano.pe/noticia/218424-clonacion-de-voz-autoridad-nacional-brinda-recomendaciones-ante-nueva-modalidad-de-estafa",
+      "date": "2023-07-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

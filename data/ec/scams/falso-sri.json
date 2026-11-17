@@ -1,0 +1,135 @@
+{
+  "id": "ec/falso-sri",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "es": "“SRI”",
+    "en": "“SRI” (tax agency)"
+  },
+  "name": {
+    "es": "Falso SRI: devoluciones, deudas y páginas clonadas",
+    "en": "Fake SRI: refunds, tax debts and cloned pages"
+  },
+  "how": {
+    "es": "Le llega un correo o mensaje con el logo del SRI sobre una deuda, una multa o una devolución de impuestos, con un enlace o un archivo. La página copia la del SRI y le pide cédula, clave y datos de su cuenta o tarjeta. También llaman diciendo que para devolverle impuestos tiene que registrar su cuenta bancaria. El SRI no pide claves ni dinero por esos medios.",
+    "en": "You get an email or message with the SRI logo about a debt, a fine or a tax refund, with a link or an attachment. The page copies the SRI site and asks for your ID number, password and bank or card details. Others call saying that to refund your taxes you must register your bank account. The SRI does not ask for passwords or money that way."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Llega un correo, SMS o llamada “del SRI” por una deuda o una devolución.",
+        "en": "An email, SMS or call “from the SRI” arrives about a debt or a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dicen que debe actuar pronto para evitar sanciones o perder la devolución.",
+        "en": "They say you must act soon to avoid penalties or lose the refund."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace o archivo lleva a una página que no termina en gob.ec.",
+        "en": "The link or attachment leads to a page that does not end in gob.ec."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden su clave, su cuenta bancaria o un pago.",
+        "en": "They ask for your password, bank account or a payment."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "SRI - Notificación electrónica: usted mantiene valores pendientes del Impuesto a la Renta. Descargue el detalle y regularice en 48 horas para evitar la clausura de su RUC: [enlace]",
+        "en": "SRI - Electronic notice: you have outstanding Income Tax amounts. Download the details and settle within 48 hours to avoid your RUC being closed: [enlace]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo del sri",
+      "devolucion de impuestos",
+      "registrar mi cuenta para la devolucion",
+      "notificacion del sri con un archivo",
+      "clausura del ruc",
+      "me pidieron la clave del sri",
+      "deuda con el sri",
+      "pagina falsa del sri"
+    ],
+    "en": [
+      "email from the sri",
+      "tax refund",
+      "register my account for the refund",
+      "sri notice with an attachment",
+      "they asked for my sri password",
+      "debt with the tax agency"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un correo del SRI con un archivo para descargar o un enlace que no termina en gob.ec.",
+      "Le piden la clave del SRI o datos de la tarjeta.",
+      "Le llaman para “registrar su cuenta” y devolverle impuestos.",
+      "Le piden dinero para auspicios o trámites."
+    ],
+    "en": [
+      "An SRI email with a file to download or a link that does not end in gob.ec.",
+      "They ask for your SRI password or card details.",
+      "They call to “register your account” and refund taxes.",
+      "They ask for money for sponsorships or procedures."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra archivos ni enlaces: entre usted mismo a la página del SRI escribiendo la dirección.",
+      "Cuelgue si le llaman pidiendo cuentas o claves.",
+      "Si dio su clave, cámbiela en la página oficial y avise a su banco si dio datos de cuenta.",
+      "Denuncie el intento en los canales del SRI y en la Fiscalía."
+    ],
+    "en": [
+      "Do not open attachments or links: go to the SRI site yourself by typing the address.",
+      "Hang up if they call asking for accounts or passwords.",
+      "If you gave your password, change it on the official site and tell your bank if you gave account details.",
+      "Report the attempt through the SRI’s channels and to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/fiscalia",
+    "ec/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "SRI alerta sobre correos, llamadas y sitios falsos que buscan datos de contribuyentes",
+      "publisher": "El Diario (Manabí)",
+      "url": "https://www.eldiario.ec/ecuador/sri-alerta-sobre-correos-llamadas-y-sitios-falsos-que-buscan-datos-de-contribuyentes-11022026/",
+      "date": "2026-02-11"
+    },
+    {
+      "title": "Alerta del SRI: detectan nuevas modalidades de estafa a contribuyentes",
+      "publisher": "Vistazo",
+      "url": "https://www.vistazo.com/actualidad/nacional/2025-11-21-alerta-sri-detectan-nuevas-modalidades-estafa-contribuyentes-FA10455473",
+      "date": "2025-11-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

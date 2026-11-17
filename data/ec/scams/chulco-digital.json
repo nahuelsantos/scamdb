@@ -1,0 +1,135 @@
+{
+  "id": "ec/chulco-digital",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "App de “préstamo rápido”",
+    "en": "“Quick loan” app"
+  },
+  "name": {
+    "es": "Chulco digital: préstamos por app que terminan en extorsión",
+    "en": "Digital loan sharks: app loans that end in extortion"
+  },
+  "how": {
+    "es": "En Facebook o TikTok ofrecen préstamos sin buró ni papeles, por una app. Le piden selfie, foto de la cédula y permiso para ver sus contactos, fotos y ubicación. Le dan poco dinero a pocos días con intereses enormes, y si se atrasa le amenazan, le insultan y mandan mensajes o montajes con su foto a sus contactos.",
+    "en": "On Facebook or TikTok they offer loans with no credit check or paperwork, through an app. They ask for a selfie, a photo of your ID and permission to see your contacts, photos and location. They lend a little for a few days at huge interest, and if you fall behind they threaten and insult you and send messages or doctored images with your photo to your contacts."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ve un anuncio de préstamo inmediato sin buró ni garante.",
+        "en": "You see an ad for an instant loan with no credit check or guarantor."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "La app pide acceso a contactos, galería y ubicación.",
+        "en": "The app asks for access to contacts, gallery and location."
+      }
+    },
+    {
+      "text": {
+        "es": "El plazo es de días y los recargos hacen crecer la deuda.",
+        "en": "The term is a few days and surcharges make the debt grow."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Si no paga, amenazan y escriben a su familia y conocidos para exigir dinero.",
+        "en": "If you do not pay, they threaten you and message your family and acquaintances to demand money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Préstamo aprobado en 5 minutos! Hasta USD 500 sin buró, sin garante y sin ir al banco. Solo tu cédula y una selfie. Descarga la app aquí 👉 [enlace]",
+        "en": "Loan approved in 5 minutes! Up to USD 500 with no credit check, no guarantor and no bank visit. Just your ID and a selfie. Download the app here 👉 [enlace]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "chulco digital",
+      "prestamo por aplicacion",
+      "prestamo sin buro",
+      "la app tenia acceso a mis contactos",
+      "le escribieron a mis contactos por la deuda",
+      "me amenazan por un prestamo de una app",
+      "prorroga con recargo",
+      "gota a gota por app"
+    ],
+    "en": [
+      "loan app",
+      "loan with no credit check",
+      "the app had access to my contacts",
+      "they messaged my contacts about the debt",
+      "threatened over an app loan",
+      "loan shark app"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Préstamo sin buró, sin papeles y en minutos.",
+      "La app pide ver sus contactos, fotos y ubicación.",
+      "Plazos de una semana y recargos por “prórroga”.",
+      "La empresa no está autorizada por la Superintendencia."
+    ],
+    "en": [
+      "A loan with no credit check, no paperwork, in minutes.",
+      "The app asks to see your contacts, photos and location.",
+      "One-week terms and “extension” surcharges.",
+      "The company is not authorised by the Superintendency."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de pedir un préstamo, revise si la entidad está autorizada.",
+      "No dé permisos de contactos ni galería a una app de préstamos.",
+      "Si le amenazan, guarde capturas, no pague más y ponga la denuncia en la Fiscalía; si hay amenazas de muerte, llame al 911.",
+      "Avise a sus contactos que pueden recibir mensajes falsos sobre usted."
+    ],
+    "en": [
+      "Before borrowing, check whether the lender is authorised.",
+      "Do not give a loan app access to your contacts or gallery.",
+      "If they threaten you, keep screenshots, stop paying and report it to the Fiscalía; if there are death threats, call 911.",
+      "Warn your contacts they may receive false messages about you."
+    ]
+  },
+  "reportTo": [
+    "ec/entidades-no-autorizadas",
+    "ec/fiscalia",
+    "ec/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "Policía desarticula call center usado para extorsión digital y estafa en Quito",
+      "publisher": "El Diario (Manabí)",
+      "url": "https://www.eldiario.ec/zona-2/policia-desarticula-call-center-usado-para-extorsion-digital-y-estafa-en-quito-26062025/",
+      "date": "2025-06-26"
+    },
+    {
+      "title": "¿Préstamos fáciles y rápidos?: la trampa del chulco digital en Ecuador",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/revistagestion/tu-dinero/prestamos-faciles-trampa-chulco-digital-ecuador-95343",
+      "date": "2025-05-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

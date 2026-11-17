@@ -1,0 +1,125 @@
+{
+  "id": "co/sim-swapping",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "es": "Su operador de celular (sin que usted lo sepa)",
+    "en": "Your mobile operator (without your knowledge)"
+  },
+  "name": {
+    "es": "Le duplican la SIM y entran a sus apps del banco",
+    "en": "They duplicate your SIM and get into your banking apps"
+  },
+  "how": {
+    "es": "Su celular se queda de repente sin señal. Mientras tanto, alguien con documentos falsos —a veces con ayuda de un empleado del operador— pidió una reposición o una portabilidad de su número. Con su línea reciben los códigos por SMS, entran a sus apps financieras, cambian claves y transfieren su plata a cuentas de cómplices.",
+    "en": "Your phone suddenly loses signal. Meanwhile someone with fake documents — sometimes with help from an operator employee — has requested a SIM replacement or a port of your number. With your line they receive the text codes, get into your financial apps, change passwords and transfer your money to accomplices’ accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "El celular se queda sin señal sin razón.",
+        "en": "Your phone loses signal for no reason."
+      }
+    },
+    {
+      "text": {
+        "es": "Le llegan avisos de cambios de SIM o portabilidad que no pidió.",
+        "en": "You get notices of SIM changes or number porting you didn’t request."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Con su número reciben los códigos de su banco.",
+        "en": "With your number they receive your bank’s codes."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Transfieren su plata a otras cuentas.",
+        "en": "They transfer your money to other accounts."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Su operador informa: la solicitud de reposicion de SIM card fue aprobada. Su linea quedara activa en la nueva tarjeta en los proximos minutos. Si no reconoce este tramite comuniquese con nosotros.",
+        "en": "Your operator informs: the SIM card replacement request was approved. Your line will be active on the new card in the next few minutes. If you don’t recognise this request, contact us."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me duplicaron la sim",
+      "me quede sin señal y me vaciaron la cuenta",
+      "cambiaron mi linea a otro operador",
+      "portabilidad que no pedi",
+      "clonaron mi sim card",
+      "reposicion de sim que no hice"
+    ],
+    "en": [
+      "my sim was duplicated",
+      "lost signal and my account was emptied",
+      "number ported without permission",
+      "sim swap fraud",
+      "sim replacement i did not request"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Se queda sin señal mucho tiempo sin explicación.",
+      "Avisos de reposición o portabilidad que no pidió.",
+      "No puede entrar a su banco o a su correo."
+    ],
+    "en": [
+      "You lose signal for a long time with no explanation.",
+      "Notices of replacement or porting you didn’t ask for.",
+      "You can’t get into your bank or email."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llame ya a su operador desde otro teléfono para bloquear la línea.",
+      "Llame a su banco para bloquear las cuentas y cambie las claves.",
+      "Denuncie ante la Fiscalía o la Policía."
+    ],
+    "en": [
+      "Call your operator right away from another phone to block the line.",
+      "Call your bank to block the accounts and change your passwords.",
+      "Report it to the prosecutor’s office or the police."
+    ]
+  },
+  "reportTo": [
+    "co/tu-banco",
+    "co/denuncia-virtual",
+    "co/cai-virtual"
+  ],
+  "sources": [
+    {
+      "title": "Ojo con sus datos: cayó banda delictiva que suplantaba personas para controlar aplicaciones financieras",
+      "publisher": "Publimetro Colombia",
+      "url": "https://www.publimetro.co/noticias/2025/04/10/ojo-con-sus-datos-cayo-banda-delictiva-que-suplantaba-personas-para-controlar-sus-aplicaciones-financieras/",
+      "date": "2025-04-10"
+    },
+    {
+      "title": "Estafa navideña: Cuidado si se queda sin señal en su celular, seguro están clonando su sim",
+      "publisher": "Publimetro Colombia",
+      "url": "https://www.publimetro.co/tecnologia/2025/12/18/estafa-navidena-cuidado-si-se-queda-sin-senal-en-su-celular-seguro-estan-clonando-su-sim/",
+      "date": "2025-12-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

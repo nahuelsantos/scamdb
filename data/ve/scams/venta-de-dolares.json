@@ -1,0 +1,121 @@
+{
+  "id": "ve/venta-de-dolares",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "“Hola, soy María, cambié de número”",
+    "en": "“Hi, it's María, I changed my number”"
+  },
+  "name": {
+    "es": "“Cambié de número” y te vende dólares que no existen",
+    "en": "“I changed my number” and sells you dollars that don't exist"
+  },
+  "how": {
+    "es": "Te escribe alguien por WhatsApp o redes haciéndose pasar por un familiar, amigo o conocido que “cambió de número”, o un gestor que ofrece cambio de divisas. Te ofrece dólares a buena tasa y te pide que le pagues primero en bolívares por pago móvil o transferencia. Cuando pagas, los dólares nunca llegan. La Asociación Bancaria de Venezuela también advierte de falsos gestores que ofrecen venta de divisas por redes y mensajería.",
+    "en": "Someone writes to you on WhatsApp or social media pretending to be a relative, friend or acquaintance who has “changed number”, or a gestor offering currency exchange. They offer you dollars at a good rate and ask you to pay first in bolívares by mobile payment or transfer. Once you pay, the dollars never arrive. The Venezuelan Banking Association also warns of fake “gestores” offering currency sales on social media and messaging apps."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un “conocido” con número nuevo, o un gestor, te escribe.",
+        "en": "An “acquaintance” with a new number, or a gestor, writes to you."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "es": "Te ofrece dólares a una tasa mejor que la del mercado.",
+        "en": "They offer you dollars at a better rate than the market."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pide pagar primero por pago móvil o transferencia.",
+        "en": "They ask you to pay first by mobile payment or transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola, soy María! Cambié de número, guárdame este 😊 Oye, estoy vendiendo unos dólares que me mandaron de afuera, te los dejo más baratos que la tasa del día. Si quieres te paso los datos del pago móvil y apenas me caiga te los transfiero.",
+        "en": "Hi, it's María! I changed my number, save this one 😊 Hey, I'm selling some dollars that were sent to me from abroad, I'll let you have them cheaper than today's rate. If you want I'll send you the mobile payment details and as soon as it lands I'll transfer them to you."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "hola soy maria cambie de numero",
+      "vendo dolares mas barato que la tasa",
+      "me ofrecieron divisas por whatsapp",
+      "pague y los dolares no llegaron",
+      "cambio de divisas por instagram",
+      "amiga con otro telefono vendiendo dolares",
+      "me bloqueo despues del pago"
+    ],
+    "en": [
+      "hi it's maria i changed my number",
+      "selling dollars cheaper than the rate",
+      "currency exchange offer on whatsapp",
+      "i paid and never got the dollars",
+      "friend with a new number selling dollars",
+      "they blocked me after i paid"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un “conocido” con número nuevo que te ofrece algo enseguida.",
+      "Una tasa mejor que la del mercado.",
+      "Tienes que pagar primero y él “después” te transfiere."
+    ],
+    "en": [
+      "An “acquaintance” with a new number who offers you something right away.",
+      "A better rate than the market.",
+      "You must pay first and they transfer “afterwards”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llama a la persona a su número de siempre antes de mandar plata.",
+      "No compres divisas a desconocidos ni pagues por adelantado.",
+      "Si pagaste, avisa a tu banco con el comprobante y denuncia en el CICPC."
+    ],
+    "en": [
+      "Call the person on their usual number before sending money.",
+      "Don't buy currency from strangers or pay upfront.",
+      "If you paid, tell your bank with the receipt and report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/cicpc",
+    "ve/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "“Ganancias de 50 y 3.000 dólares”: el nuevo método de estafa en Venezuela a través de WhatsApp",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2022/09/09/gnuevo-metodo-de-estafa-en-venezuela-a-traves-de-whatsapp/",
+      "date": "2022-09-09"
+    },
+    {
+      "title": "La Asociación Bancaria advierte repunte de fraudes digitales",
+      "publisher": "Finanzas Digital",
+      "url": "https://finanzasdigital.com/la-asociacion-bancaria-advierte-repunte-de-fraudes-digitales/",
+      "date": "2025-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

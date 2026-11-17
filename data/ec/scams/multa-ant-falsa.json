@@ -1,0 +1,130 @@
+{
+  "id": "ec/multa-ant-falsa",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“ANT” o “Agencia Nacional de Tránsito”",
+    "en": "“ANT” (national transit agency)"
+  },
+  "name": {
+    "es": "Falsa multa de tránsito de la ANT",
+    "en": "Fake ANT traffic fine"
+  },
+  "how": {
+    "es": "Llega un SMS o correo con el nombre y el logo de la ANT: que tiene una multa pendiente, que le van a sumar recargos o que hay un descuento si paga ya. El enlace lleva a una página que copia una plataforma de pago y le pide datos personales y de la tarjeta. La ANT dice que no cobra multas por SMS ni por correo.",
+    "en": "An SMS or email arrives with the ANT’s name and logo: you have an outstanding fine, surcharges are coming, or there is a discount if you pay now. The link goes to a page copying a payment platform and asks for personal and card details. The ANT says it does not collect fines by SMS or email."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le avisan de una multa pendiente a nombre de la ANT.",
+        "en": "You are told of an outstanding fine in the ANT’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le dan un plazo de horas o le ofrecen un descuento por pagar ya.",
+        "en": "They give you a deadline of hours or offer a discount for paying now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace no es de ant.gob.ec.",
+        "en": "The link is not on ant.gob.ec."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le piden los datos de la tarjeta para “pagar”.",
+        "en": "They ask for your card details to “pay”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "ANT: Registra una citación pendiente de pago. Cancele hoy con 50% de descuento y evite la retención de su licencia. Consulte aquí: [enlace]",
+        "en": "ANT: You have an unpaid traffic ticket. Pay today with a 50% discount and avoid your licence being held. Check here: [enlace]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "multa de la ant",
+      "citacion pendiente",
+      "mensaje de la agencia nacional de transito",
+      "pagar la multa con descuento",
+      "retencion de la licencia",
+      "me llego un sms de una multa",
+      "infraccion de transito por correo"
+    ],
+    "en": [
+      "ant traffic fine",
+      "unpaid traffic ticket",
+      "message from the transit agency",
+      "pay the fine with a discount",
+      "i got a text about a fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Una multa que llega por SMS o correo con un enlace de pago.",
+      "Plazos de pocas horas o descuentos por pagar al instante.",
+      "Direcciones que no terminan en gob.ec.",
+      "Le piden la tarjeta para pagar desde el mensaje."
+    ],
+    "en": [
+      "A fine that arrives by SMS or email with a payment link.",
+      "Deadlines of a few hours or discounts for paying instantly.",
+      "Addresses that do not end in gob.ec.",
+      "They ask for your card to pay from the message."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra el enlace. Consulte sus multas escribiendo usted la página oficial de la ANT o la de su municipio.",
+      "Si ya pagó o dio la tarjeta, llame a su banco para bloquearla.",
+      "Ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Do not open the link. Check your fines by typing the official ANT site or your municipality’s site yourself.",
+      "If you already paid or gave your card, call your bank to block it.",
+      "Report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/tu-banco",
+    "ec/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Alerta urgente de la ANT: ciberdelincuentes usan imagen institucional para engañar en Ecuador",
+      "publisher": "El Diario (Manabí)",
+      "url": "https://www.eldiario.ec/ecuador/alerta-estafas-correo-ant-ecuador-17072026/",
+      "date": "2026-07-17"
+    },
+    {
+      "title": "ANT alerta sobre estafas de multas en mensajes de texto en Ecuador",
+      "publisher": "El Comercio",
+      "url": "https://www.elcomercio.com/actualidad/ecuador/ant-alerta-estafas-multas-mensajes-texto-ecuador/",
+      "date": "2026-04-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

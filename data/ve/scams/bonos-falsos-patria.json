@@ -1,0 +1,136 @@
+{
+  "id": "ve/bonos-falsos-patria",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "“Sistema Patria” o “IVSS”",
+    "en": "“Sistema Patria” or “IVSS”"
+  },
+  "name": {
+    "es": "Bonos falsos del Sistema Patria",
+    "en": "Fake Sistema Patria bonuses"
+  },
+  "how": {
+    "es": "Por WhatsApp y redes circulan anuncios de bonos que no existen o registros falsos para bonos reales: un “Bono de Desarrollo Humano” en dólares, un bono de contingencia, la “activación del QR” del Carnet de la Patria para recibir más beneficios. Traen un enlace a una página que pide cédula, contraseñas y datos bancarios, o un “gestor” que te ofrece hacer el trámite. Los bonos de Patria se asignan directo, sin registros de terceros ni enlaces externos.",
+    "en": "Ads for bonuses that do not exist, or fake sign-ups for real ones, spread on WhatsApp and social media: a “Human Development Bonus” in dollars, a contingency bonus, “QR activation” of the Carnet de la Patria to get more benefits. They carry a link to a page asking for your ID number, passwords and bank details, or a “gestor” who offers to do the paperwork. Patria bonuses are assigned directly, with no third-party sign-ups or external links."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un mensaje o publicación usa el nombre del Sistema Patria o del IVSS.",
+        "en": "A message or post uses the name of Sistema Patria or IVSS."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Promete un bono grande, a veces en dólares, o más beneficios.",
+        "en": "It promises a big bonus, sometimes in dollars, or more benefits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te manda a un enlace para “registrarte” o “activar” el bono.",
+        "en": "It sends you to a link to “register” or “activate” the bonus."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "La página pide cédula, contraseña de Patria y datos del banco.",
+        "en": "The page asks for your ID number, Patria password and bank details."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "🇻🇪 ATENCIÓN: ya está disponible el nuevo bono especial de 1.200 $ por el Sistema Patria. Regístrese con su cédula y su clave antes del viernes para no perder el beneficio 👉 [enlace]. Comparta con su familia.",
+        "en": "🇻🇪 ATTENTION: the new special $1,200 bonus through Sistema Patria is now available. Register with your ID number and password before Friday so you don't lose the benefit 👉 [link]. Share with your family."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "bono del sistema patria",
+      "bono de desarrollo humano",
+      "registrarse para el bono",
+      "activar el qr del carnet de la patria",
+      "bono de contingencia",
+      "me pidieron la clave de patria",
+      "bono en dolares por whatsapp",
+      "gestor para cobrar el bono"
+    ],
+    "en": [
+      "government bonus link on whatsapp",
+      "register for the bonus with my id",
+      "activate the carnet de la patria qr",
+      "bonus in dollars message",
+      "they asked for my patria password",
+      "someone offered to process the bonus for me"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un bono anunciado con un enlace por WhatsApp o redes.",
+      "Te piden la clave de Patria o datos del banco.",
+      "Un “gestor” que ofrece activar o cobrar el bono por ti."
+    ],
+    "en": [
+      "A bonus announced with a link on WhatsApp or social media.",
+      "They ask for your Patria password or bank details.",
+      "A “gestor” who offers to activate or collect the bonus for you."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revisa los bonos solo entrando tú mismo a la plataforma Patria o en veMonedero.",
+      "No le des tu clave ni tu cédula a nadie que te escriba.",
+      "Si diste tu clave, cámbiala ya y avisa a tu banco si diste datos bancarios."
+    ],
+    "en": [
+      "Check bonuses only by logging in to the Patria platform yourself or in veMonedero.",
+      "Do not give your password or ID number to anyone who messages you.",
+      "If you gave your password, change it now and tell your bank if you gave bank details."
+    ]
+  },
+  "reportTo": [
+    "ve/cicpc",
+    "ve/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Bono de Desarrollo Humano: la estafa que circula con la promesa de entregar hasta 1.400 dólares a través del Sistema Patria en Venezuela",
+      "publisher": "NTN24",
+      "url": "https://www.ntn24.com/noticias-actualidad/bono-de-desarrollo-humano-la-estafa-que-circula-con-la-promesa-de-entregar-hasta-1-400-dolares-a-traves-del-sistema-patria-en-venezuela-663796",
+      "date": "2026-11-04"
+    },
+    {
+      "title": "IVSS alertó sobre estafas con registros falsos para bono de contingencia por terremotos",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/06/29/ivss-estafas-bono-terremotos/",
+      "date": "2026-06-29"
+    },
+    {
+      "title": "IVSS alertó sobre estafas en redes sociales con supuestas promociones del Banco de Venezuela y el Sistema Patria",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/04/07/ivss-alerto-estafas-redes-sociales-promociones-banco-de-venezuela-sistema-patria/",
+      "date": "2026-04-07"
+    }
+  ],
+  "updated": "2026-11-17"
+}

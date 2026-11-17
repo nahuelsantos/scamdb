@@ -1,0 +1,121 @@
+{
+  "id": "co/falsa-dian-correo",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "es": "“DIAN”",
+    "en": "“DIAN”"
+  },
+  "name": {
+    "es": "Correo falso de la DIAN: embargo, deuda o trámite que hay que pagar",
+    "en": "Fake DIAN email: seizure, debt or a procedure you must pay for"
+  },
+  "how": {
+    "es": "Le llega un correo que parece de la DIAN, con logos y referencias a leyes. Dice que tiene una deuda, un proceso de embargo o un trámite pendiente, y le pide abrir un archivo o un enlace, dar datos personales o financieros, o pagar a una cuenta. El remitente no es de la DIAN, el texto tiene errores y el tono es alarmante para que actúe ya. Los adjuntos pueden instalar programas maliciosos.",
+    "en": "You get an email that looks like it is from DIAN, the tax agency, with logos and legal references. It says you have a debt, a seizure process or a pending procedure, and asks you to open a file or link, give personal or financial details, or pay into an account. The sender isn’t DIAN, the text has errors and the tone is alarming so you act at once. The attachments can install malware."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le llega un correo con logos de la DIAN que no viene del dominio oficial.",
+        "en": "An email with DIAN logos arrives that isn’t from the official domain."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le habla de embargo o sanciones si no actúa de inmediato.",
+        "en": "It mentions seizure or penalties unless you act immediately."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le pide abrir un adjunto o un enlace.",
+        "en": "It asks you to open an attachment or a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le pide datos financieros o un pago a una cuenta.",
+        "en": "It asks for financial details or a payment into an account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "DIAN - Notificacion de proceso de cobro coactivo No. [número]. Usted presenta obligaciones pendientes y se procedera al embargo de sus cuentas en 48 horas. Descargue el mandamiento de pago adjunto y regularice su situacion en el siguiente enlace: [enlace]",
+        "en": "DIAN - Notice of enforced collection process No. [number]. You have outstanding obligations and your accounts will be seized within 48 hours. Download the attached payment order and settle your situation at the following link: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo de la dian",
+      "embargo de la dian",
+      "me llego un correo de cobro coactivo",
+      "deuda con la dian",
+      "archivo adjunto de la dian",
+      "pagar a la dian por un link",
+      "notificacion de la dian por correo"
+    ],
+    "en": [
+      "email from dian",
+      "dian says my accounts will be seized",
+      "tax debt email",
+      "attachment from the tax agency",
+      "pay the tax office through a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El remitente no termina en el dominio oficial de la DIAN.",
+      "Errores de ortografía, logos viejos o normas que no existen.",
+      "Le piden pagar o dar datos por correo, y con afán."
+    ],
+    "en": [
+      "The sender doesn’t end in DIAN’s official domain.",
+      "Spelling mistakes, old logos or laws that don’t exist.",
+      "You are asked to pay or give details by email, in a rush."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abra adjuntos ni enlaces; verifique el correo con la herramienta oficial de la DIAN.",
+      "Revise su situación entrando usted a la página de la DIAN.",
+      "Reporte el correo al CAI Virtual."
+    ],
+    "en": [
+      "Don’t open attachments or links; check the email with DIAN’s official tool.",
+      "Check your situation by going to DIAN’s website yourself.",
+      "Report the email to CAI Virtual."
+    ]
+  },
+  "reportTo": [
+    "co/dian-verificar",
+    "co/cai-virtual"
+  ],
+  "sources": [
+    {
+      "title": "DIAN alerta sobre estafadores que utilizan correos electrónicos falsos para suplantar a funcionarios",
+      "publisher": "DIAN",
+      "url": "https://www.dian.gov.co/Prensa/Paginas/NG-Comunicado-de-Prensa-002-2025.aspx",
+      "date": "2025-01-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

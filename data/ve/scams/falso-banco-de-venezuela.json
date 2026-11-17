@@ -1,0 +1,140 @@
+{
+  "id": "ve/falso-banco-de-venezuela",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "es": "“Banco de Venezuela”",
+    "en": "“Banco de Venezuela”"
+  },
+  "name": {
+    "es": "“Su cuenta fue congelada”: correo o mensaje falso del Banco de Venezuela",
+    "en": "“Your account has been frozen”: fake Banco de Venezuela email or message"
+  },
+  "how": {
+    "es": "Te llega un correo, un SMS o un mensaje por redes que parece del Banco de Venezuela: dice que tu cuenta fue congelada o suspendida por seguridad y que tus fondos están retenidos hasta que la verifiques. Trae un botón o enlace para “activar la cuenta”. La página es falsa: ahí pones usuario, clave y datos, y con eso te vacían la cuenta. El banco dice que no manda correos con enlaces para reactivar cuentas ni pide datos personales.",
+    "en": "You get an email, a text or a social media message that looks like it comes from Banco de Venezuela: it says your account was frozen or suspended for security and your funds are held until you verify it. It has a button or link to “activate the account”. The page is fake: you type your username, password and details there, and they empty your account. The bank says it does not send emails with links to reactivate accounts or ask for personal data."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te escriben haciéndose pasar por el Banco de Venezuela.",
+        "en": "They write to you pretending to be Banco de Venezuela."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dicen que tu cuenta está congelada y que tienes que verificarla ya.",
+        "en": "They say your account is frozen and you must verify it now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te mandan un botón o enlace para “activar la cuenta”.",
+        "en": "They send a button or link to “activate the account”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "En la página falsa te piden usuario, clave y datos, y luego vacían la cuenta.",
+        "en": "The fake page asks for your username, password and details, then they empty the account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Banco de Venezuela informa: por motivos de seguridad su cuenta ha sido congelada temporalmente y sus fondos permanecen retenidos. Para evitar la suspensión definitiva presione ACTIVAR CUENTA y complete la verificación antes de 24 horas: [enlace]",
+        "en": "Banco de Venezuela informs you: for security reasons your account has been temporarily frozen and your funds remain on hold. To avoid permanent suspension press ACTIVATE ACCOUNT and complete the verification within 24 hours: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "cuenta congelada",
+      "mi cuenta del banco de venezuela esta suspendida",
+      "activar cuenta",
+      "me llego un correo del banco de venezuela",
+      "fondos retenidos",
+      "verificar mi cuenta bdv",
+      "me vaciaron la cuenta despues de un correo",
+      "pagina falsa del banco de venezuela",
+      "me pidieron la clave de bdvenlinea",
+      "bloqueo preventivo de la cuenta",
+      "validar mi identidad en una pagina"
+    ],
+    "en": [
+      "account frozen",
+      "bank account suspended email",
+      "activate account button",
+      "funds on hold until verification",
+      "fake banco de venezuela page",
+      "they emptied my account after an email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Dicen que tu cuenta está congelada o suspendida y meten prisa.",
+      "Traen un botón o enlace para “activar” o “verificar” la cuenta.",
+      "Piden usuario, clave, códigos o datos de la tarjeta."
+    ],
+    "en": [
+      "They say your account is frozen or suspended and rush you.",
+      "They include a button or link to “activate” or “verify” the account.",
+      "They ask for your username, password, codes or card details."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace: entra a BDVenlínea o a BDVApp escribiendo tú la dirección o desde la app oficial.",
+      "Compara la dirección con la de la web oficial del banco antes de poner tu clave.",
+      "Si ya pusiste tus datos, cambia tu clave y llama al banco para bloquear todo; luego denuncia en el CICPC."
+    ],
+    "en": [
+      "Do not open the link: go to BDVenlínea or BDVApp by typing the address yourself or from the official app.",
+      "Compare the address with the bank's official website before typing your password.",
+      "If you already entered your details, change your password and call the bank to block everything; then report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/banco-de-venezuela",
+    "ve/tu-banco",
+    "ve/cicpc",
+    "ve/sudeban"
+  ],
+  "story": {
+    "es": "Una usuaria de 32 años contó que creyó que el correo era real, presionó el botón y le dejaron la cuenta vacía.",
+    "en": "A 32-year-old customer said she believed the email was real, pressed the button and her account was emptied."
+  },
+  "sources": [
+    {
+      "title": "Usuarios del Banco de Venezuela denunciaron un nuevo modelo de estafa a través de correo electrónico",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2025/09/15/usuarios-banco-de-venezuela-nuevo-modelo-estafa-correo-electronico/",
+      "date": "2025-09-15"
+    },
+    {
+      "title": "Sudeban alerta sobre fraudes digitales y recomienda medidas de prevención",
+      "publisher": "Finanzas Digital",
+      "url": "https://finanzasdigital.com/sudeban-alerta-fraudes-digitales-prevencion/",
+      "date": "2025-05-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

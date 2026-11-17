@@ -1,0 +1,132 @@
+{
+  "id": "pe/sms-banco-enlace",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu banco” por SMS o WhatsApp",
+    "en": "“Your bank” by SMS or WhatsApp"
+  },
+  "name": {
+    "es": "SMS del “banco”: operación retenida y enlace para actualizar datos",
+    "en": "Bank SMS: transaction on hold and a link to update your details"
+  },
+  "how": {
+    "es": "Te llega un SMS o WhatsApp “del banco” que dice que una operación está retenida, que tu cuenta está inactiva o que debes actualizar tus datos. El enlace lleva a una página que copia la del banco y se queda con tus claves y los datos de tu tarjeta. Después, a veces te llaman para pedirte el código que te llega.",
+    "en": "An SMS or WhatsApp “from the bank” says a transaction is on hold, your account is inactive or you must update your details. The link goes to a page that copies the bank’s and keeps your passwords and card details. Afterwards they sometimes call to ask for the code you receive."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un mensaje con el nombre de tu banco desde un número o remitente que no es el oficial.",
+        "en": "A message with your bank’s name arrives from a number or sender that is not the official one."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Dice que tu cuenta está bloqueada, inactiva o que hay una operación retenida.",
+        "en": "It says your account is blocked or inactive, or a transaction is on hold."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una página falsa que pide tu usuario, clave y datos de la tarjeta.",
+        "en": "The link goes to a fake page asking for your username, password and card details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Luego te llaman o escriben para pedir el código que llega a tu celular.",
+        "en": "Then they call or write to ask for the code that reaches your phone."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "BANCO: Su cuenta ha sido suspendida temporalmente por falta de validacion de datos. Para evitar el bloqueo definitivo regularice hoy aqui [enlace]",
+        "en": "BANK: Your account has been temporarily suspended because your details were not validated. To avoid a permanent block, sort it out today here [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "sms del banco con un link",
+      "actualizar mis datos",
+      "operacion retenida",
+      "transferencia retenida",
+      "inactiva por seguridad",
+      "pagina igualita a la del banco",
+      "puse mi clave en un link",
+      "banca por internet suspendida",
+      "evitar el bloqueo definitivo"
+    ],
+    "en": [
+      "text from the bank with a link",
+      "update my details",
+      "transaction on hold",
+      "account inactive for security",
+      "page identical to the bank",
+      "entered my password on a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un SMS o WhatsApp del “banco” con un enlace.",
+      "Te apuran con un bloqueo o una operación retenida.",
+      "La página pide clave, CVV o fecha de vencimiento de la tarjeta."
+    ],
+    "en": [
+      "An SMS or WhatsApp from the “bank” with a link.",
+      "They rush you with a block or a held transaction.",
+      "The page asks for your password, CVV or card expiry date."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace: entra a la app oficial de tu banco o llama al número de tu tarjeta.",
+      "Los bancos no envían enlaces para pedirte datos confidenciales.",
+      "Si pusiste tus datos, bloquea la tarjeta y cambia tus claves ya."
+    ],
+    "en": [
+      "Don’t open the link: go to your bank’s official app or call the number on your card.",
+      "Banks don’t send links asking for confidential details.",
+      "If you entered your details, block the card and change your passwords now."
+    ]
+  },
+  "reportTo": [
+    "pe/tu-banco",
+    "pe/banco-de-la-nacion",
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "BN advierte sobre llamadas y mensajes falsos para obtener información de clientes",
+      "publisher": "Banco de la Nación",
+      "url": "https://www.bn.com.pe/noticias/2026/19082026-bn-advierte-llamadas-mensajes-falsos.asp",
+      "date": "2026-08-19"
+    },
+    {
+      "title": "BCP emite importante alerta sobre la gratificación de julio: clientes deben estar informados",
+      "publisher": "Líbero",
+      "url": "https://libero.pe/tiempoextra/2026/07/08/bcp-emite-importante-alerta-gratificacion-de-julio-clientes-deben-estar-informados-797032",
+      "date": "2026-07-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

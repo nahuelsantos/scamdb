@@ -1,0 +1,136 @@
+{
+  "id": "py/falso-subsidio",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social",
+    "online"
+  ],
+  "sender": {
+    "es": "“Gobierno del Paraguay”, “Tekoporã” o “Portal Paraguay”",
+    "en": "“Government of Paraguay”, “Tekoporã” or “Portal Paraguay”"
+  },
+  "name": {
+    "es": "Falsos bonos y subsidios del Gobierno (Tekoporã, “Bono Mujer”)",
+    "en": "Fake government bonuses and benefits (Tekoporã, “Bono Mujer”)"
+  },
+  "how": {
+    "es": "Te llega un mensaje o ves una publicación sobre un subsidio del Gobierno: un “Bono Mujer” de G. 600.000, cobrar Tekoporã, una ayuda nueva. El enlace lleva a una página que imita al Portal Paraguay y te pide tus datos, tu cuenta del banco o de tus redes. Con eso vacían cuentas o roban perfiles. Ninguna institución del Estado pide datos por enlaces de WhatsApp o redes.",
+    "en": "You get a message or see a post about a government benefit: a G. 600,000 “Bono Mujer”, collecting Tekoporã, a new aid. The link goes to a page that imitates Portal Paraguay and asks for your details and your bank or social media account. With those they empty accounts or steal profiles. No state body asks for data through WhatsApp or social media links."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan de un bono o subsidio a nombre del Gobierno.",
+        "en": "They tell you about a bonus or benefit in the government’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "La plata es fácil y “solo por este mes”.",
+        "en": "The money is easy and “only this month”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te mandan a un enlace que imita una página oficial.",
+        "en": "They send you to a link imitating an official page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden datos personales, bancarios o el código de tu cuenta.",
+        "en": "They ask for personal or bank details or your account code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Gobierno Nacional: ya podés inscribirte al nuevo subsidio de apoyo familiar de G. 750.000. Completá tus datos antes del viernes en [enlace] y compartí con tus contactos.",
+        "en": "National Government: you can now sign up for the new G. 750,000 family support benefit. Fill in your details before Friday at [link] and share with your contacts."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "bono mujer",
+      "cobrar tekopora",
+      "subsidio del gobierno",
+      "pago extra del gobierno",
+      "ministerio de desarrollo social",
+      "mds",
+      "ayuda para madres",
+      "ver si cobro el bono",
+      "reenviar a los grupos",
+      "portal paraguay",
+      "ayuda del estado por whatsapp",
+      "pagina falsa del gobierno"
+    ],
+    "en": [
+      "government bonus",
+      "collect tekopora",
+      "government benefit",
+      "sign up for the benefit",
+      "fake government page"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un bono que llega por WhatsApp o SMS con un enlace.",
+      "Te piden compartirlo con tus contactos.",
+      "La página no es una dirección oficial del Estado."
+    ],
+    "en": [
+      "A bonus that arrives by WhatsApp or text with a link.",
+      "They ask you to share it with your contacts.",
+      "The page is not an official state address."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No entres al enlace ni completes el formulario.",
+      "Consultá los programas sociales solo en los sitios oficiales del Gobierno.",
+      "Reportá el mensaje al CERT-PY y, si diste datos del banco, llamá a tu banco."
+    ],
+    "en": [
+      "Don’t open the link or fill in the form.",
+      "Check social programmes only on official government websites.",
+      "Report the message to CERT-PY and, if you gave bank details, call your bank."
+    ]
+  },
+  "reportTo": [
+    "py/cert-py",
+    "py/tu-banco",
+    "py/policia-cibercrimen"
+  ],
+  "sources": [
+    {
+      "title": "Que no te estafen por querer cobrar Tekoporã: usan web falsa para suplantar el Portal Paraguay",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/nacionales/2026/08/27/que-no-te-estafen-por-querer-cobrar-tekopora-usan-web-falsa-para-suplantar-al-portal-paraguay/",
+      "date": "2026-08-27"
+    },
+    {
+      "title": "Alerta: usan falso “Bono Mujer” de G. 600.000 para robar datos",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/nacionales/2026/05/18/alerta-usan-falso-bono-mujer-de-g-600000-para-robar-datos/",
+      "date": "2026-05-18"
+    }
+  ],
+  "updated": "2026-11-17"
+}

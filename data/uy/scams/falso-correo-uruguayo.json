@@ -1,0 +1,135 @@
+{
+  "id": "uy/falso-correo-uruguayo",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "es": "“Correo Uruguayo”",
+    "en": "“Correo Uruguayo”"
+  },
+  "name": {
+    "es": "“Tu paquete está pendiente”: el falso Correo Uruguayo",
+    "en": "“Your parcel is pending”: the fake Correo Uruguayo"
+  },
+  "how": {
+    "es": "Te llega un SMS, un mail o ves una publicación que parece del Correo Uruguayo: tenés un paquete pendiente y para recibirlo hay que pagar un costo o actualizar la dirección. A veces dicen que está retenido en Aduana. El link no es del Correo: lleva a una página copiada que te pide datos personales y de la tarjeta. Otra variante vende “paquetes perdidos” o sortea premios a nombre del Correo.",
+    "en": "You get a text, an email or see a post that seems to come from Correo Uruguayo: you have a pending parcel and must pay a fee or update your address to get it. Sometimes they say it is held at Customs. The link is not Correo’s: it goes to a copied page that asks for personal and card details. Another variant sells “lost parcels” or runs prize draws in Correo’s name."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan que tenés un paquete pendiente o retenido.",
+        "en": "They tell you a parcel is pending or held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apuran: si no pagás hoy, el envío vuelve o se pierde.",
+        "en": "They rush you: if you don’t pay today, the parcel goes back or is lost."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El link lleva a un sitio que no es la web oficial del Correo.",
+        "en": "The link leads to a site that is not Correo’s official website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden pagar un costo chico con la tarjeta.",
+        "en": "They ask you to pay a small fee by card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "CORREO UY: Su envio no pudo ser entregado por falta de pago del arancel de distribucion ($ 189). Regularice hoy o sera devuelto al origen: [enlace]",
+        "en": "CORREO UY: Your shipment could not be delivered because the distribution fee ($189) is unpaid. Settle it today or it will be returned to origin: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "encomienda pendiente",
+      "correo uruguayo",
+      "costo de gestion para la entrega",
+      "actualizar la direccion de entrega",
+      "retenido en aduana",
+      "mensaje del correo con un link",
+      "venta de encomiendas perdidas",
+      "arancel para recibir la encomienda"
+    ],
+    "en": [
+      "pending parcel",
+      "my parcel is held",
+      "pay to receive the parcel",
+      "update the delivery address",
+      "held at customs",
+      "post office text with a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden pagar por mensaje para liberar un paquete.",
+      "La dirección del link no es la del Correo Uruguayo.",
+      "No dice qué compraste ni quién lo manda.",
+      "Te dan plazo de horas."
+    ],
+    "en": [
+      "They ask you to pay by message to release a parcel.",
+      "The link address is not Correo Uruguayo’s.",
+      "It doesn’t say what you bought or who sent it.",
+      "They give you a deadline of hours."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el link ni pongas datos de la tarjeta.",
+      "Si esperás algo, buscá el seguimiento escribiendo vos la dirección oficial del Correo.",
+      "Si ya pagaste, llamá al banco para bloquear la tarjeta y hacé la denuncia."
+    ],
+    "en": [
+      "Don’t tap the link or enter card details.",
+      "If you’re expecting something, track it by typing Correo’s official address yourself.",
+      "If you already paid, call the bank to block the card and file a report."
+    ]
+  },
+  "reportTo": [
+    "uy/tu-banco",
+    "uy/correo-uruguayo",
+    "uy/cibercrimen",
+    "uy/verifica"
+  ],
+  "sources": [
+    {
+      "title": "En Uruguay hay organizaciones delictivas que operan para cometer estafas cibernéticas",
+      "publisher": "El Observador",
+      "url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/en-uruguay-hay-organizaciones-delictivas-cometer-estafas-ciberneticas-n6051812",
+      "date": "2026-07-24"
+    },
+    {
+      "title": "Correo Uruguayo alerta sobre fraudes digitales que suplantan su identidad",
+      "publisher": "Ministerio de Industria, Energía y Minería",
+      "url": "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/correo-uruguayo-alerta-sobre-fraudes-digitales-suplantan-su-identidad",
+      "date": "2025-06-02"
+    }
+  ],
+  "updated": "2026-11-17"
+}

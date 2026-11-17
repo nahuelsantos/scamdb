@@ -1,0 +1,149 @@
+{
+  "id": "py/falsa-operadora-codigo",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Tu operadora” (Tigo, Personal, Claro) o “soporte”",
+    "en": "“Your phone company” (Tigo, Personal, Claro) or “support”"
+  },
+  "name": {
+    "es": "La “promo” de la operadora que te pide un código: te roban el WhatsApp o la cuenta",
+    "en": "The phone company “promo” that asks for a code: they steal your WhatsApp or bank account"
+  },
+  "how": {
+    "es": "Te llama alguien que dice ser de tu telefonía, con una promoción muy buena (saldo ilimitado, meses gratis) o una “encuesta”. Para “actualizar el sistema” te pide que le dictes un código que te llega por SMS. Ese código es el de WhatsApp o el de tu banco: con él se quedan con tu WhatsApp, cambian tu PIN transaccional y piden plata a tus contactos.",
+    "en": "Someone calls claiming to be from your phone company, with a great promotion (unlimited credit, free months) or a “survey”. To “update the system” they ask you to read out a code that arrives by text. That code is for WhatsApp or your bank: with it they take over your WhatsApp, reset your transaction PIN and ask your contacts for money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llama un supuesto empleado de la operadora o del soporte técnico.",
+        "en": "A supposed phone company or tech support employee calls you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece una promo, un premio o te hace una encuesta.",
+        "en": "They offer a promo or a prize, or run a survey."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pide que le dictes el código de seis números que te llegó por SMS.",
+        "en": "They ask you to read out the six-digit code you got by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Con el código se quedan con tu WhatsApp o tu cuenta y piden plata a tus contactos.",
+        "en": "With the code they take your WhatsApp or account and ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le hablamos del área de fidelización de su línea. Por ser cliente antiguo le corresponde internet ilimitado por tres meses, solo tiene que pasarme el código que le acaba de llegar para activarlo.",
+        "en": "Good afternoon, this is the loyalty department of your phone line. As a long-standing customer you get unlimited internet for three months; just give me the code you just received to activate it."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo que me llego por sms",
+      "dictar el codigo",
+      "pasar el codigo del mensaje",
+      "codigo de seis digitos",
+      "codigo de verificacion de whatsapp",
+      "me robaron el whatsapp",
+      "me hackearon el whatsapp",
+      "me llamaron de tigo",
+      "me llamaron de personal",
+      "me llamaron de claro",
+      "llamada de la telefonia",
+      "beneficio gratis en mi linea",
+      "area de fidelizacion",
+      "saldo ilimitado",
+      "meses gratis",
+      "actualizar el sistema",
+      "cambiaron mi pin transaccional"
+    ],
+    "en": [
+      "they asked for the code i got by text",
+      "read out the code",
+      "whatsapp verification code",
+      "my whatsapp was stolen",
+      "the phone company called me",
+      "free months",
+      "they reset my transaction pin"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden un código que te llegó por SMS o correo.",
+      "Una promo demasiado buena que no pediste.",
+      "Te dicen que es para “actualizar el sistema” o “validar tu identidad”."
+    ],
+    "en": [
+      "They ask for a code you got by text or email.",
+      "A promo that is too good and you never asked for.",
+      "They say it is to “update the system” or “verify your identity”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Cortá. Ninguna empresa en Paraguay te pide códigos, PIN ni claves por teléfono.",
+      "Activá la verificación en dos pasos de WhatsApp.",
+      "Si ya lo dictaste: avisá a tus contactos, recuperá WhatsApp con tu número, llamá a tu banco y hacé la denuncia."
+    ],
+    "en": [
+      "Hang up. No company in Paraguay asks for codes, PINs or passwords by phone.",
+      "Turn on WhatsApp two-step verification.",
+      "If you already gave it: warn your contacts, recover WhatsApp with your number, call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "py/whatsapp-ayuda",
+    "py/tu-banco",
+    "py/policia-cibercrimen",
+    "py/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Las estafas cibernéticas más utilizadas, en qué consisten y cómo evitarlas",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/08/11/las-estafas-ciberneticas-mas-utilizadas-en-que-consisten-y-como-evitarlas",
+      "date": "2026-08-11"
+    },
+    {
+      "title": "Cómo evitar estafas y el “hackeo” de WhatsApp: una guía de la Policía Nacional",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/policiales/2026/08/08/como-evitar-estafas-y-el-hackeo-de-whatsapp-una-guia-de-la-policia-nacional/",
+      "date": "2026-08-08"
+    },
+    {
+      "title": "Advierten sobre intentos masivos de robo de cuentas de WhatsApp",
+      "publisher": "El Nacional",
+      "url": "https://elnacional.com.py/nacionales/advierten-sobre-intentos-masivos-robo-cuentas-whatsapp-n114264",
+      "date": "2026-10-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

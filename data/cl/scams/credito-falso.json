@@ -1,0 +1,126 @@
+{
+  "id": "cl/credito-falso",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Financiera” en Facebook o Instagram",
+    "en": "“Lender” on Facebook or Instagram"
+  },
+  "name": {
+    "es": "El crédito fácil que te cobra por adelantado",
+    "en": "The easy loan that charges you up front"
+  },
+  "how": {
+    "es": "Ves en Facebook, Instagram o una página web una empresa que ofrece créditos rápidos, sin papeles y aunque estés en DICOM. Dicen estar fiscalizados por la CMF o copian el nombre de una empresa real. Te aprueban altiro, pero antes de depositarte te piden pagar un seguro, una comisión o un “pie”. Pagas y el crédito nunca llega.",
+    "en": "On Facebook, Instagram or a website you see a company offering fast loans, no paperwork, even if you have a bad credit record. They claim to be supervised by the regulator (CMF) or copy a real company’s name. You’re approved at once, but before paying out they ask for insurance, a fee or a deposit. You pay and the loan never arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un aviso de crédito fácil, sin papeles y aunque tengas deudas.",
+        "en": "You see an easy-loan ad, no paperwork, even with debts."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Dicen estar autorizados por la CMF o usan el nombre de otra empresa.",
+        "en": "They say they’re authorised by the CMF or use another company’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Antes de depositarte te piden pagar un seguro o una comisión.",
+        "en": "Before paying out they ask you to pay insurance or a fee."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te apuran: la aprobación vence hoy.",
+        "en": "They rush you: the approval expires today."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicidades! Su crédito de $2.500.000 fue preaprobado en 36 cuotas. Para liberar el depósito solo falta transferir el seguro de desgravamen de $89.000 antes de las 18:00. Somos entidad fiscalizada, no revisamos DICOM.",
+        "en": "Congratulations! Your loan of 2,500,000 pesos was pre-approved in 36 instalments. To release the payment you only need to transfer the 89,000-peso credit life insurance before 6 pm. We are a supervised entity, we don’t check credit records."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "credito falso",
+      "prestamo sin dicom",
+      "pagar el seguro antes del credito",
+      "credito por facebook",
+      "me pidieron una comision por el prestamo",
+      "financiera falsa",
+      "credito preaprobado",
+      "deposito para liberar el credito"
+    ],
+    "en": [
+      "fake loan company",
+      "paid a fee to get the loan",
+      "loan with no credit check",
+      "loan advert on facebook",
+      "insurance before the loan is paid",
+      "loan never arrived"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Te cobran antes de darte el crédito.",
+      "“No revisamos DICOM” y aprobación inmediata.",
+      "Solo te atienden por WhatsApp o redes sociales."
+    ],
+    "en": [
+      "They charge you before giving you the loan.",
+      "“We don’t check your credit record” and instant approval.",
+      "They only deal with you by WhatsApp or social media."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Revisa en la página de la CMF si la empresa está autorizada y si tiene alertas.",
+      "Nunca pagues por adelantado para recibir un crédito.",
+      "Si pagaste, denuncia en la PDI o la Fiscalía."
+    ],
+    "en": [
+      "Check on the CMF website whether the company is authorised and has alerts.",
+      "Never pay up front to receive a loan.",
+      "If you paid, report it to the PDI or the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "cl/cmf",
+    "cl/pdi",
+    "cl/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "CMF denuncia por estafa a cuatro sitios web no regulados que ofrecen créditos fraudulentos",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/nacional/526651-cmf-alerta-estafa-sitios-web-no-regulados-creditos-fraude-10-07-2026.html",
+      "date": "2026-07-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

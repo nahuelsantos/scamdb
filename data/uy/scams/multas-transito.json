@@ -1,0 +1,128 @@
+{
+  "id": "uy/multas-transito",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“SUCIVE” o “Intendencia”",
+    "en": "“SUCIVE” or the “council”"
+  },
+  "name": {
+    "es": "“Tenés una multa pendiente”: la falsa deuda de tránsito",
+    "en": "“You have an unpaid fine”: the fake traffic debt"
+  },
+  "how": {
+    "es": "Te llega un SMS o un mail, desde números o direcciones variadas, que dice que tenés multas o deudas con el SUCIVE o la Intendencia. Trae un link para pagar o “ver el detalle”, que lleva a una página falsa donde te piden datos personales y de la tarjeta.",
+    "en": "You get a text or email, from assorted numbers or addresses, saying you have fines or debts with SUCIVE (vehicle tax system) or the council. It has a link to pay or “see the details”, which goes to a fake page asking for personal and card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te avisan de una multa o deuda de tránsito.",
+        "en": "They tell you about a traffic fine or debt."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te amenazan con recargos si no pagás ya.",
+        "en": "They threaten surcharges if you don’t pay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Hay un link para pagar.",
+        "en": "There is a link to pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden la tarjeta.",
+        "en": "They ask for your card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "SUCIVE: Registramos una infraccion de transito pendiente asociada a su matricula. Evite recargos y la suspension del libre de deuda abonando hoy: [enlace]",
+        "en": "SUCIVE: We have a pending traffic offence linked to your number plate. Avoid surcharges and suspension of your clearance certificate by paying today: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "multa de transito",
+      "deuda con el sucive",
+      "mensaje del sucive",
+      "pagar la multa por un link",
+      "infraccion pendiente",
+      "intendencia multa por sms"
+    ],
+    "en": [
+      "traffic fine",
+      "debt with the vehicle registry",
+      "pay the fine through a link",
+      "pending traffic offence",
+      "fine notice by text"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El SUCIVE no manda links sobre infracciones.",
+      "Llega desde un celular común.",
+      "Te apuran con recargos."
+    ],
+    "en": [
+      "SUCIVE doesn’t send links about offences.",
+      "It comes from an ordinary mobile.",
+      "They rush you with surcharges."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No toques el link ni pases datos.",
+      "Consultá tus multas entrando vos a la web del SUCIVE o de tu Intendencia.",
+      "Si pagaste, llamá al banco; podés consultar el mensaje en Verificá."
+    ],
+    "en": [
+      "Don’t tap the link or give details.",
+      "Check your fines by going to the SUCIVE or council website yourself.",
+      "If you paid, call the bank; you can check the message with Verificá."
+    ]
+  },
+  "reportTo": [
+    "uy/verifica",
+    "uy/tu-banco",
+    "uy/cibercrimen"
+  ],
+  "sources": [
+    {
+      "title": "Alerta a la población por mensajes fraudulentos vinculados a supuestas deudas de tránsito",
+      "publisher": "Ministerio del Interior",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/alerta-poblacion-mensajes-fraudulentos-vinculados-supuestas-deudas-transito",
+      "date": "2026-05-04"
+    },
+    {
+      "title": "Mensajes falsos: Sucive advierte por nueva modalidad de estafa mediante mails",
+      "publisher": "Montevideo Portal",
+      "url": "https://www.montevideo.com.uy/Noticias/Mensajes-falsos-Sucive-advierte-por-nueva-modalidad-de-estafa-mediante-mails-uc874642",
+      "date": "2023-12-21"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,127 @@
+{
+  "id": "uy/vehiculo-sena-falsa",
+  "country": "uy",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “vendedor” o una “automotora” en redes",
+    "en": "A “seller” or a “car dealer” on social media"
+  },
+  "name": {
+    "es": "“Te lo reservo con una seña”: el auto o la moto que no existe",
+    "en": "“I’ll hold it for a deposit”: the car or motorbike that doesn’t exist"
+  },
+  "how": {
+    "es": "Ves en Marketplace o en redes una moto o un auto a buen precio. A veces copian el nombre, la foto y la dirección de una automotora real y te atienden por WhatsApp Business. Te dicen que el vehículo está en un depósito y que para reservarlo hay que mandar una seña. Pagás y te bloquean.",
+    "en": "You see a motorbike or car at a good price on Marketplace or social media. Sometimes they copy the name, photo and address of a real dealer and talk to you on WhatsApp Business. They say the vehicle is in a storage yard and you must send a deposit to hold it. You pay and they block you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un vehículo barato en redes.",
+        "en": "You see a cheap vehicle on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Usan el nombre de una automotora real.",
+        "en": "They use a real dealer’s name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "No te dejan verlo: “está en el depósito”.",
+        "en": "They won’t let you see it: “it’s in storage”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden seña por transferencia.",
+        "en": "They ask for a deposit by transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas! La moto sigue disponible, está en el depósito de la empresa así que no se puede ver hoy. Si la querés te la aparto con una seña de $ 15.000 y el lunes coordinamos la entrega.",
+        "en": "Hi! The motorbike is still available, it’s in the company’s storage yard so you can’t see it today. If you want it I’ll set it aside with a $15,000 deposit and we’ll arrange delivery on Monday."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "sena para reservar la moto",
+      "auto en marketplace barato",
+      "automotora por whatsapp",
+      "esta en el deposito",
+      "pague la sena y me bloquearon",
+      "no me dejaron ver el auto"
+    ],
+    "en": [
+      "deposit to hold the motorbike",
+      "cheap car on marketplace",
+      "car dealer on whatsapp",
+      "it is in storage",
+      "i paid the deposit and they blocked me"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "No te dejan ver ni probar el vehículo.",
+      "Piden 10 a 20% de seña por adelantado.",
+      "El perfil es nuevo o copia a una automotora."
+    ],
+    "en": [
+      "They won’t let you see or test the vehicle.",
+      "They ask for a 10–20% deposit up front.",
+      "The profile is new or copies a dealer."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca señes sin ver el vehículo y los papeles.",
+      "Llamá a la automotora a un teléfono que busques vos.",
+      "Si pagaste, guardá todo y denunciá."
+    ],
+    "en": [
+      "Never pay a deposit without seeing the vehicle and its papers.",
+      "Call the dealer on a number you look up yourself.",
+      "If you paid, keep everything and report it."
+    ]
+  },
+  "reportTo": [
+    "uy/policia",
+    "uy/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "En Uruguay hay organizaciones delictivas que operan para cometer estafas cibernéticas",
+      "publisher": "El Observador",
+      "url": "https://www.elobservador.com.uy/ciencia-y-tecnologia/en-uruguay-hay-organizaciones-delictivas-cometer-estafas-ciberneticas-n6051812",
+      "date": "2026-07-24"
+    },
+    {
+      "title": "Desarticulan banda que estafaba por redes sociales",
+      "publisher": "Ministerio del Interior (Jefatura de Canelones)",
+      "url": "https://www.gub.uy/ministerio-interior/comunicacion/noticias/desarticulan-banda-estafaba-redes-sociales",
+      "date": "2025-08-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

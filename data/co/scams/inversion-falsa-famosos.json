@@ -1,0 +1,130 @@
+{
+  "id": "co/inversion-falsa-famosos",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "es": "Un famoso en un video, luego un “asesor financiero”",
+    "en": "A celebrity in a video, then a “financial adviser”"
+  },
+  "name": {
+    "es": "Inversión falsa con videos de famosos hechos con IA",
+    "en": "Fake investment with AI-made celebrity videos"
+  },
+  "how": {
+    "es": "En Facebook o Instagram ve un video de un empresario o futbolista colombiano conocido, o una “noticia” que imita a un periódico, prometiendo ganancias semanales de millones con una plataforma. Deja sus datos y lo llama un asesor que le pide un primer depósito pequeño, le muestra gráficas de ganancias falsas y le insiste en meter más. A veces le hace instalar AnyDesk para “ayudarle”, y con eso le saca la plata de sus cuentas. Nunca puede retirar.",
+    "en": "On Facebook or Instagram you see a video of a well-known Colombian businessman or footballer, or a “news story” imitating a newspaper, promising weekly profits of millions with a platform. You leave your details and an adviser calls asking for a small first deposit, shows you fake profit charts and pushes you to put in more. Sometimes they have you install AnyDesk to “help”, and with that they take money from your accounts. You can never withdraw."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un famoso “recomienda” una plataforma en un video o una noticia falsa.",
+        "en": "A celebrity “recommends” a platform in a video or fake news story."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le prometen ganancias altas y rápidas con poca plata.",
+        "en": "You are promised high, fast returns for a little money."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Un asesor le pide instalar un programa para manejar su computador o celular.",
+        "en": "An adviser asks you to install a program to control your computer or phone."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "es": "Le piden depositar cada vez más y no lo dejan retirar.",
+        "en": "You are asked to deposit more and more and can’t withdraw."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le hablo de la plataforma que vio en el video. Con su depósito inicial de $900.000 ya está generando rendimientos, mire la gráfica. Si sube a cinco millones pasa al plan oro y gana el triple. Descargue AnyDesk que yo le ayudo a hacer la recarga desde su banca.",
+        "en": "Good afternoon, I’m calling from the platform you saw in the video. With your initial deposit of 900,000 pesos you are already earning returns, look at the chart. If you go up to five million you move to the gold plan and earn triple. Download AnyDesk and I’ll help you top up from your online banking."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "video de un famoso invirtiendo",
+      "plataforma de inversion que vi en facebook",
+      "ganancias semanales garantizadas",
+      "un asesor me pidio instalar anydesk",
+      "no me dejan retirar la plata",
+      "invertir en criptomonedas con un asesor",
+      "deposito inicial para empezar a ganar"
+    ],
+    "en": [
+      "celebrity video investment",
+      "investment platform from a facebook ad",
+      "guaranteed weekly profits",
+      "adviser asked me to install anydesk",
+      "i cannot withdraw my money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un famoso promocionando una inversión en un anuncio.",
+      "Ganancias garantizadas o muy altas en poco tiempo.",
+      "Le piden instalar un programa de acceso remoto."
+    ],
+    "en": [
+      "A celebrity promoting an investment in an ad.",
+      "Guaranteed or very high returns in a short time.",
+      "You are asked to install a remote-access program."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Verifique en la Superfinanciera si la empresa está autorizada; ninguna plataforma de Forex lo está.",
+      "No instale programas que le pide un desconocido; si ya lo hizo, desconecte el equipo y llame a su banco.",
+      "Denuncie ante la Fiscalía o la denuncia virtual de la Policía."
+    ],
+    "en": [
+      "Check with the Financial Superintendence whether the firm is authorised; no Forex platform is.",
+      "Don’t install programs a stranger asks for; if you did, disconnect the device and call your bank.",
+      "Report it to the prosecutor’s office or the Police online report."
+    ]
+  },
+  "reportTo": [
+    "co/superfinanciera",
+    "co/tu-banco",
+    "co/denuncia-virtual"
+  ],
+  "sources": [
+    {
+      "title": "Exclusivo: así opera la máquina de estafas que suplanta el rostro de David Vélez",
+      "publisher": "Forbes Colombia",
+      "url": "https://forbes.co/2026/04/09/editors-picks/la-maquina-de-estafas-que-suplanta-el-rostro-de-david-velez",
+      "date": "2026-04-09"
+    },
+    {
+      "title": "Pilas con las criptomonedas: Desmantelan banda que creó plataformas para estafar y afectarle el bolsillo",
+      "publisher": "Publimetro Colombia",
+      "url": "https://www.publimetro.co/medellin/2025/11/19/pilas-con-las-criptomonedas-desmantelan-banda-que-creo-plataformas-para-estafar-y-afectarle-el-bolsillo/",
+      "date": "2025-11-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

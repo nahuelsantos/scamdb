@@ -1,0 +1,116 @@
+{
+  "id": "ec/codigo-de-whatsapp",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "es": "Alguien que dice ser de un grupo o institución",
+    "en": "Someone claiming to be from a group or institution"
+  },
+  "name": {
+    "es": "Le roban el WhatsApp con el código y piden dinero a sus contactos",
+    "en": "They steal your WhatsApp with the code and ask your contacts for money"
+  },
+  "how": {
+    "es": "Le llaman o escriben con un pretexto: agregarle a un grupo, actualizar un registro, confirmar algo. Le piden “el código que le acaba de llegar”. Ese código es el de WhatsApp: con él se quedan con su cuenta y escriben a sus contactos pidiendo transferencias urgentes, a veces con audios que imitan su voz.",
+    "en": "They call or write with a pretext: adding you to a group, updating a record, confirming something. They ask for “the code that just arrived”. That code is your WhatsApp code: with it they take over your account and message your contacts asking for urgent transfers, sometimes with voice notes that imitate you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien se presenta como de un grupo, una iglesia o una institución.",
+        "en": "Someone introduces themselves as from a group, a church or an institution."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le pide el código de seis números que le llegó por SMS.",
+        "en": "They ask for the six-digit code you received by SMS."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Pierde el WhatsApp y sus contactos reciben pedidos de dinero urgentes.",
+        "en": "You lose WhatsApp and your contacts receive urgent money requests."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola hermana, bendiciones. Le vamos a añadir al grupo de oración de la parroquia y el sistema le manda un código de seis números. ¿Me lo pasa por favor para terminar de registrarla?",
+        "en": "Hello sister, blessings. We are adding you to the parish prayer group and the system will send you a six-digit code. Could you send it to me so I can finish registering you?"
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo de whatsapp",
+      "me robaron el whatsapp",
+      "el codigo de seis numeros",
+      "le escribieron a mis contactos pidiendo plata",
+      "me agregaban a un grupo",
+      "perdi mi cuenta de whatsapp",
+      "pedian transferencias desde mi numero"
+    ],
+    "en": [
+      "they asked for my whatsapp code",
+      "my whatsapp was stolen",
+      "six digit code",
+      "they messaged my contacts asking for money",
+      "lost my whatsapp account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Le piden un código que llegó a su celular.",
+      "Un pretexto amable: grupo, registro o actualización.",
+      "Un conocido le pide dinero urgente a una cuenta de otra persona."
+    ],
+    "en": [
+      "They ask for a code that arrived on your phone.",
+      "A friendly pretext: a group, a registration or an update.",
+      "Someone you know asks for urgent money to another person’s account."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca pase códigos que le lleguen por SMS.",
+      "Active la verificación en dos pasos de WhatsApp.",
+      "Si se la robaron, vuelva a instalar WhatsApp con su número, pida ayuda a WhatsApp y avise a sus contactos por otro medio.",
+      "Si alguien le pide dinero por WhatsApp, llámele a su número de siempre antes de transferir."
+    ],
+    "en": [
+      "Never pass on codes you receive by SMS.",
+      "Turn on WhatsApp two-step verification.",
+      "If it was stolen, reinstall WhatsApp with your number, ask WhatsApp for help and warn your contacts another way.",
+      "If someone asks for money on WhatsApp, call their usual number before transferring."
+    ]
+  },
+  "reportTo": [
+    "ec/whatsapp-ayuda",
+    "ec/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "Alerta por una nueva estafa en WhatsApp que usa como señuelo a grupo religioso",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/ciencia-tecnologia/alerta-nueva-estafa-whatsapp-grupo-religioso-testimonio-quito-103764/",
+      "date": "2025-08-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

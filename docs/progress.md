@@ -2,6 +2,28 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Latin America wave 11 (Chile, Colombia, Peru, Uruguay, Paraguay, Bolivia, Ecuador, Venezuela)
+
+**Built:**
+- **Import rules (#86):** every entry now needs local evidence (a local authority, bank, company or regulator, a
+  local case, or a local outlet with specifics); agents re-read each source before validating.
+- **Groundwork (#86):** eight countries in `countries.json` and reports; 50 brands (BancoEstado, ClaveÚnica, Nequi,
+  DIAN, Yape, SUNAT, BROU, Tigo Money, Banco Pichincha, SRI, Banesco, Pago Móvil...).
+- **Matcher 1.15.0 (#87):** a Latin American Spanish block ("el número que le acaba de llegar", "léamelo", "el
+  mensaje para autorizar", "hay otra persona que ya me quiere hacer el depósito", "salió aprobado, sin garante",
+  "girar"); genuine notices ("no te pediremos claves", "ingrese con su clave", "la clave del portón"). The
+  Argentine matcher examples are scoped to Argentina.
+- **Import:** 112 entries, 63 contacts, 176 labelled messages.
+
+**Measured (eval, 1,572 messages):** 99.2% of scams caught, 68.8% called "scam", 2.3% of safe messages called
+"scam" (was 2.5%). Each new country: 0/10 false alarms; 67–100% called "scam". Argentina and Mexico improved.
+
+**Learned:**
+- With the local-evidence rule, agents dropped "hola mamá, número nuevo" in six of eight countries, and "trabajo
+  por likes" and fake-receipt scams in several: common worldwide, but no local source.
+- Matcher tests that ran Argentine examples against every country broke as soon as Colombia arrived; tests of
+  catalogue matches must be scoped to a country, as real checks are.
+
 ## 2026-11-17: Source re-check of single-source entries
 
 **Done:** every entry resting on one source (273) plus five flagged multi-source entries were re-read page by

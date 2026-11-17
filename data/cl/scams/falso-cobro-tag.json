@@ -1,0 +1,130 @@
+{
+  "id": "cl/falso-cobro-tag",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "es": "Número desconocido · “Autopista” o “TAG”",
+    "en": "Unknown number · “Motorway” or “TAG”"
+  },
+  "name": {
+    "es": "“Pasaste sin TAG”: el falso cobro de autopista",
+    "en": "“You drove without a TAG”: the fake motorway toll charge"
+  },
+  "how": {
+    "es": "Te llega un SMS que dice que pasaste por una autopista sin TAG y tienes una deuda o multa chica. El enlace lleva a una copia de la página de multas: pones la patente, aparece un monto bajo y te piden los datos de la tarjeta o las claves del banco. Después aparecen cargos mucho más grandes. Engaña más si justo estás tramitando tu TAG.",
+    "en": "You get a text saying you drove on a motorway without a TAG (toll tag) and owe a small debt or fine. The link goes to a copy of the fines page: you enter your plate, a small amount appears and they ask for your card details or bank passwords. Then much bigger charges appear. It’s more convincing if you are just getting your TAG."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS de un número común: “pasaste sin TAG” o “tienes una deuda”.",
+        "en": "You get a text from an ordinary number: “you drove without a TAG” or “you have a debt”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dan un plazo o te amenazan con una multa mayor.",
+        "en": "They give you a deadline or threaten a bigger fine."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una copia de la página de multas que pide la patente.",
+        "en": "The link goes to a copy of the fines page that asks for your plate."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Para pagar el monto chico te piden la tarjeta o las claves del banco.",
+        "en": "To pay the small amount they ask for your card or bank passwords."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Aviso: su vehículo registra tránsito sin dispositivo en autopista urbana. Monto adeudado $4.850. Evite recargo e infracción pagando hoy en [enlace]",
+        "en": "Notice: your vehicle shows travel without a device on an urban motorway. Amount owed $4,850. Avoid a surcharge and a fine by paying today at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "pase sin tag",
+      "deuda de tag",
+      "multa por pasar sin tag",
+      "deuda en la autopista",
+      "cobro de autopista",
+      "peaje impago",
+      "pagar el tag",
+      "infractor sin tag"
+    ],
+    "en": [
+      "drove without a toll tag",
+      "unpaid motorway toll",
+      "toll debt text",
+      "pay the toll fine",
+      "motorway fine text",
+      "unpaid highway toll"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Las multas reales no llegan por SMS con un enlace para pagar.",
+      "Viene de un número de celular común.",
+      "Un monto chico para que no lo pienses."
+    ],
+    "en": [
+      "Real fines don’t arrive by text with a link to pay.",
+      "It comes from an ordinary mobile number.",
+      "A small amount so you don’t think twice."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Revisa si tienes multas escribiendo tú mismo la página oficial de pasar sin TAG o la de tu autopista.",
+      "Si pusiste la tarjeta o las claves, llama altiro a tu banco para bloquearlas.",
+      "Denuncia en la PDI, Carabineros o la Fiscalía."
+    ],
+    "en": [
+      "Don’t open the link. Check for fines by typing the official no-TAG fines site or your motorway’s site yourself.",
+      "If you entered your card or passwords, call your bank at once to block them.",
+      "Report it to the PDI, Carabineros or the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "cl/tu-banco",
+    "cl/pdi",
+    "cl/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "José Antonio Neme cayó en una estafa por un mensaje de texto: “Me pasó por atarantado”",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/tendencias/527673-jose-antonio-neme-estafa-sms-tag-falso-cobro-autopista-23-07-2026.html",
+      "date": "2026-07-23"
+    },
+    {
+      "title": "Si te llega uno de estos mensajes, no abras el enlace: la masiva estafa por SMS que engaña a chilenos",
+      "publisher": "BioBioChile",
+      "url": "https://www.biobiochile.cl/noticias/servicios/consejos-bbcl-contigo/2026/08/06/si-te-llega-uno-de-estos-mensajes-no-abras-el-enlace-la-masiva-estafa-por-sms-que-engana-a-chilenos.shtml",
+      "date": "2026-08-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

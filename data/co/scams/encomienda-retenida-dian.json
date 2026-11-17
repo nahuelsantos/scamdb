@@ -1,0 +1,129 @@
+{
+  "id": "co/encomienda-retenida-dian",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "es": "“DIAN”, “Fiscalía” o un pariente en el exterior",
+    "en": "“DIAN”, “prosecutor’s office” or a relative abroad"
+  },
+  "name": {
+    "es": "“Su encomienda del exterior está retenida”: falsos impuestos de la DIAN",
+    "en": "“Your parcel from abroad is held”: fake DIAN duties"
+  },
+  "how": {
+    "es": "Un supuesto familiar o amigo en el exterior le dice que le mandó una caja. Días después lo contactan como si fueran la DIAN, la Fiscalía o la Policía: el paquete quedó retenido porque supera los montos permitidos o trae algo ilegal, y para liberarlo o no ir a la cárcel debe pagar “aranceles” ese mismo día a una cuenta. Después siguen pidiendo más plata.",
+    "en": "A supposed relative or friend abroad tells you they sent you a box. Days later you are contacted by people posing as DIAN, the prosecutor’s office or the police: the parcel is held because it exceeds the allowed amounts or contains something illegal, and to release it or avoid jail you must pay “duties” that same day into an account. Afterwards they keep asking for more money."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Alguien del exterior le anuncia un regalo o una encomienda.",
+        "en": "Someone abroad announces a gift or a parcel for you."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Lo contacta una supuesta autoridad: el paquete está retenido.",
+        "en": "A supposed authority contacts you: the parcel is held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le amenazan con un proceso judicial si no paga hoy.",
+        "en": "You are threatened with legal action unless you pay today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le piden consignar los impuestos a una cuenta personal.",
+        "en": "You are asked to deposit the duties into a personal account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Señora Gloria, le informamos desde la oficina de aduanas que la encomienda enviada por su sobrino desde España fue retenida por exceder el valor permitido. Para evitar un proceso por contrabando debe cancelar hoy $3.400.000 de aranceles en la cuenta autorizada que le envío. Si no, la mercancía pasa a bodega y se abre investigación.",
+        "en": "Mrs Gloria, we inform you from the customs office that the parcel sent by your nephew from Spain was held for exceeding the allowed value. To avoid a smuggling case you must pay 3,400,000 pesos in duties today into the authorised account I’m sending you. Otherwise the goods go to the warehouse and an investigation is opened."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "encomienda retenida por la dian",
+      "paquete del exterior retenido",
+      "pagar aranceles para liberar el paquete",
+      "me dijeron que me iban a meter presa por contrabando",
+      "caja que me mando un familiar de afuera",
+      "impuestos de aduana por whatsapp"
+    ],
+    "en": [
+      "parcel from abroad held by customs",
+      "pay duties to release the package",
+      "they said i would go to jail for smuggling",
+      "box sent by a relative abroad",
+      "customs fee by whatsapp"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La DIAN no notifica por WhatsApp ni pide pagos a cuentas personales.",
+      "Amenazas de cárcel si no paga el mismo día.",
+      "Un regalo del exterior que usted no esperaba."
+    ],
+    "en": [
+      "DIAN doesn’t notify by WhatsApp or ask for payments into personal accounts.",
+      "Threats of jail unless you pay the same day.",
+      "A gift from abroad you weren’t expecting."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Llame al familiar a su número de siempre para confirmar si mandó algo.",
+      "No pague: verifique en la página oficial de la DIAN.",
+      "Si lo amenazan, denuncie al GAULA o al CAI Virtual."
+    ],
+    "en": [
+      "Call the relative on their usual number to confirm whether they sent anything.",
+      "Don’t pay: check on DIAN’s official website.",
+      "If you are threatened, report it to the GAULA or CAI Virtual."
+    ]
+  },
+  "reportTo": [
+    "co/gaula",
+    "co/cai-virtual",
+    "co/denuncia-virtual"
+  ],
+  "sources": [
+    {
+      "title": "¡No caiga! Así es la millonaria estafa con falsos paquetes de la DIAN que vacía cuentas en Colombia",
+      "publisher": "Publimetro Colombia",
+      "url": "https://www.publimetro.co/noticias/2026/03/12/no-caiga-asi-es-la-millonaria-estafa-con-falsos-paquetes-de-la-dian-que-vacia-cuentas-en-colombia/",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "La “falsa encomienda del extranjero”: la modalidad de estafa que está dejando varias víctimas en Bogotá",
+      "publisher": "El Tiempo",
+      "url": "https://www.eltiempo.com/bogota/la-falsa-encomienda-la-modalidad-de-estafa-que-esta-dejando-varias-victimas-en-bogota-3337916",
+      "date": "2024-04-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

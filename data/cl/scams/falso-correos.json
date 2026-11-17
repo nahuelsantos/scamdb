@@ -1,0 +1,129 @@
+{
+  "id": "cl/falso-correos",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "es": "“CorreosChile” o “Chilexpress”",
+    "en": "“CorreosChile” or “Chilexpress”"
+  },
+  "name": {
+    "es": "“Tu encomienda está detenida”: el falso Correos de Chile",
+    "en": "“Your parcel is held”: the fake Correos de Chile"
+  },
+  "how": {
+    "es": "Te llega un SMS o un correo que dice que no pudieron entregar tu encomienda, que la dirección no coincide o que está retenida en aduana. Para “liberarla” te piden actualizar datos o pagar un costo de despacho chico en un enlace. La página copia a Correos de Chile o a Chilexpress y se queda con los datos de tu tarjeta.",
+    "en": "You get a text or email saying your parcel couldn’t be delivered, the address doesn’t match or it’s held at customs. To “release” it they ask you to update details or pay a small delivery fee through a link. The page copies Correos de Chile or Chilexpress and keeps your card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un SMS o correo: tu encomienda no se pudo entregar o quedó detenida.",
+        "en": "You get a text or email: your parcel couldn’t be delivered or is held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dan poco tiempo antes de que la “devuelvan”.",
+        "en": "You get little time before it is “returned”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una copia de la página de Correos o Chilexpress.",
+        "en": "The link goes to a copy of the Correos or Chilexpress page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden la tarjeta para pagar un despacho chico.",
+        "en": "They ask for your card to pay a small delivery fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "CorreosChile: No logramos coordinar la entrega de su envío porque el número de calle está incompleto. Actualice sus datos y cancele $1.390 de redespacho dentro de 24 horas: [enlace]",
+        "en": "CorreosChile: We couldn’t arrange delivery of your shipment because the street number is incomplete. Update your details and pay $1,390 for redelivery within 24 hours: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "encomienda detenida",
+      "encomienda retenida",
+      "paquete retenido en aduana",
+      "no pudimos entregar su paquete",
+      "costo de despacho",
+      "mensaje de correos de chile",
+      "chilexpress",
+      "correoschile",
+      "actualizar direccion de entrega"
+    ],
+    "en": [
+      "parcel held at customs",
+      "could not deliver your parcel",
+      "pay a delivery fee",
+      "update the delivery address",
+      "text from the post office",
+      "parcel is held"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Correos de Chile no cobra envíos con enlaces de pago por SMS.",
+      "No dice qué compraste ni quién lo manda.",
+      "“Dentro de 24 horas”."
+    ],
+    "en": [
+      "Correos de Chile doesn’t charge for deliveries through payment links by text.",
+      "It doesn’t say what you bought or who sent it.",
+      "“Within 24 hours”."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace. Si esperas algo, sigue el envío escribiendo tú mismo la página de la empresa.",
+      "Si pusiste los datos de la tarjeta, llama a tu banco para bloquearla."
+    ],
+    "en": [
+      "Don’t open the link. If you are expecting something, track it by typing the company’s site yourself.",
+      "If you entered your card details, call your bank to block it."
+    ]
+  },
+  "reportTo": [
+    "cl/tu-banco",
+    "cl/pdi"
+  ],
+  "sources": [
+    {
+      "title": "Si te llega uno de estos mensajes, no abras el enlace: la masiva estafa por SMS que engaña a chilenos",
+      "publisher": "BioBioChile",
+      "url": "https://www.biobiochile.cl/noticias/servicios/consejos-bbcl-contigo/2026/08/06/si-te-llega-uno-de-estos-mensajes-no-abras-el-enlace-la-masiva-estafa-por-sms-que-engana-a-chilenos.shtml",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "“No hemos podido entregar su paquete”: así opera la red que ofrece kits para ejecutar estafas por mensajes de texto",
+      "publisher": "CIPER Chile",
+      "url": "https://www.ciperchile.cl/2024/02/14/no-hemos-podido-entregar-su-paquete-asi-opera-la-red-que-ofrece-kits-para-ejecutar-estafas-por-mensajes-de-texto/",
+      "date": "2024-02-14"
+    }
+  ],
+  "updated": "2026-11-17"
+}

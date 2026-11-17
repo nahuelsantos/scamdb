@@ -1,0 +1,129 @@
+{
+  "id": "pe/falso-reembolso-yape",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "es": "“Yape” por correo",
+    "en": "“Yape” by email"
+  },
+  "name": {
+    "es": "Correo falso de Yape: “tienes un reembolso pendiente”",
+    "en": "Fake Yape email: “you have a pending refund”"
+  },
+  "how": {
+    "es": "Te llega un correo “de Yape” que dice que tienes un saldo a favor por un cobro en exceso y que debes reclamarlo en pocos días. El enlace lleva a una página que imita Yape y te pide tu número, tu correo con contraseña y los datos de tu tarjeta con el CVV. Yape no hace reembolsos automáticos.",
+    "en": "An email “from Yape” says you have a balance in your favour because of an overcharge and must claim it within a few days. The link goes to a page that imitates Yape and asks for your number, your email and password, and your card details with the CVV. Yape does not make automatic refunds."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llega un correo con el logo de Yape sobre un “reembolso” o “saldo a favor”.",
+        "en": "An email with Yape’s logo arrives about a “refund” or “balance in your favour”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dan un plazo corto para reclamarlo o “se devuelve”.",
+        "en": "They give you a short deadline to claim it or it “gets returned”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace abre una página que copia Yape.",
+        "en": "The link opens a page that copies Yape."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden número de tarjeta, vencimiento, CVV y tu clave del correo.",
+        "en": "They ask for card number, expiry date, CVV and your email password."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Yape informa: se detectó un cargo duplicado en tu cuenta y tienes S/ 186.40 pendientes de devolución. Valida tu tarjeta antes de las 23:59 del viernes para recibir el abono: [enlace]",
+        "en": "Yape notice: a duplicate charge was detected on your account and you have S/ 186.40 waiting to be refunded. Validate your card before 23:59 on Friday to receive the payment: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "correo de yape",
+      "reembolso de yape",
+      "saldo a favor",
+      "me cobraron de mas",
+      "devolucion pendiente de yape",
+      "me pidieron el cvv",
+      "recuperar dinero de yape",
+      "aviso para yaperos"
+    ],
+    "en": [
+      "email from yape",
+      "yape refund",
+      "balance in my favour",
+      "overcharge",
+      "pending refund",
+      "asked for my card cvv"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Yape no hace reembolsos automáticos ni te pide datos por correo.",
+      "Plazo corto para “reclamar” tu dinero.",
+      "Te piden el CVV o la clave de tu correo."
+    ],
+    "en": [
+      "Yape makes no automatic refunds and doesn’t ask for details by email.",
+      "A short deadline to “claim” your money.",
+      "They ask for your CVV or your email password."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No abras el enlace ni pongas tus datos.",
+      "Revisa tus movimientos solo dentro de la app oficial.",
+      "Si diste la tarjeta, bloquéala con tu banco y cambia la clave de tu correo."
+    ],
+    "en": [
+      "Don’t open the link or enter your details.",
+      "Check your transactions only inside the official app.",
+      "If you gave your card, block it with your bank and change your email password."
+    ]
+  },
+  "reportTo": [
+    "pe/tu-banco",
+    "pe/emergencias"
+  ],
+  "sources": [
+    {
+      "title": "¡ALERTA YAPEROS! Así funciona la nueva estafa que usa correos falsos para robarte tu dinero",
+      "publisher": "El Comercio",
+      "url": "https://elcomercio.pe/respuestas/que/alerta-yaperos-asi-funciona-la-nueva-estafa-que-usa-correos-falsos-para-robarte-tu-dinero-tdpe-noticia/",
+      "date": "2025-08-09"
+    },
+    {
+      "title": "“Falso reembolso de Yape”: así opera la nueva estafa que busca vaciar tu cuenta bancaria",
+      "publisher": "Infobae Perú",
+      "url": "https://www.infobae.com/peru/2025/08/06/estafa-del-falso-reembolso-de-yape-asi-opera-el-nuevo-fraude-que-puede-vaciar-tu-cuenta-bancaria/",
+      "date": "2025-08-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

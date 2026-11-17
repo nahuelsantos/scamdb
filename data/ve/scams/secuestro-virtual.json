@@ -1,0 +1,132 @@
+{
+  "id": "ve/secuestro-virtual",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "es": "Supuesto comprador de Marketplace",
+    "en": "Supposed Marketplace buyer"
+  },
+  "name": {
+    "es": "“Secuestro virtual” a quien vende por Marketplace",
+    "en": "“Virtual kidnapping” of Marketplace sellers"
+  },
+  "how": {
+    "es": "Si vendes por Marketplace o una tienda de Instagram, te llaman como si fueran compradores. De pronto te dicen que te están vigilando y te amenazan si te mueves; te obligan a ir a un lugar apartado y a darles el contacto de un familiar. Después llaman a tu familia diciendo que te tienen secuestrado y exigen una transferencia. Nadie está secuestrado de verdad. El CICPC reportó más de 30 víctimas y detenciones en 2026.",
+    "en": "If you sell on Marketplace or an Instagram shop, they call as if they were buyers. Suddenly they say they are watching you and threaten you if you move; they make you go to an isolated place and give them a relative's contact. Then they call your family saying they have kidnapped you and demand a transfer. Nobody has really been kidnapped. CICPC reported more than 30 victims and arrests in 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un “comprador” te llama por lo que vendes en Marketplace.",
+        "en": "A “buyer” calls you about what you are selling on Marketplace."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te amenaza, dice que te vigilan y que no cuelgues.",
+        "en": "They threaten you, say you are being watched and not to hang up."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "es": "Te obliga a aislarte y a no hablar con nadie.",
+        "en": "They make you isolate yourself and talk to no one."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "es": "Llaman a tu familia y exigen plata por un “rescate”.",
+        "en": "They call your family and demand money for a “ransom”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Escúchame bien: tenemos a tu hija, no cuelgues ni llames a nadie porque le pasa algo. Si quieres verla hoy me haces ya una transferencia de 800 dólares a la cuenta que te voy a pasar. Tienes diez minutos.",
+        "en": "Listen carefully: we have your daughter, don't hang up or call anyone or something will happen to her. If you want to see her today you'll make me a transfer of 800 dollars right now to the account I'll give you. You have ten minutes."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "secuestro virtual",
+      "me llamaron diciendo que tenian secuestrado a mi hijo",
+      "vendia por marketplace y me amenazaron",
+      "me obligaron a ir a un lugar solo",
+      "no cuelgues o le pasa algo",
+      "piden rescate por transferencia",
+      "me dijeron que me estaban vigilando",
+      "dicen que tienen a mi hijo",
+      "no llame a la policia",
+      "fue a vender algo y lo secuestraron"
+    ],
+    "en": [
+      "virtual kidnapping call",
+      "they said they had kidnapped my son",
+      "i was selling on marketplace and got threatened",
+      "they made me go somewhere alone",
+      "don't hang up or something will happen",
+      "ransom by bank transfer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te prohíben colgar o llamar a otra persona.",
+      "Te piden datos de tu familia.",
+      "Exigen una transferencia rápida, a veces a cuentas de terceros."
+    ],
+    "en": [
+      "They forbid you to hang up or call anyone else.",
+      "They ask for your family's details.",
+      "They demand a quick transfer, sometimes to third-party accounts."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Si te llaman por un “secuestro”, cuelga e intenta comunicarte con tu familiar por otra vía.",
+      "No pagues ni des datos de tu familia.",
+      "Llama al 911 y denuncia en el CICPC (División contra Extorsión o la sede más cercana)."
+    ],
+    "en": [
+      "If you get a “kidnapping” call, hang up and try to reach your relative another way.",
+      "Don't pay or give out your family's details.",
+      "Call 911 and report it to CICPC (Extortion Division or the nearest office)."
+    ]
+  },
+  "reportTo": [
+    "ve/emergencias",
+    "ve/cicpc"
+  ],
+  "sources": [
+    {
+      "title": "CICPC advirtió sobre nueva modalidad de extorsión conocida como “secuestro virtual”",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/04/16/cicpc-secuestro-virtual/",
+      "date": "2026-04-16"
+    },
+    {
+      "title": "El CICPC alertó sobre el incremento de delitos informáticos ejecutados con herramientas de IA",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/06/10/cicpc-delitos-informaticos-ia/",
+      "date": "2026-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

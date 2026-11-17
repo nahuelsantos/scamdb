@@ -1,0 +1,139 @@
+{
+  "id": "py/alquiler-falso",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Dueño” de una casa en Facebook o Marketplace",
+    "en": "“Owner” of a house on Facebook or Marketplace"
+  },
+  "name": {
+    "es": "Alquiler fantasma: pagás la seña y el dueño desaparece",
+    "en": "Ghost rental: you pay the deposit and the owner disappears"
+  },
+  "how": {
+    "es": "Ves en Facebook o Marketplace una casa o departamento lindo, a buen precio, a veces una casa de veraneo para fin de año. El “dueño” copió fotos de un anuncio real y te pide una seña o garantía por transferencia para reservarla antes que otro. Cuando pagás, te bloquea.",
+    "en": "On Facebook or Marketplace you see a nice house or flat at a good price, sometimes a holiday home for the end of the year. The “owner” copied photos from a real listing and asks for a deposit or guarantee by transfer to reserve it before someone else does. When you pay, they block you."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un alquiler lindo y barato en redes.",
+        "en": "You see a nice, cheap rental on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te apuran: hay otros interesados.",
+        "en": "They rush you: other people are interested."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te piden una seña o garantía por transferencia sin ver la casa.",
+        "en": "They ask for a deposit or guarantee by transfer without seeing the house."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "La casa sigue disponible pero hay dos familias más preguntando. Si me transferís hoy la garantía de 1.500.000 te la reservo, te paso el contrato por acá y el sábado te doy la llave.",
+        "en": "The house is still available but two more families are asking. If you transfer the 1,500,000 guarantee today I’ll hold it for you, I’ll send the contract here and give you the key on Saturday."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "alquiler en marketplace",
+      "departamento en alquiler",
+      "depto en alquiler",
+      "pagar la seña del alquiler",
+      "garantia por transferencia",
+      "casa de veraneo",
+      "reservar la casa",
+      "hay otros interesados",
+      "no me puede mostrar la casa",
+      "el dueño vive en otra ciudad",
+      "el dueño me bloqueo",
+      "anuncio clonado",
+      "fotos de otro anuncio",
+      "alquiler fantasma"
+    ],
+    "en": [
+      "rental on marketplace",
+      "pay the rental deposit",
+      "holiday home",
+      "other people are interested",
+      "the owner blocked me",
+      "cloned listing"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "El precio es más bajo que los demás.",
+      "Te piden seña antes de ver la casa.",
+      "No te quieren mostrar el lugar ni presentarse en persona."
+    ],
+    "en": [
+      "The price is lower than the rest.",
+      "They ask for a deposit before you see the house.",
+      "They won’t show you the place or meet in person."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No pagues nada sin visitar la casa y conocer al dueño.",
+      "Buscá las fotos en internet: si aparecen en otro anuncio, es estafa.",
+      "Si ya pagaste, guardá los chats y comprobantes y hacé la denuncia."
+    ],
+    "en": [
+      "Don’t pay anything without visiting the house and meeting the owner.",
+      "Search the photos online: if they appear in another listing, it’s a scam.",
+      "If you already paid, keep chats and receipts and report it."
+    ]
+  },
+  "reportTo": [
+    "py/policia-cibercrimen",
+    "py/fiscalia",
+    "py/tu-banco"
+  ],
+  "story": {
+    "es": "Una joven quiso alquilar una casa con patio en Asunción que vio en redes. Transfirió G. 2.000.000 de garantía y el “propietario” dejó de responder; la Policía cree que el anuncio había sido clonado.",
+    "en": "A young woman wanted to rent a house with a garden in Asunción that she saw on social media. She transferred G. 2,000,000 as a guarantee and the “owner” stopped answering; police believe the listing had been cloned."
+  },
+  "sources": [
+    {
+      "title": "Denuncian esquema de estafa con alquileres fantasmas en Facebook y supuestos perfiles falsos",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/policiales/2026/08/28/denuncian-esquema-de-estafa-con-alquileres-fantasmas-en-facebook-y-supuestos-perfiles-falsos/",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "Ganar dinero con “tareas” online, una de las formas de fraude digital",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/04/14/ganar-dinero-con-tareas-online-una-de-las-formas-de-fraude-digital",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Alerta de fin de año: cuáles son las 10 estafas frecuentes y cómo protegerse",
+      "publisher": "El Nacional",
+      "url": "https://elnacional.com.py/economia/alerta-fin-ano-cuales-son-10-estafas-frecuentes-como-protegerse-n97146",
+      "date": "2025-12-05"
+    }
+  ],
+  "updated": "2026-11-17"
+}

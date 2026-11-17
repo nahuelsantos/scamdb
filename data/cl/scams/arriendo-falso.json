@@ -1,0 +1,134 @@
+{
+  "id": "cl/arriendo-falso",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Aviso de arriendo en redes",
+    "en": "Rental ad on social media"
+  },
+  "name": {
+    "es": "El arriendo de vacaciones que no existe",
+    "en": "The holiday rental that doesn’t exist"
+  },
+  "how": {
+    "es": "En verano, fines de semana largos o Fiestas Patrias ves en redes una cabaña o depto a buen precio. El “dueño” solo habla por WhatsApp o mensajes, usa fotos reales robadas y te pide transferir la reserva altiro porque hay otros interesados. Cuando llegas, la propiedad no existe o es de otra persona.",
+    "en": "In summer, on long weekends or the national holidays you see a cabin or flat at a good price on social media. The “owner” only talks by WhatsApp or messages, uses stolen real photos and asks you to transfer the deposit right away because others are interested. When you arrive, the property doesn’t exist or belongs to someone else."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ves un aviso de arriendo muy barato en redes sociales.",
+        "en": "You see a very cheap rental ad on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El “dueño” solo habla por WhatsApp y no muestra papeles.",
+        "en": "The “owner” only talks by WhatsApp and shows no documents."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te apura: hay otros interesados y hay que reservar hoy.",
+        "en": "They rush you: others are interested and you must book today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide transferir la reserva, a veces a cuentas de distintas personas.",
+        "en": "They ask you to transfer the deposit, sometimes to accounts of different people."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola! Sí, la cabaña en Pichilemu está libre del 15 al 20, $45.000 la noche. Tengo otras dos familias preguntando, así que si me transfieres el 50% hoy te la dejo bloqueada. Te paso los datos de la cuenta de mi hermana porque la mía está con tope.",
+        "en": "Hi! Yes, the cabin in Pichilemu is free from the 15th to the 20th, 45,000 pesos a night. Two other families are asking, so if you transfer 50% today I’ll hold it for you. I’ll send you my sister’s account details because mine has hit its limit."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "arriendo de vacaciones falso",
+      "cabaña que no existe",
+      "transferi la reserva",
+      "arriendo por facebook",
+      "pague el adelanto del arriendo",
+      "el dueño no contesta",
+      "depa de veraneo",
+      "me pidio la mitad por adelantado",
+      "no dejaba visitar la propiedad",
+      "arriendo por noche en la playa"
+    ],
+    "en": [
+      "fake holiday rental",
+      "cabin that does not exist",
+      "paid the rental deposit",
+      "holiday rental on facebook",
+      "landlord stopped answering",
+      "transferred the booking deposit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy por debajo de lo normal.",
+      "Solo contacto por WhatsApp o redes, sin contrato.",
+      "Te piden reservar hoy y transferir a cuentas de otras personas."
+    ],
+    "en": [
+      "Price far below normal.",
+      "Contact only by WhatsApp or social media, no contract.",
+      "They ask you to book today and transfer to other people’s accounts."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Verifica que la propiedad exista: busca la dirección en el mapa y las fotos en internet.",
+      "Prefiere plataformas con pago protegido y no transfieras por adelantado a desconocidos.",
+      "Si ya pagaste, guarda los mensajes y las transferencias y denuncia en la PDI o la Fiscalía."
+    ],
+    "en": [
+      "Check the property exists: look up the address on a map and search the photos online.",
+      "Prefer platforms with protected payment and don’t transfer in advance to strangers.",
+      "If you already paid, keep the messages and transfers and report it to the PDI or the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "cl/pdi",
+    "cl/fiscalia",
+    "cl/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "¿Vas a arrendar este fin de semana largo?: PDI entrega recomendaciones para no caer en estafas en Fiestas Patrias",
+      "publisher": "Meganoticias",
+      "url": "https://www.meganoticias.cl/nacional/531415-estafas-arriendos-fin-de-semana-largo-fiestas-patrias-recomendaciones-pdi-10-09-2026.html",
+      "date": "2026-09-10"
+    },
+    {
+      "title": "PDI alerta por estafas en arriendos falsos en verano",
+      "publisher": "Chócale",
+      "url": "https://chocale.cl/2026/01/pdi-alerta-por-estafas-en-arriendos-falsos-en-verano/",
+      "date": "2026-01-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

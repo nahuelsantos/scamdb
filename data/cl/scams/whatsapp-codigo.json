@@ -1,0 +1,139 @@
+{
+  "id": "cl/whatsapp-codigo",
+  "country": "cl",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "es": "“Minsal”, “el grupo” o un contacto",
+    "en": "“Health ministry”, “the group” or a contact"
+  },
+  "name": {
+    "es": "“Dame el código que te llegó”: te roban el WhatsApp",
+    "en": "“Give me the code you got”: they steal your WhatsApp"
+  },
+  "how": {
+    "es": "Te escriben o llaman con una excusa: que son del Minsal, que están renovando el grupo de WhatsApp o que te mandaron un código por error. Ese código de seis dígitos es el de tu propio WhatsApp. Si lo das, se quedan con tu cuenta y les escriben a tus contactos pidiendo plata a tu nombre.",
+    "en": "They message or call with an excuse: they’re from the health ministry (Minsal), they’re renewing the WhatsApp group or they sent you a code by mistake. That six-digit code is for your own WhatsApp. If you give it, they take over your account and message your contacts asking for money in your name."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contactan con una excusa: Minsal, renovar el grupo o un código enviado por error.",
+        "en": "They contact you with an excuse: the health ministry, renewing the group or a code sent by mistake."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te llega un SMS con un código que no pediste.",
+        "en": "You get a text with a code you didn’t request."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden que se los mandes o se los dictes.",
+        "en": "They ask you to send or read it to them."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Con tu cuenta les piden transferencias a tus contactos.",
+        "en": "With your account they ask your contacts for transfers."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Hola vecina, buenas tardes, soy la nueva administradora del grupo de la junta de vecinos. Estamos cambiando el grupo a uno nuevo y para agregarla le va a llegar un mensaje con números, ¿me lo puede reenviar? Así queda inscrita.",
+        "en": "Hi neighbour, good afternoon, I’m the new admin of the residents’ association group. We’re moving to a new group and to add you you’ll get a message with numbers, could you forward it to me? Then you’re registered."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me robaron el whatsapp",
+      "me pidieron el codigo de whatsapp",
+      "renovando el grupo de whatsapp",
+      "codigo de seis digitos",
+      "piden plata desde mi whatsapp",
+      "me hackearon el whatsapp",
+      "secuestro de whatsapp",
+      "una amiga me pidio un codigo",
+      "codigo que llego por sms por error",
+      "reenviar el codigo"
+    ],
+    "en": [
+      "they asked for my whatsapp code",
+      "my whatsapp was stolen",
+      "six digit code by text",
+      "renewing the whatsapp group",
+      "asking my contacts for money from my account",
+      "whatsapp account hijacked"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Nadie necesita tu código de WhatsApp, ni el Minsal ni el administrador de un grupo.",
+      "Te llega un código que no pediste.",
+      "Un contacto te pide plata urgente por chat y no quiere hablar por teléfono."
+    ],
+    "en": [
+      "Nobody needs your WhatsApp code, not the health ministry or a group admin.",
+      "A code you didn’t request arrives.",
+      "A contact asks for money urgently by chat and won’t talk on the phone."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca compartas el código. Activa la verificación en dos pasos en WhatsApp.",
+      "Si ya lo diste, vuelve a registrar WhatsApp con tu número y avisa a tus contactos.",
+      "Denuncia en la PDI."
+    ],
+    "en": [
+      "Never share the code. Turn on two-step verification in WhatsApp.",
+      "If you already gave it, register WhatsApp again with your number and warn your contacts.",
+      "Report it to the PDI."
+    ]
+  },
+  "reportTo": [
+    "cl/whatsapp-ayuda",
+    "cl/pdi"
+  ],
+  "sources": [
+    {
+      "title": "Alerta por nueva estafa: Delincuentes se hacen pasar el Minsal para “secuestrar” tu Whatsapp",
+      "publisher": "T13",
+      "url": "https://www.t13.cl/noticia/nacional/nueva-estafa-por-whatsapp-delincuentes-se-hacen-pasar-minsal-piden-codigo-verif-31-8-2024",
+      "date": "2024-08-31"
+    },
+    {
+      "title": "Adultos mayores sufren doble golpe delictual en solo horas: Portonazo terminó en estafa por WhatsApp",
+      "publisher": "Chilevisión",
+      "url": "https://www.chilevision.cl/noticias/nacional/adultos-mayores-sufren-doble-golpe-delictual-en-solo-horas-portonazo-termino-en-estafa-por-whatsapp/",
+      "date": "2026-07-01"
+    },
+    {
+      "title": "“Estamos renovando el grupo de WhatsApp”: el fraude que levantó alarma en la PDI",
+      "publisher": "24horas",
+      "url": "https://www.24horas.cl/tendencias/tecnologia-y-ciencias/estamos-renovando-el-grupo-de-whatsapp-el-fraude-que-levanto-alarma-pdi",
+      "date": "2022-06-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

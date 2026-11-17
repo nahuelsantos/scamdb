@@ -1,0 +1,145 @@
+{
+  "id": "bo/codigo-whatsapp-falso-operador",
+  "country": "bo",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "Tu “operador” de telefonía, la “ATT” o un conocido",
+    "en": "Your “phone operator”, the “ATT” or someone you know"
+  },
+  "name": {
+    "es": "“Dígame el código que le llegó”: falso operador o ATT que roba tu WhatsApp y tus cuentas",
+    "en": "“Tell me the code you just got”: fake phone operator or regulator who steals your WhatsApp and accounts"
+  },
+  "how": {
+    "es": "Te llama o escribe alguien que dice ser de tu empresa de telefonía, de soporte técnico o de la ATT: tu línea será bloqueada por una denuncia, o hay que “validar” tu chip. Te pide nombre, carnet y el código de seis dígitos que te llega por SMS. Ese código es el de WhatsApp o de tu banco: con él registran tu cuenta en otro celular y piden plata a tus contactos o entran a tus aplicaciones. La ATT dice que esta “asistencia de su operador” es la estafa más denunciada de 2026.",
+    "en": "Someone calls or writes saying they’re from your phone company, tech support or the telecom regulator ATT: your line will be blocked because of a complaint, or your SIM needs “validating”. They ask for your name, ID number and the six-digit code you get by SMS. That code is for WhatsApp or your bank: with it they register your account on another phone and ask your contacts for money or get into your apps. The ATT says this fake “operator assistance” is the most reported scam of 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te contacta un supuesto empleado de tu operador o de la ATT.",
+        "en": "A supposed employee of your operator or the ATT contacts you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te dice que tu línea será bloqueada hoy.",
+        "en": "They say your line will be blocked today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Te pide el código de seis dígitos que te llegó por SMS.",
+        "en": "They ask for the six-digit code you got by SMS."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Pierdes tu WhatsApp y piden plata a tus contactos en tu nombre.",
+        "en": "You lose your WhatsApp and they ask your contacts for money in your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buen día, le hablo del área de soporte de su operadora. Su línea tiene un reporte y se va a suspender en una hora. Para validar que usted es el titular le va a llegar un código de seis dígitos, me lo confirma por favor.",
+        "en": "Good morning, I’m calling from your operator’s support area. Your line has a report against it and will be suspended in an hour. To confirm you’re the owner you’ll get a six-digit code, please read it back to me."
+      }
+    }
+  ],
+  "phrases": {
+    "es": [
+      "operador",
+      "chip",
+      "linea",
+      "codigo de seis digitos",
+      "me pidieron el codigo de whatsapp",
+      "asesor de la att",
+      "me llamaron de la empresa telefonica",
+      "mi linea sera bloqueada",
+      "validar mi chip",
+      "me robaron el whatsapp",
+      "piden plata a mis contactos",
+      "empresa de telefonia",
+      "soporte tecnico",
+      "suspender la linea",
+      "codigo por sms"
+    ],
+    "en": [
+      "six-digit code",
+      "they asked for my whatsapp code",
+      "someone from the telecom regulator",
+      "the phone company called me",
+      "my line will be blocked",
+      "validate my sim",
+      "my whatsapp was stolen",
+      "phone company",
+      "tech support",
+      "suspend my line",
+      "sim card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden un código que te llegó por SMS.",
+      "Dicen que tu línea se bloquea si no actúas ya.",
+      "La ATT no llama a los usuarios.",
+      "Un amigo te pide plata de repente por WhatsApp."
+    ],
+    "en": [
+      "They ask for a code you got by SMS.",
+      "They say your line will be blocked unless you act now.",
+      "The ATT doesn’t call users.",
+      "A friend suddenly asks for money on WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No compartas nunca los códigos que te llegan por SMS.",
+      "Activa la verificación en dos pasos de WhatsApp.",
+      "Si perdiste tu WhatsApp, avisa a tus contactos, pide ayuda a WhatsApp y denuncia el número en Bloquea la Estafa."
+    ],
+    "en": [
+      "Never share codes you get by SMS.",
+      "Turn on WhatsApp two-step verification.",
+      "If you lost your WhatsApp, warn your contacts, ask WhatsApp for help and report the number on Bloquea la Estafa."
+    ]
+  },
+  "reportTo": [
+    "bo/att-bloquea-la-estafa",
+    "bo/whatsapp-ayuda",
+    "bo/felcc"
+  ],
+  "sources": [
+    {
+      "title": "Bolivia | ATT registra más de 16.800 denuncias en la plataforma “Bloquea la Estafa” durante 2026",
+      "publisher": "DPL News",
+      "url": "https://dplnews.com/bolivia-att-registra-16800-denuncias-plataforma-bloquea-estafa-2026/",
+      "date": "2026-07-20"
+    },
+    {
+      "title": "Bolivia | Alertan sobre llamadas o mensajes por WhatsApp que pueden ser estafas, robos de información, de dinero o chantajes",
+      "publisher": "DPL News",
+      "url": "https://dplnews.com/?p=270287",
+      "date": "2025-04-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

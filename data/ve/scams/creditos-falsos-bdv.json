@@ -1,0 +1,134 @@
+{
+  "id": "ve/creditos-falsos-bdv",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Banco de Venezuela” o “Venezuela Renace”",
+    "en": "“Banco de Venezuela” or “Venezuela Renace”"
+  },
+  "name": {
+    "es": "Créditos y beneficios falsos del Banco de Venezuela",
+    "en": "Fake Banco de Venezuela loans and benefits"
+  },
+  "how": {
+    "es": "Circulan publicaciones y mensajes que prometen un crédito preaprobado, un “crédito digital” o una opción nueva para retirar divisas en efectivo del Banco de Venezuela, a veces con el nombre de programas reales como Venezuela Renace. Te piden entrar a un enlace o llenar un formulario para “confirmar” el crédito. Es phishing: la página roba tus datos personales y tus claves del banco. El banco dice que no da premios ni beneficios por llenar formularios y que sus avisos no traen enlaces externos.",
+    "en": "Posts and messages promise a pre-approved loan, a “digital credit” or a new option to withdraw foreign currency in cash from Banco de Venezuela, sometimes using the name of real programmes such as Venezuela Renace. They ask you to open a link or fill in a form to “confirm” the loan. It is phishing: the page steals your personal data and bank passwords. The bank says it gives no prizes or benefits for filling in forms and its notices do not carry external links."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un perfil, correo o mensaje usa el nombre del Banco de Venezuela o de un programa real.",
+        "en": "A profile, email or message uses the name of Banco de Venezuela or a real programme."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te ofrece un crédito preaprobado o un beneficio que no pediste.",
+        "en": "It offers you a pre-approved loan or a benefit you did not ask for."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te pide entrar a un enlace o llenar un formulario para confirmarlo.",
+        "en": "It asks you to open a link or fill in a form to confirm it."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Felicidades! Usted fue preseleccionado para el crédito digital BDV de hasta 30.000 Bs. Solo debe tener saldo en su cuenta y confirmar sus datos en el formulario oficial. Cupos limitados, se cierra hoy: [enlace]",
+        "en": "Congratulations! You have been pre-selected for the BDV digital credit of up to 30,000 Bs. You only need a balance in your account and to confirm your details on the official form. Limited places, closes today: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "credito preaprobado del banco de venezuela",
+      "credito digital bdv",
+      "venezuela renace credito",
+      "llenar un formulario para el credito",
+      "retirar divisas en efectivo bdv",
+      "beneficios bdv en facebook",
+      "me ofrecieron un credito por whatsapp",
+      "confirmar la aprobacion del credito",
+      "credito para damnificados del terremoto",
+      "ver si sali aprobado en la lista del banco"
+    ],
+    "en": [
+      "pre-approved bank loan message",
+      "digital credit offer from the bank",
+      "fill in a form to get the loan",
+      "withdraw dollars in cash offer",
+      "confirm loan approval form",
+      "fake bank benefits page",
+      "home repair loan for earthquake victims"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "es": [
+      "Un crédito o beneficio que no pediste, “preaprobado”.",
+      "Te mandan a un enlace o formulario fuera de la web o la app del banco.",
+      "El perfil no es la cuenta oficial verificada del banco."
+    ],
+    "en": [
+      "A “pre-approved” loan or benefit you never asked for.",
+      "They send you to a link or form outside the bank's website or app.",
+      "The profile is not the bank's official verified account."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Consulta créditos solo en BDVApp, en la web oficial del banco o en una agencia.",
+      "No pongas datos ni claves en páginas que abriste desde un mensaje.",
+      "Si ya pusiste datos, llama al banco por sus canales oficiales y denuncia en el CICPC."
+    ],
+    "en": [
+      "Check loans only in BDVApp, on the bank's official website or at a branch.",
+      "Do not enter details or passwords on pages opened from a message.",
+      "If you already entered details, call the bank through its official channels and report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/banco-de-venezuela",
+    "ve/tu-banco",
+    "ve/cicpc"
+  ],
+  "sources": [
+    {
+      "title": "Alertan sobre estafas con falsos créditos de Venezuela Renace que llegan por correo y WhatsApp",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/09/29/estafas-credenciales-venezuela-renace/",
+      "date": "2026-09-29"
+    },
+    {
+      "title": "¿El Banco de Venezuela está entregando un “crédito” a usuarios que tengan 10.000 bolívares en sus cuentas?",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/04/16/credito-banco-venezuela-falso-phishing/",
+      "date": "2026-04-16"
+    },
+    {
+      "title": "¿Banco de Venezuela activó opción para retirar divisas en efectivo?",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/04/19/estafa-banco-venezuela/",
+      "date": "2026-04-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

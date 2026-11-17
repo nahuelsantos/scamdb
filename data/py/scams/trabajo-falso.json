@@ -1,0 +1,133 @@
+{
+  "id": "py/trabajo-falso",
+  "country": "py",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "es": "“Recursos humanos”, una empresa o “el Ministerio”",
+    "en": "“Human resources”, a company or “the Ministry”"
+  },
+  "name": {
+    "es": "Trabajos falsos: “tareas” online o puestos que hay que pagar",
+    "en": "Fake jobs: online “tasks” or positions you have to pay for"
+  },
+  "how": {
+    "es": "Te escriben por WhatsApp o Telegram con un trabajo fácil desde casa: dar “me gusta”, hacer “tareas” y ganar por día. Para cobrar te piden un depósito para “activar” la cuenta, o te mandan un enlace que te roba los datos del banco. Otra versión ofrece un puesto en un hospital o en el Estado a cambio de plata y documentos, con resoluciones falsas.",
+    "en": "They message you on WhatsApp or Telegram with an easy job from home: giving “likes”, doing “tasks” and earning daily. To get paid they ask for a deposit to “activate” the account, or send a link that steals your bank details. Another version offers a job at a hospital or in government in exchange for money and documents, with fake appointment papers."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te ofrecen un trabajo fácil y bien pagado que no buscaste.",
+        "en": "They offer an easy, well-paid job you didn’t look for."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Te mandan un enlace o te pasan a un grupo de Telegram.",
+        "en": "They send a link or move you to a Telegram group."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Te piden un depósito para activar la cuenta o pagar el puesto.",
+        "en": "They ask for a deposit to activate the account or pay for the job."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "¡Hola! Te contactamos de una agencia de marketing. Buscamos personas para calificar productos desde el celular, ganás entre 150.000 y 400.000 por día. Te explico por Telegram: [enlace]",
+        "en": "Hi! We’re contacting you from a marketing agency. We’re looking for people to rate products from their phone, you earn between 150,000 and 400,000 a day. I’ll explain on Telegram: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "trabajo desde casa por whatsapp",
+      "ganar plata con tareas",
+      "dar me gusta y cobrar",
+      "cobrar por cada tarea",
+      "deposito para activar la cuenta",
+      "oferta de trabajo con un enlace",
+      "grupo de telegram",
+      "pagar por un puesto",
+      "contrato en un hospital",
+      "resolucion falsa",
+      "trabajo remoto",
+      "puesto en el estado a cambio de plata"
+    ],
+    "en": [
+      "work from home on whatsapp",
+      "earn money doing tasks",
+      "get paid for likes",
+      "deposit to activate the account",
+      "pay for a job",
+      "fake appointment letter"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un trabajo que nadie te ofreció por un canal formal.",
+      "Tenés que pagar para empezar o para cobrar.",
+      "Te piden documentos y plata para un puesto público."
+    ],
+    "en": [
+      "A job no one offered through a formal channel.",
+      "You have to pay to start or to get paid.",
+      "They ask for documents and money for a public job."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Un trabajo de verdad no te cobra: no deposites nada.",
+      "Los concursos del Estado son gratuitos y sin intermediarios.",
+      "Si entraste a un enlace y diste datos, llamá a tu banco y hacé la denuncia."
+    ],
+    "en": [
+      "A real job doesn’t charge you: don’t deposit anything.",
+      "State job competitions are free and have no middlemen.",
+      "If you opened a link and gave details, call your bank and report it."
+    ]
+  },
+  "reportTo": [
+    "py/policia-cibercrimen",
+    "py/fiscalia",
+    "py/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "Ganar dinero con “tareas” online, una de las formas de fraude digital",
+      "publisher": "Diario HOY",
+      "url": "https://www.hoy.com.py/nacionales/2026/04/14/ganar-dinero-con-tareas-online-una-de-las-formas-de-fraude-digital",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Salud alerta sobre estafas con falsos contratos y resoluciones apócrifas por WhatsApp",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/nacionales/2026/11/13/salud-alerta-sobre-estafas-con-falsos-contratos-y-resoluciones-apocrifas-por-whatsapp/",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "Estafa: Le ofrecieron trabajo por WhatsApp y cuando quiso saber más, le vaciaron la cuenta",
+      "publisher": "ABC Color",
+      "url": "https://www.abc.com.py/policiales/2025/01/22/le-ofrecieron-trabajo-por-whatsapp-y-cuando-quiso-saber-mas-le-vaciaron-la-cuenta/",
+      "date": "2025-01-22"
+    }
+  ],
+  "updated": "2026-11-17"
+}

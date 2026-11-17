@@ -1,0 +1,134 @@
+{
+  "id": "ec/falso-servicio-postal",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“Servicios Postales” o “Correos del Ecuador”",
+    "en": "“Servicios Postales” or “Correos del Ecuador” (postal service)"
+  },
+  "name": {
+    "es": "Falso aviso de Servicios Postales: paquete con dirección incorrecta",
+    "en": "Fake postal service notice: parcel with a wrong address"
+  },
+  "how": {
+    "es": "Si compró algo en el exterior, le llega un SMS, correo o WhatsApp a nombre de Servicios Postales o de Correos del Ecuador: el paquete no se pudo entregar por una dirección o código postal errado. Para corregirlo le piden pagar centavos con tarjeta en un enlace. Luego llega un código que usted aprueba creyendo que es por ese valor, y le hacen una compra grande.",
+    "en": "If you bought something abroad, you get an SMS, email or WhatsApp in the name of Servicios Postales or Correos del Ecuador: the parcel could not be delivered because of a wrong address or postcode. To fix it they ask you to pay a few cents by card through a link. Then a code arrives that you approve thinking it is for that amount, and they make a large purchase."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Le dicen que su paquete está retenido por un error en la dirección.",
+        "en": "They say your parcel is held because of an address error."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Debe corregirlo en pocas horas o el paquete se devuelve.",
+        "en": "You must fix it within hours or the parcel is returned."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "El enlace lleva a una página que no termina en gob.ec.",
+        "en": "The link goes to a page that does not end in gob.ec."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "es": "Le cobran centavos con tarjeta y le piden aprobar un código.",
+        "en": "They charge a few cents by card and ask you to approve a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Servicio Postal: su envío N.º [número] no pudo ser entregado por código postal incorrecto. Actualice sus datos y pague USD 0,45 de reprogramación en las próximas 12 horas: [enlace]",
+        "en": "Postal Service: your shipment no. [número] could not be delivered due to an incorrect postcode. Update your details and pay USD 0.45 for rescheduling within the next 12 hours: [enlace]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "servicios postales",
+      "correos del ecuador",
+      "encomienda detenida por direccion incorrecta",
+      "codigo postal incorrecto",
+      "pagar unos centavos para el envio",
+      "me cobraron una compra despues de pagar el envio",
+      "actualizar la direccion del paquete"
+    ],
+    "en": [
+      "postal service parcel",
+      "parcel held for wrong address",
+      "incorrect postcode",
+      "pay a few cents for delivery",
+      "update the parcel address"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "es": [
+      "Un pago de centavos para liberar un paquete.",
+      "Solo aceptan tarjeta de crédito.",
+      "La página no es serviciopostal.gob.ec.",
+      "Le llega un código para aprobar un valor distinto."
+    ],
+    "en": [
+      "A payment of a few cents to release a parcel.",
+      "They only accept a credit card.",
+      "The page is not serviciopostal.gob.ec.",
+      "A code arrives to approve a different amount."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Rastree su envío escribiendo usted la página oficial del servicio postal o del courier.",
+      "No apruebe códigos que no correspondan a una compra que usted hace.",
+      "Si dio la tarjeta, bloquéela y pida el contracargo a su banco.",
+      "Ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Track your shipment by typing the official postal or courier site yourself.",
+      "Do not approve codes that do not match a purchase you are making.",
+      "If you gave your card, block it and ask your bank for a chargeback.",
+      "Report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/tu-banco",
+    "ec/fiscalia",
+    "ec/superbancos-reclamo"
+  ],
+  "sources": [
+    {
+      "title": "Me robaron USD 2.000 de la tarjeta de crédito con un correo falso de Servicios Postales",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/economia/estafa-robo-tarjeta-credito-compra-exterior-servicios-postales-93804",
+      "date": "2025-04-12"
+    },
+    {
+      "title": "Alerta de estafa, por falso correo electrónico supuestamente de Correos del Ecuador",
+      "publisher": "Primicias",
+      "url": "https://www.primicias.ec/economia/empresas/estafa-falso-correo-electronico-correos-ecuador-91614",
+      "date": "2025-03-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

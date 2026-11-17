@@ -1,0 +1,123 @@
+{
+  "id": "ve/whatsapp-codigo",
+  "country": "ve",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "es": "“Digitel”, “tu operadora” o un conocido",
+    "en": "“Digitel”, “your carrier” or someone you know"
+  },
+  "name": {
+    "es": "“Dime el código que te llegó”: te roban el WhatsApp",
+    "en": "“Tell me the code you got”: they steal your WhatsApp"
+  },
+  "how": {
+    "es": "Te llaman o escriben con una excusa: activar la nueva línea 0422, pasarte a 5G, actualizar tu línea. Te dicen que te va a llegar un código por SMS y te lo piden. Ese código es el de WhatsApp: con él se quedan con tu cuenta, te sacan y escriben a tus contactos y grupos haciéndose pasar por ti para pedir transferencias “de emergencia”. Digitel indica que la línea 0422 se pide en sus oficinas.",
+    "en": "They call or message you with an excuse: activating the new 0422 line, moving you to 5G, updating your line. They say a code will arrive by text and ask you for it. That code is WhatsApp's: with it they take your account, lock you out and message your contacts and groups pretending to be you to ask for “emergency” transfers. Digitel says 0422 lines are requested at its offices."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Te llaman de un número desconocido diciendo que son de la operadora.",
+        "en": "Someone calls from an unknown number saying they are from the carrier."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden el código que te llegó por SMS.",
+        "en": "They ask for the code you received by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "es": "Se quedan con tu WhatsApp y piden plata a tus contactos.",
+        "en": "They take your WhatsApp and ask your contacts for money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le hablamos de Digitel por la migración de su línea a 5G sin costo. Le acaba de llegar un mensaje con un código de seis números, me lo dicta por favor para terminar la activación, si no hoy mismo se le suspende la línea.",
+        "en": "Good afternoon, this is Digitel calling about moving your line to 5G at no cost. You just got a message with a six-digit code, please read it to me to finish the activation, otherwise your line will be suspended today."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "me pidieron el codigo de whatsapp",
+      "dictame el codigo que te llego",
+      "activar la linea 0422",
+      "cambio a 5g digitel",
+      "me robaron el whatsapp",
+      "me hackearon el whatsapp",
+      "estan pidiendo plata desde mi whatsapp",
+      "codigo de seis numeros por sms"
+    ],
+    "en": [
+      "they asked for my whatsapp code",
+      "read me the code you got",
+      "activate the new 0422 line",
+      "upgrade to 5g call",
+      "my whatsapp was stolen",
+      "someone is asking for money from my whatsapp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Te piden un código que te llegó por SMS.",
+      "Una “operadora” llama para activar o migrar tu línea sin que lo pidieras.",
+      "Te amenazan con suspender la línea si no das el código."
+    ],
+    "en": [
+      "They ask for a code you got by text.",
+      "A “carrier” calls to activate or move your line without you asking.",
+      "They threaten to cut your line if you don't give the code."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Nunca compartas un código que te llegue por SMS, aunque digan que es de la operadora.",
+      "Activa la verificación en dos pasos de WhatsApp.",
+      "Si te robaron la cuenta, avisa a tus contactos por otra vía, recupérala con tu número y denuncia en el CICPC."
+    ],
+    "en": [
+      "Never share a code you get by text, even if they say it is from the carrier.",
+      "Turn on WhatsApp two-step verification.",
+      "If your account was stolen, warn your contacts another way, recover it with your number and report it to CICPC."
+    ]
+  },
+  "reportTo": [
+    "ve/whatsapp-ayuda",
+    "ve/cicpc"
+  ],
+  "sources": [
+    {
+      "title": "Denunciaron modus operandi para usurpar cuentas de WhatsApp con falsa campaña del 0422 de Digitel",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2025/07/05/denunciaron-modus-operandi-usurpar-cuentas-whatsapp-falsa-campana-0422-digitel/",
+      "date": "2025-07-05"
+    },
+    {
+      "title": "El CICPC alertó sobre el incremento de delitos informáticos ejecutados con herramientas de IA",
+      "publisher": "El Diario",
+      "url": "https://eldiario.com/2026/06/10/cicpc-delitos-informaticos-ia/",
+      "date": "2026-06-10"
+    }
+  ],
+  "updated": "2026-11-17"
+}

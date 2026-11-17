@@ -1,0 +1,125 @@
+{
+  "id": "pe/encomienda-aduanas",
+  "country": "pe",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Un “familiar del extranjero” y luego “Aduanas”",
+    "en": "A “relative abroad” and then “Customs”"
+  },
+  "name": {
+    "es": "El regalo del familiar que vive afuera, retenido en “Aduanas”",
+    "en": "The gift from a relative abroad, held at “Customs”"
+  },
+  "how": {
+    "es": "Te llaman o escriben desde un número extranjero haciéndose pasar por un pariente que vive afuera: te manda un paquete o regalo al Perú. Luego otra persona dice ser de Aduanas y te pide pagar para liberar el envío. Sacan los datos de tus redes. En otras variantes, la llamada del extranjero termina en una oferta de trabajo y un enlace que toma control de tu celular.",
+    "en": "Someone calls or writes from a foreign number pretending to be a relative living abroad: they are sending you a parcel or gift to Peru. Then another person claims to be from Customs and asks you to pay to release it. They get the details from your social media. In other versions, the foreign call ends in a job offer and a link that takes control of your phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un supuesto pariente que vive afuera te avisa que te mandó un regalo.",
+        "en": "A supposed relative living abroad tells you they sent you a gift."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te contacta un falso trabajador de Aduanas: el paquete está retenido.",
+        "en": "A fake Customs officer contacts you: the parcel is being held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Te piden pagar ya un impuesto o multa para liberarlo, a una cuenta personal.",
+        "en": "They ask you to pay a tax or fine right away to release it, into a personal account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "es": "Te piden reserva para “no meter en problemas” al familiar.",
+        "en": "They ask you to keep quiet so as not to “get your relative in trouble”."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas tardes, le habla el área de control de Aduanas del aeropuerto. Tenemos una caja a su nombre enviada desde Estados Unidos con artefactos y dinero en efectivo. Para no decomisarla debe cancelar hoy el derecho de internamiento. Le paso el número de cuenta.",
+        "en": "Good afternoon, this is the Customs control area at the airport. We have a box in your name sent from the United States with appliances and cash. To avoid confiscating it you must pay the entry duty today. I’ll give you the account number."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "paquete retenido en aduanas",
+      "pariente que vive en el extranjero",
+      "me manda una caja de regalo",
+      "pagar para liberar el paquete",
+      "llamada del extranjero",
+      "encomienda retenida",
+      "empresa de envios me llamo",
+      "maleta retenida en el aeropuerto",
+      "regalo sorpresa desde afuera"
+    ],
+    "en": [
+      "parcel held at customs",
+      "relative abroad sent me a gift",
+      "pay to release the parcel",
+      "call from a foreign number",
+      "customs duty",
+      "luggage held at the airport"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "secrecy",
+    "urgency"
+  ],
+  "redFlags": {
+    "es": [
+      "Un regalo inesperado desde el extranjero.",
+      "“Aduanas” te llama por teléfono y pide pago a una cuenta personal.",
+      "Número extranjero o desconocido."
+    ],
+    "en": [
+      "An unexpected gift from abroad.",
+      "“Customs” phones you and asks for payment to a personal account.",
+      "Foreign or unknown number."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Habla con tu familiar por su número de siempre o por videollamada antes de pagar.",
+      "No devuelvas llamadas a números extranjeros que no conoces.",
+      "Si pagaste, avisa a tu banco y denuncia en la comisaría."
+    ],
+    "en": [
+      "Speak to your relative on their usual number or by video call before paying.",
+      "Don’t return calls to foreign numbers you don’t know.",
+      "If you paid, tell your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "pe/emergencias",
+    "pe/tu-banco"
+  ],
+  "sources": [
+    {
+      "title": "¿Contestaste una llamada de Estados Unidos o del extranjero? PNP explica cómo delincuentes roban cuentas y toman control de celulares",
+      "publisher": "La República",
+      "url": "https://larepublica.pe/sociedad/2026/06/08/contestaste-una-llamada-de-estados-unidos-o-del-extranjero-pnp-explica-como-delincuentes-roban-cuentas-y-toman-control-de-celulares-349632",
+      "date": "2026-06-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

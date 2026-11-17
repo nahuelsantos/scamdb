@@ -1,0 +1,119 @@
+{
+  "id": "co/comprobante-falso-nequi",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "es": "Un comprador en redes o Marketplace",
+    "en": "A buyer on social media or Marketplace"
+  },
+  "name": {
+    "es": "“Falso Nequi”: el comprador le manda un comprobante de pago trucado",
+    "en": "“Fake Nequi”: the buyer sends you a doctored payment receipt"
+  },
+  "how": {
+    "es": "Usted vende algo por redes sociales o Marketplace. El comprador no regatea, quiere cerrar rápido y a distancia, y le manda un pantallazo o comprobante que muestra una transferencia exitosa por Nequi u otro banco. Si usted entrega o despacha sin revisar en su app que la plata llegó, se queda sin el producto y sin el pago. En ventas de carros a veces se ofrecen a hacer el traspaso para dar confianza.",
+    "en": "You sell something on social media or Marketplace. The buyer doesn’t haggle, wants to close fast and remotely, and sends you a screenshot or receipt showing a successful transfer through Nequi or another bank. If you hand over or ship without checking in your app that the money arrived, you lose both the item and the payment. In car sales they sometimes offer to handle the ownership transfer to build trust."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Un comprador acepta el precio sin regatear y tiene afán.",
+        "en": "A buyer accepts the price without haggling and is in a hurry."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le manda un comprobante o pantallazo de la transferencia.",
+        "en": "They send a receipt or screenshot of the transfer."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Le pide entregar o despachar ya, antes de que usted revise.",
+        "en": "They ask you to hand over or ship now, before you check."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Listo parce, ya le hice la transferencia por Nequi, ahí le mando el comprobante 👇 Mi primo pasa en 20 minutos por la bicicleta, porfa téngamela lista que él va de afán.",
+        "en": "Done mate, I already made the transfer via Nequi, here’s the receipt 👇 My cousin will come by for the bike in 20 minutes, please have it ready because he’s in a hurry."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "comprobante falso de nequi",
+      "me mandaron un pantallazo de la transferencia",
+      "la plata nunca llego a mi cuenta",
+      "comprador de marketplace",
+      "entregue el producto sin verificar el pago",
+      "falso nequi",
+      "soporte de pago por nequi",
+      "ya le transferi",
+      "mandan un mensajero apenas transfieren",
+      "vendiendo en marketplace"
+    ],
+    "en": [
+      "fake payment receipt",
+      "buyer sent a transfer screenshot",
+      "money never reached my account",
+      "marketplace buyer scam",
+      "handed over the item without checking"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Un comprador que no regatea y tiene mucho afán.",
+      "Le muestran un pantallazo en vez de que usted vea la plata en su app.",
+      "Entregas un jueves, viernes o puente, cuando cuesta verificar."
+    ],
+    "en": [
+      "A buyer who doesn’t haggle and is in a big rush.",
+      "You are shown a screenshot instead of seeing the money in your app.",
+      "Handovers on a Thursday, Friday or long weekend, when it’s hard to check."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "Antes de entregar, revise en su app o con su banco que el dinero está disponible.",
+      "Para cosas de alto valor, haga la venta en persona en un lugar seguro.",
+      "Si lo estafaron, denuncie ante la Fiscalía o llame al 123."
+    ],
+    "en": [
+      "Before handing over, check in your app or with your bank that the money is available.",
+      "For high-value items, sell in person in a safe place.",
+      "If you were scammed, report it to the prosecutor’s office or call 123."
+    ]
+  },
+  "reportTo": [
+    "co/denuncia-virtual",
+    "co/emergencias",
+    "co/cai-virtual"
+  ],
+  "sources": [
+    {
+      "title": "Policía advierte sobre modalidad de fraude digital en ventas por redes sociales: “Falso Nequi”",
+      "publisher": "Semana",
+      "url": "https://www.semana.com/tecnologia/articulo/policia-advierte-sobre-modalidad-de-fraude-digital-en-ventas-por-redes-sociales-falso-nequi/202634/",
+      "date": "2026-04-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

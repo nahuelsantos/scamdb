@@ -1,0 +1,120 @@
+{
+  "id": "co/falsos-remates-dian",
+  "country": "co",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "“DIAN” o un supuesto funcionario de remates",
+    "en": "“DIAN” or a supposed auctions official"
+  },
+  "name": {
+    "es": "Remates falsos de carros “de la DIAN”",
+    "en": "Fake DIAN car auctions"
+  },
+  "how": {
+    "es": "En Facebook, WhatsApp o en una página que imita a la DIAN le ofrecen carros o mercancía de remates judiciales a precios muy bajos. Un supuesto funcionario lo contacta, usa sus datos para parecer serio y le pide consignar a una cuenta de una persona para separar el carro. La DIAN no vende vehículos por redes sociales ni por páginas externas; después de pagar, nadie responde.",
+    "en": "On Facebook, WhatsApp or a website that imitates DIAN you are offered cars or goods from judicial auctions at very low prices. A supposed official contacts you, uses your details to look legitimate, and asks you to deposit money into a personal account to reserve the car. DIAN doesn’t sell vehicles on social media or outside websites; after you pay, nobody answers."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Ve un anuncio de remates de la DIAN en redes o en una página parecida a la oficial.",
+        "en": "You see an ad for DIAN auctions on social media or a site that looks official."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "es": "Los precios son muy bajos para ser verdad.",
+        "en": "The prices are too low to be true."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "Le dicen que hay otros interesados y que debe separar ya.",
+        "en": "They say others are interested and you must reserve now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le piden consignar a una cuenta de persona natural.",
+        "en": "They ask you to deposit into a personal account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buen día. Le escribo del área de remates de la DIAN. La camioneta 2021 que consultó sale en $28 millones por proceso de aprehensión. Para separarla debe consignar el 30% hoy a la cuenta del funcionario encargado, porque mañana se adjudica a otro comprador.",
+        "en": "Good morning. I’m writing from DIAN’s auctions department. The 2021 SUV you asked about goes for 28 million pesos due to a seizure process. To reserve it you must deposit 30% today into the account of the official in charge, because tomorrow it goes to another buyer."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "remate de la dian",
+      "carros de remate baratos",
+      "subasta de vehiculos de la dian",
+      "consignar para separar el carro",
+      "funcionario de la dian me vendio un carro",
+      "pagina de remates judiciales"
+    ],
+    "en": [
+      "dian car auction",
+      "cheap seized cars for sale",
+      "deposit to reserve the car",
+      "tax agency official selling a car",
+      "judicial auction website"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "La DIAN no vende carros por redes sociales ni por WhatsApp.",
+      "Pago a la cuenta de una persona, no de una entidad.",
+      "Una página con un nombre parecido o terminación distinta a la oficial."
+    ],
+    "en": [
+      "DIAN doesn’t sell cars on social media or WhatsApp.",
+      "Payment into a person’s account, not an institution’s.",
+      "A site with a similar name or a different ending from the official one."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No consigne nada: verifique en la página oficial de la DIAN.",
+      "Si ya pagó, denuncie ante la Fiscalía o por la denuncia virtual de la Policía."
+    ],
+    "en": [
+      "Don’t deposit anything: check on DIAN’s official website.",
+      "If you already paid, report it to the prosecutor’s office or through the Police online report."
+    ]
+  },
+  "reportTo": [
+    "co/denuncia-virtual",
+    "co/cai-virtual"
+  ],
+  "sources": [
+    {
+      "title": "La Dian alertó de sitios web falsos que suplantan a la entidad: así son las estafas con supuestos remates de vehículos",
+      "publisher": "Infobae Colombia",
+      "url": "https://www.infobae.com/colombia/2025/08/29/la-dian-alerto-por-sitios-web-falsos-que-suplantan-a-la-entidad-para-estafar-con-supuestos-remates-de-vehiculos/",
+      "date": "2025-08-29"
+    }
+  ],
+  "updated": "2026-11-17"
+}

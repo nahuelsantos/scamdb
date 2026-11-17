@@ -1,0 +1,122 @@
+{
+  "id": "ec/venta-falsa-marketplace",
+  "country": "ec",
+  "lang": "es",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "es": "Vendedor en Marketplace",
+    "en": "Marketplace seller"
+  },
+  "name": {
+    "es": "Venta falsa en Marketplace: abonos que se pierden",
+    "en": "Fake Marketplace sale: lost deposits"
+  },
+  "how": {
+    "es": "En Facebook Marketplace ve un carro, un equipo o un trámite a muy buen precio. El vendedor pasa la conversación a WhatsApp, dice estar en otra ciudad y pide un abono para “separar”. Otras veces se reúnen, pero al pagar le piden transferir a una cuenta distinta a la del dueño. El producto nunca llega o no se lo entregan.",
+    "en": "On Facebook Marketplace you see a car, equipment or a paperwork service at a great price. The seller moves the chat to WhatsApp, says they are in another city and asks for a deposit to “reserve” it. Other times you meet, but at payment they ask you to transfer to an account different from the owner’s. The item never arrives or is not handed over."
+  },
+  "steps": [
+    {
+      "text": {
+        "es": "Encuentra un producto muy por debajo del precio normal.",
+        "en": "You find an item far below the normal price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "es": "El vendedor le pasa a WhatsApp y le apura porque “hay más interesados”.",
+        "en": "The seller moves you to WhatsApp and rushes you because “others are interested”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "es": "Le pide un abono o el pago a una cuenta de otra persona.",
+        "en": "They ask for a deposit or payment to someone else’s account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "es": "Buenas, sí sigue disponible el carro. Estoy en Loja pero lo llevo a su ciudad el sábado. Hay otro señor interesado, si me deja un abono de USD 1.500 se lo guardo a usted. Le paso la cuenta de mi cuñado.",
+        "en": "Hi, yes the car is still available. I’m in Loja but I’ll bring it to your city on Saturday. Another man is interested, if you leave a USD 1,500 deposit I’ll keep it for you. I’ll send you my brother-in-law’s account."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "es": [
+      "estafa en marketplace",
+      "me pidio un abono para separar",
+      "el vendedor esta en otra ciudad",
+      "transferir a otra cuenta que no es del dueno",
+      "pague y nunca llego",
+      "precio muy bajo en facebook",
+      "hay otro interesado"
+    ],
+    "en": [
+      "marketplace scam",
+      "asked for a deposit to reserve it",
+      "the seller is in another city",
+      "pay into an account that isn't the owner's",
+      "i paid and it never arrived"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "es": [
+      "Precio muy bajo y apuro por “otros interesados”.",
+      "Abono antes de ver el producto.",
+      "La cuenta no está a nombre del vendedor o del dueño.",
+      "El vendedor nunca puede verse en persona."
+    ],
+    "en": [
+      "A very low price and pressure from “other buyers”.",
+      "A deposit before seeing the item.",
+      "The account is not in the seller’s or owner’s name.",
+      "The seller can never meet in person."
+    ]
+  },
+  "whatToDo": {
+    "es": [
+      "No deje abonos: vea el producto y pague al entregar.",
+      "En carros, verifique la matrícula y que la cuenta sea del dueño que firma.",
+      "Si ya pagó, avise a su banco y ponga la denuncia en la Fiscalía."
+    ],
+    "en": [
+      "Do not leave deposits: see the item and pay on delivery.",
+      "For cars, check the registration and that the account belongs to the owner who signs.",
+      "If you already paid, tell your bank and report it to the Fiscalía."
+    ]
+  },
+  "reportTo": [
+    "ec/tu-banco",
+    "ec/fiscalia"
+  ],
+  "sources": [
+    {
+      "title": "La citaron para venderle un carro y terminó en estafa: hay tres detenidos en Santo Domingo",
+      "publisher": "El Diario (Manabí)",
+      "url": "https://www.eldiario.ec/centro/la-citaron-para-venderle-un-carro-y-termino-en-estafa-hay-tres-detenidos-en-santo-domingo-19042026/",
+      "date": "2026-04-19"
+    },
+    {
+      "title": "Estafas en Marketplace son cada vez más frecuentes: aquí algunas recomendaciones",
+      "publisher": "El Mercurio (Cuenca)",
+      "url": "https://elmercurio.com.ec/cuenca/2025/12/06/alerta-estafas-plataformas-digitales/",
+      "date": "2025-12-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}
