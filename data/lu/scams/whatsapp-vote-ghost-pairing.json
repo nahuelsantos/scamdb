@@ -1,0 +1,121 @@
+{
+  "id": "lu/whatsapp-vote-ghost-pairing",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "fr": "Un contact WhatsApp que vous connaissez",
+    "en": "A WhatsApp contact you know"
+  },
+  "name": {
+    "fr": "« Tu peux voter pour moi ? » : le faux vote qui pirate WhatsApp (ghost pairing)",
+    "en": "“Can you vote for me?”: the fake poll that hijacks WhatsApp (ghost pairing)"
+  },
+  "how": {
+    "fr": "Un contact connu vous demande sur WhatsApp de voter pour son favori dans un concours en ligne. Le lien mène à un site qui vous demande votre numéro, puis de saisir un code dans WhatsApp ou de scanner un code QR « pour confirmer le vote ». En réalité, vous connectez l’appareil des criminels à votre compte via la fonction « Appareils connectés ». WhatsApp continue de marcher normalement, mais eux lisent vos messages et écrivent à vos contacts en votre nom, pour demander de l’argent ou diffuser le même faux vote. BEE SECURE a mis en garde contre cette technique en novembre 2026.",
+    "en": "A contact you know asks you on WhatsApp to vote for their favourite in an online contest. The link leads to a site that asks for your number, then for a code to enter in WhatsApp or a QR code to scan “to confirm the vote”. In fact you are linking the criminals’ device to your account through the “Linked devices” feature. WhatsApp keeps working normally, but they read your messages and write to your contacts as you, asking for money or spreading the same fake poll. BEE SECURE warned about this technique in November 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un contact connu vous demande de voter pour quelqu’un dans un concours.",
+        "en": "A known contact asks you to vote for someone in a contest."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Le lien ouvre un site de vote qui demande votre numéro.",
+        "en": "The link opens a voting site that asks for your number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "On vous demande de saisir un code dans WhatsApp ou de scanner un code QR.",
+        "en": "You are asked to enter a code in WhatsApp or scan a QR code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fr": "Vos contacts reçoivent ensuite des demandes d’argent en votre nom.",
+        "en": "Your contacts then get money requests in your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Coucou ! Ma filleule participe à un concours de danse, elle est presque première 🙏 Tu peux voter pour elle ? Ça prend 10 secondes : [lien] Il faut juste mettre ton numéro et le code qui s’affiche. Merci mille fois !!",
+        "en": "Hi! My goddaughter is in a dance contest and she’s nearly first 🙏 Can you vote for her? It takes 10 seconds: [link] You just put your number and the code that shows up. Thanks a million!!"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "voter pour sa filleule lien WhatsApp",
+      "faux vote concours lien",
+      "saisir un code dans WhatsApp pour voter",
+      "scanner un code QR pour le vote",
+      "appareil inconnu dans appareils connectés",
+      "contact demande de voter pour son favori"
+    ],
+    "en": [
+      "vote for her goddaughter WhatsApp link",
+      "fake contest vote link",
+      "enter a code in WhatsApp to vote",
+      "scan a QR code for the vote",
+      "unknown device in linked devices",
+      "contact asks me to vote for their favourite"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Voter en ligne ne demande jamais de connecter un appareil ou de saisir un code WhatsApp.",
+      "Le message vient d’un contact connu : son compte est peut-être déjà piraté.",
+      "Un code ou un QR code demandé « pour confirmer »."
+    ],
+    "en": [
+      "Voting online never requires linking a device or entering a WhatsApp code.",
+      "The message comes from someone you know: their account may already be hijacked.",
+      "A code or QR code requested “to confirm”."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne saisissez aucun code et ne scannez rien ; vérifiez auprès de la personne par un autre moyen.",
+      "Dans WhatsApp, ouvrez « Appareils connectés » et déconnectez tout appareil inconnu.",
+      "Prévenez vos contacts par un autre canal ; demandez conseil à la BEE SECURE Helpline et portez plainte si de l’argent a été demandé."
+    ],
+    "en": [
+      "Don’t enter any code or scan anything; check with the person another way.",
+      "In WhatsApp, open “Linked devices” and log out any device you don’t know.",
+      "Warn your contacts through another channel; ask the BEE SECURE Helpline for advice and file a police complaint if money was requested."
+    ]
+  },
+  "reportTo": [
+    "lu/bee-secure-helpline",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Ghost Pairing : comment des criminels accèdent aux comptes WhatsApp",
+      "publisher": "BEE SECURE",
+      "url": "https://www.bee-secure.lu/fr/news/ghost-pairing-comment-des-criminels-accedent-aux-comptes-whatsapp/",
+      "date": "2026-11-06"
+    }
+  ],
+  "updated": "2026-11-17"
+}

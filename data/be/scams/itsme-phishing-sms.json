@@ -1,0 +1,158 @@
+{
+  "id": "be/itsme-phishing-sms",
+  "country": "be",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "nl": "Een bericht of telefoontje “van itsme” of van je bank",
+    "fr": "Un message ou un appel « d’itsme » ou de votre banque",
+    "en": "A message or call “from itsme” or your bank"
+  },
+  "name": {
+    "nl": "Valse itsme-sms: “je account wordt geblokkeerd”, keur een actie goed",
+    "fr": "Faux SMS itsme : « votre compte va être bloqué », confirmez une action",
+    "en": "Fake itsme text: “your account will be blocked”, approve an action"
+  },
+  "how": {
+    "nl": "Je krijgt een sms of mail dat er een probleem is met je itsme-account of je bank: je moet je gegevens bevestigen of je account wordt geblokkeerd. De link leidt naar een valse pagina. Soms belt er daarna een “medewerker van itsme of de bank” die je onder tijdsdruk een itsme-actie laat goedkeuren. In werkelijkheid bevestig je zo een betaling of een aanmelding van de oplichters.",
+    "fr": "Vous recevez un SMS ou un e-mail disant qu’il y a un problème avec votre compte itsme ou votre banque : vous devez confirmer vos données, sinon le compte sera bloqué. Le lien mène à une fausse page. Parfois, un « employé d’itsme ou de la banque » appelle ensuite et vous presse de confirmer une action itsme. En réalité, vous validez un paiement ou une connexion des escrocs.",
+    "en": "You get a text or email saying there is a problem with your itsme account or your bank: you must confirm your details or the account will be blocked. The link leads to a fake page. Sometimes an “itsme or bank employee” then calls and rushes you into approving an itsme action. In reality you are confirming a payment or login by the scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Sms of mail: je itsme-account wordt geblokkeerd.",
+        "fr": "SMS ou e-mail : votre compte itsme va être bloqué.",
+        "en": "Text or email: your itsme account will be blocked."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Een link om je gegevens te “bevestigen”.",
+        "fr": "Un lien pour « confirmer » vos données.",
+        "en": "A link to “confirm” your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Een valse medewerker belt over itsme of je bank.",
+        "fr": "Un faux employé appelle au sujet d’itsme ou de la banque.",
+        "en": "A fake employee calls about itsme or your bank."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Je moet een itsme-actie goedkeuren die je niet zelf startte.",
+        "fr": "Vous devez confirmer une action itsme que vous n’avez pas lancée.",
+        "en": "You must approve an itsme action you did not start."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "nl": "itsme: Uw account is tijdelijk beperkt wegens een beveiligingsupdate. Bevestig vandaag uw identiteit om blokkering te vermijden: [link]",
+        "fr": "itsme : Votre compte est temporairement limité suite à une mise à jour de sécurité. Confirmez votre identité aujourd’hui pour éviter le blocage : [lien]",
+        "en": "itsme: Your account is temporarily restricted due to a security update. Confirm your identity today to avoid it being blocked: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "sms van itsme account geblokkeerd",
+      "itsme gegevens bevestigen via link",
+      "itsme actie goedkeuren aan de telefoon",
+      "valse itsme melding",
+      "itsme beveiligingsupdate bevestigen",
+      "bevestig uw identiteit itsme"
+    ],
+    "fr": [
+      "sms itsme compte bloqué",
+      "confirmer mes données itsme",
+      "faux message itsme",
+      "valider une action itsme au téléphone",
+      "mise à jour de sécurité itsme"
+    ],
+    "en": [
+      "itsme text account blocked",
+      "confirm my itsme details link",
+      "asked to approve an itsme action on the phone",
+      "fake itsme message",
+      "itsme security update confirm identity"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "unknown_link",
+    "impersonation",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "nl": [
+      "itsme vraagt nooit per sms, mail of telefoon om je account te heractiveren.",
+      "Een itsme-actie die je niet zelf startte.",
+      "Iemand aan de telefoon die je haast om iets goed te keuren."
+    ],
+    "fr": [
+      "itsme ne demande jamais par SMS, e-mail ou téléphone de réactiver votre compte.",
+      "Une action itsme que vous n’avez pas lancée.",
+      "Quelqu’un au téléphone qui vous presse de confirmer."
+    ],
+    "en": [
+      "itsme never asks by text, email or phone to reactivate your account.",
+      "An itsme action you did not start yourself.",
+      "Someone on the phone rushing you to approve something."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Klik niet op de link en keur niets goed in itsme wat je niet zelf startte.",
+      "Lees de waarschuwing in itsme als die verschijnt tijdens een gesprek, en hang op.",
+      "Toch goedgekeurd? Bel meteen je bank en Card Stop.",
+      "Stuur het bericht door naar Safeonweb."
+    ],
+    "fr": [
+      "Ne cliquez pas et ne confirmez rien dans itsme que vous n’avez pas lancé.",
+      "Lisez l’avertissement d’itsme s’il apparaît pendant un appel, et raccrochez.",
+      "Déjà confirmé ? Appelez tout de suite votre banque et Card Stop.",
+      "Transférez le message à Safeonweb."
+    ],
+    "en": [
+      "Don’t click the link and don’t approve anything in itsme you did not start.",
+      "Read the itsme warning if it appears during a call, and hang up.",
+      "Already approved? Call your bank and Card Stop straight away.",
+      "Forward the message to Safeonweb."
+    ]
+  },
+  "reportTo": [
+    "be/your-bank",
+    "be/card-stop",
+    "be/safeonweb",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Itsme voert extra bescherming tegen phishing in",
+      "publisher": "VRT NWS (Belga)",
+      "url": "https://www.vrt.be/vrtnws/nl/2026/02/05/itsme-voert-extra-bescherming-tegen-phishing-in/",
+      "date": "2026-02-05"
+    },
+    {
+      "title": "Itsme vergelijkt je gezicht met je ID-foto en banken waarschuwen elkaar: zo wil de regering online fraude aanpakken",
+      "publisher": "VRT NWS",
+      "url": "https://www.vrt.be/vrtnws/nl/2026/11/11/nationaal-actieplan-tegen-online-fraude/",
+      "date": "2026-11-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

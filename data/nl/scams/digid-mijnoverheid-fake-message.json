@@ -1,0 +1,136 @@
+{
+  "id": "nl/digid-mijnoverheid-fake-message",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "nl": "DigiD, MijnOverheid of Rijksoverheid",
+    "en": "DigiD, MijnOverheid or Rijksoverheid (government)"
+  },
+  "name": {
+    "nl": "Valse sms van DigiD of MijnOverheid: account verloopt of gegevens bijwerken",
+    "en": "Fake DigiD or MijnOverheid text: account expires or update your details"
+  },
+  "how": {
+    "nl": "Een sms zegt dat uw DigiD binnen twee dagen verloopt of dat u uw gegevens bij MijnOverheid moet bijwerken. Via de link komt u op een nagemaakte site die inloggegevens en persoonsgegevens vraagt, soms met een “bevestigingsbetaling” van 1 cent. Daarna wordt er veel meer afgeschreven of belt een nep-bankmedewerker. Er zijn ook belcomputers “namens DigiD” die vragen op 1 te drukken.",
+    "en": "A text says your DigiD will expire within two days or that you must update your details at MijnOverheid. The link leads to a copied site that asks for login and personal details, sometimes with a 1-cent “confirmation payment”. Then much more is charged or a fake bank employee calls. There are also robocalls “on behalf of DigiD” asking you to press 1."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Sms: uw DigiD verloopt, of werk uw gegevens bij in MijnOverheid.",
+        "en": "Text: your DigiD is expiring, or update your details in MijnOverheid."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "De link gaat naar een nagemaakte overheidssite.",
+        "en": "The link goes to a copied government site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "U vult gegevens in en bevestigt met een betaling van 1 cent.",
+        "en": "You fill in details and confirm with a 1-cent payment."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "nl": "Daarna belt soms een “bankmedewerker” over die sms.",
+        "en": "Then a “bank employee” sometimes calls about that text."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "DigiD: Uw account verloopt over 2 dagen. Verleng uw DigiD nu om toegang tot overheidsdiensten te behouden: [link]",
+        "en": "DigiD: Your account expires in 2 days. Renew your DigiD now to keep access to government services: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "sms digid verloopt",
+      "digid verlengen",
+      "mijnoverheid gegevens bijwerken",
+      "gegevens verouderd berichtenbox",
+      "bevestigen eenmalige betaling cent",
+      "belcomputer digid druk",
+      "digid account gedeactiveerd"
+    ],
+    "en": [
+      "digid expiring text",
+      "renew digid link",
+      "update my details mijnoverheid text",
+      "confirm with a 1 cent payment",
+      "robocall from digid press 1"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "unknown_link",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "DigiD en MijnOverheid sturen geen sms met een link om te verlengen of iets bij te werken.",
+      "Een “bevestigingsbetaling” van een paar cent.",
+      "Een belcomputer namens de overheid die vraagt een toets in te drukken."
+    ],
+    "en": [
+      "DigiD and MijnOverheid don’t send texts with a link to renew or update anything.",
+      "A “confirmation payment” of a few cents.",
+      "A government robocall asking you to press a key."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Klik niet, vul niets in en betaal niets. Ga zelf naar de site van DigiD of MijnOverheid.",
+      "Hang op bij een belcomputer en druk geen toetsen in.",
+      "Gegevens ingevuld of betaald? Bel direct uw bank en neem contact op met de Fraudehelpdesk."
+    ],
+    "en": [
+      "Don’t click, fill in or pay. Go to the DigiD or MijnOverheid site yourself.",
+      "Hang up on a robocall and don’t press keys.",
+      "Entered details or paid? Call your bank right away and contact the Fraud Helpdesk."
+    ]
+  },
+  "reportTo": [
+    "nl/fraudehelpdesk",
+    "nl/your-bank",
+    "nl/politie"
+  ],
+  "sources": [
+    {
+      "title": "Valse sms over updaten gegevens uit naam van MijnOverheid",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-sms-over-updaten-gegevens-uit-naam-van-mijnoverheid/",
+      "date": "2026-03-09"
+    },
+    {
+      "title": "Vals telefoontje namens DigiD",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/vals-telefoontje-namens-digid/",
+      "date": "2025-04-14"
+    },
+    {
+      "title": "Valse sms namens DigiD",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-sms-namens-digid-3/",
+      "date": "2024-11-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,123 @@
+{
+  "id": "fr/petites-annonces-faux-acheteur",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fr": "Un acheteur sur Leboncoin, Vinted ou Facebook Marketplace",
+    "en": "A buyer on Leboncoin, Vinted or Facebook Marketplace"
+  },
+  "name": {
+    "fr": "Faux acheteur sur Leboncoin ou Vinted : faux paiement et lien pour « recevoir l’argent »",
+    "en": "Fake buyer on Leboncoin or Vinted: fake payment and a link to “receive the money”"
+  },
+  "how": {
+    "fr": "Vous vendez un objet en ligne. Un acheteur accepte tout de suite, sans négocier, et dit avoir déjà payé : il envoie une fausse capture de virement Wero ou un faux mail de confirmation aux couleurs de la plateforme. Puis un SMS ou un mail vous demande de cliquer pour « récupérer l'argent » ou « valider la vente », sur une page qui demande votre carte bancaire. Ou bien vous expédiez le colis en croyant l'argent sécurisé, alors qu'aucun paiement n'a été fait.",
+    "en": "You are selling something online. A buyer agrees at once, without haggling, and says they have already paid: they send a fake Wero transfer screenshot or a fake confirmation email in the platform’s branding. Then a text or email asks you to click to “collect the money” or “confirm the sale”, on a page that asks for your card. Or you ship the item thinking the money is secured, when no payment was ever made."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un acheteur pressé accepte le prix sans discuter.",
+        "en": "An eager buyer accepts the price without discussion."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Il envoie une fausse preuve de paiement ou un faux mail de la plateforme.",
+        "en": "They send fake proof of payment or a fake platform email."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Un lien pour « recevoir le paiement » demande votre carte bancaire.",
+        "en": "A link to “receive the payment” asks for your card."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Bonjour, je prends votre poussette au prix affiche. Je viens de vous faire le paiement par Wero, voici la capture. Vous allez recevoir un SMS avec un lien pour encaisser, il faut juste confirmer votre carte. Je passe la chercher demain !",
+        "en": "Hello, I’ll take your pushchair at the listed price. I’ve just paid you by Wero, here’s the screenshot. You’ll get a text with a link to collect the money, you just need to confirm your card. I’ll pick it up tomorrow!"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux acheteur leboncoin",
+      "acheteur vinted lien pour recevoir le paiement",
+      "faux virement wero capture",
+      "mail de confirmation de paiement leboncoin faux",
+      "confirmer ma carte pour encaisser la vente",
+      "faux acheteur paiement securise lien"
+    ],
+    "en": [
+      "fake buyer leboncoin",
+      "buyer sent link to receive payment",
+      "fake wero transfer screenshot",
+      "fake payment confirmation email marketplace",
+      "confirm my card to get paid for the sale"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Pour recevoir de l'argent, on n'a jamais besoin de donner sa carte bancaire.",
+      "Wero n'envoie pas de SMS ni de mails pour valider un paiement.",
+      "Un acheteur qui veut sortir de la messagerie de la plateforme ou qui envoie une capture comme preuve."
+    ],
+    "en": [
+      "To receive money you never need to give your card details.",
+      "Wero doesn’t send texts or emails to confirm a payment.",
+      "A buyer who wants to leave the platform’s messaging, or sends a screenshot as proof."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Vérifiez le paiement uniquement dans l'appli de la plateforme ou de votre banque.",
+      "Ne cliquez sur aucun lien reçu par SMS ou mail pour encaisser.",
+      "Si vous avez donné votre carte, faites opposition ; signalez sur THESEE et sur la plateforme."
+    ],
+    "en": [
+      "Check the payment only in the platform’s or your bank’s app.",
+      "Click no link received by text or email to collect money.",
+      "If you gave your card, block it; report on THESEE and to the platform."
+    ]
+  },
+  "reportTo": [
+    "fr/thesee",
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/33700"
+  ],
+  "sources": [
+    {
+      "title": "Leboncoin, Facebook Marketpkace : attention aux faux acheteurs et aux faux virements Wero",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/leboncoin-facebook-marketpkace-attention-aux-faux-acheteurs-et-aux-faux-virements-wero-5435280",
+      "date": "2026-06-17"
+    },
+    {
+      "title": "Vous vendez et achetez sur LEBONCOIN ? Attention à vous, c'est un nid à arnaques !",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/bienvenue-chez-vous-vie-pratique-ici-occitanie/vous-vendez-et-achetez-sur-leboncoin-attention-a-vous-c-est-un-nid-a-arnaques-8182211",
+      "date": "2026-04-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "nl/fake-police-call",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "nl": "Politie, Rijksrecherche, Openbaar Ministerie of de Hoge Raad",
+    "en": "Police, National Criminal Investigation (Rijksrecherche), Public Prosecution Service or the Supreme Court"
+  },
+  "name": {
+    "nl": "Nep-politie aan de telefoon: bandje over arrestatiebevel of “uw spullen veiligstellen”",
+    "en": "Fake police on the phone: a recording about an arrest warrant or “securing your valuables”"
+  },
+  "how": {
+    "nl": "U wordt gebeld door een Nederlands of Engels bandje namens de politie of de Hoge Raad: uw BSN wordt misbruikt of er loopt een arrestatiebevel. Druk op 1 en een “agent” vraagt uw gegevens en zegt dat u uw geld moet veiligstellen of een programma moet installeren. In een andere variant belt de “Rijksrecherche” over inbrekers in de buurt en komt er iemand uw geld en sieraden ophalen. Het nummer in beeld is gespooft.",
+    "en": "You get a call with a Dutch or English recording on behalf of the police or the Supreme Court: your citizen service number (BSN) is being misused or there’s an arrest warrant. Press 1 and an “officer” asks for your details and says you must secure your money or install a program. In another version the “Rijksrecherche” calls about burglars in the area and someone comes to collect your cash and jewellery. The number on screen is spoofed."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een bandje: uw BSN wordt misbruikt of er is een arrestatiebevel. Druk op 1.",
+        "en": "A recording: your BSN is being misused or there’s an arrest warrant. Press 1."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Een “agent” vraagt persoonsgegevens en zegt dat u verdachte bent.",
+        "en": "An “officer” asks for personal details and says you’re a suspect."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "U moet uw geld veiligstellen op een rekening of in crypto, of een programma installeren.",
+        "en": "You must secure your money in an account or crypto, or install a program."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "nl": "Of er komt een “rechercheur” uw geld en sieraden ophalen.",
+        "en": "Or a “detective” comes to collect your cash and jewellery."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Dit is een bericht van de Nationale Politie. Uw burgerservicenummer is gebruikt bij criminele activiteiten en er is een arrestatiebevel tegen u uitgevaardigd. Druk nu op 1 om met een agent te spreken.",
+        "en": "This is a message from the National Police. Your citizen service number has been used in criminal activities and an arrest warrant has been issued against you. Press 1 now to speak to an officer."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "bandje politie druk",
+      "arrestatiebevel telefoon",
+      "bsn misbruikt telefoontje",
+      "rijksrecherche belt inbrekers",
+      "politie komt geld sieraden ophalen",
+      "nep agent telefoon",
+      "rechercheur sieraden bewaring",
+      "lijst inbreker adres",
+      "collega burger komt langs"
+    ],
+    "en": [
+      "police recording press 1",
+      "arrest warrant phone call",
+      "my citizen service number is being misused",
+      "fake police coming to collect my valuables",
+      "fake police officer called"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "remote_access",
+    "secrecy",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "nl": [
+      "De politie belt nooit met een bandje en vraagt nooit om geld over te maken.",
+      "De politie haalt nooit geld of sieraden bij u op om ze veilig te stellen.",
+      "Een nummer van de politie of de Rijksrecherche in beeld kan gespooft zijn."
+    ],
+    "en": [
+      "The police never call with a recording and never ask you to transfer money.",
+      "The police never collect cash or jewellery from you to keep them safe.",
+      "A police or Rijksrecherche number on screen can be spoofed."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Hang op, druk geen toetsen in en bel onbekende nummers niet terug.",
+      "Is er iemand onderweg om spullen op te halen? Bel 112.",
+      "Gegevens of geld gegeven? Bel uw bank, de Fraudehelpdesk en doe aangifte."
+    ],
+    "en": [
+      "Hang up, press no keys and don’t call unknown numbers back.",
+      "Is someone on the way to collect your things? Call 112.",
+      "Gave details or money? Call your bank, the Fraud Helpdesk and file a police report."
+    ]
+  },
+  "reportTo": [
+    "nl/emergency",
+    "nl/fraudehelpdesk",
+    "nl/politie",
+    "nl/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Algemene telefoonnummer Rijksrecherche gespooft",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/algemene-telefoonnummer-rijksrecherche-gespooft/",
+      "date": "2026-10-09"
+    },
+    {
+      "title": "Telefoontjes van een Engelstalig of Nederlandstalig bandje namens politie",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/opnieuw-telefoontjes-van-een-engelstalig-bandje/",
+      "date": "2026-06-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

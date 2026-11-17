@@ -1,0 +1,154 @@
+{
+  "id": "nl/bank-helpdesk-safe-account",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "in-person"
+  ],
+  "sender": {
+    "nl": "Uw bank (het nummer van de bank staat in beeld)",
+    "en": "Your bank (the bank’s number shows on screen)"
+  },
+  "name": {
+    "nl": "Bankhelpdeskfraude: nep-bankmedewerker, “veilige rekening” en pas ophalen",
+    "en": "Bank helpdesk fraud: fake bank employee, “safe account” and card pick-up"
+  },
+  "how": {
+    "nl": "Iemand belt namens “de fraudeafdeling” van uw bank. Door spoofing ziet u het echte nummer van de bank, en de beller weet soms al veel over u. Uw rekening zou in gevaar zijn: u moet uw geld overboeken naar een “veilige rekening”, inlogcodes of uw pincode geven, of een programma installeren zodat hij kan meekijken. Soms komt er iemand langs om uw bankpas of sieraden “veilig te stellen”.",
+    "en": "Someone calls on behalf of your bank’s “fraud department”. Because of spoofing you see the bank’s real number, and the caller sometimes already knows a lot about you. Your account is supposedly at risk: you have to move your money to a “safe account”, give login codes or your PIN, or install a program so they can watch your screen. Sometimes someone comes round to “secure” your bank card or jewellery."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Vaak eerst een sms over een inlog, betaling of overboeking die u niet herkent, met een nummer om te bellen.",
+        "en": "Often first a text about a login, payment or transfer you don’t recognise, with a number to call."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Een nep-bankmedewerker belt, met het nummer van de bank in beeld, en zegt dat uw rekening gehackt is.",
+        "en": "A fake bank employee calls, with the bank’s number on screen, and says your account has been hacked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "U moet aan de lijn blijven en uw saldo naar een “veilige rekening” overmaken.",
+        "en": "You must stay on the line and move your balance to a “safe account”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "nl": "Of u moet codes of uw pincode geven, of een app installeren om mee te kijken.",
+        "en": "Or you must give codes or your PIN, or install an app so they can watch."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "nl": "Soms komt een “koerier” of “wijkagent” uw pas en waardevolle spullen ophalen.",
+        "en": "Sometimes a “courier” or “community officer” comes to collect your card and valuables."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Goedemiddag, u spreekt met de fraudeafdeling van uw bank. We zien zojuist een poging om € 2.400 naar Litouwen over te boeken. Uw rekening is niet meer veilig. Blijf even aan de lijn, dan zetten we uw saldo samen over naar een tijdelijke veilige rekening. Vanavond haalt een collega uw oude pas bij u op.",
+        "en": "Good afternoon, this is your bank’s fraud department. We just saw an attempt to transfer €2,400 to Lithuania. Your account is no longer safe. Please stay on the line and we’ll move your balance together to a temporary safe account. Tonight a colleague will collect your old card from you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "gebeld door fraudeafdeling bank",
+      "spaargeld overzetten veilige rekening",
+      "nep bankmedewerker belde",
+      "bankhelpdeskfraude",
+      "bankpas ophalen koerier",
+      "pincode inlogcode gevraagd telefoon",
+      "rekening gehackt geld veiligstellen",
+      "beveiligde rekening overboeken",
+      "bankmedewerker zei blijf lijn"
+    ],
+    "en": [
+      "bank fraud department called me",
+      "move money to a safe account",
+      "caller showed my bank s number",
+      "they came to collect my bank card",
+      "bank helpdesk fraud",
+      "asked for my pin over the phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "remote_access",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een “veilige rekening” bestaat niet: uw bank vraagt nooit om geld over te maken.",
+      "Uw bank vraagt nooit om inlogcodes, uw pincode of een meekijk-app.",
+      "De bank haalt nooit uw pas of spullen op.",
+      "Het nummer in beeld zegt niets: het kan gespooft zijn."
+    ],
+    "en": [
+      "A “safe account” doesn’t exist: your bank never asks you to transfer money.",
+      "Your bank never asks for login codes, your PIN or a screen-sharing app.",
+      "The bank never collects your card or belongings.",
+      "The number on screen means nothing: it can be spoofed."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Hang op en bel zelf uw bank, op het nummer van uw pas of uit de app. Zoek het niet op via Google.",
+      "Komt er iemand uw pas of spullen ophalen? Bel 112.",
+      "Heeft u geld overgemaakt of codes gegeven? Bel direct uw bank, meld het bij de Fraudehelpdesk en doe aangifte."
+    ],
+    "en": [
+      "Hang up and call your bank yourself, on the number on your card or in the app. Don’t look it up on Google.",
+      "Is someone coming to collect your card or belongings? Call 112.",
+      "Did you transfer money or give codes? Call your bank right away, report it to the Fraud Helpdesk and file a police report."
+    ]
+  },
+  "reportTo": [
+    "nl/your-bank",
+    "nl/emergency",
+    "nl/fraudehelpdesk",
+    "nl/politie"
+  ],
+  "sources": [
+    {
+      "title": "Neptelefoontjes namens de bank",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/neptelefoontjes-namens-de-bank/",
+      "date": "2025-10-30"
+    },
+    {
+      "title": "Valse sms over updaten gegevens uit naam van MijnOverheid",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-sms-over-updaten-gegevens-uit-naam-van-mijnoverheid/",
+      "date": "2026-03-09"
+    },
+    {
+      "title": "Banken roepen socialmediaplatforms op meer te doen aan online fraudebestrijding",
+      "publisher": "Nederlandse Vereniging van Banken",
+      "url": "https://www.nvb.nl/nieuws-en-verhalen/banken-roepen-socialmediaplatforms-op-meer-te-doen-aan-online-fraudebestrijding",
+      "date": "2026-04-28"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "nl/bank-sms-card-blocked"
+  ]
+}

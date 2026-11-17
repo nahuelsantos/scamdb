@@ -1,0 +1,128 @@
+{
+  "id": "fr/faux-policier-gendarme",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "fr": "« La police », « la gendarmerie », un « commissariat »",
+    "en": "“The police”, “the gendarmerie”, a “police station”"
+  },
+  "name": {
+    "fr": "Faux policier ou faux gendarme : « mettre vos bijoux et votre argent en sécurité »",
+    "en": "Fake police officer or gendarme: “put your jewellery and cash in safekeeping”"
+  },
+  "how": {
+    "fr": "Un appel, parfois avec un numéro qui semble officiel, vient d'un « policier » ou d'un « gendarme » : un cambriolage se prépare chez vous, ou votre compte bancaire est visé par des fraudeurs. Il vous demande si vous avez de l'argent liquide, des bijoux ou des objets de valeur, puis envoie un « collègue », avec ou sans uniforme, pour les « mettre sous scellés » ou en sécurité. D'autres demandent vos coordonnées bancaires ou votre code. Les personnes âgées sont les premières visées.",
+    "en": "A call, sometimes from a number that looks official, comes from a “police officer” or “gendarme”: a burglary is being planned at your home, or fraudsters are targeting your bank account. They ask whether you have cash, jewellery or valuables, then send a “colleague”, with or without a uniform, to “seal” them or keep them safe. Others ask for your bank details or PIN. Older people are the first targets."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Appel d'un faux policier : cambriolage imminent ou compte en danger.",
+        "en": "A call from a fake officer: imminent burglary or account at risk."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Questions sur l'argent liquide, les bijoux et objets de valeur chez vous.",
+        "en": "Questions about cash, jewellery and valuables at home."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Un faux agent vient chercher vos biens, ou on vous demande carte et code.",
+        "en": "A fake officer comes to collect your belongings, or you are asked for your card and PIN."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Il vous demande de ne rien dire, « pour l'enquête ».",
+        "en": "They ask you to say nothing, “for the investigation”."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Bonjour Monsieur, commissariat de police. Nous avons arrete un individu qui avait votre adresse sur lui, un cambriolage etait prevu chez vous. Avez-vous des bijoux ou du liquide a la maison ? Un collegue va passer les mettre sous scelles. N'en parlez a personne, l'enquete est en cours.",
+        "en": "Hello Sir, police station. We arrested someone who had your address on him, a burglary was planned at your home. Do you have jewellery or cash at home? A colleague will come to seal them. Don’t tell anyone, the investigation is ongoing."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux policier telephone bijoux",
+      "faux gendarme demande argent liquide",
+      "policier va passer mettre sous scelles",
+      "cambriolage prevu chez vous appel police",
+      "faux policiers personnes agees"
+    ],
+    "en": [
+      "fake police officer call jewellery",
+      "fake gendarme asked about cash at home",
+      "officer coming to seal my valuables",
+      "police call burglary planned at your home",
+      "fake police targeting elderly"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "fr": [
+      "La police et la gendarmerie ne récupèrent jamais bijoux, argent ou cartes chez vous.",
+      "Elles ne demandent jamais vos coordonnées bancaires ni votre code.",
+      "On vous demande le secret « pour l'enquête »."
+    ],
+    "en": [
+      "Police and gendarmerie never collect jewellery, cash or cards at your home.",
+      "They never ask for your bank details or PIN.",
+      "You are asked to keep it secret “for the investigation”."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez et composez vous-même le 17.",
+      "N'ouvrez pas ; exigez la carte professionnelle et vérifiez auprès du commissariat.",
+      "Si vous avez remis quelque chose, appelez le 17, faites opposition sur la carte et portez plainte."
+    ],
+    "en": [
+      "Hang up and dial 17 yourself.",
+      "Don’t open the door; ask for their professional card and check with the police station.",
+      "If you handed anything over, call 17, block the card and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/emergency",
+    "fr/police-complaint",
+    "fr/card-opposition",
+    "fr/info-escroqueries"
+  ],
+  "sources": [
+    {
+      "title": "Drôme : des arnaqueurs se font passer pour de faux policiers et demandent \"bijoux, liquide ou des objets de valeur\"",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/auvergne-rhone-alpes/drome-26/drome-des-arnaqueurs-se-font-passer-pour-de-faux-policiers-et-demandent-bijoux-liquide-ou-des-objets-de-valeur-2781462",
+      "date": "2026-08-04"
+    },
+    {
+      "title": "Arnaque en Charente-Maritime : au téléphone, ils se font passer pour des banquiers, des policiers ou des gendarmes",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/nouvelle-aquitaine/charente-maritime-17/arnaque-en-charente-maritime-au-telephone-ils-se-font-passer-pour-des-banquiers-des-policiers-ou-des-gendarmes-7942911",
+      "date": "2026-08-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

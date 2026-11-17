@@ -1,0 +1,130 @@
+{
+  "id": "nl/cjib-fake-fine",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "nl": "CJIB (Centraal Justitieel Incassobureau) of MijnOverheid",
+    "en": "CJIB (Central Judicial Collection Agency) or MijnOverheid"
+  },
+  "name": {
+    "nl": "Valse verkeersboete van het CJIB: betaal binnen 24 uur",
+    "en": "Fake CJIB traffic fine: pay within 24 hours"
+  },
+  "how": {
+    "nl": "Een e-mail “van het CJIB”, vaak met uw e-mailadres als aanhef, zegt dat er een verkeersboete openstaat die binnen 24 uur via de link betaald moet worden. Anders volgen extra kosten of punten op uw rijbewijs. Op de nagemaakte site vult u persoonsgegevens en uw creditcard in, soms met de belofte dat u de helft terugkrijgt.",
+    "en": "An email “from the CJIB”, often greeting you with your email address, says a traffic fine is outstanding and must be paid through the link within 24 hours. Otherwise extra costs or points on your driving licence follow. On the copied site you enter personal details and your credit card, sometimes with the promise that you’ll get half back."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Mail: er staat een verkeersboete open.",
+        "en": "Email: a traffic fine is outstanding."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Betalen binnen 24 uur, anders extra kosten of punten van uw rijbewijs.",
+        "en": "Pay within 24 hours, or extra costs or points off your licence."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Een link naar een nagemaakte betaalsite.",
+        "en": "A link to a copied payment site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "U vult persoonsgegevens en creditcardgegevens in.",
+        "en": "You enter personal and credit card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "CJIB – Laatste herinnering. Beste klant, u heeft een openstaande verkeersboete van € 89. Betaal binnen 24 uur via onze beveiligde omgeving om verhoging en een aantekening op uw rijbewijs te voorkomen: [link]",
+        "en": "CJIB – Final reminder. Dear customer, you have an outstanding traffic fine of €89. Pay within 24 hours through our secure environment to avoid an increase and a note on your driving licence: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "mail cjib openstaande verkeersboete",
+      "boete betalen binnen uur",
+      "cjib boete link betalen",
+      "aantekening rijbewijs boete",
+      "verkeersboete creditcard",
+      "spooknota cjib",
+      "snelheidsovertreding boete mail",
+      "centraal justitieel incassobureau mail"
+    ],
+    "en": [
+      "cjib fine email",
+      "traffic fine pay within 24 hours",
+      "fake dutch traffic fine",
+      "pay fine with credit card link",
+      "points on my licence email"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een boete per mail met een betaallink en 24 uur bedenktijd.",
+      "Een aanhef met alleen uw e-mailadres.",
+      "Een boete betalen met creditcard, met “de helft terug”."
+    ],
+    "en": [
+      "A fine by email with a payment link and 24 hours to pay.",
+      "A greeting with only your email address.",
+      "Paying a fine by credit card, with “half back”."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Betaal niets en klik niet. Twijfelt u, kijk dan zelf via MijnOverheid of op de site van het CJIB.",
+      "Stuur de mail door naar valse-email@fraudehelpdesk.nl en verwijder hem.",
+      "Kaartgegevens ingevuld of betaald? Bel uw bank en de Fraudehelpdesk."
+    ],
+    "en": [
+      "Don’t pay and don’t click. In doubt, check yourself through MijnOverheid or on the CJIB’s own site.",
+      "Forward the email to valse-email@fraudehelpdesk.nl and delete it.",
+      "Entered card details or paid? Call your bank and the Fraud Helpdesk."
+    ]
+  },
+  "reportTo": [
+    "nl/fraudehelpdesk-valse-email",
+    "nl/your-bank",
+    "nl/fraudehelpdesk"
+  ],
+  "sources": [
+    {
+      "title": "Valse boete CJIB",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-boete-cjib/",
+      "date": "2026-03-13"
+    },
+    {
+      "title": "Spooknota voor verkeersboete uit naam van MijnOverheid",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/spooknota-voor-verkeersboete-uit-naam-van-mijnoverheid/",
+      "date": "2026-01-16"
+    }
+  ],
+  "updated": "2026-11-17"
+}

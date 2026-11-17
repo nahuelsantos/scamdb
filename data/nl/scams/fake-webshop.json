@@ -1,0 +1,134 @@
+{
+  "id": "nl/fake-webshop",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "nl": "Een webwinkel, bekend merk of restaurant (nagemaakt)",
+    "en": "A web shop, well-known brand or restaurant (copied)"
+  },
+  "name": {
+    "nl": "Nepwebwinkel of nepaanbieding: betaald en niets ontvangen",
+    "en": "Fake web shop or fake offer: paid and got nothing"
+  },
+  "how": {
+    "nl": "Via een advertentie op Facebook of Instagram, of bovenaan in Google, komt u op een webwinkel met opvallend lage prijzen. Vaak lijkt de site op een bekend merk, of op de site van een echt restaurant. U betaalt vooruit en krijgt niets, iets anders, of u sluit met “alleen verzendkosten” ongemerkt een duur abonnement af.",
+    "en": "Through an ad on Facebook or Instagram, or at the top of Google, you land on a web shop with strikingly low prices. The site often looks like a well-known brand, or like a real restaurant’s site. You pay in advance and get nothing, something else, or by paying “just shipping” you unknowingly sign up for an expensive subscription."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een advertentie of zoekresultaat met een veel te mooie aanbieding.",
+        "en": "An ad or search result with a deal that’s far too good."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "nl": "De site lijkt op een bekend merk, met een vreemd webadres.",
+        "en": "The site looks like a known brand, with an odd web address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Alleen vooruit betalen, of “alleen verzendkosten” met uw creditcard.",
+        "en": "Only pay in advance, or “just shipping” by credit card."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "nl": "Geen bestelling, geen reactie, of later hogere afschrijvingen.",
+        "en": "No order, no reply, or higher charges later."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "OPHEFFINGSUITVERKOOP! Alle sneakers nu 80% korting – alleen dit weekend. Op = op! Bestel via [link] en betaal veilig vooraf.",
+        "en": "CLOSING-DOWN SALE! All sneakers now 80% off – this weekend only. When they’re gone, they’re gone! Order via [link] and pay securely in advance."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "besteld webwinkel niets ontvangen",
+      "nepwebwinkel advertentie instagram",
+      "opheffingsuitverkoop korting",
+      "verzendkosten betalen abonnement",
+      "eten besteld nep website restaurant",
+      "webshop reageert betaling",
+      "sneakers korting vooraf betalen"
+    ],
+    "en": [
+      "ordered online and never received it",
+      "fake web shop from instagram ad",
+      "only pay shipping then subscription",
+      "fake restaurant website order",
+      "too good to be true sale"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "nl": [
+      "Prijzen die veel lager zijn dan overal elders.",
+      "Een webadres met de naam van een bekend merk plus iets extra’s.",
+      "Alleen vooruit betalen, of creditcardgegevens voor “alleen verzendkosten”."
+    ],
+    "en": [
+      "Prices far lower than anywhere else.",
+      "A web address with a known brand’s name plus something extra.",
+      "Only paying in advance, or card details for “just shipping”."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Zoek de winkel op en controleer of het keurmerk echt is.",
+      "Betaal waar het kan achteraf, of bij afhalen of bezorgen.",
+      "Betaald en niets gekregen? Neem contact op met uw bank, doe aangifte van internetoplichting en meld het bij de Fraudehelpdesk."
+    ],
+    "en": [
+      "Look the shop up and check that its quality mark is real.",
+      "Pay afterwards where you can, or on pick-up or delivery.",
+      "Paid and got nothing? Contact your bank, report internet fraud to the police and tell the Fraud Helpdesk."
+    ]
+  },
+  "reportTo": [
+    "nl/politie",
+    "nl/your-bank",
+    "nl/fraudehelpdesk"
+  ],
+  "sources": [
+    {
+      "title": "Valse websites restaurants",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-websites-restaurants/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Banken roepen socialmediaplatforms op meer te doen aan online fraudebestrijding",
+      "publisher": "Nederlandse Vereniging van Banken",
+      "url": "https://www.nvb.nl/nieuws-en-verhalen/banken-roepen-socialmediaplatforms-op-meer-te-doen-aan-online-fraudebestrijding",
+      "date": "2026-04-28"
+    },
+    {
+      "title": "Nepaanbieding uit naam Kruidvat",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/nepaanbieding-uit-naam-kruidvat/",
+      "date": "2025-05-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

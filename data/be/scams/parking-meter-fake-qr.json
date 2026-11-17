@@ -1,0 +1,146 @@
+{
+  "id": "be/parking-meter-fake-qr",
+  "country": "be",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "in-person",
+    "online"
+  ],
+  "sender": {
+    "nl": "Een QR-sticker op een parkeermeter",
+    "fr": "Un autocollant QR sur un horodateur",
+    "en": "A QR sticker on a parking meter"
+  },
+  "name": {
+    "nl": "Valse QR-code op de parkeermeter: “scan om te betalen”",
+    "fr": "Faux code QR sur l’horodateur : « scannez pour payer »",
+    "en": "Fake QR code on a parking meter: “scan to pay”"
+  },
+  "how": {
+    "nl": "Op een parkeermeter, vooral in Brussel, kleeft een sticker met een QR-code en “Scan to pay” over de echte code. Wie scant, komt op een site die sterk lijkt op de officiële betaalpagina maar een verkeerd adres heeft. Je kiest de parkeertijd en moet daarna met je kaart betalen. Zo stelen ze je bankgegevens.",
+    "fr": "Sur un horodateur, surtout à Bruxelles, un autocollant avec un code QR et « Scan to pay » est collé sur le vrai code. En le scannant, vous arrivez sur un site qui ressemble fort à la page de paiement officielle mais avec une mauvaise adresse. Vous choisissez la durée puis payez avec votre carte. Vos données bancaires sont volées.",
+    "en": "On a parking meter, especially in Brussels, a sticker with a QR code and “Scan to pay” is placed over the real code. Scanning it takes you to a site that looks very much like the official payment page but with the wrong address. You choose the parking time and then pay by card. Your bank details are stolen."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een QR-sticker “scan om te betalen” op de meter.",
+        "fr": "Un autocollant QR « scannez pour payer » sur l’horodateur.",
+        "en": "A “scan to pay” QR sticker on the meter."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Een nagemaakte betaalpagina met een vreemd adres.",
+        "fr": "Une fausse page de paiement à l’adresse bizarre.",
+        "en": "A copied payment page with an odd address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Je moet met je kaart betalen voor je parkeertijd.",
+        "fr": "Vous devez payer votre stationnement par carte.",
+        "en": "You must pay for parking by card."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "in-person",
+      "text": {
+        "nl": "Sticker op de parkeermeter: “Snel betalen zonder munten. Scan to pay” met een QR-code die naar een betaalpagina leidt waar je je kaartnummer en vervaldatum ingeeft.",
+        "fr": "Autocollant sur l’horodateur : « Payez vite sans monnaie. Scan to pay » avec un code QR qui mène à une page où l’on encode son numéro de carte et sa date d’expiration.",
+        "en": "Sticker on the parking meter: “Pay quickly without coins. Scan to pay” with a QR code leading to a page where you enter your card number and expiry date."
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux code qr horodateur",
+      "scan to pay parking bruxelles",
+      "payer le parking en scannant un qr",
+      "autocollant qr sur le parcmètre",
+      "faux site de paiement stationnement"
+    ],
+    "nl": [
+      "valse qr code parkeermeter",
+      "scan to pay parkeren brussel",
+      "parkeren betalen via qr code",
+      "sticker met qr op parkeerautomaat",
+      "valse betaalpagina parkeren"
+    ],
+    "en": [
+      "fake qr code parking meter",
+      "scan to pay parking brussels",
+      "pay for parking by scanning a qr",
+      "qr sticker on the meter",
+      "fake parking payment site"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een sticker die over de echte QR-code kleeft.",
+      "Een webadres dat niet officieel is.",
+      "Kaartgegevens ingeven op een site die je via een QR opende."
+    ],
+    "fr": [
+      "Un autocollant collé par-dessus le vrai code QR.",
+      "Une adresse web qui n’est pas officielle.",
+      "Encoder vos données de carte sur un site ouvert via un QR."
+    ],
+    "en": [
+      "A sticker over the real QR code.",
+      "A web address that isn’t official.",
+      "Entering card details on a site opened from a QR code."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Betaal aan de automaat zelf of in een officiële parkeerapp die je zelf installeerde.",
+      "Kijk welk adres de QR opent voor je iets ingeeft.",
+      "Kaartgegevens ingegeven? Laat je kaart blokkeren via Card Stop.",
+      "Stuur een foto van de QR-code naar Safeonweb."
+    ],
+    "fr": [
+      "Payez à l’horodateur lui-même ou dans une app de stationnement officielle installée par vous.",
+      "Regardez l’adresse ouverte par le QR avant d’encoder quoi que ce soit.",
+      "Données de carte saisies ? Faites bloquer la carte via Card Stop.",
+      "Envoyez une photo du code QR à Safeonweb."
+    ],
+    "en": [
+      "Pay at the meter itself or in an official parking app you installed yourself.",
+      "Check which address the QR opens before entering anything.",
+      "Entered card details? Block the card through Card Stop.",
+      "Send a photo of the QR code to Safeonweb."
+    ]
+  },
+  "reportTo": [
+    "be/card-stop",
+    "be/safeonweb",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Motorists beware: Brussels parking meter scam is designed to steal your bank details",
+      "publisher": "The Brussels Times",
+      "url": "https://www.brusselstimes.com/2247756/motorists-beware-brussels-parking-meter-scam-is-designed-to-steal-your-bank-details",
+      "date": "2026-07-28"
+    },
+    {
+      "title": "Hoe ontsnap je aan quishing, phishing via QR-codes?",
+      "publisher": "Test-Aankoop",
+      "url": "https://www.test-aankoop.be/hightech/phishing/nieuws/quishing",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

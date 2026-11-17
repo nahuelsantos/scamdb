@@ -1,0 +1,131 @@
+{
+  "id": "lu/fake-cssf-recovery",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "fr": "« La CSSF » ou un « représentant de la CSSF »",
+    "en": "“The CSSF” or a “CSSF representative”"
+  },
+  "name": {
+    "fr": "Fausse CSSF : « nous avons récupéré vos fonds, payez d’abord les frais »",
+    "en": "Fake CSSF: “we recovered your funds, pay the fees first”"
+  },
+  "how": {
+    "fr": "Des escrocs se font passer pour la Commission de Surveillance du Secteur Financier. Ils visent souvent des personnes qui ont déjà perdu de l’argent dans des crypto-actifs : la CSSF aurait récupéré tout ou partie des fonds, mais il faudrait d’abord payer des frais administratifs ou des impôts. D’autres variantes réclament une « taxe » pour débloquer des gains, une prime d’assurance pour couvrir l’investissement ou des frais d’ouverture de compte. La CSSF ne réclame jamais d’argent aux particuliers, n’a aucune compétence fiscale et ne fait pas de récupération de fonds ; ses adresses e-mail se terminent uniquement en @cssf.lu.",
+    "en": "Scammers pose as the Luxembourg financial regulator, the CSSF. They often target people who already lost money in crypto-assets: the CSSF has supposedly recovered some or all of the funds, but you must first pay administrative fees or taxes. Other versions ask for a “tax” to release profits, an insurance premium to cover the investment, or account-opening fees. The CSSF never asks consumers for money, has no tax powers and does not recover funds; its email addresses end only in @cssf.lu."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un « représentant de la CSSF » vous contacte par e-mail ou téléphone.",
+        "en": "A “CSSF representative” contacts you by email or phone."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il annonce que vos fonds perdus ou vos gains sont récupérés ou bloqués.",
+        "en": "They say your lost funds or profits have been recovered or are blocked."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fr": "Pour les recevoir, il faut payer des frais, une taxe ou une assurance.",
+        "en": "To receive them you must pay fees, a tax or insurance."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Il insiste pour un paiement rapide, souvent vers un compte à l’étranger.",
+        "en": "They push for a quick payment, often to an account abroad."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Commission de Surveillance du Secteur Financier – Service Recouvrement. Dossier 2026/LU/1187. Nous avons le plaisir de vous informer que 23 450 € de vos actifs numériques ont été récupérés. Leur restitution est conditionnée au règlement des frais de traitement (1 950 €) sous 5 jours ouvrés.",
+        "en": "Commission de Surveillance du Secteur Financier – Recovery Department. File 2026/LU/1187. We are pleased to inform you that €23,450 of your digital assets have been recovered. Their return depends on payment of the processing fees (€1,950) within 5 working days."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "CSSF a récupéré mes cryptos",
+      "frais de récupération CSSF",
+      "taxe CSSF pour débloquer mes gains",
+      "prime d’assurance CSSF investissement",
+      "appel au nom de la CSSF",
+      "restitution des fonds après frais"
+    ],
+    "en": [
+      "CSSF recovered my crypto",
+      "CSSF recovery fees",
+      "CSSF tax to release my profits",
+      "CSSF insurance premium investment",
+      "call in the name of the CSSF",
+      "funds returned after fees"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "La CSSF ne contacte jamais les particuliers pour réclamer des taxes, des frais ou de l’argent.",
+      "La CSSF ne récupère pas de fonds perdus et ne gère pas de comptes.",
+      "Une adresse e-mail qui ne se termine pas par @cssf.lu.",
+      "Payer pour récupérer son propre argent."
+    ],
+    "en": [
+      "The CSSF never contacts consumers to ask for taxes, fees or money.",
+      "The CSSF does not recover lost funds or manage accounts.",
+      "An email address that doesn’t end in @cssf.lu.",
+      "Paying to get your own money back."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne payez rien et ne transmettez pas de documents.",
+      "Vérifiez auprès de la CSSF par ses coordonnées officielles.",
+      "Si vous avez payé, appelez votre banque et portez plainte."
+    ],
+    "en": [
+      "Don’t pay anything or send documents.",
+      "Check with the CSSF using its official contact details.",
+      "If you paid, call your bank and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/cssf",
+    "lu/police",
+    "lu/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Usurpation de l’identité de la CSSF – Augmentation du nombre de tentatives de fraudes",
+      "publisher": "CSSF",
+      "url": "https://www.cssf.lu/fr/2025/07/usurpation-de-lidentite-de-la-cssf-augmentation-du-nombre-de-tentatives-de-fraudes/",
+      "date": "2025-07-31"
+    },
+    {
+      "title": "Avertissement concernant des personnes utilisant abusivement l’identité de la Présidente du Conseil de la CSSF",
+      "publisher": "CSSF",
+      "url": "https://www.cssf.lu/fr/2026/03/avertissement-concernant-des-personnes-utilisant-abusivement-lidentite-de-la-presidente-du-conseil-de-la-cssf/",
+      "date": "2026-03-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

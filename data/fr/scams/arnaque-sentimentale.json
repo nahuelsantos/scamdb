@@ -1,0 +1,129 @@
+{
+  "id": "fr/arnaque-sentimentale",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "fr": "Un inconnu charmant rencontré en ligne (parfois une « célébrité »)",
+    "en": "A charming stranger met online (sometimes a “celebrity”)"
+  },
+  "name": {
+    "fr": "Arnaque sentimentale : le faux amoureux qui demande des virements",
+    "en": "Romance scam: the fake lover who asks for transfers"
+  },
+  "how": {
+    "fr": "Une personne vous aborde sur un site de rencontre ou un réseau social, souvent avec de belles photos volées ou créées par IA, parfois en se faisant passer pour une célébrité. Elle vous écrit tous les jours pendant des semaines et parle vite de sentiments et d'avenir ensemble, mais ne peut jamais vous voir en vrai ni en vidéo. Puis survient un problème : frais d'hôpital, douane, billet d'avion, argent bloqué. Les demandes de virements se succèdent, parfois sur des mois.",
+    "en": "Someone approaches you on a dating site or social network, often with attractive photos stolen or made with AI, sometimes posing as a celebrity. They write every day for weeks and quickly talk about feelings and a future together, but can never meet in person or on video. Then a problem arises: hospital bills, customs, a plane ticket, blocked money. Requests for transfers follow, sometimes for months."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un profil séduisant vous contacte et vous écrit chaque jour.",
+        "en": "An attractive profile contacts you and writes every day."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il ne peut jamais se montrer en vidéo ni venir.",
+        "en": "They can never show themselves on video or come."
+      }
+    },
+    {
+      "text": {
+        "fr": "Une urgence : il faut de l'argent pour l'hôpital, la douane ou un billet.",
+        "en": "An emergency: money is needed for hospital, customs or a ticket."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Il vous demande de garder le secret vis-à-vis de vos proches.",
+        "en": "They ask you to keep it secret from your family."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Mon amour, je pense a toi chaque minute. Je suis bloque a l'aeroport, la douane retient mes affaires et ma carte ne passe pas ici. Il me faut 1 800 EUR pour sortir et enfin te rejoindre. N'en parle pas a tes enfants, ils ne comprendraient pas notre histoire.",
+        "en": "My love, I think of you every minute. I’m stuck at the airport, customs are holding my things and my card doesn’t work here. I need EUR 1,800 to get out and finally join you. Don’t tell your children, they wouldn’t understand our story."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "arnaque sentimentale",
+      "brouteur site de rencontre",
+      "il me demande de l argent pour la douane",
+      "amoureux jamais en video demande virement",
+      "faux profil celebrite amoureux",
+      "escroquerie amoureuse"
+    ],
+    "en": [
+      "romance scam",
+      "online partner asking for money",
+      "never shows on video asks for transfer",
+      "fake celebrity love scam",
+      "stuck at customs needs money my love"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "secrecy",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Une relation qui va très vite sans jamais se voir, même en vidéo.",
+      "Des urgences d'argent à répétition.",
+      "On vous demande le secret envers vos proches."
+    ],
+    "en": [
+      "A relationship moving very fast without ever meeting, even on video.",
+      "Repeated money emergencies.",
+      "You are asked to keep it secret from family."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "N'envoyez pas d'argent à quelqu'un que vous n'avez jamais rencontré.",
+      "Faites une recherche inversée des photos et parlez-en à un proche.",
+      "Gardez les échanges, prévenez la banque et portez plainte ou signalez sur THESEE."
+    ],
+    "en": [
+      "Don’t send money to someone you have never met.",
+      "Do a reverse image search of the photos and talk to someone close.",
+      "Keep the messages, tell the bank and file a complaint or report on THESEE."
+    ]
+  },
+  "reportTo": [
+    "fr/thesee",
+    "fr/info-escroqueries",
+    "fr/your-bank",
+    "fr/pharos"
+  ],
+  "sources": [
+    {
+      "title": "“On vit avec son fantôme” : comment l'insaisissable escroc \"serial loveur\" poursuit ses arnaques à travers la France",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/auvergne-rhone-alpes/ardeche-07/on-vit-avec-son-fantome-comment-l-insaisissable-escroc-aux-sentiments-poursuit-ses-arnaques-6121365",
+      "date": "2026-01-21"
+    },
+    {
+      "title": "Faux astronautes, faux acteurs : nos conseils pour ne pas tomber dans les arnaques amoureuses",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/faux-astronautes-faux-acteurs-nos-conseils-pour-ne-pas-tomber-dans-les-arnaques-amoureuses-1967974",
+      "date": "2025-09-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

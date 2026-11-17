@@ -1,0 +1,133 @@
+{
+  "id": "lu/fake-police-justice-email",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "fr": "« Police Grand-Ducale », « Europol », un « huissier de justice » ou « BEE SECURE »",
+    "en": "“Grand Ducal Police”, “Europol”, a “bailiff” or “BEE SECURE”"
+  },
+  "name": {
+    "fr": "Faux e-mail de la Police ou de la justice : « une procédure judiciaire est ouverte contre vous »",
+    "en": "Fake email from the Police or the courts: “legal proceedings have been opened against you”"
+  },
+  "how": {
+    "fr": "Vous recevez un e-mail, parfois un courrier, signé de la direction générale de la Police, d’Europol, d’un huissier de justice ou de BEE SECURE. Il vous accuse d’une infraction et annonce une procédure judiciaire. Il vous demande de répondre vite pour « régulariser » votre situation, puis réclame des données personnelles ou de l’argent pour clore le dossier. La Police a reçu de nombreux signalements en octobre 2026 et rappelle que ce n’est pas sa manière de procéder.",
+    "en": "You receive an email, sometimes a letter, signed by the Police headquarters, Europol, a bailiff or BEE SECURE. It accuses you of an offence and announces legal proceedings. It asks you to reply quickly to “settle” the matter, then asks for personal data or money to close the case. The Police received many reports in October 2026 and stress this is not how they work."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un e-mail officiel en apparence (Police, Europol, huissier) vous accuse d’une infraction.",
+        "en": "An official-looking email (Police, Europol, bailiff) accuses you of an offence."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il fixe un délai très court avant des poursuites.",
+        "en": "It sets a very short deadline before prosecution."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Il vous demande de répondre et de ne parler à personne de la procédure.",
+        "en": "It asks you to reply and not to tell anyone about the case."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "fr": "On réclame vos données ou un paiement pour classer l’affaire.",
+        "en": "They ask for your details or a payment to close the case."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Objet : CONVOCATION – Direction Générale de la Police. Madame, Monsieur, suite à une saisie informatique, une procédure judiciaire est ouverte à votre encontre. Vous disposez de 72 heures pour transmettre vos justifications par retour de mail. Passé ce délai, le dossier sera transmis au Parquet et un mandat d’arrêt sera émis.",
+        "en": "Subject: SUMMONS – Police Headquarters. Dear Sir or Madam, following a computer seizure, legal proceedings have been opened against you. You have 72 hours to send your justification by return email. After this deadline the file will be sent to the Public Prosecutor and an arrest warrant will be issued."
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "e-mail convocation police",
+      "procédure judiciaire contre moi par e-mail",
+      "e-mail Europol infraction",
+      "huissier de justice e-mail payer",
+      "e-mail direction générale de la police",
+      "répondre sous 72 heures dossier parquet"
+    ],
+    "en": [
+      "police summons email",
+      "legal proceedings against me by email",
+      "Europol email offence",
+      "bailiff email asking to pay",
+      "email from police headquarters",
+      "reply within 72 hours file sent to prosecutor"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "La Police n’envoie pas de convocation ni d’accusation par e-mail en vous demandant de répondre.",
+      "Une menace de mandat d’arrêt ou de poursuites dans un délai très court.",
+      "Des fautes, une adresse d’expéditeur étrangère, une demande d’argent ou de données."
+    ],
+    "en": [
+      "The Police don’t send summonses or accusations by email asking you to reply.",
+      "A threatened arrest warrant or prosecution with a very short deadline.",
+      "Mistakes, a foreign sender address, a request for money or personal data."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne répondez pas, n’ouvrez pas les pièces jointes et supprimez l’e-mail.",
+      "En cas de doute, contactez la Police par ses canaux habituels.",
+      "Si vous avez payé ou envoyé des documents, portez plainte dans un commissariat."
+    ],
+    "en": [
+      "Don’t reply or open attachments; delete the email.",
+      "If in doubt, contact the Police through its usual channels.",
+      "If you paid or sent documents, file a complaint at a police station."
+    ]
+  },
+  "reportTo": [
+    "lu/police",
+    "lu/govcert"
+  ],
+  "sources": [
+    {
+      "title": "Vorsicht vor betrügerischen E-Mails im Namen der Polizei, BEE SECURE oder der Justizbehörden",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/10/semaine-42/arnaque-faux-emails-justice-police.html",
+      "date": "2026-10-10"
+    },
+    {
+      "title": "Betrügerische Mails im Namen der Polizei oder Europol",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/10/semaine-43/arnaque-europol-police.html",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "Warnung vor Betrugsmasche im Namen der Polizei",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/06/semaine-27/arnaque-instructions-judiciaires.html",
+      "date": "2026-07-03"
+    }
+  ],
+  "updated": "2026-11-17"
+}

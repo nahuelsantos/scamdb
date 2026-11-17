@@ -1,0 +1,131 @@
+{
+  "id": "fr/impots-faux-remboursement",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "fr": "« impots.gouv », « DGFiP », « Direction générale des Finances publiques »",
+    "en": "“impots.gouv”, “DGFiP” (tax administration)"
+  },
+  "name": {
+    "fr": "Faux mail des impôts : remboursement d’un trop-perçu ou arriérés à payer",
+    "en": "Fake tax email: refund of an overpayment, or arrears to pay"
+  },
+  "how": {
+    "fr": "Un mail signé « Direction générale des Finances publiques » annonce que votre situation fiscale a été révisée et qu'un remboursement vous attend (par exemple 219 euros), à réclamer sous 48 heures. Le lien ouvre une copie du site des impôts qui demande vos identifiants puis votre carte bancaire. Une variante menace au contraire de poursuites pour fraude fiscale et réclame le paiement d'arriérés. Les vrais messages de l'administration fiscale viennent d'adresses en @dgfip.finances.gouv.fr et un remboursement ne demande jamais de carte bancaire.",
+    "en": "An email signed “Direction générale des Finances publiques” (tax administration) says your tax situation has been reviewed and a refund is waiting (for example 219 euros), to claim within 48 hours. The link opens a copy of the tax website asking for your login and then your card. A variant instead threatens prosecution for tax fraud and demands payment of arrears. Real tax messages come from @dgfip.finances.gouv.fr addresses and a refund never needs a bank card."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Mail : remboursement en attente ou arriérés d'impôt, avec un délai court.",
+        "en": "Email: refund waiting or tax arrears, with a short deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Un lien vers un faux site impots.gouv.",
+        "en": "A link to a fake impots.gouv site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "On vous demande la carte bancaire « pour recevoir » le remboursement, ou un virement.",
+        "en": "You are asked for your card “to receive” the refund, or a transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "DGFiP - Avis de remboursement. Apres verification de votre declaration, un trop-percu de 312,40 EUR vous est du. Pour recevoir ce montant, confirmez vos coordonnees bancaires sous 48 heures : [lien]",
+        "en": "DGFiP - Refund notice. After checking your return, an overpayment of EUR 312.40 is owed to you. To receive this amount, confirm your bank details within 48 hours: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux mail impots remboursement",
+      "trop percu impots lien",
+      "remboursement impots gouv carte bancaire",
+      "dgfip situation fiscale revisee remboursement en attente",
+      "mail impots arrieres fraude fiscale",
+      "faux site impots gouv",
+      "finances publiques dossier fiscal montant restitue",
+      "formulaire de remboursement fiscal"
+    ],
+    "en": [
+      "fake tax refund email france",
+      "tax overpayment refund link",
+      "impots gouv refund asks card details",
+      "fake dgfip email arrears",
+      "tax situation reviewed refund pending"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un expéditeur qui ne finit pas par @dgfip.finances.gouv.fr.",
+      "Un remboursement d'impôt ne demande jamais votre numéro de carte.",
+      "Un délai très court ou des menaces d'huissier, de police ou de prison."
+    ],
+    "en": [
+      "A sender address not ending in @dgfip.finances.gouv.fr.",
+      "A tax refund never asks for your card number.",
+      "A very short deadline, or threats of bailiffs, police or prison."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas : connectez-vous à votre espace particulier en tapant l'adresse du site des impôts vous-même.",
+      "Supprimez le mail ; signalez le faux site.",
+      "Si vous avez donné votre carte ou vos identifiants, faites opposition et changez votre mot de passe."
+    ],
+    "en": [
+      "Don’t click: log in to your personal tax account by typing the address yourself.",
+      "Delete the email; report the fake site.",
+      "If you gave your card or login, block the card and change your password."
+    ]
+  },
+  "reportTo": [
+    "fr/pharos",
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/17cyber"
+  ],
+  "sources": [
+    {
+      "title": "Impôts : des faux sites très convaincants vous font miroiter un remboursement fiscal",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/impots-des-faux-sites-tres-convaincants-vous-font-miroiter-un-remboursement-fiscal-7509737",
+      "date": "2026-06-16"
+    },
+    {
+      "title": "Un remboursement de 219 € des impôts : c'est quoi cette nouvelle arnaque très dangereuse ?",
+      "publisher": "Presse-citron",
+      "url": "https://www.presse-citron.net/un-remboursement-de-219-e-des-impots-cest-quoi-cette-nouvelle-arnaque-tres-dangereuse/",
+      "date": "2026-06-24"
+    },
+    {
+      "title": "Impôts 2026 : gare aux messages frauduleux dans vos boîtes mail",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/impots-2026-gare-aux-messages-frauduleux-dans-vos-boites-mail-7087576",
+      "date": "2026-04-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

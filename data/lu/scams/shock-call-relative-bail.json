@@ -1,0 +1,140 @@
+{
+  "id": "lu/shock-call-relative-bail",
+  "country": "lu",
+  "lang": "de",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "de": "„Die Polizei“, „die Staatsanwaltschaft“ oder ein weinender Angehöriger",
+    "en": "“The police”, “the public prosecutor” or a crying relative"
+  },
+  "name": {
+    "de": "Schockanruf: „Ihre Tochter hatte einen schweren Unfall – sofort Kaution zahlen“",
+    "en": "Shock call: “your daughter had a serious accident – pay bail now”"
+  },
+  "how": {
+    "de": "Am Telefon meldet sich ein angeblicher Polizist, Staatsanwalt oder ein weinender Angehöriger: Ein Familienmitglied habe einen schweren Unfall verursacht und sitze in Haft. Nur eine sofortige Kaution könne es freibekommen. Die Anrufer, meist auf Deutsch, setzen die Opfer so stark unter Druck, dass sie Bargeld oder Schmuck übergeben, die ein falscher Gerichtsmitarbeiter oder Polizist an der Haustür abholt. Beim „Enkeltrick“ gibt sich der Anrufer selbst als Enkel in Not aus. Eine Kaution dieser Art gibt es in Luxemburg nicht, und die Polizei holt nie Geld oder Wertsachen zu Hause ab.",
+    "en": "A supposed police officer, prosecutor or a crying relative calls: a family member has caused a serious accident and is in custody. Only immediate bail can get them out. The callers, usually speaking German, put victims under so much pressure that they hand over cash or jewellery, collected at the door by a fake court clerk or police officer. In the “grandchild trick” the caller poses as the grandchild in trouble. This kind of bail does not exist in Luxembourg, and the Police never collect money or valuables from your home."
+  },
+  "steps": [
+    {
+      "text": {
+        "de": "Ein Anruf: Ein Angehöriger hatte einen Unfall oder ist in Not.",
+        "en": "A call: a relative had an accident or is in trouble."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "de": "Ein „Polizist“ oder „Staatsanwalt“ verlangt sofort eine Kaution.",
+        "en": "A “police officer” or “prosecutor” demands bail at once."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "de": "Sie sollen am Telefon bleiben und niemandem etwas sagen.",
+        "en": "You are told to stay on the line and tell nobody."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "de": "Ein Bote holt Bargeld oder Schmuck an Ihrer Tür ab.",
+        "en": "A courier collects cash or jewellery at your door."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "de": "Hier spricht Kommissar Weber. Ihre Tochter hat in Esch eine Frau angefahren, die Frau ist schwer verletzt. Ihre Tochter ist jetzt bei uns in Gewahrsam. Damit sie heute nicht ins Gefängnis muss, ist eine Kaution von 30 000 Euro fällig. Haben Sie Bargeld oder Gold im Haus? Legen Sie nicht auf, ein Kollege vom Gericht kommt gleich vorbei.",
+        "en": "This is Inspector Weber. Your daughter hit a woman with her car in Esch, the woman is badly hurt. Your daughter is in our custody now. So she doesn’t go to prison today, bail of 30,000 euros is due. Do you have cash or gold at home? Don’t hang up, a colleague from the court will come by shortly."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "de": [
+      "Anruf Unfall Tochter Kaution",
+      "Polizist am Telefon verlangt Kaution",
+      "Enkel braucht dringend Geld",
+      "Bote holt Schmuck Bargeld ab",
+      "Staatsanwalt ruft an wegen Unfall",
+      "Sohn in Haft Kaution bezahlen"
+    ],
+    "en": [
+      "call about daughter accident bail",
+      "police officer on the phone asks for bail",
+      "grandson urgently needs money",
+      "courier collects jewellery and cash",
+      "prosecutor calls about an accident",
+      "son in custody pay bail"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request",
+    "secrecy"
+  ],
+  "redFlags": {
+    "de": [
+      "In Luxemburg gibt es keine Kaution, die am Telefon verlangt wird.",
+      "Polizei und Justiz holen nie Bargeld oder Wertsachen an der Haustür ab.",
+      "Starker Druck, Tränen am Telefon, Sie sollen nicht auflegen."
+    ],
+    "en": [
+      "In Luxembourg there is no bail demanded over the phone.",
+      "Police and courts never collect cash or valuables at your door.",
+      "Heavy pressure, tears on the phone, and you are told not to hang up."
+    ]
+  },
+  "whatToDo": {
+    "de": [
+      "Legen Sie auf und rufen Sie den Angehörigen unter seiner bekannten Nummer an.",
+      "Rufen Sie im Zweifel die Polizei unter 113 an.",
+      "Übergeben Sie nie Geld oder Schmuck an Unbekannte; erstatten Sie Anzeige."
+    ],
+    "en": [
+      "Hang up and call your relative on the number you know.",
+      "If in doubt, call the Police on 113.",
+      "Never hand money or jewellery to strangers; file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "« Léif Boma, léiwe Bopa, loosst iech net beducksen! » : lancement d’une campagne de prévention des arnaques visant les personnes âgées",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/11/semaine-48/leif-boma-leiw-bopa-lancement-campagne-de-prevention-2026.html",
+      "date": "2026-11-16"
+    },
+    {
+      "title": "Arnaques ciblant les personnes âgées",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/02/semaine-08/arnaques-ciblant-les-personnes-agees.html",
+      "date": "2025-02-19"
+    },
+    {
+      "title": "Arnaque du petit-fils",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/prevention/arnaques/arnaque-petit-fils-enkeltrick.html",
+      "date": "2025-01-23"
+    },
+    {
+      "title": "Appels téléphoniques de choc",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/prevention/arnaques/appels-telephoniques-de-choc.html",
+      "date": "2024-03-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

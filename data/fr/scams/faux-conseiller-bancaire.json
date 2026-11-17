@@ -1,0 +1,131 @@
+{
+  "id": "fr/faux-conseiller-bancaire",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "fr": "Votre banque, « service fraude » (numéro de votre agence affiché)",
+    "en": "Your bank, “fraud department” (your branch’s number on screen)"
+  },
+  "name": {
+    "fr": "Faux conseiller bancaire : « opération suspecte » sur votre compte",
+    "en": "Fake bank adviser: a “suspicious transaction” on your account"
+  },
+  "how": {
+    "fr": "Vous recevez un appel qui affiche le vrai numéro de votre banque ou de votre conseiller : les escrocs l'usurpent. L'interlocuteur connaît vos nom et coordonnées, souvent volés quelques semaines plus tôt par un faux SMS (colis, amende, carte Vitale). Il annonce une fraude en cours et vous fait valider des opérations dans l'appli « pour les annuler », ou faire un virement vers un compte « sécurisé ». Les appels durent parfois une ou deux heures pour vous garder sous pression.",
+    "en": "You get a call showing your bank’s or adviser’s real number: scammers spoof it. The caller knows your name and details, often stolen weeks earlier through a fake text (parcel, fine, health card). They announce fraud in progress and get you to approve transactions in the app “to cancel them”, or to transfer money to a “secure” account. Calls can last one or two hours to keep you under pressure."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un SMS ou mail (colis, amende, carte Vitale) vous fait saisir vos données sur un faux site.",
+        "en": "A text or email (parcel, fine, health card) gets you to enter your details on a fake site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Plus tard, un « conseiller » appelle avec le numéro de votre banque affiché et parle d'une opération suspecte.",
+        "en": "Later an “adviser” calls with your bank’s number on screen and talks about a suspicious transaction."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il vous demande de rester en ligne et de valider dans l'appli ou de lui lire un code « pour bloquer ».",
+        "en": "They ask you to stay on the line and approve in the app or read them a code “to block it”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fr": "Ou il vous fait virer votre épargne vers un « compte sécurisé ».",
+        "en": "Or they get you to transfer your savings to a “secure account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Bonjour, ici le service fraude de votre banque. Nous voyons deux paiements en attente sur votre carte, à l'étranger. Vous les reconnaissez ? Non ? Je vais les bloquer. Vous allez avoir une notification dans votre application : validez-la, c'est l'annulation. Ne raccrochez pas pendant la procédure.",
+        "en": "Hello, this is your bank’s fraud department. We can see two pending payments on your card, abroad. Do you recognise them? No? I’ll block them. You’ll get a notification in your app: approve it, that’s the cancellation. Don’t hang up during the procedure."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux conseiller bancaire",
+      "appel de ma banque operation suspecte",
+      "conseiller banque demande valider operation dans l appli",
+      "numero de ma banque affiche mais arnaque",
+      "virement vers compte securise",
+      "service fraude banque appel code"
+    ],
+    "en": [
+      "fake bank adviser call",
+      "bank called about a suspicious transaction",
+      "asked me to approve a transaction in the app to cancel it",
+      "caller showed my bank s real number",
+      "transfer to a secure account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "keep_on_line",
+    "urgency",
+    "money_request",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "fr": [
+      "Le numéro affiché peut être usurpé : il ne prouve rien.",
+      "Votre banque ne vous demande jamais de valider une opération pour en annuler une autre, ni un code par téléphone.",
+      "Un « compte sécurisé » ou « de sécurité » n'existe pas."
+    ],
+    "en": [
+      "The number on screen can be spoofed: it proves nothing.",
+      "Your bank never asks you to approve a transaction to cancel another, or for a code over the phone.",
+      "A “secure” or “safety” account does not exist."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez et rappelez vous-même votre banque, au numéro du dos de la carte ou de l'appli.",
+      "Ne validez rien et ne donnez aucun code pendant l'appel.",
+      "Si vous avez validé ou viré de l'argent, appelez la banque tout de suite, faites opposition et portez plainte."
+    ],
+    "en": [
+      "Hang up and call your bank yourself, on the number on the back of the card or in the app.",
+      "Approve nothing and give no code during the call.",
+      "If you approved something or sent money, call the bank at once, block the card and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/police-complaint",
+    "fr/17cyber"
+  ],
+  "sources": [
+    {
+      "title": "\"C'est l'escroquerie à la mode !\" : à Rennes, les arnaques aux faux conseillers bancaires sont en nette hausse en 2026",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/bretagne/ille-et-vilaine-35/rennes/c-est-l-escroquerie-a-la-mode-a-rennes-les-arnaques-aux-faux-conseillers-bancaires-sont-en-nette-hausse-en-2026-5750615",
+      "date": "2026-03-16"
+    },
+    {
+      "title": "Arnaque en Charente-Maritime : au téléphone, ils se font passer pour des banquiers, des policiers ou des gendarmes",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/nouvelle-aquitaine/charente-maritime-17/arnaque-en-charente-maritime-au-telephone-ils-se-font-passer-pour-des-banquiers-des-policiers-ou-des-gendarmes-7942911",
+      "date": "2026-08-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "fr/faux-placements-celebrites",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "fr": "Une publicité ou un « article de presse » avec une célébrité, puis un « conseiller » en placements",
+    "en": "An ad or a “news article” featuring a celebrity, then an investment “adviser”"
+  },
+  "name": {
+    "fr": "Faux placements crypto vantés par des célébrités",
+    "en": "Fake crypto investments promoted with celebrities"
+  },
+  "how": {
+    "fr": "Une publicité ou un faux article imitant un grand média raconte qu'une personnalité connue s'est enrichie grâce à une plateforme de trading « avec intelligence artificielle » ou de crypto-actifs. Parfois une vidéo truquée par IA montre la célébrité. Vous laissez vos coordonnées, un « conseiller » vous rappelle, vous fait déposer quelques centaines d'euros puis davantage en montrant de faux gains. Pour retirer, il faut payer des « taxes » ou des frais, et l'argent ne revient jamais.",
+    "en": "An ad or a fake article imitating a major news outlet says a well-known person got rich with an “AI-powered” trading or crypto platform. Sometimes an AI-faked video shows the celebrity. You leave your details, an “adviser” calls back, gets you to deposit a few hundred euros and then more while showing fake gains. To withdraw you must pay “taxes” or fees, and the money never comes back."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Une pub ou un faux article : une célébrité révèle son placement miracle.",
+        "en": "An ad or fake article: a celebrity reveals their miracle investment."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fr": "Un formulaire, puis l'appel d'un « conseiller » qui vous fait ouvrir un compte.",
+        "en": "A form, then a call from an “adviser” who gets you to open an account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Premiers dépôts, faux gains affichés, demandes de verser plus.",
+        "en": "First deposits, fake gains shown, requests to pay in more."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "fr": "Pour retirer, on exige des frais ou une « taxe sur les plus-values ».",
+        "en": "To withdraw, you are asked for fees or a “capital gains tax”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "EXCLUSIF : invite sur un plateau tele, il devoile comment il gagne 3 000 EUR par semaine avec une plateforme d'investissement par IA. Depot minimum 250 EUR, gains garantis. Inscrivez-vous avant la fermeture des places : [lien]",
+        "en": "EXCLUSIVE: a guest on a TV show reveals how he makes EUR 3,000 a week with an AI investment platform. Minimum deposit EUR 250, guaranteed gains. Sign up before places close: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "placement crypto celebrite publicite",
+      "faux article celebrite trading intelligence artificielle",
+      "plateforme trading ia gains garantis",
+      "conseiller placement rappelle apres formulaire",
+      "payer taxe pour retirer mes gains",
+      "video deepfake celebrite investissement"
+    ],
+    "en": [
+      "celebrity crypto investment ad",
+      "fake news article celebrity trading platform",
+      "ai trading platform guaranteed returns",
+      "have to pay tax to withdraw my gains",
+      "deepfake celebrity investment video"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Une célébrité qui « révèle » un placement : c'est une fausse publicité.",
+      "Des gains élevés, rapides et sans risque.",
+      "Des frais ou une taxe à payer pour récupérer votre argent."
+    ],
+    "en": [
+      "A celebrity “revealing” an investment: it is a fake ad.",
+      "High, fast, risk-free returns.",
+      "Fees or a tax to pay to get your money back."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Vérifiez que la société est autorisée et absente des listes noires de l'AMF avant tout versement.",
+      "Ne versez plus rien, même « pour débloquer » vos gains.",
+      "Appelez AMF Épargne Info Service, prévenez votre banque et portez plainte."
+    ],
+    "en": [
+      "Check the company is authorised and not on the AMF’s blacklists before paying anything.",
+      "Pay nothing more, even “to unlock” your gains.",
+      "Call AMF Épargne Info Service, tell your bank and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/amf-epargne-info-service",
+    "fr/your-bank",
+    "fr/pharos",
+    "fr/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "The AMF warns retail investors about the growing number of scams involving fake news articles promoting the merits of pseudo get-rich-quick opportunities",
+      "publisher": "Autorité des marchés financiers (AMF)",
+      "url": "https://www.amf-france.org/en/news-publications/news-releases/amf-news-releases/amf-warns-retail-investors-about-growing-number-scams-involving-fake-news-articles-promoting-merits",
+      "date": "2026-08-25"
+    },
+    {
+      "title": "Vous ne voyez rien venir mais votre argent s'envole : ces pièges financiers explosent en France",
+      "publisher": "Presse-citron",
+      "url": "https://www.presse-citron.net/amf-arnaques-pieges-financiers-alerte-france/",
+      "date": "2025-05-27"
+    }
+  ],
+  "updated": "2026-11-17"
+}

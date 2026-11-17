@@ -1,0 +1,127 @@
+{
+  "id": "nl/hi-mum-new-number",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "nl": "Uw zoon, dochter of een andere bekende, vanaf een nieuw nummer",
+    "en": "Your son, daughter or someone you know, from a new number"
+  },
+  "name": {
+    "nl": "“Hoi mam, dit is mijn nieuwe nummer”: WhatsApp-fraude (hulpvraagfraude)",
+    "en": "“Hi mum, this is my new number”: WhatsApp fraud (help-request fraud)"
+  },
+  "how": {
+    "nl": "U krijgt een appje van uw kind of een andere bekende: de telefoon is kapot, dit is het nieuwe nummer en u kunt het oude verwijderen. Kort daarna komt de vraag om een rekening voor te schieten die vandaag nog betaald moet worden. Bellen kan “nu even niet”. Het geld gaat naar een oplichter; soms gebruikt die zelfs een nagemaakte stem.",
+    "en": "You get a WhatsApp message from your child or someone else you know: their phone broke, this is the new number and you can delete the old one. Soon after comes a request to advance a bill that has to be paid today. Calling is “not possible right now”. The money goes to a scammer; sometimes they even use a copied voice."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "“Hoi mam/pap, dit is mijn nieuwe nummer, sla het op.”",
+        "en": "“Hi mum/dad, this is my new number, save it.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "nl": "Een smoes: de telefoon is kapot, inloggen bij de bank lukt niet.",
+        "en": "An excuse: the phone is broken, they can’t log in to the bank."
+      }
+    },
+    {
+      "text": {
+        "nl": "Een rekening moet vandaag nog betaald worden: “kun je het voorschieten?”",
+        "en": "A bill has to be paid today: “can you advance it?”"
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "nl": "Bellen kan niet en het moet snel.",
+        "en": "Calling isn’t possible and it has to be quick."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Hoi mam, mijn telefoon is in het water gevallen, dit is mijn nieuwe nummer. Kun je het oude verwijderen? Ik zit echt in de knel, ik moet vandaag nog een factuur van € 865 betalen en kan niet bij mijn bankapp. Kun jij het voorschieten? Morgen krijg je het terug, beloofd. Bellen gaat nu niet x",
+        "en": "Hi mum, my phone fell in the water, this is my new number. Can you delete the old one? I’m really stuck, I have to pay an invoice of €865 today and can’t get into my banking app. Can you advance it? You’ll get it back tomorrow, promise. Can’t call right now x"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "hoi mam nieuwe nummer",
+      "kind nieuw nummer vraagt geld",
+      "telefoon kapot ander nummer",
+      "rekening voorschieten whatsapp",
+      "whatsapp fraude familielid",
+      "hulpvraagfraude",
+      "oude nummer verwijderen opslaan",
+      "inloggen bankapp lukt",
+      "huur voorschieten"
+    ],
+    "en": [
+      "hi mum new number",
+      "child texted from a new number asking for money",
+      "phone broke new number",
+      "whatsapp scam pretending to be my son",
+      "asked me to pay a bill for them"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "money_request",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een bekende met een nieuw nummer die meteen om geld vraagt.",
+      "Bellen of videobellen kan “niet”.",
+      "Het geld moet naar een rekening van iemand anders."
+    ],
+    "en": [
+      "Someone you know with a new number who asks for money straight away.",
+      "Calling or video calling is “not possible”.",
+      "The money has to go to someone else’s account."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Bel de persoon op het nummer dat u al in uw contacten heeft, liefst met beeld. Niet bereikbaar? Maak niets over.",
+      "Stel een controlevraag die alleen die persoon kan weten.",
+      "Maak schermafbeeldingen, bel uw bank en doe aangifte (ook bij een poging)."
+    ],
+    "en": [
+      "Call the person on the number already in your contacts, ideally by video. Can’t reach them? Don’t pay.",
+      "Ask a check question only that person would know.",
+      "Take screenshots, call your bank and file a police report (also for an attempt)."
+    ]
+  },
+  "reportTo": [
+    "nl/your-bank",
+    "nl/politie",
+    "nl/fraudehelpdesk"
+  ],
+  "sources": [
+    {
+      "title": "WhatsApp-fraude herkennen en voorkomen",
+      "publisher": "Consumentenbond",
+      "url": "https://www.consumentenbond.nl/veilig-internetten/whatsapp-fraude",
+      "date": "2026-07-09"
+    }
+  ],
+  "updated": "2026-11-17",
+  "related": [
+    "nl/whatsapp-code-theft"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "fr/coucou-maman-nouveau-numero",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "fr": "Votre enfant, depuis un « nouveau numéro »",
+    "en": "Your child, from a “new number”"
+  },
+  "name": {
+    "fr": "« Coucou maman, j’ai changé de numéro » : le faux enfant qui demande de l’argent",
+    "en": "“Hi mum, I’ve got a new number”: the fake child asking for money"
+  },
+  "how": {
+    "fr": "Un SMS d'un numéro inconnu commence par « Coucou maman » ou « Coucou papa » : votre enfant aurait cassé ou perdu son téléphone et vous demande de lui écrire sur WhatsApp. Une fois la conversation lancée, il a une urgence : une facture à payer aujourd'hui, un virement bloqué. Il demande un virement vers le compte d'un tiers et évite les appels. Des escrocs utilisent aussi le clonage de voix.",
+    "en": "A text from an unknown number starts “Hi mum” or “Hi dad”: your child has broken or lost their phone and asks you to message them on WhatsApp. Once you reply, there is an emergency: a bill to pay today, a blocked transfer. They ask for a transfer to someone else’s account and avoid calls. Some scammers also use voice cloning."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "« Coucou maman, mon téléphone est cassé, c'est mon nouveau numéro. »",
+        "en": "“Hi mum, my phone is broken, this is my new number.”"
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "fr": "Il demande de continuer sur WhatsApp et ne peut pas appeler.",
+        "en": "They ask to continue on WhatsApp and can’t call."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Urgence : une facture ou un virement à faire aujourd'hui sur un autre compte.",
+        "en": "Emergency: a bill or transfer to make today to another account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Coucou maman c'est moi, j'ai fait tomber mon tel dans l'eau, je t'ecris avec celui d'une copine. Enregistre ce numero. Tu peux m'aider ? Je dois regler une facture avant ce soir et mon appli bancaire ne marche plus. Je te rembourse samedi",
+        "en": "Hi mum it’s me, I dropped my phone in water, I’m writing from a friend’s. Save this number. Can you help me? I have to pay a bill before tonight and my banking app isn’t working. I’ll pay you back on Saturday"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "coucou maman nouveau numero",
+      "coucou papa telephone casse",
+      "mon fils change de numero demande argent",
+      "enregistre ce numero facture a payer",
+      "faux enfant whatsapp virement"
+    ],
+    "en": [
+      "hi mum new number scam",
+      "child texting from a new number asking for money",
+      "phone broken message me on whatsapp",
+      "save this number pay a bill today",
+      "fake son asks for transfer"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un proche qui écrit d'un numéro inconnu et demande de l'argent.",
+      "Il ne peut pas appeler ni envoyer de message vocal.",
+      "Le virement va vers le compte de quelqu'un d'autre."
+    ],
+    "en": [
+      "A relative writing from an unknown number and asking for money.",
+      "They can’t call or send a voice message.",
+      "The transfer goes to someone else’s account."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "N'envoyez rien : appelez votre proche sur son numéro habituel.",
+      "Posez une question que seul votre proche connaît.",
+      "Transférez le SMS au 33700 ; si vous avez viré, prévenez la banque et portez plainte."
+    ],
+    "en": [
+      "Send nothing: call your relative on their usual number.",
+      "Ask a question only your relative would know.",
+      "Forward the text to 33700; if you sent money, tell the bank and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/33700",
+    "fr/your-bank",
+    "fr/info-escroqueries",
+    "fr/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Faux mails, appels inquiétants… les arnaques se perfectionnent ! En avez-vous été victimes ?",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/bienvenue-chez-vous-ici-pays-de-savoie/faux-mails-appels-inquietants-les-arnaques-se-perfectionnent-en-avez-vous-ete-victimes-5187318",
+      "date": "2026-04-07"
+    },
+    {
+      "title": "\"Coucou maman, mon téléphone est cassé\" : ne répondez jamais à ce SMS",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/coucou-maman-mon-telephone-est-casse-ne-repondez-jamais-a-ce-sms-8361355",
+      "date": "2024-12-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

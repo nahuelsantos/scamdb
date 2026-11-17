@@ -1,0 +1,127 @@
+{
+  "id": "fr/faux-coursier-carte-bancaire",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "fr": "Votre banque, puis un « coursier » à votre porte",
+    "en": "Your bank, then a “courier” at your door"
+  },
+  "name": {
+    "fr": "Faux coursier : la banque « envoie quelqu’un » chercher votre carte",
+    "en": "Fake courier: the bank “sends someone” to collect your card"
+  },
+  "how": {
+    "fr": "Un faux conseiller bancaire vous appelle : votre compte serait piraté ou votre carte utilisée à l'étranger. Il vous demande votre code « pour la bloquer », parfois de couper la carte en gardant la puce, puis annonce qu'un coursier passe la récupérer pour la détruire et vous en envoyer une nouvelle. Le coursier est un complice : la carte et le code servent aussitôt au distributeur et en magasin. Les personnes âgées sont les plus visées.",
+    "en": "A fake bank adviser calls you: your account has been hacked or your card used abroad. They ask for your PIN “to block it”, sometimes to cut the card while keeping the chip, then say a courier will come to collect it, destroy it and send a new one. The courier is an accomplice: the card and PIN are used straight away at cash machines and in shops. Older people are the main targets."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Appel d'un « conseiller » : votre carte a été piratée.",
+        "en": "A call from an “adviser”: your card has been hacked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il demande votre code confidentiel pour « faire opposition ».",
+        "en": "They ask for your PIN “to block the card”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fr": "Un coursier vient chez vous chercher la carte, parfois avec des papiers d'identité.",
+        "en": "A courier comes to your home to collect the card, sometimes with ID documents."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Madame, votre carte a été clonée, nous avons des retraits en cours. Pour l'opposition j'ai besoin que vous me confirmiez votre code à 4 chiffres. Ensuite un coursier de la banque passe chez vous dans l'heure récupérer la carte, mettez-la dans une enveloppe. Ne la jetez surtout pas.",
+        "en": "Madam, your card has been cloned, we have withdrawals in progress. To block it I need you to confirm your 4-digit PIN. Then a bank courier will come to your home within the hour to collect the card, put it in an envelope. Whatever you do, don’t throw it away."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux coursier carte bancaire",
+      "la banque envoie un coursier recuperer ma carte",
+      "coursier passe chercher la carte bleue",
+      "conseiller demande code carte puis coursier",
+      "couper la carte en gardant la puce"
+    ],
+    "en": [
+      "fake courier collects bank card",
+      "bank said a courier would pick up my card",
+      "gave my card and pin to a courier",
+      "cut the card but keep the chip",
+      "fake adviser then courier at the door"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Aucune banque ni administration n'envoie quelqu'un chez vous chercher une carte, des papiers ou de l'argent.",
+      "Personne de la banque ne vous demande votre code confidentiel.",
+      "On vous demande de couper la carte mais de garder la puce."
+    ],
+    "en": [
+      "No bank or public body sends someone to your home to collect a card, documents or money.",
+      "Nobody from the bank asks for your PIN.",
+      "You are told to cut the card but keep the chip."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez, ne donnez pas votre code et n'ouvrez pas au « coursier ».",
+      "Si la carte est partie : opposition immédiate auprès de la banque ou du serveur interbancaire.",
+      "Appelez le 17 si le coursier est en route ou devant chez vous, puis portez plainte."
+    ],
+    "en": [
+      "Hang up, don’t give your PIN and don’t open the door to the “courier”.",
+      "If the card is gone: block it at once with the bank or the interbank line.",
+      "Call 17 if the courier is on the way or at your door, then file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/emergency",
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Onze victimes de faux conseillers bancaires à Rouen et au Havre : la police de la Seine-Maritime alerte",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/normandie/seine-maritime-76/rouen/onze-victimes-de-faux-conseillers-bancaires-a-rouen-et-au-havre-la-police-de-la-seine-maritime-alerte-6620582",
+      "date": "2026-08-18"
+    },
+    {
+      "title": "Piégée par un faux conseiller bancaire, elle perd 5 700 euros, mais la justice se range du côté des banques",
+      "publisher": "Clubic",
+      "url": "https://www.clubic.com/actualite-609676-piegee-par-un-faux-conseiller-bancaire-elle-perd-5700-euros-mais-la-justice-se-range-du-cote-des-banques.html",
+      "date": "2026-04-20"
+    },
+    {
+      "title": "Arnaque bancaire : la gendarmerie des Pyrénées-Orientales met en garde contre les faux coursiers",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/occitanie/pyrenees-orientales-66/arnaque-bancaire-la-gendarmerie-des-pyrenees-orientales-met-en-garde-contre-les-faux-coursiers-9616841",
+      "date": "2025-08-12"
+    }
+  ],
+  "updated": "2026-11-17"
+}

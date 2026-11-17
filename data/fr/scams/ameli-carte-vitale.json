@@ -1,0 +1,128 @@
+{
+  "id": "fr/ameli-carte-vitale",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fr": "« Ameli », « Assurance Maladie », « CPAM »",
+    "en": "“Ameli”, “Assurance Maladie” (health insurance), “CPAM”"
+  },
+  "name": {
+    "fr": "Faux message ameli : « votre nouvelle carte Vitale est prête »",
+    "en": "Fake ameli message: “your new Carte Vitale is ready”"
+  },
+  "how": {
+    "fr": "Un mail ou un SMS aux couleurs de l'Assurance Maladie annonce que votre carte Vitale expire, qu'une « carte Vitale 2026 » est prête à être expédiée, ou qu'il faut actualiser votre compte pour garder vos droits. Le lien mène à un faux site ameli qui demande votre adresse, votre numéro de sécurité sociale et votre carte bancaire pour de « frais d'envoi ». La carte Vitale n'a pas de date d'expiration et l'Assurance Maladie ne la renouvelle jamais par SMS.",
+    "en": "An email or text in health insurance (Assurance Maladie) branding says your Carte Vitale is expiring, that a “2026 Carte Vitale” is ready to ship, or that you must update your account to keep your rights. The link leads to a fake ameli site asking for your address, social security number and card details for “shipping costs”. The Carte Vitale has no expiry date and the health insurance never renews it by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Message : carte Vitale expirée, nouvelle carte prête ou compte à mettre à jour.",
+        "en": "Message: Carte Vitale expired, new card ready or account to update."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Un lien vers un faux site ameli, souvent avec une date limite.",
+        "en": "A link to a fake ameli site, often with a deadline."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Le site demande le numéro de sécurité sociale et la carte bancaire pour de petits frais.",
+        "en": "The site asks for your social security number and card for a small fee."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Assurance Maladie : votre carte Vitale arrive a expiration. Commandez votre nouvelle carte avant le 30 pour conserver vos remboursements. Frais d'envoi : 0,99 EUR. [lien]",
+        "en": "Health Insurance: your Carte Vitale is about to expire. Order your new card before the 30th to keep your reimbursements. Shipping: EUR 0.99. [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "carte vitale expire sms",
+      "nouvelle carte vitale prete a etre expediee",
+      "faux mail ameli carte vitale",
+      "mise a jour compte ameli lien",
+      "frais envoi carte vitale",
+      "assurance maladie actualiser situation sms"
+    ],
+    "en": [
+      "fake ameli carte vitale email",
+      "carte vitale expiring text",
+      "new health card ready to ship",
+      "update ameli account link",
+      "health insurance text asking card details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "La carte Vitale n'expire jamais.",
+      "L'Assurance Maladie ne propose jamais de renouveler la carte par SMS ou par mail, ni de payer des frais.",
+      "Une adresse en « .com » ou un numéro en 06 ou 07."
+    ],
+    "en": [
+      "The Carte Vitale never expires.",
+      "The health insurance never offers to renew the card by text or email, or asks for a fee.",
+      "A “.com” address or a mobile number (06 or 07)."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas : connectez-vous à votre compte ameli en tapant l'adresse vous-même ou par l'appli.",
+      "Transférez le SMS au 33700.",
+      "Si vous avez saisi votre carte, faites opposition."
+    ],
+    "en": [
+      "Don’t click: log in to your ameli account by typing the address yourself or using the app.",
+      "Forward the text to 33700.",
+      "If you entered your card, block it."
+    ]
+  },
+  "reportTo": [
+    "fr/33700",
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/pharos"
+  ],
+  "sources": [
+    {
+      "title": "Vous allez recevoir une nouvelle carte vitale ? ARNAQUE !",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/bienvenue-chez-vous-vie-pratique-ici-occitanie/vous-allez-recevoir-une-nouvelle-carte-vitale-arnaque-9951456",
+      "date": "2026-02-04"
+    },
+    {
+      "title": "Assurance maladie : c'est quoi cette nouvelle arnaque à la carte vitale 2026 qui fait un carnage ?",
+      "publisher": "Presse-citron",
+      "url": "https://www.presse-citron.net/assurance-maladie-cest-quoi-cette-nouvelle-arnaque-a-la-carte-vitale-2026-qui-fait-un-carnage/",
+      "date": "2026-01-14"
+    },
+    {
+      "title": "Vague de textos pièges à l'Assurance maladie",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/vague-de-textos-pieges-a-l-assurance-maladie-2401211",
+      "date": "2024-09-26"
+    }
+  ],
+  "updated": "2026-11-17"
+}

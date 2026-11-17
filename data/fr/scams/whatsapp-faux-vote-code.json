@@ -1,0 +1,125 @@
+{
+  "id": "fr/whatsapp-faux-vote-code",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "fr": "Un ami ou un proche (son compte WhatsApp piraté)",
+    "en": "A friend or relative (their hacked WhatsApp account)"
+  },
+  "name": {
+    "fr": "« Vote pour la fille de mes amis » : faux concours qui vole votre compte WhatsApp",
+    "en": "“Vote for my friends’ daughter”: a fake contest that steals your WhatsApp account"
+  },
+  "how": {
+    "fr": "Un contact vous écrit sur WhatsApp : sa nièce ou la fille d'amis participe à un concours de danse, il faut voter pour elle. Le lien ouvre un faux site de vote qui demande votre numéro puis un code, à saisir « pour valider le vote ». Ce code relie l'appareil des pirates à votre compte (« ghost pairing ») : ils lisent vos messages et écrivent à vos contacts pour leur demander de l'argent ou relancer le faux concours. Le message vient d'un vrai proche, dont le compte a déjà été piraté.",
+    "en": "A contact messages you on WhatsApp: their niece or a friend’s daughter is in a dance contest and needs your vote. The link opens a fake voting site that asks for your number and then a code, to enter “to confirm the vote”. That code links the hackers’ device to your account (“ghost pairing”): they read your messages and write to your contacts asking for money or spreading the fake contest. The message comes from a real contact whose account was already hacked."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un proche vous demande de voter pour une enfant dans un concours.",
+        "en": "A contact asks you to vote for a child in a contest."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Le lien mène à un faux site de vote.",
+        "en": "The link leads to a fake voting site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Le site demande votre numéro puis le code reçu, ou de le saisir dans « Appareils connectés ».",
+        "en": "The site asks for your number then the code you receive, or to enter it under “Linked devices”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Coucou ! Desole de te deranger, la petite de ma voisine est en finale d'un concours de danse, il lui manque quelques votes 🙏 Tu peux voter pour Lina ici ? Ca prend 10 secondes [lien]",
+        "en": "Hi! Sorry to bother you, my neighbour’s little girl is in the final of a dance contest and she needs a few more votes 🙏 Can you vote for Lina here? It takes 10 seconds [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "voter pour la fille de mes amis whatsapp",
+      "concours de danse vote lien whatsapp",
+      "vote demande code whatsapp",
+      "compte whatsapp pirate apres un vote",
+      "ghost pairing appareils connectes",
+      "ma niece participe a un concours votez"
+    ],
+    "en": [
+      "whatsapp vote for my friend s daughter",
+      "dance contest vote link whatsapp",
+      "vote site asked for my whatsapp code",
+      "whatsapp account hacked after voting",
+      "ghost pairing linked devices"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un vote en ligne qui demande votre numéro de téléphone et un code.",
+      "Une demande de saisir un code dans « Appareils connectés ».",
+      "Même venant d'un proche : son compte peut être piraté."
+    ],
+    "en": [
+      "An online vote that asks for your phone number and a code.",
+      "Being asked to enter a code under “Linked devices”.",
+      "Even from a contact: their account may be hacked."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas ; vérifiez auprès du proche par un appel ou un SMS.",
+      "Ne saisissez jamais un code reçu par SMS ou WhatsApp sur un site.",
+      "Si c'est fait : supprimez les appareils inconnus dans « Appareils connectés », activez la vérification en deux étapes et prévenez vos contacts hors de WhatsApp."
+    ],
+    "en": [
+      "Don’t click; check with the contact by phone or text.",
+      "Never enter a code received by text or WhatsApp on a website.",
+      "If it’s done: remove unknown devices under “Linked devices”, turn on two-step verification and warn your contacts outside WhatsApp."
+    ]
+  },
+  "reportTo": [
+    "fr/17cyber",
+    "fr/pharos"
+  ],
+  "sources": [
+    {
+      "title": "Attention, si un proche vous demande de voter pour une enfant sur WhatsApp, ne cliquez surtout pas",
+      "publisher": "Clubic",
+      "url": "https://www.clubic.com/actualite-636385-attention-si-un-proche-vous-demande-de-voter-pour-une-enfant-sur-whatsapp-ne-cliquez-surtout-pas.html",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "Un ami sur WhatsApp vous demande d'aider une petite fille à gagner un concours de danse ? Attention au piratage",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/un-ami-sur-whatsapp-vous-demande-d-aider-une-petite-fille-a-gagner-un-concours-de-danse-attention-au-piratage-6135339",
+      "date": "2026-05-06"
+    },
+    {
+      "title": "« Ma nièce participe à un concours ! » : attention à cette arnaque WhatsApp qui fait un carnage",
+      "publisher": "Presse-citron",
+      "url": "https://www.presse-citron.net/ma-niece-participe-a-un-concours-attention-a-cette-arnaque-whatsapp-qui-fait-un-carnage/",
+      "date": "2026-03-13"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,131 @@
+{
+  "id": "lu/wero-switch-phishing",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "fr": "« Payconiq », « Wero » ou votre banque",
+    "en": "“Payconiq”, “Wero” or your bank"
+  },
+  "name": {
+    "fr": "Fausse migration « passez de Payconiq à Wero », suivie d’un appel",
+    "en": "Fake “switch from Payconiq to Wero” request, followed by a call"
+  },
+  "how": {
+    "fr": "Avec le remplacement de Payconiq par Wero, des e-mails et SMS vous demandent de « faire la migration » vers Wero en cliquant sur un lien. Le site imite celui de la banque et réclame vos identifiants et votre carte bancaire. Peu après, un faux employé de la banque ou de LuxTrust appelle : votre compte aurait été piraté. Il vous fait scanner un code QR ou valider des demandes LuxTrust, et parfois annonce qu’un collègue viendra chercher votre carte. La Police a signalé plusieurs cas en octobre 2026.",
+    "en": "As Payconiq is replaced by Wero, emails and texts ask you to “migrate” to Wero by clicking a link. The site imitates your bank and asks for your login and card details. Soon after, a fake bank or LuxTrust employee calls: your account has supposedly been hacked. They make you scan a QR code or approve LuxTrust requests, and sometimes say a colleague will come to collect your card. The Police reported several cases in October 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un e-mail ou SMS annonce la fin de Payconiq et demande d’activer Wero via un lien.",
+        "en": "An email or text says Payconiq is ending and asks you to activate Wero through a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Le lien ouvre une page qui demande vos identifiants bancaires ou votre carte.",
+        "en": "The link opens a page asking for your banking login or card."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fr": "Un faux conseiller de la banque ou de LuxTrust appelle : le compte serait piraté.",
+        "en": "A fake bank or LuxTrust adviser calls: your account has been hacked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il vous fait scanner un code QR ou confirmer des demandes dans l’application, vite.",
+        "en": "They make you scan a QR code or confirm requests in the app, quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Payconiq disparaît le 30/11. Pour garder vos paiements, activez votre compte Wero aujourd’hui : [lien]. Sans activation, votre service sera suspendu.",
+        "en": "Payconiq ends on 30/11. To keep your payments, activate your Wero account today: [link]. Without activation your service will be suspended."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "passer de Payconiq à Wero",
+      "activer mon compte Wero aujourd’hui",
+      "migration Payconiq vers Wero",
+      "scanner un code QR Wero",
+      "appel après avoir activé Wero",
+      "Payconiq suspendu sans activation"
+    ],
+    "en": [
+      "switch from Payconiq to Wero",
+      "activate my Wero account today",
+      "Payconiq to Wero migration",
+      "scan a Wero QR code",
+      "call after activating Wero",
+      "Payconiq suspended without activation"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Le passage à Wero se fait dans l’application de votre banque, pas par un lien reçu.",
+      "Un appel juste après avoir rempli un formulaire « Wero ».",
+      "On vous demande de scanner un code QR ou de valider une opération que vous n’avez pas lancée."
+    ],
+    "en": [
+      "The switch to Wero happens in your bank’s own app, not through a link you receive.",
+      "A call right after you filled in a “Wero” form.",
+      "You are asked to scan a QR code or approve an operation you didn’t start."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "N’ouvrez pas le lien : passez par l’application officielle de votre banque.",
+      "Raccrochez si on vous appelle à ce sujet et rappelez la banque au numéro habituel.",
+      "Si vous avez donné vos données : appelez votre banque, bloquez vos cartes chez Worldline et votre accès LuxTrust, puis portez plainte."
+    ],
+    "en": [
+      "Don’t open the link: use your bank’s official app.",
+      "Hang up if someone calls about it and call the bank back on its usual number.",
+      "If you gave your details: call your bank, block your cards with Worldline and your LuxTrust access, then file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/your-bank",
+    "lu/worldline-card-block",
+    "lu/luxtrust",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Warnung vor Phishing-Betrügen in Zusammenhang mit dem Wechsel von Payconiq zu WERO",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/10/semaine-42/warnung-phishing-payconiq-wero-octobre-2026.html",
+      "date": "2026-10-06"
+    },
+    {
+      "title": "Warnung vor weiteren Betrugsfällen im Zusammenhang mit LuxTrust und Wero",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/10/semaine-44/arnaque-wero-luxtrust.html",
+      "date": "2026-10-23"
+    }
+  ],
+  "updated": "2026-11-17"
+}

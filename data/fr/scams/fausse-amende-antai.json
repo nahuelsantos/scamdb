@@ -1,0 +1,122 @@
+{
+  "id": "fr/fausse-amende-antai",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "fr": "« ANTAI », « Amendes », « Service des contraventions »",
+    "en": "“ANTAI”, “Fines”, “Penalty notice service”"
+  },
+  "name": {
+    "fr": "Fausse amende ANTAI par SMS : « avis de contravention impayé »",
+    "en": "Fake ANTAI fine by text: “unpaid penalty notice”"
+  },
+  "how": {
+    "fr": "Un SMS ou un mail « de l'ANTAI » annonce une amende impayée (stationnement, excès de vitesse), une majoration imminente et un lien pour payer quelques dizaines d'euros. Le faux site imite le site officiel et récupère vos données personnelles et votre carte bancaire. Après des fuites de données, certains messages citent votre vraie plaque ou votre nom pour paraître crédibles. L'ANTAI n'envoie jamais de SMS pour demander de payer une amende.",
+    "en": "A text or email “from ANTAI” (the traffic fines agency) announces an unpaid fine (parking, speeding), an imminent surcharge and a link to pay a few dozen euros. The fake site imitates the official one and takes your personal details and card. After data leaks, some messages quote your real plate or name to look credible. ANTAI never sends texts asking you to pay a fine."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "SMS : amende impayée, majoration si vous ne payez pas vite.",
+        "en": "Text: unpaid fine, surcharge if you don’t pay quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Un lien vers un faux site de paiement des amendes.",
+        "en": "A link to a fake fine-payment site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Le site demande identité, permis et carte bancaire.",
+        "en": "The site asks for your ID, licence and card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "ANTAI : Vous avez un avis de contravention en attente de reglement (35 EUR). Sans paiement sous 48h le montant sera majore a 75 EUR. Reglez votre dossier : [lien]",
+        "en": "ANTAI: You have a penalty notice awaiting payment (EUR 35). Without payment within 48h the amount will be raised to EUR 75. Settle your case: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "sms antai amende impayee",
+      "avis de contravention sms lien",
+      "amende majoree payer sous 48h",
+      "faux site paiement amende",
+      "sms amende stationnement a regler",
+      "antai demande carte bancaire"
+    ],
+    "en": [
+      "fake antai fine text",
+      "unpaid traffic fine text with link",
+      "parking fine text pay now",
+      "fine will be increased if not paid",
+      "fake fine payment site"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "L'ANTAI n'envoie jamais de SMS pour réclamer le paiement d'une amende.",
+      "Un lien avec une menace de majoration rapide.",
+      "Votre vraie plaque dans le message ne prouve rien : elle peut venir d'une fuite."
+    ],
+    "en": [
+      "ANTAI never sends texts asking for a fine to be paid.",
+      "A link with a threat of a quick surcharge.",
+      "Your real plate in the message proves nothing: it can come from a leak."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas. Vérifiez vous-même sur le site officiel de l'ANTAI avec les références d'un avis reçu par courrier.",
+      "Transférez le SMS au 33700.",
+      "Si vous avez payé ou donné votre carte, faites opposition auprès de la banque."
+    ],
+    "en": [
+      "Don’t click. Check yourself on ANTAI’s official site with the references of a notice received by post.",
+      "Forward the text to 33700.",
+      "If you paid or gave your card, block it with your bank."
+    ]
+  },
+  "reportTo": [
+    "fr/33700",
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/pharos"
+  ],
+  "sources": [
+    {
+      "title": "Fausse amende avec votre vraie plaque : alerte après la fuite de 850 000 immatriculations",
+      "publisher": "Clubic",
+      "url": "https://www.clubic.com/actualite-635938-un-pirate-affirme-detenir-les-donnees-de-pres-de-850-000-plaques-francaises-gare-aux-fausses-amendes.html",
+      "date": "2026-10-26"
+    },
+    {
+      "title": "« J'ai reçu une fausse amende et le piège s'est refermé » : c'est quoi cette arnaque au stationnement qui fait un carnage ?",
+      "publisher": "Presse-citron",
+      "url": "https://www.presse-citron.net/jai-recu-une-fausse-amende-et-le-piege-sest-referme-cest-quoi-cette-arnaque-au-stationnement-qui-fait-un-carnage/",
+      "date": "2026-01-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

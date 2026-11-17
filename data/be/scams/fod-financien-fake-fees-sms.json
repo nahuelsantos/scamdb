@@ -1,0 +1,147 @@
+{
+  "id": "be/fod-financien-fake-fees-sms",
+  "country": "be",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "nl": "FOD Financiën / MyMinfin (vals)",
+    "fr": "SPF Finances / MyMinfin (faux)",
+    "en": "FPS Finance / MyMinfin (fake)"
+  },
+  "name": {
+    "nl": "Valse sms van FOD Financiën: “openstaande kosten betalen” of “terugbetaling”",
+    "fr": "Faux SMS du SPF Finances : « frais impayés à régler » ou « remboursement »",
+    "en": "Fake FPS Finance text: “pay outstanding charges” or “refund”"
+  },
+  "how": {
+    "nl": "Je krijgt een sms of mail in naam van FOD Financiën of MyMinfin: er staan nog kosten open die je meteen via een link moet betalen, of je hebt recht op een terugbetaling. De link leidt naar een valse site die je bank- of kaartgegevens vraagt. De echte FOD Financiën vraagt geen betaling per sms: betalen kan enkel via MyMinfin, overschrijving naar zijn officiële rekeningen of in een infocenter.",
+    "fr": "Vous recevez un SMS ou un e-mail au nom du SPF Finances ou de MyMinfin : des frais restent impayés et doivent être réglés tout de suite via un lien, ou vous avez droit à un remboursement. Le lien mène à un faux site qui demande vos données bancaires ou de carte. Le vrai SPF Finances ne demande pas de paiement par SMS : on paie uniquement via MyMinfin, par virement sur ses comptes officiels ou dans un infocentre.",
+    "en": "You get a text or email in the name of FPS Finance or MyMinfin: there are outstanding charges you must pay right away through a link, or you are owed a refund. The link leads to a fake site asking for your bank or card details. The real FPS Finance does not ask for payment by text: you only pay through MyMinfin, by transfer to its official accounts or at an infocentre."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Sms “van FOD Financiën”: openstaande kosten of terugbetaling.",
+        "fr": "SMS « du SPF Finances » : frais impayés ou remboursement.",
+        "en": "Text “from FPS Finance”: outstanding charges or a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Snel betalen om problemen te vermijden.",
+        "fr": "Payer vite pour éviter des problèmes.",
+        "en": "Pay quickly to avoid trouble."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Een link naar een valse MyMinfin-pagina.",
+        "fr": "Un lien vers une fausse page MyMinfin.",
+        "en": "A link to a fake MyMinfin page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Je moet je bank- of kaartgegevens ingeven.",
+        "fr": "Vous devez saisir vos données bancaires ou de carte.",
+        "en": "You must enter your bank or card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "sms",
+      "text": {
+        "nl": "FOD Financien: Er staat nog een bedrag van 17,40 EUR aan administratieve kosten open op uw dossier. Regel dit vandaag via MyMinfin om een verhoging te vermijden: [link]",
+        "fr": "SPF Finances : Un montant de 17,40 EUR de frais administratifs reste impayé sur votre dossier. Régularisez aujourd’hui via MyMinfin pour éviter une majoration : [lien]",
+        "en": "FPS Finance: An amount of EUR 17.40 in administrative charges is still outstanding on your file. Settle it today via MyMinfin to avoid a surcharge: [link]"
+      }
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "sms fod financien openstaande kosten",
+      "myminfin betalen via link",
+      "terugbetaling belastingen sms",
+      "valse mail fod financien",
+      "administratieve kosten belastingen betalen",
+      "verhoging vermijden fod financien"
+    ],
+    "fr": [
+      "sms spf finances frais impayés",
+      "remboursement myminfin faux mail",
+      "payer via un lien spf finances",
+      "régulariser mon dossier myminfin",
+      "faux message impôts belgique"
+    ],
+    "en": [
+      "fps finance text outstanding charges",
+      "myminfin refund email fake",
+      "pay tax fees through a link",
+      "fake belgian tax message",
+      "settle my myminfin file"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "FOD Financiën vraagt geen betaling per sms.",
+      "Een link om te betalen of een “terugbetaling” te ontvangen.",
+      "Een site die kaartgegevens vraagt voor een terugbetaling."
+    ],
+    "fr": [
+      "Le SPF Finances ne demande pas de paiement par SMS.",
+      "Un lien pour payer ou recevoir un « remboursement ».",
+      "Un site qui demande vos données de carte pour un remboursement."
+    ],
+    "en": [
+      "FPS Finance does not ask for payment by text.",
+      "A link to pay or to receive a “refund”.",
+      "A site asking for card details for a refund."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Klik niet. Log zelf in op MyMinfin om te zien of er iets openstaat.",
+      "Gegevens ingegeven? Bel je bank en Card Stop.",
+      "Stuur het bericht door naar Safeonweb."
+    ],
+    "fr": [
+      "Ne cliquez pas. Connectez-vous vous-même à MyMinfin pour voir s’il y a quelque chose à payer.",
+      "Données saisies ? Appelez votre banque et Card Stop.",
+      "Transférez le message à Safeonweb."
+    ],
+    "en": [
+      "Don’t click. Log in to MyMinfin yourself to see whether anything is due.",
+      "Entered details? Call your bank and Card Stop.",
+      "Forward the message to Safeonweb."
+    ]
+  },
+  "reportTo": [
+    "be/safeonweb",
+    "be/your-bank",
+    "be/card-stop"
+  ],
+  "sources": [
+    {
+      "title": "A phishing campaign is impersonating SPF Finances, agency warns",
+      "publisher": "The Brussels Times (Belga)",
+      "url": "https://www.brusselstimes.com/2067512/a-phishing-campaign-is-impersonating-spf-finances-agency-warns",
+      "date": "2026-04-08"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,135 @@
+{
+  "id": "nl/fake-investment-celebrities",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "nl": "Een bekende Nederlander in een advertentie, daarna een “accountmanager”",
+    "en": "A Dutch celebrity in an ad, then an “account manager”"
+  },
+  "name": {
+    "nl": "Beleggingsfraude met bekende Nederlanders (crypto, nepplatform)",
+    "en": "Investment fraud using Dutch celebrities (crypto, fake platform)"
+  },
+  "how": {
+    "nl": "Een advertentie op social media leidt naar een nagemaakt nieuwsartikel of tv-pagina waarin een bekende Nederlander vertelt hoe rijk hij werd met een beleggingsplatform of crypto. U laat uw gegevens achter en een “accountmanager” belt. U begint met een klein bedrag en ziet in een nepomgeving winst, dus u legt steeds meer in. Uitbetalen lukt nooit: er zijn altijd nog “kosten”.",
+    "en": "An ad on social media leads to a copied news article or TV page in which a Dutch celebrity tells how they got rich with an investment platform or crypto. You leave your details and an “account manager” calls. You start with a small amount and see profit in a fake environment, so you put in more and more. Withdrawing never works: there are always more “fees”."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een advertentie met een bekende Nederlander die een belegging aanprijst.",
+        "en": "An ad with a Dutch celebrity praising an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Hoog rendement, weinig risico, “nu instappen”.",
+        "en": "High returns, little risk, “get in now”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "nl": "Een accountmanager belt en laat u een app installeren of geld storten.",
+        "en": "An account manager calls and has you install an app or deposit money."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "nl": "Uitbetalen kan pas na het betalen van belasting of kosten.",
+        "en": "You can only withdraw after paying tax or fees."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "EXCLUSIEF: bekende presentator onthult hoe hij met € 250 een tweede inkomen opbouwde. “Ik verdien nu duizenden euro’s per week, volledig automatisch.” De banken willen niet dat u dit weet. Lees het hele interview en meld u vandaag nog aan: [link]",
+        "en": "EXCLUSIVE: well-known presenter reveals how he built a second income with €250. “I now earn thousands of euros a week, fully automatically.” The banks don’t want you to know this. Read the full interview and sign up today: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "advertentie bekende nederlander beleggen",
+      "beleggen crypto advertentie facebook",
+      "accountmanager belt beleggingsplatform",
+      "geld opnemen lukt eerst kosten",
+      "beleggingsfraude",
+      "nepartikel bitcoin",
+      "snel rijk cryptoplatform",
+      "inleg euro duizenden verdienen",
+      "ondernemer geheim televisie"
+    ],
+    "en": [
+      "celebrity investment ad",
+      "crypto investment scam ad on facebook",
+      "account manager called about trading platform",
+      "can t withdraw my profits",
+      "fake news article about bitcoin"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "remote_access",
+    "urgency"
+  ],
+  "redFlags": {
+    "nl": [
+      "Advertenties waarin bekende personen een belegging aanprijzen zijn nep.",
+      "Gegarandeerde of zeer hoge winst.",
+      "Eerst kosten of belasting betalen voordat u uw geld terugkrijgt."
+    ],
+    "en": [
+      "Ads in which celebrities praise an investment are fake.",
+      "Guaranteed or very high profits.",
+      "Paying fees or tax before you get your money back."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Laat zulke advertenties links liggen en laat geen gegevens achter.",
+      "Controleer een aanbieder via Check je aanbieder van de AFM.",
+      "Al geld gestort? Stop met betalen, bel uw bank, meld het bij de AFM en de Fraudehelpdesk en doe aangifte. Pas op voor “herstelbedrijven” die u geld terug beloven."
+    ],
+    "en": [
+      "Ignore such ads and don’t leave your details.",
+      "Check a provider with the AFM’s Check je aanbieder.",
+      "Already deposited money? Stop paying, call your bank, report it to the AFM and the Fraud Helpdesk and file a police report. Beware of “recovery firms” promising your money back."
+    ]
+  },
+  "reportTo": [
+    "nl/afm",
+    "nl/fraudehelpdesk",
+    "nl/politie",
+    "nl/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Naam diverse bekende Nederlanders misbruikt voor beleggingsfraude",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/naam-diverse-bekende-nederlanders-misbruikt-voor-beleggingsfraude/",
+      "date": "2026-05-23"
+    },
+    {
+      "title": "AFM: schade door oplichting met beleggingstrucs tien keer hoger dan gedacht",
+      "publisher": "NOS",
+      "url": "https://nos.nl/l/2594073",
+      "date": "2025-12-11"
+    }
+  ],
+  "updated": "2026-11-17"
+}

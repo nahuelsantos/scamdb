@@ -1,0 +1,116 @@
+{
+  "id": "fr/faux-support-technique",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "fr": "« Microsoft », « Assistance Windows », « Support technique »",
+    "en": "“Microsoft”, “Windows Support”, “Tech support”"
+  },
+  "name": {
+    "fr": "Faux support technique : « votre ordinateur est bloqué, appelez ce numéro »",
+    "en": "Fake tech support: “your computer is locked, call this number”"
+  },
+  "how": {
+    "fr": "Pendant que vous naviguez, une page en plein écran, parfois avec une alarme sonore, dit que votre ordinateur est infecté ou bloqué et qu'il faut appeler l'assistance Windows. Le faux technicien vous fait installer un logiciel de prise en main à distance, « trouve » des virus et vous vend un dépannage ou un « pack sécurité » à plusieurs centaines d'euros. Avec l'accès, il peut aussi voir vos comptes et vos fichiers.",
+    "en": "While you browse, a full-screen page, sometimes with an alarm sound, says your computer is infected or locked and that you must call Windows support. The fake technician gets you to install remote-control software, “finds” viruses and sells you a repair or a “security pack” for several hundred euros. With access, they can also see your accounts and files."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Une alerte plein écran : ordinateur bloqué, appelez le support.",
+        "en": "A full-screen alert: computer locked, call support."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "fr": "Le « technicien » vous fait installer un logiciel de prise en main à distance.",
+        "en": "The “technician” gets you to install remote-control software."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "fr": "Il facture une réparation ou un abonnement, par carte ou virement.",
+        "en": "They charge for a repair or a subscription, by card or transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "ALERTE DE SECURITE WINDOWS - Votre ordinateur a ete bloque suite a une activite suspecte. Vos donnees bancaires et mots de passe sont en danger. N'eteignez pas l'ordinateur. Appelez immediatement le support technique Microsoft au [numéro].",
+        "en": "WINDOWS SECURITY ALERT - Your computer has been locked due to suspicious activity. Your bank details and passwords are at risk. Do not turn off the computer. Call Microsoft technical support immediately on [number]."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "ordinateur bloque appeler support technique",
+      "faux support microsoft",
+      "message plein ecran virus appeler numero",
+      "technicien demande installer logiciel prise en main a distance",
+      "pack securite ordinateur arnaque",
+      "alerte securite windows appelez"
+    ],
+    "en": [
+      "fake microsoft tech support",
+      "computer locked call this number",
+      "full screen virus warning with phone number",
+      "technician asked me to install remote access",
+      "paid for a security pack"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "fr": [
+      "Microsoft ne vous demande jamais d'appeler depuis une alerte dans le navigateur.",
+      "Un numéro à appeler affiché sur une page qui bloque l'écran.",
+      "Une demande d'installer un logiciel d'accès à distance."
+    ],
+    "en": [
+      "Microsoft never asks you to call from an alert in your browser.",
+      "A phone number shown on a page that locks the screen.",
+      "A request to install remote-access software."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "N'appelez pas : fermez l'onglet ou le navigateur (Échap, puis le gestionnaire des tâches si besoin).",
+      "Si quelqu'un a pris la main : déconnectez internet, désinstallez le logiciel, lancez un antivirus et changez vos mots de passe depuis un autre appareil.",
+      "Si vous avez payé, faites opposition et portez plainte."
+    ],
+    "en": [
+      "Don’t call: close the tab or browser (Esc, then the task manager if needed).",
+      "If someone took control: disconnect from the internet, uninstall the software, run an antivirus scan and change your passwords from another device.",
+      "If you paid, block the card and file a complaint."
+    ]
+  },
+  "reportTo": [
+    "fr/17cyber",
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/police-complaint"
+  ],
+  "sources": [
+    {
+      "title": "Un ordinateur qui paraît bloqué, un numéro à appeler : gare à la fraude de la \"fausse réparation informatique\"",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/leur-ordinateur-bloque-des-auditeurs-de-la-radio-ici-victimes-de-l-arnaque-au-faux-support-technique-5955438",
+      "date": "2025-11-20"
+    }
+  ],
+  "updated": "2026-11-17"
+}

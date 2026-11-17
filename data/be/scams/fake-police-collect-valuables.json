@@ -1,0 +1,139 @@
+{
+  "id": "be/fake-police-collect-valuables",
+  "country": "be",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "nl": "Een valse bankmedewerker, daarna een valse politieagent",
+    "fr": "Un faux employé de banque, puis un faux policier",
+    "en": "A fake bank employee, then a fake police officer"
+  },
+  "name": {
+    "nl": "Valse politie komt je kaart, geld en juwelen “in veiligheid brengen”",
+    "fr": "Un faux policier vient « mettre à l’abri » votre carte, argent et bijoux",
+    "en": "Fake police officer comes to “secure” your card, cash and jewellery"
+  },
+  "how": {
+    "nl": "Je wordt gebeld door iemand die zegt van je bank of van de politie te zijn: je bent in gevaar, je rekening of je huis wordt geviseerd, en de politie komt je waardevolle spullen in veiligheid brengen. Later staat een “agent” aan je deur. Je geeft je bankkaart met code, cash en juwelen mee. Het waren oplichters.",
+    "fr": "Quelqu’un qui se dit de votre banque ou de la police vous appelle : vous êtes en danger, votre compte ou votre maison est visé, et la police va venir mettre vos objets de valeur à l’abri. Plus tard, un « policier » sonne. Vous lui remettez votre carte avec le code, de l’argent liquide et des bijoux. C’étaient des escrocs.",
+    "en": "Someone claiming to be from your bank or the police calls: you are in danger, your account or home is targeted, and the police will come to secure your valuables. Later a “police officer” rings at your door. You hand over your bank card with its PIN, cash and jewellery. They were scammers."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Telefoon van “de bank” of “de politie”: je bent in gevaar.",
+        "fr": "Appel de « la banque » ou de « la police » : vous êtes en danger.",
+        "en": "A call from “the bank” or “the police”: you are in danger."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Niemand verwittigen, het onderzoek is geheim.",
+        "fr": "Ne prévenez personne, l’enquête est secrète.",
+        "en": "Tell no one, the investigation is secret."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "nl": "Een “agent” komt kaart, code, cash en juwelen halen.",
+        "fr": "Un « policier » vient chercher carte, code, argent et bijoux.",
+        "en": "An “officer” comes for your card, PIN, cash and jewellery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "nl": "Goedendag mevrouw, inspecteur van de federale politie. We hebben een bende opgepakt met uw naam en adres op een lijst. Uw bankkaart en juwelen zijn niet veilig. Een collega in burger komt ze vanmiddag ophalen. Spreek er met niemand over, ook niet met uw bank.",
+        "fr": "Bonjour madame, inspecteur de la police fédérale. Nous avons arrêté une bande qui avait votre nom et votre adresse sur une liste. Votre carte bancaire et vos bijoux ne sont pas en sécurité. Un collègue en civil passera les chercher cet après-midi. N’en parlez à personne, même pas à votre banque.",
+        "en": "Good afternoon madam, federal police inspector. We arrested a gang with your name and address on a list. Your bank card and jewellery are not safe. A plain-clothes colleague will collect them this afternoon. Don’t talk to anyone about it, not even your bank."
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux policier vient chercher mes bijoux",
+      "police appelle mettre mes objets de valeur à l’abri",
+      "remettre ma carte bancaire à un policier",
+      "inspecteur police fédérale au téléphone",
+      "faux policier à domicile",
+      "collègue en civil passe chercher"
+    ],
+    "nl": [
+      "valse politie komt juwelen ophalen",
+      "politie belt waardevolle spullen veilig",
+      "bankkaart afgeven aan agent",
+      "inspecteur federale politie belt",
+      "valse agent aan de deur"
+    ],
+    "en": [
+      "fake police officer collects my jewellery",
+      "police called to secure my valuables",
+      "hand my bank card to a police officer",
+      "federal police inspector on the phone",
+      "fake officer at my door"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "nl": [
+      "De politie haalt nooit kaarten, geld of juwelen bij je op.",
+      "Je mag er met niemand over spreken.",
+      "Je bank en de politie werken “samen” aan de telefoon."
+    ],
+    "fr": [
+      "La police ne vient jamais chercher cartes, argent ou bijoux chez vous.",
+      "Vous ne devez en parler à personne.",
+      "La banque et la police « travaillent ensemble » au téléphone."
+    ],
+    "en": [
+      "The police never collect cards, cash or jewellery from you.",
+      "You must not tell anyone.",
+      "Bank and police “working together” on the phone."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Hang op en bel zelf 101 of je lokale politie.",
+      "Doe niet open voor iemand die iets komt ophalen.",
+      "Kaart afgegeven? Laat ze meteen blokkeren via Card Stop en doe aangifte."
+    ],
+    "fr": [
+      "Raccrochez et appelez vous-même le 101 ou votre police locale.",
+      "N’ouvrez pas à quelqu’un qui vient chercher quelque chose.",
+      "Carte remise ? Faites-la bloquer via Card Stop et portez plainte."
+    ],
+    "en": [
+      "Hang up and call 101 or your local police yourself.",
+      "Don’t open the door to someone coming to collect something.",
+      "Handed over a card? Block it through Card Stop and report it."
+    ]
+  },
+  "reportTo": [
+    "be/police",
+    "be/card-stop",
+    "be/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Deux Tournaisiens arrêtés pour escroquerie",
+      "publisher": "La DH (Belga)",
+      "url": "https://www.dhnet.be/dernieres-depeches/2026/10/15/deux-tournaisiens-arretes-pour-escroquerie-4ML2RXNDGVBINGNBBVSRFRHCL4/",
+      "date": "2026-10-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

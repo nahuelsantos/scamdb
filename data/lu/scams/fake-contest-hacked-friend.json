@@ -1,0 +1,129 @@
+{
+  "id": "lu/fake-contest-hacked-friend",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "fr": "Un ami sur Facebook Messenger (compte piraté)",
+    "en": "A friend on Facebook Messenger (hacked account)"
+  },
+  "name": {
+    "fr": "Faux jeu concours Cactus ou Delhaize envoyé par un « ami »",
+    "en": "Fake Cactus or Delhaize prize draw sent by a “friend”"
+  },
+  "how": {
+    "fr": "Un ami vous écrit sur Facebook Messenger, mais son profil a été piraté. Il vous propose de participer avec lui à un jeu concours, souvent au nom des supermarchés Cactus ou Delhaize, et de partager le gros lot en deux. La conversation passe sur WhatsApp, vous remplissez un formulaire avec vos données, puis on vous demande le code à six chiffres reçu « pour vérifier le gain ». Ce code donne en fait accès à votre téléphone et à votre banque en ligne. Faux bons d’achat et faux extraits bancaires servent à vous rassurer. La Police a signalé plusieurs cas en janvier 2026.",
+    "en": "A friend writes to you on Facebook Messenger, but their profile has been hacked. They invite you to enter a prize draw with them, often in the name of the Cactus or Delhaize supermarkets, and split the jackpot. The chat moves to WhatsApp, you fill in a form with your details, then you are asked for the six-digit code you receive “to check the prize”. That code actually gives access to your phone and online banking. Fake vouchers and bank statements are used to reassure you. The Police reported several cases in January 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un ami vous écrit sur Messenger au sujet d’un jeu concours à partager.",
+        "en": "A friend messages you on Messenger about a prize draw to share."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il demande votre numéro et continue sur WhatsApp avec un lien vers un formulaire.",
+        "en": "They ask for your number and continue on WhatsApp with a link to a form."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Une grosse somme est promise, à partager moitié-moitié.",
+        "en": "A large sum is promised, to split half and half."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "fr": "Il vous demande le code à six chiffres reçu par SMS, vite.",
+        "en": "They ask for the six-digit code you got by text, quickly."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Coucou !! Tu as vu le grand concours des 60 ans de Cactus ? Je me suis inscrite pour nous deux, on peut gagner 5 000 € chacune 😍 Remplis vite le formulaire [lien] et envoie-moi le code à 6 chiffres que tu vas recevoir, c’est pour valider notre participation !",
+        "en": "Hiii!! Did you see the big Cactus 60th anniversary contest? I signed us both up, we can win €5,000 each 😍 Quickly fill in the form [link] and send me the 6-digit code you’ll get, it’s to confirm our entry!"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "jeu concours Cactus partager le gain",
+      "jeu concours Delhaize Messenger",
+      "amie m’a inscrite au concours",
+      "code à six chiffres pour valider participation",
+      "formulaire concours lien WhatsApp",
+      "gagner une grosse somme à partager"
+    ],
+    "en": [
+      "Cactus prize draw share the winnings",
+      "Delhaize contest on Messenger",
+      "friend signed me up for a contest",
+      "six-digit code to confirm entry",
+      "contest form link on WhatsApp",
+      "win a big sum to share"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "too_good_to_be_true",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un code reçu par SMS ne sert jamais à « valider » un gain : ne le donnez à personne.",
+      "Un ami qui insiste pour passer sur WhatsApp et vous presse.",
+      "Aucun règlement officiel ni annonce du concours sur les pages du magasin."
+    ],
+    "en": [
+      "A code you get by text never “confirms” a prize: don’t give it to anyone.",
+      "A friend who insists on moving to WhatsApp and rushes you.",
+      "No official rules or announcement of the contest on the shop’s own pages."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Appelez votre ami sur son numéro habituel pour vérifier.",
+      "Ne donnez aucun code et ne remplissez pas le formulaire.",
+      "Si vous avez donné un code : appelez votre banque, sécurisez votre téléphone et portez plainte."
+    ],
+    "en": [
+      "Call your friend on their usual number to check.",
+      "Don’t give any code or fill in the form.",
+      "If you gave a code: call your bank, secure your phone and file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/police",
+    "lu/your-bank",
+    "lu/bee-secure-helpline"
+  ],
+  "sources": [
+    {
+      "title": "Alerte escroquerie – faux jeux concours",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/01/semaine-05/escroquerie-faux-jeux-concours.html",
+      "date": "2026-01-26"
+    },
+    {
+      "title": "Faux gains de loterie, jeux concours, héritages ou donations",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/prevention/arnaques/faux-gains.html",
+      "date": "2026-02-04"
+    }
+  ],
+  "updated": "2026-11-17"
+}

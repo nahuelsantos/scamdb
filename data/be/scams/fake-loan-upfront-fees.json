@@ -1,0 +1,140 @@
+{
+  "id": "be/fake-loan-upfront-fees",
+  "country": "be",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "social",
+    "email",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "nl": "Een “kredietgever” op sociale media of per mail",
+    "fr": "Un « prêteur » sur les réseaux sociaux ou par e-mail",
+    "en": "A “lender” on social media or by email"
+  },
+  "name": {
+    "nl": "Vals krediet: “snel geld, geen controle”, maar eerst kosten betalen",
+    "fr": "Faux crédit : « argent rapide, sans contrôle », mais des frais à payer d’abord",
+    "en": "Fake loan: “fast money, no checks”, but pay fees first"
+  },
+  "how": {
+    "nl": "Via Facebook, WhatsApp, mail of een advertentie krijg je een lening aangeboden aan een heel lage rente, zonder controle of je al schulden hebt. Soms gebruiken ze de naam van een bekende kredietgever. Voor je het geld krijgt, moet je kosten betalen: dossierkosten, een verzekering of administratiekosten. Na betaling verdwijnt de “kredietgever”.",
+    "fr": "Via Facebook, WhatsApp, un e-mail ou une publicité, on vous propose un prêt à un taux très bas, sans vérifier si vous avez des dettes. Parfois, ils utilisent le nom d’un prêteur connu. Avant de recevoir l’argent, vous devez payer des frais : frais de dossier, assurance ou frais administratifs. Une fois payé, le « prêteur » disparaît.",
+    "en": "Through Facebook, WhatsApp, email or an ad you are offered a loan at a very low rate, with no check on whether you already have debts. Sometimes they use the name of a known lender. Before you get the money you must pay fees: file costs, insurance or admin fees. Once you pay, the “lender” vanishes."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een lening zonder controle, aan een heel lage rente.",
+        "fr": "Un prêt sans contrôle, à un taux très bas.",
+        "en": "A loan with no checks at a very low rate."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "nl": "De naam van een bekende kredietgever.",
+        "fr": "Le nom d’un prêteur connu.",
+        "en": "The name of a known lender."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Eerst dossierkosten of een verzekering betalen.",
+        "fr": "Payer d’abord des frais de dossier ou une assurance.",
+        "en": "First pay file costs or insurance."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "social",
+      "text": {
+        "nl": "Lening nodig? Wij lenen tot 50.000 euro aan 2% zonder controle van de Nationale Bank, ook bij negatieve registratie. Antwoord binnen 24u. Stuur ons een bericht op WhatsApp. Enkel de dossierkosten worden vooraf betaald.",
+        "fr": "Besoin d’un prêt ? Nous prêtons jusqu’à 50.000 euros à 2 % sans contrôle de la Banque nationale, même fiché. Réponse en 24 h. Écrivez-nous sur WhatsApp. Seuls les frais de dossier sont payés à l’avance.",
+        "en": "Need a loan? We lend up to 50,000 euros at 2% with no National Bank check, even with a bad credit record. Answer within 24h. Message us on WhatsApp. Only the file costs are paid upfront."
+      }
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "lening zonder controle",
+      "krediet via facebook dossierkosten",
+      "eerst kosten betalen voor lening",
+      "snel geld lenen lage rente whatsapp",
+      "verzekering betalen voor krediet",
+      "lenen ondanks negatieve registratie"
+    ],
+    "fr": [
+      "prêt sans contrôle",
+      "crédit facebook frais de dossier",
+      "payer des frais avant de recevoir le prêt",
+      "prêt rapide taux bas whatsapp",
+      "prêt même fiché"
+    ],
+    "en": [
+      "loan with no checks",
+      "facebook loan file costs",
+      "pay fees before getting the loan",
+      "fast loan low rate whatsapp",
+      "loan despite bad credit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een lening zonder enige controle van je situatie.",
+      "Je moet betalen voor je het geld krijgt.",
+      "Contact via sociale media of WhatsApp."
+    ],
+    "fr": [
+      "Un prêt sans aucun contrôle de votre situation.",
+      "Vous devez payer avant de recevoir l’argent.",
+      "Contact via les réseaux sociaux ou WhatsApp."
+    ],
+    "en": [
+      "A loan with no check of your situation at all.",
+      "You must pay before you get the money.",
+      "Contact through social media or WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Betaal geen kosten vooraf voor een lening.",
+      "Ga bij de FSMA na of de kredietgever geregistreerd is.",
+      "Al betaald? Bel je bank, meld het aan de FSMA en doe aangifte."
+    ],
+    "fr": [
+      "Ne payez aucun frais à l’avance pour un prêt.",
+      "Vérifiez auprès de la FSMA si le prêteur est enregistré.",
+      "Déjà payé ? Appelez votre banque, signalez-le à la FSMA et portez plainte."
+    ],
+    "en": [
+      "Don’t pay any upfront fees for a loan.",
+      "Check with the FSMA that the lender is registered.",
+      "Already paid? Call your bank, report it to the FSMA and the police."
+    ]
+  },
+  "reportTo": [
+    "be/fsma",
+    "be/your-bank",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Besoin d’argent rapidement ? Soyez prudent avec les offres de crédit sur les réseaux sociaux",
+      "publisher": "FSMA",
+      "url": "https://www.fsma.be/fr/warnings/besoin-dargent-rapidement-soyez-prudent-avec-les-offres-de-credit-sur-les-reseaux-1",
+      "date": "2026-10-28"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,137 @@
+{
+  "id": "nl/fake-helpdesk-google-microsoft",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "nl": "Helpdesk van Google, Microsoft of Amazon",
+    "en": "Google, Microsoft or Amazon helpdesk"
+  },
+  "name": {
+    "nl": "Nep-helpdesk van Google, Microsoft of Amazon belt over uw account of computer",
+    "en": "Fake Google, Microsoft or Amazon helpdesk calls about your account or computer"
+  },
+  "how": {
+    "nl": "U wordt gebeld door “de helpdesk van Google” of Microsoft, soms met het echte nummer of uw eigen nummer in beeld. Er zouden verdachte activiteiten zijn, een virus, of een iPhone-bestelling op uw naam. Om dat op te lossen moet u een 2FA-code geven, wachtwoorden wijzigen of een programma installeren waarmee de beller meekijkt. Daarna neemt hij uw account over of verandert hij betalingen in uw internetbankieren.",
+    "en": "You get a call from “Google’s helpdesk” or Microsoft, sometimes with the real number or your own number on screen. There’s supposedly suspicious activity, a virus, or an iPhone order in your name. To fix it you must give a 2FA code, change passwords or install a program that lets the caller watch your screen. Then they take over your account or change payments in your online banking."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een telefoontje van “Google” of “Microsoft”, of een bandje over een bestelling.",
+        "en": "A call from “Google” or “Microsoft”, or a recording about an order."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Er zijn verdachte activiteiten of een virus: het is dringend.",
+        "en": "There’s suspicious activity or a virus: it’s urgent."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "U moet een code geven of uw wachtwoord wijzigen zoals de beller zegt.",
+        "en": "You must give a code or change your password as the caller says."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "nl": "Of een programma installeren zodat hij kan meekijken, en inloggen bij de bank.",
+        "en": "Or install a program so they can watch, and log in to your bank."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Goedendag, u spreekt met de beveiligingsafdeling van Google. Er is vanuit het buitenland een data-export van uw account aangevraagd. Om dat te blokkeren stuur ik u nu een verificatiecode. Wilt u die even voorlezen? Dan beveiligen we uw account samen.",
+        "en": "Good day, this is Google’s security department. A data export of your account has been requested from abroad. To block it I’m sending you a verification code now. Could you read it out to me? Then we’ll secure your account together."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "gebeld helpdesk google",
+      "microsoft belt virus computer",
+      "programma downloaden meekijken",
+      "gebeld eigen nummer",
+      "iphone besteld naam amazon",
+      "code doorgeven google medewerker",
+      "anydesk installeren helpdesk",
+      "bandje bestelling druk medewerker"
+    ],
+    "en": [
+      "google helpdesk called me",
+      "microsoft called about a virus",
+      "asked me to install remote access software",
+      "called from my own number",
+      "amazon iphone order call",
+      "asked for my 2fa code"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "asks_for_code",
+    "urgency",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "nl": [
+      "Google, Microsoft en Amazon bellen u niet zomaar op.",
+      "Iemand die een code wil of vraagt een programma te installeren.",
+      "Uw eigen nummer of het nummer van een bedrijf in beeld zegt niets."
+    ],
+    "en": [
+      "Google, Microsoft and Amazon don’t call you out of the blue.",
+      "Someone who wants a code or asks you to install a program.",
+      "Your own number or a company’s number on screen means nothing."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Hang op en neem zelf contact op via de gegevens die u zelf opzoekt.",
+      "Geef nooit codes door, wijzig geen wachtwoorden en installeer niets op aanwijzing van een beller.",
+      "Toch iets geïnstalleerd of ingelogd? Zet het apparaat uit, bel uw bank en meld het bij de Fraudehelpdesk."
+    ],
+    "en": [
+      "Hang up and contact the company yourself using details you look up.",
+      "Never pass on codes, change passwords or install anything on a caller’s instructions.",
+      "Installed something or logged in anyway? Turn the device off, call your bank and report it to the Fraud Helpdesk."
+    ]
+  },
+  "reportTo": [
+    "nl/fraudehelpdesk",
+    "nl/your-bank",
+    "nl/politie"
+  ],
+  "sources": [
+    {
+      "title": "Neptelefoontjes uit naam van helpdesk Google",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/neptelefoontjes-uit-naam-van-helpdesk-google/",
+      "date": "2026-10-07"
+    },
+    {
+      "title": "Valse telefoontjes met eigen telefoonnummer",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-telefoontjes-met-eigen-telefoonnummer/",
+      "date": "2026-09-16"
+    },
+    {
+      "title": "Telefoontjes namens de helpdesk van Microsoft",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/telefoontjes-namens-de-helpdesk-van-microsoft/",
+      "date": "2024-10-30"
+    }
+  ],
+  "updated": "2026-11-17"
+}

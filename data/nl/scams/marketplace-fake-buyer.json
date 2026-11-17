@@ -1,0 +1,131 @@
+{
+  "id": "nl/marketplace-fake-buyer",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "nl": "Een “koper” op Marktplaats of Vinted",
+    "en": "A “buyer” on Marktplaats or Vinted"
+  },
+  "name": {
+    "nl": "Nep-koper op Marktplaats: betaalverzoek van 1 cent of “klik om uw geld te ontvangen”",
+    "en": "Fake buyer on Marktplaats: a 1-cent payment request or “click to receive your money”"
+  },
+  "how": {
+    "nl": "U verkoopt iets en een “koper” wil verder via WhatsApp of e-mail. Hij vraagt u eerst 1 cent over te maken via een (nep-)Tikkie of betaallink “ter verificatie”, of zegt dat hij al betaald heeft en dat u op een link moet klikken om het geld te ontvangen. De link leidt naar een nagemaakte bank- of Marktplaatspagina die uw inloggegevens of creditcardgegevens vraagt. Daarmee halen oplichters uw rekening leeg.",
+    "en": "You are selling something and a “buyer” wants to continue on WhatsApp or by email. They first ask you to pay 1 cent through a (fake) Tikkie or payment link “to verify”, or say they have already paid and that you must click a link to receive the money. The link leads to a copied bank or Marktplaats page that asks for your login or credit card details. With those, the scammers empty your account."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een koper reageert snel, gaat akkoord met de prijs en wil verder via WhatsApp of mail.",
+        "en": "A buyer replies fast, accepts the price and wants to continue on WhatsApp or email."
+      }
+    },
+    {
+      "text": {
+        "nl": "Hij vraagt 1 cent over te maken “ter controle”, met een betaallink.",
+        "en": "They ask you to pay 1 cent “as a check”, with a payment link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "nl": "Of: “ik heb al betaald, klik op Ontvang betaling”, op een nep-Marktplaatspagina.",
+        "en": "Or: “I’ve already paid, click Receive payment”, on a fake Marktplaats page."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "U moet inloggen bij de bank of uw creditcardgegevens invullen om geld te ontvangen.",
+        "en": "You must log in to your bank or enter card details to receive money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Hoi! Is de kinderwagen nog beschikbaar? Ik neem hem voor de vraagprijs en laat hem ophalen. Ik heb vaak oplichters gehad, dus maak eerst even 1 cent over via deze Tikkie zodat ik zie dat het klopt: [link] Daarna stuur ik meteen het hele bedrag.",
+        "en": "Hi! Is the pram still available? I’ll take it for the asking price and have it picked up. I’ve had a lot of scammers, so first pay 1 cent through this Tikkie so I can see it’s legit: [link] Then I’ll send the full amount straight away."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "koper vraagt cent overmaken",
+      "tikkie cent verificatie",
+      "betaalverzoek koper marktplaats",
+      "koper wil verder whatsapp",
+      "klik geld ontvangen",
+      "kaartgegevens invullen uitbetaling",
+      "nep koper marktplaats",
+      "vinted koper betaallink",
+      "koper heeft al betaald bevestigen"
+    ],
+    "en": [
+      "buyer asked me to send 1 cent",
+      "fake tikkie payment request",
+      "marketplace buyer sent a payment link",
+      "enter my card to receive payment",
+      "fake marktplaats buyer"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "nl": [
+      "Om geld te ontvangen hoeft u nooit in te loggen, iets te betalen of uw kaartgegevens te geven.",
+      "Een koper die eerst 1 cent wil “ter controle” is een bekende truc.",
+      "Een koper die meteen naar WhatsApp of mail wil."
+    ],
+    "en": [
+      "To receive money you never need to log in, pay anything or give card details.",
+      "A buyer who wants 1 cent first “as a check” is a known trick.",
+      "A buyer who wants to move to WhatsApp or email straight away."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Blijf in de chat van de handelsplaats en gebruik alleen de betaalmethode van de site, of laat de koper zelf overmaken.",
+      "Klik niet op betaallinks van een koper en stuur geen kopie van uw ID.",
+      "Heeft u ingelogd of kaartgegevens ingevuld? Bel direct uw bank en doe aangifte."
+    ],
+    "en": [
+      "Stay in the marketplace’s chat and use only the site’s payment method, or let the buyer transfer the money themselves.",
+      "Don’t click payment links from a buyer and don’t send a copy of your ID.",
+      "Did you log in or enter card details? Call your bank right away and file a police report."
+    ]
+  },
+  "reportTo": [
+    "nl/your-bank",
+    "nl/politie",
+    "nl/fraudehelpdesk"
+  ],
+  "sources": [
+    {
+      "title": "Nieuwe Marktplaats-oplichtingstruc leidt tot creditcardfraude",
+      "publisher": "Kassa (BNNVARA)",
+      "url": "https://www.bnnvara.nl/kassa/artikelen/nieuwe-marktplaats-oplichtingstruc-leidt-tot-creditcardfraude",
+      "date": "2026-03-12"
+    },
+    {
+      "title": "Betaalverzoekfraude",
+      "publisher": "Centrum voor Criminaliteitspreventie en Veiligheid (CCV)",
+      "url": "https://hetccv.nl/tool-cyberweerbaarheid/fraude/berichten-ontvangen/betaalverzoek-fraude/",
+      "date": "2023-10-09"
+    }
+  ],
+  "updated": "2026-11-17"
+}

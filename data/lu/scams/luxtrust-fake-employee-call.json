@@ -1,0 +1,149 @@
+{
+  "id": "lu/luxtrust-fake-employee-call",
+  "country": "lu",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email",
+    "sms",
+    "in-person"
+  ],
+  "sender": {
+    "fr": "« Un employé de LuxTrust » ou « le service sécurité de votre banque »",
+    "en": "“A LuxTrust employee” or “your bank’s security team”"
+  },
+  "name": {
+    "fr": "Faux employé LuxTrust qui appelle : « une transaction suspecte sur votre compte »",
+    "en": "Fake LuxTrust employee calling: “a suspicious transaction on your account”"
+  },
+  "how": {
+    "fr": "Quelqu’un vous appelle en se présentant comme employé de LuxTrust ou de votre banque et parle d’une transaction suspecte, d’un compte piraté ou d’une réservation en ligne à annuler. Pour « bloquer » l’opération, il vous envoie un lien par e-mail ou SMS pour vous connecter avec LuxTrust, puis vous demande de valider plusieurs demandes dans l’application LuxTrust. En réalité, chaque validation autorise un virement vers ses comptes. Souvent, il annonce ensuite qu’un collègue passera chez vous chercher vos cartes bancaires et vos codes PIN « pour les remplacer ». La Police a reçu de nouveaux cas en octobre et novembre 2026.",
+    "en": "Someone calls saying they work for LuxTrust or your bank and talks about a suspicious transaction, a hacked account or an online booking to cancel. To “block” it, they email or text you a link to log in with LuxTrust, then ask you to approve several requests in the LuxTrust app. In fact each approval authorises a transfer to their accounts. Often they then say a colleague will come to your home to collect your bank cards and PINs “to replace them”. The Police received new cases in October and November 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "Un appel inattendu d’un « employé LuxTrust » ou de la banque : une transaction suspecte a été repérée sur votre compte.",
+        "en": "An unexpected call from a “LuxTrust employee” or the bank: a suspicious transaction was spotted on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Il vous envoie un lien par e-mail ou SMS pendant l’appel pour vous connecter avec LuxTrust.",
+        "en": "During the call they send a link by email or text for you to log in with LuxTrust."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Il vous demande d’accepter des demandes dans l’application LuxTrust pour « annuler » l’opération.",
+        "en": "They ask you to approve requests in the LuxTrust app to “cancel” the payment."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "fr": "Il reste en ligne et vous presse d’agir avant que l’argent ne parte.",
+        "en": "They stay on the line and push you to act before the money goes."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "fr": "Un faux employé sonne chez vous pour récupérer vos cartes et vos codes PIN.",
+        "en": "A fake employee rings at your door to collect your cards and PINs."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Bonjour Monsieur, ici Kevin du service sécurité LuxTrust. Nous voyons une réservation de 1 280 € en cours sur votre compte, c’est bien vous ? Non ? Je vous envoie tout de suite un lien par mail, connectez-vous et acceptez les deux demandes qui vont s’afficher dans l’appli, c’est pour bloquer le paiement. Ensuite un collègue passe chez vous cet après-midi récupérer vos cartes, elles seront remplacées.",
+        "en": "Hello sir, this is Kevin from LuxTrust security. We can see a €1,280 booking going through on your account, is that you? No? I’m sending you a link by email right now, log in and approve the two requests that will pop up in the app, that’s to block the payment. Then a colleague will come by this afternoon to pick up your cards, they’ll be replaced."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux employé LuxTrust au téléphone",
+      "transaction suspecte sur mon compte",
+      "accepter les demandes LuxTrust dans l’appli",
+      "lien envoyé pendant l’appel pour bloquer l’opération",
+      "collègue vient chercher mes cartes bancaires",
+      "réservation annulée LuxTrust",
+      "compte piraté appel LuxTrust"
+    ],
+    "en": [
+      "fake LuxTrust employee on the phone",
+      "suspicious transaction on my account",
+      "approve LuxTrust requests in the app",
+      "link sent during the call to block the operation",
+      "colleague coming to collect my bank cards",
+      "booking cancelled LuxTrust",
+      "LuxTrust call account hacked"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "keep_on_line",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "LuxTrust et les banques n’appellent pas pour vous faire valider des demandes dans l’application.",
+      "Un lien envoyé pendant un appel pour « annuler » une opération.",
+      "Personne ne vient chez vous chercher vos cartes bancaires ou vos codes PIN.",
+      "Un numéro luxembourgeois affiché ne prouve rien : il peut être falsifié."
+    ],
+    "en": [
+      "LuxTrust and banks don’t call to make you approve requests in the app.",
+      "A link sent during a call to “cancel” a payment.",
+      "Nobody comes to your home to collect bank cards or PINs.",
+      "A Luxembourg number on screen proves nothing: it can be faked."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Raccrochez et rappelez votre banque ou LuxTrust avec le numéro que vous connaissez.",
+      "Ne validez jamais une demande LuxTrust que vous n’avez pas lancée vous-même.",
+      "Si vous avez validé une demande ou donné vos cartes : bloquez vos cartes chez Worldline, faites bloquer votre accès LuxTrust, appelez votre banque (et demandez de bloquer Wero) puis portez plainte."
+    ],
+    "en": [
+      "Hang up and call your bank or LuxTrust back on a number you know.",
+      "Never approve a LuxTrust request you didn’t start yourself.",
+      "If you approved a request or handed over cards: block your cards with Worldline, have your LuxTrust access blocked, call your bank (and ask them to block Wero), then file a police complaint."
+    ]
+  },
+  "reportTo": [
+    "lu/your-bank",
+    "lu/worldline-card-block",
+    "lu/luxtrust",
+    "lu/police"
+  ],
+  "sources": [
+    {
+      "title": "Erneut Betrugsfälle durch falsche LuxTrust-Mitarbeiter",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2026/11/semaine-46/arnaque-luxtrust.html",
+      "date": "2026-11-05"
+    },
+    {
+      "title": "Festnahmen im Rahmen der „Luxtrust“-Betrugsmasche",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/11/semaine-47/arrestations-arnaque-luxtrust.html",
+      "date": "2025-11-19"
+    },
+    {
+      "title": "Vorsicht vor Betrugsmasche durch falsche Bankangestellte",
+      "publisher": "Police Grand-Ducale",
+      "url": "https://police.public.lu/fr/actualites/2025/01/semaine-4/arnaque-faux-employes-banque.html",
+      "date": "2025-01-24"
+    }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,121 @@
+{
+  "id": "fr/colis-frais-livraison",
+  "country": "fr",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "fr": "« La Poste », « Colissimo », « Chronopost », « Mondial Relay » ou « votre livreur »",
+    "en": "“La Poste”, “Colissimo”, “Chronopost”, “Mondial Relay” or “your delivery driver”"
+  },
+  "name": {
+    "fr": "Faux SMS de livraison : colis en attente, petits frais à payer",
+    "en": "Fake delivery text: parcel on hold, a small fee to pay"
+  },
+  "how": {
+    "fr": "Un SMS dit que votre colis n'a pas pu être livré, qu'il ne rentre pas dans la boîte aux lettres ou qu'il reste des frais de douane ou de réexpédition de quelques euros. Depuis 2026, certains messages ajoutent une photo du colis à votre nom, créée par IA, ou un message vocal du « livreur ». Le lien mène à un faux site de transporteur qui récupère votre carte bancaire. Ces données servent ensuite à des achats ou à un appel de faux conseiller bancaire.",
+    "en": "A text says your parcel couldn’t be delivered, doesn’t fit in the letterbox, or that a few euros of customs or redelivery fees are due. Since 2026 some messages add an AI-made photo of the parcel with your name, or a voice message from the “driver”. The link leads to a fake carrier site that takes your card details. Those details are then used for purchases or for a fake bank adviser call."
+  },
+  "steps": [
+    {
+      "text": {
+        "fr": "SMS : colis en attente, livraison impossible ou frais à régler.",
+        "en": "Text: parcel on hold, delivery failed or a fee to pay."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "fr": "Un lien pour « reprogrammer la livraison », souvent avec un délai.",
+        "en": "A link to “reschedule delivery”, often with a deadline."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "fr": "Le faux site demande la carte bancaire pour 1 à 3 euros.",
+        "en": "The fake site asks for your card for 1 to 3 euros."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "fr": "Colissimo: votre colis n'a pas pu etre depose, il est trop volumineux pour votre boite aux lettres. Reprogrammez la livraison avant ce soir (frais de 1,49 EUR) : [lien]",
+        "en": "Colissimo: your parcel could not be delivered, it is too large for your letterbox. Reschedule delivery before tonight (fee of EUR 1.49): [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "sms colis ne rentre pas dans la boite aux lettres",
+      "frais de livraison colis sms",
+      "colis en attente frais de douane",
+      "reprogrammer la livraison lien",
+      "faux sms la poste colissimo chronopost",
+      "faux livreur photo du colis"
+    ],
+    "en": [
+      "fake parcel delivery text",
+      "parcel fee text la poste",
+      "parcel does not fit in letterbox text",
+      "reschedule delivery link pay fee",
+      "customs fee parcel text scam"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "fr": [
+      "Un SMS avec un lien qui demande de payer des frais pour un colis.",
+      "Un message avec une photo du colis à votre nom : les transporteurs n'en envoient pas.",
+      "Un numéro de mobile en 06 ou 07, ou une adresse qui imite le nom du transporteur."
+    ],
+    "en": [
+      "A text with a link asking you to pay a fee for a parcel.",
+      "A message with a photo of the parcel with your name: carriers don’t send those.",
+      "A mobile number (06 or 07) or a web address that imitates the carrier’s name."
+    ]
+  },
+  "whatToDo": {
+    "fr": [
+      "Ne cliquez pas : suivez le colis sur le site ou l'appli officielle du transporteur, en tapant l'adresse vous-même.",
+      "Transférez le SMS au 33700 puis supprimez-le.",
+      "Si vous avez donné votre carte, faites opposition et méfiez-vous d'un appel de « votre banque » dans les jours qui suivent."
+    ],
+    "en": [
+      "Don’t click: track the parcel on the carrier’s official site or app, typing the address yourself.",
+      "Forward the text to 33700 then delete it.",
+      "If you gave your card, block it, and be wary of a call from “your bank” in the following days."
+    ]
+  },
+  "reportTo": [
+    "fr/33700",
+    "fr/your-bank",
+    "fr/card-opposition",
+    "fr/perceval"
+  ],
+  "sources": [
+    {
+      "title": "Arnaque au colis : le faux livreur envoie maintenant des messages vocaux",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/arnaque-au-colis-le-faux-livreur-envoie-maintenant-des-messages-vocaux-4920913",
+      "date": "2026-04-14"
+    },
+    {
+      "title": "Arnaque au faux livreur : les escrocs envoient des photos de colis générées par intelligence artificielle",
+      "publisher": "ICI (Radio France)",
+      "url": "https://www.ici.fr/emissions/c-est-pas-vrai/arnaque-au-faux-livreur-les-escrocs-envoient-des-photos-de-colis-generees-par-intelligence-artificielle-3609494",
+      "date": "2026-03-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

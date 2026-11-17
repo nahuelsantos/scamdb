@@ -1,0 +1,127 @@
+{
+  "id": "nl/home-battery-call",
+  "country": "nl",
+  "lang": "nl",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "nl": "Een verkoper van thuisbatterijen, een energiebedrijf of “de Rijksoverheid”",
+    "en": "A home-battery seller, an energy company or “the government”"
+  },
+  "name": {
+    "nl": "Valse telefoontjes over een thuisbatterij of noodstroom: borg betalen, daarna dreigen",
+    "en": "Fake calls about a home battery or backup power: pay a deposit, then threats"
+  },
+  "how": {
+    "nl": "Een beller biedt een thuisbatterij aan, of zegt namens de Rijksoverheid of een energiebedrijf dat een batterij voor noodstroom verplicht is. Nog tijdens het gesprek moet u een borg betalen, bijvoorbeeld 250 euro, zodat de adviseur “niet voor een dichte deur staat”. Daarna hoort u dat u akkoord zou zijn gegaan met een lening of een dure batterij, en wordt er gedreigd met een opzegboete en een deurwaarder.",
+    "en": "A caller offers a home battery, or says on behalf of the government or an energy company that a backup-power battery is mandatory. While still on the call you must pay a deposit, for example 250 euros, so the adviser “doesn’t find a closed door”. Afterwards you hear you supposedly agreed to a loan or an expensive battery, and they threaten a cancellation fee and a bailiff."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Een ongevraagd telefoontje over een thuisbatterij of verplichte noodstroom.",
+        "en": "An unsolicited call about a home battery or mandatory backup power."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Nog tijdens het gesprek een borg betalen voor de afspraak.",
+        "en": "Pay a deposit for the appointment while still on the call."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "nl": "U zou akkoord zijn gegaan met een lening of een dure batterij.",
+        "en": "You supposedly agreed to a loan or an expensive battery."
+      }
+    },
+    {
+      "text": {
+        "nl": "Dreigen met een opzegboete en de deurwaarder.",
+        "en": "Threats of a cancellation fee and the bailiff."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "nl": "Goedemorgen, ik bel namens het landelijk programma noodstroom. U heeft het boekje over het noodpakket ontvangen, toch? Elk huishouden moet nu een thuisbatterij hebben, anders volgt een boete. Ik plan een adviseur in, maar dan vragen we wel even een borg van 250 euro, die kunt u nu meteen betalen.",
+        "en": "Good morning, I’m calling on behalf of the national backup-power programme. You received the booklet about the emergency kit, right? Every household must now have a home battery, otherwise there’s a fine. I’ll book an adviser, but we do ask a deposit of 250 euros, which you can pay right now."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "nl": [
+      "gebeld thuisbatterij",
+      "borg betalen adviseur thuisbatterij",
+      "thuisbatterij verplicht noodstroom",
+      "opzegboete thuisbatterij deurwaarder",
+      "rijksoverheid noodpakket batterij",
+      "energiebedrijf belt batterij",
+      "noodstroomvoorziening telefoontje"
+    ],
+    "en": [
+      "called about a home battery",
+      "pay a deposit over the phone for an adviser",
+      "mandatory home battery call",
+      "threatened with a cancellation fee",
+      "backup power battery scam call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "nl": [
+      "Een thuisbatterij is niet verplicht en de overheid belt daar niet over.",
+      "Al aan de telefoon moeten betalen.",
+      "Achteraf dreigen met boetes en een deurwaarder."
+    ],
+    "en": [
+      "A home battery is not mandatory and the government doesn’t call about it.",
+      "Having to pay while still on the phone.",
+      "Threats of fines and a bailiff afterwards."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Verbreek de verbinding en betaal niets. Geef geen mondelinge of schriftelijke toestemming.",
+      "Wordt u bedreigd met een deurwaarder? Controleer zelf of die partij u echt benaderd heeft.",
+      "Al betaald? Bel uw bank en neem contact op met de Fraudehelpdesk."
+    ],
+    "en": [
+      "Hang up and pay nothing. Don’t give verbal or written consent.",
+      "Threatened with a bailiff? Check yourself whether that firm really contacted you.",
+      "Already paid? Call your bank and contact the Fraud Helpdesk."
+    ]
+  },
+  "reportTo": [
+    "nl/fraudehelpdesk",
+    "nl/your-bank",
+    "nl/politie"
+  ],
+  "sources": [
+    {
+      "title": "Valse telefoontjes over ‘thuisbatterij’",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-telefoontjes-over-thuisbatterij/",
+      "date": "2026-09-21"
+    },
+    {
+      "title": "Valse telefoontjes over noodstroomvoorziening",
+      "publisher": "Fraudehelpdesk",
+      "url": "https://www.fraudehelpdesk.nl/alert/valse-telefoontjes-over-noodstroomvoorziening/",
+      "date": "2025-12-15"
+    }
+  ],
+  "updated": "2026-11-17"
+}

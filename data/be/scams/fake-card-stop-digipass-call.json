@@ -1,0 +1,152 @@
+{
+  "id": "be/fake-card-stop-digipass-call",
+  "country": "be",
+  "lang": "fr",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "nl": "Un faux employé de banque, puis un faux Card Stop",
+    "fr": "Un faux employé de banque, puis un faux Card Stop",
+    "en": "A fake bank employee, then a fake Card Stop"
+  },
+  "name": {
+    "nl": "Valse bank en vals Card Stop-nummer: “deactiveer je kaarten met je digipass”",
+    "fr": "Faux appel de la banque et faux numéro Card Stop : « désactivez vos cartes avec le digipass »",
+    "en": "Fake bank call and fake Card Stop number: “deactivate your cards with your digipass”"
+  },
+  "how": {
+    "nl": "Een “bankmedewerker” belt over verdachte activiteit op je rekening, bijvoorbeeld betalingen naar het buitenland. Hij geeft je een nummer van “Card Stop” om dringend terug te bellen, of de valse Card Stop belt jou. Daar laten ze je kaart per kaart verrichtingen doen met je digipass of kaartlezer, “om ze te deactiveren”. Met die codes halen ze je rekeningen leeg.",
+    "fr": "Un « employé de la banque » vous appelle pour une activité suspecte sur votre compte, par exemple des paiements vers l’étranger. Il vous donne un numéro « de Card Stop » à rappeler d’urgence, ou le faux Card Stop vous rappelle. On vous fait alors faire, carte par carte, des opérations avec votre digipass ou votre lecteur de carte « pour les désactiver ». Avec ces codes, ils vident vos comptes.",
+    "en": "A “bank employee” calls about suspicious activity on your account, for example payments abroad. He gives you a “Card Stop” number to call back urgently, or the fake Card Stop calls you. There you are made to do operations with your digipass or card reader, card by card, “to deactivate them”. With those codes they empty your accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "nl": "Telefoontje: verdachte activiteit op je rekening.",
+        "fr": "Appel : activité suspecte sur votre compte.",
+        "en": "Call: suspicious activity on your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "nl": "Je moet dringend een ander nummer van “Card Stop” bellen.",
+        "fr": "Il faut rappeler d’urgence un autre numéro « de Card Stop ».",
+        "en": "You must urgently call another “Card Stop” number."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "nl": "Ze laten je codes van je digipass of kaartlezer geven.",
+        "fr": "On vous fait donner les codes de votre digipass ou lecteur de carte.",
+        "en": "They have you read out codes from your digipass or card reader."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "nl": "Je moet aan de lijn blijven tot alles “geblokkeerd” is.",
+        "fr": "Vous devez rester en ligne jusqu’à ce que tout soit « bloqué ».",
+        "en": "You must stay on the line until everything is “blocked”."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "channel": "phone",
+      "text": {
+        "nl": "Goedendag, fraudedienst van uw bank. Er zijn twee betalingen naar het buitenland in behandeling. Bel nu meteen Card Stop op het nummer dat ik u geef, zij gaan uw kaarten met de digipass desactiveren. Elke minuut telt.",
+        "fr": "Bonjour, service fraude de votre banque. Deux paiements vers l’étranger sont en cours. Appelez tout de suite Card Stop au numéro que je vous donne, ils vont désactiver vos cartes avec le digipass. Chaque minute compte.",
+        "en": "Hello, your bank’s fraud department. Two payments abroad are pending. Call Card Stop right now on the number I give you, they will deactivate your cards with the digipass. Every minute counts."
+      }
+    }
+  ],
+  "phrases": {
+    "fr": [
+      "faux numéro card stop",
+      "désactiver mes cartes avec le digipass",
+      "appel de la banque paiement vers l’étranger",
+      "rappeler card stop au numéro donné",
+      "faux conseiller bancaire codes digipass",
+      "opérations suspectes sur mon compte appel"
+    ],
+    "nl": [
+      "vals nummer card stop",
+      "kaarten deactiveren met digipass",
+      "bank belt betaling naar buitenland",
+      "card stop terugbellen op ander nummer",
+      "codes van digipass aan de telefoon"
+    ],
+    "en": [
+      "fake card stop number",
+      "deactivate cards with digipass",
+      "bank called about payments abroad",
+      "call back card stop on a number they gave",
+      "read digipass codes on the phone"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "nl": [
+      "Card Stop belt nooit zelf en vraagt nooit om je digipass te gebruiken.",
+      "Je krijgt een ander nummer dan het officiële van Card Stop.",
+      "Codes van je kaartlezer om iets te “annuleren” of te “blokkeren”."
+    ],
+    "fr": [
+      "Card Stop n’appelle jamais et ne demande jamais d’utiliser votre digipass.",
+      "On vous donne un autre numéro que le numéro officiel de Card Stop.",
+      "Des codes du lecteur de carte pour « annuler » ou « bloquer »."
+    ],
+    "en": [
+      "Card Stop never calls you and never asks you to use your digipass.",
+      "You are given a number other than Card Stop’s official one.",
+      "Card reader codes to “cancel” or “block” something."
+    ]
+  },
+  "whatToDo": {
+    "nl": [
+      "Hang op en bel zelf het officiële nummer van Card Stop, dat op de website van Card Stop staat.",
+      "Gebruik nooit je digipass of kaartlezer op vraag van een beller.",
+      "Codes gegeven? Bel meteen je bank en doe aangifte bij de politie."
+    ],
+    "fr": [
+      "Raccrochez et appelez vous-même le numéro officiel de Card Stop, indiqué sur son site.",
+      "N’utilisez jamais votre digipass ou lecteur de carte à la demande d’un appelant.",
+      "Codes donnés ? Appelez tout de suite votre banque et portez plainte."
+    ],
+    "en": [
+      "Hang up and call the official Card Stop number from its website yourself.",
+      "Never use your digipass or card reader because a caller asks you to.",
+      "Gave codes? Call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "be/card-stop",
+    "be/your-bank",
+    "be/police"
+  ],
+  "sources": [
+    {
+      "title": "Attention aux arnaques au faux numéro Card Stop",
+      "publisher": "RTBF",
+      "url": "https://www.rtbf.be/article/attention-aux-arnaques-au-faux-numero-card-stop-11492754",
+      "date": "2025-01-31"
+    },
+    {
+      "title": "Arnaque bancaire : la contre-attaque d’un chasseur d’escroc",
+      "publisher": "RTBF (On n’est pas des pigeons)",
+      "url": "https://www.rtbf.be/article/arnaque-bancaire-la-contre-attaque-d-un-chasseur-d-escroc-11688443",
+      "date": "2026-03-19"
+    }
+  ],
+  "updated": "2026-11-17"
+}

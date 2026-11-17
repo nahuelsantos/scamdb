@@ -2,6 +2,25 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-17: Europe wave 2 (France, Belgium, Luxembourg, Netherlands) and matcher 1.4.x
+
+**Built:**
+- **Groundwork (#57):** fr, be, lu and nl in `countries.json`, reports, feed and trends; 35 brands; French and
+  Dutch rules in every sign, with "never share" / "nothing to pay" / log-in-yourself context rules.
+- **Matcher 1.4.1 (#58):** "uw bank" / "votre banque" no longer count as impersonation; pt, fr and nl filler words
+  in STOP (wrong matches 241 → 219).
+- **Import (for owner review):** 65 entries (fr 17, nl 17, be 16, lu 15), 32 contacts and 88 labelled messages,
+  researched and drafted by one agent per country.
+
+**Measured (eval, 604 messages):** 97.9% of scams caught, 6.3% of safe messages called "scam"; each new country catches 12 of 12 scams; one false "scam" each in fr, lu and nl
+(a genuine ameli refund, a CNS notice that says it has no link, a Tikkie between friends).
+
+**Learned:**
+- Many French and Belgian official sites (Cybermalveillance, ameli, police.be, Safeonweb) and big newspapers block
+  automated reading or opt out of crawling, so entries lean on ICI (Radio France), VRT, RTBF, FSMA and the
+  Luxembourg police, which publish dated warnings openly.
+- Next matcher fix: "ne contient pas de lien" / "no link" should cancel the link sign.
+
 ## 2026-11-17: Europe wave 1 (Portugal, Ireland, Malta) and matcher 1.3.x
 
 **Built:**
