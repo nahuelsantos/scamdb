@@ -52,8 +52,14 @@ Channels: phone calls, SMS, WhatsApp, Telegram, email, social media and any othe
 - **The biggest data gap is genuine messages** (real messages that are not scams). Collecting them, with consent,
   is the priority, because they decide the false-alarm rate.
 
+## Decided since
+
+- **Retention (2026-11-18):** a report's redacted text and its outcome are kept, because they are the labelled data
+  accuracy needs. After 180 days the contact details, the reporter's own story, the link to their key and any
+  extracted phone numbers or domains are deleted. Nothing about a report is ever published.
+- **Unknown-scam notifications:** a GitHub issue labelled `unknown-pattern`, kept up to date by the weekly check.
+
 ## Open questions for later
 
-- How people forward messages for free (WhatsApp bot, app, web form) and what consent and retention apply.
-- How unknown-scam notifications reach the owner (proposed: a GitHub issue labelled `unknown-pattern`).
+- How people forward messages for free (WhatsApp bot, app, web form) and what consent applies.
 - Calls need speech-to-text and screenshots need text extraction before they can be matched.

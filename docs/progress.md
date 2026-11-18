@@ -2,6 +2,21 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-18: Site polish and the retention decision
+
+- **Hero:** the eyebrow is "1199 scams · open data". The phone asks for a key (also shown in "never share it"), with
+  no avatar or home-button circles.
+- **Playground:** "Report this message" sits under the message box.
+- **Catalogue:** one hand-drawn icon per kind of scam, read from the English name (`kindOf` in
+  `site/templates/icons.js`), with new parcel, official and family drawings. Filters by country and channel are kept
+  in the URL.
+  - Known limit: a few names land on an odd kind (the Czech "Bank iD" text shows the government icon).
+- **Trends:** out of the menu until there is data (`SHOW_TRENDS`).
+- **Report form:** roomier select chevrons and a drag-and-drop zone for screenshots.
+- **Retention (owner decision):** after 180 days a report loses its contact details, the reporter's story, the link
+  to their key and the extracted indicators. The redacted text, country, channel, outcome and matched pattern are
+  kept as labelled data. Copies in the private test set no longer expire. The privacy copy is updated.
+
 ## 2026-11-18: The AI on real messages; reports in the private set
 
 - **16 more real genuine messages (vision point 4).** Japan (municipal tax and insurance SMS), South Korea (exam-day
