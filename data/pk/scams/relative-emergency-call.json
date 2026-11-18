@@ -1,0 +1,141 @@
+{
+  "id": "pk/relative-emergency-call",
+  "country": "pk",
+  "lang": "ur",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ur": "نامعلوم نمبر سے کال کرنے والا جو خود کو رشتہ دار، ڈاکٹر یا پولیس افسر بتاتا ہے",
+    "en": "A caller who says they are a relative, a doctor or a police officer, from an unknown number"
+  },
+  "name": {
+    "ur": "جعلی ایمرجنسی کال: “آپ کا رشتہ دار ہسپتال میں ہے، گرفتار ہے یا اغوا ہو گیا ہے، ابھی پیسے بھیجیں”",
+    "en": "Fake emergency call: “your relative is in hospital, arrested or kidnapped, send money now”"
+  },
+  "how": {
+    "ur": "کال کرنے والا کہتا ہے کہ گھر کے کسی فرد کا ایکسیڈنٹ ہو گیا ہے، وہ بیمار ہے، گرفتار ہو گیا ہے یا اغوا ہو گیا ہے، اور ابھی پیسوں کی ضرورت ہے۔ وہ خود کو رشتہ دار، ڈاکٹر یا پولیس ظاہر کر سکتا ہے اور کہتا ہے کہ کسی کو نہ بتائیں۔ تصدیق سے پہلے ہی آپ پر جاز کیش، ایزی پیسہ یا بینک کے ذریعے پیسے بھیجنے کا دباؤ ڈالا جاتا ہے۔ رپورٹ ہونے والے کیسز میں رشتہ دار بالکل خیریت سے تھا۔",
+    "en": "A caller says a family member has had an accident, fallen ill, been arrested or been kidnapped, and that money is needed right now. They may pretend to be the relative, a doctor or the police, and tell you not to tell anyone. You are rushed into sending money through JazzCash, Easypaisa or a bank transfer before you can check. In reported cases the relative was fine all along."
+  },
+  "steps": [
+    {
+      "text": {
+        "ur": "نامعلوم نمبر سے کال آتی ہے کہ کوئی رشتہ دار مصیبت میں ہے۔",
+        "en": "A call from an unknown number says a relative is in trouble."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "ur": "کالر خود کو رشتہ دار، ڈاکٹر یا پولیس بتاتا ہے۔",
+        "en": "The caller claims to be the relative, a doctor or the police."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ur": "پیسے ابھی چاہئیں اور کسی کو بتانا نہیں ہے۔",
+        "en": "Money is needed right now and you must not tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ur": "جاز کیش، ایزی پیسہ یا بینک ٹرانسفر سے پیسے بھیجنے کو کہا جاتا ہے۔",
+        "en": "You are told to send it by JazzCash, Easypaisa or bank transfer."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ur": "کالر: انکل میں کراچی سے بول رہا ہوں۔ آپ کے بھتیجے کی بیوی کی طبیعت بہت خراب ہے، ہسپتال میں ہے، ڈاکٹر ابھی 20000 روپے مانگ رہا ہے۔ اس جاز کیش نمبر پر بھیج دیں، باقی بعد میں بتاتا ہوں: [نمبر]",
+        "en": "Caller: Uncle, I am calling from Karachi. Your nephew’s wife is very ill and in hospital, the doctor is asking for Rs 20,000 right away. Send it on this JazzCash number, I will explain later: [number]"
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ur": "کالر: آپ کا بیٹا پولیس کے پاس پکڑا گیا ہے۔ اگر بغیر ایف آئی آر معاملہ ختم کروانا ہے تو ایک گھنٹے کے اندر پیسے بھیجیں اور گھر میں کسی کو نہ بتائیں۔",
+        "en": "Caller: Your son has been caught by the police. If you want the matter settled without an FIR, send the money in the next hour and don’t tell anyone at home."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ur": [
+      "رشتہ دار ہسپتال میں ہے فوراً پیسے بھیجیں",
+      "بیٹا پولیس نے پکڑ لیا پیسے بھیجو کال",
+      "اغوا کی جعلی کال اور تاوان",
+      "نامعلوم نمبر سے ایمرجنسی میں پیسے مانگے",
+      "جاز کیش پر فوری رقم بھیجنے کا کہا",
+      "کسی کو نہ بتائیں ابھی پیسے بھیجیں"
+    ],
+    "en": [
+      "call saying relative in hospital send money",
+      "fake call son arrested by police pay now",
+      "fake kidnapping call ransom",
+      "unknown number asked money for emergency",
+      "beta pakra gaya hai paise bhejo call",
+      "caller asked to send money on jazzcash urgently"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "secrecy",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ur": [
+      "ایسی ایمرجنسی جس کی آپ تصدیق نہ کر سکیں، کسی انجان نمبر سے۔",
+      "والیٹ یا ٹرانسفر سے فوراً ادائیگی کا مطالبہ۔",
+      "بات راز رکھنے کا کہنا۔"
+    ],
+    "en": [
+      "An emergency you can’t check, from a number you don’t know.",
+      "A demand to pay immediately by wallet or transfer.",
+      "Being told to keep it secret."
+    ]
+  },
+  "whatToDo": {
+    "ur": [
+      "کال کاٹیں اور رشتہ دار یا گھر کے کسی اور فرد کو اسی نمبر پر کال کریں جو پہلے سے آپ کے پاس ہے۔",
+      "ان سے بات ہونے تک پیسے نہ بھیجیں۔",
+      "دھمکی ملے تو 15 پر پولیس کو کال کریں؛ نمبر کی شکایت PTA کو اور نقصان کی NCCIA کو 1799 پر کریں۔"
+    ],
+    "en": [
+      "Hang up and call the relative, or another family member, on the number you already have.",
+      "Don’t send money until you have spoken to them.",
+      "If you are threatened, call police on 15; report the number to PTA and any loss to NCCIA on 1799."
+    ]
+  },
+  "reportTo": [
+    "pk/police-15",
+    "pk/nccia",
+    "pk/pta"
+  ],
+  "sources": [
+    {
+      "title": "Impersonation scams",
+      "publisher": "The News on Sunday",
+      "url": "https://www.thenews.pk/tns/detail/1351972-impersonation-scams",
+      "date": "2025-10-19"
+    },
+    {
+      "title": "Rising impersonation scams threaten digital economy",
+      "publisher": "The Express Tribune",
+      "url": "https://tribune.com.pk/story/2573226/rising-impersonation-scams-threaten-digital-economy",
+      "date": "2025-10-20"
+    }
+  ],
+  "updated": "2026-11-18",
+  "story": {
+    "ur": "تھرپارکر میں ایک خاندان نے 20000 روپے بھیج دیے جب کراچی کا رشتہ دار بن کر کال کرنے والے نے کہا کہ اس کی بیوی بیمار ہے۔ وہ بالکل ٹھیک تھی۔",
+    "en": "In Tharparkar, a family sent Rs 20,000 after a caller posing as a relative in Karachi said his wife had fallen ill. She was fine."
+  }
+}

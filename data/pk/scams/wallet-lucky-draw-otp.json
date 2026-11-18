@@ -1,0 +1,114 @@
+{
+  "id": "pk/wallet-lucky-draw-otp",
+  "country": "pk",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A caller from “JazzCash” or “Easypaisa”, from an ordinary mobile number"
+  },
+  "name": {
+    "en": "Fake JazzCash or Easypaisa call: “you won a lucky draw” or “your wallet will be blocked”, then the code"
+  },
+  "how": {
+    "en": "A caller says they are from JazzCash or Easypaisa. Either you have won a lucky draw and your balance will be doubled, or your wallet will be blocked unless you verify it. To “verify” they ask for the 4-digit code or OTP sent to your phone, or your PIN. With it they open your wallet on their phone and take the money. JazzCash and Easypaisa staff never ask for your PIN or OTP."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call says you won a JazzCash or Easypaisa draw, or that your wallet will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "The prize, like a doubled balance, sounds too good to be true."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "They ask for the code you just received “to verify your account”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Your wallet balance is withdrawn minutes later."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Mubarak ho! Aap ka number JazzCash lucky draw mein nikla hai aur aap ka balance double kar diya jayega. Abhi aap ke mobile par 4 digit code aaya hai, wo bata dein taake account verify ho jaye."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "en": "Easypaisa: Your account will be suspended today due to incomplete verification. Our representative will call you, share the code sent to you to keep your account active."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "jazzcash lucky draw call asked code",
+      "easypaisa wala call kar ke code manga",
+      "balance double karne ka jhansa",
+      "wallet will be blocked share otp",
+      "caller said i won easypaisa prize",
+      "4 digit code bata diya paise nikal gaye",
+      "jazzcash account verify karne ke liye pin manga"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A prize you never entered for, like a “lucky draw” or a doubled balance.",
+      "Any request for the code or PIN you received.",
+      "A call from an ordinary mobile number in the company’s name."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up and never share a code or PIN.",
+      "Check offers only in the official app or on the company’s helpline.",
+      "If you shared a code, call your wallet’s helpline to block the account, then report to NCCIA on 1799 and the number to PTA."
+    ]
+  },
+  "reportTo": [
+    "pk/your-bank",
+    "pk/nccia",
+    "pk/pta"
+  ],
+  "sources": [
+    {
+      "title": "PTA Warns Citizens Against Digital Fraud as Scammers Exploit OTPs, CNIC Data",
+      "publisher": "PhoneWorld",
+      "url": "https://www.phoneworld.com.pk/pta-digital-fraud-advisory-otp-cnic-warning/",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "Rising impersonation scams threaten digital economy",
+      "publisher": "The Express Tribune",
+      "url": "https://tribune.com.pk/story/2573226/rising-impersonation-scams-threaten-digital-economy",
+      "date": "2025-10-20"
+    }
+  ],
+  "updated": "2026-11-18",
+  "story": {
+    "en": "A woman was called and told she had won a JazzCash lucky draw and her balance would be doubled. To “verify” her account she shared the four-digit code, and Rs 25,000 was withdrawn. JazzCash told her no such draw had been announced."
+  }
+}

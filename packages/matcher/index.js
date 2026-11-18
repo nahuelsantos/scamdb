@@ -4,7 +4,7 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
-export const VERSION = '1.32.0';
+export const VERSION = '1.33.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
@@ -71,6 +71,13 @@ const JOINED_WINDOW = 1500;
 const DENSE = /[\u3040-\u30FF\u3400-\u9FFF]/u;
 const UNSPACED = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF]/u;
 
+/** Every two-character piece of the text (for the shared-stretch pre-check). */
+function bigramSet(t) {
+  const set = new Set();
+  for (let i = 0; i + 1 < t.length; i++) set.add(t.slice(i, i + 2));
+  return set;
+}
+
 /** Length of the longest substring a and b share (a is a short phrase; dynamic programming over two rows). */
 function longestShared(a, b) {
   let best = 0, prev = new Int32Array(a.length + 1), cur = new Int32Array(a.length + 1);
@@ -99,9 +106,15 @@ function scoreLang(list, text, words) {
       if (!words.unspaced) continue; // no such script in the text: nothing to share, and long texts stay fast
       if (text.includes(p.trim())) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
       // No word boundaries to compare, so score the longest stretch the phrase shares with the text.
-      const run = longestShared(p.trim(), text.length > JOINED_WINDOW ? text.slice(0, JOINED_WINDOW) : text);
-      // Kana and kanji carry more per character than Thai or Lao letters, so a shorter shared stretch counts.
-      const [hi, lo] = DENSE.test(p) ? [6, 4] : [10, 6];
+      const phrase = p.trim();
+      const [hi, lo] = DENSE.test(phrase) ? [6, 4] : [10, 6];
+      // A shared stretch of n characters needs n - 1 consecutive phrase bigrams in the text: skip the expensive
+      // comparison when no such run exists (most phrases), using the text's bigram set built once per check.
+      let streak = 0, bestStreak = 0;
+      for (let k = 0; k + 1 < phrase.length; k++) { streak = words.bigrams.has(phrase.slice(k, k + 2)) ? streak + 1 : 0; if (streak > bestStreak) bestStreak = streak; }
+      if (bestStreak + 1 < lo) continue;
+      const run = longestShared(phrase, text.length > JOINED_WINDOW ? text.slice(0, JOINED_WINDOW) : text);
+      // Kana and kanji carry more per character than Thai or Lao letters, so a shorter shared stretch counts (hi/lo above).
       if (run >= hi) score += 2; else if (run >= lo) score += 1;
       continue;
     }
@@ -145,7 +158,7 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   const text = normalize(raw);
   // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
   const set = new Set(tokens(text));
-  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4), unspaced: UNSPACED.test(text), hangul: HANGUL.test(text) ? hangulSet(text) : new Set() };
+  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4), unspaced: UNSPACED.test(text), bigrams: UNSPACED.test(text) ? bigramSet(text.slice(0, JOINED_WINDOW)) : new Set(), hangul: HANGUL.test(text) ? hangulSet(text) : new Set() };
   const padded = ` ${text} `;
   const rank = (pool, translated = false) => (!text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, padded, words, translated), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)
