@@ -1,6 +1,10 @@
-# Labelled test set
+# Labelled test sets
 
-`messages/<cc>.json`: 22 invented messages per country in the local language. The first 12 are scams, each tagged with
+**Two sets, two jobs.** `real/<cc>.json` holds real messages quoted from sources (see `real/README.md`): the numbers
+we report come from it. `messages/<cc>.json` is the **practice set**: messages we wrote, used as a safety net so a
+change that breaks one country fails CI. Practice messages never count as real and are never published as real.
+
+`messages/<cc>.json`: 22 written messages per country in the local language. The first 12 are scams, each tagged with
 the catalogue entry it is an instance of (`scam`). The last 10 are safe look-alikes: real one-time codes, delivery
 notices, relatives asking for money from their usual number, order confirmations and similar.
 
@@ -22,7 +26,7 @@ placeholder `proxy-injected`: add `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/roo
 - **Reports:** `report-matcher-<version>.md` keeps the results per matcher version.
 - **Floors:** `tests/unit/eval.test.mjs` holds floors that CI enforces. Raise a floor when a change improves its
   number; never lower one to make a change pass.
-- **Rules for messages:** they are invented. Write `[link]` and `[number]` instead of real links and numbers, and
+- **Rules for practice messages:** they are written by us and marked as such by living in this set. Write `[link]` and `[number]` instead of real links and numbers, and
   don't copy an entry's `examples` or `phrases`, because the matcher scores against them.
 
 ## The fused score
