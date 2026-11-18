@@ -2,6 +2,18 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-18: The AI on real messages; reports in the private set
+
+- **Matcher + AI on the 215 real messages:** 95.9% of scams caught (matcher alone: 91.9%), 84.9% called "scam" (32%),
+  but 6 of 43 genuine messages called "scam" (3). All six are genuine bank, courier or agency notices that read like
+  the scam. A refit on the real set, held out by country, called 11 genuine messages "scam", so it was rejected and
+  the weights are unchanged (`eval/report-ai-fusion.md`). `tools/fit-fusion.mjs --real` fits on the real set.
+- **Reports in the private set (#101):** reviewed reports can be added to the encrypted private set and are deleted
+  after the same 180 days (`tools/private-eval.mjs import-reports`, `prune`, weekly workflow). Production has no
+  reports yet.
+- **Next:** more genuine real messages (43 is too few to trust the false-alarm figure), especially genuine notices that
+  look risky.
+
 ## 2026-11-17: Detection quality first: language scoping, real messages, freshness; the Philippines
 
 **Built:**
