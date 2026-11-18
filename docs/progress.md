@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Malaysia:** 17 entries (16 Malay, 1 English), 7 contacts (NSRC 997, PDRM Semak Mule, BNMTELELINK, SC, MCMC,
+  KPDN), 33 brands, 22 labelled and 3 real messages. Matcher 1.24.0 applies the Indonesian block to Malay too and
+  adds Malay words ("[pautan]", "hantar balik kod", "jangan beritahu sesiapa", "yuran", "caj") and a "jangan kongsi
+  TAC" genuine-code warning. Malaysia: 17% → 75% of labelled scams called "scam", 0 false alarms; every other country
+  and the real and private sets unchanged. Six "genuine" real messages were sentence fragments from articles and two
+  were headline titles, so they were left out.
+
 - **Indonesia:** 16 entries in Indonesian, 9 contacts (Polri, Patroli Siber, IASC, OJK 157, Satgas PASTI, Komdigi
   number reports, cekrekening.id, BPKN), 22 labelled and 9 real messages. Matcher 1.23.0 adds an Indonesian block
   (APK files, "[tautan]" links, "mohon dibacakan" code requests, "2x24 jam", "video call sekarang") and a "jangan

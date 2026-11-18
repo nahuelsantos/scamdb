@@ -1,0 +1,143 @@
+{
+  "id": "my/fake-online-seller",
+  "country": "my",
+  "lang": "ms",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "ms": "Penjual di Facebook, Instagram, TikTok atau kumpulan barang terpakai, atau orang yang menyamar sebagai penjual iklan sebenar",
+    "en": "A seller on Facebook, Instagram, TikTok or a pre-loved group, or someone posing as the seller of a real ad"
+  },
+  "name": {
+    "ms": "Penjual dalam talian palsu dan penipuan “tiga penjuru”",
+    "en": "Fake online seller and the “three-corner” scam"
+  },
+  "how": {
+    "ms": "Anda melihat barang dengan harga menarik di media sosial atau kumpulan jual beli, berbual dengan penjual melalui mesej, dan diminta membayar terus ke akaun bank. Barang tidak sampai, penjual memberi alasan, kemudian menyekat anda. Dalam penipuan “tiga penjuru”, penipu menyalin iklan penjual sebenar (kereta, motosikal, telefon), menyamar sebagai penjual, dan meminta pembeli membayar ke akaun penipu; pembeli rugi dan penjual sebenar terheret sama. Polis merekodkan kerugian e-dagang RM123.7 juta dari Januari hingga November 2025.",
+    "en": "You see an item at an attractive price on social media or in a buy-and-sell group, chat with the seller by message, and are asked to pay straight into a bank account. The item never arrives, the seller makes excuses, then blocks you. In the “three-corner” scam, scammers copy a real seller's ad (a car, motorcycle or phone), pose as the seller, and tell the buyer to pay into the scammer's account; the buyer loses money and the real seller is dragged in. Police recorded RM123.7 million in e-commerce losses from January to November 2025."
+  },
+  "steps": [
+    {
+      "text": {
+        "ms": "Barang dijual dengan harga yang sangat murah di media sosial.",
+        "en": "An item is sold very cheaply on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ms": "Penjual meminta bayaran terus ke akaun bank, di luar platform, dan mendesak anda membayar cepat.",
+        "en": "The seller asks for payment straight into a bank account, off the platform, and pushes you to pay fast."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ms": "Nama pemilik akaun tidak sama dengan nama penjual atau pemilik barang.",
+        "en": "The account holder's name does not match the seller or the owner of the item."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ms": "Barang tidak sampai dan penjual menyekat anda.",
+        "en": "The item never arrives and the seller blocks you."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ms": "Motor masih elok bang, harga RM2,800 je sebab nak cepat, ramai dah tanya. Abang bank in deposit RM500 dulu ke akaun adik saya ni untuk booking, nanti saya hantar ke rumah.",
+        "en": "The bike is still in good condition bro, only RM2,800 because I need to sell fast, lots of people have asked. Bank in a RM500 deposit first to my brother's account to book it, then I'll deliver it to your house."
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "ms": "Baju raya set 2 pasang RM89 sahaja, stok terhad! Untuk order, DM kami dan transfer terus ke akaun, barang pos esok.",
+        "en": "Hari Raya outfit, 2 sets for only RM89, limited stock! To order, DM us and transfer straight to our account, goods posted tomorrow."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ms": [
+      "bayar penjual facebook tapi barang tak sampai",
+      "penjual minta bank in terus ke akaun",
+      "lepas bayar penjual block saya",
+      "beli kereta murah di facebook rupanya penipu guna iklan orang lain",
+      "nama akaun bank lain dengan nama penjual",
+      "beli barang di instagram tak pernah dapat"
+    ],
+    "en": [
+      "paid a facebook seller but the item never came",
+      "seller asked me to bank in straight to their account",
+      "seller blocked me after i paid",
+      "bought a cheap car on facebook but the scammer used someone else's ad",
+      "bank account name was different from the seller",
+      "bought something on instagram and never received it"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ms": [
+      "Harga jauh lebih murah daripada pasaran, dengan desakan “ramai dah tanya”.",
+      "Bayaran ke akaun individu atau “akaun adik”, bukan melalui platform.",
+      "Penjual tidak mahu bertemu atau menunjukkan barang dan dokumen pemilikan."
+    ],
+    "en": [
+      "A price far below the market, with pressure that “lots of people have asked”.",
+      "Payment to a personal account or a “brother's account”, not through the platform.",
+      "A seller who won't meet or show the item and its ownership papers."
+    ]
+  },
+  "whatToDo": {
+    "ms": [
+      "Bayar melalui platform e-dagang, atau lihat barang dan dokumen sebelum membayar.",
+      "Pastikan nama penjual, pemilik barang dan pemilik akaun sama, dan semak akaun di Semak Mule.",
+      "Jika sudah ditipu, hubungi 997 dan bank anda, buat laporan polis dan adukan kepada KPDN."
+    ],
+    "en": [
+      "Pay through the e-commerce platform, or see the item and papers before paying.",
+      "Make sure the seller, the owner of the item and the account holder are the same, and check the account on Semak Mule.",
+      "If you have been cheated, call 997 and your bank, make a police report and complain to KPDN."
+    ]
+  },
+  "reportTo": [
+    "my/nsrc-997",
+    "my/pdrm-semak-mule",
+    "my/kpdn-aduan",
+    "my/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Digital deals mask costly scams",
+      "publisher": "The Star",
+      "url": "https://www.thestar.com.my/news/nation/2025/11/15/digital-deals-mask-costly-scams",
+      "date": "2025-11-15"
+    },
+    {
+      "title": "Malaysia hit with over 67,000 online crime cases in 11 months, losses surpass RM2.7 billion",
+      "publisher": "The Vibes",
+      "url": "https://www.thevibes.com/articles/news/116658/malaysia-hit-with-over-67000-online-crime-cases-in-11-months-losses-surpass-rm2.7-billion",
+      "date": "2025-12-08"
+    },
+    {
+      "title": "Police in Kelantan open 66 investigation papers over 94 ‘three-corner’ scam reports",
+      "publisher": "The Vibes",
+      "url": "https://www.thevibes.com/articles/news/127503/police-in-kelantan-open-66-investigation-papers-over-94-three-corner-scam-reports",
+      "date": "2026-09-20"
+    }
+  ],
+  "updated": "2026-11-18"
+}

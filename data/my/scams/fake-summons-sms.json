@@ -1,0 +1,148 @@
+{
+  "id": "my/fake-summons-sms",
+  "country": "my",
+  "lang": "ms",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "ms": "SMS dengan ID penghantar “PDRM” atau “JPJ”, atau WhatsApp yang mengaku MyBayar PDRM",
+    "en": "A text with the sender ID “PDRM” or “JPJ”, or a WhatsApp message claiming to be MyBayar PDRM"
+  },
+  "name": {
+    "ms": "SMS saman, denda parkir atau tunggakan tol palsu dengan pautan bayaran",
+    "en": "Fake summons, parking fine or unpaid toll text with a payment link"
+  },
+  "how": {
+    "ms": "Anda menerima SMS atau WhatsApp yang kelihatan seperti daripada polis atau JPJ tentang saman trafik, denda parkir atau tunggakan tol, dengan amaran denda akan naik atau tindakan mahkamah jika tidak dibayar segera. Pautan membawa ke laman yang meniru MyBayar PDRM, dengan butang “Bayar Sekarang” yang meminta butiran kad, perbankan dan OTP. Polis dan JPJ menegaskan mereka tidak menghantar notis bayaran melalui pautan rawak atau WhatsApp.",
+    "en": "You get a text or WhatsApp message that looks like it is from the police or the Road Transport Department (JPJ) about a traffic summons, parking fine or unpaid toll, warning that the fine will rise or you will face court action if you don't pay now. The link opens a page imitating MyBayar PDRM, with a “Pay Now” button that asks for your card and banking details and an OTP. The police and JPJ say they never send payment notices through random links or WhatsApp."
+  },
+  "steps": [
+    {
+      "text": {
+        "ms": "SMS daripada “PDRM” atau “JPJ” tentang saman, denda parkir atau tunggakan tol.",
+        "en": "A text from “PDRM” or “JPJ” about a summons, parking fine or unpaid toll."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ms": "Amaran denda akan naik atau kes dibawa ke mahkamah.",
+        "en": "A warning that the fine will rise or the case will go to court."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ms": "Pautan ke laman MyBayar palsu dengan butang “Bayar Sekarang”.",
+        "en": "A link to a fake MyBayar page with a “Pay Now” button."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ms": "Laman itu meminta butiran kad dan OTP.",
+        "en": "The page asks for your card details and an OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ms": "PDRM: Anda mempunyai saman letak kereta yang belum dibayar. Jelaskan RM150 sebelum tarikh akhir hari ini untuk mengelakkan denda dinaikkan dan tindakan mahkamah. Bayar di [pautan]",
+        "en": "PDRM: You have an unpaid parking summons. Settle RM150 before today's deadline to avoid a higher fine and court action. Pay at [pautan]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ms": "JPJ: Rekod menunjukkan kenderaan anda mempunyai tunggakan bayaran tol. Sila jelaskan segera di [pautan] bagi mengelakkan cukai jalan disekat.",
+        "en": "JPJ: Records show your vehicle has unpaid toll charges. Please settle at once at [pautan] to avoid your road tax being blocked."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ms": [
+      "sms pdrm saman letak kereta belum bayar",
+      "mesej jpj tunggakan tol dengan pautan bayaran",
+      "laman mybayar palsu minta nombor kad",
+      "saman trafik palsu suruh bayar sekarang",
+      "whatsapp mybayar pdrm minta bayar saman",
+      "denda naik kalau tak bayar saman hari ini"
+    ],
+    "en": [
+      "text from pdrm about an unpaid parking summons",
+      "jpj message about unpaid toll with a payment link",
+      "fake mybayar page asked for my card number",
+      "fake traffic summons telling me to pay now",
+      "whatsapp from mybayar pdrm asking me to pay a summons",
+      "fine goes up if i do not pay the summons today"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ms": [
+      "Notis saman atau tol yang dihantar dengan pautan bayaran melalui SMS atau WhatsApp.",
+      "Laman yang tidak berakhiran .gov.my.",
+      "Ugutan denda berganda atau mahkamah jika tidak dibayar hari ini."
+    ],
+    "en": [
+      "A summons or toll notice sent with a payment link by text or WhatsApp.",
+      "A site that does not end in .gov.my.",
+      "Threats of a doubled fine or court if you don't pay today."
+    ]
+  },
+  "whatToDo": {
+    "ms": [
+      "Jangan tekan pautan. Semak saman hanya dalam aplikasi MyBayar PDRM atau dengan menaip sendiri mybayar.rmp.gov.my, atau di kaunter rasmi.",
+      "Jangan masukkan butiran kad atau OTP di laman yang dibuka daripada SMS.",
+      "Jika sudah memasukkan butiran kad, hubungi bank anda untuk menyekatnya, kemudian hubungi 997."
+    ],
+    "en": [
+      "Don't tap the link. Check summonses only in the MyBayar PDRM app, by typing mybayar.rmp.gov.my yourself, or at an official counter.",
+      "Don't enter card details or an OTP on a page opened from a text message.",
+      "If you already entered your card, call your bank to block it, then call 997."
+    ]
+  },
+  "reportTo": [
+    "my/your-bank",
+    "my/nsrc-997",
+    "my/mcmc-aduan"
+  ],
+  "sources": [
+    {
+      "title": "QuickCheck: Is PDRM's MyBayar portal reaching out to those with outstanding summonses via WhatsApp?",
+      "publisher": "The Star",
+      "url": "https://www.thestar.com.my/news/true-or-not/2026/01/04/quickcheck-is-pdrm039s-mybayar-portal-reaching-out-to-those-with-outstanding-summonses-via-whatsapp",
+      "date": "2026-01-04"
+    },
+    {
+      "title": "QuickCheck: Is it true that JPJ is sending SMS notices about unpaid toll payments?",
+      "publisher": "The Star",
+      "url": "https://www.thestar.com.my/news/true-or-not/2026/08/18/quickcheck-is-it-true-that-jpj-is-sending-sms-notices-about-unpaid-toll-payments",
+      "date": "2026-08-18"
+    },
+    {
+      "title": "QuickCheck: Are scammers targeting motorists with fake police parking fine SMSes?",
+      "publisher": "The Star",
+      "url": "https://www.thestar.com.my/news/true-or-not/2026/10/31/quickcheck-are-scammers-targeting-motorists-with-fake-police-parking-fine-smses",
+      "date": "2026-10-31"
+    },
+    {
+      "title": "Scam SMS Saman PDRM Palsu: Laman MyBayar RM150 Rakam Kad dan OTP",
+      "publisher": "ProductNation",
+      "url": "https://productnation.co/my-bm/28941/sms-saman-pdrm-palsu-mybayar-scam-mycert-bmw0/",
+      "date": "2026-11-10"
+    }
+  ],
+  "updated": "2026-11-18"
+}

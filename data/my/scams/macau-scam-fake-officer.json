@@ -1,0 +1,155 @@
+{
+  "id": "my/macau-scam-fake-officer",
+  "country": "my",
+  "lang": "ms",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ms": "Panggilan daripada “syarikat kurier”, “Pos Laju” atau “bank”, kemudian disambungkan kepada “pegawai polis”",
+    "en": "A call from a “courier company”, “Pos Laju” or a “bank”, then put through to a “police officer”"
+  },
+  "name": {
+    "ms": "Macau scam: “bungkusan anda ada kad pengenalan dan kad ATM”, kemudian “polis” menuduh anda",
+    "en": "Macau scam: “your parcel contains ID and ATM cards”, then the “police” accuse you"
+  },
+  "how": {
+    "ms": "Seseorang menelefon dan mengaku dari syarikat kurier atau bank: ada bungkusan atas nama anda yang mengandungi kad pengenalan dan kad ATM orang lain, atau akaun anda terlibat dalam transaksi mencurigakan. Panggilan itu “disambungkan” kepada “pegawai polis” yang menuduh anda terlibat dalam pengubahan wang haram atau dadah dan melarang anda memberitahu sesiapa. Untuk “membersihkan nama”, anda diarah memindahkan simpanan, membuat pinjaman peribadi, menyerahkan butiran perbankan, atau menyerahkan kad bank, wang tunai dan barang kemas. Polis menyatakan pihak penguat kuasa tidak menjalankan siasatan melalui panggilan telefon.",
+    "en": "Someone calls claiming to be from a courier company or a bank: a parcel in your name contains other people's ID and ATM cards, or your account is linked to suspicious transactions. The call is “transferred” to a “police officer” who accuses you of money laundering or drugs and tells you not to tell anyone. To “clear your name” you are told to move your savings, take out a personal loan, hand over your banking details, or hand over your bank cards, cash and jewellery. Police say enforcement officers do not investigate over the phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "ms": "Panggilan daripada “kurier”, “Pos Laju” atau “bank” tentang bungkusan atau transaksi atas nama anda.",
+        "en": "A call from a “courier”, “Pos Laju” or a “bank” about a parcel or transaction in your name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ms": "Panggilan disambungkan kepada “polis” yang menuduh anda terlibat dalam pengubahan wang haram atau dadah.",
+        "en": "The call is put through to the “police”, who accuse you of money laundering or drug offences."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ms": "Anda diarah jangan beritahu keluarga atau bank, dan terus berhubung melalui WhatsApp atau panggilan video.",
+        "en": "You are told not to tell your family or the bank, and to stay in touch on WhatsApp or video call."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ms": "Anda diminta memindahkan wang ke akaun “selamat”, membuat pinjaman, atau menyerahkan butiran perbankan, kad dan barang kemas.",
+        "en": "You are asked to transfer money to a “safe” account, take out a loan, or hand over your banking details, cards and jewellery."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ms": "Selamat pagi, saya dari syarikat kurier. Ada satu bungkusan atas nama puan dari Kepong ke Sabah, dalam itu ada tiga kad pengenalan dan lima kad ATM. Kami terpaksa sambungkan puan kepada pegawai polis sekarang, jangan letak telefon ya.",
+        "en": "Good morning, I'm calling from a courier company. There is a parcel in your name from Kepong to Sabah, and inside are three ID cards and five ATM cards. We have to put you through to a police officer now, please don't hang up."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ms": "Ini Inspektor dari Ibu Pejabat Polis. Nama encik terlibat dalam kes pengubahan wang haram dan dadah. Kes ini rahsia, jangan beritahu keluarga atau pegawai bank. Untuk siasatan, semua wang simpanan perlu dipindahkan ke akaun yang kami berikan.",
+        "en": "This is an Inspector from Police Headquarters. Your name is involved in a money laundering and drug case. This case is confidential, don't tell your family or bank staff. For the investigation, all your savings must be moved to the account we give you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ms": [
+      "kurier telefon kata ada bungkusan kad pengenalan atas nama saya",
+      "panggilan disambung kepada polis kata saya terlibat pengubahan wang haram",
+      "pegawai polis suruh pindahkan simpanan ke akaun selamat",
+      "polis suruh jangan beritahu keluarga dan bank",
+      "disuruh buat pinjaman peribadi untuk siasatan",
+      "polis palsu minta serahkan kad bank dan barang kemas"
+    ],
+    "en": [
+      "courier called saying a parcel with ID cards was in my name",
+      "call was transferred to police saying i was involved in money laundering",
+      "police officer told me to move my savings to a safe account",
+      "police told me not to tell my family or the bank",
+      "told to take a personal loan for the investigation",
+      "fake police asked me to hand over my bank cards and jewellery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "ms": [
+      "Panggilan tentang bungkusan yang anda tidak hantar, yang tiba-tiba disambungkan kepada “polis”.",
+      "Polis, bank atau mahkamah yang menyiasat anda melalui telefon atau WhatsApp.",
+      "Disuruh merahsiakan perkara itu daripada keluarga dan pegawai bank.",
+      "Disuruh memindahkan wang, membuat pinjaman atau menyerahkan kad dan barang kemas untuk “siasatan”."
+    ],
+    "en": [
+      "A call about a parcel you never sent that is suddenly put through to the “police”.",
+      "The police, a bank or a court investigating you by phone or WhatsApp.",
+      "Being told to keep it secret from your family and bank staff.",
+      "Being told to transfer money, take out a loan or hand over cards and jewellery for an “investigation”."
+    ]
+  },
+  "whatToDo": {
+    "ms": [
+      "Letak telefon. Polis tidak menyiasat atau meminta wang melalui panggilan telefon.",
+      "Hubungi balai polis berhampiran atau ahli keluarga sendiri, menggunakan nombor yang anda cari sendiri.",
+      "Jika anda sudah memindahkan wang, hubungi 997 dan bank anda segera, kemudian buat laporan polis."
+    ],
+    "en": [
+      "Hang up. The police do not investigate or ask for money over the phone.",
+      "Call your nearest police station or a family member yourself, using a number you looked up.",
+      "If you have already sent money, call 997 and your bank straight away, then make a police report."
+    ]
+  },
+  "reportTo": [
+    "my/nsrc-997",
+    "my/your-bank",
+    "my/pdrm-semak-mule"
+  ],
+  "sources": [
+    {
+      "title": "Jururawat rugi RM198,000, duit pinjaman peribadi lesap",
+      "publisher": "Kosmo",
+      "url": "https://www.kosmo.com.my/?p=373972",
+      "date": "2022-12-30"
+    },
+    {
+      "title": "Engineer loses RM2.9mil to Macau scam",
+      "publisher": "The Star",
+      "url": "https://www.thestar.com.my/news/nation/2023/01/20/engineer-loses-rm29mil-to-macau-scam",
+      "date": "2023-01-20"
+    },
+    {
+      "title": "Malaysia hit with over 67,000 online crime cases in 11 months, losses surpass RM2.7 billion",
+      "publisher": "The Vibes",
+      "url": "https://www.thevibes.com/articles/news/116658/malaysia-hit-with-over-67000-online-crime-cases-in-11-months-losses-surpass-rm2.7-billion",
+      "date": "2025-12-08"
+    },
+    {
+      "title": "Retiree Loses RM179,490 In Macau Scam",
+      "publisher": "Bernama",
+      "url": "https://bernama.com/en/news.php?id=2631641",
+      "date": "2026-11-08"
+    }
+  ],
+  "story": {
+    "ms": "Seorang pesara berusia 73 tahun di Kuala Lumpur dihubungi dua individu yang mengaku pegawai polis dan menuduhnya terlibat dalam pengubahan wang haram dan pengedaran dadah. Dia diarah menyerahkan kad bank, wang tunai dan barang kemas untuk siasatan, lalu menemui suspek di sebuah apartmen. Kerugiannya RM179,490, termasuk wang tunai, pembelian emas dan pindahan ke tiga akaun pihak ketiga.",
+    "en": "A 73-year-old retiree in Kuala Lumpur was contacted by two people claiming to be police officers, who accused him of money laundering and drug trafficking. He was told to hand over his bank cards, cash and jewellery for the investigation, and met the suspects at an apartment. He lost RM179,490, including cash, gold purchases and transfers to three third-party accounts."
+  },
+  "updated": "2026-11-18"
+}

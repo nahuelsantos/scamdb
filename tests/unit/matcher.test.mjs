@@ -575,3 +575,13 @@ test('1.23.0: Indonesian rules, only where Indonesian is spoken', async () => {
   assert.ok(!readSigns('JANGAN BERIKAN KODE INI KEPADA SIAPAPUN. Kode OTP Anda 482931, tolong jangan dikirim', ['id']).includes('asks_for_code'));
   assert.ok(!readSigns('Bayar di [tautan] hari ini', ['es', 'en']).includes('urgency'), 'Indonesian rules only where Indonesian is spoken');
 });
+test('1.24.0: Malay rules (and the shared Indonesian ones), only where Malay is spoken', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const pos = readSigns('Sila kemas kini alamat dan bayar caj penghantaran semula RM1.50 hari ini di [pautan]', ['ms', 'en']);
+  for (const s of ['urgency', 'money_request', 'unknown_link']) assert.ok(pos.includes(s), s);
+  assert.ok(readSigns('tadi saya tersalah hantar kod 6 digit ke nombor akak, boleh tolong hantar balik kod tu?', ['ms', 'en']).includes('asks_for_code'));
+  assert.ok(readSigns('Kes ini sulit, jangan beritahu sesiapa termasuk pegawai bank', ['ms', 'en']).includes('secrecy'));
+  assert.ok(!readSigns('TAC untuk pindahan dana ialah 583920. JANGAN KONGSI TAC ini dengan sesiapa', ['ms', 'en']).includes('asks_for_code'));
+  assert.ok(!readSigns('ada yuran untuk bungkusan ini', ['es', 'en']).includes('money_request'), 'Malay words stay out of other checks');
+  assert.ok(!readSigns('Kes ini sulit, jangan beritahu sesiapa', ['id']).includes('secrecy'), 'Malay-only rules stay out of Indonesian checks');
+});
