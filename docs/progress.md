@@ -4,6 +4,12 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Removed: Egypt, Vietnam, Malaysia, Saudi Arabia and Pakistan.** These five were imported without the owner
+  asking, and each has only 2–4 real scam texts, too few to measure them. They go with their contacts, brands, test
+  messages and the Malay, Vietnamese and Urdu rule blocks (Matcher 1.34.0); every remaining country's numbers are
+  unchanged. Indonesia, the UAE, Thailand, South Korea, Japan and Taiwan stay (8–15 real scam texts each). Rule from
+  now on: a country is added only on the owner's request and only where real scam messages can be found online.
+
 - **Pakistan:** 15 entries (4 Urdu, 11 English, Roman Urdu in examples and phrases), 6 contacts (police 15, NCCIA
   1799, PTA, Banking Mohtasib, BISP, your bank), 24 brands, 22 labelled and 5 real messages (most Pakistani news
   paraphrases scam texts). Matcher 1.33.0 adds an Urdu block covering Urdu script and Roman Urdu ("code aaya hoga,

@@ -575,16 +575,6 @@ test('1.23.0: Indonesian rules, only where Indonesian is spoken', async () => {
   assert.ok(!readSigns('JANGAN BERIKAN KODE INI KEPADA SIAPAPUN. Kode OTP Anda 482931, tolong jangan dikirim', ['id']).includes('asks_for_code'));
   assert.ok(!readSigns('Bayar di [tautan] hari ini', ['es', 'en']).includes('urgency'), 'Indonesian rules only where Indonesian is spoken');
 });
-test('1.24.0: Malay rules (and the shared Indonesian ones), only where Malay is spoken', async () => {
-  const { readSigns } = await import('../../packages/matcher/signs.js');
-  const pos = readSigns('Sila kemas kini alamat dan bayar caj penghantaran semula RM1.50 hari ini di [pautan]', ['ms', 'en']);
-  for (const s of ['urgency', 'money_request', 'unknown_link']) assert.ok(pos.includes(s), s);
-  assert.ok(readSigns('tadi saya tersalah hantar kod 6 digit ke nombor akak, boleh tolong hantar balik kod tu?', ['ms', 'en']).includes('asks_for_code'));
-  assert.ok(readSigns('Kes ini sulit, jangan beritahu sesiapa termasuk pegawai bank', ['ms', 'en']).includes('secrecy'));
-  assert.ok(!readSigns('TAC untuk pindahan dana ialah 583920. JANGAN KONGSI TAC ini dengan sesiapa', ['ms', 'en']).includes('asks_for_code'));
-  assert.ok(!readSigns('ada yuran untuk bungkusan ini', ['es', 'en']).includes('money_request'), 'Malay words stay out of other checks');
-  assert.ok(!readSigns('Kes ini sulit, jangan beritahu sesiapa', ['id']).includes('secrecy'), 'Malay-only rules stay out of Indonesian checks');
-});
 test('1.25.0: Arabic rules, only where Arabic is spoken', async () => {
   const { readSigns } = await import('../../packages/matcher/signs.js');
   const fine = readSigns('لديك مخالفة غير مسددة بقيمة 50 درهماً. سيتم إضافة 500 درهم إذا لم يتم السداد اليوم. ادفع الآن: [رابط]', ['ar', 'en']);
@@ -609,15 +599,6 @@ test('1.27.0: Egyptian Arabic: "قولهولي", wallet transfers, "النهار
   assert.ok(readSigns('بعتلك 800 جنيه بالغلط، ممكن ترجعهم على الرقم ده', ['ar']).includes('money_request'));
   assert.ok(!readSigns('كود التحقق 482915. لا تشارك هذا الكود مع أي شخص، البنك لن يطلبه منك أبداً', ['ar']).includes('asks_for_code'));
   assert.ok(!readSigns('ماما أنا وصلت الشغل، هعدي عليكي بالليل', ['ar']).length, 'a family message has no signs');
-});
-test('1.28.0: Vietnamese rules, only where Vietnamese is spoken', async () => {
-  const { readSigns } = await import('../../packages/matcher/signs.js');
-  const vneid = readSigns('Em bên công an phường, tài khoản VNeID của chị cuối tuần này sẽ bị khóa. Có mã 6 số gửi về máy thì chị đọc lại cho em', ['vi']);
-  for (const s of ['asks_for_code', 'urgency', 'impersonation']) assert.ok(vneid.includes(s), s);
-  assert.ok(readSigns('Em còn đủ 15 triệu không cho anh mượn chuyển vào số tài khoản này có chút việc gấp', ['vi']).includes('money_request'));
-  assert.ok(readSigns('Anh cài ứng dụng thuế điện tử theo đường dẫn em gửi', ['vi']).includes('remote_access'));
-  assert.ok(!readSigns('Ma OTP cua Quy khach la 538217. Tuyet doi KHONG cung cap ma OTP cho bat ky ai', ['vi']).includes('asks_for_code'));
-  assert.ok(!readSigns('cho anh muon chuyen vao so tai khoan nay gap', ['es', 'en']).includes('money_request'), 'Vietnamese rules only where Vietnamese is spoken');
 });
 test('1.29.0: Thai: phrases match without spaces, signs survive tone-mark folding', async () => {
   const { readSigns } = await import('../../packages/matcher/signs.js');
@@ -657,13 +638,4 @@ test('1.32.0: Chinese (Taiwan) rules, only where Chinese is spoken', async () =>
   assert.ok(!readSigns('您的簡訊驗證碼為582917。請勿將驗證碼告知他人，本行人員不會向您索取。', ['zh']).includes('asks_for_code'));
   assert.ok(!readSigns('台電：電費尚未繳納，請儘速繳費，如已繳費請忽略。', ['zh']).includes('money_request'), 'a genuine bill reminder is not a money request');
   assert.ok(!readSigns('今日內 連結', ['es', 'en']).includes('urgency'), 'Chinese rules only where Chinese is spoken');
-});
-test('1.33.0: Urdu and Roman Urdu rules, only where Urdu is spoken', async () => {
-  const { readSigns } = await import('../../packages/matcher/signs.js');
-  const call = readSigns('main bank ki helpline se bol raha hoon. Aap ka account aaj raat block ho jayega. Abhi 6 digit code aaya hoga, wo bata dein', ['ur', 'en']);
-  for (const s of ['impersonation', 'urgency', 'asks_for_code']) assert.ok(call.includes(s), s);
-  assert.ok(readSigns('رقم وصول کرنے کے لیے اپنا شناختی کارڈ نمبر اور نام اس نمبر پر واٹس ایپ کریں', ['ur', 'en']).includes('money_request'));
-  assert.ok(!readSigns('اپنا اصل شناختی کارڈ لے کر قریبی کیمپ سائٹ سے رقم وصول کریں۔ کسی کو کوڈ یا فیس نہ دیں۔', ['ur', 'en']).includes('money_request'), 'a genuine BISP notice is not a money request');
-  assert.ok(!readSigns('Ammi main pohnch gaya hoon, abhi class hai.', ['ur', 'en']).length, 'a family message has no signs');
-  assert.ok(!readSigns('aaj raat block ho jayega', ['es', 'en']).includes('urgency'), 'Roman Urdu rules only where Urdu is spoken');
 });
