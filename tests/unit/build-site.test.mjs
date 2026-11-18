@@ -307,3 +307,12 @@ test('every page links to the Instagram and X accounts with labelled icon button
   assert.match(html, /href="https:\/\/x\.com\/scamdb"[^>]*aria-label="X @scamdb"/);
   rmSync(dir, { recursive: true });
 });
+
+test('pages carry a large link-preview image for X and other apps', () => {
+  const { dir, page } = build();
+  const html = page('index.html');
+  assert.match(html, /<meta property="og:image" content="https:\/\/scamdb\.dev\/assets\/og\.png">/);
+  assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+  assert.ok(existsSync(join(dir, 'dist/assets/og.png')) && existsSync(join(dir, 'dist/assets/apple-touch-icon.png')));
+  rmSync(dir, { recursive: true });
+});

@@ -35,8 +35,17 @@ export function layout({ title, description, body, path, meta, lang = 'en', scri
 <meta property="og:url" content="${SITE}${esc(here)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="scamdb">
+<meta property="og:image" content="${SITE}/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="scamdb, a field guide to scams: a hand-drawn phone with a fake bank message asking for the key, stamped SCAM.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@scamdb">
+<meta name="twitter:image" content="${SITE}/assets/og.png">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
