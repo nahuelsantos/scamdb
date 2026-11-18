@@ -1,0 +1,151 @@
+{
+  "id": "eg/fake-investment-platform",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "ar": "منصة أو تطبيق «استثمار» أو «تسويق إلكتروني» يُروَّج له على فيسبوك وتليجرام",
+    "en": "An “investment” or “online marketing” platform or app promoted on Facebook and Telegram"
+  },
+  "name": {
+    "ar": "منصة «أرباح يومية» مقابل مهام بسيطة: تودع على المحفظة وتختفي الفلوس",
+    "en": "“Daily profits” platform for simple tasks: you deposit to a wallet and the money vanishes"
+  },
+  "how": {
+    "ar": "تنتشر إعلانات لمنصات أو تطبيقات تعدك بأرباح يومية تصاعدية مقابل «مهام بسيطة» أو التسويق لمنتجات، بشرط أن تودع مبلغاً «كرسوم استثمار» عبر محفظة إلكترونية. في البداية تظهر أرباح في حسابك على المنصة وتُشجَّع على إيداع المزيد، ثم تكتشف أن أموالك اختفت. في 2026 ضبطت الداخلية أكثر من تشكيل يدير منصات من هذا النوع (منصة STEP في فبراير، وتشكيل دولي في مارس، ومنصة PILON لتسويق البن في سبتمبر)، وحذّر مجلس الوزراء من المنصات غير المرخصة ودعا للتحقق من ترخيصها لدى الهيئة العامة للرقابة المالية.",
+    "en": "Ads for platforms or apps promise rising daily profits for “simple tasks” or marketing products, as long as you deposit an “investment fee” through an e-wallet. At first profits show up in your account on the platform and you are pushed to deposit more, then you find your money has gone. In 2026 the Ministry of Interior broke up several rings running such platforms (the STEP platform in February, an international ring in March, and the PILON coffee-marketing platform in September), and the Cabinet warned against unlicensed platforms and urged people to check licences with the Financial Regulatory Authority."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "إعلان: «اكسب يومياً من موبايلك، أرباح مضمونة».",
+        "en": "An ad: “earn daily from your phone, guaranteed profits”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "لازم تودع رسوم اشتراك أو استثمار على محفظة إلكترونية.",
+        "en": "You must deposit a subscription or investment fee to an e-wallet."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "الأرباح بتزيد على الشاشة وبيشجعوك تودع أكتر.",
+        "en": "Profits grow on the screen and you’re pushed to deposit more."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "فجأة الفلوس تختفي والمنصة تقفل.",
+        "en": "Suddenly the money is gone and the platform shuts."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "💰 اشتغل من البيت ساعة في اليوم واكسب من 300 لـ 1000 جنيه يومياً! مهام بسيطة: لايك ومشاركة لمنتجات. الاشتراك يبدأ من 500 جنيه بس على فودافون كاش. سجّل من هنا [رابط]",
+        "en": "💰 Work from home one hour a day and earn 300 to 1,000 pounds daily! Simple tasks: like and share products. Subscriptions start at just 500 pounds by Vodafone Cash. Sign up here [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ar": "أهلاً بيك في جروب المستثمرين 🌟 النهارده الأرباح وصلت 12%. اللي عايز يرقّي الباقة للـ VIP يحوّل 5,000 على المحفظة [رقم] قبل الساعة 10 بالليل.",
+        "en": "Welcome to the investors’ group 🌟 today’s profit reached 12%. Anyone who wants to upgrade to the VIP package, transfer 5,000 to the wallet [number] before 10 pm."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "اشتركت في منصة أرباح يومية والسحب اتقفل",
+      "دفعت على فودافون كاش عشان أشتغل مهام على تطبيق",
+      "المنصة قفلت وفلوسي اختفت",
+      "كانت الأرباح بتزيد على التطبيق وفجأة كله راح",
+      "تطبيق استثمار بيدي نسبة كل يوم وطلع نصب"
+    ],
+    "en": [
+      "i joined a daily profit platform and withdrawals were blocked",
+      "i paid by vodafone cash to do tasks on an app",
+      "the platform shut down and my money vanished",
+      "profits kept growing in the app and suddenly it was all gone",
+      "an investment app paying a daily percentage turned out to be a scam"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "أرباح يومية «مضمونة» أو نسبة ثابتة عالية.",
+      "الإيداع عبر محافظ أرقام شخصية وليس عبر جهة مرخصة.",
+      "مكافآت مقابل جلب أعضاء جدد.",
+      "طلب رسوم أو «ضريبة» لسحب أرباحك."
+    ],
+    "en": [
+      "“Guaranteed” daily profits or a high fixed percentage.",
+      "Deposits to personal mobile wallets rather than a licensed firm.",
+      "Rewards for bringing in new members.",
+      "A fee or “tax” to withdraw your profits."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "تحقق من ترخيص أي منصة على موقع الهيئة العامة للرقابة المالية قبل الدفع.",
+      "لا تدفع رسوماً لسحب أرباح.",
+      "لا تُدخل أقاربك وأصدقاءك.",
+      "إذا دفعت، أبلغ مباحث الإنترنت على 108 والهيئة واحتفظ بالإيصالات."
+    ],
+    "en": [
+      "Check any platform’s licence on the Financial Regulatory Authority website before paying.",
+      "Never pay a fee to withdraw profits.",
+      "Don’t bring in relatives and friends.",
+      "If you paid, report it to the cybercrime police on 108 and to the FRA, and keep the receipts."
+    ]
+  },
+  "reportTo": [
+    "eg/fra",
+    "eg/moi-cybercrime-108"
+  ],
+  "sources": [
+    {
+      "title": "سقوط عصابة منصة STEP الاستثمارية بعد الاستيلاء على مدخرات المواطنين بأرباح وهمية",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7295405",
+      "date": "2026-02-06"
+    },
+    {
+      "title": "سقوط \"مافيا المنصات الوهمية\".. الأمن يضبط عصابة دولية للنصب الإلكترونى",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7328665",
+      "date": "2026-03-05"
+    },
+    {
+      "title": "ضبط 15 عنصراً إجرامياً استولوا على 3 ملايين جنيه عبر منصة وهمية لتسويق البن",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/8355862",
+      "date": "2026-09-10"
+    },
+    {
+      "title": "«الوزراء» يحذر من الاحتيال عبر المنصات المالية غير المرخصة.. «فلوسك أمانة.. متضيعهاش في منصة وهمية»",
+      "publisher": "بنوك 24",
+      "url": "https://www.bnok24.com/2026/05/%d8%a7%d9%84%d9%88%d8%b2%d8%b1%d8%a7%d8%a1-%d9%8a%d8%ad%d8%b0%d8%b1-%d9%85%d9%86-%d8%a7%d9%84%d8%a7%d8%ad%d8%aa%d9%8a%d8%a7%d9%84-%d8%b9%d8%a8%d8%b1-%d8%a7%d9%84%d9%85%d9%86%d8%b5%d8%a7/",
+      "date": "2026-05-04"
+    }
+  ],
+  "related": [
+    "eg/mostareeh-ponzi"
+  ],
+  "updated": "2026-11-18"
+}

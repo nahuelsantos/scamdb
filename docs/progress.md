@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Egypt:** 18 entries in Arabic (mostly Egyptian colloquial examples), 10 contacts (MOI cybercrime 108, police
+  122, CBE, NTRA 155, Consumer Protection 19588, FRA, Social Solidarity, Labour, Egypt Post), 26 brands, 22 labelled
+  and 10 real messages. Matcher 1.27.0 adds Egyptian wording to the Arabic block ("قولهولي", "الكود اللي هيوصلك",
+  "النهارده", "هيتوقف", "على المحفظة", "ترجعهم", "بمقدم", "معاك خدمة عملاء البنك"). Egypt: 17% → 75% of labelled
+  scams called "scam", 0 false alarms; every other country (UAE and Saudi Arabia included) and the real and private
+  sets unchanged. The 4 real Egyptian scams ("your account is suspended, call us") stay "suspicious".
+
 - **Saudi Arabia:** 17 entries (16 Arabic, 1 English), 7 contacts (Kollona Amn, CST 330330, SAMA Cares, Ministry
   of Commerce 1900, Musaned, SPL), 30 brands, 22 labelled and 9 real messages (2 scam texts, 7 official warning
   posts). Matcher 1.26.0 adds Saudi Arabic to the Arabic block (Nafath "اختر الرقم 47", "الرمز اللي بيوصلك",

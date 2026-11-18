@@ -1,0 +1,142 @@
+{
+  "id": "eg/loan-app-blackmail",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "تطبيق قروض سريعة يُعلن عنه على فيسبوك، ثم رسائل تهديد من أرقام مختلفة",
+    "en": "A quick-loan app advertised on Facebook, then threatening messages from different numbers"
+  },
+  "name": {
+    "ar": "تطبيق «قرض في دقائق»: يسحب جهات اتصالك ثم يبتزك بالصور",
+    "en": "“Loan in minutes” app: it takes your contacts, then blackmails you with photos"
+  },
+  "how": {
+    "ar": "ترى إعلاناً على فيسبوك لتطبيق يمنح قروضاً صغيرة بسرعة. عند تثبيته يطلب صلاحيات للكاميرا والرسائل وجهات الاتصال والموقع، وصورة البطاقة وصورة شخصية. يمنحك مبلغاً صغيراً بمدة سداد قصيرة جداً، ثم يطالبك بأضعافه كرسوم. إذا تأخرت، يرسل لك ولأقاربك رسائل تهديد وصوراً مركّبة مسيئة لإجبارك على الدفع. في يونيو 2026 أصدرت محكمة جنايات الجيزة أحكاماً بحق 16 متهماً، منهم 3 أجانب، في قضية ابتزاز مستخدمي تطبيقات القروض، وفي مايو 2025 ضبطت مباحث الإنترنت مسؤولي أحد هذه التطبيقات.",
+    "en": "You see a Facebook ad for an app that gives small loans fast. Once installed it asks for access to your camera, messages, contacts and location, plus a photo of your ID card and a selfie. It gives you a small sum with a very short repayment period, then demands several times more as fees. If you are late, it sends you and your relatives threats and doctored, insulting images to force you to pay. In June 2026 the Giza Criminal Court sentenced 16 defendants, 3 of them foreigners, for blackmailing loan-app users, and in May 2025 the cybercrime police arrested the people running one such app."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "إعلان: «قرض فوري من غير ضمانات».",
+        "en": "An ad: “instant loan, no guarantees”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "التطبيق يطلب صلاحية جهات الاتصال والصور والرسائل وصورة البطاقة.",
+        "en": "The app asks for access to your contacts, photos and messages, and a photo of your ID card."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "ar": "يطالبك بمبلغ أكبر بكتير من القرض خلال أيام.",
+        "en": "It demands far more than the loan within days."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "تهديد بنشر صورك ورسائل لأهلك وصحابك.",
+        "en": "Threats to send your photos and messages to your family and friends."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "قرض فوري لحد 10,000 جنيه في 5 دقايق 💸 من غير ضامن ولا استعلام. حمّل التطبيق من هنا [رابط] وارفع صورة البطاقة بس.",
+        "en": "Instant loan up to 10,000 pounds in 5 minutes 💸 no guarantor and no credit check. Download the app here [link] and just upload your ID card."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ar": "آخر إنذار. لو ما سددتش 1,500 جنيه النهارده على المحفظة [رقم]، صورك هتتبعت لكل الأرقام اللي عندك وهنقول إنك نصاب.",
+        "en": "Final warning. If you don’t pay 1,500 pounds today to the wallet [number], your photos will be sent to every number in your phone and we’ll say you’re a fraud."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "خدت قرض من تطبيق وبيهددوني بالصور",
+      "تطبيق القروض بعت رسايل لأهلي",
+      "خدت 700 جنيه وعايزين مني 1500",
+      "التطبيق خد جهات الاتصال وبيشهر بيا",
+      "بيبعتولي صور متركبة لو ما دفعتش"
+    ],
+    "en": [
+      "i took a loan from an app and they threaten me with photos",
+      "the loan app sent messages to my family",
+      "i got 700 pounds and they want 1500 from me",
+      "the app took my contacts and is shaming me",
+      "they send me doctored photos if i do not pay"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "تطبيق قروض لا تجده مرخصاً من الهيئة العامة للرقابة المالية.",
+      "طلب صلاحية جهات الاتصال والصور والرسائل.",
+      "مدة سداد أيام قليلة ورسوم أكبر من القرض.",
+      "أي تهديد أو ابتزاز."
+    ],
+    "en": [
+      "A loan app you cannot find licensed by the Financial Regulatory Authority.",
+      "Requests for access to your contacts, photos and messages.",
+      "A repayment period of a few days and fees bigger than the loan.",
+      "Any threat or blackmail."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تثبّت تطبيقات قروض غير مرخصة، وتحقق من ترخيصها لدى الهيئة.",
+      "إذا تعرضت للتهديد لا تدفع، واحتفظ بالرسائل.",
+      "أبلغ مباحث الإنترنت على 108 فوراً، ونبّه أهلك.",
+      "احذف التطبيق واسحب صلاحياته."
+    ],
+    "en": [
+      "Don’t install unlicensed loan apps; check their licence with the FRA.",
+      "If you are threatened, don’t pay and keep the messages.",
+      "Report it to the cybercrime police on 108 at once, and warn your family.",
+      "Delete the app and revoke its permissions."
+    ]
+  },
+  "reportTo": [
+    "eg/moi-cybercrime-108",
+    "eg/fra"
+  ],
+  "sources": [
+    {
+      "title": "أحكام رادعة لـ\"فتيات القروض\" في قضية ابتزاز مستخدمي تطبيقات إلكترونية بالجيزة",
+      "publisher": "مصراوي",
+      "url": "https://www.masrawy.com/news/news_cases/details/2026/6/3/2997297/%D8%A3%D8%AD%D9%83%D8%A7%D9%85-%D8%B1%D8%A7%D8%AF%D8%B9%D8%A9-%D9%84%D9%80-%D9%81%D8%AA%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D8%B1%D9%88%D8%B6-%D9%81%D9%8A-%D9%82%D8%B6%D9%8A%D8%A9-%D8%A7%D8%A8%D8%AA%D8%B2%D8%A7%D8%B2-%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%D9%8A-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA-%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%AC%D9%8A%D8%B2%D8%A9",
+      "date": "2026-06-03"
+    },
+    {
+      "title": "ابتزاز وتهديد بصور وأرقام.. قصة جديدة لمنصات \"القروض\" الإلكترونية بالجيزة",
+      "publisher": "مصراوي",
+      "url": "https://www.masrawy.com/news/news_cases/details/2025/5/19/2790255/%D8%A7%D8%A8%D8%AA%D8%B2%D8%A7%D8%B2-%D9%88%D8%AA%D9%87%D8%AF%D9%8A%D8%AF-%D8%A8%D8%B5%D9%88%D8%B1-%D9%88%D8%A3%D8%B1%D9%82%D8%A7%D9%85-%D9%82%D8%B5%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%84%D9%85%D9%86%D8%B5%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D8%B1%D9%88%D8%B6-%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%AC%D9%8A%D8%B2%D8%A9",
+      "date": "2025-05-19"
+    }
+  ],
+  "story": {
+    "ar": "بحسب مصراوي، أبلغ مواطن أن أحد مسؤولي تطبيق قروض أرسل له 715 جنيهاً على محفظته، ثم أرسل لأحد أقاربه رسائل تهديد وإساءة لإجباره على دفع 1500 جنيه «رسوم قرض». ضبطت مباحث الإنترنت 5 من مسؤولي التطبيق.",
+    "en": "According to Masrawy, a man reported that someone running a loan app sent 715 pounds to his wallet, then sent one of his relatives threatening and abusive messages to force him to pay 1,500 pounds in “loan fees”. The cybercrime police arrested 5 people running the app."
+  },
+  "updated": "2026-11-18"
+}

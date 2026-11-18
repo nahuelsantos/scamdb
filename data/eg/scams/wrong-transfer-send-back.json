@@ -1,0 +1,145 @@
+{
+  "id": "eg/wrong-transfer-send-back",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "رسالة تحويل مزيفة ثم مكالمة من شخص «حوّل بالغلط»",
+    "en": "A fake transfer message, then a call from someone who “sent it by mistake”"
+  },
+  "name": {
+    "ar": "«حوّلتلك فلوس بالغلط، رجّعهالي»",
+    "en": "“I sent you money by mistake, send it back”"
+  },
+  "how": {
+    "ar": "تصلك رسالة تبدو كإشعار من المحفظة أو إنستاباي تقول إنك استلمت مبلغاً، ثم يتصل بك شخص يقول إنه حوّله بالغلط ويطلب أن ترجعه، أحياناً إلى رقم أو حساب آخر ومع «تعويض عن التعب». في بعض الحالات لم يصل أي مبلغ والرسالة مزيفة، فتدفع من مالك. وفي حالات أخرى يكون المبلغ وصل فعلاً من حساب مسروق، فيستخدمك المحتال لتمرير المال. نشرت القاهرة 24 في أغسطس 2026 رسالة من هذا النوع تلتها مكالمات تطالب بإعادة 300 جنيه لم تصل أصلاً، وحذّر محامٍ نقلت عنه الوطن في يناير 2026 من إعادة أي مبلغ مجهول إلى حساب آخر.",
+    "en": "You get a message that looks like a wallet or InstaPay notice saying you received some money, then someone calls saying he sent it by mistake and asks you to send it back, sometimes to a different number or account and with a “thank-you” on top. Sometimes no money arrived at all and the message is fake, so you pay from your own balance. Other times the money really came, from a stolen account, and the scammer uses you to pass it on. In August 2026 Cairo24 reported such a message followed by calls demanding back 300 pounds that had never arrived, and in January 2026 a lawyer quoted by El Watan warned against sending unknown money on to another account."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة تقول إنك استلمت مبلغ على المحفظة أو إنستاباي.",
+        "en": "A message says you received money on your wallet or InstaPay."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "مكالمة: «حوّلت لك بالغلط، رجّعهم بالله عليك».",
+        "en": "A call: “I sent it to you by mistake, please send it back”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "يلحّ ويتصل أكثر من مرة، وأحياناً يطلب التحويل لرقم تاني.",
+        "en": "They insist and call again and again, sometimes asking you to send it to another number."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "لقد تلقيت 500.00 جنيه من محفظة رقم [رقم]. رصيدك الحالي 562.40 جنيه. رقم العملية [رقم].",
+        "en": "You have received 500.00 pounds from wallet number [number]. Your current balance is 562.40 pounds. Transaction number [number]."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ar": "السلام عليكم، أنا آسفة جداً، بعتّ لحضرتك 500 جنيه بالغلط بدل أخويا. ممكن ترجعهم على الرقم ده [رقم]؟ دول فلوس يومية العمال.",
+        "en": "Hello, I’m so sorry, I sent you 500 pounds by mistake instead of my brother. Could you send them back to this number [number]? It’s the workers’ daily wages."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ar": "يا باشا دخلك على إنستاباي مبلغ مني بالغلط، حوّله لو سمحت على الحساب ده [رقم] وخد 200 جنيه ليك عشان تعبك.",
+        "en": "Boss, some money from me went into your InstaPay by mistake, please transfer it to this account [number] and keep 200 pounds for your trouble."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "جالي رسالة إن فيه فلوس اتحولت لي وبعدين واحدة طلبت أرجعها",
+      "حد اتصل قال حولت لك بالغلط رجعهم",
+      "رجعت الفلوس وطلعت الرسالة مزيفة",
+      "دخل حسابي مبلغ معرفهوش وعايزين أحوله لحساب تاني",
+      "قالت دي فلوس يومية العمال وابعتهم"
+    ],
+    "en": [
+      "i got a message that money was sent to me then a woman asked me to send it back",
+      "someone called saying he sent me money by mistake and wants it back",
+      "i sent the money back and the message turned out to be fake",
+      "unknown money came into my account and they want me to move it to another account",
+      "she said it was the workers wages and asked me to send it"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "رسالة «استلام» من رقم موبايل عادي وليس من خدمة المحفظة الرسمية.",
+      "الرصيد في التطبيق لا يتغير رغم الرسالة.",
+      "طلب إعادة المبلغ إلى رقم أو حساب مختلف عن المرسل، أو مع «إكرامية».",
+      "إلحاح ومكالمات متكررة من أكثر من شخص."
+    ],
+    "en": [
+      "A “received” message from an ordinary mobile number, not the official wallet service.",
+      "The balance in the app does not change despite the message.",
+      "A request to send it back to a number or account other than the sender, or with a “tip”.",
+      "Pressure and repeated calls from more than one person."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "افتح تطبيق المحفظة أو البنك وتأكد من الرصيد بنفسك؛ لا تعتمد على الرسالة.",
+      "لا تحوّل أي مبلغ لرقم أو حساب آخر.",
+      "إذا وصل مبلغ فعلاً، أبلغ البنك أو شركة المحفظة ليتولوا إرجاعه.",
+      "أبلغ مباحث الإنترنت على 108 برقم المتصل."
+    ],
+    "en": [
+      "Open your wallet or bank app and check the balance yourself; don’t trust the message.",
+      "Don’t transfer anything to another number or account.",
+      "If money really arrived, tell your bank or wallet provider so they handle the return.",
+      "Report the caller’s number to the cybercrime police on 108."
+    ]
+  },
+  "reportTo": [
+    "eg/your-bank",
+    "eg/moi-cybercrime-108",
+    "eg/ntra-155"
+  ],
+  "sources": [
+    {
+      "title": "رسالة تحويل وهمية تكشف محاولة نصب.. زوج يروي تفاصيل استدراج زوجته لإعادة 300 جنيه",
+      "publisher": "القاهرة 24",
+      "url": "https://www.cairo24.com/2472087",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "تحذير من رد الأموال المحولة بالخطأ على إنستاباي.. وسيلة جديدة للنصب",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/8214960",
+      "date": "2026-01-28"
+    }
+  ],
+  "story": {
+    "ar": "بحسب القاهرة 24، وصلت سيدة رسالة تقول إنها استلمت 300 جنيه على محفظتها، ولم تجد أي تحويل عند المراجعة. اتصلت بها بعد ذلك سيدة قالت إن المبلغ «يوميات عمال» وطالبت بإعادته، ثم عاودت الاتصال مع سيدة أخرى رغم تهديد الزوج بالإبلاغ.",
+    "en": "According to Cairo24, a woman got a message saying she had received 300 pounds on her wallet, but found no transfer when she checked. A woman then called saying it was “workers’ daily wages” and demanded it back, and called again with another woman even after the husband said he would report it."
+  },
+  "related": [
+    "eg/fake-buyer-forged-transfer"
+  ],
+  "updated": "2026-11-18"
+}

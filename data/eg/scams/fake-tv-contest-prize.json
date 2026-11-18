@@ -1,0 +1,149 @@
+{
+  "id": "eg/fake-tv-contest-prize",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "ar": "متصل يقول إنه «مدير قناة» أو «المدير التنفيذي لبرنامج مسابقات»",
+    "en": "A caller claiming to be a “channel manager” or the “executive director of a contest show”"
+  },
+  "name": {
+    "ar": "«مبروك كسبت عربية في برنامج المسابقات»: حوّل الرسوم الأول",
+    "en": "“Congratulations, you won a car on the contest show”: pay the fees first"
+  },
+  "how": {
+    "ar": "يتصل بك شخص يقول إنه مدير في قناة أو المدير التنفيذي لبرنامج مسابقات شهير، ويبشرك بأنك كسبت سيارة أو جائزة مالية كبيرة. لاستلامها يطلب تحويل «رسوم إدارية» أو مصاريف تسليم على محفظة إلكترونية، وغالباً على دفعات، ثم يغلق هواتفه. الضحايا كثيراً ما يكونون من كبار السن. في سبتمبر 2026 خسر رجل على المعاش 50 ألف جنيه بهذه الحيلة في العجوزة، وفي أكتوبر 2025 ضبطت الداخلية متهماً انتحل صفة المدير التنفيذي لبرنامج مسابقات، وقال جهاز حماية المستهلك إنه لا توجد جهة تطلب بيانات بنكية أو أرقاماً سرية لتسليم جائزة.",
+    "en": "Someone calls saying he is a manager at a TV channel or the executive director of a well-known contest show, and tells you that you won a car or a big cash prize. To collect it he asks you to transfer “administrative fees” or delivery costs to an e-wallet, often in several payments, then switches off his phones. Victims are often elderly. In September 2026 a retired man in Agouza lost 50,000 pounds this way, in October 2025 the Ministry of Interior arrested a man who posed as a contest show’s executive director, and the Consumer Protection Agency says no one asks for bank details or PINs to hand over a prize."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "مكالمة: «مبروك، كسبت عربية في برنامج المسابقات».",
+        "en": "A call: “congratulations, you won a car on the contest show”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "المتصل يقدّم نفسه كمدير في القناة أو البرنامج.",
+        "en": "The caller presents himself as a manager at the channel or the show."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "لازم تحوّل رسوم إدارية أو مصاريف تسليم على محفظة قبل الاستلام.",
+        "en": "You must transfer administrative fees or delivery costs to a wallet before collecting."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "دفعة ورا دفعة، وكل مرة «آخر رسوم».",
+        "en": "One payment after another, each time “the last fee”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "ألو حاج، ألف مبروك! حضرتك كسبت عربية في سحب برنامج المسابقات. أنا مدير القناة، ومحتاجين بس 3,000 جنيه رسوم تسجيل العربية باسمك، تتحول على فودافون كاش على الرقم ده [رقم] النهارده.",
+        "en": "Hello sir, congratulations! You won a car in the contest show’s draw. I’m the channel manager, and we only need 3,000 pounds to register the car in your name, transferred by Vodafone Cash to this number [number] today."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ar": "مبروك 🎉 رقمك فاز بجائزة 100 ألف جنيه في مسابقة البرنامج. لاستلام الجائزة تواصل مع المدير التنفيذي على واتساب [رقم] وسدد المصاريف الإدارية.",
+        "en": "Congratulations 🎉 your number won a 100,000-pound prize in the show’s contest. To collect it, contact the executive director on WhatsApp [number] and pay the administrative fees."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "واحد اتصل قال إني كسبت عربية في برنامج مسابقات",
+      "طلبوا رسوم عشان أستلم الجائزة",
+      "حولت فلوس على فودافون كاش عشان الجايزة وقفلوا التليفون",
+      "قالي إنه مدير القناة وطلب مصاريف تسليم",
+      "أبويا دفع على كذا مرة عشان جائزة وهمية"
+    ],
+    "en": [
+      "someone called saying i won a car on a contest show",
+      "they asked for fees so i can collect the prize",
+      "i sent money by vodafone cash for the prize and they switched off",
+      "he said he was the channel manager and asked for delivery costs",
+      "my father paid several times for a fake prize"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "جائزة من مسابقة لم تشترك فيها.",
+      "أي رسوم تُدفع قبل استلام جائزة.",
+      "التحويل على محفظة رقم موبايل شخصي.",
+      "أرقام متعددة ومتصلون متعددون (مدير، وكيل، مندوب)."
+    ],
+    "en": [
+      "A prize from a contest you never entered.",
+      "Any fee to be paid before you collect a prize.",
+      "Payment to a personal mobile wallet.",
+      "Several numbers and several callers (manager, agent, courier)."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تحوّل أي مبلغ؛ الجوائز الحقيقية لا تُدفع عليها رسوم مقدماً.",
+      "تأكد من المسابقة من القناة الرسمية أو جهاز حماية المستهلك.",
+      "نبّه كبار السن في الأسرة لهذه الحيلة.",
+      "إذا دفعت، أبلغ 108 وقسم الشرطة واحتفظ بإيصالات التحويل."
+    ],
+    "en": [
+      "Don’t transfer anything; real prizes have no upfront fees.",
+      "Check the contest with the channel’s official pages or the Consumer Protection Agency.",
+      "Warn older relatives about this trick.",
+      "If you paid, report to 108 and a police station and keep the transfer receipts."
+    ]
+  },
+  "reportTo": [
+    "eg/moi-cybercrime-108",
+    "eg/cpa-19588",
+    "eg/ntra-155"
+  ],
+  "sources": [
+    {
+      "title": "\"مبروك كسبت عربية\".. نصابون يستولون على 50 ألف جنيه من مسن بالعجوزة",
+      "publisher": "مصراوي",
+      "url": "https://www.masrawy.com/news/news_cases/details/2026/9/23/3052484/-%D9%85%D8%A8%D8%B1%D9%88%D9%83-%D9%83%D8%B3%D8%A8%D8%AA-%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D9%86%D8%B5%D8%A7%D8%A8%D9%88%D9%86-%D9%8A%D8%B3%D8%AA%D9%88%D9%84%D9%88%D9%86-%D8%B9%D9%84%D9%89-50-%D8%A3%D9%84%D9%81-%D8%AC%D9%86%D9%8A%D9%87-%D9%85%D9%86-%D9%85%D8%B3%D9%86-%D8%A8%D8%A7%D9%84%D8%B9%D8%AC%D9%88%D8%B2%D8%A9",
+      "date": "2026-09-23"
+    },
+    {
+      "title": "حماية المستهلك تحذر من المسابقات الوهمية بعقوبات تصل إلى مليونى جنيه",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7534588",
+      "date": "2026-09-03"
+    },
+    {
+      "title": "نصب بالجائزة الكبرى.. ضبط محتال أوهم مواطنًا بفوزه بمسابقة وهمية",
+      "publisher": "مصراوي",
+      "url": "https://www.masrawy.com/news/news_cases/details/2025/10/13/2871563/%D9%86%D8%B5%D8%A8-%D8%A8%D8%A7%D9%84%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9-%D8%A7%D9%84%D9%83%D8%A8%D8%B1%D9%89-%D8%B6%D8%A8%D8%B7-%D9%85%D8%AD%D8%AA%D8%A7%D9%84-%D8%A3%D9%88%D9%87%D9%85-%D9%85%D9%88%D8%A7%D8%B7%D9%86-%D8%A7-%D8%A8%D9%81%D9%88%D8%B2%D9%87-%D8%A8%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A9-%D9%88%D9%87%D9%85%D9%8A%D8%A9",
+      "date": "2025-10-13"
+    }
+  ],
+  "story": {
+    "ar": "بحسب مصراوي، تواصل عدد من الأشخاص من أرقام مختلفة مع رجل عمره 74 عاماً على المعاش، قدّم أحدهم نفسه مديراً بإحدى القنوات وآخر وكيلاً لها، وأخبراه بفوزه بسيارة في برنامج مسابقات شهير. حوّل على دفعات 50 ألف جنيه على محفظة إلكترونية بزعم رسوم الاستلام، ثم أُغلقت الهواتف.",
+    "en": "According to Masrawy, several people called a 74-year-old retired man from different numbers, one presenting himself as a channel manager and another as its agent, and told him he had won a car on a popular contest show. He transferred 50,000 pounds to an e-wallet in instalments as “collection fees”, then the phones were switched off."
+  },
+  "updated": "2026-11-18"
+}
