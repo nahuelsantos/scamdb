@@ -45,6 +45,27 @@ async function whoAmI() {
 }
 whoAmI();
 
+// Phone screenshots are often 1-4 MB; the server turns the image into text and must encode all of it, which can run
+// past a Worker's CPU limit. Text stays readable at 1080 px wide, so shrink it here first (about 200-400 KB as JPEG).
+// Any failure (old browser, odd file) sends the original instead.
+export async function shrinkImage(file, { maxWidth = 1080, maxHeight = 3200, quality = 0.85 } = {}) {
+  try {
+    const bmp = await createImageBitmap(file);
+    const scale = Math.min(1, maxWidth / bmp.width, maxHeight / bmp.height);
+    if (scale === 1 && file.size < 600 * 1024) return file;
+    const w = Math.round(bmp.width * scale), h = Math.round(bmp.height * scale);
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h); // transparent PNGs become white, not black, as JPEG
+    ctx.drawImage(bmp, 0, 0, w, h);
+    const blob = await new Promise((done) => canvas.toBlob(done, 'image/jpeg', quality));
+    return blob && blob.size < file.size ? new File([blob], 'screenshot.jpg', { type: 'image/jpeg' }) : file;
+  } catch {
+    return file;
+  }
+}
+
 // Screenshot drop zone: drag a file onto it or click to pick one.
 const drop = $('rep-drop'), shotIn = $('rep-shot');
 const showFile = () => { const f = shotIn.files?.[0]; $('rep-drop-main').textContent = f ? f.name : S.repDrop; drop.classList.toggle('has', Boolean(f)); };
@@ -74,7 +95,7 @@ form.addEventListener('submit', async (e) => {
   if (shot && signedIn) {
     body = new FormData();
     for (const [k, v] of Object.entries(fields)) if (v !== undefined) body.append(k, v);
-    body.append('image', shot);
+    body.append('image', await shrinkImage(shot));
   } else {
     body = JSON.stringify({ ...fields, text: text || undefined });
     headers['content-type'] = 'application/json';
@@ -84,8 +105,10 @@ form.addEventListener('submit', async (e) => {
   try {
     const r = await fetch('/v1/reports', { method: 'POST', credentials: 'same-origin', headers, body });
     if (r.status === 201) { form.hidden = true; $('rep-done').hidden = false; $('rep-done').scrollIntoView({ block: 'center' }); return; }
-    const b = await r.json().catch(() => ({}));
-    fail(r.status === 429 ? S.repTooMany : r.status === 403 ? S.repTurnstile : r.status === 422 ? S.repUnreadable : (b.message || S.repFail));
+    const b = await r.json().catch(() => null);
+    // No JSON body means the request failed before our code could answer (for example a CPU or time limit).
+    fail(r.status === 429 ? S.repTooMany : r.status === 403 ? S.repTurnstile : r.status === 422 ? S.repUnreadable
+      : b?.message ? b.message : `${shot ? S.repFailShot : S.repFail} (${r.status})`);
   } catch {
     fail(S.repFail);
   } finally {

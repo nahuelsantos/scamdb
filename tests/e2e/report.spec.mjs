@@ -76,3 +76,20 @@ test('trends: counts with names and bars, or an honest empty state', async ({ pa
   const r = await new AxeBuilder({ page }).analyze();
   expect(r.violations).toEqual([]);
 });
+
+test('a large screenshot is shrunk to a JPEG before upload, and a server failure says so', async ({ page }) => {
+  await signedIn(page);
+  let sent = null;
+  await page.route('**/v1/reports', (r) => { const buf = r.request().postDataBuffer(); sent = { bytes: buf.length, jpeg: buf.includes(Buffer.from('image/jpeg')) };
+    return r.fulfill({ status: 503, contentType: 'text/html', body: '<h1>Error 1102</h1>' }); });
+  await page.goto('/report/');
+  const png = await page.evaluate(async () => { const c = document.createElement('canvas'); c.width = 1179; c.height = 2556; const x = c.getContext('2d');
+    for (let y = 0; y < 2556; y += 40) { x.fillStyle = `hsl(${y % 360} 60% 50%)`; x.fillRect(0, y, 1179, 40); x.fillStyle = '#000'; x.font = '32px sans-serif'; x.fillText(`line ${y} of a long message`, 20, y + 30); }
+    const blob = await new Promise((r) => c.toBlob(r, 'image/png')); return Array.from(new Uint8Array(await blob.arrayBuffer())); });
+  await page.locator('#rep-country').selectOption('es');
+  await page.locator('#rep-shot').setInputFiles({ name: 'shot.png', mimeType: 'image/png', buffer: Buffer.from(png) });
+  await page.locator('#rep-send').click();
+  await expect(page.getByText(/couldn’t finish reading the screenshot.*\(503\)/)).toBeVisible();
+  expect(sent.jpeg).toBe(true);
+  expect(sent.bytes).toBeLessThan(png.length);
+});

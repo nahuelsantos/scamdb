@@ -77,7 +77,7 @@ export const UI = {
     repContact: 'Your email, if we may ask you about it (optional)', repContactPh: 'you@example.com',
     repPrivacy: 'Reports are private: never published, read only to improve the catalogue and the warnings. After 180 days your contact details and story are deleted; only the redacted message and your answer stay, to test detection. Phone numbers, emails, card and account numbers and names are replaced before anything is stored.',
     repSend: 'Send report', repSending: 'Sending…', repThanks: 'Thank you!', repThanksP: 'Your report arrived. It helps us spot new scams and warn other people.', repAnother: 'Report another', repCheckFirst: 'Check a message',
-    repFail: 'Something went wrong. Please try again in a moment.', repNeedText: 'Paste the message, add a screenshot, or tell us what happened.', repNeedCountry: 'Choose your country.',
+    repFail: 'Something went wrong. Please try again in a moment.', repFailShot: 'We couldn’t finish reading the screenshot. Please try again, or paste the message as text.', repNeedText: 'Paste the message, add a screenshot, or tell us what happened.', repNeedCountry: 'Choose your country.',
     repTurnstile: 'Please complete the check above the button (it proves you are a person).', repTooMany: 'You have sent many reports today. Thank you! Please try again tomorrow.', repUnreadable: 'We could not read any text in that screenshot. Paste the message instead.',
     navAccount: 'Account', btnKey: 'Get a free key', epReport: 'Tell us about a scam you received. Private, read by a person.', tierPrivate: 'free, private',
     accTitle: 'Account · scamdb', accDesc: 'Sign in with GitHub to get a free scamdb API key.', accH: 'Your API key',
