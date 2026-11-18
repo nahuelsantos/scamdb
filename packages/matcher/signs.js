@@ -385,6 +385,10 @@ const CODE_DELIVERY = /(code|codigo|codice|code de verification|kod|kodu|codul|k
 const BACK_OF_CARD = /(number|numero) (on|at) the back of (your|the) card|numero (al|en el|que aparece al|del) reverso de (tu|su|la) tarjeta|numero (no|do) verso do (seu )?cartao|numero au dos de (votre|la) carte|nummer auf der ruckseite (ihrer|der) karte|numero sul retro della (sua |tua )?carta/;
 const HAS_LINK = /\[(link|enlace|lien|lenke|linke|linkki|nuoroda|saite|link)\]|https?:|www\./;
 
+// A public-safety alert (evacuate, shelter in place, a weather warning) is urgent by nature: that urgency is not a
+// scammer's pressure, unless the alert also asks for money, a code or a login.
+const PUBLIC_ALERT = /emergency alert|evacuate (now|immediately|to)|evacuation (order|alert|warning)|shelter in place|take shelter|(tornado|flood|flash flood|wildfire|storm|tsunami) warning|alerta de emergencia|alerta (sismica|de tsunami)|evacu(e|en|ar) (inmediatamente|el|la|los|las|de|a)|senapred|sismate|es alert|defesa civil|evacuez|alerte (extreme|severe)|fr alert|mise a l abri|evakuier|it alert|evacua(re|te) (immediatamente|la|le)/;
+
 // A remote session the person arranged themselves (a colleague, a planned IT visit) is not a stranger's remote access.
 const AGREED_SESSION = /kako smo (se )?dogovorili|као што смо се договорили|kako smo se dogovorili/;
 
@@ -396,6 +400,7 @@ function applyContext(t, ids, signs = SIGNS) {
     if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t) || CODE_DELIVERY.test(t))) out = out.filter((id) => id !== 'asks_for_code');
   }
   if (out.includes('urgency') && DUE_DATE.test(t) && !signs.urgency.test(t.replace(DUE_DATE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
+  if (out.includes('urgency') && PUBLIC_ALERT.test(t) && !out.some((id) => id === 'money_request' || id === 'asks_for_code' || id === 'remote_access')) out = out.filter((id) => id !== 'urgency');
   if (out.includes('remote_access') && AGREED_SESSION.test(t)) out = out.filter((id) => id !== 'remote_access');
   if (out.includes('unknown_link') && NO_LINK.test(t)) out = out.filter((id) => id !== 'unknown_link');
   if (out.includes('money_request') && (NO_PAYMENT.test(t) || withoutNegatedMoney(t, signs) || (BACK_OF_CARD.test(t) && !out.includes('unknown_link')))) out = out.filter((id) => id !== 'money_request');
