@@ -14,12 +14,12 @@ const FIELDS = ['id', 'country', 'lang', 'status', 'channels', 'sender', 'name',
 
 export function docs({ repo, meta, lang = 'en' }) {
   const rows = t(lang, 'endpointRows'), fields = t(lang, 'fieldRows');
-  const sample = repo.entries.find((e) => e.id === 'ar/whatsapp-codigo') ?? repo.entries[0];
+  const sample = repo.entries.find((e) => e.id === 'us/bank-fraud-alert-zelle') ?? repo.entries[0];
   const short = sample && JSON.stringify({ license: 'CC BY 4.0', attribution: 'scamdb.dev · CC BY 4.0', version: meta.version,
     data: { id: sample.id, country: sample.country, lang: sample.lang, name: sample.name, signals: sample.signals, '…': '…' } }, null, 2);
-  const body = `<section class="page-head"><h1>${esc(t(lang, 'navDocs'))}</h1><p class="lede">${esc(t(lang, 'docsLede'))} <code>{"es": "…", "en": "…"}</code>.</p></section>
-<section aria-labelledby="q-h"><h2 id="q-h">${esc(t(lang, 'dQuick'))}</h2><pre class="code"><code>curl https://scamdb.dev/v1/ar/scams.json</code></pre>
-<pre class="code"><code>const res = await fetch('https://scamdb.dev/v1/ar/scams.json');
+  const body = `<section class="page-head"><h1>${esc(t(lang, 'navDocs'))}</h1><p class="lede">${esc(t(lang, 'docsLede'))} <code>{"en": "…", "es": "…"}</code>.</p></section>
+<section aria-labelledby="q-h"><h2 id="q-h">${esc(t(lang, 'dQuick'))}</h2><pre class="code"><code>curl https://scamdb.dev/v1/us/scams.json</code></pre>
+<pre class="code"><code>const res = await fetch('https://scamdb.dev/v1/us/scams.json');
 const { data, version } = await res.json();
 console.log(data.length, 'scams, dataset', version);</code></pre></section>
 <section aria-labelledby="e-h"><h2 id="e-h">${esc(t(lang, 'dEndpoints'))}</h2><div class="scroll"><table><thead><tr><th>GET</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
@@ -43,7 +43,7 @@ ${CHECK_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lan
 <section aria-labelledby="rep-h"><h2 id="rep-h">${esc(t(lang, 'dReports'))}</h2><p>${esc(t(lang, 'dReportsP'))}</p>
 <pre class="code"><code>curl -X POST https://scamdb.dev/v1/reports \\
   -H "Authorization: Bearer sk_…" -H "Content-Type: application/json" \\
-  -d '{"text": "Le hablo de PAMI…", "country": "ar", "channel": "phone", "source": "my-app"}'
+  -d '{"text": "Bank Fraud Alert: did you attempt a Zelle payment…", "country": "us", "channel": "sms", "source": "my-app"}'
 # → 201 {"id": "…", "received": true}</code></pre>
 <div class="scroll"><table><thead><tr><th>POST /v1/reports</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
 ${REPORT_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lang, 'dReportsRows')[i])}</td></tr>`).join('')}</tbody></table></div>
