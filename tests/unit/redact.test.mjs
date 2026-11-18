@@ -47,3 +47,15 @@ test('the scam wording survives, so the matcher still recognises it', async () =
   assert.equal(after.verdict, before.verdict);
   assert.equal(after.matches[0]?.id, before.matches[0]?.id);
 });
+
+test('a link split after "https://" (as screenshots are often read) is still replaced, with its domain kept', () => {
+  const r = redact('La Agencia Tributaria ha emitido una comunicación. https://\nsede.agenciatributariacz.help/es');
+  assert.ok(!r.text.includes('agenciatributariacz'), r.text);
+  assert.match(r.text, /\[link\]$/);
+  assert.deepEqual(r.found.domains, ['sede.agenciatributariacz.help']);
+});
+test('bare domains with endings scams use (.help, .cfd, .sbs…) are replaced; ordinary dotted text is not', () => {
+  assert.equal(redact('entre en correos-envio.cfd hoy').text, 'entre en [link] hoy');
+  assert.equal(redact('soporte en banco-ayuda.help').text, 'soporte en [link]');
+  assert.equal(redact('Gracias, S.A. y e.g. versión 1.2').text, 'Gracias, S.A. y e.g. versión 1.2');
+});

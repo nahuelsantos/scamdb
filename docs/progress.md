@@ -2,6 +2,21 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-18: The owner's first real reports (Spain)
+
+- **Four scams the owner received**, sent through the report form: a fake Correos "2/2 delivery attempts", a fake
+  Agencia Tributaria notice, a card "limited for security, call [number]", and a missing-house-number parcel text.
+  All four matched the right catalogue scam.
+- **Redactor fix:** a link the screenshot reader split after `https://` (and bare domains ending in .help, .cfd,
+  .sbs and similar) was not replaced. The stored Agencia Tributaria report was corrected, with its domain kept as a
+  private indicator.
+- **Matcher 1.36.0 (Spanish):**
+  - "…o su artículo será devuelto" (a return threat) and "ha sido limitada temporalmente" count as pressure;
+  - the Agencia Tributaria, AEAT, Guardia Civil, Policía Nacional, Seguridad Social and DGT count as impersonation.
+  - The Correos text is now "scam" (pressure plus a link); the bank and tax texts stay "suspicious".
+  - The real and labelled sets are unchanged: no genuine message newly flagged.
+- **Report form:** screenshots are shrunk in the browser before upload; a server failure now says so.
+
 ## 2026-11-18: A faster matcher; how detection works, and a review of the weights
 
 - **Matcher 1.35.0, same answers, about 12 times faster.** A check against the whole catalogue (1,199 scams) took

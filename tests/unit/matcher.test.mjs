@@ -652,3 +652,16 @@ test('1.32.0: Chinese (Taiwan) rules, only where Chinese is spoken', async () =>
   assert.ok(!readSigns('台電：電費尚未繳納，請儘速繳費，如已繳費請忽略。', ['zh']).includes('money_request'), 'a genuine bill reminder is not a money request');
   assert.ok(!readSigns('今日內 連結', ['es', 'en']).includes('urgency'), 'Chinese rules only where Chinese is spoken');
 });
+
+// Spain, from the owner's own phone (2026): a parcel return threat, a card "limited" for security, the tax agency.
+test('Spanish: "…o su artículo será devuelto" with a link is a scam; a plain "será devuelto al remitente" is not pressure', () => {
+  const s = m('CORREOS Se han realizado 2/2 intentos de entrega, confirme sus datos o su artículo será devuelto: [link]', { country: 'es' });
+  assert.equal(s.verdict, 'scam');
+  assert.equal(s.matches[0].id, 'es/parcel-missing-house-number');
+  const g = m('Correos: su envío está en la oficina. Puede recogerlo con su DNI en 15 días, después será devuelto al remitente.', { country: 'es' });
+  assert.ok(!g.signals.some((x) => x.id === 'urgency'), JSON.stringify(g.signals));
+});
+test('Spanish: a card "limitada temporalmente" is pressure, and the Agencia Tributaria is someone a scam pretends to be', () => {
+  assert.ok(readSigns('Su tarjeta ha sido limitada temporalmente por razones de seguridad, llame al [number]').includes('urgency'));
+  assert.ok(readSigns('La Agencia Tributaria ha emitido una comunicación dirigida a usted. [link]').includes('impersonation'));
+});
