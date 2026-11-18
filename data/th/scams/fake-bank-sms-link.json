@@ -1,0 +1,151 @@
+{
+  "id": "th/fake-bank-sms-link",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "th": "SMS ที่ขึ้นชื่อธนาคาร บางครั้งส่งจากเครื่องจำลองสถานีฐานในรถ จึงปนอยู่กับข้อความจริง",
+    "en": "A text showing a bank's name, sometimes sent from a fake base station in a car so it lands among real messages"
+  },
+  "name": {
+    "th": "SMS ธนาคารปลอม: แอปหมดอายุ บัญชีจะถูกระงับ ให้กดลิงก์",
+    "en": "Fake bank text: app expired or account to be suspended, click the link"
+  },
+  "how": {
+    "th": "มิจฉาชีพส่ง SMS หรือไลน์อ้างเป็นธนาคาร แจ้งว่าแอปธนาคารหมดอายุ ต้องอัปเดตด่วน หรือบัญชีจะถูกระงับภายใน 24 ชั่วโมง ตำรวจไซเบอร์จับคนร้ายที่ขับรถติดเครื่องจำลองสถานีฐานส่ง SMS แนบลิงก์ในย่านคนพลุกพล่านของกรุงเทพฯ หลายครั้ง ลิงก์พาไปโหลดแอปปลอมหรือหน้าเว็บที่ขอชื่อผู้ใช้ รหัสผ่าน และ OTP แล้วเงินถูกโอนออกภายในไม่กี่นาที ธนาคารไม่มีนโยบายส่ง SMS ให้ทำธุรกรรมผ่านลิงก์",
+    "en": "Scammers send texts or LINE messages posing as a bank, saying the banking app has expired and must be updated, or the account will be suspended within 24 hours. Cyber police have repeatedly caught people driving cars fitted with fake base stations that blast link texts in busy parts of Bangkok. The link leads to a fake app or a page asking for your username, password and OTP, and the money is gone within minutes. Banks have no policy of sending texts that ask you to do transactions through a link."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "SMS ขึ้นชื่อธนาคาร แจ้งว่าแอปหมดอายุหรือบัญชีจะถูกระงับ",
+        "en": "A text under a bank's name says your app has expired or your account will be suspended."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "เร่งว่า “ภายใน 24 ชั่วโมง”",
+        "en": "It says “within 24 hours”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "th": "ลิงก์ให้โหลดแอปหรือเข้าหน้าเว็บที่เหมือนธนาคาร",
+        "en": "A link to download an app or open a page that looks like the bank."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "th": "ขอชื่อผู้ใช้ รหัสผ่าน และรหัส OTP",
+        "en": "It asks for your username, password and OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "[KBank] แอปพลิเคชันของท่านหมดอายุ กรุณาอัปเดตเวอร์ชันใหม่ภายใน 24 ชั่วโมง มิฉะนั้นบัญชีจะถูกระงับชั่วคราว [ลิงก์]",
+        "en": "[KBank] Your app has expired. Please update to the new version within 24 hours or your account will be temporarily suspended [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "th": "SCB: ตรวจพบการเข้าสู่ระบบจากอุปกรณ์ที่ไม่รู้จัก บัญชีของท่านถูกระงับชั่วคราว กรุณายืนยันตัวตนที่ [ลิงก์]",
+        "en": "SCB: a login from an unknown device was detected and your account is temporarily suspended. Please verify your identity at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "sms ธนาคารบอกว่าแอปหมดอายุให้อัปเดต",
+      "ข้อความธนาคารแจ้งบัญชีจะถูกระงับพร้อมลิงก์",
+      "กดลิงก์ใน sms ธนาคารแล้วเงินหาย",
+      "หน้าเว็บเหมือนธนาคารขอรหัส otp",
+      "sms ปลอมขึ้นชื่อธนาคารจริง"
+    ],
+    "en": [
+      "a bank text says my app has expired and must be updated",
+      "a bank message says my account will be suspended with a link",
+      "i clicked a link in a bank text and lost money",
+      "a page like my bank asked for my otp code",
+      "a fake text showing my bank's real name"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "th": [
+      "SMS หรือไลน์จากธนาคารที่มีลิงก์ แม้ขึ้นชื่อธนาคารจริง",
+      "ขู่ว่าบัญชีจะถูกระงับภายในเวลาสั้น ๆ",
+      "ให้โหลดแอปจากลิงก์แทน App Store หรือ Play Store"
+    ],
+    "en": [
+      "A bank text or LINE message with a link, even under the bank's real name.",
+      "A threat that the account will be suspended within a short time.",
+      "Being told to download the app from a link instead of the App Store or Play Store."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ไม่กดลิงก์ เปิดแอปธนาคารที่มีอยู่แล้ว หรือโทรเบอร์หลังบัตร",
+      "อัปเดตแอปผ่าน App Store หรือ Play Store เท่านั้น",
+      "ถ้ากรอกรหัสไปแล้ว โทรแจ้งธนาคารให้ระงับบัญชีและโทร 1441"
+    ],
+    "en": [
+      "Don't click. Open the bank app you already have, or call the number on your card.",
+      "Only update apps through the App Store or Play Store.",
+      "If you typed in codes, call your bank to freeze the account and call 1441."
+    ]
+  },
+  "reportTo": [
+    "th/your-bank",
+    "th/aoc-1441",
+    "th/nbtc-1200"
+  ],
+  "sources": [
+    {
+      "title": "ต้องระวัง ข้อความให้อัปเดตแอปฯ ธนาคาร อาจเป็นกับดักของมิจฉาชีพ",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1242087",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "ล่าผู้สั่งการ-ผู้ร่วมขบวนการ รถปล่อยคลื่นดักสัญญาณมือถือกลางกรุงเทพ",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1231842",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "รวบแก๊งชาวจีน ตระเวนขับรถ ส่ง SMS ปลอม แนบลิงก์ดูดเงิน",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2835315",
+      "date": "2025-01-09"
+    },
+    {
+      "title": "ธนาคารกรุงไทยยืนยันไม่มีโครงการแจกเงิน 5,000 บาท เตือนประชาชนอย่าหลงเชื่อหรือกดลิงก์ที่แนบมา",
+      "publisher": "Cofact",
+      "url": "https://blog.cofact.org/th/fact-check-krungthai-10072026/",
+      "date": "2026-07-13"
+    }
+  ],
+  "story": {
+    "th": "วันที่ 9 ม.ค. 2568 ตำรวจไซเบอร์จับชาวจีน 2 คนที่ขับรถฮอนด้า ซีอาร์วีติดเครื่องจำลองสถานีฐาน ตระเวนส่ง SMS ปลอมแนบลิงก์ดูดเงินแถวไอคอนสยาม เอเชียทีค และเซ็นทรัลเวิลด์ ข้อความอ้างชื่อสถาบันการเงิน กรมสรรพากร และการไฟฟ้า",
+    "en": "On 9 January 2025 cyber police arrested two Chinese men driving a Honda CR-V fitted with a fake base station, sending fake link texts around ICONSIAM, Asiatique and CentralWorld. The texts used the names of financial institutions, the Revenue Department and the electricity authority."
+  },
+  "updated": "2026-11-18"
+}

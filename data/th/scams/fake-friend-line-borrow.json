@@ -1,0 +1,137 @@
+{
+  "id": "th/fake-friend-line-borrow",
+  "country": "th",
+  "lang": "th",
+  "status": "fading",
+  "channels": [
+    "social"
+  ],
+  "sender": {
+    "th": "บัญชีไลน์หรือเฟซบุ๊กที่ใช้ชื่อและรูปของลูก ญาติ หรือเพื่อน (บัญชีปลอมหรือถูกแฮก)",
+    "en": "A LINE or Facebook account using your child's, relative's or friend's name and photo (fake or hacked)"
+  },
+  "name": {
+    "th": "ไลน์ปลอมหรือไลน์ถูกแฮก ทักมาขอยืมเงินด่วน",
+    "en": "Fake or hacked LINE account asking to borrow money urgently"
+  },
+  "how": {
+    "th": "มิจฉาชีพแฮกหรือปลอมบัญชีไลน์และเฟซบุ๊กของคนที่คุณรู้จัก ใช้ชื่อและรูปเดิม ทักมาด้วยเรื่องน่าสงสารหรือเร่งด่วน แล้วขอยืมเงินหรือให้โอนเงินด่วน มักให้โอนเข้าบัญชีของคนอื่น ตำรวจไซเบอร์รับแจ้งคดีหลอกเป็นคนอื่นเพื่อยืมเงินหลายพันคดี",
+    "en": "Scammers hack or copy the LINE and Facebook accounts of someone you know, using the same name and photo, message you with a sad or urgent story and ask to borrow or send money urgently, often into someone else's account. Cyber police have received thousands of reports of people impersonated to borrow money."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "ข้อความจากบัญชีของคนรู้จัก ชื่อและรูปเหมือนเดิม",
+        "en": "A message from an account with a friend's or relative's name and photo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "เล่าเรื่องเร่งด่วนหรือน่าสงสาร ขอยืมเงิน",
+        "en": "An urgent or sad story and a request to borrow money."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "th": "ให้โอนเข้าบัญชีชื่อคนอื่น อ้างว่าบัญชีตัวเองมีปัญหา",
+        "en": "You are told to pay into someone else's account because theirs “has a problem”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "th": "ไม่รับสาย อ้างว่าประชุมหรือโทรศัพท์เสีย",
+        "en": "They won't take a call, saying they are in a meeting or the phone is broken."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "แม่ หนูโทรศัพท์เครื่องเก่าพัง เลยใช้ไลน์นี้ก่อนนะ ตอนนี้ต้องจ่ายค่าเทอมด่วนวันนี้ 15,000 แม่โอนเข้าบัญชีเพื่อนหนูก่อนได้ไหม บัญชีหนูโดนล็อก เดี๋ยวส่งเลขบัญชีให้",
+        "en": "Mum, my old phone broke so I'm using this LINE for now. I have to pay my tuition fee urgently today, 15,000. Can you transfer it to my friend's account first? My account is locked. I'll send you the account number."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "th": "มึงมีสัก 8,000 ไหม ขอยืมด่วนเลย รถเสียกลางทาง โอนเข้าบัญชีนี้ก่อนนะ ชื่อบัญชีเป็นของช่าง เย็นนี้คืนให้ ตอนนี้โทรไม่สะดวก",
+        "en": "Have you got about 8,000? I need to borrow it urgently, my car broke down on the road. Transfer it to this account first, it's the mechanic's. I'll pay you back tonight. Can't talk on the phone right now."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "เพื่อนทักไลน์มายืมเงินแต่ไม่ใช่ตัวจริง",
+      "ไลน์ลูกโดนแฮกแล้วขอให้โอนเงิน",
+      "ญาติขอยืมเงินให้โอนเข้าบัญชีคนอื่น",
+      "บัญชีไลน์ปลอมใช้รูปเพื่อนมายืมเงิน",
+      "ขอยืมเงินด่วนแต่ไม่ยอมรับสาย"
+    ],
+    "en": [
+      "a friend messaged on line to borrow money but it wasn't them",
+      "my child's line was hacked and asked me to transfer money",
+      "a relative asked to borrow money into someone else's account",
+      "a fake line account with my friend's photo asked for a loan",
+      "asked to borrow money urgently but wouldn't take a call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "new_number"
+  ],
+  "redFlags": {
+    "th": [
+      "คนรู้จักขอยืมเงินทางแชตแบบด่วน",
+      "ให้โอนเข้าบัญชีที่ไม่ใช่ชื่อของเขา",
+      "ไม่ยอมคุยโทรศัพท์หรือวิดีโอคอล"
+    ],
+    "en": [
+      "Someone you know asking urgently for money in a chat.",
+      "Payment to an account that isn't in their name.",
+      "They won't talk by phone or video."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "โทรหาเจ้าตัวด้วยเบอร์เดิมที่คุณมีก่อนโอนเสมอ",
+      "ถามเรื่องที่รู้กันแค่สองคน",
+      "ถ้าโอนไปแล้ว โทร 1441 และบอกเพื่อนให้แจ้งไลน์ว่าบัญชีถูกแฮก"
+    ],
+    "en": [
+      "Always call the person on the number you already have before paying.",
+      "Ask something only the two of you know.",
+      "If you paid, call 1441 and tell your friend to report the hacked account to LINE."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/thaipoliceonline",
+    "th/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "ตำรวจไซเบอร์ เตือนภัยมิจฉาชีพปลอมบัญชีไลน์เป็นคนรู้จักหลอกลวงยืมเงิน",
+      "publisher": "แนวหน้า",
+      "url": "https://www.naewna.com/local/725264",
+      "date": "2023-04-19"
+    },
+    {
+      "title": "ตำรวจไซเบอร์ขอนแก่น รวบแก๊งแฮกไลน์ข้าราชการระดับสูง หลอกยืมเงินเหยื่อเสียหายร่วม 10 ล้าน",
+      "publisher": "ผู้จัดการออนไลน์",
+      "url": "https://mgronline.com/local/detail/9650000057421",
+      "date": "2022-06-16"
+    }
+  ],
+  "story": {
+    "th": "ตำรวจไซเบอร์ระบุว่าตั้งแต่ 1 มี.ค. 2565 ถึง 16 เม.ย. 2566 มีผู้แจ้งความเรื่องถูกหลอกโดยคนที่แอบอ้างเป็นคนอื่นเพื่อยืมเงิน 8,342 เรื่อง ความเสียหายรวมกว่า 312 ล้านบาท",
+    "en": "Cyber police said that from 1 March 2022 to 16 April 2023 they received 8,342 reports of people tricked by someone impersonating another person to borrow money, with losses over 312 million baht."
+  },
+  "updated": "2026-11-18"
+}

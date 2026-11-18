@@ -1,0 +1,144 @@
+{
+  "id": "th/fake-investment-platform",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "th": "โฆษณาลงทุนบนเฟซบุ๊กที่อ้างชื่อร้านทองหรือบริษัทดัง แล้วต่อด้วยกลุ่มไลน์ “นักลงทุน”",
+    "en": "A Facebook investment ad using a well-known gold shop's or company's name, followed by an “investor” LINE group"
+  },
+  "name": {
+    "th": "หลอกลงทุนทองคำ หุ้น หรือคริปโต ผ่านเพจและกลุ่มไลน์",
+    "en": "Fake gold, stock or crypto investment through Facebook ads and LINE groups"
+  },
+  "how": {
+    "th": "มิจฉาชีพซื้อโฆษณาบนเฟซบุ๊ก อ้างเป็นการลงทุนทองคำล่วงหน้าของร้านทองดัง หุ้น หรือคริปโต แล้วดึงเหยื่อเข้ากลุ่มไลน์ที่มีหน้าม้าคุยอวดกำไรและมี “ผู้เชี่ยวชาญ” คอยแนะนำ เหยื่อสมัครแพลตฟอร์มปลอมที่แสดงกำไรสูง แต่เมื่อจะถอนเงินกลับถอนไม่ได้ หรือถูกเรียกค่าดำเนินการเพิ่ม",
+    "en": "Scammers buy Facebook ads for gold futures from a famous gold shop, stocks or crypto, and pull people into LINE groups where planted members boast of profits and an “expert” gives tips. Victims sign up on a fake platform showing big gains, but cannot withdraw or are asked for more fees first."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "โฆษณาลงทุนบนเฟซบุ๊กใช้ชื่อร้านทองหรือบริษัทดัง",
+        "en": "A Facebook investment ad uses a famous gold shop's or company's name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "กลุ่มไลน์มีคนอวดกำไรและ “ผู้เชี่ยวชาญ” แนะนำ",
+        "en": "A LINE group where people boast of profits and an “expert” gives advice."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "th": "ให้สมัครแพลตฟอร์มและโอนเงินเข้าบัญชีบุคคล",
+        "en": "You sign up on a platform and pay into personal accounts."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "th": "ถอนเงินไม่ได้ ถูกให้จ่ายค่าดำเนินการหรือภาษีก่อน",
+        "en": "You can't withdraw and are told to pay fees or tax first."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "ลงทุนทองคำออนไลน์กับร้านทองชั้นนำ เริ่มต้นเพียง 1,000 บาท กำไรวันละ 5–10% มีทีมผู้เชี่ยวชาญดูแลทุกขั้นตอน กดลิงก์เพื่อเข้ากลุ่มไลน์ VIP [ลิงก์]",
+        "en": "Invest in gold online with a leading gold shop from just 1,000 baht, 5–10% profit a day, with an expert team at every step. Click to join our VIP LINE group [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "th": "ยอดกำไรในพอร์ตของคุณตอนนี้ 312,000 บาทค่ะ แต่ก่อนถอนต้องชำระค่าธรรมเนียมการถอนและภาษี 10% เข้าบัญชีที่แอดมินแจ้งก่อน ระบบถึงจะปลดล็อกให้",
+        "en": "Your portfolio now shows a 312,000-baht profit. Before withdrawing you must pay a 10% withdrawal fee and tax into the account admin gives you; then the system will unlock it."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "โฆษณาลงทุนทองคำร้านทองดังในเฟซบุ๊ก",
+      "กลุ่มไลน์ลงทุนมีอาจารย์แนะนำหุ้น",
+      "กำไรเยอะแต่ถอนเงินไม่ได้",
+      "ต้องจ่ายค่าธรรมเนียมก่อนถอนกำไร",
+      "ลงทุนคริปโตผ่านแพลตฟอร์มที่แอดมินส่งมา"
+    ],
+    "en": [
+      "a facebook ad to invest in gold with a famous gold shop",
+      "a line investment group with a teacher giving stock tips",
+      "big profits but i can't withdraw",
+      "had to pay a fee before withdrawing my profit",
+      "invested in crypto on a platform the admin sent me"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "th": [
+      "ผลตอบแทนสูงและเร็วเกินจริง",
+      "โอนเงินลงทุนเข้าบัญชีบุคคลธรรมดา",
+      "ต้องจ่ายค่าธรรมเนียมหรือภาษีก่อนถอนกำไร"
+    ],
+    "en": [
+      "Returns that are too high and too fast.",
+      "Paying “investments” into a private person's account.",
+      "Having to pay fees or tax before taking out profits."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "หยุดโอนเงิน ไม่จ่าย “ค่าปลดล็อก” ใด ๆ",
+      "ก่อนลงทุน ตรวจสอบเองว่าบริษัทได้รับอนุญาตจากหน่วยงานทางการจริง ไม่ใช่แค่ใช้ชื่อร้านหรือบริษัทดัง",
+      "โทร 1441 เพื่ออายัดบัญชีที่รับเงิน แล้วแจ้งความ"
+    ],
+    "en": [
+      "Stop paying, and never pay any “unlock” fee.",
+      "Before investing, check yourself that the firm is really licensed, not just using a famous name.",
+      "Call 1441 to freeze the receiving accounts, then file a report."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/thaipoliceonline",
+    "th/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "รวบเครือข่ายชักชวนลงทุนซื้อขายทองคำ",
+      "publisher": "แนวหน้า",
+      "url": "https://www.naewna.com/local/915981",
+      "date": "2025-09-22"
+    },
+    {
+      "title": "ต้องรู้! 'ทอง' ราคาพุ่งเก็งกำไร ระวังหลอกลงทุน",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1199955",
+      "date": "2025-09-23"
+    },
+    {
+      "title": "แชทไลน์ชวนร่วมลงทุนกู้เงิน เหยื่อหลงกล",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1236945",
+      "date": "2026-06-04"
+    }
+  ],
+  "story": {
+    "th": "ผู้เสียหายเห็นโฆษณาบนเฟซบุ๊กชวนลงทุนทองคำล่วงหน้าของร้านทองชื่อดัง กดลิงก์แล้วถูกดึงเข้ากลุ่มไลน์ที่มีสมาชิกคุยสร้างความน่าเชื่อถือ เขาโอนเงินรวม 722,996 บาทแล้วถอนไม่ได้ ตำรวจไซเบอร์จับผู้ร่วมขบวนการได้ในเดือนกันยายน 2568",
+    "en": "A victim saw a Facebook ad for gold futures from a famous gold shop, clicked and was pulled into a LINE group whose members talked it up. He transferred 722,996 baht in all and could not withdraw. Cyber police arrested a member of the network in September 2025."
+  },
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,125 @@
+{
+  "id": "th/unordered-cod-parcel",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "in-person"
+  ],
+  "sender": {
+    "th": "พนักงานส่งพัสดุที่นำกล่องเก็บเงินปลายทางมาส่ง ทั้งที่คุณไม่ได้สั่ง",
+    "en": "A courier bringing a cash-on-delivery parcel you never ordered"
+  },
+  "name": {
+    "th": "พัสดุเก็บเงินปลายทางที่ไม่ได้สั่ง",
+    "en": "Cash-on-delivery parcel you never ordered"
+  },
+  "how": {
+    "th": "แก๊งมิจฉาชีพใช้ฐานข้อมูลชื่อที่อยู่ของคนจำนวนมาก ส่งพัสดุเก็บเงินปลายทางที่ไม่ได้สั่งไปให้ โดยหวังว่าคนในบ้านจะจ่ายเงินรับไว้เพราะคิดว่ามีคนในบ้านสั่ง ข้างในเป็นของราคาถูกหรือของที่ไม่ตรงกับราคา ตำรวจไซเบอร์ทลายโกดังแก๊งนี้ได้หลายแห่ง",
+    "en": "Gangs use databases of names and addresses to send cash-on-delivery parcels nobody ordered, hoping someone at home will pay because they assume a relative ordered it. Inside is something cheap or not worth the price. Cyber police have raided several of these warehouses."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "พนักงานส่งของนำพัสดุเก็บเงินปลายทางมาส่ง ชื่อที่อยู่ถูกต้อง",
+        "en": "A courier brings a cash-on-delivery parcel with your correct name and address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "คุณหรือคนในบ้านจำไม่ได้ว่าสั่ง แต่ยอดเงินไม่มาก",
+        "en": "Neither you nor anyone at home remembers ordering, but the amount is small."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "th": "จ่ายเงินรับไว้ ข้างในเป็นของราคาถูกหรือไม่ตรงปก",
+        "en": "You pay, and inside is something cheap or not as described."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "พนักงานส่งของ: พัสดุเก็บเงินปลายทางของคุณสมชายครับ ยอด 590 บาท จ่ายเงินสดหรือโอนก็ได้ครับ รีบนิดนึงนะครับ ยังมีอีกหลายบ้าน",
+        "en": "Courier: Cash-on-delivery parcel for Mr Somchai, 590 baht. Cash or transfer is fine. Could you be quick, I have lots more houses."
+      },
+      "channel": "in-person"
+    },
+    {
+      "text": {
+        "th": "แม่ เมื่อกี้มีพัสดุเก็บปลายทาง 450 บาทมาส่ง บอกว่าเป็นชื่อแม่ หนูจ่ายไปแล้วนะ แต่ข้างในเป็นแค่ไฟฉายอันเล็ก ๆ แม่สั่งไว้หรือเปล่า",
+        "en": "Mum, a 450-baht cash-on-delivery parcel just came in your name. I paid it, but there's only a small torch inside. Did you order it?"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "พัสดุเก็บเงินปลายทางที่ไม่ได้สั่ง",
+      "จ่ายเงินรับของแล้วข้างในเป็นของไม่มีค่า",
+      "ของมาส่งชื่อเราแต่ไม่มีใครในบ้านสั่ง",
+      "เก็บเงินปลายทางแล้วของไม่ตรงปก",
+      "คนส่งของเร่งให้จ่ายเงินพัสดุ"
+    ],
+    "en": [
+      "a cash on delivery parcel i never ordered",
+      "paid for a parcel and there was junk inside",
+      "a parcel in my name that nobody at home ordered",
+      "paid cash on delivery and the item was not as described",
+      "the courier rushed me to pay for a parcel"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "th": [
+      "พัสดุที่จำไม่ได้ว่าสั่ง แม้ชื่อที่อยู่ถูกต้อง",
+      "ถูกเร่งให้จ่ายก่อนดูของ"
+    ],
+    "en": [
+      "A parcel you don't remember ordering, even with the right name and address.",
+      "Being rushed to pay before checking."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ถามคนในบ้านก่อนจ่ายทุกครั้ง ถ้าไม่มีใครสั่ง ปฏิเสธการรับ",
+      "ดูเลขพัสดุและชื่อร้านในแอปของขนส่ง",
+      "ถ้าจ่ายไปแล้ว ติดต่อขนส่งทันทีและแจ้งความออนไลน์"
+    ],
+    "en": [
+      "Always ask the household before paying; if nobody ordered it, refuse the parcel.",
+      "Look up the tracking number and shop name in the courier's app.",
+      "If you paid, contact the courier at once and report it online."
+    ]
+  },
+  "reportTo": [
+    "th/thaipoliceonline",
+    "th/ocpb-1166"
+  ],
+  "sources": [
+    {
+      "title": "รวบขบวนการ ส่งพัสดุหลอกเหยื่อ เก็บเงินปลายทาง รายได้เฉลี่ย 5 แสนบาทต่อเดือน",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2892630",
+      "date": "2025-10-31"
+    },
+    {
+      "title": "ทลายโกดังพัสดุเถื่อน ลวงส่งของเก็บเงินปลายทาง",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2891251",
+      "date": "2025-10-25"
+    }
+  ],
+  "story": {
+    "th": "วันที่ 25 ต.ค. 2568 ตำรวจไซเบอร์ทลายโกดังพัสดุ 3 แห่งที่บางบ่อ สมุทรปราการ ที่ส่งของเก็บเงินปลายทางลวงประชาชนและเปิดเพจขายของไม่ตรงปก ผู้ต้องหาให้การว่าทำมา 1 ปี และพบฐานข้อมูลที่อยู่นับหมื่นรายชื่อ",
+    "en": "On 25 October 2025 cyber police raided 3 parcel warehouses in Bang Bo, Samut Prakan, that sent people unordered cash-on-delivery parcels and ran shop pages selling items not as described. The suspects said they had done it for a year, and police found a database of tens of thousands of addresses."
+  },
+  "updated": "2026-11-18"
+}

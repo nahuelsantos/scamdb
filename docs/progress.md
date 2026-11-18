@@ -4,6 +4,14 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Thailand:** 18 entries in Thai, 7 contacts (police 191, AOC 1441, thaipoliceonline, Bank of Thailand 1213, NBTC
+  1200, OCPB 1166), 22 brands, 22 labelled and 8 real messages. Two engine changes, both needed for any script
+  written without spaces between words: catalogue phrases in Thai, Lao, Khmer, Burmese, Chinese or Japanese now
+  match as substrings, scored by the longest stretch they share with the message (they never matched before:
+  phrase matching needed spaces around a phrase); and Matcher 1.29.0 adds a Thai block whose patterns are folded the
+  way `normalize()` folds Thai (tone marks stripped). Thailand: 0% → 100% of labelled scams caught and 83% called
+  "scam", 1 → 0 false alarms; real 0 → 7 of 8 caught; every other country and the private set unchanged.
+
 - **Vietnam:** 17 entries in Vietnamese, 7 contacts (police 113, the C02 fraud line, VNeID reporting, NCSC, 5656
   spam, consumer 1800 6838), 25 brands, 22 labelled and 4 real messages. Matcher 1.28.0 adds a Vietnamese block
   (on diacritic-folded text: "đọc lại cho em" code requests, "cài ứng dụng", "cho anh mượn", "chuyển khoản trước",

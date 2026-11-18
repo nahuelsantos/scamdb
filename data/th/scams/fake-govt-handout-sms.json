@@ -1,0 +1,146 @@
+{
+  "id": "th/fake-govt-handout-sms",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "th": "SMS หรือไลน์ที่อ้างโครงการรัฐ เช่น ดิจิทัลวอลเล็ต 10,000 บาท คนละครึ่ง หรือไทยช่วยไทยพลัส",
+    "en": "A text or LINE message citing a government scheme such as the 10,000-baht digital wallet, Khon La Khrueng or Thai Chuay Thai Plus"
+  },
+  "name": {
+    "th": "SMS โครงการรัฐปลอม: กดลิงก์รับเงินดิจิทัลหรือเงินช่วยเหลือ",
+    "en": "Fake government-scheme text: click to claim digital money or a handout"
+  },
+  "how": {
+    "th": "ทุกครั้งที่รัฐมีโครงการแจกเงิน มิจฉาชีพส่ง SMS ว่าคุณได้รับเงินดิจิทัล 10,000 บาท หรือรับเงินวันละ 900 บาท พร้อมลิงก์ให้แอดไลน์ ลงทะเบียน หรือโหลดแอปปลอมชื่อคล้ายแอปรัฐ เช่น “ทางรัฐ” หรือ ThaiD แล้วขอข้อมูลส่วนตัวหรือหลอกให้ติดตั้งแอปดูดเงิน โครงการจริงลงทะเบียนผ่านแอปเป๋าตังหรือแอปทางรัฐเท่านั้น และหน่วยงานรัฐไม่ส่ง SMS แนบลิงก์",
+    "en": "Whenever the government runs a handout, scammers text that you've received 10,000 baht in digital money or 900 baht a day, with a link to add a LINE account, register or download a fake app named like a government one, such as “Tang Rat” or ThaiD, then take your personal details or trick you into installing a money-draining app. Real schemes only register through the Paotang or Tang Rat apps, and government agencies don't send texts with links."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "SMS แจ้งว่าคุณได้รับเงินจากโครงการรัฐ",
+        "en": "A text says you have received money from a government scheme."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "th": "ลิงก์ให้แอดไลน์ ลงทะเบียน หรือโหลดแอปชื่อคล้ายแอปรัฐ",
+        "en": "A link to add LINE, register or download an app named like a government app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "th": "ขอข้อมูลส่วนตัว บัตรประชาชน หรือให้ติดตั้งแอป",
+        "en": "It asks for personal and ID-card details or an app install."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "th": "เร่งว่าต้องรีบรับสิทธิ์ก่อนหมดเขต",
+        "en": "It rushes you to claim before the deadline."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "แจ้งเตือน: ท่านได้รับสิทธิ์เงินดิจิทัล 10,000 บาท ยืนยันตัวตนเพื่อรับเงินภายในวันนี้ เพิ่มเพื่อนเจ้าหน้าที่ [ลิงก์]",
+        "en": "Notice: you are entitled to 10,000 baht in digital money. Verify your identity to receive it today. Add our officer [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "th": "ไทยช่วยไทยพลัส รับเงิน 900 บาท/วัน ลงทะเบียนรอบเพิ่มเติม เหลือสิทธิ์อีกไม่มาก กดเลย [ลิงก์]",
+        "en": "Thai Chuay Thai Plus: get 900 baht a day, extra registration round, few places left, click now [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "sms บอกได้รับเงินดิจิทัลหนึ่งหมื่น",
+      "ลิงก์ลงทะเบียนไทยช่วยไทยพลัสใน sms",
+      "แอปทางรัฐปลอมให้กรอกข้อมูล",
+      "กดรับเงินวันละ 900 บาทผ่านลิงก์",
+      "แอดไลน์ thaid เพื่อรับเงินโครงการรัฐ"
+    ],
+    "en": [
+      "a text said i got ten thousand baht in digital money",
+      "a registration link for thai chuay thai plus in a text",
+      "a fake tang rat app asked for my details",
+      "click to get 900 baht a day through a link",
+      "added a thaid line account to get government money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "remote_access",
+    "urgency"
+  ],
+  "redFlags": {
+    "th": [
+      "SMS แจกเงินจากรัฐที่มีลิงก์",
+      "แอปหรือไลน์ชื่อคล้ายหน่วยงานรัฐที่ส่งมาให้",
+      "ขอเลขบัตรประชาชน รหัส หรือให้ติดตั้งแอป"
+    ],
+    "en": [
+      "A government-money text with a link.",
+      "An app or LINE account named like a government agency sent to you.",
+      "Requests for your ID number, codes or an app install."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ไม่กดลิงก์ ตรวจสอบสิทธิ์ในแอปเป๋าตังหรือแอปทางรัฐที่โหลดจาก App Store หรือ Play Store เท่านั้น",
+      "ลบข้อความทิ้ง และเตือนพ่อแม่หรือผู้สูงอายุในบ้าน",
+      "ถ้ากรอกข้อมูลหรือติดตั้งแอปไปแล้ว โทรแจ้งธนาคารและ 1441"
+    ],
+    "en": [
+      "Don't click. Check your rights only in the Paotang or Tang Rat apps from the App Store or Play Store.",
+      "Delete the text and warn your parents or older relatives.",
+      "If you entered details or installed an app, call your bank and 1441."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/your-bank",
+    "th/nbtc-1200"
+  ],
+  "sources": [
+    {
+      "title": "ดีอี เตือนข่าวปลอม 'กดรับเงินไทยช่วยไทยพลัส 900 บ./วัน ผ่านลิงก์ SMS'",
+      "publisher": "ไทยโพสต์",
+      "url": "https://www.thaipost.net/public-relations-news/1011123/",
+      "date": "2026-06-09"
+    },
+    {
+      "title": "เตือนภัย! มิจฉาชีพส่ง SMS หลอกลวงให้กดลิงก์รับเงินโครงการคนละครึ่ง-ไทยช่วยไทยพลัส",
+      "publisher": "Cofact",
+      "url": "https://blog.cofact.org/th/fact-check-sms-01062026/",
+      "date": "2026-06-01"
+    },
+    {
+      "title": "“ทางรัฐ” ปลอมระบาด \"ดีอี\" เตือน มิจฯ เล็งหลอกเงินหมื่นเฟส 3",
+      "publisher": "Thai PBS",
+      "url": "https://www.thaipbs.or.th/now/content/2451",
+      "date": "2025-03-12"
+    },
+    {
+      "title": "ระบาด! มิจฉาชีพส่ง SMS แจ้งได้รับเงินดิจิทัล 1 หมื่น หลอกติดตั้งแอปดูดเงิน",
+      "publisher": "Thai PBS",
+      "url": "https://www.thaipbs.or.th/news/content/330944",
+      "date": "2023-08-24"
+    }
+  ],
+  "updated": "2026-11-18"
+}

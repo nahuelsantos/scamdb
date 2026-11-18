@@ -1,0 +1,150 @@
+{
+  "id": "th/mule-account-recruitment",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "social",
+    "in-person"
+  ],
+  "sender": {
+    "th": "คนรู้จัก เพื่อนร่วมงาน หรือโพสต์หางานที่เสนอเงินให้เปิดบัญชีหรือ “ยืม” บัญชีธนาคาร",
+    "en": "An acquaintance, co-worker or job post offering money to open or “lend” a bank account"
+  },
+  "name": {
+    "th": "ชวนรับจ้างเปิดบัญชีหรือให้ยืมบัญชี (บัญชีม้า)",
+    "en": "Paid to open or lend a bank account (mule account, บัญชีม้า)"
+  },
+  "how": {
+    "th": "แก๊งมิจฉาชีพจ้างคนตกงานหรือคนที่ต้องการเงิน ให้เปิดบัญชีธนาคารแล้วส่งสมุด บัตร ATM และรหัสให้ แลกกับเงินไม่กี่พันบาท บางครั้งมีคนประกบพาไปถอนเงินที่เคาน์เตอร์ บัญชีนั้นถูกใช้รับเงินจากเหยื่อแก๊งคอลเซ็นเตอร์ หลอกลงทุน หรือหลอกขายของ เจ้าของบัญชีถูกออกหมายจับและดำเนินคดี แม้อ้างว่าไม่รู้ว่าเอาไปทำอะไร การเปิดหรือให้คนอื่นใช้บัญชีของตนเพื่อกระทำผิดมีโทษจำคุก",
+    "en": "Gangs pay jobless people or anyone short of money a few thousand baht to open a bank account and hand over the book, ATM card and passwords; sometimes a handler takes them to withdraw cash at the counter. The account is then used to collect money from victims of call-centre, investment or shopping scams. The account owner gets an arrest warrant and is prosecuted, even if they say they didn't know what it was for. Opening or letting others use your account for crime carries a prison sentence."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "มีคนเสนอเงินให้เปิดบัญชีใหม่หรือให้ยืมบัญชี",
+        "en": "Someone offers you money to open a new account or lend yours."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "th": "ให้ส่งสมุดบัญชี บัตร ATM รหัส หรือเปิดแอปธนาคารให้",
+        "en": "They ask for the passbook, ATM card, PIN, or for you to set up the banking app for them."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "th": "บางครั้งมีคนพาไปถอนเงินสดที่ธนาคารแล้วรับเงินไป",
+        "en": "Sometimes a handler takes you to withdraw cash at the bank and takes it."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "th": "บอกว่าไม่ผิดกฎหมายและห้ามบอกใคร",
+        "en": "They say it's legal and tell you not to tell anyone."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "งานง่าย ๆ ไม่ต้องลงทุน แค่เปิดบัญชีธนาคารใหม่ 1 บัญชี ส่งสมุดกับบัตร ATM ให้ทีมงาน รับทันที 3,000 บาท ใช้แค่รับยอดขายของบริษัท ไม่ผิดกฎหมายแน่นอน สนใจทักแชต",
+        "en": "Easy work, no investment: open one new bank account and send the passbook and ATM card to the team, get 3,000 baht straight away. It's only used to receive company sales, totally legal. Message me if interested."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "th": "พี่ขอยืมบัญชีน้องรับเงินลูกค้าแค่อาทิตย์เดียวนะ บัญชีพี่โดนล็อกอยู่ เดี๋ยวให้ค่าขนม 2,000 พรุ่งนี้พี่ขับรถพาไปถอนเงินที่ธนาคารเอง อย่าบอกใครนะ",
+        "en": "Can I borrow your account to take customer payments for just a week? Mine is locked. I'll give you 2,000 baht pocket money; tomorrow I'll drive you to the bank to withdraw it. Don't tell anyone."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "มีคนจ้างให้เปิดบัญชีธนาคาร",
+      "เพื่อนขอยืมบัญชีรับเงินแล้วโดนหมายเรียก",
+      "รับจ้างเปิดบัญชีได้เงินสามพัน",
+      "ส่งบัตร atm กับรหัสให้คนอื่น",
+      "โดนข้อหาบัญชีม้าทั้งที่ไม่รู้"
+    ],
+    "en": [
+      "someone paid me to open a bank account",
+      "a friend borrowed my account and i got a police summons",
+      "got three thousand baht to open an account",
+      "gave my atm card and pin to someone else",
+      "charged over a mule account without knowing"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "asks_for_code",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "th": [
+      "ได้เงินเพียงแค่เปิดบัญชีหรือให้ยืมบัญชี",
+      "ขอสมุด บัตร ATM รหัส หรือ OTP ของบัญชีคุณ",
+      "มีเงินแปลก ๆ เข้าบัญชีแล้วมีคนให้ถอนหรือโอนต่อ"
+    ],
+    "en": [
+      "Being paid just to open or lend an account.",
+      "Being asked for your passbook, ATM card, PIN or OTP.",
+      "Strange money landing in your account and someone telling you to withdraw or forward it."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ปฏิเสธทุกกรณี บัญชีเป็นชื่อคุณ คุณต้องรับผิดเอง",
+      "ถ้าให้ไปแล้ว ติดต่อธนาคารให้ปิดบัญชีและเปลี่ยนรหัสทันที",
+      "ไปแจ้งความไว้เป็นหลักฐาน พร้อมแชตและหลักฐานการติดต่อ"
+    ],
+    "en": [
+      "Always say no: the account is in your name and you answer for it.",
+      "If you already handed it over, ask your bank to close the account and change all codes now.",
+      "File a police report for the record, with the chats and contact details."
+    ]
+  },
+  "reportTo": [
+    "th/your-bank",
+    "th/police-191",
+    "th/thaipoliceonline"
+  ],
+  "sources": [
+    {
+      "title": "โอนเงิน 5 ล้าน เหยื่ออื้อ มิจฯอ้างตำรวจไซเบอร์",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/1255147",
+      "date": "2026-10-06"
+    },
+    {
+      "title": "ตร.ไซเบอร์รวบ 8 ผู้คุมบัญชีม้า ประกบถอนเงิน",
+      "publisher": "ไทยโพสต์",
+      "url": "https://www.thaipost.net/all-news/1091623/",
+      "date": "2026-10-20"
+    },
+    {
+      "title": "คอมมานโด รวบสาวบัญชีม้า เอี่ยวแก๊งหลอกลงทุนผ่าน Tinder",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2928331",
+      "date": "2026-04-23"
+    },
+    {
+      "title": "เตือน! รับจ้างเปิดบัญชีม้า เจอโทษหนักจำคุก-ปรับ",
+      "publisher": "PPTV",
+      "url": "https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/217913",
+      "date": "2024-02-24"
+    }
+  ],
+  "story": {
+    "th": "ชายคนหนึ่งให้การว่าตกงานเมื่อปี 2564 จึงรับจ้างเปิดบัญชีธนาคารแลกกับเงิน 3,000 บาท บัญชีนั้นถูกใช้รับเงินจากเพจปลอมที่อ้างเป็นตำรวจไซเบอร์ช่วยตามเงินคืน ความเสียหายรวมกว่า 5 ล้านบาท เขาถูกจับตามหมายจับในข้อหาฉ้อโกงและเปิดบัญชีให้ผู้อื่นใช้",
+    "en": "A man told police he lost his job in 2021 and agreed to open a bank account for 3,000 baht. The account was used to receive money from fake “cyber police” pages promising to recover lost money, with losses over 5 million baht. He was arrested on warrants for fraud and letting others use his account."
+  },
+  "updated": "2026-11-18"
+}

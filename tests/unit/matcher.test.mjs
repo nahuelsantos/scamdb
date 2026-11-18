@@ -619,3 +619,13 @@ test('1.28.0: Vietnamese rules, only where Vietnamese is spoken', async () => {
   assert.ok(!readSigns('Ma OTP cua Quy khach la 538217. Tuyet doi KHONG cung cap ma OTP cho bat ky ai', ['vi']).includes('asks_for_code'));
   assert.ok(!readSigns('cho anh muon chuyen vao so tai khoan nay gap', ['es', 'en']).includes('money_request'), 'Vietnamese rules only where Vietnamese is spoken');
 });
+test('1.29.0: Thai: phrases match without spaces, signs survive tone-mark folding', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const entry = { id: 'th/x', country: 'th', lang: 'th', phrases: { th: ['การไฟฟ้าโทรมาบอกจะคืนเงินประกันมิเตอร์'] } };
+  const r = matchMessage('ติดต่อจากการไฟฟ้า จะเปลี่ยนให้ฟรีและคืนเงินประกันมิเตอร์ 2,500 บาท', [entry], { country: 'th' });
+  assert.equal(r.matches[0]?.id, 'th/x', 'a long shared stretch matches though Thai has no word spaces');
+  const sms = readSigns('[KBank] แอปพลิเคชันของท่านหมดอายุ กรุณาอัปเดตภายใน 24 ชั่วโมง มิฉะนั้นบัญชีจะถูกระงับ [ลิงก์]', ['th']);
+  for (const s of ['urgency', 'unknown_link']) assert.ok(sms.includes(s), s);
+  assert.ok(!readSigns('รหัส OTP ของคุณคือ 482913 ห้ามบอกรหัสนี้แก่ผู้อื่น', ['th']).includes('asks_for_code'));
+  assert.ok(!readSigns('ด่วน ลิงก์', ['es', 'en']).includes('urgency'), 'Thai rules only where Thai is spoken');
+});

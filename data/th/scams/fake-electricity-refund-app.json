@@ -1,0 +1,150 @@
+{
+  "id": "th/fake-electricity-refund-app",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "th": "คนที่อ้างเป็นเจ้าหน้าที่การไฟฟ้า (PEA หรือ MEA) และไลน์ที่ใช้โลโก้การไฟฟ้า",
+    "en": "Someone posing as electricity authority staff (PEA or MEA) and a LINE account with its logo"
+  },
+  "name": {
+    "th": "การไฟฟ้าปลอม: คืนเงินประกันมิเตอร์ ให้แอดไลน์และติดตั้งแอป",
+    "en": "Fake electricity authority: meter-deposit refund, add LINE and install an app"
+  },
+  "how": {
+    "th": "มิจฉาชีพโทรหรือส่ง SMS อ้างเป็นการไฟฟ้า บอกว่าจะเปลี่ยนมิเตอร์ให้ฟรีหรือคืนเงินประกันมิเตอร์ เช่น 2,500 บาท แล้วให้แอดไลน์ที่ใช้โลโก้การไฟฟ้า จากนั้นส่งลิงก์ให้ติดตั้งแอปการไฟฟ้าปลอม ให้แชร์หน้าจอ ให้เปลี่ยนภาษามือถือ หรือให้สแกน QR Code แล้วใช้รหัสที่เหยื่อกรอกโอนเงินออกจากบัญชี การไฟฟ้าไม่คืนเงินผ่านไลน์ส่วนตัว ลิงก์ หรือ QR Code และไม่ส่งลิงก์ให้ติดตั้งแอป",
+    "en": "Scammers call or text claiming to be the electricity authority, offering a free meter change or a refund of the meter deposit, for example 2,500 baht, and ask you to add a LINE account with the authority's logo. They then send a link to install a fake electricity app, ask you to share your screen, switch your phone's language or scan a QR code, and use the codes you type to move money out of your account. The electricity authorities never refund through a personal LINE chat, a link or a QR code, and never send links to install apps."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "สายหรือ SMS จาก “การไฟฟ้า” บอกว่าจะเปลี่ยนมิเตอร์ฟรีหรือคืนเงินประกันมิเตอร์",
+        "en": "A call or text from the “electricity authority” offers a free meter change or a deposit refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "ให้แอดไลน์ที่ใช้โลโก้การไฟฟ้าเพื่อ “รับเงินคืน”",
+        "en": "You are told to add a LINE account with the authority's logo to “get the refund”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "th": "ส่งลิงก์ให้ติดตั้งแอป ให้แชร์หน้าจอ หรือเปลี่ยนภาษามือถือ",
+        "en": "They send a link to install an app, or ask you to share your screen or switch your phone's language."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "th": "ให้ตั้งหรือกดรหัสหลายครั้ง แล้วเงินในบัญชีถูกโอนออก",
+        "en": "You are asked to set or type codes several times, then money leaves your account."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "PEA แจ้ง: ท่านมีสิทธิ์รับเงินคืนค่าประกันการใช้ไฟฟ้า 3,500 บาท ตามมาตรการช่วยเหลือเร่งด่วน กรุณาเพิ่มเพื่อนเจ้าหน้าที่ภายในวันนี้ [ลิงก์]",
+        "en": "PEA notice: you are entitled to a 3,500-baht electricity deposit refund under the urgent relief measure. Please add our officer as a friend today [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "th": "สวัสดีค่ะ ติดต่อจากการไฟฟ้า มิเตอร์บ้านคุณเป็นรุ่นเก่า เราจะเปลี่ยนให้ฟรีและคืนเงินประกันมิเตอร์ 2,500 บาท รบกวนแอดไลน์เจ้าหน้าที่ แล้วติดตั้งแอปการไฟฟ้าเวอร์ชันใหม่ตามลิงก์ที่ส่งให้นะคะ",
+        "en": "Hello, this is the electricity authority. Your meter is an old model; we will replace it for free and refund your 2,500-baht meter deposit. Please add our officer on LINE and install the new version of the electricity app from the link we send."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "การไฟฟ้าโทรมาบอกจะคืนเงินประกันมิเตอร์",
+      "ให้แอดไลน์การไฟฟ้าเพื่อรับเงินคืน",
+      "ส่งลิงก์ให้โหลดแอปการไฟฟ้า",
+      "เจ้าหน้าที่การไฟฟ้าให้แชร์หน้าจอโทรศัพท์",
+      "ให้เปลี่ยนภาษามือถือเพื่อรับเงินคืนค่ามิเตอร์",
+      "เปลี่ยนมิเตอร์ฟรีแล้วได้เงินคืน"
+    ],
+    "en": [
+      "the electricity authority called about a meter deposit refund",
+      "told to add the electricity authority on line for a refund",
+      "they sent a link to download an electricity app",
+      "an electricity officer asked me to share my phone screen",
+      "told to change my phone language to get the meter refund",
+      "a free meter change with money back"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "remote_access",
+    "asks_for_code",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "th": [
+      "การไฟฟ้าโทรหรือส่ง SMS มาบอกว่าจะคืนเงิน",
+      "ให้แอดไลน์ส่วนตัว ติดตั้งแอปจากลิงก์ หรือแชร์หน้าจอ",
+      "ให้เปลี่ยนภาษามือถือหรือกดรหัสในแอปธนาคารเพื่อ “รับเงินคืน”"
+    ],
+    "en": [
+      "The electricity authority calling or texting to give you money back.",
+      "Being asked to add a personal LINE account, install an app from a link or share your screen.",
+      "Being told to switch your phone's language or type codes in your bank app to “receive a refund”."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "วางสาย ไม่แอดไลน์ ไม่กดลิงก์ ไม่สแกน QR Code",
+      "ตรวจสอบกับการไฟฟ้าเองทางเบอร์ทางการ (PEA 1129, MEA 1130) หรือแอปที่โหลดจาก App Store หรือ Play Store",
+      "ถ้าติดตั้งแอปหรือกดรหัสไปแล้ว ปิดอินเทอร์เน็ต โทรแจ้งธนาคารและ 1441 ทันที"
+    ],
+    "en": [
+      "Hang up; don't add LINE, open links or scan QR codes.",
+      "Check with the authority yourself on its official line (PEA 1129, MEA 1130) or in its app from the App Store or Play Store.",
+      "If you installed an app or typed codes, turn off the internet and call your bank and 1441 at once."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/your-bank",
+    "th/thaipoliceonline"
+  ],
+  "sources": [
+    {
+      "title": "เตือนภัยไซเบอร์ข้ามชาติยกเคส Binance ถูกแฮก ยันยังไม่พบระบบดูดเงินเอง",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2971376",
+      "date": "2026-11-09"
+    },
+    {
+      "title": "MEA เตือนระวังมิจฉาชีพปลอมใบเสร็จ อ้างคืนเงินค่ามิเตอร์ดิจิทัล",
+      "publisher": "ฐานเศรษฐกิจ",
+      "url": "https://www.thansettakij.com/social-biz/671942",
+      "date": "2026-10-21"
+    },
+    {
+      "title": "เตือนภัยมิจฉาชีพ ปี 2569! ระวัง “มุกลวงใหม่” มาแรง “มุกลวงเก่า” หนักกว่าเดิม",
+      "publisher": "Thai PBS Verify",
+      "url": "https://www.thaipbs.or.th/verify/article/content/7718",
+      "date": "2025-12-16"
+    },
+    {
+      "title": "กลับมาอีกแล้ว มิจฯ ลวง “การไฟฟ้า” คืนเงินประกันมิเตอร์ 2,500 บาท หากแอดไลน์",
+      "publisher": "Thai PBS Verify",
+      "url": "https://www.thaipbs.or.th/verify/news/content/5328",
+      "date": "2025-09-10"
+    }
+  ],
+  "updated": "2026-11-18"
+}

@@ -4,7 +4,7 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
-export const VERSION = '1.28.0';
+export const VERSION = '1.29.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
@@ -46,16 +46,38 @@ function prepared(entry, translated) {
   if (!langs) {
     const lists = { ...(translated ? entry.phrasesTranslated ?? {} : {}), ...(entry.phrases ?? {}) };
     langs = Object.keys(lists).map((l) => [...(lists[l] ?? []), entry.name?.[l] ?? ''].map(normalize).filter(Boolean)
-      .map((p) => ({ p: ` ${p} `, pw: tokens(p) })).filter((x) => x.pw.length));
+      .map((p) => ({ p: ` ${p} `, pw: tokens(p), joined: UNSPACED.test(p) })).filter((x) => x.pw.length));
     cache.set(entry, langs);
   }
   return langs;
 }
 
+// Scripts written without spaces between words (Thai, Lao, Khmer, Burmese, Chinese, Japanese): a phrase or one of
+// its space-separated chunks counts when it appears anywhere in the text, not only between spaces.
+const UNSPACED = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF]/u;
+
+/** Length of the longest substring a and b share (a is a short phrase; dynamic programming over two rows). */
+function longestShared(a, b) {
+  let best = 0, prev = new Array(a.length + 1).fill(0);
+  for (let j = 1; j <= b.length; j++) {
+    const cur = new Array(a.length + 1).fill(0);
+    for (let i = 1; i <= a.length; i++) if (a[i - 1] === b[j - 1]) { cur[i] = prev[i - 1] + 1; if (cur[i] > best) best = cur[i]; }
+    prev = cur;
+  }
+  return best;
+}
+
 function scoreLang(list, text, words) {
   const counted = new Set();
   let score = 0;
-  for (const { p, pw } of list) {
+  for (const { p, pw, joined } of list) {
+    if (joined) {
+      if (text.includes(p.trim())) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
+      // No word boundaries to compare, so score the longest stretch the phrase shares with the text.
+      const run = longestShared(p.trim(), text);
+      if (run >= 10) score += 2; else if (run >= 6) score += 1;
+      continue;
+    }
     if (pw.length > 1 && text.includes(p)) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
     const single = pw.length === 1;
     for (const w of pw) {
