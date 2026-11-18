@@ -691,3 +691,7 @@ test('"introduzca la clave 708098 para validar su compra" (3-D Secure) delivers 
     assert.ok(!readSigns(t).includes('asks_for_code'), t);
   assert.ok(readSigns('Introduzca la clave 708098 para validar y luego dictamela por telefono').includes('asks_for_code'));
 });
+test('downloading a document ("descarga tu factura") is not remote access; installing an app still is', () => {
+  assert.ok(!readSigns('Agiliza tu tiempo! Ingresa aca [link] y descarga tu factura de forma rapida y sencilla').includes('remote_access'));
+  assert.ok(readSigns('Descarga tu factura y luego instala AnyDesk').includes('remote_access'));
+});

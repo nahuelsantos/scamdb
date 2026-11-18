@@ -479,6 +479,9 @@ const DISCOUNT = /(^| )-[0-9]+([.,][0-9]+)? ?€|[0-9]+ ?% (de |en )?(dto|descue
 const PRICES_ALL = /(^| )-?[0-9]+([.,][0-9]+)? ?(€|eur|euros)|€ ?[0-9]+([.,][0-9]+)?|\$ ?[0-9]+([.,][0-9]+)?|£ ?[0-9]+([.,][0-9]+)?/g;
 const OFFICIAL_STORE = /(descarg[a-z]*|baj[a-z]*|instal[a-z]*|download|get)( (la|nuestra|tu|su|the|our|this))? (app|aplicacion)( [a-z]+){0,3} (en|desde|de|from|on|in) (la )?(google play|play store|app store|apple store)( (o|or|y|and) (google play|play store|app store|apple store))?/;
 const OFFICIAL_STORE_ALL = new RegExp(OFFICIAL_STORE.source, 'g');
+// "Descarga tu factura", "download your statement": a document, not an app to install.
+const DOC_DOWNLOAD = /(descarg[a-z]*|baj[a-z]*|download)( (tu|su|la|el|your|the))? (factura|facturas|resumen|comprobante|extracto|boleta|recibo|pdf|ticket|e ?ticket|entrada|entradas|statement|invoice|receipt|bill)\b/;
+const DOC_DOWNLOAD_ALL = new RegExp(DOC_DOWNLOAD.source, 'g');
 // A bank alert that sends you to the number on the back of your card (and carries no link) mentions an amount to
 // check, not one to pay.
 const BACK_OF_CARD = /(number|numero) (on|at) the back of (your|the) card|numero (al|en el|que aparece al|del) reverso de (tu|su|la) tarjeta|numero (no|do) verso do (seu )?cartao|numero au dos de (votre|la) carte|nummer auf der ruckseite (ihrer|der) karte|numero sul retro della (sua |tua )?carta/;
@@ -499,7 +502,7 @@ function applyContext(t, ids, signs = SIGNS) {
     if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t) || CODE_DELIVERY.test(t) || CODE_REQUESTED.test(t))) out = out.filter((id) => id !== 'asks_for_code');
   }
   if (out.includes('money_request') && DISCOUNT.test(t) && !signs.money_request.test(t.replace(PRICES_ALL, ' '))) out = out.filter((id) => id !== 'money_request');
-  if (out.includes('remote_access') && OFFICIAL_STORE.test(t) && !signs.remote_access.test(t.replace(OFFICIAL_STORE_ALL, ' '))) out = out.filter((id) => id !== 'remote_access');
+  if (out.includes('remote_access') && (OFFICIAL_STORE.test(t) || DOC_DOWNLOAD.test(t)) && !signs.remote_access.test(t.replace(OFFICIAL_STORE_ALL, ' ').replace(DOC_DOWNLOAD_ALL, ' '))) out = out.filter((id) => id !== 'remote_access');
   if (out.includes('urgency') && DUE_DATE.test(t) && !signs.urgency.test(t.replace(DUE_DATE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
   if (out.includes('urgency') && PUBLIC_ALERT.test(t) && !out.some((id) => id === 'money_request' || id === 'asks_for_code' || id === 'remote_access')) out = out.filter((id) => id !== 'urgency');
   if (out.includes('remote_access') && AGREED_SESSION.test(t)) out = out.filter((id) => id !== 'remote_access');

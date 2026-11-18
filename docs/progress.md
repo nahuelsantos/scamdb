@@ -29,6 +29,10 @@ A running record of what was built, what was measured and what we learned. Newes
   - Redactor: codes written first or with words in between, Italian "codice", masked cards (487159******7099), a
     second name after a greeting, numbers with a 00 dialling prefix (not cards), and short link endings (mov.is).
   - Real, labelled and private sets unchanged.
+  - Downloading a document ("descarga tu factura") is not remote access.
+  - **On the owner's own messages** (80 genuine, 4 scams): genuine called "scam" went from 25 to 7 (main 1.36.0 →
+    1.38.0), with the 4 scams detected exactly as before. The 7 left: 4 offers with a price, and 3 bank texts
+    "Descarga nuestra App Supervielle y empeza hoy mismo" (a scammer can write the same sentence; the AI step judges).
   - Open question for the owner: a bare price (30€, $74.167) still counts as a money request, so a genuine offer
     with a price and a link reads "scam" (3 of the owner's genuine messages). Not counting prices at all: on the real
     set 5 fewer genuine called "scam" (8 → 3 of 105), but 3 scams no longer flagged and 6 fewer called "scam".
