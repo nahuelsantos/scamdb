@@ -1,0 +1,125 @@
+{
+  "id": "id/bank-tariff-change-message",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "id": "“Bank BRI”, “BCA” atau bank lain, dengan logo bank sebagai foto profil WhatsApp",
+    "en": "“Bank BRI”, “BCA” or another bank, with the bank's logo as the WhatsApp profile picture"
+  },
+  "name": {
+    "id": "Pengumuman “perubahan tarif transfer” palsu: Rp150 ribu per bulan, konfirmasi lewat tautan",
+    "en": "Fake “transfer fee change” notice: Rp150,000 a month, confirm through a link"
+  },
+  "how": {
+    "id": "Pesan WhatsApp dengan logo bank mengirim surat yang tampak resmi: tarif transfer Rp6.500 dan BI-FAST Rp2.500 akan diganti menjadi Rp150 ribu per bulan mulai tengah malam. Nasabah yang tidak setuju diminta mengisi formulir di tautan, dan yang tidak menjawab dianggap setuju dan akan didebet otomatis. Formulirnya meminta nomor rekening, saldo dan data perbankan lain. BRI dan BCA menyatakan surat seperti itu palsu.",
+    "en": "A WhatsApp message with a bank's logo sends an official-looking letter: the Rp6,500 transfer fee and the Rp2,500 BI-FAST fee will be replaced by Rp150,000 a month from midnight. Customers who disagree must fill in a form at a link, and anyone who doesn't reply is treated as agreeing and will be debited automatically. The form asks for your account number, balance and other banking details. BRI and BCA say such letters are fake."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "WhatsApp dengan logo bank mengirim “surat pengumuman” perubahan tarif.",
+        "en": "A WhatsApp account with a bank's logo sends an “announcement letter” about new fees."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Tarif baru berlaku malam ini; jika tidak konfirmasi, Anda dianggap setuju dan didebet tiap bulan.",
+        "en": "The new fee starts tonight; if you don't confirm, you are treated as agreeing and charged every month."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "id": "Untuk menolak, Anda harus mengisi formulir di tautan.",
+        "en": "To refuse, you must fill in a form at a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Formulir meminta nomor rekening sampai jumlah saldo, data yang dipakai untuk membobol rekening.",
+        "en": "The form asks for everything from your account number to your balance, details used to break into the account."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Yth. Nasabah BRI, mulai pukul 00.00 WIB malam ini tarif transfer Rp6.500/transaksi akan diubah menjadi Rp150.000/bulan unlimited. Bila tidak setuju dan ingin tetap tarif lama, isi formulir di [tautan]. Tanpa konfirmasi, nasabah dianggap setuju dan biaya didebet otomatis.",
+        "en": "Dear BRI customer, from 00:00 tonight the Rp6,500 per-transfer fee will change to Rp150,000/month unlimited. If you disagree and want to keep the old fee, fill in the form at [tautan]. Without confirmation you are treated as agreeing and the fee is debited automatically."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "pesan bank tarif transfer jadi 150 ribu per bulan",
+      "surat perubahan tarif bri lewat whatsapp",
+      "diminta isi link kalau tidak setuju tarif baru",
+      "kalau tidak konfirmasi dianggap setuju dipotong otomatis",
+      "formulir tarif bank minta nomor rekening dan saldo"
+    ],
+    "en": [
+      "bank message says transfer fees become 150 thousand a month",
+      "letter about bri fee changes on whatsapp",
+      "asked to fill in a link if i disagree with the new fee",
+      "if i do not confirm i am charged automatically",
+      "bank fee form asks for my account number and balance"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "id": [
+      "Pengumuman tarif bank lewat WhatsApp atau SMS dengan tautan.",
+      "“Kalau tidak menjawab, dianggap setuju.”",
+      "Formulir yang menanyakan nomor rekening atau saldo."
+    ],
+    "en": [
+      "A bank fee announcement on WhatsApp or by text with a link.",
+      "“If you don't reply, you agree.”",
+      "A form that asks for your account number or balance."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Jangan isi tautannya. Bank tidak mengumumkan tarif lewat formulir di chat.",
+      "Cek tarif di aplikasi resmi bank atau tanyakan ke nomor di balik kartu Anda.",
+      "Kalau sudah mengisi data, hubungi bank sekarang untuk memblokir rekening dan ganti PIN serta kata sandi."
+    ],
+    "en": [
+      "Don't fill in the link. Banks don't announce fees through a form in a chat.",
+      "Check fees in your bank's official app or ask on the number on the back of your card.",
+      "If you filled in your details, call your bank now to block your account and change your PIN and passwords."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/iasc",
+    "id/aduannomor"
+  ],
+  "sources": [
+    {
+      "title": "Waspada Modus Penipuan Atas Nama BRI Via Whatsapp",
+      "publisher": "Republika",
+      "url": "https://ekonomi.republika.co.id/berita/sp5trg423/waspada-modus-penipuan-atas-nama-bri-via-whatsapp",
+      "date": "2024-12-27"
+    },
+    {
+      "title": "Waspada Hoaks Terbaru Perubahan Tarif Transaksi BCA",
+      "publisher": "CNBC Indonesia",
+      "url": "https://www.cnbcindonesia.com/market/20240205072930-17-511817/waspada-hoaks-terbaru-perubahan-tarif-transaksi-bca",
+      "date": "2024-02-05"
+    }
+  ],
+  "updated": "2026-11-18"
+}

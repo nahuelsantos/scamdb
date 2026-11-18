@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Indonesia:** 16 entries in Indonesian, 9 contacts (Polri, Patroli Siber, IASC, OJK 157, Satgas PASTI, Komdigi
+  number reports, cekrekening.id, BPKN), 22 labelled and 9 real messages. Matcher 1.23.0 adds an Indonesian block
+  (APK files, "[tautan]" links, "mohon dibacakan" code requests, "2x24 jam", "video call sekarang") and a "jangan
+  berikan kode ini" genuine-OTP warning. Indonesia: 8% → 92% of labelled scams called "scam", 1 → 0 false alarms;
+  every other country, the real and private sets unchanged. Real Indonesian messages: 8 of 8 caught, only 1
+  called "scam" (mostly social-media prize and fake-aid posts).
+
 - **Matcher + AI on the 215 real messages:** 95.9% of scams caught (matcher alone: 91.9%), 84.9% called "scam" (32%),
   but 6 of 43 genuine messages called "scam" (3). All six are genuine bank, courier or agency notices that read like
   the scam. A refit on the real set, held out by country, called 11 genuine messages "scam", so it was rejected and

@@ -1,0 +1,127 @@
+{
+  "id": "id/fake-iasc-officer",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "online",
+    "whatsapp",
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "id": "Situs, akun atau orang yang mengaku dari Indonesia Anti-Scam Centre (IASC) atau OJK",
+    "en": "A website, account or person claiming to be from the Indonesia Anti-Scam Centre (IASC) or OJK"
+  },
+  "name": {
+    "id": "IASC atau OJK palsu yang menghubungi korban penipuan",
+    "en": "Fake IASC or OJK contacting people who were already scammed"
+  },
+  "how": {
+    "id": "Setelah tertipu, Anda mencari cara melapor dan menemukan situs yang mengatasnamakan IASC, atau dihubungi orang yang mengaku perwakilan IASC atau OJK. Mereka menjanjikan bantuan dan meminta data pribadi, data perbankan atau uang. Satgas PASTI menyebut ini impersonation scam: laporan ke IASC hanya bisa lewat situs resmi iasc.ojk.go.id, dan informasi tentang IASC harus dicek ke Kontak OJK 157.",
+    "en": "After being scammed, you look for a way to report it and find a website using IASC's name, or someone claiming to represent IASC or OJK contacts you. They promise help and ask for personal or banking details or money. The Satgas PASTI task force calls this an impersonation scam: reports to IASC can only be made on the official site iasc.ojk.go.id, and anything about IASC should be checked with the OJK 157 line."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Anda baru saja tertipu dan mencari cara melapor atau mendapatkan uang kembali.",
+        "en": "You have just been scammed and are looking for a way to report it or get your money back."
+      }
+    },
+    {
+      "text": {
+        "id": "Situs tiruan atau “petugas IASC/OJK” menawarkan bantuan.",
+        "en": "A copycat site or an “IASC/OJK officer” offers to help."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Mereka meminta data pribadi, data rekening atau kode untuk “memproses” laporan.",
+        "en": "They ask for personal details, account details or a code to “process” your report."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "id": "Mereka meminta uang, misalnya sebagai biaya agar dana Anda “dikembalikan”.",
+        "en": "They ask for money, for example as a fee to “return” your funds."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Selamat siang, kami dari tim Indonesia Anti-Scam Centre OJK. Laporan penipuan Bapak sudah kami terima dan dana Rp18.500.000 dapat dikembalikan hari ini. Mohon kirim foto KTP, nomor rekening dan biaya verifikasi pengembalian dana Rp750.000 agar segera diproses.",
+        "en": "Good afternoon, this is the Indonesia Anti-Scam Centre OJK team. We have received your fraud report and your Rp18,500,000 can be returned today. Please send a photo of your ID card, your account number and the Rp750,000 refund verification fee so it can be processed."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "dihubungi orang mengaku dari iasc ojk",
+      "petugas ojk bisa kembalikan uang hasil penipuan",
+      "situs lapor penipuan palsu atas nama iasc",
+      "diminta biaya untuk pengembalian dana korban penipuan",
+      "setelah lapor penipuan ada yang minta data rekening"
+    ],
+    "en": [
+      "contacted by someone saying they are from iasc ojk",
+      "ojk officer says they can get my scammed money back",
+      "fake fraud reporting site using the iasc name",
+      "asked to pay a fee to get back money i lost to a scam",
+      "after reporting a scam someone asked for my account details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "id": [
+      "“IASC” atau “OJK” yang menghubungi Anda lebih dulu lewat WhatsApp atau telepon.",
+      "Situs laporan yang bukan iasc.ojk.go.id.",
+      "Biaya untuk mengembalikan uang yang hilang."
+    ],
+    "en": [
+      "“IASC” or “OJK” contacting you first on WhatsApp or by phone.",
+      "A reporting site that is not iasc.ojk.go.id.",
+      "A fee to recover money you lost."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Laporkan penipuan hanya lewat situs resmi IASC, iasc.ojk.go.id.",
+      "Cek siapa pun yang mengaku dari IASC atau OJK ke Kontak OJK 157.",
+      "Jangan bayar biaya pengembalian dana dan jangan berikan PIN atau OTP."
+    ],
+    "en": [
+      "Report scams only through IASC's official site, iasc.ojk.go.id.",
+      "Check anyone who says they are from IASC or OJK with the OJK 157 line.",
+      "Don't pay a refund fee and don't give your PIN or OTP."
+    ]
+  },
+  "reportTo": [
+    "id/ojk-157",
+    "id/iasc",
+    "id/aduannomor"
+  ],
+  "sources": [
+    {
+      "title": "Waspada Penipuan Website Mengatasnamakan Indonesia Anti-Scam Centre (IASC) (SP 3/STPASTI/III/2025)",
+      "publisher": "OJK / Satgas PASTI",
+      "url": "https://ojk.go.id/id/berita-dan-kegiatan/info-terkini/Pages/Waspada-Penipuan-Website-Mengatasnamakan-Indonesia-Anti-Scam-Centre-IASC.aspx",
+      "date": "2025-03-28"
+    },
+    {
+      "title": "Satgas PASTI: Waspadai penipuan website mengatasnamakan IASC",
+      "publisher": "ANTARA",
+      "url": "https://www.antaranews.com/berita/4743805/satgas-pasti-waspadai-penipuan-website-mengatasnamakan-iasc/",
+      "date": "2025-03-28"
+    }
+  ],
+  "updated": "2026-11-18"
+}

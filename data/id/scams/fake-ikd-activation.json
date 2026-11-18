@@ -1,0 +1,136 @@
+{
+  "id": "id/fake-ikd-activation",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "id": "“Petugas Dukcapil” di WhatsApp dengan logo Dukcapil sebagai foto profil",
+    "en": "A “Dukcapil (civil registry) officer” on WhatsApp with the Dukcapil logo as profile picture"
+  },
+  "name": {
+    "id": "“Petugas Dukcapil” menawarkan aktivasi KTP digital (IKD) lewat WhatsApp",
+    "en": "“Civil registry officer” offers to activate your digital ID (IKD) on WhatsApp"
+  },
+  "how": {
+    "id": "Seseorang yang mengaku petugas Dukcapil menelepon atau chat lewat WhatsApp dan menawarkan bantuan aktivasi Identitas Kependudukan Digital (IKD) atau pergantian KTP fisik ke digital. Ia sudah tahu data Anda, lalu meminta NIK, foto KTP, kode OTP, atau mengirim tautan dan aplikasi tiruan. Setelah diikuti, uang di rekening bisa hilang. Dukcapil menegaskan tidak pernah menghubungi warga untuk aktivasi IKD, yang hanya dilakukan di kantor Dukcapil.",
+    "en": "Someone claiming to be a civil registry (Dukcapil) officer calls or messages on WhatsApp offering to help activate your digital ID (IKD) or switch your physical ID card to a digital one. They already know your details, then ask for your ID number, a photo of your ID card or an OTP code, or send a link or a copycat app. If you follow along, money can disappear from your account. Dukcapil says it never contacts people to activate IKD, which is only done at a Dukcapil office."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Telepon atau WhatsApp dari “petugas Dukcapil” menawarkan aktivasi IKD.",
+        "en": "A call or WhatsApp from a “Dukcapil officer” offers to activate your IKD."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Ia menyebut data pribadi Anda dengan benar sehingga tampak resmi.",
+        "en": "They correctly quote your personal details so it looks official."
+      }
+    },
+    {
+      "text": {
+        "id": "Anda diminta membuka tautan atau memasang aplikasi “IKD”.",
+        "en": "You are asked to open a link or install an “IKD” app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Anda diminta foto KTP, selfie atau kode OTP untuk “verifikasi”.",
+        "en": "You are asked for a photo of your ID card, a selfie or an OTP code to “verify”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Selamat pagi Bapak/Ibu, kami dari Dukcapil Kecamatan. Data KTP Bapak/Ibu perlu segera dialihkan ke KTP digital (IKD). Silakan unduh aplikasinya di [tautan] dan kirimkan kode OTP yang masuk untuk verifikasi.",
+        "en": "Good morning, this is the sub-district Dukcapil office. Your ID card data needs to be moved to the digital ID (IKD) soon. Please download the app at [tautan] and send us the OTP code you receive to verify."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "ditelepon petugas dukcapil soal aktivasi ikd",
+      "diminta kode otp untuk ktp digital",
+      "dukcapil kirim link aplikasi ikd lewat whatsapp",
+      "setelah aktivasi ktp digital saldo rekening hilang",
+      "petugas dukcapil tahu nik saya lalu minta foto ktp"
+    ],
+    "en": [
+      "dukcapil officer called about activating my digital id",
+      "asked for an otp code for my digital id card",
+      "dukcapil sent an ikd app link on whatsapp",
+      "after activating my digital id my bank balance vanished",
+      "dukcapil officer knew my id number and asked for a photo of my card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "id": [
+      "Petugas Dukcapil yang menghubungi lebih dulu lewat WhatsApp atau telepon.",
+      "Aktivasi IKD “dari rumah” lewat tautan.",
+      "Permintaan kode OTP, foto KTP atau selfie."
+    ],
+    "en": [
+      "A Dukcapil officer who contacts you first on WhatsApp or by phone.",
+      "IKD activation “from home” through a link.",
+      "A request for an OTP code, a photo of your ID card or a selfie."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Aktivasi IKD hanya di kantor Dukcapil; tutup telepon dan jangan ikuti instruksinya.",
+      "Jangan berikan kode OTP, foto KTP atau selfie kepada siapa pun lewat chat.",
+      "Kalau sudah memasang aplikasi atau memberi kode, hubungi bank Anda sekarang dan laporkan ke polisi."
+    ],
+    "en": [
+      "IKD is only activated at a Dukcapil office; hang up and don't follow their instructions.",
+      "Don't send an OTP code, a photo of your ID card or a selfie to anyone in a chat.",
+      "If you installed an app or gave a code, call your bank now and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/aduannomor",
+    "id/patroli-siber",
+    "id/iasc"
+  ],
+  "sources": [
+    {
+      "title": "Waspada, Penipuan Aktivasi Identitas Kependudukan Digital Palsu Lewat WhatsApp",
+      "publisher": "Metro TV",
+      "url": "https://www.metrotvnews.com/read/KZmCVWPa-waspada-penipuan-aktivasi-identitas-kependudukan-digital-palsu-lewat-whatsapp",
+      "date": "2025-01-22"
+    },
+    {
+      "title": "Ditipu Upgrade KTP Digital, Uang Pegawai Diskominfotik DKI di Rekening Raib",
+      "publisher": "Metro TV",
+      "url": "https://www.metrotvnews.com/read/bmRCEOqx-ditipu-iupgradei-ktp-digital-uang-pegawai-diskominfotik-dki-di-rekening-raib",
+      "date": "2025-06-20"
+    },
+    {
+      "title": "Waspada Penipuan Aktivasi IKD, Cek Fakta dan Kenali Modusnya",
+      "publisher": "detikNews",
+      "url": "https://news.detik.com/berita/d-8173556/waspada-penipuan-aktivasi-ikd-cek-fakta-dan-kenali-modusnya",
+      "date": "2025-10-22"
+    }
+  ],
+  "story": {
+    "id": "Seorang pegawai berusia 49 tahun di Jakarta ditelepon lewat WhatsApp oleh orang yang mengaku petugas Dukcapil kecamatan dan menawarkan verifikasi KTP fisik ke digital. Karena data pribadinya disebut dengan tepat, ia mengikuti instruksi untuk membuka sebuah situs. Rp2,6 juta hilang dari rekeningnya.",
+    "en": "A 49-year-old worker in Jakarta got a WhatsApp call from someone claiming to be from the sub-district civil registry, offering to verify the switch from her physical ID card to a digital one. Because her personal details were quoted exactly, she followed the instructions to open a website. Rp2.6 million disappeared from her account."
+  },
+  "updated": "2026-11-18"
+}

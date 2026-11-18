@@ -1,0 +1,138 @@
+{
+  "id": "id/fake-bank-cs-social",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "id": "Akun “Halo BCA”, “CS BRI” atau bank lain di Instagram, X, TikTok atau Facebook, atau nomor “call center” dari internet",
+    "en": "A “Halo BCA”, “CS BRI” or other bank account on Instagram, X, TikTok or Facebook, or a “call centre” number found online"
+  },
+  "name": {
+    "id": "Customer service bank palsu di media sosial atau nomor call center palsu",
+    "en": "Fake bank customer service on social media, or a fake call-centre number"
+  },
+  "how": {
+    "id": "Anda mengeluh atau bertanya ke bank di media sosial, lalu akun tiruan yang namanya beda satu huruf atau angka membalas seolah petugas resmi. Ada juga nomor “Halo BCA” palsu yang dipasang di situs lain atau diawali 021 dan +62. Mereka memindahkan obrolan ke WhatsApp pribadi atau ke situs mirip situs bank, lalu meminta nomor kartu, PIN, OTP atau data login untuk mengambil alih rekening. BCA menegaskan tidak pernah meminta data rahasia itu.",
+    "en": "You complain or ask your bank something on social media, and a copycat account whose name differs by one letter or number replies as if it were the official team. There are also fake “Halo BCA” numbers posted on other websites or starting with 021 or +62. They move the chat to a personal WhatsApp or to a site that looks like the bank's, then ask for your card number, PIN, OTP or login to take over your account. BCA says it never asks for these secret details."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Anda menulis keluhan ke bank di media sosial, atau mencari nomor call center di internet.",
+        "en": "You post a complaint to your bank on social media, or search for its call-centre number online."
+      }
+    },
+    {
+      "text": {
+        "id": "Akun atau nomor yang mirip resmi membalas dan mengaku customer service.",
+        "en": "An account or number that looks official replies and says it is customer service."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Mereka mengarahkan ke WhatsApp pribadi atau tautan situs tiruan bank.",
+        "en": "They move you to a personal WhatsApp or a link to a copy of the bank's website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Mereka meminta nomor kartu, PIN, OTP atau data login dengan alasan “verifikasi”.",
+        "en": "They ask for your card number, PIN, OTP or login to “verify” you."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Halo kak, mohon maaf atas kendalanya 🙏 Kami dari tim Halo BCA. Agar keluhan kakak segera diproses, silakan hubungi admin kami via WhatsApp atau isi formulir verifikasi di [tautan] dengan nomor kartu dan kode OTP yang masuk ya.",
+        "en": "Hi, we are sorry for the trouble 🙏 This is the Halo BCA team. So your complaint can be processed quickly, please contact our admin on WhatsApp or fill in the verification form at [tautan] with your card number and the OTP code you receive."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "komplain ke bank di instagram dibalas akun cs palsu",
+      "nomor halo bca palsu di google",
+      "cs bank minta kode otp lewat whatsapp",
+      "akun bank di tiktok tawarkan pinjaman tanpa jaminan",
+      "admin bank minta nomor kartu dan pin untuk verifikasi"
+    ],
+    "en": [
+      "complained to my bank on instagram and a fake cs account replied",
+      "fake halo bca number on google",
+      "bank cs asked for my otp on whatsapp",
+      "bank account on tiktok offering loans without collateral",
+      "bank admin asked for my card number and pin to verify"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "id": [
+      "Akun bank yang namanya ada tambahan angka, titik atau huruf.",
+      "Petugas yang memindahkan obrolan ke WhatsApp pribadi.",
+      "Permintaan PIN, OTP, CVV atau kata sandi, dengan alasan apa pun."
+    ],
+    "en": [
+      "A bank account whose name has extra numbers, dots or letters.",
+      "Staff who move the chat to a personal WhatsApp.",
+      "A request for your PIN, OTP, CVV or password, for any reason."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Hubungi bank hanya lewat aplikasi resminya atau nomor di balik kartu Anda, bukan dari balasan atau hasil pencarian.",
+      "Jangan berikan PIN, OTP atau kata sandi kepada siapa pun.",
+      "Kalau sudah memberikannya, telepon bank sekarang untuk memblokir rekening, lalu lapor ke IASC."
+    ],
+    "en": [
+      "Contact your bank only through its official app or the number on the back of your card, not from a reply or a search result.",
+      "Never give your PIN, OTP or password to anyone.",
+      "If you already did, call your bank now to block your account, then report to IASC."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/iasc",
+    "id/aduannomor"
+  ],
+  "sources": [
+    {
+      "title": "Jenis-Jenis Fraud Perbankan yang Sedang dan Akan Marak di Tahun 2025",
+      "publisher": "BCA",
+      "url": "https://www.bca.co.id/id/informasi/awas-modus/2025/02/11/09/42/jenis-jenis-fraud-perbankan-yang-sedang-dan-akan-marak-di-tahun-2025",
+      "date": "2025-02-11"
+    },
+    {
+      "title": "Waspada Penipuan Nomor Halo BCA Palsu",
+      "publisher": "detikFinance",
+      "url": "https://finance.detik.com/moneter/d-8487392/waspada-penipuan-nomor-halo-bca-palsu",
+      "date": "2026-05-13"
+    },
+    {
+      "title": "Kenali Akun Media Sosial & Nomor Palsu Mengatasnamakan BCA, Waspadai Agar Tidak Terjebak Penipuan",
+      "publisher": "BCA",
+      "url": "https://www.bca.co.id/id/informasi/awas-modus/2026/07/23/16/37/kenali-akun-media-sosial-and-nomor-palsu-mengatasnamakan-bca-waspadai-agar-tidak-terjebak-penipuan",
+      "date": "2026-07-23"
+    },
+    {
+      "title": "Awas Tipu Daya di Tiktok! Akun BCA Palsu Yang Menawarkan Pinjaman Tanpa Jaminan",
+      "publisher": "BCA",
+      "url": "https://www.bca.co.id/id/informasi/awas-modus/2025/12/24/11/25/awas-tipu-daya-di-tiktok-akun-bca-palsu-yang-menawarkan-pinjaman-tanpa-jaminan",
+      "date": "2025-12-24"
+    }
+  ],
+  "updated": "2026-11-18"
+}

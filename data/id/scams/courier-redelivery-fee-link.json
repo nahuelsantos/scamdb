@@ -1,0 +1,130 @@
+{
+  "id": "id/courier-redelivery-fee-link",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "id": "“J&T”, “JNE”, “Pos Indonesia” atau jasa kirim lain, dari nomor biasa atau iMessage",
+    "en": "“J&T”, “JNE”, “Pos Indonesia” or another courier, from an ordinary number or iMessage"
+  },
+  "name": {
+    "id": "Pesan kurir palsu: “label paket rusak, perbarui alamat dan bayar biaya tambahan”",
+    "en": "Fake courier message: “parcel label damaged, update the address and pay a small fee”"
+  },
+  "how": {
+    "id": "Saat Anda sedang menunggu kiriman, datang pesan yang mengaku dari jasa kirim: label atau alamat paket rusak, jadi Anda harus memperbarui alamat lewat tautan dalam 24 jam. Halaman itu meminta biaya tambahan kecil dengan kartu. Pembayaran seolah “gagal” berkali-kali, padahal setiap percobaan ditagih ke kartu Anda, kadang dalam mata uang asing.",
+    "en": "While you are waiting for a delivery, a message claiming to be from the courier says the parcel's label or address is damaged, so you must update the address through a link within 24 hours. The page asks for a small extra fee by card. The payment seems to “fail” again and again, but each attempt is charged to your card, sometimes in a foreign currency."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Pesan mengaku dari jasa kirim mengatakan paket Anda bermasalah: alamat tidak terbaca atau label rusak.",
+        "en": "A message claiming to be from the courier says there is a problem with your parcel: the address can't be read or the label is damaged."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Anda diminta konfirmasi alamat lewat tautan dalam 24 jam.",
+        "en": "You are asked to confirm the address through a link within 24 hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "id": "Halaman palsu meminta “biaya tambahan” kecil dan data kartu.",
+        "en": "A fake page asks for a small “extra charge” and your card details."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "id": "Transaksi tampak gagal sehingga Anda mencoba lagi; tiap percobaan ternyata ditagih.",
+        "en": "The payment appears to fail so you try again; every attempt is actually charged."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "J&T Express: Paket Anda tertahan di gudang karena label alamat rusak dan tidak terbaca. Mohon perbarui alamat dalam 24 jam dan bayar biaya pengiriman ulang Rp9.500 di [tautan] agar paket tidak dikembalikan.",
+        "en": "J&T Express: Your parcel is held at the warehouse because the address label is damaged and unreadable. Please update your address within 24 hours and pay the Rp9,500 redelivery fee at [tautan] so the parcel is not returned."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "sms kurir bilang alamat paket rusak",
+      "diminta bayar biaya tambahan supaya paket dikirim",
+      "link update alamat paket dari jnt",
+      "bayar ongkir ulang lewat link tapi gagal terus",
+      "kartu kredit terpotong berkali kali setelah isi link paket"
+    ],
+    "en": [
+      "courier text says my parcel address is damaged",
+      "asked to pay an extra fee so the parcel is delivered",
+      "link to update my parcel address from jnt",
+      "paid a redelivery fee by link but it kept failing",
+      "credit card charged many times after a parcel link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "id": [
+      "Pesan kurir dengan tautan dan batas waktu.",
+      "Biaya kecil yang harus dibayar dengan kartu untuk “pengiriman ulang”.",
+      "Pembayaran yang “gagal” lalu meminta Anda mencoba lagi."
+    ],
+    "en": [
+      "A courier message with a link and a deadline.",
+      "A small fee to pay by card for “redelivery”.",
+      "A payment that “fails” and asks you to try again."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Jangan klik tautannya. Lacak paket di aplikasi atau situs resmi kurir, atau tanyakan ke penjual.",
+      "Kalau sudah memasukkan data kartu, hubungi bank Anda sekarang untuk memblokir kartu dan menyanggah tagihan.",
+      "Laporkan nomor pengirim ke Aduan Nomor Komdigi dan, jika uang Anda hilang, ke IASC."
+    ],
+    "en": [
+      "Don't tap the link. Track the parcel in the courier's official app or website, or ask the seller.",
+      "If you entered card details, call your bank now to block the card and dispute the charges.",
+      "Report the sender's number to Komdigi's Aduan Nomor and, if you lost money, to IASC."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/iasc",
+    "id/aduannomor"
+  ],
+  "sources": [
+    {
+      "title": "Solusi Menangkal Jebakan Phishing Pengiriman Barang: Cek, Curiga, Cancel",
+      "publisher": "detikInet",
+      "url": "https://inet.detik.com/security/d-8096567/solusi-menangkal-jebakan-phishing-pengiriman-barang-cek-curiga-cancel",
+      "date": "2025-09-04"
+    },
+    {
+      "title": "Penipuan Berkedok Kurir Jadi Ancaman Baru Bisnis Logistik, J&T Beri Edukasi Pelanggan",
+      "publisher": "Kontan",
+      "url": "https://industri.kontan.co.id/news/penipuan-berkedok-kurir-jadi-ancaman-baru-bisnnis-logistikjt-beri-edukasi-pelanggan",
+      "date": "2025-09-08"
+    }
+  ],
+  "story": {
+    "id": "Seorang aktris yang mengirim barang untuk syuting lewat J&T menerima pesan bahwa label paketnya rusak. Ia mengikuti tautan untuk memperbarui alamat dan membayar biaya tambahan sekitar Rp9.000. Pembayaran selalu tampak gagal, ia mencoba lima kali, dan ternyata semuanya ditagih dalam riyal: sekitar Rp70 juta hilang dari rekeningnya.",
+    "en": "An actress sending equipment for a film shoot through J&T got a message saying the parcel's label was damaged. She followed the link to update the address and pay an extra fee of about Rp9,000. The payment always seemed to fail, she tried five times, and every attempt had gone through in riyals: about Rp70 million left her account."
+  },
+  "updated": "2026-11-18"
+}
