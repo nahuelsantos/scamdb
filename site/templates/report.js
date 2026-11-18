@@ -23,6 +23,7 @@ export function report({ repo, meta, lang = 'en' }) {
   <div class="field"><label for="rep-channel">${esc(s('repChannel'))}</label><select id="rep-channel" name="channel"><option value="">${esc(s('repChannelAny'))}</option>${channels}</select></div>
   <div class="field"><label for="rep-text">${esc(s('repText'))}</label><textarea id="rep-text" name="text" rows="6" maxlength="5000" placeholder="${esc(s('repTextPh'))}"></textarea></div>
   <div class="field" id="rep-shot-field"><label for="rep-shot">${UI_ICONS.send}<span>${esc(s('repShot'))}</span></label><input type="file" id="rep-shot" name="image" accept="image/png,image/jpeg,image/webp"><p class="hint" id="rep-shot-hint">${esc(s('repShotSignedOut'))}</p></div>
+  <div class="field"><label for="rep-outcome">${esc(s('repOutcome'))}</label><select id="rep-outcome" name="outcome"><option value="">${esc(s('repOutcomeAny'))}</option>${Object.entries(s('repOutcomes')).map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('')}</select></div>
   <div class="field"><label for="rep-what">${esc(s('repWhat'))}</label><textarea id="rep-what" name="whatHappened" rows="3" maxlength="2000" placeholder="${esc(s('repWhatPh'))}"></textarea></div>
   <div class="field"><label for="rep-contact">${esc(s('repContact'))}</label><input id="rep-contact" name="contact" maxlength="200" autocomplete="email" placeholder="${esc(s('repContactPh'))}"></div>
   <p class="hint privacy">${esc(s('repPrivacy'))}</p>

@@ -53,7 +53,7 @@ form.addEventListener('submit', async (e) => {
   if (!text && !what && !shot) return fail(S.repNeedText);
   if (!signedIn && !token) return fail(S.repTurnstile);
 
-  const fields = { country, channel: $('rep-channel').value || undefined, whatHappened: what || undefined, contact: $('rep-contact').value.trim() || undefined, source: 'scamdb.dev' };
+  const fields = { country, channel: $('rep-channel').value || undefined, outcome: $('rep-outcome').value || undefined, whatHappened: what || undefined, contact: $('rep-contact').value.trim() || undefined, source: 'scamdb.dev' };
   if (!signedIn) fields.turnstileToken = token;
   let body, headers = { 'x-requested-with': 'scamdb' };
   if (shot && signedIn) {

@@ -156,3 +156,22 @@ test('scamdb.dev reports are checked with TURNSTILE_SECRET_SITE; other forms kee
     assert.deepEqual(used, ['site-secret', 'eschamuyo-secret']);
   } finally { await w2.dispose(); }
 });
+
+test('a report can say what the message turned out to be; anything else is a 400', async () => {
+  const ok = await post({ text: 'Tu código de verificación es [number], no lo compartas', country: 'ar', outcome: 'genuine', turnstileToken: 'ok' });
+  assert.equal(ok.status, 201);
+  const { id } = await ok.json();
+  assert.equal((await w.db.prepare('SELECT outcome FROM reports WHERE id = ?').bind(id).first()).outcome, 'genuine');
+  const bad = await post({ text: 'Hola, soy del banco', country: 'ar', outcome: 'maybe', turnstileToken: 'ok' });
+  assert.equal(bad.status, 400);
+  assert.match(JSON.stringify(await bad.json()), /outcome/);
+});
+
+test('before migration 0007 is applied, a report is still stored (without its outcome)', async () => {
+  const { SCHEMA } = await import('./harness.mjs');
+  const old = await makeWorker({ schema: SCHEMA.split('ALTER TABLE reports ADD COLUMN outcome')[0] });
+  try {
+    const r = await old.fetch('/v1/reports', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': '198.51.100.250' }, body: JSON.stringify({ text: 'Le hablo de PAMI, ¿me lee el código?', country: 'ar', outcome: 'scam', turnstileToken: 'ok' }) });
+    assert.equal(r.status, 201);
+  } finally { old.dispose(); }
+});

@@ -4,6 +4,14 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Free detection that learns (vision point 5).** The scamdb.dev check already hands a message to the private report
+  form inside the browser; the form and `POST /v1/reports` now take `outcome` (scam, genuine, unsure): what the
+  message turned out to be. Stored privately (migration `0007_report_outcome.sql`), deleted after 180 days like every
+  report. Before the owner reviews a report, its outcome labels the private-set copy (`genuine` → safe, `scam` →
+  scam; `unsure` is not used), so checked genuine messages, the data accuracy needs most, flow into measurement.
+  Owner step: `npx wrangler d1 migrations apply scamdb --remote` (and `scamdb-uat`). Until then reports are stored
+  without their outcome; nothing breaks.
+
 - **Unknown scams go to a human (vision point 3).** `tools/unmatched.mjs` lists the real, documented scams that follow
   no known pattern (real messages with `scam: null`, 38 today) and groups similar ones as candidate new patterns
   (first run: expiring reward points in Argentina and Mexico, and in Australia and Canada; fake DMV final notices in
