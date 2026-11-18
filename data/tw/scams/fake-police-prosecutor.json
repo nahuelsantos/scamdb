@@ -1,0 +1,188 @@
+{
+  "id": "tw/fake-police-prosecutor",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social",
+    "in-person"
+  ],
+  "sender": {
+    "zh": "先是「戶政事務所」、「醫院藥師」、「電信門市」、「郵局」或「保險公司」人員，再轉接「警察」、「檢察官」或「金管會」",
+    "en": "First a “household registration office”, “hospital pharmacist”, “telecom shop”, “post office” or “insurance company” clerk, then a “police officer”, “prosecutor” or “FSC officer”"
+  },
+  "name": {
+    "zh": "假檢警：「你的證件被冒用，涉嫌洗錢，要監管你的財產」",
+    "en": "Fake police and prosecutors: “your ID was misused, you're suspected of money laundering, we must supervise your assets”"
+  },
+  "how": {
+    "zh": "先有人假冒戶政事務所、醫院、電信公司、郵局或保險公司打來，說你的身分證、健保卡被冒用去領管制藥品、辦門號、開人頭帳戶，或普發現金、保險金被盜領，並「幫你轉接警察報案」。假警察加你LINE、視訊做筆錄，再由假檢察官說你涉及洗錢或詐欺，以「偵查不公開」要你不能告訴家人。接著要你交出存款、股票、提款卡「監管」或「公證」，叫你把金融卡放在花盆下、用超商店到店寄出，或讓車手上門收錢；還有人被要求解定存、抵押房子貸款，或輸入「**21*」把來電轉接給詐團。政府不會用電話轉接檢警，檢警也不會監管財產。",
+    "en": "Someone posing as a household registration office, hospital, telecom company, post office or insurer says your ID or NHI card was used to collect controlled drugs, open a phone line or open a mule account, or that your government cash handout or insurance payout was claimed by someone else, and “puts you through to the police”. The fake officer adds you on LINE and takes a “statement” by video; a fake prosecutor then says you're involved in money laundering or fraud and, citing “investigation secrecy”, forbids you to tell family. You are told to hand over savings, shares or bank cards for “supervision” or “notarisation”, leave cards under a flowerpot, send them by convenience-store delivery or give them to a collector; some victims are made to break fixed deposits, mortgage their home, or dial **21* to divert their calls to the gang. Government offices never transfer calls to the police, and police and prosecutors never take custody of your assets."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "假冒戶政、醫院、電信公司或郵局來電，說你的證件被冒用，幫你轉接警察。",
+        "en": "A fake registry, hospital, telecom or post office caller says your ID was misused and puts you through to the “police”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "假警察加LINE視訊做筆錄，假檢察官說你涉及洗錢，偵查不公開不能說。",
+        "en": "A fake officer takes a statement on LINE video; a fake prosecutor says you're a money-laundering suspect and must keep it secret."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "zh": "問你的存款、股票，要你配合「監管帳戶」，有時要你設定來電轉接。",
+        "en": "They ask about your savings and shares, demand “account supervision”, and may make you divert your calls."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "zh": "要你交出金融卡、現金，或解定存、抵押房產後交給車手。",
+        "en": "You hand over bank cards or cash, or break deposits or mortgage your home and give the money to a collector."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "這裡是戶政事務所，有人拿您的身分證和委託書來申請戶籍謄本，請問是您本人嗎？如果不是，我們馬上幫您轉接警察局報案。",
+        "en": "This is the household registration office. Someone used your ID card and a letter of authorisation to apply for your household records. Was that you? If not, we'll put you straight through to the police to report it."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "zh": "我是地檢署檢察官，你的帳戶涉及洗錢案，本案偵查不公開，不可以告訴家人或銀行行員。為了證明你的清白，請把存款和提款卡交由法院監管。",
+        "en": "I'm a prosecutor at the district prosecutors office. Your account is involved in a money-laundering case. The investigation is confidential, so don't tell family or bank staff. To prove your innocence, hand your savings and bank cards over to court supervision."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "戶政事務所打來說我的身分證被冒用",
+      "醫院說我的健保卡被盜領管制藥品幫我轉接警察",
+      "警察用LINE視訊幫我做筆錄",
+      "檢察官說我涉及洗錢要監管我的帳戶",
+      "說偵查不公開不能告訴家人",
+      "叫我把提款卡放在門口花盆下",
+      "要我用超商店到店寄出金融卡"
+    ],
+    "en": [
+      "the household registration office called saying my id was misused",
+      "a hospital said my health insurance card was used for controlled drugs and transferred me to the police",
+      "a police officer took my statement on a line video call",
+      "a prosecutor said i am involved in money laundering and must supervise my account",
+      "they said the investigation is secret and i cannot tell my family",
+      "they told me to leave my bank card under the flowerpot at my door",
+      "they wanted me to send my bank card by convenience store delivery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "zh": [
+      "機關打來說證件被冒用，還主動幫你轉接警察",
+      "警察、檢察官在電話或LINE上做筆錄、傳公文",
+      "說「偵查不公開」、「監管帳戶」、「財產代保管」",
+      "要你交出金融卡、現金，或用店到店寄送",
+      "要你在手機輸入代碼設定來電轉接"
+    ],
+    "en": [
+      "A government office says your ID was misused and offers to transfer you to the police.",
+      "Police or prosecutors take statements or send documents by phone or LINE.",
+      "Words like “investigation secrecy”, “account supervision” or “asset safekeeping”.",
+      "You are told to hand over bank cards or cash, or send them by store-to-store delivery.",
+      "You are told to type a code into your phone to divert your calls."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "一聽、二掛、三查證：掛掉電話，自己打165或110查證",
+      "告訴家人或銀行行員，不要被「偵查不公開」嚇到",
+      "絕不交出存款、提款卡或密碼，也不要用店到店寄出",
+      "已經交付請馬上打110並聯絡銀行"
+    ],
+    "en": [
+      "Listen, hang up, check: end the call and dial 165 or 110 yourself.",
+      "Tell your family or bank staff; don't be scared off by “investigation secrecy”.",
+      "Never hand over savings, bank cards or PINs, or send them by store-to-store delivery.",
+      "If you already handed something over, call 110 and your bank at once."
+    ]
+  },
+  "reportTo": [
+    "tw/police-110",
+    "tw/antifraud-165",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "詐團偽裝戶政檢警一條龍老哏　男子財損逾1900萬",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202607120122.aspx",
+      "date": "2026-07-12"
+    },
+    {
+      "title": "刑事局：假檢警詐騙新手法　攔截來電再盜刷",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202605090120.aspx",
+      "date": "2026-05-09"
+    },
+    {
+      "title": "黑幫詐團冒假檢警騙銀髮族 刑事局查獲10嫌",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604270161.aspx",
+      "date": "2026-04-27"
+    },
+    {
+      "title": "刑事局：假檢警仍為詐騙榜首　籲多向長輩宣導",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202508090122.aspx",
+      "date": "2025-08-09"
+    },
+    {
+      "title": "假檢警、真詐欺！黑幫假冒檢警誆騙抵押房產害人「傾家蕩產」",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=c11a90c8-4e77-4519-80e8-f81ef7e8be2d",
+      "date": "2026-08-31"
+    },
+    {
+      "title": "假冒金管會誆騙近七百萬！ 刑事局搗毀跨境電信詐騙機房",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=fcc406b4-936e-498b-aed0-18b87dcc892f",
+      "date": "2026-06-02"
+    },
+    {
+      "title": "小心詐騙新手法　刑事局：對方要求店到店寄錢、寄密碼都是騙",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202608010117.aspx",
+      "date": "2026-08-01"
+    },
+    {
+      "title": "詐團「普發現金」假冒檢警盜68萬　電信卡商落網",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604210064.aspx",
+      "date": "2026-04-21"
+    },
+    {
+      "title": "醫院電話通知雙證件被盜用領管制藥？當心詐騙集團騙個資",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202601145005.aspx",
+      "date": "2026-01-14"
+    }
+  ],
+  "updated": "2026-11-18"
+}

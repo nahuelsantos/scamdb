@@ -1,0 +1,161 @@
+{
+  "id": "tw/cancel-instalment-fake-service",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "email",
+    "social"
+  ],
+  "sender": {
+    "zh": "電商、網購平台、餐廳或健身房的「客服」，接著是「銀行人員」",
+    "en": "A “customer service” agent from an online shop, restaurant or gym, followed by a “bank officer”"
+  },
+  "name": {
+    "zh": "解除分期付款：假客服說訂單被設成分期或會重複扣款",
+    "en": "Cancel instalments: fake customer service says your order will be charged again"
+  },
+  "how": {
+    "zh": "你在網購或店家消費後，接到自稱客服的電話或LINE，對方能說出你的姓名、訂單和付款方式，謊稱「工作人員操作錯誤，誤設成12期分期」、「誤升級VIP會員」或「會重複扣款」。接著轉接或由假銀行人員打來，要你到ATM或用網路銀行「解除設定」，其實是把錢轉給詐團。近來也常見假簡訊、假email說你有高額訂單或自動續訂即將扣款，要你加「官方LINE客服」取消。ATM和網銀沒有解除分期或取消扣款的功能。",
+    "en": "After you shop online or at a store, a “customer service” caller or LINE account knows your name, order and payment method, and says “staff made a mistake and set it to 12 instalments”, “upgraded you to VIP” or “you will be charged again”. Then a fake bank officer calls or is put through and has you go to an ATM, or use online banking to “cancel the setting”, which actually sends your money to the scammers. Recently fake texts and emails also say a large order or subscription is about to be charged and tell you to add an “official LINE customer service” to cancel it. ATMs and online banking have no function to cancel instalments or charges."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "假客服來電或傳訊，說出你的訂單資料，說誤設分期、升級會員或會重複扣款。",
+        "en": "A fake agent calls or messages, quotes your order, and says you were set to instalments, upgraded or will be charged twice."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "說今天不處理就會每個月扣款，製造恐慌。",
+        "en": "They say you will be charged every month unless you act today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "zh": "轉接假銀行人員或要你加LINE客服，全程指示你操作。",
+        "en": "They pass you to a fake bank officer or a LINE “agent” who guides you step by step."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "zh": "要你到ATM或用網銀轉帳「解除設定」。",
+        "en": "You are told to transfer at an ATM or online to “cancel” it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "您好，這裡是購物網客服。因為我們工作人員作業疏失，把您上週的訂單誤設為十二期分期付款，每個月會自動扣款。等一下會請銀行專員跟您聯絡，協助您解除設定。",
+        "en": "Hello, this is the shopping site's customer service. Due to a staff error, your order last week was set to twelve monthly instalments that will be charged automatically. A bank officer will call you shortly to help you cancel it."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "zh": "【訂單通知】您的定期購訂單已成立，將於今日23:59自動扣款NT$28,800。如非本人訂購，請立即加入官方LINE客服取消：[連結]",
+        "en": "[Order notice] Your subscription order has been placed and NT$28,800 will be charged automatically at 23:59 today. If you did not order it, add the official LINE customer service now to cancel: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "客服打來說我的訂單被設成分期付款",
+      "說會重複扣款要我去ATM解除",
+      "銀行專員叫我操作網銀取消扣款",
+      "收到簡訊說訂單會自動扣款要加LINE客服取消",
+      "說我被誤升級成VIP會員每個月會扣錢",
+      "客服說誤設成十二期分期每個月會扣款"
+    ],
+    "en": [
+      "customer service called saying my order was set to instalments",
+      "they said i will be charged twice and must cancel it at an atm",
+      "a bank officer told me to use online banking to cancel a charge",
+      "a text said my order will be charged automatically and to add a line agent to cancel",
+      "they said i was upgraded to vip by mistake and will be charged every month",
+      "the agent said it was set to twelve monthly instalments by mistake"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "zh": [
+      "來電或訊息說「誤設分期」、「重複扣款」、「升級VIP」",
+      "對方能說出你的訂單內容，讓你以為是真客服",
+      "要你到ATM或網銀操作",
+      "要你加LINE客服才能取消訂單"
+    ],
+    "en": [
+      "A call or message about “instalments set by mistake”, “double charges” or “VIP upgrade”.",
+      "They know your order details, so you believe they are real.",
+      "You are asked to use an ATM or online banking.",
+      "You are told to add a LINE agent to cancel an order."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "聽到誤設分期、重複扣款就掛電話",
+      "自己查商家官網或App上的客服電話，或打165查證",
+      "ATM和網銀沒有解除扣款功能，不要照指示操作",
+      "已經轉帳請立刻聯絡銀行並打165"
+    ],
+    "en": [
+      "Hang up when you hear “instalments by mistake” or “double charge”.",
+      "Look up the shop's own customer-service number in its website or app, or call 165.",
+      "ATMs and online banking cannot cancel charges; don't follow instructions.",
+      "If you already transferred money, call your bank and 165 at once."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/your-bank",
+    "tw/police-110"
+  ],
+  "sources": [
+    {
+      "title": "冒用連鎖健身房、吃到飽餐廳客服竊個資 警籲防騙",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202401180291.aspx",
+      "date": "2024-01-18"
+    },
+    {
+      "title": "刑事局公布全國ATM提詐十大熱點 凌晨最猖狂",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202508100102.aspx",
+      "date": "2025-08-10"
+    },
+    {
+      "title": "慎防釣魚連結及LINE帳號被盜用來詐騙 刑事局籲「不明連結不點、好友借錢先查證」",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=dc96426e-60ee-4b56-8fc2-a8c1f8aabf1d",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "刑事局揭釣魚連結詐騙激增  張懷秋籲先查再行動",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202609150155.aspx",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "【詐騙】收到Apple商店提醒禮品卡逾期自動扣款？釣魚簡訊！假訂單誘騙加不明LINE帳號",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2026/11/apple.html",
+      "date": "2026-11-17"
+    }
+  ],
+  "updated": "2026-11-18"
+}

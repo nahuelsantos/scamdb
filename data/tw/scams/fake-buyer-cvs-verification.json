@@ -1,0 +1,152 @@
+{
+  "id": "tw/fake-buyer-cvs-verification",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "zh": "臉書、IG、Dcard、Threads上的「買家」，以及假冒7-11賣貨便或全家好賣+的「客服」",
+    "en": "A “buyer” on Facebook, Instagram, Dcard or Threads, then a fake 7-ELEVEN myship or FamilyMart “customer service” agent"
+  },
+  "name": {
+    "zh": "假買家：叫賣家開賣貨便，再說要「實名認證」、「簽署金流」",
+    "en": "Fake buyer: asks you to open a store-pickup listing, then demands “real-name verification”"
+  },
+  "how": {
+    "zh": "你在社群平台賣二手物品時，有「買家」私訊說要買，並以交易有保障為由，要你在7-11賣貨便等超商寄貨平台開賣場。接著他說「系統無法下單」、「訂單被凍結」，傳來仿真的假客服網頁，說你「尚未完成實名認證」或「未簽署金流協議」。假客服再要你提供網路銀行轉帳QR Code、無卡提款序號、信用卡OTP驗證碼，或用LINE視訊指導你操作網銀與TW QR Code付款碼。買家還會一直催，說因為你沒認證害他帳戶被凍結。刑事局指出賣貨便不需要實名認證或金流簽署。",
+    "en": "You are selling something second-hand on social media when a “buyer” messages you and, “for safety”, asks you to open a listing on a convenience-store shipping service such as 7-ELEVEN myship. Then they say “the system won't let me order” or “my order is frozen” and send a realistic fake customer-service page saying you “haven't completed real-name verification” or “haven't signed the payment agreement”. The fake agent asks for an online-banking transfer QR code, a cardless-withdrawal code or a card one-time code, or guides you by LINE video to operate your banking app and TW QR payment code. The buyer keeps pushing, saying your missing verification froze their account. The police say myship needs no real-name verification or payment agreement."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "買家私訊要買你的東西，要你開超商寄貨平台賣場。",
+        "en": "A buyer messages you and asks you to open a convenience-store shipping listing."
+      }
+    },
+    {
+      "text": {
+        "zh": "買家說無法下單，傳來假客服連結，說你要實名認證或簽金流協議。",
+        "en": "They say they can't order and send a fake customer-service link saying you must verify or sign a payment agreement."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "zh": "假客服加LINE或開視訊，要你操作網銀、給QR Code或OTP驗證碼。",
+        "en": "A fake agent adds you on LINE or video-calls and asks you to use online banking or give a QR code or OTP."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "zh": "買家同時催促，說帳戶被凍結、家人急需用錢。",
+        "en": "Meanwhile the buyer pressures you, saying their account is frozen or a relative needs money."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "賣家您好，我剛下單一直顯示「賣家未完成金流實名認證，訂單已凍結」，我的錢被卡住了，你可以趕快聯繫客服處理嗎？客服連結：[連結]",
+        "en": "Hi, I just ordered but it keeps saying “seller has not completed payment real-name verification, order frozen”. My money is stuck; can you contact customer service quickly? Service link: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "【賣貨便線上客服】您的賣場尚未簽署金流保障協議，買家款項無法撥付。請依專員指示開啟網路銀行完成帳戶驗證，以免賣場遭停權。",
+        "en": "[myship online service] Your store has not signed the payment protection agreement, so the buyer's payment cannot be released. Open your online banking and complete account verification as our agent instructs, or your store will be suspended."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "買家說無法下單要我做賣貨便實名認證",
+      "客服說我沒有簽署金流協議要操作網銀",
+      "買家說他的帳戶因為我被凍結了",
+      "假客服叫我翻拍付款碼給他",
+      "賣東西被要求提供信用卡驗證碼認證",
+      "客服用LINE視訊教我開通無卡提款"
+    ],
+    "en": [
+      "the buyer said they could not order and i had to do real name verification on myship",
+      "customer service said i had not signed a payment agreement and must use online banking",
+      "the buyer said their account was frozen because of me",
+      "a fake agent told me to photograph my payment code and send it",
+      "i was asked for my card verification code to sell something",
+      "customer service taught me on a line video call to turn on cardless withdrawal"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "zh": [
+      "買家不肯照平台正常流程下單，傳客服連結給你",
+      "說要實名認證、簽署金流協議或驗證帳戶",
+      "真客服不會加LINE、不會開視訊",
+      "要你提供OTP、付款碼或操作網銀"
+    ],
+    "en": [
+      "The buyer won't use the platform's normal process and sends you a service link.",
+      "You are told to verify your identity, sign a payment agreement or verify your account.",
+      "Real customer service never adds you on LINE or video-calls.",
+      "You are asked for an OTP or payment code, or to use online banking."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "賣貨便不需要實名認證或金流簽署，看到就停止",
+      "不要點買家傳的連結，從官方App自己查訂單",
+      "不傳帳戶資料、OTP或付款碼給任何人",
+      "有疑問打165；已操作請立刻聯絡銀行"
+    ],
+    "en": [
+      "myship needs no real-name verification or payment agreement; stop if you see that.",
+      "Don't open the buyer's link; check orders yourself in the official app.",
+      "Never send account details, OTPs or payment codes to anyone.",
+      "Call 165 if unsure; if you already did something, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/your-bank",
+    "tw/police-110"
+  ],
+  "sources": [
+    {
+      "title": "超商寄貨網購詐騙手法　刑事局揭假買家誘騙網銀資料盜領",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202603170179.aspx",
+      "date": "2026-03-17"
+    },
+    {
+      "title": "網購、假買家詐騙件數上升  刑事局提供防範手法",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202505160120.aspx",
+      "date": "2025-05-16"
+    },
+    {
+      "title": "假網拍詐騙以付款碼視訊設局　被害人財損300萬",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604060121.aspx",
+      "date": "2026-04-06"
+    },
+    {
+      "title": "網購詐騙受理件數最多　刑事局提供防詐關鍵字",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604090091.aspx",
+      "date": "2026-04-09"
+    }
+  ],
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,127 @@
+{
+  "id": "tw/fake-bank-debt-consolidation",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "zh": "自稱知名銀行行員或「特約中心」的行銷電話",
+    "en": "A sales call from someone claiming to be from a well-known bank or its “partner centre”"
+  },
+  "name": {
+    "zh": "假銀行專員：「幫你債務整合」，約在超商把信用卡刷爆",
+    "en": "Fake bank officer offers “debt consolidation”, then maxes out your cards at a convenience store"
+  },
+  "how": {
+    "zh": "詐騙集團假冒國內知名銀行專員或特約中心，大量撥打電話問你「有債務整合需求嗎？」。如果你有興趣，就約在你家或公司附近的便利商店「簽約」，說服你把名下信用卡額度刷滿，買知名餐廳或公司的餐券、禮券，騙你說卡債會併入債務整合，以後不用再繳。他們把餐券轉賣獲利；你起疑要求退款時，再由幹部拖延。金管會規定銀行不能受理代辦公司轉來的貸款，有債務整合需求應直接找銀行。",
+    "en": "Scammers posing as staff of well-known banks or a “partner centre” cold-call asking “do you need debt consolidation?”. If you're interested they meet you to “sign” at a convenience store near your home or work and talk you into maxing out your credit cards on restaurant or company vouchers, saying the card debt will be rolled into the consolidation and you won't have to pay it. They resell the vouchers; when you get suspicious and ask for a refund, a manager stalls you. The FSC bars banks from accepting loans passed on by agencies; for debt consolidation, go to the bank directly."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "假銀行專員來電，問你要不要債務整合。",
+        "en": "A fake bank officer calls offering debt consolidation."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "約在住家附近的超商簽約。",
+        "en": "They arrange to “sign” at a convenience store near you."
+      }
+    },
+    {
+      "text": {
+        "zh": "要你把信用卡刷滿買餐券、禮券，說卡債會併入整合。",
+        "en": "You are told to max out your cards on vouchers, as the debt will be “rolled in”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "zh": "之後要求退費時對方一直拖延。",
+        "en": "When you ask for a refund they keep stalling."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "您好，這裡是銀行貸款特約中心，看您目前有多張卡費要繳，我們可以幫您做債務整合，月付金降一半。方便明天在您家附近的超商簽約嗎？",
+        "en": "Hello, this is the bank's loan partner centre. We see you have several card bills; we can consolidate your debt and halve your monthly payment. Can we sign tomorrow at a convenience store near you?"
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "zh": "簽約前要先把您的卡片額度用掉，刷這些餐券，之後整筆會併進債務整合，卡費就不用再繳了。",
+        "en": "Before signing we need to use up your card limits on these vouchers. The whole amount then goes into the consolidation, so you won't have to pay the card bills any more."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "銀行專員打來問我要不要債務整合",
+      "約在超商簽約叫我刷卡買餐券",
+      "說刷卡的錢會併入債務整合不用繳",
+      "債務整合後信用卡被刷爆",
+      "代辦公司說可以幫我整合卡債"
+    ],
+    "en": [
+      "a bank officer called asking if i want debt consolidation",
+      "they met me at a convenience store and made me buy vouchers with my card",
+      "they said the card charges would be rolled into the consolidation",
+      "after the debt consolidation my credit cards were maxed out",
+      "an agency said it could consolidate my card debt"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "zh": [
+      "陌生來電主動推銷債務整合",
+      "約在超商或咖啡店而不是銀行簽約",
+      "要你刷卡買餐券、禮券",
+      "說刷的錢以後不用繳"
+    ],
+    "en": [
+      "An unexpected call selling debt consolidation.",
+      "Signing at a convenience store or café instead of a bank.",
+      "You are told to buy vouchers with your credit card.",
+      "They say you won't have to pay what you charge."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "債務整合請直接到銀行或打金管會1998詢問",
+      "不要在超商簽約或刷卡買禮券",
+      "已經刷卡請馬上聯絡發卡銀行，並打165"
+    ],
+    "en": [
+      "For debt consolidation, go to your bank or ask the FSC on 1998.",
+      "Don't sign at a convenience store or buy vouchers with your card.",
+      "If you already charged your card, call the issuer and 165 at once."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/fsc-1998",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "「有債務整合需求嗎？」小心都是詐騙 刑事局偵破詐騙集團假冒銀行專員刷爆民眾信用卡",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=a73c2185-7924-4bce-bbeb-17cc38969f6a",
+      "date": "2026-09-11"
+    }
+  ],
+  "updated": "2026-11-18"
+}

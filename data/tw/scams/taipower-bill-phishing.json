@@ -1,0 +1,147 @@
+{
+  "id": "tw/taipower-bill-phishing",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "phone"
+  ],
+  "sender": {
+    "zh": "「台灣電力公司」名義的簡訊（不是111短碼）、email或電話",
+    "en": "A text not from the 111 government short code, an email or a call in the name of Taipower"
+  },
+  "name": {
+    "zh": "假台電：電費逾期將斷電，或帳單錯誤要退款",
+    "en": "Fake Taipower: overdue bill means power cut, or a billing error refund"
+  },
+  "how": {
+    "zh": "詐騙集團假冒台電發簡訊說「本期電費已逾期，若逾期將終止供電」並附連結，或寄email說電費欠繳、要到「線上服務平台」繳款，也有「帳單計算錯誤，您符合退款資格」的退款信。連結通往仿冒台電的網站，騙取個資和信用卡資料；也有附ZIP壓縮檔的郵件讓電腦中毒，或打電話要你核對身分證、轉接警察、匯款。台電的電費未繳提醒簡訊只從「111」政府短碼發送，內容只有電號和月份，不附連結；溢收電費只會轉入下期抵扣或臨櫃退款。",
+    "en": "Scammers posing as Taipower send texts saying “your bill is overdue and power will be cut off” with a link, emails about unpaid bills with an “online service platform”, or refund emails saying “your bill was miscalculated and you qualify for a refund”. The links lead to fake Taipower sites that steal personal and card details; some emails carry a ZIP file that infects the computer, and some calls ask you to confirm your ID number, transfer you to the “police” or ask you to send money. Taipower's unpaid-bill reminders come only from the 111 government short code, show just your account number and month, and never have a link; overpayments are only credited to the next bill or refunded at a counter."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "收到台電名義的簡訊或email，說電費逾期、將斷電，或帳單錯誤可退款。",
+        "en": "A Taipower text or email says your bill is overdue and power will be cut, or that you are due a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "要你限期處理，點連結繳費或申請退款。",
+        "en": "You must act by a deadline and tap a link to pay or claim the refund."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "zh": "假網站要你輸入個資和信用卡號。",
+        "en": "The fake site asks for your personal details and card number."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "台灣電力公司：貴戶本期電費已逾期，請於今日內完成繳費，逾期將終止供電。線上繳費：[連結]",
+        "en": "Taiwan Power Company: your electricity bill for this period is overdue. Pay today or supply will be cut off. Pay online: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "zh": "親愛的用戶：經重新計算，您上期電費溢收NT$1,350，符合退款資格。請於3日內點擊以下連結填寫退款資料：[連結]",
+        "en": "Dear customer: after recalculation, you were overcharged NT$1,350 last period and qualify for a refund. Fill in your refund details via the link below within 3 days: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "收到台電簡訊說電費逾期要斷電",
+      "台電email說帳單算錯可以退款",
+      "台電簡訊有連結叫我繳費",
+      "有人自稱台電打來要我核對身分證",
+      "假台電網站要我輸入信用卡"
+    ],
+    "en": [
+      "i got a taipower text saying my bill is overdue and power will be cut",
+      "a taipower email said my bill was wrong and i can get a refund",
+      "a taipower text had a link telling me to pay",
+      "someone claiming to be taipower called and asked for my id number",
+      "a fake taipower site asked for my credit card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "zh": [
+      "電費簡訊不是111發的，或內容有連結",
+      "說逾期就斷電、限今天繳",
+      "email遮住電號、沒有用電地址、附壓縮檔",
+      "用email或簡訊通知退款"
+    ],
+    "en": [
+      "A bill text not from 111, or one with a link.",
+      "Pay today or power will be cut.",
+      "An email that hides your account number, has no address or carries a ZIP file.",
+      "A refund offered by email or text."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "不要點連結；用電費帳單上的電號在台電官網或台灣電力App查詢",
+      "有疑問打台電客服或165",
+      "輸入過卡號請馬上通知銀行停卡"
+    ],
+    "en": [
+      "Don't tap the link; check with the account number on your paper bill in the official website or Taipower app.",
+      "If unsure, call Taipower customer service or 165.",
+      "If you entered a card number, ask your bank to block it at once."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "台電分析3大類電費詐騙手法 助民眾免於受騙",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202504160253.aspx",
+      "date": "2025-04-16"
+    },
+    {
+      "title": "假電費提醒簡訊騙個資 台電：請認明111短碼簡訊",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202409270219.aspx",
+      "date": "2024-09-27"
+    },
+    {
+      "title": "媒體識讀／收台電附連結電費催繳簡訊 查核中心：詐騙訊息",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202406200194.aspx",
+      "date": "2024-06-20"
+    },
+    {
+      "title": "【詐騙】台電帳單計算錯誤通知郵件？點連結申請退款？當心釣魚網站！騙取個資卡號",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2025/11/taipower.html",
+      "date": "2025-11-18"
+    },
+    {
+      "title": "小心假冒台電公司的詐騙網站",
+      "publisher": "台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/fact-check-reports/scam-fake-taipower-company-website/",
+      "date": "2025-09-24"
+    }
+  ],
+  "updated": "2026-11-18"
+}

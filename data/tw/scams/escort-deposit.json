@@ -1,0 +1,130 @@
+{
+  "id": "tw/escort-deposit",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "zh": "情色廣告、交友網站或社群上的「應召站客服」、LINE或Telegram帳號",
+    "en": "An “escort service agent” from a sex ad, dating site or social media, on LINE or Telegram"
+  },
+  "name": {
+    "zh": "色情應召詐騙：先付會員費、保證金，再一直要你補款",
+    "en": "Escort scam: pay a membership fee or deposit, then keep paying more"
+  },
+  "how": {
+    "zh": "歹徒用「快速約會」、「提供性服務」等情色廣告或交友網站吸引人，要你加LINE或Telegram和「客服」聯繫。客服要你先儲值會員費，或到超商買點數卡付款、當保證金，再傳點數卡號和密碼。之後又說你匯款出錯、帳號被凍結，要補匯「解凍金」、「信用驗證」才能啟用或從App領回，一筆接一筆。刑事局說色情應召詐騙穩居近期財損前5名。",
+    "en": "Scammers lure people with sex ads promising “quick dates” or “sexual services”, or through dating sites, and ask them to contact an “agent” on LINE or Telegram. The agent wants a membership top-up first, or game-point cards bought at a convenience store as payment or deposit, with the card numbers and PINs sent over. Then they say your payment had an error or your account is frozen, and you must pay an “unfreezing fee” or “credit verification” to activate it or get your money back in the app, again and again. The police say escort scams are among the top five by losses."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "看到情色廣告或在交友網站認識，被要求加LINE或Telegram。",
+        "en": "A sex ad or dating-site contact asks you to add LINE or Telegram."
+      }
+    },
+    {
+      "text": {
+        "zh": "客服要你先付會員費、保證金，或買點數卡傳序號密碼。",
+        "en": "The agent wants a membership fee or deposit, or game-point cards with their codes."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "zh": "說匯款出錯、帳號凍結，要再補解凍金、信用驗證費。",
+        "en": "They say the payment went wrong or the account is frozen and you must pay unfreezing or verification fees."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "哥哥你好，本會館小姐都是真人照片，第一次預約需先儲值會員費三千元完成認證，認證後即可安排，費用可全額退回喔。",
+        "en": "Hello handsome, all our girls' photos are real. First bookings must top up a 3,000 membership fee for verification; after that we can arrange it, and the fee is fully refundable."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "系統顯示您匯款備註錯誤，帳戶已被凍結，需再匯入解凍金一萬元才能恢復並領回全部款項。",
+        "en": "The system shows your transfer note was wrong and your account is frozen. Transfer an unfreezing fee of 10,000 to restore it and get all your money back."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "約妹要先付會員費和保證金",
+      "應召站叫我去超商買點數卡",
+      "客服說匯款出錯要再付解凍金",
+      "說要信用驗證才能安排小姐",
+      "一直要我補款才能領回錢"
+    ],
+    "en": [
+      "they wanted a membership fee and deposit before a date",
+      "the escort agency told me to buy game point cards at a convenience store",
+      "the agent said my payment went wrong and i must pay an unfreezing fee",
+      "they said i needed credit verification before they could arrange a girl",
+      "they keep asking me to pay more before i can get my money back"
+    ]
+  },
+  "signals": [
+    "money_request",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "zh": [
+      "見面前要你先付會員費、保證金",
+      "要你買點數卡並傳序號密碼",
+      "說帳號凍結、要付解凍金才能退款"
+    ],
+    "en": [
+      "A membership fee or deposit before meeting.",
+      "You are told to buy game-point cards and send the codes.",
+      "They say the account is frozen and you must pay to get a refund."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "不要再付任何一筆錢，錢不會退回",
+      "不要買點數卡給陌生人",
+      "可打165諮詢或報案"
+    ],
+    "en": [
+      "Don't pay anything more; the money won't come back.",
+      "Never buy game-point cards for a stranger.",
+      "Call 165 for advice or to report it."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/police-110"
+  ],
+  "sources": [
+    {
+      "title": "網路色情應召詐騙再現　 刑事局提供常見4項特徵",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202606200124.aspx",
+      "date": "2026-06-20"
+    },
+    {
+      "title": "彰化男遇色情應召詐財買點數卡　超商店員機靈報警攔阻",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202609140109.aspx",
+      "date": "2026-09-14"
+    },
+    {
+      "title": "網購詐騙受理件數最多　刑事局提供防詐關鍵字",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604090091.aspx",
+      "date": "2026-04-09"
+    }
+  ],
+  "updated": "2026-11-18"
+}

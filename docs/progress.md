@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Taiwan:** 19 entries in Traditional Chinese, 6 contacts (165 anti-fraud line, police 110, FSC 1998, consumer
+  1950, NHIA, your bank), 27 brands, 22 labelled and 13 real messages (two subject-line quotes left out). Matcher
+  1.32.0 adds a Chinese block with Simplified variants (fake traffic fines and Taipower cut-offs, "今日內", "停卡",
+  cancel-instalment "ATM解除設定", "新的號碼", "穩賺", fake officials) and "請勿將驗證碼告知他人" as a genuine-code
+  sign; a genuine Taipower reminder ("請儘速繳費") is not a money request. Taiwan: 0% → 75% of labelled scams called
+  "scam", 0 false alarms; real 7 → 12 of 13 caught, 5 called "scam"; every other country and the private set unchanged.
+
 - **Japan:** 20 entries in Japanese, 7 contacts (police 110 and #9110, consumer hotline 188, FSA, NPA cyber reporting,
   Anti-Phishing Council), 30 brands, 22 labelled and 15 real messages (NPA, MPD, JC3 and Anti-Phishing Council
   published texts and scripts). Kana and kanji carry more per character, so their shared-stretch thresholds are

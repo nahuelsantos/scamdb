@@ -1,0 +1,153 @@
+{
+  "id": "tw/free-gift-fake-cvs-link",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "zh": "臉書、Threads、IG上說要免費送手機、媽祖結緣品、寵物或嬰兒用品的網友",
+    "en": "Someone on Facebook, Threads or Instagram offering a free phone, temple blessing gift, pet or baby items"
+  },
+  "name": {
+    "zh": "免費贈送：要你付小額運費，傳來假賣貨便網站",
+    "en": "Free giveaway: pay a small shipping fee on a fake store-pickup site"
+  },
+  "how": {
+    "zh": "詐騙者在社群平台貼文說要免費送iPhone、筆電、媽祖壓轎金或結緣品、和尚鸚鵡等，有時還附身分證照片表示不是詐騙，要你加LINE聯繫。接著說只要付幾十元運費，傳來偽冒的7-11賣貨便或全家好賣+網址。你填資料後，網頁跳出「交易異常」、「未完成金流簽署」或「需實名認證」，引導你加假客服LINE，再指示你開啟無卡提款、網銀轉帳或翻拍付款碼。原本的網友還會哭訴帳戶被凍結、小孩要開刀，用情緒勒索讓你照做。",
+    "en": "A post on social media offers a free iPhone, laptop, Mazu temple blessing money or gifts, or pet parrots, sometimes with an ID card photo to “prove” it's not a scam, and asks you to add them on LINE. They say you only need to pay a few dozen dollars' shipping and send a fake 7-ELEVEN myship or FamilyMart link. After you fill it in, the page shows “transaction error”, “payment agreement not signed” or “real-name verification needed” and sends you to a fake LINE agent, who has you turn on cardless withdrawal, transfer by online banking or photograph your payment code. The original poster may cry that their account is frozen or a child needs surgery, to guilt you into it."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "在社群看到免費贈送貼文，被要求加LINE。",
+        "en": "You see a free giveaway post and are asked to add a LINE account."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "zh": "對方說只要付小額運費，傳來假的超商寄貨網址。",
+        "en": "They say you just pay a small shipping fee and send a fake convenience-store shipping link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "zh": "網頁說交易異常、要實名認證，引導你加假客服。",
+        "en": "The page says there is an error or you must verify, and sends you to a fake agent."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "假客服要你操作網銀、無卡提款或傳付款碼。",
+        "en": "The fake agent has you use online banking, cardless withdrawal or send a payment code."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "因為搬家養不了了，想把兩隻鸚鵡免費送給有愛心的人，只要出運費就好，有興趣請加LINE，先傳訊息喔：[連結]",
+        "en": "I'm moving and can't keep them, so I want to give two parrots free to a kind home, just pay shipping. If interested add my LINE and message first: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "確定要的話我用賣貨便寄出，運費38元自付，貨到付款，下單連結在這裡：[連結]",
+        "en": "If you're sure you want it I'll send it by myship. Shipping is 38 dollars, paid by you, cash on delivery. Order link here: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "臉書上說免費送手機只要付運費",
+      "送媽祖結緣品的網友傳賣貨便連結給我",
+      "填完資料說交易異常要聯絡客服",
+      "免費領養寵物要我付運費加LINE",
+      "客服說要開通金流服務才能寄出",
+      "送東西的人說他的帳戶被凍結很著急"
+    ],
+    "en": [
+      "someone on facebook offered a free phone if i paid shipping",
+      "a person giving away mazu blessing gifts sent me a myship link",
+      "after filling in my details it said there was an error and to contact service",
+      "a free pet adoption asked me to pay shipping and add line",
+      "customer service said i had to activate payment service before it could ship",
+      "the person giving things away said their account was frozen and was panicking"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "zh": [
+      "陌生人免費送高價物品，只收小額運費",
+      "傳來的賣貨便網址不是官方網址",
+      "要求實名認證、簽署金流或驗證帳戶",
+      "對方用小孩生病、被家暴等理由催你"
+    ],
+    "en": [
+      "A stranger gives away something valuable for just a small shipping fee.",
+      "The myship link is not the official address.",
+      "You are asked to verify your identity, sign a payment agreement or verify your account.",
+      "They pressure you with a sick child or domestic violence story."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "不要點陌生網址，二次查證交易平台網站",
+      "真客服不會加LINE，更不會開視訊",
+      "不傳帳戶資料，也不翻拍付款碼",
+      "已經操作或匯款請立即打165或報警"
+    ],
+    "en": [
+      "Don't open unknown links; double-check the platform's real website.",
+      "Real customer service never adds you on LINE or video-calls.",
+      "Don't send account details or photos of payment codes.",
+      "If you already did something or paid, call 165 or the police at once."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/police-110",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "網路贈物搭偽賣貨便詐財　刑事局籲勿點陌生網址",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202605170109.aspx",
+      "date": "2026-05-17"
+    },
+    {
+      "title": "社群平台貼贈小物誆稱需收運費　警：詐騙手法",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604040085.aspx",
+      "date": "2026-04-04"
+    },
+    {
+      "title": "詐團謊稱送免費手機詐財 刑事局：勿點不明物流連結",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202605030112.aspx",
+      "date": "2026-05-03"
+    },
+    {
+      "title": "【詐騙】Threads傳免費領養小動物的貼文？加LINE聯繫？慣用手法！假賣貨便網站騙個資卡號",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2026/01/threads-fraud.html",
+      "date": "2026-01-05"
+    }
+  ],
+  "updated": "2026-11-18"
+}

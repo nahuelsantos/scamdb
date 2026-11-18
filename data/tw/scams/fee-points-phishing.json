@@ -1,0 +1,153 @@
+{
+  "id": "tw/fee-points-phishing",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "zh": "「遠通電收」、eTag、停車費，或中華電信、遠傳等電信公司、自來水公司名義的簡訊或email",
+    "en": "A text or email in the name of FETC (eTag tolls), parking fees, Chunghwa Telecom, FarEasTone or another carrier, or the water company"
+  },
+  "name": {
+    "zh": "小額欠費、點數到期：停車費、過路費、電信積分的釣魚簡訊",
+    "en": "Small unpaid fee or expiring points: phishing texts about parking, tolls or phone points"
+  },
+  "how": {
+    "zh": "刑事局指出，近期釣魚連結以「假冒電信及交通收費通知」最多。詐騙簡訊或email說「停車費120元尚未繳納」、「eTag自動扣款失敗」、「過路費逾期」，或說電信積分、遠傳幣即將到期要趕快兌換，也有冒用自來水公司催繳。金額小、限當天處理，讓你來不及查證就點連結。假網站要你輸入車號、身分證字號，再填信用卡號和簡訊驗證碼，幾分鐘內信用卡就被連續盜刷。遠通電收說，沒有明確標註車號的繳費簡訊或信件就是詐騙。",
+    "en": "The police say the most common phishing links lately are fake telecom and transport fee notices. Texts or emails say “a parking fee of 120 dollars is unpaid”, “your eTag auto-payment failed” or “a toll is overdue”, or that your carrier points or FET coins are about to expire and must be redeemed; others pose as the water company. The amount is small and must be handled today, so you click before checking. The fake site asks for your plate and ID number, then your card number and the text code, and the card is charged repeatedly within minutes. FETC says any payment text or email that doesn't clearly show your plate number is a scam."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "收到停車費、過路費未繳，或電信積分到期的簡訊、email。",
+        "en": "A text or email about an unpaid parking fee or toll, or expiring phone points."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "金額很小，要你今天內處理或兌換。",
+        "en": "The amount is small and must be dealt with or redeemed today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "zh": "連結到假網站，要你輸入信用卡號和簡訊驗證碼。",
+        "en": "The link leads to a fake site that asks for your card number and text code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【遠通電收】您的車輛有一筆停車費用NT$120尚未繳納，請於今日內完成繳費，逾期將加收罰鍰。繳費請至：[連結]",
+        "en": "[FETC] Your vehicle has an unpaid parking fee of NT$120. Pay today or a fine will be added. Pay here: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "zh": "中華電信會員回饋提醒：您的帳戶6280點積分將於今日到期，逾期作廢，請立即兌換好禮：[連結]",
+        "en": "Chunghwa Telecom member reward reminder: your 6,280 points expire today and will be void after that. Redeem a gift now: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "收到簡訊說停車費120元沒繳",
+      "遠通電收簡訊說eTag扣款失敗",
+      "電信簡訊說積分今天到期要兌換",
+      "點了停車費連結信用卡被盜刷",
+      "自來水公司簡訊說水費沒繳要點連結"
+    ],
+    "en": [
+      "i got a text saying a 120 dollar parking fee is unpaid",
+      "an fetc text said my etag payment failed",
+      "a phone company text said my points expire today",
+      "i tapped a parking fee link and my card was charged",
+      "a water company text said my bill is unpaid and to tap a link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "zh": [
+      "繳費簡訊沒有你的車號，卻附連結",
+      "小額欠費或積分到期，要你今天處理",
+      "用語奇怪，例如「賬戶」、「激活鏈接」",
+      "繳小錢卻要輸入信用卡號和簡訊驗證碼"
+    ],
+    "en": [
+      "A fee text without your plate number but with a link.",
+      "A small debt or expiring points that must be handled today.",
+      "Odd wording such as mainland terms for “account” or “activate link”.",
+      "A small payment that asks for your card number and text code."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "不要點連結；用官方App或自己查官網確認",
+      "不要把簡訊驗證碼輸入不明網站",
+      "已輸入卡號請馬上通知銀行停卡，並打165"
+    ],
+    "en": [
+      "Don't tap the link; check in the official app or website yourself.",
+      "Never type a text code into an unknown site.",
+      "If you entered your card number, ask your bank to block it and call 165."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "小額欠費詐騙頻傳　刑事局籲防信用卡盜刷",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202610020285.aspx",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "慎防釣魚連結及LINE帳號被盜用來詐騙 刑事局籲「不明連結不點、好友借錢先查證」",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=dc96426e-60ee-4b56-8fc2-a8c1f8aabf1d",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "偵破全臺最大釣魚簡訊集團 刺青師夥同幫派幹部遠端釣魚詐騙百餘人",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=31bf36cd-44bd-402e-8ceb-e4ce985e94dd",
+      "date": "2026-02-25"
+    },
+    {
+      "title": "近期又有詐騙假冒遠通電收網站，收到信件、簡訊先確認",
+      "publisher": "台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/fact-check-reports/fetc-scam-fake-website-confirm-email-sms-first/",
+      "date": "2025-12-29"
+    },
+    {
+      "title": "【錯誤】網傳簡訊「遠通電收eTag-你有一筆過路費逾期未繳費、您的eTag賬單自動扣款失敗」？",
+      "publisher": "台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/fact-check-reports/migration-9161/",
+      "date": "2023-05-19"
+    },
+    {
+      "title": "【詐騙】電信會員提示簡訊？積分餘額到期要你「激活鏈接」？騙個資信用卡號",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2023/03/fake-msg.html",
+      "date": "2023-03-29"
+    }
+  ],
+  "updated": "2026-11-18"
+}
