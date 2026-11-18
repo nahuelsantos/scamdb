@@ -1,0 +1,133 @@
+{
+  "id": "vn/fake-prize-call",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "vi": "“Nhân viên chăm sóc khách hàng”, “trung tâm mua sắm trực tuyến” gọi từ đầu số cố định",
+    "en": "A “customer service agent” or “online shopping centre” calling from a landline-style number"
+  },
+  "name": {
+    "vi": "Gọi báo trúng thưởng, “tri ân khách hàng”, phải nộp thuế phí để nhận quà",
+    "en": "Call saying you won a prize or “customer appreciation” gift, but must pay tax or fees to receive it"
+  },
+  "how": {
+    "vi": "Kẻ gian giả danh nhân viên chăm sóc khách hàng của trung tâm mua sắm, doanh nghiệp, gọi bằng đầu số cố định qua internet, báo bạn trúng tiền mặt hoặc quà giá trị lớn trong chương trình tri ân. Để nhận, bạn phải nộp “thuế phí”, mua thêm hàng hoặc chuyển tiền để “quy đổi hiện vật ra tiền mặt”. Sau mỗi lần nộp lại phát sinh khoản phí mới.",
+    "en": "Scammers posing as customer service for a shopping centre or company call from internet landline numbers and say you won cash or a valuable prize in a customer-appreciation programme. To claim it you must pay “tax and fees”, buy more goods or pay to “convert the prize into cash”. Every payment leads to a new fee."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Cuộc gọi báo bạn trúng thưởng trong chương trình bạn không tham gia.",
+        "en": "A call saying you won in a programme you never entered."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "vi": "Người gọi xưng nhân viên chăm sóc khách hàng của doanh nghiệp quen thuộc.",
+        "en": "The caller claims to be customer service for a known company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "vi": "Bạn phải nộp thuế phí hoặc mua hàng mới nhận được quà.",
+        "en": "You must pay tax or fees, or buy something, to get the prize."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "vi": "Họ hối thúc nộp ngay kẻo mất giải.",
+        "en": "They push you to pay now or lose the prize."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "Chúc mừng anh là khách hàng may mắn trong chương trình tri ân của trung tâm mua sắm, trúng thưởng 1 xe máy và 50 triệu tiền mặt. Để nhận giải anh cần nộp 10% thuế thu nhập vào tài khoản của bộ phận trao thưởng trong hôm nay.",
+        "en": "Congratulations, you are a lucky customer in the shopping centre's appreciation programme and have won a motorbike and 50 million dong in cash. To claim it you need to pay 10% income tax into the prize department's account today."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "vi": "Quý khách đã trúng quà tri ân trị giá 15.000.000đ. Nếu muốn quy đổi hiện vật ra tiền mặt, quý khách vui lòng thanh toán phí chuyển đổi 1.500.000đ theo hướng dẫn của nhân viên.",
+        "en": "You have won an appreciation gift worth 15,000,000 dong. To convert it to cash, please pay a 1,500,000 dong conversion fee as the agent instructs."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "gọi điện báo tôi trúng thưởng phải nộp thuế",
+      "khách hàng may mắn chương trình tri ân",
+      "nộp phí để quy đổi quà ra tiền mặt",
+      "trúng xe máy nhưng phải chuyển tiền trước",
+      "nhân viên chăm sóc khách hàng báo trúng quà"
+    ],
+    "en": [
+      "a call said i won a prize but must pay tax",
+      "lucky customer in a customer appreciation programme",
+      "paying a fee to convert a gift into cash",
+      "won a motorbike but must pay first",
+      "customer service said i won a gift"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "vi": [
+      "Trúng thưởng chương trình bạn không tham gia.",
+      "Phải nộp thuế, phí trước khi nhận giải.",
+      "Mỗi lần nộp lại có khoản phí khác."
+    ],
+    "en": [
+      "Winning a programme you never entered.",
+      "Having to pay tax or fees before getting the prize.",
+      "A new fee after every payment."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Không chuyển tiền, không mua hàng, không nộp phí khi chưa kiểm chứng.",
+      "Tự gọi tổng đài chính thức của doanh nghiệp được nhắc tên để hỏi.",
+      "Nếu đã mất tiền, trình báo công an và báo ngân hàng."
+    ],
+    "en": [
+      "Don't send money, buy goods or pay fees before checking.",
+      "Call the named company on its official number yourself.",
+      "If you lost money, report it to the police and tell your bank."
+    ]
+  },
+  "reportTo": [
+    "vn/police-113",
+    "vn/spam-5656",
+    "vn/consumer-1800-6838",
+    "vn/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Cảnh giác với thủ đoạn lừa trúng thưởng",
+      "publisher": "Nhân Dân",
+      "url": "https://nhandan.vn/canh-giac-voi-thu-doan-lua-trung-thuong-post933798.html",
+      "date": "2025-12-29"
+    }
+  ],
+  "story": {
+    "vi": "Ở Thanh Hóa, công an khởi tố 9 bị can trong nhóm lấy tên công ty giả “Trung tâm đầu tư quốc tế Power”, từ tháng 7/2025 dùng hai đầu số cố định gọi qua internet cho người dân khắp cả nước, giả nhân viên chăm sóc khách hàng báo trúng thưởng rồi gợi ý nộp thuế phí, quy đổi quà ra tiền mặt.",
+    "en": "In Thanh Hoa, police charged 9 people in a group using a fake company name, “Power International Investment Centre”, which from July 2025 used two internet landline numbers to call people across the country, posing as customer service to announce prizes and then suggest paying tax or converting the gift to cash."
+  },
+  "updated": "2026-11-18"
+}

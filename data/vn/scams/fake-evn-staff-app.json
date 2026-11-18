@@ -1,0 +1,146 @@
+{
+  "id": "vn/fake-evn-staff-app",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "vi": "“Nhân viên điện lực” gọi điện, hoặc tin nhắn mang tên “EVN CSKH”",
+    "en": "An “electricity company employee” calling, or a text from “EVN CSKH”"
+  },
+  "name": {
+    "vi": "“Nhân viên điện lực” dọa cắt điện, bảo cài ứng dụng EVN qua đường link",
+    "en": "“Electricity staff” threaten a power cut and ask you to install an EVN app from a link"
+  },
+  "how": {
+    "vi": "Kẻ gian giả danh nhân viên điện lực gọi điện báo nợ tiền điện, sắp cắt điện hoặc cần cập nhật thông tin khách hàng, rồi hướng dẫn cài ứng dụng “CSKH EVN” giả qua đường link và xác thực khuôn mặt. Cũng có tin nhắn mang tên “EVN CSKH” kèm mã OTP giả và đường link lạ. Ứng dụng giả chiếm quyền điện thoại và rút sạch tiền trong tài khoản. EVN không thu tiền điện qua tài khoản cá nhân và tin nhắn OTP thật không kèm đường link.",
+    "en": "Scammers pose as electricity company staff and call about an unpaid bill, an imminent power cut or a customer-data update, then guide you to install a fake “CSKH EVN” app from a link and verify your face. There are also texts from “EVN CSKH” with a fake OTP code and an odd link. The fake app takes over your phone and empties your bank account. EVN never collects bills into personal accounts and its real OTP texts never contain a link."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Cuộc gọi từ “điện lực” báo nợ tiền điện, sắp cắt điện hoặc phải cập nhật thông tin.",
+        "en": "A call from the “electricity company” about an unpaid bill, a power cut or a data update."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "vi": "Họ hối thúc xử lý ngay trong ngày để không bị cắt điện.",
+        "en": "They push you to sort it out today to avoid a cut."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "vi": "Bạn được gửi đường link cài ứng dụng chăm sóc khách hàng EVN.",
+        "en": "You are sent a link to install an EVN customer-care app."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "vi": "Ứng dụng đòi cấp quyền và xác thực khuôn mặt; tiền trong tài khoản bị chuyển đi.",
+        "en": "The app asks for permissions and a face scan; money leaves your account."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "Alo, em gọi từ Điện lực khu vực. Hệ thống ghi nhận nhà mình còn nợ tiền điện hai kỳ, chiều nay đội kỹ thuật sẽ xuống cắt điện. Anh cài ứng dụng CSKH EVN bản mới theo đường link em gửi qua Zalo để đối soát và thanh toán thì em hủy lệnh cắt cho anh.",
+        "en": "Hello, I am calling from the district electricity office. Our system shows your home owes two months of electricity, and the technical team will cut your power this afternoon. Install the new CSKH EVN app from the link I send you on Zalo to reconcile and pay, and I will cancel the cut order."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "vi": "EVN CSKH: Ma OTP cua Quy khach la 482913. Vui long xac thuc tai khoan tai [đường dẫn] de tranh gian doan cap dien.",
+        "en": "EVN CSKH: Your OTP code is 482913. Please verify your account at [đường dẫn] to avoid an interruption to your power supply."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "nhân viên điện lực gọi dọa cắt điện",
+      "bị bảo cài ứng dụng cskh evn qua link",
+      "tin nhắn evn cskh gửi mã otp kèm đường link",
+      "cài app điện lực xong bị mất tiền trong tài khoản",
+      "điện lực bắt xác thực khuôn mặt trên app lạ"
+    ],
+    "en": [
+      "electricity staff called threatening to cut my power",
+      "told to install the evn customer care app from a link",
+      "a text from evn cskh with an otp code and a link",
+      "after installing the electricity app my money disappeared",
+      "the electricity company asked me to scan my face in a strange app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "remote_access"
+  ],
+  "redFlags": {
+    "vi": [
+      "Nhân viên điện lực gọi điện bảo cài ứng dụng qua đường link hoặc Zalo.",
+      "Dọa cắt điện ngay trong ngày.",
+      "Tin nhắn OTP “EVN” có kèm đường link."
+    ],
+    "en": [
+      "Electricity staff calling to make you install an app from a link or on Zalo.",
+      "A threat to cut your power the same day.",
+      "An “EVN” OTP text that contains a link."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Cúp máy và gọi tổng đài chăm sóc khách hàng của điện lực nơi bạn ở để kiểm tra.",
+      "Chỉ tải ứng dụng EVN CSKH từ App Store hoặc CH Play và trả tiền điện qua kênh chính thức.",
+      "Nếu đã cài ứng dụng lạ, tắt mạng điện thoại, gọi ngân hàng khóa tài khoản và trình báo công an."
+    ],
+    "en": [
+      "Hang up and call your local electricity company's customer-care line to check.",
+      "Only get the EVN CSKH app from the App Store or Google Play and pay bills through official channels.",
+      "If you installed an unknown app, turn off your phone's data, call your bank to lock your account and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "vn/police-113",
+    "vn/your-bank",
+    "vn/ncsc",
+    "vn/spam-5656"
+  ],
+  "sources": [
+    {
+      "title": "Mất 2,5 tỷ đồng vì bị kẻ gian giả danh nhân viên điện lực, dụ cài ứng dụng EVN giả mạo",
+      "publisher": "Tiền Phong",
+      "url": "https://tienphong.vn/mat-2-5-ty-dong-vi-bi-ke-gian-gia-danh-nhan-vien-dien-luc-du-cai-ung-dung-evn-gia-mao-post1781343.html",
+      "date": "2025-09-26"
+    },
+    {
+      "title": "Xuất hiện tin nhắn lừa đảo kèm đường dẫn giả mạo điện lực, người dân chú ý",
+      "publisher": "Tuổi Trẻ",
+      "url": "https://tuoitre.vn/xuat-hien-tin-nhan-lua-dao-kem-duong-dan-gia-mao-dien-luc-nguoi-dan-chu-y-100260622184758592.htm",
+      "date": "2026-06-22"
+    },
+    {
+      "title": "Rộ thủ đoạn giả nhân viên đòi cắt điện: “Điểm mặt” cách lừa đảo",
+      "publisher": "Thanh Niên",
+      "url": "https://thanhnien.vn/ro-thu-doan-gia-nhan-vien-doi-cat-dien-diem-mat-cach-lua-dao-185250225200811774.htm",
+      "date": "2025-02-25"
+    }
+  ],
+  "story": {
+    "vi": "Ở TP.HCM, một người đàn ông 55 tuổi nhận cuộc gọi từ kẻ giả danh nhân viên điện lực, được hướng dẫn cài ứng dụng “CSKH EVN SPC”. Sau bước xác thực khuôn mặt, toàn bộ 2,25 tỷ đồng trong tài khoản ngân hàng của ông bị chiếm đoạt.",
+    "en": "In Ho Chi Minh City, a 55-year-old man got a call from someone posing as electricity company staff and was guided to install a “CSKH EVN SPC” app. After a face-verification step, all 2.25 billion dong in his bank account was taken."
+  },
+  "updated": "2026-11-18"
+}

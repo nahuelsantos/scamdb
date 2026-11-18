@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Vietnam:** 17 entries in Vietnamese, 7 contacts (police 113, the C02 fraud line, VNeID reporting, NCSC, 5656
+  spam, consumer 1800 6838), 25 brands, 22 labelled and 4 real messages. Matcher 1.28.0 adds a Vietnamese block
+  (on diacritic-folded text: "đọc lại cho em" code requests, "cài ứng dụng", "cho anh mượn", "chuyển khoản trước",
+  "đường dẫn", "điều tra viên", "làm việc qua video") and "tuyệt đối không cung cấp mã" as a genuine-code sign.
+  Vietnam: 0% → 75% of labelled scams called "scam", 1 → 0 false alarms; real 0 → 2 of 4 called "scam"; every other
+  country and the private set unchanged. Most Vietnamese warnings show messages as screenshots, so the real set is small.
+
 - **Egypt:** 18 entries in Arabic (mostly Egyptian colloquial examples), 10 contacts (MOI cybercrime 108, police
   122, CBE, NTRA 155, Consumer Protection 19588, FRA, Social Solidarity, Labour, Egypt Post), 26 brands, 22 labelled
   and 10 real messages. Matcher 1.27.0 adds Egyptian wording to the Arabic block ("قولهولي", "الكود اللي هيوصلك",

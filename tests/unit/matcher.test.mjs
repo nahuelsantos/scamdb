@@ -610,3 +610,12 @@ test('1.27.0: Egyptian Arabic: "قولهولي", wallet transfers, "النهار
   assert.ok(!readSigns('كود التحقق 482915. لا تشارك هذا الكود مع أي شخص، البنك لن يطلبه منك أبداً', ['ar']).includes('asks_for_code'));
   assert.ok(!readSigns('ماما أنا وصلت الشغل، هعدي عليكي بالليل', ['ar']).length, 'a family message has no signs');
 });
+test('1.28.0: Vietnamese rules, only where Vietnamese is spoken', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const vneid = readSigns('Em bên công an phường, tài khoản VNeID của chị cuối tuần này sẽ bị khóa. Có mã 6 số gửi về máy thì chị đọc lại cho em', ['vi']);
+  for (const s of ['asks_for_code', 'urgency', 'impersonation']) assert.ok(vneid.includes(s), s);
+  assert.ok(readSigns('Em còn đủ 15 triệu không cho anh mượn chuyển vào số tài khoản này có chút việc gấp', ['vi']).includes('money_request'));
+  assert.ok(readSigns('Anh cài ứng dụng thuế điện tử theo đường dẫn em gửi', ['vi']).includes('remote_access'));
+  assert.ok(!readSigns('Ma OTP cua Quy khach la 538217. Tuyet doi KHONG cung cap ma OTP cho bat ky ai', ['vi']).includes('asks_for_code'));
+  assert.ok(!readSigns('cho anh muon chuyen vao so tai khoan nay gap', ['es', 'en']).includes('money_request'), 'Vietnamese rules only where Vietnamese is spoken');
+});
