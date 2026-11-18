@@ -1,13 +1,11 @@
 // The page shell: head, nav, footer. The interface is English only.
 import { esc } from './html.js';
-import { sketch } from '../../lib/sketch.js';
+import { LOGO } from './logo.js';
 import { t } from '../i18n.js';
 
 export const SITE = 'https://scamdb.dev';
 export const REPO = 'https://github.com/nahuelsantos/scamdb';
 
-const LS = sketch(801);
-const LOGO = `<svg viewBox="0 0 30 30" aria-hidden="true" focusable="false">${LS.circle(13, 13, 17)}${LS.path('M19.5 19.5 L26 26')}${LS.path('M9.5 13.2 l2.4 2.4 4.4-5', { kind: 'acc' })}</svg>`;
 
 /** `path` is where the page lives ('/docs/'). */
 // The trends page needs reports to show anything; it stays built (so /trends/ works) but out of the menu until then.

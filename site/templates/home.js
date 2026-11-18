@@ -6,7 +6,7 @@ import { UI_ICONS } from './icons.js';
 import { pick } from '../../lib/text.js';
 import { sketch, roundRect } from '../../lib/sketch.js';
 
-export const FEATURED = ['ar/cuento-del-tio', 'ar/falso-banco', 'ar/acceso-remoto'];
+export const FEATURED = ['us/bank-fraud-alert-zelle', 'us/toll-text', 'us/family-emergency-call'];
 export const ROUTE = 'ar/whatsapp-codigo';
 export const SAMPLES = [
   { text: "This is your bank's fraud team. We've stopped a suspicious payment of $1,480. To protect your money, read me the 6-digit code we just sent you. Please don't hang up." },
@@ -104,7 +104,7 @@ ${route ? `<section class="route" aria-labelledby="route-h">
 
 <section class="eps" aria-labelledby="ep-h">
   <h2 id="ep-h" class="sr">${esc(t(lang, 'epH'))}</h2>
-  <div class="ep"><code>GET /v1/ar/scams.json</code><p>${esc(t(lang, 'epCountry'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
+  <div class="ep"><code>GET /v1/us/scams.json</code><p>${esc(t(lang, 'epCountry'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
   <div class="ep"><code>GET /v1/scams/{id}.json</code><p>${esc(t(lang, 'epOne'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
   <div class="ep"><code>POST /v1/reports</code><p>${esc(t(lang, 'epReport'))}</p><span class="tier">${esc(t(lang, 'tierPrivate'))}</span></div>
   <div class="ep"><code>POST /v1/isitascam</code><p>${esc(t(lang, 'epCheck'))}</p><span class="tier">${esc(t(lang, 'tierCheck'))}</span></div>
