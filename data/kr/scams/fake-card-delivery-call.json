@@ -1,0 +1,146 @@
+{
+  "id": "kr/fake-card-delivery-call",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ko": "카드 배송기사, 이어서 ‘카드사 콜센터’, ‘금감원’, ‘검찰’",
+    "en": "A card courier, then a “card company call centre”, the “FSS” and “prosecutors”"
+  },
+  "name": {
+    "ko": "신청하지 않은 카드가 배송된다는 전화",
+    "en": "Call about a credit card you never applied for being delivered"
+  },
+  "how": {
+    "ko": "카드 배송기사라는 사람이 전화해 이름과 생년월일을 확인하고 “신청하신 카드를 배송하려 한다”고 말합니다. 신청한 적이 없다고 하면 명의도용일 수 있다며 ‘카드사 대표번호’라는 번호로 전화하게 하는데, 그 번호부터 사기범이 받습니다. 가짜 콜센터는 원격제어 앱을 깔게 해 휴대폰을 장악하고, 금감원과 검찰을 사칭해 범죄에 연루됐다고 겁을 준 뒤 자산 보호를 이유로 직접 이체하게 합니다. 고액 피해자는 60대 여성이 특히 많았습니다.",
+    "en": "A “card courier” calls, checks your name and date of birth and says they are delivering the card you applied for. When you say you never applied, they warn of identity theft and give you a “card company number” to call, but scammers answer that number. The fake call centre gets you to install a remote-control app that takes over your phone, then people posing as the FSS and prosecutors say you are tied to a crime and have you transfer money yourself to “protect your assets”. Women in their 60s were hit hardest by large losses."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "카드 배송기사라며 내가 신청하지 않은 카드를 배송하겠다고 전화한다.",
+        "en": "A “courier” calls to deliver a card you never applied for."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "신청하지 않았다고 하면 명의도용이라며 상대가 알려준 ‘카드사 번호’로 전화하게 한다.",
+        "en": "When you say you didn't apply, they say it's identity theft and give you a “card company” number to call."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "가짜 상담원이 보안을 이유로 원격제어 앱을 설치하게 한다.",
+        "en": "A fake agent has you install a remote-control app “for security”."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "ko": "금감원·검찰이라며 범죄 연루를 말하고 자산 보호 명목으로 이체하게 한다.",
+        "en": "“FSS” and “prosecutors” say you are tied to a crime and have you transfer money to protect it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "안녕하세요, ○○년생 ○○○님 맞으시죠? ○○카드 배송 때문에 연락드렸습니다. 카드 신청하신 적 없으시다고요? 요즘 명의도용이 많아서요. 제가 카드사 분실신고 센터 번호 알려드릴 테니 지금 바로 전화해서 발급 취소하세요.",
+        "en": "Hello, is this ○○○, born in ○○? I'm calling about delivering your ○○ card. You say you never applied for it? There's a lot of identity theft lately. I'll give you the card company's loss-report number, so call right now and cancel it."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ko": "○○카드 고객센터입니다. 고객님 명의로 카드가 발급되고 개인정보가 유출된 것으로 확인됩니다. 추가 피해를 막으려면 저희가 안내하는 보안 앱을 설치하셔야 하고, 사건은 금융감독원으로 넘겨 드리겠습니다.",
+        "en": "This is the ○○ Card customer centre. We can see a card was issued in your name and your personal data has leaked. To stop further damage you must install the security app we tell you about, and we will pass the case to the Financial Supervisory Service."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "신청도 안 한 카드가 배송된다고 전화 옴",
+      "카드 배송기사가 명의도용 같다며 카드사 번호를 알려줌",
+      "카드사에 전화했더니 원격 앱을 깔라고 함",
+      "카드 발급 취소하려다 금감원이랑 검찰이 연결됨",
+      "내 명의로 카드가 발급됐다고 함"
+    ],
+    "en": [
+      "a courier called about a card i never applied for",
+      "the card delivery man said it was identity theft and gave me a card company number",
+      "i called the card company and they told me to install a remote app",
+      "i tried to cancel the card and was passed to the fss and prosecutors",
+      "they said a card had been issued in my name"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ko": [
+      "신청하지 않은 카드의 배송 전화",
+      "배송기사가 특정 번호로 전화하라고 한다",
+      "카드사·공공기관이 앱 설치를 요구한다"
+    ],
+    "en": [
+      "A delivery call about a card you didn't apply for.",
+      "The courier tells you to call a particular number.",
+      "A card company or public agency asking you to install an app."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "상대가 알려준 번호가 아니라 카드 뒷면이나 공식 홈페이지의 카드사 대표번호로 직접 확인하세요",
+      "카드사와 공공기관은 앱 설치를 요구하지 않습니다. 이미 깔았다면 휴대폰을 끄고 다른 전화로 112에 신고하세요",
+      "돈을 보냈다면 바로 은행에 지급정지를 요청하세요"
+    ],
+    "en": [
+      "Check with the card company yourself on the number on your card or its official website, not the number the caller gave.",
+      "Card companies and public agencies don't ask you to install apps. If you did, switch the phone off and call 112 from another phone.",
+      "If you sent money, ask your bank for a payment stop at once."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/your-bank",
+    "kr/phishing-1394",
+    "kr/fss-1332"
+  ],
+  "sources": [
+    {
+      "title": "[기고] 카드 발급 사칭 보이스피싱, 잠시 멈추고 확인하세요!",
+      "publisher": "경북매일 (포항북부경찰서 형사과장 기고)",
+      "url": "https://kbmaeil.com/article/20261102500531",
+      "date": "2026-11-03"
+    },
+    {
+      "title": "\"카드발급한 적 없다고요? 여기서 취소하세요\" 이 목소리 조심해야",
+      "publisher": "비즈니스워치",
+      "url": "https://news.bizwatch.co.kr/article/finance/2026/02/10/0011",
+      "date": "2026-02-10"
+    },
+    {
+      "title": "로맨스스캠·노쇼·기관사칭까지... '캄 피싱' 총책 등 49명 검거",
+      "publisher": "파이낸셜뉴스 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260225120705293",
+      "date": "2026-02-25"
+    },
+    {
+      "title": "[보이스피싱] 카드배송 사칭 보이스피싱 증가, 소비자경보 상향 안내",
+      "publisher": "하나은행 (금융감독원 소비자경보 안내)",
+      "url": "https://www.kebhana.com/cont/prevent/prevent01/1506559_136447.jsp",
+      "date": "2025-02-17"
+    }
+  ],
+  "updated": "2026-11-18"
+}

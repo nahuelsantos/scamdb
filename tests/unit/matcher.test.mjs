@@ -71,7 +71,7 @@ test('empty, emoji-only and huge input are not recognised and fast', () => {
   const cold = performance.now();
   m('warm up');
   assert.ok(performance.now() - cold < 2000, 'preparing the catalogue took too long');
-  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000), 'สวัสดีครับ '.repeat(2000)]) {
+  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000), 'สวัสดีครับ '.repeat(2000), '안녕하세요 반갑습니다 '.repeat(1000)]) {
     const t0 = performance.now();
     const r = m(t);
     assert.equal(r.verdict, 'not_recognised');
@@ -628,4 +628,14 @@ test('1.29.0: Thai: phrases match without spaces, signs survive tone-mark foldin
   for (const s of ['urgency', 'unknown_link']) assert.ok(sms.includes(s), s);
   assert.ok(!readSigns('รหัส OTP ของคุณคือ 482913 ห้ามบอกรหัสนี้แก่ผู้อื่น', ['th']).includes('asks_for_code'));
   assert.ok(!readSigns('ด่วน ลิงก์', ['es', 'en']).includes('urgency'), 'Thai rules only where Thai is spoken');
+});
+test('1.30.0: Korean: stems match across particles, two-syllable words count, Korean signs', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const entry = { id: 'kr/x', country: 'kr', lang: 'ko', phrases: { ko: ['검사라며 계좌가 범죄에 쓰였다고 함'] } };
+  const r = matchMessage('본인 명의 계좌를 범죄에 악용했다고 검사가 전화했어요', [entry], { country: 'kr' });
+  assert.equal(r.matches[0]?.id, 'kr/x', '계좌가 / 계좌를 and 범죄에 match by stem');
+  const call = readSigns('수사관입니다. 조용한 곳으로 혼자 이동해 주세요. 가족분께도 말씀하시면 안 됩니다', ['ko']);
+  for (const s of ['impersonation', 'keep_on_line', 'secrecy']) assert.ok(call.includes(s), s);
+  assert.ok(!readSigns('인증번호 [482913]를 입력해 주세요. 타인에게 절대 알려주지 마세요.', ['ko']).includes('asks_for_code'));
+  assert.ok(!readSigns('링크 즉시', ['es', 'en']).includes('urgency'), 'Korean rules only where Korean is spoken');
 });

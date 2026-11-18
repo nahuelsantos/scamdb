@@ -4,6 +4,16 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **South Korea:** 18 entries in Korean, 7 contacts (police 112, the 1394 voice-phishing line, ECRM, FSS 1332, KISA
+  118, Korea Consumer Agency 1372), 29 brands, 22 labelled and 13 real messages (KISA, police and FSS published
+  texts and scripts). Three engine changes: `normalize()` keeps Hangul, kana and CJK whole (NFD had split Hangul
+  into jamo and dropped kana voicing marks); Korean catalogue phrases are compared by word stem (particles such as
+  가/를/에 attach to words, and two-syllable words like 계좌 were dropped as too short); and Matcher 1.30.0 adds a
+  Korean block (fake prosecutors, "go somewhere quiet alone", "don't tell your family", security-app installs,
+  "temporary phone, add me on KakaoTalk") with "타인에게 절대 알려주지 마세요" as a genuine-code sign. Korea: 33% →
+  100% of labelled scams caught (right entry first for all), 58% called "scam", 0 false alarms; real 1 → 13 of 13
+  caught; every other country and the private set unchanged.
+
 - **Thailand:** 18 entries in Thai, 7 contacts (police 191, AOC 1441, thaipoliceonline, Bank of Thailand 1213, NBTC
   1200, OCPB 1166), 22 brands, 22 labelled and 8 real messages. Two engine changes, both needed for any script
   written without spaces between words: catalogue phrases in Thai, Lao, Khmer, Burmese, Chinese or Japanese now

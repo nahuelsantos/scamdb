@@ -4,7 +4,7 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
-export const VERSION = '1.29.0';
+export const VERSION = '1.30.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
@@ -46,7 +46,7 @@ function prepared(entry, translated) {
   if (!langs) {
     const lists = { ...(translated ? entry.phrasesTranslated ?? {} : {}), ...(entry.phrases ?? {}) };
     langs = Object.keys(lists).map((l) => [...(lists[l] ?? []), entry.name?.[l] ?? ''].map(normalize).filter(Boolean)
-      .map((p) => ({ p: ` ${p} `, pw: tokens(p), joined: UNSPACED.test(p) })).filter((x) => x.pw.length));
+      .map((p) => (HANGUL.test(p) ? { p: ` ${p} `, pw: hangulStems(p), hangul: true } : { p: ` ${p} `, pw: tokens(p), joined: UNSPACED.test(p) })).filter((x) => x.pw.length));
     cache.set(entry, langs);
   }
   return langs;
@@ -54,6 +54,18 @@ function prepared(entry, translated) {
 
 // Scripts written without spaces between words (Thai, Lao, Khmer, Burmese, Chinese, Japanese): a phrase or one of
 // its space-separated chunks counts when it appears anywhere in the text, not only between spaces.
+// Korean writes spaces between words but attaches particles to them (계좌가, 계좌를, 계좌에) and many key words are two
+// syllables (계좌, 검찰), which tokens() drops. Hangul words are compared by stem: two syllables or more, without a
+// trailing one-syllable particle.
+const HANGUL = /[\uAC00-\uD7AF]/u;
+const hangulStems = (s) => [...new Set(normalize(s).split(' ').filter((w) => HANGUL.test(w) && w.length >= 2).map((w) => (w.length >= 3 ? w.slice(0, -1) : w)))];
+/** Every stem a text word could match: the word, and the word without one or two trailing syllables (particles). */
+function hangulSet(text) {
+  const set = new Set();
+  for (const w of text.split(' ')) if (HANGUL.test(w) && w.length >= 2) { set.add(w); if (w.length >= 3) set.add(w.slice(0, -1)); if (w.length >= 4) set.add(w.slice(0, -2)); }
+  return set;
+}
+
 // Messages are short; comparing the first 1,500 characters keeps a pasted wall of text fast.
 const JOINED_WINDOW = 1500;
 const UNSPACED = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF]/u;
@@ -76,7 +88,12 @@ function longestShared(a, b) {
 function scoreLang(list, text, words) {
   const counted = new Set();
   let score = 0;
-  for (const { p, pw, joined } of list) {
+  for (const { p, pw, joined, hangul } of list) {
+    if (hangul) {
+      if (pw.length > 1 && text.includes(p)) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
+      for (const w of pw) if (!counted.has(w) && words.hangul.has(w)) { score += pw.length === 1 ? 2 : 1; counted.add(w); }
+      continue;
+    }
     if (joined) {
       if (!words.unspaced) continue; // no such script in the text: nothing to share, and long texts stay fast
       if (text.includes(p.trim())) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
@@ -125,7 +142,7 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   const text = normalize(raw);
   // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
   const set = new Set(tokens(text));
-  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4), unspaced: UNSPACED.test(text) };
+  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4), unspaced: UNSPACED.test(text), hangul: HANGUL.test(text) ? hangulSet(text) : new Set() };
   const padded = ` ${text} `;
   const rank = (pool, translated = false) => (!text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, padded, words, translated), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)

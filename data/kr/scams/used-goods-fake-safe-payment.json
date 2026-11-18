@@ -1,0 +1,127 @@
+{
+  "id": "kr/used-goods-fake-safe-payment",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "ko": "당근·번개장터·중고나라의 판매자 (카카오톡 오픈채팅으로 옮겨 감)",
+    "en": "A seller on Danggeun, Bunjang or Joonggonara who moves you to a KakaoTalk open chat"
+  },
+  "name": {
+    "ko": "중고거래 가짜 안전결제 링크·“입금자명 오류” 추가 입금 요구",
+    "en": "Second-hand trade: fake “safe payment” link or “wrong depositor name, pay again”"
+  },
+  "how": {
+    "ko": "중고거래 앱의 판매자가 “수수료 아끼게 해드릴게요”라며 카카오톡 오픈채팅으로 옮긴 뒤, 네이버페이 등 결제창을 그대로 베낀 가짜 ‘안전거래’ 링크를 보냅니다. 돈을 넣으면 “수수료 1000원이 빠져서 결제가 보류됐다”, “입금자명을 잘못 적었다”며 전액을 다시 보내면 먼저 낸 돈은 환불된다고 속여 몇 번이고 추가 입금을 받습니다. 신분증이나 사업자등록증 사진을 먼저 보내 믿게 만들기도 합니다. 경찰청 자료로 2025년 직거래 사기 피해액은 8740억 원이 넘었습니다.",
+    "en": "A seller on a second-hand app offers to save you the platform fee, moves you to a KakaoTalk open chat and sends a fake “safe payment” link that copies a payment page such as Naver Pay. After you pay, they say the payment is on hold because a 1,000-won fee was missing, or that you wrote the depositor name wrong, and that if you send the full amount again the first payment will be refunded, and this repeats. Some send a photo of an ID card or business registration first to seem trustworthy. Police data put losses from direct-trade fraud in 2025 at over 874 billion won."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "판매자가 수수료를 아끼자며 앱 밖 오픈채팅으로 대화를 옮긴다.",
+        "en": "The seller moves the chat off the app to save fees."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "결제창을 베낀 가짜 안전거래 링크나 가상계좌로 입금하게 한다.",
+        "en": "They have you pay through a fake “safe payment” link or virtual account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ko": "수수료 누락·입금자명 오류를 핑계로 전액을 다시 보내라고 한다.",
+        "en": "They claim a missing fee or wrong depositor name and ask you to pay the full amount again."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "안전거래 수수료 아까우시죠? 오픈채팅으로 오시면 제가 수수료 부담하는 안전결제 링크 보내드릴게요. 결제하시면 바로 택배 보내드립니다 [링크]",
+        "en": "The safe-payment fee is a waste, right? Come to the open chat and I'll send you a safe-payment link where I cover the fee. I'll ship it as soon as you pay [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ko": "고객님 입금하실 때 수수료 1,000원이 빠져서 결제가 보류됐어요. 시스템상 전액을 다시 입금하셔야 처리되고, 먼저 보내신 금액은 30분 안에 자동 환불됩니다.",
+        "en": "When you paid, the 1,000-won fee was missing so the payment is on hold. The system needs the full amount paid again to process it, and your first payment will be refunded automatically within 30 minutes."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "중고거래 판매자가 오픈채팅으로 안전결제 링크를 보냄",
+      "당근에서 수수료 빼준다고 다른 결제창으로 입금하래",
+      "수수료가 빠져서 결제 보류됐다고 다시 입금하래",
+      "입금자명 잘못 적었다고 추가로 보내라고 함",
+      "판매자가 신분증 사진 보내면서 믿으라고 함"
+    ],
+    "en": [
+      "a second hand seller sent a safe payment link in an open chat",
+      "the seller said they would cover the fee and told me to pay on another page",
+      "they said the payment was on hold because the fee was missing and to pay again",
+      "they said i wrote the depositor name wrong and to send more",
+      "the seller sent a photo of their id to make me trust them"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "money_request",
+    "urgency",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ko": [
+      "앱 밖 메신저로 옮기자고 하거나 결제 링크를 보낸다",
+      "결제창 주소가 공식 주소와 다르거나 예금주가 개인 이름이다",
+      "수수료 누락이나 입금자명 오류로 다시 보내라고 한다"
+    ],
+    "en": [
+      "Being asked to move off the app or sent a payment link.",
+      "The payment page address differs from the official one, or the account holder is a person's name.",
+      "Being told to pay again because of a missing fee or wrong depositor name."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "거래는 앱 안의 안전결제로만 하고, 메신저로 온 결제 링크는 열지 마세요",
+      "입금 전 경찰청 사이버캅이나 더치트에서 계좌·번호를 조회하세요",
+      "속았다면 대화와 입금 내역을 캡처해 경찰에 신고하세요"
+    ],
+    "en": [
+      "Pay only through the app's own safe payment and never open a payment link sent by message.",
+      "Before paying, look up the account or number with the police's Cyber Cop service or a fraud-check site.",
+      "If you were tricked, screenshot the chat and transfer record and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "kr/ecrm",
+    "kr/police-112",
+    "kr/kca-1372"
+  ],
+  "sources": [
+    {
+      "title": "안전거래 수수료 3.5% 아끼려다 900만원 날려…카톡 결제창은 가짜",
+      "publisher": "매일신문",
+      "url": "https://www.imaeil.com/page/view/2026101600140401394",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "[단독]피해자 10명→200명 급증 \"추가입금 수법에 당했다\"…전국에 동시다발 중고·암표 사기",
+      "publisher": "아시아경제 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260325103630788",
+      "date": "2026-03-25"
+    }
+  ],
+  "updated": "2026-11-18"
+}

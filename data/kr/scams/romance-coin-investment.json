@@ -1,0 +1,134 @@
+{
+  "id": "kr/romance-coin-investment",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ko": "SNS나 메신저(라인 등)로 다가온 외국인 여성·남성, 연인처럼 지내는 사람",
+    "en": "Someone, often posing as a foreign woman or man, who approaches you on social media or a messenger such as LINE and becomes a “partner”"
+  },
+  "name": {
+    "ko": "로맨스 스캠: 연인처럼 지낸 뒤 코인 투자·‘연애 적금’ 사이트에 입금 유도",
+    "en": "Romance scam: an online “partner” gets you to pay into a crypto or “couple savings” site"
+  },
+  "how": {
+    "ko": "SNS나 라인 메신저로 일본인 여성 등으로 행세하며 다가와 오랫동안 연인처럼 대화합니다. 신뢰가 쌓이면 함께 미래를 준비하자며 가상자산 투자, ‘연애 코인 적금’, 쇼핑몰 구매대행 부업을 권하고 가짜 사이트에 입금하게 합니다. 처음에는 소액 수익을 실제로 돌려줘 믿게 만든 뒤 큰돈을 넣게 하고, 출금하려 하면 세금이나 보증금을 먼저 내라고 하다가 사이트를 닫아버립니다. 금융정보분석원 집계에서도 신종 피싱 신고 가운데 로맨스 스캠이 가장 많았습니다.",
+    "en": "Someone posing as, for example, a Japanese woman approaches on social media or LINE and chats like a partner for weeks. Once trust is built they suggest preparing your future together: crypto investing, a “couple coin savings” plan or a shopping-mall resale side job, all on a fake site you pay into. Small early profits are actually paid out so you put in more, and when you try to withdraw you must first pay tax or a deposit, then the site disappears. Romance scams were the most reported type of new phishing in Korea's Financial Intelligence Unit figures."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "SNS·메신저로 다가와 연인처럼 매일 대화한다.",
+        "en": "They approach on social media or a messenger and chat every day like a partner."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "미래를 위해 코인 투자나 ‘연애 적금’을 하자며 사이트 링크를 보낸다.",
+        "en": "They suggest crypto investing or “couple savings” for your future and send a site link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "소액 수익을 돌려준 뒤 더 큰돈을 넣게 한다.",
+        "en": "After paying out small profits they get you to put in more."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ko": "출금하려면 세금·보증금을 먼저 내라고 한다.",
+        "en": "To withdraw you must first pay tax or a deposit."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "자기야, 우리 결혼 자금 같이 모으자. 내가 쓰는 코인 거래소에서 연애 적금 들면 한 달에 15%씩 이자가 붙어. 처음엔 100만 원만 넣어봐. 내가 방법 알려줄게 [링크]",
+        "en": "Honey, let's save for our wedding together. If we open a couple savings plan on the crypto exchange I use, it earns 15% a month. Just put in 1 million won to start. I'll show you how [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ko": "고객님 계정의 출금 신청이 보류되었습니다. 수익금 출금을 위해 소득세 및 보증금 20%를 먼저 납부해 주시기 바랍니다.",
+        "en": "Your withdrawal request has been put on hold. To withdraw your profits, please first pay income tax and a 20% deposit."
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "sns로 만난 사람이 코인 투자 같이 하자고 함",
+      "연인처럼 지내던 사람이 연애 적금 사이트에 돈 넣으래",
+      "라인으로 일본 여자가 연락 와서 투자 권유함",
+      "코인 출금하려니까 세금이랑 보증금 먼저 내래",
+      "온라인으로 사귄 사람이 알려준 거래소에 돈이 묶임"
+    ],
+    "en": [
+      "someone i met on social media wanted us to invest in crypto together",
+      "my online partner told me to put money in a couple savings site",
+      "a japanese woman contacted me on line and suggested investing",
+      "when i tried to withdraw crypto they said pay tax and a deposit first",
+      "my money is stuck on an exchange my online partner told me about"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ko": [
+      "만난 적 없는 온라인 연인이 투자나 적금을 권한다",
+      "상대가 알려준 거래소·사이트에만 입금하게 한다",
+      "출금 전에 세금·보증금을 먼저 내라고 한다"
+    ],
+    "en": [
+      "An online partner you've never met suggests investing or saving together.",
+      "You're told to pay only into an exchange or site they name.",
+      "Being asked to pay tax or a deposit before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "온라인에서만 아는 사람이 돈 이야기를 꺼내면 대화를 멈추고 가족과 상의하세요",
+      "출금 조건으로 돈을 더 내지 말고 경찰에 신고하세요",
+      "송금했다면 바로 은행에 지급정지를 요청하고 대화 내용을 보관하세요"
+    ],
+    "en": [
+      "If someone you only know online brings up money, stop and talk to your family.",
+      "Don't pay more to unlock a withdrawal; report it to the police.",
+      "If you sent money, ask your bank for a payment stop at once and keep the chats."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/ecrm",
+    "kr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "로맨스스캠·노쇼·기관사칭까지... '캄 피싱' 총책 등 49명 검거",
+      "publisher": "파이낸셜뉴스 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260225120705293",
+      "date": "2026-02-25"
+    },
+    {
+      "title": "“시청 김주무관인데요”…공무원 사칭 ‘대리구매 사기’ 기승",
+      "publisher": "디지털데일리",
+      "url": "https://www.ddaily.co.kr/page/view/2026080916045194960",
+      "date": "2026-08-09"
+    }
+  ],
+  "updated": "2026-11-18"
+}

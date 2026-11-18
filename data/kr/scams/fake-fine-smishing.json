@@ -1,0 +1,138 @@
+{
+  "id": "kr/fake-fine-smishing",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "ko": "경찰청·교통민원24·구청 청소행정과 등 공공기관 안내처럼 보이는 문자",
+    "en": "A text that looks like a notice from the police, the traffic-fines portal or a district office's sanitation team"
+  },
+  "name": {
+    "ko": "교통 범칙금·쓰레기 과태료 고지 문자에 링크 (공공기관 사칭 스미싱)",
+    "en": "Traffic-fine or waste-dumping-fine notice text with a link"
+  },
+  "how": {
+    "ko": "경찰청 교통민원24나 구청을 사칭해 “도로교통법규 위반 사전통지서가 전송됐다”, “쓰레기 무단투기 과태료가 부과됐다”며 내용을 보려면 링크를 누르라고 합니다. 링크를 누르면 가짜 조회 사이트에서 개인정보와 결제 정보를 넣게 하거나 원격조종이 되는 악성 앱이 깔립니다. 정부 집계로 최근 3년간 탐지된 문자 사기 가운데 공공기관 사칭이 207만여 건으로 절반이 넘었습니다. 범칙금·과태료는 공식 홈페이지나 앱에서 직접 조회해야 합니다.",
+    "en": "Scammers pose as the police traffic-fines portal or a district office: “a road-traffic violation notice has been sent to you”, “you have been fined for illegal waste dumping”, tap the link to see it. The link leads to a fake lookup site asking for personal and payment details, or installs a malicious app that can control the phone. Government figures show impersonation of public agencies made up more than half of text scams detected over three years, about 2.07 million. Look fines up yourself on the official website or app."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "공공기관이라며 교통법규 위반이나 쓰레기 투기 과태료 고지 문자가 온다.",
+        "en": "A text from a “public agency” says you have a traffic violation or a waste-dumping fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "통지서 내용을 보려면 링크를 누르라고 한다.",
+        "en": "It says to tap a link to see the notice."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "링크가 개인정보·결제 정보를 요구하거나 악성 앱을 설치하게 한다.",
+        "en": "The link asks for personal or payment details, or installs a malicious app."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "[국제발신][교통민원24] 귀하의 차량 신호위반 사전통지서가 발송되었습니다. 기한 내 미확인 시 가산금이 부과됩니다. 상세내용 [링크]",
+        "en": "[International][Traffic Fines 24] A red-light violation notice for your vehicle has been issued. If not checked by the deadline a surcharge will be added. Details [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ko": "[청소행정과] 생활폐기물 무단투기로 과태료가 부과되었습니다. CCTV 확인 사진 및 납부 안내 [링크]",
+        "en": "[Sanitation Team] You have been fined for illegally dumping household waste. CCTV photo and payment details [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "교통법규 위반 사전통지서 확인하라는 문자",
+      "쓰레기 무단투기 과태료 부과됐다는 문자에 링크가 있음",
+      "경찰청 교통민원24라며 범칙금 링크 보냄",
+      "음식물쓰레기 분리수거 위반 신고됐다는 문자",
+      "과태료 조회하려고 링크 눌렀더니 앱 설치하라고 함"
+    ],
+    "en": [
+      "a text told me to check a traffic violation notice",
+      "a text said i was fined for dumping rubbish and had a link",
+      "a police traffic portal text sent a fine link",
+      "a text said i was reported for not sorting food waste",
+      "i tapped a fine lookup link and it told me to install an app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "remote_access"
+  ],
+  "redFlags": {
+    "ko": [
+      "범칙금·과태료 문자에 인터넷 주소가 붙어 있다",
+      "[국제발신]으로 온 공공기관 안내",
+      "기한 내 확인하지 않으면 가산금이 붙는다고 서두르게 한다"
+    ],
+    "en": [
+      "A traffic or waste fine text with a web address.",
+      "A public-agency notice marked [International].",
+      "Pressure that a surcharge will be added if you don't check by a deadline."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "링크를 누르지 말고 경찰청 교통민원24나 지자체 공식 홈페이지·앱에서 직접 조회하세요",
+      "의심 문자는 ‘스팸으로 신고’하거나 118에 신고하세요",
+      "링크를 눌러 앱을 깔았다면 비행기 모드로 바꾸고 112에 신고하세요"
+    ],
+    "en": [
+      "Don't tap the link: look it up yourself on the official traffic-fines portal or your local council's website or app.",
+      "Report the text as spam or call 118.",
+      "If you installed an app from the link, switch to aeroplane mode and call 112."
+    ]
+  },
+  "reportTo": [
+    "kr/kisa-118",
+    "kr/police-112",
+    "kr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "정부, 추석 명절 연휴기간 스미싱 등 전기통신금융사기 피해 예방·대응 수칙 안내",
+      "publisher": "과학기술정보통신부 등 관계부처 합동 보도자료 (KDI 경제교육·정보센터 게시)",
+      "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=271714",
+      "date": "2025-09-28"
+    },
+    {
+      "title": "정부, “교통 범칙금, 명절 선물 구매 등 ‘문자사기’ 주의”",
+      "publisher": "보안뉴스",
+      "url": "https://m.boannews.com/html/detail.html?idx=139491",
+      "date": "2025-09-28"
+    },
+    {
+      "title": "\"택배 반품됐습니다\" 눌렀다간…추석 노리는 스미싱 구별법은",
+      "publisher": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202609270702268193",
+      "date": "2026-09-27"
+    },
+    {
+      "title": "“청첩장 링크 클릭했다가”…120억 빼낸 국내 최대 스미싱 조직 검거",
+      "publisher": "KBS (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20251126120150741",
+      "date": "2025-11-26"
+    }
+  ],
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "kr/fake-health-checkup-smishing",
+  "country": "kr",
+  "lang": "ko",
+  "status": "fading",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "ko": "국민건강보험공단처럼 보이는 문자 (공단 대표번호를 도용하기도 함)",
+    "en": "A text that looks like the National Health Insurance Service (sometimes spoofing its main number)"
+  },
+  "name": {
+    "ko": "건강검진 통지서·무료대상자 안내 문자에 링크",
+    "en": "Health-checkup notice or “free check-up” text with a link"
+  },
+  "how": {
+    "ko": "국민건강보험공단을 사칭해 “국민건강 검진통지서 자세한 내용 확인”, “건강검진 무료대상자입니다” 같은 문자에 링크를 붙여 보냅니다. 링크를 누르면 피싱 사이트로 연결돼 휴대폰 번호와 개인정보를 입력하게 하거나 악성 앱이 깔립니다. 공단 대표번호로 보낸 것처럼 꾸미기도 합니다. 공단은 건강검진 결과를 문자로 보내지 않습니다.",
+    "en": "Scammers pose as the National Health Insurance Service with texts such as “check the details of your national health check-up notice” or “you qualify for a free health check-up”, with a link. The link leads to a phishing site asking for your phone number and personal details, or installs a malicious app. Some are made to look as if they come from the NHIS main number. The NHIS does not send check-up results by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "건보공단이라며 검진 통지서나 무료 검진 대상이라는 문자가 온다.",
+        "en": "A text from the “NHIS” says you have a check-up notice or qualify for a free check-up."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "자세한 내용을 보려면 링크를 누르라고 한다.",
+        "en": "It tells you to tap a link for details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "피싱 사이트가 개인정보를 요구하거나 앱이 설치된다.",
+        "en": "The phishing site asks for personal details or an app installs."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "[국민건강보험공단] 2026년 국민건강검진 무료대상자로 선정되셨습니다. 검진기관 예약 및 통지서 확인 [링크]",
+        "en": "[National Health Insurance Service] You have been selected for a free 2026 national health check-up. Book a clinic and view your notice [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ko": "[Web발신] 건강검진 결과 통보서가 발송되었습니다. 결과 확인하기 [링크]",
+        "en": "[Web] Your health check-up results have been sent. View results [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "건강검진 무료대상자라고 링크가 옴",
+      "건보공단 검진통지서 확인하라는 문자",
+      "건강검진 결과 확인하라는 링크를 눌렀음",
+      "건강보험공단 번호로 이상한 링크 문자가 옴",
+      "검진 예약하라는 문자 눌렀더니 개인정보 입력하래"
+    ],
+    "en": [
+      "a text said i qualify for a free health check up with a link",
+      "a text told me to check my nhis check up notice",
+      "i tapped a link to see my check up results",
+      "i got a strange link text from the health insurance number",
+      "i tapped a check up booking text and it asked for my personal details"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "remote_access"
+  ],
+  "redFlags": {
+    "ko": [
+      "검진 결과를 문자 링크로 보라고 한다",
+      "공단 홈페이지가 아닌 낯선 인터넷 주소가 붙어 있다",
+      "링크가 앱 설치나 개인정보 입력을 요구한다"
+    ],
+    "en": [
+      "Being told to view check-up results through a text link.",
+      "A web address that isn't the NHIS website.",
+      "The link asks you to install an app or enter personal details."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "검진 결과와 대상 여부는 건강보험공단 공식 홈페이지나 ‘The건강보험’ 앱에서 직접 확인하세요",
+      "의심 문자는 누르지 말고 삭제한 뒤 118에 신고하세요",
+      "링크를 눌렀다면 모바일 백신으로 검사하세요"
+    ],
+    "en": [
+      "Check results and eligibility yourself on the NHIS official website or its official app.",
+      "Don't tap a suspicious text: delete it and report it to 118.",
+      "If you tapped the link, scan the phone with a mobile antivirus app."
+    ]
+  },
+  "reportTo": [
+    "kr/kisa-118",
+    "kr/police-112"
+  ],
+  "sources": [
+    {
+      "title": "건보공단 “건강검진 사칭 스미싱 문자 주의”",
+      "publisher": "데일리메디",
+      "url": "https://dailymedi.com/news/news_view.php?wr_id=903820",
+      "date": "2023-10-23"
+    },
+    {
+      "title": "공단, 건강검진 사칭 ‘스미싱문자’ 주의보 발령",
+      "publisher": "데일리메디",
+      "url": "https://dailymedi.com/news/news_view.php?wr_id=896992",
+      "date": "2023-04-25"
+    },
+    {
+      "title": "추석 명절, 스마트폰 해킹(악성앱) 스미싱 문자 주의!",
+      "publisher": "과학기술정보통신부 등 관계부처 합동 보도자료 (하나은행 게시)",
+      "url": "https://image.kebhana.com/cont/download/menu/menu08/notice_1494531.pdf",
+      "date": "2023-09-21"
+    }
+  ],
+  "updated": "2026-11-18"
+}
