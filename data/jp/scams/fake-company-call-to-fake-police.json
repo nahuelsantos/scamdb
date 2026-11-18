@@ -1,0 +1,154 @@
+{
+  "id": "jp/fake-company-call-to-fake-police",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ja": "郵便局員・配送業者、携帯電話会社、銀行・銀行協会、百貨店、官公庁の職員や自動音声ガイダンス（国際電話番号から）",
+    "en": "A post office or delivery worker, mobile phone company, bank or bankers' association, department store or government official, or a recorded voice (often from an international number)"
+  },
+  "name": {
+    "ja": "自動音声や「業者」から警察につなぐ電話：「このまま警察に転送します」",
+    "en": "Recorded voice or “company” call passed to fake police: “we'll transfer you to the police now”"
+  },
+  "how": {
+    "ja": "最初は警察ではなく、郵便局員や携帯電話会社、銀行、百貨店、官公庁の職員を名乗るか、「間もなくあなたの口座が凍結されます」「お使いの携帯電話が使えなくなります」といった自動音声で「○番を押してください」と流れます。「あなた宛ての荷物に不審物がある」「あなたのカードで高額な買い物をしている人がいる」「携帯からウイルスがばらまかれている」などと言い、「知らない」と答えると「個人情報が漏れている」「被害届を出したほうがいい」として、そのまま警察官役に電話を転送します。ニセ警察官は犯罪の疑いをかけ、口座情報やカード、暗証番号、お金を求めてきます。業者が警察への連絡を強く勧めたり、電話を警察に転送したりしたら詐欺です。",
+    "en": "At first the caller does not claim to be police. It is a “post office worker”, a mobile phone company, a bank, a department store or a government office, or a recorded voice saying “your account will soon be frozen” or “your mobile phone will soon stop working, press 1”. They say a parcel addressed to you contains something suspicious, someone is making expensive purchases with your card, or a virus is spreading from your phone. When you say you know nothing about it, they say your personal details have leaked and you should file a police report, and transfer the call to a fake police officer. The fake officer accuses you of a crime and asks for account details, your card and PIN, or money. If a company pushes you to contact the police or transfers your call to them, it is a scam."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "自動音声や業者を名乗る電話で「口座が凍結される」「不審な荷物がある」などと言われ、番号を押すよう促される。",
+        "en": "A recorded voice or a “company” says your account will be frozen or a suspicious parcel was found, and asks you to press a number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "「身に覚えがない」と答えると「個人情報が漏れている」と言われ、警察に転送される。",
+        "en": "When you say you know nothing about it, they say your details have leaked and transfer you to “the police”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ja": "ニセ警察官が犯罪の疑いをかけ、口座情報や暗証番号、キャッシュカードを聞き出す。",
+        "en": "The fake officer accuses you of a crime and asks for your account details, PIN or cash card."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ja": "「資産の保護」や「捜査」の名目でお金を振り込ませる。",
+        "en": "They have you transfer money to “protect your assets” or “for the investigation”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "こちらは日本郵便です。お客様名義で現金とキャッシュカードが入った不審な荷物が送られています。お心当たりがない場合、お名前が悪用されているおそれがありますので、このまま警察におつなぎします。",
+        "en": "This is Japan Post. A suspicious parcel containing cash and a cash card has been sent in your name. If you know nothing about it, your name may be being misused, so we will put you through to the police now."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ja": "（自動音声）お使いの携帯電話は、2時間後にご利用できなくなります。詳しくは1番を押してください。",
+        "en": "(Recorded voice) Your mobile phone will stop working in two hours. For details, press 1."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "自動音声で携帯電話が使えなくなると言われ1番を押した",
+      "郵便局から不審な荷物があると電話があって警察に転送された",
+      "携帯からウイルスがばらまかれていると言われ警察と話すよう言われた",
+      "カードで高額な買い物をされていると電話があり警察につなぐと言われた",
+      "口座が凍結されると自動音声が流れた",
+      "業者から被害届を出したほうがいいと言われ警察官に代わった"
+    ],
+    "en": [
+      "a recorded voice said my phone would stop working so i pressed 1",
+      "the post office called about a suspicious parcel and transferred me to the police",
+      "they said a virus was spreading from my phone and told me to talk to the police",
+      "a call said someone was making expensive purchases with my card and they would connect me to the police",
+      "a recorded voice said my bank account would be frozen",
+      "the company said i should file a police report and handed me to an officer"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "keep_on_line",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "自動音声で「○番を押して」と言われる",
+      "業者や役所が「このまま警察に転送する」と言う",
+      "「個人情報が漏れている」「身の潔白を証明する必要がある」と言われる"
+    ],
+    "en": [
+      "A recorded voice tells you to press a number.",
+      "A company or office says it will transfer you to the police.",
+      "You are told your personal details have leaked or that you must prove your innocence."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "番号を押さずに電話を切ってください",
+      "心配なら、自分で調べた会社の窓口や＃9110に確認してください",
+      "スマートフォンには警察庁推奨アプリを、固定電話は国際電話不取扱受付センターへの申込みを"
+    ],
+    "en": [
+      "Hang up without pressing anything.",
+      "If you are worried, check with the company on a number you looked up yourself, or call #9110.",
+      "Install an app recommended by the National Police Agency on your phone, and ask to have international calls blocked on your landline."
+    ]
+  },
+  "reportTo": [
+    "jp/police-9110",
+    "jp/police-110",
+    "jp/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "ニセ警察詐欺～だまし文句集～",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/view/notice/345",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "被害者であることの証明に『筆跡鑑定』が必要…？",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/view/notice/344",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "着信画面の偽装表示にご注意／その警察官は本物ですか",
+      "publisher": "警視庁",
+      "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/tokushu/police_officer.html",
+      "date": "2026-04-15"
+    },
+    {
+      "title": "ビデオ通話を悪用した“偽警察官・検察官”の詐欺に注意！！",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/250428/01.html",
+      "date": "2025-04-28"
+    },
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    }
+  ],
+  "updated": "2026-11-18"
+}

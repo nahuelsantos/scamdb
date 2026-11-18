@@ -1,0 +1,132 @@
+{
+  "id": "jp/fake-police-email",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "ja": "警視庁の交通管制課・交通総務課・サイバーセキュリティ対策本部などを名乗るメール",
+    "en": "An email claiming to be from a Tokyo Metropolitan Police traffic division or its cybersecurity division"
+  },
+  "name": {
+    "ja": "警視庁をかたるメール：「速度違反の反則金」「免許更新の照合」",
+    "en": "Fake police email: “speeding fine” or “licence renewal check”"
+  },
+  "how": {
+    "ja": "警視庁の交通管制課や交通総務課、サイバーセキュリティ対策本部を名乗り、「あなたの乗車していた自動車の速度違反が判明した、反則金を支払え」「運転免許更新に関する記載情報照合のお願い」「マイナポータル関連アカウントに不審なアクセスが記録された」といったメールが届きます。メール内の「照合手続きはこちら」「オンライン確認画面へ」を押すと偽サイトにつながり、個人情報やお金をだまし取られます。警視庁がメールで交通違反や反則金の支払い、免許更新の手続きを求めることはありません。",
+    "en": "An email claiming to be from a Tokyo Metropolitan Police traffic division or its cybersecurity division says “speeding was detected in the car you were in, pay the fine”, “please check your details for your driving licence renewal” or “suspicious access to your My Number Portal account was recorded”. Buttons such as “check here” or “go to the online confirmation screen” lead to a fake site that takes your personal details or money. The police never use email to tell you about traffic offences, fines or licence renewals."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "警視庁の部署を名乗り、交通違反や免許更新、不審なアクセスを知らせるメールが届く。",
+        "en": "An email from a “police division” tells you about a traffic offence, a licence renewal or suspicious access."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "期限を示して反則金の支払いや手続きを急がせる。",
+        "en": "It sets a deadline to pay a fine or complete a procedure."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "メール内のボタンから偽サイトに誘導し、個人情報やカード情報を入力させる。",
+        "en": "A button leads to a fake site that asks for personal or card details."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "【警視庁交通管制課】あなたの乗車していた車両に速度違反が確認されました。期限までに反則金を納付しない場合、刑事手続きに移行します。納付手続きはこちら[リンク]",
+        "en": "[Tokyo MPD Traffic Control Division] A speeding offence was recorded for a vehicle you were in. If the fine is not paid by the deadline, criminal proceedings will begin. Pay here [link]"
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "ja": "【警視庁】運転免許更新に関する記載情報照合のお願い。記載内容に不備があるため、下記より照合手続きを行ってください。[リンク]",
+        "en": "[Tokyo MPD] Request to check your details for your driving licence renewal. There is a problem with your details, so please complete the check below. [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "警視庁から速度違反の反則金を払えとメールが来た",
+      "運転免許の更新の照合をするようにメールが来た",
+      "警視庁を名乗るメールでマイナポータルに不審なアクセスがあると言われた",
+      "交通違反のメールのリンクを押してしまった",
+      "警察からメールで反則金の支払いを求められた"
+    ],
+    "en": [
+      "the tokyo police emailed telling me to pay a speeding fine",
+      "an email asked me to check my details for my licence renewal",
+      "an email from the police said there was suspicious access to my my number portal",
+      "i tapped the link in a traffic offence email",
+      "the police emailed asking me to pay a fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "警察から交通違反や反則金のメールが届く",
+      "「照合手続きはこちら」などのボタンで手続きを求める",
+      "刑事手続きや期限で急がせる"
+    ],
+    "en": [
+      "An email from the police about a traffic offence or fine.",
+      "A button like “check here” to complete a procedure.",
+      "Threats of criminal proceedings or a deadline."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "メールのリンクやファイルは開かず、削除してください",
+      "心配なときは最寄りの警察署に、自分で調べた番号で問い合わせてください",
+      "入力してしまったら、カード会社や警察に連絡してください"
+    ],
+    "en": [
+      "Don't open links or attachments: delete the email.",
+      "If you are worried, contact your local police station on a number you looked up yourself.",
+      "If you typed in details, contact your card company and the police."
+    ]
+  },
+  "reportTo": [
+    "jp/police-cyber",
+    "jp/antiphishing",
+    "jp/police-9110"
+  ],
+  "sources": [
+    {
+      "title": "警視庁交通総務課をかたったニセメールに注意‼",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/view/notice/328",
+      "date": "2026-08-03"
+    },
+    {
+      "title": "警視庁サイバーセキュリティ対策本部をかたったニセメールに注意‼",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/view/notice/326",
+      "date": "2026-07-31"
+    },
+    {
+      "title": "警視庁匿名・流動型犯罪グループ対策本部（特設ページ）最新の手口",
+      "publisher": "警視庁",
+      "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/tokushu/keishicho_tokuryu/latest_trick.html",
+      "date": "2026-06-11"
+    }
+  ],
+  "updated": "2026-11-18"
+}

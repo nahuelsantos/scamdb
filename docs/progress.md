@@ -4,6 +4,14 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Japan:** 20 entries in Japanese, 7 contacts (police 110 and #9110, consumer hotline 188, FSA, NPA cyber reporting,
+  Anti-Phishing Council), 30 brands, 22 labelled and 15 real messages (NPA, MPD, JC3 and Anti-Phishing Council
+  published texts and scripts). Kana and kanji carry more per character, so their shared-stretch thresholds are
+  lower (4 and 6 instead of 6 and 10); Matcher 1.31.0 adds a Japanese block (fake police and "LINE video call",
+  "press 1" recorded voices, ATM refunds, "本日中", "差押え", "暗証番号をメモ") with "このコードを他人に教えないで"
+  as a genuine-code sign. Japan: 58% → 100% of labelled scams caught, 50% called "scam", 0 false alarms; real 5 → 13
+  of 15 caught; every other country and the private set unchanged.
+
 - **South Korea:** 18 entries in Korean, 7 contacts (police 112, the 1394 voice-phishing line, ECRM, FSS 1332, KISA
   118, Korea Consumer Agency 1372), 29 brands, 22 labelled and 13 real messages (KISA, police and FSS published
   texts and scripts). Three engine changes: `normalize()` keeps Hangul, kana and CJK whole (NFD had split Hangul

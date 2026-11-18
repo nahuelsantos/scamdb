@@ -1,0 +1,136 @@
+{
+  "id": "jp/unpaid-fee-emoney",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "ja": "有料サイト運営会社、NTTファイナンスなどの通信会社の料金窓口、法務省や裁判所を名乗るSMS・電話・はがき",
+    "en": "A text, call or postcard from a paid website, a phone company's billing desk such as “NTT Finance”, or the Ministry of Justice or a court"
+  },
+  "name": {
+    "ja": "架空料金請求詐欺：「未納料金があります、本日中に連絡を」",
+    "en": "Fake unpaid bill: “you have unpaid charges, call us today”"
+  },
+  "how": {
+    "ja": "「有料サイトの利用料金が未納です」「ご利用料金の確認が取れておりません」といったSMSやメール、法務省や裁判所の名前のはがきが届き、書かれた番号に電話させます。電話に出た犯人は「延滞料が毎日加算される」「今日払わないと裁判になる」「払えばほとんど返金される」と不安をあおり、コンビニで電子マネーカードを買ってカード番号を教えるよう指示します。NTTファイナンスなど実在する会社をかたることが多く、電話で「迷惑料」や「示談金」を重ねて求められることもあります。事業者や法務省、裁判所が未納料金をコンビニの電子マネーで払わせることは絶対にありません。",
+    "en": "A text or email says “you have unpaid charges for a paid website” or “we have not been able to confirm your payment”, or a postcard arrives in the name of the Ministry of Justice or a court, with a number to call. When you call, they scare you: late fees are added every day, you will be taken to court if you don't pay today, or most of it will be refunded once you pay. They tell you to buy electronic money cards at a convenience store and read out the card numbers. They often use the name of a real company such as NTT Finance, and may keep asking for more as “compensation” or a “settlement”. No company, ministry or court ever has you pay an unpaid bill with convenience-store electronic money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "未納料金があるというSMSやはがきが届き、書かれた番号に電話させる。",
+        "en": "A text or postcard says you owe money and gives a number to call."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "電話に出た犯人が「今日払わないと裁判になる」と脅す。",
+        "en": "The scammer on the phone says you will be taken to court unless you pay today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "コンビニで電子マネーカードを買い、カード番号を教えるよう指示される。",
+        "en": "You are told to buy electronic money cards at a convenience store and read out the numbers."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ja": "「返金のため」「手続きのため」と言って、さらに支払いを重ねさせる。",
+        "en": "They ask for more payments “for the refund” or “for the paperwork”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "【重要】有料動画サイトのご利用料金が未納となっております。本日中にご連絡がない場合、法的手続きに移行します。お問い合わせ窓口[番号]",
+        "en": "[Important] Your fees for a paid video site are unpaid. If you do not contact us today, we will begin legal proceedings. Enquiries: [number]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ja": "NTTファイナンス料金センターです。ご利用料金の確認が取れておりません。このままでは裁判になりますので、コンビニで電子マネーを購入して番号をお伝えください。",
+        "en": "This is the NTT Finance billing centre. We have not been able to confirm your payment. This will go to court, so buy electronic money at a convenience store and give us the numbers."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "有料サイトの未納料金があるとSMSが来た",
+      "コンビニで電子マネーを買って番号を教えろと言われた",
+      "今日払わないと裁判になると言われた",
+      "NTTファイナンスから料金の確認が取れていないと連絡がきた",
+      "法務省の名前で訴訟のはがきが届いた",
+      "払えばほとんど返金されると言われて電子マネーを買った"
+    ],
+    "en": [
+      "i got a text saying i had unpaid fees for a paid website",
+      "they told me to buy electronic money at a convenience store and give them the number",
+      "they said it would go to court if i didn't pay today",
+      "ntt finance said they couldn't confirm my payment",
+      "a postcard about a lawsuit came in the name of the ministry of justice",
+      "they said most of it would be refunded so i bought electronic money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "身に覚えのない未納料金の連絡",
+      "「今日中」「裁判」と急がせる",
+      "コンビニで電子マネーを買って番号を教えるよう言われる"
+    ],
+    "en": [
+      "A message about unpaid charges you don't recognise.",
+      "Rushing you with “today” or “court”.",
+      "Being told to buy convenience-store electronic money and read out the number."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "SMSやはがきに書かれた番号には電話しないでください",
+      "「電子マネーを買って番号を教えて」は詐欺です。すぐ電話を切ってください",
+      "心配なときは消費者ホットライン188か＃9110に相談してください"
+    ],
+    "en": [
+      "Never call the number in the text or on the postcard.",
+      "“Buy electronic money and tell us the number” is always a scam: hang up at once.",
+      "If you are worried, call the consumer hotline 188 or #9110."
+    ]
+  },
+  "reportTo": [
+    "jp/consumer-188",
+    "jp/police-9110",
+    "jp/police-cyber"
+  ],
+  "sources": [
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "架空料金請求が急増　NTT関連かたり詐取　被害者「冷静に判断できなかった」",
+      "publisher": "熊本日日新聞",
+      "url": "https://www.kumanichi.com/articles/1170621",
+      "date": "2023-09-13"
+    }
+  ],
+  "updated": "2026-11-18"
+}

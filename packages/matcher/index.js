@@ -4,7 +4,7 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
-export const VERSION = '1.30.0';
+export const VERSION = '1.31.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
@@ -68,6 +68,7 @@ function hangulSet(text) {
 
 // Messages are short; comparing the first 1,500 characters keeps a pasted wall of text fast.
 const JOINED_WINDOW = 1500;
+const DENSE = /[\u3040-\u30FF\u3400-\u9FFF]/u;
 const UNSPACED = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF]/u;
 
 /** Length of the longest substring a and b share (a is a short phrase; dynamic programming over two rows). */
@@ -99,7 +100,9 @@ function scoreLang(list, text, words) {
       if (text.includes(p.trim())) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
       // No word boundaries to compare, so score the longest stretch the phrase shares with the text.
       const run = longestShared(p.trim(), text.length > JOINED_WINDOW ? text.slice(0, JOINED_WINDOW) : text);
-      if (run >= 10) score += 2; else if (run >= 6) score += 1;
+      // Kana and kanji carry more per character than Thai or Lao letters, so a shorter shared stretch counts.
+      const [hi, lo] = DENSE.test(p) ? [6, 4] : [10, 6];
+      if (run >= hi) score += 2; else if (run >= lo) score += 1;
       continue;
     }
     if (pw.length > 1 && text.includes(p)) { score += 3; pw.forEach((w) => counted.add(w)); continue; }

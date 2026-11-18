@@ -1,0 +1,151 @@
+{
+  "id": "jp/refund-atm-call",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ja": "市役所・区役所の保険年金課、税務署、年金事務所の職員、続いて銀行員を名乗る人",
+    "en": "Staff from a city or ward office's insurance and pension section, a tax office or a pension office, then a “bank employee”"
+  },
+  "name": {
+    "ja": "還付金詐欺：「医療費の還付金があります、ATMで手続きを」",
+    "en": "Fake refund call: “you have a medical refund, go to an ATM”"
+  },
+  "how": {
+    "ja": "役所や年金事務所の職員を名乗る人が電話をかけ、「医療費や保険料の払い戻しがある」「年金の一部が未払い」「青い封筒を送ったが返事がない、期限は今日まで」と言います。続いて銀行員を名乗る人が「携帯電話を持って近くのATMへ行って」と指示し、ATMの前で電話をつないだまま操作を細かく指示します。言われたとおりボタンを押すと、受け取るどころか犯人の口座にお金を振り込まされます。役所や税務署がATMでの還付手続きを求めることは絶対になく、ATMでお金が戻ってくることもありません。",
+    "en": "A caller claiming to be from the city office or a pension office says you are due a refund of medical costs or insurance premiums, or unpaid pension, and that “we sent a blue envelope but you didn't reply, and the deadline is today”. Then a “bank employee” tells you to take your mobile to a nearby ATM and, staying on the line, talks you through the buttons step by step. Instead of receiving money, you transfer it to the scammer's account. City offices and tax offices never ask you to use an ATM for a refund, and no ATM can pay a refund into your account this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "役所や年金事務所の職員を名乗り「還付金がある」「期限は今日まで」と電話がある。",
+        "en": "A “city office” or “pension office” official calls about a refund with a deadline of today."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "銀行員を名乗る人から、携帯電話を持ってATMに行くよう指示される。",
+        "en": "A “bank employee” tells you to go to an ATM with your mobile phone."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "ATMの前で電話をつないだまま、操作を一つずつ指示される。",
+        "en": "At the ATM, they stay on the line and tell you which buttons to press."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ja": "実際には犯人の口座へお金を振り込まされている。",
+        "en": "In fact you are transferring money to the scammer's account."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "○○区役所保険年金課の者です。医療費の払い戻しが3万円ほどございまして、青い封筒でご案内しましたがお手続きがまだのようです。期限が本日までですので、このあと銀行からご連絡します。",
+        "en": "I'm calling from the insurance and pension section of ○○ Ward Office. You're due a refund of about 30,000 yen in medical costs. We sent details in a blue envelope but it seems you haven't done the paperwork. The deadline is today, so the bank will call you next."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ja": "○○銀行です。還付金のお手続きはお近くのATMでできます。携帯電話を持ってATMに着いたらお電話ください。私が言うとおりにボタンを押していただければ大丈夫です。",
+        "en": "This is ○○ Bank. You can process the refund at a nearby ATM. Take your mobile and call me when you get there. Just press the buttons as I tell you."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "区役所から医療費の還付金があると電話があった",
+      "年金事務所から未払いの年金があると言われた",
+      "還付金の手続きでATMに行くように言われた",
+      "ATMで電話しながら操作を指示された",
+      "青い封筒を送ったけど期限が今日までと言われた",
+      "銀行員からATMで払い戻しができると言われた"
+    ],
+    "en": [
+      "the ward office called saying i had a medical refund",
+      "the pension office said some of my pension was unpaid",
+      "they told me to go to an atm to get my refund",
+      "they told me what to press at the atm while on the phone",
+      "they said they had sent a blue envelope and the deadline was today",
+      "a bank employee said i could get the refund at an atm"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "役所や年金事務所から「還付金がある」と電話がくる",
+      "ATMに行くよう指示される",
+      "携帯電話で話しながらATMを操作させられる"
+    ],
+    "en": [
+      "A call from a city office or pension office about a refund.",
+      "Being told to go to an ATM.",
+      "Being talked through an ATM while on your mobile."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "電話を切り、自分で調べた市区町村や年金事務所の番号に確認してください",
+      "ATMでお金が返ってくることはないと覚えておきましょう",
+      "ATMで電話の指示を受けている人を見かけたら声をかけ、110番してください"
+    ],
+    "en": [
+      "Hang up and check with your city office or pension office on a number you looked up yourself.",
+      "Remember: no ATM can pay you a refund.",
+      "If you see someone at an ATM following instructions on the phone, speak to them and call 110."
+    ]
+  },
+  "reportTo": [
+    "jp/police-110",
+    "jp/police-9110",
+    "jp/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "「医療の還付金あるATMで操作を」三田の男性が99万円の詐欺被害",
+      "publisher": "神戸新聞NEXT",
+      "url": "https://www.kobe-np.co.jp/news/sagi/202603/0020170347.shtml",
+      "date": "2026-03-26"
+    },
+    {
+      "title": "還付金名目で現金40万円の詐欺被害　ATMを指示に従い操作、明細書見て気付く　神戸・北区の女性",
+      "publisher": "神戸新聞NEXT",
+      "url": "https://www.kobe-np.co.jp/news/sagi/202603/0020186168.shtml",
+      "date": "2026-03-30"
+    },
+    {
+      "title": "特殊詐欺被害防止広報用データ（還付金詐欺・予兆電話）",
+      "publisher": "警視庁",
+      "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/tokushu/furikome/15_sound.html",
+      "date": "2025-10-01"
+    },
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    }
+  ],
+  "updated": "2026-11-18",
+  "story": {
+    "ja": "2026年3月、兵庫県三田市の70代男性が医療費の還付金名目で約99万円をだまし取られたと警察に届け出ました。同じ月、神戸市北区の60代女性も「年金課の職員」を名乗る男らの指示でATMを操作し、約40万円をだまし取られました。",
+    "en": "In March 2026 a man in his seventies in Sanda, Hyogo, told the police he had been cheated of about 990,000 yen in the name of a medical refund. The same month a woman in her sixties in Kita Ward, Kobe, lost about 400,000 yen after men claiming to be from the “pension section” talked her through an ATM."
+  }
+}

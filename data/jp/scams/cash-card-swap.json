@@ -1,0 +1,134 @@
+{
+  "id": "jp/cash-card-swap",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "phone",
+    "in-person"
+  ],
+  "sender": {
+    "ja": "警察官、全国銀行協会や銀行の職員、百貨店の店員を名乗る電話、続いて自宅に来る「職員」",
+    "en": "A call from a “police officer”, “Japanese Bankers Association” or bank official, or a department store, then an “official” who comes to your home"
+  },
+  "name": {
+    "ja": "キャッシュカード詐欺盗：「カードを確認しに伺います」",
+    "en": "Cash card swap: “we'll come to check your card”"
+  },
+  "how": {
+    "ja": "警察官や全国銀行協会、銀行の職員を名乗って電話をかけ、「あなたのキャッシュカードが不正に利用されている」「預金を保護する手続きが必要」と言います。その後、私服警察官や協会職員を名乗る人が自宅に来て、キャッシュカードと暗証番号を書いたメモを封筒に入れさせ、「割印が必要なので印鑑を持ってきて」と目を離させた隙に、偽のカードが入った封筒とすり替えます。「手続きが終わるまで封筒は開けないで」と言い残し、その間に口座からお金が引き出されます。警察庁によると令和8年9月末までに1,141件と前年同期より3割以上増えています。",
+    "en": "A caller claiming to be a police officer or an official of the Japanese Bankers Association or your bank says your cash card is being used fraudulently and a procedure is needed to protect your savings. Then someone claiming to be a plain-clothes officer or association official comes to your home and has you put your cash card and a note of your PIN in an envelope. While you go to fetch your seal for the envelope, they swap it for an envelope holding a fake card, tell you not to open it until the procedure is finished, and empty your account meanwhile. The National Police Agency counted 1,141 cases to the end of September 2026, up more than 30% on the year before."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "警察官や銀行協会の職員を名乗り「カードが不正に利用されている」と電話がある。",
+        "en": "A “police officer” or “bankers' association” official calls to say your card is being misused."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "「カードを確認しに伺う」と言い、職員を名乗る人が自宅に来る。",
+        "en": "They say they'll come to check your card, and an “official” visits."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "キャッシュカードと暗証番号のメモを封筒に入れさせる。",
+        "en": "You are told to put your cash card and a note of your PIN in an envelope."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ja": "印鑑を取りに行かせた隙に偽のカードとすり替え、「封筒を開けないで」と言う。",
+        "en": "While you fetch your seal they swap in a fake card and tell you not to open the envelope."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "全国銀行協会の者です。お客様のキャッシュカードが不正に利用されていることが分かりました。新しいカードへの交換手続きが必要ですので、本日職員がご自宅に伺います。暗証番号をお控えのうえお待ちください。",
+        "en": "I'm calling from the Japanese Bankers Association. We've found your cash card is being used fraudulently. It needs to be replaced, so a member of staff will visit you today. Please have your PIN written down and wait."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ja": "こちらの封筒にカードと暗証番号のメモを入れてください。封筒に割印が必要ですので、印鑑をお持ちいただけますか。手続きが終わるまで封筒は開けずに保管してください。",
+        "en": "Please put the card and the note with your PIN in this envelope. We need your seal across the flap, so could you bring it? Keep the envelope sealed until the procedure is finished."
+      },
+      "channel": "in-person"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "キャッシュカードが不正利用されていると警察から電話があった",
+      "銀行協会の人がカードを確認しに家に来た",
+      "カードと暗証番号を封筒に入れるように言われた",
+      "印鑑を取りに行っている間にカードをすり替えられた",
+      "封筒を開けずに保管してと言われた"
+    ],
+    "en": [
+      "the police called saying my cash card was being used fraudulently",
+      "someone from the bankers association came to my home to check my card",
+      "they told me to put my card and pin in an envelope",
+      "they swapped my card while i went to get my seal",
+      "they told me to keep the envelope sealed"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "asks_for_code",
+    "urgency",
+    "secrecy"
+  ],
+  "redFlags": {
+    "ja": [
+      "警察や銀行協会が「カードを確認しに行く」と言う",
+      "暗証番号を聞く、メモを書かせる",
+      "カードを封筒に入れさせ、開けないよう言う"
+    ],
+    "en": [
+      "Police or a bankers' association saying they'll come to check your card.",
+      "Being asked for your PIN or to write it down.",
+      "Being told to put the card in an envelope and not open it."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "暗証番号は誰にも教えず、カードを他人に渡さないでください",
+      "電話を切って、自分で調べた警察署や銀行に確認してください",
+      "訪問者を家に入れる前に家族に相談し、怪しいときは110番してください"
+    ],
+    "en": [
+      "Never tell anyone your PIN or hand your card to anyone.",
+      "Hang up and check with a police station or your bank on a number you looked up yourself.",
+      "Talk to family before letting a visitor in, and call 110 if something feels wrong."
+    ]
+  },
+  "reportTo": [
+    "jp/police-110",
+    "jp/your-bank",
+    "jp/police-9110"
+  ],
+  "sources": [
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "犯人の音声コーナー：預貯金詐欺の電話（全国銀行協会を騙り「キャッシュカードから個人情報が漏れた」等と言ってキャッシュカードを騙し取る手口）",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/list/sound",
+      "date": "2023-07-24"
+    }
+  ],
+  "updated": "2026-11-18"
+}

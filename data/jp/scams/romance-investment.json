@@ -1,0 +1,143 @@
+{
+  "id": "jp/romance-investment",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ja": "SNSやマッチングアプリで知り合った、会ったことのない外国人や日本人の「恋人」",
+    "en": "A “partner” you met on social media or a dating app but never in person, from Japan or abroad"
+  },
+  "name": {
+    "ja": "SNS型ロマンス詐欺：「2人の将来のために投資を」",
+    "en": "Romance scam: “let's invest for our future together”"
+  },
+  "how": {
+    "ja": "SNSやマッチングアプリで知り合った相手が、すぐにLINEなど別のアプリでのやりとりに誘い、毎日優しいメッセージを送って恋愛感情を抱かせます。会うことはないまま、「2人の将来のために」「結婚資金を増やそう」と言って暗号資産や投資サイトを勧め、初めは利益が出たように見せます。出金しようとすると、手数料や税金、保証金などさまざまな名目で送金を求められ、最後は連絡が取れなくなります。警察庁によると、令和7年の被害額は約546億円で、暗号資産で送らせる型が急増しています。",
+    "en": "Someone you meet on social media or a dating app soon moves the chat to LINE or another app and sends kind messages every day until you have feelings for them. Without ever meeting, they suggest crypto-assets or an investment site “for our future” or “to grow our wedding fund”, and at first it looks like you are making money. When you try to withdraw, you are asked to send more as fees, tax or a deposit, and in the end they stop replying. The National Police Agency says 2025 losses were about 54.6 billion yen, with a sharp rise in cases where victims are made to send crypto-assets."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "SNSやマッチングアプリで知り合い、LINEなど別のアプリに誘われる。",
+        "en": "You meet on social media or a dating app and are asked to move to LINE or another app."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "会わないまま恋愛感情を抱かせ、2人の将来のために投資を勧める。",
+        "en": "Without meeting, they build a romance and suggest investing for your future together."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ja": "投資サイトや暗号資産を案内し、利益が出ているように見せる。",
+        "en": "They point you to an investment site or crypto-assets and show you profits."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ja": "出金するには手数料や税金が必要と言って、さらに送金させる。",
+        "en": "They say withdrawals need fees or tax and make you send more."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "おはよう、今日もあなたのことを考えていたよ。私たちの将来のために、叔父が教えてくれた暗号資産の投資を一緒に始めない？このサイトなら少額からでも確実に増えるよ。[リンク]",
+        "en": "Good morning, I was thinking about you again today. For our future, why don't we start investing in the crypto-assets my uncle told me about? On this site even a small amount grows for sure. [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ja": "出金するには先に税金として利益の2割を納める必要があるみたい。すぐに払えばまとめて引き出せるから、もう少しだけ頑張ろう。",
+        "en": "It seems we have to pay 20% of the profit as tax before we can withdraw. If you pay it now we can take it all out, so let's hang on a little longer."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "マッチングアプリで知り合った人に投資を勧められた",
+      "会ったことのない恋人に暗号資産を送った",
+      "2人の将来のためと言われて投資サイトに入金した",
+      "出金するのに税金を払えと言われた",
+      "SNSで知り合った外国人と毎日LINEしている",
+      "結婚資金を増やそうと言われてお金を送った"
+    ],
+    "en": [
+      "someone i met on a dating app told me to invest",
+      "i sent crypto to a partner i have never met",
+      "they said it was for our future so i paid into an investment site",
+      "they told me to pay tax before i could withdraw",
+      "i chat every day on line with a foreigner i met on social media",
+      "they said we should grow our wedding fund and i sent money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "会ったことのない相手が投資や暗号資産を勧める",
+      "すぐに別のアプリでのやりとりに誘う",
+      "出金のために手数料や税金を先払いさせる"
+    ],
+    "en": [
+      "Someone you have never met recommends investing or crypto-assets.",
+      "They quickly move you to a different app.",
+      "You must pay fees or tax before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "実際に会ったことのない人からお金や暗号資産を求められたら詐欺を疑ってください",
+      "家族や友人に話し、＃9110に相談してください",
+      "暗号資産の業者は金融庁に登録されているか確認してください"
+    ],
+    "en": [
+      "If someone you have never met asks for money or crypto-assets, suspect a scam.",
+      "Tell family or a friend and call #9110.",
+      "Check that any crypto-asset exchange is registered with the FSA."
+    ]
+  },
+  "reportTo": [
+    "jp/police-9110",
+    "jp/police-cyber",
+    "jp/fsa-counselling",
+    "jp/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "令和７年における特殊詐欺及びＳＮＳ型投資・ロマンス詐欺の認知・検挙状況等について（確定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/260605/01.html",
+      "date": "2026-06-05"
+    },
+    {
+      "title": "令和７年における特殊詐欺及びＳＮＳ型投資・ロマンス詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/260213/03.html",
+      "date": "2026-02-13"
+    },
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    }
+  ],
+  "updated": "2026-11-18"
+}

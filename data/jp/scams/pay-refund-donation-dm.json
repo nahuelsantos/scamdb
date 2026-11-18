@@ -1,0 +1,120 @@
+{
+  "id": "jp/pay-refund-donation-dm",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "social"
+  ],
+  "sender": {
+    "ja": "SNSでフォローしている店や企業のアカウントを装ったダイレクトメッセージ、続いてLINEグループ",
+    "en": "A DM from what looks like a shop or company account you follow on social media, then a LINE group"
+  },
+  "name": {
+    "ja": "〇〇Pay詐欺：「購入額より多くコード決済で返金します」",
+    "en": "Code-payment refund scam: “we'll refund more than you paid”"
+  },
+  "how": {
+    "ja": "SNSでフォローしている店などのアカウントから「指定のサイトで商品を買うと被災地に寄付ができ、購入額より多くコード決済で返金される」といったダイレクトメッセージが届き、LINEに誘導されてグループに入ります。最初の少額の支払いでは実際に多めに返金され、ほかの参加者も「返金を受けた」と書き込むので信用してしまいます。金額が大きくなると返金が止まり、「さらに払えば返金する」と言われます。2026年の熊本地震の後には被災地支援をうたう手口が寄せられました。「〇〇Payで返金します」と言われたら詐欺を疑ってください。",
+    "en": "A DM from what looks like a shop you follow says “buy goods on this site to donate to the disaster area, and you'll get back more than you paid by code payment”, and moves you into a LINE group. The first small payments really are refunded with extra, and other members post that they were paid, so you trust it. When the amounts get bigger the refunds stop, and you are told you'll be refunded if you pay more. After the 2026 Kumamoto earthquake, versions claiming to support the disaster area were reported. If someone says they will refund you through a code-payment app, suspect a scam."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "フォローしている店などを装ったDMで、購入するとコード決済で多めに返金されると誘われる。",
+        "en": "A DM from a “shop you follow” says you'll get back more than you pay by code payment."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ja": "LINEグループに誘導され、最初の少額は実際に多く返金される。",
+        "en": "You are moved to a LINE group, and the first small payments are refunded with extra."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "金額を上げると返金が止まり、「さらに払えば返金する」と言われる。",
+        "en": "When you pay more, the refunds stop and you are told to pay again to get it back."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "いつもご利用ありがとうございます。被災地支援企画として、指定サイトで商品をご購入いただくと寄付になり、さらに購入額の120%をPayPayで返金いたします。詳細はLINEでご案内します。[リンク]",
+        "en": "Thank you for your support. As a disaster-relief project, buying goods on our site counts as a donation, and we'll refund 120% of the price by PayPay. Details on LINE. [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ja": "前回分の返金処理に不具合がありました。あと15万円お支払いいただければ、前回分とあわせてまとめて返金いたします。",
+        "en": "There was a problem processing your last refund. If you pay another 150,000 yen, we'll refund it all together with the earlier amount."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "店のアカウントから買うとPayPayで多く返金されるとDMが来た",
+      "被災地支援で寄付になると言われて商品を買った",
+      "最初は返金されたのに高額になったら返ってこなくなった",
+      "さらに払えば返金すると言われた",
+      "DMからLINEのグループに入れられた"
+    ],
+    "en": [
+      "a shop account dm'd me saying i'd get more back by paypay if i bought something",
+      "they said buying would count as a donation to the disaster area",
+      "at first i was refunded but when it got bigger nothing came back",
+      "they said i'd be refunded if i paid more",
+      "the dm moved me into a line group"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "「購入額より多く返金」「寄付になる」という話",
+      "DMからLINEなど別のアプリに誘導する",
+      "返金のためにさらに支払いを求める"
+    ],
+    "en": [
+      "Talk of refunds bigger than what you paid, or purchases counting as donations.",
+      "Being moved from a DM to LINE or another app.",
+      "Being asked to pay more to get a refund."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "「〇〇Payで返金します」と言われたら詐欺を疑い、連絡を絶ってください",
+      "支払ってしまったら、すぐにコード決済サービス事業者と警察に連絡してください",
+      "寄付は団体の公式サイトなどで確かめてから行いましょう"
+    ],
+    "en": [
+      "If someone says they'll refund you by a code-payment app, suspect a scam and stop replying.",
+      "If you paid, contact the payment service and the police at once.",
+      "Donate only after checking the organisation's official website."
+    ]
+  },
+  "reportTo": [
+    "jp/consumer-188",
+    "jp/police-cyber",
+    "jp/police-9110"
+  ],
+  "sources": [
+    {
+      "title": "【速報】被災地支援をうたう不審なSNS上のダイレクトメッセージ（DM）に注意！－〇〇Pay詐欺の手口も－",
+      "publisher": "国民生活センター",
+      "url": "https://www.kokusen.go.jp/news/data/n-20260817_1.html",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-18"
+}

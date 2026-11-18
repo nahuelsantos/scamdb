@@ -1,0 +1,143 @@
+{
+  "id": "jp/sns-investment-celebrity-ad",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ja": "著名人や首相・政府要人の画像や動画を使った投資広告、SNSのダイレクトメッセージ、続いてLINEグループの「先生」や「アシスタント」",
+    "en": "An investment ad using a celebrity's or the prime minister's image or video, or a social-media DM, then a “teacher” or “assistant” in a LINE group"
+  },
+  "name": {
+    "ja": "SNS型投資詐欺：著名人の偽広告から「必ずもうかる」LINEグループへ",
+    "en": "Social-media investment scam: fake celebrity ad to a “guaranteed profit” LINE group"
+  },
+  "how": {
+    "ja": "YouTubeや投資サイトの広告、InstagramやFacebookのダイレクトメッセージで、著名人や政府要人の画像・動画を無断で使った「無料の投資セミナー」「必ずもうかる」「元本保証」といった話が届きます。LINEのグループに招待され、サクラが「もうかった」と投稿し、「先生」や「アシスタント」が株や暗号資産の投資を勧め、偽の投資アプリやサイトに利益を表示します。少額の出金はできても、高額になると「手数料」「税金」を求められて引き出せず、連絡が途絶えます。警察庁によると令和8年9月末までの被害額は約991億円で、特殊詐欺の手口で最も多くなっています。",
+    "en": "An ad on YouTube or an investment site, or a DM on Instagram or Facebook, uses a celebrity's or senior politician's picture or video without permission and offers a free investment seminar, “guaranteed profits” or “capital guaranteed”. You are invited to a LINE group where plants post about their gains, and a “teacher” or “assistant” recommends shares or crypto-assets and shows profits in a fake investment app or site. Small withdrawals may work, but when you try to take out more you are asked for fees or tax and the money never comes; then they disappear. The National Police Agency says losses to the end of September 2026 were about 99.1 billion yen, the largest of any fraud type."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "SNSで著名人を使った投資広告やダイレクトメッセージを見る。",
+        "en": "You see an investment ad using a celebrity, or get a DM on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ja": "LINEのグループに誘導され、「先生」やサクラが利益を見せる。",
+        "en": "You are moved to a LINE group where a “teacher” and plants show off profits."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "偽の投資アプリやサイトに登録させ、指定口座に投資金を振り込ませる。",
+        "en": "You sign up to a fake investment app or site and transfer money to accounts they name."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ja": "出金しようとすると手数料や税金を求められ、連絡が途絶える。",
+        "en": "When you try to withdraw, they demand fees or tax, then vanish."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "【無料公開】あの有名経済評論家が教える、必ずもうかる銘柄。元本保証の特別プロジェクト、本日限定でLINEグループに招待します。[リンク]",
+        "en": "[Free] A famous economic commentator reveals shares that are sure to go up. A capital-guaranteed special project; invitations to our LINE group today only. [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ja": "アシスタントの○○です。先生の推奨銘柄で今週もメンバーの皆さんが利益を出しています。専用アプリに登録して、指定の口座へ入金すればすぐに始められます。",
+        "en": "I'm ○○, the assistant. Members made profits again this week on the teacher's picks. Register on our app and pay into the designated account to start right away."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "有名人の投資広告からLINEグループに入った",
+      "必ずもうかると言われて投資アプリに入金した",
+      "先生とアシスタントに株を勧められた",
+      "利益が出ているのに出金しようとしたら手数料を求められた",
+      "首相が投資を勧める動画を見た",
+      "元本保証の投資話でお金を振り込んだ"
+    ],
+    "en": [
+      "i joined a line group from a celebrity investment ad",
+      "they said it was guaranteed profit so i paid into an investment app",
+      "a teacher and an assistant recommended shares to me",
+      "i had profits but when i tried to withdraw they asked for fees",
+      "i saw a video of the prime minister recommending an investment",
+      "i transferred money for an investment they said was capital guaranteed"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "著名人や政府要人が投資を勧める広告や動画",
+      "「必ずもうかる」「元本保証」という言葉",
+      "出金に手数料や税金を先に払うよう言われる"
+    ],
+    "en": [
+      "An ad or video where a celebrity or politician recommends an investment.",
+      "Words like “guaranteed profit” or “capital guaranteed”.",
+      "Being told to pay fees or tax before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "SNSの投資話は、相手が著名人でもまず詐欺を疑ってください",
+      "業者が金融庁・財務局に登録されているか金融庁のサイトで確認してください",
+      "振り込んでしまったら、すぐに銀行と警察に連絡してください"
+    ],
+    "en": [
+      "Treat any investment offer on social media as a scam first, even if a celebrity seems to be behind it.",
+      "Check on the FSA website whether the firm is registered with the FSA or a local finance bureau.",
+      "If you have paid, call your bank and the police at once."
+    ]
+  },
+  "reportTo": [
+    "jp/police-9110",
+    "jp/fsa-counselling",
+    "jp/your-bank",
+    "jp/police-cyber"
+  ],
+  "sources": [
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "令和７年における特殊詐欺及びＳＮＳ型投資・ロマンス詐欺の認知・検挙状況等について（確定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/260605/01.html",
+      "date": "2026-06-05"
+    },
+    {
+      "title": "政府機関を装った「偽サイト・詐欺広告」に注意！",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/260213/02.html",
+      "date": "2026-02-13"
+    }
+  ],
+  "updated": "2026-11-18"
+}

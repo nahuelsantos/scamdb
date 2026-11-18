@@ -1,0 +1,141 @@
+{
+  "id": "jp/oreore-son-emergency",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ja": "息子・孫（「風邪で声が変わった」「携帯が壊れた」）、病院の医師、上司、弁護士、暴力団員を名乗る人",
+    "en": "A son or grandson (“I have a cold”, “my phone broke”), a hospital doctor, a boss, a lawyer, or a gangster"
+  },
+  "name": {
+    "ja": "オレオレ詐欺：息子や孫が「カバンをなくした」「今日中にお金がいる」",
+    "en": "Fake son or grandson: “I lost my bag, I need money today”"
+  },
+  "how": {
+    "ja": "息子や孫を名乗る人が自宅や携帯に電話をかけ、「風邪をひいて声が変わった」「携帯が壊れて番号が変わった」と言って信用させます。最近はまずニセ医師が「息子さんが緊急でノドの手術をしたので声が違います」と電話し、その後ニセ息子が「病院で会社の大事な書類が入ったカバンをなくした」「今日中にお金が必要」と頼む手口や、「お宅の娘が親分の車にぶつかった、示談金を用意しろ」と脅す暴力団かたりも増えています。上司や同僚が出てきて信用させ、「代わりの者が取りに行く」と言って受け子に現金を受け取らせます。電話でお金の話が出たら、いったん切って本人の前からの番号にかけ直してください。",
+    "en": "Someone claiming to be your son or grandson calls your home or mobile and wins you over: “I've got a cold so my voice sounds different”, “my phone broke so my number changed”. Lately a fake doctor calls first (“your son had emergency throat surgery, so his voice is different”) and then the fake son says he lost a bag of important company papers at the hospital and needs money today. Calls from fake gangsters are also rising: “your daughter crashed into the boss's car, get the settlement money ready”. A “boss” or colleague may come on the line, and they say someone else will come to collect, so a collector takes the cash. If a call turns to money, hang up and call your relative on the number you already had."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "息子・孫を名乗り「声が変わった」「番号が変わった」と言う。ニセ医師が先に電話してくることもある。",
+        "en": "The caller says he's your son or grandson and that his voice or number has changed. A fake doctor may call first."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "ja": "「カバンをなくした」「示談金が必要」などと言い、今日中にお金を用意するよう頼む。",
+        "en": "He says he lost a bag or needs settlement money, and asks you to get money ready today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "上司や弁護士が電話に出て信用させ、銀行では本当の理由を言わないよう指示する。",
+        "en": "A “boss” or “lawyer” comes on the line, and you are told not to give the bank the real reason for the withdrawal."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ja": "「代わりの者が取りに行く」と言い、受け子が現金を受け取りに来る。",
+        "en": "They say someone will come in his place, and a collector comes to take the cash."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "お母さん、俺だけど。風邪ひいてて声が変なんだ。実は病院の待合室で会社の大事な書類と小切手が入ったカバンをなくしちゃって、今日中にお金が必要なんだ。いくらか用意できないかな。",
+        "en": "Mum, it's me. I've got a cold so my voice sounds weird. I lost a bag with important company papers and a cheque in the hospital waiting room and I need money today. Can you get some together?"
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ja": "○○病院の医師です。息子さんが緊急でノドの手術をしまして、しばらく声が違って聞こえると思います。このあと息子さんからお電話があります。",
+        "en": "I'm a doctor at ○○ Hospital. Your son had emergency throat surgery, so his voice will sound different for a while. He'll call you shortly."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "息子から風邪で声が変わったと電話があった",
+      "孫が会社のお金が入ったカバンをなくしたと言ってきた",
+      "病院の医者から息子がノドの手術をしたと電話があった",
+      "今日中にお金がいるから代わりの人が取りに行くと言われた",
+      "娘が暴力団の車にぶつかったから示談金を払えと脅された",
+      "銀行で理由を聞かれたらリフォーム代と言えと言われた"
+    ],
+    "en": [
+      "my son called saying his voice changed because he had a cold",
+      "my grandson said he lost a bag with company money",
+      "a doctor called saying my son had throat surgery",
+      "he needed money today and said someone else would come to collect it",
+      "they threatened me saying my daughter hit a gangster's car and i had to pay a settlement",
+      "they told me to tell the bank the money was for home repairs"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "new_number",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "電話で「声が変わった」「番号が変わった」と言う",
+      "今日中にお金が必要だと急がせる",
+      "本人ではなく「代わりの者」がお金を取りに来る"
+    ],
+    "en": [
+      "The caller says his voice or number has changed.",
+      "He rushes you because the money is needed today.",
+      "Someone other than your relative comes to collect the money."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "電話を切り、本人が前から使っている番号にかけ直してください",
+      "一人で対応せず、家族や知人、警察に相談してください",
+      "家族で合言葉を決め、留守番電話や国際電話の利用休止を使いましょう"
+    ],
+    "en": [
+      "Hang up and call your relative on the number they have always used.",
+      "Don't deal with it alone: talk to family, a friend or the police.",
+      "Agree a family password, use your answering machine, and have international calls blocked on your landline."
+    ]
+  },
+  "reportTo": [
+    "jp/police-110",
+    "jp/police-9110"
+  ],
+  "sources": [
+    {
+      "title": "医者や病院職員をかたる手口に注意",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/view/notice/316",
+      "date": "2026-05-14"
+    },
+    {
+      "title": "過去の手口が再び・・・～固定電話へのアポ電も急増中～",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/view/notice/312",
+      "date": "2026-04-28"
+    },
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    }
+  ],
+  "updated": "2026-11-18"
+}
