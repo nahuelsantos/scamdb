@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **16 more real genuine messages (vision point 4).** Japan (municipal tax and insurance SMS), South Korea (exam-day
+  alerts), Taiwan (111 government short-code texts rated real by Cofacts), Thailand, the UAE, Indonesia (an ETLE fine
+  confirmation) and Canada (Desjardins fraud-alert samples, names replaced by `[name]`). Genuine messages: 89 → 105;
+  called "scam": 8/105 (7.6%). The one new false alarm is Desjardins's real debit-card fraud alert, the same known
+  limit as the Australian bank templates scammers copy. Left out: a possibly paraphrased Taiwanese alert, a partial UAE
+  quote, a loudspeaker (not phone) alert, and a Thai alert whose date reads as a phone number.
+
 - **Automated research (vision point 6).** A weekly scheduled task ("scamdb weekly research", Tuesdays) replaces the
   paused weekly import. For up to 3 existing countries (oldest real messages, or fewest genuine ones) it finds new real
   messages quoted from reliable sources, scams and genuine alike, links scams to their entry or leaves them unmatched
