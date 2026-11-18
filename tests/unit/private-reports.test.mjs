@@ -14,18 +14,18 @@ test('reports become private messages only after a person reviews them', () => {
   assert.ok(m.every((x) => !JSON.stringify(x).includes('"a"') && x.report.length === 64), 'the report id is stored only as a hash');
 });
 
-test('a report copy expires 180 days after the report, like the report itself', () => {
-  const [m] = reportsToMessages([row('a', 'reviewed', '2026-11-01T10:00:00Z')]);
-  assert.equal(m.expires, '2027-04-30');
-  assert.ok(!isExpired(m, '2027-04-30'));
-  assert.ok(isExpired(m, '2027-05-01'));
+test('a report copy keeps no expiry, like the redacted text the report keeps', () => {
+  const [m] = reportsToMessages([row('a', 'reviewed', '2026-01-01T00:00:00Z')]);
+  assert.equal(m.expires, undefined);
+  assert.ok(!isExpired(m, '2030-01-01'));
 });
 
-test('merging skips reports already copied and drops expired copies', () => {
+test('merging skips reports already copied and still drops copies that carry an expiry', () => {
   const [a] = reportsToMessages([row('a', 'reviewed', '2026-01-01T00:00:00Z')]);
   const [b] = reportsToMessages([row('b', 'reviewed', '2026-11-01T00:00:00Z')]);
-  const merged = mergeReports([b], [b, a], '2026-11-18');
-  assert.deepEqual(merged.map((x) => x.report), [b.report], 'b once; a (from January) has expired');
+  const old = { ...a, report: 'z'.repeat(64), expires: '2026-06-30' };
+  const merged = mergeReports([b, old], [b, a], '2026-11-18');
+  assert.deepEqual(merged.map((x) => x.report), [b.report, a.report]);
 });
 
 test('an uncatalogued report copy passes the set checks', () => {

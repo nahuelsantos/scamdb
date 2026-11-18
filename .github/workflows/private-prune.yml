@@ -1,5 +1,5 @@
-# Every Tuesday: delete report copies from the encrypted private test set once they pass their 180-day expiry, the
-# same retention the site promises for reports (tools/private-eval.mjs prune). Commits only when something expired.
+# Every Tuesday: delete report copies from the encrypted private test set once they pass an `expires` date (only
+# older copies carry one; tools/private-eval.mjs prune). Commits only when something expired.
 name: Prune private test set
 on:
   schedule:

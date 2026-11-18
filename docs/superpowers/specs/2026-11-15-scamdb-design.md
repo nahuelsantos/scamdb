@@ -175,7 +175,7 @@ A new country needs its `countries.json` entry and a `contacts.json` before its 
 
 - **Who sends them:** anyone, through a "Report a scam" form on eschamuyo.com (and later other sites) and `POST /v1/reports`.
 - **What they contain:** the message text and/or a screenshot or voice note, the channel, the country, an optional free-text "what happened", and an optional contact email.
-- **Where they go:** D1 (text and metadata), **never** the public repo. R2 needs a payment method even for its free tier, so **reports are text-only at first** [call]; attachments come if the owner adds a card later. They are retained for 180 days and then deleted unless promoted. [call: 180 days]
+- **Where they go:** D1 (text and metadata), **never** the public repo. R2 needs a payment method even for its free tier, so **reports are text-only at first** [call]; attachments come if the owner adds a card later. After 180 days the contact details, the reporter’s story, the key link and extracted indicators are deleted; the redacted text and outcome are kept as labelled test data. [call: 180 days, revised 2026-11-18]
 - **Abuse:** Cloudflare Turnstile on the form, per-IP limits on the endpoint, size caps on attachments.
 - **How they become entries:** on demand, the owner opens a Claude Code session that reads new reports, clusters them, strips personal data, and opens draft pull requests: a new entry, or a new example on an existing one. The owner approves or rejects them like any contribution. [call: on demand, not a scheduled job, so there is no recurring AI cost; it can become a weekly scheduled task later]
 - Reports also become the **labelled set** used to check `/isitascam` scores (below).

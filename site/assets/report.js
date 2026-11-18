@@ -38,10 +38,25 @@ async function whoAmI() {
     if (r.ok) { const me = await r.json(); signedIn = Boolean(me.hasKey); }
   } catch { /* offline or not set up: anonymous */ }
   $('rep-shot').disabled = !signedIn;
+  $('rep-drop').classList.toggle('off', !signedIn);
+  if (!signedIn) $('rep-drop-main').textContent = S.repDropOff;
   $('rep-shot-hint').textContent = signedIn ? S.repSignedIn : S.repShotSignedOut;
   if (!signedIn) loadTurnstile();
 }
 whoAmI();
+
+// Screenshot drop zone: drag a file onto it or click to pick one.
+const drop = $('rep-drop'), shotIn = $('rep-shot');
+const showFile = () => { const f = shotIn.files?.[0]; $('rep-drop-main').textContent = f ? f.name : S.repDrop; drop.classList.toggle('has', Boolean(f)); };
+shotIn.addEventListener('change', showFile);
+for (const ev of ['dragenter', 'dragover']) drop.addEventListener(ev, (e) => { e.preventDefault(); if (!shotIn.disabled) drop.classList.add('over'); });
+for (const ev of ['dragleave', 'drop']) drop.addEventListener(ev, () => drop.classList.remove('over'));
+drop.addEventListener('drop', (e) => {
+  e.preventDefault();
+  const f = e.dataTransfer?.files?.[0];
+  if (shotIn.disabled || !f || !/^image\/(png|jpeg|webp)$/.test(f.type)) return;
+  const dt = new DataTransfer(); dt.items.add(f); shotIn.files = dt.files; showFile();
+});
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
