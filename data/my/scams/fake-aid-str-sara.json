@@ -1,0 +1,164 @@
+{
+  "id": "my/fake-aid-str-sara",
+  "country": "my",
+  "lang": "ms",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "ms": "Mesej WhatsApp tular, SMS yang mengaku daripada Kementerian Kewangan, atau poster di media sosial dengan jata negara",
+    "en": "A viral WhatsApp message, a text claiming to be from the Finance Ministry, or a social media poster with the national coat of arms"
+  },
+  "name": {
+    "ms": "Pautan palsu “mohon” atau “semak” bantuan STR dan SARA",
+    "en": "Fake link to “apply for” or “check” STR and SARA government aid"
+  },
+  "how": {
+    "ms": "Mesej atau poster mengatakan anda layak menerima Sumbangan Tunai Rahmah (STR), Sumbangan Asas Rahmah (SARA) atau bantuan kerajaan lain, dan meminta anda menekan pautan, mengimbas kod QR atau log masuk untuk “mengesahkan kelayakan”. Ada mesej yang mengugut bantuan akan “dibekukan” jika anda tidak memberikan butiran bank. Laman itu mencuri maklumat peribadi dan perbankan. Kementerian Kewangan menegaskan tiada permohonan atau bayaran STR dan SARA dibuat melalui WhatsApp, dan SARA dikreditkan melalui MyKad.",
+    "en": "A message or poster says you qualify for Sumbangan Tunai Rahmah (STR), Sumbangan Asas Rahmah (SARA) or other government aid, and asks you to tap a link, scan a QR code or log in to “confirm your eligibility”. Some messages threaten that your aid will be “frozen” if you don't give your bank details. The site steals your personal and banking information. The Finance Ministry says no STR or SARA application or payment is made through WhatsApp, and SARA is credited through your MyKad."
+  },
+  "steps": [
+    {
+      "text": {
+        "ms": "Mesej atau poster menggunakan nama Kementerian Kewangan, jata negara atau gambar pemimpin.",
+        "en": "A message or poster uses the Finance Ministry's name, the national coat of arms or a leader's photo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ms": "Ia menawarkan bantuan RM100 hingga RM600 yang “layak” untuk anda.",
+        "en": "It offers aid of RM100 to RM600 that you “qualify” for."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ms": "Anda diminta menekan pautan atau mengimbas kod QR yang bukan laman .gov.my.",
+        "en": "You are asked to tap a link or scan a QR code that is not a .gov.my site."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ms": "Laman itu meminta nombor kad pengenalan, butiran bank atau kod OTP.",
+        "en": "The page asks for your ID number, bank details or OTP code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ms": "STR BUJANG 2026 ✅ Permohonan & bayaran bantuan SARA RM600 untuk yang layak kini dibuka. Semak nama anda dan isi butiran akaun bank di [pautan] sebelum 31 Januari. Kongsikan kepada keluarga!",
+        "en": "STR SINGLES 2026 ✅ Applications & payment of RM600 SARA aid for those eligible are now open. Check your name and fill in your bank account details at [pautan] before 31 January. Share with your family!"
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "ms": "KEMENTERIAN KEWANGAN: Bantuan STR anda akan DIBEKUKAN kerana maklumat akaun tidak lengkap. Kemas kini butiran perbankan anda dalam masa 24 jam di [pautan]",
+        "en": "FINANCE MINISTRY: Your STR aid will be FROZEN because your account details are incomplete. Update your banking details within 24 hours at [pautan]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ms": [
+      "pautan mohon str bujang di whatsapp",
+      "mesej kata bantuan sara masuk akaun minta log masuk",
+      "semak kelayakan str melalui link",
+      "mesej kementerian kewangan minta butiran bank untuk bantuan",
+      "poster bantuan kerajaan suruh imbas kod qr",
+      "bantuan str akan dibekukan kalau tak kemas kini akaun"
+    ],
+    "en": [
+      "link to apply for str for singles on whatsapp",
+      "message says sara aid was paid and asks me to log in",
+      "check str eligibility through a link",
+      "finance ministry message asking for bank details for aid",
+      "government aid poster tells me to scan a qr code",
+      "str aid will be frozen if i do not update my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "too_good_to_be_true",
+    "asks_for_code",
+    "urgency"
+  ],
+  "redFlags": {
+    "ms": [
+      "Bantuan kerajaan yang “dimohon” melalui pautan WhatsApp, SMS atau kod QR.",
+      "Laman yang tidak berakhiran .gov.my.",
+      "Diminta butiran bank, kata laluan atau OTP untuk “mengesahkan” bantuan.",
+      "Ugutan bahawa bantuan akan dibekukan."
+    ],
+    "en": [
+      "Government aid you “apply for” through a WhatsApp link, text or QR code.",
+      "A site that does not end in .gov.my.",
+      "Being asked for bank details, passwords or an OTP to “confirm” your aid.",
+      "A threat that your aid will be frozen."
+    ]
+  },
+  "whatToDo": {
+    "ms": [
+      "Semak STR dan SARA hanya di laman rasmi kerajaan yang berakhiran .gov.my atau saluran rasmi Kementerian Kewangan.",
+      "Jangan tekan pautan, imbas kod QR atau isi butiran bank daripada mesej tular.",
+      "Jika sudah mengisi butiran bank atau OTP, hubungi bank anda dan 997 segera."
+    ],
+    "en": [
+      "Check STR and SARA only on official government sites ending in .gov.my or the Finance Ministry's official channels.",
+      "Don't tap links, scan QR codes or enter bank details from viral messages.",
+      "If you already entered bank details or an OTP, call your bank and 997 straight away."
+    ]
+  },
+  "reportTo": [
+    "my/your-bank",
+    "my/nsrc-997",
+    "my/mcmc-aduan"
+  ],
+  "sources": [
+    {
+      "title": "Hati-Hati Pautan Palsu Mesej Berkaitan Bantuan SARA – MoF",
+      "publisher": "Kementerian Kewangan Malaysia",
+      "url": "https://mof.gov.my/portal/ms/berita/akhbar/hati-hati-pautan-palsu-mesej-berkaitan-bantuan-sara-mof",
+      "date": "2025-05-06"
+    },
+    {
+      "title": "Jangan Terpedaya Dengan Sindiket Tipu Bantuan SARA Di WhatsApp – Polis",
+      "publisher": "SAYS",
+      "url": "https://says.com/my/seismik/jangan-terpedaya-dengan-sindiket-tipu-bantuan-sara-di-whatsapp-polis",
+      "date": "2025-08-05"
+    },
+    {
+      "title": "QuickCheck: Are scammers sending fake messages about Bantuan Tunai Rahmah?",
+      "publisher": "The Star",
+      "url": "https://www.thestar.com.my/news/true-or-not/2025/08/26/quickcheck-are-scammers-sending-fake-messages-about-bantuan-tunai-rahmah",
+      "date": "2025-08-26"
+    },
+    {
+      "title": "Beware Of This SMS Claiming ‘RM300 SARA Payment’ — It’s A Scam",
+      "publisher": "SAYS",
+      "url": "https://says.com/my/news/crime/beware-of-this-sms-claiming-rm300-sara-payment-its-a-scam",
+      "date": "2026-01-06"
+    },
+    {
+      "title": "Mesej Whatsapp Tular Dakwa MOF Tawar STR, SARA RM600 Kepada Bujang Adalah Palsu",
+      "publisher": "Kementerian Kewangan Malaysia",
+      "url": "https://mof.gov.my/portal/ms/berita/akhbar/mesej-whatsapp-tular-dakwa-mof-tawar-str-sara-rm600-kepada-bujang-adalah-palsu",
+      "date": "2026-01-21"
+    },
+    {
+      "title": "QuickCheck: Are scammers circulating fake government aid QR codes online?",
+      "publisher": "The Star",
+      "url": "https://www.thestar.com.my/news/true-or-not/2026/09/24/quickcheck-are-scammers-circulating-fake-government-aid-qr-codes-online",
+      "date": "2026-09-24"
+    }
+  ],
+  "updated": "2026-11-18"
+}
