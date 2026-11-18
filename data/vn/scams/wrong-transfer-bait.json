@@ -1,0 +1,125 @@
+{
+  "id": "vn/wrong-transfer-bait",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "vi": "Người lạ nói đã “chuyển nhầm” tiền cho bạn, hoặc “nhân viên công ty thu hồi nợ”",
+    "en": "A stranger saying they sent you money “by mistake”, or a “debt collection company employee”"
+  },
+  "name": {
+    "vi": "“Chuyển nhầm” tiền vào tài khoản rồi ép trả vào một tài khoản khác",
+    "en": "Money “sent by mistake”, then pressure to return it to a different account"
+  },
+  "how": {
+    "vi": "Kẻ gian chủ động chuyển một khoản tiền vào tài khoản của bạn, rồi giả làm người chuyển nhầm hoặc nhân viên công ty thu hồi nợ, liên tục thúc ép, đe dọa bạn chuyển trả vào một tài khoản khác do chúng chỉ định. Biến thể khác: người lạ “hỗ trợ lấy lại tiền chuyển nhầm” bảo quét mã QR, bấm link hoặc đọc OTP.",
+    "en": "Scammers send money into your account, then pose as the person who sent it by mistake or as a debt collection company, pressing and threatening you to return it to a different account they name. Another version: a stranger offering to “help recover a mistaken transfer” asks you to scan a QR code, click a link or read out an OTP."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Một khoản tiền lạ vào tài khoản của bạn.",
+        "en": "An unexpected sum arrives in your account."
+      }
+    },
+    {
+      "text": {
+        "vi": "Người lạ gọi, nhắn nói chuyển nhầm, thúc ép trả gấp.",
+        "en": "A stranger calls or messages saying it was a mistake and pushing you to return it fast."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "vi": "Họ yêu cầu chuyển trả vào một tài khoản khác, không phải tài khoản đã gửi.",
+        "en": "They ask you to send it to another account, not the one it came from."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "vi": "Có khi họ xưng “công ty thu hồi nợ” và đe dọa nếu bạn không trả.",
+        "en": "Sometimes they claim to be a “debt collection company” and threaten you if you don't pay."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "Chị ơi em xin lỗi, em chuyển nhầm 5.000.000đ vào tài khoản chị, đó là tiền em đóng viện phí cho con. Tài khoản em đang bị khóa nên chị chuyển lại giúp em vào số tài khoản của chồng em nhé, em cảm ơn chị nhiều.",
+        "en": "I'm so sorry, I sent 5,000,000 dong to your account by mistake, it's my child's hospital fee. My account is locked, so please send it back to my husband's account instead, thank you so much."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "vi": "Bên em là công ty thu hồi nợ. Tài khoản chị đã nhận khoản giải ngân 5.000.000đ, nếu không hoàn trả vào tài khoản chỉ định trước 17h hôm nay, chúng tôi sẽ liên hệ người thân và cơ quan nơi chị làm việc.",
+        "en": "We are a debt collection company. Your account received a 5,000,000 dong loan payout; if it is not repaid to the designated account by 5pm today, we will contact your relatives and your workplace."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "có người chuyển nhầm tiền rồi bảo trả vào tài khoản khác",
+      "tự nhiên nhận tiền lạ sau đó bị đòi nợ",
+      "công ty thu hồi nợ dọa vì tiền chuyển nhầm",
+      "chuyển nhầm tiền rồi bị dọa đòi nợ",
+      "người lạ hỗ trợ lấy lại tiền chuyển nhầm bảo quét mã qr"
+    ],
+    "en": [
+      "someone sent money by mistake and asked me to return it to another account",
+      "got money out of nowhere then was chased for a debt",
+      "a debt collector threatened me over a mistaken transfer",
+      "a mistaken transfer followed by threats",
+      "a stranger offering to recover a mistaken transfer asked me to scan a qr code"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "vi": [
+      "Tiền lạ vào tài khoản, ngay sau đó có người thúc ép trả.",
+      "Đòi trả vào tài khoản khác với tài khoản đã chuyển.",
+      "Người xưng “công ty thu hồi nợ” đe dọa vì khoản tiền bạn không vay."
+    ],
+    "en": [
+      "Unexpected money followed by someone pressuring you to return it.",
+      "A demand to return it to a different account from the one that sent it.",
+      "A “debt collector” threatening you over money you never borrowed."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Không tự chuyển trả và không tiêu số tiền đó; báo ngân hàng để tra soát.",
+      "Nếu bị đe dọa, giữ lại tin nhắn và trình báo công an.",
+      "Nếu bạn chuyển nhầm, chỉ nhờ ngân hàng tra soát, không theo người lạ “hỗ trợ” trên mạng."
+    ],
+    "en": [
+      "Don't send it back yourself and don't spend it; ask your bank to trace it.",
+      "If you are threatened, keep the messages and report it to the police.",
+      "If you sent money by mistake, only ask your bank to trace it; don't follow strangers “helping” online."
+    ]
+  },
+  "reportTo": [
+    "vn/your-bank",
+    "vn/police-113"
+  ],
+  "sources": [
+    {
+      "title": "Công an cảnh báo thủ đoạn “hỗ trợ lấy lại tiền”",
+      "publisher": "Dân trí",
+      "url": "https://dantri.com.vn/phap-luat/cong-an-canh-bao-thu-doan-ho-tro-lay-lai-tien-20260220174321590.htm",
+      "date": "2026-02-20"
+    }
+  ],
+  "updated": "2026-11-18"
+}

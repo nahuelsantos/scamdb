@@ -1,0 +1,150 @@
+{
+  "id": "vn/fake-police-money-laundering",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "vi": "Người gọi tự xưng công an, cảnh sát điều tra, viện kiểm sát; sau đó gọi video qua Zalo hoặc Zoom",
+    "en": "A caller claiming to be the police, a criminal investigator or the procuracy, then video calls on Zalo or Zoom"
+  },
+  "name": {
+    "vi": "“Công an” gọi: bạn liên quan vụ rửa tiền, ma túy, phải chuyển tiền để “xác minh”",
+    "en": "“Police” call: you are linked to money laundering or drugs and must send money to be “cleared”"
+  },
+  "how": {
+    "vi": "Kẻ gian gọi điện tự xưng công an hoặc viện kiểm sát, đọc đúng thông tin cá nhân và nói bạn liên quan một vụ rửa tiền hoặc ma túy. Chúng chuyển sang Zalo hoặc Zoom, mặc sắc phục để “lấy lời khai”, dặn giữ bí mật tuyệt đối. Để “chứng minh trong sạch”, bạn bị yêu cầu chuyển tiền tiết kiệm, thậm chí cầm cố tài sản, vào “tài khoản tạm giữ”. Công an không làm việc qua điện thoại và không yêu cầu chuyển tiền để điều tra.",
+    "en": "A caller says they are the police or the procuracy, reads out your personal details and says you are linked to a money-laundering or drug case. They move to Zalo or Zoom, wear uniforms to “take your statement” and tell you to keep it secret. To “prove you are innocent” you are told to move your savings, even pawn property, into a “holding account”. The police never work over the phone or ask for money for an investigation."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Cuộc gọi từ người tự xưng công an, viện kiểm sát, đọc đúng họ tên, số căn cước của bạn.",
+        "en": "A call from someone claiming to be the police or procuracy who knows your name and ID number."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "vi": "Họ nói bạn dính vào vụ rửa tiền hoặc ma túy và đe dọa bắt giữ.",
+        "en": "They say you are tied to money laundering or drugs and threaten arrest."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "vi": "Họ yêu cầu kết bạn Zalo, gọi video “lấy lời khai” và cấm bạn kể với ai.",
+        "en": "They ask you to add them on Zalo, video call to “take your statement” and tell you not to tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "vi": "Bạn bị yêu cầu chuyển tiền vào “tài khoản tạm giữ” để “xác minh dòng tiền”.",
+        "en": "You are told to move money into a “holding account” to “verify the money flow”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "Alo, chị có phải Nguyễn Thị H. không? Tôi là cán bộ Phòng Cảnh sát hình sự Công an Hà Nội. Tài khoản ngân hàng đứng tên chị đang liên quan đến một đường dây rửa tiền. Chị kết bạn Zalo với tôi theo số này để làm việc qua video, tuyệt đối không được nói với ai, kể cả người nhà, nếu không sẽ bị coi là cản trở điều tra.",
+        "en": "Hello, is this Ms Nguyen Thi H.? I am an officer from the Hanoi Police criminal investigation department. A bank account in your name is linked to a money-laundering ring. Add me on Zalo at this number so we can work over video, and do not tell anyone, not even your family, or it will count as obstructing the investigation."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "vi": "Để chứng minh chị không liên quan, chị phải chuyển toàn bộ tiền trong tài khoản sang tài khoản tạm giữ của cơ quan điều tra trong hôm nay. Sau khi xác minh xong dòng tiền sẽ hoàn trả đầy đủ. Số tài khoản: [số].",
+        "en": "To prove you are not involved, you must move all the money in your account into the investigators' holding account today. Once the money flow is verified it will be returned in full. Account number: [số]."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "công an gọi bảo tôi liên quan vụ rửa tiền",
+      "bị gọi video lấy lời khai qua zalo",
+      "yêu cầu chuyển tiền vào tài khoản tạm giữ để điều tra",
+      "người tự xưng viện kiểm sát dọa bắt",
+      "bảo giữ bí mật không được nói với gia đình"
+    ],
+    "en": [
+      "police called saying i am involved in money laundering",
+      "they video called me on zalo to take a statement",
+      "told to move money to a holding account for the investigation",
+      "someone from the procuracy threatened to arrest me",
+      "told to keep it secret from my family"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "vi": [
+      "Công an hoặc viện kiểm sát làm việc qua điện thoại, Zalo, Zoom.",
+      "Bị cấm kể với gia đình về “vụ án”.",
+      "Yêu cầu chuyển tiền hay cầm cố nhà đất để “chứng minh trong sạch”."
+    ],
+    "en": [
+      "Police or prosecutors working with you by phone, Zalo or Zoom.",
+      "Being told not to tell your family about the “case”.",
+      "Being asked to send money or pawn your property to “prove you are innocent”."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Cúp máy. Công an mời làm việc bằng giấy mời hoặc qua công an địa phương, không qua điện thoại.",
+      "Kể ngay cho người thân và đến công an xã, phường gần nhất để kiểm tra.",
+      "Nếu đã chuyển tiền, gọi ngân hàng ngay để khóa giao dịch và trình báo công an."
+    ],
+    "en": [
+      "Hang up. The police summon people with a written notice or through local police, never by phone.",
+      "Tell your family straight away and go to the nearest commune or ward police station to check.",
+      "If you already sent money, call your bank now to stop the transfer and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "vn/police-113",
+    "vn/c02-hotline",
+    "vn/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Giả danh công an gọi video lừa hơn 225 triệu đồng",
+      "publisher": "Sài Gòn Giải Phóng",
+      "url": "https://www.sggp.org.vn/gia-danh-cong-an-goi-video-lua-hon-225-trieu-dong-post844318.html",
+      "date": "2026-03-23"
+    },
+    {
+      "title": "Nhân viên ngân hàng phát hiện bất thường, cứu cụ bà khỏi mất 200 triệu đồng",
+      "publisher": "Tuổi Trẻ",
+      "url": "https://tuoitre.vn/nhan-vien-ngan-hang-phat-hien-bat-thuong-cuu-cu-ba-khoi-mat-200-trieu-dong-100261111100636405.htm",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "Cú điện thoại giả danh công an suýt lừa cụ bà Hà Nội chuyển hơn 20 tỷ đồng",
+      "publisher": "VietNamNet",
+      "url": "https://vietnamnet.vn/cu-dien-thoai-gia-danh-cong-an-suyt-lua-cu-ba-ha-noi-chuyen-hon-20-ty-dong-2489200.html",
+      "date": "2026-03-05"
+    },
+    {
+      "title": "Nữ sinh liên tiếp mắc lừa công an và luật sư “ảo”",
+      "publisher": "VnExpress",
+      "url": "https://vnexpress.net/nu-sinh-lien-tiep-mac-lua-cong-an-va-luat-su-ao-4832850.html",
+      "date": "2024-12-28"
+    }
+  ],
+  "story": {
+    "vi": "Ở TP.HCM, một người đàn ông được “cảnh sát hình sự Hà Nội” kết bạn Zalo, bị cáo buộc nhận 450 triệu đồng từ một bị can rửa tiền rồi bị “lấy lời khai” qua Zoom. Để “Ngân hàng Nhà nước kiểm tra tính minh bạch”, anh chuyển nhiều lần tổng cộng hơn 225 triệu đồng trước khi nhận ra bị lừa.",
+    "en": "In Ho Chi Minh City, a man was added on Zalo by a “Hanoi criminal police officer”, accused of taking 450 million dong from a money-laundering suspect and “questioned” over Zoom. So that “the State Bank could check”, he made several transfers totalling more than 225 million dong before he realised it was a scam."
+  },
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,126 @@
+{
+  "id": "vn/loan-upfront-fee",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "vi": "Trang Facebook, tài khoản Zalo tự xưng nhân viên ngân hàng, công ty tài chính “hỗ trợ vay”",
+    "en": "A Facebook page or Zalo account claiming to be bank or finance company staff “helping with loans”"
+  },
+  "name": {
+    "vi": "Vay tiền online “giải ngân trong ngày”, nhưng phải đóng phí trước mới được giải ngân",
+    "en": "Online loan “paid out today”, but you must pay a fee first"
+  },
+  "how": {
+    "vi": "Kẻ gian giả danh nhân viên ngân hàng, công ty tài chính đăng quảng cáo vay nhanh, thủ tục gọn trên Facebook. Khi bạn liên hệ, chúng chuyển sang Zalo, xin ảnh căn cước, hộ khẩu, rồi gửi hợp đồng vay giả và đòi đóng phí, như “phí bảo lãnh”, mới giải ngân. Nhận tiền xong chúng chặn liên lạc. Tổ chức cho vay hợp pháp không đòi chuyển tiền vào tài khoản cá nhân để giải ngân.",
+    "en": "Scammers posing as bank or finance company staff advertise fast, easy loans on Facebook. When you get in touch they move to Zalo, ask for photos of your ID and household registration, then send a fake loan contract and demand a fee, such as a “guarantee fee”, before paying out. Once paid, they block you. Legal lenders never ask you to pay into a personal account to release a loan."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Quảng cáo vay nhanh, không thẩm định, giải ngân trong ngày.",
+        "en": "An ad for fast loans, no checks, paid out the same day."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "vi": "“Nhân viên” chuyển sang Zalo, xin ảnh giấy tờ tùy thân.",
+        "en": "The “employee” moves to Zalo and asks for photos of your ID."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "vi": "Bạn nhận hợp đồng giả và bị đòi đóng phí để giải ngân.",
+        "en": "You get a fake contract and are told to pay a fee to release the money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "vi": "Sau khi chuyển phí, khoản vay không về và bạn bị chặn.",
+        "en": "After paying, the loan never arrives and you are blocked."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "Hồ sơ vay 50.000.000đ của anh đã được duyệt. Do anh ghi sai số tài khoản nên lệnh giải ngân bị treo, anh cần đóng phí bảo lãnh 10% để hệ thống mở khóa, tiền sẽ được hoàn lại cùng khoản vay trong 30 phút.",
+        "en": "Your 50,000,000 dong loan has been approved. Because you entered the wrong account number the payout is on hold; you need to pay a 10% guarantee fee to unlock it, refunded with the loan within 30 minutes."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "vi": "Vay tiêu dùng không thế chấp, chỉ cần căn cước, nợ xấu vẫn vay được, giải ngân trong ngày. Inbox ngay cho nhân viên tư vấn ngân hàng để được hỗ trợ.",
+        "en": "Unsecured consumer loans, only your ID needed, bad credit accepted, paid out today. Message our bank adviser now for help."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "vay tiền online bị bắt đóng phí giải ngân",
+      "nhân viên ngân hàng trên facebook đòi phí bảo lãnh",
+      "ghi sai số tài khoản phải nộp tiền mới giải ngân",
+      "chuyển phí làm hợp đồng vay rồi bị chặn",
+      "hỗ trợ vay nhanh qua zalo bị lừa"
+    ],
+    "en": [
+      "an online loan made me pay a fee to release it",
+      "a bank employee on facebook asked for a guarantee fee",
+      "told my account number was wrong and i must pay to get the loan",
+      "paid a loan contract fee and got blocked",
+      "scammed by fast loan help on zalo"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "vi": [
+      "Vay dễ, không thẩm định, “nợ xấu vẫn vay được”.",
+      "Phải đóng phí trước khi nhận tiền vay.",
+      "Nhân viên liên hệ qua Facebook, Zalo, nhận tiền vào tài khoản cá nhân."
+    ],
+    "en": [
+      "Easy loans, no checks, “bad credit accepted”.",
+      "Having to pay a fee before receiving the loan.",
+      "An “employee” on Facebook or Zalo taking money into a personal account."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Chỉ vay tại ngân hàng, công ty tài chính được phép hoạt động, đến trực tiếp trụ sở hoặc dùng ứng dụng chính thức.",
+      "Không chuyển bất kỳ khoản phí nào để được giải ngân.",
+      "Nếu đã chuyển tiền, gọi ngân hàng đề nghị phong tỏa và trình báo công an."
+    ],
+    "en": [
+      "Only borrow from licensed banks and finance companies, at their offices or in their official apps.",
+      "Never pay any fee to get a loan released.",
+      "If you paid, call your bank to ask for a freeze and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "vn/police-113",
+    "vn/your-bank",
+    "vn/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Cảnh giác khi vay tiền online",
+      "publisher": "Dân trí",
+      "url": "https://dantri.com.vn/phap-luat/canh-giac-khi-vay-tien-online-20251126193329988.htm",
+      "date": "2025-11-26"
+    }
+  ],
+  "updated": "2026-11-18"
+}

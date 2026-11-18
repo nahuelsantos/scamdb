@@ -1,0 +1,140 @@
+{
+  "id": "vn/fake-traffic-fine-sms",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "vi": "Tin nhắn tự xưng “Bộ Công an”, “CSGT” hoặc Cổng dịch vụ công, thường từ số quốc tế",
+    "en": "A text claiming to be the “Ministry of Public Security”, “traffic police” or the public services portal, often from an international number"
+  },
+  "name": {
+    "vi": "Tin nhắn “phạt nguội”: xe vi phạm, nộp phạt trong 48 giờ qua đường link",
+    "en": "“Traffic fine” text: your vehicle broke the rules, pay within 48 hours via a link"
+  },
+  "how": {
+    "vi": "Kẻ gian gửi tin nhắn hàng loạt báo phương tiện của bạn vi phạm, ví dụ vượt đèn đỏ, kèm đường link “tra cứu, nộp phạt” có tên miền giả chứa chữ “csgt”, “bocongan”, “gov”. Tin nhắn dọa phạt tăng 50% hoặc giữ giấy tờ nếu không nộp trong 48 giờ, hoặc giảm nửa tiền nếu nộp ngay. Trang giả luôn báo “có vi phạm” rồi đòi số thẻ, OTP, mật khẩu hoặc cài mã độc. Công an không thông báo phạt nguội qua tin nhắn.",
+    "en": "Scammers send mass texts saying your vehicle committed an offence, such as running a red light, with a link to “check and pay the fine” on a fake domain containing words like “csgt”, “bocongan” or “gov”. The text threatens a 50% increase or seized papers if not paid within 48 hours, or offers half off if you pay now. The fake site always shows “an offence” and then asks for your card number, OTP and password, or installs malware. Police don't send fine notices by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Tin nhắn tự xưng Bộ Công an, CSGT báo xe bạn vi phạm giao thông.",
+        "en": "A text claiming to be the police says your vehicle broke traffic rules."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "vi": "Tin nhắn dọa tăng mức phạt nếu không nộp trong 48 giờ.",
+        "en": "It threatens a higher fine if you don't pay within 48 hours."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "vi": "Đường link dẫn tới trang giống cổng thông tin nhà nước.",
+        "en": "A link leads to a site that looks like a government portal."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "vi": "Trang giả đòi thông tin thẻ, OTP, mật khẩu để “nộp phạt”.",
+        "en": "The fake site asks for card details, OTP and password to “pay the fine”."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "[Bo Cong an] Phuong tien cua quy khach bi ghi nhan vi pham vuot den do. Vui long tra cuu va nop phat tai [đường dẫn]. Qua 48 gio muc phat se tang them 50% va tam giu giay to phuong tien.",
+        "en": "[Ministry of Public Security] Your vehicle was recorded running a red light. Please check and pay the fine at [đường dẫn]. After 48 hours the fine increases by 50% and the vehicle papers will be held."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "vi": "Thông báo phạt nguội: xe của bạn có 1 lỗi vi phạm chưa xử lý, mức phạt 400.000đ. Nộp trong hôm nay chỉ còn 200.000đ, truy cập [đường dẫn] để thanh toán.",
+        "en": "Traffic fine notice: your vehicle has 1 unpaid offence, fine 400,000 dong. Pay today and it's only 200,000; go to [đường dẫn] to pay."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "tin nhắn phạt nguội kèm đường link",
+      "bị báo vượt đèn đỏ phải nộp phạt trong 48 giờ",
+      "tin nhắn bộ công an bắt nộp phạt qua link",
+      "trang nộp phạt nguội đòi số thẻ và otp",
+      "nộp phạt sớm được giảm một nửa"
+    ],
+    "en": [
+      "a traffic fine text with a link",
+      "told i ran a red light and must pay within 48 hours",
+      "a ministry of public security text telling me to pay a fine via a link",
+      "a fine payment site asked for my card number and otp",
+      "pay the fine early and get half off"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "vi": [
+      "Thông báo phạt nguội qua tin nhắn, từ số lạ hoặc số quốc tế.",
+      "Dọa tăng phạt hoặc “giảm giá” nếu nộp ngay.",
+      "Đường link không phải địa chỉ chính thức của cơ quan nhà nước."
+    ],
+    "en": [
+      "A fine notice by text, from an unknown or international number.",
+      "A threat of a higher fine or a “discount” for paying now.",
+      "A link that is not an official government address."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Không bấm link. Tra cứu vi phạm trên ứng dụng VNeTraffic hoặc cổng chính thức của Cục CSGT.",
+      "Thông báo vi phạm thật được gửi bằng văn bản, mời chủ xe đến trụ sở làm việc.",
+      "Báo tin nhắn tới 5656; nếu đã nhập thông tin thẻ, khóa thẻ ngay."
+    ],
+    "en": [
+      "Don't click the link. Check offences in the VNeTraffic app or the traffic police's official portal.",
+      "Real fine notices are sent in writing and ask the owner to come to the station.",
+      "Report the text to 5656; if you typed in card details, lock the card now."
+    ]
+  },
+  "reportTo": [
+    "vn/spam-5656",
+    "vn/your-bank",
+    "vn/ncsc",
+    "vn/police-113"
+  ],
+  "sources": [
+    {
+      "title": "Tin nhắn thông báo phạt nguội kèm đường link lạ: Cục CSGT khuyến cáo không bấm",
+      "publisher": "Thanh Niên",
+      "url": "https://thanhnien.vn/tin-nhan-thong-bao-phat-nguoi-kem-duong-link-la-cuc-csgt-khuyen-cao-khong-bam-185260718141103162.htm",
+      "date": "2026-07-19"
+    },
+    {
+      "title": "Tài xế suýt mất tiền vì chiêu nhắn tin phạt nguội",
+      "publisher": "VnExpress",
+      "url": "https://vnexpress.net/tai-xe-suyt-mat-tien-vi-chieu-nhan-tin-phat-nguoi-5113561.html",
+      "date": "2026-08-26"
+    },
+    {
+      "title": "Cục CSGT cảnh báo lừa đảo “không nộp tiền sớm, mức phạt tăng thêm 50%”",
+      "publisher": "Dân trí",
+      "url": "https://dantri.com.vn/thoi-su/cuc-csgt-canh-bao-lua-dao-khong-nop-tien-som-muc-phat-tang-them-50-20260817212304764.htm",
+      "date": "2026-08-17"
+    }
+  ],
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,142 @@
+{
+  "id": "vn/fake-vneid-update-app",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "vi": "“Công an phường” hoặc “cán bộ xã” gọi điện, rồi một “cán bộ hành chính” gọi qua Zalo",
+    "en": "A “ward police officer” or “commune official” calls, then an “administrative officer” calls on Zalo"
+  },
+  "name": {
+    "vi": "“Công an phường” hỗ trợ cập nhật VNeID, bảo cài ứng dụng qua đường link",
+    "en": "“Ward police” offer to update your VNeID and ask you to install an app from a link"
+  },
+  "how": {
+    "vi": "Kẻ gian tự xưng công an phường hoặc cán bộ xã, nói tài khoản VNeID, căn cước của bạn hoặc của con bị lỗi, cần cập nhật sau sáp nhập. Khi bạn nói không thể đến trụ sở, chúng đề nghị làm “online” qua Zalo, gửi đường link cài ứng dụng VNeID giả hoặc xin mã OTP. Ứng dụng giả đọc được tin nhắn chứa OTP và rút tiền trong tài khoản. Định danh mức 2 chỉ làm trực tiếp tại công an, và VNeID chỉ tải từ App Store hoặc CH Play.",
+    "en": "Someone claiming to be ward police or a commune official says your or your child's VNeID account or ID record has an error and must be updated after the administrative merger. When you say you cannot come in, they offer to do it “online” over Zalo, send a link to install a fake VNeID app or ask for an OTP code. The fake app reads your texts with OTP codes and empties your bank account. Level-2 identity is only done in person at a police station, and VNeID only comes from the App Store or Google Play."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Cuộc gọi từ “công an phường” nói dữ liệu VNeID, căn cước của bạn hoặc con bị sai lệch.",
+        "en": "A call from “ward police” saying your or your child's VNeID or ID data is wrong."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "vi": "Họ hối thúc phải cập nhật gấp và đề nghị “hỗ trợ từ xa” qua Zalo.",
+        "en": "They push you to update urgently and offer “remote help” over Zalo."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "vi": "Một người khác gửi đường link cài ứng dụng VNeID hoặc bảo dùng điện thoại Android.",
+        "en": "Someone else sends a link to install a VNeID app or asks you to use an Android phone."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "vi": "Bạn bị yêu cầu cấp quyền, quét khuôn mặt hoặc đọc mã OTP.",
+        "en": "You are asked to grant permissions, scan your face or read out an OTP code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "Chào anh, em là cán bộ công an phường phụ trách hành chính. Sau sáp nhập, tài khoản định danh điện tử của anh chưa được đồng bộ, nếu không cập nhật trong tuần này sẽ bị khóa. Anh không cần lên phường, em hỗ trợ online qua Zalo, anh tải bản VNeID mới tại [đường dẫn] giúp em nhé.",
+        "en": "Hello, I am the ward police officer in charge of administration. After the merger your digital ID account has not been synchronised, and if it is not updated this week it will be locked. You don't need to come to the ward, I will help you online over Zalo, please download the new VNeID version at [đường dẫn]."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "vi": "Chị ơi dữ liệu căn cước của bé nhà mình đang bị sai, chị kết bạn Zalo với anh Hoàng cán bộ phường để được hướng dẫn cập nhật VNeID cho con nhé. Có mã gồm 6 số gửi về điện thoại thì chị đọc lại cho anh ấy để xác thực.",
+        "en": "Your child's ID data is wrong, please add Mr Hoang, the ward officer, on Zalo so he can guide you to update your child's VNeID. When a 6-digit code arrives on your phone, read it back to him to verify."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "công an phường gọi bảo cập nhật vneid",
+      "được gửi link cài ứng dụng vneid",
+      "cán bộ hướng dẫn tích hợp định danh qua zalo",
+      "bảo đọc mã otp để kích hoạt vneid cho con",
+      "cài vneid xong thì tài khoản ngân hàng mất tiền"
+    ],
+    "en": [
+      "ward police called saying i must update my vneid",
+      "they sent me a link to install the vneid app",
+      "an officer guided me to update my digital id over zalo",
+      "asked to read an otp code to activate my child's vneid",
+      "after installing vneid my bank account was emptied"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "remote_access"
+  ],
+  "redFlags": {
+    "vi": [
+      "Công an gọi điện đề nghị làm định danh, cập nhật VNeID “online”.",
+      "Đường link hoặc tệp cài ứng dụng gửi qua Zalo, tin nhắn.",
+      "Yêu cầu đọc mã OTP, quét khuôn mặt hoặc mượn điện thoại Android."
+    ],
+    "en": [
+      "Police calling to offer to do your ID or VNeID update “online”.",
+      "An app link or file sent over Zalo or text.",
+      "Being asked to read an OTP, scan your face or borrow an Android phone."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Cúp máy rồi tự tìm số công an phường để hỏi lại. Định danh mức 2 chỉ làm trực tiếp tại trụ sở công an.",
+      "Chỉ tải VNeID từ App Store hoặc CH Play; không cài ứng dụng từ đường link.",
+      "Nếu đã cài ứng dụng lạ hoặc đọc OTP, tắt mạng điện thoại, gọi ngân hàng khóa tài khoản và trình báo công an."
+    ],
+    "en": [
+      "Hang up and look up the ward police number yourself to check. Level-2 identity is only done in person at a police station.",
+      "Only download VNeID from the App Store or Google Play; never install an app from a link.",
+      "If you installed an unknown app or read out an OTP, turn off your phone's data, call your bank to lock your account and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "vn/police-113",
+    "vn/your-bank",
+    "vn/vneid-report",
+    "vn/ncsc"
+  ],
+  "sources": [
+    {
+      "title": "Rộ cuộc gọi giả công an, dụ phụ huynh “cập nhật VNeID cho con”",
+      "publisher": "VnExpress",
+      "url": "https://vnexpress.net/ro-cuoc-goi-gia-cong-an-du-phu-huynh-cap-nhat-vneid-cho-con-5129668.html",
+      "date": "2026-10-08"
+    },
+    {
+      "title": "Khởi tố các bị can dùng chiêu “cập nhật VNeID” để lừa đảo, chiếm đoạt tài sản",
+      "publisher": "Thanh Niên",
+      "url": "https://thanhnien.vn/khoi-to-cac-bi-can-dung-chieu-cap-nhat-vneid-de-lua-dao-chiem-doat-tai-san-185260509120623969.htm",
+      "date": "2026-05-09"
+    },
+    {
+      "title": "Cảnh báo lừa đảo giả danh công an chiếm đoạt tiền qua mạng",
+      "publisher": "Nhân Dân",
+      "url": "https://nhandan.vn/lua-dao-gia-danh-cong-an-de-chiem-doat-tien-post934352.html",
+      "date": "2026-01-01"
+    }
+  ],
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,130 @@
+{
+  "id": "vn/child-hospital-emergency",
+  "country": "vn",
+  "lang": "vi",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "vi": "Người tự xưng giáo viên, nhân viên y tế trường, rồi “bác sĩ cấp cứu” của bệnh viện",
+    "en": "Someone claiming to be a teacher or school nurse, then an “emergency doctor” at a hospital"
+  },
+  "name": {
+    "vi": "Gọi báo “con bị tai nạn đang cấp cứu”, phải chuyển tiền mổ gấp",
+    "en": "Call saying “your child had an accident and is in emergency”, send money for surgery now"
+  },
+  "how": {
+    "vi": "Kẻ gian gọi cho phụ huynh, tự xưng giáo viên hoặc nhân viên y tế của trường, đọc đúng tên con và báo con bị ngã, tai nạn, đang cấp cứu. Chúng chuyển máy cho “bác sĩ” nói cần mổ gấp và đòi chuyển vài chục triệu đồng vào tài khoản cá nhân. Bệnh viện luôn cấp cứu trước, không đợi gia đình chuyển tiền mới mổ.",
+    "en": "Scammers call parents claiming to be a teacher or the school nurse, say the child's name correctly and report a fall or accident and an emergency admission. They pass the phone to a “doctor” who says urgent surgery is needed and asks for tens of millions of dong to a personal account. Hospitals treat emergencies first and never wait for payment before operating."
+  },
+  "steps": [
+    {
+      "text": {
+        "vi": "Cuộc gọi từ “giáo viên”, “y tế trường” đọc đúng tên con bạn.",
+        "en": "A call from a “teacher” or “school nurse” who knows your child's name."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "vi": "Họ báo con bị tai nạn, đang cấp cứu, cần mổ ngay.",
+        "en": "They say your child had an accident and needs surgery now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "vi": "“Bác sĩ” đòi chuyển tiền viện phí vào tài khoản cá nhân.",
+        "en": "A “doctor” asks for hospital fees into a personal account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "vi": "Họ giục chuyển ngay, không để bạn kịp gọi cho trường.",
+        "en": "They rush you to pay before you can call the school."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "vi": "Alo chị là mẹ bé Minh lớp 10A phải không? Em là giáo viên thể dục, bé bị ngã đập đầu trong giờ học, đang cấp cứu ở bệnh viện. Chị nói chuyện với bác sĩ đây ạ.",
+        "en": "Hello, are you Minh's mother, class 10A? I'm the PE teacher, Minh fell and hit his head in class and is in the emergency room at the hospital. Here, talk to the doctor."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "vi": "Tôi là bác sĩ trực cấp cứu. Cháu bị chấn thương sọ não cần mổ ngay, gia đình chuyển trước 30 triệu viện phí vào số tài khoản tôi đọc để làm thủ tục, chậm là nguy hiểm đến tính mạng.",
+        "en": "I'm the emergency doctor on duty. Your child has a head injury and needs surgery now; the family must send 30 million in hospital fees to the account I read out to start the paperwork, any delay is life-threatening."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "vi": [
+      "gọi báo con bị tai nạn đang cấp cứu",
+      "giáo viên gọi bảo chuyển tiền mổ gấp cho con",
+      "bác sĩ cấp cứu đòi chuyển viện phí vào tài khoản cá nhân",
+      "người lạ biết tên con báo con nhập viện",
+      "người gọi giục chuyển tiền ngay không cho gọi lại trường"
+    ],
+    "en": [
+      "a call said my child had an accident and is in emergency",
+      "a teacher called asking me to send money for my child's surgery",
+      "an emergency doctor asked for fees to a personal account",
+      "a stranger knew my child's name and said they were in hospital",
+      "the caller rushed me to pay before i could call the school"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "vi": [
+      "Người gọi đòi chuyển tiền trước khi mổ cấp cứu.",
+      "Tài khoản nhận tiền là tài khoản cá nhân, không phải của bệnh viện.",
+      "Người gọi chuyển máy qua lại giữa “giáo viên” và “bác sĩ”."
+    ],
+    "en": [
+      "A caller demanding money before emergency surgery.",
+      "A personal account instead of the hospital's.",
+      "The call is passed between a “teacher” and a “doctor”."
+    ]
+  },
+  "whatToDo": {
+    "vi": [
+      "Cúp máy, gọi ngay giáo viên chủ nhiệm hoặc văn phòng nhà trường.",
+      "Gọi tổng đài bệnh viện để xác minh người nhà có đang điều trị không.",
+      "Không chuyển tiền vào tài khoản cá nhân; nếu đã chuyển, gọi ngân hàng và trình báo công an."
+    ],
+    "en": [
+      "Hang up and call your child's form teacher or the school office straight away.",
+      "Call the hospital's switchboard to check whether your child is there.",
+      "Never pay into a personal account; if you did, call your bank and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "vn/police-113",
+    "vn/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "5 phụ huynh bị gọi điện lừa báo “con cấp cứu Chợ Rẫy”",
+      "publisher": "VnExpress",
+      "url": "https://vnexpress.net/5-phu-huynh-bi-goi-dien-lua-bao-con-cap-cuu-cho-ray-4817435.html",
+      "date": "2024-11-18"
+    }
+  ],
+  "story": {
+    "vi": "Ở TP.HCM, 5 phụ huynh có con học ở Gò Vấp và Thủ Đức cùng đến Bệnh viện Chợ Rẫy sau khi nhận cuộc gọi báo con bị tai nạn đang cấp cứu và đòi chuyển 30–40 triệu đồng để mổ gấp. Một phụ huynh gọi lại trường thì biết con vẫn đang đá bóng trong giờ thể dục.",
+    "en": "In Ho Chi Minh City, 5 parents whose children study in Go Vap and Thu Duc rushed to Cho Ray Hospital after calls saying their child had an accident and needed 30–40 million dong for urgent surgery. One parent called the school and learned his son was playing football in PE class."
+  },
+  "updated": "2026-11-18"
+}
