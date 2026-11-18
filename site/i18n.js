@@ -4,7 +4,7 @@ const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 export const UI = {
   en: {
     skip: 'Skip to content', navDocs: 'Docs', navCatalogue: 'Catalogue', navContribute: 'Contribute', mainNav: 'Main',
-    footData: 'data', footCode: 'code', footDataset: 'dataset',
+    footSocial: 'scamdb on social media', footData: 'data', footCode: 'code', footDataset: 'dataset',
     months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     homeTitle: 'scamdb · a field guide to scams', homeDesc: 'An open database of scam patterns built from real, documented scams, with a free detection API. CC BY 4.0.',
     filterLabel: 'Filter the catalogue', filterCountry: 'Country', filterChannel: 'Channel', filterAllCountries: 'All countries', filterAllChannels: 'All channels',

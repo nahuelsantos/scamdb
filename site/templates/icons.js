@@ -156,6 +156,8 @@ export const UI_ICONS = {
   replace: ui(931, [['path', 'M19 9 A8 8 0 1 0 20 14'], ['path', 'M20 4 v5 h-5']]),
   trash: ui(941, [['path', 'M4 6 h16 M9 6 V3 h6 v3'], ['path', 'M6 6 l1 15 h10 l1 -15']]),
   signOut: ui(951, [['path', 'M14 4 H5 v16 h9'], ['path', 'M10 12 h11 M17 8 l4 4 -4 4']]),
+  instagram: ui(971, [['rect', 3, 3, 18, 18, { fill: 'card' }], ['circle', 12, 12, 8], ['circle', 17.3, 6.7, 1.4, { kind: 'acc' }]]),
+  x: ui(981, [['path', 'M4 4 L20 20'], ['path', 'M20 4 L4 20', { kind: 'acc' }]]),
   github: ui(961, [['circle', 12, 12, 19], ['path', 'M9 19 c0-3 1-4 1-4 c-3-1-5-2-5-6 c0-2 1-3 1-3 c0 0 1 0 3 1 c1-1 5-1 6 0 c2-1 3-1 3-1 c0 0 1 1 1 3 c0 4-2 5-5 6 c0 0 1 1 1 4']]),
   globe: ui(981, [['circle', 12, 12, 19], ['path', 'M3 12 h18'], ['path', 'M12 2.5 C 7 7, 7 17, 12 21.5 C 17 17, 17 7, 12 2.5']]),
   send: ui(991, [['path', 'M3 12 L21 4 L15 20 L11 13 Z'], ['path', 'M11 13 L21 4', { kind: 'acc' }]]),

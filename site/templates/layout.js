@@ -2,9 +2,14 @@
 import { esc } from './html.js';
 import { LOGO } from './logo.js';
 import { t } from '../i18n.js';
+import { UI_ICONS } from './icons.js';
 
 export const SITE = 'https://scamdb.dev';
 export const REPO = 'https://github.com/nahuelsantos/scamdb';
+export const SOCIAL = [
+  ['instagram', 'Instagram @scamdb.dev', 'https://www.instagram.com/scamdb.dev/'],
+  ['x', 'X @scamdb', 'https://x.com/scamdb'],
+];
 
 
 /** `path` is where the page lives ('/docs/'). */
@@ -45,6 +50,7 @@ ${body}
 </main>
 <footer class="wrap foot">
   <div class="mono">${t(lang, 'footData')} <a href="${REPO}/blob/main/LICENSE-DATA">CC BY 4.0</a> · ${t(lang, 'footCode')} <a href="${REPO}/blob/main/LICENSE">MIT</a> · ${t(lang, 'footDataset')} ${esc(meta.version)}</div>
+  <nav class="social" aria-label="${esc(t(lang, 'footSocial'))}">${SOCIAL.map(([icon, label, href]) => `<a class="ibtn" href="${href}" rel="me noopener" aria-label="${esc(label)}" title="${esc(label)}">${UI_ICONS[icon]}</a>`).join('')}</nav>
 </footer>
 ${scripts}
 </body>
