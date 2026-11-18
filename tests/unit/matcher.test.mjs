@@ -79,6 +79,19 @@ test('empty, emoji-only and huge input are not recognised and fast', () => {
   }
 });
 
+// Speed: the API checks the message's country plus every other country (elsewhere). Only entries that share a word
+// with the message are scored (the word index), so a check stays a few milliseconds with 1,000+ entries.
+test('a check against the whole catalogue, as the API runs it, takes a few milliseconds', () => {
+  const texts = ["This is your bank's fraud team. We've stopped a suspicious payment of $1,480. Read me the 6-digit code we just sent you.",
+    "Hi Mum, I dropped my phone, this is my new number. Can you transfer $950 for the hotel tonight? I'll pay you back x",
+    'Hi Sarah, a reminder of your appointment with Dr Lee tomorrow at 10:30. Let us know if you can’t make it. Thanks!'];
+  for (const t of texts) { m(t); m(t, { country: 'us', elsewhere: true }); } // warm up the index
+  const runs = 30, t0 = performance.now();
+  for (let i = 0; i < runs; i++) for (const t of texts) { m(t); m(t, { country: 'us', elsewhere: true }); }
+  const avg = (performance.now() - t0) / (runs * texts.length * 2);
+  assert.ok(avg < 15, `average ${avg.toFixed(1)} ms per check`);
+});
+
 // English (every language an entry has is matched; warning signs read English too)
 test('an English code request reads asks_for_code', () =>
   assert.ok(readSigns("They'll send you a 6-digit code, read it to me").includes('asks_for_code')));
