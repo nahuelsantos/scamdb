@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Unknown scams go to a human (vision point 3).** `tools/unmatched.mjs` lists the real, documented scams that follow
+  no known pattern (real messages with `scam: null`, 38 today) and groups similar ones as candidate new patterns
+  (first run: expiring reward points in Argentina and Mexico, and in Australia and Canada; fake DMV final notices in
+  the US). The weekly check keeps one issue labelled `unknown-pattern` and comments when new ones appear, so the owner
+  is notified. `/v1/isitascam` answers `pattern: "unknown"` when a message reads as a scam but follows no known
+  pattern (here or abroad), `"known"` when it does, `null` when it is not recognised.
+
 - **Real examples first, written ones flagged (vision points 1–2).** All 1,321 examples in the data files were
   written by us; each is now marked `"synthetic": true`, and the validator rejects a written example without it. At
   build time the 238 real scam messages in `eval/real` are joined to their entries (121 entries) ahead of the written
