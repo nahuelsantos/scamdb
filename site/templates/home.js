@@ -35,7 +35,7 @@ ${k.circle(tx + 20, 185, 22, { kind: 'acc' })}${k.circle(tx + 20, 185, 7, { kind
 ${k.path(wave(tx - 2, 218, 84), { kind: 'thin' })}${k.path(wave(tx - 2, 232, 48))}
 ${k.rect(214, 268, 134, 44, { kind: 'thin' })}
 <text class="t-mono" x="226" y="285">SMS · phone</text>${k.circle(235, 301, 10, { kind: 'acc' })}${k.circle(235, 301, 3, { kind: 'thin' })}${k.path('M241 301 h46 M276 301 v6 M283 301 v8', { kind: 'acc' })}
-<g transform="rotate(-9 270 352)">${k.rect(206, 332, 128, 40, { kind: 'acc' })}<text x="270" y="359" text-anchor="middle" class="t-stamp">${'${stamp}'}</text></g>
+<g transform="rotate(-9 270 366)">${k.rect(195, 340, 150, 52, { kind: 'acc' })}<text x="270" y="375" text-anchor="middle" class="t-stamp t-stamp-big">${'${stamp}'}</text></g>
 <text class="t-hand" x="20" y="92">${'${n1}'}</text>${arrow('M118 96 C 145 104, 160 94, 184 88', 'M176 82 L186 88 L176 94')}
 <text class="t-hand" x="30" y="232">${'${n2}'}</text>${arrow(`M120 228 C 140 236, 150 236, ${tx - 6} 230`, `M${tx - 14} 224 L${tx - 4} 230 L${tx - 14} 236`)}
 <text class="t-hand-acc" x="400" y="182">${'${n3a}'}</text><text class="t-hand-acc" x="400" y="204">${'${n3b}'}</text>${arrow('M396 194 C 380 200, 368 202, 352 199', 'M362 192 L351 199 L362 206', 'acc')}
