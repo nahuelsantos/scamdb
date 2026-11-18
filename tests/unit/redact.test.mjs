@@ -59,3 +59,26 @@ test('bare domains with endings scams use (.help, .cfd, .sbs…) are replaced; o
   assert.equal(redact('soporte en banco-ayuda.help').text, 'soporte en [link]');
   assert.equal(redact('Gracias, S.A. y e.g. versión 1.2').text, 'Gracias, S.A. y e.g. versión 1.2');
 });
+test('a code written first ("010613 is your verification code") is replaced; other numbers before "is your" are not', () => {
+  assert.equal(redact('010613 is your verification code for Cobee by Pluxee.').text, '[code] is your verification code for Cobee by Pluxee.');
+  assert.equal(redact('123456 es tu código de acceso').text, '[code] es tu código de acceso');
+  assert.equal(redact('Llame al 2025 es su año').text, 'Llame al 2025 es su año');
+});
+test('a number with a 00 dialling prefix is a phone number, not a card', () => {
+  const r = redact('Atencion al Cliente desde numeros DIGI: 0034919120120.');
+  assert.equal(r.text, 'Atencion al Cliente desde numeros DIGI: [number].');
+  assert.deepEqual(r.found.phones, ['0034919120120']);
+});
+test('a second name or surname after a greeting goes too; the rest of the sentence stays', () => {
+  assert.equal(redact('Hola, Ana ALEJANDRA, has rebut una notificació').text, 'Hola, [name], has rebut una notificació');
+  assert.equal(redact('Hello John Smith how are you').text, 'Hello [name] how are you');
+  assert.equal(redact('Hi Sarah, a reminder').text, 'Hi [name], a reminder');
+});
+test('in a message about a code, a code with words in between is replaced; amounts and order numbers elsewhere are not', () => {
+  assert.equal(redact('The activation code requested for the APP is 236231 #236231').text, 'The activation code requested for the APP is [code] #[code]');
+  assert.equal(redact("Never share this code. It's 293658").text, "Never share this code. It's [code]");
+  assert.equal(redact('Pedido 12345 enviado').text, 'Pedido 12345 enviado');
+});
+test('a masked card with its first and last digits showing is replaced', () => {
+  assert.equal(redact('con su tarjeta 487159******7099').text, 'con su tarjeta [card]');
+});

@@ -468,11 +468,15 @@ const DUE_DATE_ALL = /vencen? (el (dia )?[0-9]+|segun)/g;
 
 // A text that only delivers a code ("Your verification code is: 730968", "Codice di sicurezza 123456 per...") asks for
 // nothing; it is a code request only when it also asks you to pass the code on.
-const CODE_DELIVERY = /(code|codigo|codice|code de verification|kod|kodu|codul|kodas|koodi|kods|codigo de verificacao)( [a-z]+){0,3}( is| es| e| ist| est| ir| on)?:? [0-9]{4,8}( |$)/;
+const CODE_DELIVERY = /(^| )([0-9]{4,8}|code) (is|es|est|ist|e) (your|tu|su|votre|ihr|il tuo|o seu)( [a-z]+){0,4} (code|codigo|codice|otp|pin|passcode|password)( |$)|(code|codigo|codice|code de verification|kod|kodu|codul|kodas|koodi|kods|codigo de verificacao)( [a-z]+){0,3}( is| es| e| ist| est| ir| on)?:? ([0-9]{4,8}|code)( |$)/;
 // "El PIN solicitado es: JFC", "la clave solicitada es": the code you asked for, delivered (letters or digits).
-const CODE_REQUESTED = /(pin|clave|codigo|contrasena|code|password) (solicitad[oa]|requested|que (has|ha) solicitado|you requested)( es| is)?( |$)/;
+const CODE_REQUESTED = /(introduzca|introduce|introduzcas|ingrese|ingresa|enter|use|utilice|usa|teclee|escriba)( (la|el|su|tu|this|the|your))? (clave|codigo|code|pin|otp) ([0-9]{4,8}|code) (para|to|for)( |$)|(pin|clave|codigo|contrasena|code|password) (solicitad[oa]|requested|que (has|ha) solicitado|you requested)( es| is)?( |$)/;
 // "Descarga la app en Google Play o App Store": an official store, not a stranger's app. Remote access stays when
 // anything else in the message is a download or a remote-control request.
+// A shop's discount ("-4€ por…", "50% de tu compra en vales dto", "hasta 25/11") is a price, not a request for money.
+// Money stays when anything else in the message still asks for it ("pague", "transfiera", a fee).
+const DISCOUNT = /(^| )-[0-9]+([.,][0-9]+)? ?€|[0-9]+ ?% (de |en )?(dto|descuento|de tu compra|off)|vales? (de )?(dto|descuento)|\bdto\b|\bdescuento\b|\b(oferta|promo|rebajas)\b/;
+const PRICES_ALL = /(^| )-?[0-9]+([.,][0-9]+)? ?(€|eur|euros)|€ ?[0-9]+([.,][0-9]+)?|\$ ?[0-9]+([.,][0-9]+)?|£ ?[0-9]+([.,][0-9]+)?/g;
 const OFFICIAL_STORE = /(descarg[a-z]*|baj[a-z]*|instal[a-z]*|download|get)( (la|nuestra|tu|su|the|our|this))? (app|aplicacion)( [a-z]+){0,3} (en|desde|de|from|on|in) (la )?(google play|play store|app store|apple store)( (o|or|y|and) (google play|play store|app store|apple store))?/;
 const OFFICIAL_STORE_ALL = new RegExp(OFFICIAL_STORE.source, 'g');
 // A bank alert that sends you to the number on the back of your card (and carries no link) mentions an amount to
@@ -494,6 +498,7 @@ function applyContext(t, ids, signs = SIGNS) {
     const handover = CODE_HANDOVER.test(withoutNegations(t));
     if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t) || CODE_DELIVERY.test(t) || CODE_REQUESTED.test(t))) out = out.filter((id) => id !== 'asks_for_code');
   }
+  if (out.includes('money_request') && DISCOUNT.test(t) && !signs.money_request.test(t.replace(PRICES_ALL, ' '))) out = out.filter((id) => id !== 'money_request');
   if (out.includes('remote_access') && OFFICIAL_STORE.test(t) && !signs.remote_access.test(t.replace(OFFICIAL_STORE_ALL, ' '))) out = out.filter((id) => id !== 'remote_access');
   if (out.includes('urgency') && DUE_DATE.test(t) && !signs.urgency.test(t.replace(DUE_DATE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
   if (out.includes('urgency') && PUBLIC_ALERT.test(t) && !out.some((id) => id === 'money_request' || id === 'asks_for_code' || id === 'remote_access')) out = out.filter((id) => id !== 'urgency');

@@ -674,3 +674,20 @@ test('"el PIN solicitado es" delivers a code; asking to pass it on is still a co
   assert.ok(!readSigns('El PIN solicitado es: JFC').includes('asks_for_code'));
   assert.ok(readSigns('El PIN solicitado es 4471. Pásamelo para verificar tu cuenta').includes('asks_for_code'));
 });
+test('a code written first is a delivery, raw or redacted; asking for it after is still a request', () => {
+  for (const t of ['010613 is your verification code for Cobee by Pluxee.', '[code] is your verification code for Cobee by Pluxee.'])
+    assert.ok(!readSigns(t).includes('asks_for_code'), t);
+  assert.ok(readSigns('[code] is your verification code. Send me the code now').includes('asks_for_code'));
+});
+test('a shop discount is a price, not a money request; a discount that asks for a transfer still is', () => {
+  assert.ok(!readSigns('-4€ por 2U Lomos Salmon Premium y el 50% de tu compra en vales dto hasta 30/11 [link] Baja: [link]').includes('money_request'));
+  assert.ok(readSigns('Descuento del 50%: transfiere 30€ a esta cuenta para reservar').includes('money_request'));
+});
+test('a delivered code stays a delivery after redaction ("Your verification code is [code]")', () => {
+  assert.ok(!readSigns('Computershare: Your verification code is [code]. It will expire in 5 minutes.').includes('asks_for_code'));
+});
+test('"introduzca la clave 708098 para validar su compra" (3-D Secure) delivers a code to type in, not a request', () => {
+  for (const t of ['Introduzca la clave 708098 para validar su compra en (T MOBILITAT APP) por un importe de (13.00 EUR) con su tarjeta [card]', 'Introduzca la clave [code] para validar su compra'])
+    assert.ok(!readSigns(t).includes('asks_for_code'), t);
+  assert.ok(readSigns('Introduzca la clave 708098 para validar y luego dictamela por telefono').includes('asks_for_code'));
+});

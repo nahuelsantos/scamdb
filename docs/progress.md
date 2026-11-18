@@ -21,6 +21,17 @@ A running record of what was built, what was measured and what we learned. Newes
   the matcher, and matcher 1.37.0 fixes both without changing any test-set number:
   - "descarga la app en Google Play o App Store" is not remote access (an official store); a stranger's app still is;
   - "el PIN / la clave solicitada es…" delivers a code; "pásamelo / dictámelo" after it is still a handover request.
+- **More genuine messages: 60 in all** (Spain, Argentina, Italy, the UK, New Zealand, Australia, the US): DIGI,
+  Sanitas, Cobee, Apple, Google, Amazon, PECUNIA, Ticketmaster, Tuenti, BBVA, San Cristóbal, Jira alerts and more.
+  - Matcher 1.38.0 fixes three more false alarms: a code written first ("010613 is your verification code"), a code to
+    type in ("Introduzca la clave … para validar su compra", 3-D Secure), and a shop discount ("-4€ … 50% en vales
+    dto"). A code stays a delivery after redaction ("Your verification code is [code]").
+  - Redactor: codes written first or with words in between, Italian "codice", masked cards (487159******7099), a
+    second name after a greeting, numbers with a 00 dialling prefix (not cards), and short link endings (mov.is).
+  - Real, labelled and private sets unchanged.
+  - Open question for the owner: a bare price (30€, $74.167) still counts as a money request, so a genuine offer
+    with a price and a link reads "scam" (3 of the owner's genuine messages). Not counting prices at all: on the real
+    set 5 fewer genuine called "scam" (8 → 3 of 105), but 3 scams no longer flagged and 6 fewer called "scam".
 
 ## 2026-11-18: A faster matcher; how detection works, and a review of the weights
 
