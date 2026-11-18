@@ -4,6 +4,12 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Automated research (vision point 6).** A weekly scheduled task ("scamdb weekly research", Tuesdays) replaces the
+  paused weekly import. For up to 3 existing countries (oldest real messages, or fewest genuine ones) it finds new real
+  messages quoted from reliable sources, scams and genuine alike, links scams to their entry or leaves them unmatched
+  for the unknown-pattern queue, refreshes entries listed in the freshness issue, checks the real-set numbers and opens
+  one `Research:` PR. It never adds a country and never invents messages.
+
 - **Free detection that learns (vision point 5).** The scamdb.dev check already hands a message to the private report
   form inside the browser; the form and `POST /v1/reports` now take `outcome` (scam, genuine, unsure): what the
   message turned out to be. Stored privately (migration `0007_report_outcome.sql`), deleted after 180 days like every
