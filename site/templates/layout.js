@@ -10,10 +10,13 @@ const LS = sketch(801);
 const LOGO = `<svg viewBox="0 0 30 30" aria-hidden="true" focusable="false">${LS.circle(13, 13, 17)}${LS.path('M19.5 19.5 L26 26')}${LS.path('M9.5 13.2 l2.4 2.4 4.4-5', { kind: 'acc' })}</svg>`;
 
 /** `path` is where the page lives ('/docs/'). */
+// The trends page needs reports to show anything; it stays built (so /trends/ works) but out of the menu until then.
+export const SHOW_TRENDS = false;
+
 export function layout({ title, description, body, path, meta, lang = 'en', scripts = '' }) {
   const P = '';
   const here = path;
-  const nav = [['/catalogue/', t(lang, 'navCatalogue')], ['/report/', t(lang, 'navReport')], ['/trends/', t(lang, 'navTrends')], ['/docs/', t(lang, 'navDocs')], ['/contribute/', t(lang, 'navContribute')], ['/account/', t(lang, 'navAccount')]]
+  const nav = [['/catalogue/', t(lang, 'navCatalogue')], ['/report/', t(lang, 'navReport')], ...(SHOW_TRENDS ? [['/trends/', t(lang, 'navTrends')]] : []), ['/docs/', t(lang, 'navDocs')], ['/contribute/', t(lang, 'navContribute')], ['/account/', t(lang, 'navAccount')]]
     .map(([href, label]) => `<a href="${P}${href}"${path.startsWith(href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
   return `<!doctype html>
 <html lang="${lang}">

@@ -81,9 +81,12 @@ test('the home page works without JavaScript: the sample result is pre-rendered'
   rmSync(dir, { recursive: true });
 });
 
-test('iconFor picks a drawing by scam', () => {
+test('iconFor picks a drawing by kind of scam, from the English name or the id', () => {
   assert.equal(iconFor({ id: 'ar/falso-banco', channels: ['phone'] }), ICONS.bank);
-  assert.equal(iconFor({ id: 'ar/cuento-del-tio', channels: ['phone'] }), ICONS.house);
+  assert.equal(iconFor({ id: 'ar/cuento-del-tio', channels: ['phone'] }), ICONS.family);
+  assert.equal(iconFor({ id: 'xx/a', name: { en: 'Fake parcel delivery text' }, channels: ['sms'] }), ICONS.parcel);
+  assert.equal(iconFor({ id: 'xx/b', name: { en: 'Fake traffic fine text' }, channels: ['sms'] }), ICONS.official);
+  assert.equal(iconFor({ id: 'xx/c', name: { en: 'Crypto investment platform' }, channels: ['social'] }), ICONS.chart);
   assert.equal(iconFor({ id: 'ar/whatsapp-codigo', channels: ['whatsapp'] }), ICONS.sms);
   assert.equal(iconFor({ id: 'xx/otra', channels: ['phone'] }), ICONS.phone);
 });
@@ -223,12 +226,13 @@ test('contribute points to our own report form, not a redirect', () => {
   rmSync(dir, { recursive: true });
 });
 
-test('the hero bubble is a scribble with a big code, no Spanish sentence', () => {
+test('the hero bubble is a scribble with a key, no Spanish sentence and no code', () => {
   const { dir, page } = build();
   for (const p of ['index.html']) {
     const html = page(p);
     assert.ok(!html.includes('Le hablo de PAMI.'), p);
-    assert.match(html, /class="t-code-big"[^>]*>482 913</, p);
+    assert.doesNotMatch(html, /482 913|482-913/, p);
+    assert.match(html, /the key!/, p);
   }
   rmSync(dir, { recursive: true });
 });

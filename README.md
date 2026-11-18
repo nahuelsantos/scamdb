@@ -187,7 +187,7 @@ The test site (a Preview for every branch, with its own database) is described i
 
 ## Reading reports
 
-Reports are private: they live only in D1, are deleted after 180 days unless promoted, and never reach this repo.
+Reports are private: they live only in D1, lose their contact details, story, key link and indicators after 180 days (the redacted text and outcome are kept), and never reach this repo.
 
 1. Open a Claude session on this repo and run:
 

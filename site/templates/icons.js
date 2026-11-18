@@ -17,8 +17,8 @@ export const ICONS = {
   sms: icon(111, [
     ['rect', 10, 14, 44, 30, { fill: 'card', shade: true }],
     ['path', 'M18 44 l-4 10 12-10'],
-    ['path', 'M18 24 h28 M18 32 h18', { kind: 'thin' }],
-  ], '<text x="45" y="39" class="t-code">6</text>'),
+    ['path', 'M18 24 h28 M18 32 h18', { kind: 'acc' }],
+  ]),
   house: icon(121, [
     ['path', 'M16 26 v26 h32 v-26', { fill: 'card', shade: true }],
     ['path', 'M10 30 L32 12 L54 30'],
@@ -26,6 +26,7 @@ export const ICONS = {
     ['path', 'M46 6 v8 M46 18 v1', { kind: 'acc' }],
   ]),
   bank: icon(131, [
+    ['rect', 10, 26, 44, 26, { fill: 'card', shade: true }],
     ['path', 'M8 24 L32 10 L56 24 Z', { fill: 'card', shade: true }],
     ['path', 'M14 28 v20 M24 28 v20 M40 28 v20 M50 28 v20 M8 52 h48'],
     ['circle', 32, 38, 10, { kind: 'acc' }],
@@ -50,6 +51,7 @@ export const ICONS = {
     ['path', 'M18 28 l12 8 M30 28 l-12 8', { kind: 'acc' }],
   ]),
   chart: icon(181, [
+    ['path', 'M14 44 L26 32 L34 38 L52 16 V52 H14 Z', { fill: 'card', shade: true }],
     ['path', 'M10 52 h46 M12 52 V12'],
     ['path', 'M14 44 L26 32 L34 38 L52 16', { kind: 'acc' }],
     ['path', 'M44 16 h8 v8'],
@@ -64,6 +66,22 @@ export const ICONS = {
     ['circle', 26, 50, 6], ['circle', 46, 50, 6],
     ['path', 'M30 28 h14', { kind: 'acc' }],
   ]),
+  parcel: icon(221, [
+    ['path', 'M10 22 L32 12 L54 22 L54 46 L32 56 L10 46 Z', { fill: 'card', shade: true }],
+    ['path', 'M10 22 L32 32 L54 22 M32 32 V56'],
+    ['path', 'M21 17 L43 27', { kind: 'acc' }],
+  ]),
+  official: icon(231, [
+    ['path', 'M32 8 L52 16 V30 c0 13-9 21-20 26 c-11-5-20-13-20-26 V16 Z', { fill: 'card', shade: true }],
+    ['path', 'M24 31 l6 6 11-12', { kind: 'acc' }],
+  ]),
+  family: icon(241, [
+    ['circle', 22, 20, 11, { fill: 'card', shade: true }],
+    ['circle', 43, 26, 8, { fill: 'card' }],
+    ['path', 'M6 54 c0-13 7-20 16-20 s16 7 16 20 Z', { fill: 'card', shade: true }],
+    ['path', 'M34 54 c1-10 4-15 9-15 s11 5 11 15'],
+    ['path', 'M50 6 v10 M45 11 h10', { kind: 'acc' }],
+  ]),
   briefcase: icon(211, [
     ['rect', 10, 20, 44, 30, { fill: 'card', shade: true }],
     ['path', 'M24 20 v-6 h16 v6 M10 32 h44'],
@@ -71,22 +89,37 @@ export const ICONS = {
   ]),
 };
 
-const RULES = [
-  [/banco|mercado-pago|transferencia|prestamo/, (id) => (/banco|transferencia/.test(id) ? 'bank' : 'card')],
-  [/cuento|alquiler/, () => 'house'],
-  [/remoto/, () => 'screen'],
-  [/romantica/, () => 'heart'],
-  [/entradas/, () => 'ticket'],
-  [/inversion|trabajo/, () => 'chart'],
-  [/premio/, () => 'gift'],
-  [/tienda|mercado-libre|comprobante/, () => 'cart'],
-  [/correo|anses|arca/, () => 'briefcase'],
+// The kind of scam, read from the entry's English name (then its id), decides the drawing. First match wins, so
+// the more specific kinds come first.
+const KINDS = [
+  ['screen', /remote|screen.?shar|anydesk|teamviewer|tech(nical)? support|computer|virus|microsoft|apple support/],
+  ['family', /family|relative|grandparent|\bchild\b|\bson\b|daughter|\bmum\b|\bmom\b|\bdad\b|friend|contact|grandchild|kidnap|new number|hi mum|hey mum|cuento del t[ií]o/],
+  ['heart', /romance|romantic|dating|love|sextortion|pig.?butcher|lonely/],
+  ['sms', /takeover|taken over|hijack|\bvote\b|(whatsapp|line|viber|telegram|messaging|signal|instagram|facebook)\b.*\b(account|code)\b/],
+  ['parcel', /parcel|package|deliver|courier|shipping|customs|post(al)? |postal|\bpost\b|dhl|fedex|ups\b|correo/],
+  ['ticket', /ticket|concert|event|travel|holiday|flight|booking|hotel|entradas/],
+  ['house', /rent|rental|landlord|property|apartment|housing|real estate|accommodation|alquiler|utility|electric|power bill|water bill|energy/],
+  ['chart', /invest|crypto|bitcoin|trading|forex|stock|recovery|\bjob\b|\bjobs\b|employment|task|work from home|recruit|\bboss\b|\bceo\b|ponzi|pyramid|trabajo|inversion/],
+  ['gift', /prize|lottery|lotto|winner|giveaway|reward|gift|inheritance|sweepstake|premio|you have won|loyalty points/],
+  ['cart', /shop|store|marketplace|buyer|seller|purchase|online sale|fake website|classified|order|refund|overpay|cheap|\bsale\b|goods|luggage|receipt|boleto|olx|second.?hand|mercado libre|tienda/],
+  ['official', /police|tax|government|court|immigration|visa|bonus|subsid|social security|medicare|clinic|health|doctor|hospital|charity|pension|benefit|fine|toll|traffic|customs|official|ministry|authority|bureau|agency|embassy|anses|arca|identity|\bid\b|license|licence/],
+  ['card', /\bcard\b|loan|credit|wallet|e-?wallet|payment app|mercado pago|paypal|subscription|prestamo/],
+  ['bank', /bank|banco|account|fraud (team|department|alert)|transfer|otp|verification code|one.?time/],
 ];
 
-/** The drawing for an entry: by its id first, then by channel. */
+/** The kind of scam an entry is (an ICONS key), or null when no rule fits. */
+export function kindOf(entry) {
+  const name = String(entry.name?.en ?? (typeof entry.name === 'string' ? entry.name : '')).toLowerCase();
+  const id = String(entry.id ?? '').split('/').pop().replace(/-/g, ' ');
+  for (const text of [name, id]) for (const [kind, re] of KINDS) if (re.test(text)) return kind;
+  return null;
+}
+
+/** The drawing for an entry: by its kind, then by channel. */
 export function iconFor(entry) {
-  for (const [re, name] of RULES) if (re.test(entry.id)) return ICONS[name(entry.id)];
-  if ((entry.channels ?? []).some((c) => c === 'whatsapp' || c === 'sms')) return ICONS.sms;
+  const kind = kindOf(entry);
+  if (kind) return ICONS[kind];
+  if ((entry.channels ?? []).some((c) => c === 'whatsapp' || c === 'sms' || c === 'telegram' || c === 'social')) return ICONS.sms;
   return ICONS.phone;
 }
 

@@ -8,7 +8,7 @@ import { t } from '../i18n.js';
 export const TURNSTILE_SITE_KEY = '0x4AAAAAAGEPmIAcW1_PP5dE'; // scamdb.dev's own widget (public site key; its secret is TURNSTILE_SECRET_SITE)
 const CHANNELS = ['whatsapp', 'sms', 'phone', 'email', 'social', 'online', 'in-person'];
 const KEYS = ['repSending', 'repThanks', 'repThanksP', 'repAnother', 'repFail', 'repNeedText', 'repNeedCountry', 'repTurnstile', 'repTooMany',
-  'repShotSignedOut', 'repUnreadable', 'repSignedIn', 'repCheckFirst'];
+  'repShotSignedOut', 'repDrop', 'repDropOff', 'repUnreadable', 'repSignedIn', 'repCheckFirst'];
 
 export function report({ repo, meta, lang = 'en' }) {
   const s = (k) => t(lang, k);
@@ -22,7 +22,7 @@ export function report({ repo, meta, lang = 'en' }) {
   <div class="field"><label for="rep-country">${esc(s('repCountry'))}</label><select id="rep-country" name="country" required><option value="">${esc(s('repChoose'))}</option>${countries}</select></div>
   <div class="field"><label for="rep-channel">${esc(s('repChannel'))}</label><select id="rep-channel" name="channel"><option value="">${esc(s('repChannelAny'))}</option>${channels}</select></div>
   <div class="field"><label for="rep-text">${esc(s('repText'))}</label><textarea id="rep-text" name="text" rows="6" maxlength="5000" placeholder="${esc(s('repTextPh'))}"></textarea></div>
-  <div class="field" id="rep-shot-field"><label for="rep-shot">${UI_ICONS.send}<span>${esc(s('repShot'))}</span></label><input type="file" id="rep-shot" name="image" accept="image/png,image/jpeg,image/webp"><p class="hint" id="rep-shot-hint">${esc(s('repShotSignedOut'))}</p></div>
+  <div class="field" id="rep-shot-field"><span class="flab">${esc(s('repShot'))}</span><label class="drop" for="rep-shot" id="rep-drop"><input type="file" id="rep-shot" name="image" accept="image/png,image/jpeg,image/webp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="drop-main" id="rep-drop-main">${esc(s('repDrop'))}</span><span class="drop-sub">${esc(s('repDropTypes'))}</span></label><p class="hint" id="rep-shot-hint">${esc(s('repShotSignedOut'))}</p></div>
   <div class="field"><label for="rep-outcome">${esc(s('repOutcome'))}</label><select id="rep-outcome" name="outcome"><option value="">${esc(s('repOutcomeAny'))}</option>${Object.entries(s('repOutcomes')).map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('')}</select></div>
   <div class="field"><label for="rep-what">${esc(s('repWhat'))}</label><textarea id="rep-what" name="whatHappened" rows="3" maxlength="2000" placeholder="${esc(s('repWhatPh'))}"></textarea></div>
   <div class="field"><label for="rep-contact">${esc(s('repContact'))}</label><input id="rep-contact" name="contact" maxlength="200" autocomplete="email" placeholder="${esc(s('repContactPh'))}"></div>
