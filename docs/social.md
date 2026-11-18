@@ -57,10 +57,13 @@ of a real message, as the catalogue does.
 
 ### First post (pin it)
 
-> Scammers change numbers and links every week, but the script stays the same for years.
+Free X accounts allow 280 characters per post (a link counts as 23), so this one fits; longer posts need X Premium.
+
+> Scammers change numbers and links every week. The script stays the same for years.
 >
-> scamdb is a free field guide to scams: 1,000+ documented scams from 70+ countries, how each one works step by step
-> and what to do. Paste a message and see if it matches a known scam. Nothing is sent: it runs in your browser.
+> scamdb is a free field guide to 1,000+ documented scams from 70+ countries: how each one works and what to do.
+>
+> Paste a message and check it, right in your browser.
 >
 > scamdb.dev
 
