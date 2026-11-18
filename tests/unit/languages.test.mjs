@@ -23,7 +23,7 @@ test('a text field needs an English version', () => assert.match(errorsWith((e) 
 test('a text field needs the original language', () => assert.match(errorsWith((e) => ({ lang: 'pt', how: { en: e.how.en } })), /how needs the original language \(pt\)/));
 test('an English-original entry needs only English', () => {
   const en = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v && typeof v === 'object' && !Array.isArray(v) && 'en' in v ? { en: v.en } : v]));
-  const errs = errorsWith(({ id, ...e }) => ({ ...en(e), lang: 'en', steps: e.steps.map((s) => ({ ...s, text: { en: s.text.en } })), examples: e.examples.map((x) => ({ text: { en: x.text.en } })) }), 'english-only.json');
+  const errs = errorsWith(({ id, ...e }) => ({ ...en(e), lang: 'en', steps: e.steps.map((s) => ({ ...s, text: { en: s.text.en } })), examples: e.examples.map((x) => ({ text: { en: x.text.en }, synthetic: true })) }), 'english-only.json');
   assert.doesNotMatch(errs, /english-only/);
 });
 test('a contact name needs English', () => {

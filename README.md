@@ -86,7 +86,8 @@ and reputable news, validates them and opens one pull request labelled `import`.
   and adapt it for any purpose, including commercially, as long as you give credit, link to the license and
   say if you changed it. Credit it as: **scamdb.dev · CC BY 4.0**.
 - Sources and media linked from each entry belong to their owners; scamdb links to them and does not
-  relicense them.
+  relicense them. The same goes for real messages shown as examples (those with a `source`): they are short
+  quotations credited to their publisher, not covered by CC BY.
 - Code: [MIT](LICENSE).
 
 ## Deploy (owner steps, once)

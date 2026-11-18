@@ -111,6 +111,8 @@ export function validateRepo(root) {
       for (const [i, st] of (s.steps ?? []).entries()) errors.push(...langErrors(path, `steps[${i}].text`, st.text, s.lang));
       for (const [i, x] of (s.examples ?? []).entries()) errors.push(...langErrors(path, `examples[${i}].text`, x.text, s.lang));
     }
+    // Only real, documented messages may be shown as real: an example written by us must say so.
+    for (const [i, x] of (s.examples ?? []).entries()) if (x.synthetic !== true) errors.push(`${path}: examples[${i}] is written by us, so it needs "synthetic": true (real messages go in eval/real with their source)`);
 
     // Source age: an active scam needs a source from the 2 years before `updated`; anything not archived, from the 5.
     const newest = (s.sources ?? []).map((x) => x.date).filter(Boolean).sort().at(-1);

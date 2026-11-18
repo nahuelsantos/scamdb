@@ -43,7 +43,6 @@ export function layout({ title, description, body, path, meta, lang = 'en', scri
 ${body}
 </main>
 <footer class="wrap foot">
-  <div>${t(lang, 'footMade')} <a href="https://eschamuyo.com">eschamuyo.com</a></div>
   <div class="mono">${t(lang, 'footData')} <a href="${REPO}/blob/main/LICENSE-DATA">CC BY 4.0</a> · ${t(lang, 'footCode')} <a href="${REPO}/blob/main/LICENSE">MIT</a> · ${t(lang, 'footDataset')} ${esc(meta.version)}</div>
 </footer>
 ${scripts}

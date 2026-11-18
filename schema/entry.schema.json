@@ -107,6 +107,10 @@
           },
           "channel": {
             "$ref": "#/$defs/channel"
+          },
+          "synthetic": {
+            "description": "true: written by scamdb as an illustration, not a real message. Every example in the data files is written; real messages are joined in from eval/real at build time, with their source.",
+            "const": true
           }
         }
       }
