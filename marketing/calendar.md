@@ -29,6 +29,17 @@ posted. You review, edit and publish.
 `node marketing/tools/check-x.mjs` checks that every X post fits in 280 characters (links count as 23). All of them do
 today.
 
+## Holiday campaign: decisions so far (2026-11-18)
+
+- **Campaign "Check before you pay", Nov 23 – Dec 31.** Phases: shopping weekend (drafted above); gifts and
+  deliveries (Dec 7–20); Christmas week, including a **Boxing Day post aimed at the UK, Canada, Australia and New
+  Zealand** (Dec 26); year end (Dec 28–31). Phases 2–4 aren't drafted yet.
+- **Videos:** 3 short vertical videos (Reels on Instagram, saved to a Story Highlight; native video on X). Narrated by
+  the owner in English (their real voice, not AI). Recording guide: `videos/recording-guide.md`. Animation test:
+  `videos/test-10s/scamdb-test-10s.mp4` (made with `tools/video-test.mjs`).
+- **On hold** (owner's request, to save usage) until the owner picks it up again. Next steps: feedback on the
+  test, scripts for video 1, the owner records, then phase 2 posts.
+
 ## Notes for the owner
 
 These are things I found while drafting. I didn't change the site, the API or the catalogue.
