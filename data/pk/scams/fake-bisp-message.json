@@ -1,0 +1,143 @@
+{
+  "id": "pk/fake-bisp-message",
+  "country": "pk",
+  "lang": "ur",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ur": "“BISP”، “بینظیر انکم سپورٹ پروگرام” یا “بینظیر کفالت”، کسی عام موبائل نمبر یا سوشل میڈیا پیج سے",
+    "en": "“BISP”, “Benazir Income Support Programme” or “Benazir Kafaalat”, from an ordinary mobile number or a social media page"
+  },
+  "name": {
+    "ur": "بینظیر انکم سپورٹ کا جعلی میسج: “آپ کی رقم منظور ہو گئی ہے، شناختی کارڈ نمبر بھیجیں”",
+    "en": "Fake BISP message: “your stipend is approved, send your CNIC”"
+  },
+  "how": {
+    "ur": "بینظیر انکم سپورٹ پروگرام کے نام سے SMS، واٹس ایپ میسج یا ویڈیو آتی ہے کہ آپ کی رقم منظور ہو گئی ہے یا نئی امدادی رقم دی جا رہی ہے۔ رقم لینے کے لیے شناختی کارڈ نمبر یا رابطہ نمبر بھیجنے، کسی نمبر پر کال کرنے یا کسی ویب سائٹ پر رجسٹر ہونے کو کہا جاتا ہے۔ BISP کے مطابق اس کے تمام آفیشل میسج صرف 8171 سے آتے ہیں اور کسی اور نمبر سے آنے والا میسج جعلی ہے۔ نیوز اینکرز کی آواز بدل کر بنائی گئی جعلی ویڈیوز بھی لوگوں کو BISP کی رقم کے لیے ویب سائٹس پر “اپلائی” کرنے بھیجتی ہیں۔",
+    "en": "A text, WhatsApp message or video in the name of the Benazir Income Support Programme says your stipend has been approved, or that a new relief amount is being given. It asks you to send your CNIC or contact details, call a number, or register on a website to receive the money. BISP says all its official messages come only from 8171 and that messages from any other number are fake. Fake videos dubbed over news anchors have also sent people to websites to “apply” for BISP money."
+  },
+  "steps": [
+    {
+      "text": {
+        "ur": "میسج یا ویڈیو میں کہا جاتا ہے کہ آپ کی BISP رقم یا نئی امدادی رقم منظور ہو گئی ہے۔",
+        "en": "A message or video says your BISP stipend or a new relief amount is approved."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ur": "یہ 8171 کے بجائے کسی عام موبائل نمبر یا پیج سے آتا ہے۔",
+        "en": "It comes from an ordinary mobile number or a page, not from 8171."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ur": "آپ سے شناختی کارڈ نمبر اور رابطہ نمبر بھیجنے، کسی نمبر پر کال کرنے یا لنک پر رجسٹر ہونے کو کہا جاتا ہے۔",
+        "en": "You are asked to send your CNIC and contact details, call a number or register on a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ur": "پھر رقم “جاری” کرنے کے لیے فیس، کوڈ یا والیٹ کی تفصیل مانگی جاتی ہے۔",
+        "en": "Then they ask for a fee, a code or your wallet details to “release” the money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ur": "مبارک ہو! آپ کی بینظیر کفالت کی 25000 روپے کی رقم منظور ہو گئی ہے۔ رقم وصول کرنے کے لیے اپنا شناختی کارڈ نمبر اور نام اس نمبر پر واٹس ایپ کریں: [نمبر]",
+        "en": "Congratulations! Your Benazir Kafaalat payment of Rs 25,000 has been approved. To receive it, send your CNIC number and name on WhatsApp to this number: [number]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ur": "BISP نیا سروے: ہر خاندان کے لیے 13000 روپے۔ رجسٹریشن آج بند ہو جائے گی، اپنا شناختی کارڈ نمبر یہاں درج کریں: [لنک]",
+        "en": "BISP new survey: Rs 13,000 for every family. Registration closes today, enter your CNIC here: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ur": [
+      "بینظیر انکم سپورٹ کا جعلی میسج",
+      "آپ کی رقم منظور ہو گئی ہے شناختی کارڈ نمبر بھیجیں",
+      "بی آئی ایس پی کے نام پر فراڈ کال",
+      "8171 کے علاوہ نمبر سے میسج آیا",
+      "بینظیر کفالت کی رقم کے لیے لنک پر رجسٹریشن",
+      "امدادی رقم کے لیے فیس مانگی گئی"
+    ],
+    "en": [
+      "fake bisp message stipend approved",
+      "benazir income support sms asking for cnic",
+      "bisp message not from 8171",
+      "bisp registration link on whatsapp",
+      "benazir kafaalat payment message from mobile number",
+      "video says apply online for bisp relief money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ur": [
+      "8171 کے علاوہ کسی بھی نمبر سے “BISP” کا میسج۔",
+      "سروے یا BISP دفتر گئے بغیر رقم کا وعدہ۔",
+      "“اپلائی” یا “رجسٹریشن” کے لیے لنک یا ویب سائٹ، یا فیس کا مطالبہ۔"
+    ],
+    "en": [
+      "A “BISP” message from any number other than 8171.",
+      "A promise of money without any survey or visit to a BISP office.",
+      "A link or a website to “apply” or “register”, or a request for a fee."
+    ]
+  },
+  "whatToDo": {
+    "ur": [
+      "جواب نہ دیں، واپس کال نہ کریں اور شناختی کارڈ یا والیٹ کی تفصیل نہ بھیجیں۔",
+      "صرف 8171 کے میسج پر بھروسہ کریں؛ اپنی تفصیل BISP کے آفیشل ذرائع یا اس کی ہیلپ لائن سے چیک کریں۔",
+      "نمبر کی شکایت PTA کو کریں اور اگر پیسے گئے ہوں تو NCCIA کو 1799 پر۔"
+    ],
+    "en": [
+      "Do not reply, call back or send your CNIC or wallet details.",
+      "Trust only messages from 8171; check your status through BISP’s official channels or its helpline.",
+      "Report the number to PTA and, if you lost money, to NCCIA on 1799."
+    ]
+  },
+  "reportTo": [
+    "pk/bisp",
+    "pk/pta",
+    "pk/nccia"
+  ],
+  "sources": [
+    {
+      "title": "BISP removes over 2.25 million fake beneficiaries",
+      "publisher": "ARY News",
+      "url": "https://arynews.tv/bisp-removes-over-2-25-million-fake-beneficiaries",
+      "date": "2026-10-23"
+    },
+    {
+      "title": "Viral reel falsely claims Punjab CM to give Rs0.7m in aid",
+      "publisher": "Soch Fact Check",
+      "url": "https://www.sochfactcheck.com/viral-reel-falsely-claims-punjab-cm-to-give-rs0-7m-in-aid/",
+      "date": "2026-04-29"
+    },
+    {
+      "title": "Video falsely claims PM Shehbaz announced relief of Rs0.4m in Punjab under BISP",
+      "publisher": "Soch Fact Check",
+      "url": "https://www.sochfactcheck.com/video-falsely-claims-pm-shehbaz-announced-relief-of-rs0-4m-in-punjab-under-bisp/",
+      "date": "2025-11-30"
+    }
+  ],
+  "updated": "2026-11-18"
+}

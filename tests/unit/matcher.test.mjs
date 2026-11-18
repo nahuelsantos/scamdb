@@ -658,3 +658,12 @@ test('1.32.0: Chinese (Taiwan) rules, only where Chinese is spoken', async () =>
   assert.ok(!readSigns('台電：電費尚未繳納，請儘速繳費，如已繳費請忽略。', ['zh']).includes('money_request'), 'a genuine bill reminder is not a money request');
   assert.ok(!readSigns('今日內 連結', ['es', 'en']).includes('urgency'), 'Chinese rules only where Chinese is spoken');
 });
+test('1.33.0: Urdu and Roman Urdu rules, only where Urdu is spoken', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const call = readSigns('main bank ki helpline se bol raha hoon. Aap ka account aaj raat block ho jayega. Abhi 6 digit code aaya hoga, wo bata dein', ['ur', 'en']);
+  for (const s of ['impersonation', 'urgency', 'asks_for_code']) assert.ok(call.includes(s), s);
+  assert.ok(readSigns('رقم وصول کرنے کے لیے اپنا شناختی کارڈ نمبر اور نام اس نمبر پر واٹس ایپ کریں', ['ur', 'en']).includes('money_request'));
+  assert.ok(!readSigns('اپنا اصل شناختی کارڈ لے کر قریبی کیمپ سائٹ سے رقم وصول کریں۔ کسی کو کوڈ یا فیس نہ دیں۔', ['ur', 'en']).includes('money_request'), 'a genuine BISP notice is not a money request');
+  assert.ok(!readSigns('Ammi main pohnch gaya hoon, abhi class hai.', ['ur', 'en']).length, 'a family message has no signs');
+  assert.ok(!readSigns('aaj raat block ho jayega', ['es', 'en']).includes('urgency'), 'Roman Urdu rules only where Urdu is spoken');
+});

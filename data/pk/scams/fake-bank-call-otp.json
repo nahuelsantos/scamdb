@@ -1,0 +1,119 @@
+{
+  "id": "pk/fake-bank-call-otp",
+  "country": "pk",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A caller from “your bank’s helpline”, sometimes showing the bank’s real number"
+  },
+  "name": {
+    "en": "Fake bank helpline call: “your account will be blocked, tell me the OTP”"
+  },
+  "how": {
+    "en": "Someone calls saying they are from your bank and that your account or card will be blocked unless you “verify” it now. The number can look like the bank’s real helpline because scammers use masking or spoofing, and they may already know your name or account details. They ask for the OTP, PIN, password or app login code, then use it to get into your mobile banking and move your money. The State Bank says banks never ask for these over a call or message."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call or message from “the bank” says your account or card will be blocked."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You must verify right now, while staying on the line."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask for the OTP, PIN or password you just received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "Money then leaves your account through mobile banking."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Assalam o alaikum, main bank ki helpline se bol raha hoon. Aap ka account aaj block ho jayega kyunke biometric verification pending hai. Abhi aap ke number par code aaya hai, wo bata dein taake verification complete ho jaye."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "en": "Dear Customer, your debit card has been temporarily blocked due to incomplete verification. Call our helpline immediately on [number] to reactivate."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bank helpline call asking for otp",
+      "caller said my account will be blocked",
+      "account block ho jayega code bata dein",
+      "fake call from bank number asked pin",
+      "bank wale ne verification ke liye code manga",
+      "debit card blocked sms call this number",
+      "call showed bank official number asked otp"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Anyone asking for an OTP, PIN or password, even from the bank’s number.",
+      "A threat that the account will be blocked today.",
+      "Pressure to stay on the line until you give the code."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up. Never share an OTP, PIN or password.",
+      "Call the number on the back of your card or in the bank’s official app, or visit a branch.",
+      "If you shared a code, block your account through the bank at once and report to NCCIA on 1799.",
+      "If the bank does not refund a fraudulent transaction, complain to the Banking Mohtasib."
+    ]
+  },
+  "reportTo": [
+    "pk/your-bank",
+    "pk/nccia",
+    "pk/banking-mohtasib",
+    "pk/pta"
+  ],
+  "sources": [
+    {
+      "title": "Justice Aamer Farooq reveals receiving fake bank call by scammers",
+      "publisher": "ARY News",
+      "url": "https://arynews.tv/justice-aamer-farooq-fake-bank-call-scammers-case",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "Pakistan warns people against phone banking scam",
+      "publisher": "ARY News",
+      "url": "https://arynews.tv/pakistan-warns-citizens-against-phone-banking-scam",
+      "date": "2025-10-10"
+    },
+    {
+      "title": "Rising impersonation scams threaten digital economy",
+      "publisher": "The Express Tribune",
+      "url": "https://tribune.com.pk/story/2573226/rising-impersonation-scams-threaten-digital-economy",
+      "date": "2025-10-20"
+    }
+  ],
+  "updated": "2026-11-18"
+}

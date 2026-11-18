@@ -1,0 +1,109 @@
+{
+  "id": "pk/fake-courier-sms",
+  "country": "pk",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Pakistan Post” or a courier company, from an unknown number"
+  },
+  "name": {
+    "en": "Fake Pakistan Post or courier SMS: “update your address” or “share the code”"
+  },
+  "how": {
+    "en": "An SMS claims to be from Pakistan Post or another courier, often with a tracking number. It says your parcel could not be delivered because of an address problem and asks you to update your details urgently through a link. The link opens a copy of a courier site that steals your personal and card details, or asks you to download a file. Other courier messages ask you to enter or share a verification code, which can give scammers access to your accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An SMS from “Pakistan Post” or a courier says your parcel is held."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You must update your address urgently or the parcel returns."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A link leads to a fake courier page or a file to install."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for card details, or you are asked for a code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Pakistan Post: Your package is held at our warehouse due to incomplete address information. Please update your address within 24 hours or it will be returned: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "TCS: Your parcel is ready for delivery. Share the verification code sent to your number with our rider to receive it."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "pakistan post sms update address link",
+      "parcel held incomplete address message",
+      "courier asked for verification code",
+      "fake tcs delivery message",
+      "package will be returned update details sms",
+      "courier sms asked card payment for redelivery"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "en": [
+      "A delivery message you weren’t expecting, with a link.",
+      "A request for card details or a small fee to redeliver.",
+      "Couriers asking you to share or enter a code."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click; check tracking on the courier’s official website or app.",
+      "Never share codes sent to your phone.",
+      "If you entered card details, call your bank; report the number to PTA."
+    ]
+  },
+  "reportTo": [
+    "pk/pta",
+    "pk/your-bank",
+    "pk/nccia"
+  ],
+  "sources": [
+    {
+      "title": "PTA warns public against fake courier messages",
+      "publisher": "ARY News",
+      "url": "https://arynews.tv/pta-warns-public-against-fake-courier-messages",
+      "date": "2025-07-24"
+    },
+    {
+      "title": "NCERT Advisory – Smishing Alert: Fake Delivery Package Scam Threats",
+      "publisher": "National CERT (PKCERT)",
+      "url": "https://pkcert.gov.pk/advisory/24-11.pdf",
+      "date": "2024-05-24"
+    }
+  ],
+  "updated": "2026-11-18"
+}

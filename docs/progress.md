@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Pakistan:** 15 entries (4 Urdu, 11 English, Roman Urdu in examples and phrases), 6 contacts (police 15, NCCIA
+  1799, PTA, Banking Mohtasib, BISP, your bank), 24 brands, 22 labelled and 5 real messages (most Pakistani news
+  paraphrases scam texts). Matcher 1.33.0 adds an Urdu block covering Urdu script and Roman Urdu ("code aaya hoga,
+  bata dein", "aaj raat block ho jayega", "bank ki helpline se", "شناختی کارڈ نمبر ... واٹس ایپ کریں", "lucky draw")
+  with "کسی کو کوڈ ... نہ دیں" as a genuine sign. Pakistan: 17% → 83% of labelled scams called "scam", 0 false
+  alarms; every other country and the private set unchanged.
+
 - **Taiwan:** 19 entries in Traditional Chinese, 6 contacts (165 anti-fraud line, police 110, FSC 1998, consumer
   1950, NHIA, your bank), 27 brands, 22 labelled and 13 real messages (two subject-line quotes left out). Matcher
   1.32.0 adds a Chinese block with Simplified variants (fake traffic fines and Taipower cut-offs, "今日內", "停卡",

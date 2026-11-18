@@ -1,0 +1,118 @@
+{
+  "id": "pk/fake-e-challan",
+  "country": "pk",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "“Safe City”, “traffic police” or “e-challan”, from a personal number"
+  },
+  "name": {
+    "en": "Fake e-challan SMS: “unpaid traffic fine, pay now through the link”"
+  },
+  "how": {
+    "en": "An SMS or WhatsApp message says you have an unpaid traffic e-challan and must pay at once through a link, or by Easypaisa to a number. The link opens a copy of the official e-challan site that takes your card or bank details. Punjab Safe City, and the traffic police in Karachi and Islamabad, say they don’t ask for payment or bank details by SMS from personal numbers. One man’s bank account was emptied after he clicked such a link."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A message says you have an unpaid traffic fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You must pay today or face penalties."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "It gives a link or a wallet number to pay."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for card or bank details and money is taken."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "E-Challan Alert: Your vehicle has an unpaid traffic violation fine of Rs 2,000. Pay within 24 hours to avoid double penalty and licence suspension: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Traffic Police: Aap ki gari ka challan pending hai. Foran Easypaisa account [number] par Rs 1,500 jama karwain warna gari impound ho jayegi."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "fake e challan sms link",
+      "traffic fine message pay through link",
+      "safe city challan sms scam",
+      "challan pending easypaisa par jama karwain",
+      "clicked challan link money taken from account",
+      "unpaid traffic violation sms from mobile number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A fine notice from a personal mobile number.",
+      "A link that is not an official government website.",
+      "Payment to a wallet number or a request for card details."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don’t click; check e-challans only on the official traffic police or Safe City website.",
+      "Never give card or bank details from an SMS link.",
+      "If you paid or entered details, call your bank; report to NCCIA on 1799 and the number to PTA."
+    ]
+  },
+  "reportTo": [
+    "pk/nccia",
+    "pk/your-bank",
+    "pk/pta"
+  ],
+  "sources": [
+    {
+      "title": "Scam alert",
+      "publisher": "The News on Sunday",
+      "url": "https://www.thenews.pk/tns/detail/1386559-scam-alert",
+      "date": "2025-12-14"
+    },
+    {
+      "title": "Karachi Traffic Police Warns Citizens Against Fake Fine Payment Messages",
+      "publisher": "ARY News",
+      "url": "https://arynews.tv/karachi-officials-clarify-online-payment-scam",
+      "date": "2025-09-28"
+    },
+    {
+      "title": "Fake E-Challan Scam Targets Islamabad Citizens, Traffic Police Issue Alert",
+      "publisher": "PhoneWorld",
+      "url": "https://www.phoneworld.com.pk/fake-e-challan-scam-targets-islamabad-citizens-traffic-police-issue-alert/",
+      "date": "2026-08-13"
+    }
+  ],
+  "updated": "2026-11-18",
+  "story": {
+    "en": "A man in Punjab got an e-challan SMS asking him to click a link at once. After he clicked it, the fraudsters got into his bank account and withdrew all the money in it."
+  }
+}

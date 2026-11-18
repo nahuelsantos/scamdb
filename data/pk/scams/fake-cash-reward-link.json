@@ -1,0 +1,149 @@
+{
+  "id": "pk/fake-cash-reward-link",
+  "country": "pk",
+  "lang": "ur",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ur": "“وزیراعظم”، “حکومت پاکستان”، “ایزی پیسہ” یا کوئی مشہور کاروباری شخصیت، فارورڈ کیے گئے میسج میں",
+    "en": "“Prime Minister”, “Government of Pakistan”, “Easypaisa” or a well-known businessman, in a forwarded message"
+  },
+  "name": {
+    "ur": "جعلی نقد انعام کا لنک: “ہر شہری کے لیے 13000 روپے، یہاں کلک کریں”",
+    "en": "Fake cash gift link: “Rs 13,000 for every citizen, click here”"
+  },
+  "how": {
+    "ur": "SMS یا واٹس ایپ پر فارورڈ میسج آتا ہے، اکثر یوم آزادی، یوم اقبال، رمضان یا عید کے موقع پر، کہ وزیراعظم، ایزی پیسہ یا کوئی امیر کاروباری شخص ہر پاکستانی کو 13000، 20000 یا 25000 روپے دے رہا ہے۔ بس لنک پر کلک کر کے موبائل نمبر درج کرنا ہے اور پھر دوستوں کو بھیجنا ہے۔ لنک ایک جعلی صفحے پر لے جاتا ہے جو آپ کی ذاتی اور مالی معلومات لے لیتا ہے۔ نیشنل CERT اور NCCIA ان میسجز سے خبردار کر چکے ہیں۔",
+    "en": "An SMS or WhatsApp forward, often around Independence Day, Iqbal Day, Ramzan or Eid, says the Prime Minister, Easypaisa or a rich businessman is giving every Pakistani Rs 13,000, Rs 20,000 or Rs 25,000. You only have to click the link and enter your mobile number, and then share it with friends. The link leads to a fake page that collects your personal and financial details. National CERT and NCCIA have warned against these messages."
+  },
+  "steps": [
+    {
+      "text": {
+        "ur": "فارورڈ میسج میں قومی دن یا تہوار پر ہر شہری کو مفت رقم کا وعدہ ہوتا ہے۔",
+        "en": "A forwarded message promises free cash to every citizen on a national day or holiday."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ur": "اس میں وزیراعظم، ایزی پیسہ یا کسی مشہور شخصیت کا نام استعمال ہوتا ہے۔",
+        "en": "It uses the name of the Prime Minister, Easypaisa or a famous person."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ur": "کہا جاتا ہے کہ آفر محدود وقت کے لیے ہے اور لنک پر کلک کرنے کو کہا جاتا ہے۔",
+        "en": "It says the offer is for a limited time and asks you to click a link."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ur": "صفحہ موبائل نمبر، شناختی کارڈ یا والیٹ کی تفصیل مانگتا ہے اور لنک آگے بھیجنے کو کہتا ہے۔",
+        "en": "The page asks for your mobile number, CNIC or wallet details and tells you to share the link."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ur": "وزیراعظم کی طرف سے یوم آزادی کا تحفہ: ہر شہری کو 13000 روپے ملیں گے۔ لنک پر کلک کریں، موبائل نمبر درج کریں اور آج ہی اپنی رقم حاصل کریں: [لنک]",
+        "en": "Independence Day gift from the Prime Minister: every citizen will get Rs 13,000. Click the link, enter your mobile number and receive your amount today: [link]"
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "ur": "تمام صارفین کے لیے 25000 روپے کا تحفہ! آفر صرف محدود وقت کے لیے ہے۔ نیچے دیے گئے لنک پر اپنا نمبر درج کریں اور 10 دوستوں کو شیئر کریں: [لنک]",
+        "en": "Rs 25,000 gift for all users! Offer for a limited time only. Enter your number on the link below and share with 10 friends: [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ur": [
+      "13000 روپے انعام کا جعلی میسج",
+      "وزیراعظم کی طرف سے نقد رقم کا لنک",
+      "ایزی پیسہ سالگرہ فنڈ کا میسج",
+      "لنک پر موبائل نمبر درج کریں اور رقم حاصل کریں",
+      "یوم آزادی پر مفت پیسوں کا میسج",
+      "دوستوں کو شیئر کریں تاکہ وہ بھی فائدہ اٹھائیں"
+    ],
+    "en": [
+      "rs 13000 cash prize message independence day",
+      "prime minister cash reward link on whatsapp",
+      "easypaisa birthday fund 25000 link",
+      "free money for every pakistani click here",
+      "ramzan cash giveaway message link",
+      "message says enter mobile number to get money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ur": [
+      "لنک کے ذریعے “ہر شہری کے لیے” مفت رقم۔",
+      "قومی دن، رمضان یا عید کو وجہ بنانا۔",
+      "میسج دوستوں یا گروپس میں آگے بھیجنے کا کہنا۔"
+    ],
+    "en": [
+      "Free money “for every citizen” from a link.",
+      "A national day, Ramzan or Eid used as the reason.",
+      "A request to share the message with friends or groups."
+    ]
+  },
+  "whatToDo": {
+    "ur": [
+      "کلک، جواب یا فارورڈ نہ کریں؛ میسج ڈیلیٹ کریں اور بھیجنے والے کو بلاک کریں۔",
+      "سرکاری اعلانات صرف آفیشل سرکاری ویب سائٹس اور خبروں سے چیک کریں۔",
+      "اگر آپ نے تفصیل درج کر دی ہے تو فوراً اپنے بینک یا والیٹ کو بتائیں اور PTA اور NCCIA کو شکایت کریں۔"
+    ],
+    "en": [
+      "Don’t click, reply or forward it; delete and block the sender.",
+      "Check government announcements only on official government websites and news.",
+      "If you entered your details, tell your bank or wallet at once, and report to PTA and NCCIA."
+    ]
+  },
+  "reportTo": [
+    "pk/pta",
+    "pk/nccia",
+    "pk/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "NCCIA cautions public against fake Rs13,000 cash reward messages on Iqbal Day",
+      "publisher": "ARY News",
+      "url": "https://arynews.tv/nccia-cautions-against-fake-rs13000-cash-reward-messages",
+      "date": "2026-11-08"
+    },
+    {
+      "title": "Rs.13,000 cash-prize scam, warning issued",
+      "publisher": "ARY News",
+      "url": "https://arynews.tv/rs-13000-cash-prize-scam-warning-issued",
+      "date": "2026-08-18"
+    },
+    {
+      "title": "Ramzan scam: Billionaire Shahid Khan did not announce PKR 25,000 for every Pakistani",
+      "publisher": "Soch Fact Check",
+      "url": "https://www.sochfactcheck.com/ramzan-scam-billionaire-shahid-khan-did-not-announce-pkr-25000-for-every-pakistani/",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Scam alert! easypaisa is not giving away PKR 25,000 under new ‘Birthday Fund’",
+      "publisher": "Soch Fact Check",
+      "url": "https://www.sochfactcheck.com/scam-alert-easypaisa-digital-bank-not-giving-away-pkr-25000-under-new-birthday-fund-pakistan/",
+      "date": "2026-01-27"
+    }
+  ],
+  "updated": "2026-11-18"
+}
