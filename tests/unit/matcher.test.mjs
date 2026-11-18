@@ -649,3 +649,12 @@ test('1.31.0: Japanese: dense-script phrase matching and Japanese signs', async 
   assert.ok(!readSigns('認証番号は482913です。このコードを他人に教えないでください。', ['ja']).includes('asks_for_code'));
   assert.ok(!readSigns('至急 リンク', ['es', 'en']).includes('urgency'), 'Japanese rules only where Japanese is spoken');
 });
+test('1.32.0: Chinese (Taiwan) rules, only where Chinese is spoken', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const fine = readSigns('【監理服務網】您有一筆交通違規罰鍰逾期未繳，請於今日內完成線上繳納：[連結]', ['zh']);
+  for (const s of ['urgency', 'money_request', 'unknown_link', 'impersonation']) assert.ok(fine.includes(s), s);
+  assert.ok(readSigns('媽，是我啦，猜猜我是誰？我手機掉了，這是新的號碼', ['zh']).includes('new_number'));
+  assert.ok(!readSigns('您的簡訊驗證碼為582917。請勿將驗證碼告知他人，本行人員不會向您索取。', ['zh']).includes('asks_for_code'));
+  assert.ok(!readSigns('台電：電費尚未繳納，請儘速繳費，如已繳費請忽略。', ['zh']).includes('money_request'), 'a genuine bill reminder is not a money request');
+  assert.ok(!readSigns('今日內 連結', ['es', 'en']).includes('urgency'), 'Chinese rules only where Chinese is spoken');
+});

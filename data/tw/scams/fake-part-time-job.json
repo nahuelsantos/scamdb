@@ -1,0 +1,142 @@
+{
+  "id": "tw/fake-part-time-job",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "zh": "打工App或臉書、IG、Threads上的徵才廣告：遠端打字、資料彙整、臨時觀眾、做公益領禮券",
+    "en": "Job ads in part-time job apps or on Facebook, Instagram or Threads: remote typing, data entry, paid audience, charity work for vouchers"
+  },
+  "name": {
+    "zh": "假求職：輕鬆高薪打工，加LINE後要你繳保證金或「內部投資」",
+    "en": "Fake part-time job: easy well-paid work, then a deposit or an “insider investment” on LINE"
+  },
+  "how": {
+    "zh": "詐騙集團在打工App或社群刊登「在家賺錢、免經驗高薪」、遠端登打、臨時觀眾、配音員、活動體驗等徵才廣告，引導你加LINE聯繫。有的先真的發薪水一兩個月建立信任，再在工作群組推「限定投資專案」，群組裡有暗樁貼獲利，還安排假律師見證合約，要你用加密貨幣入金，出金前又要付三成「報酬」。有的則以報名費、保證金或騙取個資為目的。合法兼職不會要員工反過來投入資金。",
+    "en": "Scammers post ads in job apps or on social media: “earn from home, no experience, high pay”, remote typing, paid audience, voice actor or event tester, and ask you to add a LINE account. Some really pay a salary for a month or two to gain trust, then promote a “limited investment project” in the work group, with fake colleagues posting profits and a fake lawyer witnessing a contract; you deposit crypto, then must pay a 30% “commission” before withdrawing. Others are after a registration fee, a deposit or your personal details. A real part-time job never asks staff to put money in."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "看到輕鬆高薪的徵才廣告，被要求加LINE。",
+        "en": "You see an easy, well-paid job ad and are asked to add LINE."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "zh": "前期可能真的領到薪水，建立信任。",
+        "en": "You may really get paid at first, building trust."
+      }
+    },
+    {
+      "text": {
+        "zh": "工作群組推出內部投資專案，或要你先繳保證金、報名費。",
+        "en": "The work group pushes an insider investment, or you must pay a deposit or fee first."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "zh": "想出金時要先付報酬或手續費，錢拿不回來。",
+        "en": "To withdraw you must first pay a commission or fee, and the money is gone."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【徵臨時觀眾】免經驗，活動約3小時，會後領現金1700元，全台都有場次，有興趣請加LINE報名：[連結]",
+        "en": "[Temporary audience wanted] No experience, about 3 hours, 1,700 cash after the event, sessions all over Taiwan. Add our LINE to sign up: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "各位同仁辛苦了！公司本月推出員工限定增資專案，名額只有二十位，投報率每月百分之十五，請有意願的同仁私訊主管登記。",
+        "en": "Thanks for your hard work, everyone! This month the company has a staff-only capital increase project, just twenty places, returning fifteen percent a month. Message your manager privately to sign up."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "在打工App找到遠端打字工作後被叫去投資",
+      "徵臨時觀眾的廣告要我加LINE繳保證金",
+      "工作群組推薦員工限定的投資專案",
+      "兼職公司要我用加密貨幣入金",
+      "出金前要先付三成報酬",
+      "在家工作的廣告要我先付報名費"
+    ],
+    "en": [
+      "i found a remote typing job on a job app and was then pushed to invest",
+      "an ad for paid audience members asked me to add line and pay a deposit",
+      "the work group recommended a staff only investment project",
+      "the part time company asked me to deposit crypto",
+      "i had to pay thirty percent commission before withdrawing",
+      "a work from home ad asked me to pay a registration fee first"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "unknown_link",
+    "impersonation"
+  ],
+  "redFlags": {
+    "zh": [
+      "免經驗、在家就能輕鬆領高薪",
+      "面試、聯絡都只在LINE上",
+      "要你繳保證金、報名費，或投入資金、買加密貨幣",
+      "同事和主管在群組裡一直曬獲利"
+    ],
+    "en": [
+      "Easy high pay from home with no experience.",
+      "Interviews and contact happen only on LINE.",
+      "You must pay a deposit or fee, or invest or buy crypto.",
+      "Colleagues and managers keep posting profits in the group."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "合法工作不會要你先付錢或投資；遇到就停止",
+      "應徵前查公司登記資料，不要只在LINE聯繫",
+      "有疑問打165；已經付款請報警"
+    ],
+    "en": [
+      "A real job never asks you to pay or invest first; stop if it does.",
+      "Check the company's registration before applying; don't deal only on LINE.",
+      "Call 165 if unsure; if you already paid, report it to the police."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/police-110"
+  ],
+  "sources": [
+    {
+      "title": "打工領薪遭誘進投資坑  刑事局揭隱蔽性詐術",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202608090122.aspx",
+      "date": "2026-08-09"
+    },
+    {
+      "title": "第3季網路詐騙假求職、活動占逾6成　普發現金「放大術」成新噱頭",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202511090117.aspx",
+      "date": "2025-11-09"
+    },
+    {
+      "title": "【詐騙】社群流傳「徵臨時觀眾」廣告？3小時現領1700元？當心加LINE索個資騙保證金",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2026/09/Job-posting.html",
+      "date": "2026-09-11"
+    }
+  ],
+  "updated": "2026-11-18"
+}

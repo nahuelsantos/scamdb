@@ -1,0 +1,140 @@
+{
+  "id": "tw/job-bank-card-mule",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "in-person"
+  ],
+  "sender": {
+    "zh": "社群上的家庭代工、高薪工作廣告，或假人力仲介打來的電話",
+    "en": "Home-assembly or high-paying job ads on social media, or a call from a fake recruitment agency"
+  },
+  "name": {
+    "zh": "假徵才：「辦薪資轉帳」要你交出提款卡，或叫你去收款當車手",
+    "en": "Fake hiring: they take your bank card “for payroll” or send you to collect cash"
+  },
+  "how": {
+    "zh": "詐騙集團在臉書、IG刊登家庭代工、高薪工作廣告，或假冒人力仲介打給求職者。加LINE後，以「辦理薪資轉帳」、「核對帳戶」為由，要你寄出或交出存摺、提款卡和密碼，你的帳戶就被拿去收假投資、假交友、解除分期付款的贓款。另一種是安排「面試考官」，教你收款、交款、簽收據，還給你勞動契約，其實是讓你去向被害人面交收錢、當車手。提供帳戶或幫忙收款都可能被當成共犯，帳戶也會被列警示。",
+    "en": "Scammers post home-assembly or high-paying job ads on Facebook or Instagram, or call job seekers pretending to be a recruitment agency. On LINE they ask you to send or hand over your bankbook, bank card and PIN “to set up salary payments” or “check your account”, and your account is then used to receive money from fake investment, romance and instalment scams. In another version, “interviewers” train you to collect cash, hand it over and sign receipts, even giving you an employment contract, so that you actually collect money from victims as a courier. Handing over an account or collecting money can make you an accomplice, and your account gets flagged."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "看到家庭代工或高薪工作廣告，加LINE應徵。",
+        "en": "You answer a home-assembly or high-pay job ad on LINE."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "zh": "對方說要辦薪資轉帳，要你寄出存摺、提款卡和密碼。",
+        "en": "They say they need your bankbook, card and PIN to set up salary payments."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "zh": "或安排面試、試用期，教你收款、交款、簽收據。",
+        "en": "Or they set up an interview and trial period, training you to collect and hand over cash."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "你的帳戶被拿來洗錢，或你成了收贓款的車手。",
+        "en": "Your account is used for laundering, or you become the courier collecting stolen money."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【家庭代工】在家組裝小飾品，按件計酬日領千元，材料免費寄到府。錄取後需提供薪轉帳戶的存摺及提款卡以便公司撥薪，詳情加LINE：[連結]",
+        "en": "[Home assembly] Assemble small accessories at home, paid per piece, a thousand a day, materials sent free. Once hired, provide the bankbook and card of your salary account so the company can pay you. Details on LINE: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "恭喜錄取財務助理！試用期工作是到客戶指定地點收取投資款，點收後簽收據，再把現金交給公司主管，日薪三千。",
+        "en": "Congratulations, you're hired as a finance assistant! During the trial period you collect investment money at clients' chosen places, sign a receipt, and hand the cash to a company manager. Pay is 3,000 a day."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "家庭代工要我寄提款卡辦薪資轉帳",
+      "應徵工作被要求提供存摺和密碼",
+      "工作內容是幫公司向客戶收現金",
+      "應徵財務助理結果是當車手",
+      "找工作後我的帳戶變成警示帳戶"
+    ],
+    "en": [
+      "a home assembly job asked me to post my bank card for salary payments",
+      "a job asked for my bankbook and pin",
+      "the job was collecting cash from clients for the company",
+      "i applied to be a finance assistant and ended up as a money courier",
+      "after a job application my account was flagged by the bank"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "zh": [
+      "工作要你交出存摺、提款卡或密碼",
+      "工作內容是幫人收錢、轉交現金",
+      "輕鬆日領高薪、免經驗"
+    ],
+    "en": [
+      "A job asks for your bankbook, bank card or PIN.",
+      "The work is collecting and passing on cash for others.",
+      "Easy daily high pay, no experience needed."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "正派公司發薪只需要帳號，絕不需要提款卡或密碼",
+      "不要幫陌生人收款或轉交現金",
+      "已經交出提款卡請馬上掛失並報警，有疑問打165"
+    ],
+    "en": [
+      "A real employer only needs an account number for pay, never your card or PIN.",
+      "Don't collect or pass on cash for strangers.",
+      "If you handed over a card, report it lost and go to the police at once; call 165 if unsure."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/police-110",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "網紅刊登家庭代工徵才竟是詐騙　以服飾店掩護洗錢上億元",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604210191.aspx",
+      "date": "2026-04-21"
+    },
+    {
+      "title": "連詐騙都有試用期！刑事局破獲黑幫詐團假徵才設「考官」分飾多角測忠誠 社會新鮮人求職慘變洗錢犯",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=95961c9f-bdcd-40c1-a2d3-fcc75e87b775",
+      "date": "2026-09-07"
+    },
+    {
+      "title": "第3季網路詐騙假求職、活動占逾6成　普發現金「放大術」成新噱頭",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202511090117.aspx",
+      "date": "2025-11-09"
+    }
+  ],
+  "updated": "2026-11-18"
+}

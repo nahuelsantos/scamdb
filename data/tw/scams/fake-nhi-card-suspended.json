@@ -1,0 +1,135 @@
+{
+  "id": "tw/fake-nhi-card-suspended",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "sms",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "zh": "「健保局」、「衛生署福利部」的LINE帳號、簡訊、電話語音或email",
+    "en": "A LINE account, text, recorded call or email from the “NHI bureau” or “Department of Health and Welfare”"
+  },
+  "name": {
+    "zh": "假健保署：「健保卡使用異常，即刻停卡」",
+    "en": "Fake NHI: “your health insurance card has been used abnormally and will be suspended”"
+  },
+  "how": {
+    "zh": "有人冒用「健保局」名義傳LINE、簡訊或打電話，說你的健保卡使用異常、被盜用、欠費要鎖卡，即將暫停所有健保服務，要你點連結或加「健保署LINE客服」核對資料。假網站會騙取帳號密碼、個資或信用卡號，或要你下載程式讓手機中毒；假客服則以核對個資為名，要你上傳證件或做金融操作，把存款轉走。健保署說，健保卡問題只用書信公文通知，不會用電話、簡訊或LINE；官方LINE帳號是「健保署」，有藍色認證盾牌，也不會主動加你好友。",
+    "en": "Someone using the name “NHI bureau” sends a LINE message or text, or calls, saying your NHI card has been used abnormally, misused or will be locked for unpaid premiums, and all NHI services will stop, so you must tap a link or add an “NHI LINE customer service” to check your details. The fake site steals logins, personal details or card numbers, or makes you install malware; the fake agent asks you to upload ID or make banking moves “to check your details” and empties your account. The NHIA says card problems are only notified by official letter, never by phone, text or LINE; its official LINE account is “健保署” with a blue verified shield and it never adds you first."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "收到「健保局」LINE或簡訊，說健保卡異常即將停卡。",
+        "en": "A LINE message or text from the “NHI bureau” says your card is abnormal and will be suspended."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "要你馬上點連結或加LINE客服，以免停卡。",
+        "en": "You must tap a link or add a LINE agent right away to avoid suspension."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "zh": "假網站或假客服要你輸入個資、信用卡號，或上傳證件、操作網銀。",
+        "en": "A fake site or agent asks for personal details or card numbers, ID uploads or online banking."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【健保局通知】您的健保卡有使用異常情況，即刻停卡。如需恢復使用，請於今日內點擊連結完成身分核對：[連結]",
+        "en": "[NHI notice] Abnormal use has been detected on your health insurance card and it will be suspended immediately. To keep using it, verify your identity via the link today: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "zh": "您好，這裡是衛生署福利部。您的健保卡使用異常，即將暫停所有健保服務，為確保不被停卡，請加入健保署LINE線上客服進行諮詢。",
+        "en": "Hello, this is the Department of Health and Welfare. Your NHI card shows abnormal use and all NHI services will be suspended. To avoid suspension, add the NHI LINE online service for advice."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "收到健保局LINE說健保卡異常要停卡",
+      "簡訊說健保卡被盜用要點連結核對",
+      "健保署客服叫我加LINE核對個資",
+      "說欠健保費要鎖卡",
+      "健保局叫我上傳身分證和健保卡照片"
+    ],
+    "en": [
+      "i got a line message from nhi saying my card is abnormal and will be stopped",
+      "a text said my health insurance card was misused and i must tap a link to check",
+      "nhi customer service asked me to add line to verify my details",
+      "they said my card will be locked for unpaid premiums",
+      "the nhi bureau asked me to upload photos of my id and health card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "zh": [
+      "健保署不會用電話、簡訊或LINE通知健保卡異常",
+      "主動加你好友、沒有藍色認證盾牌的「健保局」帳號",
+      "要你點連結、輸入信用卡號或上傳證件"
+    ],
+    "en": [
+      "The NHIA never notifies card problems by phone, text or LINE.",
+      "A “NHI bureau” account that adds you first and has no blue verified shield.",
+      "You are asked to tap a link, type a card number or upload ID."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "直接刪除訊息，不要點連結",
+      "有疑問打健保署專線或165查證",
+      "已經輸入卡號請立刻通知銀行停卡，並請電信公司關閉小額付款"
+    ],
+    "en": [
+      "Delete the message and don't tap the link.",
+      "If unsure, call the NHIA helpline or 165.",
+      "If you entered a card number, ask your bank to block the card and your phone company to turn off carrier billing."
+    ]
+  },
+  "reportTo": [
+    "tw/nhi-hotline",
+    "tw/antifraud-165",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "春節期間詐騙多 健保署提醒提高警覺 歡慶迎蛇年",
+      "publisher": "衛生福利部（中央健康保險署）",
+      "url": "https://mohw.gov.tw/cp-2704-81292-1.html",
+      "date": "2025-01-25"
+    },
+    {
+      "title": "LINE訊息稱健保卡異常停卡　健保署：詐騙勿點連結",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202608130058.aspx",
+      "date": "2026-08-13"
+    },
+    {
+      "title": "健保署不會用LINE、電話或簡訊，通知健保卡異常",
+      "publisher": "台灣事實查核中心",
+      "url": "https://tfc-taiwan.org.tw/fact-check-reports/nhi-card-status-scam/",
+      "date": "2026-09-23"
+    }
+  ],
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,164 @@
+{
+  "id": "tw/fake-online-shop",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "sms"
+  ],
+  "sender": {
+    "zh": "臉書、IG、LINE群組上的賣家或一頁式廣告，或超商取貨簡訊",
+    "en": "A seller or one-page ad on Facebook, Instagram or a LINE group, or a convenience-store pickup text"
+  },
+  "name": {
+    "zh": "網購詐騙：低價商品、一頁式廣告，付了錢卻沒貨或收到劣質品",
+    "en": "Fake online shop: cheap goods or a one-page ad, you pay and get nothing or junk"
+  },
+  "how": {
+    "zh": "詐騙集團在臉書、IG或LINE群組刊登熱門商品、3C、精品、郵輪船票等，價格明顯低於市價，標榜限時搶購、最後現貨，要你私下用LINE或Messenger交易、先匯款，收錢後就失聯。另一種是「一頁式廣告」，網頁只有商品和客服LINE，以超低價、貨到付款吸引你，到超商取貨付款後才發現是劣質品或貨不對辦。也有人收到「幽靈包裹」取貨簡訊，以為家人代訂就去付款領取。還有假客服說訂單延誤、退款失敗要補繳手續費，二度詐財。",
+    "en": "Scammers advertise popular goods on Facebook, Instagram or LINE groups (electronics, luxury goods, cruise tickets) far below the market price, with “limited time” or “last one” pressure. They ask you to deal privately on LINE or Messenger and pay first, then disappear. Another kind is the “one-page ad”: a page with just the product and a LINE contact, very cheap and cash on delivery; you pay at the convenience store and find junk or the wrong item. Some people get a “ghost parcel” pickup text for something they never ordered and pay, thinking a relative ordered it. Fake customer service may then claim a delay or failed refund and ask for a “handling fee”."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "在社群平台看到超低價、限時特價的商品或一頁式廣告。",
+        "en": "You see a very cheap, limited-time product or a one-page ad on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "zh": "賣家要你加LINE私下交易，先匯款或選貨到付款。",
+        "en": "The seller asks you to add LINE, deal privately and pay first or cash on delivery."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "zh": "付款後賣家失聯，或到超商取貨才發現是劣質品。",
+        "en": "After you pay the seller vanishes, or the parcel you pay for at the store is junk."
+      }
+    },
+    {
+      "text": {
+        "zh": "假客服說退款失敗、訂單延誤，要你再付手續費。",
+        "en": "A fake agent says a refund failed or the order is delayed and asks for a fee."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【限時倒數】原價12800，今天只要1990！最後20組，貨到付款免運費，下單請加LINE客服：[連結]",
+        "en": "[Countdown] Was 12,800, today only 1,990! Last 20 sets, cash on delivery, free shipping. To order add our LINE customer service: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "您好，您的包裹已送達超商門市，請於七日內持證件取貨付款，金額NT$1,280，逾期將退回。",
+        "en": "Hello, your parcel has arrived at the convenience store. Please collect and pay within seven days with ID. Amount NT$1,280; it will be returned after that."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "在臉書買東西匯款後賣家就不見了",
+      "一頁式廣告買的東西收到是劣質品",
+      "在超商付款取貨打開不是我買的",
+      "收到取貨簡訊但我沒有訂東西",
+      "賣家說要私下用LINE交易比較便宜",
+      "買低價郵輪船票匯款後被封鎖"
+    ],
+    "en": [
+      "i paid a seller on facebook and they disappeared",
+      "what i bought from a one page ad turned out to be junk",
+      "i paid for a parcel at the convenience store and it was not what i ordered",
+      "i got a pickup text but i never ordered anything",
+      "the seller wanted to trade privately on line because it is cheaper",
+      "i paid for cheap cruise tickets and was blocked"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request",
+    "impersonation"
+  ],
+  "redFlags": {
+    "zh": [
+      "價格明顯低於市價，限時倒數、最後幾組",
+      "廣告網頁只留LINE，要你加LINE下單",
+      "要你離開平台私下交易、先匯款",
+      "收到沒訂過的包裹取貨付款通知"
+    ],
+    "en": [
+      "Far below the market price, with a countdown or “last few”.",
+      "The ad page only gives a LINE account to order through.",
+      "You are asked to leave the platform, deal privately and pay first.",
+      "A pickup-and-pay notice for a parcel you never ordered."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "選有第三方支付保障的正規購物平台，不要私下匯款",
+      "沒訂過的包裹不要取件付款",
+      "付款前查賣家評價和粉專成立時間",
+      "受騙請打165或到警察局報案；商品爭議可打1950"
+    ],
+    "en": [
+      "Use a proper shopping platform with payment protection; don't pay privately.",
+      "Don't collect or pay for a parcel you didn't order.",
+      "Check the seller's reviews and how new the page is before paying.",
+      "If cheated, call 165 or report to the police; for product disputes call 1950."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/police-110",
+    "tw/consumer-1950"
+  ],
+  "sources": [
+    {
+      "title": "網購、假買家詐騙件數上升  刑事局提供防範手法",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202505160120.aspx",
+      "date": "2025-05-16"
+    },
+    {
+      "title": "刑事局：超商包裹詐騙猖獗　提供3種因應方法",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202510180116.aspx",
+      "date": "2025-10-18"
+    },
+    {
+      "title": "打擊一頁式廣告詐騙　刑事局查獲14家物流涉案",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202512300153.aspx",
+      "date": "2025-12-30"
+    },
+    {
+      "title": "郵輪夢變詐騙陷阱 低價船票誘付款後神隱",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=7f948538-67d1-4085-8294-079f8db9a112",
+      "date": "2026-09-14"
+    },
+    {
+      "title": "黑幫操盤假網拍詐團!勾結外籍車手提款 跨國洗錢鏈曝光",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=86a15237-4936-4de6-9199-c8a3541adcb5",
+      "date": "2026-09-23"
+    },
+    {
+      "title": "網購詐騙受理件數最多　刑事局提供防詐關鍵字",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604090091.aspx",
+      "date": "2026-04-09"
+    }
+  ],
+  "updated": "2026-11-18"
+}

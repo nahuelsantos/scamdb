@@ -1,0 +1,140 @@
+{
+  "id": "tw/tax-refund-einvoice-phishing",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "zh": "「國稅局」、「財政部」或momo、PChome、蝦皮等電商名義的email或簡訊",
+    "en": "An email or text in the name of the National Taxation Bureau, the Ministry of Finance, or shops such as momo, PChome or Shopee"
+  },
+  "name": {
+    "zh": "假退稅、假發票中獎：連到假財政部網站盜刷信用卡",
+    "en": "Fake tax refund or e-invoice prize: a fake Ministry of Finance site steals your card"
+  },
+  "how": {
+    "zh": "報稅季前後，詐騙集團寄email或簡訊說你可以領「綜合所得稅溢繳退稅」、「逾期退稅款」，或以電商名義通知「雲端發票中獎，有一筆獎金待領取」。連結通往仿冒的財政部稅務入口網或電子發票整合服務平台，網址不是gov.tw結尾，要你選「信用卡退稅」，輸入身分證字號、信用卡號、有效日期，再輸入手機收到的驗證碼「核對身分」，其實是授權盜刷。國稅局不會用簡訊、email、電話或社群主動通知退稅，也不會要你操作ATM或提供信用卡資料。",
+    "en": "Around tax season, scammers email or text saying you can claim an “income tax overpayment refund” or an “overdue refund”, or, in a shop's name, that “your cloud e-invoice won a prize waiting to be claimed”. The link leads to a fake copy of the Ministry of Finance tax portal or e-invoice platform, whose address doesn't end in gov.tw. It asks you to choose “refund to credit card”, enter your ID number, card number and expiry, then the code sent to your phone “to verify your identity”, which actually authorises a charge. Tax bureaus never announce refunds by text, email, phone or social media, and never ask you to use an ATM or give card details."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "收到國稅局退稅或電商發票中獎的email、簡訊。",
+        "en": "An email or text about a tax refund or an e-invoice prize."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "說逾期失效、立即辦理，要你點連結。",
+        "en": "It says the refund will lapse unless you act now, and asks you to tap a link."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "zh": "假財政部網站要你輸入信用卡號和手機驗證碼。",
+        "en": "A fake Ministry of Finance site asks for your card number and the code sent to your phone."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【北區國稅局】最終通知：您的綜合所得稅溢繳退稅尚未領取，請於48小時內登入稅務入口網辦理，逾期視同放棄：[連結]",
+        "en": "[Northern Region National Taxation Bureau] Final notice: your income tax overpayment refund has not been claimed. Log in to the tax portal within 48 hours or it will be forfeited: [link]"
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "zh": "親愛的會員您好，您的雲端發票中了1000元獎金待領取，請至財政部電子發票整合服務平台完成歸戶即可入帳：[連結]",
+        "en": "Dear member, your cloud e-invoice has won a 1,000 prize waiting to be claimed. Complete registration on the Ministry of Finance e-invoice platform to receive it: [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "收到國稅局email說有退稅要點連結",
+      "電商寄信說雲端發票中獎要去財政部網站領",
+      "退稅網站要我輸入信用卡號",
+      "輸入驗證碼後信用卡被刷了",
+      "簡訊說逾期退稅款要趕快申請"
+    ],
+    "en": [
+      "i got an email from the tax bureau about a refund with a link",
+      "a shop emailed saying my cloud invoice won a prize to claim on the finance ministry site",
+      "the refund site asked for my credit card number",
+      "after entering the verification code my card was charged",
+      "a text said i had an overdue tax refund to claim quickly"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "zh": [
+      "沒申請卻收到退稅通知",
+      "網址不是gov.tw結尾，或gov前面多了字",
+      "退稅或領獎要輸入信用卡號、驗證碼",
+      "限時辦理，逾期失效"
+    ],
+    "en": [
+      "A refund notice you never applied for.",
+      "An address that doesn't end in gov.tw, or has extra characters before gov.",
+      "A refund or prize that asks for your card number or a code.",
+      "A deadline after which the refund “lapses”."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "不要點連結；自己輸入財政部稅務入口網或電子發票平台的官方網址查詢",
+      "不要把簡訊驗證碼輸入不明網站",
+      "已輸入卡號請立即通知銀行，並打165"
+    ],
+    "en": [
+      "Don't tap the link; type the official tax portal or e-invoice address yourself.",
+      "Never enter a text code on an unknown site.",
+      "If you entered a card number, call your bank at once and 165."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "國稅局：退稅通知詐騙案增加　留意4類詐騙手法",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202605110076.aspx",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "詐團發送發票中獎電郵行騙　刑事局籲勿點假連結",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202603080107.aspx",
+      "date": "2026-03-08"
+    },
+    {
+      "title": "【詐騙】北區國稅局寄來的退稅通知Email？當心釣魚網站！國稅局不會以電子郵件、簡訊及電話通知辦理退稅",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2026/06/tax-email.html",
+      "date": "2026-06-13"
+    },
+    {
+      "title": "【詐騙】電商平台通知雲端發票中獎的Email？當心釣魚郵件！會盜刷信用卡",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2026/01/mail-fraud.html",
+      "date": "2026-01-27"
+    }
+  ],
+  "updated": "2026-11-18"
+}

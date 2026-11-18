@@ -1,0 +1,134 @@
+{
+  "id": "tw/guess-who-new-line",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "zh": "自稱兒子、女兒、親戚或多年不見朋友的陌生電話，以及同樣暱稱的新LINE帳號",
+    "en": "An unknown caller claiming to be your son, daughter, relative or an old friend, then a new LINE account with the same name"
+  },
+  "name": {
+    "zh": "猜猜我是誰：「我手機換了，加我新的LINE」，接著借錢",
+    "en": "Guess who: “I changed my phone, add my new LINE”, then a request for money"
+  },
+  "how": {
+    "zh": "陌生號碼打來，開口就叫爸媽或要你「猜猜我是誰」，自稱是不同住的兒女或親友，說手機掉了、換了新門號，要你在LINE加新帳號。新帳號的LINE暱稱跟本人一樣，有時還用AI模仿親人的聲音。過幾天再以臨時急用、裝潢費等理由要你匯款；匯了一次後又說錢不夠，要再匯到另一個帳戶。",
+    "en": "An unknown number calls, says “Mum” or “Dad” or asks you to “guess who I am”, and claims to be a child or relative who doesn't live with you. They say they lost their phone and changed number, and ask you to add a new LINE account, which has the same display name as the real person; some use AI to copy the relative's voice. A few days later they ask you to transfer money for an emergency or renovation costs, to an account they name; after one transfer they say it's not enough and give another account."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "陌生號碼來電自稱是兒女或親友，說手機換了，要你加新LINE。",
+        "en": "An unknown caller says they're your child or relative with a new phone and asks you to add a new LINE."
+      },
+      "signal": "new_number"
+    },
+    {
+      "text": {
+        "zh": "新LINE帳號暱稱相同，對方聲音也很像。",
+        "en": "The new LINE account has the same display name, and the voice sounds similar."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "幾天後說急需用錢，要你匯到指定帳戶。",
+        "en": "Days later they urgently need money and want it sent to an account they name."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "zh": "匯款後又說不夠，要再匯一筆。",
+        "en": "After you pay, they say it's not enough and ask for more."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "媽，是我啦，猜猜我是誰？我手機掉了，這是我的新號碼，你LINE那個舊的刪掉，加我新的帳號喔。",
+        "en": "Mum, it's me, guess who? I lost my phone and this is my new number. Delete the old one on LINE and add my new account."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "zh": "媽，裝潢的師傅今天要收尾款，我的錢卡在定存領不出來，你可以先幫我匯39萬到師傅的帳戶嗎？下禮拜就還你。",
+        "en": "Mum, the renovation guy wants his final payment today and my money is stuck in a fixed deposit. Can you send 390,000 to his account for me? I'll pay you back next week."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "兒子打電話說手機換了要我加新的LINE",
+      "陌生人叫我猜猜我是誰然後說是我姪子",
+      "女兒的新LINE說急需用錢要我匯款",
+      "說錢要匯到裝潢師傅的帳戶",
+      "聲音很像我兒子但其實是詐騙"
+    ],
+    "en": [
+      "my son called saying he changed his phone and asked me to add his new line",
+      "a stranger asked me to guess who it was then said he was my nephew",
+      "my daughter's new line account said she urgently needs money",
+      "they asked me to send money to the renovation worker's account",
+      "the voice sounded just like my son but it was a scam"
+    ]
+  },
+  "signals": [
+    "new_number",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "zh": [
+      "陌生號碼來電叫你猜他是誰",
+      "說換了手機、要你加新的LINE帳號",
+      "急著借錢，匯款後又說不夠"
+    ],
+    "en": [
+      "An unknown caller asks you to guess who they are.",
+      "They say they changed phone and ask you to add a new LINE account.",
+      "They urgently want money, then say it is not enough."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "用原本的舊電話號碼打給本人確認",
+      "和家人約定只有你們知道的通關密語",
+      "還沒確認前不要去銀行匯款；有疑問打165"
+    ],
+    "en": [
+      "Call the person on the old number you already have.",
+      "Agree a family password only you know.",
+      "Don't go to the bank until you've checked; call 165 if unsure."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/police-110",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "假冒親友詐騙手法翻新　AI變音換暱稱誘騙長輩",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202507200127.aspx",
+      "date": "2025-07-20"
+    },
+    {
+      "title": "慎防釣魚連結及LINE帳號被盜用來詐騙 刑事局籲「不明連結不點、好友借錢先查證」",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=dc96426e-60ee-4b56-8fc2-a8c1f8aabf1d",
+      "date": "2026-09-15"
+    }
+  ],
+  "updated": "2026-11-18"
+}

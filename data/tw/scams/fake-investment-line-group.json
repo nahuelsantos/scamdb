@@ -1,0 +1,174 @@
+{
+  "id": "tw/fake-investment-line-group",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "zh": "冒用股市名師、財經教授或知名企業家的臉書、IG、YouTube廣告，以及「投顧助理」LINE帳號",
+    "en": "Facebook, Instagram or YouTube ads using a famous stock “teacher”, finance professor or business leader, then an “investment adviser's assistant” on LINE"
+  },
+  "name": {
+    "zh": "假投資：名人廣告拉你進LINE股票群組、下載假投資APP",
+    "en": "Fake investment: celebrity ad, LINE stock group and a fake trading app"
+  },
+  "how": {
+    "zh": "詐騙集團在社群平台投放冒用股市名人、財經教授的廣告，或貼出自稱「名人司機、助理」的投資文，引導你先加「投顧助理」LINE，再拉進LINE投資群組。群組裡有老師每天「授課」報明牌，還有很多假投資人貼獲利截圖。接著要你下載假的證券或投資APP，畫面上的獲利每天暴增，再要你匯款或把現金面交給「股務經理」儲值。等你想出金時，又要你先繳分潤費、保證金或稅金，最後錢全拿不回來。",
+    "en": "Scammers run ads using famous stock commentators or finance professors, or post stories from a celebrity's “driver” or “assistant”, to get you to add an “adviser's assistant” on LINE and then join a LINE investment group. A “teacher” gives daily tips and fake investors post profit screenshots. You are told to install a fake brokerage or investment app whose balance grows every day, and to transfer money or hand cash to a “stock manager” to top up. When you try to withdraw, they demand a profit share, deposit or tax first, and the money never comes back."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "在臉書、IG或YouTube看到名人投資廣告或貼文，被引導加LINE。",
+        "en": "An ad or post with a famous investor leads you to add a LINE account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "被拉進LINE投資群組，老師報明牌，群組成員不斷曬獲利。",
+        "en": "You are added to a LINE investment group where a “teacher” gives tips and members show off profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "zh": "要你下載非官方的投資APP，匯款或面交現金給專人儲值。",
+        "en": "You are told to install an unofficial trading app and transfer money or hand cash to someone to top it up."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "zh": "想領出獲利時，被要求先繳分潤費、保證金或稅金。",
+        "en": "When you want to withdraw, you are told to pay a profit share, deposit or tax first."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "您好，我是老師的助理。老師這週在LINE群組免費帶大家布局AI概念股，今天布局、明天驗證，名額有限，加入請點：[連結]",
+        "en": "Hello, I'm the teacher's assistant. This week the teacher is guiding everyone in the LINE group on AI stocks for free: position today, see results tomorrow. Places are limited; join here: [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "恭喜您抽中新股！請於今日下午三點前完成認繳，金額請匯入公司指定帳戶或由股務經理到府收款，逾時視同放棄。",
+        "en": "Congratulations, you have been allocated new shares! Complete payment by 3 p.m. today by transferring to the company account or handing it to the stock manager who will come to you; otherwise you forfeit them."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "看到名人投資廣告加了LINE被拉進股票群組",
+      "股票老師在LINE群組報明牌叫我買",
+      "投資APP顯示賺很多但是不能出金",
+      "要先繳分潤費才可以領出獲利",
+      "投顧助理叫我把現金交給股務經理",
+      "說抽中新股要我馬上匯款認購"
+    ],
+    "en": [
+      "i clicked a celebrity investment ad and was added to a line stock group",
+      "a stock teacher in a line group gives tips and tells me what to buy",
+      "the investment app shows big profits but i cannot withdraw",
+      "they want a profit share fee before i can take out my gains",
+      "the adviser assistant told me to hand cash to a stock manager",
+      "they said i won a share allocation and must pay right away"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "zh": [
+      "名人或財經專家在廣告裡拉你加LINE、進投資群組",
+      "保證獲利、穩賺不賠、今天布局明天驗證",
+      "要你下載不是從官方商店來的投資APP",
+      "要你把現金交給專人或匯到個人帳戶",
+      "想出金卻要先繳分潤費、保證金或稅金"
+    ],
+    "en": [
+      "A celebrity or finance expert in an ad asks you to add them on LINE or join an investment group.",
+      "Guaranteed profits, no risk, “position today, see results tomorrow”.",
+      "You are told to install an investment app that is not from an official store.",
+      "You are asked to hand cash to someone or transfer to a personal account.",
+      "You must pay a profit share, deposit or tax before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "名人不會在LINE群組帶人投資；別加廣告裡的LINE帳號",
+      "投資前先用金管會的資料查證業者是否合法，或打1998、165問",
+      "不要把現金交給任何「股務經理」或專人，也不要匯到個人帳戶",
+      "已經匯款請馬上報警或打165，並聯絡銀行"
+    ],
+    "en": [
+      "Famous investors do not run LINE investment groups; don't add the LINE account in an ad.",
+      "Before investing, check the firm with the FSC or call 1998 or 165.",
+      "Never hand cash to a “stock manager” or courier, or transfer to a personal account.",
+      "If you already paid, report it to the police or 165 at once and call your bank."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/fsc-1998",
+    "tw/police-110",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "男子遇假投資詐騙損5千萬　刑事局逮21人送辦",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604100208.aspx",
+      "date": "2026-04-10"
+    },
+    {
+      "title": "刑事局破獲幫派詐騙集團　找身障及長輩當車手",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202602240227.aspx",
+      "date": "2026-02-24"
+    },
+    {
+      "title": "中央打詐平臺展現成效 數發部吹哨通報檢警查辦 廣告行銷公司利用臉書大量發送涉詐投資廣告 負責人及員工遭收押",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=cf19696e-0fde-41fb-877a-76d18fe79930",
+      "date": "2026-06-22"
+    },
+    {
+      "title": "網路常見模組化職人流投資文　警：詐騙手法勿上當",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202609120112.aspx",
+      "date": "2026-09-12"
+    },
+    {
+      "title": "懲詐加堵詐 刑事局偵破假投資詐團 再溯源查獲LINE帳號網路交易平臺！",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=0dfe868c-8e3e-49ce-8786-0a2385cf721c",
+      "date": "2026-09-08"
+    },
+    {
+      "title": "第3季網路詐騙假求職、活動占逾6成　普發現金「放大術」成新噱頭",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202511090117.aspx",
+      "date": "2025-11-09"
+    },
+    {
+      "title": "網購詐騙受理件數最多　刑事局提供防詐關鍵字",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202604090091.aspx",
+      "date": "2026-04-09"
+    }
+  ],
+  "updated": "2026-11-18"
+}

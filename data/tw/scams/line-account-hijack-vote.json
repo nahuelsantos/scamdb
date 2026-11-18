@@ -1,0 +1,133 @@
+{
+  "id": "tw/line-account-hijack-vote",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social"
+  ],
+  "sender": {
+    "zh": "LINE好友、親戚或客戶的帳號（其實已被盜用）",
+    "en": "A LINE friend, relative or customer whose account has actually been taken over"
+  },
+  "name": {
+    "zh": "LINE帳號被盜：「幫忙投票」連結，接著冒名借錢",
+    "en": "Hijacked LINE account: a “please vote” link, then a request for money"
+  },
+  "how": {
+    "zh": "熟人的LINE傳來「親戚家小孩參加繪畫比賽，麻煩幫忙投票」、寵物大賽或抽獎活動的連結。假投票網站要你登入LINE、輸入密碼或簡訊驗證碼，或照指示做「帳號轉移」設定，你的LINE就被接管。詐團再用你的帳號向親友說「臨時急用錢」、「轉帳額度不足」要求匯款，或繼續散播投票連結。即使訊息來自熟悉的親友帳號，也可能不是本人。",
+    "en": "A friend's LINE sends a link: “my relative's kid is in a drawing contest, please vote”, or a pet contest or prize draw. The fake voting site asks you to log in to LINE, type your password or text code, or follow steps to “transfer” your account, and your LINE is taken over. The gang then uses your account to tell friends and family they “urgently need money” or “hit their transfer limit”, or spreads the vote link further. Even a message from a familiar contact may not be from that person."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "熟人LINE傳來投票或抽獎連結，請你幫忙。",
+        "en": "A contact's LINE sends a voting or prize link and asks for help."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "zh": "假網站要你登入LINE、輸入密碼或簡訊驗證碼。",
+        "en": "The fake site asks you to log in to LINE or enter your password or text code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "zh": "帳號被盜後，詐團冒用你的名義向親友借錢或散播連結。",
+        "en": "Once your account is taken, the gang uses your name to borrow money from friends or spread the link."
+      },
+      "signal": "impersonation"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "親戚家小孩參加繪畫比賽，麻煩幫我投一下5號小朋友，要登入才能投，謝謝你喔！[連結]",
+        "en": "My relative's kid is in a drawing contest, please vote for child number 5 for me. You have to log in to vote, thank you! [link]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "zh": "在嗎？我網銀轉帳額度今天用完了，可以先幫我轉三萬給廠商嗎？明天馬上還你，帳號我傳給你。",
+        "en": "Are you there? I've used up my online transfer limit today. Can you send 30,000 to a supplier for me? I'll pay you back tomorrow; I'll send you the account."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "朋友LINE叫我幫小孩繪畫比賽投票",
+      "投票要輸入LINE密碼和驗證碼",
+      "我的LINE被盜了一直傳投票連結給朋友",
+      "朋友LINE說轉帳額度不夠要我先幫他匯款",
+      "好友傳寵物比賽投票連結給我"
+    ],
+    "en": [
+      "a friend on line asked me to vote in a kids drawing contest",
+      "voting asked for my line password and verification code",
+      "my line was hacked and keeps sending vote links to friends",
+      "a friend on line said they hit their transfer limit and asked me to send money",
+      "a friend sent me a link to vote in a pet contest"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "asks_for_code",
+    "impersonation",
+    "money_request"
+  ],
+  "redFlags": {
+    "zh": [
+      "投票、抽獎要你登入LINE或輸入驗證碼",
+      "朋友突然在LINE借錢、說轉帳額度不足",
+      "訊息語氣跟平常不一樣，又不接電話"
+    ],
+    "en": [
+      "A vote or prize draw asks you to log in to LINE or enter a code.",
+      "A friend suddenly asks to borrow money on LINE, saying they hit their transfer limit.",
+      "The message doesn't sound like them and they won't take a call."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "不在不明網站輸入LINE密碼或簡訊驗證碼",
+      "打電話或當面向本人確認",
+      "帳號被盜時立即改密碼、登出不明裝置，並通知親友",
+      "已匯款請打165報案"
+    ],
+    "en": [
+      "Never type your LINE password or text code into an unknown site.",
+      "Check with the person by phone or face to face.",
+      "If your account is taken, change the password, log out unknown devices and warn your contacts.",
+      "If you sent money, report it to 165."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/police-110"
+  ],
+  "sources": [
+    {
+      "title": "慎防釣魚連結及LINE帳號被盜用來詐騙 刑事局籲「不明連結不點、好友借錢先查證」",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=dc96426e-60ee-4b56-8fc2-a8c1f8aabf1d",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "刑事局揭釣魚連結詐騙激增  張懷秋籲先查再行動",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202609150155.aspx",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "【詐騙】親戚家小孩參加繪畫比賽幫忙投票？要輸入簡訊驗證碼？當心LINE帳號遭盜用",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2026/08/vote-scam.html",
+      "date": "2026-08-24"
+    }
+  ],
+  "updated": "2026-11-18"
+}

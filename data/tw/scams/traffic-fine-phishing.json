@@ -1,0 +1,146 @@
+{
+  "id": "tw/traffic-fine-phishing",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "zh": "「監理服務網」、「交通部公路局」、「監理站」名義的email或簡訊",
+    "en": "An email or text in the name of the motor vehicles service website, the Highway Bureau or a motor vehicles office"
+  },
+  "name": {
+    "zh": "假監理站：交通違規罰單未繳、汽燃費逾期的email或簡訊",
+    "en": "Fake motor vehicles office: unpaid traffic fine or vehicle fuel fee email or text"
+  },
+  "how": {
+    "zh": "詐騙集團冒用「監理服務網」、「監理站」或「公路局」名義寄email或發簡訊，說你有交通違規未結案、罰鍰逾期未繳或汽燃費逾期，若不在期限內繳納會扣點、加徵滯納金、移送強制執行。連結通往仿冒的監理服務網，要你輸入身分證字號、車號，再填信用卡號、有效期限和安全碼「線上繳費」，結果信用卡被盜刷。公路局已停用email通知交通違規未繳，監理機關不會用email催繳或要你確認車籍資料，罰單簡訊提醒也不會附網址。",
+    "en": "Scammers send emails or texts in the name of the motor vehicles service website, a motor vehicles office or the Highway Bureau, saying you have an open traffic violation, an overdue fine or overdue fuel fee, and that points, late fees or enforcement will follow if you don't pay by a deadline. The link leads to a fake copy of the official site that asks for your ID number and plate, then your card number, expiry and security code to “pay online”, and the card is then misused. The Highway Bureau has stopped emailing about unpaid violations; motor vehicles offices never chase fines or ask you to confirm vehicle records by email, and their fine reminder texts never contain links."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "收到監理站或公路局名義的email、簡訊，說罰單或汽燃費未繳。",
+        "en": "An email or text from the “motor vehicles office” says a fine or fuel fee is unpaid."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "zh": "說期限內不繳會扣點、加滯納金、強制執行。",
+        "en": "It threatens points, late fees or enforcement if you miss the deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "zh": "連結到假監理服務網，要你填信用卡資料繳費。",
+        "en": "The link leads to a fake site that asks for your card details to pay."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【監理服務網】您有一筆交通違規罰鍰逾期未繳，請於今日前完成線上繳納，逾期將加徵滯納金並移送強制執行。查詢及繳費：[連結]",
+        "en": "[Motor vehicles service] You have an overdue traffic fine. Pay online by today or late fees will be added and the case sent for enforcement. Check and pay: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "zh": "交通部公路局通知：您名下車輛有違規案件尚未結案，請於24小時內點選下方連結辦理，否則將扣點並每日加計滯納金。[連結]",
+        "en": "Highway Bureau notice: a violation for a vehicle in your name is still open. Use the link below within 24 hours or points will be deducted and late fees added daily. [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "收到監理站email說罰單未繳",
+      "簡訊說交通罰款逾期要點連結繳費",
+      "假的監理服務網叫我輸入信用卡號",
+      "說汽燃費逾期要線上繳納",
+      "email說違規未結案會被扣點"
+    ],
+    "en": [
+      "i got an email from the motor vehicles office saying a fine is unpaid",
+      "a text said my traffic fine is overdue and to pay via a link",
+      "a fake motor vehicles site asked for my credit card number",
+      "they said my fuel fee is overdue and must be paid online",
+      "an email said an open violation would cost me points"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "zh": [
+      "監理機關不會用email催繳罰單或要你確認車籍",
+      "網址不是gov.tw結尾，或用短網址",
+      "繳罰單卻要你輸入信用卡號和安全碼",
+      "限今天、24小時內，否則強制執行"
+    ],
+    "en": [
+      "Motor vehicles offices never chase fines or ask to confirm records by email.",
+      "The address doesn't end in gov.tw, or uses a short link.",
+      "Paying a fine asks for your card number and security code.",
+      "“Today” or “within 24 hours”, or enforcement."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "不要點連結；用監理服務App或自己輸入官方網址查詢",
+      "也可以到超商事務機查有沒有罰單",
+      "輸入過卡號請馬上通知銀行停卡，有疑問打165"
+    ],
+    "en": [
+      "Don't tap the link; check in the official app or by typing the official address yourself.",
+      "You can also check for fines at a convenience-store kiosk.",
+      "If you entered a card number, ask your bank to block it; call 165 if unsure."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "詐團冒名寄信誘點連結　公路局：不會寄電郵催繳罰單",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202611110196.aspx",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "交通違規未繳詐騙頻傳　公路局停用電郵通知",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202508120067.aspx",
+      "date": "2025-08-12"
+    },
+    {
+      "title": "公路局：催繳交通違規罰單有詐騙 請勿點選假連結",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/ahel/202507020074.aspx",
+      "date": "2025-07-02"
+    },
+    {
+      "title": "【詐騙】監理服務網電子郵件通知罰單未繳？線上繳納？大量散播！當心信用卡遭盜刷",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2025/09/fraud-mail.html",
+      "date": "2025-09-04"
+    },
+    {
+      "title": "【詐騙】收到「交通違規罰鍰」不明簡訊？假冒gov.tw的假跳轉網址！會盜刷信用卡",
+      "publisher": "MyGoPen",
+      "url": "https://www.mygopen.com/2023/04/govtw.html",
+      "date": "2023-04-28"
+    }
+  ],
+  "updated": "2026-11-18"
+}

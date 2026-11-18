@@ -1,0 +1,143 @@
+{
+  "id": "tw/fake-loan-ad",
+  "country": "tw",
+  "lang": "zh",
+  "status": "active",
+  "channels": [
+    "social",
+    "sms",
+    "online"
+  ],
+  "sender": {
+    "zh": "「保證核貸、信用不良可辦」的網路廣告、簡訊，或自稱資產管理公司、貸款專員的人",
+    "en": "An online ad or text promising “guaranteed approval, bad credit OK”, or a self-styled asset manager or loan agent"
+  },
+  "name": {
+    "zh": "假貸款：保證核貸，先繳手續費或交出存摺、網銀密碼「美化帳戶」",
+    "en": "Fake loan: guaranteed approval if you pay a fee first or hand over your bankbook and login to “dress up” your account"
+  },
+  "how": {
+    "zh": "急需用錢的人在網路或簡訊看到「快速核貸、預撥金額已入帳、免保人、免聯徵、信用不良可辦」的廣告，點進去被要求加LINE，接著有「資產管理公司」的客服來電。對方說要先繳手續費、代辦費，或說你的帳戶金流不足，要先「美化帳戶」、「包裝金流」，要你交出金融卡、存摺、網銀帳號密碼或驗證碼。你的帳戶隨後有大筆不明款項進出，其實是被拿去當洗錢人頭戶，最後被列警示帳戶，貸款也從沒下來。",
+    "en": "People who need money see ads or texts saying “fast approval”, “your advance has been paid”, “no guarantor”, “no credit check” or “bad credit OK”. Clicking leads to a LINE account and a call from an “asset management company”. They demand an upfront handling or agency fee, or say your account turnover is too low and must be “dressed up”, and ask for your bank card, bankbook, online-banking login or codes. Large unknown sums then pass through your account: it is being used as a money-laundering mule account, it gets flagged by the bank, and the loan never arrives."
+  },
+  "steps": [
+    {
+      "text": {
+        "zh": "看到保證核貸、信用不良可辦的廣告或簡訊，被要求加LINE。",
+        "en": "An ad or text promises guaranteed approval even with bad credit and asks you to add LINE."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "zh": "假專員要你先付手續費、代辦費。",
+        "en": "A fake agent asks for a handling or agency fee first."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "zh": "說要美化帳戶，要你交出金融卡、存摺、網銀帳密或驗證碼。",
+        "en": "They say your account must be “dressed up” and ask for your card, bankbook, online login or codes."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "zh": "帳戶被拿去洗錢、變成警示帳戶，貸款沒下來。",
+        "en": "Your account is used for laundering and flagged, and no loan arrives."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "zh": "【快速核貸】您的信貸額度30萬已預撥，免保人免聯徵，信用不良也可辦，今日加LINE專員即可撥款：[連結]",
+        "en": "[Fast loan] Your credit line of 300,000 has been pre-approved. No guarantor, no credit check, bad credit OK. Add our agent on LINE today to get the money: [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "zh": "您的帳戶現金流不夠，銀行不會核貸。我們公司可以先幫您美化帳戶，請提供網路銀行的使用者代碼和密碼，包裝好財力後保證過件。",
+        "en": "Your account's cash flow is too low and the bank won't approve you. Our company can dress up your account first; give us your online-banking user code and password and once your finances look good, approval is guaranteed."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "zh": [
+      "網路貸款廣告說保證核貸要先繳手續費",
+      "貸款專員說要美化帳戶叫我給網銀密碼",
+      "說信用不良也可以借錢要我寄存摺",
+      "簡訊說貸款已經預撥要我加LINE",
+      "辦貸款後我的帳戶變成警示帳戶"
+    ],
+    "en": [
+      "an online loan ad promised approval if i paid a fee first",
+      "the loan agent said they had to dress up my account and asked for my online banking password",
+      "they said i could borrow even with bad credit and asked me to send my bankbook",
+      "a text said my loan was already paid out and to add them on line",
+      "after applying for a loan my account was flagged by the bank"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "asks_for_code",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "zh": [
+      "保證核貸、免聯徵、信用不良可辦",
+      "放款前要先付手續費、代辦費",
+      "要你交出金融卡、存摺、網銀帳密或驗證碼",
+      "說要美化帳戶、包裝金流"
+    ],
+    "en": [
+      "Guaranteed approval, no credit check, bad credit OK.",
+      "A fee before the loan is paid.",
+      "You are asked for your bank card, bankbook, online login or codes.",
+      "Talk of “dressing up” your account or “packaging” cash flow."
+    ]
+  },
+  "whatToDo": {
+    "zh": [
+      "需要貸款請直接找銀行辦理",
+      "不要交出金融卡、存摺、密碼或驗證碼給任何人",
+      "有疑問打165；帳戶被盜用請馬上聯絡銀行並報警"
+    ],
+    "en": [
+      "If you need a loan, go to a bank directly.",
+      "Never hand your card, bankbook, passwords or codes to anyone.",
+      "Call 165 if unsure; if your account was misused, call your bank and the police at once."
+    ]
+  },
+  "reportTo": [
+    "tw/antifraud-165",
+    "tw/your-bank",
+    "tw/police-110",
+    "tw/fsc-1998"
+  ],
+  "sources": [
+    {
+      "title": "刑事局提醒網貸助美化帳戶廣告　恐淪洗錢人頭戶",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/asoc/202608080163.aspx",
+      "date": "2026-08-08"
+    },
+    {
+      "title": "Whoscall：貸款詐騙占近8成　惡意連結逾6成",
+      "publisher": "中央社",
+      "url": "https://www.cna.com.tw/news/afe/202602240162.aspx",
+      "date": "2026-02-24"
+    },
+    {
+      "title": "三方詐騙手法再升級！刑事局破獲千萬財損詐欺案 查緝犯嫌30人",
+      "publisher": "內政部警政署刑事警察局",
+      "url": "https://www.cib.npa.gov.tw/ch/app/news/view?module=news&id=1885&serno=bf331ee7-d0ea-4326-8480-b5ccfc39cbaa",
+      "date": "2026-09-01"
+    }
+  ],
+  "updated": "2026-11-18"
+}
