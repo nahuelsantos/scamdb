@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { buildSite, esc } from '../../tools/build-site.mjs';
 import { ICONS, iconFor } from '../../site/templates/icons.js';
 import { loadRepo } from '../../lib/load.js';
+import { FEATURED } from '../../site/templates/home.js';
 
 const OK = new URL('../fixtures/repo-ok/', import.meta.url).pathname;
 const meta = { version: '2026-11-15.abc1234', builtAt: '2026-11-15T12:00:00Z' };
@@ -286,4 +287,15 @@ test('the report page has the form, the privacy note, Turnstile and its own CSP'
   const headers = readFileSync(new URL('../../site/_headers', import.meta.url), 'utf8');
   assert.match(headers, /\/report\/\*\n\s+! Content-Security-Policy\n\s+Content-Security-Policy: [^\n]*script-src 'self' https:\/\/challenges\.cloudflare\.com[^\n]*frame-src https:\/\/challenges\.cloudflare\.com/);
   rmSync(dir, { recursive: true });
+});
+
+test('the favicon is the anglerfish logo, built at build time, and the home catalogue shows US scams', () => {
+  const { dir, page } = build();
+  const fav = page('assets/favicon.svg');
+  assert.match(fav, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
+  assert.match(fav, /prefers-color-scheme:dark/);
+  assert.match(fav, /class="sk-acc"/);
+  rmSync(dir, { recursive: true });
+  const real = new Set(loadRepo(join(import.meta.dirname, '../..')).entries.map((e) => e.id));
+  for (const id of FEATURED) assert.ok(id.startsWith('us/') && real.has(id), id);
 });

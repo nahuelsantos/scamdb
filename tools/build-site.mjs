@@ -12,6 +12,7 @@ import { account } from '../site/templates/account.js';
 import { feed } from '../site/templates/feed.js';
 import { report } from '../site/templates/report.js';
 import { trends } from '../site/templates/trends.js';
+import { FAVICON } from '../site/templates/logo.js';
 
 export { esc } from '../site/templates/html.js';
 
@@ -53,6 +54,7 @@ export function buildSite(repo, outDir, meta, root) {
   put('404.html', notfound(ctx));
 
   for (const f of readdirSync(join(CODE, 'site/assets'))) copy(join(CODE, 'site/assets', f), `assets/${f}`);
+  put('assets/favicon.svg', FAVICON);
   copy(join(CODE, 'packages/matcher/index.js'), 'assets/packages/matcher/index.js');
   copy(join(CODE, 'packages/matcher/signs.js'), 'assets/packages/matcher/signs.js');
   copy(join(CODE, 'lib/text.js'), 'assets/lib/text.js');
