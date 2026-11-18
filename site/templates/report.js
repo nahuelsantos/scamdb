@@ -8,7 +8,7 @@ import { t } from '../i18n.js';
 export const TURNSTILE_SITE_KEY = '0x4AAAAAAGEPmIAcW1_PP5dE'; // scamdb.dev's own widget (public site key; its secret is TURNSTILE_SECRET_SITE)
 const CHANNELS = ['whatsapp', 'sms', 'phone', 'email', 'social', 'online', 'in-person'];
 const KEYS = ['repSending', 'repThanks', 'repThanksP', 'repAnother', 'repFail', 'repNeedText', 'repNeedCountry', 'repTurnstile', 'repTooMany',
-  'repShotSignedOut', 'repDrop', 'repDropOff', 'repUnreadable', 'repSignedIn', 'repCheckFirst'];
+  'repShotSignedOut', 'repFailShot', 'repDrop', 'repDropOff', 'repUnreadable', 'repSignedIn', 'repCheckFirst'];
 
 export function report({ repo, meta, lang = 'en' }) {
   const s = (k) => t(lang, k);
