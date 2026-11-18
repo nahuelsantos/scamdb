@@ -1,0 +1,139 @@
+{
+  "id": "ae/whatsapp-group-link-takeover",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "رسالة واتساب من اسم تعرفه، صديق أو قريب أو زميل",
+    "en": "A WhatsApp message from a name you know: a friend, relative or colleague"
+  },
+  "name": {
+    "ar": "رسالة واتساب من شخص تعرفه: «انضم للمجموعة من هذا الرابط»",
+    "en": "WhatsApp message from someone you know: “join the group with this link”"
+  },
+  "how": {
+    "ar": "تصلك رسالة واتساب من اسم موجود في جهات اتصالك تطلب منك الضغط على رابط للانضمام إلى مجموعة. الرابط يهدف إلى الاستيلاء على حسابك في واتساب وبياناتك، ثم يُستخدم حسابك لمراسلة معارفك. وقد يطلب المحتالون أيضاً بيانات البطاقة البنكية مستخدمين أسماء ومعلومات يعرفها المتلقي. حذّرت شرطة دبي في أكتوبر 2025 من تزايد هذا الأسلوب، وحذّرت منه هيئة دبي الرقمية من قبل.",
+    "en": "You get a WhatsApp message from a name in your contacts asking you to tap a link to join a group. The link is meant to take over your WhatsApp account and data, and your account is then used to message the people you know. Scammers may also ask for bank card details, using names and information the recipient knows. Dubai Police warned in October 2025 that this method is increasing, and the Digital Dubai Authority had warned about it before."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة من اسم تعرفه في واتساب.",
+        "en": "A message from a name you know on WhatsApp."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "يطلب منك الضغط على رابط للانضمام إلى مجموعة.",
+        "en": "It asks you to tap a link to join a group."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "بعد الضغط يُسرق الحساب أو البيانات.",
+        "en": "After you tap, the account or data is stolen."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ar": "قد يطلب بيانات البطاقة باسم شخص تعرفه.",
+        "en": "It may ask for card details in the name of someone you know."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "هلا، سوينا قروب للعائلة عشان ترتيبات العزيمة، ادخل من هالرابط بسرعة قبل لا يتسكّر [رابط]",
+        "en": "Hi, we made a family group for the dinner arrangements, join quickly through this link before it closes [link]"
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "ar": "مرحبا، أنا في موقف محرج والبطاقة ما تشتغل معي. ممكن ترسل لي رقم بطاقتك وتاريخ الانتهاء أدفع فيها وأرجع لك المبلغ اليوم؟",
+        "en": "Hi, I'm in an awkward spot and my card isn't working. Can you send me your card number and expiry date so I can pay with it, and I'll pay you back today?"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "وصلني رابط قروب من صديقي في الواتساب",
+      "ضغطت على رابط المجموعة وانسرق حسابي",
+      "حسابي في الواتساب صار يرسل رسائل لأصدقائي",
+      "صديقي طلب رقم بطاقتي في الواتساب",
+      "انخترق الواتساب بعد ما دخلت الرابط"
+    ],
+    "en": [
+      "got a group link from my friend on whatsapp",
+      "i tapped the group link and lost my account",
+      "my whatsapp started sending messages to my friends",
+      "a friend asked for my card number on whatsapp",
+      "whatsapp was hacked after i opened the link"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "رابط مجموعة غير متوقع حتى لو كان من شخص تعرفه.",
+      "استعجال للانضمام «قبل أن يُغلق».",
+      "طلب بيانات البطاقة عبر واتساب."
+    ],
+    "en": [
+      "An unexpected group link, even from someone you know.",
+      "Pressure to join “before it closes”.",
+      "Being asked for card details on WhatsApp."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تضغط على الرابط، واتصل بالشخص هاتفياً للتأكد.",
+      "فعّل التحقق بخطوتين في إعدادات واتساب.",
+      "إذا فقدت حسابك، حذّر جهات اتصالك وأبلغ الشرطة."
+    ],
+    "en": [
+      "Don't tap the link; call the person to check.",
+      "Turn on two-step verification in WhatsApp's settings.",
+      "If you lose your account, warn your contacts and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/moi-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police combat mobile phone hackers, emphasise on prompt reporting",
+      "publisher": "Gulf Today",
+      "url": "https://www.gulftoday.ae/news/2025/10/25/dubai-police-combat-mobile-phone-hackers-emphasise-on-prompt-reporting",
+      "date": "2025-10-25"
+    },
+    {
+      "title": "Dubai Police hone in on WhatsApp hackers",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/dubai-police-hone-in-on-whatsapp-hackers-1.500321300",
+      "date": "2025-10-25"
+    },
+    {
+      "title": "Dubai Digital Authority warns of hacking attempts through Whatsapp",
+      "publisher": "Gulf Today",
+      "url": "https://gulftoday.ae/News/2023/10/03/Dubai-Digital-warns-of-hacking-attempts-through-Whatsapp",
+      "date": "2023-10-03"
+    }
+  ],
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,159 @@
+{
+  "id": "ae/fake-parcel-fee-sms",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "ar": "رسالة باسم «بريد الإمارات» أو «أرامكس» أو شركة شحن أخرى، غالباً من رقم دولي",
+    "en": "A message in the name of Emirates Post, Aramex or another courier, often from an international number"
+  },
+  "name": {
+    "ar": "رسالة شحن مزيفة: «شحنتك متوقفة، ادفع 3 دراهم أو حدّث العنوان»",
+    "en": "Fake parcel text: “your shipment is held, pay Dh3 or update your address”"
+  },
+  "how": {
+    "ar": "تصلك رسالة نصية أو واتساب أو بريد إلكتروني تقول إن شحنتك لم تُسلَّم لأن العنوان ناقص أو أن عليها رسوماً صغيرة، مثل 3 دراهم. الرابط يفتح صفحة تشبه موقع شركة الشحن وتطلب بيانات البطاقة ورمز التحقق، ثم تُسحب مبالغ أكبر بكثير. حذّر مجلس الأمن السيبراني مع مجموعة بريد الإمارات ومنصة «درب» في يناير 2026 من هذه الرسائل، وتلقت شرطة أبوظبي شكاوى متكررة عنها. والجهات الموثوقة لا تطلب بيانات الدفع في رسائل لم تطلبها.",
+    "en": "You get a text, WhatsApp message or email saying your parcel could not be delivered because the address is incomplete, or that it has a small fee, such as Dh3. The link opens a page that looks like the courier's site and asks for your card details and the OTP, and then much larger amounts are taken. In January 2026 the UAE Cyber Security Council, Emirates Post Group and the Darb platform warned about these messages, and Abu Dhabi Police have received repeated complaints. Genuine companies do not ask for payment details in unsolicited messages."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة باسم شركة شحن عن شحنة متوقفة أو عنوان غير مكتمل.",
+        "en": "A message in a courier's name about a held parcel or an incomplete address."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "فيها رابط لتحديث العنوان أو دفع رسوم صغيرة.",
+        "en": "It has a link to update the address or pay a small fee."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "تهديد بإرجاع الشحنة إذا لم تدفع اليوم.",
+        "en": "A threat that the parcel will be returned if you don't pay today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "الصفحة تطلب رقم البطاقة ثم رمز التحقق.",
+        "en": "The page asks for the card number and then the OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "بريد الإمارات: شحنتك محتجزة في المستودع بسبب عدم اكتمال العنوان. يرجى دفع رسوم إعادة التوصيل 3 دراهم وتحديث بياناتك عبر الرابط [رابط] خلال 24 ساعة وإلا سيتم إرجاع الشحنة.",
+        "en": "Emirates Post: Your shipment is held at the warehouse because the address is incomplete. Please pay the Dh3 redelivery fee and update your details at [link] within 24 hours or the shipment will be returned."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ar": "أرامكس: تعذّر توصيل طردك بسبب رسوم جمركية غير مدفوعة بقيمة 4.50 درهم. ادفع الآن لتحديد موعد التوصيل: [رابط]",
+        "en": "Aramex: Your parcel could not be delivered because of an unpaid customs fee of Dh4.50. Pay now to schedule delivery: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "رسالة من بريد الإمارات تطلب دفع رسوم الشحنة",
+      "وصلتني رسالة أن الشحنة متوقفة بسبب العنوان",
+      "طلبوا ثلاث دراهم عشان يوصلون الطرد",
+      "دخلت بيانات البطاقة في رابط الشحن",
+      "رسالة أرامكس فيها رابط لتحديث العنوان"
+    ],
+    "en": [
+      "emirates post text asking me to pay a parcel fee",
+      "message said my shipment is held because of the address",
+      "they asked for 3 dirhams to deliver the parcel",
+      "i entered my card details on the delivery link",
+      "aramex text with a link to update my address"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ar": [
+      "رسالة من رقم دولي أو رقم عادي، لا من اسم المرسل الرسمي لشركة الشحن.",
+      "رسوم صغيرة جداً تُطلب عبر رابط.",
+      "صفحة تطلب رمز التحقق لدفع بضعة دراهم."
+    ],
+    "en": [
+      "A message from an international or ordinary number, not the courier's official sender name.",
+      "A very small fee requested through a link.",
+      "A page that asks for the OTP to pay a few dirhams."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تفتح الرابط ولا ترد على الرسالة.",
+      "تتبّع الشحنة بإدخال رقمها في تطبيق شركة الشحن أو موقعها الرسمي.",
+      "إذا أدخلت بيانات البطاقة، اتصل بالبنك فوراً لإيقافها وأبلغ الشرطة."
+    ],
+    "en": [
+      "Don't open the link or reply.",
+      "Track the parcel by typing its number into the courier's official app or website.",
+      "If you entered your card details, call your bank at once to block the card and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/your-bank",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/tdra"
+  ],
+  "sources": [
+    {
+      "title": "UAE Cyber Security Council Warns of Rising Online Fraud: Stay Alert",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/uae-cyber-security-council-alerts-public-to-rising-online-fraud-threats-1.500426460",
+      "date": "2026-01-30"
+    },
+    {
+      "title": "مجلس الأمن السيبراني و\"بريد الإمارات\" و\"درب\" يحذرون من رسائل احتيالية مزيفة",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/other/2026-01-30-1.2011051",
+      "date": "2026-01-30"
+    },
+    {
+      "title": "Dh3 ‘delivery’ scam: Abu Dhabi Police alert UAE residents of fake messages",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/crime/dh3-delivery-scam-abu-dhabi-police-alert-uae-residents-of-fake-messages-1.500272577",
+      "date": "2025-09-17"
+    },
+    {
+      "title": "محتالون ينتحلون صفة «مؤسسات محلية» ويستدرجون الضحايا إلى روابط مشبوهة",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/accidents/2024-01-14-1.1817064",
+      "date": "2024-01-14"
+    },
+    {
+      "title": "Parcel scams surge: Aramex uses AI to teach customers how to spot fake messages",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/business/retail/parcel-scams-surge-aramex-uses-ai-to-teach-customers-how-to-spot-fake-messages-1.500168144",
+      "date": "2025-06-18"
+    }
+  ],
+  "story": {
+    "ar": "روى أحد السكان لشرطة أبوظبي أنه كاد يخسر 40 ألف درهم من بطاقته الائتمانية بعد أن حاول دفع «رسوم توصيل» قدرها 3 دراهم طُلبت منه في رسالة عن شحنة.",
+    "en": "A resident told Abu Dhabi Police he almost lost Dh40,000 from his credit card after trying to pay a Dh3 “delivery fee” requested in a message about a parcel."
+  },
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "ae/part-time-job-money-mule",
+  "country": "ae",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A “financial services company” offering remote part-time work"
+  },
+  "name": {
+    "en": "Part-time job that uses your bank account: “receive client payments and transfer them on”"
+  },
+  "how": {
+    "en": "An ad on social media offers flexible remote part-time work with quick income. After you apply you are “accepted” and asked to open a bank account or use your own “for administrative purposes”. Money starts arriving and you are told to transfer it quickly to other accounts for a commission. The money comes from crime, and Dubai Police question the account holder, who can face legal consequences. Some versions ask for registration or activation fees instead."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A remote part-time job ad promising quick, easy income."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The “employer” says they are a financial services company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You are asked to use your bank account to receive and pass on money."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "You must transfer each payment on quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi! Your application for the remote Finance Assistant role has been accepted ✅ Your task: receive client payments in your bank account and transfer them to our partner accounts within 1 hour. You earn 3% commission on every transfer. Please share your account details to start today."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "part time job asked me to use my bank account",
+      "they send money to my account and i transfer it on",
+      "earned commission for forwarding payments",
+      "police called me about transfers in my account",
+      "remote job asked me to open a new bank account"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "A job that needs your bank account to move other people's money.",
+      "Commission for each transfer you make.",
+      "Being asked to open a new account “for administrative purposes”."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never let anyone use your bank account to receive or forward money.",
+      "If money arrives, don't forward it; tell your bank and the police.",
+      "Report the ad to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/your-bank",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police warn residents after man falls victim to part-time job fraud",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/crime/dubai-police-warning-part-time-job-fraud",
+      "date": "2026-08-05"
+    },
+    {
+      "title": "UAE authority warns residents against fake job offers, recruitment scams",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/jobs/uae-warn-fake-offers-recruitment-scams",
+      "date": "2026-08-08"
+    }
+  ],
+  "story": {
+    "en": "A young man saw an ad for a remote part-time job on social media and was told he had been accepted. The “employers”, posing as a financial services company, asked him to open an account or use his own. Money started arriving and he was asked to transfer it quickly to other accounts for a commission, with promises of a permanent job. Police called him in for questioning after reviewing the transfers; he said he had no idea he was working for a gang."
+  },
+  "updated": "2026-11-18"
+}

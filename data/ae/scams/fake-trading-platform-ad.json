@@ -1,0 +1,110 @@
+{
+  "id": "ae/fake-trading-platform-ad",
+  "country": "ae",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "en": "A social media ad or video, sometimes a deepfake of a UAE minister or well-known figure"
+  },
+  "name": {
+    "en": "Deepfake investment ad: “invest in this programme with guaranteed returns”"
+  },
+  "how": {
+    "en": "Ads and videos on social media promote trading in shares, gold, oil or crypto with quick, guaranteed returns, sometimes using AI deepfakes of senior UAE officials. In October 2025 the UAE Minister of Economy said videos of him recommending shares were deepfakes. Victims are sent to fake websites, asked to register and to transfer money urgently. Dubai Police and the Ministry of Interior say legitimate platforms never guarantee profits or push urgent transfers."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad or video of a well-known person recommending an investment."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "Guaranteed or very high returns in a short time."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "A link to sign up on a trading website."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Pressure to transfer money or crypto quickly."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "UAE OFFICIAL: New government-backed trading programme for residents. Invest AED 1,000 and earn up to AED 20,000 a month, guaranteed. Limited places, register today ➡️ [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "video of a minister recommending an investment",
+      "ad promised guaranteed returns on shares",
+      "signed up on a trading site from a facebook ad",
+      "they pushed me to deposit money urgently",
+      "investment platform was not licensed in the uae"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Guaranteed profits or “risk-free” returns.",
+      "An official or celebrity promoting an investment in an ad.",
+      "“Limited-time offer” pressure to transfer now."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't invest through ads or videos.",
+      "Check the platform's licence with the UAE authorities before transferring anything.",
+      "Report the ad and, if you paid, call your bank and the police."
+    ]
+  },
+  "reportTo": [
+    "ae/moi-cybercrime",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police warn residents against fake investment, high-return trading scams",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/crime/dubai-police-warn-residents-fake-investment-trading-scams",
+      "date": "2026-04-26"
+    },
+    {
+      "title": "UAE minister says investment videos of him circulating online are deepfakes",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/uae-minister-investment-videos-online-deepfakes",
+      "date": "2025-10-13"
+    },
+    {
+      "title": "UAE warns public against fraudulent investment schemes promising quick returns",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/uae-warns-against-fake-investment-and-trading-opportunities-1.500696073",
+      "date": "2026-10-02"
+    }
+  ],
+  "updated": "2026-11-18"
+}

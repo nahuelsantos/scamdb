@@ -1,0 +1,159 @@
+{
+  "id": "ae/fake-bank-call-update-details",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "ar": "متصل يقول إنه موظف في بنكك أو في جهة رسمية، وغالباً من رقم هاتف متحرك عادي",
+    "en": "A caller who says they work for your bank or a government body, often from an ordinary mobile number"
+  },
+  "name": {
+    "ar": "اتصال من «موظف البنك»: «نحتاج تحديث بياناتك، أعطني رمز التحقق»",
+    "en": "Fake bank call: “we need to update your details, give me the code”"
+  },
+  "how": {
+    "ar": "يتصل بك شخص يقول إنه موظف في البنك أو في جهة حكومية، ويبدأ بكلام مطمئن ثم يدّعي أن بطاقتك أو حسابك يحتاج إلى «تحديث بيانات» عاجل وإلا سيتم إيقافه. يطلب رقم البطاقة والرمز الثلاثي على ظهرها ثم رمز التحقق (OTP) الذي يصلك، ويستخدمها لسحب أموالك أو الدخول إلى حسابك. أوقفت شرطة دبي في مايو 2025 ثلاث عصابات من 13 شخصاً استخدمت هذا الأسلوب، وتقول إن سيدة فقدت أكثر من 150 ألف درهم بعد مكالمة واحدة. البنوك والجهات الرسمية في الدولة لا تطلب هذه البيانات عبر الهاتف أو الرسائل.",
+    "en": "Someone calls saying they are from your bank or a government body. They start off reassuring, then claim your card or account needs an urgent “update” or it will be blocked. They ask for the card number, the three digits on the back and then the one-time code (OTP) you receive, and use them to take your money or get into your account. In May 2025 Dubai Police arrested three gangs of 13 people using this method, and say one woman lost more than Dh150,000 after a single call. Banks and official bodies in the UAE do not ask for these details by phone or text."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "اتصال أو رسالة من «موظف البنك» أو من جهة رسمية.",
+        "en": "A call or text from a “bank employee” or an official body."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "يقول إن البطاقة ستُوقف أو أن الحساب فيه مشكلة ويجب تحديث البيانات الآن.",
+        "en": "They say the card will be blocked or the account has a problem and must be updated now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "يطلب رقم البطاقة والرمز الثلاثي (CVV).",
+        "en": "They ask for the card number and the three-digit CVV."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "يطلب رمز التحقق الذي وصلك برسالة نصية.",
+        "en": "They ask for the one-time code you just received by text."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ar": "يبقيك على الخط حتى تكتمل العملية.",
+        "en": "They keep you on the line until it is done."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "مرحبا، معك قسم خدمة العملاء في البنك. بطاقتك سيتم إيقافها اليوم لعدم تحديث البيانات. عشان نحدثها الحين أحتاج رقم البطاقة والثلاث أرقام اللي ورا، وبيوصلك رمز على جوالك، قرّاه لي.",
+        "en": "Hello, this is the bank's customer service. Your card will be blocked today because your details have not been updated. To update it now I need the card number and the three digits on the back, and you will get a code on your phone, read it to me."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ar": "عميلنا العزيز، تم إيقاف بطاقتك مؤقتاً لأسباب أمنية. يرجى الاتصال بقسم البطاقات على الرقم [رقم] خلال 24 ساعة لتحديث بياناتك وتجنب الإيقاف النهائي.",
+        "en": "Dear customer, your card has been temporarily suspended for security reasons. Please call the cards department on [number] within 24 hours to update your details and avoid permanent suspension."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "اتصل بي موظف بنك وطلب تحديث البيانات",
+      "طلب مني رمز التحقق اللي وصلني",
+      "قال إن بطاقتي بتنوقف إذا ما حدثت بياناتي",
+      "عطيته الأرقام اللي ورا البطاقة وانسحبت فلوسي",
+      "متصل يدعي أنه من البنك يطلب رقم البطاقة"
+    ],
+    "en": [
+      "a bank employee called asking me to update my details",
+      "he asked for the otp code i received",
+      "said my card would be blocked if i did not update my details",
+      "i gave the cvv and money was taken from my account",
+      "caller claiming to be from the bank asked for my card number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "ar": [
+      "أي شخص يطلب رمز التحقق أو الرمز الثلاثي أو الرقم السري عبر الهاتف.",
+      "التهديد بإيقاف البطاقة أو الحساب خلال ساعات.",
+      "اتصال من رقم متحرك عادي باسم البنك أو جهة حكومية."
+    ],
+    "en": [
+      "Anyone asking for the OTP, CVV or PIN over the phone.",
+      "Threats that your card or account will be blocked within hours.",
+      "A call from an ordinary mobile number in the name of a bank or government body."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "أغلق الخط ولا تعطِ أي رمز أو رقم.",
+      "اتصل بالبنك بنفسك على الرقم الموجود خلف البطاقة.",
+      "إذا أعطيت بياناتك، أوقف البطاقة فوراً عبر البنك ثم أبلغ الشرطة."
+    ],
+    "en": [
+      "Hang up and don't give any code or number.",
+      "Call your bank yourself on the number on the back of your card.",
+      "If you gave your details, block the card through your bank straight away, then report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/your-bank",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/moi-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "الاحتيال الهاتفي.. «مكالمة واحدة» تكفي للاستيلاء على مدخرات حياة",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/other/2026-04-29-1.2040778",
+      "date": "2026-04-29"
+    },
+    {
+      "title": "شرطة دبي تضبط 3 عصابات تحتال على عملاء البنوك هاتفياً",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/accidents/2025-05-08-1.1942872",
+      "date": "2025-05-08"
+    },
+    {
+      "title": "Dubai Police warn public against scams involving fake phone calls and SMS",
+      "publisher": "Gulf Today",
+      "url": "https://www.gulftoday.ae/news/2026/04/11/dubai-police-warn-public-against-scams-involving-fake-phone-calls-and-sms",
+      "date": "2026-04-11"
+    },
+    {
+      "title": "Man in UAE reveals OTP, loses thousands in fraud",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/crime/man-in-uae-reveals-otp-loses-thousands-in-fraud-1.500348902",
+      "date": "2025-11-17"
+    }
+  ],
+  "story": {
+    "ar": "اتصل رجل بشخص في أبوظبي وقدّم نفسه موظفاً في البنك، وقال إن بيانات بطاقته تحتاج إلى تحديث. بعد أن أعطاه الضحية بيانات البطاقة ورموز الأمان، سحب المحتال المال من حسابه. أدين المتهم جنائياً، ثم ألزمته محكمة أبوظبي بردّ 24,500 درهم ودفع 3,000 درهم تعويضاً.",
+    "en": "A man phoned a person in Abu Dhabi, introduced himself as a bank employee and said the card details needed updating. After the victim shared the card information and security codes, the man withdrew the money. He was convicted, and an Abu Dhabi court ordered him to repay Dh24,500 plus Dh3,000 in compensation."
+  },
+  "updated": "2026-11-18"
+}

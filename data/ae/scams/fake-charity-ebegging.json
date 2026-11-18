@@ -1,0 +1,126 @@
+{
+  "id": "ae/fake-charity-ebegging",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "منشور أو رسالة تطلب التبرع لمريض أو أسرة محتاجة، خاصة في رمضان",
+    "en": "A post or message asking for donations for a patient or a family in need, especially in Ramadan"
+  },
+  "name": {
+    "ar": "تسوّل إلكتروني وتبرعات وهمية: «ساعدوا هذا المريض»",
+    "en": "Online begging and fake charity appeals: “help this patient”"
+  },
+  "how": {
+    "ar": "تنتشر في مواقع التواصل ومجموعات واتساب مناشدات مؤثرة لمرضى أو أطفال أو أسر محتاجة، مع صور لمستشفيات وتقارير طبية ورسائل صوتية، وتطلب التحويل إلى حساب شخصي أو عبر رابط. تقول السلطات إن بعضها مصنوع بالذكاء الاصطناعي بالكامل. التسوّل الإلكتروني جريمة في الدولة، وجمع التبرعات لجهات غير مرخصة قد يعاقب بالسجن وغرامة تصل إلى 500 ألف درهم. التبرع يكون فقط عبر الجمعيات الخيرية المرخصة.",
+    "en": "Moving appeals for sick people, children or families in need spread on social media and in WhatsApp groups, with hospital photos, medical reports and voice notes, asking you to transfer money to a personal account or through a link. Authorities say some are made entirely with AI. Online begging is a crime in the UAE, and collecting donations for unlicensed entities can bring prison and a fine of up to Dh500,000. Give only through licensed charities."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "منشور أو رسالة مؤثرة عن مريض أو أسرة محتاجة.",
+        "en": "A moving post or message about a patient or a family in need."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "طلب مساعدة عاجلة قبل العملية أو قبل فوات الأوان.",
+        "en": "An urgent plea for help before an operation or before it is too late."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "طلب تحويل إلى حساب شخصي أو عبر رابط تبرع.",
+        "en": "A request to transfer to a personal account or through a donation link."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "أهل الخير 🙏 طفل عمره 6 سنوات يحتاج عملية قلب عاجلة خلال يومين والأهل ما عندهم المبلغ. أي مساعدة ولو بسيطة تفرق. التحويل على الحساب [رقم] أو عبر الرابط [رابط]. انشروها لعلها تكون في ميزان حسناتكم.",
+        "en": "Good people 🙏 a 6-year-old child needs urgent heart surgery within two days and the family doesn't have the money. Any help, even small, makes a difference. Transfer to account [number] or through the link [link]. Share it, may it count among your good deeds."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "منشور يطلب تبرع لمريض في المستشفى",
+      "رسالة في رمضان تطلب مساعدة لأسرة محتاجة",
+      "طلبوا أحول التبرع على حساب شخصي",
+      "صور مريض طلعت مصنوعة بالذكاء الاصطناعي",
+      "رابط تبرع لجمعية غير معروفة"
+    ],
+    "en": [
+      "post asking for donations for a patient in hospital",
+      "ramadan message asking for help for a family in need",
+      "they asked me to send the donation to a personal account",
+      "photos of a patient turned out to be made with ai",
+      "donation link for a charity i had never heard of"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "money_request",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "ar": [
+      "التحويل إلى حساب شخصي بدل جمعية مرخصة.",
+      "قصة مؤثرة مع استعجال شديد.",
+      "روابط تبرع تنتشر في المجموعات دون جهة معروفة."
+    ],
+    "en": [
+      "Transfers to a personal account instead of a licensed charity.",
+      "A moving story with heavy urgency.",
+      "Donation links shared in groups with no known organisation behind them."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "تبرّع فقط عبر الجمعيات والمنصات المرخصة.",
+      "لا تحوّل لأفراد يجمعون التبرعات خارج القنوات الرسمية.",
+      "أبلغ عن المنشور أو الرسالة للشرطة."
+    ],
+    "en": [
+      "Give only through licensed charities and platforms.",
+      "Don't transfer money to individuals collecting donations outside official channels.",
+      "Report the post or message to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/moi-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police Warn Against Online Charity Scams During Ramadan",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/ramadan/dont-fall-for-online-charity-scams-this-ramadan-dubai-police-1.500445028",
+      "date": "2026-02-16"
+    },
+    {
+      "title": "UAE authorities warn of AI powering e-begging schemes during Ramadan",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/uae-warn-of-ai-e-begging-schemes-during-ramadan",
+      "date": "2026-02-21"
+    },
+    {
+      "title": "UAE Enforces Strict Penalties for Unlicensed Donations: Jail and Dh500,000 Fine",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/uae-warns-jail-and-dh500000-fine-for-collecting-donations-without-licence-1.500452288",
+      "date": "2026-02-23"
+    }
+  ],
+  "updated": "2026-11-18"
+}

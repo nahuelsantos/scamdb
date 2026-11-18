@@ -1,0 +1,122 @@
+{
+  "id": "ae/fake-toll-sms",
+  "country": "ae",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A text that looks like it is from Darb or Salik, often from an international or unknown number"
+  },
+  "name": {
+    "en": "Fake toll text: “overdue toll fee AED4, pay now to avoid a fine”"
+  },
+  "how": {
+    "en": "You get a text saying you owe a small Darb or Salik toll fee, often AED4, and that a bigger fine or traffic points will follow today unless you pay through the link. Some ask you to reply “Y” to open the payment page. The page asks for your card details and is used to drain your account. In April 2026 the UAE Public Prosecution said 35 reports, 29 of them in Dubai, led to a network run from an apartment in Ajman with 22 card machines used to process stolen card data. Authorities say toll operators generally do not collect overdue payments by text message."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A text in Darb's or Salik's name about an unpaid toll."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "A deadline: pay today or get a AED100 fine and traffic points."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A payment link, sometimes after you reply “Y”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "The page asks for your card number and the OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "DARB Notice: Unpaid toll of AED 4.00 recorded on your vehicle. Pay before 23:59 today or a fine of AED 100 and black points will be applied. Reply Y to activate your payment link."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "en": "Salik: Your trip fee has not been paid. Pay within 24 hours to avoid a fine and suspension of your tag: [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "darb text asking me to pay 4 dirhams toll fee",
+      "salik message with a link to pay a fine",
+      "text said reply y to open the payment link",
+      "paid a toll fee from a text and money was taken from my card",
+      "message from an international number about unpaid tolls"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A toll or fine demand that arrives as a text with a link.",
+      "A sender that is a phone number, not the operator's name.",
+      "Being told to reply “Y” to make the link work."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't reply or tap the link.",
+      "Check your balance only in the official Darb, Salik or TAMM app or website.",
+      "If you entered card details, call your bank to block the card and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/your-bank",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/tdra"
+  ],
+  "sources": [
+    {
+      "title": "Dh4 traffic fine? Cross-emirate fraud network busted over fake SMS scam",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/crime/dh4-traffic-fine-cross-emirate-fraud-network-busted-over-fake-sms-scam",
+      "date": "2026-04-11"
+    },
+    {
+      "title": "'Do not reply': UAE residents alerted against fake toll payment messages",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/rak-police-warn-motorists-fake-toll-payment-messages",
+      "date": "2026-02-05"
+    },
+    {
+      "title": "Ras Al Khaimah Police Alert: Beware of Fake Toll Payment Scams",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/people/ras-al-khaimah-police-warn-motorists-against-fake-toll-payment-messages-1.500432921",
+      "date": "2026-02-05"
+    },
+    {
+      "title": "Dubai: Did you receive this fake Salik message?",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/dubai-did-you-receive-this-fake-salik-message",
+      "date": "2023-05-07"
+    }
+  ],
+  "updated": "2026-11-18"
+}

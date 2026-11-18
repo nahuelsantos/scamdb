@@ -1,0 +1,143 @@
+{
+  "id": "ae/fake-domestic-worker-ad",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "phone"
+  ],
+  "sender": {
+    "ar": "إعلان في مواقع التواصل لمكتب استقدام عمالة منزلية بأسعار مغرية",
+    "en": "A social media ad for a domestic worker recruitment office with tempting prices"
+  },
+  "name": {
+    "ar": "إعلان استقدام عمالة منزلية وهمي: «العاملة جاهزة، ادفع رسوم التوصيل»",
+    "en": "Fake domestic worker ad: “the worker is ready, pay the delivery fee”"
+  },
+  "how": {
+    "ar": "ترى إعلاناً على مواقع التواصل عن عمالة منزلية بسعر أقل من المكاتب المرخصة. عند الاتصال يؤكدون أن هناك عاملة تناسب طلبك، ويطلبون عربوناً صغيراً، ثم «رسوم توصيل»، ثم دفعة أخيرة قبل التسليم، وبعد آخر تحويل ينقطع التواصل. أبلغت شرطة دبي في يناير 2026 عن سيدة خسرت 10 آلاف درهم بهذه الطريقة، وتطلب التعامل فقط مع المكاتب المرخصة من وزارة الموارد البشرية والتوطين.",
+    "en": "You see a social media ad offering domestic workers for less than licensed offices charge. When you call, they confirm a worker who fits your needs is available and ask for a small deposit, then a “delivery fee”, then a final payment before handover, and after the last transfer they stop answering. In January 2026 Dubai Police reported a woman who lost Dh10,000 this way, and ask people to deal only with offices licensed by the Ministry of Human Resources and Emiratisation (MoHRE)."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "إعلان عمالة منزلية بسعر مغرٍ على مواقع التواصل.",
+        "en": "A domestic worker ad with a tempting price on social media."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "يقولون إن العاملة المناسبة متوفرة الآن.",
+        "en": "They say a suitable worker is available right now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "طلب عربون ثم رسوم توصيل ثم دفعة أخيرة.",
+        "en": "A deposit, then a delivery fee, then a final payment."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "بعد آخر تحويل ينقطع التواصل.",
+        "en": "After the last transfer they disappear."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "مكتب استقدام 🇦🇪 عاملات منزليات جاهزات للتسليم خلال 48 ساعة، بدون انتظار وبأقل الأسعار. احجزي الآن بعربون 500 درهم فقط وتواصلي واتساب [رقم]",
+        "en": "Recruitment office 🇦🇪 domestic workers ready for delivery within 48 hours, no waiting and lowest prices. Book now with a deposit of only Dh500, contact us on WhatsApp [number]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ar": "تم تأكيد طلبك ✅ العاملة جاهزة. باقي رسوم التوصيل 1,200 درهم، حوّليها على الحساب [رقم] عشان نرسلها لك اليوم.",
+        "en": "Your order is confirmed ✅ The worker is ready. The delivery fee of Dh1,200 remains; transfer it to account [number] so we can send her to you today."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "إعلان خدامات في الانستقرام بسعر رخيص",
+      "دفعت عربون لمكتب استقدام واختفوا",
+      "طلبوا رسوم توصيل العاملة",
+      "مكتب عمالة منزلية غير مرخص أخذ فلوسي",
+      "حولت عشرة آلاف لمكتب خدم في الواتساب"
+    ],
+    "en": [
+      "instagram ad for a cheap domestic worker",
+      "paid a deposit to a recruitment office and they vanished",
+      "they asked for a delivery fee for the maid",
+      "unlicensed domestic worker office took my money",
+      "sent ten thousand to a maid agency on whatsapp"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "سعر أقل بكثير من المكاتب المرخصة.",
+      "دفعات متتالية بأسماء مختلفة قبل التسليم.",
+      "التواصل عبر واتساب فقط، بلا مكتب يمكن زيارته."
+    ],
+    "en": [
+      "A price far below licensed offices.",
+      "Repeated payments under different names before handover.",
+      "Contact only on WhatsApp, with no office you can visit."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "تأكد أن المكتب مرخص من وزارة الموارد البشرية والتوطين قبل أي دفع.",
+      "لا تحوّل أموالاً لحسابات شخصية.",
+      "أبلغ عن الإعلان للشرطة."
+    ],
+    "en": [
+      "Check the office is licensed by MoHRE before paying anything.",
+      "Don't transfer money to personal accounts.",
+      "Report the ad to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Woman loses Dh10,000 in fake domestic worker job scam",
+      "publisher": "The National",
+      "url": "https://www.thenationalnews.com/news/uae/2026/01/24/woman-loses-dh10000-in-fake-domestic-worker-job-scam",
+      "date": "2026-01-24"
+    },
+    {
+      "title": "Dubai Police warn residents against fraudulent recruitment offers for domestic workers on social media",
+      "publisher": "Gulf Today",
+      "url": "https://www.gulftoday.ae/news/2026/01/06/dubai-police-warn-residents-against-fraudulent-recruitment-offers-for-domestic-workers-on-social-media",
+      "date": "2026-01-06"
+    },
+    {
+      "title": "Dubai Police warn residents about fake domestic worker recruitment ads and unlicensed agencies",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/dubai-police-warn-against-fake-domestic-worker-recruitment-ads-1.500680463",
+      "date": "2026-09-19"
+    }
+  ],
+  "story": {
+    "ar": "كانت سيدة تبحث عن عاملة منزلية فرأت إعلاناً بشروط مغرية على مواقع التواصل. اتصلت بالرقم فأكدوا لها وجود عاملة مناسبة وطلبوا عربوناً صغيراً، ثم رسالة أخرى تطلب «رسوم توصيل»، ثم دفعة أخيرة قبل التسليم. بلغ مجموع ما دفعته 10 آلاف درهم، وانقطع التواصل بعد آخر تحويل.",
+    "en": "A woman looking for a domestic worker saw an ad with appealing terms on social media. She called the number, was assured a suitable worker was available and was asked for a small deposit, then another message asked for a “delivery fee”, then a final payment before handover. She paid Dh10,000 in total, and all contact stopped after the last transfer."
+  },
+  "updated": "2026-11-18"
+}

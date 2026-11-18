@@ -1,0 +1,103 @@
+{
+  "id": "ae/fake-travel-deal",
+  "country": "ae",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A travel “agency” website or social media account using a known company's name"
+  },
+  "name": {
+    "en": "Fake holiday deal: cheap flights and hotels that were never booked"
+  },
+  "how": {
+    "en": "Before holidays and in summer, fake websites and social media accounts offer flights, hotels and packages far below market prices, using professional logos or the names of known travel firms. They chat or call to rush you, saying places are limited or the offer ends in hours, and ask you to transfer to a personal account or pay through a link. Victims later find the tickets and hotels were never booked. Dubai Police warned about these deals in May 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A holiday package or ticket far cheaper than elsewhere."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The seller claims to be a known travel company."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "“Only a few places left” or “offer ends in hours”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "Payment to a personal account or an unknown link."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "EID SPECIAL ✈️ Dubai–Baku 5 nights, flights + 4* hotel only AED 1,299 per person! Only 6 seats left, offer ends tonight. Book via WhatsApp and pay by bank transfer to confirm."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "paid for a holiday package on instagram and it was fake",
+      "cheap flight tickets were never booked",
+      "travel agent asked me to transfer to a personal account",
+      "hotel booking from a social media offer did not exist",
+      "offer said only a few seats left so i paid quickly"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "Prices far below what airlines and hotels charge.",
+      "Payment to a personal account.",
+      "A rush to pay before you can check the booking."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Book through licensed travel agencies or the airline's and hotel's own sites.",
+      "Check the booking reference with the airline or hotel before paying the rest.",
+      "Report the account or site to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police warn residents against fake online holiday travel deals",
+      "publisher": "Gulf Today",
+      "url": "https://www.gulftoday.ae/news/2026/05/19/dubai-police-warn-residents-against-fake-online-holiday-travel-deals",
+      "date": "2026-05-19"
+    },
+    {
+      "title": "Fraud rises in UAE during summer: Holidaymakers lured with fake offers, AI scams",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/fraud-rises-uae-holidaymakers-targeted-fake-offers-ai-scams",
+      "date": "2026-07-16"
+    }
+  ],
+  "updated": "2026-11-18"
+}

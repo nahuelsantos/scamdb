@@ -1,0 +1,140 @@
+{
+  "id": "ae/fake-consumer-protection-site",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "ar": "موقع يظهر في البحث باسم «حماية المستهلك»، ثم متصل يقول إنه موظف فيها",
+    "en": "A site that shows up in search as “Consumer Protection”, then a caller who says they work there"
+  },
+  "name": {
+    "ar": "موقع «حماية المستهلك» المزيف: «نزّل هذا التطبيق لمتابعة شكواك»",
+    "en": "Fake Consumer Protection site: “install this app to follow up your complaint”"
+  },
+  "how": {
+    "ar": "تبحث في الإنترنت عن «حماية المستهلك» لتقديم شكوى على متجر أو خدمة، فتصل إلى موقع مزيف يشبه الموقع الرسمي ويطلب اسمك ورقمك وتفاصيل الشكوى. بعد قليل يتصل بك شخص يقول إنه موظف في حماية المستهلك ويكرر تفاصيل شكواك ليكسب ثقتك، ثم يطلب منك تنزيل برنامج للتحكم عن بُعد والدخول إلى تطبيق البنك أثناء تشغيله. بهذا يرى المحتال شاشتك ويحوّل أموالك. حذّرت شرطة أبوظبي في يونيو 2026 وشرطة دبي في يوليو 2026 من هذه المواقع.",
+    "en": "You search online for “Consumer Protection” to complain about a shop or service and land on a fake site that looks official and asks for your name, number and complaint details. Soon a caller says they are a Consumer Protection official and repeats your complaint to win your trust, then asks you to install a remote-access app and log in to your banking app while it runs. The scammer then sees your screen and moves your money. Abu Dhabi Police warned of these sites in June 2026 and Dubai Police in July 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "موقع مزيف يظهر في نتائج البحث باسم حماية المستهلك.",
+        "en": "A fake site appears in search results as Consumer Protection."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "متصل يقول إنه موظف في حماية المستهلك ويعرف تفاصيل شكواك.",
+        "en": "A caller says they are a Consumer Protection official and knows your complaint."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "يطلب تنزيل تطبيق للتحكم عن بُعد.",
+        "en": "They ask you to install a remote-access app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "ar": "يطلب فتح تطبيق البنك أثناء تشغيله.",
+        "en": "They ask you to open your banking app while it is running."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "مرحبا، معك موظف من حماية المستهلك بخصوص شكواك على المتجر. عشان نرجع لك المبلغ، نزّل التطبيق اللي بأرسله لك الحين وافتح تطبيق البنك وأنا أشرح لك الخطوات.",
+        "en": "Hello, this is an official from Consumer Protection about your complaint against the shop. To refund you, install the app I'm sending you now and open your banking app while I explain the steps."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "قدمت شكوى في موقع حماية المستهلك واتصلوا فيني",
+      "طلب مني أنزل برنامج عشان يرجع لي فلوسي",
+      "موظف حماية المستهلك طلب أفتح تطبيق البنك",
+      "موقع حماية المستهلك طلع مزيف من جوجل",
+      "انسحبت فلوسي بعد ما نزلت التطبيق"
+    ],
+    "en": [
+      "i filed a complaint on a consumer protection site and they called me",
+      "he asked me to install an app to get my refund",
+      "consumer protection official asked me to open my banking app",
+      "the consumer protection site from google was fake",
+      "money left my account after i installed the app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "remote_access",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ar": [
+      "طلب تنزيل تطبيق للتحكم عن بُعد.",
+      "طلب فتح تطبيق البنك أثناء المكالمة.",
+      "موقع شكاوى وصلت إليه من إعلان في نتائج البحث."
+    ],
+    "en": [
+      "Being asked to install a remote-access app.",
+      "Being asked to open your banking app during the call.",
+      "A complaints site you reached through a search ad."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "قدّم الشكاوى فقط عبر القنوات الرسمية لحماية المستهلك.",
+      "لا تنزّل أي برنامج يطلبه متصل، وأغلق الخط.",
+      "إذا نزّلت برنامجاً، احذفه واتصل بالبنك فوراً وأبلغ الشرطة."
+    ],
+    "en": [
+      "File complaints only through the official consumer protection channels.",
+      "Don't install any app a caller asks for; hang up.",
+      "If you installed one, delete it, call your bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/your-bank",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/moet-consumer"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police warn residents of fake consumer protection websites stealing bank details",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/dubai-police-fake-consumer-protection-links-banking-scam-warning",
+      "date": "2026-07-07"
+    },
+    {
+      "title": "شرطة دبي تحذّر من فتح روابط إلكترونية تدّعي صفة «حماية المستهلك»",
+      "publisher": "البيان",
+      "url": "https://www.albayan.ae/news/uae/dubai/1489937",
+      "date": "2026-07-07"
+    },
+    {
+      "title": "شرطة أبوظبي تحذر من مواقع ومنصات تنتحل صفة \"حماية المستهلك “عبر محركات البحث",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/accidents/2026-06-13-1.2055099",
+      "date": "2026-06-13"
+    },
+    {
+      "title": "Dubai Police warn against new online scam via fake consumer protection websites",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/dubai-police-warning-online-scams-fake-websites",
+      "date": "2025-09-26"
+    }
+  ],
+  "updated": "2026-11-18"
+}

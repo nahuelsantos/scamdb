@@ -1,0 +1,144 @@
+{
+  "id": "ae/fake-traffic-fine-link",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "ar": "رسالة تحمل شعار هيئة الطرق والمواصلات أو شرطة أبوظبي أو شرطة دبي",
+    "en": "A message carrying the logo of Dubai's RTA, Abu Dhabi Police or Dubai Police"
+  },
+  "name": {
+    "ar": "مخالفة مرورية مزيفة: «ادفع الآن قبل إضافة 500 درهم»",
+    "en": "Fake traffic fine: “pay now before Dh500 is added”"
+  },
+  "how": {
+    "ar": "تصلك رسالة أو منشور فيه شعار جهة رسمية يقول إن عليك مخالفة مرورية غير مدفوعة، أحياناً مع صورة لبيانات سيارتك، ويطلب الدفع فوراً عبر رابط لتجنب غرامة إضافية. الرابط يقود إلى موقع مزيف يسرق البيانات الشخصية وبيانات البطاقة وكلمات المرور ويسحب الأموال. حذّرت هيئة الطرق والمواصلات في دبي في يناير 2026 من رسالة تقول إن مخالفة بخمسين درهماً ستُضاف إليها 500 درهم اليوم، وحذّرت شرطة أبوظبي من رابط مشابه يُدار من خارج الدولة. المخالفات تُدفع فقط عبر التطبيقات والمواقع الرسمية.",
+    "en": "You get a message or post with an official logo saying you have an unpaid traffic fine, sometimes with a picture of your car's details, and asking you to pay at once through a link to avoid an extra penalty. The link leads to a fake site that steals personal details, card data and passwords and takes money. In January 2026 Dubai's RTA warned of a text saying a Dh50 fine would have Dh500 added today, and Abu Dhabi Police warned of a similar link run from abroad. Fines are paid only through official apps and websites."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة أو منشور باسم الشرطة أو هيئة الطرق عن مخالفة غير مدفوعة.",
+        "en": "A message or post in the name of the police or RTA about an unpaid fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "تهديد بغرامة إضافية أو نقاط سوداء إذا لم تدفع اليوم.",
+        "en": "A threat of an extra fine or black points if you don't pay today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "رابط «للتحقق من المخالفة» أو دفعها.",
+        "en": "A link to “check” or pay the fine."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "الموقع يطلب بيانات البطاقة ورمز التحقق.",
+        "en": "The site asks for card details and the OTP."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "هيئة الطرق والمواصلات: لديك مخالفة مرورية غير مدفوعة بقيمة 50 درهماً. يرجى السداد فوراً عبر [رابط] لتجنب إضافة 500 درهم تلقائياً اليوم.",
+        "en": "Roads and Transport Authority: You have an unpaid traffic fine of Dh50. Please pay immediately at [link] to avoid Dh500 being added automatically today."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ar": "تنبيه من الشرطة: تم رصد مخالفة على مركبتك. اضغط على الرابط للتحقق من المخالفة وسدادها قبل تحويلها إلى النيابة [رابط]",
+        "en": "Police alert: A violation has been recorded on your vehicle. Tap the link to check the violation and pay it before it is referred to the prosecution [link]"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "رسالة مخالفة مرورية فيها رابط للدفع",
+      "قالوا عندي مخالفة وبتنضاف 500 درهم",
+      "رسالة فيها صورة سيارتي وتطلب أتحقق من المخالفة",
+      "دفعت مخالفة من رابط وطلع موقع مزيف",
+      "رسالة باسم الشرطة عن مخالفة غير مدفوعة"
+    ],
+    "en": [
+      "traffic fine text with a payment link",
+      "they said i have a fine and 500 dirhams will be added",
+      "message with a picture of my car asking me to check a violation",
+      "paid a fine through a link and it was a fake site",
+      "message in the police's name about an unpaid fine"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ar": [
+      "رابط دفع في رسالة عن مخالفة.",
+      "مهلة «اليوم» قبل مضاعفة الغرامة.",
+      "موقع لا يتبع الجهة الرسمية رغم أنه يحمل شعارها."
+    ],
+    "en": [
+      "A payment link in a message about a fine.",
+      "A “today” deadline before the fine multiplies.",
+      "A website that uses the official logo but is not the official site."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تفتح الرابط.",
+      "تحقق من المخالفات بنفسك في تطبيق الشرطة أو هيئة الطرق أو منصة الحكومة الرسمية.",
+      "إذا أدخلت بيانات البطاقة، اتصل بالبنك فوراً وأبلغ الشرطة."
+    ],
+    "en": [
+      "Don't open the link.",
+      "Check your fines yourself in the police or RTA app or the official government platform.",
+      "If you entered card details, call your bank straight away and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/adp-aman",
+    "ae/dubai-police-ecrime",
+    "ae/your-bank",
+    "ae/moi-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "Dubai RTA Issues Scam Alert: Beware of Fake Traffic Fine Messages",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/new-dh500-dubai-scam-alert-for-unpaid-traffic-fines-rta-warns-1.500418185",
+      "date": "2026-01-23"
+    },
+    {
+      "title": "Scam alert! Abu Dhabi Police warn against suspicious traffic fine link",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/crime/scam-alert-abu-dhabi-police-warn-against-traffic-fine-suspicious-link-1.500243502",
+      "date": "2025-08-24"
+    },
+    {
+      "title": "شرطة دبي تضبط 3 عصابات تحتال على عملاء البنوك هاتفياً",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/accidents/2025-05-08-1.1942872",
+      "date": "2025-05-08"
+    }
+  ],
+  "updated": "2026-11-18"
+}

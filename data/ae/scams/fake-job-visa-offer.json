@@ -1,0 +1,109 @@
+{
+  "id": "ae/fake-job-visa-offer",
+  "country": "ae",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "email"
+  ],
+  "sender": {
+    "en": "A recruiter or “visa agent” on social media or WhatsApp, sometimes using a real Dubai company's name"
+  },
+  "name": {
+    "en": "Fake job or visa offer: “guaranteed job and work visa, just pay the processing fee”"
+  },
+  "how": {
+    "en": "Scammers advertise jobs, work visas, residency or visit visas on social media and messaging apps, often under the names of unlicensed offices or well-known Dubai companies. Once you trust them they ask you to pay for visa processing, training or background checks, and after you pay the job vanishes. Some also collect your passport and Emirates ID details to commit other crimes. MoHRE says genuine job offers use an approved form with a serial number and barcode that can be checked."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An attractive job or visa offer through social media or WhatsApp."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The recruiter claims to represent a real company or an official body."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "You are asked to pay for visa processing, training or checks."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Pressure to pay quickly to keep the place."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Congratulations! You have been shortlisted for the Store Supervisor role in Dubai. Salary AED 9,500 + accommodation. Employment visa guaranteed within 7 days. Please pay the visa processing fee of AED 1,850 today to confirm your slot. Send your passport and Emirates ID copy on WhatsApp."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "recruiter asked me to pay for my work visa",
+      "job offer in dubai asked for a visa processing fee",
+      "paid for training and the job disappeared",
+      "agent promised a visa in a week for money",
+      "fake company offer letter asked for my passport copy"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "en": [
+      "Any request to pay to get a job or a work visa.",
+      "Very fast hiring or a guaranteed visa.",
+      "An offer letter without a MoHRE serial number and barcode."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Never pay to get a job.",
+      "Check the offer on the MoHRE website or app, and handle visas only through official channels or licensed offices.",
+      "Report the ad or account to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/moi-cybercrime"
+  ],
+  "sources": [
+    {
+      "title": "How Dubai Police are cracking down on scams involving real company names – but fake jobs",
+      "publisher": "The National",
+      "url": "https://www.thenationalnews.com/news/uae/2026/01/21/dubai-jobs-scam/",
+      "date": "2026-01-21"
+    },
+    {
+      "title": "Dubai Police warn against fake visa ads used to defraud residents",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/dubai-police-warn-fake-visa-ads-fraud",
+      "date": "2026-08-25"
+    },
+    {
+      "title": "UAE authority warns residents against fake job offers, recruitment scams",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/jobs/uae-warn-fake-offers-recruitment-scams",
+      "date": "2026-08-08"
+    }
+  ],
+  "updated": "2026-11-18"
+}

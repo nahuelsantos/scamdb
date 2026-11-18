@@ -1,0 +1,152 @@
+{
+  "id": "ae/fake-official-uae-pass-otp",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "متصل يقول إنه من الهيئة الاتحادية للهوية (ICP) أو وزارة الداخلية أو «إدارة الأزمات» أو الشرطة",
+    "en": "A caller who says they are from ICP, the Ministry of Interior, “Crisis Management” or the police"
+  },
+  "name": {
+    "ar": "«موظف حكومي» يطلب رمز الهوية الرقمية (UAE Pass) أو بيانات الهوية",
+    "en": "Fake government official asking for your UAE Pass code or Emirates ID details"
+  },
+  "how": {
+    "ar": "يتصل بك شخص يقول إنه موظف في الهيئة الاتحادية للهوية والجنسية أو في جهة أمنية، وقد يعرف رقم هويتك وتاريخ انتهائها. يدّعي أن عليه «تحديث النظام» أو التحقق من هويتك، ويطلب الموافقة على إشعار UAE Pass أو رمز التحقق أو بيانات البطاقة البنكية. بهذه البيانات يستطيع المحتال تبديل شريحة هاتفك (SIM Swap) والسيطرة على تطبيقات البنك. في مارس 2026 حذّرت شرطة دبي من محتالين ينتحلون صفة «إدارة الأزمات في دبي»، وفي أبريل 2026 أكدت الهيئة أن موظفيها لا يطلبون رموز التحقق إطلاقاً.",
+    "en": "Someone calls saying they work for ICP (the Federal Authority for Identity, Citizenship, Customs and Port Security) or a security agency, and may already know your Emirates ID number and expiry date. They claim they need to “update the system” or verify your identity, and ask you to approve a UAE Pass notification, read out a code or give your bank card details. With this a scammer can swap your SIM and take over your banking apps. In March 2026 Dubai Police warned of scammers posing as “Dubai Crisis Management”, and in April 2026 ICP said its staff never ask for verification codes."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "اتصال من شخص يقول إنه من جهة حكومية ويعرف بعض بياناتك.",
+        "en": "A call from someone claiming to be from a government body who knows some of your details."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "يقول إن هويتك أو بياناتك يجب تحديثها الآن، وقد يصرخ أو يهدد.",
+        "en": "They say your ID or details must be updated now, and may shout or threaten."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "يطلب الموافقة على طلب UAE Pass أو قراءة رمز التحقق.",
+        "en": "They ask you to approve a UAE Pass request or read out a verification code."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ar": "قد يطلب بيانات البطاقة لدفع «رسوم» صغيرة.",
+        "en": "They may ask for card details to pay a small “fee”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "السلام عليكم، معك موظفة من الهيئة الاتحادية للهوية. نحدّث النظام لحماية السكان من المحتالين. بيوصلك الحين إشعار من UAE Pass، وافقي عليه وعطيني الرمز اللي بيوصلك عشان ما تنوقف هويتك.",
+        "en": "Hello, this is an employee from the Federal Authority for Identity. We are updating the system to protect residents from scammers. You will now get a UAE Pass notification, approve it and give me the code you receive so your ID is not suspended."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ar": "إدارة الأزمات - دبي: لضمان سلامتكم يرجى تأكيد بيانات الهوية الإماراتية ورقم UAE Pass عبر الرد على هذه الرسالة.",
+        "en": "Crisis Management - Dubai: For your safety, please confirm your Emirates ID details and UAE Pass number by replying to this message."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "اتصلت وحدة تقول إنها من الهوية وطلبت رمز يو اي اي باس",
+      "طلبوا أوافق على إشعار الهوية الرقمية",
+      "متصل من إدارة الأزمات طلب بيانات الهوية",
+      "كانوا يعرفون رقم هويتي وتاريخ الانتهاء",
+      "انقفل حساب الهوية الرقمية بعد المكالمة"
+    ],
+    "en": [
+      "a woman said she was from icp and asked for my uae pass code",
+      "they asked me to approve a uae pass notification",
+      "caller from crisis management asked for my emirates id details",
+      "they knew my emirates id number and expiry date",
+      "my uae pass was blocked after the call"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ar": [
+      "جهة حكومية تتصل من رقم متحرك.",
+      "طلب الموافقة على إشعار UAE Pass لم تطلبه أنت.",
+      "طلب رمز التحقق أو الرمز الثلاثي للبطاقة."
+    ],
+    "en": [
+      "A government body calling from a mobile number.",
+      "A request to approve a UAE Pass notification you did not start.",
+      "A request for a verification code or your card's CVV."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "أغلق الخط ولا توافق على أي إشعار لم تطلبه.",
+      "أنجز معاملات الهوية فقط من تطبيق الهيئة الرسمي أو موقعها.",
+      "إذا شاركت رمزاً، اتصل بمزوّد الاتصالات والبنك فوراً وأبلغ الشرطة."
+    ],
+    "en": [
+      "Hang up and don't approve any notification you didn't request.",
+      "Do ID transactions only in ICP's official app or website.",
+      "If you shared a code, call your mobile operator and bank at once and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/moi-cybercrime",
+    "ae/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "UAE ICP Warns of Phone Scams and Fake Websites: How to Spot Fraud and Protect Your Personal Data",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/government/uae-warns-against-phone-scams-fake-websites-impersonating-icp-logo-1.500524560",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "شرطة دبي تحذر من محتالين ينتحلون صفة موظفي \"إدارة الأزمات\" للاستيلاء على بيانات الهوية الرقمية وبطاقة الهوية",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/accidents/2026-03-02-1.2020925",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "Dubai Police alert: Scammers target UAE Pass, Emirates ID amid Iranian strikes",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/dubai-police-warn-scammers-impersonating-government-officials",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "Got UAE Pass OTP request? Scammers pose as officials to bully victims for info",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/crime/got-uae-pass-otp-request-fraudsters-pose-as-officials-to-bully-victims-for-info",
+      "date": "2024-06-28"
+    }
+  ],
+  "story": {
+    "ar": "روى مقيم لخليج تايمز أن متصلة قالت إنها من الهيئة الاتحادية للهوية، وكانت تعرف رقم هويته وتاريخ انتهائها، وقالت إنهم يحدّثون النظام لحماية السكان من المحتالين. وصلته رموز من تطبيق UAE Pass لم يطلبها، فطلبت منه الضغط على أحدها فحصلوا على الدخول إلى تطبيقه. بعد أن أعطاها بيانات بطاقته وصله طلب خصم بدرهم واحد مع رمز تحقق، فطلبت الرمز الثلاثي والرمز، وعندها فقط شكّ في الأمر.",
+    "en": "A resident told Khaleej Times that a caller who said she was from ICP knew his Emirates ID number and expiry date and said they were updating the system to protect residents from scammers. He received UAE Pass codes he had not requested, was told to tap one, and they got into his app. After he gave his card details he received a Dh1 debit request with an OTP, and she asked for his CVV and the OTP; only then did he become suspicious."
+  },
+  "updated": "2026-11-18"
+}

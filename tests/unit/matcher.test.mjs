@@ -585,3 +585,12 @@ test('1.24.0: Malay rules (and the shared Indonesian ones), only where Malay is 
   assert.ok(!readSigns('ada yuran untuk bungkusan ini', ['es', 'en']).includes('money_request'), 'Malay words stay out of other checks');
   assert.ok(!readSigns('Kes ini sulit, jangan beritahu sesiapa', ['id']).includes('secrecy'), 'Malay-only rules stay out of Indonesian checks');
 });
+test('1.25.0: Arabic rules, only where Arabic is spoken', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const fine = readSigns('لديك مخالفة غير مسددة بقيمة 50 درهماً. سيتم إضافة 500 درهم إذا لم يتم السداد اليوم. ادفع الآن: [رابط]', ['ar', 'en']);
+  for (const s of ['urgency', 'money_request', 'unknown_link']) assert.ok(fine.includes(s), s);
+  assert.ok(readSigns('بيوصلك رمز على جوالك، قوله لي عشان نكمل التحديث', ['ar', 'en']).includes('asks_for_code'));
+  assert.ok(!readSigns('رمز التحقق 482915. لا تشارك هذا الرمز مع أي شخص، البنك لن يطلبه منك أبداً', ['ar', 'en']).includes('asks_for_code'));
+  assert.ok(!readSigns('شحنتك في طريقها إليك اليوم. لا توجد أي رسوم مطلوبة', ['ar', 'en']).includes('money_request'), 'no fees due');
+  assert.ok(!readSigns('ادفع الآن اليوم [رابط]', ['en']).includes('urgency'), 'Arabic rules only where Arabic is spoken');
+});
