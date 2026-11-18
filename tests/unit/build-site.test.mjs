@@ -299,3 +299,11 @@ test('the favicon is the anglerfish logo, built at build time, and the home cata
   const real = new Set(loadRepo(join(import.meta.dirname, '../..')).entries.map((e) => e.id));
   for (const id of FEATURED) assert.ok(id.startsWith('us/') && real.has(id), id);
 });
+
+test('every page links to the Instagram and X accounts with labelled icon buttons', () => {
+  const { dir, page } = build();
+  const html = page('index.html');
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/scamdb\.dev\/"[^>]*aria-label="Instagram @scamdb\.dev"/);
+  assert.match(html, /href="https:\/\/x\.com\/scamdb"[^>]*aria-label="X @scamdb"/);
+  rmSync(dir, { recursive: true });
+});
