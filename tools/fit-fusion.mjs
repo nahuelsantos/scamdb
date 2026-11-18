@@ -3,13 +3,14 @@
 //
 //   node tools/fit-fusion.mjs <cache.json>          leave-one-country-out results, then the weights fitted on everything
 //   node tools/fit-fusion.mjs <cache.json> --write  also write worker/fusion-weights.js
+//   node tools/fit-fusion.mjs <cache.json> --real   use the real-message set (eval/real) instead of eval/messages
 //
 // Each country is scored by weights fitted on the other eight, so the numbers show how the formula does on
 // messages it never saw.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { loadRepo } from '../lib/load.js';
-import { loadMessages } from '../lib/eval.js';
+import { loadMessages, loadRealMessages } from '../lib/eval.js';
 import { features, fit, probability, FEATURES } from '../lib/fusion.js';
 import { matchMessage } from '../packages/matcher/index.js';
 import { THRESHOLDS } from '../worker/fusion-weights.js';
@@ -21,7 +22,8 @@ const [cachePath] = args.filter((a, i) => !a.startsWith('--') && args[i - 1] !==
 if (!cachePath) { console.error('Usage: node tools/fit-fusion.mjs <cache.json> [--write]'); process.exit(1); }
 const cache = JSON.parse(readFileSync(cachePath, 'utf8'));
 const repo = loadRepo(root);
-const rows = loadMessages(root).flatMap((m) => {
+const real = args.includes('--real');
+const rows = (real ? loadRealMessages(root) : loadMessages(root)).flatMap((m) => {
   const scorer = cache[`${chatModel}${m.id}:${createHash('sha256').update(m.text).digest('hex').slice(0, 12)}`];
   if (!scorer) return [];
   return [{ m, x: features(matchMessage(m.text, repo.entries, { country: m.country }), scorer), y: m.label === 'scam' ? 1 : 0 }];

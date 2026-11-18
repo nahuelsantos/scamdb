@@ -1,3 +1,22 @@
+# Real messages with the AI (2026-11-18)
+
+All 215 real messages (`eval/real`: 172 scams, 43 genuine, 18 countries) scored by the matcher alone and by the matcher
+plus Workers AI, with today's fusion weights (`node tools/eval.mjs --real --ai`).
+
+| | scams caught | called "scam" | genuine called "scam" | genuine flagged |
+|---|---|---|---|---|
+| Matcher | 91.9% (158/172) | 32% (55) | 7% (3/43) | 76.7% (33/43) |
+| Matcher + AI | 95.9% (165/172) | 84.9% (146) | 14% (6/43) | 27.9% (12/43) |
+
+The AI turns most "suspicious" scams into "scam" and clears most genuine messages the matcher only flagged. Its
+cost: three more genuine messages called "scam". All six are notices that look like the scam they warn about:
+an HSBC fraud-block text, an HSBC and HMRC "how to tell it's us" page, a DVLA message, a USPS delivery text,
+an Intesa Sanpaolo SMS, and an Australian marketplace message.
+
+**Refit on the real set, held out by country: rejected.** Scams called "scam" 166/172, but genuine called "scam"
+11/43 (from 6). The real set is 80% scams, so the fit learns to lean towards "scam". The current weights
+(fitted on the agent-written set) stay. The next step is more genuine real messages, not new weights.
+
 # scamdb engine report
 
 198 labelled messages (108 scams, 90 safe).
