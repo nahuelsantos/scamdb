@@ -555,3 +555,12 @@ test('1.21.0: India: APK downloads, fake officers on calls, Hindi urgency', asyn
   assert.ok(readSigns('आपका बिजली कनेक्शन आज रात काट दिया जायेगा', ['en', 'hi']).includes('urgency'));
   assert.ok(!readSigns('आपका बिजली कनेक्शन आज रात काट दिया जायेगा', ['en']).includes('urgency'), 'Hindi rules only where Hindi is spoken');
 });
+test('1.22.0: public-safety alerts are urgent by nature, not pressure', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const alert = readSigns('EMERGENCY ALERT: wildfire. Evacuate immediately if you are in the area north of the river. More information: [link]', ['en']);
+  assert.ok(!alert.includes('urgency') && alert.includes('unknown_link'), 'the link still counts');
+  assert.ok(!readSigns('Alerta de emergencia: por tsunami, evacúe inmediatamente el borde costero', ['es']).includes('urgency'));
+  // A fake alert that asks for money or a code keeps its urgency.
+  assert.ok(readSigns('Emergency alert: evacuate now. Pay the $25 shelter registration fee immediately at [link]', ['en']).includes('urgency'));
+  assert.ok(readSigns('Your account will be locked immediately unless you verify at [link]', ['en']).includes('urgency'));
+});
