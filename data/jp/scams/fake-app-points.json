@@ -1,0 +1,141 @@
+{
+  "id": "jp/fake-app-points",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms",
+    "social"
+  ],
+  "sender": {
+    "ja": "国税庁、カード会社、ポイントサービスなどを名乗るメールや、「大人の」動画アプリのSNS広告",
+    "en": "An email from the “tax agency”, a card company or a points service, or a social-media ad for an “adult” video app"
+  },
+  "name": {
+    "ja": "偽アプリに誘導する「ポイントが受け取れます」メール（Android）",
+    "en": "Fake app trap: “claim your points” (Android)"
+  },
+  "how": {
+    "ja": "「Androidスマホをお使いですか？今すぐポイントが受け取れます」「ポイントがまもなく失効」「還付金のご案内」といったメールや、「大人の」「18+」などをつけたアプリのSNS広告から、正規のサービスに見せかけた偽アプリを入れさせます。偽アプリはユーザー補助（アクセシビリティ）などの強い権限を求め、許可するとスマートフォンが遠隔操作され、ネットバンキングの不正送金やQRコード決済、キャリア決済の不正利用が起きます。アプリは公式ストアから入れ、メールのリンクからはダウンロードしないでください。",
+    "en": "An email says “Using an Android phone? Claim your points now”, “your points will expire soon” or “about your tax refund”, or a social-media ad promotes an app labelled “adult” or “18+”, and you are led to install a fake app made to look like a real service. The app asks for powerful permissions such as accessibility; once you allow them, criminals control the phone remotely and move money through online banking, QR-code payments or carrier billing. Install apps only from the official store, never from a link in an email."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "ポイントや還付金がもらえるというメールや、動画アプリの広告が届く。",
+        "en": "An email offers points or a refund, or an ad promotes a video app."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ja": "リンク先で正規サービスに見せかけたアプリを入れさせる。",
+        "en": "The link has you install an app made to look like a real service."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ja": "ユーザー補助などの権限を許可させ、スマートフォンを遠隔操作する。",
+        "en": "It asks for accessibility or other permissions and takes remote control of the phone."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "ja": "ネットバンキングやコード決済、キャリア決済でお金を抜き取られる。",
+        "en": "Money is taken through online banking, code payments or carrier billing."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "Androidスマホをお使いのお客様へ。今なら専用アプリのインストールで15,000ポイントをプレゼント。まもなく失効しますので、お早めにお受け取りください。[リンク]",
+        "en": "To customers using an Android phone: install our app now and get 15,000 points. They will expire soon, so claim them quickly. [link]"
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "ja": "【ポイント当選】おめでとうございます！抽選で特別ポイントが当たりました。受け取りはAndroid専用アプリからお願いします。[リンク]",
+        "en": "[Points won] Congratulations! You won special points in our draw. Please claim them in our Android app. [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "ポイントが受け取れるというメールからアプリを入れた",
+      "Androidのアプリをインストールしたらスマホが勝手に動いた",
+      "ユーザー補助の権限を許可したらお金が引き出された",
+      "アプリを入れたらキャリア決済を使われた",
+      "大人の動画アプリの広告からアプリを入れてしまった"
+    ],
+    "en": [
+      "i installed an app from an email saying i could get points",
+      "after installing an android app my phone started acting on its own",
+      "i allowed accessibility permission and money was taken",
+      "after installing the app someone used my carrier billing",
+      "i installed an app from an adult video ad"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "unknown_link",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "Android限定のポイント付与やアプリのインストールを促すメール",
+      "公式ストア以外からのアプリのダウンロード",
+      "ユーザー補助など強い権限の許可を求めるアプリ"
+    ],
+    "en": [
+      "Emails offering Android-only points or asking you to install an app.",
+      "Downloading an app from outside the official store.",
+      "An app asking for accessibility or other powerful permissions."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "アプリは公式ストアから入れ、メールやSMSのリンクから入れないでください",
+      "不審なアプリはすぐに削除し、銀行や携帯電話会社に連絡してください",
+      "被害にあったら警察に相談してください"
+    ],
+    "en": [
+      "Install apps only from the official store, never from a link in an email or text.",
+      "Delete any suspicious app at once and contact your bank and mobile phone company.",
+      "If you lost money, talk to the police."
+    ]
+  },
+  "reportTo": [
+    "jp/police-cyber",
+    "jp/your-bank",
+    "jp/antiphishing"
+  ],
+  "sources": [
+    {
+      "title": "偽アプリの導入による金銭被害",
+      "publisher": "日本サイバー犯罪対策センター（JC3）",
+      "url": "https://www.jc3.or.jp/threats/examples/article-719.html",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "不正アプリのインストールへ誘導するフィッシングメール (2026/09/08)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/malapp_20260908.html",
+      "date": "2026-09-08"
+    },
+    {
+      "title": "国税庁をかたり不正アプリのインストールへ誘導するフィッシングメール (2026/09/30)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/etaxmal_20260930.html",
+      "date": "2026-09-30"
+    }
+  ],
+  "updated": "2026-11-18"
+}

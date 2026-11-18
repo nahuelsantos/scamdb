@@ -1,0 +1,136 @@
+{
+  "id": "jp/fake-virus-support-popup",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "online",
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "ja": "「Windowsがロックされました」「ウイルスに感染しました」という偽の警告画面に表示されたサポート窓口（日本マイクロソフトなどをかたる）",
+    "en": "A support number on a fake warning screen saying “Windows has been locked” or “virus detected” (posing as Microsoft Japan and others)"
+  },
+  "name": {
+    "ja": "サポート詐欺：「ウイルスに感染しました、すぐにこの番号へ」",
+    "en": "Fake virus alert: “your PC is infected, call this number now”"
+  },
+  "how": {
+    "ja": "パソコンでインターネットを見ていると、突然大きな警告音とともに「Windowsがロックされました」「ウイルスに感染しました」という偽の画面が全画面で表示され、サポート窓口の電話番号が出ます。電話をかけると、日本人やカタコトの担当者が遠隔操作ソフトを入れさせ、「修理費」「サポート料」としてギフトカードや電子マネー、コンビニ決済、ネットバンキングで支払わせます。最近はサポート詐欺へ誘導するメールも急増しています。警告画面は偽物なので、電話をかけずに画面を閉じれば被害は防げます。",
+    "en": "While you browse on a computer, a loud alarm sounds and a full-screen fake warning appears (“Windows has been locked”, “your PC is infected”) with a support phone number. If you call, the “support agent” has you install remote-control software and charges a repair or support fee paid by gift card, electronic money, convenience-store payment or online banking. Emails leading to support scams have also surged recently. The warning is fake: close it without calling and you lose nothing."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "警告音とともに「ウイルスに感染した」という偽の画面と電話番号が表示される。",
+        "en": "A fake virus warning with an alarm and a phone number fills the screen."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "電話をかけると、サポート担当を名乗る人が遠隔操作ソフトを入れさせる。",
+        "en": "When you call, a “support agent” has you install remote-control software."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "ja": "サポート料としてギフトカードや電子マネーの番号を伝えさせたり、ネットバンキングで送金させたりする。",
+        "en": "They make you pay a support fee by reading out gift card or electronic money numbers, or by online banking."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "警告！このPCはウイルスに感染しています。Windowsがロックされました。個人情報が流出するおそれがあります。サポートが必要な場合は、直ぐにこちらへ連絡して下さい。Microsoftサポート[番号]",
+        "en": "Warning! This PC is infected with a virus. Windows has been locked. Your personal data may leak. If you need support, call here immediately. Microsoft Support [number]"
+      },
+      "channel": "online"
+    },
+    {
+      "text": {
+        "ja": "日本マイクロソフトのサポートです。ウイルスを除去するため、これからお伝えするソフトを入れてください。作業費はコンビニでギフトカードを購入してお支払いいただけます。",
+        "en": "This is Microsoft Japan support. To remove the virus, please install the software I'm about to give you. You can pay the work fee by buying a gift card at a convenience store."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "パソコンにウイルス感染の警告が出て電話番号が表示された",
+      "警告音が鳴ってWindowsがロックされたと出た",
+      "サポートに電話したら遠隔操作ソフトを入れさせられた",
+      "サポート料をギフトカードで払えと言われた",
+      "マイクロソフトを名乗る人にパソコンを操作された",
+      "偽の警告画面が消えなくて電話してしまった"
+    ],
+    "en": [
+      "a virus warning popped up on my computer with a phone number",
+      "an alarm sounded and it said windows was locked",
+      "i called support and they made me install remote control software",
+      "they told me to pay the support fee with gift cards",
+      "someone claiming to be microsoft took control of my computer",
+      "the fake warning wouldn't close so i called the number"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "impersonation",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "突然の警告音と全画面の警告、電話番号の表示",
+      "遠隔操作ソフトのインストールを求められる",
+      "ギフトカードや電子マネーでの支払いを求められる"
+    ],
+    "en": [
+      "A sudden alarm and full-screen warning with a phone number.",
+      "Being asked to install remote-control software.",
+      "Being asked to pay with gift cards or electronic money."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "表示された番号には絶対に電話しないでください",
+      "Escキーを長押しして全画面を解除し、ブラウザを閉じるか、パソコンの電源を切ってください",
+      "遠隔操作ソフトを入れてしまったら、ネットから切り離してソフトを削除し、警察に相談してください"
+    ],
+    "en": [
+      "Never call the number on the screen.",
+      "Hold down Esc to leave full-screen and close the browser, or turn the computer off.",
+      "If you installed remote-control software, disconnect from the internet, remove it, and talk to the police."
+    ]
+  },
+  "reportTo": [
+    "jp/police-cyber",
+    "jp/consumer-188",
+    "jp/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "サポート詐欺（偽のセキュリティ警告）",
+      "publisher": "警視庁",
+      "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/cyber/notes/warning_screen.html",
+      "date": "2026-09-24"
+    },
+    {
+      "title": "2026/09 フィッシング報告状況（月次報告書）",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/report/monthly/202609.html",
+      "date": "2026-10-19"
+    },
+    {
+      "title": "犯人の音声コーナー：サポート詐欺の電話（日本マイクロソフトを騙りパソコン修理のサポート代として電子マネーを買わせようとする手口）",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/list/sound",
+      "date": "2023-11-30"
+    }
+  ],
+  "updated": "2026-11-18"
+}

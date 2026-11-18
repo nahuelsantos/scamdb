@@ -1,0 +1,138 @@
+{
+  "id": "jp/fake-payment-notice-paypay",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "email"
+  ],
+  "sender": {
+    "ja": "市区町村の住民税・国民健康保険の窓口、日本年金機構、カード会社や通信会社の請求を装うメール",
+    "en": "An email posing as a city's resident-tax or health-insurance desk, the Japan Pension Service, or a card or phone company bill"
+  },
+  "name": {
+    "ja": "住民税・国保・年金の偽の納付依頼からPayPayで送金させるメール",
+    "en": "Fake tax, health insurance or pension bill that makes you pay by PayPay"
+  },
+  "how": {
+    "ja": "「令和8年度 住民税（第1期）納付のご案内」「国民健康保険料差額（未納分）のお知らせ」「国民年金保険料の未納に伴う財産差押えの執行予告」「サービス停止のお知らせ（料金未払い）」といったメールが届き、リンクからPayPayアプリの支払い画面に誘導して送金させます。公的な料金を払うように見えても、実際には犯人への送金です。フィッシング対策協議会は、支払った金額はPayPayから補償されないと注意しています。",
+    "en": "An email arrives such as “2026 resident tax (first instalment) payment notice”, “notice of unpaid National Health Insurance premium difference”, “notice of asset seizure for unpaid national pension premiums” or “service suspension notice (unpaid charges)”. The link opens a PayPay payment screen and you send money. It looks like a public payment, but it goes to the scammer. The Council of Anti-Phishing Japan warns that PayPay does not compensate money paid this way."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "住民税や国民健康保険、国民年金、通信料金の未納・納付を知らせるメールが届く。",
+        "en": "An email says you owe resident tax, health insurance, pension premiums or a phone bill."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "「差押え」「最終通知」「サービス停止」と急がせる。",
+        "en": "It rushes you with “seizure”, “final notice” or “service suspension”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "リンクからPayPayアプリの支払い画面に誘導し、送金させる。",
+        "en": "The link opens a PayPay payment screen and you send money."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "【重要】国民年金保険料の未納に伴う財産差押えの執行予告。期限内に納付が確認できない場合、法的措置に移行します。下記よりPayPayで至急お支払いください。[リンク]",
+        "en": "[Important] Notice of asset seizure for unpaid national pension premiums. If payment is not confirmed by the deadline, we will take legal action. Pay urgently by PayPay below. [link]"
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "ja": "国民健康保険料差額（未納分）のお知らせ（催告）。お手数ですが、本日中にPayPayアプリから納付をお願いいたします。[リンク]",
+        "en": "Notice of unpaid National Health Insurance premium difference (reminder). Please pay through the PayPay app today. [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "住民税の納付案内のメールからPayPayで払ってしまった",
+      "国民健康保険料の未納のメールが来た",
+      "年金の差し押さえの予告メールでPayPayに誘導された",
+      "料金未払いでサービス停止というメールが来た",
+      "市役所を名乗るメールでPayPayで払うように言われた"
+    ],
+    "en": [
+      "i paid by paypay from a resident tax payment email",
+      "i got an email about unpaid national health insurance",
+      "a pension seizure warning email sent me to paypay",
+      "an email said my service would be suspended for unpaid charges",
+      "an email claiming to be the city office told me to pay by paypay"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "税金や保険料の納付をメールのリンクから求める",
+      "PayPayなどコード決済の支払い画面に誘導する",
+      "「差押え」「最終通知」と脅す"
+    ],
+    "en": [
+      "An email asking you to pay tax or premiums through a link.",
+      "Being sent to a PayPay or other code-payment screen.",
+      "Threats of seizure or a “final notice”."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "メールのリンクから税金や保険料を払わないでください",
+      "納付書や市区町村の公式サイト、窓口で確認してください",
+      "送金してしまったら、すぐにPayPayと警察に連絡してください"
+    ],
+    "en": [
+      "Never pay tax or premiums through an email link.",
+      "Check your payment slip, your city's official website or its office.",
+      "If you sent money, contact PayPay and the police at once."
+    ]
+  },
+  "reportTo": [
+    "jp/antiphishing",
+    "jp/consumer-188",
+    "jp/police-cyber"
+  ],
+  "sources": [
+    {
+      "title": "住民税の納付依頼をよそおうフィッシング (2026/05/11)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/rtax_20260511.html",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "国民健康保険料の支払い依頼をよそおうフィッシング (2026/04/13)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/kokumin_20260413.html",
+      "date": "2026-04-13"
+    },
+    {
+      "title": "国民年金の納付依頼をよそおうフィッシング (2026/05/18)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/nenkin_20260518.html",
+      "date": "2026-05-18"
+    },
+    {
+      "title": "PayPayアプリでの支払いへ誘導するフィッシング (2026/04/02)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/paypay_20260402.html",
+      "date": "2026-04-02"
+    }
+  ],
+  "updated": "2026-11-18"
+}

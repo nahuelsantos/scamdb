@@ -1,0 +1,141 @@
+{
+  "id": "jp/delivery-phishing",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "ja": "日本郵便、ヤマト運輸、佐川急便などの配送業者を名乗るSMSやメール",
+    "en": "A text or email claiming to be from Japan Post, Yamato Transport, Sagawa Express or another courier"
+  },
+  "name": {
+    "ja": "宅配業者をかたる不在通知・住所確認のSMSやメール",
+    "en": "Fake courier text or email: missed delivery or address check"
+  },
+  "how": {
+    "ja": "「お荷物のお届けにあがりましたが不在の為持ち帰りました」「住所不明のため配達できません」「配送料の支払いが必要です」といったSMSやメールが届き、リンクから偽サイトに誘導します。偽サイトではクレジットカード番号や個人情報、IDやパスワードを入力させたり、Androidでは不正アプリを入れさせたりします。ヤマト運輸はSMSで不在連絡や配達予定を送ることはなく、住所確認や再配達の料金をメールやSMSで求めることもないとしています。荷物の確認は公式アプリや公式サイトからしてください。",
+    "en": "A text or email says “we tried to deliver your parcel but you were out, so we took it back”, “we can't deliver because the address is unclear” or “a delivery fee is due”, with a link to a fake site. The site asks for your card number and personal details or your login details, and on Android may install a malicious app. Yamato Transport says it never sends missed-delivery or delivery-schedule notices by text, and never asks for address checks or redelivery fees by email or text. Check parcels only in the courier's official app or website."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "宅配業者を名乗り、不在や住所不明で荷物を届けられないというSMSやメールが届く。",
+        "en": "A “courier” text or email says your parcel couldn't be delivered because you were out or the address was unclear."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "「○時間以内に手続きしないと返送」と急がせ、リンクを押させる。",
+        "en": "It says the parcel will be returned unless you act within hours, and asks you to tap a link."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "偽サイトでカード番号やID・パスワードを入力させるか、不正アプリを入れさせる。",
+        "en": "The fake site asks for your card number or login details, or installs a malicious app."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "お客様のお荷物をお届けしましたがご不在のため持ち帰りました。再配達のお手続きは下記からお願いします。[リンク]",
+        "en": "We delivered your parcel but you were out, so we took it back. Please arrange redelivery below. [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ja": "【日本郵便】ご登録住所に不備があったため、お荷物の配送が完了できませんでした。48時間以内に住所を更新されない場合、差出人へ返送されます。[リンク]",
+        "en": "[Japan Post] Your parcel could not be delivered because of a problem with your registered address. If you don't update it within 48 hours it will be returned to the sender. [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "不在で荷物を持ち帰ったというSMSが来た",
+      "住所不明で配達できないとメールが来た",
+      "宅配業者のSMSのリンクを押したらカード番号を入力させられた",
+      "再配達の手数料を払うように言われた",
+      "ヤマト運輸を名乗るSMSでアプリを入れるように言われた",
+      "日本郵便から住所を更新しないと返送されるとメールが来た"
+    ],
+    "en": [
+      "i got a text saying they took my parcel back because i was out",
+      "an email said they couldn't deliver because the address was unclear",
+      "i tapped the link in a courier text and it asked for my card number",
+      "they asked me to pay a redelivery fee",
+      "a text from yamato told me to install an app",
+      "japan post emailed saying my parcel would be returned unless i updated my address"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "SMSで届く不在通知や配達予定のお知らせ",
+      "住所確認や再配達料金の支払いを求めるリンク",
+      "「○時間以内」と期限を切って急がせる"
+    ],
+    "en": [
+      "A missed-delivery or delivery notice sent by text.",
+      "A link asking you to confirm your address or pay a redelivery fee.",
+      "A deadline of a few hours to rush you."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "リンクは押さず、配送業者の公式アプリや公式サイトで追跡番号を確認してください",
+      "カード番号を入力してしまったら、すぐにカード会社に連絡して止めてもらってください",
+      "不審なSMSやメールはフィッシング対策協議会に報告できます"
+    ],
+    "en": [
+      "Don't tap the link: check the tracking number in the courier's official app or website.",
+      "If you entered your card number, call your card company at once to block it.",
+      "You can report suspicious texts and emails to the Council of Anti-Phishing Japan."
+    ]
+  },
+  "reportTo": [
+    "jp/antiphishing",
+    "jp/your-bank",
+    "jp/police-cyber"
+  ],
+  "sources": [
+    {
+      "title": "日本郵便をかたるフィッシング (2025/10/09)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/japanpost_20251009.html",
+      "date": "2025-10-09"
+    },
+    {
+      "title": "ヤマト運輸の名前を装った「迷惑メール」が多発しています。「なりすましサイト」への誘導に十分ご注意ください",
+      "publisher": "ヤマトホールディングス",
+      "url": "https://www.yamato-hd.co.jp/important/info_181212.html",
+      "date": "2025-08-26"
+    },
+    {
+      "title": "ヤマト運輸のなりすましメールやSMSに注意！　荷物の問い合わせは公式アプリか「荷物お問い合わせシステム」で",
+      "publisher": "INTERNET Watch（インプレス）",
+      "url": "https://internet.watch.impress.co.jp/docs/news/2042712.html",
+      "date": "2025-08-28"
+    },
+    {
+      "title": "2026/09 フィッシング報告状況（月次報告書）",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/report/monthly/202609.html",
+      "date": "2026-10-19"
+    }
+  ],
+  "updated": "2026-11-18"
+}

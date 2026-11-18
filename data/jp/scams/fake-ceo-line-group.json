@@ -1,0 +1,133 @@
+{
+  "id": "jp/fake-ceo-line-group",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "email",
+    "social"
+  ],
+  "sender": {
+    "ja": "自社の社長や役員の名前を表示したフリーメール（件名は自社の会社名のことが多い）",
+    "en": "A free-mail address showing the name of your company's president or an executive (the subject is often your company's name)"
+  },
+  "name": {
+    "ja": "ニセ社長詐欺：「LINEグループを作ってQRコードを送って」",
+    "en": "Fake CEO email: “create a LINE group and send me the QR code”"
+  },
+  "how": {
+    "ja": "実在する社長や役員の名前で、会社の公開アドレスや社員にメールが届き、「新しいプロジェクトのため」と言ってLINEグループを作り、招待用のQRコードを返信するよう指示します。グループには振込権限のある経理担当者を入れるよう求められることもあります。グループ内で会社の口座残高を聞き出したうえで、「事業資金が至急必要」「取引先への支払いを代行して」などと言い、指定口座に多額の送金をさせます。IPAの相談窓口には2025年12月から約3か月で106件の相談が寄せられました。",
+    "en": "An email in the name of your real company president or an executive reaches a public company address or staff, and says that for “a new project” you should create a LINE group and reply with the invitation QR code. You may be told to add the accountant who can make transfers. In the group they ask for the company's account balance, then say “we urgently need business funds” or “pay this supplier on our behalf”, and have you send a large sum to an account they name. IPA's helpdesk received 106 enquiries in about three months from December 2025."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "社長名のメールで、業務を装ってLINEグループの作成とQRコードの返信を指示される。",
+        "en": "An email in the president's name tells you to create a LINE group and reply with the QR code, as if it were work."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "「他の人は入れないように」と言い、経理担当者だけをグループに入れさせる。",
+        "en": "They say not to add anyone else, except the accountant."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ja": "口座残高を聞き出し、「至急」と言って指定口座に送金させる。",
+        "en": "They ask for the account balance and urgently have you transfer money to an account they name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "お疲れ様です。新しいプロジェクトの件で、至急LINEのグループを作成し、招待用のQRコードをこのメールに返信してください。グループには経理の担当者のみ入れ、他の人には共有しないでください。",
+        "en": "Hello. About a new project: please create a LINE group right away and reply to this email with the invitation QR code. Add only the accounting staff to the group and don't share it with anyone else."
+      },
+      "channel": "email"
+    },
+    {
+      "text": {
+        "ja": "取引先への前払いが本日中に必要になった。会社口座の残高を教えてくれ。確認でき次第、振込先を送るので急いで手続きしてほしい。",
+        "en": "We need to pay a supplier in advance today. Tell me the company account balance. I'll send the payee details once I've checked, so please process it quickly."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "社長の名前でLINEグループを作るようにメールが来た",
+      "QRコードを返信しろと社長からメールがあった",
+      "LINEグループで社長に会社の口座残高を聞かれた",
+      "社長から取引先への支払いを急いで振り込めと指示された",
+      "経理担当者だけをグループに入れるよう言われた"
+    ],
+    "en": [
+      "an email in the president's name told me to make a line group",
+      "the boss emailed asking me to reply with a qr code",
+      "in the line group the boss asked for our company account balance",
+      "the president told me to urgently pay a supplier",
+      "they told me to add only the accountant to the group"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "社長の名前なのにフリーメールから届く",
+      "業務の連絡にLINEグループの作成を求める",
+      "口座残高を聞き、至急の送金を指示する"
+    ],
+    "en": [
+      "The president's name, but sent from a free-mail address.",
+      "Being told to set up a LINE group for work.",
+      "Being asked for the account balance and told to transfer money urgently."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "メールには返信せず、電話など別の方法で社長本人に確認してください",
+      "社内で送金のルールを確認し、この手口を共有してください",
+      "LINEグループに誘導されたら通報して退出し、送金してしまったら銀行と警察に連絡してください"
+    ],
+    "en": [
+      "Don't reply: check with the president in person or by phone.",
+      "Review your company's rules for payments and share this scam with staff.",
+      "If you were moved into a LINE group, report it and leave; if money was sent, call your bank and the police."
+    ]
+  },
+  "reportTo": [
+    "jp/police-cyber",
+    "jp/your-bank",
+    "jp/police-9110"
+  ],
+  "sources": [
+    {
+      "title": "法人を対象とした詐欺（ニセ社長詐欺）に注意！",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/260213/01.html",
+      "date": "2026-02-13"
+    },
+    {
+      "title": "社長等をかたる詐欺メールに注意！（安心相談窓口だより）",
+      "publisher": "情報処理推進機構（IPA）",
+      "url": "https://www.ipa.go.jp/security/anshin/attention/2025/mgdayori20260312.html",
+      "date": "2026-03-12"
+    },
+    {
+      "title": "警視庁匿名・流動型犯罪グループ対策本部（特設ページ）最新の手口",
+      "publisher": "警視庁",
+      "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/tokushu/keishicho_tokuryu/latest_trick.html",
+      "date": "2026-06-11"
+    }
+  ],
+  "updated": "2026-11-18"
+}

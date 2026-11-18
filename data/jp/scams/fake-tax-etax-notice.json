@@ -1,0 +1,136 @@
+{
+  "id": "jp/fake-tax-etax-notice",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "ja": "国税庁、税務署、e-Taxを名乗るメールやSMS",
+    "en": "An email or text claiming to be from the National Tax Agency, a tax office or e-Tax"
+  },
+  "name": {
+    "ja": "国税庁・e-Taxをかたる「未納税金」「還付金」の偽メール・SMS",
+    "en": "Fake tax notice: “unpaid tax” or “refund” from the National Tax Agency or e-Tax"
+  },
+  "how": {
+    "ja": "国税庁や税務署、e-Taxを名乗り、「未払い税金のお知らせ」「24時間以内に支払わなければ財産を差し押さえる」「還付金のご案内」「e-Taxメッセージボックスに新しいお知らせ」といったメールやSMSが届きます。リンク先の偽サイトでクレジットカード番号や個人情報を入力させたり、コード決済で支払わせたり、Androidの不正アプリを入れさせたりします。国税庁はSMSにURLを書いた案内を送らず、納付や差押えをSMSやメール、LINEで知らせることもありません。e-Taxのメールは原則として本文にURLを載せず、スマートフォン用のe-Taxアプリもありません（2026年9月時点）。",
+    "en": "An email or text claiming to be from the National Tax Agency, a tax office or e-Tax says “notice of unpaid tax”, “pay within 24 hours or your assets will be seized”, “about your tax refund” or “new message in your e-Tax message box”. The link leads to a fake site that asks for your card number and personal details, has you pay by a code-payment app, or installs a malicious Android app. The National Tax Agency never sends texts with a URL, and never contacts you about payments or seizures by text, email or LINE. e-Tax emails normally contain no URL, and there is no e-Tax smartphone app (as of September 2026)."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "国税庁やe-Taxを名乗り、未納税金や還付金があるというメールやSMSが届く。",
+        "en": "An email or text in the name of the National Tax Agency or e-Tax says you owe tax or have a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "「24時間以内」「差し押さえ」と急がせる。",
+        "en": "It rushes you with “within 24 hours” or “seizure”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "リンク先でカード番号を入力させたり、コード決済で支払わせたり、アプリを入れさせたりする。",
+        "en": "The link asks for your card number, a code-payment app payment, or an app install."
+      },
+      "signal": "unknown_link"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "【国税庁】あなたの所得税について、納付期限を過ぎても納付が確認できません。24時間以内にお支払いがない場合、財産の差押えを行います。お支払いはこちら[リンク]",
+        "en": "[National Tax Agency] We cannot confirm payment of your income tax although the deadline has passed. If you don't pay within 24 hours, your assets will be seized. Pay here [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ja": "【e-Tax】税務署からのメッセージボックス通知：還付金のご案内があります。受け取り口座の確認のため、専用アプリからログインしてください。[リンク]",
+        "en": "[e-Tax] Message box notice from the tax office: you have a refund. To confirm your receiving account, log in through the dedicated app. [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "国税庁から未納の税金があるとSMSが来た",
+      "e-Taxを名乗るメールで還付金があると言われた",
+      "税金を払わないと差し押さえるというメールが来た",
+      "税務署のメールのリンクからカード番号を入力した",
+      "国税庁のメールからコード決済で税金を払ってしまった",
+      "e-Taxのアプリを入れるように言われた"
+    ],
+    "en": [
+      "i got a text from the national tax agency saying i owed tax",
+      "an email claiming to be e tax said i had a refund",
+      "an email said they would seize my assets if i didn't pay my taxes",
+      "i entered my card number from a link in a tax office email",
+      "i paid tax by a payment app from a national tax agency email",
+      "they told me to install an e tax app"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "SMSに国税庁や税務署のURLが書いてある",
+      "「24時間以内に支払わないと差押え」と脅す",
+      "アプリのインストールやコード決済での支払いを求める"
+    ],
+    "en": [
+      "A text with a link claiming to be from the tax agency.",
+      "A threat of seizure unless you pay within 24 hours.",
+      "Being asked to install an app or pay through a code-payment app."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "リンクは押さず、e-Taxは登録済みの環境からメッセージボックスを確認してください",
+      "心配なときは自分で調べた最寄りの税務署に問い合わせてください",
+      "カード番号を入力したらカード会社へ、支払ってしまったら決済サービスと警察へ連絡してください"
+    ],
+    "en": [
+      "Don't tap the link: check your e-Tax message box from the setup you registered.",
+      "If you are worried, contact your nearest tax office on a number you looked up yourself.",
+      "If you entered card details call your card company; if you paid, contact the payment service and the police."
+    ]
+  },
+  "reportTo": [
+    "jp/antiphishing",
+    "jp/consumer-188",
+    "jp/your-bank",
+    "jp/police-cyber"
+  ],
+  "sources": [
+    {
+      "title": "国税庁をかたり不正アプリのインストールへ誘導するフィッシングメール (2026/09/30)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/etaxmal_20260930.html",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "国税庁がSMSやメールで税金の納付を求めることはありません！－国税庁やe-Taxをかたる不審なSMSやメールに注意－",
+      "publisher": "国民生活センター",
+      "url": "https://www.kokusen.go.jp/news/data/n-20260527_1.html",
+      "date": "2026-05-27"
+    },
+    {
+      "title": "国税庁をかたるフィッシング (2024/05/22)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/nta_20240522.html",
+      "date": "2024-05-22"
+    }
+  ],
+  "updated": "2026-11-18"
+}

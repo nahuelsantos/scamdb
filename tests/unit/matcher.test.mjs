@@ -71,7 +71,7 @@ test('empty, emoji-only and huge input are not recognised and fast', () => {
   const cold = performance.now();
   m('warm up');
   assert.ok(performance.now() - cold < 2000, 'preparing the catalogue took too long');
-  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000), 'สวัสดีครับ '.repeat(2000), '안녕하세요 반갑습니다 '.repeat(1000)]) {
+  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000), 'สวัสดีครับ '.repeat(2000), '안녕하세요 반갑습니다 '.repeat(1000), 'こんにちは、お元気ですか。'.repeat(500)]) {
     const t0 = performance.now();
     const r = m(t);
     assert.equal(r.verdict, 'not_recognised');
@@ -638,4 +638,14 @@ test('1.30.0: Korean: stems match across particles, two-syllable words count, Ko
   for (const s of ['impersonation', 'keep_on_line', 'secrecy']) assert.ok(call.includes(s), s);
   assert.ok(!readSigns('인증번호 [482913]를 입력해 주세요. 타인에게 절대 알려주지 마세요.', ['ko']).includes('asks_for_code'));
   assert.ok(!readSigns('링크 즉시', ['es', 'en']).includes('urgency'), 'Korean rules only where Korean is spoken');
+});
+test('1.31.0: Japanese: dense-script phrase matching and Japanese signs', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const entry = { id: 'jp/x', country: 'jp', lang: 'ja', phrases: { ja: ['医療費の還付金があるとATMに行かされた'] } };
+  const r = matchMessage('○○市役所の保険年金課です。医療費の還付金がございます。', [entry], { country: 'jp' });
+  assert.equal(r.matches[0]?.id, 'jp/x', 'a 6+ character shared stretch (医療費の還付金が) matches though Japanese has no spaces');
+  const tax = readSigns('【国税庁】未払いの税金があります。本日中にお支払いがない場合、財産の差押えを行います。お支払いはこちら[リンク]', ['ja']);
+  for (const s of ['urgency', 'money_request', 'unknown_link']) assert.ok(tax.includes(s), s);
+  assert.ok(!readSigns('認証番号は482913です。このコードを他人に教えないでください。', ['ja']).includes('asks_for_code'));
+  assert.ok(!readSigns('至急 リンク', ['es', 'en']).includes('urgency'), 'Japanese rules only where Japanese is spoken');
 });

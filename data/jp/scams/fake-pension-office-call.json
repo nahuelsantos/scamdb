@@ -1,0 +1,129 @@
+{
+  "id": "jp/fake-pension-office-call",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "phone",
+    "email"
+  ],
+  "sender": {
+    "ja": "日本年金機構、年金事務所の職員や自動音声ガイダンス",
+    "en": "The Japan Pension Service, a pension office official, or a recorded voice"
+  },
+  "name": {
+    "ja": "日本年金機構をかたる自動音声：「書類が未提出で年金が止まります」",
+    "en": "Fake pension office call: “your pension will stop, documents missing”"
+  },
+  "how": {
+    "ja": "日本年金機構や年金事務所を名乗る自動音声で「書類の提出確認が取れないため、手続きしないと年金の支給が止まる」と流れ、番号を押させたり折り返し電話させたりして、個人情報を聞き出します。ほかにも「保険料の納めすぎで還付金がある」と言ってATMに行かせる、アンケートと称して家族構成や預貯金、口座番号、カード番号を聞く、マイナンバーカードの画像を出させる偽メールを送るといった手口があります。ねんきんダイヤルなどに寄せられた不審な電話の問合せは令和7年度に2,349件と増えており、そのうち自動音声の手口が1,633件でした。",
+    "en": "A recorded voice claiming to be the Japan Pension Service or a pension office says “we cannot confirm that you sent your documents, and your pension will stop unless you complete the procedure”, then has you press a number or call back so they can get your personal details. Other versions say you overpaid premiums and have a refund (and send you to an ATM), run a “survey” about your family, savings, account and card numbers, or send fake emails asking for a photo of your My Number card. Enquiries to the pension helpline about suspicious calls rose to 2,349 in fiscal 2025, of which 1,633 were about recorded-voice calls."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "日本年金機構を名乗る自動音声で「年金の支給が止まる」と流れる。",
+        "en": "A recorded voice in the name of the Japan Pension Service says your pension will stop."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "番号を押すか折り返すよう指示され、担当者が住所や口座番号を聞き出す。",
+        "en": "You are told to press a number or call back, and an “agent” asks for your address and account details."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "還付金の手続きと言ってATMに行かせたり、カード番号を聞いたりする。",
+        "en": "They send you to an ATM for a “refund” or ask for your card number."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "（自動音声）こちらは日本年金機構です。書類の提出確認が取れないため、お手続きいただかないと年金の支給が停止されます。担当者におつなぎするには1番を押してください。",
+        "en": "(Recorded voice) This is the Japan Pension Service. We cannot confirm that you submitted your documents, and your pension will be stopped unless you complete the procedure. To speak to an agent, press 1."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ja": "年金事務所です。保険料の納めすぎがあり、還付金をお返しします。本日中のお手続きが必要ですので、お近くのATMからお電話ください。",
+        "en": "This is the pension office. You overpaid your premiums and we will refund you. It must be done today, so please call us from a nearby ATM."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "日本年金機構の自動音声で年金が止まると言われた",
+      "年金事務所から書類が未提出だと電話があった",
+      "年金の還付金があるからATMに行けと言われた",
+      "年金のアンケートで口座番号を聞かれた",
+      "1番を押したら年金の担当者に口座を聞かれた",
+      "年金機構からマイナンバーカードの画像を送るようメールが来た"
+    ],
+    "en": [
+      "a recorded voice from the pension service said my pension would stop",
+      "the pension office called saying my documents were missing",
+      "they said i had a pension refund and told me to go to an atm",
+      "a pension survey asked for my bank account number",
+      "i pressed 1 and the pension agent asked for my account",
+      "an email from the pension service asked for a photo of my my number card"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ja": [
+      "年金の支給が止まるという自動音声",
+      "番号を押させる、折り返しを求める",
+      "還付金のためにATMへ行かせる、口座やカード番号を聞く"
+    ],
+    "en": [
+      "A recorded voice saying your pension will stop.",
+      "Being told to press a number or call back.",
+      "Being sent to an ATM for a refund, or asked for account or card numbers."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "番号は押さずに電話を切り、ねんきん定期便などに書かれた公式の番号で確認してください",
+      "年金事務所がATMの操作を求めることはありません",
+      "不安なときは＃9110に相談してください"
+    ],
+    "en": [
+      "Hang up without pressing anything and check on the official number printed on your pension statement.",
+      "Pension offices never ask you to use an ATM.",
+      "If you are worried, call #9110."
+    ]
+  },
+  "reportTo": [
+    "jp/police-9110",
+    "jp/police-110",
+    "jp/consumer-188"
+  ],
+  "sources": [
+    {
+      "title": "日本年金機構や年金事務所を名乗る詐欺に注意！",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/250428/03.html",
+      "date": "2026-05-01"
+    },
+    {
+      "title": "国民年金の納付依頼をよそおうフィッシング (2026/05/18)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/nenkin_20260518.html",
+      "date": "2026-05-18"
+    }
+  ],
+  "updated": "2026-11-18"
+}

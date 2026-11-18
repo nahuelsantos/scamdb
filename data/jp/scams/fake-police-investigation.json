@@ -1,0 +1,169 @@
+{
+  "id": "jp/fake-police-investigation",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "ja": "「警視庁」「○○県警」の警察官や「地検特捜部」の検察官を名乗る人（着信表示が警察署の番号や末尾0110のことも）",
+    "en": "A “police officer” from the Tokyo Metropolitan Police or a prefectural police force, or a “prosecutor” from a district prosecutors' special investigation unit (the caller ID may show a real police station number or end in 0110)"
+  },
+  "name": {
+    "ja": "ニセ警察詐欺：「あなたの口座が犯罪に使われている」",
+    "en": "Fake police call: “your bank account has been used in a crime”"
+  },
+  "how": {
+    "ja": "警察官を名乗る人から携帯電話に電話があり、「あなた名義の口座が不正に開設され、資金洗浄事件の容疑者になっている」「あなたに逮捕状が出ている」などと言います。着信画面には実在する警察署の番号や末尾が0110の番号が表示されることがありますが、多くは偽装や国際電話です。その後LINEなどのSNSやビデオ通話に誘導し、制服姿や警察手帳、偽の逮捕状を見せて信用させ、「身の潔白を証明するには資産を調べる必要がある」と言って、指定口座への振込やネットバンキング、暗号資産、金の延べ棒（金地金）で財産を差し出させます。警察官がSNSやビデオ通話で連絡したり、捜査のためにお金を振り込ませたりすることはありません。",
+    "en": "A caller claiming to be a police officer rings your mobile and says an account was opened in your name and you are a suspect in a money-laundering case, or that there is a warrant for your arrest. The caller ID may show a real police station number or one ending in 0110, but most are spoofed or international numbers. They then move you to LINE or another app or a video call, show a uniform, a police notebook or a fake arrest warrant, and say they must “check your assets” to clear your name. You are made to transfer money to an account they name, through online banking, in crypto-assets or even as gold bars. Real police never contact you by social media or video call, and never have you transfer money for an investigation."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "警察官を名乗る電話で「あなたの口座が犯罪に使われている」「逮捕状が出ている」と告げられる。",
+        "en": "A caller claiming to be police says your account was used in a crime, or that you are about to be arrested."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "LINEなどのビデオ通話に切り替え、警察手帳や逮捕状の画像を見せ、誰にも話さないよう言う。",
+        "en": "They switch to a LINE or other video call, show a police notebook or an arrest warrant, and tell you not to tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ja": "「身の潔白を証明する」「資金調査をする」と言って預貯金を聞き出す。",
+        "en": "They ask about your savings to “prove your innocence” or for a “funds check”."
+      },
+      "signal": "keep_on_line"
+    },
+    {
+      "text": {
+        "ja": "指定口座への振込、ネットバンキングでの送金、暗号資産や金地金の購入を指示される。",
+        "en": "You are told to transfer money to an account they name, send it by online banking, or buy crypto-assets or gold bars for them."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "こちら警視庁捜査二課の者です。あなた名義の口座が不正に開設されており、資金洗浄事件の容疑者になっています。捜査中の事件ですのでご家族にも話さないでください。このあとLINEのビデオ通話で担当の警察官から説明します。",
+        "en": "This is the Second Investigation Division of the Tokyo Metropolitan Police. An account has been opened illegally in your name and you are a suspect in a money-laundering case. This is an ongoing investigation, so don't tell your family. An officer will explain on a LINE video call next."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ja": "【大阪地方検察庁】あなたに対する逮捕状が発付されています。身の潔白を証明するため、資産の確認に協力してください。本日中に担当検察官へ連絡がない場合、身柄を拘束します。",
+        "en": "[Osaka District Public Prosecutors Office] An arrest warrant has been issued for you. To prove your innocence, cooperate with a check of your assets. If you don't contact the prosecutor in charge today, you will be taken into custody."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "警察官から電話で口座が犯罪に使われていると言われた",
+      "警察を名乗る人からLINEのビデオ通話で警察手帳を見せられた",
+      "逮捕状が出ていると言われて資産を調べると言われた",
+      "身の潔白を証明するためにお金を振り込めと言われた",
+      "警察署の番号から電話がかかってきて資金洗浄の容疑者だと言われた",
+      "検察官にネットバンキングで送金するよう指示された"
+    ],
+    "en": [
+      "a police officer called and said my bank account was used in a crime",
+      "someone claiming to be police showed me a police notebook on a line video call",
+      "they said there was an arrest warrant and they had to check my assets",
+      "they told me to transfer money to prove my innocence",
+      "a call from a police station number said i was a money laundering suspect",
+      "a prosecutor told me to send money by online banking"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ja": [
+      "警察や検察を名乗る人がLINEなどのSNSやビデオ通話に誘導する",
+      "警察手帳や逮捕状の画像を送ってくる",
+      "「資産を調べる」「身の潔白を証明する」と言ってお金の話をする"
+    ],
+    "en": [
+      "Someone claiming to be police or a prosecutor moves you to LINE or another app, or a video call.",
+      "They send pictures of a police notebook or an arrest warrant.",
+      "They talk about “checking your assets” or “proving your innocence” and bring up money."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "電話を切り、＃9110か、自分で調べた最寄りの警察署に相談してください",
+      "相手が教えた番号には折り返さないでください",
+      "スマートフォンには警察庁推奨の詐欺対策アプリを入れ、知らない番号や国際電話には出ないでください",
+      "すでに振り込んだ場合は、すぐに銀行と警察に連絡してください"
+    ],
+    "en": [
+      "Hang up and call #9110, or a police station whose number you looked up yourself.",
+      "Never call back a number the caller gave you.",
+      "Install an anti-fraud app recommended by the National Police Agency and don't answer unknown or international numbers.",
+      "If you already transferred money, call your bank and the police at once."
+    ]
+  },
+  "reportTo": [
+    "jp/police-9110",
+    "jp/police-110",
+    "jp/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "令和８年９月末における特殊詐欺の認知・検挙状況等について（暫定値）",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/261111/01.html",
+      "date": "2026-11-11"
+    },
+    {
+      "title": "ビデオ通話を悪用した“偽警察官・検察官”の詐欺に注意！！",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/250428/01.html",
+      "date": "2025-04-28"
+    },
+    {
+      "title": "警察に偽装した電話番号に注意！",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/250325/01.html",
+      "date": "2025-03-25"
+    },
+    {
+      "title": "警察官等をかたり「金地金」を詐取する特殊詐欺について",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/250310/01.html",
+      "date": "2025-03-10"
+    },
+    {
+      "title": "ニセ警察詐欺の特異な手口",
+      "publisher": "警察庁（SOS47 特殊詐欺対策ページ）",
+      "url": "https://www.npa.go.jp/bureau/safetylife/sos47/new-topics/260605/03.html",
+      "date": "2026-06-05"
+    },
+    {
+      "title": "着信画面の偽装表示にご注意／その警察官は本物ですか",
+      "publisher": "警視庁",
+      "url": "https://www.keishicho.metro.tokyo.lg.jp/kurashi/tokushu/police_officer.html",
+      "date": "2026-04-15"
+    },
+    {
+      "title": "警察官をかたる詐欺にご注意を‼",
+      "publisher": "警視庁 匿名・流動型犯罪グループ対策本部（特殊詐欺根絶アクションプログラム・東京）",
+      "url": "https://action.digipolice.keishicho.metro.tokyo.lg.jp/view/notice/292",
+      "date": "2025-11-19"
+    }
+  ],
+  "updated": "2026-11-18"
+}

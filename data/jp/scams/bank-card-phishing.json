@@ -1,0 +1,141 @@
+{
+  "id": "jp/bank-card-phishing",
+  "country": "jp",
+  "lang": "ja",
+  "status": "active",
+  "channels": [
+    "email",
+    "sms"
+  ],
+  "sender": {
+    "ja": "ゆうちょ銀行、auじぶん銀行、住信SBIネット銀行などの銀行や、JCBなどのカード会社を名乗るメール・SMS",
+    "en": "An email or text claiming to be from a bank such as Japan Post Bank, au Jibun Bank or SBI Sumishin Net Bank, or a card company such as JCB"
+  },
+  "name": {
+    "ja": "銀行・カード会社をかたる「口座凍結」「カード利用制限」のフィッシング",
+    "en": "Fake bank or card notice: “account frozen” or “card restricted”"
+  },
+  "how": {
+    "ja": "銀行やカード会社を名乗り、「お客様の口座が凍結されました」「登録個人情報再確認のお願い（至急）」「お取引目的等の確認のお願い」「カードがロックされています」「不審な取引が確認されました」といったメールやSMSが届きます。リンク先の偽サイトにネットバンキングのIDやパスワード、ワンタイムパスワード、カード番号やセキュリティコードを入力させ、不正送金や不正利用に使います。銀行やカード会社がメールやSMSのリンクから暗証番号やパスワードを入力させることはありません。",
+    "en": "An email or text in the name of a bank or card company says “your account has been frozen”, “please re-confirm your registered details (urgent)”, “please confirm the purpose of your transactions”, “your card has been locked” or “a suspicious transaction was detected”. The link leads to a fake site that asks for your online-banking ID and password, one-time password, card number or security code, which are then used to move your money or make purchases. Banks and card companies never ask you to type a PIN or password from a link in an email or text."
+  },
+  "steps": [
+    {
+      "text": {
+        "ja": "銀行やカード会社を名乗り、口座凍結やカードの利用制限を知らせるメールやSMSが届く。",
+        "en": "An email or text from a “bank” or “card company” says your account is frozen or your card is restricted."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ja": "「至急」「本日中」と急がせ、リンクから本人確認をさせる。",
+        "en": "It rushes you to confirm your identity through a link."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ja": "偽サイトでID、パスワード、ワンタイムパスワード、カード番号を入力させる。",
+        "en": "The fake site asks for your ID, password, one-time password or card number."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ja": "【ゆうちょ銀行】お客様の口座でお取引目的の確認が取れていないため、一部のお取引を制限しております。本日中に下記より確認手続きを行ってください。[リンク]",
+        "en": "[Japan Post Bank] Because we have not confirmed the purpose of transactions on your account, some transactions are restricted. Please complete the check below today. [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ja": "【重要】JCBカードに不審な取引が確認されました。ご利用を一時停止しています。再開するには、24時間以内に本人認証を行ってください。[リンク]",
+        "en": "[Important] A suspicious transaction was detected on your JCB card. Use has been suspended. To restore it, verify your identity within 24 hours. [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ja": [
+      "銀行から口座が凍結されたとメールが来た",
+      "カードがロックされたというメールのリンクを押した",
+      "取引目的の確認をしてくださいとSMSが来た",
+      "銀行のメールからネットバンキングのパスワードを入力した",
+      "カード会社から不審な取引があったと連絡が来た",
+      "ワンタイムパスワードを入力したら預金が引き出された"
+    ],
+    "en": [
+      "my bank emailed saying my account was frozen",
+      "i tapped the link in an email saying my card was locked",
+      "a text asked me to confirm the purpose of my transactions",
+      "i entered my online banking password from a bank email",
+      "my card company said there was a suspicious transaction",
+      "i entered a one time password and money was taken from my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ja": [
+      "口座凍結やカード停止を知らせるメール・SMSにリンクがある",
+      "「至急」「24時間以内」と急がせる",
+      "ID、パスワード、ワンタイムパスワード、カード番号の入力を求める"
+    ],
+    "en": [
+      "An email or text about a frozen account or blocked card that contains a link.",
+      "Rushing you with “urgent” or “within 24 hours”.",
+      "Being asked for your ID, password, one-time password or card number."
+    ]
+  },
+  "whatToDo": {
+    "ja": [
+      "リンクは押さず、銀行やカード会社の公式アプリや、自分で登録したブックマークから確認してください",
+      "入力してしまったら、すぐに銀行やカード会社に連絡し、パスワードを変更してください",
+      "フィッシングメールはフィッシング対策協議会に報告してください"
+    ],
+    "en": [
+      "Don't tap the link: check in the official app or through a bookmark you saved yourself.",
+      "If you entered details, call your bank or card company at once and change your password.",
+      "Report phishing emails to the Council of Anti-Phishing Japan."
+    ]
+  },
+  "reportTo": [
+    "jp/your-bank",
+    "jp/antiphishing",
+    "jp/police-cyber"
+  ],
+  "sources": [
+    {
+      "title": "金融機関をかたるフィッシング (2026/04/10)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/IB_20260410.html",
+      "date": "2026-04-10"
+    },
+    {
+      "title": "JCB をかたるフィッシング (2024/10/03)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/jcb_20241003.html",
+      "date": "2024-10-03"
+    },
+    {
+      "title": "ゆうちょ銀行をかたるフィッシング (2024/02/07)",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/news/alert/japanpostbank_20240207.html",
+      "date": "2024-02-07"
+    },
+    {
+      "title": "2026/09 フィッシング報告状況（月次報告書）",
+      "publisher": "フィッシング対策協議会",
+      "url": "https://www.antiphishing.jp/report/monthly/202609.html",
+      "date": "2026-10-19"
+    }
+  ],
+  "updated": "2026-11-18"
+}
