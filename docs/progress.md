@@ -16,6 +16,11 @@ A running record of what was built, what was measured and what we learned. Newes
   - The Correos text is now "scam" (pressure plus a link); the bank and tax texts stay "suspicious".
   - The real and labelled sets are unchanged: no genuine message newly flagged.
 - **Report form:** screenshots are shrunk in the browser before upload; a server failure now says so.
+- **22 genuine messages from the owner** (Spain, Italy, New Zealand): Sanitas appointments, DIGI renewals and tips,
+  Google, Amazon, Ticketmaster and KuCoin codes, an ASB device alert, a Prime fee notice. Two were called "scam" by
+  the matcher, and matcher 1.37.0 fixes both without changing any test-set number:
+  - "descarga la app en Google Play o App Store" is not remote access (an official store); a stranger's app still is;
+  - "el PIN / la clave solicitada es…" delivers a code; "pásamelo / dictámelo" after it is still a handover request.
 
 ## 2026-11-18: A faster matcher; how detection works, and a review of the weights
 

@@ -665,3 +665,12 @@ test('Spanish: a card "limitada temporalmente" is pressure, and the Agencia Trib
   assert.ok(readSigns('Su tarjeta ha sido limitada temporalmente por razones de seguridad, llame al [number]').includes('urgency'));
   assert.ok(readSigns('La Agencia Tributaria ha emitido una comunicación dirigida a usted. [link]').includes('impersonation'));
 });
+test('an official app store is not remote access; a stranger’s app still is', () => {
+  assert.ok(!readSigns('Accede desde [link] o descarga la app en Google Play o App Store').includes('remote_access'));
+  assert.ok(readSigns('Descarga la app en Google Play y luego instala AnyDesk para que te ayudemos').includes('remote_access'));
+  assert.ok(readSigns('Descargue esta aplicacion para recibir su reembolso').includes('remote_access'));
+});
+test('"el PIN solicitado es" delivers a code; asking to pass it on is still a code request', () => {
+  assert.ok(!readSigns('El PIN solicitado es: JFC').includes('asks_for_code'));
+  assert.ok(readSigns('El PIN solicitado es 4471. Pásamelo para verificar tu cuenta').includes('asks_for_code'));
+});
