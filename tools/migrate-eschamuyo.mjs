@@ -7,7 +7,7 @@ export function migrateScam(s, updated) {
   const e = {
     id: `ar/${s.id}`, country: 'ar', status: 'active', channels: s.channels,
     sender: s.sender, name: s.name, how: s.how,
-    steps: [], examples: [{ text: s.example }], phrases: s.phrases, signals: [],
+    steps: [], examples: [{ text: s.example, synthetic: true }], phrases: s.phrases, signals: [],
     redFlags: s.redFlags, whatToDo: s.whatToDo, reportTo: [],
   };
   if (s.story) e.story = s.story;

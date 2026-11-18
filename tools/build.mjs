@@ -3,6 +3,7 @@ import { rmSync, mkdirSync, copyFileSync, existsSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { validateRepo } from './validate.mjs';
 import { loadRepo } from '../lib/load.js';
+import { withRealExamples } from '../lib/real-examples.js';
 import { buildApi, datasetMeta } from './build-api.mjs';
 
 const root = resolve(new URL('..', import.meta.url).pathname);
@@ -10,7 +11,8 @@ const out = join(root, 'dist');
 const errors = validateRepo(root);
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 
-const repo = loadRepo(root);
+// Real messages from eval/real go ahead of the written examples on the site and in the API.
+const repo = withRealExamples(loadRepo(root), root);
 const meta = datasetMeta(root);
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });

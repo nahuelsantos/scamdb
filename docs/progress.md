@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Real examples first, written ones flagged (vision points 1–2).** All 1,321 examples in the data files were
+  written by us; each is now marked `"synthetic": true`, and the validator rejects a written example without it. At
+  build time the 238 real scam messages in `eval/real` are joined to their entries (121 entries) ahead of the written
+  ones, each with its source (`lib/real-examples.js`). The site labels them "Real message · publisher, date" and
+  "Written example (illustration)"; the API carries `source` or `synthetic`. English-only copy: the eschamuyo footer
+  and "examples are invented" wording are gone, and quoted real messages are stated as not covered by CC BY.
+
 - **Vision and clean-up.** `docs/vision.md` records the owner-confirmed vision: patterns built from real, documented
   scams; English for the site, API and docs; written examples flagged; accuracy measured on real messages; unknown
   scams notified to a human; free detection that improves with use. Contradictions removed: the weekly import and the

@@ -17,10 +17,16 @@ function original(e, orig, ui) {
 ${e.story ? `<h3 lang="en">${esc(t(ui, 'sStory'))}</h3><p>${esc(pick(e.story, orig))}</p>` : ''}</div></details>`;
 }
 
-/** A sample message as it arrives (original language) with the English underneath. */
-function example(x, orig) {
+/** A sample message as it arrives. A real one (with `source`) is quoted as published and credited; a written one
+ * (`synthetic`) shows the English underneath and says it is an illustration. */
+function example(x, orig, ui) {
+  if (x.source) {
+    const [lang, text] = Object.entries(x.text)[0];
+    const date = x.source.date ? `, ${esc(x.source.date)}` : '';
+    return `<blockquote class="bubble" lang="${esc(lang)}">${esc(text)}</blockquote><p class="small">${esc(t(ui, 'exReal'))} · <a href="${esc(x.source.url)}" rel="nofollow noopener">${esc(x.source.publisher)}</a>${date}</p>`;
+  }
   const both = orig !== 'en' && x.text[orig] !== undefined && x.text.en !== undefined;
-  return `<blockquote class="bubble">${L(x.text, orig)}</blockquote>${both ? `<p class="translation">${L(x.text, 'en')}</p>` : ''}`;
+  return `<blockquote class="bubble">${L(x.text, orig)}</blockquote>${both ? `<p class="translation">${L(x.text, 'en')}</p>` : ''}<p class="small">${esc(t(ui, 'exWritten'))}</p>`;
 }
 
 /** One scam: explained in English, sample messages in the original language with English, the original on demand. */
@@ -46,7 +52,7 @@ ${original(e, orig, ui)}
 <section aria-labelledby="s-h"><h2 id="s-h">${esc(t(ui, 'sScript'))}</h2>${steps(e, signalsById, lang, ui)}</section>
 
 <div class="two">
-<section aria-labelledby="x-h"><h2 id="x-h">${esc(t(ui, 'sLooks'))}</h2>${e.examples.map((x) => example(x, orig)).join('')}
+<section aria-labelledby="x-h"><h2 id="x-h">${esc(t(ui, 'sLooks'))}</h2>${e.examples.map((x) => example(x, orig, ui)).join('')}
 <p class="small">${esc(t(ui, 'sLooksNote'))}</p></section>
 <section aria-labelledby="r-h"><h2 id="r-h">${esc(t(ui, 'sSigns'))}</h2><ul class="list">${LI(e.redFlags, lang)}</ul>
 <div class="chips">${e.signals.map((s) => `<span>${esc(pick(signalsById.get(s)?.label, ui) ?? s)}</span>`).join('')}</div></section>

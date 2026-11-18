@@ -10,7 +10,7 @@ test('migrateScam turns an eschamuyo scam into a scamdb entry', () => {
   assert.equal(e.id, 'ar/whatsapp-codigo');
   assert.equal(e.country, 'ar');
   assert.equal(e.status, 'active');
-  assert.deepEqual(e.examples, [{ text: old.scams[0].example }]);
+  assert.deepEqual(e.examples, [{ text: old.scams[0].example, synthetic: true }]);
   assert.deepEqual(e.sources, old.scams[0].sources);
   assert.equal(e.updated, '2026-11-13');
   assert.equal('isNew' in e, false);
