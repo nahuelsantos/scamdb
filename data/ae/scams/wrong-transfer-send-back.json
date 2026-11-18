@@ -1,0 +1,125 @@
+{
+  "id": "ae/wrong-transfer-send-back",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "متصل غريب يقول إنه حوّل إليك مالاً بالخطأ",
+    "en": "A stranger who says they sent money to your account by mistake"
+  },
+  "name": {
+    "ar": "«حوّلت لك المبلغ بالخطأ، رجّعه على هذا الحساب»",
+    "en": "“I sent you money by mistake, send it back to this account”"
+  },
+  "how": {
+    "ar": "يصل إلى حسابك مبلغ من مصدر لا تعرفه، ثم يتصل بك شخص يقول إنه حوّله بالخطأ ويطلب أن تعيد تحويله إلى حساب آخر غير الحساب الذي جاء منه. قد يروي قصة مؤثرة عن علاج أو راتب أو ظرف عائلي. تقول شرطة دبي إن هذه الأموال قد تكون حصيلة احتيال أو سرقة أو تجارة مخدرات، وإن من يعيد تحويلها قد يُعتبر شريكاً في الجريمة.",
+    "en": "Money from an unknown source lands in your account, then someone calls saying they sent it by mistake and asks you to transfer it to a different account, not the one it came from. They may tell a moving story about medical bills, a salary or a family emergency. Dubai Police say the money may come from fraud, theft or drug trafficking, and that whoever passes it on can be treated as a partner in the crime."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "يصل مبلغ غير متوقع إلى حسابك.",
+        "en": "An unexpected amount arrives in your account."
+      }
+    },
+    {
+      "text": {
+        "ar": "يتصل غريب ويقول إنه أخطأ في التحويل، مع قصة مؤثرة.",
+        "en": "A stranger calls saying it was a mistake, with a moving story."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "يطلب إعادة المبلغ إلى حساب آخر بسرعة.",
+        "en": "They ask you to send it quickly to another account."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "يلحّ عليك قبل أن تتصل بالبنك.",
+        "en": "They push you before you can call the bank."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "السلام عليكم أخوي، أنا آسف على الإزعاج، حوّلت لك 3,500 درهم بالغلط وكانت لعلاج الوالدة. الله يخليك رجّعها على هالحساب [رقم] لأن حسابي القديم انقفل. محتاجها اليوم ضروري.",
+        "en": "Hello brother, sorry to bother you, I sent you Dh3,500 by mistake and it was for my mother's treatment. Please send it back to this account [number] because my old account was closed. I really need it today."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "واحد اتصل وقال حولت لك فلوس بالغلط",
+      "طلب أرجع المبلغ على حساب ثاني",
+      "وصلني تحويل من شخص ما أعرفه",
+      "قال الفلوس لعلاج أمه وطلب أرجعها",
+      "تحويل بالخطأ وطلبوا إعادته بسرعة"
+    ],
+    "en": [
+      "someone called saying he sent me money by mistake",
+      "he asked me to send it back to a different account",
+      "i received a transfer from someone i don't know",
+      "said the money was for his mother's treatment and asked for it back",
+      "wrong transfer and they asked me to return it fast"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "طلب إعادة المبلغ إلى حساب غير الحساب الذي جاء منه.",
+      "قصة شخصية مؤثرة لإقناعك.",
+      "استعجال وعدم رغبة في المرور عبر البنك."
+    ],
+    "en": [
+      "A request to return the money to an account other than the one it came from.",
+      "A moving personal story to persuade you.",
+      "Hurry and reluctance to go through the bank."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تلمس المبلغ ولا تحوّله لأي أحد.",
+      "أبلغ البنك والشرطة فوراً، والبنك يتولى إعادته إن كان خطأً حقيقياً.",
+      "لا تعتمد على كلام المتصل مهما كانت القصة."
+    ],
+    "en": [
+      "Don't touch the money or send it to anyone.",
+      "Tell your bank and the police straight away; the bank will return it if it really was a mistake.",
+      "Don't rely on what the caller says, whatever the story."
+    ]
+  },
+  "reportTo": [
+    "ae/your-bank",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman"
+  ],
+  "sources": [
+    {
+      "title": "شرطة دبي تحذر من إيداع أو تحويل أموال مجهولة المصدر",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/other/2025-07-07-1.1957807",
+      "date": "2025-07-07"
+    },
+    {
+      "title": "Dubai Police urges public to stay alert, as ‘wrong money transfer’ could be a scam",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/crime/dubai-police-urges-public-to-stay-alert-as-wrong-transfer-could-be-a-scam-1.500188777",
+      "date": "2025-07-06"
+    }
+  ],
+  "updated": "2026-11-18"
+}

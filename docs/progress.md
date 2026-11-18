@@ -4,6 +4,14 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **The UAE:** 19 entries (10 Arabic, 9 English), 7 contacts (Dubai Police eCrime, Abu Dhabi Police Aman, MOI,
+  TDRA, CBUAE Sanadak, Ministry of Economy), 31 brands, 22 labelled and 9 real messages. Matcher 1.25.0 adds an
+  Arabic block ("[رابط]", "قوله لي" code requests, "سيتم إيقاف", "ادفع", "عربون") with "لا تشارك هذا الرمز" and
+  "لا توجد أي رسوم" as genuine signs, and `normalize()` now folds Arabic hamza forms (أ إ آ → ا, ى → ي): NFD had
+  split them into a letter plus a kept mark, so no pattern with hamza could match. UAE: 8% → 67% of labelled scams
+  called "scam", 0 false alarms; every other country and the real and private sets unchanged. Real UAE scams are
+  mostly link-only parcel texts (1 of 9 called "scam"), the known gap the AI step covers.
+
 - **Malaysia:** 17 entries (16 Malay, 1 English), 7 contacts (NSRC 997, PDRM Semak Mule, BNMTELELINK, SC, MCMC,
   KPDN), 33 brands, 22 labelled and 3 real messages. Matcher 1.24.0 applies the Indonesian block to Malay too and
   adds Malay words ("[pautan]", "hantar balik kod", "jangan beritahu sesiapa", "yuran", "caj") and a "jangan kongsi

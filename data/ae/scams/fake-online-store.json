@@ -1,0 +1,104 @@
+{
+  "id": "ae/fake-online-store",
+  "country": "ae",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "online",
+    "social"
+  ],
+  "sender": {
+    "en": "A shopping site or social media ad that copies a real store, with only a small difference in the address"
+  },
+  "name": {
+    "en": "Fake online shop that steals your card: “unexpected deductions” after you pay"
+  },
+  "how": {
+    "en": "Scammers advertise on social media and copy real shopping websites almost exactly, with a changed letter or a slightly different domain. When you enter your card details to buy something, they use the card for unauthorised purchases and transfers to digital wallets, or sell the data to other fraudsters. In October 2026 Dubai Police said they had arrested a six-member gang behind such a site after several residents found large sums deducted from their accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "An ad or link to a shop that looks like a real one."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "en": "Prices or offers that are better than elsewhere."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "You enter your card details to pay."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "Later, deductions appear that you did not make."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "MEGA CLEARANCE 🔥 Original perfumes and smartwatches up to 80% OFF, free delivery across UAE. Today only! Shop now: [link]"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "bought from a website in an instagram ad and my card was charged again",
+      "unexpected deductions after shopping online",
+      "the website looked exactly like the real store",
+      "fake shop took my card details",
+      "money taken from my account while i was asleep"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "too_good_to_be_true",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A web address that is one letter off from the real shop.",
+      "Huge discounts “today only”.",
+      "Paying by bank transfer to a personal account."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Type the shop's address yourself or use its official app.",
+      "If you see deductions you didn't make, block the card through your bank at once.",
+      "Report the site to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/your-bank",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/moet-consumer"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police nab 6-member gang after residents' savings lost in shopping website scam",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/crime/dubai-police-arrest-gang-shopping-website-scam-steal-bank-details",
+      "date": "2026-10-23"
+    },
+    {
+      "title": "Fake ads, cloned sites: Dubai Police reveal most common online scams in UAE",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/dubai-police-common-online-scams-uae-fake-ads",
+      "date": "2026-08-14"
+    }
+  ],
+  "story": {
+    "en": "A private company employee woke up to a series of texts telling her large sums had been deducted from her account, draining savings built up over several years. “I wasn't even using my phone or making any purchases,” she said. Her complaint was among those that led Dubai Police to the gang behind a fake shopping site."
+  },
+  "updated": "2026-11-18"
+}

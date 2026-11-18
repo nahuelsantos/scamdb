@@ -1,0 +1,143 @@
+{
+  "id": "ae/fake-telecom-points-prize",
+  "country": "ae",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "رسالة باسم «دو» أو «اتصالات من e&»",
+    "en": "A message in the name of du or Etisalat by e&"
+  },
+  "name": {
+    "ar": "نقاط مكافآت أو جائزة أو استرداد مزيف من شركة الاتصالات",
+    "en": "Fake telecom reward points, prize or refund"
+  },
+  "how": {
+    "ar": "تصلك رسالة تقول إن نقاط مكافآتك من شركة الاتصالات تنتهي اليوم، أو أنك ربحت جائزة، أو أن لك مبلغاً مستحقاً يمكن استرداده على بطاقتك، وتطلب الدخول إلى رابط. الرابط يطلب بيانات البطاقة أو البيانات الشخصية لسرقتها. رصدت «الإمارات اليوم» رسائل باسم «دو» عن نقاط تنتهي، وحذّرت «اتصالات من e&» من رسائل استرداد مزيفة، ويذكر مجلس الأمن السيبراني في 2026 عبارات مثل «لقد ربحت» و«لديك استرداد مالي» بين أشهر علامات الرسائل الاحتيالية.",
+    "en": "You get a message saying your telecom reward points expire today, that you have won a prize, or that you are owed money that can be refunded to your card, with a link to follow. The link asks for card or personal details to steal them. Emarat Al Youm found messages in du's name about expiring points, Etisalat by e& warned of fake refund messages, and in 2026 the UAE Cyber Security Council listed phrases such as “You have won” and “You are entitled to a refund” among the commonest signs of a scam message."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة باسم شركة الاتصالات عن نقاط أو جائزة أو استرداد.",
+        "en": "A message in the telecom company's name about points, a prize or a refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "النقاط «تنتهي اليوم» أو الجائزة لفترة محدودة.",
+        "en": "The points “expire today” or the prize is for a limited time."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "رابط لاستلام الجائزة أو الاسترداد.",
+        "en": "A link to claim the prize or refund."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "الصفحة تطلب بيانات البطاقة.",
+        "en": "The page asks for your card details."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "دو: رصيد نقاط مكافآتك (4,750 نقطة) ينتهي اليوم. استبدلها الآن بجائزتك قبل منتصف الليل عبر الرابط [رابط]",
+        "en": "du: Your reward points balance (4,750 points) expires today. Redeem it now for your prize before midnight at [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ar": "عميلنا العزيز، لديك مبلغ مستحق للاسترداد بقيمة 215 درهماً. للحصول عليه على بطاقتك مباشرة، أدخل بياناتك عبر الرابط [رابط]",
+        "en": "Dear customer, you have a refund of Dh215 due. To receive it directly on your card, enter your details at [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "رسالة أن نقاط دو تنتهي اليوم",
+      "رسالة من اتصالات عن استرداد مبلغ على البطاقة",
+      "قالوا ربحت جائزة من شركة الاتصالات",
+      "رابط لاستبدال نقاط المكافآت طلب بيانات البطاقة",
+      "رسالة جائزة من رقم غريب باسم دو"
+    ],
+    "en": [
+      "text saying my du points expire today",
+      "etisalat message about a refund to my card",
+      "they said i won a prize from the telecom company",
+      "link to redeem reward points asked for my card details",
+      "prize message from a strange number in du's name"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "ar": [
+      "جائزة أو استرداد لم تطلبه.",
+      "نقاط «تنتهي اليوم» مع رابط.",
+      "رسالة من رقم عادي أو من مشغّل غير الذي تستخدمه."
+    ],
+    "en": [
+      "A prize or refund you never asked for.",
+      "Points that “expire today”, with a link.",
+      "A message from an ordinary number, or from an operator you don't use."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تفتح الرابط.",
+      "تحقق من نقاطك وعروضك في تطبيق شركة الاتصالات الرسمي.",
+      "احظر المرسل واحذف الرسالة، وأبلغ عنها."
+    ],
+    "en": [
+      "Don't open the link.",
+      "Check your points and offers in your operator's official app.",
+      "Block the sender, delete the message and report it."
+    ]
+  },
+  "reportTo": [
+    "ae/tdra",
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "محتالون ينتحلون صفة «مؤسسات محلية» ويستدرجون الضحايا إلى روابط مشبوهة",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/local-section/accidents/2024-01-14-1.1817064",
+      "date": "2024-01-14"
+    },
+    {
+      "title": "\"اتصالات من &e\" تحذر من رسائل نصب بإعادة مبالغ مالية للمشتركين",
+      "publisher": "الإمارات اليوم",
+      "url": "https://www.emaratalyoum.com/business/local/2023-07-20-1.1768755",
+      "date": "2023-07-20"
+    },
+    {
+      "title": "UAE alerts public to risks from phishing, SMS scams; 35% rise in fake messages",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/cyber-security-council-warns-rise-fraudulent-messages",
+      "date": "2026-02-01"
+    }
+  ],
+  "updated": "2026-11-18"
+}

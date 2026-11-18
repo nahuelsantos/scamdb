@@ -44,3 +44,8 @@ test('normalize keeps Devanagari vowel signs (they are combining marks, not acce
   assert.equal(normalize('आपका पार्सल रोक दिया गया है'), 'आपका पारसल रोक दिया गया है');
   assert.equal(normalize('Ça va? Łódź'), 'ca va lodz');
 });
+test('Arabic hamza and alef maqsura fold to their plain letters', async () => {
+  const { normalize } = await import('../../lib/text.js');
+  assert.equal(normalize('أي إلى آخر'), 'اي الي اخر');
+  assert.equal(normalize('تعذّر 50 درهماً'), 'تعذر 50 درهما');
+});

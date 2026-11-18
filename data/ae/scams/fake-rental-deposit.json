@@ -1,0 +1,110 @@
+{
+  "id": "ae/fake-rental-deposit",
+  "country": "ae",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "en": "A “landlord” or “agent” advertising a flat, room or chalet below market price"
+  },
+  "name": {
+    "en": "Fake rental: “pay the booking deposit now before someone else takes it”"
+  },
+  "how": {
+    "en": "Scammers post apartments, rooms, chalets or holiday homes on social media and listing sites at prices far below the market, often with photos copied from real listings. Once you show interest they ask for a booking deposit, documentation fee or insurance before any viewing or contract, and push you to pay fast because of “high demand”. After the transfer they switch off their phone or block you. Dubai Police warned about apartment scams in March 2026 and chalet scams in June 2026, after a resident lost Dh8,000."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A listing at a price far below similar properties."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "en": "The “agent” says others are interested and you must act now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "A deposit or fee is asked for before any viewing or contract."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "en": "After the transfer, the contact disappears."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "Hi, yes the studio in Al Barsha is still available, AED 2,800/month all bills included. I have 3 more viewings today so I can only hold it if you send the AED 1,000 booking fee now. Contract and keys after payment."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "paid a booking fee for a room and the agent blocked me",
+      "flat on facebook marketplace was much cheaper than others",
+      "they asked for a deposit before the viewing",
+      "chalet booking turned out to be fake",
+      "landlord switched off his phone after i transferred the deposit"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "A rent well below the area's usual prices.",
+      "Payment demanded before you see the property or sign a contract.",
+      "An agent who can't show ownership papers or a licence."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Don't pay anything before seeing the property in person.",
+      "Check the landlord's or agency's identity and the ownership documents, and use official contracts.",
+      "Report the ad to the police."
+    ]
+  },
+  "reportTo": [
+    "ae/dubai-police-ecrime",
+    "ae/adp-aman",
+    "ae/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Dubai Police Warn of New Rental Scam Targeting Home Seekers",
+      "publisher": "Gulf News",
+      "url": "https://gulfnews.com/uae/searching-for-a-home-dubai-police-alert-residents-to-new-rental-scam-online-1.500461271",
+      "date": "2026-03-02"
+    },
+    {
+      "title": "Dubai resident loses Dh8,000 in fake chalet rental scam; police issue warning",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/uae/dubai-resident-lose-dh8000-fake-chalet-rental-scam-police-issue-warning",
+      "date": "2026-06-06"
+    },
+    {
+      "title": "'Agents vanish' in Dubai rental scams: Expats lose hard-earned money in fake deals",
+      "publisher": "Khaleej Times",
+      "url": "https://www.khaleejtimes.com/business/property/dubai-rental-scam-agents-deposits-disappear",
+      "date": "2025-07-01"
+    }
+  ],
+  "story": {
+    "en": "A 23-year-old dental assistant who had just moved to Dubai found a room near BurJuman on Facebook Marketplace within her budget. Afraid of losing it, she quickly transferred Dh500 as a “booking fee” to the supposed agent, who then disappeared."
+  },
+  "updated": "2026-11-18"
+}
