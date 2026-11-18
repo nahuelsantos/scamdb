@@ -8,7 +8,8 @@ export function catalogue({ repo, meta, lang = 'en' }) {
   const channels = [...new Set(repo.entries.flatMap((e) => e.channels))];
   const names = t(lang, 'channels');
   const item = (e) => card(e, lang).replace('<article class="sp">', `<article class="sp" data-channels="${esc(e.channels.join(' '))}">`);
-  const groups = repo.countries.map((c) => ({ c, list: repo.entries.filter((e) => e.country === c.code) })).filter((g) => g.list.length);
+  const DEFAULT_FIRST = 'us';
+  const groups = [...repo.countries].sort((a, b) => (b.code === DEFAULT_FIRST) - (a.code === DEFAULT_FIRST)).map((c) => ({ c, list: repo.entries.filter((e) => e.country === c.code) })).filter((g) => g.list.length);
   const body = `<section class="page-head"><h1>${esc(t(lang, 'navCatalogue'))}</h1>
 <p class="lede">${esc(t(lang, 'catalogueLede', repo.entries.length))} <code>/v1/scams/{country}/{slug}.json</code>.</p></section>
 <form class="filters" id="cat-filters" role="search" aria-label="${esc(t(lang, 'filterLabel'))}">

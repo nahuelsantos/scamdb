@@ -13,7 +13,7 @@ export const UI = {
     lede: 'Scam patterns, not people: how each scam works, the words it uses, the warning signs and who to call, country by country, in the language it arrives in. Free to download and free to build on.',
     btnCatalogue: 'Browse the catalogue', btnDocs: 'Read the docs',
     hero: { title: 'A drawn phone showing a scam asking for a code, with handwritten notes pointing at each warning sign', stamp: 'SCAM',
-      n1: 'fake agency', n2: 'rushes you', n3a: 'asks for', n3b: 'the key!', n4a: 'never share it', n4b: 'with anyone' },
+      n1: 'fake bank', n2: 'rushes you', n3a: 'asks for', n3b: 'the key!', n4a: 'never share it', n4b: 'with anyone' },
     pgTitle: 'Is this a scam? Paste a message', pgPrivate: 'runs in your browser · nothing is sent', pgSamples: 'Sample messages',
     pgSampleLabels: ['Bank fraud team', '“Hi Mum, new number”', 'Dentist reminder'], pgMessage: 'Message', pgSoon: 'Same check as an API:', pgApi: 'Check with the API', apiScore: 'scam probability', apiNoKey: 'keyword check only. Sign in and create a free key on your account page to add the AI score here.',
     vScam: 'scam', vSuspicious: 'suspicious', vNone: 'not recognised', noScore: 'score: null · catalogue match only',

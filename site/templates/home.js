@@ -7,7 +7,7 @@ import { pick } from '../../lib/text.js';
 import { sketch, roundRect } from '../../lib/sketch.js';
 
 export const FEATURED = ['us/bank-fraud-alert-zelle', 'us/toll-text', 'us/family-emergency-call'];
-export const ROUTE = 'ar/whatsapp-codigo';
+export const ROUTE = 'us/bank-fraud-alert-zelle';
 export const SAMPLES = [
   { text: "This is your bank's fraud team. We've stopped a suspicious payment of $1,480. To protect your money, read me the 6-digit code we just sent you. Please don't hang up." },
   { text: "Hi Mum, I dropped my phone, this is my new number. Can you transfer $950 for the hotel tonight? I'll pay you back x" },
@@ -26,7 +26,7 @@ const HERO_ART = (() => {
   return `<svg viewBox="0 0 540 460" role="img" aria-labelledby="hero-t"><title id="hero-t">${'${title}'}</title>
 ${k.path(roundRect(165, 30, 210, 390, 30), { fill: 'card', shade: true })}
 ${k.line(245, 52, 295, 52, { kind: 'thin' })}
-<text class="t-ui" x="204" y="85" font-weight="600">“PAMI”</text><text class="t-mono" x="204" y="100">+54 11 ···· 2231</text>
+<text class="t-ui" x="204" y="85" font-weight="600">“Bank Fraud”</text><text class="t-mono" x="204" y="100">+1 (555) ··· 0142</text>
 ${k.line(182, 116, 358, 116, { kind: 'thin' })}
 ${k.path(`M${bx + 12} 130 h${bw - 12} a12 12 0 0 1 12 12 v86 a12 12 0 0 1 -12 12 h-${bw - 24} l-12 12 v-110 a12 12 0 0 1 12 -12 z`, { fill: 'paper', shade: true })}
 ${k.path(wave(tx - 2, 152, 108), { kind: 'thin' })}
@@ -34,13 +34,13 @@ ${k.path(wave(tx - 2, 152, 108), { kind: 'thin' })}
 ${k.circle(tx + 20, 185, 22, { kind: 'acc' })}${k.circle(tx + 20, 185, 7, { kind: 'thin' })}${k.path(`M${tx + 31} 185 h66 M${tx + 79} 185 v10 M${tx + 89} 185 v13 M${tx + 97} 185 v8`, { kind: 'acc' })}
 ${k.path(wave(tx - 2, 218, 84), { kind: 'thin' })}${k.path(wave(tx - 2, 232, 48))}
 ${k.rect(214, 268, 134, 44, { kind: 'thin' })}
-<text class="t-mono" x="226" y="285">SMS · WhatsApp</text>${k.circle(235, 301, 10, { kind: 'acc' })}${k.circle(235, 301, 3, { kind: 'thin' })}${k.path('M241 301 h46 M276 301 v6 M283 301 v8', { kind: 'acc' })}
+<text class="t-mono" x="226" y="285">SMS · phone</text>${k.circle(235, 301, 10, { kind: 'acc' })}${k.circle(235, 301, 3, { kind: 'thin' })}${k.path('M241 301 h46 M276 301 v6 M283 301 v8', { kind: 'acc' })}
 <g transform="rotate(-9 270 352)">${k.rect(206, 332, 128, 40, { kind: 'acc' })}<text x="270" y="359" text-anchor="middle" class="t-stamp">${'${stamp}'}</text></g>
 <text class="t-hand" x="20" y="92">${'${n1}'}</text>${arrow('M118 96 C 145 104, 160 94, 184 88', 'M176 82 L186 88 L176 94')}
 <text class="t-hand" x="30" y="232">${'${n2}'}</text>${arrow(`M120 228 C 140 236, 150 236, ${tx - 6} 230`, `M${tx - 14} 224 L${tx - 4} 230 L${tx - 14} 236`)}
 <text class="t-hand-acc" x="400" y="182">${'${n3a}'}</text><text class="t-hand-acc" x="400" y="204">${'${n3b}'}</text>${arrow('M396 194 C 380 200, 368 202, 352 199', 'M362 192 L351 199 L362 206', 'acc')}
 <text class="t-hand" x="400" y="300">${'${n4a}'}</text><text class="t-hand" x="400" y="322">${'${n4b}'}</text>${arrow('M396 302 C 380 298, 366 294, 352 292', 'M361 285 L351 292 L361 298')}
-<text class="t-mono" x="392" y="440">ar/whatsapp-codigo</text></svg>`;
+<text class="t-mono" x="352" y="440">us/bank-fraud-alert-zelle</text></svg>`;
 })();
 const MARK = sketch(701).path('M3 12 C 50 4, 120 4, 197 10 M20 16 C 70 11, 130 12, 180 15', { kind: 'acc' });
 
