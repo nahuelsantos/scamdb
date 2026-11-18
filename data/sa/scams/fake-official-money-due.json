@@ -1,0 +1,148 @@
+{
+  "id": "sa/fake-official-money-due",
+  "country": "sa",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp",
+    "social",
+    "sms"
+  ],
+  "sender": {
+    "ar": "شخص ينتحل صفة مسؤول أو جهة حكومية أو «صندوق الاستثمارات العامة»",
+    "en": "Someone posing as an official, a government body or the Public Investment Fund"
+  },
+  "name": {
+    "ar": "«لك مبلغ مستحق»: مسؤول أو جهة مزيفة تطلب بيانات حسابك أو رسوماً",
+    "en": "“Money is due to you”: a fake official or agency asks for your account details or a fee"
+  },
+  "how": {
+    "ar": "يتواصل معك شخص ينتحل صفة مسؤول أو جهة حكومية أو «صندوق الاستثمارات العامة»، ويقول إن لك مبلغاً مستحقاً أو دعماً أو أرباحاً سيودعها في حسابك. يطلب معلومات حسابك البنكي ورموز التحقق، أو تحويل «رسوم» أولاً. حذّرت رئاسة أمن الدولة من انتحال صفة المسؤولين لطلب معلومات الحساب بحجة إيداع مبالغ مستحقة، وحذّر صندوق الاستثمارات العامة في 2025 و2026 من أي تواصل ينتحل اسمه لطلب مبالغ أو حوالات، مؤكداً أنه لا يقدم خدمات مباشرة للأفراد.",
+    "en": "Someone contacts you posing as an official, a government body or the Public Investment Fund, saying money, support or profits are due to you and will be deposited in your account. They ask for your bank details and verification codes, or for a “fee” to be transferred first. The Presidency of State Security has warned about people posing as officials to ask for account details on the pretext of depositing money owed, and the PIF warned in 2025 and 2026 about anyone using its name to ask for money or transfers, saying it offers no direct services to individuals."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "اتصال أو رسالة من «مسؤول» أو جهة رسمية.",
+        "en": "A call or message from an “official” or official body."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "وعد بمبلغ مستحق أو دعم أو أرباح.",
+        "en": "A promise of money owed, support or profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "طلب بيانات الحساب ورموز التحقق.",
+        "en": "A request for account details and verification codes."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ar": "أو طلب رسوم قبل الإيداع.",
+        "en": "Or a fee before the deposit."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "السلام عليكم، معك مكتب صندوق الاستثمارات العامة. تم اعتماد صرف أرباح لك بقيمة 25,000 ريال، نحتاج رقم الآيبان ورمز التحقق اللي بيوصلك لإتمام الإيداع.",
+        "en": "Hello, this is the Public Investment Fund office. A profit payout of SAR 25,000 has been approved for you; we need your IBAN and the verification code you will receive to complete the deposit."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ar": "تهنئكم الجهة المختصة بصرف دعم مالي مستحق لكم. لاستلام المبلغ يرجى سداد رسوم تحويل 350 ريال على الحساب [رقم] خلال اليوم.",
+        "en": "The competent authority congratulates you on financial support due to you. To receive it, please pay a SAR 350 transfer fee to account [number] today."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "اتصل واحد يقول إنه من صندوق الاستثمارات وقال لي أرباح",
+      "قالوا لي مبلغ مستحق وطلبوا رقم الحساب والرمز",
+      "طلبوا رسوم عشان يصرفون لي الدعم",
+      "رسالة من جهة حكومية تقول لي مبلغ أستلمه",
+      "متصل ينتحل صفة مسؤول طلب الآيبان"
+    ],
+    "en": [
+      "a caller said he was from the public investment fund and i had profits",
+      "they said money is due to me and asked for my account and code",
+      "they asked for a fee to release my support payment",
+      "message from a government body saying i have money to collect",
+      "caller posing as an official asked for my iban"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ar": [
+      "جهة حكومية أو الصندوق يتصل ليعرض عليك مالاً.",
+      "دفع رسوم لاستلام مبلغ.",
+      "طلب رمز التحقق «للإيداع»."
+    ],
+    "en": [
+      "A government body or the fund calling to offer you money.",
+      "Paying a fee to receive money.",
+      "A verification code “for the deposit”."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تعطِ بيانات حسابك أو رموزك ولا تدفع أي رسوم.",
+      "تحقق من أي دعم عبر المنصة الرسمية للجهة.",
+      "أبلغ عبر «كلنا أمن»، وإن شاركت بيانات فأبلغ البنك."
+    ],
+    "en": [
+      "Don’t give your account details or codes, and pay no fees.",
+      "Check any support payment on the agency’s official platform.",
+      "Report it via Kollona Amn, and if you shared details, tell your bank."
+    ]
+  },
+  "reportTo": [
+    "sa/police-kollona-amn",
+    "sa/your-bank",
+    "sa/cst-330330"
+  ],
+  "sources": [
+    {
+      "title": "محتالون في الفخ!",
+      "publisher": "عكاظ",
+      "url": "https://www.okaz.com.sa/local/na/2270986",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "اللص الرقمي!",
+      "publisher": "عكاظ",
+      "url": "https://www.okaz.com.sa/local/na/2252250",
+      "date": "2026-06-12"
+    },
+    {
+      "title": "«صندوق الاستثمارات»: احذروا المحتالين.. لا نقدم خدمات مباشرة للأفراد",
+      "publisher": "عكاظ",
+      "url": "https://www.okaz.com.sa/local/na/2235922",
+      "date": "2026-02-15"
+    },
+    {
+      "title": "‎صندوق الاستثمارات العامة يحذر من انتحال اسمه ويؤكد عدم تقديم خدمات مباشرة للأفراد",
+      "publisher": "عاجل",
+      "url": "https://ajel.sa/local/mmu549qm22",
+      "date": "2025-05-15"
+    }
+  ],
+  "updated": "2026-11-18"
+}

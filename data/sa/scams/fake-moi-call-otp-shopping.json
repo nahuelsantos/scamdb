@@ -1,0 +1,113 @@
+{
+  "id": "sa/fake-moi-call-otp-shopping",
+  "country": "sa",
+  "lang": "en",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "en": "A caller who says they are from the Ministry of Interior, often calling again and again"
+  },
+  "name": {
+    "en": "Fake Ministry of Interior caller asking expats for an OTP"
+  },
+  "how": {
+    "en": "Someone calls and says they are from the Ministry of Interior and that a “verification” is part of an official procedure. They speak in a threatening way and call repeatedly until you read out the one-time code (OTP) you just received. The code is really for a purchase: in July 2026 expatriates, including two nurses in Abha, lost more than SAR 10,000 after the codes were used for online shopping and buy-now-pay-later orders. Government agencies and banks never ask for OTPs, Nafath approvals or Absher codes by phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "en": "A call from someone claiming to be the Ministry of Interior."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "en": "They threaten you and call again and again."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "en": "They ask you to read out the OTP that just arrived."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "en": "The code approves a purchase or instalment order in your name."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "en": "This is the Ministry of Interior verification department. Your iqama details must be verified today or your services will be suspended. You will receive a code now, tell me the code immediately."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "en": "Why you are not cooperating? This is official procedure. If you do not give the code we will block your iqama and file a case. Read the 4 digits now."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "en": [
+      "caller from the ministry of interior asked for my otp",
+      "they said my iqama must be verified and wanted the code",
+      "after i gave the code there were purchases on noon",
+      "they kept calling and threatening me for the code",
+      "someone used my otp for a tabby or tamara order"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "en": [
+      "No government agency asks for an OTP over the phone.",
+      "Threats and repeated calls to make you hurry.",
+      "A code message that mentions a store or payment, not the ministry."
+    ]
+  },
+  "whatToDo": {
+    "en": [
+      "Hang up and never read out a code.",
+      "Read the code message itself: if it names a shop or a payment, it is not verification.",
+      "If you shared a code, call your bank and the shopping or instalment app at once, and report it to the police."
+    ]
+  },
+  "reportTo": [
+    "sa/your-bank",
+    "sa/police-kollona-amn",
+    "sa/cst-330330"
+  ],
+  "sources": [
+    {
+      "title": "Fraudsters Impersonate Saudi Ministry of Interior in OTP Scam, Expats Lose Thousands",
+      "publisher": "KSA Expats",
+      "url": "https://ksaexpats.com/?p=51874",
+      "date": "2026-07-27"
+    },
+    {
+      "title": "جرائم بلا دماء !",
+      "publisher": "عكاظ",
+      "url": "https://www.okaz.com.sa/ampArticle/2174032",
+      "date": "2024-11-15"
+    }
+  ],
+  "story": {
+    "en": "Two expatriate nurses at a private clinic in Abha were among several expatriates called by people claiming to represent the Ministry of Interior, who pressed them for their OTPs. The codes were used for purchases worth more than SAR 10,000 on online shopping and buy-now-pay-later services, and the goods were collected by the scammers."
+  },
+  "related": [
+    "sa/fake-absher-nafath-code"
+  ],
+  "updated": "2026-11-18"
+}

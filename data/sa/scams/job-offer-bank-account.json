@@ -1,0 +1,152 @@
+{
+  "id": "sa/job-offer-bank-account",
+  "country": "sa",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "إعلان وظيفة عن بُعد على مواقع التواصل أو رسالة واتساب من «شركة»",
+    "en": "A remote job ad on social media or a WhatsApp message from a “company”"
+  },
+  "name": {
+    "ar": "وظيفة عن بُعد براتب مغرٍ: افتح حساباً وأرسل الرموز",
+    "en": "Remote job with a tempting salary: open an account and send the codes"
+  },
+  "how": {
+    "ar": "يُعلن عن وظيفة عن بُعد براتب جيد دون دوام، غالباً للنساء والشباب. يطلبون بياناتك عبر رابط أو واتساب، ثم أن تفتح حساباً بنكياً أو تعطيهم رقم حسابك ورموز التحقق «لإيداع الراتب». يستخدمون حسابك لاستقبال أموال ضحايا آخرين وتحويلها للخارج، فتجد نفسك متهماً أمام النيابة. نشرت عكاظ في أكتوبر 2026 قصة شابة استُدعيت بتهمة الاحتيال بعد أن أعطت رموزها لجهة وعدتها براتب 6 آلاف ريال.",
+    "en": "A remote job is advertised with a good salary and no office hours, often aimed at women and young people. They ask for your details through a link or WhatsApp, then for you to open a bank account or give them your account number and verification codes “to deposit your salary”. They use your account to receive other victims’ money and send it abroad, and you end up facing the Public Prosecution. In October 2026 Okaz reported a young woman summoned on fraud charges after she gave her codes to people who promised her a SAR 6,000 salary."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "إعلان وظيفة عن بُعد براتب مرتفع ودون خبرة.",
+        "en": "A remote job ad with a high salary and no experience needed."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "رابط أو واتساب لجمع بياناتك.",
+        "en": "A link or WhatsApp chat to collect your details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "طلب رقم الحساب ورموز التحقق «لإيداع الراتب».",
+        "en": "A request for your account number and verification codes “to deposit the salary”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ar": "طلب تحويل مبالغ تصل حسابك إلى حسابات أخرى.",
+        "en": "A request to pass money that arrives in your account on to other accounts."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "مطلوب موظفات عن بُعد 💼 راتب 6,000 ريال بدون دوام ولا خبرة، العمل من الجوال ساعتين يومياً. للتقديم أرسلي اسمك ورقم الهوية واتساب [رقم]",
+        "en": "Remote female employees wanted 💼 SAR 6,000 salary, no office hours or experience, two hours a day from your phone. To apply send your name and ID number on WhatsApp [number]"
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ar": "مبروك تم قبولك. عشان نودع أول راتب نحتاج رقم حسابك، وبيوصلك الحين رمز من البنك أرسليه لنا لتفعيل الإيداع.",
+        "en": "Congratulations, you are accepted. To deposit your first salary we need your account number, and you will now receive a code from the bank; send it to us to activate the deposit."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "تقدمت على وظيفة عن بعد وطلبوا رقم حسابي",
+      "طلبوا رمز التحقق عشان ينزلون الراتب",
+      "وصلني استدعاء لأن حسابي استقبل فلوس ما أعرفها",
+      "قالوا افتحي حساب بنكي جديد للوظيفة",
+      "وظيفة من الجوال براتب ستة آلاف"
+    ],
+    "en": [
+      "i applied for a remote job and they asked for my account number",
+      "they asked for the otp to deposit my salary",
+      "i was summoned because my account received money i do not know",
+      "they told me to open a new bank account for the job",
+      "phone job paying six thousand riyals"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "ar": [
+      "راتب مرتفع دون مقابلة أو خبرة.",
+      "جهة توظيف تطلب رموز التحقق أو بيانات الدخول للبنك.",
+      "طلب تحويل أموال تصل حسابك إلى آخرين."
+    ],
+    "en": [
+      "A high salary with no interview or experience.",
+      "An employer asking for verification codes or banking logins.",
+      "Being asked to pass money that reaches your account on to others."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تعطِ رقم حسابك ورموزك لجهة توظيف.",
+      "لا تحوّل أموالاً لا تعرف مصدرها، فالمسؤولية عليك.",
+      "إذا حدث ذلك، أبلغ البنك فوراً ليوقف الحساب، ثم الشرطة."
+    ],
+    "en": [
+      "Never give an employer your account and codes.",
+      "Never pass on money you don’t know the source of; you are held responsible.",
+      "If it has happened, tell your bank at once so it can freeze the account, then the police."
+    ]
+  },
+  "reportTo": [
+    "sa/your-bank",
+    "sa/police-kollona-amn"
+  ],
+  "sources": [
+    {
+      "title": "النصب بـ«رمز التحقق»!",
+      "publisher": "عكاظ",
+      "url": "https://www.okaz.com.sa/investigation/na/2273127",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "WhatsApp مصيدة جديدة للباحثين عن العمل",
+      "publisher": "الوطن",
+      "url": "https://www.alwatan.com.sa/article/1149902",
+      "date": "2024-07-12"
+    },
+    {
+      "title": "إعلان وظيفة شاغرة يحيل فتاة لمصير مجهول.. «النيابة» تحقق",
+      "publisher": "عكاظ",
+      "url": "https://www.okaz.com.sa/news/local/2138640",
+      "date": "2023-07-18"
+    },
+    {
+      "title": "Saudi banks launch initiative that reveals new financial fraud methods",
+      "publisher": "Saudi Gazette",
+      "url": "https://saudigazette.com.sa/article/633057",
+      "date": "2023-06-04"
+    }
+  ],
+  "story": {
+    "ar": "روت عكاظ أن «عبير» (21 عاماً) تقدمت لوظيفة عبر مواقع التواصل براتب 6 آلاف ريال شهرياً دون دوام، فأعطت الجهة رقم حسابها ورموز التحقق مع أول راتب. تبيّن أن حسابها استُخدم لاستقبال أموال ضحايا آخرين، فوصلها استدعاء بتهمة النصب والاحتيال.",
+    "en": "Okaz reported that a 21-year-old woman applied through social media for a job paying SAR 6,000 a month with no office hours, and gave them her account number and verification codes with her first salary. Her account turned out to be used to receive other victims’ money, and she was summoned on fraud charges."
+  },
+  "related": [
+    "sa/fake-investment-platform"
+  ],
+  "updated": "2026-11-18"
+}
