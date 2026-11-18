@@ -54,15 +54,21 @@ function prepared(entry, translated) {
 
 // Scripts written without spaces between words (Thai, Lao, Khmer, Burmese, Chinese, Japanese): a phrase or one of
 // its space-separated chunks counts when it appears anywhere in the text, not only between spaces.
+// Messages are short; comparing the first 1,500 characters keeps a pasted wall of text fast.
+const JOINED_WINDOW = 1500;
 const UNSPACED = /[\u0E00-\u0EFF\u1000-\u109F\u1780-\u17FF\u3040-\u30FF\u3400-\u9FFF]/u;
 
 /** Length of the longest substring a and b share (a is a short phrase; dynamic programming over two rows). */
 function longestShared(a, b) {
-  let best = 0, prev = new Array(a.length + 1).fill(0);
-  for (let j = 1; j <= b.length; j++) {
-    const cur = new Array(a.length + 1).fill(0);
-    for (let i = 1; i <= a.length; i++) if (a[i - 1] === b[j - 1]) { cur[i] = prev[i - 1] + 1; if (cur[i] > best) best = cur[i]; }
-    prev = cur;
+  let best = 0, prev = new Int32Array(a.length + 1), cur = new Int32Array(a.length + 1);
+  for (let j = 0; j < b.length; j++) {
+    const c = b.charCodeAt(j);
+    for (let i = 1; i <= a.length; i++) {
+      const v = a.charCodeAt(i - 1) === c ? prev[i - 1] + 1 : 0;
+      cur[i] = v;
+      if (v > best) { best = v; if (best === a.length) return best; }
+    }
+    [prev, cur] = [cur, prev];
   }
   return best;
 }
@@ -72,9 +78,10 @@ function scoreLang(list, text, words) {
   let score = 0;
   for (const { p, pw, joined } of list) {
     if (joined) {
+      if (!words.unspaced) continue; // no such script in the text: nothing to share, and long texts stay fast
       if (text.includes(p.trim())) { score += 3; pw.forEach((w) => counted.add(w)); continue; }
       // No word boundaries to compare, so score the longest stretch the phrase shares with the text.
-      const run = longestShared(p.trim(), text);
+      const run = longestShared(p.trim(), text.length > JOINED_WINDOW ? text.slice(0, JOINED_WINDOW) : text);
       if (run >= 10) score += 2; else if (run >= 6) score += 1;
       continue;
     }
@@ -118,7 +125,7 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   const text = normalize(raw);
   // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
   const set = new Set(tokens(text));
-  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4) };
+  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4), unspaced: UNSPACED.test(text) };
   const padded = ` ${text} `;
   const rank = (pool, translated = false) => (!text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, padded, words, translated), i }))
     .filter((r) => r.score >= MATCH_THRESHOLD)

@@ -71,7 +71,7 @@ test('empty, emoji-only and huge input are not recognised and fast', () => {
   const cold = performance.now();
   m('warm up');
   assert.ok(performance.now() - cold < 2000, 'preparing the catalogue took too long');
-  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000)]) {
+  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000), 'สวัสดีครับ '.repeat(2000)]) {
     const t0 = performance.now();
     const r = m(t);
     assert.equal(r.verdict, 'not_recognised');
