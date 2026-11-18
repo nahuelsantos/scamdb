@@ -148,6 +148,16 @@ test('the answer shows why the AI step was skipped, and nothing extra when it ra
   assert.equal('scorerError' in ran.engine, false);
 });
 
+test('pattern says whether a scam follows a known pattern', async () => {
+  const { buildAnswer } = await import('../../worker/isitascam.js');
+  const id = catalogue.entries[0].id;
+  const ans = (result) => buildAnswer({ result: { score: null, signals: [], matches: [], ...result }, catalogue, top: null, lang: 'en', country: 'au', scorer: 'matcher', scorerError: null });
+  assert.equal(ans({ verdict: 'scam', matches: [{ id }] }).pattern, 'known');
+  assert.equal(ans({ verdict: 'suspicious', matches: [], elsewhere: [{ id }] }).pattern, 'known');
+  assert.equal(ans({ verdict: 'scam', matches: [] }).pattern, 'unknown');
+  assert.equal(ans({ verdict: 'not_recognised', matches: [] }).pattern, null);
+});
+
 test('embeddings and the chat run at the same time, and the chat gets the keyword hints', async () => {
   _resetCache();
   const order = [];

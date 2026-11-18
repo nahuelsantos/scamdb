@@ -35,6 +35,7 @@ export function validateCheck(b, countries) {
 export function buildAnswer({ result, catalogue, top, lang, country, scorer, scorerError }) {
   const byId = new Map(catalogue.entries.map((e) => [e.id, e]));
   const reportCountry = country ?? top?.country ?? (result.matches[0] ? byId.get(result.matches[0].id)?.country : null);
+  const elsewhere = result.verdict === 'not_recognised' ? [] : result.elsewhere ?? [];
   return {
     verdict: result.verdict,
     // A forwarded warning about a scam ("they call you from a fake courier… warn your family"): never called a scam.
@@ -44,7 +45,10 @@ export function buildAnswer({ result, catalogue, top, lang, country, scorer, sco
     matches: result.matches.map(({ id }) => ({ id, name: pickText(byId.get(id)?.name, lang) ?? id, url: `${ORIGIN}/v1/scams/${id}.json`, page: `${ORIGIN}/catalogue/${id}/` })),
     // Scams documented in another country (any language) that fit better than anything local. whatToDo and reportTo
     // stay those of the caller's country.
-    seenElsewhere: (result.verdict === 'not_recognised' ? [] : result.elsewhere ?? []).map(({ id }) => ({ id, country: byId.get(id)?.country ?? id.split('/')[0], name: pickText(byId.get(id)?.name, lang) ?? id, url: `${ORIGIN}/v1/scams/${id}.json`, page: `${ORIGIN}/catalogue/${id}/` })),
+    // "known": it follows a pattern in the catalogue; "unknown": it reads as a scam but follows no known pattern (a
+    // new scam worth investigating, docs/vision.md); null: not recognised as a scam.
+    pattern: result.verdict === 'not_recognised' ? null : result.matches.length || elsewhere.length ? 'known' : 'unknown',
+    seenElsewhere: elsewhere.map(({ id }) => ({ id, country: byId.get(id)?.country ?? id.split('/')[0], name: pickText(byId.get(id)?.name, lang) ?? id, url: `${ORIGIN}/v1/scams/${id}.json`, page: `${ORIGIN}/catalogue/${id}/` })),
     whatToDo: pickText(top?.whatToDo, lang) ?? [],
     reportTo: reportCountry ? `${ORIGIN}/v1/${reportCountry}/contacts.json` : null,
     engine: { matcher: VERSION, scorer, ...(scorerError ? { scorerError } : {}) },
