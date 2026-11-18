@@ -1,5 +1,9 @@
 # scamdb worldwide import — design
 
+> **Superseded where it disagrees with [docs/vision.md](../../vision.md) (2026-11-18):** patterns built from real,
+> documented scams; English for the site, API and docs; countries added only when the owner asks and real scam
+> messages can be found; written examples flagged; no Spanish-first or eschamuyo-first focus.
+
 Date: 2026-11-16 · Status: draft for owner review · Builds on `2026-11-15-scamdb-design.md`
 
 Marked **[call]**: decisions Claude made that the owner has not explicitly confirmed. Everything else was decided in

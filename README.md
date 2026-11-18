@@ -1,15 +1,15 @@
 # scamdb
 
-**A field guide to scams.** An open database of scam *patterns*, country by country: how each scam
-works, how it unfolds step by step, sample messages, the phrases people use to describe it, the
-warning signs, what to do, and who to report it to.
+**A database of the world's scam patterns, and a free detection API.** Every pattern is built from real,
+documented scams (phone calls, SMS, WhatsApp, Telegram, email, social media), each with a reliable, dated source:
+how the scam works, how it unfolds, the warning signs, what to do and who to report it to.
 
-Blacklists of phone numbers and links already exist, and they go stale every week. The script of a
-scam ("Le hablo de PAMI… le va a llegar un código") lasts for years. scamdb catalogues the scripts,
-starting with Argentina, in the language people actually use.
+Blacklists of phone numbers and links go stale every week; the script of a scam lasts for years. scamdb catalogues
+the scripts and stores real scam messages in the language they arrive in, so `/v1/isitascam` can tell, as
+accurately as possible, whether a message is a scam and which pattern it follows. The site, API and documentation
+are in English. See [docs/vision.md](docs/vision.md) for where the project is going.
 
-The data is free to use, including commercially, under **CC BY 4.0**. It powers
-[eschamuyo.com](https://eschamuyo.com) and anyone else who wants to build on it.
+The data is free to use, including commercially, under **CC BY 4.0**; the code is **MIT**.
 
 ## The API
 
@@ -69,17 +69,16 @@ The build writes the API and the site to `dist/`. The site is in English (old `/
 
 ## Importing scams
 
-New countries and new scams come from the `import-scams` Claude Code skill (`.claude/skills/import-scams/SKILL.md`).
-One run researches one country from official warnings (`importer/sources.json`) and recent news, drafts up to 20
-entries in the original language plus English, validates them and opens one pull request labelled `import`. Nothing
-merges without the owner.
+New scams for a country come from the `import-scams` Claude Code skill (`.claude/skills/import-scams/SKILL.md`),
+run only when the owner asks for a specific country: `/import-scams au`. It first collects real scam messages
+quoted from reliable sources and stops if it finds fewer than 8; otherwise it drafts entries from official warnings
+and reputable news, validates them and opens one pull request labelled `import`.
 
-- Run by hand in any Claude Code session in this repo: `/import-scams next` or `/import-scams au`.
-- A weekly scheduled run does the same with `next`.
-- `node tools/importer.mjs status` shows entries per country; `node tools/importer.mjs next` shows which comes next
-  (Australia, New Zealand, the US, the UK, Canada, Spain, Mexico, Brazil, then the country whose newest entry is oldest).
+- `node tools/importer.mjs status` shows entries per country.
 - Close an import PR, or delete a scam from it, to reject it: the next run adds it to `importer/rejected.json` and
   never proposes it again. Delete a line there to allow it back.
+- The daily Discover workflow (`.github/workflows/discover.yml`) lists leads (new stories and official warnings) in a
+  weekly "Scam signals" issue; leads are for the owner and for research, never a source on their own.
 
 ## Licenses
 
@@ -112,7 +111,9 @@ merges without the owner.
   confirms every phone number and email is still printed on its official page. If something broke
   it opens an issue labelled `weekly-check`. Run it by hand from the Actions tab too.
 
-## Sync to eschamuyo (owner step, once)
+## Sync to eschamuyo (optional, owner step, once)
+
+eschamuyo.com is one consumer of the data, like any other.
 
 When Argentine data changes on `main`, `.github/workflows/sync-eschamuyo.yml` opens or updates a
 pull request on `nahuelsantos/eschamuyo` with the regenerated `site/data/scams.json`. It needs a token:

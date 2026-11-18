@@ -4,6 +4,13 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Vision and clean-up.** `docs/vision.md` records the owner-confirmed vision: patterns built from real, documented
+  scams; English for the site, API and docs; written examples flagged; accuracy measured on real messages; unknown
+  scams notified to a human; free detection that improves with use. Contradictions removed: the weekly import and the
+  Spanish/English translation scheduled tasks are paused; the import skill runs only on the owner's request and stops
+  without 8 real messages; README, CONTRIBUTING, the PR template, the eval README and the two old specs now point to
+  the vision.
+
 - **Removed: Egypt, Vietnam, Malaysia, Saudi Arabia and Pakistan.** These five were imported without the owner
   asking, and each has only 2–4 real scam texts, too few to measure them. They go with their contacts, brands, test
   messages and the Malay, Vietnamese and Urdu rule blocks (Matcher 1.34.0); every remaining country's numbers are

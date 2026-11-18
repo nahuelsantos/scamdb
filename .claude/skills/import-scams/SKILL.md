@@ -1,6 +1,6 @@
 ---
 name: import-scams
-description: Research one country's current scams from official warnings and reputable news, draft scamdb entries (original language plus English) and open one pull request for the owner to review. Use for "/import-scams next", "/import-scams <country code>", or when asked to import or add scams for a country.
+description: Research one country's current scams from real, documented messages, official warnings and reputable news, draft scamdb entries and open one pull request. Use only when the owner asks to add or update a specific country ("/import-scams <country code>"); never pick a country on your own.
 ---
 
 # Import scams
@@ -9,8 +9,8 @@ One run = one country = at most one pull request with at most 20 new entries. No
 reviews every import. Read `CONTRIBUTING.md` (fields and rules) and
 `docs/superpowers/specs/2026-11-16-worldwide-import-design.md` (why it works this way) before drafting.
 
-Argument: `next` (default) or a country code (`au`, `nz`, `us`, `gb`, `ca`, `es`, `mx`, `br`, or any code in
-`data/countries.json`).
+Argument: a country code the owner asked for. There is no `next`: countries are added only on the owner's request
+(`docs/vision.md`).
 
 ## 0. One import at a time
 
@@ -25,17 +25,15 @@ slug), add `{ "country", "slug", "name", "date" }` (`name` in English, `date` = 
 additions go in this run's PR; if the run opens no PR they are simply worked out again next time. Never re-propose
 anything listed there.
 
-## 2. Pick the country
+## 2. The country, and the real-message gate
 
-- `next`: run `node tools/importer.mjs next` and use the code it prints. It reads `importer/runs.json`, so a country
-  tried recently waits its turn.
-- A code: use it.
+Use the code the owner gave. Set `importer/runs.json` → `{ "<cc>": "<today>" }` (keep the other keys).
 
-Set `importer/runs.json` → `{ "<cc>": "<today>" }` for the country you try (keep the other keys). If research finds
-nothing new for it, record that too and move on in the same run: `node tools/importer.mjs next --pending <tried codes>`,
-at most 3 countries per run.
-
-`node tools/importer.mjs status` shows entries and newest dates per country.
+**Gate: real, documented messages first.** Before drafting any entry for a country new to scamdb, collect real
+scam messages for it, quoted word for word from reliable sources (official warnings, fact-checks, reputable news),
+following `eval/real/README.md`: full messages only, no fragments, headlines or translations, each checked by a
+script against the fetched page. If you find fewer than **8**, stop: add nothing, and report to the owner what you
+found and where you looked. (On 2026-11-18 five countries with 2–4 real messages each were removed for this reason.)
 
 ## 3. Country setup (first import for a country only)
 
@@ -85,8 +83,9 @@ Prefer the most widespread and most harmful scams. For each, write `data/<cc>/sc
 
 - `lang`: the language the scam arrives in (`en` for au/nz/us/gb/ca, `es` for es/mx, `pt` for br). English-original
   entries need only `en`; others need the original **and** `en` in every text field.
-- `examples`: invented, written the way scammers write in that country and language; links as `[enlace]` (Spanish) or
-  `[link]` (English, Portuguese); no real numbers, links or names.
+- `examples`: real messages from the gate first, quoted as published with their source. Where an entry has no real
+  message, a written example in the scammers' style is allowed only as an illustration and must be flagged as written
+  (`docs/vision.md`). Links and numbers are placeholders; no real numbers, links or names.
 - `phrases`: 5+ everyday phrases per language, the way a victim would describe it.
 - `steps` with `signal` ids from `data/signals.json`, `signals`, `redFlags`, `whatToDo`, `reportTo` (contact ids),
   `sources` (title, publisher, `https://` url, date), `updated` (today), and `status`: `"active"` when its newest source is from the last 2 years, `"fading"` when it is

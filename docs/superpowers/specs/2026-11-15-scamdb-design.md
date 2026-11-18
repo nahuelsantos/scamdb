@@ -1,5 +1,9 @@
 # scamdb — design
 
+> **Superseded where it disagrees with [docs/vision.md](../../vision.md) (2026-11-18):** patterns built from real,
+> documented scams; English for the site, API and docs; countries added only when the owner asks and real scam
+> messages can be found; written examples flagged; no Spanish-first or eschamuyo-first focus.
+
 Date: 2026-11-15 · Status: draft for owner review (builder check done) · Domains: scamdb.dev (primary), scamdb.io (redirect) · Repo: github.com/nahuelsantos/scamdb (public)
 
 Homepage mockup (approved look): https://claude.ai/artifact/8Zprq3iVqrEf7zmVtiwPF3, the "★ Your pick" option.
