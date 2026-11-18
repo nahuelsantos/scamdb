@@ -1,0 +1,138 @@
+{
+  "id": "id/fake-officer-call",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "phone",
+    "whatsapp"
+  ],
+  "sender": {
+    "id": "Penelepon atau video call yang mengaku polisi, jaksa, PPATK, OJK atau Kominfo",
+    "en": "A caller or video caller claiming to be the police, a prosecutor, PPATK, OJK or Kominfo"
+  },
+  "name": {
+    "id": "“Polisi” atau “OJK” menelepon: Anda terlibat pencucian uang atau narkoba",
+    "en": "“Police” or “OJK” call: you are linked to money laundering or drugs"
+  },
+  "how": {
+    "id": "Penelepon mengaku aparat dan menuduh Anda terlibat pencucian uang (TPPU) atau narkoba, kadang lewat video call atau Google Meet dengan logo Polda, Kejaksaan atau PPATK. Anda diarahkan menyendiri, memindai kode QR atau memberikan data bank, lalu mentransfer uang hingga miliaran rupiah. Polda Metro Jaya menegaskan polisi tidak memeriksa atau menggeledah lewat Google Meet dan tidak meminta data perbankan.",
+    "en": "A caller says they are an officer and accuses you of money laundering or drugs, sometimes over a video call or Google Meet showing the logo of the police, the Prosecutor's Office or PPATK. You are steered into isolating yourself, scanning a QR code or giving your bank details, then transferring money, in one case billions of rupiah. Jakarta police say they never question or search anyone over Google Meet and never ask for banking details."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Telepon atau video call dari orang yang mengaku polisi, jaksa, PPATK atau OJK.",
+        "en": "A call or video call from someone claiming to be police, a prosecutor, PPATK or OJK."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Mereka menuduh Anda terlibat pencucian uang, narkoba atau kasus lain dan menakut-nakuti.",
+        "en": "They accuse you of money laundering, drugs or another crime and scare you."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "id": "Anda diarahkan menyendiri, misalnya ke hotel, “untuk penyelidikan”.",
+        "en": "You are steered into isolating yourself, for example in a hotel, “for the investigation”."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "id": "Mereka meminta data bank, kode QR atau OTP, lalu transfer uang untuk “pemeriksaan”.",
+        "en": "They ask for bank details, a QR scan or an OTP, then a transfer for “verification”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Penelepon: Selamat siang, saya penyidik dari Polda Metro Jaya. Nama dan rekening Ibu terdeteksi dipakai dalam kasus pencucian uang. Kami akan lanjutkan lewat video call, mohon Ibu berada di ruangan sendiri karena ini rahasia penyidikan. Untuk membuktikan Ibu bersih, dana di rekening harus dipindahkan dulu ke rekening pemeriksaan.",
+        "en": "Caller: Good afternoon, I am an investigator from the Jakarta police. Your name and account were found in a money laundering case. We will continue by video call, please be in a room on your own because this is a confidential investigation. To prove you are clean, the money in your account must first be moved to a verification account."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "ditelepon polisi katanya saya terlibat pencucian uang",
+      "video call dengan orang mengaku penyidik polda",
+      "disuruh pindahkan uang ke rekening pemeriksaan",
+      "orang mengaku ojk bilang rekening saya dipantau",
+      "polisi gadungan suruh saya menyendiri di hotel"
+    ],
+    "en": [
+      "police called saying i am involved in money laundering",
+      "video call with someone claiming to be a police investigator",
+      "told to move my money to a verification account",
+      "someone from ojk said my account is being monitored",
+      "fake police told me to stay alone in a hotel"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "money_request"
+  ],
+  "redFlags": {
+    "id": [
+      "Aparat yang memeriksa atau menuduh lewat telepon, WhatsApp atau Google Meet.",
+      "Diminta menyendiri atau merahasiakan “penyelidikan”.",
+      "Permintaan memindahkan uang, memindai kode QR atau memberi data bank."
+    ],
+    "en": [
+      "Officers questioning or accusing you over the phone, WhatsApp or Google Meet.",
+      "Being told to isolate yourself or keep the “investigation” secret.",
+      "Being asked to move money, scan a QR code or give your bank details."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Tutup teleponnya. Polisi tidak memeriksa perkara lewat video call dan tidak meminta transfer.",
+      "Ceritakan ke keluarga, lalu hubungi kantor polisi terdekat atau layanan 110 untuk mengecek.",
+      "Kalau sudah transfer, hubungi bank Anda dan laporkan ke IASC secepatnya."
+    ],
+    "en": [
+      "Hang up. Police don't handle cases over video call and don't ask for transfers.",
+      "Tell your family, then call the nearest police station or the 110 line to check.",
+      "If you already sent money, call your bank and report it to IASC as quickly as you can."
+    ]
+  },
+  "reportTo": [
+    "id/polri-110",
+    "id/your-bank",
+    "id/iasc",
+    "id/patroli-siber"
+  ],
+  "sources": [
+    {
+      "title": "Waspada Penipuan! Pria Ngaku-ngaku Polisi Ajak Google Meet Catut Logo Polda Metro",
+      "publisher": "iNews",
+      "url": "https://www.inews.id/news/megapolitan/waspada-penipuan-pria-ngaku-ngaku-polisi-ajak-google-meet-catut-logo-polda-metro/all",
+      "date": "2026-07-19"
+    },
+    {
+      "title": "Polda Sumut Bongkar Jaringan Scamming Internasional Modus Petugas OJK dan Polisi",
+      "publisher": "Metro TV",
+      "url": "https://www.metrotvnews.com/read/Ky6C5V7y-polda-sumut-bongkar-jaringan-scamming-internasional-modus-petugas-ojk-dan-polisi",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "Waspada! Penipu Jerat Warga Semarang, Anak Dikurung-Ibu Dimintai Tebusan",
+      "publisher": "detikJateng",
+      "url": "https://www.detik.com/jateng/berita/d-7938585/waspada-penipu-jerat-warga-semarang-anak-dikurung-ibu-dimintai-tebusan",
+      "date": "2025-05-29"
+    }
+  ],
+  "story": {
+    "id": "Di Semarang, seorang pemuda berusia 20 tahun ditelepon orang yang mengaku aparat dan menuduhnya terlibat pencucian uang. Ia disuruh mengisolasi diri di hotel “untuk penyelidikan”. Selama itu pelaku membajak WhatsApp-nya dan menghubungi ibunya, mengatakan anaknya diculik dan meminta tebusan Rp80 juta. Polisi menemukan pemuda itu selamat di hotel.",
+    "en": "In Semarang, a 20-year-old man got a call from someone claiming to be an officer who accused him of money laundering. He was told to isolate himself in a hotel “for the investigation”. Meanwhile the scammers took over his WhatsApp and contacted his mother, saying her son had been kidnapped and demanding Rp80 million. Police found the young man safe at the hotel."
+  },
+  "updated": "2026-11-18"
+}

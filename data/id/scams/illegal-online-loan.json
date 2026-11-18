@@ -1,0 +1,127 @@
+{
+  "id": "id/illegal-online-loan",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "id": "SMS atau WhatsApp “pinjaman cepat cair” dari nomor tak dikenal, atau aplikasi pinjaman yang tidak terdaftar di OJK",
+    "en": "A “fast cash loan” text or WhatsApp from an unknown number, or a lending app not registered with OJK"
+  },
+  "name": {
+    "id": "Pinjol ilegal: cair cepat, lalu teror dan ancaman dari penagih",
+    "en": "Illegal online loan (pinjol ilegal): fast cash, then threats from debt collectors"
+  },
+  "how": {
+    "id": "Tawaran pinjaman online yang menjanjikan proses cepat datang lewat SMS, WhatsApp atau iklan, sering menjelang Lebaran atau saat Anda butuh uang. Pemberinya tidak berizin OJK dan menyalahgunakan data pribadi peminjam. Setelah uang cair, penagih lewat WhatsApp mengancam dan mengintimidasi. Satgas PASTI terus memblokir ratusan entitas pinjol ilegal dan ribuan nomor penagih yang dilaporkan mengancam.",
+    "en": "Online loan offers promising fast approval arrive by text, WhatsApp or ads, often before Lebaran or when you need money. The lender has no OJK licence and misuses borrowers' personal data. Once the money is paid out, debt collectors on WhatsApp threaten and intimidate. The Satgas PASTI task force keeps blocking hundreds of illegal lenders and thousands of collectors' numbers reported for threats."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Datang tawaran pinjaman cepat cair tanpa syarat rumit lewat SMS, WhatsApp atau iklan.",
+        "en": "An offer of a fast loan with no complicated conditions arrives by text, WhatsApp or an ad."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "id": "Pemberinya tidak terdaftar di OJK dan bisa menyalahgunakan data pribadi Anda.",
+        "en": "The lender is not registered with OJK and can misuse your personal data."
+      }
+    },
+    {
+      "text": {
+        "id": "Setelah uang cair, penagih lewat WhatsApp menuntut pembayaran.",
+        "en": "Once the money is paid out, collectors on WhatsApp demand payment."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "id": "Penagih mengancam dan mengintimidasi agar Anda segera membayar.",
+        "en": "The collectors threaten and intimidate you to pay at once."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Butuh dana cepat jelang Lebaran? Pinjaman Rp5 juta cair 10 menit, tanpa jaminan, tanpa BI checking, cukup KTP. Ajukan sekarang di [tautan]",
+        "en": "Need quick cash before Lebaran? Rp5 million loan paid in 10 minutes, no collateral, no credit check, just your ID card. Apply now at [tautan]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "ditawari pinjol lewat sms cair cepat",
+      "pinjol ilegal neror lewat whatsapp",
+      "debt collector pinjol mengancam lewat whatsapp",
+      "pinjaman online tidak terdaftar di ojk",
+      "utang pinjol bunganya berlipat dan diteror"
+    ],
+    "en": [
+      "got a loan offer by text promising fast cash",
+      "illegal lender harassing me on whatsapp",
+      "loan app debt collector threatening me on whatsapp",
+      "online lender not registered with ojk",
+      "online loan interest doubled and i am being harassed"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "id": [
+      "Tawaran pinjaman lewat SMS atau WhatsApp yang tidak Anda minta.",
+      "Cair dalam hitungan menit hanya dengan KTP.",
+      "Pemberi pinjaman yang tidak terdaftar di OJK."
+    ],
+    "en": [
+      "A loan offer by text or WhatsApp that you didn't ask for.",
+      "Money in minutes with only your ID card.",
+      "A lender that is not registered with OJK."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Cek apakah pemberi pinjaman terdaftar di OJK lewat Kontak OJK 157 sebelum mengajukan.",
+      "Jangan pasang aplikasi pinjaman dari tautan di pesan.",
+      "Kalau diteror, simpan bukti ancaman dan laporkan ke Satgas PASTI, Kontak OJK 157 dan polisi."
+    ],
+    "en": [
+      "Check whether the lender is registered with OJK through the OJK 157 line before you apply.",
+      "Don't install loan apps from links in messages.",
+      "If you are being harassed, keep the threats as evidence and report them to Satgas PASTI, the OJK 157 line and the police."
+    ]
+  },
+  "reportTo": [
+    "id/satgas-pasti",
+    "id/ojk-157",
+    "id/polri-110",
+    "id/aduannomor"
+  ],
+  "sources": [
+    {
+      "title": "Satgas PASTI Imbau Masyarakat Waspadai Modus Penipuan Jelang Lebaran (SP 2/STPASTI/III/2025)",
+      "publisher": "OJK / Satgas PASTI",
+      "url": "https://ojk.go.id/id/berita-dan-kegiatan/info-terkini/Documents/Pages/Satgas-PASTI-Blokir-536-Entitas-Ilegal-di-Januari-Februari-2025/Satgas%20PASTI%20Imbau%20Masyarakat%20Waspadai%20Modus%20Penipuan%20Jelang%20Lebaran%20-%20Maret%202025.pdf",
+      "date": "2025-03-21"
+    },
+    {
+      "title": "Gak Main-Main, Satgas PASTI Blokir 427 Pinjol Ilegal",
+      "publisher": "CNBC Indonesia",
+      "url": "https://www.cnbcindonesia.com/market/20250619193506-17-642425/gak-main-main-satgas-pasti-blokir-427-pinjol-ilegal",
+      "date": "2025-06-19"
+    }
+  ],
+  "updated": "2026-11-18"
+}

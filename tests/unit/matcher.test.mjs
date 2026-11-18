@@ -564,3 +564,14 @@ test('1.22.0: public-safety alerts are urgent by nature, not pressure', async ()
   assert.ok(readSigns('Emergency alert: evacuate now. Pay the $25 shelter registration fee immediately at [link]', ['en']).includes('urgency'));
   assert.ok(readSigns('Your account will be locked immediately unless you verify at [link]', ['en']).includes('urgency'));
 });
+test('1.23.0: Indonesian rules, only where Indonesian is spoken', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const etle = readSigns('Denda Rp250.000 wajib dilunasi dalam 2x24 jam, jika tidak STNK akan diblokir. Bayar di [tautan]', ['id']);
+  for (const s of ['urgency', 'money_request', 'unknown_link']) assert.ok(etle.includes(s), s);
+  assert.ok(readSigns('nanti ada kode 6 angka masuk lewat SMS, mohon dibacakan ke saya', ['id']).includes('asks_for_code'));
+  assert.ok(readSigns('silakan buka file ini ya bu: Cek_Resi_Paket.apk', ['id']).includes('remote_access'));
+  assert.ok(readSigns('Bapak wajib ikut pemeriksaan lewat video call sekarang juga, jangan pergi ke mana-mana', ['id']).includes('keep_on_line'));
+  // A genuine OTP that says not to share the code asks for nothing.
+  assert.ok(!readSigns('JANGAN BERIKAN KODE INI KEPADA SIAPAPUN. Kode OTP Anda 482931, tolong jangan dikirim', ['id']).includes('asks_for_code'));
+  assert.ok(!readSigns('Bayar di [tautan] hari ini', ['es', 'en']).includes('urgency'), 'Indonesian rules only where Indonesian is spoken');
+});

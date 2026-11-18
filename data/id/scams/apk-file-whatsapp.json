@@ -1,0 +1,144 @@
+{
+  "id": "id/apk-file-whatsapp",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "whatsapp"
+  ],
+  "sender": {
+    "id": "Nomor tak dikenal yang mengaku kurir, teman yang mengundang ke pernikahan, atau “polisi” yang mengirim surat tilang",
+    "en": "An unknown number claiming to be a courier, a friend inviting you to a wedding, or the “police” sending a traffic ticket"
+  },
+  "name": {
+    "id": "File APK di WhatsApp: “undangan pernikahan”, “foto paket” atau “surat tilang”",
+    "en": "APK file on WhatsApp: a “wedding invitation”, “parcel photo” or “traffic ticket”"
+  },
+  "how": {
+    "id": "Lewat WhatsApp datang file berakhiran .apk yang disebut undangan pernikahan digital, foto atau resi paket dari kurir, atau surat tilang. Kalau dipasang, aplikasi itu memberi pelaku akses ke data ponsel, termasuk informasi perbankan, lalu rekening dikuras. OJK mencatat penipuan APK lewat WhatsApp termasuk sepuluh modus terbanyak, dan J&T menyebut kurirnya tidak pernah meminta pelanggan mengunduh aplikasi lewat chat.",
+    "en": "A file ending in .apk arrives on WhatsApp, presented as a digital wedding invitation, a parcel photo or receipt from a courier, or a traffic ticket. Once installed, the app gives the scammer access to the data on your phone, including your banking details, and your account is emptied. OJK lists APK scams on WhatsApp among the ten most reported, and J&T says its couriers never ask customers to download an app through a chat."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Pesan WhatsApp dari nomor tak dikenal mengaku kurir, kenalan, atau petugas.",
+        "en": "A WhatsApp message from an unknown number claims to be from a courier, an acquaintance or an official."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Pesan itu menyertakan file .apk dan meminta Anda membukanya untuk melihat foto paket, undangan atau surat tilang.",
+        "en": "It comes with an .apk file and asks you to open it to see the parcel photo, the invitation or the ticket."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Anda diminta memasang aplikasi itu dan memberinya izin.",
+        "en": "You are asked to install the app and give it permissions."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "id": "Pelaku mendapat akses ke data ponsel dan perbankan Anda, lalu menguras rekening.",
+        "en": "The scammer gets access to your phone and banking data, then drains your account."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Permisi kak, saya kurir. Paket atas nama kakak alamatnya kurang jelas, mohon dicek dulu foto paketnya ya kak, ini filenya: Foto_Paket.apk",
+        "en": "Excuse me, I'm the courier. The address on your parcel isn't clear, please check the parcel photo first, here is the file: Foto_Paket.apk"
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "id": "Assalamualaikum, mohon doa restu dan kehadirannya di acara pernikahan kami. Undangan digital bisa dibuka di sini 🙏 Undangan_Pernikahan_Digital.apk",
+        "en": "Peace be upon you, we ask for your blessing and presence at our wedding. The digital invitation can be opened here 🙏 Undangan_Pernikahan_Digital.apk"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "dikirim file apk lihat foto paket dari kurir",
+      "undangan pernikahan bentuknya apk di whatsapp",
+      "saya klik apk lalu saldo rekening hilang",
+      "surat tilang dikirim lewat wa berupa file apk",
+      "kurir minta download aplikasi untuk cek resi",
+      "setelah pasang aplikasi undangan rekening terkuras"
+    ],
+    "en": [
+      "courier sent an apk file to see a parcel photo",
+      "wedding invitation on whatsapp was an apk file",
+      "i opened an apk and my bank balance disappeared",
+      "traffic ticket sent on whatsapp as an apk file",
+      "courier asked me to download an app to track the parcel",
+      "after installing the invitation app my account was emptied"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "remote_access"
+  ],
+  "redFlags": {
+    "id": [
+      "File yang berakhiran .apk, apa pun namanya.",
+      "Kurir, polisi atau instansi yang mengirim aplikasi lewat chat.",
+      "Undangan yang harus “dipasang”, bukan dibuka sebagai tautan atau gambar."
+    ],
+    "en": [
+      "Any file ending in .apk, whatever it is called.",
+      "A courier, police officer or agency sending an app through a chat.",
+      "An invitation you have to “install” instead of open as a link or picture."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Jangan buka atau pasang file .apk dari chat. Hapus pesannya dan blokir nomornya.",
+      "Cek paket di aplikasi atau situs resmi kurir; tanyakan undangan langsung ke orang yang Anda kenal.",
+      "Kalau sudah terpasang: matikan data dan Wi-Fi, hubungi bank Anda untuk memblokir rekening, lalu hapus aplikasinya dan laporkan ke IASC atau polisi."
+    ],
+    "en": [
+      "Don't open or install an .apk file from a chat. Delete the message and block the number.",
+      "Check parcels in the courier's official app or website; ask the person you know directly about the invitation.",
+      "If you already installed it: turn off mobile data and Wi-Fi, call your bank to block your account, then remove the app and report to IASC or the police."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/iasc",
+    "id/patroli-siber",
+    "id/aduannomor"
+  ],
+  "sources": [
+    {
+      "title": "Penipuan Berkedok Kurir Jadi Ancaman Baru Bisnis Logistik, J&T Beri Edukasi Pelanggan",
+      "publisher": "Kontan",
+      "url": "https://industri.kontan.co.id/news/penipuan-berkedok-kurir-jadi-ancaman-baru-bisnnis-logistikjt-beri-edukasi-pelanggan",
+      "date": "2025-09-08"
+    },
+    {
+      "title": "10 Modus Penipuan Terbanyak di RI, Nomor Satu Banyak yang Tak Sadar",
+      "publisher": "CNBC Indonesia",
+      "url": "https://www.cnbcindonesia.com/tech/20251218063318-37-695229/10-modus-penipuan-terbanyak-di-ri-nomor-satu-banyak-yang-tak-sadar",
+      "date": "2025-12-18"
+    },
+    {
+      "title": "Masih Ada Penipuan Modus Tilang Elektronik di WhatsApp, Jangan Asal Klik Link",
+      "publisher": "detikOto",
+      "url": "https://oto.detik.com/berita/d-8364091/masih-ada-penipuan-modus-tilang-elektronik-di-whatsapp-jangan-asal-klik-link",
+      "date": "2026-02-20"
+    }
+  ],
+  "story": {
+    "id": "Seorang perempuan berusia 23 tahun di Kalimantan Selatan yang menunggu paket kerudung menerima WhatsApp dari “kurir J&T” yang memintanya mengecek gambar paket dengan mengunduh sebuah aplikasi. Tak lama setelah ia memasangnya, sisa tabungannya di bank terpakai tanpa ia tarik.",
+    "en": "A 23-year-old woman in South Kalimantan waiting for a headscarf she had ordered got a WhatsApp message from a “J&T courier” asking her to check a picture of the parcel by downloading an app. Shortly after she installed it, the rest of her bank savings was taken out without her withdrawing it."
+  },
+  "updated": "2026-11-18"
+}

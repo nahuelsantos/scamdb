@@ -1,0 +1,138 @@
+{
+  "id": "id/etilang-sms-link",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "id": "“ETLE”, “E-Tilang”, “Korlantas” atau “Kejaksaan”, dari nomor pribadi atau acak",
+    "en": "“ETLE”, “E-Tilang”, “Korlantas” or the “Prosecutor's Office”, from a personal or random number"
+  },
+  "name": {
+    "id": "SMS tilang elektronik (ETLE) palsu dengan tautan bayar denda",
+    "en": "Fake electronic traffic ticket (ETLE) text with a link to pay the fine"
+  },
+  "how": {
+    "id": "SMS atau WhatsApp dari nomor tak dikenal mengatakan kendaraan Anda melanggar lalu lintas dan Anda harus segera membayar denda, kadang dengan ancaman blokir STNK atau “penalti ganda”. Tautannya membuka situs tiruan yang meminta nomor polisi, data pribadi dan kartu kredit atau debit. Polisi menegaskan pemberitahuan ETLE resmi tidak dikirim lewat SMS, dan tautan konfirmasi resmi hanya memakai domain polri.go.id.",
+    "en": "A text or WhatsApp message from an unknown number says your vehicle broke a traffic rule and you must pay the fine right away, sometimes threatening to block your vehicle registration or to “double the penalty”. The link opens a copycat site that asks for your plate number, personal details and credit or debit card. Police say genuine ETLE notices are not sent by SMS, and the genuine confirmation link only uses the polri.go.id domain."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "SMS dari nomor tak dikenal mengaku dari ETLE, Korlantas atau Kejaksaan.",
+        "en": "A text from an unknown number claims to be from ETLE, the traffic police or the Prosecutor's Office."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Isinya: ada denda tilang yang harus segera dibayar, atau STNK diblokir dan denda berlipat.",
+        "en": "It says there is a traffic fine to pay at once, or your registration will be blocked and the fine doubled."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "id": "Tautan membuka situs mirip situs resmi.",
+        "en": "The link opens a site that looks like the official one."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Situs meminta nomor polisi, data diri dan kartu untuk membayar denda.",
+        "en": "The site asks for your plate number, personal details and card to pay the fine."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "PEMBERITAHUAN TERAKHIR E-TILANG: Kendaraan Anda tercatat melanggar lalu lintas dan denda belum dibayar. Segera lunasi hari ini untuk menghindari penalti ganda dan pemblokiran STNK: [tautan]",
+        "en": "FINAL NOTICE E-TILANG: Your vehicle was recorded breaking a traffic rule and the fine is unpaid. Pay today to avoid a double penalty and your registration being blocked: [tautan]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "sms tilang elektronik minta bayar denda lewat link",
+      "dapat sms etle padahal tidak melanggar",
+      "pesan tilang ancam blokir stnk",
+      "link pembayaran denda tilang minta kartu kredit",
+      "sms kejaksaan denda tilang dari nomor tidak dikenal"
+    ],
+    "en": [
+      "text about an electronic traffic ticket asking me to pay a fine by link",
+      "got an etle text but i did not break any rule",
+      "traffic ticket message threatens to block my registration",
+      "traffic fine payment link asks for my credit card",
+      "text from the prosecutor about a traffic fine from an unknown number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "id": [
+      "Pemberitahuan tilang lewat SMS atau dari nomor pribadi.",
+      "Tautan yang tidak berakhiran polri.go.id.",
+      "Ancaman denda berlipat atau blokir STNK kalau tidak bayar hari ini."
+    ],
+    "en": [
+      "A traffic ticket notice by text or from a personal number.",
+      "A link that does not end in polri.go.id.",
+      "A threat of a doubled fine or a blocked registration if you don't pay today."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Jangan klik tautannya dan jangan membayar dari pesan.",
+      "Cek pelanggaran sendiri di situs resmi konfirmasi ETLE Polri dengan nomor referensi, atau tanyakan ke Polda atau Polres terdekat.",
+      "Kalau sudah memasukkan data kartu, hubungi bank Anda segera. Laporkan nomor pengirim ke Aduan Nomor Komdigi."
+    ],
+    "en": [
+      "Don't tap the link and don't pay from the message.",
+      "Check for a violation yourself on the official Polri ETLE confirmation site with the reference number, or ask your nearest police office.",
+      "If you entered card details, call your bank straight away. Report the sender's number to Komdigi's Aduan Nomor."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/iasc",
+    "id/aduannomor",
+    "id/patroli-siber"
+  ],
+  "sources": [
+    {
+      "title": "Waspada Modus Penipuan Tilang Elektronik via SMS",
+      "publisher": "CNN Indonesia",
+      "url": "https://www.cnnindonesia.com/otomotif/20251215144104-579-1306939/waspada-modus-penipuan-tilang-elektronik-via-sms",
+      "date": "2025-12-15"
+    },
+    {
+      "title": "Waspada Modus SMS E-Tilang Palsu! Ini Ciri-cirinya",
+      "publisher": "detikFinance",
+      "url": "https://finance.detik.com/berita-ekonomi-bisnis/d-8259472/waspada-modus-sms-e-tilang-palsu-ini-ciri-cirinya",
+      "date": "2025-12-14"
+    },
+    {
+      "title": "Brigjen Himawan Ungkap Modus Kejahatan Sindikat Phishing e-Tilang Palsu",
+      "publisher": "JPNN",
+      "url": "https://m.jpnn.com/news/brigjen-himawan-ungkap-modus-kejahatan-sindikat-phishing-e-tilang-palsu",
+      "date": "2026-02-26"
+    }
+  ],
+  "story": {
+    "id": "Seorang warga Kepulauan Riau berusia 34 tahun menerima SMS dari nomor tak dikenal yang memintanya segera membayar denda tilang. Esoknya datang SMS dari nomor lain yang mengaku pemberitahuan terakhir sebelum penalti ganda. Tautannya menampilkan tagihan denda Rp100 ribu dengan pembayaran kartu kredit atau debit. Ditlantas Polda Kepri memastikan itu penipuan.",
+    "en": "A 34-year-old resident of the Riau Islands got a text from an unknown number telling him to pay a traffic fine at once. The next day a text from another number said it was the final notice before a double penalty. The link showed a Rp100,000 fine payable by credit or debit card. The regional traffic police confirmed it was a scam."
+  },
+  "updated": "2026-11-18"
+}

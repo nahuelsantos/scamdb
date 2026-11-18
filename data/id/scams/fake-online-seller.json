@@ -1,0 +1,121 @@
+{
+  "id": "id/fake-online-seller",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "social",
+    "online",
+    "whatsapp"
+  ],
+  "sender": {
+    "id": "Penjual di media sosial, marketplace atau WhatsApp dengan harga sangat murah",
+    "en": "A seller on social media, a marketplace or WhatsApp with very low prices"
+  },
+  "name": {
+    "id": "Toko online fiktif: harga murah, transfer dulu, barang tak pernah datang",
+    "en": "Fake online seller: cheap price, pay first, the goods never come"
+  },
+  "how": {
+    "id": "Produk atau jasa ditawarkan dengan harga jauh di bawah pasaran di media sosial atau marketplace. Penjual meminta Anda mentransfer uang lebih dulu ke rekeningnya, lalu barangnya ternyata tidak pernah ada. Menurut OJK, ini modus yang paling banyak dilaporkan ke IASC: lebih dari 64 ribu laporan dengan kerugian Rp1,14 triliun dalam setahun.",
+    "en": "Goods or services are offered far below the usual price on social media or a marketplace. The seller asks you to transfer the money first to their account, and the goods turn out never to have existed. OJK says this is the most reported scam at IASC: more than 64,000 reports and Rp1.14 trillion lost in a year."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Anda menemukan barang atau jasa dengan harga sangat murah.",
+        "en": "You find goods or a service at a very low price."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "id": "Penjual meminta transfer penuh atau DP langsung ke rekeningnya, segera sebelum “stok habis”.",
+        "en": "The seller asks for the full price or a deposit straight to their account, quickly before it “sells out”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "id": "Setelah uang masuk, penjual tidak bisa dihubungi dan barang tidak dikirim.",
+        "en": "Once the money is in, the seller stops answering and nothing is sent."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Ready kak iPhone 15 Pro garansi resmi, harga promo Rp7,5 juta tinggal 2 unit. Biar cepat transfer langsung ke rekening saya aja ya kak, nggak usah lewat aplikasi, potongan adminnya besar. Hari ini dikirim.",
+        "en": "In stock, iPhone 15 Pro with official warranty, promo price Rp7.5 million, only 2 left. To be quick just transfer straight to my account, no need to go through the app, its admin fee is high. Ships today."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "beli barang online sudah transfer tapi tidak dikirim",
+      "penjual minta transfer di luar aplikasi",
+      "harga murah di facebook ternyata penipuan",
+      "penjual menghilang setelah saya bayar dp",
+      "toko online diblokir setelah terima uang"
+    ],
+    "en": [
+      "bought something online paid but it never came",
+      "seller asked me to pay outside the app",
+      "cheap price on facebook was a scam",
+      "seller disappeared after i paid the deposit",
+      "online shop blocked me after taking my money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "id": [
+      "Harga yang jauh lebih murah dari toko lain.",
+      "Diminta transfer langsung ke rekening pribadi, bukan lewat sistem pembayaran resmi.",
+      "Desakan “tinggal sedikit, transfer sekarang”."
+    ],
+    "en": [
+      "A price far below other shops.",
+      "Being asked to transfer straight to a personal account instead of using an official payment system.",
+      "Pressure like “only a few left, transfer now”."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Bayar hanya lewat sistem pembayaran resmi marketplace, dan jangan pindah ke chat pribadi untuk transfer.",
+      "Cek nomor rekening penjual di Cek Rekening Komdigi sebelum mentransfer.",
+      "Kalau sudah transfer, laporkan ke IASC secepatnya agar rekening penjual bisa diblokir."
+    ],
+    "en": [
+      "Pay only through the marketplace's official payment system, and don't move to a private chat to transfer.",
+      "Check the seller's account number on Komdigi's Cek Rekening before you transfer.",
+      "If you already paid, report it to IASC as quickly as you can so the seller's account can be frozen."
+    ]
+  },
+  "reportTo": [
+    "id/iasc",
+    "id/cekrekening",
+    "id/bpkn",
+    "id/patroli-siber"
+  ],
+  "sources": [
+    {
+      "title": "10 Modus Penipuan Terbanyak di RI, Nomor Satu Banyak yang Tak Sadar",
+      "publisher": "CNBC Indonesia",
+      "url": "https://www.cnbcindonesia.com/tech/20251218063318-37-695229/10-modus-penipuan-terbanyak-di-ri-nomor-satu-banyak-yang-tak-sadar",
+      "date": "2025-12-18"
+    },
+    {
+      "title": "OJK Catat Aduan Penipuan Jual Beli Online Capai 39.000 Kasus, Disusul Fake Call",
+      "publisher": "Kontan",
+      "url": "https://keuangan.kontan.co.id/news/ojk-catat-aduan-penipuan-jual-beli-online-capai-39000-kasus-disusul-fake-call",
+      "date": "2025-08-07"
+    }
+  ],
+  "updated": "2026-11-18"
+}

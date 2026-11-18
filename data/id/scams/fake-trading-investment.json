@@ -1,0 +1,135 @@
+{
+  "id": "id/fake-trading-investment",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "online"
+  ],
+  "sender": {
+    "id": "Iklan Facebook atau Instagram tentang trading saham dan kripto, lalu “profesor” atau “mentor” di grup WhatsApp",
+    "en": "A Facebook or Instagram ad about stock and crypto trading, then a “professor” or “mentor” in a WhatsApp group"
+  },
+  "name": {
+    "id": "Grup WhatsApp “belajar trading saham dan kripto” dengan platform palsu",
+    "en": "WhatsApp “stock and crypto trading class” with a fake platform"
+  },
+  "how": {
+    "id": "Iklan di media sosial membawa Anda ke WhatsApp, lalu ke grup berisi “profesor”, mentor dan sekretaris yang memberi materi trading setiap malam. Anda dijanjikan untung 30 sampai 200 persen dan diminta membuat akun di platform mereka serta mentransfer dana. Saat ingin menarik uang, Anda diminta membayar “pajak” dan biaya dulu. Bareskrim mencatat 90 korban dengan kerugian Rp105 miliar dalam satu kasus.",
+    "en": "An ad on social media takes you to WhatsApp, then to a group with a “professor”, mentors and a secretary who teach trading every night. You are promised 30 to 200 percent profit and told to open an account on their platform and transfer money. When you want to withdraw, you are told to pay “tax” and fees first. Indonesia's national police counted 90 victims and Rp105 billion in losses in one case."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Iklan trading saham atau kripto di Facebook membawa Anda ke nomor WhatsApp.",
+        "en": "A stock or crypto trading ad on Facebook leads you to a WhatsApp number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Anda dimasukkan ke grup dengan “profesor” dan mentor yang menjanjikan untung besar.",
+        "en": "You are added to a group with a “professor” and mentors who promise big profits."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "id": "Anda diminta membuat akun di platform mereka dan mentransfer dana ke rekening perusahaan.",
+        "en": "You are told to open an account on their platform and transfer money to company accounts."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "id": "Untuk menarik dana, Anda harus membayar pajak dan biaya dulu.",
+        "en": "To withdraw, you must pay tax and fees first."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Selamat malam member VIP 📈 Kelas malam ini Prof akan bagikan sinyal saham yang potensi naik 30%. Yang belum punya akun platform silakan daftar di [tautan] dan hubungi asisten untuk top up modal minimal Rp10 juta, slot terbatas.",
+        "en": "Good evening VIP members 📈 Tonight the Professor will share a stock signal with 30% upside. If you don't have a platform account yet, register at [tautan] and contact the assistant to top up at least Rp10 million, places are limited."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "grup whatsapp belajar saham dengan profesor",
+      "iklan facebook trading kripto lalu masuk grup",
+      "dijanjikan untung 200 persen dari trading",
+      "mau tarik dana harus bayar pajak dulu",
+      "platform trading tidak bisa withdraw"
+    ],
+    "en": [
+      "whatsapp group learning stocks with a professor",
+      "facebook crypto trading ad then added to a group",
+      "promised 200 percent profit from trading",
+      "to withdraw i have to pay tax first",
+      "trading platform will not let me withdraw"
+    ]
+  },
+  "signals": [
+    "unknown_link",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "id": [
+      "Untung pasti yang tinggi dari “kelas trading” gratis.",
+      "Transfer ke rekening atas nama perusahaan atau orang lain, bukan ke perusahaan efek berizin.",
+      "Biaya atau pajak yang harus dibayar sebelum bisa menarik uang."
+    ],
+    "en": [
+      "High guaranteed profits from a free “trading class”.",
+      "Transfers to accounts in other companies' or people's names, not to a licensed broker.",
+      "Fees or tax you must pay before you can withdraw."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Cek izin platform dan penawarnya ke Kontak OJK 157 sebelum mentransfer apa pun.",
+      "Jangan bayar “pajak” atau biaya untuk menarik dana; uangnya tidak akan keluar.",
+      "Kalau sudah transfer, laporkan ke IASC secepatnya dan ke polisi."
+    ],
+    "en": [
+      "Check the platform's and the promoter's licence with the OJK 157 line before you send anything.",
+      "Don't pay “tax” or fees to withdraw; the money will not come out.",
+      "If you already sent money, report it to IASC as quickly as you can, and to the police."
+    ]
+  },
+  "reportTo": [
+    "id/iasc",
+    "id/ojk-157",
+    "id/satgas-pasti",
+    "id/patroli-siber"
+  ],
+  "sources": [
+    {
+      "title": "5 Fakta Bareskrim Bongkar Kasus Scam Kripto Internasional Rp 105 Miliar",
+      "publisher": "detikNews",
+      "url": "https://news.detik.com/berita/d-7832118/5-fakta-bareskrim-bongkar-kasus-scam-kripto-internasional-rp-105-miliar",
+      "date": "2025-03-20"
+    },
+    {
+      "title": "Modus Sindikat Penipuan Investasi Kripto: Pasang Iklan di Facebook",
+      "publisher": "Metro TV",
+      "url": "https://www.metrotvnews.com/read/KRXCdeAO-modus-sindikat-penipuan-investasi-kripto-pasang-iklan-di-facebook",
+      "date": "2025-03-19"
+    },
+    {
+      "title": "3 Klaster Penipuan Trading Crypto Tersebar di 3 Negara, Mastermind di Kamboja",
+      "publisher": "detikNews",
+      "url": "https://news.detik.com/berita/d-8188142/3-klaster-penipuan-trading-crypto-tersebar-di-3-negara-mastermind-di-kamboja",
+      "date": "2025-10-31"
+    }
+  ],
+  "updated": "2026-11-18"
+}

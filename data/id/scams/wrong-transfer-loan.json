@@ -1,0 +1,124 @@
+{
+  "id": "id/wrong-transfer-loan",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "id": "Orang tak dikenal yang mengaku “salah transfer”, lalu penagih pinjol",
+    "en": "A stranger who says they “sent money by mistake”, then an online-loan collector"
+  },
+  "name": {
+    "id": "Modus “salah transfer”: uang masuk tiba-tiba, ternyata pinjol atas nama Anda",
+    "en": "“Wrong transfer” trick: money suddenly arrives and turns out to be a loan in your name"
+  },
+  "how": {
+    "id": "Uang tiba-tiba masuk ke rekening Anda dari orang tak dikenal. Tak lama, seseorang menghubungi dan mengaku salah transfer, lalu meminta uang dikembalikan ke rekening lain. Ternyata uang itu pinjaman online ilegal yang diajukan dengan data pribadi Anda, jadi setelah Anda mengembalikannya, Anda tetap ditagih pinjaman plus bunganya. OJK menyebut laporan modus ini terus bertambah.",
+    "en": "Money suddenly lands in your account from someone you don't know. Soon someone contacts you, says it was a mistake and asks you to send it back to a different account. The money was actually an illegal online loan taken out with your personal data, so after you send it back you are still billed for the loan plus interest. OJK says reports of this trick keep rising."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Uang dari orang tak dikenal masuk ke rekening Anda.",
+        "en": "Money from a stranger arrives in your account."
+      }
+    },
+    {
+      "text": {
+        "id": "Seseorang menelepon atau chat, mengaku salah transfer dan meminta uangnya dikembalikan segera.",
+        "en": "Someone calls or messages, says it was sent by mistake and asks for it back quickly."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "id": "Mereka meminta Anda mentransfer ke rekening lain, bukan rekening pengirim.",
+        "en": "They ask you to transfer it to a different account, not the one it came from."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "id": "Bulan berikutnya pinjol ilegal menagih Anda, karena uang itu pinjaman atas nama Anda.",
+        "en": "The next month an illegal lender bills you, because the money was a loan in your name."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "Selamat siang bu, maaf mengganggu. Tadi saya salah transfer Rp2.000.000 ke rekening ibu, harusnya untuk adik saya buat bayar rumah sakit. Tolong bantu kembalikan ke rekening ini ya bu, saya kirim nomornya, mohon cepat ya bu 🙏",
+        "en": "Good afternoon ma'am, sorry to bother you. I sent Rp2,000,000 to your account by mistake, it was meant for my sister to pay the hospital. Please help me send it back to this account, I'll send the number, please be quick 🙏"
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "ada uang masuk tidak dikenal lalu diminta kembalikan",
+      "orang mengaku salah transfer minta dikembalikan ke rekening lain",
+      "setelah kembalikan uang salah transfer ditagih pinjol",
+      "tiba tiba ditransfer uang lalu ditagih utang",
+      "uang nyasar ke rekening ternyata pinjol"
+    ],
+    "en": [
+      "unknown money arrived in my account and they want it back",
+      "someone says they sent money by mistake and wants it to another account",
+      "after returning a wrong transfer i got a loan bill",
+      "money suddenly sent to me then i was billed for a loan",
+      "stray money in my account turned out to be an online loan"
+    ]
+  },
+  "signals": [
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "id": [
+      "Uang dari orang tak dikenal yang langsung diikuti permintaan dikembalikan.",
+      "Diminta mengembalikan ke rekening yang berbeda dari pengirim.",
+      "Desakan untuk segera, sebelum Anda sempat ke bank."
+    ],
+    "en": [
+      "Money from a stranger followed straight away by a request to return it.",
+      "Being asked to send it back to a different account from the sender's.",
+      "Pressure to do it now, before you can go to the bank."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Jangan pakai dan jangan transfer balik uang itu sendiri.",
+      "Cek mutasi di aplikasi bank, lalu laporkan ke bank Anda agar mereka yang menyelesaikan pengembaliannya.",
+      "Simpan bukti percakapan dan laporkan ke Kontak OJK 157."
+    ],
+    "en": [
+      "Don't spend it and don't send it back yourself.",
+      "Check your statement in your bank app, then report it to your bank so they handle any return.",
+      "Keep the chat as evidence and report it to the OJK 157 line."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/ojk-157",
+    "id/satgas-pasti"
+  ],
+  "sources": [
+    {
+      "title": "Duit Tiba-tiba Masuk Rekening, Wajib Curiga!",
+      "publisher": "detikFinance",
+      "url": "https://finance.detik.com/fintech/d-8001793/duit-tiba-tiba-masuk-rekening-wajib-curiga",
+      "date": "2025-07-08"
+    },
+    {
+      "title": "Gegara Jebakan Modus Salah Transfer, Jadi Kelilit Pinjol Ilegal!",
+      "publisher": "BCA",
+      "url": "https://www.bca.co.id/id/informasi/awas-modus/2025/06/03/10/28/gegara-jebakan-modus-salah-transfer-jadi-kelilit-pinjol-ilegal",
+      "date": "2025-06-03"
+    }
+  ],
+  "updated": "2026-11-18"
+}

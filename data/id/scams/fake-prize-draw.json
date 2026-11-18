@@ -1,0 +1,134 @@
+{
+  "id": "id/fake-prize-draw",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp",
+    "sms"
+  ],
+  "sender": {
+    "id": "Akun Facebook, Instagram atau WhatsApp “admin” undian bank (BNI, BRI, BSI) atau perusahaan besar",
+    "en": "A Facebook, Instagram or WhatsApp “admin” of a prize draw by a bank (BNI, BRI, BSI) or a big company"
+  },
+  "name": {
+    "id": "Undian berhadiah palsu atas nama bank: “Anda menang, klaim di sini”",
+    "en": "Fake bank prize draw: “you've won, claim here”"
+  },
+  "how": {
+    "id": "Akun yang meniru bank atau perusahaan mengumumkan undian dengan hadiah mobil, rumah, emas atau uang tunai, atau mengatakan Anda terpilih sebagai pemenang. Anda diminta mendaftar lewat tautan, mengisi data pribadi dan data bank, atau mentransfer “biaya klaim” atau pajak hadiah. BNI, BRI dan BSI menyatakan undian resmi tidak pernah meminta biaya dan informasinya hanya ada di kanal resmi.",
+    "en": "An account imitating a bank or company announces a draw with cars, houses, gold or cash as prizes, or says you have been picked as a winner. You are asked to register through a link, enter personal and bank details, or transfer a “claim fee” or prize tax. BNI, BRI and BSI say their real draws never ask for any payment and are only announced on official channels."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Akun mirip bank resmi mengumumkan undian atau mengatakan Anda menang.",
+        "en": "An account that looks like the bank's announces a draw or says you have won."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Hadiahnya sangat besar: mobil, rumah, umrah, uang tunai.",
+        "en": "The prizes are huge: cars, houses, pilgrimages, cash."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "id": "Anda diminta mendaftar atau klaim lewat tautan dan mengisi data bank.",
+        "en": "You are asked to register or claim through a link and enter your bank details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Anda diminta membayar biaya administrasi atau pajak hadiah dulu.",
+        "en": "You are asked to pay an admin fee or prize tax first."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "SELAMAT! Nomor rekening Anda terpilih sebagai pemenang Undian Nasabah Setia periode ini dan berhak atas 1 unit Honda HR-V. Hubungi admin kami di WhatsApp untuk klaim hadiah. Biaya pajak hadiah Rp2.500.000 ditanggung pemenang.",
+        "en": "CONGRATULATIONS! Your account number has been picked as a winner of this period's Loyal Customer Draw and is entitled to a Honda HR-V. Contact our admin on WhatsApp to claim. The Rp2,500,000 prize tax is paid by the winner."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "dapat pesan menang undian dari bank",
+      "admin undian bank minta bayar pajak hadiah",
+      "link daftar undian berhadiah bank di facebook",
+      "menang mobil dari undian tapi harus transfer dulu",
+      "akun bank palsu bagi bagi hadiah"
+    ],
+    "en": [
+      "got a message saying i won a bank prize draw",
+      "bank draw admin asked me to pay prize tax",
+      "link to register for a bank prize draw on facebook",
+      "won a car in a draw but have to transfer money first",
+      "fake bank account giving away prizes"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "id": [
+      "Hadiah dari undian yang tidak pernah Anda ikuti.",
+      "Biaya klaim atau pajak yang harus ditransfer dulu.",
+      "Tautan pendaftaran di unggahan media sosial, bukan di aplikasi bank."
+    ],
+    "en": [
+      "A prize from a draw you never entered.",
+      "A claim fee or tax you must transfer first.",
+      "A registration link in a social media post, not in the bank's app."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Jangan transfer apa pun untuk mengambil hadiah; undian resmi tidak memungut biaya.",
+      "Cek program undian di aplikasi resmi bank atau nomor di balik kartu Anda.",
+      "Jangan isi data bank di tautan undian. Laporkan akunnya ke bank dan ke Aduan Konten atau Aduan Nomor Komdigi."
+    ],
+    "en": [
+      "Don't transfer anything to collect a prize; real draws charge nothing.",
+      "Check the draw in your bank's official app or on the number on the back of your card.",
+      "Don't enter bank details on a prize link. Report the account to the bank and to Komdigi."
+    ]
+  },
+  "reportTo": [
+    "id/your-bank",
+    "id/aduannomor",
+    "id/iasc"
+  ],
+  "sources": [
+    {
+      "title": "Waspada Penipuan Berkedok Undian Rejeki wondr BNI, Begini Modusnya",
+      "publisher": "Kontan",
+      "url": "https://keuangan.kontan.co.id/news/waspada-penipuan-berkedok-undian-rejeki-wondr-bni-begini-modusnya",
+      "date": "2025-05-09"
+    },
+    {
+      "title": "[PENIPUAN] Undian Berhadiah Bank BSI 2026",
+      "publisher": "TurnBackHoax (Mafindo)",
+      "url": "https://turnbackhoax.id/articles/32209-penipuan-undian-berhadiah-bank-bsi-2026",
+      "date": "2026-02-07"
+    },
+    {
+      "title": "[HOAKS] Tautan Pendaftaran Undian Berhadiah Bank BRI",
+      "publisher": "InfoPublik (Komdigi)",
+      "url": "https://infopublik.id/kategori/cek-fakta/989972/hoaks-tautan-pendaftaran-undian-berhadiah-bank-bri",
+      "date": "2026-09-19"
+    }
+  ],
+  "updated": "2026-11-18"
+}

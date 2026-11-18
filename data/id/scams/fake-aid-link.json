@@ -1,0 +1,131 @@
+{
+  "id": "id/fake-aid-link",
+  "country": "id",
+  "lang": "id",
+  "status": "active",
+  "channels": [
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "id": "Akun Facebook, pesan berantai WhatsApp atau Telegram yang memakai logo Kemnaker, BPJS atau Kemensos",
+    "en": "A Facebook account, a WhatsApp chain message or Telegram using the logo of the Ministry of Manpower, BPJS or the Social Affairs Ministry"
+  },
+  "name": {
+    "id": "Tautan palsu “cek penerima BSU” atau bansos",
+    "en": "Fake “check if you get the BSU wage subsidy” or social-aid link"
+  },
+  "how": {
+    "id": "Unggahan atau pesan berantai dengan logo pemerintah mengatakan Anda bisa mengecek atau mendaftar Bantuan Subsidi Upah (BSU) atau bansos lewat tautan, cukup dengan nama dan nomor HP, “tanpa biaya, resmi dari pemerintah”. Tautannya bukan situs pemerintah: halaman itu mengumpulkan data pribadi dan menghubungkannya ke akun Telegram. Kemnaker menegaskan BSU tidak memerlukan pendaftaran mandiri dan informasinya hanya ada di kanal resmi.",
+    "en": "A post or chain message with government logos says you can check or register for the BSU wage subsidy or social aid through a link, with just your name and phone number, “free, official from the government”. The link is not a government site: the page collects personal data and connects it to a Telegram account. The Ministry of Manpower says BSU needs no self-registration and its information is only on official channels."
+  },
+  "steps": [
+    {
+      "text": {
+        "id": "Unggahan atau pesan memakai logo Kemnaker, BPJS atau foto menteri.",
+        "en": "A post or message uses the logo of the Ministry of Manpower or BPJS, or a minister's photo."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "id": "Isinya: cek atau daftar bantuan Rp600 ribu atau lebih lewat tautan, “gratis”.",
+        "en": "It says to check or register for aid of Rp600,000 or more through a link, “free”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "id": "Tautan membuka halaman tidak resmi.",
+        "en": "The link opens an unofficial page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "id": "Halaman meminta nama, nomor HP dan data lain, lalu menyambungkannya ke Telegram.",
+        "en": "The page asks for your name, phone number and other data, then links it to Telegram."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "id": "BSU 2026 SUDAH CAIR! Bantuan Subsidi Upah Rp600.000 untuk pekerja. Cek nama kamu terdaftar atau tidak, cukup masukkan nama dan nomor HP di [tautan]. Gratis, tidak dipungut biaya!",
+        "en": "BSU 2026 IS BEING PAID! Rp600,000 wage subsidy for workers. Check if your name is on the list, just enter your name and phone number at [tautan]. Free, no charge!"
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "id": [
+      "link cek penerima bsu di facebook",
+      "daftar bansos lewat link di whatsapp",
+      "cek bantuan subsidi upah cukup nama dan nomor hp",
+      "link bantuan pemerintah minta data pribadi",
+      "tautan bsu ternyata ke telegram"
+    ],
+    "en": [
+      "link to check bsu recipients on facebook",
+      "register for social aid through a whatsapp link",
+      "check wage subsidy with just my name and phone number",
+      "government aid link asks for personal data",
+      "bsu link turned out to go to telegram"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "id": [
+      "Bantuan pemerintah yang “didaftarkan” lewat tautan di media sosial atau WhatsApp.",
+      "Situs yang tidak berakhiran go.id.",
+      "Diminta nomor HP atau data KTP untuk “cek bantuan”."
+    ],
+    "en": [
+      "Government aid you “register for” through a link on social media or WhatsApp.",
+      "A site that does not end in go.id.",
+      "Being asked for your phone number or ID details to “check your aid”."
+    ]
+  },
+  "whatToDo": {
+    "id": [
+      "Cek BSU hanya di situs resmi Kemnaker (bsu.kemnaker.go.id) atau aplikasi resmi BPJS Ketenagakerjaan.",
+      "Jangan isi data atau kode OTP di tautan dari unggahan atau pesan berantai.",
+      "Kalau sudah mengisi data dan ada kode OTP masuk, jangan bagikan; hubungi bank atau operator Anda jika akun Anda diambil alih."
+    ],
+    "en": [
+      "Check BSU only on the Ministry of Manpower's official site (bsu.kemnaker.go.id) or the official BPJS Ketenagakerjaan app.",
+      "Don't enter data or OTP codes on a link from a post or chain message.",
+      "If you entered data and an OTP code arrives, don't share it; contact your bank or mobile operator if an account is taken over."
+    ]
+  },
+  "reportTo": [
+    "id/aduannomor",
+    "id/patroli-siber",
+    "id/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "Hoaks! Tautan cek BSU Juli 2025 tanpa NIK",
+      "publisher": "ANTARA",
+      "url": "https://www.antaranews.com/berita/4958953/hoaks-tautan-cek-bsu-juli-2025-tanpa-nik",
+      "date": "2025-07-11"
+    },
+    {
+      "title": "Beredar Link Palsu BSU 2026, Kemnaker Minta Masyarakat Jangan Tertipu",
+      "publisher": "Kompas TV",
+      "url": "https://www.kompas.tv/nasional/642951/beredar-link-palsu-bsu-2026-kemnaker-minta-masyarakat-jangan-tertipu",
+      "date": "2026-01-11"
+    },
+    {
+      "title": "[PENIPUAN] Tautan Pengecekan BSU Pangan Tunai 2026",
+      "publisher": "TurnBackHoax (Mafindo)",
+      "url": "https://turnbackhoax.id/articles/32231",
+      "date": "2026-02-09"
+    }
+  ],
+  "updated": "2026-11-18"
+}
