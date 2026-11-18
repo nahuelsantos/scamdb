@@ -1,0 +1,139 @@
+{
+  "id": "th/fake-traffic-fine-sms",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "th": "SMS จากเบอร์แปลก อ้างเป็นตำรวจจราจร ระบบ e-Ticket หรือกรมการขนส่งทางบก",
+    "en": "A text from an unknown number claiming to be the traffic police, the e-Ticket system or the Department of Land Transport"
+  },
+  "name": {
+    "th": "SMS ใบสั่งจราจรค้างชำระปลอม พร้อมลิงก์หรือ QR Code",
+    "en": "Fake unpaid traffic-ticket text with a link or QR code"
+  },
+  "how": {
+    "th": "มิจฉาชีพส่ง SMS แจ้งว่าคุณมีใบสั่งจราจรหรือค่าปรับค้างชำระ เร่งให้จ่ายก่อนถูกเพิ่มค่าปรับหรือต่อภาษีรถไม่ได้ พร้อมลิงก์ย่อหรือ QR Code ไปหน้าเว็บปลอมที่แสดงเลขใบสั่ง ทะเบียนรถ และยอดค่าปรับ แล้วขอข้อมูลบัตรเครดิตหรือให้ติดตั้งแอป ตำรวจและกรมการขนส่งทางบกไม่ส่ง SMS แนบลิงก์หรือ QR Code ให้ชำระค่าปรับ",
+    "en": "Scammers text that you have an unpaid traffic ticket or fine, pushing you to pay before it goes up or before you can't renew your car tax, with a short link or QR code to a fake page showing a ticket number, plate and amount, which then asks for card details or an app install. The police and the Department of Land Transport do not send texts with links or QR codes to pay fines."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "SMS แจ้งว่ามีใบสั่งหรือค่าปรับจราจรค้างชำระ",
+        "en": "A text says you have an unpaid traffic ticket or fine."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "ขู่ว่าค่าปรับจะเพิ่มหรือต่อภาษีรถไม่ได้ถ้าไม่จ่ายทันที",
+        "en": "It warns the fine will rise or you can't renew your car tax unless you pay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "th": "ลิงก์ย่อหรือ QR Code ไปหน้าเว็บใบสั่งปลอม",
+        "en": "A short link or QR code leads to a fake ticket page."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "th": "หน้าเว็บขอข้อมูลบัตรเครดิตหรือให้ติดตั้งแอป",
+        "en": "The page asks for card details or an app install."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "แจ้งเตือน: ท่านมีใบสั่งจราจรค้างชำระ 1 รายการ หากไม่ชำระภายในวันนี้จะไม่สามารถต่อภาษีรถยนต์ได้ ตรวจสอบและชำระที่ [ลิงก์]",
+        "en": "Notice: you have 1 unpaid traffic ticket. If not paid today you will not be able to renew your vehicle tax. Check and pay at [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "th": "กรมการขนส่งทางบก: รถทะเบียนของท่านมีค่าปรับค้างชำระ 500 บาท กรุณาชำระภายใน 48 ชม. ก่อนถูกดำเนินคดี [ลิงก์]",
+        "en": "Department of Land Transport: your vehicle has an unpaid 500-baht fine. Please pay within 48 hours before legal action [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "sms แจ้งใบสั่งจราจรค้างชำระพร้อมลิงก์",
+      "ข้อความกรมขนส่งให้จ่ายค่าปรับผ่านลิงก์",
+      "สแกน qr code จ่ายค่าปรับจราจรใน sms",
+      "ค้างค่าปรับแล้วต่อภาษีรถไม่ได้ให้กดลิงก์",
+      "เว็บใบสั่งขอเลขบัตรเครดิต"
+    ],
+    "en": [
+      "a text about an unpaid traffic ticket with a link",
+      "a land transport department message to pay a fine by link",
+      "a qr code in a text to pay a traffic fine",
+      "a text saying i can't renew my car tax unless i pay through the link",
+      "a ticket website asked for my credit card number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "th": [
+      "SMS เรื่องค่าปรับที่มีลิงก์หรือ QR Code",
+      "กำหนดเวลาสั้น ๆ หรือขู่ว่าจะดำเนินคดีเพื่อเร่งให้จ่าย",
+      "หน้าเว็บที่ขอเลขบัตรเครดิต"
+    ],
+    "en": [
+      "A fine text with a link or QR code.",
+      "A short deadline or a threat of legal action pushing you to pay.",
+      "A page asking for your card number."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ไม่กดลิงก์ ไม่สแกน ตรวจใบสั่งเองในแอปทางรัฐหรือ Police Care",
+      "สอบถามกรมการขนส่งทางบกที่สายด่วน 1584",
+      "ถ้ากรอกข้อมูลบัตรไปแล้ว โทรแจ้งธนาคารให้ระงับบัตรทันที"
+    ],
+    "en": [
+      "Don't click or scan; check tickets yourself in the Tang Rat or Police Care app.",
+      "Ask the Department of Land Transport on its 1584 hotline.",
+      "If you typed in card details, call your bank to block the card at once."
+    ]
+  },
+  "reportTo": [
+    "th/your-bank",
+    "th/nbtc-1200",
+    "th/thaipoliceonline"
+  ],
+  "sources": [
+    {
+      "title": "ดีอี เตือน SMS แนบลิงก์ปลอม อ้าง “กรมการขนส่งทางบก” แจ้งชำระใบสั่งจราจร",
+      "publisher": "ไทยโพสต์",
+      "url": "https://www.thaipost.net/public-relations-news/1062251/",
+      "date": "2026-09-02"
+    },
+    {
+      "title": "รัฐบาล เตือนมิจฉาชีพระบาดส่ง “ใบสั่งจราจรค้างชำระ” ผ่าน SMS-QR Code",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/politic/2959285",
+      "date": "2026-09-13"
+    },
+    {
+      "title": "เตือนภัย SMS แจ้งค้างค่าปรับจราจรพร้อมแนบลิงก์ ตร. ยืนยันไม่ส่งข้อความเช่นนี้",
+      "publisher": "Cofact",
+      "url": "https://blog.cofact.org/th/fact-check-sms-26072026/",
+      "date": "2026-07-26"
+    }
+  ],
+  "updated": "2026-11-18"
+}

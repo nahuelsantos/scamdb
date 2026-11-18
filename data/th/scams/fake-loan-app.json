@@ -1,0 +1,134 @@
+{
+  "id": "th/fake-loan-app",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "th": "เพจเฟซบุ๊กหรือแอปเงินกู้ที่อ้างว่าอนุมัติง่าย แล้วต่อด้วยไลน์ “เจ้าหน้าที่สินเชื่อ”",
+    "en": "A Facebook page or loan app promising easy approval, followed by a “loan officer” on LINE"
+  },
+  "name": {
+    "th": "แอปเงินกู้ปลอม: อนุมัติแล้วแต่ต้องโอนเงินก่อน",
+    "en": "Fake loan app: approved, but you must pay first"
+  },
+  "how": {
+    "th": "มิจฉาชีพทำเพจหรือแอปเงินกู้ อ้างอนุมัติไว ให้วงเงินสูง ให้แอดไลน์และกรอกข้อมูลส่วนตัว จากนั้นแจ้งว่าอนุมัติแล้ว แต่ต้องโอนเงินก่อน เช่น ค่างวดแรก ค่าประกัน หรือค่าปรับเพราะ “กรอกข้อมูลผิด” หรือ “อ่านข้อความบันทึกเสียงผิด” แล้วเรียกเงินเพิ่มเรื่อย ๆ โดยไม่เคยปล่อยกู้จริง",
+    "en": "Scammers run loan pages or apps promising fast approval and high limits, and ask you to add LINE and fill in personal details. They then say the loan is approved but you must pay first, for example a first instalment, insurance, or a penalty for “wrong details” or “misreading the voice recording”, and keep asking for more without ever paying out."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "เพจหรือแอปเงินกู้อ้างอนุมัติไว ให้วงเงินสูง",
+        "en": "A loan page or app claims fast approval and a high limit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "th": "ให้แอดไลน์และกรอกข้อมูลส่วนตัว บัตรประชาชน และบัญชี",
+        "en": "You add LINE and send personal, ID-card and bank details."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "th": "แจ้งว่าอนุมัติแล้ว แต่ต้องโอนค่างวดแรกหรือค่าประกันก่อน",
+        "en": "They say you are approved but must pay a first instalment or insurance first."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "th": "อ้างว่าทำผิดขั้นตอน ต้องโอนค่าปรับเพิ่ม",
+        "en": "They claim you made a mistake and must pay a penalty."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "ยินดีด้วยค่ะ คุณได้รับอนุมัติวงเงินกู้ 50,000 บาท ก่อนโอนเงินกู้ต้องชำระค่างวดแรก 1,500 บาทเพื่อยืนยันตัวตน โอนเข้าบัญชีที่แจ้งได้เลยค่ะ",
+        "en": "Congratulations, your 50,000-baht loan is approved. Before we transfer it you must pay the first instalment of 1,500 baht to verify your identity. Please transfer to the account given."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "th": "ระบบตรวจพบว่าคุณกรอกเลขบัญชีผิด 1 หลัก ยอดกู้ถูกอายัด ต้องชำระค่าแก้ไขข้อมูล 3,000 บาทภายใน 30 นาที ไม่อย่างนั้นจะถูกดำเนินคดีผิดสัญญา",
+        "en": "The system found one wrong digit in your account number and the loan is frozen. You must pay a 3,000-baht correction fee within 30 minutes, or you will be sued for breach of contract."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "แอปกู้เงินให้โอนค่างวดแรกก่อน",
+      "เงินกู้อนุมัติแล้วแต่ต้องจ่ายค่าประกัน",
+      "กรอกข้อมูลผิดต้องโอนค่าปรับ",
+      "เพจเงินกู้อนุมัติไวให้แอดไลน์",
+      "โอนไปแล้วไม่ได้เงินกู้"
+    ],
+    "en": [
+      "a loan app told me to pay the first instalment first",
+      "my loan was approved but i had to pay insurance",
+      "they said i entered wrong details and must pay a penalty",
+      "a fast approval loan page told me to add line",
+      "i paid but never got the loan"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency",
+    "unknown_link"
+  ],
+  "redFlags": {
+    "th": [
+      "ต้องจ่ายเงินก่อนได้รับเงินกู้",
+      "อนุมัติไวและให้วงเงินสูงเกินจริง",
+      "ขู่ว่าจะดำเนินคดีถ้าไม่โอนค่าปรับ"
+    ],
+    "en": [
+      "Having to pay before you receive a loan.",
+      "Instant approval and an unrealistically high limit.",
+      "Threats of legal action unless you pay a penalty."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ผู้ให้กู้จริงไม่เก็บเงินก่อนปล่อยกู้ หยุดโอนทันที",
+      "ตรวจสอบผู้ให้กู้กับธนาคารแห่งประเทศไทย สายด่วน 1213",
+      "ถ้าโอนไปแล้ว โทร 1441 และแจ้งความ"
+    ],
+    "en": [
+      "Real lenders don't take money before paying out; stop paying now.",
+      "Check the lender with the Bank of Thailand on 1213.",
+      "If you already paid, call 1441 and file a report."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/bot-1213",
+    "th/thaipoliceonline"
+  ],
+  "sources": [
+    {
+      "title": "ผบ.ตร. สั่งเร่งจับแก๊งแอปฯ เงินกู้เถื่อน โยงคดีสลด แม่ลูกดับ 3 ศพ",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2964607",
+      "date": "2026-10-07"
+    },
+    {
+      "title": "สั่งเร่งตรวจสอบแอปฯเงินกู้ผิดกฎหมาย เตือนประชาชนอย่าดาวน์โหลด",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1261130",
+      "date": "2026-11-17"
+    }
+  ],
+  "updated": "2026-11-18"
+}

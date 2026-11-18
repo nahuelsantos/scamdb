@@ -1,0 +1,126 @@
+{
+  "id": "th/fake-parcel-sms-link",
+  "country": "th",
+  "lang": "th",
+  "status": "fading",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "th": "SMS อ้างเป็นไปรษณีย์ไทยหรือบริษัทขนส่งอื่น",
+    "en": "A text claiming to be Thailand Post or another courier"
+  },
+  "name": {
+    "th": "SMS พัสดุตกค้าง ส่งไม่ได้ ให้กดลิงก์ยืนยันหรือจ่ายค่าส่ง",
+    "en": "Parcel text: stuck or undeliverable, click to confirm or pay delivery"
+  },
+  "how": {
+    "th": "มิจฉาชีพส่ง SMS อ้างเป็นบริษัทขนส่ง บอกว่ามีพัสดุตกค้างหรือจัดส่งไม่ได้ ให้กดลิงก์ยืนยันการจัดส่งหรือจ่ายค่าบริการ ลิงก์พาไปหน้าเว็บที่ขอเลขบัตรเครดิต ชื่อผู้ถือบัตร วันหมดอายุ และรหัส CVV ไปรษณีย์ไทยไม่มีนโยบายเรียกเก็บค่าดำเนินการผ่าน SMS",
+    "en": "Scammers send texts posing as a courier, saying a parcel is stuck or can't be delivered, with a link to confirm delivery or pay a fee. The link leads to a page asking for the card number, cardholder name, expiry date and CVV. Thailand Post has no policy of charging fees by text."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "SMS จาก “ขนส่ง” บอกว่าพัสดุตกค้างหรือส่งไม่ได้",
+        "en": "A text from a “courier” says your parcel is stuck or undeliverable."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "ลิงก์ให้ยืนยันการจัดส่งหรือจ่ายค่าบริการเล็กน้อย",
+        "en": "A link to confirm delivery or pay a small fee."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "th": "หน้าเว็บขอเลขบัตร วันหมดอายุ และรหัส CVV",
+        "en": "The page asks for card number, expiry and CVV."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "ไปรษณีย์ไทย: พัสดุของท่านไม่สามารถจัดส่งได้เนื่องจากที่อยู่ไม่ครบถ้วน กรุณาอัปเดตที่อยู่และชำระค่าจัดส่งใหม่ 25 บาท ภายใน 12 ชั่วโมง [ลิงก์]",
+        "en": "Thailand Post: your parcel cannot be delivered because the address is incomplete. Please update your address and pay a 25-baht redelivery fee within 12 hours [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "th": "แฟลชเอ็กซ์เพรส: พนักงานติดต่อผู้รับไม่ได้ พัสดุจะถูกตีกลับในวันนี้ กรุณายืนยันการจัดส่งใหม่ที่ [ลิงก์]",
+        "en": "Flash Express: our courier couldn't reach you and the parcel will be returned today. Please reconfirm delivery at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "sms ไปรษณีย์บอกพัสดุตกค้างให้จ่ายค่าส่ง",
+      "ข้อความขนส่งติดต่อผู้รับไม่ได้ให้กดลิงก์",
+      "กดลิงก์ยืนยันพัสดุแล้วให้กรอกบัตรเครดิต",
+      "sms เคอรี่พัสดุเสียหายให้ยืนยัน",
+      "ลิงก์ขนส่งพาไปแอดไลน์"
+    ],
+    "en": [
+      "a post office text says my parcel is stuck and i must pay delivery",
+      "a courier text says they couldn't reach me with a link",
+      "clicked a parcel link and it asked for my credit card",
+      "a kerry text says my parcel was damaged and to confirm",
+      "a courier link took me to add a line account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "th": [
+      "SMS ขนส่งที่มีลิงก์ให้จ่ายเงินหรือยืนยัน",
+      "ค่าส่งเล็กน้อยแต่ขอข้อมูลบัตรครบทุกอย่าง",
+      "ลิงก์ชื่อคล้ายบริษัทขนส่งแต่สะกดแปลก"
+    ],
+    "en": [
+      "A courier text with a link to pay or confirm.",
+      "A tiny fee but a request for full card details.",
+      "A link that looks like the courier's name but is spelled oddly."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ไม่กดลิงก์ ตรวจเลขพัสดุเองในแอปหรือเว็บไซต์ทางการของขนส่ง",
+      "สอบถามไปรษณีย์ไทยที่ THP Contact Center 1545",
+      "ถ้ากรอกข้อมูลบัตรไปแล้ว โทรแจ้งธนาคารให้ระงับบัตร"
+    ],
+    "en": [
+      "Don't click. Check the tracking number yourself in the courier's official app or website.",
+      "Ask Thailand Post on its 1545 contact centre.",
+      "If you typed in card details, call your bank to block the card."
+    ]
+  },
+  "reportTo": [
+    "th/your-bank",
+    "th/nbtc-1200",
+    "th/thaipoliceonline"
+  ],
+  "sources": [
+    {
+      "title": "ไปรษณีย์ไทย เตือนภัย! มิจฉาชีพส่ง SMS ล้วงข้อมูลบัตรเครดิต",
+      "publisher": "The Bangkok Insight",
+      "url": "https://www.thebangkokinsight.com/news/politics-general/general/1261453/",
+      "date": "2024-01-25"
+    },
+    {
+      "title": "‘ไปรษณีย์ไทย’ เตือนภัยกลโกงล่าสุด SMS แจ้งเตือนมีพัสดุตกค้าง",
+      "publisher": "The Bangkok Insight",
+      "url": "https://www.thebangkokinsight.com/news/politics-general/general/955432/",
+      "date": "2022-09-26"
+    }
+  ],
+  "updated": "2026-11-18"
+}

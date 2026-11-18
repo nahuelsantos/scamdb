@@ -1,0 +1,128 @@
+{
+  "id": "th/fake-store-refund-call",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "th": "คนที่อ้างเป็นพนักงานร้านวัสดุก่อสร้างหรือห้างขายของใช้ในบ้านที่คุณเคยซื้อของ",
+    "en": "Someone posing as staff of a building-supply or home store where you once bought something"
+  },
+  "name": {
+    "th": "โทรอ้างร้านค้าจะคืนเงินค่าสินค้าชำรุด แล้วให้โอนค่าธรรมเนียมหรือติดตั้งแอป",
+    "en": "Call from a “store” refunding a faulty product, then asking for a fee or an app install"
+  },
+  "how": {
+    "th": "มิจฉาชีพโทรอ้างเป็นพนักงานร้านวัสดุก่อสร้างหรือห้างขายของใช้ในบ้าน บอกว่าสินค้าที่คุณเคยสั่งซื้อมีปัญหาหรือชำรุด และเสนอคืนเงินให้ จากนั้นให้โอนค่าธรรมเนียมก่อน หรือส่งลิงก์ทาง SMS หรือแชตให้ติดตั้งแอปควบคุมเครื่องระยะไกล แล้วโอนเงินออกจากบัญชี ร้านค้าจริงไม่เก็บค่าธรรมเนียมล่วงหน้าเพื่อคืนเงินค่าสินค้า",
+    "en": "Scammers call claiming to be staff of a building-supply or home store, saying something you ordered is faulty and offering a refund. They then ask for a fee first, or send a link by text or chat to install a remote-control app and move money out of your account. Real stores don't charge an upfront fee to refund a faulty product."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "สายจาก “ร้านค้า” ที่รู้ว่าคุณเคยสั่งซื้ออะไร",
+        "en": "A call from a “store” that knows what you bought."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "บอกว่าสินค้าชำรุดและจะคืนเงินให้",
+        "en": "They say the item is faulty and offer a refund."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "th": "ให้โอนค่าธรรมเนียมก่อน หรือส่งลิงก์ให้ติดตั้งแอป",
+        "en": "They ask for a fee first, or send a link to install an app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "th": "เงินในบัญชีถูกโอนออกระหว่างทำตามขั้นตอน",
+        "en": "Money leaves your account while you follow the steps."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "สวัสดีค่ะ ติดต่อจากฝ่ายบริการลูกค้าร้านวัสดุก่อสร้าง ชุดก๊อกน้ำที่คุณสั่งไปเดือนที่แล้วเป็นล็อตที่ชำรุด ทางร้านจะคืนเงินเต็มจำนวน รบกวนแอดไลน์ฝ่ายคืนเงินแล้วติดตั้งแอปตามลิงก์เพื่อรับเงินนะคะ",
+        "en": "Hello, this is customer service at the building-supply store. The tap set you ordered last month is from a faulty batch and we will refund you in full. Please add our refunds team on LINE and install the app from the link to receive the money."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "th": "ห้างแจ้ง: สินค้าของท่านอยู่ในรายการเรียกคืน รับเงินคืน 2,890 บาท ติดตั้งแอปรับเงินคืนที่ [ลิงก์]",
+        "en": "Store notice: your product is on the recall list. Get a 2,890-baht refund by installing the refund app at [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "ร้านโทรมาบอกสินค้าชำรุดจะคืนเงิน",
+      "พนักงานห้างให้ติดตั้งแอปเพื่อรับเงินคืน",
+      "ต้องโอนค่าธรรมเนียมก่อนรับเงินคืนค่าสินค้า",
+      "ร้านวัสดุก่อสร้างโทรมาเรื่องคืนเงิน",
+      "คืนเงินค่าสินค้าแล้วเงินในบัญชีหาย"
+    ],
+    "en": [
+      "a store called saying my item is faulty and they will refund me",
+      "store staff asked me to install an app to get a refund",
+      "had to pay a fee before getting a product refund",
+      "a building supply store called about a refund",
+      "after the refund steps money vanished from my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "remote_access",
+    "money_request"
+  ],
+  "redFlags": {
+    "th": [
+      "ร้านโทรมาเองเพื่อคืนเงิน ทั้งที่คุณไม่ได้ร้องเรียน",
+      "ต้องจ่ายค่าธรรมเนียมก่อนได้เงินคืน",
+      "ให้ติดตั้งแอปจากลิงก์เพื่อรับเงิน"
+    ],
+    "en": [
+      "A store calling you to refund money you never complained about.",
+      "Having to pay a fee before a refund.",
+      "Being told to install an app from a link to receive money."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "วางสาย แล้วโทรหาร้านเองด้วยเบอร์บนเว็บไซต์หรือใบเสร็จ",
+      "ไม่ติดตั้งแอปจากลิงก์ ไม่โอนเงินค่าธรรมเนียม",
+      "ถ้าติดตั้งแอปไปแล้ว ปิดอินเทอร์เน็ต โทรแจ้งธนาคารและ 1441"
+    ],
+    "en": [
+      "Hang up and call the store yourself on the number on its website or receipt.",
+      "Don't install apps from links or pay any fee.",
+      "If you installed an app, turn off the internet and call your bank and 1441."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/your-bank",
+    "th/thaipoliceonline"
+  ],
+  "sources": [
+    {
+      "title": "มุกใหม่! ตร. เตือนภัย แก๊งคอลเซ็นเตอร์แอบอ้าง ร้านวัสดุก่อสร้าง-ห้างดังขายของใช้ในบ้าน ลวงคืนเงินค่าสินค้า",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1244483",
+      "date": "2026-07-23"
+    }
+  ],
+  "updated": "2026-11-18"
+}

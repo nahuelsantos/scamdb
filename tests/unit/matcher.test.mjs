@@ -71,7 +71,7 @@ test('empty, emoji-only and huge input are not recognised and fast', () => {
   const cold = performance.now();
   m('warm up');
   assert.ok(performance.now() - cold < 2000, 'preparing the catalogue took too long');
-  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000)]) {
+  for (const t of ['', '🙂🙂🙂', 'hola '.repeat(10000), 'สวัสดีครับ '.repeat(2000)]) {
     const t0 = performance.now();
     const r = m(t);
     assert.equal(r.verdict, 'not_recognised');
@@ -618,4 +618,14 @@ test('1.28.0: Vietnamese rules, only where Vietnamese is spoken', async () => {
   assert.ok(readSigns('Anh cài ứng dụng thuế điện tử theo đường dẫn em gửi', ['vi']).includes('remote_access'));
   assert.ok(!readSigns('Ma OTP cua Quy khach la 538217. Tuyet doi KHONG cung cap ma OTP cho bat ky ai', ['vi']).includes('asks_for_code'));
   assert.ok(!readSigns('cho anh muon chuyen vao so tai khoan nay gap', ['es', 'en']).includes('money_request'), 'Vietnamese rules only where Vietnamese is spoken');
+});
+test('1.29.0: Thai: phrases match without spaces, signs survive tone-mark folding', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const entry = { id: 'th/x', country: 'th', lang: 'th', phrases: { th: ['การไฟฟ้าโทรมาบอกจะคืนเงินประกันมิเตอร์'] } };
+  const r = matchMessage('ติดต่อจากการไฟฟ้า จะเปลี่ยนให้ฟรีและคืนเงินประกันมิเตอร์ 2,500 บาท', [entry], { country: 'th' });
+  assert.equal(r.matches[0]?.id, 'th/x', 'a long shared stretch matches though Thai has no word spaces');
+  const sms = readSigns('[KBank] แอปพลิเคชันของท่านหมดอายุ กรุณาอัปเดตภายใน 24 ชั่วโมง มิฉะนั้นบัญชีจะถูกระงับ [ลิงก์]', ['th']);
+  for (const s of ['urgency', 'unknown_link']) assert.ok(sms.includes(s), s);
+  assert.ok(!readSigns('รหัส OTP ของคุณคือ 482913 ห้ามบอกรหัสนี้แก่ผู้อื่น', ['th']).includes('asks_for_code'));
+  assert.ok(!readSigns('ด่วน ลิงก์', ['es', 'en']).includes('urgency'), 'Thai rules only where Thai is spoken');
 });

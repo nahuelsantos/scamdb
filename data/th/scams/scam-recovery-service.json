@@ -1,0 +1,140 @@
+{
+  "id": "th/scam-recovery-service",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "th": "เพจหรือไลน์ที่อ้างเป็นตำรวจไซเบอร์ เจ้าหน้าที่รัฐ ทนายความ หรือบริษัทติดตามทรัพย์สิน",
+    "en": "A page or LINE account claiming to be cyber police, an official, a lawyer or an asset-recovery firm"
+  },
+  "name": {
+    "th": "หลอกซ้ำ: อ้างช่วยตามเงินที่ถูกโกงคืน แต่ต้องโอนค่าดำเนินการก่อน",
+    "en": "Second scam: offering to recover lost money for an upfront fee"
+  },
+  "how": {
+    "th": "หลังจากถูกโกง ผู้เสียหายจะเจอเพจหรือบัญชีที่อ้างเป็นตำรวจไซเบอร์ เจ้าหน้าที่รับแจ้งความ ทนายความ หรือแม้แต่ผู้ต้องหาที่ “รับสารภาพ” บอกว่าตามเส้นทางเงินเจอแล้วหรืออายัดบัญชีได้แล้ว แต่ต้องจ่ายค่าธรรมเนียมศาล ค่าเอกสาร หรือค่าปลดล็อกก่อน ไม่มีหน่วยงานรัฐเก็บค่าธรรมเนียมเพื่อนำเงินที่ถูกโกงกลับคืน",
+    "en": "After a scam, victims find pages or accounts claiming to be cyber police, report-desk officers, lawyers, or even a suspect who has “confessed”, saying the money trail has been found or the account frozen, but court fees, paperwork or an unlock fee must be paid first. No government agency charges a fee to return stolen money."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "เพจหรือคนที่อ้างเป็นตำรวจ ทนาย หรือเจ้าหน้าที่ติดต่อมาหลังคุณถูกโกง",
+        "en": "A page or person claiming to be police, a lawyer or an official contacts you after you were scammed."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "บอกว่าเจอเส้นทางเงินหรืออายัดบัญชีคนร้ายได้แล้ว",
+        "en": "They say they traced the money or froze the scammer's account."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "th": "ให้โอนค่าธรรมเนียม ค่าเอกสาร หรือค่าปลดล็อกก่อนรับเงินคืน",
+        "en": "You must pay a fee, paperwork charge or unlock fee before getting it back."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "th": "เร่งให้จ่ายก่อนเงินจะถูกโอนหนี",
+        "en": "They rush you to pay before the money is moved away."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "ศูนย์ช่วยเหลือผู้เสียหายคดีออนไลน์ ตำรวจไซเบอร์ รับติดตามเงินคืน 100% ไม่ว่าโดนหลอกลงทุน ซื้อของ หรือแก๊งคอลเซ็นเตอร์ ทักแชตเพื่อให้เจ้าหน้าที่ตรวจสอบได้เลย ฟรี",
+        "en": "Online fraud victim help centre, cyber police: we recover 100% of your money, whether from investment, shopping or call-centre scams. Message us for an officer to check your case, free."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "th": "เราตรวจพบบัญชีปลายทางที่รับเงินของคุณแล้ว และอายัดไว้ได้ 480,000 บาท แต่ต้องชำระค่าธรรมเนียมศาลเพื่อปลดอายัด 12,000 บาทภายในวันนี้ ถ้าเกินเวลา ยอดเงินจะถูกโอนกลับไปให้คนร้าย",
+        "en": "We have found the account that received your money and frozen 480,000 baht. To release it you must pay a 12,000-baht court fee today; after that the money goes back to the scammer."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "เพจตำรวจไซเบอร์รับตามเงินคืน",
+      "ทนายบอกตามเงินคืนได้แต่ต้องจ่ายค่าดำเนินการ",
+      "โดนโกงแล้วมีคนติดต่อมาช่วยเอาเงินคืน",
+      "ต้องโอนค่าธรรมเนียมศาลเพื่อปลดอายัดเงิน",
+      "โดนหลอกซ้ำตอนพยายามเอาเงินคืน"
+    ],
+    "en": [
+      "a cyber police page offering to recover my money",
+      "a lawyer said they could get my money back for a fee",
+      "after the scam someone contacted me offering to recover the money",
+      "had to pay a court fee to release the frozen money",
+      "got scammed again trying to get my money back"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "th": [
+      "มีคนติดต่อมาเองว่าจะช่วยเอาเงินคืน",
+      "ต้องจ่ายเงินก่อนถึงจะได้เงินคืน",
+      "เพจหรือไลน์ที่อ้างเป็นตำรวจหรือหน่วยงานรัฐ"
+    ],
+    "en": [
+      "Someone contacting you out of the blue offering to recover money.",
+      "Having to pay before getting money back.",
+      "A page or LINE account claiming to be police or a government agency."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ไม่จ่ายเงินให้ใครเพื่อเอาเงินคืน หน่วยงานรัฐไม่เก็บค่าธรรมเนียม",
+      "ติดตามคดีกับพนักงานสอบสวนที่รับแจ้งความเท่านั้น หรือโทร 1441",
+      "แจ้งเพจหรือบัญชีที่แอบอ้างให้แพลตฟอร์มและตำรวจ"
+    ],
+    "en": [
+      "Never pay anyone to get money back; government agencies charge no fee.",
+      "Follow your case only with the investigating officer who took your report, or call 1441.",
+      "Report the impersonating page or account to the platform and the police."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/thaipoliceonline",
+    "th/police-191"
+  ],
+  "sources": [
+    {
+      "title": "ศูนย์ AOC แฉมุกเก่าแต่ยังได้ผล! มิจฉาชีพสวมรอยช่วยตามเงินคืน",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/tech/ai/1245076",
+      "date": "2026-07-28"
+    },
+    {
+      "title": "โอนเงิน 5 ล้าน เหยื่ออื้อ มิจฯอ้างตำรวจไซเบอร์",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/1255147",
+      "date": "2026-10-06"
+    },
+    {
+      "title": "เตือนภัยมิจฉาชีพ ปี 2569! ระวัง “มุกลวงใหม่” มาแรง “มุกลวงเก่า” หนักกว่าเดิม",
+      "publisher": "Thai PBS Verify",
+      "url": "https://www.thaipbs.or.th/verify/article/content/7718",
+      "date": "2025-12-16"
+    }
+  ],
+  "updated": "2026-11-18"
+}

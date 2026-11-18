@@ -1,0 +1,142 @@
+{
+  "id": "th/fake-revenue-tax-refund",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email",
+    "social",
+    "phone"
+  ],
+  "sender": {
+    "th": "ข้อความ อีเมล หรือไลน์ที่อ้างเป็นกรมสรรพากร บางครั้งใช้รูปผู้บริหารกรมเป็นรูปโปรไฟล์",
+    "en": "A text, email or LINE account claiming to be the Revenue Department, sometimes with a senior official's photo as its picture"
+  },
+  "name": {
+    "th": "กรมสรรพากรปลอม: แจ้งคืนภาษี ให้กดลิงก์หรือทำรายการที่ตู้ ATM",
+    "en": "Fake Revenue Department: tax refund, click a link or follow steps at an ATM"
+  },
+  "how": {
+    "th": "ช่วงยื่นแบบภาษีและขอคืนภาษี มิจฉาชีพส่ง SMS อีเมล หรือไลน์อ้างเป็นกรมสรรพากร บอกว่าคุณได้รับสิทธิ์คืนภาษีหรือต้องส่งเอกสารเพิ่ม พร้อมลิงก์ไปหน้าเว็บปลอมที่ขอข้อมูลส่วนตัวและข้อมูลบัญชี บางรายโทรมาบอกให้ไปกดตามขั้นตอนที่ตู้ ATM ซึ่งที่จริงคือการโอนเงินออก กรมสรรพากรไม่ส่งลิงก์ให้กรอกข้อมูลเพื่อขอคืนภาษี และไม่โทรแจ้งเรื่องคืนภาษี",
+    "en": "During tax-filing and refund season, scammers send texts, emails or LINE messages claiming to be the Revenue Department, saying you are due a refund or must send more documents, with a link to a fake page that asks for personal and bank details. Some call and talk you through steps at an ATM that actually transfer your money out. The Revenue Department does not send links to claim refunds and does not phone people about refunds."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "ข้อความหรือสายจาก “กรมสรรพากร” แจ้งว่าคุณได้รับเงินคืนภาษี",
+        "en": "A message or call from the “Revenue Department” says you are due a tax refund."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "เร่งให้ยืนยันสิทธิ์ภายในเวลาที่กำหนด",
+        "en": "It pushes you to confirm within a deadline."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "th": "ลิงก์ไปหน้าเว็บปลอมที่ขอเลขบัตรประชาชน ข้อมูลบัญชี และรหัสผ่าน",
+        "en": "A link goes to a fake page asking for your ID number, bank details and passwords."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "th": "หรือให้ไปกดตามขั้นตอนที่ตู้ ATM ซึ่งเป็นการโอนเงินออก",
+        "en": "Or you are walked through ATM steps that send your money away."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "กรมสรรพากร: ท่านได้รับสิทธิ์ขอคืนภาษีเงินได้ 4,860 บาท กรุณายืนยันข้อมูลบัญชีรับเงินภายใน 24 ชม. [ลิงก์]",
+        "en": "Revenue Department: you are entitled to a 4,860-baht income tax refund. Please confirm the bank account for payment within 24 hours [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "th": "เรียน ผู้เสียภาษี แบบ ภ.ง.ด.90 ของท่านมีเอกสารไม่ครบ ระบบจะระงับการคืนเงินภาษี กรุณากดลิงก์เพื่อส่งเอกสารเพิ่มเติมและยืนยันตัวตน [ลิงก์]",
+        "en": "Dear taxpayer, your PND 90 return is missing documents and your refund will be suspended. Please click the link to send more documents and verify your identity [link]"
+      },
+      "channel": "email"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "sms กรมสรรพากรแจ้งคืนภาษีพร้อมลิงก์",
+      "อีเมลอ้างสรรพากรให้ยืนยันสิทธิ์คืนภาษี",
+      "โทรมาบอกให้ไปกดตู้ atm เพื่อรับเงินคืนภาษี",
+      "ไลน์สรรพากรใช้รูปผู้บริหารส่งลิงก์มา",
+      "เว็บคืนภาษีขอเลขบัญชีและรหัสผ่าน"
+    ],
+    "en": [
+      "a revenue department text about a tax refund with a link",
+      "an email from the revenue department asking me to confirm my refund",
+      "a caller told me to go to an atm to get my tax refund",
+      "a revenue department line account with an official's photo sent a link",
+      "a tax refund site asked for my account number and password"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "unknown_link",
+    "money_request"
+  ],
+  "redFlags": {
+    "th": [
+      "SMS อีเมล หรือไลน์เรื่องคืนภาษีที่มีลิงก์ให้กด",
+      "คนโทรมาบอกให้ไปทำรายการที่ตู้ ATM เพื่อรับเงิน",
+      "หน้าเว็บที่ขอรหัสผ่าน OTP หรือข้อมูลบัญชี"
+    ],
+    "en": [
+      "A tax-refund text, email or LINE message with a link.",
+      "A caller telling you to go to an ATM to receive money.",
+      "A page asking for passwords, OTP codes or bank details."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ไม่กดลิงก์ ตรวจสอบการคืนภาษีโดยพิมพ์ rd.go.th เอง หรือโทร 1161",
+      "ไม่มีการคืนเงินที่ต้องไปกดที่ตู้ ATM ถ้ามีคนโทรสั่งแบบนี้ให้วางสาย",
+      "ถ้ากรอกข้อมูลบัญชีไปแล้ว โทรแจ้งธนาคารทันที"
+    ],
+    "en": [
+      "Don't click. Check your refund by typing rd.go.th yourself or calling 1161.",
+      "No refund is ever paid by following steps at an ATM; if someone tells you to, hang up.",
+      "If you typed in bank details, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/your-bank",
+    "th/thaipoliceonline"
+  ],
+  "sources": [
+    {
+      "title": "สรรพากร เตือน ระวังมิจฉาชีพ อ้างคืนภาษี",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1171650",
+      "date": "2025-03-18"
+    },
+    {
+      "title": "สรรพากรเตือนระวังมิจฉาชีพอ้างเป็นเจ้าหน้าที่",
+      "publisher": "ไทยโพสต์",
+      "url": "https://www.thaipost.net/economy-news/757520/",
+      "date": "2025-03-18"
+    },
+    {
+      "title": "เตือนภัยระวัง อีเมลปลอมอ้างคืนเงินภาษี",
+      "publisher": "ฐานเศรษฐกิจ",
+      "url": "https://www.thansettakij.com/economy/646861",
+      "date": "2025-12-18"
+    }
+  ],
+  "updated": "2026-11-18"
+}

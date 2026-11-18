@@ -1,0 +1,154 @@
+{
+  "id": "th/fake-police-money-laundering",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "th": "คนที่อ้างเป็นพนักงานค่ายมือถือหรือขนส่ง แล้วโอนสายให้ “ตำรวจ” สภ.ต่างจังหวัด หรือ DSI",
+    "en": "Someone posing as mobile-network or courier staff who passes you to “police” in another province or the DSI"
+  },
+  "name": {
+    "th": "โทรขู่ว่าเบอร์หรือบัญชีพัวพันคดีฟอกเงิน ต้องโอนเงินให้ตรวจสอบ",
+    "en": "Call saying your number or account is linked to money laundering and you must transfer money to be checked"
+  },
+  "how": {
+    "th": "มิจฉาชีพโทรมาอ้างเป็นพนักงานค่ายมือถือหรือบริษัทขนส่ง บอกว่ามีคนเอาบัตรประชาชนคุณไปเปิดซิม หรือพัสดุของคุณมีของผิดกฎหมาย แล้วโอนสายให้คนที่อ้างเป็นตำรวจหรือ DSI สอบปากคำทางวิดีโอคอลหรือไลน์ และห้ามบอกใคร สุดท้ายสั่งให้โอนเงินหรือถอนเงินสดมาให้ “ตรวจสอบความบริสุทธิ์” ตำรวจจริงไม่โทรสอบปากคำ ไม่วิดีโอคอล และไม่ให้โอนเงินไปตรวจสอบ",
+    "en": "Scammers call claiming to be from a mobile network or courier, saying someone opened a SIM with your ID card or that your parcel holds illegal items, then pass you to a fake police or DSI officer who questions you by video call or LINE and tells you to keep it secret. In the end they order you to transfer money, or withdraw cash for collection, to “prove your innocence”. Real police don't question people by phone or video call and never ask for money to check it."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "สายจาก “ค่ายมือถือ” หรือ “ขนส่ง” บอกว่าซิมหรือพัสดุของคุณพัวพันคดี",
+        "en": "A call from a “mobile network” or “courier” says your SIM or parcel is linked to a crime."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "โอนสายให้ “ตำรวจ” หรือ “DSI” ที่ขู่ว่าคุณเป็นผู้ต้องสงสัยฟอกเงิน",
+        "en": "You are passed to “police” or “DSI” who say you are a money-laundering suspect."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "th": "ให้แอดไลน์ วิดีโอคอลสอบปากคำ และห้ามบอกใครหรือวางสาย",
+        "en": "They make you add them on LINE, question you on video and tell you not to tell anyone or hang up."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "th": "สั่งให้โอนเงินหรือถอนเงินสดไปให้ “ตรวจสอบความบริสุทธิ์”",
+        "en": "They order you to transfer money or hand over cash to “prove your innocence”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "สวัสดีค่ะ ติดต่อจากศูนย์บริการเครือข่ายมือถือ เลขบัตรประชาชนของคุณถูกนำไปเปิดซิมอีกเบอร์ และเบอร์นั้นพัวพันบัญชีม้ากับเว็บพนัน ดิฉันจะโอนสายให้เจ้าหน้าที่ตำรวจ สภ.เมืองระนอง เพื่อลงบันทึกประจำวันนะคะ",
+        "en": "Hello, this is the mobile network service centre. Your ID card number was used to open another SIM, and that number is linked to mule accounts and gambling sites. I'll transfer you to an officer at Mueang Ranong police station to record a statement."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "th": "ผมพันตำรวจโทจากกองบังคับการปราบปราม ตอนนี้คุณมีชื่อเป็นผู้ต้องสงสัยคดีฟอกเงิน แอดไลน์ผมแล้ววิดีโอคอลมาสอบปากคำเดี๋ยวนี้ ห้ามบอกพ่อแม่หรือใครเด็ดขาด ถ้าคุณบริสุทธิ์ให้โอนเงินทั้งหมดในบัญชีมาให้ ปปง. ตรวจสอบภายใน 2 ชั่วโมง ตรวจเสร็จจะคืนให้",
+        "en": "I'm a police lieutenant colonel from the Crime Suppression Division. You are now a money-laundering suspect. Add me on LINE and video-call me for questioning now, and don't tell your parents or anyone. If you are innocent, transfer all the money in your account for the AMLO to check within 2 hours; it will be returned afterwards."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "ตำรวจโทรมาบอกว่าบัญชีพัวพันคดีฟอกเงิน",
+      "มีคนเอาบัตรประชาชนไปเปิดซิมพัวพันบัญชีม้า",
+      "ตำรวจให้วิดีโอคอลสอบปากคำทางไลน์",
+      "ให้โอนเงินไปตรวจสอบความบริสุทธิ์",
+      "พัสดุมีของผิดกฎหมายโอนสายให้ตำรวจ",
+      "ห้ามบอกใครเพราะเป็นความลับทางคดี"
+    ],
+    "en": [
+      "the police called saying my account is linked to money laundering",
+      "someone used my id card to open a sim tied to mule accounts",
+      "a police officer questioned me by video call on line",
+      "they told me to transfer money to prove i am innocent",
+      "my parcel had illegal items and they passed me to the police",
+      "they said not to tell anyone because the case is secret"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "secrecy",
+    "keep_on_line",
+    "money_request"
+  ],
+  "redFlags": {
+    "th": [
+      "ตำรวจหรือ DSI โทรมาเอง แล้วให้แอดไลน์หรือวิดีโอคอลสอบปากคำ",
+      "สั่งห้ามบอกครอบครัวหรือห้ามวางสาย",
+      "ให้โอนเงินหรือส่งเงินสด ทองคำ ไป “ตรวจสอบ” แล้วจะคืนให้"
+    ],
+    "en": [
+      "Police or DSI calling you themselves and asking you to add LINE or video-call for questioning.",
+      "Being told not to tell your family or not to hang up.",
+      "Being asked to transfer money or hand over cash or gold “to be checked” and returned later."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "วางสายทันที แล้วโทรหาคนในครอบครัวหรือเพื่อน",
+      "ถ้าสงสัยว่ามีคดีจริง ให้ไปที่สถานีตำรวจใกล้บ้านด้วยตัวเอง หรือโทร 191",
+      "ถ้าโอนเงินไปแล้ว โทร 1441 ทันทีเพื่ออายัดบัญชี แล้วไปแจ้งความ"
+    ],
+    "en": [
+      "Hang up straight away and call a family member or friend.",
+      "If you think there might really be a case, go to your local police station yourself or call 191.",
+      "If you already sent money, call 1441 at once to freeze the account, then file a police report."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/police-191",
+    "th/thaipoliceonline",
+    "th/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "แฉมุกมิจฉาชีพ พุ่งเป้าหลอก Gen Z อ้างเป็นตำรวจโทรขู่ คดีซิม-บัญชีม้าได้ผลสุด",
+      "publisher": "แนวหน้า",
+      "url": "https://www.naewna.com/n/?p=138090",
+      "date": "2026-10-29"
+    },
+    {
+      "title": "จับอีกแก๊งคอลเซ็นเตอร์ หลอก นศ.แพทย์ 6.6 แสน",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2964570",
+      "date": "2026-10-06"
+    },
+    {
+      "title": "เตือนภัยมิจฉาชีพ ปี 2569! ระวัง “มุกลวงใหม่” มาแรง “มุกลวงเก่า” หนักกว่าเดิม",
+      "publisher": "Thai PBS Verify",
+      "url": "https://www.thaipbs.or.th/verify/article/content/7718",
+      "date": "2025-12-16"
+    },
+    {
+      "title": "ไปรษณีย์ไทย เตือนภัย! มิจฉาชีพส่ง SMS ล้วงข้อมูลบัตรเครดิต",
+      "publisher": "The Bangkok Insight",
+      "url": "https://www.thebangkokinsight.com/news/politics-general/general/1261453/",
+      "date": "2024-01-25"
+    }
+  ],
+  "story": {
+    "th": "นักศึกษาชายอายุ 19 ปีในนครปฐมได้รับสายจากคนอ้างเป็นเจ้าหน้าที่ค่ายมือถือ บอกว่าเขาเกี่ยวข้องกับคดีฟอกเงิน แล้วโอนสายให้คนอ้างเป็นตำรวจ สภ.เมืองระนองและ DSI ระหว่าง 23–25 ก.ย. 2569 เขาโอนเงินและถอนเงินสดไปส่งให้คนร้ายที่ลานจอดรถห้าง รวม 662,989.90 บาท ตำรวจไซเบอร์จับผู้ต้องหาได้ 3 ราย",
+    "en": "A 19-year-old student in Nakhon Pathom got a call from someone claiming to be mobile-network staff who said he was involved in money laundering, then passed him to people posing as Ranong police and the DSI. Between 23 and 25 September 2026 he transferred money and handed over cash in a shopping-mall car park, 662,989.90 baht in all. Cyber police arrested 3 suspects."
+  },
+  "updated": "2026-11-18"
+}

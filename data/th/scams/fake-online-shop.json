@@ -1,0 +1,139 @@
+{
+  "id": "th/fake-online-shop",
+  "country": "th",
+  "lang": "th",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "th": "เพจขายของหรือเพจประมูลบนเฟซบุ๊ก ราคาถูกกว่าท้องตลาด",
+    "en": "A Facebook shop or auction page with prices below market"
+  },
+  "name": {
+    "th": "เพจขายของหรือประมูลปลอม โอนเงินแล้วไม่ได้ของ",
+    "en": "Fake shop or auction page: you pay and nothing arrives"
+  },
+  "how": {
+    "th": "มิจฉาชีพทำเพจขายของปลอมหรือ “เพจประมูลทิพย์” บนเฟซบุ๊ก นำสินค้าราคาแพง เช่น กระเป๋าแบรนด์เนม นาฬิกา หรือพระเครื่องมาขายถูกหรือเปิดประมูล ใช้หน้าม้าปั่นราคาและรีวิวให้ดูน่าเชื่อถือ เมื่อโอนเงินแล้วได้ของปลอม ของไม่ตรงปก หรือถูกบล็อกหนี การหลอกขายสินค้าเป็นคดีออนไลน์ที่มีผู้แจ้งมากที่สุดในไทย",
+    "en": "Scammers set up fake shop pages or “phantom auction” pages on Facebook, offering expensive items such as designer bags, watches or amulets cheaply or at auction, with planted accounts bidding and reviewing to look real. After you pay you get a fake, the wrong item, or you are blocked. Fake online sales are the most reported online crime in Thailand."
+  },
+  "steps": [
+    {
+      "text": {
+        "th": "เพจขายของราคาถูกเกินจริงหรือเปิดประมูลสินค้าแพง",
+        "en": "A page sells items far too cheaply or auctions expensive goods."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "th": "มีคนในเพจรีวิวและปั่นราคา ดูน่าเชื่อถือ",
+        "en": "People on the page review and bid to make it look real."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "th": "ให้โอนเงินเต็มจำนวนเข้าบัญชีบุคคล ไม่ใช้ระบบของแพลตฟอร์ม",
+        "en": "You must transfer the full amount to a personal account, outside the platform."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "th": "เร่งให้โอนก่อนของหมด แล้วบล็อกหลังได้เงิน",
+        "en": "They rush you to pay before stock runs out, then block you."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "th": "🔥ประมูลด่วน! กระเป๋าแบรนด์เนมแท้ 100% เริ่ม 990 บาท ปิดประมูล 3 ทุ่มคืนนี้ ผู้ชนะโอนภายใน 1 ชั่วโมง ไม่โอนแบนถาวร",
+        "en": "🔥Flash auction! 100% genuine designer bag starting at 990 baht, auction closes 9 pm tonight. Winner must transfer within 1 hour or be banned for good."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "th": "สินค้าเหลือชิ้นสุดท้ายค่ะ ลดเหลือ 2,500 จาก 8,900 โอนเต็มจำนวนเข้าบัญชีแม่ค้าได้เลย ส่งของให้พรุ่งนี้ ไม่รับเก็บเงินปลายทางนะคะ",
+        "en": "It's the last one, down to 2,500 from 8,900. Transfer the full amount to my account and I'll ship tomorrow. No cash on delivery."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "th": [
+      "สั่งของในเฟซบุ๊กโอนเงินแล้วไม่ได้ของ",
+      "ชนะประมูลในเพจแล้วโดนบล็อก",
+      "เพจขายของถูกเกินจริงไม่รับเก็บปลายทาง",
+      "ได้ของไม่ตรงปกแม่ค้าหายไป",
+      "ประมูลกระเป๋าแบรนด์เนมราคาถูก"
+    ],
+    "en": [
+      "i paid for something on facebook and it never came",
+      "won an auction on a page and got blocked",
+      "a page selling too cheaply and refusing cash on delivery",
+      "got the wrong item and the seller disappeared",
+      "an auction for a cheap designer bag"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "th": [
+      "ราคาถูกกว่าท้องตลาดมาก",
+      "ให้โอนเต็มจำนวนเข้าบัญชีบุคคล ไม่รับเก็บเงินปลายทาง",
+      "เพจเพิ่งเปิดหรือเปลี่ยนชื่อบ่อย"
+    ],
+    "en": [
+      "Prices far below market.",
+      "Full payment to a personal account, with no cash on delivery.",
+      "A page that is new or keeps changing its name."
+    ]
+  },
+  "whatToDo": {
+    "th": [
+      "ซื้อผ่านแพลตฟอร์มที่มีระบบติดตามพัสดุและขอคืนเงินได้",
+      "ค้นชื่อและเลขบัญชีผู้ขายก่อนโอน",
+      "ถ้าโดนโกง โทร 1441 แจ้งความออนไลน์ และร้องเรียน สคบ. 1166"
+    ],
+    "en": [
+      "Buy through platforms with parcel tracking and refunds.",
+      "Search the seller's name and account number before paying.",
+      "If cheated, call 1441, report online and complain to the OCPB on 1166."
+    ]
+  },
+  "reportTo": [
+    "th/aoc-1441",
+    "th/thaipoliceonline",
+    "th/ocpb-1166"
+  ],
+  "sources": [
+    {
+      "title": "'หลอกขายสินค้า' โกงออนไลน์อันดับ 1",
+      "publisher": "กรุงเทพธุรกิจ",
+      "url": "https://www.bangkokbiznews.com/news/news-update/1236604",
+      "date": "2026-06-02"
+    },
+    {
+      "title": "7 วันคดีหลอกลวง พุ่งทะลุ 5 พันคดี ACSC ระงับเงินผู้เสียหาย",
+      "publisher": "ไทยรัฐ",
+      "url": "https://www.thairath.co.th/news/crime/2942806",
+      "date": "2026-06-29"
+    },
+    {
+      "title": "เตือนภัยมิจฉาชีพ ปี 2569! ระวัง “มุกลวงใหม่” มาแรง “มุกลวงเก่า” หนักกว่าเดิม",
+      "publisher": "Thai PBS Verify",
+      "url": "https://www.thaipbs.or.th/verify/article/content/7718",
+      "date": "2025-12-16"
+    }
+  ],
+  "updated": "2026-11-18"
+}
