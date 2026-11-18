@@ -4,6 +4,12 @@ A running record of what was built, what was measured and what we learned. Newes
 
 ## 2026-11-18: The AI on real messages; reports in the private set
 
+- **Saudi Arabia:** 17 entries (16 Arabic, 1 English), 7 contacts (Kollona Amn, CST 330330, SAMA Cares, Ministry
+  of Commerce 1900, Musaned, SPL), 30 brands, 22 labelled and 9 real messages (2 scam texts, 7 official warning
+  posts). Matcher 1.26.0 adds Saudi Arabic to the Arabic block (Nafath "اختر الرقم 47", "الرمز اللي بيوصلك",
+  "الآيبان", "تم حظر بطاقة"). Saudi Arabia: 50% → 67% of labelled scams called "scam", 0 false alarms; every other
+  country, including the UAE, and the real and private sets unchanged. The 2 real Saudi scams stay "suspicious".
+
 - **The UAE:** 19 entries (10 Arabic, 9 English), 7 contacts (Dubai Police eCrime, Abu Dhabi Police Aman, MOI,
   TDRA, CBUAE Sanadak, Ministry of Economy), 31 brands, 22 labelled and 9 real messages. Matcher 1.25.0 adds an
   Arabic block ("[رابط]", "قوله لي" code requests, "سيتم إيقاف", "ادفع", "عربون") with "لا تشارك هذا الرمز" and

@@ -594,3 +594,11 @@ test('1.25.0: Arabic rules, only where Arabic is spoken', async () => {
   assert.ok(!readSigns('شحنتك في طريقها إليك اليوم. لا توجد أي رسوم مطلوبة', ['ar', 'en']).includes('money_request'), 'no fees due');
   assert.ok(!readSigns('ادفع الآن اليوم [رابط]', ['en']).includes('urgency'), 'Arabic rules only where Arabic is spoken');
 });
+test('1.26.0: Saudi Arabic: Nafath number requests, IBAN and "send me the code"', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  assert.ok(readSigns('افتح تطبيق نفاذ ووافق على الطلب واختر الرقم 47', ['ar', 'en']).includes('asks_for_code'));
+  assert.ok(readSigns('أرسلي رقم الآيبان والرمز اللي بيوصلك من البنك', ['ar', 'en']).includes('asks_for_code'));
+  assert.ok(readSigns('أرسلي رقم الآيبان والرمز اللي بيوصلك من البنك', ['ar', 'en']).includes('money_request'));
+  assert.ok(readSigns('تم حظر بطاقة الصراف الآلي الخاصة بك', ['ar', 'en']).includes('urgency'));
+  assert.ok(!readSigns('سنرسل لك رمز التحقق. لا تشارك الرمز مع أي شخص', ['ar', 'en']).includes('asks_for_code'));
+});

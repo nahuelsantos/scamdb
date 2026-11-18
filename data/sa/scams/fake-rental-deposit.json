@@ -1,0 +1,128 @@
+{
+  "id": "sa/fake-rental-deposit",
+  "country": "sa",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "social",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "«مالك» أو «وسيط عقاري» يعرض شقة للإيجار بسعر رخيص",
+    "en": "A “landlord” or “broker” offering a flat to rent cheaply"
+  },
+  "name": {
+    "ar": "شقة رخيصة للإيجار: عربون أو دفعة خارج «إيجار»",
+    "en": "Cheap flat to rent: a deposit or payment outside Ejar"
+  },
+  "how": {
+    "ar": "يعرض شخص شقة بسعر مغرٍ وينتحل صفة المالك أو الوسيط، وقد يستغل حساب وسيط مرخص في منصة «إيجار» ليرسل لك رسالة توثيق عقد تبدو حقيقية. ثم يطلب تحويل العربون أو الدفعة إلى حساب بنكي خارج قناة الدفع في «إيجار»، ويختفي. نشرت عكاظ في نوفمبر 2026 حالة أوقفت فيها الهيئة العامة للعقار حساب وسيط استُخدم بهذه الطريقة، وتحذّر الهيئة من التحويل المباشر لحسابات الأفراد.",
+    "en": "Someone offers a flat at a tempting price posing as the owner or broker, and may misuse a licensed broker’s Ejar account to send you a contract message that looks genuine. Then they ask you to transfer the deposit or rent to a bank account outside Ejar’s payment channel, and disappear. In November 2026 Okaz reported a case where the Real Estate General Authority suspended a broker account used this way; the authority warns against transferring directly to individuals’ accounts."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "شقة بسعر أقل من السوق.",
+        "en": "A flat cheaper than the market."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "ينتحل صفة المالك أو الوسيط، وقد يرسل رسالة توثيق تبدو رسمية.",
+        "en": "They pose as the owner or broker and may send an official-looking contract message."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "«عليها طلب كثير، حوّل العربون اليوم».",
+        "en": "“Lots of interest, transfer the deposit today”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "التحويل لحساب بنكي خارج «إيجار».",
+        "en": "A transfer to a bank account outside Ejar."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "شقة 3 غرف في شمال الرياض بـ 28 ألف سنوي، جاهزة للسكن. عليها طلب كثير، أرسلت لك عقد إيجار للتوثيق، حوّل الدفعة الأولى على هذا الحساب [رقم] عشان أحجزها لك.",
+        "en": "3-room flat in north Riyadh for SAR 28,000 a year, ready to move in. Lots of interest; I sent you an Ejar contract to confirm, transfer the first payment to this account [number] so I can hold it for you."
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "ar": "أنا المالك ومسافر حالياً، ما أقدر أوريك الشقة، حوّل العربون وأرسل لك المفتاح مع المندوب.",
+        "en": "I am the owner and travelling at the moment, I can’t show you the flat; transfer the deposit and I will send you the key with a courier."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "حولت عربون شقة لشخص قال إنه المالك",
+      "وصلتني رسالة توثيق عقد إيجار وبعدها اختفى",
+      "قال حول الدفعة على حساب خارج منصة إيجار",
+      "شقة رخيصة والمالك مسافر ما يقدر يوريني",
+      "دفعت إيجار سنة لوسيط وطلع ما له صفة"
+    ],
+    "en": [
+      "i paid a flat deposit to someone who said he was the owner",
+      "i got an ejar contract message and then he disappeared",
+      "he said transfer the rent to an account outside ejar",
+      "cheap flat and the owner is travelling and cannot show it",
+      "i paid a years rent to a broker who had no authority"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "urgency",
+    "money_request"
+  ],
+  "redFlags": {
+    "ar": [
+      "طلب التحويل لحساب بنكي بدلاً من قناة الدفع في «إيجار».",
+      "لا معاينة للعقار قبل الدفع.",
+      "سعر أقل بكثير من المنطقة."
+    ],
+    "en": [
+      "A request to pay a bank account instead of Ejar’s payment channel.",
+      "No viewing before you pay.",
+      "A price far below the area."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "عاين العقار وتحقق من المالك أو الوسيط المرخص.",
+      "ادفع فقط عبر قناة الدفع في «إيجار» بعد توثيق العقد.",
+      "إذا حولت مالاً، أبلغ البنك فوراً ثم الشرطة."
+    ],
+    "en": [
+      "View the property and check the owner or licensed broker.",
+      "Pay only through Ejar’s payment channel after the contract is registered.",
+      "If you transferred money, tell your bank at once, then the police."
+    ]
+  },
+  "reportTo": [
+    "sa/police-kollona-amn",
+    "sa/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "شقة «رخيصة».. احتيال محتمل!",
+      "publisher": "عكاظ",
+      "url": "https://www.okaz.com.sa/local/na/2275311",
+      "date": "2026-11-13"
+    }
+  ],
+  "updated": "2026-11-18"
+}

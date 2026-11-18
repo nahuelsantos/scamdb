@@ -1,0 +1,141 @@
+{
+  "id": "sa/fake-traffic-fine-link",
+  "country": "sa",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "online",
+    "phone"
+  ],
+  "sender": {
+    "ar": "رسالة أو إعلان أو اتصال يدّعي سداد المخالفات المرورية أو تخفيضها",
+    "en": "A text, ad or call offering to pay or discount your traffic fines"
+  },
+  "name": {
+    "ar": "رابط مزيف لسداد المخالفات المرورية أو «الخصم» عليها",
+    "en": "Fake link to pay traffic fines or get a “discount” on them"
+  },
+  "how": {
+    "ar": "مع كل إعلان عن تخفيض المخالفات المرورية تنتشر روابط ورسائل ومكالمات تعرض سداد المخالفات بسهولة أو الحصول على خصم إضافي. الرابط يطلب بياناتك الشخصية والمصرفية، ثم تُسحب الأموال. حذّر المرور السعودي في نوفمبر وديسمبر 2024 من الروابط والمكالمات التي تزعم سداد المخالفات، مؤكداً أن الخصم يظهر تلقائياً في «سداد» و«إيفاء» دون أي تسجيل.",
+    "en": "Each time a traffic fine discount is announced, links, texts and calls appear offering easy payment or an extra discount. The link asks for your personal and bank details, and then money is taken. In November and December 2024 the Saudi Traffic Department warned about links and calls claiming to pay fines, saying the discount appears automatically in SADAD and Efaa without registering anywhere."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة أو إعلان عن مخالفة غير مسددة أو خصم عليها.",
+        "en": "A message or ad about an unpaid fine or a discount on it."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "رابط للسداد أو «التسجيل في الخصم».",
+        "en": "A link to pay or “register for the discount”."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "مهلة: الخصم ينتهي اليوم أو تتضاعف الغرامة.",
+        "en": "A deadline: the discount ends today or the fine doubles."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "الصفحة تطلب بيانات البطاقة ورمز التحقق.",
+        "en": "The page asks for card details and the verification code."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "المرور: لديك مخالفة مرورية غير مسددة بقيمة 300 ريال. استفد من خصم 50% قبل انتهاء المهلة اليوم وسدد عبر الرابط [رابط]",
+        "en": "Traffic: You have an unpaid traffic fine of SAR 300. Get a 50% discount before the deadline ends today and pay at [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ar": "سجّل الآن للاستفادة من تخفيض المخالفات المتراكمة، أدخل رقم الهوية وبيانات البطاقة لإظهار الخصم: [رابط]",
+        "en": "Register now for the accumulated fines reduction; enter your ID number and card details to show the discount: [link]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "رسالة فيها رابط لسداد المخالفات المرورية",
+      "قالوا سجل عشان تستفيد من خصم المخالفات",
+      "دفعت مخالفة من رابط وانسحب أكثر",
+      "اتصل واحد يقول يسدد مخالفاتي بخصم",
+      "موقع يطلب بيانات البطاقة لتخفيض المخالفات"
+    ],
+    "en": [
+      "text with a link to pay my traffic fines",
+      "they said register to get the fines discount",
+      "i paid a fine through a link and more was taken",
+      "someone called offering to pay my fines at a discount",
+      "site asked for card details to reduce my fines"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ar": [
+      "الخصم الرسمي يظهر تلقائياً ولا يحتاج تسجيلاً.",
+      "رابط للسداد بدلاً من تطبيق البنك أو «سداد».",
+      "مكالمة تعرض سداد مخالفاتك نيابة عنك."
+    ],
+    "en": [
+      "The official discount appears automatically and needs no registration.",
+      "A payment link instead of your banking app or SADAD.",
+      "A call offering to pay your fines for you."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "تحقق من المخالفات في «أبشر» فقط.",
+      "سدد عبر تطبيق البنك في «سداد» أو عبر «إيفاء».",
+      "إذا أدخلت بيانات البطاقة، اتصل بالبنك فوراً."
+    ],
+    "en": [
+      "Check fines only in Absher.",
+      "Pay in your banking app through SADAD or through Efaa.",
+      "If you entered card details, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "sa/your-bank",
+    "sa/cst-330330",
+    "sa/police-kollona-amn"
+  ],
+  "sources": [
+    {
+      "title": "«المرور»: تمديد تخفيض المخالفات لا يتطلب زيارة مقار الإدارة",
+      "publisher": "عاجل",
+      "url": "https://ajel.sa/local/hdxm7qjhnm",
+      "date": "2024-12-21"
+    },
+    {
+      "title": "«المرور»: تمديد فترة تخفيض المخالفات المتراكمة لا يتطلب التسجيل في أي مواقع أو زيارة مقار",
+      "publisher": "عاجل",
+      "url": "https://ajel.sa/local/057nhf17cw",
+      "date": "2024-11-15"
+    },
+    {
+      "title": "كيف تحمي نفسك من الاحتيال المالي عند تسديد المخالفات؟",
+      "publisher": "الوطن",
+      "url": "https://www.alwatan.com.sa/article/1145576",
+      "date": "2024-04-18"
+    }
+  ],
+  "updated": "2026-11-18"
+}
