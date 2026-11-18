@@ -2,6 +2,28 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-18: A faster matcher; how detection works, and a review of the weights
+
+- **Matcher 1.35.0, same answers, about 12 times faster.** A check against the whole catalogue (1,199 scams) took
+  about 95 ms in Node, and the API's check (the country plus every other country) about 116 ms. That is over
+  Cloudflare's 10 ms of CPU per request on the free plan, and slow on cheap phones. Two indexes fix it:
+  - a word index over the catalogue's phrases, per language list, so only the lists that share a word (or a
+    one-typo word) with the message are scored;
+  - the message's words looked up by their one-letter deletions, so the typo check no longer compares every phrase
+    word with every message word.
+  Now about 5 ms for the whole catalogue and 9 ms for the API's check. Every answer is identical to 1.34.0 on every
+  labelled, real, private and catalogue example message (checked old against new). A new test keeps a check under 15 ms.
+  - Why not Rust or Go: the same matcher runs in the browser (nothing is sent), on Workers and in the Node build.
+    JavaScript is the one language native to all three, and the slowness was the algorithm, not the language.
+- **`docs/detection.md`**: the whole pipeline (matcher, Workers AI, fusion, floors), what each weight means, and how
+  accuracy is measured. The docs page now has a short "How the verdict is made".
+- **Review of the fusion weights.**
+  - They were fitted on 197 messages we wrote, which are easier than real ones.
+  - On the 215 real messages with AI answers they still hold up (AUC 0.92; 7 of 43 genuine called "scam").
+  - No refit was clearly better, and the AI score alone ranks as well as the fusion. The fusion's value is caution.
+  - With 43 genuine messages, one message is 2.3 points of the false-alarm rate, so the next step is scoring all 343
+    real messages and fitting on real ones only. The plan is in `docs/detection.md`.
+
 ## 2026-11-18: Site polish and the retention decision
 
 - **Hero:** the eyebrow is "1199 scams · open data". The phone asks for a key (also shown in "never share it"), with

@@ -103,6 +103,12 @@ export const UI = {
     dCheck: 'Check a message', dCheckP: 'Send a message someone received and get a verdict (scam, suspicious or not_recognised), the warning signs with the words that triggered them, the closest scams in the catalogue, what to do and where to report it.',
     dCheckRows: ['the message, as text (up to 5,000 characters)', 'optional: only match scams from this country', 'optional: language for labels and what to do (falls back to English)', 'optional: true saves the message as a private report (needs a key)',
       'instead of text, with a key: a screenshot (PNG, JPEG or WebP, up to 5 MB), sent as multipart/form-data', 'instead of text, with a key: a voice note (any audio type, up to 5 MB, about a minute)'],
+    dHow: 'How the verdict is made', dHowSteps: [
+      'The keyword matcher reads the warning signs (a code request, money, urgency, a link, a new number…) and finds the catalogue scams the message shares words and phrases with. Every check gets this; without a key it is the whole answer, and score is null.',
+      'With a key, Workers AI also reads the message: an embedding search finds the scams closest in meaning (across languages), and a chat model gives its own verdict and score.',
+      'A small logistic regression joins seven numbers from both into score, the probability that the message is a scam. 0.7 or more is scam, 0.4 or more is suspicious.',
+      'Safety floors: a code request, remote access, or money plus impersonation is never below suspicious, and a warning about a scam is never called scam.'],
+    dHowMore: 'The weights, how they were fitted and how accurate they are on real messages:',
     dCheckNotes: ['Without a key: 10 per IP per UTC day, catalogue matching only (score is null). No AI is ever used for keyless checks.',
       'Signed in on scamdb.dev with a key, the home page’s “Check with the API” button uses your key, so it shows the AI score too.',
       'pattern is "known" when the message follows a pattern in the catalogue, "unknown" when it reads as a scam but follows no known pattern (a new scam: treat it as suspicious), and null when it is not recognised as a scam.', 'seenElsewhere lists scams documented in another country (in any language) that fit the message better than anything known in yours, for example a US scam arriving in Spanish in Argentina. whatToDo and reportTo stay those of your country. With a key, the AI comparison finds these across languages much more often than the keyword check.',

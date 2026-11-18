@@ -4,7 +4,7 @@ import { normalize, tokens, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
-export const VERSION = '1.34.0';
+export const VERSION = '1.35.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
@@ -28,14 +28,8 @@ export function hardRules(ids) {
   return has('asks_for_code') || has('remote_access') || (has('money_request') && has('impersonation'));
 }
 
-/** The best score over every language the entry has (its phrases plus its name in that language). With `translated`,
- * the machine-translated phrases count too (only for finding scams documented in another country). */
-function scoreEntry(entry, text, words, translated = false) {
-  const langs = prepared(entry, translated);
-  let best = 0;
-  for (const list of langs) best = Math.max(best, scoreLang(list, text, words));
-  return best;
-}
+// An entry's score is its best over every language list it has (its phrases plus its name in that language). With
+// `translated`, the machine-translated phrases count too (only for finding scams documented in another country).
 
 // Each entry's phrases, normalised and split into words once per entry (not on every check): checks run against
 // hundreds of entries with dozens of phrases each, so re-normalising them was most of a check's time.
@@ -93,6 +87,19 @@ function longestShared(a, b) {
   return best;
 }
 
+/** True when some 4+ letter text word is one typo away from w, the same as words.fuzzy.some(t => editDistance(t, w, 1)
+ * <= 1). Text words are looked up by their one-letter deletions first (two words one edit apart always share one), so
+ * the full comparison runs only for real candidates, and each phrase word is answered once per check. */
+function nearWord(w, words) {
+  let near = words.near.get(w);
+  if (near !== undefined) return near;
+  const seen = new Set();
+  const check = (key) => { for (const t of words.byDel.get(key) ?? []) if (!seen.has(t)) { seen.add(t); if (editDistance(t, w, 1) <= 1) return true; } return false; };
+  near = check(w) || deletions(w).some(check);
+  words.near.set(w, near);
+  return near;
+}
+
 function scoreLang(list, text, words) {
   const counted = new Set();
   let score = 0;
@@ -123,10 +130,62 @@ function scoreLang(list, text, words) {
     for (const w of pw) {
       if (counted.has(w)) continue;
       if (words.set.has(w)) { score += single ? 2 : 1; counted.add(w); }
-      else if (w.length >= 5 && words.fuzzy.some((t) => editDistance(t, w, 1) <= 1)) { score += single ? 1 : 0.5; counted.add(w); }
+      else if (w.length >= 5 && nearWord(w, words)) { score += single ? 1 : 0.5; counted.add(w); }
     }
   }
   return score;
+}
+
+// A word index over the catalogue, built once per entries array: which language lists of which entries can score at
+// all for a text. A list scores only through (a) a phrase word that is in the text, or within one edit of a text word,
+// (b) a Korean phrase when the text has Hangul, or (c) a phrase in an unspaced script when the text has one. Every other
+// list scores 0, so skipping it changes no result; it only saves comparing the text with thousands of phrases.
+// One-edit neighbours are found with deletions: two words one edit apart are equal, one is the other minus a
+// character, or both minus one character are equal (the lookup can over-collect; scoring then decides exactly).
+const INDEX = [new WeakMap(), new WeakMap()];
+const LISTS = 256; // a list is coded as entry * LISTS + list number
+const deletions = (w) => { const out = []; for (let i = 0; i < w.length; i++) out.push(w.slice(0, i) + w.slice(i + 1)); return out; };
+function indexOf(entries, translated) {
+  const cache = INDEX[translated ? 1 : 0];
+  let index = cache.get(entries);
+  if (index) return index;
+  index = { exact: new Map(), dels: new Map(), hangul: [], joined: [] };
+  const add = (map, key, code) => { let list = map.get(key); if (!list) map.set(key, (list = [])); if (list[list.length - 1] !== code) list.push(code); };
+  entries.forEach((entry, i) => {
+    prepared(entry, translated).slice(0, LISTS).forEach((list, j) => {
+      const code = i * LISTS + j;
+      let hangul = false, joined = false;
+      for (const item of list) {
+        if (item.hangul) { hangul = true; continue; }
+        if (item.joined) { joined = true; continue; } // scored only by the unspaced-script rules
+        for (const w of item.pw) {
+          add(index.exact, w, code);
+          if (w.length >= 5) for (const d of deletions(w)) add(index.dels, d, code);
+        }
+      }
+      if (hangul) index.hangul.push(code);
+      if (joined) index.joined.push(code);
+    });
+  });
+  cache.set(entries, index);
+  return index;
+}
+
+/** The entries that can score above 0 for these text words, ascending, each with the numbers of its lists to score. */
+function candidates(entries, words, translated) {
+  const index = indexOf(entries, translated);
+  const found = new Set();
+  const take = (list) => { if (list) for (const c of list) found.add(c); };
+  for (const t of words.set) take(index.exact.get(t));
+  for (const t of words.fuzzy) {
+    take(index.dels.get(t));
+    for (const d of deletions(t)) { take(index.exact.get(d)); take(index.dels.get(d)); }
+  }
+  if (words.hangul.size) take(index.hangul);
+  if (words.unspaced) take(index.joined);
+  const byEntry = new Map();
+  for (const c of found) { const i = Math.floor(c / LISTS); let js = byEntry.get(i); if (!js) byEntry.set(i, (js = [])); js.push(c % LISTS); }
+  return [...byEntry].sort((a, b) => a[0] - b[0]);
 }
 
 /**
@@ -158,12 +217,26 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   const text = normalize(raw);
   // Unique words once: a Set for exact hits, and the 4+ letter ones for typo matching (long inputs repeat words).
   const set = new Set(tokens(text));
-  const words = { set, fuzzy: [...set].filter((w) => w.length >= 4), unspaced: UNSPACED.test(text), bigrams: UNSPACED.test(text) ? bigramSet(text.slice(0, JOINED_WINDOW)) : new Set(), hangul: HANGUL.test(text) ? hangulSet(text) : new Set() };
+  const fuzzy = [...set].filter((w) => w.length >= 4);
+  const byDel = new Map(); // each fuzzy word under itself and its one-letter deletions (see nearWord)
+  for (const t of fuzzy) for (const k of [t, ...deletions(t)]) { const l = byDel.get(k); if (l) l.push(t); else byDel.set(k, [t]); }
+  const words = { set, fuzzy, byDel, near: new Map(), unspaced: UNSPACED.test(text), bigrams: UNSPACED.test(text) ? bigramSet(text.slice(0, JOINED_WINDOW)) : new Set(), hangul: HANGUL.test(text) ? hangulSet(text) : new Set() };
   const padded = ` ${text} `;
-  const rank = (pool, translated = false) => (!text ? [] : pool.map((e, i) => ({ id: e.id, score: scoreEntry(e, padded, words, translated), i }))
-    .filter((r) => r.score >= MATCH_THRESHOLD)
-    .sort((a, b) => b.score - a.score || a.i - b.i));
-  const local = rank(country ? entries.filter((e) => e.country === country) : entries);
+  // Only entries that share a word with the text can score (see candidates()); the rest are never scored.
+  const rank = (keep, translated = false) => {
+    if (!text) return [];
+    const out = [];
+    for (const [i, js] of candidates(entries, words, translated)) {
+      const e = entries[i];
+      if (!keep(e)) continue;
+      const langs = prepared(e, translated);
+      let score = 0;
+      for (const j of js) score = Math.max(score, scoreLang(langs[j], padded, words));
+      if (score >= MATCH_THRESHOLD) out.push({ id: e.id, score, i });
+    }
+    return out.sort((a, b) => b.score - a.score || a.i - b.i);
+  };
+  const local = rank(country ? (e) => e.country === country : () => true);
   const matches = local.filter((r, _, all) => r.score >= MATCH_RELATIVE * all[0].score)
     .slice(0, limit).map(({ id, score }) => ({ id, score }));
   // Language blocks apply only for the country's languages; with no country, every block applies.
@@ -176,7 +249,7 @@ export function matchMessage(input, entries, { country, limit = 3, elsewhere = f
   if (warning) out.warning = true;
   if (elsewhere && country) {
     const best = local[0]?.score ?? 0;
-    out.elsewhere = rank(entries.filter((e) => e.country !== country), true)
+    out.elsewhere = rank((e) => e.country !== country, true)
       .filter((r) => r.score >= Math.max(elsewhereMin, best + elsewhereMargin))
       .slice(0, 2).map(({ id, score }) => ({ id, score }));
   }

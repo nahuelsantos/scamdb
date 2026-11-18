@@ -39,7 +39,9 @@ ${FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(fields[i])}
 <div class="scroll"><table><thead><tr><th>POST /v1/isitascam</th><th>${esc(t(lang, 'dWhat'))}</th></tr></thead><tbody>
 ${CHECK_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(lang, 'dCheckRows')[i])}</td></tr>`).join('')}</tbody></table></div>
 <pre class="code"><code>${esc(CHECK_EXAMPLE)}</code></pre>
-<ul class="list">${t(lang, 'dCheckNotes').map((n) => `<li>${esc(n)}</li>`).join('')}</ul></section>
+<ul class="list">${t(lang, 'dCheckNotes').map((n) => `<li>${esc(n)}</li>`).join('')}</ul>
+<h3 id="how-h">${esc(t(lang, 'dHow'))}</h3><ol class="list">${t(lang, 'dHowSteps').map((n) => `<li>${esc(n)}</li>`).join('')}</ol>
+<p>${esc(t(lang, 'dHowMore'))} <a href="${REPO}/blob/main/docs/detection.md">docs/detection.md</a>.</p></section>
 <section aria-labelledby="rep-h"><h2 id="rep-h">${esc(t(lang, 'dReports'))}</h2><p>${esc(t(lang, 'dReportsP'))}</p>
 <pre class="code"><code>curl -X POST https://scamdb.dev/v1/reports \\
   -H "Authorization: Bearer sk_…" -H "Content-Type: application/json" \\
