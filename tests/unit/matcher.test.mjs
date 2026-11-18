@@ -602,3 +602,11 @@ test('1.26.0: Saudi Arabic: Nafath number requests, IBAN and "send me the code"'
   assert.ok(readSigns('تم حظر بطاقة الصراف الآلي الخاصة بك', ['ar', 'en']).includes('urgency'));
   assert.ok(!readSigns('سنرسل لك رمز التحقق. لا تشارك الرمز مع أي شخص', ['ar', 'en']).includes('asks_for_code'));
 });
+test('1.27.0: Egyptian Arabic: "قولهولي", wallet transfers, "النهارده"', async () => {
+  const { readSigns } = await import('../../packages/matcher/signs.js');
+  const call = readSigns('معاك خدمة عملاء البنك. الكارت هيتوقف النهارده. هيوصلك دلوقتي كود من البنك، قولهولي', ['ar']);
+  for (const s of ['asks_for_code', 'urgency', 'impersonation']) assert.ok(call.includes(s), s);
+  assert.ok(readSigns('بعتلك 800 جنيه بالغلط، ممكن ترجعهم على الرقم ده', ['ar']).includes('money_request'));
+  assert.ok(!readSigns('كود التحقق 482915. لا تشارك هذا الكود مع أي شخص، البنك لن يطلبه منك أبداً', ['ar']).includes('asks_for_code'));
+  assert.ok(!readSigns('ماما أنا وصلت الشغل، هعدي عليكي بالليل', ['ar']).length, 'a family message has no signs');
+});

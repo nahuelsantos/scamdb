@@ -1,0 +1,168 @@
+{
+  "id": "eg/fake-bank-call-update-data",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "ar": "متصل يقول إنه «خدمة عملاء البنك»، من رقم موبايل عادي أو رقم يظهر عليه اسم البنك",
+    "en": "A caller claiming to be the bank’s “customer service”, from an ordinary mobile number or one showing the bank’s name"
+  },
+  "name": {
+    "ar": "«موظف خدمة العملاء»: حدّث بياناتك أو خد قرض، وقولّي بيانات الكارت والكود",
+    "en": "Fake bank customer service: “update your details or get a loan, read me your card details and the code”"
+  },
+  "how": {
+    "ar": "يتصل بك شخص يقول إنه موظف خدمة عملاء في البنك، ويطلب تحديث بياناتك البنكية حتى لا يتوقف حسابك، أو يعرض أن يساعدك في الحصول على قرض. يطلب رقم البطاقة وتاريخ انتهائها والرقم السري أو الكود الذي يصل على موبايلك. بهذه البيانات يشتري من مواقع التسوق ويحوّل أموالك إلى محافظ إلكترونية. في نوفمبر 2026 أعلنت وزارة الداخلية ضبط أكثر من متهم في المنيا بهذا الأسلوب، ويؤكد البنك المركزي والجهاز القومي لتنظيم الاتصالات أن البنوك والجهات الرسمية لا تطلب هذه البيانات أبداً بالهاتف.",
+    "en": "Someone calls saying he is a customer service employee at your bank and asks you to update your bank details so your account is not stopped, or offers to help you get a loan. He asks for your card number, expiry date, PIN or the code sent to your phone. With these he buys from shopping sites and moves your money to e-wallets. In November 2026 the Ministry of Interior announced arrests in Minya of people using this method, and the Central Bank and the telecom regulator NTRA stress that banks and official bodies never ask for these details by phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "اتصال من «خدمة عملاء البنك» يقول إن بياناتك لازم تتحدث أو إن عندك قرض جاهز.",
+        "en": "A call from “bank customer service” says your details must be updated or a loan is ready for you."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "تهديد بإيقاف الحساب أو البطاقة لو ما حدّثتش النهارده.",
+        "en": "A threat that the account or card will be stopped if you don’t update today."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "يطلب رقم الكارت وتاريخ الانتهاء والرقم السري أو الكود اللي وصلك.",
+        "en": "They ask for the card number, expiry date, PIN or the code you just received."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ar": "يفضل معاك على الخط لحد ما تقول الكود.",
+        "en": "They keep you on the line until you read out the code."
+      },
+      "signal": "keep_on_line"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "ألو، معاك خدمة عملاء البنك. حضرتك لازم تحدّث بياناتك النهارده وإلا الكارت هيتوقف. هيوصلك دلوقتي كود من البنك، قولهولي عشان أكمّل التحديث.",
+        "en": "Hello, this is the bank’s customer service. You need to update your details today or the card will be stopped. You’ll get a code from the bank now, read it to me so I can finish the update."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ar": "عميلنا العزيز، تم إيقاف بطاقتك مؤقتاً لعدم تحديث البيانات. برجاء الاتصال بخدمة العملاء على الرقم [رقم] لإعادة التفعيل.",
+        "en": "Dear customer, your card has been temporarily stopped because your details were not updated. Please call customer service on [number] to reactivate it."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ar": "أستاذ، أنا من البنك، طلب القرض بتاعك اتوافق عليه مبدئياً. محتاج بس رقم الكارت وتاريخ الانتهاء والكود اللي هيجيلك عشان ننزل المبلغ.",
+        "en": "Sir, I’m from the bank, your loan request has been approved in principle. I just need your card number, the expiry date and the code you’ll receive so we can release the money."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "واحد كلمني قال إنه من البنك وطلب الكود",
+      "قالوا لي لازم أحدث بياناتي وإلا الكارت هيتقفل",
+      "موظف خدمة عملاء طلب رقم الفيزا والرقم السري",
+      "قالي هيساعدني آخد قرض وطلب بيانات الكارت",
+      "اديته الكود والفلوس اتسحبت من حسابي"
+    ],
+    "en": [
+      "someone called saying he was from the bank and asked for the code",
+      "they said i must update my details or my card will be blocked",
+      "customer service guy asked for my visa number and pin",
+      "he said he would help me get a loan and asked for my card details",
+      "i gave him the code and money was taken from my account"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "asks_for_code",
+    "keep_on_line"
+  ],
+  "redFlags": {
+    "ar": [
+      "البنك لا يتصل ليطلب تحديث بياناتك بالهاتف؛ التحديث في الفرع أو التطبيق.",
+      "أي طلب للرقم السري أو الكود أو الرقم المكوّن من 3 أرقام خلف البطاقة.",
+      "قرض «جاهز» لم تطلبه، مقابل بيانات بطاقتك.",
+      "تهديد بإيقاف الحساب خلال ساعات."
+    ],
+    "en": [
+      "Banks do not call to update your details by phone; updates are at a branch or in the app.",
+      "Any request for your PIN, a code or the 3 digits on the back of the card.",
+      "A loan “ready” that you never asked for, in exchange for your card details.",
+      "A threat to stop your account within hours."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "اقفل الخط ولا تقل أي كود أو رقم.",
+      "اتصل بالبنك من الرقم المكتوب خلف البطاقة أو في التطبيق، لا من رقم المتصل.",
+      "إذا أعطيت بياناتك، اطلب إيقاف البطاقة فوراً وغيّر كلمات المرور.",
+      "أبلغ مباحث الإنترنت على 108 والجهاز القومي لتنظيم الاتصالات على 155 برقم المتصل."
+    ],
+    "en": [
+      "Hang up and don’t read out any code or number.",
+      "Call your bank on the number on the back of the card or in the app, not the caller’s number.",
+      "If you gave your details, ask for the card to be blocked at once and change your passwords.",
+      "Report the caller’s number to the cybercrime police on 108 and to NTRA on 155."
+    ]
+  },
+  "reportTo": [
+    "eg/your-bank",
+    "eg/moi-cybercrime-108",
+    "eg/ntra-155",
+    "eg/cbe-complaints"
+  ],
+  "sources": [
+    {
+      "title": "مكالمة من البنك واختفاء الرصيد.. كيف يسرق النصابون أموال المواطنين؟",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7609211",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "القبض على منتحل صفة موظف بنك استولى على حسابات 10 مواطنين بالمنيا",
+      "publisher": "مصراوي",
+      "url": "https://www.masrawy.com/news/news_cases/details/2026/11/4/3073527/%D8%B9%D8%A7%D8%B7%D9%84-%D9%8A%D8%AE%D8%AF%D8%B9-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A%D9%86-%D8%A8%D9%88%D9%87%D9%85-%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB-%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA-%D9%88%D9%8A%D8%B3%D8%B1%D9%82-%D8%A3%D8%B1%D8%B5%D8%AF%D8%A9-10-%D8%B9%D9%85%D9%84%D8%A7%D8%A1-%D8%A8%D9%86%D9%88%D9%83-%D8%A8%D8%A7%D9%84%D9%85%D9%86%D9%8A%D8%A7",
+      "date": "2026-11-04"
+    },
+    {
+      "title": "ضبط عامل بالمنيا انتحل صفة موظف بنك واستولى على أموال المواطنين.. كررها 6 مرات",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/8395732",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "تنظيم الاتصالات: أى اتصال هاتفى يطلب بيانات شخصية أو بنكية محاولة احتيال",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7292805",
+      "date": "2026-02-04"
+    },
+    {
+      "title": "«المركزي» يحذر من مشاركة رموز التحقق الشخصية (OTP) تفادياً للاحتيال",
+      "publisher": "جريدة المال",
+      "url": "https://almalnews.com/2131822/",
+      "date": "2026-08-26"
+    }
+  ],
+  "story": {
+    "ar": "بحسب وزارة الداخلية كما نقل مصراوي، كان عاطل في مركز العدوة بالمنيا يتصل بالمواطنين منتحلاً صفة موظف خدمة عملاء بالبنوك، يعدهم بقروض ويطلب بيانات بطاقاتهم بحجة تحديث البيانات، ثم يستخدمها في الشراء عبر الإنترنت والتحويل إلى محافظ إلكترونية. اعترف بارتكاب 10 وقائع بالأسلوب نفسه.",
+    "en": "According to the Ministry of Interior as reported by Masrawy, an unemployed man in Al-Idwa, Minya, called people posing as a bank customer service employee, promised them loans and asked for their card details to “update their data”, then used them for online purchases and transfers to e-wallets. He confessed to 10 cases using the same method."
+  },
+  "updated": "2026-11-18"
+}

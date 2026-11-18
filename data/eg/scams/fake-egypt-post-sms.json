@@ -1,0 +1,150 @@
+{
+  "id": "eg/fake-egypt-post-sms",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "sms",
+    "email"
+  ],
+  "sender": {
+    "ar": "رسالة نصية أو بريد إلكتروني باسم «البريد المصري» من رقم محلي أو دولي",
+    "en": "A text or email in the name of “Egypt Post” from a local or foreign number"
+  },
+  "name": {
+    "ar": "رسالة «البريد المصري»: الشحنة متوقفة أو الحساب موقوف، حدّث بياناتك أو ادفع",
+    "en": "“Egypt Post” message: parcel held or account suspended, update your details or pay"
+  },
+  "how": {
+    "ar": "تصلك رسالة نصية أو بريد إلكتروني باسم البريد المصري، من رقم محلي أو دولي، تقول إن شحنتك لم تُسلَّم بسبب عنوان غير صحيح أو بيانات ناقصة، أو إن حسابك موقوف، وتطلب تحديث بياناتك أو دفع مصاريف شحن عبر رابط، أو الاتصال برقم. الرابط يطلب بيانات البطاقة والرقم السري، والمتصل يطلب رقم البطاقة والرقم السري. حذّر البريد المصري من هذه الرسائل في فبراير ومايو 2025، وأكد أنه لا يطلب بيانات أو مصاريف شحن أو أي رسوم عبر الهاتف أو الرسائل.",
+    "en": "You get a text or email in Egypt Post’s name, from a local or foreign number, saying your parcel could not be delivered because of a wrong address or missing details, or that your account is suspended, and asking you to update your details or pay shipping through a link, or to call a number. The link asks for your card details and PIN, and the person on the phone asks for your card number and PIN. Egypt Post warned about these messages in February and May 2025 and said it never asks for details, shipping costs or any fee by phone or text."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة باسم البريد المصري: «الشحنة متوقفة» أو «الحساب موقوف».",
+        "en": "A message in Egypt Post’s name: “parcel held” or “account suspended”."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "رابط لتحديث العنوان أو دفع مصاريف شحن صغيرة.",
+        "en": "A link to update your address or pay a small shipping fee."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "مهلة: «الشحنة هترجع خلال 24 ساعة».",
+        "en": "A deadline: “the parcel will be returned within 24 hours”."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ar": "الصفحة أو المتصل يطلب بيانات الكارت والرقم السري.",
+        "en": "The page or caller asks for your card details and PIN."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "البريد المصري: تعذر تسليم شحنتك بسبب عنوان غير مكتمل. يرجى تحديث العنوان وسداد رسوم 25 جنيه عبر الرابط [رابط] خلال 24 ساعة وإلا سيتم إرجاع الشحنة.",
+        "en": "Egypt Post: your parcel could not be delivered because the address is incomplete. Please update the address and pay a 25-pound fee via the link [link] within 24 hours or the parcel will be returned."
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ar": "تم إيقاف حسابك في البريد المصري لعدم التحديث. برجاء الاتصال بنا على [رقم].",
+        "en": "Your Egypt Post account has been suspended because it was not updated. Please call us on [number]."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "جالي رسالة من البريد المصري إن الشحنة متوقفة",
+      "طلبوا مني أدفع مصاريف شحن على لينك",
+      "رسالة بتقول حساب البريد موقوف واتصل بينا",
+      "دخلت بيانات الكارت عشان الطرد",
+      "رسالة البريد طلبت تحديث العنوان"
+    ],
+    "en": [
+      "i got a message from egypt post saying my parcel is on hold",
+      "they asked me to pay shipping fees on a link",
+      "a message said my post account is suspended and to call them",
+      "i entered my card details for the parcel",
+      "the post message asked me to update my address"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "urgency",
+    "asks_for_code"
+  ],
+  "redFlags": {
+    "ar": [
+      "البريد المصري لا يطلب رسوماً أو بيانات عبر الرسائل أو الهاتف.",
+      "رابط غير الموقع أو التطبيق الرسمي.",
+      "رسالة من رقم موبايل عادي أو دولي.",
+      "أخطاء إملائية ومهلة قصيرة."
+    ],
+    "en": [
+      "Egypt Post never asks for fees or details by text or phone.",
+      "A link that is not the official website or app.",
+      "A message from an ordinary or foreign mobile number.",
+      "Spelling mistakes and a short deadline."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تفتح الرابط ولا تتصل بالرقم.",
+      "تتبع شحنتك من الموقع أو التطبيق الرسمي للبريد.",
+      "اتصل بالبريد المصري على 16789 للاستفسار.",
+      "إذا أدخلت بيانات البطاقة، اتصل بالبنك فوراً."
+    ],
+    "en": [
+      "Don’t open the link or call the number.",
+      "Track your parcel on Egypt Post’s official website or app.",
+      "Call Egypt Post on 16789 to ask.",
+      "If you entered your card details, call your bank at once."
+    ]
+  },
+  "reportTo": [
+    "eg/egypt-post-16789",
+    "eg/your-bank",
+    "eg/moi-cybercrime-108"
+  ],
+  "sources": [
+    {
+      "title": "البريد المصري يحذر من التفاعل مع الرسائل والروابط المرسلة من أرقام مجهولة",
+      "publisher": "مصراوي",
+      "url": "https://www.masrawy.com/news/news_economy/details/2025/2/3/2720976/%D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%8A%D8%AD%D8%B0%D8%B1-%D9%85%D9%86-%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B9%D9%84-%D9%85%D8%B9-%D8%A7%D9%84%D8%B1%D8%B3%D8%A7%D8%A6%D9%84-%D9%88%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D9%85%D8%B1%D8%B3%D9%84%D8%A9-%D9%85%D9%86-%D8%A3%D8%B1%D9%82%D8%A7%D9%85-%D9%85%D8%AC%D9%87%D9%88%D9%84%D8%A9",
+      "date": "2025-02-03"
+    },
+    {
+      "title": "«البريد المصري» يحذر المواطنين من الاحتيال الإلكتروني.. رسائل نصية مزيفة",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/8079702",
+      "date": "2025-05-23"
+    },
+    {
+      "title": "«هيئة البريد» تحذر المواطنين من حملات احتيال إلكترونية جديدة",
+      "publisher": "جريدة المال",
+      "url": "https://almalnews.com/2031474/",
+      "date": "2025-05-23"
+    },
+    {
+      "title": "هل وصلتك رسالة «حسابك اتوقف» بالبريد المصري؟.. احذر أنت تتعرض للنصب",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/6450469",
+      "date": "2023-02-22"
+    }
+  ],
+  "updated": "2026-11-18"
+}

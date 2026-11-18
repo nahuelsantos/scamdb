@@ -1,0 +1,135 @@
+{
+  "id": "eg/whatsapp-account-takeover",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "whatsapp",
+    "social"
+  ],
+  "sender": {
+    "ar": "رسالة من صديق أو قريب، من حسابه الحقيقي المسروق",
+    "en": "A message from a friend or relative, from their real but hijacked account"
+  },
+  "name": {
+    "ar": "حساب صاحبك اتسرق: «ابعتلي الكود» ثم «حوّلي فلوس على المحفظة»",
+    "en": "Your friend’s account was hijacked: “send me the code”, then “send money to this wallet”"
+  },
+  "how": {
+    "ar": "يرسل المحتال للضحية كوداً أو رابطاً بزعم أنه للانضمام إلى «جروب»، وبمجرد إرساله أو فتحه يسيطر على حسابه. بعدها يراسل أصدقاء الضحية وأقاربه من حسابه الحقيقي، ويطلب منهم تحويل مبالغ على محافظ إلكترونية لظرف طارئ. في فبراير 2026 ضبطت وزارة الداخلية في رأس البر شخصاً استولى بهذه الطريقة على حسابات مواطنين وانتحل صفاتهم لطلب أموال من معارفهم، واعترف بـ36 واقعة.",
+    "en": "The scammer sends the victim a code or link saying it is for joining a “group”; once it is sent back or opened, he takes over the account. Then he messages the victim’s friends and relatives from the real account and asks them to send money to e-wallets for an emergency. In February 2026 the Ministry of Interior arrested a man in Ras El Bar who took over people’s accounts this way and impersonated them to ask their contacts for money; he confessed to 36 cases."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "رسالة: «بعتلك كود بالغلط، ابعتهولي» أو «ادخل الجروب من اللينك».",
+        "en": "A message: “I sent you a code by mistake, send it to me” or “join the group with this link”."
+      },
+      "signal": "asks_for_code"
+    },
+    {
+      "text": {
+        "ar": "الحساب بيتسرق ويبدأ يكلم صحابك.",
+        "en": "The account is taken over and starts messaging your friends."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "«محتاج فلوس ضروري، حوّل على المحفظة دي وهرجعهملك بكرة».",
+        "en": "“I urgently need money, send it to this wallet and I’ll pay you back tomorrow”."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ar": "مستعجل ومش عايز يكلمك صوت.",
+        "en": "He is in a hurry and won’t do a voice call."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "إزيك يا حبيبي، بعتلك كود من 6 أرقام بالغلط على رقمك، ممكن تبعتهولي؟ ده عشان أدخل الجروب.",
+        "en": "Hi my friend, I sent a 6-digit code to your number by mistake, could you send it to me? It’s to get into the group."
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "ar": "معلش يا خالتو أنا في مشكلة ومحتاجة 2,000 جنيه ضروري، حوليهم على المحفظة دي [رقم] وهرجعهم بكرة. مش قادرة أكلمك دلوقتي.",
+        "en": "Sorry auntie, I’m in trouble and urgently need 2,000 pounds, send them to this wallet [number] and I’ll return them tomorrow. I can’t talk right now."
+      },
+      "channel": "whatsapp"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "حسابي على الواتساب اتسرق وبيطلب فلوس من صحابي",
+      "صاحبي بعتلي يطلب فلوس على فودافون كاش وطلع حسابه متهكر",
+      "حد طلب مني الكود بتاع الجروب وبعدها الحساب راح",
+      "بنت أختي بعتت تطلب فلوس ضروري وطلعت مش هي",
+      "بعت الكود لواحد صاحبي واتسرق الواتساب"
+    ],
+    "en": [
+      "my whatsapp account was stolen and is asking my friends for money",
+      "my friend messaged asking for money on vodafone cash and his account was hacked",
+      "someone asked me for the group code and then i lost my account",
+      "my niece messaged asking for money urgently and it was not her",
+      "i sent the code to a friend and my whatsapp was stolen"
+    ]
+  },
+  "signals": [
+    "asks_for_code",
+    "impersonation",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "أي طلب لكود وصلك على موبايلك، حتى من صديق.",
+      "طلب فلوس عاجل على محفظة رقم غريب.",
+      "رفض مكالمة صوتية أو فيديو.",
+      "أسلوب كتابة مختلف عن صاحبك."
+    ],
+    "en": [
+      "Any request for a code you received on your phone, even from a friend.",
+      "An urgent money request to a strange wallet number.",
+      "Refusing a voice or video call.",
+      "A writing style unlike your friend’s."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا ترسل أي كود يصلك لأي شخص.",
+      "كلّم صاحبك على رقمه الأصلي قبل أي تحويل.",
+      "فعّل التحقق بخطوتين في واتساب.",
+      "إذا سُرق حسابك، نبّه معارفك وأبلغ مباحث الإنترنت على 108."
+    ],
+    "en": [
+      "Never send anyone a code you receive.",
+      "Call your friend on their usual number before any transfer.",
+      "Turn on two-step verification in WhatsApp.",
+      "If your account was stolen, warn your contacts and report it to the cybercrime police on 108."
+    ]
+  },
+  "reportTo": [
+    "eg/moi-cybercrime-108",
+    "eg/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "استولى على حسابات المواطنين بـ«أكواد وهمية».. ضبط شخص ارتكب 36 واقعة نصب برأس البر",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/8233383",
+      "date": "2026-02-26"
+    }
+  ],
+  "story": {
+    "ar": "بحسب الوطن، تلقت الإدارة العامة لمكافحة جرائم تقنية المعلومات بلاغات من مواطنين سُرقت حساباتهم واستُخدمت لطلب تحويل أموال من معارفهم على محافظ إلكترونية. كان المتهم يرسل للضحايا أكواداً بزعم أنها للاشتراك في «جروبات»، وضُبط في رأس البر بدمياط ومعه 6 هواتف و15 شريحة، وأقر بـ36 واقعة.",
+    "en": "According to El Watan, the cybercrime department received reports from people whose accounts were stolen and used to ask their contacts for money on e-wallets. The suspect sent victims codes saying they were for joining “groups”; he was arrested in Ras El Bar, Damietta, with 6 phones and 15 SIM cards, and admitted 36 cases."
+  },
+  "updated": "2026-11-18"
+}

@@ -1,0 +1,132 @@
+{
+  "id": "eg/fake-buyer-forged-transfer",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "online",
+    "in-person",
+    "sms"
+  ],
+  "sender": {
+    "ar": "«مشتري» من إعلان بيع على فيسبوك أو تطبيق، يدفع برسالة أو إشعار تحويل مزيف",
+    "en": "A “buyer” from a sale ad on Facebook or an app, who pays with a fake transfer message or notice"
+  },
+  "name": {
+    "ar": "مشتري يوريك «إشعار التحويل» وياخد الحاجة: التحويل مزيف",
+    "en": "A buyer shows you a “transfer notice” and takes the item: the transfer is fake"
+  },
+  "how": {
+    "ar": "تعرض موبايلاً أو جهازاً للبيع على فيسبوك أو أحد التطبيقات، فيتواصل معك «مشترٍ» ويتفق على السعر. عند المقابلة أو قبل الشحن يرسل لك، أو يريك على موبايله، رسالة أو إشعاراً مصمماً ليبدو كتحويل من بنك كبير أو محفظة إلكترونية، فتسلّمه الجهاز. بعد ذلك تكتشف أن المبلغ لم يصل أبداً. في مايو 2026 أعلنت وزارة الداخلية ضبط شقيقتين في بورسعيد زوّرتا إشعارات تحويل بنكية بالفوتوشوب، وضبط أربعة طلاب في عين شمس انتحل أحدهم صفة ضابط شرطة وسلّم الضحية رسالة تحويل مفبركة.",
+    "en": "You put a phone or device up for sale on Facebook or an app, and a “buyer” contacts you and agrees a price. At the meeting or before shipping he sends you, or shows you on his phone, a message or notice made to look like a transfer from a big bank or an e-wallet, so you hand over the device. Later you find the money never arrived. In May 2026 the Ministry of Interior announced the arrest of two sisters in Port Said who forged bank transfer notices with Photoshop, and of four students in Ain Shams, one of whom posed as a police officer while another handed the victim a fabricated transfer message."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "مشتري سريع من إعلان البيع، موافق على السعر من غير فصال.",
+        "en": "A quick buyer from your sale ad who accepts the price without haggling."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "يدفع «تحويل» ويوريك رسالة أو صورة إشعار بدل ما الفلوس تبان في حسابك.",
+        "en": "He pays by “transfer” and shows you a message or a screenshot of a notice instead of the money showing in your account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "يستعجلك تسلّم الجهاز: «التحويل وصل، أنا مستعجل».",
+        "en": "He rushes you to hand over the item: “the transfer went through, I’m in a hurry”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "تمام يا باشا، حوّلت لك الفلوس على المحفظة وأهو الإشعار [صورة]. هات الموبايل بسرعة عشان ورايا مشوار.",
+        "en": "All right boss, I sent you the money on the wallet, here’s the notice [image]. Give me the phone quickly, I have somewhere to be."
+      },
+      "channel": "whatsapp"
+    },
+    {
+      "text": {
+        "ar": "تم تحويل مبلغ 12,500 جنيه إلى حسابكم المنتهي بـ [رقم] بنجاح. رقم المرجع [رقم].",
+        "en": "An amount of 12,500 pounds has been successfully transferred to your account ending in [number]. Reference number [number]."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "المشتري وراني رسالة تحويل وطلعت مزيفة",
+      "بعت الموبايل والفلوس ما وصلتش المحفظة",
+      "بعتلي اسكرين شوت تحويل من البنك وخد الجهاز",
+      "واحد قال إنه ظابط واشترى مني وطلع التحويل فيك",
+      "سلمت الحاجة قبل ما أتأكد من الرصيد"
+    ],
+    "en": [
+      "the buyer showed me a transfer message and it was fake",
+      "i handed over the phone and the money never reached my wallet",
+      "he sent me a bank transfer screenshot and took the device",
+      "a man said he was an officer bought from me and the transfer was fake",
+      "i gave him the item before checking my balance"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "ar": [
+      "الدليل الوحيد على الدفع صورة أو رسالة يرسلها المشتري، لا رصيد في تطبيقك.",
+      "رسالة «تحويل» من رقم موبايل عادي وليس من البنك أو المحفظة.",
+      "استعجال للتسليم قبل أن تتأكد.",
+      "مشترٍ يقدّم نفسه بصفة رسمية (ضابط، موظف) ليكسب ثقتك."
+    ],
+    "en": [
+      "The only proof of payment is a screenshot or message the buyer sends, not a balance in your app.",
+      "A “transfer” message from an ordinary mobile number rather than the bank or wallet.",
+      "Pressure to hand over the item before you can check.",
+      "A buyer who presents himself with an official title (officer, employee) to win your trust."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تسلّم أي شيء قبل أن ترى المبلغ في تطبيق البنك أو المحفظة بنفسك.",
+      "قابل المشتري في مكان عام، ويفضل قرب فرع بنك أو ماكينة.",
+      "إذا خُدعت، احتفظ بالمحادثة والصورة وأبلغ مباحث الإنترنت على 108 أو قسم الشرطة."
+    ],
+    "en": [
+      "Don’t hand over anything until you see the money in your bank or wallet app yourself.",
+      "Meet the buyer in a public place, ideally near a bank branch or ATM.",
+      "If you were tricked, keep the chat and the image and report it to the cybercrime police on 108 or a police station."
+    ]
+  },
+  "reportTo": [
+    "eg/moi-cybercrime-108",
+    "eg/police-122",
+    "eg/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "شقيقات النصب.. كيف سقطت أخطر عصابة لسرقة الهواتف بالتحويلات المزيفة؟",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7398139",
+      "date": "2026-05-01"
+    },
+    {
+      "title": "سقوط عصابة الرسائل المفبركة.. 4 طلاب انتحلوا صفة ضباط لسرقة الهواتف",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7413372",
+      "date": "2026-05-12"
+    }
+  ],
+  "related": [
+    "eg/wrong-transfer-send-back"
+  ],
+  "updated": "2026-11-18"
+}

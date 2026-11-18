@@ -1,0 +1,148 @@
+{
+  "id": "eg/fake-bank-gift-page",
+  "country": "eg",
+  "lang": "ar",
+  "status": "active",
+  "channels": [
+    "social",
+    "sms",
+    "whatsapp"
+  ],
+  "sender": {
+    "ar": "صفحة على فيسبوك أو رسالة باسم بنك معروف، بشعاره",
+    "en": "A Facebook page or message in a well-known bank’s name, with its logo"
+  },
+  "name": {
+    "ar": "«هدية لعملاء البنك» أو «مبروك كسبت جائزة»: سجّل من اللينك",
+    "en": "“Gift for the bank’s customers” or “congratulations, you won a prize”: register through the link"
+  },
+  "how": {
+    "ar": "تظهر لك صفحة على فيسبوك تحمل اسم وشعار بنك معروف، أو تصلك رسالة تقول «مبروك كسبت جائزة»، وتعدك بهدية أو جائزة لعملاء البنك مقابل التسجيل عبر رابط. الرابط يفتح صفحة تشبه موقع البنك وتطلب بيانات البطاقة أو الدخول على حسابك والكود. بعدها يستولي المحتالون على رصيدك. في مايو 2026 أعلنت الداخلية ضبط تشكيل أدار صفحات تنتحل مؤسسات مصرفية وتروّج لهدايا وهمية، واستولى على حسابات ضحايا وحوّل جزءاً من الأموال للخارج عبر العملات المشفرة. وحذّر بنك مصر وبنك CIB عملاءهما من هذه الرسائل والصفحات.",
+    "en": "A Facebook page with a well-known bank’s name and logo appears in your feed, or you get a message saying “congratulations, you won a prize”, promising a gift or prize for the bank’s customers if you register through a link. The link opens a page that looks like the bank’s site and asks for your card details or your login and code. Then the scammers take your balance. In May 2026 the Ministry of Interior announced the arrest of a ring that ran pages posing as banks and promoting fake gifts, took over victims’ accounts and moved part of the money abroad through cryptocurrency. Banque Misr and CIB have warned their customers about such messages and pages."
+  },
+  "steps": [
+    {
+      "text": {
+        "ar": "إعلان أو رسالة: «هدية لعملاء البنك» أو «مبروك كسبت جائزة».",
+        "en": "An ad or message: “gift for the bank’s customers” or “congratulations, you won a prize”."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ar": "الصفحة تحمل اسم البنك وشعاره لكنها ليست الصفحة الموثقة.",
+        "en": "The page carries the bank’s name and logo but is not the verified page."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ar": "رابط يطلب بيانات الكارت أو الدخول على الحساب والكود.",
+        "en": "A link asks for your card details or your account login and code."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ar": "العرض «لفترة محدودة» أو «لأول 500 عميل».",
+        "en": "The offer is “for a limited time” or “for the first 500 customers”."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ar": "🎁 بمناسبة العيد، البنك يهدي عملاءه 2,000 جنيه رصيد مجاني! سجّل بياناتك من الرابط [رابط] قبل نهاية العرض. العرض لأول 500 عميل فقط.",
+        "en": "🎁 For the holiday, the bank is giving its customers 2,000 pounds of free credit! Register your details through the link [link] before the offer ends. The offer is for the first 500 customers only."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ar": "مبروك كسبت جائزة من البنك. لاستلام الجائزة أدخل بيانات بطاقتك من هنا [رابط].",
+        "en": "Congratulations, you won a prize from the bank. To collect the prize, enter your card details here [link]."
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ar": [
+      "شفت صفحة بنك على فيسبوك بتوزع هدايا وسجلت",
+      "جالي رسالة مبروك كسبت جائزة من البنك",
+      "دخلت بيانات الكارت على لينك الهدية والفلوس اتسحبت",
+      "الصفحة كان عليها لوجو البنك بس طلعت مزيفة",
+      "طلبوا الكود عشان استلم الهدية"
+    ],
+    "en": [
+      "i saw a bank page on facebook giving gifts and signed up",
+      "i got a message saying congratulations you won a prize from the bank",
+      "i entered my card details on the gift link and money was taken",
+      "the page had the bank logo but it was fake",
+      "they asked for the code to receive the gift"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "impersonation",
+    "unknown_link",
+    "urgency"
+  ],
+  "redFlags": {
+    "ar": [
+      "البنوك لا توزع جوائز أو هدايا عبر روابط تطلب بيانات البطاقة.",
+      "صفحة بدون العلامة الموثقة، أو حديثة وقليلة المتابعين.",
+      "أي صفحة تطلب الرقم السري أو الكود.",
+      "عرض محدود العدد أو الوقت."
+    ],
+    "en": [
+      "Banks don’t hand out prizes or gifts through links that ask for card details.",
+      "A page without the verified badge, or new with few followers.",
+      "Any page that asks for your PIN or code.",
+      "An offer limited in number or time."
+    ]
+  },
+  "whatToDo": {
+    "ar": [
+      "لا تفتح الرابط ولا تدخل أي بيانات.",
+      "تأكد من العرض في تطبيق البنك أو بالاتصال بالرقم الرسمي.",
+      "إذا أدخلت بياناتك، اتصل بالبنك فوراً لإيقاف البطاقة.",
+      "أبلغ عن الصفحة لفيسبوك وللبنك ولمباحث الإنترنت على 108."
+    ],
+    "en": [
+      "Don’t open the link or enter any details.",
+      "Check the offer in the bank’s app or by calling its official number.",
+      "If you entered your details, call the bank at once to block the card.",
+      "Report the page to Facebook, to the bank and to the cybercrime police on 108."
+    ]
+  },
+  "reportTo": [
+    "eg/your-bank",
+    "eg/moi-cybercrime-108",
+    "eg/cbe-complaints"
+  ],
+  "sources": [
+    {
+      "title": "عصابة الروابط المفخخة.. كواليس سقوط أباطرة النصب الإلكتروني بـ 16 مليون جنيه",
+      "publisher": "اليوم السابع",
+      "url": "https://www.youm7.com/7404661",
+      "date": "2026-05-06"
+    },
+    {
+      "title": "«مبروك كسبت جائزة».. تحذير من رسالة تسحب أموالك وتستولي على حسابك",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/8300596",
+      "date": "2026-06-12"
+    },
+    {
+      "title": "تحذير عاجل لعملاء CIB وفودافون كاش من الوقوع في فخ النصب الإلكتروني",
+      "publisher": "الوطن",
+      "url": "https://www.elwatannews.com/news/details/8262632",
+      "date": "2026-04-10"
+    }
+  ],
+  "related": [
+    "eg/fake-bank-call-update-data"
+  ],
+  "updated": "2026-11-18"
+}
