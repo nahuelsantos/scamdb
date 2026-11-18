@@ -1,0 +1,127 @@
+{
+  "id": "kr/loan-check-card-handover",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "phone",
+    "sms"
+  ],
+  "sender": {
+    "ko": "저축은행 등 금융회사 대출 상담원",
+    "en": "A “loan adviser” at a savings bank or other lender"
+  },
+  "name": {
+    "ko": "“거래실적을 만들어야 대출이 나온다”며 체크카드·통장을 맡기라는 요구",
+    "en": "“Build a transaction record to get the loan”: asked to hand over your debit card and bankbook"
+  },
+  "how": {
+    "ko": "금융회사 직원이라며 신용점수가 낮아 대출이 어려운 사람에게 연락해 “카드 사용 실적이 없어 대출이 부결됐다”고 말합니다. 상품권을 반복해서 사면 실적이 쌓여 한도가 나온다며, 상품권은 자기들이 대신 사줄 테니 체크카드와 통장만 맡기라고 합니다. 넘어간 계좌는 다른 보이스피싱 피해금을 받는 대포통장으로 쓰이고, 카드를 넘긴 사람도 전자금융거래법 위반으로 처벌받을 수 있습니다. 정상적인 금융회사는 대출 심사에서 물품 구매 실적을 요구하지 않습니다.",
+    "en": "Someone posing as lender staff contacts people with low credit scores and says their loan was turned down because they have no card spending record. They say buying gift vouchers again and again will build a record and unlock a limit, and offer to buy the vouchers for you if you just hand over your debit card and bankbook. Your account then becomes a mule account that receives other victims' money, and the person who handed over the card can be prosecuted under the Electronic Financial Transactions Act. Real lenders never ask for a purchase record to approve a loan."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "대출 상담원이라며 실적이 없어서 대출이 부결됐다고 말한다.",
+        "en": "A “loan adviser” says your loan was refused for lack of a spending record."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "상품권 구매 실적을 쌓으면 한도가 나온다고 한다.",
+        "en": "They say building a gift-voucher purchase record will unlock a limit."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ko": "대신 사줄 테니 체크카드와 통장, 비밀번호를 맡기라고 한다.",
+        "en": "They offer to do the buying if you hand over your debit card, bankbook and PIN."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "고객님, 심사 결과 카드 사용 실적이 부족해 부결됐습니다. 상품권 구매 실적만 쌓으면 2천만 원까지 승인 가능합니다. 구매는 저희 쪽에서 대신 진행하니 체크카드와 통장을 퀵으로 보내 주시고 비밀번호만 알려주세요.",
+        "en": "Sir/Madam, your application was refused because your card spending record is too thin. If you just build a gift-voucher purchase record, we can approve up to 20 million won. We'll do the buying for you, so send your debit card and bankbook by courier and just tell us the PIN."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ko": "[Web발신] ○○저축은행 대출 재심사 안내: 거래실적 보완 시 승인 가능. 체크카드 실적 등록 절차 안내드립니다 [번호]",
+        "en": "[Web] ○○ Savings Bank loan review: approval possible once your transaction record is topped up. We'll guide you through registering your debit card record [number]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "대출 실적 쌓아준다고 체크카드를 보내라고 함",
+      "상품권 사서 실적 만들면 대출 한도 나온다고 함",
+      "통장이랑 체크카드 맡기면 대출해준다고 함",
+      "카드 사용 실적이 없어서 대출 부결이라고 함",
+      "체크카드 비밀번호까지 알려달라고 함"
+    ],
+    "en": [
+      "they asked me to send my debit card to build a loan record",
+      "they said buying gift vouchers would get me a loan limit",
+      "they said they would give me a loan if i handed over my bankbook and card",
+      "they said my loan was refused because i had no card spending",
+      "they asked for my debit card pin"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "too_good_to_be_true",
+    "asks_for_code",
+    "money_request"
+  ],
+  "redFlags": {
+    "ko": [
+      "대출 심사에 상품권·귀금속 구매 실적이 필요하다고 한다",
+      "체크카드, 통장, 비밀번호를 넘기라고 한다",
+      "택배나 퀵으로 카드를 보내라고 한다"
+    ],
+    "en": [
+      "Being told a loan needs a record of buying gift vouchers or jewellery.",
+      "Being asked to hand over your debit card, bankbook or PIN.",
+      "Being asked to send the card by courier."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "체크카드·통장은 누구에게도 넘기지 마세요. 넘기면 범죄에 쓰이고 처벌받을 수 있습니다",
+      "이미 넘겼다면 바로 카드사·은행에 분실·정지 신고를 하고 경찰에 신고하세요",
+      "대출업체가 정식 금융회사인지 금감원 1332에 확인하세요"
+    ],
+    "en": [
+      "Never give anyone your debit card or bankbook: it will be used for crime and you can be prosecuted.",
+      "If you already did, report the card and account lost or stopped with your bank at once, then report it to the police.",
+      "Check with the FSS on 1332 whether the lender is a registered financial company."
+    ]
+  },
+  "reportTo": [
+    "kr/your-bank",
+    "kr/police-112",
+    "kr/fss-1332"
+  ],
+  "sources": [
+    {
+      "title": "“상품권 사면 대출해준다” 속았다간 피의자 된다…신종 보이스피싱 경보",
+      "publisher": "디지털데일리",
+      "url": "https://www.ddaily.co.kr/page/view/2026080916014006389",
+      "date": "2026-08-09"
+    },
+    {
+      "title": "'저금리 대환대출' 미끼로 8억여원 가로챈 보이스피싱 일당 검거",
+      "publisher": "경기일보",
+      "url": "https://www.kyeonggi.com/article/20260630580066",
+      "date": "2026-06-30"
+    }
+  ],
+  "updated": "2026-11-18"
+}

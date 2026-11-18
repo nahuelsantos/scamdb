@@ -1,0 +1,130 @@
+{
+  "id": "kr/team-mission-side-job",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "social",
+    "online"
+  ],
+  "sender": {
+    "ko": "SNS 부업·재택 알바 광고의 ‘담당자’, 이후 텔레그램 단체방 운영자",
+    "en": "The “manager” behind a social-media side-job ad, then the admin of a Telegram group chat"
+  },
+  "name": {
+    "ko": "팀미션 부업 사기: 간단한 알바로 소액 지급 후 선입금 요구",
+    "en": "“Team mission” side-job scam: small payouts for easy tasks, then deposits"
+  },
+  "how": {
+    "ko": "인스타그램 등 SNS에 ‘재택 부업’, ‘수공예로 고수익’, ‘리뷰·좋아요만 누르면 수익’ 같은 광고를 내고, 영상 캡처나 쇼핑몰 구매 실적 같은 쉬운 미션에 소액을 실제로 줍니다. 그다음 단체 채팅방의 ‘팀미션’으로 넘어가 돈을 먼저 넣으면 수익을 더 얹어 돌려준다며 선입금을 요구합니다. 출금하려 하면 ‘금액 입력 오류’, ‘팀원 실수’, 계좌 동결을 핑계로 추가 송금을 계속 요구합니다. 경찰 집계로 2025년 팀미션 사기는 4400여 건, 피해액은 1300억 원이 넘었습니다.",
+    "en": "Ads on Instagram and other social media promise “work from home”, “big money from handicrafts” or “earn just by leaving reviews and likes”, and you really are paid small sums for easy tasks such as screen-capturing videos or making shopping-site purchases. Then you're moved to a “team mission” in a group chat where you must deposit money first to get it back with a bonus. When you try to withdraw, “an amount entry error”, “a teammate's mistake” or a frozen account means you have to keep sending more. Police counted about 4,400 team-mission scams in 2025, with losses over 130 billion won."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "SNS 부업 광고를 보고 연락하면 쉬운 미션에 소액을 실제로 지급한다.",
+        "en": "Answer a side-job ad and you are really paid small sums for easy tasks."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ko": "단체방의 ‘팀미션’에 참여하려면 돈을 먼저 넣으라고 한다.",
+        "en": "To join the group's “team mission” you must deposit money first."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ko": "입력 오류·팀원 실수·계좌 동결을 핑계로 추가 입금을 요구한다.",
+        "en": "They blame entry errors, a teammate or a frozen account and demand more."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "[재택 부업 모집] 하루 30분, 영상 시청 후 캡처만 보내시면 건당 5천 원 즉시 지급! 주부·학생 환영, 경력 무관. 담당자 카톡으로 문의 주세요.",
+        "en": "[Work-from-home job] 30 minutes a day: just watch videos and send screenshots, 5,000 won paid instantly per task! Homemakers and students welcome, no experience needed. Contact the manager on KakaoTalk."
+      },
+      "channel": "social"
+    },
+    {
+      "text": {
+        "ko": "회원님, 이번 팀미션은 50만 원 입금 후 3단계 완료 시 30% 수익과 함께 환급됩니다. 팀원 한 분의 입력 오류로 정산이 막혀서, 동결 해제를 위해 추가 입금이 필요합니다.",
+        "en": "Member, for this team mission you deposit 500,000 won and get it back with 30% profit after completing three stages. One teammate's entry error has blocked the payout, so an extra deposit is needed to unfreeze it."
+      },
+      "channel": "social"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "재택 부업이라길래 했는데 팀미션 하려면 돈을 먼저 넣으래",
+      "리뷰 알바로 소액 받다가 텔레그램 방으로 옮겨짐",
+      "팀원 실수라며 정산하려면 추가 입금하래",
+      "부업 수익금 출금하려니까 계좌가 동결됐다고 함",
+      "인스타 광고 보고 수공예 부업 시작했다가 돈 날림"
+    ],
+    "en": [
+      "a work from home job said i had to deposit money for a team mission",
+      "i got small payments for reviews then was moved to a telegram group",
+      "they said a teammate made a mistake and i must deposit more to get paid",
+      "when i tried to withdraw my earnings they said my account was frozen",
+      "i started a handicraft side job from an instagram ad and lost money"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ko": [
+      "일을 하려면 돈을 먼저 넣으라는 부업",
+      "쉬운 일에 비해 보수가 지나치게 많다",
+      "출금하려면 오류·동결 해제 명목으로 돈을 더 내라고 한다"
+    ],
+    "en": [
+      "A job that needs you to deposit money first.",
+      "Pay far too high for very easy work.",
+      "Being told to pay more to fix an “error” or unfreeze a withdrawal."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "돈을 먼저 요구하는 부업은 거절하세요",
+      "추가 입금 요구가 시작되면 바로 멈추고 경찰에 신고하세요",
+      "이체 내역과 대화 내용을 보관하고 은행에 지급정지를 요청하세요"
+    ],
+    "en": [
+      "Turn down any job that asks you for money first.",
+      "As soon as they ask for more, stop and report it to the police.",
+      "Keep the transfer records and chats, and ask your bank for a payment stop."
+    ]
+  },
+  "reportTo": [
+    "kr/ecrm",
+    "kr/police-112",
+    "kr/your-bank"
+  ],
+  "sources": [
+    {
+      "title": "[단독] \"팍팍한 살림, 부업하실래요?\" 수공예라더니 '팀미션 사기'였다",
+      "publisher": "파이낸셜뉴스 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260202164247671",
+      "date": "2026-02-02"
+    },
+    {
+      "title": "\"재택 부업이라더니\" 충북서 수천만원 신종 사기 범죄 기승",
+      "publisher": "노컷뉴스 충북CBS (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260422182102600",
+      "date": "2026-04-22"
+    }
+  ],
+  "story": {
+    "ko": "경기 용인의 손모씨는 2025년 12월 SNS의 ‘수공예 고수익 부업’ 광고를 보고 담당자와 연락했습니다. 영상을 보고 캡처해 보내면 소액이 실제로 들어와 경계를 풀었지만, 이후 돈을 먼저 넣는 ‘팀미션’으로 넘어가 네 차례에 걸쳐 1억 원 넘게 보내고 돌려받지 못했습니다. 용인서부경찰서가 고소장을 받아 수사에 나섰습니다.",
+    "en": "In December 2025 Mr Son of Yongin, Gyeonggi, answered a social-media ad for a “high-paying handicraft side job”. Small sums really came in for watching and screen-capturing videos, so he let his guard down, but he was then moved to “team missions” that needed deposits and sent more than 100 million won in four transfers that never came back. Yongin Seobu police opened an investigation after his complaint."
+  },
+  "updated": "2026-11-18"
+}

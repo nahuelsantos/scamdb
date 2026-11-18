@@ -1,0 +1,135 @@
+{
+  "id": "kr/community-center-relay-impersonation",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "phone"
+  ],
+  "sender": {
+    "ko": "주민센터 직원, 이어서 ‘한국신용정보원’, ‘금감원’, ‘공소청’, ‘은행 지점장’",
+    "en": "A community-centre official, then “Korea Credit Information Services”, the “FSS”, the “public prosecution office” and a “bank branch manager”"
+  },
+  "name": {
+    "ko": "주민센터 직원 사칭: “누가 신분증과 위임장을 들고 서류를 떼러 왔다”",
+    "en": "Fake community-centre call: “someone came with your ID and a power of attorney to get documents”"
+  },
+  "how": {
+    "ko": "주민센터 직원이라며 누군가 내 신분증 사본과 위임장을 들고 서류를 떼러 왔는데 수상하다고 걱정하는 척 전화합니다. 명의도용을 신고하라며 한국신용정보원이나 금감원이라는 번호를 알려주고, 피해자가 직접 그 번호로 전화하게 하는데 그 순간부터 모든 상대가 사기범입니다. 금감원·공소청 직원과 은행 지점장까지 차례로 사칭해 재산을 국가가 관리해 준다며 ‘자산 검수’ 명목으로 돈을 보내게 하고, 누구에게도 알리지 말라고 합니다. 금감원은 2026년 11월 이 수법에 소비자경보를 냈습니다.",
+    "en": "A caller posing as a community-centre (주민센터) official, sounding concerned, says someone turned up with a copy of your ID and a power of attorney to get documents and it looked suspicious. They give you a number for Korea Credit Information Services or the FSS to report identity theft and get you to call it yourself, and from that moment everyone you speak to is a scammer. People posing as the FSS, the public prosecution office and even a bank branch manager say the state will look after your assets and have you send money for an “asset check”, telling you to keep it secret. The FSS issued a consumer alert on this in November 2026."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "주민센터 직원이라며 누군가 내 신분증과 위임장으로 서류를 떼러 왔다고 알려준다.",
+        "en": "A “community-centre official” says someone tried to get documents with your ID and a power of attorney."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "명의도용 신고를 하라며 신용정보원·금감원이라는 번호를 알려주고 직접 전화하게 한다.",
+        "en": "They give you a “credit bureau” or “FSS” number to report identity theft and you call it yourself."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "금감원·공소청·은행 지점장이 차례로 나와 누구에게도 알리지 말라고 한다.",
+        "en": "The “FSS”, “prosecution office” and a “bank manager” take turns and tell you to keep it secret."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ko": "재산을 보호해 준다며 자산 검수 명목으로 돈을 보내게 한다.",
+        "en": "They have you send money for an “asset check” to protect it."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "○○동 주민센터입니다. 방금 어떤 50대 남성분이 선생님 신분증 사본이랑 위임장을 들고 등본을 떼러 오셨는데, 사시는 곳과 멀어서 이상해 확인차 연락드렸어요. 명의도용일 수 있으니 한국신용정보원에 바로 신고하세요. 번호 불러드릴게요.",
+        "en": "This is the ○○-dong community centre. A man in his 50s just came in with a copy of your ID and a power of attorney to get a resident registration certificate, but it's far from where you live so it seemed odd and I'm calling to check. It could be identity theft, so report it to Korea Credit Information Services right away. I'll give you the number."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ko": "금융감독원 조사팀입니다. 고객님 명의로 계좌와 대출이 개설된 정황이 있어 자산 검수가 필요합니다. 검수 기간 동안 보유 자금을 국가 관리 계좌로 옮겨 두셔야 하고, 수사 보안상 가족에게도 알리시면 안 됩니다.",
+        "en": "This is the Financial Supervisory Service investigation team. There are signs accounts and loans were opened in your name, so an asset check is needed. During the check you must move your funds to a state-managed account, and for the security of the investigation you must not tell your family."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "주민센터라며 누가 내 신분증이랑 위임장 들고 왔다고 전화 옴",
+      "주민센터 직원이 신용정보원 번호 알려주고 신고하라고 함",
+      "금감원이 자산 검수한다고 돈을 옮기라고 함",
+      "공소청 직원이라는 사람이 아무한테도 말하지 말래",
+      "은행 지점장이라며 국가가 재산 관리해준다고 함"
+    ],
+    "en": [
+      "a community centre called saying someone came with my id and a power of attorney",
+      "the community centre official gave me a credit bureau number to report it",
+      "the fss said they would check my assets and told me to move my money",
+      "someone from the prosecution office told me not to tell anyone",
+      "a bank manager said the state would look after my money"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ko": [
+      "주민센터가 먼저 전화해 명의도용을 알리고 특정 번호로 신고하라고 한다",
+      "상대가 알려준 번호로 기관에 전화하게 한다",
+      "‘자산 검수’, ‘국가 관리 계좌’를 말하며 돈을 옮기라고 한다"
+    ],
+    "en": [
+      "A community centre calling first about identity theft and telling you to report it on a particular number.",
+      "Being made to call an agency on a number the caller gave you.",
+      "Talk of an “asset check” or a “state-managed account” and moving money."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "전화를 끊고 주민센터나 기관의 공식 대표번호를 직접 찾아 확인하거나 직접 방문하세요",
+      "명의도용과 휴대폰 부정 개통은 어카운트인포 등 공식 서비스에서 직접 조회하세요",
+      "금감원·공소청·경찰은 어떤 명목으로도 전화로 돈을 요구하지 않습니다. 송금했다면 즉시 112와 은행에 지급정지를 요청하세요"
+    ],
+    "en": [
+      "Hang up and check by looking up the community centre's or agency's official number yourself, or go there in person.",
+      "Check for identity theft and phones opened in your name yourself through official services such as Account Info.",
+      "The FSS, the prosecution office and the police never ask for money by phone. If you sent any, call 112 and your bank at once for a payment stop."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/your-bank",
+    "kr/phishing-1394",
+    "kr/fss-1332"
+  ],
+  "sources": [
+    {
+      "title": "“누가 내 신분증과 위임장을 들고 주민센터에 왔다고요?” 100% 보이스피싱 사기입니다!",
+      "publisher": "금융감독원 보도자료 (KDI 경제교육·정보센터 게시)",
+      "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=289444",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "“주민센터인데요” 걱정하는 척 접근한 보이스피싱",
+      "publisher": "브라보마이라이프 (이투데이)",
+      "url": "https://bravo.etoday.co.kr/view/atc_view/20453",
+      "date": "2026-11-10"
+    }
+  ],
+  "updated": "2026-11-18"
+}

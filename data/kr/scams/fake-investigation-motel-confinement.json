@@ -1,0 +1,148 @@
+{
+  "id": "kr/fake-investigation-motel-confinement",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "ko": "‘법원 사무관’, ‘검사’, ‘금감원 과장’이라는 사람들",
+    "en": "People calling themselves a “court clerk”, a “prosecutor” and an “FSS manager”"
+  },
+  "name": {
+    "ko": "‘셀프 감금’ 보이스피싱: 수사 중이니 모텔·호텔에 혼자 머물라고 함",
+    "en": "“Self-confinement” voice phishing: told to stay alone in a motel or hotel during an “investigation”"
+  },
+  "how": {
+    "ko": "법원 사무관이나 검찰 수사관이라는 사람이 범죄에 연루됐다고 전화하고, 가짜 검찰 서류와 구속영장을 링크로 보여줍니다. 검사라는 사람이 구속을 피하려면 조사를 받아야 한다며 공기계 휴대폰을 사서 유심을 옮기고 원격제어 앱을 깔게 한 뒤, 근처 모텔이나 호텔에 혼자 들어가 있으라고 합니다. 매시간 상황을 보고하게 하고 반성문을 쓰게 하며, 가족에게 알리면 공범이 된다고 겁을 줍니다. 마지막에 금감원 직원이 나와 안전계좌나 공탁금 명목으로 전 재산을 보내게 하고 대출까지 받게 합니다.",
+    "en": "A “court clerk” or “prosecutors' investigator” calls to say you are involved in a crime and shows you fake prosecution papers and an arrest warrant through a link. A “prosecutor” says you must be questioned to avoid arrest, makes you buy a second-hand phone, move your SIM and install a remote-control app, then tells you to check into a nearby motel or hotel alone. You must report in every hour and write letters of apology, and are told that telling your family makes them accomplices. Finally an “FSS officer” has you send everything you own to a “safe account” or as a court deposit, and even take out loans."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "법원·검찰이라며 범죄에 연루됐다고 하고 가짜 공문과 구속영장을 링크로 보낸다.",
+        "en": "Callers posing as a court or prosecutors say you are involved in a crime and send fake papers and an arrest warrant as a link."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "공기계 휴대폰에 유심을 옮기고 원격제어 앱을 설치하라고 한다.",
+        "en": "They tell you to move your SIM to a second-hand phone and install a remote-control app."
+      },
+      "signal": "remote_access"
+    },
+    {
+      "text": {
+        "ko": "‘약식조사’를 이유로 모텔이나 호텔에 혼자 머물게 하고 매시간 보고하게 한다.",
+        "en": "For a “summary investigation” they keep you alone in a motel or hotel, reporting in every hour."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ko": "금감원 직원이 안전계좌나 공탁금 명목으로 돈을 보내게 하고 대출도 받게 한다.",
+        "en": "An “FSS officer” has you send money to a “safe account” or as a deposit, and take out loans."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "검사입니다. 오늘 약식기소를 받지 못하면 바로 구치소로 가셔야 합니다. 제가 시간을 끌어볼 테니 지금 가까운 모텔에 혼자 들어가 계세요. 한 시간마다 상황 보고하시고, 가족이나 은행 직원에게 말하면 공범으로 보고 수사가 확대됩니다.",
+        "en": "This is the prosecutor. If you don't get a summary indictment today you'll go straight to a detention centre. I'll try to buy you time, so check into a nearby motel alone now. Report to me every hour, and if you tell your family or bank staff we'll treat them as accomplices and widen the investigation."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ko": "수사 보안을 위해 새 공기계를 구입해 유심을 옮겨 끼우고 보내드리는 보안 앱을 설치하세요. 설치가 끝나면 숙소 방 번호를 알려주시기 바랍니다. [링크]",
+        "en": "For the security of the investigation, buy a second-hand phone, move your SIM into it and install the security app I send you. When it's installed, tell me your room number. [link]"
+      },
+      "channel": "online"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "검사가 수사 때문에 모텔에 혼자 있으라고 함",
+      "구속영장이 나왔다면서 호텔에서 한 시간마다 보고하라고 함",
+      "공기계 사서 유심 옮기고 원격 앱 깔라고 함",
+      "가족한테 말하면 공범 된다고 해서 아무한테도 못 말함",
+      "금감원 과장이 공탁금 내야 한다고 송금하라고 함",
+      "반성문이랑 사유서까지 쓰라고 시킴"
+    ],
+    "en": [
+      "a prosecutor told me to stay alone in a motel for the investigation",
+      "they said there was an arrest warrant and made me report every hour from a hotel",
+      "they told me to buy a used phone move my sim and install a remote app",
+      "they said my family would be accomplices if i told them",
+      "an fss manager said i had to pay a court deposit and transfer money",
+      "they made me write letters of apology"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "remote_access",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ko": [
+      "수사기관이 숙소에 혼자 머물라고 하거나 매시간 보고하라고 한다",
+      "새 휴대폰이나 원격제어 앱 설치를 요구한다",
+      "은행의 확인 전화나 계좌 정지를 ‘공범의 방해’라고 말한다"
+    ],
+    "en": [
+      "An “investigator” telling you to stay alone somewhere or report in every hour.",
+      "Being asked to get a new phone or install a remote-control app.",
+      "Being told that your bank's check calls or account holds are “interference by accomplices”."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "가족·지인과 연락을 끊고 혼자 머물라는 지시를 받으면 즉시 112에 신고하세요",
+      "형사사법포털(KICS)에서 사건번호를 직접 확인하세요. 진짜 수사기관은 전화로 돈을 요구하지 않습니다",
+      "돈을 보냈다면 바로 은행에 지급정지를 요청하고 설치한 앱을 삭제하세요"
+    ],
+    "en": [
+      "If you are told to cut off family and friends and stay alone somewhere, call 112 at once.",
+      "Check any case number yourself on the official criminal justice portal (KICS). Real investigators never ask for money by phone.",
+      "If you sent money, ask your bank for a payment stop straight away and remove any app you installed."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/your-bank",
+    "kr/phishing-1394"
+  ],
+  "sources": [
+    {
+      "title": "\"검사입니다. 모텔로 가세요\"…나체사진 찍게 하고 67억 뜯은 보이스피싱",
+      "publisher": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202608131052547323",
+      "date": "2026-08-13"
+    },
+    {
+      "title": "\"부모님 걱정할까 봐\" 호텔서 일주일…전 재산 뜯긴 30대",
+      "publisher": "SBS (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260722072701198",
+      "date": "2026-07-22"
+    },
+    {
+      "title": "“이거 엠바고야”···모텔 ‘셀프감금’ 30대 男에 빗발친 전화 [조선피싱실록]",
+      "publisher": "파이낸셜뉴스 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20251012050148543",
+      "date": "2025-10-12"
+    }
+  ],
+  "story": {
+    "ko": "세종에 사는 30대 직장인이 2026년 7월 법원 사무관이라는 전화를 받았습니다. 링크로 받은 가짜 검찰 서류를 믿고, 검사라는 사람의 지시로 공기계에 원격제어 앱을 깐 뒤 호텔에서 일주일 동안 한 시간마다 상황을 보고했습니다. 금감원 과장이라는 사람에게 전 재산 1억 3천590만 원을 열 차례에 나눠 보내고 대출도 8천700만 원을 받았는데, 은행의 계좌정지로 돈은 빠져나가지 않았습니다. 형사사법포털 앱에서 사건번호가 가짜인 것을 보고서야 사기임을 알았습니다.",
+    "en": "In July 2026 an office worker in his 30s in Sejong got a call from a supposed court clerk. Believing the fake prosecution papers he was sent by link, he followed a “prosecutor's” orders, installed a remote-control app on a spare phone and spent a week in a hotel reporting in every hour. He sent his entire savings, 135.9 million won, in ten transfers to an “FSS manager” and took out 87 million won in loans, but his bank's account hold stopped the money leaving. He only realised it was a scam when the official criminal justice portal app showed the case number was fake."
+  },
+  "updated": "2026-11-18"
+}

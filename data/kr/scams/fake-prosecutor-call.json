@@ -1,0 +1,145 @@
+{
+  "id": "kr/fake-prosecutor-call",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "phone",
+    "online"
+  ],
+  "sender": {
+    "ko": "서울중앙지검·합동수사부 ‘수사관’이나 ‘검사’라는 사람, 이어서 ‘금감원 직원’",
+    "en": "A “investigator” or “prosecutor” from the Seoul Central District Prosecutors' Office or a “joint investigation unit”, then an “FSS officer”"
+  },
+  "name": {
+    "ko": "검찰 수사관 사칭 전화: “본인 명의 통장이 범죄에 쓰였다”",
+    "en": "Fake prosecutor call: “an account in your name was used in a crime”"
+  },
+  "how": {
+    "ko": "검찰 수사관이나 검사라는 사람이 전화해 이름과 생년월일을 대며 본인 명의 대포통장이 범죄에 쓰였다고 말합니다. 녹취로 ‘약식조사’를 한다며 조용한 곳에 혼자 있게 하고, 법원 등기가 반송됐다며 가짜 검찰 사이트에서 공문을 보게 하거나 주민등록번호를 입력하게 합니다. 이어서 금감원 직원이 나와 자산을 보호해 준다며 거래 은행과 잔액을 묻고 ‘안전계좌’로 돈을 옮기거나 현금을 건네게 합니다. 검찰·경찰·금감원은 전화로 돈을 요구하지 않습니다.",
+    "en": "A caller says they are a prosecutors' investigator or a prosecutor, reads out your name and date of birth, and says a mule account opened in your name was used in a crime. They hold a “summary investigation” over a recorded call, make you go somewhere quiet and alone, and say a court letter was returned so you must view an official notice on a fake prosecutors' website or type in your resident registration number. Then an “FSS officer” offers to protect your assets, asks which banks you use and your balances, and has you move money to a “safe account” or hand over cash. Prosecutors, police and the FSS never ask for money by phone."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "검찰 수사관이라며 내 개인정보를 대고 “본인 명의 통장이 대포통장으로 쓰였다”고 말한다.",
+        "en": "A “prosecutors' investigator” reads out your details and says an account in your name was used as a mule account."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "녹취로 약식조사를 한다며 혼자 조용한 곳으로 옮기라고 하고 아무에게도 말하지 말라고 한다.",
+        "en": "They run a “summary investigation” on a recorded call, tell you to move somewhere quiet and alone, and not to tell anyone."
+      },
+      "signal": "secrecy"
+    },
+    {
+      "text": {
+        "ko": "가짜 검찰 사이트 링크를 보내 사건 공문을 보여주고 주민등록번호를 입력하게 한다.",
+        "en": "They send a link to a fake prosecutors' site with a case notice and make you type in your resident registration number."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "금감원 직원이라는 사람이 자산을 보호해 준다며 잔액을 묻고 안전계좌로 이체하게 한다.",
+        "en": "An “FSS officer” says they will protect your assets, asks your balances and has you transfer to a “safe account”."
+      },
+      "signal": "money_request"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "○○○씨 본인 맞으시죠? 서울중앙지검 합동수사부 수사관입니다. 고객님 명의로 개설된 통장이 금융범죄에 이용돼 피해자가 계속 나오고 있습니다. 지금부터 녹취로 약식조사를 진행하니 주변에 아무도 없는 곳으로 이동해 주시고, 수사 중인 사건이라 가족에게도 말씀하시면 안 됩니다.",
+        "en": "Is this Mr/Ms ○○○? I'm an investigator with the joint investigation unit of the Seoul Central District Prosecutors' Office. An account opened in your name has been used for financial crime and more victims keep coming forward. We will now hold a summary investigation on this recorded call, so please move somewhere with nobody around you. This case is under investigation, so you must not tell your family either."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ko": "[서울중앙지방검찰청] 귀하 앞으로 발송된 출석요구서가 반송되었습니다. 사건번호와 공문은 아래 사건조회에서 직접 확인하시기 바랍니다. [링크]",
+        "en": "[Seoul Central District Prosecutors' Office] The summons sent to you was returned. Please check the case number and official notice yourself at the case lookup below. [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "검찰 수사관이라고 전화 와서 내 통장이 대포통장이래",
+      "검사라는 사람이 약식조사 한다고 혼자 있으라고 함",
+      "검찰청 사이트 들어가서 사건조회 하라고 링크 보냄",
+      "금감원 직원이 안전계좌로 돈 옮기라고 함",
+      "명의도용 사건에 연루됐다며 자산 내역을 물어봄",
+      "수사 중이라 가족한테 말하면 안 된다고 함"
+    ],
+    "en": [
+      "a prosecutors investigator called saying my account was used as a mule account",
+      "a prosecutor said he would question me by phone and told me to be alone",
+      "they sent a link to a prosecutors site to look up my case",
+      "an fss officer told me to move my money to a safe account",
+      "they said i was involved in identity theft and asked about my assets",
+      "they said i could not tell my family because the case is under investigation"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "secrecy",
+    "keep_on_line",
+    "unknown_link",
+    "money_request",
+    "urgency"
+  ],
+  "redFlags": {
+    "ko": [
+      "검찰·경찰이 전화로 수사를 하거나 사건 공문을 링크로 보낸다",
+      "혼자 있으라고 하거나 가족에게 알리지 말라고 한다",
+      "거래 은행과 잔액을 묻거나 ‘안전계좌’, ‘자산 검수’를 말한다"
+    ],
+    "en": [
+      "Prosecutors or police questioning you by phone or sending a case notice as a link.",
+      "Being told to stay alone or not to tell your family.",
+      "Being asked which banks you use and your balances, or told about a “safe account” or an “asset check”."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "바로 전화를 끊고, 검찰청·경찰청 대표번호를 직접 찾아 사실인지 확인하세요",
+      "문자나 상대가 보낸 링크로 사건을 조회하지 마세요",
+      "이미 돈을 보냈다면 즉시 112와 은행 콜센터에 지급정지를 요청하세요"
+    ],
+    "en": [
+      "Hang up straight away and check with the prosecutors' or police headquarters on a number you look up yourself.",
+      "Never look up a case through a link from a text or the caller.",
+      "If you already sent money, call 112 and your bank at once and ask for a payment stop."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/phishing-1394",
+    "kr/your-bank",
+    "kr/fss-1332"
+  ],
+  "sources": [
+    {
+      "title": "\"합수부 수사관입니다, 지금 혼자 계십니까\"…실제 피싱범 목소리 공개",
+      "publisher": "시대 (금융감독원 공개 녹취 인용)",
+      "url": "https://www.sidae.com/article/2026040109484027785",
+      "date": "2026-04-01"
+    },
+    {
+      "title": "\"카드발급한 적 없다고요? 여기서 취소하세요\" 이 목소리 조심해야",
+      "publisher": "비즈니스워치",
+      "url": "https://news.bizwatch.co.kr/article/finance/2026/02/10/0011",
+      "date": "2026-02-10"
+    },
+    {
+      "title": "“이거 엠바고야”···모텔 ‘셀프감금’ 30대 男에 빗발친 전화 [조선피싱실록]",
+      "publisher": "파이낸셜뉴스 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20251012050148543",
+      "date": "2025-10-12"
+    }
+  ],
+  "updated": "2026-11-18"
+}

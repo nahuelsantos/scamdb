@@ -1,0 +1,142 @@
+{
+  "id": "kr/loan-refinance-repay-old-loan",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "ko": "저축은행·캐피탈 등 금융회사 직원, 이어서 ‘기존 대출 회사’ 직원",
+    "en": "Staff at a savings bank or lender, then someone from your “existing lender”"
+  },
+  "name": {
+    "ko": "저금리 대환대출 사기: “새 대출 전에 기존 대출부터 갚으라”",
+    "en": "Low-rate refinancing scam: “repay your old loan first”"
+  },
+  "how": {
+    "ko": "금융회사 직원이라며 문자나 전화로 저금리 대환대출이 가능하다고 접근합니다. 신청하면 기존 대출 회사 직원을 사칭한 공범이 다시 전화해 “대출이 있는 상태에서 새 대출을 받으면 법이나 약정 위반”이라며 기존 대출 원금을 즉시 갚으라고 압박합니다. 상환 계좌는 금융회사가 아닌 개인 명의 계좌나 금융사처럼 보이는 가상계좌이고, 기록을 남기면 안 된다며 다른 사람에게 알리지 말라고 합니다. 정상적인 대환대출은 새 금융회사가 기존 금융회사에 직접 갚습니다.",
+    "en": "Someone posing as lender staff offers low-rate refinancing by text or phone. Once you apply, an accomplice posing as your existing lender calls to say taking a new loan while you have an old one breaks the law or your contract, and pressures you to repay the old loan at once. The repayment account is a personal account, or a virtual account made to look like the lender's, and they tell you not to tell anyone because it must stay off the record. In a real refinancing the new lender pays off the old one directly."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "금융회사 직원이라며 저금리 대환대출이 가능하다고 문자나 전화로 접근한다.",
+        "en": "A “lender” offers low-rate refinancing by text or phone."
+      },
+      "signal": "too_good_to_be_true"
+    },
+    {
+      "text": {
+        "ko": "기존 대출 회사 직원이라는 사람이 약정 위반이니 원금을 당장 갚으라고 압박한다.",
+        "en": "Someone from your “existing lender” says it breaks your contract and you must repay now."
+      },
+      "signal": "urgency"
+    },
+    {
+      "text": {
+        "ko": "금융회사가 아닌 개인 명의 계좌나 가상계좌로 상환하게 한다.",
+        "en": "They have you repay into a personal account or a virtual account, not the lender's."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ko": "법 위반 건이라 기록을 남기면 안 된다며 아무에게도 알리지 말라고 한다.",
+        "en": "They say it must stay off the record and tell you not to tell anyone."
+      },
+      "signal": "secrecy"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "[Web발신] ○○저축은행 정부지원 대환대출 안내. 기존 고금리 대출을 연 3%대로 갈아타실 수 있습니다. 한도 조회 후 당일 실행 가능, 상담 문의 [번호]",
+        "en": "[Web] ○○ Savings Bank government-backed refinancing. Switch your high-interest loans to around 3% a year. Check your limit and get it the same day. Call [number]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ko": "○○캐피탈 채권팀입니다. 저희 대출이 남아 있는 상태에서 다른 곳 대출을 받으시면 약정 위반이라 금융거래가 정지됩니다. 오늘 중으로 남은 원금 1,200만 원을 담당자 계좌로 상환하셔야 하고, 위반 건이라 다른 분께 알리시면 안 됩니다.",
+        "en": "This is ○○ Capital's collections team. Taking another loan while ours is still open breaks your contract and your banking will be frozen. You must repay the remaining 12 million won to the officer's account today, and because it's a breach you must not tell anyone."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "저금리 대환대출 해준다고 해서 신청함",
+      "기존 대출 먼저 갚아야 새 대출 나온다고 함",
+      "약정 위반이라며 원금을 개인 계좌로 보내라고 함",
+      "대출 상환하라는 계좌가 은행 이름이 아님",
+      "대출 받는 거 다른 사람한테 말하지 말라고 함"
+    ],
+    "en": [
+      "they offered me a low rate refinancing loan",
+      "they said i had to repay my old loan before the new one",
+      "they said it broke my contract and to send the money to a personal account",
+      "the repayment account was not in the banks name",
+      "they told me not to tell anyone about the loan"
+    ]
+  },
+  "signals": [
+    "too_good_to_be_true",
+    "urgency",
+    "money_request",
+    "secrecy",
+    "impersonation"
+  ],
+  "redFlags": {
+    "ko": [
+      "대출 전에 기존 대출을 개인 계좌나 처음 보는 가상계좌로 갚으라고 한다",
+      "‘약정 위반’, ‘법 위반’이라며 당장 갚으라고 압박한다",
+      "대출 사실을 아무에게도 알리지 말라고 한다"
+    ],
+    "en": [
+      "Being told to repay an old loan into a personal or unfamiliar virtual account before the new loan.",
+      "Pressure to repay now because of a “contract breach” or “breaking the law”.",
+      "Being told not to tell anyone about the loan."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "기존 대출 회사 대표번호로 직접 전화해 상환 요구가 사실인지 확인하세요",
+      "정상적인 대환대출은 새 금융회사가 기존 금융회사에 직접 갚습니다. 개인 계좌로는 절대 보내지 마세요",
+      "이미 보냈다면 즉시 112와 은행에 지급정지를 요청하세요"
+    ],
+    "en": [
+      "Call your existing lender on its official number to check any repayment demand.",
+      "In a real refinancing the new lender pays the old one directly. Never send money to a personal account.",
+      "If you already paid, call 112 and your bank at once for a payment stop."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/your-bank",
+    "kr/fss-1332",
+    "kr/phishing-1394"
+  ],
+  "sources": [
+    {
+      "title": "“상품권 사면 대출해준다” 속았다간 피의자 된다…신종 보이스피싱 경보",
+      "publisher": "디지털데일리",
+      "url": "https://www.ddaily.co.kr/page/view/2026080916014006389",
+      "date": "2026-08-09"
+    },
+    {
+      "title": "'저금리 대환대출' 미끼로 8억여원 가로챈 보이스피싱 일당 검거",
+      "publisher": "경기일보",
+      "url": "https://www.kyeonggi.com/article/20260630580066",
+      "date": "2026-06-30"
+    },
+    {
+      "title": "금감원, 가상계좌 사기 관련 소비자경보 ‘주의’ 발령",
+      "publisher": "경향신문",
+      "url": "https://www.khan.co.kr/article/202604191401001/",
+      "date": "2026-04-19"
+    }
+  ],
+  "updated": "2026-11-18"
+}

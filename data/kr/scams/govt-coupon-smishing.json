@@ -1,0 +1,133 @@
+{
+  "id": "kr/govt-coupon-smishing",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "sms"
+  ],
+  "sender": {
+    "ko": "정부·카드사·지역화폐사의 소비쿠폰·지원금 안내처럼 보이는 문자",
+    "en": "A text that looks like a government, card company or local-currency notice about a consumer coupon or subsidy"
+  },
+  "name": {
+    "ko": "민생회복 소비쿠폰·정부 지원금 신청 문자에 링크",
+    "en": "“Consumer coupon” or government subsidy application text with a link"
+  },
+  "how": {
+    "ko": "정부 지원금이 지급될 때마다 “소비쿠폰 신청 대상자입니다”, “지원금 신청이 접수되었습니다, 다시 확인 부탁드립니다”처럼 신청 안내를 흉내 낸 문자에 링크를 붙여 보냅니다. 링크는 개인정보와 카드·계좌 정보를 넣게 하는 피싱 사이트나 악성 앱으로 이어지고, 신분증 사진을 요구하기도 합니다. 2025년 민생회복 소비쿠폰 때 금융당국은 소비자경보를 내고 정부·은행·카드사의 공식 안내 문자에는 인터넷주소(URL)가 일절 들어가지 않는다고 밝혔습니다.",
+    "en": "Whenever a government handout is paid, scammers send texts copying the application notices, such as “you are eligible for the consumer coupon” or “your subsidy application was received, please confirm again”, with a link. The link leads to a phishing site asking for personal, card or account details, or to a malicious app, and some ask for an ID photo. During the 2025 livelihood-recovery consumer coupon the financial authorities issued a consumer alert and said official texts from the government, banks and card companies contain no web links at all."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "정부 지원금·소비쿠폰 대상자라며 신청이나 확인을 하라는 문자가 온다.",
+        "en": "A text says you're eligible for a government subsidy or coupon and must apply or confirm."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "신청하려면 문자 속 링크를 누르라고 한다.",
+        "en": "It tells you to tap a link to apply."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "신분증, 카드·계좌 정보를 넣게 하거나 앱을 설치하게 한다.",
+        "en": "It asks for your ID, card or account details, or installs an app."
+      },
+      "signal": "asks_for_code"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "[민생회복 소비쿠폰] 귀하는 2차 소비쿠폰 지급 대상자입니다. 신청 기간 내 미신청 시 지급이 취소됩니다. 온라인 신청 바로가기 [링크]",
+        "en": "[Livelihood Recovery Consumer Coupon] You are eligible for the second consumer coupon payment. If you don't apply in time the payment will be cancelled. Apply online [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ko": "[Web발신] 정부지원금 신청이 접수되었습니다. 본인 확인이 완료되지 않아 지급이 보류 중입니다. 신분증 등록 후 확인 바랍니다 [링크]",
+        "en": "[Web] Your government subsidy application was received. Payment is on hold because identity verification is incomplete. Please register your ID and confirm [link]"
+      },
+      "channel": "sms"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "소비쿠폰 신청 대상자라고 링크 문자가 옴",
+      "정부지원금 신청 접수됐다고 다시 확인하라는 문자",
+      "지원금 받으려면 신분증 등록하라는 링크",
+      "소비쿠폰 사용 승인 문자에 인터넷 주소가 있음",
+      "재난지원금 신청하라는 문자 눌렀더니 카드번호 입력하래"
+    ],
+    "en": [
+      "a text said i was eligible for the consumer coupon with a link",
+      "a text said my government subsidy application was received and to confirm again",
+      "a link said to register my id to get the subsidy",
+      "a coupon approval text had a web address in it",
+      "i tapped a disaster relief payment text and it asked for my card number"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "asks_for_code",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "ko": [
+      "지원금·소비쿠폰 안내 문자에 인터넷 주소가 들어 있다",
+      "신청하지 않았는데 ‘접수됐다’며 확인을 요구한다",
+      "신분증 사진이나 카드 비밀번호를 요구한다"
+    ],
+    "en": [
+      "A subsidy or coupon text that contains a web address.",
+      "It says your application was received when you never applied, and asks you to confirm.",
+      "Being asked for an ID photo or card PIN."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "지원금은 카드사·은행 공식 앱이나 홈페이지, 주민센터에서 직접 신청하세요",
+      "링크가 있는 지원금 문자는 누르지 말고 118에 신고하세요",
+      "정보를 입력했다면 카드사·은행에 바로 정지를 요청하세요"
+    ],
+    "en": [
+      "Apply for subsidies only through your card company's or bank's official app or website, or at your community centre.",
+      "Don't tap a subsidy text with a link; report it to 118.",
+      "If you entered details, ask your card company or bank to block them at once."
+    ]
+  },
+  "reportTo": [
+    "kr/kisa-118",
+    "kr/your-bank",
+    "kr/police-112"
+  ],
+  "sources": [
+    {
+      "title": "[보도자료] 민생회복 소비쿠폰 신청 문자에는 인터넷주소(URL)가 없습니다. 절대 클릭하지 마세요.",
+      "publisher": "금융위원회·금융감독원",
+      "url": "https://www.fsc.go.kr/no010101/84947",
+      "date": "2025-07-17"
+    },
+    {
+      "title": "민생회복 소비쿠폰 지급을 사칭한 스미싱·스팸문자를 주의하세요!",
+      "publisher": "서울특별시",
+      "url": "https://news.seoul.go.kr/economy/?p=567815",
+      "date": "2025-09-25"
+    },
+    {
+      "title": "민생회복 소비쿠폰 '문자결제사기(스미싱)' 주의보",
+      "publisher": "머니투데이방송 (MTN)",
+      "url": "https://news.mtn.co.kr/news-detail/2025071011063340333",
+      "date": "2025-07-10"
+    }
+  ],
+  "updated": "2026-11-18"
+}

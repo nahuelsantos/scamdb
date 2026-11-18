@@ -1,0 +1,133 @@
+{
+  "id": "kr/noshow-proxy-purchase",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "phone",
+    "social"
+  ],
+  "sender": {
+    "ko": "군부대 간부, 시청·교도소 공무원, 대학·병원 직원이라는 사람 (가짜 명함·공문 첨부)",
+    "en": "Someone posing as a military officer, a city-hall or prison official, or university or hospital staff (with a fake business card or official letter)"
+  },
+  "name": {
+    "ko": "노쇼·대리구매 사기: 공공기관 직원이 대량 주문 후 특정 업체 물품 대신 구매 요구",
+    "en": "“No-show” proxy-purchase scam: a fake official places a big order, then asks you to buy goods from a certain supplier"
+  },
+  "how": {
+    "ko": "군부대, 시청, 교도소, 대학, 병원 직원이라며 음식점이나 자재·가구 업체 같은 소상공인에게 대량 주문이나 납품 계약을 맡길 것처럼 연락하고, 가짜 명함과 국방부 명의 구매 공문까지 보냅니다. 그다음 “내부 감사 때문에 직접 살 수 없다”, “예산이 부족하다”며 평소 취급하지 않는 물품(와인, 무전기, 측정기 등)을 특정 업체에서 대신 사주면 차액을 붙여 정산하겠다고 합니다. 소개한 판매업체도 가짜라 대금을 보내면 그대로 사라지고, 주문한 사람은 나타나지 않습니다.",
+    "en": "Someone claiming to be from a military unit, city hall, prison, university or hospital contacts a small business, such as a restaurant or a building-supplies or furniture shop, promising a large order or supply contract, and even sends a fake business card and a purchase letter in the Ministry of National Defense's name. Then, saying an internal audit stops them buying directly or the budget is short, they ask you to buy goods you don't normally sell (wine, radios, testing meters) from a particular supplier, promising to repay you with a margin. The supplier is fake too: your payment vanishes and the customer never shows up."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "공공기관 직원이라며 대량 주문이나 납품을 맡길 것처럼 연락하고 명함·공문을 보낸다.",
+        "en": "A “public official” offers a big order or supply contract and sends a business card and official letter."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "감사·예산 문제로 직접 살 수 없다며 특정 업체 물품을 대신 사달라고 한다.",
+        "en": "Citing an audit or budget, they ask you to buy goods from a particular supplier for them."
+      },
+      "signal": "money_request"
+    },
+    {
+      "text": {
+        "ko": "차액을 붙여 곧 정산해 주겠다며 서두르게 한다.",
+        "en": "They promise to repay you soon with a margin and rush you."
+      },
+      "signal": "urgency"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "○○사단 군수과 김대위입니다. 다음 주 부대 행사 때문에 도시락 300개를 주문하려고 합니다. 국방부 구매요청서 보내드릴게요. 그리고 행사용 와인은 저희가 직접 구매가 안 돼서, 사장님이 지정 업체에서 먼저 결제해 주시면 도시락 대금이랑 같이 정산해 드리겠습니다.",
+        "en": "This is Captain Kim from the ○○ Division supply office. We want to order 300 lunch boxes for a unit event next week. I'll send you the defence ministry purchase request. We can't buy the event wine directly, so if you pay the designated supplier first, we'll settle it with the lunch-box payment."
+      },
+      "channel": "phone"
+    },
+    {
+      "text": {
+        "ko": "시청 김주무관인데요. 시청 차량용 무전기가 필요한데 공공기관 납품가보다 일반 도매가가 싸서요. 이 업체에서 대신 구매해 주시면 납품가와 도매가 차액을 드리겠습니다.",
+        "en": "This is Officer Kim from city hall. We need radios for city vehicles, and the ordinary wholesale price is cheaper than the public procurement price. If you buy them from this supplier for us, we'll pay you the difference between the two prices."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "군부대라면서 단체 주문하고 와인을 대신 사달라고 함",
+      "시청 공무원이라며 특정 업체에서 물품 대리구매 요청",
+      "국방부 공문이랑 명함 보내면서 먼저 결제해 달래",
+      "교도소 직원이 감사 때문에 직접 못 산다고 대신 구매하래",
+      "단체 예약 해놓고 노쇼 하고 업체 대금만 가로챔"
+    ],
+    "en": [
+      "a military unit placed a group order and asked me to buy wine for them",
+      "a city official asked me to buy goods from a particular supplier",
+      "they sent a defence ministry letter and business card and asked me to pay first",
+      "a prison officer said an audit meant they could not buy it and asked me to",
+      "they booked a group order did not show up and took the payment"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "money_request",
+    "urgency",
+    "too_good_to_be_true"
+  ],
+  "redFlags": {
+    "ko": [
+      "공공기관이 민간 업체에 다른 물품의 대리구매를 요구한다",
+      "특정 판매업체 계좌로 먼저 결제하라고 한다",
+      "명함·공문 사진만 보내고 기관 대표번호 확인을 피한다"
+    ],
+    "en": [
+      "A public body asking a private business to buy other goods on its behalf.",
+      "Being told to pay a particular supplier's account first.",
+      "Only photos of a card or letter, and avoiding a check through the agency's main number."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "해당 기관 대표번호를 직접 찾아 그 직원이 실제로 있는지 확인하세요",
+      "공공기관은 민간 사업자에게 물품 대리구매를 요구하지 않습니다. 대리구매 요청은 거절하세요",
+      "돈을 보냈다면 즉시 112에 신고하고 은행에 지급정지를 요청하세요"
+    ],
+    "en": [
+      "Look up the agency's main number yourself and check the official really exists.",
+      "Public bodies don't ask businesses to buy things for them: refuse any proxy purchase.",
+      "If you sent money, call 112 at once and ask your bank for a payment stop."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/your-bank",
+    "kr/phishing-1394"
+  ],
+  "sources": [
+    {
+      "title": "군부대 사칭 ‘노쇼 사기’로 소상공인 울린 보이스피싱 조직 구속기소",
+      "publisher": "강원도민일보 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260115113238577",
+      "date": "2026-01-15"
+    },
+    {
+      "title": "“시청 김주무관인데요”…공무원 사칭 ‘대리구매 사기’ 기승",
+      "publisher": "디지털데일리",
+      "url": "https://www.ddaily.co.kr/page/view/2026080916045194960",
+      "date": "2026-08-09"
+    },
+    {
+      "title": "로맨스스캠·노쇼·기관사칭까지... '캄 피싱' 총책 등 49명 검거",
+      "publisher": "파이낸셜뉴스 (Daum 뉴스)",
+      "url": "https://v.daum.net/v/20260225120705293",
+      "date": "2026-02-25"
+    }
+  ],
+  "updated": "2026-11-18"
+}

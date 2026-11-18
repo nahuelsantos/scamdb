@@ -1,0 +1,128 @@
+{
+  "id": "kr/data-breach-compensation-phishing",
+  "country": "kr",
+  "lang": "ko",
+  "status": "active",
+  "channels": [
+    "sms",
+    "phone"
+  ],
+  "sender": {
+    "ko": "쿠팡 등 정보유출 업체, 검·경찰, 공정거래위원회, 법원·우체국을 사칭한 문자·전화",
+    "en": "Texts and calls posing as a breached company such as Coupang, prosecutors, police, the Fair Trade Commission, a court or Korea Post"
+  },
+  "name": {
+    "ko": "개인정보 유출 ‘피해보상’·‘명의도용 확인’ 빙자 보이스피싱·스미싱",
+    "en": "Data-breach “compensation” or “identity-theft check” phishing"
+  },
+  "how": {
+    "ko": "대형 개인정보 유출 사고가 알려지면 피해보상 안내나 명의도용 범죄 확인을 핑계로 문자와 전화를 보냅니다. 검·경찰이나 공정거래위원회를 사칭하거나, 피해 여부를 확인하라며 피싱 사이트로 접속하게 하고, 본인확인을 빙자해 개인정보를 입력하게 하고 악성 앱·원격제어 앱을 깔게 합니다. 앱이 깔리면 휴대폰 속 정보가 빠져나가고 실시간 위치까지 노출됩니다. 2025년 12월 쿠팡 고객정보 유출 뒤 실제 송금 피해가 확인되자 금감원은 소비자경보를 ‘경고’로 올렸습니다.",
+    "en": "When a big data breach makes the news, scammers send texts and make calls about compensation for victims or checking for identity theft. They pose as prosecutors, police or the Fair Trade Commission, or send you to a phishing site to check whether you were affected, where you enter personal details “to verify your identity” and install malicious or remote-control apps. Once installed, the app leaks what's on your phone and even your real-time location. After the Coupang customer-data breach in December 2025, the FSS raised its consumer alert to “warning” when real transfer losses were confirmed."
+  },
+  "steps": [
+    {
+      "text": {
+        "ko": "유출 사고 피해보상이나 명의도용 확인을 안내하는 문자·전화가 온다.",
+        "en": "A text or call offers breach compensation or an identity-theft check."
+      },
+      "signal": "impersonation"
+    },
+    {
+      "text": {
+        "ko": "피해 여부를 확인하라며 사이트 링크로 접속하게 한다.",
+        "en": "It sends you to a website link to check if you were affected."
+      },
+      "signal": "unknown_link"
+    },
+    {
+      "text": {
+        "ko": "본인확인을 빙자해 개인정보를 입력하게 하고 원격제어 앱을 깔게 한다.",
+        "en": "Under the pretext of identity checks it takes your details and installs a remote-control app."
+      },
+      "signal": "remote_access"
+    }
+  ],
+  "examples": [
+    {
+      "text": {
+        "ko": "[쿠팡] 개인정보 유출 피해 고객 보상금 지급 안내. 피해 여부 조회 후 보상금을 신청하세요. 신청 마감 임박 [링크]",
+        "en": "[Coupang] Compensation for customers affected by the data leak. Check whether you were affected and claim your compensation. Deadline approaching [link]"
+      },
+      "channel": "sms"
+    },
+    {
+      "text": {
+        "ko": "서울중앙지검입니다. 이번 개인정보 유출로 고객님 명의가 도용돼 범죄에 이용된 정황이 있습니다. 피해자 확인을 위해 보내드리는 링크에서 본인인증을 하시고 보안 앱을 설치해 주세요.",
+        "en": "This is the Seoul Central District Prosecutors' Office. There are signs your identity was stolen in the recent data leak and used in a crime. To confirm you are a victim, verify yourself at the link we send and install the security app."
+      },
+      "channel": "phone"
+    }
+  ],
+  "phrases": {
+    "ko": [
+      "쿠팡 정보유출 보상금 신청하라는 문자",
+      "개인정보 유출 피해 확인하라고 링크 보냄",
+      "정보유출로 명의도용 됐다며 검찰이라고 전화 옴",
+      "피해보상 받으려면 본인인증하고 앱 깔라고 함",
+      "공정위라면서 유출 피해 조회하라는 문자"
+    ],
+    "en": [
+      "a text told me to claim coupang data leak compensation",
+      "they sent a link to check if my data was leaked",
+      "a prosecutor called saying my identity was stolen in the data leak",
+      "they said to verify myself and install an app to get compensation",
+      "a text from the fair trade commission told me to check for leak damage"
+    ]
+  },
+  "signals": [
+    "impersonation",
+    "unknown_link",
+    "remote_access",
+    "urgency"
+  ],
+  "redFlags": {
+    "ko": [
+      "유출 사고 보상이나 피해 조회를 문자 링크로 안내한다",
+      "본인확인을 이유로 앱 설치를 요구한다",
+      "법원 등기 반송, 사건 확인 명목으로 사이트 접속을 요구한다"
+    ],
+    "en": [
+      "Breach compensation or damage checks offered through a text link.",
+      "Being asked to install an app to verify your identity.",
+      "Being sent to a site over a “returned court letter” or “case check”."
+    ]
+  },
+  "whatToDo": {
+    "ko": [
+      "보상 안내는 해당 업체 공식 앱·홈페이지 공지에서만 확인하세요",
+      "링크 접속이나 앱 설치 요구는 무조건 거절하세요",
+      "‘금융거래 안심차단’ 서비스에 가입하고, 의심 문자는 118, 피해는 112에 신고하세요"
+    ],
+    "en": [
+      "Check compensation news only in the company's official app or website notices.",
+      "Always refuse requests to open a link or install an app.",
+      "Sign up for your bank's fraud-blocking (safe-block) services, report suspicious texts to 118 and losses to 112."
+    ]
+  },
+  "reportTo": [
+    "kr/police-112",
+    "kr/kisa-118",
+    "kr/your-bank",
+    "kr/fss-1332"
+  ],
+  "sources": [
+    {
+      "title": "쿠팡 정보 유출 '2차 피해' 포착…금감원, 소비자경보 상향",
+      "publisher": "디지털데일리",
+      "url": "https://www.ddaily.co.kr/page/view/2025121820435281250",
+      "date": "2025-12-19"
+    },
+    {
+      "title": "‘쿠팡 정보유출’ 범부처 TF 구성…금감원, 경보 등급 상향",
+      "publisher": "경향신문",
+      "url": "https://www.khan.co.kr/article/202512180905001/",
+      "date": "2025-12-18"
+    }
+  ],
+  "updated": "2026-11-18"
+}
