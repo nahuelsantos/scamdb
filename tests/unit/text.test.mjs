@@ -49,3 +49,9 @@ test('Arabic hamza and alef maqsura fold to their plain letters', async () => {
   assert.equal(normalize('أي إلى آخر'), 'اي الي اخر');
   assert.equal(normalize('تعذّر 50 درهماً'), 'تعذر 50 درهما');
 });
+test('Hangul, kana and CJK are kept whole (no jamo split, voicing marks kept)', async () => {
+  const { normalize } = await import('../../lib/text.js');
+  assert.equal(normalize('검찰청 수사관입니다!'), '검찰청 수사관입니다');
+  assert.equal(normalize('ギフトカードで支払って。'), 'ギフトカードで支払って');
+  assert.equal(normalize('Café'), 'cafe');
+});
