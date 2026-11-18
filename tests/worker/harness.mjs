@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql', '0005_report_tags.sql', '0006_feed_access.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
+export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql', '0005_report_tags.sql', '0006_feed_access.sql', '0007_report_outcome.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
 
 /** Default outbound stub: Turnstile token "ok" passes; GitHub answers a fixed user. */
 export async function defaultFetch(request) {
@@ -19,7 +19,7 @@ export async function defaultFetch(request) {
   return new Response('unexpected outbound ' + url, { status: 599 });
 }
 
-export async function makeWorker({ fetchMock = defaultFetch, bindings = {} } = {}) {
+export async function makeWorker({ fetchMock = defaultFetch, bindings = {}, schema = SCHEMA } = {}) {
   const assets = mkdtempSync(join(tmpdir(), 'scamdb-assets-'));
   writeFileSync(join(assets, 'index.html'), '<p>STATIC</p>');
   writeFileSync(join(assets, '404.html'), '<p>STATIC 404</p>');
@@ -46,7 +46,7 @@ export async function makeWorker({ fetchMock = defaultFetch, bindings = {} } = {
     outboundService: fetchMock,
   });
   const db = await mf.getD1Database('DB');
-  for (const stmt of SCHEMA.split(';').map((s) => s.trim()).filter(Boolean)) await db.prepare(stmt).run();
+  for (const stmt of schema.split(';').map((s) => s.trim()).filter(Boolean)) await db.prepare(stmt).run();
   return {
     mf, db,
     fetch: (path, init = {}) => mf.dispatchFetch('https://scamdb.dev' + path, { redirect: 'manual', ...init }),

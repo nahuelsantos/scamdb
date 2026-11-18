@@ -32,3 +32,14 @@ test('an uncatalogued report copy passes the set checks', () => {
   const m = reportsToMessages([row('a', 'reviewed')]);
   assert.deepEqual(checkMessages(m, new Set()), []);
 });
+
+test("before review, the reporter's answer labels the report; 'not sure' alone does not", async () => {
+  const { reportsToMessages } = await import('../../lib/private-eval.js');
+  const base = { country: 'ar', created_at: '2026-11-01T00:00:00Z', status: 'new', text: 'Tu codigo de verificacion es 123456, no lo compartas' };
+  const [g] = reportsToMessages([{ ...base, id: 'g', outcome: 'genuine' }]);
+  const [s] = reportsToMessages([{ ...base, id: 's', outcome: 'scam' }]);
+  assert.equal(g.label, 'safe');
+  assert.equal(s.label, 'scam');
+  assert.equal(reportsToMessages([{ ...base, id: 'u', outcome: 'unsure' }]).length, 0);
+  assert.equal(reportsToMessages([{ ...base, id: 'r', status: 'rejected', outcome: 'scam' }])[0].label, 'safe', 'the review wins');
+});

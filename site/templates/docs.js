@@ -4,7 +4,7 @@ import { t } from '../i18n.js';
 
 const PATHS = ['/v1/index.json', '/v1/countries.json', '/v1/signals.json', '/v1/{country}/scams.json', '/v1/{country}/contacts.json',
   '/v1/scams/{country}/{slug}.json', '/v1/scams.json', '/v1/scamdb.zip', '/v1/scams.csv', '/v1/changes.json', '/v1/changes.atom', '/v1/brands.json'];
-const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 'source', 'turnstileToken'];
+const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'outcome', 'contact', 'source', 'turnstileToken'];
 const CHECK_FIELDS = ['text', 'country', 'lang', 'report', 'image', 'audio'];
 const CHECK_EXAMPLE = JSON.stringify({ verdict: 'scam', score: null, signals: [{ id: 'asks_for_code', label: 'Asks for a code', evidence: 'read me the 6-digit code' }],
   matches: [{ id: 'nz/bank-fraud-team-call', name: 'Fake bank fraud team', url: 'https://scamdb.dev/v1/scams/nz/bank-fraud-team-call.json', page: 'https://scamdb.dev/catalogue/nz/bank-fraud-team-call/' }],

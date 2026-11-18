@@ -32,14 +32,18 @@ export function validateReport(b) {
   if (!text && !whatHappened) throw invalid('text', 'send the message or say what happened (text or whatHappened)');
   if (!COUNTRIES.includes(b.country)) throw invalid('country', `one of ${COUNTRIES.join(', ')}`);
   if (b.channel !== undefined && b.channel !== null && !CHANNELS.includes(b.channel)) throw invalid('channel', `one of ${CHANNELS.join(', ')}`);
+  if (b.outcome !== undefined && b.outcome !== null && b.outcome !== '' && !OUTCOMES.includes(b.outcome)) throw invalid('outcome', `one of ${OUTCOMES.join(', ')}`);
   return {
     text, whatHappened, country: b.country, channel: b.channel ?? null,
     contact: optionalText(b.contact, 'contact', 200),
     source: optionalText(b.source, 'source', 40) ?? 'api',
+    // What it turned out to be, in the reporter's words: the label that makes a message useful for accuracy.
+    outcome: OUTCOMES.includes(b.outcome) ? b.outcome : null,
   };
 }
 
-const FORM_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 'source', 'turnstileToken'];
+export const OUTCOMES = ['scam', 'genuine', 'unsure'];
+const FORM_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'contact', 'source', 'outcome', 'turnstileToken'];
 const AI_DAILY = 300; // shared with /v1/isitascam's AI cap
 
 export async function handleReport(request, env) {
@@ -82,11 +86,16 @@ export async function handleReport(request, env) {
   const id = crypto.randomUUID();
   const at = now.toISOString();
   const indicators = await indicatorRows(env, id, at, [r1.found, r2.found]);
-  await env.DB.batch([
-    env.DB.prepare('INSERT INTO reports (id, created_at, country, channel, text, what_happened, contact, source, key_id, scam_id, brands) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
-      .bind(id, at, report.country, report.channel, text, whatHappened, report.contact, report.source, key?.id ?? null, tags.scamId, tags.brands),
+  const insert = (withOutcome) => env.DB.batch([
+    withOutcome
+      ? env.DB.prepare('INSERT INTO reports (id, created_at, country, channel, text, what_happened, contact, source, key_id, scam_id, brands, outcome) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+        .bind(id, at, report.country, report.channel, text, whatHappened, report.contact, report.source, key?.id ?? null, tags.scamId, tags.brands, report.outcome ?? null)
+      : env.DB.prepare('INSERT INTO reports (id, created_at, country, channel, text, what_happened, contact, source, key_id, scam_id, brands) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+        .bind(id, at, report.country, report.channel, text, whatHappened, report.contact, report.source, key?.id ?? null, tags.scamId, tags.brands),
     ...indicators,
   ]);
+  // Until migration 0007 is applied the column is missing: keep the report, without its outcome.
+  try { await insert(true); } catch (err) { if (!/no such column|no column named/i.test(String(err?.message ?? err))) throw err; await insert(false); }
   if (key) await recordUsage(env.DB, key.id, 'reports', now);
   return cors(json({ id, received: true }, 201));
 }
