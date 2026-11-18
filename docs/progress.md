@@ -11,8 +11,15 @@ A running record of what was built, what was measured and what we learned. Newes
 - **Reports in the private set (#101):** reviewed reports can be added to the encrypted private set and are deleted
   after the same 180 days (`tools/private-eval.mjs import-reports`, `prune`, weekly workflow). Production has no
   reports yet.
-- **Next:** more genuine real messages (43 is too few to trust the false-alarm figure), especially genuine notices that
-  look risky.
+- **40 more genuine real messages (#103):** 43 → 83, from banks' own SMS templates, official emergency alerts and
+  fact-checks rating a message genuine. The false-alarm figure was optimistic: the matcher calls 9 of 83 genuine
+  messages "scam" (10.8%), not 3 of 43 (7%).
+- **Matcher 1.22.0 (#104):** public-safety alerts (evacuate, shelter in place, weather warnings) are urgent by
+  nature, so urgency is dropped there unless the message also asks for money, a code or remote access. Real set:
+  9 → 7 of 83 genuine called "scam"; scams and the other two sets unchanged.
+- **Left to the AI:** genuine bank fraud-alert templates ("card restricted, reply yes or no"). Scammers copy them
+  closely, so no keyword rule can separate a real one from a fake.
+- **Next:** a second pass for genuine messages in Colombia, Argentina, Portugal and France (the first found almost none).
 
 ## 2026-11-17: Detection quality first: language scoping, real messages, freshness; the Philippines
 
