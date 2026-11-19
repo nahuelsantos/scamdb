@@ -2,6 +2,15 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-19: The AI on all real messages, including the six new countries
+
+- All 343 real messages now have saved Workers AI answers (128 scored today, within the free allowance).
+- Matcher + AI on the real set: 95% of scams caught, 83.6% called "scam"; but 16 of 105 genuine messages called
+  "scam" (matcher alone: 8). Almost all are genuine bank, card and delivery alerts that look like scams.
+- New countries (id, ae, th, kr, jp, tw): the AI lifts "called scam" from 1–5 per country to 6–11; it adds two genuine
+  false alarms in Indonesia and one in Japan, and loses two Indonesian scams. Details in `eval/report-ai-fusion.md`.
+- Next: refit the fusion on real messages only, held out by country, with the false-alarm target the owner sets.
+
 ## 2026-11-18: The owner's first real reports (Spain)
 
 - **Four scams the owner received**, sent through the report form: a fake Correos "2/2 delivery attempts", a fake
