@@ -2,6 +2,15 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-19: The AI on all real messages, including the six new countries
+
+- All 343 real messages now have saved Workers AI answers (128 scored today, within the free allowance).
+- Matcher + AI on the real set: 95% of scams caught, 83.6% called "scam"; but 16 of 105 genuine messages called
+  "scam" (matcher alone: 8). Almost all are genuine bank, card and delivery alerts that look like scams.
+- New countries (id, ae, th, kr, jp, tw): the AI lifts "called scam" from 1–5 per country to 6–11; it adds two genuine
+  false alarms in Indonesia and one in Japan, and loses two Indonesian scams. Details in `eval/report-ai-fusion.md`.
+- Next: refit the fusion on real messages only, held out by country, with the false-alarm target the owner sets.
+
 ## 2026-11-18: The owner's first real reports (Spain)
 
 - **Four scams the owner received**, sent through the report form: a fake Correos "2/2 delivery attempts", a fake
@@ -36,15 +45,6 @@ A running record of what was built, what was measured and what we learned. Newes
   - Open question for the owner: a bare price (30€, $74.167) still counts as a money request, so a genuine offer
     with a price and a link reads "scam" (3 of the owner's genuine messages). Not counting prices at all: on the real
     set 5 fewer genuine called "scam" (8 → 3 of 105), but 3 scams no longer flagged and 6 fewer called "scam".
-
-## 2026-11-19: The AI on all real messages, including the six new countries
-
-- All 343 real messages now have saved Workers AI answers (128 scored today, within the free allowance).
-- Matcher + AI on the real set: 95% of scams caught, 83.6% called "scam"; but 16 of 105 genuine messages called
-  "scam" (matcher alone: 8). Almost all are genuine bank, card and delivery alerts that look like scams.
-- New countries (id, ae, th, kr, jp, tw): the AI lifts "called scam" from 1–5 per country to 6–11; it adds two genuine
-  false alarms in Indonesia and one in Japan, and loses two Indonesian scams. Details in `eval/report-ai-fusion.md`.
-- Next: refit the fusion on real messages only, held out by country, with the false-alarm target the owner sets.
 
 ## 2026-11-18: A faster matcher; how detection works, and a review of the weights
 
