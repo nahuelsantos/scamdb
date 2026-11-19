@@ -1,3 +1,37 @@
+# All real messages with the AI (2026-11-19)
+
+All 343 real messages (`eval/real`: 238 scams, 105 genuine) scored by the matcher alone and by the matcher plus
+Workers AI, with today's fusion weights (`node tools/eval.mjs --real --ai`, matcher 1.38.0). The 128 messages added
+since the last run were scored: the six countries added on 2026-11-18 and new genuine messages elsewhere.
+
+| | scams caught | called "scam" | genuine called "scam" | genuine flagged |
+|---|---|---|---|---|
+| Matcher | 92.4% (220/238) | 27.7% | 7.6% (8/105) | 75.2% |
+| Matcher + AI | 95% (226/238) | 83.6% | 15.2% (16/105) | 30.5% |
+
+**The six new countries**
+
+| | scams | matcher: caught / called "scam" | + AI: caught / called "scam" | genuine | genuine called "scam" (matcher → + AI) |
+|---|---|---|---|---|---|
+| Indonesia (id) | 8 | 8 / 1 | 6 / 6 | 3 | 0 → 2 |
+| UAE (ae) | 9 | 9 / 1 | 9 / 8 | 1 | 0 → 0 |
+| Thailand (th) | 8 | 7 / 1 | 8 / 8 | 1 | 0 → 0 |
+| South Korea (kr) | 13 | 13 / 1 | 13 / 11 | 2 | 0 → 0 |
+| Japan (jp) | 15 | 13 / 2 | 13 / 11 | 4 | 0 → 1 |
+| Taiwan (tw) | 13 | 12 / 5 | 12 / 9 | 3 | 0 → 0 |
+
+What it shows:
+
+- **The AI turns most "suspicious" scams into "scam"** in every new country, as it did in the first 18, without
+  any language-specific work.
+- **Its cost is false alarms: 16 genuine messages called "scam", against 8 for the matcher alone.** Nearly all are
+  genuine alerts that look like the scam they warn about: Australian, British, Canadian, French, Italian, Japanese and
+  US bank and card-fraud alerts, a DVLA and a USPS text, and two Indonesian government messages.
+- **Indonesia loses two scams** the matcher caught: the AI scored them low enough to pull the fused verdict down.
+- The genuine side is still small (105, of which 1–4 per new country), so per-country false-alarm rates are noise.
+  These answers are now cached for every real message, which is what the planned refit on real messages needs
+  (`docs/detection.md`, "Plan to improve the weights").
+
 # Real messages with the AI (2026-11-18)
 
 All 215 real messages (`eval/real`: 172 scams, 43 genuine, 18 countries) scored by the matcher alone and by the matcher
