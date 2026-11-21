@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Sources registry, home-lab collector and a review page
+
+- `sources/registry.json` lists trustworthy places that publish real scam messages, French first: r/arnaques,
+  Cybermalveillance.gouv.fr (alerts and news), franceinfo Vrai ou Fake, Le Monde Les Décodeurs and ameli.fr. Signal
+  Arnaques is listed but off (no feed; its terms need reading first).
+- `tools/collect.mjs` reads them daily from the home lab (plunder), because Reddit and Cybermalveillance refuse cloud
+  servers, and sends scam-related items to a private review queue (new D1 table `source_items`).
+- `/review/` lets the owner mark each item useful or skip on the phone, after signing in with GitHub. The queue is
+  separate from reports, the API and training. See `docs/sources.md`.
+
 ## 2026-11-21: Matcher 1.39.0: an amount is a weak sign
 
 - A bare price or sum ("30€", "$74.167", "R$ 86") is no longer "asks for money". It is a new weak sign, `amount`: it

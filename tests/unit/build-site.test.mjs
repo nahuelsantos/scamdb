@@ -29,7 +29,7 @@ test('writes every page and the playground assets', () => {
   const { dir, out, written } = build();
   const pages = written.filter((p) => p.endsWith('.html')).sort();
   const en = ['account/index.html', 'catalogue/ar/ejemplo/index.html', 'catalogue/ar/xss/index.html', 'catalogue/br/exemplo/index.html',
-    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'feed/index.html', 'index.html', 'report/index.html', 'trends/index.html'];
+    'catalogue/index.html', 'contribute/index.html', 'docs/index.html', 'feed/index.html', 'index.html', 'report/index.html', 'review/index.html', 'trends/index.html'];
   assert.deepEqual(pages, ['404.html', ...en].sort());
   for (const a of ['assets/styles.css', 'assets/playground.js', 'assets/packages/matcher/index.js', 'assets/packages/matcher/signs.js',
     'assets/lib/text.js', 'assets/entries.json', 'assets/account.js']) assert.ok(existsSync(join(out, a)), a);
@@ -314,5 +314,13 @@ test('pages carry a large link-preview image for X and other apps', () => {
   assert.match(html, /<meta property="og:image" content="https:\/\/scamdb\.dev\/assets\/og\.png">/);
   assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
   assert.ok(existsSync(join(dir, 'dist/assets/og.png')) && existsSync(join(dir, 'dist/assets/apple-touch-icon.png')));
+  rmSync(dir, { recursive: true });
+});
+test('the review page is built, kept out of search engines and not linked from the site', () => {
+  const { dir, page } = build();
+  const html = page('review/index.html');
+  assert.ok(html.includes('<meta name="robots" content="noindex, nofollow">'));
+  assert.ok(html.includes('/auth/github?next=/review/'));
+  assert.ok(!page('index.html').includes('/review/'));
   rmSync(dir, { recursive: true });
 });
