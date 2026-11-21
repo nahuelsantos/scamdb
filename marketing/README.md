@@ -5,6 +5,8 @@ folder is published automatically. The owner reviews and posts by hand.
 
 | File | What |
 |---|---|
+| `playbook.md` | **Start here.** The Phase 1 playbook: goal, templates, routine, the 2-week test and what to measure |
+| `foundation.md` | The discovery decisions behind the playbook |
 | `brand-profile.md` | Who we talk to, voice, hard rules, look, calls to action, hashtags |
 | `pillars.md` | The five content pillars, the weekly rhythm, and platform basics in plain words |
 | `calendar.md` | The posting calendar, with notes for the owner |

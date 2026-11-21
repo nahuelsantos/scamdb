@@ -17,6 +17,10 @@ posted. You review, edit and publish.
 | **Thu Dec 3** | Around the world | ["Move it to a safe account"](posts/2026-12-W49/w49-thu-safe-account/post.md) | 2 slides | 1 image | No: phrases from written examples, labelled | [gb/bank-safe-account](https://scamdb.dev/catalogue/gb/bank-safe-account/) |
 | **Fri Dec 4** | Behind scamdb | [How the check works](posts/2026-12-W49/w49-fri-how-the-check-works/post.md) | 2 slides | 1 image + developer reply | No message shown | [scamdb.dev](https://scamdb.dev) |
 
+**Videos in the same two weeks** (storyboards in `videos/storyboards.md`; waiting on the owner's voice recording):
+Mon Nov 23 V1 *How it works* (pin on X) · Tue Nov 24 V2 *Why only $12.51?* · Wed Nov 25 V3 *Real or scam? Bank
+texts* · Fri Nov 27 V4 *Shopped today? Expect this text.* The full test plan and what to measure: `playbook.md`.
+
 **Before each post**
 
 1. Read `post.md` and look at the images in the same folder.
