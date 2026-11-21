@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Faster cold start for checks
+
+- After the AI moved off the waiting path, a check still took 1.3–2.7 s whenever Cloudflare started a fresh Worker
+  (frequent with little traffic); a warm one answers in ~0.3 s from outside. The cold cost is the matcher building its
+  word index over all 1,199 entries: 550–680 ms, 200 ms of it folding the same characters again and again.
+- `foldChar` now remembers each character's result (pure, so no result changes: the real-set eval is identical).
+  First check: ~370 ms instead of ~550–680 ms in Node; the eval runs in 0.6 s instead of 1.0 s. The home page's
+  in-browser check gets the same gain.
+- A prebuilt index was measured and rejected: 4 MB of JSON that takes ~200 ms to load.
+
 ## 2026-11-21: Checks with a key answer at once; the AI score follows
 
 - A signed-in check took ~9 s: it waited for Workers AI (embedding + a 26B chat model, 8 s timeout). Now the answer
