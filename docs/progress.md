@@ -2,6 +2,13 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Reddit back on: r/arnaques and five searches
+
+- r/arnaques is on again (the owner confirmed it exists), plus Reddit searches for "estafas", "estafa sms",
+  "arnaque sms", "golpe whatsapp" and "scam text": new posts from every community, often a pasted message and "is this
+  a scam?". Reddit refuses cloud servers, so the first home run (Runs tab) is the check. Every item waits for the
+  owner's review; the author's name is dropped.
+
 ## 2026-11-21: Review page: Sources and Runs tabs, behind Cloudflare Access
 
 - The review page now has three tabs: Queue (as before), Sources (every source in the registry, on or off and why,
