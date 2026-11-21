@@ -571,7 +571,7 @@ catches 12 of 12 scams; one false "scam" left in pt (a genuine MB WAY receipt th
 - **What it does:** keeps only links, dates and publishers, de-duplicates, classifies each item against the
   catalogue (matcher plus brands), and builds signals: official warnings, possibly-new clusters (3 or more
   publishers, grouped by word overlap) and per-entry counts.
-- **`.github/workflows/discover.yml`:** runs daily at 05:23 UTC and keeps results as a 90-day artifact. On Mondays
+- **`.github/workflows/discover.yml`:** runs daily at 05:23 UTC and keeps results as an artifact for 15 days (the repository default since 2026-11-21; the weekly issue is the lasting record). On Mondays
   (or by hand) it opens a "Scam signals <week>" issue, with links, counts and our own labels, never copied titles.
 - **The import skill** now reads the latest signals issue first, as leads only. It still cites only sources it
   reads itself.
