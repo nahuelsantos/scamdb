@@ -54,7 +54,8 @@ test('home runs read home and any sources; disabled sources never run', () => {
   const cloud = sourcesFor(registry, 'cloud').map((s) => s.id);
   assert.ok(home.includes('fr-cybermalveillance-alertes') && home.includes('fr-franceinfo-vrai-ou-fake'));
   assert.ok(!cloud.includes('fr-cybermalveillance-alertes') && cloud.includes('fr-franceinfo-vrai-ou-fake'));
-  assert.ok(!home.includes('fr-signal-arnaques') && !home.includes('fr-reddit-arnaques'));
+  assert.ok(!home.includes('fr-signal-arnaques'));
+  assert.ok(home.includes('fr-reddit-arnaques') && home.includes('ww-reddit-search-estafas') && !cloud.includes('ww-reddit-search-estafas'));
 });
 test('the 2026-11-18 research list is in the registry, and only confirmed feeds are switched on', () => {
   const ids = new Set(registry.sources.map((s) => s.id));
