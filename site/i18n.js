@@ -88,7 +88,7 @@ export const UI = {
     revSchedule: 'Every day at about 07:40 (Madrid time), on plunder.', revLastRun: 'Last run', revNoRuns: 'No runs reported yet.',
     revRunOk: 'OK', revRunFailed: 'Failed', revPerSource: 'Per source', revKept: 'kept', revOfKept: 'of', revNewInQueue: 'new in the queue',
     revSourcesRead: 'sources read', revNotRead: 'not read yet', revHomeOnly: 'home only', revNoFeed: 'no feed', revOffShort: 'off',
-    revSite: 'Open the site', revChangedHere: 'Changed here on', revSwitchSetup: 'Switches need the latest database migration.',
+    revSite: 'Open the site', revChangedHere: 'Changed here on', revChangedTitle: 'Changed on this page', revOffChanged: 'Off · changed here', revSwitchSetup: 'Switches need the latest database migration.',
     revNoFeedReason: 'Cannot be switched on: no feed or page reader yet.', revNeverOnReason: 'Cannot be switched on: lists of firms never go to the review queue.', revNoneFailing: 'No source failed in the last run.',
     revLoadMore: 'Load more', revScore: 'score', revSetup: 'The review queue is not switched on yet.',
     accTitle: 'Account · scamdb', accDesc: 'Sign in with GitHub to get a free scamdb API key.', accH: 'Your API key',

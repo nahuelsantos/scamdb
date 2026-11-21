@@ -151,6 +151,14 @@ async function showSources() {
   const byCountry = new Map();
   for (const x of shown) byCountry.set(x.country, [...(byCountry.get(x.country) ?? []), x]);
   const name = (cc) => reg.countries[cc] ?? cc.toUpperCase();
+  // Sources switched on this page come first, open, so a switch flipped by mistake is easy to find and undo.
+  const changed = filter === 'all' ? reg.sources.filter((x) => switches?.map.has(x.id)) : [];
+  if (changed.length) {
+    box.append(el('h2', 'rv-h', `${S.revChangedTitle} · ${changed.length}`));
+    const ul = el('ul', 'rv-src-list rv-changed');
+    for (const x of changed) ul.append(sourceCard(x, last[x.id]));
+    box.append(ul);
+  }
   for (const cc of [...byCountry.keys()].sort((a, b) => name(a).localeCompare(name(b)))) {
     const group = byCountry.get(cc).sort((a, b) => Number(isOn(b)) - Number(isOn(a)) || a.name.localeCompare(b.name));
     box.append(el('h2', 'rv-h', `${name(cc)} · ${group.filter(isOn).length} ${S.revOn.toLowerCase()}`));
@@ -212,7 +220,8 @@ function sourceLine(x, r) {
   const li = el('li', 'rv-src-off');
   const d = el('details');
   const sum = el('summary');
-  sum.append(el('span', 'rv-name', x.name), el('span', 'rv-badge', S.revOff));
+  const changedHere = switches?.map.has(x.id);
+  sum.append(el('span', 'rv-name', x.name), el('span', `rv-badge${changedHere ? ' is-changed' : ''}`, changedHere ? S.revOffChanged : S.revOff));
   d.append(sum, el('p', 'rv-meta', meta(x)));
   if (r) d.append(result(r));
   d.append(switchRow(x));
