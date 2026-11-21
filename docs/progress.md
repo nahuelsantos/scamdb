@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Reports: order, tracking and reference numbers removed
+
+- The marketing session found a stored report still holding a SHEIN order number (`MLAR…`). The redactor now replaces,
+  with `[number]`: mixed letter-and-digit references (8–30 characters, at least 2 letters and 5 digits: order and
+  tracking numbers like `1Z999AA10123456784`), any 5+ character reference with 4+ digits right after an order word
+  (order, pedido, envío, tracking, commande, colis, reference, nº…), and Spanish DNI/NIE numbers whole (the letter used
+  to stay). Words like COVID-19, iPhone15, 5G, models and dates are left alone.
+- All 89 stored reports were re-checked: two held a reference (the SHEIN order, a JIRA ticket number) and were
+  cleaned in D1. The encrypted private set held neither.
+
 ## 2026-11-21: Faster cold start for checks
 
 - After the AI moved off the waiting path, a check still took 1.3–2.7 s whenever Cloudflare started a fresh Worker

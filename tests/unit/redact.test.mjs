@@ -74,11 +74,32 @@ test('a second name or surname after a greeting goes too; the rest of the senten
   assert.equal(redact('Hello John Smith how are you').text, 'Hello [name] how are you');
   assert.equal(redact('Hi Sarah, a reminder').text, 'Hi [name], a reminder');
 });
-test('in a message about a code, a code with words in between is replaced; amounts and order numbers elsewhere are not', () => {
+test('in a message about a code, a code with words in between is replaced; an order number is a [number], not a [code]', () => {
   assert.equal(redact('The activation code requested for the APP is 236231 #236231').text, 'The activation code requested for the APP is [code] #[code]');
   assert.equal(redact("Never share this code. It's 293658").text, "Never share this code. It's [code]");
-  assert.equal(redact('Pedido 12345 enviado').text, 'Pedido 12345 enviado');
+  assert.equal(redact('Pedido 12345 enviado').text, 'Pedido [number] enviado');
 });
 test('a masked card with its first and last digits showing is replaced', () => {
   assert.equal(redact('con su tarjeta 487159******7099').text, 'con su tarjeta [card]');
+});
+
+test('order, tracking and reference numbers are replaced', () => {
+  // The report that showed the gap (SHEIN, ar): the order number stayed in the stored text.
+  assert.equal(redact('<SHEIN > Dear customer,your order MLAR079385203EX shows delivered. Please click "Confirm Delivery" via here https://x.top/a').text,
+    '<SHEIN > Dear customer,your order [number] shows delivered. Please click "Confirm Delivery" via here [link]');
+  assert.equal(redact('Your UPS parcel 1Z999AA10123456784 is waiting').text, 'Your UPS parcel [number] is waiting');
+  assert.equal(redact('Correos: envío PQ4F6B0712345670108018X retenido').text, 'Correos: envío [number] retenido');
+  assert.equal(redact('Tu pedido 1234567 está en camino').text, 'Tu pedido [number] está en camino');
+  assert.equal(redact('Commande n° 4589123 expédiée').text, 'Commande n° [number] expédiée');
+  assert.equal(redact('ref: 98765 confirmed').text, 'ref: [number] confirmed');
+  assert.equal(redact('Order #A1234 ready').text, 'Order #[number] ready');
+});
+test('Spanish DNI and NIE numbers are replaced whole', () => {
+  assert.equal(redact('DNI 12345678Z y NIE X1234567L').text, 'DNI [number] y NIE [number]');
+});
+test('the reference rules leave ordinary words, models, dates, amounts and bank labels alone', () => {
+  for (const t of ['COVID-19 vaccine for iPhone15 users on 5G, 2026-11-21', 'Model SM-G991B update', 'BBVA: transferencia de 30€ recibida', 'Paga 5000 ARS'])
+    assert.equal(redact(t).text, t);
+  assert.equal(redact('IBAN ES91 2100 0418 4502 0005 1332 please').text, 'IBAN [account] please');
+  assert.equal(redact('Tarjeta 4111 1111 1111 1111').text, 'Tarjeta [card]');
 });
