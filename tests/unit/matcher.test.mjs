@@ -26,7 +26,7 @@ test('country filters the catalogue', () => assert.deepEqual(m('me pidieron un c
 
 // Signs (ported from eschamuyo verdict.test.mjs)
 test('signs come in a fixed order', () => assert.deepEqual(Object.keys(SIGNS),
-  ['asks_for_code', 'remote_access', 'urgency', 'money_request', 'unknown_link', 'new_number', 'impersonation', 'secrecy', 'keep_on_line', 'too_good_to_be_true']));
+  ['asks_for_code', 'remote_access', 'urgency', 'money_request', 'amount', 'unknown_link', 'new_number', 'impersonation', 'secrecy', 'keep_on_line', 'too_good_to_be_true']));
 test('reads a code request', () => assert.ok(readSigns('Te va a llegar un código, pasámelo').includes('asks_for_code')));
 test('reads an app install', () => assert.ok(readSigns('Descargá AnyDesk así lo vemos').includes('remote_access')));
 test('reads "bajá esta app"', () => assert.ok(readSigns('Bajá esta app así lo vemos').includes('remote_access')));
@@ -131,9 +131,9 @@ test('Portuguese secrecy and keep on line', () => assert.deepEqual(readSigns('N�
 test('Portuguese remote access', () => assert.ok(readSigns('Baixe este aplicativo para eu ver sua tela').includes('remote_access')));
 test('Portuguese too good to be true', () => assert.ok(readSigns('Parabéns, você ganhou um prêmio').includes('too_good_to_be_true')));
 test('an ordinary Portuguese message has no signs', () => assert.deepEqual(readSigns('Oi, tudo bem? Vamos almoçar no domingo?'), []));
-test('money evidence quotes the whole amount', async () => {
+test('an amount is its own weak sign and quotes the whole amount; a request for money is money_request', async () => {
   const { readSignsWithEvidence } = await import('../../packages/matcher/index.js');
-  assert.equal(readSignsWithEvidence('We stopped a payment of $1,480 today').find((s) => s.id === 'money_request').evidence, '$1,480');
+  assert.equal(readSignsWithEvidence('We stopped a payment of $1,480 today').find((s) => s.id === 'amount').evidence, '$1,480');
   assert.equal(readSignsWithEvidence('Transferime $50.000 al alias').find((s) => s.id === 'money_request').evidence, 'Transferime');
 });
 
@@ -694,4 +694,15 @@ test('"introduzca la clave 708098 para validar su compra" (3-D Secure) delivers 
 test('downloading a document ("descarga tu factura") is not remote access; installing an app still is', () => {
   assert.ok(!readSigns('Agiliza tu tiempo! Ingresa aca [link] y descarga tu factura de forma rapida y sencilla').includes('remote_access'));
   assert.ok(readSigns('Descarga tu factura y luego instala AnyDesk').includes('remote_access'));
+});
+
+test('1.39.0: an amount alone is suspicious at most; with a link it is not a scam; asking for money still is', async () => {
+  for (const t of ['Coste único de 30€ con autoinstalación. Actualiza desde [link]', 'Motorola Edge en 12 cuotas de $74.167. Entrá a Tienda Tuenti [link]'])
+    assert.notEqual(m(t, { country: 'es' }).verdict, 'scam', t);
+  assert.equal(m('Leilão dos Correios: iPhones a partir de R$ 86,28', { country: 'br' }).verdict, 'suspicious');
+  assert.equal(m('Transfiere 300€ a esta cuenta hoy mismo para liberar tu paquete [link]', { country: 'es' }).verdict, 'scam');
+});
+test('1.39.0: a long expiry ("vencen en 180 días") is a date, not pressure; "vence en 24 horas" is pressure', () => {
+  assert.ok(!readSigns('Recargaste $ 18300.0, que vencen en 180 días. Ver Precios: [link]').includes('urgency'));
+  assert.ok(readSigns('Su cuenta vence en 24 horas, actualice ya: [link]').includes('urgency'));
 });
