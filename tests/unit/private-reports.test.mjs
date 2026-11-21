@@ -43,3 +43,7 @@ test("before review, the reporter's answer labels the report; 'not sure' alone d
   assert.equal(reportsToMessages([{ ...base, id: 'u', outcome: 'unsure' }]).length, 0);
   assert.equal(reportsToMessages([{ ...base, id: 'r', status: 'rejected', outcome: 'scam' }])[0].label, 'safe', 'the review wins');
 });
+
+test('a report whose country is unknown (xx) is not copied into the private set', () => {
+  assert.deepEqual(reportsToMessages([{ id: 'x', country: 'xx', status: 'reviewed', created_at: '2026-11-01T00:00:00Z', text: 'Su paquete está retenido, pague [link]' }]), []);
+});

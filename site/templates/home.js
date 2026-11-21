@@ -47,13 +47,15 @@ const MARK = sketch(701).path('M3 12 C 50 4, 120 4, 197 10 M20 16 C 70 11, 130 1
 /** The hero drawing with its notes in the interface language. */
 export const heroArt = (w) => HERO_ART.replace('${title}', w.title).replace('${stamp}', w.stamp)
   .replace('${n1}', w.n1).replace('${n2}', w.n2).replace('${n3a}', w.n3a).replace('${n3b}', w.n3b).replace('${n4a}', w.n4a).replace('${n4b}', w.n4b);
+/** "Report this message" under a check's result: the message goes to the report form, already filled in. */
+export const reportButton = (ui = 'en') => `<p class="pg-report"><a class="btn" href="/report/" data-report>${UI_ICONS.send}<span>${esc(t(ui, 'reportThis'))}</span></a></p>`;
 /** The response panel as HTML (build time, for the no-JS state; playground.js renders the same markup). */
 export function resultHtml(r, entriesById, signalsById, ui = 'en') {
   const sigs = r.signals.map((s) => `<li><code>${esc(s.id)}</code><span>${esc(pick(signalsById.get(s.id)?.label, ui) ?? s.id)}: <q>${esc(s.evidence)}</q></span></li>`).join('');
   const m = r.matches[0] && entriesById.get(r.matches[0].id);
   const match = m ? `${t(ui, 'matches')} <a href="${entryUrl(m)}">${esc(m.id)}</a>, ${L(m.name, 'en')}` : esc(t(ui, 'noMatch'));
   return `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(t(ui, VERDICT_KEY[r.verdict]))}</span><span class="noscore">${esc(t(ui, 'noScore'))}</span></div>
-<ul class="why">${sigs || `<li><code>no_signals</code><span>${esc(t(ui, 'noSignals'))}</span></li>`}</ul><p class="match">${match}</p>${r.warning ? `<p class="warning-note">${esc(t(ui, 'warningNote'))}</p>` : ''}`;
+<ul class="why">${sigs || `<li><code>no_signals</code><span>${esc(t(ui, 'noSignals'))}</span></li>`}</ul><p class="match">${match}</p>${r.warning ? `<p class="warning-note">${esc(t(ui, 'warningNote'))}</p>` : ''}${reportButton(ui)}`;
 }
 
 export function home({ repo, meta, matchMessage, lang = 'en' }) {
@@ -84,12 +86,11 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <div class="samples" role="group" aria-label="${esc(t(lang, 'pgSamples'))}">${SAMPLES.map((s, i) => `<button type="button" data-sample="${i}" data-text="${esc(s.text)}" aria-pressed="${i === 0}">${esc(labels[i])}</button>`).join('')}</div>
     <label class="sr" for="pg-text">${esc(t(lang, 'pgMessage'))}</label>
     <textarea id="pg-text" rows="5" maxlength="5000">${esc(SAMPLES[0].text)}</textarea>
-    <p class="pg-report"><a class="btn" id="pg-report" href="/report/">${UI_ICONS.send}<span>${esc(t(lang, 'reportThis'))}</span></a></p>
     <p class="curl">${esc(t(lang, 'pgSoon'))} <b>POST scamdb.dev/v1/isitascam</b> <button type="button" class="icon-btn api-btn" id="pg-api" aria-label="${esc(t(lang, 'pgApi'))}" title="${esc(t(lang, 'pgApi'))}">${UI_ICONS.send}</button></p>
     <p class="api-sum" id="pg-api-sum" aria-live="polite" hidden></p>
     <pre class="api-out" aria-live="polite" hidden></pre>
   </div>
-  <div class="pcol" aria-live="polite" id="pg-out" data-strings="${esc(JSON.stringify(strings))}" data-lang="${lang}">${resultHtml(sample, byId, signalsById, lang)}</div>
+  <div class="pcol" aria-live="polite" id="pg-out" data-report-button="${esc(reportButton(lang))}" data-strings="${esc(JSON.stringify(strings))}" data-lang="${lang}">${resultHtml(sample, byId, signalsById, lang)}</div>
 </section>
 
 ${route ? `<section class="route" aria-labelledby="route-h">

@@ -25,7 +25,7 @@ function render(r) {
   const match = m ? `${esc(S.matches)} <a href="/catalogue/${esc(m.id)}/">${esc(m.id)}</a>, <span lang="en">${esc(english(m.name))}</span>`
     : esc(S.noMatch);
   out.innerHTML = `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(S[r.verdict])}</span><span class="noscore">${esc(S.noScore)}</span></div>
-<ul class="why">${sigs}</ul><p class="match">${match}</p>${r.warning ? `<p class="warning-note">${esc(S.warningNote)}</p>` : ''}`;
+<ul class="why">${sigs}</ul><p class="match">${match}</p>${r.warning ? `<p class="warning-note">${esc(S.warningNote)}</p>` : ''}${out.dataset.reportButton ?? ''}`;
 }
 
 async function check() {
@@ -73,6 +73,7 @@ apiBtn?.addEventListener('click', async () => {
 });
 
 // "Report this message": hand the message to the report form through sessionStorage (never the URL), then go there.
-document.getElementById('pg-report')?.addEventListener('click', () => {
+out.addEventListener('click', (e) => {
+  if (!e.target.closest('[data-report]')) return;
   try { sessionStorage.setItem('scamdb:report', JSON.stringify({ text: box.value })); } catch { /* blocked: the form starts empty */ }
 });

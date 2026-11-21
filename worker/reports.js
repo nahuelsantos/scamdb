@@ -25,16 +25,22 @@ function optionalText(v, field, max) {
   return s || null;
 }
 
-/** Checks and normalises the body; throws a 400 naming the first bad field. */
-export function validateReport(b) {
+/** Country code for reports whose country is not known (none sent, and the request's country is not one we cover). */
+export const UNKNOWN_COUNTRY = 'xx';
+
+/** Checks and normalises the body; throws a 400 naming the first bad field. Only the message (or what happened) is
+ * required: a missing country falls back to `guess` (the request's country, from Cloudflare) when we cover it. */
+export function validateReport(b, guess = null) {
   const text = optionalText(b.text, 'text', 5000);
   const whatHappened = optionalText(b.whatHappened, 'whatHappened', 2000);
   if (!text && !whatHappened) throw invalid('text', 'send the message or say what happened (text or whatHappened)');
-  if (!COUNTRIES.includes(b.country)) throw invalid('country', `one of ${COUNTRIES.join(', ')}`);
+  const given = b.country === undefined || b.country === null || b.country === '' ? null : b.country;
+  if (given !== null && !COUNTRIES.includes(given)) throw invalid('country', `one of ${COUNTRIES.join(', ')}`);
+  const fallback = typeof guess === 'string' && COUNTRIES.includes(guess.toLowerCase()) ? guess.toLowerCase() : UNKNOWN_COUNTRY;
   if (b.channel !== undefined && b.channel !== null && !CHANNELS.includes(b.channel)) throw invalid('channel', `one of ${CHANNELS.join(', ')}`);
   if (b.outcome !== undefined && b.outcome !== null && b.outcome !== '' && !OUTCOMES.includes(b.outcome)) throw invalid('outcome', `one of ${OUTCOMES.join(', ')}`);
   return {
-    text, whatHappened, country: b.country, channel: b.channel ?? null,
+    text, whatHappened, country: given ?? fallback, countryGuessed: given === null, channel: b.channel ?? null,
     contact: optionalText(b.contact, 'contact', 200),
     source: optionalText(b.source, 'source', 40) ?? 'api',
     // What it turned out to be, in the reporter's words: the label that makes a message useful for accuracy.
@@ -50,7 +56,7 @@ export async function handleReport(request, env) {
   const multipart = /^multipart\/form-data/i.test(request.headers.get('content-type') ?? '');
   const { body, file } = multipart ? await readForm(request, { fields: FORM_FIELDS }) : { body: await readJson(request), file: null };
   if (file && file.kind !== 'image') throw invalid('audio', 'reports take a screenshot (image), not audio');
-  const report = validateReport(file ? { ...body, text: body.text ?? '-' } : body);
+  const report = validateReport(file ? { ...body, text: body.text ?? '-' } : body, request.cf?.country ?? null);
   const ip = request.headers.get('cf-connecting-ip') ?? '';
   const key = (await authKey(request, env)) ?? (await sessionKey(request, env));
   if (file && !key) throw new HttpError(401, 'key_required', 'Screenshots need a free API key (scamdb.dev/account). Text reports work without one.');
@@ -104,8 +110,9 @@ export async function handleReport(request, env) {
 async function tagReport(env, text, country) {
   try {
     const [catalogue, brands] = await Promise.all([loadCatalogue(env), loadBrands(env)]);
-    const scamId = matchMessage(text, catalogue.entries, { country }).matches[0]?.id ?? null;
-    const named = brandsIn(text, brands, country);
+    const known = country === UNKNOWN_COUNTRY ? undefined : country;
+    const scamId = matchMessage(text, catalogue.entries, { country: known }).matches[0]?.id ?? null;
+    const named = brandsIn(text, brands, known);
     return { scamId, brands: named.length ? named.join(',') : null };
   } catch {
     return { scamId: null, brands: null };
