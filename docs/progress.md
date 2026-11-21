@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: New fusion weights, fitted on real messages
+
+- Refit on the 343 real messages (plus the 197 written ones), with the saved Workers AI answers; `hard` and `signs`
+  now weigh 0, and the `scam` cut-off is 0.85 (was 0.70). Report: `eval/report-fusion-refit-2026-11-21.md`.
+- Real set: genuine called "scam" 13.3% (14/105) → 1.0% in-sample, 1.9% cross-validated, 2.9% one country held out.
+  Scams flagged 95.0% → 95.8%. Scams called "scam" 83.6% → about 55%: the rest show as "suspicious", still flagged.
+  The owner chose this trade-off (fewer false alarms first).
+- Written set: genuine called "scam" stays 0/90; scams called "scam" 93.5% → 72.0%. Private set: genuine called
+  "scam" stays 0/27.
+
 ## 2026-11-21: Collector sends retry; Reddit off again
 
 - The first full home run read every source (Phishing-Radar 5 of 5, Safeonweb and INCIBE answered) but sending to
