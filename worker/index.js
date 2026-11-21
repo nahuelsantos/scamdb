@@ -8,7 +8,7 @@ import { handleKeys } from './keys.js';
 import { handleIsItAScam } from './isitascam.js';
 import { feedTrends, feedBrands, publicTrends } from './feed.js';
 import { authKey } from './keys.js';
-import { handleCollect, handleReview } from './review.js';
+import { handleCollect, handleCollectRun, handleReview, handleReviewRuns } from './review.js';
 
 // Secrets each group of routes needs. Missing or too-short secrets close the route (503) instead of running insecurely.
 const NEEDS = {
@@ -34,6 +34,8 @@ const ROUTES = [
   ['DELETE', /^\/v1\/keys\/me$/, handleKeys, 'account'],
   // Source review queue (docs/sources.md): the home-lab collector writes, the owner reviews. Not part of the public API.
   ['POST', /^\/v1\/collect$/, handleCollect, 'collect'],
+  ['POST', /^\/v1\/collect\/run$/, handleCollectRun, 'collect'],
+  ['GET', /^\/v1\/review\/runs$/, handleReviewRuns, 'review'],
   ['GET', /^\/v1\/review\/items$/, handleReview, 'review'],
   ['POST', /^\/v1\/review\/items\/\d+$/, handleReview, 'review'],
   ['GET', /^\/auth\/github$/, authStart, 'account'],

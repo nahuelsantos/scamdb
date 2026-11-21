@@ -324,3 +324,12 @@ test('the review page is built, kept out of search engines and not linked from t
   assert.ok(!page('index.html').includes('/review/'));
   rmSync(dir, { recursive: true });
 });
+test('the review page gets the sources list for its Sources tab, with the three tabs', () => {
+  const { dir, page } = build();
+  const reg = JSON.parse(page('review/sources.json'));
+  assert.ok(reg.sources.some((s) => s.id === 'nl-fraudehelpdesk' && s.allowed));
+  assert.equal(reg.countries.ww, 'Worldwide');
+  const html = page('review/index.html');
+  for (const v of ['queue', 'sources', 'runs']) assert.ok(html.includes(`data-view="${v}"`), v);
+  rmSync(dir, { recursive: true });
+});

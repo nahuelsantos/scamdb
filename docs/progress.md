@@ -2,6 +2,13 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Review page: Sources and Runs tabs, behind Cloudflare Access
+
+- The review page now has three tabs: Queue (as before), Sources (every source in the registry, on or off and why,
+  with its last result and a Failing filter) and Runs (the last 14 runs, per source). No need to read plunder's log.
+- The collector reports each run to `POST /v1/collect/run`; summaries live in a new table (migration `0009`), 60 days.
+- `/review/*` and `/v1/review/*` are behind Cloudflare Access (owner only), on top of the GitHub check.
+
 ## 2026-11-21: 47 more sources checked; five message feeds switched on
 
 - The owner's research list (47 sources, 101 scams, 18 Nov 2026) is saved as `data/sources.csv` and

@@ -2,6 +2,7 @@ import { test, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { makeWorker, SCHEMA } from './harness.mjs';
 const SCHEMA_WITHOUT_QUEUE = SCHEMA.slice(0, SCHEMA.indexOf('CREATE TABLE source_items'));
+const SCHEMA_WITHOUT_RUNS = SCHEMA.slice(0, SCHEMA.indexOf('CREATE TABLE collector_runs'));
 import { cleanup } from '../../worker/cleanup.js';
 
 const w = await makeWorker();
@@ -49,4 +50,14 @@ test('a skipped source item loses its copied text after 30 days but keeps its li
 test('the cleanup still runs on a database without the review queue', async () => {
   const bare = await makeWorker({ schema: SCHEMA_WITHOUT_QUEUE });
   try { assert.equal((await cleanup(bare.db, NOW)).sources, null); } finally { await bare.dispose(); }
+});
+test('collector run summaries are deleted after 60 days', async () => {
+  const ins = (age) => w.db.prepare("INSERT INTO collector_runs (received_at, ok, sources) VALUES (?, 1, '[]')").bind(daysAgo(age).toISOString()).run();
+  await ins(61); await ins(5);
+  await cleanup(w.db, NOW);
+  assert.equal((await w.db.prepare('SELECT count(*) AS n FROM collector_runs').first()).n, 1);
+});
+test('the queue cleanup still runs on a database without the runs table', async () => {
+  const bare = await makeWorker({ schema: SCHEMA_WITHOUT_RUNS });
+  try { assert.equal((await cleanup(bare.db, NOW)).sources, 0); } finally { await bare.dispose(); }
 });

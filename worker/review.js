@@ -2,6 +2,9 @@
 //   POST /v1/collect            the home-lab collector adds candidates (Bearer COLLECTOR_TOKEN)
 //   GET  /v1/review/items       the owner's review page lists them (GitHub sign-in, reviewers only)
 //   POST /v1/review/items/:id   ... and marks one useful, skip or back to new
+//   POST /v1/collect/run        the collector reports how its run went (Bearer COLLECTOR_TOKEN)
+//   GET  /v1/review/runs        the review page's Runs and Sources tabs read the last runs
+// /review/* and /v1/review/* also sit behind Cloudflare Access (owner only); /v1/collect* does not (plunder has no browser).
 import { HttpError, json, readJson } from './http.js';
 import { sessionFrom } from './session.js';
 
@@ -23,9 +26,13 @@ const MAX_ITEMS = 50;
 const str = (v, max) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : null);
 const iso = (v) => (typeof v === 'string' && !Number.isNaN(Date.parse(v)) ? new Date(v).toISOString() : null);
 
-export async function handleCollect(request, env) {
+async function collectorOnly(request, env) {
   const m = (request.headers.get('authorization') ?? '').match(/^Bearer (\S+)$/);
   if (!m || !(await same(m[1], env.COLLECTOR_TOKEN))) throw new HttpError(401, 'bad_token', 'The collector token is missing or wrong.');
+}
+
+export async function handleCollect(request, env) {
+  await collectorOnly(request, env);
   const body = await readJson(request, 400000);
   const items = Array.isArray(body.items) ? body.items : null;
   if (!items || items.length > MAX_ITEMS) throw new HttpError(400, 'bad_items', `Send { items: [...] } with at most ${MAX_ITEMS} items.`);
@@ -76,4 +83,37 @@ export async function handleReview(request, env) {
     .bind(body.status, note, body.status === 'new' ? null : new Date().toISOString(), id).run();
   if (!r.meta.changes) throw new HttpError(404, 'not_found', 'No such item.');
   return json({ id, status: body.status });
+}
+
+const RUNS_SHOWN = 14;
+const int = (v) => (Number.isFinite(v) && v >= 0 ? Math.min(Math.round(v), 1e6) : 0);
+
+/** POST /v1/collect/run: { startedAt, host, ok, candidates, added, known, error, sources: [{ id, ok, kept, total, error }] } */
+export async function handleCollectRun(request, env) {
+  await collectorOnly(request, env);
+  const b = await readJson(request, 40000);
+  if (!Array.isArray(b.sources) || b.sources.length > 200) throw new HttpError(400, 'bad_run', 'Send { sources: [...] } with at most 200 sources.');
+  const sources = b.sources.map((x) => {
+    const id = str(x?.id, 64);
+    if (!id || !/^[a-z]{2}-[a-z0-9-]+$/.test(id)) throw new HttpError(400, 'bad_run', 'Every source needs its registry id.');
+    return { id, ok: x.ok === true, kept: int(x.kept), total: int(x.total), error: str(x.error, 200) };
+  });
+  await env.DB.prepare(`INSERT INTO collector_runs (received_at, started_at, host, ok, candidates, added, known, error, sources)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`).bind(new Date().toISOString(), iso(b.startedAt), str(b.host, 64), b.ok === true ? 1 : 0,
+    int(b.candidates), int(b.added), int(b.known), str(b.error, 300), JSON.stringify(sources)).run();
+  return json({ stored: true }, 201);
+}
+
+/** GET /v1/review/runs: the last runs, newest first. */
+export async function handleReviewRuns(request, env) {
+  await reviewer(request, env);
+  let results;
+  try {
+    ({ results } = await env.DB.prepare(`SELECT id, received_at, started_at, host, ok, candidates, added, known, error, sources
+      FROM collector_runs ORDER BY received_at DESC, id DESC LIMIT ?`).bind(RUNS_SHOWN).all());
+  } catch (e) {
+    if (/no such table/i.test(String(e?.message))) results = []; // migration 0009 not applied yet
+    else throw e;
+  }
+  return json({ runs: results.map((r) => ({ ...r, ok: r.ok === 1, sources: JSON.parse(r.sources) })) }, 200, { 'cache-control': 'no-store' });
 }

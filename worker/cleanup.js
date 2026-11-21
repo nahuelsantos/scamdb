@@ -2,7 +2,8 @@
 // key and the extracted indicators (phone numbers, domains) are deleted; the redacted message text, country, channel,
 // outcome and matched pattern are kept, because they are the labelled data accuracy needs. A report with no message
 // text has nothing left to keep and is deleted. Abuse counters and check fingerprints: 2 days. Usage: 400 days.
-// Source review queue: a skipped item loses its copied text after 30 days (its link stays, so it is not collected again).
+// Source review queue: a skipped item loses its copied text after 30 days (its link stays, so it is not collected again);
+// collector run summaries are kept 60 days.
 const DAY = 86400000;
 const before = (now, days) => new Date(now.getTime() - days * DAY);
 
@@ -20,5 +21,6 @@ export async function cleanup(db, now = new Date()) {
   try { // separate, so a database without the review queue (migration 0008 not applied yet) still runs the rest
     sources = (await db.prepare("UPDATE source_items SET text = NULL WHERE status = 'skip' AND text IS NOT NULL AND reviewed_at < ?").bind(before(now, 30).toISOString()).run()).meta.changes;
   } catch { sources = null; }
+  try { await db.prepare('DELETE FROM collector_runs WHERE received_at < ?').bind(before(now, 60).toISOString()).run(); } catch { /* migration 0009 not applied yet */ }
   return { reports: r.meta.changes, anonymised: a.meta.changes, hits: h.meta.changes, usage: u.meta.changes, prints: p.meta.changes, indicators: i.meta.changes, sources };
 }

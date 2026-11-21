@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql', '0005_report_tags.sql', '0006_feed_access.sql', '0007_report_outcome.sql', '0008_source_items.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
+export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql', '0005_report_tags.sql', '0006_feed_access.sql', '0007_report_outcome.sql', '0008_source_items.sql', '0009_collector_runs.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
 
 /** Default outbound stub: Turnstile token "ok" passes; GitHub answers a fixed user. */
 export async function defaultFetch(request) {
