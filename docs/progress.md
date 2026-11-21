@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: 47 more sources checked; five message feeds switched on
+
+- The owner's research list (47 sources, 101 scams, 18 Nov 2026) is saved as `data/sources.csv` and
+  `data/scams.csv`, and every source is now in `sources/registry.json` with what it is good for (`use`).
+- Switched on (confirmed feeds that describe scam messages): Commissariato di P.S. (IT), Fraudehelpdesk alerts (NL),
+  Scamwatch (AU), FBI IC3 announcements (US); Safeonweb (BE) from home, to confirm on the first run.
+- Most others are regulator blacklists of firms (kept off: they name firms, not messages) or have no feed. The best
+  two, Verbraucherzentrale's Phishing-Radar (DE) and INCIBE alerts (ES), need a page reader.
+- The collector filters Italian, Dutch, German and Portuguese items too.
+
 ## 2026-11-21: Sources registry, home-lab collector and a review page
 
 - `sources/registry.json` lists trustworthy places that publish real scam messages, French first: r/arnaques,

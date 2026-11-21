@@ -18,6 +18,25 @@ its source. That step stays manual and reviewed, like every other change to the 
 | Review queue | D1 table `source_items` (migration `0008_source_items.sql`) | One row per link; a link already in the queue is never added twice. |
 | Review page | `https://scamdb.dev/review/` (not linked, `noindex`) | Sign in with GitHub; only reviewers (the owner's GitHub id, or `REVIEWER_GITHUB_IDS`) see it. Tabs New, Useful and Skipped; one tap marks an item. |
 
+## The research list (`data/sources.csv`, `data/scams.csv`)
+
+The owner's research of 18 Nov 2026: 47 official and public-interest sources in the EU, 14 countries and one worldwide
+database (IOSCO I-SCAN), and 101 documented scams (scam types with the latest official figures, plus examples of firms
+named in official warnings). The CSVs are kept as given; the loader ignores files in `data/`, so they never reach the
+catalogue or the API.
+
+- Every source is in the registry with a `use`. Only sources that publish **messages** (real scam messages or close
+  descriptions) and have a feed we confirmed are switched on. On 2026-11-21 that was Commissariato di P.S. (IT),
+  Fraudehelpdesk alerts (NL), Scamwatch (AU), FBI IC3 announcements (US) and Safeonweb (BE, home only, to confirm).
+- The two most valuable message sources have no feed: Verbraucherzentrale's Phishing-Radar (DE: real phishing
+  messages word for word) and INCIBE's citizen alerts (ES). They need a page reader, which is the next step.
+- Lists of firms and websites (regulator blacklists) are never sent to the review queue. They could later help check
+  a domain or a firm in a message. A listing means "not authorised in that jurisdiction", not a court finding.
+- `scams.csv` is research for country imports: figures to rank which scams matter most, and leads to primary sources.
+  About a third of its links are news articles; an import uses the official source where one can be verified. Its
+  named firms are not imported as scams, and Mexico's CONDUSEF alerts name the impersonated (legitimate) lenders, so
+  they are never listed.
+
 ## Retention
 
 A skipped item loses its copied text after 30 days; its link stays so it is not collected again. Useful and new items

@@ -17,7 +17,7 @@ test('the registry is valid and every source says why it is trusted', () => {
 test('the registry check catches the usual mistakes', () => {
   const bad = { sources: [{ id: 'fr-x', country: 'es', lang: 'fr', kind: 'blog', name: 'x', site: 'http://x', feed: null, runs: 'mars', allowed: true }] };
   const p = checkRegistry(bad).join('\n');
-  for (const want of ['country', 'kind', 'https site', 'runs', 'needs a feed', 'terms']) assert.match(p, new RegExp(want));
+  for (const want of ['country', 'kind', 'https site', 'runs', 'use must', 'needs a feed', 'terms']) assert.match(p, new RegExp(want));
 });
 test('Reddit entries come out as plain text, without the author', () => {
   const [it] = parseItems(REDDIT);
@@ -55,4 +55,16 @@ test('home runs read home and any sources; disabled sources never run', () => {
   assert.ok(home.includes('fr-cybermalveillance-alertes') && home.includes('fr-franceinfo-vrai-ou-fake'));
   assert.ok(!cloud.includes('fr-cybermalveillance-alertes') && cloud.includes('fr-franceinfo-vrai-ou-fake'));
   assert.ok(!home.includes('fr-signal-arnaques') && !home.includes('fr-reddit-arnaques'));
+});
+test('the 2026-11-18 research list is in the registry, and only confirmed feeds are switched on', () => {
+  const ids = new Set(registry.sources.map((s) => s.id));
+  for (const id of ['ww-iosco-iscan', 'de-vz-phishingradar', 'es-incibe-avisos', 'nl-fraudehelpdesk', 'au-scamwatch', 'mx-condusef-sipres']) assert.ok(ids.has(id), id);
+  for (const s of registry.sources.filter((x) => x.use === 'blacklist' || x.use === 'registry')) assert.equal(s.allowed, false, `${s.id}: lists of firms never go to the review queue`);
+  for (const s of registry.sources.filter((x) => x.allowed)) assert.ok(s.feed, s.id);
+});
+test('relevance words exist for Italian, Dutch, German and Portuguese', () => {
+  assert.ok(score({ title: 'FALSI SMS A NOME NEXI: NON FARTI INGANNARE', text: '' }, 'it') >= 3);
+  assert.ok(score({ title: 'Valse sms uit naam van apotheek', text: '' }, 'nl') >= 3);
+  assert.ok(score({ title: 'Phishing-Mail im Namen der Sparkasse', text: '' }, 'de') >= 3);
+  assert.ok(score({ title: 'Golpe do falso funcionário do banco', text: '' }, 'pt') >= 3);
 });
