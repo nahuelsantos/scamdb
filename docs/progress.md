@@ -2,6 +2,14 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Collector sends retry; Reddit off again
+
+- The first full home run read every source (Phishing-Radar 5 of 5, Safeonweb and INCIBE answered) but sending to
+  scamdb failed with a network error after ~3 minutes of reading. Sending now retries 3 times on a fresh connection
+  and logs the network cause.
+- Reddit answered 404 to r/arnaques and to every search feed, then 429: it no longer serves feeds to readers without
+  an account. All Reddit sources are off until there is a Reddit app (OAuth).
+
 ## 2026-11-21: Page readers for Phishing-Radar and INCIBE; On/Off switches on the review page
 
 - Phishing-Radar (Verbraucherzentrale, DE) and INCIBE's citizen alerts (ES) have no feed, so the collector now reads

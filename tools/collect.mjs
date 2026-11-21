@@ -75,16 +75,36 @@ for (const s of sourcesFor(registry, where, only)) {
   } catch (e) { health.push({ id: s.id, ok: false, kept: 0, total: 0, error: e.message }); }
 }
 
+// Sends to scamdb, retrying network failures and 5xx answers (3 tries, 5 s then 20 s apart). The run takes minutes, so a
+// connection opened at the start (for the switches) may have been dropped by a home router or Cloudflare by now; a
+// retry gets a fresh one. Safe to repeat: the queue never adds a link twice.
+async function postScamdb(url, payload) {
+  let last;
+  for (const wait of [0, 5000, 20000]) {
+    if (wait) await sleep(wait);
+    try {
+      const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}`, 'user-agent': UA, connection: 'close' },
+        body: JSON.stringify(payload), signal: AbortSignal.timeout(30000) });
+      const body = await r.json().catch(() => ({}));
+      if (r.ok) return body;
+      last = new Error(`HTTP ${r.status} ${body.error ?? ''}`.trim());
+      if (r.status < 500) throw last; // a refusal (bad token, bad data) will not change on a retry
+    } catch (e) {
+      if (e === last) throw e;
+      const cause = e.cause?.code ?? e.cause?.message;
+      last = new Error(cause ? `${e.message} (${cause})` : e.message);
+    }
+  }
+  throw last;
+}
+
 let added = 0, known = 0, sendError = null;
 if (dry) {
   for (const c of found) console.log(`${c.source}\t${c.score}\t${c.publishedAt?.slice(0, 10) ?? '?'}\t${c.title}\n\t${c.url}`);
 } else {
   for (let i = 0; i < found.length && !sendError; i += BATCH) {
     try {
-      const r = await fetch(endpoint, { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}`, 'user-agent': UA },
-        body: JSON.stringify({ items: found.slice(i, i + BATCH) }), signal: AbortSignal.timeout(30000) });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok) throw new Error(`HTTP ${r.status} ${body.error ?? ''}`.trim());
+      const body = await postScamdb(endpoint, { items: found.slice(i, i + BATCH) });
       added += body.added ?? 0; known += body.known ?? 0;
     } catch (e) { sendError = e.message; }
   }
@@ -96,11 +116,7 @@ let reportError = null;
 if (!dry) {
   const run = { startedAt, host: process.env.SCAMDB_COLLECTOR_HOST ?? where, ok: !sendError && !allFailed, candidates: found.length, added, known,
     error: sendError ? `sending failed: ${sendError}` : allFailed ? 'every source failed' : null, sources: health };
-  try {
-    const r = await fetch(`${endpoint.replace(/\/+$/, '')}/run`, { method: 'POST',
-      headers: { 'content-type': 'application/json', authorization: `Bearer ${token}`, 'user-agent': UA }, body: JSON.stringify(run), signal: AbortSignal.timeout(30000) });
-    if (!r.ok) reportError = `HTTP ${r.status}`;
-  } catch (e) { reportError = e.message; }
+  try { await postScamdb(`${endpoint.replace(/\/+$/, '')}/run`, run); } catch (e) { reportError = e.message; }
 }
 
 console.log(`scamdb collector (${where}${dry ? ', dry run' : ''}): ${found.length} candidates${dry ? '' : `, ${added} new in the review queue, ${known} already there`}`);
