@@ -36,7 +36,7 @@ jobs:
           path: |
             signals.json
             signals.md
-          retention-days: 90
+          retention-days: 15 # the repository default since 2026-11-21 (account storage limit); the weekly issue is the lasting record
       - name: Weekly signals issue
         if: github.event_name == 'schedule' || inputs.issue
         env:

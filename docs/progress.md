@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: 47 more sources checked; five message feeds switched on
+
+- The owner's research list (47 sources, 101 scams, 18 Nov 2026) is saved as `data/sources.csv` and
+  `data/scams.csv`, and every source is now in `sources/registry.json` with what it is good for (`use`).
+- Switched on (confirmed feeds that describe scam messages): Commissariato di P.S. (IT), Fraudehelpdesk alerts (NL),
+  Scamwatch (AU), FBI IC3 announcements (US); Safeonweb (BE) from home, to confirm on the first run.
+- Most others are regulator blacklists of firms (kept off: they name firms, not messages) or have no feed. The best
+  two, Verbraucherzentrale's Phishing-Radar (DE) and INCIBE alerts (ES), need a page reader.
+- The collector filters Italian, Dutch, German and Portuguese items too.
+
 ## 2026-11-21: Sources registry, home-lab collector and a review page
 
 - `sources/registry.json` lists trustworthy places that publish real scam messages, French first: r/arnaques,
@@ -561,7 +571,7 @@ catches 12 of 12 scams; one false "scam" left in pt (a genuine MB WAY receipt th
 - **What it does:** keeps only links, dates and publishers, de-duplicates, classifies each item against the
   catalogue (matcher plus brands), and builds signals: official warnings, possibly-new clusters (3 or more
   publishers, grouped by word overlap) and per-entry counts.
-- **`.github/workflows/discover.yml`:** runs daily at 05:23 UTC and keeps results as a 90-day artifact. On Mondays
+- **`.github/workflows/discover.yml`:** runs daily at 05:23 UTC and keeps results as an artifact for 15 days (the repository default since 2026-11-21; the weekly issue is the lasting record). On Mondays
   (or by hand) it opens a "Scam signals <week>" issue, with links, counts and our own labels, never copied titles.
 - **The import skill** now reads the latest signals issue first, as leads only. It still cites only sources it
   reads itself.
