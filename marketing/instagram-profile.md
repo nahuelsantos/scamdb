@@ -44,17 +44,19 @@ Got a strange message, scam or genuine? Send it to us.
 **Contact options:** only add an email if it's a scamdb address (for example hello@scamdb.dev), never your personal
 one. **Never add a phone number.** No action buttons.
 
-## 3. Message settings (Settings → Messages and story replies)
+## 3. Answering DMs: saved replies
 
-People will DM screenshots of scams. That's good, but DMs aren't private reports. Set up **FAQs** (Professional
-dashboard → *Frequently asked questions*, or *Conversation starters*) so people get the right answer instantly:
+People will DM screenshots of scams. That's good, but DMs aren't private reports. Instagram's automatic FAQ isn't
+available to every account (it depends on account type, region and app version; it wasn't in the owner's app), so
+use **saved replies**: open a DM, tap the ⋯ or + icon next to the message box → *Saved replies* (or search "saved
+replies" in Settings). Then type the shortcut while answering.
 
-| Question | Answer |
+| Shortcut | Reply |
 |---|---|
-| Is this message a scam? | Paste it on scamdb.dev: it checks it against about 1,200 known scam scripts, in your browser. If it says "not recognised", that isn't a promise it's safe. |
-| How do I send you a scam? | Use scamdb.dev/report. Just paste the message or add a screenshot and press send. Personal data is removed and reports stay private. |
-| I lost money. What do I do? | Call your bank or card company right away, using the number on your card. In the US, also report it at reportfraud.ftc.gov. It happens to careful people too. |
-| Can you get my money back? | No, and nobody who contacts you promising to recover it can either. "Recovery" offers are a scam of their own. |
+| `/check` | Paste it on scamdb.dev: it checks it against about 1,200 known scam scripts, in your browser. If it says "not recognised", that isn't a promise it's safe. |
+| `/report` | Thanks for sending this. Could you also add it at scamdb.dev/report? Just paste the message or add a screenshot and press send. Personal data is removed and reports stay private. |
+| `/lost` | I'm sorry. Call your bank or card company right away, using the number on your card. In the US, also report it at reportfraud.ftc.gov. It happens to careful people too. |
+| `/recovery` | Nobody can get your money back for a fee, including anyone who contacts you offering to. "Recovery" offers are a scam of their own. |
 
 ## 4. Comment filters (Settings → Hidden words)
 
