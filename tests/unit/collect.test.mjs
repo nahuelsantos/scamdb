@@ -52,7 +52,7 @@ test('the score counts whole words only', () => {
 test('home runs read home and any sources; disabled sources never run', () => {
   const home = sourcesFor(registry, 'home').map((s) => s.id);
   const cloud = sourcesFor(registry, 'cloud').map((s) => s.id);
-  assert.ok(home.includes('fr-reddit-arnaques') && home.includes('fr-franceinfo-vrai-ou-fake'));
-  assert.ok(!cloud.includes('fr-reddit-arnaques') && cloud.includes('fr-franceinfo-vrai-ou-fake'));
-  assert.ok(!home.includes('fr-signal-arnaques'));
+  assert.ok(home.includes('fr-cybermalveillance-alertes') && home.includes('fr-franceinfo-vrai-ou-fake'));
+  assert.ok(!cloud.includes('fr-cybermalveillance-alertes') && cloud.includes('fr-franceinfo-vrai-ou-fake'));
+  assert.ok(!home.includes('fr-signal-arnaques') && !home.includes('fr-reddit-arnaques'));
 });

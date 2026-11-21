@@ -11,10 +11,10 @@
       "feed": "https://www.reddit.com/r/arnaques/new/.rss",
       "runs": "home",
       "filter": false,
-      "allowed": true,
+      "allowed": false,
       "terms": "Public RSS. The post title and text are kept privately for review and never republished; the author's name is dropped.",
       "why": "People post the scam messages they received, often word for word or as screenshots, and others confirm them. Not checked by an institution: every item is reviewed before use.",
-      "note": "Reddit refuses cloud servers, so the name could not be checked from the cloud. The first home run's summary says whether the feed answers."
+      "note": "Off: the first home run (2026-11-21) got HTTP 404 from Reddit, so r/arnaques does not exist under this name. Switch back on with the right subreddit."
     },
     {
       "id": "fr-cybermalveillance-alertes",
@@ -78,9 +78,10 @@
       "site": "https://www.ameli.fr/",
       "feed": "https://www.ameli.fr/rss.xml",
       "runs": "home",
-      "allowed": true,
+      "allowed": false,
       "terms": "French public body. Title, summary and link kept for review.",
-      "why": "The health insurer most impersonated in French scam texts (carte Vitale); it publishes warnings about fake messages."
+      "why": "The health insurer most impersonated in French scam texts (carte Vitale); it publishes warnings about fake messages.",
+      "note": "Off: the first home run (2026-11-21) got HTTP 404 for this feed address. Needs the current feed URL."
     },
     {
       "id": "fr-signal-arnaques",
