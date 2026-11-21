@@ -21,7 +21,7 @@ This is a real one, as published by the FBI. Notice the four signs: a toll progr
 
 If you get one: don’t tap. Go to your toll program’s website by typing it yourself, or call the number on your toll account. If you already paid, call your card issuer.
 
-Paste any text on scamdb.dev (link in bio) to see if it matches a known scam.
+Got a toll text, fake or real? Send it to us at scamdb.dev/report (link in bio). Every one helps the check tell them apart. Reports stay private.
 
 #scamalert #textscam #fraudprevention #scamawareness
 ```
@@ -49,3 +49,11 @@ https://scamdb.dev/catalogue/us/toll-text/
 **Alt text (03-x.png):** A real scam text, as published by the FBI: “(State Toll Service Name): We’ve noticed an
 outstanding toll amount of $12.51 on your record. To avoid a late fee of $50.00, visit [link] to settle your balance.”
 Four signs: a toll program you know, too small to question, a threat on top, a link that wants your card.
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
+```

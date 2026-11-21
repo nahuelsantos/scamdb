@@ -17,7 +17,7 @@ Real or scam? One of these bank texts is a real scam text that was quoted in the
 
 The answer has an honest twist: from the text alone, you can’t always tell. What gives the scam away is what happens next.
 
-Save this for the next time your phone says “fraud alert”.
+Save this for the next time your phone says “fraud alert”. Got one, real or fake? Send it to scamdb.dev/report (link in bio). Genuine alerts from your bank help as much as scams. Reports stay private.
 
 #scamalert #bankfraud #scamawareness #fraudprevention
 ```
@@ -53,4 +53,12 @@ B: a real scam text, quoted by ABC7 in 2021 (bank name removed).
 The honest part: both ask you to reply. The scam starts after, when a “fraud specialist” calls for a code or to move your money.
 
 Don’t reply to either. Call the number on your card.
+```
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
 ```

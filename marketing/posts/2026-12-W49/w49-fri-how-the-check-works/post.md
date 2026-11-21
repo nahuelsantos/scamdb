@@ -17,7 +17,7 @@ You paste a message. scamdb compares it with 1,199 documented scams from 76 coun
 
 What it can’t do: it only knows scams that have already been documented. If it says “not recognised”, that isn’t a promise the message is safe. New scams appear every week. When in doubt, contact the company yourself, using a number or website you already trust.
 
-Got one we didn’t recognise? Report it at scamdb.dev/report so we can add it. Reports stay private.
+This is where you come in. Send us the messages you get at scamdb.dev/report: the scams, and the genuine ones from your bank, your delivery company or your doctor. Genuine messages are what teach the check not to raise false alarms. Reports stay private.
 
 Free, link in bio.
 
@@ -51,4 +51,12 @@ countries. The check runs in your browser.”
 The same check is a free API, and the whole catalogue is open data (CC BY 4.0).
 
 https://scamdb.dev/docs
+```
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
 ```

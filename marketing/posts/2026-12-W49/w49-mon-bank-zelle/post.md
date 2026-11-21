@@ -21,7 +21,9 @@ Swipe for the real text (as published by the FBI), the script and what to do.
 
 The one thing to remember: your bank will never ask you to move money to protect it.
 
-Paste a message on scamdb.dev (link in bio) to check it. Share this with someone who banks on their phone.
+Got a message like this, scam or genuine? Send it to us at scamdb.dev/report (link in bio). Real messages from your bank or delivery company help too: they teach the check what genuine looks like. Reports stay private.
+
+Share this with someone who banks on their phone.
 
 #scamalert #bankfraud #fraudprevention #scamawareness #zelle
 ```
@@ -38,7 +40,7 @@ Paste a message on scamdb.dev (link in bio) to check it. Share this with someone
    account.
 4. What to do: your bank will never ask you to move money to protect it; never read out a code; hang up and call the
    number on the back of your card; if you sent money, tell your bank right away.
-5. Got a message like this? Paste it on scamdb.dev.
+5. Got a message like this? Send it to scamdb.dev/report. Scam or genuine, both help. Reports stay private.
 
 ## X
 
@@ -56,3 +58,11 @@ https://scamdb.dev/catalogue/us/bank-fraud-alert-zelle/
 Attempt an Instant Payment in the amount of $5,000.00? REPLY YES or NO or 1 To STOP ALERTS”, then “Our fraud
 specialist will be contacting you shortly”. Three signs: looks like your bank, a payment you didn’t make, then a call
 from “fraud”.
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
+```

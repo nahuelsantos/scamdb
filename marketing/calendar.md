@@ -40,6 +40,15 @@ today.
 - **On hold** (owner's request, to save usage) until the owner picks it up again. Next steps: feedback on the
   test, scripts for video 1, the owner records, then phase 2 posts.
 
+## Change of focus (2026-11-21): reports first
+
+The owner's go-to-market plan puts **getting people to send messages** (scams *and* genuine ones) first. So in every
+post the main call to action is now **"Send it to scamdb.dev/report"**, and "check a message" comes second. Every
+X post has a ready-made reply with the ask.
+
+**Instagram bio:** add `https://scamdb.dev/report` as a second link (Edit profile → Links → Add external link), titled
+"Send us a message". Keep `https://scamdb.dev` as the first link.
+
 ## Notes for the owner
 
 These are things I found while drafting. I didn't change the site, the API or the catalogue.

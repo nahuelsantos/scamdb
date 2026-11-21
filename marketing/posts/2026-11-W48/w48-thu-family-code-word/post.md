@@ -20,6 +20,8 @@ If a call like this comes: ask for the word. Or hang up and call your grandchild
 
 Swipe for how the call usually goes (an example we wrote, based on FBI and FTC warnings).
 
+Has your family had a call like this? Tell us at scamdb.dev/report (link in bio). Reports stay private.
+
 Happy Thanksgiving. Share this with the family group chat.
 
 #scamawareness #elderfraud #fraudprevention #scamalert
@@ -47,3 +49,11 @@ https://scamdb.dev/catalogue/us/family-emergency-call/
 
 **Alt text (03-x.png):** Hand-drawn drawing of two people. “Pick a family code word. A ‘grandchild in trouble’ call can
 sound right, even the voice. A word only your family knows ends it in seconds.”
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
+```

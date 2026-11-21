@@ -64,7 +64,7 @@ h2{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:
 .mk-todo svg{flex:none;width:64px;height:64px;margin-top:2px}
 .mk-stamp{font-family:var(--mono);font-weight:500;color:var(--accent-ink);font-size:64px;letter-spacing:.16em;padding:10px 34px;transform:rotate(-8deg);display:inline-block}
 .mk-stamp.mk-ink{color:var(--ink)}
-.mk-cta-main{font-family:var(--display);font-weight:700;font-size:88px;letter-spacing:-.04em;line-height:1}
+.mk-cta-main{font-family:var(--display);font-weight:700;font-size:80px;letter-spacing:-.04em;line-height:1}
 .mk-cta-url{font-family:var(--mono);font-size:30px;margin-top:22px;color:var(--ink);word-break:break-all}
 .mk-cta-list{display:flex;flex-direction:column;gap:22px;margin-top:56px;font-size:36px}
 .mk-hand{font-family:var(--hand);font-size:40px}
@@ -108,9 +108,9 @@ const SLIDES = {
     <div class="mk-todo">${(d.items ?? e.whatToDo.en).map((t, i) => `<div>${CHECK(800 + i)}<span>${md(t)}</span></div>`).join('')}</div>
     <div class="mk-grow"></div>${foot()}`,
   cta: (d) => `${eyebrow(d.eyebrow ?? 'Check it before you tap')}<div class="mk-grow"></div><div class="mk-big-logo">${LOGO}</div>
-    <div class="mk-cta-main" style="margin-top:30px">${md(d.title ?? 'Got a message like this?\nPaste it on [[scamdb.dev]]')}</div>
-    <div class="mk-sub" style="max-width:34ch">${md(d.sub ?? 'Free. The check runs in your browser and nothing is sent. It matches known scam patterns, so it can miss brand-new ones.')}</div>
-    ${d.url ? `<div class="mk-cta-url">${esc(d.url)}</div>` : ''}<div class="mk-grow"></div>${foot('Report one: scamdb.dev/report')}`,
+    <div class="mk-cta-main" style="margin-top:30px">${md(d.title ?? 'Got one like this?\nSend it to [[scamdb.dev/report]]')}</div>
+    <div class="mk-sub" style="max-width:34ch">${md(d.sub ?? 'Scam or genuine, both help: they teach the check to tell them apart. It takes a minute, and reports stay private.')}</div>
+    ${d.url ? `<div class="mk-cta-url">Full script: ${esc(d.url)}</div>` : ''}<div class="mk-grow"></div>${foot('Check a message: scamdb.dev')}`,
   versus: (d) => `${eyebrow(d.eyebrow ?? 'Real or scam?')}<h2 style="margin-top:22px">${md(d.title)}</h2>
     <div class="mk-vs">${d.pair.map((m, i) => `<div><div class="mk-tag">${'AB'[i]}</div>${bubble(m)}</div>`).join('')}</div>
     <div class="mk-source">${esc(d.note)}</div><div style="height:24px"></div>${foot(d.footRight ?? 'Answer on the next slide')}`,

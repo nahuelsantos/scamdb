@@ -25,6 +25,8 @@ Swipe: 8 scripts in scamdb’s US catalogue that end with a gift-card request.
 
 Already paid with a gift card? Contact the company that issued the card right away and keep the receipt. Then report it at reportfraud.ftc.gov.
 
+Seen a gift-card demand? Send it to us too, at scamdb.dev/report (link in bio). Reports stay private.
+
 #scamalert #giftcardscam #scamawareness #elderfraud
 ```
 
@@ -50,3 +52,11 @@ https://scamdb.dev/catalogue/us/
 
 **Alt text (03-x.png):** Hand-drawn gift box. “Nobody real asks to be paid in gift cards. Not the IRS, the police, your
 bank or a grandchild’s ‘lawyer’.”
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
+```

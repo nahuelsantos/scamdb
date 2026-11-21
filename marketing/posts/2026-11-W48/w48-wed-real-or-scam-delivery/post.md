@@ -15,7 +15,7 @@ Real or scam? Two delivery texts, one is a scam. Guess in the comments, then swi
 
 Hint: look at what each one asks you to do.
 
-Waiting on holiday deliveries? Save this for the next time a text says your package is stuck.
+Waiting on holiday deliveries? Save this for the next time a text says your package is stuck. And if you get a delivery text you’re not sure about, real or fake, send it to scamdb.dev/report (link in bio). Reports stay private.
 
 #scamalert #textscam #scamawareness #onlinesafety
 ```
@@ -51,4 +51,12 @@ A delivery “problem” only you can fix, a link, and no order number or store 
 But A can be faked too, so when unsure, open the store’s app yourself.
 
 https://scamdb.dev/catalogue/us/usps-delivery-text/
+```
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
 ```

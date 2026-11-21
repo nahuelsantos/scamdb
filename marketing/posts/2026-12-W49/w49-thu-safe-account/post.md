@@ -25,6 +25,8 @@ In any language, the answer is the same: there is no safe account. Hang up and c
 
 Know someone who banks in another country, or has parents who do? Send them this.
 
+Got a call or text like this, anywhere in the world? Tell us at scamdb.dev/report (link in bio). Reports stay private.
+
 #scamawareness #bankfraud #fraudprevention #scamalert
 ```
 
@@ -51,3 +53,11 @@ https://scamdb.dev/catalogue/gb/bank-safe-account/
 
 **Alt text (03-x.png):** “Move it to a safe account.” One script in 30+ countries. Spain: cuenta de respaldo de
 seguridad. Netherlands: veilige rekening. Poland: rachunek ochronny.
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
+```

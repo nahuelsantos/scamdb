@@ -23,7 +23,9 @@ Before you pay on a site you’ve never used:
 3. Pay by credit card. It has the most protection.
 4. Paid and nothing came? Call your card issuer. It’s not your fault.
 
-Happy (careful) shopping. Link in bio to see the full script.
+Seen a deal that looks too good? Send us the ad or message at scamdb.dev/report (link in bio). Reports stay private.
+
+Happy (careful) shopping.
 
 #blackfriday #scamalert #onlineshopping #fraudprevention
 ```
@@ -48,3 +50,11 @@ https://scamdb.dev/catalogue/ca/fake-online-store/
 
 **Alt text (03-x.png):** “One trick, 28 countries.” Canada: “80% off, today only”. Bulgaria: up to 95% off and a
 countdown timer. Sweden: “family business closing down”.
+
+**Reply with the ask (post it as a reply to your own post):**
+
+```x
+Got a message like this, scam or genuine? Send it to us. Both help the check tell them apart, and reports stay private.
+
+https://scamdb.dev/report
+```
