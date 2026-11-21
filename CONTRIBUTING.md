@@ -61,5 +61,10 @@ in each language). Contacts and countries follow the same rule.
 
 ## Report a scam you received
 
-A private report form is coming. Until then, open an issue describing the scam **without any
-personal data**, or contribute an entry directly.
+Use the private form at [scamdb.dev/report](https://scamdb.dev/report/). Reports are read by a person and never
+published; please don't open a public issue with a scam you received, since it may hold personal data.
+
+## Code changes
+
+Run `npm run validate`, `npm test` and, for site changes, `npm run e2e` before opening a pull request. Site pages follow
+[DESIGN.md](DESIGN.md). Owner and deploy steps are in [docs/operations.md](docs/operations.md).

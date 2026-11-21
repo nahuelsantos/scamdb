@@ -1,206 +1,242 @@
-# scamdb
+<p align="center">
+  <a href="https://scamdb.dev"><img src="docs/brand/scamdb-x-header-1500x500.png" alt="scamdb: a field guide to scams" width="760"></a>
+</p>
 
-**A database of the world's scam patterns, and a free detection API.** Every pattern is built from real,
-documented scams (phone calls, SMS, WhatsApp, Telegram, email, social media), each with a reliable, dated source:
-how the scam works, how it unfolds, the warning signs, what to do and who to report it to.
+<p align="center">
+  <strong>An open database of the world's scam patterns, and a free API that tells you whether a message is a scam.</strong>
+</p>
 
-Blacklists of phone numbers and links go stale every week; the script of a scam lasts for years. scamdb catalogues
-the scripts and stores real scam messages in the language they arrive in, so `/v1/isitascam` can tell, as
-accurately as possible, whether a message is a scam and which pattern it follows. The site, API and documentation
-are in English. See [docs/vision.md](docs/vision.md) for where the project is going.
+<p align="center">
+  <a href="https://github.com/nahuelsantos/scamdb/actions/workflows/ci.yml"><img src="https://github.com/nahuelsantos/scamdb/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://scamdb.dev"><img src="https://img.shields.io/badge/site-scamdb.dev-1d6b46" alt="scamdb.dev"></a>
+  <a href="https://scamdb.dev/docs/"><img src="https://img.shields.io/badge/API-free%2C%20no%20key-d63d74" alt="Free API"></a>
+  <a href="LICENSE-DATA"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-1d2a20" alt="Data: CC BY 4.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-1d2a20" alt="Code: MIT"></a>
+</p>
 
-The data is free to use, including commercially, under **CC BY 4.0**; the code is **MIT**.
+<p align="center">
+  <a href="https://scamdb.dev">Website</a> ·
+  <a href="https://scamdb.dev/catalogue/">Catalogue</a> ·
+  <a href="https://scamdb.dev/docs/">API docs</a> ·
+  <a href="https://scamdb.dev/report/">Report a scam</a> ·
+  <a href="CONTRIBUTING.md">Contribute</a>
+</p>
 
-## The API
+---
 
-Base URL `https://scamdb.dev/v1/`. Static JSON, no key, no limit, CORS open.
+Phone numbers and links in scam blacklists go stale every week. **The script of a scam lasts for years.** scamdb
+catalogues those scripts: who the scammer pretends to be, what they ask for, how they pressure you, the warning signs,
+what to do and who to report it to. Every pattern is built from real, documented scams with a reliable, dated source,
+and real messages are stored in the language they arrive in.
 
-| Path | Content |
+<table>
+  <tr>
+    <td align="center"><strong>1,199</strong><br>scam patterns</td>
+    <td align="center"><strong>76</strong><br>countries</td>
+    <td align="center"><strong>43</strong><br>languages</td>
+    <td align="center"><strong>2,500+</strong><br>dated sources</td>
+    <td align="center"><strong>7</strong><br>channels</td>
+  </tr>
+</table>
+
+<sub>WhatsApp, SMS, social media, phone calls, websites, email and in person. Figures as of November 2026; the live
+numbers are in <a href="https://scamdb.dev/v1/index.json"><code>/v1/index.json</code></a>.</sub>
+
+<p align="center">
+  <a href="https://scamdb.dev">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/home-desktop-dark.png">
+      <img src="docs/screenshots/home-desktop-light.png" alt="The scamdb.dev home page: a hand-drawn phone showing a fake bank message stamped SCAM" width="820">
+    </picture>
+  </a>
+</p>
+
+## Is this a scam? Try it
+
+```bash
+curl -s https://scamdb.dev/v1/isitascam \
+  -H 'content-type: application/json' \
+  -d '{"text": "Hi Mum, I dropped my phone, this is my new number. Can you transfer $450 today? I need to pay a bill urgently", "country": "au"}'
+```
+
+<details>
+<summary><strong>Response</strong> (trimmed)</summary>
+
+```json
+{
+  "verdict": "scam",
+  "signals": [
+    { "id": "urgency",       "label": "Rushes you",              "evidence": "today" },
+    { "id": "money_request", "label": "Asks for money",          "evidence": "transfer" },
+    { "id": "amount",        "label": "Mentions an amount",      "evidence": "$450" },
+    { "id": "new_number",    "label": "Says it is a new number", "evidence": "new number" }
+  ],
+  "matches": [
+    {
+      "id": "au/family-in-trouble",
+      "name": "“Hi Mum, I’m stuck overseas”: family in trouble",
+      "page": "https://scamdb.dev/catalogue/au/family-in-trouble/"
+    }
+  ],
+  "pattern": "known",
+  "seenElsewhere": [
+    { "id": "be/coucou-maman-new-number", "country": "be", "name": "“Hi mum, this is my new number”: your child urgently needs money" }
+  ],
+  "whatToDo": [
+    "Call the person on the number you already have for them.",
+    "Ask a personal question a scammer couldn’t answer.",
+    "Don’t use the contact details in the message."
+  ],
+  "reportTo": "https://scamdb.dev/v1/au/contacts.json"
+}
+```
+
+</details>
+
+You get a verdict (`scam`, `suspicious` or `not_recognised`), each warning sign with the exact words that triggered it,
+the closest scams in the catalogue (including ones documented in other countries and languages), what to do and who to
+report it to. Paste a message on [scamdb.dev](https://scamdb.dev) to try it in the browser: that check runs locally and
+nothing is sent.
+
+| | Without a key | With a free key |
+|---|---|---|
+| Checks per day | 10 per IP | 50 |
+| Catalogue matcher and warning signs | ✓ | ✓ |
+| AI score (Workers AI, falls back to the matcher) | | ✓ |
+| Screenshots (`-F image=@shot.png`) and voice notes (`-F audio=@note.ogg`), never stored | | ✓ |
+
+Get a key by signing in with GitHub at [scamdb.dev/account](https://scamdb.dev/account/). How the verdict is made, and
+how accuracy is measured on real messages only, is explained in [docs/detection.md](docs/detection.md).
+
+## Use the data
+
+The whole catalogue is static JSON at `https://scamdb.dev/v1/`: **no key, no rate limit, CORS open.**
+
+```js
+const res = await fetch('https://scamdb.dev/v1/gb/scams.json');
+const { data } = await res.json();
+for (const scam of data) console.log(scam.id, scam.name.en, scam.redFlags.en);
+```
+
+| Endpoint | Content |
 |---|---|
 | `GET /v1/index.json` | Dataset version, build date, countries, counts, license |
 | `GET /v1/countries.json` | Countries and their languages |
 | `GET /v1/signals.json` | The warning-sign vocabulary |
 | `GET /v1/{country}/scams.json` | Every entry for a country |
-| `GET /v1/{country}/contacts.json` | Who to report to |
+| `GET /v1/{country}/contacts.json` | Who to report to in that country |
 | `GET /v1/scams/{country}/{slug}.json` | One entry |
 | `GET /v1/scams.json` | Every entry, all countries |
 | `GET /v1/scamdb.zip` | The full dataset as a download |
 | `GET /v1/changes.json` | Recent additions and edits, newest first |
+| `POST /v1/isitascam` | Is this message a scam? `{ "text", "country"?, "lang"?, "report"? }` |
+| `POST /v1/reports` | Send a scam privately (Turnstile token or key) |
 
-Every file is wrapped as `{ "license", "attribution", "version", "data" }`. Credit us as
-`scamdb.dev · CC BY 4.0`.
+Every static file is wrapped as `{ "license", "attribution", "version", "data" }`. Full reference:
+[scamdb.dev/docs](https://scamdb.dev/docs/).
 
-Dynamic endpoints (a small Worker):
+### What an entry holds
 
-- `POST /v1/isitascam` `{ "text", "country"?, "lang"?, "report"? }`: verdict, warning signs with the
-  words that triggered them, the closest catalogue scams, what to do and where to report. Without a key:
-  10 a day per IP, catalogue matching only. With a free key: 50 a day, plus a score from a free Workers AI
-  model (falls back to the matcher), and screenshots (`-F image=@shot.png`) or voice notes
-  (`-F audio=@note.ogg`) as multipart, read by Workers AI and never stored. The score is not a probability yet.
-- `POST /v1/reports`: send a scam privately (Turnstile token or key).
-- Free keys: sign in with GitHub on [scamdb.dev/account](https://scamdb.dev/account/).
+Each scam is one JSON file in [`data/<country>/scams/`](data), validated against [`schema/entry.schema.json`](schema/entry.schema.json):
 
-Full reference: [scamdb.dev/docs](https://scamdb.dev/docs/).
+- **The script**, step by step, each step tagged with its warning sign
+- **Real messages** quoted from a source, in their original language, with numbers and links replaced by placeholders
+- **Everyday phrases** people use to describe it ("they asked me for a code")
+- **Warning signs**, both as ids from [`signals.json`](data/signals.json) and in plain words
+- **What to do** and **who to report to**, with official contacts that are re-checked every week
+- **Sources**: title, publisher, link and date for every claim
+
+Text is stored in the scam's original language and in English.
+
+<p align="center">
+  <a href="https://scamdb.dev/catalogue/au/family-in-trouble/"><img src="docs/screenshots/entry-desktop-light.png" alt="A catalogue entry: the 'Hi Mum' scam, its script drawn as four steps with their warning signs" width="820"></a>
+</p>
+
+<details>
+<summary><strong>Countries covered</strong> (76)</summary>
+
+<br>
+
+Albania · Argentina · Armenia · Australia · Austria · Azerbaijan · Belarus · Belgium · Belize · Bolivia · Bosnia and
+Herzegovina · Brazil · Bulgaria · Canada · Chile · Colombia · Costa Rica · Croatia · Cyprus · Czechia · Denmark ·
+Ecuador · El Salvador · Estonia · Finland · France · Georgia · Germany · Greece · Guatemala · Honduras · Hungary ·
+Iceland · India · Indonesia · Ireland · Italy · Japan · Kosovo · Latvia · Lithuania · Luxembourg · Malta · Mexico ·
+Moldova · Montenegro · Netherlands · New Zealand · Nicaragua · Nigeria · North Macedonia · Norway · Panama · Paraguay ·
+Peru · Philippines · Poland · Portugal · Romania · Russia · Serbia · Slovakia · Slovenia · South Korea · Spain · Sweden ·
+Switzerland · Taiwan · Thailand · Türkiye · Ukraine · United Arab Emirates · United Kingdom · United States · Uruguay ·
+Venezuela
+
+</details>
+
+## Principles
+
+- **Patterns, not people.** No blacklists of numbers, no personal data. Scripts outlive the numbers they come from.
+- **No source, no scam.** Every pattern rests on real, documented scams with a reliable, dated source.
+- **Written examples are always flagged.** Messages we write for languages with no real example are marked
+  `synthetic: true` and never count towards accuracy.
+- **Accuracy is the product.** Every detection change is measured on real messages across all countries before it
+  ships, with special care not to flag genuine messages.
+- **Free to use, free to build on.** Data CC BY 4.0, code MIT.
+
+More in [docs/vision.md](docs/vision.md).
 
 ## Contribute
 
-Every scam is one file under `data/<country>/scams/`. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Every scam is one file, and every change is reviewed before it goes live.
 
-## Run it
+- **Add or fix a scam**: edit `data/<country>/scams/<slug>.json` and open a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md).
+- **Something wrong or out of date?** [Open a correction](https://github.com/nahuelsantos/scamdb/issues/new?template=correction.yml).
+- **Received a scam?** [Report it privately](https://scamdb.dev/report/). Reports are read by a person and never published.
+
+## Development
+
+Requires Node.js 22 or newer.
 
 ```bash
 npm ci
 ```
 
 ```bash
-npm run validate
+npm run validate   # check every entry against the schema and the rules
 ```
 
 ```bash
-npm test
+npm test           # unit and Worker tests
 ```
 
 ```bash
-npm run build
+npm run serve      # build the API and the site into dist/ and serve them on localhost:8080
 ```
 
-The build writes the API and the site to `dist/`. The site is in English (old `/es/` links redirect); interface strings live in
-`site/i18n.js`. Scams are explained in English and also shown in their original language. Drawings are generated at build time by `lib/sketch.js`.
+`npm run e2e` runs the browser tests (playground, accessibility, phone width) and `npm run eval` measures detection
+accuracy. CI runs validation, tests, the build and the browser tests on every push and pull request.
 
-## Importing scams
+<details>
+<summary><strong>Repository layout</strong></summary>
 
-New scams for a country come from the `import-scams` Claude Code skill (`.claude/skills/import-scams/SKILL.md`),
-run only when the owner asks for a specific country: `/import-scams au`. It first collects real scam messages
-quoted from reliable sources and stops if it finds fewer than 8; otherwise it drafts entries from official warnings
-and reputable news, validates them and opens one pull request labelled `import`.
+<br>
 
-- `node tools/importer.mjs status` shows entries per country.
-- Close an import PR, or delete a scam from it, to reject it: the next run adds it to `importer/rejected.json` and
-  never proposes it again. Delete a line there to allow it back.
-- The daily Discover workflow (`.github/workflows/discover.yml`) lists leads (new stories and official warnings) in a
-  weekly "Scam signals" issue; leads are for the owner and for research, never a source on their own.
+| Path | What it is |
+|---|---|
+| `data/` | The catalogue: countries, warning signs, and one folder per country with its scams and contacts |
+| `schema/` | JSON Schemas for every data file |
+| `packages/matcher/` | The keyword and phrase matcher, used by the API and in the browser |
+| `worker/` | The Cloudflare Worker: `isitascam`, reports, keys, GitHub sign-in |
+| `site/` | Templates and assets for scamdb.dev (hand-drawn look, see [DESIGN.md](DESIGN.md)) |
+| `lib/`, `tools/` | Build, validation, import and maintenance scripts |
+| `eval/` | Labelled messages and accuracy reports |
+| `migrations/` | D1 database migrations |
+| `tests/` | Unit, Worker and browser tests |
+| `docs/` | Vision, detection, sources and [operations](docs/operations.md) (deploy and owner steps) |
 
-## Licenses
+</details>
 
-- Data (`data/` and everything under `/v1/`): [CC BY 4.0](LICENSE-DATA) (full legal text). You may copy, share
-  and adapt it for any purpose, including commercially, as long as you give credit, link to the license and
-  say if you changed it. Credit it as: **scamdb.dev · CC BY 4.0**.
-- Sources and media linked from each entry belong to their owners; scamdb links to them and does not
-  relicense them. The same goes for real messages shown as examples (those with a `source`): they are short
-  quotations credited to their publisher, not covered by CC BY.
-- Code: [MIT](LICENSE).
+## License
 
-## Deploy (owner steps, once)
+- **Data** (`data/` and everything under `/v1/`): [CC BY 4.0](LICENSE-DATA). Use it for anything, including
+  commercially, as long as you credit it as **scamdb.dev · CC BY 4.0**, link to the license and say if you changed it.
+- **Sources, media and quoted real messages** belong to their publishers. scamdb links to and briefly quotes them with
+  credit; they are not covered by CC BY.
+- **Code**: [MIT](LICENSE).
 
-1. **Cloudflare → Workers & Pages → Create → Import a repository** → `nahuelsantos/scamdb`.
-   Build command `npm ci && npm run build`, deploy command `npx wrangler deploy`. Every push to
-   `main` then publishes.
-2. The custom domains `scamdb.dev` and `www.scamdb.dev` in `wrangler.jsonc` attach on the first
-   deploy (the zone is already in your Cloudflare account).
-3. **scamdb.io → scamdb.dev:** in the `scamdb.io` zone, Rules → Redirect Rules → Create rule →
-   Single redirect. When hostname equals `scamdb.io` or `www.scamdb.io`, redirect dynamically to
-   `concat("https://scamdb.dev", http.request.uri.path)` with status 301 and "Preserve query string"
-   on. (Free plan.) The zone needs a proxied DNS record for the rule to run: add an `AAAA` record
-   for `@` and `www` pointing to `100::`, proxied.
-4. Check `https://scamdb.dev/v1/index.json` and `https://scamdb.io/docs/`.
-
-## Automatic checks
-
-- **CI** (`.github/workflows/ci.yml`): every push and pull request validates the data, runs the
-  unit tests, builds, and runs the browser tests (playground, accessibility, phone width).
-- **Weekly check** (`.github/workflows/weekly-check.yml`): every Monday it re-checks every link and
-  confirms every phone number and email is still printed on its official page. If something broke
-  it opens an issue labelled `weekly-check`. Run it by hand from the Actions tab too.
-
-## Sync to eschamuyo (optional, owner step, once)
-
-eschamuyo.com is one consumer of the data, like any other.
-
-When Argentine data changes on `main`, `.github/workflows/sync-eschamuyo.yml` opens or updates a
-pull request on `nahuelsantos/eschamuyo` with the regenerated `site/data/scams.json`. It needs a token:
-
-1. GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token.
-   Repository access: only `nahuelsantos/eschamuyo`. Permissions: **Contents** and **Pull requests**,
-   read and write.
-2. In this repo: Settings → Secrets and variables → Actions → New repository secret,
-   name `ESCHAMUYO_TOKEN`, paste the token.
-
-Without the secret the workflow skips itself and says so in its summary.
-
-## Phase 2 setup (owner, once)
-
-Reports, keys and sign-in run in a small Worker with a D1 database. Do these once, in order.
-
-1. Create the database (skip if `wrangler.jsonc` already has a real `database_id`):
-
-```bash
-npx wrangler d1 create scamdb
-```
-
-   Paste the `database_id` it prints into `wrangler.jsonc`.
-
-2. Create the tables:
-
-```bash
-npx wrangler d1 migrations apply scamdb --remote
-```
-
-3. **Turnstile** (the anti-bot check on eschamuyo's report form): Cloudflare dashboard → Turnstile → Add widget,
-   hostnames `eschamuyo.com` and `www.eschamuyo.com`, mode Managed. Put the **site key** in eschamuyo's
-   `site/js/report.js` (`TURNSTILE_SITE_KEY`) and save the **secret**:
-
-```bash
-npx wrangler secret put TURNSTILE_SECRET
-```
-
-   scamdb.dev's own report form uses a second widget (hostnames `scamdb.dev`, `www.scamdb.dev`). Its site key is in
-   `site/templates/report.js`, and its secret goes in:
-
-```bash
-npx wrangler secret put TURNSTILE_SECRET_SITE
-```
-
-4. **GitHub sign-in**: GitHub → Settings → Developer settings → OAuth Apps → New OAuth App. Homepage
-   `https://scamdb.dev`, callback `https://scamdb.dev/auth/github/callback`. Then save both values:
-
-```bash
-npx wrangler secret put GITHUB_CLIENT_ID
-```
-
-```bash
-npx wrangler secret put GITHUB_CLIENT_SECRET
-```
-
-5. Two random secrets (paste the output of `openssl rand -base64 32` for each):
-
-```bash
-npx wrangler secret put SESSION_SECRET
-```
-
-```bash
-npx wrangler secret put IP_SALT
-```
-
-Secrets can also be added in the dashboard: Workers & Pages → scamdb → Settings → Variables and Secrets.
-
-The test site (a Preview for every branch, with its own database) is described in [docs/uat.md](docs/uat.md).
-
-## Reading reports
-
-Reports are private: they live only in D1, lose their contact details, story, key link and indicators after 180 days (the redacted text and outcome are kept), and never reach this repo.
-
-1. Open a Claude session on this repo and run:
-
-```bash
-npm run reports list
-```
-
-   It writes `reports/inbox-<date>.json` (gitignored). Contacts are left out unless you add `--with-contact`.
-2. Ask Claude to cluster the reports, strip personal data, and draft new entries or new examples as pull requests.
-3. Mark what you handled:
-
-```bash
-npm run reports mark reviewed <id> <id>
-```
-
-   Use `promoted` for reports that became an entry (they are then kept), `rejected` for noise.
+<p align="center"><sub>Made by the people behind <a href="https://eschamuyo.com">eschamuyo.com</a>.</sub></p>

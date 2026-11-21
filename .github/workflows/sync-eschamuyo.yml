@@ -19,7 +19,7 @@ jobs:
           TOKEN: ${{ secrets.ESCHAMUYO_TOKEN }}
         run: |
           if [ -z "$TOKEN" ]; then
-            echo "ESCHAMUYO_TOKEN is not set: skipping. See README → Sync to eschamuyo." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "ESCHAMUYO_TOKEN is not set: skipping. See docs/operations.md → Sync to eschamuyo." | tee -a "$GITHUB_STEP_SUMMARY"
             echo "ok=false" >> "$GITHUB_OUTPUT"
           else
             echo "ok=true" >> "$GITHUB_OUTPUT"
