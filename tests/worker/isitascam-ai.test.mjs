@@ -38,19 +38,21 @@ const get = (key, id, e) => handle(new Request(`https://scamdb.dev/v1/isitascam/
 test('with a key, the check answers at once and the AI answer follows on GET', async () => {
   const key = await keyFor(501);
   const pending = [];
-  const e = env(fakeAI(300));
-  const t0 = Date.now();
+  // The AI stays blocked until the test lets it go: the answer can only arrive if it does not wait for the AI.
+  let release;
+  const gate = new Promise((ok) => { release = ok; });
+  const ai = { run: async (model, input) => { await gate; return fakeAI().run(model, input); } };
+  const e = env(ai);
   const r = await post(key, { text: TEXT }, e, { waitUntil: (p) => pending.push(p) });
-  const fast = Date.now() - t0;
   assert.equal(r.status, 200);
   const first = await r.json();
   assert.equal(first.engine.scorer, 'matcher');
   assert.equal(first.ai.status, 'pending');
   assert.match(first.ai.poll, /^https:\/\/scamdb\.dev\/v1\/isitascam\/[0-9a-f-]{36}$/);
-  assert.ok(fast < 300, `answered before the AI finished (${fast} ms)`);
   // Before the AI is done: 202 pending.
   const early = await get(key, first.ai.id, e);
   assert.equal(early.status, 202);
+  release();
   await Promise.all(pending);
   const done = await get(key, first.ai.id, e);
   assert.equal(done.status, 200);
