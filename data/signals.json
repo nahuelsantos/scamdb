@@ -1,24 +1,125 @@
 {
   "signals": [
-    { "id": "asks_for_code", "label": { "en": "Asks for a code", "es": "Te pide un código" },
-      "description": { "en": "Asks you to read out or send a code, PIN or password you received.", "es": "Te pide que leas o mandes un código, PIN o clave que te llegó." } },
-    { "id": "remote_access", "label": { "en": "Asks to install an app or see your screen", "es": "Te pide instalar una app o ver tu pantalla" },
-      "description": { "en": "Asks you to install an app, share your screen, or send a photo of your ID or a selfie.", "es": "Te pide instalar una aplicación, compartir pantalla o mandar foto del DNI o una selfie." } },
-    { "id": "urgency", "label": { "en": "Rushes you", "es": "Te apura" },
-      "description": { "en": "Pressure to act now: today, before it is blocked, last notice.", "es": "Te presionan para que hagas algo ya: hoy, antes de que se bloquee, último aviso." } },
-    { "id": "money_request", "label": { "en": "Asks for money", "es": "Te pide plata" },
-      "description": { "en": "Asks you to transfer, pay, deposit or hand over money or card details.", "es": "Te pide transferir, pagar, depositar o entregar plata o los datos de tu tarjeta." } },
-    { "id": "unknown_link", "label": { "en": "Sends a link", "es": "Te manda un link" },
-      "description": { "en": "A link or an unknown sender you are asked to trust.", "es": "Un link o un remitente desconocido en el que te piden confiar." } },
-    { "id": "new_number", "label": { "en": "Says it is a new number", "es": "Dice que es un número nuevo" },
-      "description": { "en": "Someone you know writes from a 'new number'.", "es": "Alguien conocido te escribe desde un 'número nuevo'." } },
-    { "id": "impersonation", "label": { "en": "Pretends to be someone", "es": "Se hace pasar por alguien" },
-      "description": { "en": "Claims to be an agency, a bank, a company or a relative.", "es": "Dice ser de un organismo, un banco, una empresa o un familiar." } },
-    { "id": "secrecy", "label": { "en": "Asks you to keep it secret", "es": "Te pide que no le cuentes a nadie" },
-      "description": { "en": "Tells you not to tell anyone.", "es": "Te dice que no le digas a nadie." } },
-    { "id": "keep_on_line", "label": { "en": "Keeps you on the line", "es": "No te deja cortar" },
-      "description": { "en": "Tells you not to hang up or to stay on the call.", "es": "Te dice que no cortes o que te quedes en línea." } },
-    { "id": "too_good_to_be_true", "label": { "en": "Too good to be true", "es": "Demasiado bueno para ser cierto" },
-      "description": { "en": "A prize, a giveaway, easy money or returns that are too high.", "es": "Un premio, un sorteo, plata fácil o ganancias demasiado altas." } }
+    {
+      "id": "asks_for_code",
+      "label": {
+        "en": "Asks for a code",
+        "es": "Te pide un código"
+      },
+      "description": {
+        "en": "Asks you to read out or send a code, PIN or password you received.",
+        "es": "Te pide que leas o mandes un código, PIN o clave que te llegó."
+      }
+    },
+    {
+      "id": "remote_access",
+      "label": {
+        "en": "Asks to install an app or see your screen",
+        "es": "Te pide instalar una app o ver tu pantalla"
+      },
+      "description": {
+        "en": "Asks you to install an app, share your screen, or send a photo of your ID or a selfie.",
+        "es": "Te pide instalar una aplicación, compartir pantalla o mandar foto del DNI o una selfie."
+      }
+    },
+    {
+      "id": "urgency",
+      "label": {
+        "en": "Rushes you",
+        "es": "Te apura"
+      },
+      "description": {
+        "en": "Pressure to act now: today, before it is blocked, last notice.",
+        "es": "Te presionan para que hagas algo ya: hoy, antes de que se bloquee, último aviso."
+      }
+    },
+    {
+      "id": "money_request",
+      "label": {
+        "en": "Asks for money",
+        "es": "Te pide plata"
+      },
+      "description": {
+        "en": "Asks you to transfer, pay, deposit or hand over money or card details.",
+        "es": "Te pide transferir, pagar, depositar o entregar plata o los datos de tu tarjeta."
+      }
+    },
+    {
+      "id": "amount",
+      "label": {
+        "en": "Mentions an amount",
+        "es": "Menciona un monto"
+      },
+      "description": {
+        "en": "Quotes a price or a sum of money. Genuine bills, offers and bank alerts do too, so on its own it is only a weak sign.",
+        "es": "Menciona un precio o una suma de dinero. Las facturas, ofertas y alertas bancarias reales también, así que sola es una señal débil."
+      }
+    },
+    {
+      "id": "unknown_link",
+      "label": {
+        "en": "Sends a link",
+        "es": "Te manda un link"
+      },
+      "description": {
+        "en": "A link or an unknown sender you are asked to trust.",
+        "es": "Un link o un remitente desconocido en el que te piden confiar."
+      }
+    },
+    {
+      "id": "new_number",
+      "label": {
+        "en": "Says it is a new number",
+        "es": "Dice que es un número nuevo"
+      },
+      "description": {
+        "en": "Someone you know writes from a 'new number'.",
+        "es": "Alguien conocido te escribe desde un 'número nuevo'."
+      }
+    },
+    {
+      "id": "impersonation",
+      "label": {
+        "en": "Pretends to be someone",
+        "es": "Se hace pasar por alguien"
+      },
+      "description": {
+        "en": "Claims to be an agency, a bank, a company or a relative.",
+        "es": "Dice ser de un organismo, un banco, una empresa o un familiar."
+      }
+    },
+    {
+      "id": "secrecy",
+      "label": {
+        "en": "Asks you to keep it secret",
+        "es": "Te pide que no le cuentes a nadie"
+      },
+      "description": {
+        "en": "Tells you not to tell anyone.",
+        "es": "Te dice que no le digas a nadie."
+      }
+    },
+    {
+      "id": "keep_on_line",
+      "label": {
+        "en": "Keeps you on the line",
+        "es": "No te deja cortar"
+      },
+      "description": {
+        "en": "Tells you not to hang up or to stay on the call.",
+        "es": "Te dice que no cortes o que te quedes en línea."
+      }
+    },
+    {
+      "id": "too_good_to_be_true",
+      "label": {
+        "en": "Too good to be true",
+        "es": "Demasiado bueno para ser cierto"
+      },
+      "description": {
+        "en": "A prize, a giveaway, easy money or returns that are too high.",
+        "es": "Un premio, un sorteo, plata fácil o ganancias demasiado altas."
+      }
+    }
   ]
 }
