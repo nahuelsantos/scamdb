@@ -9,7 +9,7 @@ after(() => w.dispose());
 
 test('wrangler.jsonc runs the Worker only on the dynamic paths', () => {
   const cfg = JSON.parse(readFileSync(new URL('../../wrangler.jsonc', import.meta.url), 'utf8').replace(/^\s*\/\/.*$/gm, ''));
-  assert.deepEqual(cfg.assets.run_worker_first, ['/v1/reports', '/v1/isitascam', '/v1/feed/*', '/v1/trends', '/v1/keys*', '/v1/collect', '/v1/review/*', '/auth/*']);
+  assert.deepEqual(cfg.assets.run_worker_first, ['/v1/reports', '/v1/isitascam', '/v1/feed/*', '/v1/trends', '/v1/keys*', '/v1/collect', '/v1/collect/*', '/v1/review/*', '/auth/*']);
   assert.equal(cfg.main, 'worker/index.js');
   assert.equal(cfg.d1_databases[0].binding, 'DB');
   assert.deepEqual(cfg.triggers.crons, ['17 4 * * *']);
@@ -33,7 +33,7 @@ test('an unexpected failure returns a JSON 500 without details', async () => {
   assert.equal(body.error, 'internal');
   assert.doesNotMatch(JSON.stringify(body), /boom/);
 });
-test('the migrations create the eight tables', async () => {
+test('the migrations create the nine tables', async () => {
   const { results } = await w.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE '\\_%' ESCAPE '\\' AND name NOT LIKE 'sqlite%' ORDER BY name").all();
-  assert.deepEqual(results.map((r) => r.name), ['catalogue_vectors', 'check_prints', 'hits', 'keys', 'report_indicators', 'reports', 'source_items', 'usage']);
+  assert.deepEqual(results.map((r) => r.name), ['catalogue_vectors', 'check_prints', 'collector_runs', 'hits', 'keys', 'report_indicators', 'reports', 'source_items', 'usage']);
 });

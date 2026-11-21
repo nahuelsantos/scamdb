@@ -16,7 +16,8 @@ its source. That step stays manual and reviewed, like every other change to the 
 | Collector | `tools/collect.mjs` (logic in `lib/collect.js`) | Reads the allowed feeds, keeps scam-related items (a source only about scams keeps everything), drops the Reddit author's name and sends the items to `POST /v1/collect`. No dependencies beyond Node 22. |
 | Schedule | the owner's home lab (plunder), a daily systemd timer | Installed by `scripts/plunder/19-setup-scamdb-collector.sh` in `nahuelsantos/home-lab`. Some sites (Reddit, Cybermalveillance, Signal Arnaques) refuse cloud servers, so the home lab reads them. |
 | Review queue | D1 table `source_items` (migration `0008_source_items.sql`) | One row per link; a link already in the queue is never added twice. |
-| Review page | `https://scamdb.dev/review/` (not linked, `noindex`) | Sign in with GitHub; only reviewers (the owner's GitHub id, or `REVIEWER_GITHUB_IDS`) see it. Tabs New, Useful and Skipped; one tap marks an item. |
+| Review page | `https://scamdb.dev/review/` (not linked, `noindex`) | Three tabs: **Queue** (New, Useful, Skipped; one tap marks an item), **Sources** (every source, on or off and why, with its last result; filter Failing) and **Runs** (the last 14 runs, per source). Two locks: Cloudflare Access (owner's email only) and GitHub sign-in (owner's GitHub id, or `REVIEWER_GITHUB_IDS`). |
+| Run log | D1 table `collector_runs` (migration `0009_collector_runs.sql`) | After each run the collector sends a summary to `POST /v1/collect/run`: what each source kept or why it failed. Kept 60 days. |
 
 ## The research list (`data/sources.csv`, `data/scams.csv`)
 
@@ -37,14 +38,21 @@ catalogue or the API.
   named firms are not imported as scams, and Mexico's CONDUSEF alerts name the impersonated (legitimate) lenders, so
   they are never listed.
 
+## Who can see it
+
+`/review/*` and `/v1/review/*` are behind **Cloudflare Access** (Zero Trust → Access → Applications, "scamdb.dev",
+policy *Allow · Owner*): Cloudflare asks for the owner's login before the request reaches scamdb, from any network.
+Behind it, the Worker still checks the GitHub sign-in. `/v1/collect*` is not behind Access: plunder has no browser and
+uses its own key. When the Access session ends, the page reloads through Access's login.
+
 ## Retention
 
 A skipped item loses its copied text after 30 days; its link stays so it is not collected again. Useful and new items
-keep their text. The daily cleanup does this (`worker/cleanup.js`).
+keep their text. Run summaries are deleted after 60 days. The daily cleanup does this (`worker/cleanup.js`).
 
 ## Setting it up (owner)
 
-1. Apply the migration (as for every schema change):
+1. Apply the migrations (as for every schema change; `0009` adds the run log):
 
    ```bash
    npx wrangler d1 migrations apply scamdb --remote

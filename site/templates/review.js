@@ -5,7 +5,7 @@ import { layout } from './layout.js';
 import { UI_ICONS } from './icons.js';
 import { t } from '../i18n.js';
 
-const KEYS = ['revNew', 'revUseful', 'revSkip', 'revSkipped', 'revOpen', 'revBack', 'revMore', 'revLess', 'revEmpty', 'revFail', 'revLoadMore', 'revScore', 'revNotReviewer', 'revSetup'];
+const KEYS = ['revOn', 'revOff', 'revAll', 'revFailing', 'revSchedule', 'revLastRun', 'revNoRuns', 'revRunOk', 'revRunFailed', 'revPerSource', 'revKept', 'revOfKept', 'revNewInQueue', 'revSourcesRead', 'revNotRead', 'revHomeOnly', 'revNoFeed', 'revOffShort', 'revSite', 'revNoneFailing', 'revNew', 'revUseful', 'revSkip', 'revSkipped', 'revOpen', 'revBack', 'revMore', 'revLess', 'revEmpty', 'revFail', 'revLoadMore', 'revScore', 'revNotReviewer', 'revSetup'];
 const ICONS = ['check', 'skip', 'external', 'replace'];
 
 export function review({ meta, lang = 'en' }) {
@@ -21,10 +21,24 @@ export function review({ meta, lang = 'en' }) {
     <a class="btn solid" href="/auth/github?next=/review/">${UI_ICONS.github}<span>${esc(s('revSignIn'))}</span></a>
   </div>
   <div id="rv-in" hidden>
-    <div class="rv-tabs" role="tablist">${tab('new', s('revNew'))}${tab('useful', s('revUseful'))}${tab('skip', s('revSkipped'))}</div>
-    <ol class="rv-list" id="rv-list"></ol>
-    <p class="small" id="rv-empty" hidden>${esc(s('revEmpty'))}</p>
-    <button type="button" class="btn" id="rv-more" hidden>${esc(s('revLoadMore'))}</button>
+    <nav class="rv-top" aria-label="${esc(s('revH'))}">
+      <a href="#queue" data-view="queue">${esc(s('revTabQueue'))}</a><a href="#sources" data-view="sources">${esc(s('revTabSources'))}</a><a href="#runs" data-view="runs">${esc(s('revTabRuns'))}</a>
+    </nav>
+    <div id="rv-queue" data-panel="queue">
+      <div class="rv-tabs" role="tablist">${tab('new', s('revNew'))}${tab('useful', s('revUseful'))}${tab('skip', s('revSkipped'))}</div>
+      <ol class="rv-list" id="rv-list"></ol>
+      <p class="small" id="rv-empty" hidden>${esc(s('revEmpty'))}</p>
+      <button type="button" class="btn" id="rv-more" hidden>${esc(s('revLoadMore'))}</button>
+    </div>
+    <div id="rv-sources" data-panel="sources" hidden>
+      <p class="rv-sum" id="rv-src-sum"></p>
+      <div class="rv-tabs" role="tablist" id="rv-src-filter">${['all', 'on', 'off', 'failing'].map((f, i) => `<button type="button" class="rv-tab" role="tab" data-filter="${f}" aria-selected="${i === 0}">${esc(s({ all: 'revAll', on: 'revOn', off: 'revOff', failing: 'revFailing' }[f]))}</button>`).join('')}</div>
+      <div id="rv-src-list"></div>
+    </div>
+    <div id="rv-runs" data-panel="runs" hidden>
+      <p class="rv-sum">${esc(s('revSchedule'))}</p>
+      <ol class="rv-list" id="rv-run-list"></ol>
+    </div>
   </div>
 </section>`;
   return layout({ title: s('revTitle'), description: s('revDesc'), body, path: '/review/', meta, lang, noindex: true,

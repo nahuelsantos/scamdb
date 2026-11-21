@@ -73,3 +73,37 @@ test('the review queue never shows up in the public API or the reports', async (
   const r = await w.fetch('/v1/isitascam', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': '198.51.100.1' }, body: JSON.stringify({ text: 'Votre colis est bloqué' }) });
   assert.ok(!JSON.stringify(await r.json()).includes('reddit.com'));
 });
+const run = (body, token = TOKEN) => w.fetch('/v1/collect/run', { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` }, body: JSON.stringify(body) });
+const RUN = { startedAt: '2026-11-22T06:40:00Z', host: 'plunder', ok: true, candidates: 3, added: 2, known: 1, error: null,
+  sources: [{ id: 'nl-fraudehelpdesk', ok: true, kept: 3, total: 10 }, { id: 'fr-ameli', ok: false, kept: 0, total: 0, error: 'HTTP 404' }] };
+
+test('the collector reports a run; only its token may', async () => {
+  assert.equal((await run(RUN, 'd'.repeat(40))).status, 401);
+  assert.equal((await run({ ...RUN, sources: [{ id: 'not an id' }] })).status, 400);
+  const r = await run(RUN);
+  assert.equal(r.status, 201);
+});
+test('the owner reads the last runs, newest first, with each source result', async () => {
+  await run({ ...RUN, ok: false, error: 'sending failed: HTTP 503', added: 0 });
+  assert.equal((await w.fetch('/v1/review/runs', { headers: { cookie: stranger } })).status, 403);
+  const r = await w.fetch('/v1/review/runs', { headers: { cookie: owner } });
+  assert.equal(r.status, 200);
+  const { runs } = await r.json();
+  assert.equal(runs.length, 2);
+  assert.equal(runs[0].ok, false); assert.equal(runs[0].error, 'sending failed: HTTP 503');
+  assert.deepEqual(runs[1].sources[1], { id: 'fr-ameli', ok: false, kept: 0, total: 0, error: 'HTTP 404' });
+  assert.equal(runs[1].host, 'plunder');
+});
+test('at most 14 runs are listed', async () => {
+  for (let i = 0; i < 15; i++) await run(RUN);
+  assert.equal((await (await w.fetch('/v1/review/runs', { headers: { cookie: owner } })).json()).runs.length, 14);
+});
+test('before migration 0009 the Runs tab gets an empty list, not an error', async () => {
+  const { SCHEMA } = await import('./harness.mjs');
+  const old = await makeWorker({ schema: SCHEMA.slice(0, SCHEMA.indexOf('CREATE TABLE collector_runs')) });
+  try {
+    const r = await old.fetch('/v1/review/runs', { headers: { cookie: owner } });
+    assert.equal(r.status, 200);
+    assert.deepEqual((await r.json()).runs, []);
+  } finally { await old.dispose(); }
+});

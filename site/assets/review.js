@@ -11,12 +11,19 @@ let items = [];
 const fail = (msg = S.revFail) => { $('rv-err').textContent = msg; $('rv-err').hidden = false; };
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const iconBtn = (icon, label, cls = 'ibtn') => { const b = el('button', cls); b.type = 'button'; b.innerHTML = ICONS[icon] ?? ''; b.append(el('span', null, label)); b.title = label; return b; };
+// Cloudflare Access sits in front of /review/ and /v1/review/: when its session ends, API calls get a redirect to its
+// login page. A reload sends the whole page through that login and back.
+async function api(path, init = {}) {
+  const r = await fetch(path, { credentials: 'same-origin', redirect: 'manual', ...init }).catch(() => null);
+  if (r && (r.type === 'opaqueredirect' || (r.status >= 300 && r.status < 400))) { location.reload(); return null; }
+  return r;
+}
 const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
 
 async function load(more = false) {
   const before = more && items.length ? items[items.length - 1].id : null;
   const q = new URLSearchParams({ status, limit: String(PAGE), ...(before ? { before: String(before) } : {}) });
-  const r = await fetch(`/v1/review/items?${q}`, { credentials: 'same-origin' }).catch(() => null);
+  const r = await api(`/v1/review/items?${q}`);
   if (!r) return fail();
   if (r.status === 401) { $('rv-out').hidden = false; $('rv-in').hidden = true; return; }
   if (r.status === 403) return fail(S.revNotReviewer);
@@ -68,8 +75,8 @@ function card(it) {
 
 async function mark(it, next, li) {
   li.classList.add('busy');
-  const r = await fetch(`/v1/review/items/${it.id}`, { method: 'POST', credentials: 'same-origin',
-    headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: JSON.stringify({ status: next }) }).catch(() => null);
+  const r = await api(`/v1/review/items/${it.id}`, { method: 'POST',
+    headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: JSON.stringify({ status: next }) });
   if (!r?.ok) { li.classList.remove('busy'); return fail(); }
   li.remove();
   items = items.filter((x) => x.id !== it.id);
@@ -79,9 +86,130 @@ async function mark(it, next, li) {
 
 function select(next) {
   status = next;
-  for (const b of root.querySelectorAll('.rv-tab')) b.setAttribute('aria-selected', String(b.dataset.status === status));
+  for (const b of root.querySelectorAll('.rv-tab[data-status]')) b.setAttribute('aria-selected', String(b.dataset.status === status));
   load();
 }
-for (const b of root.querySelectorAll('.rv-tab')) b.addEventListener('click', () => select(b.dataset.status));
+for (const b of root.querySelectorAll('.rv-tab[data-status]')) b.addEventListener('click', () => select(b.dataset.status));
 $('rv-more').addEventListener('click', () => load(true));
+
+// ---- Sources and Runs tabs ----
+let runs = null, registry = null, filter = 'all';
+const day = (iso) => { try { return new Date(iso).toLocaleString(undefined, { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }); } catch { return iso; } };
+const resultText = (r) => (r.ok ? `${r.kept} ${S.revOfKept} ${r.total} ${S.revKept}` : r.error || S.revRunFailed);
+
+async function loadRuns() {
+  if (runs) return runs;
+  const r = await api('/v1/review/runs');
+  if (!r) return null;
+  if (r.status === 401) { $('rv-out').hidden = false; $('rv-in').hidden = true; return null; }
+  if (!r.ok) { fail(r.status === 503 ? S.revSetup : S.revFail); return null; }
+  runs = (await r.json()).runs;
+  return runs;
+}
+async function loadRegistry() {
+  if (registry) return registry;
+  const r = await api('/review/sources.json');
+  if (!r?.ok) { fail(); return null; }
+  registry = await r.json();
+  return registry;
+}
+/** The newest result each source had, from the runs (newest first). */
+function lastResults(list) {
+  const out = {};
+  for (const run of list) for (const x of run.sources) if (!out[x.id]) out[x.id] = { ...x, at: run.received_at };
+  return out;
+}
+
+async function showSources() {
+  const [reg, list] = await Promise.all([loadRegistry(), loadRuns()]);
+  if (!reg || !list) return;
+  const last = lastResults(list);
+  const on = reg.sources.filter((x) => x.allowed);
+  $('rv-src-sum').textContent = [`${on.length} ${S.revOn.toLowerCase()}`, `${reg.sources.length - on.length} ${S.revOff.toLowerCase()}`,
+    list[0] ? `${S.revLastRun}: ${day(list[0].received_at)}` : S.revNoRuns].join(' · ');
+  const keep = (x) => filter === 'all' || (filter === 'on' && x.allowed) || (filter === 'off' && !x.allowed) || (filter === 'failing' && last[x.id] && !last[x.id].ok);
+  const shown = reg.sources.filter(keep);
+  const box = $('rv-src-list');
+  box.replaceChildren();
+  if (filter === 'failing' && !shown.length) { box.append(el('p', 'small', S.revNoneFailing)); return; }
+  const byCountry = new Map();
+  for (const x of shown) byCountry.set(x.country, [...(byCountry.get(x.country) ?? []), x]);
+  const order = [...byCountry.keys()].sort((a, b) => (byCountry.get(b).filter((x) => x.allowed).length - byCountry.get(a).filter((x) => x.allowed).length) || (reg.countries[a] ?? a).localeCompare(reg.countries[b] ?? b));
+  for (const cc of order) {
+    const group = byCountry.get(cc).sort((a, b) => Number(b.allowed) - Number(a.allowed) || a.name.localeCompare(b.name));
+    box.append(el('h2', 'rv-h', `${reg.countries[cc] ?? cc.toUpperCase()} · ${group.filter((x) => x.allowed).length} ${S.revOn.toLowerCase()}`));
+    const ul = el('ul', 'rv-src-list');
+    for (const x of group) ul.append(x.allowed ? sourceCard(x, last[x.id]) : sourceLine(x, last[x.id]));
+    box.append(ul);
+  }
+}
+const meta = (x) => [x.use, x.kind, x.lang, x.runs === 'home' ? S.revHomeOnly : null, x.feed ? null : S.revNoFeed].filter(Boolean).join(' · ');
+function result(r, fallback) {
+  const p = el('p', `rv-res ${r ? (r.ok ? 'is-ok' : 'is-fail') : 'is-none'}`, r ? resultText(r) : fallback);
+  if (r) p.title = day(r.at);
+  return p;
+}
+function siteLink(x) {
+  const a = el('a', 'rv-site', S.revSite);
+  a.href = x.site; a.target = '_blank'; a.rel = 'noopener noreferrer';
+  return a;
+}
+function sourceCard(x, r) {
+  const li = el('li', 'rv-src');
+  const top = el('div', 'rv-row');
+  top.append(el('span', 'rv-name', x.name), el('span', 'rv-badge is-on', S.revOn));
+  li.append(top, el('p', 'rv-meta', meta(x)), result(r, S.revNotRead));
+  if (x.note) { const d = el('details', 'rv-more-info'); d.append(el('summary', null, '…'), el('p', 'rv-note', x.note), siteLink(x)); li.append(d); }
+  return li;
+}
+function sourceLine(x, r) {
+  const li = el('li', 'rv-src-off');
+  const d = el('details');
+  const sum = el('summary');
+  sum.append(el('span', 'rv-name', x.name), el('span', 'rv-badge', S.revOff));
+  d.append(sum, el('p', 'rv-meta', meta(x)));
+  if (r) d.append(result(r));
+  if (x.note) d.append(el('p', 'rv-note', x.note));
+  d.append(siteLink(x));
+  li.append(d);
+  return li;
+}
+
+async function showRuns() {
+  const list = await loadRuns();
+  if (!list) return;
+  const box = $('rv-run-list');
+  box.replaceChildren();
+  if (!list.length) { box.append(el('li', 'small', S.revNoRuns)); return; }
+  for (const run of list) {
+    const li = el('li', 'rv-run');
+    const top = el('div', 'rv-row');
+    top.append(el('b', null, day(run.received_at)), el('span', `rv-res ${run.ok ? 'is-ok' : 'is-fail'}`, run.ok ? S.revRunOk : S.revRunFailed));
+    const failedSources = run.sources.filter((x) => !x.ok).length;
+    const summary = run.error ?? `${run.sources.length} ${S.revSourcesRead} · ${run.added} ${S.revNewInQueue}`;
+    const d = el('details');
+    d.open = !run.ok || failedSources > 0;
+    d.append(el('summary', null, S.revPerSource));
+    const ul = el('ul', 'rv-run-sources');
+    for (const x of run.sources) ul.append(el('li', `rv-res ${x.ok ? 'is-ok' : 'is-fail'}`, `${x.id}: ${resultText(x)}`));
+    d.append(ul);
+    li.append(top, el('p', 'rv-note', summary), d);
+    box.append(li);
+  }
+}
+
+for (const b of root.querySelectorAll('[data-filter]')) b.addEventListener('click', () => {
+  filter = b.dataset.filter;
+  for (const x of root.querySelectorAll('[data-filter]')) x.setAttribute('aria-selected', String(x === b));
+  showSources();
+});
+function route() {
+  const view = ['sources', 'runs'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'queue';
+  for (const p of root.querySelectorAll('[data-panel]')) p.hidden = p.dataset.panel !== view;
+  for (const a of root.querySelectorAll('[data-view]')) { if (a.dataset.view === view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); }
+  if (view === 'sources') showSources();
+  if (view === 'runs') showRuns();
+}
+addEventListener('hashchange', route);
 select('new');
+route();

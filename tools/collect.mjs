@@ -48,6 +48,7 @@ async function get(url) {
   throw new Error('HTTP 429 twice');
 }
 
+const startedAt = new Date().toISOString();
 const since = new Date(Date.now() - days * 86400000).toISOString();
 const found = [], health = [];
 for (const s of sourcesFor(registry, where, only)) {
@@ -55,8 +56,8 @@ for (const s of sourcesFor(registry, where, only)) {
     const items = parseItems(await get(s.feed));
     const kept = candidates(items, s, { since });
     found.push(...kept);
-    health.push(`${s.id}: ${kept.length} of ${items.length} kept`);
-  } catch (e) { health.push(`${s.id}: FAILED (${e.message})`); }
+    health.push({ id: s.id, ok: true, kept: kept.length, total: items.length });
+  } catch (e) { health.push({ id: s.id, ok: false, kept: 0, total: 0, error: e.message }); }
 }
 
 let added = 0, known = 0, sendError = null;
@@ -74,8 +75,21 @@ if (dry) {
   }
 }
 
+const allFailed = health.length > 0 && health.every((h) => !h.ok);
+// Tell scamdb how the run went, for the review page's Runs and Sources tabs. Best effort: a failure here is only logged.
+let reportError = null;
+if (!dry) {
+  const run = { startedAt, host: process.env.SCAMDB_COLLECTOR_HOST ?? where, ok: !sendError && !allFailed, candidates: found.length, added, known,
+    error: sendError ? `sending failed: ${sendError}` : allFailed ? 'every source failed' : null, sources: health };
+  try {
+    const r = await fetch(`${endpoint.replace(/\/+$/, '')}/run`, { method: 'POST',
+      headers: { 'content-type': 'application/json', authorization: `Bearer ${token}`, 'user-agent': UA }, body: JSON.stringify(run), signal: AbortSignal.timeout(30000) });
+    if (!r.ok) reportError = `HTTP ${r.status}`;
+  } catch (e) { reportError = e.message; }
+}
+
 console.log(`scamdb collector (${where}${dry ? ', dry run' : ''}): ${found.length} candidates${dry ? '' : `, ${added} new in the review queue, ${known} already there`}`);
-for (const h of health) console.log(`  ${h}`);
+for (const h of health) console.log(`  ${h.id}: ${h.ok ? `${h.kept} of ${h.total} kept` : `FAILED (${h.error})`}`);
 if (sendError) console.log(`  sending FAILED: ${sendError}`);
-const allFailed = health.length > 0 && health.every((h) => h.includes('FAILED'));
+if (reportError) console.log(`  run summary not stored: ${reportError}`);
 process.exit(sendError || allFailed ? 1 : 0);

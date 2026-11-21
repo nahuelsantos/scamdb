@@ -1,5 +1,5 @@
 // Writes the scamdb.dev pages and assets into outDir. Every page is a template function returning HTML.
-import { mkdirSync, writeFileSync, copyFileSync, readdirSync } from 'node:fs';
+import { mkdirSync, writeFileSync, copyFileSync, readdirSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { matchMessage } from '../packages/matcher/index.js';
 import { home } from '../site/templates/home.js';
@@ -50,6 +50,11 @@ export function buildSite(repo, outDir, meta, root) {
   put('contribute/index.html', contribute(c));
   put('account/index.html', account(c));
   put('review/index.html', review(c));
+  // The review page's Sources tab (behind Cloudflare Access with the page): the registry plus country names.
+  const registry = JSON.parse(readFileSync(join(CODE, 'sources/registry.json'), 'utf8'));
+  const countryName = Object.fromEntries(repo.countries.map((x) => [x.code, x.name.en ?? Object.values(x.name)[0]]));
+  put('review/sources.json', JSON.stringify({ countries: { ...countryName, eu: 'European Union', ww: 'Worldwide' },
+    sources: registry.sources.map(({ id, country, lang, kind, use, name, site, feed, runs, allowed, note }) => ({ id, country, lang, kind, use, name, site, feed: !!feed, runs, allowed, note: note ?? null })) }));
   put('feed/index.html', feed(c));
   put('report/index.html', report(c));
   put('trends/index.html', trends(c));
