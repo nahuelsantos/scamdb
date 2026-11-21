@@ -250,7 +250,11 @@ button.btn.solid { background: var(--ink); color: var(--paper); }
 .drop:hover, .drop.over, .drop:focus-within { background: color-mix(in srgb, var(--accent, var(--ink)) 10%, transparent); }
 .drop.has { border-style: solid; }
 .drop.off { opacity: .55; cursor: not-allowed; }
-.pg-report { margin: 0 0 14px; }
+.pg-report { margin: var(--s4) 0 0; }
+.rep-more { border: 1.5px solid var(--line); border-radius: 14px; padding: var(--s3) var(--s4); }
+.rep-more[open] { display: grid; gap: var(--s5); padding-bottom: var(--s5); }
+.rep-more summary { cursor: pointer; font-weight: 600; }
+.rep-more-sum { font-weight: 400; color: var(--dim); }
 .report select, .trends select, .filters select { appearance: none; -webkit-appearance: none; padding-right: 44px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 12px 8px; }
 /* Catalogue filters */
 .filters { display: flex; flex-wrap: wrap; align-items: end; gap: var(--s4); margin: 0 0 var(--s6, 32px); }

@@ -21,6 +21,21 @@ try {
 const cc = new URLSearchParams(location.search).get('country');
 if (cc && !$('rep-country').value) $('rep-country').value = cc;
 
+// The country, guessed from the browser's language settings ("es-ES" → Spain, "pt-BR" → Brazil). If none fits, it stays
+// "Detect it for me" and the server uses the country the request comes from. Shown next to "Add details".
+export function guessCountry(languages, available) {
+  for (const l of languages ?? []) {
+    const region = String(l).split('-')[1]?.toLowerCase();
+    if (region && available.has(region)) return region;
+  }
+  return '';
+}
+const sel = $('rep-country');
+if (!sel.value) sel.value = guessCountry(navigator.languages ?? [navigator.language], new Set([...sel.options].map((o) => o.value).filter(Boolean)));
+const showCountry = () => { $('rep-more-sum').textContent = sel.value ? `· ${sel.options[sel.selectedIndex].text}` : ''; };
+sel.addEventListener('change', showCountry);
+showCountry();
+
 function loadTurnstile() {
   if (document.querySelector('script[data-turnstile]')) return;
   const s = document.createElement('script');
@@ -85,11 +100,10 @@ form.addEventListener('submit', async (e) => {
   const country = $('rep-country').value;
   const text = $('rep-text').value.trim(), what = $('rep-what').value.trim();
   const shot = $('rep-shot').files?.[0];
-  if (!country) return fail(S.repNeedCountry);
   if (!text && !what && !shot) return fail(S.repNeedText);
   if (!signedIn && !token) return fail(S.repTurnstile);
 
-  const fields = { country, channel: $('rep-channel').value || undefined, outcome: $('rep-outcome').value || undefined, whatHappened: what || undefined, contact: $('rep-contact').value.trim() || undefined, source: 'scamdb.dev' };
+  const fields = { country: country || undefined, channel: $('rep-channel').value || undefined, outcome: $('rep-outcome').value || undefined, whatHappened: what || undefined, contact: $('rep-contact').value.trim() || undefined, source: 'scamdb.dev' };
   if (!signedIn) fields.turnstileToken = token;
   let body, headers = { 'x-requested-with': 'scamdb' };
   if (shot && signedIn) {

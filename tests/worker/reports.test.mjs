@@ -175,3 +175,18 @@ test('before migration 0007 is applied, a report is still stored (without its ou
     assert.equal(r.status, 201);
   } finally { old.dispose(); }
 });
+
+test('only the message is required: no country uses the request’s country when we cover it, otherwise "xx"', async () => {
+  const send = (cf) => w.fetch('/v1/reports', { method: 'POST', cf, headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip() }, body: JSON.stringify({ text: 'Correos: su paquete está retenido, pague 1,99 € [link]', turnstileToken: 'ok' }) });
+  const es = await send({ country: 'ES' });
+  assert.equal(es.status, 201);
+  const rowEs = await w.db.prepare('SELECT country, scam_id FROM reports WHERE id = ?').bind((await es.json()).id).first();
+  assert.equal(rowEs.country, 'es');
+  const far = await send({ country: 'AQ' });
+  assert.equal(far.status, 201);
+  assert.equal((await w.db.prepare('SELECT country FROM reports WHERE id = ?').bind((await far.json()).id).first()).country, 'xx');
+});
+test('a country the reporter chose wins over the request’s country', async () => {
+  const r = await w.fetch('/v1/reports', { method: 'POST', cf: { country: 'ES' }, headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip() }, body: JSON.stringify({ ...ok }) });
+  assert.equal((await w.db.prepare('SELECT country FROM reports WHERE id = ?').bind((await r.json()).id).first()).country, 'ar');
+});

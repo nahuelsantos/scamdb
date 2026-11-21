@@ -2,6 +2,15 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Faster reports: one field, everything else optional
+
+- "Report this message" now sits under the check result and carries the message to the report form.
+- The form shows only the message (or a screenshot) and Send. Country, channel, outcome, story and email are under
+  "Add details (optional)".
+- Country: guessed from the browser language ("fr-FR" → France) and shown next to "Add details"; if none is chosen,
+  the server uses the country the request comes from (Cloudflare), or `xx` when we don't cover it. `xx` reports stay
+  out of the private test set, which is per country.
+
 ## 2026-11-19: The AI on all real messages, including the six new countries
 
 - All 343 real messages now have saved Workers AI answers (128 scored today, within the free allowance).
