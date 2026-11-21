@@ -11,10 +11,12 @@ import { serve } from '../../tools/serve.mjs';
 import { sketch, roundRect } from '../../lib/sketch.js';
 import { LOGO } from '../../site/templates/logo.js';
 import { ICONS, STEP_ICONS } from '../../site/templates/icons.js';
-import { POSTS } from './posts.mjs';
+import { POSTS as ALL_POSTS } from './posts.mjs';
+import { STILLS } from './storyboard-stills.mjs';
+const POSTS = process.argv.includes('--stills') ? STILLS : ALL_POSTS;
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-const SIZES = { ig: [1080, 1350], igsq: [1080, 1080], x: [1600, 900] };
+const SIZES = { ig: [1080, 1350], igsq: [1080, 1080], x: [1600, 900], v: [1080, 1920] };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /** Inline markup for slide text: [[word]] = lime highlighter, {{1|words}} = pink-numbered red flag. */
@@ -73,6 +75,7 @@ h2{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:
 .mk-vs .mk-bubble{font-size:37px;margin-top:0;padding:40px 38px 44px}
 .mk-tag{font-family:var(--display);font-weight:700;font-size:64px;margin-bottom:14px}
 .mk-cols{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;flex:1;align-items:start;margin-top:10px}
+.sz-v{padding:150px 90px 120px}.sz-v h1{font-size:118px}.sz-v h2{font-size:92px}.sz-v .mk-sub{font-size:48px}.sz-v .mk-bubble{font-size:50px}.sz-v .mk-note{font-size:56px}.sz-v .mk-cta-main{font-size:96px}.sz-v .mk-vs{grid-template-columns:1fr;gap:36px}.sz-v .mk-vs .mk-bubble{font-size:42px}
 .mk-bubble.mk-long{font-size:38px;line-height:1.36}.mk-cols .mk-bubble.mk-long{font-size:32px}.sz-x .mk-source{font-size:20px}
 .sz-x .mk-vs .mk-bubble{font-size:32px}.sz-x .mk-vs{margin-top:24px}.sz-x .mk-tag{font-size:48px}
 .mk-cols .mk-bubble{font-size:38px;padding:40px 44px 44px}.mk-cols .mk-note{font-size:44px}.mk-cols .mk-notes{margin-top:40px}
@@ -141,7 +144,7 @@ function frame(kind, w, h, seed) {
   return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" style="overflow:visible">${inner}</svg>`;
 }
 
-const only = new Set(process.argv.slice(2));
+const only = new Set(process.argv.slice(2).filter((a) => !a.startsWith('--')));
 const server = await serve(join(ROOT, 'dist'), 0);
 const base = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch();
@@ -170,7 +173,7 @@ for (const post of POSTS) {
       [...el.children].forEach((c) => { if (c !== holder) { c.style.position = 'relative'; c.style.zIndex = '1'; } });
       if (!el.children.length || el.childNodes.length > el.children.length) { const t = document.createElement('span'); t.style.position = 'relative'; t.style.zIndex = '1'; [...el.childNodes].filter((c) => c !== holder && c.nodeType === 3).forEach((c) => t.append(c)); el.append(t); }
     }), svgs);
-    const out = join(ROOT, 'marketing/posts', post.week, post.id, `${String(i + 1).padStart(2, '0')}-${s.size ?? 'ig'}.png`);
+    const out = join(ROOT, post.out ?? join('marketing/posts', post.week, post.id), `${String(i + 1).padStart(2, '0')}-${s.size ?? 'ig'}.png`);
     await mkdir(dirname(out), { recursive: true });
     await p.screenshot({ path: out });
     await p.close();

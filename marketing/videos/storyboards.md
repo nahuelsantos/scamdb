@@ -32,11 +32,15 @@ on top.
 |---|---|---|---|
 | 0–3 s | Paper background; a speech bubble draws itself | **Got a text that feels off?** | "Got a text that feels off? Don't ask the group chat." |
 | 3–9 s | scamdb.dev on a phone screen; the USPS scam text is pasted into the box | *Paste it on scamdb.dev* | "Paste it into scamdb dot dev." |
-| 9–16 s | The answer appears; the pink SCAM stamp lands on it; the scam's name is highlighted | **About 1,200 known scams** · *runs in your browser* | "It checks it against about twelve hundred known scam scripts. In your browser. Nothing gets sent." |
+| 9–16 s | The real answer appears: the amber **SUSPICIOUS** stamp, and the match “Fake USPS text” highlighted | **Matches a known scam script** · *runs in your browser* | "It checks it against about twelve hundred known scam scripts. In your browser. Nothing gets sent." |
 | 16–23 s | Scroll down: the script's steps and "what to do"; handwritten arrows point at them | *The script they're running* · *The one thing to do* | "You get the script they're running, and the one thing to do next." |
 | 23–30 s | End card: logo | **Got a new one? Send it: scamdb.dev/report** · small: *“Not recognised” doesn't mean safe* | "It only knows scams someone has documented. Found a new one? Send it to us." |
 
 **Message used:** the real USPS text quoted by FOX 5 DC (Dec 2, 2024), source shown on screen.
+
+**What the site really answers (checked on the live API, 2026-11-21, country US):** `suspicious`, matching
+`us/usps-delivery-text`. The video shows exactly that: no SCAM stamp on this one. The screen recording is made on the
+live scamdb.dev with the country set to US, the same day it's published, so it shows what a viewer would get.
 
 ---
 
@@ -56,23 +60,24 @@ on top.
 
 ---
 
-## Video 3 · "Real or scam? 3 seconds" (format: quiz) · ~25 s
+## Video 3 · "Real or scam? 3 seconds" (format: quiz) · ~26 s
 
-**Use:** Wed Nov 25, alongside the "Real or scam?" delivery post. Ask for answers in the comments before the reveal.
+**Use:** Wed Nov 25, as a stand-alone video. Ask for answers in the comments before the reveal.
 
 | Time | What you see | On-screen text | Your voice |
 |---|---|---|---|
-| 0–2 s | Headline | **Real or scam? You have 3 seconds.** | "One's real. One's a scam. Three seconds." |
-| 2–8 s | Two bubbles, A and B, draw side by side; a hand-drawn 3-2-1 countdown | A: *your genuine delivery text* · B: *the USPS scam text* | (silence, a soft tick each second) |
-| 8–13 s | SCAM stamp lands on B; A gets a plain ink tick, "GENUINE" | **B is the scam** | "B. The real one tells you what you ordered. The fake one tells you there's a problem." |
-| 13–20 s | Flags on B light up | ① no order, no store ② a problem only you can fix ③ (next comes a link) | "No order number. No store. A problem only you can fix. Classic." |
-| 20–25 s | End card | **Scam or real, send us yours: scamdb.dev/report** | "Got either kind? Send it. The real ones teach the check too." |
+| 0–2 s | Headline | **Real or scam? You have 3 seconds.** | "Two texts from your bank. One's a scam. Three seconds." |
+| 2–8 s | Two bubbles, A and B, draw one above the other; a hand-drawn 3-2-1 countdown | A: the new-device alert · B: the Zelle "fraud alert" | (silence, a soft tick each second) |
+| 8–13 s | SCAM stamp lands on B; A gets a plain ink tick, "GENUINE" | **B is the scam** | "B. But look how alike they are. Same bank. Same 'if this wasn't you'." |
+| 13–20 s | Highlighter on "Please reply yes or no" and on "call us on [number]" | **Never act through the message.** | "So don't reply, and don't call the number in the text. Call the one on your card." |
+| 20–26 s | End card | **Scam or real, send us yours: scamdb.dev/report** | "Got either kind? Send it. The real ones teach the check too." |
 
-**Messages used:**
-- **A:** one of **your own genuine delivery texts** (you said yes to this), with personal details removed and the
-  company shown as [delivery company]. Labelled "Genuine message, shared by scamdb's founder". **You need to pick
-  one.** Tell me which, or let me suggest 2–3 from your genuine reports.
-- **B:** the real USPS scam text, quoted by FOX 5 DC (Dec 2, 2024), source on screen.
+**Messages used (owner picked option A):**
+- **A, genuine:** "A new iPhone OS device has been registered for the [bank] Mobile Banking app. If this was not
+  authorised by you, please call us on [number] or [number]". The owner's own genuine report (NZ), bank name replaced.
+  Labelled "Genuine message, shared by scamdb's founder".
+- **B, scam:** "[bank] fraud alert. Did you just attempt a Zelle transaction of $3,500? Please reply yes or no."
+  Quoted by ABC7 (KGO-TV), Oct 4, 2021, bank name replaced. Source on screen.
 
 ---
 
