@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Page readers for Phishing-Radar and INCIBE; On/Off switches on the review page
+
+- Phishing-Radar (Verbraucherzentrale, DE) and INCIBE's citizen alerts (ES) have no feed, so the collector now reads
+  their pages (`lib/readers.js`, tested on saved copies). Phishing-Radar: each dated warning with a link to the
+  screenshot of the real message. INCIBE: the alerts list (its alert pages answered "not found" from outside Spain).
+  Text stays in the original language. Both look back 30 days, so the first run brings their recent items.
+- The Sources tab is ordered by country (A to Z), switched-on first, and each source has an On/Off switch (behind
+  Access and the GitHub check). Switches live in a new table (migration `0010`) and the collector applies them before
+  each run; the registry stays the default. Sources with nothing to read, and lists of firms, cannot be switched on.
+
 ## 2026-11-21: Reddit back on: r/arnaques and five searches
 
 - r/arnaques is on again (the owner confirmed it exists), plus Reddit searches for "estafas", "estafa sms",

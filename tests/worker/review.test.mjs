@@ -107,3 +107,47 @@ test('before migration 0009 the Runs tab gets an empty list, not an error', asyn
     assert.deepEqual((await r.json()).runs, []);
   } finally { await old.dispose(); }
 });
+const flip = (c, id, allowed, csrf = true) => w.fetch(`/v1/review/sources/${id}`, { method: 'POST', headers: { cookie: c, 'content-type': 'application/json', ...(csrf ? { 'x-requested-with': 'scamdb' } : {}) }, body: JSON.stringify({ allowed }) });
+const switches = async () => (await (await w.fetch('/v1/review/sources', { headers: { cookie: owner } })).json()).settings;
+
+test('the owner switches a source off and on again; the collector reads the switches', async () => {
+  let r = await flip(owner, 'de-vz-phishingradar', false);
+  assert.equal(r.status, 200);
+  assert.equal((await r.json()).isDefault, false);
+  const s = await switches();
+  assert.deepEqual(s.map((x) => [x.id, x.allowed, x.changed_by]), [['de-vz-phishingradar', false, 'u2228984']]);
+  r = await w.fetch('/v1/collect/settings', { headers: { authorization: `Bearer ${TOKEN}` } });
+  assert.deepEqual((await r.json()).settings, [{ id: 'de-vz-phishingradar', allowed: false }]);
+  // back to the registry's default: the switch row goes away
+  assert.equal((await (await flip(owner, 'de-vz-phishingradar', true)).json()).isDefault, true);
+  assert.deepEqual(await switches(), []);
+});
+test('a source with something to read can be switched on from the page', async () => {
+  assert.equal((await flip(owner, 'fr-lemonde-decodeurs', true)).status, 200);
+  assert.deepEqual((await switches()).map((x) => [x.id, x.allowed]), [['fr-lemonde-decodeurs', true]]);
+  await flip(owner, 'fr-lemonde-decodeurs', false);
+});
+test('sources with nothing to read, or lists of firms, cannot be switched on', async () => {
+  const pharos = await flip(owner, 'fr-pharos', true);
+  assert.equal(pharos.status, 409);
+  assert.match((await pharos.json()).message, /no feed or page reader/);
+  assert.equal((await flip(owner, 'fr-amf', true)).status, 409);
+  assert.equal((await flip(owner, 'xx-unknown', false)).status, 404);
+  assert.deepEqual(await switches(), []);
+});
+test('only the owner, with the CSRF header, can flip a switch; only the collector token reads them', async () => {
+  assert.equal((await flip(stranger, 'de-vz-phishingradar', false)).status, 403);
+  assert.equal((await flip(owner, 'de-vz-phishingradar', false, false)).status, 403);
+  assert.equal((await w.fetch('/v1/review/sources/de-vz-phishingradar', { method: 'POST', headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: '{"allowed":false}' })).status, 401);
+  assert.equal((await w.fetch('/v1/collect/settings', { headers: { authorization: `Bearer ${'d'.repeat(40)}` } })).status, 401);
+  assert.equal((await flip(owner, 'de-vz-phishingradar', 'no')).status, 400);
+});
+test('before migration 0010 switches report that they are not available', async () => {
+  const { SCHEMA } = await import('./harness.mjs');
+  const old = await makeWorker({ schema: SCHEMA.slice(0, SCHEMA.indexOf('CREATE TABLE source_settings')), bindings: { COLLECTOR_TOKEN: TOKEN } });
+  try {
+    assert.deepEqual(await (await old.fetch('/v1/review/sources', { headers: { cookie: owner } })).json(), { settings: [], switchable: false });
+    assert.equal((await old.fetch('/v1/review/sources/de-vz-phishingradar', { method: 'POST', headers: { cookie: owner, 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: '{"allowed":false}' })).status, 503);
+    assert.deepEqual((await (await old.fetch('/v1/collect/settings', { headers: { authorization: `Bearer ${TOKEN}` } })).json()).settings, []);
+  } finally { await old.dispose(); }
+});

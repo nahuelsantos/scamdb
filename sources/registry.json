@@ -240,13 +240,16 @@
       "use": "messages",
       "name": "INCIBE – Avisos para la ciudadanía / 017 helpline",
       "site": "https://www.incibe.es/ciudadania/avisos",
-      "feed": null,
+      "feed": "https://www.incibe.es/ciudadania/avisos?page=0",
       "runs": "any",
-      "allowed": false,
-      "terms": "Not read by the collector.",
+      "allowed": true,
+      "terms": "Read with a page reader (no feed). The title, the list's short summary and the link are kept privately for review and never republished. The site's reuse terms have not been read in detail yet.",
       "why": "Run by Instituto Nacional de Ciberseguridad (Ministry for Digital Transformation) (Cyber agency). Frequent alerts on phishing and smishing campaigns impersonating companies and authorities; free 017 cybersecurity helpline.",
-      "note": "High value: its citizen alerts describe current phishing and smishing campaigns, often with the message text. No RSS found (INCIBE offers email alerts instead); needs a page reader.",
-      "checked": "2026-11-21"
+      "note": "On since 2026-11-21 with a page reader of the alerts list (title, date, summary, link). The alert pages themselves answered \"not found\" from outside Spain, so open the link for the full text.",
+      "checked": "2026-11-21",
+      "reader": "incibe-avisos",
+      "filter": false,
+      "days": 30
     },
     {
       "id": "es-cec",
@@ -336,13 +339,16 @@
       "use": "messages",
       "name": "Verbraucherzentrale – Phishing-Radar",
       "site": "https://www.verbraucherzentrale.de/wissen/digitale-welt/phishingradar/phishingradar-aktuelle-warnungen-6059",
-      "feed": null,
+      "feed": "https://www.verbraucherzentrale.de/wissen/digitale-welt/phishingradar/phishingradar-aktuelle-warnungen-6059",
       "runs": "any",
-      "allowed": false,
-      "terms": "Not read by the collector.",
+      "allowed": true,
+      "terms": "Read with a page reader (no feed). The warning text and the screenshot link are kept privately for review and never republished. The site's reuse terms have not been read in detail yet.",
       "why": "Run by Verbraucherzentrale NRW (consumer advice centres) (Consumer protection). Continuously updated catalogue of real phishing, smishing and quishing messages with the warning signs in each.",
-      "note": "Highest value of the list: a running catalogue of real phishing, smishing and quishing messages, word for word, with the warning signs. No feed; needs a page reader.",
-      "checked": "2026-11-21"
+      "note": "On since 2026-11-21 with a page reader: each dated warning (subject, wording, warning signs) becomes one item, with a link to the screenshot of the real message.",
+      "checked": "2026-11-21",
+      "reader": "vz-phishingradar",
+      "filter": false,
+      "days": 30
     },
     {
       "id": "de-propk",
