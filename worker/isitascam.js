@@ -3,7 +3,7 @@
 // (probe detection keeps only a fingerprint).
 import { readJson, json, cors, HttpError } from './http.js';
 import { authKey, sessionKey, recordUsage } from './keys.js';
-import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
+import { hit, burst, BURST, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from './scorer.js';
@@ -65,6 +65,11 @@ const subjectOf = async (env, key, ip, now) => (key ? `gh:${key.githubId}` : `ip
 async function checkLimits(env, key, subject, now) {
   const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
   const bucket = `isitascam:${subject}`;
+  if (key) {
+    const maxBurst = Number(env.BURST_CHECKS) || BURST.checks; // a setting can raise it (the tests do)
+    const b = await burst(env.DB, bucket, maxBurst, now);
+    if (!b.ok) throw new HttpError(429, 'too_fast', `Too many checks in one minute (limit ${maxBurst}). Wait a moment and try again.`, { 'retry-after': String(b.retryAfter) });
+  }
   if (!(await hit(env.DB, bucket, key ? LIMITS.keyed : LIMITS.keyless, now)).ok)
     throw new HttpError(429, 'too_many_checks', `Daily limit reached (${key ? LIMITS.keyed : LIMITS.keyless} checks). Try again tomorrow${key ? '' : ', or get a free key for more'}.`, retry);
   if (!(await hit(env.DB, 'isitascam:global', LIMITS.global, now)).ok)

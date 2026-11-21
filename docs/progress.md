@@ -2,6 +2,14 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Per-minute limits for keys; the API limits documented
+
+- On top of the daily limits, a key now gets at most 10 checks, 20 reports and 60 feed requests a minute (429
+  `too_fast` with Retry-After). Keyless senders need none: their daily limit (10) is already smaller.
+- The docs page lists every Worker endpoint's limits in a table, what 429 and 503 mean, and how to ask for more
+  (an issue on GitHub). A test keeps the table in step with the numbers in the Worker.
+- Payments: not now (no API users yet). If someone needs more, limits can be raised by hand.
+
 ## 2026-11-21: New fusion weights, fitted on real messages
 
 - Refit on the 343 real messages (plus the 197 written ones), with the saved Workers AI answers; `hard` and `signs`
