@@ -47,3 +47,13 @@ logo or screen layout. They make "Real or scam?" honest: one real genuine messag
 
 **Starting from zero on X:** the owner opened their accounts a week ago. Phase 2 needs a reputation among developers
 before it starts.
+
+## Stage 3: voice, look and video formats (2026-11-21)
+
+- **Tone:** dry wit. Calm and a little amused at the scammers, never at the people they target.
+- **Look:** the site style, as in the posts and the animation test. Videos run about 25% slower than the test.
+- **Video formats (repeatable):** (a) teardown of one real message, (b) "Real or scam?" quiz, (d) screen recording of
+  scamdb.dev. Four videos before Black Friday; storyboards in `videos/storyboards.md`, approved by the owner before
+  anything is made.
+- **Music:** added by the owner on Instagram from its licensed library, at low volume. Voice-only on X. Sound effects
+  made by us.
