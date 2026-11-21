@@ -16,7 +16,7 @@ export const SOCIAL = [
 // The trends page needs reports to show anything; it stays built (so /trends/ works) but out of the menu until then.
 export const SHOW_TRENDS = false;
 
-export function layout({ title, description, body, path, meta, lang = 'en', scripts = '' }) {
+export function layout({ title, description, body, path, meta, lang = 'en', scripts = '', noindex = false }) {
   const P = '';
   const here = path;
   const nav = [['/catalogue/', t(lang, 'navCatalogue')], ['/report/', t(lang, 'navReport')], ...(SHOW_TRENDS ? [['/trends/', t(lang, 'navTrends')]] : []), ['/docs/', t(lang, 'navDocs')], ['/contribute/', t(lang, 'navContribute')], ['/account/', t(lang, 'navAccount')]]
@@ -27,7 +27,7 @@ export function layout({ title, description, body, path, meta, lang = 'en', scri
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(description)}">
+<meta name="description" content="${esc(description)}">${noindex ? '\n<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="canonical" href="${SITE}${esc(here)}">
 <link rel="alternate" type="application/atom+xml" title="scamdb: new and updated scams" href="/v1/changes.atom">
 <meta property="og:title" content="${esc(title)}">

@@ -8,12 +8,15 @@ import { handleKeys } from './keys.js';
 import { handleIsItAScam } from './isitascam.js';
 import { feedTrends, feedBrands, publicTrends } from './feed.js';
 import { authKey } from './keys.js';
+import { handleCollect, handleReview } from './review.js';
 
 // Secrets each group of routes needs. Missing or too-short secrets close the route (503) instead of running insecurely.
 const NEEDS = {
   reports: [['IP_SALT', 16], ['TURNSTILE_SECRET', 1]],
   isitascam: [['IP_SALT', 16]],
   account: [['SESSION_SECRET', 32], ['GITHUB_CLIENT_ID', 1], ['GITHUB_CLIENT_SECRET', 1]],
+  collect: [['COLLECTOR_TOKEN', 32]],
+  review: [['SESSION_SECRET', 32]],
 };
 const configured = (env, group) => (NEEDS[group] ?? []).every(([name, min]) => typeof env[name] === 'string' && env[name].length >= min);
 
@@ -29,6 +32,10 @@ const ROUTES = [
   ['GET', /^\/v1\/keys\/me\/reveal$/, handleKeys, 'account'],
   ['POST', /^\/v1\/keys$/, handleKeys, 'account'],
   ['DELETE', /^\/v1\/keys\/me$/, handleKeys, 'account'],
+  // Source review queue (docs/sources.md): the home-lab collector writes, the owner reviews. Not part of the public API.
+  ['POST', /^\/v1\/collect$/, handleCollect, 'collect'],
+  ['GET', /^\/v1\/review\/items$/, handleReview, 'review'],
+  ['POST', /^\/v1\/review\/items\/\d+$/, handleReview, 'review'],
   ['GET', /^\/auth\/github$/, authStart, 'account'],
   ['GET', /^\/auth\/github\/callback$/, authCallback, 'account'],
   ['POST', /^\/auth\/logout$/, logout, 'account'],

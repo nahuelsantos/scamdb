@@ -1,0 +1,100 @@
+{
+  "about": "Trustworthy places where people and institutions publish real scam messages, by country and language. tools/collect.mjs reads the allowed feeds into the private review queue (docs/sources.md). `runs` says where a feed can be read from: some sites block cloud servers, so `home` feeds are read from the owner's home lab. `filter: false` keeps every item (a source that is only about scams); otherwise an item needs a score of `minScore` (default 3). `terms` is what we may keep; `why` is why we trust it.",
+  "sources": [
+    {
+      "id": "fr-reddit-arnaques",
+      "country": "fr",
+      "lang": "fr",
+      "kind": "forum",
+      "name": "r/arnaques (Reddit)",
+      "site": "https://www.reddit.com/r/arnaques/",
+      "feed": "https://www.reddit.com/r/arnaques/new/.rss",
+      "runs": "home",
+      "filter": false,
+      "allowed": true,
+      "terms": "Public RSS. The post title and text are kept privately for review and never republished; the author's name is dropped.",
+      "why": "People post the scam messages they received, often word for word or as screenshots, and others confirm them. Not checked by an institution: every item is reviewed before use.",
+      "note": "Reddit refuses cloud servers, so the name could not be checked from the cloud. The first home run's summary says whether the feed answers."
+    },
+    {
+      "id": "fr-cybermalveillance-alertes",
+      "country": "fr",
+      "lang": "fr",
+      "kind": "agency",
+      "name": "Cybermalveillance.gouv.fr: alerts",
+      "site": "https://www.cybermalveillance.gouv.fr/",
+      "feed": "https://www.cybermalveillance.gouv.fr/feed/atom-flux-alertes",
+      "runs": "home",
+      "filter": false,
+      "allowed": true,
+      "terms": "French government site (Licence Ouverte unless stated). Title, summary and link kept for review.",
+      "why": "The French government's platform against cybercrime (GIP ACYMA); its alerts describe current scam campaigns, often with the message text."
+    },
+    {
+      "id": "fr-cybermalveillance-actualites",
+      "country": "fr",
+      "lang": "fr",
+      "kind": "agency",
+      "name": "Cybermalveillance.gouv.fr: news",
+      "site": "https://www.cybermalveillance.gouv.fr/",
+      "feed": "https://www.cybermalveillance.gouv.fr/feed/atom-flux-actualites",
+      "runs": "home",
+      "allowed": true,
+      "terms": "French government site (Licence Ouverte unless stated). Title, summary and link kept for review.",
+      "why": "Same platform as the alerts; the news feed also covers other topics, so it is filtered."
+    },
+    {
+      "id": "fr-franceinfo-vrai-ou-fake",
+      "country": "fr",
+      "lang": "fr",
+      "kind": "fact-check",
+      "name": "franceinfo: Vrai ou Fake",
+      "site": "https://www.franceinfo.fr/vrai-ou-fake/",
+      "feed": "https://www.franceinfo.fr/vrai-ou-fake.rss",
+      "runs": "any",
+      "allowed": true,
+      "terms": "Press RSS. Title, summary and link only, kept for review; the article stays on franceinfo.",
+      "why": "Public broadcaster's fact-checking desk; regularly debunks viral fake SMS and emails."
+    },
+    {
+      "id": "fr-lemonde-decodeurs",
+      "country": "fr",
+      "lang": "fr",
+      "kind": "fact-check",
+      "name": "Le Monde: Les Décodeurs",
+      "site": "https://www.lemonde.fr/les-decodeurs/",
+      "feed": "https://www.lemonde.fr/les-decodeurs/rss_full.xml",
+      "runs": "any",
+      "allowed": true,
+      "terms": "Press RSS. Title, summary and link only, kept for review; the article stays on Le Monde.",
+      "why": "Le Monde's fact-checking desk; covers scam waves when they spread."
+    },
+    {
+      "id": "fr-ameli",
+      "country": "fr",
+      "lang": "fr",
+      "kind": "agency",
+      "name": "ameli.fr (Assurance Maladie)",
+      "site": "https://www.ameli.fr/",
+      "feed": "https://www.ameli.fr/rss.xml",
+      "runs": "home",
+      "allowed": true,
+      "terms": "French public body. Title, summary and link kept for review.",
+      "why": "The health insurer most impersonated in French scam texts (carte Vitale); it publishes warnings about fake messages."
+    },
+    {
+      "id": "fr-signal-arnaques",
+      "country": "fr",
+      "lang": "fr",
+      "kind": "ngo",
+      "name": "Signal Arnaques",
+      "site": "https://www.signal-arnaques.com/",
+      "feed": null,
+      "runs": "home",
+      "allowed": false,
+      "terms": "To be read before use: the site's terms on reuse of reports.",
+      "why": "A long-running French community site where people report the scams they received, with the message text.",
+      "note": "No public feed known; reading it needs a page reader and a look at its terms first."
+    }
+  ]
+}

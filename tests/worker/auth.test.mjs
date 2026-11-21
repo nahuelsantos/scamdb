@@ -73,3 +73,12 @@ test('sign-in on www moves to the main domain first', async () => {
   assert.equal(r.status, 301);
   assert.equal(r.headers.get('location'), 'https://scamdb.dev/auth/github');
 });
+test('sign-in can return to the review page, and only to pages on the list', async () => {
+  const start = await w.fetch('/auth/github?next=/review/');
+  assert.ok(cookieOf(start, 'scamdb_next')?.includes(encodeURIComponent('/review/')));
+  assert.equal(cookieOf(await w.fetch('/auth/github?next=https://evil.example/'), 'scamdb_next'), undefined);
+  let r = await w.fetch('/auth/github/callback?code=c&state=abc', { headers: { cookie: `scamdb_state=abc; scamdb_next=${encodeURIComponent('/review/')}` } });
+  assert.equal(r.headers.get('location'), '/review/');
+  r = await w.fetch('/auth/github/callback?code=c&state=abc', { headers: { cookie: `scamdb_state=abc; scamdb_next=${encodeURIComponent('//evil.example/')}` } });
+  assert.equal(r.headers.get('location'), '/account/');
+});

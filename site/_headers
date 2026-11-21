@@ -23,6 +23,11 @@
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
+# The private review page (docs/sources.md) stays out of search engines and caches.
+/review/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
 # UAT previews (<branch>-scamdb.<account>.workers.dev) stay out of search engines.
 https://:preview.:account.workers.dev/*
   X-Robots-Tag: noindex

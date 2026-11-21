@@ -13,14 +13,18 @@ const redirect = (location, cookies = []) => {
   return new Response(null, { status: 302, headers: h });
 };
 
+// Pages a sign-in may return to (?next=); anything else goes to the account page.
+const NEXT = ['/account/', '/review/'];
+
 export function authStart(request, env) {
+  const next = new URL(request.url).searchParams.get('next');
   const state = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(16)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   const url = new URL('https://github.com/login/oauth/authorize');
   url.searchParams.set('client_id', env.GITHUB_CLIENT_ID);
   url.searchParams.set('redirect_uri', callbackFor(request, env));
   url.searchParams.set('scope', '');
   url.searchParams.set('state', state);
-  return redirect(url.toString(), [setCookie('scamdb_state', state, 600)]);
+  return redirect(url.toString(), [setCookie('scamdb_state', state, 600), ...(NEXT.includes(next) ? [setCookie('scamdb_next', encodeURIComponent(next), 600)] : [])]);
 }
 
 export async function authCallback(request, env) {
@@ -40,7 +44,8 @@ export async function authCallback(request, env) {
     const { id, login } = await u.json();
     if (!Number.isInteger(id) || typeof login !== 'string') throw new Error('bad user');
     const session = await sign({ githubId: id, login, exp: Date.now() + SESSION_DAYS * 86400000 }, env.SESSION_SECRET);
-    return redirect('/account/', [setCookie('scamdb_session', session, SESSION_DAYS * 86400), setCookie('scamdb_state', '', 0)]);
+    const next = decodeURIComponent(readCookie(request, 'scamdb_next') ?? '');
+    return redirect(NEXT.includes(next) ? next : '/account/', [setCookie('scamdb_session', session, SESSION_DAYS * 86400), setCookie('scamdb_state', '', 0), setCookie('scamdb_next', '', 0)]);
   } catch {
     return redirect('/account/?error=github', [setCookie('scamdb_state', '', 0)]);
   }
