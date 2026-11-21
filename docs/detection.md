@@ -48,22 +48,24 @@ A logistic regression turns seven numbers, each from 0 to 1, into one probabilit
 
 | Feature | What it is | Weight today |
 |---|---|---|
-| bias | constant | −2.816 |
-| `ai` | the chat model's score | 3.756 |
-| `hard` | a hard rule fired (code request, remote access, or money plus impersonation) | −0.121 |
-| `ruleScam` | the matcher's verdict was `scam` | 1.050 |
-| `signs` | number of warning signs, up to 4, divided by 4 | 0.100 |
-| `keyword` | strength of the best catalogue match, up to 6, divided by 6 | 0.999 |
-| `nearest` | best embedding similarity | 0.381 |
+| bias | constant | −2.049 |
+| `ai` | the chat model's score | 3.359 |
+| `hard` | a hard rule fired (code request, remote access, or money plus impersonation) | 0 (the floor below handles it) |
+| `ruleScam` | the matcher's verdict was `scam` | 0.878 |
+| `signs` | number of warning signs, up to 4, divided by 4 | 0 |
+| `keyword` | strength of the best catalogue match, up to 6, divided by 6 | 0.702 |
+| `nearest` | best embedding similarity | 0.322 |
 
 `probability = 1 / (1 + e^-(bias + Σ weight × feature))`. Reading the weights: the AI score counts most; the matcher
 saying `scam` and a strong catalogue match each add about as much as a quarter of the AI scale; the others barely
 matter. A message the AI scores 0.95, with no matcher verdict, no catalogue match and a nearest similarity of 0.55, gets
-p ≈ 0.72.
+p ≈ 0.79: `suspicious`, not `scam` (the cut-off is 0.85). Weights from the 2026-11-21 refit on real messages,
+`eval/report-fusion-refit-2026-11-21.md`.
 
 ### 4. Verdict and floors
 
-- p ≥ 0.70 → `scam`; p ≥ 0.40 → `suspicious`; otherwise `not_recognised` (`THRESHOLDS`).
+- p ≥ 0.85 → `scam`; p ≥ 0.40 → `suspicious`; otherwise `not_recognised` (`THRESHOLDS`). The `scam` cut-off was 0.70
+  until 2026-11-21; it was raised because genuine bank, card and delivery alerts scored 0.70–0.85.
 - Floor: if a hard rule fired, the verdict is at least `suspicious`, whatever the AI says.
 - A warning about a scam is never `scam`.
 - `pattern` is `known` when a catalogue scam matches, `unknown` when it reads as a scam but matches none (these are
@@ -97,6 +99,12 @@ Review on 2026-11-18 (`eval/report-ai-fusion.md` has the full numbers).
   points, so most differences above are noise. 105 genuine real messages exist now, but only 43 have AI answers.
 
 ## Plan to improve the weights
+
+Steps 1–5 were done on 2026-11-21 (`eval/report-fusion-refit-2026-11-21.md`): on real messages, genuine called `scam`
+went from 13.3% to 1–3% (cross-validated), scams flagged from 95.0% to 95.8%, scams called `scam` from 83.6% to about
+55% (the rest are `suspicious`). Next: score the owner's own messages with the AI and add them, and find a better signal
+so more scams can be called `scam` again without genuine alerts following.
+
 
 1. **Score every real message with the AI** (the nightly AI eval: 343 messages instead of 215), then refit.
 2. **Fit and judge on real messages, held out by country.** Written messages may be added for languages with no real
