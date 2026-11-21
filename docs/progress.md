@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Matcher 1.39.0: an amount is a weak sign
+
+- A bare price or sum ("30€", "$74.167", "R$ 86") is no longer "asks for money". It is a new weak sign, `amount`: it
+  can make a message suspicious, but never "scam" by itself. Asking for money (pay, transfer, a fee) is unchanged.
+- A long expiry ("vencen en 180 días", "vence en 3 meses") is a date, not pressure; "vence en 24 horas" still is.
+- "pay the $25 … fee" (words between) is still a money request.
+- Real set: genuine called "scam" 8 → 3 of 105, scams caught unchanged (92.4%); 6 scams move from "scam" to
+  "suspicious". Labelled set: genuine called "scam" 11 → 9. Private set: 3 → 2. Owner's genuine messages: 7 → 3
+  (the three left are "Descarga nuestra App Supervielle y empezá hoy mismo").
+
 ## 2026-11-21: Faster reports: one field, everything else optional
 
 - "Report this message" now sits under the check result and carries the message to the report form.
