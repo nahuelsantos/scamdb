@@ -8,7 +8,7 @@ import { handleKeys } from './keys.js';
 import { handleIsItAScam } from './isitascam.js';
 import { feedTrends, feedBrands, publicTrends } from './feed.js';
 import { authKey } from './keys.js';
-import { handleCollect, handleCollectRun, handleReview, handleReviewRuns } from './review.js';
+import { handleCollect, handleCollectRun, handleCollectSettings, handleReview, handleReviewRuns, handleReviewSources } from './review.js';
 
 // Secrets each group of routes needs. Missing or too-short secrets close the route (503) instead of running insecurely.
 const NEEDS = {
@@ -36,6 +36,9 @@ const ROUTES = [
   ['POST', /^\/v1\/collect$/, handleCollect, 'collect'],
   ['POST', /^\/v1\/collect\/run$/, handleCollectRun, 'collect'],
   ['GET', /^\/v1\/review\/runs$/, handleReviewRuns, 'review'],
+  ['GET', /^\/v1\/review\/sources$/, handleReviewSources, 'review'],
+  ['POST', /^\/v1\/review\/sources\/[a-z0-9-]+$/, handleReviewSources, 'review'],
+  ['GET', /^\/v1\/collect\/settings$/, handleCollectSettings, 'collect'],
   ['GET', /^\/v1\/review\/items$/, handleReview, 'review'],
   ['POST', /^\/v1\/review\/items\/\d+$/, handleReview, 'review'],
   ['GET', /^\/auth\/github$/, authStart, 'account'],

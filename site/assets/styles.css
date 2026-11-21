@@ -319,3 +319,12 @@ button.btn.solid { background: var(--ink); color: var(--paper); }
 .rv-run { display: grid; gap: var(--s2); padding: var(--s4); border: 1.5px solid var(--line); border-radius: 12px; background: var(--card); }
 .rv-run summary { cursor: pointer; font-size: 14px; color: var(--dim); }
 .rv-run-sources { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
+.rv-switch-row { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; margin-top: 2px; }
+.rv-switch { display: inline-flex; align-items: center; gap: var(--s2); min-height: 44px; padding: 0 12px 0 4px; border: 1.5px solid var(--line); border-radius: 999px; background: transparent; color: var(--dim); font: inherit; font-weight: 600; cursor: pointer; }
+.rv-knob { width: 34px; height: 20px; border-radius: 999px; background: var(--line); position: relative; flex: none; transition: background .15s; }
+.rv-knob::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--paper); transition: left .15s; }
+.rv-switch.is-on { border-color: var(--ink); color: var(--ink); }
+.rv-switch.is-on .rv-knob { background: #2f8f46; }
+.rv-switch.is-on .rv-knob::after { left: 16px; }
+.rv-switch:disabled { opacity: .45; cursor: not-allowed; }
+.rv-switch:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }

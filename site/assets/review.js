@@ -120,26 +120,42 @@ function lastResults(list) {
   return out;
 }
 
+// Switches flipped on this page (GET /v1/review/sources) override the registry's default; null until loaded.
+let switches = null;
+async function loadSwitches() {
+  if (switches) return switches;
+  const r = await api('/v1/review/sources');
+  if (!r?.ok) { switches = { map: new Map(), switchable: false }; return switches; }
+  const body = await r.json();
+  switches = { map: new Map(body.settings.map((x) => [x.id, x])), switchable: body.switchable };
+  return switches;
+}
+const isOn = (x) => (switches?.map.has(x.id) ? switches.map.get(x.id).allowed : x.allowed);
+// The same rule as the Worker's cannotRun: nothing to read, or a list of firms that never goes to the review queue.
+const NEVER_ON = ['blacklist', 'registry', 'reporting', 'statistics'];
+const cannotRun = (x) => (!x.feed ? S.revNoFeedReason : NEVER_ON.includes(x.use) ? S.revNeverOnReason : null);
+
 async function showSources() {
-  const [reg, list] = await Promise.all([loadRegistry(), loadRuns()]);
+  const [reg, list] = await Promise.all([loadRegistry(), loadRuns(), loadSwitches()]);
   if (!reg || !list) return;
   const last = lastResults(list);
-  const on = reg.sources.filter((x) => x.allowed);
+  const on = reg.sources.filter(isOn);
   $('rv-src-sum').textContent = [`${on.length} ${S.revOn.toLowerCase()}`, `${reg.sources.length - on.length} ${S.revOff.toLowerCase()}`,
     list[0] ? `${S.revLastRun}: ${day(list[0].received_at)}` : S.revNoRuns].join(' · ');
-  const keep = (x) => filter === 'all' || (filter === 'on' && x.allowed) || (filter === 'off' && !x.allowed) || (filter === 'failing' && last[x.id] && !last[x.id].ok);
+  const keep = (x) => filter === 'all' || (filter === 'on' && isOn(x)) || (filter === 'off' && !isOn(x)) || (filter === 'failing' && last[x.id] && !last[x.id].ok);
   const shown = reg.sources.filter(keep);
   const box = $('rv-src-list');
   box.replaceChildren();
   if (filter === 'failing' && !shown.length) { box.append(el('p', 'small', S.revNoneFailing)); return; }
+  // Countries A to Z; in each, the sources that are on first, then the others, each A to Z.
   const byCountry = new Map();
   for (const x of shown) byCountry.set(x.country, [...(byCountry.get(x.country) ?? []), x]);
-  const order = [...byCountry.keys()].sort((a, b) => (byCountry.get(b).filter((x) => x.allowed).length - byCountry.get(a).filter((x) => x.allowed).length) || (reg.countries[a] ?? a).localeCompare(reg.countries[b] ?? b));
-  for (const cc of order) {
-    const group = byCountry.get(cc).sort((a, b) => Number(b.allowed) - Number(a.allowed) || a.name.localeCompare(b.name));
-    box.append(el('h2', 'rv-h', `${reg.countries[cc] ?? cc.toUpperCase()} · ${group.filter((x) => x.allowed).length} ${S.revOn.toLowerCase()}`));
+  const name = (cc) => reg.countries[cc] ?? cc.toUpperCase();
+  for (const cc of [...byCountry.keys()].sort((a, b) => name(a).localeCompare(name(b)))) {
+    const group = byCountry.get(cc).sort((a, b) => Number(isOn(b)) - Number(isOn(a)) || a.name.localeCompare(b.name));
+    box.append(el('h2', 'rv-h', `${name(cc)} · ${group.filter(isOn).length} ${S.revOn.toLowerCase()}`));
     const ul = el('ul', 'rv-src-list');
-    for (const x of group) ul.append(x.allowed ? sourceCard(x, last[x.id]) : sourceLine(x, last[x.id]));
+    for (const x of group) ul.append(isOn(x) ? sourceCard(x, last[x.id]) : sourceLine(x, last[x.id]));
     box.append(ul);
   }
 }
@@ -154,11 +170,41 @@ function siteLink(x) {
   a.href = x.site; a.target = '_blank'; a.rel = 'noopener noreferrer';
   return a;
 }
+/** The On/Off switch, plus a line saying when it was changed here (or why it cannot be switched on). */
+function switchRow(x) {
+  const row = el('div', 'rv-switch-row');
+  const on = isOn(x);
+  const why = on ? null : cannotRun(x);
+  const b = el('button', `rv-switch${on ? ' is-on' : ''}`);
+  b.type = 'button';
+  b.setAttribute('role', 'switch');
+  b.setAttribute('aria-checked', String(on));
+  b.setAttribute('aria-label', `${x.name}: ${on ? S.revOn : S.revOff}`);
+  b.append(el('span', 'rv-knob'), el('span', 'rv-switch-label', on ? S.revOn : S.revOff));
+  if (why || !switches?.switchable) b.disabled = true;
+  b.addEventListener('click', () => flip(x, !on, b));
+  row.append(b);
+  const changed = switches?.map.get(x.id);
+  if (why) row.append(el('span', 'rv-note', why));
+  else if (!switches?.switchable) row.append(el('span', 'rv-note', S.revSwitchSetup));
+  else if (changed) row.append(el('span', 'rv-note', `${S.revChangedHere} ${day(changed.changed_at)}`));
+  return row;
+}
+async function flip(x, allowed, b) {
+  b.disabled = true;
+  const r = await api(`/v1/review/sources/${encodeURIComponent(x.id)}`, { method: 'POST',
+    headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: JSON.stringify({ allowed }) });
+  if (!r?.ok) { b.disabled = false; return fail((await r?.json().catch(() => null))?.message ?? S.revFail); }
+  const body = await r.json();
+  if (body.isDefault) switches.map.delete(x.id);
+  else switches.map.set(x.id, { id: x.id, allowed, changed_at: body.changedAt });
+  showSources();
+}
 function sourceCard(x, r) {
   const li = el('li', 'rv-src');
   const top = el('div', 'rv-row');
-  top.append(el('span', 'rv-name', x.name), el('span', 'rv-badge is-on', S.revOn));
-  li.append(top, el('p', 'rv-meta', meta(x)), result(r, S.revNotRead));
+  top.append(el('span', 'rv-name', x.name));
+  li.append(top, el('p', 'rv-meta', meta(x)), result(r, S.revNotRead), switchRow(x));
   if (x.note) { const d = el('details', 'rv-more-info'); d.append(el('summary', null, '…'), el('p', 'rv-note', x.note), siteLink(x)); li.append(d); }
   return li;
 }
@@ -169,6 +215,7 @@ function sourceLine(x, r) {
   sum.append(el('span', 'rv-name', x.name), el('span', 'rv-badge', S.revOff));
   d.append(sum, el('p', 'rv-meta', meta(x)));
   if (r) d.append(result(r));
+  d.append(switchRow(x));
   if (x.note) d.append(el('p', 'rv-note', x.note));
   d.append(siteLink(x));
   li.append(d);

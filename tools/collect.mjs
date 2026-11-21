@@ -9,6 +9,7 @@
 //      SCAMDB_COLLECT_URL (default https://scamdb.dev/v1/collect).
 import { readFileSync } from 'node:fs';
 import { parseItems, sourcesFor, candidates, checkRegistry } from '../lib/collect.js';
+import { READERS, readPage } from '../lib/readers.js';
 
 const args = process.argv.slice(2);
 const value = (n, d = null) => (args.includes(n) ? args[args.indexOf(n) + 1] : d);
@@ -23,7 +24,7 @@ const UA = 'linux:scamdb-collector:1.0 (read-only, one small run a day; +https:/
 const BATCH = 50;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const problems = checkRegistry(registry);
+const problems = checkRegistry(registry, READERS);
 if (problems.length) { console.error(`sources/registry.json is not valid:\n  ${problems.join('\n  ')}`); process.exit(2); }
 
 let token = process.env.SCAMDB_COLLECTOR_TOKEN ?? '';
@@ -33,16 +34,16 @@ if (!dry && token.length < 32) { console.error('No collector token: set SCAMDB_C
 // Reddit asks unauthenticated readers to go slowly (staysy-social learned 8 s); other sites get 2 s.
 const delayFor = (url) => (/reddit\.com$/.test(new URL(url).hostname) ? 8000 : 2000);
 let last = 0;
-async function get(url) {
+async function get(url, { page = false } = {}) {
   for (let attempt = 0; attempt < 2; attempt++) {
     const wait = last + delayFor(url) - Date.now();
     if (wait > 0) await sleep(wait);
     last = Date.now();
-    const r = await fetch(url, { headers: { 'user-agent': UA, accept: 'application/rss+xml, application/atom+xml, text/xml;q=0.9' }, signal: AbortSignal.timeout(25000) });
+    const r = await fetch(url, { headers: { 'user-agent': UA, accept: page ? 'text/html' : 'application/rss+xml, application/atom+xml, text/xml;q=0.9' }, signal: AbortSignal.timeout(25000) });
     if (r.status === 429 && attempt === 0) { await sleep(Math.min(Number(r.headers.get('retry-after')) || 30, 60) * 1000); continue; }
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     const text = await r.text();
-    if (!/<(rss|feed|rdf:RDF)\b/i.test(text.slice(0, 2000))) throw new Error('not a feed (a bot check page?)');
+    if (!page && !/<(rss|feed|rdf:RDF)\b/i.test(text.slice(0, 2000))) throw new Error('not a feed (a bot check page?)');
     return text;
   }
   throw new Error('HTTP 429 twice');
@@ -51,10 +52,24 @@ async function get(url) {
 const startedAt = new Date().toISOString();
 const since = new Date(Date.now() - days * 86400000).toISOString();
 const found = [], health = [];
+// The switches flipped on the review page override the registry's `allowed` (GET /v1/collect/settings). If scamdb
+// cannot be reached, the run uses the registry as it is and says so.
+let settingsNote = null;
+if (!dry) {
+  try {
+    const r = await fetch(`${endpoint.replace(/\/+$/, '')}/settings`, { headers: { authorization: `Bearer ${token}`, 'user-agent': UA }, signal: AbortSignal.timeout(20000) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const over = new Map((await r.json()).settings.map((x) => [x.id, x.allowed]));
+    for (const src of registry.sources) if (over.has(src.id)) src.allowed = over.get(src.id);
+    if (over.size) settingsNote = `${over.size} switch${over.size === 1 ? '' : 'es'} from the review page applied`;
+  } catch (e) { settingsNote = `review-page switches not read (${e.message}); using the registry as it is`; }
+}
 for (const s of sourcesFor(registry, where, only)) {
   try {
-    const items = parseItems(await get(s.feed));
-    const kept = candidates(items, s, { since });
+    const items = s.reader ? readPage(s.reader, await get(s.feed, { page: true }), s.feed) : parseItems(await get(s.feed));
+    // A source may look further back (`days` in the registry), for sites that publish a few items a week; the queue
+    // never adds a link twice, so a longer window only fills gaps.
+    const kept = candidates(items, s, { since: s.days > days ? new Date(Date.now() - s.days * 86400000).toISOString() : since });
     found.push(...kept);
     health.push({ id: s.id, ok: true, kept: kept.length, total: items.length });
   } catch (e) { health.push({ id: s.id, ok: false, kept: 0, total: 0, error: e.message }); }
@@ -92,4 +107,5 @@ console.log(`scamdb collector (${where}${dry ? ', dry run' : ''}): ${found.lengt
 for (const h of health) console.log(`  ${h.id}: ${h.ok ? `${h.kept} of ${h.total} kept` : `FAILED (${h.error})`}`);
 if (sendError) console.log(`  sending FAILED: ${sendError}`);
 if (reportError) console.log(`  run summary not stored: ${reportError}`);
+if (settingsNote) console.log(`  ${settingsNote}`);
 process.exit(sendError || allFailed ? 1 : 0);
