@@ -333,3 +333,14 @@ test('the review page gets the sources list for its Sources tab, with the three 
   for (const v of ['queue', 'sources', 'runs']) assert.ok(html.includes(`data-view="${v}"`), v);
   rmSync(dir, { recursive: true });
 });
+test('the docs list the API limits, and they match the Worker', async () => {
+  const { BURST } = await import('../../worker/limits.js');
+  const { LIMITS: CHECKS } = await import('../../worker/isitascam.js');
+  const { LIMITS: REPORTS } = await import('../../worker/reports.js');
+  const { FEED_DAILY } = await import('../../worker/feed.js');
+  const { dir, page } = build();
+  const html = page('docs/index.html');
+  for (const want of [`${CHECKS.keyless} a day per IP`, `${CHECKS.keyed} a day, ${BURST.checks} a minute`, `${REPORTS.keyed} a day, ${BURST.reports} a minute`,
+    `${FEED_DAILY} a day, ${BURST.feed} a minute`, 'too_fast', 'Retry-After']) assert.ok(html.includes(want), want);
+  rmSync(dir, { recursive: true });
+});

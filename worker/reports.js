@@ -9,7 +9,7 @@ import { brandsIn } from '../lib/brands.js';
 import { matchMessage } from '../packages/matcher/index.js';
 import { authKey, sessionKey, recordUsage } from './keys.js';
 import { verifyTurnstile } from './turnstile.js';
-import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
+import { hit, burst, BURST, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 
 export const COUNTRIES = ['ar', 'au', 'nz', 'us', 'ca', 'gb', 'mx', 'es', 'br', 'pt', 'ie', 'mt', 'fr', 'be', 'lu', 'nl', 'de', 'at', 'ch', 'it', 'pl', 'ro', 'md', 'ua', 'tr', 'gr', 'cy', 'bg', 'se', 'dk', 'no', 'fi', 'is', 'cz', 'sk', 'hu', 'si', 'hr', 'ee', 'lv', 'lt', 'rs', 'ba', 'me', 'mk', 'al', 'xk', 'ru', 'by', 'ge', 'am', 'az', 'cl', 'co', 'pe', 'uy', 'py', 'bo', 'ec', 've', 'gt', 'sv', 'hn', 'ni', 'cr', 'pa', 'bz', 'ph', 'ng', 'in', 'id', 'ae', 'th', 'kr', 'jp', 'tw'];
 export const CHANNELS = ['whatsapp', 'sms', 'phone', 'online', 'in-person', 'email', 'social'];
@@ -70,6 +70,11 @@ export async function handleReport(request, env) {
   // Per-sender limit first, so refused requests never use up the shared daily cap. Keyed senders are counted
   // per GitHub account, so deleting and recreating a key does not reset the limit.
   const bucket = key ? `reports:gh:${key.githubId}` : `reports:ip:${await ipHash(ip, env.IP_SALT, utcDay(now))}`;
+  if (key) {
+    const maxBurst = Number(env.BURST_REPORTS) || BURST.reports; // a setting can raise it (the tests do)
+    const b = await burst(env.DB, bucket, maxBurst, now);
+    if (!b.ok) throw new HttpError(429, 'too_fast', `Too many reports in one minute (limit ${maxBurst}). Wait a moment and try again.`, { 'retry-after': String(b.retryAfter) });
+  }
   if (!(await hit(env.DB, bucket, key ? LIMITS.keyed : LIMITS.keyless, now)).ok)
     throw new HttpError(429, 'too_many_reports', 'Daily report limit reached. Thank you, and try again tomorrow.', retry);
   if (!(await hit(env.DB, 'reports:global', LIMITS.global, now)).ok)

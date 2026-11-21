@@ -52,7 +52,10 @@ ${REPORT_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(la
 <p>${esc(t(lang, 'dReportsKeyless'))}</p></section>
 <section aria-labelledby="dl-h"><h2 id="dl-h">${esc(t(lang, 'dDownloadH'))}</h2><p>${esc(t(lang, 'dDownloadP'))}</p><ul class="list">${t(lang, 'dDownloadRows').map((r) => { const [path, ...rest] = r.split(': '); return `<li><a href="${esc(path)}"><code>${esc(path)}</code></a>: ${esc(rest.join(': '))}</li>`; }).join('')}</ul></section>
 <section aria-labelledby="feed-h"><h2 id="feed-h">${esc(t(lang, 'feedH'))}</h2><p>${esc(t(lang, 'dFeedP'))} <a href="/feed/">/feed/</a></p></section>
-<section aria-labelledby="k-h"><h2 id="k-h">${esc(t(lang, 'dKeys'))}</h2><p>${esc(t(lang, 'dKeysP'))}</p></section>
+<section aria-labelledby="k-h"><h2 id="k-h">${esc(t(lang, 'dKeys'))}</h2><p>${esc(t(lang, 'dKeysP'))}</p>
+<div class="scroll"><table><thead><tr>${t(lang, 'dLimitsCols').map((c) => `<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>
+${t(lang, 'dLimitsRows').map(([e, a, b]) => `<tr><td><code>${esc(e)}</code></td><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div>
+<p>${esc(t(lang, 'dLimitsAfter'))}</p></section>
 <section aria-labelledby="l-h"><h2 id="l-h">${esc(t(lang, 'dLicense'))}</h2><p>${esc(t(lang, 'dLicenseP1'))} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${esc(t(lang, 'dLicenseP2'))} <b>scamdb.dev · CC BY 4.0</b> ${esc(t(lang, 'dLicenseP3'))}</p></section>
 <section aria-labelledby="p-h"><h2 id="p-h">${esc(t(lang, 'dLimits'))}</h2><p>${esc(t(lang, 'dLimitsP'))}</p></section>
 <section aria-labelledby="n-h"><h2 id="n-h">${esc(t(lang, 'dNext'))}</h2><ul class="list"><li>${esc(t(lang, 'dNext1'))}</li><li>${esc(t(lang, 'dNext2'))}</li><li>${esc(t(lang, 'dNext3'))}</li></ul></section>`;
