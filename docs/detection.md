@@ -42,6 +42,10 @@ Two calls run at the same time, with an 8-second limit (`worker/scorer.js`):
 
 If the AI fails or times out, the matcher's answer is returned unchanged.
 
+*Timing:* with a key, `POST /v1/isitascam` answers at once with the catalogue check (steps 1–2); the AI and the fused
+score (steps 3–4) run after the response and are fetched from `GET /v1/isitascam/{id}`, unless the caller sends
+`wait: true`.
+
 ### 3. The fused score (`lib/fusion.js`)
 
 A logistic regression turns seven numbers, each from 0 to 1, into one probability that the message is a scam:

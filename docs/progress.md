@@ -2,6 +2,14 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Checks with a key answer at once; the AI score follows
+
+- A signed-in check took ~9 s: it waited for Workers AI (embedding + a 26B chat model, 8 s timeout). Now the answer
+  comes back at once with the catalogue check and `ai: { status: "pending", id, poll }`; the AI runs after the
+  response (`ctx.waitUntil`) and its answer is ready at `GET /v1/isitascam/{id}` for the same key, for 10 minutes
+  (kept in the Cache API, never in the database). `wait: true` keeps the single, slower call. The home page shows
+  the first answer at once (~60 ms in a mocked test) and updates it when the AI score arrives.
+
 ## 2026-11-21: Per-minute limits for keys; the API limits documented
 
 - On top of the daily limits, a key now gets at most 10 checks, 20 reports and 60 feed requests a minute (429
