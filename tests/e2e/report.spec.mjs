@@ -17,7 +17,7 @@ test('the report page lives on scamdb, is reachable from the nav and has no acce
 test('signed out: the screenshot field is off and the check is required', async ({ page }) => {
   await signedOut(page);
   await page.goto('/report/');
-  await expect(page.locator('#rep-shot')).toBeDisabled();
+  await expect(page.locator('#rep-drop')).toHaveClass(/\boff\b/);
   await page.locator('#rep-text').fill('Correos: su paquete está retenido, pague 1,99 € aquí [link]');
   await page.getByRole('button', { name: 'Send report' }).click();
   await expect(page.locator('#rep-err')).toContainText('complete the check');
@@ -106,4 +106,73 @@ test('a large screenshot is shrunk to a JPEG before upload, and a server failure
   await expect(page.getByText(/couldn’t finish reading the screenshot.*\(503\)/)).toBeVisible();
   expect(sent.jpeg).toBe(true);
   expect(sent.bytes).toBeLessThan(png.length);
+});
+
+// ---- Screenshot upload, the way a person does it: clicking the box and dragging a file onto it ----
+const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64');
+const dropFile = (page, name = 'shot.png', type = 'image/png') => page.evaluate(async ({ name, type, b64 }) => {
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  const dt = new DataTransfer();
+  dt.items.add(new File([bytes], name, { type }));
+  const zone = document.getElementById('rep-drop');
+  for (const ev of ['dragenter', 'dragover', 'drop']) zone.dispatchEvent(new DragEvent(ev, { bubbles: true, cancelable: true, dataTransfer: dt }));
+}, { name, type, b64: PNG.toString('base64') });
+
+test('signed in with a key: clicking the box opens the file picker and the chosen file is shown', async ({ page }) => {
+  await signedIn(page);
+  await page.goto('/report/');
+  await expect(page.locator('#rep-drop')).not.toHaveClass(/\boff\b/);
+  const [chooser] = await Promise.all([page.waitForEvent('filechooser'), page.locator('#rep-drop').click()]);
+  await chooser.setFiles({ name: 'whatsapp.png', mimeType: 'image/png', buffer: PNG });
+  await expect(page.locator('#rep-drop-main')).toHaveText('whatsapp.png');
+});
+test('signed in with a key: dropping a picture on the box selects it', async ({ page }) => {
+  await signedIn(page);
+  await page.goto('/report/');
+  await expect(page.locator('#rep-drop')).not.toHaveClass(/\boff\b/);
+  await dropFile(page, 'sms.png');
+  await expect(page.locator('#rep-drop-main')).toHaveText('sms.png');
+  expect(await page.locator('#rep-shot').evaluate((i) => i.files.length)).toBe(1);
+});
+test('signed out: the box says to sign in, and clicking it goes to GitHub sign-in and back to the form', async ({ page }) => {
+  await signedOut(page);
+  await page.route('**/auth/github?next=/report/', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<p>sign-in</p>' }));
+  await page.goto('/report/');
+  await expect(page.locator('#rep-drop-main')).toHaveText('Sign in to add a screenshot');
+  await expect(page.locator('#rep-shot-fix')).toHaveAttribute('href', '/auth/github?next=/report/');
+  await page.locator('#rep-drop').click();
+  await expect(page).toHaveURL(/\/auth\/github\?next=\/report\/$/);
+});
+test('signed out: pressing Enter on the focused box also goes to sign-in, never to an empty picker', async ({ page }) => {
+  await signedOut(page);
+  await page.route('**/auth/github?next=/report/', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<p>sign-in</p>' }));
+  await page.goto('/report/');
+  await expect(page.locator('#rep-drop')).toHaveClass(/\boff\b/);
+  let picker = false;
+  page.on('filechooser', () => { picker = true; });
+  await page.locator('#rep-shot').focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/auth\/github\?next=\/report\/$/);
+  expect(picker).toBe(false);
+});
+test('signed out: dropping a picture explains why instead of doing nothing', async ({ page }) => {
+  await signedOut(page);
+  await page.goto('/report/');
+  await expect(page.locator('#rep-drop')).toHaveClass(/\boff\b/);
+  await dropFile(page);
+  await expect(page.locator('#rep-err')).toBeVisible();
+  await expect(page.locator('#rep-err')).toContainText('Sign in with GitHub');
+});
+test('signed in without a key: the box leads to the account page to create one', async ({ page }) => {
+  await page.route('**/v1/keys/me', (r) => r.fulfill({ json: { login: 'ana', hasKey: false, usageToday: { reports: 0 }, limits: { reports: 200 } } }));
+  await page.goto('/report/');
+  await expect(page.locator('#rep-drop-main')).toHaveText('Create your free key to add a screenshot');
+  await expect(page.locator('#rep-shot-fix')).toHaveAttribute('href', '/account/');
+});
+test('signed in: dropping a file that is not a picture says so', async ({ page }) => {
+  await signedIn(page);
+  await page.goto('/report/');
+  await expect(page.locator('#rep-drop')).not.toHaveClass(/\boff\b/);
+  await dropFile(page, 'notes.pdf', 'application/pdf');
+  await expect(page.locator('#rep-err')).toContainText('not a picture');
 });

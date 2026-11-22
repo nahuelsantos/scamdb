@@ -37,6 +37,22 @@ export function distance(a, b) {
 }
 
 /** Throws 429 too_many_similar when `subject` already made PROBE_LIMIT near-identical checks today; else records this one. */
+/** The probe check as two statements for a db.batch (read today's prints, then record this one) and a judge for the
+ * read's rows that throws 429 when too many are near. The read runs before the insert, so it never sees this check. */
+export function probeStatements(db, subject, text, now = new Date()) {
+  const print = fingerprint(text);
+  const day = utcDay(now);
+  return {
+    read: db.prepare('SELECT print FROM check_prints WHERE subject = ? AND day = ?').bind(subject, day),
+    record: db.prepare('INSERT INTO check_prints (subject, day, print, created_at) VALUES (?, ?, ?, ?)').bind(subject, day, print, now.toISOString()),
+    judge(rows) {
+      if (rows.filter((r) => distance(r.print, print) <= NEAR_BITS).length >= PROBE_LIMIT)
+        throw new HttpError(429, 'too_many_similar', 'You have checked this message, or versions of it, many times today. Try again tomorrow.',
+          { 'retry-after': String(secondsToUtcMidnight(now)) });
+    },
+  };
+}
+
 export async function checkProbe(db, subject, text, now = new Date()) {
   const print = fingerprint(text);
   const day = utcDay(now);

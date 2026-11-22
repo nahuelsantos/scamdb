@@ -82,3 +82,7 @@ test('sign-in can return to the review page, and only to pages on the list', asy
   r = await w.fetch('/auth/github/callback?code=c&state=abc', { headers: { cookie: `scamdb_state=abc; scamdb_next=${encodeURIComponent('//evil.example/')}` } });
   assert.equal(r.headers.get('location'), '/account/');
 });
+test('sign-in can return to the report form', async () => {
+  const start = await w.fetch('/auth/github?next=/report/');
+  assert.ok(cookieOf(start, 'scamdb_next')?.includes(encodeURIComponent('/report/')));
+});
