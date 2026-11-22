@@ -11,10 +11,10 @@
       "feed": "https://www.reddit.com/r/arnaques/new/.rss",
       "runs": "home",
       "filter": false,
-      "allowed": true,
+      "allowed": false,
       "terms": "Public RSS. The post title and text are kept privately for review and never republished; the author's name is dropped.",
       "why": "People post the scam messages they received, often word for word or as screenshots, and others confirm them. Not checked by an institution: every item is reviewed before use.",
-      "note": "Back on 2026-11-21: the owner confirmed the subreddit exists. The first home run got HTTP 404 (perhaps restricted to logged-in readers); the Runs tab shows whether it answers now.",
+      "note": "Off since 2026-11-21: from the home lab, Reddit answered 404 to r/arnaques and to every search feed, then 429. Reddit no longer serves these feeds to readers without an account. Reading them needs a Reddit app (OAuth), which Reddit now approves case by case.",
       "use": "messages"
     },
     {
@@ -240,13 +240,16 @@
       "use": "messages",
       "name": "INCIBE – Avisos para la ciudadanía / 017 helpline",
       "site": "https://www.incibe.es/ciudadania/avisos",
-      "feed": null,
+      "feed": "https://www.incibe.es/ciudadania/avisos?page=0",
       "runs": "any",
-      "allowed": false,
-      "terms": "Not read by the collector.",
+      "allowed": true,
+      "terms": "Read with a page reader (no feed). The title, the list's short summary and the link are kept privately for review and never republished. The site's reuse terms have not been read in detail yet.",
       "why": "Run by Instituto Nacional de Ciberseguridad (Ministry for Digital Transformation) (Cyber agency). Frequent alerts on phishing and smishing campaigns impersonating companies and authorities; free 017 cybersecurity helpline.",
-      "note": "High value: its citizen alerts describe current phishing and smishing campaigns, often with the message text. No RSS found (INCIBE offers email alerts instead); needs a page reader.",
-      "checked": "2026-11-21"
+      "note": "On since 2026-11-21 with a page reader of the alerts list (title, date, summary, link). The alert pages themselves answered \"not found\" from outside Spain, so open the link for the full text.",
+      "checked": "2026-11-21",
+      "reader": "incibe-avisos",
+      "filter": false,
+      "days": 30
     },
     {
       "id": "es-cec",
@@ -336,13 +339,16 @@
       "use": "messages",
       "name": "Verbraucherzentrale – Phishing-Radar",
       "site": "https://www.verbraucherzentrale.de/wissen/digitale-welt/phishingradar/phishingradar-aktuelle-warnungen-6059",
-      "feed": null,
+      "feed": "https://www.verbraucherzentrale.de/wissen/digitale-welt/phishingradar/phishingradar-aktuelle-warnungen-6059",
       "runs": "any",
-      "allowed": false,
-      "terms": "Not read by the collector.",
+      "allowed": true,
+      "terms": "Read with a page reader (no feed). The warning text and the screenshot link are kept privately for review and never republished. The site's reuse terms have not been read in detail yet.",
       "why": "Run by Verbraucherzentrale NRW (consumer advice centres) (Consumer protection). Continuously updated catalogue of real phishing, smishing and quishing messages with the warning signs in each.",
-      "note": "Highest value of the list: a running catalogue of real phishing, smishing and quishing messages, word for word, with the warning signs. No feed; needs a page reader.",
-      "checked": "2026-11-21"
+      "note": "On since 2026-11-21 with a page reader: each dated warning (subject, wording, warning signs) becomes one item, with a link to the screenshot of the real message.",
+      "checked": "2026-11-21",
+      "reader": "vz-phishingradar",
+      "filter": false,
+      "days": 30
     },
     {
       "id": "de-propk",
@@ -852,10 +858,10 @@
       "site": "https://www.reddit.com/search/?q=estafas",
       "feed": "https://www.reddit.com/search.rss?q=estafas&sort=new",
       "runs": "home",
-      "allowed": true,
+      "allowed": false,
       "terms": "Public RSS of Reddit's search. The post title and text are kept privately for review and never republished; the author's name is dropped.",
       "why": "New posts from every community that use these words: often people pasting a message they received and asking whether it is a scam. Not checked by anyone: every item is reviewed by the owner before any use, and the country is decided at review.",
-      "note": "Added 2026-11-21 at the owner's request; not testable from the cloud (Reddit refuses cloud servers), so the first home run in the Runs tab is the check.",
+      "note": "Off since 2026-11-21: from the home lab, Reddit answered 404 to r/arnaques and to every search feed, then 429. Reddit no longer serves these feeds to readers without an account. Reading them needs a Reddit app (OAuth), which Reddit now approves case by case.",
       "checked": "2026-11-21"
     },
     {
@@ -868,10 +874,10 @@
       "site": "https://www.reddit.com/search/?q=estafa+sms",
       "feed": "https://www.reddit.com/search.rss?q=estafa+sms&sort=new",
       "runs": "home",
-      "allowed": true,
+      "allowed": false,
       "terms": "Public RSS of Reddit's search. The post title and text are kept privately for review and never republished; the author's name is dropped.",
       "why": "New posts from every community that use these words: often people pasting a message they received and asking whether it is a scam. Not checked by anyone: every item is reviewed by the owner before any use, and the country is decided at review.",
-      "note": "Added 2026-11-21 at the owner's request; not testable from the cloud (Reddit refuses cloud servers), so the first home run in the Runs tab is the check.",
+      "note": "Off since 2026-11-21: from the home lab, Reddit answered 404 to r/arnaques and to every search feed, then 429. Reddit no longer serves these feeds to readers without an account. Reading them needs a Reddit app (OAuth), which Reddit now approves case by case.",
       "checked": "2026-11-21"
     },
     {
@@ -884,10 +890,10 @@
       "site": "https://www.reddit.com/search/?q=arnaque+sms",
       "feed": "https://www.reddit.com/search.rss?q=arnaque+sms&sort=new",
       "runs": "home",
-      "allowed": true,
+      "allowed": false,
       "terms": "Public RSS of Reddit's search. The post title and text are kept privately for review and never republished; the author's name is dropped.",
       "why": "New posts from every community that use these words: often people pasting a message they received and asking whether it is a scam. Not checked by anyone: every item is reviewed by the owner before any use, and the country is decided at review.",
-      "note": "Added 2026-11-21 at the owner's request; not testable from the cloud (Reddit refuses cloud servers), so the first home run in the Runs tab is the check.",
+      "note": "Off since 2026-11-21: from the home lab, Reddit answered 404 to r/arnaques and to every search feed, then 429. Reddit no longer serves these feeds to readers without an account. Reading them needs a Reddit app (OAuth), which Reddit now approves case by case.",
       "checked": "2026-11-21"
     },
     {
@@ -900,10 +906,10 @@
       "site": "https://www.reddit.com/search/?q=golpe+whatsapp",
       "feed": "https://www.reddit.com/search.rss?q=golpe+whatsapp&sort=new",
       "runs": "home",
-      "allowed": true,
+      "allowed": false,
       "terms": "Public RSS of Reddit's search. The post title and text are kept privately for review and never republished; the author's name is dropped.",
       "why": "New posts from every community that use these words: often people pasting a message they received and asking whether it is a scam. Not checked by anyone: every item is reviewed by the owner before any use, and the country is decided at review.",
-      "note": "Added 2026-11-21 at the owner's request; not testable from the cloud (Reddit refuses cloud servers), so the first home run in the Runs tab is the check.",
+      "note": "Off since 2026-11-21: from the home lab, Reddit answered 404 to r/arnaques and to every search feed, then 429. Reddit no longer serves these feeds to readers without an account. Reading them needs a Reddit app (OAuth), which Reddit now approves case by case.",
       "checked": "2026-11-21"
     },
     {
@@ -916,10 +922,10 @@
       "site": "https://www.reddit.com/search/?q=scam+text",
       "feed": "https://www.reddit.com/search.rss?q=scam+text&sort=new",
       "runs": "home",
-      "allowed": true,
+      "allowed": false,
       "terms": "Public RSS of Reddit's search. The post title and text are kept privately for review and never republished; the author's name is dropped.",
       "why": "New posts from every community that use these words: often people pasting a message they received and asking whether it is a scam. Not checked by anyone: every item is reviewed by the owner before any use, and the country is decided at review.",
-      "note": "Added 2026-11-21 at the owner's request; not testable from the cloud (Reddit refuses cloud servers), so the first home run in the Runs tab is the check.",
+      "note": "Off since 2026-11-21: from the home lab, Reddit answered 404 to r/arnaques and to every search feed, then 429. Reddit no longer serves these feeds to readers without an account. Reading them needs a Reddit app (OAuth), which Reddit now approves case by case.",
       "checked": "2026-11-21"
     }
   ]

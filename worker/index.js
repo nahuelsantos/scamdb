@@ -5,10 +5,10 @@ import { handleReport } from './reports.js';
 import { cleanup } from './cleanup.js';
 import { authStart, authCallback, logout } from './github.js';
 import { handleKeys } from './keys.js';
-import { handleIsItAScam } from './isitascam.js';
+import { handleIsItAScam, handleIsItAScamResult } from './isitascam.js';
 import { feedTrends, feedBrands, publicTrends } from './feed.js';
 import { authKey } from './keys.js';
-import { handleCollect, handleCollectRun, handleReview, handleReviewRuns } from './review.js';
+import { handleCollect, handleCollectRun, handleCollectSettings, handleReview, handleReviewRuns, handleReviewSources } from './review.js';
 
 // Secrets each group of routes needs. Missing or too-short secrets close the route (503) instead of running insecurely.
 const NEEDS = {
@@ -25,6 +25,8 @@ const ROUTES = [
   ['POST', /^\/v1\/reports$/, handleReport, 'reports'],
   ['OPTIONS', /^\/v1\/isitascam$/, () => cors(new Response(null, { status: 204 }))],
   ['POST', /^\/v1\/isitascam$/, handleIsItAScam, 'isitascam'],
+  ['OPTIONS', /^\/v1\/isitascam\/[0-9a-f-]{36}$/, () => cors(new Response(null, { status: 204 }))],
+  ['GET', /^\/v1\/isitascam\/[0-9a-f-]{36}$/, handleIsItAScamResult, 'isitascam'],
   ['GET', /^\/v1\/trends$/, publicTrends],
   ['GET', /^\/v1\/feed\/trends$/, (r, env) => feedTrends(r, env, authKey)],
   ['GET', /^\/v1\/feed\/brands$/, (r, env) => feedBrands(r, env, authKey)],
@@ -36,6 +38,9 @@ const ROUTES = [
   ['POST', /^\/v1\/collect$/, handleCollect, 'collect'],
   ['POST', /^\/v1\/collect\/run$/, handleCollectRun, 'collect'],
   ['GET', /^\/v1\/review\/runs$/, handleReviewRuns, 'review'],
+  ['GET', /^\/v1\/review\/sources$/, handleReviewSources, 'review'],
+  ['POST', /^\/v1\/review\/sources\/[a-z0-9-]+$/, handleReviewSources, 'review'],
+  ['GET', /^\/v1\/collect\/settings$/, handleCollectSettings, 'collect'],
   ['GET', /^\/v1\/review\/items$/, handleReview, 'review'],
   ['POST', /^\/v1\/review\/items\/\d+$/, handleReview, 'review'],
   ['GET', /^\/auth\/github$/, authStart, 'account'],
@@ -47,7 +52,7 @@ const ROUTES = [
 export async function handle(request, env, ctx) {
   const { pathname } = new URL(request.url);
   const route = ROUTES.find(([method, re]) => method === request.method && re.test(pathname));
-  const isReports = pathname === '/v1/reports' || pathname === '/v1/isitascam'; // open CORS, errors included
+  const isReports = pathname === '/v1/reports' || pathname.startsWith('/v1/isitascam'); // open CORS, errors included
   const url = new URL(request.url);
   try {
     if (!route) return env.ASSETS.fetch(request);

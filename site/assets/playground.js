@@ -50,6 +50,16 @@ SAMPLES.forEach((b) => b.addEventListener('click', () => {
 const apiBtn = document.getElementById('pg-api');
 const apiOut = document.querySelector('.api-out');
 const apiSum = document.getElementById('pg-api-sum');
+function show(body) {
+  apiOut.textContent = JSON.stringify(body, null, 2);
+  if (!apiSum) return;
+  const scored = typeof body.score === 'number';
+  apiSum.textContent = scored
+    ? `${S[body.verdict] ?? body.verdict} · ${S.apiScore} ${Math.round(body.score * 100)}%`
+    : `${S[body.verdict] ?? body.verdict} · ${body.ai?.status === 'pending' ? S.apiAiPending : body.ai ? S.apiAiNone : S.apiNoKey}`;
+  if (body.warning) apiSum.textContent += ` · ${S.warningShort}`;
+  apiSum.hidden = false;
+}
 apiBtn?.addEventListener('click', async () => {
   apiOut.hidden = false;
   apiOut.textContent = '…';
@@ -57,16 +67,19 @@ apiBtn?.addEventListener('click', async () => {
   try {
     const r = await fetch('/v1/isitascam', { method: 'POST', credentials: 'same-origin',
       headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: JSON.stringify({ text: box.value, lang: 'en' }) });
-    const body = await r.json();
-    apiOut.textContent = r.ok ? JSON.stringify(body, null, 2) : `${r.status} ${body.message ?? body.error ?? ''}`;
-    if (r.ok && apiSum) {
-      const scored = typeof body.score === 'number';
-      apiSum.textContent = scored
-        ? `${S[body.verdict] ?? body.verdict} · ${S.apiScore} ${Math.round(body.score * 100)}%`
-        : `${S[body.verdict] ?? body.verdict} · ${S.apiNoKey}`;
-      if (body.warning) apiSum.textContent += ` · ${S.warningShort}`;
-      apiSum.hidden = false;
+    let body = await r.json();
+    if (!r.ok) { apiOut.textContent = `${r.status} ${body.message ?? body.error ?? ''}`; return; }
+    show(body);
+    // With a key, the AI runs after the first answer: ask again until it is done (about 1 s apart, up to 20 s).
+    const id = body.ai?.status === 'pending' ? body.ai.id : null;
+    for (let i = 0; id && i < 20; i++) {
+      await new Promise((ok) => setTimeout(ok, 1000));
+      const next = await fetch(`/v1/isitascam/${id}`, { credentials: 'same-origin', headers: { 'x-requested-with': 'scamdb' } }).catch(() => null);
+      if (!next || next.status === 202) continue;
+      if (next.ok) { body = await next.json(); show(body); }
+      break;
     }
+    if (body.ai?.status === 'pending') { body.ai.status = 'timeout'; show(body); }
   } catch {
     apiOut.textContent = 'The API could not be reached.';
   }

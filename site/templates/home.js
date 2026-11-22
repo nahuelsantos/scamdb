@@ -67,7 +67,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
   const sample = matchMessage(SAMPLES[0].text, repo.entries);
   const labels = t(lang, 'pgSampleLabels');
   const strings = { scam: t(lang, 'vScam'), suspicious: t(lang, 'vSuspicious'), not_recognised: t(lang, 'vNone'), noScore: t(lang, 'noScore'),
-    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch'), apiScore: t(lang, 'apiScore'), apiNoKey: t(lang, 'apiNoKey'),
+    noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch'), apiScore: t(lang, 'apiScore'), apiNoKey: t(lang, 'apiNoKey'), apiAiPending: t(lang, 'apiAiPending'), apiAiNone: t(lang, 'apiAiNone'),
     warningNote: t(lang, 'warningNote'), warningShort: t(lang, 'warningShort') };
   const body = `
 <section class="hero">

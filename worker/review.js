@@ -117,3 +117,48 @@ export async function handleReviewRuns(request, env) {
   }
   return json({ runs: results.map((r) => ({ ...r, ok: r.ok === 1, sources: JSON.parse(r.sources) })) }, 200, { 'cache-control': 'no-store' });
 }
+
+// ---- On/off switches (review page) ----
+// Uses that never belong in the review queue: lists of firms, registries, report forms, statistics.
+const NEVER_ON = ['blacklist', 'registry', 'reporting', 'statistics'];
+/** Why a source cannot be switched on, or null when it can. Same rule on the page and here. */
+export const cannotRun = (s) => (!s.feed ? 'no feed or page reader yet' : NEVER_ON.includes(s.use) ? `a ${s.use} source never goes to the review queue` : null);
+
+async function registrySources(env) {
+  const r = await env.ASSETS.fetch(new Request('https://scamdb.dev/review/sources.json'));
+  if (!r.ok) throw new HttpError(503, 'no_registry', 'The sources list is missing from this build.');
+  return (await r.json()).sources;
+}
+async function settings(env) {
+  try { return (await env.DB.prepare('SELECT id, allowed, changed_at, changed_by FROM source_settings').all()).results.map((x) => ({ ...x, allowed: x.allowed === 1 })); }
+  catch (e) { if (/no such table/i.test(String(e?.message))) return null; throw e; } // migration 0010 not applied yet
+}
+
+/** GET /v1/review/sources: the switches flipped on the page. POST /v1/review/sources/:id { allowed }: flip one. */
+export async function handleReviewSources(request, env) {
+  const user = await reviewer(request, env);
+  if (request.method === 'GET') {
+    const list = await settings(env);
+    return json({ settings: list ?? [], switchable: list !== null }, 200, { 'cache-control': 'no-store' });
+  }
+  if (request.headers.get('x-requested-with') !== 'scamdb') throw new HttpError(403, 'csrf', 'Missing X-Requested-With: scamdb.');
+  const id = decodeURIComponent(new URL(request.url).pathname.split('/').pop());
+  const body = await readJson(request, 1000);
+  if (typeof body.allowed !== 'boolean') throw new HttpError(400, 'bad_allowed', 'Send { allowed: true } or { allowed: false }.');
+  const src = (await registrySources(env)).find((x) => x.id === id);
+  if (!src) throw new HttpError(404, 'not_found', 'No such source in the registry.');
+  if (body.allowed && cannotRun(src)) throw new HttpError(409, 'cannot_run', `This source cannot be switched on: ${cannotRun(src)}.`);
+  if ((await settings(env)) === null) throw new HttpError(503, 'not_configured', 'Switches need migration 0010 (source_settings).');
+  const now = new Date().toISOString();
+  if (body.allowed === src.allowed) await env.DB.prepare('DELETE FROM source_settings WHERE id = ?').bind(id).run(); // back to the registry's default
+  else await env.DB.prepare(`INSERT INTO source_settings (id, allowed, changed_at, changed_by) VALUES (?, ?, ?, ?)
+    ON CONFLICT (id) DO UPDATE SET allowed = excluded.allowed, changed_at = excluded.changed_at, changed_by = excluded.changed_by`)
+    .bind(id, body.allowed ? 1 : 0, now, user.login).run();
+  return json({ id, allowed: body.allowed, changedAt: now, isDefault: body.allowed === src.allowed });
+}
+
+/** GET /v1/collect/settings (collector token): the switches, which the collector applies over the registry. */
+export async function handleCollectSettings(request, env) {
+  await collectorOnly(request, env);
+  return json({ settings: ((await settings(env)) ?? []).map(({ id, allowed }) => ({ id, allowed })) }, 200, { 'cache-control': 'no-store' });
+}

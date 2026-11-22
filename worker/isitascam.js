@@ -3,7 +3,7 @@
 // (probe detection keeps only a fingerprint).
 import { readJson, json, cors, HttpError } from './http.js';
 import { authKey, sessionKey, recordUsage } from './keys.js';
-import { hit, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
+import { hit, burst, BURST, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from './scorer.js';
@@ -28,7 +28,8 @@ export function validateCheck(b, countries) {
   if (b.country !== undefined && b.country !== null && !countries.has(b.country)) throw invalid('country', `one of ${[...countries].join(', ')}`);
   if (b.lang !== undefined && b.lang !== null && (typeof b.lang !== 'string' || !/^[a-z]{2}$/.test(b.lang))) throw invalid('lang', 'a two-letter language code like en');
   if (b.report !== undefined && b.report !== null && typeof b.report !== 'boolean') throw invalid('report', 'true or false');
-  return { text, country: b.country ?? null, lang: b.lang ?? 'en', report: b.report === true };
+  if (b.wait !== undefined && b.wait !== null && typeof b.wait !== 'boolean') throw invalid('wait', 'true or false');
+  return { text, country: b.country ?? null, lang: b.lang ?? 'en', report: b.report === true, wait: b.wait === true };
 }
 
 /** The response body (pure). `result` is { verdict, score, signals: [{id, evidence}], matches: [{id}] }. */
@@ -65,13 +66,38 @@ const subjectOf = async (env, key, ip, now) => (key ? `gh:${key.githubId}` : `ip
 async function checkLimits(env, key, subject, now) {
   const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
   const bucket = `isitascam:${subject}`;
+  if (key) {
+    const maxBurst = Number(env.BURST_CHECKS) || BURST.checks; // a setting can raise it (the tests do)
+    const b = await burst(env.DB, bucket, maxBurst, now);
+    if (!b.ok) throw new HttpError(429, 'too_fast', `Too many checks in one minute (limit ${maxBurst}). Wait a moment and try again.`, { 'retry-after': String(b.retryAfter) });
+  }
   if (!(await hit(env.DB, bucket, key ? LIMITS.keyed : LIMITS.keyless, now)).ok)
     throw new HttpError(429, 'too_many_checks', `Daily limit reached (${key ? LIMITS.keyed : LIMITS.keyless} checks). Try again tomorrow${key ? '' : ', or get a free key for more'}.`, retry);
   if (!(await hit(env.DB, 'isitascam:global', LIMITS.global, now)).ok)
     throw new HttpError(503, 'checks_paused', 'We are answering too many checks today. Please try again tomorrow.', retry);
 }
 
-export async function handleIsItAScam(request, env) {
+// AI answers wait here for GET /v1/isitascam/{id}: the Cache API of the data centre that answered, for 10 minutes. Only
+// the key that asked can read its answer. Nothing is written to the database.
+const AI_TTL = 600;
+const aiCacheKey = (request, id) => new Request(`${new URL(request.url).origin}/__isitascam-ai/${id}`);
+async function saveAiResult(request, id, value) {
+  await caches.default.put(aiCacheKey(request, id), new Response(JSON.stringify(value), { headers: { 'content-type': 'application/json', 'cache-control': `max-age=${AI_TTL}` } }));
+}
+
+/** GET /v1/isitascam/{id}: the AI answer of an earlier check, for the same key. 202 while it is still running. */
+export async function handleIsItAScamResult(request, env) {
+  const key = (await authKey(request, env)) ?? (await sessionKey(request, env));
+  if (!key) throw new HttpError(401, 'key_required', 'Send the same key that made the check.');
+  const id = new URL(request.url).pathname.split('/').pop();
+  const hitCache = await caches.default.match(aiCacheKey(request, id));
+  if (!hitCache) return cors(json({ ai: { status: 'pending', id } }, 202, { 'retry-after': '1', 'cache-control': 'no-store' }));
+  const { owner, answer } = await hitCache.json();
+  if (owner !== `gh:${key.githubId}`) throw new HttpError(404, 'not_found', 'No such check for this key.');
+  return cors(json(answer, 200, { 'cache-control': 'no-store' }));
+}
+
+export async function handleIsItAScam(request, env, ctx) {
   const multipart = /^multipart\/form-data/i.test(request.headers.get('content-type') ?? '');
   // 32 KB: 5,000 characters fit even when every one is sent as a \uXXXX escape.
   const { body, file } = multipart ? await readForm(request) : { body: await readJson(request, 32000), file: null };
@@ -97,15 +123,33 @@ export async function handleIsItAScam(request, env) {
   let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
   if (check.report && !check.country && !result.matches.length) throw invalid('country', 'needed to save a report when no catalogue scam matches');
   let scorer = 'matcher', scorerError = null; // keyed callers see why the AI step was skipped
-  // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.
-  if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
+  const finish = async (res, sc, err) => {
+    const top = res.matches[0] ? await loadEntry(env, res.matches[0].id) : null;
+    const a = buildAnswer({ result: res, catalogue, top, lang: check.lang, country: check.country, scorer: sc, scorerError: err });
+    if (file) a.input = { type: file.kind, text: check.text };
+    return a;
+  };
+  const score = async (res) => {
     const diag = {};
-    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country, hints: result.matches.map((m) => m.id) }, { diag, store: d1VectorStore(env.DB) });
-    if (scored) { result = combine(result, scored, check.text); scorer = 'workers-ai'; } else scorerError = diag;
-  }
-  const top = result.matches[0] ? await loadEntry(env, result.matches[0].id) : null;
-  const answer = buildAnswer({ result, catalogue, top, lang: check.lang, country: check.country, scorer, scorerError });
-  if (file) answer.input = { type: file.kind, text: check.text };
+    const scored = await scoreWithWorkersAI(env.AI, { text: check.text, catalogue, country: check.country, hints: res.matches.map((m) => m.id) }, { diag, store: d1VectorStore(env.DB) });
+    return scored ? finish(combine(res, scored, check.text), 'workers-ai', null) : finish(res, 'matcher', diag);
+  };
+  // Keyed only, and only while today's shared AI allowance lasts; any failure leaves the matcher's answer.
+  // The AI takes seconds, so by default the matcher's answer goes back at once and the AI runs after the response
+  // (ctx.waitUntil); GET /v1/isitascam/{id} returns its answer. `wait: true` (and saving a report) waits for it instead.
+  let answer;
+  if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
+    if (check.wait || check.report || !ctx?.waitUntil) answer = await score(result);
+    else {
+      const id = crypto.randomUUID();
+      answer = await finish(result, scorer, scorerError);
+      answer.ai = { status: 'pending', id, poll: `${ORIGIN}/v1/isitascam/${id}` };
+      const owner = subject;
+      ctx.waitUntil(score(result)
+        .then((final) => saveAiResult(request, id, { owner, answer: { ...final, ai: { status: final.engine?.scorer === 'workers-ai' ? 'done' : 'failed', id } } }))
+        .catch(() => saveAiResult(request, id, { owner, answer: { ...answer, ai: { status: 'failed', id } } }).catch(() => {})));
+    }
+  } else answer = await finish(result, scorer, scorerError);
 
   if (key) await recordUsage(env.DB, key.id, 'isitascam', now);
   if (check.report) {

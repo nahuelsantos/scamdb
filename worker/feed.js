@@ -3,7 +3,7 @@
 // (already redacted at storage) are shown only for scams with K_MIN or more look-alike reports in the window, so no
 // single person's report can be picked out.
 import { json, HttpError } from './http.js';
-import { hit, secondsToUtcMidnight } from './limits.js';
+import { hit, burst, BURST, secondsToUtcMidnight } from './limits.js';
 import { COUNTRIES } from './reports.js';
 import { loadBrands } from './catalogue.js';
 
@@ -55,6 +55,9 @@ async function feedKey(request, env, authKey) {
   const row = await env.DB.prepare('SELECT feed, org FROM keys WHERE id = ?').bind(key.id).first();
   if (!row?.feed) throw new HttpError(403, 'feed_not_enabled', 'This key is not approved for the feed. See scamdb.dev/feed/ to ask for access.');
   const now = new Date();
+  const maxBurst = Number(env.BURST_FEED) || BURST.feed; // a setting can raise it (the tests do)
+  const b = await burst(env.DB, `feed:${key.id}`, maxBurst, now);
+  if (!b.ok) throw new HttpError(429, 'too_fast', `Too many feed requests in one minute (limit ${maxBurst}). Wait a moment and try again.`, { 'retry-after': String(b.retryAfter) });
   if (!(await hit(env.DB, `feed:${key.id}`, FEED_DAILY, now)).ok)
     throw new HttpError(429, 'too_many_requests', `Daily feed limit reached (${FEED_DAILY}).`, { 'retry-after': String(secondsToUtcMidnight(now)) });
   return { ...key, org: row.org };

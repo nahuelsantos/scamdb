@@ -18,3 +18,13 @@ export async function hit(db, bucket, max, now = new Date()) {
     .bind(bucket, utcDay(now)).first();
   return { ok: row.count <= max, count: row.count };
 }
+
+// Burst limits, per minute, on top of the daily ones: a key's daily allowance cannot all be spent in one second.
+// Keyless senders need none: their daily limit (10) is already smaller than a minute's burst.
+export const BURST = { checks: 10, reports: 20, feed: 60 };
+
+/** Counts one hit in this minute's bucket and says whether it is within `max`; `retryAfter` is the seconds left. */
+export async function burst(db, bucket, max, now = new Date()) {
+  const { ok } = await hit(db, `${bucket}@${now.toISOString().slice(11, 16)}`, max, now);
+  return { ok, retryAfter: 60 - now.getUTCSeconds() };
+}

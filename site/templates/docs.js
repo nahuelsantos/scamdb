@@ -5,7 +5,7 @@ import { t } from '../i18n.js';
 const PATHS = ['/v1/index.json', '/v1/countries.json', '/v1/signals.json', '/v1/{country}/scams.json', '/v1/{country}/contacts.json',
   '/v1/scams/{country}/{slug}.json', '/v1/scams.json', '/v1/scamdb.zip', '/v1/scams.csv', '/v1/changes.json', '/v1/changes.atom', '/v1/brands.json'];
 const REPORT_FIELDS = ['text', 'whatHappened', 'country', 'channel', 'outcome', 'contact', 'source', 'turnstileToken'];
-const CHECK_FIELDS = ['text', 'country', 'lang', 'report', 'image', 'audio'];
+const CHECK_FIELDS = ['text', 'country', 'lang', 'report', 'wait', 'image', 'audio'];
 const CHECK_EXAMPLE = JSON.stringify({ verdict: 'scam', score: null, signals: [{ id: 'asks_for_code', label: 'Asks for a code', evidence: 'read me the 6-digit code' }],
   matches: [{ id: 'nz/bank-fraud-team-call', name: 'Fake bank fraud team', url: 'https://scamdb.dev/v1/scams/nz/bank-fraud-team-call.json', page: 'https://scamdb.dev/catalogue/nz/bank-fraud-team-call/' }],
   whatToDo: ['Hang up and call your bank on the number on your card.'], reportTo: 'https://scamdb.dev/v1/nz/contacts.json', engine: { matcher: '1.2.0', scorer: 'matcher' }, datasetVersion: '…' }, null, 2);
@@ -52,7 +52,10 @@ ${REPORT_FIELDS.map((f, i) => `<tr><td><code>${esc(f)}</code></td><td>${esc(t(la
 <p>${esc(t(lang, 'dReportsKeyless'))}</p></section>
 <section aria-labelledby="dl-h"><h2 id="dl-h">${esc(t(lang, 'dDownloadH'))}</h2><p>${esc(t(lang, 'dDownloadP'))}</p><ul class="list">${t(lang, 'dDownloadRows').map((r) => { const [path, ...rest] = r.split(': '); return `<li><a href="${esc(path)}"><code>${esc(path)}</code></a>: ${esc(rest.join(': '))}</li>`; }).join('')}</ul></section>
 <section aria-labelledby="feed-h"><h2 id="feed-h">${esc(t(lang, 'feedH'))}</h2><p>${esc(t(lang, 'dFeedP'))} <a href="/feed/">/feed/</a></p></section>
-<section aria-labelledby="k-h"><h2 id="k-h">${esc(t(lang, 'dKeys'))}</h2><p>${esc(t(lang, 'dKeysP'))}</p></section>
+<section aria-labelledby="k-h"><h2 id="k-h">${esc(t(lang, 'dKeys'))}</h2><p>${esc(t(lang, 'dKeysP'))}</p>
+<div class="scroll"><table><thead><tr>${t(lang, 'dLimitsCols').map((c) => `<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>
+${t(lang, 'dLimitsRows').map(([e, a, b]) => `<tr><td><code>${esc(e)}</code></td><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div>
+<p>${esc(t(lang, 'dLimitsAfter'))}</p></section>
 <section aria-labelledby="l-h"><h2 id="l-h">${esc(t(lang, 'dLicense'))}</h2><p>${esc(t(lang, 'dLicenseP1'))} <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>${esc(t(lang, 'dLicenseP2'))} <b>scamdb.dev · CC BY 4.0</b> ${esc(t(lang, 'dLicenseP3'))}</p></section>
 <section aria-labelledby="p-h"><h2 id="p-h">${esc(t(lang, 'dLimits'))}</h2><p>${esc(t(lang, 'dLimitsP'))}</p></section>
 <section aria-labelledby="n-h"><h2 id="n-h">${esc(t(lang, 'dNext'))}</h2><ul class="list"><li>${esc(t(lang, 'dNext1'))}</li><li>${esc(t(lang, 'dNext2'))}</li><li>${esc(t(lang, 'dNext3'))}</li></ul></section>`;

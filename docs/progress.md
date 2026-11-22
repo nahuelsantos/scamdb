@@ -2,6 +2,70 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-21: Reports: order, tracking and reference numbers removed
+
+- The marketing session found a stored report still holding a SHEIN order number (`MLAR…`). The redactor now replaces,
+  with `[number]`: mixed letter-and-digit references (8–30 characters, at least 2 letters and 5 digits: order and
+  tracking numbers like `1Z999AA10123456784`), any 5+ character reference with 4+ digits right after an order word
+  (order, pedido, envío, tracking, commande, colis, reference, nº…), and Spanish DNI/NIE numbers whole (the letter used
+  to stay). Words like COVID-19, iPhone15, 5G, models and dates are left alone.
+- All 89 stored reports were re-checked: two held a reference (the SHEIN order, a JIRA ticket number) and were
+  cleaned in D1. The encrypted private set held neither.
+
+## 2026-11-21: Faster cold start for checks
+
+- After the AI moved off the waiting path, a check still took 1.3–2.7 s whenever Cloudflare started a fresh Worker
+  (frequent with little traffic); a warm one answers in ~0.3 s from outside. The cold cost is the matcher building its
+  word index over all 1,199 entries: 550–680 ms, 200 ms of it folding the same characters again and again.
+- `foldChar` now remembers each character's result (pure, so no result changes: the real-set eval is identical).
+  First check: ~370 ms instead of ~550–680 ms in Node; the eval runs in 0.6 s instead of 1.0 s. The home page's
+  in-browser check gets the same gain.
+- A prebuilt index was measured and rejected: 4 MB of JSON that takes ~200 ms to load.
+
+## 2026-11-21: Checks with a key answer at once; the AI score follows
+
+- A signed-in check took ~9 s: it waited for Workers AI (embedding + a 26B chat model, 8 s timeout). Now the answer
+  comes back at once with the catalogue check and `ai: { status: "pending", id, poll }`; the AI runs after the
+  response (`ctx.waitUntil`) and its answer is ready at `GET /v1/isitascam/{id}` for the same key, for 10 minutes
+  (kept in the Cache API, never in the database). `wait: true` keeps the single, slower call. The home page shows
+  the first answer at once (~60 ms in a mocked test) and updates it when the AI score arrives.
+
+## 2026-11-21: Per-minute limits for keys; the API limits documented
+
+- On top of the daily limits, a key now gets at most 10 checks, 20 reports and 60 feed requests a minute (429
+  `too_fast` with Retry-After). Keyless senders need none: their daily limit (10) is already smaller.
+- The docs page lists every Worker endpoint's limits in a table, what 429 and 503 mean, and how to ask for more
+  (an issue on GitHub). A test keeps the table in step with the numbers in the Worker.
+- Payments: not now (no API users yet). If someone needs more, limits can be raised by hand.
+
+## 2026-11-21: New fusion weights, fitted on real messages
+
+- Refit on the 343 real messages (plus the 197 written ones), with the saved Workers AI answers; `hard` and `signs`
+  now weigh 0, and the `scam` cut-off is 0.85 (was 0.70). Report: `eval/report-fusion-refit-2026-11-21.md`.
+- Real set: genuine called "scam" 13.3% (14/105) → 1.0% in-sample, 1.9% cross-validated, 2.9% one country held out.
+  Scams flagged 95.0% → 95.8%. Scams called "scam" 83.6% → about 55%: the rest show as "suspicious", still flagged.
+  The owner chose this trade-off (fewer false alarms first).
+- Written set: genuine called "scam" stays 0/90; scams called "scam" 93.5% → 72.0%. Private set: genuine called
+  "scam" stays 0/27.
+
+## 2026-11-21: Collector sends retry; Reddit off again
+
+- The first full home run read every source (Phishing-Radar 5 of 5, Safeonweb and INCIBE answered) but sending to
+  scamdb failed with a network error after ~3 minutes of reading. Sending now retries 3 times on a fresh connection
+  and logs the network cause.
+- Reddit answered 404 to r/arnaques and to every search feed, then 429: it no longer serves feeds to readers without
+  an account. All Reddit sources are off until there is a Reddit app (OAuth).
+
+## 2026-11-21: Page readers for Phishing-Radar and INCIBE; On/Off switches on the review page
+
+- Phishing-Radar (Verbraucherzentrale, DE) and INCIBE's citizen alerts (ES) have no feed, so the collector now reads
+  their pages (`lib/readers.js`, tested on saved copies). Phishing-Radar: each dated warning with a link to the
+  screenshot of the real message. INCIBE: the alerts list (its alert pages answered "not found" from outside Spain).
+  Text stays in the original language. Both look back 30 days, so the first run brings their recent items.
+- The Sources tab is ordered by country (A to Z), switched-on first, and each source has an On/Off switch (behind
+  Access and the GitHub check). Switches live in a new table (migration `0010`) and the collector applies them before
+  each run; the registry stays the default. Sources with nothing to read, and lists of firms, cannot be switched on.
+
 ## 2026-11-21: Reddit back on: r/arnaques and five searches
 
 - r/arnaques is on again (the owner confirmed it exists), plus Reddit searches for "estafas", "estafa sms",

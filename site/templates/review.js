@@ -5,7 +5,7 @@ import { layout } from './layout.js';
 import { UI_ICONS } from './icons.js';
 import { t } from '../i18n.js';
 
-const KEYS = ['revOn', 'revOff', 'revAll', 'revFailing', 'revSchedule', 'revLastRun', 'revNoRuns', 'revRunOk', 'revRunFailed', 'revPerSource', 'revKept', 'revOfKept', 'revNewInQueue', 'revSourcesRead', 'revNotRead', 'revHomeOnly', 'revNoFeed', 'revOffShort', 'revSite', 'revNoneFailing', 'revNew', 'revUseful', 'revSkip', 'revSkipped', 'revOpen', 'revBack', 'revMore', 'revLess', 'revEmpty', 'revFail', 'revLoadMore', 'revScore', 'revNotReviewer', 'revSetup'];
+const KEYS = ['revOn', 'revOff', 'revAll', 'revFailing', 'revSchedule', 'revLastRun', 'revNoRuns', 'revRunOk', 'revRunFailed', 'revPerSource', 'revKept', 'revOfKept', 'revNewInQueue', 'revSourcesRead', 'revNotRead', 'revHomeOnly', 'revNoFeed', 'revOffShort', 'revSite', 'revNoneFailing', 'revChangedHere', 'revChangedTitle', 'revOffChanged', 'revSwitchSetup', 'revNoFeedReason', 'revNeverOnReason', 'revNew', 'revUseful', 'revSkip', 'revSkipped', 'revOpen', 'revBack', 'revMore', 'revLess', 'revEmpty', 'revFail', 'revLoadMore', 'revScore', 'revNotReviewer', 'revSetup'];
 const ICONS = ['check', 'skip', 'external', 'replace'];
 
 export function review({ meta, lang = 'en' }) {

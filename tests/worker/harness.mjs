@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql', '0005_report_tags.sql', '0006_feed_access.sql', '0007_report_outcome.sql', '0008_source_items.sql', '0009_collector_runs.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
+export const SCHEMA = ['0001_init.sql', '0002_key_enc.sql', '0003_check_prints.sql', '0004_catalogue_vectors.sql', '0005_report_tags.sql', '0006_feed_access.sql', '0007_report_outcome.sql', '0008_source_items.sql', '0009_collector_runs.sql', '0010_source_settings.sql'].map((f) => readFileSync(join(ROOT, 'migrations', f), 'utf8').replace(/^--.*$/gm, '')).join(';\n');
 
 /** Default outbound stub: Turnstile token "ok" passes; GitHub answers a fixed user. */
 export async function defaultFetch(request) {
@@ -32,6 +32,12 @@ export async function makeWorker({ fetchMock = defaultFetch, bindings = {}, sche
       { id: 'au/parcel', country: 'au', name: { en: 'Parcel delivery text' }, phrases: { en: ['parcel delivery text', 'redelivery fee link', 'update my address', 'parcel on hold', 'courier text link'] }, signals: [] },
     ] });
   put('v1/brands.json', { version: 't.1', data: [{ id: 'anses', name: 'ANSES', countries: ['ar'], aliases: ['anses'] }, { id: 'whatsapp', name: 'WhatsApp', countries: ['ar', 'au'], aliases: ['whatsapp'] }] });
+  // The review page's sources list, as the build writes it (switches are checked against it).
+  put('review/sources.json', { countries: { de: 'Germany', fr: 'France' }, sources: [
+    { id: 'de-vz-phishingradar', country: 'de', use: 'messages', feed: true, allowed: true, name: 'Phishing-Radar' },
+    { id: 'fr-pharos', country: 'fr', use: 'reporting', feed: false, allowed: false, name: 'PHAROS' },
+    { id: 'fr-amf', country: 'fr', use: 'blacklist', feed: false, allowed: false, name: 'AMF' },
+    { id: 'fr-lemonde-decodeurs', country: 'fr', use: 'alerts', feed: true, allowed: false, name: 'Le Monde' }] });
   put('v1/scams/ar/whatsapp-codigo.json', { version: 't.1', data: { id: 'ar/whatsapp-codigo', country: 'ar', whatToDo: { es: ['No leas el código'], en: ['Never read out the code'] } } });
   const mf = new Miniflare({
     modules: true,
@@ -41,7 +47,9 @@ export async function makeWorker({ fetchMock = defaultFetch, bindings = {}, sche
     compatibilityDate: '2026-08-01', // newest date this Miniflare's runtime supports; production uses wrangler.jsonc's
     d1Databases: ['DB'],
     bindings: Object.fromEntries(Object.entries({ IP_SALT: 'salt-salt-salt-salt', SESSION_SECRET: 'x'.repeat(32), GITHUB_CLIENT_ID: 'cid', GITHUB_CLIENT_SECRET: 'csecret',
-      TURNSTILE_SECRET: '1x0000000000000000000000000000000AA', TURNSTILE_SECRET_SITE: '1x0000000000000000000000000000000AA', ...bindings }).filter(([, v]) => v !== undefined)),
+      TURNSTILE_SECRET: '1x0000000000000000000000000000000AA', TURNSTILE_SECRET_SITE: '1x0000000000000000000000000000000AA',
+      // Most tests share one key and send many requests a minute; tests/worker/limits.test.mjs checks the real burst limits.
+      BURST_CHECKS: '100000', BURST_REPORTS: '100000', BURST_FEED: '100000', ...bindings }).filter(([, v]) => v !== undefined)),
     assets: { directory: assets, binding: 'ASSETS', routerConfig: { has_user_worker: true }, assetConfig: { not_found_handling: '404-page' } },
     outboundService: fetchMock,
   });
