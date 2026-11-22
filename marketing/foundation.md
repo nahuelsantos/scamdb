@@ -59,6 +59,6 @@ before it starts.
   made by us.
 
 **Voice update (2026-11-22, owner's decision):** the owner didn't like their own reading, so the narration is the
-owner's voice generated with ElevenLabs (an instant clone of their own recording). Every video carries an AI-voice
+owner's voice generated with ElevenLabs (their professional voice clone "Nahuel English"; the earlier instant clone was rejected). Every video carries an AI-voice
 label on the end card, Instagram's "AI info" label, and a note in the X post. Script and settings:
 `videos/elevenlabs-script.md`.

@@ -12,32 +12,32 @@ import { LOGO } from '../../site/templates/logo.js';
 import { ICONS, STEP_ICONS } from '../../site/templates/icons.js';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-const VOICE = join(ROOT, 'marketing/videos/voice/v2-tts-a.mp3');
+const VOICE = join(ROOT, 'marketing/videos/voice/v2-pro-a.mp3');
 const OUT = join(ROOT, 'marketing/videos/video2');
 const FPS = 30, W = 1080, H = 1920;
 
-// --- Voice: the owner's ElevenLabs narration (voice "Nahuel Inglés", take A), one file, cues from its word timings ---
-const LEAD = 0.4, END_HOLD = 2.4, VOICE_LEN = 21.73;
+// --- Voice: the owner's ElevenLabs professional voice ("Nahuel English", take A), cues from its word timings ---
+const LEAD = 0.4, END_HOLD = 2.4, VOICE_LEN = 23.31;
 const at = (s) => +(LEAD + s).toFixed(2); // a time in the narration -> a time in the video
 const DURATION = +(LEAD + VOICE_LEN + END_HOLD).toFixed(2);
 const T = {
-  l2: at(4.0), // "Because…"
-  scene2: at(3.9),
-  flags: [7.4, 9.3, 10.7, 12.6].map(at), // toll program · small amount · $50 threat · and a link
-  scene3: at(13.5),
-  card: at(16.45), // "They want the card number…"
-  scene4: at(19.1),
-  send: at(20.2), // "send it to us instead"
+  l2: at(4.3), // "Because…"
+  scene2: at(4.2),
+  flags: [8.0, 9.85, 11.3, 13.4].map(at), // toll program · small amount · $50 threat · and a link
+  scene3: at(14.4),
+  card: at(17.3), // "They want the card number…"
+  scene4: at(20.2),
+  send: at(21.7), // "Send it to us instead"
 };
 const CAPTIONS = [
   [at(0), T.l2, 'Why does a fake toll text ask for $12.51?'],
-  [T.l2, at(6.4), 'Because nobody argues about $12.'],
-  [at(6.9), at(10.6), 'A toll program you know. A small amount.'],
-  [at(10.6), at(13.2), 'A $50 threat. And a link.'],
-  [at(13.8), T.card, 'They don’t want the $12.51.'],
-  [T.card, at(18.8), 'They want the card number you just typed in.'],
-  [at(19.4), T.send, 'Don’t tap.'],
-  [T.send, at(21.6), 'Send it to us instead.'],
+  [T.l2, at(6.9), 'Because nobody argues about $12.'],
+  [at(7.6), at(11.2), 'A toll program you know. A small amount.'],
+  [at(11.2), at(14.1), 'A $50 threat. And a link.'],
+  [at(14.6), T.card, 'They don’t want the $12.51.'],
+  [T.card, at(19.9), 'They want the card number you just typed in.'],
+  [at(20.4), T.send, 'Don’t tap.'],
+  [T.send, at(23.2), 'Send it to us instead.'],
 ];
 const CLIPS = [{ at: LEAD }]; // kept for the first scene's highlight timing
 
