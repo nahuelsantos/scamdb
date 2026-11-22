@@ -2,6 +2,18 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-22: First check on a fresh Worker: 657 ms -> 213 ms
+
+- Live Server-Timing showed the Worker's own clock at ~0.2 s while callers waited 0.8–1.1 s: most checks land on a
+  fresh Worker, which builds the matcher's word index first, and that CPU time is invisible to the Worker's clock.
+- The index no longer builds a table of every word's one-letter deletions (~110,000 keys): typo neighbours are found
+  by comparing each message word with the catalogue words of the same or next length, without building strings.
+  Each distinct phrase is prepared once and shared by both indexes (with and without translated phrases), and
+  phrases are no longer normalised twice.
+- First check (with a country): 657 ms -> 213 ms in Node; later checks 6.4 -> 8.6 ms. Old and new matchers give
+  identical answers on 23,570 comparisons (every eval message, each also with 4 random-typo copies, with and without
+  a country); the matcher version stays 1.39.0.
+
 ## 2026-11-22: Screenshot box explains itself; checks make one database trip
 
 - The report form's screenshot box was silently off for anyone signed out or without a key (the owner, after
