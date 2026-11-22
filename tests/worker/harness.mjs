@@ -49,6 +49,9 @@ export async function makeWorker({ fetchMock = defaultFetch, bindings = {}, sche
     bindings: Object.fromEntries(Object.entries({ IP_SALT: 'salt-salt-salt-salt', SESSION_SECRET: 'x'.repeat(32), GITHUB_CLIENT_ID: 'cid', GITHUB_CLIENT_SECRET: 'csecret',
       TURNSTILE_SECRET: '1x0000000000000000000000000000000AA', TURNSTILE_SECRET_SITE: '1x0000000000000000000000000000000AA',
       // Most tests share one key and send many requests a minute; tests/worker/limits.test.mjs checks the real burst limits.
+      // The limits read the database before answering (deterministic); tests/worker/isitascam-mirror.test.mjs checks the
+      // real path, where the database is written after the answer.
+      MIRROR_SYNC: '1',
       BURST_CHECKS: '100000', BURST_REPORTS: '100000', BURST_FEED: '100000', ...bindings }).filter(([, v]) => v !== undefined)),
     assets: { directory: assets, binding: 'ASSETS', routerConfig: { has_user_worker: true }, assetConfig: { not_found_handling: '404-page' } },
     outboundService: fetchMock,

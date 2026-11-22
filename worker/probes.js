@@ -43,6 +43,7 @@ export function probeStatements(db, subject, text, now = new Date()) {
   const print = fingerprint(text);
   const day = utcDay(now);
   return {
+    print,
     read: db.prepare('SELECT print FROM check_prints WHERE subject = ? AND day = ?').bind(subject, day),
     record: db.prepare('INSERT INTO check_prints (subject, day, print, created_at) VALUES (?, ?, ?, ?)').bind(subject, day, print, now.toISOString()),
     judge(rows) {
