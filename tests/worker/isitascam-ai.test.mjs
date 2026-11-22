@@ -72,10 +72,13 @@ test('another key cannot read the AI answer, and no key gets 401', async () => {
 });
 test('wait: true keeps the single call with the AI score', async () => {
   const key = await keyFor(504);
-  const r = await post(key, { text: TEXT + ' b', wait: true }, env(fakeAI()), { waitUntil: () => assert.fail('nothing runs after the response') });
+  const after = [];
+  const r = await post(key, { text: TEXT + ' b', wait: true }, env(fakeAI()), { waitUntil: (p) => after.push(p) });
   const body = await r.json();
   assert.equal(body.engine.scorer, 'workers-ai');
   assert.equal(body.ai, undefined);
+  assert.ok(after.length <= 1, 'only the usage count runs after the response, never the AI');
+  await Promise.all(after);
 });
 test('when the AI fails in the background, the stored answer says failed and keeps the matcher verdict', async () => {
   const key = await keyFor(505);
@@ -89,6 +92,12 @@ test('when the AI fails in the background, the stored answer says failed and kee
 });
 test('keyless checks never get an ai field', async () => {
   const r = await handle(new Request('https://scamdb.dev/v1/isitascam', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': '198.51.100.41' },
-    body: JSON.stringify({ text: TEXT + ' d' }) }), env(fakeAI()), { waitUntil: () => assert.fail('no AI without a key') });
+    body: JSON.stringify({ text: TEXT + ' d' }) }), env(fakeAI()), { waitUntil: () => assert.fail('nothing runs after a keyless check') });
   assert.equal((await r.json()).ai, undefined);
+});
+test('every check says where its time went (Server-Timing)', async () => {
+  const r = await handle(new Request('https://scamdb.dev/v1/isitascam', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': '198.51.100.42' },
+    body: JSON.stringify({ text: TEXT + ' e' }) }), env(fakeAI()), {});
+  const st = r.headers.get('server-timing');
+  for (const step of ['catalogue', 'auth', 'match', 'db', 'answer', 'total']) assert.match(st, new RegExp(`${step};dur=\\d+`), step);
 });

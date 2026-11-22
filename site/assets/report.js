@@ -47,15 +47,28 @@ function loadTurnstile() {
   document.head.appendChild(s);
 }
 
+// Screenshots need a key (the server turns them into text with Workers AI). When the box is off, it says why and
+// clicking it (or dropping a picture on it) leads to the fix: sign in, or create the free key.
+let shotFix = null; // { href, label } while the box is off
 async function whoAmI() {
+  let state = 'out';
   try {
     const r = await fetch('/v1/keys/me', { credentials: 'same-origin' });
-    if (r.ok) { const me = await r.json(); signedIn = Boolean(me.hasKey); }
+    if (r.ok) { const me = await r.json(); signedIn = Boolean(me.hasKey); state = signedIn ? 'in' : 'nokey'; }
   } catch { /* offline or not set up: anonymous */ }
-  $('rep-shot').disabled = !signedIn;
+  // The input stays enabled (reachable by keyboard); while it is off, a click goes to the fix instead (below).
   $('rep-drop').classList.toggle('off', !signedIn);
-  if (!signedIn) $('rep-drop-main').textContent = S.repDropOff;
-  $('rep-shot-hint').textContent = signedIn ? S.repSignedIn : S.repShotSignedOut;
+  $('rep-drop').setAttribute('aria-describedby', 'rep-shot-hint');
+  shotFix = state === 'out' ? { href: '/auth/github?next=/report/', label: S.repDropOff, hint: S.repShotSignedOut }
+    : state === 'nokey' ? { href: '/account/', label: S.repDropNoKey, hint: S.repShotNoKey } : null;
+  if (shotFix) {
+    $('rep-drop-main').textContent = shotFix.label;
+    const hint = $('rep-shot-hint');
+    hint.textContent = '';
+    const a = document.createElement('a');
+    a.href = shotFix.href; a.textContent = shotFix.hint; a.id = 'rep-shot-fix';
+    hint.append(a);
+  } else $('rep-shot-hint').textContent = S.repSignedIn;
   if (!signedIn) loadTurnstile();
 }
 whoAmI();
@@ -85,12 +98,18 @@ export async function shrinkImage(file, { maxWidth = 1080, maxHeight = 3200, qua
 const drop = $('rep-drop'), shotIn = $('rep-shot');
 const showFile = () => { const f = shotIn.files?.[0]; $('rep-drop-main').textContent = f ? f.name : S.repDrop; drop.classList.toggle('has', Boolean(f)); };
 shotIn.addEventListener('change', showFile);
-for (const ev of ['dragenter', 'dragover']) drop.addEventListener(ev, (e) => { e.preventDefault(); if (!shotIn.disabled) drop.classList.add('over'); });
+for (const ev of ['dragenter', 'dragover']) drop.addEventListener(ev, (e) => { e.preventDefault(); if (!shotFix) drop.classList.add('over'); });
 for (const ev of ['dragleave', 'drop']) drop.addEventListener(ev, () => drop.classList.remove('over'));
+// A click on the box while it is off goes to the fix instead of doing nothing.
+const toFix = (e) => { if (shotFix) { e.preventDefault(); e.stopPropagation(); location.href = shotFix.href; } };
+drop.addEventListener('click', toFix);
+shotIn.addEventListener('click', toFix); // keyboard: Enter or Space on the focused input
 drop.addEventListener('drop', (e) => {
   e.preventDefault();
   const f = e.dataTransfer?.files?.[0];
-  if (shotIn.disabled || !f || !/^image\/(png|jpeg|webp)$/.test(f.type)) return;
+  if (shotFix) return fail(shotFix.hint);
+  if (!f) return;
+  if (!/^image\/(png|jpeg|webp)$/.test(f.type)) return fail(S.repShotType);
   const dt = new DataTransfer(); dt.items.add(f); shotIn.files = dt.files; showFile();
 });
 

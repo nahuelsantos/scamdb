@@ -249,7 +249,7 @@ button.btn.solid { background: var(--ink); color: var(--paper); }
 .drop .drop-sub { font-size: 14px; opacity: .7; }
 .drop:hover, .drop.over, .drop:focus-within { background: color-mix(in srgb, var(--accent, var(--ink)) 10%, transparent); }
 .drop.has { border-style: solid; }
-.drop.off { opacity: .55; cursor: not-allowed; }
+.drop.off { border-color: var(--line); } /* readable: it says how to switch screenshots on, and a click leads there */
 .pg-report { margin: var(--s4) 0 0; }
 .rep-more { border: 1.5px solid var(--line); border-radius: 14px; padding: var(--s3) var(--s4); }
 .rep-more[open] { padding-bottom: var(--s5); }

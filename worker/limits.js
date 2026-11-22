@@ -12,10 +12,15 @@ export async function ipHash(ip, salt, day) {
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
+/** The statement that counts one hit in today's bucket and returns the new count (for db.batch: one round trip). */
+export const hitStatement = (db, bucket, now = new Date()) =>
+  db.prepare('INSERT INTO hits (bucket, day, count) VALUES (?, ?, 1) ON CONFLICT (bucket, day) DO UPDATE SET count = count + 1 RETURNING count').bind(bucket, utcDay(now));
+/** This minute's bucket name for a burst limit. */
+export const minuteBucket = (bucket, now = new Date()) => `${bucket}@${now.toISOString().slice(11, 16)}`;
+
 /** Counts one hit in today's bucket (atomically) and says whether it is within `max`. */
 export async function hit(db, bucket, max, now = new Date()) {
-  const row = await db.prepare('INSERT INTO hits (bucket, day, count) VALUES (?, ?, 1) ON CONFLICT (bucket, day) DO UPDATE SET count = count + 1 RETURNING count')
-    .bind(bucket, utcDay(now)).first();
+  const row = await hitStatement(db, bucket, now).first();
   return { ok: row.count <= max, count: row.count };
 }
 
@@ -25,6 +30,6 @@ export const BURST = { checks: 10, reports: 20, feed: 60 };
 
 /** Counts one hit in this minute's bucket and says whether it is within `max`; `retryAfter` is the seconds left. */
 export async function burst(db, bucket, max, now = new Date()) {
-  const { ok } = await hit(db, `${bucket}@${now.toISOString().slice(11, 16)}`, max, now);
+  const { ok } = await hit(db, minuteBucket(bucket, now), max, now);
   return { ok, retryAfter: 60 - now.getUTCSeconds() };
 }

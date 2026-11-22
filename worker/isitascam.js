@@ -3,11 +3,11 @@
 // (probe detection keeps only a fingerprint).
 import { readJson, json, cors, HttpError } from './http.js';
 import { authKey, sessionKey, recordUsage } from './keys.js';
-import { hit, burst, BURST, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
+import { hit, hitStatement, minuteBucket, BURST, ipHash, utcDay, secondsToUtcMidnight } from './limits.js';
 import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from './scorer.js';
-import { checkProbe } from './probes.js';
+import { checkProbe, probeStatements } from './probes.js';
 import { d1VectorStore } from './vectorstore.js';
 import { readForm, extractText } from './media.js';
 import { LIMITS as REPORT_LIMITS } from './reports.js';
@@ -63,19 +63,6 @@ export const usesScorer = (key, env) => Boolean(key && env.AI);
 /** Who a check counts against: the key's GitHub account, or a salted daily hash of the IP. */
 const subjectOf = async (env, key, ip, now) => (key ? `gh:${key.githubId}` : `ip:${await ipHash(ip, env.IP_SALT, utcDay(now))}`);
 
-async function checkLimits(env, key, subject, now) {
-  const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
-  const bucket = `isitascam:${subject}`;
-  if (key) {
-    const maxBurst = Number(env.BURST_CHECKS) || BURST.checks; // a setting can raise it (the tests do)
-    const b = await burst(env.DB, bucket, maxBurst, now);
-    if (!b.ok) throw new HttpError(429, 'too_fast', `Too many checks in one minute (limit ${maxBurst}). Wait a moment and try again.`, { 'retry-after': String(b.retryAfter) });
-  }
-  if (!(await hit(env.DB, bucket, key ? LIMITS.keyed : LIMITS.keyless, now)).ok)
-    throw new HttpError(429, 'too_many_checks', `Daily limit reached (${key ? LIMITS.keyed : LIMITS.keyless} checks). Try again tomorrow${key ? '' : ', or get a free key for more'}.`, retry);
-  if (!(await hit(env.DB, 'isitascam:global', LIMITS.global, now)).ok)
-    throw new HttpError(503, 'checks_paused', 'We are answering too many checks today. Please try again tomorrow.', retry);
-}
 
 // AI answers wait here for GET /v1/isitascam/{id}: the Cache API of the data centre that answered, for 10 minutes. Only
 // the key that asked can read its answer. Nothing is written to the database.
@@ -97,30 +84,72 @@ export async function handleIsItAScamResult(request, env) {
   return cors(json(answer, 200, { 'cache-control': 'no-store' }));
 }
 
+/** Step timings for the Server-Timing header (visible in the browser's network panel): where a check spends its time. */
+function timings() {
+  const start = Date.now();
+  let last = start;
+  const marks = [];
+  return {
+    mark(name) { const n = Date.now(); marks.push(`${name};dur=${n - last}`); last = n; },
+    header: () => [...marks, `total;dur=${Date.now() - start}`].join(', '),
+  };
+}
+
 export async function handleIsItAScam(request, env, ctx) {
   const multipart = /^multipart\/form-data/i.test(request.headers.get('content-type') ?? '');
   // 32 KB: 5,000 characters fit even when every one is sent as a \uXXXX escape.
   const { body, file } = multipart ? await readForm(request) : { body: await readJson(request, 32000), file: null };
+  const t = timings();
   const catalogue = await loadCatalogue(env);
+  t.mark('catalogue');
   const check = validateCheck(file ? { ...body, text: '-' } : body, catalogue.countries);
   const key = (await authKey(request, env)) ?? (await sessionKey(request, env));
+  t.mark('auth');
   if (file && !key) throw new HttpError(401, 'key_required', 'Screenshots and voice notes need a free API key (scamdb.dev/account). Text checks work without one.');
   if (check.report && !key) throw invalid('report', 'saving a report needs an API key; without one, use POST /v1/reports');
 
   const now = new Date();
   const subject = await subjectOf(env, key, request.headers.get('cf-connecting-ip') ?? '', now);
-  await checkLimits(env, key, subject, now);
+  // The database is far from most callers, so every count and the similar-message check go in ONE batch (one round
+  // trip), and the matcher runs while it is in flight. The limits are applied before anything is answered.
+  const bucket = `isitascam:${subject}`;
+  const stmts = [], at = {};
+  const add = (name, stmt) => { at[name] = stmts.push(stmt) - 1; };
+  if (key) add('burst', hitStatement(env.DB, minuteBucket(bucket, now), now));
+  add('daily', hitStatement(env.DB, bucket, now));
+  add('global', hitStatement(env.DB, 'isitascam:global', now));
+  const probe = file ? null : probeStatements(env.DB, subject, check.text, now); // many near-identical checks look like tuning a scam against us
+  if (probe) { add('prints', probe.read); stmts.push(probe.record); }
+  const wantsAi = !file && usesScorer(key, env);
+  if (wantsAi) add('ai', hitStatement(env.DB, 'isitascam:ai', now));
+  const pending = env.DB.batch(stmts);
+  pending.catch(() => {}); // awaited just below; this only stops an unhandled-rejection warning while the matcher runs
+  let result = file ? null : matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
+  t.mark('match');
+  const rows = await pending;
+  t.mark('db');
+  const count = (name) => rows[at[name]].results[0].count;
+  const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
+  if (key) {
+    const maxBurst = Number(env.BURST_CHECKS) || BURST.checks; // a setting can raise it (the tests do)
+    if (count('burst') > maxBurst) throw new HttpError(429, 'too_fast', `Too many checks in one minute (limit ${maxBurst}). Wait a moment and try again.`, { 'retry-after': String(60 - now.getUTCSeconds()) });
+  }
+  if (count('daily') > (key ? LIMITS.keyed : LIMITS.keyless))
+    throw new HttpError(429, 'too_many_checks', `Daily limit reached (${key ? LIMITS.keyed : LIMITS.keyless} checks). Try again tomorrow${key ? '' : ', or get a free key for more'}.`, retry);
+  if (count('global') > LIMITS.global) throw new HttpError(503, 'checks_paused', 'We are answering too many checks today. Please try again tomorrow.', retry);
+  if (probe) probe.judge(rows[at.prints].results);
+  const aiAllowed = wantsAi && count('ai') <= LIMITS.ai;
 
   if (file) {
     if (!env.AI) throw new HttpError(503, 'not_available', 'Reading screenshots and voice notes is not switched on yet.');
-    if (!(await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) throw new HttpError(503, 'ai_paused', 'We have used today\'s free AI allowance. Send the message as text, or try again tomorrow.', { 'retry-after': String(secondsToUtcMidnight(now)) });
+    if (!(await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) throw new HttpError(503, 'ai_paused', 'We have used today\'s free AI allowance. Send the message as text, or try again tomorrow.', retry);
     const read = await extractText(env.AI, file);
     if (!read) throw new HttpError(422, 'unreadable', `We could not ${file.kind === 'image' ? 'read any text in the screenshot' : 'hear any words in the voice note'}. Try again, or send the message as text.`);
     check.text = read.slice(0, MAX_TEXT);
+    await checkProbe(env.DB, subject, check.text, now);
+    result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
   }
 
-  await checkProbe(env.DB, subject, check.text, now); // many near-identical checks look like tuning a scam against us
-  let result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
   if (check.report && !check.country && !result.matches.length) throw invalid('country', 'needed to save a report when no catalogue scam matches');
   let scorer = 'matcher', scorerError = null; // keyed callers see why the AI step was skipped
   const finish = async (res, sc, err) => {
@@ -138,7 +167,7 @@ export async function handleIsItAScam(request, env, ctx) {
   // The AI takes seconds, so by default the matcher's answer goes back at once and the AI runs after the response
   // (ctx.waitUntil); GET /v1/isitascam/{id} returns its answer. `wait: true` (and saving a report) waits for it instead.
   let answer;
-  if (usesScorer(key, env) && (await hit(env.DB, 'isitascam:ai', LIMITS.ai, now)).ok) {
+  if (aiAllowed || (file && usesScorer(key, env))) {
     if (check.wait || check.report || !ctx?.waitUntil) answer = await score(result);
     else {
       const id = crypto.randomUUID();
@@ -151,7 +180,9 @@ export async function handleIsItAScam(request, env, ctx) {
     }
   } else answer = await finish(result, scorer, scorerError);
 
-  if (key) await recordUsage(env.DB, key.id, 'isitascam', now);
+  t.mark('answer');
+  // Usage counts are for the account page; they are written after the response when possible.
+  if (key) { const u = recordUsage(env.DB, key.id, 'isitascam', now); if (ctx?.waitUntil) ctx.waitUntil(u.catch(() => {})); else await u; }
   if (check.report) {
     // Saved reports share the reports limits, so this route can't be used to get around them.
     const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
@@ -163,5 +194,5 @@ export async function handleIsItAScam(request, env, ctx) {
       .bind(crypto.randomUUID(), now.toISOString(), reportCountry, check.text, 'isitascam', key.id).run();
     await recordUsage(env.DB, key.id, 'reports', now);
   }
-  return cors(json(answer));
+  return cors(json(answer, 200, { 'server-timing': t.header() }));
 }

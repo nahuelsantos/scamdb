@@ -2,6 +2,17 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-22: Screenshot box explains itself; checks make one database trip
+
+- The report form's screenshot box was silently off for anyone signed out or without a key (the owner, after
+  rotating SESSION_SECRET): clicking did nothing, dropping did nothing. Now it says what to do, and a click, Enter or a
+  drop leads there (GitHub sign-in back to /report/, or the account page to create the key); a non-picture file is
+  refused with a message. New browser tests click the box and drag a file onto it, signed in and signed out.
+- Checks were 0.2–1.8 s on the server: up to 8 database round trips in a row to a database far from most callers.
+  Now the counters and the similar-message check are one batch (one round trip), the matcher runs while it is in
+  flight, and a key's usage count is written after the response. Each answer carries a Server-Timing header with
+  where the time went (catalogue, auth, match, db, answer, total).
+
 ## 2026-11-21: Reports: order, tracking and reference numbers removed
 
 - The marketing session found a stored report still holding a SHEIN order number (`MLAR…`). The redactor now replaces,

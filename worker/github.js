@@ -14,7 +14,7 @@ const redirect = (location, cookies = []) => {
 };
 
 // Pages a sign-in may return to (?next=); anything else goes to the account page.
-const NEXT = ['/account/', '/review/'];
+const NEXT = ['/account/', '/review/', '/report/'];
 
 export function authStart(request, env) {
   const next = new URL(request.url).searchParams.get('next');
