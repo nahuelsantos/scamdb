@@ -57,3 +57,8 @@ before it starts.
   anything is made.
 - **Music:** added by the owner on Instagram from its licensed library, at low volume. Voice-only on X. Sound effects
   made by us.
+
+**Voice update (2026-11-22, owner's decision):** the owner didn't like their own reading, so the narration is the
+owner's voice generated with ElevenLabs (an instant clone of their own recording). Every video carries an AI-voice
+label on the end card, Instagram's "AI info" label, and a note in the X post. Script and settings:
+`videos/elevenlabs-script.md`.
