@@ -2,6 +2,21 @@
 // can view it again. The plain key is never stored.
 import { json, error, HttpError } from './http.js';
 import { sessionFrom } from './session.js';
+import { readMirror, writeMirror, dropMirror } from './mirror.js';
+
+// Key lookups are kept 60 s in the local copy (worker/mirror.js): a replaced or deleted key is dropped from it at once
+// in the location that changed it, and stops working everywhere else within a minute.
+const KEY_TTL = 60;
+const originOf = (request) => new URL(request.url).origin;
+async function cachedRow(request, env, name, sql, value) {
+  const origin = originOf(request);
+  const hit = await readMirror(origin, name, null);
+  if (hit) return hit;
+  const row = await env.DB.prepare(sql).bind(value).first();
+  if (row) await writeMirror(origin, name, { id: row.id, github_id: row.github_id, github_login: row.github_login }, KEY_TTL);
+  return row;
+}
+const forgetKeys = (request, githubId, oldHash) => Promise.all([dropMirror(originOf(request), `k:gh:${githubId}`), oldHash ? dropMirror(originOf(request), `k:h:${oldHash}`) : null]);
 export async function hashKey(key) {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key));
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -15,7 +30,8 @@ export async function authKey(request, env) {
   const bad = new HttpError(401, 'invalid_key', 'This API key is not valid. Check it on scamdb.dev/account, or send the request without an Authorization header.');
   const m = header.match(/^Bearer (sk_[A-Za-z0-9_-]{43})$/);
   if (!m) throw bad;
-  const row = await env.DB.prepare('SELECT id, github_id, github_login FROM keys WHERE key_hash = ?').bind(await hashKey(m[1])).first();
+  const hash = await hashKey(m[1]);
+  const row = await cachedRow(request, env, `k:h:${hash}`, 'SELECT id, github_id, github_login FROM keys WHERE key_hash = ?', hash);
   if (!row) throw bad;
   return { id: row.id, githubId: row.github_id, githubLogin: row.github_login };
 }
@@ -26,7 +42,7 @@ export async function sessionKey(request, env) {
   if (request.headers.get('x-requested-with') !== 'scamdb' || typeof env.SESSION_SECRET !== 'string' || env.SESSION_SECRET.length < 32) return null;
   const user = await sessionFrom(request, env);
   if (!user) return null;
-  const row = await env.DB.prepare('SELECT id, github_id, github_login FROM keys WHERE github_id = ?').bind(user.githubId).first();
+  const row = await cachedRow(request, env, `k:gh:${user.githubId}`, 'SELECT id, github_id, github_login FROM keys WHERE github_id = ?', user.githubId);
   return row ? { id: row.id, githubId: row.github_id, githubLogin: row.github_login } : null;
 }
 
@@ -95,14 +111,18 @@ export async function handleKeys(request, env) {
     return json({ key }, 200, { 'cache-control': 'no-store' });
   }
   if (request.method === 'POST' && pathname === '/v1/keys') {
+    const old = await env.DB.prepare('SELECT key_hash FROM keys WHERE github_id = ?').bind(user.githubId).first();
     const key = newKey();
     await env.DB.prepare(`INSERT INTO keys (id, key_hash, prefix, github_id, github_login, created_at, key_enc) VALUES (?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT (github_id) DO UPDATE SET key_hash = excluded.key_hash, prefix = excluded.prefix, github_login = excluded.github_login, created_at = excluded.created_at, key_enc = excluded.key_enc`)
       .bind(crypto.randomUUID(), await hashKey(key), PREFIX(key), user.githubId, user.login, new Date().toISOString(), await sealKey(key, env)).run();
+    await forgetKeys(request, user.githubId, old?.key_hash);
     return json({ key, prefix: PREFIX(key) }, 201, { 'cache-control': 'no-store' });
   }
   if (request.method === 'DELETE' && pathname === '/v1/keys/me') {
+    const old = await env.DB.prepare('SELECT key_hash FROM keys WHERE github_id = ?').bind(user.githubId).first();
     await env.DB.prepare('DELETE FROM keys WHERE github_id = ?').bind(user.githubId).run();
+    await forgetKeys(request, user.githubId, old?.key_hash);
     return new Response(null, { status: 204 });
   }
   return error(404, 'not_found', 'No such endpoint.');

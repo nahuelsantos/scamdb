@@ -14,6 +14,7 @@ const store = new Map();
 before(() => {
   globalThis.caches = { default: {
     put: async (req, res) => { store.set(req.url, await res.text()); },
+    delete: async (req) => store.delete(req.url),
     match: async (req) => (store.has(req.url) ? new Response(store.get(req.url)) : undefined),
   } };
 });
@@ -77,8 +78,7 @@ test('wait: true keeps the single call with the AI score', async () => {
   const body = await r.json();
   assert.equal(body.engine.scorer, 'workers-ai');
   assert.equal(body.ai, undefined);
-  assert.ok(after.length <= 1, 'only the usage count runs after the response, never the AI');
-  await Promise.all(after);
+  await Promise.all(after); // the database batch and the usage count run after the answer; the AI does not (score above)
 });
 test('when the AI fails in the background, the stored answer says failed and keeps the matcher verdict', async () => {
   const key = await keyFor(505);

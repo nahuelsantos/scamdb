@@ -2,6 +2,18 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-22: The database is off the waiting path
+
+- After the faster index, the one database round trip (0.1–0.2 s, the primary is in the US East) was the biggest part
+  of a check. Now checks read their limits from a local copy of the counts in the Cloudflare location's Cache API
+  (`worker/mirror.js`), add themselves to it at once, answer, and write the database right after (`ctx.waitUntil`);
+  the database's exact counts then replace the copy. Key lookups are cached for 60 s and dropped at once when a key
+  is replaced or deleted.
+- Trade-off, chosen by the owner: limits are per location and can let one or two extra requests through (a new
+  location starts at 0); a revoked key keeps working elsewhere for up to a minute. The database stays the record.
+- Tests: the real path (database written after the answer) has its own tests: answering while the database write is
+  held back, the daily and similar-message limits from the copy alone, and the copy catching up with the database.
+
 ## 2026-11-22: First check on a fresh Worker: 657 ms -> 213 ms
 
 - Live Server-Timing showed the Worker's own clock at ~0.2 s while callers waited 0.8–1.1 s: most checks land on a

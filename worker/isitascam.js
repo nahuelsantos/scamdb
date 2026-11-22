@@ -8,6 +8,7 @@ import { loadCatalogue, loadEntry } from './catalogue.js';
 import { matchMessage, VERSION } from '../packages/matcher/index.js';
 import { scoreWithWorkersAI, combine } from './scorer.js';
 import { checkProbe, probeStatements } from './probes.js';
+import { readMirror, writeMirror } from './mirror.js';
 import { d1VectorStore } from './vectorstore.js';
 import { readForm, extractText } from './media.js';
 import { LIMITS as REPORT_LIMITS } from './reports.js';
@@ -110,8 +111,10 @@ export async function handleIsItAScam(request, env, ctx) {
 
   const now = new Date();
   const subject = await subjectOf(env, key, request.headers.get('cf-connecting-ip') ?? '', now);
-  // The database is far from most callers, so every count and the similar-message check go in ONE batch (one round
-  // trip), and the matcher runs while it is in flight. The limits are applied before anything is answered.
+  // The database is far from most callers (0.1-0.2 s a round trip). Every count and the similar-message check go in ONE
+  // batch, and with ctx.waitUntil that batch runs after the answer: the limits come from the local copy of the counts
+  // (worker/mirror.js), which this check adds itself to at once. Without it (or with MIRROR_SYNC, as in the tests) the
+  // batch runs first and the limits come from the database, as before. Either way the copy is refreshed from the batch.
   const bucket = `isitascam:${subject}`;
   const stmts = [], at = {};
   const add = (name, stmt) => { at[name] = stmts.push(stmt) - 1; };
@@ -122,13 +125,52 @@ export async function handleIsItAScam(request, env, ctx) {
   if (probe) { add('prints', probe.read); stmts.push(probe.record); }
   const wantsAi = !file && usesScorer(key, env);
   if (wantsAi) add('ai', hitStatement(env.DB, 'isitascam:ai', now));
-  const pending = env.DB.batch(stmts);
-  pending.catch(() => {}); // awaited just below; this only stops an unhandled-rejection warning while the matcher runs
-  let result = file ? null : matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
-  t.mark('match');
-  const rows = await pending;
-  t.mark('db');
-  const count = (name) => rows[at[name]].results[0].count;
+
+  const origin = new URL(request.url).origin, day = utcDay(now);
+  const dayTtl = secondsToUtcMidnight(now) + 60;
+  const names = { daily: `c:${bucket}:${day}`, global: `c:isitascam:global:${day}` };
+  if (key) names.burst = `c:${minuteBucket(bucket, now)}`;
+  if (wantsAi) names.ai = `c:isitascam:ai:${day}`;
+  const printsName = `p:${subject}:${day}`;
+  const ttlOf = (k) => (k === 'burst' ? 120 : dayTtl);
+  // The database's exact counts replace the copy (never lowering it: other checks here may have added themselves since).
+  const refresh = async (rows) => {
+    await Promise.all(Object.entries(names).map(async ([k, n]) => {
+      const exact = rows[at[k]].results[0].count;
+      const local = await readMirror(origin, n, 0);
+      if (exact > local) await writeMirror(origin, n, exact, ttlOf(k));
+    }));
+    if (probe) { // one fingerprint per check (repeats count), so the database's list wins when it is longer
+      const exact = [...rows[at.prints].results.map((r) => r.print), probe.print];
+      const local = await readMirror(origin, printsName, []);
+      if (exact.length > local.length) await writeMirror(origin, printsName, exact, dayTtl);
+    }
+  };
+
+  let count, priorPrints, result = null;
+  if (ctx?.waitUntil && !env.MIRROR_SYNC) {
+    const keys = Object.keys(names);
+    const [values, prints] = await Promise.all([Promise.all(keys.map((k) => readMirror(origin, names[k], 0))), probe ? readMirror(origin, printsName, []) : []]);
+    const counts = Object.fromEntries(keys.map((k, i) => [k, values[i] + 1]));
+    count = (k) => counts[k];
+    priorPrints = prints.map((print) => ({ print }));
+    // This check counts at once (quick repeats see it), refused or not, exactly as the database batch counts it.
+    await Promise.all([...keys.map((k) => writeMirror(origin, names[k], counts[k], ttlOf(k))), probe ? writeMirror(origin, printsName, [...prints, probe.print], dayTtl) : null]);
+    ctx.waitUntil(env.DB.batch(stmts).then(refresh).catch(() => {}));
+    t.mark('db');
+    if (!file) result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
+    t.mark('match');
+  } else {
+    const pending = env.DB.batch(stmts);
+    pending.catch(() => {}); // awaited just below; this only stops an unhandled-rejection warning while the matcher runs
+    if (!file) result = matchMessage(check.text, catalogue.entries, { country: check.country ?? undefined, elsewhere: true });
+    t.mark('match');
+    const rows = await pending;
+    t.mark('db');
+    count = (k) => rows[at[k]].results[0].count;
+    priorPrints = probe ? rows[at.prints].results : [];
+    await refresh(rows).catch(() => {});
+  }
   const retry = { 'retry-after': String(secondsToUtcMidnight(now)) };
   if (key) {
     const maxBurst = Number(env.BURST_CHECKS) || BURST.checks; // a setting can raise it (the tests do)
@@ -137,7 +179,7 @@ export async function handleIsItAScam(request, env, ctx) {
   if (count('daily') > (key ? LIMITS.keyed : LIMITS.keyless))
     throw new HttpError(429, 'too_many_checks', `Daily limit reached (${key ? LIMITS.keyed : LIMITS.keyless} checks). Try again tomorrow${key ? '' : ', or get a free key for more'}.`, retry);
   if (count('global') > LIMITS.global) throw new HttpError(503, 'checks_paused', 'We are answering too many checks today. Please try again tomorrow.', retry);
-  if (probe) probe.judge(rows[at.prints].results);
+  if (probe) probe.judge(priorPrints);
   const aiAllowed = wantsAi && count('ai') <= LIMITS.ai;
 
   if (file) {
