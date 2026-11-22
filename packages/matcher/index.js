@@ -1,6 +1,6 @@
 // "Is this a scam?": reads the warning signs in a message and finds the catalogue entries it looks like.
 // Ported from eschamuyo (site/js/matcher.js, analyze.js, checker.js). Runs in Node and in the browser.
-import { normalize, tokens, editDistance } from '../../lib/text.js';
+import { normalize, tokens, wordsOf, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
 export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
@@ -34,13 +34,24 @@ export function hardRules(ids) {
 // Each entry's phrases, normalised and split into words once per entry (not on every check): checks run against
 // hundreds of entries with dozens of phrases each, so re-normalising them was most of a check's time.
 const PREPARED = [new WeakMap(), new WeakMap()];
+// One prepared item per distinct phrase, shared by both indexes (with and without translated phrases): the native
+// phrases appear in both, and normalising them was most of a cold start. Items are read-only.
+const PHRASES = new Map();
+function phraseItem(raw) {
+  let item = PHRASES.get(raw);
+  if (item === undefined) {
+    const p = normalize(raw);
+    item = !p ? null : HANGUL.test(p) ? { p: ` ${p} `, pw: hangulStems(p), hangul: true } : { p: ` ${p} `, pw: wordsOf(p), joined: UNSPACED.test(p) };
+    PHRASES.set(raw, item);
+  }
+  return item;
+}
 function prepared(entry, translated) {
   const cache = PREPARED[translated ? 1 : 0];
   let langs = cache.get(entry);
   if (!langs) {
     const lists = { ...(translated ? entry.phrasesTranslated ?? {} : {}), ...(entry.phrases ?? {}) };
-    langs = Object.keys(lists).map((l) => [...(lists[l] ?? []), entry.name?.[l] ?? ''].map(normalize).filter(Boolean)
-      .map((p) => (HANGUL.test(p) ? { p: ` ${p} `, pw: hangulStems(p), hangul: true } : { p: ` ${p} `, pw: tokens(p), joined: UNSPACED.test(p) })).filter((x) => x.pw.length));
+    langs = Object.keys(lists).map((l) => [...(lists[l] ?? []), entry.name?.[l] ?? ''].map(phraseItem).filter((x) => x && x.pw.length));
     cache.set(entry, langs);
   }
   return langs;
@@ -149,7 +160,9 @@ function indexOf(entries, translated) {
   const cache = INDEX[translated ? 1 : 0];
   let index = cache.get(entries);
   if (index) return index;
-  index = { exact: new Map(), dels: new Map(), hangul: [], joined: [] };
+  // exact: word -> lists. byLen: the 5+ letter words by length, for the one-typo lookup in candidates() (cheaper to build
+  // than a table of every word's one-letter deletions, which was most of a cold start).
+  index = { exact: new Map(), byLen: new Map(), hangul: [], joined: [] };
   const add = (map, key, code) => { let list = map.get(key); if (!list) map.set(key, (list = [])); if (list[list.length - 1] !== code) list.push(code); };
   entries.forEach((entry, i) => {
     prepared(entry, translated).slice(0, LISTS).forEach((list, j) => {
@@ -158,17 +171,34 @@ function indexOf(entries, translated) {
       for (const item of list) {
         if (item.hangul) { hangul = true; continue; }
         if (item.joined) { joined = true; continue; } // scored only by the unspaced-script rules
-        for (const w of item.pw) {
-          add(index.exact, w, code);
-          if (w.length >= 5) for (const d of deletions(w)) add(index.dels, d, code);
-        }
+        for (const w of item.pw) add(index.exact, w, code);
       }
       if (hangul) index.hangul.push(code);
       if (joined) index.joined.push(code);
     });
   });
+  for (const w of index.exact.keys()) if (w.length >= 5) { let l = index.byLen.get(w.length); if (!l) index.byLen.set(w.length, (l = [])); l.push(w); }
   cache.set(entries, index);
   return index;
+}
+
+// Two words share a one-letter deletion (the old lookup's rule): one is the other minus a letter, or both minus one
+// letter are equal (one substitution, or two neighbouring letters swapped). Checked without building any strings.
+function minusOne(long, short) { // long.length === short.length + 1
+  let i = 0;
+  while (i < short.length && long[i] === short[i]) i++;
+  for (let k = i; k < short.length; k++) if (long[k + 1] !== short[k]) return false;
+  return true;
+}
+function shareDeletion(a, b) { // a.length === b.length
+  let i = 0;
+  while (i < a.length && a[i] === b[i]) i++;
+  if (i === a.length) return true;
+  let j = a.length - 1;
+  while (j > i && a[j] === b[j]) j--;
+  if (i === j) return true; // one substitution
+  // deleting a[x] and b[y] (i <= x, y <= j) leaves equal strings: only possible when the middle is shifted by one
+  return (j === i + 1 && a[i] === b[j] && a[j] === b[i]) || (a.slice(i + 1, j + 1) === b.slice(i, j)) || (a.slice(i, j) === b.slice(i + 1, j + 1));
 }
 
 /** The entries that can score above 0 for these text words, ascending, each with the numbers of its lists to score. */
@@ -178,8 +208,12 @@ function candidates(entries, words, translated) {
   const take = (list) => { if (list) for (const c of list) found.add(c); };
   for (const t of words.set) take(index.exact.get(t));
   for (const t of words.fuzzy) {
-    take(index.dels.get(t));
-    for (const d of deletions(t)) { take(index.exact.get(d)); take(index.dels.get(d)); }
+    for (const d of deletions(t)) take(index.exact.get(d)); // t minus a letter is a phrase word
+    // a 5+ letter phrase word is t plus a letter, or shares a deletion with t (same length)
+    for (const w of index.byLen.get(t.length + 1) ?? []) if (minusOne(w, t)) take(index.exact.get(w));
+    for (const w of index.byLen.get(t.length) ?? []) if (w !== t && shareDeletion(t, w)) take(index.exact.get(w));
+    // and the old rule "both minus one letter are equal" also matched a phrase word one letter shorter that equals t
+    // minus a letter elsewhere: covered by the deletions(t) lookup above.
   }
   if (words.hangul.size) take(index.hangul);
   if (words.unspaced) take(index.joined);
