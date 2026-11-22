@@ -12,40 +12,34 @@ import { LOGO } from '../../site/templates/logo.js';
 import { ICONS, STEP_ICONS } from '../../site/templates/icons.js';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-const VOICE = join(ROOT, 'marketing/videos/voice/voiceover-take1.m4a');
+const VOICE = join(ROOT, 'marketing/videos/voice/v2-tts-a.mp3');
 const OUT = join(ROOT, 'marketing/videos/video2');
 const FPS = 30, W = 1080, H = 1920;
 
-// --- Voice: [source start, source end] of each clip, and the pause after it (seconds) ---
-const LEAD = 0.4, END_HOLD = 2.6;
-const CLIPS = [
-  { from: 47.60, to: 54.31, gap: 0.6 }, // "Why does a fake toll text ask for $12.51? Because nobody argues about $12." (take 1)
-  { from: 205.70, to: 210.40, gap: 0.6 }, // "A toll program you know. A small amount. A $50 threat. And a link." (take 2)
-  { from: 72.50, to: 76.21, gap: 0.6 }, // "They don't want the $12.51. They want the card number you just typed in." (take 1)
-  { from: 76.90, to: 78.83, gap: 0 }, // "Don't tap. Send it to us instead." (take 1)
-];
-let t = LEAD;
-for (const c of CLIPS) { c.at = t; t += c.to - c.from + c.gap; }
-const DURATION = +(t + END_HOLD).toFixed(2);
+// --- Voice: the owner's ElevenLabs narration (voice "Nahuel Inglés", take A), one file, cues from its word timings ---
+const LEAD = 0.4, END_HOLD = 2.4, VOICE_LEN = 21.73;
+const at = (s) => +(LEAD + s).toFixed(2); // a time in the narration -> a time in the video
+const DURATION = +(LEAD + VOICE_LEN + END_HOLD).toFixed(2);
 const T = {
-  l2: CLIPS[0].at + 4.06, // "Because…"
-  scene2: CLIPS[0].at + 4.0,
-  flags: [0.08, 1.6, 2.7, 4.36].map((d) => CLIPS[1].at + d),
-  scene3: CLIPS[2].at - 0.3,
-  card: CLIPS[2].at + 1.82,
-  scene4: CLIPS[3].at - 0.3,
-  send: CLIPS[3].at + 0.98,
+  l2: at(4.0), // "Because…"
+  scene2: at(3.9),
+  flags: [7.4, 9.3, 10.7, 12.6].map(at), // toll program · small amount · $50 threat · and a link
+  scene3: at(13.5),
+  card: at(16.45), // "They want the card number…"
+  scene4: at(19.1),
+  send: at(20.2), // "send it to us instead"
 };
 const CAPTIONS = [
-  [CLIPS[0].at, T.l2, 'Why does a fake toll text ask for $12.51?'],
-  [T.l2, CLIPS[0].at + 6.71, 'Because nobody argues about $12.'],
-  [CLIPS[1].at, CLIPS[1].at + 2.55, 'A toll program you know. A small amount.'],
-  [CLIPS[1].at + 2.55, CLIPS[1].at + 4.7, 'A $50 threat. And a link.'],
-  [CLIPS[2].at, T.card, 'They don’t want the $12.51.'],
-  [T.card, CLIPS[2].at + 3.71, 'They want the card number you just typed in.'],
-  [CLIPS[3].at, T.send, 'Don’t tap.'],
-  [T.send, CLIPS[3].at + 2.3, 'Send it to us instead.'],
+  [at(0), T.l2, 'Why does a fake toll text ask for $12.51?'],
+  [T.l2, at(6.4), 'Because nobody argues about $12.'],
+  [at(6.9), at(10.6), 'A toll program you know. A small amount.'],
+  [at(10.6), at(13.2), 'A $50 threat. And a link.'],
+  [at(13.8), T.card, 'They don’t want the $12.51.'],
+  [T.card, at(18.8), 'They want the card number you just typed in.'],
+  [at(19.4), T.send, 'Don’t tap.'],
+  [T.send, at(21.6), 'Send it to us instead.'],
 ];
+const CLIPS = [{ at: LEAD }]; // kept for the first scene's highlight timing
 
 // --- Drawings (site helpers); pathLength=1 lets CSS draw each pen line ---
 const drawable = (svg, delay, dur = 0.9) => svg.replace(/<path class="(sk[^"]*)"/g, `<path pathLength="1" class="$1 vt-draw" style="animation-delay:${delay}s;animation-duration:${dur}s"`);
@@ -113,6 +107,7 @@ svg.vt-full{position:absolute;left:0;top:0;width:${W}px;height:${H}px;overflow:v
 .vt-end .vt-logo svg{width:280px;height:280px}
 .vt-end .vt-t1{font-family:var(--display);font-weight:700;font-size:120px;letter-spacing:-.04em;margin-top:30px}
 .vt-end .vt-t2{font-family:var(--display);font-weight:700;font-size:72px;letter-spacing:-.03em;margin-top:26px;opacity:0;animation:up .4s forwards}
+.vt-end .vt-ai{margin-top:40px;text-align:center;font-family:var(--mono);font-size:24px;color:var(--dim)}
 .vt-end .vt-t3{font-family:var(--mono);font-size:36px;color:var(--dim);margin-top:44px;opacity:0;animation:fade .4s forwards}
 </style></head><body><div class="vt-v">
 
@@ -139,7 +134,7 @@ ${scene(T.scene4, null, `<div class="vt-scene vt-end" style="opacity:1;animation
 <div class="vt-logo">${LOGO}</div>
 <div class="vt-t1">Don’t tap.</div>
 <div class="vt-t2" style="animation-delay:${T.send}s">Send it: <span class="vt-mark" style="animation-delay:${T.send + 0.4}s">scamdb.dev/report</span></div>
-<div class="vt-t3" style="animation-delay:${T.send + 0.8}s">Check a message: scamdb.dev</div></div>`)}
+<div class="vt-t3" style="animation-delay:${T.send + 0.8}s">Check a message: scamdb.dev</div><div class="vt-ai">Voice: AI-generated from the founder’s own voice</div></div>`)}
 
 ${CAPTIONS.map(([a, b, txt]) => `<div class="vt-cap" style="animation-name:fadein, fadeout;animation-delay:${a.toFixed(2)}s, ${(b - 0.08).toFixed(2)}s"><span>${esc(txt)}</span></div>`).join('')}
 <div class="vt-foot"><span class="vt-b">${LOGO}scamdb</span><span>scamdb.dev</span></div>
@@ -150,11 +145,9 @@ await mkdir(join(OUT, 'frames'), { recursive: true });
 await mkdir(join(ROOT, 'dist/_mk'), { recursive: true });
 await writeFile(join(ROOT, 'dist/_mk/video2.html'), html);
 
-// Voice: cut, pad, clean, level.
+// Voice: delay by LEAD, pad, level (TTS audio is already clean).
 const voice = join(OUT, 'voice.wav');
-const chains = CLIPS.map((c, i) => `[0:a]atrim=${c.from}:${c.to},asetpts=PTS-STARTPTS,afade=t=in:d=0.03,afade=t=out:st=${(c.to - c.from - 0.05).toFixed(2)}:d=0.05,apad=pad_dur=${c.gap}[c${i}]`).join(';');
-const filter = `${chains};${CLIPS.map((_, i) => `[c${i}]`).join('')}concat=n=${CLIPS.length}:v=0:a=1[v];[v]adelay=${LEAD * 1000}|${LEAD * 1000},apad=pad_dur=${END_HOLD},highpass=f=80,afftdn=nf=-25,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000[out]`;
-execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', VOICE, '-filter_complex', filter, '-map', '[out]', '-t', String(DURATION), voice]);
+execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', VOICE, '-af', `adelay=${LEAD * 1000}|${LEAD * 1000},apad=pad_dur=${END_HOLD},loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000`, '-t', String(DURATION), voice]);
 
 const server = await serve(join(ROOT, 'dist'), 0);
 const browser = await chromium.launch();
