@@ -1,0 +1,48 @@
+name: Suggest a missing scam
+description: A scam that is documented by a reliable source but not yet in the catalogue.
+title: "Missing scam: "
+labels: ["missing-scam"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. Every scam in scamdb needs a reliable, dated source (a police or government warning, a bank, a regulator or reputable news).
+        **Don't include personal data** or a message you received yourself: send those privately at https://scamdb.dev/report/.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Where it happens, for example "Spain" or "es".
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: How it works
+      description: Who they pretend to be, what they ask for, how they pressure people.
+    validations:
+      required: true
+  - type: checkboxes
+    id: channels
+    attributes:
+      label: How it arrives
+      options:
+        - label: WhatsApp
+        - label: SMS
+        - label: Phone call
+        - label: Email
+        - label: Social media
+        - label: Website
+        - label: In person
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: One link per line, with the publisher and date if you can. At least one is needed.
+    validations:
+      required: true
+  - type: textarea
+    id: message
+    attributes:
+      label: A real message, if a source quotes one
+      description: Copy it as published, and replace phone numbers and links with [number] and [link].
