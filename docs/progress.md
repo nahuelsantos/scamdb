@@ -2,6 +2,19 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-23: Matcher 1.41.0: a company's own app promo is not a scam
+
+- The owner's reports had a bank promo called "scam": "Paga los servicios sin moverte de tu casa. Descarga nuestra App
+  Supervielle y empezá hoy mismo: [link]". "Descarga" read as installing a remote-access app, "paga" as a money
+  request, "hoy" as pressure.
+- When a message invites you to the sender's own app ("descargá nuestra app", "download our app"), those three signs
+  are dropped, each only when nothing else in the message still carries it: AnyDesk or screen sharing, "pague la
+  multa", "dentro de las 24 horas" keep the message a scam.
+- Before → after: only those three copies of the promo change (scam → suspicious). Real, written, private sets and
+  every scam in the reports: no change. Genuine reports called scam by the keyword check: 5/84 → 2/84.
+- Also measured that day: refitting the fusion weights with the owner's 91 reports (scored with Workers AI) did not
+  beat the current weights on held-out messages, so they stay. The AI scores many genuine promos 0.7–0.95, like scams.
+
 ## 2026-11-23: Matcher 1.40.0: the home check knows your country; "avoid a fee or fine" is pressure
 
 - The home page's check matched every country at once, so a USPS text could show India Post's scam first. It now

@@ -483,6 +483,14 @@ const DISCOUNT = /(^| )-[0-9]+([.,][0-9]+)? ?€|[0-9]+ ?% (de |en )?(dto|descue
 const PRICES_ALL = /(^| )-?[0-9]+([.,][0-9]+)? ?(€|eur|euros)|€ ?[0-9]+([.,][0-9]+)?|\$ ?[0-9]+([.,][0-9]+)?|£ ?[0-9]+([.,][0-9]+)?/g;
 const OFFICIAL_STORE = /(descarg[a-z]*|baj[a-z]*|instal[a-z]*|download|get)( (la|nuestra|tu|su|the|our|this))? (app|aplicacion)( [a-z]+){0,3} (en|desde|de|from|on|in) (la )?(google play|play store|app store|apple store)( (o|or|y|and) (google play|play store|app store|apple store))?/;
 const OFFICIAL_STORE_ALL = new RegExp(OFFICIAL_STORE.source, 'g');
+// A company inviting you to its own app ("Descargá nuestra App Supervielle", "download our app") is a promotion, not a
+// stranger's remote-access app. In such a promo, what the app lets you do ("pagá los servicios", "pay your bills") is
+// a feature, not a request for money, and "empezá hoy mismo" is an invitation, not pressure. Each sign stays when
+// anything else in the message still carries it (AnyDesk, "pague la multa", "dentro de las 24 horas").
+const OWN_APP = /(descarg[a-z]*|baj[a-z]*|instal[a-z]*|download|get) (nuestra|our) (app|aplicacion)\b/;
+const OWN_APP_ALL = new RegExp(OWN_APP.source, 'g');
+const APP_FEATURE_ALL = /\b(paga|pagar|pagas|pague|pay)( (tus|los|sus|your|all your))? (servicios|facturas|impuestos|cuentas|bills|services)\b/g;
+const INVITE_ALL = /\b(empeza|empezar|empieza|comenza|comenzar|comienza|start|join)( a [a-z]+)? (hoy|today)( mismo)?\b/g;
 // "Descarga tu factura", "download your statement": a document, not an app to install.
 const DOC_DOWNLOAD = /(descarg[a-z]*|baj[a-z]*|download)( (tu|su|la|el|your|the))? (factura|facturas|resumen|comprobante|extracto|boleta|recibo|pdf|ticket|e ?ticket|entrada|entradas|statement|invoice|receipt|bill)\b/;
 const DOC_DOWNLOAD_ALL = new RegExp(DOC_DOWNLOAD.source, 'g');
@@ -506,6 +514,11 @@ function applyContext(t, ids, signs = SIGNS) {
     if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t) || CODE_DELIVERY.test(t) || CODE_REQUESTED.test(t))) out = out.filter((id) => id !== 'asks_for_code');
   }
   if (out.includes('money_request') && DISCOUNT.test(t) && !signs.money_request.test(t.replace(PRICES_ALL, ' '))) out = out.filter((id) => id !== 'money_request');
+  if (OWN_APP.test(t)) {
+    if (out.includes('remote_access') && !signs.remote_access.test(t.replace(OWN_APP_ALL, ' '))) out = out.filter((id) => id !== 'remote_access');
+    if (out.includes('money_request') && !signs.money_request.test(t.replace(APP_FEATURE_ALL, ' '))) out = out.filter((id) => id !== 'money_request');
+    if (out.includes('urgency') && !signs.urgency.test(t.replace(INVITE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
+  }
   if (out.includes('remote_access') && (OFFICIAL_STORE.test(t) || DOC_DOWNLOAD.test(t)) && !signs.remote_access.test(t.replace(OFFICIAL_STORE_ALL, ' ').replace(DOC_DOWNLOAD_ALL, ' '))) out = out.filter((id) => id !== 'remote_access');
   if (out.includes('urgency') && DUE_DATE.test(t) && !signs.urgency.test(t.replace(DUE_DATE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
   if (out.includes('urgency') && PUBLIC_ALERT.test(t) && !out.some((id) => id === 'money_request' || id === 'asks_for_code' || id === 'remote_access')) out = out.filter((id) => id !== 'urgency');
