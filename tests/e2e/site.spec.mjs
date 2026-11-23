@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
+// No country can be guessed here (no region in the language, a time zone outside the map): the home check matches
+// every country, as before the country selector. The country tests below set their own.
+test.use({ locale: 'en', timezoneId: 'UTC' });
+
 const EN = ['/', '/catalogue/', '/catalogue/ar/whatsapp-codigo/', '/docs/', '/contribute/'];
 const PAGES = EN;
 
@@ -102,4 +106,52 @@ test('the original version of a scam opens and passes axe at phone width', async
 test('there is no language switch', async ({ page }) => {
   await page.goto('/docs/');
   await expect(page.getByRole('link', { name: 'Español' })).toHaveCount(0);
+});
+
+const USPS = 'USPS: The package arrived at the warehouse but could not be delivered due to incomplete address information. Please confirm your address in the link within 12 hours.';
+
+test('with no country, the home check matches every country', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#pg-country')).toHaveValue('');
+  await page.locator('#pg-text').fill(USPS);
+  await expect(page.locator('#pg-out .match a').first()).toHaveText('in/india-post-address');
+});
+
+test.describe('the visitor\'s country', () => {
+  test.use({ locale: 'en-GB', timezoneId: 'America/New_York' });
+
+  test('is guessed from the time zone first, and the check matches its scams', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('#pg-country')).toHaveValue('us');
+    await page.locator('#pg-text').fill(USPS);
+    await expect(page.locator('#pg-out .match a').first()).toHaveText('us/usps-delivery-text');
+    await expect(page.locator('#pg-out .elsewhere')).toHaveCount(0);
+  });
+
+  test('a strong fit from another country shows as "Also seen in"; the choice is remembered', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('#pg-country').selectOption('es');
+    await page.locator('#pg-text').fill(USPS);
+    await expect(page.locator('#pg-out .match a').first()).toHaveText(/^es\//);
+    await expect(page.locator('#pg-out .elsewhere')).toContainText('Also seen in in/india-post-address');
+    await expect(page.locator('#pg-out .elsewhere')).toContainText('(India)');
+    await page.reload();
+    await expect(page.locator('#pg-country')).toHaveValue('es');
+    await page.locator('#pg-country').selectOption('');
+    await page.reload();
+    await expect(page.locator('#pg-country')).toHaveValue('');
+  });
+
+  test('the API button and the report form get the same country', async ({ page }) => {
+    let sent;
+    await page.route('**/v1/isitascam', (r) => { sent = r.request().postDataJSON(); return r.fulfill({ json: { verdict: 'suspicious', score: null, signals: [], matches: [] } }); });
+    await page.goto('/');
+    await page.locator('#pg-country').selectOption('ca');
+    await page.locator('#pg-text').fill(USPS);
+    await page.getByRole('button', { name: 'Check with the API' }).click();
+    await expect(page.locator('.api-out')).toContainText('suspicious');
+    expect(sent.country).toBe('ca');
+    await page.locator('#pg-out [data-report]').click();
+    await expect(page.locator('#rep-country')).toHaveValue('ca');
+  });
 });

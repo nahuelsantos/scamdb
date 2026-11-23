@@ -15,6 +15,7 @@ export const UI = {
     hero: { title: 'A drawn phone showing a scam asking for a code, with handwritten notes pointing at each warning sign', stamp: 'SCAM',
       n1: 'fake bank', n2: 'rushes you', n3a: 'asks for', n3b: 'the key!', n4a: 'never share it', n4b: 'with anyone' },
     pgTitle: 'Is this a scam? Paste a message', pgPrivate: 'runs in your browser · nothing is sent', pgSamples: 'Sample messages',
+    pgCountry: 'Where it arrived', pgAnyCountry: 'Any country', pgSeenAbroad: 'Also seen in',
     pgSampleLabels: ['Bank fraud team', '“Hi Mum, new number”', 'Dentist reminder'], pgMessage: 'Message', pgSoon: 'Same check as an API:', pgApi: 'Check with the API', apiScore: 'scam probability', apiNoKey: 'keyword check only. Sign in and create a free key on your account page to add the AI score here.', apiAiPending: 'AI score on the way…', apiAiNone: 'no AI score this time (matcher only)',
     vScam: 'scam', vSuspicious: 'suspicious', vNone: 'not recognised', noScore: 'score: null · catalogue match only',
     warningNote: 'This reads as a warning about a scam, not the scam itself. Good to share. The match below is the scam it describes.', warningShort: 'a warning about this scam',

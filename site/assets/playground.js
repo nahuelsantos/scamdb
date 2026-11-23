@@ -1,5 +1,6 @@
 // The homepage playground: runs the scamdb matcher in the browser. Nothing is sent anywhere.
 import { matchMessage } from './packages/matcher/index.js';
+import { guessCountry, browserHints } from './guess-country.js';
 
 const SAMPLES = [...document.querySelectorAll('[data-sample]')];
 const box = document.getElementById('pg-text');
@@ -9,6 +10,18 @@ const S = JSON.parse(out.dataset.strings || '{}');
 const LANG = out.dataset.lang || 'en';
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const english = (t) => (t ? (t.en ?? Object.values(t)[0]) : '');
+
+// The country the message arrived in: guessed from the time zone and language, remembered once chosen ('any' = none).
+// Local scams are matched first; a strong fit documented elsewhere is shown as "Also seen in".
+const where = document.getElementById('pg-country');
+const country = () => where?.value || '';
+const countryName = (cc) => [...(where?.options ?? [])].find((o) => o.value === cc)?.text ?? cc;
+if (where) {
+  const available = new Set([...where.options].map((o) => o.value).filter(Boolean));
+  let saved = null;
+  try { saved = localStorage.getItem('scamdb:country'); } catch { /* storage blocked: guess every time */ }
+  where.value = saved === 'any' ? '' : saved && available.has(saved) ? saved : guessCountry(browserHints(), available);
+}
 
 let data;
 async function load() {
@@ -24,14 +37,25 @@ function render(r) {
   const m = r.matches[0] && byId.get(r.matches[0].id);
   const match = m ? `${esc(S.matches)} <a href="/catalogue/${esc(m.id)}/">${esc(m.id)}</a>, <span lang="en">${esc(english(m.name))}</span>`
     : esc(S.noMatch);
+  const abroad = (r.elsewhere ?? []).map((x) => byId.get(x.id)).filter(Boolean)
+    .map((e) => `<a href="/catalogue/${esc(e.id)}/">${esc(e.id)}</a>, <span lang="en">${esc(english(e.name))}</span> (${esc(countryName(e.country))})`);
+  const seen = abroad.length ? `<p class="match elsewhere">${esc(S.seenAbroad)} ${abroad.join('; ')}</p>` : '';
   out.innerHTML = `<div class="verdict" data-verdict="${esc(r.verdict)}"><span class="stamp">${esc(S[r.verdict])}</span><span class="noscore">${esc(S.noScore)}</span></div>
-<ul class="why">${sigs}</ul><p class="match">${match}</p>${r.warning ? `<p class="warning-note">${esc(S.warningNote)}</p>` : ''}${out.dataset.reportButton ?? ''}`;
+<ul class="why">${sigs}</ul><p class="match">${match}</p>${seen}${r.warning ? `<p class="warning-note">${esc(S.warningNote)}</p>` : ''}${out.dataset.reportButton ?? ''}`;
 }
 
 async function check() {
   const d = await load();
-  render(matchMessage(box.value, d.entries));
+  const cc = country();
+  render(matchMessage(box.value, d.entries, cc ? { country: cc, elsewhere: true } : {}));
 }
+
+where?.addEventListener('change', () => {
+  try { localStorage.setItem('scamdb:country', where.value || 'any'); } catch { /* not remembered */ }
+  check();
+});
+// The page arrives with the first sample checked for any country; check it again for the visitor's.
+if (country()) check();
 
 let timer;
 box.addEventListener('input', () => {
@@ -66,7 +90,7 @@ apiBtn?.addEventListener('click', async () => {
   if (apiSum) apiSum.hidden = true;
   try {
     const r = await fetch('/v1/isitascam', { method: 'POST', credentials: 'same-origin',
-      headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: JSON.stringify({ text: box.value, lang: 'en' }) });
+      headers: { 'content-type': 'application/json', 'x-requested-with': 'scamdb' }, body: JSON.stringify({ text: box.value, lang: 'en', ...(country() ? { country: country() } : {}) }) });
     let body = await r.json();
     if (!r.ok) { apiOut.textContent = `${r.status} ${body.message ?? body.error ?? ''}`; return; }
     show(body);
@@ -88,5 +112,5 @@ apiBtn?.addEventListener('click', async () => {
 // "Report this message": hand the message to the report form through sessionStorage (never the URL), then go there.
 out.addEventListener('click', (e) => {
   if (!e.target.closest('[data-report]')) return;
-  try { sessionStorage.setItem('scamdb:report', JSON.stringify({ text: box.value })); } catch { /* blocked: the form starts empty */ }
+  try { sessionStorage.setItem('scamdb:report', JSON.stringify({ text: box.value, ...(country() ? { country: country() } : {}) })); } catch { /* blocked: the form starts empty */ }
 });
