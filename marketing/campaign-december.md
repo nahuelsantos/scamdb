@@ -86,7 +86,7 @@ evening in Australia and NZ).
 | Tue Dec 29 | 12:00 scamdb’s first year, in numbers (**update the numbers** on the day) | 12:00 X img | `w53-tue-year-in-scamdb` |
 | Thu Dec 31 | 12:00 Three rules for 2027 | 12:00 X img | `w53-thu-new-year` |
 
-That's 24 posts and 3 videos in December, plus the 10 already drafted for W48–W49 days. If a week gets busy, drop the
+That's 24 posts from Nov 30 to Dec 31 (the 5 in W49 were drafted earlier, 19 are new) and 3 videos. If a week gets busy, drop the
 Thursday and Friday posts first (`pillars.md`).
 
 ## Three December videos (waiting for your OK)
