@@ -89,11 +89,11 @@ evening in Australia and NZ).
 That's 24 posts from Nov 30 to Dec 31 (the 5 in W49 were drafted earlier, 19 are new) and 3 videos. If a week gets busy, drop the
 Thursday and Friday posts first (`pillars.md`).
 
-## Three December videos (waiting for your OK)
+## Three December videos (done)
 
-Same style and voice ("Nahuel English") as the first four. They need about **1,500 ElevenLabs credits each** (two
-versions per video, I pick the cleaner one), so **about 4,500 credits for all three**. Say "make the December videos"
-and I'll generate the narrations and build them.
+Made on Nov 23 with the "Nahuel English" voice: 1,927 ElevenLabs credits for all three (two versions each; the cleaner
+one is used). Files: `marketing/videos/video5|6|7/` (video + cover), copy in `w50-tue-video5`, `w51-wed-video6`,
+`w52-mon-video7`. Day-by-day guides: `publish-week-49.md` … `publish-week-53.md`, with a zip of files per week.
 
 ### V5 · Tue Dec 8 · “Hi Mum, new number” (teardown, ~25 s)
 
@@ -136,5 +136,4 @@ Message: the catalogue's written example from `us/utility-shutoff` (labelled).
    the day.
 3. **The matcher fix** (country detection, and "scam" vs "suspicious") is with the other session. If it lands in
    December, the "How the check works" posts and Video 1 should be checked again against the live site.
-4. **One weekly publishing guide?** The calendar above plus "How to post each type" covers everything. If you'd like
-   a day-by-day guide like `publish-week-48.md` for each December week, say so and I'll make them.
+4. **Weekly guides:** `publish-week-49.md` … `publish-week-53.md` (regenerate with `node marketing/tools/gen-guides.mjs`).

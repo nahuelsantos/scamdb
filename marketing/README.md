@@ -5,7 +5,7 @@ folder is published automatically. The owner reviews and posts by hand.
 
 | File | What |
 |---|---|
-| `publish-week-48.md` | **This week:** what to post, when, where, with which copy and files |
+| `publish-week-48.md` … `publish-week-53.md` | **Week by week:** what to post, when, where, with which copy and files (week 48 also explains how to post each type) |
 | `campaign-december.md` | **December:** the campaign, the full calendar (Nov 30 – Dec 31) and the December video scripts |
 | `playbook.md` | **Start here.** The Phase 1 playbook: goal, templates, routine, the 2-week test and what to measure |
 | `foundation.md` | The discovery decisions behind the playbook |
