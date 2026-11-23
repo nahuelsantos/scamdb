@@ -706,3 +706,18 @@ test('1.39.0: a long expiry ("vencen en 180 días") is a date, not pressure; "ve
   assert.ok(!readSigns('Recargaste $ 18300.0, que vencen en 180 días. Ver Precios: [link]').includes('urgency'));
   assert.ok(readSigns('Su cuenta vence en 24 horas, actualice ya: [link]').includes('urgency'));
 });
+
+test('1.40.0: a threat of a fee or fine to avoid is pressure; with a link it is a scam', () => {
+  for (const [t, c] of [['(State Toll Service Name): We have noticed an outstanding toll amount of $12.51 on your record. To avoid a late fee of $50.00, visit [link] to settle your balance.', 'us'],
+    ['NZTA notice: Pay $2.90 by midnight to avoid a $40 administration fee: [link]', 'nz'],
+    ['Tráfico: tiene una sanción pendiente. Para evitar la multa, pague aquí: [enlace]', 'es'],
+    ['ANTAI : pour éviter une amende, réglez votre avis de contravention ici [lien]', 'fr']]) {
+    assert.ok(readSigns(t).includes('urgency'), t);
+    assert.equal(m(t, { country: c }).verdict, 'scam', t);
+  }
+});
+test('1.40.0: news about fake fine texts, a fee that just applies, or "fine" as a word are not that pressure', () => {
+  assert.notEqual(m('Parce, mire esta nota de El Tiempo sobre los mensajes falsos de multas que están llegando [enlace]', { country: 'co' }).verdict, 'scam');
+  assert.ok(!readSigns('Reminder: your tuition balance is due January 5. A late fee applies to balances not paid by the deadline. [link]').includes('urgency'));
+  assert.ok(!readSigns('We took the back road to avoid the traffic, all fine [link]').includes('urgency'));
+});

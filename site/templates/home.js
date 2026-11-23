@@ -68,7 +68,9 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
   const labels = t(lang, 'pgSampleLabels');
   const strings = { scam: t(lang, 'vScam'), suspicious: t(lang, 'vSuspicious'), not_recognised: t(lang, 'vNone'), noScore: t(lang, 'noScore'),
     noSignals: t(lang, 'noSignals'), matches: t(lang, 'matches'), noMatch: t(lang, 'noMatch'), apiScore: t(lang, 'apiScore'), apiNoKey: t(lang, 'apiNoKey'), apiAiPending: t(lang, 'apiAiPending'), apiAiNone: t(lang, 'apiAiNone'),
-    warningNote: t(lang, 'warningNote'), warningShort: t(lang, 'warningShort') };
+    warningNote: t(lang, 'warningNote'), warningShort: t(lang, 'warningShort'), seenAbroad: t(lang, 'pgSeenAbroad') };
+  const countries = [...repo.countries].sort((a, b) => a.name.en.localeCompare(b.name.en, 'en'))
+    .map((c) => `<option value="${esc(c.code)}">${esc(c.name.en)}</option>`).join('');
   const body = `
 <section class="hero">
   <div>
@@ -86,6 +88,7 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <div class="samples" role="group" aria-label="${esc(t(lang, 'pgSamples'))}">${SAMPLES.map((s, i) => `<button type="button" data-sample="${i}" data-text="${esc(s.text)}" aria-pressed="${i === 0}">${esc(labels[i])}</button>`).join('')}</div>
     <label class="sr" for="pg-text">${esc(t(lang, 'pgMessage'))}</label>
     <textarea id="pg-text" rows="5" maxlength="5000">${esc(SAMPLES[0].text)}</textarea>
+    <p class="pg-where"><label for="pg-country">${esc(t(lang, 'pgCountry'))}</label><select id="pg-country"><option value="">${esc(t(lang, 'pgAnyCountry'))}</option>${countries}</select></p>
     <p class="curl">${esc(t(lang, 'pgSoon'))} <b>POST scamdb.dev/v1/isitascam</b> <button type="button" class="icon-btn api-btn" id="pg-api" aria-label="${esc(t(lang, 'pgApi'))}" title="${esc(t(lang, 'pgApi'))}">${UI_ICONS.send}</button></p>
     <p class="api-sum" id="pg-api-sum" aria-live="polite" hidden></p>
     <pre class="api-out" aria-live="polite" hidden></pre>

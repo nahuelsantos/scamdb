@@ -2,6 +2,21 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-23: Matcher 1.40.0: the home check knows your country; "avoid a fee or fine" is pressure
+
+- The home page's check matched every country at once, so a USPS text could show India Post's scam first. It now
+  guesses the visitor's country in the browser (time zone first, then the language settings; nothing is sent), shows
+  it in a "Where it arrived" selector that can be changed (and is remembered), and matches that country's scams first.
+  A clearly better fit documented elsewhere shows as "Also seen in". The API button and the report form get the same
+  country. "Any country" works as before.
+- Threats of a fee or fine to avoid now count as pressure, so with a link they make a scam: "to avoid a late fee of
+  $50", "avoid a $40 administration fee", "avoid fines", "para evitar la multa", "pour éviter une amende". The avoid
+  wording is required: news about fake fine texts, or "a late fee applies", do not count.
+- Before → after: real messages, genuine called scam 3/105 → 3/105, scams called scam 25.2% → 25.6% (the US toll
+  text); written set 9/868 → 9/868 and 65.9% → 66.0% (the NZ toll text); the owner's messages 3/80 → 3/80. No genuine
+  message changed. Rejected after measuring: impersonation + link (6/105 genuine called scam) and amount + link
+  (8/80 of the owner's genuine messages).
+
 ## 2026-11-22: The database is off the waiting path
 
 - After the faster index, the one database round trip (0.1–0.2 s, the primary is in the US East) was the biggest part

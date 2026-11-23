@@ -1,6 +1,8 @@
 // The report form: signed in with a key → no captcha, screenshots allowed; otherwise a Turnstile check. Sends to
 // POST /v1/reports with X-Requested-With: scamdb (so the session key is used on our own site). Every server value is
 // shown with textContent. A message handed over from a check (sessionStorage 'scamdb:report') prefills the form.
+import { guessCountry, browserHints } from './guess-country.js';
+
 const root = document.getElementById('rep');
 const S = JSON.parse(root.dataset.strings || '{}');
 const $ = (id) => document.getElementById(id);
@@ -21,17 +23,10 @@ try {
 const cc = new URLSearchParams(location.search).get('country');
 if (cc && !$('rep-country').value) $('rep-country').value = cc;
 
-// The country, guessed from the browser's language settings ("es-ES" → Spain, "pt-BR" → Brazil). If none fits, it stays
+// The country, guessed from the browser's time zone and language settings (guess-country.js). If none fits, it stays
 // "Detect it for me" and the server uses the country the request comes from. Shown next to "Add details".
-export function guessCountry(languages, available) {
-  for (const l of languages ?? []) {
-    const region = String(l).split('-')[1]?.toLowerCase();
-    if (region && available.has(region)) return region;
-  }
-  return '';
-}
 const sel = $('rep-country');
-if (!sel.value) sel.value = guessCountry(navigator.languages ?? [navigator.language], new Set([...sel.options].map((o) => o.value).filter(Boolean)));
+if (!sel.value) sel.value = guessCountry(browserHints(), new Set([...sel.options].map((o) => o.value).filter(Boolean)));
 const showCountry = () => { $('rep-more-sum').textContent = sel.value ? `· ${sel.options[sel.selectedIndex].text}` : ''; };
 sel.addEventListener('change', showCountry);
 showCountry();
