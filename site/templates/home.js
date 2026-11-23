@@ -77,7 +77,8 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     <p class="eyebrow">${esc(t(lang, 'eyebrow', repo.entries.length))}</p>
     <h1>${esc(t(lang, 'h1a'))} <span class="mark">${esc(t(lang, 'h1b'))}<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true" focusable="false">${MARK}</svg></span></h1>
     <p class="lede">${esc(t(lang, 'lede'))}</p>
-    <div class="btns"><a class="btn solid" href="${P}/catalogue/">${esc(t(lang, 'btnCatalogue'))}</a><a class="btn" href="${P}/docs/">${esc(t(lang, 'btnDocs'))}</a><a class="btn" href="${P}/account/">${esc(t(lang, 'btnKey'))}</a></div>
+    <div class="btns"><a class="btn solid" href="#pg-h" data-check>${esc(t(lang, 'btnCheck'))}</a><a class="btn" href="${P}/report/">${esc(t(lang, 'btnReport'))}</a>
+      <p class="dev"><span>${esc(t(lang, 'forDevs'))}</span><a href="${P}/docs/">${esc(t(lang, 'btnDocs'))}</a><a href="${P}/account/">${esc(t(lang, 'btnKey'))}</a><a href="${P}/catalogue/">${esc(t(lang, 'btnCatalogue'))}</a></p></div>
   </div>
   <div class="hero-art">${heroArt(t(lang, 'hero'))}</div>
 </section>

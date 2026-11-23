@@ -114,3 +114,11 @@ out.addEventListener('click', (e) => {
   if (!e.target.closest('[data-report]')) return;
   try { sessionStorage.setItem('scamdb:report', JSON.stringify({ text: box.value, ...(country() ? { country: country() } : {}) })); } catch { /* blocked: the form starts empty */ }
 });
+
+// "Check a message" in the hero: jump to the box and put the cursor in it.
+document.querySelector('[data-check]')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('pg-h')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  box.focus({ preventScroll: true });
+  box.select();
+});
