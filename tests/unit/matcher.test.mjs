@@ -721,3 +721,15 @@ test('1.40.0: news about fake fine texts, a fee that just applies, or "fine" as 
   assert.ok(!readSigns('Reminder: your tuition balance is due January 5. A late fee applies to balances not paid by the deadline. [link]').includes('urgency'));
   assert.ok(!readSigns('We took the back road to avoid the traffic, all fine [link]').includes('urgency'));
 });
+test('1.41.0: a company inviting you to its own app is a promotion, not remote access, a payment request or pressure', () => {
+  const promo = 'Paga los servicios sin moverte de tu casa. Descarga nuestra App Supervielle y empeza hoy mismo: [link]';
+  const ids = readSigns(promo);
+  for (const id of ['remote_access', 'money_request', 'urgency']) assert.ok(!ids.includes(id), id);
+  assert.notEqual(m(promo, { country: 'ar' }).verdict, 'scam');
+});
+test('1.41.0: "our app" does not excuse what else the message asks for', () => {
+  for (const t of ['Descarga nuestra app y paga la multa hoy para evitar recargos: [link]',
+    'Descarga nuestra app AnyDesk para que veamos tu pantalla',
+    'Descargá nuestra app y pagá tus servicios dentro de las 24 horas o se suspende tu cuenta [link]'])
+    assert.equal(m(t, { country: 'ar' }).verdict, 'scam', t);
+});
