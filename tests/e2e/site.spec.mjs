@@ -155,3 +155,13 @@ test.describe('the visitor\'s country', () => {
     await expect(page.locator('#rep-country')).toHaveValue('ca');
   });
 });
+
+test('the hero leads with checking and reporting; developer links come second', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.logo')).toHaveText('scamdb');
+  await page.getByRole('link', { name: 'Check a message' }).click();
+  await expect(page.locator('#pg-text')).toBeFocused();
+  await expect(page.locator('.hero .btns').getByRole('link', { name: 'Report a scam' })).toHaveAttribute('href', '/report/');
+  for (const [name, href] of [['Read the docs', '/docs/'], ['Get a free key', '/account/'], ['Browse the catalogue', '/catalogue/']])
+    await expect(page.locator('.hero .dev').getByRole('link', { name })).toHaveAttribute('href', href);
+});

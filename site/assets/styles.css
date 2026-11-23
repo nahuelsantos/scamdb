@@ -58,8 +58,9 @@ code, .mono { font-family: var(--mono); font-size: .9em; }
 
 /* header / footer */
 .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; flex-wrap: wrap; }
-.logo { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; color: var(--ink); text-decoration: none; }
-.logo svg { width: 64px; height: 64px; }
+.logo { display: flex; align-items: center; gap: 14px; font-family: var(--display); font-weight: 700; font-size: 30px; letter-spacing: -.02em; color: var(--ink); text-decoration: none; }
+.logo svg { width: 96px; height: 96px; }
+.logo .db { color: var(--dim); }
 .top nav { display: flex; gap: 22px; align-items: center; font-size: 15px; flex-wrap: wrap; }
 .top nav a { color: var(--dim); text-decoration: none; }
 .top nav a[aria-current="page"], .top nav a:hover { color: var(--ink); }
@@ -83,6 +84,8 @@ main section { margin-bottom: 56px; }
 
 /* buttons */
 .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btns .dev { display: flex; flex-wrap: wrap; gap: 6px 14px; width: 100%; margin: var(--s3) 0 0; font-size: 15px; color: var(--dim); }
+.btns .dev a { color: var(--link); }
 .btn { display: inline-flex; align-items: center; gap: var(--s2); font-weight: 600; font-size: 15px; border-radius: 10px; padding: 11px 18px; border: 1.5px solid var(--ink); color: var(--ink); text-decoration: none; }
 .btn.solid { background: var(--ink); color: var(--paper); }
 

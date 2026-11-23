@@ -51,7 +51,7 @@ export function layout({ title, description, body, path, meta, lang = 'en', scri
 <body>
 <a class="skip" href="#main">${t(lang, 'skip')}</a>
 <header class="wrap top">
-  <a class="logo" href="${P}/">${LOGO}<span>scamdb</span></a>
+  <a class="logo" href="${P}/">${LOGO}<span><span class="scam">scam</span><span class="db">db</span></span></a>
   <nav aria-label="${t(lang, 'mainNav')}">${nav}<a class="gh" href="${REPO}">GitHub</a></nav>
 </header>
 <main id="main" class="wrap">
