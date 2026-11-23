@@ -2,7 +2,8 @@
 
 - **File:** `marketing/videos/video1/scamdb-video1-how-it-works.mp4` (26 s, 1080×1920). Cover: `marketing/videos/video1/cover.png`
 - **Message in the video:** real scam text quoted by ABC7 (KGO-TV), Oct 4, 2021, bank name replaced. The site screens
-  are the live scamdb.dev, captured 2026-11-22.
+  are the live scamdb.dev as a US visitor (country filled in as United States), captured 2026-11-23 after the
+  matcher fix.
 - **Voice:** AI-generated from the founder's own voice (ElevenLabs). Label it on both platforms.
 
 ## Instagram Reel

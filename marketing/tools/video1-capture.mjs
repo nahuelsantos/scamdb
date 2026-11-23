@@ -14,8 +14,9 @@ const MSG = '[bank] fraud alert. Did you just attempt a Zelle transaction of $3,
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, colorScheme: 'light' });
-await page.goto('https://scamdb.dev/', { waitUntil: 'networkidle' });
+// A US visitor: the page fills in "Where it arrived" from the time zone and language.
+const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, colorScheme: 'light', timezoneId: 'America/New_York', locale: 'en-US' });
+await page.goto('https://scamdb.dev/?v=' + Date.now(), { waitUntil: 'networkidle' });
 await page.evaluate(() => document.fonts.ready);
 const box = page.locator('#pg-text');
 await box.fill('');

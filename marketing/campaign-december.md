@@ -134,6 +134,7 @@ Message: the catalogue's written example from `us/utility-shutoff` (labelled).
 2. **Report data is never used.** The numbers in the posts (1,199 scams, 76 countries, 167 "secrecy" scripts, 70
    countries with the parcel text) all come from the open catalogue, counted on Nov 23. Update the Dec 29 numbers on
    the day.
-3. **The matcher fix** (country detection, and "scam" vs "suspicious") is with the other session. If it lands in
-   December, the "How the check works" posts and Video 1 should be checked again against the live site.
+3. **The matcher fix is live** (Nov 23, matcher 1.40.0): the home check now uses the visitor's country, and a
+   fee or fine you can avoid counts as pressure (the FBI toll text with a link is now "scam"). Video 1 was recaptured
+   on the fixed site. Delivery texts with a link stay "suspicious" on purpose: genuine ones look almost the same.
 4. **Weekly guides:** `publish-week-49.md` … `publish-week-53.md` (regenerate with `node marketing/tools/gen-guides.mjs`).
