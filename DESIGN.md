@@ -64,6 +64,9 @@ from the hatched shading in drawings and from 1.5px borders.
   the one main action, outline for the rest. Icon buttons are 44×44px minimum, 1.5px border, radius 10px.
 - **Pills / flags**: mono 12px, 1.5px border; pink for warning signs, grey dashed for "what happens".
 - **Cards** (catalogue): card background, 1.5px line border, radius 16px, drawn icon top-right.
+- **Selects**: one shared rule at the end of `styles.css` draws the chevron and keeps 44px on the right for it. A
+  component styles a select's colours, border and font only: never its `padding` shorthand or `appearance`, never the
+  `background` shorthand (use `background-color`). A browser test checks every select on every page.
 - **Inputs and secret fields**: card background, 1.5px border, radius 10px, mono text for keys, icon buttons inside the
   same row.
 - **Navigation**: logo left; Docs, Catalogue, Contribute, Account, GitHub, language on the right.
