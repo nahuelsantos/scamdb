@@ -139,3 +139,7 @@ export const POSTS = [
     ],
   },
 ];
+
+// December campaign (marketing/tools/december.mjs): same renderer, posts with images only.
+import { DECEMBER } from './december.mjs';
+POSTS.push(...DECEMBER.filter((p) => p.slides.length));

@@ -105,7 +105,7 @@ const SLIDES = {
   messageX: (d, e) => `${eyebrow(d.eyebrow)}<div class="mk-cols"><div>${label(d.msg)}${bubble(d.msg)}${sourceLine(d.msg, e)}</div>
     <div>${d.title ? `<h2 style="font-size:58px">${md(d.title)}</h2>` : ''}${notes(d.notes)}</div></div>${foot(d.footRight)}`,
   steps: (d, e) => `${eyebrow(d.eyebrow)}<h2 style="margin-top:22px">${md(d.title ?? 'How it goes')}</h2>
-    <div class="mk-steps">${e.steps.slice(0, 4).map((s, i) => `<div class="mk-step">${STEP_ICONS[s.signal] ?? STEP_ICONS.plain}<p>${esc(d.stepText?.[i] ?? s.text.en)}<small class="${d.accStep === i ? 'mk-acc' : ''}">${esc((d.signalNames ?? {})[s.signal] ?? s.signal.replace(/_/g, ' '))}</small></p></div>`).join('')}</div>
+    <div class="mk-steps">${e.steps.slice(0, 4).map((s, i) => `<div class="mk-step">${STEP_ICONS[s.signal] ?? STEP_ICONS.plain}<p>${esc(d.stepText?.[i] ?? s.text.en)}<small class="${d.accStep === i ? 'mk-acc' : ''}">${esc((d.signalNames ?? {})[s.signal] ?? (s.signal ? s.signal.replace(/_/g, ' ') : 'what happens'))}</small></p></div>`).join('')}</div>
     <div class="mk-grow"></div>${foot()}`,
   todo: (d, e) => `${eyebrow(d.eyebrow)}<h2 style="margin-top:22px">${md(d.title ?? 'What to do')}</h2>
     <div class="mk-todo">${(d.items ?? e.whatToDo.en).map((t, i) => `<div>${CHECK(800 + i)}<span>${md(t)}</span></div>`).join('')}</div>
@@ -152,7 +152,7 @@ await mkdir(join(ROOT, 'dist/_mk'), { recursive: true });
 let count = 0;
 for (const post of POSTS) {
   if (only.size && !only.has(post.id)) continue;
-  const entry = post.entry ? (await import(join(ROOT, 'data', post.entry.split('/')[0], 'scams', `${post.entry.split('/')[1]}.json`), { with: { type: 'json' } })).default : null;
+  const entry = post.entry ? await import(join(ROOT, 'data', post.entry.split('/')[0], 'scams', `${post.entry.split('/')[1]}.json`), { with: { type: 'json' } }).then((m) => m.default, () => null) : null;
   for (const [i, s] of post.slides.entries()) {
     const size = SIZES[s.size ?? 'ig'];
     const html = page(SLIDES[s.type](s, entry), size, s.size ?? "ig");
