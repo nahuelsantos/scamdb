@@ -165,3 +165,20 @@ test('the hero leads with checking and reporting; developer links come second', 
   for (const [name, href] of [['Read the docs', '/docs/'], ['Get a free key', '/account/'], ['Browse the catalogue', '/catalogue/']])
     await expect(page.locator('.hero .dev').getByRole('link', { name })).toHaveAttribute('href', href);
 });
+
+test('every select has the shared chevron and room for it', async ({ page }) => {
+  for (const path of ['/', '/catalogue/', '/report/', '/trends/']) {
+    await page.goto(path);
+    const selects = await page.locator('select').evaluateAll((els) => els.map((el) => {
+      const c = getComputedStyle(el);
+      return { id: el.id, appearance: c.appearance, padRight: parseFloat(c.paddingRight), padLeft: parseFloat(c.paddingLeft), chevron: c.backgroundImage.includes('svg') };
+    }));
+    expect(selects.length, path).toBeGreaterThan(0);
+    for (const s of selects) {
+      expect(s.appearance, `${path} #${s.id}`).toBe('none');
+      expect(s.chevron, `${path} #${s.id} chevron`).toBe(true);
+      expect(s.padRight, `${path} #${s.id} room for the chevron`).toBeGreaterThanOrEqual(40);
+      expect(s.padRight, `${path} #${s.id}`).toBeGreaterThan(s.padLeft);
+    }
+  }
+});
