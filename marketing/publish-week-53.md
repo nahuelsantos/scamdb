@@ -4,7 +4,7 @@ All files are in **`scamdb-week53.zip`** (one folder per day, plus `copy/` with 
 `marketing/posts/2026-12-W53/` and `marketing/videos/`. Copy the block marked **ig** for Instagram and **x** for X, exactly as written.
 Times are **your time (Spain)**, US Eastern in brackets: posts 18:00 (12:00 ET), Reels 23:30 (17:30 ET). How to do each type, step by step: `publish-week-48.md` → "How to post each type".
 
-**Every time:** add the alt text (in the same `post.md`), turn off "Share to Facebook", and after every X post add the **reply with the ask**. On Reels, use the `cover.png`, keep the **Voice: AI-generated…** line in the caption (no AI label, your choice), share it to your Story and add it to a Highlight (Scams, or Real or scam? for quizzes).
+**Every time:** add the alt text (in the same `post.md`), turn off "Share to Facebook", and after every X post add the **reply with the ask**. On Reels, use the `cover.png`, keep the short **Voice: AI, made from my own.** line in the caption (no AI label, your choice), share it to your Story and add it to a Highlight (Scams, or Real or scam? for quizzes).
 
 ## Mon Dec 28
 

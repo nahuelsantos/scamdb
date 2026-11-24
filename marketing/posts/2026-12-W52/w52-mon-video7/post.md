@@ -15,7 +15,7 @@ Real utilities warn you in writing first. Call the number on your bill, never th
 
 The message in the video is an example we wrote, based on FTC and New York Attorney General warnings.
 Got one? Send it to scamdb.dev/report (link in bio). Reports stay private.
-Voice: AI-generated from the founder’s own voice.
+Voice: AI, made from my own.
 
 #scamalert #utilityscam #scamawareness #fraudprevention
 ```
@@ -29,5 +29,5 @@ That’s the point: panic makes you pay fast. Real utilities warn you in writing
 
 Got one? https://scamdb.dev/report
 
-(Voice: AI, made from the founder’s own voice.)
+(Voice: AI, made from my own.)
 ```

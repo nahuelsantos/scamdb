@@ -15,7 +15,7 @@ The fix takes ten seconds: call the old number.
 
 The message in the video is an example we wrote, based on Which? warnings. This script is in scamdb’s catalogue in 45 countries.
 Got one? Send it to scamdb.dev/report (link in bio). Reports stay private.
-Voice: AI-generated from the founder’s own voice.
+Voice: AI, made from my own.
 
 #scamawareness #textscam #fraudprevention #scamalert
 ```
@@ -31,5 +31,5 @@ The fix takes ten seconds: call the old number.
 
 Got one? https://scamdb.dev/report
 
-(Voice: AI, made from the founder’s own voice.)
+(Voice: AI, made from my own.)
 ```

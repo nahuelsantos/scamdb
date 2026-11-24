@@ -20,9 +20,8 @@ Posting at roughly the same time every day matters more than the exact minute. I
 
 ## Decisions so far (owner)
 
-- **No Instagram "AI label".** The voice line stays in every video caption instead
-  ("Voice: AI-generated from the founder's own voice.") and on X ("(Voice: AI, made from the founder's own voice.)").
-  Never remove it: it's the disclosure.
+- **No Instagram "AI label".** Every video caption ends with the short line **"Voice: AI, made from my own."**
+  (on X in brackets). Keep it: it's the disclosure. The videos' last frame says it too.
 - **Pinned:** on Instagram, the Video 1 Reel. On X, the intro post (pinning Video 1 instead is optional).
 - **Highlights** with covers from `marketing/brand/highlights/`: **How it works** (done), **Scams**, **Real or scam?**.
 
@@ -60,7 +59,7 @@ same `post.md`.
 2. **Next**. Don't add filters or text; the video already has captions.
 3. *(Optional music)* tap the **music note** → pick a calm track → **Volume**: original audio **100**, music
    **10–15**. The voice must stay clear.
-4. **Next** → paste the **ig** caption. Check the **Voice: AI-generated…** line is there.
+4. **Next** → paste the **ig** caption. Check the **Voice: AI, made from my own.** line is there.
 5. **Edit cover** → **Add from camera roll** → that video's `cover.png`.
 6. Turn **off** "Also share to Facebook".
 7. **Share** (or *Schedule*).

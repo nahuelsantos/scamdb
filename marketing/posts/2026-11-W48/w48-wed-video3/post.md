@@ -14,7 +14,7 @@ The honest part: they look almost the same. Same bank, same “if this wasn’t 
 
 A is a genuine alert shared by our founder. B is a real scam text quoted by ABC7 (KGO-TV), Oct 4, 2021. Bank names replaced.
 Got either kind? Send it to scamdb.dev/report (link in bio). The genuine ones teach the check not to raise false alarms.
-Voice: AI-generated from the founder’s own voice.
+Voice: AI, made from my own.
 
 #scamalert #bankfraud #scamawareness #fraudprevention
 ```
@@ -29,5 +29,5 @@ They look almost the same, so never act through the message: call the number on 
 Got either kind? Send it:
 https://scamdb.dev/report
 
-(Voice: AI, made from the founder’s own voice.)
+(Voice: AI, made from my own.)
 ```

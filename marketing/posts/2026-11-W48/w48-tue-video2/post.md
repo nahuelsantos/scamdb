@@ -13,7 +13,7 @@ They don’t want the $12.51. They want the card number you just typed in. If a 
 
 The text in the video is real, as published by the FBI (Apr 12, 2024).
 Got a toll text, fake or real? Send it to scamdb.dev/report (link in bio). Reports stay private.
-Voice: AI-generated from the founder’s own voice.
+Voice: AI, made from my own.
 
 #scamalert #textscam #tollscam #fraudprevention
 ```
@@ -28,5 +28,5 @@ They don’t want the $12.51. They want your card number.
 Real text, as published by the FBI. Got one?
 https://scamdb.dev/report
 
-(Voice: AI, made from the founder’s own voice.)
+(Voice: AI, made from my own.)
 ```
