@@ -8,6 +8,8 @@ Times are **your time (Spain)**, US Eastern in brackets: posts 18:00 (12:00 ET),
 
 ## Mon Dec 21
 
+> **On X today, post the video only.** The Instagram post’s file also has an **x** block: skip it (it’s a spare).
+
 **18:00 (12:00 ET) · Instagram carousel or image post** — Carousel: “Pay now or your power goes off”
 - Files: `mon/w52-mon-utility/01-ig.png`, `mon/w52-mon-utility/02-ig.png`, `mon/w52-mon-utility/03-ig.png`, `mon/w52-mon-utility/04-ig.png`, `mon/w52-mon-utility/05-ig.png`
 - Copy: `copy/w52-mon-utility.md` → **ig** block

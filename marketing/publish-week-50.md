@@ -18,6 +18,8 @@ Times are **your time (Spain)**, US Eastern in brackets: posts 18:00 (12:00 ET),
 
 ## Tue Dec 8
 
+> **On X today, post the video only.** The Instagram post’s file also has an **x** block: skip it (it’s a spare).
+
 **18:00 (12:00 ET) · Instagram carousel or image post** — “Hi Mum, this is my new number”
 - Files: `tue/w50-tue-new-number/01-ig.png`, `tue/w50-tue-new-number/02-ig.png`
 - Copy: `copy/w50-tue-new-number.md` → **ig** block

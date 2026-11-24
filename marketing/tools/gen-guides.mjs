@@ -62,6 +62,7 @@ for (const w of WEEKS) {
   const posts = new Set();
   for (const [day, items] of w.days) {
     L.push(`## ${day}`, '');
+    if (items.some((i) => i[1] === 'x-vid') && items.some((i) => i[1] === 'ig-post')) L.push('> **On X today, post the video only.** The Instagram post’s file also has an **x** block: skip it (it’s a spare).', '');
     for (const [time, kind, post, note] of items) {
       posts.add(post);
       const dir = join(ROOT, 'marketing/posts', w.week, post);
