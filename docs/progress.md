@@ -2,11 +2,33 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-24: Matcher 1.42.0: light patterns, the genuine side of the catalogue
+
+- The exceptions that stop genuine messages being read as scams (a code text that says "don't share it", "nothing to
+  pay", "download it from Google Play", "download our app"…) were scattered through the code. They are now one named
+  list, `LIGHT_PATTERNS`. Each has a description, written examples it must calm and counter-examples it must not.
+  `node tools/light-patterns.mjs` measures, per pattern, the genuine messages it helps and the scams it weakens. See
+  docs/light-patterns.md (internal, not on the site).
+- Measuring found one pattern weakening a scam. "Nothing to pay" matched "has been paid for by the buyer… confirm your
+  card details", a fake-buyer scam. It no longer excuses a request for card or bank details, and that scam is "scam"
+  again. One pattern (`shop_discount`) could no longer fire since amounts became their own sign in 1.39.0, and is
+  removed.
+- Three new patterns from the owner's reports:
+  - `own_password`: "if you forgot your password, ask for a new one";
+  - `renewal_date`: "on 16 December your insurance renews";
+  - `cashback`: "get back part of the money from your purchases", but not "recover your money", which is the recovery
+    scam.
+  `document_download` now also covers a virtual card, a certificate and a policy.
+- Before → after:
+  - genuine reports called scam 2/84 → 0/84 (an insurance renewal and a card promo, now suspicious);
+  - written scams called scam 697 → 698;
+  - no other verdict changes on the real, written or private sets.
+  The restructure itself gave identical signs on 9,856 checks.
+
 ## 2026-11-23: Matcher 1.41.0: a company's own app promo is not a scam
 
-- The owner's reports had a bank promo called "scam": "Paga los servicios sin moverte de tu casa. Descarga nuestra App
-  Supervielle y empezá hoy mismo: [link]". "Descarga" read as installing a remote-access app, "paga" as a money
-  request, "hoy" as pressure.
+- The owner's reports had a bank's app promo called "scam" (pay your bills from home, download our app, start today,
+  a link). "Download" read as installing a remote-access app, "pay" as a money request, "today" as pressure.
 - When a message invites you to the sender's own app ("descargá nuestra app", "download our app"), those three signs
   are dropped, each only when nothing else in the message still carries it: AnyDesk or screen sharing, "pague la
   multa", "dentro de las 24 horas" keep the message a scam.

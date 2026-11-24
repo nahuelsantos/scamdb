@@ -3,8 +3,8 @@
 import { normalize, tokens, wordsOf, editDistance } from '../../lib/text.js';
 import { readSignsWithEvidence, isWarningAbout } from './signs.js';
 
-export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout } from './signs.js';
-export const VERSION = '1.41.0';
+export { SIGNS, readSigns, readSignsWithEvidence, isWarningAbout, LIGHT_PATTERNS, LIGHT_OFF, lightPatternsIn } from './signs.js';
+export const VERSION = '1.42.0';
 export const MATCH_THRESHOLD = 2;
 // A runner-up must score at least this share of the best match; weaker ones were mostly one shared word (eval set).
 export const MATCH_RELATIVE = 0.6;
