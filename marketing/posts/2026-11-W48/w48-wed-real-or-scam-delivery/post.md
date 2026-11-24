@@ -1,5 +1,8 @@
 # Wed Nov 25 · Real or scam? Two delivery texts
 
+> **X this week: don't use the X text in this file on Wed Nov 25.** On X, Wednesday's post is **Video 3**
+> (`copy/w48-wed-video3.md`). The X text below is a spare for later.
+
 - **Pillar:** Real or scam?
 - **Catalogue entry:** https://scamdb.dev/catalogue/us/usps-delivery-text/
 - **Messages:** both written by scamdb for this game and labelled as written on the image. B follows the pattern in the

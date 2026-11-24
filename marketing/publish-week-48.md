@@ -35,7 +35,7 @@ Posting at roughly the same time every day matters more than the exact minute. I
 | **Thu 26** | **15:00** post *Family code word* (Thanksgiving: post early) | 15:00 *Family code word* image |
 | **Fri 27** | **15:00** post *Fake shops* · 18:00 Reel *Video 4* (Black Friday) | 15:00 *Video 4* · 21:00 *Fake shops* image |
 
-**X gets one main post a day** (the video on video days). After every X post, add the **reply with the ask** from the
+**X gets one main post a day** (the video on video days). On Tue and Wed the Instagram post's file also has an **x** block: skip it, X gets the video. After every X post, add the **reply with the ask** from the
 same `post.md`.
 
 ---
