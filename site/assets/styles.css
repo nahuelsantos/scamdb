@@ -397,6 +397,18 @@ select:not([multiple]) { appearance: none; -webkit-appearance: none; padding-rig
   html:has(.hero.screen) body > .foot { scroll-snap-align: end; }
 }
 
+/* Alternating full-width bands, so each screen reads as a new page: hero on the page colour, the check on the dark
+   panel colour, the script on the page colour, the catalogue on the card colour (its cards on the page colour). The
+   band is painted behind the section, edge to edge; the content keeps the page's width. */
+.screen-check, .route.snap, .cat-screen { position: relative; isolation: isolate; }
+.screen-check::before, .cat-screen::before { content: ""; position: absolute; inset: 0 calc(50% - 50vw); z-index: -1; }
+html, body { overflow-x: clip; }
+.screen-check::before { background: var(--panel); }
+.screen-check .check-h { color: var(--panel-ink); }
+.screen-check > .panel { background: color-mix(in srgb, var(--panel) 82%, #000); box-shadow: 0 0 0 1px var(--panel-line); }
+.cat-screen::before { background: var(--card); }
+.cat-screen .sp { background: var(--paper); }
+
 /* The script steps appear one by one the first time the section comes into view (home.js adds .will-animate, then .in). */
 @media (prefers-reduced-motion: no-preference) {
   .steps-wrap.will-animate .step { opacity: 0; transform: translateY(14px); }
