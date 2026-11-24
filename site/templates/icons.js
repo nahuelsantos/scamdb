@@ -165,4 +165,5 @@ export const UI_ICONS = {
   globe: ui(981, [['circle', 12, 12, 19], ['path', 'M3 12 h18'], ['path', 'M12 2.5 C 7 7, 7 17, 12 21.5 C 17 17, 17 7, 12 2.5']]),
   send: ui(991, [['path', 'M3 12 L21 4 L15 20 L11 13 Z'], ['path', 'M11 13 L21 4', { kind: 'acc' }]]),
   key: ui(971, [['circle', 7, 12, 8], ['path', 'M11 12 h11 M18 12 v4 M21 12 v3']]),
+  person: ui(1031, [['circle', 12, 8, 8], ['path', 'M4 21 C 5 15, 19 15, 20 21']]),
 };

@@ -3,7 +3,7 @@ const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
 export const UI = {
   en: {
-    skip: 'Skip to content', navDocs: 'Docs', navCatalogue: 'Catalogue', navContribute: 'Contribute', mainNav: 'Main',
+    skip: 'Skip to content', navDocs: 'Docs', navCatalogue: 'Catalogue', navContribute: 'Contribute', mainNav: 'Main', navGithub: 'scamdb on GitHub', footNav: 'More',
     footSocial: 'scamdb on social media', footData: 'data', footCode: 'code', footDataset: 'dataset',
     months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     homeTitle: 'scamdb · a field guide to scams', homeDesc: 'An open database of scam patterns built from real, documented scams, with a free detection API. CC BY 4.0.',
@@ -15,6 +15,9 @@ export const UI = {
     hero: { title: 'A drawn phone showing a scam asking for a code, with handwritten notes pointing at each warning sign', stamp: 'SCAM',
       n1: 'fake bank', n2: 'rushes you', n3a: 'asks for', n3b: 'the key!', n4a: 'never share it', n4b: 'with anyone' },
     pgTitle: 'Is this a scam? Paste a message', pgPrivate: 'runs in your browser · nothing is sent', pgSamples: 'Sample messages',
+    dMenu: 'On this page', dGroups: { start: 'Get started', check: 'Check and report', data: 'The catalogue', about: 'About' },
+    dGetKey: 'Get your free key', dCheckImage: 'A screenshot (needs a key)', dAnswer: 'The answer', dCopy: 'Copy', dCopied: 'Copied',
+    dContribP: 'Every scam is one file on GitHub, and anyone can add or fix one; a maintainer reviews every change.', dContribLink: 'How to contribute',
     pgCountry: 'Where it arrived', pgAnyCountry: 'Any country', pgSeenAbroad: 'Also seen in',
     pgSampleLabels: ['Bank fraud team', '“Hi Mum, new number”', 'Dentist reminder'], pgMessage: 'Message', pgSoon: 'Same check as an API:', pgApi: 'Check with the API', apiScore: 'scam probability', apiNoKey: 'keyword check only. Sign in and create a free key on your account page to add the AI score here.', apiAiPending: 'AI score on the way…', apiAiNone: 'no AI score this time (matcher only)',
     vScam: 'scam', vSuspicious: 'suspicious', vNone: 'not recognised', noScore: 'score: null · catalogue match only',

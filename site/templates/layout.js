@@ -19,8 +19,13 @@ export const SHOW_TRENDS = false;
 export function layout({ title, description, body, path, meta, lang = 'en', scripts = '', noindex = false }) {
   const P = '';
   const here = path;
-  const nav = [['/catalogue/', t(lang, 'navCatalogue')], ['/report/', t(lang, 'navReport')], ...(SHOW_TRENDS ? [['/trends/', t(lang, 'navTrends')]] : []), ['/docs/', t(lang, 'navDocs')], ['/contribute/', t(lang, 'navContribute')], ['/account/', t(lang, 'navAccount')]]
-    .map(([href, label]) => `<a href="${P}${href}"${path.startsWith(href) ? ' aria-current="page"' : ''}>${label}</a>`).join('');
+  // Three words for the three things people come for; the account and the code are icons (DESIGN.md: icons over
+  // words). Contribute (editing the catalogue on GitHub) lives in the footer and the docs.
+  const cur = (href) => (path.startsWith(href) ? ' aria-current="page"' : '');
+  const nav = [['/catalogue/', t(lang, 'navCatalogue')], ['/report/', t(lang, 'navReport')], ...(SHOW_TRENDS ? [['/trends/', t(lang, 'navTrends')]] : []), ['/docs/', t(lang, 'navDocs')]]
+    .map(([href, label]) => `<a href="${P}${href}"${cur(href)}>${label}</a>`).join('')
+    + `<a class="ibtn nav-ic" href="${P}/account/"${cur('/account/')} aria-label="${esc(t(lang, 'navAccount'))}" title="${esc(t(lang, 'navAccount'))}">${UI_ICONS.person}</a>`
+    + `<a class="ibtn nav-ic" href="${REPO}" aria-label="${esc(t(lang, 'navGithub'))}" title="${esc(t(lang, 'navGithub'))}">${UI_ICONS.github}</a>`;
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -52,12 +57,13 @@ export function layout({ title, description, body, path, meta, lang = 'en', scri
 <a class="skip" href="#main">${t(lang, 'skip')}</a>
 <header class="wrap top">
   <a class="logo" href="${P}/">${LOGO}<span><span class="scam">scam</span><span class="db">db</span></span></a>
-  <nav aria-label="${t(lang, 'mainNav')}">${nav}<a class="gh" href="${REPO}">GitHub</a></nav>
+  <nav aria-label="${t(lang, 'mainNav')}">${nav}</nav>
 </header>
 <main id="main" class="wrap">
 ${body}
 </main>
 <footer class="wrap foot">
+  <nav class="foot-links" aria-label="${esc(t(lang, 'footNav'))}"><a href="${P}/contribute/"${cur('/contribute/')}>${t(lang, 'navContribute')}</a><a href="${P}/docs/">${t(lang, 'navDocs')}</a><a href="${REPO}">GitHub</a></nav>
   <div class="mono">${t(lang, 'footData')} <a href="${REPO}/blob/main/LICENSE-DATA">CC BY 4.0</a> · ${t(lang, 'footCode')} <a href="${REPO}/blob/main/LICENSE">MIT</a> · ${t(lang, 'footDataset')} ${esc(meta.version)}</div>
   <nav class="social" aria-label="${esc(t(lang, 'footSocial'))}">${SOCIAL.map(([icon, label, href]) => `<a class="ibtn" href="${href}" rel="me noopener" aria-label="${esc(label)}" title="${esc(label)}">${UI_ICONS[icon]}</a>`).join('')}</nav>
 </footer>

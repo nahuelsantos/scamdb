@@ -47,6 +47,8 @@ const MARK = sketch(701).path('M3 12 C 50 4, 120 4, 197 10 M20 16 C 70 11, 130 1
 /** The hero drawing with its notes in the interface language. */
 export const heroArt = (w) => HERO_ART.replace('${title}', w.title).replace('${stamp}', w.stamp)
   .replace('${n1}', w.n1).replace('${n2}', w.n2).replace('${n3a}', w.n3a).replace('${n3b}', w.n3b).replace('${n4a}', w.n4a).replace('${n4b}', w.n4b);
+/** The same drawing as decoration (no title, hidden from screen readers): on phones it moves to the script section. */
+export const heroArtStill = (w) => heroArt(w).replace(/ role="img" aria-labelledby="hero-t"><title id="hero-t">[^<]*<\/title>/, ' aria-hidden="true" focusable="false">');
 /** "Report this message" under a check's result: the message goes to the report form, already filled in. */
 export const reportButton = (ui = 'en') => `<p class="pg-report"><a class="btn" href="/report/" data-report>${UI_ICONS.send}<span>${esc(t(ui, 'reportThis'))}</span></a></p>`;
 /** The response panel as HTML (build time, for the no-JS state; playground.js renders the same markup). */
@@ -72,17 +74,18 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
   const countries = [...repo.countries].sort((a, b) => a.name.en.localeCompare(b.name.en, 'en'))
     .map((c) => `<option value="${esc(c.code)}">${esc(c.name.en)}</option>`).join('');
   const body = `
-<section class="hero">
+<section class="hero screen">
   <div>
     <p class="eyebrow">${esc(t(lang, 'eyebrow', repo.entries.length))}</p>
     <h1>${esc(t(lang, 'h1a'))} <span class="mark">${esc(t(lang, 'h1b'))}<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true" focusable="false">${MARK}</svg></span></h1>
     <p class="lede">${esc(t(lang, 'lede'))}</p>
-    <div class="btns"><a class="btn solid" href="#pg-h" data-check>${esc(t(lang, 'btnCheck'))}</a><a class="btn" href="${P}/report/">${esc(t(lang, 'btnReport'))}</a>
+    <div class="btns"><a class="btn solid" href="#check" data-check>${esc(t(lang, 'btnCheck'))}</a><a class="btn" href="${P}/report/">${esc(t(lang, 'btnReport'))}</a>
       <p class="dev"><span>${esc(t(lang, 'forDevs'))}</span><a href="${P}/docs/">${esc(t(lang, 'btnDocs'))}</a><a href="${P}/account/">${esc(t(lang, 'btnKey'))}</a><a href="${P}/catalogue/">${esc(t(lang, 'btnCatalogue'))}</a></p></div>
   </div>
   <div class="hero-art">${heroArt(t(lang, 'hero'))}</div>
 </section>
 
+<div class="screen screen-check" id="check">
 <section class="panel" aria-labelledby="pg-h">
   <div class="pcol">
     <h2 id="pg-h" class="plab"><span>${esc(t(lang, 'pgTitle'))}</span><span>${esc(t(lang, 'pgPrivate'))}</span></h2>
@@ -97,12 +100,15 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
   <div class="pcol" aria-live="polite" id="pg-out" data-report-button="${esc(reportButton(lang))}" data-strings="${esc(JSON.stringify(strings))}" data-lang="${lang}">${resultHtml(sample, byId, signalsById, lang)}</div>
 </section>
 
-${route ? `<section class="route" aria-labelledby="route-h">
+</div>
+
+${route ? `<section class="route snap" aria-labelledby="route-h">
+  <div class="route-art" aria-hidden="true">${heroArtStill(t(lang, 'hero'))}</div>
   <div class="sh"><h2 id="route-h">${esc(t(lang, 'scriptH'))}</h2><p>${esc(t(lang, 'scriptP'))} <a href="${entryUrl(route)}">${esc(route.id)}</a>.</p></div>
   ${steps(route, signalsById, 'en', lang)}
 </section>` : ''}
 
-<section aria-labelledby="cat-h">
+<section class="snap" aria-labelledby="cat-h">
   <div class="sh"><h2 id="cat-h">${esc(t(lang, 'catH'))}</h2><p>${esc(t(lang, 'catP'))} <a href="${P}/catalogue/">${esc(t(lang, 'seeAll', repo.entries.length))}</a>.</p></div>
   <div class="specimens">${featured.map((e) => card(e, lang)).join('')}</div>
 </section>
