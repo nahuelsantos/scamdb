@@ -182,3 +182,42 @@ test('every select has the shared chevron and room for it', async ({ page }) => 
     }
   }
 });
+
+test('the footer sits at the bottom of the screen on a short page', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 1000 });
+  await page.goto('/account/');
+  const bottom = await page.locator('footer.foot').evaluate((f) => f.getBoundingClientRect().bottom);
+  expect(Math.round(bottom)).toBe(1000);
+});
+
+test('the top bar: three words, then the account and GitHub as labelled icons; Contribute is in the footer', async ({ page }) => {
+  await page.goto('/');
+  const nav = page.getByRole('navigation', { name: 'Main' });
+  await expect(nav.getByRole('link', { name: 'Account' })).toHaveAttribute('href', '/account/');
+  await expect(nav.getByRole('link', { name: 'scamdb on GitHub' })).toHaveAttribute('href', /github\.com/);
+  await expect(nav.getByRole('link', { name: 'Contribute' })).toHaveCount(0);
+  await expect(page.locator('footer').getByRole('link', { name: 'Contribute' })).toHaveAttribute('href', '/contribute/');
+});
+
+test('home: the hero fills the screen and the script steps end up visible', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  const heroBottom = await page.locator('.hero').evaluate((h) => h.getBoundingClientRect().bottom);
+  expect(heroBottom).toBeGreaterThan(850);
+  await page.locator('.route').scrollIntoViewIfNeeded();
+  await expect(page.locator('.route .steps-wrap')).toHaveClass(/in/);
+  await expect(page.locator('.route .step').last()).toHaveCSS('opacity', '1', { timeout: 5000 });
+});
+
+test('docs: side menu, language tabs remembered across examples, copy buttons', async ({ page }) => {
+  await page.goto('/docs/');
+  await expect(page.locator('.docs-side').getByRole('link', { name: 'Quickstart' })).toHaveAttribute('href', '#quick');
+  const quick = page.locator('#quick');
+  await quick.getByRole('tab', { name: 'Python' }).click();
+  await expect(quick.locator('#q-py')).toBeVisible();
+  await expect(quick.locator('#q-curl')).toBeHidden();
+  await expect(page.locator('#c-py')).toBeVisible();
+  await page.reload();
+  await expect(page.locator('#q-py')).toBeVisible();
+  await expect(page.locator('.docs-body pre.code .copy-code').first()).toHaveText('Copy');
+});

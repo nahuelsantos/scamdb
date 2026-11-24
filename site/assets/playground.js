@@ -118,7 +118,21 @@ out.addEventListener('click', (e) => {
 // "Check a message" in the hero: jump to the box and put the cursor in it.
 document.querySelector('[data-check]')?.addEventListener('click', (e) => {
   e.preventDefault();
-  document.getElementById('pg-h')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  document.getElementById('check')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   box.focus({ preventScroll: true });
   box.select();
 });
+
+// The script steps appear one by one the first time they come into view. Without JS, or with "reduce motion", they
+// are simply there.
+const route = document.querySelector('.route .steps-wrap');
+if (route && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  route.querySelectorAll('.step').forEach((s, i) => s.style.setProperty('--i', i));
+  route.classList.add('will-animate');
+  const seen = new IntersectionObserver((entries) => {
+    if (!entries.some((e) => e.isIntersecting)) return;
+    route.classList.add('in');
+    seen.disconnect();
+  }, { threshold: 0.3 });
+  seen.observe(route);
+}
