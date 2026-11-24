@@ -70,7 +70,7 @@ code, .mono { font-family: var(--mono); font-size: .9em; }
 .top nav a[aria-current="page"], .top nav a:hover { color: var(--ink); }
 .top nav .lang { display: inline-flex; gap: 6px; font-family: var(--mono); font-size: 13px; color: var(--dim); }
 .top nav .lang [aria-current] { color: var(--ink); font-weight: 500; }
-.top nav .nav-ic { border-color: transparent; color: var(--dim); }
+.top nav .nav-ic { border-color: transparent; color: var(--ink); }
 .top nav .nav-ic:hover, .top nav .nav-ic:focus-visible, .top nav .nav-ic[aria-current="page"] { color: var(--ink); border-color: var(--line); background: transparent; }
 .top nav .nav-ic + .nav-ic { margin-left: calc(-1 * var(--s3)); }
 .foot { border-top: 1px solid var(--line); margin-top: 48px; padding-block: 20px 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--dim); }
@@ -353,27 +353,48 @@ button.btn.solid { background: var(--ink); color: var(--paper); }
    borders only. tests/e2e/site.spec.mjs checks every select on every page. See DESIGN.md, Components. */
 select:not([multiple]) { appearance: none; -webkit-appearance: none; padding-right: 44px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23888' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 12px 8px; }
 
-/* Home: one screen per step. The hero fills the screen under the header; the check fills the next one. On phones the
-   drawing moves to the script section. A gentle snap (proximity, wide screens only) settles on a section when the
-   scroll stops near it; it never forces one. Nothing moves with "reduce motion". */
-.hero.screen { min-height: calc(100svh - 140px); padding-block: 0 48px; align-content: center; }
-.screen-check { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 40px; margin-bottom: 56px; }
+/* Home: one screen per section (hero, check, script, catalogue). On wide, tall screens the scroll snaps firmly from one
+   to the next; on phones, short screens or with "reduce motion" it scrolls freely. On phones the drawing moves to the
+   script section. */
+.hero.screen { min-height: calc(100svh - 140px); padding-block: 0 32px; align-content: center; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); row-gap: var(--s7); }
+.hero.screen h1 { font-size: clamp(42px, 7vw, 104px); }
+.hero.screen .lede { font-size: clamp(18px, 1.5vw, 21px); max-width: 50ch; }
+.hero.screen .btns .btn { font-size: 17px; padding: 14px 24px; }
+.hero.screen .hero-art svg { max-width: 720px; }
+.hero-strip { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: var(--s5); flex-wrap: wrap; margin: 0; padding-top: var(--s5); border-top: 1px solid var(--line); }
+.hero-strip div { display: flex; flex-direction: column-reverse; gap: 2px; }
+.hero-strip dd { margin: 0; font-family: var(--display); font-weight: 700; font-size: 28px; letter-spacing: -.02em; color: var(--ink); line-height: 1.1; }
+.hero-strip dt { font-family: var(--mono); font-size: 13px; color: var(--dim); }
+.hero-strip .cue { font-family: var(--hand); font-size: 20px; color: var(--accent-ink); text-decoration: none; }
+.screen-check { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 40px; margin: 0; }
 .screen-check > .panel { margin: 0; }
+.check-h { font-size: clamp(28px, 3.4vw, 46px); margin: 0 0 var(--s5); }
+.screen-check textarea { min-height: 200px; }
+.route.snap, .cat-screen { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; margin: 0; padding-block: var(--s7); }
+.route.snap .sh h2 { font-size: clamp(30px, 4vw, 54px); }
+.route.snap .sic, .route.snap .sic svg { width: 116px; height: 116px; }
+.route.snap .step p { font-size: 18px; }
+.route.snap .route-line { top: 24px; height: 80px; }
+.cat-screen > section { margin-bottom: 0; }
+.cat-screen .eps { margin-top: var(--s7); }
 .route-art { display: none; }
-.route.snap { padding-top: 24px; }
 @media (max-width: 880px) {
-  .hero.screen { min-height: calc(100svh - 210px); }
+  .hero.screen { min-height: calc(100svh - 210px); grid-template-columns: minmax(0, 1fr); row-gap: var(--s6); }
   .hero.screen .hero-art { display: none; }
-  .route-art { display: block; max-width: 420px; margin: 0 auto var(--s6, 32px); }
+  .hero-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-strip .cue { display: none; }
+  .route-art { display: block; max-width: 420px; margin: 0 auto var(--s6); }
   .route-art svg { width: 100%; height: auto; display: block; }
-  .screen-check { min-height: 0; padding-block: 16px; }
+  .screen-check, .route.snap, .cat-screen { min-height: 0; padding-block: var(--s6); }
+  .route.snap .sic, .route.snap .sic svg { width: 88px; height: 88px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
-@media (min-width: 881px) and (prefers-reduced-motion: no-preference) {
-  html:has(.hero.screen) { scroll-snap-type: y proximity; }
+@media (min-width: 881px) and (min-height: 700px) and (prefers-reduced-motion: no-preference) {
+  html:has(.hero.screen) { scroll-snap-type: y mandatory; }
   html:has(.hero.screen) body > .top, .screen-check, .snap { scroll-snap-align: start; }
+  html:has(.hero.screen) body > .foot { scroll-snap-align: end; }
 }
 
 /* The script steps appear one by one the first time the section comes into view (home.js adds .will-animate, then .in). */

@@ -73,6 +73,11 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
     warningNote: t(lang, 'warningNote'), warningShort: t(lang, 'warningShort'), seenAbroad: t(lang, 'pgSeenAbroad') };
   const countries = [...repo.countries].sort((a, b) => a.name.en.localeCompare(b.name.en, 'en'))
     .map((c) => `<option value="${esc(c.code)}">${esc(c.name.en)}</option>`).join('');
+  // The catalogue in numbers, counted at build time.
+  const fmt = (n) => String(n); // written like the rest of the page ("1199 scams")
+  const stats = [[fmt(repo.entries.length), t(lang, 'statScams')], [fmt(repo.countries.length), t(lang, 'statCountries')],
+    [fmt(new Set(repo.entries.map((e) => e.lang)).size), t(lang, 'statLangs')], [fmt(repo.entries.reduce((n, e) => n + e.sources.length, 0)), t(lang, 'statSources')],
+    [t(lang, 'statFree'), t(lang, 'statFreeL')]];
   const body = `
 <section class="hero screen">
   <div>
@@ -83,9 +88,11 @@ export function home({ repo, meta, matchMessage, lang = 'en' }) {
       <p class="dev"><span>${esc(t(lang, 'forDevs'))}</span><a href="${P}/docs/">${esc(t(lang, 'btnDocs'))}</a><a href="${P}/account/">${esc(t(lang, 'btnKey'))}</a><a href="${P}/catalogue/">${esc(t(lang, 'btnCatalogue'))}</a></p></div>
   </div>
   <div class="hero-art">${heroArt(t(lang, 'hero'))}</div>
+  <dl class="hero-strip">${stats.map(([n, label]) => `<div><dt>${esc(label)}</dt><dd>${esc(n)}</dd></div>`).join('')}<a class="cue" href="#check" aria-hidden="true" tabindex="-1">${esc(t(lang, 'scrollCue'))}</a></dl>
 </section>
 
 <div class="screen screen-check" id="check">
+<h2 class="check-h">${esc(t(lang, 'checkH'))}</h2>
 <section class="panel" aria-labelledby="pg-h">
   <div class="pcol">
     <h2 id="pg-h" class="plab"><span>${esc(t(lang, 'pgTitle'))}</span><span>${esc(t(lang, 'pgPrivate'))}</span></h2>
@@ -108,7 +115,8 @@ ${route ? `<section class="route snap" aria-labelledby="route-h">
   ${steps(route, signalsById, 'en', lang)}
 </section>` : ''}
 
-<section class="snap" aria-labelledby="cat-h">
+<div class="snap cat-screen">
+<section aria-labelledby="cat-h">
   <div class="sh"><h2 id="cat-h">${esc(t(lang, 'catH'))}</h2><p>${esc(t(lang, 'catP'))} <a href="${P}/catalogue/">${esc(t(lang, 'seeAll', repo.entries.length))}</a>.</p></div>
   <div class="specimens">${featured.map((e) => card(e, lang)).join('')}</div>
 </section>
@@ -119,7 +127,8 @@ ${route ? `<section class="route snap" aria-labelledby="route-h">
   <div class="ep"><code>GET /v1/scams/{id}.json</code><p>${esc(t(lang, 'epOne'))}</p><span class="tier">${esc(t(lang, 'tierFree'))}</span></div>
   <div class="ep"><code>POST /v1/reports</code><p>${esc(t(lang, 'epReport'))}</p><span class="tier">${esc(t(lang, 'tierPrivate'))}</span></div>
   <div class="ep"><code>POST /v1/isitascam</code><p>${esc(t(lang, 'epCheck'))}</p><span class="tier">${esc(t(lang, 'tierCheck'))}</span></div>
-</section>`;
+</section>
+</div>`;
   return layout({ title: t(lang, 'homeTitle'), description: t(lang, 'homeDesc'), body, path: '/', meta, lang,
     scripts: '<script type="module" src="/assets/playground.js"></script>' });
 }

@@ -25,7 +25,7 @@ export function layout({ title, description, body, path, meta, lang = 'en', scri
   const nav = [['/catalogue/', t(lang, 'navCatalogue')], ['/report/', t(lang, 'navReport')], ...(SHOW_TRENDS ? [['/trends/', t(lang, 'navTrends')]] : []), ['/docs/', t(lang, 'navDocs')]]
     .map(([href, label]) => `<a href="${P}${href}"${cur(href)}>${label}</a>`).join('')
     + `<a class="ibtn nav-ic" href="${P}/account/"${cur('/account/')} aria-label="${esc(t(lang, 'navAccount'))}" title="${esc(t(lang, 'navAccount'))}">${UI_ICONS.person}</a>`
-    + `<a class="ibtn nav-ic" href="${REPO}" aria-label="${esc(t(lang, 'navGithub'))}" title="${esc(t(lang, 'navGithub'))}">${UI_ICONS.github}</a>`;
+    + `<a class="ibtn nav-ic" href="${REPO}" aria-label="${esc(t(lang, 'navGithub'))}" title="${esc(t(lang, 'navGithub'))}">${UI_ICONS.githubNav}</a>`;
   return `<!doctype html>
 <html lang="${lang}">
 <head>

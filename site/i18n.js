@@ -15,6 +15,8 @@ export const UI = {
     hero: { title: 'A drawn phone showing a scam asking for a code, with handwritten notes pointing at each warning sign', stamp: 'SCAM',
       n1: 'fake bank', n2: 'rushes you', n3a: 'asks for', n3b: 'the key!', n4a: 'never share it', n4b: 'with anyone' },
     pgTitle: 'Is this a scam? Paste a message', pgPrivate: 'runs in your browser · nothing is sent', pgSamples: 'Sample messages',
+    statScams: 'scams', statCountries: 'countries', statLangs: 'languages', statSources: 'sources', statFree: 'Free', statFreeL: 'API, no key to read', scrollCue: 'scroll ↓',
+    checkH: 'Paste the message. We show you what it hides.',
     dMenu: 'On this page', dGroups: { start: 'Get started', check: 'Check and report', data: 'The catalogue', about: 'About' },
     dGetKey: 'Get your free key', dCheckImage: 'A screenshot (needs a key)', dAnswer: 'The answer', dCopy: 'Copy', dCopied: 'Copied',
     dContribP: 'Every scam is one file on GitHub, and anyone can add or fix one; a maintainer reviews every change.', dContribLink: 'How to contribute',
