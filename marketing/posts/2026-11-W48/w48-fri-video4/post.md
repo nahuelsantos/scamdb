@@ -13,7 +13,7 @@ You reply no. Then a helpful “fraud specialist” calls and asks for a code, o
 
 The texts in the video are real, as published by the FBI (Apr 14, 2022).
 Got one? Send it to scamdb.dev/report (link in bio). Reports stay private.
-Voice: AI-generated from the founder’s own voice.
+Voice: AI, made from my own.
 
 Share this with whoever did the shopping today.
 
@@ -30,5 +30,5 @@ Then a “fraud specialist” calls. Your bank never asks you to move money. Han
 Got one?
 https://scamdb.dev/report
 
-(Voice: AI, made from the founder’s own voice.) #BlackFriday
+(Voice: AI, made from my own.) #BlackFriday
 ```

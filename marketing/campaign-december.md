@@ -29,7 +29,7 @@ someone who…" · 3. on Fridays (Behind scamdb), the open data and API for deve
 
 ## The calendar
 
-Times are **US Eastern** (12:00 ET = 17:00 UK = 18:00 Spain). "IG" = Instagram, "X img" = X post with image,
+Times are **US Eastern**; you post in Spain at ET + 6 (12:00 ET = 18:00 yours; Reels 17:30 ET = 23:30 yours). "IG" = Instagram, "X img" = X post with image,
 "X vid" = X video. Every X post gets the **reply with the ask** from its `post.md`; quiz posts also get the
 **answer reply** a few hours later.
 
@@ -49,7 +49,7 @@ Times are **US Eastern** (12:00 ET = 17:00 UK = 18:00 Spain). "IG" = Instagram, 
 | Day | IG | X | Folder |
 |---|---|---|---|
 | Mon Dec 7 | 12:00 carousel: “You won! Just pay the fees.” | 12:00 X img | `2026-12-W50/w50-mon-prize` |
-| Tue Dec 8 | 12:00 2 slides: “Hi Mum, this is my new number” · 19:00 **Reel V5** | 12:00 **X vid V5** | `w50-tue-new-number` |
+| Tue Dec 8 | 12:00 2 slides: “Hi Mum, this is my new number” · 17:30 **Reel V5** | 12:00 **X vid V5** | `w50-tue-new-number` |
 | Wed Dec 9 | 12:00 Real or scam? two code messages | 12:00 X img + answer | `w50-wed-real-or-scam-code` |
 | Thu Dec 10 | 12:00 The parcel text in 70 countries | 12:00 X img | `w50-thu-parcel-world` |
 | Fri Dec 11 | 12:00 Send us your boring messages | 12:00 X img | `w50-fri-genuine-ask` |
@@ -60,7 +60,7 @@ Times are **US Eastern** (12:00 ET = 17:00 UK = 18:00 Spain). "IG" = Instagram, 
 |---|---|---|---|
 | Mon Dec 14 | 12:00 carousel: the online love who needs money | 12:00 X img | `2026-12-W51/w51-mon-romance` |
 | Tue Dec 15 | 12:00 2 slides: pay a little to get a lot | 12:00 X img | `w51-tue-the-fee` |
-| Wed Dec 16 | 12:00 Real or scam? subscriptions · 19:00 **Reel V6** | 12:00 **X vid V6** | `w51-wed-real-or-scam-subscription` |
+| Wed Dec 16 | 12:00 Real or scam? subscriptions · 17:30 **Reel V6** | 12:00 **X vid V6** | `w51-wed-real-or-scam-subscription` |
 | Thu Dec 17 | 12:00 Fake charities, Iceland to Venezuela | 12:00 X img | `w51-thu-charity-world` |
 | Fri Dec 18 | 12:00 What 1,199 scams have in common | 12:00 X img | `w51-fri-what-scammers-ask` |
 
@@ -68,7 +68,7 @@ Times are **US Eastern** (12:00 ET = 17:00 UK = 18:00 Spain). "IG" = Instagram, 
 
 | Day | IG | X | Folder |
 |---|---|---|---|
-| Mon Dec 21 | 12:00 carousel: “Pay now or your power goes off” · 19:00 **Reel V7** | 12:00 **X vid V7** | `2026-12-W52/w52-mon-utility` |
+| Mon Dec 21 | 12:00 carousel: “Pay now or your power goes off” · 17:30 **Reel V7** | 12:00 **X vid V7** | `2026-12-W52/w52-mon-utility` |
 | Tue Dec 22 | 12:00 2 slides: “Don’t tell anyone.” | 12:00 X img | `w52-tue-secrecy` |
 | Wed Dec 23 | 12:00 Real or scam? the verification code | 12:00 X img + answer | `w52-wed-real-or-scam-verification` |
 | Thu Dec 24 | **09:00** Christmas Eve: pick a family code word | 09:00 X img | `w52-thu-christmas-eve` |

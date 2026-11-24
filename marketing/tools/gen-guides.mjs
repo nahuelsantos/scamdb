@@ -18,7 +18,7 @@ const WEEKS = [
   ], extra: '**Sunday Dec 6:** review the first two weeks together (`playbook.md` §7). Bring your notes: link taps, shares, saves, Reel watch time.' },
   { n: 50, week: '2026-12-W50', title: 'Mon Dec 7 – Fri Dec 11 · Deliveries and gifts', days: [
     ['Mon Dec 7', [['12:00', 'ig-post', 'w50-mon-prize', 'Carousel: “You won! Just pay the fees.”'], ['12:00', 'x-img', 'w50-mon-prize']]],
-    ['Tue Dec 8', [['12:00', 'ig-post', 'w50-tue-new-number', '“Hi Mum, this is my new number”'], ['12:00', 'x-vid', 'w50-tue-video5', 'video5'], ['19:00', 'ig-reel', 'w50-tue-video5', 'video5']]],
+    ['Tue Dec 8', [['12:00', 'ig-post', 'w50-tue-new-number', '“Hi Mum, this is my new number”'], ['12:00', 'x-vid', 'w50-tue-video5', 'video5'], ['17:30', 'ig-reel', 'w50-tue-video5', 'video5']]],
     ['Wed Dec 9', [['12:00', 'ig-post', 'w50-wed-real-or-scam-code', 'Real or scam? Two code messages'], ['12:00', 'x-img', 'w50-wed-real-or-scam-code', 'answer reply a few hours later']]],
     ['Thu Dec 10', [['12:00', 'ig-post', 'w50-thu-parcel-world', 'The parcel text in 70 countries'], ['12:00', 'x-img', 'w50-thu-parcel-world']]],
     ['Fri Dec 11', [['12:00', 'ig-post', 'w50-fri-genuine-ask', 'Send us your boring messages'], ['12:00', 'x-img', 'w50-fri-genuine-ask']]],
@@ -26,17 +26,17 @@ const WEEKS = [
   { n: 51, week: '2026-12-W51', title: 'Mon Dec 14 – Fri Dec 18 · Love, giving and fees', days: [
     ['Mon Dec 14', [['12:00', 'ig-post', 'w51-mon-romance', 'Carousel: the online love who needs money'], ['12:00', 'x-img', 'w51-mon-romance']]],
     ['Tue Dec 15', [['12:00', 'ig-post', 'w51-tue-the-fee', 'Pay a little to get a lot'], ['12:00', 'x-img', 'w51-tue-the-fee']]],
-    ['Wed Dec 16', [['12:00', 'ig-post', 'w51-wed-real-or-scam-subscription', 'Real or scam? Subscriptions'], ['12:00', 'x-vid', 'w51-wed-video6', 'video6'], ['19:00', 'ig-reel', 'w51-wed-video6', 'video6']]],
+    ['Wed Dec 16', [['12:00', 'ig-post', 'w51-wed-real-or-scam-subscription', 'Real or scam? Subscriptions'], ['12:00', 'x-vid', 'w51-wed-video6', 'video6'], ['17:30', 'ig-reel', 'w51-wed-video6', 'video6']]],
     ['Thu Dec 17', [['12:00', 'ig-post', 'w51-thu-charity-world', 'Fake charities, Iceland to Venezuela'], ['12:00', 'x-img', 'w51-thu-charity-world']]],
     ['Fri Dec 18', [['12:00', 'ig-post', 'w51-fri-what-scammers-ask', 'What 1,199 scams have in common'], ['12:00', 'x-img', 'w51-fri-what-scammers-ask']]],
   ] },
   { n: 52, week: '2026-12-W52', title: 'Mon Dec 21 – Sat Dec 26 · Christmas and Boxing Day', days: [
-    ['Mon Dec 21', [['12:00', 'ig-post', 'w52-mon-utility', 'Carousel: “Pay now or your power goes off”'], ['12:00', 'x-vid', 'w52-mon-video7', 'video7'], ['19:00', 'ig-reel', 'w52-mon-video7', 'video7']]],
+    ['Mon Dec 21', [['12:00', 'ig-post', 'w52-mon-utility', 'Carousel: “Pay now or your power goes off”'], ['12:00', 'x-vid', 'w52-mon-video7', 'video7'], ['17:30', 'ig-reel', 'w52-mon-video7', 'video7']]],
     ['Tue Dec 22', [['12:00', 'ig-post', 'w52-tue-secrecy', '“Don’t tell anyone.”'], ['12:00', 'x-img', 'w52-tue-secrecy']]],
     ['Wed Dec 23', [['12:00', 'ig-post', 'w52-wed-real-or-scam-verification', 'Real or scam? The verification code'], ['12:00', 'x-img', 'w52-wed-real-or-scam-verification', 'answer reply a few hours later']]],
     ['Thu Dec 24', [['09:00', 'ig-post', 'w52-thu-christmas-eve', 'Christmas Eve: pick a family code word'], ['09:00', 'x-img', 'w52-thu-christmas-eve']]],
     ['Fri Dec 25', [['10:00', 'x-text', 'w52-fri-christmas', 'No Instagram post today (optional: share yesterday’s post to your Story)']]],
-    ['Sat Dec 26', [['08:00', 'ig-post', 'w52-sat-boxing-day', 'Boxing Day: check the shop first (aimed at UK, Canada, Australia, NZ; 08:00 ET = 13:00 UK)'], ['08:00', 'x-img', 'w52-sat-boxing-day']]],
+    ['Sat Dec 26', [['08:00', 'ig-post', 'w52-sat-boxing-day', 'Boxing Day: check the shop first (aimed at UK, Canada, Australia, NZ: morning in the UK, evening down under)'], ['08:00', 'x-img', 'w52-sat-boxing-day']]],
   ] },
   { n: 53, week: '2026-12-W53', title: 'Mon Dec 28 – Thu Dec 31 · Year end', days: [
     ['Mon Dec 28', [['12:00', 'ig-post', 'w53-mon-tax-refund', 'Carousel: “You’re owed a refund”'], ['12:00', 'x-img', 'w53-mon-tax-refund']]],
@@ -45,6 +45,8 @@ const WEEKS = [
   ] },
 ];
 
+// The owner posts in Spain: ET + 6 hours (true for all of Nov–Dec).
+const local = (et) => { const [h, m] = et.split(':').map(Number); return `${String((h + 6) % 24).padStart(2, '0')}:${String(m).padStart(2, '0')}`; };
 const short = (d) => d.split(' ')[0].toLowerCase();
 const HOW = { 'ig-post': 'Instagram carousel or image post', 'ig-reel': 'Instagram Reel', 'x-img': 'X image post', 'x-vid': 'X video post', 'x-text': 'X text post' };
 
@@ -55,8 +57,8 @@ for (const w of WEEKS) {
   const L = [`# How to publish: ${w.title}`, '',
     `All files are in **\`scamdb-week${w.n}.zip\`** (one folder per day, plus \`copy/\` with every caption), or on the branch in`,
     `\`marketing/posts/${w.week}/\` and \`marketing/videos/\`. Copy the block marked **ig** for Instagram and **x** for X, exactly as written.`,
-    `Times are **US Eastern** (12:00 ET = 17:00 UK = 18:00 Spain). How to do each type, step by step: \`publish-week-48.md\` → "How to post each type".`, '',
-    '**Every time:** add the alt text (in the same `post.md`), turn off "Share to Facebook", and after every X post add the **reply with the ask**. On Reels, turn on **Add AI label** and use the `cover.png`.', ''];
+    `Times are **your time (Spain)**, US Eastern in brackets: posts 18:00 (12:00 ET), Reels 23:30 (17:30 ET). How to do each type, step by step: \`publish-week-48.md\` → "How to post each type".`, '',
+    '**Every time:** add the alt text (in the same `post.md`), turn off "Share to Facebook", and after every X post add the **reply with the ask**. On Reels, use the `cover.png`, keep the short **Voice: AI, made from my own.** line in the caption (no AI label, your choice), share it to your Story and add it to a Highlight (Scams, or Real or scam? for quizzes).', ''];
   const posts = new Set();
   for (const [day, items] of w.days) {
     L.push(`## ${day}`, '');
@@ -74,7 +76,7 @@ for (const w of WEEKS) {
         for (const f of files) await cp(join(vdir, f), join(dest, f));
       } else for (const f of files) await cp(join(dir, f), join(dest, f));
       const label = kind === 'ig-post' ? note : kind === 'ig-reel' || kind === 'x-vid' ? note.replace("video", "Video ") : (note ?? 'image');
-      L.push(`**${time} · ${HOW[kind]}** — ${label}`,
+      L.push(`**${local(time)} (${time} ET) · ${HOW[kind]}** — ${label}`,
         `- Files: ${files.length ? files.map((f) => '`' + `${short(day)}/${post}/${f}` + '`').join(', ') : 'none (text only)'}`,
         `- Copy: \`copy/${post}.md\` → **${kind.startsWith('ig') ? 'ig' : 'x'}** block${kind === 'x-img' && note && note !== 'image' ? ` (${note})` : ''}`, '');
     }

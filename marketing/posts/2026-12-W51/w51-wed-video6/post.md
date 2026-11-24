@@ -14,7 +14,7 @@ A real reminder tells you something. A scam needs you to act, now, through its l
 
 A is a genuine message shared by our founder. B is an example we wrote from a published warning. Names replaced.
 Got either kind? Send it to scamdb.dev/report (link in bio). The genuine ones teach the check not to raise false alarms.
-Voice: AI-generated from the founder’s own voice.
+Voice: AI, made from my own.
 
 #scamalert #phishing #scamawareness #onlinesafety
 ```
@@ -28,5 +28,5 @@ A real reminder tells you something. A scam needs you to act now, through its li
 
 Got either kind? https://scamdb.dev/report
 
-(Voice: AI, made from the founder’s own voice.)
+(Voice: AI, made from my own.)
 ```
