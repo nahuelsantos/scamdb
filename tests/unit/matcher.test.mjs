@@ -722,7 +722,8 @@ test('1.40.0: news about fake fine texts, a fee that just applies, or "fine" as 
   assert.ok(!readSigns('We took the back road to avoid the traffic, all fine [link]').includes('urgency'));
 });
 test('1.41.0: a company inviting you to its own app is a promotion, not remote access, a payment request or pressure', () => {
-  const promo = 'Paga los servicios sin moverte de tu casa. Descarga nuestra App Supervielle y empeza hoy mismo: [link]';
+  // Written in the shape of a bank's app promo (reports stay out of the repo).
+  const promo = 'Pagá tus servicios desde el sillón. Descargá nuestra app del banco y empezá hoy mismo: [link]';
   const ids = readSigns(promo);
   for (const id of ['remote_access', 'money_request', 'urgency']) assert.ok(!ids.includes(id), id);
   assert.notEqual(m(promo, { country: 'ar' }).verdict, 'scam');

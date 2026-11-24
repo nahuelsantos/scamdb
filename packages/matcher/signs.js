@@ -483,7 +483,7 @@ const DISCOUNT = /(^| )-[0-9]+([.,][0-9]+)? ?€|[0-9]+ ?% (de |en )?(dto|descue
 const PRICES_ALL = /(^| )-?[0-9]+([.,][0-9]+)? ?(€|eur|euros)|€ ?[0-9]+([.,][0-9]+)?|\$ ?[0-9]+([.,][0-9]+)?|£ ?[0-9]+([.,][0-9]+)?/g;
 const OFFICIAL_STORE = /(descarg[a-z]*|baj[a-z]*|instal[a-z]*|download|get)( (la|nuestra|tu|su|the|our|this))? (app|aplicacion)( [a-z]+){0,3} (en|desde|de|from|on|in) (la )?(google play|play store|app store|apple store)( (o|or|y|and) (google play|play store|app store|apple store))?/;
 const OFFICIAL_STORE_ALL = new RegExp(OFFICIAL_STORE.source, 'g');
-// A company inviting you to its own app ("Descargá nuestra App Supervielle", "download our app") is a promotion, not a
+// A company inviting you to its own app ("Descargá nuestra app", "download our app") is a promotion, not a
 // stranger's remote-access app. In such a promo, what the app lets you do ("pagá los servicios", "pay your bills") is
 // a feature, not a request for money, and "empezá hoy mismo" is an invitation, not pressure. Each sign stays when
 // anything else in the message still carries it (AnyDesk, "pague la multa", "dentro de las 24 horas").
@@ -492,7 +492,7 @@ const OWN_APP_ALL = new RegExp(OWN_APP.source, 'g');
 const APP_FEATURE_ALL = /\b(paga|pagar|pagas|pague|pay)( (tus|los|sus|your|all your))? (servicios|facturas|impuestos|cuentas|bills|services)\b/g;
 const INVITE_ALL = /\b(empeza|empezar|empieza|comenza|comenzar|comienza|start|join)( a [a-z]+)? (hoy|today)( mismo)?\b/g;
 // "Descarga tu factura", "download your statement": a document, not an app to install.
-const DOC_DOWNLOAD = /(descarg[a-z]*|baj[a-z]*|download)( (tu|su|la|el|your|the))? (factura|facturas|resumen|comprobante|extracto|boleta|recibo|pdf|ticket|e ?ticket|entrada|entradas|statement|invoice|receipt|bill)\b/;
+const DOC_DOWNLOAD = /(descarg[a-z]*|baj[a-z]*|download)( (tu|su|la|el|your|the))? (factura|facturas|resumen|comprobante|extracto|boleta|recibo|pdf|ticket|e ?ticket|entrada|entradas|tarjeta virtual|certificado|poliza|justificante|statement|invoice|receipt|bill|certificate|policy)\b/;
 const DOC_DOWNLOAD_ALL = new RegExp(DOC_DOWNLOAD.source, 'g');
 // A bank alert that sends you to the number on the back of your card (and carries no link) mentions an amount to
 // check, not one to pay.
@@ -506,27 +506,92 @@ const PUBLIC_ALERT = /emergency alert|evacuate (now|immediately|to)|evacuation (
 // A remote session the person arranged themselves (a colleague, a planned IT visit) is not a stranger's remote access.
 const AGREED_SESSION = /kako smo (se )?dogovorili|као што смо се договорили|kako smo se dogovorili/;
 
-/** The sign ids that apply, after context rules (genuine-code warnings, login instructions, "nothing to pay"). */
-function applyContext(t, ids, signs = SIGNS) {
+// Light patterns: the shapes of genuine messages that use a scam's words for an honest reason. Each one calms one
+// warning sign, and only when nothing else in the message still carries that sign. They never mark a message as safe
+// and never touch the other signs. The list is internal (docs/light-patterns.md); tests/unit/light-patterns.test.mjs
+// holds each pattern's examples and counter-examples, and `node tools/light-patterns.mjs` measures each one on every
+// labelled set: how many genuine messages it helps, and whether it ever weakens a scam. Order matters: they run in turn.
+const NO_PAYMENT_ALL = new RegExp(NO_PAYMENT.source, 'g');
+// "Has been paid... confirm your card details": a payment said to be done does not excuse a request for card or bank
+// details (the fake-buyer scam).
+const CARD_DETAILS = /\b(card|bank|account) (details|number|information)\b|(datos|numero) de (tu|la|su) (tarjeta|cuenta)|dados (do|de) (seu )?cartao|coordonnees bancaires|bankgegevens|kartendaten|dati della carta/;
+// "Si no recuerda su contraseña, pida una nueva", "forgot your password? reset it": getting a new password for your own
+// account, not handing one over.
+const OWN_PASSWORD = /(si no recuerda|si no recordas|si olvidaste|si ha olvidado|olvidaste|olvido|forgot|forgotten)( [a-z]+){0,2} (su |tu |your )?(contrasena|clave|password)|(restablec|recuper|cambi)[a-z]* (su |tu )?(contrasena|clave)|reset (your )?password|(pida|pedi|solicite|request) una nueva (contrasena|clave)/;
+const OWN_PASSWORD_ALL = new RegExp(OWN_PASSWORD.source, 'g');
+// "El próximo 16 de diciembre vence su seguro": a renewal date, like a bill's due date.
+const RENEWAL_DATE = /(proximo |el )?[0-9]{1,2} de (enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre) vence|vence (el )?(proximo )?[0-9]{1,2} de (enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)/;
+const RENEWAL_DATE_ALL = new RegExp(RENEWAL_DATE.source, 'g');
+// "Recupera parte del dinero de tus compras", "10 % de devolución en tus compras": cashback on purchases, not a request
+// for money. (Not "recupere su dinero" alone: that is the recovery scam.)
+const CASHBACK = /\bcashback\b|(recupera|recuperas|recupere|devolucion|devuelve|reembolso)( [a-z]+){0,3} (del |de |el )?(dinero )?(de |en )(tus|las|sus) compras/;
+const CASHBACK_ALL = new RegExp(CASHBACK.source, 'g');
+const handover = (t) => CODE_HANDOVER.test(withoutNegations(t));
+const remainderHas = (signs, id, t, ...res) => signs[id].test(res.reduce((s, re) => s.replace(re, ' '), t));
+export const LIGHT_PATTERNS = [
+  { id: 'code_warning', calms: 'asks_for_code', about: 'A genuine code text warns you not to share the code ("no lo compartas", "we will never ask").',
+    when: (t) => !handover(t) && CODE_WARNING.test(t) },
+  { id: 'login_with', calms: 'asks_for_code', about: 'Where to log in with your own password ("ingresá con tu clave fiscal"), not a request to hand it over.',
+    when: (t) => !handover(t) && LOGIN_WITH.test(t) },
+  { id: 'code_delivery', calms: 'asks_for_code', about: 'A text that only delivers a code ("Your verification code is 730968").',
+    when: (t) => !handover(t) && CODE_DELIVERY.test(t) },
+  { id: 'code_requested', calms: 'asks_for_code', about: 'The code you asked for, delivered ("El PIN solicitado es", "introduzca la clave 708098 para").',
+    when: (t) => !handover(t) && CODE_REQUESTED.test(t) },
+  { id: 'own_app', calms: 'remote_access', about: 'A company inviting you to its own app ("Descargá nuestra app") is a promotion, not a stranger\'s remote-access app.',
+    when: (t, out, signs) => OWN_APP.test(t) && !remainderHas(signs, 'remote_access', t, OWN_APP_ALL) },
+  { id: 'own_app_feature', calms: 'money_request', about: 'In an own-app promo, what the app lets you do ("pagá los servicios") is a feature, not a request for money.',
+    when: (t, out, signs) => OWN_APP.test(t) && !remainderHas(signs, 'money_request', t, APP_FEATURE_ALL) },
+  { id: 'own_app_invite', calms: 'urgency', about: 'In an own-app promo, "empezá hoy mismo" is an invitation, not pressure.',
+    when: (t, out, signs) => OWN_APP.test(t) && !remainderHas(signs, 'urgency', t, INVITE_ALL) },
+  { id: 'official_store', calms: 'remote_access', about: '"Descargá la app en Google Play o App Store": an official store, not a stranger\'s app.',
+    when: (t, out, signs) => OFFICIAL_STORE.test(t) && !remainderHas(signs, 'remote_access', t, OFFICIAL_STORE_ALL, DOC_DOWNLOAD_ALL) },
+  { id: 'document_download', calms: 'remote_access', about: '"Descargá tu factura", "download your statement": a document, not an app.',
+    when: (t, out, signs) => DOC_DOWNLOAD.test(t) && !remainderHas(signs, 'remote_access', t, OFFICIAL_STORE_ALL, DOC_DOWNLOAD_ALL) },
+  { id: 'own_password', calms: 'asks_for_code', about: 'Getting a new password for your own account ("si no recuerda su contraseña, pida una nueva"), not handing one over.',
+    when: (t, out, signs) => !handover(t) && OWN_PASSWORD.test(t) && !remainderHas(signs, 'asks_for_code', t, OWN_PASSWORD_ALL) },
+  { id: 'renewal_date', calms: 'urgency', about: 'A renewal date ("el próximo 16 de diciembre vence su seguro"), like a bill\'s due date, is not pressure.',
+    when: (t, out, signs) => RENEWAL_DATE.test(t) && !remainderHas(signs, 'urgency', t, RENEWAL_DATE_ALL) },
+  { id: 'cashback', calms: 'money_request', about: 'Cashback on purchases ("recuperá parte del dinero de tus compras"), not a request for money. Not "recupere su dinero" alone (the recovery scam).',
+    when: (t, out, signs) => CASHBACK.test(t) && !remainderHas(signs, 'money_request', t, CASHBACK_ALL) },
+  { id: 'due_date', calms: 'urgency', about: 'A bill\'s fixed or long due date ("vence el 25", "vencen en 180 días") is not pressure.',
+    when: (t, out, signs) => DUE_DATE.test(t) && !remainderHas(signs, 'urgency', t, DUE_DATE_ALL) },
+  { id: 'public_alert', calms: 'urgency', about: 'A public-safety alert (evacuate, shelter in place) is urgent by nature, unless it asks for money, a code or an app.',
+    when: (t, out) => PUBLIC_ALERT.test(t) && !out.some((id) => id === 'money_request' || id === 'asks_for_code' || id === 'remote_access') },
+  { id: 'agreed_session', calms: 'remote_access', about: 'A remote session the person arranged themselves ("como acordamos").',
+    when: (t) => AGREED_SESSION.test(t) },
+  { id: 'no_link', calms: 'unknown_link', about: 'The message says it has no link ("este SMS no contiene enlaces").',
+    when: (t) => NO_LINK.test(t) },
+  { id: 'nothing_to_pay', calms: 'money_request', about: 'The message says there is nothing to pay ("no tenés nada que pagar", "already paid").',
+    when: (t, out, signs) => NO_PAYMENT.test(t) && !CARD_DETAILS.test(t.replace(NO_PAYMENT_ALL, ' ')) },
+  { id: 'never_ask_bank_details', calms: 'money_request', about: '"We will never ask for your bank details": a warning, not a request.',
+    when: (t, out, signs) => withoutNegatedMoney(t, signs) },
+  { id: 'back_of_card', calms: 'money_request', about: 'A bank alert that sends you to the number on the back of your card, with no link.',
+    when: (t, out) => BACK_OF_CARD.test(t) && !out.includes('unknown_link') },
+];
+const LIGHT_IDS = new Set(LIGHT_PATTERNS.map((p) => p.id));
+// Patterns switched off, only for measuring what each one does (tools/light-patterns.mjs). Never set in the product.
+export const LIGHT_OFF = new Set();
+
+/** The sign ids that apply, after the light patterns. `applied`, when given, collects the ids of the patterns that calmed a sign. */
+function applyContext(t, ids, signs = SIGNS, applied = null) {
   let out = ids;
-  if (out.includes('asks_for_code')) {
-    const handover = CODE_HANDOVER.test(withoutNegations(t));
-    if (!handover && (CODE_WARNING.test(t) || LOGIN_WITH.test(t) || CODE_DELIVERY.test(t) || CODE_REQUESTED.test(t))) out = out.filter((id) => id !== 'asks_for_code');
+  for (const p of LIGHT_PATTERNS) {
+    if (!out.includes(p.calms) || LIGHT_OFF.has(p.id) || !p.when(t, out, signs)) continue;
+    out = out.filter((id) => id !== p.calms);
+    applied?.push(p.id);
   }
-  if (out.includes('money_request') && DISCOUNT.test(t) && !signs.money_request.test(t.replace(PRICES_ALL, ' '))) out = out.filter((id) => id !== 'money_request');
-  if (OWN_APP.test(t)) {
-    if (out.includes('remote_access') && !signs.remote_access.test(t.replace(OWN_APP_ALL, ' '))) out = out.filter((id) => id !== 'remote_access');
-    if (out.includes('money_request') && !signs.money_request.test(t.replace(APP_FEATURE_ALL, ' '))) out = out.filter((id) => id !== 'money_request');
-    if (out.includes('urgency') && !signs.urgency.test(t.replace(INVITE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
-  }
-  if (out.includes('remote_access') && (OFFICIAL_STORE.test(t) || DOC_DOWNLOAD.test(t)) && !signs.remote_access.test(t.replace(OFFICIAL_STORE_ALL, ' ').replace(DOC_DOWNLOAD_ALL, ' '))) out = out.filter((id) => id !== 'remote_access');
-  if (out.includes('urgency') && DUE_DATE.test(t) && !signs.urgency.test(t.replace(DUE_DATE_ALL, ' '))) out = out.filter((id) => id !== 'urgency');
-  if (out.includes('urgency') && PUBLIC_ALERT.test(t) && !out.some((id) => id === 'money_request' || id === 'asks_for_code' || id === 'remote_access')) out = out.filter((id) => id !== 'urgency');
-  if (out.includes('remote_access') && AGREED_SESSION.test(t)) out = out.filter((id) => id !== 'remote_access');
-  if (out.includes('unknown_link') && NO_LINK.test(t)) out = out.filter((id) => id !== 'unknown_link');
-  if (out.includes('money_request') && (NO_PAYMENT.test(t) || withoutNegatedMoney(t, signs) || (BACK_OF_CARD.test(t) && !out.includes('unknown_link')))) out = out.filter((id) => id !== 'money_request');
   return out;
 }
+
+/** The light patterns that calmed a sign in this message (for measuring and debugging; not part of the API answer). */
+export function lightPatternsIn(text, langs) {
+  const t = normalize(text);
+  const signs = compileSigns(langs);
+  const applied = [];
+  applyContext(t, Object.keys(signs).filter((k) => signs[k].test(t)), signs, applied);
+  return applied;
+}
+export const isLightPattern = (id) => LIGHT_IDS.has(id);
 
 /** normalize(text) plus, for each of its characters, the index of the original character it came from. */
 export function normalizeWithMap(text) {
