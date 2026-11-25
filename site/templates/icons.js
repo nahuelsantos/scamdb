@@ -131,7 +131,7 @@ function step(seed, parts, extra = '') {
 }
 export const STEP_ICONS = {
   impersonation: step(301, [['path', 'M27 24 c-4 2-5 8-1 15 s11 13 16 13 c3 0 5-2 6-4 l-6-5 c-2 1-3 2-5 1 s-6-6-7-8 c0-2 1-3 2-4 z'], ['path', 'M46 22 c4 1 7 4 8 8', { kind: 'thin' }]]),
-  asks_for_code: step(311, [['rect', 22, 27, 32, 23], ['path', 'M22 29 l16 12 16-12']], '<text x="56" y="26" class="t-code">6</text>'),
+  asks_for_code: step(311, [['rect', 22, 27, 32, 23], ['path', 'M22 29 l16 12 16-12', { kind: 'acc' }]]),
   remote_access: step(321, [['rect', 21, 24, 34, 23], ['path', 'M31 54 h14 M38 47 v7'], ['path', 'M30 32 l5 4 -5 4', { kind: 'acc' }]]),
   urgency: step(331, [['circle', 38, 41, 30], ['path', 'M38 33 v9 l6 4'], ['path', 'M33 21 h10 M38 21 v5', { kind: 'thin' }]]),
   money_request: step(341, [['rect', 18, 28, 40, 22], ['circle', 38, 39, 10], ['path', 'M24 34 v10 M52 34 v10', { kind: 'thin' }]]),
