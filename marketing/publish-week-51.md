@@ -28,6 +28,8 @@ Times are **your time (Spain)**, US Eastern in brackets: posts 18:00 (12:00 ET),
 
 ## Wed Dec 16
 
+> **On X today, post the video only.** The Instagram post’s file also has an **x** block: skip it (it’s a spare).
+
 **18:00 (12:00 ET) · Instagram carousel or image post** — Real or scam? Subscriptions
 - Files: `wed/w51-wed-real-or-scam-subscription/01-ig.png`, `wed/w51-wed-real-or-scam-subscription/02-ig.png`
 - Copy: `copy/w51-wed-real-or-scam-subscription.md` → **ig** block
