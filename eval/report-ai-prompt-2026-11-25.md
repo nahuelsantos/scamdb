@@ -18,8 +18,8 @@ Nothing else changes: the same model, the same fusion weights and cut-offs, and 
 
 | | before | after |
 |---|---|---|
-| Owner's reports: genuine flagged | 45/84 (53.6%) | **25/84 (29.8%)** |
-| Owner's reports: genuine called "scam" | 0/84 | 0/84 |
+| Owner's reports: genuine flagged | 45/85 (52.9%) | **25/85 (29.4%)** |
+| Owner's reports: genuine called "scam" | 0/85 | 0/85 |
 | Owner's reports: scams flagged | 7/7 | 7/7 |
 | Real set: genuine flagged | 31/105 (29.5%) | **28/105 (26.7%)** |
 | Real set: genuine called "scam" | 1/105 | **3/105 (2.9%)** |
@@ -36,8 +36,21 @@ template, was already called "scam" before.
 A first version without the first-contact lures cleared more genuine messages but missed 6 more real scams (lures that
 only ask for a reply), so it was not kept.
 
-Not yet measured: the written set (`eval/messages`, 197 messages with cached AI answers), which the fusion refit also
-uses. It is run on the next day's free allowance before merging.
+**Written set** (`eval/messages`, 197 messages; run on 2026-11-26):
+
+| | before | after |
+|---|---|---|
+| Genuine called "scam" | 0/90 | 0/90 |
+| Genuine flagged | 17/90 (18.9%) | **14/90 (15.6%)** |
+| Scams flagged | 105/107 | 104/107 |
+
+The one scam no longer flagged (`nz-08`) is the opening message of a romance scam that asks for nothing yet.
+
+**Fusion weights unchanged.** A refit on the new AI answers (real + written + reports, held out by country) flags the
+same messages and calls fewer of them "scam", so the current weights stay.
+
+A later genuine report (Camuzzi's anti-scam newsletter, Argentina) is cleared by the keyed check under both
+instructions. The owner's reports total 85 genuine and 7 scams in the table above.
 
 Also tried, not shipped: comparing each message with written examples of genuine messages by embedding similarity.
 Genuine messages and scams were equally close to those examples (real set: 0.584 vs 0.572), so it added nothing.
