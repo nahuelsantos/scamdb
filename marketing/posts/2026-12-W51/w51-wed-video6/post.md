@@ -3,7 +3,7 @@
 - **File:** `marketing/videos/video6/scamdb-video6-subscription.mp4` (26 s). Cover: `marketing/videos/video6/cover.png`
 - **Messages:** A = the founder's genuine membership reminder (name replaced). B = written example from
   `ro/netflix-subscription-phishing` (Alba24, Nov 5, 2026), brand replaced.
-- **Voice:** AI-generated from the founder's own voice. Turn on Instagram's AI label.
+- **Voice:** AI-generated from the founder's own voice. Disclosed in the caption (no AI label).
 
 ## Instagram Reel
 

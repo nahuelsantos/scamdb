@@ -2,7 +2,7 @@
 
 - **File:** `marketing/videos/video5/scamdb-video5-hi-mum.mp4` (22 s). Cover: `marketing/videos/video5/cover.png`
 - **Message:** the catalogue's written example from `gb/hi-mum-text` (Which?, Jul 30, 2026), labelled "an example".
-- **Voice:** AI-generated from the founder's own voice. Turn on Instagram's AI label.
+- **Voice:** AI-generated from the founder's own voice. Disclosed in the caption (no AI label).
 
 ## Instagram Reel
 

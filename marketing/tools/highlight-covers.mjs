@@ -15,6 +15,7 @@ const COVERS = [
   ['how-it-works', ICONS.sms, ''],
   ['scams', LOGO, ''],
   ['real-or-scam', QUESTION, '<div class="qm">A<span>/</span>B</div>'],
+  ['send-one', ICONS.parcel, ''],
 ];
 const page = (svg, extra) => `<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/assets/styles.css"><style>
 html,body{margin:0;background:var(--paper)}

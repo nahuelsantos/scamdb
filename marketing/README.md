@@ -6,7 +6,9 @@ folder is published automatically. The owner reviews and posts by hand.
 | File | What |
 |---|---|
 | `publish-week-48.md` … `publish-week-53.md` | **Week by week:** what to post, when, where, with which copy and files (week 48 also explains how to post each type) |
-| `campaign-december.md` | **December:** the campaign, the full calendar (Nov 30 – Dec 31) and the December video scripts |
+| `campaign-december.md` | **December:** the campaign, the full calendar (Nov 30 – Jan 1: posts, Reels, Stories, X), Highlights and Dispatch |
+| `dispatch/2026-WNN.json` | Each December week as Dispatch drafts (send with `tools/send-dispatch.mjs`) |
+| `stories/<week>/<id>/01-s.png` | Instagram Story frames (1080×1920) |
 | `playbook.md` | **Start here.** The Phase 1 playbook: goal, templates, routine, the 2-week test and what to measure |
 | `foundation.md` | The discovery decisions behind the playbook |
 | `instagram-profile.md` | Everything to type into the Instagram profile (account type, name, bio, links, FAQs, filters) |
@@ -18,6 +20,10 @@ folder is published automatically. The owner reviews and posts by hand.
 | `tools/posts.mjs` | What each image shows (text, messages, sources) |
 | `tools/render.mjs` | Draws the images with the site's own helpers (`lib/sketch.js`, logo, icons, styles) |
 | `tools/check-x.mjs` | Checks every X post fits in 280 characters |
+| `tools/december-plan.mjs` | The December schedule; `tools/gen-guides.mjs` turns it into the weekly guides, Dispatch drafts and zips |
+| `tools/reels-dec.mjs` | December Reels (Videos 8–15): scripts, timing, rendering |
+| `tools/stories.mjs` | Story frames (`render.mjs --stories`) |
+| `tools/send-dispatch.mjs` | Uploads a week's files and drafts to Dispatch |
 
 ## Remaking the images
 
@@ -39,4 +45,4 @@ catalogue entry's first source.
   as written.
 - No real logos or look-alike screens. Use the placeholders [number], [link], [name], [bank]. Never a live scam link.
 - Nothing from reports sent to scamdb.dev/report.
-- No ads, no scheduling tools. The owner publishes.
+- No ads. Drafts can go to the owner's Dispatch queue; only the owner approves and publishes.
