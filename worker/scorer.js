@@ -53,12 +53,19 @@ async function similar(ai, text, catalogue, store) {
 }
 
 
+// What genuine messages look like, and what turns a message into a scam (2026-11-25). Without it the model scored many
+// genuine promos and reminders 0.7-0.95, like scams; with it, the owner's genuine messages flagged fell from 54% to 30%
+// with the same scams flagged (eval/report-ai-prompt-2026-11-25.md).
+export const GUIDANCE = `Most messages people check are genuine. Companies, banks and services send genuine messages that: promote their own app, card or offers; remind you of a renewal, a bill, an appointment or a delivery; deliver a one-time code and warn you not to share it; tell you to log in yourself or to call the number on the back of your card; confirm something you did. A brand name, a price or a link alone does not make a message a scam.
+A message is a scam when it tries to make you act through the message itself: tap its link to pay, confirm personal or card details, or avoid a penalty or a block; share a code or a password; install an app for someone; send money or gift cards; keep it secret or stay on the line; or when the sender pretends to be someone they are not (a relative with a new number, a bank or an authority asking for those things). Scams also start with a first contact that only asks you to reply or get in touch: an unexpected alert about your account, card or a purchase that asks you to reply, call or contact them about it (genuine alerts send you to the official app or the number on your card); points, prizes or refunds about to expire; or a stranger offering a job or easy money. Give a high score when the message asks for one of these actions or starts one of these first contacts, or when the sender is clearly pretending.`;
+
 function prompt(text, catalogue, hints) {
   const signs = [...catalogue.signals.entries()].map(([id, s]) => `- ${id}: ${s.label?.en ?? id}`).join('\n');
   const byId = new Map(catalogue.entries.map((e) => [e.id, e]));
   const known = hints.slice(0, 5).map((id) => `- ${byId.get(id)?.name?.en ?? id}`).join('\n') || '- (none matched by keywords)';
   return [
-    { role: 'system', content: `You check whether a message someone received is a scam. Answer only with JSON: {"verdict": "scam" | "suspicious" | "not_recognised", "score": number from 0 to 1 (how likely it is a scam), "signals": [{"id": one of the ids below, "evidence": an exact quote from the message, at most 8 words}]}. List at most 3 signs, only ones you can quote word for word. No other text.\nWarning-sign ids:\n${signs}\nKnown scams that match this message's keywords:\n${known}` },
+    { role: 'system', content: `You check whether a message someone received is a scam. ${GUIDANCE}
+Answer only with JSON: {"verdict": "scam" | "suspicious" | "not_recognised", "score": number from 0 to 1 (how likely it is a scam), "signals": [{"id": one of the ids below, "evidence": an exact quote from the message, at most 8 words}]}. List at most 3 signs, only ones you can quote word for word. No other text.\nWarning-sign ids:\n${signs}\nKnown scams that match this message's keywords:\n${known}` },
     { role: 'user', content: text },
   ];
 }

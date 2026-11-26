@@ -2,6 +2,16 @@
 
 A running record of what was built, what was measured and what we learned. Newest first.
 
+## 2026-11-25: The AI step learns what genuine messages look like
+
+- Keyed checks: the Workers AI instructions now describe what genuine messages look like, and what turns a message
+  into a scam: an action through the message itself, a pretending sender, or a first-contact lure. The model had been
+  scoring genuine promos and reminders like scams.
+- The owner's genuine reports flagged: 54% → 30%. Published real scams flagged: unchanged (228/238). Real genuine
+  messages called "scam": 1 → 3 of 105, all the same Australian bank "call our fraud department" template. Details in
+  eval/report-ai-prompt-2026-11-25.md. The free check without a key is unchanged.
+- Tried and dropped: similarity to written genuine examples (it did not separate genuine messages from scams).
+
 ## 2026-11-24: Matcher 1.42.0: light patterns, the genuine side of the catalogue
 
 - The exceptions that stop genuine messages being read as scams (a code text that says "don't share it", "nothing to
