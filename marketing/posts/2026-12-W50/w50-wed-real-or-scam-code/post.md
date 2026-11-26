@@ -10,7 +10,7 @@
 ```ig
 Real or scam? Both are about a code. Guess, then swipe.
 
-A is a genuine text our founder received (store name removed). B is an example we wrote, based on FTC warnings about fake bank “fraud teams”.
+A is an example we wrote, based on FTC warnings about fake bank “fraud teams”. B is a genuine text our founder received (store name removed).
 
 Rule of thumb: a real code message tells you not to share it. A scammer asks you to read it out.
 
@@ -21,8 +21,8 @@ Got one like this, scam or genuine? Send it to us at scamdb.dev/report (link in 
 
 **Alt text**
 
-1. Both mention a code. Which is the scam? A, from [store]: “[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]” B, from “Your bank’s fraud team”: “This is your bank’s fraud team. We’ve stopped a suspicious payment of $1,480. To protect your money, read me the 6-digit code we just sent you. Please don’t hang up.” A: a genuine message shared by scamdb’s founder, store name replaced. B: written by scamdb from FTC warnings.
-2. The answer, with a pink stamp “B · SCAM”: B. Real codes say “don’t share”. Scammers say “read it to me”. A code is a key to your account. Nobody legit needs it read back. “Don’t hang up” is pressure, not protection. Hang up, and call the number on your card.
+1. Both mention a code. Which is the scam? A, from “Your bank’s fraud team”: “This is your bank’s fraud team. We’ve stopped a suspicious payment of $1,480. To protect your money, read me the 6-digit code we just sent you. Please don’t hang up.” B, from [store]: “[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]” A: written by scamdb from FTC warnings. B: a genuine message shared by scamdb’s founder, store name replaced.
+2. The answer, with a pink stamp “A · SCAM”: A. Real codes say “don’t share”. Scammers say “read it to me”. A code is a key to your account. Nobody legit needs it read back. “Don’t hang up” is pressure, not protection. Hang up, and call the number on your card.
 
 ## X
 
@@ -32,12 +32,12 @@ Real or scam? Two messages about a code. One is genuine, one is how a scam call 
 A or B? Answer in the replies.
 ```
 
-**Alt text (03-x.png):** Both mention a code. Which is the scam? A, from [store]: “[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]” B, from “Bank fraud team”: “We’ve stopped a suspicious payment. To protect your money, read me the 6-digit code we just sent you.” A: genuine (founder’s, name replaced). B: written by scamdb from FTC warnings.
+**Alt text (03-x.png):** Both mention a code. Which is the scam? A, from “Bank fraud team”: “We’ve stopped a suspicious payment. To protect your money, read me the 6-digit code we just sent you.” B, from [store]: “[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]” A: written by scamdb from FTC warnings. B: genuine (founder’s, name replaced).
 
 **Reply with the answer (a few hours later):**
 
 ```x
-B.
+A.
 
 Real code messages say “don’t share it”. Scammers say “read it to me”.
 

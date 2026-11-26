@@ -2,7 +2,7 @@
 
 - **File:** `marketing/videos/video7/scamdb-video7-utility.mp4` (24 s). Cover: `marketing/videos/video7/cover.png`
 - **Message:** the catalogue's written example from `us/utility-shutoff` (FTC; New York Attorney General), labelled.
-- **Voice:** AI-generated from the founder's own voice. Turn on Instagram's AI label.
+- **Voice:** AI-generated from the founder's own voice. Disclosed in the caption (no AI label).
 
 ## Instagram Reel
 

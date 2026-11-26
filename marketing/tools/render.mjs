@@ -13,10 +13,11 @@ import { LOGO } from '../../site/templates/logo.js';
 import { ICONS, STEP_ICONS } from '../../site/templates/icons.js';
 import { POSTS as ALL_POSTS } from './posts.mjs';
 import { STILLS } from './storyboard-stills.mjs';
-const POSTS = process.argv.includes('--stills') ? STILLS : ALL_POSTS;
+import { STORIES } from './stories.mjs';
+const POSTS = process.argv.includes('--stills') ? STILLS : process.argv.includes('--stories') ? STORIES : ALL_POSTS;
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-const SIZES = { ig: [1080, 1350], igsq: [1080, 1080], x: [1600, 900], v: [1080, 1920] };
+const SIZES = { ig: [1080, 1350], igsq: [1080, 1080], x: [1600, 900], v: [1080, 1920], s: [1080, 1920] };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /** Inline markup for slide text: [[word]] = lime highlighter, {{1|words}} = pink-numbered red flag. */
@@ -76,6 +77,7 @@ h2{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:
 .mk-tag{font-family:var(--display);font-weight:700;font-size:64px;margin-bottom:14px}
 .mk-cols{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;flex:1;align-items:start;margin-top:10px}
 .sz-v{padding:150px 90px 120px}.sz-v h1{font-size:118px}.sz-v h2{font-size:92px}.sz-v .mk-sub{font-size:48px}.sz-v .mk-bubble{font-size:50px}.sz-v .mk-note{font-size:56px}.sz-v .mk-cta-main{font-size:96px}.sz-v .mk-vs{grid-template-columns:1fr;gap:36px}.sz-v .mk-vs .mk-bubble{font-size:42px}
+.sz-s{padding:260px 90px 340px}.sz-s .mk-vs{margin-top:28px;gap:24px}.sz-s .mk-vs .mk-bubble{font-size:40px;padding:36px 40px 40px}
 .mk-bubble.mk-long{font-size:38px;line-height:1.36}.mk-cols .mk-bubble.mk-long{font-size:32px}.sz-x .mk-source{font-size:20px}
 .sz-x .mk-vs .mk-bubble{font-size:32px}.sz-x .mk-vs{margin-top:24px}.sz-x .mk-tag{font-size:48px}
 .mk-cols .mk-bubble{font-size:38px;padding:40px 44px 44px}.mk-cols .mk-note{font-size:44px}.mk-cols .mk-notes{margin-top:40px}
@@ -130,7 +132,7 @@ const SLIDES = {
 };
 
 const page = (body, [w, h], sz) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="/assets/styles.css">
-<style>${CSS}.slide{width:${w}px;height:${h}px}</style></head><body><div class="slide sz-${sz}">${body}</div></body></html>`;
+<style>${CSS}.slide{width:${w}px;height:${h}px}</style></head><body><div class="slide sz-${sz}${sz === 's' ? ' sz-v' : ''}">${body}</div></body></html>`;
 
 /** Hand-drawn frame for a measured box. */
 function frame(kind, w, h, seed) {

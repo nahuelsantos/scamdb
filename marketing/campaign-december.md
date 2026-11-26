@@ -1,140 +1,178 @@
-# December campaign: "Check before you pay" (Nov 30 – Dec 31)
+# December campaign: "Check before you pay" (Nov 30 – Jan 1)
 
-The whole month for Instagram (@scamdb.dev) and X (@scamdb). Every post is drafted, with copy, sources, alt text and
-images in `marketing/posts/2026-12-W49 … W53/`. How to post each type (carousel, Reel, X image, X video) is explained
-once in `publish-week-48.md` → "How to post each type"; it's the same every week.
+The whole month for Instagram (@scamdb.dev) and X (@scamdb): feed posts, Reels, Stories, Highlights and X posts, each
+with its copy, alt text, files and time. Day-by-day steps are in `publish-week-49.md` … `publish-week-53.md`; the same
+weeks are ready as Dispatch drafts in `marketing/dispatch/`.
 
 **Review first:** on **Sun Dec 6** we look at the first two weeks' numbers (`playbook.md` §7). Posts from Dec 7 on may
-change after that review: the formats that brought reports get more room.
+change after that review: the formats that bring reports get more room.
 
 ## The idea
 
 December is when people buy, ship, give and gather, and scammers follow each of those moments. Each week takes one of
-them, and every post ends with the same ask: **"Got one like this, scam or genuine? Send it to scamdb.dev/report."**
+them, and everything ends with the same ask: **"Got one, scam or genuine? Send it to scamdb.dev/report."**
 
-| Week | Theme | Why now |
+| Week | Theme | Key dates |
 |---|---|---|
-| Nov 30 – Dec 4 (W49) | **After the shopping weekend** | Cyber Monday, Giving Tuesday, fake bank alerts after big card spending |
-| Dec 7 – 11 (W50) | **Deliveries and gifts** | Peak parcel season; holiday giveaways |
-| Dec 14 – 18 (W51) | **Love, giving and fees** | Loneliness over the holidays; charity appeals; "pay a fee to get your money" |
-| Dec 21 – 26 (W52) | **Christmas and Boxing Day** | Utility threats in the cold; family together (code word); Boxing Day sales (UK, Canada, Australia, NZ) |
-| Dec 28 – 31 (W53) | **Year end** | Tax-refund scams before tax season; scamdb's year; three rules for 2027 |
+| Nov 30 – Dec 4 (W49) | **After the shopping weekend** | Cyber Monday (Nov 30), Giving Tuesday (Dec 1) |
+| Dec 7 – 11 (W50) | **Deliveries and gifts** | Peak parcel season |
+| Dec 14 – 18 (W51) | **Love, giving and fees** | Lonely holidays, charity appeals |
+| Dec 21 – 26 (W52) | **Christmas and Boxing Day** | Christmas Eve, Christmas, Boxing Day (UK, Canada, Australia, NZ) |
+| Dec 28 – Jan 1 (W53) | **Year end and New Year** | Tax season ahead, New Year's Eve, New Year's Day |
 
-**Hashtags:** 3–4 per Instagram post, already in each caption: two core tags (#scamalert #scamawareness …) plus one
-seasonal or topical tag (#blackfriday #givingseason #boxingday #christmas #newyear …). On X: at most one seasonal tag,
-only on the day itself.
+## What goes out
 
-**Calls to action (in every post):** 1. "Send it to scamdb.dev/report" (scam *or genuine*) · 2. "Share this with
-someone who…" · 3. on Fridays (Behind scamdb), the open data and API for developers.
+| | Per week | December total |
+|---|---|---|
+| Instagram feed posts (carousels and images) | 5 (Mon–Fri) | 23 |
+| Instagram Reels | 2 (3 in Christmas week) | 11 (Videos 5–15) |
+| Instagram Stories | 3–4 | 21: Monday "This week", Wednesday quiz (poll), Thursday answer, Friday "Send one", plus key dates |
+| X posts | 1 a day, plus the quiz answers | 27 |
+| Highlights | 4: How it works, Scams, Real or scam?, Send one | covers in `brand/highlights/` |
+
+**Rhythm:** Stories 15:00 · feed post and X 18:00 · Reel 23:30 (your time; 09:00 / 12:00 / 17:30 ET). Key dates move
+earlier: Christmas Eve post 15:00, Christmas 16:00, Boxing Day from 10:00 (morning in the UK, evening in Australia and
+NZ), New Year's Eve Reel 16:00. On X, video days carry the video instead of the image.
+
+**Hashtags:** 3–4 per Instagram post, already in each caption (two core + one seasonal: #givingtuesday #holidayshopping
+#christmas #boxingday #newyear …). On X, at most one, only on the day itself.
+
+**Calls to action:** 1. "Send it to scamdb.dev/report" (scam *or genuine*) · 2. "Share this with someone who…" ·
+3. on Fridays, the open data and API for developers. On X the link stays in the bio ("link in bio"): X charges Dispatch
+more for posts with links and shows them to fewer people.
+
+## Dispatch
+
+Dispatch publishes approved drafts on time. For each week:
+
+1. `node marketing/tools/send-dispatch.mjs 2026-W49` uploads the files (PNG turned into JPEG, as Instagram asks) and
+   sends the week as **drafts**. `--dry` lists them without sending. It needs the Dispatch API token (`DISPATCH_TOKEN`,
+   or saved for dispatch.loopingbyte.com in a cloud session).
+2. You review and approve in Dispatch. Nothing goes out unapproved.
+3. The ✋ steps in each weekly guide stay with you, because Instagram doesn't let apps do them: alt text on feed posts,
+   Reel covers, sharing Reels to Story, Story stickers (poll on Wednesdays, link on Fridays), and Highlights.
+
+X posts are written to stand alone (no replies needed): the quiz answer is its own post a few hours later.
 
 ## The calendar
 
-Times are **US Eastern**; you post in Spain at ET + 6 (12:00 ET = 18:00 yours; Reels 17:30 ET = 23:30 yours). "IG" = Instagram, "X img" = X post with image,
-"X vid" = X video. Every X post gets the **reply with the ask** from its `post.md`; quiz posts also get the
-**answer reply** a few hours later.
-
-### W49 · Nov 30 – Dec 4 (already drafted; images ready)
-
-| Day | IG (12:00) | X (12:00) | Folder |
+<!-- calendar -->
+| Day | Time | Where | What |
 |---|---|---|---|
-| Mon Nov 30 | Carousel: the fake fraud alert | X img | `2026-12-W49/w49-mon-bank-zelle` |
-| Tue Dec 1 | 2 slides: nobody real asks for gift cards | X img | `w49-tue-gift-cards` |
-| Wed Dec 2 | Real or scam? bank alerts | X img + answer reply | `w49-wed-real-or-scam-bank` |
-| Thu Dec 3 | "Move it to a safe account", 5 languages | X img | `w49-thu-safe-account` |
-| Fri Dec 4 | How the check works | X img + developer reply | `w49-fri-how-the-check-works` |
-| **Sun Dec 6** | **Review the numbers together** | | |
+| **Mon Nov 30** | 15:00 | IG Story | `s49-mon-theme` |
+|  | 18:00 | IG post | `w49-mon-bank-zelle` |
+|  | 18:00 | X image | `w49-mon-bank-zelle` |
+| **Tue Dec 1** | 15:00 | IG Story | `s49-tue-giving` |
+|  | 18:00 | IG post | `w49-tue-gift-cards` |
+|  | 18:00 | X video | Video 8 |
+|  | 23:30 | IG Reel | Video 8 |
+| **Wed Dec 2** | 15:00 | IG Story ✋ | `s49-wed-quiz` |
+|  | 18:00 | IG post | `w49-wed-real-or-scam-bank` |
+|  | 18:00 | X image | `w49-wed-real-or-scam-bank` |
+|  | 23:30 | X answer | `w49-wed-real-or-scam-bank` |
+| **Thu Dec 3** | 15:00 | IG Story | `s49-thu-answer` |
+|  | 18:00 | IG post | `w49-thu-safe-account` |
+|  | 18:00 | X video | Video 9 |
+|  | 23:30 | IG Reel | Video 9 |
+| **Fri Dec 4** | 15:00 | IG Story ✋ | `send-one` |
+|  | 18:00 | IG post | `w49-fri-how-the-check-works` |
+|  | 18:00 | X image | `w49-fri-how-the-check-works` |
+| **Mon Dec 7** | 15:00 | IG Story | `s50-mon-theme` |
+|  | 18:00 | IG post | `w50-mon-prize` |
+|  | 18:00 | X image | `w50-mon-prize` |
+| **Tue Dec 8** | 18:00 | IG post | `w50-tue-new-number` |
+|  | 18:00 | X video | Video 5 |
+|  | 23:30 | IG Reel | Video 5 |
+| **Wed Dec 9** | 15:00 | IG Story ✋ | `s50-wed-quiz` |
+|  | 18:00 | IG post | `w50-wed-real-or-scam-code` |
+|  | 18:00 | X image | `w50-wed-real-or-scam-code` |
+|  | 23:30 | X answer | `w50-wed-real-or-scam-code` |
+| **Thu Dec 10** | 15:00 | IG Story | `s50-thu-answer` |
+|  | 18:00 | IG post | `w50-thu-parcel-world` |
+|  | 18:00 | X video | Video 10 |
+|  | 23:30 | IG Reel | Video 10 |
+| **Fri Dec 11** | 15:00 | IG Story ✋ | `send-one` |
+|  | 18:00 | IG post | `w50-fri-genuine-ask` |
+|  | 18:00 | X image | `w50-fri-genuine-ask` |
+| **Mon Dec 14** | 15:00 | IG Story | `s51-mon-theme` |
+|  | 18:00 | IG post | `w51-mon-romance` |
+|  | 18:00 | X video | Video 11 |
+|  | 23:30 | IG Reel | Video 11 |
+| **Tue Dec 15** | 18:00 | IG post | `w51-tue-the-fee` |
+|  | 18:00 | X image | `w51-tue-the-fee` |
+| **Wed Dec 16** | 15:00 | IG Story ✋ | `s51-wed-quiz` |
+|  | 18:00 | IG post | `w51-wed-real-or-scam-subscription` |
+|  | 18:00 | X video | Video 6 |
+|  | 23:30 | IG Reel | Video 6 |
+| **Thu Dec 17** | 15:00 | IG Story | `s51-thu-answer` |
+|  | 18:00 | IG post | `w51-thu-charity-world` |
+|  | 18:00 | X image | `w51-thu-charity-world` |
+| **Fri Dec 18** | 15:00 | IG Story ✋ | `send-one` |
+|  | 18:00 | IG post | `w51-fri-what-scammers-ask` |
+|  | 18:00 | X image | `w51-fri-what-scammers-ask` |
+| **Mon Dec 21** | 15:00 | IG Story | `s52-mon-theme` |
+|  | 18:00 | IG post | `w52-mon-utility` |
+|  | 18:00 | X video | Video 7 |
+|  | 23:30 | IG Reel | Video 7 |
+| **Tue Dec 22** | 18:00 | IG post | `w52-tue-secrecy` |
+|  | 18:00 | X image | `w52-tue-secrecy` |
+| **Wed Dec 23** | 15:00 | IG Story ✋ | `s52-wed-quiz` |
+|  | 18:00 | IG post | `w52-wed-real-or-scam-verification` |
+|  | 18:00 | X image | `w52-wed-real-or-scam-verification` |
+|  | 23:30 | X answer | `w52-wed-real-or-scam-verification` |
+| **Thu Dec 24** | 12:00 | IG Story | `s52-thu-answer` |
+|  | 15:00 | IG post | `w52-thu-christmas-eve` |
+|  | 15:00 | X video | Video 12 |
+|  | 23:30 | IG Reel | Video 12 |
+| **Fri Dec 25** | 16:00 | IG Story | `s52-fri-christmas` |
+|  | 16:00 | X text | `w52-fri-christmas` |
+| **Sat Dec 26** | 10:00 | IG Story | `s52-sat-boxing-day` |
+|  | 10:00 | IG Reel | Video 13 |
+|  | 10:00 | X video | Video 13 |
+|  | 14:00 | IG post | `w52-sat-boxing-day` |
+| **Mon Dec 28** | 15:00 | IG Story | `s53-mon-theme` |
+|  | 18:00 | IG post | `w53-mon-tax-refund` |
+|  | 18:00 | X video | Video 14 |
+|  | 23:30 | IG Reel | Video 14 |
+| **Tue Dec 29** | 18:00 | IG post | `w53-tue-year-in-scamdb` |
+|  | 18:00 | X image | `w53-tue-year-in-scamdb` |
+| **Thu Dec 31** | 15:00 | IG Story | `s53-thu-new-year` |
+|  | 16:00 | IG Reel | Video 15 |
+|  | 16:00 | X video | Video 15 |
+|  | 18:00 | IG post | `w53-thu-new-year` |
+| **Fri Jan 1** | 18:00 | IG Story | `s53-fri-2027` |
+<!-- /calendar -->
 
-### W50 · Dec 7 – 11 · Deliveries and gifts
+## The Reels
 
-| Day | IG | X | Folder |
+All voiced with "Nahuel English" (ElevenLabs), disclosed in every caption ("Voice: AI, made from my own."). Messages are
+the catalogue's written examples, labelled "an example" on screen, with the source warning credited. Videos 5–7 were
+made on Nov 23; Videos 8–15 on Nov 26 (5,494 credits for two takes each; the cleaner take is used). Scripts and timing:
+`tools/reels-dec.mjs`.
+
+| Video | Day | Topic | Length |
 |---|---|---|---|
-| Mon Dec 7 | 12:00 carousel: “You won! Just pay the fees.” | 12:00 X img | `2026-12-W50/w50-mon-prize` |
-| Tue Dec 8 | 12:00 2 slides: “Hi Mum, this is my new number” · 17:30 **Reel V5** | 12:00 **X vid V5** | `w50-tue-new-number` |
-| Wed Dec 9 | 12:00 Real or scam? two code messages | 12:00 X img + answer | `w50-wed-real-or-scam-code` |
-| Thu Dec 10 | 12:00 The parcel text in 70 countries | 12:00 X img | `w50-thu-parcel-world` |
-| Fri Dec 11 | 12:00 Send us your boring messages | 12:00 X img | `w50-fri-genuine-ask` |
-
-### W51 · Dec 14 – 18 · Love, giving and fees
-
-| Day | IG | X | Folder |
-|---|---|---|---|
-| Mon Dec 14 | 12:00 carousel: the online love who needs money | 12:00 X img | `2026-12-W51/w51-mon-romance` |
-| Tue Dec 15 | 12:00 2 slides: pay a little to get a lot | 12:00 X img | `w51-tue-the-fee` |
-| Wed Dec 16 | 12:00 Real or scam? subscriptions · 17:30 **Reel V6** | 12:00 **X vid V6** | `w51-wed-real-or-scam-subscription` |
-| Thu Dec 17 | 12:00 Fake charities, Iceland to Venezuela | 12:00 X img | `w51-thu-charity-world` |
-| Fri Dec 18 | 12:00 What 1,199 scams have in common | 12:00 X img | `w51-fri-what-scammers-ask` |
-
-### W52 · Dec 21 – 26 · Christmas and Boxing Day
-
-| Day | IG | X | Folder |
-|---|---|---|---|
-| Mon Dec 21 | 12:00 carousel: “Pay now or your power goes off” · 17:30 **Reel V7** | 12:00 **X vid V7** | `2026-12-W52/w52-mon-utility` |
-| Tue Dec 22 | 12:00 2 slides: “Don’t tell anyone.” | 12:00 X img | `w52-tue-secrecy` |
-| Wed Dec 23 | 12:00 Real or scam? the verification code | 12:00 X img + answer | `w52-wed-real-or-scam-verification` |
-| Thu Dec 24 | **09:00** Christmas Eve: pick a family code word | 09:00 X img | `w52-thu-christmas-eve` |
-| Fri Dec 25 | No Instagram post (optional: share yesterday’s to your Story) | 10:00 text only | `w52-fri-christmas` |
-| Sat Dec 26 | **08:00 ET** (13:00 UK) Boxing Day: check the shop first | 08:00 X img | `w52-sat-boxing-day` |
-
-Boxing Day is aimed at the UK, Canada, Australia and New Zealand, so it goes out early US time (morning in the UK,
-evening in Australia and NZ).
-
-### W53 · Dec 28 – 31 · Year end
-
-| Day | IG | X | Folder |
-|---|---|---|---|
-| Mon Dec 28 | 12:00 carousel: “You’re owed a refund” | 12:00 X img | `2026-12-W53/w53-mon-tax-refund` |
-| Tue Dec 29 | 12:00 scamdb’s first year, in numbers (**update the numbers** on the day) | 12:00 X img | `w53-tue-year-in-scamdb` |
-| Thu Dec 31 | 12:00 Three rules for 2027 | 12:00 X img | `w53-thu-new-year` |
-
-That's 24 posts from Nov 30 to Dec 31 (the 5 in W49 were drafted earlier, 19 are new) and 3 videos. If a week gets busy, drop the
-Thursday and Friday posts first (`pillars.md`).
-
-## Three December videos (done)
-
-Made on Nov 23 with the "Nahuel English" voice: 1,927 ElevenLabs credits for all three (two versions each; the cleaner
-one is used). Files: `marketing/videos/video5|6|7/` (video + cover), copy in `w50-tue-video5`, `w51-wed-video6`,
-`w52-mon-video7`. Day-by-day guides: `publish-week-49.md` … `publish-week-53.md`, with a zip of files per week.
-
-### V5 · Tue Dec 8 · “Hi Mum, new number” (teardown, ~25 s)
-
-Message: the catalogue's written example from `gb/hi-mum-text` (labelled "an example of how this one reads").
-
-> Hi Mum, it's me. New number. Sound familiar? <break time="0.8s" />
-> The scammer never says a name. You fill in your own child. <break time="0.8s" />
-> A new number. <break time="0.4s" /> An urgent favour. <break time="0.4s" /> Then a bill they can't pay. <break time="0.8s" />
-> The fix takes ten seconds. Call the old number. <break time="0.8s" />
-> Got one? Send it to us.
-
-### V6 · Wed Dec 16 · “Real or scam? Subscriptions” (quiz, ~25 s)
-
-A: the founder's genuine membership reminder (name replaced). B: the written example from
-`ro/netflix-subscription-phishing` (brand replaced).
-
-> Two messages about your subscription. One's a scam. Three seconds. <break time="3.0s" /> <break time="1.0s" />
-> B. <break time="0.4s" /> A real reminder tells you something. A scam needs you to act. Now. Through its link. <break time="0.8s" />
-> So check in the app you already use. Never through the link. <break time="0.8s" />
-> Got either kind? Send it. The real ones teach the check too.
-
-### V7 · Mon Dec 21 · “Pay now or your power goes off” (teardown, ~25 s)
-
-Message: the catalogue's written example from `us/utility-shutoff` (labelled).
-
-> Two hours until your power goes off? In December? <break time="0.8s" />
-> That's the point. Cold and panic make you pay fast. <break time="0.8s" />
-> Looks like your utility. <break time="0.4s" /> A two-hour deadline. <break time="0.4s" /> And their link to pay. <break time="0.8s" />
-> Real utilities warn you in writing first. Call the number on your bill. <break time="0.8s" />
-> Got one? Send it to us.
+| 8 | Tue Dec 1 | Who asks to be paid in gift cards? (Giving Tuesday) | 26 s |
+| 9 | Thu Dec 3 | There is no safe account (one script, 30+ countries) | 23 s |
+| 5 | Tue Dec 8 | "Hi Mum, new number" | 22 s |
+| 10 | Thu Dec 10 | The parcel text in 70 countries | 26 s |
+| 11 | Mon Dec 14 | The online love who needs money | 23 s |
+| 6 | Wed Dec 16 | Real or scam? Subscriptions | 26 s |
+| 7 | Mon Dec 21 | "Pay now or your power goes off" | 22 s |
+| 12 | Thu Dec 24 | **"This isn't really me talking."** The AI voice tells you it's AI, then: pick a family code word | 25 s |
+| 13 | Sat Dec 26 | Boxing Day: three checks before you pay | 25 s |
+| 14 | Mon Dec 28 | "You're owed a refund" | 25 s |
+| 15 | Thu Dec 31 | Three rules for 2027 | 21 s |
 
 ## Notes and open questions
 
-1. **Real messages:** December posts use the catalogue's written examples (always labelled) and, in the three
-   "Real or scam?" posts, your own genuine messages with company names replaced (as you agreed). No new real scam
-   quotes were researched for December; if you want some, I can look for credited, published ones (it costs some
-   research time).
-2. **Report data is never used.** The numbers in the posts (1,199 scams, 76 countries, 167 "secrecy" scripts, 70
-   countries with the parcel text) all come from the open catalogue, counted on Nov 23. Update the Dec 29 numbers on
-   the day.
-3. **The matcher fix is live** (Nov 23, matcher 1.40.0): the home check now uses the visitor's country, and a
-   fee or fine you can avoid counts as pressure (the FBI toll text with a link is now "scam"). Video 1 was recaptured
-   on the fixed site. Delivery texts with a link stay "suspicious" on purpose: genuine ones look almost the same.
-4. **Weekly guides:** `publish-week-49.md` … `publish-week-53.md` (regenerate with `node marketing/tools/gen-guides.mjs`).
+1. **Every quiz answer this month is B.** W49–W52 all put the scam second. Followers may notice and stop guessing. I
+   can swap A and B in the W51 and W52 quizzes (images, captions and answers) if you want.
+2. **Video 12 uses your cloned voice as the lesson** ("This isn't really me talking"). It's honest and it's the
+   strongest hook of the month, but it's your voice: say if you'd rather not.
+3. **Report data is never used.** All numbers (1,199 scams, 76 countries, 70 countries with the parcel text, 30+ with
+   the safe-account script) come from the open catalogue, counted on Nov 23. Update the Dec 29 numbers on the day.
+4. **Dispatch limits today:** no alt text, Reel cover, stickers, X replies or Highlights through the API, so those are ✋
+   steps. If Dispatch adds alt text and Reel covers, the guides get shorter.
+5. **Regenerate** guides, drafts and zips with `node marketing/tools/gen-guides.mjs`; Reels with
+   `node marketing/tools/reels-dec.mjs`; Stories with `node marketing/tools/render.mjs --stories`.
