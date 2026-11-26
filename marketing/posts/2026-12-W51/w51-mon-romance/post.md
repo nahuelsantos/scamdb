@@ -22,7 +22,7 @@ Share this with someone who’s dating online.
 
 **Alt text**
 
-1. Hand-drawn illustration. Scam of the week · US · dating apps, social media. Headline: “The online love who needs money”. The holidays are lonely for many people. Scammers know it.
+1. Hand-drawn illustration. Scam of the week · US · online. Headline: “The online love who needs money”. The holidays are lonely for many people. Scammers know it.
 2. An example written by scamdb, from “My love”: “Good morning my love. I can’t stop thinking about you. As soon as my contract on the oil rig ends we will finally be together. Baby, my account is frozen and I need help with the customs fee to send my things home. I will pay you back as soon as I land.”. Warning signs: A reason they can never meet; A money problem only you can fix; A promise to pay back.
 3. How it goes, in four hand-drawn steps (see the catalogue entry).
 4. What to do: Never send money or gifts to someone you haven’t met in person. Never let an online friend steer your investments. Reverse-image search their photos. Talk to someone you trust. It happens to smart, careful people. Report the profile, and call your bank.

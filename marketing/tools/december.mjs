@@ -69,21 +69,21 @@ https://scamdb.dev/catalogue/gb/hi-mum-text/`,
     id: 'w50-wed-real-or-scam-code', week: '2026-12-W50', date: 'Wed Dec 9', pillar: 'Real or scam?', entry: 'us/bank-fraud-alert-zelle', seed: 503,
     facts: 'A: the owner’s own genuine code text (store name replaced). B: a written example based on the FTC warnings in us/bank-fraud-alert-zelle (it is also the sample on scamdb.dev’s home page).',
     slides: [
-      { type: 'versus', title: 'Both mention a code. Which is the scam?', note: 'A: a genuine message shared by scamdb’s founder, store name replaced. B: written by scamdb from FTC warnings.',
+      { type: 'versus', title: 'Both mention a code. Which is the scam?', note: 'A: written by scamdb from FTC warnings. B: a genuine message shared by scamdb’s founder, store name replaced.',
         pair: [
-          { sender: '[store]', channel: 'SMS', text: '[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]' },
           { sender: '“Your bank’s fraud team”', channel: 'Phone call', text: 'This is your bank’s fraud team. We’ve stopped a suspicious payment of $1,480. To protect your money, read me the 6-digit code we just sent you. Please don’t hang up.' },
+          { sender: '[store]', channel: 'SMS', text: '[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]' },
         ] },
-      { type: 'answer', title: 'B. Real codes say “don’t share”. Scammers say “read it to me”.', stamp: 'B · SCAM', items: ['A code is a key to your account. [[Nobody legit needs it read back.]]', '“Don’t hang up” is pressure, not protection.', 'Hang up, and call the number on your card.'] },
-      { type: 'versus', size: 'x', title: 'Both mention a code. Which is the scam?', note: 'A: genuine (founder’s, name replaced). B: written by scamdb from FTC warnings.', footRight: 'Answer in the replies',
+      { type: 'answer', title: 'A. Real codes say “don’t share”. Scammers say “read it to me”.', stamp: 'A · SCAM', items: ['A code is a key to your account. [[Nobody legit needs it read back.]]', '“Don’t hang up” is pressure, not protection.', 'Hang up, and call the number on your card.'] },
+      { type: 'versus', size: 'x', title: 'Both mention a code. Which is the scam?', note: 'A: written by scamdb from FTC warnings. B: genuine (founder’s, name replaced).', footRight: 'Answer in the replies',
         pair: [
-          { sender: '[store]', text: '[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]' },
           { sender: '“Bank fraud team”', text: 'We’ve stopped a suspicious payment. To protect your money, read me the 6-digit code we just sent you.' },
+          { sender: '[store]', text: '[store]: Your code is [code]. Don’t share it. If you didn’t request it, deny here [link]' },
         ] },
     ],
     ig: `Real or scam? Both are about a code. Guess, then swipe.
 
-A is a genuine text our founder received (store name removed). B is an example we wrote, based on FTC warnings about fake bank “fraud teams”.
+A is an example we wrote, based on FTC warnings about fake bank “fraud teams”. B is a genuine text our founder received (store name removed).
 
 Rule of thumb: a real code message tells you not to share it. A scammer asks you to read it out.
 
@@ -93,7 +93,7 @@ ${std()}
     x: `Real or scam? Two messages about a code. One is genuine, one is how a scam call goes.
 
 A or B? Answer in the replies.`,
-    xAnswer: `B.
+    xAnswer: `A.
 
 Real code messages say “don’t share it”. Scammers say “read it to me”.
 
@@ -358,21 +358,21 @@ So tell someone.`,
     id: 'w52-wed-real-or-scam-verification', week: '2026-12-W52', date: 'Wed Dec 23', pillar: 'Real or scam?', entry: 'az/whatsapp-code-takeover', seed: 523,
     facts: 'A: the owner’s own genuine verification text (app name replaced). B: the written example of az/whatsapp-code-takeover (based on Trend reports, Oct 2026).',
     slides: [
-      { type: 'versus', title: 'You just got a code. Which message is the scam?', note: 'A: a genuine message shared by scamdb’s founder, app name replaced. B: written by scamdb from news reports (Azerbaijan, Oct 2026).',
+      { type: 'versus', title: 'You just got a code. Which message is the scam?', note: 'A: written by scamdb from news reports (Azerbaijan, Oct 2026). B: a genuine message shared by scamdb’s founder, app name replaced.',
         pair: [
-          { sender: '[app]', channel: 'SMS', text: '[code] is your [app] verification code. Don’t share your code with anyone.' },
           { sender: 'A contact', channel: 'WhatsApp', text: 'Hi dear, sorry to bother you, I was adding a new number to my phone and a 6-digit code went to your number by mistake. Please write me that code, it’s urgent, otherwise my account gets blocked.' },
+          { sender: '[app]', channel: 'SMS', text: '[code] is your [app] verification code. Don’t share your code with anyone.' },
         ] },
-      { type: 'answer', title: 'B. The code was for [[your]] account.', stamp: 'B · SCAM', items: ['Someone tried to log in to your account with your number.', 'Send them the code and the account is theirs.', 'Never forward a code. Delete it, and turn on two-step verification.'] },
-      { type: 'versus', size: 'x', title: 'You just got a code. Which message is the scam?', note: 'A: genuine (founder’s, name replaced). B: written by scamdb from published warnings.', footRight: 'Answer in the replies',
+      { type: 'answer', title: 'A. The code was for [[your]] account.', stamp: 'A · SCAM', items: ['Someone tried to log in to your account with your number.', 'Send them the code and the account is theirs.', 'Never forward a code. Delete it, and turn on two-step verification.'] },
+      { type: 'versus', size: 'x', title: 'You just got a code. Which message is the scam?', note: 'A: written by scamdb from published warnings. B: genuine (founder’s, name replaced).', footRight: 'Answer in the replies',
         pair: [
-          { sender: '[app]', text: '[code] is your [app] verification code. Don’t share your code with anyone.' },
           { sender: 'A contact', text: 'Sorry to bother you, a 6-digit code went to your number by mistake. Please write me that code, it’s urgent.' },
+          { sender: '[app]', text: '[code] is your [app] verification code. Don’t share your code with anyone.' },
         ] },
     ],
     ig: `Real or scam? You just got a verification code, and then a second message. Guess, then swipe.
 
-A is a genuine text our founder received (app name removed). B is an example we wrote, based on warnings about account takeovers on WhatsApp and other apps.
+A is an example we wrote, based on warnings about account takeovers on WhatsApp and other apps. B is a genuine text our founder received (app name removed).
 
 The trap: the code was for your account. Someone typed in your number and is waiting for you to hand it over.
 
@@ -382,7 +382,7 @@ ${std()}
     x: `Real or scam? You get a verification code, then: “Sorry, a code went to your number by mistake, please write it to me.”
 
 A or B? Answer in the replies.`,
-    xAnswer: `B.
+    xAnswer: `A.
 
 The code was for YOUR account. Someone typed in your number and wants you to hand it over.
 

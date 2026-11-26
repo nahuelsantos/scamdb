@@ -10,7 +10,7 @@
 ```ig
 Real or scam? You just got a verification code, and then a second message. Guess, then swipe.
 
-A is a genuine text our founder received (app name removed). B is an example we wrote, based on warnings about account takeovers on WhatsApp and other apps.
+A is an example we wrote, based on warnings about account takeovers on WhatsApp and other apps. B is a genuine text our founder received (app name removed).
 
 The trap: the code was for your account. Someone typed in your number and is waiting for you to hand it over.
 
@@ -21,8 +21,8 @@ Got one like this, scam or genuine? Send it to us at scamdb.dev/report (link in 
 
 **Alt text**
 
-1. You just got a code. Which message is the scam? A, from [app]: “[code] is your [app] verification code. Don’t share your code with anyone.” B, from A contact: “Hi dear, sorry to bother you, I was adding a new number to my phone and a 6-digit code went to your number by mistake. Please write me that code, it’s urgent, otherwise my account gets blocked.” A: a genuine message shared by scamdb’s founder, app name replaced. B: written by scamdb from news reports (Azerbaijan, Oct 2026).
-2. The answer, with a pink stamp “B · SCAM”: B. The code was for your account. Someone tried to log in to your account with your number. Send them the code and the account is theirs. Never forward a code. Delete it, and turn on two-step verification.
+1. You just got a code. Which message is the scam? A, from A contact: “Hi dear, sorry to bother you, I was adding a new number to my phone and a 6-digit code went to your number by mistake. Please write me that code, it’s urgent, otherwise my account gets blocked.” B, from [app]: “[code] is your [app] verification code. Don’t share your code with anyone.” A: written by scamdb from news reports (Azerbaijan, Oct 2026). B: a genuine message shared by scamdb’s founder, app name replaced.
+2. The answer, with a pink stamp “A · SCAM”: A. The code was for your account. Someone tried to log in to your account with your number. Send them the code and the account is theirs. Never forward a code. Delete it, and turn on two-step verification.
 
 ## X
 
@@ -32,12 +32,12 @@ Real or scam? You get a verification code, then: “Sorry, a code went to your n
 A or B? Answer in the replies.
 ```
 
-**Alt text (03-x.png):** You just got a code. Which message is the scam? A, from [app]: “[code] is your [app] verification code. Don’t share your code with anyone.” B, from A contact: “Sorry to bother you, a 6-digit code went to your number by mistake. Please write me that code, it’s urgent.” A: genuine (founder’s, name replaced). B: written by scamdb from published warnings.
+**Alt text (03-x.png):** You just got a code. Which message is the scam? A, from A contact: “Sorry to bother you, a 6-digit code went to your number by mistake. Please write me that code, it’s urgent.” B, from [app]: “[code] is your [app] verification code. Don’t share your code with anyone.” A: written by scamdb from published warnings. B: genuine (founder’s, name replaced).
 
 **Reply with the answer (a few hours later):**
 
 ```x
-B.
+A.
 
 The code was for YOUR account. Someone typed in your number and wants you to hand it over.
 

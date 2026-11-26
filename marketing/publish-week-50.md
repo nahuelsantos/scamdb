@@ -81,7 +81,7 @@ Got one, scam or genuine? Send it to us (link in bio).
 **23:30** (17:30 ET) · **X post, the quiz answer** (its own post, no image)
 
 ```x
-Today’s Real or scam? The answer: B.
+Today’s Real or scam? The answer: A.
 
 Real code messages say “don’t share it”. Scammers say “read it to me”.
 
